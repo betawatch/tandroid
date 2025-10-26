@@ -208,7 +208,7 @@ public class BiometricFragment extends Fragment {
         } else {
             this.mViewModel.setNegativeButtonTextOverride(null);
         }
-        if (isManagingDeviceCredentialButton() && BiometricManager.from(activity).canAuthenticate(NotificationCenter.didApplyNewTheme) != 0) {
+        if (isManagingDeviceCredentialButton() && BiometricManager.from(activity).canAuthenticate(NotificationCenter.didReplacedPhotoInMemCache) != 0) {
             this.mViewModel.setAwaitingResult(true);
             launchConfirmCredentialActivity();
         } else if (this.mViewModel.isDelayingPrompt()) {
@@ -292,7 +292,7 @@ public class BiometricFragment extends Fragment {
 
     void authenticateWithFingerprint(FingerprintManagerCompat fingerprintManagerCompat, Context context) {
         try {
-            fingerprintManagerCompat.authenticate(CryptoObjectUtils.wrapForFingerprintManager(this.mViewModel.getCryptoObject()), 0, this.mViewModel.getCancellationSignalProvider().getFingerprintCancellationSignal(), this.mViewModel.getAuthenticationCallbackProvider().getFingerprintCallback(), null);
+            fingerprintManagerCompat.authenticate(CryptoObjectUtils.wrapForFingerprintManager(this.mViewModel.getCryptoObject()), 0, this.mViewModel.getCancellationSignalProvider().getFingerprintCancellationSignal(), this.mViewModel.getAuthenticationCallbackProvider().getFingerprintCallback(), (Handler) null);
         } catch (NullPointerException e) {
             Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e);
             sendErrorAndDismiss(1, ErrorUtils.getFingerprintErrorString(context, 1));

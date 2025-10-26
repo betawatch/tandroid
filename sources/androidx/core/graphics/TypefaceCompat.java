@@ -10,6 +10,8 @@ import androidx.collection.LruCache;
 import androidx.core.content.res.FontResourcesParserCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.provider.FontsContractCompat;
+import androidx.tracing.Trace;
+import java.util.List;
 
 /* loaded from: classes.dex */
 public abstract class TypefaceCompat {
@@ -17,6 +19,7 @@ public abstract class TypefaceCompat {
     private static final TypefaceCompatBaseImpl sTypefaceCompatImpl;
 
     static {
+        Trace.beginSection("TypefaceCompat static init");
         int i = Build.VERSION.SDK_INT;
         if (i >= 29) {
             sTypefaceCompatImpl = new TypefaceCompatApi29Impl();
@@ -30,6 +33,7 @@ public abstract class TypefaceCompat {
             sTypefaceCompatImpl = new TypefaceCompatApi21Impl();
         }
         sTypefaceCache = new LruCache(16);
+        Trace.endSection();
     }
 
     public static Typeface findFromCache(Resources resources, int i, String str, int i2, int i3) {
@@ -63,7 +67,7 @@ public abstract class TypefaceCompat {
                 }
                 return systemFontFamily;
             }
-            createFromFontFamilyFilesResourceEntry = FontsContractCompat.requestFont(context, providerResourceEntry.getRequest(), i3, !z ? fontCallback != null : providerResourceEntry.getFetchStrategy() != 0, z ? providerResourceEntry.getTimeout() : -1, ResourcesCompat.FontCallback.getHandler(handler), new ResourcesCallbackAdapter(fontCallback));
+            createFromFontFamilyFilesResourceEntry = FontsContractCompat.requestFont(context, providerResourceEntry.getFallbackRequest() != null ? TypefaceCompat$$ExternalSyntheticBackport2.m(new Object[]{providerResourceEntry.getRequest(), providerResourceEntry.getFallbackRequest()}) : TypefaceCompat$$ExternalSyntheticBackport2.m(new Object[]{providerResourceEntry.getRequest()}), i3, !z ? fontCallback != null : providerResourceEntry.getFetchStrategy() != 0, z ? providerResourceEntry.getTimeout() : -1, ResourcesCompat.FontCallback.getHandler(handler), new ResourcesCallbackAdapter(fontCallback));
         } else {
             createFromFontFamilyFilesResourceEntry = sTypefaceCompatImpl.createFromFontFamilyFilesResourceEntry(context, (FontResourcesParserCompat.FontFamilyFilesResourceEntry) familyResourceEntry, resources, i3);
             if (fontCallback != null) {
@@ -89,7 +93,21 @@ public abstract class TypefaceCompat {
     }
 
     public static Typeface createFromFontInfo(Context context, CancellationSignal cancellationSignal, FontsContractCompat.FontInfo[] fontInfoArr, int i) {
-        return sTypefaceCompatImpl.createFromFontInfo(context, cancellationSignal, fontInfoArr, i);
+        Trace.beginSection("TypefaceCompat.createFromFontInfo");
+        try {
+            return sTypefaceCompatImpl.createFromFontInfo(context, cancellationSignal, fontInfoArr, i);
+        } finally {
+            Trace.endSection();
+        }
+    }
+
+    public static Typeface createFromFontInfoWithFallback(Context context, CancellationSignal cancellationSignal, List list, int i) {
+        Trace.beginSection("TypefaceCompat.createFromFontInfoWithFallback");
+        try {
+            return sTypefaceCompatImpl.createFromFontInfoWithFallback(context, cancellationSignal, list, i);
+        } finally {
+            Trace.endSection();
+        }
     }
 
     public static Typeface create(Context context, Typeface typeface, int i) {

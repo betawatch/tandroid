@@ -396,7 +396,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (i4 == 1) {
                     LoginActivity.this.onDoneButtonPressed();
                 } else if (i4 == -1 && LoginActivity.this.onBackPressed()) {
-                    LoginActivity.this.lambda$onBackPressed$355();
+                    LoginActivity.this.lambda$onBackPressed$341();
                 }
             }
         });
@@ -491,7 +491,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         CustomPhoneKeyboardView customPhoneKeyboardView = new CustomPhoneKeyboardView(context);
         this.keyboardView = customPhoneKeyboardView;
         customPhoneKeyboardView.setViewToFindFocus(this.slideViewsContainer);
-        this.keyboardLinearLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.updateStories));
+        this.keyboardLinearLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.starUserGiftsLoaded));
         this.views[0] = new PhoneView(context);
         this.views[1] = new LoginActivitySmsView(context, 1);
         this.views[2] = new LoginActivitySmsView(context, 2);
@@ -816,7 +816,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$3(View view) {
         if (onBackPressed()) {
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
         }
     }
 
@@ -1446,7 +1446,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             timeInterpolator = null;
         } else if (z) {
             timeInterpolator = AndroidUtilities.decelerateInterpolator;
-            i3 = NotificationCenter.userIsPremiumBlockedUpadted;
+            i3 = NotificationCenter.channelRecommendationsLoaded;
         } else {
             timeInterpolator = AndroidUtilities.accelerateInterpolator;
         }
@@ -1817,7 +1817,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     }
                 });
                 this.pendingSwitchingAccount = false;
-                lambda$onBackPressed$355();
+                lambda$onBackPressed$341();
                 return;
             }
             if (z && z2) {
@@ -3780,7 +3780,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (UserConfig.selectedAccount != i) {
                 ((LaunchActivity) LoginActivity.this.getParentActivity()).switchToAccount(i, false);
             }
-            LoginActivity.this.lambda$onBackPressed$355();
+            LoginActivity.this.lambda$onBackPressed$341();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -5897,7 +5897,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$22(DialogInterface dialogInterface) {
-            LoginActivity.this.lambda$onBackPressed$355();
+            LoginActivity.this.lambda$onBackPressed$341();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -5969,7 +5969,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$26(DialogInterface dialogInterface) {
-            LoginActivity.this.lambda$onBackPressed$355();
+            LoginActivity.this.lambda$onBackPressed$341();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -6260,7 +6260,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         @Override // org.telegram.ui.Components.SlideView
         public boolean onBackPressed(boolean z) {
             if (LoginActivity.this.activityMode != 0) {
-                LoginActivity.this.lambda$onBackPressed$355();
+                LoginActivity.this.lambda$onBackPressed$341();
                 return false;
             }
             int i = this.prevType;
@@ -7593,7 +7593,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (LoginActivity.this.getParentActivity() == null || LoginActivity.this.getParentActivity().isFinishing()) {
                 return;
             }
-            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.userIsPremiumBlockedUpadted);
+            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.channelRecommendationsLoaded);
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -7731,7 +7731,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$5(TLObject tLObject, Bundle bundle, TLRPC.TL_error tL_error, TL_account.verifyEmail verifyemail) {
             if ((tLObject instanceof TL_account.TL_emailVerified) && LoginActivity.this.activityMode == 3) {
-                LoginActivity.this.lambda$onBackPressed$355();
+                LoginActivity.this.lambda$onBackPressed$341();
                 LoginActivity.this.emailChangeFinishCallback.run();
                 return;
             }
@@ -8292,7 +8292,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (LoginActivity.this.getParentActivity() == null) {
                 return;
             }
-            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.userIsPremiumBlockedUpadted);
+            LoginActivity.this.getParentActivity().startActivityForResult(googleSignInClient.getSignInIntent(), NotificationCenter.channelRecommendationsLoaded);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -8897,7 +8897,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$18(TLObject tLObject, Bundle bundle) {
             if ((tLObject instanceof TL_account.TL_emailVerified) && LoginActivity.this.activityMode == 3) {
-                LoginActivity.this.lambda$onBackPressed$355();
+                LoginActivity.this.lambda$onBackPressed$341();
                 LoginActivity.this.emailChangeFinishCallback.run();
             } else if (tLObject instanceof TL_account.TL_emailVerifiedLogin) {
                 LoginActivity.this.lambda$resendCodeFromSafetyNet$19(bundle, ((TL_account.TL_emailVerifiedLogin) tLObject).sent_code);
@@ -12853,7 +12853,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             FrameLayout frameLayout = new FrameLayout(context);
             frameLayout.setClipChildren(false);
             frameLayout.setClipToPadding(false);
-            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.userIsPremiumBlockedUpadted));
+            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.channelRecommendationsLoaded));
             StarParticlesView starParticlesView = new StarParticlesView(context) { // from class: org.telegram.ui.LoginActivity.LoginPayView.1
                 @Override // org.telegram.ui.Components.Premium.StarParticlesView, android.view.View
                 protected void onMeasure(int i, int i2) {
@@ -12880,7 +12880,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             };
             this.starParticlesView = starParticlesView;
-            frameLayout.addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.userIsPremiumBlockedUpadted, 119));
+            frameLayout.addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 119));
             ImageView imageView = new ImageView(context);
             this.optionsButton = imageView;
             imageView.setImageResource(org.telegram.messenger.R.drawable.ic_ab_other);
@@ -13292,7 +13292,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$setParams$3(PaymentFormActivity paymentFormActivity, TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, TLRPC.PaymentForm paymentForm) {
-            paymentFormActivity.lambda$onBackPressed$355();
+            paymentFormActivity.lambda$onBackPressed$341();
             startPoll(tL_inputStorePaymentAuthCode.phone_number, tL_inputStorePaymentAuthCode.phone_code_hash, paymentForm.form_id);
         }
 

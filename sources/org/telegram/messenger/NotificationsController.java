@@ -6556,12 +6556,12 @@ public class NotificationsController extends BaseController {
         return Build.VERSION.SDK_INT < 29 || !SharedConfig.chatBubbles;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00f5 A[Catch: Exception -> 0x0067, TryCatch #0 {Exception -> 0x0067, blocks: (B:8:0x0021, B:11:0x0063, B:12:0x006e, B:15:0x007e, B:17:0x00a7, B:19:0x00b7, B:20:0x00c1, B:22:0x00f5, B:23:0x00fd, B:25:0x0106, B:27:0x0127, B:30:0x013e, B:34:0x0155, B:36:0x010d, B:38:0x0113, B:39:0x0118, B:40:0x0116, B:41:0x011d, B:42:0x00f9, B:44:0x007a, B:45:0x006a), top: B:7:0x0021 }] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0106 A[Catch: Exception -> 0x0067, TryCatch #0 {Exception -> 0x0067, blocks: (B:8:0x0021, B:11:0x0063, B:12:0x006e, B:15:0x007e, B:17:0x00a7, B:19:0x00b7, B:20:0x00c1, B:22:0x00f5, B:23:0x00fd, B:25:0x0106, B:27:0x0127, B:30:0x013e, B:34:0x0155, B:36:0x010d, B:38:0x0113, B:39:0x0118, B:40:0x0116, B:41:0x011d, B:42:0x00f9, B:44:0x007a, B:45:0x006a), top: B:7:0x0021 }] */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0127 A[Catch: Exception -> 0x0067, TryCatch #0 {Exception -> 0x0067, blocks: (B:8:0x0021, B:11:0x0063, B:12:0x006e, B:15:0x007e, B:17:0x00a7, B:19:0x00b7, B:20:0x00c1, B:22:0x00f5, B:23:0x00fd, B:25:0x0106, B:27:0x0127, B:30:0x013e, B:34:0x0155, B:36:0x010d, B:38:0x0113, B:39:0x0118, B:40:0x0116, B:41:0x011d, B:42:0x00f9, B:44:0x007a, B:45:0x006a), top: B:7:0x0021 }] */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0155 A[Catch: Exception -> 0x0067, TRY_LEAVE, TryCatch #0 {Exception -> 0x0067, blocks: (B:8:0x0021, B:11:0x0063, B:12:0x006e, B:15:0x007e, B:17:0x00a7, B:19:0x00b7, B:20:0x00c1, B:22:0x00f5, B:23:0x00fd, B:25:0x0106, B:27:0x0127, B:30:0x013e, B:34:0x0155, B:36:0x010d, B:38:0x0113, B:39:0x0118, B:40:0x0116, B:41:0x011d, B:42:0x00f9, B:44:0x007a, B:45:0x006a), top: B:7:0x0021 }] */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x010b  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00f9 A[Catch: Exception -> 0x0067, TryCatch #0 {Exception -> 0x0067, blocks: (B:8:0x0021, B:11:0x0063, B:12:0x006e, B:15:0x007e, B:17:0x00a7, B:19:0x00b7, B:20:0x00c1, B:22:0x00f5, B:23:0x00fd, B:25:0x0106, B:27:0x0127, B:30:0x013e, B:34:0x0155, B:36:0x010d, B:38:0x0113, B:39:0x0118, B:40:0x0116, B:41:0x011d, B:42:0x00f9, B:44:0x007a, B:45:0x006a), top: B:7:0x0021 }] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00f4 A[Catch: Exception -> 0x0066, TryCatch #0 {Exception -> 0x0066, blocks: (B:8:0x0021, B:11:0x0062, B:12:0x006d, B:15:0x007d, B:17:0x00a6, B:19:0x00b6, B:20:0x00c0, B:22:0x00f4, B:23:0x00fc, B:25:0x0105, B:27:0x0126, B:30:0x013d, B:34:0x0154, B:36:0x010c, B:38:0x0112, B:39:0x0117, B:40:0x0115, B:41:0x011c, B:42:0x00f8, B:44:0x0079, B:45:0x0069), top: B:7:0x0021 }] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0105 A[Catch: Exception -> 0x0066, TryCatch #0 {Exception -> 0x0066, blocks: (B:8:0x0021, B:11:0x0062, B:12:0x006d, B:15:0x007d, B:17:0x00a6, B:19:0x00b6, B:20:0x00c0, B:22:0x00f4, B:23:0x00fc, B:25:0x0105, B:27:0x0126, B:30:0x013d, B:34:0x0154, B:36:0x010c, B:38:0x0112, B:39:0x0117, B:40:0x0115, B:41:0x011c, B:42:0x00f8, B:44:0x0079, B:45:0x0069), top: B:7:0x0021 }] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0126 A[Catch: Exception -> 0x0066, TryCatch #0 {Exception -> 0x0066, blocks: (B:8:0x0021, B:11:0x0062, B:12:0x006d, B:15:0x007d, B:17:0x00a6, B:19:0x00b6, B:20:0x00c0, B:22:0x00f4, B:23:0x00fc, B:25:0x0105, B:27:0x0126, B:30:0x013d, B:34:0x0154, B:36:0x010c, B:38:0x0112, B:39:0x0117, B:40:0x0115, B:41:0x011c, B:42:0x00f8, B:44:0x0079, B:45:0x0069), top: B:7:0x0021 }] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0154 A[Catch: Exception -> 0x0066, TRY_LEAVE, TryCatch #0 {Exception -> 0x0066, blocks: (B:8:0x0021, B:11:0x0062, B:12:0x006d, B:15:0x007d, B:17:0x00a6, B:19:0x00b6, B:20:0x00c0, B:22:0x00f4, B:23:0x00fc, B:25:0x0105, B:27:0x0126, B:30:0x013d, B:34:0x0154, B:36:0x010c, B:38:0x0112, B:39:0x0117, B:40:0x0115, B:41:0x011c, B:42:0x00f8, B:44:0x0079, B:45:0x0069), top: B:7:0x0021 }] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00f8 A[Catch: Exception -> 0x0066, TryCatch #0 {Exception -> 0x0066, blocks: (B:8:0x0021, B:11:0x0062, B:12:0x006d, B:15:0x007d, B:17:0x00a6, B:19:0x00b6, B:20:0x00c0, B:22:0x00f4, B:23:0x00fc, B:25:0x0105, B:27:0x0126, B:30:0x013d, B:34:0x0154, B:36:0x010c, B:38:0x0112, B:39:0x0117, B:40:0x0115, B:41:0x011c, B:42:0x00f8, B:44:0x0079, B:45:0x0069), top: B:7:0x0021 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -7933,10 +7933,10 @@ public class NotificationsController extends BaseController {
                                                 z9 = z8;
                                                 sb4.append("smart_delay_");
                                                 sb4.append(j6);
-                                                i20 = sharedPreferences3.getInt(sb4.toString(), NotificationCenter.dialogFiltersUpdated);
+                                                i20 = sharedPreferences3.getInt(sb4.toString(), NotificationCenter.newEmojiSuggestionsAvailable);
                                             } else {
                                                 z9 = z8;
-                                                i20 = NotificationCenter.dialogFiltersUpdated;
+                                                i20 = NotificationCenter.newEmojiSuggestionsAvailable;
                                                 i21 = 2;
                                             }
                                             if (i21 != 0) {

@@ -23,6 +23,13 @@ public abstract /* synthetic */ class JobKt__JobKt {
         return job.invokeOnCompletion(new DisposeOnCompletion(disposableHandle));
     }
 
+    public static /* synthetic */ void cancel$default(CoroutineContext coroutineContext, CancellationException cancellationException, int i, Object obj) {
+        if ((i & 1) != 0) {
+            cancellationException = null;
+        }
+        JobKt.cancel(coroutineContext, cancellationException);
+    }
+
     public static final void cancel(CoroutineContext coroutineContext, CancellationException cancellationException) {
         Job job = (Job) coroutineContext.get(Job.Key);
         if (job != null) {

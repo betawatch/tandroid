@@ -1453,13 +1453,13 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.executeFast("CREATE TABLE profile_stories_albums (dialog_id INTEGER, album_id INTEGER, order_index INTEGER, data BLOB, PRIMARY KEY(dialog_id, album_id));").stepThis().dispose();
             sQLiteDatabase.executeFast("CREATE TABLE profile_stories_albums_links (dialog_id INTEGER, album_id INTEGER, story_id INTEGER, order_index INTEGER, PRIMARY KEY (dialog_id, album_id, story_id));").stepThis().dispose();
             sQLiteDatabase.executeFast("PRAGMA user_version = 166").stepThis().dispose();
-            i7 = NotificationCenter.groupCallSpeakingUsersUpdated;
+            i7 = NotificationCenter.storyGroupCallUpdated;
         }
         if (i7 == 166) {
             sQLiteDatabase.executeFast("DROP TABLE profile_stories").stepThis().dispose();
             sQLiteDatabase.executeFast("CREATE TABLE profile_stories (dialog_id INTEGER, story_id INTEGER, data BLOB, type INTEGER, seen INTEGER, pin INTEGER, PRIMARY KEY(dialog_id, story_id, type));").stepThis().dispose();
             sQLiteDatabase.executeFast("PRAGMA user_version = 167").stepThis().dispose();
-            i7 = NotificationCenter.groupCallScreencastStateChanged;
+            i7 = NotificationCenter.groupCallSpeakingUsersUpdated;
         }
         if (i7 != 167) {
             return i7;

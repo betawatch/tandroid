@@ -16,6 +16,7 @@ import android.view.WindowInsets;
 import android.view.WindowInsetsAnimation;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
+import androidx.core.view.WindowInsetsAnimationCompat$Impl30$ProxyCallback$$ExternalSyntheticApiModelOutline0;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.ChatListItemAnimator;
 import java.util.ArrayList;
@@ -84,7 +85,7 @@ public abstract class AdjustPanLayoutHelper {
         }
         if (this.enabled) {
             startTransition(i, i2, z);
-            this.animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.AdjustPanLayoutHelper$$ExternalSyntheticLambda2
+            this.animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.AdjustPanLayoutHelper$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     AdjustPanLayoutHelper.this.lambda$animateHeight$0(valueAnimator);
@@ -313,7 +314,7 @@ public abstract class AdjustPanLayoutHelper {
         this.enabled = true;
         this.useInsetsAnimator = z;
         this.parent = view;
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.AdjustPanLayoutHelper$$ExternalSyntheticLambda1
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.AdjustPanLayoutHelper$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 AdjustPanLayoutHelper.this.onAttach();
@@ -427,7 +428,7 @@ public abstract class AdjustPanLayoutHelper {
                             windowInsetsAnimation = null;
                             break;
                         }
-                        windowInsetsAnimation = AdjustPanLayoutHelper$4$$ExternalSyntheticApiModelOutline0.m(it.next());
+                        windowInsetsAnimation = WindowInsetsAnimationCompat$Impl30$ProxyCallback$$ExternalSyntheticApiModelOutline0.m(it.next());
                         typeMask = windowInsetsAnimation.getTypeMask();
                         if ((typeMask & WindowInsetsCompat.Type.ime()) != 0) {
                             break;

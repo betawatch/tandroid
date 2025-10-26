@@ -1217,8 +1217,8 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
 
     View findOneVisibleChild(int i, int i2, boolean z, boolean z2) {
         ensureLayoutState();
-        int i3 = NotificationCenter.onReceivedChannelDifference;
-        int i4 = z ? 24579 : NotificationCenter.onReceivedChannelDifference;
+        int i3 = NotificationCenter.uploadStoryEnd;
+        int i4 = z ? 24579 : NotificationCenter.uploadStoryEnd;
         if (!z2) {
             i3 = 0;
         }

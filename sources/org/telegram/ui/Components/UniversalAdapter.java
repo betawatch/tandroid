@@ -685,7 +685,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 if (itemViewType == 7 || itemViewType == 8) {
                     TextInfoPrivacyCell textInfoPrivacyCell2 = (TextInfoPrivacyCell) viewHolder.itemView;
                     if (TextUtils.isEmpty(item.text)) {
-                        textInfoPrivacyCell2.setFixedSize(itemViewType == 8 ? NotificationCenter.factCheckLoaded : 12);
+                        textInfoPrivacyCell2.setFixedSize(itemViewType == 8 ? NotificationCenter.starBalanceUpdated : 12);
                         textInfoPrivacyCell2.setText("");
                     } else {
                         textInfoPrivacyCell2.setFixedSize(0);

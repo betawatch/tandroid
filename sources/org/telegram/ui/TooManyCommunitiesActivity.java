@@ -136,7 +136,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    TooManyCommunitiesActivity.this.lambda$onBackPressed$355();
+                    TooManyCommunitiesActivity.this.lambda$onBackPressed$341();
                 }
             }
         });
@@ -288,7 +288,7 @@ public class TooManyCommunitiesActivity extends BaseFragment {
             getMessagesController().putChat(chat, false);
             getMessagesController().deleteParticipantFromChat(chat.id, user);
         }
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     private void onSelectedCountChange() {

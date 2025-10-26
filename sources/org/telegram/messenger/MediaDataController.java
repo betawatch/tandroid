@@ -2816,7 +2816,7 @@ public class MediaDataController extends BaseController {
     }
 
     public static long calcDocumentsHash(ArrayList<TLRPC.Document> arrayList) {
-        return calcDocumentsHash(arrayList, NotificationCenter.userIsPremiumBlockedUpadted);
+        return calcDocumentsHash(arrayList, NotificationCenter.channelRecommendationsLoaded);
     }
 
     public static long calcDocumentsHash(ArrayList<TLRPC.Document> arrayList, int i) {
@@ -3090,7 +3090,7 @@ public class MediaDataController extends BaseController {
                         i3 = getMessagesController().maxRecentStickersCount;
                     }
                 }
-                i3 = NotificationCenter.userIsPremiumBlockedUpadted;
+                i3 = NotificationCenter.channelRecommendationsLoaded;
             }
             database.beginTransaction();
             SQLitePreparedStatement executeFast = database.executeFast("REPLACE INTO web_recent_v3 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -5765,7 +5765,7 @@ public class MediaDataController extends BaseController {
                     ArrayList<MessageObject> arrayList2 = this.searchLocalResultMessages;
                     j8 = j6;
                     j9 = 0;
-                    messagesStorage.searchSavedByTag(tLReaction, j10, str2, NotificationCenter.billingProductDetailsUpdated, arrayList2 == null ? 0 : arrayList2.size(), new Utilities.Callback4() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda117
+                    messagesStorage.searchSavedByTag(tLReaction, j10, str2, NotificationCenter.premiumPromoUpdated, arrayList2 == null ? 0 : arrayList2.size(), new Utilities.Callback4() { // from class: org.telegram.messenger.MediaDataController$$ExternalSyntheticLambda117
                         @Override // org.telegram.messenger.Utilities.Callback4
                         public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
                             MediaDataController.this.lambda$searchMessagesInChat$122(i7, savedTagCount, i, j, (ArrayList) obj, (ArrayList) obj2, (ArrayList) obj3, (ArrayList) obj4);
@@ -8549,10 +8549,10 @@ public class MediaDataController extends BaseController {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00ca A[Catch: Exception -> 0x003a, TryCatch #0 {Exception -> 0x003a, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000f, B:7:0x003d, B:9:0x0041, B:10:0x0055, B:12:0x005e, B:16:0x0071, B:18:0x0078, B:21:0x008b, B:27:0x00ca, B:29:0x00ce, B:30:0x00e3, B:32:0x00e7, B:33:0x00f0, B:35:0x00ec, B:36:0x00d7, B:38:0x00db, B:40:0x00e1, B:41:0x009a, B:43:0x00a0, B:44:0x00b0, B:46:0x00b6), top: B:1:0x0000 }] */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00e7 A[Catch: Exception -> 0x003a, TryCatch #0 {Exception -> 0x003a, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000f, B:7:0x003d, B:9:0x0041, B:10:0x0055, B:12:0x005e, B:16:0x0071, B:18:0x0078, B:21:0x008b, B:27:0x00ca, B:29:0x00ce, B:30:0x00e3, B:32:0x00e7, B:33:0x00f0, B:35:0x00ec, B:36:0x00d7, B:38:0x00db, B:40:0x00e1, B:41:0x009a, B:43:0x00a0, B:44:0x00b0, B:46:0x00b6), top: B:1:0x0000 }] */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00ec A[Catch: Exception -> 0x003a, TryCatch #0 {Exception -> 0x003a, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000f, B:7:0x003d, B:9:0x0041, B:10:0x0055, B:12:0x005e, B:16:0x0071, B:18:0x0078, B:21:0x008b, B:27:0x00ca, B:29:0x00ce, B:30:0x00e3, B:32:0x00e7, B:33:0x00f0, B:35:0x00ec, B:36:0x00d7, B:38:0x00db, B:40:0x00e1, B:41:0x009a, B:43:0x00a0, B:44:0x00b0, B:46:0x00b6), top: B:1:0x0000 }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00e1 A[Catch: Exception -> 0x003a, TryCatch #0 {Exception -> 0x003a, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000f, B:7:0x003d, B:9:0x0041, B:10:0x0055, B:12:0x005e, B:16:0x0071, B:18:0x0078, B:21:0x008b, B:27:0x00ca, B:29:0x00ce, B:30:0x00e3, B:32:0x00e7, B:33:0x00f0, B:35:0x00ec, B:36:0x00d7, B:38:0x00db, B:40:0x00e1, B:41:0x009a, B:43:0x00a0, B:44:0x00b0, B:46:0x00b6), top: B:1:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00c9 A[Catch: Exception -> 0x0039, TryCatch #0 {Exception -> 0x0039, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000f, B:7:0x003c, B:9:0x0040, B:10:0x0054, B:12:0x005d, B:16:0x0070, B:18:0x0077, B:21:0x008a, B:27:0x00c9, B:29:0x00cd, B:30:0x00e2, B:32:0x00e6, B:33:0x00ef, B:35:0x00eb, B:36:0x00d6, B:38:0x00da, B:40:0x00e0, B:41:0x0099, B:43:0x009f, B:44:0x00af, B:46:0x00b5), top: B:1:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00e6 A[Catch: Exception -> 0x0039, TryCatch #0 {Exception -> 0x0039, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000f, B:7:0x003c, B:9:0x0040, B:10:0x0054, B:12:0x005d, B:16:0x0070, B:18:0x0077, B:21:0x008a, B:27:0x00c9, B:29:0x00cd, B:30:0x00e2, B:32:0x00e6, B:33:0x00ef, B:35:0x00eb, B:36:0x00d6, B:38:0x00da, B:40:0x00e0, B:41:0x0099, B:43:0x009f, B:44:0x00af, B:46:0x00b5), top: B:1:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00eb A[Catch: Exception -> 0x0039, TryCatch #0 {Exception -> 0x0039, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000f, B:7:0x003c, B:9:0x0040, B:10:0x0054, B:12:0x005d, B:16:0x0070, B:18:0x0077, B:21:0x008a, B:27:0x00c9, B:29:0x00cd, B:30:0x00e2, B:32:0x00e6, B:33:0x00ef, B:35:0x00eb, B:36:0x00d6, B:38:0x00da, B:40:0x00e0, B:41:0x0099, B:43:0x009f, B:44:0x00af, B:46:0x00b5), top: B:1:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00e0 A[Catch: Exception -> 0x0039, TryCatch #0 {Exception -> 0x0039, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000f, B:7:0x003c, B:9:0x0040, B:10:0x0054, B:12:0x005d, B:16:0x0070, B:18:0x0077, B:21:0x008a, B:27:0x00c9, B:29:0x00cd, B:30:0x00e2, B:32:0x00e6, B:33:0x00ef, B:35:0x00eb, B:36:0x00d6, B:38:0x00da, B:40:0x00e0, B:41:0x0099, B:43:0x009f, B:44:0x00af, B:46:0x00b5), top: B:1:0x0000 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

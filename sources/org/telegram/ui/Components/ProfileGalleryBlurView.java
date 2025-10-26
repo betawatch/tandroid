@@ -282,7 +282,7 @@ public class ProfileGalleryBlurView extends View {
                     }
                 }
                 Bitmap bitmap = blurBitmapHolder2.bitmap;
-                Utilities.stackBlurBitmap(bitmap, Math.max(10, bitmap.getWidth() / NotificationCenter.dialogFiltersUpdated));
+                Utilities.stackBlurBitmap(bitmap, Math.max(10, bitmap.getWidth() / NotificationCenter.newEmojiSuggestionsAvailable));
                 synchronized (this.lock) {
                     blurBitmapHolder3.clear();
                     blurBitmapHolder3.canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
@@ -497,7 +497,7 @@ public class ProfileGalleryBlurView extends View {
                     this.paints[0].setAlpha((int) (f4 * 255.0f));
                     float f8 = this.frameHeight;
                     canvas.drawRect(0.0f, f8 * f3, this.frameWidth, f8, this.paints[0]);
-                    this.paints[0].setAlpha(NotificationCenter.didApplyNewTheme);
+                    this.paints[0].setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                     canvas.restore();
                 }
                 if (this.offset != 0 && this.paints[1].getShader() != null) {
@@ -511,7 +511,7 @@ public class ProfileGalleryBlurView extends View {
                     this.paints[1].setAlpha((int) (f4 * 255.0f));
                     float f10 = this.frameHeight;
                     canvas.drawRect(0.0f, f10 * f3, this.frameWidth, f10, this.paints[1]);
-                    this.paints[1].setAlpha(NotificationCenter.didApplyNewTheme);
+                    this.paints[1].setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                     canvas.restore();
                 }
             } catch (Throwable th) {

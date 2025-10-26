@@ -34,8 +34,13 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.core.graphics.ColorUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import me.vkryl.android.animator.ListAnimator;
+import me.vkryl.android.animator.ReplaceAnimator;
+import me.vkryl.core.lambda.Destroyable;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
@@ -53,6 +58,8 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.GroupCallMessage;
+import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
@@ -68,6 +75,7 @@ import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.AudioPlayerAlert;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.SharingLocationsAlert;
+import org.telegram.ui.Components.conference.message.GroupCallMessageCell;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
 import org.telegram.ui.Components.voip.VoIPHelper;
 import org.telegram.ui.DialogsActivity;
@@ -76,13 +84,14 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.LocationActivity;
 
 /* loaded from: classes3.dex */
-public class FragmentContextView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener {
+public class FragmentContextView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener, GroupCallMessagesController.CallMessageListener {
     private static final float[] speeds = {0.5f, 1.0f, 1.2f, 1.5f, 1.7f, 2.0f};
     private final int account;
     private FragmentContextView additionalContextView;
     private AnimatorSet animatorSet;
     private View applyingView;
     private AvatarsImageView avatars;
+    private final ReplaceAnimator callMessagesAnimator;
     private ChatActivityInterface chatActivity;
     private boolean checkCallAfterAnimation;
     private boolean checkImportAfterAnimation;
@@ -103,6 +112,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
     private Paint gradientPaint;
     private TextPaint gradientTextPaint;
     private int gradientWidth;
+    private int groupCallMessageCounter;
+    private FrameLayout groupCallMessagesContainer;
     private RLottieImageView importingImageView;
     private boolean isLocation;
     private boolean isMusic;
@@ -263,6 +274,38 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.notificationsLocker = new AnimationNotificationsLocker();
         this.notificationsLocker2 = new AnimationNotificationsLocker(new int[]{NotificationCenter.messagesDidLoad});
         this.toggleGroupCallStartSubscriptionReqId = 0;
+        this.callMessagesAnimator = new ReplaceAnimator(new ReplaceAnimator.Callback() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda0
+            @Override // me.vkryl.android.animator.ReplaceAnimator.Callback
+            public /* synthetic */ boolean hasChanges(ReplaceAnimator replaceAnimator) {
+                return ReplaceAnimator.Callback.-CC.$default$hasChanges(this, replaceAnimator);
+            }
+
+            @Override // me.vkryl.android.animator.ReplaceAnimator.Callback
+            public /* synthetic */ boolean onApplyMetadataAnimation(ReplaceAnimator replaceAnimator, float f) {
+                return ReplaceAnimator.Callback.-CC.$default$onApplyMetadataAnimation(this, replaceAnimator, f);
+            }
+
+            @Override // me.vkryl.android.animator.ReplaceAnimator.Callback
+            public /* synthetic */ void onFinishMetadataAnimation(ReplaceAnimator replaceAnimator, boolean z3) {
+                ReplaceAnimator.Callback.-CC.$default$onFinishMetadataAnimation(this, replaceAnimator, z3);
+            }
+
+            @Override // me.vkryl.android.animator.ReplaceAnimator.Callback
+            public /* synthetic */ void onForceApplyChanges(ReplaceAnimator replaceAnimator) {
+                ReplaceAnimator.Callback.-CC.$default$onForceApplyChanges(this, replaceAnimator);
+            }
+
+            @Override // me.vkryl.android.animator.ReplaceAnimator.Callback
+            public final void onItemChanged(ReplaceAnimator replaceAnimator) {
+                FragmentContextView.this.onItemChanged(replaceAnimator);
+            }
+
+            @Override // me.vkryl.android.animator.ReplaceAnimator.Callback
+            public /* synthetic */ void onPrepareMetadataAnimation(ReplaceAnimator replaceAnimator) {
+                ReplaceAnimator.Callback.-CC.$default$onPrepareMetadataAnimation(this, replaceAnimator);
+            }
+        }, CubicBezierInterpolator.EASE_OUT_QUINT, 450L);
+        this.groupCallMessageCounter = 0;
         this.resourcesProvider = resourcesProvider;
         this.isSideMenued = z2;
         this.fragment = baseFragment;
@@ -407,7 +450,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         imageView3.setImageDrawable(playPauseDrawable);
         this.playButton.setBackground(Theme.createSelectorDrawable(getThemedColor(i) & 436207615, 1, AndroidUtilities.dp(14.0f)));
         addView(this.playButton, LayoutHelper.createFrame(36, 36, 51));
-        this.playButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda5
+        this.playButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 FragmentContextView.this.lambda$checkCreateView$0(view3);
@@ -522,7 +565,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.joinButton.setGravity(17);
         this.joinButton.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
         addView(this.joinButton, LayoutHelper.createFrame(-2, 28.0f, 53, 0.0f, 10.0f, 14.0f, 0.0f));
-        this.joinButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda6
+        this.joinButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 FragmentContextView.this.lambda$checkCreateView$1(view3);
@@ -541,7 +584,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.silentButton.addView(this.silentButtonImage, LayoutHelper.createFrame(20, 20, 17));
         this.silentButton.setBackground(Theme.createSelectorDrawable(getThemedColor(i2) & 436207615, 1, AndroidUtilities.dp(14.0f)));
         this.silentButton.setContentDescription(LocaleController.getString(R.string.Unmute));
-        this.silentButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda7
+        this.silentButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 FragmentContextView.lambda$checkCreateView$2(view3);
@@ -555,7 +598,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         AvatarsImageView avatarsImageView = new AvatarsImageView(context, false);
         this.avatars = avatarsImageView;
         avatarsImageView.setAvatarsTextSize(AndroidUtilities.dp(21.0f));
-        this.avatars.setDelegate(new Runnable() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda8
+        this.avatars.setDelegate(new Runnable() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 FragmentContextView.this.lambda$checkCreateView$3();
@@ -573,7 +616,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.muteButton.setScaleType(scaleType);
         this.muteButton.setVisibility(8);
         addView(this.muteButton, LayoutHelper.createFrame(36, 36.0f, 53, 0.0f, 0.0f, 2.0f, 0.0f));
-        this.muteButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda9
+        this.muteButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 FragmentContextView.this.lambda$checkCreateView$4(view3);
@@ -586,13 +629,21 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.closeButton.setBackground(Theme.createSelectorDrawable(getThemedColor(i2) & 436207615, 1, AndroidUtilities.dp(14.0f)));
         this.closeButton.setScaleType(scaleType);
         addView(this.closeButton, LayoutHelper.createFrame(36, 36.0f, 53, 0.0f, 0.0f, 2.0f, 0.0f));
-        this.closeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda10
+        this.closeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 FragmentContextView.this.lambda$checkCreateView$6(view3);
             }
         });
-        setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda11
+        FrameLayout frameLayout = new FrameLayout(getContext()) { // from class: org.telegram.ui.Components.FragmentContextView.8
+            @Override // android.view.ViewGroup, android.view.View
+            public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+                return false;
+            }
+        };
+        this.groupCallMessagesContainer = frameLayout;
+        addView(frameLayout, LayoutHelper.createFrame(-1, -2.0f, 48, 96.0f, 3.0f, 96.0f, 0.0f));
+        setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 FragmentContextView.this.lambda$checkCreateView$8(view3);
@@ -789,7 +840,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                     builder.setMessage(LocaleController.getString(R.string.AreYouSure));
                 }
             }
-            builder.setPositiveButton(LocaleController.getString(R.string.Stop), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda12
+            builder.setPositiveButton(LocaleController.getString(R.string.Stop), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda13
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     FragmentContextView.this.lambda$checkCreateView$5(alertDialog, i);
@@ -882,7 +933,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 openSharingLocation(LocationController.getInstance(i2).getSharingLocationInfo(j));
                 return;
             } else {
-                this.fragment.showDialog(new SharingLocationsAlert(getContext(), new SharingLocationsAlert.SharingLocationsAlertDelegate() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda13
+                this.fragment.showDialog(new SharingLocationsAlert(getContext(), new SharingLocationsAlert.SharingLocationsAlertDelegate() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda14
                     @Override // org.telegram.ui.Components.SharingLocationsAlert.SharingLocationsAlertDelegate
                     public final void didSelectLocation(LocationController.SharingLocationInfo sharingLocationInfo2) {
                         FragmentContextView.this.openSharingLocation(sharingLocationInfo2);
@@ -914,7 +965,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             return;
         }
         ImportingAlert importingAlert = new ImportingAlert(getContext(), null, (ChatActivity) this.fragment, this.resourcesProvider);
-        importingAlert.setOnHideListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda14
+        importingAlert.setOnHideListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda15
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 FragmentContextView.this.lambda$checkCreateView$7(dialogInterface);
@@ -941,7 +992,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.playbackSpeedButton.setTag(null);
         this.playbackSpeedButton.setShowSubmenuByMove(false);
         this.playbackSpeedButton.setContentDescription(LocaleController.getString(R.string.AccDescrPlayerSpeed));
-        this.playbackSpeedButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda0
+        this.playbackSpeedButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
                 FragmentContextView.this.lambda$createPlaybackSpeedButton$9(i);
@@ -956,7 +1007,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.speedSlider = speedSlider;
         speedSlider.setRoundRadiusDp(6.0f);
         this.speedSlider.setDrawShadow(true);
-        this.speedSlider.setOnValueChange(new Utilities.Callback2() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda1
+        this.speedSlider.setOnValueChange(new Utilities.Callback2() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 FragmentContextView.this.lambda$createPlaybackSpeedButton$10((Float) obj, (Boolean) obj2);
@@ -973,13 +1024,13 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         }
         this.playbackSpeedButton.setAdditionalXOffset(AndroidUtilities.dp(8.0f));
         addView(this.playbackSpeedButton, LayoutHelper.createFrame(36, 36.0f, 53, 0.0f, 0.0f, 36.0f, 0.0f));
-        this.playbackSpeedButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda2
+        this.playbackSpeedButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FragmentContextView.this.lambda$createPlaybackSpeedButton$11(fArr, view);
             }
         });
-        this.playbackSpeedButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda3
+        this.playbackSpeedButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda4
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
                 boolean lambda$createPlaybackSpeedButton$13;
@@ -1046,7 +1097,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         updatePlaybackButton(false);
         this.playbackSpeedButton.setDimMenu(0.3f);
         this.playbackSpeedButton.toggleSubMenu(this.speedSlider, null);
-        this.playbackSpeedButton.setOnMenuDismiss(new Utilities.Callback() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda15
+        this.playbackSpeedButton.setOnMenuDismiss(new Utilities.Callback() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda16
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 FragmentContextView.this.lambda$createPlaybackSpeedButton$12(playbackSpeed, (Boolean) obj);
@@ -1083,7 +1134,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         if (this.fragment == null || !(getParent() instanceof ViewGroup)) {
             return;
         }
-        HintView hintView = new HintView(getContext(), 6, true) { // from class: org.telegram.ui.Components.FragmentContextView.8
+        HintView hintView = new HintView(getContext(), 6, true) { // from class: org.telegram.ui.Components.FragmentContextView.9
             @Override // android.view.View
             public void setVisibility(int i) {
                 super.setVisibility(i);
@@ -1160,7 +1211,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         LocationActivity locationActivity = new LocationActivity(2);
         locationActivity.setMessageObject(sharingLocationInfo.messageObject);
         final long dialogId = sharingLocationInfo.messageObject.getDialogId();
-        locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda16
+        locationActivity.setDelegate(new LocationActivity.LocationActivityDelegate() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda17
             @Override // org.telegram.ui.LocationActivity.LocationActivityDelegate
             public final void didSelectLocation(TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j) {
                 FragmentContextView.lambda$openSharingLocation$14(LocationController.SharingLocationInfo.this, dialogId, messageMedia, i, z, i2, j);
@@ -1171,7 +1222,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$openSharingLocation$14(LocationController.SharingLocationInfo sharingLocationInfo, long j, TLRPC.MessageMedia messageMedia, int i, boolean z, int i2, long j2) {
-        SendMessagesHelper.getInstance(sharingLocationInfo.messageObject.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(messageMedia, j, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z, i2));
+        SendMessagesHelper.getInstance(sharingLocationInfo.messageObject.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(messageMedia, j, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z, i2, 0));
     }
 
     public float getTopPadding() {
@@ -1494,6 +1545,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 NotificationCenter.getInstance(i).removeObserver(this, NotificationCenter.groupCallUpdated);
                 NotificationCenter.getInstance(i).removeObserver(this, NotificationCenter.groupCallTypingsUpdated);
                 NotificationCenter.getInstance(i).removeObserver(this, NotificationCenter.historyImportProgressChanged);
+                GroupCallMessagesController.getInstance(i).unsubscribeFromCallMessages(0L, this);
             }
             NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.messagePlayingSpeedChanged);
             NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didStartedCall);
@@ -1531,6 +1583,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 NotificationCenter.getInstance(i).addObserver(this, NotificationCenter.groupCallUpdated);
                 NotificationCenter.getInstance(i).addObserver(this, NotificationCenter.groupCallTypingsUpdated);
                 NotificationCenter.getInstance(i).addObserver(this, NotificationCenter.historyImportProgressChanged);
+                GroupCallMessagesController.getInstance(i).subscribeToCallMessages(0L, this);
             }
             NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.messagePlayingSpeedChanged);
             NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didStartedCall);
@@ -1735,7 +1788,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 this.animatorSet = animatorSet2;
                 animatorSet2.playTogether(ObjectAnimator.ofFloat(this, "topPadding", 0.0f));
                 this.animatorSet.setDuration(200L);
-                this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.9
+                this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.10
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         if (FragmentContextView.this.animatorSet == null || !FragmentContextView.this.animatorSet.equals(animator)) {
@@ -1767,7 +1820,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 this.animatorSet = animatorSet4;
                 animatorSet4.playTogether(ObjectAnimator.ofFloat(this, "topPadding", AndroidUtilities.dp2(getStyleHeight())));
                 this.animatorSet.setDuration(200L);
-                this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.10
+                this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.11
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         if (FragmentContextView.this.animatorSet == null || !FragmentContextView.this.animatorSet.equals(animator)) {
@@ -1962,7 +2015,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 if (fragmentContextViewDelegate != null) {
                     fragmentContextViewDelegate.onAnimation(true, false);
                 }
-                this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.11
+                this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.12
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         FragmentContextView.this.notificationsLocker.unlock();
@@ -2031,7 +2084,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 }
                 this.animatorSet.playTogether(ObjectAnimator.ofFloat(this, "topPadding", AndroidUtilities.dp2(getStyleHeight())));
                 this.animatorSet.setDuration(200L);
-                this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.12
+                this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.13
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         FragmentContextView.this.notificationsLocker.unlock();
@@ -2159,7 +2212,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                     animatorSet2.playTogether(ObjectAnimator.ofFloat(this, "topPadding", 0.0f));
                     this.animatorSet.setDuration(220L);
                     this.animatorSet.setInterpolator(CubicBezierInterpolator.DEFAULT);
-                    this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.13
+                    this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.14
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             FragmentContextView.this.notificationsLocker.unlock();
@@ -2228,7 +2281,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                     }
                     this.animatorSet.playTogether(ObjectAnimator.ofFloat(this, "topPadding", AndroidUtilities.dp2(getStyleHeight())));
                     this.animatorSet.setDuration(200L);
-                    this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.14
+                    this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.15
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             FragmentContextView.this.notificationsLocker.unlock();
@@ -2324,7 +2377,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                             animatorSet2.playTogether(ObjectAnimator.ofFloat(this, "topPadding", 0.0f));
                             this.animatorSet.setDuration(220L);
                             this.animatorSet.setInterpolator(CubicBezierInterpolator.DEFAULT);
-                            this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.15
+                            this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.16
                                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                                 public void onAnimationEnd(Animator animator) {
                                     FragmentContextView.this.notificationsLocker.unlock();
@@ -2382,7 +2435,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                     animatorSet4.playTogether(ObjectAnimator.ofFloat(this, "topPadding", 0.0f));
                     this.animatorSet.setDuration(220L);
                     this.animatorSet.setInterpolator(CubicBezierInterpolator.DEFAULT);
-                    this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.16
+                    this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.17
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             FragmentContextView.this.notificationsLocker.unlock();
@@ -2481,7 +2534,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                     this.animatorSet.playTogether(ObjectAnimator.ofFloat(this, "topPadding", AndroidUtilities.dp2(getStyleHeight())));
                     this.animatorSet.setDuration(220L);
                     this.animatorSet.setInterpolator(CubicBezierInterpolator.DEFAULT);
-                    this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.17
+                    this.animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.FragmentContextView.18
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             FragmentContextView.this.notificationsLocker2.unlock();
@@ -2524,7 +2577,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         CellFlickerDrawable cellFlickerDrawable = this.joinButtonFlicker;
         if (cellFlickerDrawable != null && cellFlickerDrawable.getProgress() >= 1.0f) {
             this.flickOnAttach = false;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda4
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.FragmentContextView$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
                     FragmentContextView.this.lambda$startJoinFlickerAnimation$15();
@@ -2847,6 +2900,67 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         AvatarsImageView avatarsImageView = this.avatars;
         if (avatarsImageView != null) {
             avatarsImageView.setTranslationX(f);
+        }
+    }
+
+    private static class CallMessageItem implements Destroyable {
+        private final GroupCallMessageCell cell;
+        private final ViewGroup parent;
+
+        public CallMessageItem(ViewGroup viewGroup, GroupCallMessage groupCallMessage) {
+            GroupCallMessageCell groupCallMessageCell = new GroupCallMessageCell(viewGroup.getContext());
+            this.cell = groupCallMessageCell;
+            groupCallMessageCell.setBackgroundColor(ColorUtils.setAlphaComponent(-16777216, 34));
+            groupCallMessageCell.setSingleLine();
+            groupCallMessageCell.set(groupCallMessage);
+            groupCallMessageCell.setAlpha(0.0f);
+            this.parent = viewGroup;
+            viewGroup.addView(groupCallMessageCell);
+        }
+
+        @Override // me.vkryl.core.lambda.Destroyable
+        public void performDestroy() {
+            this.parent.removeView(this.cell);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onItemChanged(ReplaceAnimator replaceAnimator) {
+        float totalVisibility = 1.0f - this.callMessagesAnimator.getMetadata().getTotalVisibility();
+        this.titleTextView.setAlpha(totalVisibility);
+        this.titleTextView.setScaleX(AndroidUtilities.lerp(0.7f, 1.0f, totalVisibility));
+        this.titleTextView.setScaleY(AndroidUtilities.lerp(0.7f, 1.0f, totalVisibility));
+        Iterator it = this.callMessagesAnimator.iterator();
+        while (it.hasNext()) {
+            ListAnimator.Entry entry = (ListAnimator.Entry) it.next();
+            float lerp = AndroidUtilities.lerp(0.7f, 1.0f, entry.getVisibility());
+            ((CallMessageItem) entry.item).cell.setAlpha(entry.getVisibility());
+            ((CallMessageItem) entry.item).cell.setScaleX(lerp);
+            ((CallMessageItem) entry.item).cell.setScaleY(lerp);
+        }
+    }
+
+    @Override // org.telegram.messenger.voip.GroupCallMessagesController.CallMessageListener
+    public void onNewGroupCallMessage(GroupCallMessage groupCallMessage) {
+        if (this.groupCallMessagesContainer == null) {
+            return;
+        }
+        this.groupCallMessageCounter++;
+        if (groupCallMessage.isOut()) {
+            return;
+        }
+        this.callMessagesAnimator.replace(new CallMessageItem(this.groupCallMessagesContainer, groupCallMessage), true);
+    }
+
+    @Override // org.telegram.messenger.voip.GroupCallMessagesController.CallMessageListener
+    public void onPopGroupCallMessage() {
+        int i = this.groupCallMessageCounter;
+        if (i > 0) {
+            int i2 = i - 1;
+            this.groupCallMessageCounter = i2;
+            if (i2 == 0) {
+                this.callMessagesAnimator.replace(null, true);
+            }
         }
     }
 }

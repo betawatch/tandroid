@@ -281,8 +281,8 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         this.dismissDialogByButtons = true;
         this.containerViewLocation = new int[2];
         this.checkFocusable = true;
-        this.dismissRunnable = new AlertDialog$$ExternalSyntheticLambda3(this);
-        this.showRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda11
+        this.dismissRunnable = new AlertDialog$$ExternalSyntheticLambda2(this);
+        this.showRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 AlertDialog.this.lambda$new$0();
@@ -677,7 +677,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             if (this.fullscreenContainerView == null) {
                 FrameLayout frameLayout = new FrameLayout(getContext());
                 this.fullscreenContainerView = frameLayout;
-                frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda4
+                frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
                         AlertDialog.this.lambda$inflateContent$1(view2);
@@ -688,7 +688,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 BalanceCloud balanceCloud = new BalanceCloud(getContext(), UserConfig.selectedAccount, this.resourcesProvider);
                 this.starsBalanceCloud = balanceCloud;
                 ScaleStateListAnimator.apply(balanceCloud);
-                this.starsBalanceCloud.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda5
+                this.starsBalanceCloud.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
                         AlertDialog.this.lambda$inflateContent$2(view2);
@@ -949,7 +949,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                     alertDialogCell.setTag(Integer.valueOf(i5));
                     this.itemViews.add(alertDialogCell);
                     this.scrollContainer.addView(alertDialogCell, LayoutHelper.createLinear(-1, 50));
-                    alertDialogCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda6
+                    alertDialogCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda5
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view5) {
                             AlertDialog.this.lambda$inflateContent$3(view5);
@@ -1115,7 +1115,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 } else {
                     this.buttonsLayout.addView(textViewWithLoading, LayoutHelper.createFrame(-2, 36, 53));
                 }
-                textViewWithLoading.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda7
+                textViewWithLoading.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view6) {
                         AlertDialog.this.lambda$inflateContent$4(textViewWithLoading, view6);
@@ -1152,7 +1152,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 } else {
                     this.buttonsLayout.addView(textViewWithLoading2, LayoutHelper.createFrame(-2, 36, 53));
                 }
-                textViewWithLoading2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda8
+                textViewWithLoading2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda7
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view6) {
                         AlertDialog.this.lambda$inflateContent$5(textViewWithLoading2, view6);
@@ -1189,7 +1189,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 } else {
                     this.buttonsLayout.addView(textViewWithLoading3, LayoutHelper.createFrame(-2, 36, 51));
                 }
-                textViewWithLoading3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda9
+                textViewWithLoading3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda8
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view6) {
                         AlertDialog.this.lambda$inflateContent$6(textViewWithLoading3, view6);
@@ -1259,7 +1259,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                     }
                 }
             } else {
-                AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda10
+                AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda9
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         AlertDialog.this.lambda$inflateContent$7((Bitmap) obj);
@@ -1365,12 +1365,12 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         if (z2) {
             this.dismissDialogByButtons = false;
         }
-        return new Browser.Progress(new Runnable() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda14
+        return new Browser.Progress(new Runnable() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
                 AlertDialog.lambda$makeButtonLoading$8(button);
             }
-        }, new Runnable() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda15
+        }, new Runnable() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
                 AlertDialog.this.lambda$makeButtonLoading$9(button, z);
@@ -1471,13 +1471,13 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             builder.setTitle(LocaleController.getString(R.string.StopLoadingTitle));
             builder.setMessage(LocaleController.getString(R.string.StopLoading));
             builder.setPositiveButton(LocaleController.getString(R.string.WaitMore), null);
-            builder.setNegativeButton(LocaleController.getString(R.string.Stop), new OnButtonClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda12
+            builder.setNegativeButton(LocaleController.getString(R.string.Stop), new OnButtonClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda11
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     AlertDialog.this.lambda$showCancelAlert$10(alertDialog, i);
                 }
             });
-            builder.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda13
+            builder.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ActionBar.AlertDialog$$ExternalSyntheticLambda12
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     AlertDialog.this.lambda$showCancelAlert$11(dialogInterface);
@@ -1517,7 +1517,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         this.shadowAnimation[i] = new AnimatorSet();
         BitmapDrawable bitmapDrawable = this.shadow[i];
         if (bitmapDrawable != null) {
-            this.shadowAnimation[i].playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z ? NotificationCenter.didApplyNewTheme : 0));
+            this.shadowAnimation[i].playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z ? NotificationCenter.didReplacedPhotoInMemCache : 0));
         }
         this.shadowAnimation[i].setDuration(150L);
         this.shadowAnimation[i].addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.AlertDialog.8
@@ -1595,7 +1595,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
     public void dismissUnless(long j) {
         long currentTimeMillis = System.currentTimeMillis() - this.shownAt;
         if (currentTimeMillis < j) {
-            AndroidUtilities.runOnUIThread(new AlertDialog$$ExternalSyntheticLambda3(this), currentTimeMillis - j);
+            AndroidUtilities.runOnUIThread(new AlertDialog$$ExternalSyntheticLambda2(this), currentTimeMillis - j);
         } else {
             dismiss();
         }
@@ -1607,7 +1607,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         Utilities.Callback callback = this.overridenDissmissListener;
         if (callback != null) {
             this.overridenDissmissListener = null;
-            callback.run(new AlertDialog$$ExternalSyntheticLambda3(this));
+            callback.run(new AlertDialog$$ExternalSyntheticLambda2(this));
             return;
         }
         if (this.dismissed) {

@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
@@ -217,12 +216,7 @@ public class BotForumHelper extends BaseController {
         tL_messages_createForumTopic.title_missing = true;
         tL_messages_createForumTopic.peer = inputPeer;
         tL_messages_createForumTopic.random_id = j;
-        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new Executor() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2
-            @Override // java.util.concurrent.Executor
-            public final void execute(Runnable runnable) {
-                AndroidUtilities.runOnUIThread(runnable);
-            }
-        }, new Utilities.Callback2() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda3
+        getConnectionsManager().sendRequestTyped(tL_messages_createForumTopic, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 BotForumHelper.this.lambda$performSendBotTopicCreate$3(peerDialogId, str, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);

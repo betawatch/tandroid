@@ -342,7 +342,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                         CalendarActivity.this.animateSelection();
                         return;
                     }
-                    CalendarActivity.this.lambda$onBackPressed$355();
+                    CalendarActivity.this.lambda$onBackPressed$341();
                 }
             }
         });
@@ -442,7 +442,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
         AlertsCreator.createClearDaysDialogAlert(this, i, getMessagesController().getUser(Long.valueOf(this.dialogId)), null, false, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.CalendarActivity.8
             @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
             public void run(boolean z) {
-                CalendarActivity.this.lambda$onBackPressed$355();
+                CalendarActivity.this.lambda$onBackPressed$341();
                 if (((BaseFragment) CalendarActivity.this).parentLayout != null && ((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().size() >= 2) {
                     BaseFragment baseFragment = (BaseFragment) ((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().get(((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().size() - 2);
                     if (baseFragment instanceof ChatActivity) {
@@ -892,7 +892,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                             orCreateStoryViewer.open(context, messageObject.storyItem, messageObject.getId(), CalendarActivity.this.storiesList, true, CalendarActivity.this.storiesPlaceProvider);
                         } else {
                             CalendarActivity.this.callback.onDateSelected(dayAtCoord.messageObject.getId(), dayAtCoord.startOffset);
-                            CalendarActivity.this.lambda$onBackPressed$355();
+                            CalendarActivity.this.lambda$onBackPressed$341();
                         }
                     }
                 }
@@ -943,13 +943,13 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                         if (dayAtCoord3 != null && ((BaseFragment) CalendarActivity.this).parentLayout != null && ((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().size() >= 2) {
                             BaseFragment baseFragment = (BaseFragment) ((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().get(((BaseFragment) CalendarActivity.this).parentLayout.getFragmentStack().size() - 2);
                             if (baseFragment instanceof ChatActivity) {
-                                CalendarActivity.this.lambda$onBackPressed$355();
+                                CalendarActivity.this.lambda$onBackPressed$341();
                                 ((ChatActivity) baseFragment).jumpToDate(dayAtCoord3.date);
                             }
                         } else if (dayAtCoord3 != null) {
                             CalendarActivity calendarActivity7 = CalendarActivity.this;
                             if (calendarActivity7.chatActivity != null) {
-                                calendarActivity7.lambda$onBackPressed$355();
+                                calendarActivity7.lambda$onBackPressed$341();
                                 CalendarActivity.this.chatActivity.jumpToDate(dayAtCoord3.date);
                             }
                         }
@@ -1081,7 +1081,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
 
             /* JADX INFO: Access modifiers changed from: private */
             public /* synthetic */ void lambda$onLongPress$0(BaseFragment baseFragment, PeriodDay periodDay) {
-                CalendarActivity.this.lambda$onBackPressed$355();
+                CalendarActivity.this.lambda$onBackPressed$341();
                 ((ChatActivity) baseFragment).jumpToDate(periodDay.date);
             }
 
@@ -1104,7 +1104,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                         AlertsCreator.createClearDaysDialogAlert(calendarActivity, 1, calendarActivity.getMessagesController().getUser(Long.valueOf(CalendarActivity.this.dialogId)), null, false, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.CalendarActivity.MonthView.2.1
                             @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                             public void run(boolean z) {
-                                CalendarActivity.this.lambda$onBackPressed$355();
+                                CalendarActivity.this.lambda$onBackPressed$341();
                                 ((ChatActivity) baseFragment).deleteHistory(CalendarActivity.this.dateSelectedStart, CalendarActivity.this.dateSelectedEnd + 86400, z);
                             }
                         }, null);
@@ -1275,7 +1275,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                             if (messageObject.isVideo()) {
                                 TLRPC.Document document = messageObject.getDocument();
                                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 50);
-                                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.onReceivedChannelDifference);
+                                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.uploadStoryEnd);
                                 if (closestPhotoSizeWithSize == closestPhotoSizeWithSize2) {
                                     closestPhotoSizeWithSize2 = null;
                                 }
@@ -1290,7 +1290,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                                 TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
                                 if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && messageMedia.photo != null && !messageObject.photoThumbs.isEmpty()) {
                                     TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 50);
-                                    TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.onReceivedChannelDifference, z2, closestPhotoSizeWithSize3, z2);
+                                    TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.uploadStoryEnd, z2, closestPhotoSizeWithSize3, z2);
                                     if (messageObject.mediaExists || DownloadController.getInstance(((BaseFragment) CalendarActivity.this).currentAccount).canDownloadMedia(messageObject)) {
                                         if (closestPhotoSizeWithSize4 == closestPhotoSizeWithSize3) {
                                             closestPhotoSizeWithSize3 = null;
@@ -1847,7 +1847,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
         Canvas canvas = new Canvas(createBitmap);
         canvas.scale(0.16666667f, 0.16666667f);
         this.parentLayout.getView().draw(canvas);
-        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.dialogFiltersUpdated));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.newEmojiSuggestionsAvailable));
         this.blurredView.setBackground(new BitmapDrawable(createBitmap));
         this.blurredView.setAlpha(0.0f);
         this.blurredView.setVisibility(0);

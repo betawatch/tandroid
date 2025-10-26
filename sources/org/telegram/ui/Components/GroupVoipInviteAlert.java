@@ -117,7 +117,7 @@ public class GroupVoipInviteAlert extends UsersAlertBase {
         ListAdapter listAdapter = new ListAdapter(context);
         this.listViewAdapter = listAdapter;
         recyclerListView.setAdapter(listAdapter);
-        loadChatParticipants(0, NotificationCenter.userIsPremiumBlockedUpadted);
+        loadChatParticipants(0, NotificationCenter.channelRecommendationsLoaded);
         updateRows();
         setColorProgress(0.0f);
     }
@@ -358,7 +358,7 @@ public class GroupVoipInviteAlert extends UsersAlertBase {
             this.delayResults = 2;
             tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsContacts();
             this.contactsEndReached = true;
-            loadChatParticipants(0, NotificationCenter.userIsPremiumBlockedUpadted, false);
+            loadChatParticipants(0, NotificationCenter.channelRecommendationsLoaded, false);
         } else {
             tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsRecent();
         }

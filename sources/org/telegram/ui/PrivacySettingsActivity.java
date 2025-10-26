@@ -93,6 +93,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
     private LinearLayoutManager layoutManager;
     private ListAdapter listAdapter;
     private RecyclerListView listView;
+    private int musicRow;
     private int newChatsHeaderRow;
     private int newChatsRow;
     private int newChatsSectionRow;
@@ -287,7 +288,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    PrivacySettingsActivity.this.lambda$onBackPressed$355();
+                    PrivacySettingsActivity.this.lambda$onBackPressed$341();
                 }
             }
         });
@@ -410,6 +411,10 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
             }
             if (i == this.bioRow) {
                 presentFragment(new PrivacyControlActivity(9));
+                return;
+            }
+            if (i == this.musicRow) {
+                presentFragment(new PrivacyControlActivity(14));
                 return;
             }
             if (i == this.birthdayRow) {
@@ -627,7 +632,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
         } else if (num.intValue() == 1) {
             i = 90;
         } else if (num.intValue() == 2) {
-            i = NotificationCenter.suggestedFiltersLoaded;
+            i = NotificationCenter.themeUploadError;
         } else if (num.intValue() == 3) {
             i = 365;
         } else if (num.intValue() == 4) {
@@ -922,9 +927,10 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
         this.birthdayRow = i4;
         this.giftsRow = i4 + 1;
         this.bioRow = i4 + 2;
-        this.groupsRow = i4 + 3;
-        this.rowCount = i4 + 5;
-        this.privacyShadowRow = i4 + 4;
+        this.musicRow = i4 + 3;
+        this.groupsRow = i4 + 4;
+        this.rowCount = i4 + 6;
+        this.privacyShadowRow = i4 + 5;
         if (getMessagesController().autoarchiveAvailable || getUserConfig().isPremium()) {
             int i5 = this.rowCount;
             this.newChatsHeaderRow = i5;
@@ -1217,6 +1223,9 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
             if (adapterPosition == PrivacySettingsActivity.this.bioRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(9)) {
                 return true;
             }
+            if (adapterPosition == PrivacySettingsActivity.this.musicRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(14)) {
+                return true;
+            }
             if (adapterPosition == PrivacySettingsActivity.this.birthdayRow && !PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(11)) {
                 return true;
             }
@@ -1342,6 +1351,14 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
                                 str6 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 9);
                             }
                             textSettingsCell.setTextAndValue(LocaleController.getString("PrivacyBio", R.string.PrivacyBio), str6, true);
+                        } else if (i == PrivacySettingsActivity.this.musicRow) {
+                            if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(14)) {
+                                z2 = true;
+                                i4 = 30;
+                            } else {
+                                str6 = PrivacySettingsActivity.formatRulesString(PrivacySettingsActivity.this.getAccountInstance(), 14);
+                            }
+                            textSettingsCell.setTextAndValue(LocaleController.getString(R.string.PrivacyMusic), str6, true);
                         } else if (i == PrivacySettingsActivity.this.birthdayRow) {
                             if (PrivacySettingsActivity.this.getContactsController().getLoadingPrivacyInfo(11)) {
                                 z2 = true;
@@ -1387,7 +1404,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
                             } else {
                                 i2 = PrivacySettingsActivity.this.noncontactsValue ? R.string.ContactsAndPremium : R.string.P2PEverybody;
                             }
-                            textSettingsCell.setTextAndValue((!PrivacySettingsActivity.this.getMessagesController().newNoncontactPeersRequirePremiumWithoutOwnpremium || PrivacySettingsActivity.this.getMessagesController().starsPaidMessagesAvailable) ? PrivacySettingsActivity.this.addPremiumStar(LocaleController.getString(R.string.PrivacyMessages)) : LocaleController.getString(R.string.PrivacyMessages), LocaleController.getString(i2), PrivacySettingsActivity.this.bioRow != -1);
+                            textSettingsCell.setTextAndValue((!PrivacySettingsActivity.this.getMessagesController().newNoncontactPeersRequirePremiumWithoutOwnpremium || PrivacySettingsActivity.this.getMessagesController().starsPaidMessagesAvailable) ? PrivacySettingsActivity.this.addPremiumStar(LocaleController.getString(R.string.PrivacyMessages)) : LocaleController.getString(R.string.PrivacyMessages), LocaleController.getString(i2), PrivacySettingsActivity.this.musicRow != -1);
                         } else if (i != PrivacySettingsActivity.this.passportRow) {
                             if (i == PrivacySettingsActivity.this.deleteAccountRow) {
                                 if (!PrivacySettingsActivity.this.getContactsController().getLoadingDeleteInfo()) {

@@ -709,8 +709,8 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         if (chatActivity.isInScheduleMode()) {
             AlertsCreator.createScheduleDatePickerDialog(chatActivity.getParentActivity(), chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda8
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z, int i) {
-                    ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$1(tL_messageMediaToDo, l, z, i);
+                public final void didSelectDate(boolean z, int i, int i2) {
+                    ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$1(tL_messageMediaToDo, l, z, i, i2);
                 }
             });
         } else {
@@ -720,7 +720,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuItemClick$1(TLRPC.TL_messageMediaToDo tL_messageMediaToDo, Long l, boolean z, int i) {
+    public /* synthetic */ void lambda$onMenuItemClick$1(TLRPC.TL_messageMediaToDo tL_messageMediaToDo, Long l, boolean z, int i, int i2) {
         this.delegate.sendPoll(tL_messageMediaToDo, null, z, i, l.longValue());
         this.parentAlert.dismiss(true);
     }
@@ -730,8 +730,8 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         if (chatActivity.isInScheduleMode()) {
             AlertsCreator.createScheduleDatePickerDialog(chatActivity.getParentActivity(), chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout$$ExternalSyntheticLambda7
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z, int i) {
-                    ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$3(tL_messageMediaPoll, hashMap, l, z, i);
+                public final void didSelectDate(boolean z, int i, int i2) {
+                    ChatAttachAlertPollLayout.this.lambda$onMenuItemClick$3(tL_messageMediaPoll, hashMap, l, z, i, i2);
                 }
             });
         } else {
@@ -741,7 +741,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onMenuItemClick$3(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, Long l, boolean z, int i) {
+    public /* synthetic */ void lambda$onMenuItemClick$3(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, Long l, boolean z, int i, int i2) {
         this.delegate.sendPoll(tL_messageMediaPoll, hashMap, z, i, l.longValue());
         this.parentAlert.dismiss(true);
     }
@@ -1104,13 +1104,13 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         if (view instanceof PollEditTextCell) {
             PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
             if (i == this.questionRow) {
-                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didApplyNewTheme;
+                i2 = this.todo ? getMessagesController().todoTitleLengthMax : NotificationCenter.didReplacedPhotoInMemCache;
                 CharSequence charSequence = this.questionString;
                 length = i2 - (charSequence != null ? charSequence.length() : 0);
             } else if (i == this.solutionRow) {
                 CharSequence charSequence2 = this.solutionString;
                 length = 200 - (charSequence2 != null ? charSequence2.length() : 0);
-                i2 = NotificationCenter.userIsPremiumBlockedUpadted;
+                i2 = NotificationCenter.channelRecommendationsLoaded;
             } else {
                 int i3 = this.answerStartRow;
                 if (i < i3 || i >= this.answersCount + i3) {
@@ -1557,8 +1557,8 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
         /* renamed from: onGifSelected */
-        public /* synthetic */ void lambda$onGifSelected$1(View view, Object obj, String str, Object obj2, boolean z, int i) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onGifSelected(this, view, obj, str, obj2, z, i);
+        public /* synthetic */ void lambda$onGifSelected$1(View view, Object obj, String str, Object obj2, boolean z, int i, int i2) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onGifSelected(this, view, obj, str, obj2, z, i, i2);
         }
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
@@ -1567,8 +1567,8 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         }
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void onStickerSelected(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, int i) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onStickerSelected(this, view, document, str, obj, sendAnimationData, z, i);
+        public /* synthetic */ void onStickerSelected(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, int i, int i2) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onStickerSelected(this, view, document, str, obj, sendAnimationData, z, i, i2);
         }
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate

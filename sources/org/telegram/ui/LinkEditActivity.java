@@ -135,7 +135,7 @@ public class LinkEditActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i4) {
                 if (i4 == -1) {
-                    LinkEditActivity.this.lambda$onBackPressed$355();
+                    LinkEditActivity.this.lambda$onBackPressed$341();
                     AndroidUtilities.hideKeyboard(LinkEditActivity.this.usesEditText);
                 }
             }
@@ -852,7 +852,7 @@ public class LinkEditActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$5(boolean z, int i) {
+    public /* synthetic */ void lambda$createView$5(boolean z, int i, int i2) {
         chooseDate(i);
     }
 
@@ -860,8 +860,8 @@ public class LinkEditActivity extends BaseFragment {
     public /* synthetic */ void lambda$createView$6(Context context, View view) {
         AlertsCreator.createDatePickerDialog(context, LocaleController.getString(R.string.ExpireAfter), LocaleController.getString(R.string.SetTimeLimit), -1L, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.LinkEditActivity$$ExternalSyntheticLambda12
             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-            public final void didSelectDate(boolean z, int i) {
-                LinkEditActivity.this.lambda$createView$5(z, i);
+            public final void didSelectDate(boolean z, int i, int i2) {
+                LinkEditActivity.this.lambda$createView$5(z, i, i2);
             }
         });
     }
@@ -905,7 +905,7 @@ public class LinkEditActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$9(AlertDialog alertDialog, int i) {
         this.callback.revokeLink(this.inviteToEdit);
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -987,7 +987,7 @@ public class LinkEditActivity extends BaseFragment {
                     tL_messages_exportChatInvite.flags |= 32;
                     TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = new TL_stars.TL_starsSubscriptionPricing();
                     tL_messages_exportChatInvite.subscription_pricing = tL_starsSubscriptionPricing;
-                    tL_starsSubscriptionPricing.period = getConnectionsManager().isTestBackend() ? NotificationCenter.billingProductDetailsUpdated : 2592000;
+                    tL_starsSubscriptionPricing.period = getConnectionsManager().isTestBackend() ? NotificationCenter.premiumPromoUpdated : 2592000;
                     tL_messages_exportChatInvite.subscription_pricing.amount = j;
                 }
                 getConnectionsManager().sendRequest(tL_messages_exportChatInvite, new RequestDelegate() { // from class: org.telegram.ui.LinkEditActivity$$ExternalSyntheticLambda14
@@ -1065,7 +1065,7 @@ public class LinkEditActivity extends BaseFragment {
                     });
                     return;
                 }
-                lambda$onBackPressed$355();
+                lambda$onBackPressed$341();
                 return;
             }
             if (this.inviteToEdit.usage_limit != 0) {
@@ -1111,7 +1111,7 @@ public class LinkEditActivity extends BaseFragment {
             if (callback != null) {
                 callback.onLinkCreated(tLObject);
             }
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
             return;
         }
         AlertsCreator.showSimpleAlert(this, tL_error.text);
@@ -1142,7 +1142,7 @@ public class LinkEditActivity extends BaseFragment {
             if (callback != null) {
                 callback.onLinkEdited(this.inviteToEdit, tLObject);
             }
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
             return;
         }
         AlertsCreator.showSimpleAlert(this, tL_error.text);
@@ -1337,10 +1337,10 @@ public class LinkEditActivity extends BaseFragment {
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /* renamed from: finishFragment */
-    public void lambda$onBackPressed$355() {
+    public void lambda$onBackPressed$341() {
         this.scrollView.getLayoutParams().height = this.scrollView.getHeight();
         this.finished = true;
-        super.lambda$onBackPressed$355();
+        super.lambda$onBackPressed$341();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

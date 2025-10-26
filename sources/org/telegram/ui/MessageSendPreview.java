@@ -290,7 +290,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
 
             @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
-                canvas.saveLayerAlpha(0.0f, getScrollY() + 1, getWidth(), (getScrollY() + getHeight()) - 1, NotificationCenter.didApplyNewTheme, 31);
+                canvas.saveLayerAlpha(0.0f, getScrollY() + 1, getWidth(), (getScrollY() + getHeight()) - 1, NotificationCenter.didReplacedPhotoInMemCache, 31);
                 canvas.save();
                 drawChatBackgroundElements(canvas);
                 super.dispatchDraw(canvas);
@@ -1300,7 +1300,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                 float lerp6 = AndroidUtilities.lerp(0.0f, MessageSendPreview.this.chatListView.canScrollVertically(1) ? 1.0f : 0.0f, MessageSendPreview.this.openProgress);
                 final float f8 = f3;
                 float f9 = f2;
-                canvas.saveLayerAlpha(0.0f, lerp3 + 1.0f, getWidth(), lerp5 - 1.0f, NotificationCenter.didApplyNewTheme, 31);
+                canvas.saveLayerAlpha(0.0f, lerp3 + 1.0f, getWidth(), lerp5 - 1.0f, NotificationCenter.didReplacedPhotoInMemCache, 31);
                 if (MessageSendPreview.this.editText != null) {
                     canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - f7) * 255.0f), 31);
                     canvas.translate(f, f9);
@@ -1726,9 +1726,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
         };
         this.sendButton = sendButton2;
         this.anchorSendButton.copyTo(sendButton2);
-        ChatActivityEnterView.SendButton sendButton3 = this.sendButton;
-        sendButton3.center = sendButton.center;
-        sendButton3.open.set(sendButton.open.get(), true);
+        this.sendButton.open.set(sendButton.open.get(), true);
         this.sendButton.setOnClickListener(onClickListener);
         this.containerView.addView(this.sendButton, new ViewGroup.LayoutParams(sendButton.getWidth(), sendButton.getHeight()));
         this.sendButtonWidth = this.anchorSendButton.width(sendButton.getHeight());
@@ -2244,6 +2242,20 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
     public void dismiss(boolean z) {
         this.sent = z;
         dismiss();
+    }
+
+    public void dismissInstant() {
+        if (this.dismissing) {
+            return;
+        }
+        this.dismissing = true;
+        SpoilerEffect2.pause(0, false);
+        SpoilerEffect2 spoilerEffect2 = this.spoilerEffect2;
+        if (spoilerEffect2 != null) {
+            spoilerEffect2.detach(this.windowView);
+        }
+        super.dismiss();
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.availableEffectsUpdate);
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface

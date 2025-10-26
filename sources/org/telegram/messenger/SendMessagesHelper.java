@@ -1092,7 +1092,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
         });
         this.waitingForTodoUpdate = new HashMap<>();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda20
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$new$0();
@@ -1700,7 +1700,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     }
                     if (c == 0) {
                         final File file = new File(FileLoader.getDirectory(4), Utilities.MD5(str15) + "." + ImageLoader.getHttpUrlExtension(str15, "file"));
-                        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda59
+                        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda63
                             @Override // java.lang.Runnable
                             public final void run() {
                                 SendMessagesHelper.this.lambda$didReceivedNotification$2(file, messageObject, delayedMessage7, str15);
@@ -1708,7 +1708,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         });
                     } else if (c == 1) {
                         final File file2 = new File(FileLoader.getDirectory(4), Utilities.MD5(str15) + ".gif");
-                        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda60
+                        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda64
                             @Override // java.lang.Runnable
                             public final void run() {
                                 SendMessagesHelper.this.lambda$didReceivedNotification$4(delayedMessage7, file2, messageObject);
@@ -1744,7 +1744,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$didReceivedNotification$2(final File file, final MessageObject messageObject, final DelayedMessage delayedMessage, final String str) {
         final TLRPC.TL_photo generatePhotoSizes = generatePhotoSizes(file.toString(), null);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda57
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda61
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$didReceivedNotification$1(generatePhotoSizes, messageObject, file, delayedMessage, str);
@@ -1797,7 +1797,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 FileLog.e(e);
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda74
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda78
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$didReceivedNotification$3(delayedMessage, file, document, messageObject);
@@ -2108,7 +2108,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX WARN: Removed duplicated region for block: B:26:0x0098  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00d0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2134,7 +2134,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         TLRPC.MessageMedia messageMedia3 = message3.media;
                         photo = messageMedia3.photo;
                         if (!(photo instanceof TLRPC.TL_photo)) {
-                            SendMessageParams of = SendMessageParams.of((TLRPC.TL_photo) photo, null, j, messageObject.replyMessageObject, null, message3.message, message3.entities, null, hashMap, true, 0, messageMedia3.ttl_seconds, messageObject, false);
+                            SendMessageParams of = SendMessageParams.of((TLRPC.TL_photo) photo, null, j, messageObject.replyMessageObject, null, message3.message, message3.entities, null, hashMap, true, 0, 0, messageMedia3.ttl_seconds, messageObject, false);
                             of.payStars = j2;
                             of.monoForumPeer = j3;
                             of.suggestionParams = messageSuggestionParams;
@@ -2143,7 +2143,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         }
                         TLRPC.Document document = messageMedia3.document;
                         if (document instanceof TLRPC.TL_document) {
-                            SendMessageParams of2 = SendMessageParams.of((TLRPC.TL_document) document, null, message3.attachPath, j, messageObject.replyMessageObject, null, message3.message, message3.entities, null, hashMap, true, 0, messageMedia3.ttl_seconds, messageObject, null, false);
+                            SendMessageParams of2 = SendMessageParams.of((TLRPC.TL_document) document, null, message3.attachPath, j, messageObject.replyMessageObject, null, message3.message, message3.entities, null, hashMap, true, 0, 0, messageMedia3.ttl_seconds, messageObject, null, false);
                             of2.payStars = j2;
                             of2.monoForumPeer = j3;
                             of2.suggestionParams = messageSuggestionParams;
@@ -2151,7 +2151,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             return;
                         }
                         if ((messageMedia3 instanceof TLRPC.TL_messageMediaVenue) || (messageMedia3 instanceof TLRPC.TL_messageMediaGeo)) {
-                            SendMessageParams of3 = SendMessageParams.of(messageMedia3, j, messageObject.replyMessageObject, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0);
+                            SendMessageParams of3 = SendMessageParams.of(messageMedia3, j, messageObject.replyMessageObject, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0);
                             of3.payStars = j2;
                             of3.monoForumPeer = j3;
                             of3.suggestionParams = messageSuggestionParams;
@@ -2165,7 +2165,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             tL_userContact_old2.first_name = messageMedia4.first_name;
                             tL_userContact_old2.last_name = messageMedia4.last_name;
                             tL_userContact_old2.id = messageMedia4.user_id;
-                            SendMessageParams of4 = SendMessageParams.of((TLRPC.User) tL_userContact_old2, j, messageObject.replyMessageObject, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0);
+                            SendMessageParams of4 = SendMessageParams.of((TLRPC.User) tL_userContact_old2, j, messageObject.replyMessageObject, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0);
                             of4.monoForumPeer = j3;
                             of4.suggestionParams = messageSuggestionParams;
                             of4.payStars = j2;
@@ -2201,7 +2201,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         }
                     }
                 }
-                SendMessageParams of5 = SendMessageParams.of(messageObject.messageOwner.message, j, messageObject.replyMessageObject, null, webPage, true, arrayList, null, null, true, 0, null, false);
+                SendMessageParams of5 = SendMessageParams.of(messageObject.messageOwner.message, j, messageObject.replyMessageObject, null, webPage, true, arrayList, null, null, true, 0, 0, null, false);
                 of5.payStars = j2;
                 of5.monoForumPeer = j3;
                 of5.suggestionParams = messageSuggestionParams;
@@ -2241,7 +2241,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
             message2.from_id = tL_peerUser;
             tL_peerUser.user_id = getUserConfig().getClientUserId();
-            message2.flags |= NotificationCenter.suggestedLangpack;
+            message2.flags |= NotificationCenter.locationPermissionGranted;
             TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
             message2.reply_to = tL_messageReplyHeader;
             tL_messageReplyHeader.flags |= 16;
@@ -2267,7 +2267,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         performSendMessageRequest(tL_messages_sendScreenshotNotification, messageObject, null, null, null, null, false);
     }
 
-    public void sendSticker(TLRPC.Document document, String str, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final MessageObject.SendAnimationData sendAnimationData, final boolean z, final int i, boolean z2, final Object obj, final String str2, final int i2, final long j2, final long j3, final MessageSuggestionParams messageSuggestionParams) {
+    public void sendSticker(TLRPC.Document document, String str, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final MessageObject.SendAnimationData sendAnimationData, final boolean z, final int i, final int i2, boolean z2, final Object obj, final String str2, final int i3, final long j2, final long j3, final MessageSuggestionParams messageSuggestionParams) {
         final TLRPC.Document document2;
         HashMap hashMap;
         TLRPC.PhotoSize photoSize;
@@ -2292,8 +2292,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tL_document_layer82.size = document.size;
             tL_document_layer82.dc_id = document.dc_id;
             tL_document_layer82.attributes = new ArrayList<>();
-            for (int i3 = 0; i3 < document.attributes.size(); i3++) {
-                TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i3);
+            for (int i4 = 0; i4 < document.attributes.size(); i4++) {
+                TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i4);
                 if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
                     TLRPC.TL_documentAttributeVideo_layer159 tL_documentAttributeVideo_layer159 = new TLRPC.TL_documentAttributeVideo_layer159();
                     tL_documentAttributeVideo_layer159.flags = documentAttribute.flags;
@@ -2355,10 +2355,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             document2 = document;
         }
         if (MessageObject.isGifDocument(document2)) {
-            mediaSendQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda2
+            mediaSendQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda98
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.this.lambda$sendSticker$6(document2, j, messageObject, messageObject2, z, i, obj, sendAnimationData, storyItem, replyQuote, str2, i2, j2, j3, messageSuggestionParams);
+                    SendMessagesHelper.this.lambda$sendSticker$6(document2, j, messageObject, messageObject2, z, i, i2, obj, sendAnimationData, storyItem, replyQuote, str2, i3, j2, j3, messageSuggestionParams);
                 }
             });
             return;
@@ -2369,11 +2369,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             hashMap = new HashMap();
             hashMap.put("query", str);
         }
-        SendMessageParams of = SendMessageParams.of((TLRPC.TL_document) document2, null, null, j, messageObject, messageObject2, null, null, null, hashMap, z, i, 0, obj, sendAnimationData, z2);
+        SendMessageParams of = SendMessageParams.of((TLRPC.TL_document) document2, null, null, j, messageObject, messageObject2, null, null, null, hashMap, z, i, i2, 0, obj, sendAnimationData, z2);
         of.replyToStoryItem = storyItem;
         of.replyQuote = replyQuote;
         of.quick_reply_shortcut = str2;
-        of.quick_reply_shortcut_id = i2;
+        of.quick_reply_shortcut_id = i3;
         of.payStars = j2;
         of.monoForumPeer = j3;
         of.suggestionParams = messageSuggestionParams;
@@ -2381,7 +2381,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendSticker$6(final TLRPC.Document document, final long j, final MessageObject messageObject, final MessageObject messageObject2, final boolean z, final int i, final Object obj, final MessageObject.SendAnimationData sendAnimationData, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final String str, final int i2, final long j2, final long j3, final MessageSuggestionParams messageSuggestionParams) {
+    public /* synthetic */ void lambda$sendSticker$6(final TLRPC.Document document, final long j, final MessageObject messageObject, final MessageObject messageObject2, final boolean z, final int i, final int i2, final Object obj, final MessageObject.SendAnimationData sendAnimationData, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final String str, final int i3, final long j2, final long j3, final MessageSuggestionParams messageSuggestionParams) {
         String str2;
         final Bitmap[] bitmapArr = new Bitmap[1];
         String key = ImageLocation.getForDocument(document).getKey(null, null, false);
@@ -2397,25 +2397,25 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             file = new File(FileLoader.getDirectory(2), key + str2);
         }
         ensureMediaThumbExists(getAccountInstance(), false, document, file.getAbsolutePath(), null, 0L);
-        final String[] strArr = {getKeyForPhotoSize(getAccountInstance(), FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.onReceivedChannelDifference), bitmapArr, true, true)};
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda81
+        final String[] strArr = {getKeyForPhotoSize(getAccountInstance(), FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.uploadStoryEnd), bitmapArr, true, true)};
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.this.lambda$sendSticker$5(bitmapArr, strArr, document, j, messageObject, messageObject2, z, i, obj, sendAnimationData, storyItem, replyQuote, str, i2, j2, j3, messageSuggestionParams);
+                SendMessagesHelper.this.lambda$sendSticker$5(bitmapArr, strArr, document, j, messageObject, messageObject2, z, i, i2, obj, sendAnimationData, storyItem, replyQuote, str, i3, j2, j3, messageSuggestionParams);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendSticker$5(Bitmap[] bitmapArr, String[] strArr, TLRPC.Document document, long j, MessageObject messageObject, MessageObject messageObject2, boolean z, int i, Object obj, MessageObject.SendAnimationData sendAnimationData, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, String str, int i2, long j2, long j3, MessageSuggestionParams messageSuggestionParams) {
+    public /* synthetic */ void lambda$sendSticker$5(Bitmap[] bitmapArr, String[] strArr, TLRPC.Document document, long j, MessageObject messageObject, MessageObject messageObject2, boolean z, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, String str, int i3, long j2, long j3, MessageSuggestionParams messageSuggestionParams) {
         if (bitmapArr[0] != null && strArr[0] != null) {
             ImageLoader.getInstance().putImageToCache(new BitmapDrawable(bitmapArr[0]), strArr[0], false);
         }
-        SendMessageParams of = SendMessageParams.of((TLRPC.TL_document) document, null, null, j, messageObject, messageObject2, null, null, null, null, z, i, 0, obj, sendAnimationData, false);
+        SendMessageParams of = SendMessageParams.of((TLRPC.TL_document) document, null, null, j, messageObject, messageObject2, null, null, null, null, z, i, i2, 0, obj, sendAnimationData, false);
         of.replyToStoryItem = storyItem;
         of.replyQuote = replyQuote;
         of.quick_reply_shortcut = str;
-        of.quick_reply_shortcut_id = i2;
+        of.quick_reply_shortcut_id = i3;
         of.payStars = j2;
         of.monoForumPeer = j3;
         of.suggestionParams = messageSuggestionParams;
@@ -2452,25 +2452,25 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX WARN: Removed duplicated region for block: B:290:0x08ce  */
     /* JADX WARN: Removed duplicated region for block: B:295:0x091e  */
     /* JADX WARN: Removed duplicated region for block: B:298:0x0935  */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x098c  */
-    /* JADX WARN: Removed duplicated region for block: B:310:0x09a8  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x09cc  */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x09f3  */
-    /* JADX WARN: Removed duplicated region for block: B:320:0x0a01  */
-    /* JADX WARN: Removed duplicated region for block: B:323:0x0a11  */
-    /* JADX WARN: Removed duplicated region for block: B:329:0x0a5a  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x0a73  */
-    /* JADX WARN: Removed duplicated region for block: B:336:0x0a7f  */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x0a99  */
-    /* JADX WARN: Removed duplicated region for block: B:343:0x0abf  */
-    /* JADX WARN: Removed duplicated region for block: B:346:0x0b1a  */
-    /* JADX WARN: Removed duplicated region for block: B:349:0x0b25  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x0ac2  */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x0a95  */
-    /* JADX WARN: Removed duplicated region for block: B:355:0x0a6b A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:356:0x0a3b  */
-    /* JADX WARN: Removed duplicated region for block: B:358:0x09aa  */
-    /* JADX WARN: Removed duplicated region for block: B:359:0x098f  */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x098a  */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x09a6  */
+    /* JADX WARN: Removed duplicated region for block: B:313:0x09ca  */
+    /* JADX WARN: Removed duplicated region for block: B:318:0x09f1  */
+    /* JADX WARN: Removed duplicated region for block: B:320:0x09ff  */
+    /* JADX WARN: Removed duplicated region for block: B:323:0x0a0f  */
+    /* JADX WARN: Removed duplicated region for block: B:329:0x0a58  */
+    /* JADX WARN: Removed duplicated region for block: B:334:0x0a71  */
+    /* JADX WARN: Removed duplicated region for block: B:336:0x0a7d  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x0a97  */
+    /* JADX WARN: Removed duplicated region for block: B:343:0x0abd  */
+    /* JADX WARN: Removed duplicated region for block: B:346:0x0b16  */
+    /* JADX WARN: Removed duplicated region for block: B:349:0x0b21  */
+    /* JADX WARN: Removed duplicated region for block: B:352:0x0ac0  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x0a93  */
+    /* JADX WARN: Removed duplicated region for block: B:355:0x0a69 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:356:0x0a39  */
+    /* JADX WARN: Removed duplicated region for block: B:358:0x09a8  */
+    /* JADX WARN: Removed duplicated region for block: B:359:0x098d  */
     /* JADX WARN: Removed duplicated region for block: B:361:0x08c6  */
     /* JADX WARN: Removed duplicated region for block: B:364:0x08bc  */
     /* JADX WARN: Removed duplicated region for block: B:365:0x0862  */
@@ -2687,7 +2687,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     if (messageObject2.type == 0 && !TextUtils.isEmpty(messageObject2.messageText)) {
                         TLRPC.MessageMedia messageMedia = messageObject2.messageOwner.media;
                         TLRPC.WebPage webPage = messageMedia != null ? messageMedia.webpage : null;
-                        SendMessageParams of = SendMessageParams.of(messageObject2.messageText.toString(), j, null, messageObject, webPage, webPage != null, messageObject2.messageOwner.entities, null, null, z3, i, null, false);
+                        SendMessageParams of = SendMessageParams.of(messageObject2.messageText.toString(), j, null, messageObject, webPage, webPage != null, messageObject2.messageOwner.entities, null, null, z3, i, 0, null, false);
                         of.suggestionParams = messageSuggestionParams;
                         of.monoForumPeer = j3;
                         of.quick_reply_shortcut = messageObject2.getQuickReplyName();
@@ -2718,13 +2718,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             arrayList19 = arrayList6;
                             peer4 = peer;
                             z9 = z12;
+                            chat = chat2;
                             arrayList17 = arrayList4;
                             j6 = j7;
                             inputPeer4 = inputPeer;
                             str2 = str3;
                             longSparseArray5 = longSparseArray;
                             clientUserId = j8;
-                            chat = chat2;
                             arrayList18 = arrayList5;
                         }
                         j7 = j6;
@@ -2763,13 +2763,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             arrayList19 = arrayList6;
                             peer4 = peer;
                             z9 = z12;
+                            chat = chat2;
                             arrayList17 = arrayList4;
                             j6 = j7;
                             inputPeer4 = inputPeer;
                             str2 = str3;
                             longSparseArray5 = longSparseArray;
                             clientUserId = j8;
-                            chat = chat2;
                             arrayList18 = arrayList5;
                         }
                         j7 = j6;
@@ -2808,13 +2808,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             arrayList19 = arrayList6;
                             peer4 = peer;
                             z9 = z12;
+                            chat = chat2;
                             arrayList17 = arrayList4;
                             j6 = j7;
                             inputPeer4 = inputPeer;
                             str2 = str3;
                             longSparseArray5 = longSparseArray;
                             clientUserId = j8;
-                            chat = chat2;
                             arrayList18 = arrayList5;
                         }
                         j7 = j6;
@@ -2853,13 +2853,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             arrayList19 = arrayList6;
                             peer4 = peer;
                             z9 = z12;
+                            chat = chat2;
                             arrayList17 = arrayList4;
                             j6 = j7;
                             inputPeer4 = inputPeer;
                             str2 = str3;
                             longSparseArray5 = longSparseArray;
                             clientUserId = j8;
-                            chat = chat2;
                             arrayList18 = arrayList5;
                         }
                         j7 = j6;
@@ -2898,13 +2898,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             arrayList19 = arrayList6;
                             peer4 = peer;
                             z9 = z12;
+                            chat = chat2;
                             arrayList17 = arrayList4;
                             j6 = j7;
                             inputPeer4 = inputPeer;
                             str2 = str3;
                             longSparseArray5 = longSparseArray;
                             clientUserId = j8;
-                            chat = chat2;
                             arrayList18 = arrayList5;
                         }
                         j7 = j6;
@@ -2943,13 +2943,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             arrayList19 = arrayList6;
                             peer4 = peer;
                             z9 = z12;
+                            chat = chat2;
                             arrayList17 = arrayList4;
                             j6 = j7;
                             inputPeer4 = inputPeer;
                             str2 = str3;
                             longSparseArray5 = longSparseArray;
                             clientUserId = j8;
-                            chat = chat2;
                             arrayList18 = arrayList5;
                         }
                         j7 = j6;
@@ -3176,8 +3176,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             tL_keyboardButtonRow.buttons.add(keyboardButton);
                                             i10++;
                                             tL_keyboardButtonRow3 = tL_keyboardButtonRow;
-                                            z22 = z24;
                                             j10 = j11;
+                                            z22 = z24;
                                         }
                                         if (z22) {
                                             break;
@@ -3301,7 +3301,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             tL_message.flags2 |= 64;
                                             tL_message.paid_message_stars = j2;
                                         }
-                                        TLRPC.Chat chat6 = chat4;
+                                        chat2 = chat4;
                                         z12 = z9;
                                         if (j3 != 0) {
                                             tL_message.saved_peer_id = getMessagesController().getPeer(j3);
@@ -3368,11 +3368,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     longSparseArray2 = longSparseArray3;
                                                     str3 = str7;
                                                     j8 = j14;
-                                                    chat2 = chat6;
+                                                    j7 = j11;
                                                     arrayList3 = arrayList22;
                                                     arrayList4 = arrayList10;
                                                     arrayList2 = arrayList9;
-                                                    j7 = j11;
                                                     peer = peer8;
                                                 } else {
                                                     getMessagesStorage().putMessages(new ArrayList<>(arrayList8), false, true, false, 0, i != 0 ? 1 : 0, 0L);
@@ -3395,12 +3394,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                 tL_messages_forwardMessages.flags |= 1024;
                                                             }
                                                             if (!(messageObject2.messageOwner.peer_id instanceof TLRPC.TL_peerChannel)) {
-                                                                TLRPC.Chat chat7 = getMessagesController().getChat(Long.valueOf(messageObject2.messageOwner.peer_id.channel_id));
+                                                                TLRPC.Chat chat6 = getMessagesController().getChat(Long.valueOf(messageObject2.messageOwner.peer_id.channel_id));
                                                                 TLRPC.TL_inputPeerChannel tL_inputPeerChannel = new TLRPC.TL_inputPeerChannel();
                                                                 tL_messages_forwardMessages.from_peer = tL_inputPeerChannel;
                                                                 tL_inputPeerChannel.channel_id = messageObject2.messageOwner.peer_id.channel_id;
-                                                                if (chat7 != null) {
-                                                                    tL_inputPeerChannel.access_hash = chat7.access_hash;
+                                                                if (chat6 != null) {
+                                                                    tL_inputPeerChannel.access_hash = chat6.access_hash;
                                                                 }
                                                             } else {
                                                                 tL_messages_forwardMessages.from_peer = new TLRPC.TL_inputPeerEmpty();
@@ -3439,8 +3438,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                 arrayList4 = arrayList24;
                                                                 final LongSparseArray longSparseArray9 = longSparseArray3;
                                                                 inputPeer = inputPeer2;
-                                                                arrayList2 = arrayList25;
                                                                 j7 = j11;
+                                                                arrayList2 = arrayList25;
                                                                 str3 = str7;
                                                                 longSparseArray = longSparseArray4;
                                                                 final boolean z25 = i != 2147483646;
@@ -3450,7 +3449,6 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                 sendMessagesHelper = this;
                                                                 longSparseArray2 = longSparseArray9;
                                                                 arrayList5 = arrayList8;
-                                                                chat2 = chat6;
                                                                 final Runnable runnable2 = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda100
                                                                     @Override // java.lang.Runnable
                                                                     public final void run() {
@@ -3480,13 +3478,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                     arrayList19 = arrayList6;
                                                                     peer4 = peer;
                                                                     z9 = z12;
+                                                                    chat = chat2;
                                                                     arrayList17 = arrayList4;
                                                                     j6 = j7;
                                                                     inputPeer4 = inputPeer;
                                                                     str2 = str3;
                                                                     longSparseArray5 = longSparseArray;
                                                                     clientUserId = j8;
-                                                                    chat = chat2;
                                                                     arrayList18 = arrayList5;
                                                                 }
                                                             }
@@ -3505,8 +3503,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             arrayList4 = arrayList24;
                                                             final LongSparseArray longSparseArray92 = longSparseArray3;
                                                             inputPeer = inputPeer2;
-                                                            arrayList2 = arrayList25;
                                                             j7 = j11;
+                                                            arrayList2 = arrayList25;
                                                             str3 = str7;
                                                             longSparseArray = longSparseArray4;
                                                             final boolean z252 = i != 2147483646;
@@ -3516,7 +3514,6 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             sendMessagesHelper = this;
                                                             longSparseArray2 = longSparseArray92;
                                                             arrayList5 = arrayList8;
-                                                            chat2 = chat6;
                                                             final Runnable runnable22 = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda100
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
@@ -3564,8 +3561,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         arrayList4 = arrayList24;
                                                         final LongSparseArray longSparseArray922 = longSparseArray3;
                                                         inputPeer = inputPeer2;
-                                                        arrayList2 = arrayList252;
                                                         j7 = j11;
+                                                        arrayList2 = arrayList252;
                                                         str3 = str7;
                                                         longSparseArray = longSparseArray4;
                                                         final boolean z2522 = i != 2147483646;
@@ -3575,7 +3572,6 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         sendMessagesHelper = this;
                                                         longSparseArray2 = longSparseArray922;
                                                         arrayList5 = arrayList8;
-                                                        chat2 = chat6;
                                                         final Runnable runnable222 = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda100
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
@@ -3608,8 +3604,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     arrayList4 = arrayList24;
                                                     final LongSparseArray longSparseArray9222 = longSparseArray3;
                                                     inputPeer = inputPeer2;
-                                                    arrayList2 = arrayList252;
                                                     j7 = j11;
+                                                    arrayList2 = arrayList252;
                                                     str3 = str7;
                                                     longSparseArray = longSparseArray4;
                                                     final boolean z25222 = i != 2147483646;
@@ -3619,7 +3615,6 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     sendMessagesHelper = this;
                                                     longSparseArray2 = longSparseArray9222;
                                                     arrayList5 = arrayList8;
-                                                    chat2 = chat6;
                                                     final Runnable runnable2222 = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda100
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
@@ -3680,8 +3675,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         arrayList4 = arrayList242;
                                         final LongSparseArray longSparseArray92222 = longSparseArray3;
                                         inputPeer = inputPeer2;
-                                        arrayList2 = arrayList2522;
                                         j7 = j11;
+                                        arrayList2 = arrayList2522;
                                         str3 = str7;
                                         longSparseArray = longSparseArray4;
                                         final boolean z252222 = i != 2147483646;
@@ -3691,7 +3686,6 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         sendMessagesHelper = this;
                                         longSparseArray2 = longSparseArray92222;
                                         arrayList5 = arrayList8;
-                                        chat2 = chat6;
                                         final Runnable runnable22222 = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda100
                                             @Override // java.lang.Runnable
                                             public final void run() {
@@ -3774,7 +3768,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 TLRPC.Peer peer82 = peer4;
                                 if (j2 > 0) {
                                 }
-                                TLRPC.Chat chat62 = chat4;
+                                chat2 = chat4;
                                 z12 = z9;
                                 if (j3 != 0) {
                                 }
@@ -3843,8 +3837,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 arrayList4 = arrayList2422;
                                 final LongSparseArray longSparseArray922222 = longSparseArray3;
                                 inputPeer = inputPeer2;
-                                arrayList2 = arrayList25222;
                                 j7 = j11;
+                                arrayList2 = arrayList25222;
                                 str3 = str72;
                                 longSparseArray = longSparseArray4;
                                 final boolean z2522222 = i != 2147483646;
@@ -3854,7 +3848,6 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 sendMessagesHelper = this;
                                 longSparseArray2 = longSparseArray922222;
                                 arrayList5 = arrayList8;
-                                chat2 = chat62;
                                 final Runnable runnable222222 = new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda100
                                     @Override // java.lang.Runnable
                                     public final void run() {
@@ -3893,13 +3886,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     arrayList19 = arrayList6;
                                     peer4 = peer;
                                     z9 = z12;
+                                    chat = chat2;
                                     arrayList17 = arrayList4;
                                     j6 = j7;
                                     inputPeer4 = inputPeer;
                                     str2 = str3;
                                     longSparseArray5 = longSparseArray;
                                     clientUserId = j8;
-                                    chat = chat2;
                                     arrayList18 = arrayList5;
                                 }
                                 j7 = j6;
@@ -3939,13 +3932,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 arrayList19 = arrayList6;
                                 peer4 = peer;
                                 z9 = z12;
+                                chat = chat2;
                                 arrayList17 = arrayList4;
                                 j6 = j7;
                                 inputPeer4 = inputPeer;
                                 str2 = str3;
                                 longSparseArray5 = longSparseArray;
                                 clientUserId = j8;
-                                chat = chat2;
                                 arrayList18 = arrayList5;
                             }
                             j7 = j6;
@@ -3984,13 +3977,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 arrayList19 = arrayList6;
                                 peer4 = peer;
                                 z9 = z12;
+                                chat = chat2;
                                 arrayList17 = arrayList4;
                                 j6 = j7;
                                 inputPeer4 = inputPeer;
                                 str2 = str3;
                                 longSparseArray5 = longSparseArray;
                                 clientUserId = j8;
-                                chat = chat2;
                                 arrayList18 = arrayList5;
                             }
                             j7 = j6;
@@ -4030,13 +4023,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             arrayList19 = arrayList6;
                             peer4 = peer;
                             z9 = z12;
+                            chat = chat2;
                             arrayList17 = arrayList4;
                             j6 = j7;
                             inputPeer4 = inputPeer;
                             str2 = str3;
                             longSparseArray5 = longSparseArray;
                             clientUserId = j8;
-                            chat = chat2;
                             arrayList18 = arrayList5;
                         }
                         j7 = j6;
@@ -4075,13 +4068,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             arrayList19 = arrayList6;
                             peer4 = peer;
                             z9 = z12;
+                            chat = chat2;
                             arrayList17 = arrayList4;
                             j6 = j7;
                             inputPeer4 = inputPeer;
                             str2 = str3;
                             longSparseArray5 = longSparseArray;
                             clientUserId = j8;
-                            chat = chat2;
                             arrayList18 = arrayList5;
                         }
                         j7 = j6;
@@ -4109,13 +4102,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 arrayList19 = arrayList6;
                 peer4 = peer;
                 z9 = z12;
+                chat = chat2;
                 arrayList17 = arrayList4;
                 j6 = j7;
                 inputPeer4 = inputPeer;
                 str2 = str3;
                 longSparseArray5 = longSparseArray;
                 clientUserId = j8;
-                chat = chat2;
                 arrayList18 = arrayList5;
             }
             return i6;
@@ -4148,7 +4141,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendMessage$17(final TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages, final long j, final int i, final boolean z, final boolean z2, final LongSparseArray longSparseArray, final ArrayList arrayList, final ArrayList arrayList2, final MessageObject messageObject, final TLRPC.Peer peer) {
-        getConnectionsManager().sendRequest(tL_messages_forwardMessages, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda22
+        getConnectionsManager().sendRequest(tL_messages_forwardMessages, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda27
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 SendMessagesHelper.this.lambda$sendMessage$16(j, i, z, z2, longSparseArray, arrayList, arrayList2, messageObject, peer, tL_messages_forwardMessages, tLObject, tL_error);
@@ -4259,7 +4252,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 sparseLongArray = sparseLongArray2;
                                 final int i16 = i11;
                                 final TLRPC.Message message5 = message2;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda46
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda49
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         SendMessagesHelper.this.lambda$sendMessage$10(arrayList5, i15, i13, message3, i16, message5, messageObject, i);
@@ -4268,7 +4261,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             } else {
                                 sparseLongArray = sparseLongArray2;
                                 final TLRPC.Message message6 = message2;
-                                getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda47
+                                getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda50
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         SendMessagesHelper.this.lambda$sendMessage$12(i, message6, message3, peer, i13, arrayList5, j, mediaExistanceFlags);
@@ -4326,7 +4319,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tL_error2 = tL_error;
         } else {
             tL_error2 = tL_error;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda48
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda51
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$sendMessage$13(tL_error2, tL_messages_forwardMessages);
@@ -4342,7 +4335,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 message7.errorNewPriceStars = Long.parseLong(tL_error2.text.substring(23)) / tL_messages_forwardMessages.id.size();
                 getMessagesStorage().updateMessageCustomParams(MessageObject.getDialogId(message7), message7);
             }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda49
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda52
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$sendMessage$14(message7, i);
@@ -4352,7 +4345,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (tL_error2 == null || (str = tL_error2.text) == null || !str.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda50
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda53
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendMessage$15(arrayList2);
@@ -4362,7 +4355,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendMessage$10(final ArrayList arrayList, final int i, final int i2, final TLRPC.Message message, final int i3, final TLRPC.Message message2, final MessageObject messageObject, final int i4) {
-        getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda12
+        getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendMessage$9(arrayList, i, i2, message, i3, message2, messageObject, i4);
@@ -4373,7 +4366,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendMessage$9(ArrayList arrayList, final int i, final int i2, final TLRPC.Message message, final int i3, final TLRPC.Message message2, final MessageObject messageObject, final int i4) {
         getMessagesStorage().putMessages((ArrayList<TLRPC.Message>) arrayList, true, false, false, 0, i, 0L);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda77
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendMessage$8(i2, message, i3, i, message2, messageObject, i4);
@@ -4399,7 +4392,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         int i4 = (message.quick_reply_shortcut_id == 0 && message.quick_reply_shortcut == null) ? i != 0 ? 1 : 0 : 5;
         getMessagesStorage().updateMessageStateAndId(message2.random_id, MessageObject.getPeerId(peer), Integer.valueOf(i2), message2.id, 0, false, i != 0 ? 1 : 0, message.quick_reply_shortcut_id);
         getMessagesStorage().putMessages((ArrayList<TLRPC.Message>) arrayList, true, false, false, 0, i4, message.quick_reply_shortcut_id);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda45
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda47
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendMessage$11(message2, j, i2, message, i3, i);
@@ -5172,7 +5165,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    public int editMessage(MessageObject messageObject, String str, boolean z, final BaseFragment baseFragment, ArrayList<TLRPC.MessageEntity> arrayList, int i) {
+    public int editMessage(MessageObject messageObject, String str, boolean z, final BaseFragment baseFragment, ArrayList<TLRPC.MessageEntity> arrayList, int i, int i2) {
         if (baseFragment == null || baseFragment.getParentActivity() == null) {
             return 0;
         }
@@ -5195,9 +5188,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
         if (i != 0) {
             tL_messages_editMessage.schedule_date = i;
-            tL_messages_editMessage.flags |= 32768;
+            int i3 = tL_messages_editMessage.flags;
+            tL_messages_editMessage.flags = 32768 | i3;
+            if (i2 != 0) {
+                tL_messages_editMessage.schedule_repeat_period = i2;
+                tL_messages_editMessage.flags = i3 | 294912;
+            }
         }
-        return getConnectionsManager().sendRequest(tL_messages_editMessage, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda88
+        return getConnectionsManager().sendRequest(tL_messages_editMessage, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda55
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 SendMessagesHelper.this.lambda$editMessage$20(baseFragment, tL_messages_editMessage, tLObject, tL_error);
@@ -5210,7 +5208,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (tL_error == null) {
             getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
         } else {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda0
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$editMessage$19(tL_error, baseFragment, tL_messages_editMessage);
@@ -5234,7 +5232,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         Iterator<Map.Entry<String, MessageObject>> it = this.waitingForLocation.entrySet().iterator();
         while (it.hasNext()) {
             MessageObject value = it.next().getValue();
-            sendMessage(SendMessageParams.of((TLRPC.MessageMedia) tL_messageMediaGeo, value.getDialogId(), value, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0));
+            sendMessage(SendMessageParams.of((TLRPC.MessageMedia) tL_messageMediaGeo, value.getDialogId(), value, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
         }
     }
 
@@ -5270,7 +5268,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     public void sendNotificationCallback(final long j, final int i, final byte[] bArr) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda36
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda38
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendNotificationCallback$23(j, i, bArr);
@@ -5309,7 +5307,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tL_messages_getBotCallbackAnswer.flags |= 1;
             tL_messages_getBotCallbackAnswer.data = bArr;
         }
-        getConnectionsManager().sendRequest(tL_messages_getBotCallbackAnswer, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda42
+        getConnectionsManager().sendRequest(tL_messages_getBotCallbackAnswer, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda43
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 SendMessagesHelper.this.lambda$sendNotificationCallback$22(str, list, tLObject, tL_error);
@@ -5320,7 +5318,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendNotificationCallback$22(final String str, final List list, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda76
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda79
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendNotificationCallback$21(str, list);
@@ -5379,7 +5377,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             bArr = new byte[0];
         }
         this.waitingForVote.put(str, bArr);
-        return getConnectionsManager().sendRequest(tL_messages_sendVote, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda8
+        return getConnectionsManager().sendRequest(tL_messages_sendVote, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda11
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 SendMessagesHelper.this.lambda$sendVote$25(messageObject, str, runnable, tLObject, tL_error);
@@ -5394,7 +5392,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
             this.voteSendTime.put(messageObject.getPollId(), Long.valueOf(SystemClock.elapsedRealtime()));
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda23
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendVote$24(str, runnable);
@@ -5428,7 +5426,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         } else {
             tL_messages_toggleTodoCompleted.incompleted.add(Integer.valueOf(todoItem.id));
         }
-        return getConnectionsManager().sendRequest(tL_messages_toggleTodoCompleted, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda32
+        return getConnectionsManager().sendRequest(tL_messages_toggleTodoCompleted, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda31
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 SendMessagesHelper.this.lambda$toggleTodo$27(messageObject, todoItem, z, hash, runnable, tLObject, tL_error);
@@ -5442,7 +5440,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             getMessagesStorage().toggleTodo(messageObject.getDialogId(), messageObject.getId(), todoItem.id, z);
             getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda35
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$toggleTodo$26(i, z, runnable);
@@ -5524,7 +5522,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = new TLRPC.TL_messages_requestUrlAuth();
         tL_messages_requestUrlAuth.url = str;
         tL_messages_requestUrlAuth.flags |= 4;
-        getConnectionsManager().sendRequest(tL_messages_requestUrlAuth, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda98
+        getConnectionsManager().sendRequest(tL_messages_requestUrlAuth, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda97
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 SendMessagesHelper.lambda$requestUrlAuth$30(ChatActivity.this, tL_messages_requestUrlAuth, str, z, tLObject, tL_error);
@@ -5688,7 +5686,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendCallback$39(final String str, final List list, final boolean z, final MessageObject messageObject, final TLRPC.KeyboardButton keyboardButton, final ChatActivity chatActivity, final TwoStepVerificationActivity twoStepVerificationActivity, final TLObject[] tLObjectArr, final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, final boolean z2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda25
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda30
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendCallback$38(str, list, z, tLObject, messageObject, keyboardButton, chatActivity, twoStepVerificationActivity, tLObjectArr, tL_error, inputCheckPasswordSRP, z2);
@@ -5709,7 +5707,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (tLObject != null) {
             if (twoStepVerificationActivity != null) {
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$355();
+                twoStepVerificationActivity.lambda$onBackPressed$341();
             }
             long fromChatId = messageObject.getFromChatId();
             long j = messageObject.messageOwner.via_bot_id;
@@ -5750,12 +5748,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
             if (keyboardButton instanceof TLRPC.TL_keyboardButtonBuy) {
                 if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
-                    StarsController.getInstance(this.currentAccount).openPaymentForm(messageObject, ((TLRPC.TL_payments_getPaymentForm) tLObjectArr[0]).invoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda92
+                    StarsController.getInstance(this.currentAccount).openPaymentForm(messageObject, ((TLRPC.TL_payments_getPaymentForm) tLObjectArr[0]).invoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda91
                         @Override // java.lang.Runnable
                         public final void run() {
                             SendMessagesHelper.this.lambda$sendCallback$31(str, list);
                         }
-                    }, new Utilities.Callback() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda93
+                    }, new Utilities.Callback() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda92
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             SendMessagesHelper.lambda$sendCallback$32((String) obj);
@@ -5835,7 +5833,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(chatActivity.getParentActivity());
                 builder2.setTitle(LocaleController.getString(R.string.BotOwnershipTransfer));
                 builder2.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("BotOwnershipTransferReadyAlertText", R.string.BotOwnershipTransferReadyAlertText, new Object[0])));
-                builder2.setPositiveButton(LocaleController.getString(R.string.BotOwnershipTransferChangeOwner), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda94
+                builder2.setPositiveButton(LocaleController.getString(R.string.BotOwnershipTransferChangeOwner), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda93
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         SendMessagesHelper.this.lambda$sendCallback$34(z2, messageObject, keyboardButton, chatActivity, alertDialog, i);
@@ -5906,7 +5904,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 linearLayout3.addView(textView3, LayoutHelper.createLinear(-1, -2));
             }
             if ("PASSWORD_MISSING".equals(tL_error.text)) {
-                builder3.setPositiveButton(LocaleController.getString(R.string.EditAdminTransferSetPassword), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda96
+                builder3.setPositiveButton(LocaleController.getString(R.string.EditAdminTransferSetPassword), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda95
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i3) {
                         SendMessagesHelper.lambda$sendCallback$35(ChatActivity.this, alertDialog, i3);
@@ -5926,7 +5924,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             return;
         }
         if ("SRP_ID_INVALID".equals(tL_error.text)) {
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda95
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_account.getPassword(), new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda94
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
                     SendMessagesHelper.this.lambda$sendCallback$37(twoStepVerificationActivity, z2, messageObject, keyboardButton, chatActivity, tLObject2, tL_error2);
@@ -5934,7 +5932,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }, 8);
         } else if (twoStepVerificationActivity != null) {
             twoStepVerificationActivity.needHideProgress();
-            twoStepVerificationActivity.lambda$onBackPressed$355();
+            twoStepVerificationActivity.lambda$onBackPressed$341();
         }
     }
 
@@ -5947,7 +5945,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendCallback$34(final boolean z, final MessageObject messageObject, final TLRPC.KeyboardButton keyboardButton, final ChatActivity chatActivity, AlertDialog alertDialog, int i) {
         final TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-        twoStepVerificationActivity.setDelegate(0, new TwoStepVerificationActivity.TwoStepVerificationActivityDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda1
+        twoStepVerificationActivity.setDelegate(0, new TwoStepVerificationActivity.TwoStepVerificationActivityDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda6
             @Override // org.telegram.ui.TwoStepVerificationActivity.TwoStepVerificationActivityDelegate
             public final void didEnterPassword(TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP) {
                 SendMessagesHelper.this.lambda$sendCallback$33(z, messageObject, keyboardButton, twoStepVerificationActivity, chatActivity, inputCheckPasswordSRP);
@@ -6041,7 +6039,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 e = e2;
                 FileLog.e(e);
                 j2 = getMessagesStorage().createPendingTask(nativeByteBuffer);
-                getConnectionsManager().sendRequest(tL_messages_sendMedia, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda106
+                getConnectionsManager().sendRequest(tL_messages_sendMedia, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         SendMessagesHelper.this.lambda$sendGame$40(j2, tLObject, tL_error);
@@ -6050,7 +6048,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
             j2 = getMessagesStorage().createPendingTask(nativeByteBuffer);
         }
-        getConnectionsManager().sendRequest(tL_messages_sendMedia, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda106
+        getConnectionsManager().sendRequest(tL_messages_sendMedia, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 SendMessagesHelper.this.lambda$sendGame$40(j2, tLObject, tL_error);
@@ -6075,9 +6073,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
-    public void sendMessage(org.telegram.messenger.SendMessagesHelper.SendMessageParams r109) {
+    public void sendMessage(org.telegram.messenger.SendMessagesHelper.SendMessageParams r111) {
         /*
-            Method dump skipped, instructions count: 10166
+            Method dump skipped, instructions count: 10267
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.sendMessage(org.telegram.messenger.SendMessagesHelper$SendMessageParams):void");
@@ -6279,7 +6277,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = new TLRPC.TL_inputMediaUploadedPhoto();
                     tL_inputMediaUploadedPhoto.file = delayedMessage.coverFile;
                     tL_messages_uploadMedia.media = tL_inputMediaUploadedPhoto;
-                    getConnectionsManager().sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda78
+                    getConnectionsManager().sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda82
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject3, TLRPC.TL_error tL_error) {
                             SendMessagesHelper.this.lambda$performSendDelayedMessage$43(inputMedia4, delayedMessage, tLObject3, tL_error);
@@ -6412,7 +6410,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 final String str15 = "stickerset_" + delayedMessage.obj.getId();
                 TLRPC.TL_messages_getStickerSet tL_messages_getStickerSet = new TLRPC.TL_messages_getStickerSet();
                 tL_messages_getStickerSet.stickerset = (TLRPC.InputStickerSet) delayedMessage.parentObject;
-                getConnectionsManager().sendRequest(tL_messages_getStickerSet, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda80
+                getConnectionsManager().sendRequest(tL_messages_getStickerSet, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda84
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject4, TLRPC.TL_error tL_error) {
                         SendMessagesHelper.this.lambda$performSendDelayedMessage$47(delayedMessage, str15, tLObject4, tL_error);
@@ -6547,7 +6545,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto2 = new TLRPC.TL_inputMediaUploadedPhoto();
                                         tL_inputMediaUploadedPhoto2.file = delayedMessage.coverFile;
                                         tL_messages_uploadMedia2.media = tL_inputMediaUploadedPhoto2;
-                                        getConnectionsManager().sendRequest(tL_messages_uploadMedia2, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda79
+                                        getConnectionsManager().sendRequest(tL_messages_uploadMedia2, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda83
                                             @Override // org.telegram.tgnet.RequestDelegate
                                             public final void run(TLObject tLObject5, TLRPC.TL_error tL_error) {
                                                 SendMessagesHelper.this.lambda$performSendDelayedMessage$45(inputMedia8, delayedMessage, str18, messageObject7, tLObject5, tL_error);
@@ -6699,7 +6697,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendDelayedMessage$45(final TLRPC.InputMedia inputMedia, final DelayedMessage delayedMessage, final String str, final MessageObject messageObject, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda51
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda54
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendDelayedMessage$44(tLObject, inputMedia, delayedMessage, str, messageObject);
@@ -6759,7 +6757,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendDelayedMessage$47(final DelayedMessage delayedMessage, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda9
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendDelayedMessage$46(tLObject, delayedMessage, str);
@@ -6853,7 +6851,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 }
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda43
+        getConnectionsManager().sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda45
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                 SendMessagesHelper.this.lambda$uploadMultiMedia$49(inputMedia, delayedMessage, tLObject2, tL_error);
@@ -6863,7 +6861,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$uploadMultiMedia$49(final TLRPC.InputMedia inputMedia, final DelayedMessage delayedMessage, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda37
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda39
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$uploadMultiMedia$48(tLObject, inputMedia, delayedMessage);
@@ -7289,18 +7287,18 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         for (int i = 0; i < size; i++) {
             putToSendingMessages(arrayList.get(i).messageOwner, z);
         }
-        if (StarsController.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, arrayList, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda65
+        if (StarsController.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, arrayList, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda69
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequestMulti$51(tLObject, arrayList, arrayList2, arrayList3, delayedMessage, z);
             }
-        }) && BotForumHelper.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, arrayList, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda66
+        }) && BotForumHelper.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, arrayList, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda70
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequestMulti$52(tLObject, arrayList, arrayList2, arrayList3, delayedMessage, z);
             }
         })) {
-            getConnectionsManager().sendRequest(tLObject, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda67
+            getConnectionsManager().sendRequest(tLObject, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda71
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                     SendMessagesHelper.this.lambda$performSendMessageRequestMulti$61(arrayList3, tLObject, arrayList, arrayList2, delayedMessage, z, tLObject2, tL_error);
@@ -7522,7 +7520,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         final TLRPC.TL_updateNewMessage tL_updateNewMessage = (TLRPC.TL_updateNewMessage) update;
                         TLRPC.Message message3 = tL_updateNewMessage.message;
                         sparseArray2.put(message3.id, message3);
-                        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda52
+                        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda56
                             @Override // java.lang.Runnable
                             public final void run() {
                                 SendMessagesHelper.this.lambda$performSendMessageRequestMulti$54(tL_updateNewMessage);
@@ -7562,7 +7560,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         }
                         TLRPC.Message message4 = tL_updateNewChannelMessage.message;
                         sparseArray2.put(message4.id, message4);
-                        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda53
+                        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda57
                             @Override // java.lang.Runnable
                             public final void run() {
                                 SendMessagesHelper.this.lambda$performSendMessageRequestMulti$55(tL_updateNewChannelMessage);
@@ -7571,7 +7569,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         arrayList6.remove(i5);
                         i5--;
                         if (tL_updateNewChannelMessage.message.pinned) {
-                            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda54
+                            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda58
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     SendMessagesHelper.this.lambda$performSendMessageRequestMulti$56(tL_updateNewChannelMessage, updateChannelId);
@@ -7691,7 +7689,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 final int[] iArr3 = iArr;
                 final SparseArray sparseArray4 = sparseArray;
                 arrayList7 = arrayList7;
-                getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda55
+                getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda59
                     @Override // java.lang.Runnable
                     public final void run() {
                         SendMessagesHelper.this.lambda$performSendMessageRequestMulti$58(z4, message9, i11, arrayList9, iArr2, iArr3, z, messageObject, sparseArray4, arrayList7, j, mediaExistanceFlags);
@@ -7709,7 +7707,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             c = 0;
             sendMessagesHelper = this;
             final TLRPC.Updates updates4 = updates;
-            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda56
+            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda60
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$performSendMessageRequestMulti$59(updates4);
@@ -7772,7 +7770,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         int i3 = (message.quick_reply_shortcut_id == 0 && message.quick_reply_shortcut == null) ? z ? 1 : 0 : 5;
         getMessagesStorage().updateMessageStateAndId(message.random_id, MessageObject.getPeerId(message.peer_id), Integer.valueOf(i), message.id, 0, false, i3, message.quick_reply_shortcut_id);
         getMessagesStorage().putMessages((ArrayList<TLRPC.Message>) arrayList, true, false, false, 0, i3, message.quick_reply_shortcut_id);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda68
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequestMulti$57(iArr, iArr2, z2, z, messageObject, sparseArray, arrayList2, message, i, j, i2);
@@ -7929,23 +7927,23 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
         final TLRPC.Message message = messageObject.messageOwner;
         putToSendingMessages(message, z2);
-        if (StarsController.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, messageObject, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda84
+        if (StarsController.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, messageObject, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda87
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequest$62(tLObject, messageObject, str, delayedMessage, z, delayedMessage2, obj, hashMap, z2);
             }
-        }) && BotForumHelper.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, messageObject, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda85
+        }) && BotForumHelper.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, messageObject, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda88
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequest$63(tLObject, messageObject, str, delayedMessage, z, delayedMessage2, obj, hashMap, z2);
             }
         })) {
-            message.reqId = getConnectionsManager().sendRequest(tLObject, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda86
+            message.reqId = getConnectionsManager().sendRequest(tLObject, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda89
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                     SendMessagesHelper.this.lambda$performSendMessageRequest$78(tLObject, messageObject, str, delayedMessage, z, delayedMessage2, obj, hashMap, z2, message, tLObject2, tL_error);
                 }
-            }, new QuickAckDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda87
+            }, new QuickAckDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda90
                 @Override // org.telegram.tgnet.QuickAckDelegate
                 public final void run() {
                     SendMessagesHelper.this.lambda$performSendMessageRequest$80(message);
@@ -7969,7 +7967,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 getFileRefController().requestReference(obj, tLObject, messageObject, str, delayedMessage, Boolean.valueOf(z), delayedMessage2, Boolean.valueOf(z2));
                 return;
             } else if (delayedMessage2 != null) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda4
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda7
                     @Override // java.lang.Runnable
                     public final void run() {
                         SendMessagesHelper.this.lambda$performSendMessageRequest$64(message, z2, tLObject, delayedMessage2);
@@ -7979,14 +7977,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
         }
         if (tLObject instanceof TLRPC.TL_messages_editMessage) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda5
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$performSendMessageRequest$67(tL_error, message, tLObject2, messageObject, str, z2, tLObject);
                 }
             });
         } else {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda6
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$performSendMessageRequest$77(z2, tL_error, message, tLObject2, messageObject, str, tLObject);
@@ -8057,7 +8055,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 ImageLoader.saveMessageThumbs(message3);
                 updateMediaPaths(messageObject, message3, message3.id, str, false);
             }
-            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
+            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda76
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$performSendMessageRequest$66(updates, message, z);
@@ -8073,7 +8071,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequest$66(TLRPC.Updates updates, final TLRPC.Message message, final boolean z) {
         getMessagesController().processUpdates(updates, false);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda77
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda80
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequest$65(message, z);
@@ -8150,7 +8148,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     getMessagesController().dialogs_read_outbox_max.put(Long.valueOf(message.dialog_id), num);
                 }
                 message.unread = num.intValue() < message.id;
-                Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda13
+                Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda17
                     @Override // java.lang.Runnable
                     public final void run() {
                         SendMessagesHelper.this.lambda$performSendMessageRequest$68(tL_updateShortSentMessage);
@@ -8175,7 +8173,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             TLRPC.Message message3 = tL_updateNewMessage.message;
                             if (message3.action == null) {
                                 arrayList.add(message3);
-                                Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda14
+                                Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda18
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         SendMessagesHelper.this.lambda$performSendMessageRequest$69(tL_updateNewMessage);
@@ -8222,7 +8220,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 }
                                 message2 = tL_updateNewChannelMessage.message;
                                 arrayList.add(message2);
-                                Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda15
+                                Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda19
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         SendMessagesHelper.this.lambda$performSendMessageRequest$70(tL_updateNewChannelMessage);
@@ -8231,7 +8229,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 arrayList2.remove(i7);
                                 i7--;
                                 if (tL_updateNewChannelMessage.message.pinned) {
-                                    Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda16
+                                    Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda20
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             SendMessagesHelper.this.lambda$performSendMessageRequest$71(tL_updateNewChannelMessage, updateChannelId);
@@ -8344,7 +8342,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         i3 = 0;
                         z6 = true;
                     }
-                    Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda17
+                    Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda21
                         @Override // java.lang.Runnable
                         public final void run() {
                             SendMessagesHelper.this.lambda$performSendMessageRequest$72(updates);
@@ -8376,7 +8374,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     final ArrayList arrayList4 = new ArrayList();
                     arrayList4.add(new MessageObject(messageObject.currentAccount, messageObject.messageOwner, true, true));
                     final int i13 = i;
-                    getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda18
+                    getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda22
                         @Override // java.lang.Runnable
                         public final void run() {
                             SendMessagesHelper.this.lambda$performSendMessageRequest$74(arrayList, z, z3, message, arrayList3, arrayList4, i13);
@@ -8389,7 +8387,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.messageReceivedByServer2, Integer.valueOf(i), Integer.valueOf(message.id), message, Long.valueOf(message.dialog_id), 0L, Integer.valueOf(i2), Boolean.valueOf(z));
                     final int i14 = i;
                     final int i15 = i2;
-                    getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda19
+                    getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda23
                         @Override // java.lang.Runnable
                         public final void run() {
                             SendMessagesHelper.this.lambda$performSendMessageRequest$76(z, message, i14, arrayList, i15);
@@ -8458,7 +8456,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequest$74(ArrayList arrayList, final boolean z, final boolean z2, final TLRPC.Message message, final ArrayList arrayList2, final ArrayList arrayList3, final int i) {
         getMessagesStorage().putMessages(arrayList, true, false, false, 0, false, !z ? 1 : 0, 0L);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda33
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequest$73(z2, message, arrayList2, z, arrayList3, i);
@@ -8480,7 +8478,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         int i3 = (message.quick_reply_shortcut_id == 0 && message.quick_reply_shortcut == null) ? z ? 1 : 0 : 5;
         getMessagesStorage().updateMessageStateAndId(message.random_id, MessageObject.getPeerId(message.peer_id), Integer.valueOf(i), message.id, 0, false, z ? 1 : 0, message.quick_reply_shortcut_id);
         getMessagesStorage().putMessages((ArrayList<TLRPC.Message>) arrayList, true, false, false, 0, i3, message.quick_reply_shortcut_id);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda24
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda29
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequest$75(message, i, i2, z);
@@ -8500,7 +8498,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequest$80(final TLRPC.Message message) {
         final int i = message.id;
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda97
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda96
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequest$79(message, i);
@@ -9128,8 +9126,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 str3 = str13;
                 bArr = null;
                 messageMedia3 = messageMedia2;
-                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, NotificationCenter.onReceivedChannelDifference);
-                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageMedia.document.thumbs, NotificationCenter.onReceivedChannelDifference);
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, NotificationCenter.uploadStoryEnd);
+                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageMedia.document.thumbs, NotificationCenter.uploadStoryEnd);
                 if (closestPhotoSizeWithSize2 != null && (fileLocation2 = closestPhotoSizeWithSize2.location) != null && fileLocation2.volume_id == -2147483648L && closestPhotoSizeWithSize3 != null && closestPhotoSizeWithSize3.location != null && !(closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoSizeEmpty) && !(closestPhotoSizeWithSize2 instanceof TLRPC.TL_photoSizeEmpty)) {
                     String str23 = closestPhotoSizeWithSize2.location.volume_id + "_" + closestPhotoSizeWithSize2.location.local_id;
                     String str24 = closestPhotoSizeWithSize3.location.volume_id + "_" + closestPhotoSizeWithSize3.location.local_id;
@@ -9320,7 +9318,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     protected void processUnsentMessages(final ArrayList<TLRPC.Message> arrayList, final ArrayList<TLRPC.Message> arrayList2, final ArrayList<TLRPC.User> arrayList3, final ArrayList<TLRPC.Chat> arrayList4, final ArrayList<TLRPC.EncryptedChat> arrayList5) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda82
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda86
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$processUnsentMessages$81(arrayList3, arrayList4, arrayList5, arrayList, arrayList2);
@@ -9377,7 +9375,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             long j2 = -j;
             TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(j2));
             if (chat != null && !chat.megagroup) {
-                getMessagesController().convertToMegaGroup(null, j2, null, new MessagesStorage.LongCallback() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda39
+                getMessagesController().convertToMegaGroup(null, j2, null, new MessagesStorage.LongCallback() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda41
                     @Override // org.telegram.messenger.MessagesStorage.LongCallback
                     public final void run(long j3) {
                         SendMessagesHelper.this.lambda$prepareImportHistory$82(uri, arrayList, longCallback, j3);
@@ -9386,7 +9384,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 return;
             }
         }
-        new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda40
+        new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda42
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$prepareImportHistory$87(arrayList, j, uri, longCallback);
@@ -9420,7 +9418,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (uri2 == null || AndroidUtilities.isInternalUri(uri2)) {
                 i = i3;
                 if (i == 0) {
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda63
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda67
                         @Override // java.lang.Runnable
                         public final void run() {
                             MessagesStorage.LongCallback.this.run(0L);
@@ -9506,7 +9504,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             } else {
                                 if (length > 33554432) {
                                     file2.delete();
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda61
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda65
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             SendMessagesHelper.lambda$prepareImportHistory$85(MessagesStorage.LongCallback.this);
@@ -9522,7 +9520,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     }
                     i = i3;
                     if (i == 0) {
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda62
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda66
                             @Override // java.lang.Runnable
                             public final void run() {
                                 MessagesStorage.LongCallback.this.run(0L);
@@ -9535,7 +9533,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             i3 = i + 1;
             i2 = 0;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda64
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda68
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$prepareImportHistory$86(hashMap, j, importingHistory, longCallback);
@@ -9567,7 +9565,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (this.importingStickersMap.get(str2) != null) {
             stringCallback.run(null);
         } else {
-            new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda11
+            new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda15
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$prepareImportStickers$90(str, str2, str3, arrayList, stringCallback);
@@ -9597,7 +9595,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 }
             }
             if (i == 0) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda69
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda74
                     @Override // java.lang.Runnable
                     public final void run() {
                         MessagesStorage.StringCallback.this.run(null);
@@ -9606,7 +9604,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 return;
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda70
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda75
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$prepareImportStickers$89(importingStickers, hashMap, str2, stringCallback);
@@ -9669,17 +9667,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return tL_photo2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:125:0x045a  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0478 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x04eb  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x050b  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x051b  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0525 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x052e  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x053a  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x0594 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0511  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x04ff  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0462  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0480 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x04f3  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x0513  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0523  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x052d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0536  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x0542  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x059c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x0519  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x0507  */
     /* JADX WARN: Removed duplicated region for block: B:253:0x028f  */
     /* JADX WARN: Removed duplicated region for block: B:254:0x0248  */
     /* JADX WARN: Removed duplicated region for block: B:304:0x01b4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
@@ -9693,7 +9691,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static int prepareSendingDocumentInternal(final AccountInstance accountInstance, String str, String str2, Uri uri, String str3, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final ArrayList<TLRPC.MessageEntity> arrayList, final MessageObject messageObject3, long[] jArr, boolean z, CharSequence charSequence, final boolean z2, final int i, Integer[] numArr, boolean z3, final String str4, final int i2, final long j2, final boolean z4, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams) {
+    private static int prepareSendingDocumentInternal(final AccountInstance accountInstance, String str, String str2, Uri uri, String str3, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final ArrayList<TLRPC.MessageEntity> arrayList, final MessageObject messageObject3, long[] jArr, boolean z, CharSequence charSequence, final boolean z2, final int i, final int i2, Integer[] numArr, boolean z3, final String str4, final int i3, final long j2, final boolean z4, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams) {
         String str5;
         String str6;
         File file;
@@ -9701,7 +9699,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         String lowerCase;
         AudioInfo audioInfo;
         long j5;
-        int i3;
+        int i4;
         String str8;
         String str9;
         Bitmap cover;
@@ -9722,9 +9720,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         MimeTypeMap mimeTypeMap;
         TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio2;
         long j6;
-        int i4;
         int i5;
         int i6;
+        int i7;
         final String str16;
         TLRPC.TL_document tL_document;
         final String str17;
@@ -9735,8 +9733,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         final HashMap hashMap;
         String str19;
         boolean z9;
-        int i7;
         int i8;
+        int i9;
         TLRPC.PhotoSize scaleAndSaveImage;
         Bitmap loadBitmap;
         String str20;
@@ -9750,11 +9748,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         String str23;
         Bitmap bitmap2;
         String str24;
-        int i9;
+        int i10;
         Throwable th;
         boolean z10;
         Bitmap bitmap3;
-        int i10;
+        int i11;
         String str25;
         String str26;
         Bitmap bitmap4;
@@ -9809,9 +9807,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     if (duration != 0) {
                                         str8 = audioInfo.getArtist();
                                         str9 = audioInfo.getTitle();
-                                        i3 = (int) (duration / 1000);
+                                        i4 = (int) (duration / 1000);
                                     } else {
-                                        i3 = 0;
+                                        i4 = 0;
                                         str8 = null;
                                         str9 = null;
                                     }
@@ -9824,7 +9822,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 cover = null;
                                 str11 = null;
                                 str10 = null;
-                                i3 = 0;
+                                i4 = 0;
                                 z5 = false;
                             } else {
                                 if (lowerCase.equals("opus") || lowerCase.equals("ogg") || lowerCase.equals("flac")) {
@@ -9843,9 +9841,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         exc = e;
                                                         bitmap3 = null;
                                                         str23 = null;
-                                                        i10 = 0;
+                                                        i11 = 0;
                                                         str24 = null;
-                                                        i9 = i10;
+                                                        i10 = i11;
                                                         bitmap2 = bitmap3;
                                                         try {
                                                             FileLog.e(exc);
@@ -9854,11 +9852,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             str11 = str23;
                                                             cover = bitmap2;
                                                             str10 = str24;
-                                                            i3 = i9;
+                                                            i4 = i10;
                                                             j5 = 0;
                                                             z5 = false;
                                                             String str27 = lowerCase;
-                                                            if (i3 != 0) {
+                                                            if (i4 != 0) {
                                                             }
                                                             if (str2 == null) {
                                                             }
@@ -9874,9 +9872,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             mimeTypeMap = singleton;
                                                             tL_documentAttributeAudio2 = tL_documentAttributeAudio;
                                                             j6 = j5;
-                                                            i4 = 0;
-                                                            i5 = 2;
-                                                            i6 = -1;
+                                                            i5 = 0;
+                                                            i6 = 2;
+                                                            i7 = -1;
                                                             str16 = null;
                                                             tL_document = null;
                                                             if (tL_document != null) {
@@ -9891,17 +9889,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             }
                                                             if (str16 != null) {
                                                             }
-                                                            Integer valueOf = Integer.valueOf(i4);
+                                                            Integer valueOf = Integer.valueOf(i5);
                                                             if (numArr != null) {
                                                             }
                                                             z9 = false;
                                                             if (z8) {
                                                             }
                                                             final TLRPC.TL_document tL_document4 = tL_document2;
-                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
-                                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                                 }
                                                             });
                                                             return 0;
@@ -9916,7 +9914,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     }
                                                     try {
                                                         String extractMetadata = mediaMetadataRetriever2.extractMetadata(7);
-                                                        i10 = ceil;
+                                                        i11 = ceil;
                                                         try {
                                                             str23 = extractMetadata;
                                                             str26 = mediaMetadataRetriever2.extractMetadata(2);
@@ -9926,7 +9924,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             bitmap3 = null;
                                                             str24 = null;
                                                             lowerCase = str25;
-                                                            i9 = i10;
+                                                            i10 = i11;
                                                             bitmap2 = bitmap3;
                                                             FileLog.e(exc);
                                                             if (mediaMetadataRetriever2 != null) {
@@ -9934,11 +9932,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             str11 = str23;
                                                             cover = bitmap2;
                                                             str10 = str24;
-                                                            i3 = i9;
+                                                            i4 = i10;
                                                             j5 = 0;
                                                             z5 = false;
                                                             String str272 = lowerCase;
-                                                            if (i3 != 0) {
+                                                            if (i4 != 0) {
                                                             }
                                                             if (str2 == null) {
                                                             }
@@ -9954,9 +9952,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             mimeTypeMap = singleton;
                                                             tL_documentAttributeAudio2 = tL_documentAttributeAudio;
                                                             j6 = j5;
-                                                            i4 = 0;
-                                                            i5 = 2;
-                                                            i6 = -1;
+                                                            i5 = 0;
+                                                            i6 = 2;
+                                                            i7 = -1;
                                                             str16 = null;
                                                             tL_document = null;
                                                             if (tL_document != null) {
@@ -9971,29 +9969,29 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             }
                                                             if (str16 != null) {
                                                             }
-                                                            Integer valueOf2 = Integer.valueOf(i4);
+                                                            Integer valueOf2 = Integer.valueOf(i5);
                                                             if (numArr != null) {
                                                             }
                                                             z9 = false;
                                                             if (z8) {
                                                             }
                                                             final TLRPC.TL_document tL_document42 = tL_document2;
-                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
-                                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                                 }
                                                             });
                                                             return 0;
                                                         }
                                                     } catch (Exception e3) {
-                                                        i10 = ceil;
+                                                        i11 = ceil;
                                                         lowerCase = str25;
                                                         exc = e3;
                                                         bitmap3 = null;
                                                         str23 = null;
                                                         str24 = null;
-                                                        i9 = i10;
+                                                        i10 = i11;
                                                         bitmap2 = bitmap3;
                                                         FileLog.e(exc);
                                                         if (mediaMetadataRetriever2 != null) {
@@ -10001,11 +9999,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         str11 = str23;
                                                         cover = bitmap2;
                                                         str10 = str24;
-                                                        i3 = i9;
+                                                        i4 = i10;
                                                         j5 = 0;
                                                         z5 = false;
                                                         String str2722 = lowerCase;
-                                                        if (i3 != 0) {
+                                                        if (i4 != 0) {
                                                         }
                                                         if (str2 == null) {
                                                         }
@@ -10021,9 +10019,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         mimeTypeMap = singleton;
                                                         tL_documentAttributeAudio2 = tL_documentAttributeAudio;
                                                         j6 = j5;
-                                                        i4 = 0;
-                                                        i5 = 2;
-                                                        i6 = -1;
+                                                        i5 = 0;
+                                                        i6 = 2;
+                                                        i7 = -1;
                                                         str16 = null;
                                                         tL_document = null;
                                                         if (tL_document != null) {
@@ -10038,17 +10036,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         }
                                                         if (str16 != null) {
                                                         }
-                                                        Integer valueOf22 = Integer.valueOf(i4);
+                                                        Integer valueOf22 = Integer.valueOf(i5);
                                                         if (numArr != null) {
                                                         }
                                                         z9 = false;
                                                         if (z8) {
                                                         }
                                                         final TLRPC.TL_document tL_document422 = tL_document2;
-                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
-                                                                SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                                                SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                             }
                                                         });
                                                         return 0;
@@ -10057,7 +10055,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     str25 = lowerCase;
                                                     str26 = null;
                                                     str23 = null;
-                                                    i10 = 0;
+                                                    i11 = 0;
                                                 }
                                                 try {
                                                     byte[] embeddedPicture = mediaMetadataRetriever2.getEmbeddedPicture();
@@ -10070,7 +10068,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             lowerCase = str25;
                                                             exc = e;
                                                             bitmap3 = null;
-                                                            i9 = i10;
+                                                            i10 = i11;
                                                             bitmap2 = bitmap3;
                                                             FileLog.e(exc);
                                                             if (mediaMetadataRetriever2 != null) {
@@ -10085,9 +10083,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                     str10 = str24;
                                                                     j5 = 0;
                                                                     z5 = z10;
-                                                                    i3 = i9;
+                                                                    i4 = i10;
                                                                     String str27222 = lowerCase;
-                                                                    if (i3 != 0) {
+                                                                    if (i4 != 0) {
                                                                     }
                                                                     if (str2 == null) {
                                                                     }
@@ -10103,9 +10101,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                     mimeTypeMap = singleton;
                                                                     tL_documentAttributeAudio2 = tL_documentAttributeAudio;
                                                                     j6 = j5;
-                                                                    i4 = 0;
-                                                                    i5 = 2;
-                                                                    i6 = -1;
+                                                                    i5 = 0;
+                                                                    i6 = 2;
+                                                                    i7 = -1;
                                                                     str16 = null;
                                                                     tL_document = null;
                                                                     if (tL_document != null) {
@@ -10120,17 +10118,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                     }
                                                                     if (str16 != null) {
                                                                     }
-                                                                    Integer valueOf222 = Integer.valueOf(i4);
+                                                                    Integer valueOf222 = Integer.valueOf(i5);
                                                                     if (numArr != null) {
                                                                     }
                                                                     z9 = false;
                                                                     if (z8) {
                                                                     }
                                                                     final TLRPC.TL_document tL_document4222 = tL_document2;
-                                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                                                         @Override // java.lang.Runnable
                                                                         public final void run() {
-                                                                            SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                                                            SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                                         }
                                                                     });
                                                                     return 0;
@@ -10139,11 +10137,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             str11 = str23;
                                                             cover = bitmap2;
                                                             str10 = str24;
-                                                            i3 = i9;
+                                                            i4 = i10;
                                                             j5 = 0;
                                                             z5 = false;
                                                             String str272222 = lowerCase;
-                                                            if (i3 != 0) {
+                                                            if (i4 != 0) {
                                                             }
                                                             if (str2 == null) {
                                                             }
@@ -10159,9 +10157,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             mimeTypeMap = singleton;
                                                             tL_documentAttributeAudio2 = tL_documentAttributeAudio;
                                                             j6 = j5;
-                                                            i4 = 0;
-                                                            i5 = 2;
-                                                            i6 = -1;
+                                                            i5 = 0;
+                                                            i6 = 2;
+                                                            i7 = -1;
                                                             str16 = null;
                                                             tL_document = null;
                                                             if (tL_document != null) {
@@ -10176,17 +10174,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             }
                                                             if (str16 != null) {
                                                             }
-                                                            Integer valueOf2222 = Integer.valueOf(i4);
+                                                            Integer valueOf2222 = Integer.valueOf(i5);
                                                             if (numArr != null) {
                                                             }
                                                             z9 = false;
                                                             if (z8) {
                                                             }
                                                             final TLRPC.TL_document tL_document42222 = tL_document2;
-                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
-                                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                                 }
                                                             });
                                                             return 0;
@@ -10214,7 +10212,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                 str11 = str23;
                                                                 str10 = str24;
                                                                 z5 = z10;
-                                                                i3 = i10;
+                                                                i4 = i11;
                                                                 j5 = 0;
                                                             }
                                                             z10 = false;
@@ -10222,14 +10220,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             str11 = str23;
                                                             str10 = str24;
                                                             z5 = z10;
-                                                            i3 = i10;
+                                                            i4 = i11;
                                                             j5 = 0;
                                                         }
                                                     } catch (Exception e8) {
                                                         Bitmap bitmap5 = bitmap4;
                                                         exc = e8;
                                                         bitmap3 = bitmap5;
-                                                        i9 = i10;
+                                                        i10 = i11;
                                                         bitmap2 = bitmap3;
                                                         FileLog.e(exc);
                                                         if (mediaMetadataRetriever2 != null) {
@@ -10237,11 +10235,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         str11 = str23;
                                                         cover = bitmap2;
                                                         str10 = str24;
-                                                        i3 = i9;
+                                                        i4 = i10;
                                                         j5 = 0;
                                                         z5 = false;
                                                         String str2722222 = lowerCase;
-                                                        if (i3 != 0) {
+                                                        if (i4 != 0) {
                                                         }
                                                         if (str2 == null) {
                                                         }
@@ -10257,9 +10255,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         mimeTypeMap = singleton;
                                                         tL_documentAttributeAudio2 = tL_documentAttributeAudio;
                                                         j6 = j5;
-                                                        i4 = 0;
-                                                        i5 = 2;
-                                                        i6 = -1;
+                                                        i5 = 0;
+                                                        i6 = 2;
+                                                        i7 = -1;
                                                         str16 = null;
                                                         tL_document = null;
                                                         if (tL_document != null) {
@@ -10274,17 +10272,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         }
                                                         if (str16 != null) {
                                                         }
-                                                        Integer valueOf22222 = Integer.valueOf(i4);
+                                                        Integer valueOf22222 = Integer.valueOf(i5);
                                                         if (numArr != null) {
                                                         }
                                                         z9 = false;
                                                         if (z8) {
                                                         }
                                                         final TLRPC.TL_document tL_document422222 = tL_document2;
-                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
-                                                                SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                                                SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                             }
                                                         });
                                                         return 0;
@@ -10296,11 +10294,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 str11 = str23;
                                                 str10 = str24;
                                                 z5 = z10;
-                                                i3 = i10;
+                                                i4 = i11;
                                                 j5 = 0;
                                             } catch (Exception e9) {
                                                 e = e9;
-                                                i9 = i10;
+                                                i10 = i11;
                                                 bitmap2 = cover;
                                                 FileLog.e(e);
                                                 str11 = str23;
@@ -10308,9 +10306,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 str10 = str24;
                                                 j5 = 0;
                                                 z5 = z10;
-                                                i3 = i9;
+                                                i4 = i10;
                                                 String str27222222 = lowerCase;
-                                                if (i3 != 0) {
+                                                if (i4 != 0) {
                                                 }
                                                 if (str2 == null) {
                                                 }
@@ -10326,9 +10324,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 mimeTypeMap = singleton;
                                                 tL_documentAttributeAudio2 = tL_documentAttributeAudio;
                                                 j6 = j5;
-                                                i4 = 0;
-                                                i5 = 2;
-                                                i6 = -1;
+                                                i5 = 0;
+                                                i6 = 2;
+                                                i7 = -1;
                                                 str16 = null;
                                                 tL_document = null;
                                                 if (tL_document != null) {
@@ -10343,17 +10341,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 }
                                                 if (str16 != null) {
                                                 }
-                                                Integer valueOf222222 = Integer.valueOf(i4);
+                                                Integer valueOf222222 = Integer.valueOf(i5);
                                                 if (numArr != null) {
                                                 }
                                                 z9 = false;
                                                 if (z8) {
                                                 }
                                                 final TLRPC.TL_document tL_document4222222 = tL_document2;
-                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
-                                                        SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                                        SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                     }
                                                 });
                                                 return 0;
@@ -10379,7 +10377,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         str23 = null;
                                         bitmap2 = null;
                                         str24 = null;
-                                        i9 = 0;
+                                        i10 = 0;
                                     } catch (Throwable th4) {
                                         th = th4;
                                         mediaMetadataRetriever = null;
@@ -10393,26 +10391,26 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 cover = null;
                                 str11 = null;
                                 str10 = null;
-                                i3 = 0;
+                                i4 = 0;
                                 z5 = false;
                             }
                             String str272222222 = lowerCase;
-                            if (i3 != 0) {
+                            if (i4 != 0) {
                                 TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio4 = new TLRPC.TL_documentAttributeAudio();
                                 obj = "m4a";
                                 obj2 = "mp3";
-                                tL_documentAttributeAudio4.duration = i3;
+                                tL_documentAttributeAudio4.duration = i4;
                                 tL_documentAttributeAudio4.title = str11;
                                 tL_documentAttributeAudio4.performer = str10;
                                 if (str11 == null) {
                                     tL_documentAttributeAudio4.title = "";
                                 }
-                                int i11 = tL_documentAttributeAudio4.flags;
-                                tL_documentAttributeAudio4.flags = i11 | 1;
+                                int i12 = tL_documentAttributeAudio4.flags;
+                                tL_documentAttributeAudio4.flags = i12 | 1;
                                 if (str10 == null) {
                                     tL_documentAttributeAudio4.performer = "";
                                 }
-                                tL_documentAttributeAudio4.flags = i11 | 3;
+                                tL_documentAttributeAudio4.flags = i12 | 3;
                                 if (z5) {
                                     tL_documentAttributeAudio4.voice = true;
                                 }
@@ -10438,9 +10436,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         mimeTypeMap = singleton;
                                         tL_documentAttributeAudio2 = tL_documentAttributeAudio;
                                         j6 = j5;
-                                        i4 = 0;
-                                        i5 = 2;
-                                        i6 = -1;
+                                        i5 = 0;
+                                        i6 = 2;
+                                        i7 = -1;
                                         str16 = null;
                                         tL_document = null;
                                     } else {
@@ -10467,14 +10465,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             file2 = file;
                                                             str13 = str5;
                                                             bitmap = cover;
-                                                            i5 = 2;
+                                                            i6 = 2;
                                                             str14 = str12;
                                                             str15 = "";
                                                             z7 = isEncryptedDialog;
                                                             mimeTypeMap = singleton;
                                                             j6 = j5;
-                                                            i4 = 0;
-                                                            i6 = -1;
+                                                            i5 = 0;
+                                                            i7 = -1;
                                                             ensureMediaThumbExists(accountInstance, isEncryptedDialog, tL_document, str13, null, 0L);
                                                             str16 = str21;
                                                         }
@@ -10484,14 +10482,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 file2 = file;
                                                 str13 = str5;
                                                 bitmap = cover;
-                                                i5 = 2;
+                                                i6 = 2;
                                                 str14 = str12;
                                                 str15 = "";
                                                 z7 = isEncryptedDialog;
                                                 mimeTypeMap = singleton;
                                                 j6 = j5;
-                                                i4 = 0;
-                                                i6 = -1;
+                                                i5 = 0;
+                                                i7 = -1;
                                                 ensureMediaThumbExists(accountInstance, isEncryptedDialog, tL_document, str13, null, 0L);
                                                 str16 = str21;
                                             }
@@ -10505,14 +10503,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         file2 = file;
                                         str13 = str5;
                                         bitmap = cover;
-                                        i5 = 2;
+                                        i6 = 2;
                                         str14 = str12;
                                         str15 = "";
                                         z7 = isEncryptedDialog;
                                         mimeTypeMap = singleton;
                                         j6 = j5;
-                                        i4 = 0;
-                                        i6 = -1;
+                                        i5 = 0;
+                                        i7 = -1;
                                         ensureMediaThumbExists(accountInstance, isEncryptedDialog, tL_document, str13, null, 0L);
                                         str16 = str21;
                                     }
@@ -10522,10 +10520,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         tL_document5.date = accountInstance.getConnectionsManager().getCurrentTime();
                                         TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
                                         tL_documentAttributeFilename.file_name = name;
-                                        tL_document5.file_reference = new byte[i4];
+                                        tL_document5.file_reference = new byte[i5];
                                         tL_document5.attributes.add(tL_documentAttributeFilename);
                                         tL_document5.size = file2.length();
-                                        tL_document5.dc_id = i4;
+                                        tL_document5.dc_id = i5;
                                         if (tL_documentAttributeAudio2 != null) {
                                             tL_documentAttributeAudio3 = tL_documentAttributeAudio2;
                                             tL_document5.attributes.add(tL_documentAttributeAudio3);
@@ -10657,17 +10655,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     }
                                                     if (str16 != null) {
                                                     }
-                                                    Integer valueOf2222222 = Integer.valueOf(i4);
+                                                    Integer valueOf2222222 = Integer.valueOf(i5);
                                                     if (numArr != null) {
                                                     }
                                                     z9 = false;
                                                     if (z8) {
                                                     }
                                                     final TLRPC.TL_document tL_document42222222 = tL_document2;
-                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
-                                                            SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                                            SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                         }
                                                     });
                                                     return 0;
@@ -10687,29 +10685,52 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     try {
                                                         options.inJustDecodeBounds = true;
                                                         str17 = str13;
-                                                    } catch (Exception e14) {
-                                                        e = e14;
-                                                        str17 = str13;
-                                                    }
-                                                    try {
-                                                        BitmapFactory.decodeFile(str17, options);
-                                                    } catch (Exception e15) {
-                                                        e = e15;
-                                                        FileLog.e(e);
-                                                        i7 = options.outWidth;
-                                                        if (i7 != 0) {
-                                                            TLRPC.TL_documentAttributeSticker tL_documentAttributeSticker = new TLRPC.TL_documentAttributeSticker();
-                                                            str18 = str15;
-                                                            tL_documentAttributeSticker.alt = str18;
-                                                            tL_documentAttributeSticker.stickerset = new TLRPC.TL_inputStickerSetEmpty();
-                                                            tL_document5.attributes.add(tL_documentAttributeSticker);
-                                                            TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
-                                                            tL_documentAttributeImageSize.w = options.outWidth;
-                                                            tL_documentAttributeImageSize.h = options.outHeight;
-                                                            tL_document5.attributes.add(tL_documentAttributeImageSize);
-                                                            scaleAndSaveImage = ImageLoader.scaleAndSaveImage(null, ImageLoader.loadBitmap(file2.getAbsolutePath(), null, 400.0f, 400.0f, true), Bitmap.CompressFormat.PNG, false, 400.0f, 400.0f, 100, z8, 0, 0, false);
-                                                            if (scaleAndSaveImage != null) {
+                                                        try {
+                                                            BitmapFactory.decodeFile(str17, options);
+                                                        } catch (Exception e14) {
+                                                            e = e14;
+                                                            FileLog.e(e);
+                                                            i8 = options.outWidth;
+                                                            if (i8 != 0) {
+                                                                TLRPC.TL_documentAttributeSticker tL_documentAttributeSticker = new TLRPC.TL_documentAttributeSticker();
+                                                                str18 = str15;
+                                                                tL_documentAttributeSticker.alt = str18;
+                                                                tL_documentAttributeSticker.stickerset = new TLRPC.TL_inputStickerSetEmpty();
+                                                                tL_document5.attributes.add(tL_documentAttributeSticker);
+                                                                TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
+                                                                tL_documentAttributeImageSize.w = options.outWidth;
+                                                                tL_documentAttributeImageSize.h = options.outHeight;
+                                                                tL_document5.attributes.add(tL_documentAttributeImageSize);
+                                                                scaleAndSaveImage = ImageLoader.scaleAndSaveImage(null, ImageLoader.loadBitmap(file2.getAbsolutePath(), null, 400.0f, 400.0f, true), Bitmap.CompressFormat.PNG, false, 400.0f, 400.0f, 100, z8, 0, 0, false);
+                                                                if (scaleAndSaveImage != null) {
+                                                                }
+                                                                tL_document2 = tL_document5;
+                                                                if (charSequence != null) {
+                                                                }
+                                                                hashMap = new HashMap();
+                                                                str19 = str14;
+                                                                if (str19 != null) {
+                                                                }
+                                                                if (z3) {
+                                                                }
+                                                                if (str16 != null) {
+                                                                }
+                                                                Integer valueOf22222222 = Integer.valueOf(i5);
+                                                                if (numArr != null) {
+                                                                }
+                                                                z9 = false;
+                                                                if (z8) {
+                                                                }
+                                                                final TLRPC.TL_document tL_document422222222 = tL_document2;
+                                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                                                                    @Override // java.lang.Runnable
+                                                                    public final void run() {
+                                                                        SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
+                                                                    }
+                                                                });
+                                                                return 0;
                                                             }
+                                                            str18 = str15;
                                                             tL_document2 = tL_document5;
                                                             if (charSequence != null) {
                                                             }
@@ -10721,50 +10742,27 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             }
                                                             if (str16 != null) {
                                                             }
-                                                            Integer valueOf22222222 = Integer.valueOf(i4);
+                                                            Integer valueOf222222222 = Integer.valueOf(i5);
                                                             if (numArr != null) {
                                                             }
                                                             z9 = false;
                                                             if (z8) {
                                                             }
-                                                            final TLRPC.TL_document tL_document422222222 = tL_document2;
-                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                                                            final TLRPC.TL_document tL_document4222222222 = tL_document2;
+                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
-                                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                                 }
                                                             });
                                                             return 0;
                                                         }
-                                                        str18 = str15;
-                                                        tL_document2 = tL_document5;
-                                                        if (charSequence != null) {
-                                                        }
-                                                        hashMap = new HashMap();
-                                                        str19 = str14;
-                                                        if (str19 != null) {
-                                                        }
-                                                        if (z3) {
-                                                        }
-                                                        if (str16 != null) {
-                                                        }
-                                                        Integer valueOf222222222 = Integer.valueOf(i4);
-                                                        if (numArr != null) {
-                                                        }
-                                                        z9 = false;
-                                                        if (z8) {
-                                                        }
-                                                        final TLRPC.TL_document tL_document4222222222 = tL_document2;
-                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
-                                                            @Override // java.lang.Runnable
-                                                            public final void run() {
-                                                                SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
-                                                            }
-                                                        });
-                                                        return 0;
+                                                    } catch (Exception e15) {
+                                                        e = e15;
+                                                        str17 = str13;
                                                     }
-                                                    i7 = options.outWidth;
-                                                    if (i7 != 0 && (i8 = options.outHeight) != 0 && i7 <= 800 && i8 <= 800) {
+                                                    i8 = options.outWidth;
+                                                    if (i8 != 0 && (i9 = options.outHeight) != 0 && i8 <= 800 && i9 <= 800) {
                                                         TLRPC.TL_documentAttributeSticker tL_documentAttributeSticker2 = new TLRPC.TL_documentAttributeSticker();
                                                         str18 = str15;
                                                         tL_documentAttributeSticker2.alt = str18;
@@ -10813,51 +10811,51 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     if (str16 != null) {
                                         hashMap.put("parentObject", str16);
                                     }
-                                    Integer valueOf2222222222 = Integer.valueOf(i4);
+                                    Integer valueOf2222222222 = Integer.valueOf(i5);
                                     if (numArr != null) {
-                                        valueOf2222222222 = numArr[i4];
+                                        valueOf2222222222 = numArr[i5];
                                         String str28 = tL_document2.mime_type;
                                         if (str28 != null && str28.toLowerCase().startsWith("image/webp")) {
-                                            numArr[i4] = Integer.valueOf(i6);
+                                            numArr[i5] = Integer.valueOf(i7);
                                             z9 = true;
                                             if (z8 && jArr != null) {
-                                                if (numArr != null && valueOf2222222222 != null && valueOf2222222222 != numArr[i4]) {
-                                                    finishGroup(accountInstance, jArr[i4], i);
-                                                    jArr[i4] = Utilities.random.nextLong();
+                                                if (numArr != null && valueOf2222222222 != null && valueOf2222222222 != numArr[i5]) {
+                                                    finishGroup(accountInstance, jArr[i5], i);
+                                                    jArr[i5] = Utilities.random.nextLong();
                                                 }
                                                 if (!z9) {
-                                                    hashMap.put("groupId", str18 + jArr[i4]);
+                                                    hashMap.put("groupId", str18 + jArr[i5]);
                                                     if (z) {
                                                         hashMap.put("final", "1");
                                                     }
                                                 }
                                             }
                                             final TLRPC.TL_document tL_document42222222222 = tL_document2;
-                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
-                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                 }
                                             });
                                             return 0;
                                         }
                                         String str29 = tL_document2.mime_type;
                                         if ((str29 != null && (str29.toLowerCase().startsWith("image/") || tL_document2.mime_type.toLowerCase().startsWith("video/mp4"))) || MessageObject.canPreviewDocument(tL_document2)) {
-                                            numArr[i4] = 1;
+                                            numArr[i5] = 1;
                                         } else if (tL_documentAttributeAudio3 != null) {
-                                            numArr[i4] = Integer.valueOf(i5);
+                                            numArr[i5] = Integer.valueOf(i6);
                                         } else {
-                                            numArr[i4] = Integer.valueOf(i4);
+                                            numArr[i5] = Integer.valueOf(i5);
                                         }
                                     }
                                     z9 = false;
                                     if (z8) {
                                     }
                                     final TLRPC.TL_document tL_document422222222222 = tL_document2;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                         @Override // java.lang.Runnable
                                         public final void run() {
-                                            SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                            SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                         }
                                     });
                                     return 0;
@@ -10881,9 +10879,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             mimeTypeMap = singleton;
                             tL_documentAttributeAudio2 = tL_documentAttributeAudio;
                             j6 = j5;
-                            i4 = 0;
-                            i5 = 2;
-                            i6 = -1;
+                            i5 = 0;
+                            i6 = 2;
+                            i7 = -1;
                             str16 = null;
                             tL_document = null;
                             if (tL_document != null) {
@@ -10899,17 +10897,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             }
                             if (str16 != null) {
                             }
-                            Integer valueOf22222222222 = Integer.valueOf(i4);
+                            Integer valueOf22222222222 = Integer.valueOf(i5);
                             if (numArr != null) {
                             }
                             z9 = false;
                             if (z8) {
                             }
                             final TLRPC.TL_document tL_document4222222222222 = tL_document2;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                 }
                             });
                             return 0;
@@ -10927,10 +10925,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     cover = null;
                     str11 = null;
                     str10 = null;
-                    i3 = 0;
+                    i4 = 0;
                     z5 = false;
                     String str2722222222 = lowerCase;
-                    if (i3 != 0) {
+                    if (i4 != 0) {
                     }
                     if (str2 == null) {
                     }
@@ -10946,9 +10944,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     mimeTypeMap = singleton;
                     tL_documentAttributeAudio2 = tL_documentAttributeAudio;
                     j6 = j5;
-                    i4 = 0;
-                    i5 = 2;
-                    i6 = -1;
+                    i5 = 0;
+                    i6 = 2;
+                    i7 = -1;
                     str16 = null;
                     tL_document = null;
                     if (tL_document != null) {
@@ -10963,17 +10961,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     }
                     if (str16 != null) {
                     }
-                    Integer valueOf222222222222 = Integer.valueOf(i4);
+                    Integer valueOf222222222222 = Integer.valueOf(i5);
                     if (numArr != null) {
                     }
                     z9 = false;
                     if (z8) {
                     }
                     final TLRPC.TL_document tL_document42222222222222 = tL_document2;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda107
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                         @Override // java.lang.Runnable
                         public final void run() {
-                            SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, storyItem, replyQuote, str4, i2, j2, z4, j3, j4, messageSuggestionParams);
+                            SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                         }
                     });
                     return 0;
@@ -10987,16 +10985,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingDocumentInternal$91(MessageObject messageObject, AccountInstance accountInstance, TLRPC.TL_document tL_document, String str, HashMap hashMap, String str2, long j, MessageObject messageObject2, MessageObject messageObject3, String str3, ArrayList arrayList, boolean z, int i, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, String str4, int i2, long j2, boolean z2, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
+    public static /* synthetic */ void lambda$prepareSendingDocumentInternal$91(MessageObject messageObject, AccountInstance accountInstance, TLRPC.TL_document tL_document, String str, HashMap hashMap, String str2, long j, MessageObject messageObject2, MessageObject messageObject3, String str3, ArrayList arrayList, boolean z, int i, int i2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, String str4, int i3, long j2, boolean z2, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
         if (messageObject != null) {
             accountInstance.getSendMessagesHelper().editMessage(messageObject, null, null, tL_document, str, null, hashMap, false, false, str2);
             return;
         }
-        SendMessageParams of = SendMessageParams.of(tL_document, null, str, j, messageObject2, messageObject3, str3, arrayList, null, hashMap, z, i, 0, str2, null, false);
+        SendMessageParams of = SendMessageParams.of(tL_document, null, str, j, messageObject2, messageObject3, str3, arrayList, null, hashMap, z, i, i2, 0, str2, null, false);
         of.replyToStoryItem = storyItem;
         of.replyQuote = replyQuote;
         of.quick_reply_shortcut = str4;
-        of.quick_reply_shortcut_id = i2;
+        of.quick_reply_shortcut_id = i3;
         of.effect_id = j2;
         of.invert_media = z2;
         of.payStars = j3;
@@ -11043,11 +11041,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         prepareSendingDocuments(accountInstance, arrayList2, arrayList3, arrayList, str3, str4, j, messageObject, messageObject2, storyItem, replyQuote, messageObject3, z, i, inputContentInfoCompat, str5, i2, 0L, z2, 0L);
     }
 
-    public static void prepareSendingAudioDocuments(final AccountInstance accountInstance, final ArrayList<MessageObject> arrayList, final CharSequence charSequence, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final boolean z, final int i, final MessageObject messageObject3, final String str, final int i2, final long j2, final boolean z2, final long j3) {
-        new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda10
+    public static void prepareSendingAudioDocuments(final AccountInstance accountInstance, final ArrayList<MessageObject> arrayList, final CharSequence charSequence, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final boolean z, final int i, final int i2, final MessageObject messageObject3, final String str, final int i3, final long j2, final boolean z2, final long j3) {
+        new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda81
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.lambda$prepareSendingAudioDocuments$93(arrayList, j, accountInstance, charSequence, messageObject3, messageObject, messageObject2, z, i, storyItem, str, i2, j2, z2, j3);
+                SendMessagesHelper.lambda$prepareSendingAudioDocuments$93(arrayList, j, accountInstance, charSequence, messageObject3, messageObject, messageObject2, z, i, i2, storyItem, str, i3, j2, z2, j3);
             }
         }).start();
     }
@@ -11062,22 +11060,22 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static /* synthetic */ void lambda$prepareSendingAudioDocuments$93(ArrayList arrayList, final long j, final AccountInstance accountInstance, CharSequence charSequence, final MessageObject messageObject, final MessageObject messageObject2, final MessageObject messageObject3, final boolean z, final int i, final TL_stories.StoryItem storyItem, final String str, final int i2, final long j2, final boolean z2, final long j3) {
+    public static /* synthetic */ void lambda$prepareSendingAudioDocuments$93(ArrayList arrayList, final long j, final AccountInstance accountInstance, CharSequence charSequence, final MessageObject messageObject, final MessageObject messageObject2, final MessageObject messageObject3, final boolean z, final int i, final int i2, final TL_stories.StoryItem storyItem, final String str, final int i3, final long j2, final boolean z2, final long j3) {
         final TLRPC.TL_document tL_document;
         String str2;
         final HashMap hashMap;
         int size = arrayList.size();
         long j4 = 0;
-        int i3 = 0;
         int i4 = 0;
-        while (i3 < size) {
-            final MessageObject messageObject4 = (MessageObject) arrayList.get(i3);
+        int i5 = 0;
+        while (i4 < size) {
+            final MessageObject messageObject4 = (MessageObject) arrayList.get(i4);
             String str3 = messageObject4.messageOwner.attachPath;
             File file = new File(str3);
             boolean isEncryptedDialog = DialogObject.isEncryptedDialog(j);
-            if (!isEncryptedDialog && size > 1 && i4 % 10 == 0) {
+            if (!isEncryptedDialog && size > 1 && i5 % 10 == 0) {
                 j4 = Utilities.random.nextLong();
-                i4 = 0;
+                i5 = 0;
             }
             if (str3 != null) {
                 str3 = str3 + MediaStreamTrack.AUDIO_TRACK_KIND + file.length();
@@ -11098,8 +11096,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             return;
                         }
                         CharSequence[] charSequenceArr = {charSequence};
-                        final ArrayList<TLRPC.MessageEntity> entities = i3 != 0 ? accountInstance.getMediaDataController().getEntities(charSequenceArr, true) : null;
-                        final String charSequence2 = i3 == 0 ? charSequenceArr[0].toString() : null;
+                        final ArrayList<TLRPC.MessageEntity> entities = i4 != 0 ? accountInstance.getMediaDataController().getEntities(charSequenceArr, true) : null;
+                        final String charSequence2 = i4 == 0 ? charSequenceArr[0].toString() : null;
                         hashMap = new HashMap();
                         if (str3 != null) {
                             hashMap.put("originalPath", str3);
@@ -11107,19 +11105,19 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         if (str2 != null) {
                             hashMap.put("parentObject", str2);
                         }
-                        i4++;
+                        i5++;
                         hashMap.put("groupId", "" + j4);
-                        if (i4 != 10 || i3 == size - 1) {
+                        if (i5 != 10 || i4 == size - 1) {
                             hashMap.put("final", "1");
                         }
                         final String str5 = str2;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda83
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda12
                             @Override // java.lang.Runnable
                             public final void run() {
-                                SendMessagesHelper.lambda$prepareSendingAudioDocuments$92(MessageObject.this, accountInstance, tL_document, messageObject4, hashMap, str5, j, messageObject2, messageObject3, charSequence2, entities, z, i, storyItem, str, i2, j2, z2, j3);
+                                SendMessagesHelper.lambda$prepareSendingAudioDocuments$92(MessageObject.this, accountInstance, tL_document, messageObject4, hashMap, str5, j, messageObject2, messageObject3, charSequence2, entities, z, i, i2, storyItem, str, i3, j2, z2, j3);
                             }
                         });
-                        i3++;
+                        i4++;
                     }
                 }
             }
@@ -11130,40 +11128,40 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (!isEncryptedDialog) {
             }
             CharSequence[] charSequenceArr2 = {charSequence};
-            if (i3 != 0) {
+            if (i4 != 0) {
             }
-            final String charSequence22 = i3 == 0 ? charSequenceArr2[0].toString() : null;
+            final String charSequence22 = i4 == 0 ? charSequenceArr2[0].toString() : null;
             hashMap = new HashMap();
             if (str3 != null) {
             }
             if (str2 != null) {
             }
-            i4++;
+            i5++;
             hashMap.put("groupId", "" + j4);
-            if (i4 != 10) {
+            if (i5 != 10) {
             }
             hashMap.put("final", "1");
             final String str52 = str2;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda83
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.lambda$prepareSendingAudioDocuments$92(MessageObject.this, accountInstance, tL_document, messageObject4, hashMap, str52, j, messageObject2, messageObject3, charSequence22, entities, z, i, storyItem, str, i2, j2, z2, j3);
+                    SendMessagesHelper.lambda$prepareSendingAudioDocuments$92(MessageObject.this, accountInstance, tL_document, messageObject4, hashMap, str52, j, messageObject2, messageObject3, charSequence22, entities, z, i, i2, storyItem, str, i3, j2, z2, j3);
                 }
             });
-            i3++;
+            i4++;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingAudioDocuments$92(MessageObject messageObject, AccountInstance accountInstance, TLRPC.TL_document tL_document, MessageObject messageObject2, HashMap hashMap, String str, long j, MessageObject messageObject3, MessageObject messageObject4, String str2, ArrayList arrayList, boolean z, int i, TL_stories.StoryItem storyItem, String str3, int i2, long j2, boolean z2, long j3) {
+    public static /* synthetic */ void lambda$prepareSendingAudioDocuments$92(MessageObject messageObject, AccountInstance accountInstance, TLRPC.TL_document tL_document, MessageObject messageObject2, HashMap hashMap, String str, long j, MessageObject messageObject3, MessageObject messageObject4, String str2, ArrayList arrayList, boolean z, int i, int i2, TL_stories.StoryItem storyItem, String str3, int i3, long j2, boolean z2, long j3) {
         if (messageObject != null) {
             accountInstance.getSendMessagesHelper().editMessage(messageObject, null, null, tL_document, messageObject2.messageOwner.attachPath, null, hashMap, false, false, str);
             return;
         }
-        SendMessageParams of = SendMessageParams.of(tL_document, null, messageObject2.messageOwner.attachPath, j, messageObject3, messageObject4, str2, arrayList, null, hashMap, z, i, 0, str, null, false, false);
+        SendMessageParams of = SendMessageParams.of(tL_document, null, messageObject2.messageOwner.attachPath, j, messageObject3, messageObject4, str2, arrayList, null, hashMap, z, i, i2, 0, str, null, false, false);
         of.replyToStoryItem = storyItem;
         of.quick_reply_shortcut = str3;
-        of.quick_reply_shortcut_id = i2;
+        of.quick_reply_shortcut_id = i3;
         of.effect_id = j2;
         of.invert_media = z2;
         of.payStars = j3;
@@ -11171,7 +11169,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     private static void finishGroup(final AccountInstance accountInstance, final long j, final int i) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda44
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda46
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.lambda$finishGroup$94(AccountInstance.this, j, i);
@@ -11200,72 +11198,72 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     public static void prepareSendingDocuments(AccountInstance accountInstance, ArrayList<String> arrayList, ArrayList<String> arrayList2, ArrayList<Uri> arrayList3, String str, String str2, long j, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, MessageObject messageObject3, boolean z, int i, InputContentInfoCompat inputContentInfoCompat, String str3, int i2, long j2, boolean z2, long j3) {
-        prepareSendingDocuments(accountInstance, arrayList, arrayList2, arrayList3, str, null, str2, j, messageObject, messageObject2, storyItem, replyQuote, messageObject3, z, i, inputContentInfoCompat, str3, i2, j2, z2, j3, 0L, null);
+        prepareSendingDocuments(accountInstance, arrayList, arrayList2, arrayList3, str, null, str2, j, messageObject, messageObject2, storyItem, replyQuote, messageObject3, z, i, 0, inputContentInfoCompat, str3, i2, j2, z2, j3, 0L, null);
     }
 
-    public static void prepareSendingDocuments(final AccountInstance accountInstance, final ArrayList<String> arrayList, final ArrayList<String> arrayList2, final ArrayList<Uri> arrayList3, final String str, final ArrayList<TLRPC.MessageEntity> arrayList4, final String str2, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final MessageObject messageObject3, final boolean z, final int i, final InputContentInfoCompat inputContentInfoCompat, final String str3, final int i2, final long j2, final boolean z2, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams) {
+    public static void prepareSendingDocuments(final AccountInstance accountInstance, final ArrayList<String> arrayList, final ArrayList<String> arrayList2, final ArrayList<Uri> arrayList3, final String str, final ArrayList<TLRPC.MessageEntity> arrayList4, final String str2, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final MessageObject messageObject3, final boolean z, final int i, final int i2, final InputContentInfoCompat inputContentInfoCompat, final String str3, final int i3, final long j2, final boolean z2, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams) {
         if (arrayList == null && arrayList2 == null && arrayList3 == null) {
             return;
         }
         if (arrayList == null || arrayList2 == null || arrayList.size() == arrayList2.size()) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda58
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda48
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.lambda$prepareSendingDocuments$95(j, arrayList, str, accountInstance, i, arrayList2, str2, messageObject, messageObject2, storyItem, replyQuote, arrayList4, messageObject3, z, inputContentInfoCompat, str3, i2, j2, z2, j3, j4, messageSuggestionParams, arrayList3);
+                    SendMessagesHelper.lambda$prepareSendingDocuments$95(j, arrayList, str, accountInstance, i, arrayList2, str2, messageObject, messageObject2, storyItem, replyQuote, arrayList4, messageObject3, z, i2, inputContentInfoCompat, str3, i3, j2, z2, j3, j4, messageSuggestionParams, arrayList3);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingDocuments$95(long j, ArrayList arrayList, String str, AccountInstance accountInstance, int i, ArrayList arrayList2, String str2, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, ArrayList arrayList3, MessageObject messageObject3, boolean z, InputContentInfoCompat inputContentInfoCompat, String str3, int i2, long j2, boolean z2, long j3, long j4, MessageSuggestionParams messageSuggestionParams, ArrayList arrayList4) {
+    public static /* synthetic */ void lambda$prepareSendingDocuments$95(long j, ArrayList arrayList, String str, AccountInstance accountInstance, int i, ArrayList arrayList2, String str2, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, ArrayList arrayList3, MessageObject messageObject3, boolean z, int i2, InputContentInfoCompat inputContentInfoCompat, String str3, int i3, long j2, boolean z2, long j3, long j4, MessageSuggestionParams messageSuggestionParams, ArrayList arrayList4) {
         Integer[] numArr;
         long[] jArr;
         ArrayList arrayList5;
-        int i3;
+        int i4;
         boolean z3;
         AccountInstance accountInstance2;
         AccountInstance accountInstance3 = accountInstance;
-        int i4 = i;
-        int i5 = 1;
+        int i5 = i;
+        int i6 = 1;
         long[] jArr2 = new long[1];
         Integer[] numArr2 = new Integer[1];
         boolean isEncryptedDialog = DialogObject.isEncryptedDialog(j);
-        int i6 = 10;
+        int i7 = 10;
         if (arrayList != null) {
             int size = arrayList.size();
-            i3 = 0;
-            int i7 = 0;
-            boolean z4 = true;
+            i4 = 0;
             int i8 = 0;
-            while (i8 < size) {
-                String str4 = i8 == 0 ? str : null;
-                if (!isEncryptedDialog && size > i5 && i7 % 10 == 0) {
+            boolean z4 = true;
+            int i9 = 0;
+            while (i9 < size) {
+                String str4 = i9 == 0 ? str : null;
+                if (!isEncryptedDialog && size > i6 && i8 % 10 == 0) {
                     long j5 = jArr2[0];
                     if (j5 != 0) {
-                        finishGroup(accountInstance3, j5, i4);
+                        finishGroup(accountInstance3, j5, i5);
                     }
                     jArr2[0] = Utilities.random.nextLong();
-                    i7 = 0;
+                    i8 = 0;
                 }
-                int i9 = i7 + 1;
+                int i10 = i8 + 1;
                 long j6 = jArr2[0];
-                int i10 = i8;
-                int i11 = size;
+                int i11 = i9;
+                int i12 = size;
                 Integer[] numArr3 = numArr2;
                 long[] jArr3 = jArr2;
-                i3 = prepareSendingDocumentInternal(accountInstance, (String) arrayList.get(i8), (String) arrayList2.get(i8), null, str2, j, messageObject, messageObject2, storyItem, replyQuote, i8 == 0 ? arrayList3 : null, messageObject3, jArr3, i9 == i6 || i8 == size + (-1), str4, z, i, numArr3, inputContentInfoCompat == null, str3, i2, z4 ? j2 : 0L, z2, j3, j4, messageSuggestionParams);
+                i4 = prepareSendingDocumentInternal(accountInstance, (String) arrayList.get(i9), (String) arrayList2.get(i9), null, str2, j, messageObject, messageObject2, storyItem, replyQuote, i9 == 0 ? arrayList3 : null, messageObject3, jArr3, i10 == i7 || i9 == size + (-1), str4, z, i, i2, numArr3, inputContentInfoCompat == null, str3, i3, z4 ? j2 : 0L, z2, j3, j4, messageSuggestionParams);
                 long j7 = jArr3[0];
-                i7 = (j6 != j7 || j7 == -1) ? 1 : i9;
-                i8 = i10 + 1;
+                i8 = (j6 != j7 || j7 == -1) ? 1 : i10;
+                i9 = i11 + 1;
                 accountInstance3 = accountInstance;
-                i4 = i;
-                size = i11;
+                i5 = i;
+                size = i12;
                 numArr2 = numArr3;
                 jArr2 = jArr3;
                 z4 = false;
-                i6 = 10;
-                i5 = 1;
+                i7 = 10;
+                i6 = 1;
             }
             numArr = numArr2;
             jArr = jArr2;
@@ -11275,20 +11273,20 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             numArr = numArr2;
             jArr = jArr2;
             arrayList5 = arrayList4;
-            i3 = 0;
+            i4 = 0;
             z3 = true;
         }
         if (arrayList5 != null) {
             jArr[0] = 0;
             int size2 = arrayList4.size();
-            int i12 = 0;
             int i13 = 0;
-            while (i13 < arrayList4.size()) {
-                String str5 = (i13 == 0 && (arrayList == null || arrayList.size() == 0)) ? str : null;
-                ArrayList arrayList6 = (i13 == 0 && (arrayList == null || arrayList.size() == 0)) ? arrayList3 : null;
+            int i14 = 0;
+            while (i14 < arrayList4.size()) {
+                String str5 = (i14 == 0 && (arrayList == null || arrayList.size() == 0)) ? str : null;
+                ArrayList arrayList6 = (i14 == 0 && (arrayList == null || arrayList.size() == 0)) ? arrayList3 : null;
                 if (isEncryptedDialog) {
                     accountInstance2 = accountInstance;
-                } else if (size2 <= 1 || i12 % 10 != 0) {
+                } else if (size2 <= 1 || i13 % 10 != 0) {
                     accountInstance2 = accountInstance;
                 } else {
                     long j8 = jArr[0];
@@ -11297,30 +11295,30 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         finishGroup(accountInstance2, j8, i);
                     }
                     jArr[0] = Utilities.random.nextLong();
-                    i12 = 0;
+                    i13 = 0;
                 }
-                int i14 = i12 + 1;
+                int i15 = i13 + 1;
                 long j9 = jArr[0];
-                int i15 = i13;
-                int i16 = size2;
-                i3 = prepareSendingDocumentInternal(accountInstance, null, null, (Uri) arrayList5.get(i13), str2, j, messageObject, messageObject2, storyItem, replyQuote, arrayList6, messageObject3, jArr, i14 == 10 || i13 == size2 + (-1), str5, z, i, numArr, inputContentInfoCompat == null, str3, i2, z3 ? j2 : 0L, z2, j3, j4, messageSuggestionParams);
+                int i16 = i14;
+                int i17 = size2;
+                i4 = prepareSendingDocumentInternal(accountInstance, null, null, (Uri) arrayList5.get(i14), str2, j, messageObject, messageObject2, storyItem, replyQuote, arrayList6, messageObject3, jArr, i15 == 10 || i14 == size2 + (-1), str5, z, i, i2, numArr, inputContentInfoCompat == null, str3, i3, z3 ? j2 : 0L, z2, j3, j4, messageSuggestionParams);
                 long j10 = jArr[0];
-                i12 = (j9 != j10 || j10 == -1) ? 1 : i14;
-                i13 = i15 + 1;
+                i13 = (j9 != j10 || j10 == -1) ? 1 : i15;
+                i14 = i16 + 1;
                 arrayList5 = arrayList4;
-                size2 = i16;
+                size2 = i17;
                 z3 = false;
             }
         }
         if (inputContentInfoCompat != null) {
             inputContentInfoCompat.releasePermission();
         }
-        handleError(i3, accountInstance);
+        handleError(i4, accountInstance);
     }
 
     private static void handleError(final int i, final AccountInstance accountInstance) {
         if (i != 0) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda38
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda40
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.lambda$handleError$96(i, accountInstance);
@@ -11344,14 +11342,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     public static void prepareSendingPhoto(AccountInstance accountInstance, String str, Uri uri, long j, MessageObject messageObject, MessageObject messageObject2, ChatActivity.ReplyQuote replyQuote, CharSequence charSequence, ArrayList<TLRPC.MessageEntity> arrayList, ArrayList<TLRPC.InputDocument> arrayList2, InputContentInfoCompat inputContentInfoCompat, int i, MessageObject messageObject3, boolean z, int i2, int i3, String str2, int i4) {
-        prepareSendingPhoto(accountInstance, str, null, uri, j, messageObject, messageObject2, null, null, arrayList, arrayList2, inputContentInfoCompat, i, messageObject3, null, z, i2, i3, false, charSequence, str2, i4, 0L, 0L, 0L, null);
+        prepareSendingPhoto(accountInstance, str, null, uri, j, messageObject, messageObject2, null, null, arrayList, arrayList2, inputContentInfoCompat, i, messageObject3, null, z, i2, 0, i3, false, charSequence, str2, i4, 0L, 0L, 0L, null);
     }
 
     public static void prepareSendingPhoto(AccountInstance accountInstance, String str, String str2, Uri uri, long j, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, ArrayList<TLRPC.MessageEntity> arrayList, ArrayList<TLRPC.InputDocument> arrayList2, InputContentInfoCompat inputContentInfoCompat, int i, MessageObject messageObject3, VideoEditedInfo videoEditedInfo, boolean z, int i2, int i3, boolean z2, CharSequence charSequence, String str3, int i4, long j2, long j3) {
-        prepareSendingPhoto(accountInstance, str, str2, uri, j, messageObject, messageObject2, storyItem, replyQuote, arrayList, arrayList2, inputContentInfoCompat, i, messageObject3, videoEditedInfo, z, i2, i3, z2, charSequence, str3, i4, j2, j3, 0L, null);
+        prepareSendingPhoto(accountInstance, str, str2, uri, j, messageObject, messageObject2, storyItem, replyQuote, arrayList, arrayList2, inputContentInfoCompat, i, messageObject3, videoEditedInfo, z, i2, 0, i3, z2, charSequence, str3, i4, j2, j3, 0L, null);
     }
 
-    public static void prepareSendingPhoto(AccountInstance accountInstance, String str, String str2, Uri uri, long j, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, ArrayList<TLRPC.MessageEntity> arrayList, ArrayList<TLRPC.InputDocument> arrayList2, InputContentInfoCompat inputContentInfoCompat, int i, MessageObject messageObject3, VideoEditedInfo videoEditedInfo, boolean z, int i2, int i3, boolean z2, CharSequence charSequence, String str3, int i4, long j2, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
+    public static void prepareSendingPhoto(AccountInstance accountInstance, String str, String str2, Uri uri, long j, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, ArrayList<TLRPC.MessageEntity> arrayList, ArrayList<TLRPC.InputDocument> arrayList2, InputContentInfoCompat inputContentInfoCompat, int i, MessageObject messageObject3, VideoEditedInfo videoEditedInfo, boolean z, int i2, int i3, int i4, boolean z2, CharSequence charSequence, String str3, int i5, long j2, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
         SendingMediaInfo sendingMediaInfo = new SendingMediaInfo();
         sendingMediaInfo.path = str;
         sendingMediaInfo.thumbPath = str2;
@@ -11367,10 +11365,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         sendingMediaInfo.videoEditedInfo = videoEditedInfo;
         ArrayList arrayList3 = new ArrayList();
         arrayList3.add(sendingMediaInfo);
-        prepareSendingMedia(accountInstance, arrayList3, j, messageObject, messageObject2, null, replyQuote, z2, false, messageObject3, z, i2, i3, false, inputContentInfoCompat, str3, i4, j2, false, j3, j4, messageSuggestionParams);
+        prepareSendingMedia(accountInstance, arrayList3, j, messageObject, messageObject2, null, replyQuote, z2, false, messageObject3, z, i2, 0, i4, false, inputContentInfoCompat, str3, i5, j2, false, j3, j4, messageSuggestionParams);
     }
 
-    public static void prepareSendingBotContextResult(final BaseFragment baseFragment, final AccountInstance accountInstance, final TLRPC.BotInlineResult botInlineResult, final HashMap<String, String> hashMap, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final boolean z, final int i, final String str, final int i2, final long j2) {
+    public static void prepareSendingBotContextResult(final BaseFragment baseFragment, final AccountInstance accountInstance, final TLRPC.BotInlineResult botInlineResult, final HashMap<String, String> hashMap, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final boolean z, final int i, final int i2, final String str, final int i3, final long j2) {
         SendMessageParams of;
         TLRPC.TL_webPagePending tL_webPagePending;
         if (botInlineResult == null) {
@@ -11378,23 +11376,23 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
         TLRPC.BotInlineMessage botInlineMessage = botInlineResult.send_message;
         if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaAuto) {
-            new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda71
+            new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.lambda$prepareSendingBotContextResult$100(j, botInlineResult, accountInstance, hashMap, baseFragment, messageObject, messageObject2, z, i, str, i2, storyItem, replyQuote, j2);
+                    SendMessagesHelper.lambda$prepareSendingBotContextResult$100(j, botInlineResult, accountInstance, hashMap, baseFragment, messageObject, messageObject2, z, i, i2, str, i3, storyItem, replyQuote, j2);
                 }
             }).run();
             return;
         }
         if (botInlineMessage instanceof TLRPC.TL_botInlineMessageText) {
             if (DialogObject.isEncryptedDialog(j)) {
-                for (int i3 = 0; i3 < botInlineResult.send_message.entities.size(); i3++) {
-                    TLRPC.MessageEntity messageEntity = botInlineResult.send_message.entities.get(i3);
+                for (int i4 = 0; i4 < botInlineResult.send_message.entities.size(); i4++) {
+                    TLRPC.MessageEntity messageEntity = botInlineResult.send_message.entities.get(i4);
                     if (messageEntity instanceof TLRPC.TL_messageEntityUrl) {
                         tL_webPagePending = new TLRPC.TL_webPagePending();
                         String str2 = botInlineResult.send_message.message;
-                        int i4 = messageEntity.offset;
-                        tL_webPagePending.url = str2.substring(i4, messageEntity.length + i4);
+                        int i5 = messageEntity.offset;
+                        tL_webPagePending.url = str2.substring(i5, messageEntity.length + i5);
                         break;
                     }
                 }
@@ -11402,9 +11400,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tL_webPagePending = null;
             TLRPC.TL_webPagePending tL_webPagePending2 = tL_webPagePending;
             TLRPC.BotInlineMessage botInlineMessage2 = botInlineResult.send_message;
-            SendMessageParams of2 = SendMessageParams.of(botInlineMessage2.message, j, messageObject, messageObject2, tL_webPagePending2, !botInlineMessage2.no_webpage, botInlineMessage2.entities, botInlineMessage2.reply_markup, hashMap, z, i, null, false);
+            SendMessageParams of2 = SendMessageParams.of(botInlineMessage2.message, j, messageObject, messageObject2, tL_webPagePending2, !botInlineMessage2.no_webpage, botInlineMessage2.entities, botInlineMessage2.reply_markup, hashMap, z, i, i2, null, false);
             of2.quick_reply_shortcut = str;
-            of2.quick_reply_shortcut_id = i2;
+            of2.quick_reply_shortcut_id = i3;
             of2.replyQuote = replyQuote;
             of2.payStars = j2;
             accountInstance.getSendMessagesHelper().sendMessage(of2);
@@ -11423,9 +11421,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (str3 == null) {
                 tL_messageMediaVenue.venue_type = "";
             }
-            SendMessageParams of3 = SendMessageParams.of(tL_messageMediaVenue, j, messageObject, messageObject2, botInlineMessage3.reply_markup, hashMap, z, i);
+            SendMessageParams of3 = SendMessageParams.of(tL_messageMediaVenue, j, messageObject, messageObject2, botInlineMessage3.reply_markup, hashMap, z, i, i2);
             of3.quick_reply_shortcut = str;
-            of3.quick_reply_shortcut_id = i2;
+            of3.quick_reply_shortcut_id = i3;
             of3.replyQuote = replyQuote;
             of3.payStars = j2;
             accountInstance.getSendMessagesHelper().sendMessage(of3);
@@ -11435,24 +11433,24 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (botInlineMessage.period != 0 || botInlineMessage.proximity_notification_radius != 0) {
                 TLRPC.TL_messageMediaGeoLive tL_messageMediaGeoLive = new TLRPC.TL_messageMediaGeoLive();
                 TLRPC.BotInlineMessage botInlineMessage4 = botInlineResult.send_message;
-                int i5 = botInlineMessage4.period;
-                if (i5 == 0) {
-                    i5 = 900;
+                int i6 = botInlineMessage4.period;
+                if (i6 == 0) {
+                    i6 = 900;
                 }
-                tL_messageMediaGeoLive.period = i5;
+                tL_messageMediaGeoLive.period = i6;
                 tL_messageMediaGeoLive.geo = botInlineMessage4.geo;
                 tL_messageMediaGeoLive.heading = botInlineMessage4.heading;
                 tL_messageMediaGeoLive.proximity_notification_radius = botInlineMessage4.proximity_notification_radius;
-                of = SendMessageParams.of(tL_messageMediaGeoLive, j, messageObject, messageObject2, botInlineMessage4.reply_markup, hashMap, z, i);
+                of = SendMessageParams.of(tL_messageMediaGeoLive, j, messageObject, messageObject2, botInlineMessage4.reply_markup, hashMap, z, i, i2);
             } else {
                 TLRPC.TL_messageMediaGeo tL_messageMediaGeo = new TLRPC.TL_messageMediaGeo();
                 TLRPC.BotInlineMessage botInlineMessage5 = botInlineResult.send_message;
                 tL_messageMediaGeo.geo = botInlineMessage5.geo;
                 tL_messageMediaGeo.heading = botInlineMessage5.heading;
-                of = SendMessageParams.of(tL_messageMediaGeo, j, messageObject, messageObject2, botInlineMessage5.reply_markup, hashMap, z, i);
+                of = SendMessageParams.of(tL_messageMediaGeo, j, messageObject, messageObject2, botInlineMessage5.reply_markup, hashMap, z, i, i2);
             }
             of.quick_reply_shortcut = str;
-            of.quick_reply_shortcut_id = i2;
+            of.quick_reply_shortcut_id = i3;
             of.replyQuote = replyQuote;
             of.payStars = j2;
             accountInstance.getSendMessagesHelper().sendMessage(of);
@@ -11469,9 +11467,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             restrictionReason.platform = "";
             restrictionReason.reason = "";
             tL_user.restriction_reason.add(restrictionReason);
-            SendMessageParams of4 = SendMessageParams.of(tL_user, j, messageObject, messageObject2, botInlineResult.send_message.reply_markup, hashMap, z, i);
+            SendMessageParams of4 = SendMessageParams.of(tL_user, j, messageObject, messageObject2, botInlineResult.send_message.reply_markup, hashMap, z, i, i2);
             of4.quick_reply_shortcut = str;
-            of4.quick_reply_shortcut_id = i2;
+            of4.quick_reply_shortcut_id = i3;
             of4.replyQuote = replyQuote;
             of4.payStars = j2;
             accountInstance.getSendMessagesHelper().sendMessage(of4);
@@ -11495,9 +11493,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tL_messageMediaInvoice.currency = tL_botInlineMessageMediaInvoice.currency;
             tL_messageMediaInvoice.total_amount = tL_botInlineMessageMediaInvoice.total_amount;
             tL_messageMediaInvoice.start_param = "";
-            SendMessageParams of5 = SendMessageParams.of(tL_messageMediaInvoice, j, messageObject, messageObject2, botInlineResult.send_message.reply_markup, hashMap, z, i);
+            SendMessageParams of5 = SendMessageParams.of(tL_messageMediaInvoice, j, messageObject, messageObject2, botInlineResult.send_message.reply_markup, hashMap, z, i, i2);
             of5.quick_reply_shortcut = str;
-            of5.quick_reply_shortcut_id = i2;
+            of5.quick_reply_shortcut_id = i3;
             of5.replyQuote = replyQuote;
             of5.payStars = j2;
             accountInstance.getSendMessagesHelper().sendMessage(of5);
@@ -11507,9 +11505,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC.TL_webPagePending tL_webPagePending3 = new TLRPC.TL_webPagePending();
             tL_webPagePending3.url = ((TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage).url;
             TLRPC.BotInlineMessage botInlineMessage7 = botInlineResult.send_message;
-            SendMessageParams of6 = SendMessageParams.of(botInlineMessage7.message, j, messageObject, messageObject2, tL_webPagePending3, !botInlineMessage7.no_webpage, botInlineMessage7.entities, botInlineMessage7.reply_markup, hashMap, z, i, null, false);
+            SendMessageParams of6 = SendMessageParams.of(botInlineMessage7.message, j, messageObject, messageObject2, tL_webPagePending3, !botInlineMessage7.no_webpage, botInlineMessage7.entities, botInlineMessage7.reply_markup, hashMap, z, i, i2, null, false);
             of6.quick_reply_shortcut = str;
-            of6.quick_reply_shortcut_id = i2;
+            of6.quick_reply_shortcut_id = i3;
             of6.replyQuote = replyQuote;
             of6.payStars = j2;
             accountInstance.getSendMessagesHelper().sendMessage(of6);
@@ -11532,7 +11530,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX WARN: Removed duplicated region for block: B:59:0x0578  */
     /* JADX WARN: Removed duplicated region for block: B:60:0x0565  */
     /* JADX WARN: Type inference failed for: r0v82, types: [org.telegram.tgnet.TLRPC$TL_game] */
-    /* JADX WARN: Type inference failed for: r15v2, types: [org.telegram.tgnet.TLRPC$TL_game] */
+    /* JADX WARN: Type inference failed for: r16v8, types: [org.telegram.tgnet.TLRPC$TL_game] */
     /* JADX WARN: Type inference failed for: r2v13 */
     /* JADX WARN: Type inference failed for: r2v14 */
     /* JADX WARN: Type inference failed for: r2v19 */
@@ -11543,7 +11541,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static /* synthetic */ void lambda$prepareSendingBotContextResult$100(final long j, final TLRPC.BotInlineResult botInlineResult, final AccountInstance accountInstance, final HashMap hashMap, final BaseFragment baseFragment, final MessageObject messageObject, final MessageObject messageObject2, final boolean z, final int i, final String str, final int i2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final long j2) {
+    public static /* synthetic */ void lambda$prepareSendingBotContextResult$100(final long j, final TLRPC.BotInlineResult botInlineResult, final AccountInstance accountInstance, final HashMap hashMap, final BaseFragment baseFragment, final MessageObject messageObject, final MessageObject messageObject2, final boolean z, final int i, final int i2, final String str, final int i3, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final long j2) {
         String str2;
         Object obj;
         char c;
@@ -11553,7 +11551,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         TLRPC.TL_photo tL_photo;
         Bitmap loadBitmap;
         boolean z2;
-        int i3;
+        int i4;
         char c3;
         TLRPC.TL_photo tL_photo2;
         TLRPC.TL_photo tL_photo3;
@@ -11562,7 +11560,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         final Bitmap[] bitmapArr;
         final String[] strArr;
         TLRPC.InputPeer inputPeer;
-        int i4;
+        int i5;
         TLRPC.WebDocument webDocument;
         TLRPC.TL_document tL_document2;
         boolean isEncryptedDialog = DialogObject.isEncryptedDialog(j);
@@ -11795,11 +11793,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 }
                                                 final String str8 = str5;
                                                 final TLRPC.TL_photo tL_photo4 = tL_photo2;
-                                                final ?? r15 = tL_photo3;
-                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda91
+                                                final ?? r16 = tL_photo3;
+                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda34
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
-                                                        SendMessagesHelper.lambda$prepareSendingBotContextResult$99(TLRPC.TL_document.this, bitmapArr, strArr, str8, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, tL_photo4, r15, str, i2, storyItem, replyQuote, j2, accountInstance);
+                                                        SendMessagesHelper.lambda$prepareSendingBotContextResult$99(TLRPC.TL_document.this, bitmapArr, strArr, str8, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, i2, tL_photo4, r16, str, i3, storyItem, replyQuote, j2, accountInstance);
                                                     }
                                                 });
                                             }
@@ -11819,7 +11817,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     } else {
                                         tL_document3.mime_type = "image/gif";
                                     }
-                                    int i5 = isEncryptedDialog ? 90 : NotificationCenter.onReceivedChannelDifference;
+                                    int i6 = isEncryptedDialog ? 90 : NotificationCenter.uploadStoryEnd;
                                     try {
                                         if (str2.endsWith("mp4")) {
                                             loadBitmap = createVideoThumbnail(str2, 1);
@@ -11831,19 +11829,19 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 }
                                             }
                                         } else {
-                                            float f = i5;
+                                            float f = i6;
                                             loadBitmap = ImageLoader.loadBitmap(str2, null, f, f, true);
                                         }
                                         if (loadBitmap != null) {
-                                            float f2 = i5;
-                                            if (i5 > 90) {
-                                                i3 = 80;
+                                            float f2 = i6;
+                                            if (i6 > 90) {
+                                                i4 = 80;
                                                 z2 = false;
                                             } else {
                                                 z2 = false;
-                                                i3 = 55;
+                                                i4 = 55;
                                             }
-                                            TLRPC.PhotoSize scaleAndSaveImage2 = ImageLoader.scaleAndSaveImage(loadBitmap, f2, f2, i3, z2);
+                                            TLRPC.PhotoSize scaleAndSaveImage2 = ImageLoader.scaleAndSaveImage(loadBitmap, f2, f2, i4, z2);
                                             if (scaleAndSaveImage2 != null) {
                                                 tL_document3.thumbs.add(scaleAndSaveImage2);
                                                 tL_document3.flags |= 1;
@@ -11870,12 +11868,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio = new TLRPC.TL_documentAttributeAudio();
                                     tL_documentAttributeAudio.duration = MessageObject.getInlineResultDuration(botInlineResult);
                                     tL_documentAttributeAudio.title = botInlineResult.title;
-                                    int i6 = tL_documentAttributeAudio.flags;
-                                    tL_documentAttributeAudio.flags = i6 | 1;
+                                    int i7 = tL_documentAttributeAudio.flags;
+                                    tL_documentAttributeAudio.flags = i7 | 1;
                                     String str9 = botInlineResult.description;
                                     if (str9 != null) {
                                         tL_documentAttributeAudio.performer = str9;
-                                        tL_documentAttributeAudio.flags = i6 | 3;
+                                        tL_documentAttributeAudio.flags = i7 | 3;
                                     }
                                     tL_documentAttributeFilename.file_name = "audio.mp3";
                                     tL_document3.attributes.add(tL_documentAttributeAudio);
@@ -11980,9 +11978,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     bitmapArr = new Bitmap[1];
                     strArr = new String[1];
                     if (isEncryptedDialog && tLObject != 0) {
-                        for (i4 = 0; i4 < tLObject.attributes.size(); i4++) {
-                            if (tLObject.attributes.get(i4) instanceof TLRPC.TL_documentAttributeVideo) {
-                                TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo2 = (TLRPC.TL_documentAttributeVideo) tLObject.attributes.get(i4);
+                        for (i5 = 0; i5 < tLObject.attributes.size(); i5++) {
+                            if (tLObject.attributes.get(i5) instanceof TLRPC.TL_documentAttributeVideo) {
+                                TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo2 = (TLRPC.TL_documentAttributeVideo) tLObject.attributes.get(i5);
                                 TLRPC.TL_documentAttributeVideo_layer159 tL_documentAttributeVideo_layer159 = new TLRPC.TL_documentAttributeVideo_layer159();
                                 tL_documentAttributeVideo_layer159.flags = tL_documentAttributeVideo2.flags;
                                 tL_documentAttributeVideo_layer159.round_message = tL_documentAttributeVideo2.round_message;
@@ -11990,12 +11988,12 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 tL_documentAttributeVideo_layer159.duration = tL_documentAttributeVideo2.duration;
                                 tL_documentAttributeVideo_layer159.w = tL_documentAttributeVideo2.w;
                                 tL_documentAttributeVideo_layer159.h = tL_documentAttributeVideo2.h;
-                                tLObject.attributes.set(i4, tL_documentAttributeVideo_layer159);
+                                tLObject.attributes.set(i5, tL_documentAttributeVideo_layer159);
                             }
                         }
                     }
                     if (!MessageObject.isGifDocument((TLRPC.Document) tLObject)) {
-                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLObject.thumbs, NotificationCenter.onReceivedChannelDifference);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLObject.thumbs, NotificationCenter.uploadStoryEnd);
                         File pathToAttach = FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(tLObject);
                         if (!pathToAttach.exists()) {
                             pathToAttach = FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(tLObject, true);
@@ -12006,7 +12004,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     inputPeer = DialogObject.isEncryptedDialog(j) ? accountInstance.getMessagesController().getInputPeer(j) : tL_photo;
                     if (inputPeer == null && inputPeer.user_id != 0 && accountInstance.getMessagesController().getUserFull(inputPeer.user_id) != null && accountInstance.getMessagesController().getUserFull(inputPeer.user_id).voice_messages_forbidden && tLObject != 0) {
                         if (MessageObject.isVoiceDocument(tLObject)) {
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda89
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda32
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     AlertsCreator.showSendMediaAlert(7, BaseFragment.this, null);
@@ -12015,7 +12013,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             return;
                         } else {
                             if (MessageObject.isRoundVideoDocument(tLObject)) {
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda90
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda33
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         AlertsCreator.showSendMediaAlert(8, BaseFragment.this, null);
@@ -12028,11 +12026,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     }
                     final String str82 = str5;
                     final TLRPC.TL_photo tL_photo42 = tL_photo2;
-                    final TLRPC.TL_game r152 = tL_photo3;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda91
+                    final TLRPC.TL_game r162 = tL_photo3;
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda34
                         @Override // java.lang.Runnable
                         public final void run() {
-                            SendMessagesHelper.lambda$prepareSendingBotContextResult$99(TLRPC.TL_document.this, bitmapArr, strArr, str82, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, tL_photo42, r152, str, i2, storyItem, replyQuote, j2, accountInstance);
+                            SendMessagesHelper.lambda$prepareSendingBotContextResult$99(TLRPC.TL_document.this, bitmapArr, strArr, str82, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, i2, tL_photo42, r162, str, i3, storyItem, replyQuote, j2, accountInstance);
                         }
                     });
                 }
@@ -12049,7 +12047,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             bitmapArr = new Bitmap[1];
             strArr = new String[1];
             if (isEncryptedDialog) {
-                while (i4 < tLObject.attributes.size()) {
+                while (i5 < tLObject.attributes.size()) {
                 }
             }
             if (!MessageObject.isGifDocument((TLRPC.Document) tLObject)) {
@@ -12060,11 +12058,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
             final String str822 = str5;
             final TLRPC.TL_photo tL_photo422 = tL_photo2;
-            final TLRPC.TL_game r1522 = tL_photo3;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda91
+            final TLRPC.TL_game r1622 = tL_photo3;
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda34
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.lambda$prepareSendingBotContextResult$99(TLRPC.TL_document.this, bitmapArr, strArr, str822, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, tL_photo422, r1522, str, i2, storyItem, replyQuote, j2, accountInstance);
+                    SendMessagesHelper.lambda$prepareSendingBotContextResult$99(TLRPC.TL_document.this, bitmapArr, strArr, str822, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, i2, tL_photo422, r1622, str, i3, storyItem, replyQuote, j2, accountInstance);
                 }
             });
         }
@@ -12105,38 +12103,38 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
         final String str8222 = str5;
         final TLRPC.TL_photo tL_photo4222 = tL_photo2;
-        final TLRPC.TL_game r15222 = tL_photo3;
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda91
+        final TLRPC.TL_game r16222 = tL_photo3;
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.lambda$prepareSendingBotContextResult$99(TLRPC.TL_document.this, bitmapArr, strArr, str8222, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, tL_photo4222, r15222, str, i2, storyItem, replyQuote, j2, accountInstance);
+                SendMessagesHelper.lambda$prepareSendingBotContextResult$99(TLRPC.TL_document.this, bitmapArr, strArr, str8222, j, messageObject, messageObject2, botInlineResult, hashMap, z, i, i2, tL_photo4222, r16222, str, i3, storyItem, replyQuote, j2, accountInstance);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingBotContextResult$99(TLRPC.TL_document tL_document, Bitmap[] bitmapArr, String[] strArr, String str, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.BotInlineResult botInlineResult, HashMap hashMap, boolean z, int i, TLRPC.TL_photo tL_photo, TLRPC.TL_game tL_game, String str2, int i2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, long j2, AccountInstance accountInstance) {
+    public static /* synthetic */ void lambda$prepareSendingBotContextResult$99(TLRPC.TL_document tL_document, Bitmap[] bitmapArr, String[] strArr, String str, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.BotInlineResult botInlineResult, HashMap hashMap, boolean z, int i, int i2, TLRPC.TL_photo tL_photo, TLRPC.TL_game tL_game, String str2, int i3, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, long j2, AccountInstance accountInstance) {
         SendMessageParams sendMessageParams;
         if (tL_document != null) {
             if (bitmapArr[0] != null && strArr[0] != null) {
                 ImageLoader.getInstance().putImageToCache(new BitmapDrawable(bitmapArr[0]), strArr[0], false);
             }
             TLRPC.BotInlineMessage botInlineMessage = botInlineResult.send_message;
-            sendMessageParams = SendMessageParams.of(tL_document, null, str, j, messageObject, messageObject2, botInlineMessage.message, botInlineMessage.entities, botInlineMessage.reply_markup, hashMap, z, i, 0, botInlineResult, null, false);
+            sendMessageParams = SendMessageParams.of(tL_document, null, str, j, messageObject, messageObject2, botInlineMessage.message, botInlineMessage.entities, botInlineMessage.reply_markup, hashMap, z, i, i2, 0, botInlineResult, null, false);
         } else {
             sendMessageParams = null;
             if (tL_photo != null) {
                 TLRPC.WebDocument webDocument = botInlineResult.content;
                 String str3 = webDocument != null ? webDocument.url : null;
                 TLRPC.BotInlineMessage botInlineMessage2 = botInlineResult.send_message;
-                sendMessageParams = SendMessageParams.of(tL_photo, str3, j, messageObject, messageObject2, botInlineMessage2.message, botInlineMessage2.entities, botInlineMessage2.reply_markup, hashMap, z, i, 0, botInlineResult, false);
+                sendMessageParams = SendMessageParams.of(tL_photo, str3, j, messageObject, messageObject2, botInlineMessage2.message, botInlineMessage2.entities, botInlineMessage2.reply_markup, hashMap, z, i, i2, 0, botInlineResult, false);
             } else if (tL_game != null) {
-                sendMessageParams = SendMessageParams.of(tL_game, j, messageObject, messageObject2, botInlineResult.send_message.reply_markup, (HashMap<String, String>) hashMap, z, i);
+                sendMessageParams = SendMessageParams.of(tL_game, j, messageObject, messageObject2, botInlineResult.send_message.reply_markup, (HashMap<String, String>) hashMap, z, i, i2);
             }
         }
         if (sendMessageParams != null) {
             sendMessageParams.quick_reply_shortcut = str2;
-            sendMessageParams.quick_reply_shortcut_id = i2;
+            sendMessageParams.quick_reply_shortcut_id = i3;
             sendMessageParams.replyToStoryItem = storyItem;
             sendMessageParams.replyQuote = replyQuote;
             sendMessageParams.payStars = j2;
@@ -12158,35 +12156,35 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return str;
     }
 
-    public static void prepareSendingText(AccountInstance accountInstance, String str, long j, boolean z, int i, long j2) {
-        prepareSendingText(accountInstance, str, j, 0L, z, i, j2);
+    public static void prepareSendingText(AccountInstance accountInstance, String str, long j, boolean z, int i, int i2, long j2) {
+        prepareSendingText(accountInstance, str, j, 0L, z, i, i2, j2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingText$102(final String str, final long j, final AccountInstance accountInstance, final long j2, final boolean z, final int i, final long j3) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda3
+    public static /* synthetic */ void lambda$prepareSendingText$102(final String str, final long j, final AccountInstance accountInstance, final long j2, final boolean z, final int i, final int i2, final long j3) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda85
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.lambda$prepareSendingText$101(str, j, accountInstance, j2, z, i, j3);
+                SendMessagesHelper.lambda$prepareSendingText$101(str, j, accountInstance, j2, z, i, i2, j3);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingText$103(final String str, final long j, final AccountInstance accountInstance, final long j2, final boolean z, final int i, final long j3) {
-        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda21
+    public static /* synthetic */ void lambda$prepareSendingText$103(final String str, final long j, final AccountInstance accountInstance, final long j2, final boolean z, final int i, final int i2, final long j3) {
+        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda25
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.lambda$prepareSendingText$102(str, j, accountInstance, j2, z, i, j3);
+                SendMessagesHelper.lambda$prepareSendingText$102(str, j, accountInstance, j2, z, i, i2, j3);
             }
         });
     }
 
-    public static void prepareSendingText(final AccountInstance accountInstance, final String str, final long j, final long j2, final boolean z, final int i, final long j3) {
-        accountInstance.getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda41
+    public static void prepareSendingText(final AccountInstance accountInstance, final String str, final long j, final long j2, final boolean z, final int i, final int i2, final long j3) {
+        accountInstance.getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda62
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.lambda$prepareSendingText$103(str, j2, accountInstance, j, z, i, j3);
+                SendMessagesHelper.lambda$prepareSendingText$103(str, j2, accountInstance, j, z, i, i2, j3);
             }
         });
     }
@@ -12196,28 +12194,28 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static /* synthetic */ void lambda$prepareSendingText$101(String str, long j, AccountInstance accountInstance, long j2, boolean z, int i, long j3) {
+    public static /* synthetic */ void lambda$prepareSendingText$101(String str, long j, AccountInstance accountInstance, long j2, boolean z, int i, int i2, long j3) {
         MessageObject messageObject;
         TLRPC.TL_forumTopic findTopic;
         String trimmedString = getTrimmedString(str);
         if (trimmedString.length() != 0) {
             int ceil = (int) Math.ceil(trimmedString.length() / 4096.0f);
-            int i2 = 0;
+            int i3 = 0;
             if (j != 0 && (findTopic = accountInstance.getMessagesController().getTopicsController().findTopic(-j2, j)) != null && findTopic.topicStartMessage != null) {
                 messageObject = new MessageObject(accountInstance.getCurrentAccount(), findTopic.topicStartMessage, false, false);
                 messageObject.isTopicMainMessage = true;
-                while (i2 < ceil) {
-                    int i3 = i2 + 1;
-                    SendMessageParams of = SendMessageParams.of(trimmedString.substring(i2 * 4096, Math.min(i3 * 4096, trimmedString.length())), j2, messageObject, messageObject, null, true, null, null, null, z, i, null, false);
-                    if (i2 == 0) {
+                while (i3 < ceil) {
+                    int i4 = i3 + 1;
+                    SendMessageParams of = SendMessageParams.of(trimmedString.substring(i3 * 4096, Math.min(i4 * 4096, trimmedString.length())), j2, messageObject, messageObject, null, true, null, null, null, z, i, i2, null, false);
+                    if (i3 == 0) {
                         of.effect_id = j3;
                     }
                     accountInstance.getSendMessagesHelper().sendMessage(of);
-                    i2 = i3;
+                    i3 = i4;
                 }
             }
             messageObject = null;
-            while (i2 < ceil) {
+            while (i3 < ceil) {
             }
         }
     }
@@ -12259,8 +12257,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC.TL_document tL_document = (TLRPC.TL_document) tLObject;
             if ((MessageObject.isVideoDocument(tL_document) || MessageObject.isNewGifDocument(tL_document)) && MessageObject.isDocumentHasThumb(tL_document)) {
                 ArrayList<TLRPC.PhotoSize> arrayList = tL_document.thumbs;
-                int i = NotificationCenter.onReceivedChannelDifference;
-                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(arrayList, NotificationCenter.onReceivedChannelDifference);
+                int i = NotificationCenter.uploadStoryEnd;
+                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(arrayList, NotificationCenter.uploadStoryEnd);
                 if ((closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoStrippedSize) || (closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoPathSize) || FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(closestPhotoSizeWithSize3, true).exists()) {
                     return;
                 }
@@ -12329,48 +12327,48 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return options.outWidth < 800 && options.outHeight < 800;
     }
 
-    public static void prepareSendingMedia(final AccountInstance accountInstance, final ArrayList<SendingMediaInfo> arrayList, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final boolean z, boolean z2, final MessageObject messageObject3, final boolean z3, final int i, int i2, final boolean z4, final InputContentInfoCompat inputContentInfoCompat, final String str, final int i3, final long j2, final boolean z5, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams) {
+    public static void prepareSendingMedia(final AccountInstance accountInstance, final ArrayList<SendingMediaInfo> arrayList, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final boolean z, boolean z2, final MessageObject messageObject3, final boolean z3, final int i, final int i2, int i3, final boolean z4, final InputContentInfoCompat inputContentInfoCompat, final String str, final int i4, final long j2, final boolean z5, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams) {
         final boolean z6;
         if (arrayList.isEmpty()) {
             return;
         }
         int size = arrayList.size();
-        int i4 = 0;
+        int i5 = 0;
         while (true) {
-            if (i4 >= size) {
+            if (i5 >= size) {
                 z6 = z2;
                 break;
             } else {
-                if (arrayList.get(i4).ttl > 0) {
+                if (arrayList.get(i5).ttl > 0) {
                     z6 = false;
                     break;
                 }
-                i4++;
+                i5++;
             }
         }
-        mediaSendQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda75
+        mediaSendQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda44
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.lambda$prepareSendingMedia$109(arrayList, j, z, z6, accountInstance, messageObject3, messageObject, messageObject2, z3, i, storyItem, replyQuote, str, i3, j2, z5, j3, j4, messageSuggestionParams, inputContentInfoCompat, z4);
+                SendMessagesHelper.lambda$prepareSendingMedia$109(arrayList, j, z, z6, accountInstance, messageObject3, messageObject, messageObject2, z3, i, i2, storyItem, replyQuote, str, i4, j2, z5, j3, j4, messageSuggestionParams, inputContentInfoCompat, z4);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:339:0x0a5c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:335:0x0a5c, code lost:
     
         if (r1 == (r10 - 1)) goto L434;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:436:0x0776, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:436:0x0778, code lost:
     
-        if (r8 != null) goto L741;
+        if (r8 != null) goto L742;
      */
     /* JADX WARN: Code restructure failed: missing block: B:85:0x00fc, code lost:
     
         if (shouldSendWebPAsSticker(null, r8.uri) != false) goto L68;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x03dd A[Catch: Exception -> 0x03c0, TRY_LEAVE, TryCatch #7 {Exception -> 0x03c0, blocks: (B:189:0x03b8, B:146:0x03c5, B:183:0x03d4, B:148:0x03dd), top: B:188:0x03b8 }] */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x03dd A[Catch: Exception -> 0x03c0, TRY_LEAVE, TryCatch #9 {Exception -> 0x03c0, blocks: (B:189:0x03b8, B:146:0x03c5, B:183:0x03d4, B:148:0x03dd), top: B:188:0x03b8 }] */
     /* JADX WARN: Removed duplicated region for block: B:154:0x0419  */
     /* JADX WARN: Removed duplicated region for block: B:158:0x045a  */
     /* JADX WARN: Removed duplicated region for block: B:161:0x0467  */
@@ -12378,43 +12376,43 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX WARN: Removed duplicated region for block: B:166:0x0444  */
     /* JADX WARN: Removed duplicated region for block: B:167:0x03ea A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:180:0x03cf A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x0559  */
-    /* JADX WARN: Removed duplicated region for block: B:298:0x0815  */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x0865  */
-    /* JADX WARN: Removed duplicated region for block: B:336:0x0a36  */
-    /* JADX WARN: Removed duplicated region for block: B:345:0x0a6c  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x055b  */
+    /* JADX WARN: Removed duplicated region for block: B:294:0x0817  */
+    /* JADX WARN: Removed duplicated region for block: B:299:0x0865  */
+    /* JADX WARN: Removed duplicated region for block: B:332:0x0a36  */
+    /* JADX WARN: Removed duplicated region for block: B:341:0x0a6c  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0124  */
-    /* JADX WARN: Removed duplicated region for block: B:386:0x090f  */
+    /* JADX WARN: Removed duplicated region for block: B:382:0x090f  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x014c  */
-    /* JADX WARN: Removed duplicated region for block: B:405:0x093c  */
-    /* JADX WARN: Removed duplicated region for block: B:437:0x0771 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:475:0x0b32  */
-    /* JADX WARN: Removed duplicated region for block: B:520:0x0cda  */
-    /* JADX WARN: Removed duplicated region for block: B:563:0x0deb  */
+    /* JADX WARN: Removed duplicated region for block: B:401:0x093c  */
+    /* JADX WARN: Removed duplicated region for block: B:437:0x0773 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:475:0x0b3c  */
+    /* JADX WARN: Removed duplicated region for block: B:520:0x0ce4  */
+    /* JADX WARN: Removed duplicated region for block: B:563:0x0df5  */
     /* JADX WARN: Removed duplicated region for block: B:57:0x019d  */
-    /* JADX WARN: Removed duplicated region for block: B:596:0x0f35  */
-    /* JADX WARN: Removed duplicated region for block: B:600:0x0f44 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:613:0x0fa0  */
-    /* JADX WARN: Removed duplicated region for block: B:616:0x0fa7  */
+    /* JADX WARN: Removed duplicated region for block: B:596:0x0f3e  */
+    /* JADX WARN: Removed duplicated region for block: B:600:0x0f4d A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:613:0x0fa9  */
+    /* JADX WARN: Removed duplicated region for block: B:616:0x0fb0  */
     /* JADX WARN: Removed duplicated region for block: B:62:0x0207  */
-    /* JADX WARN: Removed duplicated region for block: B:654:0x0e58  */
-    /* JADX WARN: Removed duplicated region for block: B:656:0x0df1  */
+    /* JADX WARN: Removed duplicated region for block: B:654:0x0e62  */
+    /* JADX WARN: Removed duplicated region for block: B:656:0x0dfb  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x020d  */
-    /* JADX WARN: Removed duplicated region for block: B:665:0x0e6f  */
-    /* JADX WARN: Removed duplicated region for block: B:712:0x10af  */
-    /* JADX WARN: Removed duplicated region for block: B:714:0x10cd  */
-    /* JADX WARN: Removed duplicated region for block: B:715:0x0b34  */
-    /* JADX WARN: Removed duplicated region for block: B:741:0x1194  */
+    /* JADX WARN: Removed duplicated region for block: B:665:0x0e79  */
+    /* JADX WARN: Removed duplicated region for block: B:712:0x10b8  */
+    /* JADX WARN: Removed duplicated region for block: B:714:0x10d6  */
+    /* JADX WARN: Removed duplicated region for block: B:715:0x0b3e  */
+    /* JADX WARN: Removed duplicated region for block: B:741:0x119d  */
     /* JADX WARN: Removed duplicated region for block: B:74:0x0148  */
-    /* JADX WARN: Type inference failed for: r37v20 */
-    /* JADX WARN: Type inference failed for: r37v6 */
-    /* JADX WARN: Type inference failed for: r37v7 */
-    /* JADX WARN: Type inference failed for: r37v8 */
+    /* JADX WARN: Type inference failed for: r38v20 */
+    /* JADX WARN: Type inference failed for: r38v6 */
+    /* JADX WARN: Type inference failed for: r38v7 */
+    /* JADX WARN: Type inference failed for: r38v8 */
     /* JADX WARN: Type inference failed for: r5v4, types: [java.lang.String] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static /* synthetic */ void lambda$prepareSendingMedia$109(ArrayList arrayList, final long j, boolean z, boolean z2, final AccountInstance accountInstance, final MessageObject messageObject, final MessageObject messageObject2, final MessageObject messageObject3, final boolean z3, final int i, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final String str, final int i2, final long j2, final boolean z4, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams, InputContentInfoCompat inputContentInfoCompat, final boolean z5) {
+    public static /* synthetic */ void lambda$prepareSendingMedia$109(ArrayList arrayList, final long j, boolean z, boolean z2, final AccountInstance accountInstance, final MessageObject messageObject, final MessageObject messageObject2, final MessageObject messageObject3, final boolean z3, final int i, final int i2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final String str, final int i3, final long j2, final boolean z4, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams, InputContentInfoCompat inputContentInfoCompat, final boolean z5) {
         String str2;
         String str3;
         String str4;
@@ -12425,40 +12423,40 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         String str9;
         ArrayList arrayList2;
         boolean z6;
-        int i3;
         int i4;
-        HashMap hashMap;
         int i5;
+        HashMap hashMap;
         int i6;
         int i7;
+        int i8;
         ArrayList arrayList3;
         boolean z7;
-        int i8;
+        int i9;
         long j5;
         MediaController.SearchImage searchImage;
-        int i9;
-        ArrayList arrayList4;
         int i10;
+        ArrayList arrayList4;
+        int i11;
         HashMap hashMap2;
         String str10;
         String str11;
         String str12;
         String str13;
         long j6;
-        int i11;
+        int i12;
         boolean z8;
         String str14;
         String str15;
         HashMap hashMap3;
         VideoEditedInfo videoEditedInfo;
-        int i12;
+        int i13;
         String str16;
         String str17;
         String str18;
         String str19;
         String str20;
         long j7;
-        int i13;
+        int i14;
         Object obj;
         SendingMediaInfo sendingMediaInfo;
         ArrayList arrayList5;
@@ -12478,7 +12476,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         TLRPC.TL_document tL_document2;
         final Bitmap bitmap;
         final String str26;
-        int i14;
+        int i15;
         TLRPC.PhotoSize photoSize;
         String str27;
         TLRPC.PhotoSize fileToSize;
@@ -12486,58 +12484,53 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         final String str29;
         String str30;
         ArrayList arrayList6;
-        String str31;
         long j10;
-        int i15;
         int i16;
-        String str32;
+        int i17;
+        String str31;
         ArrayList<TLRPC.InputDocument> arrayList7;
         int size;
-        int i17;
         int i18;
+        int i19;
         TLRPC.PhotoSize photoSize2;
+        String str32;
         String str33;
         String str34;
-        String str35;
         TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo;
-        int i19;
         int i20;
+        int i21;
         TLRPC.FileLocation fileLocation;
         MediaController.SearchImage searchImage2;
+        String str35;
         String str36;
         String str37;
         String str38;
         String str39;
         String str40;
         String str41;
-        String str42;
         ArrayList arrayList8;
         boolean z10;
         Object obj4;
-        String str43;
+        String str42;
         HashMap hashMap4;
+        String str43;
         String str44;
-        String str45;
         Object obj5;
-        String str46;
-        String str47;
+        String str45;
         Object obj6;
         Object obj7;
         final TLRPC.TL_photo tL_photo;
+        String str46;
+        String str47;
         String str48;
-        String str49;
-        String str50;
         TLRPC.TL_photo tL_photo2;
         TLRPC.TL_photo tL_photo3;
-        String str51;
-        String str52;
-        String str53;
-        int i21;
+        String str49;
         long j11;
         int i22;
         ArrayList arrayList9;
         ArrayList arrayList10;
-        String str54;
+        String str50;
         AccountInstance accountInstance2;
         ArrayList arrayList11;
         int i23;
@@ -12547,68 +12540,68 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         ArrayList arrayList12;
         ArrayList arrayList13;
         ArrayList arrayList14;
-        ?? r37;
+        ?? r38;
         Uri uri;
         InputStream inputStream;
         FileOutputStream fileOutputStream;
         Uri uri2;
         ArrayList arrayList15;
-        String str55;
+        String str51;
         final TLRPC.TL_photo tL_photo4;
         boolean z11;
-        String str56;
+        String str52;
         long j13;
         int i26;
         Uri uri3;
         boolean z12;
         File file2;
         TLRPC.TL_document tL_document3;
-        String str57;
-        String str58;
+        String str53;
+        String str54;
         Object obj8;
-        String str59;
+        String str55;
         File file3;
         int i27;
         Bitmap createVideoThumbnail;
+        String str56;
+        String str57;
+        String str58;
+        String str59;
         String str60;
         String str61;
         String str62;
+        int i28;
+        int i29;
+        final boolean z13;
         String str63;
         String str64;
         String str65;
         String str66;
-        int i28;
-        int i29;
-        final boolean z13;
-        String str67;
-        String str68;
-        String str69;
-        String str70;
         boolean z14;
         boolean z15;
-        String str71;
+        String str67;
         1 r11;
         final SendingMediaInfo sendingMediaInfo3;
-        String str72;
+        String str68;
         TLRPC.TL_photo tL_photo5;
         TLRPC.TL_photo tL_photo6;
-        String str73;
+        String str69;
         Object[] sentFile;
         Object obj9;
         Uri uri4;
         Uri uri5;
         ArrayList arrayList16 = arrayList;
-        String str74 = "parentObject";
-        String str75 = "masks";
-        String str76 = "-2147483648_";
-        String str77 = "x";
-        String str78 = "video/mp4";
+        String str70 = "parentObject";
+        String str71 = "masks";
+        String str72 = "-2147483648_";
+        String str73 = "x";
+        String str74 = "video/mp4";
         long currentTimeMillis = System.currentTimeMillis();
         int size2 = arrayList.size();
         boolean isEncryptedDialog = DialogObject.isEncryptedDialog(j);
-        String str79 = ".webp";
-        String str80 = ".gif";
-        String str81 = "_";
+        String str75 = ".webp";
+        String str76 = ".gif";
+        String str77 = "_";
         boolean z16 = true;
         if (z || !z2) {
             str2 = "_";
@@ -12621,8 +12614,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             str9 = "parentObject";
             arrayList2 = null;
             z6 = isEncryptedDialog;
-            i3 = size2;
-            i4 = 1;
+            i4 = size2;
+            i5 = 1;
             hashMap = null;
         } else {
             HashMap hashMap5 = new HashMap();
@@ -12632,153 +12625,153 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 SendingMediaInfo sendingMediaInfo4 = (SendingMediaInfo) arrayList16.get(i30);
                 if (sendingMediaInfo4.searchImage == null && !sendingMediaInfo4.isVideo && sendingMediaInfo4.videoEditedInfo == null) {
                     MediaController.PhotoEntry photoEntry = sendingMediaInfo4.originalPhotoEntry;
-                    String str82 = str78;
+                    String str78 = str74;
                     if (photoEntry != null && sendingMediaInfo4.highQuality) {
                         photoEntry.rebuildPhoto(z16);
-                        String str83 = sendingMediaInfo4.originalPhotoEntry.imagePath;
-                        if (str83 != null) {
-                            sendingMediaInfo4.path = str83;
+                        String str79 = sendingMediaInfo4.originalPhotoEntry.imagePath;
+                        if (str79 != null) {
+                            sendingMediaInfo4.path = str79;
                         }
                     }
-                    String str84 = sendingMediaInfo4.path;
-                    if (str84 != null || (uri5 = sendingMediaInfo4.uri) == null) {
-                        str68 = str84;
+                    String str80 = sendingMediaInfo4.path;
+                    if (str80 != null || (uri5 = sendingMediaInfo4.uri) == null) {
+                        str64 = str80;
                     } else {
-                        str84 = AndroidUtilities.getPath(uri5);
-                        str68 = sendingMediaInfo4.uri.toString();
+                        str80 = AndroidUtilities.getPath(uri5);
+                        str64 = sendingMediaInfo4.uri.toString();
                     }
-                    if (str84 == null || sendingMediaInfo4.ttl > 0) {
-                        str69 = str80;
-                        str70 = str79;
+                    if (str80 == null || sendingMediaInfo4.ttl > 0) {
+                        str65 = str76;
+                        str66 = str75;
                         z14 = false;
                     } else {
-                        if (str84.endsWith(str80)) {
-                            str69 = str80;
+                        if (str80.endsWith(str76)) {
+                            str65 = str76;
                             z14 = false;
                         } else {
-                            z14 = str84.endsWith(str79);
-                            str69 = str80;
+                            z14 = str80.endsWith(str75);
+                            str65 = str76;
                             if (!z14) {
-                                str70 = str79;
+                                str66 = str75;
                             }
                         }
-                        str70 = str79;
-                        if (arrayList.size() > 1 || ((z14 && !shouldSendWebPAsSticker(str84, null)) || !TextUtils.isEmpty(sendingMediaInfo4.caption))) {
+                        str66 = str75;
+                        if (arrayList.size() > 1 || ((z14 && !shouldSendWebPAsSticker(str80, null)) || !TextUtils.isEmpty(sendingMediaInfo4.caption))) {
                             sendingMediaInfo4.forceImage = true;
-                            if (str84 != null) {
-                                File file4 = new File(str84);
+                            if (str80 != null) {
+                                File file4 = new File(str80);
                                 StringBuilder sb = new StringBuilder();
-                                sb.append(str68);
+                                sb.append(str64);
                                 z15 = isEncryptedDialog;
                                 sb.append(file4.length());
-                                sb.append(str81);
+                                sb.append(str77);
                                 sb.append(file4.lastModified());
-                                str71 = sb.toString();
+                                str67 = sb.toString();
                             } else {
                                 z15 = isEncryptedDialog;
-                                str71 = null;
+                                str67 = null;
                             }
                             if (z15 && sendingMediaInfo4.ttl == 0) {
                                 int i32 = sendingMediaInfo4.highQuality ? !z15 ? 6 : 7 : !z15 ? 0 : 3;
-                                Object[] sentFile2 = accountInstance.getMessagesStorage().getSentFile(str71, i32);
+                                Object[] sentFile2 = accountInstance.getMessagesStorage().getSentFile(str67, i32);
                                 if (sentFile2 != null) {
                                     Object obj10 = sentFile2[0];
                                     if (obj10 instanceof TLRPC.TL_photo) {
-                                        str73 = (String) sentFile2[1];
+                                        str69 = (String) sentFile2[1];
                                         tL_photo6 = (TLRPC.TL_photo) obj10;
                                         if (tL_photo6 == null && sendingMediaInfo4.uri != null && (sentFile = accountInstance.getMessagesStorage().getSentFile(AndroidUtilities.getPath(sendingMediaInfo4.uri), i32)) != null) {
                                             obj9 = sentFile[0];
                                             if (obj9 instanceof TLRPC.TL_photo) {
                                                 tL_photo6 = (TLRPC.TL_photo) obj9;
-                                                str73 = (String) sentFile[1];
+                                                str69 = (String) sentFile[1];
                                                 TLRPC.TL_photo tL_photo7 = tL_photo6;
-                                                String str85 = str73;
-                                                str60 = str81;
-                                                str61 = str69;
+                                                String str81 = str69;
+                                                str56 = str77;
+                                                str57 = str65;
+                                                str58 = str66;
                                                 str62 = str70;
-                                                str66 = str74;
-                                                str64 = str77;
+                                                str60 = str73;
                                                 i28 = i31;
-                                                str67 = str76;
-                                                str65 = str75;
+                                                str63 = str72;
+                                                str61 = str71;
                                                 z13 = z15;
                                                 sendingMediaInfo3 = sendingMediaInfo4;
                                                 r11 = null;
-                                                str63 = str82;
+                                                str59 = str78;
                                                 ensureMediaThumbExists(accountInstance, z15, tL_photo7, sendingMediaInfo4.path, sendingMediaInfo4.uri, 0L, sendingMediaInfo4.highQuality);
                                                 tL_photo5 = tL_photo7;
-                                                str72 = str85;
+                                                str68 = str81;
                                             }
                                         }
                                         TLRPC.TL_photo tL_photo72 = tL_photo6;
-                                        String str852 = str73;
-                                        str60 = str81;
-                                        str61 = str69;
+                                        String str812 = str69;
+                                        str56 = str77;
+                                        str57 = str65;
+                                        str58 = str66;
                                         str62 = str70;
-                                        str66 = str74;
-                                        str64 = str77;
+                                        str60 = str73;
                                         i28 = i31;
-                                        str67 = str76;
-                                        str65 = str75;
+                                        str63 = str72;
+                                        str61 = str71;
                                         z13 = z15;
                                         sendingMediaInfo3 = sendingMediaInfo4;
                                         r11 = null;
-                                        str63 = str82;
+                                        str59 = str78;
                                         ensureMediaThumbExists(accountInstance, z15, tL_photo72, sendingMediaInfo4.path, sendingMediaInfo4.uri, 0L, sendingMediaInfo4.highQuality);
                                         tL_photo5 = tL_photo72;
-                                        str72 = str852;
+                                        str68 = str812;
                                     }
                                 }
                                 tL_photo6 = null;
-                                str73 = null;
+                                str69 = null;
                                 if (tL_photo6 == null) {
                                     obj9 = sentFile[0];
                                     if (obj9 instanceof TLRPC.TL_photo) {
                                     }
                                 }
                                 TLRPC.TL_photo tL_photo722 = tL_photo6;
-                                String str8522 = str73;
-                                str60 = str81;
-                                str61 = str69;
+                                String str8122 = str69;
+                                str56 = str77;
+                                str57 = str65;
+                                str58 = str66;
                                 str62 = str70;
-                                str66 = str74;
-                                str64 = str77;
+                                str60 = str73;
                                 i28 = i31;
-                                str67 = str76;
-                                str65 = str75;
+                                str63 = str72;
+                                str61 = str71;
                                 z13 = z15;
                                 sendingMediaInfo3 = sendingMediaInfo4;
                                 r11 = null;
-                                str63 = str82;
+                                str59 = str78;
                                 ensureMediaThumbExists(accountInstance, z15, tL_photo722, sendingMediaInfo4.path, sendingMediaInfo4.uri, 0L, sendingMediaInfo4.highQuality);
                                 tL_photo5 = tL_photo722;
-                                str72 = str8522;
+                                str68 = str8122;
                             } else {
-                                str60 = str81;
-                                str65 = str75;
-                                str63 = str82;
-                                str61 = str69;
-                                str62 = str70;
+                                str56 = str77;
+                                str61 = str71;
+                                str59 = str78;
+                                str57 = str65;
+                                str58 = str66;
                                 z13 = z15;
-                                str64 = str77;
-                                str66 = str74;
+                                str60 = str73;
+                                str62 = str70;
                                 i28 = i31;
                                 r11 = null;
-                                str67 = str76;
+                                str63 = str72;
                                 sendingMediaInfo3 = sendingMediaInfo4;
-                                str72 = null;
+                                str68 = null;
                                 tL_photo5 = null;
                             }
                             final MediaSendPrepareWorker mediaSendPrepareWorker = new MediaSendPrepareWorker();
                             hashMap5.put(sendingMediaInfo3, mediaSendPrepareWorker);
                             if (tL_photo5 != null) {
-                                mediaSendPrepareWorker.parentObject = str72;
+                                mediaSendPrepareWorker.parentObject = str68;
                                 mediaSendPrepareWorker.photo = tL_photo5;
                                 i29 = 1;
                             } else {
                                 i29 = 1;
                                 mediaSendPrepareWorker.sync = new CountDownLatch(1);
-                                mediaSendThreadPool.execute(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda26
+                                mediaSendThreadPool.execute(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda0
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         SendMessagesHelper.lambda$prepareSendingMedia$104(SendMessagesHelper.MediaSendPrepareWorker.this, accountInstance, sendingMediaInfo3, z13);
@@ -12788,62 +12781,62 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             i30 += i29;
                             isEncryptedDialog = z13;
                             size2 = i28;
-                            str75 = str65;
-                            str76 = str67;
-                            str74 = str66;
-                            str77 = str64;
-                            str81 = str60;
-                            str80 = str61;
-                            str79 = str62;
-                            str78 = str63;
+                            str71 = str61;
+                            str72 = str63;
+                            str70 = str62;
+                            str73 = str60;
+                            str77 = str56;
+                            str76 = str57;
+                            str75 = str58;
+                            str74 = str59;
                             z16 = true;
                         }
-                        str60 = str81;
-                        str65 = str75;
-                        str63 = str82;
-                        str61 = str69;
-                        str62 = str70;
+                        str56 = str77;
+                        str61 = str71;
+                        str59 = str78;
+                        str57 = str65;
+                        str58 = str66;
                         i29 = 1;
                         z13 = isEncryptedDialog;
-                        str64 = str77;
-                        str66 = str74;
+                        str60 = str73;
+                        str62 = str70;
                         i28 = i31;
                     }
                     if (!ImageLoader.shouldSendImageAsDocument(sendingMediaInfo4.path, sendingMediaInfo4.uri)) {
-                        if (str84 == null && (uri4 = sendingMediaInfo4.uri) != null && (MediaController.isGif(uri4) || (z14 = MediaController.isWebp(sendingMediaInfo4.uri)))) {
+                        if (str80 == null && (uri4 = sendingMediaInfo4.uri) != null && (MediaController.isGif(uri4) || (z14 = MediaController.isWebp(sendingMediaInfo4.uri)))) {
                             if (arrayList.size() <= 1) {
                                 Object obj11 = z14 ? null : null;
                                 if (TextUtils.isEmpty(sendingMediaInfo4.caption)) {
-                                    str60 = str81;
-                                    str65 = str75;
-                                    str63 = str82;
-                                    str61 = str69;
-                                    str62 = str70;
+                                    str56 = str77;
+                                    str61 = str71;
+                                    str59 = str78;
+                                    str57 = str65;
+                                    str58 = str66;
                                     i29 = 1;
                                     z13 = isEncryptedDialog;
-                                    str64 = str77;
-                                    str66 = str74;
+                                    str60 = str73;
+                                    str62 = str70;
                                     i28 = i31;
                                 }
                             }
                             sendingMediaInfo4.forceImage = true;
-                            if (str84 != null) {
+                            if (str80 != null) {
                             }
                             if (z15) {
                             }
-                            str60 = str81;
-                            str65 = str75;
-                            str63 = str82;
-                            str61 = str69;
-                            str62 = str70;
+                            str56 = str77;
+                            str61 = str71;
+                            str59 = str78;
+                            str57 = str65;
+                            str58 = str66;
                             z13 = z15;
-                            str64 = str77;
-                            str66 = str74;
+                            str60 = str73;
+                            str62 = str70;
                             i28 = i31;
                             r11 = null;
-                            str67 = str76;
+                            str63 = str72;
                             sendingMediaInfo3 = sendingMediaInfo4;
-                            str72 = null;
+                            str68 = null;
                             tL_photo5 = null;
                             final MediaSendPrepareWorker mediaSendPrepareWorker2 = new MediaSendPrepareWorker();
                             hashMap5.put(sendingMediaInfo3, mediaSendPrepareWorker2);
@@ -12852,33 +12845,33 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             i30 += i29;
                             isEncryptedDialog = z13;
                             size2 = i28;
-                            str75 = str65;
-                            str76 = str67;
-                            str74 = str66;
-                            str77 = str64;
-                            str81 = str60;
-                            str80 = str61;
-                            str79 = str62;
-                            str78 = str63;
+                            str71 = str61;
+                            str72 = str63;
+                            str70 = str62;
+                            str73 = str60;
+                            str77 = str56;
+                            str76 = str57;
+                            str75 = str58;
+                            str74 = str59;
                             z16 = true;
                         }
-                        if (str84 != null) {
+                        if (str80 != null) {
                         }
                         if (z15) {
                         }
-                        str60 = str81;
-                        str65 = str75;
-                        str63 = str82;
-                        str61 = str69;
-                        str62 = str70;
+                        str56 = str77;
+                        str61 = str71;
+                        str59 = str78;
+                        str57 = str65;
+                        str58 = str66;
                         z13 = z15;
-                        str64 = str77;
-                        str66 = str74;
+                        str60 = str73;
+                        str62 = str70;
                         i28 = i31;
                         r11 = null;
-                        str67 = str76;
+                        str63 = str72;
                         sendingMediaInfo3 = sendingMediaInfo4;
-                        str72 = null;
+                        str68 = null;
                         tL_photo5 = null;
                         final MediaSendPrepareWorker mediaSendPrepareWorker22 = new MediaSendPrepareWorker();
                         hashMap5.put(sendingMediaInfo3, mediaSendPrepareWorker22);
@@ -12887,64 +12880,64 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         i30 += i29;
                         isEncryptedDialog = z13;
                         size2 = i28;
-                        str75 = str65;
-                        str76 = str67;
-                        str74 = str66;
-                        str77 = str64;
-                        str81 = str60;
-                        str80 = str61;
-                        str79 = str62;
-                        str78 = str63;
+                        str71 = str61;
+                        str72 = str63;
+                        str70 = str62;
+                        str73 = str60;
+                        str77 = str56;
+                        str76 = str57;
+                        str75 = str58;
+                        str74 = str59;
                         z16 = true;
                     }
-                    str60 = str81;
-                    str65 = str75;
-                    str63 = str82;
-                    str61 = str69;
-                    str62 = str70;
+                    str56 = str77;
+                    str61 = str71;
+                    str59 = str78;
+                    str57 = str65;
+                    str58 = str66;
                     i29 = 1;
                     z13 = isEncryptedDialog;
-                    str64 = str77;
-                    str66 = str74;
+                    str60 = str73;
+                    str62 = str70;
                     i28 = i31;
                 } else {
-                    str60 = str81;
-                    str61 = str80;
-                    str62 = str79;
-                    str63 = str78;
-                    str64 = str77;
-                    str65 = str75;
-                    str66 = str74;
+                    str56 = str77;
+                    str57 = str76;
+                    str58 = str75;
+                    str59 = str74;
+                    str60 = str73;
+                    str61 = str71;
+                    str62 = str70;
                     i28 = i31;
                     i29 = 1;
                     z13 = isEncryptedDialog;
                 }
-                str67 = str76;
+                str63 = str72;
                 i30 += i29;
                 isEncryptedDialog = z13;
                 size2 = i28;
-                str75 = str65;
-                str76 = str67;
-                str74 = str66;
-                str77 = str64;
-                str81 = str60;
-                str80 = str61;
-                str79 = str62;
-                str78 = str63;
+                str71 = str61;
+                str72 = str63;
+                str70 = str62;
+                str73 = str60;
+                str77 = str56;
+                str76 = str57;
+                str75 = str58;
+                str74 = str59;
                 z16 = true;
             }
-            str2 = str81;
-            str3 = str80;
-            str4 = str79;
-            str5 = str78;
-            str6 = str76;
-            str7 = str77;
-            str8 = str75;
-            str9 = str74;
+            str2 = str77;
+            str3 = str76;
+            str4 = str75;
+            str5 = str74;
+            str6 = str72;
+            str7 = str73;
+            str8 = str71;
+            str9 = str70;
             arrayList2 = null;
             z6 = isEncryptedDialog;
-            i3 = size2;
-            i4 = 1;
+            i4 = size2;
+            i5 = 1;
             hashMap = hashMap5;
         }
         ArrayList arrayList17 = arrayList2;
@@ -12958,18 +12951,18 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         long j14 = 0;
         long j15 = 0;
         ArrayList arrayList23 = arrayList21;
-        while (i34 < i3) {
+        while (i34 < i4) {
             final SendingMediaInfo sendingMediaInfo5 = (SendingMediaInfo) arrayList16.get(i34);
             boolean z17 = i33 == 0;
-            if (z2 && i3 > i4) {
+            if (z2 && i4 > i5) {
                 if (i33 % 10 == 0) {
                     j15 = Utilities.random.nextLong();
                     j5 = j15;
-                    i8 = 0;
+                    i9 = 0;
                     searchImage = sendingMediaInfo5.searchImage;
                     ArrayList arrayList24 = arrayList17;
                     ArrayList arrayList25 = arrayList20;
-                    i9 = i34;
+                    i10 = i34;
                     if (searchImage == null && sendingMediaInfo5.videoEditedInfo == null) {
                         ArrayList arrayList26 = arrayList18;
                         if (searchImage.type == 1) {
@@ -12993,11 +12986,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 tL_document4.size = sendingMediaInfo5.searchImage.size;
                                 tL_document4.dc_id = 0;
                                 if (!z && file2.toString().endsWith("mp4")) {
-                                    str58 = str5;
-                                    tL_document4.mime_type = str58;
+                                    str54 = str5;
+                                    tL_document4.mime_type = str54;
                                     tL_document4.attributes.add(new TLRPC.TL_documentAttributeAnimated());
                                 } else {
-                                    str58 = str5;
+                                    str54 = str5;
                                     tL_document4.mime_type = "image/gif";
                                 }
                                 if (file2.exists()) {
@@ -13016,7 +13009,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     if (!z6) {
                                         try {
                                             if (sendingMediaInfo5.ttl == 0) {
-                                                i27 = NotificationCenter.onReceivedChannelDifference;
+                                                i27 = NotificationCenter.uploadStoryEnd;
                                                 if (!file2.getAbsolutePath().endsWith("mp4")) {
                                                     try {
                                                         createVideoThumbnail = createVideoThumbnail(file2.getAbsolutePath(), 1);
@@ -13031,51 +13024,51 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         file2 = file3;
                                                         if (file2 != null) {
                                                         }
-                                                        str59 = sendingMediaInfo5.searchImage.imageUrl;
-                                                        if (str59 != null) {
+                                                        str55 = sendingMediaInfo5.searchImage.imageUrl;
+                                                        if (str55 != null) {
                                                         }
-                                                        final String str86 = null;
-                                                        String str87 = str57;
+                                                        final String str82 = null;
+                                                        String str83 = str53;
                                                         ArrayList arrayList27 = arrayList19;
                                                         final TLRPC.TL_document tL_document5 = tL_document3;
-                                                        String str88 = str6;
+                                                        str19 = str6;
                                                         z8 = z6;
                                                         final boolean z18 = z17;
-                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda27
+                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda1
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
-                                                                SendMessagesHelper.lambda$prepareSendingMedia$105(MessageObject.this, accountInstance, tL_document5, r7, hashMap6, sendingMediaInfo5, str86, j, messageObject2, messageObject3, z3, i, storyItem, replyQuote, str, i2, z18, j2, z4, j3, j4, messageSuggestionParams);
+                                                                SendMessagesHelper.lambda$prepareSendingMedia$105(MessageObject.this, accountInstance, tL_document5, r7, hashMap6, sendingMediaInfo5, str82, j, messageObject2, messageObject3, z3, i, i2, storyItem, replyQuote, str, i3, z18, j2, z4, j3, j4, messageSuggestionParams);
                                                             }
                                                         });
-                                                        i13 = i3;
-                                                        i33 = i8;
+                                                        i14 = i4;
+                                                        i33 = i9;
                                                         arrayList18 = arrayList26;
                                                         arrayList17 = arrayList24;
                                                         arrayList19 = arrayList27;
                                                         arrayList20 = arrayList25;
-                                                        i12 = i9;
-                                                        str16 = str58;
+                                                        i13 = i10;
+                                                        str14 = str83;
                                                         str18 = str8;
                                                         str20 = str9;
                                                         obj = null;
-                                                        j7 = j5;
-                                                        str14 = str87;
-                                                        str19 = str88;
+                                                        long j16 = j5;
                                                         str17 = str2;
+                                                        str16 = str54;
                                                         hashMap3 = hashMap;
-                                                        i34 = i12 + 1;
+                                                        j7 = j16;
+                                                        i34 = i13 + 1;
                                                         arrayList16 = arrayList;
                                                         hashMap = hashMap3;
-                                                        z6 = z8;
                                                         str7 = str14;
                                                         str2 = str17;
                                                         str5 = str16;
+                                                        z6 = z8;
                                                         str8 = str18;
                                                         str9 = str20;
                                                         j14 = j7;
                                                         str6 = str19;
-                                                        i3 = i13;
-                                                        i4 = 1;
+                                                        i4 = i14;
+                                                        i5 = 1;
                                                         arrayList23 = arrayList23;
                                                     }
                                                 } else {
@@ -13101,51 +13094,51 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         file2 = file3;
                                                         if (file2 != null) {
                                                         }
-                                                        str59 = sendingMediaInfo5.searchImage.imageUrl;
-                                                        if (str59 != null) {
+                                                        str55 = sendingMediaInfo5.searchImage.imageUrl;
+                                                        if (str55 != null) {
                                                         }
-                                                        final String str862 = null;
-                                                        String str872 = str57;
+                                                        final String str822 = null;
+                                                        String str832 = str53;
                                                         ArrayList arrayList272 = arrayList19;
                                                         final TLRPC.TL_document tL_document52 = tL_document3;
-                                                        String str882 = str6;
+                                                        str19 = str6;
                                                         z8 = z6;
                                                         final boolean z182 = z17;
-                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda27
+                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda1
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
-                                                                SendMessagesHelper.lambda$prepareSendingMedia$105(MessageObject.this, accountInstance, tL_document52, r7, hashMap6, sendingMediaInfo5, str862, j, messageObject2, messageObject3, z3, i, storyItem, replyQuote, str, i2, z182, j2, z4, j3, j4, messageSuggestionParams);
+                                                                SendMessagesHelper.lambda$prepareSendingMedia$105(MessageObject.this, accountInstance, tL_document52, r7, hashMap6, sendingMediaInfo5, str822, j, messageObject2, messageObject3, z3, i, i2, storyItem, replyQuote, str, i3, z182, j2, z4, j3, j4, messageSuggestionParams);
                                                             }
                                                         });
-                                                        i13 = i3;
-                                                        i33 = i8;
+                                                        i14 = i4;
+                                                        i33 = i9;
                                                         arrayList18 = arrayList26;
                                                         arrayList17 = arrayList24;
                                                         arrayList19 = arrayList272;
                                                         arrayList20 = arrayList25;
-                                                        i12 = i9;
-                                                        str16 = str58;
+                                                        i13 = i10;
+                                                        str14 = str832;
                                                         str18 = str8;
                                                         str20 = str9;
                                                         obj = null;
-                                                        j7 = j5;
-                                                        str14 = str872;
-                                                        str19 = str882;
+                                                        long j162 = j5;
                                                         str17 = str2;
+                                                        str16 = str54;
                                                         hashMap3 = hashMap;
-                                                        i34 = i12 + 1;
+                                                        j7 = j162;
+                                                        i34 = i13 + 1;
                                                         arrayList16 = arrayList;
                                                         hashMap = hashMap3;
-                                                        z6 = z8;
                                                         str7 = str14;
                                                         str2 = str17;
                                                         str5 = str16;
+                                                        z6 = z8;
                                                         str8 = str18;
                                                         str9 = str20;
                                                         j14 = j7;
                                                         str6 = str19;
-                                                        i3 = i13;
-                                                        i4 = 1;
+                                                        i4 = i14;
+                                                        i5 = 1;
                                                         arrayList23 = arrayList23;
                                                     }
                                                 }
@@ -13160,51 +13153,51 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             file2 = file3;
                                             if (file2 != null) {
                                             }
-                                            str59 = sendingMediaInfo5.searchImage.imageUrl;
-                                            if (str59 != null) {
+                                            str55 = sendingMediaInfo5.searchImage.imageUrl;
+                                            if (str55 != null) {
                                             }
-                                            final String str8622 = null;
-                                            String str8722 = str57;
+                                            final String str8222 = null;
+                                            String str8322 = str53;
                                             ArrayList arrayList2722 = arrayList19;
                                             final TLRPC.TL_document tL_document522 = tL_document3;
-                                            String str8822 = str6;
+                                            str19 = str6;
                                             z8 = z6;
                                             final boolean z1822 = z17;
-                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda27
+                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda1
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
-                                                    SendMessagesHelper.lambda$prepareSendingMedia$105(MessageObject.this, accountInstance, tL_document522, r7, hashMap6, sendingMediaInfo5, str8622, j, messageObject2, messageObject3, z3, i, storyItem, replyQuote, str, i2, z1822, j2, z4, j3, j4, messageSuggestionParams);
+                                                    SendMessagesHelper.lambda$prepareSendingMedia$105(MessageObject.this, accountInstance, tL_document522, r7, hashMap6, sendingMediaInfo5, str8222, j, messageObject2, messageObject3, z3, i, i2, storyItem, replyQuote, str, i3, z1822, j2, z4, j3, j4, messageSuggestionParams);
                                                 }
                                             });
-                                            i13 = i3;
-                                            i33 = i8;
+                                            i14 = i4;
+                                            i33 = i9;
                                             arrayList18 = arrayList26;
                                             arrayList17 = arrayList24;
                                             arrayList19 = arrayList2722;
                                             arrayList20 = arrayList25;
-                                            i12 = i9;
-                                            str16 = str58;
+                                            i13 = i10;
+                                            str14 = str8322;
                                             str18 = str8;
                                             str20 = str9;
                                             obj = null;
-                                            j7 = j5;
-                                            str14 = str8722;
-                                            str19 = str8822;
+                                            long j1622 = j5;
                                             str17 = str2;
+                                            str16 = str54;
                                             hashMap3 = hashMap;
-                                            i34 = i12 + 1;
+                                            j7 = j1622;
+                                            i34 = i13 + 1;
                                             arrayList16 = arrayList;
                                             hashMap = hashMap3;
-                                            z6 = z8;
                                             str7 = str14;
                                             str2 = str17;
                                             str5 = str16;
+                                            z6 = z8;
                                             str8 = str18;
                                             str9 = str20;
                                             j14 = j7;
                                             str6 = str19;
-                                            i3 = i13;
-                                            i4 = 1;
+                                            i4 = i14;
+                                            i5 = 1;
                                             arrayList23 = arrayList23;
                                         }
                                     }
@@ -13217,7 +13210,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     obj8 = null;
                                 }
                                 if (tL_document4.thumbs.isEmpty()) {
-                                    str57 = str7;
+                                    str53 = str7;
                                 } else {
                                     TLRPC.TL_photoSize tL_photoSize = new TLRPC.TL_photoSize();
                                     MediaController.SearchImage searchImage3 = sendingMediaInfo5.searchImage;
@@ -13225,76 +13218,76 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     tL_photoSize.h = searchImage3.height;
                                     tL_photoSize.size = 0;
                                     tL_photoSize.location = new TLRPC.TL_fileLocationUnavailable();
-                                    str57 = str7;
-                                    tL_photoSize.type = str57;
+                                    str53 = str7;
+                                    tL_photoSize.type = str53;
                                     tL_document4.thumbs.add(tL_photoSize);
                                     tL_document4.flags |= 1;
                                 }
                                 tL_document3 = tL_document4;
                                 file2 = file3;
                             } else {
-                                str57 = str7;
-                                str58 = str5;
+                                str53 = str7;
+                                str54 = str5;
                                 obj8 = null;
                             }
                             final String file5 = file2 != null ? sendingMediaInfo5.searchImage.imageUrl : file2.toString();
-                            str59 = sendingMediaInfo5.searchImage.imageUrl;
-                            if (str59 != null) {
-                                hashMap6.put("originalPath", str59);
+                            str55 = sendingMediaInfo5.searchImage.imageUrl;
+                            if (str55 != null) {
+                                hashMap6.put("originalPath", str55);
                             }
-                            final String str86222 = null;
-                            String str87222 = str57;
+                            final String str82222 = null;
+                            String str83222 = str53;
                             ArrayList arrayList27222 = arrayList19;
                             final TLRPC.TL_document tL_document5222 = tL_document3;
-                            String str88222 = str6;
+                            str19 = str6;
                             z8 = z6;
                             final boolean z18222 = z17;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda27
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda1
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    SendMessagesHelper.lambda$prepareSendingMedia$105(MessageObject.this, accountInstance, tL_document5222, file5, hashMap6, sendingMediaInfo5, str86222, j, messageObject2, messageObject3, z3, i, storyItem, replyQuote, str, i2, z18222, j2, z4, j3, j4, messageSuggestionParams);
+                                    SendMessagesHelper.lambda$prepareSendingMedia$105(MessageObject.this, accountInstance, tL_document5222, file5, hashMap6, sendingMediaInfo5, str82222, j, messageObject2, messageObject3, z3, i, i2, storyItem, replyQuote, str, i3, z18222, j2, z4, j3, j4, messageSuggestionParams);
                                 }
                             });
-                            i13 = i3;
-                            i33 = i8;
+                            i14 = i4;
+                            i33 = i9;
                             arrayList18 = arrayList26;
                             arrayList17 = arrayList24;
                             arrayList19 = arrayList27222;
                             arrayList20 = arrayList25;
-                            i12 = i9;
-                            str16 = str58;
+                            i13 = i10;
+                            str14 = str83222;
                             str18 = str8;
                             str20 = str9;
                             obj = null;
-                            j7 = j5;
-                            str14 = str87222;
-                            str19 = str88222;
+                            long j16222 = j5;
                             str17 = str2;
+                            str16 = str54;
                             hashMap3 = hashMap;
-                            i34 = i12 + 1;
+                            j7 = j16222;
+                            i34 = i13 + 1;
                             arrayList16 = arrayList;
                             hashMap = hashMap3;
-                            z6 = z8;
                             str7 = str14;
                             str2 = str17;
                             str5 = str16;
+                            z6 = z8;
                             str8 = str18;
                             str9 = str20;
                             j14 = j7;
                             str6 = str19;
-                            i3 = i13;
-                            i4 = 1;
+                            i4 = i14;
+                            i5 = 1;
                             arrayList23 = arrayList23;
                         } else {
                             ArrayList arrayList28 = arrayList19;
                             hashMap2 = hashMap;
                             str10 = str8;
-                            String str89 = str6;
+                            str19 = str6;
                             str12 = str9;
-                            String str90 = str7;
-                            String str91 = str5;
+                            String str84 = str7;
+                            str13 = str5;
                             z8 = z6;
-                            int i35 = i3;
+                            int i35 = i4;
                             TLRPC.Photo photo = searchImage.photo;
                             TLRPC.TL_photo tL_photo8 = photo instanceof TLRPC.TL_photo ? (TLRPC.TL_photo) photo : null;
                             if (tL_photo8 == null) {
@@ -13321,14 +13314,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 tL_photoSize2.h = searchImage4.height;
                                                 tL_photoSize2.size = 0;
                                                 tL_photoSize2.location = new TLRPC.TL_fileLocationUnavailable();
-                                                str55 = str90;
-                                                tL_photoSize2.type = str55;
+                                                str51 = str84;
+                                                tL_photoSize2.type = str51;
                                                 tL_photo8.sizes.add(tL_photoSize2);
                                                 tL_photo4 = tL_photo8;
                                                 z11 = z12;
                                             }
                                         }
-                                        str55 = str90;
+                                        str51 = str84;
                                         tL_photo4 = tL_photo8;
                                         z11 = z12;
                                     }
@@ -13336,83 +13329,82 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 z12 = true;
                                 if (tL_photo8 == null) {
                                 }
-                                str55 = str90;
+                                str51 = str84;
                                 tL_photo4 = tL_photo8;
                                 z11 = z12;
                             } else {
-                                str55 = str90;
+                                str51 = str84;
                                 tL_photo4 = tL_photo8;
                                 z11 = true;
                             }
                             final HashMap hashMap7 = new HashMap();
-                            String str92 = sendingMediaInfo5.searchImage.imageUrl;
-                            if (str92 != null) {
-                                hashMap7.put("originalPath", str92);
+                            String str85 = sendingMediaInfo5.searchImage.imageUrl;
+                            if (str85 != null) {
+                                hashMap7.put("originalPath", str85);
                             }
                             if (z2) {
-                                int i36 = i8 + 1;
+                                int i36 = i9 + 1;
                                 StringBuilder sb2 = new StringBuilder();
                                 sb2.append("");
-                                str56 = str55;
+                                str52 = str51;
                                 j13 = j5;
                                 sb2.append(j13);
                                 hashMap7.put("groupId", sb2.toString());
                                 if (i36 != 10) {
-                                    i26 = i9;
+                                    i26 = i10;
                                     if (i26 != i35 - 1) {
-                                        i8 = i36;
+                                        i9 = i36;
                                     }
                                 } else {
-                                    i26 = i9;
+                                    i26 = i10;
                                 }
                                 hashMap7.put("final", "1");
-                                i8 = i36;
+                                i9 = i36;
                                 j15 = 0;
                             } else {
-                                str56 = str55;
+                                str52 = str51;
                                 j13 = j5;
-                                i26 = i9;
+                                i26 = i10;
                             }
-                            final String str93 = null;
-                            i11 = i26;
+                            final String str86 = null;
+                            i12 = i26;
                             final boolean z19 = z11;
                             j6 = j13;
-                            str14 = str56;
-                            i10 = i35;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda28
+                            str14 = str52;
+                            i11 = i35;
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda2
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    SendMessagesHelper.lambda$prepareSendingMedia$106(MessageObject.this, accountInstance, tL_photo4, z19, sendingMediaInfo5, hashMap7, str93, j, messageObject2, messageObject3, z3, i, storyItem, replyQuote, i2, str, j2, z4, j3, j4, messageSuggestionParams);
+                                    SendMessagesHelper.lambda$prepareSendingMedia$106(MessageObject.this, accountInstance, tL_photo4, z19, sendingMediaInfo5, hashMap7, str86, j, messageObject2, messageObject3, z3, i, i2, storyItem, replyQuote, i3, str, j2, z4, j3, j4, messageSuggestionParams);
                                 }
                             });
-                            i33 = i8;
+                            i33 = i9;
                             str17 = str2;
                             arrayList18 = arrayList26;
                             arrayList17 = arrayList24;
                             arrayList19 = arrayList28;
                             arrayList20 = arrayList25;
-                            str16 = str91;
-                            str19 = str89;
                             arrayList15 = arrayList23;
+                            str16 = str13;
                             str18 = str10;
                             str20 = str12;
                             hashMap3 = hashMap2;
-                            i12 = i11;
+                            i13 = i12;
                             j7 = j6;
-                            i13 = i10;
+                            i14 = i11;
                             arrayList23 = arrayList15;
                         }
                     } else {
                         ArrayList arrayList29 = arrayList18;
                         arrayList4 = arrayList19;
-                        i10 = i3;
+                        i11 = i4;
                         hashMap2 = hashMap;
                         str10 = str8;
                         str11 = str6;
                         str12 = str9;
                         str13 = str5;
                         j6 = j5;
-                        i11 = i9;
+                        i12 = i10;
                         z8 = z6;
                         str14 = str7;
                         if (!sendingMediaInfo5.isVideo || sendingMediaInfo5.videoEditedInfo != null) {
@@ -13434,13 +13426,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         sendingMediaInfo5.path = new File(FileLoader.getDirectory(4), Utilities.MD5(sendingMediaInfo5.searchImage.imageUrl) + "." + ImageLoader.getHttpUrlExtension(sendingMediaInfo5.searchImage.imageUrl, "jpg")).getAbsolutePath();
                                     }
                                 }
-                                String str94 = sendingMediaInfo5.path;
-                                File file8 = new File(str94);
-                                String str95 = str94 + file8.length() + str15 + file8.lastModified();
+                                String str87 = sendingMediaInfo5.path;
+                                File file8 = new File(str87);
+                                String str88 = str87 + file8.length() + str15 + file8.lastModified();
                                 if (videoEditedInfo != null) {
                                     boolean z20 = videoEditedInfo.muted;
                                     StringBuilder sb3 = new StringBuilder();
-                                    sb3.append(str95);
+                                    sb3.append(str88);
                                     sb3.append(videoEditedInfo.estimatedDuration);
                                     sb3.append(str15);
                                     sb3.append(videoEditedInfo.startTime);
@@ -13451,18 +13443,18 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     if (videoEditedInfo.resultWidth != videoEditedInfo.originalWidth) {
                                         sb4 = sb4 + str15 + videoEditedInfo.resultWidth;
                                     }
-                                    long j16 = videoEditedInfo.startTime;
-                                    if (j16 >= 0) {
+                                    long j17 = videoEditedInfo.startTime;
+                                    if (j17 >= 0) {
                                         z9 = z20;
                                         str21 = sb4;
-                                        j8 = j16;
+                                        j8 = j17;
                                     } else {
                                         str21 = sb4;
                                         z9 = z20;
                                         j8 = 0;
                                     }
                                 } else {
-                                    str21 = str95;
+                                    str21 = str88;
                                     j8 = 0;
                                     z9 = false;
                                 }
@@ -13472,30 +13464,30 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     str17 = str15;
                                     file = file8;
                                     str23 = "mp4";
-                                    str24 = str94;
+                                    str24 = str87;
                                 } else {
-                                    long j17 = j8;
+                                    long j18 = j8;
                                     if (sendingMediaInfo5.ttl == 0 && (videoEditedInfo == null || (videoEditedInfo.filterState == null && videoEditedInfo.paintPath == null && videoEditedInfo.mediaEntities == null && videoEditedInfo.cropState == null))) {
                                         Object[] sentFile3 = accountInstance.getMessagesStorage().getSentFile(str21, !z8 ? 2 : 5);
                                         if (sentFile3 != null) {
-                                            String str96 = str21;
+                                            String str89 = str21;
                                             Object obj12 = sentFile3[0];
                                             if (obj12 instanceof TLRPC.TL_document) {
                                                 TLRPC.TL_document tL_document6 = (TLRPC.TL_document) obj12;
-                                                String str97 = (String) sentFile3[1];
-                                                j9 = j17;
-                                                str22 = str96;
+                                                String str90 = (String) sentFile3[1];
+                                                j9 = j18;
+                                                str22 = str89;
                                                 str17 = str15;
-                                                str24 = str94;
+                                                str24 = str87;
                                                 obj2 = "1";
                                                 file = file8;
                                                 str23 = "mp4";
                                                 ensureMediaThumbExists(accountInstance, z8, tL_document6, sendingMediaInfo5.path, null, j9);
                                                 tL_document = tL_document6;
-                                                str25 = str97;
+                                                str25 = str90;
                                                 if (tL_document != null) {
-                                                    String str98 = sendingMediaInfo5.thumbPath;
-                                                    Bitmap decodeFile = str98 != null ? BitmapFactory.decodeFile(str98) : null;
+                                                    String str91 = sendingMediaInfo5.thumbPath;
+                                                    Bitmap decodeFile = str91 != null ? BitmapFactory.decodeFile(str91) : null;
                                                     if (decodeFile == null && (decodeFile = createVideoThumbnailAtTime(sendingMediaInfo5.path, j9)) == null) {
                                                         decodeFile = createVideoThumbnail(sendingMediaInfo5.path, 1);
                                                     }
@@ -13505,20 +13497,20 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         sendingMediaInfo2 = sendingMediaInfo5;
                                                         photoSize2 = ImageLoader.scaleAndSaveImage(null, decodeFile, (videoEditedInfo == null || !videoEditedInfo.isSticker) ? Bitmap.CompressFormat.JPEG : Bitmap.CompressFormat.WEBP, false, f3, f3, max > 90 ? 80 : 55, z8, 0, 0, false);
                                                         if (photoSize2 == null || photoSize2.location == null) {
-                                                            i18 = 0;
-                                                            str33 = null;
+                                                            i19 = 0;
+                                                            str32 = null;
                                                         } else {
-                                                            i18 = 0;
-                                                            str33 = getKeyForPhotoSize(accountInstance, photoSize2, null, true, false);
+                                                            i19 = 0;
+                                                            str32 = getKeyForPhotoSize(accountInstance, photoSize2, null, true, false);
                                                         }
                                                     } else {
                                                         sendingMediaInfo2 = sendingMediaInfo5;
-                                                        i18 = 0;
+                                                        i19 = 0;
                                                         photoSize2 = null;
-                                                        str33 = null;
+                                                        str32 = null;
                                                     }
                                                     TLRPC.TL_document tL_document7 = new TLRPC.TL_document();
-                                                    tL_document7.file_reference = new byte[i18];
+                                                    tL_document7.file_reference = new byte[i19];
                                                     if (photoSize2 != null) {
                                                         tL_document7.thumbs.add(photoSize2);
                                                         tL_document7.flags |= 1;
@@ -13526,10 +13518,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     VideoEditedInfo videoEditedInfo2 = sendingMediaInfo2.videoEditedInfo;
                                                     if (videoEditedInfo2 != null && videoEditedInfo2.isSticker) {
                                                         tL_document7.mime_type = "video/webm";
-                                                        str34 = str13;
+                                                        str33 = str13;
                                                     } else {
-                                                        str34 = str13;
-                                                        tL_document7.mime_type = str34;
+                                                        str33 = str13;
+                                                        tL_document7.mime_type = str33;
                                                     }
                                                     Bitmap bitmap2 = decodeFile;
                                                     accountInstance.getUserConfig().saveConfig(false);
@@ -13542,8 +13534,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         tL_document7.attributes.add(tL_documentAttributeSticker);
                                                         if (photoSize2 != null && (fileLocation = photoSize2.location) != null) {
                                                             obj3 = obj2;
-                                                            str35 = str34;
-                                                            str33 = String.format(Locale.US, "%d_%d@b1", Long.valueOf(fileLocation.volume_id), Integer.valueOf(photoSize2.location.local_id));
+                                                            str34 = str33;
+                                                            str32 = String.format(Locale.US, "%d_%d@b1", Long.valueOf(fileLocation.volume_id), Integer.valueOf(photoSize2.location.local_id));
                                                             if (!z8) {
                                                                 tL_documentAttributeVideo = new TLRPC.TL_documentAttributeVideo_layer159();
                                                             } else {
@@ -13562,18 +13554,18 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                 int i37 = videoEditedInfo.rotationValue;
                                                                 MediaController.CropState cropState = videoEditedInfo.cropState;
                                                                 if (cropState != null) {
-                                                                    i19 = cropState.transformWidth;
-                                                                    i20 = cropState.transformHeight;
+                                                                    i20 = cropState.transformWidth;
+                                                                    i21 = cropState.transformHeight;
                                                                 } else {
-                                                                    i19 = videoEditedInfo.resultWidth;
-                                                                    i20 = videoEditedInfo.resultHeight;
+                                                                    i20 = videoEditedInfo.resultWidth;
+                                                                    i21 = videoEditedInfo.resultHeight;
                                                                 }
                                                                 if (i37 == 90 || i37 == 270) {
-                                                                    tL_documentAttributeVideo.w = i20;
-                                                                    tL_documentAttributeVideo.h = i19;
-                                                                } else {
-                                                                    tL_documentAttributeVideo.w = i19;
+                                                                    tL_documentAttributeVideo.w = i21;
                                                                     tL_documentAttributeVideo.h = i20;
+                                                                } else {
+                                                                    tL_documentAttributeVideo.w = i20;
+                                                                    tL_documentAttributeVideo.h = i21;
                                                                 }
                                                                 tL_document7.size = videoEditedInfo.estimatedSize;
                                                             } else {
@@ -13583,13 +13575,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                 fillVideoAttribute(sendingMediaInfo2.path, tL_documentAttributeVideo, null);
                                                             }
                                                             tL_document2 = tL_document7;
-                                                            str26 = str33;
+                                                            str26 = str32;
                                                             bitmap = bitmap2;
-                                                            str16 = str35;
+                                                            str16 = str34;
                                                         }
                                                     }
                                                     obj3 = obj2;
-                                                    str35 = str34;
+                                                    str34 = str33;
                                                     if (!z8) {
                                                     }
                                                     tL_document7.attributes.add(tL_documentAttributeVideo);
@@ -13599,45 +13591,45 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     }
                                                     fillVideoAttribute(sendingMediaInfo2.path, tL_documentAttributeVideo, null);
                                                     tL_document2 = tL_document7;
-                                                    str26 = str33;
+                                                    str26 = str32;
                                                     bitmap = bitmap2;
-                                                    str16 = str35;
+                                                    str16 = str34;
                                                 } else {
                                                     obj3 = obj2;
                                                     sendingMediaInfo2 = sendingMediaInfo5;
-                                                    long j18 = j9;
+                                                    long j19 = j9;
                                                     if (tL_document.thumbs.isEmpty()) {
                                                         str16 = str13;
                                                         tL_document2 = tL_document;
                                                         bitmap = null;
                                                         str26 = null;
                                                     } else {
-                                                        String str99 = sendingMediaInfo2.thumbPath;
-                                                        Bitmap decodeFile2 = str99 != null ? BitmapFactory.decodeFile(str99) : null;
-                                                        if (decodeFile2 == null && (decodeFile2 = createVideoThumbnailAtTime(sendingMediaInfo2.path, j18)) == null) {
+                                                        String str92 = sendingMediaInfo2.thumbPath;
+                                                        Bitmap decodeFile2 = str92 != null ? BitmapFactory.decodeFile(str92) : null;
+                                                        if (decodeFile2 == null && (decodeFile2 = createVideoThumbnailAtTime(sendingMediaInfo2.path, j19)) == null) {
                                                             decodeFile2 = createVideoThumbnail(sendingMediaInfo2.path, 1);
                                                         }
                                                         if (decodeFile2 != null) {
                                                             int max2 = (z8 || sendingMediaInfo2.ttl != 0) ? 90 : Math.max(decodeFile2.getWidth(), decodeFile2.getHeight());
                                                             float f4 = max2;
                                                             str16 = str13;
-                                                            photoSize = ImageLoader.scaleAndSaveImage(null, decodeFile2, (videoEditedInfo == null || !videoEditedInfo.isSticker) ? Bitmap.CompressFormat.JPEG : Bitmap.CompressFormat.WEBP, false, f4, f4, max2 <= 90 ? 55 : 80, z8, 0, 0, false);
+                                                            photoSize = ImageLoader.scaleAndSaveImage(null, decodeFile2, (videoEditedInfo == null || !videoEditedInfo.isSticker) ? Bitmap.CompressFormat.JPEG : Bitmap.CompressFormat.WEBP, false, f4, f4, max2 > 90 ? 80 : 55, z8, 0, 0, false);
                                                             if (photoSize == null || photoSize.location == null) {
-                                                                i14 = 1;
+                                                                i15 = 1;
                                                                 str27 = null;
                                                             } else {
-                                                                i14 = 1;
+                                                                i15 = 1;
                                                                 str27 = getKeyForPhotoSize(accountInstance, photoSize, null, true, false);
                                                             }
                                                         } else {
                                                             str16 = str13;
-                                                            i14 = 1;
+                                                            i15 = 1;
                                                             photoSize = null;
                                                             str27 = null;
                                                         }
                                                         if (photoSize != null) {
                                                             tL_document.thumbs.add(photoSize);
-                                                            tL_document.flags |= i14;
+                                                            tL_document.flags |= i15;
                                                         }
                                                         bitmap = decodeFile2;
                                                         tL_document2 = tL_document;
@@ -13651,13 +13643,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 final TLRPC.PhotoSize photoSize3 = fileToSize;
                                                 if (videoEditedInfo != null && videoEditedInfo.muted) {
                                                     size = tL_document2.attributes.size();
-                                                    i17 = 0;
+                                                    i18 = 0;
                                                     while (true) {
-                                                        if (i17 >= size) {
-                                                            if (tL_document2.attributes.get(i17) instanceof TLRPC.TL_documentAttributeAnimated) {
+                                                        if (i18 >= size) {
+                                                            if (tL_document2.attributes.get(i18) instanceof TLRPC.TL_documentAttributeAnimated) {
                                                                 break;
                                                             } else {
-                                                                i17++;
+                                                                i18++;
                                                             }
                                                         } else {
                                                             tL_document2.attributes.add(new TLRPC.TL_documentAttributeAnimated());
@@ -13669,13 +13661,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     str28 = str11;
                                                     str29 = str24;
                                                 } else {
-                                                    String str100 = videoEditedInfo.isSticker ? "webm" : str23;
+                                                    String str93 = videoEditedInfo.isSticker ? "webm" : str23;
                                                     StringBuilder sb5 = new StringBuilder();
                                                     str28 = str11;
                                                     sb5.append(str28);
                                                     sb5.append(SharedConfig.getLastLocalId());
                                                     sb5.append(".");
-                                                    sb5.append(str100);
+                                                    sb5.append(str93);
                                                     File file9 = new File(FileLoader.getDirectory(4), sb5.toString());
                                                     SharedConfig.saveConfig();
                                                     str29 = file9.getAbsolutePath();
@@ -13689,38 +13681,38 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     hashMap8.put(str12, str25);
                                                 }
                                                 if (z9 && z2) {
-                                                    int i38 = i8 + 1;
+                                                    int i38 = i9 + 1;
                                                     StringBuilder sb6 = new StringBuilder();
                                                     sb6.append("");
-                                                    str31 = str28;
+                                                    str19 = str28;
                                                     j10 = j6;
                                                     sb6.append(j10);
                                                     hashMap8.put("groupId", sb6.toString());
                                                     if (i38 != 10) {
-                                                        i15 = i10;
+                                                        i16 = i11;
                                                         arrayList6 = arrayList4;
-                                                        i12 = i11;
-                                                        if (i12 != i15 - 1) {
-                                                            i16 = i38;
+                                                        i13 = i12;
+                                                        if (i13 != i16 - 1) {
+                                                            i17 = i38;
                                                         }
                                                     } else {
                                                         arrayList6 = arrayList4;
-                                                        i12 = i11;
-                                                        i15 = i10;
+                                                        i13 = i12;
+                                                        i16 = i11;
                                                     }
                                                     hashMap8.put("final", obj3);
-                                                    i16 = i38;
+                                                    i17 = i38;
                                                     j15 = 0;
                                                 } else {
                                                     arrayList6 = arrayList4;
-                                                    str31 = str28;
-                                                    i12 = i11;
+                                                    str19 = str28;
+                                                    i13 = i12;
                                                     j10 = j6;
-                                                    i15 = i10;
-                                                    i16 = i8;
+                                                    i16 = i11;
+                                                    i17 = i9;
                                                 }
                                                 if (!z8 || ((videoEditedInfo != null && videoEditedInfo.isSticker) || (arrayList7 = sendingMediaInfo2.masks) == null || arrayList7.isEmpty())) {
-                                                    str32 = str10;
+                                                    str31 = str10;
                                                 } else {
                                                     tL_document2.attributes.add(new TLRPC.TL_documentAttributeHasStickers());
                                                     SerializedData serializedData = new SerializedData((sendingMediaInfo2.masks.size() * 20) + 4);
@@ -13728,27 +13720,26 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     for (int i39 = 0; i39 < sendingMediaInfo2.masks.size(); i39++) {
                                                         sendingMediaInfo2.masks.get(i39).serializeToStream(serializedData);
                                                     }
-                                                    str32 = str10;
-                                                    hashMap8.put(str32, Utilities.bytesToHex(serializedData.toByteArray()));
+                                                    str31 = str10;
+                                                    hashMap8.put(str31, Utilities.bytesToHex(serializedData.toByteArray()));
                                                     serializedData.cleanup();
                                                 }
                                                 final SendingMediaInfo sendingMediaInfo6 = sendingMediaInfo2;
                                                 final VideoEditedInfo videoEditedInfo4 = videoEditedInfo;
-                                                final String str101 = str25;
+                                                final String str94 = str25;
                                                 final TLRPC.TL_document tL_document8 = tL_document2;
-                                                str18 = str32;
+                                                str18 = str31;
                                                 str20 = str12;
                                                 j7 = j10;
-                                                str19 = str31;
                                                 obj = null;
-                                                i13 = i15;
-                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda30
+                                                i14 = i16;
+                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda4
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
-                                                        SendMessagesHelper.lambda$prepareSendingMedia$107(bitmap, str26, messageObject, accountInstance, videoEditedInfo4, tL_document8, str29, hashMap8, sendingMediaInfo6, str101, j, messageObject2, messageObject3, z3, i, storyItem, replyQuote, str, i2, j2, z4, photoSize3, j3, j4, messageSuggestionParams);
+                                                        SendMessagesHelper.lambda$prepareSendingMedia$107(bitmap, str26, messageObject, accountInstance, videoEditedInfo4, tL_document8, str29, hashMap8, sendingMediaInfo6, str94, j, messageObject2, messageObject3, z3, i, i2, storyItem, replyQuote, str, i3, j2, z4, photoSize3, j3, j4, messageSuggestionParams);
                                                     }
                                                 });
-                                                i33 = i16;
+                                                i33 = i17;
                                                 arrayList18 = arrayList29;
                                                 arrayList17 = arrayList24;
                                                 arrayList19 = arrayList6;
@@ -13757,9 +13748,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 str17 = str15;
                                                 file = file8;
                                                 str23 = "mp4";
-                                                str24 = str94;
-                                                j9 = j17;
-                                                str22 = str96;
+                                                str24 = str87;
+                                                j9 = j18;
+                                                str22 = str89;
                                             }
                                         }
                                     }
@@ -13767,8 +13758,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     str17 = str15;
                                     file = file8;
                                     str23 = "mp4";
-                                    str24 = str94;
-                                    j9 = j17;
+                                    str24 = str87;
+                                    j9 = j18;
                                 }
                                 obj2 = "1";
                                 tL_document = null;
@@ -13782,11 +13773,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 final TLRPC.PhotoSize photoSize32 = fileToSize;
                                 if (videoEditedInfo != null) {
                                     size = tL_document2.attributes.size();
-                                    i17 = 0;
+                                    i18 = 0;
                                     while (true) {
-                                        if (i17 >= size) {
+                                        if (i18 >= size) {
                                         }
-                                        i17++;
+                                        i18++;
                                     }
                                 }
                                 if (videoEditedInfo != null) {
@@ -13802,44 +13793,43 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 if (z9) {
                                 }
                                 arrayList6 = arrayList4;
-                                str31 = str28;
-                                i12 = i11;
+                                str19 = str28;
+                                i13 = i12;
                                 j10 = j6;
-                                i15 = i10;
-                                i16 = i8;
+                                i16 = i11;
+                                i17 = i9;
                                 if (z8) {
                                 }
-                                str32 = str10;
+                                str31 = str10;
                                 final SendingMediaInfo sendingMediaInfo62 = sendingMediaInfo2;
                                 final VideoEditedInfo videoEditedInfo42 = videoEditedInfo;
-                                final String str1012 = str25;
+                                final String str942 = str25;
                                 final TLRPC.TL_document tL_document82 = tL_document2;
-                                str18 = str32;
+                                str18 = str31;
                                 str20 = str12;
                                 j7 = j10;
-                                str19 = str31;
                                 obj = null;
-                                i13 = i15;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda30
+                                i14 = i16;
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda4
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        SendMessagesHelper.lambda$prepareSendingMedia$107(bitmap, str26, messageObject, accountInstance, videoEditedInfo42, tL_document82, str29, hashMap82, sendingMediaInfo62, str1012, j, messageObject2, messageObject3, z3, i, storyItem, replyQuote, str, i2, j2, z4, photoSize32, j3, j4, messageSuggestionParams);
+                                        SendMessagesHelper.lambda$prepareSendingMedia$107(bitmap, str26, messageObject, accountInstance, videoEditedInfo42, tL_document82, str29, hashMap82, sendingMediaInfo62, str942, j, messageObject2, messageObject3, z3, i, i2, storyItem, replyQuote, str, i3, j2, z4, photoSize32, j3, j4, messageSuggestionParams);
                                     }
                                 });
-                                i33 = i16;
+                                i33 = i17;
                                 arrayList18 = arrayList29;
                                 arrayList17 = arrayList24;
                                 arrayList19 = arrayList6;
                                 arrayList20 = arrayList25;
                             } else {
-                                i12 = i11;
+                                i13 = i12;
                                 str16 = str13;
                                 str17 = str15;
                                 str18 = str10;
                                 str19 = str11;
                                 str20 = str12;
                                 j7 = j6;
-                                i13 = i10;
+                                i14 = i11;
                                 obj = null;
                                 if (arrayList4 != null) {
                                     arrayList19 = new ArrayList();
@@ -13863,35 +13853,35 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 arrayList20.add(sendingMediaInfo.caption);
                                 arrayList5.add(sendingMediaInfo.entities);
                                 arrayList22 = arrayList5;
-                                i33 = i8;
+                                i33 = i9;
                             }
-                            i34 = i12 + 1;
+                            i34 = i13 + 1;
                             arrayList16 = arrayList;
                             hashMap = hashMap3;
-                            z6 = z8;
                             str7 = str14;
                             str2 = str17;
                             str5 = str16;
+                            z6 = z8;
                             str8 = str18;
                             str9 = str20;
                             j14 = j7;
                             str6 = str19;
-                            i3 = i13;
-                            i4 = 1;
+                            i4 = i14;
+                            i5 = 1;
                             arrayList23 = arrayList23;
                         } else {
-                            String str102 = sendingMediaInfo5.path;
-                            if (str102 != null || (uri2 = sendingMediaInfo5.uri) == null) {
-                                str36 = str102;
-                                str37 = str36;
+                            String str95 = sendingMediaInfo5.path;
+                            if (str95 != null || (uri2 = sendingMediaInfo5.uri) == null) {
+                                str35 = str95;
+                                str36 = str35;
                             } else {
                                 String path = (Build.VERSION.SDK_INT < 30 || !"content".equals(uri2.getScheme())) ? AndroidUtilities.getPath(sendingMediaInfo5.uri) : null;
-                                str36 = sendingMediaInfo5.uri.toString();
-                                str37 = path;
+                                str35 = sendingMediaInfo5.uri.toString();
+                                str36 = path;
                             }
                             if (inputContentInfoCompat == null || sendingMediaInfo5.uri == null || !inputContentInfoCompat.getDescription().hasMimeType("image/png")) {
-                                str38 = str4;
-                                str39 = str11;
+                                str37 = str4;
+                                str38 = str11;
                             } else {
                                 try {
                                     BitmapFactory.Options options = new BitmapFactory.Options();
@@ -13899,13 +13889,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     try {
                                         Bitmap decodeStream = BitmapFactory.decodeStream(inputStream, null, options);
                                         StringBuilder sb7 = new StringBuilder();
-                                        str39 = str11;
+                                        str38 = str11;
                                         try {
-                                            sb7.append(str39);
+                                            sb7.append(str38);
                                             sb7.append(SharedConfig.getLastLocalId());
-                                            str38 = str4;
+                                            str37 = str4;
                                             try {
-                                                sb7.append(str38);
+                                                sb7.append(str37);
                                                 File file10 = new File(FileLoader.getDirectory(4), sb7.toString());
                                                 fileOutputStream = new FileOutputStream(file10);
                                                 try {
@@ -13940,17 +13930,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             }
                                         } catch (Throwable th3) {
                                             th = th3;
-                                            str38 = str4;
+                                            str37 = str4;
                                         }
                                     } catch (Throwable th4) {
                                         th = th4;
-                                        str38 = str4;
-                                        str39 = str11;
+                                        str37 = str4;
+                                        str38 = str11;
                                     }
                                 } catch (Throwable th5) {
                                     th = th5;
-                                    str38 = str4;
-                                    str39 = str11;
+                                    str37 = str4;
+                                    str38 = str11;
                                     inputStream = null;
                                 }
                                 try {
@@ -13959,29 +13949,29 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 }
                             }
                             if (z || ImageLoader.shouldSendImageAsDocument(sendingMediaInfo5.path, sendingMediaInfo5.uri)) {
-                                str40 = str3;
-                                str41 = str37 != null ? FileLoader.getFileExtension(new File(str37)) : "";
+                                str39 = str3;
+                                str40 = str36 != null ? FileLoader.getFileExtension(new File(str36)) : "";
                             } else {
-                                if (sendingMediaInfo5.forceImage || str37 == null) {
-                                    str40 = str3;
+                                if (sendingMediaInfo5.forceImage || str36 == null) {
+                                    str39 = str3;
                                 } else {
-                                    str40 = str3;
-                                    if ((str37.endsWith(str40) || str37.endsWith(str38)) && sendingMediaInfo5.ttl <= 0) {
-                                        str41 = str37.endsWith(str40) ? "gif" : "webp";
+                                    str39 = str3;
+                                    if ((str36.endsWith(str39) || str36.endsWith(str37)) && sendingMediaInfo5.ttl <= 0) {
+                                        str40 = str36.endsWith(str39) ? "gif" : "webp";
                                     }
                                 }
-                                if (!sendingMediaInfo5.forceImage && str37 == null && (uri = sendingMediaInfo5.uri) != null) {
+                                if (!sendingMediaInfo5.forceImage && str36 == null && (uri = sendingMediaInfo5.uri) != null) {
                                     if (MediaController.isGif(uri)) {
-                                        str36 = sendingMediaInfo5.uri.toString();
-                                        str42 = MediaController.copyFileToCache(sendingMediaInfo5.uri, "gif");
-                                        r37 = "gif";
+                                        str35 = sendingMediaInfo5.uri.toString();
+                                        str41 = MediaController.copyFileToCache(sendingMediaInfo5.uri, "gif");
+                                        r38 = "gif";
                                     } else if (MediaController.isWebp(sendingMediaInfo5.uri)) {
-                                        str36 = sendingMediaInfo5.uri.toString();
-                                        str42 = MediaController.copyFileToCache(sendingMediaInfo5.uri, "webp");
-                                        r37 = "webp";
+                                        str35 = sendingMediaInfo5.uri.toString();
+                                        str41 = MediaController.copyFileToCache(sendingMediaInfo5.uri, "webp");
+                                        r38 = "webp";
                                     }
                                     z10 = true;
-                                    arrayList8 = r37;
+                                    arrayList8 = r38;
                                     if (z10) {
                                         if (arrayList4 == null) {
                                             arrayList19 = new ArrayList();
@@ -13997,51 +13987,51 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             arrayList13 = arrayList24;
                                             arrayList14 = arrayList25;
                                         }
-                                        arrayList19.add(str42);
-                                        arrayList18.add(str36);
+                                        arrayList19.add(str41);
+                                        arrayList18.add(str35);
                                         arrayList13.add(sendingMediaInfo5.uri);
                                         arrayList14.add(sendingMediaInfo5.caption);
                                         arrayList12.add(sendingMediaInfo5.entities);
                                         arrayList20 = arrayList14;
                                         arrayList17 = arrayList13;
                                         arrayList22 = arrayList12;
-                                        str4 = str38;
-                                        str19 = str39;
-                                        str3 = str40;
-                                        i33 = i8;
+                                        str4 = str37;
+                                        str19 = str38;
+                                        str3 = str39;
+                                        i33 = i9;
                                         str17 = str2;
-                                        str16 = str13;
                                         arrayList15 = arrayList8;
+                                        str16 = str13;
                                         str18 = str10;
                                         str20 = str12;
                                         hashMap3 = hashMap2;
-                                        i12 = i11;
+                                        i13 = i12;
                                         j7 = j6;
-                                        i13 = i10;
+                                        i14 = i11;
                                         arrayList23 = arrayList15;
                                     } else {
-                                        if (str42 != null) {
-                                            File file11 = new File(str42);
+                                        if (str41 != null) {
+                                            File file11 = new File(str41);
                                             StringBuilder sb8 = new StringBuilder();
-                                            sb8.append(str36);
+                                            sb8.append(str35);
                                             obj4 = "1";
                                             sb8.append(file11.length());
-                                            str43 = str2;
-                                            sb8.append(str43);
+                                            str42 = str2;
+                                            sb8.append(str42);
                                             sb8.append(file11.lastModified());
-                                            str44 = sb8.toString();
+                                            str43 = sb8.toString();
                                             hashMap4 = hashMap2;
                                         } else {
                                             obj4 = "1";
-                                            str43 = str2;
+                                            str42 = str2;
                                             hashMap4 = hashMap2;
-                                            str44 = null;
+                                            str43 = null;
                                         }
                                         if (hashMap4 != null) {
                                             MediaSendPrepareWorker mediaSendPrepareWorker3 = (MediaSendPrepareWorker) hashMap4.get(sendingMediaInfo5);
                                             TLRPC.TL_photo tL_photo9 = mediaSendPrepareWorker3.photo;
                                             HashMap hashMap9 = hashMap4;
-                                            String str103 = mediaSendPrepareWorker3.parentObject;
+                                            String str96 = mediaSendPrepareWorker3.parentObject;
                                             if (tL_photo9 == null) {
                                                 try {
                                                     mediaSendPrepareWorker3.sync.await();
@@ -14049,21 +14039,21 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     FileLog.e(e4);
                                                 }
                                                 tL_photo9 = mediaSendPrepareWorker3.photo;
-                                                str45 = str44;
+                                                str44 = str43;
                                                 obj5 = obj4;
-                                                str46 = str43;
-                                                str4 = str38;
-                                                str47 = str39;
+                                                str45 = str42;
+                                                str4 = str37;
+                                                str19 = str38;
                                                 hashMap3 = hashMap9;
-                                                str49 = mediaSendPrepareWorker3.parentObject;
+                                                str47 = mediaSendPrepareWorker3.parentObject;
                                             } else {
-                                                str45 = str44;
+                                                str44 = str43;
                                                 obj5 = obj4;
-                                                str46 = str43;
-                                                str4 = str38;
-                                                str47 = str39;
+                                                str45 = str42;
+                                                str4 = str37;
+                                                str19 = str38;
                                                 hashMap3 = hashMap9;
-                                                str49 = str103;
+                                                str47 = str96;
                                             }
                                             obj6 = "groupId";
                                             obj7 = "originalPath";
@@ -14071,75 +14061,75 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         } else {
                                             HashMap hashMap10 = hashMap4;
                                             if (z8 || sendingMediaInfo5.ttl != 0) {
-                                                str45 = str44;
+                                                str44 = str43;
                                                 obj5 = obj4;
-                                                str46 = str43;
-                                                str4 = str38;
-                                                str47 = str39;
+                                                str45 = str42;
+                                                str4 = str37;
+                                                str19 = str38;
                                                 hashMap3 = hashMap10;
                                                 obj6 = "groupId";
                                                 obj7 = "originalPath";
                                                 tL_photo = null;
-                                                str48 = null;
+                                                str46 = null;
                                             } else {
                                                 int i40 = sendingMediaInfo5.highQuality ? !z8 ? 6 : 7 : !z8 ? 0 : 3;
-                                                Object[] sentFile4 = accountInstance.getMessagesStorage().getSentFile(str44, i40);
-                                                String str104 = str44;
+                                                Object[] sentFile4 = accountInstance.getMessagesStorage().getSentFile(str43, i40);
+                                                String str97 = str43;
                                                 if (sentFile4 != null) {
                                                     Object obj13 = sentFile4[0];
                                                     if (obj13 instanceof TLRPC.TL_photo) {
                                                         tL_photo2 = (TLRPC.TL_photo) obj13;
-                                                        str50 = (String) sentFile4[1];
+                                                        str48 = (String) sentFile4[1];
                                                         if (tL_photo2 == null) {
-                                                            str48 = str50;
+                                                            str46 = str48;
                                                         } else if (sendingMediaInfo5.uri != null) {
-                                                            str48 = str50;
+                                                            str46 = str48;
                                                             Object[] sentFile5 = accountInstance.getMessagesStorage().getSentFile(AndroidUtilities.getPath(sendingMediaInfo5.uri), i40);
                                                             if (sentFile5 != null) {
                                                                 Object obj14 = sentFile5[0];
                                                                 if (obj14 instanceof TLRPC.TL_photo) {
-                                                                    str48 = (String) sentFile5[1];
+                                                                    str46 = (String) sentFile5[1];
                                                                     tL_photo3 = (TLRPC.TL_photo) obj14;
                                                                     hashMap3 = hashMap10;
-                                                                    str45 = str104;
+                                                                    str44 = str97;
                                                                     obj5 = obj4;
-                                                                    str4 = str38;
+                                                                    str4 = str37;
                                                                     obj6 = "groupId";
-                                                                    str46 = str43;
-                                                                    str47 = str39;
+                                                                    str45 = str42;
+                                                                    str19 = str38;
                                                                     obj7 = "originalPath";
                                                                     ensureMediaThumbExists(accountInstance, z8, tL_photo3, sendingMediaInfo5.path, sendingMediaInfo5.uri, 0L);
                                                                     tL_photo = tL_photo3;
                                                                 }
                                                             }
                                                         } else {
-                                                            str48 = str50;
+                                                            str46 = str48;
                                                         }
                                                         tL_photo3 = tL_photo2;
                                                         hashMap3 = hashMap10;
-                                                        str45 = str104;
+                                                        str44 = str97;
                                                         obj5 = obj4;
-                                                        str4 = str38;
+                                                        str4 = str37;
                                                         obj6 = "groupId";
-                                                        str46 = str43;
-                                                        str47 = str39;
+                                                        str45 = str42;
+                                                        str19 = str38;
                                                         obj7 = "originalPath";
                                                         ensureMediaThumbExists(accountInstance, z8, tL_photo3, sendingMediaInfo5.path, sendingMediaInfo5.uri, 0L);
                                                         tL_photo = tL_photo3;
                                                     }
                                                 }
-                                                str50 = null;
+                                                str48 = null;
                                                 tL_photo2 = null;
                                                 if (tL_photo2 == null) {
                                                 }
                                                 tL_photo3 = tL_photo2;
                                                 hashMap3 = hashMap10;
-                                                str45 = str104;
+                                                str44 = str97;
                                                 obj5 = obj4;
-                                                str4 = str38;
+                                                str4 = str37;
                                                 obj6 = "groupId";
-                                                str46 = str43;
-                                                str47 = str39;
+                                                str45 = str42;
+                                                str19 = str38;
                                                 obj7 = "originalPath";
                                                 ensureMediaThumbExists(accountInstance, z8, tL_photo3, sendingMediaInfo5.path, sendingMediaInfo5.uri, 0L);
                                                 tL_photo = tL_photo3;
@@ -14151,7 +14141,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 }
                                                 tL_photo = generatePhotoSizes;
                                             }
-                                            str49 = str48;
+                                            str47 = str46;
                                         }
                                         if (tL_photo != null) {
                                             final HashMap hashMap11 = new HashMap();
@@ -14166,18 +14156,18 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 for (int i41 = 0; i41 < sendingMediaInfo5.masks.size(); i41++) {
                                                     sendingMediaInfo5.masks.get(i41).serializeToStream(serializedData2);
                                                 }
-                                                str54 = str10;
-                                                hashMap11.put(str54, Utilities.bytesToHex(serializedData2.toByteArray()));
+                                                str50 = str10;
+                                                hashMap11.put(str50, Utilities.bytesToHex(serializedData2.toByteArray()));
                                                 serializedData2.cleanup();
                                             } else {
-                                                str54 = str10;
+                                                str50 = str10;
                                             }
-                                            String str105 = str45;
-                                            if (str105 != null) {
-                                                hashMap11.put(obj7, str105);
+                                            String str98 = str44;
+                                            if (str98 != null) {
+                                                hashMap11.put(obj7, str98);
                                             }
-                                            if (str49 != null) {
-                                                hashMap11.put(str12, str49);
+                                            if (str47 != null) {
+                                                hashMap11.put(str12, str47);
                                             }
                                             if (z2) {
                                                 try {
@@ -14191,17 +14181,15 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     if (z2) {
                                                     }
                                                     final boolean z22 = sendingMediaInfo5.highQuality;
-                                                    i21 = i23;
-                                                    str52 = str54;
-                                                    final String str106 = str49;
-                                                    str53 = str12;
-                                                    str51 = str47;
+                                                    String str99 = str50;
+                                                    final String str100 = str47;
+                                                    str49 = str12;
                                                     j11 = j12;
                                                     i22 = i24;
-                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda29
+                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda3
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
-                                                            SendMessagesHelper.lambda$prepareSendingMedia$108(bitmapArr, strArr, messageObject, accountInstance, tL_photo, hashMap11, sendingMediaInfo5, str106, j, messageObject2, messageObject3, z3, i, z5, storyItem, replyQuote, str, i2, j2, z4, j3, j4, messageSuggestionParams, z22);
+                                                            SendMessagesHelper.lambda$prepareSendingMedia$108(bitmapArr, strArr, messageObject, accountInstance, tL_photo, hashMap11, sendingMediaInfo5, str100, j, messageObject2, messageObject3, z3, i, i2, z5, storyItem, replyQuote, str, i3, j2, z4, j3, j4, messageSuggestionParams, z22);
                                                         }
                                                     });
                                                     i33 = i25;
@@ -14209,69 +14197,66 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     arrayList18 = arrayList29;
                                                     arrayList17 = arrayList24;
                                                     arrayList20 = arrayList25;
-                                                    i12 = i21;
+                                                    i13 = i23;
                                                     str16 = str13;
-                                                    str17 = str46;
-                                                    str18 = str52;
-                                                    str19 = str51;
-                                                    str20 = str53;
+                                                    str17 = str45;
+                                                    str18 = str99;
+                                                    str20 = str49;
                                                     j7 = j11;
-                                                    i13 = i22;
+                                                    i14 = i22;
                                                     arrayList23 = arrayList8;
                                                     obj = null;
-                                                    i34 = i12 + 1;
+                                                    i34 = i13 + 1;
                                                     arrayList16 = arrayList;
                                                     hashMap = hashMap3;
-                                                    z6 = z8;
                                                     str7 = str14;
                                                     str2 = str17;
                                                     str5 = str16;
+                                                    z6 = z8;
                                                     str8 = str18;
                                                     str9 = str20;
                                                     j14 = j7;
                                                     str6 = str19;
-                                                    i3 = i13;
-                                                    i4 = 1;
+                                                    i4 = i14;
+                                                    i5 = 1;
                                                     arrayList23 = arrayList23;
                                                 }
                                                 if (z2) {
-                                                    i25 = i8 + 1;
+                                                    i25 = i9 + 1;
                                                     StringBuilder sb9 = new StringBuilder();
                                                     sb9.append("");
                                                     arrayList11 = arrayList4;
-                                                    str3 = str40;
+                                                    str3 = str39;
                                                     j12 = j6;
                                                     sb9.append(j12);
                                                     hashMap11.put(obj6, sb9.toString());
                                                     if (i25 != 10) {
-                                                        i24 = i10;
-                                                        i23 = i11;
+                                                        i24 = i11;
+                                                        i23 = i12;
                                                     } else {
-                                                        i23 = i11;
-                                                        i24 = i10;
+                                                        i23 = i12;
+                                                        i24 = i11;
                                                     }
                                                     hashMap11.put("final", obj5);
                                                     j15 = 0;
                                                 } else {
                                                     arrayList11 = arrayList4;
-                                                    str3 = str40;
-                                                    i23 = i11;
+                                                    str3 = str39;
+                                                    i23 = i12;
                                                     j12 = j6;
-                                                    i24 = i10;
-                                                    i25 = i8;
+                                                    i24 = i11;
+                                                    i25 = i9;
                                                 }
                                                 final boolean z222 = sendingMediaInfo5.highQuality;
-                                                i21 = i23;
-                                                str52 = str54;
-                                                final String str1062 = str49;
-                                                str53 = str12;
-                                                str51 = str47;
+                                                String str992 = str50;
+                                                final String str1002 = str47;
+                                                str49 = str12;
                                                 j11 = j12;
                                                 i22 = i24;
-                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda29
+                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda3
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
-                                                        SendMessagesHelper.lambda$prepareSendingMedia$108(bitmapArr, strArr, messageObject, accountInstance, tL_photo, hashMap11, sendingMediaInfo5, str1062, j, messageObject2, messageObject3, z3, i, z5, storyItem, replyQuote, str, i2, j2, z4, j3, j4, messageSuggestionParams, z222);
+                                                        SendMessagesHelper.lambda$prepareSendingMedia$108(bitmapArr, strArr, messageObject, accountInstance, tL_photo, hashMap11, sendingMediaInfo5, str1002, j, messageObject2, messageObject3, z3, i, i2, z5, storyItem, replyQuote, str, i3, j2, z4, j3, j4, messageSuggestionParams, z222);
                                                     }
                                                 });
                                                 i33 = i25;
@@ -14279,6 +14264,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 arrayList18 = arrayList29;
                                                 arrayList17 = arrayList24;
                                                 arrayList20 = arrayList25;
+                                                i13 = i23;
+                                                str16 = str13;
+                                                str17 = str45;
+                                                str18 = str992;
                                             }
                                             TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tL_photo.sizes, AndroidUtilities.getPhotoSize(sendingMediaInfo5.highQuality));
                                             if (closestPhotoSizeWithSize != null) {
@@ -14291,17 +14280,15 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     if (z2) {
                                                     }
                                                     final boolean z2222 = sendingMediaInfo5.highQuality;
-                                                    i21 = i23;
-                                                    str52 = str54;
-                                                    final String str10622 = str49;
-                                                    str53 = str12;
-                                                    str51 = str47;
+                                                    String str9922 = str50;
+                                                    final String str10022 = str47;
+                                                    str49 = str12;
                                                     j11 = j12;
                                                     i22 = i24;
-                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda29
+                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda3
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
-                                                            SendMessagesHelper.lambda$prepareSendingMedia$108(bitmapArr, strArr, messageObject, accountInstance, tL_photo, hashMap11, sendingMediaInfo5, str10622, j, messageObject2, messageObject3, z3, i, z5, storyItem, replyQuote, str, i2, j2, z4, j3, j4, messageSuggestionParams, z2222);
+                                                            SendMessagesHelper.lambda$prepareSendingMedia$108(bitmapArr, strArr, messageObject, accountInstance, tL_photo, hashMap11, sendingMediaInfo5, str10022, j, messageObject2, messageObject3, z3, i, i2, z5, storyItem, replyQuote, str, i3, j2, z4, j3, j4, messageSuggestionParams, z2222);
                                                         }
                                                     });
                                                     i33 = i25;
@@ -14309,45 +14296,42 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     arrayList18 = arrayList29;
                                                     arrayList17 = arrayList24;
                                                     arrayList20 = arrayList25;
-                                                    i12 = i21;
+                                                    i13 = i23;
                                                     str16 = str13;
-                                                    str17 = str46;
-                                                    str18 = str52;
-                                                    str19 = str51;
-                                                    str20 = str53;
+                                                    str17 = str45;
+                                                    str18 = str9922;
+                                                    str20 = str49;
                                                     j7 = j11;
-                                                    i13 = i22;
+                                                    i14 = i22;
                                                     arrayList23 = arrayList8;
                                                     obj = null;
-                                                    i34 = i12 + 1;
+                                                    i34 = i13 + 1;
                                                     arrayList16 = arrayList;
                                                     hashMap = hashMap3;
-                                                    z6 = z8;
                                                     str7 = str14;
                                                     str2 = str17;
                                                     str5 = str16;
+                                                    z6 = z8;
                                                     str8 = str18;
                                                     str9 = str20;
                                                     j14 = j7;
                                                     str6 = str19;
-                                                    i3 = i13;
-                                                    i4 = 1;
+                                                    i4 = i14;
+                                                    i5 = 1;
                                                     arrayList23 = arrayList23;
                                                 }
                                                 if (z2) {
                                                 }
                                                 final boolean z22222 = sendingMediaInfo5.highQuality;
-                                                i21 = i23;
-                                                str52 = str54;
-                                                final String str106222 = str49;
-                                                str53 = str12;
-                                                str51 = str47;
+                                                String str99222 = str50;
+                                                final String str100222 = str47;
+                                                str49 = str12;
                                                 j11 = j12;
                                                 i22 = i24;
-                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda29
+                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda3
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
-                                                        SendMessagesHelper.lambda$prepareSendingMedia$108(bitmapArr, strArr, messageObject, accountInstance, tL_photo, hashMap11, sendingMediaInfo5, str106222, j, messageObject2, messageObject3, z3, i, z5, storyItem, replyQuote, str, i2, j2, z4, j3, j4, messageSuggestionParams, z22222);
+                                                        SendMessagesHelper.lambda$prepareSendingMedia$108(bitmapArr, strArr, messageObject, accountInstance, tL_photo, hashMap11, sendingMediaInfo5, str100222, j, messageObject2, messageObject3, z3, i, i2, z5, storyItem, replyQuote, str, i3, j2, z4, j3, j4, messageSuggestionParams, z22222);
                                                     }
                                                 });
                                                 i33 = i25;
@@ -14355,22 +14339,24 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 arrayList18 = arrayList29;
                                                 arrayList17 = arrayList24;
                                                 arrayList20 = arrayList25;
+                                                i13 = i23;
+                                                str16 = str13;
+                                                str17 = str45;
+                                                str18 = str99222;
                                             }
                                             accountInstance2 = accountInstance;
                                             if (z2) {
                                             }
                                             final boolean z222222 = sendingMediaInfo5.highQuality;
-                                            i21 = i23;
-                                            str52 = str54;
-                                            final String str1062222 = str49;
-                                            str53 = str12;
-                                            str51 = str47;
+                                            String str992222 = str50;
+                                            final String str1002222 = str47;
+                                            str49 = str12;
                                             j11 = j12;
                                             i22 = i24;
-                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda29
+                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda3
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
-                                                    SendMessagesHelper.lambda$prepareSendingMedia$108(bitmapArr, strArr, messageObject, accountInstance, tL_photo, hashMap11, sendingMediaInfo5, str1062222, j, messageObject2, messageObject3, z3, i, z5, storyItem, replyQuote, str, i2, j2, z4, j3, j4, messageSuggestionParams, z222222);
+                                                    SendMessagesHelper.lambda$prepareSendingMedia$108(bitmapArr, strArr, messageObject, accountInstance, tL_photo, hashMap11, sendingMediaInfo5, str1002222, j, messageObject2, messageObject3, z3, i, i2, z5, storyItem, replyQuote, str, i3, j2, z4, j3, j4, messageSuggestionParams, z222222);
                                                 }
                                             });
                                             i33 = i25;
@@ -14378,15 +14364,17 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             arrayList18 = arrayList29;
                                             arrayList17 = arrayList24;
                                             arrayList20 = arrayList25;
+                                            i13 = i23;
+                                            str16 = str13;
+                                            str17 = str45;
+                                            str18 = str992222;
                                         } else {
-                                            str3 = str40;
-                                            str51 = str47;
-                                            str52 = str10;
-                                            str53 = str12;
-                                            i21 = i11;
+                                            str3 = str39;
+                                            String str101 = str19;
+                                            str49 = str12;
                                             j11 = j6;
-                                            i22 = i10;
-                                            String str107 = str45;
+                                            i22 = i11;
+                                            String str102 = str44;
                                             if (arrayList4 == null) {
                                                 arrayList19 = new ArrayList();
                                                 arrayList18 = new ArrayList();
@@ -14401,75 +14389,75 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 arrayList17 = arrayList24;
                                                 arrayList10 = arrayList25;
                                             }
-                                            arrayList19.add(str42);
-                                            arrayList18.add(str107);
+                                            arrayList19.add(str41);
+                                            arrayList18.add(str102);
                                             arrayList17.add(sendingMediaInfo5.uri);
                                             arrayList10.add(sendingMediaInfo5.caption);
                                             arrayList9.add(sendingMediaInfo5.entities);
                                             arrayList20 = arrayList10;
                                             arrayList22 = arrayList9;
-                                            i33 = i8;
+                                            i33 = i9;
+                                            i13 = i12;
+                                            str16 = str13;
+                                            str17 = str45;
+                                            str18 = str10;
+                                            str19 = str101;
                                         }
-                                        i12 = i21;
-                                        str16 = str13;
-                                        str17 = str46;
-                                        str18 = str52;
-                                        str19 = str51;
-                                        str20 = str53;
+                                        str20 = str49;
                                         j7 = j11;
-                                        i13 = i22;
+                                        i14 = i22;
                                         arrayList23 = arrayList8;
                                     }
                                 }
-                                str42 = str37;
+                                str41 = str36;
                                 z10 = false;
                                 arrayList8 = arrayList23;
                                 if (z10) {
                                 }
                             }
-                            str42 = str37;
-                            r37 = str41;
+                            str41 = str36;
+                            r38 = str40;
                             z10 = true;
-                            arrayList8 = r37;
+                            arrayList8 = r38;
                             if (z10) {
                             }
                         }
                     }
                     obj = null;
-                    i34 = i12 + 1;
+                    i34 = i13 + 1;
                     arrayList16 = arrayList;
                     hashMap = hashMap3;
-                    z6 = z8;
                     str7 = str14;
                     str2 = str17;
                     str5 = str16;
+                    z6 = z8;
                     str8 = str18;
                     str9 = str20;
                     j14 = j7;
                     str6 = str19;
-                    i3 = i13;
-                    i4 = 1;
+                    i4 = i14;
+                    i5 = 1;
                     arrayList23 = arrayList23;
                 }
             }
-            i8 = i33;
+            i9 = i33;
             j5 = j14;
             searchImage = sendingMediaInfo5.searchImage;
             ArrayList arrayList242 = arrayList17;
             ArrayList arrayList252 = arrayList20;
-            i9 = i34;
+            i10 = i34;
             if (searchImage == null) {
             }
             ArrayList arrayList292 = arrayList18;
             arrayList4 = arrayList19;
-            i10 = i3;
+            i11 = i4;
             hashMap2 = hashMap;
             str10 = str8;
             str11 = str6;
             str12 = str9;
             str13 = str5;
             j6 = j5;
-            i11 = i9;
+            i12 = i10;
             z8 = z6;
             str14 = str7;
             if (!sendingMediaInfo5.isVideo) {
@@ -14480,14 +14468,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
             if (z) {
             }
-            i12 = i11;
+            i13 = i12;
             str16 = str13;
             str17 = str15;
             str18 = str10;
             str19 = str11;
             str20 = str12;
             j7 = j6;
-            i13 = i10;
+            i14 = i11;
             obj = null;
             if (arrayList4 != null) {
             }
@@ -14497,20 +14485,20 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             arrayList20.add(sendingMediaInfo.caption);
             arrayList5.add(sendingMediaInfo.entities);
             arrayList22 = arrayList5;
-            i33 = i8;
-            i34 = i12 + 1;
+            i33 = i9;
+            i34 = i13 + 1;
             arrayList16 = arrayList;
             hashMap = hashMap3;
-            z6 = z8;
             str7 = str14;
             str2 = str17;
             str5 = str16;
+            z6 = z8;
             str8 = str18;
             str9 = str20;
             j14 = j7;
             str6 = str19;
-            i3 = i13;
-            i4 = 1;
+            i4 = i14;
+            i5 = 1;
             arrayList23 = arrayList23;
         }
         ArrayList arrayList34 = arrayList17;
@@ -14518,10 +14506,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         ArrayList arrayList36 = arrayList19;
         ArrayList arrayList37 = arrayList20;
         boolean z23 = z6;
-        int i42 = i3;
-        long j19 = j15;
-        if (j19 != 0) {
-            finishGroup(accountInstance, j19, i);
+        int i42 = i4;
+        long j20 = j15;
+        if (j20 != 0) {
+            finishGroup(accountInstance, j20, i);
         }
         if (inputContentInfoCompat != null) {
             inputContentInfoCompat.releasePermission();
@@ -14533,24 +14521,24 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             int i44 = 0;
             while (i44 < size3) {
                 if (!z || z23) {
-                    i5 = i42;
+                    i6 = i42;
                 } else {
-                    i5 = i42;
-                    if (i5 > i43) {
-                        i6 = 10;
+                    i6 = i42;
+                    if (i6 > i43) {
+                        i7 = 10;
                         if (i33 % 10 == 0) {
                             jArr[0] = Utilities.random.nextLong();
                             i33 = 0;
-                            i7 = i33 + 1;
+                            i8 = i33 + 1;
                             ArrayList arrayList38 = arrayList36;
-                            String str108 = (String) arrayList38.get(i44);
+                            String str103 = (String) arrayList38.get(i44);
                             ArrayList arrayList39 = arrayList35;
-                            String str109 = (String) arrayList39.get(i44);
+                            String str104 = (String) arrayList39.get(i44);
                             ArrayList arrayList40 = arrayList34;
                             Uri uri6 = (Uri) arrayList40.get(i44);
                             ArrayList arrayList41 = arrayList22;
                             ArrayList arrayList42 = (ArrayList) arrayList41.get(i44);
-                            if (i7 != i6 || i44 == size3 - 1) {
+                            if (i8 != i7 || i44 == size3 - 1) {
                                 arrayList3 = arrayList37;
                                 z7 = true;
                             } else {
@@ -14558,67 +14546,67 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 z7 = false;
                             }
                             arrayList22 = arrayList41;
-                            handleError(prepareSendingDocumentInternal(accountInstance, str108, str109, uri6, arrayList23, j, messageObject2, messageObject3, storyItem, replyQuote, arrayList42, messageObject, jArr, z7, (CharSequence) arrayList3.get(i44), z3, i, null, z, str, i2, j2, z4, j3, j4, messageSuggestionParams), accountInstance);
+                            handleError(prepareSendingDocumentInternal(accountInstance, str103, str104, uri6, arrayList23, j, messageObject2, messageObject3, storyItem, replyQuote, arrayList42, messageObject, jArr, z7, (CharSequence) arrayList3.get(i44), z3, i, 0, null, z, str, i3, j2, z4, j3, j4, messageSuggestionParams), accountInstance);
                             i44++;
                             arrayList36 = arrayList38;
                             arrayList37 = arrayList3;
                             arrayList34 = arrayList40;
                             arrayList35 = arrayList39;
-                            i33 = i7;
-                            i42 = i5;
+                            i33 = i8;
+                            i42 = i6;
                             size3 = size3;
                             i43 = 1;
                         } else {
-                            i7 = i33 + 1;
+                            i8 = i33 + 1;
                             ArrayList arrayList382 = arrayList36;
-                            String str1082 = (String) arrayList382.get(i44);
+                            String str1032 = (String) arrayList382.get(i44);
                             ArrayList arrayList392 = arrayList35;
-                            String str1092 = (String) arrayList392.get(i44);
+                            String str1042 = (String) arrayList392.get(i44);
                             ArrayList arrayList402 = arrayList34;
                             Uri uri62 = (Uri) arrayList402.get(i44);
                             ArrayList arrayList412 = arrayList22;
                             ArrayList arrayList422 = (ArrayList) arrayList412.get(i44);
-                            if (i7 != i6) {
+                            if (i8 != i7) {
                             }
                             arrayList3 = arrayList37;
                             z7 = true;
                             arrayList22 = arrayList412;
-                            handleError(prepareSendingDocumentInternal(accountInstance, str1082, str1092, uri62, arrayList23, j, messageObject2, messageObject3, storyItem, replyQuote, arrayList422, messageObject, jArr, z7, (CharSequence) arrayList3.get(i44), z3, i, null, z, str, i2, j2, z4, j3, j4, messageSuggestionParams), accountInstance);
+                            handleError(prepareSendingDocumentInternal(accountInstance, str1032, str1042, uri62, arrayList23, j, messageObject2, messageObject3, storyItem, replyQuote, arrayList422, messageObject, jArr, z7, (CharSequence) arrayList3.get(i44), z3, i, 0, null, z, str, i3, j2, z4, j3, j4, messageSuggestionParams), accountInstance);
                             i44++;
                             arrayList36 = arrayList382;
                             arrayList37 = arrayList3;
                             arrayList34 = arrayList402;
                             arrayList35 = arrayList392;
-                            i33 = i7;
-                            i42 = i5;
+                            i33 = i8;
+                            i42 = i6;
                             size3 = size3;
                             i43 = 1;
                         }
                     }
                 }
-                i6 = 10;
-                i7 = i33 + 1;
+                i7 = 10;
+                i8 = i33 + 1;
                 ArrayList arrayList3822 = arrayList36;
-                String str10822 = (String) arrayList3822.get(i44);
+                String str10322 = (String) arrayList3822.get(i44);
                 ArrayList arrayList3922 = arrayList35;
-                String str10922 = (String) arrayList3922.get(i44);
+                String str10422 = (String) arrayList3922.get(i44);
                 ArrayList arrayList4022 = arrayList34;
                 Uri uri622 = (Uri) arrayList4022.get(i44);
                 ArrayList arrayList4122 = arrayList22;
                 ArrayList arrayList4222 = (ArrayList) arrayList4122.get(i44);
-                if (i7 != i6) {
+                if (i8 != i7) {
                 }
                 arrayList3 = arrayList37;
                 z7 = true;
                 arrayList22 = arrayList4122;
-                handleError(prepareSendingDocumentInternal(accountInstance, str10822, str10922, uri622, arrayList23, j, messageObject2, messageObject3, storyItem, replyQuote, arrayList4222, messageObject, jArr, z7, (CharSequence) arrayList3.get(i44), z3, i, null, z, str, i2, j2, z4, j3, j4, messageSuggestionParams), accountInstance);
+                handleError(prepareSendingDocumentInternal(accountInstance, str10322, str10422, uri622, arrayList23, j, messageObject2, messageObject3, storyItem, replyQuote, arrayList4222, messageObject, jArr, z7, (CharSequence) arrayList3.get(i44), z3, i, 0, null, z, str, i3, j2, z4, j3, j4, messageSuggestionParams), accountInstance);
                 i44++;
                 arrayList36 = arrayList3822;
                 arrayList37 = arrayList3;
                 arrayList34 = arrayList4022;
                 arrayList35 = arrayList3922;
-                i33 = i7;
-                i42 = i5;
+                i33 = i8;
+                i42 = i6;
                 size3 = size3;
                 i43 = 1;
             }
@@ -14638,16 +14626,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingMedia$105(MessageObject messageObject, AccountInstance accountInstance, TLRPC.TL_document tL_document, String str, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str2, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, String str3, int i2, boolean z2, long j2, boolean z3, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
+    public static /* synthetic */ void lambda$prepareSendingMedia$105(MessageObject messageObject, AccountInstance accountInstance, TLRPC.TL_document tL_document, String str, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str2, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, int i2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, String str3, int i3, boolean z2, long j2, boolean z3, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
         if (messageObject != null) {
             accountInstance.getSendMessagesHelper().editMessage(messageObject, null, null, tL_document, str, null, hashMap, false, sendingMediaInfo.hasMediaSpoilers, str2);
             return;
         }
-        SendMessageParams of = SendMessageParams.of(tL_document, null, str, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, 0, str2, null, false, sendingMediaInfo.hasMediaSpoilers);
+        SendMessageParams of = SendMessageParams.of(tL_document, null, str, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, i2, 0, str2, null, false, sendingMediaInfo.hasMediaSpoilers);
         of.replyToStoryItem = storyItem;
         of.replyQuote = replyQuote;
         of.quick_reply_shortcut = str3;
-        of.quick_reply_shortcut_id = i2;
+        of.quick_reply_shortcut_id = i3;
         if (z2) {
             of.effect_id = j2;
         }
@@ -14659,15 +14647,15 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingMedia$106(MessageObject messageObject, AccountInstance accountInstance, TLRPC.TL_photo tL_photo, boolean z, SendingMediaInfo sendingMediaInfo, HashMap hashMap, String str, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z2, int i, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, int i2, String str2, long j2, boolean z3, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
+    public static /* synthetic */ void lambda$prepareSendingMedia$106(MessageObject messageObject, AccountInstance accountInstance, TLRPC.TL_photo tL_photo, boolean z, SendingMediaInfo sendingMediaInfo, HashMap hashMap, String str, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z2, int i, int i2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, int i3, String str2, long j2, boolean z3, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
         if (messageObject != null) {
             accountInstance.getSendMessagesHelper().editMessage(messageObject, tL_photo, null, null, z ? sendingMediaInfo.searchImage.imageUrl : null, null, hashMap, false, sendingMediaInfo.hasMediaSpoilers, str);
             return;
         }
-        SendMessageParams of = SendMessageParams.of(tL_photo, z ? sendingMediaInfo.searchImage.imageUrl : null, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z2, i, sendingMediaInfo.ttl, str, false, sendingMediaInfo.hasMediaSpoilers);
+        SendMessageParams of = SendMessageParams.of(tL_photo, z ? sendingMediaInfo.searchImage.imageUrl : null, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z2, i, i2, sendingMediaInfo.ttl, str, false, sendingMediaInfo.hasMediaSpoilers);
         of.replyToStoryItem = storyItem;
         of.replyQuote = replyQuote;
-        of.quick_reply_shortcut_id = i2;
+        of.quick_reply_shortcut_id = i3;
         of.quick_reply_shortcut = str2;
         of.effect_id = j2;
         of.invert_media = z3;
@@ -14678,7 +14666,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingMedia$107(Bitmap bitmap, String str, MessageObject messageObject, AccountInstance accountInstance, VideoEditedInfo videoEditedInfo, TLRPC.TL_document tL_document, String str2, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str3, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, String str4, int i2, long j2, boolean z2, TLRPC.PhotoSize photoSize, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
+    public static /* synthetic */ void lambda$prepareSendingMedia$107(Bitmap bitmap, String str, MessageObject messageObject, AccountInstance accountInstance, VideoEditedInfo videoEditedInfo, TLRPC.TL_document tL_document, String str2, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str3, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, int i2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, String str4, int i3, long j2, boolean z2, TLRPC.PhotoSize photoSize, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
         if (bitmap != null && str != null) {
             ImageLoader.getInstance().putImageToCache(new BitmapDrawable(bitmap), str, false);
         }
@@ -14686,11 +14674,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             accountInstance.getSendMessagesHelper().editMessage(messageObject, null, videoEditedInfo, tL_document, str2, null, hashMap, false, sendingMediaInfo.hasMediaSpoilers, str3);
             return;
         }
-        SendMessageParams of = SendMessageParams.of(tL_document, videoEditedInfo, str2, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, sendingMediaInfo.ttl, str3, null, false, sendingMediaInfo.hasMediaSpoilers);
+        SendMessageParams of = SendMessageParams.of(tL_document, videoEditedInfo, str2, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, i2, sendingMediaInfo.ttl, str3, null, false, sendingMediaInfo.hasMediaSpoilers);
         of.replyToStoryItem = storyItem;
         of.replyQuote = replyQuote;
         of.quick_reply_shortcut = str4;
-        of.quick_reply_shortcut_id = i2;
+        of.quick_reply_shortcut_id = i3;
         of.effect_id = j2;
         of.invert_media = z2;
         of.stars = sendingMediaInfo.stars;
@@ -14702,7 +14690,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingMedia$108(Bitmap[] bitmapArr, String[] strArr, MessageObject messageObject, AccountInstance accountInstance, TLRPC.TL_photo tL_photo, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, boolean z2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, String str2, int i2, long j2, boolean z3, long j3, long j4, MessageSuggestionParams messageSuggestionParams, boolean z4) {
+    public static /* synthetic */ void lambda$prepareSendingMedia$108(Bitmap[] bitmapArr, String[] strArr, MessageObject messageObject, AccountInstance accountInstance, TLRPC.TL_photo tL_photo, HashMap hashMap, SendingMediaInfo sendingMediaInfo, String str, long j, MessageObject messageObject2, MessageObject messageObject3, boolean z, int i, int i2, boolean z2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, String str2, int i3, long j2, boolean z3, long j3, long j4, MessageSuggestionParams messageSuggestionParams, boolean z4) {
         if (bitmapArr[0] != null && strArr[0] != null) {
             ImageLoader.getInstance().putImageToCache(new BitmapDrawable(bitmapArr[0]), strArr[0], false);
         }
@@ -14710,11 +14698,11 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             accountInstance.getSendMessagesHelper().editMessage(messageObject, tL_photo, null, null, null, null, hashMap, false, sendingMediaInfo.hasMediaSpoilers, str);
             return;
         }
-        SendMessageParams of = SendMessageParams.of(tL_photo, null, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, sendingMediaInfo.ttl, str, z2, sendingMediaInfo.hasMediaSpoilers);
+        SendMessageParams of = SendMessageParams.of(tL_photo, null, j, messageObject2, messageObject3, sendingMediaInfo.caption, sendingMediaInfo.entities, null, hashMap, z, i, i2, sendingMediaInfo.ttl, str, z2, sendingMediaInfo.hasMediaSpoilers);
         of.replyToStoryItem = storyItem;
         of.replyQuote = replyQuote;
         of.quick_reply_shortcut = str2;
-        of.quick_reply_shortcut_id = i2;
+        of.quick_reply_shortcut_id = i3;
         of.effect_id = j2;
         of.invert_media = z3;
         of.stars = sendingMediaInfo.stars;
@@ -14965,42 +14953,42 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return videoEditedInfo;
     }
 
-    public static void prepareSendingVideo(AccountInstance accountInstance, String str, VideoEditedInfo videoEditedInfo, String str2, TLRPC.Photo photo, long j, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, ArrayList<TLRPC.MessageEntity> arrayList, int i, MessageObject messageObject3, boolean z, int i2, boolean z2, boolean z3, CharSequence charSequence, String str3, int i3, long j2, long j3) {
-        prepareSendingVideo(accountInstance, str, videoEditedInfo, str2, photo, j, messageObject, messageObject2, storyItem, replyQuote, arrayList, i, messageObject3, z, i2, z2, z3, charSequence, str3, i3, j2, j3, 0L, null);
+    public static void prepareSendingVideo(AccountInstance accountInstance, String str, VideoEditedInfo videoEditedInfo, String str2, TLRPC.Photo photo, long j, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, ArrayList<TLRPC.MessageEntity> arrayList, int i, MessageObject messageObject3, boolean z, int i2, int i3, boolean z2, boolean z3, CharSequence charSequence, String str3, int i4, long j2, long j3) {
+        prepareSendingVideo(accountInstance, str, videoEditedInfo, str2, photo, j, messageObject, messageObject2, storyItem, replyQuote, arrayList, i, messageObject3, z, i2, i3, z2, z3, charSequence, str3, i4, j2, j3, 0L, null);
     }
 
-    public static void prepareSendingVideo(final AccountInstance accountInstance, final String str, final VideoEditedInfo videoEditedInfo, final String str2, final TLRPC.Photo photo, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final ArrayList<TLRPC.MessageEntity> arrayList, final int i, final MessageObject messageObject3, final boolean z, final int i2, final boolean z2, final boolean z3, final CharSequence charSequence, final String str3, final int i3, final long j2, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams) {
+    public static void prepareSendingVideo(final AccountInstance accountInstance, final String str, final VideoEditedInfo videoEditedInfo, final String str2, final TLRPC.Photo photo, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final ArrayList<TLRPC.MessageEntity> arrayList, final int i, final MessageObject messageObject3, final boolean z, final int i2, final int i3, final boolean z2, final boolean z3, final CharSequence charSequence, final String str3, final int i4, final long j2, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams) {
         if (str == null || str.length() == 0) {
             return;
         }
-        new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda34
+        new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
-                SendMessagesHelper.lambda$prepareSendingVideo$111(VideoEditedInfo.this, str, j, i, accountInstance, str2, photo, charSequence, messageObject3, z3, messageObject, messageObject2, arrayList, z, i2, storyItem, replyQuote, i3, str3, j2, j3, j4, messageSuggestionParams, z2);
+                SendMessagesHelper.lambda$prepareSendingVideo$111(VideoEditedInfo.this, str, j, i, accountInstance, str2, photo, charSequence, messageObject3, z3, messageObject, messageObject2, arrayList, z, i2, i3, storyItem, replyQuote, i4, str3, j2, j3, j4, messageSuggestionParams, z2);
             }
         }).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x04c0  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0316  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0292  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x032a  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0451  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x00fe  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0136  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x025b  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0279  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x046d A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0477  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x04b0  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x04b8  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x04c2  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x0318  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0294  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x032c  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0453  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0138  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x025d  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x027b  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x046f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0479  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x04b2  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x04ba  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static /* synthetic */ void lambda$prepareSendingVideo$111(VideoEditedInfo videoEditedInfo, String str, final long j, final int i, final AccountInstance accountInstance, String str2, TLRPC.Photo photo, CharSequence charSequence, final MessageObject messageObject, final boolean z, final MessageObject messageObject2, final MessageObject messageObject3, final ArrayList arrayList, final boolean z2, final int i2, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final int i3, final String str3, final long j2, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams, boolean z3) {
+    public static /* synthetic */ void lambda$prepareSendingVideo$111(VideoEditedInfo videoEditedInfo, String str, final long j, final int i, final AccountInstance accountInstance, String str2, TLRPC.Photo photo, CharSequence charSequence, final MessageObject messageObject, final boolean z, final MessageObject messageObject2, final MessageObject messageObject3, final ArrayList arrayList, final boolean z2, final int i2, final int i3, final TL_stories.StoryItem storyItem, final ChatActivity.ReplyQuote replyQuote, final int i4, final String str3, final long j2, final long j3, final long j4, final MessageSuggestionParams messageSuggestionParams, boolean z3) {
         String str4;
         long j5;
         long j6;
@@ -15011,14 +14999,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         final Bitmap bitmap;
         final String str7;
         boolean z4;
-        int i4;
+        int i5;
         Bitmap bitmap2;
         TLRPC.PhotoSize fileToSize;
         VideoEditedInfo videoEditedInfo2;
         String str8;
         TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo;
-        int i5;
         int i6;
+        int i7;
         Object[] sentFile;
         final String str9 = str;
         VideoEditedInfo createCompressionSettings = videoEditedInfo != null ? videoEditedInfo : createCompressionSettings(str);
@@ -15065,9 +15053,9 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     if (bitmap3 == null) {
                                         bitmap3 = createVideoThumbnail(str9, 1);
                                     }
-                                    int i7 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.onReceivedChannelDifference;
-                                    float f = i7;
-                                    TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(bitmap3, f, f, i7 > 90 ? 80 : 55, isEncryptedDialog);
+                                    int i8 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.uploadStoryEnd;
+                                    float f = i8;
+                                    TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(bitmap3, f, f, i8 > 90 ? 80 : 55, isEncryptedDialog);
                                     if (bitmap3 == null || scaleAndSaveImage == null) {
                                         videoEditedInfo2 = createCompressionSettings;
                                     } else if (z5) {
@@ -15123,22 +15111,22 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                             } else {
                                                 tL_documentAttributeVideo.duration = createCompressionSettings.estimatedDuration / 1000.0d;
                                             }
-                                            int i8 = createCompressionSettings.rotationValue;
+                                            int i9 = createCompressionSettings.rotationValue;
                                             MediaController.CropState cropState = createCompressionSettings.cropState;
                                             if (cropState != null) {
-                                                i5 = cropState.transformWidth;
-                                                i6 = cropState.transformHeight;
-                                                i8 += cropState.transformRotation;
+                                                i6 = cropState.transformWidth;
+                                                i7 = cropState.transformHeight;
+                                                i9 += cropState.transformRotation;
                                             } else {
-                                                i5 = createCompressionSettings.resultWidth;
-                                                i6 = createCompressionSettings.resultHeight;
+                                                i6 = createCompressionSettings.resultWidth;
+                                                i7 = createCompressionSettings.resultHeight;
                                             }
-                                            if (i8 == 90 || i8 == 270) {
-                                                tL_documentAttributeVideo.w = i6;
-                                                tL_documentAttributeVideo.h = i5;
-                                            } else {
-                                                tL_documentAttributeVideo.w = i5;
+                                            if (i9 == 90 || i9 == 270) {
+                                                tL_documentAttributeVideo.w = i7;
                                                 tL_documentAttributeVideo.h = i6;
+                                            } else {
+                                                tL_documentAttributeVideo.w = i6;
+                                                tL_documentAttributeVideo.h = i7;
                                             }
                                             tL_document4.size = createCompressionSettings.estimatedSize;
                                         } else {
@@ -15189,14 +15177,14 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         if (bitmap4 == null) {
                                             bitmap4 = createVideoThumbnail(str9, 1);
                                         }
-                                        int i9 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.onReceivedChannelDifference;
-                                        float f2 = i9;
-                                        TLRPC.PhotoSize scaleAndSaveImage2 = ImageLoader.scaleAndSaveImage(bitmap4, f2, f2, i9 > 90 ? 80 : 55, isEncryptedDialog);
+                                        int i10 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.uploadStoryEnd;
+                                        float f2 = i10;
+                                        TLRPC.PhotoSize scaleAndSaveImage2 = ImageLoader.scaleAndSaveImage(bitmap4, f2, f2, i10 > 90 ? 80 : 55, isEncryptedDialog);
                                         if (bitmap4 == null || scaleAndSaveImage2 == null) {
-                                            i4 = 1;
+                                            i5 = 1;
                                         } else {
                                             if (!z5) {
-                                                i4 = 1;
+                                                i5 = 1;
                                                 bitmap2 = null;
                                             } else if (isEncryptedDialog) {
                                                 Bitmap createScaledBitmap = Bitmap.createScaledBitmap(bitmap4, 90, 90, true);
@@ -15204,16 +15192,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 Utilities.blurBitmap(createScaledBitmap, 7, 1, createScaledBitmap.getWidth(), createScaledBitmap.getHeight(), createScaledBitmap.getRowBytes());
                                                 Utilities.blurBitmap(createScaledBitmap, 7, 1, createScaledBitmap.getWidth(), createScaledBitmap.getHeight(), createScaledBitmap.getRowBytes());
                                                 str12 = String.format(scaleAndSaveImage2.location.volume_id + str5 + scaleAndSaveImage2.location.local_id + "@%d_%d_b2", Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)), Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)));
-                                                i4 = 1;
+                                                i5 = 1;
                                                 bitmap2 = createScaledBitmap;
                                             } else {
                                                 Utilities.blurBitmap(bitmap4, 3, 1, bitmap4.getWidth(), bitmap4.getHeight(), bitmap4.getRowBytes());
-                                                i4 = 1;
+                                                i5 = 1;
                                                 str12 = String.format(scaleAndSaveImage2.location.volume_id + str5 + scaleAndSaveImage2.location.local_id + "@%d_%d_b", Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)), Integer.valueOf((int) (AndroidUtilities.roundMessageSize / AndroidUtilities.density)));
                                             }
                                             if (scaleAndSaveImage2 != null) {
                                                 tL_document.thumbs.add(scaleAndSaveImage2);
-                                                tL_document.flags |= i4;
+                                                tL_document.flags |= i5;
                                             }
                                             bitmap = bitmap2;
                                             str7 = str12;
@@ -15255,10 +15243,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 final VideoEditedInfo videoEditedInfo3 = createCompressionSettings;
                                 final String str13 = str6;
                                 final TLRPC.TL_document tL_document5 = tL_document2;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda31
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda106
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        SendMessagesHelper.lambda$prepareSendingVideo$110(bitmap, str7, messageObject, accountInstance, videoEditedInfo3, tL_document5, str9, photoSize, hashMap, z, str13, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i, storyItem, replyQuote, i3, str3, j2, j3, j4, messageSuggestionParams);
+                                        SendMessagesHelper.lambda$prepareSendingVideo$110(bitmap, str7, messageObject, accountInstance, videoEditedInfo3, tL_document5, str9, photoSize, hashMap, z, str13, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i3, i, storyItem, replyQuote, i4, str3, j2, j3, j4, messageSuggestionParams);
                                     }
                                 });
                                 return;
@@ -15291,10 +15279,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     final VideoEditedInfo videoEditedInfo32 = createCompressionSettings;
                     final String str132 = str6;
                     final TLRPC.TL_document tL_document52 = tL_document2;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda31
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda106
                         @Override // java.lang.Runnable
                         public final void run() {
-                            SendMessagesHelper.lambda$prepareSendingVideo$110(bitmap, str7, messageObject, accountInstance, videoEditedInfo32, tL_document52, str9, photoSize2, hashMap2, z, str132, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i, storyItem, replyQuote, i3, str3, j2, j3, j4, messageSuggestionParams);
+                            SendMessagesHelper.lambda$prepareSendingVideo$110(bitmap, str7, messageObject, accountInstance, videoEditedInfo32, tL_document52, str9, photoSize2, hashMap2, z, str132, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i3, i, storyItem, replyQuote, i4, str3, j2, j3, j4, messageSuggestionParams);
                         }
                     });
                     return;
@@ -15329,19 +15317,19 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             final VideoEditedInfo videoEditedInfo322 = createCompressionSettings;
             final String str1322 = str6;
             final TLRPC.TL_document tL_document522 = tL_document2;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda31
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda106
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SendMessagesHelper.lambda$prepareSendingVideo$110(bitmap, str7, messageObject, accountInstance, videoEditedInfo322, tL_document522, str9, photoSize22, hashMap22, z, str1322, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i, storyItem, replyQuote, i3, str3, j2, j3, j4, messageSuggestionParams);
+                    SendMessagesHelper.lambda$prepareSendingVideo$110(bitmap, str7, messageObject, accountInstance, videoEditedInfo322, tL_document522, str9, photoSize22, hashMap22, z, str1322, j, messageObject2, messageObject3, charSequence2, arrayList, z2, i2, i3, i, storyItem, replyQuote, i4, str3, j2, j3, j4, messageSuggestionParams);
                 }
             });
             return;
         }
-        prepareSendingDocumentInternal(accountInstance, str, str, null, null, j, messageObject2, messageObject3, storyItem, replyQuote, arrayList, messageObject, null, false, charSequence, z2, i2, null, z3, str3, i3, 0L, false, j3, j4, messageSuggestionParams);
+        prepareSendingDocumentInternal(accountInstance, str, str, null, null, j, messageObject2, messageObject3, storyItem, replyQuote, arrayList, messageObject, null, false, charSequence, z2, i2, i3, null, z3, str3, i4, 0L, false, j3, j4, messageSuggestionParams);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$prepareSendingVideo$110(Bitmap bitmap, String str, MessageObject messageObject, AccountInstance accountInstance, VideoEditedInfo videoEditedInfo, TLRPC.TL_document tL_document, String str2, TLRPC.PhotoSize photoSize, HashMap hashMap, boolean z, String str3, long j, MessageObject messageObject2, MessageObject messageObject3, String str4, ArrayList arrayList, boolean z2, int i, int i2, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, int i3, String str5, long j2, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
+    public static /* synthetic */ void lambda$prepareSendingVideo$110(Bitmap bitmap, String str, MessageObject messageObject, AccountInstance accountInstance, VideoEditedInfo videoEditedInfo, TLRPC.TL_document tL_document, String str2, TLRPC.PhotoSize photoSize, HashMap hashMap, boolean z, String str3, long j, MessageObject messageObject2, MessageObject messageObject3, String str4, ArrayList arrayList, boolean z2, int i, int i2, int i3, TL_stories.StoryItem storyItem, ChatActivity.ReplyQuote replyQuote, int i4, String str5, long j2, long j3, long j4, MessageSuggestionParams messageSuggestionParams) {
         if (bitmap != null && str != null) {
             ImageLoader.getInstance().putImageToCache(new BitmapDrawable(bitmap), str, false);
         }
@@ -15349,10 +15337,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             accountInstance.getSendMessagesHelper().editMessage(messageObject, null, videoEditedInfo, tL_document, str2, photoSize, hashMap, false, z, str3);
             return;
         }
-        SendMessageParams of = SendMessageParams.of(tL_document, videoEditedInfo, str2, j, messageObject2, messageObject3, str4, arrayList, null, hashMap, z2, i, i2, str3, null, false, z);
+        SendMessageParams of = SendMessageParams.of(tL_document, videoEditedInfo, str2, j, messageObject2, messageObject3, str4, arrayList, null, hashMap, z2, i, i2, i3, str3, null, false, z);
         of.replyToStoryItem = storyItem;
         of.replyQuote = replyQuote;
-        of.quick_reply_shortcut_id = i3;
+        of.quick_reply_shortcut_id = i4;
         of.quick_reply_shortcut = str5;
         of.effect_id = j2;
         of.cover = photoSize;
@@ -15393,6 +15381,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         public MessageObject replyToTopMsg;
         public MessageObject retryMessageObject;
         public int scheduleDate;
+        public int scheduleRepeatPeriod;
         public boolean searchLinks = true;
         public MessageObject.SendAnimationData sendAnimationData;
         public boolean sendingHighQuality;
@@ -15407,13 +15396,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         public TLRPC.WebPage webPage;
 
         public static SendMessageParams of(String str, long j) {
-            return of(str, null, null, null, null, null, null, null, null, null, j, null, null, null, null, true, null, null, null, null, false, 0, 0, null, null, false);
+            return of(str, null, null, null, null, null, null, null, null, null, j, null, null, null, null, true, null, null, null, null, false, 0, 0, 0, null, null, false);
         }
 
         public static SendMessageParams of(MessageObject messageObject) {
             long dialogId = messageObject.getDialogId();
             TLRPC.Message message = messageObject.messageOwner;
-            SendMessageParams of = of(null, null, null, null, null, null, null, null, null, null, dialogId, message.attachPath, null, null, null, true, messageObject, null, message.reply_markup, message.params, !message.silent, messageObject.scheduled ? message.date : 0, 0, null, null, false);
+            SendMessageParams of = of(null, null, null, null, null, null, null, null, null, null, dialogId, message.attachPath, null, null, null, true, messageObject, null, message.reply_markup, message.params, !message.silent, messageObject.scheduled ? message.date : 0, 0, 0, null, null, false);
             TLRPC.Message message2 = messageObject.messageOwner;
             if (message2 != null) {
                 TLRPC.InputQuickReplyShortcut inputQuickReplyShortcut = message2.quick_reply_shortcut;
@@ -15426,51 +15415,51 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             return of;
         }
 
-        public static SendMessageParams of(TLRPC.User user, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i) {
-            return of(null, null, null, null, null, user, null, null, null, null, j, null, messageObject, messageObject2, null, true, null, null, replyMarkup, hashMap, z, i, 0, null, null, false);
+        public static SendMessageParams of(TLRPC.User user, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2) {
+            return of(null, null, null, null, null, user, null, null, null, null, j, null, messageObject, messageObject2, null, true, null, null, replyMarkup, hashMap, z, i, i2, 0, null, null, false);
         }
 
-        public static SendMessageParams of(TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i) {
-            return of(null, null, null, null, null, null, null, null, null, tL_messageMediaInvoice, j, null, messageObject, messageObject2, null, true, null, null, replyMarkup, hashMap, z, i, 0, null, null, false);
+        public static SendMessageParams of(TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2) {
+            return of(null, null, null, null, null, null, null, null, null, tL_messageMediaInvoice, j, null, messageObject, messageObject2, null, true, null, null, replyMarkup, hashMap, z, i, i2, 0, null, null, false);
         }
 
-        public static SendMessageParams of(TLRPC.TL_document tL_document, VideoEditedInfo videoEditedInfo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z2) {
-            return of(null, str2, null, null, videoEditedInfo, null, tL_document, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, replyMarkup, hashMap, z, i, i2, obj, sendAnimationData, z2);
+        public static SendMessageParams of(TLRPC.TL_document tL_document, VideoEditedInfo videoEditedInfo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, int i3, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z2) {
+            return of(null, str2, null, null, videoEditedInfo, null, tL_document, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, replyMarkup, hashMap, z, i, i2, i3, obj, sendAnimationData, z2);
         }
 
-        public static SendMessageParams of(TLRPC.TL_document tL_document, VideoEditedInfo videoEditedInfo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z2, boolean z3) {
-            return of(null, str2, null, null, videoEditedInfo, null, tL_document, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, replyMarkup, hashMap, z, i, i2, obj, sendAnimationData, z2, z3);
+        public static SendMessageParams of(TLRPC.TL_document tL_document, VideoEditedInfo videoEditedInfo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, int i3, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z2, boolean z3) {
+            return of(null, str2, null, null, videoEditedInfo, null, tL_document, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, replyMarkup, hashMap, z, i, i2, i3, obj, sendAnimationData, z2, z3);
         }
 
-        public static SendMessageParams of(String str, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.WebPage webPage, boolean z, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z2, int i, MessageObject.SendAnimationData sendAnimationData, boolean z3) {
-            return of(str, null, null, null, null, null, null, null, null, null, j, null, messageObject, messageObject2, webPage, z, null, arrayList, replyMarkup, hashMap, z2, i, 0, null, sendAnimationData, z3);
+        public static SendMessageParams of(String str, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.WebPage webPage, boolean z, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z2, int i, int i2, MessageObject.SendAnimationData sendAnimationData, boolean z3) {
+            return of(str, null, null, null, null, null, null, null, null, null, j, null, messageObject, messageObject2, webPage, z, null, arrayList, replyMarkup, hashMap, z2, i, i2, 0, null, sendAnimationData, z3);
         }
 
-        public static SendMessageParams of(TLRPC.MessageMedia messageMedia, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i) {
-            return of(null, null, messageMedia, null, null, null, null, null, null, null, j, null, messageObject, messageObject2, null, true, null, null, replyMarkup, hashMap, z, i, 0, null, null, false);
+        public static SendMessageParams of(TLRPC.MessageMedia messageMedia, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2) {
+            return of(null, null, messageMedia, null, null, null, null, null, null, null, j, null, messageObject, messageObject2, null, true, null, null, replyMarkup, hashMap, z, i, i2, 0, null, null, false);
         }
 
-        public static SendMessageParams of(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i) {
-            return of(null, null, null, null, null, null, null, null, tL_messageMediaPoll, null, j, null, messageObject, messageObject2, null, true, null, null, replyMarkup, hashMap, z, i, 0, null, null, false);
+        public static SendMessageParams of(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2) {
+            return of(null, null, null, null, null, null, null, null, tL_messageMediaPoll, null, j, null, messageObject, messageObject2, null, true, null, null, replyMarkup, hashMap, z, i, i2, 0, null, null, false);
         }
 
-        public static SendMessageParams of(TLRPC.TL_game tL_game, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i) {
-            return of(null, null, null, null, null, null, null, tL_game, null, null, j, null, messageObject, messageObject2, null, true, null, null, replyMarkup, hashMap, z, i, 0, null, null, false);
+        public static SendMessageParams of(TLRPC.TL_game tL_game, long j, MessageObject messageObject, MessageObject messageObject2, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2) {
+            return of(null, null, null, null, null, null, null, tL_game, null, null, j, null, messageObject, messageObject2, null, true, null, null, replyMarkup, hashMap, z, i, i2, 0, null, null, false);
         }
 
-        public static SendMessageParams of(TLRPC.TL_photo tL_photo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, boolean z2, boolean z3) {
-            return of(null, str2, null, tL_photo, null, null, null, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, replyMarkup, hashMap, z, i, i2, obj, null, z2, z3);
+        public static SendMessageParams of(TLRPC.TL_photo tL_photo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, int i3, Object obj, boolean z2, boolean z3) {
+            return of(null, str2, null, tL_photo, null, null, null, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, replyMarkup, hashMap, z, i, i2, i3, obj, null, z2, z3);
         }
 
-        public static SendMessageParams of(TLRPC.TL_photo tL_photo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, Object obj, boolean z2) {
-            return of(null, str2, null, tL_photo, null, null, null, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, replyMarkup, hashMap, z, i, i2, obj, null, z2);
+        public static SendMessageParams of(TLRPC.TL_photo tL_photo, String str, long j, MessageObject messageObject, MessageObject messageObject2, String str2, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z, int i, int i2, int i3, Object obj, boolean z2) {
+            return of(null, str2, null, tL_photo, null, null, null, null, null, null, j, str, messageObject, messageObject2, null, true, null, arrayList, replyMarkup, hashMap, z, i, i2, i3, obj, null, z2);
         }
 
-        private static SendMessageParams of(String str, String str2, TLRPC.MessageMedia messageMedia, TLRPC.TL_photo tL_photo, VideoEditedInfo videoEditedInfo, TLRPC.User user, TLRPC.TL_document tL_document, TLRPC.TL_game tL_game, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice, long j, String str3, MessageObject messageObject, MessageObject messageObject2, TLRPC.WebPage webPage, boolean z, MessageObject messageObject3, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z2, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z3) {
-            return of(str, str2, messageMedia, tL_photo, videoEditedInfo, user, tL_document, tL_game, tL_messageMediaPoll, tL_messageMediaInvoice, j, str3, messageObject, messageObject2, webPage, z, messageObject3, arrayList, replyMarkup, hashMap, z2, i, i2, obj, sendAnimationData, z3, false);
+        private static SendMessageParams of(String str, String str2, TLRPC.MessageMedia messageMedia, TLRPC.TL_photo tL_photo, VideoEditedInfo videoEditedInfo, TLRPC.User user, TLRPC.TL_document tL_document, TLRPC.TL_game tL_game, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice, long j, String str3, MessageObject messageObject, MessageObject messageObject2, TLRPC.WebPage webPage, boolean z, MessageObject messageObject3, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z2, int i, int i2, int i3, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z3) {
+            return of(str, str2, messageMedia, tL_photo, videoEditedInfo, user, tL_document, tL_game, tL_messageMediaPoll, tL_messageMediaInvoice, j, str3, messageObject, messageObject2, webPage, z, messageObject3, arrayList, replyMarkup, hashMap, z2, i, i2, i3, obj, sendAnimationData, z3, false);
         }
 
-        public static SendMessageParams of(String str, String str2, TLRPC.MessageMedia messageMedia, TLRPC.TL_photo tL_photo, VideoEditedInfo videoEditedInfo, TLRPC.User user, TLRPC.TL_document tL_document, TLRPC.TL_game tL_game, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice, long j, String str3, MessageObject messageObject, MessageObject messageObject2, TLRPC.WebPage webPage, boolean z, MessageObject messageObject3, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z2, int i, int i2, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z3, boolean z4) {
+        public static SendMessageParams of(String str, String str2, TLRPC.MessageMedia messageMedia, TLRPC.TL_photo tL_photo, VideoEditedInfo videoEditedInfo, TLRPC.User user, TLRPC.TL_document tL_document, TLRPC.TL_game tL_game, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice, long j, String str3, MessageObject messageObject, MessageObject messageObject2, TLRPC.WebPage webPage, boolean z, MessageObject messageObject3, ArrayList<TLRPC.MessageEntity> arrayList, TLRPC.ReplyMarkup replyMarkup, HashMap<String, String> hashMap, boolean z2, int i, int i2, int i3, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z3, boolean z4) {
             SendMessageParams sendMessageParams = new SendMessageParams();
             sendMessageParams.message = str;
             sendMessageParams.caption = str2;
@@ -15494,7 +15483,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             sendMessageParams.params = hashMap;
             sendMessageParams.notify = z2;
             sendMessageParams.scheduleDate = i;
-            sendMessageParams.ttl = i2;
+            sendMessageParams.scheduleRepeatPeriod = i2;
+            sendMessageParams.ttl = i3;
             sendMessageParams.parentObject = obj;
             sendMessageParams.sendAnimationData = sendAnimationData;
             sendMessageParams.updateStickersOrder = z3;

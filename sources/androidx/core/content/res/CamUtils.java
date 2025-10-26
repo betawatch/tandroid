@@ -50,17 +50,17 @@ abstract class CamUtils {
         return (linearized * fArr[0]) + (linearized2 * fArr[1]) + (linearized3 * fArr[2]);
     }
 
-    static float[] xyzFromInt(int i) {
+    static void xyzFromInt(int i, float[] fArr) {
         float linearized = linearized(Color.red(i));
         float linearized2 = linearized(Color.green(i));
         float linearized3 = linearized(Color.blue(i));
-        float[][] fArr = SRGB_TO_XYZ;
-        float[] fArr2 = fArr[0];
-        float f = (fArr2[0] * linearized) + (fArr2[1] * linearized2) + (fArr2[2] * linearized3);
-        float[] fArr3 = fArr[1];
-        float f2 = (fArr3[0] * linearized) + (fArr3[1] * linearized2) + (fArr3[2] * linearized3);
-        float[] fArr4 = fArr[2];
-        return new float[]{f, f2, (linearized * fArr4[0]) + (linearized2 * fArr4[1]) + (linearized3 * fArr4[2])};
+        float[][] fArr2 = SRGB_TO_XYZ;
+        float[] fArr3 = fArr2[0];
+        fArr[0] = (fArr3[0] * linearized) + (fArr3[1] * linearized2) + (fArr3[2] * linearized3);
+        float[] fArr4 = fArr2[1];
+        fArr[1] = (fArr4[0] * linearized) + (fArr4[1] * linearized2) + (fArr4[2] * linearized3);
+        float[] fArr5 = fArr2[2];
+        fArr[2] = (linearized * fArr5[0]) + (linearized2 * fArr5[1]) + (linearized3 * fArr5[2]);
     }
 
     static float yFromLStar(float f) {

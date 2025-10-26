@@ -494,7 +494,7 @@ public class AvatarsDrawable {
             float f5 = -dp3;
             f = 0.0f;
             i = 2;
-            canvas.saveLayerAlpha(f5, f5, this.width + dp3, this.height + dp3, NotificationCenter.didApplyNewTheme, 31);
+            canvas.saveLayerAlpha(f5, f5, this.width + dp3, this.height + dp3, NotificationCenter.didReplacedPhotoInMemCache, 31);
         } else {
             f = 0.0f;
             i = 2;

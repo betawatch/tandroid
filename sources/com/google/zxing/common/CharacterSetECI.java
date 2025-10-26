@@ -30,7 +30,7 @@ public enum CharacterSetECI {
     Cp1256(24, "windows-1256"),
     UnicodeBigUnmarked(25, "UTF-16BE", "UnicodeBig"),
     UTF8(26, "UTF-8"),
-    ASCII(new int[]{27, NotificationCenter.groupCallTypingsUpdated}, "US-ASCII"),
+    ASCII(new int[]{27, NotificationCenter.applyGroupCallVisibleParticipants}, "US-ASCII"),
     Big5(28),
     GB18030(29, "GB2312", "EUC_CN", "GBK"),
     EUC_KR(30, "EUC-KR");

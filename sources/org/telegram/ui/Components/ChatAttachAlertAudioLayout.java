@@ -75,7 +75,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
     private AnimatorSet shadowAnimation;
 
     public interface AudioSelectDelegate {
-        void didSelectAudio(ArrayList arrayList, CharSequence charSequence, boolean z, int i, long j, boolean z2, long j2);
+        void didSelectAudio(ArrayList arrayList, CharSequence charSequence, boolean z, int i, int i2, long j, boolean z2, long j2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -480,7 +480,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
         new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString(R.string.AppName)).setMessage(str).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x008e  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0093  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -493,7 +493,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 this.sendPressed = true;
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(audioEntry.messageObject);
-                this.delegate.didSelectAudio(arrayList, this.parentAlert.getCommentView().getText(), false, 0, 0L, false, 0L);
+                this.delegate.didSelectAudio(arrayList, this.parentAlert.getCommentView().getText(), false, 0, 0, 0L, false, 0L);
             } else {
                 if (this.selectedAudios.indexOfKey(audioEntry.id) >= 0) {
                     this.selectedAudios.remove(audioEntry.id);
@@ -524,27 +524,27 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public boolean sendSelectedItems(final boolean z, final int i, final long j, final boolean z2) {
+    public boolean sendSelectedItems(final boolean z, final int i, final int i2, final long j, final boolean z2) {
         if (this.selectedAudios.size() == 0 || this.delegate == null || this.sendPressed) {
             return false;
         }
         this.sendPressed = true;
         final ArrayList arrayList = new ArrayList();
-        for (int i2 = 0; i2 < this.selectedAudiosOrder.size(); i2++) {
-            arrayList.add(((MediaController.AudioEntry) this.selectedAudiosOrder.get(i2)).messageObject);
+        for (int i3 = 0; i3 < this.selectedAudiosOrder.size(); i3++) {
+            arrayList.add(((MediaController.AudioEntry) this.selectedAudiosOrder.get(i3)).messageObject);
         }
         ChatAttachAlert chatAttachAlert = this.parentAlert;
         return AlertsCreator.ensurePaidMessageConfirmation(chatAttachAlert.currentAccount, chatAttachAlert.getDialogId(), arrayList.size() + this.parentAlert.getAdditionalMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ChatAttachAlertAudioLayout.this.lambda$sendSelectedItems$3(arrayList, z, i, j, z2, (Long) obj);
+                ChatAttachAlertAudioLayout.this.lambda$sendSelectedItems$3(arrayList, z, i, i2, j, z2, (Long) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendSelectedItems$3(ArrayList arrayList, boolean z, int i, long j, boolean z2, Long l) {
-        this.delegate.didSelectAudio(arrayList, this.parentAlert.getCommentView().getText(), z, i, j, z2, l.longValue());
+    public /* synthetic */ void lambda$sendSelectedItems$3(ArrayList arrayList, boolean z, int i, int i2, long j, boolean z2, Long l) {
+        this.delegate.didSelectAudio(arrayList, this.parentAlert.getCommentView().getText(), z, i, i2, j, z2, l.longValue());
         this.parentAlert.dismiss(true);
     }
 

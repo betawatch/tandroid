@@ -20,7 +20,7 @@ public class SearchStateDrawable extends Drawable {
     private Paint paint;
     private boolean progressStartedWithOverTo;
     private boolean wereNotWaitingForProgressToEnd;
-    private int alpha = NotificationCenter.didApplyNewTheme;
+    private int alpha = NotificationCenter.didReplacedPhotoInMemCache;
     private Path path = new Path();
     private RectF progressRect = new RectF();
     private final float progressRadius = 0.25f;
@@ -148,7 +148,7 @@ public class SearchStateDrawable extends Drawable {
     public void setColor(int i) {
         this.paint.setColor(i);
         this.alpha = this.paint.getAlpha();
-        this.paint.setAlpha(NotificationCenter.didApplyNewTheme);
+        this.paint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
     }
 
     @Override // android.graphics.drawable.Drawable

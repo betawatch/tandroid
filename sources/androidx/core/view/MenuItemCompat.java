@@ -70,52 +70,24 @@ public abstract class MenuItemCompat {
             return menuItem.setContentDescription(charSequence);
         }
 
-        static CharSequence getContentDescription(MenuItem menuItem) {
-            return menuItem.getContentDescription();
-        }
-
         static MenuItem setTooltipText(MenuItem menuItem, CharSequence charSequence) {
             return menuItem.setTooltipText(charSequence);
-        }
-
-        static CharSequence getTooltipText(MenuItem menuItem) {
-            return menuItem.getTooltipText();
-        }
-
-        static MenuItem setShortcut(MenuItem menuItem, char c, char c2, int i, int i2) {
-            return menuItem.setShortcut(c, c2, i, i2);
         }
 
         static MenuItem setNumericShortcut(MenuItem menuItem, char c, int i) {
             return menuItem.setNumericShortcut(c, i);
         }
 
-        static int getNumericModifiers(MenuItem menuItem) {
-            return menuItem.getNumericModifiers();
-        }
-
         static MenuItem setAlphabeticShortcut(MenuItem menuItem, char c, int i) {
             return menuItem.setAlphabeticShortcut(c, i);
-        }
-
-        static int getAlphabeticModifiers(MenuItem menuItem) {
-            return menuItem.getAlphabeticModifiers();
         }
 
         static MenuItem setIconTintList(MenuItem menuItem, ColorStateList colorStateList) {
             return menuItem.setIconTintList(colorStateList);
         }
 
-        static ColorStateList getIconTintList(MenuItem menuItem) {
-            return menuItem.getIconTintList();
-        }
-
         static MenuItem setIconTintMode(MenuItem menuItem, PorterDuff.Mode mode) {
             return menuItem.setIconTintMode(mode);
-        }
-
-        static PorterDuff.Mode getIconTintMode(MenuItem menuItem) {
-            return menuItem.getIconTintMode();
         }
     }
 }

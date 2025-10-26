@@ -96,7 +96,7 @@ import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.CastSync;
 import org.telegram.ui.Cells.AudioPlayerCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda298;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda309;
 import org.telegram.ui.ChooseQualityLayout$QualityIcon;
 import org.telegram.ui.Components.AudioPlayerAlert;
 import org.telegram.ui.Components.Bulletin;
@@ -327,7 +327,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 ((FrameLayout.LayoutParams) AudioPlayerAlert.this.listView.getLayoutParams()).topMargin = ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight;
                 ((FrameLayout.LayoutParams) AudioPlayerAlert.this.actionBarShadow.getLayoutParams()).topMargin = ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight;
                 ((FrameLayout.LayoutParams) AudioPlayerAlert.this.blurredView.getLayoutParams()).topMargin = -getPaddingTop();
-                int dp2 = AndroidUtilities.dp(NotificationCenter.themeUploadError + ((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52));
+                int dp2 = AndroidUtilities.dp(NotificationCenter.needDeleteDialog + ((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52));
                 if (AudioPlayerAlert.this.playlist.size() > 1) {
                     dp2 += ((BottomSheet) AudioPlayerAlert.this).backgroundPaddingTop + (AudioPlayerAlert.this.playlist.size() * AndroidUtilities.dp(56.0f));
                 }
@@ -338,8 +338,8 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                         dp2 = (int) ((paddingTop / 5) * 3.5f);
                     }
                     dp = (paddingTop - dp2) + AndroidUtilities.dp(8.0f);
-                    if (dp > paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + 329)) {
-                        dp = paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + 329);
+                    if (dp > paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + NotificationCenter.botForumDraftUpdate)) {
+                        dp = paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + NotificationCenter.botForumDraftUpdate);
                     }
                     if (dp < 0) {
                         dp = 0;
@@ -377,7 +377,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
              */
             /* JADX WARN: Code restructure failed: missing block: B:20:0x0067, code lost:
             
-                if (r4.getY() < (getMeasuredHeight() - org.telegram.messenger.AndroidUtilities.dp(((r3.this$0.isMyList() || r3.this$0.noforwards) ? 0 : 52) + org.telegram.messenger.NotificationCenter.storiesEnabledUpdate))) goto L21;
+                if (r4.getY() < (getMeasuredHeight() - org.telegram.messenger.AndroidUtilities.dp(((r3.this$0.isMyList() || r3.this$0.noforwards) ? 0 : 52) + org.telegram.messenger.NotificationCenter.didUpdatePremiumGiftStickers))) goto L21;
              */
             @Override // android.view.ViewGroup
             /*
@@ -1171,10 +1171,10 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             this.itemTouchHelper = itemTouchHelper;
             itemTouchHelper.attachToRecyclerView(this.listView);
         }
-        this.containerView.addView(this.playerLayout, LayoutHelper.createFrame(i, ((isMyList() || this.noforwards) ? 0 : 52) + NotificationCenter.themeUploadError, 83));
+        this.containerView.addView(this.playerLayout, LayoutHelper.createFrame(i, ((isMyList() || this.noforwards) ? 0 : 52) + NotificationCenter.needDeleteDialog, 83));
         this.containerView.addView(this.playerShadow, new FrameLayout.LayoutParams(i, AndroidUtilities.getShadowHeight(), 83));
-        ((FrameLayout.LayoutParams) this.playerLayout.getLayoutParams()).height = AndroidUtilities.dp(((isMyList() || this.noforwards) ? 0 : 52) + NotificationCenter.themeUploadError);
-        ((FrameLayout.LayoutParams) this.playerShadow.getLayoutParams()).bottomMargin = AndroidUtilities.dp(NotificationCenter.themeUploadError + ((isMyList() || this.noforwards) ? 0 : 52));
+        ((FrameLayout.LayoutParams) this.playerLayout.getLayoutParams()).height = AndroidUtilities.dp(((isMyList() || this.noforwards) ? 0 : 52) + NotificationCenter.needDeleteDialog);
+        ((FrameLayout.LayoutParams) this.playerShadow.getLayoutParams()).bottomMargin = AndroidUtilities.dp(NotificationCenter.needDeleteDialog + ((isMyList() || this.noforwards) ? 0 : 52));
         this.containerView.addView(this.actionBarShadow, LayoutHelper.createFrame(i, 3.0f));
         this.containerView.addView(this.actionBar);
         FrameLayout frameLayout3 = new FrameLayout(context) { // from class: org.telegram.ui.Components.AudioPlayerAlert.19
@@ -1970,7 +1970,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 fragmentView.draw(canvas);
                 canvas.translate(this.containerView.getLeft() - getLeftInset(), 0.0f);
                 this.containerView.draw(canvas);
-                Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.dialogFiltersUpdated));
+                Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.newEmojiSuggestionsAvailable));
                 this.blurredView.setBackground(new BitmapDrawable(createBitmap));
             }
             this.blurredView.setVisibility(0);
@@ -2407,10 +2407,10 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         if (z3 != this.noforwards) {
             this.noforwards = z3;
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.playerLayout.getLayoutParams();
-            layoutParams.height = AndroidUtilities.dp(((z3 || isMyList()) ? 0 : 52) + NotificationCenter.themeUploadError);
+            layoutParams.height = AndroidUtilities.dp(((z3 || isMyList()) ? 0 : 52) + NotificationCenter.needDeleteDialog);
             this.playerLayout.setLayoutParams(layoutParams);
             FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.playerShadow.getLayoutParams();
-            layoutParams2.bottomMargin = AndroidUtilities.dp(NotificationCenter.themeUploadError + ((isMyList() || z3) ? 0 : 52));
+            layoutParams2.bottomMargin = AndroidUtilities.dp(NotificationCenter.needDeleteDialog + ((isMyList() || z3) ? 0 : 52));
             this.playerShadow.setLayoutParams(layoutParams2);
         }
         if (z3) {
@@ -3224,7 +3224,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             TLRPC.Document document = messageObject.getDocument();
             long j = document != null ? document.id : 0L;
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda298(makeOptions));
+            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda309(makeOptions));
             makeSwipeback.addGap();
             makeSwipeback.addIf(!savedMusicIds.ids.contains(Long.valueOf(j)), R.drawable.left_status_profile, LocaleController.getString(R.string.AudioSaveToMyProfile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
@@ -3515,7 +3515,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         if (arrayList != null) {
             SendMessagesHelper.getInstance(this.currentAccount).sendMessage(arrayList, j, false, false, true, 0, 0L);
         } else {
-            SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(tL_document, null, messageObject.messageOwner.attachPath, j, null, null, null, null, null, null, true, 0, 0, this.savedMusicList, null, false, false));
+            SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(tL_document, null, messageObject.messageOwner.attachPath, j, null, null, null, null, null, null, true, 0, 0, 0, this.savedMusicList, null, false, false));
         }
         BaseFragment lastFragment = LaunchActivity.getLastFragment();
         if (lastFragment != null) {
@@ -3588,18 +3588,18 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             while (i3 < arrayList2.size()) {
                 long j = ((MessagesStorage.TopicKey) arrayList2.get(i3)).dialogId;
                 if (charSequence != null) {
-                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j, null, null, null, true, null, null, null, true, 0, null, false));
+                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j, null, null, null, true, null, null, null, true, 0, 0, null, false));
                 }
                 if (arrayList != null) {
                     i2 = i3;
                     SendMessagesHelper.getInstance(this.currentAccount).sendMessage(arrayList, j, false, false, true, 0, 0L);
                 } else {
                     i2 = i3;
-                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(tL_document, null, messageObject.messageOwner.attachPath, j, null, null, null, null, null, null, z2, i, 0, this.savedMusicList, null, false, false));
+                    SendMessagesHelper.getInstance(this.currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(tL_document, null, messageObject.messageOwner.attachPath, j, null, null, null, null, null, null, z2, i, 0, 0, this.savedMusicList, null, false, false));
                 }
                 i3 = i2 + 1;
             }
-            dialogsActivity.lambda$onBackPressed$355();
+            dialogsActivity.lambda$onBackPressed$341();
             BaseFragment lastFragment = LaunchActivity.getLastFragment();
             if (lastFragment == null) {
                 return true;
@@ -3639,7 +3639,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 dialogsActivity.removeSelfFromStack();
             }
         } else {
-            dialogsActivity.lambda$onBackPressed$355();
+            dialogsActivity.lambda$onBackPressed$341();
         }
         return true;
     }

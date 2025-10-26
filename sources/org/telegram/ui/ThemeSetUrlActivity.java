@@ -174,7 +174,7 @@ public class ThemeSetUrlActivity extends BaseFragment implements NotificationCen
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    ThemeSetUrlActivity.this.lambda$onBackPressed$355();
+                    ThemeSetUrlActivity.this.lambda$onBackPressed$341();
                 } else if (i == 1) {
                     ThemeSetUrlActivity.this.saveTheme();
                 }
@@ -483,7 +483,7 @@ public class ThemeSetUrlActivity extends BaseFragment implements NotificationCen
                     FileLog.e(e);
                 }
                 Theme.applyTheme(this.themeInfo, false);
-                lambda$onBackPressed$355();
+                lambda$onBackPressed$341();
                 return;
             }
             return;
@@ -678,7 +678,7 @@ public class ThemeSetUrlActivity extends BaseFragment implements NotificationCen
             String obj2 = this.linkField.getText().toString();
             String obj3 = this.nameField.getText().toString();
             if (str2.equals(obj2) && str4.equals(obj3)) {
-                lambda$onBackPressed$355();
+                lambda$onBackPressed$341();
                 return;
             }
             this.progressDialog = new AlertDialog(getParentActivity(), 3);
@@ -739,7 +739,7 @@ public class ThemeSetUrlActivity extends BaseFragment implements NotificationCen
             FileLog.e(e);
         }
         Theme.setThemeUploadInfo(this.themeInfo, this.themeAccent, tL_theme, this.currentAccount, false);
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

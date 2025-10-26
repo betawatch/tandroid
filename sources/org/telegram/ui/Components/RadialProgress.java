@@ -287,7 +287,7 @@ public class RadialProgress {
                 if (this.previousMiniDrawable != null && this.currentMiniDrawable == null) {
                     this.miniProgressBackgroundPaint.setAlpha((int) (this.animatedAlphaValue * 255.0f * this.overrideAlpha));
                 } else {
-                    this.miniProgressBackgroundPaint.setAlpha(NotificationCenter.didApplyNewTheme);
+                    this.miniProgressBackgroundPaint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                 }
                 canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(12.0f), this.miniProgressBackgroundPaint);
             }

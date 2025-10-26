@@ -906,7 +906,7 @@ public class FragmentedMp4Extractor implements Extractor {
         }
         parsableByteArray2.skipBytes(1);
         int readUnsignedByte = parsableByteArray2.readUnsignedByte();
-        int i3 = (readUnsignedByte & NotificationCenter.musicListLoaded) >> 4;
+        int i3 = (readUnsignedByte & NotificationCenter.appConfigUpdated) >> 4;
         int i4 = readUnsignedByte & 15;
         boolean z = parsableByteArray2.readUnsignedByte() == 1;
         if (z) {
@@ -1335,12 +1335,12 @@ public class FragmentedMp4Extractor implements Extractor {
                 byte[] data = this.scratch.getData();
                 data[0] = 0;
                 data[1] = 1;
-                data[2] = (byte) ((i2 >> 8) & NotificationCenter.didApplyNewTheme);
-                data[3] = (byte) (i2 & NotificationCenter.didApplyNewTheme);
-                data[4] = (byte) ((i >> 24) & NotificationCenter.didApplyNewTheme);
-                data[5] = (byte) ((i >> 16) & NotificationCenter.didApplyNewTheme);
-                data[6] = (byte) ((i >> 8) & NotificationCenter.didApplyNewTheme);
-                data[7] = (byte) (i & NotificationCenter.didApplyNewTheme);
+                data[2] = (byte) ((i2 >> 8) & NotificationCenter.didReplacedPhotoInMemCache);
+                data[3] = (byte) (i2 & NotificationCenter.didReplacedPhotoInMemCache);
+                data[4] = (byte) ((i >> 24) & NotificationCenter.didReplacedPhotoInMemCache);
+                data[5] = (byte) ((i >> 16) & NotificationCenter.didReplacedPhotoInMemCache);
+                data[6] = (byte) ((i >> 8) & NotificationCenter.didReplacedPhotoInMemCache);
+                data[7] = (byte) (i & NotificationCenter.didReplacedPhotoInMemCache);
                 this.output.sampleData(this.scratch, 8, 1);
                 return i3 + 9;
             }
@@ -1353,8 +1353,8 @@ public class FragmentedMp4Extractor implements Extractor {
                 byte[] data2 = this.scratch.getData();
                 parsableByteArray3.readBytes(data2, 0, i4);
                 int i5 = (((data2[2] & 255) << 8) | (data2[3] & 255)) + i2;
-                data2[2] = (byte) ((i5 >> 8) & NotificationCenter.didApplyNewTheme);
-                data2[3] = (byte) (i5 & NotificationCenter.didApplyNewTheme);
+                data2[2] = (byte) ((i5 >> 8) & NotificationCenter.didReplacedPhotoInMemCache);
+                data2[3] = (byte) (i5 & NotificationCenter.didReplacedPhotoInMemCache);
                 parsableByteArray3 = this.scratch;
             }
             this.output.sampleData(parsableByteArray3, i4, 1);

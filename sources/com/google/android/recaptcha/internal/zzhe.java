@@ -50,15 +50,15 @@ final class zzhe extends zzhh {
             int i2 = this.zze;
             int i3 = i2 + 1;
             this.zze = i3;
-            bArr[i2] = (byte) (i & NotificationCenter.didApplyNewTheme);
+            bArr[i2] = (byte) (i & NotificationCenter.didReplacedPhotoInMemCache);
             int i4 = i2 + 2;
             this.zze = i4;
-            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.didApplyNewTheme);
+            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.didReplacedPhotoInMemCache);
             int i5 = i2 + 3;
             this.zze = i5;
-            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.didApplyNewTheme);
+            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.didReplacedPhotoInMemCache);
             this.zze = i2 + 4;
-            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.didApplyNewTheme);
+            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.didReplacedPhotoInMemCache);
         } catch (IndexOutOfBoundsException e) {
             throw new zzhf(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }
@@ -77,27 +77,27 @@ final class zzhe extends zzhh {
             int i = this.zze;
             int i2 = i + 1;
             this.zze = i2;
-            bArr[i] = (byte) (((int) j) & NotificationCenter.didApplyNewTheme);
+            bArr[i] = (byte) (((int) j) & NotificationCenter.didReplacedPhotoInMemCache);
             int i3 = i + 2;
             this.zze = i3;
-            bArr[i2] = (byte) (((int) (j >> 8)) & NotificationCenter.didApplyNewTheme);
+            bArr[i2] = (byte) (((int) (j >> 8)) & NotificationCenter.didReplacedPhotoInMemCache);
             int i4 = i + 3;
             this.zze = i4;
-            bArr[i3] = (byte) (((int) (j >> 16)) & NotificationCenter.didApplyNewTheme);
+            bArr[i3] = (byte) (((int) (j >> 16)) & NotificationCenter.didReplacedPhotoInMemCache);
             int i5 = i + 4;
             this.zze = i5;
-            bArr[i4] = (byte) (((int) (j >> 24)) & NotificationCenter.didApplyNewTheme);
+            bArr[i4] = (byte) (((int) (j >> 24)) & NotificationCenter.didReplacedPhotoInMemCache);
             int i6 = i + 5;
             this.zze = i6;
-            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.didApplyNewTheme);
+            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.didReplacedPhotoInMemCache);
             int i7 = i + 6;
             this.zze = i7;
-            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.didApplyNewTheme);
+            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.didReplacedPhotoInMemCache);
             int i8 = i + 7;
             this.zze = i8;
-            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.didApplyNewTheme);
+            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.didReplacedPhotoInMemCache);
             this.zze = i + 8;
-            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.didApplyNewTheme);
+            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.didReplacedPhotoInMemCache);
         } catch (IndexOutOfBoundsException e) {
             throw new zzhf(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.zze), Integer.valueOf(this.zzd), 1), e);
         }

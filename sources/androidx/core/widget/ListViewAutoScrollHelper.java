@@ -18,7 +18,7 @@ public class ListViewAutoScrollHelper extends AutoScrollHelper {
 
     @Override // androidx.core.widget.AutoScrollHelper
     public void scrollTargetBy(int i, int i2) {
-        ListViewCompat.scrollListBy(this.mTarget, i2);
+        this.mTarget.scrollListBy(i2);
     }
 
     @Override // androidx.core.widget.AutoScrollHelper

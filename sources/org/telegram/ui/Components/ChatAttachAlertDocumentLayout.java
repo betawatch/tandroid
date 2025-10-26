@@ -124,16 +124,16 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
     public interface DocumentSelectActivityDelegate {
 
         public abstract /* synthetic */ class -CC {
-            public static void $default$didSelectPhotos(DocumentSelectActivityDelegate documentSelectActivityDelegate, ArrayList arrayList, boolean z, int i, long j) {
+            public static void $default$didSelectPhotos(DocumentSelectActivityDelegate documentSelectActivityDelegate, ArrayList arrayList, boolean z, int i, int i2, long j) {
             }
 
             public static void $default$startMusicSelectActivity(DocumentSelectActivityDelegate documentSelectActivityDelegate) {
             }
         }
 
-        void didSelectFiles(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, long j2);
+        void didSelectFiles(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, int i2, long j, boolean z2, long j2);
 
-        void didSelectPhotos(ArrayList arrayList, boolean z, int i, long j);
+        void didSelectPhotos(ArrayList arrayList, boolean z, int i, int i2, long j);
 
         void startDocumentSelectActivity();
 
@@ -517,7 +517,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
                         }
 
                         @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                        public void actionButtonPressed(boolean z, boolean z2, int i4) {
+                        public void actionButtonPressed(boolean z, boolean z2, int i4, int i5) {
                             if (z) {
                                 return;
                             }
@@ -840,7 +840,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public boolean sendSelectedItems(final boolean z, final int i, final long j, final boolean z2) {
+    public boolean sendSelectedItems(final boolean z, final int i, int i2, final long j, final boolean z2) {
         if ((this.selectedFiles.size() == 0 && this.selectedMessages.size() == 0) || this.delegate == null || this.sendPressed) {
             return false;
         }
@@ -865,7 +865,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendSelectedItems$5(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z, int i, long j, boolean z2, Long l) {
         this.sendPressed = true;
-        this.delegate.didSelectFiles(arrayList, str, arrayList2, arrayList3, z, i, j, z2, l.longValue());
+        this.delegate.didSelectFiles(arrayList, str, arrayList2, arrayList3, z, i, 0, j, z2, l.longValue());
         this.parentAlert.dismiss(true);
     }
 
@@ -1015,7 +1015,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendSelectedPhotos$6(ArrayList arrayList, boolean z, int i, Long l) {
-        this.delegate.didSelectPhotos(arrayList, z, i, l.longValue());
+        this.delegate.didSelectPhotos(arrayList, z, i, 0, l.longValue());
     }
 
     public void loadRecentFiles() {

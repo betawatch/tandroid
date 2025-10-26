@@ -1,182 +1,132 @@
 package androidx.collection;
 
-import java.lang.reflect.Array;
+import androidx.collection.internal.ContainerHelpersKt;
 import java.util.Collection;
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
+import kotlin.collections.ArraysKt;
+import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
 public final class ArraySet implements Collection, Set {
-    private static final int[] INT = new int[0];
-    private static final Object[] OBJECT = new Object[0];
-    private static Object[] sBaseCache;
-    private static int sBaseCacheSize;
-    private static Object[] sTwiceBaseCache;
-    private static int sTwiceBaseCacheSize;
-    Object[] mArray;
-    private MapCollections mCollections;
-    private int[] mHashes;
-    int mSize;
-
-    private int indexOf(Object obj, int i) {
-        int i2 = this.mSize;
-        if (i2 == 0) {
-            return -1;
-        }
-        int binarySearch = ContainerHelpers.binarySearch(this.mHashes, i2, i);
-        if (binarySearch < 0 || obj.equals(this.mArray[binarySearch])) {
-            return binarySearch;
-        }
-        int i3 = binarySearch + 1;
-        while (i3 < i2 && this.mHashes[i3] == i) {
-            if (obj.equals(this.mArray[i3])) {
-                return i3;
-            }
-            i3++;
-        }
-        for (int i4 = binarySearch - 1; i4 >= 0 && this.mHashes[i4] == i; i4--) {
-            if (obj.equals(this.mArray[i4])) {
-                return i4;
-            }
-        }
-        return ~i3;
-    }
-
-    private int indexOfNull() {
-        int i = this.mSize;
-        if (i == 0) {
-            return -1;
-        }
-        int binarySearch = ContainerHelpers.binarySearch(this.mHashes, i, 0);
-        if (binarySearch < 0 || this.mArray[binarySearch] == null) {
-            return binarySearch;
-        }
-        int i2 = binarySearch + 1;
-        while (i2 < i && this.mHashes[i2] == 0) {
-            if (this.mArray[i2] == null) {
-                return i2;
-            }
-            i2++;
-        }
-        for (int i3 = binarySearch - 1; i3 >= 0 && this.mHashes[i3] == 0; i3--) {
-            if (this.mArray[i3] == null) {
-                return i3;
-            }
-        }
-        return ~i2;
-    }
-
-    private void allocArrays(int i) {
-        if (i == 8) {
-            synchronized (ArraySet.class) {
-                try {
-                    Object[] objArr = sTwiceBaseCache;
-                    if (objArr != null) {
-                        this.mArray = objArr;
-                        sTwiceBaseCache = (Object[]) objArr[0];
-                        this.mHashes = (int[]) objArr[1];
-                        objArr[1] = null;
-                        objArr[0] = null;
-                        sTwiceBaseCacheSize--;
-                        return;
-                    }
-                } finally {
-                }
-            }
-        } else if (i == 4) {
-            synchronized (ArraySet.class) {
-                try {
-                    Object[] objArr2 = sBaseCache;
-                    if (objArr2 != null) {
-                        this.mArray = objArr2;
-                        sBaseCache = (Object[]) objArr2[0];
-                        this.mHashes = (int[]) objArr2[1];
-                        objArr2[1] = null;
-                        objArr2[0] = null;
-                        sBaseCacheSize--;
-                        return;
-                    }
-                } finally {
-                }
-            }
-        }
-        this.mHashes = new int[i];
-        this.mArray = new Object[i];
-    }
-
-    private static void freeArrays(int[] iArr, Object[] objArr, int i) {
-        if (iArr.length == 8) {
-            synchronized (ArraySet.class) {
-                try {
-                    if (sTwiceBaseCacheSize < 10) {
-                        objArr[0] = sTwiceBaseCache;
-                        objArr[1] = iArr;
-                        for (int i2 = i - 1; i2 >= 2; i2--) {
-                            objArr[i2] = null;
-                        }
-                        sTwiceBaseCache = objArr;
-                        sTwiceBaseCacheSize++;
-                    }
-                } finally {
-                }
-            }
-            return;
-        }
-        if (iArr.length == 4) {
-            synchronized (ArraySet.class) {
-                try {
-                    if (sBaseCacheSize < 10) {
-                        objArr[0] = sBaseCache;
-                        objArr[1] = iArr;
-                        for (int i3 = i - 1; i3 >= 2; i3--) {
-                            objArr[i3] = null;
-                        }
-                        sBaseCache = objArr;
-                        sBaseCacheSize++;
-                    }
-                } finally {
-                }
-            }
-        }
-    }
+    private int _size;
+    private Object[] array;
+    private int[] hashes;
 
     public ArraySet() {
-        this(0);
+        this(0, 1, null);
     }
 
     public ArraySet(int i) {
-        if (i == 0) {
-            this.mHashes = INT;
-            this.mArray = OBJECT;
-        } else {
-            allocArrays(i);
+        this.hashes = ContainerHelpersKt.EMPTY_INTS;
+        this.array = ContainerHelpersKt.EMPTY_OBJECTS;
+        if (i > 0) {
+            ArraySetKt.allocArrays(this, i);
         }
-        this.mSize = 0;
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final /* bridge */ int size() {
+        return getSize();
+    }
+
+    public /* synthetic */ ArraySet(int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i2 & 1) != 0 ? 0 : i);
+    }
+
+    public final int[] getHashes$collection() {
+        return this.hashes;
+    }
+
+    public final void setHashes$collection(int[] iArr) {
+        Intrinsics.checkNotNullParameter(iArr, "<set-?>");
+        this.hashes = iArr;
+    }
+
+    public final Object[] getArray$collection() {
+        return this.array;
+    }
+
+    public final void setArray$collection(Object[] objArr) {
+        Intrinsics.checkNotNullParameter(objArr, "<set-?>");
+        this.array = objArr;
+    }
+
+    public final int get_size$collection() {
+        return this._size;
+    }
+
+    public final void set_size$collection(int i) {
+        this._size = i;
+    }
+
+    public int getSize() {
+        return this._size;
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final Object[] toArray() {
+        return ArraysKt.copyOfRange(this.array, 0, this._size);
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final Object[] toArray(Object[] array) {
+        Intrinsics.checkNotNullParameter(array, "array");
+        Object[] result = ArraySetJvmUtil.resizeForToArray(array, this._size);
+        ArraysKt.copyInto(this.array, result, 0, 0, this._size);
+        Intrinsics.checkNotNullExpressionValue(result, "result");
+        return result;
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, java.util.Set
+    public Iterator iterator() {
+        return new ElementIterator();
+    }
+
+    private final class ElementIterator extends IndexBasedArrayIterator {
+        public ElementIterator() {
+            super(ArraySet.this.get_size$collection());
+        }
+
+        @Override // androidx.collection.IndexBasedArrayIterator
+        protected Object elementAt(int i) {
+            return ArraySet.this.valueAt(i);
+        }
+
+        @Override // androidx.collection.IndexBasedArrayIterator
+        protected void removeAt(int i) {
+            ArraySet.this.removeAt(i);
+        }
     }
 
     @Override // java.util.Collection, java.util.Set
     public void clear() {
-        int i = this.mSize;
-        if (i != 0) {
-            freeArrays(this.mHashes, this.mArray, i);
-            this.mHashes = INT;
-            this.mArray = OBJECT;
-            this.mSize = 0;
+        if (get_size$collection() != 0) {
+            setHashes$collection(ContainerHelpersKt.EMPTY_INTS);
+            setArray$collection(ContainerHelpersKt.EMPTY_OBJECTS);
+            set_size$collection(0);
+        }
+        if (get_size$collection() != 0) {
+            throw new ConcurrentModificationException();
         }
     }
 
-    public void ensureCapacity(int i) {
-        int[] iArr = this.mHashes;
-        if (iArr.length < i) {
-            Object[] objArr = this.mArray;
-            allocArrays(i);
-            int i2 = this.mSize;
-            if (i2 > 0) {
-                System.arraycopy(iArr, 0, this.mHashes, 0, i2);
-                System.arraycopy(objArr, 0, this.mArray, 0, this.mSize);
+    public final void ensureCapacity(int i) {
+        int i2 = get_size$collection();
+        if (getHashes$collection().length < i) {
+            int[] hashes$collection = getHashes$collection();
+            Object[] array$collection = getArray$collection();
+            ArraySetKt.allocArrays(this, i);
+            if (get_size$collection() > 0) {
+                ArraysKt.copyInto$default(hashes$collection, getHashes$collection(), 0, 0, get_size$collection(), 6, (Object) null);
+                ArraysKt.copyInto$default(array$collection, getArray$collection(), 0, 0, get_size$collection(), 6, (Object) null);
             }
-            freeArrays(iArr, objArr, this.mSize);
+        }
+        if (get_size$collection() != i2) {
+            throw new ConcurrentModificationException();
         }
     }
 
@@ -185,64 +135,65 @@ public final class ArraySet implements Collection, Set {
         return indexOf(obj) >= 0;
     }
 
-    public int indexOf(Object obj) {
-        return obj == null ? indexOfNull() : indexOf(obj, obj.hashCode());
+    public final int indexOf(Object obj) {
+        return obj == null ? ArraySetKt.indexOfNull(this) : ArraySetKt.indexOf(this, obj, obj.hashCode());
     }
 
-    public Object valueAt(int i) {
-        return this.mArray[i];
+    public final Object valueAt(int i) {
+        return getArray$collection()[i];
     }
 
     @Override // java.util.Collection, java.util.Set
     public boolean isEmpty() {
-        return this.mSize <= 0;
+        return get_size$collection() <= 0;
     }
 
     @Override // java.util.Collection, java.util.Set
     public boolean add(Object obj) {
         int i;
         int indexOf;
+        int i2 = get_size$collection();
         if (obj == null) {
-            indexOf = indexOfNull();
+            indexOf = ArraySetKt.indexOfNull(this);
             i = 0;
         } else {
             int hashCode = obj.hashCode();
             i = hashCode;
-            indexOf = indexOf(obj, hashCode);
+            indexOf = ArraySetKt.indexOf(this, obj, hashCode);
         }
         if (indexOf >= 0) {
             return false;
         }
-        int i2 = ~indexOf;
-        int i3 = this.mSize;
-        int[] iArr = this.mHashes;
-        if (i3 >= iArr.length) {
+        int i3 = ~indexOf;
+        if (i2 >= getHashes$collection().length) {
             int i4 = 8;
-            if (i3 >= 8) {
-                i4 = (i3 >> 1) + i3;
-            } else if (i3 < 4) {
+            if (i2 >= 8) {
+                i4 = (i2 >> 1) + i2;
+            } else if (i2 < 4) {
                 i4 = 4;
             }
-            Object[] objArr = this.mArray;
-            allocArrays(i4);
-            int[] iArr2 = this.mHashes;
-            if (iArr2.length > 0) {
-                System.arraycopy(iArr, 0, iArr2, 0, iArr.length);
-                System.arraycopy(objArr, 0, this.mArray, 0, objArr.length);
+            int[] hashes$collection = getHashes$collection();
+            Object[] array$collection = getArray$collection();
+            ArraySetKt.allocArrays(this, i4);
+            if (i2 != get_size$collection()) {
+                throw new ConcurrentModificationException();
             }
-            freeArrays(iArr, objArr, this.mSize);
+            if (!(getHashes$collection().length == 0)) {
+                ArraysKt.copyInto$default(hashes$collection, getHashes$collection(), 0, 0, hashes$collection.length, 6, (Object) null);
+                ArraysKt.copyInto$default(array$collection, getArray$collection(), 0, 0, array$collection.length, 6, (Object) null);
+            }
         }
-        int i5 = this.mSize;
-        if (i2 < i5) {
-            int[] iArr3 = this.mHashes;
-            int i6 = i2 + 1;
-            System.arraycopy(iArr3, i2, iArr3, i6, i5 - i2);
-            Object[] objArr2 = this.mArray;
-            System.arraycopy(objArr2, i2, objArr2, i6, this.mSize - i2);
+        if (i3 < i2) {
+            int i5 = i3 + 1;
+            ArraysKt.copyInto(getHashes$collection(), getHashes$collection(), i5, i3, i2);
+            ArraysKt.copyInto(getArray$collection(), getArray$collection(), i5, i3, i2);
         }
-        this.mHashes[i2] = i;
-        this.mArray[i2] = obj;
-        this.mSize++;
+        if (i2 != get_size$collection() || i3 >= getHashes$collection().length) {
+            throw new ConcurrentModificationException();
+        }
+        getHashes$collection()[i3] = i;
+        getArray$collection()[i3] = obj;
+        set_size$collection(get_size$collection() + 1);
         return true;
     }
 
@@ -256,70 +207,41 @@ public final class ArraySet implements Collection, Set {
         return true;
     }
 
-    public Object removeAt(int i) {
-        Object[] objArr = this.mArray;
-        Object obj = objArr[i];
-        int i2 = this.mSize;
+    public final Object removeAt(int i) {
+        int i2 = get_size$collection();
+        Object obj = getArray$collection()[i];
         if (i2 <= 1) {
-            freeArrays(this.mHashes, objArr, i2);
-            this.mHashes = INT;
-            this.mArray = OBJECT;
-            this.mSize = 0;
+            clear();
         } else {
-            int[] iArr = this.mHashes;
-            if (iArr.length > 8 && i2 < iArr.length / 3) {
-                allocArrays(i2 > 8 ? i2 + (i2 >> 1) : 8);
-                this.mSize--;
+            int i3 = i2 - 1;
+            if (getHashes$collection().length > 8 && get_size$collection() < getHashes$collection().length / 3) {
+                int i4 = get_size$collection() > 8 ? get_size$collection() + (get_size$collection() >> 1) : 8;
+                int[] hashes$collection = getHashes$collection();
+                Object[] array$collection = getArray$collection();
+                ArraySetKt.allocArrays(this, i4);
                 if (i > 0) {
-                    System.arraycopy(iArr, 0, this.mHashes, 0, i);
-                    System.arraycopy(objArr, 0, this.mArray, 0, i);
+                    ArraysKt.copyInto$default(hashes$collection, getHashes$collection(), 0, 0, i, 6, (Object) null);
+                    ArraysKt.copyInto$default(array$collection, getArray$collection(), 0, 0, i, 6, (Object) null);
                 }
-                int i3 = this.mSize;
                 if (i < i3) {
-                    int i4 = i + 1;
-                    System.arraycopy(iArr, i4, this.mHashes, i, i3 - i);
-                    System.arraycopy(objArr, i4, this.mArray, i, this.mSize - i);
+                    int i5 = i + 1;
+                    ArraysKt.copyInto(hashes$collection, getHashes$collection(), i, i5, i2);
+                    ArraysKt.copyInto(array$collection, getArray$collection(), i, i5, i2);
                 }
             } else {
-                int i5 = i2 - 1;
-                this.mSize = i5;
-                if (i < i5) {
+                if (i < i3) {
                     int i6 = i + 1;
-                    System.arraycopy(iArr, i6, iArr, i, i5 - i);
-                    Object[] objArr2 = this.mArray;
-                    System.arraycopy(objArr2, i6, objArr2, i, this.mSize - i);
+                    ArraysKt.copyInto(getHashes$collection(), getHashes$collection(), i, i6, i2);
+                    ArraysKt.copyInto(getArray$collection(), getArray$collection(), i, i6, i2);
                 }
-                this.mArray[this.mSize] = null;
+                getArray$collection()[i3] = null;
             }
+            if (i2 != get_size$collection()) {
+                throw new ConcurrentModificationException();
+            }
+            set_size$collection(i3);
         }
         return obj;
-    }
-
-    @Override // java.util.Collection, java.util.Set
-    public int size() {
-        return this.mSize;
-    }
-
-    @Override // java.util.Collection, java.util.Set
-    public Object[] toArray() {
-        int i = this.mSize;
-        Object[] objArr = new Object[i];
-        System.arraycopy(this.mArray, 0, objArr, 0, i);
-        return objArr;
-    }
-
-    @Override // java.util.Collection, java.util.Set
-    public Object[] toArray(Object[] objArr) {
-        if (objArr.length < this.mSize) {
-            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), this.mSize);
-        }
-        System.arraycopy(this.mArray, 0, objArr, 0, this.mSize);
-        int length = objArr.length;
-        int i = this.mSize;
-        if (length > i) {
-            objArr[i] = null;
-        }
-        return objArr;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -327,31 +249,27 @@ public final class ArraySet implements Collection, Set {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof Set) {
-            Set set = (Set) obj;
-            if (size() != set.size()) {
-                return false;
-            }
-            for (int i = 0; i < this.mSize; i++) {
-                try {
-                    if (!set.contains(valueAt(i))) {
-                        return false;
+        if ((obj instanceof Set) && size() == ((Set) obj).size()) {
+            try {
+                int i = get_size$collection();
+                for (int i2 = 0; i2 < i; i2++) {
+                    if (((Set) obj).contains(valueAt(i2))) {
                     }
-                } catch (ClassCastException | NullPointerException unused) {
                 }
+                return true;
+            } catch (ClassCastException | NullPointerException unused) {
             }
-            return true;
         }
         return false;
     }
 
     @Override // java.util.Collection, java.util.Set
     public int hashCode() {
-        int[] iArr = this.mHashes;
-        int i = this.mSize;
+        int[] hashes$collection = getHashes$collection();
+        int i = get_size$collection();
         int i2 = 0;
         for (int i3 = 0; i3 < i; i3++) {
-            i2 += iArr[i3];
+            i2 += hashes$collection[i3];
         }
         return i2;
     }
@@ -360,13 +278,14 @@ public final class ArraySet implements Collection, Set {
         if (isEmpty()) {
             return "{}";
         }
-        StringBuilder sb = new StringBuilder(this.mSize * 14);
+        StringBuilder sb = new StringBuilder(get_size$collection() * 14);
         sb.append('{');
-        for (int i = 0; i < this.mSize; i++) {
-            if (i > 0) {
+        int i = get_size$collection();
+        for (int i2 = 0; i2 < i; i2++) {
+            if (i2 > 0) {
                 sb.append(", ");
             }
-            Object valueAt = valueAt(i);
+            Object valueAt = valueAt(i2);
             if (valueAt != this) {
                 sb.append(valueAt);
             } else {
@@ -374,69 +293,15 @@ public final class ArraySet implements Collection, Set {
             }
         }
         sb.append('}');
-        return sb.toString();
-    }
-
-    private MapCollections getCollection() {
-        if (this.mCollections == null) {
-            this.mCollections = new MapCollections() { // from class: androidx.collection.ArraySet.1
-                @Override // androidx.collection.MapCollections
-                protected int colGetSize() {
-                    return ArraySet.this.mSize;
-                }
-
-                @Override // androidx.collection.MapCollections
-                protected Object colGetEntry(int i, int i2) {
-                    return ArraySet.this.mArray[i];
-                }
-
-                @Override // androidx.collection.MapCollections
-                protected int colIndexOfKey(Object obj) {
-                    return ArraySet.this.indexOf(obj);
-                }
-
-                @Override // androidx.collection.MapCollections
-                protected int colIndexOfValue(Object obj) {
-                    return ArraySet.this.indexOf(obj);
-                }
-
-                @Override // androidx.collection.MapCollections
-                protected Map colGetMap() {
-                    throw new UnsupportedOperationException("not a map");
-                }
-
-                @Override // androidx.collection.MapCollections
-                protected void colPut(Object obj, Object obj2) {
-                    ArraySet.this.add(obj);
-                }
-
-                @Override // androidx.collection.MapCollections
-                protected Object colSetValue(int i, Object obj) {
-                    throw new UnsupportedOperationException("not a map");
-                }
-
-                @Override // androidx.collection.MapCollections
-                protected void colRemoveAt(int i) {
-                    ArraySet.this.removeAt(i);
-                }
-
-                @Override // androidx.collection.MapCollections
-                protected void colClear() {
-                    ArraySet.this.clear();
-                }
-            };
-        }
-        return this.mCollections;
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable, java.util.Set
-    public Iterator iterator() {
-        return getCollection().getKeySet().iterator();
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder(capacity).…builderAction).toString()");
+        return sb2;
     }
 
     @Override // java.util.Collection, java.util.Set
-    public boolean containsAll(Collection collection) {
-        Iterator it = collection.iterator();
+    public boolean containsAll(Collection elements) {
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        Iterator it = elements.iterator();
         while (it.hasNext()) {
             if (!contains(it.next())) {
                 return false;
@@ -446,9 +311,10 @@ public final class ArraySet implements Collection, Set {
     }
 
     @Override // java.util.Collection, java.util.Set
-    public boolean addAll(Collection collection) {
-        ensureCapacity(this.mSize + collection.size());
-        Iterator it = collection.iterator();
+    public boolean addAll(Collection elements) {
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        ensureCapacity(get_size$collection() + elements.size());
+        Iterator it = elements.iterator();
         boolean z = false;
         while (it.hasNext()) {
             z |= add(it.next());
@@ -457,8 +323,9 @@ public final class ArraySet implements Collection, Set {
     }
 
     @Override // java.util.Collection, java.util.Set
-    public boolean removeAll(Collection collection) {
-        Iterator it = collection.iterator();
+    public boolean removeAll(Collection elements) {
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        Iterator it = elements.iterator();
         boolean z = false;
         while (it.hasNext()) {
             z |= remove(it.next());
@@ -467,10 +334,11 @@ public final class ArraySet implements Collection, Set {
     }
 
     @Override // java.util.Collection, java.util.Set
-    public boolean retainAll(Collection collection) {
+    public boolean retainAll(Collection elements) {
+        Intrinsics.checkNotNullParameter(elements, "elements");
         boolean z = false;
-        for (int i = this.mSize - 1; i >= 0; i--) {
-            if (!collection.contains(this.mArray[i])) {
+        for (int i = get_size$collection() - 1; -1 < i; i--) {
+            if (!CollectionsKt.contains(elements, getArray$collection()[i])) {
                 removeAt(i);
                 z = true;
             }

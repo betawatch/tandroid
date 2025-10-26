@@ -22,7 +22,7 @@ public final class BitSource {
             int i4 = 8 - i2;
             int min = Math.min(i, i4);
             int i5 = i4 - min;
-            int i6 = (NotificationCenter.didApplyNewTheme >> (8 - min)) << i5;
+            int i6 = (NotificationCenter.didReplacedPhotoInMemCache >> (8 - min)) << i5;
             byte[] bArr = this.bytes;
             int i7 = this.byteOffset;
             int i8 = (i6 & bArr[i7]) >> i5;
@@ -50,7 +50,7 @@ public final class BitSource {
             return i3;
         }
         int i12 = 8 - i;
-        int i13 = (i3 << i) | ((((NotificationCenter.didApplyNewTheme >> i12) << i12) & this.bytes[this.byteOffset]) >> i12);
+        int i13 = (i3 << i) | ((((NotificationCenter.didReplacedPhotoInMemCache >> i12) << i12) & this.bytes[this.byteOffset]) >> i12);
         this.bitOffset += i;
         return i13;
     }

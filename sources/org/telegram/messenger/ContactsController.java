@@ -48,12 +48,13 @@ public class ContactsController extends BaseController {
     public static final int PRIVACY_RULES_TYPE_BIO = 9;
     public static final int PRIVACY_RULES_TYPE_BIRTHDAY = 11;
     public static final int PRIVACY_RULES_TYPE_CALLS = 2;
-    public static final int PRIVACY_RULES_TYPE_COUNT = 14;
+    public static final int PRIVACY_RULES_TYPE_COUNT = 15;
     public static final int PRIVACY_RULES_TYPE_FORWARDS = 5;
     public static final int PRIVACY_RULES_TYPE_GIFTS = 12;
     public static final int PRIVACY_RULES_TYPE_INVITE = 1;
     public static final int PRIVACY_RULES_TYPE_LASTSEEN = 0;
     public static final int PRIVACY_RULES_TYPE_MESSAGES = 10;
+    public static final int PRIVACY_RULES_TYPE_MUSIC = 14;
     public static final int PRIVACY_RULES_TYPE_NO_PAID_MESSAGES = 13;
     public static final int PRIVACY_RULES_TYPE_P2P = 3;
     public static final int PRIVACY_RULES_TYPE_PHONE = 6;
@@ -92,6 +93,7 @@ public class ContactsController extends BaseController {
     private int loadingGlobalSettings;
     private int[] loadingPrivacyInfo;
     private boolean migratingContacts;
+    private ArrayList<TLRPC.PrivacyRule> musicPrivacyRules;
     private ArrayList<TLRPC.PrivacyRule> noPaidMessagesPrivacyRules;
     private final Object observerLock;
     private ArrayList<TLRPC.PrivacyRule> p2pPrivacyRules;
@@ -263,7 +265,7 @@ public class ContactsController extends BaseController {
         this.lastContactsVersions = "";
         this.delayedContactsUpdate = new ArrayList<>();
         this.sectionsToReplace = new HashMap<>();
-        this.loadingPrivacyInfo = new int[14];
+        this.loadingPrivacyInfo = new int[15];
         this.projectionPhones = new String[]{"lookup", "data1", "data2", "data3", "display_name", "account_type"};
         this.projectionNames = new String[]{"lookup", "data2", "data3", "data5"};
         this.contactsBook = new HashMap<>();
@@ -356,6 +358,7 @@ public class ContactsController extends BaseController {
         this.p2pPrivacyRules = null;
         this.profilePhotoPrivacyRules = null;
         this.bioPrivacyRules = null;
+        this.musicPrivacyRules = null;
         this.birthdayPrivacyRules = null;
         this.giftsPrivacyRules = null;
         this.forwardsPrivacyRules = null;
@@ -1388,8 +1391,8 @@ public class ContactsController extends BaseController {
      */
     /* JADX WARN: Removed duplicated region for block: B:102:0x027d  */
     /* JADX WARN: Removed duplicated region for block: B:190:0x04e0  */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x050d  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x051f  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x050c  */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x051e  */
     /* JADX WARN: Removed duplicated region for block: B:74:0x01f5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3548,19 +3551,20 @@ public class ContactsController extends BaseController {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x003c  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0044  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004c  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0064  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x008c  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00af A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0065  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x009d  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00b8 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3704,6 +3708,15 @@ public class ContactsController extends BaseController {
                             }
                         });
                         break;
+                    case 14:
+                        getprivacy.key = new TLRPC.TL_inputPrivacyKeySavedMusic();
+                        getConnectionsManager().sendRequest(getprivacy, new RequestDelegate() { // from class: org.telegram.messenger.ContactsController$$ExternalSyntheticLambda59
+                            @Override // org.telegram.tgnet.RequestDelegate
+                            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                ContactsController.this.lambda$loadPrivacySettings$65(i, tLObject, tL_error);
+                            }
+                        });
+                        break;
                 }
             } else {
                 if (iArr[i] != 0) {
@@ -3795,6 +3808,9 @@ public class ContactsController extends BaseController {
                 case 13:
                     this.noPaidMessagesPrivacyRules = privacyrules.rules;
                     break;
+                case 14:
+                    this.musicPrivacyRules = privacyrules.rules;
+                    break;
             }
             this.loadingPrivacyInfo[i] = 2;
         } else {
@@ -3858,6 +3874,8 @@ public class ContactsController extends BaseController {
                 return this.giftsPrivacyRules;
             case 13:
                 return this.noPaidMessagesPrivacyRules;
+            case 14:
+                return this.musicPrivacyRules;
         }
     }
 
@@ -3901,6 +3919,9 @@ public class ContactsController extends BaseController {
                 break;
             case 13:
                 this.noPaidMessagesPrivacyRules = arrayList;
+                break;
+            case 14:
+                this.musicPrivacyRules = arrayList;
                 break;
         }
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.privacyRulesUpdated, new Object[0]);

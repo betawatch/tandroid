@@ -20,7 +20,10 @@ public class WindowInsetsCompat {
     private final Impl mImpl;
 
     static {
-        if (Build.VERSION.SDK_INT >= 30) {
+        int i = Build.VERSION.SDK_INT;
+        if (i >= 34) {
+            CONSUMED = Impl34.CONSUMED;
+        } else if (i >= 30) {
             CONSUMED = Impl30.CONSUMED;
         } else {
             CONSUMED = Impl.CONSUMED;
@@ -29,6 +32,10 @@ public class WindowInsetsCompat {
 
     private WindowInsetsCompat(WindowInsets windowInsets) {
         int i = Build.VERSION.SDK_INT;
+        if (i >= 34) {
+            this.mImpl = new Impl34(this, windowInsets);
+            return;
+        }
         if (i >= 30) {
             this.mImpl = new Impl30(this, windowInsets);
             return;
@@ -46,7 +53,9 @@ public class WindowInsetsCompat {
         if (windowInsetsCompat != null) {
             Impl impl = windowInsetsCompat.mImpl;
             int i = Build.VERSION.SDK_INT;
-            if (i >= 30 && (impl instanceof Impl30)) {
+            if (i >= 34 && (impl instanceof Impl34)) {
+                this.mImpl = new Impl34(this, (Impl34) impl);
+            } else if (i >= 30 && (impl instanceof Impl30)) {
                 this.mImpl = new Impl30(this, (Impl30) impl);
             } else if (i >= 29 && (impl instanceof Impl29)) {
                 this.mImpl = new Impl29(this, (Impl29) impl);
@@ -71,9 +80,10 @@ public class WindowInsetsCompat {
 
     public static WindowInsetsCompat toWindowInsetsCompat(WindowInsets windowInsets, View view) {
         WindowInsetsCompat windowInsetsCompat = new WindowInsetsCompat((WindowInsets) Preconditions.checkNotNull(windowInsets));
-        if (view != null && ViewCompat.isAttachedToWindow(view)) {
+        if (view != null && view.isAttachedToWindow()) {
             windowInsetsCompat.setRootWindowInsets(ViewCompat.getRootWindowInsets(view));
             windowInsetsCompat.copyRootViewBounds(view.getRootView());
+            windowInsetsCompat.setSystemUiVisibility(view.getWindowSystemUiVisibility());
         }
         return windowInsetsCompat;
     }
@@ -146,6 +156,10 @@ public class WindowInsetsCompat {
         return this.mImpl.getInsets(i);
     }
 
+    public boolean isVisible(int i) {
+        return this.mImpl.isVisible(i);
+    }
+
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -194,6 +208,10 @@ public class WindowInsetsCompat {
             return false;
         }
 
+        boolean isVisible(int i) {
+            return true;
+        }
+
         public void setOverriddenInsets(Insets[] insetsArr) {
         }
 
@@ -204,6 +222,9 @@ public class WindowInsetsCompat {
         }
 
         public void setStableInsets(Insets insets) {
+        }
+
+        void setSystemUiVisibility(int i) {
         }
 
         Impl(WindowInsetsCompat windowInsetsCompat) {
@@ -276,7 +297,12 @@ public class WindowInsetsCompat {
         final WindowInsets mPlatformInsets;
         Insets mRootViewVisibleInsets;
         private WindowInsetsCompat mRootWindowInsets;
+        int mSystemUiVisibility;
         private Insets mSystemWindowInsets;
+
+        static boolean systemBarVisibilityEquals(int i, int i2) {
+            return (i & 6) == (i2 & 6);
+        }
 
         Impl20(WindowInsetsCompat windowInsetsCompat, WindowInsets windowInsets) {
             super(windowInsetsCompat);
@@ -298,9 +324,19 @@ public class WindowInsetsCompat {
             return getInsets(i, false);
         }
 
+        @Override // androidx.core.view.WindowInsetsCompat.Impl
+        boolean isVisible(int i) {
+            for (int i2 = 1; i2 <= 512; i2 <<= 1) {
+                if ((i & i2) != 0 && !isTypeVisible(i2)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private Insets getInsets(int i, boolean z) {
             Insets insets = Insets.NONE;
-            for (int i2 = 1; i2 <= 256; i2 <<= 1) {
+            for (int i2 = 1; i2 <= 512; i2 <<= 1) {
                 if ((i & i2) != 0) {
                     insets = Insets.max(insets, getInsetsForType(i2, z));
                 }
@@ -316,6 +352,9 @@ public class WindowInsetsCompat {
                 if (z) {
                     return Insets.of(0, Math.max(getRootStableInsets().top, getSystemWindowInsets().top), 0, 0);
                 }
+                if ((this.mSystemUiVisibility & 4) != 0) {
+                    return Insets.NONE;
+                }
                 return Insets.of(0, getSystemWindowInsets().top, 0, 0);
             }
             if (i == 2) {
@@ -323,6 +362,9 @@ public class WindowInsetsCompat {
                     Insets rootStableInsets = getRootStableInsets();
                     Insets stableInsets2 = getStableInsets();
                     return Insets.of(Math.max(rootStableInsets.left, stableInsets2.left), 0, Math.max(rootStableInsets.right, stableInsets2.right), Math.max(rootStableInsets.bottom, stableInsets2.bottom));
+                }
+                if ((this.mSystemUiVisibility & 2) != 0) {
+                    return Insets.NONE;
                 }
                 Insets systemWindowInsets = getSystemWindowInsets();
                 WindowInsetsCompat windowInsetsCompat = this.mRootWindowInsets;
@@ -375,6 +417,18 @@ public class WindowInsetsCompat {
             return Insets.NONE;
         }
 
+        protected boolean isTypeVisible(int i) {
+            if (i != 1 && i != 2) {
+                if (i == 4) {
+                    return false;
+                }
+                if (i != 8 && i != 128) {
+                    return true;
+                }
+            }
+            return !getInsetsForType(i, false).equals(Insets.NONE);
+        }
+
         @Override // androidx.core.view.WindowInsetsCompat.Impl
         final Insets getSystemWindowInsets() {
             if (this.mSystemWindowInsets == null) {
@@ -395,6 +449,7 @@ public class WindowInsetsCompat {
         void copyWindowDataInto(WindowInsetsCompat windowInsetsCompat) {
             windowInsetsCompat.setRootWindowInsets(this.mRootWindowInsets);
             windowInsetsCompat.setRootViewData(this.mRootViewVisibleInsets);
+            windowInsetsCompat.setSystemUiVisibility(this.mSystemUiVisibility);
         }
 
         @Override // androidx.core.view.WindowInsetsCompat.Impl
@@ -422,6 +477,11 @@ public class WindowInsetsCompat {
                 visibleInsets = Insets.NONE;
             }
             setRootViewData(visibleInsets);
+        }
+
+        @Override // androidx.core.view.WindowInsetsCompat.Impl
+        void setSystemUiVisibility(int i) {
+            this.mSystemUiVisibility = i;
         }
 
         private Insets getVisibleInsets(View view) {
@@ -473,10 +533,11 @@ public class WindowInsetsCompat {
 
         @Override // androidx.core.view.WindowInsetsCompat.Impl
         public boolean equals(Object obj) {
-            if (super.equals(obj)) {
-                return Objects.equals(this.mRootViewVisibleInsets, ((Impl20) obj).mRootViewVisibleInsets);
+            if (!super.equals(obj)) {
+                return false;
             }
-            return false;
+            Impl20 impl20 = (Impl20) obj;
+            return Objects.equals(this.mRootViewVisibleInsets, impl20.mRootViewVisibleInsets) && systemBarVisibilityEquals(this.mSystemUiVisibility, impl20.mSystemUiVisibility);
         }
     }
 
@@ -555,7 +616,7 @@ public class WindowInsetsCompat {
                 return false;
             }
             Impl28 impl28 = (Impl28) obj;
-            return Objects.equals(this.mPlatformInsets, impl28.mPlatformInsets) && Objects.equals(this.mRootViewVisibleInsets, impl28.mRootViewVisibleInsets);
+            return Objects.equals(this.mPlatformInsets, impl28.mPlatformInsets) && Objects.equals(this.mRootViewVisibleInsets, impl28.mRootViewVisibleInsets) && Impl20.systemBarVisibilityEquals(this.mSystemUiVisibility, impl28.mSystemUiVisibility);
         }
 
         @Override // androidx.core.view.WindowInsetsCompat.Impl
@@ -660,6 +721,45 @@ public class WindowInsetsCompat {
             insets = this.mPlatformInsets.getInsets(TypeImpl30.toPlatformType(i));
             return Insets.toCompatInsets(insets);
         }
+
+        @Override // androidx.core.view.WindowInsetsCompat.Impl20, androidx.core.view.WindowInsetsCompat.Impl
+        public boolean isVisible(int i) {
+            boolean isVisible;
+            isVisible = this.mPlatformInsets.isVisible(TypeImpl30.toPlatformType(i));
+            return isVisible;
+        }
+    }
+
+    private static class Impl34 extends Impl30 {
+        static final WindowInsetsCompat CONSUMED;
+
+        static {
+            WindowInsets windowInsets;
+            windowInsets = WindowInsets.CONSUMED;
+            CONSUMED = WindowInsetsCompat.toWindowInsetsCompat(windowInsets);
+        }
+
+        Impl34(WindowInsetsCompat windowInsetsCompat, WindowInsets windowInsets) {
+            super(windowInsetsCompat, windowInsets);
+        }
+
+        Impl34(WindowInsetsCompat windowInsetsCompat, Impl34 impl34) {
+            super(windowInsetsCompat, impl34);
+        }
+
+        @Override // androidx.core.view.WindowInsetsCompat.Impl30, androidx.core.view.WindowInsetsCompat.Impl20, androidx.core.view.WindowInsetsCompat.Impl
+        public Insets getInsets(int i) {
+            android.graphics.Insets insets;
+            insets = this.mPlatformInsets.getInsets(TypeImpl34.toPlatformType(i));
+            return Insets.toCompatInsets(insets);
+        }
+
+        @Override // androidx.core.view.WindowInsetsCompat.Impl30, androidx.core.view.WindowInsetsCompat.Impl20, androidx.core.view.WindowInsetsCompat.Impl
+        public boolean isVisible(int i) {
+            boolean isVisible;
+            isVisible = this.mPlatformInsets.isVisible(TypeImpl34.toPlatformType(i));
+            return isVisible;
+        }
     }
 
     public static final class Builder {
@@ -667,6 +767,10 @@ public class WindowInsetsCompat {
 
         public Builder() {
             int i = Build.VERSION.SDK_INT;
+            if (i >= 34) {
+                this.mImpl = new BuilderImpl34();
+                return;
+            }
             if (i >= 30) {
                 this.mImpl = new BuilderImpl30();
             } else if (i >= 29) {
@@ -678,6 +782,10 @@ public class WindowInsetsCompat {
 
         public Builder(WindowInsetsCompat windowInsetsCompat) {
             int i = Build.VERSION.SDK_INT;
+            if (i >= 34) {
+                this.mImpl = new BuilderImpl34(windowInsetsCompat);
+                return;
+            }
             if (i >= 30) {
                 this.mImpl = new BuilderImpl30(windowInsetsCompat);
             } else if (i >= 29) {
@@ -689,6 +797,11 @@ public class WindowInsetsCompat {
 
         public Builder setSystemWindowInsets(Insets insets) {
             this.mImpl.setSystemWindowInsets(insets);
+            return this;
+        }
+
+        public Builder setInsets(int i, Insets insets) {
+            this.mImpl.setInsets(i, insets);
             return this;
         }
 
@@ -727,6 +840,17 @@ public class WindowInsetsCompat {
 
         BuilderImpl(WindowInsetsCompat windowInsetsCompat) {
             this.mInsets = windowInsetsCompat;
+        }
+
+        void setInsets(int i, Insets insets) {
+            if (this.mInsetsTypeMask == null) {
+                this.mInsetsTypeMask = new Insets[10];
+            }
+            for (int i2 = 1; i2 <= 512; i2 <<= 1) {
+                if ((i & i2) != 0) {
+                    this.mInsetsTypeMask[Type.indexOf(i2)] = insets;
+                }
+            }
         }
 
         protected final void applyInsetTypes() {
@@ -906,6 +1030,25 @@ public class WindowInsetsCompat {
         BuilderImpl30(WindowInsetsCompat windowInsetsCompat) {
             super(windowInsetsCompat);
         }
+
+        @Override // androidx.core.view.WindowInsetsCompat.BuilderImpl
+        void setInsets(int i, Insets insets) {
+            this.mPlatBuilder.setInsets(TypeImpl30.toPlatformType(i), insets.toPlatformInsets());
+        }
+    }
+
+    private static class BuilderImpl34 extends BuilderImpl30 {
+        BuilderImpl34() {
+        }
+
+        BuilderImpl34(WindowInsetsCompat windowInsetsCompat) {
+            super(windowInsetsCompat);
+        }
+
+        @Override // androidx.core.view.WindowInsetsCompat.BuilderImpl30, androidx.core.view.WindowInsetsCompat.BuilderImpl
+        void setInsets(int i, Insets insets) {
+            this.mPlatBuilder.setInsets(TypeImpl34.toPlatformType(i), insets.toPlatformInsets());
+        }
     }
 
     public static final class Type {
@@ -922,7 +1065,7 @@ public class WindowInsetsCompat {
         }
 
         public static int systemBars() {
-            return 7;
+            return 519;
         }
 
         static int indexOf(int i) {
@@ -953,6 +1096,9 @@ public class WindowInsetsCompat {
             if (i == 256) {
                 return 8;
             }
+            if (i == 512) {
+                return 9;
+            }
             throw new IllegalArgumentException("type needs to be >= FIRST and <= LAST, type=" + i);
         }
     }
@@ -961,7 +1107,7 @@ public class WindowInsetsCompat {
         static int toPlatformType(int i) {
             int statusBars;
             int i2 = 0;
-            for (int i3 = 1; i3 <= 256; i3 <<= 1) {
+            for (int i3 = 1; i3 <= 512; i3 <<= 1) {
                 if ((i & i3) != 0) {
                     if (i3 == 1) {
                         statusBars = WindowInsets.Type.statusBars();
@@ -987,6 +1133,38 @@ public class WindowInsetsCompat {
         }
     }
 
+    private static final class TypeImpl34 {
+        static int toPlatformType(int i) {
+            int statusBars;
+            int i2 = 0;
+            for (int i3 = 1; i3 <= 512; i3 <<= 1) {
+                if ((i & i3) != 0) {
+                    if (i3 == 1) {
+                        statusBars = WindowInsets.Type.statusBars();
+                    } else if (i3 == 2) {
+                        statusBars = WindowInsets.Type.navigationBars();
+                    } else if (i3 == 4) {
+                        statusBars = WindowInsets.Type.captionBar();
+                    } else if (i3 == 8) {
+                        statusBars = WindowInsets.Type.ime();
+                    } else if (i3 == 16) {
+                        statusBars = WindowInsets.Type.systemGestures();
+                    } else if (i3 == 32) {
+                        statusBars = WindowInsets.Type.mandatorySystemGestures();
+                    } else if (i3 == 64) {
+                        statusBars = WindowInsets.Type.tappableElement();
+                    } else if (i3 == 128) {
+                        statusBars = WindowInsets.Type.displayCutout();
+                    } else if (i3 == 512) {
+                        statusBars = WindowInsets.Type.systemOverlays();
+                    }
+                    i2 |= statusBars;
+                }
+            }
+            return i2;
+        }
+    }
+
     void setRootWindowInsets(WindowInsetsCompat windowInsetsCompat) {
         this.mImpl.setRootWindowInsets(windowInsetsCompat);
     }
@@ -997,6 +1175,10 @@ public class WindowInsetsCompat {
 
     void copyRootViewBounds(View view) {
         this.mImpl.copyRootViewBounds(view);
+    }
+
+    void setSystemUiVisibility(int i) {
+        this.mImpl.setSystemUiVisibility(i);
     }
 
     static class Api21ReflectionHolder {

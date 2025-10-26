@@ -73,7 +73,8 @@ public final class SavedStateViewModelFactory extends ViewModelProvider.OnRequer
         List list2;
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(modelClass, "modelClass");
-        if (this.lifecycle == null) {
+        Lifecycle lifecycle = this.lifecycle;
+        if (lifecycle == null) {
             throw new UnsupportedOperationException("SavedStateViewModelFactory constructed with empty constructor supports only calls to create(modelClass: Class<T>, extras: CreationExtras).");
         }
         boolean isAssignableFrom = AndroidViewModel.class.isAssignableFrom(modelClass);
@@ -87,16 +88,14 @@ public final class SavedStateViewModelFactory extends ViewModelProvider.OnRequer
         if (findMatchingConstructor == null) {
             return this.application != null ? this.factory.create(modelClass) : ViewModelProvider.NewInstanceFactory.Companion.getInstance().create(modelClass);
         }
-        SavedStateHandleController create = LegacySavedStateHandleController.create(this.savedStateRegistry, this.lifecycle, key, this.defaultArgs);
-        if (isAssignableFrom && (application = this.application) != null) {
-            Intrinsics.checkNotNull(application);
-            SavedStateHandle handle = create.getHandle();
-            Intrinsics.checkNotNullExpressionValue(handle, "controller.handle");
-            newInstance = SavedStateViewModelFactoryKt.newInstance(modelClass, findMatchingConstructor, application, handle);
+        SavedStateRegistry savedStateRegistry = this.savedStateRegistry;
+        Intrinsics.checkNotNull(savedStateRegistry);
+        SavedStateHandleController create = LegacySavedStateHandleController.create(savedStateRegistry, lifecycle, key, this.defaultArgs);
+        if (!isAssignableFrom || (application = this.application) == null) {
+            newInstance = SavedStateViewModelFactoryKt.newInstance(modelClass, findMatchingConstructor, create.getHandle());
         } else {
-            SavedStateHandle handle2 = create.getHandle();
-            Intrinsics.checkNotNullExpressionValue(handle2, "controller.handle");
-            newInstance = SavedStateViewModelFactoryKt.newInstance(modelClass, findMatchingConstructor, handle2);
+            Intrinsics.checkNotNull(application);
+            newInstance = SavedStateViewModelFactoryKt.newInstance(modelClass, findMatchingConstructor, application, create.getHandle());
         }
         newInstance.setTagIfAbsent("androidx.lifecycle.savedstate.vm.tag", create);
         return newInstance;
@@ -115,9 +114,12 @@ public final class SavedStateViewModelFactory extends ViewModelProvider.OnRequer
     @Override // androidx.lifecycle.ViewModelProvider.OnRequeryFactory
     public void onRequery(ViewModel viewModel) {
         Intrinsics.checkNotNullParameter(viewModel, "viewModel");
-        Lifecycle lifecycle = this.lifecycle;
-        if (lifecycle != null) {
-            LegacySavedStateHandleController.attachHandleIfNeeded(viewModel, this.savedStateRegistry, lifecycle);
+        if (this.lifecycle != null) {
+            SavedStateRegistry savedStateRegistry = this.savedStateRegistry;
+            Intrinsics.checkNotNull(savedStateRegistry);
+            Lifecycle lifecycle = this.lifecycle;
+            Intrinsics.checkNotNull(lifecycle);
+            LegacySavedStateHandleController.attachHandleIfNeeded(viewModel, savedStateRegistry, lifecycle);
         }
     }
 }

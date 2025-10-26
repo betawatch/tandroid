@@ -35,7 +35,7 @@ public class CellFlickerDrawable {
     int size;
 
     public CellFlickerDrawable() {
-        this(64, NotificationCenter.smsJobStatusUpdate, NotificationCenter.albumsDidLoad);
+        this(64, NotificationCenter.storyAlbumsCollectionsUpdate, NotificationCenter.albumsDidLoad);
     }
 
     public CellFlickerDrawable(int i, int i2) {
@@ -63,8 +63,12 @@ public class CellFlickerDrawable {
         this.paintOutline.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
 
+    public void setStrokeWidth(float f) {
+        this.paintOutline.setStrokeWidth(f);
+    }
+
     public void setColors(int i) {
-        setColors(i, 64, NotificationCenter.smsJobStatusUpdate);
+        setColors(i, 64, NotificationCenter.storyAlbumsCollectionsUpdate);
     }
 
     public void setColors(int i, int i2, int i3) {

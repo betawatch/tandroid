@@ -5,8 +5,6 @@ import android.content.res.Resources;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.DrawableContainer;
-import android.graphics.drawable.InsetDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -25,11 +23,11 @@ public abstract class DrawableCompat {
     }
 
     public static void setAutoMirrored(Drawable drawable, boolean z) {
-        Api19Impl.setAutoMirrored(drawable, z);
+        drawable.setAutoMirrored(z);
     }
 
     public static boolean isAutoMirrored(Drawable drawable) {
-        return Api19Impl.isAutoMirrored(drawable);
+        return drawable.isAutoMirrored();
     }
 
     public static void setHotspot(Drawable drawable, float f, float f2) {
@@ -53,7 +51,7 @@ public abstract class DrawableCompat {
     }
 
     public static int getAlpha(Drawable drawable) {
-        return Api19Impl.getAlpha(drawable);
+        return drawable.getAlpha();
     }
 
     public static void applyTheme(Drawable drawable, Resources.Theme theme) {
@@ -127,28 +125,6 @@ public abstract class DrawableCompat {
             Log.i("DrawableCompat", "Failed to invoke getLayoutDirection() via reflection", e2);
             sGetLayoutDirectionMethod = null;
             return 0;
-        }
-    }
-
-    static class Api19Impl {
-        static void setAutoMirrored(Drawable drawable, boolean z) {
-            drawable.setAutoMirrored(z);
-        }
-
-        static boolean isAutoMirrored(Drawable drawable) {
-            return drawable.isAutoMirrored();
-        }
-
-        static int getAlpha(Drawable drawable) {
-            return drawable.getAlpha();
-        }
-
-        static Drawable getChild(DrawableContainer.DrawableContainerState drawableContainerState, int i) {
-            return drawableContainerState.getChild(i);
-        }
-
-        static Drawable getDrawable(InsetDrawable insetDrawable) {
-            return insetDrawable.getDrawable();
         }
     }
 

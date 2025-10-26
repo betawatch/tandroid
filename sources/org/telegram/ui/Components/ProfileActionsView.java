@@ -759,7 +759,7 @@ public class ProfileActionsView extends View {
             case 3:
                 find = new Action(this, R.drawable.gift, R.string.ProfileActionsGift);
                 find.supportsLoading = true;
-                find.stopDelay = NotificationCenter.userIsPremiumBlockedUpadted;
+                find.stopDelay = NotificationCenter.channelRecommendationsLoaded;
                 break;
             case 4:
                 find = new Action(this, R.drawable.action_share, R.string.ProfileActionsShare);
@@ -778,7 +778,7 @@ public class ProfileActionsView extends View {
             case 7:
                 find = new Action(this, R.drawable.join, R.string.ProfileActionsJoin);
                 find.supportsLoading = true;
-                find.callDelay = NotificationCenter.billingProductDetailsUpdated;
+                find.callDelay = NotificationCenter.premiumPromoUpdated;
                 break;
             case 8:
                 find = new Action(this, R.drawable.report, R.string.ProfileActionsReport);
@@ -789,7 +789,7 @@ public class ProfileActionsView extends View {
                 find = new Action(this, R.drawable.leave, R.string.ProfileActionsLeave);
                 find.supportsLoading = true;
                 find.supportsAnimate = R.raw.profile_leave;
-                find.stopDelay = NotificationCenter.billingProductDetailsUpdated;
+                find.stopDelay = NotificationCenter.premiumPromoUpdated;
                 break;
             case 10:
                 find = new Action(this, R.drawable.live_stream, R.string.ProfileActionsVoiceChat);
@@ -809,7 +809,7 @@ public class ProfileActionsView extends View {
             case 13:
                 find = new Action(this, R.drawable.block, R.string.ProfileActionsStop);
                 find.supportsLoading = true;
-                find.stopDelay = NotificationCenter.billingProductDetailsUpdated;
+                find.stopDelay = NotificationCenter.premiumPromoUpdated;
                 break;
         }
         if (find != null) {

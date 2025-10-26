@@ -1185,7 +1185,7 @@ public class AnimatedEmojiDrawable extends Drawable {
     }
 
     public static class WrapSizeDrawable extends Drawable {
-        private int alpha = NotificationCenter.didApplyNewTheme;
+        private int alpha = NotificationCenter.didReplacedPhotoInMemCache;
         private Drawable drawable;
         int height;
         int width;
@@ -1299,7 +1299,7 @@ public class AnimatedEmojiDrawable extends Drawable {
             AnimatedFloat animatedFloat2 = new AnimatedFloat((View) null, 300L, cubicBezierInterpolator);
             this.particlesAlpha = animatedFloat2;
             this.drawables = new Drawable[2];
-            this.alpha = NotificationCenter.didApplyNewTheme;
+            this.alpha = NotificationCenter.didReplacedPhotoInMemCache;
             this.bounds = new android.graphics.Rect();
             this.parentView = view;
             animatedFloat.setParent(view);

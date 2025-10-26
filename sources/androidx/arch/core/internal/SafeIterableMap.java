@@ -7,12 +7,12 @@ import java.util.WeakHashMap;
 /* loaded from: classes.dex */
 public class SafeIterableMap implements Iterable {
     private Entry mEnd;
-    private WeakHashMap mIterators = new WeakHashMap();
+    private final WeakHashMap mIterators = new WeakHashMap();
     private int mSize = 0;
     Entry mStart;
 
-    interface SupportRemove {
-        void supportRemove(Entry entry);
+    public static abstract class SupportRemove {
+        abstract void supportRemove(Entry entry);
     }
 
     protected Entry get(Object obj) {
@@ -32,7 +32,7 @@ public class SafeIterableMap implements Iterable {
         return null;
     }
 
-    protected Entry put(Object obj, Object obj2) {
+    Entry put(Object obj, Object obj2) {
         Entry entry = new Entry(obj, obj2);
         this.mSize++;
         Entry entry2 = this.mEnd;
@@ -153,7 +153,7 @@ public class SafeIterableMap implements Iterable {
         return sb.toString();
     }
 
-    private static abstract class ListIterator implements Iterator, SupportRemove {
+    private static abstract class ListIterator extends SupportRemove implements Iterator {
         Entry mExpectedEnd;
         Entry mNext;
 
@@ -235,8 +235,7 @@ public class SafeIterableMap implements Iterable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public class IteratorWithAdditions implements Iterator, SupportRemove {
+    public class IteratorWithAdditions extends SupportRemove implements Iterator {
         private boolean mBeforeStart = true;
         private Entry mCurrent;
 
@@ -244,7 +243,7 @@ public class SafeIterableMap implements Iterable {
         }
 
         @Override // androidx.arch.core.internal.SafeIterableMap.SupportRemove
-        public void supportRemove(Entry entry) {
+        void supportRemove(Entry entry) {
             Entry entry2 = this.mCurrent;
             if (entry == entry2) {
                 Entry entry3 = entry2.mPrevious;

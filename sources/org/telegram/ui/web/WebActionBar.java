@@ -365,7 +365,7 @@ public abstract class WebActionBar extends FrameLayout {
             makeOptions.setDimAlpha(0);
             makeOptions.setColors(this.menuTextColor, this.menuIconColor);
             makeOptions.translate(0.0f, -AndroidUtilities.dp(52.0f));
-            makeOptions.setMinWidth(NotificationCenter.userIsPremiumBlockedUpadted);
+            makeOptions.setMinWidth(NotificationCenter.channelRecommendationsLoaded);
             makeOptions.setSelectorColor(Theme.blendOver(this.menuBackgroundColor, Theme.multAlpha(this.menuTextColor, 0.1f)));
             if (AndroidUtilities.computePerceivedBrightness(this.menuBackgroundColor) > 0.721f) {
                 makeOptions.setBackgroundColor(-1);

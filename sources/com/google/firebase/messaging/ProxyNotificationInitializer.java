@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.Binder;
 import android.os.Bundle;
 import android.util.Log;
+import androidx.profileinstaller.ProfileInstallReceiver$$ExternalSyntheticLambda0;
 import com.google.android.gms.common.util.PlatformVersion;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -73,7 +74,7 @@ abstract class ProxyNotificationInitializer {
         if (ProxyNotificationPreferences.isProxyNotificationInitialized(context)) {
             return;
         }
-        setEnableProxyNotification(new EnhancedIntentService$$ExternalSyntheticLambda0(), context, shouldEnableProxyNotification(context));
+        setEnableProxyNotification(new ProfileInstallReceiver$$ExternalSyntheticLambda0(), context, shouldEnableProxyNotification(context));
     }
 
     private static boolean allowedToUse(Context context) {

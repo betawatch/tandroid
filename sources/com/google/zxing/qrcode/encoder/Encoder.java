@@ -230,7 +230,7 @@ public abstract class Encoder {
         }
         int sizeInBytes = i - bitArray.getSizeInBytes();
         for (int i4 = 0; i4 < sizeInBytes; i4++) {
-            bitArray.appendBits((i4 & 1) == 0 ? NotificationCenter.commonChatsLoaded : 17, 8);
+            bitArray.appendBits((i4 & 1) == 0 ? NotificationCenter.channelConnectedBotsUpdate : 17, 8);
         }
         if (bitArray.getSize() != i2) {
             throw new WriterException("Bits size does not equal capacity");
@@ -465,7 +465,7 @@ public abstract class Encoder {
                         if (i != -1) {
                             throw new WriterException("Invalid byte sequence");
                         }
-                        bitArray.appendBits(((i >> 8) * NotificationCenter.storiesBlocklistUpdate) + (i & NotificationCenter.didApplyNewTheme), 13);
+                        bitArray.appendBits(((i >> 8) * NotificationCenter.didUpdateTonGiftStickers) + (i & NotificationCenter.didReplacedPhotoInMemCache), 13);
                     } else {
                         i4 = 49472;
                     }

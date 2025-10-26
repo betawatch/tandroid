@@ -63,8 +63,8 @@ public class RateCallLayout extends FrameLayout {
             }, i);
             this.starsContainer.addView(this.startsViews[i], LayoutHelper.createFrame(-2, -2.0f, 51, i * 41, 0.0f, 0.0f, 0.0f));
         }
-        addView(this.rateCallContainer, LayoutHelper.createFrame(NotificationCenter.billingProductDetailsUpdated, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(this.starsContainer, LayoutHelper.createFrame(NotificationCenter.storyAlbumsCollectionsUpdate, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
+        addView(this.rateCallContainer, LayoutHelper.createFrame(NotificationCenter.premiumPromoUpdated, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(this.starsContainer, LayoutHelper.createFrame(NotificationCenter.savedMessagesDialogsUpdate, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

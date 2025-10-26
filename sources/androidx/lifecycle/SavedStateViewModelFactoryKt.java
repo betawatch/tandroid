@@ -39,6 +39,7 @@ public abstract class SavedStateViewModelFactoryKt {
             Intrinsics.checkNotNullExpressionValue(parameterTypes, "constructor.parameterTypes");
             List list = ArraysKt.toList(parameterTypes);
             if (Intrinsics.areEqual(signature, list)) {
+                Intrinsics.checkNotNull(constructor, "null cannot be cast to non-null type java.lang.reflect.Constructor<T of androidx.lifecycle.SavedStateViewModelFactoryKt.findMatchingConstructor>");
                 return constructor;
             }
             if (signature.size() == list.size() && list.containsAll(signature)) {

@@ -1,13 +1,13 @@
 package com.google.firebase.remoteconfig.internal;
 
 import android.util.Log;
+import androidx.profileinstaller.ProfileInstallReceiver$$ExternalSyntheticLambda0;
 import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda0;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +24,7 @@ public class ConfigCacheClient {
     private final Executor executor;
     private final ConfigStorageClient storageClient;
     private static final Map clientInstances = new HashMap();
-    private static final Executor DIRECT_EXECUTOR = new EnhancedIntentService$$ExternalSyntheticLambda0();
+    private static final Executor DIRECT_EXECUTOR = new ProfileInstallReceiver$$ExternalSyntheticLambda0();
 
     private ConfigCacheClient(Executor executor, ConfigStorageClient configStorageClient) {
         this.executor = executor;

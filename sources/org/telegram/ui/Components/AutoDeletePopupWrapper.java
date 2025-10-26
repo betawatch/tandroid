@@ -136,14 +136,14 @@ public class AutoDeletePopupWrapper {
         dismiss();
         AlertsCreator.createAutoDeleteDatePickerDialog(context, i, resourcesProvider, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-            public final void didSelectDate(boolean z, int i2) {
-                AutoDeletePopupWrapper.lambda$new$4(AutoDeletePopupWrapper.Callback.this, z, i2);
+            public final void didSelectDate(boolean z, int i2, int i3) {
+                AutoDeletePopupWrapper.lambda$new$4(AutoDeletePopupWrapper.Callback.this, z, i2, i3);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$4(Callback callback, boolean z, int i) {
+    public static /* synthetic */ void lambda$new$4(Callback callback, boolean z, int i, int i2) {
         callback.setAutoDeleteHistory(i * 60, i == 0 ? 71 : 70);
     }
 

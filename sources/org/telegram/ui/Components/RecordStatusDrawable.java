@@ -16,7 +16,7 @@ public class RecordStatusDrawable extends StatusDrawable {
     private long lastUpdateTime = 0;
     private boolean started = false;
     private RectF rect = new RectF();
-    int alpha = NotificationCenter.didApplyNewTheme;
+    int alpha = NotificationCenter.didReplacedPhotoInMemCache;
 
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {

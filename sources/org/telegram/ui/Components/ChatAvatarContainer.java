@@ -398,7 +398,9 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                 ImageReceiver imageReceiver = r1.imageReceiver;
                 transitionViewHolder.storyImage = imageReceiver;
                 transitionViewHolder.crossfadeToAvatarImage = imageReceiver;
-                transitionViewHolder.params = r1.params;
+                StoriesUtilities.AvatarStoryParams avatarStoryParams = r1.params;
+                transitionViewHolder.params = avatarStoryParams;
+                transitionViewHolder.isLive = avatarStoryParams.drawnLive;
                 BackupImageView backupImageView = ChatAvatarContainer.this.avatarImageView;
                 transitionViewHolder.view = backupImageView;
                 transitionViewHolder.alpha = backupImageView.getAlpha();
@@ -601,7 +603,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         };
         final ActionBarPopupWindow[] actionBarPopupWindowArr = {actionBarPopupWindow};
         actionBarPopupWindow.setPauseNotifications(true);
-        actionBarPopupWindowArr[0].setDismissAnimationDuration(NotificationCenter.factCheckLoaded);
+        actionBarPopupWindowArr[0].setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
         actionBarPopupWindowArr[0].setOutsideTouchable(true);
         actionBarPopupWindowArr[0].setClippingEnabled(true);
         actionBarPopupWindowArr[0].setAnimationStyle(R.style.PopupContextAnimation);

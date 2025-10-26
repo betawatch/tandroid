@@ -149,7 +149,7 @@ public class MotionBackgroundDrawable extends Drawable {
         this.patternBounds = new android.graphics.Rect();
         this.patternAlpha = 1.0f;
         this.backgroundAlpha = 1.0f;
-        this.alpha = NotificationCenter.didApplyNewTheme;
+        this.alpha = NotificationCenter.didReplacedPhotoInMemCache;
         this.indeterminateSpeedScale = 1.0f;
         this.bitmapWidth = 60;
         this.bitmapHeight = 80;
@@ -190,7 +190,7 @@ public class MotionBackgroundDrawable extends Drawable {
         this.patternBounds = new android.graphics.Rect();
         this.patternAlpha = 1.0f;
         this.backgroundAlpha = 1.0f;
-        this.alpha = NotificationCenter.didApplyNewTheme;
+        this.alpha = NotificationCenter.didReplacedPhotoInMemCache;
         this.indeterminateSpeedScale = 1.0f;
         this.bitmapWidth = 60;
         this.bitmapHeight = 80;
@@ -333,6 +333,7 @@ public class MotionBackgroundDrawable extends Drawable {
 
     public void switchToNextPosition(boolean z) {
         if (this.posAnimationProgress < 1.0f || !LiteMode.isEnabled(32)) {
+            invalidateParent();
             return;
         }
         this.rotatingPreview = false;

@@ -70,12 +70,6 @@ public final class TaskStackBuilder implements Iterable {
         }
         Intent[] intentArr = (Intent[]) this.mIntents.toArray(new Intent[0]);
         intentArr[0] = new Intent(intentArr[0]).addFlags(268484608);
-        return Api16Impl.getActivities(this.mSourceContext, i, intentArr, i2, bundle);
-    }
-
-    static class Api16Impl {
-        static PendingIntent getActivities(Context context, int i, Intent[] intentArr, int i2, Bundle bundle) {
-            return PendingIntent.getActivities(context, i, intentArr, i2, bundle);
-        }
+        return PendingIntent.getActivities(this.mSourceContext, i, intentArr, i2, bundle);
     }
 }

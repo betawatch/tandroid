@@ -126,7 +126,7 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    GroupStickersActivity.this.lambda$onBackPressed$355();
+                    GroupStickersActivity.this.lambda$onBackPressed$341();
                 }
             }
         });
@@ -493,7 +493,7 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
             MessagesStorage.getInstance(this.currentAccount).updateChatInfo(this.info, false);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.chatInfoDidLoad, this.info, 0, Boolean.TRUE, Boolean.FALSE);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupPackUpdated, Long.valueOf(this.info.id), Boolean.valueOf(this.isEmoji));
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
             return;
         }
         if (getParentActivity() != null) {

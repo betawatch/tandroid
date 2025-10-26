@@ -636,7 +636,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             int i2;
             if (i == -1) {
                 if (PollCreateActivity.this.checkDiscard()) {
-                    PollCreateActivity.this.lambda$onBackPressed$355();
+                    PollCreateActivity.this.lambda$onBackPressed$341();
                     return;
                 }
                 return;
@@ -717,14 +717,14 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                     if (PollCreateActivity.this.parentFragment.isInScheduleMode()) {
                         AlertsCreator.createScheduleDatePickerDialog(PollCreateActivity.this.parentFragment.getParentActivity(), PollCreateActivity.this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PollCreateActivity$2$$ExternalSyntheticLambda1
                             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                            public final void didSelectDate(boolean z, int i8) {
-                                PollCreateActivity.2.this.lambda$onItemClick$1(tL_messageMediaPoll, hashMap, z, i8);
+                            public final void didSelectDate(boolean z, int i8, int i9) {
+                                PollCreateActivity.2.this.lambda$onItemClick$1(tL_messageMediaPoll, hashMap, z, i8, i9);
                             }
                         });
                         return;
                     } else {
                         PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, hashMap, true, 0);
-                        PollCreateActivity.this.lambda$onBackPressed$355();
+                        PollCreateActivity.this.lambda$onBackPressed$341();
                         return;
                     }
                 }
@@ -783,27 +783,27 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 if (PollCreateActivity.this.parentFragment.isInScheduleMode()) {
                     AlertsCreator.createScheduleDatePickerDialog(PollCreateActivity.this.parentFragment.getParentActivity(), PollCreateActivity.this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PollCreateActivity$2$$ExternalSyntheticLambda0
                         @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                        public final void didSelectDate(boolean z, int i12) {
-                            PollCreateActivity.2.this.lambda$onItemClick$0(tL_messageMediaToDo, z, i12);
+                        public final void didSelectDate(boolean z, int i12, int i13) {
+                            PollCreateActivity.2.this.lambda$onItemClick$0(tL_messageMediaToDo, z, i12, i13);
                         }
                     });
                 } else {
                     PollCreateActivity.this.delegate.sendPoll(tL_messageMediaToDo, null, true, 0);
-                    PollCreateActivity.this.lambda$onBackPressed$355();
+                    PollCreateActivity.this.lambda$onBackPressed$341();
                 }
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$0(TLRPC.TL_messageMediaToDo tL_messageMediaToDo, boolean z, int i) {
+        public /* synthetic */ void lambda$onItemClick$0(TLRPC.TL_messageMediaToDo tL_messageMediaToDo, boolean z, int i, int i2) {
             PollCreateActivity.this.delegate.sendPoll(tL_messageMediaToDo, null, z, i);
-            PollCreateActivity.this.lambda$onBackPressed$355();
+            PollCreateActivity.this.lambda$onBackPressed$341();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onItemClick$1(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, boolean z, int i) {
+        public /* synthetic */ void lambda$onItemClick$1(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, boolean z, int i, int i2) {
             PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, hashMap, z, i);
-            PollCreateActivity.this.lambda$onBackPressed$355();
+            PollCreateActivity.this.lambda$onBackPressed$341();
         }
     }
 
@@ -1198,7 +1198,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$2(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     public void setDelegate(PollCreateActivityDelegate pollCreateActivityDelegate) {
@@ -1224,10 +1224,10 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
         if (i == this.questionRow) {
             CharSequence charSequence = this.questionString;
-            i3 = NotificationCenter.didApplyNewTheme;
+            i3 = NotificationCenter.didReplacedPhotoInMemCache;
             if (charSequence != null) {
                 length2 = charSequence.length();
-                i2 = NotificationCenter.didApplyNewTheme;
+                i2 = NotificationCenter.didReplacedPhotoInMemCache;
                 length = i3 - length2;
                 f = i2;
                 if (length <= f - (0.7f * f)) {
@@ -1241,7 +1241,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 pollEditTextCell.setText2("");
                 return;
             }
-            i4 = NotificationCenter.didApplyNewTheme;
+            i4 = NotificationCenter.didReplacedPhotoInMemCache;
             i2 = i4;
             length2 = 0;
             length = i3 - length2;
@@ -1250,16 +1250,16 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             }
         } else if (i == this.solutionRow) {
             CharSequence charSequence2 = this.solutionString;
-            i3 = NotificationCenter.userIsPremiumBlockedUpadted;
+            i3 = NotificationCenter.channelRecommendationsLoaded;
             if (charSequence2 != null) {
                 length2 = charSequence2.length();
-                i2 = NotificationCenter.userIsPremiumBlockedUpadted;
+                i2 = NotificationCenter.channelRecommendationsLoaded;
                 length = i3 - length2;
                 f = i2;
                 if (length <= f - (0.7f * f)) {
                 }
             } else {
-                i4 = NotificationCenter.userIsPremiumBlockedUpadted;
+                i4 = NotificationCenter.channelRecommendationsLoaded;
                 i2 = i4;
                 length2 = 0;
                 length = i3 - length2;
@@ -1717,8 +1717,8 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
         /* renamed from: onGifSelected */
-        public /* synthetic */ void lambda$onGifSelected$1(View view, Object obj, String str, Object obj2, boolean z, int i) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onGifSelected(this, view, obj, str, obj2, z, i);
+        public /* synthetic */ void lambda$onGifSelected$1(View view, Object obj, String str, Object obj2, boolean z, int i, int i2) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onGifSelected(this, view, obj, str, obj2, z, i, i2);
         }
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
@@ -1727,8 +1727,8 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         }
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        public /* synthetic */ void onStickerSelected(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, int i) {
-            EmojiView.EmojiViewDelegate.-CC.$default$onStickerSelected(this, view, document, str, obj, sendAnimationData, z, i);
+        public /* synthetic */ void onStickerSelected(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, int i, int i2) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onStickerSelected(this, view, document, str, obj, sendAnimationData, z, i, i2);
         }
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate

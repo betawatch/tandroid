@@ -422,11 +422,11 @@ public class CounterView extends View {
                 if (this.countAnimationStableLayout != null) {
                     canvas.save();
                     canvas.translate(this.countLeft, dp + AndroidUtilities.dp(4.0f));
-                    this.textPaint.setAlpha(NotificationCenter.didApplyNewTheme);
+                    this.textPaint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                     this.countAnimationStableLayout.draw(canvas);
                     canvas.restore();
                 }
-                this.textPaint.setAlpha(NotificationCenter.didApplyNewTheme);
+                this.textPaint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                 canvas.restore();
                 return;
             }
@@ -516,10 +516,5 @@ public class CounterView extends View {
         CounterDrawable counterDrawable = this.counterDrawable;
         float f = counterDrawable.countChangeProgress;
         return (f == 1.0f || !((i = counterDrawable.animationType) == 0 || i == 1)) ? counterDrawable.currentCount == 0 ? 0.0f : 1.0f : i == 0 ? f : 1.0f - f;
-    }
-
-    public boolean isInOutAnimation() {
-        int i = this.counterDrawable.animationType;
-        return i == 0 || i == 1;
     }
 }

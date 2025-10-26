@@ -86,7 +86,7 @@ public abstract class HashtagHistoryView extends FrameLayout {
         this.emptyText.setText(LocaleController.getString(R.string.HashtagSearchPlaceholder));
         this.emptyText.setGravity(17);
         this.emptyView.addView(this.emptyText, LayoutHelper.createFrame(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
-        addView(this.emptyView, LayoutHelper.createFrame(NotificationCenter.timezonesUpdated, -2, 17));
+        addView(this.emptyView, LayoutHelper.createFrame(NotificationCenter.groupRestrictionsUnlockedByBoosts, -2, 17));
         this.recyclerView.setEmptyView(this.emptyView);
     }
 

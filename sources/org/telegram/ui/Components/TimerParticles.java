@@ -117,7 +117,7 @@ public class TimerParticles {
             particle.alpha = 1.0f;
             particle.currentTime = 0.0f;
             if (this.big) {
-                particle.lifeTime = Utilities.random.nextInt(NotificationCenter.userIsPremiumBlockedUpadted) + 600;
+                particle.lifeTime = Utilities.random.nextInt(NotificationCenter.channelRecommendationsLoaded) + 600;
                 particle.velocity = (Utilities.random.nextFloat() * 20.0f) + 30.0f;
             } else {
                 particle.lifeTime = Utilities.random.nextInt(100) + 400;

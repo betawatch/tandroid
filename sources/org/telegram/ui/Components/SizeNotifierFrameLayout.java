@@ -58,7 +58,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
     private Drawable backgroundDrawable;
     private boolean backgroundMotion;
     private int backgroundTranslationY;
-    protected View backgroundView;
+    public View backgroundView;
     private float bgAngle;
     final BlurBackgroundTask blurBackgroundTask;
     public ArrayList blurBehindViews;
@@ -162,6 +162,9 @@ public class SizeNotifierFrameLayout extends FrameLayout {
         return true;
     }
 
+    public void onUpdateBackgroundDrawable(Drawable drawable) {
+    }
+
     protected boolean useRootView() {
         return true;
     }
@@ -260,10 +263,12 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                 }
                 SizeNotifierFrameLayout.this.backgroundMotion = newDrawableMotion;
                 SizeNotifierFrameLayout.this.themeAnimationValue = 0.0f;
+                SizeNotifierFrameLayout sizeNotifierFrameLayout5 = SizeNotifierFrameLayout.this;
+                sizeNotifierFrameLayout5.onUpdateBackgroundDrawable(sizeNotifierFrameLayout5.backgroundDrawable);
                 SizeNotifierFrameLayout.this.checkMotion();
             }
-            SizeNotifierFrameLayout sizeNotifierFrameLayout5 = SizeNotifierFrameLayout.this;
-            sizeNotifierFrameLayout5.themeAnimationValue = Utilities.clamp(sizeNotifierFrameLayout5.themeAnimationValue + (AndroidUtilities.screenRefreshTime / 200.0f), 1.0f, 0.0f);
+            SizeNotifierFrameLayout sizeNotifierFrameLayout6 = SizeNotifierFrameLayout.this;
+            sizeNotifierFrameLayout6.themeAnimationValue = Utilities.clamp(sizeNotifierFrameLayout6.themeAnimationValue + (AndroidUtilities.screenRefreshTime / 200.0f), 1.0f, 0.0f);
             int i = 0;
             while (i < 2) {
                 Drawable drawable = i == 0 ? SizeNotifierFrameLayout.this.oldBackgroundDrawable : SizeNotifierFrameLayout.this.backgroundDrawable;
@@ -271,7 +276,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                     if (i == 1 && SizeNotifierFrameLayout.this.oldBackgroundDrawable != null && SizeNotifierFrameLayout.this.parentLayout != null) {
                         drawable.setAlpha((int) (SizeNotifierFrameLayout.this.themeAnimationValue * 255.0f));
                     } else {
-                        drawable.setAlpha(NotificationCenter.didApplyNewTheme);
+                        drawable.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                     }
                     if (i == 0 ? SizeNotifierFrameLayout.this.oldBackgroundMotion : SizeNotifierFrameLayout.this.backgroundMotion) {
                         f = SizeNotifierFrameLayout.this.parallaxScale;
@@ -379,12 +384,12 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                         canvas.restore();
                     }
                     if (i == 0 && SizeNotifierFrameLayout.this.oldBackgroundDrawable != null && SizeNotifierFrameLayout.this.themeAnimationValue >= 1.0f) {
-                        SizeNotifierFrameLayout sizeNotifierFrameLayout6 = SizeNotifierFrameLayout.this;
-                        if (sizeNotifierFrameLayout6.attached && (sizeNotifierFrameLayout6.oldBackgroundDrawable instanceof ChatBackgroundDrawable)) {
+                        SizeNotifierFrameLayout sizeNotifierFrameLayout7 = SizeNotifierFrameLayout.this;
+                        if (sizeNotifierFrameLayout7.attached && (sizeNotifierFrameLayout7.oldBackgroundDrawable instanceof ChatBackgroundDrawable)) {
                             ((ChatBackgroundDrawable) SizeNotifierFrameLayout.this.oldBackgroundDrawable).onDetachedFromWindow(SizeNotifierFrameLayout.this.backgroundView);
                         }
-                        SizeNotifierFrameLayout sizeNotifierFrameLayout7 = SizeNotifierFrameLayout.this;
-                        if (sizeNotifierFrameLayout7.attached && (sizeNotifierFrameLayout7.oldBackgroundDrawable instanceof MotionBackgroundDrawable)) {
+                        SizeNotifierFrameLayout sizeNotifierFrameLayout8 = SizeNotifierFrameLayout.this;
+                        if (sizeNotifierFrameLayout8.attached && (sizeNotifierFrameLayout8.oldBackgroundDrawable instanceof MotionBackgroundDrawable)) {
                             ((MotionBackgroundDrawable) SizeNotifierFrameLayout.this.oldBackgroundDrawable).onDetachedFromWindow();
                         }
                         SizeNotifierFrameLayout.this.oldBackgroundDrawable = null;
@@ -773,7 +778,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
         if (blurQueue == null) {
             blurQueue = new DispatchQueue("BlurQueue");
         }
-        this.blurBackgroundTask.radius = (int) (((int) (Math.max(6, Math.max(dp, measuredWidth) / NotificationCenter.dialogFiltersUpdated) * 2.5f)) * BlurSettingsBottomSheet.blurRadius);
+        this.blurBackgroundTask.radius = (int) (((int) (Math.max(6, Math.max(dp, measuredWidth) / NotificationCenter.newEmojiSuggestionsAvailable) * 2.5f)) * BlurSettingsBottomSheet.blurRadius);
         BlurBackgroundTask blurBackgroundTask = this.blurBackgroundTask;
         blurBackgroundTask.finalBitmap = blurBitmap;
         blurQueue.postRunnable(blurBackgroundTask);
@@ -1133,7 +1138,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
             return;
         }
         updateBlurShaderPosition(f, z);
-        paint.setAlpha(NotificationCenter.didApplyNewTheme);
+        paint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
         if (this.blurCrossfadeProgress != 1.0f && this.selectedBlurPaint2.getShader() != null) {
             canvas.drawRect(rect, paint);
             canvas.drawRect(rect, this.selectedBlurPaint2);
@@ -1156,7 +1161,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
             return;
         }
         updateBlurShaderPosition(f, z);
-        paint.setAlpha(NotificationCenter.didApplyNewTheme);
+        paint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
         if (this.blurCrossfadeProgress != 1.0f && this.selectedBlurPaint2.getShader() != null) {
             canvas.drawCircle(f2, f3, f4, paint);
             canvas.drawCircle(f2, f3, f4, this.selectedBlurPaint2);

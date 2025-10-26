@@ -15,7 +15,7 @@ public abstract class PopupWindowCompat {
     private static boolean sSetWindowLayoutTypeMethodAttempted;
 
     public static void showAsDropDown(PopupWindow popupWindow, View view, int i, int i2, int i3) {
-        Api19Impl.showAsDropDown(popupWindow, view, i, i2, i3);
+        popupWindow.showAsDropDown(view, i, i2, i3);
     }
 
     public static void setOverlapAnchor(PopupWindow popupWindow, boolean z) {
@@ -71,22 +71,8 @@ public abstract class PopupWindowCompat {
             popupWindow.setOverlapAnchor(z);
         }
 
-        static boolean getOverlapAnchor(PopupWindow popupWindow) {
-            return popupWindow.getOverlapAnchor();
-        }
-
         static void setWindowLayoutType(PopupWindow popupWindow, int i) {
             popupWindow.setWindowLayoutType(i);
-        }
-
-        static int getWindowLayoutType(PopupWindow popupWindow) {
-            return popupWindow.getWindowLayoutType();
-        }
-    }
-
-    static class Api19Impl {
-        static void showAsDropDown(PopupWindow popupWindow, View view, int i, int i2, int i3) {
-            popupWindow.showAsDropDown(view, i, i2, i3);
         }
     }
 }

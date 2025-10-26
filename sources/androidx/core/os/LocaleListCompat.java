@@ -2,7 +2,6 @@ package androidx.core.os;
 
 import android.os.Build;
 import android.os.LocaleList;
-import androidx.core.text.ICUCompat;
 import java.util.Locale;
 
 /* loaded from: classes.dex */
@@ -90,30 +89,6 @@ public final class LocaleListCompat {
     static class Api21Impl {
         private static final Locale[] PSEUDO_LOCALE = {new Locale("en", "XA"), new Locale("ar", "XB")};
 
-        static boolean matchesLanguageAndScript(Locale locale, Locale locale2) {
-            if (locale.equals(locale2)) {
-                return true;
-            }
-            if (!locale.getLanguage().equals(locale2.getLanguage()) || isPseudoLocale(locale) || isPseudoLocale(locale2)) {
-                return false;
-            }
-            String maximizeAndGetScript = ICUCompat.maximizeAndGetScript(locale);
-            if (maximizeAndGetScript.isEmpty()) {
-                String country = locale.getCountry();
-                return country.isEmpty() || country.equals(locale2.getCountry());
-            }
-            return maximizeAndGetScript.equals(ICUCompat.maximizeAndGetScript(locale2));
-        }
-
-        private static boolean isPseudoLocale(Locale locale) {
-            for (Locale locale2 : PSEUDO_LOCALE) {
-                if (locale2.equals(locale)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
         static Locale forLanguageTag(String str) {
             return Locale.forLanguageTag(str);
         }
@@ -134,14 +109,6 @@ public final class LocaleListCompat {
     static class Api24Impl {
         static LocaleList createLocaleList(Locale... localeArr) {
             return new LocaleList(localeArr);
-        }
-
-        static LocaleList getAdjustedDefault() {
-            return LocaleList.getAdjustedDefault();
-        }
-
-        static LocaleList getDefault() {
-            return LocaleList.getDefault();
         }
     }
 }

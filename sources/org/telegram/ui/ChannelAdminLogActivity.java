@@ -995,7 +995,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    ChannelAdminLogActivity.this.lambda$onBackPressed$355();
+                    ChannelAdminLogActivity.this.lambda$onBackPressed$341();
                 }
             }
         });
@@ -1772,7 +1772,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                         spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.ui.ChannelAdminLogActivity.14
                             @Override // android.text.style.ClickableSpan
                             public void onClick(View view2) {
-                                ChannelAdminLogActivity.this.lambda$onBackPressed$355();
+                                ChannelAdminLogActivity.this.lambda$onBackPressed$341();
                             }
 
                             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
@@ -2037,7 +2037,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         };
         this.scrimPopupWindow = actionBarPopupWindow;
         actionBarPopupWindow.setPauseNotifications(true);
-        this.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.factCheckLoaded);
+        this.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
         this.scrimPopupWindow.setOutsideTouchable(true);
         this.scrimPopupWindow.setClippingEnabled(true);
         this.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -2576,7 +2576,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         tL_channels_getParticipants.channel = MessagesController.getInputChannel(this.currentChat);
         tL_channels_getParticipants.filter = new TLRPC.TL_channelParticipantsAdmins();
         tL_channels_getParticipants.offset = 0;
-        tL_channels_getParticipants.limit = NotificationCenter.userIsPremiumBlockedUpadted;
+        tL_channels_getParticipants.limit = NotificationCenter.channelRecommendationsLoaded;
         ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.ChannelAdminLogActivity$$ExternalSyntheticLambda8
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {

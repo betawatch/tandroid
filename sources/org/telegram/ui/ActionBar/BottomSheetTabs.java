@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.view.ViewCompat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -1010,10 +1011,11 @@ public class BottomSheetTabs extends FrameLayout {
             this.bottomTabsAnimator.setDuration(250L);
             this.bottomTabsAnimator.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
             this.bottomTabsAnimator.start();
-            return;
+        } else {
+            this.bottomTabsProgress = this.bottomTabsHeight;
+            invalidate();
         }
-        this.bottomTabsProgress = this.bottomTabsHeight;
-        invalidate();
+        ViewCompat.requestApplyInsets((View) getParent());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

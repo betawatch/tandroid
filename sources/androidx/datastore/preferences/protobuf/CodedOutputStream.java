@@ -512,15 +512,15 @@ public abstract class CodedOutputStream extends ByteOutput {
             int i2 = this.position;
             int i3 = i2 + 1;
             this.position = i3;
-            bArr[i2] = (byte) (i & NotificationCenter.didApplyNewTheme);
+            bArr[i2] = (byte) (i & NotificationCenter.didReplacedPhotoInMemCache);
             int i4 = i2 + 2;
             this.position = i4;
-            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.didApplyNewTheme);
+            bArr[i3] = (byte) ((i >> 8) & NotificationCenter.didReplacedPhotoInMemCache);
             int i5 = i2 + 3;
             this.position = i5;
-            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.didApplyNewTheme);
+            bArr[i4] = (byte) ((i >> 16) & NotificationCenter.didReplacedPhotoInMemCache);
             this.position = i2 + 4;
-            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.didApplyNewTheme);
+            bArr[i5] = (byte) ((i >> 24) & NotificationCenter.didReplacedPhotoInMemCache);
             this.totalBytesWritten += 4;
         }
 
@@ -541,15 +541,15 @@ public abstract class CodedOutputStream extends ByteOutput {
             bArr[i4] = (byte) (255 & (j >> 24));
             int i6 = i + 5;
             this.position = i6;
-            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.didApplyNewTheme);
+            bArr[i5] = (byte) (((int) (j >> 32)) & NotificationCenter.didReplacedPhotoInMemCache);
             int i7 = i + 6;
             this.position = i7;
-            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.didApplyNewTheme);
+            bArr[i6] = (byte) (((int) (j >> 40)) & NotificationCenter.didReplacedPhotoInMemCache);
             int i8 = i + 7;
             this.position = i8;
-            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.didApplyNewTheme);
+            bArr[i7] = (byte) (((int) (j >> 48)) & NotificationCenter.didReplacedPhotoInMemCache);
             this.position = i + 8;
-            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.didApplyNewTheme);
+            bArr[i8] = (byte) (((int) (j >> 56)) & NotificationCenter.didReplacedPhotoInMemCache);
             this.totalBytesWritten += 8;
         }
     }

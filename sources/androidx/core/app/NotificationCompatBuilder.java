@@ -38,14 +38,24 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
         this.mBuilderCompat = builder;
         Context context = builder.mContext;
         this.mContext = context;
-        if (Build.VERSION.SDK_INT >= 26) {
+        int i2 = Build.VERSION.SDK_INT;
+        if (i2 >= 26) {
             this.mBuilder = Api26Impl.createBuilder(context, builder.mChannelId);
         } else {
             this.mBuilder = new Notification.Builder(builder.mContext);
         }
         Notification notification = builder.mNotification;
-        this.mBuilder.setWhen(notification.when).setSmallIcon(notification.icon, notification.iconLevel).setContent(notification.contentView).setTicker(notification.tickerText, builder.mTickerView).setVibrate(notification.vibrate).setLights(notification.ledARGB, notification.ledOnMS, notification.ledOffMS).setOngoing((notification.flags & 2) != 0).setOnlyAlertOnce((notification.flags & 8) != 0).setAutoCancel((notification.flags & 16) != 0).setDefaults(notification.defaults).setContentTitle(builder.mContentTitle).setContentText(builder.mContentText).setContentInfo(builder.mContentInfo).setContentIntent(builder.mContentIntent).setDeleteIntent(notification.deleteIntent).setFullScreenIntent(builder.mFullScreenIntent, (notification.flags & 128) != 0).setLargeIcon(builder.mLargeIcon).setNumber(builder.mNumber).setProgress(builder.mProgressMax, builder.mProgress, builder.mProgressIndeterminate);
-        Api16Impl.setPriority(Api16Impl.setUsesChronometer(Api16Impl.setSubText(this.mBuilder, builder.mSubText), builder.mUseChronometer), builder.mPriority);
+        this.mBuilder.setWhen(notification.when).setSmallIcon(notification.icon, notification.iconLevel).setContent(notification.contentView).setTicker(notification.tickerText, builder.mTickerView).setVibrate(notification.vibrate).setLights(notification.ledARGB, notification.ledOnMS, notification.ledOffMS).setOngoing((notification.flags & 2) != 0).setOnlyAlertOnce((notification.flags & 8) != 0).setAutoCancel((notification.flags & 16) != 0).setDefaults(notification.defaults).setContentTitle(builder.mContentTitle).setContentText(builder.mContentText).setContentInfo(builder.mContentInfo).setContentIntent(builder.mContentIntent).setDeleteIntent(notification.deleteIntent).setFullScreenIntent(builder.mFullScreenIntent, (notification.flags & 128) != 0).setNumber(builder.mNumber).setProgress(builder.mProgressMax, builder.mProgress, builder.mProgressIndeterminate);
+        if (i2 < 23) {
+            Notification.Builder builder2 = this.mBuilder;
+            IconCompat iconCompat = builder.mLargeIcon;
+            builder2.setLargeIcon(iconCompat == null ? null : iconCompat.getBitmap());
+        } else {
+            Notification.Builder builder3 = this.mBuilder;
+            IconCompat iconCompat2 = builder.mLargeIcon;
+            Api23Impl.setLargeIcon(builder3, iconCompat2 == null ? null : iconCompat2.toIcon(context));
+        }
+        this.mBuilder.setSubText(builder.mSubText).setUsesChronometer(builder.mUseChronometer).setPriority(builder.mPriority);
         Iterator it = builder.mActions.iterator();
         while (it.hasNext()) {
             addAction((NotificationCompat.Action) it.next());
@@ -54,10 +64,10 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
         if (bundle != null) {
             this.mExtras.putAll(bundle);
         }
-        int i2 = Build.VERSION.SDK_INT;
+        int i3 = Build.VERSION.SDK_INT;
         this.mContentView = builder.mContentView;
         this.mBigContentView = builder.mBigContentView;
-        Api17Impl.setShowWhen(this.mBuilder, builder.mShowWhen);
+        this.mBuilder.setShowWhen(builder.mShowWhen);
         Api20Impl.setLocalOnly(this.mBuilder, builder.mLocalOnly);
         Api20Impl.setGroup(this.mBuilder, builder.mGroupKey);
         Api20Impl.setSortKey(this.mBuilder, builder.mSortKey);
@@ -68,7 +78,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
         Api21Impl.setVisibility(this.mBuilder, builder.mVisibility);
         Api21Impl.setPublicVersion(this.mBuilder, builder.mPublicVersion);
         Api21Impl.setSound(this.mBuilder, notification.sound, notification.audioAttributes);
-        if (i2 < 28) {
+        if (i3 < 28) {
             list = combineLists(getPeople(builder.mPersonList), builder.mPeople);
         } else {
             list = builder.mPeople;
@@ -85,20 +95,20 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             bundle2 = bundle2 == null ? new Bundle() : bundle2;
             Bundle bundle3 = new Bundle(bundle2);
             Bundle bundle4 = new Bundle();
-            for (int i3 = 0; i3 < builder.mInvisibleActions.size(); i3++) {
-                bundle4.putBundle(Integer.toString(i3), NotificationCompatJellybean.getBundleForAction((NotificationCompat.Action) builder.mInvisibleActions.get(i3)));
+            for (int i4 = 0; i4 < builder.mInvisibleActions.size(); i4++) {
+                bundle4.putBundle(Integer.toString(i4), NotificationCompatJellybean.getBundleForAction((NotificationCompat.Action) builder.mInvisibleActions.get(i4)));
             }
             bundle2.putBundle("invisible_actions", bundle4);
             bundle3.putBundle("invisible_actions", bundle4);
             builder.getExtras().putBundle("android.car.EXTENSIONS", bundle2);
             this.mExtras.putBundle("android.car.EXTENSIONS", bundle3);
         }
-        int i4 = Build.VERSION.SDK_INT;
-        if (i4 >= 23 && (obj = builder.mSmallIcon) != null) {
+        int i5 = Build.VERSION.SDK_INT;
+        if (i5 >= 23 && (obj = builder.mSmallIcon) != null) {
             Api23Impl.setSmallIcon(this.mBuilder, obj);
         }
-        if (i4 >= 24) {
-            Api19Impl.setExtras(this.mBuilder, builder.mExtras);
+        if (i5 >= 24) {
+            this.mBuilder.setExtras(builder.mExtras);
             Api24Impl.setRemoteInputHistory(this.mBuilder, builder.mRemoteInputHistory);
             RemoteViews remoteViews = builder.mContentView;
             if (remoteViews != null) {
@@ -113,7 +123,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
                 Api24Impl.setCustomHeadsUpContentView(this.mBuilder, remoteViews3);
             }
         }
-        if (i4 >= 26) {
+        if (i5 >= 26) {
             Api26Impl.setBadgeIconType(this.mBuilder, builder.mBadgeIcon);
             Api26Impl.setSettingsText(this.mBuilder, builder.mSettingsText);
             Api26Impl.setShortcutId(this.mBuilder, builder.mShortcutId);
@@ -126,14 +136,14 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
                 this.mBuilder.setSound(null).setDefaults(0).setLights(0, 0, 0).setVibrate(null);
             }
         }
-        if (i4 >= 28) {
+        if (i5 >= 28) {
             Iterator it3 = builder.mPersonList.iterator();
             while (it3.hasNext()) {
                 Api28Impl.addPerson(this.mBuilder, ((Person) it3.next()).toAndroidPerson());
             }
         }
-        int i5 = Build.VERSION.SDK_INT;
-        if (i5 >= 29) {
+        int i6 = Build.VERSION.SDK_INT;
+        if (i6 >= 29) {
             Api29Impl.setAllowSystemGeneratedContextualActions(this.mBuilder, builder.mAllowSystemGeneratedContextualActions);
             Api29Impl.setBubbleMetadata(this.mBuilder, NotificationCompat.BubbleMetadata.toPlatform(builder.mBubbleMetadata));
             LocusIdCompat locusIdCompat = builder.mLocusId;
@@ -141,7 +151,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
                 Api29Impl.setLocusId(this.mBuilder, locusIdCompat.toLocusId());
             }
         }
-        if (i5 >= 31 && (i = builder.mFgsDeferBehavior) != 0) {
+        if (i6 >= 31 && (i = builder.mFgsDeferBehavior) != 0) {
             Api31Impl.setForegroundServiceBehavior(this.mBuilder, i);
         }
         if (builder.mSilent) {
@@ -152,10 +162,10 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             }
             this.mBuilder.setVibrate(null);
             this.mBuilder.setSound(null);
-            int i6 = notification.defaults & (-4);
-            notification.defaults = i6;
-            this.mBuilder.setDefaults(i6);
-            if (i5 >= 26) {
+            int i7 = notification.defaults & (-4);
+            notification.defaults = i7;
+            this.mBuilder.setDefaults(i7);
+            if (i6 >= 26) {
                 if (TextUtils.isEmpty(this.mBuilderCompat.mGroupKey)) {
                     Api20Impl.setGroup(this.mBuilder, "silent");
                 }
@@ -271,10 +281,10 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
     protected Notification buildInternal() {
         int i = Build.VERSION.SDK_INT;
         if (i >= 26) {
-            return Api16Impl.build(this.mBuilder);
+            return this.mBuilder.build();
         }
         if (i >= 24) {
-            Notification build = Api16Impl.build(this.mBuilder);
+            Notification build = this.mBuilder.build();
             if (this.mGroupAlertBehavior != 0) {
                 if (Api20Impl.getGroup(build) != null && (build.flags & 512) != 0 && this.mGroupAlertBehavior == 2) {
                     removeSoundAndVibration(build);
@@ -285,8 +295,8 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             }
             return build;
         }
-        Api19Impl.setExtras(this.mBuilder, this.mExtras);
-        Notification build2 = Api16Impl.build(this.mBuilder);
+        this.mBuilder.setExtras(this.mExtras);
+        Notification build2 = this.mBuilder.build();
         RemoteViews remoteViews = this.mContentView;
         if (remoteViews != null) {
             build2.contentView = remoteViews;
@@ -314,36 +324,6 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
         notification.sound = null;
         notification.vibrate = null;
         notification.defaults &= -4;
-    }
-
-    static class Api16Impl {
-        static Notification.Builder setSubText(Notification.Builder builder, CharSequence charSequence) {
-            return builder.setSubText(charSequence);
-        }
-
-        static Notification.Builder setUsesChronometer(Notification.Builder builder, boolean z) {
-            return builder.setUsesChronometer(z);
-        }
-
-        static Notification.Builder setPriority(Notification.Builder builder, int i) {
-            return builder.setPriority(i);
-        }
-
-        static Notification build(Notification.Builder builder) {
-            return builder.build();
-        }
-    }
-
-    static class Api17Impl {
-        static Notification.Builder setShowWhen(Notification.Builder builder, boolean z) {
-            return builder.setShowWhen(z);
-        }
-    }
-
-    static class Api19Impl {
-        static Notification.Builder setExtras(Notification.Builder builder, Bundle bundle) {
-            return builder.setExtras(bundle);
-        }
     }
 
     static class Api20Impl {
@@ -421,6 +401,10 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
 
         static Notification.Builder setSmallIcon(Notification.Builder builder, Object obj) {
             return builder.setSmallIcon((Icon) obj);
+        }
+
+        static Notification.Builder setLargeIcon(Notification.Builder builder, Icon icon) {
+            return builder.setLargeIcon(icon);
         }
     }
 

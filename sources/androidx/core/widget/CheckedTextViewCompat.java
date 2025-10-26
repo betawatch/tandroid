@@ -16,7 +16,7 @@ public abstract class CheckedTextViewCompat {
     }
 
     public static Drawable getCheckMarkDrawable(CheckedTextView checkedTextView) {
-        return Api16Impl.getCheckMarkDrawable(checkedTextView);
+        return checkedTextView.getCheckMarkDrawable();
     }
 
     private static class Api21Impl {
@@ -26,12 +26,6 @@ public abstract class CheckedTextViewCompat {
 
         static void setCheckMarkTintMode(CheckedTextView checkedTextView, PorterDuff.Mode mode) {
             checkedTextView.setCheckMarkTintMode(mode);
-        }
-    }
-
-    private static class Api16Impl {
-        static Drawable getCheckMarkDrawable(CheckedTextView checkedTextView) {
-            return checkedTextView.getCheckMarkDrawable();
         }
     }
 }

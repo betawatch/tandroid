@@ -31,7 +31,6 @@ public final class SavedStateRegistryController {
 
     public final void performAttach() {
         Lifecycle lifecycle = this.owner.getLifecycle();
-        Intrinsics.checkNotNullExpressionValue(lifecycle, "owner.lifecycle");
         if (lifecycle.getCurrentState() != Lifecycle.State.INITIALIZED) {
             throw new IllegalStateException("Restarter must be created only during owner's initialization stage");
         }
@@ -45,7 +44,6 @@ public final class SavedStateRegistryController {
             performAttach();
         }
         Lifecycle lifecycle = this.owner.getLifecycle();
-        Intrinsics.checkNotNullExpressionValue(lifecycle, "owner.lifecycle");
         if (lifecycle.getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
             throw new IllegalStateException(("performRestore cannot be called when owner is " + lifecycle.getCurrentState()).toString());
         }

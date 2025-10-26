@@ -75,7 +75,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    AutoDeleteMessagesActivity.this.lambda$onBackPressed$355();
+                    AutoDeleteMessagesActivity.this.lambda$onBackPressed$341();
                 }
             }
         });
@@ -91,7 +91,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
         StickerImageView stickerImageView = new StickerImageView(context, this.currentAccount);
         stickerImageView.setStickerNum(10);
         frameLayout2.addView(stickerImageView, LayoutHelper.createFrame(NotificationCenter.dialogTranslate, NotificationCenter.dialogTranslate, 17));
-        linearLayout.addView(frameLayout2, LayoutHelper.createLinear(-1, NotificationCenter.groupCallTypingsUpdated));
+        linearLayout.addView(frameLayout2, LayoutHelper.createLinear(-1, NotificationCenter.applyGroupCallVisibleParticipants));
         LinearLayout linearLayout2 = new LinearLayout(getContext());
         this.checkBoxContainer = linearLayout2;
         linearLayout2.setOrientation(1);
@@ -202,7 +202,7 @@ public class AutoDeleteMessagesActivity extends BaseFragment implements Notifica
         }
 
         @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-        public void didSelectDate(boolean z, final int i) {
+        public void didSelectDate(boolean z, final int i, int i2) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.AutoDeleteMessagesActivity$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {

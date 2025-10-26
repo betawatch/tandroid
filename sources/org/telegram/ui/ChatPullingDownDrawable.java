@@ -76,7 +76,6 @@ public class ChatPullingDownDrawable implements NotificationCenter.NotificationC
     float progressToBottomPanel;
     boolean recommendedChannel;
     private final Theme.ResourcesProvider resourcesProvider;
-    boolean showBottomPanel;
     AnimatorSet showReleaseAnimator;
     float swipeToReleaseProgress;
     private final long topicId;
@@ -442,7 +441,7 @@ public class ChatPullingDownDrawable implements NotificationCenter.NotificationC
             }
             if (this.swipeToReleaseProgress > 0.0f && this.visibleCounterDrawable) {
                 f6 = 1.0f;
-                canvas.saveLayerAlpha(imageReceiver2.getImageX(), imageReceiver2.getImageY(), imageReceiver2.getImageWidth() + imageReceiver2.getImageX(), imageReceiver2.getImageHeight() + imageReceiver2.getImageY(), NotificationCenter.didApplyNewTheme, 31);
+                canvas.saveLayerAlpha(imageReceiver2.getImageX(), imageReceiver2.getImageY(), imageReceiver2.getImageWidth() + imageReceiver2.getImageX(), imageReceiver2.getImageHeight() + imageReceiver2.getImageY(), NotificationCenter.didReplacedPhotoInMemCache, 31);
                 imageReceiver2.draw(canvas);
                 float f17 = this.swipeToReleaseProgress;
                 canvas.scale(f17, f17, AndroidUtilities.dp(12.0f) + f8 + this.counterDrawable.getCenterX(), (dp23 - AndroidUtilities.dp(6.0f)) + AndroidUtilities.dp(14.0f));
@@ -797,90 +796,40 @@ public class ChatPullingDownDrawable implements NotificationCenter.NotificationC
         return this.nextTopic;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0078  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x00bc  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void drawBottomPanel(Canvas canvas, int i, int i2, int i3) {
-        boolean z = this.showBottomPanel;
-        if (z) {
-            float f = this.progressToBottomPanel;
-            if (f != 1.0f) {
-                float f2 = f + 0.10666667f;
-                this.progressToBottomPanel = f2;
-                if (f2 > 1.0f) {
-                    this.progressToBottomPanel = 1.0f;
-                } else {
-                    this.fragmentView.invalidate();
-                }
-                this.textPaint2.setColor(getThemedColor(Theme.key_chat_messagePanelHint));
-                Paint themedPaint = getThemedPaint("paintChatComposeBackground");
-                int alpha = themedPaint.getAlpha();
-                int alpha2 = this.textPaint2.getAlpha();
-                themedPaint.setAlpha((int) (alpha * this.progressToBottomPanel));
-                float f3 = i;
-                canvas.drawRect(0.0f, f3, i3, i2, themedPaint);
-                if (this.layout1 != null) {
-                    float f4 = this.swipeToReleaseProgress;
-                    if (f4 < 1.0f) {
-                        this.textPaint2.setAlpha((int) (alpha2 * (1.0f - f4) * this.progressToBottomPanel));
-                        float height = ((((i2 - i) - this.layout1.getHeight()) / 2.0f) + f3) - (AndroidUtilities.dp(10.0f) * this.swipeToReleaseProgress);
-                        canvas.save();
-                        canvas.translate((this.lastWidth - this.layout1Width) / 2.0f, height);
-                        this.layout1.draw(canvas);
-                        canvas.restore();
-                    }
-                }
-                if (this.layout2 != null) {
-                    float f5 = this.swipeToReleaseProgress;
-                    if (f5 > 0.0f) {
-                        this.textPaint2.setAlpha((int) (alpha2 * f5 * this.progressToBottomPanel));
-                        float height2 = f3 + (((i2 - i) - this.layout2.getHeight()) / 2.0f) + (AndroidUtilities.dp(10.0f) * (1.0f - this.swipeToReleaseProgress));
-                        canvas.save();
-                        canvas.translate((this.lastWidth - this.layout2Width) / 2.0f, height2);
-                        this.layout2.draw(canvas);
-                        canvas.restore();
-                    }
-                }
-                this.textPaint2.setAlpha(alpha2);
-                themedPaint.setAlpha(alpha);
-            }
-        }
-        if (!z) {
-            float f6 = this.progressToBottomPanel;
-            if (f6 != 0.0f) {
-                float f7 = f6 - 0.10666667f;
-                this.progressToBottomPanel = f7;
-                if (f7 < 0.0f) {
-                    this.progressToBottomPanel = 0.0f;
-                } else {
-                    this.fragmentView.invalidate();
-                }
-            }
-        }
-        this.textPaint2.setColor(getThemedColor(Theme.key_chat_messagePanelHint));
-        Paint themedPaint2 = getThemedPaint("paintChatComposeBackground");
-        int alpha3 = themedPaint2.getAlpha();
-        int alpha22 = this.textPaint2.getAlpha();
-        themedPaint2.setAlpha((int) (alpha3 * this.progressToBottomPanel));
-        float f32 = i;
-        canvas.drawRect(0.0f, f32, i3, i2, themedPaint2);
+        this.textPaint2.setColor(getThemedColor(Theme.key_glass_defaultText));
+        Paint themedPaint = getThemedPaint("paintChatComposeBackground");
+        int alpha = themedPaint.getAlpha();
+        int alpha2 = this.textPaint2.getAlpha();
+        themedPaint.setAlpha((int) (alpha * this.progressToBottomPanel));
         if (this.layout1 != null) {
+            float f = this.swipeToReleaseProgress;
+            if (f < 1.0f) {
+                this.textPaint2.setAlpha((int) (alpha2 * (1.0f - f) * this.progressToBottomPanel));
+                float height = (i + (((i2 - i) - this.layout1.getHeight()) / 2.0f)) - (AndroidUtilities.dp(10.0f) * this.swipeToReleaseProgress);
+                canvas.save();
+                canvas.translate((this.lastWidth - this.layout1Width) / 2.0f, height);
+                this.layout1.draw(canvas);
+                canvas.restore();
+            }
         }
         if (this.layout2 != null) {
+            float f2 = this.swipeToReleaseProgress;
+            if (f2 > 0.0f) {
+                this.textPaint2.setAlpha((int) (alpha2 * f2 * this.progressToBottomPanel));
+                float height2 = i + (((i2 - i) - this.layout2.getHeight()) / 2.0f) + (AndroidUtilities.dp(10.0f) * (1.0f - this.swipeToReleaseProgress));
+                canvas.save();
+                canvas.translate((this.lastWidth - this.layout2Width) / 2.0f, height2);
+                this.layout2.draw(canvas);
+                canvas.restore();
+            }
         }
-        this.textPaint2.setAlpha(alpha22);
-        themedPaint2.setAlpha(alpha3);
-    }
-
-    public void showBottomPanel(boolean z) {
-        this.showBottomPanel = z;
-        this.fragmentView.invalidate();
+        this.textPaint2.setAlpha(alpha2);
+        themedPaint.setAlpha(alpha);
     }
 
     public boolean needDrawBottomPanel() {
-        return (this.showBottomPanel || this.progressToBottomPanel > 0.0f) && !this.emptyStub;
+        return this.progressToBottomPanel > 0.0f && !this.emptyStub;
     }
 
     public boolean animationIsRunning() {

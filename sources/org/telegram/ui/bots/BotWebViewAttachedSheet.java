@@ -95,6 +95,6 @@ public abstract class BotWebViewAttachedSheet implements NotificationCenter.Noti
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$openPrivacy$37(int i, long j) {
-        SendMessagesHelper.getInstance(i).sendMessage(SendMessagesHelper.SendMessageParams.of("/privacy", j, null, null, null, false, null, null, null, true, 0, null, false));
+        SendMessagesHelper.getInstance(i).sendMessage(SendMessagesHelper.SendMessageParams.of("/privacy", j, null, null, null, false, null, null, null, true, 0, 0, null, false));
     }
 }

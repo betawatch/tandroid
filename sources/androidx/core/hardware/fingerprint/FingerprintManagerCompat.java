@@ -42,11 +42,15 @@ public class FingerprintManagerCompat {
     }
 
     public void authenticate(CryptoObject cryptoObject, int i, CancellationSignal cancellationSignal, AuthenticationCallback authenticationCallback, Handler handler) {
+        authenticate(cryptoObject, i, cancellationSignal != null ? (android.os.CancellationSignal) cancellationSignal.getCancellationSignalObject() : null, authenticationCallback, handler);
+    }
+
+    public void authenticate(CryptoObject cryptoObject, int i, android.os.CancellationSignal cancellationSignal, AuthenticationCallback authenticationCallback, Handler handler) {
         FingerprintManager fingerprintManagerOrNull;
         if (Build.VERSION.SDK_INT < 23 || (fingerprintManagerOrNull = getFingerprintManagerOrNull(this.mContext)) == null) {
             return;
         }
-        Api23Impl.authenticate(fingerprintManagerOrNull, wrapCryptoObject(cryptoObject), cancellationSignal != null ? (android.os.CancellationSignal) cancellationSignal.getCancellationSignalObject() : null, i, wrapCallback(authenticationCallback), handler);
+        Api23Impl.authenticate(fingerprintManagerOrNull, wrapCryptoObject(cryptoObject), cancellationSignal, i, wrapCallback(authenticationCallback), handler);
     }
 
     private static FingerprintManager getFingerprintManagerOrNull(Context context) {

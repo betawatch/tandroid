@@ -2,40 +2,47 @@ package androidx.lifecycle;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.savedstate.SavedStateRegistry;
+import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
-final class SavedStateHandleController implements LifecycleEventObserver {
-    private final SavedStateHandle mHandle;
-    private boolean mIsAttached = false;
-    private final String mKey;
+public final class SavedStateHandleController implements LifecycleEventObserver {
+    private final SavedStateHandle handle;
+    private boolean isAttached;
+    private final String key;
 
-    SavedStateHandleController(String str, SavedStateHandle savedStateHandle) {
-        this.mKey = str;
-        this.mHandle = savedStateHandle;
+    public SavedStateHandleController(String key, SavedStateHandle handle) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        Intrinsics.checkNotNullParameter(handle, "handle");
+        this.key = key;
+        this.handle = handle;
     }
 
-    boolean isAttached() {
-        return this.mIsAttached;
+    public final SavedStateHandle getHandle() {
+        return this.handle;
     }
 
-    void attachToLifecycle(SavedStateRegistry savedStateRegistry, Lifecycle lifecycle) {
-        if (this.mIsAttached) {
+    public final boolean isAttached() {
+        return this.isAttached;
+    }
+
+    public final void attachToLifecycle(SavedStateRegistry registry, Lifecycle lifecycle) {
+        Intrinsics.checkNotNullParameter(registry, "registry");
+        Intrinsics.checkNotNullParameter(lifecycle, "lifecycle");
+        if (this.isAttached) {
             throw new IllegalStateException("Already attached to lifecycleOwner");
         }
-        this.mIsAttached = true;
+        this.isAttached = true;
         lifecycle.addObserver(this);
-        savedStateRegistry.registerSavedStateProvider(this.mKey, this.mHandle.savedStateProvider());
+        registry.registerSavedStateProvider(this.key, this.handle.savedStateProvider());
     }
 
     @Override // androidx.lifecycle.LifecycleEventObserver
-    public void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public void onStateChanged(LifecycleOwner source, Lifecycle.Event event) {
+        Intrinsics.checkNotNullParameter(source, "source");
+        Intrinsics.checkNotNullParameter(event, "event");
         if (event == Lifecycle.Event.ON_DESTROY) {
-            this.mIsAttached = false;
-            lifecycleOwner.getLifecycle().removeObserver(this);
+            this.isAttached = false;
+            source.getLifecycle().removeObserver(this);
         }
-    }
-
-    SavedStateHandle getHandle() {
-        return this.mHandle;
     }
 }

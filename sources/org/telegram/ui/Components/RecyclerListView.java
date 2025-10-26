@@ -575,7 +575,7 @@ public class RecyclerListView extends RecyclerView {
             for (int i3 = 0; i3 < 8; i3++) {
                 this.radii[i3] = AndroidUtilities.dp(44.0f);
             }
-            this.scrollX = AndroidUtilities.dp(this.isRtl ? 10.0f : (i == 0 ? NotificationCenter.walletPendingTransactionsChanged : NotificationCenter.musicListLoaded) - 15);
+            this.scrollX = AndroidUtilities.dp(this.isRtl ? 10.0f : (i == 0 ? NotificationCenter.walletPendingTransactionsChanged : NotificationCenter.appConfigUpdated) - 15);
             updateColors();
             setFocusableInTouchMode(true);
             this.touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();

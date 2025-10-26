@@ -1,6 +1,5 @@
 package androidx.core.graphics;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.net.Uri;
@@ -57,7 +56,7 @@ public abstract class TypefaceCompatUtil {
 
     public static ByteBuffer mmap(Context context, CancellationSignal cancellationSignal, Uri uri) {
         try {
-            ParcelFileDescriptor openFileDescriptor = Api19Impl.openFileDescriptor(context.getContentResolver(), uri, "r", cancellationSignal);
+            ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(uri, "r", cancellationSignal);
             if (openFileDescriptor == null) {
                 if (openFileDescriptor != null) {
                     openFileDescriptor.close();
@@ -176,11 +175,5 @@ public abstract class TypefaceCompatUtil {
             }
         }
         return DesugarCollections.unmodifiableMap(hashMap);
-    }
-
-    static class Api19Impl {
-        static ParcelFileDescriptor openFileDescriptor(ContentResolver contentResolver, Uri uri, String str, CancellationSignal cancellationSignal) {
-            return contentResolver.openFileDescriptor(uri, str, cancellationSignal);
-        }
     }
 }

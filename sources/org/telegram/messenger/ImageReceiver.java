@@ -169,6 +169,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     private boolean useRoundRadius;
     public boolean useSharedAnimationQueue;
     private boolean videoThumbIsSame;
+    private Runnable visibleInvalidate;
 
     public static abstract class Decorator {
         public void onAttachedToWindow(ImageReceiver imageReceiver) {
@@ -209,14 +210,14 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         BitmapShader bitmapShader2;
         Drawable drawable = this.currentThumbDrawable;
         if (drawable != null && (bitmapShader2 = this.thumbShader) != null) {
-            drawDrawable(null, drawable, NotificationCenter.didApplyNewTheme, bitmapShader2, 0, 0, 0, null);
+            drawDrawable(null, drawable, NotificationCenter.didReplacedPhotoInMemCache, bitmapShader2, 0, 0, 0, null);
             return true;
         }
         Drawable drawable2 = this.staticThumbDrawable;
         if (drawable2 == null || (bitmapShader = this.staticThumbShader) == null) {
             return false;
         }
-        drawDrawable(null, drawable2, NotificationCenter.didApplyNewTheme, bitmapShader, 0, 0, 0, null);
+        drawDrawable(null, drawable2, NotificationCenter.didReplacedPhotoInMemCache, bitmapShader, 0, 0, 0, null);
         return true;
     }
 
@@ -2386,7 +2387,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                                 drawable7 = drawable20;
                                                 drawDrawable(canvas, drawable, i5, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                                 if (i5 != 255 && (drawable instanceof Emoji.EmojiDrawable)) {
-                                                    drawable.setAlpha(NotificationCenter.didApplyNewTheme);
+                                                    drawable.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                                                 }
                                             }
                                             i4 = (int) ((f5 - min) * f3 * 255.0f);
@@ -2394,7 +2395,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                             drawable7 = drawable20;
                                             drawDrawable(canvas, drawable, i5, bitmapShader7, this.thumbOrientation, this.thumbInvert, backgroundThreadDrawHolder);
                                             if (i5 != 255) {
-                                                drawable.setAlpha(NotificationCenter.didApplyNewTheme);
+                                                drawable.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                                             }
                                         } else {
                                             drawable7 = drawable20;
@@ -2820,7 +2821,15 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         this.isVisible = z;
         if (z2) {
             invalidate();
+            Runnable runnable = this.visibleInvalidate;
+            if (runnable != null) {
+                runnable.run();
+            }
         }
+    }
+
+    public void setVisibleInvalidate(Runnable runnable) {
+        this.visibleInvalidate = runnable;
     }
 
     public void invalidate() {
@@ -2988,7 +2997,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     public float getImageAspectRatio() {
         float width;
         float height;
-        if (this.imageOrientation % NotificationCenter.dialogFiltersUpdated != 0) {
+        if (this.imageOrientation % NotificationCenter.newEmojiSuggestionsAvailable != 0) {
             width = this.drawRegion.height();
             height = this.drawRegion.width();
         } else {

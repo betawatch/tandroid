@@ -510,7 +510,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
                 avatarHolderView3.setAlpha(0.0f);
                 avatarHolderView3.setScaleX(0.1f);
                 avatarHolderView3.setScaleY(0.1f);
-                avatarHolderView3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setInterpolator(cubicBezierInterpolator).setDuration(NotificationCenter.userIsPremiumBlockedUpadted).start();
+                avatarHolderView3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setInterpolator(cubicBezierInterpolator).setDuration(NotificationCenter.channelRecommendationsLoaded).start();
                 if (size == 0) {
                     avatarHolderView3.boostIconView.setScaleY(1.0f);
                     avatarHolderView3.boostIconView.setScaleX(1.0f);
@@ -533,7 +533,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
                 if (avatarHolderView != null) {
                     avatarHolderView.setTag("REMOVED");
                     ViewPropertyAnimator interpolator = avatarHolderView.animate().alpha(f).translationXBy(AndroidUtilities.dp(23.0f)).scaleX(f2).scaleY(f2).setInterpolator(cubicBezierInterpolator);
-                    long j = NotificationCenter.userIsPremiumBlockedUpadted;
+                    long j = NotificationCenter.channelRecommendationsLoaded;
                     interpolator.setDuration(j).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet.TopCell.1
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
@@ -566,21 +566,21 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
             this.addedChats.addAll(arrayList2);
             this.avatarsContainer.animate().cancel();
             if (this.addedChats.isEmpty() || this.addedChats.size() == 1) {
-                this.avatarsContainer.animate().setInterpolator(cubicBezierInterpolator).translationX(0.0f).setDuration(NotificationCenter.userIsPremiumBlockedUpadted).start();
+                this.avatarsContainer.animate().setInterpolator(cubicBezierInterpolator).translationX(0.0f).setDuration(NotificationCenter.channelRecommendationsLoaded).start();
             } else {
-                this.avatarsContainer.animate().setInterpolator(cubicBezierInterpolator).translationX(AndroidUtilities.dp(11.5f) * (this.addedChats.size() - 1)).setDuration(NotificationCenter.userIsPremiumBlockedUpadted).start();
+                this.avatarsContainer.animate().setInterpolator(cubicBezierInterpolator).translationX(AndroidUtilities.dp(11.5f) * (this.addedChats.size() - 1)).setDuration(NotificationCenter.channelRecommendationsLoaded).start();
             }
             this.toAvatar.animate().cancel();
             this.avatarsWrapper.animate().cancel();
             if (this.addedChats.isEmpty()) {
                 ViewPropertyAnimator translationX = this.avatarsWrapper.animate().setInterpolator(cubicBezierInterpolator).translationX(0.0f);
-                long j2 = NotificationCenter.userIsPremiumBlockedUpadted;
+                long j2 = NotificationCenter.channelRecommendationsLoaded;
                 translationX.setDuration(j2).start();
                 this.toAvatar.animate().setInterpolator(cubicBezierInterpolator).translationX(0.0f).setDuration(j2).start();
                 return;
             }
             ViewPropertyAnimator translationX2 = this.avatarsWrapper.animate().setInterpolator(cubicBezierInterpolator).translationX(-AndroidUtilities.dp(48.0f));
-            long j3 = NotificationCenter.userIsPremiumBlockedUpadted;
+            long j3 = NotificationCenter.channelRecommendationsLoaded;
             translationX2.setDuration(j3).start();
             this.toAvatar.animate().setInterpolator(cubicBezierInterpolator).translationX(AndroidUtilities.dp(48.0f)).setDuration(j3).start();
         }

@@ -11,10 +11,9 @@ import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
 public abstract class BundleKt {
-    public static final Bundle bundleOf(Pair... pairs) {
-        Intrinsics.checkNotNullParameter(pairs, "pairs");
-        Bundle bundle = new Bundle(pairs.length);
-        for (Pair pair : pairs) {
+    public static final Bundle bundleOf(Pair... pairArr) {
+        Bundle bundle = new Bundle(pairArr.length);
+        for (Pair pair : pairArr) {
             String str = (String) pair.component1();
             Object component2 = pair.component2();
             if (component2 == null) {
@@ -77,7 +76,7 @@ public abstract class BundleKt {
             } else if (component2 instanceof Serializable) {
                 bundle.putSerializable(str, (Serializable) component2);
             } else if (component2 instanceof IBinder) {
-                BundleApi18ImplKt.putBinder(bundle, str, (IBinder) component2);
+                bundle.putBinder(str, (IBinder) component2);
             } else if (component2 instanceof Size) {
                 BundleApi21ImplKt.putSize(bundle, str, (Size) component2);
             } else if (component2 instanceof SizeF) {

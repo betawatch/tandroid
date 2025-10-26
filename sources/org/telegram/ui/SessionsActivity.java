@@ -177,7 +177,7 @@ public class SessionsActivity extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    SessionsActivity.this.lambda$onBackPressed$355();
+                    SessionsActivity.this.lambda$onBackPressed$341();
                 }
             }
         });
@@ -372,7 +372,7 @@ public class SessionsActivity extends BaseFragment implements NotificationCenter
         } else if (num.intValue() == 1) {
             i = 90;
         } else if (num.intValue() == 2) {
-            i = NotificationCenter.updateBotMenuButton;
+            i = NotificationCenter.dialogFiltersUpdated;
         } else {
             i = num.intValue() == 3 ? 365 : 0;
         }

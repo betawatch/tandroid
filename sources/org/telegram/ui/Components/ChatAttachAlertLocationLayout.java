@@ -293,7 +293,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             ofFloat.setDuration(360L);
             ofFloat.start();
             this.views.put(iMarker, frameLayout);
-            ChatAttachAlertLocationLayout.this.map.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLng(iMarker.getPosition()), NotificationCenter.billingProductDetailsUpdated, null);
+            ChatAttachAlertLocationLayout.this.map.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLng(iMarker.getPosition()), NotificationCenter.premiumPromoUpdated, null);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -302,8 +302,8 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             if (chatActivity.isInScheduleMode()) {
                 AlertsCreator.createScheduleDatePickerDialog(ChatAttachAlertLocationLayout.this.getParentActivity(), chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$MapOverlayView$$ExternalSyntheticLambda1
                     @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                    public final void didSelectDate(boolean z, int i) {
-                        ChatAttachAlertLocationLayout.MapOverlayView.this.lambda$addInfoView$0(venueLocation, z, i);
+                    public final void didSelectDate(boolean z, int i, int i2) {
+                        ChatAttachAlertLocationLayout.MapOverlayView.this.lambda$addInfoView$0(venueLocation, z, i, i2);
                     }
                 }, ChatAttachAlertLocationLayout.this.resourcesProvider);
             } else {
@@ -318,7 +318,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$addInfoView$0(VenueLocation venueLocation, boolean z, int i) {
+        public /* synthetic */ void lambda$addInfoView$0(VenueLocation venueLocation, boolean z, int i, int i2) {
             ChatAttachAlertLocationLayout.this.delegate.didSelectLocation(venueLocation.venue, ChatAttachAlertLocationLayout.this.locationType, z, i, 0L);
             ChatAttachAlertLocationLayout.this.parentAlert.dismiss(true);
         }
@@ -1379,8 +1379,8 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         if (chatActivity.isInScheduleMode()) {
             AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda27
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z, int i) {
-                    ChatAttachAlertLocationLayout.this.lambda$new$5(tL_messageMediaGeo, l, z, i);
+                public final void didSelectDate(boolean z, int i, int i2) {
+                    ChatAttachAlertLocationLayout.this.lambda$new$5(tL_messageMediaGeo, l, z, i, i2);
                 }
             }, resourcesProvider);
         } else {
@@ -1390,7 +1390,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$5(TLRPC.TL_messageMediaGeo tL_messageMediaGeo, Long l, boolean z, int i) {
+    public /* synthetic */ void lambda$new$5(TLRPC.TL_messageMediaGeo tL_messageMediaGeo, Long l, boolean z, int i, int i2) {
         this.delegate.didSelectLocation(tL_messageMediaGeo, this.locationType, z, i, l.longValue());
         this.parentAlert.dismiss(true);
     }
@@ -1400,8 +1400,8 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         if (chatActivity.isInScheduleMode()) {
             AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda26
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z, int i) {
-                    ChatAttachAlertLocationLayout.this.lambda$new$7(obj, z, i);
+                public final void didSelectDate(boolean z, int i, int i2) {
+                    ChatAttachAlertLocationLayout.this.lambda$new$7(obj, z, i, i2);
                 }
             }, resourcesProvider);
         } else {
@@ -1411,7 +1411,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$7(Object obj, boolean z, int i) {
+    public /* synthetic */ void lambda$new$7(Object obj, boolean z, int i, int i2) {
         this.delegate.didSelectLocation((TLRPC.TL_messageMediaVenue) obj, this.locationType, z, i, 0L);
         this.parentAlert.dismiss(true);
     }
@@ -1562,8 +1562,8 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         if (chatActivity.isInScheduleMode()) {
             AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda23
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z, int i2) {
-                    ChatAttachAlertLocationLayout.this.lambda$new$18(item, z, i2);
+                public final void didSelectDate(boolean z, int i2, int i3) {
+                    ChatAttachAlertLocationLayout.this.lambda$new$18(item, z, i2, i3);
                 }
             }, resourcesProvider);
         } else {
@@ -1573,7 +1573,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$18(TLRPC.TL_messageMediaVenue tL_messageMediaVenue, boolean z, int i) {
+    public /* synthetic */ void lambda$new$18(TLRPC.TL_messageMediaVenue tL_messageMediaVenue, boolean z, int i, int i2) {
         this.delegate.didSelectLocation(tL_messageMediaVenue, this.locationType, z, i, 0L);
         this.parentAlert.dismiss(true);
     }
@@ -2575,7 +2575,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 if (locationActivityAdapter2 != null) {
                     locationActivityAdapter2.setMyLocationDenied(this.locationDenied, true);
                 }
-                parentActivity.requestPermissions(new String[]{"android.permission.ACCESS_MEDIA_LOCATION"}, NotificationCenter.customStickerCreated);
+                parentActivity.requestPermissions(new String[]{"android.permission.ACCESS_MEDIA_LOCATION"}, NotificationCenter.chatWasBoostedByUser);
             }
         }
     }

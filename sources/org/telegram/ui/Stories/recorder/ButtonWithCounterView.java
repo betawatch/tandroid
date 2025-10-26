@@ -56,6 +56,7 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
     private float loadingT;
     private int minWidth;
     private final Paint paint;
+    private int radiusDp;
     private Theme.ResourcesProvider resourcesProvider;
     public final View rippleView;
     private boolean showZero;
@@ -88,13 +89,23 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         this(context, true, resourcesProvider);
     }
 
+    public void setRoundRadius(int i) {
+        this.radiusDp = i;
+        if (this.filled) {
+            setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(i), Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider)));
+        } else {
+            setBackground(null);
+        }
+        updateColors();
+    }
+
     public void setFilled(boolean z) {
         if (this.filled == z) {
             return;
         }
         this.filled = z;
         if (z) {
-            setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(8.0f), Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider)));
+            setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(this.radiusDp), Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider)));
             this.text.setTypeface(AndroidUtilities.bold());
         } else {
             setBackground(null);
@@ -105,6 +116,7 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
 
     public ButtonWithCounterView(Context context, boolean z, Theme.ResourcesProvider resourcesProvider) {
         super(context);
+        this.radiusDp = 8;
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         this.countAlphaAnimated = new AnimatedFloat(350L, cubicBezierInterpolator);
         this.countFilled = true;
@@ -114,8 +126,8 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         this.countScale = 1.0f;
         this.enabledT = 1.0f;
         this.enabled = true;
-        this.globalAlpha = NotificationCenter.didApplyNewTheme;
-        this.subTextAlpha = NotificationCenter.userIsPremiumBlockedUpadted;
+        this.globalAlpha = NotificationCenter.didReplacedPhotoInMemCache;
+        this.subTextAlpha = NotificationCenter.channelRecommendationsLoaded;
         this.filled = z;
         this.resourcesProvider = resourcesProvider;
         ScaleStateListAnimator.apply(this, 0.02f, 1.2f);
@@ -165,7 +177,7 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
 
     public void setColor(int i) {
         if (this.filled) {
-            setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(8.0f), i));
+            setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(this.radiusDp), i));
         }
     }
 
@@ -177,9 +189,15 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
     public void updateColors() {
         this.text.setTextColor(Theme.getColor(this.filled ? Theme.key_featuredStickers_buttonText : Theme.key_featuredStickers_addButton, this.resourcesProvider));
         if (this.filled) {
-            this.rippleView.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, this.resourcesProvider), 8, 8));
+            View view = this.rippleView;
+            int color = Theme.getColor(Theme.key_listSelector, this.resourcesProvider);
+            int i = this.radiusDp;
+            view.setBackground(Theme.createRadSelectorDrawable(color, i, i));
         } else {
-            this.rippleView.setBackground(Theme.createRadSelectorDrawable(Theme.multAlpha(this.text.getTextColor(), 0.1f), 8, 8));
+            View view2 = this.rippleView;
+            int multAlpha = Theme.multAlpha(this.text.getTextColor(), 0.1f);
+            int i2 = this.radiusDp;
+            view2.setBackground(Theme.createRadSelectorDrawable(multAlpha, i2, i2));
         }
         this.subText.setTextColor(Theme.getColor(this.filled ? Theme.key_featuredStickers_buttonText : Theme.key_featuredStickers_addButton, this.resourcesProvider));
         this.countText.setTextColor(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider));
@@ -195,7 +213,10 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         if (this.filled) {
             return;
         }
-        this.rippleView.setBackground(Theme.createRadSelectorDrawable(Theme.multAlpha(this.text.getTextColor(), 0.1f), 8, 8));
+        View view = this.rippleView;
+        int multAlpha = Theme.multAlpha(this.text.getTextColor(), 0.1f);
+        int i2 = this.radiusDp;
+        view.setBackground(Theme.createRadSelectorDrawable(multAlpha, i2, i2));
     }
 
     public void setCountFilled(boolean z) {
@@ -495,7 +516,7 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
                 }
                 this.flickeringLoadingDrawable.resetDisappear();
                 this.flickeringLoadingDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                this.flickeringLoadingDrawable.setRadiiDp(8.0f);
+                this.flickeringLoadingDrawable.setRadiiDp(this.radiusDp);
                 this.flickeringLoadingDrawable.draw(canvas);
             } else {
                 LoadingDrawable loadingDrawable2 = this.flickeringLoadingDrawable;

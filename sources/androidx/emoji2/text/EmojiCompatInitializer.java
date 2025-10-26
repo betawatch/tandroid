@@ -13,6 +13,7 @@ import androidx.startup.Initializer;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor;
+import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
 public class EmojiCompatInitializer implements Initializer {
@@ -26,32 +27,32 @@ public class EmojiCompatInitializer implements Initializer {
     void delayUntilFirstResume(Context context) {
         final Lifecycle lifecycle = ((LifecycleOwner) AppInitializer.getInstance(context).initializeComponent(ProcessLifecycleInitializer.class)).getLifecycle();
         lifecycle.addObserver(new DefaultLifecycleObserver() { // from class: androidx.emoji2.text.EmojiCompatInitializer.1
-            @Override // androidx.lifecycle.FullLifecycleObserver
+            @Override // androidx.lifecycle.DefaultLifecycleObserver
             public /* synthetic */ void onCreate(LifecycleOwner lifecycleOwner) {
-                DefaultLifecycleObserver.-CC.$default$onCreate(this, lifecycleOwner);
+                Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
             }
 
-            @Override // androidx.lifecycle.FullLifecycleObserver
+            @Override // androidx.lifecycle.DefaultLifecycleObserver
             public /* synthetic */ void onDestroy(LifecycleOwner lifecycleOwner) {
-                DefaultLifecycleObserver.-CC.$default$onDestroy(this, lifecycleOwner);
+                Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
             }
 
-            @Override // androidx.lifecycle.FullLifecycleObserver
+            @Override // androidx.lifecycle.DefaultLifecycleObserver
             public /* synthetic */ void onPause(LifecycleOwner lifecycleOwner) {
-                DefaultLifecycleObserver.-CC.$default$onPause(this, lifecycleOwner);
+                Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
             }
 
-            @Override // androidx.lifecycle.FullLifecycleObserver
+            @Override // androidx.lifecycle.DefaultLifecycleObserver
             public /* synthetic */ void onStart(LifecycleOwner lifecycleOwner) {
-                DefaultLifecycleObserver.-CC.$default$onStart(this, lifecycleOwner);
+                Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
             }
 
-            @Override // androidx.lifecycle.FullLifecycleObserver
+            @Override // androidx.lifecycle.DefaultLifecycleObserver
             public /* synthetic */ void onStop(LifecycleOwner lifecycleOwner) {
-                DefaultLifecycleObserver.-CC.$default$onStop(this, lifecycleOwner);
+                Intrinsics.checkNotNullParameter(lifecycleOwner, "owner");
             }
 
-            @Override // androidx.lifecycle.FullLifecycleObserver
+            @Override // androidx.lifecycle.DefaultLifecycleObserver
             public void onResume(LifecycleOwner lifecycleOwner) {
                 EmojiCompatInitializer.this.loadEmojiCompatAfterDelay();
                 lifecycle.removeObserver(this);

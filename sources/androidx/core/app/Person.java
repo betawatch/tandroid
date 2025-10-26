@@ -4,6 +4,7 @@ import android.app.Person;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import androidx.core.graphics.drawable.IconCompat;
+import j$.util.Objects;
 
 /* loaded from: classes.dex */
 public class Person {
@@ -82,6 +83,24 @@ public class Person {
         return "";
     }
 
+    public boolean equals(Object obj) {
+        if (obj == null || !(obj instanceof Person)) {
+            return false;
+        }
+        Person person = (Person) obj;
+        String key = getKey();
+        String key2 = person.getKey();
+        if (key == null && key2 == null) {
+            return Objects.equals(Objects.toString(getName()), Objects.toString(person.getName())) && Objects.equals(getUri(), person.getUri()) && Boolean.valueOf(isBot()).equals(Boolean.valueOf(person.isBot())) && Boolean.valueOf(isImportant()).equals(Boolean.valueOf(person.isImportant()));
+        }
+        return Objects.equals(key, key2);
+    }
+
+    public int hashCode() {
+        String key = getKey();
+        return key != null ? key.hashCode() : Objects.hash(getName(), getUri(), Boolean.valueOf(isBot()), Boolean.valueOf(isImportant()));
+    }
+
     public static class Builder {
         IconCompat mIcon;
         boolean mIsBot;
@@ -143,10 +162,6 @@ public class Person {
     }
 
     static class Api28Impl {
-        static Person fromAndroidPerson(android.app.Person person) {
-            return new Builder().setName(person.getName()).setIcon(person.getIcon() != null ? IconCompat.createFromIcon(person.getIcon()) : null).setUri(person.getUri()).setKey(person.getKey()).setBot(person.isBot()).setImportant(person.isImportant()).build();
-        }
-
         static android.app.Person toAndroidPerson(Person person) {
             return new Person.Builder().setName(person.getName()).setIcon(person.getIcon() != null ? person.getIcon().toIcon() : null).setUri(person.getUri()).setKey(person.getKey()).setBot(person.isBot()).setImportant(person.isImportant()).build();
         }

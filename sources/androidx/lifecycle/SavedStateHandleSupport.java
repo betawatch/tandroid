@@ -36,7 +36,6 @@ public abstract class SavedStateHandleSupport {
     public static final void enableSavedStateHandles(SavedStateRegistryOwner savedStateRegistryOwner) {
         Intrinsics.checkNotNullParameter(savedStateRegistryOwner, "<this>");
         Lifecycle.State currentState = savedStateRegistryOwner.getLifecycle().getCurrentState();
-        Intrinsics.checkNotNullExpressionValue(currentState, "lifecycle.currentState");
         if (currentState != Lifecycle.State.INITIALIZED && currentState != Lifecycle.State.CREATED) {
             throw new IllegalArgumentException("Failed requirement.");
         }

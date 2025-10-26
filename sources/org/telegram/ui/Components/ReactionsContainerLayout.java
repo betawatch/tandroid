@@ -825,7 +825,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                         f7 = width2;
                         f6 = f12;
                         i = 5;
-                        this.delegate.drawRoundRect(canvas, this.rect, this.radius, getX(), getY(), NotificationCenter.didApplyNewTheme, false);
+                        this.delegate.drawRoundRect(canvas, this.rect, this.radius, getX(), getY(), NotificationCenter.didReplacedPhotoInMemCache, false);
                     } else {
                         RectF rectF = this.rect;
                         float f14 = this.radius;
@@ -979,7 +979,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                     }
                 }
                 canvas.restoreToCount(save3);
-                drawBubbles(canvas, f, max, f2, NotificationCenter.didApplyNewTheme);
+                drawBubbles(canvas, f, max, f2, NotificationCenter.didReplacedPhotoInMemCache);
                 invalidate();
             }
         }
@@ -1061,13 +1061,13 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         if (!showCustomEmojiReaction) {
         }
         canvas.restoreToCount(save32);
-        drawBubbles(canvas, f, max, f2, NotificationCenter.didApplyNewTheme);
+        drawBubbles(canvas, f, max, f2, NotificationCenter.didReplacedPhotoInMemCache);
         invalidate();
     }
 
     public void drawBubbles(Canvas canvas) {
         float max = (Math.max(0.25f, Math.min(this.transitionProgress, 1.0f)) - 0.25f) / 0.75f;
-        drawBubbles(canvas, this.bigCircleRadius * max, max, this.smallCircleRadius * max, this.type == 5 ? NotificationCenter.didApplyNewTheme : (int) (Utilities.clamp(this.customEmojiReactionsEnterProgress / 0.2f, 1.0f, 0.0f) * (1.0f - this.customEmojiReactionsEnterProgress) * 255.0f));
+        drawBubbles(canvas, this.bigCircleRadius * max, max, this.smallCircleRadius * max, this.type == 5 ? NotificationCenter.didReplacedPhotoInMemCache : (int) (Utilities.clamp(this.customEmojiReactionsEnterProgress / 0.2f, 1.0f, 0.0f) * (1.0f - this.customEmojiReactionsEnterProgress) * 255.0f));
     }
 
     private void drawBubbles(Canvas canvas, float f, float f2, float f3, int i) {
@@ -1113,8 +1113,8 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
             canvas.drawCircle(width2, lerp, f3, this.bgPaint);
         }
         canvas.restore();
-        this.shadow.setAlpha(NotificationCenter.didApplyNewTheme);
-        this.bgPaint.setAlpha(NotificationCenter.didApplyNewTheme);
+        this.shadow.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+        this.bgPaint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
     }
 
     public void setMiniBubblesOffset(float f) {
@@ -2537,7 +2537,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                 }
             }
             ReactionsLayoutInBubble.VisibleReaction visibleReaction2 = this.currentReaction;
-            if (visibleReaction2 != null && visibleReaction2.isStar && this.particles != null && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS)) {
+            if (visibleReaction2 != null && visibleReaction2.isStar && this.particles != null && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS) && LiteMode.isEnabled(131072)) {
                 RectF rectF = AndroidUtilities.rectTmp;
                 float height = ((int) (getHeight() * 0.7f)) / 2.0f;
                 rectF.set((getWidth() / 2.0f) - height, (getHeight() / 2.0f) - height, (getWidth() / 2.0f) + height, (getHeight() / 2.0f) + height);

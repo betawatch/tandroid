@@ -5,7 +5,7 @@ import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
 abstract class EventStoreConfig {
-    static final EventStoreConfig DEFAULT = builder().setMaxStorageSizeInBytes(10485760).setLoadBatchSize(NotificationCenter.userIsPremiumBlockedUpadted).setCriticalSectionEnterTimeoutMs(10000).setEventCleanUpAge(604800000).setMaxBlobByteSizePerRow(81920).build();
+    static final EventStoreConfig DEFAULT = builder().setMaxStorageSizeInBytes(10485760).setLoadBatchSize(NotificationCenter.channelRecommendationsLoaded).setCriticalSectionEnterTimeoutMs(10000).setEventCleanUpAge(604800000).setMaxBlobByteSizePerRow(81920).build();
 
     abstract int getCriticalSectionEnterTimeoutMs();
 

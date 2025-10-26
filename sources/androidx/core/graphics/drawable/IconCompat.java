@@ -15,7 +15,6 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.Shader;
-import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
@@ -26,7 +25,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.core.content.ContextCompat;
 import androidx.core.util.ObjectsCompat;
-import androidx.core.util.Preconditions;
 import androidx.versionedparcelable.CustomVersionedParcelable;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -87,30 +85,6 @@ public class IconCompat extends CustomVersionedParcelable {
         IconCompat iconCompat = new IconCompat(5);
         iconCompat.mObj1 = bitmap;
         return iconCompat;
-    }
-
-    public static IconCompat createWithContentUri(String str) {
-        ObjectsCompat.requireNonNull(str);
-        IconCompat iconCompat = new IconCompat(4);
-        iconCompat.mObj1 = str;
-        return iconCompat;
-    }
-
-    public static IconCompat createWithContentUri(Uri uri) {
-        ObjectsCompat.requireNonNull(uri);
-        return createWithContentUri(uri.toString());
-    }
-
-    public static IconCompat createWithAdaptiveBitmapContentUri(String str) {
-        ObjectsCompat.requireNonNull(str);
-        IconCompat iconCompat = new IconCompat(6);
-        iconCompat.mObj1 = str;
-        return iconCompat;
-    }
-
-    public static IconCompat createWithAdaptiveBitmapContentUri(Uri uri) {
-        ObjectsCompat.requireNonNull(uri);
-        return createWithAdaptiveBitmapContentUri(uri.toString());
     }
 
     public IconCompat() {
@@ -490,17 +464,6 @@ public class IconCompat extends CustomVersionedParcelable {
         }
     }
 
-    public static IconCompat createFromIcon(Icon icon) {
-        return Api23Impl.createFromIconInner(icon);
-    }
-
-    public static IconCompat createFromIconOrNullIfZeroResId(Icon icon) {
-        if (Api23Impl.getType(icon) == 2 && Api23Impl.getResId(icon) == 0) {
-            return null;
-        }
-        return Api23Impl.createFromIconInner(icon);
-    }
-
     static Bitmap createLegacyIconFromAdaptiveIcon(Bitmap bitmap, boolean z) {
         int min = (int) (Math.min(bitmap.getWidth(), bitmap.getHeight()) * 0.6666667f);
         Bitmap createBitmap = Bitmap.createBitmap(min, min, Bitmap.Config.ARGB_8888);
@@ -549,10 +512,6 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     static class Api26Impl {
-        static Drawable createAdaptiveIconDrawable(Drawable drawable, Drawable drawable2) {
-            return new AdaptiveIconDrawable(drawable, drawable2);
-        }
-
         static Icon createWithAdaptiveBitmap(Bitmap bitmap) {
             return Icon.createWithAdaptiveBitmap(bitmap);
         }
@@ -599,23 +558,6 @@ public class IconCompat extends CustomVersionedParcelable {
                 Log.e("IconCompat", "Unable to get icon package", e3);
                 return null;
             }
-        }
-
-        static IconCompat createFromIconInner(Object obj) {
-            Preconditions.checkNotNull(obj);
-            int type = getType(obj);
-            if (type == 2) {
-                return IconCompat.createWithResource(null, getResPackage(obj), getResId(obj));
-            }
-            if (type == 4) {
-                return IconCompat.createWithContentUri(getUri(obj));
-            }
-            if (type == 6) {
-                return IconCompat.createWithAdaptiveBitmapContentUri(getUri(obj));
-            }
-            IconCompat iconCompat = new IconCompat(-1);
-            iconCompat.mObj1 = obj;
-            return iconCompat;
         }
 
         static int getResId(Object obj) {
@@ -713,10 +655,6 @@ public class IconCompat extends CustomVersionedParcelable {
                 createWithBitmap.setTintMode(mode);
             }
             return createWithBitmap;
-        }
-
-        static Drawable loadDrawable(Icon icon, Context context) {
-            return icon.loadDrawable(context);
         }
     }
 }

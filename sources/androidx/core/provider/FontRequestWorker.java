@@ -3,12 +3,16 @@ package androidx.core.provider;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.os.Build;
 import androidx.collection.LruCache;
 import androidx.collection.SimpleArrayMap;
 import androidx.core.graphics.TypefaceCompat;
+import androidx.core.graphics.TypefaceCompat$$ExternalSyntheticBackport2;
 import androidx.core.provider.FontsContractCompat;
 import androidx.core.util.Consumer;
+import androidx.tracing.Trace;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
@@ -20,38 +24,46 @@ abstract class FontRequestWorker {
     static final Object LOCK = new Object();
     static final SimpleArrayMap PENDING_REPLIES = new SimpleArrayMap();
 
-    static Typeface requestFontSync(final Context context, final FontRequest fontRequest, CallbackWithHandler callbackWithHandler, final int i, int i2) {
-        final String createCacheId = createCacheId(fontRequest, i);
+    static Typeface requestFontSync(final Context context, final FontRequest fontRequest, CallbackWrapper callbackWrapper, final int i, int i2) {
+        List m;
+        List m2;
+        m = TypefaceCompat$$ExternalSyntheticBackport2.m(new Object[]{fontRequest});
+        final String createCacheId = createCacheId(m, i);
         Typeface typeface = (Typeface) sTypefaceCache.get(createCacheId);
         if (typeface != null) {
-            callbackWithHandler.onTypefaceResult(new TypefaceResult(typeface));
+            callbackWrapper.onTypefaceResult(new TypefaceResult(typeface));
             return typeface;
         }
         if (i2 == -1) {
-            TypefaceResult fontSync = getFontSync(createCacheId, context, fontRequest, i);
-            callbackWithHandler.onTypefaceResult(fontSync);
+            m2 = TypefaceCompat$$ExternalSyntheticBackport2.m(new Object[]{fontRequest});
+            TypefaceResult fontSync = getFontSync(createCacheId, context, m2, i);
+            callbackWrapper.onTypefaceResult(fontSync);
             return fontSync.mTypeface;
         }
         try {
             TypefaceResult typefaceResult = (TypefaceResult) RequestExecutor.submit(DEFAULT_EXECUTOR_SERVICE, new Callable() { // from class: androidx.core.provider.FontRequestWorker.1
                 @Override // java.util.concurrent.Callable
                 public TypefaceResult call() {
-                    return FontRequestWorker.getFontSync(createCacheId, context, fontRequest, i);
+                    List m3;
+                    String str = createCacheId;
+                    Context context2 = context;
+                    m3 = TypefaceCompat$$ExternalSyntheticBackport2.m(new Object[]{fontRequest});
+                    return FontRequestWorker.getFontSync(str, context2, m3, i);
                 }
             }, i2);
-            callbackWithHandler.onTypefaceResult(typefaceResult);
+            callbackWrapper.onTypefaceResult(typefaceResult);
             return typefaceResult.mTypeface;
         } catch (InterruptedException unused) {
-            callbackWithHandler.onTypefaceResult(new TypefaceResult(-3));
+            callbackWrapper.onTypefaceResult(new TypefaceResult(-3));
             return null;
         }
     }
 
-    static Typeface requestFontAsync(final Context context, final FontRequest fontRequest, final int i, Executor executor, final CallbackWithHandler callbackWithHandler) {
-        final String createCacheId = createCacheId(fontRequest, i);
+    static Typeface requestFontAsync(final Context context, final List list, final int i, Executor executor, final CallbackWrapper callbackWrapper) {
+        final String createCacheId = createCacheId(list, i);
         Typeface typeface = (Typeface) sTypefaceCache.get(createCacheId);
         if (typeface != null) {
-            callbackWithHandler.onTypefaceResult(new TypefaceResult(typeface));
+            callbackWrapper.onTypefaceResult(new TypefaceResult(typeface));
             return typeface;
         }
         Consumer consumer = new Consumer() { // from class: androidx.core.provider.FontRequestWorker.2
@@ -60,7 +72,7 @@ abstract class FontRequestWorker {
                 if (typefaceResult == null) {
                     typefaceResult = new TypefaceResult(-3);
                 }
-                CallbackWithHandler.this.onTypefaceResult(typefaceResult);
+                CallbackWrapper.this.onTypefaceResult(typefaceResult);
             }
         };
         synchronized (LOCK) {
@@ -78,7 +90,7 @@ abstract class FontRequestWorker {
                     @Override // java.util.concurrent.Callable
                     public TypefaceResult call() {
                         try {
-                            return FontRequestWorker.getFontSync(createCacheId, context, fontRequest, i);
+                            return FontRequestWorker.getFontSync(createCacheId, context, list, i);
                         } catch (Throwable unused) {
                             return new TypefaceResult(-3);
                         }
@@ -114,30 +126,42 @@ abstract class FontRequestWorker {
         }
     }
 
-    private static String createCacheId(FontRequest fontRequest, int i) {
-        return fontRequest.getId() + "-" + i;
+    private static String createCacheId(List list, int i) {
+        StringBuilder sb = new StringBuilder();
+        for (int i2 = 0; i2 < list.size(); i2++) {
+            sb.append(((FontRequest) list.get(i2)).getId());
+            sb.append("-");
+            sb.append(i);
+            if (i2 < list.size() - 1) {
+                sb.append(";");
+            }
+        }
+        return sb.toString();
     }
 
-    static TypefaceResult getFontSync(String str, Context context, FontRequest fontRequest, int i) {
-        LruCache lruCache = sTypefaceCache;
-        Typeface typeface = (Typeface) lruCache.get(str);
-        if (typeface != null) {
-            return new TypefaceResult(typeface);
-        }
+    static TypefaceResult getFontSync(String str, Context context, List list, int i) {
+        Trace.beginSection("getFontSync");
         try {
-            FontsContractCompat.FontFamilyResult fontFamilyResult = FontProvider.getFontFamilyResult(context, fontRequest, null);
+            LruCache lruCache = sTypefaceCache;
+            Typeface typeface = (Typeface) lruCache.get(str);
+            if (typeface != null) {
+                return new TypefaceResult(typeface);
+            }
+            FontsContractCompat.FontFamilyResult fontFamilyResult = FontProvider.getFontFamilyResult(context, list, null);
             int fontFamilyResultStatus = getFontFamilyResultStatus(fontFamilyResult);
             if (fontFamilyResultStatus != 0) {
                 return new TypefaceResult(fontFamilyResultStatus);
             }
-            Typeface createFromFontInfo = TypefaceCompat.createFromFontInfo(context, null, fontFamilyResult.getFonts(), i);
-            if (createFromFontInfo != null) {
-                lruCache.put(str, createFromFontInfo);
-                return new TypefaceResult(createFromFontInfo);
+            Typeface createFromFontInfo = (!fontFamilyResult.hasFallback() || Build.VERSION.SDK_INT < 29) ? TypefaceCompat.createFromFontInfo(context, null, fontFamilyResult.getFonts(), i) : TypefaceCompat.createFromFontInfoWithFallback(context, null, fontFamilyResult.getFontsWithFallbacks(), i);
+            if (createFromFontInfo == null) {
+                return new TypefaceResult(-3);
             }
-            return new TypefaceResult(-3);
+            lruCache.put(str, createFromFontInfo);
+            return new TypefaceResult(createFromFontInfo);
         } catch (PackageManager.NameNotFoundException unused) {
             return new TypefaceResult(-1);
+        } finally {
+            Trace.endSection();
         }
     }
 

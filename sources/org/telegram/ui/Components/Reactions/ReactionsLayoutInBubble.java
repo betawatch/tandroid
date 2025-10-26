@@ -509,7 +509,7 @@ public class ReactionsLayoutInBubble {
     }
 
     public boolean hasOverlay() {
-        return this.hasPaidReaction && !(this.isEmpty && this.outButtons.isEmpty()) && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
+        return this.hasPaidReaction && !(this.isEmpty && this.outButtons.isEmpty()) && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS) && LiteMode.isEnabled(131072);
     }
 
     public void drawOverlay(Canvas canvas, float f) {
@@ -1063,7 +1063,7 @@ public class ReactionsLayoutInBubble {
         }
 
         public void drawOverlay(Canvas canvas, float f, float f2, float f3, float f4, boolean z) {
-            if (this.particles != null && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS)) {
+            if (this.particles != null && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS) && LiteMode.isEnabled(131072)) {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(f, f2, this.width + f, this.height + f2);
                 float f5 = this.height / 2.0f;
@@ -1078,7 +1078,7 @@ public class ReactionsLayoutInBubble {
                 if (view != null) {
                     view.invalidate();
                 }
-                this.particles.draw(canvas, ColorUtils.blendARGB(ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.didApplyNewTheme), ColorUtils.blendARGB(this.serviceTextColor, ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.didApplyNewTheme), 0.4f), getDrawServiceShaderBackground()));
+                this.particles.draw(canvas, ColorUtils.blendARGB(ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.didReplacedPhotoInMemCache), ColorUtils.blendARGB(this.serviceTextColor, ColorUtils.setAlphaComponent(this.backgroundColor, NotificationCenter.didReplacedPhotoInMemCache), 0.4f), getDrawServiceShaderBackground()));
                 canvas.save();
                 canvas.clipPath(this.tagPath);
                 this.particles.draw(canvas, this.textColor);
@@ -1214,7 +1214,7 @@ public class ReactionsLayoutInBubble {
             }
             if (z4) {
                 rectF.right += AndroidUtilities.dp(4.0f);
-                canvas.saveLayerAlpha(rectF, NotificationCenter.didApplyNewTheme, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.didReplacedPhotoInMemCache, 31);
                 rectF.right -= AndroidUtilities.dp(4.0f);
             }
             if (this.particles != null) {

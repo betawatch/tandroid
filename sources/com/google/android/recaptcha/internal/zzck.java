@@ -94,8 +94,8 @@ public final class zzck {
     }
 
     public final void zze(int i, Object obj) {
-        zzf(NotificationCenter.groupCallVisibilityChanged, obj);
-        this.zzb.add(Integer.valueOf(NotificationCenter.groupCallVisibilityChanged));
+        zzf(NotificationCenter.closeInCallActivity, obj);
+        this.zzb.add(Integer.valueOf(NotificationCenter.closeInCallActivity));
     }
 
     public final void zzf(int i, Object obj) {

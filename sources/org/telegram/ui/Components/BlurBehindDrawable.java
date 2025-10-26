@@ -205,71 +205,7 @@ public class BlurBehindDrawable {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getBlurRadius() {
-        return Math.max(7, Math.max(this.lastH, this.lastW) / NotificationCenter.dialogFiltersUpdated);
-    }
-
-    public void clear() {
-        this.invalidate = true;
-        this.wasDraw = false;
-        this.error = false;
-        this.blurAlpha = 0.0f;
-        this.lastW = 0;
-        this.lastH = 0;
-        DispatchQueue dispatchQueue = this.queue;
-        if (dispatchQueue != null) {
-            dispatchQueue.cleanupQueue();
-            this.queue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.BlurBehindDrawable$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    BlurBehindDrawable.this.lambda$clear$2();
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$clear$2() {
-        Bitmap[] bitmapArr = this.renderingBitmap;
-        if (bitmapArr != null) {
-            Bitmap bitmap = bitmapArr[0];
-            if (bitmap != null) {
-                bitmap.recycle();
-            }
-            Bitmap bitmap2 = this.renderingBitmap[1];
-            if (bitmap2 != null) {
-                bitmap2.recycle();
-            }
-            this.renderingBitmap = null;
-        }
-        Bitmap[] bitmapArr2 = this.backgroundBitmap;
-        if (bitmapArr2 != null) {
-            Bitmap bitmap3 = bitmapArr2[0];
-            if (bitmap3 != null) {
-                bitmap3.recycle();
-            }
-            Bitmap bitmap4 = this.backgroundBitmap[1];
-            if (bitmap4 != null) {
-                bitmap4.recycle();
-            }
-            this.backgroundBitmap = null;
-        }
-        this.renderingBitmapCanvas = null;
-        this.skipDraw = false;
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.BlurBehindDrawable$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                BlurBehindDrawable.this.lambda$clear$1();
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$clear$1() {
-        DispatchQueue dispatchQueue = this.queue;
-        if (dispatchQueue != null) {
-            dispatchQueue.recycle();
-            this.queue = null;
-        }
+        return Math.max(7, Math.max(this.lastH, this.lastW) / NotificationCenter.newEmojiSuggestionsAvailable);
     }
 
     public void invalidate() {
@@ -355,7 +291,7 @@ public class BlurBehindDrawable {
                 this.behindView.setTag(67108867, null);
                 this.blurCanvas[i].restore();
                 Utilities.stackBlurBitmap(this.blurredBitmapTmp[i], getBlurRadius());
-                this.emptyPaint.setAlpha(NotificationCenter.didApplyNewTheme);
+                this.emptyPaint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                 if (i == 1) {
                     this.renderingBitmap[i].eraseColor(getThemedColor(Theme.key_windowBackgroundWhite));
                 }
@@ -414,7 +350,7 @@ public class BlurBehindDrawable {
                 } else {
                     BlurBehindDrawable.this.backgroundBitmap[i2].eraseColor(0);
                 }
-                BlurBehindDrawable.this.emptyPaint.setAlpha(NotificationCenter.didApplyNewTheme);
+                BlurBehindDrawable.this.emptyPaint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                 Utilities.stackBlurBitmap(BlurBehindDrawable.this.blurredBitmapTmp[i2], BlurBehindDrawable.this.getBlurRadius());
                 if (BlurBehindDrawable.this.backgroundBitmapCanvas[i2] != null) {
                     BlurBehindDrawable.this.backgroundBitmapCanvas[i2].drawBitmap(BlurBehindDrawable.this.blurredBitmapTmp[i2], 0.0f, 0.0f, BlurBehindDrawable.this.emptyPaint);

@@ -398,9 +398,5 @@ public final class NotificationManagerCompat {
         static boolean areNotificationsEnabled(NotificationManager notificationManager) {
             return notificationManager.areNotificationsEnabled();
         }
-
-        static int getImportance(NotificationManager notificationManager) {
-            return notificationManager.getImportance();
-        }
     }
 }

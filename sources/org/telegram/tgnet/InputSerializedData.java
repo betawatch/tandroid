@@ -2,6 +2,8 @@ package org.telegram.tgnet;
 
 /* loaded from: classes3.dex */
 public interface InputSerializedData {
+    TLDataSourceType getDataSourceType();
+
     int getPosition();
 
     int length();

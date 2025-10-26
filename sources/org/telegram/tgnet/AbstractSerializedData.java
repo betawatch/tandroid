@@ -2,6 +2,8 @@ package org.telegram.tgnet;
 
 /* loaded from: classes3.dex */
 public abstract class AbstractSerializedData implements InputSerializedData, OutputSerializedData {
+    private TLDataSourceType dataSourceType = TLDataSourceType.UNKNOWN;
+
     @Override // org.telegram.tgnet.InputSerializedData, org.telegram.tgnet.OutputSerializedData
     public abstract int getPosition();
 
@@ -85,4 +87,13 @@ public abstract class AbstractSerializedData implements InputSerializedData, Out
 
     @Override // org.telegram.tgnet.OutputSerializedData
     public abstract void writeString(String str);
+
+    public void setDataSourceType(TLDataSourceType tLDataSourceType) {
+        this.dataSourceType = tLDataSourceType;
+    }
+
+    @Override // org.telegram.tgnet.InputSerializedData
+    public TLDataSourceType getDataSourceType() {
+        return this.dataSourceType;
+    }
 }

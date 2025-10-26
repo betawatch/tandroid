@@ -30,10 +30,10 @@ public class AccessibilityNodeProviderCompat {
         return false;
     }
 
-    static class AccessibilityNodeProviderApi16 extends AccessibilityNodeProvider {
+    static class AccessibilityNodeProviderApi19 extends AccessibilityNodeProvider {
         final AccessibilityNodeProviderCompat mCompat;
 
-        AccessibilityNodeProviderApi16(AccessibilityNodeProviderCompat accessibilityNodeProviderCompat) {
+        AccessibilityNodeProviderApi19(AccessibilityNodeProviderCompat accessibilityNodeProviderCompat) {
             this.mCompat = accessibilityNodeProviderCompat;
         }
 
@@ -63,12 +63,6 @@ public class AccessibilityNodeProviderCompat {
         @Override // android.view.accessibility.AccessibilityNodeProvider
         public boolean performAction(int i, int i2, Bundle bundle) {
             return this.mCompat.performAction(i, i2, bundle);
-        }
-    }
-
-    static class AccessibilityNodeProviderApi19 extends AccessibilityNodeProviderApi16 {
-        AccessibilityNodeProviderApi19(AccessibilityNodeProviderCompat accessibilityNodeProviderCompat) {
-            super(accessibilityNodeProviderCompat);
         }
 
         @Override // android.view.accessibility.AccessibilityNodeProvider

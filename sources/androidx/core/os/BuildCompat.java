@@ -3,63 +3,82 @@ package androidx.core.os;
 import android.os.Build;
 import android.os.ext.SdkExtensions;
 import java.util.Locale;
+import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.MediaController;
 
 /* loaded from: classes.dex */
-public abstract class BuildCompat {
+public final class BuildCompat {
     public static final int AD_SERVICES_EXTENSION_INT;
+    public static final BuildCompat INSTANCE = new BuildCompat();
     public static final int R_EXTENSION_INT;
     public static final int S_EXTENSION_INT;
     public static final int T_EXTENSION_INT;
 
-    protected static boolean isAtLeastPreReleaseCodename(String str, String str2) {
-        if ("REL".equals(str2)) {
-            return false;
-        }
-        Locale locale = Locale.ROOT;
-        return str2.toUpperCase(locale).compareTo(str.toUpperCase(locale)) >= 0;
+    private BuildCompat() {
     }
 
-    public static boolean isAtLeastNMR1() {
+    private static final Integer isAtLeastPreReleaseCodename$codenameToInt(String str) {
+        String upperCase = str.toUpperCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
+        return Intrinsics.areEqual(upperCase, "BAKLAVA") ? 0 : null;
+    }
+
+    public static final boolean isAtLeastPreReleaseCodename(String codename, String buildCodename) {
+        Intrinsics.checkNotNullParameter(codename, "codename");
+        Intrinsics.checkNotNullParameter(buildCodename, "buildCodename");
+        if (Intrinsics.areEqual("REL", buildCodename)) {
+            return false;
+        }
+        Integer isAtLeastPreReleaseCodename$codenameToInt = isAtLeastPreReleaseCodename$codenameToInt(buildCodename);
+        Integer isAtLeastPreReleaseCodename$codenameToInt2 = isAtLeastPreReleaseCodename$codenameToInt(codename);
+        if (isAtLeastPreReleaseCodename$codenameToInt != null && isAtLeastPreReleaseCodename$codenameToInt2 != null) {
+            return isAtLeastPreReleaseCodename$codenameToInt.intValue() >= isAtLeastPreReleaseCodename$codenameToInt2.intValue();
+        }
+        if (isAtLeastPreReleaseCodename$codenameToInt != null || isAtLeastPreReleaseCodename$codenameToInt2 != null) {
+            return isAtLeastPreReleaseCodename$codenameToInt != null;
+        }
+        Locale locale = Locale.ROOT;
+        String upperCase = buildCodename.toUpperCase(locale);
+        Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
+        String upperCase2 = codename.toUpperCase(locale);
+        Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
+        return upperCase.compareTo(upperCase2) >= 0;
+    }
+
+    public static final boolean isAtLeastNMR1() {
         return Build.VERSION.SDK_INT >= 25;
     }
 
-    public static boolean isAtLeastR() {
-        return Build.VERSION.SDK_INT >= 30;
-    }
-
-    public static boolean isAtLeastT() {
+    public static final boolean isAtLeastT() {
         int i = Build.VERSION.SDK_INT;
-        return i >= 33 || (i >= 32 && isAtLeastPreReleaseCodename("Tiramisu", Build.VERSION.CODENAME));
+        if (i < 33) {
+            if (i >= 32) {
+                String CODENAME = Build.VERSION.CODENAME;
+                Intrinsics.checkNotNullExpressionValue(CODENAME, "CODENAME");
+                if (isAtLeastPreReleaseCodename("Tiramisu", CODENAME)) {
+                }
+            }
+            return false;
+        }
+        return true;
     }
 
     static {
         int i = Build.VERSION.SDK_INT;
-        R_EXTENSION_INT = i >= 30 ? Extensions30Impl.R : 0;
-        S_EXTENSION_INT = i >= 30 ? Extensions30Impl.S : 0;
-        T_EXTENSION_INT = i >= 30 ? Extensions30Impl.TIRAMISU : 0;
-        AD_SERVICES_EXTENSION_INT = i >= 30 ? Extensions30Impl.AD_SERVICES : 0;
+        R_EXTENSION_INT = i >= 30 ? Api30Impl.INSTANCE.getExtensionVersion(30) : 0;
+        S_EXTENSION_INT = i >= 30 ? Api30Impl.INSTANCE.getExtensionVersion(31) : 0;
+        T_EXTENSION_INT = i >= 30 ? Api30Impl.INSTANCE.getExtensionVersion(33) : 0;
+        AD_SERVICES_EXTENSION_INT = i >= 30 ? Api30Impl.INSTANCE.getExtensionVersion(MediaController.VIDEO_BITRATE_480) : 0;
     }
 
-    private static final class Extensions30Impl {
-        static final int AD_SERVICES;
-        static final int R;
-        static final int S;
-        static final int TIRAMISU;
+    private static final class Api30Impl {
+        public static final Api30Impl INSTANCE = new Api30Impl();
 
-        static {
-            int extensionVersion;
-            int extensionVersion2;
-            int extensionVersion3;
-            int extensionVersion4;
-            extensionVersion = SdkExtensions.getExtensionVersion(30);
-            R = extensionVersion;
-            extensionVersion2 = SdkExtensions.getExtensionVersion(31);
-            S = extensionVersion2;
-            extensionVersion3 = SdkExtensions.getExtensionVersion(33);
-            TIRAMISU = extensionVersion3;
-            extensionVersion4 = SdkExtensions.getExtensionVersion(MediaController.VIDEO_BITRATE_480);
-            AD_SERVICES = extensionVersion4;
+        private Api30Impl() {
+        }
+
+        public final int getExtensionVersion(int i) {
+            return SdkExtensions.getExtensionVersion(i);
         }
     }
 }

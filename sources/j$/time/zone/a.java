@@ -93,12 +93,12 @@ final class a implements Externalizable {
     static void c(long j, ObjectOutput objectOutput) {
         if (j >= -4575744000L && j < 10413792000L && j % 900 == 0) {
             int i = (int) ((j + 4575744000L) / 900);
-            objectOutput.writeByte((i >>> 16) & NotificationCenter.didApplyNewTheme);
-            objectOutput.writeByte((i >>> 8) & NotificationCenter.didApplyNewTheme);
-            objectOutput.writeByte(i & NotificationCenter.didApplyNewTheme);
+            objectOutput.writeByte((i >>> 16) & NotificationCenter.didReplacedPhotoInMemCache);
+            objectOutput.writeByte((i >>> 8) & NotificationCenter.didReplacedPhotoInMemCache);
+            objectOutput.writeByte(i & NotificationCenter.didReplacedPhotoInMemCache);
             return;
         }
-        objectOutput.writeByte(NotificationCenter.didApplyNewTheme);
+        objectOutput.writeByte(NotificationCenter.didReplacedPhotoInMemCache);
         objectOutput.writeLong(j);
     }
 

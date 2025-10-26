@@ -68,7 +68,7 @@ public class EnableTopicsActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    EnableTopicsActivity.this.lambda$onBackPressed$355();
+                    EnableTopicsActivity.this.lambda$onBackPressed$341();
                 }
             }
         });
@@ -202,7 +202,7 @@ public class EnableTopicsActivity extends BaseFragment {
             FrameLayout frameLayout = new FrameLayout(context);
             this.leftLayout = frameLayout;
             ScaleStateListAnimator.apply(frameLayout, 0.05f, 1.25f);
-            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.starGiftsLoaded, 1.0f, 119));
+            addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.channelStarsUpdated, 1.0f, 119));
             BackupImageView backupImageView = new BackupImageView(context);
             this.leftImageView = backupImageView;
             backupImageView.setImageDrawable(new RLottieDrawable(R.raw.topics_tabs, "topics_tabs", AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
@@ -232,7 +232,7 @@ public class EnableTopicsActivity extends BaseFragment {
             FrameLayout frameLayout4 = new FrameLayout(context);
             this.rightLayout = frameLayout4;
             ScaleStateListAnimator.apply(frameLayout4, 0.05f, 1.25f);
-            addView(frameLayout4, LayoutHelper.createLinear(-1, NotificationCenter.starGiftsLoaded, 1.0f, 119));
+            addView(frameLayout4, LayoutHelper.createLinear(-1, NotificationCenter.channelStarsUpdated, 1.0f, 119));
             BackupImageView backupImageView2 = new BackupImageView(context);
             this.rightImageView = backupImageView2;
             backupImageView2.setImageDrawable(new RLottieDrawable(R.raw.topics_list, "topics_list", AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));

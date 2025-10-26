@@ -606,7 +606,7 @@ public class SeekBarWaveform {
                     particle2.x = rectF.left + (rectF.width() * Utilities.random.nextFloat());
                     RectF rectF2 = this.emitArea;
                     particle2.y = rectF2.top + (rectF2.height() * Utilities.random.nextFloat());
-                    double nextInt = (Utilities.random.nextInt(NotificationCenter.userIsPremiumBlockedUpadted) - 125) * 0.017453292519943295d;
+                    double nextInt = (Utilities.random.nextInt(NotificationCenter.channelRecommendationsLoaded) - 125) * 0.017453292519943295d;
                     particle2.vx = ((float) (Math.cos(nextInt) - Math.sin(nextInt))) * 0.8f;
                     particle2.vy = ((float) (Math.sin(nextInt) + Math.cos(nextInt))) - 0.2f;
                     particle2.t = 1.0f;

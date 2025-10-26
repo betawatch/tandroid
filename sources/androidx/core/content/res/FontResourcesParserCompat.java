@@ -19,13 +19,15 @@ public abstract class FontResourcesParserCompat {
     }
 
     public static final class ProviderResourceEntry implements FamilyResourceEntry {
+        private final FontRequest mFallbackRequest;
         private final FontRequest mRequest;
         private final int mStrategy;
         private final String mSystemFontFamilyName;
         private final int mTimeoutMs;
 
-        public ProviderResourceEntry(FontRequest fontRequest, int i, int i2, String str) {
+        public ProviderResourceEntry(FontRequest fontRequest, FontRequest fontRequest2, int i, int i2, String str) {
             this.mRequest = fontRequest;
+            this.mFallbackRequest = fontRequest2;
             this.mStrategy = i;
             this.mTimeoutMs = i2;
             this.mSystemFontFamilyName = str;
@@ -33,6 +35,10 @@ public abstract class FontResourcesParserCompat {
 
         public FontRequest getRequest() {
             return this.mRequest;
+        }
+
+        public FontRequest getFallbackRequest() {
+            return this.mFallbackRequest;
         }
 
         public int getFetchStrategy() {
@@ -130,16 +136,18 @@ public abstract class FontResourcesParserCompat {
         String string = obtainAttributes.getString(R$styleable.FontFamily_fontProviderAuthority);
         String string2 = obtainAttributes.getString(R$styleable.FontFamily_fontProviderPackage);
         String string3 = obtainAttributes.getString(R$styleable.FontFamily_fontProviderQuery);
+        String string4 = obtainAttributes.getString(R$styleable.FontFamily_fontProviderFallbackQuery);
         int resourceId = obtainAttributes.getResourceId(R$styleable.FontFamily_fontProviderCerts, 0);
         int integer = obtainAttributes.getInteger(R$styleable.FontFamily_fontProviderFetchStrategy, 1);
         int integer2 = obtainAttributes.getInteger(R$styleable.FontFamily_fontProviderFetchTimeout, 500);
-        String string4 = obtainAttributes.getString(R$styleable.FontFamily_fontProviderSystemFontFamily);
+        String string5 = obtainAttributes.getString(R$styleable.FontFamily_fontProviderSystemFontFamily);
         obtainAttributes.recycle();
         if (string != null && string2 != null && string3 != null) {
             while (xmlPullParser.next() != 3) {
                 skip(xmlPullParser);
             }
-            return new ProviderResourceEntry(new FontRequest(string, string2, string3, readCerts(resources, resourceId)), integer, integer2, string4);
+            List readCerts = readCerts(resources, resourceId);
+            return new ProviderResourceEntry(new FontRequest(string, string2, string3, readCerts), string4 != null ? new FontRequest(string, string2, string4, readCerts) : null, integer, integer2, string5);
         }
         ArrayList arrayList = new ArrayList();
         while (xmlPullParser.next() != 3) {

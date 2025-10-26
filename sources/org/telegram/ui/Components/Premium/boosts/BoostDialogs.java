@@ -328,7 +328,7 @@ public abstract class BoostDialogs {
         calendar2.add(14, (int) giveawayPeriodMax);
         final int i3 = calendar2.get(11);
         final int i4 = calendar.get(12);
-        linearLayout2.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.newLocationAvailable, 0.5f));
+        linearLayout2.addView(numberPicker, LayoutHelper.createLinear(0, NotificationCenter.proxyCheckDone, 0.5f));
         numberPicker.setMinValue(0);
         numberPicker.setMaxValue(i2 - 1);
         numberPicker.setWrapSelectorWheel(false);
@@ -350,7 +350,7 @@ public abstract class BoostDialogs {
         numberPicker.setOnValueChangedListener(onValueChangeListener);
         numberPicker2.setMinValue(0);
         numberPicker2.setMaxValue(23);
-        linearLayout2.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.newLocationAvailable, 0.2f));
+        linearLayout2.addView(numberPicker2, LayoutHelper.createLinear(0, NotificationCenter.proxyCheckDone, 0.2f));
         numberPicker2.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.Premium.boosts.BoostDialogs$$ExternalSyntheticLambda21
             @Override // org.telegram.ui.Components.NumberPicker.Formatter
             public final String format(int i5) {
@@ -371,7 +371,7 @@ public abstract class BoostDialogs {
                 return lambda$showDatePicker$7;
             }
         });
-        linearLayout2.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.newLocationAvailable, 0.3f));
+        linearLayout2.addView(numberPicker3, LayoutHelper.createLinear(0, NotificationCenter.proxyCheckDone, 0.3f));
         numberPicker3.setOnValueChangedListener(onValueChangeListener);
         if (j > 0) {
             calendar.setTimeInMillis(System.currentTimeMillis());
@@ -483,7 +483,7 @@ public abstract class BoostDialogs {
         calendar.setTimeInMillis(System.currentTimeMillis() + (numberPicker.getValue() * 86400000));
         calendar.set(11, numberPicker2.getValue());
         calendar.set(12, numberPicker3.getValue() * 5);
-        scheduleDatePickerDelegate.didSelectDate(true, (int) (calendar.getTimeInMillis() / 1000));
+        scheduleDatePickerDelegate.didSelectDate(true, (int) (calendar.getTimeInMillis() / 1000), 0);
         builder.getDismissRunnable().run();
     }
 

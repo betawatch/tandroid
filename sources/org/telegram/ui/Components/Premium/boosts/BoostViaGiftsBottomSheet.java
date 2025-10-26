@@ -300,8 +300,8 @@ public class BoostViaGiftsBottomSheet extends BottomSheetWithRecyclerListView im
         if (view instanceof DateEndCell) {
             BoostDialogs.showDatePicker(baseFragment.getContext(), this.selectedEndDate, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostViaGiftsBottomSheet$$ExternalSyntheticLambda10
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z2, int i2) {
-                    BoostViaGiftsBottomSheet.this.lambda$new$1(z2, i2);
+                public final void didSelectDate(boolean z2, int i2, int i3) {
+                    BoostViaGiftsBottomSheet.this.lambda$new$1(z2, i2, i3);
                 }
             }, this.resourcesProvider);
             return;
@@ -332,7 +332,7 @@ public class BoostViaGiftsBottomSheet extends BottomSheetWithRecyclerListView im
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(boolean z, int i) {
+    public /* synthetic */ void lambda$new$1(boolean z, int i, int i2) {
         this.selectedEndDate = i * 1000;
         updateRows(false, true);
     }

@@ -359,7 +359,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             i6 = (((int) (AndroidUtilities.displaySize.x / AndroidUtilities.density)) * 3) / 5;
         }
         String filterString = this.sharedResources.getFilterString(i6);
-        int photoSize = (i3 <= 2 || z) ? AndroidUtilities.getPhotoSize() : NotificationCenter.onReceivedChannelDifference;
+        int photoSize = (i3 <= 2 || z) ? AndroidUtilities.getPhotoSize() : NotificationCenter.uploadStoryEnd;
         this.videoText = null;
         this.videoInfoLayot = null;
         this.showVideoLayout = false;

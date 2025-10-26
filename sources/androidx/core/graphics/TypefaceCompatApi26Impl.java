@@ -16,6 +16,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
+import java.util.List;
 import java.util.Map;
 
 /* loaded from: classes.dex */
@@ -27,6 +28,11 @@ public class TypefaceCompatApi26Impl extends TypefaceCompatApi21Impl {
     protected final Class mFontFamily;
     protected final Constructor mFontFamilyCtor;
     protected final Method mFreeze;
+
+    @Override // androidx.core.graphics.TypefaceCompatBaseImpl
+    public /* bridge */ /* synthetic */ Typeface createFromFontInfoWithFallback(Context context, CancellationSignal cancellationSignal, List list, int i) {
+        return super.createFromFontInfoWithFallback(context, cancellationSignal, list, i);
+    }
 
     public TypefaceCompatApi26Impl() {
         Class cls;

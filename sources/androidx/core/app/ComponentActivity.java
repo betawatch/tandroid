@@ -10,44 +10,51 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LifecycleRegistry;
 import androidx.lifecycle.ReportFragment;
+import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
 public abstract class ComponentActivity extends Activity implements LifecycleOwner, KeyEventDispatcher.Component {
-    private SimpleArrayMap mExtraDataMap = new SimpleArrayMap();
-    private LifecycleRegistry mLifecycleRegistry = new LifecycleRegistry(this);
+    private final SimpleArrayMap extraDataMap = new SimpleArrayMap(0, 1, null);
+    private final LifecycleRegistry lifecycleRegistry = new LifecycleRegistry(this);
 
     @Override // android.app.Activity
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        ReportFragment.injectIfNeededIn(this);
+        ReportFragment.Companion.injectIfNeededIn(this);
     }
 
     @Override // android.app.Activity
-    protected void onSaveInstanceState(Bundle bundle) {
-        this.mLifecycleRegistry.markState(Lifecycle.State.CREATED);
-        super.onSaveInstanceState(bundle);
+    protected void onSaveInstanceState(Bundle outState) {
+        Intrinsics.checkNotNullParameter(outState, "outState");
+        this.lifecycleRegistry.setCurrentState(Lifecycle.State.CREATED);
+        super.onSaveInstanceState(outState);
     }
 
     @Override // androidx.core.view.KeyEventDispatcher.Component
-    public boolean superDispatchKeyEvent(KeyEvent keyEvent) {
-        return super.dispatchKeyEvent(keyEvent);
+    public boolean superDispatchKeyEvent(KeyEvent event) {
+        Intrinsics.checkNotNullParameter(event, "event");
+        return super.dispatchKeyEvent(event);
     }
 
     @Override // android.app.Activity, android.view.Window.Callback
-    public boolean dispatchKeyShortcutEvent(KeyEvent keyEvent) {
+    public boolean dispatchKeyShortcutEvent(KeyEvent event) {
+        Intrinsics.checkNotNullParameter(event, "event");
         View decorView = getWindow().getDecorView();
-        if (decorView == null || !KeyEventDispatcher.dispatchBeforeHierarchy(decorView, keyEvent)) {
-            return super.dispatchKeyShortcutEvent(keyEvent);
+        Intrinsics.checkNotNullExpressionValue(decorView, "window.decorView");
+        if (KeyEventDispatcher.dispatchBeforeHierarchy(decorView, event)) {
+            return true;
         }
-        return true;
+        return super.dispatchKeyShortcutEvent(event);
     }
 
     @Override // android.app.Activity, android.view.Window.Callback
-    public boolean dispatchKeyEvent(KeyEvent keyEvent) {
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        Intrinsics.checkNotNullParameter(event, "event");
         View decorView = getWindow().getDecorView();
-        if (decorView == null || !KeyEventDispatcher.dispatchBeforeHierarchy(decorView, keyEvent)) {
-            return KeyEventDispatcher.dispatchKeyEvent(this, decorView, this, keyEvent);
+        Intrinsics.checkNotNullExpressionValue(decorView, "window.decorView");
+        if (KeyEventDispatcher.dispatchBeforeHierarchy(decorView, event)) {
+            return true;
         }
-        return true;
+        return KeyEventDispatcher.dispatchKeyEvent(this, decorView, this, event);
     }
 }

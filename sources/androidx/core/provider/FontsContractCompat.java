@@ -6,7 +6,10 @@ import android.net.Uri;
 import android.os.CancellationSignal;
 import android.os.Handler;
 import androidx.core.graphics.TypefaceCompat;
+import androidx.core.graphics.TypefaceCompat$$ExternalSyntheticBackport2;
 import androidx.core.util.Preconditions;
+import java.util.Collections;
+import java.util.List;
 
 /* loaded from: classes.dex */
 public abstract class FontsContractCompat {
@@ -22,15 +25,20 @@ public abstract class FontsContractCompat {
     }
 
     public static FontFamilyResult fetchFonts(Context context, CancellationSignal cancellationSignal, FontRequest fontRequest) {
-        return FontProvider.getFontFamilyResult(context, fontRequest, cancellationSignal);
+        List m;
+        m = TypefaceCompat$$ExternalSyntheticBackport2.m(new Object[]{fontRequest});
+        return FontProvider.getFontFamilyResult(context, m, cancellationSignal);
     }
 
-    public static Typeface requestFont(Context context, FontRequest fontRequest, int i, boolean z, int i2, Handler handler, FontRequestCallback fontRequestCallback) {
-        CallbackWithHandler callbackWithHandler = new CallbackWithHandler(fontRequestCallback, handler);
+    public static Typeface requestFont(Context context, List list, int i, boolean z, int i2, Handler handler, FontRequestCallback fontRequestCallback) {
+        CallbackWrapper callbackWrapper = new CallbackWrapper(fontRequestCallback, RequestExecutor.createHandlerExecutor(handler));
         if (z) {
-            return FontRequestWorker.requestFontSync(context, fontRequest, callbackWithHandler, i, i2);
+            if (list.size() > 1) {
+                throw new IllegalArgumentException("Fallbacks with blocking fetches are not supported for performance reasons");
+            }
+            return FontRequestWorker.requestFontSync(context, (FontRequest) list.get(0), callbackWrapper, i, i2);
         }
-        return FontRequestWorker.requestFontAsync(context, fontRequest, i, null, callbackWithHandler);
+        return FontRequestWorker.requestFontAsync(context, list, i, null, callbackWrapper);
     }
 
     public static class FontInfo {
@@ -74,12 +82,17 @@ public abstract class FontsContractCompat {
     }
 
     public static class FontFamilyResult {
-        private final FontInfo[] mFonts;
+        private final List mFonts;
         private final int mStatusCode;
 
         public FontFamilyResult(int i, FontInfo[] fontInfoArr) {
             this.mStatusCode = i;
-            this.mFonts = fontInfoArr;
+            this.mFonts = Collections.singletonList(fontInfoArr);
+        }
+
+        FontFamilyResult(int i, List list) {
+            this.mStatusCode = i;
+            this.mFonts = list;
         }
 
         public int getStatusCode() {
@@ -87,11 +100,23 @@ public abstract class FontsContractCompat {
         }
 
         public FontInfo[] getFonts() {
+            return (FontInfo[]) this.mFonts.get(0);
+        }
+
+        boolean hasFallback() {
+            return this.mFonts.size() > 1;
+        }
+
+        public List getFontsWithFallbacks() {
             return this.mFonts;
         }
 
         static FontFamilyResult create(int i, FontInfo[] fontInfoArr) {
             return new FontFamilyResult(i, fontInfoArr);
+        }
+
+        static FontFamilyResult create(int i, List list) {
+            return new FontFamilyResult(i, list);
         }
     }
 }

@@ -176,13 +176,6 @@ public class ExtendedGridLayoutManager extends GridLayoutManager {
         return this.itemSpans.get(i);
     }
 
-    public int getRowsCount(int i) {
-        if (this.rowsCount == 0) {
-            prepareLayout(i);
-        }
-        return this.rowsCount;
-    }
-
     public boolean isLastInRow(int i) {
         checkLayout();
         return this.itemsToRow.get(i, ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE;

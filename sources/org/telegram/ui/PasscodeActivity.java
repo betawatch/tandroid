@@ -175,7 +175,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PasscodeActivity.this.lambda$onBackPressed$355();
+                    PasscodeActivity.this.lambda$onBackPressed$341();
                 }
             }
         });
@@ -243,7 +243,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         CustomPhoneKeyboardView customPhoneKeyboardView = new CustomPhoneKeyboardView(context);
         this.keyboardView = customPhoneKeyboardView;
         customPhoneKeyboardView.setVisibility(isCustomKeyboardVisible() ? 0 : 8);
-        sizeNotifierFrameLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.updateStories));
+        sizeNotifierFrameLayout.addView(this.keyboardView, LayoutHelper.createLinear(-1, NotificationCenter.starUserGiftsLoaded));
         int i4 = this.type;
         if (i4 == 0) {
             this.actionBar.setTitle(LocaleController.getString(R.string.Passcode));
@@ -866,7 +866,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
             i2++;
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -885,7 +885,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         } else if (value == 1) {
             SharedConfig.autoLockIn = 60;
         } else if (value == 2) {
-            SharedConfig.autoLockIn = NotificationCenter.billingProductDetailsUpdated;
+            SharedConfig.autoLockIn = NotificationCenter.premiumPromoUpdated;
         } else if (value == 3) {
             SharedConfig.autoLockIn = 3600;
         } else if (value == 4) {
@@ -905,7 +905,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
         public void onItemClick(int i) {
             if (i == -1) {
-                PasscodeActivity.this.lambda$onBackPressed$355();
+                PasscodeActivity.this.lambda$onBackPressed$341();
                 return;
             }
             if (i == 1) {
@@ -1513,7 +1513,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         if (z) {
             presentFragment(new PasscodeActivity(0), true);
         } else {
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
     }

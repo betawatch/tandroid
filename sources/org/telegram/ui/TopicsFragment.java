@@ -401,7 +401,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         bundle.putLong("chat_id", -chatActivity.getDialogId());
         chatActivity.getParentLayout().addFragmentToStack(new TopicsFragment(bundle), chatActivity.getParentLayout().getFragmentStack().size() - 1);
         chatActivity.setSwitchFromTopics(true);
-        chatActivity.lambda$onBackPressed$355();
+        chatActivity.lambda$onBackPressed$341();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -901,7 +901,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         getMessagesStorage().loadChatInfo(this.chatId, true, null, true, false, 0);
         FrameLayout frameLayout5 = new FrameLayout(context);
         this.topView = frameLayout5;
-        this.contentView.addView(frameLayout5, LayoutHelper.createFrame(-1, NotificationCenter.userIsPremiumBlockedUpadted, 48));
+        this.contentView.addView(frameLayout5, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 48));
         TLRPC.Chat currentChat = getCurrentChat();
         if (currentChat != null) {
             ChatActivityMemberRequestsDelegate chatActivityMemberRequestsDelegate = new ChatActivityMemberRequestsDelegate(this, this.contentView, currentChat, new ChatActivityMemberRequestsDelegate.Callback() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda7
@@ -1017,7 +1017,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                     TopicsFragment.this.clearSelectedTopics();
                     return;
                 } else {
-                    TopicsFragment.this.lambda$onBackPressed$355();
+                    TopicsFragment.this.lambda$onBackPressed$341();
                     return;
                 }
             }
@@ -1252,7 +1252,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             int i = NotificationCenter.closeChats;
             notificationCenter.removeObserver(topicsFragment, i);
             TopicsFragment.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i, new Object[0]);
-            TopicsFragment.this.lambda$onBackPressed$355();
+            TopicsFragment.this.lambda$onBackPressed$341();
             TopicsFragment.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-chat.id), null, chat, Boolean.valueOf(z));
         }
 
@@ -1651,7 +1651,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             if (i == 0) {
                 TopicsFragment.this.updateChatInfo();
             } else {
-                TopicsFragment.this.lambda$onBackPressed$355();
+                TopicsFragment.this.lambda$onBackPressed$341();
             }
         }
     }
@@ -4296,7 +4296,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         if (!this.inPreviewMode || getMessagesController().isForum(-this.chatId)) {
             return;
         }
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -4447,7 +4447,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         Canvas canvas = new Canvas(createBitmap);
         canvas.scale(0.16666667f, 0.16666667f);
         this.parentLayout.getView().draw(canvas);
-        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.dialogFiltersUpdated));
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / NotificationCenter.newEmojiSuggestionsAvailable));
         this.blurredView.setBackground(new BitmapDrawable(createBitmap));
         this.blurredView.setAlpha(0.0f);
         if (this.blurredView.getParent() != null) {

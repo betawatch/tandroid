@@ -18,21 +18,22 @@ public class ColoredImageSpan extends ReplacementSpan {
     private float alpha;
     private Runnable checkColorDelegate;
     int colorKey;
+    public boolean draw;
     public Drawable drawable;
     int drawableColor;
     private Paint.FontMetricsInt fontMetrics;
     private boolean isRelativeSize;
     private int overrideColor;
     public boolean recolorDrawable;
-    private float rotate;
+    public float rotate;
     private float scaleX;
     private float scaleY;
     private int size;
     private int sizeWidth;
     public float spaceScaleX;
     private int topOffset;
-    private float translateX;
-    private float translateY;
+    public float translateX;
+    public float translateY;
     public boolean useLinkPaintColor;
     boolean usePaintColor;
     private final int verticalAlignment;
@@ -50,6 +51,7 @@ public class ColoredImageSpan extends ReplacementSpan {
     }
 
     public ColoredImageSpan(Drawable drawable, int i) {
+        this.draw = true;
         this.recolorDrawable = true;
         this.usePaintColor = true;
         this.useLinkPaintColor = false;
@@ -130,11 +132,11 @@ public class ColoredImageSpan extends ReplacementSpan {
         return (int) (abs * i3);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x009d  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x005c  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x003c  */
     @Override // android.text.style.ReplacementSpan
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -142,87 +144,89 @@ public class ColoredImageSpan extends ReplacementSpan {
     public void draw(Canvas canvas, CharSequence charSequence, int i, int i2, float f, int i3, int i4, int i5, Paint paint) {
         boolean z;
         int i6;
-        Runnable runnable = this.checkColorDelegate;
-        if (runnable != null) {
-            runnable.run();
-        } else if (this.recolorDrawable) {
-            int i7 = this.overrideColor;
-            if (i7 == 0) {
-                if (this.useLinkPaintColor && (paint instanceof TextPaint)) {
-                    i7 = ((TextPaint) paint).linkColor;
-                } else {
-                    if (this.usePaintColor) {
-                        i7 = paint.getColor();
-                        z = true;
-                        if (this.drawableColor != i7) {
-                            this.drawableColor = i7;
-                            this.drawable.setColorFilter(new PorterDuffColorFilter(this.drawableColor, PorterDuff.Mode.SRC_IN));
-                        }
-                        canvas.save();
-                        Drawable drawable = this.drawable;
-                        int i8 = i5 - (drawable != null ? drawable.getBounds().bottom : i5);
-                        i6 = this.verticalAlignment;
-                        if (i6 != 1) {
-                            if (i6 == 2) {
-                                int i9 = i3 + ((i5 - i3) / 2);
-                                Drawable drawable2 = this.drawable;
-                                i8 = i9 - (drawable2 != null ? drawable2.getBounds().height() / 2 : 0);
-                            } else if (i6 == 0) {
-                                int i10 = i5 - i3;
-                                int i11 = this.size;
-                                if (i11 == 0) {
-                                    i11 = this.drawable.getIntrinsicHeight();
+        if (this.draw) {
+            Runnable runnable = this.checkColorDelegate;
+            if (runnable != null) {
+                runnable.run();
+            } else if (this.recolorDrawable) {
+                int i7 = this.overrideColor;
+                if (i7 == 0) {
+                    if (this.useLinkPaintColor && (paint instanceof TextPaint)) {
+                        i7 = ((TextPaint) paint).linkColor;
+                    } else {
+                        if (this.usePaintColor) {
+                            i7 = paint.getColor();
+                            z = true;
+                            if (this.drawableColor != i7) {
+                                this.drawableColor = i7;
+                                this.drawable.setColorFilter(new PorterDuffColorFilter(this.drawableColor, PorterDuff.Mode.SRC_IN));
+                            }
+                            canvas.save();
+                            Drawable drawable = this.drawable;
+                            int i8 = i5 - (drawable != null ? drawable.getBounds().bottom : i5);
+                            i6 = this.verticalAlignment;
+                            if (i6 != 1) {
+                                if (i6 == 2) {
+                                    int i9 = i3 + ((i5 - i3) / 2);
+                                    Drawable drawable2 = this.drawable;
+                                    i8 = i9 - (drawable2 != null ? drawable2.getBounds().height() / 2 : 0);
+                                } else if (i6 == 0) {
+                                    int i10 = i5 - i3;
+                                    int i11 = this.size;
+                                    if (i11 == 0) {
+                                        i11 = this.drawable.getIntrinsicHeight();
+                                    }
+                                    i8 = AndroidUtilities.dp(this.topOffset) + i3 + ((i10 - i11) / 2);
                                 }
-                                i8 = AndroidUtilities.dp(this.topOffset) + i3 + ((i10 - i11) / 2);
                             }
+                            canvas.translate(f + this.translateX, i8 + this.translateY);
+                            if (this.drawable != null) {
+                                float f2 = this.scaleX;
+                                if (f2 != 1.0f || this.scaleY != 1.0f) {
+                                    canvas.scale(f2, this.scaleY, 0.0f, r5.getBounds().centerY());
+                                }
+                                float f3 = this.rotate;
+                                if (f3 != 1.0f) {
+                                    canvas.rotate(f3, this.drawable.getBounds().centerX(), this.drawable.getBounds().centerY());
+                                }
+                                if (z) {
+                                    this.drawable.setAlpha((int) (this.alpha * 255.0f * (paint.getAlpha() / Color.alpha(this.drawableColor))));
+                                } else {
+                                    this.drawable.setAlpha((int) (paint.getAlpha() * this.alpha));
+                                }
+                                this.drawable.draw(canvas);
+                            }
+                            canvas.restore();
                         }
-                        canvas.translate(f + this.translateX, i8 + this.translateY);
-                        if (this.drawable != null) {
-                            float f2 = this.scaleX;
-                            if (f2 != 1.0f || this.scaleY != 1.0f) {
-                                canvas.scale(f2, this.scaleY, 0.0f, r5.getBounds().centerY());
-                            }
-                            float f3 = this.rotate;
-                            if (f3 != 1.0f) {
-                                canvas.rotate(f3, this.drawable.getBounds().centerX(), this.drawable.getBounds().centerY());
-                            }
-                            if (z) {
-                                this.drawable.setAlpha((int) (this.alpha * 255.0f * (paint.getAlpha() / Color.alpha(this.drawableColor))));
-                            } else {
-                                this.drawable.setAlpha((int) (paint.getAlpha() * this.alpha));
-                            }
-                            this.drawable.draw(canvas);
-                        }
-                        canvas.restore();
+                        i7 = Theme.getColor(this.colorKey);
                     }
-                    i7 = Theme.getColor(this.colorKey);
                 }
+                z = false;
+                if (this.drawableColor != i7) {
+                }
+                canvas.save();
+                Drawable drawable3 = this.drawable;
+                int i82 = i5 - (drawable3 != null ? drawable3.getBounds().bottom : i5);
+                i6 = this.verticalAlignment;
+                if (i6 != 1) {
+                }
+                canvas.translate(f + this.translateX, i82 + this.translateY);
+                if (this.drawable != null) {
+                }
+                canvas.restore();
             }
             z = false;
-            if (this.drawableColor != i7) {
-            }
             canvas.save();
-            Drawable drawable3 = this.drawable;
-            int i82 = i5 - (drawable3 != null ? drawable3.getBounds().bottom : i5);
+            Drawable drawable32 = this.drawable;
+            int i822 = i5 - (drawable32 != null ? drawable32.getBounds().bottom : i5);
             i6 = this.verticalAlignment;
             if (i6 != 1) {
             }
-            canvas.translate(f + this.translateX, i82 + this.translateY);
+            canvas.translate(f + this.translateX, i822 + this.translateY);
             if (this.drawable != null) {
             }
             canvas.restore();
         }
-        z = false;
-        canvas.save();
-        Drawable drawable32 = this.drawable;
-        int i822 = i5 - (drawable32 != null ? drawable32.getBounds().bottom : i5);
-        i6 = this.verticalAlignment;
-        if (i6 != 1) {
-        }
-        canvas.translate(f + this.translateX, i822 + this.translateY);
-        if (this.drawable != null) {
-        }
-        canvas.restore();
     }
 
     public void setColorKey(int i) {

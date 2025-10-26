@@ -3,11 +3,13 @@ package androidx.core.provider;
 import android.os.Handler;
 import android.os.Process;
 import androidx.core.util.Consumer;
+import androidx.core.util.Preconditions;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -35,6 +37,26 @@ abstract class RequestExecutor {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, i2, TimeUnit.MILLISECONDS, new LinkedBlockingDeque(), new DefaultThreadFactory(str, i));
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         return threadPoolExecutor;
+    }
+
+    static Executor createHandlerExecutor(Handler handler) {
+        return new HandlerExecutor(handler);
+    }
+
+    private static class HandlerExecutor implements Executor {
+        private final Handler mHandler;
+
+        HandlerExecutor(Handler handler) {
+            this.mHandler = (Handler) Preconditions.checkNotNull(handler);
+        }
+
+        @Override // java.util.concurrent.Executor
+        public void execute(Runnable runnable) {
+            if (this.mHandler.post((Runnable) Preconditions.checkNotNull(runnable))) {
+                return;
+            }
+            throw new RejectedExecutionException(this.mHandler + " is shutting down");
+        }
     }
 
     private static class ReplyRunnable implements Runnable {

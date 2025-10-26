@@ -82,14 +82,14 @@ final class ClassesInfoCache {
                 if (parameterTypes.length <= 0) {
                     i = 0;
                 } else {
-                    if (!parameterTypes[0].isAssignableFrom(LifecycleOwner.class)) {
+                    if (!LifecycleOwner.class.isAssignableFrom(parameterTypes[0])) {
                         throw new IllegalArgumentException("invalid parameter type. Must be one and instanceof LifecycleOwner");
                     }
                     i = 1;
                 }
                 Lifecycle.Event value = onLifecycleEvent.value();
                 if (parameterTypes.length > 1) {
-                    if (!parameterTypes[1].isAssignableFrom(Lifecycle.Event.class)) {
+                    if (!Lifecycle.Event.class.isAssignableFrom(parameterTypes[1])) {
                         throw new IllegalArgumentException("invalid parameter type. second arg must be an event");
                     }
                     if (value != Lifecycle.Event.ON_ANY) {

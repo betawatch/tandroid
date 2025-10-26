@@ -4,16 +4,12 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
 import java.lang.ref.WeakReference;
 
 /* loaded from: classes.dex */
 public final class ViewPropertyAnimatorCompat {
     private final WeakReference mView;
-    Runnable mStartAction = null;
-    Runnable mEndAction = null;
-    int mOldLayerType = -1;
 
     ViewPropertyAnimatorCompat(View view) {
         this.mView = new WeakReference(view);
@@ -115,7 +111,7 @@ public final class ViewPropertyAnimatorCompat {
     public ViewPropertyAnimatorCompat setUpdateListener(final ViewPropertyAnimatorUpdateListener viewPropertyAnimatorUpdateListener) {
         final View view = (View) this.mView.get();
         if (view != null) {
-            Api19Impl.setUpdateListener(view.animate(), viewPropertyAnimatorUpdateListener != null ? new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.core.view.ViewPropertyAnimatorCompat$$ExternalSyntheticLambda0
+            view.animate().setUpdateListener(viewPropertyAnimatorUpdateListener != null ? new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.core.view.ViewPropertyAnimatorCompat$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     ViewPropertyAnimatorUpdateListener.this.onAnimationUpdate(view);
@@ -123,11 +119,5 @@ public final class ViewPropertyAnimatorCompat {
             } : null);
         }
         return this;
-    }
-
-    static class Api19Impl {
-        static ViewPropertyAnimator setUpdateListener(ViewPropertyAnimator viewPropertyAnimator, ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-            return viewPropertyAnimator.setUpdateListener(animatorUpdateListener);
-        }
     }
 }

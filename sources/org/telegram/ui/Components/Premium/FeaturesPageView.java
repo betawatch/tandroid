@@ -250,7 +250,7 @@ public class FeaturesPageView extends BaseListPageView {
                     }
                 };
                 this.starParticlesView = starParticlesView;
-                addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.didUpdatePremiumGiftFieldIcon, 55));
+                addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.boostByChannelCreated, 55));
                 GLIconTextureView gLIconTextureView = new GLIconTextureView(context, 1, 1) { // from class: org.telegram.ui.Components.Premium.FeaturesPageView.HeaderView.2
                     @Override // org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView, android.view.TextureView, android.view.View
                     protected void onAttachedToWindow() {

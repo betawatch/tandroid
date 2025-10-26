@@ -5,7 +5,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Build;
 import android.util.Rational;
-import org.telegram.messenger.AndroidUtilities$$ExternalSyntheticApiModelOutline20;
+import org.telegram.messenger.AndroidUtilities$$ExternalSyntheticApiModelOutline25;
 import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes3.dex */
@@ -55,7 +55,7 @@ public class PipSourceParams {
     public PictureInPictureParams.Builder build() {
         int i;
         Rational rational;
-        PictureInPictureParams.Builder m = AndroidUtilities$$ExternalSyntheticApiModelOutline20.m();
+        PictureInPictureParams.Builder m = AndroidUtilities$$ExternalSyntheticApiModelOutline25.m();
         Point point = this.ratio;
         int i2 = point.x;
         if (i2 > 0 && (i = point.y) > 0) {
@@ -63,7 +63,7 @@ public class PipSourceParams {
             if (d < 0.45d) {
                 rational = new Rational(45, 100);
             } else if (d > 2.35d) {
-                rational = new Rational(NotificationCenter.messagesFeeUpdated, 100);
+                rational = new Rational(NotificationCenter.channelSuggestedBotsUpdate, 100);
             } else {
                 Point point2 = this.ratio;
                 rational = new Rational(point2.x, point2.y);

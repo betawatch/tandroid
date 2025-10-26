@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.PersistableBundle;
 import android.os.UserHandle;
 import android.text.TextUtils;
+import androidx.collection.ArraySet;
 import androidx.core.app.Person;
 import androidx.core.content.LocusIdCompat;
 import androidx.core.graphics.drawable.IconCompat;
@@ -443,7 +444,9 @@ public class ShortcutInfoCompat {
         }
 
         public Builder setCategories(Set set) {
-            this.mInfo.mCategories = set;
+            ArraySet arraySet = new ArraySet();
+            arraySet.addAll(set);
+            this.mInfo.mCategories = arraySet;
             return this;
         }
 

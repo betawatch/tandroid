@@ -61,7 +61,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.res.ResourcesCompat;
-import androidx.core.os.BuildCompat;
 import androidx.core.os.ExecutorCompat;
 import androidx.core.util.ObjectsCompat;
 import java.io.File;
@@ -71,19 +70,18 @@ import org.webrtc.MediaStreamTrack;
 
 /* loaded from: classes.dex */
 public abstract class ContextCompat {
-    private static final Object sLock = new Object();
     private static final Object sSync = new Object();
 
     public static void startActivity(Context context, Intent intent, Bundle bundle) {
-        Api16Impl.startActivity(context, intent, bundle);
+        context.startActivity(intent, bundle);
     }
 
     public static File[] getExternalFilesDirs(Context context, String str) {
-        return Api19Impl.getExternalFilesDirs(context, str);
+        return context.getExternalFilesDirs(str);
     }
 
     public static File[] getExternalCacheDirs(Context context) {
-        return Api19Impl.getExternalCacheDirs(context);
+        return context.getExternalCacheDirs();
     }
 
     public static Drawable getDrawable(Context context, int i) {
@@ -103,7 +101,7 @@ public abstract class ContextCompat {
 
     public static int checkSelfPermission(Context context, String str) {
         ObjectsCompat.requireNonNull(str, "permission must be non-null");
-        if (BuildCompat.isAtLeastT() || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) {
+        if (Build.VERSION.SDK_INT >= 33 || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) {
             return context.checkPermission(str, Process.myPid(), Process.myUid());
         }
         return NotificationManagerCompat.from(context).areNotificationsEnabled() ? 0 : -1;
@@ -207,30 +205,6 @@ public abstract class ContextCompat {
         }
     }
 
-    static class Api16Impl {
-        static void startActivities(Context context, Intent[] intentArr, Bundle bundle) {
-            context.startActivities(intentArr, bundle);
-        }
-
-        static void startActivity(Context context, Intent intent, Bundle bundle) {
-            context.startActivity(intent, bundle);
-        }
-    }
-
-    static class Api19Impl {
-        static File[] getExternalCacheDirs(Context context) {
-            return context.getExternalCacheDirs();
-        }
-
-        static File[] getExternalFilesDirs(Context context, String str) {
-            return context.getExternalFilesDirs(str);
-        }
-
-        static File[] getObbDirs(Context context) {
-            return context.getObbDirs();
-        }
-    }
-
     static class Api21Impl {
         static Drawable getDrawable(Context context, int i) {
             return context.getDrawable(i);
@@ -239,10 +213,6 @@ public abstract class ContextCompat {
         static File getNoBackupFilesDir(Context context) {
             return context.getNoBackupFilesDir();
         }
-
-        static File getCodeCacheDir(Context context) {
-            return context.getCodeCacheDir();
-        }
     }
 
     static class Api23Impl {
@@ -250,26 +220,18 @@ public abstract class ContextCompat {
             return context.getColor(i);
         }
 
-        static <T> T getSystemService(Context context, Class<T> cls) {
-            return (T) context.getSystemService(cls);
+        static Object getSystemService(Context context, Class cls) {
+            return context.getSystemService(cls);
         }
 
-        static String getSystemServiceName(Context context, Class<?> cls) {
+        static String getSystemServiceName(Context context, Class cls) {
             return context.getSystemServiceName(cls);
         }
     }
 
     static class Api24Impl {
-        static File getDataDir(Context context) {
-            return context.getDataDir();
-        }
-
         static Context createDeviceProtectedStorageContext(Context context) {
             return context.createDeviceProtectedStorageContext();
-        }
-
-        static boolean isDeviceProtectedStorage(Context context) {
-            return context.isDeviceProtectedStorage();
         }
     }
 

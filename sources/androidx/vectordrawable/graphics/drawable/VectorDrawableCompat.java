@@ -816,7 +816,7 @@ public class VectorDrawableCompat extends VectorDrawableCommon {
             this.mBaseHeight = 0.0f;
             this.mViewportWidth = 0.0f;
             this.mViewportHeight = 0.0f;
-            this.mRootAlpha = NotificationCenter.didApplyNewTheme;
+            this.mRootAlpha = NotificationCenter.didReplacedPhotoInMemCache;
             this.mRootName = null;
             this.mIsStateful = null;
             this.mVGTargetsMap = new ArrayMap();
@@ -847,7 +847,7 @@ public class VectorDrawableCompat extends VectorDrawableCommon {
             this.mBaseHeight = 0.0f;
             this.mViewportWidth = 0.0f;
             this.mViewportHeight = 0.0f;
-            this.mRootAlpha = NotificationCenter.didApplyNewTheme;
+            this.mRootAlpha = NotificationCenter.didReplacedPhotoInMemCache;
             this.mRootName = null;
             this.mIsStateful = null;
             ArrayMap arrayMap = new ArrayMap();
@@ -946,7 +946,7 @@ public class VectorDrawableCompat extends VectorDrawableCommon {
                     paint2.setAlpha(Math.round(vFullPath.mFillAlpha * 255.0f));
                 } else {
                     paint2.setShader(null);
-                    paint2.setAlpha(NotificationCenter.didApplyNewTheme);
+                    paint2.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                     paint2.setColor(VectorDrawableCompat.applyAlpha(complexColorCompat.getColor(), vFullPath.mFillAlpha));
                 }
                 paint2.setColorFilter(colorFilter);
@@ -977,7 +977,7 @@ public class VectorDrawableCompat extends VectorDrawableCommon {
                     paint4.setAlpha(Math.round(vFullPath.mStrokeAlpha * 255.0f));
                 } else {
                     paint4.setShader(null);
-                    paint4.setAlpha(NotificationCenter.didApplyNewTheme);
+                    paint4.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                     paint4.setColor(VectorDrawableCompat.applyAlpha(complexColorCompat2.getColor(), vFullPath.mStrokeAlpha));
                 }
                 paint4.setColorFilter(colorFilter);

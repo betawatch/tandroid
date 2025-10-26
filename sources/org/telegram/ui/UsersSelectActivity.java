@@ -464,7 +464,7 @@ public class UsersSelectActivity extends BaseFragment implements NotificationCen
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i4) {
                 if (i4 == -1) {
-                    UsersSelectActivity.this.lambda$onBackPressed$355();
+                    UsersSelectActivity.this.lambda$onBackPressed$341();
                 } else if (i4 == 1) {
                     UsersSelectActivity.this.onDonePressed(true);
                 }
@@ -1127,7 +1127,7 @@ public class UsersSelectActivity extends BaseFragment implements NotificationCen
         if (filterUsersActivityDelegate != null) {
             filterUsersActivityDelegate.didSelectChats(arrayList, this.filterFlags);
         }
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
         return true;
     }
 

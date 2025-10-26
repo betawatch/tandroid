@@ -82,8 +82,8 @@ public class VideoFileRenderer implements VideoSink {
     /* renamed from: renderFrameOnRenderThread, reason: merged with bridge method [inline-methods] */
     public void lambda$onFrame$0(final VideoFrame videoFrame) {
         VideoFrame.Buffer buffer = videoFrame.getBuffer();
-        int i = videoFrame.getRotation() % NotificationCenter.dialogFiltersUpdated == 0 ? this.outputFileWidth : this.outputFileHeight;
-        int i2 = videoFrame.getRotation() % NotificationCenter.dialogFiltersUpdated == 0 ? this.outputFileHeight : this.outputFileWidth;
+        int i = videoFrame.getRotation() % NotificationCenter.newEmojiSuggestionsAvailable == 0 ? this.outputFileWidth : this.outputFileHeight;
+        int i2 = videoFrame.getRotation() % NotificationCenter.newEmojiSuggestionsAvailable == 0 ? this.outputFileHeight : this.outputFileWidth;
         float width = buffer.getWidth() / buffer.getHeight();
         float f = i / i2;
         int width2 = buffer.getWidth();

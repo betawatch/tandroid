@@ -1,19 +1,21 @@
 package androidx.core.app;
 
 import android.content.res.Configuration;
+import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
 public final class PictureInPictureModeChangedInfo {
-    private final boolean mIsInPictureInPictureMode;
-    private final Configuration mNewConfig;
+    private final boolean isInPictureInPictureMode;
+    private Configuration newConfiguration;
 
     public PictureInPictureModeChangedInfo(boolean z) {
-        this.mIsInPictureInPictureMode = z;
-        this.mNewConfig = null;
+        this.isInPictureInPictureMode = z;
     }
 
-    public PictureInPictureModeChangedInfo(boolean z, Configuration configuration) {
-        this.mIsInPictureInPictureMode = z;
-        this.mNewConfig = configuration;
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public PictureInPictureModeChangedInfo(boolean z, Configuration newConfig) {
+        this(z);
+        Intrinsics.checkNotNullParameter(newConfig, "newConfig");
+        this.newConfiguration = newConfig;
     }
 }

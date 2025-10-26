@@ -1,106 +1,113 @@
 package androidx.collection;
 
-import java.util.LinkedHashMap;
-import java.util.Locale;
+import androidx.collection.internal.Lock;
+import androidx.collection.internal.LruHashMap;
 import java.util.Map;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
 public class LruCache {
     private int createCount;
     private int evictionCount;
     private int hitCount;
-    private final LinkedHashMap map;
+    private final Lock lock;
+    private final LruHashMap map;
     private int maxSize;
     private int missCount;
     private int putCount;
     private int size;
 
-    protected Object create(Object obj) {
+    protected Object create(Object key) {
+        Intrinsics.checkNotNullParameter(key, "key");
         return null;
     }
 
-    protected void entryRemoved(boolean z, Object obj, Object obj2, Object obj3) {
+    protected void entryRemoved(boolean z, Object key, Object oldValue, Object obj) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        Intrinsics.checkNotNullParameter(oldValue, "oldValue");
     }
 
-    protected int sizeOf(Object obj, Object obj2) {
+    protected int sizeOf(Object key, Object value) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        Intrinsics.checkNotNullParameter(value, "value");
         return 1;
     }
 
     public LruCache(int i) {
+        this.maxSize = i;
         if (i <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.maxSize = i;
-        this.map = new LinkedHashMap(0, 0.75f, true);
+        this.map = new LruHashMap(0, 0.75f);
+        this.lock = new Lock();
     }
 
-    public final Object get(Object obj) {
+    public final Object get(Object key) {
         Object put;
-        if (obj == null) {
-            throw new NullPointerException("key == null");
-        }
-        synchronized (this) {
-            try {
-                Object obj2 = this.map.get(obj);
-                if (obj2 != null) {
-                    this.hitCount++;
-                    return obj2;
-                }
-                this.missCount++;
-                Object create = create(obj);
-                if (create == null) {
-                    return null;
-                }
-                synchronized (this) {
-                    try {
-                        this.createCount++;
-                        put = this.map.put(obj, create);
-                        if (put != null) {
-                            this.map.put(obj, put);
-                        } else {
-                            this.size += safeSizeOf(obj, create);
-                        }
-                    } finally {
-                    }
-                }
-                if (put != null) {
-                    entryRemoved(false, obj, create, put);
-                    return put;
-                }
-                trimToSize(this.maxSize);
-                return create;
-            } finally {
+        Intrinsics.checkNotNullParameter(key, "key");
+        synchronized (this.lock) {
+            Object obj = this.map.get(key);
+            if (obj != null) {
+                this.hitCount++;
+                return obj;
             }
+            this.missCount++;
+            Object create = create(key);
+            if (create == null) {
+                return null;
+            }
+            synchronized (this.lock) {
+                try {
+                    this.createCount++;
+                    put = this.map.put(key, create);
+                    if (put != null) {
+                        this.map.put(key, put);
+                    } else {
+                        this.size += safeSizeOf(key, create);
+                        Unit unit = Unit.INSTANCE;
+                    }
+                } catch (Throwable th) {
+                    throw th;
+                }
+            }
+            if (put != null) {
+                entryRemoved(false, key, create, put);
+                return put;
+            }
+            trimToSize(this.maxSize);
+            return create;
         }
     }
 
-    public final Object put(Object obj, Object obj2) {
+    public final Object put(Object key, Object value) {
         Object put;
-        if (obj == null || obj2 == null) {
-            throw new NullPointerException("key == null || value == null");
-        }
-        synchronized (this) {
+        Intrinsics.checkNotNullParameter(key, "key");
+        Intrinsics.checkNotNullParameter(value, "value");
+        synchronized (this.lock) {
             try {
                 this.putCount++;
-                this.size += safeSizeOf(obj, obj2);
-                put = this.map.put(obj, obj2);
+                this.size += safeSizeOf(key, value);
+                put = this.map.put(key, value);
                 if (put != null) {
-                    this.size -= safeSizeOf(obj, put);
+                    this.size -= safeSizeOf(key, put);
                 }
+                Unit unit = Unit.INSTANCE;
             } catch (Throwable th) {
                 throw th;
             }
         }
         if (put != null) {
-            entryRemoved(false, obj, put, obj2);
+            entryRemoved(false, key, put, value);
         }
         trimToSize(this.maxSize);
         return put;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0073, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x005e, code lost:
     
-        throw new java.lang.IllegalStateException(getClass().getName() + ".sizeOf() is reporting inconsistent results!");
+        throw new java.lang.IllegalStateException("LruCache.sizeOf() is reporting inconsistent results!");
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -109,7 +116,7 @@ public class LruCache {
         Object key;
         Object value;
         while (true) {
-            synchronized (this) {
+            synchronized (this.lock) {
                 try {
                     if (this.size < 0 || (this.map.isEmpty() && this.size != 0)) {
                         break;
@@ -117,36 +124,42 @@ public class LruCache {
                     if (this.size <= i || this.map.isEmpty()) {
                         break;
                     }
-                    Map.Entry entry = (Map.Entry) this.map.entrySet().iterator().next();
+                    Map.Entry entry = (Map.Entry) CollectionsKt.firstOrNull(this.map.getEntries());
+                    if (entry == null) {
+                        return;
+                    }
                     key = entry.getKey();
                     value = entry.getValue();
                     this.map.remove(key);
                     this.size -= safeSizeOf(key, value);
                     this.evictionCount++;
-                } finally {
+                } catch (Throwable th) {
+                    throw th;
                 }
             }
             entryRemoved(true, key, value, null);
         }
     }
 
-    private int safeSizeOf(Object obj, Object obj2) {
+    private final int safeSizeOf(Object obj, Object obj2) {
         int sizeOf = sizeOf(obj, obj2);
         if (sizeOf >= 0) {
             return sizeOf;
         }
-        throw new IllegalStateException("Negative size: " + obj + "=" + obj2);
+        throw new IllegalStateException(("Negative size: " + obj + '=' + obj2).toString());
     }
 
-    public final synchronized String toString() {
-        int i;
-        int i2;
-        try {
-            i = this.hitCount;
-            i2 = this.missCount + i;
-        } catch (Throwable th) {
-            throw th;
+    public String toString() {
+        String str;
+        synchronized (this.lock) {
+            try {
+                int i = this.hitCount;
+                int i2 = this.missCount + i;
+                str = "LruCache[maxSize=" + this.maxSize + ",hits=" + this.hitCount + ",misses=" + this.missCount + ",hitRate=" + (i2 != 0 ? (i * 100) / i2 : 0) + "%]";
+            } catch (Throwable th) {
+                throw th;
+            }
         }
-        return String.format(Locale.US, "LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", Integer.valueOf(this.maxSize), Integer.valueOf(this.hitCount), Integer.valueOf(this.missCount), Integer.valueOf(i2 != 0 ? (i * 100) / i2 : 0));
+        return str;
     }
 }

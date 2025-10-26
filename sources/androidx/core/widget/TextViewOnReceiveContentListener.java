@@ -43,7 +43,11 @@ public final class TextViewOnReceiveContentListener implements OnReceiveContentL
     }
 
     private static CharSequence coerceToText(Context context, ClipData.Item item, int i) {
-        return Api16Impl.coerce(context, item, i);
+        if ((i & 1) != 0) {
+            CharSequence coerceToText = item.coerceToText(context);
+            return coerceToText instanceof Spanned ? coerceToText.toString() : coerceToText;
+        }
+        return item.coerceToStyledText(context);
     }
 
     private static void replaceSelection(Editable editable, CharSequence charSequence) {
@@ -53,15 +57,5 @@ public final class TextViewOnReceiveContentListener implements OnReceiveContentL
         int max2 = Math.max(0, Math.max(selectionStart, selectionEnd));
         Selection.setSelection(editable, max2);
         editable.replace(max, max2, charSequence);
-    }
-
-    private static final class Api16Impl {
-        static CharSequence coerce(Context context, ClipData.Item item, int i) {
-            if ((i & 1) != 0) {
-                CharSequence coerceToText = item.coerceToText(context);
-                return coerceToText instanceof Spanned ? coerceToText.toString() : coerceToText;
-            }
-            return item.coerceToStyledText(context);
-        }
     }
 }

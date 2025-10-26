@@ -57,7 +57,16 @@ public final class SavedStateHandlesProvider implements SavedStateRegistry.Saved
         if (this.restored) {
             return;
         }
-        this.restoredState = this.savedStateRegistry.consumeRestoredStateForKey("androidx.lifecycle.internal.SavedStateHandlesProvider");
+        Bundle consumeRestoredStateForKey = this.savedStateRegistry.consumeRestoredStateForKey("androidx.lifecycle.internal.SavedStateHandlesProvider");
+        Bundle bundle = new Bundle();
+        Bundle bundle2 = this.restoredState;
+        if (bundle2 != null) {
+            bundle.putAll(bundle2);
+        }
+        if (consumeRestoredStateForKey != null) {
+            bundle.putAll(consumeRestoredStateForKey);
+        }
+        this.restoredState = bundle;
         this.restored = true;
         getViewModel();
     }

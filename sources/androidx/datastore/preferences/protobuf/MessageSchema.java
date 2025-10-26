@@ -407,7 +407,7 @@ final class MessageSchema implements Schema {
                 z = z2;
                 i15 = i71;
             }
-            int i75 = charAt26 & NotificationCenter.didApplyNewTheme;
+            int i75 = charAt26 & NotificationCenter.didReplacedPhotoInMemCache;
             int i76 = charAt;
             if ((charAt26 & 1024) != 0) {
                 iArr[i64] = i65;

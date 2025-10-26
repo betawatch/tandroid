@@ -9,6 +9,7 @@ import androidx.core.provider.FontsContractCompat;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
 import java.io.InputStream;
+import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes.dex */
@@ -74,6 +75,10 @@ abstract class TypefaceCompatBaseImpl {
         } finally {
             tempFile.delete();
         }
+    }
+
+    public Typeface createFromFontInfoWithFallback(Context context, CancellationSignal cancellationSignal, List list, int i) {
+        throw new IllegalStateException("createFromFontInfoWithFallback must only be called on API 29+");
     }
 
     public Typeface createFromResourcesFontFile(Context context, Resources resources, int i, String str, int i2) {

@@ -56,27 +56,17 @@ public class ViewModelProvider {
         }
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public ViewModelProvider(ViewModelStoreOwner owner) {
-        this(r0, AndroidViewModelFactory.Companion.defaultFactory$lifecycle_viewmodel_release(owner), ViewModelProviderGetKt.defaultCreationExtras(owner));
+        this(owner.getViewModelStore(), AndroidViewModelFactory.Companion.defaultFactory$lifecycle_viewmodel_release(owner), ViewModelProviderGetKt.defaultCreationExtras(owner));
         Intrinsics.checkNotNullParameter(owner, "owner");
-        ViewModelStore viewModelStore = owner.getViewModelStore();
-        Intrinsics.checkNotNullExpressionValue(viewModelStore, "owner.viewModelStore");
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public ViewModelProvider(ViewModelStoreOwner owner, Factory factory) {
-        this(r0, factory, ViewModelProviderGetKt.defaultCreationExtras(owner));
+        this(owner.getViewModelStore(), factory, ViewModelProviderGetKt.defaultCreationExtras(owner));
         Intrinsics.checkNotNullParameter(owner, "owner");
         Intrinsics.checkNotNullParameter(factory, "factory");
-        ViewModelStore viewModelStore = owner.getViewModelStore();
-        Intrinsics.checkNotNullExpressionValue(viewModelStore, "owner.viewModelStore");
     }
 
     public ViewModel get(Class modelClass) {
@@ -97,13 +87,11 @@ public class ViewModelProvider {
             Object obj = this.factory;
             OnRequeryFactory onRequeryFactory = obj instanceof OnRequeryFactory ? (OnRequeryFactory) obj : null;
             if (onRequeryFactory != null) {
-                Intrinsics.checkNotNullExpressionValue(viewModel, "viewModel");
+                Intrinsics.checkNotNull(viewModel);
                 onRequeryFactory.onRequery(viewModel);
             }
-            if (viewModel != null) {
-                return viewModel;
-            }
-            throw new NullPointerException("null cannot be cast to non-null type T of androidx.lifecycle.ViewModelProvider.get");
+            Intrinsics.checkNotNull(viewModel, "null cannot be cast to non-null type T of androidx.lifecycle.ViewModelProvider.get");
+            return viewModel;
         }
         MutableCreationExtras mutableCreationExtras = new MutableCreationExtras(this.defaultCreationExtras);
         mutableCreationExtras.set(NewInstanceFactory.VIEW_MODEL_KEY, key);
@@ -130,13 +118,15 @@ public class ViewModelProvider {
         public ViewModel create(Class modelClass) {
             Intrinsics.checkNotNullParameter(modelClass, "modelClass");
             try {
-                Object newInstance = modelClass.newInstance();
+                Object newInstance = modelClass.getDeclaredConstructor(null).newInstance(null);
                 Intrinsics.checkNotNullExpressionValue(newInstance, "{\n                modelC…wInstance()\n            }");
                 return (ViewModel) newInstance;
             } catch (IllegalAccessException e) {
                 throw new RuntimeException("Cannot create an instance of " + modelClass, e);
             } catch (InstantiationException e2) {
                 throw new RuntimeException("Cannot create an instance of " + modelClass, e2);
+            } catch (NoSuchMethodException e3) {
+                throw new RuntimeException("Cannot create an instance of " + modelClass, e3);
             }
         }
 
@@ -242,12 +232,7 @@ public class ViewModelProvider {
 
             public final Factory defaultFactory$lifecycle_viewmodel_release(ViewModelStoreOwner owner) {
                 Intrinsics.checkNotNullParameter(owner, "owner");
-                if (!(owner instanceof HasDefaultViewModelProviderFactory)) {
-                    return NewInstanceFactory.Companion.getInstance();
-                }
-                Factory defaultViewModelProviderFactory = ((HasDefaultViewModelProviderFactory) owner).getDefaultViewModelProviderFactory();
-                Intrinsics.checkNotNullExpressionValue(defaultViewModelProviderFactory, "owner.defaultViewModelProviderFactory");
-                return defaultViewModelProviderFactory;
+                return owner instanceof HasDefaultViewModelProviderFactory ? ((HasDefaultViewModelProviderFactory) owner).getDefaultViewModelProviderFactory() : NewInstanceFactory.Companion.getInstance();
             }
 
             public final AndroidViewModelFactory getInstance(Application application) {

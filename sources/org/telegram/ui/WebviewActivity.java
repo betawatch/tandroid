@@ -168,7 +168,7 @@ public class WebviewActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    WebviewActivity.this.lambda$onBackPressed$355();
+                    WebviewActivity.this.lambda$onBackPressed$341();
                     return;
                 }
                 if (i != 1) {

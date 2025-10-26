@@ -126,12 +126,12 @@ public abstract class WallpaperCell extends FrameLayout {
             this.imageView.getImageReceiver().setBlendMode(null);
             this.imageView.getImageReceiver().setGradientBitmap(null);
             this.isSelected = obj == obj2;
-            String str = NotificationCenter.dialogFiltersUpdated + "_" + NotificationCenter.dialogFiltersUpdated;
+            String str = NotificationCenter.newEmojiSuggestionsAvailable + "_" + NotificationCenter.newEmojiSuggestionsAvailable;
             String str2 = "100_100_b";
             if (obj instanceof TLRPC.TL_wallPaper) {
                 TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj;
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tL_wallPaper.document.thumbs, AndroidUtilities.dp(100));
-                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(tL_wallPaper.document.thumbs, AndroidUtilities.dp(NotificationCenter.dialogFiltersUpdated));
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(tL_wallPaper.document.thumbs, AndroidUtilities.dp(NotificationCenter.newEmojiSuggestionsAvailable));
                 photoSize = closestPhotoSizeWithSize2 != closestPhotoSizeWithSize ? closestPhotoSizeWithSize2 : null;
                 long j = photoSize != null ? photoSize.size : tL_wallPaper.document.size;
                 if (!tL_wallPaper.pattern) {
@@ -195,7 +195,7 @@ public abstract class WallpaperCell extends FrameLayout {
                     }
                     if ("d".equals(colorWallpaper.slug)) {
                         if (colorWallpaper.defaultCache == null) {
-                            colorWallpaper.defaultCache = SvgHelper.getBitmap(R.raw.default_pattern, 100, NotificationCenter.dialogFiltersUpdated, -16777216);
+                            colorWallpaper.defaultCache = SvgHelper.getBitmap(R.raw.default_pattern, 100, NotificationCenter.newEmojiSuggestionsAvailable, -16777216);
                         }
                         this.imageView.setImageBitmap(colorWallpaper.defaultCache);
                         this.imageView.getImageReceiver().setAlpha(Math.abs(colorWallpaper.intensity));
@@ -252,7 +252,7 @@ public abstract class WallpaperCell extends FrameLayout {
                 TLRPC.Photo photo = searchImage.photo;
                 if (photo != null) {
                     TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(100));
-                    TLRPC.PhotoSize closestPhotoSizeWithSize5 = FileLoader.getClosestPhotoSizeWithSize(searchImage.photo.sizes, AndroidUtilities.dp(NotificationCenter.dialogFiltersUpdated));
+                    TLRPC.PhotoSize closestPhotoSizeWithSize5 = FileLoader.getClosestPhotoSizeWithSize(searchImage.photo.sizes, AndroidUtilities.dp(NotificationCenter.newEmojiSuggestionsAvailable));
                     photoSize = closestPhotoSizeWithSize5 != closestPhotoSizeWithSize4 ? closestPhotoSizeWithSize5 : null;
                     this.imageView.setImage(ImageLocation.getForPhoto(photoSize, searchImage.photo), str, ImageLocation.getForPhoto(closestPhotoSizeWithSize4, searchImage.photo), str2, "jpg", photoSize != null ? photoSize.size : 0, 1, searchImage);
                     return;

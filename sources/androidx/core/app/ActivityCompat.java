@@ -1,7 +1,6 @@
 package androidx.core.app;
 
 import android.app.Activity;
-import android.app.SharedElementCallback;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
@@ -11,7 +10,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
 import androidx.core.content.ContextCompat;
-import androidx.core.os.BuildCompat;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -27,11 +25,11 @@ public abstract class ActivityCompat extends ContextCompat {
     }
 
     public static void startActivityForResult(Activity activity, Intent intent, int i, Bundle bundle) {
-        Api16Impl.startActivityForResult(activity, intent, i, bundle);
+        activity.startActivityForResult(intent, i, bundle);
     }
 
     public static void startIntentSenderForResult(Activity activity, IntentSender intentSender, int i, Intent intent, int i2, int i3, int i4, Bundle bundle) {
-        Api16Impl.startIntentSenderForResult(activity, intentSender, i, intent, i2, i3, i4, bundle);
+        activity.startIntentSenderForResult(intentSender, i, intent, i2, i3, i4, bundle);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -41,7 +39,7 @@ public abstract class ActivityCompat extends ContextCompat {
             if (TextUtils.isEmpty(strArr[i2])) {
                 throw new IllegalArgumentException("Permission request for permissions " + Arrays.toString(strArr) + " must not contain null or empty values");
             }
-            if (!BuildCompat.isAtLeastT() && TextUtils.equals(strArr[i2], "android.permission.POST_NOTIFICATIONS")) {
+            if (Build.VERSION.SDK_INT < 33 && TextUtils.equals(strArr[i2], "android.permission.POST_NOTIFICATIONS")) {
                 hashSet.add(Integer.valueOf(i2));
             }
         }
@@ -102,31 +100,9 @@ public abstract class ActivityCompat extends ContextCompat {
         activity.recreate();
     }
 
-    static class Api16Impl {
-        static void startActivityForResult(Activity activity, Intent intent, int i, Bundle bundle) {
-            activity.startActivityForResult(intent, i, bundle);
-        }
-
-        static void startIntentSenderForResult(Activity activity, IntentSender intentSender, int i, Intent intent, int i2, int i3, int i4, Bundle bundle) {
-            activity.startIntentSenderForResult(intentSender, i, intent, i2, i3, i4, bundle);
-        }
-
-        static void finishAffinity(Activity activity) {
-            activity.finishAffinity();
-        }
-    }
-
     static class Api23Impl {
         static void requestPermissions(Activity activity, String[] strArr, int i) {
             activity.requestPermissions(strArr, i);
-        }
-
-        static boolean shouldShowRequestPermissionRationale(Activity activity, String str) {
-            return activity.shouldShowRequestPermissionRationale(str);
-        }
-
-        static void onSharedElementsReady(Object obj) {
-            ((SharedElementCallback.OnSharedElementsReadyListener) obj).onSharedElementsReady();
         }
     }
 }

@@ -425,12 +425,12 @@ public final class Cea708Decoder extends CeaDecoder {
         if (i == 127) {
             this.currentCueInfoBuilder.append((char) 9835);
         } else {
-            this.currentCueInfoBuilder.append((char) (i & NotificationCenter.didApplyNewTheme));
+            this.currentCueInfoBuilder.append((char) (i & NotificationCenter.didReplacedPhotoInMemCache));
         }
     }
 
     private void handleG1Character(int i) {
-        this.currentCueInfoBuilder.append((char) (i & NotificationCenter.didApplyNewTheme));
+        this.currentCueInfoBuilder.append((char) (i & NotificationCenter.didReplacedPhotoInMemCache));
     }
 
     private void handleG2Character(int i) {
@@ -935,7 +935,7 @@ public final class Cea708Decoder extends CeaDecoder {
             Assertions.checkIndex(i2, 0, 4);
             Assertions.checkIndex(i3, 0, 4);
             Assertions.checkIndex(i4, 0, 4);
-            return Color.argb(i4 != 2 ? i4 != 3 ? NotificationCenter.didApplyNewTheme : 0 : NotificationCenter.messageTranslated, i > 1 ? NotificationCenter.didApplyNewTheme : 0, i2 > 1 ? NotificationCenter.didApplyNewTheme : 0, i3 > 1 ? NotificationCenter.didApplyNewTheme : 0);
+            return Color.argb(i4 != 2 ? i4 != 3 ? NotificationCenter.didReplacedPhotoInMemCache : 0 : NotificationCenter.messageTranslated, i > 1 ? NotificationCenter.didReplacedPhotoInMemCache : 0, i2 > 1 ? NotificationCenter.didReplacedPhotoInMemCache : 0, i3 > 1 ? NotificationCenter.didReplacedPhotoInMemCache : 0);
         }
     }
 

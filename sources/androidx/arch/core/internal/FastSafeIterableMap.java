@@ -6,7 +6,7 @@ import java.util.Map;
 
 /* loaded from: classes.dex */
 public class FastSafeIterableMap extends SafeIterableMap {
-    private HashMap mHashMap = new HashMap();
+    private final HashMap mHashMap = new HashMap();
 
     @Override // androidx.arch.core.internal.SafeIterableMap
     protected SafeIterableMap.Entry get(Object obj) {

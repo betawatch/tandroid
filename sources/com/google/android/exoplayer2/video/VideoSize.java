@@ -3,7 +3,6 @@ package com.google.android.exoplayer2.video;
 import android.os.Bundle;
 import com.google.android.exoplayer2.Bundleable;
 import com.google.android.exoplayer2.util.Util;
-import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
 public final class VideoSize implements Bundleable {
@@ -48,7 +47,7 @@ public final class VideoSize implements Bundleable {
     }
 
     public int hashCode() {
-        return ((((((this.width + NotificationCenter.starBalanceUpdated) * 31) + this.height) * 31) + this.unappliedRotationDegrees) * 31) + Float.floatToRawIntBits(this.pixelWidthHeightRatio);
+        return ((((((this.width + 217) * 31) + this.height) * 31) + this.unappliedRotationDegrees) * 31) + Float.floatToRawIntBits(this.pixelWidthHeightRatio);
     }
 
     @Override // com.google.android.exoplayer2.Bundleable

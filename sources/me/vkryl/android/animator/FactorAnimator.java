@@ -78,10 +78,6 @@ public class FactorAnimator {
         this.startDelay = j;
     }
 
-    public void setInterpolator(Interpolator interpolator) {
-        this.interpolator = interpolator;
-    }
-
     public void animateTo(float f) {
         animateTo(f, null);
     }
@@ -194,6 +190,10 @@ public class FactorAnimator {
             float fraction = AnimatorUtils.getFraction(valueAnimator);
             setFactor(f + (f2 * fraction), fraction);
         }
+    }
+
+    public float getToFactor() {
+        return this.isAnimating ? this.toFactor : this.factor;
     }
 
     public float getFactor() {

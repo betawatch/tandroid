@@ -143,6 +143,10 @@ public abstract class BaseFragment {
         return true;
     }
 
+    public boolean isSupportEdgeToEdge() {
+        return false;
+    }
+
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return true;
     }
@@ -435,11 +439,7 @@ public abstract class BaseFragment {
         this.inPreviewMode = z;
         ActionBar actionBar = this.actionBar;
         if (actionBar != null) {
-            if (z) {
-                actionBar.setOccupyStatusBar(false);
-            } else {
-                actionBar.setOccupyStatusBar(true);
-            }
+            actionBar.setOccupyStatusBar(!z);
         }
     }
 
@@ -566,7 +566,7 @@ public abstract class BaseFragment {
     }
 
     /* renamed from: finishFragment */
-    public void lambda$onBackPressed$355() {
+    public void lambda$onBackPressed$341() {
         PreviewDelegate previewDelegate;
         Dialog dialog = this.parentDialog;
         if (dialog != null) {
@@ -1199,7 +1199,6 @@ public abstract class BaseFragment {
         } else if (parentActivity != null) {
             Window window = parentActivity.getWindow();
             if (Build.VERSION.SDK_INT >= 26 && window != null && window.getNavigationBarColor() != i) {
-                window.setNavigationBarColor(i);
                 AndroidUtilities.setLightNavigationBar(window, AndroidUtilities.computePerceivedBrightness(i) >= 0.721f);
             }
         }

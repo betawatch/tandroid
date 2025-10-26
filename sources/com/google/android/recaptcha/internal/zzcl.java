@@ -19,7 +19,7 @@ public final class zzcl {
         this.zzb = zzckVar;
         HashMap hashMap = new HashMap();
         this.zzc = hashMap;
-        zzckVar.zze(NotificationCenter.groupCallVisibilityChanged, hashMap);
+        zzckVar.zze(NotificationCenter.closeInCallActivity, hashMap);
     }
 
     public final zzaa zza() {
@@ -32,7 +32,7 @@ public final class zzcl {
 
     public final void zzc() {
         this.zzb.zzd();
-        this.zzb.zze(NotificationCenter.groupCallVisibilityChanged, this.zzc);
+        this.zzb.zze(NotificationCenter.closeInCallActivity, this.zzc);
     }
 
     public final zzag zzd() {

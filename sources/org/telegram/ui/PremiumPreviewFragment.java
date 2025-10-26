@@ -1038,7 +1038,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PremiumPreviewFragment.this.lambda$onBackPressed$355();
+                    PremiumPreviewFragment.this.lambda$onBackPressed$341();
                 }
             }
         });
@@ -2050,7 +2050,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             setOrientation(1);
             FrameLayout frameLayout = new FrameLayout(context);
             this.imageFrameLayout = frameLayout;
-            int i = PremiumPreviewFragment.this.type == 1 ? NotificationCenter.configLoaded : NotificationCenter.didUpdatePremiumGiftFieldIcon;
+            int i = PremiumPreviewFragment.this.type == 1 ? NotificationCenter.liveStoryUpdated : NotificationCenter.boostByChannelCreated;
             addView(frameLayout, LayoutHelper.createLinear(i, i, 1));
             GLIconTextureView gLIconTextureView = new GLIconTextureView(context, PremiumPreviewFragment.this.whiteBackground ? 1 : 0, PremiumPreviewFragment.this.type == 1 ? 1 : 0) { // from class: org.telegram.ui.PremiumPreviewFragment.BackgroundView.1
                 @Override // org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView

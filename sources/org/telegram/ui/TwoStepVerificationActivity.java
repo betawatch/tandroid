@@ -221,7 +221,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
                     if (twoStepVerificationActivity.otherwiseReloginDays >= 0) {
                         twoStepVerificationActivity.showSetForcePasswordAlert();
                     } else {
-                        twoStepVerificationActivity.lambda$onBackPressed$355();
+                        twoStepVerificationActivity.lambda$onBackPressed$341();
                     }
                 }
             }
@@ -860,7 +860,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$resetPassword$11(DialogInterface dialogInterface) {
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetOrRemoveTwoStepPassword, new Object[0]);
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1432,7 +1432,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
             this.currentPasswordHash = new byte[0];
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didRemoveTwoStepPassword, new Object[0]);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetOrRemoveTwoStepPassword, new Object[0]);
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
             return;
         }
         if (tL_error != null) {
@@ -1870,7 +1870,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showSetForcePasswordAlert$37(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     public void setBlockingAlert(int i) {
@@ -1879,14 +1879,14 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /* renamed from: finishFragment */
-    public void lambda$onBackPressed$355() {
+    public void lambda$onBackPressed$341() {
         if (this.otherwiseReloginDays >= 0) {
             Bundle bundle = new Bundle();
             bundle.putBoolean("afterSignup", true);
             presentFragment(new DialogsActivity(bundle), true);
             return;
         }
-        super.lambda$onBackPressed$355();
+        super.lambda$onBackPressed$341();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

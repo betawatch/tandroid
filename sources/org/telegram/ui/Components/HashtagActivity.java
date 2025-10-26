@@ -145,7 +145,7 @@ public class HashtagActivity extends BaseFragment implements NotificationCenter.
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    HashtagActivity.this.lambda$onBackPressed$355();
+                    HashtagActivity.this.lambda$onBackPressed$341();
                 }
             }
         });

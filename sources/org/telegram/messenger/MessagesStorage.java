@@ -1405,7 +1405,7 @@ public class MessagesStorage extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadPendingTasks$32(long j, long j2, int i) {
-        getMessagesController().lambda$checkDeletingTask$78(j, j2, i);
+        getMessagesController().lambda$checkDeletingTask$80(j, j2, i);
     }
 
     public void saveChannelPts(final long j, final int i) {
@@ -8148,16 +8148,16 @@ public class MessagesStorage extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x01b2  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x01b7  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x01ac A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00e7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0186  */
-    /* JADX WARN: Removed duplicated region for block: B:52:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x00d3  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x00da  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x00eb  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x01c2  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00cd  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x01bc A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00f4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0196  */
+    /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x00e0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8170,6 +8170,7 @@ public class MessagesStorage extends BaseController {
         NativeByteBuffer byteBufferValue;
         SQLiteCursor sQLiteCursor2;
         NativeByteBuffer byteBufferValue2;
+        NativeByteBuffer nativeByteBuffer;
         SQLiteCursor sQLiteCursor3 = null;
         try {
             try {
@@ -8187,123 +8188,133 @@ public class MessagesStorage extends BaseController {
                 e = e2;
                 i4 = 1;
             }
-            if (sQLiteCursor.next() && (byteBufferValue2 = sQLiteCursor.byteBufferValue(0)) != null) {
-                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
-                TLdeserialize.readAttachPath(byteBufferValue2, j2);
-                byteBufferValue2.reuse();
-                TLRPC.MessageMedia messageMedia = TLdeserialize.media;
-                if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
-                    sQLiteCursor2 = sQLiteCursor;
-                    i4 = 1;
-                    try {
-                        MessageObject.toggleTodo((TLRPC.TL_messageMediaToDo) messageMedia, i2, z, j2, i3);
-                        sQLiteCursor2.dispose();
+            try {
+                if (sQLiteCursor.next() && (byteBufferValue2 = sQLiteCursor.byteBufferValue(0)) != null) {
+                    TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
+                    TLdeserialize.readAttachPath(byteBufferValue2, j2);
+                    byteBufferValue2.reuse();
+                    TLRPC.MessageMedia messageMedia = TLdeserialize.media;
+                    if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
+                        sQLiteCursor2 = sQLiteCursor;
+                        i4 = 1;
                         try {
-                            sQLitePreparedStatement = this.database.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?");
-                        } catch (Exception e3) {
-                            e = e3;
-                            sQLitePreparedStatement = null;
-                            sQLiteCursor = null;
+                            MessageObject.toggleTodo(this.currentAccount, j, (TLRPC.TL_messageMediaToDo) messageMedia, i2, z, i3);
+                            sQLiteCursor2.dispose();
                             try {
+                                sQLitePreparedStatement = this.database.executeFast("UPDATE messages_v2 SET data = ? WHERE mid = ? AND uid = ?");
+                                try {
+                                    try {
+                                        sQLitePreparedStatement.requery();
+                                        nativeByteBuffer = new NativeByteBuffer(TLdeserialize.getObjectSize());
+                                        TLdeserialize.serializeToStream(nativeByteBuffer);
+                                        sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
+                                    } catch (Throwable th2) {
+                                        th = th2;
+                                        if (sQLiteCursor3 != null) {
+                                            sQLiteCursor3.dispose();
+                                        }
+                                        if (sQLitePreparedStatement != null) {
+                                            sQLitePreparedStatement.dispose();
+                                        }
+                                        throw th;
+                                    }
+                                } catch (Exception e3) {
+                                    e = e3;
+                                }
+                            } catch (Exception e4) {
+                                e = e4;
+                            }
+                            try {
+                                sQLitePreparedStatement.bindInteger(2, i);
+                                sQLitePreparedStatement.bindLong(3, j);
+                                sQLitePreparedStatement.step();
+                                sQLitePreparedStatement.dispose();
+                                try {
+                                    nativeByteBuffer.reuse();
+                                    sQLiteCursor = null;
+                                } catch (Exception e5) {
+                                    e = e5;
+                                    sQLitePreparedStatement = null;
+                                    sQLiteCursor = null;
+                                    try {
+                                        FileLog.e(e);
+                                        if (sQLiteCursor != null) {
+                                            sQLiteCursor.dispose();
+                                            sQLiteCursor = null;
+                                        }
+                                        if (sQLitePreparedStatement == null) {
+                                            sQLitePreparedStatement.dispose();
+                                            sQLitePreparedStatement2 = null;
+                                            if (isForum(j, 5)) {
+                                            }
+                                        } else {
+                                            sQLitePreparedStatement2 = sQLitePreparedStatement;
+                                            if (isForum(j, 5)) {
+                                            }
+                                        }
+                                    } catch (Throwable th3) {
+                                        th = th3;
+                                        sQLiteCursor3 = sQLiteCursor;
+                                        if (sQLiteCursor3 != null) {
+                                        }
+                                        if (sQLitePreparedStatement != null) {
+                                        }
+                                        throw th;
+                                    }
+                                }
+                            } catch (Exception e6) {
+                                e = e6;
+                                sQLiteCursor = null;
                                 FileLog.e(e);
                                 if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                    sQLiteCursor = null;
                                 }
                                 if (sQLitePreparedStatement == null) {
-                                    sQLitePreparedStatement.dispose();
-                                    sQLitePreparedStatement2 = null;
-                                    if (isForum(j, 5)) {
-                                    }
-                                } else {
-                                    sQLitePreparedStatement2 = sQLitePreparedStatement;
-                                    if (isForum(j, 5)) {
-                                    }
                                 }
-                            } catch (Throwable th2) {
-                                th = th2;
-                                sQLiteCursor3 = sQLiteCursor;
-                                if (sQLiteCursor3 != null) {
-                                    sQLiteCursor3.dispose();
-                                }
-                                if (sQLitePreparedStatement != null) {
-                                    sQLitePreparedStatement.dispose();
-                                }
-                                throw th;
                             }
+                        } catch (Exception e7) {
+                            e = e7;
+                            sQLitePreparedStatement = null;
+                            sQLiteCursor = sQLiteCursor2;
+                        } catch (Throwable th4) {
+                            th = th4;
+                            sQLitePreparedStatement = null;
+                            sQLiteCursor3 = sQLiteCursor2;
+                            if (sQLiteCursor3 != null) {
+                            }
+                            if (sQLitePreparedStatement != null) {
+                            }
+                            throw th;
                         }
-                    } catch (Exception e4) {
-                        e = e4;
-                        sQLitePreparedStatement = null;
-                        sQLiteCursor = sQLiteCursor2;
-                    } catch (Throwable th3) {
-                        th = th3;
-                        sQLitePreparedStatement = null;
-                        sQLiteCursor3 = sQLiteCursor2;
-                        if (sQLiteCursor3 != null) {
-                        }
-                        if (sQLitePreparedStatement != null) {
-                        }
-                        throw th;
-                    }
-                    try {
-                        sQLitePreparedStatement.requery();
-                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(TLdeserialize.getObjectSize());
-                        TLdeserialize.serializeToStream(nativeByteBuffer);
-                        sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
-                        sQLitePreparedStatement.bindInteger(2, i);
-                        sQLitePreparedStatement.bindLong(3, j);
-                        sQLitePreparedStatement.step();
-                        sQLitePreparedStatement.dispose();
-                        nativeByteBuffer.reuse();
-                        sQLiteCursor = null;
-                    } catch (Exception e5) {
-                        e = e5;
-                        sQLiteCursor = null;
-                        FileLog.e(e);
                         if (sQLiteCursor != null) {
-                        }
-                        if (sQLitePreparedStatement == null) {
-                        }
-                    } catch (Throwable th4) {
-                        th = th4;
-                        if (sQLiteCursor3 != null) {
-                        }
-                        if (sQLitePreparedStatement != null) {
-                        }
-                        throw th;
-                    }
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                        sQLiteCursor = null;
-                        sQLitePreparedStatement2 = null;
-                        if (isForum(j, 5)) {
-                            try {
-                                queryFinalized = this.database.queryFinalized("SELECT data FROM messages_topics WHERE uid = " + j + " AND mid = " + i, new Object[0]);
+                            sQLiteCursor.dispose();
+                            sQLiteCursor = null;
+                            sQLitePreparedStatement2 = null;
+                            if (isForum(j, 5)) {
                                 try {
-                                } catch (Exception e6) {
-                                    e = e6;
-                                    sQLiteCursor3 = queryFinalized;
-                                } catch (Throwable th5) {
-                                    th = th5;
-                                    sQLiteCursor3 = queryFinalized;
-                                }
-                            } catch (Exception e7) {
-                                e = e7;
-                                sQLiteCursor3 = sQLiteCursor;
-                            } catch (Throwable th6) {
-                                th = th6;
-                                sQLiteCursor3 = sQLiteCursor;
-                            }
-                            if (queryFinalized.next() && (byteBufferValue = queryFinalized.byteBufferValue(0)) != null) {
-                                TLRPC.Message TLdeserialize2 = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                                TLdeserialize2.readAttachPath(byteBufferValue, j2);
-                                byteBufferValue.reuse();
-                                TLRPC.MessageMedia messageMedia2 = TLdeserialize2.media;
-                                if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
-                                    MessageObject.toggleTodo((TLRPC.TL_messageMediaToDo) messageMedia2, i2, z, j2, i3);
-                                    queryFinalized.dispose();
+                                    queryFinalized = this.database.queryFinalized("SELECT data FROM messages_topics WHERE uid = " + j + " AND mid = " + i, new Object[0]);
                                     try {
+                                    } catch (Exception e8) {
+                                        e = e8;
+                                        sQLiteCursor3 = queryFinalized;
+                                    } catch (Throwable th5) {
+                                        th = th5;
+                                        sQLiteCursor3 = queryFinalized;
+                                    }
+                                } catch (Exception e9) {
+                                    e = e9;
+                                    sQLiteCursor3 = sQLiteCursor;
+                                } catch (Throwable th6) {
+                                    th = th6;
+                                    sQLiteCursor3 = sQLiteCursor;
+                                }
+                                if (queryFinalized.next() && (byteBufferValue = queryFinalized.byteBufferValue(0)) != null) {
+                                    TLRPC.Message TLdeserialize2 = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                                    TLdeserialize2.readAttachPath(byteBufferValue, j2);
+                                    byteBufferValue.reuse();
+                                    TLRPC.MessageMedia messageMedia2 = TLdeserialize2.media;
+                                    if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
+                                        MessageObject.toggleTodo(this.currentAccount, j, (TLRPC.TL_messageMediaToDo) messageMedia2, i2, z, i3);
+                                        queryFinalized.dispose();
                                         try {
                                             SQLitePreparedStatement executeFast = this.database.executeFast("UPDATE messages_topics SET data = ? WHERE mid = ? AND uid = ?");
                                             try {
@@ -8324,8 +8335,8 @@ public class MessagesStorage extends BaseController {
                                                     if (sQLitePreparedStatement2 == null) {
                                                         return;
                                                     }
-                                                } catch (Exception e8) {
-                                                    e = e8;
+                                                } catch (Exception e10) {
+                                                    e = e10;
                                                     sQLitePreparedStatement2 = null;
                                                     FileLog.e(e);
                                                     if (sQLiteCursor3 != null) {
@@ -8347,45 +8358,45 @@ public class MessagesStorage extends BaseController {
                                                     }
                                                     throw th;
                                                 }
-                                            } catch (Exception e9) {
-                                                e = e9;
+                                            } catch (Exception e11) {
+                                                e = e11;
                                                 sQLitePreparedStatement2 = executeFast;
                                             } catch (Throwable th8) {
                                                 th = th8;
                                                 sQLitePreparedStatement2 = executeFast;
                                             }
-                                        } catch (Exception e10) {
-                                            e = e10;
+                                        } catch (Exception e12) {
+                                            e = e12;
                                         }
                                         sQLitePreparedStatement2.dispose();
                                         return;
-                                    } catch (Throwable th9) {
-                                        th = th9;
                                     }
                                 }
+                                sQLiteCursor3 = queryFinalized;
+                                if (sQLiteCursor3 != null) {
+                                }
+                                if (sQLitePreparedStatement2 == null) {
+                                }
+                                sQLitePreparedStatement2.dispose();
+                                return;
                             }
-                            sQLiteCursor3 = queryFinalized;
-                            if (sQLiteCursor3 != null) {
-                            }
-                            if (sQLitePreparedStatement2 == null) {
-                            }
-                            sQLitePreparedStatement2.dispose();
                             return;
                         }
-                        return;
-                    }
-                    sQLitePreparedStatement2 = null;
-                    if (isForum(j, 5)) {
+                        sQLitePreparedStatement2 = null;
+                        if (isForum(j, 5)) {
+                        }
                     }
                 }
+                if (isForum(j, 5)) {
+                }
+            } catch (Throwable th9) {
+                th = th9;
             }
             i4 = 1;
             sQLiteCursor = sQLiteCursor;
             if (sQLiteCursor != null) {
             }
             sQLitePreparedStatement2 = null;
-            if (isForum(j, 5)) {
-            }
         } catch (Throwable th10) {
             th = th10;
             sQLitePreparedStatement = null;
@@ -18895,7 +18906,7 @@ public class MessagesStorage extends BaseController {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v33 ??), method size: 9111
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v33 ??), method size: 9110
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -18905,7 +18916,7 @@ public class MessagesStorage extends BaseController {
     /* renamed from: putMessagesInternal, reason: merged with bridge method [inline-methods] */
     public void lambda$putMessages$194(java.util.ArrayList<org.telegram.tgnet.TLRPC.Message> r60, boolean r61, boolean r62, int r63, boolean r64, int r65, long r66) {
         /*
-            Method dump skipped, instructions count: 9111
+            Method dump skipped, instructions count: 9110
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.MessagesStorage.lambda$putMessages$194(java.util.ArrayList, boolean, boolean, int, boolean, int, long):void");
@@ -24391,12 +24402,12 @@ public class MessagesStorage extends BaseController {
         TLRPC.MessageMedia messageMedia = message.media;
         if (messageMedia instanceof TLRPC.TL_messageMediaUnsupported_old) {
             if (messageMedia.bytes.length == 0) {
-                messageMedia.bytes = Utilities.intToBytes(216);
+                messageMedia.bytes = Utilities.intToBytes(217);
             }
         } else if (messageMedia instanceof TLRPC.TL_messageMediaUnsupported) {
             TLRPC.TL_messageMediaUnsupported_old tL_messageMediaUnsupported_old = new TLRPC.TL_messageMediaUnsupported_old();
             message.media = tL_messageMediaUnsupported_old;
-            tL_messageMediaUnsupported_old.bytes = Utilities.intToBytes(216);
+            tL_messageMediaUnsupported_old.bytes = Utilities.intToBytes(217);
             message.flags |= 512;
         }
     }

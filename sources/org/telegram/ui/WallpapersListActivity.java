@@ -200,12 +200,12 @@ public class WallpapersListActivity extends BaseFragment implements Notification
 
         public String getUrl() {
             int i = this.gradientColor1;
-            String lowerCase = i != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i >> 16)) & 255), Integer.valueOf(((byte) (this.gradientColor1 >> 8)) & 255), Byte.valueOf((byte) (this.gradientColor1 & NotificationCenter.didApplyNewTheme))).toLowerCase() : null;
-            String lowerCase2 = String.format("%02x%02x%02x", Integer.valueOf(((byte) (this.color >> 16)) & 255), Integer.valueOf(((byte) (this.color >> 8)) & 255), Byte.valueOf((byte) (this.color & NotificationCenter.didApplyNewTheme))).toLowerCase();
+            String lowerCase = i != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i >> 16)) & 255), Integer.valueOf(((byte) (this.gradientColor1 >> 8)) & 255), Byte.valueOf((byte) (this.gradientColor1 & NotificationCenter.didReplacedPhotoInMemCache))).toLowerCase() : null;
+            String lowerCase2 = String.format("%02x%02x%02x", Integer.valueOf(((byte) (this.color >> 16)) & 255), Integer.valueOf(((byte) (this.color >> 8)) & 255), Byte.valueOf((byte) (this.color & NotificationCenter.didReplacedPhotoInMemCache))).toLowerCase();
             int i2 = this.gradientColor2;
-            String lowerCase3 = i2 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (this.gradientColor2 >> 8)) & 255), Byte.valueOf((byte) (this.gradientColor2 & NotificationCenter.didApplyNewTheme))).toLowerCase() : null;
+            String lowerCase3 = i2 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (this.gradientColor2 >> 8)) & 255), Byte.valueOf((byte) (this.gradientColor2 & NotificationCenter.didReplacedPhotoInMemCache))).toLowerCase() : null;
             int i3 = this.gradientColor3;
-            String lowerCase4 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (this.gradientColor3 >> 8)) & 255), Byte.valueOf((byte) (this.gradientColor3 & NotificationCenter.didApplyNewTheme))).toLowerCase() : null;
+            String lowerCase4 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (this.gradientColor3 >> 8)) & 255), Byte.valueOf((byte) (this.gradientColor3 & NotificationCenter.didReplacedPhotoInMemCache))).toLowerCase() : null;
             if (lowerCase == null || lowerCase3 == null) {
                 if (lowerCase != null) {
                     String str = lowerCase2 + "-" + lowerCase;
@@ -532,7 +532,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                     WallpapersListActivity.this.updateRowsSelection();
                     return;
                 }
-                WallpapersListActivity.this.lambda$onBackPressed$355();
+                WallpapersListActivity.this.lambda$onBackPressed$341();
                 return;
             }
             if (i != 4) {
@@ -690,15 +690,15 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                     long j2 = ((MessagesStorage.TopicKey) arrayList.get(i3)).dialogId;
                     if (charSequence != null) {
                         j = j2;
-                        SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j2, null, null, null, true, null, null, null, true, 0, null, false));
+                        SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(charSequence.toString(), j2, null, null, null, true, null, null, null, true, 0, 0, null, false));
                     } else {
                         j = j2;
                     }
                     if (!TextUtils.isEmpty(sb)) {
-                        SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(sb.toString(), j, null, null, null, true, null, null, null, true, 0, null, false));
+                        SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(sb.toString(), j, null, null, null, true, null, null, null, true, 0, 0, null, false));
                     }
                 }
-                dialogsActivity.lambda$onBackPressed$355();
+                dialogsActivity.lambda$onBackPressed$341();
             } else {
                 long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
                 Bundle bundle = new Bundle();
@@ -717,7 +717,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                 }
                 NotificationCenter.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
                 WallpapersListActivity.this.presentFragment(new ChatActivity(bundle), true);
-                SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(sb.toString(), j3, null, null, null, true, null, null, null, true, 0, null, false));
+                SendMessagesHelper.getInstance(((BaseFragment) WallpapersListActivity.this).currentAccount).sendMessage(SendMessagesHelper.SendMessageParams.of(sb.toString(), j3, null, null, null, true, null, null, null, true, 0, 0, null, false));
             }
             return true;
         }
@@ -1781,7 +1781,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                         TLRPC.Photo photo = botInlineResult.photo;
                         if (photo != null) {
                             TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
-                            TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(botInlineResult.photo.sizes, NotificationCenter.onReceivedChannelDifference);
+                            TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(botInlineResult.photo.sizes, NotificationCenter.uploadStoryEnd);
                             if (closestPhotoSizeWithSize != null) {
                                 searchImage.width = closestPhotoSizeWithSize.w;
                                 searchImage.height = closestPhotoSizeWithSize.h;

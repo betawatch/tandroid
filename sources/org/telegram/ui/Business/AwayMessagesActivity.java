@@ -66,7 +66,7 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
             public void onItemClick(int i) {
                 if (i == -1) {
                     if (AwayMessagesActivity.this.onBackPressed()) {
-                        AwayMessagesActivity.this.lambda$onBackPressed$355();
+                        AwayMessagesActivity.this.lambda$onBackPressed$341();
                     }
                 } else if (i == 1) {
                     AwayMessagesActivity.this.processDone();
@@ -231,7 +231,7 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
             return;
         }
         if (!hasChanges()) {
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
             return;
         }
         QuickRepliesController.QuickReply findReply = QuickRepliesController.getInstance(this.currentAccount).findReply("away");
@@ -310,7 +310,7 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
             this.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
         } else {
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
         }
     }
 
@@ -349,7 +349,7 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onBackPressed$4(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -446,8 +446,8 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
             if (i2 == 8) {
                 AlertsCreator.createDatePickerDialog(getContext(), LocaleController.getString(R.string.BusinessAwayScheduleCustomStartTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), this.scheduleCustomStart, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Business.AwayMessagesActivity$$ExternalSyntheticLambda6
                     @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                    public final void didSelectDate(boolean z, int i3) {
-                        AwayMessagesActivity.this.lambda$onClick$5(view, z, i3);
+                    public final void didSelectDate(boolean z, int i3, int i4) {
+                        AwayMessagesActivity.this.lambda$onClick$5(view, z, i3, i4);
                     }
                 });
                 return;
@@ -455,8 +455,8 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
             if (i2 == 9) {
                 AlertsCreator.createDatePickerDialog(getContext(), LocaleController.getString(R.string.BusinessAwayScheduleCustomEndTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), this.scheduleCustomEnd, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Business.AwayMessagesActivity$$ExternalSyntheticLambda7
                     @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                    public final void didSelectDate(boolean z, int i3) {
-                        AwayMessagesActivity.this.lambda$onClick$6(view, z, i3);
+                    public final void didSelectDate(boolean z, int i3, int i4) {
+                        AwayMessagesActivity.this.lambda$onClick$6(view, z, i3, i4);
                     }
                 });
             } else if (i2 == 10) {
@@ -469,14 +469,14 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$5(View view, boolean z, int i) {
+    public /* synthetic */ void lambda$onClick$5(View view, boolean z, int i, int i2) {
         this.scheduleCustomStart = i;
         ((TextCell) view).setValue(LocaleController.formatShortDateTime(i), true);
         checkDone(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onClick$6(View view, boolean z, int i) {
+    public /* synthetic */ void lambda$onClick$6(View view, boolean z, int i, int i2) {
         this.scheduleCustomEnd = i;
         ((TextCell) view).setValue(LocaleController.formatShortDateTime(i), true);
         checkDone(true);

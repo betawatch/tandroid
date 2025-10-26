@@ -41,7 +41,7 @@ public final class CancellationSignal {
                     }
                 }
                 if (obj != null) {
-                    Api16Impl.cancel(obj);
+                    ((android.os.CancellationSignal) obj).cancel();
                 }
                 synchronized (this) {
                     this.mCancelInProgress = false;
@@ -73,10 +73,10 @@ public final class CancellationSignal {
         synchronized (this) {
             try {
                 if (this.mCancellationSignalObj == null) {
-                    android.os.CancellationSignal createCancellationSignal = Api16Impl.createCancellationSignal();
-                    this.mCancellationSignalObj = createCancellationSignal;
+                    android.os.CancellationSignal cancellationSignal = new android.os.CancellationSignal();
+                    this.mCancellationSignalObj = cancellationSignal;
                     if (this.mIsCanceled) {
-                        Api16Impl.cancel(createCancellationSignal);
+                        cancellationSignal.cancel();
                     }
                 }
                 obj = this.mCancellationSignalObj;
@@ -93,16 +93,6 @@ public final class CancellationSignal {
                 wait();
             } catch (InterruptedException unused) {
             }
-        }
-    }
-
-    static class Api16Impl {
-        static void cancel(Object obj) {
-            ((android.os.CancellationSignal) obj).cancel();
-        }
-
-        static android.os.CancellationSignal createCancellationSignal() {
-            return new android.os.CancellationSignal();
         }
     }
 }

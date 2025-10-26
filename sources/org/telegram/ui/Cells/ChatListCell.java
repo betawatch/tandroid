@@ -79,12 +79,12 @@ public abstract class ChatListCell extends LinearLayout {
             int i = 0;
             for (int i2 = 2; i < i2; i2 = 2) {
                 int dp = AndroidUtilities.dp(i == 0 ? 21.0f : 53.0f);
-                Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i == 0 ? NotificationCenter.smsJobStatusUpdate : 90, red, green, blue));
+                Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i == 0 ? NotificationCenter.storyAlbumsCollectionsUpdate : 90, red, green, blue));
                 canvas.drawCircle(AndroidUtilities.dp(22.0f), dp, AndroidUtilities.dp(11.0f), Theme.dialogs_onlineCirclePaint);
                 int i3 = 0;
                 while (true) {
                     if (i3 < (this.isThreeLines ? 3 : 2)) {
-                        Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i3 == 0 ? NotificationCenter.smsJobStatusUpdate : 90, red, green, blue));
+                        Theme.dialogs_onlineCirclePaint.setColor(Color.argb(i3 == 0 ? NotificationCenter.storyAlbumsCollectionsUpdate : 90, red, green, blue));
                         if (this.isThreeLines) {
                             float f = i3 * 7;
                             this.rect.set(AndroidUtilities.dp(41.0f), dp - AndroidUtilities.dp(8.3f - f), getMeasuredWidth() - AndroidUtilities.dp(i3 == 0 ? 72.0f : 48.0f), dp - AndroidUtilities.dp(5.3f - f));

@@ -1023,7 +1023,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
         while (it3.hasNext()) {
             TLRPC.User user2 = (TLRPC.User) it3.next();
             long longValue = hashMap == null ? 0L : ((Long) hashMap.get(Long.valueOf(user2.id))).longValue();
-            SendMessagesHelper.SendMessageParams of = SendMessagesHelper.SendMessageParams.of(str, user2.id, null, null, null, true, null, null, null, false, 0, null, false);
+            SendMessagesHelper.SendMessageParams of = SendMessagesHelper.SendMessageParams.of(str, user2.id, null, null, null, true, null, null, null, false, 0, 0, null, false);
             of.payStars = longValue;
             SendMessagesHelper.getInstance(this.currentAccount).sendMessage(of);
             if (of.payStars > 0) {
@@ -1322,11 +1322,11 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
                     if (baseFragment2 instanceof ProfileActivity) {
                         getBaseFragment().getParentLayout().removeFragmentFromStack(baseFragment2);
                     }
-                    lastFragment.lambda$onBackPressed$355();
+                    lastFragment.lambda$onBackPressed$341();
                     BoostDialogs.showBulletin(r5, chat, true);
                     return;
                 }
-                lastFragment.lambda$onBackPressed$355();
+                lastFragment.lambda$onBackPressed$341();
                 BoostDialogs.showBulletin(baseFragment2, chat, false);
                 return;
             }
@@ -1352,7 +1352,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
                 while (it.hasNext()) {
                     getBaseFragment().getParentLayout().removeFragmentFromStack((BaseFragment) it.next());
                 }
-                getBaseFragment().lambda$onBackPressed$355();
+                getBaseFragment().lambda$onBackPressed$341();
                 lambda$new$0();
                 BoostDialogs.showBulletin(r5, chat, true);
                 return;
@@ -1368,7 +1368,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
                 }
                 List fragmentStack3 = getBaseFragment().getParentLayout().getFragmentStack();
                 r5 = fragmentStack3.size() >= 2 ? (BaseFragment) fragmentStack3.get(fragmentStack3.size() - 2) : null;
-                getBaseFragment().lambda$onBackPressed$355();
+                getBaseFragment().lambda$onBackPressed$341();
                 lambda$new$0();
                 if (r5 instanceof ChatActivity) {
                     BoostDialogs.showBulletin(r5, chat, true);
@@ -2132,7 +2132,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
                                                 textView3.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, ((BottomSheet) LimitReachedBottomSheet.this).resourcesProvider));
                                                 textView3.setText(" " + LocaleController.getString(R.string.InvitePremiumBlockedOr) + " ");
                                                 textView3.setTextSize(14.0f);
-                                                addView(textView3, LayoutHelper.createLinear(NotificationCenter.didUpdatePremiumGiftFieldIcon, -2, 1, 12, 0, 12, 20));
+                                                addView(textView3, LayoutHelper.createLinear(NotificationCenter.boostByChannelCreated, -2, 1, 12, 0, 12, 20));
                                                 TextView textView4 = new TextView(context);
                                                 textView4.setGravity(17);
                                                 textView4.setTypeface(AndroidUtilities.bold());
@@ -2896,7 +2896,7 @@ public class LimitReachedBottomSheet extends BottomSheetWithRecyclerListView imp
             limitParams.descriptionStrLocked = LocaleController.formatString("LimitReachedCommunitiesLocked", R.string.LimitReachedCommunitiesLocked, Integer.valueOf(limitParams.defaultLimit));
         } else if (i == 6) {
             limitParams.defaultLimit = 100;
-            limitParams.premiumLimit = NotificationCenter.userIsPremiumBlockedUpadted;
+            limitParams.premiumLimit = NotificationCenter.channelRecommendationsLoaded;
             limitParams.icon = R.drawable.msg_limit_folder;
             limitParams.descriptionStr = LocaleController.formatString("LimitReachedFileSize", R.string.LimitReachedFileSize, "2 GB", "4 GB");
             limitParams.descriptionStrPremium = LocaleController.formatString("LimitReachedFileSizePremium", R.string.LimitReachedFileSizePremium, "4 GB");

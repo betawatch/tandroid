@@ -15883,9 +15883,6 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                     chatActivity.getChatActivityEnterView().hidePopup(true, false);
                 }
             }
-            if (baseFragment.getParentActivity() instanceof LaunchActivity) {
-                ((LaunchActivity) baseFragment.getParentActivity()).requestCustomNavigationBar();
-            }
             BottomSheetTabDialog bottomSheetTabDialog = this.dialog;
             if (bottomSheetTabDialog != null) {
                 bottomSheetTabDialog.attach();

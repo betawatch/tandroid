@@ -337,8 +337,8 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-                public /* synthetic */ void sendGif(Object obj, Object obj2, boolean z, int i) {
-                    ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendGif(this, obj, obj2, z, i);
+                public /* synthetic */ void sendGif(Object obj, Object obj2, boolean z, int i, int i2) {
+                    ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendGif(this, obj, obj2, z, i, i2);
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -347,8 +347,8 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-                public /* synthetic */ void sendSticker(TLRPC.Document document, String str, Object obj, boolean z, int i) {
-                    ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, document, str, obj, z, i);
+                public /* synthetic */ void sendSticker(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2) {
+                    ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, document, str, obj, z, i, i2);
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -3366,7 +3366,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 canvas.scale(scale, scale, this.bounds.centerX(), this.bounds.centerY());
                 canvas.drawRoundRect(this.bounds, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), StoryWidgetsCell.this.bgPaint);
                 if (this.lockDrawable != null) {
-                    canvas.saveLayerAlpha(this.bounds, NotificationCenter.didApplyNewTheme, 31);
+                    canvas.saveLayerAlpha(this.bounds, NotificationCenter.didReplacedPhotoInMemCache, 31);
                 }
                 if (this.drawable == null) {
                     Drawable emojiBigDrawable = Emoji.getEmojiBigDrawable(this.emojiDrawable);

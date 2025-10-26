@@ -345,14 +345,14 @@ public class MessageSuggestionOfferSheet extends BottomSheet {
     public /* synthetic */ void lambda$new$5(Context context, Theme.ResourcesProvider resourcesProvider, View view) {
         AlertsCreator.createSuggestedMessageDatePickerDialog(context, this.selectedTime, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Stars.MessageSuggestionOfferSheet$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-            public final void didSelectDate(boolean z, int i) {
-                MessageSuggestionOfferSheet.this.lambda$new$4(z, i);
+            public final void didSelectDate(boolean z, int i, int i2) {
+                MessageSuggestionOfferSheet.this.lambda$new$4(z, i, i2);
             }
         }, resourcesProvider, 0).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$4(boolean z, int i) {
+    public /* synthetic */ void lambda$new$4(boolean z, int i, int i2) {
         if (z) {
             setSelectedTime(i, true);
         }

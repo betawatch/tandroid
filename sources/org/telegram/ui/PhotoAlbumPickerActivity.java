@@ -166,7 +166,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PhotoAlbumPickerActivity.this.lambda$onBackPressed$355();
+                    PhotoAlbumPickerActivity.this.lambda$onBackPressed$341();
                     return;
                 }
                 if (i3 != 1) {
@@ -492,20 +492,20 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
         if (chatActivity != null && chatActivity.isInScheduleMode()) {
             AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), this.chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z, int i) {
-                    PhotoAlbumPickerActivity.this.lambda$createView$2(z, i);
+                public final void didSelectDate(boolean z, int i, int i2) {
+                    PhotoAlbumPickerActivity.this.lambda$createView$2(z, i, i2);
                 }
             });
         } else {
             sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, true, 0);
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(boolean z, int i) {
+    public /* synthetic */ void lambda$createView$2(boolean z, int i, int i2) {
         sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, z, i);
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -608,20 +608,20 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
         if (i == 0) {
             AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), this.chatActivity.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.PhotoAlbumPickerActivity$$ExternalSyntheticLambda7
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-                public final void didSelectDate(boolean z, int i2) {
-                    PhotoAlbumPickerActivity.this.lambda$createView$5(z, i2);
+                public final void didSelectDate(boolean z, int i2, int i3) {
+                    PhotoAlbumPickerActivity.this.lambda$createView$5(z, i2, i3);
                 }
             });
         } else {
             sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, true, 0);
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$5(boolean z, int i) {
+    public /* synthetic */ void lambda$createView$5(boolean z, int i, int i2) {
         sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, z, i);
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -852,7 +852,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
                 }
 
                 @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public void actionButtonPressed(boolean z, boolean z2, int i2) {
+                public void actionButtonPressed(boolean z, boolean z2, int i2, int i3) {
                     PhotoAlbumPickerActivity.this.removeSelfFromStack();
                     if (z) {
                         return;
@@ -893,7 +893,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
                 }
 
                 @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-                public void actionButtonPressed(boolean z, boolean z2, int i2) {
+                public void actionButtonPressed(boolean z, boolean z2, int i2, int i3) {
                     PhotoAlbumPickerActivity.this.removeSelfFromStack();
                     if (z) {
                         return;
@@ -930,7 +930,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
             }
 
             @Override // org.telegram.ui.PhotoPickerActivity.PhotoPickerActivityDelegate
-            public void actionButtonPressed(boolean z, boolean z2, int i2) {
+            public void actionButtonPressed(boolean z, boolean z2, int i2, int i3) {
                 PhotoAlbumPickerActivity.this.removeSelfFromStack();
                 if (z) {
                     return;

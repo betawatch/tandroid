@@ -290,10 +290,6 @@ public abstract class ResourcesCompat {
         static ColorStateList getColorStateList(Resources resources, int i, Resources.Theme theme) {
             return resources.getColorStateList(i, theme);
         }
-
-        static int getColor(Resources resources, int i, Resources.Theme theme) {
-            return resources.getColor(i, theme);
-        }
     }
 
     static class Api21Impl {

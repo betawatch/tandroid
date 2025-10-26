@@ -70,7 +70,7 @@ public class ChatAttachAlertQuickRepliesLayout extends ChatAttachAlert.AttachAle
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public boolean sendSelectedItems(boolean z, int i, long j, boolean z2) {
+    public boolean sendSelectedItems(boolean z, int i, int i2, long j, boolean z2) {
         return false;
     }
 

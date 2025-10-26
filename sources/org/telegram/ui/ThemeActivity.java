@@ -1125,7 +1125,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
             boolean equals;
             Theme.ThemeInfo theme;
             if (i == -1) {
-                ThemeActivity.this.lambda$onBackPressed$355();
+                ThemeActivity.this.lambda$onBackPressed$341();
                 return;
             }
             if (i == 1) {
@@ -2186,7 +2186,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
             this.paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
             this.paint.setAlpha(Math.round(this.checkedState * 255.0f));
             canvas.drawCircle(measuredWidth, measuredHeight, dp - (this.paint.getStrokeWidth() * 0.5f), this.paint);
-            this.paint.setAlpha(NotificationCenter.didApplyNewTheme);
+            this.paint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
             this.paint.setStyle(Paint.Style.FILL);
             canvas.drawCircle(measuredWidth, measuredHeight, dp - (AndroidUtilities.dp(5.0f) * this.checkedState), this.paint);
             if (this.checkedState != 0.0f) {

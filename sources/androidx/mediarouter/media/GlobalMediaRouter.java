@@ -520,7 +520,7 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                                 arrayList.add(new Pair(routeInfo, mediaRouteDescriptor));
                             } else {
                                 routeInfo.maybeUpdateDescriptor(mediaRouteDescriptor);
-                                this.mCallbackHandler.post(NotificationCenter.needCheckSystemBarColors, routeInfo);
+                                this.mCallbackHandler.post(NotificationCenter.themeListUpdated, routeInfo);
                             }
                             i = i2;
                         } else if (findRouteIndexByDescriptorId < i) {
@@ -542,7 +542,7 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                 for (Pair pair : arrayList) {
                     MediaRouter.RouteInfo routeInfo3 = (MediaRouter.RouteInfo) pair.first;
                     routeInfo3.maybeUpdateDescriptor((MediaRouteDescriptor) pair.second);
-                    this.mCallbackHandler.post(NotificationCenter.needCheckSystemBarColors, routeInfo3);
+                    this.mCallbackHandler.post(NotificationCenter.themeListUpdated, routeInfo3);
                 }
                 for (Pair pair2 : arrayList2) {
                     MediaRouter.RouteInfo routeInfo4 = (MediaRouter.RouteInfo) pair2.first;
@@ -558,7 +558,7 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
             }
             updateSelectedRouteIfNeeded(z);
             for (int size2 = providerInfo.mRoutes.size() - 1; size2 >= i; size2--) {
-                this.mCallbackHandler.post(NotificationCenter.needShareTheme, (MediaRouter.RouteInfo) providerInfo.mRoutes.remove(size2));
+                this.mCallbackHandler.post(NotificationCenter.didApplyNewTheme, (MediaRouter.RouteInfo) providerInfo.mRoutes.remove(size2));
             }
             this.mCallbackHandler.post(515, providerInfo);
         }
@@ -568,13 +568,13 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
         int maybeUpdateDescriptor = routeInfo.maybeUpdateDescriptor(mediaRouteDescriptor);
         if (maybeUpdateDescriptor != 0) {
             if ((maybeUpdateDescriptor & 1) != 0) {
-                this.mCallbackHandler.post(NotificationCenter.needSetDayNightTheme, routeInfo);
+                this.mCallbackHandler.post(NotificationCenter.themeAccentListUpdated, routeInfo);
             }
             if ((maybeUpdateDescriptor & 2) != 0) {
-                this.mCallbackHandler.post(NotificationCenter.goingToPreviewTheme, routeInfo);
+                this.mCallbackHandler.post(NotificationCenter.needCheckSystemBarColors, routeInfo);
             }
             if ((maybeUpdateDescriptor & 4) != 0) {
-                this.mCallbackHandler.post(NotificationCenter.locationPermissionGranted, routeInfo);
+                this.mCallbackHandler.post(NotificationCenter.needShareTheme, routeInfo);
             }
         }
         return maybeUpdateDescriptor;
@@ -720,7 +720,7 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
         if (this.mSelectedRoute == null) {
             this.mSelectedRoute = routeInfo;
             this.mSelectedRouteController = onCreateRouteController;
-            this.mCallbackHandler.post(NotificationCenter.locationPermissionDenied, new Pair(null, routeInfo), i);
+            this.mCallbackHandler.post(NotificationCenter.needSetDayNightTheme, new Pair(null, routeInfo), i);
             return;
         }
         notifyTransfer(this, routeInfo, onCreateRouteController, i, null, null);
@@ -778,7 +778,7 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
     @Override // androidx.mediarouter.media.PlatformMediaRouter1RouteProvider.SyncCallback
     public void onPlatformRouteSelectedByDescriptorId(String str) {
         MediaRouter.RouteInfo findRouteByDescriptorId;
-        this.mCallbackHandler.removeMessages(NotificationCenter.locationPermissionDenied);
+        this.mCallbackHandler.removeMessages(NotificationCenter.needSetDayNightTheme);
         MediaRouter.ProviderInfo findProviderInfo = findProviderInfo(this.mPlatformMediaRouter1RouteProvider);
         if (findProviderInfo == null || (findRouteByDescriptorId = findProviderInfo.findRouteByDescriptorId(str)) == null) {
             return;
@@ -1122,13 +1122,13 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
             }
             if (i != 264) {
                 switch (i) {
-                    case NotificationCenter.needCheckSystemBarColors /* 257 */:
+                    case NotificationCenter.themeListUpdated /* 257 */:
                         GlobalMediaRouter.this.mPlatformMediaRouter1RouteProvider.onSyncRouteAdded((MediaRouter.RouteInfo) obj);
                         break;
-                    case NotificationCenter.needShareTheme /* 258 */:
+                    case NotificationCenter.didApplyNewTheme /* 258 */:
                         GlobalMediaRouter.this.mPlatformMediaRouter1RouteProvider.onSyncRouteRemoved((MediaRouter.RouteInfo) obj);
                         break;
-                    case NotificationCenter.needSetDayNightTheme /* 259 */:
+                    case NotificationCenter.themeAccentListUpdated /* 259 */:
                         GlobalMediaRouter.this.mPlatformMediaRouter1RouteProvider.onSyncRouteChanged((MediaRouter.RouteInfo) obj);
                         break;
                 }
@@ -1176,28 +1176,28 @@ final class GlobalMediaRouter implements PlatformMediaRouter1RouteProvider.SyncC
                 return;
             }
             switch (i) {
-                case NotificationCenter.needCheckSystemBarColors /* 257 */:
+                case NotificationCenter.themeListUpdated /* 257 */:
                     callback.onRouteAdded(mediaRouter, routeInfo);
                     break;
-                case NotificationCenter.needShareTheme /* 258 */:
+                case NotificationCenter.didApplyNewTheme /* 258 */:
                     callback.onRouteRemoved(mediaRouter, routeInfo);
                     break;
-                case NotificationCenter.needSetDayNightTheme /* 259 */:
+                case NotificationCenter.themeAccentListUpdated /* 259 */:
                     callback.onRouteChanged(mediaRouter, routeInfo);
                     break;
-                case NotificationCenter.goingToPreviewTheme /* 260 */:
+                case NotificationCenter.needCheckSystemBarColors /* 260 */:
                     callback.onRouteVolumeChanged(mediaRouter, routeInfo);
                     break;
-                case NotificationCenter.locationPermissionGranted /* 261 */:
+                case NotificationCenter.needShareTheme /* 261 */:
                     callback.onRoutePresentationDisplayChanged(mediaRouter, routeInfo);
                     break;
-                case NotificationCenter.locationPermissionDenied /* 262 */:
+                case NotificationCenter.needSetDayNightTheme /* 262 */:
                     callback.onRouteSelected(mediaRouter, routeInfo, i2, routeInfo);
                     break;
-                case NotificationCenter.reloadInterface /* 263 */:
+                case NotificationCenter.goingToPreviewTheme /* 263 */:
                     callback.onRouteUnselected(mediaRouter, routeInfo, i2);
                     break;
-                case NotificationCenter.suggestedLangpack /* 264 */:
+                case NotificationCenter.locationPermissionGranted /* 264 */:
                     callback.onRouteSelected(mediaRouter, routeInfo, i2, routeInfo2);
                     break;
             }

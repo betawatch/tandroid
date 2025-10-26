@@ -2016,7 +2016,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$1(View view) {
         if (onBackPressed()) {
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
         }
     }
 
@@ -2067,7 +2067,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showUnsavedAlert$3(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2081,7 +2081,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             return;
         }
         if (this.isChannel) {
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
         } else if (!getUserConfig().isPremium()) {
             showDialog(new PremiumFeatureBottomSheet(this, 23, true));
             return;
@@ -2104,7 +2104,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             page2.setupValues();
         }
         apply();
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
         showBulletin();
     }
 
@@ -2114,7 +2114,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
         page.button.setLoading(false);
         if (bool.booleanValue()) {
             apply();
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
             showBulletin();
         }
     }
@@ -2201,7 +2201,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
         }
         if (this.isChannel || getUserConfig().isPremium()) {
             if (this.isChannel) {
-                lambda$onBackPressed$355();
+                lambda$onBackPressed$341();
             } else {
                 TLRPC.User currentUser = getUserConfig().getCurrentUser();
                 if (currentUser.color == null) {
@@ -2318,7 +2318,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 }
                 getMessagesController().putUser(currentUser, false);
                 getUserConfig().saveConfig(true);
-                lambda$onBackPressed$355();
+                lambda$onBackPressed$341();
                 showBulletin();
             }
             this.applying = true;

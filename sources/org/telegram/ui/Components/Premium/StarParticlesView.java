@@ -51,7 +51,7 @@ public class StarParticlesView extends View {
         this(context, r0);
         int i;
         if (SharedConfig.getDevicePerformanceClass() == 2) {
-            i = NotificationCenter.userIsPremiumBlockedUpadted;
+            i = NotificationCenter.channelRecommendationsLoaded;
         } else {
             i = SharedConfig.getDevicePerformanceClass() == 1 ? 100 : 50;
         }
@@ -146,7 +146,7 @@ public class StarParticlesView extends View {
         super.onDraw(canvas);
         if (this.isLiteModeParticlesAllowed) {
             if (this.clipGradientPaint != null) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didApplyNewTheme, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReplacedPhotoInMemCache, 31);
             }
             this.drawable.onDraw(canvas);
             if (this.clipGradientPaint != null) {
@@ -395,7 +395,7 @@ public class StarParticlesView extends View {
                     this.svg[i8] = true;
                 } else if (i10 == 28) {
                     if (i8 == 0) {
-                        this.stars[i8] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.didApplyNewTheme));
+                        this.stars[i8] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.didReplacedPhotoInMemCache));
                         this.flip[i8] = true;
                     }
                     Bitmap createBitmap = Bitmap.createBitmap(i9, i9, Bitmap.Config.ARGB_8888);
@@ -435,7 +435,7 @@ public class StarParticlesView extends View {
                                 mainGradientPaint.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(this.size1 / 5.0f)));
                             }
                             if (this.forceMaxAlpha) {
-                                mainGradientPaint.setAlpha(NotificationCenter.didApplyNewTheme);
+                                mainGradientPaint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                             } else if (this.useBlur) {
                                 mainGradientPaint.setAlpha(60);
                             } else {
@@ -443,7 +443,7 @@ public class StarParticlesView extends View {
                             }
                             canvas.drawPath(path, mainGradientPaint);
                             mainGradientPaint.setPathEffect(null);
-                            mainGradientPaint.setAlpha(NotificationCenter.didApplyNewTheme);
+                            mainGradientPaint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
                         } else {
                             paint.setColor(getPathColor(i8));
                             if (this.roundEffect) {
@@ -491,7 +491,7 @@ public class StarParticlesView extends View {
 
         protected int getPathColor(int i) {
             if (this.type == 100) {
-                return ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.userIsPremiumBlockedUpadted);
+                return ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.channelRecommendationsLoaded);
             }
             return Theme.getColor(this.colorKey, this.resourcesProvider);
         }

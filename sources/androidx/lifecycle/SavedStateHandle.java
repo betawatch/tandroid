@@ -30,12 +30,8 @@ public final class SavedStateHandle {
     public static final Companion Companion = new Companion(null);
     private static final Class[] ACCEPTABLE_CLASSES = {Boolean.TYPE, boolean[].class, Double.TYPE, double[].class, Integer.TYPE, int[].class, Long.TYPE, long[].class, String.class, String[].class, Binder.class, Bundle.class, Byte.TYPE, byte[].class, Character.TYPE, char[].class, CharSequence.class, CharSequence[].class, ArrayList.class, Float.TYPE, float[].class, Parcelable.class, Parcelable[].class, Serializable.class, Short.TYPE, short[].class, SparseArray.class, Size.class, SizeF.class};
 
-    public static final SavedStateHandle createHandle(Bundle bundle, Bundle bundle2) {
-        return Companion.createHandle(bundle, bundle2);
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Bundle savedStateProvider$lambda-0(SavedStateHandle this$0) {
+    public static final Bundle savedStateProvider$lambda$0(SavedStateHandle this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         for (Map.Entry entry : MapsKt.toMap(this$0.savedStateProviders).entrySet()) {
             this$0.set((String) entry.getKey(), ((SavedStateRegistry.SavedStateProvider) entry.getValue()).saveState());
@@ -60,9 +56,9 @@ public final class SavedStateHandle {
         this.savedStateProvider = new SavedStateRegistry.SavedStateProvider() { // from class: androidx.lifecycle.SavedStateHandle$$ExternalSyntheticLambda0
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                Bundle bundle;
-                bundle = SavedStateHandle.savedStateProvider$lambda-0(SavedStateHandle.this);
-                return bundle;
+                Bundle savedStateProvider$lambda$0;
+                savedStateProvider$lambda$0 = SavedStateHandle.savedStateProvider$lambda$0(SavedStateHandle.this);
+                return savedStateProvider$lambda$0;
             }
         };
         linkedHashMap.putAll(initialState);
@@ -76,9 +72,9 @@ public final class SavedStateHandle {
         this.savedStateProvider = new SavedStateRegistry.SavedStateProvider() { // from class: androidx.lifecycle.SavedStateHandle$$ExternalSyntheticLambda0
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                Bundle bundle;
-                bundle = SavedStateHandle.savedStateProvider$lambda-0(SavedStateHandle.this);
-                return bundle;
+                Bundle savedStateProvider$lambda$0;
+                savedStateProvider$lambda$0 = SavedStateHandle.savedStateProvider$lambda$0(SavedStateHandle.this);
+                return savedStateProvider$lambda$0;
             }
         };
     }
@@ -140,9 +136,7 @@ public final class SavedStateHandle {
             int size = parcelableArrayList.size();
             for (int i = 0; i < size; i++) {
                 Object obj = parcelableArrayList.get(i);
-                if (obj == null) {
-                    throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
-                }
+                Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.String");
                 linkedHashMap.put((String) obj, parcelableArrayList2.get(i));
             }
             return new SavedStateHandle(linkedHashMap);

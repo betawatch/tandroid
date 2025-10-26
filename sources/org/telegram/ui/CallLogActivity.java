@@ -466,7 +466,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             addView(avatarsImageView, LayoutHelper.createFrame(72, -1.0f, LocaleController.isRTL ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
-            imageView.setAlpha(NotificationCenter.starOptionsLoaded);
+            imageView.setAlpha(NotificationCenter.customStickerCreated);
             imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addButton), PorterDuff.Mode.MULTIPLY));
             imageView.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 1));
             imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -681,7 +681,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                         CallLogActivity.this.hideActionMode(true);
                         return;
                     } else {
-                        CallLogActivity.this.lambda$onBackPressed$355();
+                        CallLogActivity.this.lambda$onBackPressed$341();
                         return;
                     }
                 }
@@ -2002,7 +2002,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, resourcesProvider));
             textView.setText(" " + LocaleController.getString(R.string.GroupCallCreatedLinkJoinOr) + " ");
             textView.setTextSize(14.0f);
-            linearLayout.addView(textView, LayoutHelper.createLinear(NotificationCenter.didUpdatePremiumGiftFieldIcon, -2, 1, 28, 12, 28, 8));
+            linearLayout.addView(textView, LayoutHelper.createLinear(NotificationCenter.boostByChannelCreated, -2, 1, 28, 12, 28, 8));
             final Runnable runnable = new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda20
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -2265,7 +2265,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                     }
                 });
             }
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
         }
 
         /* JADX INFO: Access modifiers changed from: private */

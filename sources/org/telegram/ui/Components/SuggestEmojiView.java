@@ -228,8 +228,8 @@ public class SuggestEmojiView extends FrameLayout implements NotificationCenter.
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-        public /* synthetic */ void sendGif(Object obj, Object obj2, boolean z, int i) {
-            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendGif(this, obj, obj2, z, i);
+        public /* synthetic */ void sendGif(Object obj, Object obj2, boolean z, int i, int i2) {
+            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendGif(this, obj, obj2, z, i, i2);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -238,8 +238,8 @@ public class SuggestEmojiView extends FrameLayout implements NotificationCenter.
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-        public /* synthetic */ void sendSticker(TLRPC.Document document, String str, Object obj, boolean z, int i) {
-            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, document, str, obj, z, i);
+        public /* synthetic */ void sendSticker(TLRPC.Document document, String str, Object obj, boolean z, int i, int i2) {
+            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, document, str, obj, z, i, i2);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate

@@ -130,7 +130,7 @@ public class AccessibilityDelegateCompat {
     }
 
     public AccessibilityNodeProviderCompat getAccessibilityNodeProvider(View view) {
-        AccessibilityNodeProvider accessibilityNodeProvider = Api16Impl.getAccessibilityNodeProvider(this.mOriginalDelegate, view);
+        AccessibilityNodeProvider accessibilityNodeProvider = this.mOriginalDelegate.getAccessibilityNodeProvider(view);
         if (accessibilityNodeProvider != null) {
             return new AccessibilityNodeProviderCompat(accessibilityNodeProvider);
         }
@@ -153,7 +153,7 @@ public class AccessibilityDelegateCompat {
             i2++;
         }
         if (!z) {
-            z = Api16Impl.performAccessibilityAction(this.mOriginalDelegate, view, i, bundle);
+            z = this.mOriginalDelegate.performAccessibilityAction(view, i, bundle);
         }
         return (z || i != R$id.accessibility_action_clickable_span || bundle == null) ? z : performClickableSpanAction(bundle.getInt("ACCESSIBILITY_CLICKABLE_SPAN_ID", -1), view);
     }
@@ -187,15 +187,5 @@ public class AccessibilityDelegateCompat {
     static List getActionList(View view) {
         List list = (List) view.getTag(R$id.tag_accessibility_actions);
         return list == null ? Collections.emptyList() : list;
-    }
-
-    static class Api16Impl {
-        static AccessibilityNodeProvider getAccessibilityNodeProvider(View.AccessibilityDelegate accessibilityDelegate, View view) {
-            return accessibilityDelegate.getAccessibilityNodeProvider(view);
-        }
-
-        static boolean performAccessibilityAction(View.AccessibilityDelegate accessibilityDelegate, View view, int i, Bundle bundle) {
-            return accessibilityDelegate.performAccessibilityAction(view, i, bundle);
-        }
     }
 }

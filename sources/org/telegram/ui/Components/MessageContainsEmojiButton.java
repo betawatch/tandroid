@@ -263,7 +263,7 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
         if (this.mainTextLayout != null) {
             canvas.save();
             canvas.translate(getPaddingLeft(), getPaddingTop());
-            this.textPaint.setAlpha(NotificationCenter.didApplyNewTheme);
+            this.textPaint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
             this.mainTextLayout.draw(canvas);
             LoadingDrawable loadingDrawable = this.loadingDrawable;
             if (loadingDrawable != null && this.loadingDrawableBoundsSet) {

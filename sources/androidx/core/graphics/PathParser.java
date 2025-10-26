@@ -23,12 +23,8 @@ public abstract class PathParser {
 
     public static Path createPathFromPathData(String str) {
         Path path = new Path();
-        PathDataNode[] createNodesFromPathData = createNodesFromPathData(str);
-        if (createNodesFromPathData == null) {
-            return null;
-        }
         try {
-            PathDataNode.nodesToPath(createNodesFromPathData, path);
+            PathDataNode.nodesToPath(createNodesFromPathData(str), path);
             return path;
         } catch (RuntimeException e) {
             throw new RuntimeException("Error in parsing " + str, e);
@@ -36,16 +32,13 @@ public abstract class PathParser {
     }
 
     public static PathDataNode[] createNodesFromPathData(String str) {
-        if (str == null) {
-            return null;
-        }
         ArrayList arrayList = new ArrayList();
         int i = 1;
         int i2 = 0;
         while (i < str.length()) {
             int nextStart = nextStart(str, i);
             String trim = str.substring(i2, nextStart).trim();
-            if (trim.length() > 0) {
+            if (!trim.isEmpty()) {
                 addNode(arrayList, trim.charAt(0), getFloats(trim));
             }
             i2 = nextStart;
@@ -54,13 +47,10 @@ public abstract class PathParser {
         if (i - i2 == 1 && i2 < str.length()) {
             addNode(arrayList, str.charAt(i2), new float[0]);
         }
-        return (PathDataNode[]) arrayList.toArray(new PathDataNode[arrayList.size()]);
+        return (PathDataNode[]) arrayList.toArray(new PathDataNode[0]);
     }
 
     public static PathDataNode[] deepCopyNodes(PathDataNode[] pathDataNodeArr) {
-        if (pathDataNodeArr == null) {
-            return null;
-        }
         PathDataNode[] pathDataNodeArr2 = new PathDataNode[pathDataNodeArr.length];
         for (int i = 0; i < pathDataNodeArr.length; i++) {
             pathDataNodeArr2[i] = new PathDataNode(pathDataNodeArr[i]);
@@ -73,10 +63,7 @@ public abstract class PathParser {
             return false;
         }
         for (int i = 0; i < pathDataNodeArr.length; i++) {
-            PathDataNode pathDataNode = pathDataNodeArr[i];
-            char c = pathDataNode.mType;
-            PathDataNode pathDataNode2 = pathDataNodeArr2[i];
-            if (c != pathDataNode2.mType || pathDataNode.mParams.length != pathDataNode2.mParams.length) {
+            if (pathDataNodeArr[i].mType != pathDataNodeArr2[i].mType || pathDataNodeArr[i].mParams.length != pathDataNodeArr2[i].mParams.length) {
                 return false;
             }
         }
@@ -86,13 +73,8 @@ public abstract class PathParser {
     public static void updateNodes(PathDataNode[] pathDataNodeArr, PathDataNode[] pathDataNodeArr2) {
         for (int i = 0; i < pathDataNodeArr2.length; i++) {
             pathDataNodeArr[i].mType = pathDataNodeArr2[i].mType;
-            int i2 = 0;
-            while (true) {
-                float[] fArr = pathDataNodeArr2[i].mParams;
-                if (i2 < fArr.length) {
-                    pathDataNodeArr[i].mParams[i2] = fArr[i2];
-                    i2++;
-                }
+            for (int i2 = 0; i2 < pathDataNodeArr2[i].mParams.length; i2++) {
+                pathDataNodeArr[i].mParams[i2] = pathDataNodeArr2[i].mParams[i2];
             }
         }
     }
@@ -198,9 +180,18 @@ public abstract class PathParser {
         extractFloatResult.mEndPosition = i2;
     }
 
+    public static void nodesToPath(PathDataNode[] pathDataNodeArr, Path path) {
+        float[] fArr = new float[6];
+        char c = 'm';
+        for (PathDataNode pathDataNode : pathDataNodeArr) {
+            PathDataNode.addCommand(path, fArr, c, pathDataNode.mType, pathDataNode.mParams);
+            c = pathDataNode.mType;
+        }
+    }
+
     public static class PathDataNode {
-        public float[] mParams;
-        public char mType;
+        private final float[] mParams;
+        private char mType;
 
         PathDataNode(char c, float[] fArr) {
             this.mType = c;
@@ -214,13 +205,7 @@ public abstract class PathParser {
         }
 
         public static void nodesToPath(PathDataNode[] pathDataNodeArr, Path path) {
-            float[] fArr = new float[6];
-            char c = 'm';
-            for (int i = 0; i < pathDataNodeArr.length; i++) {
-                PathDataNode pathDataNode = pathDataNodeArr[i];
-                addCommand(path, fArr, c, pathDataNode.mType, pathDataNode.mParams);
-                c = pathDataNodeArr[i].mType;
-            }
+            PathParser.nodesToPath(pathDataNodeArr, path);
         }
 
         public void interpolatePathDataNode(PathDataNode pathDataNode, PathDataNode pathDataNode2, float f) {
@@ -236,8 +221,9 @@ public abstract class PathParser {
             }
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
         /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-        private static void addCommand(Path path, float[] fArr, char c, char c2, float[] fArr2) {
+        public static void addCommand(Path path, float[] fArr, char c, char c2, float[] fArr2) {
             int i;
             int i2;
             float f;

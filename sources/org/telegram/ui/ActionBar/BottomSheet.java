@@ -104,6 +104,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     private boolean fullHeight;
     protected boolean fullWidth;
     private float hideSystemVerticalInsetsProgress;
+    private int internalBackgroundColor;
     protected boolean isFullscreen;
     protected boolean isPortrait;
     private int[] itemIcons;
@@ -216,10 +217,6 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void onContainerTranslationYChanged(float f) {
-    }
-
     protected boolean onCustomCloseAnimation() {
         return false;
     }
@@ -308,6 +305,8 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         private boolean allowedSwipeToBack;
         private Paint backgroundPaint;
         private AnimatorSet currentAnimation;
+        private final Paint internalBackgroundPaint;
+        private int internalPaddingBottom;
         private boolean keyboardChanged;
         private boolean maybeStartTracking;
         private NestedScrollingParentHelper nestedScrollingParentHelper;
@@ -346,6 +345,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             this.backgroundPaint = new Paint();
             this.y = 0.0f;
             this.swipeBackX = 0.0f;
+            this.internalBackgroundPaint = new Paint(1);
             this.nestedScrollingParentHelper = new NestedScrollingParentHelper(this);
             setWillNotDraw(false);
         }
@@ -662,11 +662,11 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             return processTouchEvent(motionEvent, false);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:39:0x010a  */
-        /* JADX WARN: Removed duplicated region for block: B:52:0x0153  */
-        /* JADX WARN: Removed duplicated region for block: B:55:0x0167  */
-        /* JADX WARN: Removed duplicated region for block: B:58:0x0170  */
-        /* JADX WARN: Removed duplicated region for block: B:68:0x01ce  */
+        /* JADX WARN: Removed duplicated region for block: B:39:0x010e  */
+        /* JADX WARN: Removed duplicated region for block: B:52:0x0157  */
+        /* JADX WARN: Removed duplicated region for block: B:55:0x016b  */
+        /* JADX WARN: Removed duplicated region for block: B:58:0x0174  */
+        /* JADX WARN: Removed duplicated region for block: B:68:0x01d2  */
         @Override // android.widget.FrameLayout, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -727,7 +727,8 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                 BottomSheet bottomSheet12 = BottomSheet.this;
                 if (!bottomSheet12.drawNavigationBar && !bottomSheet12.occupyNavigationBar && !bottomSheet12.occupyNavigationBarWithoutKeyboard) {
                     i3 = size2 - bottomSheet12.getBottomInset();
-                    setMeasuredDimension(size, i3);
+                    this.internalPaddingBottom = size2 - i3;
+                    setMeasuredDimension(size, size2);
                     bottomSheet = BottomSheet.this;
                     bottomSheet.navigationBarHeight = 0;
                     if (bottomSheet.lastInsets != null) {
@@ -777,7 +778,8 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                 }
             }
             i3 = size2;
-            setMeasuredDimension(size, i3);
+            this.internalPaddingBottom = size2 - i3;
+            setMeasuredDimension(size, size2);
             bottomSheet = BottomSheet.this;
             bottomSheet.navigationBarHeight = 0;
             if (bottomSheet.lastInsets != null) {
@@ -796,16 +798,16 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:97:0x00d6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:97:0x00db, code lost:
         
-            if (java.lang.System.currentTimeMillis() < r15.this$0.smoothContainerViewLayoutUntil) goto L41;
+            if (java.lang.System.currentTimeMillis() < r16.this$0.smoothContainerViewLayoutUntil) goto L41;
          */
-        /* JADX WARN: Removed duplicated region for block: B:25:0x00e0  */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x010c  */
-        /* JADX WARN: Removed duplicated region for block: B:53:0x01eb  */
-        /* JADX WARN: Removed duplicated region for block: B:58:0x020c  */
-        /* JADX WARN: Removed duplicated region for block: B:64:0x01fa  */
-        /* JADX WARN: Removed duplicated region for block: B:91:0x00f0  */
+        /* JADX WARN: Removed duplicated region for block: B:25:0x00e5  */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x0111  */
+        /* JADX WARN: Removed duplicated region for block: B:53:0x01f0  */
+        /* JADX WARN: Removed duplicated region for block: B:58:0x0211  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x01ff  */
+        /* JADX WARN: Removed duplicated region for block: B:91:0x00f5  */
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -823,10 +825,11 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             int i12;
             int i13;
             int i14;
+            int i15 = i4 - this.internalPaddingBottom;
             BottomSheet.access$1510(BottomSheet.this);
             ViewGroup viewGroup = BottomSheet.this.containerView;
             if (viewGroup != null) {
-                int measuredHeight = (i4 - i2) - viewGroup.getMeasuredHeight();
+                int measuredHeight = (i15 - i2) - viewGroup.getMeasuredHeight();
                 if (BottomSheet.this.lastInsets != null) {
                     i13 = i + BottomSheet.this.getLeftInset();
                     i14 = i3 - BottomSheet.this.getRightInset();
@@ -928,34 +931,34 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                 i6 = i3;
             }
             int childCount = getChildCount();
-            for (int i15 = 0; i15 < childCount; i15++) {
-                View childAt = getChildAt(i15);
+            for (int i16 = 0; i16 < childCount; i16++) {
+                View childAt = getChildAt(i16);
                 if (childAt.getVisibility() != 8) {
                     BottomSheet bottomSheet8 = BottomSheet.this;
                     if (childAt != bottomSheet8.containerView) {
-                        if (!bottomSheet8.onCustomLayout(childAt, i5, i2, i6, i4 - (bottomSheet8.drawNavigationBar ? bottomSheet8.getBottomInset() : 0))) {
+                        if (!bottomSheet8.onCustomLayout(childAt, i5, i2, i6, i15 - (bottomSheet8.drawNavigationBar ? bottomSheet8.getBottomInset() : 0))) {
                             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                             int measuredWidth2 = childAt.getMeasuredWidth();
                             int measuredHeight2 = childAt.getMeasuredHeight();
-                            int i16 = layoutParams.gravity;
-                            if (i16 == -1) {
-                                i16 = 51;
+                            int i17 = layoutParams.gravity;
+                            if (i17 == -1) {
+                                i17 = 51;
                             }
-                            int i17 = i16 & 112;
-                            int i18 = i16 & 7;
-                            if (i18 == 1) {
+                            int i18 = i17 & 112;
+                            int i19 = i17 & 7;
+                            if (i19 == 1) {
                                 i7 = (((i6 - i5) - measuredWidth2) / 2) + layoutParams.leftMargin;
                                 i8 = layoutParams.rightMargin;
-                            } else if (i18 == 5) {
+                            } else if (i19 == 5) {
                                 i7 = i6 - measuredWidth2;
                                 i8 = layoutParams.rightMargin;
                             } else {
                                 i9 = layoutParams.leftMargin;
-                                if (i17 != 16) {
-                                    i10 = (((i4 - i2) - measuredHeight2) / 2) + layoutParams.topMargin;
+                                if (i18 != 16) {
+                                    i10 = (((i15 - i2) - measuredHeight2) / 2) + layoutParams.topMargin;
                                     i11 = layoutParams.bottomMargin;
-                                } else if (i17 == 80) {
-                                    i10 = (i4 - i2) - measuredHeight2;
+                                } else if (i18 == 80) {
+                                    i10 = (i15 - i2) - measuredHeight2;
                                     i11 = layoutParams.bottomMargin;
                                 } else {
                                     i12 = layoutParams.topMargin;
@@ -970,7 +973,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                                 childAt.layout(i9, i12, measuredWidth2 + i9, measuredHeight2 + i12);
                             }
                             i9 = i7 - i8;
-                            if (i17 != 16) {
+                            if (i18 != 16) {
                             }
                             i12 = i10 - i11;
                             if (BottomSheet.this.lastInsets != null) {
@@ -1021,11 +1024,11 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             super.requestDisallowInterceptTouchEvent(z);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:28:0x00cf  */
-        /* JADX WARN: Removed duplicated region for block: B:40:0x00ff  */
-        /* JADX WARN: Removed duplicated region for block: B:51:0x0154  */
-        /* JADX WARN: Removed duplicated region for block: B:56:0x0188  */
-        /* JADX WARN: Removed duplicated region for block: B:63:? A[RETURN, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:33:0x0110  */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x0140  */
+        /* JADX WARN: Removed duplicated region for block: B:56:0x0195  */
+        /* JADX WARN: Removed duplicated region for block: B:61:0x01c9  */
+        /* JADX WARN: Removed duplicated region for block: B:68:? A[RETURN, SYNTHETIC] */
         @Override // android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1035,35 +1038,40 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             BottomSheet bottomSheet2;
             BottomSheet bottomSheet3;
             BottomSheet bottomSheet4;
+            BottomSheet bottomSheet5 = BottomSheet.this;
+            if (bottomSheet5.containerView != null && this.internalPaddingBottom > 0) {
+                this.internalBackgroundPaint.setColor(bottomSheet5.internalBackgroundColor);
+                canvas.drawRect(0.0f, ((getMeasuredHeight() - this.internalPaddingBottom) + BottomSheet.this.containerView.getTranslationY()) - 1.0f, getMeasuredWidth(), getMeasuredHeight() + BottomSheet.this.containerView.getTranslationY(), this.internalBackgroundPaint);
+            }
             int i = Build.VERSION.SDK_INT;
             if (i >= 26) {
-                BottomSheet bottomSheet5 = BottomSheet.this;
-                int i2 = bottomSheet5.navBarColorKey;
+                BottomSheet bottomSheet6 = BottomSheet.this;
+                int i2 = bottomSheet6.navBarColorKey;
                 if (i2 >= 0) {
-                    this.backgroundPaint.setColor(bottomSheet5.getThemedColor(i2));
+                    this.backgroundPaint.setColor(bottomSheet6.getThemedColor(i2));
                 } else {
-                    this.backgroundPaint.setColor(bottomSheet5.navBarColor);
+                    this.backgroundPaint.setColor(bottomSheet6.navBarColor);
                 }
             } else {
                 this.backgroundPaint.setColor(-16777216);
             }
-            BottomSheet bottomSheet6 = BottomSheet.this;
-            if (bottomSheet6.drawDoubleNavigationBar && !bottomSheet6.shouldOverlayCameraViewOverNavBar()) {
+            BottomSheet bottomSheet7 = BottomSheet.this;
+            if (bottomSheet7.drawDoubleNavigationBar && !bottomSheet7.shouldOverlayCameraViewOverNavBar()) {
                 drawNavigationBar(canvas, 1.0f);
             }
             if (this.backgroundPaint.getAlpha() < 255) {
-                BottomSheet bottomSheet7 = BottomSheet.this;
-                if (bottomSheet7.drawNavigationBar) {
-                    float max = (bottomSheet7.scrollNavBar || (i >= 29 && bottomSheet7.getAdditionalMandatoryOffsets() > 0)) ? Math.max(0.0f, BottomSheet.this.getBottomInset() - (BottomSheet.this.containerView.getMeasuredHeight() - BottomSheet.this.containerView.getTranslationY())) : 0.0f;
-                    BottomSheet bottomSheet8 = BottomSheet.this;
-                    int bottomInset = bottomSheet8.drawNavigationBar ? bottomSheet8.getBottomInset() : 0;
+                BottomSheet bottomSheet8 = BottomSheet.this;
+                if (bottomSheet8.drawNavigationBar) {
+                    float max = (bottomSheet8.scrollNavBar || (i >= 29 && bottomSheet8.getAdditionalMandatoryOffsets() > 0)) ? Math.max(0.0f, BottomSheet.this.getBottomInset() - (BottomSheet.this.containerView.getMeasuredHeight() - BottomSheet.this.containerView.getTranslationY())) : 0.0f;
+                    BottomSheet bottomSheet9 = BottomSheet.this;
+                    int bottomInset = bottomSheet9.drawNavigationBar ? bottomSheet9.getBottomInset() : 0;
                     canvas.save();
                     canvas.clipRect(BottomSheet.this.containerView.getLeft() + BottomSheet.this.backgroundPaddingLeft, ((getMeasuredHeight() - bottomInset) + max) - BottomSheet.this.currentPanTranslationY, BottomSheet.this.containerView.getRight() - BottomSheet.this.backgroundPaddingLeft, getMeasuredHeight() + max, Region.Op.DIFFERENCE);
                     super.dispatchDraw(canvas);
                     canvas.restore();
                     if (!BottomSheet.this.shouldOverlayCameraViewOverNavBar()) {
-                        BottomSheet bottomSheet9 = BottomSheet.this;
-                        drawNavigationBar(canvas, bottomSheet9.drawDoubleNavigationBar ? bottomSheet9.navigationBarAlpha * 0.7f : 1.0f);
+                        BottomSheet bottomSheet10 = BottomSheet.this;
+                        drawNavigationBar(canvas, bottomSheet10.drawDoubleNavigationBar ? bottomSheet10.navigationBarAlpha * 0.7f : 1.0f);
                     }
                     bottomSheet = BottomSheet.this;
                     if (bottomSheet.drawNavigationBar && bottomSheet.rightInset != 0 && BottomSheet.this.rightInset > BottomSheet.this.leftInset) {
@@ -1088,9 +1096,9 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                     }
                     if (BottomSheet.this.containerView.getTranslationY() >= 0.0f) {
                         Paint paint = this.backgroundPaint;
-                        BottomSheet bottomSheet10 = BottomSheet.this;
-                        int i3 = bottomSheet10.behindKeyboardColorKey;
-                        paint.setColor(i3 >= 0 ? bottomSheet10.getThemedColor(i3) : bottomSheet10.behindKeyboardColor);
+                        BottomSheet bottomSheet11 = BottomSheet.this;
+                        int i3 = bottomSheet11.behindKeyboardColorKey;
+                        paint.setColor(i3 >= 0 ? bottomSheet11.getThemedColor(i3) : bottomSheet11.behindKeyboardColor);
                         int left = BottomSheet.this.containerView.getLeft();
                         canvas.drawRect(left + r1.backgroundPaddingLeft, BottomSheet.this.containerView.getY() + BottomSheet.this.containerView.getMeasuredHeight(), BottomSheet.this.containerView.getRight() - BottomSheet.this.backgroundPaddingLeft, getMeasuredHeight(), this.backgroundPaint);
                         return;
@@ -1515,7 +1523,9 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         Rect rect = new Rect();
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i), PorterDuff.Mode.MULTIPLY));
+        int themedColor = getThemedColor(i);
+        this.internalBackgroundColor = themedColor;
+        mutate.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
         this.shadowDrawable.getPadding(rect);
         this.backgroundPaddingLeft = rect.left;
         this.backgroundPaddingTop = rect.top;
@@ -1904,6 +1914,13 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
 
     public void setBackgroundColor(int i) {
         this.shadowDrawable.setColorFilter(i, PorterDuff.Mode.MULTIPLY);
+        if (this.internalBackgroundColor != i) {
+            this.internalBackgroundColor = i;
+            ContainerView containerView = this.container;
+            if (containerView != null) {
+                containerView.invalidate(0, containerView.getMeasuredHeight() - this.container.internalPaddingBottom, this.container.getMeasuredWidth(), this.container.getMeasuredHeight());
+            }
+        }
     }
 
     @Override // android.app.Dialog
@@ -2014,6 +2031,14 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
 
     public TextView getTitleView() {
         return this.titleView;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void onContainerTranslationYChanged(float f) {
+        ContainerView containerView = this.container;
+        if (containerView != null) {
+            containerView.invalidate();
+        }
     }
 
     protected void cancelSheetAnimation() {

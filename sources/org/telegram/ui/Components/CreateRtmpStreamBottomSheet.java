@@ -18,6 +18,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.browser.Browser;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -30,6 +31,7 @@ import org.telegram.ui.Components.CreateRtmpStreamBottomSheet;
 import org.telegram.ui.Components.JoinCallAlert;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
 /* loaded from: classes3.dex */
 public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView {
@@ -49,6 +51,53 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         }
     }
 
+    public CreateRtmpStreamBottomSheet(Context context, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, final Utilities.Callback callback, Theme.ResourcesProvider resourcesProvider) {
+        super(context, null, false, false, false, resourcesProvider);
+        this.topPadding = 0.26f;
+        this.joinCallDelegate = null;
+        this.hasFewPeers = false;
+        if (callback != null) {
+            final ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
+            buttonWithCounterView.setText(LocaleController.getString(R.string.VoipChannelStartStreaming), false);
+            this.containerView.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
+            buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda4
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    CreateRtmpStreamBottomSheet.this.lambda$new$2(callback, buttonWithCounterView, view);
+                }
+            });
+        }
+        RecyclerListView recyclerListView = this.recyclerListView;
+        int i = this.backgroundPaddingLeft;
+        recyclerListView.setPadding(i, 0, i, callback != null ? AndroidUtilities.dp(72.0f) : 0);
+        fixNavigationBar();
+        updateTitle();
+        this.rtmpUrl = groupcallstreamrtmpurl.url;
+        this.rtmpKey = groupcallstreamrtmpurl.key;
+        this.adapter.update(false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$2(Utilities.Callback callback, final ButtonWithCounterView buttonWithCounterView, View view) {
+        callback.run(new Browser.Progress(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda5
+            @Override // java.lang.Runnable
+            public final void run() {
+                ButtonWithCounterView.this.setLoading(true);
+            }
+        }, new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda6
+            @Override // java.lang.Runnable
+            public final void run() {
+                CreateRtmpStreamBottomSheet.this.lambda$new$1(buttonWithCounterView);
+            }
+        }));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(ButtonWithCounterView buttonWithCounterView) {
+        buttonWithCounterView.setLoading(false);
+        lambda$new$0();
+    }
+
     public CreateRtmpStreamBottomSheet(BaseFragment baseFragment, final TLRPC.Peer peer, long j, boolean z, JoinCallAlert.JoinCallAlertDelegate joinCallAlertDelegate) {
         super(baseFragment, false, false);
         this.topPadding = 0.26f;
@@ -61,13 +110,13 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(LocaleController.getString(R.string.VoipChannelStartStreaming));
-        textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(8.0f), Theme.getColor(Theme.key_featuredStickers_addButton), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
+        textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText, this.resourcesProvider));
+        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(8.0f), Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
         this.containerView.addView(textView, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CreateRtmpStreamBottomSheet.this.lambda$new$0(peer, view);
+                CreateRtmpStreamBottomSheet.this.lambda$new$3(peer, view);
             }
         });
         RecyclerListView recyclerListView = this.recyclerListView;
@@ -81,29 +130,29 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                CreateRtmpStreamBottomSheet.this.lambda$new$2(tLObject, tL_error);
+                CreateRtmpStreamBottomSheet.this.lambda$new$5(tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(TLRPC.Peer peer, View view) {
+    public /* synthetic */ void lambda$new$3(TLRPC.Peer peer, View view) {
         this.selectAfterDismiss = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(peer));
         lambda$new$0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$new$5(final TLObject tLObject, TLRPC.TL_error tL_error) {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                CreateRtmpStreamBottomSheet.this.lambda$new$1(tLObject);
+                CreateRtmpStreamBottomSheet.this.lambda$new$4(tLObject);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(TLObject tLObject) {
+    public /* synthetic */ void lambda$new$4(TLObject tLObject) {
         if (tLObject == null || !(tLObject instanceof TL_phone.groupCallStreamRtmpUrl)) {
             return;
         }
@@ -115,11 +164,13 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     @Override // org.telegram.ui.ActionBar.BottomSheet
     public void dismissInternal() {
+        TLRPC.InputPeer inputPeer;
         super.dismissInternal();
-        TLRPC.InputPeer inputPeer = this.selectAfterDismiss;
-        if (inputPeer != null) {
-            this.joinCallDelegate.didSelectChat(inputPeer, this.hasFewPeers, false, true);
+        JoinCallAlert.JoinCallAlertDelegate joinCallAlertDelegate = this.joinCallDelegate;
+        if (joinCallAlertDelegate == null || (inputPeer = this.selectAfterDismiss) == null) {
+            return;
         }
+        joinCallAlertDelegate.didSelectChat(inputPeer, this.hasFewPeers, false, true);
     }
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
@@ -141,7 +192,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     /* JADX INFO: Access modifiers changed from: private */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
-        arrayList.add(UItem.asCustom(new TopCell(getContext())));
+        arrayList.add(UItem.asCustom(new TopCell(getContext(), this.resourcesProvider)));
         arrayList.add(UItem.asShadow(null));
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.VoipChatStreamSettings)));
         arrayList.add(TextDetailCellFactory.of(this.rtmpUrl, LocaleController.getString(R.string.VoipChatStreamServerUrl), true));
@@ -150,7 +201,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
     }
 
     private static class TopCell extends LinearLayout {
-        public TopCell(Context context) {
+        public TopCell(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             setOrientation(1);
             RLottieImageView rLottieImageView = new RLottieImageView(context);
@@ -162,12 +213,12 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(LocaleController.formatString(R.string.Streaming, new Object[0]));
             textView.setTextSize(1, 20.0f);
-            textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+            textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
             addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 14, 0, 7));
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 14.0f);
             textView2.setGravity(1);
-            textView2.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
+            textView2.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
             textView2.setText(LocaleController.formatString(R.string.VoipStreamStart, new Object[0]));
             textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
             addView(textView2, LayoutHelper.createLinear(-2, -2, 1, 28, 0, 28, 17));

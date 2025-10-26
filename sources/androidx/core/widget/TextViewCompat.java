@@ -9,7 +9,6 @@ import android.content.pm.ResolveInfo;
 import android.content.res.ColorStateList;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.icu.text.DecimalFormatSymbols;
 import android.os.Build;
 import android.text.Editable;
@@ -21,7 +20,6 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 import androidx.core.text.PrecomputedTextCompat;
 import androidx.core.util.Preconditions;
@@ -171,7 +169,7 @@ public abstract class TextViewCompat {
             return;
         }
         Paint.FontMetricsInt fontMetricsInt = textView.getPaint().getFontMetricsInt();
-        if (Api16Impl.getIncludeFontPadding(textView)) {
+        if (textView.getIncludeFontPadding()) {
             i2 = fontMetricsInt.top;
         } else {
             i2 = fontMetricsInt.ascent;
@@ -185,7 +183,7 @@ public abstract class TextViewCompat {
         int i2;
         Preconditions.checkArgumentNonnegative(i);
         Paint.FontMetricsInt fontMetricsInt = textView.getPaint().getFontMetricsInt();
-        if (Api16Impl.getIncludeFontPadding(textView)) {
+        if (textView.getIncludeFontPadding()) {
             i2 = fontMetricsInt.bottom;
         } else {
             i2 = fontMetricsInt.descent;
@@ -225,9 +223,8 @@ public abstract class TextViewCompat {
     }
 
     public static void setTextMetricsParams(TextView textView, PrecomputedTextCompat.Params params) {
-        int i = Build.VERSION.SDK_INT;
-        Api17Impl.setTextDirection(textView, getTextDirection(params.getTextDirection()));
-        if (i < 23) {
+        textView.setTextDirection(getTextDirection(params.getTextDirection()));
+        if (Build.VERSION.SDK_INT < 23) {
             float textScaleX = params.getTextPaint().getTextScaleX();
             textView.getPaint().set(params.getTextPaint());
             if (textScaleX == textView.getTextScaleX()) {
@@ -254,14 +251,14 @@ public abstract class TextViewCompat {
             return TextDirectionHeuristics.LTR;
         }
         if (Build.VERSION.SDK_INT >= 28 && (textView.getInputType() & 15) == 3) {
-            byte directionality = Character.getDirectionality(Api28Impl.getDigitStrings(Api24Impl.getInstance(Api17Impl.getTextLocale(textView)))[0].codePointAt(0));
+            byte directionality = Character.getDirectionality(Api28Impl.getDigitStrings(Api24Impl.getInstance(textView.getTextLocale()))[0].codePointAt(0));
             if (directionality == 1 || directionality == 2) {
                 return TextDirectionHeuristics.RTL;
             }
             return TextDirectionHeuristics.LTR;
         }
-        boolean z = Api17Impl.getLayoutDirection(textView) == 1;
-        switch (Api17Impl.getTextDirection(textView)) {
+        boolean z = textView.getLayoutDirection() == 1;
+        switch (textView.getTextDirection()) {
             case 2:
                 break;
             case 3:
@@ -328,54 +325,6 @@ public abstract class TextViewCompat {
         }
     }
 
-    static class Api17Impl {
-        static void setCompoundDrawablesRelative(TextView textView, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-            textView.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
-        }
-
-        static int getLayoutDirection(View view) {
-            return view.getLayoutDirection();
-        }
-
-        static void setCompoundDrawablesRelativeWithIntrinsicBounds(TextView textView, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-            textView.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, drawable2, drawable3, drawable4);
-        }
-
-        static void setCompoundDrawablesRelativeWithIntrinsicBounds(TextView textView, int i, int i2, int i3, int i4) {
-            textView.setCompoundDrawablesRelativeWithIntrinsicBounds(i, i2, i3, i4);
-        }
-
-        static Drawable[] getCompoundDrawablesRelative(TextView textView) {
-            return textView.getCompoundDrawablesRelative();
-        }
-
-        static void setTextDirection(View view, int i) {
-            view.setTextDirection(i);
-        }
-
-        static Locale getTextLocale(TextView textView) {
-            return textView.getTextLocale();
-        }
-
-        static int getTextDirection(View view) {
-            return view.getTextDirection();
-        }
-    }
-
-    static class Api16Impl {
-        static int getMaxLines(TextView textView) {
-            return textView.getMaxLines();
-        }
-
-        static int getMinLines(TextView textView) {
-            return textView.getMinLines();
-        }
-
-        static boolean getIncludeFontPadding(TextView textView) {
-            return textView.getIncludeFontPadding();
-        }
-    }
-
     static class Api28Impl {
         static void setFirstBaselineToTopHeight(TextView textView, int i) {
             textView.setFirstBaselineToTopHeight(i);
@@ -405,14 +354,6 @@ public abstract class TextViewCompat {
 
         static void setHyphenationFrequency(TextView textView, int i) {
             textView.setHyphenationFrequency(i);
-        }
-
-        static PorterDuff.Mode getCompoundDrawableTintMode(TextView textView) {
-            return textView.getCompoundDrawableTintMode();
-        }
-
-        static ColorStateList getCompoundDrawableTintList(TextView textView) {
-            return textView.getCompoundDrawableTintList();
         }
 
         static void setCompoundDrawableTintList(TextView textView, ColorStateList colorStateList) {

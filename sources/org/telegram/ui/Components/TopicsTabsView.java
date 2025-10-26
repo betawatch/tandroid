@@ -16,7 +16,7 @@ import android.graphics.drawable.Drawable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
+import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -28,6 +28,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import me.vkryl.android.animator.BoolAnimator;
+import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
@@ -56,16 +58,20 @@ import org.telegram.ui.Components.Forum.ForumUtilities;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.TopicsTabsView;
 import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.GradientClip;
 
 /* loaded from: classes3.dex */
 public abstract class TopicsTabsView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private long animateFromSelectedTopicId;
     private ValueAnimator animator;
+    private final BoolAnimator animatorCloseButtonVisibility;
     private final boolean bot;
-    private final ImageView button;
+    private final HorizontalTabView botCreateTopicButtonHorizontal;
+    private final VerticalTabView botCreateTopicButtonVertical;
     private final boolean canShowProgress;
-    private final ImageView closeButton;
+    private final ImageView closeButtonSide;
+    private final ImageView closeButtonTop;
     private final int currentAccount;
     private long currentTopicId;
     private final long dialogId;
@@ -79,22 +85,38 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
     private Utilities.Callback2 onTopicSelected;
     private Boolean pendingSidemenu;
     private final Theme.ResourcesProvider resourcesProvider;
+    private BlurredBackgroundDrawable sideMenuBackgroundDrawable;
+    private float sideMenuBackgroundMarginBottom;
+    private float sideMenuBackgroundMarginTop;
     private final UniversalRecyclerView sideTabs;
     private final FrameLayout sideTabsContainer;
-    private final View sideTabsShadowView;
     public boolean sidemenuAnimating;
     public boolean sidemenuEnabled;
     public float sidemenuT;
+    private final ImageView toggleButtonSide;
+    private final ImageView toggleButtonTop;
     private final UniversalRecyclerView topTabs;
     private final BlurredFrameLayout topTabsContainer;
     private final View topTabsShadowView;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onTabLongClick$17() {
+    public static /* synthetic */ void lambda$onTabLongClick$16() {
     }
 
     public TopicsTabsView(Context context, BaseFragment baseFragment, SizeNotifierFrameLayout sizeNotifierFrameLayout, int i, long j, Theme.ResourcesProvider resourcesProvider) {
         super(context);
+        ViewGroup viewGroup;
+        this.animatorCloseButtonVisibility = new BoolAnimator(0, new FactorAnimator.Target() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda0
+            @Override // me.vkryl.android.animator.FactorAnimator.Target
+            public /* synthetic */ void onFactorChangeFinished(int i2, float f, FactorAnimator factorAnimator) {
+                FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i2, f, factorAnimator);
+            }
+
+            @Override // me.vkryl.android.animator.FactorAnimator.Target
+            public final void onFactorChanged(int i2, float f, float f2, FactorAnimator factorAnimator) {
+                TopicsTabsView.this.lambda$new$2(i2, f, f2, factorAnimator);
+            }
+        }, CubicBezierInterpolator.EASE_OUT_QUINT, 320L);
         this.sidemenuT = 0.0f;
         this.excludeTopics = new HashSet();
         this.fragment = baseFragment;
@@ -103,7 +125,8 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         this.resourcesProvider = resourcesProvider;
         long j2 = -j;
         this.mono = ChatObject.isMonoForum(MessagesController.getInstance(i).getChat(Long.valueOf(j2)));
-        this.bot = UserObject.isBotForum(MessagesController.getInstance(i).getUser(Long.valueOf(j)));
+        boolean isBotForum = UserObject.isBotForum(MessagesController.getInstance(i).getUser(Long.valueOf(j)));
+        this.bot = isBotForum;
         SharedPreferences preferences = UserConfig.getInstance(i).getPreferences();
         this.canShowProgress = !preferences.getBoolean("topics_end_reached_" + j2, false);
         setClipChildren(true);
@@ -115,28 +138,22 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         addView(view, LayoutHelper.createFrame(-1, 3.0f, 55, 0.0f, 48.0f, 0.0f, 0.0f));
         BlurredFrameLayout blurredFrameLayout = new BlurredFrameLayout(context, sizeNotifierFrameLayout);
         this.topTabsContainer = blurredFrameLayout;
-        int i2 = Theme.key_windowBackgroundWhite;
-        blurredFrameLayout.setBackgroundColor(Theme.getColor(i2, resourcesProvider));
+        blurredFrameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider));
         addView(blurredFrameLayout, LayoutHelper.createFrame(-1, 48, 55));
-        BlurredFrameLayout blurredFrameLayout2 = new BlurredFrameLayout(context, sizeNotifierFrameLayout);
-        this.sideTabsContainer = blurredFrameLayout2;
-        blurredFrameLayout2.setBackgroundColor(Theme.getColor(i2, resourcesProvider));
-        addView(blurredFrameLayout2, LayoutHelper.createFrame(64, -1, 115));
-        View view2 = new View(context);
-        this.sideTabsShadowView = view2;
-        view2.setBackgroundColor(Theme.getColor(Theme.key_divider, resourcesProvider));
-        blurredFrameLayout2.addView(view2, LayoutHelper.createFrame(1.0f / AndroidUtilities.density, -1.0f, 117));
-        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, i, 0, new Utilities.Callback2() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda0
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.sideTabsContainer = frameLayout;
+        addView(frameLayout, LayoutHelper.createFrame(64, -1.0f, 115, 7.0f, 7.0f, 7.0f, 7.0f));
+        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, i, 0, new Utilities.Callback2() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 TopicsTabsView.this.fillHorizontalTabs((ArrayList) obj, (UniversalAdapter) obj2);
             }
-        }, new Utilities.Callback5() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda1
+        }, new Utilities.Callback5() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback5
             public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                 TopicsTabsView.this.onTabClick((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
             }
-        }, new Utilities.Callback5Return() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda2
+        }, new Utilities.Callback5Return() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.Utilities.Callback5Return
             public final Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                 boolean onTabLongClick;
@@ -166,7 +183,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             protected void dispatchDraw(Canvas canvas) {
                 float f = this.animatedClip.set(canScrollHorizontally(-1));
                 if (f > 0.0f) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didApplyNewTheme, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReplacedPhotoInMemCache, 31);
                 }
                 drawPinnedBackground(canvas);
                 super.dispatchDraw(canvas);
@@ -179,8 +196,8 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
                 topicsTabsView2.lastSelectedTopicId = topicsTabsView2.currentTopicId;
                 HorizontalTabView horizontalTabView = null;
                 HorizontalTabView horizontalTabView2 = null;
-                for (int i3 = 0; i3 < getChildCount(); i3++) {
-                    View childAt = getChildAt(i3);
+                for (int i2 = 0; i2 < getChildCount(); i2++) {
+                    View childAt = getChildAt(i2);
                     if (childAt instanceof HorizontalTabView) {
                         HorizontalTabView horizontalTabView3 = (HorizontalTabView) childAt;
                         if (horizontalTabView3.getTopicId() == TopicsTabsView.this.currentTopicId) {
@@ -214,8 +231,8 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             private void drawPinnedBackground(Canvas canvas) {
                 float width = getWidth();
                 float f = 0.0f;
-                for (int i3 = 0; i3 < getChildCount(); i3++) {
-                    View childAt = getChildAt(i3);
+                for (int i2 = 0; i2 < getChildCount(); i2++) {
+                    View childAt = getChildAt(i2);
                     if (childAt instanceof HorizontalTabView) {
                         HorizontalTabView horizontalTabView = (HorizontalTabView) childAt;
                         if (horizontalTabView.pinned) {
@@ -250,12 +267,12 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             }
 
             @Override // org.telegram.ui.Components.RecyclerListView
-            public Integer getSelectorColor(int i3) {
+            public Integer getSelectorColor(int i2) {
                 return 0;
             }
         };
         this.topTabs = universalRecyclerView;
-        universalRecyclerView.listenReorder(new Utilities.Callback2() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda3
+        universalRecyclerView.listenReorder(new Utilities.Callback2() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 TopicsTabsView.this.whenReordered(((Integer) obj).intValue(), (ArrayList) obj2);
@@ -264,26 +281,54 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         universalRecyclerView.setWillNotDraw(false);
         universalRecyclerView.adapter.setApplyBackground(false);
         universalRecyclerView.makeHorizontal();
-        blurredFrameLayout.addView(universalRecyclerView, LayoutHelper.createFrame(-1, -1.0f, 119, 64.0f, 0.0f, 0.0f, 0.0f));
+        blurredFrameLayout.addView(universalRecyclerView, LayoutHelper.createFrame(-1, -1.0f, 119, isBotForum ? 96.0f : 64.0f, 0.0f, 0.0f, 0.0f));
         universalRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.TopicsTabsView.2
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i3, int i4) {
+            public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
                 if (TopicsTabsView.this.isLoadingVisible()) {
                     TopicsTabsView.this.loadMore();
                 }
             }
         });
-        UniversalRecyclerView universalRecyclerView2 = new UniversalRecyclerView(context, i, 0, new Utilities.Callback2() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda4
+        if (isBotForum) {
+            HorizontalTabView horizontalTabView = new HorizontalTabView(context, i, resourcesProvider);
+            this.botCreateTopicButtonHorizontal = horizontalTabView;
+            horizontalTabView.setAll(true, false, this.currentTopicId == 0);
+            horizontalTabView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda7
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view2) {
+                    TopicsTabsView.this.lambda$new$0(view2);
+                }
+            });
+            blurredFrameLayout.addView(horizontalTabView, LayoutHelper.createFrame(48, 48.0f, 51, 36.0f, 0.0f, 0.0f, 0.0f));
+            VerticalTabView verticalTabView = new VerticalTabView(context, i, resourcesProvider);
+            this.botCreateTopicButtonVertical = verticalTabView;
+            verticalTabView.setAll(true, false, this.currentTopicId == 0);
+            verticalTabView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda8
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view2) {
+                    TopicsTabsView.this.lambda$new$1(view2);
+                }
+            });
+            viewGroup = frameLayout;
+            viewGroup.addView(verticalTabView, LayoutHelper.createFrame(64, 42.0f, 51, 0.0f, 48.0f, 0.0f, 0.0f));
+        } else {
+            viewGroup = frameLayout;
+            this.botCreateTopicButtonHorizontal = null;
+            this.botCreateTopicButtonVertical = null;
+        }
+        ViewGroup viewGroup2 = viewGroup;
+        UniversalRecyclerView universalRecyclerView2 = new UniversalRecyclerView(context, i, 0, new Utilities.Callback2() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda9
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 TopicsTabsView.this.fillVerticalTabs((ArrayList) obj, (UniversalAdapter) obj2);
             }
-        }, new Utilities.Callback5() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda1
+        }, new Utilities.Callback5() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback5
             public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                 TopicsTabsView.this.onTabClick((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
             }
-        }, new Utilities.Callback5Return() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda2
+        }, new Utilities.Callback5Return() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.Utilities.Callback5Return
             public final Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                 boolean onTabLongClick;
@@ -301,7 +346,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             protected void dispatchDraw(Canvas canvas) {
                 float f = this.animatedClip.set(canScrollVertically(-1));
                 if (f > 0.0f) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didApplyNewTheme, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReplacedPhotoInMemCache, 31);
                 }
                 drawPinnedBackground(canvas);
                 super.dispatchDraw(canvas);
@@ -318,18 +363,18 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             private void drawPinnedBackground(Canvas canvas) {
                 float height = getHeight();
                 float f = 0.0f;
-                for (int i3 = 0; i3 < getChildCount(); i3++) {
-                    View childAt = getChildAt(i3);
+                for (int i2 = 0; i2 < getChildCount(); i2++) {
+                    View childAt = getChildAt(i2);
                     if (childAt instanceof VerticalTabView) {
-                        VerticalTabView verticalTabView = (VerticalTabView) childAt;
-                        if (verticalTabView.pinned) {
-                            if (height > verticalTabView.getY()) {
-                                height = verticalTabView.getY();
-                                getChildAdapterPosition(verticalTabView);
+                        VerticalTabView verticalTabView2 = (VerticalTabView) childAt;
+                        if (verticalTabView2.pinned) {
+                            if (height > verticalTabView2.getY()) {
+                                height = verticalTabView2.getY();
+                                getChildAdapterPosition(verticalTabView2);
                             }
-                            if (f < verticalTabView.getY() + verticalTabView.getHeight()) {
-                                f = verticalTabView.getY() + verticalTabView.getHeight();
-                                getChildAdapterPosition(verticalTabView);
+                            if (f < verticalTabView2.getY() + verticalTabView2.getHeight()) {
+                                f = verticalTabView2.getY() + verticalTabView2.getHeight();
+                                getChildAdapterPosition(verticalTabView2);
                             }
                         }
                     }
@@ -354,7 +399,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             }
         };
         this.sideTabs = universalRecyclerView2;
-        universalRecyclerView2.listenReorder(new Utilities.Callback2() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda3
+        universalRecyclerView2.listenReorder(new Utilities.Callback2() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 TopicsTabsView.this.whenReordered(((Integer) obj).intValue(), (ArrayList) obj2);
@@ -363,117 +408,177 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         universalRecyclerView2.adapter.setApplyBackground(false);
         universalRecyclerView2.setClipToPadding(false);
         universalRecyclerView2.setClipChildren(false);
-        universalRecyclerView2.setPadding(0, 0, 0, 0);
-        blurredFrameLayout2.addView(universalRecyclerView2, LayoutHelper.createFrame(-1, -1.0f, 119, 0.0f, 48.0f, 0.0f, 0.0f));
+        viewGroup2.addView(universalRecyclerView2, LayoutHelper.createFrame(-1, -1.0f, 119, 0.0f, isBotForum ? 90.0f : 48.0f, 0.0f, 0.0f));
         universalRecyclerView2.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.TopicsTabsView.4
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i3, int i4) {
+            public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
                 if (TopicsTabsView.this.isLoadingVisible()) {
                     TopicsTabsView.this.loadMore();
                 }
             }
         });
-        ImageView imageView = new ImageView(context);
-        this.button = imageView;
-        imageView.setImageResource(R.drawable.menu_sidebar);
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        addView(imageView, LayoutHelper.createFrame(64, 48, 51));
-        ScaleStateListAnimator.apply(imageView);
-        imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda5
+        int i2 = R.drawable.menu_sidebar;
+        ImageView createButton = createButton(context, i2, new View.OnClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
-                TopicsTabsView.this.lambda$new$0(view3);
+            public final void onClick(View view2) {
+                TopicsTabsView.this.onSideMenuButtonClick(view2);
             }
         });
-        ImageView imageView2 = new ImageView(context);
-        this.closeButton = imageView2;
-        imageView2.setImageResource(R.drawable.msg_select);
-        imageView2.setScaleType(scaleType);
-        addView(imageView2, LayoutHelper.createFrame(64, 48, 51));
-        ScaleStateListAnimator.apply(imageView2);
-        imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda6
+        this.toggleButtonTop = createButton;
+        ImageView createButton2 = createButton(context, i2, new View.OnClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
-                TopicsTabsView.this.lambda$new$1(view3);
+            public final void onClick(View view2) {
+                TopicsTabsView.this.onSideMenuButtonClick(view2);
             }
         });
-        imageView2.setAlpha(0.0f);
-        imageView2.setScaleX(0.4f);
-        imageView2.setScaleY(0.4f);
-        imageView2.setVisibility(8);
+        this.toggleButtonSide = createButton2;
+        blurredFrameLayout.addView(createButton, LayoutHelper.createFrame(64, 48, 51));
+        viewGroup2.addView(createButton2, LayoutHelper.createFrame(64, 48, 51));
+        int i3 = R.drawable.msg_select;
+        ImageView createButton3 = createButton(context, i3, new View.OnClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda3
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                TopicsTabsView.this.onCloseButtonClick(view2);
+            }
+        });
+        this.closeButtonTop = createButton3;
+        ImageView createButton4 = createButton(context, i3, new View.OnClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda3
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                TopicsTabsView.this.onCloseButtonClick(view2);
+            }
+        });
+        this.closeButtonSide = createButton4;
+        blurredFrameLayout.addView(createButton3, LayoutHelper.createFrame(64, 48, 51));
+        viewGroup2.addView(createButton4, LayoutHelper.createFrame(64, 48, 51));
         MessagesController.getInstance(i).getTopicsController().loadTopics(j2, false, 3);
         if (MessagesController.getInstance(i).getMainSettings().getBoolean("topicssidetabs" + j, false)) {
             this.sidemenuT = 1.0f;
             this.sidemenuEnabled = true;
         }
+        checkUi_closeButtonVisibility();
         updateSidemenuPosition();
         updateTabs();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(View view) {
+        this.onTopicSelected.run(0, Boolean.FALSE);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(View view) {
+        this.onTopicSelected.run(0, Boolean.FALSE);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void onSideMenuButtonClick(View view) {
         Boolean bool = this.pendingSidemenu;
         animateSidemenuTo(bool == null ? !this.sidemenuEnabled : !bool.booleanValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(View view) {
+    public void onCloseButtonClick(View view) {
         this.sideTabs.allowReorder(false);
         this.topTabs.allowReorder(false);
-        animateButton(false);
+        this.animatorCloseButtonVisibility.setValue(false, true);
         AndroidUtilities.updateVisibleRows(this.sideTabs);
         AndroidUtilities.updateVisibleRows(this.topTabs);
     }
 
-    private void animateButton(boolean z) {
-        if (z) {
-            this.closeButton.setVisibility(0);
-            ViewPropertyAnimator scaleY = this.closeButton.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f);
-            CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-            scaleY.setInterpolator(cubicBezierInterpolator).setDuration(320L).start();
-            this.button.setVisibility(0);
-            this.button.animate().alpha(0.0f).scaleX(0.4f).scaleY(0.4f).setInterpolator(cubicBezierInterpolator).setDuration(320L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda16
-                @Override // java.lang.Runnable
-                public final void run() {
-                    TopicsTabsView.this.lambda$animateButton$2();
-                }
-            }).start();
-            return;
-        }
-        this.button.setVisibility(0);
-        ViewPropertyAnimator scaleY2 = this.button.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f);
-        CubicBezierInterpolator cubicBezierInterpolator2 = CubicBezierInterpolator.EASE_OUT_QUINT;
-        scaleY2.setInterpolator(cubicBezierInterpolator2).setDuration(320L).start();
-        this.closeButton.setVisibility(0);
-        this.closeButton.animate().alpha(0.0f).scaleX(0.4f).scaleY(0.4f).setInterpolator(cubicBezierInterpolator2).setDuration(320L).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda17
-            @Override // java.lang.Runnable
-            public final void run() {
-                TopicsTabsView.this.lambda$animateButton$3();
-            }
-        }).start();
+    private ImageView createButton(Context context, int i, View.OnClickListener onClickListener) {
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(i);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setOnClickListener(onClickListener);
+        ScaleStateListAnimator.apply(imageView);
+        return imageView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateButton$2() {
-        this.button.setVisibility(8);
+    public /* synthetic */ void lambda$new$2(int i, float f, float f2, FactorAnimator factorAnimator) {
+        checkUi_closeButtonVisibility();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateButton$3() {
-        this.closeButton.setVisibility(8);
-    }
-
-    public void setBottomMargin(int i) {
-        this.sideTabs.setPadding(0, 0, 0, i);
+    private void checkUi_closeButtonVisibility() {
+        float floatValue = this.animatorCloseButtonVisibility.getFloatValue();
+        this.closeButtonTop.setAlpha(floatValue);
+        this.closeButtonTop.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, floatValue));
+        this.closeButtonTop.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, floatValue));
+        this.closeButtonTop.setVisibility(floatValue > 0.0f ? 0 : 8);
+        this.closeButtonSide.setAlpha(floatValue);
+        this.closeButtonSide.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, floatValue));
+        this.closeButtonSide.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, floatValue));
+        this.closeButtonSide.setVisibility(floatValue > 0.0f ? 0 : 8);
+        float floatValue2 = 1.0f - this.animatorCloseButtonVisibility.getFloatValue();
+        this.toggleButtonTop.setAlpha(floatValue2);
+        this.toggleButtonTop.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, floatValue2));
+        this.toggleButtonTop.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, floatValue2));
+        this.toggleButtonTop.setVisibility(floatValue2 > 0.0f ? 0 : 8);
+        this.toggleButtonSide.setAlpha(floatValue2);
+        this.toggleButtonSide.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, floatValue2));
+        this.toggleButtonSide.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, floatValue2));
+        this.toggleButtonSide.setVisibility(floatValue2 > 0.0f ? 0 : 8);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
+        if (this.sideTabsContainer.getVisibility() == 0) {
+            this.sideMenuBackgroundDrawable.setBounds((int) this.sideTabsContainer.getTranslationX(), (int) this.sideMenuBackgroundMarginTop, (int) (this.sideTabsContainer.getTranslationX() + AndroidUtilities.dp(78.0f)), (int) (getMeasuredHeight() - this.sideMenuBackgroundMarginBottom));
+            this.sideMenuBackgroundDrawable.draw(canvas);
+        }
         canvas.save();
         canvas.clipRect(0, 0, getWidth(), getHeight());
         super.dispatchDraw(canvas);
         canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup
+    protected boolean drawChild(Canvas canvas, View view, long j) {
+        boolean z = view == this.sideTabsContainer;
+        if (z) {
+            canvas.save();
+            if (view == this.sideTabsContainer) {
+                canvas.clipPath(this.sideMenuBackgroundDrawable.getPath());
+            }
+        }
+        boolean drawChild = super.drawChild(canvas, view, j);
+        if (z) {
+            canvas.restore();
+        }
+        return drawChild;
+    }
+
+    public void setSideMenuBackgroundDrawable(BlurredBackgroundDrawable blurredBackgroundDrawable) {
+        this.sideMenuBackgroundDrawable = blurredBackgroundDrawable;
+        blurredBackgroundDrawable.setRadius(AndroidUtilities.dp(16.0f));
+        this.sideMenuBackgroundDrawable.setPadding(AndroidUtilities.dp(7.0f));
+    }
+
+    public void setSideMenuBackgroundMarginBottom(float f) {
+        this.sideMenuBackgroundMarginBottom = f;
+        checkSideTabsPadding(true);
+        invalidate();
+    }
+
+    public void setSideMenuBackgroundMarginTop(float f) {
+        this.sideMenuBackgroundMarginTop = f;
+        this.sideTabsContainer.setTranslationY(f);
+        checkSideTabsPadding(true);
+        invalidate();
+    }
+
+    private void checkSideTabsPadding(boolean z) {
+        int paddingBottom = this.sideTabsContainer.getPaddingBottom();
+        int round = Math.round(this.sideMenuBackgroundMarginBottom + this.sideMenuBackgroundMarginTop);
+        if (paddingBottom == round) {
+            return;
+        }
+        if (z) {
+            this.sideTabsContainer.setPadding(0, 0, 0, round);
+        } else if (round < paddingBottom) {
+            this.sideTabsContainer.setPadding(0, 0, 0, 0);
+        }
     }
 
     public void updateSidemenuPosition() {
@@ -483,16 +588,19 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         this.topTabsShadowView.setTranslationY((-AndroidUtilities.dp(51.0f)) * this.sidemenuT);
         this.topTabsShadowView.setAlpha(1.0f - this.sidemenuT);
         this.topTabsShadowView.setVisibility(this.sidemenuT >= 1.0f ? 8 : 0);
-        this.sideTabsContainer.setTranslationX((-AndroidUtilities.dp(64.0f)) * (1.0f - this.sidemenuT));
+        this.sideTabsContainer.setTranslationX((-AndroidUtilities.dp(78.0f)) * (1.0f - this.sidemenuT));
         this.sideTabsContainer.setVisibility(this.sidemenuT <= 0.0f ? 8 : 0);
-        this.sideTabsShadowView.setVisibility(this.sidemenuT <= 0.0f ? 8 : 0);
-        ImageView imageView = this.button;
-        int color = Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, this.resourcesProvider);
-        int i = Theme.key_featuredStickers_addButton;
-        int blendARGB = ColorUtils.blendARGB(color, Theme.getColor(i, this.resourcesProvider), this.sidemenuT);
+        ImageView imageView = this.toggleButtonTop;
+        int i = Theme.key_windowBackgroundWhiteGrayText2;
+        int color = Theme.getColor(i, this.resourcesProvider);
+        int i2 = Theme.key_featuredStickers_addButton;
+        int blendARGB = ColorUtils.blendARGB(color, Theme.getColor(i2, this.resourcesProvider), this.sidemenuT);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(blendARGB, mode));
-        this.closeButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i, this.resourcesProvider), mode));
+        this.toggleButtonSide.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(Theme.getColor(i, this.resourcesProvider), Theme.getColor(i2, this.resourcesProvider), this.sidemenuT), mode));
+        this.closeButtonTop.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2, this.resourcesProvider), mode));
+        this.closeButtonSide.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2, this.resourcesProvider), mode));
+        invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -512,10 +620,10 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         this.sidemenuAnimating = true;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.sidemenuT, z ? 1.0f : 0.0f);
         this.animator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda15
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda18
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                TopicsTabsView.this.lambda$animateSidemenuTo$4(valueAnimator2);
+                TopicsTabsView.this.lambda$animateSidemenuTo$3(valueAnimator2);
             }
         });
         this.animator.addListener(new 5(z));
@@ -525,7 +633,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateSidemenuTo$4(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$animateSidemenuTo$3(ValueAnimator valueAnimator) {
         this.sidemenuT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         updateSidemenuPosition();
     }
@@ -580,16 +688,16 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         if (!canScrollVertically) {
             this.sideTabs.scrollToPosition(0);
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda7
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                TopicsTabsView.this.lambda$updateTabs$5();
+                TopicsTabsView.this.lambda$updateTabs$4();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateTabs$5() {
+    public /* synthetic */ void lambda$updateTabs$4() {
         if (isLoadingVisible()) {
             loadMore();
         }
@@ -656,7 +764,10 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-this.dialogId));
         TopicsController topicsController = MessagesController.getInstance(this.currentAccount).getTopicsController();
         ArrayList<TLRPC.TL_forumTopic> topics = topicsController.getTopics(-this.dialogId);
-        arrayList.add(VerticalTabView.Factory.asAll(this.bot, this.mono).setChecked(this.currentTopicId == 0));
+        boolean z2 = this.bot;
+        if (!z2) {
+            arrayList.add(VerticalTabView.Factory.asAll(z2, this.mono).setChecked(this.currentTopicId == 0));
+        }
         if (topics != null) {
             Iterator<TLRPC.TL_forumTopic> it = topics.iterator();
             z = false;
@@ -664,11 +775,11 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
                 TLRPC.TL_forumTopic next = it.next();
                 if (!this.bot || next.id != 1) {
                     if (!this.excludeTopics.contains(Integer.valueOf(next.id))) {
-                        boolean z2 = next.pinned;
-                        if (!z2 && z) {
+                        boolean z3 = next.pinned;
+                        if (!z3 && z) {
                             universalAdapter.reorderSectionEnd();
                             z = false;
-                        } else if (z2 && !z) {
+                        } else if (z3 && !z) {
                             universalAdapter.reorderSectionStart();
                             z = true;
                         }
@@ -698,30 +809,33 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-this.dialogId));
         TopicsController topicsController = MessagesController.getInstance(this.currentAccount).getTopicsController();
         ArrayList<TLRPC.TL_forumTopic> topics = topicsController.getTopics(-this.dialogId);
-        boolean z = false;
-        arrayList.add(HorizontalTabView.Factory.asAll(this.bot, this.mono).setChecked(this.currentTopicId == 0));
+        boolean z = this.bot;
+        boolean z2 = false;
+        if (!z) {
+            arrayList.add(HorizontalTabView.Factory.asAll(z, this.mono).setChecked(this.currentTopicId == 0));
+        }
         if (topics != null) {
             Iterator<TLRPC.TL_forumTopic> it = topics.iterator();
-            boolean z2 = false;
+            boolean z3 = false;
             while (it.hasNext()) {
                 TLRPC.TL_forumTopic next = it.next();
                 if (!this.bot || next.id != 1) {
                     if (!this.excludeTopics.contains(Integer.valueOf(next.id))) {
-                        boolean z3 = next.pinned;
-                        if (!z3 && z2) {
+                        boolean z4 = next.pinned;
+                        if (!z4 && z3) {
                             universalAdapter.reorderSectionEnd();
-                            z2 = false;
-                        } else if (z3 && !z2) {
+                            z3 = false;
+                        } else if (z4 && !z3) {
                             universalAdapter.reorderSectionStart();
-                            z2 = true;
+                            z3 = true;
                         }
                         arrayList.add(HorizontalTabView.Factory.asTab(this.dialogId, next, this.mono).setChecked(this.currentTopicId == getTopicId(next)));
                     }
                 }
             }
-            z = z2;
+            z2 = z3;
         }
-        if (z) {
+        if (z2) {
             universalAdapter.reorderSectionEnd();
         }
         if (topics != null && !topics.isEmpty() && !topicsController.endIsReached(-this.dialogId) && this.canShowProgress) {
@@ -815,10 +929,10 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             }
             itemOptions = makeOptions;
             final TLRPC.Chat chat3 = chat2;
-            itemOptions.add(R.drawable.msg_clear, LocaleController.getString(R.string.ClearHistory), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda8
+            itemOptions.add(R.drawable.msg_clear, LocaleController.getString(R.string.ClearHistory), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TopicsTabsView.this.lambda$onTabLongClick$7(makeOptions, peerDialogId, chat3);
+                    TopicsTabsView.this.lambda$onTabLongClick$6(makeOptions, peerDialogId, chat3);
                 }
             });
             long j4 = chat2.id;
@@ -832,10 +946,10 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
                         itemOptions.add(R.drawable.msg_remove, LocaleController.getString(R.string.BanUserMonoforum), (Runnable) null);
                         final ActionBarMenuSubItem last = itemOptions.getLast();
                         last.setVisibility(8);
-                        MessagesController.getInstance(this.currentAccount).checkIsInChat(true, chat, user, new MessagesController.IsInChatCheckedCallback() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda9
+                        MessagesController.getInstance(this.currentAccount).checkIsInChat(true, chat, user, new MessagesController.IsInChatCheckedCallback() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda12
                             @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
                             public final void run(boolean z, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-                                TopicsTabsView.this.lambda$onTabLongClick$12(last, itemOptions, j, user, chat, z, tL_chatAdminRights, str);
+                                TopicsTabsView.this.lambda$onTabLongClick$11(last, itemOptions, j, user, chat, z, tL_chatAdminRights, str);
                             }
                         });
                     }
@@ -848,10 +962,10 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
                 itemOptions.add(R.drawable.msg_remove, LocaleController.getString(R.string.BanUserMonoforum), (Runnable) null);
                 final ActionBarMenuSubItem last2 = itemOptions.getLast();
                 last2.setVisibility(8);
-                MessagesController.getInstance(this.currentAccount).checkIsInChat(true, chat, user, new MessagesController.IsInChatCheckedCallback() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda9
+                MessagesController.getInstance(this.currentAccount).checkIsInChat(true, chat, user, new MessagesController.IsInChatCheckedCallback() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda12
                     @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
                     public final void run(boolean z, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-                        TopicsTabsView.this.lambda$onTabLongClick$12(last2, itemOptions, j, user, chat, z, tL_chatAdminRights, str);
+                        TopicsTabsView.this.lambda$onTabLongClick$11(last2, itemOptions, j, user, chat, z, tL_chatAdminRights, str);
                     }
                 });
             }
@@ -859,43 +973,43 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             itemOptions = makeOptions;
             if (ChatObject.canManageTopics(chat2) || UserObject.isBotForum(user2)) {
                 boolean z = tL_forumTopic.pinned;
-                itemOptions.add(z ? R.drawable.msg_unpin : R.drawable.msg_pin, LocaleController.getString(z ? R.string.DialogUnpin : R.string.DialogPin), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda10
+                itemOptions.add(z ? R.drawable.msg_unpin : R.drawable.msg_pin, LocaleController.getString(z ? R.string.DialogUnpin : R.string.DialogPin), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda13
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TopicsTabsView.this.lambda$onTabLongClick$13(itemOptions, messagesController, tL_forumTopic);
+                        TopicsTabsView.this.lambda$onTabLongClick$12(itemOptions, messagesController, tL_forumTopic);
                     }
                 });
                 if (tL_forumTopic.pinned) {
-                    itemOptions.add(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda11
+                    itemOptions.add(R.drawable.tabs_reorder, LocaleController.getString(R.string.FilterReorder), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda14
                         @Override // java.lang.Runnable
                         public final void run() {
-                            TopicsTabsView.this.lambda$onTabLongClick$14();
+                            TopicsTabsView.this.lambda$onTabLongClick$13();
                         }
                     });
                 }
             }
             final ItemOptions addAsItemOptions = ChatNotificationsPopupWrapper.addAsItemOptions(this.fragment, itemOptions, this.dialogId, tL_forumTopic.id);
             boolean isDialogMuted = messagesController.isDialogMuted(this.dialogId, tL_forumTopic.id);
-            itemOptions.add(isDialogMuted ? R.drawable.msg_unmute : R.drawable.msg_mute, LocaleController.getString(isDialogMuted ? R.string.Unmute : R.string.Mute), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda12
+            itemOptions.add(isDialogMuted ? R.drawable.msg_unmute : R.drawable.msg_mute, LocaleController.getString(isDialogMuted ? R.string.Unmute : R.string.Mute), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda15
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TopicsTabsView.this.lambda$onTabLongClick$15(messagesController, tL_forumTopic, itemOptions, addAsItemOptions);
+                    TopicsTabsView.this.lambda$onTabLongClick$14(messagesController, tL_forumTopic, itemOptions, addAsItemOptions);
                 }
             });
             if (ChatObject.canManageTopic(this.currentAccount, chat2, tL_forumTopic) && !UserObject.isBotForum(user2)) {
                 boolean z2 = tL_forumTopic.closed;
-                itemOptions.add(z2 ? R.drawable.msg_topic_restart : R.drawable.msg_topic_close, LocaleController.getString(z2 ? R.string.RestartTopic : R.string.CloseTopic), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda13
+                itemOptions.add(z2 ? R.drawable.msg_topic_restart : R.drawable.msg_topic_close, LocaleController.getString(z2 ? R.string.RestartTopic : R.string.CloseTopic), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda16
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TopicsTabsView.this.lambda$onTabLongClick$16(itemOptions, tL_forumTopic);
+                        TopicsTabsView.this.lambda$onTabLongClick$15(itemOptions, tL_forumTopic);
                     }
                 });
             }
             if (ChatObject.canDeleteTopic(this.currentAccount, chat2, tL_forumTopic)) {
-                itemOptions.add(R.drawable.msg_delete, LocaleController.getPluralString("DeleteTopics", 1), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda14
+                itemOptions.add(R.drawable.msg_delete, LocaleController.getPluralString("DeleteTopics", 1), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda17
                     @Override // java.lang.Runnable
                     public final void run() {
-                        TopicsTabsView.this.lambda$onTabLongClick$18(itemOptions, tL_forumTopic);
+                        TopicsTabsView.this.lambda$onTabLongClick$17(itemOptions, tL_forumTopic);
                     }
                 });
             }
@@ -911,21 +1025,21 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$7(ItemOptions itemOptions, final long j, TLRPC.Chat chat) {
+    public /* synthetic */ void lambda$onTabLongClick$6(ItemOptions itemOptions, final long j, TLRPC.Chat chat) {
         itemOptions.dismiss();
         TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j));
         if (user != null) {
-            AlertsCreator.createClearDaysDialogAlert(this.fragment, -1, user, chat, true, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda18
+            AlertsCreator.createClearDaysDialogAlert(this.fragment, -1, user, chat, true, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda21
                 @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                 public final void run(boolean z) {
-                    TopicsTabsView.this.lambda$onTabLongClick$6(j, z);
+                    TopicsTabsView.this.lambda$onTabLongClick$5(j, z);
                 }
             }, this.fragment.getResourceProvider());
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$6(long j, boolean z) {
+    public /* synthetic */ void lambda$onTabLongClick$5(long j, boolean z) {
         BaseFragment baseFragment = this.fragment;
         if (baseFragment instanceof ChatActivity) {
             ((ChatActivity) baseFragment).performHistoryClear(j, false, true);
@@ -933,30 +1047,30 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$12(final ActionBarMenuSubItem actionBarMenuSubItem, final ItemOptions itemOptions, final long j, final TLRPC.User user, final TLRPC.Chat chat, final boolean z, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda20
+    public /* synthetic */ void lambda$onTabLongClick$11(final ActionBarMenuSubItem actionBarMenuSubItem, final ItemOptions itemOptions, final long j, final TLRPC.User user, final TLRPC.Chat chat, final boolean z, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
-                TopicsTabsView.this.lambda$onTabLongClick$11(z, actionBarMenuSubItem, itemOptions, j, user, chat);
+                TopicsTabsView.this.lambda$onTabLongClick$10(z, actionBarMenuSubItem, itemOptions, j, user, chat);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$11(boolean z, ActionBarMenuSubItem actionBarMenuSubItem, final ItemOptions itemOptions, final long j, final TLRPC.User user, final TLRPC.Chat chat) {
+    public /* synthetic */ void lambda$onTabLongClick$10(boolean z, ActionBarMenuSubItem actionBarMenuSubItem, final ItemOptions itemOptions, final long j, final TLRPC.User user, final TLRPC.Chat chat) {
         final boolean z2 = !z;
         actionBarMenuSubItem.setVisibility(0);
         actionBarMenuSubItem.setText(LocaleController.getString(!z ? R.string.UnbanUserMonoforum : R.string.BanUserMonoforum));
-        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda21
+        actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda24
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TopicsTabsView.this.lambda$onTabLongClick$10(itemOptions, z2, j, user, chat, view);
+                TopicsTabsView.this.lambda$onTabLongClick$9(itemOptions, z2, j, user, chat, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$10(ItemOptions itemOptions, boolean z, long j, TLRPC.User user, TLRPC.Chat chat, View view) {
+    public /* synthetic */ void lambda$onTabLongClick$9(ItemOptions itemOptions, boolean z, long j, TLRPC.User user, TLRPC.Chat chat, View view) {
         itemOptions.dismiss();
         if (!z) {
             MessagesController.getInstance(this.currentAccount).deleteParticipantFromChat(j, user, (TLRPC.Chat) null, false, false);
@@ -966,53 +1080,53 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         tL_channels_editBanned.participant = MessagesController.getInputPeer(user);
         tL_channels_editBanned.channel = MessagesController.getInputChannel(chat);
         tL_channels_editBanned.banned_rights = new TLRPC.TL_chatBannedRights();
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_editBanned, new RequestDelegate() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda26
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_editBanned, new RequestDelegate() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda25
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                TopicsTabsView.this.lambda$onTabLongClick$9(tLObject, tL_error);
+                TopicsTabsView.this.lambda$onTabLongClick$8(tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$9(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$onTabLongClick$8(TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject != null) {
             final TLRPC.Updates updates = (TLRPC.Updates) tLObject;
             MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
             if (updates.chats.isEmpty()) {
                 return;
             }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda27
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda28
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TopicsTabsView.this.lambda$onTabLongClick$8(updates);
+                    TopicsTabsView.this.lambda$onTabLongClick$7(updates);
                 }
             }, 1000L);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$8(TLRPC.Updates updates) {
+    public /* synthetic */ void lambda$onTabLongClick$7(TLRPC.Updates updates) {
         MessagesController.getInstance(this.currentAccount).loadFullChat(updates.chats.get(0).id, 0, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$13(ItemOptions itemOptions, MessagesController messagesController, TLRPC.TL_forumTopic tL_forumTopic) {
+    public /* synthetic */ void lambda$onTabLongClick$12(ItemOptions itemOptions, MessagesController messagesController, TLRPC.TL_forumTopic tL_forumTopic) {
         itemOptions.dismiss();
         messagesController.getTopicsController().pinTopic(-this.dialogId, tL_forumTopic.id, !tL_forumTopic.pinned, this.fragment);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$14() {
+    public /* synthetic */ void lambda$onTabLongClick$13() {
         this.sideTabs.allowReorder(true);
         this.topTabs.allowReorder(true);
-        animateButton(true);
+        this.animatorCloseButtonVisibility.setValue(true, true);
         AndroidUtilities.updateVisibleRows(this.topTabs);
         AndroidUtilities.updateVisibleRows(this.sideTabs);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$15(MessagesController messagesController, TLRPC.TL_forumTopic tL_forumTopic, ItemOptions itemOptions, ItemOptions itemOptions2) {
+    public /* synthetic */ void lambda$onTabLongClick$14(MessagesController messagesController, TLRPC.TL_forumTopic tL_forumTopic, ItemOptions itemOptions, ItemOptions itemOptions2) {
         if (messagesController.isDialogMuted(this.dialogId, tL_forumTopic.id)) {
             itemOptions.dismiss();
             NotificationsController.getInstance(this.currentAccount).muteDialog(this.dialogId, tL_forumTopic.id, false);
@@ -1026,20 +1140,20 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$16(ItemOptions itemOptions, TLRPC.TL_forumTopic tL_forumTopic) {
+    public /* synthetic */ void lambda$onTabLongClick$15(ItemOptions itemOptions, TLRPC.TL_forumTopic tL_forumTopic) {
         itemOptions.dismiss();
         MessagesController.getInstance(this.currentAccount).getTopicsController().toggleCloseTopic(-this.dialogId, tL_forumTopic.id, !tL_forumTopic.closed);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onTabLongClick$18(ItemOptions itemOptions, TLRPC.TL_forumTopic tL_forumTopic) {
+    public /* synthetic */ void lambda$onTabLongClick$17(ItemOptions itemOptions, TLRPC.TL_forumTopic tL_forumTopic) {
         itemOptions.dismiss();
         HashSet hashSet = new HashSet();
         hashSet.add(Integer.valueOf(tL_forumTopic.id));
-        deleteTopics(hashSet, new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda19
+        deleteTopics(hashSet, new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
-                TopicsTabsView.lambda$onTabLongClick$17();
+                TopicsTabsView.lambda$onTabLongClick$16();
             }
         });
     }
@@ -1064,6 +1178,14 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         this.topTabs.adapter.update(true);
         this.topTabs.invalidate();
         this.sideTabs.adapter.update(true);
+        VerticalTabView verticalTabView = this.botCreateTopicButtonVertical;
+        if (verticalTabView != null) {
+            verticalTabView.setAll(true, false, j == 0);
+        }
+        HorizontalTabView horizontalTabView = this.botCreateTopicButtonHorizontal;
+        if (horizontalTabView != null) {
+            horizontalTabView.setAll(true, false, j == 0);
+        }
     }
 
     public void setOnTopicSelected(Utilities.Callback2<Integer, Boolean> callback2) {
@@ -1207,7 +1329,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
                     if (z) {
                         f = dp3;
                         f2 = width;
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didApplyNewTheme, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReplacedPhotoInMemCache, 31);
                     } else {
                         f = dp3;
                         f2 = width;
@@ -1646,6 +1768,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         private final View counterView;
         int counterViewX;
         private final int currentAccount;
+        private final ImageView imageView;
         private boolean isAdd;
         private boolean lastMention;
         private boolean lastReactions;
@@ -1708,6 +1831,9 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             linksTextView.setTypeface(AndroidUtilities.bold());
             addView(linksTextView, LayoutHelper.createFrame(-2, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
             ScaleStateListAnimator.apply(linksTextView);
+            ImageView imageView = new ImageView(context);
+            this.imageView = imageView;
+            addView(imageView, LayoutHelper.createFrame(34, 34, 17));
             AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = new AnimatedTextView.AnimatedTextDrawable();
             this.counterText = animatedTextDrawable;
             animatedTextDrawable.setTextSize(AndroidUtilities.dp(11.0f));
@@ -1768,12 +1894,17 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
         protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
             int i5 = i3 - i;
-            int i6 = (i4 - i2) / 2;
-            this.textView.layout(AndroidUtilities.dp(12.0f), i6 - (this.textView.getMeasuredHeight() / 2), AndroidUtilities.dp(12.0f) + this.textView.getMeasuredWidth(), (this.textView.getMeasuredHeight() / 2) + i6);
+            int i6 = i4 - i2;
+            int measuredWidth = (i5 - this.imageView.getMeasuredWidth()) / 2;
+            int measuredHeight = (i6 - this.imageView.getMeasuredHeight()) / 2;
+            ImageView imageView = this.imageView;
+            imageView.layout(measuredWidth, measuredHeight, imageView.getMeasuredWidth() + measuredWidth, this.imageView.getMeasuredHeight() + measuredHeight);
+            int i7 = i6 / 2;
+            this.textView.layout(AndroidUtilities.dp(12.0f), i7 - (this.textView.getMeasuredHeight() / 2), AndroidUtilities.dp(12.0f) + this.textView.getMeasuredWidth(), (this.textView.getMeasuredHeight() / 2) + i7);
             if (this.counterText.getAnimateToWidth() > 0.0f) {
-                this.counterView.layout((i5 - AndroidUtilities.dp(12.0f)) - this.counterView.getMeasuredWidth(), i6 - (this.counterView.getMeasuredHeight() / 2), i5 - AndroidUtilities.dp(12.0f), i6 + (this.counterView.getMeasuredHeight() / 2));
+                this.counterView.layout((i5 - AndroidUtilities.dp(12.0f)) - this.counterView.getMeasuredWidth(), i7 - (this.counterView.getMeasuredHeight() / 2), i5 - AndroidUtilities.dp(12.0f), i7 + (this.counterView.getMeasuredHeight() / 2));
             } else {
-                this.counterView.layout(AndroidUtilities.dp(12.0f) + this.textView.getMeasuredWidth() + AndroidUtilities.dp(4.66f), i6 - (this.counterView.getMeasuredHeight() / 2), AndroidUtilities.dp(12.0f) + this.textView.getMeasuredWidth() + AndroidUtilities.dp(4.66f) + this.counterView.getMeasuredWidth(), i6 + (this.counterView.getMeasuredHeight() / 2));
+                this.counterView.layout(AndroidUtilities.dp(12.0f) + this.textView.getMeasuredWidth() + AndroidUtilities.dp(4.66f), i7 - (this.counterView.getMeasuredHeight() / 2), AndroidUtilities.dp(12.0f) + this.textView.getMeasuredWidth() + AndroidUtilities.dp(4.66f) + this.counterView.getMeasuredWidth(), i7 + (this.counterView.getMeasuredHeight() / 2));
             }
             if (this.counterViewX != 0 && this.counterView.getLeft() != this.counterViewX) {
                 this.counterView.setTranslationX((-r4.getLeft()) + this.counterViewX);
@@ -1798,7 +1929,14 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             this.topicId = 0L;
             this.isAdd = false;
             this.staticImage = true;
+            this.imageView.setVisibility(z ? 0 : 8);
+            if (z) {
+                BotNewTopicDrawable botNewTopicDrawable = new BotNewTopicDrawable(getContext());
+                botNewTopicDrawable.setColor(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider));
+                this.imageView.setImageDrawable(botNewTopicDrawable);
+            }
             this.textView.setText(LocaleController.getString(z ? R.string.BotForumNewTopic : R.string.AllTopicsShort));
+            this.textView.setVisibility(z ? 8 : 0);
             setSelected(z3);
             updateTextColor();
             setCounter(true, 0, false, false, false);
@@ -1810,6 +1948,8 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             this.topicId = 0L;
             this.isAdd = true;
             this.staticImage = false;
+            this.imageView.setVisibility(8);
+            this.textView.setVisibility(0);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("e\u200b");
             spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.menu_topic_add), 0, 1, 33);
             this.textView.setText(spannableStringBuilder);
@@ -1823,6 +1963,8 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             setLayout(false);
             this.topicId = -1L;
             this.staticImage = true;
+            this.imageView.setVisibility(8);
+            this.textView.setVisibility(0);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x");
             LoadingSpan loadingSpan = new LoadingSpan(this.textView, AndroidUtilities.dp(42.0f));
             loadingSpan.setScaleY(0.95f);
@@ -1841,6 +1983,8 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             boolean z2 = j2 == j3;
             this.topicId = j3;
             this.staticImage = false;
+            this.imageView.setVisibility(8);
+            this.textView.setVisibility(0);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             if (tL_forumTopic.id == 1) {
                 spannableStringBuilder.append((CharSequence) "#");
@@ -1881,6 +2025,8 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             boolean z2 = this.topicId == peerDialogId;
             this.topicId = peerDialogId;
             this.staticImage = false;
+            this.imageView.setVisibility(8);
+            this.textView.setVisibility(0);
             if (this.avatarSpan == null) {
                 AvatarSpan avatarSpan = new AvatarSpan(this.textView, this.currentAccount, 18.0f);
                 this.avatarSpan = avatarSpan;
@@ -2114,7 +2260,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
         builder.setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda22
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                TopicsTabsView.this.lambda$deleteTopics$21(hashSet, arrayList, runnable, alertDialog, i);
+                TopicsTabsView.this.lambda$deleteTopics$20(hashSet, arrayList, runnable, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda23
@@ -2132,31 +2278,31 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteTopics$21(final HashSet hashSet, final ArrayList arrayList, final Runnable runnable, AlertDialog alertDialog, int i) {
+    public /* synthetic */ void lambda$deleteTopics$20(final HashSet hashSet, final ArrayList arrayList, final Runnable runnable, AlertDialog alertDialog, int i) {
         this.excludeTopics.addAll(hashSet);
         updateTabs();
-        BulletinFactory.of(this.fragment).createUndoBulletin(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda24
+        BulletinFactory.of(this.fragment).createUndoBulletin(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
-                TopicsTabsView.this.lambda$deleteTopics$19(hashSet);
+                TopicsTabsView.this.lambda$deleteTopics$18(hashSet);
             }
-        }, new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda25
+        }, new Runnable() { // from class: org.telegram.ui.Components.TopicsTabsView$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
-                TopicsTabsView.this.lambda$deleteTopics$20(arrayList, runnable);
+                TopicsTabsView.this.lambda$deleteTopics$19(arrayList, runnable);
             }
         }).show();
         alertDialog.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteTopics$19(HashSet hashSet) {
+    public /* synthetic */ void lambda$deleteTopics$18(HashSet hashSet) {
         this.excludeTopics.removeAll(hashSet);
         updateTabs();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteTopics$20(ArrayList arrayList, Runnable runnable) {
+    public /* synthetic */ void lambda$deleteTopics$19(ArrayList arrayList, Runnable runnable) {
         MessagesController.getInstance(this.currentAccount).getTopicsController().deleteTopics(-this.dialogId, arrayList);
         runnable.run();
     }

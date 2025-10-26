@@ -5897,7 +5897,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         if (j2 > 700) {
             if (i == 1) {
                 c = 1;
-                SendMessagesHelper.SendMessageParams of = SendMessagesHelper.SendMessageParams.of(tL_document, null, file.getAbsolutePath(), this.recordDialogId, this.recordReplyingMsg, this.recordReplyingTopMsg, null, null, null, null, z, i2, z2 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, null, null, false);
+                SendMessagesHelper.SendMessageParams of = SendMessagesHelper.SendMessageParams.of(tL_document, null, file.getAbsolutePath(), this.recordDialogId, this.recordReplyingMsg, this.recordReplyingTopMsg, null, null, null, null, z, i2, 0, z2 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, null, null, false);
                 of.monoForumPeer = this.recordMonoForumPeerId;
                 of.suggestionParams = this.recordMonoForumSuggestionParams;
                 of.replyToStoryItem = this.recordReplyingStory;

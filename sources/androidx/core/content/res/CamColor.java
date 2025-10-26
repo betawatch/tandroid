@@ -3,7 +3,7 @@ package androidx.core.content.res;
 import androidx.core.graphics.ColorUtils;
 
 /* loaded from: classes.dex */
-class CamColor {
+public class CamColor {
     private final float mAstar;
     private final float mBstar;
     private final float mChroma;
@@ -50,28 +50,31 @@ class CamColor {
         this.mBstar = f9;
     }
 
-    static int toColor(float f, float f2, float f3) {
+    public static int toColor(float f, float f2, float f3) {
         return toColor(f, f2, f3, ViewingConditions.DEFAULT);
     }
 
     static CamColor fromColor(int i) {
-        return fromColorInViewingConditions(i, ViewingConditions.DEFAULT);
+        float[] fArr = new float[7];
+        float[] fArr2 = new float[3];
+        fromColorInViewingConditions(i, ViewingConditions.DEFAULT, fArr, fArr2);
+        return new CamColor(fArr2[0], fArr2[1], fArr[0], fArr[1], fArr[2], fArr[3], fArr[4], fArr[5], fArr[6]);
     }
 
-    static CamColor fromColorInViewingConditions(int i, ViewingConditions viewingConditions) {
-        float[] xyzFromInt = CamUtils.xyzFromInt(i);
-        float[][] fArr = CamUtils.XYZ_TO_CAM16RGB;
-        float f = xyzFromInt[0];
-        float[] fArr2 = fArr[0];
-        float f2 = fArr2[0] * f;
-        float f3 = xyzFromInt[1];
-        float f4 = f2 + (fArr2[1] * f3);
-        float f5 = xyzFromInt[2];
-        float f6 = f4 + (fArr2[2] * f5);
-        float[] fArr3 = fArr[1];
-        float f7 = (fArr3[0] * f) + (fArr3[1] * f3) + (fArr3[2] * f5);
-        float[] fArr4 = fArr[2];
-        float f8 = (f * fArr4[0]) + (f3 * fArr4[1]) + (f5 * fArr4[2]);
+    static void fromColorInViewingConditions(int i, ViewingConditions viewingConditions, float[] fArr, float[] fArr2) {
+        CamUtils.xyzFromInt(i, fArr2);
+        float[][] fArr3 = CamUtils.XYZ_TO_CAM16RGB;
+        float f = fArr2[0];
+        float[] fArr4 = fArr3[0];
+        float f2 = fArr4[0] * f;
+        float f3 = fArr2[1];
+        float f4 = f2 + (fArr4[1] * f3);
+        float f5 = fArr2[2];
+        float f6 = f4 + (fArr4[2] * f5);
+        float[] fArr5 = fArr3[1];
+        float f7 = (fArr5[0] * f) + (fArr5[1] * f3) + (fArr5[2] * f5);
+        float[] fArr6 = fArr3[2];
+        float f8 = (f * fArr6[0]) + (f3 * fArr6[1]) + (f5 * fArr6[2]);
         float f9 = viewingConditions.getRgbD()[0] * f6;
         float f10 = viewingConditions.getRgbD()[1] * f7;
         float f11 = viewingConditions.getRgbD()[2] * f8;
@@ -93,17 +96,28 @@ class CamColor {
         } else if (atan2 >= 360.0f) {
             atan2 -= 360.0f;
         }
-        float f17 = atan2;
-        float f18 = (3.1415927f * f17) / 180.0f;
+        float f17 = (3.1415927f * atan2) / 180.0f;
         float pow4 = ((float) Math.pow((f16 * viewingConditions.getNbb()) / viewingConditions.getAw(), viewingConditions.getC() * viewingConditions.getZ())) * 100.0f;
-        float flRoot = viewingConditions.getFlRoot() * (4.0f / viewingConditions.getC()) * ((float) Math.sqrt(pow4 / 100.0f)) * (viewingConditions.getAw() + 4.0f);
-        float pow5 = ((float) Math.pow(1.64d - Math.pow(0.29d, viewingConditions.getN()), 0.73d)) * ((float) Math.pow((((((((float) (Math.cos((((((double) f17) < 20.14d ? 360.0f + f17 : f17) * 3.141592653589793d) / 180.0d) + 2.0d) + 3.8d)) * 0.25f) * 3846.1538f) * viewingConditions.getNc()) * viewingConditions.getNcb()) * ((float) Math.sqrt((f12 * f12) + (f13 * f13)))) / (f15 + 0.305f), 0.9d)) * ((float) Math.sqrt(pow4 / 100.0d));
-        float flRoot2 = pow5 * viewingConditions.getFlRoot();
-        float sqrt = ((float) Math.sqrt((r3 * viewingConditions.getC()) / (viewingConditions.getAw() + 4.0f))) * 50.0f;
-        float f19 = (1.7f * pow4) / ((0.007f * pow4) + 1.0f);
-        float log = ((float) Math.log((0.0228f * flRoot2) + 1.0f)) * 43.85965f;
-        double d2 = f18;
-        return new CamColor(f17, pow5, pow4, flRoot, flRoot2, sqrt, f19, log * ((float) Math.cos(d2)), log * ((float) Math.sin(d2)));
+        float c = (4.0f / viewingConditions.getC()) * ((float) Math.sqrt(pow4 / 100.0f)) * (viewingConditions.getAw() + 4.0f) * viewingConditions.getFlRoot();
+        float sqrt = ((float) Math.sqrt(pow4 / 100.0d)) * ((float) Math.pow(1.64d - Math.pow(0.29d, viewingConditions.getN()), 0.73d)) * ((float) Math.pow((((((((float) (Math.cos((((((double) atan2) < 20.14d ? 360.0f + atan2 : atan2) * 3.141592653589793d) / 180.0d) + 2.0d) + 3.8d)) * 0.25f) * 3846.1538f) * viewingConditions.getNc()) * viewingConditions.getNcb()) * ((float) Math.sqrt((f12 * f12) + (f13 * f13)))) / (f15 + 0.305f), 0.9d));
+        float flRoot = viewingConditions.getFlRoot() * sqrt;
+        float sqrt2 = ((float) Math.sqrt((r7 * viewingConditions.getC()) / (viewingConditions.getAw() + 4.0f))) * 50.0f;
+        float f18 = (1.7f * pow4) / ((0.007f * pow4) + 1.0f);
+        float log = ((float) Math.log((0.0228f * flRoot) + 1.0f)) * 43.85965f;
+        double d2 = f17;
+        float cos = ((float) Math.cos(d2)) * log;
+        float sin = log * ((float) Math.sin(d2));
+        fArr2[0] = atan2;
+        fArr2[1] = sqrt;
+        if (fArr != null) {
+            fArr[0] = pow4;
+            fArr[1] = c;
+            fArr[2] = flRoot;
+            fArr[3] = sqrt2;
+            fArr[4] = f18;
+            fArr[5] = cos;
+            fArr[6] = sin;
+        }
     }
 
     private static CamColor fromJch(float f, float f2, float f3) {

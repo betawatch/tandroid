@@ -785,7 +785,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public boolean sendSelectedItems(final boolean z, final int i, final long j, final boolean z2) {
+    public boolean sendSelectedItems(final boolean z, final int i, int i2, final long j, final boolean z2) {
         if ((this.selectedContacts.size() == 0 && this.delegate == null) || this.sendPressed) {
             return false;
         }

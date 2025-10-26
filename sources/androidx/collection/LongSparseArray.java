@@ -1,147 +1,202 @@
 package androidx.collection;
 
+import androidx.collection.internal.ContainerHelpersKt;
+import java.util.Arrays;
+import kotlin.collections.ArraysKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+
 /* loaded from: classes.dex */
 public class LongSparseArray implements Cloneable {
-    private static final Object DELETED = new Object();
-    private boolean mGarbage;
-    private long[] mKeys;
-    private int mSize;
-    private Object[] mValues;
+    public /* synthetic */ boolean garbage;
+    public /* synthetic */ long[] keys;
+    public /* synthetic */ int size;
+    public /* synthetic */ Object[] values;
 
     public LongSparseArray() {
-        this(10);
+        this(0, 1, null);
     }
 
     public LongSparseArray(int i) {
-        this.mGarbage = false;
         if (i == 0) {
-            this.mKeys = ContainerHelpers.EMPTY_LONGS;
-            this.mValues = ContainerHelpers.EMPTY_OBJECTS;
+            this.keys = ContainerHelpersKt.EMPTY_LONGS;
+            this.values = ContainerHelpersKt.EMPTY_OBJECTS;
         } else {
-            int idealLongArraySize = ContainerHelpers.idealLongArraySize(i);
-            this.mKeys = new long[idealLongArraySize];
-            this.mValues = new Object[idealLongArraySize];
+            int idealLongArraySize = ContainerHelpersKt.idealLongArraySize(i);
+            this.keys = new long[idealLongArraySize];
+            this.values = new Object[idealLongArraySize];
         }
+    }
+
+    public /* synthetic */ LongSparseArray(int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i2 & 1) != 0 ? 10 : i);
     }
 
     public LongSparseArray clone() {
-        try {
-            LongSparseArray longSparseArray = (LongSparseArray) super.clone();
-            longSparseArray.mKeys = (long[]) this.mKeys.clone();
-            longSparseArray.mValues = (Object[]) this.mValues.clone();
-            return longSparseArray;
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError(e);
-        }
+        Object clone = super.clone();
+        Intrinsics.checkNotNull(clone, "null cannot be cast to non-null type androidx.collection.LongSparseArray<E of androidx.collection.LongSparseArray>");
+        LongSparseArray longSparseArray = (LongSparseArray) clone;
+        longSparseArray.keys = (long[]) this.keys.clone();
+        longSparseArray.values = (Object[]) this.values.clone();
+        return longSparseArray;
     }
 
     public Object get(long j) {
-        return get(j, null);
+        Object obj;
+        int binarySearch = ContainerHelpersKt.binarySearch(this.keys, this.size, j);
+        if (binarySearch >= 0) {
+            Object obj2 = this.values[binarySearch];
+            obj = LongSparseArrayKt.DELETED;
+            if (obj2 != obj) {
+                return this.values[binarySearch];
+            }
+        }
+        return null;
     }
 
     public Object get(long j, Object obj) {
         Object obj2;
-        int binarySearch = ContainerHelpers.binarySearch(this.mKeys, this.mSize, j);
-        return (binarySearch < 0 || (obj2 = this.mValues[binarySearch]) == DELETED) ? obj : obj2;
+        int binarySearch = ContainerHelpersKt.binarySearch(this.keys, this.size, j);
+        if (binarySearch < 0) {
+            return obj;
+        }
+        Object obj3 = this.values[binarySearch];
+        obj2 = LongSparseArrayKt.DELETED;
+        return obj3 == obj2 ? obj : this.values[binarySearch];
     }
 
     public void delete(long j) {
-        remove(j);
+        Object obj;
+        Object obj2;
+        int binarySearch = ContainerHelpersKt.binarySearch(this.keys, this.size, j);
+        if (binarySearch >= 0) {
+            Object obj3 = this.values[binarySearch];
+            obj = LongSparseArrayKt.DELETED;
+            if (obj3 != obj) {
+                Object[] objArr = this.values;
+                obj2 = LongSparseArrayKt.DELETED;
+                objArr[binarySearch] = obj2;
+                this.garbage = true;
+            }
+        }
     }
 
     public void remove(long j) {
-        int binarySearch = ContainerHelpers.binarySearch(this.mKeys, this.mSize, j);
+        Object obj;
+        Object obj2;
+        int binarySearch = ContainerHelpersKt.binarySearch(this.keys, this.size, j);
         if (binarySearch >= 0) {
-            Object[] objArr = this.mValues;
-            Object obj = objArr[binarySearch];
-            Object obj2 = DELETED;
-            if (obj != obj2) {
+            Object obj3 = this.values[binarySearch];
+            obj = LongSparseArrayKt.DELETED;
+            if (obj3 != obj) {
+                Object[] objArr = this.values;
+                obj2 = LongSparseArrayKt.DELETED;
                 objArr[binarySearch] = obj2;
-                this.mGarbage = true;
+                this.garbage = true;
             }
         }
     }
 
     public void removeAt(int i) {
-        Object[] objArr = this.mValues;
-        Object obj = objArr[i];
-        Object obj2 = DELETED;
-        if (obj != obj2) {
+        Object obj;
+        Object obj2;
+        Object obj3 = this.values[i];
+        obj = LongSparseArrayKt.DELETED;
+        if (obj3 != obj) {
+            Object[] objArr = this.values;
+            obj2 = LongSparseArrayKt.DELETED;
             objArr[i] = obj2;
-            this.mGarbage = true;
+            this.garbage = true;
         }
-    }
-
-    private void gc() {
-        int i = this.mSize;
-        long[] jArr = this.mKeys;
-        Object[] objArr = this.mValues;
-        int i2 = 0;
-        for (int i3 = 0; i3 < i; i3++) {
-            Object obj = objArr[i3];
-            if (obj != DELETED) {
-                if (i3 != i2) {
-                    jArr[i2] = jArr[i3];
-                    objArr[i2] = obj;
-                    objArr[i3] = null;
-                }
-                i2++;
-            }
-        }
-        this.mGarbage = false;
-        this.mSize = i2;
     }
 
     public void put(long j, Object obj) {
-        int binarySearch = ContainerHelpers.binarySearch(this.mKeys, this.mSize, j);
+        Object obj2;
+        Object obj3;
+        int binarySearch = ContainerHelpersKt.binarySearch(this.keys, this.size, j);
         if (binarySearch >= 0) {
-            this.mValues[binarySearch] = obj;
+            this.values[binarySearch] = obj;
             return;
         }
         int i = ~binarySearch;
-        int i2 = this.mSize;
-        if (i < i2) {
-            Object[] objArr = this.mValues;
-            if (objArr[i] == DELETED) {
-                this.mKeys[i] = j;
-                objArr[i] = obj;
+        if (i < this.size) {
+            Object obj4 = this.values[i];
+            obj3 = LongSparseArrayKt.DELETED;
+            if (obj4 == obj3) {
+                this.keys[i] = j;
+                this.values[i] = obj;
                 return;
             }
         }
-        if (this.mGarbage && i2 >= this.mKeys.length) {
-            gc();
-            i = ~ContainerHelpers.binarySearch(this.mKeys, this.mSize, j);
+        if (this.garbage) {
+            int i2 = this.size;
+            long[] jArr = this.keys;
+            if (i2 >= jArr.length) {
+                Object[] objArr = this.values;
+                int i3 = 0;
+                for (int i4 = 0; i4 < i2; i4++) {
+                    Object obj5 = objArr[i4];
+                    obj2 = LongSparseArrayKt.DELETED;
+                    if (obj5 != obj2) {
+                        if (i4 != i3) {
+                            jArr[i3] = jArr[i4];
+                            objArr[i3] = obj5;
+                            objArr[i4] = null;
+                        }
+                        i3++;
+                    }
+                }
+                this.garbage = false;
+                this.size = i3;
+                i = ~ContainerHelpersKt.binarySearch(this.keys, i3, j);
+            }
         }
-        int i3 = this.mSize;
-        if (i3 >= this.mKeys.length) {
-            int idealLongArraySize = ContainerHelpers.idealLongArraySize(i3 + 1);
-            long[] jArr = new long[idealLongArraySize];
-            Object[] objArr2 = new Object[idealLongArraySize];
-            long[] jArr2 = this.mKeys;
-            System.arraycopy(jArr2, 0, jArr, 0, jArr2.length);
-            Object[] objArr3 = this.mValues;
-            System.arraycopy(objArr3, 0, objArr2, 0, objArr3.length);
-            this.mKeys = jArr;
-            this.mValues = objArr2;
+        int i5 = this.size;
+        if (i5 >= this.keys.length) {
+            int idealLongArraySize = ContainerHelpersKt.idealLongArraySize(i5 + 1);
+            long[] copyOf = Arrays.copyOf(this.keys, idealLongArraySize);
+            Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(this, newSize)");
+            this.keys = copyOf;
+            Object[] copyOf2 = Arrays.copyOf(this.values, idealLongArraySize);
+            Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(this, newSize)");
+            this.values = copyOf2;
         }
-        int i4 = this.mSize;
-        if (i4 - i != 0) {
-            long[] jArr3 = this.mKeys;
-            int i5 = i + 1;
-            System.arraycopy(jArr3, i, jArr3, i5, i4 - i);
-            Object[] objArr4 = this.mValues;
-            System.arraycopy(objArr4, i, objArr4, i5, this.mSize - i);
+        int i6 = this.size;
+        if (i6 - i != 0) {
+            long[] jArr2 = this.keys;
+            int i7 = i + 1;
+            ArraysKt.copyInto(jArr2, jArr2, i7, i, i6);
+            Object[] objArr2 = this.values;
+            ArraysKt.copyInto(objArr2, objArr2, i7, i, this.size);
         }
-        this.mKeys[i] = j;
-        this.mValues[i] = obj;
-        this.mSize++;
+        this.keys[i] = j;
+        this.values[i] = obj;
+        this.size++;
     }
 
     public int size() {
-        if (this.mGarbage) {
-            gc();
+        Object obj;
+        if (this.garbage) {
+            int i = this.size;
+            long[] jArr = this.keys;
+            Object[] objArr = this.values;
+            int i2 = 0;
+            for (int i3 = 0; i3 < i; i3++) {
+                Object obj2 = objArr[i3];
+                obj = LongSparseArrayKt.DELETED;
+                if (obj2 != obj) {
+                    if (i3 != i2) {
+                        jArr[i2] = jArr[i3];
+                        objArr[i2] = obj2;
+                        objArr[i3] = null;
+                    }
+                    i2++;
+                }
+            }
+            this.garbage = false;
+            this.size = i2;
         }
-        return this.mSize;
+        return this.size;
     }
 
     public boolean isEmpty() {
@@ -149,33 +204,112 @@ public class LongSparseArray implements Cloneable {
     }
 
     public long keyAt(int i) {
-        if (this.mGarbage) {
-            gc();
+        int i2;
+        Object obj;
+        if (i < 0 || i >= (i2 = this.size)) {
+            throw new IllegalArgumentException(("Expected index to be within 0..size()-1, but was " + i).toString());
         }
-        return this.mKeys[i];
+        if (this.garbage) {
+            long[] jArr = this.keys;
+            Object[] objArr = this.values;
+            int i3 = 0;
+            for (int i4 = 0; i4 < i2; i4++) {
+                Object obj2 = objArr[i4];
+                obj = LongSparseArrayKt.DELETED;
+                if (obj2 != obj) {
+                    if (i4 != i3) {
+                        jArr[i3] = jArr[i4];
+                        objArr[i3] = obj2;
+                        objArr[i4] = null;
+                    }
+                    i3++;
+                }
+            }
+            this.garbage = false;
+            this.size = i3;
+        }
+        return this.keys[i];
     }
 
     public Object valueAt(int i) {
-        if (this.mGarbage) {
-            gc();
+        int i2;
+        Object obj;
+        if (i < 0 || i >= (i2 = this.size)) {
+            throw new IllegalArgumentException(("Expected index to be within 0..size()-1, but was " + i).toString());
         }
-        return this.mValues[i];
+        if (this.garbage) {
+            long[] jArr = this.keys;
+            Object[] objArr = this.values;
+            int i3 = 0;
+            for (int i4 = 0; i4 < i2; i4++) {
+                Object obj2 = objArr[i4];
+                obj = LongSparseArrayKt.DELETED;
+                if (obj2 != obj) {
+                    if (i4 != i3) {
+                        jArr[i3] = jArr[i4];
+                        objArr[i3] = obj2;
+                        objArr[i4] = null;
+                    }
+                    i3++;
+                }
+            }
+            this.garbage = false;
+            this.size = i3;
+        }
+        return this.values[i];
     }
 
     public int indexOfKey(long j) {
-        if (this.mGarbage) {
-            gc();
+        Object obj;
+        if (this.garbage) {
+            int i = this.size;
+            long[] jArr = this.keys;
+            Object[] objArr = this.values;
+            int i2 = 0;
+            for (int i3 = 0; i3 < i; i3++) {
+                Object obj2 = objArr[i3];
+                obj = LongSparseArrayKt.DELETED;
+                if (obj2 != obj) {
+                    if (i3 != i2) {
+                        jArr[i2] = jArr[i3];
+                        objArr[i2] = obj2;
+                        objArr[i3] = null;
+                    }
+                    i2++;
+                }
+            }
+            this.garbage = false;
+            this.size = i2;
         }
-        return ContainerHelpers.binarySearch(this.mKeys, this.mSize, j);
+        return ContainerHelpersKt.binarySearch(this.keys, this.size, j);
     }
 
     public int indexOfValue(Object obj) {
-        if (this.mGarbage) {
-            gc();
+        Object obj2;
+        if (this.garbage) {
+            int i = this.size;
+            long[] jArr = this.keys;
+            Object[] objArr = this.values;
+            int i2 = 0;
+            for (int i3 = 0; i3 < i; i3++) {
+                Object obj3 = objArr[i3];
+                obj2 = LongSparseArrayKt.DELETED;
+                if (obj3 != obj2) {
+                    if (i3 != i2) {
+                        jArr[i2] = jArr[i3];
+                        objArr[i2] = obj3;
+                        objArr[i3] = null;
+                    }
+                    i2++;
+                }
+            }
+            this.garbage = false;
+            this.size = i2;
         }
-        for (int i = 0; i < this.mSize; i++) {
-            if (this.mValues[i] == obj) {
-                return i;
+        int i4 = this.size;
+        for (int i5 = 0; i5 < i4; i5++) {
+            if (this.values[i5] == obj) {
+                return i5;
             }
         }
         return -1;
@@ -186,61 +320,81 @@ public class LongSparseArray implements Cloneable {
     }
 
     public void clear() {
-        int i = this.mSize;
-        Object[] objArr = this.mValues;
+        int i = this.size;
+        Object[] objArr = this.values;
         for (int i2 = 0; i2 < i; i2++) {
             objArr[i2] = null;
         }
-        this.mSize = 0;
-        this.mGarbage = false;
+        this.size = 0;
+        this.garbage = false;
     }
 
     public void append(long j, Object obj) {
-        int i = this.mSize;
-        if (i != 0 && j <= this.mKeys[i - 1]) {
+        Object obj2;
+        int i = this.size;
+        if (i != 0 && j <= this.keys[i - 1]) {
             put(j, obj);
             return;
         }
-        if (this.mGarbage && i >= this.mKeys.length) {
-            gc();
+        if (this.garbage) {
+            long[] jArr = this.keys;
+            if (i >= jArr.length) {
+                Object[] objArr = this.values;
+                int i2 = 0;
+                for (int i3 = 0; i3 < i; i3++) {
+                    Object obj3 = objArr[i3];
+                    obj2 = LongSparseArrayKt.DELETED;
+                    if (obj3 != obj2) {
+                        if (i3 != i2) {
+                            jArr[i2] = jArr[i3];
+                            objArr[i2] = obj3;
+                            objArr[i3] = null;
+                        }
+                        i2++;
+                    }
+                }
+                this.garbage = false;
+                this.size = i2;
+            }
         }
-        int i2 = this.mSize;
-        if (i2 >= this.mKeys.length) {
-            int idealLongArraySize = ContainerHelpers.idealLongArraySize(i2 + 1);
-            long[] jArr = new long[idealLongArraySize];
-            Object[] objArr = new Object[idealLongArraySize];
-            long[] jArr2 = this.mKeys;
-            System.arraycopy(jArr2, 0, jArr, 0, jArr2.length);
-            Object[] objArr2 = this.mValues;
-            System.arraycopy(objArr2, 0, objArr, 0, objArr2.length);
-            this.mKeys = jArr;
-            this.mValues = objArr;
+        int i4 = this.size;
+        if (i4 >= this.keys.length) {
+            int idealLongArraySize = ContainerHelpersKt.idealLongArraySize(i4 + 1);
+            long[] copyOf = Arrays.copyOf(this.keys, idealLongArraySize);
+            Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(this, newSize)");
+            this.keys = copyOf;
+            Object[] copyOf2 = Arrays.copyOf(this.values, idealLongArraySize);
+            Intrinsics.checkNotNullExpressionValue(copyOf2, "copyOf(this, newSize)");
+            this.values = copyOf2;
         }
-        this.mKeys[i2] = j;
-        this.mValues[i2] = obj;
-        this.mSize = i2 + 1;
+        this.keys[i4] = j;
+        this.values[i4] = obj;
+        this.size = i4 + 1;
     }
 
     public String toString() {
         if (size() <= 0) {
             return "{}";
         }
-        StringBuilder sb = new StringBuilder(this.mSize * 28);
+        StringBuilder sb = new StringBuilder(this.size * 28);
         sb.append('{');
-        for (int i = 0; i < this.mSize; i++) {
-            if (i > 0) {
+        int i = this.size;
+        for (int i2 = 0; i2 < i; i2++) {
+            if (i2 > 0) {
                 sb.append(", ");
             }
-            sb.append(keyAt(i));
+            sb.append(keyAt(i2));
             sb.append('=');
-            Object valueAt = valueAt(i);
-            if (valueAt != this) {
+            Object valueAt = valueAt(i2);
+            if (valueAt != sb) {
                 sb.append(valueAt);
             } else {
                 sb.append("(this Map)");
             }
         }
         sb.append('}');
-        return sb.toString();
+        String sb2 = sb.toString();
+        Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder(capacity).…builderAction).toString()");
+        return sb2;
     }
 }

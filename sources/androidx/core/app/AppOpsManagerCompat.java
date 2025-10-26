@@ -52,12 +52,8 @@ public abstract class AppOpsManagerCompat {
             return AppOpsManager.permissionToOp(str);
         }
 
-        static <T> T getSystemService(Context context, Class<T> cls) {
-            return (T) context.getSystemService(cls);
-        }
-
-        static int noteProxyOp(AppOpsManager appOpsManager, String str, String str2) {
-            return appOpsManager.noteProxyOp(str, str2);
+        static Object getSystemService(Context context, Class cls) {
+            return context.getSystemService(cls);
         }
 
         static int noteProxyOpNoThrow(AppOpsManager appOpsManager, String str, String str2) {

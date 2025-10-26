@@ -115,7 +115,7 @@ public class BackDrawable extends Drawable {
         }
         float f4 = this.currentRotation;
         if (this.alwaysClose) {
-            canvas.rotate((f4 * (this.reverseAngle ? -180 : NotificationCenter.dialogFiltersUpdated)) + 135.0f);
+            canvas.rotate((f4 * (this.reverseAngle ? -180 : NotificationCenter.newEmojiSuggestionsAvailable)) + 135.0f);
             f = 1.0f;
         } else {
             canvas.rotate((this.reverseAngle ? -225 : NotificationCenter.httpFileDidFailedLoad) * f4);

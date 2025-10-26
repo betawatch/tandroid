@@ -2075,7 +2075,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             float min = Math.min(AndroidUtilities.dp(176.0f), f3) / 2.0f;
             float f6 = f5 - max;
             float f7 = f5 + max;
-            canvas.saveLayerAlpha(f6, 0.0f, f7, f3, NotificationCenter.didApplyNewTheme, 31);
+            canvas.saveLayerAlpha(f6, 0.0f, f7, f3, NotificationCenter.didReplacedPhotoInMemCache, 31);
             background.backgroundMatrix.reset();
             background.backgroundMatrix.postTranslate(f5, min);
             background.backgroundGradient.setLocalMatrix(background.backgroundMatrix);
@@ -4021,7 +4021,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
         @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didApplyNewTheme, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.didReplacedPhotoInMemCache, 31);
             super.dispatchDraw(canvas);
             canvas.save();
             this.rect.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(8.0f));
@@ -7801,13 +7801,13 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             }
             if (twoStepVerificationActivity != null) {
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$355();
+                twoStepVerificationActivity.lambda$onBackPressed$341();
             }
             BulletinFactory.showError(tL_error);
             return;
         }
         twoStepVerificationActivity.needHideProgress();
-        twoStepVerificationActivity.lambda$onBackPressed$355();
+        twoStepVerificationActivity.lambda$onBackPressed$341();
         if (tLObject instanceof TL_stars.starGiftWithdrawalUrl) {
             Browser.openUrlInSystemBrowser(getContext(), ((TL_stars.starGiftWithdrawalUrl) tLObject).url);
         }

@@ -701,7 +701,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                     if (PaymentFormActivity.this.donePressed) {
                         return;
                     }
-                    PaymentFormActivity.this.lambda$onBackPressed$355();
+                    PaymentFormActivity.this.lambda$onBackPressed$341();
                     return;
                 }
                 if (i6 != 1 || PaymentFormActivity.this.donePressed) {
@@ -2960,7 +2960,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             if (!PaymentFormActivity.WEBVIEW_PROTOCOLS.contains(parse.getScheme())) {
                 try {
                     if (PaymentFormActivity.this.getContext() instanceof Activity) {
-                        ((Activity) PaymentFormActivity.this.getContext()).startActivityForResult(new Intent("android.intent.action.VIEW", parse), NotificationCenter.timezonesUpdated);
+                        ((Activity) PaymentFormActivity.this.getContext()).startActivityForResult(new Intent("android.intent.action.VIEW", parse), NotificationCenter.groupRestrictionsUnlockedByBoosts);
                     }
                 } catch (ActivityNotFoundException unused2) {
                     new AlertDialog.Builder(this.val$context).setTitle(PaymentFormActivity.this.currentBotName).setMessage(LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink)).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
@@ -3412,7 +3412,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                 }
                 try {
                     if (PaymentFormActivity.this.getContext() instanceof Activity) {
-                        ((Activity) PaymentFormActivity.this.getContext()).startActivityForResult(new Intent("android.intent.action.VIEW", parse), NotificationCenter.timezonesUpdated);
+                        ((Activity) PaymentFormActivity.this.getContext()).startActivityForResult(new Intent("android.intent.action.VIEW", parse), NotificationCenter.groupRestrictionsUnlockedByBoosts);
                     }
                 } catch (ActivityNotFoundException unused) {
                     new AlertDialog.Builder(this.val$context).setTitle(PaymentFormActivity.this.currentBotName).setMessage(LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink)).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
@@ -4280,7 +4280,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             PaymentFormActivityDelegate paymentFormActivityDelegate = this.delegate;
             if (paymentFormActivityDelegate != null) {
                 paymentFormActivityDelegate.didSelectNewAddress(this.validateRequest);
-                lambda$onBackPressed$355();
+                lambda$onBackPressed$341();
                 return;
             }
             if (this.paymentForm.invoice.flexible) {
@@ -4378,7 +4378,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             PaymentFormActivityDelegate paymentFormActivityDelegate2 = this.delegate;
             if (paymentFormActivityDelegate2 != null) {
                 paymentFormActivityDelegate2.didSelectNewCard(this.paymentJson, this.cardName, this.saveCardInfo, this.googlePayCredentials, null);
-                lambda$onBackPressed$355();
+                lambda$onBackPressed$341();
                 return;
             } else {
                 presentFragment(new PaymentFormActivity(this.invoiceInput, paymentForm, this.messageObject, this.invoiceSlug, 4, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered), this.isWebView);
@@ -4397,7 +4397,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                 presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 4, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, false), true);
                 return;
             } else {
-                lambda$onBackPressed$355();
+                lambda$onBackPressed$341();
                 return;
             }
         }
@@ -4409,7 +4409,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             if (onCheckoutSuccess(getParentLayout(), getParentActivity()) || isFinishing()) {
                 return;
             }
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
             return;
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PaymentFormActivity$$ExternalSyntheticLambda38
@@ -4430,13 +4430,13 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             if (paymentFormCallback != null) {
                 paymentFormCallback.onInvoiceStatusChanged(invoiceStatus);
             }
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
             return;
         }
         if (this.invoiceStatus != InvoiceStatus.PAID || isFinishing()) {
             return;
         }
-        lambda$onBackPressed$355();
+        lambda$onBackPressed$341();
     }
 
     private boolean onCheckoutSuccess(INavigationLayout iNavigationLayout, Activity activity) {
@@ -4764,7 +4764,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             password.has_password = false;
             password.current_algo = null;
             this.delegate.currentPasswordUpdated(password);
-            lambda$onBackPressed$355();
+            lambda$onBackPressed$341();
             return;
         }
         if (tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
