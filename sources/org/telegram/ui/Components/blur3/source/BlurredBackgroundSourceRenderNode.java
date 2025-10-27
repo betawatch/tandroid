@@ -64,8 +64,12 @@ public class BlurredBackgroundSourceRenderNode implements BlurredBackgroundSourc
         }
     }
 
+    public BlurredBackgroundSource getFallbackSource() {
+        return this.fallbackSource;
+    }
+
     @Override // org.telegram.ui.Components.blur3.source.BlurredBackgroundSource
     public BlurredBackgroundDrawable createDrawable() {
-        return new BlurredBackgroundDrawableRenderNode(this, this.fallbackSource.createDrawable());
+        return new BlurredBackgroundDrawableRenderNode(this);
     }
 }

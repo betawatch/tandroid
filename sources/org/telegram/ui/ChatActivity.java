@@ -381,12 +381,14 @@ import org.telegram.ui.Components.VideoPlayer;
 import org.telegram.ui.Components.ViewHelper;
 import org.telegram.ui.Components.ViewPagerFixed;
 import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
 import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceWrapped;
 import org.telegram.ui.Components.chat.ChatActivityBottomViewsVisibilityController;
 import org.telegram.ui.Components.chat.ChatInputViewsContainer;
 import org.telegram.ui.Components.chat.ChatListViewPaddingsAnimator;
@@ -487,8 +489,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableFactory;
     private BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableFactoryFrosted;
     private BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableFactoryOut;
-    private final BlurredBackgroundSource blurredBackgroundSource;
-    private final BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap;
     private final BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode;
     private final BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNodeWithSaturation;
     private final BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNodeWithSaturationAndFrosted;
@@ -1143,6 +1143,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private boolean waitingForReplyMessageLoad;
     private boolean waitingForSendingMessageLoad;
     int waitingForWebpageId;
+    private final BlurredBackgroundSourceWrapped wallpaperBackgroundSource;
     private WallpaperBitmapProvider wallpaperBitmapProvider;
     private long wallpaperRandomSeed;
     private boolean wasManualScroll;
@@ -2505,8 +2506,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 ChatActivity.this.checkInsets();
             }
         });
-        BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap = new BlurredBackgroundSourceBitmap();
-        this.blurredBackgroundSourceBitmap = blurredBackgroundSourceBitmap;
+        BlurredBackgroundSourceWrapped blurredBackgroundSourceWrapped = new BlurredBackgroundSourceWrapped();
+        this.wallpaperBackgroundSource = blurredBackgroundSourceWrapped;
         this.wallpaperBitmapProvider = new WallpaperBitmapProvider();
         this.actionModeViews = new ArrayList();
         this.pinnedMessageImageView = new BackupImageView[2];
@@ -2866,7 +2867,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         });
         if (Build.VERSION.SDK_INT >= 31 && SharedConfig.chatBlurEnabled()) {
-            float dp = LiteMode.isEnabled(262144) ? AndroidUtilities.dp(2.0f) : AndroidUtilities.dp(24.0f);
+            float dp = LiteMode.isEnabled(262144) ? AndroidUtilities.dp(1.66f) : AndroidUtilities.dp(24.0f);
             double d = dp / 2.595f;
             int ceil = (int) Math.ceil(d);
             int ceil2 = (int) Math.ceil(d);
@@ -2876,17 +2877,15 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             downscaleScrollableNoiseSuppressor.setScale(ceil, ceil2);
             createBlurEffect = RenderEffect.createBlurEffect(2.595f, 2.595f, Shader.TileMode.CLAMP);
             downscaleScrollableNoiseSuppressor.setRenderEffect(createBlurEffect);
-            BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode = new BlurredBackgroundSourceRenderNode(blurredBackgroundSourceBitmap);
-            this.blurredBackgroundSourceRenderNode = blurredBackgroundSourceRenderNode;
-            this.blurredBackgroundSource = blurredBackgroundSourceRenderNode;
-            BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode2 = new BlurredBackgroundSourceRenderNode(blurredBackgroundSourceBitmap);
-            this.blurredBackgroundSourceRenderNodeWithSaturation = blurredBackgroundSourceRenderNode2;
-            this.blurredBackgroundSourceWithSaturation = blurredBackgroundSourceRenderNode2;
+            this.blurredBackgroundSourceRenderNode = new BlurredBackgroundSourceRenderNode(blurredBackgroundSourceWrapped);
+            BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode = new BlurredBackgroundSourceRenderNode(blurredBackgroundSourceWrapped);
+            this.blurredBackgroundSourceRenderNodeWithSaturation = blurredBackgroundSourceRenderNode;
+            this.blurredBackgroundSourceWithSaturation = blurredBackgroundSourceRenderNode;
             if (LiteMode.isEnabled(262144)) {
-                BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode3 = new BlurredBackgroundSourceRenderNode(blurredBackgroundSourceBitmap);
-                this.blurredBackgroundSourceRenderNodeWithSaturationAndFrosted = blurredBackgroundSourceRenderNode3;
-                blurredBackgroundSourceRenderNode3.setBlur(24.0f);
-                this.blurredBackgroundSourceWithSaturationAndFrosted = blurredBackgroundSourceRenderNode3;
+                BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode2 = new BlurredBackgroundSourceRenderNode(blurredBackgroundSourceWrapped);
+                this.blurredBackgroundSourceRenderNodeWithSaturationAndFrosted = blurredBackgroundSourceRenderNode2;
+                blurredBackgroundSourceRenderNode2.setBlur(AndroidUtilities.dp(24.0f));
+                this.blurredBackgroundSourceWithSaturationAndFrosted = blurredBackgroundSourceRenderNode2;
                 return;
             }
             this.blurredBackgroundSourceRenderNodeWithSaturationAndFrosted = null;
@@ -2897,8 +2896,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.scrollableViewNoiseSuppressor = null;
         this.blurredBackgroundSourceRenderNode = null;
         this.blurredBackgroundSourceRenderNodeWithSaturation = null;
-        this.blurredBackgroundSource = blurredBackgroundSourceBitmap;
-        this.blurredBackgroundSourceWithSaturation = blurredBackgroundSourceBitmap;
+        this.blurredBackgroundSourceWithSaturation = blurredBackgroundSourceWrapped;
         this.blurredBackgroundSourceRenderNodeWithSaturationAndFrosted = null;
         this.blurredBackgroundSourceWithSaturationAndFrosted = null;
     }
@@ -4160,52 +4158,52 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:306:0x0974  */
     /* JADX WARN: Removed duplicated region for block: B:314:0x0999  */
     /* JADX WARN: Removed duplicated region for block: B:317:0x09c2  */
-    /* JADX WARN: Removed duplicated region for block: B:327:0x0a49  */
-    /* JADX WARN: Removed duplicated region for block: B:332:0x0a61  */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x0a7e  */
-    /* JADX WARN: Removed duplicated region for block: B:340:0x0ac9  */
-    /* JADX WARN: Removed duplicated region for block: B:344:0x0b00  */
-    /* JADX WARN: Removed duplicated region for block: B:347:0x0b7b  */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x0c74  */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x0d24  */
-    /* JADX WARN: Removed duplicated region for block: B:356:0x0d6a  */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x0d99  */
-    /* JADX WARN: Removed duplicated region for block: B:363:0x0db3  */
-    /* JADX WARN: Removed duplicated region for block: B:366:0x0ddc  */
-    /* JADX WARN: Removed duplicated region for block: B:371:0x0e4d  */
-    /* JADX WARN: Removed duplicated region for block: B:374:0x0edd  */
-    /* JADX WARN: Removed duplicated region for block: B:377:0x0f7b  */
-    /* JADX WARN: Removed duplicated region for block: B:382:0x1043  */
-    /* JADX WARN: Removed duplicated region for block: B:385:0x1064  */
-    /* JADX WARN: Removed duplicated region for block: B:388:0x108d  */
-    /* JADX WARN: Removed duplicated region for block: B:391:0x10bb  */
-    /* JADX WARN: Removed duplicated region for block: B:397:0x10d7  */
-    /* JADX WARN: Removed duplicated region for block: B:400:0x10e0  */
-    /* JADX WARN: Removed duplicated region for block: B:404:0x10f2  */
-    /* JADX WARN: Removed duplicated region for block: B:408:0x1130  */
-    /* JADX WARN: Removed duplicated region for block: B:411:0x1154  */
-    /* JADX WARN: Removed duplicated region for block: B:414:0x12ea  */
-    /* JADX WARN: Removed duplicated region for block: B:424:0x1330  */
-    /* JADX WARN: Removed duplicated region for block: B:437:0x1545  */
-    /* JADX WARN: Removed duplicated region for block: B:458:0x165c  */
-    /* JADX WARN: Removed duplicated region for block: B:461:0x1692  */
-    /* JADX WARN: Removed duplicated region for block: B:469:0x16ff  */
-    /* JADX WARN: Removed duplicated region for block: B:472:0x1719  */
-    /* JADX WARN: Removed duplicated region for block: B:478:0x1779  */
-    /* JADX WARN: Removed duplicated region for block: B:481:0x17cd  */
-    /* JADX WARN: Removed duplicated region for block: B:484:0x1800  */
-    /* JADX WARN: Removed duplicated region for block: B:488:0x183f  */
-    /* JADX WARN: Removed duplicated region for block: B:491:0x18e2  */
-    /* JADX WARN: Removed duplicated region for block: B:492:0x1847  */
-    /* JADX WARN: Removed duplicated region for block: B:495:0x1938  */
-    /* JADX WARN: Removed duplicated region for block: B:498:0x1970  */
-    /* JADX WARN: Removed duplicated region for block: B:501:0x1999  */
-    /* JADX WARN: Removed duplicated region for block: B:513:0x17d8  */
-    /* JADX WARN: Removed duplicated region for block: B:522:0x106f  */
-    /* JADX WARN: Removed duplicated region for block: B:523:0x1045  */
-    /* JADX WARN: Removed duplicated region for block: B:524:0x0edf  */
-    /* JADX WARN: Removed duplicated region for block: B:525:0x0db6  */
-    /* JADX WARN: Removed duplicated region for block: B:526:0x0d9b  */
+    /* JADX WARN: Removed duplicated region for block: B:327:0x0a5c  */
+    /* JADX WARN: Removed duplicated region for block: B:332:0x0a74  */
+    /* JADX WARN: Removed duplicated region for block: B:337:0x0a91  */
+    /* JADX WARN: Removed duplicated region for block: B:340:0x0adc  */
+    /* JADX WARN: Removed duplicated region for block: B:344:0x0b13  */
+    /* JADX WARN: Removed duplicated region for block: B:347:0x0b8e  */
+    /* JADX WARN: Removed duplicated region for block: B:350:0x0c87  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x0d37  */
+    /* JADX WARN: Removed duplicated region for block: B:356:0x0d7d  */
+    /* JADX WARN: Removed duplicated region for block: B:360:0x0dac  */
+    /* JADX WARN: Removed duplicated region for block: B:363:0x0dc6  */
+    /* JADX WARN: Removed duplicated region for block: B:366:0x0def  */
+    /* JADX WARN: Removed duplicated region for block: B:371:0x0e60  */
+    /* JADX WARN: Removed duplicated region for block: B:374:0x0ef0  */
+    /* JADX WARN: Removed duplicated region for block: B:377:0x0f8e  */
+    /* JADX WARN: Removed duplicated region for block: B:382:0x1056  */
+    /* JADX WARN: Removed duplicated region for block: B:385:0x1077  */
+    /* JADX WARN: Removed duplicated region for block: B:388:0x10a0  */
+    /* JADX WARN: Removed duplicated region for block: B:391:0x10ce  */
+    /* JADX WARN: Removed duplicated region for block: B:397:0x10ea  */
+    /* JADX WARN: Removed duplicated region for block: B:400:0x10f3  */
+    /* JADX WARN: Removed duplicated region for block: B:404:0x1105  */
+    /* JADX WARN: Removed duplicated region for block: B:408:0x1143  */
+    /* JADX WARN: Removed duplicated region for block: B:411:0x1167  */
+    /* JADX WARN: Removed duplicated region for block: B:414:0x12fd  */
+    /* JADX WARN: Removed duplicated region for block: B:424:0x1343  */
+    /* JADX WARN: Removed duplicated region for block: B:437:0x1558  */
+    /* JADX WARN: Removed duplicated region for block: B:458:0x166f  */
+    /* JADX WARN: Removed duplicated region for block: B:461:0x16a5  */
+    /* JADX WARN: Removed duplicated region for block: B:469:0x1712  */
+    /* JADX WARN: Removed duplicated region for block: B:472:0x172c  */
+    /* JADX WARN: Removed duplicated region for block: B:478:0x178c  */
+    /* JADX WARN: Removed duplicated region for block: B:481:0x17e0  */
+    /* JADX WARN: Removed duplicated region for block: B:484:0x1813  */
+    /* JADX WARN: Removed duplicated region for block: B:488:0x1852  */
+    /* JADX WARN: Removed duplicated region for block: B:491:0x18f5  */
+    /* JADX WARN: Removed duplicated region for block: B:492:0x185a  */
+    /* JADX WARN: Removed duplicated region for block: B:495:0x194b  */
+    /* JADX WARN: Removed duplicated region for block: B:498:0x1983  */
+    /* JADX WARN: Removed duplicated region for block: B:501:0x19ac  */
+    /* JADX WARN: Removed duplicated region for block: B:513:0x17eb  */
+    /* JADX WARN: Removed duplicated region for block: B:522:0x1082  */
+    /* JADX WARN: Removed duplicated region for block: B:523:0x1058  */
+    /* JADX WARN: Removed duplicated region for block: B:524:0x0ef2  */
+    /* JADX WARN: Removed duplicated region for block: B:525:0x0dc9  */
+    /* JADX WARN: Removed duplicated region for block: B:526:0x0dae  */
     /* JADX WARN: Removed duplicated region for block: B:531:0x091e  */
     /* JADX WARN: Type inference failed for: r13v0 */
     /* JADX WARN: Type inference failed for: r13v1, types: [boolean, int] */
@@ -4835,7 +4833,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     blurredBackgroundDrawableViewFactory2 = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.blurredBackgroundSourceWithSaturationAndFrosted);
                 }
                 this.blurredBackgroundDrawableFactoryFrosted = blurredBackgroundDrawableViewFactory2;
-                this.blurredBackgroundDrawableFactoryOut = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.blurredBackgroundSource);
+                this.blurredBackgroundDrawableFactoryOut = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.wallpaperBackgroundSource);
                 ChatActivityFragmentView chatActivityFragmentView2 = this.contentView;
                 chatActivityFragmentView2.needBlur = false;
                 chatActivityFragmentView2.needBlurBottom = false;
@@ -4843,6 +4841,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 ChatInputViewsContainer chatInputViewsContainer = new ChatInputViewsContainer(context);
                 this.chatInputViewsContainer = chatInputViewsContainer;
                 chatInputViewsContainer.setClipChildren(false);
+                this.chatInputViewsContainer.setBackgroundWithFadeDrawable(new BlurredBackgroundWithFadeDrawable(this.blurredBackgroundDrawableFactoryOut.create(this.chatInputViewsContainer, null)));
                 this.chatInputViewsContainer.setWindowInsetsProvider(this.windowInsetsStateHolder);
                 ChatInputViewsContainer chatInputViewsContainer2 = this.chatInputViewsContainer;
                 chatInputViewsContainer2.setInputIslandBubbleDrawable(this.blurredBackgroundDrawableFactory.create(chatInputViewsContainer2, this.blurredBackgroundColorProvider));
@@ -5621,7 +5620,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                             super.initChatActivity();
                                         }
                                     };
-                                    chatActivityContainer.chatActivity.blurredBackgroundSourceBitmap.setBitmap(ChatActivity.this.blurredBackgroundSourceBitmap.getBitmap());
+                                    chatActivityContainer.chatActivity.wallpaperBackgroundSource.setSource(ChatActivity.this.wallpaperBackgroundSource);
                                     chatActivityContainer.chatActivity.parentThemeDelegate = ChatActivity.this.themeDelegate;
                                     chatActivityContainer.chatActivity.parentChatActivity = ChatActivity.this;
                                     chatActivityContainer.chatActivity.chatActivityDelegate = new ChatActivityDelegate() { // from class: org.telegram.ui.ChatActivity.31.2
@@ -7361,7 +7360,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     super.initChatActivity();
                                 }
                             };
-                            chatActivityContainer.chatActivity.blurredBackgroundSourceBitmap.setBitmap(ChatActivity.this.blurredBackgroundSourceBitmap.getBitmap());
+                            chatActivityContainer.chatActivity.wallpaperBackgroundSource.setSource(ChatActivity.this.wallpaperBackgroundSource);
                             chatActivityContainer.chatActivity.parentThemeDelegate = ChatActivity.this.themeDelegate;
                             chatActivityContainer.chatActivity.parentChatActivity = ChatActivity.this;
                             chatActivityContainer.chatActivity.chatActivityDelegate = new ChatActivityDelegate() { // from class: org.telegram.ui.ChatActivity.31.2
@@ -8119,7 +8118,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (this.blurredBackgroundSourceWithSaturationAndFrosted != null) {
         }
         this.blurredBackgroundDrawableFactoryFrosted = blurredBackgroundDrawableViewFactory22;
-        this.blurredBackgroundDrawableFactoryOut = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.blurredBackgroundSource);
+        this.blurredBackgroundDrawableFactoryOut = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.wallpaperBackgroundSource);
         ChatActivityFragmentView chatActivityFragmentView22 = this.contentView;
         chatActivityFragmentView22.needBlur = false;
         chatActivityFragmentView22.needBlurBottom = false;
@@ -8127,6 +8126,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         ChatInputViewsContainer chatInputViewsContainer4 = new ChatInputViewsContainer(context);
         this.chatInputViewsContainer = chatInputViewsContainer4;
         chatInputViewsContainer4.setClipChildren(false);
+        this.chatInputViewsContainer.setBackgroundWithFadeDrawable(new BlurredBackgroundWithFadeDrawable(this.blurredBackgroundDrawableFactoryOut.create(this.chatInputViewsContainer, null)));
         this.chatInputViewsContainer.setWindowInsetsProvider(this.windowInsetsStateHolder);
         ChatInputViewsContainer chatInputViewsContainer22 = this.chatInputViewsContainer;
         chatInputViewsContainer22.setInputIslandBubbleDrawable(this.blurredBackgroundDrawableFactory.create(chatInputViewsContainer22, this.blurredBackgroundColorProvider));
@@ -17292,12 +17292,14 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         if (i3 >= childCount) {
                             break;
                         }
-                        View childAt2 = this.chatListView.getChildAt(i3);
-                        if (this.chatListView.getChildAdapterPosition(childAt2) == this.chatAdapter.getItemCount() - 1) {
-                            childAt2.getTop();
-                            break;
+                        if (this.chatListView.getChildAdapterPosition(this.chatListView.getChildAt(i3)) == this.chatAdapter.getItemCount() - 1) {
+                            float f7 = this.chatListViewPaddingTop;
+                            if (r2.getTop() > f7) {
+                                this.chatListView.scrollBy(0, (int) (r2.getTop() - f7));
+                            }
+                        } else {
+                            i3++;
                         }
-                        i3++;
                     }
                 }
                 if (!isThreadChat() && !this.wasManualScroll && this.unreadMessageObject != null && this.chatListView != null && ((translateButton = this.translateButton) == null || translateButton.getVisibility() != 0)) {
@@ -17306,6 +17308,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
             this.invalidateChatListViewTopPadding = false;
             Bulletin.updateCurrentPosition();
+            checkUi_chatListViewPaddings();
         }
     }
 
@@ -17315,7 +17318,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
         int dp = (int) (this.blurredViewBottomOffset + AndroidUtilities.dp(16.0f) + this.inputIslandHeightTarget + this.windowInsetsStateHolder.getInsets(WindowInsetsCompat.Type.ime() | WindowInsetsCompat.Type.systemBars()).bottom);
         float dp2 = this.blurredViewBottomOffset + AndroidUtilities.dp(16.0f) + this.inputIslandHeightCurrent + this.windowInsetsStateHolder.getAnimatedMaxBottomInset();
-        int i = this.blurredViewTopOffset;
+        int i = (int) this.chatListViewPaddingTop;
+        TopicsTabsView topicsTabsView = this.topicsTabs;
+        if (topicsTabsView != null) {
+            topicsTabsView.setSideMenuBackgroundMarginTop(Math.max(0, (i - this.blurredViewTopOffset) - AndroidUtilities.dp(5.0f)));
+        }
         if (this.chatListView.getPaddingTop() == i) {
             this.chatListView.getPaddingBottom();
         }
@@ -17364,19 +17371,14 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         ChatActivityMemberRequestsDelegate chatActivityMemberRequestsDelegate = this.pendingRequestsDelegate;
         View view = chatActivityMemberRequestsDelegate != null ? chatActivityMemberRequestsDelegate.getView() : null;
         if (view != null) {
-            max3 += this.pendingRequestsDelegate.getViewEnterOffset();
-            view.setTranslationY(max3);
+            view.setTranslationY(max3 + this.pendingRequestsDelegate.getViewEnterOffset());
         }
-        float dp = (this.topicsTabs != null ? (AndroidUtilities.dp(48.0f) * (1.0f - this.topicsTabs.sidemenuT)) + 0.0f : 0.0f) + (this.actionBarSearchTags != null ? r8.getCurrentHeight() : 0.0f) + (this.hashtagSearchTabs != null ? r8.getCurrentHeight() : 0.0f);
+        float dp = (this.topicsTabs != null ? (AndroidUtilities.dp(48.0f) * (1.0f - this.topicsTabs.sidemenuT)) + 0.0f : 0.0f) + (this.actionBarSearchTags != null ? r5.getCurrentHeight() : 0.0f) + (this.hashtagSearchTabs != null ? r5.getCurrentHeight() : 0.0f);
         if (this.fragmentContextView != null) {
             FragmentContextView fragmentContextView = this.fragmentLocationContextView;
             float dp2 = (fragmentContextView == null || fragmentContextView.getVisibility() != 0) ? 0.0f : AndroidUtilities.dp(36.0f) + 0.0f;
             FragmentContextView fragmentContextView2 = this.fragmentContextView;
             fragmentContextView2.setTranslationY(this.contentPanTranslation + dp + dp2 + fragmentContextView2.getTopPadding());
-        }
-        TopicsTabsView topicsTabsView = this.topicsTabs;
-        if (topicsTabsView != null) {
-            topicsTabsView.setSideMenuBackgroundMarginTop(Math.max(0.0f, max3));
         }
         if (this.fragmentLocationContextView != null) {
             FragmentContextView fragmentContextView3 = this.fragmentContextView;
@@ -23857,7 +23859,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         @Override // org.telegram.ui.Components.SizeNotifierFrameLayout
         public void onUpdateBackgroundDrawable(Drawable drawable) {
             super.onUpdateBackgroundDrawable(drawable);
-            ChatActivity.this.blurredBackgroundSourceBitmap.setBitmap(ChatActivity.this.wallpaperBitmapProvider.bitmapFromDrawable(drawable));
+            ChatActivity.this.wallpaperBackgroundSource.setSource(ChatActivity.this.wallpaperBitmapProvider.updateSourceFromBackgroundViewDrawable(drawable));
         }
 
         @Override // android.view.ViewGroup
@@ -24383,7 +24385,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode = i9 == 0 ? ChatActivity.this.blurredBackgroundSourceRenderNode : i9 == 1 ? ChatActivity.this.blurredBackgroundSourceRenderNodeWithSaturation : ChatActivity.this.blurredBackgroundSourceRenderNodeWithSaturationAndFrosted;
                     if (blurredBackgroundSourceRenderNode != null && !blurredBackgroundSourceRenderNode.inRecording()) {
                         Canvas beginRecording = blurredBackgroundSourceRenderNode.beginRecording(getMeasuredWidth(), getMeasuredHeight());
-                        ChatActivity.this.blurredBackgroundSourceBitmap.draw(beginRecording, 0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                        ChatActivity.this.wallpaperBackgroundSource.draw(beginRecording, 0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                         beginRecording.translate(ChatActivity.this.chatListView.getX(), ChatActivity.this.chatListView.getY());
                         DownscaleScrollableNoiseSuppressor downscaleScrollableNoiseSuppressor = ChatActivity.this.scrollableViewNoiseSuppressor;
                         if (i9 == 0) {
@@ -25013,11 +25015,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:101:0x0349  */
-        /* JADX WARN: Removed duplicated region for block: B:106:0x0367  */
-        /* JADX WARN: Removed duplicated region for block: B:116:0x0390  */
-        /* JADX WARN: Removed duplicated region for block: B:235:0x06a6  */
-        /* JADX WARN: Removed duplicated region for block: B:238:0x06ee  */
+        /* JADX WARN: Removed duplicated region for block: B:104:0x035d  */
+        /* JADX WARN: Removed duplicated region for block: B:109:0x037b  */
+        /* JADX WARN: Removed duplicated region for block: B:119:0x03a4  */
+        /* JADX WARN: Removed duplicated region for block: B:238:0x06ba  */
+        /* JADX WARN: Removed duplicated region for block: B:241:0x0702  */
         @Override // android.widget.FrameLayout, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -25032,7 +25034,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             TLRPC.User user;
             int size = View.MeasureSpec.getSize(i);
             int size2 = View.MeasureSpec.getSize(i2);
-            ChatActivity.this.blurredBackgroundSourceBitmap.setParentSize(size, size2, ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight);
+            if (ChatActivity.this.wallpaperBackgroundSource.getSource() instanceof BlurredBackgroundSourceBitmap) {
+                ((BlurredBackgroundSourceBitmap) ChatActivity.this.wallpaperBackgroundSource.getSource()).setParentSize(size, size2, ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight);
+            }
             int i6 = 8;
             if (this.lastWidth != size) {
                 ChatActivity.this.globalIgnoreLayout = false;
@@ -60800,9 +60804,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
         if (this.themeDelegate.backgroundDrawable == null || this.contentView.getBackgroundImage() == null) {
             if (this.contentView.getBackgroundImage() == null || AndroidUtilities.isTablet()) {
-                Drawable cachedWallpaper = Theme.getCachedWallpaper();
-                this.contentView.setBackgroundImage(cachedWallpaper, Theme.isWallpaperMotion());
-                this.blurredBackgroundSourceBitmap.setBitmap(this.wallpaperBitmapProvider.bitmapFromDrawable(cachedWallpaper));
+                this.contentView.setBackgroundImage(Theme.getCachedWallpaper(), Theme.isWallpaperMotion());
             }
         }
     }
@@ -63712,7 +63714,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     private void checkUi_BlurHeight() {
-        float lerp = AndroidUtilities.lerp(this.windowInsetsStateHolder.getAnimatedMaxBottomInset() + AndroidUtilities.dp(9.0f) + this.chatInputViewsContainer.getInputBubbleHeight(), this.chatInputViewsContainer.getMeasuredHeight() + AndroidUtilities.dp(36.0f), this.animatorRoundMessageCameraVisibility.getFloatValue());
+        float lerp = AndroidUtilities.lerp(this.windowInsetsStateHolder.getAnimatedMaxBottomInset() + AndroidUtilities.dp(9.0f) + this.chatInputViewsContainer.getInputBubbleHeight() + AndroidUtilities.dp(7.0f), this.chatInputViewsContainer.getMeasuredHeight() + AndroidUtilities.dp(36.0f), this.animatorRoundMessageCameraVisibility.getFloatValue());
         this.chatInputViewsContainer.setBlurredBottomHeight(lerp);
         int i = (int) lerp;
         int clamp = MathUtils.clamp((this.contentView.getMeasuredHeight() - i) + AndroidUtilities.dp(36.0f), 0, this.contentView.getMeasuredHeight());
