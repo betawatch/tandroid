@@ -3935,7 +3935,7 @@ public class StarsController {
             TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(j3);
             if (chatFull != null) {
                 chatFull.stargifts_count++;
-                chatFull.flags2 |= TLObject.FLAG_18;
+                chatFull.flags2 |= 262144;
                 MessagesController.getInstance(this.currentAccount).putChatFull(chatFull);
             }
             if (lastFragment instanceof ProfileActivity) {

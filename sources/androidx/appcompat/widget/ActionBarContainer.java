@@ -187,7 +187,7 @@ public class ActionBarContainer extends FrameLayout {
 
     public void setTransitioning(boolean z) {
         this.mIsTransitioning = z;
-        setDescendantFocusability(z ? 393216 : TLObject.FLAG_18);
+        setDescendantFocusability(z ? 393216 : 262144);
     }
 
     @Override // android.view.ViewGroup

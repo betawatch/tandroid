@@ -9950,7 +9950,7 @@ public class TLRPC {
             this.flags = i11;
             int i12 = this.pin_messages ? i11 | 131072 : i11 & (-131073);
             this.flags = i12;
-            int i13 = this.manage_topics ? i12 | TLObject.FLAG_18 : i12 & (-262145);
+            int i13 = this.manage_topics ? i12 | 262144 : i12 & (-262145);
             this.flags = i13;
             int i14 = z ? 524288 | i13 : (-524289) & i13;
             this.flags = i14;
@@ -12022,7 +12022,7 @@ public class TLRPC {
             this.conference = (readInt32 & 16384) != 0;
             this.creator = (32768 & readInt32) != 0;
             this.messages_enabled = BitwiseUtils.hasFlag(readInt32, 131072);
-            this.can_change_messages_enabled = BitwiseUtils.hasFlag(this.flags, TLObject.FLAG_18);
+            this.can_change_messages_enabled = BitwiseUtils.hasFlag(this.flags, 262144);
             this.min = BitwiseUtils.hasFlag(this.flags, TLObject.FLAG_19);
             this.id = inputSerializedData.readInt64(z);
             this.access_hash = inputSerializedData.readInt64(z);
@@ -12077,7 +12077,7 @@ public class TLRPC {
             this.flags = i10;
             int flag = BitwiseUtils.setFlag(i10, 131072, this.messages_enabled);
             this.flags = flag;
-            int flag2 = BitwiseUtils.setFlag(flag, TLObject.FLAG_18, this.can_change_messages_enabled);
+            int flag2 = BitwiseUtils.setFlag(flag, 262144, this.can_change_messages_enabled);
             this.flags = flag2;
             int flag3 = BitwiseUtils.setFlag(flag2, TLObject.FLAG_19, this.min);
             this.flags = flag3;
@@ -12129,7 +12129,7 @@ public class TLRPC {
             this.conference = (readInt32 & 16384) != 0;
             this.creator = (32768 & readInt32) != 0;
             this.messages_enabled = BitwiseUtils.hasFlag(readInt32, 131072);
-            this.can_change_messages_enabled = BitwiseUtils.hasFlag(this.flags, TLObject.FLAG_18);
+            this.can_change_messages_enabled = BitwiseUtils.hasFlag(this.flags, 262144);
             this.min = BitwiseUtils.hasFlag(this.flags, TLObject.FLAG_19);
             this.id = inputSerializedData.readInt64(z);
             this.access_hash = inputSerializedData.readInt64(z);
@@ -12181,7 +12181,7 @@ public class TLRPC {
             this.flags = i10;
             int flag = BitwiseUtils.setFlag(i10, 131072, this.messages_enabled);
             this.flags = flag;
-            int flag2 = BitwiseUtils.setFlag(flag, TLObject.FLAG_18, this.can_change_messages_enabled);
+            int flag2 = BitwiseUtils.setFlag(flag, 262144, this.can_change_messages_enabled);
             this.flags = flag2;
             int flag3 = BitwiseUtils.setFlag(flag2, TLObject.FLAG_19, this.min);
             this.flags = flag3;
@@ -16554,7 +16554,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.name_change_date = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.photo_change_date = inputSerializedData.readInt32(z);
             }
         }
@@ -16612,7 +16612,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.name_change_date);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.photo_change_date);
             }
         }
@@ -21643,7 +21643,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             this.pts = inputSerializedData.readInt32(z);
@@ -21718,7 +21718,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             outputSerializedData.writeInt32(this.pts);
@@ -21865,7 +21865,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -21956,7 +21956,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -22109,7 +22109,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -22194,7 +22194,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -22437,7 +22437,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -22534,7 +22534,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -22807,7 +22807,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -22913,7 +22913,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -23015,7 +23015,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -23118,7 +23118,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -23217,7 +23217,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -23314,7 +23314,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -23385,7 +23385,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.recent_requesters = Vector.deserializeLong(inputSerializedData, z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.available_reactions = ChatReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 1048576) != 0) {
@@ -23440,7 +23440,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 Vector.serializeLong(outputSerializedData, this.recent_requesters);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.available_reactions.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 1048576) != 0) {
@@ -23495,7 +23495,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.recent_requesters = Vector.deserializeLong(inputSerializedData, z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.available_reactions = ChatReactions.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
         }
@@ -23545,7 +23545,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 Vector.serializeLong(outputSerializedData, this.recent_requesters);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.available_reactions.serializeToStream(outputSerializedData);
             }
         }
@@ -23597,7 +23597,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.recent_requesters = Vector.deserializeLong(inputSerializedData, z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.available_reactions_legacy = Vector.deserializeString(inputSerializedData, z);
             }
         }
@@ -23647,7 +23647,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 Vector.serializeLong(outputSerializedData, this.recent_requesters);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serializeString(outputSerializedData, this.available_reactions_legacy);
             }
         }
@@ -23736,7 +23736,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -23791,7 +23791,7 @@ public class TLRPC {
             if ((this.flags2 & 131072) != 0) {
                 this.bot_verification = TL_bots.botVerification.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags2 & TLObject.FLAG_18) != 0) {
+            if ((this.flags2 & 262144) != 0) {
                 this.stargifts_count = inputSerializedData.readInt32(z);
             }
             if (TLObject.hasFlag(this.flags2, TLObject.FLAG_21)) {
@@ -23904,7 +23904,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -23959,7 +23959,7 @@ public class TLRPC {
             if ((this.flags2 & 131072) != 0) {
                 this.bot_verification.serializeToStream(outputSerializedData);
             }
-            if ((this.flags2 & TLObject.FLAG_18) != 0) {
+            if ((this.flags2 & 262144) != 0) {
                 outputSerializedData.writeInt32(this.stargifts_count);
             }
             if (TLObject.hasFlag(this.flags2, TLObject.FLAG_21)) {
@@ -24054,7 +24054,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -24109,7 +24109,7 @@ public class TLRPC {
             if ((this.flags2 & 131072) != 0) {
                 this.bot_verification = TL_bots.botVerification.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags2 & TLObject.FLAG_18) != 0) {
+            if ((this.flags2 & 262144) != 0) {
                 this.stargifts_count = inputSerializedData.readInt32(z);
             }
             if (TLObject.hasFlag(this.flags2, TLObject.FLAG_21)) {
@@ -24217,7 +24217,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -24272,7 +24272,7 @@ public class TLRPC {
             if ((this.flags2 & 131072) != 0) {
                 this.bot_verification.serializeToStream(outputSerializedData);
             }
-            if ((this.flags2 & TLObject.FLAG_18) != 0) {
+            if ((this.flags2 & 262144) != 0) {
                 outputSerializedData.writeInt32(this.stargifts_count);
             }
             if (TLObject.hasFlag(this.flags2, TLObject.FLAG_21)) {
@@ -24364,7 +24364,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -24419,7 +24419,7 @@ public class TLRPC {
             if ((this.flags2 & 131072) != 0) {
                 this.bot_verification = TL_bots.botVerification.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags2 & TLObject.FLAG_18) != 0) {
+            if ((this.flags2 & 262144) != 0) {
                 this.stargifts_count = inputSerializedData.readInt32(z);
             }
         }
@@ -24524,7 +24524,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -24579,7 +24579,7 @@ public class TLRPC {
             if ((this.flags2 & 131072) != 0) {
                 this.bot_verification.serializeToStream(outputSerializedData);
             }
-            if ((this.flags2 & TLObject.FLAG_18) != 0) {
+            if ((this.flags2 & 262144) != 0) {
                 outputSerializedData.writeInt32(this.stargifts_count);
             }
         }
@@ -24666,7 +24666,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -24819,7 +24819,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -24958,7 +24958,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -25108,7 +25108,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -25242,7 +25242,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -25385,7 +25385,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -25513,7 +25513,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -25650,7 +25650,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -25778,7 +25778,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -25906,7 +25906,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -26025,7 +26025,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -26150,7 +26150,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -26264,7 +26264,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -26382,7 +26382,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -26490,7 +26490,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -26602,7 +26602,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -26707,7 +26707,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -26816,7 +26816,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -26921,7 +26921,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -27015,7 +27015,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -27106,7 +27106,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -27194,7 +27194,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -27276,7 +27276,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.slowmode_seconds = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.slowmode_next_send_date = inputSerializedData.readInt32(z);
             }
             if ((this.flags & 4096) != 0) {
@@ -27356,7 +27356,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_seconds);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt32(this.slowmode_next_send_date);
             }
             if ((this.flags & 4096) != 0) {
@@ -33067,7 +33067,7 @@ public class TLRPC {
             this.bot_chat_history = (readInt32 & 32768) != 0;
             this.bot_nochats = (readInt32 & 65536) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -33112,7 +33112,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -33173,7 +33173,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -33236,7 +33236,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -33293,7 +33293,7 @@ public class TLRPC {
             this.bot_chat_history = (readInt32 & 32768) != 0;
             this.bot_nochats = (readInt32 & 65536) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -33338,7 +33338,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -33402,7 +33402,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -33465,7 +33465,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -33523,7 +33523,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -33567,7 +33567,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -33628,7 +33628,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -33689,7 +33689,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -33744,7 +33744,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -33788,7 +33788,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -33849,7 +33849,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -33910,7 +33910,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -33965,7 +33965,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -34009,7 +34009,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -34070,7 +34070,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -34131,7 +34131,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -34186,7 +34186,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -34230,7 +34230,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -34288,7 +34288,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -34349,7 +34349,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -34401,7 +34401,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -34444,7 +34444,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -34502,7 +34502,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -34561,7 +34561,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -34613,7 +34613,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -34656,7 +34656,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -34711,7 +34711,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -34770,7 +34770,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -34819,7 +34819,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -34860,7 +34860,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -34920,7 +34920,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -34975,7 +34975,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35018,7 +35018,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -35059,7 +35059,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35108,7 +35108,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -35163,7 +35163,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35200,7 +35200,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -35240,7 +35240,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35279,7 +35279,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -35331,7 +35331,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35364,7 +35364,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -35399,7 +35399,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35432,7 +35432,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -35478,7 +35478,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35508,7 +35508,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -35542,7 +35542,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35572,7 +35572,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -35616,7 +35616,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35643,7 +35643,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -35675,7 +35675,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.restriction_reason = Vector.deserialize(inputSerializedData, new TLRPC$TL_channel$$ExternalSyntheticLambda0(), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35705,7 +35705,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -35745,7 +35745,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 Vector.serialize(outputSerializedData, this.restriction_reason);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35772,7 +35772,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (2097152 & readInt32) != 0;
             this.support = (8388608 & readInt32) != 0;
@@ -35802,7 +35802,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 inputSerializedData.readString(z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -35832,7 +35832,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -35868,7 +35868,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeString("");
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -36112,7 +36112,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.restricted = (readInt32 & TLObject.FLAG_18) != 0;
+            this.restricted = (readInt32 & 262144) != 0;
             this.min = (1048576 & readInt32) != 0;
             this.bot_inline_geo = (readInt32 & TLObject.FLAG_21) != 0;
             this.id = inputSerializedData.readInt32(z);
@@ -36140,7 +36140,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.bot_info_version = inputSerializedData.readInt32(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 inputSerializedData.readString(z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -36167,7 +36167,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.restricted ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.restricted ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             int i10 = this.min ? i9 | 1048576 : i9 & (-1048577);
             this.flags = i10;
@@ -36199,7 +36199,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 outputSerializedData.writeInt32(this.bot_info_version);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeString("");
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -36223,7 +36223,7 @@ public class TLRPC {
             this.bot_chat_history = (32768 & readInt32) != 0;
             this.bot_nochats = (65536 & readInt32) != 0;
             this.verified = (131072 & readInt32) != 0;
-            this.explicit_content = (readInt32 & TLObject.FLAG_18) != 0;
+            this.explicit_content = (readInt32 & 262144) != 0;
             this.id = inputSerializedData.readInt32(z);
             if ((this.flags & 1) != 0) {
                 this.access_hash = inputSerializedData.readInt64(z);
@@ -36270,7 +36270,7 @@ public class TLRPC {
             this.flags = i7;
             int i8 = this.verified ? i7 | 131072 : i7 & (-131073);
             this.flags = i8;
-            int i9 = this.explicit_content ? i8 | TLObject.FLAG_18 : i8 & (-262145);
+            int i9 = this.explicit_content ? i8 | 262144 : i8 & (-262145);
             this.flags = i9;
             outputSerializedData.writeInt32(i9);
             outputSerializedData.writeInt32((int) this.id);
@@ -43434,7 +43434,7 @@ public class TLRPC {
             this.invites = (32768 & readInt32) != 0;
             this.send = (65536 & readInt32) != 0;
             this.forums = (131072 & readInt32) != 0;
-            this.sub_extend = (readInt32 & TLObject.FLAG_18) != 0;
+            this.sub_extend = (readInt32 & 262144) != 0;
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -43476,7 +43476,7 @@ public class TLRPC {
             this.flags = i17;
             int i18 = this.forums ? i17 | 131072 : i17 & (-131073);
             this.flags = i18;
-            int i19 = this.sub_extend ? i18 | TLObject.FLAG_18 : i18 & (-262145);
+            int i19 = this.sub_extend ? i18 | 262144 : i18 & (-262145);
             this.flags = i19;
             outputSerializedData.writeInt32(i19);
         }
@@ -55235,7 +55235,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
         }
@@ -55270,7 +55270,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
         }
@@ -55301,7 +55301,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
         }
@@ -55334,7 +55334,7 @@ public class TLRPC {
             if ((this.flags & 16384) != 0) {
                 this.admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
         }
@@ -55573,7 +55573,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -55666,7 +55666,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -55739,7 +55739,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -55835,7 +55835,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -55915,7 +55915,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -55948,7 +55948,7 @@ public class TLRPC {
             if ((this.flags2 & 16384) != 0) {
                 this.send_paid_messages_stars = inputSerializedData.readInt64(z);
             }
-            if ((this.flags2 & TLObject.FLAG_18) != 0) {
+            if ((this.flags2 & 262144) != 0) {
                 this.linked_monoforum_id = inputSerializedData.readInt64(z);
             }
         }
@@ -56033,7 +56033,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -56066,7 +56066,7 @@ public class TLRPC {
             if ((this.flags2 & 16384) != 0) {
                 outputSerializedData.writeInt64(this.send_paid_messages_stars);
             }
-            if ((this.flags2 & TLObject.FLAG_18) != 0) {
+            if ((this.flags2 & 262144) != 0) {
                 outputSerializedData.writeInt64(this.linked_monoforum_id);
             }
         }
@@ -56128,7 +56128,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -56164,7 +56164,7 @@ public class TLRPC {
             if ((this.flags2 & 16384) != 0) {
                 this.send_paid_messages_stars = inputSerializedData.readInt64(z);
             }
-            if ((this.flags2 & TLObject.FLAG_18) != 0) {
+            if ((this.flags2 & 262144) != 0) {
                 this.linked_monoforum_id = inputSerializedData.readInt64(z);
             }
         }
@@ -56249,7 +56249,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -56283,7 +56283,7 @@ public class TLRPC {
             if ((this.flags2 & 16384) != 0) {
                 outputSerializedData.writeInt64(this.send_paid_messages_stars);
             }
-            if ((this.flags2 & TLObject.FLAG_18) != 0) {
+            if ((this.flags2 & 262144) != 0) {
                 outputSerializedData.writeInt64(this.linked_monoforum_id);
             }
         }
@@ -56342,7 +56342,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -56454,7 +56454,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -56543,7 +56543,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -56650,7 +56650,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -56736,7 +56736,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -56843,7 +56843,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -56929,7 +56929,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -57033,7 +57033,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -57115,7 +57115,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -57214,7 +57214,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -57293,7 +57293,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -57383,7 +57383,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -57453,7 +57453,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -57551,7 +57551,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -57626,7 +57626,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -57713,7 +57713,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -57783,7 +57783,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -57862,7 +57862,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -57920,7 +57920,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -57991,7 +57991,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -58236,7 +58236,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -58300,7 +58300,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -58348,7 +58348,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights = TL_chatBannedRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 131072) != 0) {
@@ -58404,7 +58404,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 this.banned_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.default_banned_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 131072) != 0) {
@@ -61614,7 +61614,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 16777216) != 0) {
@@ -61663,7 +61663,7 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags2, 131072)) {
                 this.stars_rating = TL_stars.Tl_starsRating.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_18)) {
+            if (TLObject.hasFlag(this.flags2, 262144)) {
                 this.stars_my_pending_rating = TL_stars.Tl_starsRating.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.stars_my_pending_rating_date = inputSerializedData.readInt32(z);
             }
@@ -61720,7 +61720,7 @@ public class TLRPC {
             this.flags2 = i17;
             int flag2 = TLObject.setFlag(i17, 131072, this.stars_rating != null);
             this.flags2 = flag2;
-            int flag3 = TLObject.setFlag(flag2, TLObject.FLAG_18, this.stars_my_pending_rating != null);
+            int flag3 = TLObject.setFlag(flag2, 262144, this.stars_my_pending_rating != null);
             this.flags2 = flag3;
             int flag4 = TLObject.setFlag(flag3, 1048576, this.main_tab != null);
             this.flags2 = flag4;
@@ -61762,7 +61762,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 16777216) != 0) {
@@ -61811,7 +61811,7 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags2, 131072)) {
                 this.stars_rating.serializeToStream(outputSerializedData);
             }
-            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_18)) {
+            if (TLObject.hasFlag(this.flags2, 262144)) {
                 this.stars_my_pending_rating.serializeToStream(outputSerializedData);
                 outputSerializedData.writeInt32(this.stars_my_pending_rating_date);
             }
@@ -61890,7 +61890,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 16777216) != 0) {
@@ -61939,7 +61939,7 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags2, 131072)) {
                 this.stars_rating = TL_stars.Tl_starsRating.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_18)) {
+            if (TLObject.hasFlag(this.flags2, 262144)) {
                 this.stars_my_pending_rating = TL_stars.Tl_starsRating.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.stars_my_pending_rating_date = inputSerializedData.readInt32(z);
             }
@@ -61993,7 +61993,7 @@ public class TLRPC {
             this.flags2 = i17;
             int flag2 = TLObject.setFlag(i17, 131072, this.stars_rating != null);
             this.flags2 = flag2;
-            int flag3 = TLObject.setFlag(flag2, TLObject.FLAG_18, this.stars_my_pending_rating != null);
+            int flag3 = TLObject.setFlag(flag2, 262144, this.stars_my_pending_rating != null);
             this.flags2 = flag3;
             int flag4 = TLObject.setFlag(flag3, 1048576, this.main_tab != null);
             this.flags2 = flag4;
@@ -62035,7 +62035,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 16777216) != 0) {
@@ -62084,7 +62084,7 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags2, 131072)) {
                 this.stars_rating.serializeToStream(outputSerializedData);
             }
-            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_18)) {
+            if (TLObject.hasFlag(this.flags2, 262144)) {
                 this.stars_my_pending_rating.serializeToStream(outputSerializedData);
                 outputSerializedData.writeInt32(this.stars_my_pending_rating_date);
             }
@@ -62160,7 +62160,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 16777216) != 0) {
@@ -62209,7 +62209,7 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags2, 131072)) {
                 this.stars_rating = TL_stars.Tl_starsRating.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_18)) {
+            if (TLObject.hasFlag(this.flags2, 262144)) {
                 this.stars_my_pending_rating = TL_stars.Tl_starsRating.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.stars_my_pending_rating_date = inputSerializedData.readInt32(z);
             }
@@ -62263,7 +62263,7 @@ public class TLRPC {
             this.flags2 = i16;
             int flag2 = TLObject.setFlag(i16, 131072, this.stars_rating != null);
             this.flags2 = flag2;
-            int flag3 = TLObject.setFlag(flag2, TLObject.FLAG_18, this.stars_my_pending_rating != null);
+            int flag3 = TLObject.setFlag(flag2, 262144, this.stars_my_pending_rating != null);
             this.flags2 = flag3;
             int flag4 = TLObject.setFlag(flag3, 1048576, this.main_tab != null);
             this.flags2 = flag4;
@@ -62305,7 +62305,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 16777216) != 0) {
@@ -62354,7 +62354,7 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags2, 131072)) {
                 this.stars_rating.serializeToStream(outputSerializedData);
             }
-            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_18)) {
+            if (TLObject.hasFlag(this.flags2, 262144)) {
                 this.stars_my_pending_rating.serializeToStream(outputSerializedData);
                 outputSerializedData.writeInt32(this.stars_my_pending_rating_date);
             }
@@ -62430,7 +62430,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 16777216) != 0) {
@@ -62479,7 +62479,7 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags2, 131072)) {
                 this.stars_rating = TL_stars.Tl_starsRating.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_18)) {
+            if (TLObject.hasFlag(this.flags2, 262144)) {
                 this.stars_my_pending_rating = TL_stars.Tl_starsRating.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
                 this.stars_my_pending_rating_date = inputSerializedData.readInt32(z);
             }
@@ -62527,7 +62527,7 @@ public class TLRPC {
             this.flags2 = i16;
             int flag2 = TLObject.setFlag(i16, 131072, this.stars_rating != null);
             this.flags2 = flag2;
-            int flag3 = TLObject.setFlag(flag2, TLObject.FLAG_18, this.stars_my_pending_rating != null);
+            int flag3 = TLObject.setFlag(flag2, 262144, this.stars_my_pending_rating != null);
             this.flags2 = flag3;
             outputSerializedData.writeInt32(flag3);
             outputSerializedData.writeInt64(this.id);
@@ -62567,7 +62567,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 16777216) != 0) {
@@ -62616,7 +62616,7 @@ public class TLRPC {
             if (TLObject.hasFlag(this.flags2, 131072)) {
                 this.stars_rating.serializeToStream(outputSerializedData);
             }
-            if (TLObject.hasFlag(this.flags2, TLObject.FLAG_18)) {
+            if (TLObject.hasFlag(this.flags2, 262144)) {
                 this.stars_my_pending_rating.serializeToStream(outputSerializedData);
                 outputSerializedData.writeInt32(this.stars_my_pending_rating_date);
             }
@@ -62686,7 +62686,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 16777216) != 0) {
@@ -62817,7 +62817,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 16777216) != 0) {
@@ -62932,7 +62932,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 16777216) != 0) {
@@ -63058,7 +63058,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 16777216) != 0) {
@@ -63169,7 +63169,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & 16777216) != 0) {
@@ -63290,7 +63290,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & 16777216) != 0) {
@@ -63398,7 +63398,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -63522,7 +63522,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -63633,7 +63633,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -63754,7 +63754,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -63862,7 +63862,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -63980,7 +63980,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -64085,7 +64085,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -64200,7 +64200,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -64300,7 +64300,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -64408,7 +64408,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -64503,7 +64503,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -64605,7 +64605,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -64696,7 +64696,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -64795,7 +64795,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -64883,7 +64883,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -64979,7 +64979,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65063,7 +65063,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65146,7 +65146,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65215,7 +65215,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65292,7 +65292,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65359,7 +65359,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65429,7 +65429,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65493,7 +65493,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65560,7 +65560,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65617,7 +65617,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65679,7 +65679,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65733,7 +65733,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65792,7 +65792,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
             if ((this.flags & TLObject.FLAG_19) != 0) {
@@ -65845,7 +65845,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights = TL_chatAdminRights.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
         }
@@ -65899,7 +65899,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.bot_group_admin_rights.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.bot_broadcast_admin_rights.serializeToStream(outputSerializedData);
             }
         }
@@ -69917,7 +69917,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.quick_reply_shortcut.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt64(this.effect);
             }
             if ((this.flags & TLObject.FLAG_21) != 0) {
@@ -69976,7 +69976,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.quick_reply_shortcut.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt64(this.effect);
             }
         }
@@ -70054,7 +70054,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.quick_reply_shortcut.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt64(this.effect);
             }
             if ((this.flags & TLObject.FLAG_21) != 0) {
@@ -70112,7 +70112,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.quick_reply_shortcut.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt64(this.effect);
             }
         }
@@ -71586,7 +71586,7 @@ public class TLRPC {
             if ((this.flags & 32768) != 0) {
                 outputSerializedData.writeInt32(this.schedule_date);
             }
-            if (TLObject.hasFlag(this.flags, TLObject.FLAG_18)) {
+            if (TLObject.hasFlag(this.flags, 262144)) {
                 outputSerializedData.writeInt32(this.schedule_repeat_period);
             }
             if ((this.flags & 131072) != 0) {
@@ -72302,7 +72302,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.quick_reply_shortcut.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt64(this.effect);
             }
             if ((this.flags & TLObject.FLAG_21) != 0) {
@@ -72363,7 +72363,7 @@ public class TLRPC {
             if ((this.flags & 131072) != 0) {
                 this.quick_reply_shortcut.serializeToStream(outputSerializedData);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt64(this.effect);
             }
         }
@@ -77426,7 +77426,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -77661,7 +77661,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -77888,7 +77888,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -78103,7 +78103,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -78312,7 +78312,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -78514,7 +78514,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -78708,7 +78708,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -78893,7 +78893,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -79069,7 +79069,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -79239,7 +79239,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -79403,7 +79403,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -79560,7 +79560,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -79711,7 +79711,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -79857,7 +79857,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -80001,7 +80001,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -80137,7 +80137,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -80273,7 +80273,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -80412,7 +80412,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;
@@ -80544,7 +80544,7 @@ public class TLRPC {
             this.flags = i4;
             int i5 = this.post ? i4 | 16384 : i4 & (-16385);
             this.flags = i5;
-            int i6 = this.from_scheduled ? i5 | TLObject.FLAG_18 : i5 & (-262145);
+            int i6 = this.from_scheduled ? i5 | 262144 : i5 & (-262145);
             this.flags = i6;
             int i7 = this.legacy ? i6 | TLObject.FLAG_19 : i6 & (-524289);
             this.flags = i7;

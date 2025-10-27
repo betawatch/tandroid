@@ -88,7 +88,7 @@ public class DrawerLayoutContainer extends FrameLayout {
         this.firstLayout = true;
         this.internalNavbarPaint = new Paint(1);
         this.minDrawerMargin = (int) ((AndroidUtilities.density * 64.0f) + 0.5f);
-        setDescendantFocusability(TLObject.FLAG_18);
+        setDescendantFocusability(262144);
         setFocusableInTouchMode(true);
         ViewCompat.setOnApplyWindowInsetsListener(this, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.DrawerLayoutContainer$$ExternalSyntheticLambda1
             @Override // androidx.core.view.OnApplyWindowInsetsListener

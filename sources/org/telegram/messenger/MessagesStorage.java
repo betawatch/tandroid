@@ -16978,7 +16978,7 @@ public class MessagesStorage extends BaseController {
         if (chat != null) {
             if (chat.default_banned_rights == null || i >= chat.version) {
                 chat.default_banned_rights = tL_chatBannedRights;
-                chat.flags |= TLObject.FLAG_18;
+                chat.flags |= 262144;
                 chat.version = i;
                 j = this.database.executeFast("UPDATE chats SET data = ? WHERE uid = ?");
                 try {
@@ -17028,14 +17028,14 @@ public class MessagesStorage extends BaseController {
                                 TLdeserialize.call_active = chat.call_active;
                                 TLdeserialize.monoforum = chat.monoforum;
                                 TLdeserialize.broadcast_messages_allowed = chat.broadcast_messages_allowed;
-                                if ((chat.flags2 & TLObject.FLAG_18) != 0) {
+                                if ((chat.flags2 & 262144) != 0) {
                                     TLdeserialize.linked_monoforum_id = chat.linked_monoforum_id;
-                                    TLdeserialize.flags2 |= TLObject.FLAG_18;
+                                    TLdeserialize.flags2 |= 262144;
                                 }
                                 TLRPC.TL_chatBannedRights tL_chatBannedRights = chat.default_banned_rights;
                                 if (tL_chatBannedRights != null) {
                                     TLdeserialize.default_banned_rights = tL_chatBannedRights;
-                                    TLdeserialize.flags |= TLObject.FLAG_18;
+                                    TLdeserialize.flags |= 262144;
                                 }
                                 TLRPC.TL_chatAdminRights tL_chatAdminRights = chat.admin_rights;
                                 if (tL_chatAdminRights != null) {
@@ -18906,7 +18906,7 @@ public class MessagesStorage extends BaseController {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r3v196 ??), method size: 9110
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v35 ?? I:??[OBJECT, ARRAY]), method size: 9111
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -18916,7 +18916,7 @@ public class MessagesStorage extends BaseController {
     /* renamed from: putMessagesInternal, reason: merged with bridge method [inline-methods] */
     public void lambda$putMessages$194(java.util.ArrayList<org.telegram.tgnet.TLRPC.Message> r60, boolean r61, boolean r62, int r63, boolean r64, int r65, long r66) {
         /*
-            Method dump skipped, instructions count: 9110
+            Method dump skipped, instructions count: 9111
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.MessagesStorage.lambda$putMessages$194(java.util.ArrayList, boolean, boolean, int, boolean, int, long):void");

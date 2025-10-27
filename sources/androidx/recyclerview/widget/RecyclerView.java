@@ -425,7 +425,7 @@ public abstract class RecyclerView extends ViewGroup {
         }
         this.mAccessibilityManager = (AccessibilityManager) getContext().getSystemService("accessibility");
         setAccessibilityDelegateCompat(new RecyclerViewAccessibilityDelegate(this));
-        setDescendantFocusability(TLObject.FLAG_18);
+        setDescendantFocusability(262144);
         setNestedScrollingEnabled(true);
     }
 

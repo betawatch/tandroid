@@ -12588,7 +12588,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     return;
                 }
                 chatFull.slowmode_next_send_date = getConnectionsManager().getCurrentTime() + chatFull.slowmode_seconds;
-                chatFull.flags |= TLObject.FLAG_18;
+                chatFull.flags |= 262144;
                 getMessagesStorage().updateChatInfo(chatFull, false);
                 return;
             }
@@ -13510,7 +13510,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 TLRPC.TL_chatBannedRights tL_chatBannedRights5 = chat2.default_banned_rights;
                 if (tL_chatBannedRights5 != null) {
                     chat.default_banned_rights = tL_chatBannedRights5;
-                    chat.flags |= TLObject.FLAG_18;
+                    chat.flags |= 262144;
                 }
                 TLRPC.TL_chatAdminRights tL_chatAdminRights2 = chat2.admin_rights;
                 if (tL_chatAdminRights2 != null) {
@@ -13552,14 +13552,14 @@ public class MessagesController extends BaseController implements NotificationCe
             chat2.call_active = chat.call_active;
             chat2.monoforum = chat.monoforum;
             chat2.broadcast_messages_allowed = chat.broadcast_messages_allowed;
-            if ((chat.flags2 & TLObject.FLAG_18) != 0) {
+            if ((chat.flags2 & 262144) != 0) {
                 chat2.linked_monoforum_id = chat.linked_monoforum_id;
-                chat2.flags2 |= TLObject.FLAG_18;
+                chat2.flags2 |= 262144;
             }
             TLRPC.TL_chatBannedRights tL_chatBannedRights7 = chat.default_banned_rights;
             if (tL_chatBannedRights7 != null) {
                 chat2.default_banned_rights = tL_chatBannedRights7;
-                chat2.flags |= TLObject.FLAG_18;
+                chat2.flags |= 262144;
             }
             TLRPC.TL_chatAdminRights tL_chatAdminRights3 = chat.admin_rights;
             if (tL_chatAdminRights3 != null) {
@@ -35277,7 +35277,7 @@ public class MessagesController extends BaseController implements NotificationCe
             TLRPC.ChatFull chatFull = getChatFull(j);
             if (chatFull != null) {
                 if (chatFull instanceof TLRPC.TL_chatFull) {
-                    chatFull.flags |= TLObject.FLAG_18;
+                    chatFull.flags |= 262144;
                 }
                 if (chatFull instanceof TLRPC.TL_channelFull) {
                     chatFull.flags |= TLObject.FLAG_30;
@@ -35347,7 +35347,7 @@ public class MessagesController extends BaseController implements NotificationCe
             TLRPC.ChatFull chatFull = getChatFull(j);
             if (chatFull != null) {
                 if (chatFull instanceof TLRPC.TL_chatFull) {
-                    chatFull.flags |= TLObject.FLAG_18;
+                    chatFull.flags |= 262144;
                 }
                 if (chatFull instanceof TLRPC.TL_channelFull) {
                     chatFull.flags |= TLObject.FLAG_30;

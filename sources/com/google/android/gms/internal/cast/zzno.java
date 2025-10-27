@@ -152,7 +152,7 @@ public final class zzno extends zztp implements zzuy {
     }
 
     static /* synthetic */ void zzp(zzno zznoVar, String str) {
-        zznoVar.zzd |= TLObject.FLAG_18;
+        zznoVar.zzd |= 262144;
         zznoVar.zzx = str;
     }
 

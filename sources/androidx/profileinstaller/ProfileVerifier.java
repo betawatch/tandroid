@@ -12,7 +12,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public abstract class ProfileVerifier {
@@ -104,7 +103,7 @@ public abstract class ProfileVerifier {
                     return setCompilationStatus(65536, z2, z3);
                 }
             }
-            return setCompilationStatus(TLObject.FLAG_18, false, false);
+            return setCompilationStatus(262144, false, false);
         }
     }
 

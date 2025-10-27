@@ -2409,7 +2409,7 @@ public class TL_stars {
             this.flags = i6;
             int i7 = this.floodskip ? i6 | 32768 : i6 & (-32769);
             this.flags = i7;
-            int i8 = this.stargift_upgrade ? i7 | TLObject.FLAG_18 : i7 & (-262145);
+            int i8 = this.stargift_upgrade ? i7 | 262144 : i7 & (-262145);
             this.flags = i8;
             int i9 = this.paid_message ? i8 | TLObject.FLAG_19 : i8 & (-524289);
             this.flags = i9;
@@ -2572,7 +2572,7 @@ public class TL_stars {
             this.flags = i6;
             int i7 = this.floodskip ? i6 | 32768 : i6 & (-32769);
             this.flags = i7;
-            int i8 = this.stargift_upgrade ? i7 | TLObject.FLAG_18 : i7 & (-262145);
+            int i8 = this.stargift_upgrade ? i7 | 262144 : i7 & (-262145);
             this.flags = i8;
             int i9 = this.paid_message ? i8 | TLObject.FLAG_19 : i8 & (-524289);
             this.flags = i9;
@@ -2719,7 +2719,7 @@ public class TL_stars {
             this.flags = i6;
             int i7 = this.floodskip ? i6 | 32768 : i6 & (-32769);
             this.flags = i7;
-            int i8 = this.stargift_upgrade ? i7 | TLObject.FLAG_18 : i7 & (-262145);
+            int i8 = this.stargift_upgrade ? i7 | 262144 : i7 & (-262145);
             this.flags = i8;
             int i9 = this.paid_message ? i8 | TLObject.FLAG_19 : i8 & (-524289);
             this.flags = i9;
@@ -2857,7 +2857,7 @@ public class TL_stars {
             this.flags = i6;
             int i7 = this.floodskip ? i6 | 32768 : i6 & (-32769);
             this.flags = i7;
-            int i8 = this.stargift_upgrade ? i7 | TLObject.FLAG_18 : i7 & (-262145);
+            int i8 = this.stargift_upgrade ? i7 | 262144 : i7 & (-262145);
             this.flags = i8;
             int i9 = this.paid_message ? i8 | TLObject.FLAG_19 : i8 & (-524289);
             this.flags = i9;
@@ -4341,7 +4341,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 this.prepaid_upgrade_hash = inputSerializedData.readString(z);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 this.drop_original_details_stars = inputSerializedData.readInt64(z);
             }
         }
@@ -4400,7 +4400,7 @@ public class TL_stars {
             if ((this.flags & 65536) != 0) {
                 outputSerializedData.writeString(this.prepaid_upgrade_hash);
             }
-            if ((this.flags & TLObject.FLAG_18) != 0) {
+            if ((this.flags & 262144) != 0) {
                 outputSerializedData.writeInt64(this.drop_original_details_stars);
             }
         }
