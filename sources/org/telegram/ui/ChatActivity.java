@@ -2885,7 +2885,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             if (LiteMode.isEnabled(262144)) {
                 BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode3 = new BlurredBackgroundSourceRenderNode(blurredBackgroundSourceBitmap);
                 this.blurredBackgroundSourceRenderNodeWithSaturationAndFrosted = blurredBackgroundSourceRenderNode3;
-                blurredBackgroundSourceRenderNode3.setBlur(AndroidUtilities.dp(12.0f));
+                blurredBackgroundSourceRenderNode3.setBlur(24.0f);
                 this.blurredBackgroundSourceWithSaturationAndFrosted = blurredBackgroundSourceRenderNode3;
                 return;
             }
@@ -4172,40 +4172,41 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:360:0x0d99  */
     /* JADX WARN: Removed duplicated region for block: B:363:0x0db3  */
     /* JADX WARN: Removed duplicated region for block: B:366:0x0ddc  */
-    /* JADX WARN: Removed duplicated region for block: B:371:0x0ed8  */
-    /* JADX WARN: Removed duplicated region for block: B:374:0x0f76  */
-    /* JADX WARN: Removed duplicated region for block: B:379:0x103e  */
-    /* JADX WARN: Removed duplicated region for block: B:382:0x105f  */
-    /* JADX WARN: Removed duplicated region for block: B:385:0x1088  */
-    /* JADX WARN: Removed duplicated region for block: B:388:0x10b6  */
-    /* JADX WARN: Removed duplicated region for block: B:394:0x10d2  */
-    /* JADX WARN: Removed duplicated region for block: B:397:0x10db  */
-    /* JADX WARN: Removed duplicated region for block: B:401:0x10ed  */
-    /* JADX WARN: Removed duplicated region for block: B:405:0x112b  */
-    /* JADX WARN: Removed duplicated region for block: B:408:0x114f  */
-    /* JADX WARN: Removed duplicated region for block: B:411:0x12e5  */
-    /* JADX WARN: Removed duplicated region for block: B:421:0x132b  */
-    /* JADX WARN: Removed duplicated region for block: B:434:0x1540  */
-    /* JADX WARN: Removed duplicated region for block: B:455:0x1657  */
-    /* JADX WARN: Removed duplicated region for block: B:458:0x168d  */
-    /* JADX WARN: Removed duplicated region for block: B:466:0x16fa  */
-    /* JADX WARN: Removed duplicated region for block: B:469:0x1714  */
-    /* JADX WARN: Removed duplicated region for block: B:475:0x1774  */
-    /* JADX WARN: Removed duplicated region for block: B:478:0x17c8  */
-    /* JADX WARN: Removed duplicated region for block: B:481:0x17fb  */
-    /* JADX WARN: Removed duplicated region for block: B:485:0x183a  */
-    /* JADX WARN: Removed duplicated region for block: B:488:0x18dd  */
-    /* JADX WARN: Removed duplicated region for block: B:489:0x1842  */
-    /* JADX WARN: Removed duplicated region for block: B:492:0x1933  */
-    /* JADX WARN: Removed duplicated region for block: B:495:0x196b  */
-    /* JADX WARN: Removed duplicated region for block: B:498:0x1994  */
-    /* JADX WARN: Removed duplicated region for block: B:510:0x17d3  */
-    /* JADX WARN: Removed duplicated region for block: B:519:0x106a  */
-    /* JADX WARN: Removed duplicated region for block: B:520:0x1040  */
-    /* JADX WARN: Removed duplicated region for block: B:521:0x0eda  */
-    /* JADX WARN: Removed duplicated region for block: B:522:0x0db6  */
-    /* JADX WARN: Removed duplicated region for block: B:523:0x0d9b  */
-    /* JADX WARN: Removed duplicated region for block: B:528:0x091e  */
+    /* JADX WARN: Removed duplicated region for block: B:371:0x0e4d  */
+    /* JADX WARN: Removed duplicated region for block: B:374:0x0edd  */
+    /* JADX WARN: Removed duplicated region for block: B:377:0x0f7b  */
+    /* JADX WARN: Removed duplicated region for block: B:382:0x1043  */
+    /* JADX WARN: Removed duplicated region for block: B:385:0x1064  */
+    /* JADX WARN: Removed duplicated region for block: B:388:0x108d  */
+    /* JADX WARN: Removed duplicated region for block: B:391:0x10bb  */
+    /* JADX WARN: Removed duplicated region for block: B:397:0x10d7  */
+    /* JADX WARN: Removed duplicated region for block: B:400:0x10e0  */
+    /* JADX WARN: Removed duplicated region for block: B:404:0x10f2  */
+    /* JADX WARN: Removed duplicated region for block: B:408:0x1130  */
+    /* JADX WARN: Removed duplicated region for block: B:411:0x1154  */
+    /* JADX WARN: Removed duplicated region for block: B:414:0x12ea  */
+    /* JADX WARN: Removed duplicated region for block: B:424:0x1330  */
+    /* JADX WARN: Removed duplicated region for block: B:437:0x1545  */
+    /* JADX WARN: Removed duplicated region for block: B:458:0x165c  */
+    /* JADX WARN: Removed duplicated region for block: B:461:0x1692  */
+    /* JADX WARN: Removed duplicated region for block: B:469:0x16ff  */
+    /* JADX WARN: Removed duplicated region for block: B:472:0x1719  */
+    /* JADX WARN: Removed duplicated region for block: B:478:0x1779  */
+    /* JADX WARN: Removed duplicated region for block: B:481:0x17cd  */
+    /* JADX WARN: Removed duplicated region for block: B:484:0x1800  */
+    /* JADX WARN: Removed duplicated region for block: B:488:0x183f  */
+    /* JADX WARN: Removed duplicated region for block: B:491:0x18e2  */
+    /* JADX WARN: Removed duplicated region for block: B:492:0x1847  */
+    /* JADX WARN: Removed duplicated region for block: B:495:0x1938  */
+    /* JADX WARN: Removed duplicated region for block: B:498:0x1970  */
+    /* JADX WARN: Removed duplicated region for block: B:501:0x1999  */
+    /* JADX WARN: Removed duplicated region for block: B:513:0x17d8  */
+    /* JADX WARN: Removed duplicated region for block: B:522:0x106f  */
+    /* JADX WARN: Removed duplicated region for block: B:523:0x1045  */
+    /* JADX WARN: Removed duplicated region for block: B:524:0x0edf  */
+    /* JADX WARN: Removed duplicated region for block: B:525:0x0db6  */
+    /* JADX WARN: Removed duplicated region for block: B:526:0x0d9b  */
+    /* JADX WARN: Removed duplicated region for block: B:531:0x091e  */
     /* JADX WARN: Type inference failed for: r13v0 */
     /* JADX WARN: Type inference failed for: r13v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r13v14 */
@@ -4229,6 +4230,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         CharSequence charSequence;
         MentionsContainerView mentionsContainerView;
         TLRPC.Chat chat;
+        BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory;
         TLRPC.ChatFull chatFull;
         String str;
         int i3;
@@ -4827,12 +4829,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 ChatActivityFragmentView chatActivityFragmentView = new ChatActivityFragmentView(context, this.parentLayout);
                 this.contentView = chatActivityFragmentView;
                 this.fragmentView = chatActivityFragmentView;
-                BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.blurredBackgroundSourceWithSaturation);
-                this.blurredBackgroundDrawableFactory = blurredBackgroundDrawableViewFactory;
+                BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory2 = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.blurredBackgroundSourceWithSaturation);
+                this.blurredBackgroundDrawableFactory = blurredBackgroundDrawableViewFactory2;
                 if (this.blurredBackgroundSourceWithSaturationAndFrosted != null) {
-                    blurredBackgroundDrawableViewFactory = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.blurredBackgroundSourceWithSaturationAndFrosted);
+                    blurredBackgroundDrawableViewFactory2 = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.blurredBackgroundSourceWithSaturationAndFrosted);
                 }
-                this.blurredBackgroundDrawableFactoryFrosted = blurredBackgroundDrawableViewFactory;
+                this.blurredBackgroundDrawableFactoryFrosted = blurredBackgroundDrawableViewFactory2;
                 this.blurredBackgroundDrawableFactoryOut = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.blurredBackgroundSource);
                 ChatActivityFragmentView chatActivityFragmentView2 = this.contentView;
                 chatActivityFragmentView2.needBlur = false;
@@ -5457,7 +5459,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         }
                         FrameLayout frameLayout2 = new FrameLayout(context);
                         this.messagesSearchListContainer = frameLayout2;
-                        BlurredBackgroundDrawable create2 = this.blurredBackgroundDrawableFactory.create(frameLayout2, this.blurredBackgroundColorProviderWhite);
+                        blurredBackgroundDrawableViewFactory = this.blurredBackgroundDrawableFactoryFrosted;
+                        if (blurredBackgroundDrawableViewFactory == null) {
+                            blurredBackgroundDrawableViewFactory = this.blurredBackgroundDrawableFactory;
+                        }
+                        BlurredBackgroundDrawable create2 = blurredBackgroundDrawableViewFactory.create(frameLayout2, this.blurredBackgroundColorProviderWhite);
                         create2.setPadding(AndroidUtilities.dp(5.0f));
                         create2.setRadius(AndroidUtilities.dp(22.0f));
                         this.messagesSearchListContainer.setBackground(create2);
@@ -7194,7 +7200,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
                 FrameLayout frameLayout22 = new FrameLayout(context);
                 this.messagesSearchListContainer = frameLayout22;
-                BlurredBackgroundDrawable create22 = this.blurredBackgroundDrawableFactory.create(frameLayout22, this.blurredBackgroundColorProviderWhite);
+                blurredBackgroundDrawableViewFactory = this.blurredBackgroundDrawableFactoryFrosted;
+                if (blurredBackgroundDrawableViewFactory == null) {
+                }
+                BlurredBackgroundDrawable create22 = blurredBackgroundDrawableViewFactory.create(frameLayout22, this.blurredBackgroundColorProviderWhite);
                 create22.setPadding(AndroidUtilities.dp(5.0f));
                 create22.setRadius(AndroidUtilities.dp(22.0f));
                 this.messagesSearchListContainer.setBackground(create22);
@@ -8105,11 +8114,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         ChatActivityFragmentView chatActivityFragmentView6 = new ChatActivityFragmentView(context, this.parentLayout);
         this.contentView = chatActivityFragmentView6;
         this.fragmentView = chatActivityFragmentView6;
-        BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory2 = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.blurredBackgroundSourceWithSaturation);
-        this.blurredBackgroundDrawableFactory = blurredBackgroundDrawableViewFactory2;
+        BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory22 = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.blurredBackgroundSourceWithSaturation);
+        this.blurredBackgroundDrawableFactory = blurredBackgroundDrawableViewFactory22;
         if (this.blurredBackgroundSourceWithSaturationAndFrosted != null) {
         }
-        this.blurredBackgroundDrawableFactoryFrosted = blurredBackgroundDrawableViewFactory2;
+        this.blurredBackgroundDrawableFactoryFrosted = blurredBackgroundDrawableViewFactory22;
         this.blurredBackgroundDrawableFactoryOut = new BlurredBackgroundDrawableViewFactory(new ViewPositionWatcher(this.contentView), this.contentView, this.blurredBackgroundSource);
         ChatActivityFragmentView chatActivityFragmentView22 = this.contentView;
         chatActivityFragmentView22.needBlur = false;
@@ -8693,7 +8702,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
         FrameLayout frameLayout222 = new FrameLayout(context);
         this.messagesSearchListContainer = frameLayout222;
-        BlurredBackgroundDrawable create222 = this.blurredBackgroundDrawableFactory.create(frameLayout222, this.blurredBackgroundColorProviderWhite);
+        blurredBackgroundDrawableViewFactory = this.blurredBackgroundDrawableFactoryFrosted;
+        if (blurredBackgroundDrawableViewFactory == null) {
+        }
+        BlurredBackgroundDrawable create222 = blurredBackgroundDrawableViewFactory.create(frameLayout222, this.blurredBackgroundColorProviderWhite);
         create222.setPadding(AndroidUtilities.dp(5.0f));
         create222.setRadius(AndroidUtilities.dp(22.0f));
         this.messagesSearchListContainer.setBackground(create222);

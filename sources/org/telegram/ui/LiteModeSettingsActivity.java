@@ -277,7 +277,7 @@ public class LiteModeSettingsActivity extends BaseFragment {
             if (SharedConfig.getDevicePerformanceClass() >= 1 || BuildVars.DEBUG_PRIVATE_VERSION) {
                 this.items.add(Item.asCheckbox(LocaleController.getString("LiteOptionsBlur2"), 256));
             }
-            if (i >= 33 && (SharedConfig.getDevicePerformanceClass() >= 2 || BuildVars.DEBUG_PRIVATE_VERSION)) {
+            if (i >= 33 && (SharedConfig.getDevicePerformanceClass() >= 1 || BuildVars.DEBUG_PRIVATE_VERSION)) {
                 this.items.add(Item.asCheckbox(LocaleController.getString("LiteOptionsLiquidGlass"), 262144));
             }
             this.items.add(Item.asCheckbox(LocaleController.getString("LiteOptionsScale"), 32768));
@@ -641,15 +641,15 @@ public class LiteModeSettingsActivity extends BaseFragment {
 
         /* JADX WARN: Code restructure failed: missing block: B:10:0x001e, code lost:
         
-            if ((r4 & 16384) > 0) goto L21;
+            if ((r5 & 16384) > 0) goto L21;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:25:0x0031, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:34:0x0031, code lost:
         
             r1 = r1 - 1;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:33:0x002f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:42:0x002f, code lost:
         
-            if ((r4 & 4) > 0) goto L21;
+            if ((r5 & 4) > 0) goto L21;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -673,6 +673,9 @@ public class LiteModeSettingsActivity extends BaseFragment {
                 }
             }
             if (SharedConfig.getDevicePerformanceClass() < 1 && (i & 256) > 0) {
+                bitCount--;
+            }
+            if ((Build.VERSION.SDK_INT < 33 || (SharedConfig.getDevicePerformanceClass() < 1 && !BuildVars.DEBUG_PRIVATE_VERSION)) && (262144 & i) > 0) {
                 bitCount--;
             }
             return (ThanosEffect.supports() || (i & 65536) <= 0) ? bitCount : bitCount - 1;

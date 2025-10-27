@@ -34829,25 +34829,26 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         this.allowAssistant = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x04c4  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x051c  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0577  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x05e1  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x05f9  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0632  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x0650  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0659  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x06ca  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x06db  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0765  */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x0653  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x047c  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0496  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x04ba  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0512  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x056d  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x05d7  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x05ef  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0628  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0646  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x064f  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x06c0  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x06d1  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x0488  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x03a3  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x032b  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x0318  */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x0227  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x011e  */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x075b  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x0649  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x047e  */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x032b  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x0318  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x0227  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x011e  */
     /* JADX WARN: Removed duplicated region for block: B:57:0x01d3  */
     /* JADX WARN: Removed duplicated region for block: B:67:0x01f7  */
     /* JADX WARN: Removed duplicated region for block: B:70:0x02c3  */
@@ -34855,10 +34856,8 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     /* JADX WARN: Removed duplicated region for block: B:77:0x0326  */
     /* JADX WARN: Removed duplicated region for block: B:80:0x0330  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x0371  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0380  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0388  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0486  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x04a0  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x037a  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0395  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -34975,14 +34974,9 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 this.currentTimeString = concat;
                                 this.currentTimeString = StarsIntroActivity.replaceStars(concat, 0.8f, null, 0.0f, AndroidUtilities.dp(-0.33f), 0.94f);
                             }
-                            MessageObject messageObject6 = this.currentMessageObject;
-                            message = messageObject6.messageOwner;
-                            if ((message != null && message.schedule_repeat_period != 0) || messageObject6.scheduled) {
-                                i = message.schedule_repeat_period;
-                                if (i == 0) {
-                                    i = 86400;
-                                }
-                                if (i == 31536000) {
+                            message = this.currentMessageObject.messageOwner;
+                            if (message != null && (i = message.schedule_repeat_period) != 0) {
+                                if (i != 31536000) {
                                     this.currentTimeString = TextUtils.concat(LocaleController.getString(org.telegram.messenger.R.string.MessageScheduledRepeatYearly), ", ", this.currentTimeString);
                                 } else if (i == 15724800) {
                                     this.currentTimeString = TextUtils.concat(LocaleController.formatPluralString("MessageScheduledRepeatMonthlyMany", 6, new Object[0]), ", ", this.currentTimeString);
@@ -35001,7 +34995,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 }
                             }
                             TextPaint textPaint = Theme.chat_timePaint;
-                            int ceil = (int) Math.ceil(textPaint.measureText(r6, 0, this.currentTimeString == null ? 0 : r6.length()));
+                            int ceil = (int) Math.ceil(textPaint.measureText(r6, 0, this.currentTimeString != null ? 0 : r6.length()));
                             this.timeWidth = ceil;
                             this.timeTextWidth = ceil;
                             messageObject3 = this.currentMessageObject;
@@ -35052,7 +35046,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                 }
                             }
                             effect = getEffect();
-                            if (this.effectId != (effect == null ? effect.id : 0L)) {
+                            if (this.effectId != (effect != null ? effect.id : 0L)) {
                                 if (this.effectDrawable == null) {
                                     ChatMessageCellDelegate chatMessageCellDelegate = this.delegate;
                                     this.effectDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this, chatMessageCellDelegate == null || !chatMessageCellDelegate.canDrawOutboundsContent(), AndroidUtilities.dp(14.0f), 23);
@@ -35073,7 +35067,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             if (this.effectId != 0 && !this.currentMessageObject.notime) {
                                 this.timeWidth += AndroidUtilities.dp(18.0f);
                             }
-                            if (str == null) {
+                            if (str != null) {
                                 if (this.availableTimeWidth == 0) {
                                     this.availableTimeWidth = AndroidUtilities.dp(1000.0f);
                                 }
@@ -35122,44 +35116,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     }
                     if (starsPrice > 0) {
                     }
-                    MessageObject messageObject62 = this.currentMessageObject;
-                    message = messageObject62.messageOwner;
+                    message = this.currentMessageObject.messageOwner;
                     if (message != null) {
-                        i = message.schedule_repeat_period;
-                        if (i == 0) {
+                        if (i != 31536000) {
                         }
-                        if (i == 31536000) {
-                        }
-                        TextPaint textPaint2 = Theme.chat_timePaint;
-                        int ceil3 = (int) Math.ceil(textPaint2.measureText(r6, 0, this.currentTimeString == null ? 0 : r6.length()));
-                        this.timeWidth = ceil3;
-                        this.timeTextWidth = ceil3;
-                        messageObject3 = this.currentMessageObject;
-                        if (messageObject3.scheduled) {
-                            this.timeWidth = ceil3 - AndroidUtilities.dp(8.0f);
-                            message2 = messageObject.messageOwner;
-                            if ((message2.flags & 1024) != 0) {
-                            }
-                            if (messageObject.type == 20) {
-                            }
-                            if (!this.isChat) {
-                            }
-                            this.currentRepliesString = null;
-                            if (this.isPinned) {
-                            }
-                            if (messageObject.scheduled) {
-                            }
-                            if (this.currentMessageObject.shouldDrawReactions()) {
-                            }
-                            effect = getEffect();
-                            if (this.effectId != (effect == null ? effect.id : 0L)) {
-                            }
-                            if (this.effectId != 0) {
-                                this.timeWidth += AndroidUtilities.dp(18.0f);
-                            }
-                            if (str == null) {
-                            }
-                        }
+                    }
+                    TextPaint textPaint2 = Theme.chat_timePaint;
+                    int ceil3 = (int) Math.ceil(textPaint2.measureText(r6, 0, this.currentTimeString != null ? 0 : r6.length()));
+                    this.timeWidth = ceil3;
+                    this.timeTextWidth = ceil3;
+                    messageObject3 = this.currentMessageObject;
+                    if (messageObject3.scheduled) {
                         this.timeWidth = ceil3 - AndroidUtilities.dp(8.0f);
                         message2 = messageObject.messageOwner;
                         if ((message2.flags & 1024) != 0) {
@@ -35176,26 +35143,15 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         if (this.currentMessageObject.shouldDrawReactions()) {
                         }
                         effect = getEffect();
-                        if (this.effectId != (effect == null ? effect.id : 0L)) {
+                        if (this.effectId != (effect != null ? effect.id : 0L)) {
                         }
                         if (this.effectId != 0) {
+                            this.timeWidth += AndroidUtilities.dp(18.0f);
                         }
-                        if (str == null) {
+                        if (str != null) {
                         }
                     }
-                    i = message.schedule_repeat_period;
-                    if (i == 0) {
-                    }
-                    if (i == 31536000) {
-                    }
-                    TextPaint textPaint22 = Theme.chat_timePaint;
-                    int ceil32 = (int) Math.ceil(textPaint22.measureText(r6, 0, this.currentTimeString == null ? 0 : r6.length()));
-                    this.timeWidth = ceil32;
-                    this.timeTextWidth = ceil32;
-                    messageObject3 = this.currentMessageObject;
-                    if (messageObject3.scheduled) {
-                    }
-                    this.timeWidth = ceil32 - AndroidUtilities.dp(8.0f);
+                    this.timeWidth = ceil3 - AndroidUtilities.dp(8.0f);
                     message2 = messageObject.messageOwner;
                     if ((message2.flags & 1024) != 0) {
                     }
@@ -35211,11 +35167,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     if (this.currentMessageObject.shouldDrawReactions()) {
                     }
                     effect = getEffect();
-                    if (this.effectId != (effect == null ? effect.id : 0L)) {
+                    if (this.effectId != (effect != null ? effect.id : 0L)) {
                     }
                     if (this.effectId != 0) {
                     }
-                    if (str == null) {
+                    if (str != null) {
                     }
                 }
             }
@@ -35235,23 +35191,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
                 if (starsPrice > 0) {
                 }
-                MessageObject messageObject622 = this.currentMessageObject;
-                message = messageObject622.messageOwner;
+                message = this.currentMessageObject.messageOwner;
                 if (message != null) {
                 }
-                i = message.schedule_repeat_period;
-                if (i == 0) {
-                }
-                if (i == 31536000) {
-                }
-                TextPaint textPaint222 = Theme.chat_timePaint;
-                int ceil322 = (int) Math.ceil(textPaint222.measureText(r6, 0, this.currentTimeString == null ? 0 : r6.length()));
-                this.timeWidth = ceil322;
-                this.timeTextWidth = ceil322;
+                TextPaint textPaint22 = Theme.chat_timePaint;
+                int ceil32 = (int) Math.ceil(textPaint22.measureText(r6, 0, this.currentTimeString != null ? 0 : r6.length()));
+                this.timeWidth = ceil32;
+                this.timeTextWidth = ceil32;
                 messageObject3 = this.currentMessageObject;
                 if (messageObject3.scheduled) {
                 }
-                this.timeWidth = ceil322 - AndroidUtilities.dp(8.0f);
+                this.timeWidth = ceil32 - AndroidUtilities.dp(8.0f);
                 message2 = messageObject.messageOwner;
                 if ((message2.flags & 1024) != 0) {
                 }
@@ -35267,11 +35217,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (this.currentMessageObject.shouldDrawReactions()) {
                 }
                 effect = getEffect();
-                if (this.effectId != (effect == null ? effect.id : 0L)) {
+                if (this.effectId != (effect != null ? effect.id : 0L)) {
                 }
                 if (this.effectId != 0) {
                 }
-                if (str == null) {
+                if (str != null) {
                 }
             }
             str2 = "";
@@ -35283,23 +35233,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             }
             if (starsPrice > 0) {
             }
-            MessageObject messageObject6222 = this.currentMessageObject;
-            message = messageObject6222.messageOwner;
+            message = this.currentMessageObject.messageOwner;
             if (message != null) {
             }
-            i = message.schedule_repeat_period;
-            if (i == 0) {
-            }
-            if (i == 31536000) {
-            }
-            TextPaint textPaint2222 = Theme.chat_timePaint;
-            int ceil3222 = (int) Math.ceil(textPaint2222.measureText(r6, 0, this.currentTimeString == null ? 0 : r6.length()));
-            this.timeWidth = ceil3222;
-            this.timeTextWidth = ceil3222;
+            TextPaint textPaint222 = Theme.chat_timePaint;
+            int ceil322 = (int) Math.ceil(textPaint222.measureText(r6, 0, this.currentTimeString != null ? 0 : r6.length()));
+            this.timeWidth = ceil322;
+            this.timeTextWidth = ceil322;
             messageObject3 = this.currentMessageObject;
             if (messageObject3.scheduled) {
             }
-            this.timeWidth = ceil3222 - AndroidUtilities.dp(8.0f);
+            this.timeWidth = ceil322 - AndroidUtilities.dp(8.0f);
             message2 = messageObject.messageOwner;
             if ((message2.flags & 1024) != 0) {
             }
@@ -35315,11 +35259,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             if (this.currentMessageObject.shouldDrawReactions()) {
             }
             effect = getEffect();
-            if (this.effectId != (effect == null ? effect.id : 0L)) {
+            if (this.effectId != (effect != null ? effect.id : 0L)) {
             }
             if (this.effectId != 0) {
             }
-            if (str == null) {
+            if (str != null) {
             }
         }
         str = null;
@@ -35347,23 +35291,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
                 if (starsPrice > 0) {
                 }
-                MessageObject messageObject62222 = this.currentMessageObject;
-                message = messageObject62222.messageOwner;
+                message = this.currentMessageObject.messageOwner;
                 if (message != null) {
                 }
-                i = message.schedule_repeat_period;
-                if (i == 0) {
-                }
-                if (i == 31536000) {
-                }
-                TextPaint textPaint22222 = Theme.chat_timePaint;
-                int ceil32222 = (int) Math.ceil(textPaint22222.measureText(r6, 0, this.currentTimeString == null ? 0 : r6.length()));
-                this.timeWidth = ceil32222;
-                this.timeTextWidth = ceil32222;
+                TextPaint textPaint2222 = Theme.chat_timePaint;
+                int ceil3222 = (int) Math.ceil(textPaint2222.measureText(r6, 0, this.currentTimeString != null ? 0 : r6.length()));
+                this.timeWidth = ceil3222;
+                this.timeTextWidth = ceil3222;
                 messageObject3 = this.currentMessageObject;
                 if (messageObject3.scheduled) {
                 }
-                this.timeWidth = ceil32222 - AndroidUtilities.dp(8.0f);
+                this.timeWidth = ceil3222 - AndroidUtilities.dp(8.0f);
                 message2 = messageObject.messageOwner;
                 if ((message2.flags & 1024) != 0) {
                 }
@@ -35379,11 +35317,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (this.currentMessageObject.shouldDrawReactions()) {
                 }
                 effect = getEffect();
-                if (this.effectId != (effect == null ? effect.id : 0L)) {
+                if (this.effectId != (effect != null ? effect.id : 0L)) {
                 }
                 if (this.effectId != 0) {
                 }
-                if (str == null) {
+                if (str != null) {
                 }
             }
         }
@@ -35400,23 +35338,17 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         }
         if (starsPrice > 0) {
         }
-        MessageObject messageObject622222 = this.currentMessageObject;
-        message = messageObject622222.messageOwner;
+        message = this.currentMessageObject.messageOwner;
         if (message != null) {
         }
-        i = message.schedule_repeat_period;
-        if (i == 0) {
-        }
-        if (i == 31536000) {
-        }
-        TextPaint textPaint222222 = Theme.chat_timePaint;
-        int ceil322222 = (int) Math.ceil(textPaint222222.measureText(r6, 0, this.currentTimeString == null ? 0 : r6.length()));
-        this.timeWidth = ceil322222;
-        this.timeTextWidth = ceil322222;
+        TextPaint textPaint22222 = Theme.chat_timePaint;
+        int ceil32222 = (int) Math.ceil(textPaint22222.measureText(r6, 0, this.currentTimeString != null ? 0 : r6.length()));
+        this.timeWidth = ceil32222;
+        this.timeTextWidth = ceil32222;
         messageObject3 = this.currentMessageObject;
         if (messageObject3.scheduled) {
         }
-        this.timeWidth = ceil322222 - AndroidUtilities.dp(8.0f);
+        this.timeWidth = ceil32222 - AndroidUtilities.dp(8.0f);
         message2 = messageObject.messageOwner;
         if ((message2.flags & 1024) != 0) {
         }
@@ -35432,11 +35364,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         if (this.currentMessageObject.shouldDrawReactions()) {
         }
         effect = getEffect();
-        if (this.effectId != (effect == null ? effect.id : 0L)) {
+        if (this.effectId != (effect != null ? effect.id : 0L)) {
         }
         if (this.effectId != 0) {
         }
-        if (str == null) {
+        if (str != null) {
         }
     }
 
