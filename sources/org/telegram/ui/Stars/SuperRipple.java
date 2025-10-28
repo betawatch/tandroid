@@ -148,7 +148,7 @@ public class SuperRipple extends ISuperRipple {
         float max = (Math.max(Math.max(MathUtils.distance(0.0f, 0.0f, f, f2), MathUtils.distance(this.view.getWidth(), 0.0f, f, f2)), Math.max(MathUtils.distance(0.0f, this.view.getHeight(), f, f2), MathUtils.distance(this.view.getWidth(), this.view.getHeight(), f, f2))) * 2.0f) / (AndroidUtilities.density * 1200.0f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, max);
         final Effect effect = new Effect(f, f2, f3, ofFloat);
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.SuperRipple$$ExternalSyntheticLambda4
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.SuperRipple$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 SuperRipple.this.lambda$animate$0(effect, valueAnimator);

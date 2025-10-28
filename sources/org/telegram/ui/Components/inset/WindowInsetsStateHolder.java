@@ -74,7 +74,8 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onKeyboardStateChanged(KeyboardState.State state) {
-        if ((state == KeyboardState.State.STATE_FULLY_VISIBLE && this.inAppKeyboardState == 2) || this.inAppKeyboardState == 3) {
+        int i;
+        if (state == KeyboardState.State.STATE_FULLY_VISIBLE && ((i = this.inAppKeyboardState) == 2 || i == 3)) {
             this.inAppKeyboardState = 1;
         }
         this.onUpdateListener.run();
@@ -192,7 +193,7 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
         this.inAppKeyboardState = z ? 3 : 2;
         setInsets(this.lastInsets);
         if (z) {
-            AndroidUtilities.runOnUIThread(this.closeInAppKeyboard, 300L);
+            AndroidUtilities.runOnUIThread(this.closeInAppKeyboard, 600L);
         }
     }
 }

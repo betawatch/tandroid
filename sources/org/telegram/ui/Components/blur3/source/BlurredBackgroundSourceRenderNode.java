@@ -11,6 +11,7 @@ import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawableRender
 
 /* loaded from: classes5.dex */
 public class BlurredBackgroundSourceRenderNode implements BlurredBackgroundSource {
+    public boolean allowLiquid = true;
     private final BlurredBackgroundSource fallbackSource;
     private boolean inRecording;
     private final RenderNode renderNode;

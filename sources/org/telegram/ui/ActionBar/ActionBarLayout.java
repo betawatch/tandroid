@@ -977,19 +977,19 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         super.dispatchDraw(canvas);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x0127, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x012b, code lost:
     
         r1 = getRootWindowInsets();
      */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0154  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0179  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x01b5  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x01be  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01c4  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x020b  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0158  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x01b9  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x01c2  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x01c8  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0213  */
     @Override // android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1045,7 +1045,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 this.withShadow = false;
             }
             i3 = Build.VERSION.SDK_INT;
-            if (i3 >= 31 && (paddingRight != 0 || this.overrideWidthOffset != -1)) {
+            if (i3 >= 31 && !this.isSheet && (paddingRight != 0 || this.overrideWidthOffset != -1)) {
                 if (view != this.containerView) {
                     rootWindowInsets2 = getRootWindowInsets();
                     if (rootWindowInsets2 != null) {
@@ -1130,7 +1130,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                                 i6 = 31;
                                 i7 = 0;
                             }
-                            if (i3 < i6) {
+                            if (i3 < i6 || this.isSheet) {
                                 Drawable drawable = layerShadowDrawable;
                                 drawable.setBounds(paddingRight - drawable.getIntrinsicWidth(), view.getTop(), paddingRight, view.getBottom() + i7);
                                 layerShadowDrawable.setAlpha(clamp);

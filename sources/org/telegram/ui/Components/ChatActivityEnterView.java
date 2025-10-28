@@ -3955,7 +3955,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (!isPopupShowing() || this.currentPopupContentType != 1) {
                 showPopup(1, 1);
             } else if (isPopupShowing() && this.currentPopupContentType == 1) {
-                showPopup(0, 1);
+                showPopup(0, 1, true, false);
             }
         } else if (this.hasBotCommands || this.hasQuickReplies) {
             setFieldText("/");
@@ -4017,7 +4017,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.expandStickersButton.setAlpha(0.0f);
         this.expandStickersButton.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
         this.sendButtonContainer.addView(this.expandStickersButton, LayoutHelper.createFrame(44, 44, 85));
-        this.expandStickersButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda25
+        this.expandStickersButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda23
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChatActivityEnterView.this.lambda$createExpandStickersButton$13(view);
@@ -4081,7 +4081,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.recordDeleteImageView.setContentDescription(LocaleController.getString("Delete", R.string.Delete));
         this.recordDeleteImageView.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
         this.recordedAudioPanel.addView(this.recordDeleteImageView, LayoutHelper.createFrame(44, 44.0f));
-        this.recordDeleteImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda27
+        this.recordDeleteImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda25
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChatActivityEnterView.this.lambda$createRecordAudioPanel$14(view);
@@ -6071,7 +6071,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             } else if (!ChatActivityEnterView.this.stickersExpanded) {
                                 if (ChatActivityEnterView.this.stickersExpansionAnim == null) {
                                     if (ChatActivityEnterView.this.botButtonsMessageObject == null || ChatActivityEnterView.this.currentPopupContentType == 1 || !TextUtils.isEmpty(ChatActivityEnterView.this.messageEditText.getTextToUse())) {
-                                        ChatActivityEnterView.this.showPopup(0, 0);
+                                        ChatActivityEnterView.this.showPopup(0, 0, true, false);
                                     } else {
                                         ChatActivityEnterView.this.showPopup(1, 1);
                                     }
@@ -6465,7 +6465,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 SlowModeBtn slowModeBtn = this.slowModeButton;
                 chatActivityEnterViewDelegate.onUpdateSlowModeButton(slowModeBtn, false, slowModeBtn.getText());
             }
-            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda24
+            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda22
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatActivityEnterView.this.updateSlowModeText();
@@ -10174,7 +10174,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         frameLayout.setClipChildren(false);
         this.recordPanel.setVisibility(8);
         this.messageEditTextContainer.addView(this.recordPanel, LayoutHelper.createFrame(-1, 44.0f));
-        this.recordPanel.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda26
+        this.recordPanel.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda24
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 boolean lambda$createRecordPanel$55;
@@ -10283,7 +10283,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.doneButtonAnimation = null;
             }
             createDoneButton(true);
-            this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda23
+            this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     ChatActivityEnterView.this.lambda$setEditingBusinessLink$56(view);
@@ -12933,10 +12933,15 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public void showPopup(int i, int i2) {
-        showPopup(i, i2, true);
+        showPopup(i, i2, true, true);
     }
 
-    private void showPopup(final int i, int i2, boolean z) {
+    private void showPopup(int i, int i2, boolean z) {
+        showPopup(i, i2, z, true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void showPopup(final int i, int i2, boolean z, boolean z2) {
         int i3;
         int i4;
         if (i == 2) {
@@ -13029,7 +13034,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 updateBotButton(true);
                 onWindowSizeChanged();
                 if (this.smoothKeyboard && !this.keyboardVisible && i5 != i3 && z) {
-                    final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda21
+                    final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda26
                         @Override // java.lang.Runnable
                         public final void run() {
                             ChatActivityEnterView.this.lambda$showPopup$76();
@@ -13079,7 +13084,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.emojiViewVisible = true;
                         this.animatingContentType = 0;
                         emojiView2.setShowing(false);
-                        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda22
+                        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda27
                             @Override // java.lang.Runnable
                             public final void run() {
                                 ChatActivityEnterView.this.lambda$showPopup$77(i);
@@ -13089,7 +13094,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             AnimatorSet animatorSet2 = new AnimatorSet();
                             this.panelAnimation = animatorSet2;
                             if (this.windowInsetsInAppController != null) {
-                                animatorSet2.playTogether(ValueAnimator.ofFloat(this.emojiView.getMeasuredHeight()));
+                                animatorSet2.playTogether(ValueAnimator.ofFloat(this.emojiView.getMeasuredHeight()), ValueAnimator.ofFloat(0.0f, 1.0f));
                             } else {
                                 animatorSet2.playTogether(ObjectAnimator.ofFloat(this.emojiView, (Property<EmojiView, Float>) View.TRANSLATION_Y, r9.getMeasuredHeight()));
                             }
@@ -13176,7 +13181,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             updateBotButton(true);
             WindowInsetsInAppController windowInsetsInAppController2 = this.windowInsetsInAppController;
             if (windowInsetsInAppController2 != null) {
-                windowInsetsInAppController2.resetInAppKeyboardHeight(true);
+                windowInsetsInAppController2.resetInAppKeyboardHeight(z2);
             }
         }
         if (this.stickersTabOpen || this.emojiTabOpen) {
@@ -13341,7 +13346,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         } else if (this.stickersExpanded) {
             setStickersExpanded(false, true, false);
         } else {
-            showPopup(0, 0);
+            showPopup(0, 0, true, !z);
         }
         return true;
     }
@@ -13553,6 +13558,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             BotKeyboardView botKeyboardView = this.botKeyboardView;
             if (botKeyboardView != null) {
                 botKeyboardView.setPanelHeight(i2);
+                WindowInsetsInAppController windowInsetsInAppController = this.windowInsetsInAppController;
+                if (windowInsetsInAppController != null && i2 > 0) {
+                    windowInsetsInAppController.requestInAppKeyboardHeight(AndroidUtilities.navigationBarHeight + i2);
+                }
             }
             if (view != null) {
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
