@@ -2,7 +2,6 @@ package org.telegram.ui.Stories;
 
 import android.content.Context;
 import android.media.AudioManager;
-import android.os.Build;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -347,9 +346,6 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                 this.instance.setMuteMicrophone(this.isMuted);
                 this.instance.activateVideoCapturer(this.recordingVideoCapturer);
                 this.instance.setupOutgoingVideoCreated(this.recordingVideoCapturer);
-                if (Build.VERSION.SDK_INT >= 23) {
-                    VoipAudioManager.get();
-                }
             } else {
                 TLRPC.GroupCallParticipant groupCallParticipant = this.participant;
                 if (groupCallParticipant != null) {
@@ -544,7 +540,6 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$init$17(final long j, final long j2, final int i, final int i2) {
-        String str;
         StringBuilder sb;
         if (this.call == null) {
             return;
@@ -553,12 +548,10 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         sb2.append("[LivePlayer] sending getFile time_ms=");
         sb2.append(j);
         sb2.append(j2 == 500 ? ", scale = 1" : "");
-        if (i != 0) {
-            str = ", video_channel = " + i + ", video_quality = " + i2;
-        } else {
-            str = "";
-        }
-        sb2.append(str);
+        sb2.append(", video_channel = ");
+        sb2.append(i);
+        sb2.append(", video_quality = ");
+        sb2.append(i2);
         FileLog.d(sb2.toString());
         final long currentTimeMillis = System.currentTimeMillis();
         TLRPC.TL_upload_getFile tL_upload_getFile = new TLRPC.TL_upload_getFile();
@@ -604,8 +597,6 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$init$15(final String str, long j, long j2, long j3, int i, int i2, TLObject tLObject, TLRPC.TL_error tL_error, long j4) {
-        String str2;
-        String str3;
         if (this.destroyed) {
             return;
         }
@@ -615,7 +606,6 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                 LivePlayer.this.lambda$init$13(str);
             }
         });
-        String str4 = "";
         if (tLObject != null) {
             TLRPC.TL_upload_file tL_upload_file = (TLRPC.TL_upload_file) tLObject;
             StringBuilder sb = new StringBuilder();
@@ -623,11 +613,11 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             sb.append(System.currentTimeMillis() - j);
             sb.append("ms getFile{time_ms=");
             sb.append(j2);
-            sb.append(j3 != 500 ? "" : ", scale = 1");
-            if (i != 0) {
-                str4 = ", video_channel = " + i + ", video_quality = " + i2;
-            }
-            sb.append(str4);
+            sb.append(j3 == 500 ? ", scale = 1" : "");
+            sb.append(", video_channel = ");
+            sb.append(i);
+            sb.append(", video_quality = ");
+            sb.append(i2);
             sb.append("}: ");
             sb.append(tL_upload_file.bytes.limit());
             sb.append(" bytes");
@@ -649,13 +639,11 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             sb2.append(System.currentTimeMillis() - j);
             sb2.append("ms getFile{time_ms=");
             sb2.append(j2);
-            sb2.append(j3 != 500 ? "" : ", scale = 1");
-            if (i != 0) {
-                str3 = ", video_channel = " + i + ", video_quality = " + i2;
-            } else {
-                str3 = "";
-            }
-            sb2.append(str3);
+            sb2.append(j3 == 500 ? ", scale = 1" : "");
+            sb2.append(", video_channel = ");
+            sb2.append(i);
+            sb2.append(", video_quality = ");
+            sb2.append(i2);
             sb2.append("}: ");
             sb2.append(tL_error.text);
             sb2.append(" => rejoining");
@@ -668,13 +656,11 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         sb3.append(System.currentTimeMillis() - j);
         sb3.append("ms getFile{time_ms=");
         sb3.append(j2);
-        sb3.append(j3 != 500 ? "" : ", scale = 1");
-        if (i != 0) {
-            str2 = ", video_channel = " + i + ", video_quality = " + i2;
-        } else {
-            str2 = "";
-        }
-        sb3.append(str2);
+        sb3.append(j3 == 500 ? ", scale = 1" : "");
+        sb3.append(", video_channel = ");
+        sb3.append(i);
+        sb3.append(", video_quality = ");
+        sb3.append(i2);
         sb3.append("}: ");
         sb3.append(tL_error.text);
         sb3.append(" => ");

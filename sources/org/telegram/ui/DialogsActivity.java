@@ -17326,7 +17326,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     }
 
     private void checkEmailConfig() {
-        if (getMessagesController().checkEmailSuggestion() != 0) {
+        int checkEmailSuggestion = getMessagesController().checkEmailSuggestion();
+        if (checkEmailSuggestion != 0) {
             presentFragment(new LoginActivity().changeEmail(new Runnable() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda75
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -17337,7 +17338,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 public final void run() {
                     DialogsActivity.this.lambda$checkEmailConfig$150();
                 }
-            }, false));
+            }, checkEmailSuggestion == 2));
             getMessagesController().markEmailSuggestionAsShown();
         }
     }
@@ -17347,13 +17348,10 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(getContext(), this.resourceProvider);
         lottieLayout.setAnimation(R.raw.email_check_inbox, new String[0]);
         lottieLayout.textView.setText(LocaleController.getString(R.string.YourLoginEmailChangedSuccess));
-        BaseFragment lastFragment = LaunchActivity.getLastFragment();
-        if (lastFragment != null) {
-            Bulletin.make(lastFragment, lottieLayout, 1500).show();
-            try {
-                lastFragment.fragmentView.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
+        Bulletin.make(this, lottieLayout, 2750).show();
+        try {
+            this.fragmentView.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
         }
     }
 

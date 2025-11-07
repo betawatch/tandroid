@@ -17743,6 +17743,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             runnable2.run();
             whenResumed = null;
         }
+        if (MessagesController.getInstance(this.currentAccount).hasSetupEmailSuggestion()) {
+            MessagesController.getInstance(this.currentAccount).checkPromoInfo(true);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
