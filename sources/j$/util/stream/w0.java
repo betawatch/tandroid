@@ -36,7 +36,7 @@ public abstract /* synthetic */ class w0 implements G3 {
     public abstract S1 e0();
 
     public static a R(Function function) {
-        a aVar = new a(8);
+        a aVar = new a(9);
         aVar.b = function;
         return aVar;
     }
@@ -116,7 +116,7 @@ public abstract /* synthetic */ class w0 implements G3 {
         long j3 = j2 - j;
         A0 D = D(j3, intFunction);
         D.l(j3);
-        for (int i = 0; i < j && spliterator.tryAdvance(new c0(7)); i++) {
+        for (int i = 0; i < j && spliterator.tryAdvance(new b0(10)); i++) {
         }
         if (j2 == i0.count()) {
             spliterator.forEachRemaining(D);

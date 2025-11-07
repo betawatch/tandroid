@@ -7,6 +7,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Build;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.RoundedCorner;
 import android.view.View;
 import android.view.WindowInsets;
@@ -23,7 +24,10 @@ public class ChatInputViewsContainer extends FrameLayout {
     private BlurredBackgroundWithFadeDrawable backgroundWithFadeDrawable;
     private BlurredBackgroundDrawable blurredBackgroundDrawable;
     private float blurredBottomHeight;
+    private float bubbleInputTranlationY;
+    private boolean captured;
     private int currentBlurredHeight;
+    private final View fadeView;
     private float imeBottomInset;
     private final FrameLayout inAppKeyboardBubbleContainer;
     private float inputBubbleHeight;
@@ -56,6 +60,19 @@ public class ChatInputViewsContainer extends FrameLayout {
         };
         this.inAppKeyboardBubbleContainer = frameLayout2;
         addView(frameLayout2, LayoutHelper.createFrame(-1, -2, 80));
+        this.fadeView = new View(context) { // from class: org.telegram.ui.Components.chat.ChatInputViewsContainer.2
+            @Override // android.view.View
+            protected void dispatchDraw(Canvas canvas) {
+                if (ChatInputViewsContainer.this.backgroundWithFadeDrawable != null) {
+                    ChatInputViewsContainer.this.backgroundWithFadeDrawable.draw(canvas);
+                }
+                super.dispatchDraw(canvas);
+            }
+        };
+    }
+
+    public View getFadeView() {
+        return this.fadeView;
     }
 
     public void setWindowInsetsProvider(WindowInsetsProvider windowInsetsProvider) {
@@ -156,12 +173,12 @@ public class ChatInputViewsContainer extends FrameLayout {
                     radius = roundedCorner2.getRadius();
                     i = radius;
                     i2 = radius2;
-                    this.underKeyboardBackgroundDrawable.setRadius(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i, i2);
+                    this.underKeyboardBackgroundDrawable.setRadius(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i, i2, true);
                 }
                 i2 = radius2;
             }
             i = 0;
-            this.underKeyboardBackgroundDrawable.setRadius(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i, i2);
+            this.underKeyboardBackgroundDrawable.setRadius(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i, i2, true);
         }
     }
 
@@ -221,16 +238,10 @@ public class ChatInputViewsContainer extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         this.underKeyboardBackgroundDrawable.setBounds(0, getMeasuredHeight() - ((int) this.imeBottomInset), getMeasuredWidth(), Math.max(getMeasuredHeight(), (getMeasuredHeight() - ((int) this.imeBottomInset)) + AndroidUtilities.dp(58.0f)));
-        if (this.backgroundWithFadeDrawable != null) {
-            canvas.save();
-            canvas.clipRect(0, 0, getMeasuredWidth(), this.needDrawInAppKeyboard ? this.underKeyboardBackgroundDrawable.getBounds().top + AndroidUtilities.dp(29.0f) : getMeasuredHeight());
-            this.backgroundWithFadeDrawable.draw(canvas);
-            canvas.restore();
-        }
         int measuredHeight = getMeasuredHeight() - this.currentBlurredHeight;
         this.tmpRect.set(Math.round(this.inputBubbleOffsetLeft), 0, getMeasuredWidth() - Math.round(this.inputBubbleOffsetRight), this.inputBubbleHeightRound);
         this.tmpRect.inset(0, -AndroidUtilities.dp(7.0f));
-        this.tmpRect.offset(0, measuredHeight);
+        this.tmpRect.offset(0, measuredHeight + ((int) this.bubbleInputTranlationY));
         this.blurredBackgroundDrawable.setBounds(this.tmpRect);
         this.blurredBackgroundDrawable.draw(canvas);
         if (this.needDrawInAppKeyboard) {
@@ -264,6 +275,18 @@ public class ChatInputViewsContainer extends FrameLayout {
         }
     }
 
+    public void setInputBubbleTranslationY(float f) {
+        this.bubbleInputTranlationY = f;
+        invalidate();
+    }
+
+    public void setInputBubbleAlpha(int i) {
+        BlurredBackgroundDrawable blurredBackgroundDrawable = this.blurredBackgroundDrawable;
+        if (blurredBackgroundDrawable != null) {
+            blurredBackgroundDrawable.setAlpha(i);
+        }
+    }
+
     private void checkDrawableBounds() {
         int i;
         int measuredHeight;
@@ -272,6 +295,23 @@ public class ChatInputViewsContainer extends FrameLayout {
             return;
         }
         this.backgroundWithFadeDrawable.setBounds(0, measuredHeight, getMeasuredWidth(), getMeasuredHeight());
+        this.fadeView.invalidate(0, Math.max(0, Math.min(i, measuredHeight)), getMeasuredWidth(), getMeasuredHeight());
         invalidate(0, Math.max(0, Math.min(i, measuredHeight)), getMeasuredWidth(), getMeasuredHeight());
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        BlurredBackgroundDrawable blurredBackgroundDrawable;
+        int action = motionEvent.getAction();
+        if (action == 0) {
+            int x = (int) motionEvent.getX();
+            int y = (int) motionEvent.getY();
+            BlurredBackgroundDrawable blurredBackgroundDrawable2 = this.blurredBackgroundDrawable;
+            this.captured = (blurredBackgroundDrawable2 != null && blurredBackgroundDrawable2.getAlpha() == 255 && this.blurredBackgroundDrawable.getBounds().contains(x, y)) || ((blurredBackgroundDrawable = this.underKeyboardBackgroundDrawable) != null && blurredBackgroundDrawable.getBounds().contains(x, y));
+        }
+        if (action == 1 || action == 3) {
+            this.captured = false;
+        }
+        return this.captured;
     }
 }

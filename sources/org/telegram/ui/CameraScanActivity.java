@@ -6,6 +6,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -202,7 +203,7 @@ public class CameraScanActivity extends BaseFragment {
             CameraScanActivity cameraScanActivity = new CameraScanActivity(i) { // from class: org.telegram.ui.CameraScanActivity.1.1
                 @Override // org.telegram.ui.ActionBar.BaseFragment
                 /* renamed from: finishFragment */
-                public void lambda$onBackPressed$341() {
+                public void lambda$onBackPressed$340() {
                     setFinishing(true);
                     1.this.lambda$new$0();
                 }
@@ -265,8 +266,8 @@ public class CameraScanActivity extends BaseFragment {
         }
         1 r1 = new 1(activity, false, new INavigationLayout[]{INavigationLayout.-CC.newLayout(activity, false)}, i, z, cameraScanActivityDelegate);
         r1.setUseLightStatusBar(false);
-        AndroidUtilities.setLightNavigationBar(r1.getWindow(), false);
-        AndroidUtilities.setNavigationBarColor(r1.getWindow(), -16777216, false);
+        AndroidUtilities.setLightNavigationBar((Dialog) r1, false);
+        AndroidUtilities.setNavigationBarColor((Dialog) r1, -16777216, false);
         r1.setUseLightStatusBar(false);
         r1.getWindow().addFlags(512);
         r1.show();
@@ -354,7 +355,7 @@ public class CameraScanActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    CameraScanActivity.this.lambda$onBackPressed$341();
+                    CameraScanActivity.this.lambda$onBackPressed$340();
                 }
             }
         });
@@ -924,7 +925,7 @@ public class CameraScanActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public void initCameraView() {
         TextView textView;
-        if (this.fragmentView == null) {
+        if (this.fragmentView == null || !CameraView.isCameraAllowed()) {
             return;
         }
         CameraController.getInstance().initCamera(null);
@@ -1114,7 +1115,7 @@ public class CameraScanActivity extends BaseFragment {
                 if (cameraScanActivityDelegate != null) {
                     cameraScanActivityDelegate.didFindQr(tryReadQr.text);
                 }
-                lambda$onBackPressed$341();
+                lambda$onBackPressed$340();
             }
         } catch (Throwable th) {
             FileLog.e(th);
@@ -1304,7 +1305,7 @@ public class CameraScanActivity extends BaseFragment {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CameraScanActivity$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
-                CameraScanActivity.this.lambda$onBackPressed$341();
+                CameraScanActivity.this.lambda$onBackPressed$340();
             }
         }, 1200L);
     }
@@ -1329,7 +1330,7 @@ public class CameraScanActivity extends BaseFragment {
         if (cameraScanActivityDelegate != null) {
             cameraScanActivityDelegate.didFindQr(this.recognizedText);
         }
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1344,7 +1345,7 @@ public class CameraScanActivity extends BaseFragment {
             cameraScanActivityDelegate.didFindQr(str);
         }
         if (this.currentType != 3) {
-            lambda$onBackPressed$341();
+            lambda$onBackPressed$340();
         }
     }
 

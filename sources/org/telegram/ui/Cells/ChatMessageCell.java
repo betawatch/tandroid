@@ -12966,7 +12966,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                             photo4 = photo3;
                                                                         }
                                                                         if (this.currentPhotoObject == null) {
-                                                                            this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(document5.thumbs, NotificationCenter.uploadStoryEnd);
+                                                                            this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(document5.thumbs, NotificationCenter.uploadStoryProgress);
                                                                             this.currentPhotoObjectThumb = FileLoader.getClosestPhotoSizeWithSize(document5.thumbs, 40);
                                                                             this.photoParentObject = document5;
                                                                         }
@@ -13057,7 +13057,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                                             if (i192 == 6) {
                                                                                 i157 = i79;
                                                                                 i98 = i80;
-                                                                                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(document5.thumbs, NotificationCenter.uploadStoryEnd);
+                                                                                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(document5.thumbs, NotificationCenter.uploadStoryProgress);
                                                                                 this.currentPhotoObject = closestPhotoSizeWithSize3;
                                                                                 this.photoParentObject = document5;
                                                                                 if (closestPhotoSizeWithSize3 != null && (closestPhotoSizeWithSize3.w == 0 || closestPhotoSizeWithSize3.h == 0)) {
@@ -27704,7 +27704,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
             FileLog.e(e);
         }
         if (this.drawPhotoImage) {
-            this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.uploadStoryEnd);
+            this.currentPhotoObject = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.uploadStoryProgress);
             this.currentPhotoObjectThumb = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 40);
             if (this.currentMessageObject.isHiddenSensitive() || (DownloadController.getInstance(this.currentAccount).getAutodownloadMask() & 1) == 0) {
                 this.currentPhotoObject = null;
@@ -36359,7 +36359,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     this.lastReplyMessage = messageObject8 == null ? null : messageObject8.messageOwner;
                                     if (messageObject8 != null) {
                                         z4 = messageObject8.hasMediaSpoilers();
-                                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(messageObject6.replyMessageObject.photoThumbs2, NotificationCenter.uploadStoryEnd);
+                                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(messageObject6.replyMessageObject.photoThumbs2, NotificationCenter.uploadStoryProgress);
                                         TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(messageObject6.replyMessageObject.photoThumbs2, 40);
                                         MessageObject messageObject9 = messageObject6.replyMessageObject;
                                         TLObject tLObject2 = messageObject9.photoThumbsObject2;
@@ -36369,7 +36369,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                                 i4 = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.size : 0;
                                                 i6 = 0;
                                             } else {
-                                                closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(messageObject9.photoThumbs, NotificationCenter.uploadStoryEnd);
+                                                closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(messageObject9.photoThumbs, NotificationCenter.uploadStoryProgress);
                                                 i6 = 1;
                                                 i4 = 0;
                                             }
@@ -36583,12 +36583,12 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                                     } else {
                                         TLRPC.Document document2 = messageMedia2.document;
                                         if (document2 != null) {
-                                            photoSize = FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, NotificationCenter.uploadStoryEnd);
+                                            photoSize = FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, NotificationCenter.uploadStoryProgress);
                                             document = document2;
                                         } else {
                                             ?? r22 = messageMedia2.photo;
                                             if (r22 != 0) {
-                                                photoSize = FileLoader.getClosestPhotoSizeWithSize(r22.sizes, NotificationCenter.uploadStoryEnd);
+                                                photoSize = FileLoader.getClosestPhotoSizeWithSize(r22.sizes, NotificationCenter.uploadStoryProgress);
                                                 document = r22;
                                             }
                                             if (photoSize != null) {

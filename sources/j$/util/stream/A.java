@@ -109,7 +109,7 @@ abstract class A extends b implements D {
 
     @Override // j$.util.stream.D
     public final Stream boxed() {
-        return new s(this, 0, new l(5), 0);
+        return new s(this, 0, new k(8), 0);
     }
 
     @Override // j$.util.stream.D
@@ -186,12 +186,12 @@ abstract class A extends b implements D {
 
     @Override // j$.util.stream.D
     public final D distinct() {
-        return ((e2) boxed()).distinct().mapToDouble(new l(6));
+        return ((e2) boxed()).distinct().mapToDouble(new k(9));
     }
 
     @Override // j$.util.stream.D
     public final double sum() {
-        double[] dArr = (double[]) collect(new l(9), new j(7), new j(4));
+        double[] dArr = (double[]) collect(new k(12), new j(7), new j(4));
         Set set = Collectors.a;
         double d = dArr[0] + dArr[1];
         double d2 = dArr[dArr.length - 1];
@@ -200,17 +200,17 @@ abstract class A extends b implements D {
 
     @Override // j$.util.stream.D
     public final j$.util.A min() {
-        return reduce(new l(1));
+        return reduce(new k(4));
     }
 
     @Override // j$.util.stream.D
     public final j$.util.A max() {
-        return reduce(new l(8));
+        return reduce(new k(11));
     }
 
     @Override // j$.util.stream.D
     public final j$.util.A average() {
-        double[] dArr = (double[]) collect(new l(2), new j(5), new j(6));
+        double[] dArr = (double[]) collect(new k(5), new j(5), new j(6));
         if (dArr[2] <= 0.0d) {
             return j$.util.A.a();
         }
@@ -225,7 +225,7 @@ abstract class A extends b implements D {
 
     @Override // j$.util.stream.D
     public final j$.util.w summaryStatistics() {
-        return (j$.util.w) collect(new j(20), new l(3), new l(4));
+        return (j$.util.w) collect(new j(20), new k(6), new k(7));
     }
 
     @Override // j$.util.stream.D
@@ -255,7 +255,7 @@ abstract class A extends b implements D {
 
     @Override // j$.util.stream.D
     public final double[] toArray() {
-        return (double[]) w0.O((C0) D(new l(7))).d();
+        return (double[]) w0.O((C0) D(new k(10))).d();
     }
 
     @Override // j$.util.stream.D

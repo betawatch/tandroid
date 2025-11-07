@@ -2058,6 +2058,7 @@ public class TL_stars {
         public int paid_messages;
         public StarsTransactionPeer peer;
         public boolean pending;
+        public boolean phonegroup_message;
         public TLRPC.WebDocument photo;
         public boolean posts_search;
         public boolean premium_gift;
@@ -2334,7 +2335,8 @@ public class TL_stars {
             this.stargift_resale = (4194304 & readInt32) != 0;
             this.posts_search = (16777216 & readInt32) != 0;
             this.stargift_prepaid_upgrade = (33554432 & readInt32) != 0;
-            this.stargift_drop_original_details = (readInt32 & 67108864) != 0;
+            this.stargift_drop_original_details = (67108864 & readInt32) != 0;
+            this.phonegroup_message = TLObject.hasFlag(readInt32, TLObject.FLAG_27);
             this.id = inputSerializedData.readString(z);
             this.amount = StarsAmount.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.date = inputSerializedData.readInt32(z);
@@ -2425,7 +2427,9 @@ public class TL_stars {
             this.flags = i14;
             int i15 = this.stargift_drop_original_details ? i14 | 67108864 : i14 & (-67108865);
             this.flags = i15;
-            outputSerializedData.writeInt32(i15);
+            int flag = TLObject.setFlag(i15, TLObject.FLAG_27, this.phonegroup_message);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             outputSerializedData.writeString(this.id);
             this.amount.serializeToStream(outputSerializedData);
             outputSerializedData.writeInt32(this.date);

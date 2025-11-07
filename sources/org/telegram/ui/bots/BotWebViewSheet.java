@@ -90,7 +90,7 @@ import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda307;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda361;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -646,8 +646,9 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.linePaint.setStrokeCap(Paint.Cap.ROUND);
         this.dimPaint.setColor(TLObject.FLAG_30);
         this.actionBarColor = getColor(i);
-        this.navBarColor = getColor(Theme.key_windowBackgroundGray);
-        AndroidUtilities.setNavigationBarColor(getWindow(), this.navBarColor, false);
+        int color = getColor(Theme.key_windowBackgroundGray);
+        this.navBarColor = color;
+        AndroidUtilities.setNavigationBarColor((Dialog) this, color, false);
         WindowView windowView = new WindowView(context);
         this.windowView = windowView;
         windowView.setDelegate(new SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda18
@@ -1549,7 +1550,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             windowView2.setSystemUiVisibility(windowView2.getSystemUiVisibility() & (-3));
         }
         if (i >= 26) {
-            AndroidUtilities.setLightNavigationBar(window, ColorUtils.calculateLuminance(this.navBarColor) >= 0.7210000157356262d);
+            AndroidUtilities.setLightNavigationBar(this, ColorUtils.calculateLuminance(this.navBarColor) >= 0.7210000157356262d);
         }
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewTheme);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.botDownloadsUpdate);
@@ -2208,7 +2209,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.fileItems.clear();
         if (botDownloads.hasFiles()) {
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda307(makeOptions));
+            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda361(makeOptions));
             makeSwipeback.addGap();
             Iterator it2 = botDownloads.getFiles().iterator();
             while (it2.hasNext()) {
@@ -2283,7 +2284,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     public /* synthetic */ void lambda$openOptions$35() {
         Activity activity = this.parentActivity;
         if (activity instanceof LaunchActivity) {
-            ((LaunchActivity) activity).lambda$runLinkRequest$95(ChatActivity.of(this.botId));
+            ((LaunchActivity) activity).lambda$runLinkRequest$100(ChatActivity.of(this.botId));
         }
         dismiss(true);
     }
@@ -3023,7 +3024,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             this.navBarColor = i;
             checkNavBarColor();
         }
-        AndroidUtilities.setNavigationBarColor(getWindow(), this.navBarColor, false);
+        AndroidUtilities.setNavigationBarColor((Dialog) this, this.navBarColor, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3089,7 +3090,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     public void checkNavBarColor() {
         LaunchActivity launchActivity;
         if (!this.superDismissed && (launchActivity = LaunchActivity.instance) != null) {
-            launchActivity.checkSystemBarColors(true, true, true, false);
+            launchActivity.checkSystemBarColors(true, true, true);
         }
         WindowView windowView = this.windowView;
         if (windowView != null) {
@@ -3329,7 +3330,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 if (LaunchActivity.instance == null || !BotWebViewSheet.this.fullscreen) {
                     return;
                 }
-                LaunchActivity.instance.setNavigationBarColor(BotWebViewSheet.this.navBarColor, false);
+                LaunchActivity.instance.setNavigationBarColor(BotWebViewSheet.this.navBarColor);
             }
         }
 

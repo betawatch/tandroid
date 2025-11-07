@@ -62,7 +62,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     IntStream limit(long j);
 
-    Stream mapToObj(IntFunction intFunction);
+    <U> Stream<U> mapToObj(IntFunction<? extends U> intFunction);
 
     j$.util.B max();
 

@@ -268,7 +268,7 @@ public final /* synthetic */ class l0 implements java.util.stream.LongStream {
     @Override // java.util.stream.LongStream
     public final java.util.stream.LongStream flatMap(LongFunction longFunction) {
         LongStream longStream = this.a;
-        a aVar = new a(9);
+        a aVar = new a(10);
         aVar.b = longFunction;
         return j(longStream.e(aVar));
     }

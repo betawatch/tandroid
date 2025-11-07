@@ -6,13 +6,11 @@ import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.os.Build;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.CircularProgressDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -32,6 +30,7 @@ public class ChatActivityBlurredRoundButton extends FrameLayout implements Facto
     private ImageView imageView;
     private CircularProgressDrawable loadingIndicatorDrawable;
     private ImageView loadingIndicatorView;
+    private Theme.ResourcesProvider resourcesProvider;
 
     @Override // me.vkryl.android.animator.FactorAnimator.Target
     public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
@@ -46,11 +45,10 @@ public class ChatActivityBlurredRoundButton extends FrameLayout implements Facto
         this.buttonScaleY = 1.0f;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30);
-        super.onMeasure(makeMeasureSpec, makeMeasureSpec);
-        this.backgroundDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+    @Override // android.view.View
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        this.backgroundDrawable.setBounds(0, 0, i, i2);
     }
 
     @Override // android.view.View
@@ -66,6 +64,9 @@ public class ChatActivityBlurredRoundButton extends FrameLayout implements Facto
 
     public void setIcon(int i) {
         if (this.imageView == null) {
+            if (i == 0) {
+                return;
+            }
             ImageView imageView = new ImageView(getContext());
             this.imageView = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -73,6 +74,13 @@ public class ChatActivityBlurredRoundButton extends FrameLayout implements Facto
             checkUi_IconViewVisibility();
         }
         this.imageView.setImageResource(i);
+    }
+
+    public void setIconPadding(int i) {
+        ImageView imageView = this.imageView;
+        if (imageView != null) {
+            imageView.setPadding(0, i, 0, 0);
+        }
     }
 
     public void reverseIconByY() {
@@ -143,12 +151,14 @@ public class ChatActivityBlurredRoundButton extends FrameLayout implements Facto
         }
     }
 
-    public static ChatActivityBlurredRoundButton create(Context context, BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory, BlurredBackgroundColorProvider blurredBackgroundColorProvider, int i, int i2) {
+    public static ChatActivityBlurredRoundButton create(Context context, BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory, BlurredBackgroundColorProvider blurredBackgroundColorProvider, Theme.ResourcesProvider resourcesProvider, int i) {
+        int color = Theme.getColor(Theme.key_glass_defaultIcon, resourcesProvider);
         ChatActivityBlurredRoundButton chatActivityBlurredRoundButton = new ChatActivityBlurredRoundButton(context);
+        chatActivityBlurredRoundButton.resourcesProvider = resourcesProvider;
         chatActivityBlurredRoundButton.setBlurredBackgroundDrawable(blurredBackgroundDrawableViewFactory.create(chatActivityBlurredRoundButton, blurredBackgroundColorProvider));
         chatActivityBlurredRoundButton.setIcon(i);
-        chatActivityBlurredRoundButton.setIconColor(i2);
-        chatActivityBlurredRoundButton.setBackground(Theme.createSelectorDrawable(Theme.multAlpha(i2, 0.1f), 6, AndroidUtilities.dp(22.0f)));
+        chatActivityBlurredRoundButton.setIconColor(color);
+        chatActivityBlurredRoundButton.setBackground(Theme.createSimpleSelectorRoundRectDrawableWithInset(AndroidUtilities.dp(22.0f), 0, Theme.multAlpha(color, 0.15f), AndroidUtilities.dp(6.0f)));
         return chatActivityBlurredRoundButton;
     }
 
@@ -158,6 +168,10 @@ public class ChatActivityBlurredRoundButton extends FrameLayout implements Facto
             blurredBackgroundDrawable.updateColors();
             invalidate();
         }
+        int i = Theme.key_glass_defaultIcon;
+        int color = Theme.getColor(i, this.resourcesProvider);
+        setIconColor(Theme.getColor(i, this.resourcesProvider));
+        setBackground(Theme.createSimpleSelectorRoundRectDrawableWithInset(AndroidUtilities.dp(22.0f), 0, Theme.multAlpha(color, 0.15f), AndroidUtilities.dp(6.0f)));
     }
 
     private void checkUi_IconViewVisibility() {

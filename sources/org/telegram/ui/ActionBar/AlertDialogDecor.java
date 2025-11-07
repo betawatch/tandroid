@@ -92,7 +92,6 @@ public class AlertDialogDecor extends AlertDialog {
         View inflateContent = inflateContent(false);
         this.contentView = inflateContent;
         inflateContent.setClickable(true);
-        this.contentView.setFitsSystemWindows(false);
         WindowManager.LayoutParams attributes = getWindow().getAttributes();
         FrameLayout frameLayout = new FrameLayout(getContext());
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.AlertDialogDecor$$ExternalSyntheticLambda1

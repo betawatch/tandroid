@@ -1057,7 +1057,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         layoutParams2.width = -1;
         layoutParams2.gravity = 48;
         layoutParams2.type = 99;
-        layoutParams2.flags = (-2147417848) | 8192;
+        layoutParams2.flags = -2147409656;
         AndroidUtilities.logFlagSecure();
         this.centerImage.setParentView(this.containerView);
         this.centerImage.setForceCrossfade(true);
@@ -1597,7 +1597,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         this.isVisible = i;
         Window window = this.parentActivity.getWindow();
         this.wasLightNavigationBar = AndroidUtilities.getLightNavigationBar(window);
-        AndroidUtilities.setLightNavigationBar(window, false);
+        AndroidUtilities.setLightNavigationBar(this.parentActivity, false);
         AndroidUtilities.setLightNavigationBar((View) this.windowView, false);
         Activity activity = this.parentActivity;
         if (activity instanceof LaunchActivity) {
@@ -1605,7 +1605,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             ((LaunchActivity) this.parentActivity).animateNavigationBarColor(-16777216);
         } else {
             this.wasNavigationBarColor = window.getNavigationBarColor();
-            AndroidUtilities.setNavigationBarColor(window, -16777216);
+            AndroidUtilities.setNavigationBarColor(this.parentActivity, -16777216);
         }
         AnimatorSet animatorSet = new AnimatorSet();
         this.imageMoveAnimation = animatorSet;
@@ -2107,10 +2107,10 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         return this.currentMessageObject;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00a7  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x03a8  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x02fb  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x03a6  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x02f9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2128,14 +2128,13 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         }
         Activity activity = this.parentActivity;
         if (activity != null) {
-            Window window = activity.getWindow();
-            AndroidUtilities.setLightNavigationBar(window, this.wasLightNavigationBar);
-            AndroidUtilities.setNavigationBarColor(window, this.wasNavigationBarColor);
+            AndroidUtilities.setLightNavigationBar(activity, this.wasLightNavigationBar);
+            AndroidUtilities.setNavigationBarColor(this.parentActivity, this.wasNavigationBarColor);
             Activity activity2 = this.parentActivity;
             if (activity2 instanceof LaunchActivity) {
                 ((LaunchActivity) activity2).animateNavigationBarColor(this.wasNavigationBarColor);
             } else {
-                AndroidUtilities.setNavigationBarColor(window, this.wasNavigationBarColor);
+                AndroidUtilities.setNavigationBarColor(activity2, this.wasNavigationBarColor);
             }
         }
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.messagesDeleted);

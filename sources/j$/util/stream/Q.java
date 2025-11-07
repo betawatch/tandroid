@@ -66,9 +66,9 @@ final class Q extends CountedCompleter {
             q2.fork();
         }
         if (q.getPendingCount() > 0) {
-            l lVar = new l(14);
+            k kVar = new k(17);
             b bVar = q.a;
-            A0 M = bVar.M(bVar.F(spliterator), lVar);
+            A0 M = bVar.M(bVar.F(spliterator), kVar);
             q.a.U(spliterator, M);
             q.g = M.a();
             q.b = null;

@@ -282,7 +282,7 @@ abstract class b implements BaseStream {
     }
 
     final Spliterator W(Spliterator spliterator) {
-        return this.e == 0 ? spliterator : T(this, new a(6, spliterator), this.a.k);
+        return this.e == 0 ? spliterator : T(this, new a(7, spliterator), this.a.k);
     }
 
     I0 N(b bVar, Spliterator spliterator, IntFunction intFunction) {

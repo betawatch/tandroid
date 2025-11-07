@@ -28,8 +28,10 @@ import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.webkit.WebView;
-import android.widget.FrameLayout;
 import android.widget.OverScroller;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import com.google.zxing.common.detector.MathUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -48,7 +50,7 @@ import org.telegram.ui.Components.Text;
 import org.telegram.ui.GradientClip;
 
 /* loaded from: classes4.dex */
-public class BottomSheetTabsOverlay extends FrameLayout {
+public class BottomSheetTabsOverlay extends View {
     private View actionBarLayout;
     private final AnimatedFloat animatedCount;
     private ValueAnimator animator;
@@ -71,6 +73,7 @@ public class BottomSheetTabsOverlay extends FrameLayout {
     private float lastY;
     private final int maximumVelocity;
     private final int minimumVelocity;
+    private int navigationBarInset;
     public float offset;
     private ValueAnimator openAnimator;
     private float openProgress;
@@ -131,11 +134,6 @@ public class BottomSheetTabsOverlay extends FrameLayout {
         void setDrawingFromOverlay(boolean z);
     }
 
-    @Override // android.view.ViewGroup
-    protected boolean drawChild(Canvas canvas, View view, long j) {
-        return false;
-    }
-
     public BottomSheetTabsOverlay(Context context) {
         super(context);
         this.animatedCount = new AnimatedFloat(this, 0L, 350L, CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -153,18 +151,28 @@ public class BottomSheetTabsOverlay extends FrameLayout {
         ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
         this.maximumVelocity = viewConfiguration.getScaledMaximumFlingVelocity();
         this.minimumVelocity = viewConfiguration.getScaledMinimumFlingVelocity();
+        ViewCompat.setOnApplyWindowInsetsListener(this, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabsOverlay$$ExternalSyntheticLambda7
+            @Override // androidx.core.view.OnApplyWindowInsetsListener
+            public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+                WindowInsetsCompat onApplyWindowInsets;
+                onApplyWindowInsets = BottomSheetTabsOverlay.this.onApplyWindowInsets(view, windowInsetsCompat);
+                return onApplyWindowInsets;
+            }
+        });
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) + (Build.VERSION.SDK_INT < 35 ? AndroidUtilities.navigationBarHeight : 0), TLObject.FLAG_30));
+    /* JADX INFO: Access modifiers changed from: private */
+    public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+        this.navigationBarInset = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom;
+        invalidate();
+        return WindowInsetsCompat.CONSUMED;
     }
 
     public void setTabsView(BottomSheetTabs bottomSheetTabs) {
         this.tabsView = bottomSheetTabs;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if ((AndroidUtilities.isTablet() && motionEvent.getAction() == 0 && !this.tabsViewBounds.contains(motionEvent.getX(), motionEvent.getY())) || this.openProgress <= 0.0f) {
             return false;
@@ -679,7 +687,7 @@ public class BottomSheetTabsOverlay extends FrameLayout {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.offset, f);
         this.scrollAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabsOverlay$$ExternalSyntheticLambda7
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabsOverlay$$ExternalSyntheticLambda8
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 BottomSheetTabsOverlay.this.lambda$scrollTo$5(valueAnimator2);
@@ -754,6 +762,8 @@ public class BottomSheetTabsOverlay extends FrameLayout {
             int i = this.pos[0];
             int[] iArr = this.pos2;
             rectF.offset(i - iArr[0], r1[1] - iArr[1]);
+            canvas.save();
+            canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight() - this.navigationBarInset);
             SheetView windowView = this.dismissingSheet.getWindowView();
             RectF rectF2 = this.rect;
             float f = this.dismissProgress;
@@ -771,6 +781,7 @@ public class BottomSheetTabsOverlay extends FrameLayout {
                 this.dismissingTab.draw(canvas, this.rect, drawInto, this.dismissProgress, 1.0f);
                 canvas.restore();
             }
+            canvas.restore();
         }
     }
 
@@ -1118,7 +1129,7 @@ public class BottomSheetTabsOverlay extends FrameLayout {
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // android.view.View
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         drawDismissingTab(canvas);
@@ -1377,18 +1388,23 @@ public class BottomSheetTabsOverlay extends FrameLayout {
         lockHardwareCanvas.translate(0.0f, f);
         view.draw(lockHardwareCanvas);
         surface.unlockCanvasAndPost(lockHardwareCanvas);
-        PixelCopy.request(surface, createBitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabsOverlay.5
+        PixelCopy.request(surface, createBitmap, new PixelCopy.OnPixelCopyFinishedListener() { // from class: org.telegram.ui.ActionBar.BottomSheetTabsOverlay$$ExternalSyntheticLambda9
             @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
-            public void onPixelCopyFinished(int i) {
-                if (i == 0) {
-                    Utilities.Callback.this.run(createBitmap);
-                } else {
-                    createBitmap.recycle();
-                    Utilities.Callback.this.run(null);
-                }
-                surface.release();
-                m.release();
+            public final void onPixelCopyFinished(int i) {
+                BottomSheetTabsOverlay.lambda$renderHardwareViewToBitmap$8(Utilities.Callback.this, createBitmap, surface, m, i);
             }
         }, new Handler());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$renderHardwareViewToBitmap$8(Utilities.Callback callback, Bitmap bitmap, Surface surface, SurfaceTexture surfaceTexture, int i) {
+        if (i == 0) {
+            callback.run(bitmap);
+        } else {
+            bitmap.recycle();
+            callback.run(null);
+        }
+        surface.release();
+        surfaceTexture.release();
     }
 }

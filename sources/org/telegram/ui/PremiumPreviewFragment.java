@@ -1038,7 +1038,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PremiumPreviewFragment.this.lambda$onBackPressed$341();
+                    PremiumPreviewFragment.this.lambda$onBackPressed$340();
                 }
             }
         });

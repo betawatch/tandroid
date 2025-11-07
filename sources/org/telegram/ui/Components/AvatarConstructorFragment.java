@@ -566,12 +566,12 @@ public class AvatarConstructorFragment extends BaseFragment {
             create.redPositive();
             return;
         }
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$discardEditor$2(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -642,7 +642,7 @@ public class AvatarConstructorFragment extends BaseFragment {
             delegate.onDone(previewView.backgroundGradient, previewView.documentId, previewView.document, previewView);
         }
         if (this.finishOnDone) {
-            lambda$onBackPressed$341();
+            lambda$onBackPressed$340();
         }
     }
 

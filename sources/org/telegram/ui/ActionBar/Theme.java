@@ -7912,6 +7912,11 @@ public abstract class Theme {
         };
     }
 
+    public static Drawable createSimpleSelectorRoundRectDrawableWithInset(int i, int i2, int i3, int i4) {
+        float f = i;
+        return createSimpleSelectorRoundRectDrawable(new float[]{f, f, f, f, f, f, f, f}, i2, i3, i3, i4);
+    }
+
     public static Drawable createSimpleSelectorRoundRectDrawable(int i, int i2, int i3) {
         return createSimpleSelectorRoundRectDrawable(i, i2, i3, i3);
     }
@@ -7929,10 +7934,16 @@ public abstract class Theme {
     }
 
     public static Drawable createSimpleSelectorRoundRectDrawable(float[] fArr, int i, int i2, int i3) {
+        return createSimpleSelectorRoundRectDrawable(fArr, i, i2, i3, 0);
+    }
+
+    public static Drawable createSimpleSelectorRoundRectDrawable(float[] fArr, int i, int i2, int i3, int i4) {
         ShapeDrawable shapeDrawable = new ShapeDrawable(new RoundRectShape(fArr, null, null));
+        shapeDrawable.setPadding(i4, i4, i4, i4);
         shapeDrawable.getPaint().setColor(i);
         ShapeDrawable shapeDrawable2 = new ShapeDrawable(new RoundRectShape(fArr, null, null));
         shapeDrawable2.getPaint().setColor(i3);
+        shapeDrawable2.setPadding(i4, i4, i4, i4);
         return new BaseCell.RippleDrawableSafe(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i2}), shapeDrawable, shapeDrawable2);
     }
 
@@ -10484,8 +10495,8 @@ public abstract class Theme {
                                                             messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr[1].draw(canvas);
-                                                            messageDrawableArr[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                            messageDrawableArr[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                            messageDrawableArr[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                            messageDrawableArr[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                             messageDrawableArr[0].draw(canvas);
                                                             paint3.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3);
@@ -10552,8 +10563,8 @@ public abstract class Theme {
                                                             messageDrawableArr2[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr2[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr2[1].draw(canvas);
-                                                            messageDrawableArr2[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                            messageDrawableArr2[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                            messageDrawableArr2[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                            messageDrawableArr2[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                             messageDrawableArr2[0].draw(canvas);
                                                             paint32.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32);
@@ -10619,8 +10630,8 @@ public abstract class Theme {
                                                             messageDrawableArr22[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr22[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr22[1].draw(canvas);
-                                                            messageDrawableArr22[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                            messageDrawableArr22[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                            messageDrawableArr22[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                            messageDrawableArr22[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                             messageDrawableArr22[0].draw(canvas);
                                                             paint322.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322);
@@ -10735,8 +10746,8 @@ public abstract class Theme {
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
-                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                                        messageDrawableArr222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                                        messageDrawableArr222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                                         messageDrawableArr222[0].draw(canvas);
                                                                         paint3222.setColor(previewColor3);
                                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222);
@@ -10789,8 +10800,8 @@ public abstract class Theme {
                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
-                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                            messageDrawableArr222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                            messageDrawableArr222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                             messageDrawableArr222[0].draw(canvas);
                                                             paint32222.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222);
@@ -10847,8 +10858,8 @@ public abstract class Theme {
                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
-                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                            messageDrawableArr222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                            messageDrawableArr222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                             messageDrawableArr222[0].draw(canvas);
                                                             paint322222.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222);
@@ -10882,8 +10893,8 @@ public abstract class Theme {
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
-                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                        messageDrawableArr222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                        messageDrawableArr222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                         messageDrawableArr222[0].draw(canvas);
                                                         paint3222222.setColor(previewColor3);
                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222);
@@ -10943,8 +10954,8 @@ public abstract class Theme {
                                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                                     messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                                     messageDrawableArr222[1].draw(canvas);
-                                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                                                    messageDrawableArr222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                                                    messageDrawableArr222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                                                     messageDrawableArr222[0].draw(canvas);
                                                                                     paint32222222.setColor(previewColor3);
                                                                                     canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222);
@@ -10977,8 +10988,8 @@ public abstract class Theme {
                                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                             messageDrawableArr222[1].draw(canvas);
-                                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                                            messageDrawableArr222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                                            messageDrawableArr222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                                             messageDrawableArr222[0].draw(canvas);
                                                                             paint322222222.setColor(previewColor3);
                                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222);
@@ -11018,8 +11029,8 @@ public abstract class Theme {
                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                     messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                     messageDrawableArr222[1].draw(canvas);
-                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                                    messageDrawableArr222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                                    messageDrawableArr222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                                     messageDrawableArr222[0].draw(canvas);
                                                                     paint3222222222.setColor(previewColor3);
                                                                     canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222);
@@ -11087,8 +11098,8 @@ public abstract class Theme {
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
-                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                                        messageDrawableArr222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                                        messageDrawableArr222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                                         messageDrawableArr222[0].draw(canvas);
                                                                         paint32222222222.setColor(previewColor3);
                                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222);
@@ -11120,8 +11131,8 @@ public abstract class Theme {
                                                                 messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                 messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                 messageDrawableArr222[1].draw(canvas);
-                                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                                messageDrawableArr222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                                messageDrawableArr222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                                 messageDrawableArr222[0].draw(canvas);
                                                                 paint322222222222.setColor(previewColor3);
                                                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222);
@@ -11156,8 +11167,8 @@ public abstract class Theme {
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
-                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                        messageDrawableArr222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                        messageDrawableArr222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                         messageDrawableArr222[0].draw(canvas);
                                                         paint3222222222222.setColor(previewColor3);
                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222222);
@@ -11191,8 +11202,8 @@ public abstract class Theme {
                                                 messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                 messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                 messageDrawableArr222[1].draw(canvas);
-                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                                messageDrawableArr222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                                messageDrawableArr222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                                 messageDrawableArr222[0].draw(canvas);
                                                 paint32222222222222.setColor(previewColor3);
                                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222222);
@@ -11247,8 +11258,8 @@ public abstract class Theme {
                                         messageDrawableArr2222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                         messageDrawableArr2222[1].setTop(430, 560, 522, false, false);
                                         messageDrawableArr2222[1].draw(canvas);
-                                        messageDrawableArr2222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                        messageDrawableArr2222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                        messageDrawableArr2222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                        messageDrawableArr2222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                         messageDrawableArr2222[0].draw(canvas);
                                         paint322222222222222.setColor(previewColor3);
                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222222);
@@ -11310,8 +11321,8 @@ public abstract class Theme {
                                 messageDrawableArr22222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                 messageDrawableArr22222[1].setTop(430, 560, 522, false, false);
                                 messageDrawableArr22222[1].draw(canvas);
-                                messageDrawableArr22222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                                messageDrawableArr22222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                                messageDrawableArr22222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                                messageDrawableArr22222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                                 messageDrawableArr22222[0].draw(canvas);
                                 paint3222222222222222.setColor(previewColor3);
                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222222222);
@@ -11387,8 +11398,8 @@ public abstract class Theme {
                         messageDrawableArr222222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                         messageDrawableArr222222[1].setTop(430, 560, 522, false, false);
                         messageDrawableArr222222[1].draw(canvas);
-                        messageDrawableArr222222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-                        messageDrawableArr222222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+                        messageDrawableArr222222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+                        messageDrawableArr222222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
                         messageDrawableArr222222[0].draw(canvas);
                         paint32222222222222222.setColor(previewColor3);
                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222222222);
@@ -11479,8 +11490,8 @@ public abstract class Theme {
             messageDrawableArr2222222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
             messageDrawableArr2222222[1].setTop(430, 560, 522, false, false);
             messageDrawableArr2222222[1].draw(canvas);
-            messageDrawableArr2222222[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-            messageDrawableArr2222222[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+            messageDrawableArr2222222[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+            messageDrawableArr2222222[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
             messageDrawableArr2222222[0].draw(canvas);
             paint322222222222222222.setColor(previewColor3);
             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222222222);

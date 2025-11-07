@@ -6,7 +6,6 @@ import j$.util.function.Function$-CC;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiConsumer;
@@ -55,6 +54,8 @@ public final /* synthetic */ class j implements BinaryOperator, Function, BiCons
             case 15:
                 break;
             case 17:
+                break;
+            case 18:
                 break;
         }
         return BiFunction$-CC.$default$andThen(this, function);
@@ -106,10 +107,8 @@ public final /* synthetic */ class j implements BinaryOperator, Function, BiCons
                 return new j$.util.x();
             case 25:
                 return new HashSet();
-            case 27:
-                return new j$.util.z();
             default:
-                return new LinkedHashSet();
+                return new j$.util.z();
         }
     }
 
@@ -157,7 +156,7 @@ public final /* synthetic */ class j implements BinaryOperator, Function, BiCons
                 ((Set) obj).add(obj2);
                 break;
             default:
-                ((LinkedHashSet) obj).add(obj2);
+                ((j$.util.t0) obj).a((CharSequence) obj2);
                 break;
         }
     }
@@ -196,8 +195,12 @@ public final /* synthetic */ class j implements BinaryOperator, Function, BiCons
                 return new R0((E0) obj, (E0) obj2);
             case 17:
                 return new S0((G0) obj, (G0) obj2);
-            default:
+            case 18:
                 return new U0((I0) obj, (I0) obj2);
+            default:
+                j$.util.t0 t0Var = (j$.util.t0) obj;
+                t0Var.d((j$.util.t0) obj2);
+                return t0Var;
         }
     }
 }

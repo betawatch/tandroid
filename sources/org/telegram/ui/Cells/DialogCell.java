@@ -6575,25 +6575,25 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x0234, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x023a, code lost:
     
-        if (r3 > 0) goto L61;
+        if (r3 > 0) goto L63;
      */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x071a  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0728  */
-    /* JADX WARN: Removed duplicated region for block: B:188:0x062f  */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x06b3  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x06c0  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x06e6  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x0711  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x06f9  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x06df  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0242  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0266  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x029f  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0317  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x02b5  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0274  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0720  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x072e  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x0635  */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x06b9  */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x06c6  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x06ec  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x0717  */
+    /* JADX WARN: Removed duplicated region for block: B:214:0x06ff  */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x06e5  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0248  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x026c  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x02a5  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x031d  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x02bb  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x027a  */
     @Override // org.telegram.ui.Stories.StoriesListPlaceProvider.AvatarOverlaysView
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -6684,7 +6684,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         if (!this.isDialogCell || this.currentDialogFolderId != 0 || z) {
             return false;
         }
-        boolean z4 = (this.ttlPeriod <= 0 || isOnline() || this.hasCall) ? false : true;
+        boolean z4 = (this.ttlPeriod <= 0 || isOnline() || this.hasCall || this.storyParams.drawnLive) ? false : true;
         this.showTtl = z4;
         if (this.rightFragmentOpenedProgress != 1.0f && (z4 || this.ttlProgress > 0.0f)) {
             TimerDrawable timerDrawable = this.timerDrawable;

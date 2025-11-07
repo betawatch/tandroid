@@ -489,7 +489,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
                     if (channelColorActivity.currentLevel >= channelColorActivity.minLevelRequired() && ChannelColorActivity.this.hasUnsavedChanged()) {
                         ChannelColorActivity.this.showUnsavedAlert();
                     } else {
-                        ChannelColorActivity.this.lambda$onBackPressed$341();
+                        ChannelColorActivity.this.lambda$onBackPressed$340();
                     }
                 }
             }
@@ -793,7 +793,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
             tL_channels_updateColor.channel = getMessagesController().getInputChannel(-this.dialogId);
             tL_channels_updateColor.for_profile = false;
             if (chat.color == null) {
-                chat.color = new TLRPC.PeerColor();
+                chat.color = new TLRPC.TL_peerColor();
                 chat.flags2 |= 128;
             }
             int i = tL_channels_updateColor.flags;
@@ -828,7 +828,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
             tL_channels_updateColor2.channel = getMessagesController().getInputChannel(-this.dialogId);
             tL_channels_updateColor2.for_profile = true;
             if (chat.profile_color == null) {
-                chat.profile_color = new TLRPC.PeerColor();
+                chat.profile_color = new TLRPC.TL_peerColor();
                 chat.flags2 |= 256;
             }
             int i5 = this.selectedProfileColor;
@@ -952,7 +952,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
             });
         }
         if (iArr[r2] == 0) {
-            lambda$onBackPressed$341();
+            lambda$onBackPressed$340();
             this.button.setLoading(r2);
             return;
         }
@@ -994,7 +994,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
         int i2 = i + 1;
         iArr[0] = i2;
         if (i2 == iArr2[0]) {
-            lambda$onBackPressed$341();
+            lambda$onBackPressed$340();
             showBulletin();
             this.button.setLoading(false);
         }
@@ -1184,7 +1184,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showUnsavedAlert$14(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1820,7 +1820,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
             this.backgroundView = coloredActionBar;
             coloredActionBar.setProgressToGradient(1.0f);
             coloredActionBar.ignoreMeasure = true;
-            addView(coloredActionBar, LayoutHelper.createFrame(-1, ChannelColorActivity.this.isGroup ? NotificationCenter.uploadStoryEnd : NotificationCenter.needCheckSystemBarColors, 119));
+            addView(coloredActionBar, LayoutHelper.createFrame(-1, ChannelColorActivity.this.isGroup ? NotificationCenter.uploadStoryProgress : NotificationCenter.needCheckSystemBarColors, 119));
             PeerColorActivity.ProfilePreview profilePreview = new PeerColorActivity.ProfilePreview(getContext(), ((BaseFragment) ChannelColorActivity.this).currentAccount, ChannelColorActivity.this.dialogId, ((BaseFragment) ChannelColorActivity.this).resourceProvider) { // from class: org.telegram.ui.ChannelColorActivity.ProfilePreview.1
                 @Override // org.telegram.ui.PeerColorActivity.ProfilePreview
                 public void setColor(int i, boolean z) {
@@ -3075,7 +3075,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
             if (this.dialogId == ((Long) objArr[0]).longValue()) {
                 INavigationLayout iNavigationLayout = this.parentLayout;
                 if (iNavigationLayout != null && iNavigationLayout.getLastFragment() == this) {
-                    lambda$onBackPressed$341();
+                    lambda$onBackPressed$340();
                 } else {
                     removeSelfFromStack();
                 }

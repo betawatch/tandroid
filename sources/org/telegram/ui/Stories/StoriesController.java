@@ -924,13 +924,17 @@ public class StoriesController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x01f0  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x020d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public /* synthetic */ void lambda$processUpdate$10(long j, TL_stories.TL_updateStory tL_updateStory, TLRPC.User user) {
         boolean z;
         boolean z2;
         boolean z3;
         FileLog.d("StoriesController update stories for dialog " + j);
         updateStoriesInLists(j, Collections.singletonList(tL_updateStory.story));
-        boolean z4 = true;
         updateStoriesForFullPeer(j, Collections.singletonList(tL_updateStory.story), true);
         TL_stories.PeerStories peerStories = (TL_stories.PeerStories) this.allStoriesMap.get(j);
         ArrayList arrayList = new ArrayList();
@@ -943,7 +947,7 @@ public class StoriesController {
             int i2 = 0;
             while (true) {
                 if (i2 >= peerStories.stories.size()) {
-                    z = false;
+                    z2 = false;
                     break;
                 }
                 if (peerStories.stories.get(i2).id != storyItem.id) {
@@ -951,8 +955,8 @@ public class StoriesController {
                 } else if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
                     peerStories.stories.remove(i2);
                     FileLog.d("StoriesController remove story id=" + storyItem.id);
-                    z = true;
                     z2 = true;
+                    z3 = true;
                 } else {
                     TL_stories.StoryItem storyItem2 = peerStories.stories.get(i2);
                     storyItem = applyStoryUpdate(storyItem2, storyItem);
@@ -965,12 +969,12 @@ public class StoriesController {
                         storyItem.firstFramePath = storyItem2.firstFramePath;
                     }
                     FileLog.d("StoriesController update story id=" + storyItem.id);
-                    z = true;
+                    z2 = true;
                 }
             }
-            z2 = false;
-            if (z) {
-                z3 = false;
+            z3 = false;
+            if (z2) {
+                z = false;
             } else {
                 if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
                     FileLog.d("StoriesController can't add new story DELETED");
@@ -989,48 +993,58 @@ public class StoriesController {
                 FileLog.d("StoriesController add new story id=" + storyItem.id + " total stories count " + peerStories.stories.size());
                 preloadStory(j, storyItem);
                 applyToList(peerStories);
+                z = true;
                 z3 = true;
-                z2 = true;
             }
-            if (!z2) {
-                z4 = z3;
-            } else if (peerStories.stories.isEmpty() && !hasUploadingStories(j)) {
-                this.dialogListStories.remove(peerStories);
-                this.hiddenListStories.remove(peerStories);
-                this.allStoriesMap.remove(DialogObject.getPeerDialogId(peerStories.peer));
-                this.totalStoriesCount--;
-            } else {
-                Collections.sort(peerStories.stories, storiesComparator);
+            if (z3) {
+                if (peerStories.stories.isEmpty() && !hasUploadingStories(j)) {
+                    this.dialogListStories.remove(peerStories);
+                    this.hiddenListStories.remove(peerStories);
+                    this.allStoriesMap.remove(DialogObject.getPeerDialogId(peerStories.peer));
+                    this.totalStoriesCount--;
+                } else {
+                    Collections.sort(peerStories.stories, storiesComparator);
+                }
             }
-        } else {
-            TL_stories.StoryItem storyItem3 = tL_updateStory.story;
-            if (storyItem3 instanceof TL_stories.TL_storyItemDeleted) {
-                FileLog.d("StoriesController can't add user " + j + " with new story DELETED");
-                return;
+            if (i != this.totalStoriesCount) {
+                this.mainSettings.edit().putInt("total_stores", this.totalStoriesCount).apply();
             }
-            if (StoriesUtilities.isExpired(this.currentAccount, storyItem3)) {
-                FileLog.d("StoriesController can't add user " + j + " with new story isExpired");
-                return;
+            fixDeletedAndNonContactsStories(this.dialogListStories);
+            fixDeletedAndNonContactsStories(this.hiddenListStories);
+            if (z) {
+                if (tL_updateStory.story instanceof TL_stories.TL_storyItemDeleted) {
+                    NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storyDeleted, Long.valueOf(j), Integer.valueOf(tL_updateStory.story.id));
+                }
+                NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
             }
-            if (j > 0 && (user == null || (!user.self && !isContactOrService(user)))) {
-                FileLog.d("StoriesController can't add user cause is not contact");
-                return;
-            }
-            TL_stories.TL_peerStories tL_peerStories = new TL_stories.TL_peerStories();
-            tL_peerStories.peer = tL_updateStory.peer;
-            tL_peerStories.stories.add(tL_updateStory.story);
-            FileLog.d("StoriesController add new user with story id=" + tL_updateStory.story.id);
-            applyNewStories(tL_peerStories);
-            this.totalStoriesCount = this.totalStoriesCount + 1;
-            loadAllStoriesForDialog(j);
+            MessagesController.getInstance(this.currentAccount).checkArchiveFolder();
         }
+        TL_stories.StoryItem storyItem3 = tL_updateStory.story;
+        if (storyItem3 instanceof TL_stories.TL_storyItemDeleted) {
+            FileLog.d("StoriesController can't add user " + j + " with new story DELETED");
+            return;
+        }
+        if (StoriesUtilities.isExpired(this.currentAccount, storyItem3)) {
+            FileLog.d("StoriesController can't add user " + j + " with new story isExpired");
+            return;
+        }
+        if (j > 0 && (user == null || (!user.self && !isContactOrService(user)))) {
+            FileLog.d("StoriesController can't add user cause is not contact");
+            return;
+        }
+        TL_stories.TL_peerStories tL_peerStories = new TL_stories.TL_peerStories();
+        tL_peerStories.peer = tL_updateStory.peer;
+        tL_peerStories.stories.add(tL_updateStory.story);
+        FileLog.d("StoriesController add new user with story id=" + tL_updateStory.story.id);
+        applyNewStories(tL_peerStories);
+        this.totalStoriesCount = this.totalStoriesCount + 1;
+        loadAllStoriesForDialog(j);
+        z = true;
         if (i != this.totalStoriesCount) {
-            this.mainSettings.edit().putInt("total_stores", this.totalStoriesCount).apply();
         }
         fixDeletedAndNonContactsStories(this.dialogListStories);
         fixDeletedAndNonContactsStories(this.hiddenListStories);
-        if (z4) {
-            NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
+        if (z) {
         }
         MessagesController.getInstance(this.currentAccount).checkArchiveFolder();
     }
@@ -1559,7 +1573,7 @@ public class StoriesController {
         return false;
     }
 
-    public int hasUnreadStoriesLive(long j) {
+    public int hasLiveStory(long j) {
         TL_stories.PeerStories peerStories = (TL_stories.PeerStories) this.allStoriesMap.get(j);
         if (peerStories == null) {
             peerStories = getStoriesFromFullPeer(j);
@@ -1567,13 +1581,10 @@ public class StoriesController {
         if (peerStories == null) {
             return 0;
         }
-        if (j == UserConfig.getInstance(this.currentAccount).getClientUserId() && !Utilities.isNullOrEmpty((Collection) this.uploadingStoriesByDialogId.get(j))) {
-            return 1;
-        }
         for (int size = peerStories.stories.size() - 1; size >= 0; size--) {
             TL_stories.StoryItem storyItem = peerStories.stories.get(size);
-            if (storyItem != null && storyItem.id > peerStories.max_read_id) {
-                return storyItem.media instanceof TLRPC.TL_messageMediaVideoStream ? 2 : 1;
+            if (storyItem != null && (storyItem.media instanceof TLRPC.TL_messageMediaVideoStream)) {
+                return 2;
             }
         }
         return 0;
@@ -1600,10 +1611,10 @@ public class StoriesController {
         int max = Math.max(peerStories.max_read_id, this.dialogIdToMaxReadId.get(j, 0));
         boolean z = false;
         for (int i2 = 0; i2 < peerStories.stories.size(); i2++) {
+            if (peerStories.stories.get(i2).media instanceof TLRPC.TL_messageMediaVideoStream) {
+                return 3;
+            }
             if ((i == 0 || peerStories.stories.get(i2).id == i) && peerStories.stories.get(i2).id > max) {
-                if (peerStories.stories.get(i2).media instanceof TLRPC.TL_messageMediaVideoStream) {
-                    return 3;
-                }
                 if (peerStories.stories.get(i2).close_friends) {
                     return 2;
                 }
@@ -1793,26 +1804,25 @@ public class StoriesController {
         consumer.accept(null);
     }
 
-    public void resolveStoryLink(long j, int i, Consumer consumer) {
+    public void resolveLiveStoryLink(long j, Consumer consumer) {
         TL_stories.PeerStories stories = getStories(j);
         if (stories != null) {
-            for (int i2 = 0; i2 < stories.stories.size(); i2++) {
-                if (stories.stories.get(i2).id == i && !(stories.stories.get(i2) instanceof TL_stories.TL_storyItemSkipped)) {
-                    consumer.accept(stories.stories.get(i2));
+            for (int i = 0; i < stories.stories.size(); i++) {
+                if ((stories.stories.get(i).media instanceof TLRPC.TL_messageMediaVideoStream) && !(stories.stories.get(i) instanceof TL_stories.TL_storyItemSkipped)) {
+                    consumer.accept(stories.stories.get(i));
                     return;
                 }
             }
         }
-        long j2 = (i + j) << 12;
+        long j2 = ((-93321425) + j) << 12;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.resolvedStories.get(j2);
         if (storyItem != null) {
             consumer.accept(storyItem);
             return;
         }
-        TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
-        tL_stories_getStoriesByID.id.add(Integer.valueOf(i));
-        tL_stories_getStoriesByID.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories_getStoriesByID, new 1(j2, consumer));
+        TL_stories.TL_stories_getPeerStories tL_stories_getPeerStories = new TL_stories.TL_stories_getPeerStories();
+        tL_stories_getPeerStories.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories_getPeerStories, new 1(j2, consumer));
     }
 
     class 1 implements RequestDelegate {
@@ -1840,12 +1850,80 @@ public class StoriesController {
         public /* synthetic */ void lambda$run$0(TLObject tLObject, long j, Consumer consumer) {
             TL_stories.StoryItem storyItem;
             if (tLObject != null) {
+                TL_stories.TL_stories_peerStories tL_stories_peerStories = (TL_stories.TL_stories_peerStories) tLObject;
+                MessagesController.getInstance(StoriesController.this.currentAccount).putUsers(tL_stories_peerStories.users, false);
+                MessagesController.getInstance(StoriesController.this.currentAccount).putChats(tL_stories_peerStories.chats, false);
+                TL_stories.PeerStories peerStories = tL_stories_peerStories.stories;
+                if (peerStories != null) {
+                    for (int i = 0; i < peerStories.stories.size(); i++) {
+                        if ((peerStories.stories.get(i).media instanceof TLRPC.TL_messageMediaVideoStream) && !(peerStories.stories.get(i) instanceof TL_stories.TL_storyItemSkipped)) {
+                            LongSparseArray longSparseArray = StoriesController.this.resolvedStories;
+                            storyItem = peerStories.stories.get(i);
+                            longSparseArray.put(j, storyItem);
+                            break;
+                        }
+                    }
+                }
+            }
+            storyItem = null;
+            consumer.accept(storyItem);
+        }
+    }
+
+    public void resolveStoryLink(long j, int i, Consumer consumer) {
+        TL_stories.PeerStories stories = getStories(j);
+        if (stories != null) {
+            for (int i2 = 0; i2 < stories.stories.size(); i2++) {
+                if (stories.stories.get(i2).id == i && !(stories.stories.get(i2) instanceof TL_stories.TL_storyItemSkipped)) {
+                    consumer.accept(stories.stories.get(i2));
+                    return;
+                }
+            }
+        }
+        long j2 = (i + j) << 12;
+        TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.resolvedStories.get(j2);
+        if (storyItem != null) {
+            consumer.accept(storyItem);
+            return;
+        }
+        TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
+        tL_stories_getStoriesByID.id.add(Integer.valueOf(i));
+        tL_stories_getStoriesByID.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories_getStoriesByID, new 2(j2, consumer));
+    }
+
+    class 2 implements RequestDelegate {
+        final /* synthetic */ Consumer val$consumer;
+        final /* synthetic */ long val$hash;
+
+        2(long j, Consumer consumer) {
+            this.val$hash = j;
+            this.val$consumer = consumer;
+        }
+
+        @Override // org.telegram.tgnet.RequestDelegate
+        public void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+            final long j = this.val$hash;
+            final Consumer consumer = this.val$consumer;
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoriesController$2$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    StoriesController.2.this.lambda$run$0(tLObject, j, consumer);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$run$0(TLObject tLObject, long j, Consumer consumer) {
+            TL_stories.StoryItem storyItem;
+            if (tLObject != null) {
                 TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
                 MessagesController.getInstance(StoriesController.this.currentAccount).putUsers(tL_stories_stories.users, false);
                 MessagesController.getInstance(StoriesController.this.currentAccount).putChats(tL_stories_stories.chats, false);
                 if (tL_stories_stories.stories.size() > 0) {
+                    LongSparseArray longSparseArray = StoriesController.this.resolvedStories;
                     storyItem = tL_stories_stories.stories.get(0);
-                    StoriesController.this.resolvedStories.put(j, storyItem);
+                    longSparseArray.put(j, storyItem);
                     consumer.accept(storyItem);
                 }
             }
@@ -2060,7 +2138,7 @@ public class StoriesController {
         }
     }
 
-    private TL_stories.StoryItem findStory(long j, int i) {
+    public TL_stories.StoryItem findStory(long j, int i) {
         TL_stories.PeerStories peerStories = (TL_stories.PeerStories) this.allStoriesMap.get(j);
         if (peerStories == null) {
             return null;

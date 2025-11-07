@@ -1797,6 +1797,10 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                         this.subtitleTextView.setVisibility(0);
                         this.subtitleTextView.setText(String.format(Locale.US, "%s subscription fee", str3));
                     }
+                } else if (starsTransaction.phonegroup_message) {
+                    this.titleTextView.setText(str2);
+                    this.subtitleTextView.setVisibility(z4 ? 8 : 0);
+                    this.subtitleTextView.setText(LocaleController.getString(R.string.StarsTransactionLiveStoryMessageFee));
                 } else if (starsTransaction.paid_message) {
                     this.titleTextView.setText(str2);
                     this.subtitleTextView.setVisibility(z4 ? 8 : 0);
@@ -3004,9 +3008,9 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starBalanceUpdated);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:38:0x00e5, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:38:0x00e7, code lost:
         
-            if (org.telegram.messenger.LocaleController.nullable(org.telegram.messenger.LocaleController.getString(r2)) == null) goto L61;
+            if (org.telegram.messenger.LocaleController.nullable(org.telegram.messenger.LocaleController.getString(r4)) == null) goto L63;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -3076,6 +3080,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                             str2 = "StarsNeededTextSearch";
                         } else if (i == 16) {
                             str2 = "StarsNeededRemoveGiftDescription";
+                        } else if (i == 17) {
+                            str2 = "StarsNeededLiveComments";
                         } else {
                             str2 = "StarsNeededText";
                         }
@@ -3777,7 +3783,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         return spannableStringBuilder;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:106:0x0166, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x0171, code lost:
     
         r5 = org.telegram.messenger.R.string.StarsTransactionFragment;
      */
@@ -3793,6 +3799,9 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         }
         if (starsTransaction.premium_gift) {
             return LocaleController.getString(R.string.StarsTransactionPremiumGift);
+        }
+        if (starsTransaction.phonegroup_message) {
+            return LocaleController.getString(R.string.StarsTransactionLiveStoryMessageFee);
         }
         if (starsTransaction.paid_message) {
             return LocaleController.formatPluralStringComma("StarsTransactionMessageFee", starsTransaction.paid_messages);

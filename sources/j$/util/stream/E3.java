@@ -17,7 +17,7 @@ final class E3 extends c3 {
         this.h = w2;
         Objects.requireNonNull(w2);
         this.e = this.b.V(new D3(w2, 0));
-        this.f = new a(5, this);
+        this.f = new a(6, this);
     }
 
     @Override // j$.util.Spliterator

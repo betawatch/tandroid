@@ -262,7 +262,7 @@ public final /* synthetic */ class C implements DoubleStream {
     @Override // java.util.stream.DoubleStream
     public final DoubleStream flatMap(DoubleFunction doubleFunction) {
         D d = this.a;
-        a aVar = new a(7);
+        a aVar = new a(8);
         aVar.b = doubleFunction;
         return j(d.e(aVar));
     }

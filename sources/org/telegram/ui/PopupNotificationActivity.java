@@ -323,6 +323,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             }
 
             @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
+            public /* synthetic */ TLRPC.Peer getDefaultSendAs() {
+                return ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$getDefaultSendAs(this);
+            }
+
+            @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
             public /* synthetic */ ChatActivity.ReplyQuote getReplyQuote() {
                 return ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$getReplyQuote(this);
             }
@@ -472,6 +477,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
             public /* synthetic */ void scrollToSendingMessage() {
                 ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$scrollToSendingMessage(this);
+            }
+
+            @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
+            public /* synthetic */ boolean setDefaultSendAs(long j, long j2) {
+                return ChatActivityEnterView.ChatActivityEnterViewDelegate.-CC.$default$setDefaultSendAs(this, j, j2);
             }
 
             @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate

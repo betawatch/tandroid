@@ -112,7 +112,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PhotoPickerSearchActivity.this.lambda$onBackPressed$341();
+                    PhotoPickerSearchActivity.this.lambda$onBackPressed$340();
                 }
             }
         });
@@ -127,7 +127,7 @@ public class PhotoPickerSearchActivity extends BaseFragment {
 
             @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public boolean canCollapseSearch() {
-                PhotoPickerSearchActivity.this.lambda$onBackPressed$341();
+                PhotoPickerSearchActivity.this.lambda$onBackPressed$340();
                 return false;
             }
 

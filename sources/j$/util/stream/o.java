@@ -11,13 +11,13 @@ import java.util.function.IntFunction;
 /* loaded from: classes2.dex */
 final class o extends d2 {
     static M0 X(b bVar, Spliterator spliterator) {
-        j jVar = new j(28);
-        j jVar2 = new j(29);
-        l lVar = new l(0);
-        Objects.requireNonNull(jVar);
-        Objects.requireNonNull(jVar2);
-        Objects.requireNonNull(lVar);
-        return new M0((Collection) new C1(b3.REFERENCE, lVar, jVar2, jVar, 3).c(bVar, spliterator));
+        k kVar = new k(1);
+        k kVar2 = new k(2);
+        k kVar3 = new k(3);
+        Objects.requireNonNull(kVar);
+        Objects.requireNonNull(kVar2);
+        Objects.requireNonNull(kVar3);
+        return new M0((Collection) new C1(b3.REFERENCE, kVar3, kVar2, kVar, 3).c(bVar, spliterator));
     }
 
     @Override // j$.util.stream.b

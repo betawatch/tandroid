@@ -1406,7 +1406,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 passportActivityDelegate2.saveValue(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, secureDocument22, arrayList32, secureDocument32, secureDocument, runnable, errorRunnable);
                 return true;
             }
-            PassportActivity.this.lambda$onBackPressed$341();
+            PassportActivity.this.lambda$onBackPressed$340();
             return false;
         }
 
@@ -1463,7 +1463,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 if (PassportActivity.this.currentActivityType == 0 || PassportActivity.this.currentActivityType == 5) {
                     PassportActivity.this.callCallback(false);
                 }
-                PassportActivity.this.lambda$onBackPressed$341();
+                PassportActivity.this.lambda$onBackPressed$340();
                 return;
             }
             if (i == 1) {
@@ -1576,7 +1576,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                         }
                         PassportActivity.this.delegate.saveValue(PassportActivity.this.currentType, null, jSONObject != null ? jSONObject.toString() : null, PassportActivity.this.currentDocumentsType, null, PassportActivity.this.documents, PassportActivity.this.selfieDocument, PassportActivity.this.translationDocuments, null, null, runnable, errorRunnable);
                     } else {
-                        PassportActivity.this.lambda$onBackPressed$341();
+                        PassportActivity.this.lambda$onBackPressed$340();
                         return;
                     }
                 } else if (PassportActivity.this.currentActivityType != 1) {
@@ -1602,7 +1602,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemClick$4() {
-            PassportActivity.this.lambda$onBackPressed$341();
+            PassportActivity.this.lambda$onBackPressed$340();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -3088,7 +3088,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         if (tL_error == null) {
             this.ignoreOnFailure = true;
             callCallback(true);
-            lambda$onBackPressed$341();
+            lambda$onBackPressed$340();
         } else {
             showEditDoneProgress(false, false);
             if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
@@ -4500,7 +4500,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         }
         this.currentDocumentValues.clear();
         this.delegate.deleteValue(this.currentType, this.currentDocumentsType, this.availableDocumentTypes, zArr[0], null, null);
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -9263,7 +9263,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$69(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -9305,7 +9305,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         for (int i3 = 0; i3 < min; i3++) {
             SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList.get(i3);
             Bitmap loadBitmap = ImageLoader.loadBitmap(sendingMediaInfo.path, sendingMediaInfo.uri, 2048.0f, 2048.0f, false);
-            if (loadBitmap != null && (scaleAndSaveImage = ImageLoader.scaleAndSaveImage(loadBitmap, 2048.0f, 2048.0f, 89, false, NotificationCenter.uploadStoryEnd, NotificationCenter.uploadStoryEnd)) != null) {
+            if (loadBitmap != null && (scaleAndSaveImage = ImageLoader.scaleAndSaveImage(loadBitmap, 2048.0f, 2048.0f, 89, false, NotificationCenter.uploadStoryProgress, NotificationCenter.uploadStoryProgress)) != null) {
                 TLRPC.TL_secureFile tL_secureFile = new TLRPC.TL_secureFile();
                 tL_secureFile.dc_id = (int) scaleAndSaveImage.location.volume_id;
                 tL_secureFile.id = r9.local_id;
@@ -9841,7 +9841,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$resendCode$1(AlertDialog alertDialog, int i) {
             onBackPressed(true);
-            PassportActivity.this.lambda$onBackPressed$341();
+            PassportActivity.this.lambda$onBackPressed$340();
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -10316,7 +10316,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 passportActivityDelegate.saveValue(tL_secureRequiredType, str, null, null, null, null, null, null, null, null, new Runnable() { // from class: org.telegram.ui.PassportActivity$PhoneConfirmationView$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PassportActivity.this.lambda$onBackPressed$341();
+                        PassportActivity.this.lambda$onBackPressed$340();
                     }
                 }, null);
                 return;

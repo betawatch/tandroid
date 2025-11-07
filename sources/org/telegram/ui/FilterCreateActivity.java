@@ -483,7 +483,7 @@ public class FilterCreateActivity extends BaseFragment {
             public void onItemClick(int i) {
                 if (i == -1) {
                     if (FilterCreateActivity.this.checkDiscard()) {
-                        FilterCreateActivity.this.lambda$onBackPressed$341();
+                        FilterCreateActivity.this.lambda$onBackPressed$340();
                     }
                 } else if (i == 1) {
                     FilterCreateActivity.this.processDone();
@@ -937,7 +937,7 @@ public class FilterCreateActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$deleteFolder$14(Boolean bool) {
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -981,7 +981,7 @@ public class FilterCreateActivity extends BaseFragment {
         }
         getMessagesController().removeFilter(this.filter);
         getMessagesStorage().deleteDialogFilter(this.filter);
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     private void onUpdate(boolean z, ArrayList arrayList, ArrayList arrayList2) {
@@ -1207,7 +1207,7 @@ public class FilterCreateActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$21(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     private void showRemoveAlert(final ItemInner itemInner, CharSequence charSequence, Object obj, final boolean z) {
@@ -1284,7 +1284,7 @@ public class FilterCreateActivity extends BaseFragment {
             this.actionBar.setTitleAnimated(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(this.filter.name, titleFontMetricsInt, false), this.filter.entities, titleFontMetricsInt), true, 220L);
             return;
         }
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     private void save(boolean z, final Runnable runnable) {

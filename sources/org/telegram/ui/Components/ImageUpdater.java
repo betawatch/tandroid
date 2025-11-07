@@ -827,7 +827,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
             }
             PhotoCropActivity photoCropActivity = new PhotoCropActivity(bundle);
             photoCropActivity.setDelegate(this);
-            launchActivity.lambda$runLinkRequest$95(photoCropActivity);
+            launchActivity.lambda$runLinkRequest$100(photoCropActivity);
         } catch (Exception e) {
             FileLog.e(e);
             processBitmap(false, ImageLoader.loadBitmap(str, uri, 800.0f, 800.0f, true), null);
@@ -915,7 +915,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
         this.convertingVideo = null;
         this.videoPath = null;
         this.vectorMarkup = messageObject == null ? null : messageObject.emojiMarkup;
-        this.bigPhoto = ImageLoader.scaleAndSaveImage(bitmap, 800.0f, 800.0f, 80, false, NotificationCenter.uploadStoryEnd, NotificationCenter.uploadStoryEnd);
+        this.bigPhoto = ImageLoader.scaleAndSaveImage(bitmap, 800.0f, 800.0f, 80, false, NotificationCenter.uploadStoryProgress, NotificationCenter.uploadStoryProgress);
         TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(bitmap, 150.0f, 150.0f, 80, false, 150, 150);
         this.smallPhoto = scaleAndSaveImage;
         if (scaleAndSaveImage != null) {
@@ -1117,7 +1117,7 @@ public class ImageUpdater implements NotificationCenter.NotificationCenterDelega
                         }
                         pathToAttach2.delete();
                     }
-                    this.bigPhoto = ImageLoader.scaleAndSaveImage(createVideoThumbnailAtTime, 800.0f, 800.0f, 80, false, NotificationCenter.uploadStoryEnd, NotificationCenter.uploadStoryEnd);
+                    this.bigPhoto = ImageLoader.scaleAndSaveImage(createVideoThumbnailAtTime, 800.0f, 800.0f, 80, false, NotificationCenter.uploadStoryProgress, NotificationCenter.uploadStoryProgress);
                     TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(createVideoThumbnailAtTime, 150.0f, 150.0f, 80, false, 150, 150);
                     this.smallPhoto = scaleAndSaveImage;
                     if (scaleAndSaveImage != null) {

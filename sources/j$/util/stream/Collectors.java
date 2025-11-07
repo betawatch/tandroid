@@ -27,15 +27,19 @@ public final class Collectors {
     }
 
     public static <T, C extends Collection<T>> Collector<T, ?, C> toCollection(Supplier<C> supplier) {
-        return new k(supplier, new j(21), new j(0), a);
+        return new l(supplier, new j(21), new j(0), a);
     }
 
     public static <T> Collector<T, ?, List<T>> toList() {
-        return new k(new j(22), new j(23), new j(1), a);
+        return new l(new j(22), new j(23), new j(1), a);
     }
 
     public static <T> Collector<T, ?, Set<T>> toSet() {
-        return new k(new j(25), new j(26), new j(3), b);
+        return new l(new j(25), new j(26), new j(3), b);
+    }
+
+    public static Collector<CharSequence, ?, String> joining(CharSequence charSequence) {
+        return new l(new a(1, charSequence), new j(28), new j(29), new k(0), c);
     }
 
     static void a(double[] dArr, double d) {

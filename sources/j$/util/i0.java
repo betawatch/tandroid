@@ -24,8 +24,8 @@ final class i0 implements O, LongConsumer, y {
 
     @Override // java.util.Iterator
     public final Long next() {
-        if (u0.a) {
-            u0.a(i0.class, "{0} calling PrimitiveIterator.OfLong.nextLong()");
+        if (v0.a) {
+            v0.a(i0.class, "{0} calling PrimitiveIterator.OfLong.nextLong()");
             throw null;
         }
         return Long.valueOf(nextLong());
@@ -38,8 +38,8 @@ final class i0 implements O, LongConsumer, y {
             return;
         }
         Objects.requireNonNull(consumer);
-        if (u0.a) {
-            u0.a(i0.class, "{0} calling PrimitiveIterator.OfLong.forEachRemainingLong(action::accept)");
+        if (v0.a) {
+            v0.a(i0.class, "{0} calling PrimitiveIterator.OfLong.forEachRemainingLong(action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);

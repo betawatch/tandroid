@@ -34,6 +34,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
@@ -706,6 +707,19 @@ public class ItemOptions {
         return this;
     }
 
+    public ItemOptions addDialog(int i, long j, Runnable runnable) {
+        int i2;
+        TLObject userOrChat = MessagesController.getInstance(i).getUserOrChat(j);
+        boolean z = userOrChat instanceof TLRPC.User;
+        boolean z2 = (userOrChat instanceof TLRPC.Chat) && ChatObject.isChannelAndNotMegaGroup((TLRPC.Chat) userOrChat);
+        if (z) {
+            i2 = R.string.ViewProfile;
+        } else {
+            i2 = z2 ? R.string.ViewChannelProfile : R.string.ViewGroupProfile;
+        }
+        return addProfile(userOrChat, LocaleController.getString(i2), runnable);
+    }
+
     public ItemOptions addProfile(TLObject tLObject, CharSequence charSequence, final Runnable runnable) {
         FrameLayout frameLayout = new FrameLayout(this.context);
         frameLayout.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, this.resourcesProvider), 0, 6));
@@ -734,7 +748,7 @@ public class ItemOptions {
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ItemOptions.lambda$addProfile$9(runnable, view);
+                ItemOptions.this.lambda$addProfile$9(runnable, view);
             }
         });
         addView(frameLayout, LayoutHelper.createLinear(-1, 52));
@@ -742,7 +756,8 @@ public class ItemOptions {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$addProfile$9(Runnable runnable, View view) {
+    public /* synthetic */ void lambda$addProfile$9(Runnable runnable, View view) {
+        dismiss();
         if (runnable != null) {
             runnable.run();
         }

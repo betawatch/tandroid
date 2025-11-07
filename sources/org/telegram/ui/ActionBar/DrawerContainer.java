@@ -1,19 +1,27 @@
 package org.telegram.ui.ActionBar;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
+import androidx.core.graphics.ColorUtils;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes4.dex */
 public class DrawerContainer extends FrameLayout {
+    private int backgroundColor;
+    private final Paint backgroundPaint;
     private int navbarInset;
 
     public DrawerContainer(Context context) {
         super(context);
+        this.backgroundPaint = new Paint(1);
         ViewCompat.setOnApplyWindowInsetsListener(this, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.DrawerContainer$$ExternalSyntheticLambda0
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
@@ -51,11 +59,32 @@ public class DrawerContainer extends FrameLayout {
         }
     }
 
+    @Override // android.view.ViewGroup, android.view.View
+    protected void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.backgroundPaint.getAlpha() > 0) {
+            canvas.drawRect(0.0f, getMeasuredHeight() - this.navbarInset, getMeasuredWidth(), getMeasuredHeight(), this.backgroundPaint);
+        }
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i) {
+        super.setBackgroundColor(i);
+        this.backgroundColor = i;
+        checkBackgroundColorPaint();
+    }
+
+    private void checkBackgroundColorPaint() {
+        float navigationBarThirdButtonsFactor = AndroidUtilities.getNavigationBarThirdButtonsFactor(this.navbarInset);
+        this.backgroundPaint.setColor(Theme.multAlpha(ColorUtils.compositeColors(TLObject.FLAG_29, this.backgroundColor), AndroidUtilities.lerp(0.0f, 0.75f, navigationBarThirdButtonsFactor)));
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
         int i = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom;
         if (this.navbarInset != i) {
             this.navbarInset = i;
+            checkBackgroundColorPaint();
             requestLayout();
         }
         return WindowInsetsCompat.CONSUMED;

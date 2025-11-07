@@ -1168,7 +1168,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                     TwoStepVerificationSetupActivity.this.showSetForcePasswordAlert();
                     return;
                 } else {
-                    TwoStepVerificationSetupActivity.this.lambda$onBackPressed$341();
+                    TwoStepVerificationSetupActivity.this.lambda$onBackPressed$340();
                     return;
                 }
             }
@@ -1306,7 +1306,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
             ((BaseFragment) this.fragmentsToClose.get(i2)).removeSelfFromStack();
         }
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.twoStepPasswordChanged, new Object[0]);
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1426,7 +1426,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$17(AlertDialog alertDialog, int i) {
         onReset();
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1648,7 +1648,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                 }
             case 7:
                 if (this.closeAfterSet) {
-                    lambda$onBackPressed$341();
+                    lambda$onBackPressed$340();
                     break;
                 } else if (this.fromRegistration) {
                     Bundle bundle = new Bundle();
@@ -1685,7 +1685,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                     }
                 }
             case 9:
-                lambda$onBackPressed$341();
+                lambda$onBackPressed$340();
                 break;
         }
     }
@@ -2240,7 +2240,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
                     }
                     if (!this.waitingForEmail && passwordKdfAlgo != null) {
                         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.twoStepPasswordChanged, null, passwordKdfAlgo, securePasswordKdfAlgo, bArr, str, str2, null, null);
-                        lambda$onBackPressed$341();
+                        lambda$onBackPressed$340();
                     }
                 }
             }
@@ -2561,7 +2561,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
             }
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didRemoveTwoStepPassword, new Object[0]);
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetOrRemoveTwoStepPassword, new Object[0]);
-            lambda$onBackPressed$341();
+            lambda$onBackPressed$340();
             return;
         }
         if (getParentActivity() == null) {
@@ -2707,7 +2707,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
             showSetForcePasswordAlert();
             return false;
         }
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
         return true;
     }
 
@@ -2738,7 +2738,7 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showSetForcePasswordAlert$51(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     public void setBlockingAlert(int i) {
@@ -2747,14 +2747,14 @@ public class TwoStepVerificationSetupActivity extends BaseFragment {
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /* renamed from: finishFragment */
-    public void lambda$onBackPressed$341() {
+    public void lambda$onBackPressed$340() {
         if (this.otherwiseReloginDays >= 0 && this.parentLayout.getFragmentStack().size() == 1) {
             Bundle bundle = new Bundle();
             bundle.putBoolean("afterSignup", true);
             presentFragment(new DialogsActivity(bundle), true);
             return;
         }
-        super.lambda$onBackPressed$341();
+        super.lambda$onBackPressed$340();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

@@ -49,6 +49,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedColor;
+import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.ButtonBounce;
 import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -104,11 +105,297 @@ public abstract class StoriesUtilities {
         drawAvatarWithStory(j, canvas, imageReceiver, UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId() != j && MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().hasStories(j), avatarStoryParams);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0476  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x047b  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x048b  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x04ad  */
-    /* JADX WARN: Removed duplicated region for block: B:169:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:118:0x0321, code lost:
+    
+        if (r34.progressToSate == 1.0f) goto L165;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:120:0x032d, code lost:
+    
+        if (r34.animateFromUnreadState != 1) goto L171;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:121:0x032f, code lost:
+    
+        getUnreadCirclePaint(r32, r34.isStoryCell);
+        r0 = org.telegram.ui.Stories.StoriesUtilities.storiesGradientTools[r34.isStoryCell ? 1 : 0].paint;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:122:0x033c, code lost:
+    
+        r4 = r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x0358, code lost:
+    
+        r4.setAlpha((int) (r16 * 255.0f));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:124:0x0360, code lost:
+    
+        if (r34.drawSegments == false) goto L178;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:125:0x0362, code lost:
+    
+        r0 = getUnreadCirclePaint(r32, r34.isStoryCell);
+        r0.setAlpha((int) (r34.alpha * 255.0f));
+        r1 = getCloseFriendsPaint(r32);
+        r1.setAlpha((int) (r34.alpha * 255.0f));
+        r2 = getLivePaint(r32);
+        r2.setAlpha((int) (r34.alpha * 255.0f));
+        checkGrayPaint(r34.resourcesProvider);
+        r5 = r0;
+        r7 = r1;
+        r6 = r2;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:127:0x0397, code lost:
+    
+        if (r34.drawSegments == false) goto L187;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:129:0x039b, code lost:
+    
+        if (r34.isStoryCell == false) goto L192;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:131:0x039f, code lost:
+    
+        if (r34.drawInside != false) goto L192;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:132:0x03a1, code lost:
+    
+        r0 = org.telegram.messenger.AndroidUtilities.dpf2(3.5f);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:133:0x03a5, code lost:
+    
+        r0 = -r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:135:0x03b7, code lost:
+    
+        if (r34.prevState != r14) goto L198;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:137:0x03bd, code lost:
+    
+        if (r34.progressToSate == r8) goto L198;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:138:0x03bf, code lost:
+    
+        r0 = r0 + (org.telegram.messenger.AndroidUtilities.dp(7.0f) * r16);
+        r4.setAlpha((int) ((r34.alpha * 255.0f) * (r8 - r16)));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:139:0x03ea, code lost:
+    
+        r1 = org.telegram.ui.Stories.StoriesUtilities.rectTmp;
+        r1.set(r34.originalAvatarRect);
+        r1.inset(r0, r0);
+        r0 = r34.drawSegments;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:140:0x03f6, code lost:
+    
+        if (r0 == false) goto L212;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:142:0x03fa, code lost:
+    
+        if (r34.currentState != r14) goto L212;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:143:0x03fc, code lost:
+    
+        r1 = r34.progressToProgressSegments;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:144:0x0400, code lost:
+    
+        if (r1 == r8) goto L212;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:145:0x0402, code lost:
+    
+        r1 = r1 + r21;
+        r34.progressToProgressSegments = r1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:146:0x0408, code lost:
+    
+        if (r1 <= r8) goto L208;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:147:0x040a, code lost:
+    
+        r34.progressToProgressSegments = r8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:148:0x040c, code lost:
+    
+        r14 = r34.progressToSegments;
+        r34.progressToSegments = r8 - r34.progressToProgressSegments;
+        drawSegmentsInternal(r31, r12, r32, r34, r4, r5, r6, r7, r15);
+        r34.progressToSegments = r14;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x0427, code lost:
+    
+        if (r32.getParentView() == null) goto L211;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:150:0x0429, code lost:
+    
+        r32.invalidate();
+        r32.getParentView().invalidate();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:151:0x0433, code lost:
+    
+        r1 = 1.0f;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:152:0x0458, code lost:
+    
+        r32.draw(r31);
+        r5 = r22;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:153:0x0461, code lost:
+    
+        if (r5 <= 0.5f) goto L227;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:154:0x0463, code lost:
+    
+        r14 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:155:0x0466, code lost:
+    
+        r34.drawnLive = r14;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:156:0x0468, code lost:
+    
+        if (r2 <= 0.0f) goto L231;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:157:0x046a, code lost:
+    
+        r0 = org.telegram.ui.Stories.StoriesUtilities.rectTmp;
+        r0.set(r34.originalAvatarRect);
+        r2 = r23;
+        r0.inset(r2, r2);
+        drawLive(r31, r0, r5, r32.getVisible(), false);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:158:0x047e, code lost:
+    
+        r0 = r34.progressToSate;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:159:0x0482, code lost:
+    
+        if (r0 == r1) goto L239;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:160:0x0484, code lost:
+    
+        r0 = r0 + (org.telegram.messenger.AndroidUtilities.screenRefreshTime / 250.0f);
+        r34.progressToSate = r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:161:0x048e, code lost:
+    
+        if (r0 <= r1) goto L236;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:162:0x0490, code lost:
+    
+        r34.progressToSate = r1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:164:0x0496, code lost:
+    
+        if (r32.getParentView() == null) goto L239;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:165:0x0498, code lost:
+    
+        r32.invalidate();
+        r32.getParentView().invalidate();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:166:0x04a2, code lost:
+    
+        if (r13 == 0) goto L242;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:167:0x04a4, code lost:
+    
+        r31.restoreToCount(r13);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:168:0x04a7, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:169:?, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:170:0x0465, code lost:
+    
+        r14 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:171:0x0437, code lost:
+    
+        r1 = 1.0f;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:172:0x0439, code lost:
+    
+        if (r0 == false) goto L217;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:173:0x043b, code lost:
+    
+        r0 = r12.getUnreadState(r34.dialogId);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:174:0x0444, code lost:
+    
+        if (r0 != 2) goto L218;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:175:0x0446, code lost:
+    
+        r4 = r7;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:176:0x0449, code lost:
+    
+        if (r0 != r14) goto L220;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:177:0x044b, code lost:
+    
+        r4 = r6;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:179:0x044e, code lost:
+    
+        if (r0 != 1) goto L223;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:180:0x0450, code lost:
+    
+        r4 = r5;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:181:0x0451, code lost:
+    
+        drawProgress(r31, r34, r32.getParentView(), r4);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:183:0x03d6, code lost:
+    
+        r4.setAlpha((int) ((r34.alpha * 255.0f) * r16));
+        r0 = r0 + (org.telegram.messenger.AndroidUtilities.dp(5.0f) * (r8 - r16));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:184:0x03b4, code lost:
+    
+        r0 = 0.0f;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:186:0x03a9, code lost:
+    
+        if (r34.isStoryCell == false) goto L192;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:188:0x03ad, code lost:
+    
+        if (r34.drawInside != false) goto L192;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:189:0x03af, code lost:
+    
+        r0 = org.telegram.messenger.AndroidUtilities.dpf2(2.7f);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:190:0x0391, code lost:
+    
+        r5 = null;
+        r6 = null;
+        r7 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:192:0x0340, code lost:
+    
+        if (r34.isStoryCell == false) goto L174;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:193:0x0342, code lost:
+    
+        checkStoryCellGrayPaint(r34.isArchive, r34.resourcesProvider);
+        r0 = org.telegram.ui.Stories.StoriesUtilities.storyCellGreyPaint[r34.isArchive ? 1 : 0];
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:194:0x0350, code lost:
+    
+        checkGrayPaint(r34.resourcesProvider);
+        r0 = org.telegram.ui.Stories.StoriesUtilities.grayPaint;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:196:0x0328, code lost:
+    
+        if (r34.currentState == r14) goto L167;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -118,40 +405,30 @@ public abstract class StoriesUtilities {
         int i2;
         float f;
         int i3;
-        int i4;
         float f2;
+        int i4;
         float f3;
-        int i5;
         float f4;
-        boolean z2;
+        int i5;
         float f5;
-        float f6;
-        int i6;
         Paint paint;
         Paint paint2;
         Paint paint3;
         Paint paint4;
         float dpf2;
-        float f7;
+        float f6;
         float dp;
-        Paint paint5;
-        Paint paint6;
-        Paint paint7;
-        Paint paint8;
-        float dpf22;
-        float f8;
-        float dp2;
         GradientTools gradientTools;
-        float dp3;
+        float dp2;
         StoriesController storiesController = MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController();
-        boolean z3 = avatarStoryParams.animate;
+        boolean z2 = avatarStoryParams.animate;
         if (avatarStoryParams.dialogId != j) {
             avatarStoryParams.dialogId = j;
             avatarStoryParams.reset();
-            z3 = false;
+            z2 = false;
         }
         boolean isLoading = storiesController.isLoading(j);
-        boolean z4 = ChatObject.isForum(UserConfig.selectedAccount, j) && !avatarStoryParams.isDialogStoriesCell;
+        boolean z3 = ChatObject.isForum(UserConfig.selectedAccount, j) && !avatarStoryParams.isDialogStoriesCell;
         boolean hasHiddenStories = avatarStoryParams.drawHiddenStoriesAsSegments ? storiesController.hasHiddenStories() : z;
         if (avatarStoryParams.storyItem != null) {
             storiesController.getUnreadState(j, avatarStoryParams.storyId);
@@ -165,7 +442,7 @@ public abstract class StoriesUtilities {
                 i = getPredictiveUnreadState(storiesController, j);
                 predictiveUnreadState = 3;
             }
-            z3 = false;
+            z2 = false;
         } else if (hasHiddenStories) {
             if (avatarStoryParams.drawSegments) {
                 predictiveUnreadState = 2;
@@ -179,24 +456,24 @@ public abstract class StoriesUtilities {
             predictiveUnreadState = getPredictiveUnreadState(storiesController, j);
             i = predictiveUnreadState;
         }
-        int i7 = avatarStoryParams.forceState;
-        if (i7 != 0) {
-            predictiveUnreadState = i7;
+        int i6 = avatarStoryParams.forceState;
+        if (i6 != 0) {
+            predictiveUnreadState = i6;
             i2 = predictiveUnreadState;
         } else {
             i2 = i;
         }
-        int i8 = avatarStoryParams.currentState;
-        if (i8 != predictiveUnreadState) {
-            if (i8 == 3) {
-                z3 = true;
+        int i7 = avatarStoryParams.currentState;
+        if (i7 != predictiveUnreadState) {
+            if (i7 == 3) {
+                z2 = true;
             }
             if (predictiveUnreadState == 3) {
                 avatarStoryParams.animateFromUnreadState = i2;
                 avatarStoryParams.progressToProgressSegments = 0.0f;
             }
-            if (z3) {
-                avatarStoryParams.prevState = i8;
+            if (z2) {
+                avatarStoryParams.prevState = i7;
                 avatarStoryParams.prevUnreadState = avatarStoryParams.unreadState;
                 avatarStoryParams.currentState = predictiveUnreadState;
                 avatarStoryParams.progressToSate = 0.0f;
@@ -222,12 +499,12 @@ public abstract class StoriesUtilities {
         if (scale != 1.0f) {
             canvas.scale(scale, scale, avatarStoryParams.originalAvatarRect.centerX(), avatarStoryParams.originalAvatarRect.centerY());
         }
-        float f9 = storiesController.hasUnreadStoriesLive(avatarStoryParams.dialogId) == 2 ? avatarStoryParams.progressToSegments : 0.0f;
-        float f10 = avatarStoryParams.progressToSate;
-        if (f10 != 1.0f) {
-            f10 = CubicBezierInterpolator.DEFAULT.getInterpolation(f10);
+        float f7 = storiesController.hasLiveStory(avatarStoryParams.dialogId) == 2 ? avatarStoryParams.progressToSegments : 0.0f;
+        float f8 = avatarStoryParams.progressToSate;
+        if (f8 != 1.0f) {
+            f8 = CubicBezierInterpolator.DEFAULT.getInterpolation(f8);
         }
-        float f11 = f10;
+        float f9 = f8;
         float lerp = (!avatarStoryParams.isStoryCell || avatarStoryParams.drawInside) ? AndroidUtilities.lerp(getInset(avatarStoryParams.prevState, avatarStoryParams.animateFromUnreadState), getInset(avatarStoryParams.currentState, avatarStoryParams.animateFromUnreadState), avatarStoryParams.progressToSate) : 0.0f;
         if (lerp == 0.0f) {
             imageReceiver.setImageCoords(avatarStoryParams.originalAvatarRect);
@@ -237,60 +514,62 @@ public abstract class StoriesUtilities {
             rectF.inset(lerp, lerp);
             imageReceiver.setImageCoords(rectF);
         }
-        if (f9 > 0.0f) {
+        if (f7 > 0.0f) {
             RectF rectF2 = rectTmp;
-            f = f9;
-            f3 = 0.08f;
-            f2 = 1.0f;
+            f = f7;
+            f4 = 0.08f;
+            f2 = lerp;
+            f3 = 1.0f;
             i3 = save;
             i4 = i2;
             canvas.saveLayerAlpha(rectF2.left - AndroidUtilities.dp(15.0f), rectF2.top - AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f) + rectF2.right, AndroidUtilities.dp(15.0f) + rectF2.bottom, NotificationCenter.didReplacedPhotoInMemCache, 31);
         } else {
-            f = f9;
+            f = f7;
             i3 = save;
+            f2 = lerp;
             i4 = i2;
-            f2 = 1.0f;
-            f3 = 0.08f;
+            f3 = 1.0f;
+            f4 = 0.08f;
         }
-        if ((avatarStoryParams.prevState == 1 && avatarStoryParams.progressToSate != f2) || avatarStoryParams.currentState == 1) {
-            if (i4 == 2) {
+        if ((avatarStoryParams.prevState == 1 && avatarStoryParams.progressToSate != f3) || avatarStoryParams.currentState == 1) {
+            int i8 = i4;
+            if (i8 == 2) {
                 getCloseFriendsPaint(imageReceiver);
                 gradientTools = closeFriendsGradientTools;
-            } else if (i4 == 3) {
+            } else if (i8 == 3) {
                 getLivePaint(imageReceiver);
                 gradientTools = liveGradientTools;
             } else {
                 getUnreadCirclePaint(imageReceiver, avatarStoryParams.isStoryCell);
                 gradientTools = storiesGradientTools[avatarStoryParams.isStoryCell ? 1 : 0];
             }
-            boolean z5 = avatarStoryParams.prevState == 1 && avatarStoryParams.progressToSate != f2;
-            float f12 = (!avatarStoryParams.isStoryCell || avatarStoryParams.drawInside) ? 0.0f : -AndroidUtilities.dp(4.0f);
-            if (z5) {
-                dp3 = f12 + (AndroidUtilities.dp(5.0f) * f11);
-                gradientTools.paint.setAlpha((int) (avatarStoryParams.alpha * 255.0f * (f2 - f11)));
+            boolean z4 = avatarStoryParams.prevState == 1 && avatarStoryParams.progressToSate != f3;
+            float f10 = (!avatarStoryParams.isStoryCell || avatarStoryParams.drawInside) ? 0.0f : -AndroidUtilities.dp(4.0f);
+            if (z4) {
+                dp2 = f10 + (AndroidUtilities.dp(5.0f) * f9);
+                gradientTools.paint.setAlpha((int) (avatarStoryParams.alpha * 255.0f * (f3 - f9)));
             } else {
-                gradientTools.paint.setAlpha((int) (avatarStoryParams.alpha * 255.0f * f11));
-                dp3 = f12 + (AndroidUtilities.dp(5.0f) * (f2 - f11));
+                gradientTools.paint.setAlpha((int) (avatarStoryParams.alpha * 255.0f * f9));
+                dp2 = f10 + (AndroidUtilities.dp(5.0f) * (f3 - f9));
             }
             RectF rectF3 = rectTmp;
             rectF3.set(avatarStoryParams.originalAvatarRect);
-            rectF3.inset(dp3, dp3);
-            drawCircleInternal(canvas, imageReceiver.getParentView(), avatarStoryParams, gradientTools.paint, z4);
+            rectF3.inset(dp2, dp2);
+            drawCircleInternal(canvas, imageReceiver.getParentView(), avatarStoryParams, gradientTools.paint, z3);
         }
         int i9 = avatarStoryParams.prevState;
-        if ((i9 != 2 || avatarStoryParams.progressToSate == f2) && avatarStoryParams.currentState != 2) {
+        if ((i9 != 2 || avatarStoryParams.progressToSate == f3) && avatarStoryParams.currentState != 2) {
             i5 = 3;
-            f4 = 1.0f;
         } else {
-            boolean z6 = i9 == 2 && avatarStoryParams.progressToSate != f2;
+            boolean z5 = i9 == 2 && avatarStoryParams.progressToSate != f3;
             if (avatarStoryParams.isStoryCell) {
                 checkStoryCellGrayPaint(avatarStoryParams.isArchive, avatarStoryParams.resourcesProvider);
-                paint5 = storyCellGreyPaint[avatarStoryParams.isArchive ? 1 : 0];
+                paint = storyCellGreyPaint[avatarStoryParams.isArchive ? 1 : 0];
             } else {
                 checkGrayPaint(avatarStoryParams.resourcesProvider);
-                paint5 = grayPaint;
+                paint = grayPaint;
             }
-            Paint paint9 = paint5;
+            Paint paint5 = paint;
             if (avatarStoryParams.drawSegments) {
                 Paint unreadCirclePaint = getUnreadCirclePaint(imageReceiver, avatarStoryParams.isStoryCell);
                 unreadCirclePaint.setAlpha((int) (avatarStoryParams.alpha * 255.0f));
@@ -299,71 +578,9 @@ public abstract class StoriesUtilities {
                 Paint livePaint2 = getLivePaint(imageReceiver);
                 livePaint2.setAlpha((int) (avatarStoryParams.alpha * 255.0f));
                 checkGrayPaint(avatarStoryParams.resourcesProvider);
-                paint6 = unreadCirclePaint;
-                paint8 = closeFriendsPaint;
-                paint7 = livePaint2;
-            } else {
-                paint6 = null;
-                paint7 = null;
-                paint8 = null;
-            }
-            if (avatarStoryParams.drawSegments) {
-                if (avatarStoryParams.isStoryCell && !avatarStoryParams.drawInside) {
-                    dpf22 = AndroidUtilities.dpf2(3.5f);
-                    f8 = -dpf22;
-                }
-                f8 = 0.0f;
-            } else {
-                if (avatarStoryParams.isStoryCell && !avatarStoryParams.drawInside) {
-                    dpf22 = AndroidUtilities.dpf2(2.7f);
-                    f8 = -dpf22;
-                }
-                f8 = 0.0f;
-            }
-            if (z6) {
-                dp2 = f8 + (AndroidUtilities.dp(5.0f) * f11);
-                paint9.setAlpha((int) (avatarStoryParams.alpha * 255.0f * (f2 - f11)));
-            } else {
-                paint9.setAlpha((int) (avatarStoryParams.alpha * 255.0f * f11));
-                dp2 = f8 + (AndroidUtilities.dp(5.0f) * (f2 - f11));
-            }
-            RectF rectF4 = rectTmp;
-            rectF4.set(avatarStoryParams.originalAvatarRect);
-            rectF4.inset(dp2, dp2);
-            if (avatarStoryParams.drawSegments) {
-                i5 = 3;
-                f4 = 1.0f;
-                drawSegmentsInternal(canvas, storiesController, imageReceiver, avatarStoryParams, paint9, paint6, paint7, paint8, z4);
-            } else {
-                i5 = 3;
-                f4 = 1.0f;
-                drawCircleInternal(canvas, imageReceiver.getParentView(), avatarStoryParams, paint9, z4);
-            }
-        }
-        if ((avatarStoryParams.prevState == i5 && avatarStoryParams.progressToSate != f4) || avatarStoryParams.currentState == i5) {
-            if (avatarStoryParams.animateFromUnreadState == 1) {
-                getUnreadCirclePaint(imageReceiver, avatarStoryParams.isStoryCell);
-                paint = storiesGradientTools[avatarStoryParams.isStoryCell ? 1 : 0].paint;
-            } else if (avatarStoryParams.isStoryCell) {
-                checkStoryCellGrayPaint(avatarStoryParams.isArchive, avatarStoryParams.resourcesProvider);
-                paint = storyCellGreyPaint[avatarStoryParams.isArchive ? 1 : 0];
-            } else {
-                checkGrayPaint(avatarStoryParams.resourcesProvider);
-                paint = grayPaint;
-            }
-            Paint paint10 = paint;
-            paint10.setAlpha((int) (f11 * 255.0f));
-            if (avatarStoryParams.drawSegments) {
-                Paint unreadCirclePaint2 = getUnreadCirclePaint(imageReceiver, avatarStoryParams.isStoryCell);
-                unreadCirclePaint2.setAlpha((int) (avatarStoryParams.alpha * 255.0f));
-                Paint closeFriendsPaint2 = getCloseFriendsPaint(imageReceiver);
-                closeFriendsPaint2.setAlpha((int) (avatarStoryParams.alpha * 255.0f));
-                Paint livePaint3 = getLivePaint(imageReceiver);
-                livePaint3.setAlpha((int) (avatarStoryParams.alpha * 255.0f));
-                checkGrayPaint(avatarStoryParams.resourcesProvider);
-                paint2 = unreadCirclePaint2;
-                paint4 = closeFriendsPaint2;
-                paint3 = livePaint3;
+                paint2 = unreadCirclePaint;
+                paint4 = closeFriendsPaint;
+                paint3 = livePaint2;
             } else {
                 paint2 = null;
                 paint3 = null;
@@ -372,116 +589,38 @@ public abstract class StoriesUtilities {
             if (avatarStoryParams.drawSegments) {
                 if (avatarStoryParams.isStoryCell && !avatarStoryParams.drawInside) {
                     dpf2 = AndroidUtilities.dpf2(3.5f);
-                    f7 = -dpf2;
+                    f6 = -dpf2;
                 }
-                f7 = 0.0f;
+                f6 = 0.0f;
             } else {
                 if (avatarStoryParams.isStoryCell && !avatarStoryParams.drawInside) {
                     dpf2 = AndroidUtilities.dpf2(2.7f);
-                    f7 = -dpf2;
+                    f6 = -dpf2;
                 }
-                f7 = 0.0f;
+                f6 = 0.0f;
             }
-            if (avatarStoryParams.prevState == i5 && avatarStoryParams.progressToSate != f4) {
-                dp = f7 + (AndroidUtilities.dp(7.0f) * f11);
-                paint10.setAlpha((int) (avatarStoryParams.alpha * 255.0f * (f4 - f11)));
+            if (z5) {
+                dp = f6 + (AndroidUtilities.dp(5.0f) * f9);
+                paint5.setAlpha((int) (avatarStoryParams.alpha * 255.0f * (f3 - f9)));
             } else {
-                paint10.setAlpha((int) (avatarStoryParams.alpha * 255.0f * f11));
-                dp = f7 + (AndroidUtilities.dp(5.0f) * (f4 - f11));
+                paint5.setAlpha((int) (avatarStoryParams.alpha * 255.0f * f9));
+                dp = f6 + (AndroidUtilities.dp(5.0f) * (f3 - f9));
             }
-            RectF rectF5 = rectTmp;
-            rectF5.set(avatarStoryParams.originalAvatarRect);
-            rectF5.inset(dp, dp);
-            boolean z7 = avatarStoryParams.drawSegments;
-            if (z7 && avatarStoryParams.currentState == i5) {
-                float f13 = avatarStoryParams.progressToProgressSegments;
-                if (f13 != f4) {
-                    float f14 = f13 + f3;
-                    avatarStoryParams.progressToProgressSegments = f14;
-                    if (f14 > f4) {
-                        avatarStoryParams.progressToProgressSegments = f4;
-                    }
-                    float f15 = avatarStoryParams.progressToSegments;
-                    avatarStoryParams.progressToSegments = f4 - avatarStoryParams.progressToProgressSegments;
-                    drawSegmentsInternal(canvas, storiesController, imageReceiver, avatarStoryParams, paint10, paint2, paint3, paint4, z4);
-                    avatarStoryParams.progressToSegments = f15;
-                    if (imageReceiver.getParentView() != null) {
-                        imageReceiver.invalidate();
-                        imageReceiver.getParentView().invalidate();
-                    }
-                }
-            }
-            if (z7) {
-                int unreadState2 = storiesController.getUnreadState(avatarStoryParams.dialogId);
-                if (unreadState2 == 2) {
-                    paint10 = paint4;
-                } else {
-                    if (unreadState2 != i5) {
-                        z2 = true;
-                        if (unreadState2 == 1) {
-                            paint10 = paint2;
-                        }
-                        drawProgress(canvas, avatarStoryParams, imageReceiver.getParentView(), paint10);
-                        imageReceiver.draw(canvas);
-                        f5 = f;
-                        if (f5 <= 0.5f) {
-                            z2 = false;
-                        }
-                        avatarStoryParams.drawnLive = z2;
-                        if (f9 > 0.0f) {
-                            drawLive(canvas, avatarStoryParams.originalAvatarRect, f5, imageReceiver.getVisible(), false);
-                        }
-                        f6 = avatarStoryParams.progressToSate;
-                        if (f6 != f4) {
-                            float f16 = f6 + (AndroidUtilities.screenRefreshTime / 250.0f);
-                            avatarStoryParams.progressToSate = f16;
-                            if (f16 > f4) {
-                                avatarStoryParams.progressToSate = f4;
-                            }
-                            if (imageReceiver.getParentView() != null) {
-                                imageReceiver.invalidate();
-                                imageReceiver.getParentView().invalidate();
-                            }
-                        }
-                        i6 = i3;
-                        if (i6 != 0) {
-                            canvas.restoreToCount(i6);
-                            return;
-                        }
-                        return;
-                    }
-                    paint10 = paint3;
-                }
-            }
-            z2 = true;
-            drawProgress(canvas, avatarStoryParams, imageReceiver.getParentView(), paint10);
-            imageReceiver.draw(canvas);
-            f5 = f;
-            if (f5 <= 0.5f) {
-            }
-            avatarStoryParams.drawnLive = z2;
-            if (f9 > 0.0f) {
-            }
-            f6 = avatarStoryParams.progressToSate;
-            if (f6 != f4) {
-            }
-            i6 = i3;
-            if (i6 != 0) {
+            RectF rectF4 = rectTmp;
+            rectF4.set(avatarStoryParams.originalAvatarRect);
+            rectF4.inset(dp, dp);
+            if (avatarStoryParams.drawSegments) {
+                i5 = 3;
+                drawSegmentsInternal(canvas, storiesController, imageReceiver, avatarStoryParams, paint5, paint2, paint3, paint4, z3);
+            } else {
+                i5 = 3;
+                drawCircleInternal(canvas, imageReceiver.getParentView(), avatarStoryParams, paint5, z3);
             }
         }
-        z2 = true;
-        imageReceiver.draw(canvas);
-        f5 = f;
-        if (f5 <= 0.5f) {
-        }
-        avatarStoryParams.drawnLive = z2;
-        if (f9 > 0.0f) {
-        }
-        f6 = avatarStoryParams.progressToSate;
-        if (f6 != f4) {
-        }
-        i6 = i3;
-        if (i6 != 0) {
+        if (avatarStoryParams.prevState == i5) {
+            f5 = 1.0f;
+        } else {
+            f5 = 1.0f;
         }
     }
 
@@ -489,12 +628,12 @@ public abstract class StoriesUtilities {
         Text text;
         if (z2) {
             if (liveLargeText == null) {
-                liveLargeText = new Text("LIVE", 14.0f, AndroidUtilities.bold());
+                liveLargeText = new Text(LocaleController.getString(R.string.LiveStoryBadge), 14.0f, AndroidUtilities.bold());
             }
             text = liveLargeText;
         } else {
             if (liveText == null) {
-                liveText = new Text("LIVE", 9.66f, AndroidUtilities.bold());
+                liveText = new Text(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
             }
             text = liveText;
         }
@@ -534,17 +673,17 @@ public abstract class StoriesUtilities {
         canvas.restore();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0163, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x015b, code lost:
     
         if (r2 == 1) goto L89;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x01a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x019d, code lost:
     
         if (r11.stories.get(r6).close_friends != false) goto L88;
      */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00a6  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00f7  */
     /* JADX WARN: Removed duplicated region for block: B:82:0x006e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -635,8 +774,8 @@ public abstract class StoriesUtilities {
                     }
                     return;
                 }
-                int hasUnreadStoriesLive = storiesController.hasUnreadStoriesLive(avatarStoryParams.dialogId);
-                Paint paint10 = hasUnreadStoriesLive == 1 ? paint2 : hasUnreadStoriesLive == 2 ? paint3 : paint;
+                int hasLiveStory = storiesController.hasLiveStory(avatarStoryParams.dialogId);
+                Paint paint10 = hasLiveStory == 1 ? paint2 : hasLiveStory == 2 ? paint3 : paint;
                 RectF rectF2 = rectTmp;
                 Paint paint11 = paint10;
                 drawSegment(canvas, rectF2, paint11, -90.0f, 90.0f, avatarStoryParams, z);
@@ -672,13 +811,23 @@ public abstract class StoriesUtilities {
             if (j == UserConfig.getInstance(UserConfig.selectedAccount).clientUserId || user == null || (tL_recentStory2 = user.stories_max_id) == null || tL_recentStory2.max_id <= 0 || user.stories_unavailable) {
                 return 0;
             }
-            return user.stories_max_id.max_id > storiesController.dialogIdToMaxReadId.get(j, 0) ? 1 : 2;
+            int i = storiesController.dialogIdToMaxReadId.get(j, 0);
+            TLRPC.TL_recentStory tL_recentStory3 = user.stories_max_id;
+            if (tL_recentStory3.live) {
+                return 3;
+            }
+            return tL_recentStory3.max_id > i ? 1 : 2;
         }
         TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-j));
         if (chat == null || (tL_recentStory = chat.stories_max_id) == null || tL_recentStory.max_id <= 0 || chat.stories_unavailable) {
             return 0;
         }
-        return chat.stories_max_id.max_id > storiesController.dialogIdToMaxReadId.get(j, 0) ? 1 : 2;
+        int i2 = storiesController.dialogIdToMaxReadId.get(j, 0);
+        TLRPC.TL_recentStory tL_recentStory4 = chat.stories_max_id;
+        if (tL_recentStory4.live) {
+            return 3;
+        }
+        return tL_recentStory4.max_id > i2 ? 1 : 2;
     }
 
     private static void drawProgress(Canvas canvas, AvatarStoryParams avatarStoryParams, View view, Paint paint) {
@@ -803,7 +952,7 @@ public abstract class StoriesUtilities {
         }
     }
 
-    private static int getInset(int i, int i2) {
+    public static int getInset(int i, int i2) {
         if (i == 3) {
             i = i2;
         }
@@ -987,10 +1136,16 @@ public abstract class StoriesUtilities {
         }
     }
 
-    public static void setThumbImage(ImageReceiver imageReceiver, TL_stories.StoryItem storyItem, int i, int i2) {
+    public static void setThumbImage(AvatarDrawable avatarDrawable, ImageReceiver imageReceiver, TL_stories.StoryItem storyItem, int i, int i2) {
         ArrayList<TLRPC.PhotoSize> arrayList;
         TLRPC.Document document;
         TLRPC.MessageMedia messageMedia = storyItem.media;
+        if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
+            TLObject userOrChat = MessagesController.getInstance(imageReceiver.getCurrentAccount()).getUserOrChat(storyItem.dialogId);
+            avatarDrawable.setInfo(userOrChat);
+            imageReceiver.setForUserOrChat(userOrChat, avatarDrawable);
+            return;
+        }
         if (messageMedia != null && (document = messageMedia.document) != null) {
             imageReceiver.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(Math.max(i, i2)), false, null, true), storyItem.media.document), i + "_" + i2, null, null, ImageLoader.createStripedBitmap(storyItem.media.document.thumbs), 0L, null, storyItem, 0);
             return;
@@ -1300,7 +1455,7 @@ public abstract class StoriesUtilities {
         public boolean isDialogStoriesCell;
         public boolean isFirst;
         public boolean isLast;
-        private final boolean isStoryCell;
+        public final boolean isStoryCell;
         Runnable longPressRunnable;
         UserStoriesLoadOperation operation;
         public RectF originalAvatarRect;

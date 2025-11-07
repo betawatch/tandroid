@@ -2001,7 +2001,7 @@ public abstract class GalleryListView extends FrameLayout implements Notificatio
             }
             if (tLObject instanceof TLRPC.Photo) {
                 TLRPC.Photo photo = (TLRPC.Photo) tLObject;
-                backupImageView.setImage(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(photo.sizes, NotificationCenter.uploadStoryEnd), photo), "200_200", this.loadingDrawable, (Object) null);
+                backupImageView.setImage(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(photo.sizes, NotificationCenter.uploadStoryProgress), photo), "200_200", this.loadingDrawable, (Object) null);
             } else {
                 if (tLObject instanceof TLRPC.BotInlineResult) {
                     TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) tLObject;

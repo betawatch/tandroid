@@ -6,7 +6,7 @@ import java.util.function.LongConsumer;
 /* loaded from: classes2.dex */
 final class f0 extends h2 {
     boolean b;
-    b0 c;
+    c0 c;
     final /* synthetic */ g0 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ final class f0 extends h2 {
         this.d = g0Var;
         m2 m2Var2 = this.a;
         Objects.requireNonNull(m2Var2);
-        this.c = new b0(m2Var2);
+        this.c = new c0(m2Var2);
     }
 
     @Override // j$.util.stream.h2, j$.util.stream.m2
@@ -29,12 +29,12 @@ final class f0 extends h2 {
         if (longStream != null) {
             try {
                 boolean z = this.b;
-                b0 b0Var = this.c;
+                c0 c0Var = this.c;
                 if (!z) {
-                    longStream.sequential().forEach(b0Var);
+                    longStream.sequential().forEach(c0Var);
                 } else {
                     j$.util.b0 spliterator = longStream.sequential().spliterator();
-                    while (!this.a.n() && spliterator.tryAdvance((LongConsumer) b0Var)) {
+                    while (!this.a.n() && spliterator.tryAdvance((LongConsumer) c0Var)) {
                     }
                 }
             } catch (Throwable th) {

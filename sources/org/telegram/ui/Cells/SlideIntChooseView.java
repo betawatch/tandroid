@@ -72,7 +72,7 @@ public class SlideIntChooseView extends FrameLayout {
         animatedTextView3.setEmojiColor(-1);
         animatedTextView3.setEmojiCacheType(19);
         addView(animatedTextView3, LayoutHelper.createFrame(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
-        SeekBarView seekBarView = new SeekBarView(context) { // from class: org.telegram.ui.Cells.SlideIntChooseView.1
+        SeekBarView seekBarView = new SeekBarView(context, resourcesProvider) { // from class: org.telegram.ui.Cells.SlideIntChooseView.1
             @Override // org.telegram.ui.Components.SeekBarView, android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0) {

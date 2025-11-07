@@ -123,9 +123,9 @@ public class BottomSheetTabDialog extends Dialog {
         int navigationBarColor = this.sheet.getNavigationBarColor(Theme.getColor(Theme.key_windowBackgroundGray));
         this.navigationBarPaint.setColor(navigationBarColor);
         this.navigationBar.invalidate();
-        AndroidUtilities.setNavigationBarColor(getWindow(), navigationBarColor);
-        AndroidUtilities.setLightNavigationBar(getWindow(), AndroidUtilities.computePerceivedBrightness(navigationBarColor) >= 0.721f);
-        LaunchActivity.instance.checkSystemBarColors(true, true, true, false);
+        AndroidUtilities.setNavigationBarColor(this, navigationBarColor);
+        AndroidUtilities.setLightNavigationBar(this, AndroidUtilities.computePerceivedBrightness(navigationBarColor) >= 0.721f);
+        LaunchActivity.instance.checkSystemBarColors(true, true, true);
     }
 
     public static class WindowView extends FrameLayout implements BottomSheetTabsOverlay.SheetView {

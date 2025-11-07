@@ -155,10 +155,10 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         setTitle(LocaleController.getString(R.string.NewContactTitle), true);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:57:0x061f  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x063d  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x063a A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x064c  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0623  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0641  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x063e A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0650  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -591,7 +591,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.qrButtonContainer = frameLayout3;
         frameLayout3.setTranslationY(AndroidUtilities.dp(-10.665f));
-        this.contentLayout.addView(this.qrButtonContainer, LayoutHelper.createLinear(-1, -2, 0.0f, 6.0f, 0.0f, 0.0f));
+        this.contentLayout.addView(this.qrButtonContainer, LayoutHelper.createLinear(-1, -2, 0.0f, 6.0f, 0.0f, -6.0f));
         View view = new View(context);
         this.qrButtonSeparator = view;
         view.setBackgroundColor(Theme.getColor(Theme.key_divider, this.resourcesProvider));

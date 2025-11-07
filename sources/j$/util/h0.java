@@ -24,8 +24,8 @@ final class h0 implements K, IntConsumer, y {
 
     @Override // java.util.Iterator
     public final Integer next() {
-        if (u0.a) {
-            u0.a(h0.class, "{0} calling PrimitiveIterator.OfInt.nextInt()");
+        if (v0.a) {
+            v0.a(h0.class, "{0} calling PrimitiveIterator.OfInt.nextInt()");
             throw null;
         }
         return Integer.valueOf(nextInt());
@@ -38,8 +38,8 @@ final class h0 implements K, IntConsumer, y {
             return;
         }
         Objects.requireNonNull(consumer);
-        if (u0.a) {
-            u0.a(h0.class, "{0} calling PrimitiveIterator.OfInt.forEachRemainingInt(action::accept)");
+        if (v0.a) {
+            v0.a(h0.class, "{0} calling PrimitiveIterator.OfInt.forEachRemainingInt(action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);

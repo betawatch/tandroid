@@ -36,6 +36,7 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 /* loaded from: classes3.dex */
 public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView {
     private UniversalAdapter adapter;
+    private boolean hasButton;
     private final boolean hasFewPeers;
     private final JoinCallAlert.JoinCallAlertDelegate joinCallDelegate;
     private String rtmpKey;
@@ -57,10 +58,11 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         this.joinCallDelegate = null;
         this.hasFewPeers = false;
         if (callback != null) {
+            this.hasButton = true;
             final ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
-            buttonWithCounterView.setText(LocaleController.getString(R.string.VoipChannelStartStreaming), false);
+            buttonWithCounterView.setText(LocaleController.getString(R.string.LiveStoryRTMPEnable), false);
             this.containerView.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
-            buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda4
+            buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     CreateRtmpStreamBottomSheet.this.lambda$new$2(callback, buttonWithCounterView, view);
@@ -79,12 +81,12 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(Utilities.Callback callback, final ButtonWithCounterView buttonWithCounterView, View view) {
-        callback.run(new Browser.Progress(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda5
+        callback.run(new Browser.Progress(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 ButtonWithCounterView.this.setLoading(true);
             }
-        }, new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda6
+        }, new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 CreateRtmpStreamBottomSheet.this.lambda$new$1(buttonWithCounterView);
@@ -103,7 +105,9 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         this.topPadding = 0.26f;
         this.joinCallDelegate = joinCallAlertDelegate;
         this.hasFewPeers = z;
-        TextView textView = new TextView(this.containerView.getContext());
+        Context context = this.containerView.getContext();
+        this.hasButton = true;
+        TextView textView = new TextView(context);
         textView.setGravity(17);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setSingleLine(true);
@@ -113,7 +117,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText, this.resourcesProvider));
         textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(8.0f), Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
         this.containerView.addView(textView, LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
-        textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda1
+        textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CreateRtmpStreamBottomSheet.this.lambda$new$3(peer, view);
@@ -127,7 +131,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
         getgroupcallstreamrtmpurl.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
         getgroupcallstreamrtmpurl.revoke = false;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda2
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda5
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 CreateRtmpStreamBottomSheet.this.lambda$new$5(tLObject, tL_error);
@@ -143,7 +147,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$5(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda3
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 CreateRtmpStreamBottomSheet.this.lambda$new$4(tLObject);
@@ -180,7 +184,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
     public RecyclerListView.SelectionAdapter createAdapter(RecyclerListView recyclerListView) {
-        UniversalAdapter universalAdapter = new UniversalAdapter(recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda0
+        UniversalAdapter universalAdapter = new UniversalAdapter(recyclerListView, getContext(), this.currentAccount, 0, true, new Utilities.Callback2() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 CreateRtmpStreamBottomSheet.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
@@ -197,7 +201,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.VoipChatStreamSettings)));
         arrayList.add(TextDetailCellFactory.of(this.rtmpUrl, LocaleController.getString(R.string.VoipChatStreamServerUrl), true));
         arrayList.add(TextDetailCellFactory.of(this.rtmpKey, LocaleController.getString(R.string.VoipChatStreamKey), false));
-        arrayList.add(UItem.asShadow(LocaleController.getString(R.string.VoipChatStreamWithAnotherAppDescription)));
+        arrayList.add(UItem.asShadow(this.hasButton ? LocaleController.getString(R.string.VoipChatStreamWithAnotherAppDescription) : null));
     }
 
     private static class TopCell extends LinearLayout {
@@ -232,10 +236,10 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
         @Override // org.telegram.ui.Components.UItem.UItemFactory
         public TextDetailCell createView(final Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
-            final TextDetailCell textDetailCell = new TextDetailCell(context);
+            final TextDetailCell textDetailCell = new TextDetailCell(context, resourcesProvider);
             textDetailCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider));
             Drawable mutate = ContextCompat.getDrawable(context, R.drawable.msg_copy).mutate();
-            mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader), PorterDuff.Mode.MULTIPLY));
+            mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader, resourcesProvider), PorterDuff.Mode.MULTIPLY));
             textDetailCell.setImage(mutate);
             textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CreateRtmpStreamBottomSheet$TextDetailCellFactory$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener

@@ -401,7 +401,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         bundle.putLong("chat_id", -chatActivity.getDialogId());
         chatActivity.getParentLayout().addFragmentToStack(new TopicsFragment(bundle), chatActivity.getParentLayout().getFragmentStack().size() - 1);
         chatActivity.setSwitchFromTopics(true);
-        chatActivity.lambda$onBackPressed$341();
+        chatActivity.lambda$onBackPressed$340();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -1017,7 +1017,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                     TopicsFragment.this.clearSelectedTopics();
                     return;
                 } else {
-                    TopicsFragment.this.lambda$onBackPressed$341();
+                    TopicsFragment.this.lambda$onBackPressed$340();
                     return;
                 }
             }
@@ -1252,7 +1252,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             int i = NotificationCenter.closeChats;
             notificationCenter.removeObserver(topicsFragment, i);
             TopicsFragment.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i, new Object[0]);
-            TopicsFragment.this.lambda$onBackPressed$341();
+            TopicsFragment.this.lambda$onBackPressed$340();
             TopicsFragment.this.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-chat.id), null, chat, Boolean.valueOf(z));
         }
 
@@ -1651,7 +1651,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             if (i == 0) {
                 TopicsFragment.this.updateChatInfo();
             } else {
-                TopicsFragment.this.lambda$onBackPressed$341();
+                TopicsFragment.this.lambda$onBackPressed$340();
             }
         }
     }
@@ -4296,7 +4296,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         if (!this.inPreviewMode || getMessagesController().isForum(-this.chatId)) {
             return;
         }
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

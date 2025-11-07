@@ -216,6 +216,7 @@ public class TLRPC {
         public static final int constructor = 445316222;
         public int date;
         public int flags;
+        public boolean from_admin;
         public Peer from_id;
         public int id;
         public TL_textWithEntities message;
@@ -227,7 +228,9 @@ public class TLRPC {
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
-            this.flags = inputSerializedData.readInt32(z);
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.from_admin = TLObject.hasFlag(readInt32, 2);
             this.id = inputSerializedData.readInt32(z);
             this.from_id = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             this.date = inputSerializedData.readInt32(z);
@@ -240,7 +243,9 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            outputSerializedData.writeInt32(this.flags);
+            int flag = TLObject.setFlag(this.flags, 2, this.from_admin);
+            this.flags = flag;
+            outputSerializedData.writeInt32(flag);
             outputSerializedData.writeInt32(this.id);
             this.from_id.serializeToStream(outputSerializedData);
             outputSerializedData.writeInt32(this.date);
@@ -3610,7 +3615,7 @@ public class TLRPC {
     }
 
     public static class TL_messageActionGiftCode extends MessageAction {
-        public static final int constructor = 1456486804;
+        public static final int constructor = 834962247;
         public Peer boost_peer;
         public TL_textWithEntities message;
         public String slug;
@@ -3626,7 +3631,9 @@ public class TLRPC {
             if ((readInt32 & 2) != 0) {
                 this.boost_peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            this.months = inputSerializedData.readInt32(z);
+            int readInt322 = inputSerializedData.readInt32(z);
+            this.days = readInt322;
+            this.months = Math.round(readInt322 / 30.0f);
             this.slug = inputSerializedData.readString(z);
             if ((this.flags & 4) != 0) {
                 this.currency = inputSerializedData.readString(z);
@@ -3652,7 +3659,7 @@ public class TLRPC {
             if ((this.flags & 2) != 0) {
                 this.boost_peer.serializeToStream(outputSerializedData);
             }
-            outputSerializedData.writeInt32(this.months);
+            outputSerializedData.writeInt32(this.days);
             outputSerializedData.writeString(this.slug);
             if ((this.flags & 4) != 0) {
                 outputSerializedData.writeString(this.currency);
@@ -3680,7 +3687,9 @@ public class TLRPC {
             if ((readInt32 & 2) != 0) {
                 this.boost_peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            this.months = inputSerializedData.readInt32(z);
+            int readInt322 = inputSerializedData.readInt32(z);
+            this.months = readInt322;
+            this.days = readInt322 * 30;
             this.slug = inputSerializedData.readString(z);
         }
 
@@ -3702,10 +3711,6 @@ public class TLRPC {
 
     public static class TL_messageActionGiftCode_layer189 extends TL_messageActionGiftCode {
         public static final int constructor = 1737240073;
-        public Peer boost_peer;
-        public String slug;
-        public boolean unclaimed;
-        public boolean via_giveaway;
 
         @Override // org.telegram.tgnet.TLRPC.TL_messageActionGiftCode, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
@@ -3716,7 +3721,9 @@ public class TLRPC {
             if ((readInt32 & 2) != 0) {
                 this.boost_peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
             }
-            this.months = inputSerializedData.readInt32(z);
+            int readInt322 = inputSerializedData.readInt32(z);
+            this.months = readInt322;
+            this.days = readInt322 * 30;
             this.slug = inputSerializedData.readString(z);
             if ((this.flags & 4) != 0) {
                 this.currency = inputSerializedData.readString(z);
@@ -3756,6 +3763,62 @@ public class TLRPC {
             }
             if ((this.flags & 8) != 0) {
                 outputSerializedData.writeInt64(this.cryptoAmount);
+            }
+        }
+    }
+
+    public static class TL_messageActionGiftCode_layer216 extends TL_messageActionGiftCode {
+        public static final int constructor = 1456486804;
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageActionGiftCode, org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            int readInt32 = inputSerializedData.readInt32(z);
+            this.flags = readInt32;
+            this.via_giveaway = (readInt32 & 1) != 0;
+            this.unclaimed = (readInt32 & 32) != 0;
+            if ((readInt32 & 2) != 0) {
+                this.boost_peer = Peer.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+            int readInt322 = inputSerializedData.readInt32(z);
+            this.months = readInt322;
+            this.days = readInt322 * 30;
+            this.slug = inputSerializedData.readString(z);
+            if ((this.flags & 4) != 0) {
+                this.currency = inputSerializedData.readString(z);
+                this.amount = inputSerializedData.readInt64(z);
+            }
+            if ((this.flags & 8) != 0) {
+                this.cryptoCurrency = inputSerializedData.readString(z);
+                this.cryptoAmount = inputSerializedData.readInt64(z);
+            }
+            if ((this.flags & 16) != 0) {
+                ((TL_messageActionGiftCode) this).message = TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLRPC.TL_messageActionGiftCode, org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int i = this.via_giveaway ? this.flags | 1 : this.flags & (-2);
+            this.flags = i;
+            int i2 = this.unclaimed ? i | 32 : i & (-33);
+            this.flags = i2;
+            outputSerializedData.writeInt32(i2);
+            if ((this.flags & 2) != 0) {
+                this.boost_peer.serializeToStream(outputSerializedData);
+            }
+            outputSerializedData.writeInt32(this.months);
+            outputSerializedData.writeString(this.slug);
+            if ((this.flags & 4) != 0) {
+                outputSerializedData.writeString(this.currency);
+                outputSerializedData.writeInt64(this.amount);
+            }
+            if ((this.flags & 8) != 0) {
+                outputSerializedData.writeString(this.cryptoCurrency);
+                outputSerializedData.writeInt64(this.cryptoAmount);
+            }
+            if ((this.flags & 16) != 0) {
+                ((TL_messageActionGiftCode) this).message.serializeToStream(outputSerializedData);
             }
         }
     }
@@ -7751,9 +7814,10 @@ public class TLRPC {
 
     public static class TL_payments_checkedGiftCode extends TLObject {
         public static final long NO_USER_ID = -1;
-        public static final int constructor = 675942550;
+        public static final int constructor = -342343793;
         public TL_stories.Boost boost;
         public int date;
+        public int days;
         public int flags;
         public Peer from_id;
         public int giveaway_msg_id;
@@ -7765,7 +7829,7 @@ public class TLRPC {
         public ArrayList<User> users = new ArrayList<>();
 
         public static TL_payments_checkedGiftCode TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
-            return (TL_payments_checkedGiftCode) TLObject.TLdeserialize(TL_payments_checkedGiftCode.class, 675942550 != i ? null : new TL_payments_checkedGiftCode(), inputSerializedData, i, z);
+            return (TL_payments_checkedGiftCode) TLObject.TLdeserialize(TL_payments_checkedGiftCode.class, -342343793 != i ? null : new TL_payments_checkedGiftCode(), inputSerializedData, i, z);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -7783,7 +7847,9 @@ public class TLRPC {
                 this.to_id = inputSerializedData.readInt64(z);
             }
             this.date = inputSerializedData.readInt32(z);
-            this.months = inputSerializedData.readInt32(z);
+            int readInt322 = inputSerializedData.readInt32(z);
+            this.days = readInt322;
+            this.months = Math.round(readInt322 / 30.0f);
             if ((this.flags & 2) != 0) {
                 this.used_date = inputSerializedData.readInt32(z);
             }
@@ -7807,7 +7873,7 @@ public class TLRPC {
                 outputSerializedData.writeInt64(this.to_id);
             }
             outputSerializedData.writeInt32(this.date);
-            outputSerializedData.writeInt32(this.months);
+            outputSerializedData.writeInt32(this.days);
             if ((this.flags & 2) != 0) {
                 outputSerializedData.writeInt32(this.used_date);
             }
@@ -33493,7 +33559,7 @@ public class TLRPC {
     public static class TL_recentStory extends TLObject {
         public static final int constructor = 1897752877;
         public int flags;
-        public boolean is_live;
+        public boolean live;
         public int max_id;
 
         public static TL_recentStory TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
@@ -33503,7 +33569,7 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
-            int flag = TLObject.setFlag(this.flags, 1, this.is_live);
+            int flag = TLObject.setFlag(this.flags, 1, this.live);
             this.flags = flag;
             outputSerializedData.writeInt32(flag);
             if (TLObject.hasFlag(this.flags, 2)) {
@@ -33515,7 +33581,7 @@ public class TLRPC {
         public void readParams(InputSerializedData inputSerializedData, boolean z) {
             int readInt32 = inputSerializedData.readInt32(z);
             this.flags = readInt32;
-            this.is_live = TLObject.hasFlag(readInt32, 1);
+            this.live = TLObject.hasFlag(readInt32, 1);
             if (TLObject.hasFlag(this.flags, 2)) {
                 this.max_id = inputSerializedData.readInt32(z);
             }
@@ -37370,6 +37436,9 @@ public class TLRPC {
                 case TL_messageActionRequestedPeer.constructor /* 827428507 */:
                     tL_messageActionPhoneCall = new TL_messageActionRequestedPeer();
                     break;
+                case TL_messageActionGiftCode.constructor /* 834962247 */:
+                    tL_messageActionPhoneCall = new TL_messageActionGiftCode();
+                    break;
                 case TL_messageActionGiveawayLaunch_layer186.constructor /* 858499565 */:
                     tL_messageActionPhoneCall = new TL_messageActionGiveawayLaunch_layer186();
                     break;
@@ -37430,8 +37499,8 @@ public class TLRPC {
                 case TL_messageEncryptedAction.constructor /* 1431655927 */:
                     tL_messageActionPhoneCall = new TL_messageEncryptedAction();
                     break;
-                case TL_messageActionGiftCode.constructor /* 1456486804 */:
-                    tL_messageActionPhoneCall = new TL_messageActionGiftCode();
+                case TL_messageActionGiftCode_layer216.constructor /* 1456486804 */:
+                    tL_messageActionPhoneCall = new TL_messageActionGiftCode_layer216();
                     break;
                 case TL_messageActionSuggestProfilePhoto.constructor /* 1474192222 */:
                     tL_messageActionPhoneCall = new TL_messageActionSuggestProfilePhoto();
@@ -75344,7 +75413,10 @@ public class TLRPC {
     }
 
     public static class TL_channels_getSendAs extends TLObject {
-        public static final int constructor = 231174382;
+        public static final int constructor = -410672065;
+        public int flags;
+        public boolean for_live_stories;
+        public boolean for_paid_reactions;
         public InputPeer peer;
 
         @Override // org.telegram.tgnet.TLObject
@@ -75355,6 +75427,11 @@ public class TLRPC {
         @Override // org.telegram.tgnet.TLObject
         public void serializeToStream(OutputSerializedData outputSerializedData) {
             outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(this.flags, 1, this.for_paid_reactions);
+            this.flags = flag;
+            int flag2 = TLObject.setFlag(flag, 2, this.for_live_stories);
+            this.flags = flag2;
+            outputSerializedData.writeInt32(flag2);
             this.peer.serializeToStream(outputSerializedData);
         }
     }

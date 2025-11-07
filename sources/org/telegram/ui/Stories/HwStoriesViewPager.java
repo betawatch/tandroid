@@ -5,8 +5,8 @@ import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
 abstract class HwStoriesViewPager extends StoriesViewPager {
-    public HwStoriesViewPager(Context context, StoryViewer storyViewer, Theme.ResourcesProvider resourcesProvider) {
-        super(context, storyViewer, resourcesProvider);
+    public HwStoriesViewPager(int i, Context context, StoryViewer storyViewer, Theme.ResourcesProvider resourcesProvider) {
+        super(i, context, storyViewer, resourcesProvider);
     }
 
     @Override // android.view.View

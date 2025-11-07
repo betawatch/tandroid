@@ -394,9 +394,9 @@ public class ChannelBoostLayout extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x010b  */
     /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -420,7 +420,9 @@ public class ChannelBoostLayout extends FrameLayout {
                     int i2 = boost.date;
                     tL_payments_checkedGiftCode.date = i2;
                     tL_payments_checkedGiftCode.via_giveaway = boost.giveaway;
-                    tL_payments_checkedGiftCode.months = ((boost.expires - i2) / 30) / 86400;
+                    int i3 = boost.expires - i2;
+                    tL_payments_checkedGiftCode.days = i3 / 86400;
+                    tL_payments_checkedGiftCode.months = (i3 / 30) / 86400;
                     if (boost.unclaimed) {
                         tL_payments_checkedGiftCode.to_id = -1L;
                         tL_payments_checkedGiftCode.flags = -1;

@@ -120,7 +120,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    SaveToGallerySettingsActivity.this.lambda$onBackPressed$341();
+                    SaveToGallerySettingsActivity.this.lambda$onBackPressed$340();
                 }
             }
         });
@@ -348,7 +348,7 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
             saveGalleryExceptions.put(dialogException.dialogId, dialogException);
             getUserConfig().updateSaveGalleryExceptions(this.type, saveGalleryExceptions);
         }
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     private void updateRows() {

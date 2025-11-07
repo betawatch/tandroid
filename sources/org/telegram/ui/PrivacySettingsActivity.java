@@ -288,7 +288,7 @@ public class PrivacySettingsActivity extends BaseFragment implements Notificatio
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    PrivacySettingsActivity.this.lambda$onBackPressed$341();
+                    PrivacySettingsActivity.this.lambda$onBackPressed$340();
                 }
             }
         });

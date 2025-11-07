@@ -24,8 +24,8 @@ final class j0 implements G, DoubleConsumer, y {
 
     @Override // java.util.Iterator
     public final Double next() {
-        if (u0.a) {
-            u0.a(j0.class, "{0} calling PrimitiveIterator.OfDouble.nextLong()");
+        if (v0.a) {
+            v0.a(j0.class, "{0} calling PrimitiveIterator.OfDouble.nextLong()");
             throw null;
         }
         return Double.valueOf(nextDouble());
@@ -38,8 +38,8 @@ final class j0 implements G, DoubleConsumer, y {
             return;
         }
         Objects.requireNonNull(consumer);
-        if (u0.a) {
-            u0.a(j0.class, "{0} calling PrimitiveIterator.OfDouble.forEachRemainingDouble(action::accept)");
+        if (v0.a) {
+            v0.a(j0.class, "{0} calling PrimitiveIterator.OfDouble.forEachRemainingDouble(action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);

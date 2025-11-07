@@ -2397,7 +2397,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             file = new File(FileLoader.getDirectory(2), key + str2);
         }
         ensureMediaThumbExists(getAccountInstance(), false, document, file.getAbsolutePath(), null, 0L);
-        final String[] strArr = {getKeyForPhotoSize(getAccountInstance(), FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.uploadStoryEnd), bitmapArr, true, true)};
+        final String[] strArr = {getKeyForPhotoSize(getAccountInstance(), FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.uploadStoryProgress), bitmapArr, true, true)};
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
@@ -5707,7 +5707,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (tLObject != null) {
             if (twoStepVerificationActivity != null) {
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$341();
+                twoStepVerificationActivity.lambda$onBackPressed$340();
             }
             long fromChatId = messageObject.getFromChatId();
             long j = messageObject.messageOwner.via_bot_id;
@@ -5932,7 +5932,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }, 8);
         } else if (twoStepVerificationActivity != null) {
             twoStepVerificationActivity.needHideProgress();
-            twoStepVerificationActivity.lambda$onBackPressed$341();
+            twoStepVerificationActivity.lambda$onBackPressed$340();
         }
     }
 
@@ -9126,8 +9126,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 str3 = str13;
                 bArr = null;
                 messageMedia3 = messageMedia2;
-                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, NotificationCenter.uploadStoryEnd);
-                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageMedia.document.thumbs, NotificationCenter.uploadStoryEnd);
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(messageMedia3.document.thumbs, NotificationCenter.uploadStoryProgress);
+                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageMedia.document.thumbs, NotificationCenter.uploadStoryProgress);
                 if (closestPhotoSizeWithSize2 != null && (fileLocation2 = closestPhotoSizeWithSize2.location) != null && fileLocation2.volume_id == -2147483648L && closestPhotoSizeWithSize3 != null && closestPhotoSizeWithSize3.location != null && !(closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoSizeEmpty) && !(closestPhotoSizeWithSize2 instanceof TLRPC.TL_photoSizeEmpty)) {
                     String str23 = closestPhotoSizeWithSize2.location.volume_id + "_" + closestPhotoSizeWithSize2.location.local_id;
                     String str24 = closestPhotoSizeWithSize3.location.volume_id + "_" + closestPhotoSizeWithSize3.location.local_id;
@@ -11817,7 +11817,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     } else {
                                         tL_document3.mime_type = "image/gif";
                                     }
-                                    int i6 = isEncryptedDialog ? 90 : NotificationCenter.uploadStoryEnd;
+                                    int i6 = isEncryptedDialog ? 90 : NotificationCenter.uploadStoryProgress;
                                     try {
                                         if (str2.endsWith("mp4")) {
                                             loadBitmap = createVideoThumbnail(str2, 1);
@@ -11993,7 +11993,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         }
                     }
                     if (!MessageObject.isGifDocument((TLRPC.Document) tLObject)) {
-                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLObject.thumbs, NotificationCenter.uploadStoryEnd);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLObject.thumbs, NotificationCenter.uploadStoryProgress);
                         File pathToAttach = FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(tLObject);
                         if (!pathToAttach.exists()) {
                             pathToAttach = FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(tLObject, true);
@@ -12257,8 +12257,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             TLRPC.TL_document tL_document = (TLRPC.TL_document) tLObject;
             if ((MessageObject.isVideoDocument(tL_document) || MessageObject.isNewGifDocument(tL_document)) && MessageObject.isDocumentHasThumb(tL_document)) {
                 ArrayList<TLRPC.PhotoSize> arrayList = tL_document.thumbs;
-                int i = NotificationCenter.uploadStoryEnd;
-                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(arrayList, NotificationCenter.uploadStoryEnd);
+                int i = NotificationCenter.uploadStoryProgress;
+                TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(arrayList, NotificationCenter.uploadStoryProgress);
                 if ((closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoStrippedSize) || (closestPhotoSizeWithSize3 instanceof TLRPC.TL_photoPathSize) || FileLoader.getInstance(accountInstance.getCurrentAccount()).getPathToAttach(closestPhotoSizeWithSize3, true).exists()) {
                     return;
                 }
@@ -13009,7 +13009,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     if (!z6) {
                                         try {
                                             if (sendingMediaInfo5.ttl == 0) {
-                                                i27 = NotificationCenter.uploadStoryEnd;
+                                                i27 = NotificationCenter.uploadStoryProgress;
                                                 if (!file2.getAbsolutePath().endsWith("mp4")) {
                                                     try {
                                                         createVideoThumbnail = createVideoThumbnail(file2.getAbsolutePath(), 1);
@@ -15053,7 +15053,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     if (bitmap3 == null) {
                                         bitmap3 = createVideoThumbnail(str9, 1);
                                     }
-                                    int i8 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.uploadStoryEnd;
+                                    int i8 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.uploadStoryProgress;
                                     float f = i8;
                                     TLRPC.PhotoSize scaleAndSaveImage = ImageLoader.scaleAndSaveImage(bitmap3, f, f, i8 > 90 ? 80 : 55, isEncryptedDialog);
                                     if (bitmap3 == null || scaleAndSaveImage == null) {
@@ -15177,7 +15177,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                         if (bitmap4 == null) {
                                             bitmap4 = createVideoThumbnail(str9, 1);
                                         }
-                                        int i10 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.uploadStoryEnd;
+                                        int i10 = (isEncryptedDialog || i != 0) ? 90 : NotificationCenter.uploadStoryProgress;
                                         float f2 = i10;
                                         TLRPC.PhotoSize scaleAndSaveImage2 = ImageLoader.scaleAndSaveImage(bitmap4, f2, f2, i10 > 90 ? 80 : 55, isEncryptedDialog);
                                         if (bitmap4 == null || scaleAndSaveImage2 == null) {

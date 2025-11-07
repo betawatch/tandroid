@@ -96,7 +96,7 @@ import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.CastSync;
 import org.telegram.ui.Cells.AudioPlayerCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda307;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda361;
 import org.telegram.ui.ChooseQualityLayout$QualityIcon;
 import org.telegram.ui.Components.AudioPlayerAlert;
 import org.telegram.ui.Components.Bulletin;
@@ -338,8 +338,8 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                         dp2 = (int) ((paddingTop / 5) * 3.5f);
                     }
                     dp = (paddingTop - dp2) + AndroidUtilities.dp(8.0f);
-                    if (dp > paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + NotificationCenter.botForumDraftUpdate)) {
-                        dp = paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + NotificationCenter.botForumDraftUpdate);
+                    if (dp > paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + NotificationCenter.botForumTopicDidCreate)) {
+                        dp = paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + NotificationCenter.botForumTopicDidCreate);
                     }
                     if (dp < 0) {
                         dp = 0;
@@ -3224,7 +3224,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             TLRPC.Document document = messageObject.getDocument();
             long j = document != null ? document.id : 0L;
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda307(makeOptions));
+            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda361(makeOptions));
             makeSwipeback.addGap();
             makeSwipeback.addIf(!savedMusicIds.ids.contains(Long.valueOf(j)), R.drawable.left_status_profile, LocaleController.getString(R.string.AudioSaveToMyProfile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
@@ -3575,7 +3575,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
             }
         });
-        this.parentActivity.lambda$runLinkRequest$95(dialogsActivity);
+        this.parentActivity.lambda$runLinkRequest$100(dialogsActivity);
         lambda$new$0();
     }
 
@@ -3599,7 +3599,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 }
                 i3 = i2 + 1;
             }
-            dialogsActivity.lambda$onBackPressed$341();
+            dialogsActivity.lambda$onBackPressed$340();
             BaseFragment lastFragment = LaunchActivity.getLastFragment();
             if (lastFragment == null) {
                 return true;
@@ -3639,7 +3639,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 dialogsActivity.removeSelfFromStack();
             }
         } else {
-            dialogsActivity.lambda$onBackPressed$341();
+            dialogsActivity.lambda$onBackPressed$340();
         }
         return true;
     }

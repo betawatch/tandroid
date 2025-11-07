@@ -28,7 +28,7 @@ final class p3 extends c3 implements j$.util.b0 {
         this.h = t2;
         Objects.requireNonNull(t2);
         this.e = this.b.V(new o3(t2, 0));
-        this.f = new a(4, this);
+        this.f = new a(5, this);
     }
 
     @Override // j$.util.stream.c3, j$.util.Spliterator

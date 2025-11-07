@@ -541,14 +541,14 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 if (baseFragment2 instanceof ProfileActivity) {
                     getParentLayout().removeFragmentFromStack(baseFragment2);
                 }
-                lambda$onBackPressed$341();
+                lambda$onBackPressed$340();
                 if (baseFragment3 instanceof ChatActivity) {
                     BoostDialogs.showBulletin(baseFragment3, chat, true);
                     return;
                 }
                 return;
             }
-            lambda$onBackPressed$341();
+            lambda$onBackPressed$340();
             if (baseFragment2 instanceof ProfileActivity) {
                 BoostDialogs.showBulletin(baseFragment2, chat, false);
                 return;
@@ -882,7 +882,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i4) {
                     if (i4 == -1) {
-                        StatisticActivity.this.lambda$onBackPressed$341();
+                        StatisticActivity.this.lambda$onBackPressed$340();
                     }
                 }
             });
@@ -1008,7 +1008,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i4) {
                 if (i4 == -1) {
-                    StatisticActivity.this.lambda$onBackPressed$341();
+                    StatisticActivity.this.lambda$onBackPressed$340();
                 }
             }
         });

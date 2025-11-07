@@ -636,7 +636,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             public void onItemClick(int i4) {
                 if (i4 == -1) {
                     if (GroupCreateActivity.this.checkDiscard()) {
-                        GroupCreateActivity.this.lambda$onBackPressed$341();
+                        GroupCreateActivity.this.lambda$onBackPressed$340();
                     }
                 } else if (i4 == 1) {
                     GroupCreateActivity.this.onDonePressed(true);
@@ -1020,7 +1020,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             CallLogActivity.createCallLink(context, this.currentAccount, this.resourceProvider, new Runnable() { // from class: org.telegram.ui.GroupCreateActivity$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GroupCreateActivity.this.lambda$onBackPressed$341();
+                    GroupCreateActivity.this.lambda$onBackPressed$340();
                 }
             });
             return;
@@ -1385,7 +1385,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
         if (contactsAddActivityDelegate != null) {
             contactsAddActivityDelegate.didSelectUsers(arrayList, i);
         }
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -1467,7 +1467,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$11(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     private HashSet getSelectedUsers() {
@@ -1579,7 +1579,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                     if (groupCreateActivityDelegate != null) {
                         groupCreateActivityDelegate.didSelectUsers(this.selectedPremium != null, this.selectedMiniapps != null, arrayList2);
                     }
-                    lambda$onBackPressed$341();
+                    lambda$onBackPressed$340();
                 } else {
                     Bundle bundle2 = new Bundle();
                     int size = arrayList2.size();

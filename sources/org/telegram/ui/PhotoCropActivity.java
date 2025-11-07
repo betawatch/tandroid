@@ -630,7 +630,7 @@ public class PhotoCropActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    PhotoCropActivity.this.lambda$onBackPressed$341();
+                    PhotoCropActivity.this.lambda$onBackPressed$340();
                     return;
                 }
                 if (i == 1) {
@@ -642,7 +642,7 @@ public class PhotoCropActivity extends BaseFragment {
                         PhotoCropActivity.this.delegate.didFinishEdit(bitmap);
                         PhotoCropActivity.this.doneButtonPressed = true;
                     }
-                    PhotoCropActivity.this.lambda$onBackPressed$341();
+                    PhotoCropActivity.this.lambda$onBackPressed$340();
                 }
             }
         });

@@ -41,7 +41,7 @@ public class DrawerLayoutContainer extends FrameLayout {
     public boolean allowDrawContent;
     private boolean allowOpenDrawer;
     private boolean allowOpenDrawerBySwipe;
-    private Paint backgroundPaint;
+    private final Paint backgroundPaint;
     private boolean beginTrackingSent;
     private int behindKeyboardColor;
     private AnimatorSet currentAnimation;
@@ -58,14 +58,14 @@ public class DrawerLayoutContainer extends FrameLayout {
     private boolean keyboardVisibility;
     private WindowInsetsCompat lastWindowInsetsCompat;
     private boolean maybeStartTracking;
-    private int minDrawerMargin;
+    private final int minDrawerMargin;
     private INavigationLayout parentActionBarLayout;
     private BitmapDrawable previewBlurDrawable;
     private PreviewForegroundDrawable previewForegroundDrawable;
-    private Rect rect;
+    private final Rect rect;
     private float scrimOpacity;
-    private Paint scrimPaint;
-    private Drawable shadowLeft;
+    private final Paint scrimPaint;
+    private final Drawable shadowLeft;
     private float startY;
     private boolean startedTracking;
     private int startedTrackingPointerId;
@@ -127,7 +127,7 @@ public class DrawerLayoutContainer extends FrameLayout {
         drawerLayoutContainer.setWillNotDraw(windowInsetsCompat.getSystemWindowInsetTop() <= 0 && getBackground() == null);
         if (i >= 28) {
             DisplayCutoutCompat displayCutout = windowInsetsCompat.getDisplayCutout();
-            if (displayCutout != null && displayCutout.getBoundingRects().size() != 0) {
+            if (displayCutout != null && !displayCutout.getBoundingRects().isEmpty()) {
                 z = true;
             }
             this.hasCutout = z;
@@ -267,14 +267,6 @@ public class DrawerLayoutContainer extends FrameLayout {
     private void setScrimOpacity(float f) {
         this.scrimOpacity = f;
         invalidate();
-    }
-
-    private float getScrimOpacity() {
-        return this.scrimOpacity;
-    }
-
-    public FrameLayout getDrawerLayout() {
-        return this.drawerLayout;
     }
 
     public void setParentActionBarLayout(INavigationLayout iNavigationLayout) {
@@ -569,6 +561,7 @@ public class DrawerLayoutContainer extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
+        int makeMeasureSpec;
         int size = View.MeasureSpec.getSize(i);
         int size2 = View.MeasureSpec.getSize(i2);
         setMeasuredDimension(size, size2);
@@ -582,15 +575,17 @@ public class DrawerLayoutContainer extends FrameLayout {
             if (childAt.getVisibility() != 8) {
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                 if (this.drawerLayout != childAt) {
-                    int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - layoutParams.leftMargin) - layoutParams.rightMargin, TLObject.FLAG_30);
+                    int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec((size - layoutParams.leftMargin) - layoutParams.rightMargin, TLObject.FLAG_30);
                     int i5 = layoutParams.height;
-                    if (i5 <= 0) {
-                        i5 = View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLObject.FLAG_30);
+                    if (i5 > 0) {
+                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i5, TLObject.FLAG_30);
+                    } else {
+                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLObject.FLAG_30);
                     }
                     if ((childAt instanceof ActionBarLayout) && ((ActionBarLayout) childAt).storyViewerAttached()) {
                         childAt.forceLayout();
                     }
-                    childAt.measure(makeMeasureSpec, i5);
+                    childAt.measure(makeMeasureSpec2, makeMeasureSpec);
                 } else {
                     childAt.setPadding(0, 0, 0, 0);
                     childAt.measure(ViewGroup.getChildMeasureSpec(i, this.minDrawerMargin + layoutParams.leftMargin + layoutParams.rightMargin, layoutParams.width), ViewGroup.getChildMeasureSpec(i2, layoutParams.topMargin + layoutParams.bottomMargin, layoutParams.height));

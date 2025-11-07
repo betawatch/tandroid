@@ -255,7 +255,7 @@ public final /* synthetic */ class B implements D {
     @Override // j$.util.stream.D
     public final D e(a aVar) {
         DoubleStream doubleStream = this.a;
-        a aVar2 = new a(7);
+        a aVar2 = new a(8);
         aVar2.b = aVar;
         return j(doubleStream.flatMap(aVar2));
     }

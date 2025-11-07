@@ -26,7 +26,7 @@ final class F extends J implements j2 {
 
     static {
         b3 b3Var = b3.DOUBLE_VALUE;
-        c = new E(true, b3Var, j$.util.A.a(), new l(10), new j(8));
-        d = new E(false, b3Var, j$.util.A.a(), new l(10), new j(8));
+        c = new E(true, b3Var, j$.util.A.a(), new k(13), new j(8));
+        d = new E(false, b3Var, j$.util.A.a(), new k(13), new j(8));
     }
 }

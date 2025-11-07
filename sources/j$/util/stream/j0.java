@@ -67,25 +67,25 @@ abstract class j0 extends b implements LongStream {
 
     @Override // j$.util.stream.b
     final boolean G(Spliterator spliterator, m2 m2Var) {
-        LongConsumer b0Var;
+        LongConsumer c0Var;
         boolean n;
         j$.util.b0 Y = Y(spliterator);
         if (m2Var instanceof LongConsumer) {
-            b0Var = (LongConsumer) m2Var;
+            c0Var = (LongConsumer) m2Var;
         } else {
             if (J3.a) {
                 J3.a(b.class, "using LongStream.adapt(Sink<Long> s)");
                 throw null;
             }
             Objects.requireNonNull(m2Var);
-            b0Var = new b0(m2Var);
+            c0Var = new c0(m2Var);
         }
         do {
             n = m2Var.n();
             if (n) {
                 break;
             }
-        } while (Y.tryAdvance(b0Var));
+        } while (Y.tryAdvance(c0Var));
         return n;
     }
 
@@ -111,7 +111,7 @@ abstract class j0 extends b implements LongStream {
 
     @Override // j$.util.stream.LongStream
     public final Stream boxed() {
-        return new s(this, 0, new c0(1), 2);
+        return new s(this, 0, new b0(4), 2);
     }
 
     @Override // j$.util.stream.LongStream
@@ -188,27 +188,27 @@ abstract class j0 extends b implements LongStream {
 
     @Override // j$.util.stream.LongStream
     public final LongStream distinct() {
-        return ((e2) boxed()).distinct().mapToLong(new l(28));
+        return ((e2) boxed()).distinct().mapToLong(new b0(1));
     }
 
     @Override // j$.util.stream.LongStream
     public final long sum() {
-        return reduce(0L, new c0(6));
+        return reduce(0L, new b0(9));
     }
 
     @Override // j$.util.stream.LongStream
     public final j$.util.C min() {
-        return reduce(new l(27));
+        return reduce(new b0(0));
     }
 
     @Override // j$.util.stream.LongStream
     public final j$.util.C max() {
-        return reduce(new c0(5));
+        return reduce(new b0(8));
     }
 
     @Override // j$.util.stream.LongStream
     public final j$.util.A average() {
-        long j = ((long[]) collect(new c0(2), new c0(3), new c0(4)))[0];
+        long j = ((long[]) collect(new b0(5), new b0(6), new b0(7)))[0];
         return j > 0 ? j$.util.A.d(r0[1] / j) : j$.util.A.a();
     }
 
@@ -220,7 +220,7 @@ abstract class j0 extends b implements LongStream {
 
     @Override // j$.util.stream.LongStream
     public final j$.util.z summaryStatistics() {
-        return (j$.util.z) collect(new j(27), new l(26), new l(29));
+        return (j$.util.z) collect(new j(27), new k(29), new b0(2));
     }
 
     @Override // j$.util.stream.LongStream
@@ -256,7 +256,7 @@ abstract class j0 extends b implements LongStream {
 
     @Override // j$.util.stream.LongStream
     public final long[] toArray() {
-        return (long[]) w0.Q((G0) D(new c0(0))).d();
+        return (long[]) w0.Q((G0) D(new b0(3))).d();
     }
 
     @Override // j$.util.stream.LongStream

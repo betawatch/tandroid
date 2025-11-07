@@ -259,7 +259,7 @@ public final /* synthetic */ class k0 implements LongStream {
     @Override // j$.util.stream.LongStream
     public final LongStream e(a aVar) {
         java.util.stream.LongStream longStream = this.a;
-        a aVar2 = new a(9);
+        a aVar2 = new a(10);
         aVar2.b = aVar;
         return j(longStream.flatMap(aVar2));
     }

@@ -521,7 +521,7 @@ public class PhotoAttachPhotoCell extends FrameLayout {
                         if (documentVideoThumb != null) {
                             this.imageView.setImage(ImageLocation.getForDocument(documentVideoThumb, searchImage.document), (String) null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, 90), searchImage.document), "52_52", (String) null, -1L, 1, searchImage);
                         } else {
-                            this.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, NotificationCenter.uploadStoryEnd), searchImage.document), (String) null, drawable, searchImage);
+                            this.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, NotificationCenter.uploadStoryProgress), searchImage.document), (String) null, drawable, searchImage);
                         }
                     } else {
                         this.imageView.setImageDrawable(drawable);

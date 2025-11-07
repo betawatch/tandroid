@@ -2016,7 +2016,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$1(View view) {
         if (onBackPressed()) {
-            lambda$onBackPressed$341();
+            lambda$onBackPressed$340();
         }
     }
 
@@ -2067,7 +2067,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showUnsavedAlert$3(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2081,7 +2081,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             return;
         }
         if (this.isChannel) {
-            lambda$onBackPressed$341();
+            lambda$onBackPressed$340();
         } else if (!getUserConfig().isPremium()) {
             showDialog(new PremiumFeatureBottomSheet(this, 23, true));
             return;
@@ -2104,7 +2104,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             page2.setupValues();
         }
         apply();
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
         showBulletin();
     }
 
@@ -2114,7 +2114,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
         page.button.setLoading(false);
         if (bool.booleanValue()) {
             apply();
-            lambda$onBackPressed$341();
+            lambda$onBackPressed$340();
             showBulletin();
         }
     }
@@ -2183,7 +2183,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
     
         if (r3 != (r8 instanceof org.telegram.tgnet.TLRPC.TL_peerColorCollectible ? r8.collectible_id : 0)) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x013e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x014e, code lost:
     
         if ((r14.profilePage.selectedEmojiCollectible == null ? 0 : r14.profilePage.selectedEmojiCollectible.collectible_id) != org.telegram.messenger.UserObject.getProfileCollectibleId(r2)) goto L47;
      */
@@ -2191,7 +2191,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
     /* JADX WARN: Type inference failed for: r3v14, types: [org.telegram.tgnet.TLRPC$TL_emojiStatusEmpty] */
     /* JADX WARN: Type inference failed for: r3v15, types: [org.telegram.tgnet.TLRPC$EmojiStatus] */
     /* JADX WARN: Type inference failed for: r3v16, types: [org.telegram.tgnet.TLRPC$TL_inputEmojiStatusCollectible] */
-    /* JADX WARN: Type inference failed for: r4v45, types: [org.telegram.messenger.MessagesController] */
+    /* JADX WARN: Type inference failed for: r4v46, types: [org.telegram.messenger.MessagesController] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2201,7 +2201,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
         }
         if (this.isChannel || getUserConfig().isPremium()) {
             if (this.isChannel) {
-                lambda$onBackPressed$341();
+                lambda$onBackPressed$340();
             } else {
                 TLRPC.User currentUser = getUserConfig().getCurrentUser();
                 if (currentUser.color == null) {
@@ -2229,10 +2229,11 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                     updatecolor.flags |= 4;
                     TLRPC.TL_peerColor tL_peerColor2 = new TLRPC.TL_peerColor();
                     updatecolor.color = tL_peerColor2;
+                    tL_peerColor2.flags |= 1;
+                    tL_peerColor2.color = this.namePage.selectedColor;
                     TLRPC.PeerColor peerColor2 = currentUser.color;
-                    int i = this.namePage.selectedColor;
-                    peerColor2.color = i;
-                    tL_peerColor2.color = i;
+                    peerColor2.flags |= 1;
+                    peerColor2.color = this.namePage.selectedColor;
                     if (this.namePage.selectedEmoji != 0) {
                         updatecolor.flags |= 1;
                         TLRPC.PeerColor peerColor3 = currentUser.color;
@@ -2253,7 +2254,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 }
                 this.applyingProfile = true;
                 if (currentUser.profile_color == null) {
-                    currentUser.profile_color = new TLRPC.PeerColor();
+                    currentUser.profile_color = new TLRPC.TL_peerColor();
                 }
                 TL_account.updateColor updatecolor2 = new TL_account.updateColor();
                 updatecolor2.for_profile = true;
@@ -2261,24 +2262,23 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 if (this.profilePage.selectedColor < 0) {
                     currentUser.profile_color.flags &= -2;
                 } else {
-                    currentUser.profile_color.flags |= 1;
                     if (updatecolor2.color == null) {
                         updatecolor2.flags |= 4;
                         updatecolor2.color = new TLRPC.TL_peerColor();
                     }
                     TLRPC.PeerColor peerColor6 = updatecolor2.color;
                     peerColor6.flags |= 1;
+                    peerColor6.color = this.profilePage.selectedColor;
                     TLRPC.PeerColor peerColor7 = currentUser.profile_color;
-                    int i2 = this.profilePage.selectedColor;
-                    peerColor7.color = i2;
-                    peerColor6.color = i2;
+                    peerColor7.flags |= 1;
+                    peerColor7.color = this.profilePage.selectedColor;
                 }
                 if (this.profilePage.selectedEmoji != 0) {
-                    int i3 = updatecolor2.flags;
-                    updatecolor2.flags = i3 | 1;
+                    int i = updatecolor2.flags;
+                    updatecolor2.flags = i | 1;
                     currentUser.profile_color.flags |= 2;
                     if (updatecolor2.color == null) {
-                        updatecolor2.flags = i3 | 5;
+                        updatecolor2.flags = i | 5;
                         updatecolor2.color = new TLRPC.TL_peerColor();
                     }
                     TLRPC.PeerColor peerColor8 = updatecolor2.color;
@@ -2297,17 +2297,17 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                     ?? tL_emojiStatusEmpty = new TLRPC.TL_emojiStatusEmpty();
                     if (this.profilePage.selectedEmojiCollectible != null) {
                         long j4 = this.profilePage.selectedEmojiCollectible.collectible_id;
-                        int i4 = 0;
+                        int i2 = 0;
                         while (true) {
-                            if (i4 >= this.profilePage.uniqueGifts.size()) {
+                            if (i2 >= this.profilePage.uniqueGifts.size()) {
                                 break;
                             }
-                            TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) this.profilePage.uniqueGifts.get(i4);
+                            TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) this.profilePage.uniqueGifts.get(i2);
                             if (tL_starGiftUnique2.id == j4) {
                                 tL_starGiftUnique = tL_starGiftUnique2;
                                 break;
                             }
-                            i4++;
+                            i2++;
                         }
                     }
                     if (tL_starGiftUnique != null) {
@@ -2318,7 +2318,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 }
                 getMessagesController().putUser(currentUser, false);
                 getUserConfig().saveConfig(true);
-                lambda$onBackPressed$341();
+                lambda$onBackPressed$340();
                 showBulletin();
             }
             this.applying = true;

@@ -636,7 +636,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
             int i2;
             if (i == -1) {
                 if (PollCreateActivity.this.checkDiscard()) {
-                    PollCreateActivity.this.lambda$onBackPressed$341();
+                    PollCreateActivity.this.lambda$onBackPressed$340();
                     return;
                 }
                 return;
@@ -724,7 +724,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                         return;
                     } else {
                         PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, hashMap, true, 0);
-                        PollCreateActivity.this.lambda$onBackPressed$341();
+                        PollCreateActivity.this.lambda$onBackPressed$340();
                         return;
                     }
                 }
@@ -789,7 +789,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                     });
                 } else {
                     PollCreateActivity.this.delegate.sendPoll(tL_messageMediaToDo, null, true, 0);
-                    PollCreateActivity.this.lambda$onBackPressed$341();
+                    PollCreateActivity.this.lambda$onBackPressed$340();
                 }
             }
         }
@@ -797,13 +797,13 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemClick$0(TLRPC.TL_messageMediaToDo tL_messageMediaToDo, boolean z, int i, int i2) {
             PollCreateActivity.this.delegate.sendPoll(tL_messageMediaToDo, null, z, i);
-            PollCreateActivity.this.lambda$onBackPressed$341();
+            PollCreateActivity.this.lambda$onBackPressed$340();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemClick$1(TLRPC.TL_messageMediaPoll tL_messageMediaPoll, HashMap hashMap, boolean z, int i, int i2) {
             PollCreateActivity.this.delegate.sendPoll(tL_messageMediaPoll, hashMap, z, i);
-            PollCreateActivity.this.lambda$onBackPressed$341();
+            PollCreateActivity.this.lambda$onBackPressed$340();
         }
     }
 
@@ -1198,7 +1198,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$2(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$341();
+        lambda$onBackPressed$340();
     }
 
     public void setDelegate(PollCreateActivityDelegate pollCreateActivityDelegate) {

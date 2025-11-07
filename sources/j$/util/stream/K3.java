@@ -16,7 +16,7 @@ final class K3 extends d2 {
 
     @Override // j$.util.stream.b
     final Spliterator O(b bVar, Spliterator spliterator) {
-        return a3.ORDERED.m(bVar.J()) ? N(bVar, spliterator, new c0(8)).spliterator() : new g4(bVar.W(spliterator), this.m, 1);
+        return a3.ORDERED.m(bVar.J()) ? N(bVar, spliterator, new b0(11)).spliterator() : new g4(bVar.W(spliterator), this.m, 1);
     }
 
     @Override // j$.util.stream.b

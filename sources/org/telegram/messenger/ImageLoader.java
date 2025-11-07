@@ -5702,7 +5702,7 @@ public class ImageLoader {
                 for (int i3 = 0; i3 < size; i3++) {
                     TLRPC.PhotoSize photoSize = message.media.document.thumbs.get(i3);
                     if (photoSize instanceof TLRPC.TL_photoStrippedSize) {
-                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(message.media.document.thumbs, NotificationCenter.uploadStoryEnd);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(message.media.document.thumbs, NotificationCenter.uploadStoryProgress);
                         if (closestPhotoSizeWithSize == null) {
                             int i4 = 0;
                             while (true) {

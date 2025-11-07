@@ -115,7 +115,7 @@ abstract class a0 extends b implements IntStream {
 
     @Override // j$.util.stream.IntStream
     public final Stream boxed() {
-        return new s(this, 0, new l(17), 1);
+        return new s(this, 0, new k(20), 1);
     }
 
     @Override // j$.util.stream.IntStream
@@ -209,33 +209,33 @@ abstract class a0 extends b implements IntStream {
 
     @Override // j$.util.stream.IntStream
     public final IntStream distinct() {
-        return ((e2) boxed()).distinct().mapToInt(new l(16));
+        return ((e2) boxed()).distinct().mapToInt(new k(19));
     }
 
     @Override // j$.util.stream.IntStream
     public final int sum() {
-        return reduce(0, new l(21));
+        return reduce(0, new k(24));
     }
 
     @Override // j$.util.stream.IntStream
     public final j$.util.B min() {
-        return reduce(new l(18));
+        return reduce(new k(21));
     }
 
     @Override // j$.util.stream.IntStream
     public final j$.util.B max() {
-        return reduce(new l(22));
+        return reduce(new k(25));
     }
 
     @Override // j$.util.stream.IntStream
     public final j$.util.A average() {
-        long j = ((long[]) collect(new l(23), new l(24), new l(25)))[0];
+        long j = ((long[]) collect(new k(26), new k(27), new k(28)))[0];
         return j > 0 ? j$.util.A.d(r0[1] / j) : j$.util.A.a();
     }
 
     @Override // j$.util.stream.IntStream
     public final j$.util.x summaryStatistics() {
-        return (j$.util.x) collect(new j(24), new l(19), new l(20));
+        return (j$.util.x) collect(new j(24), new k(22), new k(23));
     }
 
     @Override // j$.util.stream.IntStream
@@ -265,6 +265,6 @@ abstract class a0 extends b implements IntStream {
 
     @Override // j$.util.stream.IntStream
     public final int[] toArray() {
-        return (int[]) w0.P((E0) D(new l(15))).d();
+        return (int[]) w0.P((E0) D(new k(18))).d();
     }
 }

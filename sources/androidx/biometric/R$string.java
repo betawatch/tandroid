@@ -2,16 +2,16 @@ package androidx.biometric;
 
 /* loaded from: classes.dex */
 public abstract class R$string {
-    public static final int confirm_device_credential_password = 2131699373;
-    public static final int default_error_msg = 2131699374;
-    public static final int fingerprint_dialog_touch_sensor = 2131699377;
-    public static final int fingerprint_error_hw_not_available = 2131699378;
-    public static final int fingerprint_error_hw_not_present = 2131699379;
-    public static final int fingerprint_error_lockout = 2131699380;
-    public static final int fingerprint_error_no_fingerprints = 2131699381;
-    public static final int fingerprint_error_user_canceled = 2131699382;
-    public static final int fingerprint_not_recognized = 2131699383;
-    public static final int generic_error_no_device_credential = 2131699409;
-    public static final int generic_error_no_keyguard = 2131699410;
-    public static final int generic_error_user_canceled = 2131699411;
+    public static final int confirm_device_credential_password = 2131699429;
+    public static final int default_error_msg = 2131699430;
+    public static final int fingerprint_dialog_touch_sensor = 2131699433;
+    public static final int fingerprint_error_hw_not_available = 2131699434;
+    public static final int fingerprint_error_hw_not_present = 2131699435;
+    public static final int fingerprint_error_lockout = 2131699436;
+    public static final int fingerprint_error_no_fingerprints = 2131699437;
+    public static final int fingerprint_error_user_canceled = 2131699438;
+    public static final int fingerprint_not_recognized = 2131699439;
+    public static final int generic_error_no_device_credential = 2131699465;
+    public static final int generic_error_no_keyguard = 2131699466;
+    public static final int generic_error_user_canceled = 2131699467;
 }

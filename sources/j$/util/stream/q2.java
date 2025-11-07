@@ -27,7 +27,7 @@ final class q2 extends Z {
             return new r3(y, j4, w0.B(j4, j3));
         }
         if (a3.ORDERED.m(bVar.J())) {
-            return ((I0) new w2(this, bVar, spliterator, new c0(10), this.m, this.n).invoke()).spliterator();
+            return ((I0) new w2(this, bVar, spliterator, new b0(13), this.m, this.n).invoke()).spliterator();
         }
         j$.util.Y y2 = (j$.util.Y) bVar.W(spliterator);
         long j5 = this.m;

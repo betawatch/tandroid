@@ -127,8 +127,8 @@ public abstract /* synthetic */ class S {
         if (consumer instanceof IntConsumer) {
             return y.tryAdvance((IntConsumer) consumer);
         }
-        if (u0.a) {
-            u0.a(y.getClass(), "{0} calling Spliterator.OfInt.tryAdvance((IntConsumer) action::accept)");
+        if (v0.a) {
+            v0.a(y.getClass(), "{0} calling Spliterator.OfInt.tryAdvance((IntConsumer) action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);
@@ -139,8 +139,8 @@ public abstract /* synthetic */ class S {
         if (consumer instanceof IntConsumer) {
             y.forEachRemaining((IntConsumer) consumer);
         } else {
-            if (u0.a) {
-                u0.a(y.getClass(), "{0} calling Spliterator.OfInt.forEachRemaining((IntConsumer) action::accept)");
+            if (v0.a) {
+                v0.a(y.getClass(), "{0} calling Spliterator.OfInt.forEachRemaining((IntConsumer) action::accept)");
                 throw null;
             }
             Objects.requireNonNull(consumer);
@@ -152,8 +152,8 @@ public abstract /* synthetic */ class S {
         if (consumer instanceof LongConsumer) {
             return b0Var.tryAdvance((LongConsumer) consumer);
         }
-        if (u0.a) {
-            u0.a(b0Var.getClass(), "{0} calling Spliterator.OfLong.tryAdvance((LongConsumer) action::accept)");
+        if (v0.a) {
+            v0.a(b0Var.getClass(), "{0} calling Spliterator.OfLong.tryAdvance((LongConsumer) action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);
@@ -164,8 +164,8 @@ public abstract /* synthetic */ class S {
         if (consumer instanceof LongConsumer) {
             b0Var.forEachRemaining((LongConsumer) consumer);
         } else {
-            if (u0.a) {
-                u0.a(b0Var.getClass(), "{0} calling Spliterator.OfLong.forEachRemaining((LongConsumer) action::accept)");
+            if (v0.a) {
+                v0.a(b0Var.getClass(), "{0} calling Spliterator.OfLong.forEachRemaining((LongConsumer) action::accept)");
                 throw null;
             }
             Objects.requireNonNull(consumer);
@@ -177,8 +177,8 @@ public abstract /* synthetic */ class S {
         if (consumer instanceof DoubleConsumer) {
             return v.tryAdvance((DoubleConsumer) consumer);
         }
-        if (u0.a) {
-            u0.a(v.getClass(), "{0} calling Spliterator.OfDouble.tryAdvance((DoubleConsumer) action::accept)");
+        if (v0.a) {
+            v0.a(v.getClass(), "{0} calling Spliterator.OfDouble.tryAdvance((DoubleConsumer) action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);
@@ -189,8 +189,8 @@ public abstract /* synthetic */ class S {
         if (consumer instanceof DoubleConsumer) {
             v.forEachRemaining((DoubleConsumer) consumer);
         } else {
-            if (u0.a) {
-                u0.a(v.getClass(), "{0} calling Spliterator.OfDouble.forEachRemaining((DoubleConsumer) action::accept)");
+            if (v0.a) {
+                v0.a(v.getClass(), "{0} calling Spliterator.OfDouble.forEachRemaining((DoubleConsumer) action::accept)");
                 throw null;
             }
             Objects.requireNonNull(consumer);

@@ -34,7 +34,7 @@ public interface Collector<T, A, R> {
                 Collections.addAll(noneOf, characteristicsArr);
                 set = Collections.unmodifiableSet(noneOf);
             }
-            return new k(supplier, biConsumer, binaryOperator, function, set);
+            return new l(supplier, biConsumer, binaryOperator, function, set);
         }
     }
 

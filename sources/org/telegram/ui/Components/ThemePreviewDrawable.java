@@ -183,8 +183,8 @@ public class ThemePreviewDrawable extends BitmapDrawable {
         messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
         messageDrawableArr[1].setTop(430, 560, 522, false, false);
         messageDrawableArr[1].draw(canvas);
-        messageDrawableArr[0].setBounds(20, NotificationCenter.onReceivedChannelDifference, 399, 415);
-        messageDrawableArr[0].setTop(NotificationCenter.onReceivedChannelDifference, 560, 522, false, false);
+        messageDrawableArr[0].setBounds(20, NotificationCenter.stealthModeChanged, 399, 415);
+        messageDrawableArr[0].setTop(NotificationCenter.stealthModeChanged, 560, 522, false, false);
         messageDrawableArr[0].draw(canvas);
         paint.setColor(previewColor3);
         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint);

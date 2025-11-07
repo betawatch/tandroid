@@ -239,7 +239,7 @@ abstract class e2 extends b implements Stream {
 
     @Override // j$.util.stream.Stream
     public final Object[] toArray() {
-        return toArray(new c0(9));
+        return toArray(new b0(12));
     }
 
     @Override // j$.util.stream.Stream

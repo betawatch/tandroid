@@ -23,7 +23,7 @@ import org.telegram.messenger.NotificationCenter;
 /* loaded from: classes3.dex */
 public class JNIUtilities {
     public static int getMaxVideoResolution() {
-        return NotificationCenter.uploadStoryEnd;
+        return NotificationCenter.uploadStoryProgress;
     }
 
     public static String getCurrentNetworkInterfaceName() {

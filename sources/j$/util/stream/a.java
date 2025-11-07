@@ -6,6 +6,7 @@ import j$.util.function.Function$-CC;
 import j$.util.stream.IntStream;
 import j$.util.stream.Stream;
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.function.BooleanSupplier;
 import java.util.function.Consumer;
 import java.util.function.DoubleFunction;
@@ -31,7 +32,7 @@ public final /* synthetic */ class a implements Supplier, Consumer, BooleanSuppl
     @Override // java.util.function.Consumer
     public void accept(Object obj) {
         switch (this.a) {
-            case 1:
+            case 2:
                 ((m2) this.b).accept((m2) obj);
                 break;
             default:
@@ -52,16 +53,6 @@ public final /* synthetic */ class a implements Supplier, Consumer, BooleanSuppl
 
     public /* synthetic */ Function compose(Function function) {
         return Function$-CC.$default$compose(this, function);
-    }
-
-    @Override // java.util.function.Supplier
-    public Object get() {
-        switch (this.a) {
-            case 0:
-                return ((b) this.b).L();
-            default:
-                return (Spliterator) this.b;
-        }
     }
 
     @Override // java.util.function.Function
@@ -133,18 +124,31 @@ public final /* synthetic */ class a implements Supplier, Consumer, BooleanSuppl
     @Override // java.util.function.BooleanSupplier
     public boolean getAsBoolean() {
         switch (this.a) {
-            case 2:
+            case 3:
                 l3 l3Var = (l3) this.b;
                 return l3Var.d.tryAdvance(l3Var.e);
-            case 3:
+            case 4:
                 n3 n3Var = (n3) this.b;
                 return n3Var.d.tryAdvance(n3Var.e);
-            case 4:
+            case 5:
                 p3 p3Var = (p3) this.b;
                 return p3Var.d.tryAdvance(p3Var.e);
             default:
                 E3 e3 = (E3) this.b;
                 return e3.d.tryAdvance(e3.e);
+        }
+    }
+
+    @Override // java.util.function.Supplier
+    public Object get() {
+        switch (this.a) {
+            case 0:
+                return ((b) this.b).L();
+            case 1:
+                Set set = Collectors.a;
+                return new j$.util.t0((CharSequence) this.b);
+            default:
+                return (Spliterator) this.b;
         }
     }
 }

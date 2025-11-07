@@ -330,7 +330,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
         @Override // org.telegram.ui.PhotoViewer.EmptyPhotoViewerProvider, org.telegram.ui.PhotoViewer.PhotoViewerProvider
         public boolean cancelButtonPressed() {
             PhotoPickerActivity.this.delegate.actionButtonPressed(true, true, 0, 0);
-            PhotoPickerActivity.this.lambda$onBackPressed$341();
+            PhotoPickerActivity.this.lambda$onBackPressed$340();
             return true;
         }
 
@@ -476,7 +476,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PhotoPickerActivity.this.lambda$onBackPressed$341();
+                    PhotoPickerActivity.this.lambda$onBackPressed$340();
                     return;
                 }
                 if (i3 != 1) {
@@ -484,7 +484,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
                         if (PhotoPickerActivity.this.delegate != null) {
                             PhotoPickerActivity.this.delegate.onOpenInPressed();
                         }
-                        PhotoPickerActivity.this.lambda$onBackPressed$341();
+                        PhotoPickerActivity.this.lambda$onBackPressed$340();
                         return;
                     }
                     return;
@@ -826,7 +826,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
 
         @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
         public boolean canCollapseSearch() {
-            PhotoPickerActivity.this.lambda$onBackPressed$341();
+            PhotoPickerActivity.this.lambda$onBackPressed$340();
             return false;
         }
 
@@ -1819,7 +1819,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
                         }
                     } else if (!z && (photo = botInlineResult.photo) != null) {
                         TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
-                        TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(botInlineResult.photo.sizes, NotificationCenter.uploadStoryEnd);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(botInlineResult.photo.sizes, NotificationCenter.uploadStoryProgress);
                         if (closestPhotoSizeWithSize2 != null) {
                             searchImage.width = closestPhotoSizeWithSize2.w;
                             searchImage.height = closestPhotoSizeWithSize2.h;
@@ -1899,7 +1899,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
         if (this.selectPhotoType != PhotoAlbumPickerActivity.SELECT_TYPE_WALLPAPER) {
             PhotoPickerActivityDelegate photoPickerActivityDelegate = this.delegate;
             if (photoPickerActivityDelegate == null || photoPickerActivityDelegate.canFinishFragment()) {
-                lambda$onBackPressed$341();
+                lambda$onBackPressed$340();
             }
         }
     }

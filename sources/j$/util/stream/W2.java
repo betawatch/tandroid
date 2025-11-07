@@ -143,7 +143,7 @@ class W2 extends d implements Consumer, Iterable, j$.lang.a {
     public final String toString() {
         ArrayList arrayList = new ArrayList();
         Objects.requireNonNull(arrayList);
-        forEach(new a(10, arrayList));
+        forEach(new a(11, arrayList));
         return "SpinedBuffer:" + arrayList.toString();
     }
 

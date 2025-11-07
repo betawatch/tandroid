@@ -8,6 +8,7 @@ import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -1912,8 +1913,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     create.setBackgroundColor(-14933463);
                     create.setTitleColor(-7697782);
                     create.setCalcMandatoryInsets(true);
-                    AndroidUtilities.setNavigationBarColor(create.getWindow(), -14933463, false);
-                    AndroidUtilities.setLightNavigationBar(create.getWindow(), false);
+                    AndroidUtilities.setNavigationBarColor((Dialog) create, -14933463, false);
+                    AndroidUtilities.setLightNavigationBar((Dialog) create, false);
                     create.scrollNavBar = true;
                 }
                 if (i >= 0 && (messageObject = this.currentMessageObject) != null && !messageObject.scheduled) {
@@ -1974,8 +1975,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             create2.setBackgroundColor(-14933463);
             create2.setTitleColor(-7697782);
             create2.setCalcMandatoryInsets(true);
-            AndroidUtilities.setNavigationBarColor(create2.getWindow(), -14933463, false);
-            AndroidUtilities.setLightNavigationBar(create2.getWindow(), false);
+            AndroidUtilities.setNavigationBarColor((Dialog) create2, -14933463, false);
+            AndroidUtilities.setLightNavigationBar((Dialog) create2, false);
             create2.scrollNavBar = true;
         }
         i = -1;
@@ -2005,8 +2006,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         create22.setBackgroundColor(-14933463);
         create22.setTitleColor(-7697782);
         create22.setCalcMandatoryInsets(true);
-        AndroidUtilities.setNavigationBarColor(create22.getWindow(), -14933463, false);
-        AndroidUtilities.setLightNavigationBar(create22.getWindow(), false);
+        AndroidUtilities.setNavigationBarColor((Dialog) create22, -14933463, false);
+        AndroidUtilities.setLightNavigationBar((Dialog) create22, false);
         create22.scrollNavBar = true;
     }
 
@@ -7034,7 +7035,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     }
                     SendMessagesHelper.getInstance(PhotoViewer.this.currentAccount).sendMessage(arrayList, j, false, false, true, 0, 0L);
                 }
-                dialogsActivity.lambda$onBackPressed$341();
+                dialogsActivity.lambda$onBackPressed$340();
                 if (chatActivity != null && (undoView = chatActivity.getUndoView()) != null) {
                     if (arrayList2.size() == 1) {
                         undoView.showWithAction(((MessagesStorage.TopicKey) arrayList2.get(0)).dialogId, 53, Integer.valueOf(arrayList.size()));
@@ -7061,7 +7062,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 if (((LaunchActivity) PhotoViewer.this.parentActivity).presentFragment(chatActivity2, true, false)) {
                     chatActivity2.showFieldPanelForForward(true, arrayList);
                 } else {
-                    dialogsActivity.lambda$onBackPressed$341();
+                    dialogsActivity.lambda$onBackPressed$340();
                 }
             }
             return true;
@@ -20982,7 +20983,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         if (bitmapHolder6 == null || imageReceiver != this.centerImage) {
                             bitmapHolder6 = null;
                         }
-                        TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.uploadStoryEnd);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.uploadStoryProgress);
                         imageReceiver.setNeedsQualityThumb(closestPhotoSizeWithSize4.w < 100 && closestPhotoSizeWithSize4.h < 100);
                         imageReceiver.setImage(null, null, bitmapHolder6 == null ? ImageLocation.getForObject(closestPhotoSizeWithSize4, messageObject.photoThumbsObject) : null, "b", bitmapHolder6 != null ? new BitmapDrawable(bitmapHolder6.bitmap) : null, 0L, null, messageObject, 1);
                         ImageReceiver.BitmapHolder bitmapHolder7 = this.currentThumb;
@@ -22846,7 +22847,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                     }
                                 }
                                 if (chatActivity2 != null) {
-                                    chatActivity2.lambda$openDiscussionMessageChat$359(PhotoViewer.this.animationEndRunnable);
+                                    chatActivity2.lambda$openDiscussionMessageChat$358(PhotoViewer.this.animationEndRunnable);
                                 } else {
                                     PhotoViewer.this.animationEndRunnable.run();
                                     PhotoViewer.this.animationEndRunnable = null;

@@ -26,7 +26,7 @@ final class H extends J implements l2 {
 
     static {
         b3 b3Var = b3.LONG_VALUE;
-        c = new E(true, b3Var, j$.util.C.a(), new l(12), new j(10));
-        d = new E(false, b3Var, j$.util.C.a(), new l(12), new j(10));
+        c = new E(true, b3Var, j$.util.C.a(), new k(15), new j(10));
+        d = new E(false, b3Var, j$.util.C.a(), new k(15), new j(10));
     }
 }

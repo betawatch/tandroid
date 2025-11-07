@@ -566,7 +566,7 @@ public abstract class BaseFragment {
     }
 
     /* renamed from: finishFragment */
-    public void lambda$onBackPressed$341() {
+    public void lambda$onBackPressed$340() {
         PreviewDelegate previewDelegate;
         Dialog dialog = this.parentDialog;
         if (dialog != null) {
@@ -844,9 +844,18 @@ public abstract class BaseFragment {
             runnable.run();
         }
         updateSheetsVisibility();
+        checkSystemBarColors();
     }
 
-    private void updateSheetsVisibility() {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void checkSystemBarColors() {
+        Activity parentActivity = getParentActivity();
+        if (parentActivity instanceof LaunchActivity) {
+            ((LaunchActivity) parentActivity).checkSystemBarColors(true, true, true);
+        }
+    }
+
+    protected void updateSheetsVisibility() {
         if (this.sheetsStack == null) {
             return;
         }
@@ -1104,7 +1113,7 @@ public abstract class BaseFragment {
             if (bottomSheetParams == null || !bottomSheetParams.occupyNavigationBar) {
                 fixNavigationBar(Theme.getColor(Theme.key_dialogBackgroundGray, this.val$fragment.getResourceProvider()));
             } else {
-                AndroidUtilities.setLightNavigationBar(this.val$bottomSheet[0].getWindow(), true);
+                AndroidUtilities.setLightNavigationBar((Dialog) this.val$bottomSheet[0], true);
             }
             AndroidUtilities.setLightStatusBar(getWindow(), this.val$fragment.isLightStatusBar());
             this.val$fragment.onBottomSheetCreated();
@@ -1193,15 +1202,19 @@ public abstract class BaseFragment {
     }
 
     public void setNavigationBarColor(int i) {
+        if (isSupportEdgeToEdge()) {
+            return;
+        }
         Activity parentActivity = getParentActivity();
         if (parentActivity instanceof LaunchActivity) {
-            ((LaunchActivity) parentActivity).setNavigationBarColor(i, true);
+            ((LaunchActivity) parentActivity).setNavigationBarColor(i);
         } else if (parentActivity != null) {
             Window window = parentActivity.getWindow();
-            if (Build.VERSION.SDK_INT >= 26 && window != null && window.getNavigationBarColor() != i) {
-                AndroidUtilities.setLightNavigationBar(window, AndroidUtilities.computePerceivedBrightness(i) >= 0.721f);
+            if (Build.VERSION.SDK_INT >= 26 && window != null) {
+                window.getNavigationBarColor();
             }
         }
+        AndroidUtilities.setLightNavigationBar(parentActivity, AndroidUtilities.computePerceivedBrightness(i) >= 0.721f);
         INavigationLayout iNavigationLayout = this.parentLayout;
         if (iNavigationLayout != null) {
             iNavigationLayout.setNavigationBarColor(i);
@@ -1351,6 +1364,48 @@ public abstract class BaseFragment {
         if (storyViewer == null) {
         }
         return storyViewer;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0043  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public StoryViewer getOrCreateStoryViewer(int i) {
+        StoryViewer storyViewer;
+        if (this.sheetsStack == null) {
+            this.sheetsStack = new ArrayList<>();
+        }
+        StoryViewer storyViewer2 = null;
+        if (!this.sheetsStack.isEmpty()) {
+            ArrayList<AttachedSheet> arrayList = this.sheetsStack;
+            if (arrayList.get(arrayList.size() - 1) instanceof StoryViewer) {
+                ArrayList<AttachedSheet> arrayList2 = this.sheetsStack;
+                storyViewer = (StoryViewer) arrayList2.get(arrayList2.size() - 1);
+                if (storyViewer != null || storyViewer.currentAccount == i) {
+                    storyViewer2 = storyViewer;
+                } else {
+                    storyViewer.close(true);
+                    removeSheet(storyViewer);
+                }
+                if (storyViewer2 == null) {
+                    storyViewer2 = new StoryViewer(this);
+                    INavigationLayout iNavigationLayout = this.parentLayout;
+                    if (iNavigationLayout != null && iNavigationLayout.isSheet()) {
+                        storyViewer2.fromBottomSheet = true;
+                    }
+                    this.sheetsStack.add(storyViewer2);
+                    updateSheetsVisibility();
+                }
+                return storyViewer2;
+            }
+        }
+        storyViewer = null;
+        if (storyViewer != null) {
+        }
+        storyViewer2 = storyViewer;
+        if (storyViewer2 == null) {
+        }
+        return storyViewer2;
     }
 
     public void removeSheet(AttachedSheet attachedSheet) {

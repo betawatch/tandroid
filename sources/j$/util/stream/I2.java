@@ -26,7 +26,7 @@ final class I2 extends A2 {
         if (!this.c) {
             ArrayList arrayList = this.d;
             Objects.requireNonNull(m2Var);
-            Collection.-EL.a(arrayList, new a(1, m2Var));
+            Collection.-EL.a(arrayList, new a(2, m2Var));
         } else {
             Iterator it = this.d.iterator();
             while (it.hasNext()) {

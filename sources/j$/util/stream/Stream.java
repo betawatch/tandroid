@@ -535,7 +535,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
     D mapToDouble(ToDoubleFunction toDoubleFunction);
 
-    IntStream mapToInt(ToIntFunction toIntFunction);
+    IntStream mapToInt(ToIntFunction<? super T> toIntFunction);
 
     LongStream mapToLong(ToLongFunction<? super T> toLongFunction);
 

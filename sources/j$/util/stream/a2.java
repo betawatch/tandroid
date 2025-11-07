@@ -54,12 +54,12 @@ final class a2 extends i2 {
                 if (longStream != null) {
                     try {
                         boolean z = this.c;
-                        b0 b0Var = (b0) this.d;
+                        c0 c0Var = (c0) this.d;
                         if (!z) {
-                            longStream.sequential().forEach(b0Var);
+                            longStream.sequential().forEach(c0Var);
                         } else {
                             j$.util.b0 spliterator = longStream.sequential().spliterator();
-                            while (!this.a.n() && spliterator.tryAdvance((LongConsumer) b0Var)) {
+                            while (!this.a.n() && spliterator.tryAdvance((LongConsumer) c0Var)) {
                             }
                         }
                     } catch (Throwable th) {
@@ -155,6 +155,6 @@ final class a2 extends i2 {
         this.e = g0Var;
         m2 m2Var2 = this.a;
         Objects.requireNonNull(m2Var2);
-        this.d = new b0(m2Var2);
+        this.d = new c0(m2Var2);
     }
 }
