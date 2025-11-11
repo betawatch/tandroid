@@ -5,6 +5,7 @@ import android.media.AudioManager;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
@@ -61,6 +62,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     public final boolean isRtmpStream;
     private boolean joined;
     private boolean listeningToAudioFocus;
+    public ArrayList messages;
     private int mySource;
     public boolean outgoing;
     private TLRPC.GroupCallParticipant participant;
@@ -70,7 +72,10 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     private int polling2RequestId;
     private int pollingRequestId;
     private long recordingVideoCapturer;
+    private final HashSet srcs;
     public final int storyId;
+    public ArrayList topMessages;
+    private float volume;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$init$10(int[] iArr, float[] fArr, boolean[] zArr) {
@@ -136,6 +141,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                 NativeInstance nativeInstance = this.instance;
                 Objects.requireNonNull(nativeInstance);
                 dispatchQueue.postRunnable(new VoIPService$$ExternalSyntheticLambda106(nativeInstance));
+                this.srcs.clear();
                 this.instance = null;
             }
             configureAudio();
@@ -153,6 +159,9 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         this.emptyStream = false;
         this.destroyed = false;
         this.currentStreamRequestTimestamp = new HashMap();
+        this.isFront = false;
+        this.srcs = new HashSet();
+        this.volume = 1.0f;
         this.pollingRequestId = -1;
         this.polling2RequestId = -1;
         this.context = context;
@@ -351,7 +360,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                 if (groupCallParticipant != null) {
                     TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo = groupCallParticipant.video;
                     if (tL_groupCallParticipantVideo != null) {
-                        this.instance.addIncomingVideoOutput(2, tL_groupCallParticipantVideo.endpoint, createSsrcGroups(tL_groupCallParticipantVideo), this.instanceSink, DialogObject.getPeerDialogId(this.participant.peer));
+                        this.instance.addIncomingVideoOutput(2, tL_groupCallParticipantVideo.endpoint, pushSources(createSsrcGroups(tL_groupCallParticipantVideo)), this.instanceSink, DialogObject.getPeerDialogId(this.participant.peer));
                     } else {
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda20
                             @Override // java.lang.Runnable
@@ -432,7 +441,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo = groupCallParticipant.video;
             tL_groupCallParticipantVideo.endpoint = "unified";
             groupCallParticipant.videoEndpoint = "unified";
-            this.instance.addIncomingVideoOutput(2, "unified", createSsrcGroups(tL_groupCallParticipantVideo), this.instanceSink, DialogObject.getPeerDialogId(this.participant.peer));
+            this.instance.addIncomingVideoOutput(2, "unified", pushSources(createSsrcGroups(tL_groupCallParticipantVideo)), this.instanceSink, DialogObject.getPeerDialogId(this.participant.peer));
         }
     }
 
@@ -464,7 +473,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             }
             TLRPC.GroupCallParticipant groupCallParticipant = this.participant;
             if (groupCallParticipant != null && (tL_groupCallParticipantVideo = groupCallParticipant.video) != null) {
-                this.instance.addIncomingVideoOutput(2, tL_groupCallParticipantVideo.endpoint, createSsrcGroups(tL_groupCallParticipantVideo), this.instanceSink, DialogObject.getPeerDialogId(this.participant.peer));
+                this.instance.addIncomingVideoOutput(2, tL_groupCallParticipantVideo.endpoint, pushSources(createSsrcGroups(tL_groupCallParticipantVideo)), this.instanceSink, DialogObject.getPeerDialogId(this.participant.peer));
             } else {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda28
                     @Override // java.lang.Runnable
@@ -681,6 +690,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             NativeInstance nativeInstance = this.instance;
             Objects.requireNonNull(nativeInstance);
             dispatchQueue.postRunnable(new VoIPService$$ExternalSyntheticLambda106(nativeInstance));
+            this.srcs.clear();
             this.instance = null;
         }
         init();
@@ -733,11 +743,6 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             TL_phone.getGroupCallStreamChannels getgroupcallstreamchannels = new TL_phone.getGroupCallStreamChannels();
             getgroupcallstreamchannels.call = this.inputCall;
             if (this.call == null || this.instance == null) {
-                NativeInstance nativeInstance = this.instance;
-                if (nativeInstance != null) {
-                    nativeInstance.onRequestTimeComplete(j, 0L);
-                    return;
-                }
                 return;
             }
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamchannels, new RequestDelegateTimestamp() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda11
@@ -748,9 +753,9 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             }, 65536, 2, getCallStreamDatacenterId());
             return;
         }
-        NativeInstance nativeInstance2 = this.instance;
-        if (nativeInstance2 != null) {
-            nativeInstance2.onRequestTimeComplete(j, ConnectionsManager.getInstance(this.currentAccount).getCurrentTimeMillis());
+        NativeInstance nativeInstance = this.instance;
+        if (nativeInstance != null) {
+            nativeInstance.onRequestTimeComplete(j, ConnectionsManager.getInstance(this.currentAccount).getCurrentTimeMillis());
         }
     }
 
@@ -770,7 +775,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                     }
                 });
             }
-            if (this.participant == null) {
+            if (this.participant == null && !groupcallstreamchannels.channels.isEmpty()) {
                 TLRPC.TL_groupCallParticipant tL_groupCallParticipant = new TLRPC.TL_groupCallParticipant();
                 this.participant = tL_groupCallParticipant;
                 tL_groupCallParticipant.peer = MessagesController.getInstance(this.currentAccount).getPeer(this.dialogId);
@@ -786,7 +791,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                 TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo = groupCallParticipant.video;
                 tL_groupCallParticipantVideo.endpoint = "unified";
                 groupCallParticipant.videoEndpoint = "unified";
-                this.instance.addIncomingVideoOutput(2, "unified", createSsrcGroups(tL_groupCallParticipantVideo), this.instanceSink, DialogObject.getPeerDialogId(this.participant.peer));
+                this.instance.addIncomingVideoOutput(2, "unified", pushSources(createSsrcGroups(tL_groupCallParticipantVideo)), this.instanceSink, DialogObject.getPeerDialogId(this.participant.peer));
             }
         }
         NativeInstance nativeInstance = this.instance;
@@ -798,6 +803,48 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$init$20() {
         setEmptyStream(true);
+    }
+
+    public void setVolume(float f) {
+        float clamp01 = Utilities.clamp01(f);
+        if (LiveStoryPipOverlay.isVisible(this)) {
+            clamp01 = 1.0f;
+        }
+        FileLog.d("setVolume(" + clamp01 + ")");
+        if (Math.abs(clamp01 - this.volume) < 0.01f) {
+            return;
+        }
+        this.volume = clamp01;
+        updateVolumes();
+    }
+
+    private void updateVolumes() {
+        if (this.destroyed || this.instance == null) {
+            return;
+        }
+        Iterator it = this.srcs.iterator();
+        while (it.hasNext()) {
+            this.instance.setVolume(((Integer) it.next()).intValue(), this.volume);
+        }
+    }
+
+    private NativeInstance.SsrcGroup[] pushSources(NativeInstance.SsrcGroup[] ssrcGroupArr) {
+        int i = 0;
+        while (true) {
+            if (i >= (ssrcGroupArr == null ? 0 : ssrcGroupArr.length)) {
+                updateVolumes();
+                return ssrcGroupArr;
+            }
+            int i2 = 0;
+            while (true) {
+                int[] iArr = ssrcGroupArr[i].ssrcs;
+                if (i2 < iArr.length) {
+                    this.srcs.add(Integer.valueOf(iArr[i2]));
+                    i2++;
+                }
+            }
+            i++;
+        }
     }
 
     public VideoSink getDisplaySink() {
@@ -857,6 +904,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             NativeInstance nativeInstance = this.instance;
             Objects.requireNonNull(nativeInstance);
             dispatchQueue.postRunnable(new VoIPService$$ExternalSyntheticLambda106(nativeInstance));
+            this.srcs.clear();
             this.instance = null;
         }
         if (this.listeningToAudioFocus) {
@@ -980,7 +1028,11 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             }
         };
         this.poll2Runnable = runnable6;
-        AndroidUtilities.runOnUIThread(runnable6, 10000L);
+        AndroidUtilities.runOnUIThread(runnable6, pollingGroupCallInterval());
+    }
+
+    private int pollingGroupCallInterval() {
+        return isAdmin() ? 5000 : 20000;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1034,7 +1086,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                 }
             };
             this.poll2Runnable = runnable2;
-            AndroidUtilities.runOnUIThread(runnable2, 10000L);
+            AndroidUtilities.runOnUIThread(runnable2, pollingGroupCallInterval());
         }
     }
 
@@ -1078,6 +1130,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                     NativeInstance nativeInstance = this.instance;
                     Objects.requireNonNull(nativeInstance);
                     dispatchQueue.postRunnable(new VoIPService$$ExternalSyntheticLambda106(nativeInstance));
+                    this.srcs.clear();
                     this.instance = null;
                 }
                 init();

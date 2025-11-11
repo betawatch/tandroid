@@ -356,6 +356,24 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             setWillNotDraw(false);
         }
 
+        @Override // android.view.View
+        public void setTranslationX(float f) {
+            boolean z = (getTranslationX() == f || this.isSupportEdgeToEdge) ? false : true;
+            super.setTranslationX(f);
+            if (z) {
+                ActionBarLayout.this.invalidate();
+            }
+        }
+
+        @Override // android.view.View
+        public void setAlpha(float f) {
+            boolean z = (getAlpha() == f || this.isSupportEdgeToEdge) ? false : true;
+            super.setAlpha(f);
+            if (z) {
+                ActionBarLayout.this.invalidate();
+            }
+        }
+
         @Override // android.view.ViewGroup
         protected boolean drawChild(Canvas canvas, View view, long j) {
             int i;
@@ -994,7 +1012,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         super.dispatchDraw(canvas);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x029f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x02be, code lost:
     
         if (r20.overrideWidthOffset != (-1)) goto L140;
      */
@@ -1002,20 +1020,20 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     
         r1 = getRootWindowInsets();
      */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x026e  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x029c  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x02ac  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x02b2  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x02fd  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x02a6  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x028d  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x02bb  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x02cb  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x02d1  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x031c  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x02c5  */
     /* JADX WARN: Removed duplicated region for block: B:144:0x012b  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x00ad  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x015d  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x016c  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x0184  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x01f2  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x020e  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0253  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0202  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x021e  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0272  */
     @Override // android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1162,9 +1180,9 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     }
                     Paint internalNavbarPaint = this.drawerLayoutContainer.getInternalNavbarPaint();
                     int alpha = internalNavbarPaint.getAlpha();
-                    internalNavbarPaint.setAlpha((int) (f4 * 255.0f));
+                    internalNavbarPaint.setAlpha((int) (Math.min(f4, view.getAlpha()) * 255.0f));
                     i5 = i3;
-                    canvas.drawRect(f5 + paddingRight, getMeasuredHeight() - this.navigationBarInsetHeight, getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint);
+                    canvas.drawRect(Math.max(view.getTranslationX(), paddingRight + f5), getMeasuredHeight() - this.navigationBarInsetHeight, getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint);
                     internalNavbarPaint.setAlpha(alpha);
                 }
                 if (this.drawerLayoutContainer != null && !this.isLayersLayout && view == (layoutContainer2 = this.containerViewBack) && !layoutContainer2.isSupportEdgeToEdge && this.lastWindowInsetsCompat != null) {
@@ -1180,8 +1198,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                         }
                         Paint internalNavbarPaint2 = this.drawerLayoutContainer.getInternalNavbarPaint();
                         int alpha2 = internalNavbarPaint2.getAlpha();
-                        internalNavbarPaint2.setAlpha((int) (f2 * 255.0f));
-                        canvas.drawRect(paddingRight + f3, getMeasuredHeight() - this.navigationBarInsetHeight, getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint2);
+                        internalNavbarPaint2.setAlpha((int) (Math.min(f2, view.getAlpha()) * 255.0f));
+                        canvas.drawRect(Math.max(view.getTranslationX(), paddingRight + f3), getMeasuredHeight() - this.navigationBarInsetHeight, getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint2);
                         internalNavbarPaint2.setAlpha(alpha2);
                     }
                 }

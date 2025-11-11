@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -30,6 +31,7 @@ import org.telegram.ui.Cells.TextDetailCell;
 import org.telegram.ui.Components.CreateRtmpStreamBottomSheet;
 import org.telegram.ui.Components.JoinCallAlert;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.TextStyleSpan;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
@@ -40,8 +42,10 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
     private final boolean hasFewPeers;
     private final JoinCallAlert.JoinCallAlertDelegate joinCallDelegate;
     private String rtmpKey;
+    private SpannableStringBuilder rtmpKeySpoiled;
     private String rtmpUrl;
     private TLRPC.InputPeer selectAfterDismiss;
+    private final boolean story;
 
     public static void show(TLRPC.Peer peer, BaseFragment baseFragment, long j, boolean z, JoinCallAlert.JoinCallAlertDelegate joinCallAlertDelegate) {
         CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet = new CreateRtmpStreamBottomSheet(baseFragment, peer, j, z, joinCallAlertDelegate);
@@ -54,6 +58,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     public CreateRtmpStreamBottomSheet(Context context, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, final Utilities.Callback callback, Theme.ResourcesProvider resourcesProvider) {
         super(context, null, false, false, false, resourcesProvider);
+        this.story = true;
         this.topPadding = 0.26f;
         this.joinCallDelegate = null;
         this.hasFewPeers = false;
@@ -76,6 +81,12 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         updateTitle();
         this.rtmpUrl = groupcallstreamrtmpurl.url;
         this.rtmpKey = groupcallstreamrtmpurl.key;
+        this.rtmpKeySpoiled = new SpannableStringBuilder(this.rtmpKey);
+        TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
+        textStyleRun.flags |= 256;
+        textStyleRun.start = 0;
+        textStyleRun.end = this.rtmpKeySpoiled.length();
+        this.rtmpKeySpoiled.setSpan(new TextStyleSpan(textStyleRun), 0, this.rtmpKeySpoiled.length(), 0);
         this.adapter.update(false);
     }
 
@@ -102,6 +113,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
     public CreateRtmpStreamBottomSheet(BaseFragment baseFragment, final TLRPC.Peer peer, long j, boolean z, JoinCallAlert.JoinCallAlertDelegate joinCallAlertDelegate) {
         super(baseFragment, false, false);
+        this.story = false;
         this.topPadding = 0.26f;
         this.joinCallDelegate = joinCallAlertDelegate;
         this.hasFewPeers = z;
@@ -163,6 +175,12 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
         TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject;
         this.rtmpUrl = groupcallstreamrtmpurl.url;
         this.rtmpKey = groupcallstreamrtmpurl.key;
+        this.rtmpKeySpoiled = new SpannableStringBuilder(this.rtmpKey);
+        TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
+        textStyleRun.flags |= 256;
+        textStyleRun.start = 0;
+        textStyleRun.end = this.rtmpKeySpoiled.length();
+        this.rtmpKeySpoiled.setSpan(new TextStyleSpan(textStyleRun), 0, this.rtmpKeySpoiled.length(), 0);
         this.adapter.update(false);
     }
 
@@ -197,11 +215,15 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
     /* JADX INFO: Access modifiers changed from: private */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
         arrayList.add(UItem.asCustom(new TopCell(getContext(), this.resourcesProvider)));
+        String str = null;
         arrayList.add(UItem.asShadow(null));
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.VoipChatStreamSettings)));
         arrayList.add(TextDetailCellFactory.of(this.rtmpUrl, LocaleController.getString(R.string.VoipChatStreamServerUrl), true));
-        arrayList.add(TextDetailCellFactory.of(this.rtmpKey, LocaleController.getString(R.string.VoipChatStreamKey), false));
-        arrayList.add(UItem.asShadow(this.hasButton ? LocaleController.getString(R.string.VoipChatStreamWithAnotherAppDescription) : null));
+        arrayList.add(TextDetailCellFactory.of(this.rtmpKeySpoiled, LocaleController.getString(R.string.VoipChatStreamKey), false));
+        if (this.hasButton) {
+            str = LocaleController.getString(this.story ? R.string.VoipChatStreamWithAnotherAppDescriptionStory : R.string.VoipChatStreamWithAnotherAppDescription);
+        }
+        arrayList.add(UItem.asShadow(str));
     }
 
     private static class TopCell extends LinearLayout {
@@ -236,7 +258,7 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
         @Override // org.telegram.ui.Components.UItem.UItemFactory
         public TextDetailCell createView(final Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
-            final TextDetailCell textDetailCell = new TextDetailCell(context, resourcesProvider);
+            final TextDetailCell textDetailCell = new TextDetailCell(context, resourcesProvider, true, false);
             textDetailCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider));
             Drawable mutate = ContextCompat.getDrawable(context, R.drawable.msg_copy).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader, resourcesProvider), PorterDuff.Mode.MULTIPLY));
@@ -257,13 +279,18 @@ public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView
 
         @Override // org.telegram.ui.Components.UItem.UItemFactory
         public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
-            ((TextDetailCell) view).setTextAndValue(uItem.text, uItem.textValue, !uItem.hideDivider);
+            TextDetailCell textDetailCell = (TextDetailCell) view;
+            textDetailCell.setTextAndValue(uItem.text, uItem.textValue, !uItem.hideDivider);
+            if (uItem.text instanceof SpannableStringBuilder) {
+                textDetailCell.textView.setTextSize(1, 15.0f);
+                textDetailCell.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
+            }
         }
 
-        public static UItem of(String str, String str2, boolean z) {
+        public static UItem of(CharSequence charSequence, CharSequence charSequence2, boolean z) {
             UItem ofFactory = UItem.ofFactory(TextDetailCellFactory.class);
-            ofFactory.text = str;
-            ofFactory.textValue = str2;
+            ofFactory.text = charSequence;
+            ofFactory.textValue = charSequence2;
             ofFactory.hideDivider = !z;
             ofFactory.enabled = false;
             return ofFactory;

@@ -889,10 +889,12 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         private final TextView headerTextView;
         public long lastBalance;
         private SpannableString loadingString;
+        private final Theme.ResourcesProvider resourcesProvider;
 
-        public StarsBalanceView(Context context, int i) {
+        public StarsBalanceView(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.lastBalance = -1L;
+            this.resourcesProvider = resourcesProvider;
             this.currentAccount = i;
             this.dialogId = UserConfig.getInstance(i).getClientUserId();
             setOrientation(1);
@@ -900,7 +902,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             TextView textView = new TextView(context);
             this.headerTextView = textView;
             int i2 = Theme.key_windowBackgroundWhiteBlackText;
-            textView.setTextColor(Theme.getColor(i2));
+            textView.setTextColor(Theme.getColor(i2, resourcesProvider));
             textView.setTextSize(1, 13.0f);
             textView.setText(LocaleController.getString(R.string.StarsBalance));
             textView.setGravity(5);
@@ -920,7 +922,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             animatedTextView.adaptWidth = true;
             animatedTextView.getDrawable().setHacks(false, true, true);
             animatedTextView.setTypeface(AndroidUtilities.bold());
-            animatedTextView.setTextColor(Theme.getColor(i2));
+            animatedTextView.setTextColor(Theme.getColor(i2, resourcesProvider));
             animatedTextView.setTextSize(AndroidUtilities.dp(13.0f));
             animatedTextView.setGravity(5);
             animatedTextView.setPadding(AndroidUtilities.dp(19.0f), 0, 0, 0);
@@ -1038,6 +1040,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         private final AnimatedFloat animatedStarsCount;
         private SpannableString loading;
         private boolean needDivider;
+        private final Theme.ResourcesProvider resourcesProvider;
         private final Drawable starDrawable;
         private final Drawable starDrawableOutline;
         private int starsCount;
@@ -1047,6 +1050,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         public StarTierView(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.animatedStarsCount = new AnimatedFloat(this, 0L, 500L, CubicBezierInterpolator.EASE_OUT_QUINT);
+            this.resourcesProvider = resourcesProvider;
             Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_outline).mutate();
             this.starDrawableOutline = mutate;
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogBackground, resourcesProvider), PorterDuff.Mode.SRC_IN));
@@ -1123,7 +1127,12 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 this.starDrawable.draw(canvas);
             }
             if (this.needDivider) {
-                canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight(), Theme.dividerPaint);
+                Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+                Paint paint = resourcesProvider != null ? resourcesProvider.getPaint("paintDivider") : null;
+                if (paint == null) {
+                    paint = Theme.dividerPaint;
+                }
+                canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight(), paint);
             }
         }
 
@@ -2327,7 +2336,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             viewGroup = frameLayout;
             viewGroup.addView(backupImageView, LayoutHelper.createFrame(80, 80, 17));
         }
-        final StarsBalanceView starsBalanceView = new StarsBalanceView(context, i);
+        final StarsBalanceView starsBalanceView = new StarsBalanceView(context, i, resourcesProvider);
         ScaleStateListAnimator.apply(starsBalanceView);
         starsBalanceView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda43
             @Override // android.view.View.OnClickListener
@@ -2614,7 +2623,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         frameLayout.addView(imageView2, LayoutHelper.createFrame(26, 26, 17));
         imageView2.setTranslationX(AndroidUtilities.dp(26.0f));
         imageView2.setTranslationY(AndroidUtilities.dp(26.0f));
-        final StarsBalanceView starsBalanceView = new StarsBalanceView(context, i);
+        final StarsBalanceView starsBalanceView = new StarsBalanceView(context, i, resourcesProvider);
         ScaleStateListAnimator.apply(starsBalanceView);
         starsBalanceView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda85
             @Override // android.view.View.OnClickListener
@@ -3302,7 +3311,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 gLIconTextureView.setStarParticlesView(makeParticlesView);
                 frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.applyGroupCallVisibleParticipants, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
                 gLIconTextureView.setPaused(false);
-                StarsBalanceView starsBalanceView = new StarsBalanceView(context, i);
+                StarsBalanceView starsBalanceView = new StarsBalanceView(context, i, resourcesProvider);
                 this.balanceView = starsBalanceView;
                 ScaleStateListAnimator.apply(starsBalanceView);
                 starsBalanceView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$StarsNeededSheet$HeaderView$$ExternalSyntheticLambda0

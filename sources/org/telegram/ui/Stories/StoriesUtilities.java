@@ -499,7 +499,7 @@ public abstract class StoriesUtilities {
         if (scale != 1.0f) {
             canvas.scale(scale, scale, avatarStoryParams.originalAvatarRect.centerX(), avatarStoryParams.originalAvatarRect.centerY());
         }
-        float f7 = storiesController.hasLiveStory(avatarStoryParams.dialogId) == 2 ? avatarStoryParams.progressToSegments : 0.0f;
+        float f7 = storiesController.hasLiveStory(avatarStoryParams.dialogId) ? avatarStoryParams.progressToSegments : 0.0f;
         float f8 = avatarStoryParams.progressToSate;
         if (f8 != 1.0f) {
             f8 = CubicBezierInterpolator.DEFAULT.getInterpolation(f8);
@@ -774,8 +774,8 @@ public abstract class StoriesUtilities {
                     }
                     return;
                 }
-                int hasLiveStory = storiesController.hasLiveStory(avatarStoryParams.dialogId);
-                Paint paint10 = hasLiveStory == 1 ? paint2 : hasLiveStory == 2 ? paint3 : paint;
+                int hasUnreadStoriesLive = storiesController.hasUnreadStoriesLive(avatarStoryParams.dialogId);
+                Paint paint10 = hasUnreadStoriesLive == 1 ? paint2 : hasUnreadStoriesLive == 2 ? paint3 : paint;
                 RectF rectF2 = rectTmp;
                 Paint paint11 = paint10;
                 drawSegment(canvas, rectF2, paint11, -90.0f, 90.0f, avatarStoryParams, z);

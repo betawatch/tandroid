@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.BuildVars;
+import org.telegram.tgnet.ConnectionsManager;
 
 /* loaded from: classes.dex */
 public class DefaultItemAnimator extends SimpleItemAnimator {
@@ -129,7 +130,6 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         while (it.hasNext()) {
             animateRemoveImpl((RecyclerView.ViewHolder) it.next());
         }
-        final long[] jArr = {0};
         this.mPendingRemovals.clear();
         if (!isEmpty2) {
             final ArrayList arrayList = new ArrayList();
@@ -189,13 +189,12 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         Runnable runnable3 = new Runnable() { // from class: androidx.recyclerview.widget.DefaultItemAnimator.3
             @Override // java.lang.Runnable
             public void run() {
+                int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 for (int size = arrayList3.size() - 1; size >= 0; size--) {
-                    RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) arrayList3.get(size);
-                    DefaultItemAnimator defaultItemAnimator = DefaultItemAnimator.this;
-                    long[] jArr2 = jArr;
-                    long j = jArr2[0] + defaultItemAnimator.delayIncrement;
-                    jArr2[0] = j;
-                    defaultItemAnimator.animateAddImpl(viewHolder, j);
+                    i = Math.min(i, ((RecyclerView.ViewHolder) arrayList3.get(size)).getAdapterPosition());
+                }
+                for (int size2 = arrayList3.size() - 1; size2 >= 0; size2--) {
+                    DefaultItemAnimator.this.animateAddImpl((RecyclerView.ViewHolder) arrayList3.get(size2), (r2.getAdapterPosition() - i) * DefaultItemAnimator.this.delayIncrement);
                 }
                 arrayList3.clear();
                 DefaultItemAnimator.this.mAdditionsList.remove(arrayList3);

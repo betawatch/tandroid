@@ -163,7 +163,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         this(context, i, j, null, runnable);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x047a  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x047c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -212,7 +212,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             backupImageView.setForUserOrChat(chat, avatarDrawable);
         }
         this.topPadding = 0.1f;
-        StarsIntroActivity.StarsBalanceView starsBalanceView = new StarsIntroActivity.StarsBalanceView(context, i);
+        StarsIntroActivity.StarsBalanceView starsBalanceView = new StarsIntroActivity.StarsBalanceView(context, i, this.resourcesProvider);
         this.balanceView = starsBalanceView;
         ScaleStateListAnimator.apply(starsBalanceView);
         starsBalanceView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda3

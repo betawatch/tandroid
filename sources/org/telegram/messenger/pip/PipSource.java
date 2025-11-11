@@ -105,7 +105,13 @@ public class PipSource {
         this.controller.dispatchSourceParamsChanged(this);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:12:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private void updateContentPosition(View view) {
+        boolean ratio;
         if (AndroidUtilities.isInPictureInPictureMode(this.controller.activity)) {
             return;
         }
@@ -115,11 +121,20 @@ public class PipSource {
         boolean position = this.params.setPosition(rect);
         if (view instanceof TextureViewRenderer) {
             TextureViewRenderer textureViewRenderer = (TextureViewRenderer) view;
-            position |= this.params.setRatio(textureViewRenderer.rotatedFrameWidth, textureViewRenderer.rotatedFrameHeight);
-        }
-        if (position) {
+            ratio = this.params.setRatio(textureViewRenderer.rotatedFrameWidth, textureViewRenderer.rotatedFrameHeight);
+        } else {
+            if (view.getWidth() != 0 && view.getHeight() != 0) {
+                ratio = this.params.setRatio(view.getWidth(), view.getHeight());
+            }
+            if (position) {
+                return;
+            }
             checkAvailable(true);
             this.controller.dispatchSourceParamsChanged(this);
+            return;
+        }
+        position |= ratio;
+        if (position) {
         }
     }
 

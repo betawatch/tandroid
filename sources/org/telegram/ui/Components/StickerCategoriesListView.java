@@ -57,6 +57,7 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
     private float categoriesShownT;
     private int categoriesType;
     private int dontOccupyWidth;
+    public boolean isGlassDesign;
     public Integer layerNum;
     private LinearLayoutManager layoutManager;
     private AnimatedFloat leftBoundAlpha;
@@ -639,6 +640,11 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public int getGlassIconColor(float f) {
+        return ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_glass_defaultIcon, this.resourcesProvider), (int) (f * 255.0f));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     class CategoryButton extends RLottieImageView {
         ValueAnimator backAnimator;
         private int imageColor;
@@ -655,7 +661,7 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
             super(context);
             this.loaded = false;
             this.loadProgress = 1.0f;
-            setImageColor(StickerCategoriesListView.this.getThemedColor(Theme.key_chat_emojiPanelIcon));
+            setImageColor(StickerCategoriesListView.this.isGlassDesign ? StickerCategoriesListView.this.getGlassIconColor(0.4f) : StickerCategoriesListView.this.getThemedColor(Theme.key_chat_emojiPanelIcon));
             setScaleType(ImageView.ScaleType.CENTER);
             setLayerNum(StickerCategoriesListView.this.layerNum);
         }
@@ -793,7 +799,12 @@ public abstract class StickerCategoriesListView extends RecyclerListView {
         /* JADX INFO: Access modifiers changed from: private */
         public void updateSelectedT(float f) {
             this.selectedT = f;
-            setImageColor(ColorUtils.blendARGB(StickerCategoriesListView.this.getThemedColor(Theme.key_chat_emojiPanelIcon), StickerCategoriesListView.this.getThemedColor(Theme.key_chat_emojiPanelIconSelected), this.selectedT));
+            StickerCategoriesListView stickerCategoriesListView = StickerCategoriesListView.this;
+            if (stickerCategoriesListView.isGlassDesign) {
+                setImageColor(stickerCategoriesListView.getGlassIconColor(AndroidUtilities.lerp(0.4f, 0.8f, f)));
+            } else {
+                setImageColor(ColorUtils.blendARGB(stickerCategoriesListView.getThemedColor(Theme.key_chat_emojiPanelIcon), StickerCategoriesListView.this.getThemedColor(Theme.key_chat_emojiPanelIconSelected), this.selectedT));
+            }
             invalidate();
         }
 

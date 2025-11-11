@@ -1345,37 +1345,37 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             updateItems(z, true);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:101:0x053a  */
-        /* JADX WARN: Removed duplicated region for block: B:107:0x0552  */
-        /* JADX WARN: Removed duplicated region for block: B:114:0x0563  */
-        /* JADX WARN: Removed duplicated region for block: B:126:0x05a6  */
-        /* JADX WARN: Removed duplicated region for block: B:13:0x0231  */
-        /* JADX WARN: Removed duplicated region for block: B:148:0x064d  */
-        /* JADX WARN: Removed duplicated region for block: B:154:0x0665  */
-        /* JADX WARN: Removed duplicated region for block: B:161:0x0676  */
-        /* JADX WARN: Removed duplicated region for block: B:16:0x0252  */
-        /* JADX WARN: Removed duplicated region for block: B:173:0x06b9  */
-        /* JADX WARN: Removed duplicated region for block: B:180:0x0707  */
-        /* JADX WARN: Removed duplicated region for block: B:183:0x073a  */
-        /* JADX WARN: Removed duplicated region for block: B:189:0x0a2c  */
-        /* JADX WARN: Removed duplicated region for block: B:30:0x02bb  */
-        /* JADX WARN: Removed duplicated region for block: B:312:0x0c41  */
-        /* JADX WARN: Removed duplicated region for block: B:314:0x0c48  */
-        /* JADX WARN: Removed duplicated region for block: B:33:0x02e4  */
-        /* JADX WARN: Removed duplicated region for block: B:360:0x01e1  */
-        /* JADX WARN: Removed duplicated region for block: B:363:0x01f6  */
-        /* JADX WARN: Removed duplicated region for block: B:368:0x01e3  */
-        /* JADX WARN: Removed duplicated region for block: B:36:0x0310  */
+        /* JADX WARN: Removed duplicated region for block: B:105:0x054b  */
+        /* JADX WARN: Removed duplicated region for block: B:134:0x05da  */
+        /* JADX WARN: Removed duplicated region for block: B:13:0x0232  */
+        /* JADX WARN: Removed duplicated region for block: B:140:0x0608  */
+        /* JADX WARN: Removed duplicated region for block: B:142:0x0612  */
+        /* JADX WARN: Removed duplicated region for block: B:160:0x0691  */
+        /* JADX WARN: Removed duplicated region for block: B:16:0x0253  */
+        /* JADX WARN: Removed duplicated region for block: B:170:0x06b9  */
+        /* JADX WARN: Removed duplicated region for block: B:177:0x06ca  */
+        /* JADX WARN: Removed duplicated region for block: B:189:0x070d  */
+        /* JADX WARN: Removed duplicated region for block: B:196:0x075b  */
+        /* JADX WARN: Removed duplicated region for block: B:199:0x078e  */
+        /* JADX WARN: Removed duplicated region for block: B:205:0x0a7f  */
+        /* JADX WARN: Removed duplicated region for block: B:30:0x02bc  */
+        /* JADX WARN: Removed duplicated region for block: B:328:0x0c94  */
+        /* JADX WARN: Removed duplicated region for block: B:330:0x0c9b  */
+        /* JADX WARN: Removed duplicated region for block: B:33:0x02e5  */
+        /* JADX WARN: Removed duplicated region for block: B:36:0x0311  */
+        /* JADX WARN: Removed duplicated region for block: B:377:0x01e2  */
+        /* JADX WARN: Removed duplicated region for block: B:380:0x01f7  */
+        /* JADX WARN: Removed duplicated region for block: B:385:0x01e4  */
         /* JADX WARN: Removed duplicated region for block: B:44:0x0348  */
         /* JADX WARN: Removed duplicated region for block: B:47:0x0369  */
         /* JADX WARN: Removed duplicated region for block: B:61:0x03de  */
         /* JADX WARN: Removed duplicated region for block: B:67:0x03f0  */
         /* JADX WARN: Removed duplicated region for block: B:72:0x034a  */
-        /* JADX WARN: Removed duplicated region for block: B:73:0x0312  */
-        /* JADX WARN: Removed duplicated region for block: B:74:0x02bd  */
-        /* JADX WARN: Removed duplicated region for block: B:75:0x0233  */
+        /* JADX WARN: Removed duplicated region for block: B:73:0x0313  */
+        /* JADX WARN: Removed duplicated region for block: B:74:0x02be  */
+        /* JADX WARN: Removed duplicated region for block: B:75:0x0234  */
         /* JADX WARN: Removed duplicated region for block: B:78:0x042e  */
-        /* JADX WARN: Removed duplicated region for block: B:9:0x021f  */
+        /* JADX WARN: Removed duplicated region for block: B:9:0x0220  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -1386,7 +1386,6 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             int i;
             int i2;
             int dp3;
-            int dp4;
             boolean containsKey;
             boolean z3;
             boolean z4;
@@ -1551,33 +1550,40 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                                     this.items.add(ItemInner.asCheck(LocaleController.getString(R.string.StoryAllowScreenshots), 0, StoryPrivacyBottomSheet.this.allowScreenshots));
                                     asPad.subtractHeight += AndroidUtilities.dp(50.0f);
                                 }
-                                this.items.add(ItemInner.asCheck(LocaleController.getString(z3 ? R.string.StoryKeep : z4 ? R.string.StoryKeepChannel : R.string.StoryKeepGroup), 1, StoryPrivacyBottomSheet.this.keepOnMyPage));
-                                asPad.subtractHeight += AndroidUtilities.dp(50.0f);
-                            }
-                            if (!StoryPrivacyBottomSheet.this.isEdit && StoryPrivacyBottomSheet.this.allowCover && StoryPrivacyBottomSheet.this.whenCoverClicked != null) {
-                                if (StoryPrivacyBottomSheet.this.isLive) {
-                                    if (z3) {
-                                        str2 = "StoryKeepInfo";
-                                    } else {
-                                        str2 = z4 ? "StoryKeepChannelInfo" : "StoryKeepGroupInfo";
-                                    }
-                                    formatPluralString2 = LocaleController.formatPluralString(str2, (StoryPrivacyBottomSheet.this.storyPeriod == Integer.MAX_VALUE ? 86400 : StoryPrivacyBottomSheet.this.storyPeriod) / 3600, new Object[0]);
-                                } else {
-                                    if (z3) {
-                                        i4 = R.string.StoryLiveKeepInfo;
-                                    } else {
-                                        i4 = z4 ? R.string.StoryLiveKeepChannelInfo : R.string.StoryLiveKeepGroupInfo;
-                                    }
-                                    formatPluralString2 = LocaleController.getString(i4);
+                                if (!StoryPrivacyBottomSheet.this.isLive && !StoryPrivacyBottomSheet.this.liveSettings) {
+                                    this.items.add(ItemInner.asCheck(LocaleController.getString(z3 ? R.string.StoryKeep : z4 ? R.string.StoryKeepChannel : R.string.StoryKeepGroup), 1, StoryPrivacyBottomSheet.this.keepOnMyPage));
+                                    asPad.subtractHeight += AndroidUtilities.dp(50.0f);
                                 }
-                                this.items.add(ItemInner.asShadow(formatPluralString2));
-                                asPad.subtractHeight += AndroidUtilities.dp(80.0f);
                             }
-                            if (StoryPrivacyBottomSheet.this.keepOnMyPage) {
+                            if (StoryPrivacyBottomSheet.this.isLive && !StoryPrivacyBottomSheet.this.liveSettings) {
+                                if (!StoryPrivacyBottomSheet.this.isEdit && StoryPrivacyBottomSheet.this.allowCover && StoryPrivacyBottomSheet.this.whenCoverClicked != null) {
+                                    if (StoryPrivacyBottomSheet.this.isLive) {
+                                        if (z3) {
+                                            i4 = R.string.StoryLiveKeepInfo;
+                                        } else {
+                                            i4 = z4 ? R.string.StoryLiveKeepChannelInfo : R.string.StoryLiveKeepGroupInfo;
+                                        }
+                                        formatPluralString2 = LocaleController.getString(i4);
+                                    } else {
+                                        if (z3) {
+                                            str2 = "StoryKeepInfo";
+                                        } else {
+                                            str2 = z4 ? "StoryKeepChannelInfo" : "StoryKeepGroupInfo";
+                                        }
+                                        formatPluralString2 = LocaleController.formatPluralString(str2, (StoryPrivacyBottomSheet.this.storyPeriod == Integer.MAX_VALUE ? 86400 : StoryPrivacyBottomSheet.this.storyPeriod) / 3600, new Object[0]);
+                                    }
+                                    this.items.add(ItemInner.asShadow(formatPluralString2));
+                                    asPad.subtractHeight += AndroidUtilities.dp(80.0f);
+                                }
+                            } else {
+                                this.items.add(ItemInner.asShadow(null));
+                                asPad.subtractHeight += AndroidUtilities.dp(12.0f);
+                            }
+                            if (StoryPrivacyBottomSheet.this.keepOnMyPage && !StoryPrivacyBottomSheet.this.isLive && !StoryPrivacyBottomSheet.this.liveSettings) {
                                 long dialogId = getDialogId();
                                 StoryPrivacyBottomSheet.this.getStoriesController().getStoryAlbumsList(dialogId);
                                 StringBuilder sb = new StringBuilder();
-                                if (!StoryPrivacyBottomSheet.this.selectedAlbums.isEmpty()) {
+                                if (StoryPrivacyBottomSheet.this.selectedAlbums.isEmpty()) {
                                     if (StoryPrivacyBottomSheet.this.selectedAlbums.size() < 3) {
                                         Iterator it3 = StoryPrivacyBottomSheet.this.selectedAlbums.iterator();
                                         while (it3.hasNext()) {
@@ -1598,7 +1604,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                                 this.items.add(ItemInner.asButton(1, LocaleController.getString(R.string.StoriesAlbum), sb));
                                 asPad.subtractHeight += AndroidUtilities.dp(50.0f);
                             }
-                            if (!StoryPrivacyBottomSheet.this.isEdit && (!StoryPrivacyBottomSheet.this.allowCover || StoryPrivacyBottomSheet.this.whenCoverClicked == null)) {
+                            if (!StoryPrivacyBottomSheet.this.isEdit && ((!StoryPrivacyBottomSheet.this.allowCover || StoryPrivacyBottomSheet.this.whenCoverClicked == null) && !StoryPrivacyBottomSheet.this.isLive && !StoryPrivacyBottomSheet.this.liveSettings)) {
                                 if (StoryPrivacyBottomSheet.this.isLive) {
                                     if (z3) {
                                         str = "StoryKeepInfo";
@@ -1686,13 +1692,18 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                         }
                         if (!StoryPrivacyBottomSheet.this.isEdit) {
                         }
-                        if (!StoryPrivacyBottomSheet.this.isEdit) {
-                            if (StoryPrivacyBottomSheet.this.isLive) {
-                            }
-                            this.items.add(ItemInner.asShadow(formatPluralString2));
-                            asPad.subtractHeight += AndroidUtilities.dp(80.0f);
+                        if (StoryPrivacyBottomSheet.this.isLive) {
                         }
+                        this.items.add(ItemInner.asShadow(null));
+                        asPad.subtractHeight += AndroidUtilities.dp(12.0f);
                         if (StoryPrivacyBottomSheet.this.keepOnMyPage) {
+                            long dialogId2 = getDialogId();
+                            StoryPrivacyBottomSheet.this.getStoriesController().getStoryAlbumsList(dialogId2);
+                            StringBuilder sb2 = new StringBuilder();
+                            if (StoryPrivacyBottomSheet.this.selectedAlbums.isEmpty()) {
+                            }
+                            this.items.add(ItemInner.asButton(1, LocaleController.getString(R.string.StoriesAlbum), sb2));
+                            asPad.subtractHeight += AndroidUtilities.dp(50.0f);
                         }
                         if (!StoryPrivacyBottomSheet.this.isEdit) {
                             if (StoryPrivacyBottomSheet.this.isLive) {
@@ -1727,8 +1738,10 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                 }
                 if (!StoryPrivacyBottomSheet.this.isEdit) {
                 }
-                if (!StoryPrivacyBottomSheet.this.isEdit) {
+                if (StoryPrivacyBottomSheet.this.isLive) {
                 }
+                this.items.add(ItemInner.asShadow(null));
+                asPad.subtractHeight += AndroidUtilities.dp(12.0f);
                 if (StoryPrivacyBottomSheet.this.keepOnMyPage) {
                 }
                 if (!StoryPrivacyBottomSheet.this.isEdit) {
@@ -1855,16 +1868,15 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                                     ItemInner asUser = ItemInner.asUser(user, contains, z5);
                                     int i9 = this.pageType;
                                     arrayList9.add(asUser.red(i9 == 2 || i9 == 4));
-                                    dp4 = AndroidUtilities.dp(56.0f);
+                                    dp += AndroidUtilities.dp(56.0f);
                                 } else if (tLObject2 instanceof TLRPC.Chat) {
                                     TLRPC.Chat chat2 = (TLRPC.Chat) tLObject2;
                                     ArrayList arrayList10 = this.items;
                                     ItemInner asChat = ItemInner.asChat(chat2, this.selectedUsersByGroup.containsKey(Long.valueOf(chat2.id)));
                                     int i10 = this.pageType;
                                     arrayList10.add(asChat.red(i10 == 2 || i10 == 4));
-                                    dp4 = AndroidUtilities.dp(56.0f);
+                                    dp += AndroidUtilities.dp(56.0f);
                                 }
-                                dp += dp4;
                                 i2++;
                             }
                         } else {

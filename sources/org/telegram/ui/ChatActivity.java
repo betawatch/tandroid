@@ -689,6 +689,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private final BlurredBackgroundDrawableViewFactory glassBackgroundDrawableFactoryFrosted;
     private final BlurredBackgroundSourceRenderNode glassBackgroundSourceFrostedRenderNode;
     private final BlurredBackgroundSourceRenderNode glassBackgroundSourceRenderNode;
+    private boolean glassSourcesInvalidated;
     private boolean globalIgnoreLayout;
     private ChatActionCell greetingsInfo;
     private ChatGreetingsView greetingsViewContainer;
@@ -1264,11 +1265,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$53000(ChatActivity chatActivity) {
+    public static /* synthetic */ void access$53100(ChatActivity chatActivity) {
         chatActivity.resetProgressDialogLoading();
     }
 
-    static /* synthetic */ int access$57610(ChatActivity chatActivity) {
+    static /* synthetic */ int access$57710(ChatActivity chatActivity) {
         int i = chatActivity.newMentionsCount;
         chatActivity.newMentionsCount = i - 1;
         return i;
@@ -23566,7 +23567,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     }
 
     public boolean isShouldHaveLightNavigationBarIcons() {
-        return this.shouldHaveLightNavigationBarIcons && !this.windowInsetsStateHolder.inAppViewIsVisible();
+        ThemeDelegate themeDelegate;
+        return this.shouldHaveLightNavigationBarIcons && (!this.windowInsetsStateHolder.inAppViewIsVisible() || ((themeDelegate = this.themeDelegate) != null && themeDelegate.isDark));
     }
 
     public class ChatActivityFragmentView extends SizeNotifierFrameLayout {
@@ -23778,7 +23780,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             BlurredBackgroundSource updateSourceFromBackgroundViewDrawable = ChatActivity.this.wallpaperBitmapProvider.updateSourceFromBackgroundViewDrawable(drawable);
             ChatActivity.this.shouldHaveLightNavigationBarIcons = AndroidUtilities.computePerceivedBrightness(ChatActivity.this.wallpaperBitmapProvider.getNavigationBarColor(updateSourceFromBackgroundViewDrawable)) <= 0.9f;
             ChatActivity.this.navbarContentSourceWallpaper.setSource(updateSourceFromBackgroundViewDrawable);
-            ChatActivity.this.contentView.invalidate();
             if (ChatActivity.this.chatInputViewsContainer != null) {
                 ChatActivity.this.chatInputViewsContainer.invalidate();
                 ChatActivity.this.chatInputViewsContainer.getFadeView().invalidate();
@@ -24181,12 +24182,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             canvas.restoreToCount(save);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:380:0x0aad, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:397:0x0b02, code lost:
         
-            if ((r2 & 1) != 0) goto L289;
+            if ((r2 & 1) != 0) goto L306;
          */
-        /* JADX WARN: Removed duplicated region for block: B:128:0x0f67  */
-        /* JADX WARN: Removed duplicated region for block: B:129:0x0fc3  */
+        /* JADX WARN: Removed duplicated region for block: B:145:0x0fbc  */
+        /* JADX WARN: Removed duplicated region for block: B:146:0x1018  */
         @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -24247,13 +24248,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             int measuredWidth = getMeasuredWidth();
             int measuredHeight = getMeasuredHeight();
             if (Build.VERSION.SDK_INT >= 31 && canvas.isHardwareAccelerated() && ChatActivity.this.scrollableViewNoiseSuppressor != null) {
-                if (ChatActivity.this.navbarContentSourceMessages != null && !ChatActivity.this.navbarContentSourceMessages.inRecording()) {
+                if (ChatActivity.this.navbarContentSourceMessages != null && !ChatActivity.this.navbarContentSourceMessages.inRecording() && (ChatActivity.this.navbarContentSourceMessages.needUpdateDisplayList(measuredWidth, measuredHeight) || ChatActivity.this.glassSourcesInvalidated)) {
                     RecordingCanvas beginRecording = ChatActivity.this.navbarContentSourceMessages.beginRecording(measuredWidth, measuredHeight);
                     beginRecording.translate(ChatActivity.this.chatListView.getX(), ChatActivity.this.chatListView.getY());
                     ChatActivity.this.scrollableViewNoiseSuppressor.draw(beginRecording, -4);
                     ChatActivity.this.navbarContentSourceMessages.endRecording();
                 }
-                if (ChatActivity.this.navbarContentSourceWallpaperAndMessagesRenderNode != null && !ChatActivity.this.navbarContentSourceWallpaperAndMessagesRenderNode.inRecording() && ChatActivity.this.navbarContentSourceMessagesDrawable != null) {
+                if (ChatActivity.this.navbarContentSourceWallpaperAndMessagesRenderNode != null && !ChatActivity.this.navbarContentSourceWallpaperAndMessagesRenderNode.inRecording() && ChatActivity.this.navbarContentSourceMessagesDrawable != null && (ChatActivity.this.navbarContentSourceWallpaperAndMessagesRenderNode.needUpdateDisplayList(measuredWidth, measuredHeight) || ChatActivity.this.glassSourcesInvalidated)) {
                     RecordingCanvas beginRecording2 = ChatActivity.this.navbarContentSourceWallpaperAndMessagesRenderNode.beginRecording(measuredWidth, measuredHeight);
                     ChatActivity.this.navbarContentSourceWallpaper.draw(beginRecording2, 0.0f, 0.0f, measuredWidth, measuredHeight);
                     ChatActivity.this.navbarContentSourceMessagesDrawable.setBounds(0, 0, measuredWidth, measuredHeight);
@@ -24263,20 +24264,21 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     ChatActivity.this.navbarContentSourceMessagesDrawable.draw(beginRecording2);
                     ChatActivity.this.navbarContentSourceWallpaperAndMessagesRenderNode.endRecording();
                 }
-                if (ChatActivity.this.glassBackgroundSourceRenderNode != null && !ChatActivity.this.glassBackgroundSourceRenderNode.inRecording()) {
+                if (ChatActivity.this.glassBackgroundSourceRenderNode != null && !ChatActivity.this.glassBackgroundSourceRenderNode.inRecording() && (ChatActivity.this.glassBackgroundSourceRenderNode.needUpdateDisplayList(measuredWidth, measuredHeight) || ChatActivity.this.glassSourcesInvalidated)) {
                     RecordingCanvas beginRecording3 = ChatActivity.this.glassBackgroundSourceRenderNode.beginRecording(measuredWidth, measuredHeight);
                     ChatActivity.this.navbarContentSourceWallpaper.draw(beginRecording3, 0.0f, 0.0f, measuredWidth, measuredHeight);
                     beginRecording3.translate(ChatActivity.this.chatListView.getX(), ChatActivity.this.chatListView.getY());
                     ChatActivity.this.scrollableViewNoiseSuppressor.draw(beginRecording3, -2);
                     ChatActivity.this.glassBackgroundSourceRenderNode.endRecording();
                 }
-                if (ChatActivity.this.glassBackgroundSourceFrostedRenderNode != null && !ChatActivity.this.glassBackgroundSourceFrostedRenderNode.inRecording()) {
+                if (ChatActivity.this.glassBackgroundSourceFrostedRenderNode != null && !ChatActivity.this.glassBackgroundSourceFrostedRenderNode.inRecording() && (ChatActivity.this.glassBackgroundSourceFrostedRenderNode.needUpdateDisplayList(measuredWidth, measuredHeight) || ChatActivity.this.glassSourcesInvalidated)) {
                     RecordingCanvas beginRecording4 = ChatActivity.this.glassBackgroundSourceFrostedRenderNode.beginRecording(measuredWidth, measuredHeight);
                     ChatActivity.this.navbarContentSourceWallpaper.draw(beginRecording4, 0.0f, 0.0f, measuredWidth, measuredHeight);
                     beginRecording4.translate(ChatActivity.this.chatListView.getX(), ChatActivity.this.chatListView.getY());
                     ChatActivity.this.scrollableViewNoiseSuppressor.draw(beginRecording4, -3);
                     ChatActivity.this.glassBackgroundSourceFrostedRenderNode.endRecording();
                 }
+                ChatActivity.this.glassSourcesInvalidated = false;
             }
             ChatActivity.this.chatActivityEnterView.checkAnimation();
             ChatActivity.this.updateChatListViewTopPadding();
@@ -54338,7 +54340,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 return;
             }
             if (!((BaseFragment) ChatActivity.this).inPreviewMode && ChatActivity.this.chatMode == 0 && !messageObject2.isVoice() && !messageObject2.isRoundVideo()) {
-                ChatActivity.access$57610(ChatActivity.this);
+                ChatActivity.access$57710(ChatActivity.this);
                 if (ChatActivity.this.newMentionsCount <= 0) {
                     ChatActivity.this.newMentionsCount = 0;
                     ChatActivity.this.hasAllMentionsLocal = true;
@@ -56888,7 +56890,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$5$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$53000(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -57108,7 +57110,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$6$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$53000(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -57553,7 +57555,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$7$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$53000(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -57594,7 +57596,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$8$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$53000(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -57796,7 +57798,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$9$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$53000(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -57826,7 +57828,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$10$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$53000(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -57856,7 +57858,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$11$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$53000(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -57930,7 +57932,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$12$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$53000(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -57960,7 +57962,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$13$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivity.access$53000(ChatActivity.this);
+                        ChatActivity.access$53100(ChatActivity.this);
                     }
                 }, 250L);
             }
@@ -63619,6 +63621,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public void invalidateAllGlassAttachedViews() {
+        this.glassSourcesInvalidated = true;
+        this.contentView.invalidate();
         Iterator it = this.glassAttachedViews.iterator();
         while (it.hasNext()) {
             ((View) it.next()).invalidate();

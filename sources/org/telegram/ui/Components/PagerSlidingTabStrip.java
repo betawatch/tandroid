@@ -2,7 +2,6 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
@@ -35,7 +34,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     private final PageListener pageListener;
     private ViewPager pager;
     private Paint rectPaint;
-    private Theme.ResourcesProvider resourcesProvider;
+    private final Theme.ResourcesProvider resourcesProvider;
     private int scrollOffset;
     private boolean shouldExpand;
     private int tabCount;
@@ -149,13 +148,12 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
                 super.setSelected(z);
                 Drawable background = getBackground();
                 if (background != null) {
-                    int themedColor = PagerSlidingTabStrip.this.getThemedColor(z ? Theme.key_chat_emojiPanelIconSelected : Theme.key_chat_emojiBottomPanelIcon);
-                    Theme.setSelectorDrawableColor(background, Color.argb(30, Color.red(themedColor), Color.green(themedColor), Color.blue(themedColor)), true);
+                    Theme.setSelectorDrawableColor(background, PagerSlidingTabStrip.this.getGlassIconColor(z ? 0.1f : 0.05f), true);
                 }
             }
         };
         imageView.setFocusable(true);
-        RippleDrawable rippleDrawable = (RippleDrawable) Theme.createSelectorDrawable(getThemedColor(Theme.key_chat_emojiBottomPanelIcon), 1, AndroidUtilities.dp(18.0f));
+        RippleDrawable rippleDrawable = (RippleDrawable) Theme.createSelectorDrawable(getGlassIconColor(0.05f), 1, AndroidUtilities.dp(18.0f));
         Theme.setRippleDrawableForceSoftware(rippleDrawable);
         imageView.setBackground(rippleDrawable);
         imageView.setImageDrawable(drawable);
@@ -182,7 +180,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         TextTab textTab = new TextTab(getContext(), i);
         textTab.setTextSize(1, 14.0f);
         textTab.setTypeface(AndroidUtilities.bold());
-        textTab.setTextColor(getThemedColor(Theme.key_chat_emojiPanelBackspace));
+        textTab.setTextColor(getGlassIconColor(0.6f));
         textTab.setFocusable(true);
         textTab.setGravity(17);
         textTab.setText(charSequence);
@@ -342,8 +340,8 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public int getThemedColor(int i) {
-        return Theme.getColor(i, this.resourcesProvider);
+    public int getGlassIconColor(float f) {
+        return ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_glass_defaultIcon, this.resourcesProvider), (int) (f * 255.0f));
     }
 
     @Override // android.widget.HorizontalScrollView, android.view.View
@@ -464,14 +462,13 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
             super.setSelected(z);
             Drawable background = getBackground();
             if (background != null) {
-                int themedColor = PagerSlidingTabStrip.this.getThemedColor(z ? Theme.key_chat_emojiPanelIconSelected : Theme.key_chat_emojiBottomPanelIcon);
-                Theme.setSelectorDrawableColor(background, Color.argb(30, Color.red(themedColor), Color.green(themedColor), Color.blue(themedColor)), true);
+                Theme.setSelectorDrawableColor(background, PagerSlidingTabStrip.this.getGlassIconColor(z ? 0.1f : 0.05f), true);
             }
-            setTextColor(PagerSlidingTabStrip.this.getThemedColor(z ? Theme.key_chat_emojiPanelIconSelected : Theme.key_chat_emojiPanelBackspace));
+            setTextColor(PagerSlidingTabStrip.this.getGlassIconColor(z ? 0.8f : 0.6f));
         }
 
         public void setSelectedProgress(float f) {
-            setTextColor(ColorUtils.blendARGB(PagerSlidingTabStrip.this.getThemedColor(Theme.key_chat_emojiPanelBackspace), PagerSlidingTabStrip.this.getThemedColor(Theme.key_chat_emojiPanelIconSelected), f));
+            setTextColor(PagerSlidingTabStrip.this.getGlassIconColor(AndroidUtilities.lerp(0.6f, 0.8f, f)));
         }
     }
 }
