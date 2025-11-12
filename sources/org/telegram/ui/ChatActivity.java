@@ -5379,7 +5379,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
                             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                             public void sendSticker(TLRPC.Document document, String str4, Object obj, boolean z2, int i22, int i23) {
-                                ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$73(document, str4, obj, null, true, z2, i22, i23);
+                                ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$74(document, str4, obj, null, true, z2, i22, i23);
                             }
 
                             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -7137,7 +7137,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
                     @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                     public void sendSticker(TLRPC.Document document, String str4, Object obj, boolean z22, int i222, int i232) {
-                        ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$73(document, str4, obj, null, true, z22, i222, i232);
+                        ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$74(document, str4, obj, null, true, z22, i222, i232);
                     }
 
                     @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -8606,7 +8606,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public void sendSticker(TLRPC.Document document, String str4, Object obj, boolean z22, int i2222, int i2322) {
-                ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$73(document, str4, obj, null, true, z22, i2222, i2322);
+                ChatActivity.this.chatActivityEnterView.lambda$onStickerSelected$74(document, str4, obj, null, true, z22, i2222, i2322);
             }
 
             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -37603,11 +37603,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
             return true;
         }
-        fillActionModeMenu(menu, this.currentEncryptedChat, true);
+        fillActionModeMenu(menu, this.currentEncryptedChat, true, true);
         return true;
     }
 
-    public static void fillActionModeMenu(Menu menu, TLRPC.EncryptedChat encryptedChat, boolean z) {
+    public static void fillActionModeMenu(Menu menu, TLRPC.EncryptedChat encryptedChat, boolean z, boolean z2) {
         int i;
         int i2 = R.id.menu_bold;
         if (menu.findItem(i2) != null) {
@@ -37647,8 +37647,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             i4 = i + 6;
             menu.add(i3, R.id.menu_underline, i + 5, spannableStringBuilder5);
         }
-        menu.add(i3, R.id.menu_link, i4, LocaleController.getString(R.string.CreateLink));
-        menu.add(i3, R.id.menu_regular, i4 + 1, LocaleController.getString(R.string.Regular));
+        if (z2) {
+            menu.add(i3, R.id.menu_link, i4, LocaleController.getString(R.string.CreateLink));
+            i4++;
+        }
+        menu.add(i3, R.id.menu_regular, i4, LocaleController.getString(R.string.Regular));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

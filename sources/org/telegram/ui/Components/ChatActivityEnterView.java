@@ -299,7 +299,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     private boolean emojiTabOpen;
     private EmojiView emojiView;
     private boolean emojiViewFrozen;
-    private boolean emojiViewVisible;
+    public boolean emojiViewVisible;
     private float exitTransition;
     private ImageView expandStickersButton;
     private Runnable focusRunnable;
@@ -464,6 +464,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     private float stickersExpansionProgress;
     private boolean stickersTabOpen;
     private ImageView suggestButton;
+    private ValueAnimator suggestButtonAppear;
     private boolean suggestButtonVisible;
     private FrameLayout textFieldContainer;
     boolean textTransitionIsRunning;
@@ -663,8 +664,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$createRecordPanel$55(View view, MotionEvent motionEvent) {
+    public static /* synthetic */ boolean lambda$createRecordPanel$56(View view, MotionEvent motionEvent) {
         return true;
+    }
+
+    public boolean areLiveCommentsFree() {
+        return false;
     }
 
     public void checkAnimation() {
@@ -735,7 +740,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$9800(ChatActivityEnterView chatActivityEnterView) {
+    public static /* synthetic */ void access$9700(ChatActivityEnterView chatActivityEnterView) {
         chatActivityEnterView.checkBirthdayHint();
     }
 
@@ -2846,7 +2851,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.dismissSendPreview = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$new$28();
+                ChatActivityEnterView.this.lambda$new$29();
             }
         };
         this.messageEditTextEnabled = true;
@@ -2923,7 +2928,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             @Override // android.widget.ImageView, android.view.View
             protected void onDraw(Canvas canvas) {
                 super.onDraw(canvas);
-                if (getTag() == null || ChatActivityEnterView.this.attachLayout == null || ChatActivityEnterView.this.emojiViewVisible || MediaDataController.getInstance(ChatActivityEnterView.this.currentAccount).getUnreadStickerSets().isEmpty() || ChatActivityEnterView.this.dotPaint == null) {
+                if (getTag() == null || ChatActivityEnterView.this.attachLayout == null) {
+                    return;
+                }
+                ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
+                if (chatActivityEnterView.emojiViewVisible || MediaDataController.getInstance(chatActivityEnterView.currentAccount).getUnreadStickerSets().isEmpty() || ChatActivityEnterView.this.dotPaint == null) {
                     return;
                 }
                 canvas.drawCircle((getWidth() / 2) + AndroidUtilities.dp(9.0f), (getHeight() / 2) - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), ChatActivityEnterView.this.dotPaint);
@@ -2987,6 +2996,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 public void onClick(View view) {
                     int i5;
                     String str2;
+                    if (chatActivity == null) {
+                        return;
+                    }
                     ChatActivityEnterView.this.silent = !r9.silent;
                     if (ChatActivityEnterView.this.notifySilentDrawable == null) {
                         ChatActivityEnterView.this.notifySilentDrawable = new CrossOutDrawable(activity, R.drawable.input_notify_on, Theme.key_glass_defaultIcon);
@@ -3271,7 +3283,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (this.stickersExpanded) {
                 setStickersExpanded(false, true, false);
                 this.waitingForKeyboardOpenAfterAnimation = true;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda54
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda53
                     @Override // java.lang.Runnable
                     public final void run() {
                         ChatActivityEnterView.this.lambda$new$0();
@@ -3703,6 +3715,43 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             updateFieldRight(this.lastAttachVisible);
         }
+        if (this.isLiveComment) {
+            createCaptionLimitView();
+            int maxLength = areLiveCommentsFree() ? HighlightMessageSheet.getMaxLength(this.currentAccount) : HighlightMessageSheet.getTierOption(this.currentAccount, (int) starsPrice, HighlightMessageSheet.TIER_LENGTH);
+            if (this.currentLimit != maxLength) {
+                this.currentLimit = maxLength;
+                if (maxLength > 0) {
+                    int i = maxLength - this.codePointCount;
+                    if (i <= (this.isLiveComment ? 5 : 100)) {
+                        if (i < -9999) {
+                            i = -9999;
+                        }
+                        createCaptionLimitView();
+                        NumberTextView numberTextView = this.captionLimitView;
+                        numberTextView.setNumber(i, numberTextView.getVisibility() == 0);
+                        if (this.captionLimitView.getVisibility() != 0) {
+                            this.captionLimitView.setVisibility(0);
+                            this.captionLimitView.setAlpha(0.0f);
+                            this.captionLimitView.setScaleX(0.5f);
+                            this.captionLimitView.setScaleY(0.5f);
+                        }
+                        this.captionLimitView.animate().setListener(null).cancel();
+                        this.captionLimitView.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
+                        this.captionLimitView.setTextColor(getThemedColor(i < 0 ? Theme.key_text_RedRegular : Theme.key_windowBackgroundWhiteGrayText));
+                        return;
+                    }
+                }
+                NumberTextView numberTextView2 = this.captionLimitView;
+                if (numberTextView2 != null) {
+                    numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.23
+                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                        public void onAnimationEnd(Animator animator) {
+                            ChatActivityEnterView.this.captionLimitView.setVisibility(8);
+                        }
+                    });
+                }
+            }
+        }
     }
 
     public void setOnSendButtonLongClick(View.OnLongClickListener onLongClickListener) {
@@ -3796,7 +3845,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (this.giftButton != null || this.parentFragment == null) {
             return;
         }
-        23 r0 = new 23(getContext());
+        24 r0 = new 24(getContext());
         this.giftButton = r0;
         r0.setImageResource(R.drawable.msg_input_gift);
         this.giftButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_glass_defaultIcon), PorterDuff.Mode.MULTIPLY));
@@ -3813,8 +3862,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         });
     }
 
-    class 23 extends ImageView {
-        23(Context context) {
+    class 24 extends ImageView {
+        24(Context context) {
             super(context);
         }
 
@@ -3822,10 +3871,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
             super.onLayout(z, i, i2, i3, i4);
             final ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
-            post(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$23$$ExternalSyntheticLambda0
+            post(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$24$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.access$9800(ChatActivityEnterView.this);
+                    ChatActivityEnterView.access$9700(ChatActivityEnterView.this);
                 }
             });
         }
@@ -3890,11 +3939,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.suggestButton.setImageResource(R.drawable.input_suggest_paid_24);
         this.suggestButton.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
         if (this.isLiveComment) {
-            this.messageEditTextContainer.addView(this.suggestButton, LayoutHelper.createFrame(44, 44.0f, 85, 0.0f, 0.0f, 6.0f, 0.0f));
+            this.suggestButton.setTranslationX(AndroidUtilities.dp(42.0f));
+            this.textFieldContainer.addView(this.suggestButton, LayoutHelper.createFrame(44, 44.0f, 85, 0.0f, 0.0f, 50.0f, 0.0f));
         } else {
             this.attachLayout.addView(this.suggestButton, 0, LayoutHelper.createLinear(44, 44));
         }
-        this.suggestButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda55
+        this.suggestButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda77
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChatActivityEnterView.this.lambda$createSuggestionButton$11(view);
@@ -3916,25 +3966,52 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             return;
         }
         if (this.suggestButton == null) {
-            if (!z) {
+            if (!z && !this.isLiveComment) {
                 return;
             } else {
                 createSuggestionButton();
             }
         }
+        boolean z3 = this.suggestButtonVisible != z;
         this.suggestButtonVisible = z;
         float f = z ? 1.0f : 0.6f;
         float f2 = z ? 1.0f : 0.0f;
         this.suggestButton.setEnabled(z);
         this.suggestButton.setClickable(z);
+        ValueAnimator valueAnimator = this.suggestButtonAppear;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.suggestButtonAppear = null;
+        }
         if (z2) {
-            this.suggestButton.animate().scaleX(f).scaleY(f).alpha(f2).setDuration(180L).start();
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.suggestButton.getAlpha(), f2);
+            this.suggestButtonAppear = ofFloat;
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda57
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                    ChatActivityEnterView.this.lambda$setSuggestionButtonVisible$12(valueAnimator2);
+                }
+            });
+            this.suggestButtonAppear.setDuration(220L);
+            this.suggestButtonAppear.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+            this.suggestButtonAppear.start();
         } else {
             this.suggestButton.setScaleX(f);
             this.suggestButton.setScaleY(f);
             this.suggestButton.setAlpha(f2);
         }
         updateFieldRight(this.lastAttachVisible);
+        if (z3) {
+            checkSendButton(true);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setSuggestionButtonVisible$12(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        this.suggestButton.setScaleX(AndroidUtilities.lerp(0.6f, 1.0f, floatValue));
+        this.suggestButton.setScaleY(AndroidUtilities.lerp(0.6f, 1.0f, floatValue));
+        this.suggestButton.setAlpha(floatValue);
     }
 
     private void createBotButton() {
@@ -3956,13 +4033,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.botButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda28
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatActivityEnterView.this.lambda$createBotButton$12(view);
+                ChatActivityEnterView.this.lambda$createBotButton$13(view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createBotButton$12(View view) {
+    public /* synthetic */ void lambda$createBotButton$13(View view) {
         if (this.searchingType != 0) {
             setSearchingTypeInternal(0, false);
             this.emojiView.closeSearch(false);
@@ -3994,7 +4071,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (this.doneButton != null) {
             return;
         }
-        SendButton sendButton = new SendButton(getContext(), R.drawable.input_done, this.resourcesProvider, true) { // from class: org.telegram.ui.Components.ChatActivityEnterView.24
+        SendButton sendButton = new SendButton(getContext(), R.drawable.input_done, this.resourcesProvider, true) { // from class: org.telegram.ui.Components.ChatActivityEnterView.25
             @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton
             public boolean isOpen() {
                 return true;
@@ -4016,7 +4093,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (this.expandStickersButton != null) {
             return;
         }
-        ImageView imageView = new ImageView(getContext()) { // from class: org.telegram.ui.Components.ChatActivityEnterView.25
+        ImageView imageView = new ImageView(getContext()) { // from class: org.telegram.ui.Components.ChatActivityEnterView.26
             @Override // android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
                 if (getAlpha() <= 0.0f) {
@@ -4040,14 +4117,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.expandStickersButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda23
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatActivityEnterView.this.lambda$createExpandStickersButton$13(view);
+                ChatActivityEnterView.this.lambda$createExpandStickersButton$14(view);
             }
         });
         this.expandStickersButton.setContentDescription(LocaleController.getString("AccDescrExpandPanel", R.string.AccDescrExpandPanel));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createExpandStickersButton$13(View view) {
+    public /* synthetic */ void lambda$createExpandStickersButton$14(View view) {
         EmojiView emojiView;
         EditTextCaption editTextCaption;
         if (this.expandStickersButton.getVisibility() == 0 && this.expandStickersButton.getAlpha() == 1.0f && !this.waitingForKeyboardOpen) {
@@ -4079,7 +4156,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (this.recordedAudioPanel != null) {
             return;
         }
-        FrameLayout frameLayout = new FrameLayout(getContext()) { // from class: org.telegram.ui.Components.ChatActivityEnterView.26
+        FrameLayout frameLayout = new FrameLayout(getContext()) { // from class: org.telegram.ui.Components.ChatActivityEnterView.27
             @Override // android.view.View
             public void setVisibility(int i) {
                 super.setVisibility(i);
@@ -4104,7 +4181,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.recordDeleteImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda25
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatActivityEnterView.this.lambda$createRecordAudioPanel$14(view);
+                ChatActivityEnterView.this.lambda$createRecordAudioPanel$15(view);
             }
         });
         VideoTimelineView videoTimelineView = new VideoTimelineView(getContext());
@@ -4113,7 +4190,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         VideoTimelineView videoTimelineView2 = this.videoTimelineView;
         videoTimelineView2.useClip = !this.shouldDrawBackground;
         videoTimelineView2.setRoundFrames(true);
-        this.videoTimelineView.setDelegate(new VideoTimelineView.VideoTimelineViewDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView.27
+        this.videoTimelineView.setDelegate(new VideoTimelineView.VideoTimelineViewDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView.28
             @Override // org.telegram.ui.Components.VideoTimelineView.VideoTimelineViewDelegate
             public void onLeftProgressChanged(float f) {
                 if (ChatActivityEnterView.this.videoToSendMessageObject == null) {
@@ -4153,7 +4230,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createRecordAudioPanel$14(View view) {
+    public /* synthetic */ void lambda$createRecordAudioPanel$15(View view) {
         AnimatorSet animatorSet = this.runningAnimationAudio;
         if (animatorSet == null || !animatorSet.isRunning()) {
             resetRecordedState();
@@ -4201,10 +4278,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
         SenderSelectView senderSelectView = new SenderSelectView(getContext());
         this.senderSelectView = senderSelectView;
-        senderSelectView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda56
+        senderSelectView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda54
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatActivityEnterView.this.lambda$createSenderSelectView$21(view);
+                ChatActivityEnterView.this.lambda$createSenderSelectView$22(view);
             }
         });
         this.senderSelectView.setVisibility(8);
@@ -4212,15 +4289,15 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createSenderSelectView$21(View view) {
+    public /* synthetic */ void lambda$createSenderSelectView$22(View view) {
         final TLRPC.ChatFull chatFull;
         int i;
         int i2;
         if (!this.isLiveComment ? getTranslationY() != 0.0f : isPopupShowing()) {
-            this.onEmojiSearchClosed = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda67
+            this.onEmojiSearchClosed = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda78
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$createSenderSelectView$15();
+                    ChatActivityEnterView.this.lambda$createSenderSelectView$16();
                 }
             };
             if (this.isLiveComment) {
@@ -4241,10 +4318,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 contentViewHeight -= getEmojiPadding();
             }
             if (contentViewHeight < AndroidUtilities.dp(200.0f)) {
-                this.onKeyboardClosed = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda68
+                this.onKeyboardClosed = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda79
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivityEnterView.this.lambda$createSenderSelectView$16();
+                        ChatActivityEnterView.this.lambda$createSenderSelectView$17();
                     }
                 };
                 closeKeyboard();
@@ -4283,12 +4360,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             } else {
                 this.parentFragment.getParentLayout().getOverlayContainerView();
             }
-            SenderSelectPopup senderSelectPopup2 = new SenderSelectPopup(getContext(), this.parentFragment, messagesController, isChannelAndNotMegaGroup, peer2, this.delegate.getSendAsPeers(), new SenderSelectPopup.OnSelectCallback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda69
+            SenderSelectPopup senderSelectPopup2 = new SenderSelectPopup(getContext(), this.parentFragment, messagesController, isChannelAndNotMegaGroup, peer2, this.delegate.getSendAsPeers(), new SenderSelectPopup.OnSelectCallback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda80
                 @Override // org.telegram.ui.Components.SenderSelectPopup.OnSelectCallback
                 public final void onPeerSelected(RecyclerView recyclerView, SenderSelectPopup.SenderView senderView, TLRPC.Peer peer3) {
-                    ChatActivityEnterView.this.lambda$createSenderSelectView$20(chatFull, messagesController, recyclerView, senderView, peer3);
+                    ChatActivityEnterView.this.lambda$createSenderSelectView$21(chatFull, messagesController, recyclerView, senderView, peer3);
                 }
-            }, this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatActivityEnterView.28
+            }, this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatActivityEnterView.29
                 @Override // org.telegram.ui.Components.SenderSelectPopup, org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
                 public void dismiss() {
                     if (ChatActivityEnterView.this.senderSelectPopupWindow == this) {
@@ -4359,17 +4436,17 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createSenderSelectView$15() {
-        this.senderSelectView.callOnClick();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createSenderSelectView$16() {
         this.senderSelectView.callOnClick();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createSenderSelectView$20(TLRPC.ChatFull chatFull, MessagesController messagesController, RecyclerView recyclerView, final SenderSelectPopup.SenderView senderView, TLRPC.Peer peer) {
+    public /* synthetic */ void lambda$createSenderSelectView$17() {
+        this.senderSelectView.callOnClick();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createSenderSelectView$21(TLRPC.ChatFull chatFull, MessagesController messagesController, RecyclerView recyclerView, final SenderSelectPopup.SenderView senderView, TLRPC.Peer peer) {
         TLRPC.User user;
         if (this.senderSelectPopupWindow == null) {
             return;
@@ -4405,16 +4482,16 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 ((SenderSelectPopup.SenderView) childAt).avatar.setSelected(false, true);
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda87
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda88
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$createSenderSelectView$19(simpleAvatarView, iArr, senderView);
+                ChatActivityEnterView.this.lambda$createSenderSelectView$20(simpleAvatarView, iArr, senderView);
             }
         }, isSelected ? 0L : 200L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createSenderSelectView$19(final SimpleAvatarView simpleAvatarView, int[] iArr, SenderSelectPopup.SenderView senderView) {
+    public /* synthetic */ void lambda$createSenderSelectView$20(final SimpleAvatarView simpleAvatarView, int[] iArr, SenderSelectPopup.SenderView senderView) {
         WindowInsets rootWindowInsets;
         if (this.senderSelectPopupWindow == null) {
             return;
@@ -4457,19 +4534,19 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         simpleAvatarView.setPivotY(0.0f);
         simpleAvatarView.setScaleX(0.75f);
         simpleAvatarView.setScaleY(0.75f);
-        simpleAvatarView.getViewTreeObserver().addOnDrawListener(new 29(simpleAvatarView, senderView));
+        simpleAvatarView.getViewTreeObserver().addOnDrawListener(new 30(simpleAvatarView, senderView));
         dialog.show();
         if (this.isLiveComment) {
             this.senderSelectView.setScaleX(1.0f);
             this.senderSelectView.setScaleY(1.0f);
         }
         this.senderSelectView.setAlpha(1.0f);
-        this.senderSelectPopupWindow.startDismissAnimation(this.isLiveComment ? null : new SpringAnimation(this.senderSelectView, DynamicAnimation.SCALE_X).setSpring(new SpringForce(0.5f).setStiffness(750.0f).setDampingRatio(1.0f)), this.isLiveComment ? null : new SpringAnimation(this.senderSelectView, DynamicAnimation.SCALE_Y).setSpring(new SpringForce(0.5f).setStiffness(750.0f).setDampingRatio(1.0f)), (SpringAnimation) new SpringAnimation(this.senderSelectView, DynamicAnimation.ALPHA).setSpring(new SpringForce(0.0f).setStiffness(750.0f).setDampingRatio(1.0f)).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda88
+        this.senderSelectPopupWindow.startDismissAnimation(this.isLiveComment ? null : new SpringAnimation(this.senderSelectView, DynamicAnimation.SCALE_X).setSpring(new SpringForce(0.5f).setStiffness(750.0f).setDampingRatio(1.0f)), this.isLiveComment ? null : new SpringAnimation(this.senderSelectView, DynamicAnimation.SCALE_Y).setSpring(new SpringForce(0.5f).setStiffness(750.0f).setDampingRatio(1.0f)), (SpringAnimation) new SpringAnimation(this.senderSelectView, DynamicAnimation.ALPHA).setSpring(new SpringForce(0.0f).setStiffness(750.0f).setDampingRatio(1.0f)).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda89
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f4, float f5) {
-                ChatActivityEnterView.this.lambda$createSenderSelectView$17(dialog, simpleAvatarView, f, f2, dynamicAnimation, z, f4, f5);
+                ChatActivityEnterView.this.lambda$createSenderSelectView$18(dialog, simpleAvatarView, f, f2, dynamicAnimation, z, f4, f5);
             }
-        }), (SpringAnimation) ((SpringAnimation) new SpringAnimation(simpleAvatarView, DynamicAnimation.TRANSLATION_X).setStartValue(MathUtils.clamp(dp2, f - AndroidUtilities.dp(6.0f), dp2))).setSpring(new SpringForce(f).setStiffness(700.0f).setDampingRatio(0.75f)).setMinValue(f - AndroidUtilities.dp(6.0f)), (SpringAnimation) ((SpringAnimation) ((SpringAnimation) ((SpringAnimation) new SpringAnimation(simpleAvatarView, DynamicAnimation.TRANSLATION_Y).setStartValue(MathUtils.clamp(f3, f3, AndroidUtilities.dp(6.0f) + f2))).setSpring(new SpringForce(f2).setStiffness(700.0f).setDampingRatio(0.75f)).setMaxValue(AndroidUtilities.dp(6.0f) + f2)).addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.31
+        }), (SpringAnimation) ((SpringAnimation) new SpringAnimation(simpleAvatarView, DynamicAnimation.TRANSLATION_X).setStartValue(MathUtils.clamp(dp2, f - AndroidUtilities.dp(6.0f), dp2))).setSpring(new SpringForce(f).setStiffness(700.0f).setDampingRatio(0.75f)).setMinValue(f - AndroidUtilities.dp(6.0f)), (SpringAnimation) ((SpringAnimation) ((SpringAnimation) ((SpringAnimation) new SpringAnimation(simpleAvatarView, DynamicAnimation.TRANSLATION_Y).setStartValue(MathUtils.clamp(f3, f3, AndroidUtilities.dp(6.0f) + f2))).setSpring(new SpringForce(f2).setStiffness(700.0f).setDampingRatio(0.75f)).setMaxValue(AndroidUtilities.dp(6.0f) + f2)).addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.32
             boolean performedHapticFeedback = false;
 
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
@@ -4483,19 +4560,19 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 } catch (Exception unused) {
                 }
             }
-        })).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda89
+        })).addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda90
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f4, float f5) {
-                ChatActivityEnterView.this.lambda$createSenderSelectView$18(dialog, simpleAvatarView, f, f2, dynamicAnimation, z, f4, f5);
+                ChatActivityEnterView.this.lambda$createSenderSelectView$19(dialog, simpleAvatarView, f, f2, dynamicAnimation, z, f4, f5);
             }
         }), new SpringAnimation(simpleAvatarView, DynamicAnimation.SCALE_X).setSpring(new SpringForce(scaleX).setStiffness(1000.0f).setDampingRatio(1.0f)), new SpringAnimation(simpleAvatarView, DynamicAnimation.SCALE_Y).setSpring(new SpringForce(scaleX).setStiffness(1000.0f).setDampingRatio(1.0f)));
     }
 
-    class 29 implements ViewTreeObserver.OnDrawListener {
+    class 30 implements ViewTreeObserver.OnDrawListener {
         final /* synthetic */ SimpleAvatarView val$avatar;
         final /* synthetic */ SenderSelectPopup.SenderView val$senderView;
 
-        29(SimpleAvatarView simpleAvatarView, SenderSelectPopup.SenderView senderView) {
+        30(SimpleAvatarView simpleAvatarView, SenderSelectPopup.SenderView senderView) {
             this.val$avatar = simpleAvatarView;
             this.val$senderView = senderView;
         }
@@ -4504,10 +4581,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         public void onDraw() {
             final SimpleAvatarView simpleAvatarView = this.val$avatar;
             final SenderSelectPopup.SenderView senderView = this.val$senderView;
-            simpleAvatarView.post(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$29$$ExternalSyntheticLambda0
+            simpleAvatarView.post(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$30$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.29.this.lambda$onDraw$0(simpleAvatarView, senderView);
+                    ChatActivityEnterView.30.this.lambda$onDraw$0(simpleAvatarView, senderView);
                 }
             });
         }
@@ -4520,7 +4597,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createSenderSelectView$17(final Dialog dialog, SimpleAvatarView simpleAvatarView, float f, float f2, DynamicAnimation dynamicAnimation, boolean z, float f3, float f4) {
+    public /* synthetic */ void lambda$createSenderSelectView$18(final Dialog dialog, SimpleAvatarView simpleAvatarView, float f, float f2, DynamicAnimation dynamicAnimation, boolean z, float f3, float f4) {
         if (dialog.isShowing()) {
             simpleAvatarView.setTranslationX(f);
             simpleAvatarView.setTranslationY(f2);
@@ -4530,14 +4607,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.senderSelectView.setScaleY(1.0f);
             }
             this.senderSelectView.setAlpha(1.0f);
-            this.senderSelectView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.30
+            this.senderSelectView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.31
                 @Override // android.view.ViewTreeObserver.OnPreDrawListener
                 public boolean onPreDraw() {
                     ChatActivityEnterView.this.senderSelectView.getViewTreeObserver().removeOnPreDrawListener(this);
                     SenderSelectView senderSelectView = ChatActivityEnterView.this.senderSelectView;
                     Dialog dialog2 = dialog;
                     Objects.requireNonNull(dialog2);
-                    senderSelectView.postDelayed(new ChatActivityEnterView$30$$ExternalSyntheticLambda0(dialog2), 100L);
+                    senderSelectView.postDelayed(new ChatActivityEnterView$31$$ExternalSyntheticLambda0(dialog2), 100L);
                     return true;
                 }
             });
@@ -4545,7 +4622,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createSenderSelectView$18(final Dialog dialog, SimpleAvatarView simpleAvatarView, float f, float f2, DynamicAnimation dynamicAnimation, boolean z, float f3, float f4) {
+    public /* synthetic */ void lambda$createSenderSelectView$19(final Dialog dialog, SimpleAvatarView simpleAvatarView, float f, float f2, DynamicAnimation dynamicAnimation, boolean z, float f3, float f4) {
         if (dialog.isShowing()) {
             simpleAvatarView.setTranslationX(f);
             simpleAvatarView.setTranslationY(f2);
@@ -4553,14 +4630,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.senderSelectView.setScaleX(1.0f);
             this.senderSelectView.setScaleY(1.0f);
             this.senderSelectView.setAlpha(1.0f);
-            this.senderSelectView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.32
+            this.senderSelectView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.33
                 @Override // android.view.ViewTreeObserver.OnPreDrawListener
                 public boolean onPreDraw() {
                     ChatActivityEnterView.this.senderSelectView.getViewTreeObserver().removeOnPreDrawListener(this);
                     SenderSelectView senderSelectView = ChatActivityEnterView.this.senderSelectView;
                     Dialog dialog2 = dialog;
                     Objects.requireNonNull(dialog2);
-                    senderSelectView.postDelayed(new ChatActivityEnterView$30$$ExternalSyntheticLambda0(dialog2), 100L);
+                    senderSelectView.postDelayed(new ChatActivityEnterView$31$$ExternalSyntheticLambda0(dialog2), 100L);
                     return true;
                 }
             });
@@ -4576,7 +4653,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         botCommandsMenuView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda31
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ChatActivityEnterView.this.lambda$createBotCommandsMenuButton$22(view);
+                ChatActivityEnterView.this.lambda$createBotCommandsMenuButton$23(view);
             }
         });
         this.messageEditTextContainer.addView(this.botCommandsMenuButton, LayoutHelper.createFrame(-2, 32.0f, 83, 8.0f, 6.0f, 8.0f, 6.0f));
@@ -4585,7 +4662,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createBotCommandsMenuButton$22(View view) {
+    public /* synthetic */ void lambda$createBotCommandsMenuButton$23(View view) {
         boolean isOpened = this.botCommandsMenuButton.isOpened();
         this.botCommandsMenuButton.setOpened(!isOpened);
         try {
@@ -4597,7 +4674,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 return;
             }
             if (this.emojiViewVisible || this.botKeyboardViewVisible) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda53
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda56
                     @Override // java.lang.Runnable
                     public final void run() {
                         ChatActivityEnterView.this.openWebViewMenu();
@@ -4670,31 +4747,31 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public void openWebViewMenu() {
         createBotWebViewMenuContainer();
-        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda76
+        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda69
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$openWebViewMenu$25();
+                ChatActivityEnterView.this.lambda$openWebViewMenu$26();
             }
         };
         if (SharedPrefsHelper.isWebViewConfirmShown(this.currentAccount, this.dialog_id) || MessagesController.getInstance(this.currentAccount).whitelistedBots.contains(Long.valueOf(this.dialog_id))) {
             runnable.run();
         } else {
-            AlertsCreator.createBotLaunchAlert(this.parentFragment, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.dialog_id)), new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda77
+            AlertsCreator.createBotLaunchAlert(this.parentFragment, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.dialog_id)), new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda70
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$openWebViewMenu$26(runnable);
+                    ChatActivityEnterView.this.lambda$openWebViewMenu$27(runnable);
                 }
-            }, new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda78
+            }, new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda71
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$openWebViewMenu$27();
+                    ChatActivityEnterView.this.lambda$openWebViewMenu$28();
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openWebViewMenu$25() {
+    public /* synthetic */ void lambda$openWebViewMenu$26() {
         AndroidUtilities.hideKeyboard(this);
         int i = this.currentAccount;
         long j = this.dialog_id;
@@ -4716,7 +4793,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             progress.onEnd(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda83
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$openWebViewMenu$24();
+                    ChatActivityEnterView.this.lambda$openWebViewMenu$25();
                 }
             });
             Browser.openAsInternalIntent(getContext(), this.botMenuWebViewUrl, false, false, progress);
@@ -4742,17 +4819,17 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openWebViewMenu$24() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda86
+    public /* synthetic */ void lambda$openWebViewMenu$25() {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda87
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$openWebViewMenu$23();
+                ChatActivityEnterView.this.lambda$openWebViewMenu$24();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openWebViewMenu$23() {
+    public /* synthetic */ void lambda$openWebViewMenu$24() {
         BotCommandsMenuView botCommandsMenuView = this.botCommandsMenuButton;
         if (botCommandsMenuView != null) {
             botCommandsMenuView.setOpened(false);
@@ -4760,13 +4837,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openWebViewMenu$26(Runnable runnable) {
+    public /* synthetic */ void lambda$openWebViewMenu$27(Runnable runnable) {
         runnable.run();
         SharedPrefsHelper.setWebViewConfirmShown(this.currentAccount, this.dialog_id, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openWebViewMenu$27() {
+    public /* synthetic */ void lambda$openWebViewMenu$28() {
         if (this.botCommandsMenuButton == null || SharedPrefsHelper.isWebViewConfirmShown(this.currentAccount, this.dialog_id)) {
             return;
         }
@@ -4911,7 +4988,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$28() {
+    public /* synthetic */ void lambda$new$29() {
         MessageSendPreview messageSendPreview = this.messageSendPreview;
         if (messageSendPreview != null) {
             messageSendPreview.dismiss(this.dismissSendPreviewSent);
@@ -4955,7 +5032,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(this.parentActivity, this.resourcesProvider);
                 this.sendPopupLayout = actionBarPopupWindowLayout;
                 actionBarPopupWindowLayout.setAnimationEnabled(false);
-                this.sendPopupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.33
+                this.sendPopupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.34
                     private android.graphics.Rect popupRect = new android.graphics.Rect();
 
                     @Override // android.view.View.OnTouchListener
@@ -4974,7 +5051,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.sendPopupLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda51
                     @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow.OnDispatchKeyEventListener
                     public final void onDispatchKeyEvent(KeyEvent keyEvent) {
-                        ChatActivityEnterView.this.lambda$onSendLongClick$29(keyEvent);
+                        ChatActivityEnterView.this.lambda$onSendLongClick$30(keyEvent);
                     }
                 });
                 this.sendPopupLayout.setShownFromBottom(false);
@@ -4994,7 +5071,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     this.actionScheduleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda52
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            ChatActivityEnterView.this.lambda$onSendLongClick$30(view2);
+                            ChatActivityEnterView.this.lambda$onSendLongClick$31(view2);
                         }
                     });
                     this.sendPopupLayout.addView((View) this.actionScheduleButton, LayoutHelper.createLinear(-1, 44));
@@ -5007,7 +5084,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.sendWhenOnlineButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda42
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view2) {
-                                ChatActivityEnterView.this.lambda$onSendLongClick$31(view2);
+                                ChatActivityEnterView.this.lambda$onSendLongClick$32(view2);
                             }
                         });
                         this.sendPopupLayout.addView((View) this.sendWhenOnlineButton, LayoutHelper.createLinear(-1, 44));
@@ -5020,14 +5097,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda43
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            ChatActivityEnterView.this.lambda$onSendLongClick$32(view2);
+                            ChatActivityEnterView.this.lambda$onSendLongClick$33(view2);
                         }
                     });
                     this.sendPopupLayout.addView((View) actionBarMenuSubItem3, LayoutHelper.createLinear(-1, 44));
                 }
                 this.sendPopupLayout.setupRadialSelectors(getThemedColor(Theme.key_dialogButtonSelector));
                 int i = -2;
-                ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.sendPopupLayout, i, i) { // from class: org.telegram.ui.Components.ChatActivityEnterView.35
+                ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.sendPopupLayout, i, i) { // from class: org.telegram.ui.Components.ChatActivityEnterView.36
                     @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
                     public void dismiss() {
                         super.dismiss();
@@ -5090,7 +5167,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             messageSendPreview.dismiss(false);
         }
         AndroidUtilities.cancelRunOnUIThread(this.dismissSendPreview);
-        MessageSendPreview messageSendPreview2 = new MessageSendPreview(getContext(), this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatActivityEnterView.36
+        MessageSendPreview messageSendPreview2 = new MessageSendPreview(getContext(), this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatActivityEnterView.37
             @Override // org.telegram.ui.MessageSendPreview
             protected void onEffectChange(long j) {
                 ChatActivityEnterView.this.setEffectId(j);
@@ -5100,7 +5177,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         messageSendPreview2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda41
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                ChatActivityEnterView.this.lambda$onSendLongClick$33(dialogInterface);
+                ChatActivityEnterView.this.lambda$onSendLongClick$34(dialogInterface);
             }
         });
         final boolean z9 = (this.audioToSendMessageObject == null && ((editTextCaption2 = this.messageEditText) == null || TextUtils.isEmpty(editTextCaption2.getText()))) ? false : true;
@@ -5188,14 +5265,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda45
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
-                            ChatActivityEnterView.this.lambda$onSendLongClick$34((Canvas) obj);
+                            ChatActivityEnterView.this.lambda$onSendLongClick$35((Canvas) obj);
                         }
                     });
                 }
                 this.messageSendPreview.setSendButton(this.sendButton, true, new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda46
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view3) {
-                        ChatActivityEnterView.this.lambda$onSendLongClick$35(z9, view3);
+                        ChatActivityEnterView.this.lambda$onSendLongClick$36(z9, view3);
                     }
                 });
                 if ((!z9 || z) && this.dialog_id >= 0) {
@@ -5214,14 +5291,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     makeOptions.add(R.drawable.msg_calendar2, LocaleController.getString(z2 ? R.string.SetReminder : R.string.ScheduleMessage), new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda47
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ChatActivityEnterView.this.lambda$onSendLongClick$36();
+                            ChatActivityEnterView.this.lambda$onSendLongClick$37();
                         }
                     });
                     if (!z2 && this.dialog_id > 0) {
                         makeOptions.add(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda48
                             @Override // java.lang.Runnable
                             public final void run() {
-                                ChatActivityEnterView.this.lambda$onSendLongClick$37();
+                                ChatActivityEnterView.this.lambda$onSendLongClick$38();
                             }
                         });
                         this.sendWhenOnlineButton = makeOptions.getLast();
@@ -5232,7 +5309,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     makeOptions.add(R.drawable.input_suggest_paid_24, LocaleController.getString(R.string.PostSuggestionsSendWithOffer), new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda49
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ChatActivityEnterView.this.lambda$onSendLongClick$39();
+                            ChatActivityEnterView.this.lambda$onSendLongClick$40();
                         }
                     });
                 }
@@ -5240,7 +5317,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     makeOptions.add(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda50
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ChatActivityEnterView.this.lambda$onSendLongClick$40(z9);
+                            ChatActivityEnterView.this.lambda$onSendLongClick$41(z9);
                         }
                     });
                 }
@@ -5273,14 +5350,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda45
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    ChatActivityEnterView.this.lambda$onSendLongClick$34((Canvas) obj);
+                    ChatActivityEnterView.this.lambda$onSendLongClick$35((Canvas) obj);
                 }
             });
         }
         this.messageSendPreview.setSendButton(this.sendButton, true, new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda46
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                ChatActivityEnterView.this.lambda$onSendLongClick$35(z9, view3);
+                ChatActivityEnterView.this.lambda$onSendLongClick$36(z9, view3);
             }
         });
         if (!z9) {
@@ -5304,7 +5381,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             makeOptions.add(R.drawable.input_suggest_paid_24, LocaleController.getString(R.string.PostSuggestionsSendWithOffer), new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda49
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$onSendLongClick$39();
+                    ChatActivityEnterView.this.lambda$onSendLongClick$40();
                 }
             });
         }
@@ -5320,25 +5397,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$29(KeyEvent keyEvent) {
+    public /* synthetic */ void lambda$onSendLongClick$30(KeyEvent keyEvent) {
         ActionBarPopupWindow actionBarPopupWindow;
         if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (actionBarPopupWindow = this.sendPopupWindow) != null && actionBarPopupWindow.isShowing()) {
             this.sendPopupWindow.dismiss();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$30(View view) {
-        ActionBarPopupWindow actionBarPopupWindow = this.sendPopupWindow;
-        if (actionBarPopupWindow != null && actionBarPopupWindow.isShowing()) {
-            this.sendPopupWindow.dismiss();
-        }
-        AlertsCreator.createScheduleDatePickerDialog(this.parentActivity, this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView.34
-            @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
-            public void didSelectDate(boolean z, int i, int i2) {
-                ChatActivityEnterView.this.sendMessageInternal(z, i, 0, 0L, true);
-            }
-        }, this.resourcesProvider);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -5347,7 +5410,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (actionBarPopupWindow != null && actionBarPopupWindow.isShowing()) {
             this.sendPopupWindow.dismiss();
         }
-        sendMessageInternal(true, 2147483646, 0, 0L, true);
+        AlertsCreator.createScheduleDatePickerDialog(this.parentActivity, this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView.35
+            @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
+            public void didSelectDate(boolean z, int i, int i2) {
+                ChatActivityEnterView.this.sendMessageInternal(z, i, 0, 0L, true);
+            }
+        }, this.resourcesProvider);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -5356,21 +5424,30 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (actionBarPopupWindow != null && actionBarPopupWindow.isShowing()) {
             this.sendPopupWindow.dismiss();
         }
+        sendMessageInternal(true, 2147483646, 0, 0L, true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onSendLongClick$33(View view) {
+        ActionBarPopupWindow actionBarPopupWindow = this.sendPopupWindow;
+        if (actionBarPopupWindow != null && actionBarPopupWindow.isShowing()) {
+            this.sendPopupWindow.dismiss();
+        }
         sendMessageInternal(false, 0, 0, 0L, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$33(DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$onSendLongClick$34(DialogInterface dialogInterface) {
         this.messageSendPreview = null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$34(Canvas canvas) {
+    public /* synthetic */ void lambda$onSendLongClick$35(Canvas canvas) {
         drawBackground(canvas, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$35(boolean z, View view) {
+    public /* synthetic */ void lambda$onSendLongClick$36(boolean z, View view) {
         MessageSendPreview messageSendPreview;
         this.sentFromPreview = System.currentTimeMillis();
         boolean sendMessage = sendMessage();
@@ -5385,8 +5462,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$36() {
-        AlertsCreator.createScheduleDatePickerDialog(this.parentActivity, this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView.37
+    public /* synthetic */ void lambda$onSendLongClick$37() {
+        AlertsCreator.createScheduleDatePickerDialog(this.parentActivity, this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView.38
             @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
             public void didSelectDate(boolean z, int i, int i2) {
                 ChatActivityEnterView.this.sendMessageInternal(z, i, i2, 0L, true);
@@ -5400,7 +5477,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$37() {
+    public /* synthetic */ void lambda$onSendLongClick$38() {
         sendMessageInternal(true, 2147483646, 0, 0L, true);
         MessageSendPreview messageSendPreview = this.messageSendPreview;
         if (messageSendPreview != null) {
@@ -5410,22 +5487,22 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$39() {
+    public /* synthetic */ void lambda$onSendLongClick$40() {
         MessageSendPreview messageSendPreview = this.messageSendPreview;
         if (messageSendPreview != null) {
             messageSendPreview.dismiss(false);
             this.messageSendPreview = null;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda79
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda76
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$onSendLongClick$38();
+                ChatActivityEnterView.this.lambda$onSendLongClick$39();
             }
         }, 600L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$38() {
+    public /* synthetic */ void lambda$onSendLongClick$39() {
         ChatActivityEnterViewDelegate chatActivityEnterViewDelegate = this.delegate;
         if (chatActivityEnterViewDelegate != null) {
             chatActivityEnterViewDelegate.didPressSuggestionButton();
@@ -5433,7 +5510,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onSendLongClick$40(boolean z) {
+    public /* synthetic */ void lambda$onSendLongClick$41(boolean z) {
         MessageSendPreview messageSendPreview;
         this.sentFromPreview = System.currentTimeMillis();
         boolean sendMessageInternal = sendMessageInternal(false, 0, 0, 0L, true);
@@ -5451,7 +5528,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (this.botCommandsMenuContainer != null) {
             return;
         }
-        BotCommandsMenuContainer botCommandsMenuContainer = new BotCommandsMenuContainer(getContext()) { // from class: org.telegram.ui.Components.ChatActivityEnterView.38
+        BotCommandsMenuContainer botCommandsMenuContainer = new BotCommandsMenuContainer(getContext()) { // from class: org.telegram.ui.Components.ChatActivityEnterView.39
             boolean ignoreLayout = false;
 
             @Override // org.telegram.ui.bots.BotCommandsMenuContainer
@@ -5478,8 +5555,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         BotCommandsMenuView.BotCommandsAdapter botCommandsAdapter = new BotCommandsMenuView.BotCommandsAdapter();
         this.botCommandsAdapter = botCommandsAdapter;
         recyclerListView.setAdapter(botCommandsAdapter);
-        this.botCommandsMenuContainer.listView.setOnItemClickListener(new 39());
-        this.botCommandsMenuContainer.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.40
+        this.botCommandsMenuContainer.listView.setOnItemClickListener(new 40());
+        this.botCommandsMenuContainer.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.41
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public boolean onItemClick(View view, int i) {
                 if (!(view instanceof BotCommandsMenuView.BotCommandView)) {
@@ -5501,8 +5578,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         updateBotCommandsMenuContainerTopPadding();
     }
 
-    class 39 implements RecyclerListView.OnItemClickListener {
-        39() {
+    class 40 implements RecyclerListView.OnItemClickListener {
+        40() {
         }
 
         @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
@@ -5514,20 +5591,20 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
                 if (!ChatActivityEnterView.this.isInScheduleMode()) {
                     if (ChatActivityEnterView.this.parentFragment == null || !ChatActivityEnterView.this.parentFragment.checkSlowMode(view)) {
-                        AlertsCreator.ensurePaidMessageConfirmation(ChatActivityEnterView.this.currentAccount, ChatActivityEnterView.this.dialog_id, 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$39$$ExternalSyntheticLambda1
+                        AlertsCreator.ensurePaidMessageConfirmation(ChatActivityEnterView.this.currentAccount, ChatActivityEnterView.this.dialog_id, 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$40$$ExternalSyntheticLambda1
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj) {
-                                ChatActivityEnterView.39.this.lambda$onItemClick$1(command, (Long) obj);
+                                ChatActivityEnterView.40.this.lambda$onItemClick$1(command, (Long) obj);
                             }
                         });
                         return;
                     }
                     return;
                 }
-                AlertsCreator.createScheduleDatePickerDialog(ChatActivityEnterView.this.parentActivity, ChatActivityEnterView.this.dialog_id, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$39$$ExternalSyntheticLambda0
+                AlertsCreator.createScheduleDatePickerDialog(ChatActivityEnterView.this.parentActivity, ChatActivityEnterView.this.dialog_id, new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$40$$ExternalSyntheticLambda0
                     @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                     public final void didSelectDate(boolean z, int i2, int i3) {
-                        ChatActivityEnterView.39.this.lambda$onItemClick$0(command, z, i2, i3);
+                        ChatActivityEnterView.40.this.lambda$onItemClick$0(command, z, i2, i3);
                     }
                 }, ChatActivityEnterView.this.resourcesProvider);
             }
@@ -5655,11 +5732,18 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 return null;
             }
             try {
-                if (ChatActivityEnterView.this.isEditingBusinessLink()) {
-                    EditorInfoCompat.setContentMimeTypes(editorInfo, null);
-                } else {
+                if (!ChatActivityEnterView.this.isEditingBusinessLink() && !ChatActivityEnterView.this.isLiveComment) {
                     EditorInfoCompat.setContentMimeTypes(editorInfo, new String[]{"image/gif", "image/*", "image/jpg", "image/png", "image/webp"});
+                    return InputConnectionCompat.createWrapper(onCreateInputConnection, editorInfo, new InputConnectionCompat.OnCommitContentListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$ChatActivityEditTextCaption$$ExternalSyntheticLambda0
+                        @Override // androidx.core.view.inputmethod.InputConnectionCompat.OnCommitContentListener
+                        public final boolean onCommitContent(InputContentInfoCompat inputContentInfoCompat, int i, Bundle bundle) {
+                            boolean lambda$onCreateInputConnection$1;
+                            lambda$onCreateInputConnection$1 = ChatActivityEnterView.ChatActivityEditTextCaption.this.lambda$onCreateInputConnection$1(inputContentInfoCompat, i, bundle);
+                            return lambda$onCreateInputConnection$1;
+                        }
+                    });
                 }
+                EditorInfoCompat.setContentMimeTypes(editorInfo, null);
                 return InputConnectionCompat.createWrapper(onCreateInputConnection, editorInfo, new InputConnectionCompat.OnCommitContentListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$ChatActivityEditTextCaption$$ExternalSyntheticLambda0
                     @Override // androidx.core.view.inputmethod.InputConnectionCompat.OnCommitContentListener
                     public final boolean onCommitContent(InputContentInfoCompat inputContentInfoCompat, int i, Bundle bundle) {
@@ -5676,6 +5760,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ boolean lambda$onCreateInputConnection$1(final InputContentInfoCompat inputContentInfoCompat, int i, Bundle bundle) {
+            if (ChatActivityEnterView.this.isLiveComment) {
+                return true;
+            }
             if (BuildCompat.isAtLeastNMR1() && (i & 1) != 0) {
                 try {
                     inputContentInfoCompat.requestPermission();
@@ -5963,7 +6050,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (this.messageEditText != null) {
             return;
         }
-        ChatActivityEditTextCaption chatActivityEditTextCaption = new ChatActivityEditTextCaption(getContext(), this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatActivityEnterView.41
+        ChatActivityEditTextCaption chatActivityEditTextCaption = new ChatActivityEditTextCaption(getContext(), this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatActivityEnterView.42
             boolean clickMaybe;
             float touchX;
             float touchY;
@@ -6026,7 +6113,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.messageEditText.setDelegate(new EditTextCaption.EditTextCaptionDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda39
             @Override // org.telegram.ui.Components.EditTextCaption.EditTextCaptionDelegate
             public final void onSpansChanged() {
-                ChatActivityEnterView.this.lambda$createMessageEditText$41();
+                ChatActivityEnterView.this.lambda$createMessageEditText$42();
             }
         });
         ChatActivity chatActivity = this.parentFragment;
@@ -6062,7 +6149,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.messageEditText.setCursorColor(getThemedColor(Theme.key_chat_messagePanelCursor));
         this.messageEditText.setHandlesColor(getThemedColor(Theme.key_chat_TextSelectionCursor));
         this.messageEditTextContainer.addView(this.messageEditText, 1, LayoutHelper.createFrame(-1, -2.0f, 80, 52.0f, 0.0f, this.isChat ? 50.0f : 2.0f, 1.5f));
-        this.messageEditText.setOnKeyListener(new View.OnKeyListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.42
+        this.messageEditText.setOnKeyListener(new View.OnKeyListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.43
             /* JADX WARN: Code restructure failed: missing block: B:59:0x012b, code lost:
             
                 if (r7.getAction() != 0) goto L67;
@@ -6127,7 +6214,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 return false;
             }
         });
-        this.messageEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.43
+        this.messageEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.44
             @Override // android.widget.TextView.OnEditorActionListener
             public boolean onEditorAction(TextView textView, int i3, KeyEvent keyEvent) {
                 if (i3 == 4) {
@@ -6151,7 +6238,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 return true;
             }
         });
-        this.messageEditText.addTextChangedListener(new 44());
+        this.messageEditText.addTextChangedListener(new 45());
         this.messageEditText.addTextChangedListener(new EditTextSuggestionsFix());
         this.messageEditText.setEnabled(this.messageEditTextEnabled);
         ArrayList arrayList = this.messageEditTextWatchers;
@@ -6173,7 +6260,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createMessageEditText$41() {
+    public /* synthetic */ void lambda$createMessageEditText$42() {
         this.messageEditText.invalidateEffects();
         ChatActivityEnterViewDelegate chatActivityEnterViewDelegate = this.delegate;
         if (chatActivityEnterViewDelegate != null) {
@@ -6181,14 +6268,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
     }
 
-    class 44 implements TextWatcher {
+    class 45 implements TextWatcher {
         boolean heightShouldBeChanged;
         private boolean ignorePrevTextChange;
         private boolean nextChangeIsSend;
         private CharSequence prevText;
         private boolean processChange;
 
-        44() {
+        45() {
         }
 
         @Override // android.text.TextWatcher
@@ -6255,8 +6342,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             ChatActivityEnterView.this.updateSendButtonPaid();
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:44:0x014b  */
-        /* JADX WARN: Removed duplicated region for block: B:47:0x015a  */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x0145  */
+        /* JADX WARN: Removed duplicated region for block: B:46:0x0155  */
+        /* JADX WARN: Removed duplicated region for block: B:49:0x0164  */
+        /* JADX WARN: Removed duplicated region for block: B:52:0x0174  */
+        /* JADX WARN: Removed duplicated region for block: B:73:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
         @Override // android.text.TextWatcher
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -6265,7 +6355,6 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             ChatActivityEnterView chatActivityEnterView;
             BotCommandsMenuContainer botCommandsMenuContainer;
             ChatActivityEnterView chatActivityEnterView2;
-            int i;
             if (this.ignorePrevTextChange) {
                 return;
             }
@@ -6285,89 +6374,102 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
                 }
                 ChatActivityEnterView.this.codePointCount = Character.codePointCount(editable, 0, editable.length());
-                if (ChatActivityEnterView.this.currentLimit > 0 && (i = ChatActivityEnterView.this.currentLimit - ChatActivityEnterView.this.codePointCount) <= 100) {
-                    if (i < -9999) {
-                        i = -9999;
-                    }
-                    ChatActivityEnterView.this.createCaptionLimitView();
-                    NumberTextView numberTextView = ChatActivityEnterView.this.captionLimitView;
-                    numberTextView.setNumber(i, numberTextView.getVisibility() == 0);
-                    if (ChatActivityEnterView.this.captionLimitView.getVisibility() != 0) {
-                        ChatActivityEnterView.this.captionLimitView.setVisibility(0);
-                        ChatActivityEnterView.this.captionLimitView.setAlpha(0.0f);
-                        ChatActivityEnterView.this.captionLimitView.setScaleX(0.5f);
-                        ChatActivityEnterView.this.captionLimitView.setScaleY(0.5f);
-                    }
-                    ChatActivityEnterView.this.captionLimitView.animate().setListener(null).cancel();
-                    ChatActivityEnterView.this.captionLimitView.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
-                    if (i < 0) {
-                        ChatActivityEnterView chatActivityEnterView3 = ChatActivityEnterView.this;
-                        chatActivityEnterView3.captionLimitView.setTextColor(chatActivityEnterView3.getThemedColor(Theme.key_text_RedRegular));
+                if (ChatActivityEnterView.this.currentLimit > 0) {
+                    int i = ChatActivityEnterView.this.currentLimit - ChatActivityEnterView.this.codePointCount;
+                    if (i <= (ChatActivityEnterView.this.isLiveComment ? 5 : 100)) {
+                        if (i < -9999) {
+                            i = -9999;
+                        }
+                        ChatActivityEnterView.this.createCaptionLimitView();
+                        NumberTextView numberTextView = ChatActivityEnterView.this.captionLimitView;
+                        numberTextView.setNumber(i, numberTextView.getVisibility() == 0);
+                        if (ChatActivityEnterView.this.captionLimitView.getVisibility() != 0) {
+                            ChatActivityEnterView.this.captionLimitView.setVisibility(0);
+                            ChatActivityEnterView.this.captionLimitView.setAlpha(0.0f);
+                            ChatActivityEnterView.this.captionLimitView.setScaleX(0.5f);
+                            ChatActivityEnterView.this.captionLimitView.setScaleY(0.5f);
+                        }
+                        ChatActivityEnterView.this.captionLimitView.animate().setListener(null).cancel();
+                        ChatActivityEnterView.this.captionLimitView.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
+                        if (i < 0) {
+                            ChatActivityEnterView chatActivityEnterView3 = ChatActivityEnterView.this;
+                            chatActivityEnterView3.captionLimitView.setTextColor(chatActivityEnterView3.getThemedColor(Theme.key_text_RedRegular));
+                            chatActivityEnterView = ChatActivityEnterView.this;
+                            if (chatActivityEnterView.doneButtonEnabled != z && chatActivityEnterView.doneButton != null) {
+                                chatActivityEnterView2 = ChatActivityEnterView.this;
+                                chatActivityEnterView2.doneButtonEnabled = z;
+                                if (chatActivityEnterView2.doneButton != null) {
+                                    ChatActivityEnterView.this.doneButton.invalidate();
+                                }
+                            }
+                            botCommandsMenuContainer = ChatActivityEnterView.this.botCommandsMenuContainer;
+                            if (botCommandsMenuContainer != null) {
+                                botCommandsMenuContainer.dismiss();
+                            }
+                            ChatActivityEnterView.this.checkBotMenu();
+                            if (!ChatActivityEnterView.this.editingCaption || ChatActivityEnterView.this.captionLimitBulletinShown || MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).premiumFeaturesBlocked() || UserConfig.getInstance(ChatActivityEnterView.this.currentAccount).isPremium() || ChatActivityEnterView.this.codePointCount <= MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).captionLengthLimitDefault || ChatActivityEnterView.this.codePointCount >= MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).captionLengthLimitPremium) {
+                                return;
+                            }
+                            ChatActivityEnterView.this.captionLimitBulletinShown = true;
+                            if (!this.heightShouldBeChanged) {
+                                ChatActivityEnterView.this.showCaptionLimitBulletin();
+                                return;
+                            } else {
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$45$$ExternalSyntheticLambda0
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        ChatActivityEnterView.45.this.lambda$afterTextChanged$0();
+                                    }
+                                }, 300L);
+                                return;
+                            }
+                        }
+                        ChatActivityEnterView chatActivityEnterView4 = ChatActivityEnterView.this;
+                        chatActivityEnterView4.captionLimitView.setTextColor(chatActivityEnterView4.getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
+                        z = true;
                         chatActivityEnterView = ChatActivityEnterView.this;
-                        if (chatActivityEnterView.doneButtonEnabled != z && chatActivityEnterView.doneButton != null) {
+                        if (chatActivityEnterView.doneButtonEnabled != z) {
                             chatActivityEnterView2 = ChatActivityEnterView.this;
                             chatActivityEnterView2.doneButtonEnabled = z;
                             if (chatActivityEnterView2.doneButton != null) {
-                                ChatActivityEnterView.this.doneButton.invalidate();
                             }
                         }
                         botCommandsMenuContainer = ChatActivityEnterView.this.botCommandsMenuContainer;
                         if (botCommandsMenuContainer != null) {
-                            botCommandsMenuContainer.dismiss();
                         }
                         ChatActivityEnterView.this.checkBotMenu();
-                        if (ChatActivityEnterView.this.editingCaption || ChatActivityEnterView.this.captionLimitBulletinShown || MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).premiumFeaturesBlocked() || UserConfig.getInstance(ChatActivityEnterView.this.currentAccount).isPremium() || ChatActivityEnterView.this.codePointCount <= MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).captionLengthLimitDefault || ChatActivityEnterView.this.codePointCount >= MessagesController.getInstance(ChatActivityEnterView.this.currentAccount).captionLengthLimitPremium) {
-                            return;
-                        }
-                        ChatActivityEnterView.this.captionLimitBulletinShown = true;
-                        if (!this.heightShouldBeChanged) {
-                            ChatActivityEnterView.this.showCaptionLimitBulletin();
+                        if (ChatActivityEnterView.this.editingCaption) {
                             return;
                         } else {
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$44$$ExternalSyntheticLambda0
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    ChatActivityEnterView.44.this.lambda$afterTextChanged$0();
-                                }
-                            }, 300L);
                             return;
                         }
                     }
-                    ChatActivityEnterView chatActivityEnterView4 = ChatActivityEnterView.this;
-                    chatActivityEnterView4.captionLimitView.setTextColor(chatActivityEnterView4.getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
-                } else {
-                    NumberTextView numberTextView2 = ChatActivityEnterView.this.captionLimitView;
-                    if (numberTextView2 != null) {
-                        numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.44.1
-                            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                            public void onAnimationEnd(Animator animator) {
-                                ChatActivityEnterView.this.captionLimitView.setVisibility(8);
-                            }
-                        });
-                    }
+                }
+                NumberTextView numberTextView2 = ChatActivityEnterView.this.captionLimitView;
+                if (numberTextView2 != null) {
+                    numberTextView2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.45.1
+                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                        public void onAnimationEnd(Animator animator) {
+                            ChatActivityEnterView.this.captionLimitView.setVisibility(8);
+                        }
+                    });
                 }
                 z = true;
                 chatActivityEnterView = ChatActivityEnterView.this;
                 if (chatActivityEnterView.doneButtonEnabled != z) {
-                    chatActivityEnterView2 = ChatActivityEnterView.this;
-                    chatActivityEnterView2.doneButtonEnabled = z;
-                    if (chatActivityEnterView2.doneButton != null) {
-                    }
                 }
                 botCommandsMenuContainer = ChatActivityEnterView.this.botCommandsMenuContainer;
                 if (botCommandsMenuContainer != null) {
                 }
                 ChatActivityEnterView.this.checkBotMenu();
                 if (ChatActivityEnterView.this.editingCaption) {
-                    return;
-                } else {
-                    return;
                 }
+            } else {
+                this.ignorePrevTextChange = true;
+                editable.replace(0, editable.length(), this.prevText);
+                this.prevText = null;
+                this.ignorePrevTextChange = false;
             }
-            this.ignorePrevTextChange = true;
-            editable.replace(0, editable.length(), this.prevText);
-            this.prevText = null;
-            this.ignorePrevTextChange = false;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -6594,10 +6696,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (runnable != null) {
                 AndroidUtilities.cancelRunOnUIThread(runnable);
             }
-            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda57
+            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda55
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$showTopView$42();
+                    ChatActivityEnterView.this.lambda$showTopView$43();
                 }
             };
             this.showTopViewRunnable = runnable2;
@@ -6619,7 +6721,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showTopView$42() {
+    public /* synthetic */ void lambda$showTopView$43() {
         showTopView(true, false, true);
         this.showTopViewRunnable = null;
     }
@@ -6884,7 +6986,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$onPause$43();
+                ChatActivityEnterView.this.lambda$onPause$44();
             }
         };
         this.hideKeyboardRunnable = runnable;
@@ -6892,7 +6994,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onPause$43() {
+    public /* synthetic */ void lambda$onPause$44() {
         ChatActivity chatActivity = this.parentFragment;
         if (chatActivity == null || chatActivity.isLastFragment()) {
             closeKeyboard();
@@ -7345,7 +7447,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     this.recordPannelAnimation.playTogether(ObjectAnimator.ofFloat(this.botCommandsMenuButton, (Property<BotCommandsMenuView, Float>) property, 1.0f), ObjectAnimator.ofFloat(this.botCommandsMenuButton, (Property<BotCommandsMenuView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(this.botCommandsMenuButton, (Property<BotCommandsMenuView, Float>) property3, 1.0f));
                 }
                 this.recordPannelAnimation.setDuration(150L);
-                this.recordPannelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.45
+                this.recordPannelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.46
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         FrameLayout frameLayout = ChatActivityEnterView.this.recordedAudioPanel;
@@ -7452,7 +7554,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 } else {
                     animatorSet5.playTogether(animatorSet3, animatorSet4);
                 }
-                this.recordPannelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.46
+                this.recordPannelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.47
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         VideoTimelineView videoTimelineView3 = ChatActivityEnterView.this.videoTimelineView;
@@ -7519,7 +7621,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
     public boolean sendMessage() {
         if (isInScheduleMode()) {
-            AlertsCreator.createScheduleDatePickerDialog(this.parentActivity, this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView.47
+            AlertsCreator.createScheduleDatePickerDialog(this.parentActivity, this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView.48
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                 public void didSelectDate(boolean z, int i, int i2) {
                     boolean sendMessageInternal = ChatActivityEnterView.this.sendMessageInternal(z, i, i2, 0L, true);
@@ -7539,14 +7641,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$sendMessageInternal$48(z, z2, i, i2, j);
+                ChatActivityEnterView.this.lambda$sendMessageInternal$49(z, z2, i, i2, j);
             }
         };
         if (z2) {
             boolean ensurePaidMessageConfirmation = AlertsCreator.ensurePaidMessageConfirmation(this.currentAccount, this.dialog_id, getMessagesCount(), new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda36
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    ChatActivityEnterView.this.lambda$sendMessageInternal$49(z, i, i2, (Long) obj);
+                    ChatActivityEnterView.this.lambda$sendMessageInternal$50(z, i, i2, (Long) obj);
                 }
             }, j);
             if (ensurePaidMessageConfirmation && this.sendButtonVisible) {
@@ -7581,7 +7683,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendMessageInternal$48(final boolean z, boolean z2, final int i, final int i2, final long j) {
+    public /* synthetic */ void lambda$sendMessageInternal$49(final boolean z, boolean z2, final int i, final int i2, final long j) {
         ChatActivityEnterViewDelegate chatActivityEnterViewDelegate;
         long j2;
         TLRPC.Chat currentChat;
@@ -7608,10 +7710,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.emojiView.hideSearchKeyboard();
             }
         }
-        if (z2 && showConfirmAlert(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda63
+        if (z2 && showConfirmAlert(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda72
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$sendMessageInternal$44(z, i, i2, j);
+                ChatActivityEnterView.this.lambda$sendMessageInternal$45(z, i, i2, j);
             }
         })) {
             return;
@@ -7624,10 +7726,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             sendButton.setEffect(0L);
             hideRecordedAudioPanel(true);
             checkSendButton(true);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda64
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda73
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$sendMessageInternal$45();
+                    ChatActivityEnterView.this.lambda$sendMessageInternal$46();
                 }
             }, 100L);
             this.millisecondsRecorded = 0L;
@@ -7697,10 +7799,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             hideRecordedAudioPanel(true);
             checkSendButton(true);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda65
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda74
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$sendMessageInternal$46();
+                    ChatActivityEnterView.this.lambda$sendMessageInternal$47();
                 }
             }, 100L);
             this.millisecondsRecorded = 0L;
@@ -7736,10 +7838,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             } else {
                 this.messageTransitionIsRunning = false;
                 final CharSequence charSequence = textToUse;
-                Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda66
+                Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda75
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivityEnterView.this.lambda$sendMessageInternal$47(charSequence, z, i, i2, j);
+                        ChatActivityEnterView.this.lambda$sendMessageInternal$48(charSequence, z, i, i2, j);
                     }
                 };
                 this.moveToSendStateRunnable = runnable;
@@ -7754,16 +7856,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendMessageInternal$44(boolean z, int i, int i2, long j) {
+    public /* synthetic */ void lambda$sendMessageInternal$45(boolean z, int i, int i2, long j) {
         sendMessageInternal(z, i, i2, j, false);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendMessageInternal$45() {
-        RecordCircle recordCircle = this.recordCircle;
-        if (recordCircle != null) {
-            recordCircle.setSendButtonInvisible();
-        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -7775,7 +7869,15 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendMessageInternal$47(CharSequence charSequence, boolean z, int i, int i2, long j) {
+    public /* synthetic */ void lambda$sendMessageInternal$47() {
+        RecordCircle recordCircle = this.recordCircle;
+        if (recordCircle != null) {
+            recordCircle.setSendButtonInvisible();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$sendMessageInternal$48(CharSequence charSequence, boolean z, int i, int i2, long j) {
         this.moveToSendStateRunnable = null;
         hideTopView(true);
         EditTextCaption editTextCaption = this.messageEditText;
@@ -7789,7 +7891,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$sendMessageInternal$49(boolean z, int i, int i2, Long l) {
+    public /* synthetic */ void lambda$sendMessageInternal$50(boolean z, int i, int i2, Long l) {
         sendMessageInternal(z, i, i2, l.longValue(), false);
     }
 
@@ -7899,10 +8001,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         }
                     }
                     if (document == null || !MessageObject.isFreeEmoji(document)) {
-                        BulletinFactory.of(baseFragment).createEmojiBulletin(document, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint", R.string.UnlockPremiumEmojiHint)), LocaleController.getString("PremiumMore", R.string.PremiumMore), new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda80
+                        BulletinFactory.of(baseFragment).createEmojiBulletin(document, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiHint", R.string.UnlockPremiumEmojiHint)), LocaleController.getString("PremiumMore", R.string.PremiumMore), new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda81
                             @Override // java.lang.Runnable
                             public final void run() {
-                                ChatActivityEnterView.lambda$checkPremiumAnimatedEmoji$50(BaseFragment.this);
+                                ChatActivityEnterView.lambda$checkPremiumAnimatedEmoji$51(BaseFragment.this);
                             }
                         }).show();
                         return true;
@@ -7917,7 +8019,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkPremiumAnimatedEmoji$50(BaseFragment baseFragment) {
+    public static /* synthetic */ void lambda$checkPremiumAnimatedEmoji$51(BaseFragment baseFragment) {
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (baseFragment.getContext() instanceof LaunchActivity) {
@@ -7931,16 +8033,16 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (chatActivity == null || !ChatObject.isChannelAndNotMegaGroup(chatActivity.getCurrentChat())) {
             return;
         }
-        BulletinFactory.of(this.parentFragment).createCaptionLimitBulletin(MessagesController.getInstance(this.currentAccount).captionLengthLimitPremium, new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda82
+        BulletinFactory.of(this.parentFragment).createCaptionLimitBulletin(MessagesController.getInstance(this.currentAccount).captionLengthLimitPremium, new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda84
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$showCaptionLimitBulletin$51();
+                ChatActivityEnterView.this.lambda$showCaptionLimitBulletin$52();
             }
         }).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showCaptionLimitBulletin$51() {
+    public /* synthetic */ void lambda$showCaptionLimitBulletin$52() {
         ChatActivity chatActivity = this.parentFragment;
         if (chatActivity != null) {
             chatActivity.presentFragment(new PremiumPreviewFragment("caption_limit"));
@@ -7998,14 +8100,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             BusinessLinksController.getInstance(this.currentAccount).editLinkMessage(this.editingBusinessLink.link, calculateBusinessLinkPresetMessage.text, calculateBusinessLinkPresetMessage.entities, new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda40
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$saveBusinessLink$52();
+                    ChatActivityEnterView.this.lambda$saveBusinessLink$53();
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$saveBusinessLink$52() {
+    public /* synthetic */ void lambda$saveBusinessLink$53() {
         BulletinFactory.of(this.parentFragment).createSuccessBulletin(LocaleController.getString(R.string.BusinessLinkSaved)).show();
     }
 
@@ -8053,10 +8155,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (this.stickersExpanded) {
                 setStickersExpanded(false, true, false);
                 this.waitingForKeyboardOpenAfterAnimation = true;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda75
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda68
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatActivityEnterView.this.lambda$doneEditingMessage$53();
+                        ChatActivityEnterView.this.lambda$doneEditingMessage$54();
                     }
                 }, 200L);
             }
@@ -8179,7 +8281,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$doneEditingMessage$53() {
+    public /* synthetic */ void lambda$doneEditingMessage$54() {
         this.waitingForKeyboardOpenAfterAnimation = false;
         openKeyboardInternal();
     }
@@ -8486,7 +8588,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         }
                         this.runningAnimation2.playTogether(arrayList);
                         this.runningAnimation2.setDuration(100L);
-                        this.runningAnimation2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.48
+                        this.runningAnimation2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.49
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                             public void onAnimationEnd(Animator animator) {
                                 if (animator.equals(ChatActivityEnterView.this.runningAnimation2)) {
@@ -8537,7 +8639,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     this.runningAnimation.playTogether(arrayList2);
                     this.runningAnimation.setDuration(220L);
                     this.runningAnimation.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-                    this.runningAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.49
+                    this.runningAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.50
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             if (animator.equals(ChatActivityEnterView.this.runningAnimation)) {
@@ -8687,7 +8789,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             }
                             this.runningAnimation2.playTogether(arrayList3);
                             this.runningAnimation2.setDuration(100L);
-                            this.runningAnimation2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.50
+                            this.runningAnimation2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.51
                                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                                 public void onAnimationEnd(Animator animator) {
                                     if (animator.equals(ChatActivityEnterView.this.runningAnimation2)) {
@@ -8751,7 +8853,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.runningAnimation.playTogether(arrayList4);
                         this.runningAnimation.setDuration(220L);
                         this.runningAnimation.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-                        this.runningAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.51
+                        this.runningAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.52
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                             public void onAnimationEnd(Animator animator) {
                                 if (animator.equals(ChatActivityEnterView.this.runningAnimation)) {
@@ -8917,7 +9019,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             }
                             this.runningAnimation2.playTogether(arrayList5);
                             this.runningAnimation2.setDuration(100L);
-                            this.runningAnimation2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.54
+                            this.runningAnimation2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.55
                                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                                 public void onAnimationEnd(Animator animator) {
                                     if (animator.equals(ChatActivityEnterView.this.runningAnimation2)) {
@@ -8980,7 +9082,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         }
                         this.runningAnimation.playTogether(arrayList6);
                         this.runningAnimation.setDuration(150L);
-                        this.runningAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.55
+                        this.runningAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.56
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                             public void onAnimationEnd(Animator animator) {
                                 if (animator.equals(ChatActivityEnterView.this.runningAnimation)) {
@@ -9100,7 +9202,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
                     this.runningAnimation2.playTogether(arrayList7);
                     this.runningAnimation2.setDuration(100L);
-                    this.runningAnimation2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.52
+                    this.runningAnimation2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.53
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             if (animator.equals(ChatActivityEnterView.this.runningAnimation2)) {
@@ -9154,7 +9256,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
                 this.runningAnimation.playTogether(arrayList8);
                 this.runningAnimation.setDuration(250L);
-                this.runningAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.53
+                this.runningAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.54
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         if (animator.equals(ChatActivityEnterView.this.runningAnimation)) {
@@ -9494,7 +9596,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (!z3) {
                 this.runningAnimationAudio.playTogether(ObjectAnimator.ofFloat(this.recordCircle, (Property<RecordCircle, Float>) this.recordControlsCircleScale, 1.0f).setDuration(300L));
             }
-            this.runningAnimationAudio.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.56
+            this.runningAnimationAudio.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.57
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (animator.equals(ChatActivityEnterView.this.runningAnimationAudio)) {
@@ -9809,10 +9911,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     ofFloat17.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda32
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            ChatActivityEnterView.this.lambda$updateRecordInterface$54(valueAnimator);
+                            ChatActivityEnterView.this.lambda$updateRecordInterface$55(valueAnimator);
                         }
                     });
-                    ofFloat17.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.57
+                    ofFloat17.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.58
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             ChatActivityEnterView.this.audioTimelineView.setAllowDraw(true);
@@ -9853,7 +9955,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     if (botCommandsMenuView6 != null) {
                         animatorSet12.playTogether(ObjectAnimator.ofFloat(botCommandsMenuView6, (Property<BotCommandsMenuView, Float>) property15, 0.0f), ObjectAnimator.ofFloat(this.botCommandsMenuButton, (Property<BotCommandsMenuView, Float>) property3, 0.0f), ObjectAnimator.ofFloat(this.botCommandsMenuButton, (Property<BotCommandsMenuView, Float>) property2, 0.0f));
                     }
-                    animatorSet12.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.58
+                    animatorSet12.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.59
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             if (ChatActivityEnterView.this.audioVideoSendButton != null) {
@@ -9881,7 +9983,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     animatorArr3[1] = ofFloat17;
                     animatorArr3[2] = animatorSet;
                     animatorSet13.playTogether(animatorArr3);
-                    this.runningAnimationAudio.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.59
+                    this.runningAnimationAudio.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.60
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             if (viewGroup2 != null) {
@@ -10000,7 +10102,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     j = 150;
                     animatorSet16.setDuration(150L);
                     animatorSet16.setStartDelay(110L);
-                    animatorSet16.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.60
+                    animatorSet16.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.61
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             super.onAnimationEnd(animator);
@@ -10134,7 +10236,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.runningAnimationAudio.playTogether(animatorSet17, animatorSet18, ofFloat36, ofFloat35);
             }
             i2 = i;
-            this.runningAnimationAudio.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.61
+            this.runningAnimationAudio.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.62
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (animator.equals(ChatActivityEnterView.this.runningAnimationAudio)) {
@@ -10166,7 +10268,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateRecordInterface$54(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$updateRecordInterface$55(ValueAnimator valueAnimator) {
         this.recordCircle.setTransformToSeekbar(((Float) valueAnimator.getAnimatedValue()).floatValue());
         if (!isInVideoMode()) {
             this.audioTimelineView.setAlpha(this.recordCircle.getTransformToSeekbarProgressStep3());
@@ -10203,7 +10305,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (this.recordPanel != null || getContext() == null) {
             return;
         }
-        FrameLayout frameLayout = new FrameLayout(getContext()) { // from class: org.telegram.ui.Components.ChatActivityEnterView.62
+        FrameLayout frameLayout = new FrameLayout(getContext()) { // from class: org.telegram.ui.Components.ChatActivityEnterView.63
             @Override // android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
                 return super.onTouchEvent(motionEvent);
@@ -10216,9 +10318,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.recordPanel.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda24
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean lambda$createRecordPanel$55;
-                lambda$createRecordPanel$55 = ChatActivityEnterView.lambda$createRecordPanel$55(view, motionEvent);
-                return lambda$createRecordPanel$55;
+                boolean lambda$createRecordPanel$56;
+                lambda$createRecordPanel$56 = ChatActivityEnterView.lambda$createRecordPanel$56(view, motionEvent);
+                return lambda$createRecordPanel$56;
             }
         });
         FrameLayout frameLayout2 = this.recordPanel;
@@ -10325,7 +10427,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChatActivityEnterView.this.lambda$setEditingBusinessLink$56(view);
+                    ChatActivityEnterView.this.lambda$setEditingBusinessLink$57(view);
                 }
             });
             this.doneButton.setVisibility(0);
@@ -10369,7 +10471,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setEditingBusinessLink$56(View view) {
+    public /* synthetic */ void lambda$setEditingBusinessLink$57(View view) {
         saveBusinessLink();
     }
 
@@ -10386,7 +10488,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     private MessageObject editingMessageObjectPreview(MessageObject messageObject, boolean z) {
-        MessageObject messageObject2 = new MessageObject(messageObject.currentAccount, messageObject.messageOwner, true, true) { // from class: org.telegram.ui.Components.ChatActivityEnterView.63
+        MessageObject messageObject2 = new MessageObject(messageObject.currentAccount, messageObject.messageOwner, true, true) { // from class: org.telegram.ui.Components.ChatActivityEnterView.64
             @Override // org.telegram.messenger.MessageObject
             public boolean isOutOwner() {
                 return true;
@@ -10443,10 +10545,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     this.doneButtonAnimation = null;
                 }
                 createDoneButton(false);
-                this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda70
+                this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda63
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ChatActivityEnterView.this.lambda$setEditingMessageObject$57(view);
+                        ChatActivityEnterView.this.lambda$setEditingMessageObject$58(view);
                     }
                 });
                 if (this.editingMessageObject.needResendWhenEdit()) {
@@ -10455,12 +10557,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.doneButton.setStarsPrice(j, 1, true);
                         this.doneButton.setLayoutParams(LayoutHelper.createFrame(44, 44, 85));
                         this.doneButton.requestLayout();
-                        this.doneButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda71
+                        this.doneButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda64
                             @Override // android.view.View.OnLongClickListener
                             public final boolean onLongClick(View view) {
-                                boolean lambda$setEditingMessageObject$60;
-                                lambda$setEditingMessageObject$60 = ChatActivityEnterView.this.lambda$setEditingMessageObject$60(messageObject, groupedMessages, view);
-                                return lambda$setEditingMessageObject$60;
+                                boolean lambda$setEditingMessageObject$61;
+                                lambda$setEditingMessageObject$61 = ChatActivityEnterView.this.lambda$setEditingMessageObject$61(messageObject, groupedMessages, view);
+                                return lambda$setEditingMessageObject$61;
                             }
                         });
                         this.doneButton.setVisibility(0);
@@ -10495,10 +10597,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         TLRPC.MessageMedia messageMedia = messageObject2.messageOwner.media;
                         this.messageWebPageSearch = ((messageMedia instanceof TLRPC.TL_messageMediaWebPage) || !messageMedia.manual) && ((i = messageObject2.type) == 0 || i == 19);
                         if (this.keyboardVisible) {
-                            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda72
+                            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda65
                                 @Override // java.lang.Runnable
                                 public final void run() {
-                                    ChatActivityEnterView.this.lambda$setEditingMessageObject$61(charSequence2);
+                                    ChatActivityEnterView.this.lambda$setEditingMessageObject$62(charSequence2);
                                 }
                             };
                             this.setTextFieldRunnable = runnable;
@@ -10543,12 +10645,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.doneButton.setStarsPrice(0L, 1, true);
                 this.doneButton.setLayoutParams(LayoutHelper.createFrame(44, 44, 85));
                 this.doneButton.requestLayout();
-                this.doneButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda71
+                this.doneButton.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda64
                     @Override // android.view.View.OnLongClickListener
                     public final boolean onLongClick(View view) {
-                        boolean lambda$setEditingMessageObject$60;
-                        lambda$setEditingMessageObject$60 = ChatActivityEnterView.this.lambda$setEditingMessageObject$60(messageObject, groupedMessages, view);
-                        return lambda$setEditingMessageObject$60;
+                        boolean lambda$setEditingMessageObject$61;
+                        lambda$setEditingMessageObject$61 = ChatActivityEnterView.this.lambda$setEditingMessageObject$61(messageObject, groupedMessages, view);
+                        return lambda$setEditingMessageObject$61;
                     }
                 });
                 this.doneButton.setVisibility(0);
@@ -10693,12 +10795,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setEditingMessageObject$57(View view) {
+    public /* synthetic */ void lambda$setEditingMessageObject$58(View view) {
         doneEditingMessage();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$setEditingMessageObject$60(final MessageObject messageObject, final MessageObject.GroupedMessages groupedMessages, View view) {
+    public /* synthetic */ boolean lambda$setEditingMessageObject$61(final MessageObject messageObject, final MessageObject.GroupedMessages groupedMessages, View view) {
         EditTextCaption editTextCaption;
         if (messageObject.isMediaEmpty() || (editTextCaption = this.messageEditText) == null || TextUtils.isEmpty(editTextCaption.getTextToUse())) {
             return false;
@@ -10726,19 +10828,19 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         ItemOptions makeOptions = ItemOptions.makeOptions(this.sizeNotifierLayout, this.resourcesProvider, this.doneButton);
         final MessagePreviewView.ToggleButton toggleButton = new MessagePreviewView.ToggleButton(getContext(), R.raw.position_below, LocaleController.getString(R.string.CaptionAbove), R.raw.position_above, LocaleController.getString(R.string.CaptionBelow), this.resourcesProvider);
         toggleButton.setState(!this.captionAbove, false);
-        toggleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda84
+        toggleButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda85
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                ChatActivityEnterView.this.lambda$setEditingMessageObject$58(arrayList, toggleButton, messageSendPreview, view2);
+                ChatActivityEnterView.this.lambda$setEditingMessageObject$59(arrayList, toggleButton, messageSendPreview, view2);
             }
         });
         makeOptions.addView(toggleButton);
         makeOptions.setupSelectors();
         messageSendPreview.setItemOptions(makeOptions);
-        messageSendPreview.setSendButton(this.doneButton, false, new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda85
+        messageSendPreview.setSendButton(this.doneButton, false, new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda86
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                ChatActivityEnterView.this.lambda$setEditingMessageObject$59(groupedMessages, messageObject, messageSendPreview, view2);
+                ChatActivityEnterView.this.lambda$setEditingMessageObject$60(groupedMessages, messageObject, messageSendPreview, view2);
             }
         });
         messageSendPreview.show();
@@ -10746,7 +10848,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setEditingMessageObject$58(ArrayList arrayList, MessagePreviewView.ToggleButton toggleButton, MessageSendPreview messageSendPreview, View view) {
+    public /* synthetic */ void lambda$setEditingMessageObject$59(ArrayList arrayList, MessagePreviewView.ToggleButton toggleButton, MessageSendPreview messageSendPreview, View view) {
         this.captionAbove = !this.captionAbove;
         for (int i = 0; i < arrayList.size(); i++) {
             ((MessageObject) arrayList.get(i)).messageOwner.invert_media = this.captionAbove;
@@ -10759,7 +10861,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setEditingMessageObject$59(MessageObject.GroupedMessages groupedMessages, MessageObject messageObject, MessageSendPreview messageSendPreview, View view) {
+    public /* synthetic */ void lambda$setEditingMessageObject$60(MessageObject.GroupedMessages groupedMessages, MessageObject messageObject, MessageSendPreview messageSendPreview, View view) {
         if (groupedMessages != null) {
             Iterator<MessageObject> it = groupedMessages.messages.iterator();
             while (it.hasNext()) {
@@ -10775,7 +10877,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setEditingMessageObject$61(CharSequence charSequence) {
+    public /* synthetic */ void lambda$setEditingMessageObject$62(CharSequence charSequence) {
         setFieldText(charSequence);
         this.setTextFieldRunnable = null;
     }
@@ -10928,14 +11030,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda30
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                ChatActivityEnterView.this.lambda$animateSendButton$62(alpha, f, scaleX, f2, scaleY, f3, valueAnimator);
+                ChatActivityEnterView.this.lambda$animateSendButton$63(alpha, f, scaleX, f2, scaleY, f3, valueAnimator);
             }
         });
         return ofFloat;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$animateSendButton$62(float f, float f2, float f3, float f4, float f5, float f6, ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$animateSendButton$63(float f, float f2, float f3, float f4, float f5, float f6, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         getSendButtonInternal().setAlpha(AndroidUtilities.lerp(f, f2, floatValue));
         getSendButtonInternal().setScaleX(AndroidUtilities.lerp(f3, f4, floatValue));
@@ -11152,7 +11254,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$setFieldFocused$63();
+                    ChatActivityEnterView.this.lambda$setFieldFocused$64();
                 }
             };
             this.focusRunnable = runnable;
@@ -11169,7 +11271,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setFieldFocused$63() {
+    public /* synthetic */ void lambda$setFieldFocused$64() {
         boolean z;
         EditTextCaption editTextCaption;
         ViewGroup viewGroup = null;
@@ -11341,7 +11443,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             this.birthdayHint.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$checkBirthdayHint$64();
+                    ChatActivityEnterView.this.lambda$checkBirthdayHint$65();
                 }
             });
             this.birthdayHint.setDuration(8000L);
@@ -11350,7 +11452,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkBirthdayHint$64() {
+    public /* synthetic */ void lambda$checkBirthdayHint$65() {
         removeView(this.birthdayHint);
     }
 
@@ -11386,7 +11488,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.sendSuggestHintView.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$showSendSuggestionHint$65();
+                ChatActivityEnterView.this.lambda$showSendSuggestionHint$66();
             }
         });
         this.sendSuggestHintView.setDuration(8000L);
@@ -11396,7 +11498,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showSendSuggestionHint$65() {
+    public /* synthetic */ void lambda$showSendSuggestionHint$66() {
         AndroidUtilities.removeFromParent(this.sendSuggestHintView);
     }
 
@@ -11518,7 +11620,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.scheduledButtonAnimation = animatorSet2;
                 animatorSet2.playTogether(ObjectAnimator.ofFloat(this.scheduledButton, (Property<ImageView, Float>) View.ALPHA, z4 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.scheduledButton, (Property<ImageView, Float>) View.SCALE_X, z4 ? 1.0f : 0.1f), ObjectAnimator.ofFloat(this.scheduledButton, (Property<ImageView, Float>) View.SCALE_Y, z4 ? 1.0f : 0.1f));
                 this.scheduledButtonAnimation.setDuration(180L);
-                this.scheduledButtonAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.64
+                this.scheduledButtonAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.65
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         ChatActivityEnterView.this.scheduledButtonAnimation = null;
@@ -11637,14 +11739,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda17
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                                ChatActivityEnterView.this.lambda$updateSendAsButton$66(f5, f6, f7, f8, valueAnimator2);
+                                ChatActivityEnterView.this.lambda$updateSendAsButton$67(f5, f6, f7, f8, valueAnimator2);
                             }
                         });
                         final boolean z5 = z3;
                         final float f9 = f3;
                         final float f10 = f;
                         final float f11 = f2;
-                        duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.65
+                        duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.66
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                             public void onAnimationStart(Animator animator) {
                                 float f12;
@@ -11743,7 +11845,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateSendAsButton$66(float f, float f2, float f3, float f4, ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$updateSendAsButton$67(float f, float f2, float f3, float f4, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         float f5 = f + ((f2 - f) * floatValue);
         SenderSelectView senderSelectView = this.senderSelectView;
@@ -11910,7 +12012,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             boolean z2 = false;
             if (this.botKeyboardView == null) {
-                BotKeyboardView botKeyboardView = new BotKeyboardView(this.parentActivity, this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatActivityEnterView.66
+                BotKeyboardView botKeyboardView = new BotKeyboardView(this.parentActivity, this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatActivityEnterView.67
                     @Override // android.view.View
                     public void setTranslationY(float f) {
                         super.setTranslationY(f);
@@ -11926,7 +12028,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.botKeyboardView.setDelegate(new BotKeyboardView.BotKeyboardViewDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda29
                     @Override // org.telegram.ui.bots.BotKeyboardView.BotKeyboardViewDelegate
                     public final void didPressedButton(TLRPC.KeyboardButton keyboardButton) {
-                        ChatActivityEnterView.this.lambda$setButtons$67(keyboardButton);
+                        ChatActivityEnterView.this.lambda$setButtons$68(keyboardButton);
                     }
                 });
                 this.viewParentForEmojiView.addView(this.botKeyboardView);
@@ -11976,7 +12078,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setButtons$67(TLRPC.KeyboardButton keyboardButton) {
+    public /* synthetic */ void lambda$setButtons$68(TLRPC.KeyboardButton keyboardButton) {
         ChatActivity chatActivity;
         boolean z = this.replyingMessageObject != null && (chatActivity = this.parentFragment) != null && chatActivity.isTopic && chatActivity.getTopicId() == ((long) this.replyingMessageObject.getId());
         MessageObject messageObject = this.replyingMessageObject;
@@ -12057,7 +12159,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
                     final long j2 = j;
                     final TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j2));
-                    final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView.67
+                    final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView.68
                         @Override // java.lang.Runnable
                         public void run() {
                             if (ChatActivityEnterView.this.sizeNotifierLayout.measureKeyboardHeight() <= AndroidUtilities.dp(20.0f) && !ChatActivityEnterView.this.isPopupShowing()) {
@@ -12105,7 +12207,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         AlertsCreator.createBotLaunchAlert(this.parentFragment, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.dialog_id)), new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda62
                             @Override // java.lang.Runnable
                             public final void run() {
-                                ChatActivityEnterView.this.lambda$didPressedBotButton$68(runnable, j2);
+                                ChatActivityEnterView.this.lambda$didPressedBotButton$69(runnable, j2);
                             }
                         }, (Runnable) null);
                     }
@@ -12116,7 +12218,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda58
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i2) {
-                            ChatActivityEnterView.this.lambda$didPressedBotButton$69(messageObject2, keyboardButton, alertDialog, i2);
+                            ChatActivityEnterView.this.lambda$didPressedBotButton$70(messageObject2, keyboardButton, alertDialog, i2);
                         }
                     });
                     builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
@@ -12175,9 +12277,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
                             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                             public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
-                                boolean lambda$didPressedBotButton$70;
-                                lambda$didPressedBotButton$70 = ChatActivityEnterView.this.lambda$didPressedBotButton$70(messageObject2, keyboardButton, dialogsActivity2, arrayList, charSequence, z, z2, i2, topicsFragment);
-                                return lambda$didPressedBotButton$70;
+                                boolean lambda$didPressedBotButton$71;
+                                lambda$didPressedBotButton$71 = ChatActivityEnterView.this.lambda$didPressedBotButton$71(messageObject2, keyboardButton, dialogsActivity2, arrayList, charSequence, z, z2, i2, topicsFragment);
+                                return lambda$didPressedBotButton$71;
                             }
 
                             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -12202,7 +12304,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             MultiContactsSelectorBottomSheet.open(tL_requestPeerTypeUser.bot, tL_requestPeerTypeUser.premium, i, new MultiContactsSelectorBottomSheet.SelectorListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda60
                                 @Override // org.telegram.ui.MultiContactsSelectorBottomSheet.SelectorListener
                                 public final void onUserSelected(List list) {
-                                    ChatActivityEnterView.this.lambda$didPressedBotButton$71(messageObject2, tL_keyboardButtonRequestPeer, list);
+                                    ChatActivityEnterView.this.lambda$didPressedBotButton$72(messageObject2, tL_keyboardButtonRequestPeer, list);
                                 }
                             });
                             return false;
@@ -12234,9 +12336,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
                             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                             public final boolean didSelectDialogs(DialogsActivity dialogsActivity3, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i2, TopicsFragment topicsFragment) {
-                                boolean lambda$didPressedBotButton$72;
-                                lambda$didPressedBotButton$72 = ChatActivityEnterView.this.lambda$didPressedBotButton$72(messageObject2, tL_keyboardButtonRequestPeer, dialogsActivity3, arrayList, charSequence, z, z2, i2, topicsFragment);
-                                return lambda$didPressedBotButton$72;
+                                boolean lambda$didPressedBotButton$73;
+                                lambda$didPressedBotButton$73 = ChatActivityEnterView.this.lambda$didPressedBotButton$73(messageObject2, tL_keyboardButtonRequestPeer, dialogsActivity3, arrayList, charSequence, z, z2, i2, topicsFragment);
+                                return lambda$didPressedBotButton$73;
                             }
 
                             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
@@ -12255,13 +12357,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didPressedBotButton$68(Runnable runnable, long j) {
+    public /* synthetic */ void lambda$didPressedBotButton$69(Runnable runnable, long j) {
         runnable.run();
         SharedPrefsHelper.setWebViewConfirmShown(this.currentAccount, j, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didPressedBotButton$69(MessageObject messageObject, TLRPC.KeyboardButton keyboardButton, AlertDialog alertDialog, int i) {
+    public /* synthetic */ void lambda$didPressedBotButton$70(MessageObject messageObject, TLRPC.KeyboardButton keyboardButton, AlertDialog alertDialog, int i) {
         int checkSelfPermission;
         if (Build.VERSION.SDK_INT >= 23) {
             checkSelfPermission = this.parentActivity.checkSelfPermission("android.permission.ACCESS_COARSE_LOCATION");
@@ -12276,7 +12378,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$didPressedBotButton$70(MessageObject messageObject, TLRPC.KeyboardButton keyboardButton, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, TopicsFragment topicsFragment) {
+    public /* synthetic */ boolean lambda$didPressedBotButton$71(MessageObject messageObject, TLRPC.KeyboardButton keyboardButton, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, TopicsFragment topicsFragment) {
         TLRPC.Message message = messageObject.messageOwner;
         long j = message.from_id.user_id;
         long j2 = message.via_bot_id;
@@ -12318,7 +12420,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didPressedBotButton$71(MessageObject messageObject, TLRPC.TL_keyboardButtonRequestPeer tL_keyboardButtonRequestPeer, List list) {
+    public /* synthetic */ void lambda$didPressedBotButton$72(MessageObject messageObject, TLRPC.TL_keyboardButtonRequestPeer tL_keyboardButtonRequestPeer, List list) {
         if (list == null || list.isEmpty()) {
             return;
         }
@@ -12334,7 +12436,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$didPressedBotButton$72(MessageObject messageObject, TLRPC.TL_keyboardButtonRequestPeer tL_keyboardButtonRequestPeer, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, TopicsFragment topicsFragment) {
+    public /* synthetic */ boolean lambda$didPressedBotButton$73(MessageObject messageObject, TLRPC.TL_keyboardButtonRequestPeer tL_keyboardButtonRequestPeer, DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, TopicsFragment topicsFragment) {
         if (arrayList != null && !arrayList.isEmpty()) {
             TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
             tL_messages_sendBotRequestedPeer.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(messageObject.messageOwner.peer_id);
@@ -12384,7 +12486,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (this.emojiView != null) {
             return;
         }
-        EmojiView emojiView2 = new EmojiView(this.parentFragment, this.allowAnimatedEmoji, true, true, getContext(), true, this.info, this.sizeNotifierLayout, this.shouldDrawBackground, this.resourcesProvider, this.emojiViewFrozen, this.windowInsetsInAppController != null) { // from class: org.telegram.ui.Components.ChatActivityEnterView.68
+        EmojiView emojiView2 = new EmojiView(this.parentFragment, this.allowAnimatedEmoji, true, true, getContext(), true, this.info, this.sizeNotifierLayout, this.shouldDrawBackground, this.resourcesProvider, this.emojiViewFrozen, this.windowInsetsInAppController != null) { // from class: org.telegram.ui.Components.ChatActivityEnterView.69
             @Override // org.telegram.ui.Components.EmojiView, android.view.View
             public void setTranslationY(float f) {
                 super.setTranslationY(f);
@@ -12407,8 +12509,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             emojiView3.setShouldDrawBackground(false);
             this.emojiView.isNewHeightControl = true;
         }
-        this.emojiView.setDelegate(new 69());
-        this.emojiView.setDragListener(new EmojiView.DragListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.70
+        this.emojiView.setDelegate(new 70());
+        this.emojiView.setDragListener(new EmojiView.DragListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView.71
             int initialOffset;
             boolean wasExpanded;
 
@@ -12495,8 +12597,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         checkChannelRights();
     }
 
-    class 69 implements EmojiView.EmojiViewDelegate {
-        69() {
+    class 70 implements EmojiView.EmojiViewDelegate {
+        70() {
         }
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
@@ -12542,10 +12644,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
         public void onCustomEmojiSelected(final long j, final TLRPC.Document document, final String str, final boolean z) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$69$$ExternalSyntheticLambda3
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$70$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.69.this.lambda$onCustomEmojiSelected$0(str, document, j, z);
+                    ChatActivityEnterView.70.this.lambda$onCustomEmojiSelected$0(str, document, j, z);
                 }
             });
         }
@@ -12607,6 +12709,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
         public void onStickerSelected(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, int i, int i2) {
+            if (ChatActivityEnterView.this.isLiveComment) {
+                return;
+            }
             if (ChatActivityEnterView.this.trendingStickersAlert != null) {
                 ChatActivityEnterView.this.trendingStickersAlert.lambda$new$0();
                 ChatActivityEnterView.this.trendingStickersAlert = null;
@@ -12620,7 +12725,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
                     ChatActivityEnterView.this.setStickersExpanded(false, true, false);
                 }
-                ChatActivityEnterView.this.lambda$onStickerSelected$73(document, str, obj, sendAnimationData, false, z, i, 0);
+                ChatActivityEnterView.this.lambda$onStickerSelected$74(document, str, obj, sendAnimationData, false, z, i, 0);
                 if (DialogObject.isEncryptedDialog(ChatActivityEnterView.this.dialog_id) && MessageObject.isGifDocument(document)) {
                     ChatActivityEnterView.this.accountInstance.getMessagesController().saveGif(obj, document);
                     return;
@@ -12655,10 +12760,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             if (!isInScheduleMode() || i != 0) {
                 if (ChatActivityEnterView.this.slowModeTimer <= 0 || isInScheduleMode()) {
-                    AlertsCreator.ensurePaidMessageConfirmation(ChatActivityEnterView.this.currentAccount, ChatActivityEnterView.this.dialog_id, 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$69$$ExternalSyntheticLambda1
+                    AlertsCreator.ensurePaidMessageConfirmation(ChatActivityEnterView.this.currentAccount, ChatActivityEnterView.this.dialog_id, 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$70$$ExternalSyntheticLambda2
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj3) {
-                            ChatActivityEnterView.69.this.lambda$onGifSelected$3(obj, str, z, i, i2, obj2, (Long) obj3);
+                            ChatActivityEnterView.70.this.lambda$onGifSelected$3(obj, str, z, i, i2, obj2, (Long) obj3);
                         }
                     });
                     return;
@@ -12670,20 +12775,20 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     return;
                 }
             }
-            AlertsCreator.createScheduleDatePickerDialog(ChatActivityEnterView.this.parentActivity, ChatActivityEnterView.this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$69$$ExternalSyntheticLambda0
+            AlertsCreator.createScheduleDatePickerDialog(ChatActivityEnterView.this.parentActivity, ChatActivityEnterView.this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$70$$ExternalSyntheticLambda1
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                 public final void didSelectDate(boolean z2, int i3, int i4) {
-                    ChatActivityEnterView.69.this.lambda$onGifSelected$1(view, obj, str, obj2, z2, i3, i4);
+                    ChatActivityEnterView.70.this.lambda$onGifSelected$1(view, obj, str, obj2, z2, i3, i4);
                 }
             }, ChatActivityEnterView.this.resourcesProvider);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onGifSelected$3(final Object obj, final String str, final boolean z, final int i, final int i2, final Object obj2, final Long l) {
-            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$69$$ExternalSyntheticLambda4
+            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$70$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.69.this.lambda$onGifSelected$2(obj, str, z, i, i2, obj2, l);
+                    ChatActivityEnterView.70.this.lambda$onGifSelected$2(obj, str, z, i, i2, obj2, l);
                 }
             };
             if (ChatActivityEnterView.this.showConfirmAlert(runnable)) {
@@ -12751,10 +12856,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             AlertDialog.Builder builder = new AlertDialog.Builder(ChatActivityEnterView.this.parentActivity, ChatActivityEnterView.this.resourcesProvider);
             builder.setTitle(LocaleController.getString(R.string.ClearRecentEmojiTitle));
             builder.setMessage(LocaleController.getString(R.string.ClearRecentEmojiText));
-            builder.setPositiveButton(LocaleController.getString(R.string.ClearButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$69$$ExternalSyntheticLambda2
+            builder.setPositiveButton(LocaleController.getString(R.string.ClearButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$70$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    ChatActivityEnterView.69.this.lambda$onClearEmojiRecent$4(alertDialog, i);
+                    ChatActivityEnterView.70.this.lambda$onClearEmojiRecent$4(alertDialog, i);
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -12865,7 +12970,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 baseFragment = LaunchActivity.getLastFragment();
             }
             if (baseFragment != null) {
-                ChatActivityEnterView.this.trendingStickersAlert = new TrendingStickersAlert(ChatActivityEnterView.this.getContext(), baseFragment, trendingStickersLayout, ChatActivityEnterView.this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatActivityEnterView.69.1
+                ChatActivityEnterView.this.trendingStickersAlert = new TrendingStickersAlert(ChatActivityEnterView.this.getContext(), baseFragment, trendingStickersLayout, ChatActivityEnterView.this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatActivityEnterView.70.1
                     @Override // org.telegram.ui.Components.TrendingStickersAlert, org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
                     /* renamed from: dismiss */
                     public void lambda$new$0() {
@@ -12898,34 +13003,37 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
 
     @Override // org.telegram.ui.Components.StickersAlert.StickersAlertDelegate
     /* renamed from: onStickerSelected, reason: merged with bridge method [inline-methods] */
-    public void lambda$onStickerSelected$73(final TLRPC.Document document, final String str, final Object obj, final MessageObject.SendAnimationData sendAnimationData, final boolean z, final boolean z2, final int i, final int i2) {
+    public void lambda$onStickerSelected$74(final TLRPC.Document document, final String str, final Object obj, final MessageObject.SendAnimationData sendAnimationData, final boolean z, final boolean z2, final int i, final int i2) {
         ChatActivity chatActivity;
+        if (this.isLiveComment) {
+            return;
+        }
         ChatActivity.ReplyQuote replyQuote = this.replyingQuote;
         if (replyQuote != null && (chatActivity = this.parentFragment) != null && replyQuote.outdated) {
             chatActivity.showQuoteMessageUpdate();
         } else if (isInScheduleMode() && i == 0) {
-            AlertsCreator.createScheduleDatePickerDialog(this.parentActivity, this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda73
+            AlertsCreator.createScheduleDatePickerDialog(this.parentActivity, this.parentFragment.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda66
                 @Override // org.telegram.ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                 public final void didSelectDate(boolean z3, int i3, int i4) {
-                    ChatActivityEnterView.this.lambda$onStickerSelected$73(document, str, obj, sendAnimationData, z, z3, i3, i4);
+                    ChatActivityEnterView.this.lambda$onStickerSelected$74(document, str, obj, sendAnimationData, z, z3, i3, i4);
                 }
             }, this.resourcesProvider);
         } else {
-            AlertsCreator.ensurePaidMessageConfirmation(this.currentAccount, this.dialog_id, 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda74
+            AlertsCreator.ensurePaidMessageConfirmation(this.currentAccount, this.dialog_id, 1, new Utilities.Callback() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda67
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj2) {
-                    ChatActivityEnterView.this.lambda$onStickerSelected$75(document, str, sendAnimationData, z2, i, i2, obj, z, (Long) obj2);
+                    ChatActivityEnterView.this.lambda$onStickerSelected$76(document, str, sendAnimationData, z2, i, i2, obj, z, (Long) obj2);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onStickerSelected$75(final TLRPC.Document document, final String str, final MessageObject.SendAnimationData sendAnimationData, final boolean z, final int i, final int i2, final Object obj, final boolean z2, final Long l) {
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda81
+    public /* synthetic */ void lambda$onStickerSelected$76(final TLRPC.Document document, final String str, final MessageObject.SendAnimationData sendAnimationData, final boolean z, final int i, final int i2, final Object obj, final boolean z2, final Long l) {
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda82
             @Override // java.lang.Runnable
             public final void run() {
-                ChatActivityEnterView.this.lambda$onStickerSelected$74(document, str, sendAnimationData, z, i, i2, obj, l, z2);
+                ChatActivityEnterView.this.lambda$onStickerSelected$75(document, str, sendAnimationData, z, i, i2, obj, l, z2);
             }
         };
         if (showConfirmAlert(runnable)) {
@@ -12935,7 +13043,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onStickerSelected$74(TLRPC.Document document, String str, MessageObject.SendAnimationData sendAnimationData, boolean z, int i, int i2, Object obj, Long l, boolean z2) {
+    public /* synthetic */ void lambda$onStickerSelected$75(TLRPC.Document document, String str, MessageObject.SendAnimationData sendAnimationData, boolean z, int i, int i2, Object obj, Long l, boolean z2) {
         if (this.slowModeTimer > 0 && !isInScheduleMode()) {
             ChatActivityEnterViewDelegate chatActivityEnterViewDelegate = this.delegate;
             if (chatActivityEnterViewDelegate != null) {
@@ -13103,7 +13211,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda26
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ChatActivityEnterView.this.lambda$showPopup$76();
+                            ChatActivityEnterView.this.lambda$showPopup$77();
                         }
                     };
                     if (this.overrideKeyboardAnimation) {
@@ -13120,7 +13228,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         }
                         this.panelAnimation.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
                         this.panelAnimation.setDuration(250L);
-                        this.panelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.71
+                        this.panelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.72
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                             public void onAnimationEnd(Animator animator) {
                                 ChatActivityEnterView.this.panelAnimation = null;
@@ -13153,7 +13261,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda27
                             @Override // java.lang.Runnable
                             public final void run() {
-                                ChatActivityEnterView.this.lambda$showPopup$77(i);
+                                ChatActivityEnterView.this.lambda$showPopup$78(i);
                             }
                         };
                         if (!this.overrideKeyboardAnimation) {
@@ -13167,7 +13275,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             this.panelAnimation.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
                             this.panelAnimation.setDuration(250L);
                             this.notificationsLocker.lock();
-                            this.panelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.72
+                            this.panelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.73
                                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                                 public void onAnimationEnd(Animator animator) {
                                     runnable2.run();
@@ -13216,7 +13324,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         }
                         this.panelAnimation.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
                         this.panelAnimation.setDuration(250L);
-                        this.panelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.73
+                        this.panelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.74
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                             public void onAnimationEnd(Animator animator) {
                                 if (i == 0) {
@@ -13261,7 +13369,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPopup$76() {
+    public /* synthetic */ void lambda$showPopup$77() {
         ChatActivityEnterViewDelegate chatActivityEnterViewDelegate = this.delegate;
         if (chatActivityEnterViewDelegate != null) {
             chatActivityEnterViewDelegate.bottomPanelTranslationYChanged(0.0f);
@@ -13270,7 +13378,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPopup$77(int i) {
+    public /* synthetic */ void lambda$showPopup$78(int i) {
         if (i == 0) {
             this.emojiPadding = 0;
         }
@@ -13438,10 +13546,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda18
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        ChatActivityEnterView.this.lambda$setSearchingTypeInternal$78(valueAnimator2);
+                        ChatActivityEnterView.this.lambda$setSearchingTypeInternal$79(valueAnimator2);
                     }
                 });
-                this.searchAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.74
+                this.searchAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.75
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         ChatActivityEnterView.this.searchToOpenProgress = z2 ? 1.0f : 0.0f;
@@ -13459,7 +13567,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setSearchingTypeInternal$78(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$setSearchingTypeInternal$79(ValueAnimator valueAnimator) {
         this.searchToOpenProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         EmojiView emojiView = this.emojiView;
         if (emojiView != null) {
@@ -13656,7 +13764,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                                 }
                                 this.panelAnimation.setInterpolator(AdjustPanLayoutHelper.keyboardInterpolator);
                                 this.panelAnimation.setDuration(250L);
-                                this.panelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.75
+                                this.panelAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.76
                                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                                     public void onAnimationEnd(Animator animator) {
                                         ChatActivityEnterView.this.panelAnimation = null;
@@ -14093,7 +14201,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatActivityEnterView.this.lambda$checkStickresExpandHeight$79();
+                    ChatActivityEnterView.this.lambda$checkStickresExpandHeight$80();
                 }
             };
             this.emojiView.setLayerType(2, null);
@@ -14108,13 +14216,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     ((ObjectAnimator) animatorSet.getChildAnimations().get(0)).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda13
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            ChatActivityEnterView.this.lambda$checkStickresExpandHeight$80(valueAnimator);
+                            ChatActivityEnterView.this.lambda$checkStickresExpandHeight$81(valueAnimator);
                         }
                     });
                 }
                 animatorSet.setDuration(300L);
                 animatorSet.setInterpolator(CubicBezierInterpolator.DEFAULT);
-                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.76
+                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.77
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator2) {
                         ChatActivityEnterView.this.stickersExpansionAnim = null;
@@ -14145,13 +14253,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 ((ObjectAnimator) animatorSet2.getChildAnimations().get(0)).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda14
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ChatActivityEnterView.this.lambda$checkStickresExpandHeight$81(valueAnimator);
+                        ChatActivityEnterView.this.lambda$checkStickresExpandHeight$82(valueAnimator);
                     }
                 });
             }
             animatorSet2.setDuration(300L);
             animatorSet2.setInterpolator(CubicBezierInterpolator.DEFAULT);
-            animatorSet2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.77
+            animatorSet2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.78
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator2) {
                     ChatActivityEnterView.this.stickersExpansionAnim = null;
@@ -14169,7 +14277,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkStickresExpandHeight$79() {
+    public /* synthetic */ void lambda$checkStickresExpandHeight$80() {
         EmojiView emojiView = this.emojiView;
         if (emojiView != null) {
             if (this.windowInsetsInAppController == null) {
@@ -14180,12 +14288,12 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkStickresExpandHeight$80(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$checkStickresExpandHeight$81(ValueAnimator valueAnimator) {
         this.sizeNotifierLayout.invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$checkStickresExpandHeight$81(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$checkStickresExpandHeight$82(ValueAnimator valueAnimator) {
         this.sizeNotifierLayout.invalidate();
     }
 
@@ -14250,11 +14358,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         ((ObjectAnimator) animatorSet.getChildAnimations().get(0)).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda10
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                ChatActivityEnterView.this.lambda$setStickersExpanded$82(i, valueAnimator);
+                                ChatActivityEnterView.this.lambda$setStickersExpanded$83(i, valueAnimator);
                             }
                         });
                     }
-                    animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.78
+                    animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.79
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator2) {
                             ChatActivityEnterView.this.stickersExpansionAnim = null;
@@ -14301,11 +14409,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         ((ObjectAnimator) animatorSet2.getChildAnimations().get(0)).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda11
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                ChatActivityEnterView.this.lambda$setStickersExpanded$83(i, valueAnimator);
+                                ChatActivityEnterView.this.lambda$setStickersExpanded$84(i, valueAnimator);
                             }
                         });
                     }
-                    animatorSet2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.79
+                    animatorSet2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ChatActivityEnterView.80
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator2) {
                             ChatActivityEnterView.this.closeAnimationInProgress = false;
@@ -14370,13 +14478,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setStickersExpanded$82(int i, ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$setStickersExpanded$83(int i, ValueAnimator valueAnimator) {
         this.stickersExpansionProgress = Math.abs(getTranslationY() / (-(this.stickersExpandedHeight - i)));
         this.sizeNotifierLayout.invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setStickersExpanded$83(int i, ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$setStickersExpanded$84(int i, ValueAnimator valueAnimator) {
         this.stickersExpansionProgress = getTranslationY() / (-(this.stickersExpandedHeight - i));
         this.sizeNotifierLayout.invalidate();
     }
@@ -15851,19 +15959,20 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     public void setLiveComment(boolean z, boolean z2) {
-        if (z == this.isLiveComment) {
-            setSuggestionButtonVisible(z && !z2, false);
+        if (this.isLiveComment == z) {
             return;
         }
         this.isLiveComment = z;
         this.attachButton.setVisibility(z ? 8 : 0);
-        setSuggestionButtonVisible(z && !z2, false);
+        if (z) {
+            AndroidUtilities.removeFromParent(this.notifyButton);
+        }
         if (z) {
             this.audioVideoSendButton.setVisibility(8);
         } else {
             reset();
         }
+        updateFieldRight(this.lastAttachVisible);
         checkSendButton(false);
-        this.currentLimit = z ? HighlightMessageSheet.getMaxLength(this.currentAccount) : -1;
     }
 }

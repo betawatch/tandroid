@@ -516,7 +516,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     }
                     final AlertDialog alertDialog = new AlertDialog(getContext(), 3, ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider);
                     alertDialog.showDelayed(500L);
-                    TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
+                    final TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
                     getgroupcallstreamrtmpurl.live_story = true;
                     TLRPC.InputPeer inputPeer = StoryPrivacyBottomSheet.this.selectedPeer;
                     if (inputPeer == null) {
@@ -526,7 +526,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     ConnectionsManager.getInstance(((BottomSheet) StoryPrivacyBottomSheet.this).currentAccount).sendRequest(getgroupcallstreamrtmpurl, new RequestDelegate() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda20
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            StoryPrivacyBottomSheet.Page.this.lambda$new$13(alertDialog, tLObject, tL_error);
+                            StoryPrivacyBottomSheet.Page.this.lambda$new$13(alertDialog, getgroupcallstreamrtmpurl, tLObject, tL_error);
                         }
                     });
                     return;
@@ -701,14 +701,14 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             final boolean isChannel = ChatObject.isChannel(chat);
             final TLRPC.ChatFull loadChatInfoInQueue = messagesStorage.loadChatInfoInQueue(j, isChannel, true, true, 0);
             if (loadChatInfoInQueue == null || (chatParticipants = loadChatInfoInQueue.participants) == null || ((arrayList = chatParticipants.participants) != null && arrayList.size() < loadChatInfoInQueue.participants_count - 1)) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda24
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda23
                     @Override // java.lang.Runnable
                     public final void run() {
                         StoryPrivacyBottomSheet.Page.this.lambda$new$4(isChannel, j);
                     }
                 });
             } else {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda23
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda22
                     @Override // java.lang.Runnable
                     public final void run() {
                         StoryPrivacyBottomSheet.Page.this.lambda$new$5(j, loadChatInfoInQueue);
@@ -720,7 +720,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$4(boolean z, final long j) {
             if (z) {
-                MessagesController.getInstance(((BottomSheet) StoryPrivacyBottomSheet.this).currentAccount).loadChannelParticipants(Long.valueOf(j), new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda29
+                MessagesController.getInstance(((BottomSheet) StoryPrivacyBottomSheet.this).currentAccount).loadChannelParticipants(Long.valueOf(j), new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda28
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         StoryPrivacyBottomSheet.Page.this.lambda$new$3(j, (TLRPC.TL_channels_channelParticipants) obj);
@@ -779,7 +779,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$8(long j, String str) {
-            StoryPrivacyBottomSheet.this.getStoriesController().createAlbum(j, str, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda28
+            StoryPrivacyBottomSheet.this.getStoriesController().createAlbum(j, str, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda27
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     StoryPrivacyBottomSheet.Page.this.lambda$new$7((StoriesController.StoryAlbum) obj);
@@ -806,21 +806,21 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$13(final AlertDialog alertDialog, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda22
+        public /* synthetic */ void lambda$new$13(final AlertDialog alertDialog, final TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda24
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StoryPrivacyBottomSheet.Page.this.lambda$new$12(alertDialog, tLObject, tL_error);
+                    StoryPrivacyBottomSheet.Page.this.lambda$new$12(alertDialog, tLObject, getgroupcallstreamrtmpurl, tL_error);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$12(AlertDialog alertDialog, TLObject tLObject, TLRPC.TL_error tL_error) {
+        public /* synthetic */ void lambda$new$12(AlertDialog alertDialog, TLObject tLObject, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TLRPC.TL_error tL_error) {
             alertDialog.dismiss();
             if (tLObject instanceof TL_phone.groupCallStreamRtmpUrl) {
                 final CreateRtmpStreamBottomSheet[] createRtmpStreamBottomSheetArr = new CreateRtmpStreamBottomSheet[1];
-                CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet = new CreateRtmpStreamBottomSheet(getContext(), (TL_phone.groupCallStreamRtmpUrl) tLObject, StoryPrivacyBottomSheet.this.liveSettings ? null : new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda27
+                CreateRtmpStreamBottomSheet createRtmpStreamBottomSheet = new CreateRtmpStreamBottomSheet(getContext(), ((BottomSheet) StoryPrivacyBottomSheet.this).currentAccount, getgroupcallstreamrtmpurl, (TL_phone.groupCallStreamRtmpUrl) tLObject, StoryPrivacyBottomSheet.this.liveSettings ? null : new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda29
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         StoryPrivacyBottomSheet.Page.this.lambda$new$11(createRtmpStreamBottomSheetArr, (Browser.Progress) obj);
@@ -828,6 +828,11 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                 }, new DarkThemeResourceProvider());
                 createRtmpStreamBottomSheetArr[0] = createRtmpStreamBottomSheet;
                 createRtmpStreamBottomSheet.show();
+                return;
+            }
+            if (tL_error != null) {
+                StoryPrivacyBottomSheet storyPrivacyBottomSheet = StoryPrivacyBottomSheet.this;
+                BulletinFactory.of(storyPrivacyBottomSheet.container, ((BottomSheet) storyPrivacyBottomSheet).resourcesProvider).showForError(tL_error, true);
             }
         }
 

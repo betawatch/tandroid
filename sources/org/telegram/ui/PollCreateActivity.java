@@ -2169,7 +2169,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                             if (menu.findItem(android.R.id.copy) == null) {
                                 return;
                             }
-                            ChatActivity.fillActionModeMenu(menu, PollCreateActivity.this.parentFragment.getCurrentEncryptedChat(), false);
+                            ChatActivity.fillActionModeMenu(menu, PollCreateActivity.this.parentFragment.getCurrentEncryptedChat(), false, true);
                         }
                     }
 
@@ -2326,7 +2326,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                             if (menu.findItem(android.R.id.copy) == null) {
                                 return;
                             }
-                            ChatActivity.fillActionModeMenu(menu, PollCreateActivity.this.parentFragment.getCurrentEncryptedChat(), false);
+                            ChatActivity.fillActionModeMenu(menu, PollCreateActivity.this.parentFragment.getCurrentEncryptedChat(), false, true);
                         }
                     }
 
