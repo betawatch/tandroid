@@ -3988,15 +3988,15 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:36:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public /* synthetic */ void lambda$startLive$54(TLObject tLObject, TL_stories.TL_startLive tL_startLive, final boolean z, final long j, final boolean z2, TLRPC.TL_error tL_error, Runnable runnable) {
         int i;
-        TL_stories.StoryItem storyItem;
-        TLRPC.InputGroupCall inputGroupCall;
+        final TL_stories.StoryItem storyItem;
+        final TLRPC.InputGroupCall inputGroupCall;
         if (!(tLObject instanceof TLRPC.Updates)) {
             if (tL_error != null) {
                 if (tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
@@ -4035,14 +4035,16 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
             }
         }
         Iterator it2 = MessagesController.findUpdates(updates, TL_stories.TL_updateStory.class).iterator();
-        while (it2.hasNext()) {
-            TL_stories.StoryItem storyItem2 = ((TL_stories.TL_updateStory) it2.next()).story;
-            if (storyItem2 != null && (storyItem2.id == i || i == -1)) {
-                storyItem = storyItem2;
+        while (true) {
+            if (!it2.hasNext()) {
+                storyItem = null;
+                break;
+            }
+            storyItem = ((TL_stories.TL_updateStory) it2.next()).story;
+            if (storyItem != null && (storyItem.id == i || i == -1)) {
                 break;
             }
         }
-        storyItem = null;
         if (storyItem != null) {
             TLRPC.MessageMedia messageMedia = storyItem.media;
             if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
@@ -4056,12 +4058,10 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
                             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(LivePlayer.recording.getCallId()));
                         }
                     }
-                    final TL_stories.StoryItem storyItem3 = storyItem;
-                    final TLRPC.InputGroupCall inputGroupCall2 = inputGroupCall;
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryRecorder$$ExternalSyntheticLambda6
                         @Override // java.lang.Runnable
                         public final void run() {
-                            StoryRecorder.this.lambda$startLive$53(z, j, storyItem3, inputGroupCall2, z2);
+                            StoryRecorder.this.lambda$startLive$53(z, storyItem, j, inputGroupCall, z2);
                         }
                     }, 100L);
                     return;
@@ -4075,9 +4075,9 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$startLive$53(boolean z, long j, TL_stories.StoryItem storyItem, TLRPC.InputGroupCall inputGroupCall, boolean z2) {
+    public /* synthetic */ void lambda$startLive$53(boolean z, TL_stories.StoryItem storyItem, long j, TLRPC.InputGroupCall inputGroupCall, boolean z2) {
         if (!z) {
-            LivePlayer.recording = new LivePlayer(getContext(), this.currentAccount, j, storyItem.id, z, inputGroupCall, true, z2);
+            LivePlayer.recording = new LivePlayer(getContext(), this.currentAccount, storyItem, j, storyItem.id, z, inputGroupCall, true, z2);
         }
         SourceView sourceView = this.fromSourceView;
         if (sourceView != null) {

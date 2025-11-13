@@ -5191,15 +5191,15 @@ public class MessageObject {
         updateMessageText(MessagesController.getInstance(this.currentAccount).getUsers(), MessagesController.getInstance(this.currentAccount).getChats(), null, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1310:0x2145, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1314:0x214c, code lost:
     
-        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) != 0) goto L1288;
+        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) != 0) goto L1292;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1217:0x1f44  */
-    /* JADX WARN: Removed duplicated region for block: B:1232:0x1f9c  */
-    /* JADX WARN: Removed duplicated region for block: B:1234:0x1f9f  */
-    /* JADX WARN: Removed duplicated region for block: B:1407:0x003b  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x23be  */
+    /* JADX WARN: Removed duplicated region for block: B:1221:0x1f4b  */
+    /* JADX WARN: Removed duplicated region for block: B:1236:0x1fa3  */
+    /* JADX WARN: Removed duplicated region for block: B:1238:0x1fa6  */
+    /* JADX WARN: Removed duplicated region for block: B:1411:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x23c5  */
     /* JADX WARN: Removed duplicated region for block: B:299:0x0803  */
     /* JADX WARN: Removed duplicated region for block: B:308:0x0822  */
     /* JADX WARN: Removed duplicated region for block: B:326:0x0860  */
@@ -5208,19 +5208,19 @@ public class MessageObject {
     /* JADX WARN: Removed duplicated region for block: B:350:0x0870  */
     /* JADX WARN: Removed duplicated region for block: B:365:0x08fb  */
     /* JADX WARN: Removed duplicated region for block: B:373:0x0921  */
-    /* JADX WARN: Removed duplicated region for block: B:610:0x0fa3  */
-    /* JADX WARN: Removed duplicated region for block: B:614:0x0fbd  */
-    /* JADX WARN: Removed duplicated region for block: B:633:0x101b  */
-    /* JADX WARN: Removed duplicated region for block: B:634:0x102f  */
-    /* JADX WARN: Removed duplicated region for block: B:650:0x1075  */
-    /* JADX WARN: Removed duplicated region for block: B:651:0x107f  */
-    /* JADX WARN: Removed duplicated region for block: B:677:0x1181  */
-    /* JADX WARN: Removed duplicated region for block: B:679:0x118e  */
-    /* JADX WARN: Removed duplicated region for block: B:682:0x1191 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:683:0x1184  */
+    /* JADX WARN: Removed duplicated region for block: B:614:0x0faa  */
+    /* JADX WARN: Removed duplicated region for block: B:618:0x0fc4  */
+    /* JADX WARN: Removed duplicated region for block: B:637:0x1022  */
+    /* JADX WARN: Removed duplicated region for block: B:638:0x1036  */
+    /* JADX WARN: Removed duplicated region for block: B:654:0x107c  */
+    /* JADX WARN: Removed duplicated region for block: B:655:0x1086  */
+    /* JADX WARN: Removed duplicated region for block: B:681:0x1188  */
+    /* JADX WARN: Removed duplicated region for block: B:683:0x1195  */
+    /* JADX WARN: Removed duplicated region for block: B:686:0x1198 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:687:0x118b  */
     /* JADX WARN: Removed duplicated region for block: B:6:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:743:0x1279  */
-    /* JADX WARN: Removed duplicated region for block: B:763:0x1319  */
+    /* JADX WARN: Removed duplicated region for block: B:747:0x1280  */
+    /* JADX WARN: Removed duplicated region for block: B:767:0x1320  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0050  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -5753,7 +5753,7 @@ public class MessageObject {
                                                             this.messageText = replaceWithLink(replaceWithLink7, "un2", tLObject);
                                                             this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
                                                         } else if (UserObject.isUserSelf(user12)) {
-                                                            this.messageText = AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftSelf));
+                                                            this.messageText = AndroidUtilities.replaceTags(LocaleController.getString(tL_messageActionStarGift.auction_acquired ? R.string.ActionGiftAuctionSelf : R.string.ActionGiftSelf));
                                                             this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
                                                         } else {
                                                             boolean z4 = tLObject2 instanceof TLRPC.User;

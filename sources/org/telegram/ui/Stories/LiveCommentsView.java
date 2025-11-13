@@ -1560,7 +1560,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         if (!z2) {
             this.adapter.update(true);
         }
-        if (i3 <= 0 && !this.listView.canScrollVertically(1)) {
+        if (i3 <= 0 && !z2 && (!this.listView.canScrollVertically(1) || message.id < 0)) {
             this.layoutManager.scrollToPositionWithOffset(0, AndroidUtilities.dp(100.0f));
             int i6 = message.id;
             if (i6 > 0) {
@@ -1902,9 +1902,9 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:44:0x0227  */
-        /* JADX WARN: Removed duplicated region for block: B:53:0x0270  */
-        /* JADX WARN: Removed duplicated region for block: B:70:0x034f  */
+        /* JADX WARN: Removed duplicated region for block: B:44:0x022d  */
+        /* JADX WARN: Removed duplicated region for block: B:53:0x0276  */
+        /* JADX WARN: Removed duplicated region for block: B:70:0x0355  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -1963,7 +1963,9 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             if (tL_textWithEntities != null) {
                 CharSequence formatTextWithEntities = MessageObject.formatTextWithEntities(tL_textWithEntities, false, this.textView.getPaint());
                 this.text = formatTextWithEntities;
-                if (formatTextWithEntities.length() > tierOption4 && !message.fromAdmin) {
+                CharSequence superTrim = AndroidUtilities.superTrim(formatTextWithEntities);
+                this.text = superTrim;
+                if (superTrim.length() > tierOption4 && !message.fromAdmin) {
                     this.text = this.text.subSequence(0, tierOption4);
                 }
                 CharSequence charSequence = this.text;

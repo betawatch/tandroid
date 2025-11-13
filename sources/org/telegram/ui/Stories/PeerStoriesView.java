@@ -429,9 +429,9 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
 
         void requestAdjust(boolean z);
 
-        void requestPlayer(long j, int i, boolean z, TLRPC.InputGroupCall inputGroupCall, VideoPlayerSharedScope videoPlayerSharedScope);
-
         void requestPlayer(TLRPC.Document document, Uri uri, long j, VideoPlayerSharedScope videoPlayerSharedScope);
+
+        void requestPlayer(TL_stories.StoryItem storyItem, long j, int i, boolean z, TLRPC.InputGroupCall inputGroupCall, VideoPlayerSharedScope videoPlayerSharedScope);
 
         void setAllowTouchesByViewPager(boolean z);
 
@@ -8635,11 +8635,11 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         if (this.isActive) {
             if (this.currentStory.isLive()) {
                 Delegate delegate = this.delegate;
-                long j2 = this.dialogId;
                 TL_stories.StoryItem storyItem = this.currentStory.storyItem;
+                long j2 = this.dialogId;
                 int i = storyItem.id;
                 TLRPC.TL_messageMediaVideoStream tL_messageMediaVideoStream = (TLRPC.TL_messageMediaVideoStream) storyItem.media;
-                delegate.requestPlayer(j2, i, tL_messageMediaVideoStream.rtmp_stream, tL_messageMediaVideoStream.call, this.playerSharedScope);
+                delegate.requestPlayer(storyItem, j2, i, tL_messageMediaVideoStream.rtmp_stream, tL_messageMediaVideoStream.call, this.playerSharedScope);
                 this.storyContainer.invalidate();
                 return;
             }
@@ -10105,14 +10105,14 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         java.lang.NullPointerException
         */
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:280:0x052a  */
-    /* JADX WARN: Removed duplicated region for block: B:282:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:281:0x052c  */
+    /* JADX WARN: Removed duplicated region for block: B:283:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void updateViewOffsets() {
         /*
-            Method dump skipped, instructions count: 1334
+            Method dump skipped, instructions count: 1336
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.Stories.PeerStoriesView.updateViewOffsets():void");

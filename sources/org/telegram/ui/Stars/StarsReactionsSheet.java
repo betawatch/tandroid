@@ -1699,10 +1699,10 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
                     StarsReactionsSheet.StarsSlider.this.lambda$animateProgressTo$1(valueAnimator2);
                 }
             });
+            final int value = getValue();
             this.progressAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarsReactionsSheet.StarsSlider.2
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
-                    int value = StarsSlider.this.getValue();
                     StarsSlider starsSlider = StarsSlider.this;
                     starsSlider.progress = f;
                     if (starsSlider.getValue() != value) {
@@ -1715,7 +1715,7 @@ public class StarsReactionsSheet extends BottomSheet implements NotificationCent
             this.progressAnimator.setDuration(320L);
             this.progressAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
             this.progressAnimator.start();
-            if (getValue(f) != getValue()) {
+            if (getValue(f) != value) {
                 onValueChanged(getValue(f));
             }
             this.counterText.cancelAnimation();
