@@ -1034,7 +1034,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                             boolean z2 = (transitionViewHolder5 == null || transitionViewHolder5.crossfadeToAvatarImage == null) ? false : true;
                             if (!z2 || storyViewer19.progressToOpen != 0.0f) {
                                 if (transitionViewHolder5 != null && (avatarStoryParams2 = transitionViewHolder5.params) != null && avatarStoryParams2.drawnLive) {
-                                    canvas.saveLayerAlpha(this.rect3.left - AndroidUtilities.dp(4.0f), this.rect3.top - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + this.rect3.right, this.rect3.bottom + AndroidUtilities.dp(4.0f), NotificationCenter.didReplacedPhotoInMemCache, 31);
+                                    canvas.saveLayerAlpha(this.rect3.left - AndroidUtilities.dp(4.0f), this.rect3.top - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + this.rect3.right, this.rect3.bottom + AndroidUtilities.dp(4.0f), NotificationCenter.cameraInitied, 31);
                                 }
                                 peerHeaderView.backupImageView.getImageReceiver().setImageCoords(this.rect3);
                                 TransitionViewHolder transitionViewHolder6 = StoryViewer.this.transitionViewHolder;

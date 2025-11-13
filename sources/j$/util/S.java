@@ -1,7 +1,5 @@
 package j$.util;
 
-import j$.util.List;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.OptionalDouble;
 import java.util.OptionalInt;
@@ -13,14 +11,6 @@ import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
 public abstract /* synthetic */ class S {
-    public static /* synthetic */ void r(java.util.List list, Comparator comparator) {
-        if (list instanceof List) {
-            ((List) list).sort(comparator);
-        } else {
-            List.-CC.$default$sort(list, comparator);
-        }
-    }
-
     public static java.util.Optional m(Optional optional) {
         if (optional == null) {
             return null;

@@ -1124,7 +1124,7 @@ public final class BulletinFactory {
     public static Bulletin createInviteSentBulletin(Context context, FrameLayout frameLayout, int i, long j, int i2, int i3, int i4) {
         SpannableStringBuilder replaceTags;
         final Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(context, null, i3, i4);
-        int i5 = NotificationCenter.premiumPromoUpdated;
+        int i5 = NotificationCenter.currentUserPremiumStatusChanged;
         if (i > 1) {
             replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("InvLinkToChats", R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i, new Object[0])));
             lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[0]);
@@ -1298,7 +1298,7 @@ public final class BulletinFactory {
             public final void run() {
                 Bulletin.LottieLayout.this.performHapticFeedback(3, 2);
             }
-        }, NotificationCenter.premiumPromoUpdated);
+        }, NotificationCenter.currentUserPremiumStatusChanged);
         if (frameLayout != null) {
             make = Bulletin.make(frameLayout, lottieLayout, i5);
         } else if (baseFragment != null) {

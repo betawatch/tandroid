@@ -441,7 +441,7 @@ public class ChatPullingDownDrawable implements NotificationCenter.NotificationC
             }
             if (this.swipeToReleaseProgress > 0.0f && this.visibleCounterDrawable) {
                 f6 = 1.0f;
-                canvas.saveLayerAlpha(imageReceiver2.getImageX(), imageReceiver2.getImageY(), imageReceiver2.getImageWidth() + imageReceiver2.getImageX(), imageReceiver2.getImageHeight() + imageReceiver2.getImageY(), NotificationCenter.didReplacedPhotoInMemCache, 31);
+                canvas.saveLayerAlpha(imageReceiver2.getImageX(), imageReceiver2.getImageY(), imageReceiver2.getImageWidth() + imageReceiver2.getImageX(), imageReceiver2.getImageHeight() + imageReceiver2.getImageY(), NotificationCenter.cameraInitied, 31);
                 imageReceiver2.draw(canvas);
                 float f17 = this.swipeToReleaseProgress;
                 canvas.scale(f17, f17, AndroidUtilities.dp(12.0f) + f8 + this.counterDrawable.getCenterX(), (dp23 - AndroidUtilities.dp(6.0f)) + AndroidUtilities.dp(14.0f));

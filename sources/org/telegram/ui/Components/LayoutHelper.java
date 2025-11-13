@@ -1,11 +1,13 @@
 package org.telegram.ui.Components;
 
 import android.view.Gravity;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes3.dex */
 public abstract class LayoutHelper {
@@ -189,5 +191,9 @@ public abstract class LayoutHelper {
 
     public static LinearLayout.LayoutParams createLinearRelatively(float f, float f2, int i) {
         return new LinearLayout.LayoutParams(getSize(f), getSize(f2), getAbsoluteGravity(i));
+    }
+
+    public static int measureSpecExactlyDp(int i) {
+        return View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(i), TLObject.FLAG_30);
     }
 }

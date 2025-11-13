@@ -6,6 +6,7 @@ import com.google.android.gms.cast.framework.CastOptions;
 import com.google.android.gms.cast.framework.zzas;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import java.util.Map;
+import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
 public final class zzaj extends zza implements zzak {
@@ -80,7 +81,7 @@ public final class zzaj extends zza implements zzak {
         zza.writeInt(0);
         zza.writeLong(2097152L);
         zza.writeInt(5);
-        zza.writeInt(333);
+        zza.writeInt(NotificationCenter.tlSchemeParseException);
         zza.writeInt(10000);
         Parcel zzb = zzb(6, zza);
         com.google.android.gms.cast.framework.media.internal.zzi zzb2 = com.google.android.gms.cast.framework.media.internal.zzh.zzb(zzb.readStrongBinder());
@@ -99,7 +100,7 @@ public final class zzaj extends zza implements zzak {
         zza.writeInt(0);
         zza.writeLong(2097152L);
         zza.writeInt(5);
-        zza.writeInt(333);
+        zza.writeInt(NotificationCenter.tlSchemeParseException);
         zza.writeInt(10000);
         Parcel zzb = zzb(7, zza);
         com.google.android.gms.cast.framework.media.internal.zzi zzb2 = com.google.android.gms.cast.framework.media.internal.zzh.zzb(zzb.readStrongBinder());

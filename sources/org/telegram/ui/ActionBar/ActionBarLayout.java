@@ -208,7 +208,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     @Override // org.telegram.ui.ActionBar.INavigationLayout
     public /* synthetic */ void drawHeaderShadow(Canvas canvas, int i) {
-        drawHeaderShadow(canvas, NotificationCenter.didReplacedPhotoInMemCache, i);
+        drawHeaderShadow(canvas, NotificationCenter.cameraInitied, i);
     }
 
     @Override // org.telegram.ui.ActionBar.INavigationLayout
@@ -1012,28 +1012,29 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         super.dispatchDraw(canvas);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x02be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x02c2, code lost:
     
-        if (r20.overrideWidthOffset != (-1)) goto L140;
+        if (r20.overrideWidthOffset != (-1)) goto L144;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:146:0x0130, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:150:0x0130, code lost:
     
         r1 = getRootWindowInsets();
      */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x028d  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x02bb  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x02cb  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x02d1  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x031c  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x02c5  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0276  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0291  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x02bf  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x02cf  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x02d5  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0320  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x02c9  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x012b  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x00ad  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x015d  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x016c  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x0184  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x0202  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x021e  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0272  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0204  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x0226  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0231  */
     @Override // android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1170,7 +1171,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     i5 = i3;
                 } else {
                     BaseFragment lastFragment2 = getLastFragment();
-                    if (lastFragment2.isSupportEdgeToEdge() || !(lastFragment2 instanceof ProfileActivity)) {
+                    if (lastFragment2 == null || lastFragment2.isSupportEdgeToEdge() || !(lastFragment2 instanceof ProfileActivity)) {
                         f4 = 1.0f;
                         f5 = 0.0f;
                     } else {
@@ -1185,23 +1186,20 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     canvas.drawRect(Math.max(view.getTranslationX(), paddingRight + f5), getMeasuredHeight() - this.navigationBarInsetHeight, getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint);
                     internalNavbarPaint.setAlpha(alpha);
                 }
-                if (this.drawerLayoutContainer != null && !this.isLayersLayout && view == (layoutContainer2 = this.containerViewBack) && !layoutContainer2.isSupportEdgeToEdge && this.lastWindowInsetsCompat != null) {
-                    lastFragment = getLastFragment();
-                    if (!lastFragment.isSupportEdgeToEdge()) {
-                        if (lastFragment instanceof ProfileActivity) {
-                            ProfileActivity profileActivity2 = (ProfileActivity) lastFragment;
-                            f3 = profileActivity2.getInternalTranslationX();
-                            f2 = profileActivity2.getInternalVisibility();
-                        } else {
-                            f2 = 1.0f;
-                            f3 = 0.0f;
-                        }
-                        Paint internalNavbarPaint2 = this.drawerLayoutContainer.getInternalNavbarPaint();
-                        int alpha2 = internalNavbarPaint2.getAlpha();
-                        internalNavbarPaint2.setAlpha((int) (Math.min(f2, view.getAlpha()) * 255.0f));
-                        canvas.drawRect(Math.max(view.getTranslationX(), paddingRight + f3), getMeasuredHeight() - this.navigationBarInsetHeight, getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint2);
-                        internalNavbarPaint2.setAlpha(alpha2);
+                if (this.drawerLayoutContainer != null && !this.isLayersLayout && view == (layoutContainer2 = this.containerViewBack) && !layoutContainer2.isSupportEdgeToEdge && this.lastWindowInsetsCompat != null && (lastFragment = getLastFragment()) != null && !lastFragment.isSupportEdgeToEdge()) {
+                    if (lastFragment instanceof ProfileActivity) {
+                        f2 = 1.0f;
+                        f3 = 0.0f;
+                    } else {
+                        ProfileActivity profileActivity2 = (ProfileActivity) lastFragment;
+                        f3 = profileActivity2.getInternalTranslationX();
+                        f2 = profileActivity2.getInternalVisibility();
                     }
+                    Paint internalNavbarPaint2 = this.drawerLayoutContainer.getInternalNavbarPaint();
+                    int alpha2 = internalNavbarPaint2.getAlpha();
+                    internalNavbarPaint2.setAlpha((int) (Math.min(f2, view.getAlpha()) * 255.0f));
+                    canvas.drawRect(Math.max(view.getTranslationX(), paddingRight + f3), getMeasuredHeight() - this.navigationBarInsetHeight, getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint2);
+                    internalNavbarPaint2.setAlpha(alpha2);
                 }
                 if (this.drawerLayoutContainer != null && !this.isLayersLayout && view == this.sheetContainer && (emptyBaseFragment = this.sheetFragment) != null) {
                     f = this.hasSheetsAnimator.set(emptyBaseFragment.hasSheet());
@@ -1219,7 +1217,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     i7 = width - paddingRight;
                 }
                 if (view != this.containerView) {
-                    int clamp = MathUtils.clamp((i7 * NotificationCenter.didReplacedPhotoInMemCache) / AndroidUtilities.dp(20.0f), 0, NotificationCenter.didReplacedPhotoInMemCache);
+                    int clamp = MathUtils.clamp((i7 * NotificationCenter.cameraInitied) / AndroidUtilities.dp(20.0f), 0, NotificationCenter.cameraInitied);
                     if (clamp > 0) {
                         if (getBottomTabsHeight(false) == 0) {
                             i9 = ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).bottomMargin;
@@ -1259,9 +1257,13 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             }
             i5 = i3;
             if (this.drawerLayoutContainer != null) {
-                lastFragment = getLastFragment();
-                if (!lastFragment.isSupportEdgeToEdge()) {
+                if (lastFragment instanceof ProfileActivity) {
                 }
+                Paint internalNavbarPaint22 = this.drawerLayoutContainer.getInternalNavbarPaint();
+                int alpha22 = internalNavbarPaint22.getAlpha();
+                internalNavbarPaint22.setAlpha((int) (Math.min(f2, view.getAlpha()) * 255.0f));
+                canvas.drawRect(Math.max(view.getTranslationX(), paddingRight + f3), getMeasuredHeight() - this.navigationBarInsetHeight, getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint22);
+                internalNavbarPaint22.setAlpha(alpha22);
             }
             if (this.drawerLayoutContainer != null) {
                 f = this.hasSheetsAnimator.set(emptyBaseFragment.hasSheet());
@@ -2915,7 +2917,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 int green2 = Color.green(iArr[i2]);
                 int blue2 = Color.blue(iArr[i2]);
                 int i3 = size;
-                int argb = Color.argb(Math.min(NotificationCenter.didReplacedPhotoInMemCache, (int) (Color.alpha(iArr[i2]) + ((alpha - r2) * f))), Math.min(NotificationCenter.didReplacedPhotoInMemCache, (int) (red2 + ((red - red2) * f))), Math.min(NotificationCenter.didReplacedPhotoInMemCache, (int) (green2 + ((green - green2) * f))), Math.min(NotificationCenter.didReplacedPhotoInMemCache, (int) (blue2 + ((blue - blue2) * f))));
+                int argb = Color.argb(Math.min(NotificationCenter.cameraInitied, (int) (Color.alpha(iArr[i2]) + ((alpha - r2) * f))), Math.min(NotificationCenter.cameraInitied, (int) (red2 + ((red - red2) * f))), Math.min(NotificationCenter.cameraInitied, (int) (green2 + ((green - green2) * f))), Math.min(NotificationCenter.cameraInitied, (int) (blue2 + ((blue - blue2) * f))));
                 ThemeDescription themeDescription = (ThemeDescription) arrayList.get(i2);
                 themeDescription.setAnimatedColor(argb);
                 themeDescription.setColor(argb, false, false);

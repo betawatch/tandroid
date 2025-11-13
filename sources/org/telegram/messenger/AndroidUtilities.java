@@ -1592,7 +1592,7 @@ public class AndroidUtilities {
             }
             i = -16777216;
         }
-        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.didReplacedPhotoInMemCache, (i >> 8) & NotificationCenter.didReplacedPhotoInMemCache, i & NotificationCenter.didReplacedPhotoInMemCache);
+        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.cameraInitied, (i >> 8) & NotificationCenter.cameraInitied, i & NotificationCenter.cameraInitied);
         double d = rgbToHsv[1];
         rgbToHsv[1] = Math.min(1.0d, 0.05d + d + ((1.0d - d) * 0.1d));
         int[] hsvToRgb = hsvToRgb(rgbToHsv[0], rgbToHsv[1], Math.max(0.0d, rgbToHsv[2] * 0.65d));
@@ -1639,7 +1639,7 @@ public class AndroidUtilities {
 
     public static int hsvToColor(double d, double d2, double d3) {
         int[] hsvToRgb = hsvToRgb(d, d2, d3);
-        return Color.argb(NotificationCenter.didReplacedPhotoInMemCache, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
+        return Color.argb(NotificationCenter.cameraInitied, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
     }
 
     public static int[] hsvToRgb(double d, double d2, double d3) {
@@ -5066,7 +5066,7 @@ public class AndroidUtilities {
             i2 = (int) ((f5 * 255.0f) + 0.5f);
             i3 = (int) ((f7 * 255.0f) + 0.5f);
         }
-        return ((i & NotificationCenter.didReplacedPhotoInMemCache) << 16) | (-16777216) | ((i2 & NotificationCenter.didReplacedPhotoInMemCache) << 8) | (i3 & NotificationCenter.didReplacedPhotoInMemCache);
+        return ((i & NotificationCenter.cameraInitied) << 16) | (-16777216) | ((i2 & NotificationCenter.cameraInitied) << 8) | (i3 & NotificationCenter.cameraInitied);
     }
 
     public static float computePerceivedBrightness(int i) {
@@ -5387,7 +5387,7 @@ public class AndroidUtilities {
     }
 
     public static int getAverageColor(int i, int i2) {
-        return Color.argb(NotificationCenter.didReplacedPhotoInMemCache, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
+        return Color.argb(NotificationCenter.cameraInitied, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
     }
 
     public static void setLightStatusBar(Window window, boolean z) {
@@ -6388,7 +6388,7 @@ public class AndroidUtilities {
         try {
             int i = 1;
             int attributeInt = exifInterface.getAttributeInt("Orientation", 1);
-            int i2 = NotificationCenter.proxyCheckDone;
+            int i2 = NotificationCenter.proxySettingsChanged;
             switch (attributeInt) {
                 case 2:
                     i2 = 0;
@@ -6479,7 +6479,7 @@ public class AndroidUtilities {
         if (i == 0) {
             return 0;
         }
-        return Color.argb(NotificationCenter.didReplacedPhotoInMemCache, i4 / i, i3 / i, i2 / i);
+        return Color.argb(NotificationCenter.cameraInitied, i4 / i, i3 / i, i2 / i);
     }
 
     public static String translitSafe(String str) {

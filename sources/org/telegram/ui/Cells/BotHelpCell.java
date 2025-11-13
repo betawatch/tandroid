@@ -75,7 +75,7 @@ public class BotHelpCell extends View {
         this.imageReceiver = imageReceiver;
         imageReceiver.setInvalidateAll(true);
         this.imageReceiver.setCrossfadeWithOldImage(true);
-        this.imageReceiver.setCrossfadeDuration(NotificationCenter.premiumPromoUpdated);
+        this.imageReceiver.setCrossfadeDuration(NotificationCenter.currentUserPremiumStatusChanged);
         int color = Theme.getColor(Theme.key_listSelector, resourcesProvider);
         int i = SharedConfig.bubbleRadius;
         this.selectorDrawableRadius = i;

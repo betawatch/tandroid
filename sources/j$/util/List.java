@@ -7,6 +7,17 @@ import java.util.function.UnaryOperator;
 
 /* loaded from: classes2.dex */
 public interface List<E> extends Collection<E> {
+
+    public final /* synthetic */ class -EL {
+        public static /* synthetic */ void sort(java.util.List list, Comparator comparator) {
+            if (list instanceof List) {
+                ((List) list).sort(comparator);
+            } else {
+                -CC.$default$sort(list, comparator);
+            }
+        }
+    }
+
     void replaceAll(UnaryOperator<E> unaryOperator);
 
     void sort(Comparator<? super E> comparator);

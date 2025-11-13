@@ -248,7 +248,7 @@ abstract class h implements r {
         };
         WEEK_BASED_YEAR = hVar4;
         b = new h[]{hVar, hVar2, hVar3, hVar4};
-        a = new int[]{0, 90, NotificationCenter.themeUploadedToServer, NotificationCenter.newLocationAvailable, 0, 91, NotificationCenter.themeUploadError, NotificationCenter.liveLocationsCacheChanged};
+        a = new int[]{0, 90, NotificationCenter.themeUploadedToServer, NotificationCenter.liveLocationsChanged, 0, 91, NotificationCenter.themeUploadError, NotificationCenter.newLocationAvailable};
     }
 
     static w E(LocalDate localDate) {

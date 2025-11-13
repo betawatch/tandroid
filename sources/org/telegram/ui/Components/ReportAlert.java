@@ -149,6 +149,6 @@ public abstract class ReportAlert extends BottomSheet {
     public /* synthetic */ void lambda$new$1(int i, View view) {
         AndroidUtilities.hideKeyboard(this.editText);
         onSend(i, this.editText.getText().toString());
-        dismiss();
+        lambda$new$3();
     }
 }

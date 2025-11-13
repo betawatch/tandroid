@@ -243,7 +243,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             return 60;
         }
         if (i == 5) {
-            return NotificationCenter.premiumPromoUpdated;
+            return NotificationCenter.currentUserPremiumStatusChanged;
         }
         if (i == 6) {
             return 900;

@@ -112,18 +112,18 @@ public class DownloadsInfoBottomSheet extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(View view) {
-        dismiss();
+        lambda$new$3();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(BaseFragment baseFragment, View view) {
-        dismiss();
+        lambda$new$3();
         baseFragment.presentFragment(new CacheControlActivity());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(View view) {
-        dismiss();
+        lambda$new$3();
         DownloadController.getInstance(this.currentAccount).clearRecentDownloadedFiles();
     }
 }

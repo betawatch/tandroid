@@ -331,7 +331,7 @@ public class CollageLayoutButton extends ToggleButton2 {
         @Override // android.graphics.drawable.Drawable
         public void draw(Canvas canvas) {
             if (this.cross) {
-                canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, NotificationCenter.didReplacedPhotoInMemCache, 31);
+                canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, NotificationCenter.cameraInitied, 31);
             } else {
                 canvas.save();
             }

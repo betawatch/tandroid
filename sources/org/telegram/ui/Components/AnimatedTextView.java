@@ -194,7 +194,7 @@ public class AnimatedTextView extends View {
             this.animateWave = -1.0f;
             this.moveAmplitude = 0.3f;
             this.scaleAmplitude = 0.0f;
-            this.alpha = NotificationCenter.didReplacedPhotoInMemCache;
+            this.alpha = NotificationCenter.cameraInitied;
             this.bounds = new android.graphics.Rect();
             this.includeFontPadding = true;
             this.centerY = true;
@@ -249,7 +249,7 @@ public class AnimatedTextView extends View {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(this.bounds);
                 rectF.right -= this.rightPadding;
-                canvas.saveLayerAlpha(rectF, NotificationCenter.didReplacedPhotoInMemCache, 31);
+                canvas.saveLayerAlpha(rectF, NotificationCenter.cameraInitied, 31);
             }
             canvas.save();
             android.graphics.Rect rect = this.bounds;

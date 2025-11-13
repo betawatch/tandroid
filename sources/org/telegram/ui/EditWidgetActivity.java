@@ -212,7 +212,7 @@ public class EditWidgetActivity extends BaseFragment {
                     linearLayout2.addView(this.cells[i], LayoutHelper.createLinear(-1, -2));
                     i++;
                 }
-                linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(NotificationCenter.starGiftOptionsLoaded, NotificationCenter.albumsDidLoad, 17));
+                linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(218, NotificationCenter.albumsDidLoad, 17));
                 EditWidgetActivity.this.previewImageView.setImageResource(R.drawable.chats_widget_preview);
             } else if (EditWidgetActivity.this.widgetType == 1) {
                 while (i < 2) {
@@ -884,7 +884,7 @@ public class EditWidgetActivity extends BaseFragment {
                     if (i == 1 && this.oldBackgroundDrawable != null && ((BaseFragment) EditWidgetActivity.this).parentLayout != null) {
                         drawable.setAlpha((int) (255.0f * themeAnimationValue));
                     } else {
-                        drawable.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                        drawable.setAlpha(NotificationCenter.cameraInitied);
                     }
                     if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof MotionBackgroundDrawable)) {
                         drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());

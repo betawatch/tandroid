@@ -70,15 +70,17 @@ public class WallpaperBitmapProvider {
         if (drawable instanceof ChatBackgroundDrawable) {
             return updateSourceFromBackgroundViewDrawable(((ChatBackgroundDrawable) drawable).getDrawable(false));
         }
-        Canvas beginRecording = this.sourceBitmap.beginRecording(120, NotificationCenter.albumsDidLoad);
-        Rect rect = tmpRect;
-        rect.set(drawable.getBounds());
-        drawable.setBounds(0, 0, 120, NotificationCenter.albumsDidLoad);
-        drawable.draw(beginRecording);
-        drawable.setBounds(rect);
-        this.sourceBitmap.endRecording();
-        BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap = this.sourceBitmap;
-        blurredBackgroundSourceBitmap.setBitmap((Bitmap) this.blurredFromBitmap.get(blurredBackgroundSourceBitmap.getBitmap()));
+        if (drawable != null) {
+            Canvas beginRecording = this.sourceBitmap.beginRecording(120, NotificationCenter.albumsDidLoad);
+            Rect rect = tmpRect;
+            rect.set(drawable.getBounds());
+            drawable.setBounds(0, 0, 120, NotificationCenter.albumsDidLoad);
+            drawable.draw(beginRecording);
+            drawable.setBounds(rect);
+            this.sourceBitmap.endRecording();
+            BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap = this.sourceBitmap;
+            blurredBackgroundSourceBitmap.setBitmap((Bitmap) this.blurredFromBitmap.get(blurredBackgroundSourceBitmap.getBitmap()));
+        }
         return this.sourceBitmap;
     }
 
@@ -122,10 +124,10 @@ public class WallpaperBitmapProvider {
         int i4 = 0;
         for (int i5 = 0; i5 < i3; i5++) {
             int i6 = iArr[i5];
-            j4 += (i6 >>> 24) & NotificationCenter.didReplacedPhotoInMemCache;
-            j3 += (i6 >> 16) & NotificationCenter.didReplacedPhotoInMemCache;
-            j2 += (i6 >> 8) & NotificationCenter.didReplacedPhotoInMemCache;
-            j += i6 & NotificationCenter.didReplacedPhotoInMemCache;
+            j4 += (i6 >>> 24) & NotificationCenter.cameraInitied;
+            j3 += (i6 >> 16) & NotificationCenter.cameraInitied;
+            j2 += (i6 >> 8) & NotificationCenter.cameraInitied;
+            j += i6 & NotificationCenter.cameraInitied;
             i4++;
         }
         if (i4 == 0) {

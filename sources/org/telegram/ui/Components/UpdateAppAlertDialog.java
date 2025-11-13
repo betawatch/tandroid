@@ -69,7 +69,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
             @Override // android.view.ViewGroup
             public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0 && UpdateAppAlertDialog.this.scrollOffsetY != 0 && motionEvent.getY() < UpdateAppAlertDialog.this.scrollOffsetY) {
-                    UpdateAppAlertDialog.this.dismiss();
+                    UpdateAppAlertDialog.this.lambda$new$3();
                     return true;
                 }
                 return super.onInterceptTouchEvent(motionEvent);
@@ -217,18 +217,18 @@ public class UpdateAppAlertDialog extends BottomSheet {
             return;
         }
         AndroidUtilities.openForView(file, "Telegram.apk", "application/vnd.android.package-archive", findActivity, null, false);
-        dismiss();
+        lambda$new$3();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(View view) {
         ApplicationLoader.applicationLoaderInstance.downloadUpdate();
-        dismiss();
+        lambda$new$3();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(View view) {
-        dismiss();
+        lambda$new$3();
     }
 
     private void runShadowAnimation(int i, final boolean z) {

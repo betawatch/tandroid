@@ -342,7 +342,7 @@ public class Camera2Session {
                 } else if (rotation == 2) {
                     i = NotificationCenter.newEmojiSuggestionsAvailable;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.proxyCheckDone;
+                    i = NotificationCenter.proxySettingsChanged;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 if (!this.isFront) {
@@ -379,7 +379,7 @@ public class Camera2Session {
                 } else if (rotation == 2) {
                     i = NotificationCenter.newEmojiSuggestionsAvailable;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.proxyCheckDone;
+                    i = NotificationCenter.proxySettingsChanged;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 if (!this.isFront) {

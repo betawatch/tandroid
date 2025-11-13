@@ -33,6 +33,7 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
@@ -953,6 +954,10 @@ public abstract class BaseFragment {
 
     public MessagesController getMessagesController() {
         return getAccountInstance().getMessagesController();
+    }
+
+    public GiftAuctionController getGiftAuctionsController() {
+        return getAccountInstance().getGiftAuctionsController();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

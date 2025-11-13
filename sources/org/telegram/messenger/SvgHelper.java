@@ -1424,7 +1424,7 @@ public class SvgHelper {
                 f = properties.getFloat(z ? "fill-opacity" : "stroke-opacity");
             }
             if (f == null) {
-                this.paint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                this.paint.setAlpha(NotificationCenter.cameraInitied);
             } else {
                 this.paint.setAlpha((int) (f.floatValue() * 255.0f));
             }

@@ -778,7 +778,7 @@ public class ProfileActionsView extends View {
             case 7:
                 find = new Action(this, R.drawable.join, R.string.ProfileActionsJoin);
                 find.supportsLoading = true;
-                find.callDelay = NotificationCenter.premiumPromoUpdated;
+                find.callDelay = NotificationCenter.currentUserPremiumStatusChanged;
                 break;
             case 8:
                 find = new Action(this, R.drawable.report, R.string.ProfileActionsReport);
@@ -789,7 +789,7 @@ public class ProfileActionsView extends View {
                 find = new Action(this, R.drawable.leave, R.string.ProfileActionsLeave);
                 find.supportsLoading = true;
                 find.supportsAnimate = R.raw.profile_leave;
-                find.stopDelay = NotificationCenter.premiumPromoUpdated;
+                find.stopDelay = NotificationCenter.currentUserPremiumStatusChanged;
                 break;
             case 10:
                 find = new Action(this, R.drawable.live_stream, R.string.ProfileActionsVoiceChat);
@@ -809,7 +809,7 @@ public class ProfileActionsView extends View {
             case 13:
                 find = new Action(this, R.drawable.block, R.string.ProfileActionsStop);
                 find.supportsLoading = true;
-                find.stopDelay = NotificationCenter.premiumPromoUpdated;
+                find.stopDelay = NotificationCenter.currentUserPremiumStatusChanged;
                 break;
         }
         if (find != null) {

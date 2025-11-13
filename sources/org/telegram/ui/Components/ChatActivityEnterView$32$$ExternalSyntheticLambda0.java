@@ -3,10 +3,10 @@ package org.telegram.ui.Components;
 import android.app.Dialog;
 
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ChatActivityEnterView$31$$ExternalSyntheticLambda0 implements Runnable {
+public final /* synthetic */ class ChatActivityEnterView$32$$ExternalSyntheticLambda0 implements Runnable {
     public final /* synthetic */ Dialog f$0;
 
-    public /* synthetic */ ChatActivityEnterView$31$$ExternalSyntheticLambda0(Dialog dialog) {
+    public /* synthetic */ ChatActivityEnterView$32$$ExternalSyntheticLambda0(Dialog dialog) {
         this.f$0 = dialog;
     }
 

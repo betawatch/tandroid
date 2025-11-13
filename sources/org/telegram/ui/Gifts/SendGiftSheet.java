@@ -26,6 +26,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
@@ -64,6 +65,7 @@ import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.TypefaceSpan;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Gifts.AuctionBidSheet;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stars.StarGiftSheet;
@@ -73,12 +75,13 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.PreviewView;
 
 /* loaded from: classes5.dex */
-public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView implements NotificationCenter.NotificationCenterDelegate {
+public class SendGiftSheet extends BottomSheetWithRecyclerListView implements NotificationCenter.NotificationCenterDelegate, GiftAuctionController.OnAuctionUpdateListener {
     private final TLRPC.MessageAction action;
     private final ChatActionCell actionCell;
     private UniversalAdapter adapter;
     public final AnimationNotificationsLocker animationsLock;
     public boolean anonymous;
+    private GiftAuctionController.Auction auction;
     private final ButtonWithCounterView button;
     private final LinearLayout buttonContainer;
     private final ColoredImageSpan[] cachedStarSpan;
@@ -89,6 +92,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
     private final long dialogId;
     private final boolean forceNotUpgrade;
     private final boolean forceUpgrade;
+    boolean isDismissed;
     private final TextView leftTextView;
     private final TextView leftTextView2;
     private final FrameLayout limitContainer;
@@ -107,8 +111,6 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
     public boolean useStars;
     private final FrameLayout valueContainerView;
 
-    protected abstract BulletinFactory getParentBulletinFactory();
-
     public SendGiftSheet(Context context, int i, TL_stars.StarGift starGift, long j, Runnable runnable, boolean z, boolean z2) {
         this(context, i, starGift, null, j, runnable, z, z2);
     }
@@ -117,7 +119,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
         this(context, i, null, giftPremiumBottomSheet$GiftTier, j, runnable, false, false);
     }
 
-    private SendGiftSheet(Context context, final int i, final TL_stars.StarGift starGift, final GiftPremiumBottomSheet$GiftTier giftPremiumBottomSheet$GiftTier, long j, Runnable runnable, final boolean z, final boolean z2) {
+    private SendGiftSheet(final Context context, final int i, final TL_stars.StarGift starGift, final GiftPremiumBottomSheet$GiftTier giftPremiumBottomSheet$GiftTier, final long j, Runnable runnable, final boolean z, final boolean z2) {
         super(context, null, true, false, false, false, BottomSheetWithRecyclerListView.ActionBarType.SLIDING, null);
         ChatActionCell chatActionCell;
         SizeNotifierFrameLayout sizeNotifierFrameLayout;
@@ -127,6 +129,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
         this.shakeDp = -2;
         this.animationsLock = new AnimationNotificationsLocker();
         this.cachedStarSpan = new ColoredImageSpan[1];
+        this.isDismissed = false;
         boolean z3 = j == UserConfig.getInstance(i).getClientUserId();
         this.self = z3;
         setImageReceiverNumLevel(0, 4);
@@ -139,6 +142,9 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
         this.currentAccount = i;
         this.dialogId = j;
         this.starGift = starGift;
+        if (starGift != null && starGift.auction) {
+            this.auction = GiftAuctionController.getInstance(i).subscribeToGiftAuction(starGift.id, this);
+        }
         this.premiumTier = giftPremiumBottomSheet$GiftTier;
         this.closeParentSheet = runnable;
         this.forceUpgrade = z;
@@ -521,7 +527,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
-                SendGiftSheet.this.lambda$new$0(starGift, view3);
+                SendGiftSheet.this.lambda$new$0(j, context, starGift, view3);
             }
         });
         LinearLayoutManager linearLayoutManager = this.layoutManager;
@@ -539,8 +545,22 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(TL_stars.StarGift starGift, View view) {
+    public /* synthetic */ void lambda$new$0(long j, Context context, TL_stars.StarGift starGift, View view) {
         if (this.button.isLoading()) {
+            return;
+        }
+        if (this.auction != null) {
+            new AuctionBidSheet(context, this.resourcesProvider, new AuctionBidSheet.Params(j, this.anonymous, getMessage()), this.auction).show();
+            lambda$new$0();
+            if (this.isDismissed) {
+                return;
+            }
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda5
+                @Override // java.lang.Runnable
+                public final void run() {
+                    SendGiftSheet.this.lambda$new$0();
+                }
+            }, 500L);
             return;
         }
         this.button.setLoading(true);
@@ -665,6 +685,12 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
 
     /* JADX INFO: Access modifiers changed from: private */
     public void setButtonText(boolean z) {
+        if (this.auction != null) {
+            this.button.setText(LocaleController.getString(R.string.Gift2AuctionPlaceABid), z);
+            TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = this.auction.auctionStateActive;
+            this.button.setSubText(LocaleController.formatString(R.string.Gift2AuctionTimeLeft, LocaleController.formatTTLString(tL_starGiftAuctionState != null ? Math.max(0, tL_starGiftAuctionState.end_date - ConnectionsManager.getInstance(this.currentAccount).getCurrentTime()) : 0)), z);
+            return;
+        }
         if (this.starGift != null) {
             long j = StarsController.getInstance(this.currentAccount).getBalance().amount;
             TL_stars.StarGift starGift = this.starGift;
@@ -690,6 +716,19 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
         }
     }
 
+    @Override // org.telegram.messenger.GiftAuctionController.OnAuctionUpdateListener
+    public void onUpdate(GiftAuctionController.Auction auction) {
+        this.auction = auction;
+    }
+
+    protected BulletinFactory getParentBulletinFactory() {
+        BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+        if (safeLastFragment == null) {
+            return null;
+        }
+        return BulletinFactory.of(safeLastFragment);
+    }
+
     private TLRPC.TL_textWithEntities getMessage() {
         if (MessagesController.getInstance(this.currentAccount).getSendPaidMessagesStars(this.dialogId) > 0) {
             return null;
@@ -708,7 +747,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
     }
 
     private void buyStarGift() {
-        StarsController.getInstance(this.currentAccount).buyStarGift(this.starGift, this.anonymous, this.upgrade, this.dialogId, getMessage(), new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda12
+        StarsController.getInstance(this.currentAccount).buyStarGift(this.starGift, this.anonymous, this.upgrade, this.dialogId, getMessage(), new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda13
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 SendGiftSheet.this.lambda$buyStarGift$2((Boolean) obj, (String) obj2);
@@ -769,7 +808,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
         if (obj instanceof TLRPC.TL_premiumGiftCodeOption) {
             TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) obj;
             if ("XTR".equalsIgnoreCase(tL_premiumGiftCodeOption.currency)) {
-                StarsController.getInstance(this.currentAccount).buyPremiumGift(this.dialogId, tL_premiumGiftCodeOption, getMessage(), new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda5
+                StarsController.getInstance(this.currentAccount).buyPremiumGift(this.dialogId, tL_premiumGiftCodeOption, getMessage(), new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda6
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj3, Object obj4) {
                         SendGiftSheet.this.lambda$buyPremiumTier$4(user, (Boolean) obj3, (String) obj4);
@@ -791,12 +830,12 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
                     public Theme.ResourcesProvider getResourceProvider() {
                         return ((BottomSheet) SendGiftSheet.this).resourcesProvider;
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda6
+                }, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda7
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj3) {
                         SendGiftSheet.this.lambda$buyPremiumTier$6(user, (Void) obj3);
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda7
+                }, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda8
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj3) {
                         SendGiftSheet.this.lambda$buyPremiumTier$7((TLRPC.TL_error) obj3);
@@ -808,7 +847,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
         if (obj instanceof TLRPC.TL_premiumGiftOption) {
             TLRPC.TL_premiumGiftOption tL_premiumGiftOption = (TLRPC.TL_premiumGiftOption) obj;
             if ("XTR".equalsIgnoreCase(tL_premiumGiftOption.currency)) {
-                StarsController.getInstance(this.currentAccount).buyPremiumGift(this.dialogId, tL_premiumGiftOption, getMessage(), new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda8
+                StarsController.getInstance(this.currentAccount).buyPremiumGift(this.dialogId, tL_premiumGiftOption, getMessage(), new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda9
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj3, Object obj4) {
                         SendGiftSheet.this.lambda$buyPremiumTier$9(user, (Boolean) obj3, (String) obj4);
@@ -824,7 +863,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
                         if (!parse.getPath().startsWith("/$") && !parse.getPath().startsWith("/invoice/")) {
                             launchActivity.setNavigateToPremiumBot(true);
                         } else {
-                            launchActivity.setNavigateToPremiumGiftCallback(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda9
+                            launchActivity.setNavigateToPremiumGiftCallback(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda10
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     SendGiftSheet.this.lambda$buyPremiumTier$10();
@@ -845,7 +884,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
             tL_inputStorePaymentGiftPremium.user_id = MessagesController.getInstance(this.currentAccount).getInputUser(user);
             tL_inputStorePaymentGiftPremium.currency = this.premiumTier.googlePlayProductDetails.getOneTimePurchaseOfferDetails().getPriceCurrencyCode();
             tL_inputStorePaymentGiftPremium.amount = (long) ((r1.getPriceAmountMicros() / Math.pow(10.0d, 6.0d)) * Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_inputStorePaymentGiftPremium.currency)));
-            BillingController.getInstance().addResultListener(this.premiumTier.giftOption.store_product, new Consumer() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda10
+            BillingController.getInstance().addResultListener(this.premiumTier.giftOption.store_product, new Consumer() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda11
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj3) {
                     SendGiftSheet.this.lambda$buyPremiumTier$12((BillingResult) obj3);
@@ -853,7 +892,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
             });
             final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
             tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentGiftPremium;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_canPurchaseStore, new RequestDelegate() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda11
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_payments_canPurchaseStore, new RequestDelegate() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda12
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     SendGiftSheet.this.lambda$buyPremiumTier$14(tL_inputStorePaymentGiftPremium, tL_payments_canPurchaseStore, tLObject, tL_error);
@@ -871,7 +910,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
             }
             AndroidUtilities.hideKeyboard(this.messageEdit);
             lambda$new$0();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda16
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda17
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendGiftSheet.lambda$buyPremiumTier$3(TLRPC.User.this);
@@ -896,7 +935,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
         }
         lambda$new$0();
         NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.giftsToUserSent, new Object[0]);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda13
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
                 SendGiftSheet.lambda$buyPremiumTier$5(TLRPC.User.this);
@@ -924,7 +963,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
             }
             AndroidUtilities.hideKeyboard(this.messageEdit);
             lambda$new$0();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda15
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendGiftSheet.lambda$buyPremiumTier$8(TLRPC.User.this);
@@ -949,7 +988,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$buyPremiumTier$12(BillingResult billingResult) {
         if (billingResult.getResponseCode() == 0) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda17
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda18
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendGiftSheet.this.lambda$buyPremiumTier$11();
@@ -965,7 +1004,7 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$buyPremiumTier$14(final TLRPC.TL_inputStorePaymentGiftPremium tL_inputStorePaymentGiftPremium, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda14
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.SendGiftSheet$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
                 SendGiftSheet.this.lambda$buyPremiumTier$13(tLObject, tL_inputStorePaymentGiftPremium, tL_error, tL_payments_canPurchaseStore);
@@ -1139,6 +1178,10 @@ public abstract class SendGiftSheet extends BottomSheetWithRecyclerListView impl
         if (editEmojiTextCell != null) {
             editEmojiTextCell.editTextEmoji.onPause();
         }
+        if (this.auction != null) {
+            GiftAuctionController.getInstance(this.currentAccount).unsubscribeFromGiftAuction(this.auction.giftId, this);
+        }
+        this.isDismissed = true;
         super.lambda$new$0();
     }
 

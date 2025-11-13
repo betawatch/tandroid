@@ -37,4 +37,14 @@ public abstract class ReferenceUtils {
         list.add(newReference);
         return true;
     }
+
+    public static void gcReferenceList(List list) {
+        if (list != null) {
+            for (int size = list.size() - 2; size >= 0; size--) {
+                if (((Reference) list.get(size)).get() == null) {
+                    list.remove(size);
+                }
+            }
+        }
+    }
 }

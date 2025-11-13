@@ -3,9 +3,11 @@ package org.telegram.tgnet.tl;
 import java.util.ArrayList;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1;
+import org.telegram.tgnet.TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
@@ -292,6 +294,172 @@ public class TL_payments {
             outputSerializedData.writeInt32(i);
             this.peer.serializeToStream(outputSerializedData);
             outputSerializedData.writeString(this.link);
+        }
+    }
+
+    public static abstract class StarGiftActiveAuctions extends TLObject {
+        private static StarGiftActiveAuctions fromConstructor(int i) {
+            if (i == -1745778728) {
+                return new TL_starGiftActiveAuctions();
+            }
+            if (i != -617358640) {
+                return null;
+            }
+            return new TL_starGiftActiveAuctionsNotModified();
+        }
+
+        public static StarGiftActiveAuctions TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (StarGiftActiveAuctions) TLObject.TLdeserialize(StarGiftActiveAuctions.class, fromConstructor(i), inputSerializedData, i, z);
+        }
+    }
+
+    public static class TL_starGiftActiveAuctionsNotModified extends StarGiftActiveAuctions {
+        public static final int constructor = -617358640;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+        }
+    }
+
+    public static class TL_starGiftActiveAuctions extends StarGiftActiveAuctions {
+        public static final int constructor = -1745778728;
+        public ArrayList<TL_stars.TL_StarGiftActiveAuctionState> auctions = new ArrayList<>();
+        public ArrayList<TLRPC.User> users = new ArrayList<>();
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            Vector.serialize(outputSerializedData, this.auctions);
+            Vector.serialize(outputSerializedData, this.users);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.auctions = Vector.deserialize(inputSerializedData, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.tl.TL_payments$TL_starGiftActiveAuctions$$ExternalSyntheticLambda0
+                @Override // org.telegram.tgnet.Vector.TLDeserializer
+                public final TLObject deserialize(InputSerializedData inputSerializedData2, int i, boolean z2) {
+                    return TL_stars.TL_StarGiftActiveAuctionState.TLdeserialize(inputSerializedData2, i, z2);
+                }
+            }, z);
+            this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
+        }
+    }
+
+    public static class TL_StarGiftAuctionAcquiredGifts extends TLObject {
+        public static final int constructor = 2103169520;
+        public ArrayList<TL_stars.TL_StarGiftAuctionAcquiredGift> gifts = new ArrayList<>();
+        public ArrayList<TLRPC.User> users = new ArrayList<>();
+        public ArrayList<TLRPC.Chat> chats = new ArrayList<>();
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            Vector.serialize(outputSerializedData, this.gifts);
+            Vector.serialize(outputSerializedData, this.users);
+            Vector.serialize(outputSerializedData, this.chats);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.gifts = Vector.deserialize(inputSerializedData, new Vector.TLDeserializer() { // from class: org.telegram.tgnet.tl.TL_payments$TL_StarGiftAuctionAcquiredGifts$$ExternalSyntheticLambda0
+                @Override // org.telegram.tgnet.Vector.TLDeserializer
+                public final TLObject deserialize(InputSerializedData inputSerializedData2, int i, boolean z2) {
+                    return TL_stars.TL_StarGiftAuctionAcquiredGift.TLdeserialize(inputSerializedData2, i, z2);
+                }
+            }, z);
+            this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
+            this.chats = Vector.deserialize(inputSerializedData, new TLRPC$TL_channels_adminLogResults$$ExternalSyntheticLambda1(), z);
+        }
+
+        public static TL_StarGiftAuctionAcquiredGifts TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (TL_StarGiftAuctionAcquiredGifts) TLObject.TLdeserialize(TL_StarGiftAuctionAcquiredGifts.class, 2103169520 != i ? null : new TL_StarGiftAuctionAcquiredGifts(), inputSerializedData, i, z);
+        }
+    }
+
+    public static class TL_StarGiftAuctionState extends TLObject {
+        public static final int constructor = 244900980;
+        public TL_stars.StarGift gift;
+        public TL_stars.StarGiftAuctionState state;
+        public int timeout;
+        public TL_stars.TL_StarGiftAuctionUserState user_state;
+        public ArrayList<TLRPC.User> users;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.gift.serializeToStream(outputSerializedData);
+            this.state.serializeToStream(outputSerializedData);
+            this.user_state.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.timeout);
+            Vector.serialize(outputSerializedData, this.users);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+            this.gift = TL_stars.StarGift.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.state = TL_stars.StarGiftAuctionState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.user_state = TL_stars.TL_StarGiftAuctionUserState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z), z);
+            this.timeout = inputSerializedData.readInt32(z);
+            this.users = Vector.deserialize(inputSerializedData, new TLRPC$TL_attachMenuBots$$ExternalSyntheticLambda1(), z);
+        }
+
+        public static TL_StarGiftAuctionState TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
+            return (TL_StarGiftAuctionState) TLObject.TLdeserialize(TL_StarGiftAuctionState.class, 244900980 != i ? null : new TL_StarGiftAuctionState(), inputSerializedData, i, z);
+        }
+    }
+
+    public static class TL_getStarGiftAuctionState extends TLMethod<TL_StarGiftAuctionState> {
+        public static final int constructor = 1553986774;
+        public TL_stars.InputStarGiftAuction auction;
+        public int version;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.auction.serializeToStream(outputSerializedData);
+            outputSerializedData.writeInt32(this.version);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TL_StarGiftAuctionState deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TL_StarGiftAuctionState.TLdeserialize(inputSerializedData, i, z);
+        }
+    }
+
+    public static class TL_getStarGiftAuctionAcquiredGifts extends TLMethod<TL_StarGiftAuctionAcquiredGifts> {
+        public static final int constructor = 1805831148;
+        public long gift_id;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt64(this.gift_id);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public TL_StarGiftAuctionAcquiredGifts deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
+            return TL_StarGiftAuctionAcquiredGifts.TLdeserialize(inputSerializedData, i, z);
+        }
+    }
+
+    public static class TL_getStarGiftActiveAuctions extends TLMethod<StarGiftActiveAuctions> {
+        public static final int constructor = -1513074355;
+        public long hash;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt64(this.hash);
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public StarGiftActiveAuctions deserializeResponseT(InputSerializedData inputSerializedData, int i, boolean z) {
+            return StarGiftActiveAuctions.TLdeserialize(inputSerializedData, i, z);
         }
     }
 }

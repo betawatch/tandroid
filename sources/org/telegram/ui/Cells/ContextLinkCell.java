@@ -1079,7 +1079,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
             if (this.drawLinkImageView && !PhotoViewer.isShowingImage(this.inlineResult)) {
                 this.letterDrawable.setAlpha((int) ((1.0f - this.linkImageView.getCurrentAlpha()) * 255.0f));
             } else {
-                this.letterDrawable.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                this.letterDrawable.setAlpha(NotificationCenter.cameraInitied);
             }
             int i2 = this.documentAttachType;
             if (i2 == 3 || i2 == 5) {

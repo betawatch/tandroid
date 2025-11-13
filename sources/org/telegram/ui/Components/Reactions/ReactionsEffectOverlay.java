@@ -1473,7 +1473,7 @@ public class ReactionsEffectOverlay {
             AnimatedEmojiDrawable animatedEmojiDrawable = this.animatedEmojiDrawable;
             if (animatedEmojiDrawable != null) {
                 animatedEmojiDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                this.animatedEmojiDrawable.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                this.animatedEmojiDrawable.setAlpha(NotificationCenter.cameraInitied);
                 this.animatedEmojiDrawable.draw(canvas);
                 this.wasPlaying = true;
                 return;

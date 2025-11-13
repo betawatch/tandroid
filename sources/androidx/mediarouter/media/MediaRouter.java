@@ -697,7 +697,7 @@ public final class MediaRouter {
                     }
                 }
             }
-            MediaRouter.getGlobalRouter().mCallbackHandler.post(NotificationCenter.themeAccentListUpdated, this);
+            MediaRouter.getGlobalRouter().mCallbackHandler.post(NotificationCenter.didApplyNewTheme, this);
         }
 
         RouteInfo findRouteByDynamicRouteDescriptor(MediaRouteProvider.DynamicGroupRouteController.DynamicRouteDescriptor dynamicRouteDescriptor) {
@@ -955,7 +955,7 @@ public final class MediaRouter {
                 if (routeInfo != routeInfo2) {
                     return;
                 }
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.goingToPreviewTheme, routeInfo2, this.mReason);
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.needSetDayNightTheme, routeInfo2, this.mReason);
                 MediaRouteProvider.RouteController routeController = globalMediaRouter.mSelectedRouteController;
                 if (routeController != null) {
                     routeController.onUnselect(this.mReason);
@@ -982,9 +982,9 @@ public final class MediaRouter {
             globalMediaRouter.mSelectedRouteController = this.mToRouteController;
             RouteInfo routeInfo2 = this.mRequestedRoute;
             if (routeInfo2 == null) {
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.needSetDayNightTheme, new Pair(this.mFromRoute, routeInfo), this.mReason);
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.needShareTheme, new Pair(this.mFromRoute, routeInfo), this.mReason);
             } else {
-                globalMediaRouter.mCallbackHandler.post(NotificationCenter.locationPermissionGranted, new Pair(routeInfo2, routeInfo), this.mReason);
+                globalMediaRouter.mCallbackHandler.post(NotificationCenter.goingToPreviewTheme, new Pair(routeInfo2, routeInfo), this.mReason);
             }
             globalMediaRouter.mRouteControllerMap.clear();
             globalMediaRouter.maybeUpdateMemberRouteControllers();

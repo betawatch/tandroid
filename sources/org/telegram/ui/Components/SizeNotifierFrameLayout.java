@@ -276,7 +276,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                     if (i == 1 && SizeNotifierFrameLayout.this.oldBackgroundDrawable != null && SizeNotifierFrameLayout.this.parentLayout != null) {
                         drawable.setAlpha((int) (SizeNotifierFrameLayout.this.themeAnimationValue * 255.0f));
                     } else {
-                        drawable.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                        drawable.setAlpha(NotificationCenter.cameraInitied);
                     }
                     if (i == 0 ? SizeNotifierFrameLayout.this.oldBackgroundMotion : SizeNotifierFrameLayout.this.backgroundMotion) {
                         f = SizeNotifierFrameLayout.this.parallaxScale;
@@ -1127,7 +1127,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
             return;
         }
         updateBlurShaderPosition(f, z);
-        paint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+        paint.setAlpha(NotificationCenter.cameraInitied);
         if (this.blurCrossfadeProgress != 1.0f && this.selectedBlurPaint2.getShader() != null) {
             canvas.drawRect(rect, paint);
             canvas.drawRect(rect, this.selectedBlurPaint2);
@@ -1150,7 +1150,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
             return;
         }
         updateBlurShaderPosition(f, z);
-        paint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+        paint.setAlpha(NotificationCenter.cameraInitied);
         if (this.blurCrossfadeProgress != 1.0f && this.selectedBlurPaint2.getShader() != null) {
             canvas.drawCircle(f2, f3, f4, paint);
             canvas.drawCircle(f2, f3, f4, this.selectedBlurPaint2);

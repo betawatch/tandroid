@@ -137,7 +137,7 @@ class h extends g implements java.util.List, List {
     @Override // java.util.List, j$.util.List
     public final void sort(Comparator comparator) {
         synchronized (this.b) {
-            S.r(this.c, comparator);
+            List.-EL.sort(this.c, comparator);
         }
     }
 

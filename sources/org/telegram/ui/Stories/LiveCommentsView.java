@@ -6,8 +6,6 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
@@ -15,8 +13,9 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
@@ -42,6 +41,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
@@ -78,6 +78,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.Text;
 import org.telegram.ui.Components.TypefaceSpan;
 import org.telegram.ui.Components.UItem;
@@ -98,6 +99,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     public final ImageView arrowButton;
     private Bulletin.UndoButton bulletinButton;
     private Bulletin.TwoLineAnimatedLottieLayout bulletinLayout;
+    private boolean callHighlight;
     private Runnable closeBulletin;
     private ValueAnimator collapseAnimator;
     private boolean collapsed;
@@ -105,6 +107,8 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     private long dialogId;
     private final GradientClip gradientClip;
     private boolean hasTopMessages;
+    private long highlightingDialog;
+    private int highlightingMessageId;
     private TLRPC.InputGroupCall inputCall;
     private float keyboardFinalOffset;
     private float keyboardOffset;
@@ -121,9 +125,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     private boolean polling;
     private Runnable removeTopSendersRunnable;
     private boolean sentStars;
-    private final LinearGradient shadowGradient;
-    private final Matrix shadowGradientMatrix;
-    private final Paint shadowGradientPaint;
+    private final View shadowView;
     private Bulletin starsBulletin;
     private final StoryViewer storyViewer;
     private Bulletin.TimerView timerView;
@@ -135,7 +137,6 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     private final ArrayList topMessages;
     private final HashMap topPlaces;
     private long totalStars;
-    private final AnimatedFloat unfold;
     private final Runnable updateAdapters;
 
     public static class Message {
@@ -289,7 +290,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         if (j >= Long.MAX_VALUE) {
             return;
         }
-        Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda19
+        Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda18
             @Override // java.lang.Runnable
             public final void run() {
                 LiveCommentsView.this.lambda$scheduleRemovingTopSenders$0();
@@ -299,18 +300,13 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         AndroidUtilities.runOnUIThread(runnable2, j);
     }
 
-    public LiveCommentsView(Context context, final StoryViewer storyViewer, final ViewGroup viewGroup, FrameLayout frameLayout) {
+    public LiveCommentsView(Context context, final StoryViewer storyViewer, final ViewGroup viewGroup, View view, FrameLayout frameLayout) {
         super(context);
         this.messages = new ArrayList();
         this.topMessages = new ArrayList();
         this.topPlaces = new HashMap();
         this.maxReadId = -1;
         this.allowTouches = true;
-        this.shadowGradientPaint = new Paint(1);
-        this.shadowGradient = new LinearGradient(0.0f, -255.0f, 0.0f, 0.0f, new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        this.shadowGradientMatrix = new Matrix();
-        CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-        this.unfold = new AnimatedFloat(this, 420L, cubicBezierInterpolator);
         this.gradientClip = new GradientClip();
         int i = UserConfig.selectedAccount;
         this.currentAccount = i;
@@ -318,24 +314,26 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         this.pollStarsRunnable = new Runnable() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                LiveCommentsView.this.lambda$new$10();
+                LiveCommentsView.this.lambda$new$9();
             }
         };
         this.closeBulletin = new Runnable() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                LiveCommentsView.this.lambda$new$13();
+                LiveCommentsView.this.lambda$new$12();
             }
         };
         this.collapsed = false;
         this.updateAdapters = new Runnable() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                LiveCommentsView.this.lambda$new$18();
+                LiveCommentsView.this.lambda$new$17();
             }
         };
+        this.shadowView = view;
         this.storyViewer = storyViewer;
         this.topBulletinContainer = frameLayout;
+        view.setAlpha(0.5f);
         RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.Stories.LiveCommentsView.1
             @Override // android.view.View
             public void invalidate() {
@@ -400,7 +398,39 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             public final void run(Object obj, Object obj2) {
                 LiveCommentsView.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
             }
-        }, new DarkThemeResourceProvider());
+        }, new DarkThemeResourceProvider()) { // from class: org.telegram.ui.Stories.LiveCommentsView.2
+            @Override // org.telegram.ui.Components.UniversalAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
+            public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i2) {
+                super.onBindViewHolder(viewHolder, i2);
+                if (LiveCommentsView.this.callHighlight) {
+                    View view2 = viewHolder.itemView;
+                    if (view2 instanceof LiveCommentView) {
+                        LiveCommentView liveCommentView = (LiveCommentView) view2;
+                        if (liveCommentView.message == null || liveCommentView.message.id != LiveCommentsView.this.highlightingMessageId) {
+                            return;
+                        }
+                        liveCommentView.highlight();
+                        LiveCommentsView.this.callHighlight = false;
+                    }
+                }
+            }
+
+            @Override // org.telegram.ui.Components.UniversalAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
+            public void onViewAttachedToWindow(RecyclerView.ViewHolder viewHolder) {
+                super.onViewAttachedToWindow(viewHolder);
+                if (LiveCommentsView.this.callHighlight) {
+                    View view2 = viewHolder.itemView;
+                    if (view2 instanceof LiveCommentView) {
+                        LiveCommentView liveCommentView = (LiveCommentView) view2;
+                        if (liveCommentView.message == null || liveCommentView.message.id != LiveCommentsView.this.highlightingMessageId) {
+                            return;
+                        }
+                        liveCommentView.highlight();
+                        LiveCommentsView.this.callHighlight = false;
+                    }
+                }
+            }
+        };
         this.adapter = universalAdapter;
         recyclerListView.setAdapter(universalAdapter);
         universalAdapter.setApplyBackground(false);
@@ -409,13 +439,13 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         addView(recyclerListView, LayoutHelper.createFrame(-1, -1.0f, 87, 0.0f, 0.0f, 0.0f, 34.0f));
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i2) {
-                LiveCommentsView.this.lambda$new$5(viewGroup, storyViewer, view, i2);
+            public final void onItemClick(View view2, int i2) {
+                LiveCommentsView.this.lambda$new$5(viewGroup, storyViewer, view2, i2);
             }
         });
-        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.Stories.LiveCommentsView.2
+        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.Stories.LiveCommentsView.3
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
-            protected float animateByScale(View view) {
+            protected float animateByScale(View view2) {
                 return 0.5f;
             }
 
@@ -433,6 +463,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         };
         defaultItemAnimator.setSupportsChangeAnimations(false);
         defaultItemAnimator.setDelayAnimations(false);
+        CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         defaultItemAnimator.setInterpolator(cubicBezierInterpolator);
         defaultItemAnimator.setDurations(280L);
         defaultItemAnimator.setDelayIncrement(14L);
@@ -445,11 +476,16 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         imageView.setBackground(Theme.createSelectorDrawable(1090519039));
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                LiveCommentsView.this.lambda$new$6(view);
+            public final void onClick(View view2) {
+                LiveCommentsView.this.lambda$new$6(view2);
             }
         });
-        RecyclerListView recyclerListView2 = new RecyclerListView(context);
+        RecyclerListView recyclerListView2 = new RecyclerListView(context) { // from class: org.telegram.ui.Stories.LiveCommentsView.4
+            @Override // org.telegram.ui.Components.RecyclerListView
+            public Integer getSelectorColor(int i2) {
+                return 0;
+            }
+        };
         this.topListView = recyclerListView2;
         recyclerListView2.setWillNotDraw(false);
         LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(context, 0, false);
@@ -469,23 +505,23 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         addView(recyclerListView2, LayoutHelper.createFrame(-1, 26.0f, 87, 0.0f, 0.0f, 0.0f, 9.66f));
         recyclerListView2.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
-            public /* synthetic */ boolean hasDoubleTap(View view, int i2) {
-                return RecyclerListView.OnItemClickListenerExtended.-CC.$default$hasDoubleTap(this, view, i2);
+            public /* synthetic */ boolean hasDoubleTap(View view2, int i2) {
+                return RecyclerListView.OnItemClickListenerExtended.-CC.$default$hasDoubleTap(this, view2, i2);
             }
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
-            public /* synthetic */ void onDoubleTap(View view, int i2, float f, float f2) {
-                RecyclerListView.OnItemClickListenerExtended.-CC.$default$onDoubleTap(this, view, i2, f, f2);
+            public /* synthetic */ void onDoubleTap(View view2, int i2, float f, float f2) {
+                RecyclerListView.OnItemClickListenerExtended.-CC.$default$onDoubleTap(this, view2, i2, f, f2);
             }
 
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
-            public final void onItemClick(View view, int i2, float f, float f2) {
-                LiveCommentsView.this.lambda$new$8(viewGroup, storyViewer, view, i2, f, f2);
+            public final void onItemClick(View view2, int i2, float f, float f2) {
+                LiveCommentsView.this.lambda$new$7(view2, i2, f, f2);
             }
         });
-        DefaultItemAnimator defaultItemAnimator2 = new DefaultItemAnimator() { // from class: org.telegram.ui.Stories.LiveCommentsView.3
+        DefaultItemAnimator defaultItemAnimator2 = new DefaultItemAnimator() { // from class: org.telegram.ui.Stories.LiveCommentsView.5
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
-            protected float animateByScale(View view) {
+            protected float animateByScale(View view2) {
                 return 0.5f;
             }
         };
@@ -552,7 +588,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             delete(message.id);
             return;
         }
-        openDeleteMessage(getContext(), message.dialogId, new Utilities.Callback3() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda23
+        openDeleteMessage(getContext(), message.dialogId, new Utilities.Callback3() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda21
             @Override // org.telegram.messenger.Utilities.Callback3
             public final void run(Object obj, Object obj2, Object obj3) {
                 LiveCommentsView.this.lambda$new$3(message, (Boolean) obj, (Boolean) obj2, (Boolean) obj3);
@@ -591,21 +627,75 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$8(ViewGroup viewGroup, final StoryViewer storyViewer, View view, int i, float f, float f2) {
-        final TopSender topSender = ((LiveTopSenderView) view).sender;
-        ItemOptions makeOptions = ItemOptions.makeOptions(viewGroup, new DarkThemeResourceProvider(), view);
-        makeOptions.addDialog(this.currentAccount, topSender.dialogId, new Runnable() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda21
-            @Override // java.lang.Runnable
-            public final void run() {
-                LiveCommentsView.lambda$new$7(StoryViewer.this, topSender);
+    public /* synthetic */ void lambda$new$7(View view, int i, float f, float f2) {
+        int i2;
+        int i3;
+        int i4;
+        TopSender topSender = ((LiveTopSenderView) view).sender;
+        int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
+        HashSet hashSet = new HashSet();
+        int i5 = 0;
+        int i6 = 0;
+        while (true) {
+            if (i6 >= topSender.messages.size()) {
+                break;
             }
-        });
-        makeOptions.show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$7(StoryViewer storyViewer, TopSender topSender) {
-        storyViewer.presentFragment(ProfileActivity.of(topSender.dialogId));
+            Message message = (Message) topSender.messages.get(i6);
+            long j = message.stars;
+            if (j > 0 && currentTime - message.date <= HighlightMessageSheet.getTierOption(this.currentAccount, (int) j, HighlightMessageSheet.TIER_PERIOD)) {
+                hashSet.add(Integer.valueOf(message.id));
+            }
+            i6++;
+        }
+        LivePlayer livePlayer = this.livePlayer;
+        long sendPaidMessagesStars = livePlayer != null ? livePlayer.getSendPaidMessagesStars() : 0L;
+        int i7 = 0;
+        int i8 = 0;
+        while (true) {
+            i2 = -1;
+            if (i7 >= this.messages.size()) {
+                i3 = -1;
+                break;
+            }
+            Message message2 = (Message) this.messages.get(i7);
+            if (message2.fromAdmin || !message2.isReaction || message2.stars >= sendPaidMessagesStars) {
+                if (!hashSet.contains(Integer.valueOf(message2.id)) || (this.highlightingDialog == topSender.dialogId && (i4 = this.highlightingMessageId) != 0 && message2.id >= i4)) {
+                    i8++;
+                }
+            }
+            i7++;
+        }
+        if (i3 < 0) {
+            int i9 = 0;
+            while (true) {
+                if (i5 >= this.messages.size()) {
+                    break;
+                }
+                Message message3 = (Message) this.messages.get(i5);
+                if (message3.fromAdmin || !message3.isReaction || message3.stars >= sendPaidMessagesStars) {
+                    if (hashSet.contains(Integer.valueOf(message3.id))) {
+                        i2 = message3.id;
+                        break;
+                    }
+                    i9++;
+                }
+                i5++;
+            }
+            i8 = i9;
+        } else {
+            i2 = i3;
+        }
+        if (i2 < 0) {
+            return;
+        }
+        this.highlightingDialog = topSender.dialogId;
+        this.highlightingMessageId = i2;
+        this.callHighlight = true;
+        RecyclerView.ItemAnimator itemAnimator = this.listView.getItemAnimator();
+        this.listView.setItemAnimator(null);
+        this.layoutManager.scrollToPositionWithOffset(i8, this.listView.getHeight() / 2, true);
+        this.adapter.notifyItemChanged(i8);
+        this.listView.setItemAnimator(itemAnimator);
     }
 
     public int getListViewContentTop() {
@@ -689,16 +779,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             return true;
         }
         float y = this.listView.getY() + Math.max(0.0f, this.keyboardOffset - this.listView.getTop());
-        if (this.keyboardT < 1.0f) {
-            this.shadowGradientMatrix.reset();
-            this.shadowGradientMatrix.postScale(1.0f, (this.listView.getMeasuredHeight() / 2.0f) / 255.0f);
-            this.shadowGradientMatrix.postTranslate(0.0f, getHeight());
-            this.shadowGradient.setLocalMatrix(this.shadowGradientMatrix);
-            this.shadowGradientPaint.setShader(this.shadowGradient);
-            this.shadowGradientPaint.setAlpha((int) ((1.0f - this.keyboardT) * 89.25f * this.listView.getAlpha()));
-            canvas.drawRect(0.0f, getHeight() - (this.listView.getMeasuredHeight() / 2.0f), getWidth(), getHeight(), this.shadowGradientPaint);
-        }
-        canvas.saveLayerAlpha(this.listView.getX(), this.listView.getY(), this.listView.getWidth() + this.listView.getX(), this.listView.getHeight() + this.listView.getY(), NotificationCenter.didReplacedPhotoInMemCache, 31);
+        canvas.saveLayerAlpha(this.listView.getX(), this.listView.getY(), this.listView.getX() + this.listView.getWidth(), this.listView.getY() + this.listView.getHeight(), NotificationCenter.cameraInitied, 31);
         canvas.save();
         canvas.translate(0.0f, (1.0f - this.listView.getAlpha()) * Math.min((this.listView.getY() + this.listView.getHeight()) - y, getListViewTop()));
         canvas.clipRect(0.0f, y, getWidth(), getHeight());
@@ -722,10 +803,10 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         if (z) {
             ViewPropertyAnimator translationY = this.listView.animate().translationY(this.hasTopMessages ? 0.0f : AndroidUtilities.dp(35.0f));
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-            translationY.setInterpolator(cubicBezierInterpolator).setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda20
+            translationY.setInterpolator(cubicBezierInterpolator).setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda19
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    LiveCommentsView.this.lambda$updateTopMessages$9(valueAnimator);
+                    LiveCommentsView.this.lambda$updateTopMessages$8(valueAnimator);
                 }
             }).setDuration(420L).start();
             this.topListView.animate().translationY(this.hasTopMessages ? 0.0f : AndroidUtilities.dp(35.0f)).alpha(this.hasTopMessages ? 1.0f : 0.0f).setInterpolator(cubicBezierInterpolator).setDuration(420L).start();
@@ -738,7 +819,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateTopMessages$9(ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$updateTopMessages$8(ValueAnimator valueAnimator) {
         invalidate();
     }
 
@@ -835,7 +916,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: pollStars, reason: merged with bridge method [inline-methods] */
-    public void lambda$new$10() {
+    public void lambda$new$9() {
         if (this.inputCall == null || this.polling) {
             return;
         }
@@ -846,13 +927,13 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(getgroupcallstars, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda11
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                LiveCommentsView.this.lambda$pollStars$11(getgroupcallstars, (TL_phone.groupCallStars) obj, (TLRPC.TL_error) obj2);
+                LiveCommentsView.this.lambda$pollStars$10(getgroupcallstars, (TL_phone.groupCallStars) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$pollStars$11(TL_phone.getGroupCallStars getgroupcallstars, TL_phone.groupCallStars groupcallstars, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$pollStars$10(TL_phone.getGroupCallStars getgroupcallstars, TL_phone.groupCallStars groupcallstars, TLRPC.TL_error tL_error) {
         boolean z;
         this.polling = false;
         TLRPC.InputGroupCall inputGroupCall = this.inputCall;
@@ -974,7 +1055,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         if (defaultSendAs != null) {
             clientUserId = DialogObject.getPeerDialogId(defaultSendAs);
         }
-        StarsReactionsSheet starsReactionsSheet = new StarsReactionsSheet(getContext(), this.currentAccount, this.dialogId, null, null, arrayList, !z, true, clientUserId, new DarkThemeResourceProvider() { // from class: org.telegram.ui.Stories.LiveCommentsView.4
+        StarsReactionsSheet starsReactionsSheet = new StarsReactionsSheet(getContext(), this.currentAccount, this.dialogId, null, null, arrayList, !z, true, clientUserId, new DarkThemeResourceProvider() { // from class: org.telegram.ui.Stories.LiveCommentsView.6
             @Override // org.telegram.ui.Stories.DarkThemeResourceProvider
             public void appendColors() {
                 this.sparseIntArray.put(Theme.key_divider, 352321535);
@@ -984,16 +1065,16 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         starsReactionsSheet.setOnSend(new Utilities.Callback2Return() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda12
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
-                Integer lambda$openStarsSheet$12;
-                lambda$openStarsSheet$12 = LiveCommentsView.this.lambda$openStarsSheet$12((Long) obj, (Long) obj2);
-                return lambda$openStarsSheet$12;
+                Integer lambda$openStarsSheet$11;
+                lambda$openStarsSheet$11 = LiveCommentsView.this.lambda$openStarsSheet$11((Long) obj, (Long) obj2);
+                return lambda$openStarsSheet$11;
             }
         });
         starsReactionsSheet.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ Integer lambda$openStarsSheet$12(Long l, Long l2) {
+    public /* synthetic */ Integer lambda$openStarsSheet$11(Long l, Long l2) {
         this.closeBulletin.run();
         this.localStars = l2.longValue();
         Bulletin createSimpleBulletin = BulletinFactory.of(this.topBulletinContainer, new DarkThemeResourceProvider()).createSimpleBulletin(R.raw.stars_topup, getStarsToastTitle(), getStarsToastSubtitle());
@@ -1015,7 +1096,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$13() {
+    public /* synthetic */ void lambda$new$12() {
         AndroidUtilities.cancelRunOnUIThread(this.closeBulletin);
         Bulletin bulletin = this.starsBulletin;
         if (bulletin != null) {
@@ -1068,13 +1149,14 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda9
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    LiveCommentsView.this.lambda$setCollapsed$14(valueAnimator2);
+                    LiveCommentsView.this.lambda$setCollapsed$13(valueAnimator2);
                 }
             });
-            this.collapseAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.LiveCommentsView.5
+            this.collapseAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.LiveCommentsView.7
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     LiveCommentsView.this.listView.setAlpha(z ? 0.0f : 1.0f);
+                    LiveCommentsView.this.shadowView.setAlpha(z ? 0.0f : 0.5f);
                     LiveCommentsView.this.invalidate();
                 }
             });
@@ -1082,14 +1164,17 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             this.collapseAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
             this.collapseAnimator.start();
         } else {
+            this.shadowView.setAlpha(z ? 0.0f : 0.5f);
             this.listView.setAlpha(z ? 0.0f : 1.0f);
         }
         invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setCollapsed$14(ValueAnimator valueAnimator) {
-        this.listView.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+    public /* synthetic */ void lambda$setCollapsed$13(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        this.listView.setAlpha(floatValue);
+        this.shadowView.setAlpha(AndroidUtilities.lerp(0.0f, 0.5f, floatValue));
         invalidate();
     }
 
@@ -1252,11 +1337,11 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     }
 
     public int send(TLRPC.TL_textWithEntities tL_textWithEntities, long j) {
-        return lambda$send$15(getDefaultPeerId(), tL_textWithEntities, j);
+        return lambda$send$14(getDefaultPeerId(), tL_textWithEntities, j);
     }
 
     /* renamed from: send, reason: merged with bridge method [inline-methods] */
-    public int lambda$send$15(final long j, final TLRPC.TL_textWithEntities tL_textWithEntities, final long j2) {
+    public int lambda$send$14(final long j, final TLRPC.TL_textWithEntities tL_textWithEntities, final long j2) {
         long j3;
         TL_phone.groupCallDonor groupcalldonor;
         final int newMessageId = UserConfig.getInstance(this.currentAccount).getNewMessageId();
@@ -1273,7 +1358,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(sendgroupcallmessage, new RequestDelegate() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda10
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LiveCommentsView.this.lambda$send$17(sendgroupcallmessage, newMessageId, j2, j, tL_textWithEntities, tLObject, tL_error);
+                LiveCommentsView.this.lambda$send$16(sendgroupcallmessage, newMessageId, j2, j, tL_textWithEntities, tLObject, tL_error);
             }
         });
         if (this.topDonors != null && j2 > 0) {
@@ -1311,13 +1396,13 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$send$17(TL_phone.sendGroupCallMessage sendgroupcallmessage, final int i, final long j, final long j2, final TLRPC.TL_textWithEntities tL_textWithEntities, TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$send$16(TL_phone.sendGroupCallMessage sendgroupcallmessage, final int i, final long j, final long j2, final TLRPC.TL_textWithEntities tL_textWithEntities, TLObject tLObject, final TLRPC.TL_error tL_error) {
         if (!(tLObject instanceof TLRPC.Updates)) {
             if (tL_error != null) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda18
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda20
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LiveCommentsView.this.lambda$send$16(i, tL_error, j, j2, tL_textWithEntities);
+                        LiveCommentsView.this.lambda$send$15(i, tL_error, j, j2, tL_textWithEntities);
                     }
                 });
                 return;
@@ -1336,13 +1421,13 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$send$16(int i, TLRPC.TL_error tL_error, final long j, final long j2, final TLRPC.TL_textWithEntities tL_textWithEntities) {
+    public /* synthetic */ void lambda$send$15(int i, TLRPC.TL_error tL_error, final long j, final long j2, final TLRPC.TL_textWithEntities tL_textWithEntities) {
         delete(i);
         if ("BALANCE_TOO_LOW".equalsIgnoreCase(tL_error.text)) {
             new StarsIntroActivity.StarsNeededSheet(getContext(), new DarkThemeResourceProvider(), j, 17, "", new Runnable() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda22
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LiveCommentsView.this.lambda$send$15(j2, tL_textWithEntities, j);
+                    LiveCommentsView.this.lambda$send$14(j2, tL_textWithEntities, j);
                 }
             }, this.dialogId).show();
         } else {
@@ -1400,6 +1485,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     public void push(int i, int i2, boolean z, long j, TLRPC.TL_textWithEntities tL_textWithEntities, long j2, boolean z2) {
         int i3;
         TopSender topSender;
+        boolean z3;
         for (int i4 = 0; i4 < this.messages.size(); i4++) {
             if (((Message) this.messages.get(i4)).id == i2) {
                 return;
@@ -1436,9 +1522,11 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                 topSender.dialogId = j;
                 topSender.messages.add(message);
                 this.topMessages.add(0, topSender);
+                z3 = true;
             } else {
                 topSender.messages.add(message);
                 this.topListView.invalidateViews();
+                z3 = false;
             }
             topSender.updateLastSentDate();
             updateTopMessages(true);
@@ -1447,6 +1535,9 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             Collections.sort(this.topMessages, new LiveCommentsView$$ExternalSyntheticLambda0(this));
             if (!z2) {
                 this.topAdapter.update(true);
+            }
+            if (z3) {
+                this.topLayoutManager.scrollToPosition(0);
             }
         }
         if (!z2 && message.isReaction) {
@@ -1518,7 +1609,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$18() {
+    public /* synthetic */ void lambda$new$17() {
         this.adapter.update(true);
         this.topAdapter.update(true);
     }
@@ -1535,9 +1626,9 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda13
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$updateMessagesPlaces$19;
-                lambda$updateMessagesPlaces$19 = LiveCommentsView.lambda$updateMessagesPlaces$19((TL_phone.groupCallDonor) obj, (TL_phone.groupCallDonor) obj2);
-                return lambda$updateMessagesPlaces$19;
+                int lambda$updateMessagesPlaces$18;
+                lambda$updateMessagesPlaces$18 = LiveCommentsView.lambda$updateMessagesPlaces$18((TL_phone.groupCallDonor) obj, (TL_phone.groupCallDonor) obj2);
+                return lambda$updateMessagesPlaces$18;
             }
         });
         int i = TLObject.FLAG_31;
@@ -1591,7 +1682,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$updateMessagesPlaces$19(TL_phone.groupCallDonor groupcalldonor, TL_phone.groupCallDonor groupcalldonor2) {
+    public static /* synthetic */ int lambda$updateMessagesPlaces$18(TL_phone.groupCallDonor groupcalldonor, TL_phone.groupCallDonor groupcalldonor2) {
         return (int) (groupcalldonor2.stars - groupcalldonor.stars);
     }
 
@@ -1599,17 +1690,21 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         return ((Integer) Map.-EL.getOrDefault(this.topPlaces, Long.valueOf(j), 0)).intValue();
     }
 
-    public static class LiveCommentView extends LinearLayout implements ItemOptions.ScrimView {
+    public static class LiveCommentView extends FrameLayout implements ItemOptions.ScrimView {
         public final LinearLayout adminLayout;
         public final SpoilersTextView adminNameView;
         public final SpoilersTextView adminRoleView;
         public final AvatarDrawable avatarDrawable;
         public final BackupImageView avatarView;
+        public Drawable background;
         private final Paint backgroundPaint;
+        public float backgroundViewAlpha;
         private final int currentAccount;
         private boolean drawParticles;
         private boolean drawStar;
         private final boolean filled;
+        private ValueAnimator highlightAnimator;
+        private int highlightingMessageId;
         public final LinearLayout layout;
         private Message message;
         public final TextView smallStarsView;
@@ -1648,12 +1743,12 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             super(context);
             this.drawParticles = false;
             this.drawStar = true;
+            this.backgroundViewAlpha = 0.5f;
             this.starsViewCache = new ColoredImageSpan[1];
             this.smallStarsViewCache = new ColoredImageSpan[1];
             this.backgroundPaint = new Paint(1);
             this.currentAccount = i;
             this.filled = z;
-            setOrientation(0);
             LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.Stories.LiveCommentsView.LiveCommentView.1
                 Path clipPath = new Path();
                 StarsReactionsSheet.Particles particles;
@@ -1682,7 +1777,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             };
             this.layout = linearLayout;
             linearLayout.setOrientation(0);
-            addView(linearLayout, LayoutHelper.createLinear(-2, -2, 51, 0.0f, 0.5f, 0.0f, 0.5f));
+            addView(linearLayout, LayoutHelper.createFrame(-2, -2.0f, 51, 0.0f, 0.5f, 0.0f, 0.5f));
             this.avatarDrawable = new AvatarDrawable();
             BackupImageView backupImageView = new BackupImageView(context);
             this.avatarView = backupImageView;
@@ -1733,21 +1828,103 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             linearLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 0.0f, 85, 0, 3, 10, 0));
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:40:0x0207  */
-        /* JADX WARN: Removed duplicated region for block: B:49:0x024d  */
-        /* JADX WARN: Removed duplicated region for block: B:70:0x0333  */
+        public void highlight() {
+            ValueAnimator valueAnimator = this.highlightAnimator;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.highlightAnimator = null;
+                Drawable drawable = this.background;
+                if (drawable != null) {
+                    drawable.setAlpha((int) (this.backgroundViewAlpha * 255.0f));
+                    this.layout.invalidate();
+                }
+            }
+            Message message = this.message;
+            if (message == null || this.background == null) {
+                return;
+            }
+            this.highlightingMessageId = message.id;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.highlightAnimator = ofFloat;
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$LiveCommentView$$ExternalSyntheticLambda1
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                    LiveCommentsView.LiveCommentView.this.lambda$highlight$0(valueAnimator2);
+                }
+            });
+            this.highlightAnimator.addListener(new 2());
+            this.highlightAnimator.setDuration(350L);
+            this.highlightAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+            this.highlightAnimator.start();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$highlight$0(ValueAnimator valueAnimator) {
+            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+            Drawable drawable = this.background;
+            if (drawable != null) {
+                drawable.setAlpha((int) (AndroidUtilities.lerp(this.backgroundViewAlpha, 1.0f, floatValue) * 255.0f));
+                this.layout.invalidate();
+            }
+        }
+
+        class 2 extends AnimatorListenerAdapter {
+            2() {
+            }
+
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationEnd(Animator animator) {
+                if (LiveCommentView.this.message == null || LiveCommentView.this.highlightingMessageId != LiveCommentView.this.message.id) {
+                    return;
+                }
+                LiveCommentView.this.highlightAnimator = ValueAnimator.ofFloat(0.0f, 1.0f);
+                LiveCommentView.this.highlightAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$LiveCommentView$2$$ExternalSyntheticLambda0
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        LiveCommentsView.LiveCommentView.2.this.lambda$onAnimationEnd$0(valueAnimator);
+                    }
+                });
+                LiveCommentView.this.highlightAnimator.setStartDelay(3000L);
+                LiveCommentView.this.highlightAnimator.setDuration(550L);
+                LiveCommentView.this.highlightAnimator.setInterpolator(new LinearInterpolator());
+                LiveCommentView.this.highlightAnimator.start();
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public /* synthetic */ void lambda$onAnimationEnd$0(ValueAnimator valueAnimator) {
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                LiveCommentView liveCommentView = LiveCommentView.this;
+                Drawable drawable = liveCommentView.background;
+                if (drawable != null) {
+                    drawable.setAlpha((int) (AndroidUtilities.lerp(1.0f, liveCommentView.backgroundViewAlpha, floatValue) * 255.0f));
+                    LiveCommentView.this.layout.invalidate();
+                }
+            }
+        }
+
+        /* JADX WARN: Removed duplicated region for block: B:44:0x0227  */
+        /* JADX WARN: Removed duplicated region for block: B:53:0x0270  */
+        /* JADX WARN: Removed duplicated region for block: B:70:0x034f  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public void set(Message message) {
+            ValueAnimator valueAnimator;
             String str;
-            int i;
-            int i2;
-            CharSequence charSequence;
+            String str2;
             long j;
-            int i3;
+            int i;
             long j2;
             this.message = message;
+            if ((message == null || this.highlightingMessageId != message.id) && (valueAnimator = this.highlightAnimator) != null) {
+                valueAnimator.cancel();
+                this.highlightAnimator = null;
+                Drawable drawable = this.background;
+                if (drawable != null) {
+                    drawable.setAlpha((int) (this.backgroundViewAlpha * 255.0f));
+                    this.layout.invalidate();
+                }
+            }
             if (message.dialogId >= 0) {
                 TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(message.dialogId));
                 this.avatarDrawable.setInfo(user);
@@ -1763,6 +1940,8 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             int tierOption2 = HighlightMessageSheet.getTierOption(this.currentAccount, (int) message.stars, HighlightMessageSheet.TIER_COLOR2);
             int tierOption3 = HighlightMessageSheet.getTierOption(this.currentAccount, (int) message.stars, HighlightMessageSheet.TIER_COLOR_BACKGROUND);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            String str3 = " ";
+            String str4 = str;
             if (!message.fromAdmin || message.stars > 0) {
                 if (message.place > 0) {
                     spannableStringBuilder.append((CharSequence) ("#" + message.place));
@@ -1771,20 +1950,14 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                     spannableStringBuilder.setSpan(coloredImageSpan, 0, spannableStringBuilder.length(), 33);
                     spannableStringBuilder.append((CharSequence) "\u2009");
                 }
-                spannableStringBuilder.append(TextUtils.ellipsize(str, this.textView.getPaint(), AndroidUtilities.dp(100.0f), TextUtils.TruncateAt.END));
+                spannableStringBuilder.append(TextUtils.ellipsize(str4, this.textView.getPaint(), AndroidUtilities.dp(100.0f), TextUtils.TruncateAt.END));
                 if (this.filled) {
-                    i = 33;
-                    i2 = 0;
                     spannableStringBuilder.setSpan(new AlphaSpan(0.75f), 0, spannableStringBuilder.length(), 33);
-                } else {
-                    i = 33;
-                    i2 = 0;
                 }
-                spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.bold()), i2, spannableStringBuilder.length(), i);
+                spannableStringBuilder.setSpan(new TypefaceSpan(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
                 spannableStringBuilder.append((CharSequence) " ");
             }
             int tierOption4 = HighlightMessageSheet.getTierOption(this.currentAccount, (int) message.stars, HighlightMessageSheet.TIER_LENGTH);
-            CharSequence charSequence2 = " ";
             int tierOption5 = HighlightMessageSheet.getTierOption(this.currentAccount, (int) message.stars, HighlightMessageSheet.TIER_EMOJIS);
             TLRPC.TL_textWithEntities tL_textWithEntities = message.text;
             if (tL_textWithEntities != null) {
@@ -1793,29 +1966,29 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                 if (formatTextWithEntities.length() > tierOption4 && !message.fromAdmin) {
                     this.text = this.text.subSequence(0, tierOption4);
                 }
-                CharSequence charSequence3 = this.text;
-                if (charSequence3 instanceof Spannable) {
-                    Spannable spannable = (Spannable) charSequence3;
-                    AnimatedEmojiSpan[] animatedEmojiSpanArr = (AnimatedEmojiSpan[]) spannable.getSpans(0, charSequence3.length(), AnimatedEmojiSpan.class);
+                CharSequence charSequence = this.text;
+                if (charSequence instanceof Spannable) {
+                    Spannable spannable = (Spannable) charSequence;
+                    AnimatedEmojiSpan[] animatedEmojiSpanArr = (AnimatedEmojiSpan[]) spannable.getSpans(0, charSequence.length(), AnimatedEmojiSpan.class);
                     Emoji.EmojiSpan[] emojiSpanArr = (Emoji.EmojiSpan[]) spannable.getSpans(0, this.text.length(), Emoji.EmojiSpan.class);
                     if (animatedEmojiSpanArr.length + emojiSpanArr.length > tierOption5 && !message.fromAdmin) {
                         ArrayList arrayList = new ArrayList();
-                        int i4 = 0;
-                        while (i4 < animatedEmojiSpanArr.length) {
-                            arrayList.add(new Pair(Integer.valueOf(spannable.getSpanStart(animatedEmojiSpanArr[i4])), Integer.valueOf(spannable.getSpanEnd(animatedEmojiSpanArr[i4]))));
-                            i4++;
-                            charSequence2 = charSequence2;
+                        int i2 = 0;
+                        while (i2 < animatedEmojiSpanArr.length) {
+                            arrayList.add(new Pair(Integer.valueOf(spannable.getSpanStart(animatedEmojiSpanArr[i2])), Integer.valueOf(spannable.getSpanEnd(animatedEmojiSpanArr[i2]))));
+                            i2++;
+                            str3 = str3;
                         }
-                        charSequence = charSequence2;
-                        for (int i5 = 0; i5 < emojiSpanArr.length; i5++) {
-                            arrayList.add(new Pair(Integer.valueOf(spannable.getSpanStart(emojiSpanArr[i5])), Integer.valueOf(spannable.getSpanEnd(emojiSpanArr[i5]))));
+                        str2 = str3;
+                        for (int i3 = 0; i3 < emojiSpanArr.length; i3++) {
+                            arrayList.add(new Pair(Integer.valueOf(spannable.getSpanStart(emojiSpanArr[i3])), Integer.valueOf(spannable.getSpanEnd(emojiSpanArr[i3]))));
                         }
                         Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Stories.LiveCommentsView$LiveCommentView$$ExternalSyntheticLambda0
                             @Override // java.util.Comparator
                             public final int compare(Object obj, Object obj2) {
-                                int lambda$set$0;
-                                lambda$set$0 = LiveCommentsView.LiveCommentView.lambda$set$0((Pair) obj, (Pair) obj2);
-                                return lambda$set$0;
+                                int lambda$set$1;
+                                lambda$set$1 = LiveCommentsView.LiveCommentView.lambda$set$1((Pair) obj, (Pair) obj2);
+                                return lambda$set$1;
                             }
                         });
                         if (!(this.text instanceof SpannableStringBuilder)) {
@@ -1831,22 +2004,23 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                         spannableStringBuilder.append(this.text);
                     }
                 }
-                charSequence = charSequence2;
+                str2 = " ";
                 if (!message.fromAdmin) {
                 }
                 spannableStringBuilder.append(this.text);
             } else {
-                charSequence = charSequence2;
+                str2 = " ";
                 this.text = "";
             }
             SpoilersTextView spoilersTextView = this.textView;
             spoilersTextView.setText(Emoji.replaceEmoji(spannableStringBuilder, spoilersTextView.getPaint().getFontMetricsInt(), false));
+            this.background = null;
             LinearLayout linearLayout = this.adminLayout;
             if (message.fromAdmin) {
                 j = 0;
                 if (message.stars <= 0) {
-                    i3 = 0;
-                    linearLayout.setVisibility(i3);
+                    i = 0;
+                    linearLayout.setVisibility(i);
                     j2 = message.stars;
                     if (j2 <= j) {
                         LinearLayout linearLayout2 = this.layout;
@@ -1855,7 +2029,14 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                         linearLayout2.setWillNotDraw(!z);
                         this.layout.invalidate();
                         this.textView.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
-                        this.layout.setBackground(Theme.createRoundRectGradientDrawable(AndroidUtilities.dp(13.0f), Theme.multAlpha(tierOption, !this.filled ? 0.65f : 1.0f), Theme.multAlpha(tierOption2, !this.filled ? 0.65f : 1.0f)));
+                        LinearLayout linearLayout3 = this.layout;
+                        GradientDrawable createRoundRectGradientDrawable = Theme.createRoundRectGradientDrawable(AndroidUtilities.dp(13.0f), tierOption, tierOption2);
+                        this.background = createRoundRectGradientDrawable;
+                        linearLayout3.setBackground(createRoundRectGradientDrawable);
+                        Drawable drawable2 = this.background;
+                        float f = !this.filled ? 0.65f : 1.0f;
+                        this.backgroundViewAlpha = f;
+                        drawable2.setAlpha((int) (f * 255.0f));
                         if (!message.isReaction) {
                             this.smallStarsView.setVisibility(0);
                             this.smallStarsView.setText(StarsIntroActivity.replaceStars("⭐️ " + LocaleController.formatNumber(message.stars, ','), 0.75f, this.smallStarsViewCache, 0.0f, 0.0f, 1.0f));
@@ -1873,34 +2054,40 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                             }
                         }
                     } else if (message.fromAdmin) {
-                        LinearLayout linearLayout3 = this.layout;
+                        LinearLayout linearLayout4 = this.layout;
                         this.drawParticles = false;
-                        linearLayout3.setWillNotDraw(true);
-                        this.layout.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), Theme.multAlpha(-16777216, 0.5f)));
+                        linearLayout4.setWillNotDraw(true);
+                        LinearLayout linearLayout5 = this.layout;
+                        ShapeDrawable createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), -16777216);
+                        this.background = createRoundRectDrawable;
+                        linearLayout5.setBackground(createRoundRectDrawable);
+                        Drawable drawable3 = this.background;
+                        this.backgroundViewAlpha = 0.5f;
+                        drawable3.setAlpha((int) 127.5f);
                         this.textView.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
                         spannableStringBuilder2.append((CharSequence) DialogObject.getName(this.currentAccount, message.dialogId));
-                        spannableStringBuilder2.append(charSequence);
+                        spannableStringBuilder2.append((CharSequence) str2);
                         int length = spannableStringBuilder2.length();
                         spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.LiveStoryBadge));
-                        spannableStringBuilder2.setSpan(new ReplacementSpan() { // from class: org.telegram.ui.Stories.LiveCommentsView.LiveCommentView.2
+                        spannableStringBuilder2.setSpan(new ReplacementSpan() { // from class: org.telegram.ui.Stories.LiveCommentsView.LiveCommentView.3
                             private final RectF rect = new RectF();
                             private final Paint bg = new Paint(1);
                             private final Text text = new Text(LocaleController.getString(R.string.LiveStoryBadge), 8.0f, AndroidUtilities.bold());
 
                             @Override // android.text.style.ReplacementSpan
-                            public int getSize(Paint paint, CharSequence charSequence4, int i6, int i7, Paint.FontMetricsInt fontMetricsInt) {
+                            public int getSize(Paint paint, CharSequence charSequence2, int i4, int i5, Paint.FontMetricsInt fontMetricsInt) {
                                 return (int) (this.text.getWidth() + AndroidUtilities.dp(8.0f));
                             }
 
                             @Override // android.text.style.ReplacementSpan
-                            public void draw(Canvas canvas, CharSequence charSequence4, int i6, int i7, float f, int i8, int i9, int i10, Paint paint) {
-                                float dp = ((i8 + i10) / 2.0f) + AndroidUtilities.dp(0.0f);
-                                this.rect.set(f, dp - AndroidUtilities.dp(6.0f), this.text.getWidth() + f + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(6.0f) + dp);
+                            public void draw(Canvas canvas, CharSequence charSequence2, int i4, int i5, float f2, int i6, int i7, int i8, Paint paint) {
+                                float dp = ((i6 + i8) / 2.0f) + AndroidUtilities.dp(0.0f);
+                                this.rect.set(f2, dp - AndroidUtilities.dp(6.0f), this.text.getWidth() + f2 + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(6.0f) + dp);
                                 this.bg.setColor(-572850);
                                 RectF rectF = this.rect;
                                 canvas.drawRoundRect(rectF, rectF.height() / 2.0f, this.rect.height() / 2.0f, this.bg);
-                                this.text.draw(canvas, AndroidUtilities.dp(4.0f) + f, dp, -1, 1.0f);
+                                this.text.draw(canvas, AndroidUtilities.dp(4.0f) + f2, dp, -1, 1.0f);
                             }
                         }, length, spannableStringBuilder2.length(), 33);
                         this.adminNameView.setText(spannableStringBuilder2);
@@ -1908,11 +2095,13 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                         this.smallStarsView.setVisibility(8);
                         this.starsView.setVisibility(8);
                     } else {
-                        LinearLayout linearLayout4 = this.layout;
+                        LinearLayout linearLayout6 = this.layout;
                         this.drawParticles = false;
-                        linearLayout4.setWillNotDraw(true);
+                        linearLayout6.setWillNotDraw(true);
                         this.textView.setShadowLayer(AndroidUtilities.dp(2.5f), 0.0f, AndroidUtilities.dp(1.5f), Theme.multAlpha(-16777216, 0.6f));
-                        this.layout.setBackground(null);
+                        LinearLayout linearLayout7 = this.layout;
+                        this.background = null;
+                        linearLayout7.setBackground(null);
                         this.smallStarsView.setVisibility(8);
                         this.starsView.setVisibility(8);
                     }
@@ -1921,8 +2110,8 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             } else {
                 j = 0;
             }
-            i3 = 8;
-            linearLayout.setVisibility(i3);
+            i = 8;
+            linearLayout.setVisibility(i);
             j2 = message.stars;
             if (j2 <= j) {
             }
@@ -1930,7 +2119,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$set$0(Pair pair, Pair pair2) {
+        public static /* synthetic */ int lambda$set$1(Pair pair, Pair pair2) {
             return ((Integer) pair.first).intValue() - ((Integer) pair2.first).intValue();
         }
 
@@ -1958,7 +2147,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             draw(canvas);
         }
 
-        @Override // android.widget.LinearLayout, android.view.View
+        @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             super.onMeasure(i, i2);
             setPivotX(0.0f);
@@ -2005,10 +2194,12 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
 
         public LiveTopSenderView(Context context) {
             super(context);
+            ScaleStateListAnimator.apply(this);
             LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.Stories.LiveCommentsView.LiveTopSenderView.1
                 StarsReactionsSheet.Particles particles;
                 final Path clipPath = new Path();
                 final Paint fillPaint = new Paint(1);
+                long lastDialogId = 0;
                 final AnimatedFloat animatedProgress = new AnimatedFloat(this, 0, 1000, new LinearInterpolator());
 
                 @Override // android.view.ViewGroup, android.view.View
@@ -2023,7 +2214,11 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                         int tierOption = HighlightMessageSheet.getTierOption(LiveTopSenderView.this.sender.currentAccount, LiveTopSenderView.this.sender.getStars(), HighlightMessageSheet.TIER_COLOR1);
                         int tierOption2 = HighlightMessageSheet.getTierOption(LiveTopSenderView.this.sender.currentAccount, LiveTopSenderView.this.sender.getStars(), HighlightMessageSheet.TIER_COLOR_BACKGROUND);
                         canvas.drawColor(tierOption);
+                        if (this.lastDialogId != LiveTopSenderView.this.sender.dialogId) {
+                            this.animatedProgress.force(LiveTopSenderView.this.sender.getProgress());
+                        }
                         float f = this.animatedProgress.set(LiveTopSenderView.this.sender.getProgress());
+                        this.lastDialogId = LiveTopSenderView.this.sender.dialogId;
                         this.fillPaint.setColor(tierOption2);
                         this.fillPaint.setAlpha(NotificationCenter.messageTranslated);
                         canvas.drawRect(getWidth() * f, 0.0f, getWidth(), getHeight(), this.fillPaint);
@@ -2052,8 +2247,29 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             this.crownView = imageView;
             imageView.setVisibility(8);
             linearLayout.addView(imageView, LayoutHelper.createLinear(18, 18, 19, 0, 0, 3, 0));
-            TextView textView = new TextView(context);
+            TextView textView = new TextView(context) { // from class: org.telegram.ui.Stories.LiveCommentsView.LiveTopSenderView.2
+                private final GradientClip clip = new GradientClip();
+
+                @Override // android.widget.TextView, android.view.View
+                protected void onMeasure(int i, int i2) {
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31), i2);
+                }
+
+                @Override // android.widget.TextView, android.view.View
+                protected void onDraw(Canvas canvas) {
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.cameraInitied, 31);
+                    super.onDraw(canvas);
+                    canvas.save();
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set(getWidth() - AndroidUtilities.dp(15.0f), 0.0f, getWidth(), getHeight());
+                    this.clip.draw(canvas, rectF, 2, 1.0f);
+                    canvas.restore();
+                    canvas.restore();
+                }
+            };
             this.textView = textView;
+            textView.setLines(1);
+            textView.setSingleLine();
             textView.setTextColor(-1);
             textView.setTextSize(1, 14.0f);
             textView.setTypeface(AndroidUtilities.bold());
@@ -2129,7 +2345,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         @Override // android.graphics.drawable.Drawable
         public void draw(Canvas canvas) {
             Rect bounds = getBounds();
-            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.didReplacedPhotoInMemCache, 31);
+            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.cameraInitied, 31);
             this.crown.setBounds(bounds);
             this.crown.draw(canvas);
             this.text.draw(canvas, bounds.centerX() - (this.text.getCurrentWidth() / 2.0f), bounds.centerY() + AndroidUtilities.dp(0.15f), -1, this.crown.getAlpha() / 255.0f);
@@ -2163,7 +2379,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     }
 
     public static void openDeleteMessage(Context context, long j, final Utilities.Callback3 callback3) {
-        DarkThemeResourceProvider darkThemeResourceProvider = new DarkThemeResourceProvider() { // from class: org.telegram.ui.Stories.LiveCommentsView.6
+        DarkThemeResourceProvider darkThemeResourceProvider = new DarkThemeResourceProvider() { // from class: org.telegram.ui.Stories.LiveCommentsView.8
             @Override // org.telegram.ui.Stories.DarkThemeResourceProvider
             public void appendColors() {
                 this.sparseIntArray.append(Theme.key_dialogBackground, -14671840);
@@ -2189,10 +2405,10 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         int i3 = Theme.key_checkboxCheck;
         checkBoxRound.setColor(i, i2, i3);
         checkBoxCell.setText(LocaleController.getString(R.string.DeleteReportSpam), null, false, true);
-        checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda24
+        checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda23
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LiveCommentsView.lambda$openDeleteMessage$20(CheckBoxCell.this, view);
+                LiveCommentsView.lambda$openDeleteMessage$19(CheckBoxCell.this, view);
             }
         });
         int i4 = Theme.key_listSelector;
@@ -2201,10 +2417,10 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         final CheckBoxCell checkBoxCell2 = new CheckBoxCell(context, 4, 21, true, darkThemeResourceProvider);
         checkBoxCell2.getCheckBoxRound().setColor(i, i2, i3);
         checkBoxCell2.setText(LocaleController.formatString(R.string.DeleteAllFrom, DialogObject.getName(j)), null, false, true);
-        checkBoxCell2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda25
+        checkBoxCell2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda24
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LiveCommentsView.lambda$openDeleteMessage$21(CheckBoxCell.this, view);
+                LiveCommentsView.lambda$openDeleteMessage$20(CheckBoxCell.this, view);
             }
         });
         checkBoxCell2.setBackground(Theme.createSelectorDrawable(Theme.getColor(i4, darkThemeResourceProvider), 2));
@@ -2212,10 +2428,10 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         final CheckBoxCell checkBoxCell3 = new CheckBoxCell(context, 4, 21, true, darkThemeResourceProvider);
         checkBoxCell3.getCheckBoxRound().setColor(i, i2, i3);
         checkBoxCell3.setText(LocaleController.formatString(R.string.DeleteBan, DialogObject.getName(j)), null, false, false);
-        checkBoxCell3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda26
+        checkBoxCell3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda25
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LiveCommentsView.lambda$openDeleteMessage$22(CheckBoxCell.this, view);
+                LiveCommentsView.lambda$openDeleteMessage$21(CheckBoxCell.this, view);
             }
         });
         checkBoxCell3.setBackground(Theme.createSelectorDrawable(Theme.getColor(i4, darkThemeResourceProvider), 2));
@@ -2227,16 +2443,21 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         FrameLayout frameLayout = new FrameLayout(context);
         ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, darkThemeResourceProvider);
         buttonWithCounterView.setText(LocaleController.getString(R.string.DeleteProceedBtn), false);
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda27
+        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.LiveCommentsView$$ExternalSyntheticLambda26
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                LiveCommentsView.lambda$openDeleteMessage$23(CheckBoxCell.this, checkBoxCell2, checkBoxCell3, callback3, bottomSheet, view);
+                LiveCommentsView.lambda$openDeleteMessage$22(CheckBoxCell.this, checkBoxCell2, checkBoxCell3, callback3, bottomSheet, view);
             }
         });
         frameLayout.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
         linearLayout.addView(frameLayout, LayoutHelper.createLinear(-1, -2));
         bottomSheet.setCustomView(linearLayout);
         bottomSheet.show();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$openDeleteMessage$19(CheckBoxCell checkBoxCell, View view) {
+        checkBoxCell.setChecked(!checkBoxCell.isChecked(), true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2250,12 +2471,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openDeleteMessage$22(CheckBoxCell checkBoxCell, View view) {
-        checkBoxCell.setChecked(!checkBoxCell.isChecked(), true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$openDeleteMessage$23(CheckBoxCell checkBoxCell, CheckBoxCell checkBoxCell2, CheckBoxCell checkBoxCell3, Utilities.Callback3 callback3, BottomSheet bottomSheet, View view) {
+    public static /* synthetic */ void lambda$openDeleteMessage$22(CheckBoxCell checkBoxCell, CheckBoxCell checkBoxCell2, CheckBoxCell checkBoxCell3, Utilities.Callback3 callback3, BottomSheet bottomSheet, View view) {
         callback3.run(Boolean.valueOf(checkBoxCell.isChecked()), Boolean.valueOf(checkBoxCell2.isChecked()), Boolean.valueOf(checkBoxCell3.isChecked()));
         bottomSheet.lambda$new$0();
     }

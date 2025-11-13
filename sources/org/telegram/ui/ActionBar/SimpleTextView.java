@@ -890,7 +890,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
         this.layoutX = 0.0f;
         this.layoutY = 0.0f;
         boolean z = this.scrollNonFitText && (this.textDoesNotFit || this.scrollingOffset != 0.0f);
-        int saveLayerAlpha = (z || this.ellipsizeByGradient) ? canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.didReplacedPhotoInMemCache, 31) : TLObject.FLAG_31;
+        int saveLayerAlpha = (z || this.ellipsizeByGradient) ? canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.cameraInitied, 31) : TLObject.FLAG_31;
         this.totalWidth = this.textWidth;
         Drawable drawable = this.leftDrawable;
         if (drawable != null && !this.leftDrawableOutside) {
@@ -1148,7 +1148,7 @@ public class SimpleTextView extends View implements Drawable.Callback {
                 } else if (this.scrollingOffset > (this.totalWidth + AndroidUtilities.dp(16.0f)) - AndroidUtilities.dp(10.0f)) {
                     this.fadePaint.setAlpha((int) ((1.0f - ((this.scrollingOffset - ((this.totalWidth + AndroidUtilities.dp(16.0f)) - AndroidUtilities.dp(10.0f))) / AndroidUtilities.dp(10.0f))) * 255.0f));
                 } else {
-                    this.fadePaint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                    this.fadePaint.setAlpha(NotificationCenter.cameraInitied);
                 }
                 canvas.drawRect(i18, 0.0f, AndroidUtilities.dp(6.0f) + i18, getMeasuredHeight(), this.fadePaint);
                 canvas.save();

@@ -47,23 +47,23 @@ public abstract class WebvttCueParser {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.didReplacedPhotoInMemCache, NotificationCenter.didReplacedPhotoInMemCache, NotificationCenter.didReplacedPhotoInMemCache)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.didReplacedPhotoInMemCache, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.didReplacedPhotoInMemCache, NotificationCenter.didReplacedPhotoInMemCache)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.didReplacedPhotoInMemCache, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.didReplacedPhotoInMemCache, NotificationCenter.didReplacedPhotoInMemCache, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.didReplacedPhotoInMemCache, 0, NotificationCenter.didReplacedPhotoInMemCache)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.didReplacedPhotoInMemCache)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.cameraInitied, NotificationCenter.cameraInitied, NotificationCenter.cameraInitied)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.cameraInitied, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.cameraInitied, NotificationCenter.cameraInitied)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.cameraInitied, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.cameraInitied, NotificationCenter.cameraInitied, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.cameraInitied, 0, NotificationCenter.cameraInitied)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.cameraInitied)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_TEXT_COLORS = DesugarCollections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.didReplacedPhotoInMemCache, NotificationCenter.didReplacedPhotoInMemCache, NotificationCenter.didReplacedPhotoInMemCache)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.didReplacedPhotoInMemCache, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.didReplacedPhotoInMemCache, NotificationCenter.didReplacedPhotoInMemCache)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.didReplacedPhotoInMemCache, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.didReplacedPhotoInMemCache, NotificationCenter.didReplacedPhotoInMemCache, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.didReplacedPhotoInMemCache, 0, NotificationCenter.didReplacedPhotoInMemCache)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.didReplacedPhotoInMemCache)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.cameraInitied, NotificationCenter.cameraInitied, NotificationCenter.cameraInitied)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.cameraInitied, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.cameraInitied, NotificationCenter.cameraInitied)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.cameraInitied, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.cameraInitied, NotificationCenter.cameraInitied, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.cameraInitied, 0, NotificationCenter.cameraInitied)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.cameraInitied)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_BACKGROUND_COLORS = DesugarCollections.unmodifiableMap(hashMap2);
     }

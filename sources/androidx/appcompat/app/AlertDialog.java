@@ -24,7 +24,7 @@ public class AlertDialog extends AppCompatDialog implements DialogInterface {
     }
 
     static int resolveDialogTheme(Context context, int i) {
-        if (((i >>> 24) & NotificationCenter.didReplacedPhotoInMemCache) >= 1) {
+        if (((i >>> 24) & NotificationCenter.cameraInitied) >= 1) {
             return i;
         }
         TypedValue typedValue = new TypedValue();

@@ -23,6 +23,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -304,6 +305,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
     private int linesCount;
     private int linesPosition;
     private int listPosition;
+    public final View liveCommentsShadowView;
     public final LiveCommentsView liveCommentsView;
     private HintView mediaBanTooltip;
     private MentionsContainerView mentionContainer;
@@ -677,9 +679,9 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         r0.setClipChildren(false);
         this.emojiAnimationsOverlay = new EmojiAnimationsOverlay(this.storyContainer, this.currentAccount);
         this.storyContainer.addView(this.storyAreasView, LayoutHelper.createFrame(-1, -1.0f));
-        5 r5 = new 5(getContext(), storyViewer.resourcesProvider, storyViewer, resourcesProvider);
-        this.storyCaptionView = r5;
-        r5.captionTextview.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.PeerStoriesView$$ExternalSyntheticLambda5
+        5 r4 = new 5(getContext(), storyViewer.resourcesProvider, storyViewer, resourcesProvider);
+        this.storyCaptionView = r4;
+        r4.captionTextview.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.PeerStoriesView$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PeerStoriesView.this.lambda$new$0(view);
@@ -714,7 +716,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                     canvas.translate((getMeasuredWidth() - PeerStoriesView.this.repostCounter.getCurrentWidth()) - AndroidUtilities.dp(6.0f), 0.0f);
                     float f = PeerStoriesView.this.repostCounterProgress.set(PeerStoriesView.this.repostCounterVisible ? 1.0f : 0.0f);
                     canvas.scale(f, f, PeerStoriesView.this.repostCounter.getCurrentWidth() / 2.0f, AndroidUtilities.dp(20.0f));
-                    PeerStoriesView.this.repostCounter.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                    PeerStoriesView.this.repostCounter.setAlpha(NotificationCenter.cameraInitied);
                     PeerStoriesView.this.repostCounter.draw(canvas);
                     canvas.restore();
                 }
@@ -749,7 +751,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 canvas.translate((getMeasuredWidth() - PeerStoriesView.this.reactionsCounter.getCurrentWidth()) - AndroidUtilities.dp(6.0f), 0.0f);
                 float f = PeerStoriesView.this.reactionsCounterProgress.set(PeerStoriesView.this.reactionsCounterVisible ? 1.0f : 0.0f);
                 canvas.scale(f, f, PeerStoriesView.this.reactionsCounter.getCurrentWidth() / 2.0f, AndroidUtilities.dp(20.0f));
-                PeerStoriesView.this.reactionsCounter.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                PeerStoriesView.this.reactionsCounter.setAlpha(NotificationCenter.cameraInitied);
                 PeerStoriesView.this.reactionsCounter.draw(canvas);
                 canvas.restore();
             }
@@ -875,8 +877,17 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             }
         });
         this.storyLines = new StoryLinesDrawable(this, sharedResources);
-        this.storyContainer.addView(r5, LayoutHelper.createFrame(-1, -1.0f, 0, 0.0f, 64.0f, 0.0f, 0.0f));
-        LiveCommentsView liveCommentsView = new LiveCommentsView(context, storyViewer, storyViewer.containerView, this.topBulletinContainer) { // from class: org.telegram.ui.Stories.PeerStoriesView.10
+        this.storyContainer.addView(r4, LayoutHelper.createFrame(-1, -1.0f, 0, 0.0f, 64.0f, 0.0f, 0.0f));
+        View view = new View(context);
+        this.liveCommentsShadowView = view;
+        view.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, -16777216}));
+        LiveCommentsView liveCommentsView = new LiveCommentsView(context, storyViewer, storyViewer.containerView, view, this.topBulletinContainer) { // from class: org.telegram.ui.Stories.PeerStoriesView.10
+            @Override // android.view.View
+            public void setVisibility(int i) {
+                super.setVisibility(i);
+                PeerStoriesView.this.liveCommentsShadowView.setVisibility(i);
+            }
+
             @Override // org.telegram.ui.Stories.LiveCommentsView
             protected TLRPC.Peer getDefaultSendAs() {
                 LivePlayer livePlayer = storyViewer.livePlayer;
@@ -957,6 +968,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             }
         };
         this.liveCommentsView = liveCommentsView;
+        this.storyContainer.addView(view, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 87));
         this.storyContainer.addView(liveCommentsView, LayoutHelper.createFrame(-1, -1.0f, 0, 0.0f, 64.0f, 0.0f, 0.0f));
         this.storyContainer.addView(this.topBulletinContainer, LayoutHelper.createFrame(-1, 100.0f, 0, 0.0f, 55.0f, 0.0f, 0.0f));
         frameLayout6.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(20.0f), 0, ColorUtils.setAlphaComponent(-1, 100)));
@@ -967,19 +979,19 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         if (frameLayout7 != null) {
             frameLayout7.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(20.0f), 0, ColorUtils.setAlphaComponent(-1, 100)));
         }
-        View overlayView = r5.textSelectionHelper.getOverlayView(context);
+        View overlayView = r4.textSelectionHelper.getOverlayView(context);
         if (overlayView != null) {
             AndroidUtilities.removeFromParent(overlayView);
             addView(overlayView);
         }
-        r5.textSelectionHelper.setCallback(new TextSelectionHelper.Callback() { // from class: org.telegram.ui.Stories.PeerStoriesView.11
+        r4.textSelectionHelper.setCallback(new TextSelectionHelper.Callback() { // from class: org.telegram.ui.Stories.PeerStoriesView.11
             @Override // org.telegram.ui.Cells.TextSelectionHelper.Callback
             public void onStateChanged(boolean z) {
                 PeerStoriesView peerStoriesView = PeerStoriesView.this;
                 peerStoriesView.delegate.setIsInSelectionMode(peerStoriesView.storyCaptionView.textSelectionHelper.isInSelectionMode());
             }
         });
-        r5.textSelectionHelper.setParentView(this);
+        r4.textSelectionHelper.setParentView(this);
     }
 
     class 4 extends HwFrameLayout {
@@ -1148,7 +1160,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 PeerStoriesView.this.invalidate();
             }
             float hideInterfaceAlpha = PeerStoriesView.this.getHideInterfaceAlpha();
-            this.val$sharedResources.topOverlayGradient.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+            this.val$sharedResources.topOverlayGradient.setAlpha(NotificationCenter.cameraInitied);
             this.val$sharedResources.topOverlayGradient.draw(canvas);
             PeerStoriesView peerStoriesView8 = PeerStoriesView.this;
             if (peerStoriesView8.isSelf || !peerStoriesView8.BIG_SCREEN || PeerStoriesView.this.storyCaptionView.getVisibility() == 0) {
@@ -3092,7 +3104,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.PeerStoriesView$8$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StoryPrivacyBottomSheet.this.dismiss();
+                    StoryPrivacyBottomSheet.this.lambda$new$3();
                 }
             });
         }
@@ -3609,7 +3621,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createQualityItem$14(BottomSheet bottomSheet, View view) {
         this.delegate.showDialog(new PremiumFeatureBottomSheet(this.storyViewer.fragment, 14, false));
-        bottomSheet.dismiss();
+        bottomSheet.lambda$new$3();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -4246,9 +4258,10 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         LivePlayer livePlayer;
         TLRPC.Peer defaultSendAs;
         LivePlayer livePlayer2;
+        long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
         long j = this.dialogId;
         if (j >= 0 || (livePlayer2 = this.storyViewer.livePlayer) == null) {
-            return j >= 0 && (storyViewer = this.storyViewer) != null && (livePlayer = storyViewer.livePlayer) != null && livePlayer.isAdmin() && (!z || (defaultSendAs = this.storyViewer.livePlayer.getDefaultSendAs()) == null || this.dialogId == DialogObject.getPeerDialogId(defaultSendAs) || DialogObject.getPeerDialogId(defaultSendAs) == UserConfig.getInstance(this.currentAccount).getClientUserId());
+            return j >= 0 && (storyViewer = this.storyViewer) != null && (livePlayer = storyViewer.livePlayer) != null && livePlayer.isAdmin() && (!z || (defaultSendAs = this.storyViewer.livePlayer.getDefaultSendAs()) == null || this.dialogId == DialogObject.getPeerDialogId(defaultSendAs) || DialogObject.getPeerDialogId(defaultSendAs) == clientUserId || this.dialogId == clientUserId);
         }
         if (!z) {
             return false;
@@ -4266,23 +4279,23 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 removeView(this.highlightMessageHintView);
             }
         }
-        if (disabledPaidFeatures(true)) {
-            return;
+        if (!disabledPaidFeatures(true) && MessagesController.getGlobalMainSettings().getInt("taptostoryhighlighthint", 0) < 3) {
+            MessagesController.getGlobalMainSettings().edit().putInt("taptostoryhighlighthint", MessagesController.getGlobalMainSettings().getInt("taptostoryhighlighthint", 0) + 1).apply();
+            final HintView2 hintView22 = new HintView2(getContext(), 3);
+            this.highlightMessageHintView = hintView22;
+            hintView22.setText(LocaleController.getString(R.string.LiveStoryHighlightHint));
+            this.highlightMessageHintView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+            this.highlightMessageHintView.setTextAlign(Layout.Alignment.ALIGN_OPPOSITE);
+            this.highlightMessageHintView.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.Stories.PeerStoriesView$$ExternalSyntheticLambda29
+                @Override // java.lang.Runnable
+                public final void run() {
+                    PeerStoriesView.this.lambda$showPaidMessageHint$28(hintView22);
+                }
+            });
+            addView(this.highlightMessageHintView, LayoutHelper.createFrame(-1, 100, 87));
+            this.highlightMessageHintView.show();
+            updateViewOffsets();
         }
-        final HintView2 hintView22 = new HintView2(getContext(), 3);
-        this.highlightMessageHintView = hintView22;
-        hintView22.setText(LocaleController.getString(R.string.LiveStoryHighlightHint));
-        this.highlightMessageHintView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-        this.highlightMessageHintView.setTextAlign(Layout.Alignment.ALIGN_OPPOSITE);
-        this.highlightMessageHintView.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.Stories.PeerStoriesView$$ExternalSyntheticLambda29
-            @Override // java.lang.Runnable
-            public final void run() {
-                PeerStoriesView.this.lambda$showPaidMessageHint$28(hintView22);
-            }
-        });
-        addView(this.highlightMessageHintView, LayoutHelper.createFrame(-1, 100, 87));
-        this.highlightMessageHintView.show();
-        updateViewOffsets();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -4356,6 +4369,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         public boolean sendMessage() {
             int i;
             if (this.sendButtonContainer.getAlpha() < 0.5f) {
+                openKeyboard();
                 return false;
             }
             if (PeerStoriesView.this.currentStory.isLive) {
@@ -4380,6 +4394,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                     this.messageEditText.setText("");
                     AndroidUtilities.hideKeyboard(this);
                     PeerStoriesView.this.messageStars = 0L;
+                    PeerStoriesView.this.checkStealthMode(true);
                     checkSendButton(true);
                     return true;
                 }
@@ -5255,7 +5270,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             if (path != null && path.exists()) {
                 ShareAlert shareAlert = this.shareAlert;
                 if (shareAlert != null) {
-                    shareAlert.dismiss();
+                    shareAlert.lambda$new$3();
                 }
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.PeerStoriesView$$ExternalSyntheticLambda33
                     @Override // java.lang.Runnable
@@ -5565,7 +5580,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
             TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j));
             if (user != null && user.verified) {
                 Drawable mutate = ContextCompat.getDrawable(getContext(), R.drawable.verified_profile).mutate();
-                mutate.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                mutate.setAlpha(NotificationCenter.cameraInitied);
                 CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, null);
                 combinedDrawable.setFullsize(true);
                 combinedDrawable.setCustomSize(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
@@ -5585,7 +5600,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         this.headerView.titleView.setText(AndroidUtilities.removeDiacritics(chat == null ? "" : chat.title));
         if (chat != null && chat.verified) {
             Drawable mutate2 = ContextCompat.getDrawable(getContext(), R.drawable.verified_profile).mutate();
-            mutate2.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+            mutate2.setAlpha(NotificationCenter.cameraInitied);
             CombinedDrawable combinedDrawable2 = new CombinedDrawable(mutate2, null);
             combinedDrawable2.setFullsize(true);
             combinedDrawable2.setCustomSize(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
@@ -6434,69 +6449,69 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         updatePosition(false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x092b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x093c, code lost:
     
         if (r1.captionTranslated == (r5 == null && r5.translated && r5.translatedText != null && android.text.TextUtils.equals(r5.translatedLng, org.telegram.ui.Components.TranslateAlert2.getToLanguage()))) goto L377;
      */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0971  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x09b0  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x09cb  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x0b4b  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x0b79  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x0bb4  */
-    /* JADX WARN: Removed duplicated region for block: B:207:0x0c0d  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x0c49  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x0c71  */
-    /* JADX WARN: Removed duplicated region for block: B:238:0x0cbc  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x0ccf  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0982  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x09c1  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x09dc  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x0b5c  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x0b8a  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x0bc5  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x0c1e  */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x0c5a  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x0c82  */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x0ccd  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x0ce0  */
     /* JADX WARN: Removed duplicated region for block: B:25:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:265:0x0d62  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x0d81  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x0d96  */
-    /* JADX WARN: Removed duplicated region for block: B:282:0x0db0 A[EDGE_INSN: B:282:0x0db0->B:283:0x0db0 BREAK  A[LOOP:0: B:271:0x0d8a->B:280:0x0dad], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x0dbe  */
-    /* JADX WARN: Removed duplicated region for block: B:288:0x0dcd  */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x0e1a  */
-    /* JADX WARN: Removed duplicated region for block: B:306:0x0e60  */
-    /* JADX WARN: Removed duplicated region for block: B:309:0x0e6f  */
-    /* JADX WARN: Removed duplicated region for block: B:317:0x0e95  */
-    /* JADX WARN: Removed duplicated region for block: B:326:0x0f34  */
-    /* JADX WARN: Removed duplicated region for block: B:331:0x0f6e  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x0f83  */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x0fab  */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x0fcb  */
-    /* JADX WARN: Removed duplicated region for block: B:355:0x1002  */
+    /* JADX WARN: Removed duplicated region for block: B:265:0x0d73  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x0d92  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x0da7  */
+    /* JADX WARN: Removed duplicated region for block: B:282:0x0dc1 A[EDGE_INSN: B:282:0x0dc1->B:283:0x0dc1 BREAK  A[LOOP:0: B:271:0x0d9b->B:280:0x0dbe], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:285:0x0dcf  */
+    /* JADX WARN: Removed duplicated region for block: B:288:0x0dde  */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x0e2b  */
+    /* JADX WARN: Removed duplicated region for block: B:306:0x0e71  */
+    /* JADX WARN: Removed duplicated region for block: B:309:0x0e80  */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x0ea6  */
+    /* JADX WARN: Removed duplicated region for block: B:326:0x0f45  */
+    /* JADX WARN: Removed duplicated region for block: B:331:0x0f7f  */
+    /* JADX WARN: Removed duplicated region for block: B:334:0x0f94  */
+    /* JADX WARN: Removed duplicated region for block: B:339:0x0fbc  */
+    /* JADX WARN: Removed duplicated region for block: B:350:0x0fdc  */
+    /* JADX WARN: Removed duplicated region for block: B:355:0x1013  */
     /* JADX WARN: Removed duplicated region for block: B:367:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:374:0x0ff2  */
-    /* JADX WARN: Removed duplicated region for block: B:379:0x0edf  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x04d6 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:387:0x0e69  */
-    /* JADX WARN: Removed duplicated region for block: B:389:0x0e2c  */
-    /* JADX WARN: Removed duplicated region for block: B:408:0x0e0f  */
-    /* JADX WARN: Removed duplicated region for block: B:411:0x0d10  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x04ec  */
-    /* JADX WARN: Removed duplicated region for block: B:428:0x0c4b  */
-    /* JADX WARN: Removed duplicated region for block: B:433:0x0c5a  */
-    /* JADX WARN: Removed duplicated region for block: B:435:0x09fa  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0504 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x051c  */
-    /* JADX WARN: Removed duplicated region for block: B:548:0x0624  */
-    /* JADX WARN: Removed duplicated region for block: B:553:0x08b9  */
-    /* JADX WARN: Removed duplicated region for block: B:568:0x08fc  */
-    /* JADX WARN: Removed duplicated region for block: B:571:0x0903  */
-    /* JADX WARN: Removed duplicated region for block: B:573:0x0641  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0535  */
-    /* JADX WARN: Removed duplicated region for block: B:638:0x056b  */
-    /* JADX WARN: Removed duplicated region for block: B:647:0x05c1  */
-    /* JADX WARN: Removed duplicated region for block: B:650:0x05d4  */
-    /* JADX WARN: Removed duplicated region for block: B:655:0x05e7  */
-    /* JADX WARN: Removed duplicated region for block: B:658:0x05b8  */
+    /* JADX WARN: Removed duplicated region for block: B:374:0x1003  */
+    /* JADX WARN: Removed duplicated region for block: B:379:0x0ef0  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x04e7 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:387:0x0e7a  */
+    /* JADX WARN: Removed duplicated region for block: B:389:0x0e3d  */
+    /* JADX WARN: Removed duplicated region for block: B:408:0x0e20  */
+    /* JADX WARN: Removed duplicated region for block: B:411:0x0d21  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x04fd  */
+    /* JADX WARN: Removed duplicated region for block: B:428:0x0c5c  */
+    /* JADX WARN: Removed duplicated region for block: B:433:0x0c6b  */
+    /* JADX WARN: Removed duplicated region for block: B:435:0x0a0b  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0515 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x052d  */
+    /* JADX WARN: Removed duplicated region for block: B:548:0x0635  */
+    /* JADX WARN: Removed duplicated region for block: B:553:0x08ca  */
+    /* JADX WARN: Removed duplicated region for block: B:568:0x090d  */
+    /* JADX WARN: Removed duplicated region for block: B:571:0x0914  */
+    /* JADX WARN: Removed duplicated region for block: B:573:0x0652  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0546  */
+    /* JADX WARN: Removed duplicated region for block: B:638:0x057c  */
+    /* JADX WARN: Removed duplicated region for block: B:647:0x05d2  */
+    /* JADX WARN: Removed duplicated region for block: B:650:0x05e5  */
+    /* JADX WARN: Removed duplicated region for block: B:655:0x05f8  */
+    /* JADX WARN: Removed duplicated region for block: B:658:0x05c9  */
     /* JADX WARN: Removed duplicated region for block: B:666:0x0168  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0549  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0600 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x090c  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0938  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x094c  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x055a  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0611 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x091d  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0949  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x095d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -6974,6 +6989,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                         TLRPC.MessageMedia messageMedia3 = storyItem14.media;
                         if (messageMedia3 instanceof TLRPC.TL_messageMediaUnsupported) {
                             this.unsupported = true;
+                            MessagesController.getInstance(this.currentAccount).getStoriesController().checkUnsupportedStory(this.dialogId, storyItem14.id);
                             z5 = z4;
                         } else {
                             String str2 = storyItem14.attachPath;
@@ -8275,6 +8291,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: onHighlightLiveMessage, reason: merged with bridge method [inline-methods] */
     public void lambda$updatePosition$45() {
+        MessagesController.getGlobalMainSettings().edit().putInt("taptostoryhighlighthint", 3).apply();
         TLRPC.TL_textWithEntities textWithEntities = this.chatActivityEnterView.getTextWithEntities();
         long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
         TLRPC.Peer defaultSendAs = this.storyViewer.livePlayer.getDefaultSendAs();
@@ -8929,25 +8946,29 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 } else {
                     LiveCommentsView liveCommentsView = this.liveCommentsView;
                     if (childAt == liveCommentsView) {
-                        if (liveCommentsView.topListView.findChildViewUnder(f, (f2 - liveCommentsView.getY()) - this.liveCommentsView.topListView.getY()) == null) {
-                            if (this.liveCommentsView.isCollapsed()) {
-                                continue;
-                            } else if (!this.keyboardVisible && f2 <= this.liveCommentsView.getY() + this.liveCommentsView.top()) {
+                        liveCommentsView.topListView.getHitRect(rect2);
+                        if (rect2.contains((int) ((f - this.liveCommentsView.getX()) - this.liveCommentsView.topListView.getX()), (int) ((f2 - this.liveCommentsView.getY()) - this.liveCommentsView.topListView.getY()))) {
+                            return true;
+                        }
+                        if (!this.liveCommentsView.isCollapsed()) {
+                            if (!this.keyboardVisible && f2 <= this.liveCommentsView.getY() + this.liveCommentsView.top()) {
                                 LiveCommentsView liveCommentsView2 = this.liveCommentsView;
                                 if (liveCommentsView2.listView.findChildViewUnder(f, (f2 - liveCommentsView2.getY()) - this.liveCommentsView.listView.getY()) != null) {
                                 }
                             }
+                            return true;
                         }
-                        return true;
-                    }
-                    if (this.keyboardVisible && childAt == this.chatActivityEnterView && f2 > rect2.top) {
-                        return true;
-                    }
-                    if (!z && rect2.contains((int) f, (int) f2) && (((childAt.isClickable() || childAt == this.reactionsContainerLayout) && childAt.isEnabled()) || ((chatActivityEnterView = this.chatActivityEnterView) != null && childAt == chatActivityEnterView.getRecordCircle()))) {
-                        return true;
-                    }
-                    if (childAt.isEnabled() && (childAt instanceof ViewGroup) && findClickableView((ViewGroup) childAt, f - childAt.getX(), f2 - childAt.getY(), z)) {
-                        return true;
+                        continue;
+                    } else {
+                        if (this.keyboardVisible && childAt == this.chatActivityEnterView && f2 > rect2.top) {
+                            return true;
+                        }
+                        if (!z && rect2.contains((int) f, (int) f2) && (((childAt.isClickable() || childAt == this.reactionsContainerLayout) && childAt.isEnabled()) || ((chatActivityEnterView = this.chatActivityEnterView) != null && childAt == chatActivityEnterView.getRecordCircle()))) {
+                            return true;
+                        }
+                        if (childAt.isEnabled() && (childAt instanceof ViewGroup) && findClickableView((ViewGroup) childAt, f - childAt.getX(), f2 - childAt.getY(), z)) {
+                            return true;
+                        }
                     }
                 }
             }
@@ -9075,7 +9096,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 }
                 ChatAttachAlert chatAttachAlert2 = this.chatAttachAlert;
                 if (chatAttachAlert2 != null) {
-                    chatAttachAlert2.dismiss();
+                    chatAttachAlert2.lambda$new$3();
                 }
                 afterMessageSend(true);
             }
@@ -10084,14 +10105,14 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         java.lang.NullPointerException
         */
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x0526  */
-    /* JADX WARN: Removed duplicated region for block: B:279:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x052a  */
+    /* JADX WARN: Removed duplicated region for block: B:282:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void updateViewOffsets() {
         /*
-            Method dump skipped, instructions count: 1330
+            Method dump skipped, instructions count: 1334
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.Stories.PeerStoriesView.updateViewOffsets():void");
@@ -10174,7 +10195,7 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                 if (blurredBackgroundDrawable2 != null) {
                     blurredBackgroundDrawable2.setBounds((int) this.sharedResources.popupRect.left, (int) this.sharedResources.popupRect.top, (int) this.sharedResources.popupRect.right, (int) this.sharedResources.popupRect.bottom);
                     this.emojiKeyboardBackground.setRadius(dp4, dp4, dp4, dp4);
-                    this.emojiKeyboardBackground.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                    this.emojiKeyboardBackground.setAlpha(NotificationCenter.cameraInitied);
                     this.emojiKeyboardBackground.draw(canvas);
                 } else {
                     canvas.drawRoundRect(this.sharedResources.popupRect, dp4, dp4, this.inputBackgroundPaint);

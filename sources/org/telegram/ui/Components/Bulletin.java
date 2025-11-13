@@ -1452,12 +1452,12 @@ public class Bulletin {
                 if (!this.blurVisibilityDrawable.hasBitmap()) {
                     this.blurVisibilityDrawable.render(getMeasuredWidth(), getMeasuredHeight(), AndroidUtilities.dp(10.0f), 6.0f);
                 }
-                this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.didReplacedPhotoInMemCache));
+                this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.cameraInitied));
                 this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                 this.blurVisibilityDrawable.draw(canvas);
                 return;
             }
-            dispatchDrawImpl(canvas, false, NotificationCenter.didReplacedPhotoInMemCache);
+            dispatchDrawImpl(canvas, false, NotificationCenter.cameraInitied);
         }
 
         protected void dispatchDrawImplBlur(Canvas canvas, int i) {

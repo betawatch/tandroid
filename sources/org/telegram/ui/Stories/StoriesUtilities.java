@@ -245,7 +245,7 @@ public abstract class StoriesUtilities {
             f3 = 1.0f;
             i3 = save;
             i4 = i2;
-            canvas.saveLayerAlpha(rectF2.left - AndroidUtilities.dp(15.0f), rectF2.top - AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f) + rectF2.right, AndroidUtilities.dp(15.0f) + rectF2.bottom, NotificationCenter.didReplacedPhotoInMemCache, 31);
+            canvas.saveLayerAlpha(rectF2.left - AndroidUtilities.dp(15.0f), rectF2.top - AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f) + rectF2.right, AndroidUtilities.dp(15.0f) + rectF2.bottom, NotificationCenter.cameraInitied, 31);
         } else {
             f = f9;
             i3 = save;
@@ -615,7 +615,7 @@ public abstract class StoriesUtilities {
                             paint7.getStrokeWidth();
                             paint7.setAlpha((int) ((1.0f - avatarStoryParams.progressToSegments) * 255.0f));
                             drawSegment(canvas, rectF, paint7, f5, f6, avatarStoryParams, z);
-                            paint7.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                            paint7.setAlpha(NotificationCenter.cameraInitied);
                         }
                         i3 = i4 + 1;
                         max = i5;
@@ -636,7 +636,7 @@ public abstract class StoriesUtilities {
                 paint7.setAlpha((int) ((1.0f - f7) * 255.0f));
                 drawSegment(canvas, rectF2, paint7, -90.0f, 90.0f, avatarStoryParams, z);
                 drawSegment(canvas, rectF2, paint7, 90.0f, 270.0f, avatarStoryParams, z);
-                paint7.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                paint7.setAlpha(NotificationCenter.cameraInitied);
                 return;
             }
             size = peerStories.stories.size();

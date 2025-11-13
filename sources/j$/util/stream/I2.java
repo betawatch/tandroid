@@ -1,6 +1,7 @@
 package j$.util.stream;
 
 import j$.util.Collection;
+import j$.util.List;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -19,7 +20,7 @@ final class I2 extends A2 {
 
     @Override // j$.util.stream.i2, j$.util.stream.m2
     public final void k() {
-        j$.util.S.r(this.d, this.b);
+        List.-EL.sort(this.d, this.b);
         long size = this.d.size();
         m2 m2Var = this.a;
         m2Var.l(size);

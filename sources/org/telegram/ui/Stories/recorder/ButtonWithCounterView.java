@@ -126,7 +126,7 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         this.countScale = 1.0f;
         this.enabledT = 1.0f;
         this.enabled = true;
-        this.globalAlpha = NotificationCenter.didReplacedPhotoInMemCache;
+        this.globalAlpha = NotificationCenter.cameraInitied;
         this.subTextAlpha = NotificationCenter.channelRecommendationsLoaded;
         this.filled = z;
         this.resourcesProvider = resourcesProvider;
@@ -165,6 +165,10 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         animatedTextDrawable3.setGravity(1);
         setWillNotDraw(false);
         updateColors();
+    }
+
+    public void setTextHacks(boolean z, boolean z2, boolean z3, boolean z4) {
+        this.text.setHacks(z, z2, z3, z4);
     }
 
     public void setSubTextHacks(boolean z, boolean z2, boolean z3, boolean z4) {

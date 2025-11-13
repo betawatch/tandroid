@@ -139,7 +139,7 @@ public abstract class GigagroupConvertAlert extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(Context context, BaseFragment baseFragment, View view) {
-        dismiss();
+        lambda$new$3();
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(LocaleController.getString(R.string.GigagroupConvertAlertTitle));
         builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString(R.string.GigagroupConvertAlertText)));
@@ -161,6 +161,6 @@ public abstract class GigagroupConvertAlert extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(View view) {
         onCancel();
-        dismiss();
+        lambda$new$3();
     }
 }

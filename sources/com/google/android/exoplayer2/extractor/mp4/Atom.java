@@ -15,7 +15,7 @@ abstract class Atom {
     }
 
     public static int parseFullAtomVersion(int i) {
-        return (i >> 24) & NotificationCenter.didReplacedPhotoInMemCache;
+        return (i >> 24) & NotificationCenter.cameraInitied;
     }
 
     public Atom(int i) {
@@ -84,6 +84,6 @@ abstract class Atom {
     }
 
     public static String getAtomTypeString(int i) {
-        return "" + ((char) ((i >> 24) & NotificationCenter.didReplacedPhotoInMemCache)) + ((char) ((i >> 16) & NotificationCenter.didReplacedPhotoInMemCache)) + ((char) ((i >> 8) & NotificationCenter.didReplacedPhotoInMemCache)) + ((char) (i & NotificationCenter.didReplacedPhotoInMemCache));
+        return "" + ((char) ((i >> 24) & NotificationCenter.cameraInitied)) + ((char) ((i >> 16) & NotificationCenter.cameraInitied)) + ((char) ((i >> 8) & NotificationCenter.cameraInitied)) + ((char) (i & NotificationCenter.cameraInitied));
     }
 }

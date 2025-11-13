@@ -81,8 +81,9 @@ public class TrendingStickersAlert extends BottomSheet {
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    public void dismiss() {
-        super.dismiss();
+    /* renamed from: dismiss */
+    public void lambda$new$3() {
+        super.lambda$new$3();
         this.layout.recycle();
         setHeavyOperationsEnabled(true);
     }
@@ -184,7 +185,7 @@ public class TrendingStickersAlert extends BottomSheet {
         @Override // android.view.ViewGroup
         public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
             if (motionEvent.getAction() == 0 && TrendingStickersAlert.this.scrollOffsetY != 0 && motionEvent.getY() < TrendingStickersAlert.this.scrollOffsetY) {
-                TrendingStickersAlert.this.dismiss();
+                TrendingStickersAlert.this.lambda$new$3();
                 return true;
             }
             return super.onInterceptTouchEvent(motionEvent);

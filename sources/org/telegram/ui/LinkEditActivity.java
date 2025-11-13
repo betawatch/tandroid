@@ -987,7 +987,7 @@ public class LinkEditActivity extends BaseFragment {
                     tL_messages_exportChatInvite.flags |= 32;
                     TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = new TL_stars.TL_starsSubscriptionPricing();
                     tL_messages_exportChatInvite.subscription_pricing = tL_starsSubscriptionPricing;
-                    tL_starsSubscriptionPricing.period = getConnectionsManager().isTestBackend() ? NotificationCenter.premiumPromoUpdated : 2592000;
+                    tL_starsSubscriptionPricing.period = getConnectionsManager().isTestBackend() ? NotificationCenter.currentUserPremiumStatusChanged : 2592000;
                     tL_messages_exportChatInvite.subscription_pricing.amount = j;
                 }
                 getConnectionsManager().sendRequest(tL_messages_exportChatInvite, new RequestDelegate() { // from class: org.telegram.ui.LinkEditActivity$$ExternalSyntheticLambda14

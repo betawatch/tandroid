@@ -673,6 +673,10 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     safeLastFragment.showAsSheet(resaleGiftsFragment, bottomSheetParams);
                     return;
                 }
+                if (starGift.auction) {
+                    AuctionJoinSheet.show(context, this.resourcesProvider, i, j, starGift.id);
+                    return;
+                }
                 if (starGift.sold_out) {
                     StarsIntroActivity.showSoldOutGiftSheet(context, i, starGift, this.resourcesProvider);
                     return;
@@ -1320,6 +1324,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         private final StarsBackgroundView priceBackground;
         private final FrameLayout priceLayout;
         private final TextView priceView;
+        private boolean priotityAuction;
         private boolean reordering;
         private final Theme.ResourcesProvider resourcesProvider;
         private final Ribbon ribbon;
@@ -1438,6 +1443,20 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             imageView2.setVisibility(8);
             imageView2.setScaleType(ImageView.ScaleType.CENTER);
             frameLayout.addView(imageView2, LayoutHelper.createFrame(20, 20.0f, 51, 3.0f, 3.0f, 3.0f, 3.0f));
+        }
+
+        public void setImageSize(int i) {
+            FrameLayout.LayoutParams layoutParams = this.imageViewLayoutParams;
+            layoutParams.width = i;
+            layoutParams.height = i;
+        }
+
+        public void setImageLayer(int i) {
+            this.imageView.setLayerNum(i);
+        }
+
+        public void hidePrice() {
+            this.priceLayout.setVisibility(8);
         }
 
         public void setSelected(boolean z, boolean z2) {
@@ -1666,6 +1685,10 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             return this.userGift;
         }
 
+        public void setPriorityAuction() {
+            this.priotityAuction = true;
+        }
+
         public boolean setPremiumGift(GiftPremiumBottomSheet$GiftTier giftPremiumBottomSheet$GiftTier) {
             int months = giftPremiumBottomSheet$GiftTier.getMonths();
             if (this.lastTier != giftPremiumBottomSheet$GiftTier) {
@@ -1740,21 +1763,22 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:45:0x01fd  */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x0221  */
-        /* JADX WARN: Removed duplicated region for block: B:51:0x0246  */
-        /* JADX WARN: Removed duplicated region for block: B:54:0x0258  */
-        /* JADX WARN: Removed duplicated region for block: B:57:0x0266  */
-        /* JADX WARN: Removed duplicated region for block: B:59:0x026a  */
-        /* JADX WARN: Removed duplicated region for block: B:63:0x024a  */
-        /* JADX WARN: Removed duplicated region for block: B:64:0x0225  */
-        /* JADX WARN: Removed duplicated region for block: B:68:0x0200  */
+        /* JADX WARN: Removed duplicated region for block: B:47:0x021d  */
+        /* JADX WARN: Removed duplicated region for block: B:53:0x0267  */
+        /* JADX WARN: Removed duplicated region for block: B:56:0x028c  */
+        /* JADX WARN: Removed duplicated region for block: B:59:0x029e  */
+        /* JADX WARN: Removed duplicated region for block: B:62:0x02ac  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x02b0  */
+        /* JADX WARN: Removed duplicated region for block: B:68:0x0290  */
+        /* JADX WARN: Removed duplicated region for block: B:69:0x026b  */
+        /* JADX WARN: Removed duplicated region for block: B:74:0x0230  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public boolean setStarsGift(TL_stars.StarGift starGift, boolean z, boolean z2, boolean z3, boolean z4) {
             long j;
             boolean z5;
+            boolean z6;
             Runnable runnable = this.cancel;
             if (runnable != null) {
                 runnable.run();
@@ -1765,7 +1789,15 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             this.cardBackground.setBackdrop(stargiftattributebackdrop);
             this.cardBackground.setPattern((TL_stars.starGiftAttributePattern) StarsController.findAttribute(starGift.attributes, TL_stars.starGiftAttributePattern.class));
             long j2 = 0;
-            this.cardBackground.setStrokeColors((!starGift.require_premium || (z3 && starGift.availability_resale > 0)) ? null : PREMIUM_STROKE);
+            if (!starGift.auction || ((z6 = starGift.sold_out) && !this.priotityAuction)) {
+                this.cardBackground.setStrokeColors((!starGift.require_premium || (z3 && starGift.availability_resale > 0)) ? null : PREMIUM_STROKE);
+            } else if (z6) {
+                CardBackground cardBackground = this.cardBackground;
+                int i = Theme.key_gift_ribbon_soldout;
+                cardBackground.setStrokeColors(new int[]{Theme.getColor(i, this.resourcesProvider), Theme.getColor(i, this.resourcesProvider)});
+            } else {
+                this.cardBackground.setStrokeColors(PREMIUM_STROKE);
+            }
             this.titleView.setVisibility(8);
             this.subtitleView.setVisibility(8);
             this.imageView.setTranslationY(0.0f);
@@ -1809,49 +1841,45 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                         j = starGift.resell_min_stars;
                         if (j3 > 1 && j < MessagesController.getInstance(this.currentAccount).config.starsStarGiftResaleAmountMax.get()) {
                             z5 = true;
-                            TextView textView = this.priceView;
-                            StringBuilder sb = new StringBuilder();
-                            sb.append("XTR ");
-                            sb.append(LocaleController.formatNumber(j, ','));
-                            sb.append(z5 ? "+" : "");
-                            textView.setText(StarsIntroActivity.replaceStarsWithPlain(sb.toString(), 0.71f));
-                            boolean z6 = starGift instanceof TL_stars.TL_starGiftUnique;
-                            this.priceBackground.setBackground(new StarsBackground(z6 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                            if (starGift.auction) {
+                                this.priceView.setText(LocaleController.getString(starGift.sold_out ? R.string.Gift2AuctionPriceView : R.string.Gift2AuctionPriceJoin));
+                            } else {
+                                TextView textView = this.priceView;
+                                StringBuilder sb = new StringBuilder();
+                                sb.append("XTR ");
+                                sb.append(LocaleController.formatNumber(j, ','));
+                                sb.append(z5 ? "+" : "");
+                                textView.setText(StarsIntroActivity.replaceStarsWithPlain(sb.toString(), 0.71f));
+                            }
+                            boolean z7 = starGift instanceof TL_stars.TL_starGiftUnique;
+                            this.priceBackground.setBackground(new StarsBackground(z7 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                             this.priceView.setTextColor(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                             this.tonOnlySaleView.setColorFilter(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
-                            this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), z6 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                            this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), z7 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                         }
                         z5 = false;
-                        TextView textView2 = this.priceView;
-                        StringBuilder sb2 = new StringBuilder();
-                        sb2.append("XTR ");
-                        sb2.append(LocaleController.formatNumber(j, ','));
-                        sb2.append(z5 ? "+" : "");
-                        textView2.setText(StarsIntroActivity.replaceStarsWithPlain(sb2.toString(), 0.71f));
-                        boolean z62 = starGift instanceof TL_stars.TL_starGiftUnique;
-                        this.priceBackground.setBackground(new StarsBackground(z62 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                        if (starGift.auction) {
+                        }
+                        boolean z72 = starGift instanceof TL_stars.TL_starGiftUnique;
+                        this.priceBackground.setBackground(new StarsBackground(z72 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                         this.priceView.setTextColor(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                         this.tonOnlySaleView.setColorFilter(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
-                        this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), z62 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                        this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), z72 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                     }
                 }
                 long j4 = starGift.stars;
                 if (z2 && starGift.can_upgrade) {
                     j2 = starGift.upgrade_stars;
                 }
-                j = j2 + j4;
+                j = j4 + j2;
                 z5 = false;
-                TextView textView22 = this.priceView;
-                StringBuilder sb22 = new StringBuilder();
-                sb22.append("XTR ");
-                sb22.append(LocaleController.formatNumber(j, ','));
-                sb22.append(z5 ? "+" : "");
-                textView22.setText(StarsIntroActivity.replaceStarsWithPlain(sb22.toString(), 0.71f));
-                boolean z622 = starGift instanceof TL_stars.TL_starGiftUnique;
-                this.priceBackground.setBackground(new StarsBackground(z622 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                if (starGift.auction) {
+                }
+                boolean z722 = starGift instanceof TL_stars.TL_starGiftUnique;
+                this.priceBackground.setBackground(new StarsBackground(z722 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                 this.priceView.setTextColor(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
                 this.tonOnlySaleView.setColorFilter(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
-                this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), z622 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
+                this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), z722 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
             }
             ((ViewGroup.MarginLayoutParams) this.priceLayout.getLayoutParams()).topMargin = AndroidUtilities.dp(103.0f);
             ((FrameLayout.LayoutParams) this.priceLayout.getLayoutParams()).gravity = 49;
@@ -2107,6 +2135,14 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     this.ribbon.setStrokeColor(0);
                     this.ribbon.setBackdrop(null);
                     this.ribbon.setText(LocaleController.getString(R.string.Gift2SoldOut), true);
+                    return;
+                }
+                if (starGift2.auction) {
+                    this.ribbon.setVisibility(0);
+                    this.ribbon.setBackdrop(null);
+                    this.ribbon.setColors(-2650077, -4227818);
+                    this.ribbon.setStrokeColor(0);
+                    this.ribbon.setText(LocaleController.getString(R.string.Gift2LimitedAuction), true);
                     return;
                 }
                 if (starGift2.require_premium) {

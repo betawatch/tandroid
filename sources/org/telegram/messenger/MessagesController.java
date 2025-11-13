@@ -53,7 +53,6 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLiteException;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
@@ -65,7 +64,6 @@ import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.support.LongSparseLongArray;
 import org.telegram.messenger.voip.ConferenceCall;
-import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.messenger.voip.VoIPDebugToSend;
 import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.messenger.voip.VoIPService;
@@ -1190,6 +1188,18 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
+    public void putLastGiftAuctionUpdate() {
+        SharedPreferences sharedPreferences = this.mainPreferences;
+        if (sharedPreferences != null) {
+            sharedPreferences.edit().putLong("lastGiftAuctionTimeUpdate", System.currentTimeMillis()).apply();
+        }
+    }
+
+    public boolean giftAuctionUpdateWasRecently() {
+        SharedPreferences sharedPreferences = this.mainPreferences;
+        return System.currentTimeMillis() - (sharedPreferences != null ? sharedPreferences.getLong("lastGiftAuctionTimeUpdate", 0L) : 0L) < 86400000;
+    }
+
     public ArrayList<TLRPC.TL_messages_stickerSet> filterPremiumStickers(ArrayList<TLRPC.TL_messages_stickerSet> arrayList) {
         if (!premiumFeaturesBlocked()) {
             return arrayList;
@@ -2133,7 +2143,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.giveawayBoostsPerPremium = this.mainPreferences.getLong("giveaway_boosts_per_premium", 4L);
         this.boostsPerSentGift = this.mainPreferences.getLong("boosts_per_sent_gift", 3L);
         this.giveawayPeriodMax = this.mainPreferences.getLong("giveaway_period_max", 7L);
-        this.stealthModePast = this.mainPreferences.getInt("stories_stealth_past_period", NotificationCenter.premiumPromoUpdated);
+        this.stealthModePast = this.mainPreferences.getInt("stories_stealth_past_period", NotificationCenter.currentUserPremiumStatusChanged);
         this.stealthModeCooldown = this.mainPreferences.getInt("stories_stealth_cooldown_period", 3600);
         boolean z = ConnectionsManager.native_isTestBackend(this.currentAccount) != 0;
         this.chatlistInvitesLimitDefault = this.mainPreferences.getInt("chatlistInvitesLimitDefault", 3);
@@ -2144,7 +2154,7 @@ public class MessagesController extends BaseController implements NotificationCe
         this.storiesSuggestedReactionsLimitPremium = this.mainPreferences.getInt("storiesSuggestedReactionsLimitPremium", 5);
         this.storiesSentWeeklyLimitPremium = this.mainPreferences.getInt("storiesSentWeeklyLimitPremium", 70);
         this.storiesSentMonthlyLimitDefault = this.mainPreferences.getInt("storiesSentMonthlyLimitDefault", 30);
-        this.storiesSentMonthlyLimitPremium = this.mainPreferences.getInt("storiesSentMonthlyLimitPremium", NotificationCenter.premiumPromoUpdated);
+        this.storiesSentMonthlyLimitPremium = this.mainPreferences.getInt("storiesSentMonthlyLimitPremium", NotificationCenter.currentUserPremiumStatusChanged);
         this.channelBgIconLevelMin = this.mainPreferences.getInt("channelBgIconLevelMin", 1);
         this.channelProfileIconLevelMin = this.mainPreferences.getInt("channelProfileIconLevelMin", 1);
         this.channelEmojiStatusLevelMin = this.mainPreferences.getInt("channelEmojiStatusLevelMin", 1);
@@ -2161,8 +2171,8 @@ public class MessagesController extends BaseController implements NotificationCe
         this.chatlistInvitesLimitPremium = this.mainPreferences.getInt("chatlistInvitesLimitPremium", z ? 5 : 20);
         this.chatlistJoinedLimitDefault = this.mainPreferences.getInt("chatlistJoinedLimitDefault", 2);
         this.chatlistJoinedLimitPremium = this.mainPreferences.getInt("chatlistJoinedLimitPremium", z ? 5 : 20);
-        this.stargiftsMessageLengthMax = this.mainPreferences.getInt("stargiftsMessageLengthMax", NotificationCenter.didReplacedPhotoInMemCache);
-        this.stargiftsConvertPeriodMax = this.mainPreferences.getInt("stargiftsConvertPeriodMax", z ? NotificationCenter.premiumPromoUpdated : 7776000);
+        this.stargiftsMessageLengthMax = this.mainPreferences.getInt("stargiftsMessageLengthMax", NotificationCenter.cameraInitied);
+        this.stargiftsConvertPeriodMax = this.mainPreferences.getInt("stargiftsConvertPeriodMax", z ? NotificationCenter.currentUserPremiumStatusChanged : 7776000);
         this.videoIgnoreAltDocuments = this.mainPreferences.getBoolean("videoIgnoreAltDocuments", false);
         this.disableBotFullscreenBlur = this.mainPreferences.getBoolean("disableBotFullscreenBlur", false);
         this.tonBlockchainExplorerUrl = this.mainPreferences.getString("tonBlockchainExplorerUrl", "https://tonviewer.com/");
@@ -2211,7 +2221,7 @@ public class MessagesController extends BaseController implements NotificationCe
         int i4 = this.mainPreferences.getInt("transcribeAudioTrialWeeklyNumber", BuildVars.DEBUG_PRIVATE_VERSION ? 2 : 0);
         this.transcribeAudioTrialWeeklyNumber = i4;
         this.transcribeAudioTrialCurrentNumber = this.mainPreferences.getInt("transcribeAudioTrialCurrentNumber", i4);
-        this.transcribeAudioTrialDurationMax = this.mainPreferences.getInt("transcribeAudioTrialDurationMax", NotificationCenter.premiumPromoUpdated);
+        this.transcribeAudioTrialDurationMax = this.mainPreferences.getInt("transcribeAudioTrialDurationMax", NotificationCenter.currentUserPremiumStatusChanged);
         this.transcribeAudioTrialCooldownUntil = this.mainPreferences.getInt("transcribeAudioTrialCooldownUntil", 0);
         this.recommendedChannelsLimitDefault = this.mainPreferences.getInt("recommendedChannelsLimitDefault", 10);
         this.recommendedChannelsLimitPremium = this.mainPreferences.getInt("recommendedChannelsLimitPremium", 100);
@@ -3248,7 +3258,7 @@ public class MessagesController extends BaseController implements NotificationCe
     public void addFilter(DialogFilter dialogFilter, boolean z) {
         if (z) {
             int size = this.dialogFilters.size();
-            int i = NotificationCenter.cameraInitied;
+            int i = NotificationCenter.closeOtherAppActivities;
             for (int i2 = 0; i2 < size; i2++) {
                 i = Math.min(i, this.dialogFilters.get(i2).order);
             }
@@ -12703,7 +12713,7 @@ public class MessagesController extends BaseController implements NotificationCe
         ArrayList<TLRPC.WallPaper> arrayList = new ArrayList<>();
         arrayList.add(wallPaper);
         getMessagesStorage().putWallpapers(arrayList, 2);
-        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(wallPaper.document.thumbs, NotificationCenter.uploadStoryProgress);
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(wallPaper.document.thumbs, NotificationCenter.chatlistFolderUpdate);
         if (closestPhotoSizeWithSize != null) {
             ImageLoader.getInstance().replaceImageInCache(Utilities.MD5(file.getAbsolutePath()) + "@100_100", closestPhotoSizeWithSize.location.volume_id + "_" + closestPhotoSizeWithSize.location.local_id + "@100_100", ImageLocation.getForDocument(closestPhotoSizeWithSize, wallPaper.document), false);
         }
@@ -19511,11 +19521,11 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* JADX WARN: Code restructure failed: missing block: B:165:0x054e, code lost:
     
-        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] >= 217) goto L216;
+        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] >= 218) goto L216;
      */
     /* JADX WARN: Code restructure failed: missing block: B:170:0x0566, code lost:
     
-        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 217) goto L222;
+        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 218) goto L222;
      */
     /* JADX WARN: Code restructure failed: missing block: B:290:0x0206, code lost:
     
@@ -19835,7 +19845,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     messageObject.scheduled = i11 == 1;
                     arrayList.add(messageObject);
                     if (z) {
-                        if (message4.legacy && message4.layer < 217) {
+                        if (message4.legacy && message4.layer < 218) {
                             arrayList2.add(Integer.valueOf(message4.id));
                         } else if ((MessageObject.getMedia(message4) instanceof TLRPC.TL_messageMediaUnsupported) && MessageObject.getMedia(message4).bytes != null) {
                             if (MessageObject.getMedia(message4).bytes.length != 0) {
@@ -28494,2931 +28504,19 @@ public class MessagesController extends BaseController implements NotificationCe
         return z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:1003:0x18f1  */
-    /* JADX WARN: Removed duplicated region for block: B:1023:0x1952  */
-    /* JADX WARN: Removed duplicated region for block: B:1029:0x1983  */
-    /* JADX WARN: Removed duplicated region for block: B:1032:0x1993  */
-    /* JADX WARN: Removed duplicated region for block: B:1035:0x19a4  */
-    /* JADX WARN: Removed duplicated region for block: B:1038:0x19b7  */
-    /* JADX WARN: Removed duplicated region for block: B:1049:0x19d1  */
-    /* JADX WARN: Removed duplicated region for block: B:1051:0x19d7  */
-    /* JADX WARN: Removed duplicated region for block: B:1052:0x1999  */
-    /* JADX WARN: Removed duplicated region for block: B:1053:0x198a  */
-    /* JADX WARN: Removed duplicated region for block: B:1056:0x195f  */
-    /* JADX WARN: Removed duplicated region for block: B:1062:0x167e  */
-    /* JADX WARN: Removed duplicated region for block: B:1135:0x1c46  */
-    /* JADX WARN: Removed duplicated region for block: B:1142:0x1c7f  */
-    /* JADX WARN: Removed duplicated region for block: B:1145:0x1c91  */
-    /* JADX WARN: Removed duplicated region for block: B:1152:0x1cca  */
-    /* JADX WARN: Removed duplicated region for block: B:1154:0x1cda  */
-    /* JADX WARN: Removed duplicated region for block: B:1160:0x1d07  */
-    /* JADX WARN: Removed duplicated region for block: B:1166:0x1d33  */
-    /* JADX WARN: Removed duplicated region for block: B:1172:0x1d68  */
-    /* JADX WARN: Removed duplicated region for block: B:1178:0x1d91  */
-    /* JADX WARN: Removed duplicated region for block: B:1184:0x1db7  */
-    /* JADX WARN: Removed duplicated region for block: B:775:0x1551  */
-    /* JADX WARN: Removed duplicated region for block: B:854:0x1651  */
-    /* JADX WARN: Removed duplicated region for block: B:862:0x1683  */
-    /* JADX WARN: Removed duplicated region for block: B:884:0x16f9  */
-    /* JADX WARN: Removed duplicated region for block: B:926:0x1788  */
-    /* JADX WARN: Removed duplicated region for block: B:946:0x179a  */
-    /* JADX WARN: Removed duplicated region for block: B:989:0x1875  */
-    /* JADX WARN: Removed duplicated region for block: B:993:0x1885  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean processUpdateArray(ArrayList<TLRPC.Update> arrayList, final ArrayList<TLRPC.User> arrayList2, final ArrayList<TLRPC.Chat> arrayList3, boolean z, final int i) {
-        ConcurrentHashMap<Long, TLRPC.User> concurrentHashMap;
-        ConcurrentHashMap<Long, TLRPC.Chat> concurrentHashMap2;
-        final LongSparseArray longSparseArray;
-        ArrayList arrayList4;
-        SparseIntArray sparseIntArray;
-        LongSparseIntArray longSparseIntArray;
-        LongSparseArray longSparseArray2;
-        boolean z2;
-        HashMap hashMap;
-        ArrayList arrayList5;
-        int i2;
-        HashMap<MessagesStorage.TopicKey, Integer> hashMap2;
-        ArrayList<Long> arrayList6;
-        LongSparseArray longSparseArray3;
-        LongSparseArray longSparseArray4;
-        HashMap hashMap3;
-        LongSparseArray longSparseArray5;
-        LongSparseArray longSparseArray6;
-        LongSparseArray longSparseArray7;
-        LongSparseArray longSparseArray8;
-        ArrayList arrayList7;
-        SparseIntArray sparseIntArray2;
-        HashMap hashMap4;
-        HashMap<MessagesStorage.TopicKey, Integer> hashMap5;
-        LongSparseIntArray longSparseIntArray2;
-        LongSparseArray longSparseArray9;
-        LongSparseIntArray longSparseIntArray3;
-        LongSparseArray longSparseArray10;
-        ArrayList arrayList8;
-        LongSparseArray longSparseArray11;
-        long j;
-        TLRPC.Message message;
-        long j2;
-        TLRPC.Chat chat;
-        TLRPC.MessageAction messageAction;
-        LongSparseArray longSparseArray12;
-        boolean z3;
-        long j3;
-        MessageObject messageObject;
-        int i3;
-        int i4;
-        LongSparseArray longSparseArray13;
-        ArrayList arrayList9;
-        LongSparseArray longSparseArray14;
-        LongSparseArray longSparseArray15;
-        ImageLoader.MessageThumb generateMessageThumb;
-        LongSparseArray longSparseArray16;
-        long j4;
-        boolean z4;
-        int i5;
-        TLRPC.UserStatus userStatus;
-        ArrayList<Long> arrayList10;
-        LongSparseArray longSparseArray17;
-        LongSparseArray longSparseArray18;
-        HashMap<MessagesStorage.TopicKey, Integer> hashMap6;
-        HashMap hashMap7;
-        long j5;
-        final TLRPC.SendMessageAction sendMessageAction;
-        final long j6;
-        HashMap hashMap8;
-        final int i6;
-        LongSparseArray longSparseArray19;
-        LongSparseArray longSparseArray20;
-        long j7;
-        boolean z5;
-        LongSparseArray longSparseArray21;
-        LongSparseArray longSparseArray22;
-        HashMap hashMap9;
-        HashMap<MessagesStorage.TopicKey, Integer> hashMap10;
-        LongSparseArray longSparseArray23;
-        ArrayList arrayList11;
-        boolean z6;
-        final TLRPC.Message message2;
-        boolean z7;
-        ArrayList arrayList12;
-        ArrayList arrayList13;
-        LongSparseArray longSparseArray24;
-        String str;
-        long j8;
-        ArrayList<TLRPC.Message> arrayList14;
-        ArrayList<TLRPC.Message> arrayList15;
-        ArrayList arrayList16;
-        ArrayList arrayList17;
-        long j9;
-        TLRPC.UserStatus userStatus2;
-        long j10;
-        if (arrayList.isEmpty()) {
-            if (arrayList2 != null || arrayList3 != null) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda281
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        MessagesController.this.lambda$processUpdateArray$357(arrayList2, arrayList3);
-                    }
-                });
-            }
-            return true;
-        }
-        long currentTimeMillis = System.currentTimeMillis();
-        if (arrayList2 != null) {
-            concurrentHashMap = new ConcurrentHashMap<>();
-            int size = arrayList2.size();
-            for (int i7 = 0; i7 < size; i7++) {
-                TLRPC.User user = arrayList2.get(i7);
-                concurrentHashMap.put(Long.valueOf(user.id), user);
-            }
-        } else {
-            concurrentHashMap = this.users;
-        }
-        ConcurrentHashMap<Long, TLRPC.User> concurrentHashMap3 = concurrentHashMap;
-        if (arrayList3 != null) {
-            concurrentHashMap2 = new ConcurrentHashMap<>();
-            int size2 = arrayList3.size();
-            for (int i8 = 0; i8 < size2; i8++) {
-                TLRPC.Chat chat2 = arrayList3.get(i8);
-                concurrentHashMap2.put(Long.valueOf(chat2.id), chat2);
-            }
-        } else {
-            concurrentHashMap2 = this.chats;
-        }
-        ConcurrentHashMap<Long, TLRPC.Chat> concurrentHashMap4 = concurrentHashMap2;
-        if (arrayList2 != null || arrayList3 != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda290
-                @Override // java.lang.Runnable
-                public final void run() {
-                    MessagesController.this.lambda$processUpdateArray$358(arrayList2, arrayList3);
-                }
-            });
-        }
-        long clientUserId = getUserConfig().getClientUserId();
-        int size3 = arrayList.size();
-        long j11 = currentTimeMillis;
-        LongSparseIntArray longSparseIntArray4 = null;
-        HashMap<MessagesStorage.TopicKey, Integer> hashMap11 = null;
-        ArrayList<Long> arrayList18 = null;
-        LongSparseArray longSparseArray25 = null;
-        LongSparseArray longSparseArray26 = null;
-        LongSparseArray longSparseArray27 = null;
-        HashMap hashMap12 = null;
-        LongSparseIntArray longSparseIntArray5 = null;
-        LongSparseArray longSparseArray28 = null;
-        ArrayList arrayList19 = null;
-        LongSparseArray longSparseArray29 = null;
-        int i9 = 0;
-        int i10 = 0;
-        ArrayList arrayList20 = null;
-        LongSparseArray longSparseArray30 = null;
-        LongSparseIntArray longSparseIntArray6 = null;
-        LongSparseArray longSparseArray31 = null;
-        LongSparseArray longSparseArray32 = null;
-        ArrayList arrayList21 = null;
-        LongSparseArray longSparseArray33 = null;
-        ArrayList arrayList22 = null;
-        boolean z8 = false;
-        ArrayList arrayList23 = null;
-        LongSparseArray longSparseArray34 = null;
-        ArrayList<TLRPC.Message> arrayList24 = null;
-        LongSparseArray longSparseArray35 = null;
-        LongSparseArray longSparseArray36 = null;
-        LongSparseArray longSparseArray37 = null;
-        ArrayList arrayList25 = null;
-        SparseIntArray sparseIntArray3 = null;
-        ArrayList<TLRPC.Message> arrayList26 = null;
-        LongSparseIntArray longSparseIntArray7 = null;
-        HashMap hashMap13 = null;
-        HashMap<MessagesStorage.TopicKey, Integer> hashMap14 = null;
-        int i11 = 0;
-        LongSparseIntArray longSparseIntArray8 = null;
-        while (i9 < size3) {
-            int i12 = size3;
-            TLRPC.Update update = arrayList.get(i9);
-            if (!BuildVars.LOGS_ENABLED || update == null) {
-                arrayList5 = arrayList19;
-                i2 = i9;
-            } else {
-                i2 = i9;
-                StringBuilder sb = new StringBuilder();
-                arrayList5 = arrayList19;
-                sb.append("process update ");
-                sb.append(update.getClass().getSimpleName());
-                FileLog.d(sb.toString());
-            }
-            boolean z9 = update instanceof TLRPC.TL_updateNewMessage;
-            ConcurrentHashMap<Long, TLRPC.User> concurrentHashMap5 = concurrentHashMap3;
-            ConcurrentHashMap<Long, TLRPC.Chat> concurrentHashMap6 = concurrentHashMap4;
-            if (z9 || (update instanceof TLRPC.TL_updateNewChannelMessage) || (update instanceof TLRPC.TL_updateNewScheduledMessage)) {
-                hashMap2 = hashMap11;
-                arrayList6 = arrayList18;
-                longSparseArray3 = longSparseArray26;
-                longSparseArray4 = longSparseArray27;
-                hashMap3 = hashMap12;
-                longSparseArray5 = longSparseArray29;
-                longSparseArray6 = longSparseArray35;
-                longSparseArray7 = longSparseArray36;
-                longSparseArray8 = longSparseArray37;
-                arrayList7 = arrayList25;
-                sparseIntArray2 = sparseIntArray3;
-                hashMap4 = hashMap13;
-                hashMap5 = hashMap14;
-                concurrentHashMap3 = concurrentHashMap5;
-                concurrentHashMap4 = concurrentHashMap6;
-                longSparseIntArray2 = longSparseIntArray4;
-                longSparseArray9 = longSparseArray25;
-                longSparseIntArray3 = longSparseIntArray5;
-                longSparseArray10 = longSparseArray34;
-                arrayList8 = arrayList23;
-                longSparseArray11 = longSparseArray28;
-                j = j11;
-                if (z9) {
-                    message = ((TLRPC.TL_updateNewMessage) update).message;
-                } else if (update instanceof TLRPC.TL_updateNewScheduledMessage) {
-                    message = ((TLRPC.TL_updateNewScheduledMessage) update).message;
-                } else {
-                    message = ((TLRPC.TL_updateNewChannelMessage) update).message;
-                    if (BuildVars.LOGS_ENABLED) {
-                        FileLog.d(update + " channelId = " + message.peer_id.channel_id + " message_id = " + message.id);
-                    }
-                    if (!message.out) {
-                        TLRPC.Peer peer = message.from_id;
-                        if ((peer instanceof TLRPC.TL_peerUser) && peer.user_id == getUserConfig().getClientUserId()) {
-                            message.out = true;
-                        }
-                    }
-                }
-                if (!(message instanceof TLRPC.TL_messageEmpty)) {
-                    NewMessageCallback newMessageCallback = this.newMessageCallback;
-                    if (newMessageCallback != null && newMessageCallback.onMessageReceived(message)) {
-                        this.newMessageCallback = null;
-                    }
-                    TLRPC.Peer peer2 = message.peer_id;
-                    long j12 = peer2.channel_id;
-                    if (j12 == 0) {
-                        j12 = peer2.chat_id;
-                        if (j12 == 0) {
-                            long j13 = peer2.user_id;
-                            if (j13 != 0) {
-                                j2 = j13;
-                                j12 = 0;
-                            } else {
-                                j12 = 0;
-                                j2 = 0;
-                            }
-                            if (j12 == 0) {
-                                chat = concurrentHashMap4.get(Long.valueOf(j12));
-                                j11 = j;
-                                if (chat == null || chat.min) {
-                                    chat = getChat(Long.valueOf(j12));
-                                }
-                                if (chat == null || chat.min) {
-                                    chat = getMessagesStorage().getChatSync(j12);
-                                    putChat(chat, true);
-                                }
-                            } else {
-                                j11 = j;
-                                chat = null;
-                            }
-                            if (!z) {
-                                if (j12 != 0 && chat == null) {
-                                    if (!BuildVars.LOGS_ENABLED) {
-                                        return false;
-                                    }
-                                    FileLog.d("not found chat " + j12);
-                                    return false;
-                                }
-                                int size4 = message.entities.size() + 3;
-                                int i13 = 0;
-                                while (i13 < size4) {
-                                    if (i13 == 0) {
-                                        j4 = j2;
-                                    } else if (i13 == 1) {
-                                        TLRPC.Peer peer3 = message.from_id;
-                                        j4 = peer3 instanceof TLRPC.TL_peerUser ? peer3.user_id : 0L;
-                                        if (message.post) {
-                                            z4 = true;
-                                            if (j4 > 0) {
-                                                TLRPC.User user2 = concurrentHashMap3.get(Long.valueOf(j4));
-                                                i5 = size4;
-                                                if (user2 == null || (!z4 && user2.min)) {
-                                                    user2 = getUser(Long.valueOf(j4));
-                                                }
-                                                if (user2 == null || (!z4 && user2.min)) {
-                                                    TLRPC.User userSync = getMessagesStorage().getUserSync(j4);
-                                                    if (userSync != null && !z4 && userSync.min) {
-                                                        userSync = null;
-                                                    }
-                                                    putUser(userSync, true);
-                                                    user2 = userSync;
-                                                }
-                                                if (user2 == null) {
-                                                    if (!BuildVars.LOGS_ENABLED) {
-                                                        return false;
-                                                    }
-                                                    FileLog.d("not found user " + j4);
-                                                    return false;
-                                                }
-                                                if (!message.out && i13 == 1 && (userStatus = user2.status) != null && userStatus.expires <= 0 && Math.abs(getConnectionsManager().getCurrentTime() - message.date) < 30) {
-                                                    this.onlinePrivacy.put(Long.valueOf(j4), Integer.valueOf(message.date));
-                                                    i10 |= UPDATE_MASK_STATUS;
-                                                }
-                                            } else {
-                                                i5 = size4;
-                                            }
-                                            i13++;
-                                            size4 = i5;
-                                            j2 = j4;
-                                        }
-                                    } else {
-                                        if (i13 == 2) {
-                                            TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
-                                            if (messageFwdHeader != null) {
-                                                TLRPC.Peer peer4 = messageFwdHeader.from_id;
-                                                if (peer4 instanceof TLRPC.TL_peerUser) {
-                                                    j4 = peer4.user_id;
-                                                }
-                                            }
-                                            j4 = 0;
-                                        } else {
-                                            TLRPC.MessageEntity messageEntity = message.entities.get(i13 - 3);
-                                            if (messageEntity instanceof TLRPC.TL_messageEntityMentionName) {
-                                                j4 = ((TLRPC.TL_messageEntityMentionName) messageEntity).user_id;
-                                            }
-                                            j4 = 0;
-                                        }
-                                        if (j4 > 0) {
-                                        }
-                                        i13++;
-                                        size4 = i5;
-                                        j2 = j4;
-                                    }
-                                    z4 = false;
-                                    if (j4 > 0) {
-                                    }
-                                    i13++;
-                                    size4 = i5;
-                                    j2 = j4;
-                                }
-                            }
-                            messageAction = message.action;
-                            if (messageAction instanceof TLRPC.TL_messageActionChatDeleteUser) {
-                                TLRPC.User user3 = concurrentHashMap3.get(Long.valueOf(messageAction.user_id));
-                                if (user3 != null && user3.bot) {
-                                    message.reply_markup = new TLRPC.TL_replyKeyboardHide();
-                                    message.flags |= 64;
-                                } else {
-                                    TLRPC.Peer peer5 = message.from_id;
-                                    if ((peer5 instanceof TLRPC.TL_peerUser) && peer5.user_id == clientUserId && message.action.user_id == clientUserId) {
-                                        sparseIntArray3 = sparseIntArray2;
-                                        longSparseArray15 = longSparseArray6;
-                                        longSparseArray25 = longSparseArray9;
-                                        longSparseArray28 = longSparseArray11;
-                                        arrayList23 = arrayList8;
-                                        longSparseArray34 = longSparseArray10;
-                                        arrayList19 = arrayList5;
-                                        longSparseIntArray4 = longSparseIntArray2;
-                                        longSparseIntArray5 = longSparseIntArray3;
-                                        longSparseArray26 = longSparseArray3;
-                                        longSparseArray37 = longSparseArray8;
-                                        hashMap12 = hashMap3;
-                                        longSparseArray27 = longSparseArray4;
-                                        hashMap11 = hashMap2;
-                                        arrayList18 = arrayList6;
-                                        arrayList25 = arrayList7;
-                                        hashMap14 = hashMap5;
-                                        hashMap13 = hashMap4;
-                                        longSparseArray16 = longSparseArray7;
-                                        longSparseArray29 = longSparseArray5;
-                                    }
-                                }
-                            }
-                            ImageLoader.saveMessageThumbs(message);
-                            MessageObject.getDialogId(message);
-                            if ((update instanceof TLRPC.TL_updateNewChannelMessage) || message.reply_to == null || (message.action instanceof TLRPC.TL_messageActionPinMessage)) {
-                                longSparseArray12 = longSparseArray33;
-                            } else {
-                                longSparseArray12 = longSparseArray33;
-                                if (longSparseArray12 == null) {
-                                    longSparseArray12 = new LongSparseArray();
-                                }
-                                SparseArray sparseArray = (SparseArray) longSparseArray12.get(message.dialog_id);
-                                if (sparseArray == null) {
-                                    sparseArray = new SparseArray();
-                                    longSparseArray12.put(message.dialog_id, sparseArray);
-                                }
-                                TLRPC.MessageReplyHeader messageReplyHeader = message.reply_to;
-                                int i14 = messageReplyHeader.reply_to_top_id;
-                                if (i14 == 0) {
-                                    i14 = messageReplyHeader.reply_to_msg_id;
-                                }
-                                TLRPC.MessageReplies messageReplies = (TLRPC.MessageReplies) sparseArray.get(i14);
-                                if (messageReplies == null) {
-                                    messageReplies = new TLRPC.TL_messageReplies();
-                                    sparseArray.put(i14, messageReplies);
-                                }
-                                TLRPC.Peer peer6 = message.from_id;
-                                if (peer6 != null) {
-                                    messageReplies.recent_repliers.add(0, peer6);
-                                }
-                                messageReplies.replies++;
-                            }
-                            longSparseArray33 = longSparseArray12;
-                            if (this.createdDialogIds.contains(Long.valueOf(message.dialog_id)) && message.grouped_id == 0 && (generateMessageThumb = ImageLoader.generateMessageThumb(message)) != null) {
-                                if (arrayList22 == null) {
-                                    arrayList22 = new ArrayList();
-                                }
-                                ArrayList arrayList27 = arrayList22;
-                                arrayList27.add(generateMessageThumb);
-                                arrayList22 = arrayList27;
-                            }
-                            if (!(update instanceof TLRPC.TL_updateNewScheduledMessage)) {
-                                if (arrayList24 == null) {
-                                    arrayList24 = new ArrayList<>();
-                                }
-                                ArrayList<TLRPC.Message> arrayList28 = arrayList24;
-                                arrayList28.add(message);
-                                boolean contains = this.createdScheduledDialogIds.contains(Long.valueOf(message.dialog_id));
-                                MessageObject messageObject2 = new MessageObject(this.currentAccount, message, concurrentHashMap3, concurrentHashMap4, contains, contains);
-                                messageObject2.scheduled = true;
-                                if (longSparseArray32 == null) {
-                                    longSparseArray32 = new LongSparseArray();
-                                }
-                                LongSparseArray longSparseArray38 = longSparseArray32;
-                                ArrayList arrayList29 = (ArrayList) longSparseArray38.get(message.dialog_id);
-                                if (arrayList29 == null) {
-                                    arrayList29 = new ArrayList();
-                                    longSparseArray38.put(message.dialog_id, arrayList29);
-                                }
-                                arrayList29.add(messageObject2);
-                                sparseIntArray3 = sparseIntArray2;
-                                arrayList24 = arrayList28;
-                                longSparseArray32 = longSparseArray38;
-                                longSparseArray25 = longSparseArray9;
-                                longSparseArray28 = longSparseArray11;
-                                arrayList23 = arrayList8;
-                                longSparseArray14 = longSparseArray10;
-                                arrayList19 = arrayList5;
-                                longSparseArray26 = longSparseArray3;
-                                hashMap12 = hashMap3;
-                                arrayList18 = arrayList6;
-                                arrayList25 = arrayList7;
-                            } else {
-                                if (arrayList26 == null) {
-                                    arrayList26 = new ArrayList<>();
-                                }
-                                ArrayList<TLRPC.Message> arrayList30 = arrayList26;
-                                arrayList30.add(message);
-                                ConcurrentHashMap<Long, Integer> concurrentHashMap7 = message.out ? this.dialogs_read_outbox_max : this.dialogs_read_inbox_max;
-                                Integer num = concurrentHashMap7.get(Long.valueOf(message.dialog_id));
-                                if (num == null) {
-                                    num = Integer.valueOf(getMessagesStorage().getDialogReadMax(message.out, message.dialog_id));
-                                    concurrentHashMap7.put(Long.valueOf(message.dialog_id), num);
-                                }
-                                if (num.intValue() < message.id && (chat == null || !ChatObject.isNotInChat(chat))) {
-                                    TLRPC.MessageAction messageAction2 = message.action;
-                                    if (!(messageAction2 instanceof TLRPC.TL_messageActionChatMigrateTo) && !(messageAction2 instanceof TLRPC.TL_messageActionChannelCreate)) {
-                                        z3 = true;
-                                        message.unread = z3;
-                                        j3 = message.dialog_id;
-                                        if (j3 == clientUserId) {
-                                            if (!message.from_scheduled) {
-                                                message.unread = false;
-                                            }
-                                            message.media_unread = false;
-                                            message.out = true;
-                                        }
-                                        boolean contains2 = this.createdDialogIds.contains(Long.valueOf(j3));
-                                        messageObject = new MessageObject(this.currentAccount, message, concurrentHashMap3, concurrentHashMap4, contains2, contains2);
-                                        i3 = messageObject.type;
-                                        if (i3 != 11) {
-                                            i4 = UPDATE_MASK_CHAT_AVATAR;
-                                        } else {
-                                            if (i3 == 10) {
-                                                i4 = UPDATE_MASK_CHAT_NAME;
-                                            }
-                                            longSparseArray13 = longSparseArray9 == null ? new LongSparseArray() : longSparseArray9;
-                                            arrayList9 = (ArrayList) longSparseArray13.get(message.dialog_id);
-                                            if (arrayList9 == null) {
-                                                arrayList9 = new ArrayList();
-                                                longSparseArray13.put(message.dialog_id, arrayList9);
-                                            }
-                                            arrayList9.add(messageObject);
-                                            if ((messageObject.isOut() || messageObject.messageOwner.from_scheduled) && messageObject.isUnread() && (chat == null || !(ChatObject.isNotInChat(chat) || chat.min))) {
-                                                ArrayList arrayList31 = arrayList8 == null ? new ArrayList() : arrayList8;
-                                                arrayList31.add(messageObject);
-                                                sparseIntArray3 = sparseIntArray2;
-                                                arrayList26 = arrayList30;
-                                                longSparseArray25 = longSparseArray13;
-                                                longSparseArray28 = longSparseArray11;
-                                                longSparseArray14 = longSparseArray10;
-                                                arrayList19 = arrayList5;
-                                                longSparseArray26 = longSparseArray3;
-                                                hashMap12 = hashMap3;
-                                                arrayList18 = arrayList6;
-                                                arrayList25 = arrayList7;
-                                                arrayList23 = arrayList31;
-                                            } else {
-                                                sparseIntArray3 = sparseIntArray2;
-                                                arrayList26 = arrayList30;
-                                                longSparseArray25 = longSparseArray13;
-                                                longSparseArray15 = longSparseArray6;
-                                                longSparseArray28 = longSparseArray11;
-                                                arrayList23 = arrayList8;
-                                                longSparseArray34 = longSparseArray10;
-                                                arrayList19 = arrayList5;
-                                                longSparseIntArray4 = longSparseIntArray2;
-                                                longSparseIntArray5 = longSparseIntArray3;
-                                                longSparseArray26 = longSparseArray3;
-                                                longSparseArray37 = longSparseArray8;
-                                                hashMap12 = hashMap3;
-                                                longSparseArray27 = longSparseArray4;
-                                                hashMap11 = hashMap2;
-                                                arrayList18 = arrayList6;
-                                                arrayList25 = arrayList7;
-                                                hashMap14 = hashMap5;
-                                                hashMap13 = hashMap4;
-                                                longSparseArray16 = longSparseArray7;
-                                                longSparseArray29 = longSparseArray5;
-                                            }
-                                        }
-                                        i10 |= i4;
-                                        if (longSparseArray9 == null) {
-                                        }
-                                        arrayList9 = (ArrayList) longSparseArray13.get(message.dialog_id);
-                                        if (arrayList9 == null) {
-                                        }
-                                        arrayList9.add(messageObject);
-                                        if (messageObject.isOut()) {
-                                        }
-                                        if (arrayList8 == null) {
-                                        }
-                                        arrayList31.add(messageObject);
-                                        sparseIntArray3 = sparseIntArray2;
-                                        arrayList26 = arrayList30;
-                                        longSparseArray25 = longSparseArray13;
-                                        longSparseArray28 = longSparseArray11;
-                                        longSparseArray14 = longSparseArray10;
-                                        arrayList19 = arrayList5;
-                                        longSparseArray26 = longSparseArray3;
-                                        hashMap12 = hashMap3;
-                                        arrayList18 = arrayList6;
-                                        arrayList25 = arrayList7;
-                                        arrayList23 = arrayList31;
-                                    }
-                                }
-                                z3 = false;
-                                message.unread = z3;
-                                j3 = message.dialog_id;
-                                if (j3 == clientUserId) {
-                                }
-                                boolean contains22 = this.createdDialogIds.contains(Long.valueOf(j3));
-                                messageObject = new MessageObject(this.currentAccount, message, concurrentHashMap3, concurrentHashMap4, contains22, contains22);
-                                i3 = messageObject.type;
-                                if (i3 != 11) {
-                                }
-                                i10 |= i4;
-                                if (longSparseArray9 == null) {
-                                }
-                                arrayList9 = (ArrayList) longSparseArray13.get(message.dialog_id);
-                                if (arrayList9 == null) {
-                                }
-                                arrayList9.add(messageObject);
-                                if (messageObject.isOut()) {
-                                }
-                                if (arrayList8 == null) {
-                                }
-                                arrayList31.add(messageObject);
-                                sparseIntArray3 = sparseIntArray2;
-                                arrayList26 = arrayList30;
-                                longSparseArray25 = longSparseArray13;
-                                longSparseArray28 = longSparseArray11;
-                                longSparseArray14 = longSparseArray10;
-                                arrayList19 = arrayList5;
-                                longSparseArray26 = longSparseArray3;
-                                hashMap12 = hashMap3;
-                                arrayList18 = arrayList6;
-                                arrayList25 = arrayList7;
-                                arrayList23 = arrayList31;
-                            }
-                            hashMap14 = hashMap5;
-                            hashMap13 = hashMap4;
-                            longSparseArray34 = longSparseArray14;
-                            longSparseArray15 = longSparseArray6;
-                            longSparseArray16 = longSparseArray7;
-                            longSparseIntArray4 = longSparseIntArray2;
-                            longSparseIntArray5 = longSparseIntArray3;
-                            longSparseArray29 = longSparseArray5;
-                            longSparseArray37 = longSparseArray8;
-                            longSparseArray27 = longSparseArray4;
-                            hashMap11 = hashMap2;
-                        }
-                    }
-                    j2 = 0;
-                    if (j12 == 0) {
-                    }
-                    if (!z) {
-                    }
-                    messageAction = message.action;
-                    if (messageAction instanceof TLRPC.TL_messageActionChatDeleteUser) {
-                    }
-                    ImageLoader.saveMessageThumbs(message);
-                    MessageObject.getDialogId(message);
-                    if (update instanceof TLRPC.TL_updateNewChannelMessage) {
-                    }
-                    longSparseArray12 = longSparseArray33;
-                    longSparseArray33 = longSparseArray12;
-                    if (this.createdDialogIds.contains(Long.valueOf(message.dialog_id))) {
-                        if (arrayList22 == null) {
-                        }
-                        ArrayList arrayList272 = arrayList22;
-                        arrayList272.add(generateMessageThumb);
-                        arrayList22 = arrayList272;
-                    }
-                    if (!(update instanceof TLRPC.TL_updateNewScheduledMessage)) {
-                    }
-                    hashMap14 = hashMap5;
-                    hashMap13 = hashMap4;
-                    longSparseArray34 = longSparseArray14;
-                    longSparseArray15 = longSparseArray6;
-                    longSparseArray16 = longSparseArray7;
-                    longSparseIntArray4 = longSparseIntArray2;
-                    longSparseIntArray5 = longSparseIntArray3;
-                    longSparseArray29 = longSparseArray5;
-                    longSparseArray37 = longSparseArray8;
-                    longSparseArray27 = longSparseArray4;
-                    hashMap11 = hashMap2;
-                }
-                sparseIntArray3 = sparseIntArray2;
-                longSparseArray15 = longSparseArray6;
-                longSparseArray25 = longSparseArray9;
-                j11 = j;
-                longSparseArray16 = longSparseArray7;
-                longSparseArray28 = longSparseArray11;
-                arrayList23 = arrayList8;
-                longSparseArray34 = longSparseArray10;
-                arrayList19 = arrayList5;
-                longSparseIntArray4 = longSparseIntArray2;
-                longSparseIntArray5 = longSparseIntArray3;
-                longSparseArray29 = longSparseArray5;
-                longSparseArray37 = longSparseArray8;
-                hashMap12 = hashMap3;
-                longSparseArray27 = longSparseArray4;
-                hashMap11 = hashMap2;
-                arrayList18 = arrayList6;
-                arrayList25 = arrayList7;
-                hashMap14 = hashMap5;
-                hashMap13 = hashMap4;
-                longSparseArray26 = longSparseArray3;
-            } else {
-                if (update instanceof TLRPC.TL_updateGroupCallMessage) {
-                    final TLRPC.TL_updateGroupCallMessage tL_updateGroupCallMessage = (TLRPC.TL_updateGroupCallMessage) update;
-                    GroupCallMessagesController.getInstance(this.currentAccount).processUpdate(tL_updateGroupCallMessage);
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda291
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            MessagesController.this.lambda$processUpdateArray$359(tL_updateGroupCallMessage);
-                        }
-                    });
-                } else if (update instanceof TLRPC.TL_updateDeleteGroupCallMessages) {
-                    final TLRPC.TL_updateDeleteGroupCallMessages tL_updateDeleteGroupCallMessages = (TLRPC.TL_updateDeleteGroupCallMessages) update;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda292
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            MessagesController.this.lambda$processUpdateArray$360(tL_updateDeleteGroupCallMessages);
-                        }
-                    });
-                } else if (update instanceof TLRPC.TL_updateGroupCallEncryptedMessage) {
-                    GroupCallMessagesController.getInstance(this.currentAccount).processUpdate((TLRPC.TL_updateGroupCallEncryptedMessage) update);
-                } else {
-                    if (update instanceof TLRPC.TL_updateReadMessagesContents) {
-                        TLRPC.TL_updateReadMessagesContents tL_updateReadMessagesContents = (TLRPC.TL_updateReadMessagesContents) update;
-                        int i15 = tL_updateReadMessagesContents.date;
-                        if (longSparseArray29 == null) {
-                            longSparseArray29 = new LongSparseArray();
-                        }
-                        ArrayList arrayList32 = (ArrayList) longSparseArray29.get(0L);
-                        if (arrayList32 == null) {
-                            arrayList32 = new ArrayList();
-                            longSparseArray29.put(0L, arrayList32);
-                        }
-                        arrayList32.addAll(tL_updateReadMessagesContents.messages);
-                        i11 = i15;
-                        longSparseArray16 = longSparseArray36;
-                        arrayList19 = arrayList5;
-                        concurrentHashMap3 = concurrentHashMap5;
-                        concurrentHashMap4 = concurrentHashMap6;
-                    } else {
-                        if (update instanceof TLRPC.TL_updateChannelReadMessagesContents) {
-                            TLRPC.TL_updateChannelReadMessagesContents tL_updateChannelReadMessagesContents = (TLRPC.TL_updateChannelReadMessagesContents) update;
-                            if (longSparseArray29 == null) {
-                                longSparseArray29 = new LongSparseArray();
-                            }
-                            long j14 = -tL_updateChannelReadMessagesContents.channel_id;
-                            ArrayList arrayList33 = (ArrayList) longSparseArray29.get(j14);
-                            if (arrayList33 == null) {
-                                arrayList33 = new ArrayList();
-                                longSparseArray29.put(j14, arrayList33);
-                            }
-                            arrayList33.addAll(tL_updateChannelReadMessagesContents.messages);
-                            hashMap2 = hashMap11;
-                            longSparseArray4 = longSparseArray27;
-                            longSparseArray5 = longSparseArray29;
-                            longSparseArray14 = longSparseArray34;
-                            longSparseArray6 = longSparseArray35;
-                            longSparseArray7 = longSparseArray36;
-                            longSparseArray8 = longSparseArray37;
-                            arrayList19 = arrayList5;
-                            concurrentHashMap3 = concurrentHashMap5;
-                            concurrentHashMap4 = concurrentHashMap6;
-                            longSparseIntArray2 = longSparseIntArray4;
-                        } else {
-                            if (update instanceof TLRPC.TL_updateReadMonoForumInbox) {
-                                TLRPC.TL_updateReadMonoForumInbox tL_updateReadMonoForumInbox = (TLRPC.TL_updateReadMonoForumInbox) update;
-                                if (hashMap12 == null) {
-                                    hashMap12 = new HashMap();
-                                }
-                                longSparseArray5 = longSparseArray29;
-                                arrayList10 = arrayList18;
-                                longSparseArray17 = longSparseArray25;
-                                hashMap12.put(MessagesStorage.TopicKey.of(-tL_updateReadMonoForumInbox.channel_id, DialogObject.getPeerDialogId(tL_updateReadMonoForumInbox.saved_peer_id)), Integer.valueOf(Math.max(((Integer) Utilities.getOrDefault(hashMap12, MessagesStorage.TopicKey.of(-tL_updateReadMonoForumInbox.channel_id, DialogObject.getPeerDialogId(tL_updateReadMonoForumInbox.saved_peer_id)), 0)).intValue(), tL_updateReadMonoForumInbox.read_max_id)));
-                                if (arrayList20 == null) {
-                                    arrayList20 = new ArrayList();
-                                }
-                                arrayList16 = arrayList20;
-                                arrayList16.add(update);
-                            } else {
-                                arrayList10 = arrayList18;
-                                longSparseArray17 = longSparseArray25;
-                                longSparseArray5 = longSparseArray29;
-                                if (update instanceof TLRPC.TL_updateReadMonoForumOutbox) {
-                                    TLRPC.TL_updateReadMonoForumOutbox tL_updateReadMonoForumOutbox = (TLRPC.TL_updateReadMonoForumOutbox) update;
-                                    if (hashMap11 == null) {
-                                        hashMap11 = new HashMap<>();
-                                    }
-                                    hashMap11.put(MessagesStorage.TopicKey.of(-tL_updateReadMonoForumOutbox.channel_id, DialogObject.getPeerDialogId(tL_updateReadMonoForumOutbox.saved_peer_id)), Integer.valueOf(Math.max(((Integer) Utilities.getOrDefault(hashMap11, MessagesStorage.TopicKey.of(-tL_updateReadMonoForumOutbox.channel_id, DialogObject.getPeerDialogId(tL_updateReadMonoForumOutbox.saved_peer_id)), 0)).intValue(), tL_updateReadMonoForumOutbox.read_max_id)));
-                                    if (arrayList20 == null) {
-                                        arrayList20 = new ArrayList();
-                                    }
-                                    arrayList16 = arrayList20;
-                                    arrayList16.add(update);
-                                } else {
-                                    if (update instanceof TLRPC.TL_updateReadHistoryInbox) {
-                                        TLRPC.TL_updateReadHistoryInbox tL_updateReadHistoryInbox = (TLRPC.TL_updateReadHistoryInbox) update;
-                                        if (longSparseIntArray4 == null) {
-                                            longSparseIntArray4 = new LongSparseIntArray();
-                                        }
-                                        TLRPC.Peer peer7 = tL_updateReadHistoryInbox.peer;
-                                        long j15 = peer7.chat_id;
-                                        if (j15 != 0) {
-                                            longSparseIntArray4.put(-j15, tL_updateReadHistoryInbox.max_id);
-                                            j10 = -tL_updateReadHistoryInbox.peer.chat_id;
-                                        } else {
-                                            longSparseIntArray4.put(peer7.user_id, tL_updateReadHistoryInbox.max_id);
-                                            j10 = tL_updateReadHistoryInbox.peer.user_id;
-                                        }
-                                        Integer num2 = this.dialogs_read_inbox_max.get(Long.valueOf(j10));
-                                        if (num2 == null) {
-                                            num2 = Integer.valueOf(getMessagesStorage().getDialogReadMax(false, j10));
-                                        }
-                                        this.dialogs_read_inbox_max.put(Long.valueOf(j10), Integer.valueOf(Math.max(num2.intValue(), tL_updateReadHistoryInbox.max_id)));
-                                    } else if (update instanceof TLRPC.TL_updateReadHistoryOutbox) {
-                                        TLRPC.TL_updateReadHistoryOutbox tL_updateReadHistoryOutbox = (TLRPC.TL_updateReadHistoryOutbox) update;
-                                        if (longSparseIntArray5 == null) {
-                                            longSparseIntArray5 = new LongSparseIntArray();
-                                        }
-                                        TLRPC.Peer peer8 = tL_updateReadHistoryOutbox.peer;
-                                        long j16 = peer8.chat_id;
-                                        if (j16 != 0) {
-                                            longSparseIntArray5.put(-j16, tL_updateReadHistoryOutbox.max_id);
-                                            j9 = -tL_updateReadHistoryOutbox.peer.chat_id;
-                                        } else {
-                                            longSparseIntArray5.put(peer8.user_id, tL_updateReadHistoryOutbox.max_id);
-                                            j9 = tL_updateReadHistoryOutbox.peer.user_id;
-                                            TLRPC.User user4 = getUser(Long.valueOf(j9));
-                                            if (user4 != null && (userStatus2 = user4.status) != null && userStatus2.expires <= 0 && Math.abs(getConnectionsManager().getCurrentTime() - i) < 30) {
-                                                this.onlinePrivacy.put(Long.valueOf(tL_updateReadHistoryOutbox.peer.user_id), Integer.valueOf(i));
-                                                i10 |= UPDATE_MASK_STATUS;
-                                            }
-                                        }
-                                        Integer num3 = this.dialogs_read_outbox_max.get(Long.valueOf(j9));
-                                        if (num3 == null) {
-                                            num3 = Integer.valueOf(getMessagesStorage().getDialogReadMax(true, j9));
-                                        }
-                                        this.dialogs_read_outbox_max.put(Long.valueOf(j9), Integer.valueOf(Math.max(num3.intValue(), tL_updateReadHistoryOutbox.max_id)));
-                                    } else if (update instanceof TLRPC.TL_updateDeleteMessages) {
-                                        TLRPC.TL_updateDeleteMessages tL_updateDeleteMessages = (TLRPC.TL_updateDeleteMessages) update;
-                                        if (longSparseArray26 == null) {
-                                            longSparseArray26 = new LongSparseArray();
-                                        }
-                                        ArrayList arrayList34 = (ArrayList) longSparseArray26.get(0L);
-                                        if (arrayList34 == null) {
-                                            arrayList34 = new ArrayList();
-                                            longSparseArray26.put(0L, arrayList34);
-                                        }
-                                        arrayList34.addAll(tL_updateDeleteMessages.messages);
-                                        hashMap2 = hashMap11;
-                                        longSparseArray4 = longSparseArray27;
-                                        longSparseArray14 = longSparseArray34;
-                                        longSparseArray6 = longSparseArray35;
-                                        longSparseArray7 = longSparseArray36;
-                                        arrayList19 = arrayList5;
-                                        concurrentHashMap3 = concurrentHashMap5;
-                                        concurrentHashMap4 = concurrentHashMap6;
-                                        longSparseArray25 = longSparseArray17;
-                                        arrayList18 = arrayList10;
-                                        longSparseIntArray2 = longSparseIntArray4;
-                                        longSparseIntArray3 = longSparseIntArray5;
-                                        longSparseArray8 = longSparseArray37;
-                                        longSparseArray34 = longSparseArray14;
-                                        longSparseArray15 = longSparseArray6;
-                                        longSparseArray16 = longSparseArray7;
-                                        longSparseIntArray4 = longSparseIntArray2;
-                                        longSparseIntArray5 = longSparseIntArray3;
-                                        longSparseArray29 = longSparseArray5;
-                                        longSparseArray37 = longSparseArray8;
-                                        longSparseArray27 = longSparseArray4;
-                                        hashMap11 = hashMap2;
-                                    } else if (update instanceof TLRPC.TL_updateDeleteQuickReplyMessages) {
-                                        TLRPC.TL_updateDeleteQuickReplyMessages tL_updateDeleteQuickReplyMessages = (TLRPC.TL_updateDeleteQuickReplyMessages) update;
-                                        if (longSparseArray27 == null) {
-                                            longSparseArray27 = new LongSparseArray();
-                                        }
-                                        ArrayList arrayList35 = (ArrayList) longSparseArray27.get(tL_updateDeleteQuickReplyMessages.shortcut_id);
-                                        if (arrayList35 == null) {
-                                            arrayList35 = new ArrayList();
-                                            longSparseArray27.put(tL_updateDeleteQuickReplyMessages.shortcut_id, arrayList35);
-                                        }
-                                        arrayList35.addAll(tL_updateDeleteQuickReplyMessages.messages);
-                                        if (arrayList20 == null) {
-                                            arrayList20 = new ArrayList();
-                                        }
-                                        arrayList16 = arrayList20;
-                                        arrayList16.add(update);
-                                    } else if (update instanceof TLRPC.TL_updateDeleteScheduledMessages) {
-                                        TLRPC.TL_updateDeleteScheduledMessages tL_updateDeleteScheduledMessages = (TLRPC.TL_updateDeleteScheduledMessages) update;
-                                        if (longSparseArray28 == null) {
-                                            longSparseArray28 = new LongSparseArray();
-                                        }
-                                        long peerId = MessageObject.getPeerId(tL_updateDeleteScheduledMessages.peer);
-                                        ArrayList arrayList36 = (ArrayList) longSparseArray28.get(peerId);
-                                        if (arrayList36 == null) {
-                                            arrayList36 = new ArrayList();
-                                            longSparseArray28.put(peerId, arrayList36);
-                                        }
-                                        arrayList36.addAll(tL_updateDeleteScheduledMessages.messages);
-                                        if (!tL_updateDeleteScheduledMessages.sent_messages.isEmpty()) {
-                                            if (longSparseArray31 == null) {
-                                                longSparseArray31 = new LongSparseArray();
-                                            }
-                                            LongSparseArray longSparseArray39 = longSparseArray31;
-                                            ArrayList arrayList37 = (ArrayList) longSparseArray39.get(peerId);
-                                            if (arrayList37 == null) {
-                                                arrayList37 = new ArrayList();
-                                                longSparseArray39.put(peerId, arrayList37);
-                                            }
-                                            arrayList37.addAll(tL_updateDeleteScheduledMessages.sent_messages);
-                                            hashMap2 = hashMap11;
-                                            longSparseArray4 = longSparseArray27;
-                                            longSparseArray31 = longSparseArray39;
-                                            longSparseArray14 = longSparseArray34;
-                                            longSparseArray6 = longSparseArray35;
-                                            longSparseArray7 = longSparseArray36;
-                                            arrayList19 = arrayList5;
-                                            concurrentHashMap3 = concurrentHashMap5;
-                                            concurrentHashMap4 = concurrentHashMap6;
-                                            longSparseArray25 = longSparseArray17;
-                                            arrayList18 = arrayList10;
-                                            longSparseIntArray2 = longSparseIntArray4;
-                                            longSparseIntArray3 = longSparseIntArray5;
-                                            longSparseArray8 = longSparseArray37;
-                                            longSparseArray34 = longSparseArray14;
-                                            longSparseArray15 = longSparseArray6;
-                                            longSparseArray16 = longSparseArray7;
-                                            longSparseIntArray4 = longSparseIntArray2;
-                                            longSparseIntArray5 = longSparseIntArray3;
-                                            longSparseArray29 = longSparseArray5;
-                                            longSparseArray37 = longSparseArray8;
-                                            longSparseArray27 = longSparseArray4;
-                                            hashMap11 = hashMap2;
-                                        }
-                                    } else {
-                                        boolean z10 = update instanceof TLRPC.TL_updateUserTyping;
-                                        if (z10 || (update instanceof TLRPC.TL_updateChatUserTyping) || (update instanceof TLRPC.TL_updateChannelUserTyping)) {
-                                            hashMap2 = hashMap11;
-                                            longSparseArray4 = longSparseArray27;
-                                            hashMap3 = hashMap12;
-                                            longSparseArray18 = longSparseArray34;
-                                            longSparseArray16 = longSparseArray36;
-                                            arrayList7 = arrayList25;
-                                            sparseIntArray2 = sparseIntArray3;
-                                            hashMap6 = hashMap14;
-                                            concurrentHashMap3 = concurrentHashMap5;
-                                            concurrentHashMap4 = concurrentHashMap6;
-                                            longSparseArray9 = longSparseArray17;
-                                            arrayList6 = arrayList10;
-                                            longSparseIntArray2 = longSparseIntArray4;
-                                            longSparseArray3 = longSparseArray26;
-                                            longSparseIntArray3 = longSparseIntArray5;
-                                            arrayList8 = arrayList23;
-                                            longSparseArray15 = longSparseArray35;
-                                            longSparseArray8 = longSparseArray37;
-                                            longSparseArray11 = longSparseArray28;
-                                            hashMap7 = hashMap13;
-                                            if (update instanceof TLRPC.TL_updateChannelUserTyping) {
-                                                TLRPC.TL_updateChannelUserTyping tL_updateChannelUserTyping = (TLRPC.TL_updateChannelUserTyping) update;
-                                                TLRPC.Peer peer9 = tL_updateChannelUserTyping.from_id;
-                                                long j17 = peer9.user_id;
-                                                if (j17 == 0) {
-                                                    long j18 = peer9.channel_id;
-                                                    j17 = j18 != 0 ? -j18 : -peer9.chat_id;
-                                                }
-                                                long j19 = tL_updateChannelUserTyping.channel_id;
-                                                hashMap8 = hashMap7;
-                                                hashMap5 = hashMap6;
-                                                sendMessageAction = tL_updateChannelUserTyping.action;
-                                                i6 = tL_updateChannelUserTyping.top_msg_id;
-                                                j6 = j17;
-                                                j5 = j19;
-                                            } else {
-                                                if (z10) {
-                                                    final TLRPC.TL_updateUserTyping tL_updateUserTyping = (TLRPC.TL_updateUserTyping) update;
-                                                    long j20 = tL_updateUserTyping.user_id;
-                                                    TLRPC.SendMessageAction sendMessageAction2 = tL_updateUserTyping.action;
-                                                    int i16 = tL_updateUserTyping.top_msg_id;
-                                                    if (sendMessageAction2 instanceof TLRPC.TL_sendMessageEmojiInteraction) {
-                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda297
-                                                            @Override // java.lang.Runnable
-                                                            public final void run() {
-                                                                MessagesController.this.lambda$processUpdateArray$361(tL_updateUserTyping);
-                                                            }
-                                                        });
-                                                        hashMap4 = hashMap7;
-                                                        hashMap5 = hashMap6;
-                                                    } else {
-                                                        sendMessageAction = sendMessageAction2;
-                                                        i6 = i16;
-                                                        hashMap8 = hashMap7;
-                                                        hashMap5 = hashMap6;
-                                                        j6 = j20;
-                                                        j5 = 0;
-                                                    }
-                                                } else {
-                                                    final TLRPC.TL_updateChatUserTyping tL_updateChatUserTyping = (TLRPC.TL_updateChatUserTyping) update;
-                                                    j5 = tL_updateChatUserTyping.chat_id;
-                                                    TLRPC.Peer peer10 = tL_updateChatUserTyping.from_id;
-                                                    long j21 = peer10.user_id;
-                                                    if (j21 == 0) {
-                                                        long j22 = peer10.channel_id;
-                                                        j21 = j22 != 0 ? -j22 : -peer10.chat_id;
-                                                    }
-                                                    TLRPC.SendMessageAction sendMessageAction3 = tL_updateChatUserTyping.action;
-                                                    if (sendMessageAction3 instanceof TLRPC.TL_sendMessageEmojiInteraction) {
-                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda298
-                                                            @Override // java.lang.Runnable
-                                                            public final void run() {
-                                                                MessagesController.this.lambda$processUpdateArray$362(tL_updateChatUserTyping);
-                                                            }
-                                                        });
-                                                        hashMap4 = hashMap7;
-                                                        hashMap5 = hashMap6;
-                                                    } else {
-                                                        sendMessageAction = sendMessageAction3;
-                                                        j6 = j21;
-                                                        hashMap8 = hashMap7;
-                                                        hashMap5 = hashMap6;
-                                                        i6 = 0;
-                                                    }
-                                                }
-                                                sparseIntArray3 = sparseIntArray2;
-                                                longSparseArray15 = longSparseArray6;
-                                                longSparseArray25 = longSparseArray9;
-                                                j11 = j;
-                                                longSparseArray16 = longSparseArray7;
-                                                longSparseArray28 = longSparseArray11;
-                                                arrayList23 = arrayList8;
-                                                longSparseArray34 = longSparseArray10;
-                                                arrayList19 = arrayList5;
-                                                longSparseIntArray4 = longSparseIntArray2;
-                                                longSparseIntArray5 = longSparseIntArray3;
-                                                longSparseArray29 = longSparseArray5;
-                                                longSparseArray37 = longSparseArray8;
-                                                hashMap12 = hashMap3;
-                                                longSparseArray27 = longSparseArray4;
-                                                hashMap11 = hashMap2;
-                                                arrayList18 = arrayList6;
-                                                arrayList25 = arrayList7;
-                                                hashMap14 = hashMap5;
-                                                hashMap13 = hashMap4;
-                                                longSparseArray26 = longSparseArray3;
-                                            }
-                                            long j23 = -j5;
-                                            if (j23 == 0) {
-                                                j23 = j6;
-                                            }
-                                            if (sendMessageAction instanceof TLRPC.TL_sendMessageTextDraftAction) {
-                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda282
-                                                    @Override // java.lang.Runnable
-                                                    public final void run() {
-                                                        MessagesController.this.lambda$processUpdateArray$363(j6, i6, sendMessageAction);
-                                                    }
-                                                });
-                                                hashMap4 = hashMap8;
-                                            } else if (sendMessageAction instanceof TLRPC.TL_sendMessageHistoryImportAction) {
-                                                if (longSparseIntArray6 == null) {
-                                                    longSparseIntArray6 = new LongSparseIntArray();
-                                                }
-                                                LongSparseIntArray longSparseIntArray9 = longSparseIntArray6;
-                                                longSparseIntArray9.put(j23, ((TLRPC.TL_sendMessageHistoryImportAction) sendMessageAction).progress);
-                                                sparseIntArray3 = sparseIntArray2;
-                                                longSparseIntArray6 = longSparseIntArray9;
-                                                longSparseArray25 = longSparseArray9;
-                                                longSparseArray28 = longSparseArray11;
-                                                arrayList23 = arrayList8;
-                                                hashMap14 = hashMap5;
-                                                arrayList19 = arrayList5;
-                                                longSparseIntArray4 = longSparseIntArray2;
-                                                longSparseIntArray5 = longSparseIntArray3;
-                                                longSparseArray26 = longSparseArray3;
-                                                longSparseArray37 = longSparseArray8;
-                                                hashMap12 = hashMap3;
-                                                longSparseArray27 = longSparseArray4;
-                                                hashMap11 = hashMap2;
-                                                arrayList18 = arrayList6;
-                                                arrayList25 = arrayList7;
-                                                longSparseArray34 = longSparseArray18;
-                                                hashMap13 = hashMap8;
-                                                longSparseArray29 = longSparseArray5;
-                                            } else if (j6 != getUserConfig().getClientUserId()) {
-                                                if (!(sendMessageAction instanceof TLRPC.TL_speakingInGroupCallAction)) {
-                                                    ConcurrentHashMap<Integer, ArrayList<PrintingUser>> concurrentHashMap8 = this.printingUsers.get(Long.valueOf(j23));
-                                                    ArrayList<PrintingUser> arrayList38 = concurrentHashMap8 != null ? concurrentHashMap8.get(Integer.valueOf(i6)) : null;
-                                                    if (!(sendMessageAction instanceof TLRPC.TL_sendMessageCancelAction)) {
-                                                        longSparseArray19 = longSparseArray18;
-                                                        longSparseArray20 = longSparseArray16;
-                                                        if (concurrentHashMap8 == null) {
-                                                            concurrentHashMap8 = new ConcurrentHashMap<>();
-                                                            this.printingUsers.put(Long.valueOf(j23), concurrentHashMap8);
-                                                        }
-                                                        if (arrayList38 == null) {
-                                                            arrayList38 = new ArrayList<>();
-                                                            concurrentHashMap8.put(Integer.valueOf(i6), arrayList38);
-                                                        }
-                                                        Iterator<PrintingUser> it = arrayList38.iterator();
-                                                        while (true) {
-                                                            if (!it.hasNext()) {
-                                                                j7 = j11;
-                                                                z5 = false;
-                                                                break;
-                                                            }
-                                                            PrintingUser next = it.next();
-                                                            if (next.userId == j6) {
-                                                                j7 = j11;
-                                                                next.lastTime = j7;
-                                                                if (next.action.getClass() != sendMessageAction.getClass()) {
-                                                                    z8 = true;
-                                                                }
-                                                                next.action = sendMessageAction;
-                                                                z5 = true;
-                                                            }
-                                                        }
-                                                        if (!z5) {
-                                                            PrintingUser printingUser = new PrintingUser();
-                                                            printingUser.userId = j6;
-                                                            printingUser.lastTime = j7;
-                                                            printingUser.action = sendMessageAction;
-                                                            arrayList38.add(printingUser);
-                                                            z8 = true;
-                                                        }
-                                                        if (Math.abs(getConnectionsManager().getCurrentTime() - i) < 30) {
-                                                        }
-                                                        sparseIntArray3 = sparseIntArray2;
-                                                        longSparseArray25 = longSparseArray9;
-                                                        j11 = j7;
-                                                        longSparseArray16 = longSparseArray20;
-                                                        longSparseArray28 = longSparseArray11;
-                                                        arrayList23 = arrayList8;
-                                                        longSparseArray34 = longSparseArray19;
-                                                        arrayList19 = arrayList5;
-                                                        longSparseIntArray4 = longSparseIntArray2;
-                                                        longSparseIntArray5 = longSparseIntArray3;
-                                                        longSparseArray29 = longSparseArray5;
-                                                        longSparseArray26 = longSparseArray3;
-                                                        longSparseArray37 = longSparseArray8;
-                                                        hashMap12 = hashMap3;
-                                                        longSparseArray27 = longSparseArray4;
-                                                        hashMap11 = hashMap2;
-                                                        arrayList18 = arrayList6;
-                                                        arrayList25 = arrayList7;
-                                                        hashMap14 = hashMap5;
-                                                        hashMap13 = hashMap8;
-                                                    } else if (arrayList38 != null) {
-                                                        int size5 = arrayList38.size();
-                                                        int i17 = 0;
-                                                        while (true) {
-                                                            if (i17 >= size5) {
-                                                                longSparseArray19 = longSparseArray18;
-                                                                longSparseArray20 = longSparseArray16;
-                                                                break;
-                                                            }
-                                                            int i18 = size5;
-                                                            longSparseArray19 = longSparseArray18;
-                                                            longSparseArray20 = longSparseArray16;
-                                                            if (arrayList38.get(i17).userId == j6) {
-                                                                arrayList38.remove(i17);
-                                                                z8 = true;
-                                                                break;
-                                                            }
-                                                            i17++;
-                                                            longSparseArray16 = longSparseArray20;
-                                                            size5 = i18;
-                                                            longSparseArray18 = longSparseArray19;
-                                                        }
-                                                        if (arrayList38.isEmpty()) {
-                                                            concurrentHashMap8.remove(Integer.valueOf(i6));
-                                                            if (concurrentHashMap8.isEmpty()) {
-                                                                this.printingUsers.remove(Long.valueOf(j23));
-                                                            }
-                                                        }
-                                                        j7 = j11;
-                                                        if (Math.abs(getConnectionsManager().getCurrentTime() - i) < 30) {
-                                                            this.onlinePrivacy.put(Long.valueOf(j6), Integer.valueOf(i));
-                                                        }
-                                                        sparseIntArray3 = sparseIntArray2;
-                                                        longSparseArray25 = longSparseArray9;
-                                                        j11 = j7;
-                                                        longSparseArray16 = longSparseArray20;
-                                                        longSparseArray28 = longSparseArray11;
-                                                        arrayList23 = arrayList8;
-                                                        longSparseArray34 = longSparseArray19;
-                                                        arrayList19 = arrayList5;
-                                                        longSparseIntArray4 = longSparseIntArray2;
-                                                        longSparseIntArray5 = longSparseIntArray3;
-                                                        longSparseArray29 = longSparseArray5;
-                                                        longSparseArray26 = longSparseArray3;
-                                                        longSparseArray37 = longSparseArray8;
-                                                        hashMap12 = hashMap3;
-                                                        longSparseArray27 = longSparseArray4;
-                                                        hashMap11 = hashMap2;
-                                                        arrayList18 = arrayList6;
-                                                        arrayList25 = arrayList7;
-                                                        hashMap14 = hashMap5;
-                                                        hashMap13 = hashMap8;
-                                                    }
-                                                } else if (j5 != 0) {
-                                                    if (longSparseArray30 == null) {
-                                                        longSparseArray30 = new LongSparseArray();
-                                                    }
-                                                    LongSparseArray longSparseArray40 = longSparseArray30;
-                                                    ArrayList arrayList39 = (ArrayList) longSparseArray40.get(j5);
-                                                    if (arrayList39 == null) {
-                                                        arrayList39 = new ArrayList();
-                                                        longSparseArray40.put(j5, arrayList39);
-                                                    }
-                                                    arrayList39.add(Long.valueOf(j6));
-                                                    longSparseArray30 = longSparseArray40;
-                                                }
-                                                longSparseArray19 = longSparseArray18;
-                                                longSparseArray20 = longSparseArray16;
-                                                j7 = j11;
-                                                if (Math.abs(getConnectionsManager().getCurrentTime() - i) < 30) {
-                                                }
-                                                sparseIntArray3 = sparseIntArray2;
-                                                longSparseArray25 = longSparseArray9;
-                                                j11 = j7;
-                                                longSparseArray16 = longSparseArray20;
-                                                longSparseArray28 = longSparseArray11;
-                                                arrayList23 = arrayList8;
-                                                longSparseArray34 = longSparseArray19;
-                                                arrayList19 = arrayList5;
-                                                longSparseIntArray4 = longSparseIntArray2;
-                                                longSparseIntArray5 = longSparseIntArray3;
-                                                longSparseArray29 = longSparseArray5;
-                                                longSparseArray26 = longSparseArray3;
-                                                longSparseArray37 = longSparseArray8;
-                                                hashMap12 = hashMap3;
-                                                longSparseArray27 = longSparseArray4;
-                                                hashMap11 = hashMap2;
-                                                arrayList18 = arrayList6;
-                                                arrayList25 = arrayList7;
-                                                hashMap14 = hashMap5;
-                                                hashMap13 = hashMap8;
-                                            } else {
-                                                longSparseArray10 = longSparseArray18;
-                                                j = j11;
-                                                longSparseArray7 = longSparseArray16;
-                                                hashMap4 = hashMap8;
-                                                longSparseArray6 = longSparseArray15;
-                                                sparseIntArray3 = sparseIntArray2;
-                                                longSparseArray15 = longSparseArray6;
-                                                longSparseArray25 = longSparseArray9;
-                                                j11 = j;
-                                                longSparseArray16 = longSparseArray7;
-                                                longSparseArray28 = longSparseArray11;
-                                                arrayList23 = arrayList8;
-                                                longSparseArray34 = longSparseArray10;
-                                                arrayList19 = arrayList5;
-                                                longSparseIntArray4 = longSparseIntArray2;
-                                                longSparseIntArray5 = longSparseIntArray3;
-                                                longSparseArray29 = longSparseArray5;
-                                                longSparseArray37 = longSparseArray8;
-                                                hashMap12 = hashMap3;
-                                                longSparseArray27 = longSparseArray4;
-                                                hashMap11 = hashMap2;
-                                                arrayList18 = arrayList6;
-                                                arrayList25 = arrayList7;
-                                                hashMap14 = hashMap5;
-                                                hashMap13 = hashMap4;
-                                                longSparseArray26 = longSparseArray3;
-                                            }
-                                        } else if (update instanceof TLRPC.TL_updateChatParticipants) {
-                                            TLRPC.TL_updateChatParticipants tL_updateChatParticipants = (TLRPC.TL_updateChatParticipants) update;
-                                            i10 |= UPDATE_MASK_CHAT_MEMBERS;
-                                            if (arrayList21 == null) {
-                                                arrayList21 = new ArrayList();
-                                            }
-                                            ArrayList arrayList40 = arrayList21;
-                                            arrayList40.add(tL_updateChatParticipants.participants);
-                                            arrayList21 = arrayList40;
-                                        } else {
-                                            if (update instanceof TL_stories.TL_updateStory) {
-                                                getStoriesController().processUpdate((TL_stories.TL_updateStory) update);
-                                            } else if (update instanceof TLRPC.TL_updateUserStatus) {
-                                                i10 |= UPDATE_MASK_STATUS;
-                                                if (arrayList20 == null) {
-                                                    arrayList20 = new ArrayList();
-                                                }
-                                                arrayList16 = arrayList20;
-                                                arrayList16.add(update);
-                                            } else if (update instanceof TLRPC.TL_updatePeerWallpaper) {
-                                                if (arrayList20 == null) {
-                                                    arrayList20 = new ArrayList();
-                                                }
-                                                arrayList16 = arrayList20;
-                                                arrayList16.add(update);
-                                            } else if (update instanceof TLRPC.TL_updateUserEmojiStatus) {
-                                                i10 |= UPDATE_MASK_EMOJI_STATUS;
-                                                if (arrayList20 == null) {
-                                                    arrayList20 = new ArrayList();
-                                                }
-                                                arrayList16 = arrayList20;
-                                                arrayList16.add(update);
-                                            } else if (update instanceof TLRPC.TL_updateUserName) {
-                                                i10 |= UPDATE_MASK_NAME;
-                                                if (arrayList20 == null) {
-                                                    arrayList20 = new ArrayList();
-                                                }
-                                                arrayList16 = arrayList20;
-                                                arrayList16.add(update);
-                                            } else if (update instanceof TLRPC.TL_updateMonoForumNoPaidException) {
-                                                if (arrayList20 == null) {
-                                                    arrayList20 = new ArrayList();
-                                                }
-                                                arrayList16 = arrayList20;
-                                                arrayList16.add(update);
-                                            } else {
-                                                if (update instanceof TLRPC.TL_updateUserPhoto) {
-                                                    TLRPC.TL_updateUserPhoto tL_updateUserPhoto = (TLRPC.TL_updateUserPhoto) update;
-                                                    i10 |= UPDATE_MASK_AVATAR;
-                                                    getMessagesStorage().clearUserPhotos(tL_updateUserPhoto.user_id);
-                                                    if (this.dialogPhotos.get(tL_updateUserPhoto.user_id) != null) {
-                                                        ((DialogPhotos) this.dialogPhotos.get(tL_updateUserPhoto.user_id)).reset();
-                                                    }
-                                                    if (arrayList20 == null) {
-                                                        arrayList20 = new ArrayList();
-                                                    }
-                                                    arrayList17 = arrayList20;
-                                                    arrayList17.add(update);
-                                                } else if (update instanceof TLRPC.TL_updateUser) {
-                                                    i10 |= UPDATE_MASK_AVATAR;
-                                                    getMessagesStorage().clearUserPhotos(((TLRPC.TL_updateUser) update).user_id);
-                                                    if (arrayList20 == null) {
-                                                        arrayList20 = new ArrayList();
-                                                    }
-                                                    arrayList17 = arrayList20;
-                                                    arrayList17.add(update);
-                                                } else if (update instanceof TLRPC.TL_updateUserPhone) {
-                                                    i10 |= UPDATE_MASK_PHONE;
-                                                    if (arrayList20 == null) {
-                                                        arrayList20 = new ArrayList();
-                                                    }
-                                                    arrayList16 = arrayList20;
-                                                    arrayList16.add(update);
-                                                } else if (update instanceof TL_stories.TL_updateReadStories) {
-                                                    TL_stories.TL_updateReadStories tL_updateReadStories = (TL_stories.TL_updateReadStories) update;
-                                                    getStoriesController().markStoriesAsReadFromServer(DialogObject.getPeerDialogId(tL_updateReadStories.peer), tL_updateReadStories.max_id);
-                                                } else if (update instanceof TLRPC.TL_updatePeerSettings) {
-                                                    TLRPC.TL_updatePeerSettings tL_updatePeerSettings = (TLRPC.TL_updatePeerSettings) update;
-                                                    ArrayList<Long> arrayList41 = arrayList10 == null ? new ArrayList<>() : arrayList10;
-                                                    TLRPC.Peer peer11 = tL_updatePeerSettings.peer;
-                                                    if (peer11 instanceof TLRPC.TL_peerUser) {
-                                                        concurrentHashMap3 = concurrentHashMap5;
-                                                        TLRPC.User user5 = concurrentHashMap3.get(Long.valueOf(peer11.user_id));
-                                                        if (user5 != null) {
-                                                            if (user5.contact) {
-                                                                int indexOf = arrayList41.indexOf(Long.valueOf(-tL_updatePeerSettings.peer.user_id));
-                                                                if (indexOf != -1) {
-                                                                    arrayList41.remove(indexOf);
-                                                                }
-                                                                if (!arrayList41.contains(Long.valueOf(tL_updatePeerSettings.peer.user_id))) {
-                                                                    arrayList41.add(Long.valueOf(tL_updatePeerSettings.peer.user_id));
-                                                                }
-                                                            } else {
-                                                                int indexOf2 = arrayList41.indexOf(Long.valueOf(tL_updatePeerSettings.peer.user_id));
-                                                                if (indexOf2 != -1) {
-                                                                    arrayList41.remove(indexOf2);
-                                                                }
-                                                                if (!arrayList41.contains(Long.valueOf(tL_updatePeerSettings.peer.user_id))) {
-                                                                    arrayList41.add(Long.valueOf(-tL_updatePeerSettings.peer.user_id));
-                                                                }
-                                                            }
-                                                        }
-                                                    } else {
-                                                        concurrentHashMap3 = concurrentHashMap5;
-                                                    }
-                                                    if (arrayList20 == null) {
-                                                        arrayList20 = new ArrayList();
-                                                    }
-                                                    ArrayList arrayList42 = arrayList20;
-                                                    arrayList42.add(update);
-                                                    longSparseIntArray2 = longSparseIntArray4;
-                                                    hashMap2 = hashMap11;
-                                                    arrayList20 = arrayList42;
-                                                    arrayList18 = arrayList41;
-                                                    longSparseArray4 = longSparseArray27;
-                                                    longSparseArray14 = longSparseArray34;
-                                                    longSparseArray6 = longSparseArray35;
-                                                    longSparseArray7 = longSparseArray36;
-                                                    longSparseArray8 = longSparseArray37;
-                                                    arrayList19 = arrayList5;
-                                                    concurrentHashMap4 = concurrentHashMap6;
-                                                    longSparseArray25 = longSparseArray17;
-                                                } else {
-                                                    concurrentHashMap3 = concurrentHashMap5;
-                                                    if (update instanceof TLRPC.TL_updateNewEncryptedMessage) {
-                                                        ArrayList<TLRPC.Message> decryptMessage = getSecretChatHelper().decryptMessage(((TLRPC.TL_updateNewEncryptedMessage) update).message);
-                                                        if (decryptMessage == null || decryptMessage.isEmpty()) {
-                                                            longSparseIntArray2 = longSparseIntArray4;
-                                                            hashMap2 = hashMap11;
-                                                            longSparseArray4 = longSparseArray27;
-                                                            hashMap3 = hashMap12;
-                                                            longSparseArray6 = longSparseArray35;
-                                                            longSparseArray7 = longSparseArray36;
-                                                            arrayList7 = arrayList25;
-                                                            sparseIntArray2 = sparseIntArray3;
-                                                            concurrentHashMap4 = concurrentHashMap6;
-                                                            longSparseArray9 = longSparseArray17;
-                                                            arrayList6 = arrayList10;
-                                                            longSparseArray3 = longSparseArray26;
-                                                            longSparseIntArray3 = longSparseIntArray5;
-                                                            longSparseArray8 = longSparseArray37;
-                                                            hashMap4 = hashMap13;
-                                                            hashMap5 = hashMap14;
-                                                            longSparseArray10 = longSparseArray34;
-                                                            arrayList8 = arrayList23;
-                                                            longSparseArray11 = longSparseArray28;
-                                                            j = j11;
-                                                            sparseIntArray3 = sparseIntArray2;
-                                                            longSparseArray15 = longSparseArray6;
-                                                            longSparseArray25 = longSparseArray9;
-                                                            j11 = j;
-                                                            longSparseArray16 = longSparseArray7;
-                                                            longSparseArray28 = longSparseArray11;
-                                                            arrayList23 = arrayList8;
-                                                            longSparseArray34 = longSparseArray10;
-                                                            arrayList19 = arrayList5;
-                                                            longSparseIntArray4 = longSparseIntArray2;
-                                                            longSparseIntArray5 = longSparseIntArray3;
-                                                            longSparseArray29 = longSparseArray5;
-                                                            longSparseArray37 = longSparseArray8;
-                                                            hashMap12 = hashMap3;
-                                                            longSparseArray27 = longSparseArray4;
-                                                            hashMap11 = hashMap2;
-                                                            arrayList18 = arrayList6;
-                                                            arrayList25 = arrayList7;
-                                                            hashMap14 = hashMap5;
-                                                            hashMap13 = hashMap4;
-                                                            longSparseArray26 = longSparseArray3;
-                                                        } else {
-                                                            long makeEncryptedDialogId = DialogObject.makeEncryptedDialogId(r12.message.chat_id);
-                                                            longSparseArray25 = longSparseArray17 == null ? new LongSparseArray() : longSparseArray17;
-                                                            ArrayList arrayList43 = (ArrayList) longSparseArray25.get(makeEncryptedDialogId);
-                                                            if (arrayList43 == null) {
-                                                                arrayList43 = new ArrayList();
-                                                                longSparseArray25.put(makeEncryptedDialogId, arrayList43);
-                                                            }
-                                                            int size6 = decryptMessage.size();
-                                                            int i19 = 0;
-                                                            while (i19 < size6) {
-                                                                HashMap<MessagesStorage.TopicKey, Integer> hashMap15 = hashMap11;
-                                                                TLRPC.Message message3 = decryptMessage.get(i19);
-                                                                ImageLoader.saveMessageThumbs(message3);
-                                                                if (arrayList26 == null) {
-                                                                    arrayList14 = decryptMessage;
-                                                                    arrayList15 = new ArrayList<>();
-                                                                } else {
-                                                                    arrayList14 = decryptMessage;
-                                                                    arrayList15 = arrayList26;
-                                                                }
-                                                                arrayList15.add(message3);
-                                                                arrayList26 = arrayList15;
-                                                                LongSparseArray longSparseArray41 = longSparseArray25;
-                                                                boolean contains3 = this.createdDialogIds.contains(Long.valueOf(makeEncryptedDialogId));
-                                                                MessageObject messageObject3 = new MessageObject(this.currentAccount, message3, concurrentHashMap3, concurrentHashMap6, contains3, contains3);
-                                                                arrayList43.add(messageObject3);
-                                                                ArrayList arrayList44 = arrayList23 == null ? new ArrayList() : arrayList23;
-                                                                arrayList44.add(messageObject3);
-                                                                i19++;
-                                                                arrayList23 = arrayList44;
-                                                                hashMap11 = hashMap15;
-                                                                longSparseArray25 = longSparseArray41;
-                                                                decryptMessage = arrayList14;
-                                                            }
-                                                            longSparseArray16 = longSparseArray36;
-                                                            arrayList19 = arrayList5;
-                                                            concurrentHashMap4 = concurrentHashMap6;
-                                                            longSparseArray29 = longSparseArray5;
-                                                            arrayList18 = arrayList10;
-                                                        }
-                                                    } else {
-                                                        HashMap<MessagesStorage.TopicKey, Integer> hashMap16 = hashMap11;
-                                                        if (update instanceof TLRPC.TL_updateEncryptedChatTyping) {
-                                                            TLRPC.EncryptedChat encryptedChatDB = getEncryptedChatDB(((TLRPC.TL_updateEncryptedChatTyping) update).chat_id, true);
-                                                            if (encryptedChatDB != null) {
-                                                                long makeEncryptedDialogId2 = DialogObject.makeEncryptedDialogId(r12.chat_id);
-                                                                ConcurrentHashMap<Integer, ArrayList<PrintingUser>> concurrentHashMap9 = this.printingUsers.get(Long.valueOf(makeEncryptedDialogId2));
-                                                                if (concurrentHashMap9 == null) {
-                                                                    concurrentHashMap9 = new ConcurrentHashMap<>();
-                                                                    this.printingUsers.put(Long.valueOf(makeEncryptedDialogId2), concurrentHashMap9);
-                                                                }
-                                                                ArrayList<PrintingUser> arrayList45 = concurrentHashMap9.get(0);
-                                                                if (arrayList45 == null) {
-                                                                    arrayList45 = new ArrayList<>();
-                                                                    concurrentHashMap9.put(0, arrayList45);
-                                                                }
-                                                                int size7 = arrayList45.size();
-                                                                int i20 = 0;
-                                                                while (true) {
-                                                                    if (i20 < size7) {
-                                                                        PrintingUser printingUser2 = arrayList45.get(i20);
-                                                                        longSparseArray4 = longSparseArray27;
-                                                                        hashMap3 = hashMap12;
-                                                                        if (printingUser2.userId == encryptedChatDB.user_id) {
-                                                                            j8 = j11;
-                                                                            printingUser2.lastTime = j8;
-                                                                            printingUser2.action = new TLRPC.TL_sendMessageTypingAction();
-                                                                            break;
-                                                                        }
-                                                                        i20++;
-                                                                        hashMap12 = hashMap3;
-                                                                        longSparseArray27 = longSparseArray4;
-                                                                    } else {
-                                                                        longSparseArray4 = longSparseArray27;
-                                                                        hashMap3 = hashMap12;
-                                                                        j8 = j11;
-                                                                        PrintingUser printingUser3 = new PrintingUser();
-                                                                        printingUser3.userId = encryptedChatDB.user_id;
-                                                                        printingUser3.lastTime = j8;
-                                                                        printingUser3.action = new TLRPC.TL_sendMessageTypingAction();
-                                                                        arrayList45.add(printingUser3);
-                                                                        z8 = true;
-                                                                        break;
-                                                                    }
-                                                                }
-                                                                if (Math.abs(getConnectionsManager().getCurrentTime() - i) < 30) {
-                                                                    this.onlinePrivacy.put(Long.valueOf(encryptedChatDB.user_id), Integer.valueOf(i));
-                                                                }
-                                                                j11 = j8;
-                                                                longSparseArray16 = longSparseArray36;
-                                                                arrayList19 = arrayList5;
-                                                                hashMap11 = hashMap16;
-                                                                concurrentHashMap4 = concurrentHashMap6;
-                                                                longSparseArray29 = longSparseArray5;
-                                                                longSparseArray25 = longSparseArray17;
-                                                                arrayList18 = arrayList10;
-                                                                hashMap12 = hashMap3;
-                                                                longSparseArray27 = longSparseArray4;
-                                                            } else {
-                                                                hashMap3 = hashMap12;
-                                                                longSparseArray4 = longSparseArray27;
-                                                                longSparseArray6 = longSparseArray35;
-                                                                longSparseArray7 = longSparseArray36;
-                                                                arrayList7 = arrayList25;
-                                                                sparseIntArray2 = sparseIntArray3;
-                                                                hashMap2 = hashMap16;
-                                                                concurrentHashMap4 = concurrentHashMap6;
-                                                                longSparseArray9 = longSparseArray17;
-                                                                arrayList6 = arrayList10;
-                                                                longSparseIntArray2 = longSparseIntArray4;
-                                                                longSparseArray3 = longSparseArray26;
-                                                                longSparseIntArray3 = longSparseIntArray5;
-                                                                longSparseArray8 = longSparseArray37;
-                                                                hashMap4 = hashMap13;
-                                                                hashMap5 = hashMap14;
-                                                                longSparseArray10 = longSparseArray34;
-                                                                arrayList8 = arrayList23;
-                                                                longSparseArray11 = longSparseArray28;
-                                                            }
-                                                        } else {
-                                                            longSparseArray4 = longSparseArray27;
-                                                            hashMap3 = hashMap12;
-                                                            long j24 = j11;
-                                                            if (update instanceof TLRPC.TL_updateEncryptedMessagesRead) {
-                                                                TLRPC.TL_updateEncryptedMessagesRead tL_updateEncryptedMessagesRead = (TLRPC.TL_updateEncryptedMessagesRead) update;
-                                                                SparseIntArray sparseIntArray4 = sparseIntArray3 == null ? new SparseIntArray() : sparseIntArray3;
-                                                                sparseIntArray4.put(tL_updateEncryptedMessagesRead.chat_id, tL_updateEncryptedMessagesRead.max_date);
-                                                                arrayList19 = arrayList5 == null ? new ArrayList() : arrayList5;
-                                                                arrayList19.add(tL_updateEncryptedMessagesRead);
-                                                                sparseIntArray3 = sparseIntArray4;
-                                                                j11 = j24;
-                                                                longSparseArray14 = longSparseArray34;
-                                                                longSparseArray6 = longSparseArray35;
-                                                                longSparseArray7 = longSparseArray36;
-                                                            } else {
-                                                                if (update instanceof TLRPC.TL_updateChatParticipantAdd) {
-                                                                    TLRPC.TL_updateChatParticipantAdd tL_updateChatParticipantAdd = (TLRPC.TL_updateChatParticipantAdd) update;
-                                                                    j11 = j24;
-                                                                    getMessagesStorage().updateChatInfo(tL_updateChatParticipantAdd.chat_id, tL_updateChatParticipantAdd.user_id, 0, tL_updateChatParticipantAdd.inviter_id, tL_updateChatParticipantAdd.version);
-                                                                } else {
-                                                                    j11 = j24;
-                                                                    if (update instanceof TLRPC.TL_updateChatParticipantDelete) {
-                                                                        TLRPC.TL_updateChatParticipantDelete tL_updateChatParticipantDelete = (TLRPC.TL_updateChatParticipantDelete) update;
-                                                                        getMessagesStorage().updateChatInfo(tL_updateChatParticipantDelete.chat_id, tL_updateChatParticipantDelete.user_id, 1, 0L, tL_updateChatParticipantDelete.version);
-                                                                    } else if ((update instanceof TLRPC.TL_updateDcOptions) || (update instanceof TLRPC.TL_updateConfig)) {
-                                                                        longSparseArray18 = longSparseArray34;
-                                                                        longSparseArray16 = longSparseArray36;
-                                                                        arrayList7 = arrayList25;
-                                                                        sparseIntArray2 = sparseIntArray3;
-                                                                        hashMap6 = hashMap14;
-                                                                        hashMap2 = hashMap16;
-                                                                        concurrentHashMap4 = concurrentHashMap6;
-                                                                        longSparseArray9 = longSparseArray17;
-                                                                        arrayList6 = arrayList10;
-                                                                        longSparseIntArray2 = longSparseIntArray4;
-                                                                        longSparseArray3 = longSparseArray26;
-                                                                        longSparseIntArray3 = longSparseIntArray5;
-                                                                        arrayList8 = arrayList23;
-                                                                        longSparseArray15 = longSparseArray35;
-                                                                        longSparseArray8 = longSparseArray37;
-                                                                        longSparseArray11 = longSparseArray28;
-                                                                        hashMap7 = hashMap13;
-                                                                        getConnectionsManager().updateDcSettings();
-                                                                        hashMap4 = hashMap7;
-                                                                        hashMap5 = hashMap6;
-                                                                    } else if (update instanceof TLRPC.TL_updateEncryption) {
-                                                                        getSecretChatHelper().processUpdateEncryption((TLRPC.TL_updateEncryption) update, concurrentHashMap3);
-                                                                    } else {
-                                                                        if (update instanceof TLRPC.TL_updatePeerBlocked) {
-                                                                            final TLRPC.TL_updatePeerBlocked tL_updatePeerBlocked = (TLRPC.TL_updatePeerBlocked) update;
-                                                                            getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda293
-                                                                                @Override // java.lang.Runnable
-                                                                                public final void run() {
-                                                                                    MessagesController.this.lambda$processUpdateArray$365(tL_updatePeerBlocked);
-                                                                                }
-                                                                            });
-                                                                        } else if (update instanceof TLRPC.TL_updateServiceNotification) {
-                                                                            final TLRPC.TL_updateServiceNotification tL_updateServiceNotification = (TLRPC.TL_updateServiceNotification) update;
-                                                                            if (tL_updateServiceNotification.popup && (str = tL_updateServiceNotification.message) != null && str.length() > 0) {
-                                                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda294
-                                                                                    @Override // java.lang.Runnable
-                                                                                    public final void run() {
-                                                                                        MessagesController.this.lambda$processUpdateArray$366(tL_updateServiceNotification);
-                                                                                    }
-                                                                                });
-                                                                            }
-                                                                            if ((tL_updateServiceNotification.flags & 2) != 0) {
-                                                                                TLRPC.TL_message tL_message = new TLRPC.TL_message();
-                                                                                tL_message.invert_media = tL_updateServiceNotification.invert_media;
-                                                                                int newMessageId = getUserConfig().getNewMessageId();
-                                                                                tL_message.id = newMessageId;
-                                                                                tL_message.local_id = newMessageId;
-                                                                                getUserConfig().saveConfig(false);
-                                                                                tL_message.unread = true;
-                                                                                tL_message.flags = 256;
-                                                                                int i21 = tL_updateServiceNotification.inbox_date;
-                                                                                if (i21 != 0) {
-                                                                                    tL_message.date = i21;
-                                                                                } else {
-                                                                                    tL_message.date = (int) (System.currentTimeMillis() / 1000);
-                                                                                }
-                                                                                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                                                                                tL_message.from_id = tL_peerUser;
-                                                                                tL_peerUser.user_id = 777000L;
-                                                                                TLRPC.TL_peerUser tL_peerUser2 = new TLRPC.TL_peerUser();
-                                                                                tL_message.peer_id = tL_peerUser2;
-                                                                                tL_peerUser2.user_id = getUserConfig().getClientUserId();
-                                                                                tL_message.dialog_id = 777000L;
-                                                                                TLRPC.MessageMedia messageMedia = tL_updateServiceNotification.media;
-                                                                                if (messageMedia != null) {
-                                                                                    tL_message.media = messageMedia;
-                                                                                    tL_message.flags |= 512;
-                                                                                }
-                                                                                tL_message.message = tL_updateServiceNotification.message;
-                                                                                ArrayList<TLRPC.MessageEntity> arrayList46 = tL_updateServiceNotification.entities;
-                                                                                if (arrayList46 != null) {
-                                                                                    tL_message.entities = arrayList46;
-                                                                                    tL_message.flags |= 128;
-                                                                                }
-                                                                                if (arrayList26 == null) {
-                                                                                    arrayList26 = new ArrayList<>();
-                                                                                }
-                                                                                ArrayList<TLRPC.Message> arrayList47 = arrayList26;
-                                                                                arrayList47.add(tL_message);
-                                                                                boolean contains4 = this.createdDialogIds.contains(Long.valueOf(tL_message.dialog_id));
-                                                                                MessageObject messageObject4 = new MessageObject(this.currentAccount, tL_message, concurrentHashMap3, concurrentHashMap6, contains4, contains4);
-                                                                                LongSparseArray longSparseArray42 = longSparseArray17 == null ? new LongSparseArray() : longSparseArray17;
-                                                                                ArrayList arrayList48 = (ArrayList) longSparseArray42.get(tL_message.dialog_id);
-                                                                                if (arrayList48 == null) {
-                                                                                    arrayList48 = new ArrayList();
-                                                                                    longSparseArray42.put(tL_message.dialog_id, arrayList48);
-                                                                                }
-                                                                                arrayList48.add(messageObject4);
-                                                                                ArrayList arrayList49 = arrayList23;
-                                                                                if (arrayList49 == null) {
-                                                                                    arrayList49 = new ArrayList();
-                                                                                }
-                                                                                arrayList49.add(messageObject4);
-                                                                                arrayList26 = arrayList47;
-                                                                                longSparseArray25 = longSparseArray42;
-                                                                                arrayList23 = arrayList49;
-                                                                                longSparseArray14 = longSparseArray34;
-                                                                                longSparseArray6 = longSparseArray35;
-                                                                                longSparseArray7 = longSparseArray36;
-                                                                                arrayList19 = arrayList5;
-                                                                                hashMap2 = hashMap16;
-                                                                                concurrentHashMap4 = concurrentHashMap6;
-                                                                                arrayList18 = arrayList10;
-                                                                                hashMap12 = hashMap3;
-                                                                                longSparseIntArray2 = longSparseIntArray4;
-                                                                                longSparseIntArray3 = longSparseIntArray5;
-                                                                                longSparseArray8 = longSparseArray37;
-                                                                                longSparseArray34 = longSparseArray14;
-                                                                                longSparseArray15 = longSparseArray6;
-                                                                                longSparseArray16 = longSparseArray7;
-                                                                                longSparseIntArray4 = longSparseIntArray2;
-                                                                                longSparseIntArray5 = longSparseIntArray3;
-                                                                                longSparseArray29 = longSparseArray5;
-                                                                                longSparseArray37 = longSparseArray8;
-                                                                                longSparseArray27 = longSparseArray4;
-                                                                                hashMap11 = hashMap2;
-                                                                            }
-                                                                        } else {
-                                                                            ArrayList arrayList50 = arrayList23;
-                                                                            if (update instanceof TLRPC.TL_updateFolderPeers) {
-                                                                                TLRPC.TL_updateFolderPeers tL_updateFolderPeers = (TLRPC.TL_updateFolderPeers) update;
-                                                                                ArrayList arrayList51 = arrayList25 == null ? new ArrayList() : arrayList25;
-                                                                                arrayList51.add(tL_updateFolderPeers);
-                                                                                arrayList25 = arrayList51;
-                                                                                arrayList23 = arrayList50;
-                                                                            } else {
-                                                                                if (update instanceof TLRPC.TL_updateWebPage) {
-                                                                                    TLRPC.TL_updateWebPage tL_updateWebPage = (TLRPC.TL_updateWebPage) update;
-                                                                                    longSparseArray24 = longSparseArray37 == null ? new LongSparseArray() : longSparseArray37;
-                                                                                    TLRPC.WebPage webPage = tL_updateWebPage.webpage;
-                                                                                    longSparseArray24.put(webPage.id, webPage);
-                                                                                } else if (update instanceof TLRPC.TL_updateChannelWebPage) {
-                                                                                    TLRPC.TL_updateChannelWebPage tL_updateChannelWebPage = (TLRPC.TL_updateChannelWebPage) update;
-                                                                                    longSparseArray24 = longSparseArray37 == null ? new LongSparseArray() : longSparseArray37;
-                                                                                    TLRPC.WebPage webPage2 = tL_updateChannelWebPage.webpage;
-                                                                                    longSparseArray24.put(webPage2.id, webPage2);
-                                                                                } else {
-                                                                                    if (update instanceof TLRPC.TL_updateChannelTooLong) {
-                                                                                        TLRPC.TL_updateChannelTooLong tL_updateChannelTooLong = (TLRPC.TL_updateChannelTooLong) update;
-                                                                                        if (BuildVars.LOGS_ENABLED) {
-                                                                                            FileLog.d(update + " channelId = " + tL_updateChannelTooLong.channel_id);
-                                                                                        }
-                                                                                        int i22 = this.channelsPts.get(tL_updateChannelTooLong.channel_id, 0);
-                                                                                        if (i22 == 0) {
-                                                                                            i22 = getMessagesStorage().getChannelPtsSync(tL_updateChannelTooLong.channel_id);
-                                                                                            if (i22 == 0) {
-                                                                                                concurrentHashMap4 = concurrentHashMap6;
-                                                                                                TLRPC.Chat chat3 = concurrentHashMap4.get(Long.valueOf(tL_updateChannelTooLong.channel_id));
-                                                                                                if (chat3 == null || chat3.min) {
-                                                                                                    chat3 = getChat(Long.valueOf(tL_updateChannelTooLong.channel_id));
-                                                                                                }
-                                                                                                if (chat3 == null || chat3.min) {
-                                                                                                    chat3 = getMessagesStorage().getChatSync(tL_updateChannelTooLong.channel_id);
-                                                                                                    putChat(chat3, true);
-                                                                                                }
-                                                                                                if (chat3 != null && !chat3.min) {
-                                                                                                    loadUnknownChannel(chat3, 0L);
-                                                                                                }
-                                                                                            } else {
-                                                                                                concurrentHashMap4 = concurrentHashMap6;
-                                                                                                this.channelsPts.put(tL_updateChannelTooLong.channel_id, i22);
-                                                                                            }
-                                                                                        } else {
-                                                                                            concurrentHashMap4 = concurrentHashMap6;
-                                                                                        }
-                                                                                        if (i22 != 0) {
-                                                                                            if ((tL_updateChannelTooLong.flags & 1) != 0) {
-                                                                                                if (tL_updateChannelTooLong.pts > i22) {
-                                                                                                    getChannelDifference(tL_updateChannelTooLong.channel_id);
-                                                                                                }
-                                                                                            } else {
-                                                                                                getChannelDifference(tL_updateChannelTooLong.channel_id);
-                                                                                            }
-                                                                                        }
-                                                                                        longSparseIntArray3 = longSparseIntArray5;
-                                                                                        longSparseArray11 = longSparseArray28;
-                                                                                        longSparseArray6 = longSparseArray35;
-                                                                                        longSparseArray7 = longSparseArray36;
-                                                                                        arrayList7 = arrayList25;
-                                                                                        sparseIntArray2 = sparseIntArray3;
-                                                                                        j = j11;
-                                                                                        hashMap2 = hashMap16;
-                                                                                        arrayList6 = arrayList10;
-                                                                                    } else {
-                                                                                        concurrentHashMap4 = concurrentHashMap6;
-                                                                                        if (update instanceof TLRPC.TL_updateReadChannelInbox) {
-                                                                                            TLRPC.TL_updateReadChannelInbox tL_updateReadChannelInbox = (TLRPC.TL_updateReadChannelInbox) update;
-                                                                                            long j25 = -tL_updateReadChannelInbox.channel_id;
-                                                                                            Integer num4 = this.dialogs_read_inbox_max.get(Long.valueOf(j25));
-                                                                                            if (num4 == null) {
-                                                                                                num4 = Integer.valueOf(getMessagesStorage().getDialogReadMax(false, j25));
-                                                                                            }
-                                                                                            if (longSparseIntArray4 == null) {
-                                                                                                longSparseIntArray4 = new LongSparseIntArray();
-                                                                                            }
-                                                                                            if (longSparseIntArray7 == null) {
-                                                                                                longSparseIntArray7 = new LongSparseIntArray();
-                                                                                            }
-                                                                                            LongSparseIntArray longSparseIntArray10 = longSparseIntArray7;
-                                                                                            longSparseIntArray4.put(j25, tL_updateReadChannelInbox.max_id);
-                                                                                            longSparseIntArray10.put(j25, tL_updateReadChannelInbox.still_unread_count);
-                                                                                            this.dialogs_read_inbox_max.put(Long.valueOf(j25), Integer.valueOf(Math.max(num4.intValue(), tL_updateReadChannelInbox.max_id)));
-                                                                                            FileLog.d("TL_updateReadChannelInbox " + j25 + "  new unread = " + tL_updateReadChannelInbox.still_unread_count + " max id = " + tL_updateReadChannelInbox.max_id + " from get diff " + z);
-                                                                                            longSparseIntArray7 = longSparseIntArray10;
-                                                                                            arrayList23 = arrayList50;
-                                                                                            longSparseIntArray5 = longSparseIntArray5;
-                                                                                            longSparseArray16 = longSparseArray36;
-                                                                                            arrayList19 = arrayList5;
-                                                                                            hashMap11 = hashMap16;
-                                                                                            longSparseArray29 = longSparseArray5;
-                                                                                            longSparseArray25 = longSparseArray17;
-                                                                                            arrayList18 = arrayList10;
-                                                                                            hashMap12 = hashMap3;
-                                                                                            longSparseArray27 = longSparseArray4;
-                                                                                        } else {
-                                                                                            LongSparseIntArray longSparseIntArray11 = longSparseIntArray5;
-                                                                                            if ((update instanceof TLRPC.TL_updatePinnedForumTopic) || (update instanceof TLRPC.TL_updatePinnedForumTopics)) {
-                                                                                                longSparseArray11 = longSparseArray28;
-                                                                                                longSparseIntArray3 = longSparseIntArray11;
-                                                                                                longSparseArray21 = longSparseArray34;
-                                                                                                longSparseArray22 = longSparseArray36;
-                                                                                                arrayList7 = arrayList25;
-                                                                                                sparseIntArray2 = sparseIntArray3;
-                                                                                                hashMap9 = hashMap13;
-                                                                                                hashMap10 = hashMap14;
-                                                                                                hashMap2 = hashMap16;
-                                                                                                arrayList6 = arrayList10;
-                                                                                                longSparseIntArray2 = longSparseIntArray4;
-                                                                                                arrayList8 = arrayList50;
-                                                                                                longSparseArray23 = longSparseArray35;
-                                                                                                longSparseArray8 = longSparseArray37;
-                                                                                                longSparseArray9 = longSparseArray17;
-                                                                                                longSparseArray3 = longSparseArray26;
-                                                                                                if (arrayList20 == null) {
-                                                                                                    arrayList20 = new ArrayList();
-                                                                                                }
-                                                                                                arrayList11 = arrayList20;
-                                                                                                arrayList11.add(update);
-                                                                                            } else {
-                                                                                                if (update instanceof TLRPC.TL_updateReadChannelOutbox) {
-                                                                                                    TLRPC.TL_updateReadChannelOutbox tL_updateReadChannelOutbox = (TLRPC.TL_updateReadChannelOutbox) update;
-                                                                                                    if (BuildVars.LOGS_ENABLED) {
-                                                                                                        StringBuilder sb2 = new StringBuilder();
-                                                                                                        sb2.append(update);
-                                                                                                        sb2.append(" channelId = ");
-                                                                                                        longSparseArray11 = longSparseArray28;
-                                                                                                        sb2.append(tL_updateReadChannelOutbox.channel_id);
-                                                                                                        FileLog.d(sb2.toString());
-                                                                                                    } else {
-                                                                                                        longSparseArray11 = longSparseArray28;
-                                                                                                    }
-                                                                                                    if (longSparseIntArray11 == null) {
-                                                                                                        longSparseIntArray11 = new LongSparseIntArray();
-                                                                                                    }
-                                                                                                    long j26 = -tL_updateReadChannelOutbox.channel_id;
-                                                                                                    longSparseIntArray11.put(j26, tL_updateReadChannelOutbox.max_id);
-                                                                                                    Integer num5 = this.dialogs_read_outbox_max.get(Long.valueOf(j26));
-                                                                                                    if (num5 == null) {
-                                                                                                        num5 = Integer.valueOf(getMessagesStorage().getDialogReadMax(true, j26));
-                                                                                                    }
-                                                                                                    this.dialogs_read_outbox_max.put(Long.valueOf(j26), Integer.valueOf(Math.max(num5.intValue(), tL_updateReadChannelOutbox.max_id)));
-                                                                                                } else {
-                                                                                                    longSparseArray11 = longSparseArray28;
-                                                                                                    if (update instanceof TLRPC.TL_updateDeleteChannelMessages) {
-                                                                                                        TLRPC.TL_updateDeleteChannelMessages tL_updateDeleteChannelMessages = (TLRPC.TL_updateDeleteChannelMessages) update;
-                                                                                                        if (BuildVars.LOGS_ENABLED) {
-                                                                                                            FileLog.d(update + " channelId = " + tL_updateDeleteChannelMessages.channel_id);
-                                                                                                        }
-                                                                                                        if (longSparseArray26 == null) {
-                                                                                                            longSparseArray26 = new LongSparseArray();
-                                                                                                        }
-                                                                                                        long j27 = -tL_updateDeleteChannelMessages.channel_id;
-                                                                                                        ArrayList arrayList52 = (ArrayList) longSparseArray26.get(j27);
-                                                                                                        if (arrayList52 == null) {
-                                                                                                            arrayList52 = new ArrayList();
-                                                                                                            longSparseArray26.put(j27, arrayList52);
-                                                                                                        }
-                                                                                                        arrayList52.addAll(tL_updateDeleteChannelMessages.messages);
-                                                                                                    } else {
-                                                                                                        if (update instanceof TLRPC.TL_updateChannel) {
-                                                                                                            if (BuildVars.LOGS_ENABLED) {
-                                                                                                                FileLog.d(update + " channelId = " + ((TLRPC.TL_updateChannel) update).channel_id);
-                                                                                                            }
-                                                                                                            if (arrayList20 == null) {
-                                                                                                                arrayList20 = new ArrayList();
-                                                                                                            }
-                                                                                                            arrayList13 = arrayList20;
-                                                                                                            arrayList13.add(update);
-                                                                                                        } else if ((update instanceof TLRPC.TL_updateChat) || (update instanceof TLRPC.TL_updateSentStoryReaction)) {
-                                                                                                            longSparseIntArray3 = longSparseIntArray11;
-                                                                                                            longSparseArray21 = longSparseArray34;
-                                                                                                            longSparseArray22 = longSparseArray36;
-                                                                                                            arrayList7 = arrayList25;
-                                                                                                            sparseIntArray2 = sparseIntArray3;
-                                                                                                            hashMap9 = hashMap13;
-                                                                                                            hashMap10 = hashMap14;
-                                                                                                            hashMap2 = hashMap16;
-                                                                                                            arrayList6 = arrayList10;
-                                                                                                            longSparseIntArray2 = longSparseIntArray4;
-                                                                                                            arrayList8 = arrayList50;
-                                                                                                            longSparseArray23 = longSparseArray35;
-                                                                                                            longSparseArray8 = longSparseArray37;
-                                                                                                            longSparseArray9 = longSparseArray17;
-                                                                                                            longSparseArray3 = longSparseArray26;
-                                                                                                            if (arrayList20 == null) {
-                                                                                                                arrayList20 = new ArrayList();
-                                                                                                            }
-                                                                                                            arrayList11 = arrayList20;
-                                                                                                            arrayList11.add(update);
-                                                                                                        } else if (update instanceof TLRPC.TL_updateChannelMessageViews) {
-                                                                                                            TLRPC.TL_updateChannelMessageViews tL_updateChannelMessageViews = (TLRPC.TL_updateChannelMessageViews) update;
-                                                                                                            if (BuildVars.LOGS_ENABLED) {
-                                                                                                                FileLog.d(update + " channelId = " + tL_updateChannelMessageViews.channel_id);
-                                                                                                            }
-                                                                                                            LongSparseArray longSparseArray43 = longSparseArray36 == null ? new LongSparseArray() : longSparseArray36;
-                                                                                                            long j28 = -tL_updateChannelMessageViews.channel_id;
-                                                                                                            SparseIntArray sparseIntArray5 = (SparseIntArray) longSparseArray43.get(j28);
-                                                                                                            if (sparseIntArray5 == null) {
-                                                                                                                sparseIntArray5 = new SparseIntArray();
-                                                                                                                longSparseArray43.put(j28, sparseIntArray5);
-                                                                                                            }
-                                                                                                            sparseIntArray5.put(tL_updateChannelMessageViews.id, tL_updateChannelMessageViews.views);
-                                                                                                            longSparseArray16 = longSparseArray43;
-                                                                                                            longSparseIntArray5 = longSparseIntArray11;
-                                                                                                            longSparseArray28 = longSparseArray11;
-                                                                                                            longSparseArray15 = longSparseArray35;
-                                                                                                            arrayList19 = arrayList5;
-                                                                                                            hashMap11 = hashMap16;
-                                                                                                            longSparseArray29 = longSparseArray5;
-                                                                                                            longSparseArray25 = longSparseArray17;
-                                                                                                            arrayList18 = arrayList10;
-                                                                                                            longSparseArray27 = longSparseArray4;
-                                                                                                            arrayList23 = arrayList50;
-                                                                                                            hashMap12 = hashMap3;
-                                                                                                        } else if (update instanceof TLRPC.TL_updateChannelMessageForwards) {
-                                                                                                            TLRPC.TL_updateChannelMessageForwards tL_updateChannelMessageForwards = (TLRPC.TL_updateChannelMessageForwards) update;
-                                                                                                            if (BuildVars.LOGS_ENABLED) {
-                                                                                                                FileLog.d(update + " channelId = " + tL_updateChannelMessageForwards.channel_id);
-                                                                                                            }
-                                                                                                            LongSparseArray longSparseArray44 = longSparseArray35 == null ? new LongSparseArray() : longSparseArray35;
-                                                                                                            long j29 = -tL_updateChannelMessageForwards.channel_id;
-                                                                                                            SparseIntArray sparseIntArray6 = (SparseIntArray) longSparseArray44.get(j29);
-                                                                                                            if (sparseIntArray6 == null) {
-                                                                                                                sparseIntArray6 = new SparseIntArray();
-                                                                                                                longSparseArray44.put(j29, sparseIntArray6);
-                                                                                                            }
-                                                                                                            sparseIntArray6.put(tL_updateChannelMessageForwards.id, tL_updateChannelMessageForwards.forwards);
-                                                                                                            longSparseIntArray5 = longSparseIntArray11;
-                                                                                                            longSparseArray28 = longSparseArray11;
-                                                                                                            longSparseArray16 = longSparseArray36;
-                                                                                                            arrayList19 = arrayList5;
-                                                                                                            hashMap11 = hashMap16;
-                                                                                                            longSparseArray29 = longSparseArray5;
-                                                                                                            longSparseArray25 = longSparseArray17;
-                                                                                                            arrayList18 = arrayList10;
-                                                                                                            longSparseArray15 = longSparseArray44;
-                                                                                                            arrayList23 = arrayList50;
-                                                                                                            hashMap12 = hashMap3;
-                                                                                                            longSparseArray27 = longSparseArray4;
-                                                                                                        } else {
-                                                                                                            if (update instanceof TLRPC.TL_updateChatParticipantAdmin) {
-                                                                                                                TLRPC.TL_updateChatParticipantAdmin tL_updateChatParticipantAdmin = (TLRPC.TL_updateChatParticipantAdmin) update;
-                                                                                                                getMessagesStorage().updateChatInfo(tL_updateChatParticipantAdmin.chat_id, tL_updateChatParticipantAdmin.user_id, 2, tL_updateChatParticipantAdmin.is_admin ? 1L : 0L, tL_updateChatParticipantAdmin.version);
-                                                                                                            } else if (update instanceof TLRPC.TL_updateChatDefaultBannedRights) {
-                                                                                                                TLRPC.TL_updateChatDefaultBannedRights tL_updateChatDefaultBannedRights = (TLRPC.TL_updateChatDefaultBannedRights) update;
-                                                                                                                TLRPC.Peer peer12 = tL_updateChatDefaultBannedRights.peer;
-                                                                                                                long j30 = peer12.channel_id;
-                                                                                                                if (j30 == 0) {
-                                                                                                                    j30 = peer12.chat_id;
-                                                                                                                }
-                                                                                                                getMessagesStorage().updateChatDefaultBannedRights(j30, tL_updateChatDefaultBannedRights.default_banned_rights, tL_updateChatDefaultBannedRights.version);
-                                                                                                                if (arrayList20 == null) {
-                                                                                                                    arrayList20 = new ArrayList();
-                                                                                                                }
-                                                                                                                arrayList13 = arrayList20;
-                                                                                                                arrayList13.add(update);
-                                                                                                            } else {
-                                                                                                                boolean z11 = update instanceof TLRPC.TL_updateEditChannelMessage;
-                                                                                                                if (z11 || (update instanceof TLRPC.TL_updateEditMessage)) {
-                                                                                                                    longSparseIntArray3 = longSparseIntArray11;
-                                                                                                                    longSparseArray21 = longSparseArray34;
-                                                                                                                    longSparseArray22 = longSparseArray36;
-                                                                                                                    arrayList7 = arrayList25;
-                                                                                                                    SparseIntArray sparseIntArray7 = sparseIntArray3;
-                                                                                                                    hashMap9 = hashMap13;
-                                                                                                                    hashMap10 = hashMap14;
-                                                                                                                    hashMap2 = hashMap16;
-                                                                                                                    arrayList6 = arrayList10;
-                                                                                                                    longSparseIntArray2 = longSparseIntArray4;
-                                                                                                                    arrayList8 = arrayList50;
-                                                                                                                    longSparseArray23 = longSparseArray35;
-                                                                                                                    longSparseArray8 = longSparseArray37;
-                                                                                                                    longSparseArray9 = longSparseArray17;
-                                                                                                                    longSparseArray3 = longSparseArray26;
-                                                                                                                    if (z11) {
-                                                                                                                        message2 = ((TLRPC.TL_updateEditChannelMessage) update).message;
-                                                                                                                        TLRPC.Chat chat4 = concurrentHashMap4.get(Long.valueOf(message2.peer_id.channel_id));
-                                                                                                                        if (chat4 == null) {
-                                                                                                                            chat4 = getChat(Long.valueOf(message2.peer_id.channel_id));
-                                                                                                                        }
-                                                                                                                        if (chat4 == null) {
-                                                                                                                            z6 = true;
-                                                                                                                            putChat(getMessagesStorage().getChatSync(message2.peer_id.channel_id), true);
-                                                                                                                        } else {
-                                                                                                                            z6 = true;
-                                                                                                                        }
-                                                                                                                    } else {
-                                                                                                                        z6 = true;
-                                                                                                                        message2 = ((TLRPC.TL_updateEditMessage) update).message;
-                                                                                                                        if (message2.dialog_id == clientUserId) {
-                                                                                                                            message2.unread = false;
-                                                                                                                            message2.media_unread = false;
-                                                                                                                            message2.out = true;
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                    if (!message2.out) {
-                                                                                                                        long peerDialogId = DialogObject.getPeerDialogId(message2.from_id);
-                                                                                                                        if (peerDialogId == clientUserId) {
-                                                                                                                            message2.out = z6;
-                                                                                                                        } else {
-                                                                                                                            TLRPC.TL_channels_sendAsPeers sendAsPeers = getSendAsPeers(MessageObject.getDialogId(message2));
-                                                                                                                            if (sendAsPeers != null) {
-                                                                                                                                Iterator<TLRPC.TL_sendAsPeer> it2 = sendAsPeers.peers.iterator();
-                                                                                                                                while (true) {
-                                                                                                                                    if (!it2.hasNext()) {
-                                                                                                                                        break;
-                                                                                                                                    }
-                                                                                                                                    TLRPC.TL_sendAsPeer next2 = it2.next();
-                                                                                                                                    if (next2 != null && peerDialogId == DialogObject.getPeerDialogId(next2.peer)) {
-                                                                                                                                        message2.out = true;
-                                                                                                                                        break;
-                                                                                                                                    }
-                                                                                                                                }
-                                                                                                                            }
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                    if (!z) {
-                                                                                                                        int size8 = message2.entities.size();
-                                                                                                                        for (int i23 = 0; i23 < size8; i23++) {
-                                                                                                                            TLRPC.MessageEntity messageEntity2 = message2.entities.get(i23);
-                                                                                                                            if (messageEntity2 instanceof TLRPC.TL_messageEntityMentionName) {
-                                                                                                                                long j31 = ((TLRPC.TL_messageEntityMentionName) messageEntity2).user_id;
-                                                                                                                                TLRPC.User user6 = concurrentHashMap3.get(Long.valueOf(j31));
-                                                                                                                                if (user6 == null || user6.min) {
-                                                                                                                                    user6 = getUser(Long.valueOf(j31));
-                                                                                                                                }
-                                                                                                                                if (user6 == null || user6.min) {
-                                                                                                                                    user6 = getMessagesStorage().getUserSync(j31);
-                                                                                                                                    if (user6 == null || !user6.min) {
-                                                                                                                                        z7 = true;
-                                                                                                                                    } else {
-                                                                                                                                        z7 = true;
-                                                                                                                                        user6 = null;
-                                                                                                                                    }
-                                                                                                                                    putUser(user6, z7);
-                                                                                                                                }
-                                                                                                                                if (user6 == null) {
-                                                                                                                                    return false;
-                                                                                                                                }
-                                                                                                                            }
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                    MessageObject.getDialogId(message2);
-                                                                                                                    ConcurrentHashMap<Long, Integer> concurrentHashMap10 = message2.out ? this.dialogs_read_outbox_max : this.dialogs_read_inbox_max;
-                                                                                                                    Integer num6 = concurrentHashMap10.get(Long.valueOf(message2.dialog_id));
-                                                                                                                    if (num6 == null) {
-                                                                                                                        num6 = Integer.valueOf(getMessagesStorage().getDialogReadMax(message2.out, message2.dialog_id));
-                                                                                                                        concurrentHashMap10.put(Long.valueOf(message2.dialog_id), num6);
-                                                                                                                    }
-                                                                                                                    message2.unread = num6.intValue() < message2.id;
-                                                                                                                    if (message2.dialog_id == clientUserId) {
-                                                                                                                        message2.out = true;
-                                                                                                                        message2.unread = false;
-                                                                                                                        message2.media_unread = false;
-                                                                                                                    }
-                                                                                                                    if (message2.out && message2.message == null) {
-                                                                                                                        message2.message = "";
-                                                                                                                        message2.attachPath = "";
-                                                                                                                    }
-                                                                                                                    ImageLoader.saveMessageThumbs(message2);
-                                                                                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda296
-                                                                                                                        @Override // java.lang.Runnable
-                                                                                                                        public final void run() {
-                                                                                                                            MessagesController.this.lambda$processUpdateArray$367(message2);
-                                                                                                                        }
-                                                                                                                    });
-                                                                                                                    boolean contains5 = this.createdDialogIds.contains(Long.valueOf(message2.dialog_id));
-                                                                                                                    MessageObject messageObject5 = new MessageObject(this.currentAccount, message2, concurrentHashMap3, concurrentHashMap4, contains5, contains5);
-                                                                                                                    getTranslateController().invalidateTranslation(messageObject5);
-                                                                                                                    if (longSparseArray21 == null) {
-                                                                                                                        longSparseArray21 = new LongSparseArray();
-                                                                                                                    }
-                                                                                                                    ArrayList arrayList53 = (ArrayList) longSparseArray21.get(message2.dialog_id);
-                                                                                                                    if (arrayList53 == null) {
-                                                                                                                        arrayList53 = new ArrayList();
-                                                                                                                        longSparseArray21.put(message2.dialog_id, arrayList53);
-                                                                                                                    }
-                                                                                                                    arrayList53.add(messageObject5);
-                                                                                                                    sparseIntArray3 = sparseIntArray7;
-                                                                                                                    longSparseArray25 = longSparseArray9;
-                                                                                                                    hashMap13 = hashMap9;
-                                                                                                                    hashMap14 = hashMap10;
-                                                                                                                    longSparseArray14 = longSparseArray21;
-                                                                                                                    longSparseArray7 = longSparseArray22;
-                                                                                                                    longSparseArray28 = longSparseArray11;
-                                                                                                                    arrayList23 = arrayList8;
-                                                                                                                    longSparseArray6 = longSparseArray23;
-                                                                                                                    arrayList19 = arrayList5;
-                                                                                                                    longSparseArray26 = longSparseArray3;
-                                                                                                                    hashMap12 = hashMap3;
-                                                                                                                    arrayList18 = arrayList6;
-                                                                                                                    arrayList25 = arrayList7;
-                                                                                                                    longSparseArray34 = longSparseArray14;
-                                                                                                                    longSparseArray15 = longSparseArray6;
-                                                                                                                    longSparseArray16 = longSparseArray7;
-                                                                                                                    longSparseIntArray4 = longSparseIntArray2;
-                                                                                                                    longSparseIntArray5 = longSparseIntArray3;
-                                                                                                                    longSparseArray29 = longSparseArray5;
-                                                                                                                    longSparseArray37 = longSparseArray8;
-                                                                                                                    longSparseArray27 = longSparseArray4;
-                                                                                                                    hashMap11 = hashMap2;
-                                                                                                                } else if (update instanceof TLRPC.TL_updatePinnedChannelMessages) {
-                                                                                                                    TLRPC.TL_updatePinnedChannelMessages tL_updatePinnedChannelMessages = (TLRPC.TL_updatePinnedChannelMessages) update;
-                                                                                                                    if (BuildVars.LOGS_ENABLED) {
-                                                                                                                        FileLog.d(update + " channelId = " + tL_updatePinnedChannelMessages.channel_id);
-                                                                                                                    }
-                                                                                                                    getMessagesStorage().updatePinnedMessages(-tL_updatePinnedChannelMessages.channel_id, tL_updatePinnedChannelMessages.messages, tL_updatePinnedChannelMessages.pinned, -1, 0, false, null);
-                                                                                                                } else if (update instanceof TLRPC.TL_updatePinnedMessages) {
-                                                                                                                    TLRPC.TL_updatePinnedMessages tL_updatePinnedMessages = (TLRPC.TL_updatePinnedMessages) update;
-                                                                                                                    getMessagesStorage().updatePinnedMessages(MessageObject.getPeerId(tL_updatePinnedMessages.peer), tL_updatePinnedMessages.messages, tL_updatePinnedMessages.pinned, -1, 0, false, null);
-                                                                                                                } else if (!(update instanceof TLRPC.TL_updateGroupCallConnection)) {
-                                                                                                                    if (update instanceof TLRPC.TL_updateLangPack) {
-                                                                                                                        final TLRPC.TL_updateLangPack tL_updateLangPack = (TLRPC.TL_updateLangPack) update;
-                                                                                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda295
-                                                                                                                            @Override // java.lang.Runnable
-                                                                                                                            public final void run() {
-                                                                                                                                MessagesController.this.lambda$processUpdateArray$368(tL_updateLangPack);
-                                                                                                                            }
-                                                                                                                        });
-                                                                                                                    } else if (update instanceof TLRPC.TL_updateLangPackTooLong) {
-                                                                                                                        LocaleController.getInstance().reloadCurrentRemoteLocale(this.currentAccount, ((TLRPC.TL_updateLangPackTooLong) update).lang_code, false, null);
-                                                                                                                    } else if (update instanceof TLRPC.TL_updateChannelAvailableMessages) {
-                                                                                                                        TLRPC.TL_updateChannelAvailableMessages tL_updateChannelAvailableMessages = (TLRPC.TL_updateChannelAvailableMessages) update;
-                                                                                                                        LongSparseIntArray longSparseIntArray12 = longSparseIntArray8 == null ? new LongSparseIntArray() : longSparseIntArray8;
-                                                                                                                        long j32 = -tL_updateChannelAvailableMessages.channel_id;
-                                                                                                                        int i24 = longSparseIntArray12.get(j32, 0);
-                                                                                                                        if (i24 == 0 || i24 < tL_updateChannelAvailableMessages.available_min_id) {
-                                                                                                                            longSparseIntArray12.put(j32, tL_updateChannelAvailableMessages.available_min_id);
-                                                                                                                        }
-                                                                                                                        longSparseIntArray8 = longSparseIntArray12;
-                                                                                                                    } else if (update instanceof TLRPC.TL_updateMessagePoll) {
-                                                                                                                        TLRPC.TL_updateMessagePoll tL_updateMessagePoll = (TLRPC.TL_updateMessagePoll) update;
-                                                                                                                        if (Math.abs(SystemClock.elapsedRealtime() - getSendMessagesHelper().getVoteSendTime(tL_updateMessagePoll.poll_id)) >= 600) {
-                                                                                                                            getMessagesStorage().updateMessagePollResults(tL_updateMessagePoll.poll_id, tL_updateMessagePoll.poll, tL_updateMessagePoll.results);
-                                                                                                                            if (arrayList20 == null) {
-                                                                                                                                arrayList20 = new ArrayList();
-                                                                                                                            }
-                                                                                                                            arrayList13 = arrayList20;
-                                                                                                                            arrayList13.add(update);
-                                                                                                                        }
-                                                                                                                    } else {
-                                                                                                                        if (update instanceof TLRPC.TL_updateMessageReactions) {
-                                                                                                                            TLRPC.TL_updateMessageReactions tL_updateMessageReactions = (TLRPC.TL_updateMessageReactions) update;
-                                                                                                                            long peerId2 = MessageObject.getPeerId(tL_updateMessageReactions.peer);
-                                                                                                                            getMessagesStorage().updateMessageReactions(peerId2, tL_updateMessageReactions.msg_id, tL_updateMessageReactions.reactions);
-                                                                                                                            if (tL_updateMessageReactions.updateUnreadState) {
-                                                                                                                                SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
-                                                                                                                                sparseBooleanArray.put(tL_updateMessageReactions.msg_id, MessageObject.hasUnreadReactions(tL_updateMessageReactions.reactions));
-                                                                                                                                long peerDialogId2 = (isMonoForum(peerId2) && ChatObject.canManageMonoForum(this.currentAccount, peerId2)) ? DialogObject.getPeerDialogId(tL_updateMessageReactions.saved_peer_id) : tL_updateMessageReactions.top_msg_id;
-                                                                                                                                if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                                                                                                                                    FileLog.d("check reactions for " + peerId2 + " " + peerDialogId2);
-                                                                                                                                }
-                                                                                                                                longSparseArray22 = longSparseArray36;
-                                                                                                                                longSparseIntArray3 = longSparseIntArray11;
-                                                                                                                                longSparseArray21 = longSparseArray34;
-                                                                                                                                hashMap2 = hashMap16;
-                                                                                                                                arrayList6 = arrayList10;
-                                                                                                                                longSparseIntArray2 = longSparseIntArray4;
-                                                                                                                                arrayList8 = arrayList50;
-                                                                                                                                arrayList7 = arrayList25;
-                                                                                                                                longSparseArray9 = longSparseArray17;
-                                                                                                                                longSparseArray3 = longSparseArray26;
-                                                                                                                                long j33 = peerDialogId2;
-                                                                                                                                longSparseArray23 = longSparseArray35;
-                                                                                                                                longSparseArray8 = longSparseArray37;
-                                                                                                                                sparseIntArray2 = sparseIntArray3;
-                                                                                                                                j = j11;
-                                                                                                                                checkUnreadReactions(peerId2, j33, sparseBooleanArray);
-                                                                                                                            } else {
-                                                                                                                                longSparseIntArray3 = longSparseIntArray11;
-                                                                                                                                longSparseArray21 = longSparseArray34;
-                                                                                                                                longSparseArray22 = longSparseArray36;
-                                                                                                                                arrayList7 = arrayList25;
-                                                                                                                                sparseIntArray2 = sparseIntArray3;
-                                                                                                                                j = j11;
-                                                                                                                                hashMap2 = hashMap16;
-                                                                                                                                arrayList6 = arrayList10;
-                                                                                                                                longSparseIntArray2 = longSparseIntArray4;
-                                                                                                                                arrayList8 = arrayList50;
-                                                                                                                                longSparseArray23 = longSparseArray35;
-                                                                                                                                longSparseArray8 = longSparseArray37;
-                                                                                                                                longSparseArray9 = longSparseArray17;
-                                                                                                                                longSparseArray3 = longSparseArray26;
-                                                                                                                            }
-                                                                                                                            if (arrayList20 == null) {
-                                                                                                                                arrayList20 = new ArrayList();
-                                                                                                                            }
-                                                                                                                            arrayList12 = arrayList20;
-                                                                                                                            arrayList12.add(update);
-                                                                                                                        } else {
-                                                                                                                            longSparseIntArray3 = longSparseIntArray11;
-                                                                                                                            longSparseArray21 = longSparseArray34;
-                                                                                                                            longSparseArray22 = longSparseArray36;
-                                                                                                                            arrayList7 = arrayList25;
-                                                                                                                            sparseIntArray2 = sparseIntArray3;
-                                                                                                                            j = j11;
-                                                                                                                            hashMap2 = hashMap16;
-                                                                                                                            arrayList6 = arrayList10;
-                                                                                                                            longSparseIntArray2 = longSparseIntArray4;
-                                                                                                                            arrayList8 = arrayList50;
-                                                                                                                            longSparseArray23 = longSparseArray35;
-                                                                                                                            longSparseArray8 = longSparseArray37;
-                                                                                                                            longSparseArray9 = longSparseArray17;
-                                                                                                                            longSparseArray3 = longSparseArray26;
-                                                                                                                            if (update instanceof TLRPC.TL_updateMessageExtendedMedia) {
-                                                                                                                                TLRPC.TL_updateMessageExtendedMedia tL_updateMessageExtendedMedia = (TLRPC.TL_updateMessageExtendedMedia) update;
-                                                                                                                                if (!tL_updateMessageExtendedMedia.extended_media.isEmpty()) {
-                                                                                                                                    TLRPC.Message message4 = getMessagesStorage().getMessage(DialogObject.getPeerDialogId(tL_updateMessageExtendedMedia.peer), tL_updateMessageExtendedMedia.msg_id);
-                                                                                                                                    if (message4 != null) {
-                                                                                                                                        message4.media.extended_media = new ArrayList<>(tL_updateMessageExtendedMedia.extended_media);
-                                                                                                                                        if (arrayList26 == null) {
-                                                                                                                                            arrayList26 = new ArrayList<>();
-                                                                                                                                        }
-                                                                                                                                        ArrayList<TLRPC.Message> arrayList54 = arrayList26;
-                                                                                                                                        arrayList54.add(message4);
-                                                                                                                                        arrayList26 = arrayList54;
-                                                                                                                                    }
-                                                                                                                                    if (arrayList20 == null) {
-                                                                                                                                        arrayList20 = new ArrayList();
-                                                                                                                                    }
-                                                                                                                                    arrayList12 = arrayList20;
-                                                                                                                                    arrayList12.add(update);
-                                                                                                                                }
-                                                                                                                            } else if (update instanceof TLRPC.TL_updateGeoLiveViewed) {
-                                                                                                                                getLocationController().setNewLocationEndWatchTime();
-                                                                                                                            } else if (update instanceof TLRPC.TL_updateReadChannelDiscussionInbox) {
-                                                                                                                                TLRPC.TL_updateReadChannelDiscussionInbox tL_updateReadChannelDiscussionInbox = (TLRPC.TL_updateReadChannelDiscussionInbox) update;
-                                                                                                                                if (arrayList20 == null) {
-                                                                                                                                    arrayList20 = new ArrayList();
-                                                                                                                                }
-                                                                                                                                ArrayList arrayList55 = arrayList20;
-                                                                                                                                HashMap hashMap17 = hashMap13;
-                                                                                                                                if (hashMap17 == null) {
-                                                                                                                                    hashMap17 = new HashMap();
-                                                                                                                                }
-                                                                                                                                j11 = j;
-                                                                                                                                MessagesStorage.TopicKey of = MessagesStorage.TopicKey.of(-tL_updateReadChannelDiscussionInbox.channel_id, tL_updateReadChannelDiscussionInbox.top_msg_id);
-                                                                                                                                hashMap17.put(of, Integer.valueOf(Math.max(((Integer) Utilities.getOrDefault(hashMap17, of, 0)).intValue(), tL_updateReadChannelDiscussionInbox.read_max_id)));
-                                                                                                                                arrayList55.add(update);
-                                                                                                                                sparseIntArray3 = sparseIntArray2;
-                                                                                                                                arrayList20 = arrayList55;
-                                                                                                                                hashMap13 = hashMap17;
-                                                                                                                                longSparseArray25 = longSparseArray9;
-                                                                                                                                longSparseArray14 = longSparseArray21;
-                                                                                                                                longSparseArray7 = longSparseArray22;
-                                                                                                                                longSparseArray28 = longSparseArray11;
-                                                                                                                                arrayList23 = arrayList8;
-                                                                                                                                longSparseArray6 = longSparseArray23;
-                                                                                                                                arrayList19 = arrayList5;
-                                                                                                                                longSparseArray26 = longSparseArray3;
-                                                                                                                                hashMap12 = hashMap3;
-                                                                                                                                arrayList18 = arrayList6;
-                                                                                                                                arrayList25 = arrayList7;
-                                                                                                                                longSparseArray34 = longSparseArray14;
-                                                                                                                                longSparseArray15 = longSparseArray6;
-                                                                                                                                longSparseArray16 = longSparseArray7;
-                                                                                                                                longSparseIntArray4 = longSparseIntArray2;
-                                                                                                                                longSparseIntArray5 = longSparseIntArray3;
-                                                                                                                                longSparseArray29 = longSparseArray5;
-                                                                                                                                longSparseArray37 = longSparseArray8;
-                                                                                                                                longSparseArray27 = longSparseArray4;
-                                                                                                                                hashMap11 = hashMap2;
-                                                                                                                            } else {
-                                                                                                                                j11 = j;
-                                                                                                                                HashMap hashMap18 = hashMap13;
-                                                                                                                                if (update instanceof TLRPC.TL_updateReadChannelDiscussionOutbox) {
-                                                                                                                                    TLRPC.TL_updateReadChannelDiscussionOutbox tL_updateReadChannelDiscussionOutbox = (TLRPC.TL_updateReadChannelDiscussionOutbox) update;
-                                                                                                                                    hashMap10 = hashMap14;
-                                                                                                                                    if (hashMap10 == null) {
-                                                                                                                                        hashMap10 = new HashMap<>();
-                                                                                                                                    }
-                                                                                                                                    hashMap9 = hashMap18;
-                                                                                                                                    hashMap10.put(MessagesStorage.TopicKey.of(-tL_updateReadChannelDiscussionOutbox.channel_id, tL_updateReadChannelDiscussionOutbox.top_msg_id), Integer.valueOf(Math.max(((Integer) Utilities.getOrDefault(hashMap10, MessagesStorage.TopicKey.of(-tL_updateReadChannelDiscussionOutbox.channel_id, tL_updateReadChannelDiscussionOutbox.top_msg_id), 0)).intValue(), tL_updateReadChannelDiscussionOutbox.read_max_id)));
-                                                                                                                                    if (arrayList20 == null) {
-                                                                                                                                        arrayList20 = new ArrayList();
-                                                                                                                                    }
-                                                                                                                                    arrayList11 = arrayList20;
-                                                                                                                                    arrayList11.add(update);
-                                                                                                                                } else {
-                                                                                                                                    hashMap9 = hashMap18;
-                                                                                                                                    hashMap10 = hashMap14;
-                                                                                                                                    if (arrayList20 == null) {
-                                                                                                                                        arrayList20 = new ArrayList();
-                                                                                                                                    }
-                                                                                                                                    arrayList11 = arrayList20;
-                                                                                                                                    arrayList11.add(update);
-                                                                                                                                }
-                                                                                                                            }
-                                                                                                                            longSparseArray6 = longSparseArray23;
-                                                                                                                            hashMap4 = hashMap13;
-                                                                                                                            hashMap5 = hashMap14;
-                                                                                                                            longSparseArray10 = longSparseArray21;
-                                                                                                                            longSparseArray7 = longSparseArray22;
-                                                                                                                            sparseIntArray3 = sparseIntArray2;
-                                                                                                                            longSparseArray15 = longSparseArray6;
-                                                                                                                            longSparseArray25 = longSparseArray9;
-                                                                                                                            j11 = j;
-                                                                                                                            longSparseArray16 = longSparseArray7;
-                                                                                                                            longSparseArray28 = longSparseArray11;
-                                                                                                                            arrayList23 = arrayList8;
-                                                                                                                            longSparseArray34 = longSparseArray10;
-                                                                                                                            arrayList19 = arrayList5;
-                                                                                                                            longSparseIntArray4 = longSparseIntArray2;
-                                                                                                                            longSparseIntArray5 = longSparseIntArray3;
-                                                                                                                            longSparseArray29 = longSparseArray5;
-                                                                                                                            longSparseArray37 = longSparseArray8;
-                                                                                                                            hashMap12 = hashMap3;
-                                                                                                                            longSparseArray27 = longSparseArray4;
-                                                                                                                            hashMap11 = hashMap2;
-                                                                                                                            arrayList18 = arrayList6;
-                                                                                                                            arrayList25 = arrayList7;
-                                                                                                                            hashMap14 = hashMap5;
-                                                                                                                            hashMap13 = hashMap4;
-                                                                                                                            longSparseArray26 = longSparseArray3;
-                                                                                                                        }
-                                                                                                                        sparseIntArray3 = sparseIntArray2;
-                                                                                                                        arrayList20 = arrayList12;
-                                                                                                                        longSparseArray25 = longSparseArray9;
-                                                                                                                        j11 = j;
-                                                                                                                        longSparseArray14 = longSparseArray21;
-                                                                                                                        longSparseArray7 = longSparseArray22;
-                                                                                                                        longSparseArray28 = longSparseArray11;
-                                                                                                                        arrayList23 = arrayList8;
-                                                                                                                        longSparseArray6 = longSparseArray23;
-                                                                                                                        arrayList19 = arrayList5;
-                                                                                                                        longSparseArray26 = longSparseArray3;
-                                                                                                                        hashMap12 = hashMap3;
-                                                                                                                        arrayList18 = arrayList6;
-                                                                                                                        arrayList25 = arrayList7;
-                                                                                                                        longSparseArray34 = longSparseArray14;
-                                                                                                                        longSparseArray15 = longSparseArray6;
-                                                                                                                        longSparseArray16 = longSparseArray7;
-                                                                                                                        longSparseIntArray4 = longSparseIntArray2;
-                                                                                                                        longSparseIntArray5 = longSparseIntArray3;
-                                                                                                                        longSparseArray29 = longSparseArray5;
-                                                                                                                        longSparseArray37 = longSparseArray8;
-                                                                                                                        longSparseArray27 = longSparseArray4;
-                                                                                                                        hashMap11 = hashMap2;
-                                                                                                                    }
-                                                                                                                }
-                                                                                                            }
-                                                                                                            longSparseIntArray3 = longSparseIntArray11;
-                                                                                                            longSparseArray6 = longSparseArray35;
-                                                                                                            longSparseArray7 = longSparseArray36;
-                                                                                                            arrayList7 = arrayList25;
-                                                                                                            sparseIntArray2 = sparseIntArray3;
-                                                                                                            j = j11;
-                                                                                                            hashMap2 = hashMap16;
-                                                                                                            arrayList6 = arrayList10;
-                                                                                                        }
-                                                                                                        arrayList20 = arrayList13;
-                                                                                                    }
-                                                                                                    longSparseIntArray3 = longSparseIntArray11;
-                                                                                                    longSparseArray28 = longSparseArray11;
-                                                                                                    longSparseArray14 = longSparseArray34;
-                                                                                                    longSparseArray6 = longSparseArray35;
-                                                                                                    longSparseArray7 = longSparseArray36;
-                                                                                                    arrayList19 = arrayList5;
-                                                                                                    hashMap2 = hashMap16;
-                                                                                                    longSparseArray25 = longSparseArray17;
-                                                                                                    arrayList18 = arrayList10;
-                                                                                                    longSparseIntArray2 = longSparseIntArray4;
-                                                                                                    arrayList23 = arrayList50;
-                                                                                                    longSparseArray8 = longSparseArray37;
-                                                                                                    hashMap12 = hashMap3;
-                                                                                                    longSparseArray34 = longSparseArray14;
-                                                                                                    longSparseArray15 = longSparseArray6;
-                                                                                                    longSparseArray16 = longSparseArray7;
-                                                                                                    longSparseIntArray4 = longSparseIntArray2;
-                                                                                                    longSparseIntArray5 = longSparseIntArray3;
-                                                                                                    longSparseArray29 = longSparseArray5;
-                                                                                                    longSparseArray37 = longSparseArray8;
-                                                                                                    longSparseArray27 = longSparseArray4;
-                                                                                                    hashMap11 = hashMap2;
-                                                                                                }
-                                                                                                longSparseIntArray5 = longSparseIntArray11;
-                                                                                                longSparseArray28 = longSparseArray11;
-                                                                                                longSparseArray16 = longSparseArray36;
-                                                                                                arrayList19 = arrayList5;
-                                                                                                hashMap11 = hashMap16;
-                                                                                                longSparseArray29 = longSparseArray5;
-                                                                                                longSparseArray25 = longSparseArray17;
-                                                                                                arrayList18 = arrayList10;
-                                                                                                longSparseArray27 = longSparseArray4;
-                                                                                                arrayList23 = arrayList50;
-                                                                                                longSparseArray15 = longSparseArray35;
-                                                                                                hashMap12 = hashMap3;
-                                                                                            }
-                                                                                            sparseIntArray3 = sparseIntArray2;
-                                                                                            arrayList20 = arrayList11;
-                                                                                            longSparseArray25 = longSparseArray9;
-                                                                                            hashMap13 = hashMap9;
-                                                                                            hashMap14 = hashMap10;
-                                                                                            longSparseArray14 = longSparseArray21;
-                                                                                            longSparseArray7 = longSparseArray22;
-                                                                                            longSparseArray28 = longSparseArray11;
-                                                                                            arrayList23 = arrayList8;
-                                                                                            longSparseArray6 = longSparseArray23;
-                                                                                            arrayList19 = arrayList5;
-                                                                                            longSparseArray26 = longSparseArray3;
-                                                                                            hashMap12 = hashMap3;
-                                                                                            arrayList18 = arrayList6;
-                                                                                            arrayList25 = arrayList7;
-                                                                                            longSparseArray34 = longSparseArray14;
-                                                                                            longSparseArray15 = longSparseArray6;
-                                                                                            longSparseArray16 = longSparseArray7;
-                                                                                            longSparseIntArray4 = longSparseIntArray2;
-                                                                                            longSparseIntArray5 = longSparseIntArray3;
-                                                                                            longSparseArray29 = longSparseArray5;
-                                                                                            longSparseArray37 = longSparseArray8;
-                                                                                            longSparseArray27 = longSparseArray4;
-                                                                                            hashMap11 = hashMap2;
-                                                                                        }
-                                                                                    }
-                                                                                    longSparseIntArray2 = longSparseIntArray4;
-                                                                                    longSparseArray8 = longSparseArray37;
-                                                                                    longSparseArray3 = longSparseArray26;
-                                                                                    hashMap4 = hashMap13;
-                                                                                    hashMap5 = hashMap14;
-                                                                                    longSparseArray10 = longSparseArray34;
-                                                                                    arrayList8 = arrayList50;
-                                                                                    longSparseArray9 = longSparseArray17;
-                                                                                    sparseIntArray3 = sparseIntArray2;
-                                                                                    longSparseArray15 = longSparseArray6;
-                                                                                    longSparseArray25 = longSparseArray9;
-                                                                                    j11 = j;
-                                                                                    longSparseArray16 = longSparseArray7;
-                                                                                    longSparseArray28 = longSparseArray11;
-                                                                                    arrayList23 = arrayList8;
-                                                                                    longSparseArray34 = longSparseArray10;
-                                                                                    arrayList19 = arrayList5;
-                                                                                    longSparseIntArray4 = longSparseIntArray2;
-                                                                                    longSparseIntArray5 = longSparseIntArray3;
-                                                                                    longSparseArray29 = longSparseArray5;
-                                                                                    longSparseArray37 = longSparseArray8;
-                                                                                    hashMap12 = hashMap3;
-                                                                                    longSparseArray27 = longSparseArray4;
-                                                                                    hashMap11 = hashMap2;
-                                                                                    arrayList18 = arrayList6;
-                                                                                    arrayList25 = arrayList7;
-                                                                                    hashMap14 = hashMap5;
-                                                                                    hashMap13 = hashMap4;
-                                                                                    longSparseArray26 = longSparseArray3;
-                                                                                }
-                                                                                longSparseArray37 = longSparseArray24;
-                                                                                arrayList23 = arrayList50;
-                                                                                longSparseArray16 = longSparseArray36;
-                                                                                arrayList19 = arrayList5;
-                                                                                hashMap11 = hashMap16;
-                                                                                concurrentHashMap4 = concurrentHashMap6;
-                                                                                longSparseArray29 = longSparseArray5;
-                                                                                longSparseArray25 = longSparseArray17;
-                                                                                arrayList18 = arrayList10;
-                                                                                hashMap12 = hashMap3;
-                                                                                longSparseArray27 = longSparseArray4;
-                                                                            }
-                                                                        }
-                                                                        longSparseArray14 = longSparseArray34;
-                                                                        longSparseArray6 = longSparseArray35;
-                                                                        longSparseArray7 = longSparseArray36;
-                                                                        arrayList19 = arrayList5;
-                                                                    }
-                                                                }
-                                                                longSparseArray6 = longSparseArray35;
-                                                                longSparseArray7 = longSparseArray36;
-                                                                arrayList7 = arrayList25;
-                                                                sparseIntArray2 = sparseIntArray3;
-                                                                hashMap2 = hashMap16;
-                                                                concurrentHashMap4 = concurrentHashMap6;
-                                                                longSparseArray9 = longSparseArray17;
-                                                                arrayList6 = arrayList10;
-                                                                longSparseIntArray2 = longSparseIntArray4;
-                                                                longSparseArray3 = longSparseArray26;
-                                                                longSparseIntArray3 = longSparseIntArray5;
-                                                                longSparseArray8 = longSparseArray37;
-                                                                hashMap4 = hashMap13;
-                                                                hashMap5 = hashMap14;
-                                                                longSparseArray10 = longSparseArray34;
-                                                                arrayList8 = arrayList23;
-                                                                longSparseArray11 = longSparseArray28;
-                                                            }
-                                                            hashMap2 = hashMap16;
-                                                            concurrentHashMap4 = concurrentHashMap6;
-                                                            longSparseArray25 = longSparseArray17;
-                                                            arrayList18 = arrayList10;
-                                                            hashMap12 = hashMap3;
-                                                            longSparseIntArray2 = longSparseIntArray4;
-                                                            longSparseIntArray3 = longSparseIntArray5;
-                                                            longSparseArray8 = longSparseArray37;
-                                                            longSparseArray34 = longSparseArray14;
-                                                            longSparseArray15 = longSparseArray6;
-                                                            longSparseArray16 = longSparseArray7;
-                                                            longSparseIntArray4 = longSparseIntArray2;
-                                                            longSparseIntArray5 = longSparseIntArray3;
-                                                            longSparseArray29 = longSparseArray5;
-                                                            longSparseArray37 = longSparseArray8;
-                                                            longSparseArray27 = longSparseArray4;
-                                                            hashMap11 = hashMap2;
-                                                        }
-                                                        j = j11;
-                                                        sparseIntArray3 = sparseIntArray2;
-                                                        longSparseArray15 = longSparseArray6;
-                                                        longSparseArray25 = longSparseArray9;
-                                                        j11 = j;
-                                                        longSparseArray16 = longSparseArray7;
-                                                        longSparseArray28 = longSparseArray11;
-                                                        arrayList23 = arrayList8;
-                                                        longSparseArray34 = longSparseArray10;
-                                                        arrayList19 = arrayList5;
-                                                        longSparseIntArray4 = longSparseIntArray2;
-                                                        longSparseIntArray5 = longSparseIntArray3;
-                                                        longSparseArray29 = longSparseArray5;
-                                                        longSparseArray37 = longSparseArray8;
-                                                        hashMap12 = hashMap3;
-                                                        longSparseArray27 = longSparseArray4;
-                                                        hashMap11 = hashMap2;
-                                                        arrayList18 = arrayList6;
-                                                        arrayList25 = arrayList7;
-                                                        hashMap14 = hashMap5;
-                                                        hashMap13 = hashMap4;
-                                                        longSparseArray26 = longSparseArray3;
-                                                    }
-                                                }
-                                                arrayList20 = arrayList17;
-                                            }
-                                            hashMap2 = hashMap11;
-                                            longSparseArray4 = longSparseArray27;
-                                            hashMap3 = hashMap12;
-                                            longSparseArray6 = longSparseArray35;
-                                            longSparseArray7 = longSparseArray36;
-                                            arrayList7 = arrayList25;
-                                            sparseIntArray2 = sparseIntArray3;
-                                            concurrentHashMap3 = concurrentHashMap5;
-                                            concurrentHashMap4 = concurrentHashMap6;
-                                            longSparseArray9 = longSparseArray17;
-                                            arrayList6 = arrayList10;
-                                            longSparseIntArray2 = longSparseIntArray4;
-                                            longSparseArray3 = longSparseArray26;
-                                            longSparseIntArray3 = longSparseIntArray5;
-                                            longSparseArray8 = longSparseArray37;
-                                            hashMap4 = hashMap13;
-                                            hashMap5 = hashMap14;
-                                            longSparseArray10 = longSparseArray34;
-                                            arrayList8 = arrayList23;
-                                            longSparseArray11 = longSparseArray28;
-                                            j = j11;
-                                            sparseIntArray3 = sparseIntArray2;
-                                            longSparseArray15 = longSparseArray6;
-                                            longSparseArray25 = longSparseArray9;
-                                            j11 = j;
-                                            longSparseArray16 = longSparseArray7;
-                                            longSparseArray28 = longSparseArray11;
-                                            arrayList23 = arrayList8;
-                                            longSparseArray34 = longSparseArray10;
-                                            arrayList19 = arrayList5;
-                                            longSparseIntArray4 = longSparseIntArray2;
-                                            longSparseIntArray5 = longSparseIntArray3;
-                                            longSparseArray29 = longSparseArray5;
-                                            longSparseArray37 = longSparseArray8;
-                                            hashMap12 = hashMap3;
-                                            longSparseArray27 = longSparseArray4;
-                                            hashMap11 = hashMap2;
-                                            arrayList18 = arrayList6;
-                                            arrayList25 = arrayList7;
-                                            hashMap14 = hashMap5;
-                                            hashMap13 = hashMap4;
-                                            longSparseArray26 = longSparseArray3;
-                                        }
-                                        longSparseArray10 = longSparseArray18;
-                                        longSparseArray7 = longSparseArray16;
-                                        longSparseArray6 = longSparseArray15;
-                                        j = j11;
-                                        sparseIntArray3 = sparseIntArray2;
-                                        longSparseArray15 = longSparseArray6;
-                                        longSparseArray25 = longSparseArray9;
-                                        j11 = j;
-                                        longSparseArray16 = longSparseArray7;
-                                        longSparseArray28 = longSparseArray11;
-                                        arrayList23 = arrayList8;
-                                        longSparseArray34 = longSparseArray10;
-                                        arrayList19 = arrayList5;
-                                        longSparseIntArray4 = longSparseIntArray2;
-                                        longSparseIntArray5 = longSparseIntArray3;
-                                        longSparseArray29 = longSparseArray5;
-                                        longSparseArray37 = longSparseArray8;
-                                        hashMap12 = hashMap3;
-                                        longSparseArray27 = longSparseArray4;
-                                        hashMap11 = hashMap2;
-                                        arrayList18 = arrayList6;
-                                        arrayList25 = arrayList7;
-                                        hashMap14 = hashMap5;
-                                        hashMap13 = hashMap4;
-                                        longSparseArray26 = longSparseArray3;
-                                    }
-                                    longSparseArray16 = longSparseArray36;
-                                    arrayList19 = arrayList5;
-                                    concurrentHashMap3 = concurrentHashMap5;
-                                    concurrentHashMap4 = concurrentHashMap6;
-                                    longSparseArray29 = longSparseArray5;
-                                    longSparseArray25 = longSparseArray17;
-                                    arrayList18 = arrayList10;
-                                }
-                            }
-                            hashMap2 = hashMap11;
-                            arrayList20 = arrayList16;
-                            longSparseArray4 = longSparseArray27;
-                            longSparseArray14 = longSparseArray34;
-                            longSparseArray6 = longSparseArray35;
-                            longSparseArray7 = longSparseArray36;
-                            arrayList19 = arrayList5;
-                            concurrentHashMap3 = concurrentHashMap5;
-                            concurrentHashMap4 = concurrentHashMap6;
-                            longSparseArray25 = longSparseArray17;
-                            arrayList18 = arrayList10;
-                            longSparseIntArray2 = longSparseIntArray4;
-                            longSparseIntArray3 = longSparseIntArray5;
-                            longSparseArray8 = longSparseArray37;
-                            longSparseArray34 = longSparseArray14;
-                            longSparseArray15 = longSparseArray6;
-                            longSparseArray16 = longSparseArray7;
-                            longSparseIntArray4 = longSparseIntArray2;
-                            longSparseIntArray5 = longSparseIntArray3;
-                            longSparseArray29 = longSparseArray5;
-                            longSparseArray37 = longSparseArray8;
-                            longSparseArray27 = longSparseArray4;
-                            hashMap11 = hashMap2;
-                        }
-                        longSparseIntArray3 = longSparseIntArray5;
-                        longSparseArray34 = longSparseArray14;
-                        longSparseArray15 = longSparseArray6;
-                        longSparseArray16 = longSparseArray7;
-                        longSparseIntArray4 = longSparseIntArray2;
-                        longSparseIntArray5 = longSparseIntArray3;
-                        longSparseArray29 = longSparseArray5;
-                        longSparseArray37 = longSparseArray8;
-                        longSparseArray27 = longSparseArray4;
-                        hashMap11 = hashMap2;
-                    }
-                    longSparseArray15 = longSparseArray35;
-                }
-                hashMap2 = hashMap11;
-                arrayList6 = arrayList18;
-                longSparseArray3 = longSparseArray26;
-                longSparseArray4 = longSparseArray27;
-                hashMap3 = hashMap12;
-                longSparseArray5 = longSparseArray29;
-                longSparseArray6 = longSparseArray35;
-                longSparseArray7 = longSparseArray36;
-                longSparseArray8 = longSparseArray37;
-                arrayList7 = arrayList25;
-                sparseIntArray2 = sparseIntArray3;
-                hashMap4 = hashMap13;
-                hashMap5 = hashMap14;
-                concurrentHashMap3 = concurrentHashMap5;
-                concurrentHashMap4 = concurrentHashMap6;
-                longSparseIntArray2 = longSparseIntArray4;
-                longSparseArray9 = longSparseArray25;
-                longSparseIntArray3 = longSparseIntArray5;
-                longSparseArray10 = longSparseArray34;
-                arrayList8 = arrayList23;
-                longSparseArray11 = longSparseArray28;
-                j = j11;
-                sparseIntArray3 = sparseIntArray2;
-                longSparseArray15 = longSparseArray6;
-                longSparseArray25 = longSparseArray9;
-                j11 = j;
-                longSparseArray16 = longSparseArray7;
-                longSparseArray28 = longSparseArray11;
-                arrayList23 = arrayList8;
-                longSparseArray34 = longSparseArray10;
-                arrayList19 = arrayList5;
-                longSparseIntArray4 = longSparseIntArray2;
-                longSparseIntArray5 = longSparseIntArray3;
-                longSparseArray29 = longSparseArray5;
-                longSparseArray37 = longSparseArray8;
-                hashMap12 = hashMap3;
-                longSparseArray27 = longSparseArray4;
-                hashMap11 = hashMap2;
-                arrayList18 = arrayList6;
-                arrayList25 = arrayList7;
-                hashMap14 = hashMap5;
-                hashMap13 = hashMap4;
-                longSparseArray26 = longSparseArray3;
-            }
-            longSparseArray35 = longSparseArray15;
-            size3 = i12;
-            longSparseArray36 = longSparseArray16;
-            i9 = i2 + 1;
-        }
-        final LongSparseIntArray longSparseIntArray13 = longSparseIntArray4;
-        HashMap<MessagesStorage.TopicKey, Integer> hashMap19 = hashMap11;
-        final ArrayList<Long> arrayList56 = arrayList18;
-        final LongSparseArray longSparseArray45 = longSparseArray26;
-        final LongSparseArray longSparseArray46 = longSparseArray27;
-        HashMap hashMap20 = hashMap12;
-        final LongSparseIntArray longSparseIntArray14 = longSparseIntArray5;
-        ArrayList arrayList57 = arrayList19;
-        final LongSparseArray longSparseArray47 = longSparseArray29;
-        final LongSparseArray longSparseArray48 = longSparseArray33;
-        final LongSparseArray longSparseArray49 = longSparseArray35;
-        final LongSparseArray longSparseArray50 = longSparseArray36;
-        final LongSparseArray longSparseArray51 = longSparseArray37;
-        ArrayList arrayList58 = arrayList25;
-        final SparseIntArray sparseIntArray8 = sparseIntArray3;
-        HashMap hashMap21 = hashMap13;
-        HashMap<MessagesStorage.TopicKey, Integer> hashMap22 = hashMap14;
-        final LongSparseArray longSparseArray52 = longSparseArray25;
-        LongSparseArray longSparseArray53 = longSparseArray34;
-        final ArrayList arrayList59 = arrayList23;
-        final LongSparseArray longSparseArray54 = longSparseArray28;
-        if (longSparseArray52 != null) {
-            int size9 = longSparseArray52.size();
-            for (int i25 = 0; i25 < size9; i25++) {
-                if (updatePrintingUsersWithNewMessages(longSparseArray52.keyAt(i25), (ArrayList) longSparseArray52.valueAt(i25))) {
-                    z8 = true;
-                }
-            }
-        }
-        if (z8) {
-            updatePrintingStrings();
-        }
-        if (arrayList56 != null) {
-            getContactsController().processContactsUpdates(arrayList56, concurrentHashMap3);
-        }
-        if (arrayList59 != null) {
-            getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda283
-                @Override // java.lang.Runnable
-                public final void run() {
-                    MessagesController.this.lambda$processUpdateArray$370(arrayList59);
-                }
-            });
-        }
-        if (arrayList24 != null) {
-            getMessagesStorage().putMessages(arrayList24, true, true, false, getDownloadController().getAutodownloadMask(), 1, 0L);
-        }
-        if (arrayList26 != null) {
-            getStatsController().incrementReceivedItemsCount(ApplicationLoader.getCurrentNetworkType(), 1, arrayList26.size());
-            getMessagesStorage().putMessages(arrayList26, true, true, false, getDownloadController().getAutodownloadMask(), 0, 0L);
-        }
-        if (longSparseArray53 != null) {
-            int size10 = longSparseArray53.size();
-            int i26 = 0;
-            while (i26 < size10) {
-                TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
-                LongSparseArray longSparseArray55 = longSparseArray53;
-                ArrayList arrayList60 = (ArrayList) longSparseArray55.valueAt(i26);
-                int size11 = arrayList60.size();
-                for (int i27 = 0; i27 < size11; i27++) {
-                    tL_messages_messages.messages.add(((MessageObject) arrayList60.get(i27)).messageOwner);
-                }
-                getMessagesStorage().putMessages((TLRPC.messages_Messages) tL_messages_messages, longSparseArray55.keyAt(i26), -2, 0, false, 0, 0L);
-                i26++;
-                longSparseArray53 = longSparseArray55;
-            }
-            longSparseArray = longSparseArray53;
-            getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda284
-                @Override // java.lang.Runnable
-                public final void run() {
-                    MessagesController.this.lambda$processUpdateArray$372(longSparseArray);
-                }
-            });
-        } else {
-            longSparseArray = longSparseArray53;
-        }
-        if (longSparseArray50 == null && longSparseArray49 == null && longSparseArray48 == null) {
-            arrayList4 = arrayList58;
-        } else {
-            getMessagesStorage().putChannelViews(longSparseArray50, longSparseArray49, longSparseArray48, true);
-            arrayList4 = arrayList58;
-        }
-        if (arrayList4 != null) {
-            int size12 = arrayList4.size();
-            for (int i28 = 0; i28 < size12; i28++) {
-                getMessagesStorage().setDialogsFolderId(((TLRPC.TL_updateFolderPeers) arrayList4.get(i28)).folder_peers, null, 0L, 0);
-            }
-        }
-        final int i29 = i10;
-        final ArrayList arrayList61 = arrayList20;
-        final LongSparseArray longSparseArray56 = longSparseArray30;
-        final LongSparseIntArray longSparseIntArray15 = longSparseIntArray6;
-        final ArrayList arrayList62 = arrayList4;
-        final LongSparseIntArray longSparseIntArray16 = longSparseIntArray8;
-        final LongSparseArray longSparseArray57 = longSparseArray;
-        final LongSparseArray longSparseArray58 = longSparseArray32;
-        final boolean z12 = z8;
-        final ArrayList arrayList63 = arrayList21;
-        final ArrayList arrayList64 = arrayList22;
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda285
-            @Override // java.lang.Runnable
-            public final void run() {
-                MessagesController.this.lambda$processUpdateArray$380(i29, arrayList61, arrayList2, longSparseArray56, i, longSparseIntArray15, longSparseArray51, longSparseArray52, arrayList62, longSparseArray58, longSparseArray57, z12, arrayList56, arrayList63, longSparseArray50, longSparseArray49, longSparseArray48, arrayList64);
-            }
-        });
-        final LongSparseArray longSparseArray59 = longSparseArray31;
-        getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda286
-            @Override // java.lang.Runnable
-            public final void run() {
-                MessagesController.this.lambda$processUpdateArray$382(longSparseIntArray13, longSparseIntArray14, sparseIntArray8, longSparseArray47, longSparseArray45, longSparseArray46, longSparseArray54, longSparseArray59, longSparseIntArray16);
-            }
-        });
-        if (longSparseArray51 != null) {
-            getMessagesStorage().putWebPages(longSparseArray51);
-        }
-        if (longSparseIntArray13 == null) {
-            longSparseIntArray = longSparseIntArray14;
-            sparseIntArray = sparseIntArray8;
-            if (longSparseIntArray == null) {
-                longSparseArray2 = longSparseArray47;
-                if (sparseIntArray == null && longSparseArray2 == null && longSparseIntArray7 == null) {
-                    hashMap = hashMap21;
-                    z2 = true;
-                    if (hashMap != null) {
-                        for (MessagesStorage.TopicKey topicKey : hashMap.keySet()) {
-                            getMessagesStorage().updateRepliesMaxReadId(-topicKey.dialogId, (int) topicKey.topicId, ((Integer) hashMap.get(topicKey)).intValue(), -1, true);
-                        }
-                    }
-                    if (hashMap22 != null) {
-                        getMessagesStorage().updateTopicsWithReadMessages(hashMap22);
-                        getTopicsController().updateReadOutbox(hashMap22);
-                    }
-                    if (hashMap20 != null) {
-                        for (MessagesStorage.TopicKey topicKey2 : hashMap20.keySet()) {
-                            getMessagesStorage().updateRepliesMaxReadId(-topicKey2.dialogId, (int) topicKey2.topicId, ((Integer) hashMap20.get(topicKey2)).intValue(), -1, true);
-                        }
-                    }
-                    if (hashMap19 != null) {
-                        getMessagesStorage().updateTopicsWithReadMessages(hashMap19);
-                        getTopicsController().updateReadOutbox(hashMap19);
-                    }
-                    if (longSparseArray2 != null) {
-                        int currentTime = getConnectionsManager().getCurrentTime();
-                        int size13 = longSparseArray2.size();
-                        for (int i30 = 0; i30 < size13; i30++) {
-                            getMessagesStorage().markMessagesContentAsRead(longSparseArray2.keyAt(i30), (ArrayList) longSparseArray2.valueAt(i30), currentTime, i11);
-                        }
-                    }
-                    if (longSparseArray45 != null) {
-                        int size14 = longSparseArray45.size();
-                        for (int i31 = 0; i31 < size14; i31++) {
-                            final long keyAt = longSparseArray45.keyAt(i31);
-                            final ArrayList arrayList65 = (ArrayList) longSparseArray45.valueAt(i31);
-                            getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda287
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    MessagesController.this.lambda$processUpdateArray$383(keyAt, arrayList65);
-                                }
-                            });
-                        }
-                    }
-                    if (longSparseArray46 != null) {
-                        final long clientUserId2 = getUserConfig().getClientUserId();
-                        int size15 = longSparseArray46.size();
-                        for (int i32 = 0; i32 < size15; i32++) {
-                            final long keyAt2 = longSparseArray46.keyAt(i32);
-                            final ArrayList arrayList66 = (ArrayList) longSparseArray46.valueAt(i32);
-                            getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda288
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    MessagesController.this.lambda$processUpdateArray$384(clientUserId2, arrayList66, keyAt2);
-                                }
-                            });
-                        }
-                    }
-                    if (longSparseArray54 != null) {
-                        int size16 = longSparseArray54.size();
-                        for (int i33 = 0; i33 < size16; i33++) {
-                            getMessagesStorage().markMessagesAsDeleted(longSparseArray54.keyAt(i33), (ArrayList) longSparseArray54.valueAt(i33), true, false, 1, 0);
-                        }
-                    }
-                    if (longSparseIntArray16 != null) {
-                        int size17 = longSparseIntArray16.size();
-                        for (int i34 = 0; i34 < size17; i34++) {
-                            final long keyAt3 = longSparseIntArray16.keyAt(i34);
-                            final int valueAt = longSparseIntArray16.valueAt(i34);
-                            getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda289
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    MessagesController.this.lambda$processUpdateArray$385(keyAt3, valueAt);
-                                }
-                            });
-                        }
-                    }
-                    if (arrayList57 != null) {
-                        int size18 = arrayList57.size();
-                        for (int i35 = 0; i35 < size18; i35++) {
-                            TLRPC.TL_updateEncryptedMessagesRead tL_updateEncryptedMessagesRead2 = (TLRPC.TL_updateEncryptedMessagesRead) arrayList57.get(i35);
-                            getMessagesStorage().createTaskForSecretChat(tL_updateEncryptedMessagesRead2.chat_id, tL_updateEncryptedMessagesRead2.max_date, tL_updateEncryptedMessagesRead2.date, 1, null);
-                        }
-                    }
-                    return z2;
-                }
-                if (longSparseIntArray13 == null || longSparseIntArray != null || longSparseArray2 != null || longSparseIntArray7 != null) {
-                    getMessagesStorage().updateDialogsWithReadMessages(longSparseIntArray13, longSparseIntArray, longSparseArray2, longSparseIntArray7, true);
-                }
-                z2 = true;
-                getMessagesStorage().markMessagesAsRead(longSparseIntArray13, longSparseIntArray, sparseIntArray, true);
-                hashMap = hashMap21;
-                if (hashMap != null) {
-                }
-                if (hashMap22 != null) {
-                }
-                if (hashMap20 != null) {
-                }
-                if (hashMap19 != null) {
-                }
-                if (longSparseArray2 != null) {
-                }
-                if (longSparseArray45 != null) {
-                }
-                if (longSparseArray46 != null) {
-                }
-                if (longSparseArray54 != null) {
-                }
-                if (longSparseIntArray16 != null) {
-                }
-                if (arrayList57 != null) {
-                }
-                return z2;
-            }
-        } else {
-            sparseIntArray = sparseIntArray8;
-            longSparseIntArray = longSparseIntArray14;
-        }
-        longSparseArray2 = longSparseArray47;
-        if (longSparseIntArray13 == null) {
-        }
-        getMessagesStorage().updateDialogsWithReadMessages(longSparseIntArray13, longSparseIntArray, longSparseArray2, longSparseIntArray7, true);
-        z2 = true;
-        getMessagesStorage().markMessagesAsRead(longSparseIntArray13, longSparseIntArray, sparseIntArray, true);
-        hashMap = hashMap21;
-        if (hashMap != null) {
-        }
-        if (hashMap22 != null) {
-        }
-        if (hashMap20 != null) {
-        }
-        if (hashMap19 != null) {
-        }
-        if (longSparseArray2 != null) {
-        }
-        if (longSparseArray45 != null) {
-        }
-        if (longSparseArray46 != null) {
-        }
-        if (longSparseArray54 != null) {
-        }
-        if (longSparseIntArray16 != null) {
-        }
-        if (arrayList57 != null) {
-        }
-        return z2;
+    /*  JADX ERROR: Type inference failed
+        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
+        */
+    public boolean processUpdateArray(java.util.ArrayList<org.telegram.tgnet.TLRPC.Update> r82, java.util.ArrayList<org.telegram.tgnet.TLRPC.User> r83, java.util.ArrayList<org.telegram.tgnet.TLRPC.Chat> r84, boolean r85, int r86) {
+        /*
+            Method dump skipped, instructions count: 7649
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.MessagesController.processUpdateArray(java.util.ArrayList, java.util.ArrayList, java.util.ArrayList, boolean, int):boolean");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -31567,32 +28665,32 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:288:0x0667, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:295:0x0688, code lost:
     
-        if (r4 == r15) goto L279;
+        if (r4 == r15) goto L286;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:290:0x066b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:297:0x068c, code lost:
     
-        if (r7 == r6) goto L282;
+        if (r7 == r6) goto L289;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:532:0x0bda, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:539:0x0bfb, code lost:
     
-        if (r4.getCallState() == 0) goto L530;
+        if (r4.getCallState() == 0) goto L537;
      */
-    /* JADX WARN: Removed duplicated region for block: B:293:0x0697  */
-    /* JADX WARN: Removed duplicated region for block: B:574:0x0cda  */
-    /* JADX WARN: Removed duplicated region for block: B:867:0x14b6  */
-    /* JADX WARN: Removed duplicated region for block: B:883:0x1500  */
-    /* JADX WARN: Removed duplicated region for block: B:889:0x151b  */
-    /* JADX WARN: Removed duplicated region for block: B:958:0x1646  */
-    /* JADX WARN: Removed duplicated region for block: B:960:0x1654  */
-    /* JADX WARN: Removed duplicated region for block: B:962:0x165a  */
-    /* JADX WARN: Removed duplicated region for block: B:965:0x1666  */
-    /* JADX WARN: Removed duplicated region for block: B:970:0x167f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:974:0x16a2  */
-    /* JADX WARN: Removed duplicated region for block: B:977:0x16b8  */
-    /* JADX WARN: Removed duplicated region for block: B:980:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:984:0x14ea  */
+    /* JADX WARN: Removed duplicated region for block: B:300:0x06b8  */
+    /* JADX WARN: Removed duplicated region for block: B:581:0x0cfb  */
+    /* JADX WARN: Removed duplicated region for block: B:874:0x14d7  */
+    /* JADX WARN: Removed duplicated region for block: B:890:0x1521  */
+    /* JADX WARN: Removed duplicated region for block: B:896:0x153c  */
+    /* JADX WARN: Removed duplicated region for block: B:965:0x1667  */
+    /* JADX WARN: Removed duplicated region for block: B:967:0x1675  */
+    /* JADX WARN: Removed duplicated region for block: B:969:0x167b  */
+    /* JADX WARN: Removed duplicated region for block: B:972:0x1687  */
+    /* JADX WARN: Removed duplicated region for block: B:977:0x16a0 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:981:0x16c3  */
+    /* JADX WARN: Removed duplicated region for block: B:984:0x16d9  */
+    /* JADX WARN: Removed duplicated region for block: B:987:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:991:0x150b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -31612,6 +28710,7 @@ public class MessagesController extends BaseController implements NotificationCe
         int i7;
         long j;
         boolean z4;
+        final MessagesController messagesController2;
         int i8;
         int i9;
         ArrayList<TLRPC.User> arrayList7;
@@ -31692,934 +28791,945 @@ public class MessagesController extends BaseController implements NotificationCe
                     i9 = i14;
                     arrayList7 = arrayList11;
                     i10 = size;
-                } else if (update instanceof TLRPC.TL_updateStarsRevenueStatus) {
-                    BotStarsController.getInstance(this.currentAccount).onUpdate((TLRPC.TL_updateStarsRevenueStatus) update);
-                    i9 = i14;
-                    arrayList7 = arrayList11;
-                    i10 = size;
                 } else {
-                    if (update instanceof TLRPC.TL_updateUserStatus) {
-                        TLRPC.TL_updateUserStatus tL_updateUserStatus = (TLRPC.TL_updateUserStatus) update;
-                        i8 = size;
-                        TLRPC.User user2 = getUser(Long.valueOf(tL_updateUserStatus.user_id));
-                        TLRPC.UserStatus userStatus = tL_updateUserStatus.status;
-                        if (userStatus instanceof TLRPC.TL_userStatusRecently) {
-                            userStatus.expires = -100;
-                        } else if (userStatus instanceof TLRPC.TL_userStatusLastWeek) {
-                            userStatus.expires = -101;
-                        } else if (userStatus instanceof TLRPC.TL_userStatusLastMonth) {
-                            userStatus.expires = -102;
-                        }
-                        if (user2 != null) {
-                            user2.id = tL_updateUserStatus.user_id;
-                            user2.status = userStatus;
-                        }
-                        TLRPC.TL_user tL_user = new TLRPC.TL_user();
-                        tL_user.id = tL_updateUserStatus.user_id;
-                        tL_user.status = tL_updateUserStatus.status;
-                        arrayList11.add(tL_user);
-                        if (tL_updateUserStatus.user_id == getUserConfig().getClientUserId()) {
-                            getNotificationsController().setLastOnlineFromOtherDevice(tL_updateUserStatus.status.expires);
-                        }
+                    if (update instanceof TLRPC.TL_updateStarGiftAuctionState) {
+                        messagesController2 = this;
+                        GiftAuctionController.getInstance(messagesController2.currentAccount).processUpdate((TLRPC.TL_updateStarGiftAuctionState) update);
                     } else {
-                        i8 = size;
-                        if (update instanceof TLRPC.TL_updateMonoForumNoPaidException) {
-                            TLRPC.TL_updateMonoForumNoPaidException tL_updateMonoForumNoPaidException = (TLRPC.TL_updateMonoForumNoPaidException) update;
-                            StarsController.getInstance(this.currentAccount).processUpdateMonoForumNoPaidException(tL_updateMonoForumNoPaidException.channel_id, DialogObject.getPeerDialogId(tL_updateMonoForumNoPaidException.saved_peer_id), tL_updateMonoForumNoPaidException.exception);
-                        } else if (update instanceof TLRPC.TL_updatePeerWallpaper) {
-                            ChatThemeController.getInstance(this.currentAccount).processUpdate((TLRPC.TL_updatePeerWallpaper) update);
-                        } else if (update instanceof TLRPC.TL_updateUserEmojiStatus) {
-                            TLRPC.TL_updateUserEmojiStatus tL_updateUserEmojiStatus = (TLRPC.TL_updateUserEmojiStatus) update;
-                            TLRPC.User user3 = getUser(Long.valueOf(tL_updateUserEmojiStatus.user_id));
-                            if (user3 != null) {
-                                user3.id = tL_updateUserEmojiStatus.user_id;
-                                user3.emoji_status = tL_updateUserEmojiStatus.emoji_status;
-                                if (UserObject.isUserSelf(user3)) {
-                                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.userEmojiStatusUpdated, user3);
+                        messagesController2 = this;
+                        if (update instanceof TLRPC.TL_updateStarGiftAuctionUserState) {
+                            GiftAuctionController.getInstance(messagesController2.currentAccount).processUpdate((TLRPC.TL_updateStarGiftAuctionUserState) update);
+                        } else if (update instanceof TLRPC.TL_updateStarsRevenueStatus) {
+                            BotStarsController.getInstance(messagesController2.currentAccount).onUpdate((TLRPC.TL_updateStarsRevenueStatus) update);
+                        } else {
+                            if (update instanceof TLRPC.TL_updateUserStatus) {
+                                TLRPC.TL_updateUserStatus tL_updateUserStatus = (TLRPC.TL_updateUserStatus) update;
+                                i8 = size;
+                                TLRPC.User user2 = messagesController2.getUser(Long.valueOf(tL_updateUserStatus.user_id));
+                                TLRPC.UserStatus userStatus = tL_updateUserStatus.status;
+                                if (userStatus instanceof TLRPC.TL_userStatusRecently) {
+                                    userStatus.expires = -100;
+                                } else if (userStatus instanceof TLRPC.TL_userStatusLastWeek) {
+                                    userStatus.expires = -101;
+                                } else if (userStatus instanceof TLRPC.TL_userStatusLastMonth) {
+                                    userStatus.expires = -102;
                                 }
-                            }
-                            TLRPC.TL_user tL_user2 = new TLRPC.TL_user();
-                            tL_user2.id = tL_updateUserEmojiStatus.user_id;
-                            tL_user2.emoji_status = tL_updateUserEmojiStatus.emoji_status;
-                            arrayList10.add(tL_user2);
-                        } else if (update instanceof TLRPC.TL_updateUserName) {
-                            TLRPC.TL_updateUserName tL_updateUserName = (TLRPC.TL_updateUserName) update;
-                            TLRPC.User user4 = getUser(Long.valueOf(tL_updateUserName.user_id));
-                            if (user4 != null) {
-                                if (!UserObject.isContact(user4)) {
-                                    user4.first_name = tL_updateUserName.first_name;
-                                    user4.last_name = tL_updateUserName.last_name;
+                                if (user2 != null) {
+                                    user2.id = tL_updateUserStatus.user_id;
+                                    user2.status = userStatus;
                                 }
-                                if (user4.usernames != null) {
-                                    for (int i16 = 0; i16 < user4.usernames.size(); i16++) {
-                                        TLRPC.TL_username tL_username = user4.usernames.get(i16);
-                                        if (tL_username != null && !TextUtils.isEmpty(tL_username.username)) {
-                                            this.objectsByUsernames.remove(tL_username.username);
+                                TLRPC.TL_user tL_user = new TLRPC.TL_user();
+                                tL_user.id = tL_updateUserStatus.user_id;
+                                tL_user.status = tL_updateUserStatus.status;
+                                arrayList11.add(tL_user);
+                                if (tL_updateUserStatus.user_id == getUserConfig().getClientUserId()) {
+                                    getNotificationsController().setLastOnlineFromOtherDevice(tL_updateUserStatus.status.expires);
+                                }
+                            } else {
+                                i8 = size;
+                                if (update instanceof TLRPC.TL_updateMonoForumNoPaidException) {
+                                    TLRPC.TL_updateMonoForumNoPaidException tL_updateMonoForumNoPaidException = (TLRPC.TL_updateMonoForumNoPaidException) update;
+                                    StarsController.getInstance(messagesController2.currentAccount).processUpdateMonoForumNoPaidException(tL_updateMonoForumNoPaidException.channel_id, DialogObject.getPeerDialogId(tL_updateMonoForumNoPaidException.saved_peer_id), tL_updateMonoForumNoPaidException.exception);
+                                } else if (update instanceof TLRPC.TL_updatePeerWallpaper) {
+                                    ChatThemeController.getInstance(messagesController2.currentAccount).processUpdate((TLRPC.TL_updatePeerWallpaper) update);
+                                } else if (update instanceof TLRPC.TL_updateUserEmojiStatus) {
+                                    TLRPC.TL_updateUserEmojiStatus tL_updateUserEmojiStatus = (TLRPC.TL_updateUserEmojiStatus) update;
+                                    TLRPC.User user3 = messagesController2.getUser(Long.valueOf(tL_updateUserEmojiStatus.user_id));
+                                    if (user3 != null) {
+                                        user3.id = tL_updateUserEmojiStatus.user_id;
+                                        user3.emoji_status = tL_updateUserEmojiStatus.emoji_status;
+                                        if (UserObject.isUserSelf(user3)) {
+                                            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.userEmojiStatusUpdated, user3);
                                         }
                                     }
-                                }
-                                for (int i17 = 0; i17 < tL_updateUserName.usernames.size(); i17++) {
-                                    String str2 = tL_updateUserName.usernames.get(i17).username;
-                                    if (!TextUtils.isEmpty(str2) && tL_updateUserName.usernames.get(i17).active) {
-                                        this.objectsByUsernames.put(str2, user4);
-                                    }
-                                }
-                                ArrayList<TLRPC.TL_username> arrayList12 = tL_updateUserName.usernames;
-                                if (arrayList12 != null && arrayList12.size() > 1) {
-                                    user4.username = null;
-                                    user4.usernames = tL_updateUserName.usernames;
-                                } else {
-                                    ArrayList<TLRPC.TL_username> arrayList13 = tL_updateUserName.usernames;
-                                    user4.username = (arrayList13 == null || arrayList13.size() != 1) ? null : tL_updateUserName.usernames.get(0).username;
-                                    user4.usernames.clear();
-                                }
-                            }
-                            TLRPC.TL_user tL_user3 = new TLRPC.TL_user();
-                            tL_user3.id = tL_updateUserName.user_id;
-                            tL_user3.first_name = tL_updateUserName.first_name;
-                            tL_user3.last_name = tL_updateUserName.last_name;
-                            ArrayList<TLRPC.TL_username> arrayList14 = tL_updateUserName.usernames;
-                            if (arrayList14 != null && arrayList14.size() == 1) {
-                                str = tL_updateUserName.usernames.get(0).username;
-                                tL_user3.username = str;
-                                arrayList10.add(tL_user3);
-                            }
-                            str = null;
-                            tL_user3.username = str;
-                            arrayList10.add(tL_user3);
-                        } else if (update instanceof TLRPC.TL_updateDialogPinned) {
-                            TLRPC.TL_updateDialogPinned tL_updateDialogPinned = (TLRPC.TL_updateDialogPinned) update;
-                            TLRPC.DialogPeer dialogPeer = tL_updateDialogPinned.peer;
-                            long peerDialogId = dialogPeer instanceof TLRPC.TL_dialogPeer ? DialogObject.getPeerDialogId(((TLRPC.TL_dialogPeer) dialogPeer).peer) : 0L;
-                            i9 = i14;
-                            arrayList7 = arrayList11;
-                            i10 = i8;
-                            if (!pinDialog(peerDialogId, tL_updateDialogPinned.pinned, null, -1L)) {
-                                getUserConfig().setPinnedDialogsLoaded(tL_updateDialogPinned.folder_id, false);
-                                getUserConfig().saveConfig(false);
-                                loadPinnedDialogs(tL_updateDialogPinned.folder_id, peerDialogId, null);
-                            }
-                        } else {
-                            i9 = i14;
-                            arrayList7 = arrayList11;
-                            i10 = i8;
-                            if (update instanceof TLRPC.TL_updatePinnedDialogs) {
-                                TLRPC.TL_updatePinnedDialogs tL_updatePinnedDialogs = (TLRPC.TL_updatePinnedDialogs) update;
-                                getUserConfig().setPinnedDialogsLoaded(tL_updatePinnedDialogs.folder_id, false);
-                                getUserConfig().saveConfig(false);
-                                if ((tL_updatePinnedDialogs.flags & 1) != 0) {
-                                    arrayList8 = new ArrayList<>();
-                                    ArrayList<TLRPC.DialogPeer> arrayList15 = tL_updatePinnedDialogs.order;
-                                    int size2 = arrayList15.size();
-                                    for (int i18 = 0; i18 < size2; i18++) {
-                                        TLRPC.DialogPeer dialogPeer2 = arrayList15.get(i18);
-                                        if (dialogPeer2 instanceof TLRPC.TL_dialogPeer) {
-                                            TLRPC.Peer peer = ((TLRPC.TL_dialogPeer) dialogPeer2).peer;
-                                            j9 = peer.user_id;
-                                            if (j9 == 0) {
-                                                long j10 = peer.chat_id;
-                                                if (j10 == 0) {
-                                                    j10 = peer.channel_id;
+                                    TLRPC.TL_user tL_user2 = new TLRPC.TL_user();
+                                    tL_user2.id = tL_updateUserEmojiStatus.user_id;
+                                    tL_user2.emoji_status = tL_updateUserEmojiStatus.emoji_status;
+                                    arrayList10.add(tL_user2);
+                                } else if (update instanceof TLRPC.TL_updateUserName) {
+                                    TLRPC.TL_updateUserName tL_updateUserName = (TLRPC.TL_updateUserName) update;
+                                    TLRPC.User user4 = messagesController2.getUser(Long.valueOf(tL_updateUserName.user_id));
+                                    if (user4 != null) {
+                                        if (!UserObject.isContact(user4)) {
+                                            user4.first_name = tL_updateUserName.first_name;
+                                            user4.last_name = tL_updateUserName.last_name;
+                                        }
+                                        if (user4.usernames != null) {
+                                            for (int i16 = 0; i16 < user4.usernames.size(); i16++) {
+                                                TLRPC.TL_username tL_username = user4.usernames.get(i16);
+                                                if (tL_username != null && !TextUtils.isEmpty(tL_username.username)) {
+                                                    messagesController2.objectsByUsernames.remove(tL_username.username);
                                                 }
-                                                j9 = -j10;
+                                            }
+                                        }
+                                        for (int i17 = 0; i17 < tL_updateUserName.usernames.size(); i17++) {
+                                            String str2 = tL_updateUserName.usernames.get(i17).username;
+                                            if (!TextUtils.isEmpty(str2) && tL_updateUserName.usernames.get(i17).active) {
+                                                messagesController2.objectsByUsernames.put(str2, user4);
+                                            }
+                                        }
+                                        ArrayList<TLRPC.TL_username> arrayList12 = tL_updateUserName.usernames;
+                                        if (arrayList12 != null && arrayList12.size() > 1) {
+                                            user4.username = null;
+                                            user4.usernames = tL_updateUserName.usernames;
+                                        } else {
+                                            ArrayList<TLRPC.TL_username> arrayList13 = tL_updateUserName.usernames;
+                                            user4.username = (arrayList13 == null || arrayList13.size() != 1) ? null : tL_updateUserName.usernames.get(0).username;
+                                            user4.usernames.clear();
+                                        }
+                                    }
+                                    TLRPC.TL_user tL_user3 = new TLRPC.TL_user();
+                                    tL_user3.id = tL_updateUserName.user_id;
+                                    tL_user3.first_name = tL_updateUserName.first_name;
+                                    tL_user3.last_name = tL_updateUserName.last_name;
+                                    ArrayList<TLRPC.TL_username> arrayList14 = tL_updateUserName.usernames;
+                                    if (arrayList14 != null && arrayList14.size() == 1) {
+                                        str = tL_updateUserName.usernames.get(0).username;
+                                        tL_user3.username = str;
+                                        arrayList10.add(tL_user3);
+                                    }
+                                    str = null;
+                                    tL_user3.username = str;
+                                    arrayList10.add(tL_user3);
+                                } else if (update instanceof TLRPC.TL_updateDialogPinned) {
+                                    TLRPC.TL_updateDialogPinned tL_updateDialogPinned = (TLRPC.TL_updateDialogPinned) update;
+                                    TLRPC.DialogPeer dialogPeer = tL_updateDialogPinned.peer;
+                                    long peerDialogId = dialogPeer instanceof TLRPC.TL_dialogPeer ? DialogObject.getPeerDialogId(((TLRPC.TL_dialogPeer) dialogPeer).peer) : 0L;
+                                    i9 = i14;
+                                    arrayList7 = arrayList11;
+                                    i10 = i8;
+                                    if (!pinDialog(peerDialogId, tL_updateDialogPinned.pinned, null, -1L)) {
+                                        getUserConfig().setPinnedDialogsLoaded(tL_updateDialogPinned.folder_id, false);
+                                        getUserConfig().saveConfig(false);
+                                        messagesController2.loadPinnedDialogs(tL_updateDialogPinned.folder_id, peerDialogId, null);
+                                    }
+                                } else {
+                                    i9 = i14;
+                                    arrayList7 = arrayList11;
+                                    i10 = i8;
+                                    if (update instanceof TLRPC.TL_updatePinnedDialogs) {
+                                        TLRPC.TL_updatePinnedDialogs tL_updatePinnedDialogs = (TLRPC.TL_updatePinnedDialogs) update;
+                                        getUserConfig().setPinnedDialogsLoaded(tL_updatePinnedDialogs.folder_id, false);
+                                        getUserConfig().saveConfig(false);
+                                        if ((tL_updatePinnedDialogs.flags & 1) != 0) {
+                                            arrayList8 = new ArrayList<>();
+                                            ArrayList<TLRPC.DialogPeer> arrayList15 = tL_updatePinnedDialogs.order;
+                                            int size2 = arrayList15.size();
+                                            for (int i18 = 0; i18 < size2; i18++) {
+                                                TLRPC.DialogPeer dialogPeer2 = arrayList15.get(i18);
+                                                if (dialogPeer2 instanceof TLRPC.TL_dialogPeer) {
+                                                    TLRPC.Peer peer = ((TLRPC.TL_dialogPeer) dialogPeer2).peer;
+                                                    j9 = peer.user_id;
+                                                    if (j9 == 0) {
+                                                        long j10 = peer.chat_id;
+                                                        if (j10 == 0) {
+                                                            j10 = peer.channel_id;
+                                                        }
+                                                        j9 = -j10;
+                                                    }
+                                                } else {
+                                                    j9 = 0;
+                                                }
+                                                arrayList8.add(Long.valueOf(j9));
+                                            }
+                                            j8 = 0;
+                                        } else {
+                                            j8 = 0;
+                                            arrayList8 = null;
+                                        }
+                                        loadPinnedDialogs(tL_updatePinnedDialogs.folder_id, j8, arrayList8);
+                                    } else if (update instanceof TLRPC.TL_updateUserPhoto) {
+                                        TLRPC.TL_updateUserPhoto tL_updateUserPhoto = (TLRPC.TL_updateUserPhoto) update;
+                                        TLRPC.User user5 = messagesController2.getUser(Long.valueOf(tL_updateUserPhoto.user_id));
+                                        if (user5 != null) {
+                                            user5.photo = tL_updateUserPhoto.photo;
+                                        }
+                                        TLRPC.TL_user tL_user4 = new TLRPC.TL_user();
+                                        tL_user4.id = tL_updateUserPhoto.user_id;
+                                        tL_user4.photo = tL_updateUserPhoto.photo;
+                                        arrayList10.add(tL_user4);
+                                        if (UserObject.isUserSelf(user5)) {
+                                            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
+                                        }
+                                    } else if (update instanceof TLRPC.TL_updateNewStoryReaction) {
+                                        TLRPC.TL_updateNewStoryReaction tL_updateNewStoryReaction = (TLRPC.TL_updateNewStoryReaction) update;
+                                        long peerDialogId2 = DialogObject.getPeerDialogId(tL_updateNewStoryReaction.peer);
+                                        int i19 = tL_updateNewStoryReaction.story_id;
+                                        TLRPC.Message message = new TLRPC.Message();
+                                        message.id = -i19;
+                                        message.dialog_id = peerDialogId2;
+                                        message.peer_id = messagesController2.getPeer(peerDialogId2);
+                                        message.date = getConnectionsManager().getCurrentTime();
+                                        TLRPC.User user6 = getMessagesController().getUser(Long.valueOf(message.dialog_id));
+                                        if (user6 != null && getNotificationsSettings(messagesController2.currentAccount).getBoolean("EnableReactionsPreview", true)) {
+                                            ReactionsLayoutInBubble.VisibleReaction flatten = ReactionsLayoutInBubble.VisibleReaction.fromTL(tL_updateNewStoryReaction.reaction).flatten();
+                                            if (flatten.emojicon != null) {
+                                                z8 = false;
+                                                message.message = LocaleController.formatString(R.string.PushReactStory, UserObject.getFirstName(user6), flatten.emojicon);
+                                            } else {
+                                                z8 = false;
+                                                message.message = LocaleController.formatString(R.string.PushReactStoryHidden, new Object[0]);
                                             }
                                         } else {
-                                            j9 = 0;
+                                            z8 = false;
+                                            message.message = LocaleController.formatString(R.string.PushReactStoryHidden, new Object[0]);
                                         }
-                                        arrayList8.add(Long.valueOf(j9));
-                                    }
-                                    j8 = 0;
-                                } else {
-                                    j8 = 0;
-                                    arrayList8 = null;
-                                }
-                                loadPinnedDialogs(tL_updatePinnedDialogs.folder_id, j8, arrayList8);
-                            } else if (update instanceof TLRPC.TL_updateUserPhoto) {
-                                TLRPC.TL_updateUserPhoto tL_updateUserPhoto = (TLRPC.TL_updateUserPhoto) update;
-                                TLRPC.User user5 = getUser(Long.valueOf(tL_updateUserPhoto.user_id));
-                                if (user5 != null) {
-                                    user5.photo = tL_updateUserPhoto.photo;
-                                }
-                                TLRPC.TL_user tL_user4 = new TLRPC.TL_user();
-                                tL_user4.id = tL_updateUserPhoto.user_id;
-                                tL_user4.photo = tL_updateUserPhoto.photo;
-                                arrayList10.add(tL_user4);
-                                if (UserObject.isUserSelf(user5)) {
-                                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
-                                }
-                            } else if (update instanceof TLRPC.TL_updateNewStoryReaction) {
-                                TLRPC.TL_updateNewStoryReaction tL_updateNewStoryReaction = (TLRPC.TL_updateNewStoryReaction) update;
-                                long peerDialogId2 = DialogObject.getPeerDialogId(tL_updateNewStoryReaction.peer);
-                                int i19 = tL_updateNewStoryReaction.story_id;
-                                TLRPC.Message message = new TLRPC.Message();
-                                message.id = -i19;
-                                message.dialog_id = peerDialogId2;
-                                message.peer_id = getPeer(peerDialogId2);
-                                message.date = getConnectionsManager().getCurrentTime();
-                                TLRPC.User user6 = getMessagesController().getUser(Long.valueOf(message.dialog_id));
-                                if (user6 != null && getNotificationsSettings(this.currentAccount).getBoolean("EnableReactionsPreview", true)) {
-                                    ReactionsLayoutInBubble.VisibleReaction flatten = ReactionsLayoutInBubble.VisibleReaction.fromTL(tL_updateNewStoryReaction.reaction).flatten();
-                                    if (flatten.emojicon != null) {
-                                        z8 = false;
-                                        message.message = LocaleController.formatString(R.string.PushReactStory, UserObject.getFirstName(user6), flatten.emojicon);
+                                        ArrayList<MessageObject> arrayList16 = new ArrayList<>();
+                                        MessageObject messageObject2 = new MessageObject(messagesController2.currentAccount, message, z8, z8);
+                                        messageObject2.isStoryReactionPush = true;
+                                        messageObject2.localType = 1;
+                                        if (user6 != null && !UserObject.isDeleted(user6)) {
+                                            messageObject2.localUserName = UserObject.getFirstName(user6);
+                                        } else {
+                                            messageObject2.localUserName = LocaleController.getString(R.string.PushReactStoryHiddenSender);
+                                        }
+                                        arrayList16.add(messageObject2);
+                                        getNotificationsController().processNewMessages(arrayList16, true, false, null);
+                                    } else if (update instanceof TLRPC.TL_updateStarsBalance) {
+                                        TLRPC.TL_updateStarsBalance tL_updateStarsBalance = (TLRPC.TL_updateStarsBalance) update;
+                                        boolean z10 = tL_updateStarsBalance.balance instanceof TL_stars.TL_starsTonAmount;
+                                        StarsController.getInstance(messagesController2.currentAccount, z10).updateBalance(tL_updateStarsBalance.balance);
+                                        StarsController.getInstance(messagesController2.currentAccount, z10).invalidateTransactions(false);
+                                    } else if (update instanceof TLRPC.TL_updateUser) {
+                                        TLRPC.TL_updateUser tL_updateUser = (TLRPC.TL_updateUser) update;
+                                        TLRPC.User user7 = messagesController2.getUser(Long.valueOf(tL_updateUser.user_id));
+                                        if (arrayList2 != null) {
+                                            for (int i20 = 0; i20 < arrayList2.size(); i20++) {
+                                                user = (TLRPC.User) arrayList2.get(i20);
+                                                if (user != null && user.id == tL_updateUser.user_id) {
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        user = null;
+                                        if (user != null && (userProfilePhoto = user.photo) != null) {
+                                            if (user7 != null) {
+                                                user7.photo = userProfilePhoto;
+                                            }
+                                            TLRPC.TL_user tL_user5 = new TLRPC.TL_user();
+                                            tL_user5.id = user.id;
+                                            tL_user5.photo = user.photo;
+                                            arrayList10.add(tL_user5);
+                                        }
+                                        if (UserObject.isUserSelf(user7)) {
+                                            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
+                                        }
+                                    } else if (update instanceof TLRPC.TL_updateUserPhone) {
+                                        TLRPC.TL_updateUserPhone tL_updateUserPhone = (TLRPC.TL_updateUserPhone) update;
+                                        final TLRPC.User user8 = messagesController2.getUser(Long.valueOf(tL_updateUserPhone.user_id));
+                                        if (user8 != null) {
+                                            user8.phone = tL_updateUserPhone.phone;
+                                            Utilities.phoneBookQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda230
+                                                @Override // java.lang.Runnable
+                                                public final void run() {
+                                                    MessagesController.this.lambda$processUpdateArray$373(user8);
+                                                }
+                                            });
+                                            if (UserObject.isUserSelf(user8)) {
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
+                                            }
+                                        }
+                                        TLRPC.TL_user tL_user6 = new TLRPC.TL_user();
+                                        tL_user6.id = tL_updateUserPhone.user_id;
+                                        tL_user6.phone = tL_updateUserPhone.phone;
+                                        arrayList10.add(tL_user6);
                                     } else {
-                                        z8 = false;
-                                        message.message = LocaleController.formatString(R.string.PushReactStoryHidden, new Object[0]);
-                                    }
-                                } else {
-                                    z8 = false;
-                                    message.message = LocaleController.formatString(R.string.PushReactStoryHidden, new Object[0]);
-                                }
-                                ArrayList<MessageObject> arrayList16 = new ArrayList<>();
-                                MessageObject messageObject2 = new MessageObject(this.currentAccount, message, z8, z8);
-                                messageObject2.isStoryReactionPush = true;
-                                messageObject2.localType = 1;
-                                if (user6 != null && !UserObject.isDeleted(user6)) {
-                                    messageObject2.localUserName = UserObject.getFirstName(user6);
-                                } else {
-                                    messageObject2.localUserName = LocaleController.getString(R.string.PushReactStoryHiddenSender);
-                                }
-                                arrayList16.add(messageObject2);
-                                getNotificationsController().processNewMessages(arrayList16, true, false, null);
-                            } else if (update instanceof TLRPC.TL_updateStarsBalance) {
-                                TLRPC.TL_updateStarsBalance tL_updateStarsBalance = (TLRPC.TL_updateStarsBalance) update;
-                                boolean z10 = tL_updateStarsBalance.balance instanceof TL_stars.TL_starsTonAmount;
-                                StarsController.getInstance(this.currentAccount, z10).updateBalance(tL_updateStarsBalance.balance);
-                                StarsController.getInstance(this.currentAccount, z10).invalidateTransactions(false);
-                            } else if (update instanceof TLRPC.TL_updateUser) {
-                                TLRPC.TL_updateUser tL_updateUser = (TLRPC.TL_updateUser) update;
-                                TLRPC.User user7 = getUser(Long.valueOf(tL_updateUser.user_id));
-                                if (arrayList2 != null) {
-                                    for (int i20 = 0; i20 < arrayList2.size(); i20++) {
-                                        user = (TLRPC.User) arrayList2.get(i20);
-                                        if (user != null && user.id == tL_updateUser.user_id) {
-                                            break;
-                                        }
-                                    }
-                                }
-                                user = null;
-                                if (user != null && (userProfilePhoto = user.photo) != null) {
-                                    if (user7 != null) {
-                                        user7.photo = userProfilePhoto;
-                                    }
-                                    TLRPC.TL_user tL_user5 = new TLRPC.TL_user();
-                                    tL_user5.id = user.id;
-                                    tL_user5.photo = user.photo;
-                                    arrayList10.add(tL_user5);
-                                }
-                                if (UserObject.isUserSelf(user7)) {
-                                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
-                                }
-                            } else if (update instanceof TLRPC.TL_updateUserPhone) {
-                                TLRPC.TL_updateUserPhone tL_updateUserPhone = (TLRPC.TL_updateUserPhone) update;
-                                final TLRPC.User user8 = getUser(Long.valueOf(tL_updateUserPhone.user_id));
-                                if (user8 != null) {
-                                    user8.phone = tL_updateUserPhone.phone;
-                                    Utilities.phoneBookQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda230
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            MessagesController.this.lambda$processUpdateArray$373(user8);
-                                        }
-                                    });
-                                    if (UserObject.isUserSelf(user8)) {
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
-                                    }
-                                }
-                                TLRPC.TL_user tL_user6 = new TLRPC.TL_user();
-                                tL_user6.id = tL_updateUserPhone.user_id;
-                                tL_user6.phone = tL_updateUserPhone.phone;
-                                arrayList10.add(tL_user6);
-                            } else {
-                                if (update instanceof TLRPC.TL_updateNotifySettings) {
-                                    TLRPC.TL_updateNotifySettings tL_updateNotifySettings = (TLRPC.TL_updateNotifySettings) update;
-                                    if (tL_updateNotifySettings.notify_settings instanceof TLRPC.TL_peerNotifySettings) {
-                                        int i21 = i15 | DIALOG_FILTER_FLAG_EXCLUDE_MUTED;
-                                        if (editor == null) {
-                                            editor = this.notificationsPreferences.edit();
-                                        }
-                                        SharedPreferences.Editor editor2 = editor;
-                                        getConnectionsManager().getCurrentTime();
-                                        TLRPC.NotifyPeer notifyPeer = tL_updateNotifySettings.peer;
-                                        boolean z11 = notifyPeer instanceof TLRPC.TL_notifyPeer;
-                                        if (z11 || (notifyPeer instanceof TLRPC.TL_notifyForumTopic)) {
-                                            if (z11) {
-                                                TLRPC.Peer peer2 = ((TLRPC.TL_notifyPeer) notifyPeer).peer;
-                                                j6 = peer2.user_id;
-                                                j7 = 0;
-                                                if (j6 == 0) {
-                                                    long j11 = peer2.chat_id;
-                                                    j6 = j11 != 0 ? -j11 : -peer2.channel_id;
+                                        if (update instanceof TLRPC.TL_updateNotifySettings) {
+                                            TLRPC.TL_updateNotifySettings tL_updateNotifySettings = (TLRPC.TL_updateNotifySettings) update;
+                                            if (tL_updateNotifySettings.notify_settings instanceof TLRPC.TL_peerNotifySettings) {
+                                                int i21 = i15 | DIALOG_FILTER_FLAG_EXCLUDE_MUTED;
+                                                if (editor == null) {
+                                                    editor = messagesController2.notificationsPreferences.edit();
                                                 }
-                                            } else {
-                                                TLRPC.TL_notifyForumTopic tL_notifyForumTopic = (TLRPC.TL_notifyForumTopic) notifyPeer;
-                                                TLRPC.Peer peer3 = tL_notifyForumTopic.peer;
-                                                long j12 = peer3.user_id;
-                                                if (j12 != 0) {
-                                                    j6 = j12;
-                                                } else {
-                                                    long j13 = peer3.chat_id;
-                                                    j6 = j13 != 0 ? -j13 : -peer3.channel_id;
-                                                }
-                                                j7 = tL_notifyForumTopic.top_msg_id;
-                                            }
-                                            getNotificationsController().getNotificationsSettingsFacade().applyDialogNotificationsSettings(j6, j7, tL_updateNotifySettings.notify_settings);
-                                        } else if (notifyPeer instanceof TLRPC.TL_notifyChats) {
-                                            TLRPC.PeerNotifySettings peerNotifySettings = tL_updateNotifySettings.notify_settings;
-                                            if ((peerNotifySettings.flags & 1) != 0) {
-                                                editor2.putBoolean("EnablePreviewGroup", peerNotifySettings.show_previews);
-                                            }
-                                            if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
-                                                int i22 = this.notificationsPreferences.getInt("EnableGroup2", 0);
-                                                int i23 = tL_updateNotifySettings.notify_settings.mute_until;
-                                                if (i22 != i23) {
-                                                    editor2.putInt("EnableGroup2", i23);
-                                                    editor2.putBoolean("overwrite_group", true);
-                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda231
-                                                        @Override // java.lang.Runnable
-                                                        public final void run() {
-                                                            MessagesController.this.lambda$processUpdateArray$374();
+                                                SharedPreferences.Editor editor2 = editor;
+                                                getConnectionsManager().getCurrentTime();
+                                                TLRPC.NotifyPeer notifyPeer = tL_updateNotifySettings.peer;
+                                                boolean z11 = notifyPeer instanceof TLRPC.TL_notifyPeer;
+                                                if (z11 || (notifyPeer instanceof TLRPC.TL_notifyForumTopic)) {
+                                                    if (z11) {
+                                                        TLRPC.Peer peer2 = ((TLRPC.TL_notifyPeer) notifyPeer).peer;
+                                                        j6 = peer2.user_id;
+                                                        j7 = 0;
+                                                        if (j6 == 0) {
+                                                            long j11 = peer2.chat_id;
+                                                            j6 = j11 != 0 ? -j11 : -peer2.channel_id;
                                                         }
-                                                    });
-                                                }
-                                            }
-                                            getNotificationsController().getNotificationsSettingsFacade().applySoundSettings(tL_updateNotifySettings.notify_settings.android_sound, editor2, 0L, 0L, 0, false);
-                                        } else if (notifyPeer instanceof TLRPC.TL_notifyUsers) {
-                                            TLRPC.PeerNotifySettings peerNotifySettings2 = tL_updateNotifySettings.notify_settings;
-                                            if ((peerNotifySettings2.flags & 1) != 0) {
-                                                editor2.putBoolean("EnablePreviewAll", peerNotifySettings2.show_previews);
-                                            }
-                                            int i24 = tL_updateNotifySettings.notify_settings.flags;
-                                            if (this.notificationsPreferences.contains("EnableAllStories")) {
-                                                z7 = true;
-                                                bool = Boolean.valueOf(this.notificationsPreferences.getBoolean("EnableAllStories", true));
-                                            } else {
-                                                z7 = true;
-                                                bool = null;
-                                            }
-                                            Boolean valueOf = this.notificationsPreferences.contains("EnableHideStoriesSenders") ? Boolean.valueOf(this.notificationsPreferences.getBoolean("EnableHideStoriesSenders", z7)) : null;
-                                            TLRPC.PeerNotifySettings peerNotifySettings3 = tL_updateNotifySettings.notify_settings;
-                                            if ((peerNotifySettings3.flags & 64) != 0) {
-                                                boolean z12 = !peerNotifySettings3.stories_muted;
-                                                bool2 = Boolean.valueOf(z12);
-                                                editor2.putBoolean("EnableAllStories", z12);
-                                            } else {
-                                                bool2 = null;
-                                            }
-                                            TLRPC.PeerNotifySettings peerNotifySettings4 = tL_updateNotifySettings.notify_settings;
-                                            if ((peerNotifySettings4.flags & 128) != 0) {
-                                                boolean z13 = peerNotifySettings4.stories_hide_sender;
-                                                bool3 = Boolean.valueOf(z13);
-                                                editor2.putBoolean("EnableHideStoriesSenders", z13);
-                                            } else {
-                                                bool3 = null;
-                                            }
-                                            if ((bool == null) == (bool2 == null)) {
-                                                if ((valueOf == null) == (bool3 == null)) {
-                                                    if (bool != null) {
+                                                    } else {
+                                                        TLRPC.TL_notifyForumTopic tL_notifyForumTopic = (TLRPC.TL_notifyForumTopic) notifyPeer;
+                                                        TLRPC.Peer peer3 = tL_notifyForumTopic.peer;
+                                                        long j12 = peer3.user_id;
+                                                        if (j12 != 0) {
+                                                            j6 = j12;
+                                                        } else {
+                                                            long j13 = peer3.chat_id;
+                                                            j6 = j13 != 0 ? -j13 : -peer3.channel_id;
+                                                        }
+                                                        j7 = tL_notifyForumTopic.top_msg_id;
                                                     }
-                                                    if (valueOf != null) {
+                                                    getNotificationsController().getNotificationsSettingsFacade().applyDialogNotificationsSettings(j6, j7, tL_updateNotifySettings.notify_settings);
+                                                } else if (notifyPeer instanceof TLRPC.TL_notifyChats) {
+                                                    TLRPC.PeerNotifySettings peerNotifySettings = tL_updateNotifySettings.notify_settings;
+                                                    if ((peerNotifySettings.flags & 1) != 0) {
+                                                        editor2.putBoolean("EnablePreviewGroup", peerNotifySettings.show_previews);
                                                     }
-                                                    getNotificationsController().getNotificationsSettingsFacade().applySoundSettings(tL_updateNotifySettings.notify_settings.android_sound, editor2, 0L, 0L, 1, false);
                                                     if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
-                                                        int i25 = this.notificationsPreferences.getInt("EnableAll2", 0);
-                                                        int i26 = tL_updateNotifySettings.notify_settings.mute_until;
-                                                        if (i25 != i26) {
-                                                            editor2.putInt("EnableAll2", i26);
-                                                            editor2.putBoolean("overwrite_private", true);
-                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda232
+                                                        int i22 = messagesController2.notificationsPreferences.getInt("EnableGroup2", 0);
+                                                        int i23 = tL_updateNotifySettings.notify_settings.mute_until;
+                                                        if (i22 != i23) {
+                                                            editor2.putInt("EnableGroup2", i23);
+                                                            editor2.putBoolean("overwrite_group", true);
+                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda231
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
-                                                                    MessagesController.this.lambda$processUpdateArray$375();
+                                                                    MessagesController.this.lambda$processUpdateArray$374();
                                                                 }
                                                             });
                                                         }
                                                     }
+                                                    getNotificationsController().getNotificationsSettingsFacade().applySoundSettings(tL_updateNotifySettings.notify_settings.android_sound, editor2, 0L, 0L, 0, false);
+                                                } else if (notifyPeer instanceof TLRPC.TL_notifyUsers) {
+                                                    TLRPC.PeerNotifySettings peerNotifySettings2 = tL_updateNotifySettings.notify_settings;
+                                                    if ((peerNotifySettings2.flags & 1) != 0) {
+                                                        editor2.putBoolean("EnablePreviewAll", peerNotifySettings2.show_previews);
+                                                    }
+                                                    int i24 = tL_updateNotifySettings.notify_settings.flags;
+                                                    if (messagesController2.notificationsPreferences.contains("EnableAllStories")) {
+                                                        SharedPreferences sharedPreferences = messagesController2.notificationsPreferences;
+                                                        z7 = true;
+                                                        bool = Boolean.valueOf(sharedPreferences.getBoolean("EnableAllStories", true));
+                                                    } else {
+                                                        z7 = true;
+                                                        bool = null;
+                                                    }
+                                                    Boolean valueOf = messagesController2.notificationsPreferences.contains("EnableHideStoriesSenders") ? Boolean.valueOf(messagesController2.notificationsPreferences.getBoolean("EnableHideStoriesSenders", z7)) : null;
+                                                    TLRPC.PeerNotifySettings peerNotifySettings3 = tL_updateNotifySettings.notify_settings;
+                                                    if ((peerNotifySettings3.flags & 64) != 0) {
+                                                        boolean z12 = !peerNotifySettings3.stories_muted;
+                                                        bool2 = Boolean.valueOf(z12);
+                                                        editor2.putBoolean("EnableAllStories", z12);
+                                                    } else {
+                                                        bool2 = null;
+                                                    }
+                                                    TLRPC.PeerNotifySettings peerNotifySettings4 = tL_updateNotifySettings.notify_settings;
+                                                    if ((peerNotifySettings4.flags & 128) != 0) {
+                                                        boolean z13 = peerNotifySettings4.stories_hide_sender;
+                                                        bool3 = Boolean.valueOf(z13);
+                                                        editor2.putBoolean("EnableHideStoriesSenders", z13);
+                                                    } else {
+                                                        bool3 = null;
+                                                    }
+                                                    if ((bool == null) == (bool2 == null)) {
+                                                        if ((valueOf == null) == (bool3 == null)) {
+                                                            if (bool != null) {
+                                                            }
+                                                            if (valueOf != null) {
+                                                            }
+                                                            getNotificationsController().getNotificationsSettingsFacade().applySoundSettings(tL_updateNotifySettings.notify_settings.android_sound, editor2, 0L, 0L, 1, false);
+                                                            if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
+                                                                int i25 = messagesController2.notificationsPreferences.getInt("EnableAll2", 0);
+                                                                int i26 = tL_updateNotifySettings.notify_settings.mute_until;
+                                                                if (i25 != i26) {
+                                                                    editor2.putInt("EnableAll2", i26);
+                                                                    editor2.putBoolean("overwrite_private", true);
+                                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda232
+                                                                        @Override // java.lang.Runnable
+                                                                        public final void run() {
+                                                                            MessagesController.this.lambda$processUpdateArray$375();
+                                                                        }
+                                                                    });
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    editor2.putBoolean("overwrite_stories", true);
+                                                    getNotificationsController().getNotificationsSettingsFacade().applySoundSettings(tL_updateNotifySettings.notify_settings.android_sound, editor2, 0L, 0L, 1, false);
+                                                    if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
+                                                    }
+                                                } else if (notifyPeer instanceof TLRPC.TL_notifyBroadcasts) {
+                                                    TLRPC.PeerNotifySettings peerNotifySettings5 = tL_updateNotifySettings.notify_settings;
+                                                    if ((peerNotifySettings5.flags & 1) != 0) {
+                                                        editor2.putBoolean("EnablePreviewChannel", peerNotifySettings5.show_previews);
+                                                    }
+                                                    if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
+                                                        int i27 = messagesController2.notificationsPreferences.getInt("EnableChannel2", 0);
+                                                        int i28 = tL_updateNotifySettings.notify_settings.mute_until;
+                                                        if (i27 != i28) {
+                                                            editor2.putInt("EnableChannel2", i28);
+                                                            editor2.putBoolean("overwrite_channel", true);
+                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda233
+                                                                @Override // java.lang.Runnable
+                                                                public final void run() {
+                                                                    MessagesController.this.lambda$processUpdateArray$376();
+                                                                }
+                                                            });
+                                                        }
+                                                    }
+                                                    getNotificationsController().getNotificationsSettingsFacade().applySoundSettings(tL_updateNotifySettings.notify_settings.android_sound, editor2, 0L, 0L, 2, false);
                                                 }
+                                                getMessagesStorage().updateMutedDialogsFiltersCounters();
+                                                i15 = i21;
+                                                editor = editor2;
                                             }
-                                            editor2.putBoolean("overwrite_stories", true);
-                                            getNotificationsController().getNotificationsSettingsFacade().applySoundSettings(tL_updateNotifySettings.notify_settings.android_sound, editor2, 0L, 0L, 1, false);
-                                            if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
-                                            }
-                                        } else if (notifyPeer instanceof TLRPC.TL_notifyBroadcasts) {
-                                            TLRPC.PeerNotifySettings peerNotifySettings5 = tL_updateNotifySettings.notify_settings;
-                                            if ((peerNotifySettings5.flags & 1) != 0) {
-                                                editor2.putBoolean("EnablePreviewChannel", peerNotifySettings5.show_previews);
-                                            }
-                                            if ((tL_updateNotifySettings.notify_settings.flags & 4) != 0) {
-                                                int i27 = this.notificationsPreferences.getInt("EnableChannel2", 0);
-                                                int i28 = tL_updateNotifySettings.notify_settings.mute_until;
-                                                if (i27 != i28) {
-                                                    editor2.putInt("EnableChannel2", i28);
-                                                    editor2.putBoolean("overwrite_channel", true);
-                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda233
+                                        } else if (update instanceof TLRPC.TL_updateNewAuthorization) {
+                                            getUnconfirmedAuthController().processUpdate((TLRPC.TL_updateNewAuthorization) update);
+                                        } else if (update instanceof TLRPC.TL_updateChannel) {
+                                            final TLRPC.TL_updateChannel tL_updateChannel = (TLRPC.TL_updateChannel) update;
+                                            TLRPC.Dialog dialog2 = (TLRPC.Dialog) messagesController2.dialogs_dict.get(-tL_updateChannel.channel_id);
+                                            TLRPC.Chat chat = messagesController2.getChat(Long.valueOf(tL_updateChannel.channel_id));
+                                            if (chat != null) {
+                                                if (dialog2 == null && (chat instanceof TLRPC.TL_channel) && !chat.left) {
+                                                    Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda234
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
-                                                            MessagesController.this.lambda$processUpdateArray$376();
+                                                            MessagesController.this.lambda$processUpdateArray$377(tL_updateChannel);
                                                         }
                                                     });
+                                                } else if (ChatObject.isNotInChat(chat) && dialog2 != null && ((dialog = messagesController2.promoDialog) == null || dialog.id != dialog2.id)) {
+                                                    messagesController2.deleteDialog(dialog2.id, 0);
+                                                }
+                                                if (((chat instanceof TLRPC.TL_channelForbidden) || chat.kicked) && (groupCall = messagesController2.getGroupCall(chat.id, false)) != null) {
+                                                    TLRPC.TL_updateGroupCall tL_updateGroupCall = new TLRPC.TL_updateGroupCall();
+                                                    tL_updateGroupCall.flags |= 2;
+                                                    tL_updateGroupCall.peer = messagesController2.getPeer(-chat.id);
+                                                    TLRPC.TL_groupCallDiscarded tL_groupCallDiscarded = new TLRPC.TL_groupCallDiscarded();
+                                                    tL_updateGroupCall.call = tL_groupCallDiscarded;
+                                                    TLRPC.GroupCall groupCall2 = groupCall.call;
+                                                    tL_groupCallDiscarded.id = groupCall2.id;
+                                                    tL_groupCallDiscarded.access_hash = groupCall2.access_hash;
+                                                    groupCall.processGroupCallUpdate(tL_updateGroupCall);
+                                                    if (VoIPService.getSharedInstance() != null) {
+                                                        VoIPService.getSharedInstance().onGroupCallUpdated(tL_updateGroupCall.call);
+                                                    }
                                                 }
                                             }
-                                            getNotificationsController().getNotificationsSettingsFacade().applySoundSettings(tL_updateNotifySettings.notify_settings.android_sound, editor2, 0L, 0L, 2, false);
-                                        }
-                                        getMessagesStorage().updateMutedDialogsFiltersCounters();
-                                        i15 = i21;
-                                        editor = editor2;
-                                    }
-                                } else if (update instanceof TLRPC.TL_updateNewAuthorization) {
-                                    getUnconfirmedAuthController().processUpdate((TLRPC.TL_updateNewAuthorization) update);
-                                } else if (update instanceof TLRPC.TL_updateChannel) {
-                                    final TLRPC.TL_updateChannel tL_updateChannel = (TLRPC.TL_updateChannel) update;
-                                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) this.dialogs_dict.get(-tL_updateChannel.channel_id);
-                                    TLRPC.Chat chat = getChat(Long.valueOf(tL_updateChannel.channel_id));
-                                    if (chat != null) {
-                                        if (dialog2 == null && (chat instanceof TLRPC.TL_channel) && !chat.left) {
-                                            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda234
-                                                @Override // java.lang.Runnable
-                                                public final void run() {
-                                                    MessagesController.this.lambda$processUpdateArray$377(tL_updateChannel);
+                                            int i29 = i3 | UPDATE_MASK_CHAT;
+                                            messagesController2.loadFullChat(tL_updateChannel.channel_id, 0, true);
+                                            i3 = i29;
+                                        } else if (update instanceof TLRPC.TL_updateChat) {
+                                            TLRPC.TL_updateChat tL_updateChat = (TLRPC.TL_updateChat) update;
+                                            TLRPC.Chat chat2 = messagesController2.getChat(Long.valueOf(tL_updateChat.chat_id));
+                                            if (chat2 != null && ((chat2 instanceof TLRPC.TL_chatForbidden) || chat2.kicked)) {
+                                                ChatObject.Call groupCall3 = messagesController2.getGroupCall(chat2.id, false);
+                                                if (groupCall3 != null) {
+                                                    TLRPC.TL_updateGroupCall tL_updateGroupCall2 = new TLRPC.TL_updateGroupCall();
+                                                    tL_updateGroupCall2.flags |= 2;
+                                                    tL_updateGroupCall2.peer = messagesController2.getPeer(-chat2.id);
+                                                    TLRPC.TL_groupCallDiscarded tL_groupCallDiscarded2 = new TLRPC.TL_groupCallDiscarded();
+                                                    tL_updateGroupCall2.call = tL_groupCallDiscarded2;
+                                                    TLRPC.GroupCall groupCall4 = groupCall3.call;
+                                                    tL_groupCallDiscarded2.id = groupCall4.id;
+                                                    tL_groupCallDiscarded2.access_hash = groupCall4.access_hash;
+                                                    groupCall3.processGroupCallUpdate(tL_updateGroupCall2);
+                                                    if (VoIPService.getSharedInstance() != null) {
+                                                        VoIPService.getSharedInstance().onGroupCallUpdated(tL_updateGroupCall2.call);
+                                                    }
                                                 }
-                                            });
-                                        } else if (ChatObject.isNotInChat(chat) && dialog2 != null && ((dialog = this.promoDialog) == null || dialog.id != dialog2.id)) {
-                                            deleteDialog(dialog2.id, 0);
-                                        }
-                                        if (((chat instanceof TLRPC.TL_channelForbidden) || chat.kicked) && (groupCall = getGroupCall(chat.id, false)) != null) {
-                                            TLRPC.TL_updateGroupCall tL_updateGroupCall = new TLRPC.TL_updateGroupCall();
-                                            tL_updateGroupCall.flags |= 2;
-                                            tL_updateGroupCall.peer = getPeer(-chat.id);
-                                            TLRPC.TL_groupCallDiscarded tL_groupCallDiscarded = new TLRPC.TL_groupCallDiscarded();
-                                            tL_updateGroupCall.call = tL_groupCallDiscarded;
-                                            TLRPC.GroupCall groupCall2 = groupCall.call;
-                                            tL_groupCallDiscarded.id = groupCall2.id;
-                                            tL_groupCallDiscarded.access_hash = groupCall2.access_hash;
-                                            groupCall.processGroupCallUpdate(tL_updateGroupCall);
-                                            if (VoIPService.getSharedInstance() != null) {
-                                                VoIPService.getSharedInstance().onGroupCallUpdated(tL_updateGroupCall.call);
+                                                TLRPC.Dialog dialog3 = (TLRPC.Dialog) messagesController2.dialogs_dict.get(-chat2.id);
+                                                if (dialog3 != null) {
+                                                    long j14 = dialog3.id;
+                                                    i12 = 0;
+                                                    messagesController2.deleteDialog(j14, 0);
+                                                    int i30 = i3 | UPDATE_MASK_CHAT;
+                                                    messagesController2.loadFullChat(tL_updateChat.chat_id, i12, true);
+                                                    i3 = i30;
+                                                }
                                             }
-                                        }
-                                    }
-                                    int i29 = i3 | UPDATE_MASK_CHAT;
-                                    loadFullChat(tL_updateChannel.channel_id, 0, true);
-                                    i3 = i29;
-                                } else if (update instanceof TLRPC.TL_updateChat) {
-                                    TLRPC.TL_updateChat tL_updateChat = (TLRPC.TL_updateChat) update;
-                                    TLRPC.Chat chat2 = getChat(Long.valueOf(tL_updateChat.chat_id));
-                                    if (chat2 != null && ((chat2 instanceof TLRPC.TL_chatForbidden) || chat2.kicked)) {
-                                        ChatObject.Call groupCall3 = getGroupCall(chat2.id, false);
-                                        if (groupCall3 != null) {
-                                            TLRPC.TL_updateGroupCall tL_updateGroupCall2 = new TLRPC.TL_updateGroupCall();
-                                            tL_updateGroupCall2.flags |= 2;
-                                            tL_updateGroupCall2.peer = getPeer(-chat2.id);
-                                            TLRPC.TL_groupCallDiscarded tL_groupCallDiscarded2 = new TLRPC.TL_groupCallDiscarded();
-                                            tL_updateGroupCall2.call = tL_groupCallDiscarded2;
-                                            TLRPC.GroupCall groupCall4 = groupCall3.call;
-                                            tL_groupCallDiscarded2.id = groupCall4.id;
-                                            tL_groupCallDiscarded2.access_hash = groupCall4.access_hash;
-                                            groupCall3.processGroupCallUpdate(tL_updateGroupCall2);
-                                            if (VoIPService.getSharedInstance() != null) {
-                                                VoIPService.getSharedInstance().onGroupCallUpdated(tL_updateGroupCall2.call);
-                                            }
-                                        }
-                                        TLRPC.Dialog dialog3 = (TLRPC.Dialog) this.dialogs_dict.get(-chat2.id);
-                                        if (dialog3 != null) {
-                                            long j14 = dialog3.id;
                                             i12 = 0;
-                                            deleteDialog(j14, 0);
-                                            int i30 = i3 | UPDATE_MASK_CHAT;
-                                            loadFullChat(tL_updateChat.chat_id, i12, true);
-                                            i3 = i30;
-                                        }
-                                    }
-                                    i12 = 0;
-                                    int i302 = i3 | UPDATE_MASK_CHAT;
-                                    loadFullChat(tL_updateChat.chat_id, i12, true);
-                                    i3 = i302;
-                                } else if (update instanceof TLRPC.TL_updateChatDefaultBannedRights) {
-                                    TLRPC.TL_updateChatDefaultBannedRights tL_updateChatDefaultBannedRights = (TLRPC.TL_updateChatDefaultBannedRights) update;
-                                    TLRPC.Peer peer4 = tL_updateChatDefaultBannedRights.peer;
-                                    long j15 = peer4.channel_id;
-                                    if (j15 == 0) {
-                                        j15 = peer4.chat_id;
-                                    }
-                                    final TLRPC.Chat chat3 = getChat(Long.valueOf(j15));
-                                    if (chat3 != null) {
-                                        chat3.default_banned_rights = tL_updateChatDefaultBannedRights.default_banned_rights;
-                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda235
-                                            @Override // java.lang.Runnable
-                                            public final void run() {
-                                                MessagesController.this.lambda$processUpdateArray$378(chat3);
+                                            int i302 = i3 | UPDATE_MASK_CHAT;
+                                            messagesController2.loadFullChat(tL_updateChat.chat_id, i12, true);
+                                            i3 = i302;
+                                        } else if (update instanceof TLRPC.TL_updateChatDefaultBannedRights) {
+                                            TLRPC.TL_updateChatDefaultBannedRights tL_updateChatDefaultBannedRights = (TLRPC.TL_updateChatDefaultBannedRights) update;
+                                            TLRPC.Peer peer4 = tL_updateChatDefaultBannedRights.peer;
+                                            long j15 = peer4.channel_id;
+                                            if (j15 == 0) {
+                                                j15 = peer4.chat_id;
                                             }
-                                        });
-                                    }
-                                } else if (update instanceof TLRPC.TL_updateBotCommands) {
-                                    TLRPC.TL_updateBotCommands tL_updateBotCommands = (TLRPC.TL_updateBotCommands) update;
-                                    getMediaDataController().updateBotInfo(MessageObject.getPeerId(tL_updateBotCommands.peer), tL_updateBotCommands);
-                                } else if (update instanceof TLRPC.TL_updateStickerSets) {
-                                    getMediaDataController().loadStickers(0, false, true);
-                                } else if (update instanceof TLRPC.TL_updateStickerSetsOrder) {
-                                    TLRPC.TL_updateStickerSetsOrder tL_updateStickerSetsOrder = (TLRPC.TL_updateStickerSetsOrder) update;
-                                    if (tL_updateStickerSetsOrder.masks) {
-                                        i11 = 1;
-                                    } else {
-                                        i11 = tL_updateStickerSetsOrder.emojis ? 5 : 0;
-                                    }
-                                    getMediaDataController().reorderStickers(i11, tL_updateStickerSetsOrder.order, false);
-                                } else {
-                                    boolean z14 = update instanceof TLRPC.TL_updateRecentReactions;
-                                    if (z14) {
-                                        getMediaDataController().loadRecentAndTopReactions(true);
-                                    } else if (z14) {
-                                        getMediaDataController().loadSavedReactions(true);
-                                    } else if (update instanceof TLRPC.TL_updateSavedReactionTags) {
-                                        getSavedReactionTags(0L, true);
-                                    } else if (update instanceof TLRPC.TL_updateFavedStickers) {
-                                        getMediaDataController().loadRecents(2, false, false, true);
-                                    } else if (update instanceof TLRPC.TL_updateContactsReset) {
-                                        getContactsController().forceImportContacts();
-                                    } else if (update instanceof TLRPC.TL_updateNewStickerSet) {
-                                        getMediaDataController().addNewStickerSet(((TLRPC.TL_updateNewStickerSet) update).stickerset);
-                                    } else if (update instanceof TLRPC.TL_updateSavedGifs) {
-                                        this.emojiPreferences.edit().putLong("lastGifLoadTime", 0L).commit();
-                                    } else if (update instanceof TLRPC.TL_updateRecentStickers) {
-                                        this.emojiPreferences.edit().putLong("lastStickersLoadTime", 0L).commit();
-                                    } else if (update instanceof TLRPC.TL_updateDraftMessage) {
-                                        TLRPC.TL_updateDraftMessage tL_updateDraftMessage = (TLRPC.TL_updateDraftMessage) update;
-                                        TLRPC.Peer peer5 = tL_updateDraftMessage.peer;
-                                        long j16 = peer5.user_id;
-                                        if (j16 == 0) {
-                                            long j17 = peer5.channel_id;
-                                            j16 = j17 != 0 ? -j17 : -peer5.chat_id;
+                                            final TLRPC.Chat chat3 = messagesController2.getChat(Long.valueOf(j15));
+                                            if (chat3 != null) {
+                                                chat3.default_banned_rights = tL_updateChatDefaultBannedRights.default_banned_rights;
+                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda235
+                                                    @Override // java.lang.Runnable
+                                                    public final void run() {
+                                                        MessagesController.this.lambda$processUpdateArray$378(chat3);
+                                                    }
+                                                });
+                                            }
+                                        } else if (update instanceof TLRPC.TL_updateBotCommands) {
+                                            TLRPC.TL_updateBotCommands tL_updateBotCommands = (TLRPC.TL_updateBotCommands) update;
+                                            getMediaDataController().updateBotInfo(MessageObject.getPeerId(tL_updateBotCommands.peer), tL_updateBotCommands);
+                                        } else if (update instanceof TLRPC.TL_updateStickerSets) {
+                                            getMediaDataController().loadStickers(0, false, true);
+                                        } else if (update instanceof TLRPC.TL_updateStickerSetsOrder) {
+                                            TLRPC.TL_updateStickerSetsOrder tL_updateStickerSetsOrder = (TLRPC.TL_updateStickerSetsOrder) update;
+                                            if (tL_updateStickerSetsOrder.masks) {
+                                                i11 = 1;
+                                            } else {
+                                                i11 = tL_updateStickerSetsOrder.emojis ? 5 : 0;
+                                            }
+                                            getMediaDataController().reorderStickers(i11, tL_updateStickerSetsOrder.order, false);
+                                        } else {
+                                            boolean z14 = update instanceof TLRPC.TL_updateRecentReactions;
+                                            if (z14) {
+                                                getMediaDataController().loadRecentAndTopReactions(true);
+                                            } else if (z14) {
+                                                getMediaDataController().loadSavedReactions(true);
+                                            } else if (update instanceof TLRPC.TL_updateSavedReactionTags) {
+                                                messagesController2.getSavedReactionTags(0L, true);
+                                            } else if (update instanceof TLRPC.TL_updateFavedStickers) {
+                                                getMediaDataController().loadRecents(2, false, false, true);
+                                            } else if (update instanceof TLRPC.TL_updateContactsReset) {
+                                                getContactsController().forceImportContacts();
+                                            } else if (update instanceof TLRPC.TL_updateNewStickerSet) {
+                                                getMediaDataController().addNewStickerSet(((TLRPC.TL_updateNewStickerSet) update).stickerset);
+                                            } else if (update instanceof TLRPC.TL_updateSavedGifs) {
+                                                messagesController2.emojiPreferences.edit().putLong("lastGifLoadTime", 0L).commit();
+                                            } else if (update instanceof TLRPC.TL_updateRecentStickers) {
+                                                messagesController2.emojiPreferences.edit().putLong("lastStickersLoadTime", 0L).commit();
+                                            } else if (update instanceof TLRPC.TL_updateDraftMessage) {
+                                                TLRPC.TL_updateDraftMessage tL_updateDraftMessage = (TLRPC.TL_updateDraftMessage) update;
+                                                TLRPC.Peer peer5 = tL_updateDraftMessage.peer;
+                                                long j16 = peer5.user_id;
+                                                if (j16 == 0) {
+                                                    long j17 = peer5.channel_id;
+                                                    j16 = j17 != 0 ? -j17 : -peer5.chat_id;
+                                                }
+                                                long j18 = j16;
+                                                TLRPC.Peer peer6 = tL_updateDraftMessage.saved_peer_id;
+                                                getMediaDataController().saveDraft(j18, peer6 != null ? DialogObject.getPeerDialogId(peer6) : tL_updateDraftMessage.top_msg_id, tL_updateDraftMessage.draft, null, true);
+                                                z9 = true;
+                                                arrayList9 = arrayList;
+                                                i14 = i9 + 1;
+                                                size = i10;
+                                                arrayList11 = arrayList7;
+                                                i13 = 0;
+                                            } else if (update instanceof TL_stories.TL_updateStoriesStealthMode) {
+                                                getStoriesController().setStealthMode(((TL_stories.TL_updateStoriesStealthMode) update).stealth_mode);
+                                            } else if (update instanceof TLRPC.TL_updateReadFeaturedStickers) {
+                                                getMediaDataController().markFeaturedStickersAsRead(false, false);
+                                            } else if (update instanceof TLRPC.TL_updateReadFeaturedEmojiStickers) {
+                                                getMediaDataController().markFeaturedStickersAsRead(true, false);
+                                            } else if (update instanceof TLRPC.TL_updateMoveStickerSetToTop) {
+                                                TLRPC.TL_updateMoveStickerSetToTop tL_updateMoveStickerSetToTop = (TLRPC.TL_updateMoveStickerSetToTop) update;
+                                                getMediaDataController().moveStickerSetToTop(tL_updateMoveStickerSetToTop.stickerset, tL_updateMoveStickerSetToTop.emojis, tL_updateMoveStickerSetToTop.masks);
+                                            } else if (update instanceof TLRPC.TL_updatePinnedForumTopic) {
+                                                TLRPC.TL_updatePinnedForumTopic tL_updatePinnedForumTopic = (TLRPC.TL_updatePinnedForumTopic) update;
+                                                long j19 = -DialogObject.getPeerDialogId(tL_updatePinnedForumTopic.peer);
+                                                ArrayList<Integer> currentPinnedOrder = getTopicsController().getCurrentPinnedOrder(j19);
+                                                currentPinnedOrder.remove(Integer.valueOf(tL_updatePinnedForumTopic.topic_id));
+                                                if (tL_updatePinnedForumTopic.pinned) {
+                                                    currentPinnedOrder.add(0, Integer.valueOf(tL_updatePinnedForumTopic.topic_id));
+                                                }
+                                                getTopicsController().applyPinnedOrder(j19, currentPinnedOrder);
+                                            } else if (update instanceof TLRPC.TL_updatePinnedForumTopics) {
+                                                TLRPC.TL_updatePinnedForumTopics tL_updatePinnedForumTopics = (TLRPC.TL_updatePinnedForumTopics) update;
+                                                long peerDialogId3 = DialogObject.getPeerDialogId(tL_updatePinnedForumTopics.peer);
+                                                if ((tL_updatePinnedForumTopics.flags & 1) != 0) {
+                                                    getTopicsController().applyPinnedOrder(-peerDialogId3, tL_updatePinnedForumTopics.order);
+                                                } else {
+                                                    getTopicsController().reloadTopics(-peerDialogId3, false);
+                                                }
+                                            } else if (update instanceof TLRPC.TL_updatePhoneCallSignalingData) {
+                                                TLRPC.TL_updatePhoneCallSignalingData tL_updatePhoneCallSignalingData = (TLRPC.TL_updatePhoneCallSignalingData) update;
+                                                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                                                if (sharedInstance != null) {
+                                                    sharedInstance.onSignalingData(tL_updatePhoneCallSignalingData);
+                                                }
+                                            } else if (update instanceof TLRPC.TL_updateGroupCallParticipants) {
+                                                TLRPC.TL_updateGroupCallParticipants tL_updateGroupCallParticipants = (TLRPC.TL_updateGroupCallParticipants) update;
+                                                ChatObject.Call call = (ChatObject.Call) messagesController2.groupCalls.get(tL_updateGroupCallParticipants.call.id);
+                                                if (call != null) {
+                                                    call.processParticipantsUpdate(tL_updateGroupCallParticipants, false);
+                                                }
+                                                if (VoIPService.getSharedInstance() != null) {
+                                                    VoIPService.getSharedInstance().onGroupCallParticipantsUpdate(tL_updateGroupCallParticipants);
+                                                }
+                                            } else if (update instanceof TLRPC.TL_updateGroupCall) {
+                                                TLRPC.TL_updateGroupCall tL_updateGroupCall3 = (TLRPC.TL_updateGroupCall) update;
+                                                if (tL_updateGroupCall3.live_story) {
+                                                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.storyGroupCallUpdated, Long.valueOf(DialogObject.getPeerDialogId(tL_updateGroupCall3.peer)), tL_updateGroupCall3.call);
+                                                }
+                                                ChatObject.Call call2 = (ChatObject.Call) messagesController2.groupCalls.get(tL_updateGroupCall3.call.id);
+                                                if (call2 != null) {
+                                                    call2.processGroupCallUpdate(tL_updateGroupCall3);
+                                                    TLRPC.Chat chat4 = messagesController2.getChat(Long.valueOf(call2.chatId));
+                                                    if (chat4 != null) {
+                                                        chat4.call_active = tL_updateGroupCall3.call instanceof TLRPC.TL_groupCall;
+                                                    }
+                                                } else {
+                                                    TLRPC.Peer peer7 = tL_updateGroupCall3.peer;
+                                                    if (peer7 != null && (chatFull2 = messagesController2.getChatFull((j5 = -DialogObject.getPeerDialogId(peer7)))) != null && ((inputGroupCall = chatFull2.call) == null || inputGroupCall.id != tL_updateGroupCall3.call.id)) {
+                                                        messagesController2.loadFullChat(j5, 0, true);
+                                                    }
+                                                }
+                                                if (VoIPService.getSharedInstance() != null) {
+                                                    VoIPService.getSharedInstance().onGroupCallUpdated(tL_updateGroupCall3.call);
+                                                }
+                                            } else if (update instanceof TLRPC.TL_updatePhoneCall) {
+                                                TL_phone.PhoneCall phoneCall = ((TLRPC.TL_updatePhoneCall) update).phone_call;
+                                                VoIPService sharedInstance2 = VoIPService.getSharedInstance();
+                                                if (BuildVars.LOGS_ENABLED) {
+                                                    FileLog.d("Received call in update: " + phoneCall);
+                                                    FileLog.d("call id " + phoneCall.id);
+                                                }
+                                                VoIPDebugToSend voIPDebugToSend = messagesController2.voipDebug;
+                                                if (voIPDebugToSend != null && (phoneCall instanceof TL_phone.TL_phoneCallDiscarded)) {
+                                                    TL_phone.TL_phoneCallDiscarded tL_phoneCallDiscarded = (TL_phone.TL_phoneCallDiscarded) phoneCall;
+                                                    voIPDebugToSend.done(tL_phoneCallDiscarded.id, tL_phoneCallDiscarded.need_debug);
+                                                }
+                                                if (phoneCall instanceof TL_phone.phoneCallRequested) {
+                                                    if (phoneCall.date + (messagesController2.callRingTimeout / MediaDataController.MAX_STYLE_RUNS_COUNT) < getConnectionsManager().getCurrentTime()) {
+                                                        if (BuildVars.LOGS_ENABLED) {
+                                                            FileLog.d("ignoring too old call");
+                                                        }
+                                                    } else {
+                                                        int i31 = Build.VERSION.SDK_INT;
+                                                        if (NotificationManagerCompat.from(ApplicationLoader.applicationContext).areNotificationsEnabled()) {
+                                                            z5 = false;
+                                                        } else if (!ApplicationLoader.mainInterfacePaused && ApplicationLoader.isScreenOn) {
+                                                            z5 = true;
+                                                        } else if (BuildVars.LOGS_ENABLED) {
+                                                            FileLog.d("Ignoring incoming call because notifications are disabled in system");
+                                                        }
+                                                        TelephonyManager telephonyManager = (TelephonyManager) ApplicationLoader.applicationContext.getSystemService("phone");
+                                                        if (i31 >= 31) {
+                                                            try {
+                                                                if (ContextCompat.checkSelfPermission(ApplicationLoader.applicationContext, "android.permission.READ_PHONE_STATE") == 0) {
+                                                                    callStateForSubscription = telephonyManager.getCallStateForSubscription();
+                                                                    if (callStateForSubscription == 0) {
+                                                                    }
+                                                                }
+                                                            } catch (Throwable th) {
+                                                                FileLog.e(th);
+                                                            }
+                                                            z6 = true;
+                                                            FileLog.e("updatePhoneCall: svc=" + sharedInstance2 + " callIShouldHavePutIntoIntent=" + VoIPService.callIShouldHavePutIntoIntent + " callStateIsIdle=" + z6);
+                                                            if (sharedInstance2 == null || VoIPService.callIShouldHavePutIntoIntent != null || !z6) {
+                                                                if (sharedInstance2 != null || sharedInstance2.getAccount() == messagesController2.currentAccount || sharedInstance2.getUser() == null || sharedInstance2.getUser().id != getUserConfig().getClientUserId()) {
+                                                                    if (BuildVars.LOGS_ENABLED) {
+                                                                        FileLog.d("Auto-declining call " + phoneCall.id + " because there's already active one");
+                                                                    }
+                                                                    TL_phone.discardCall discardcall = new TL_phone.discardCall();
+                                                                    TLRPC.TL_inputPhoneCall tL_inputPhoneCall = new TLRPC.TL_inputPhoneCall();
+                                                                    discardcall.peer = tL_inputPhoneCall;
+                                                                    tL_inputPhoneCall.access_hash = phoneCall.access_hash;
+                                                                    tL_inputPhoneCall.id = phoneCall.id;
+                                                                    discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
+                                                                    FileLog.e("discardCall " + discardcall.reason);
+                                                                    getConnectionsManager().sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda236
+                                                                        @Override // org.telegram.tgnet.RequestDelegate
+                                                                        public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                                                            MessagesController.this.lambda$processUpdateArray$379(tLObject, tL_error);
+                                                                        }
+                                                                    });
+                                                                }
+                                                            } else {
+                                                                if (BuildVars.LOGS_ENABLED) {
+                                                                    FileLog.d("Starting service for call " + phoneCall.id);
+                                                                }
+                                                                VoIPService.callIShouldHavePutIntoIntent = phoneCall;
+                                                                FileLog.e("set VoIPService.callIShouldHavePutIntoIntent = " + phoneCall);
+                                                                Intent intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) VoIPService.class);
+                                                                intent.putExtra("is_outgoing", false);
+                                                                intent.putExtra("user_id", phoneCall.participant_id == getUserConfig().getClientUserId() ? phoneCall.admin_id : phoneCall.participant_id);
+                                                                intent.putExtra("account", messagesController2.currentAccount);
+                                                                intent.putExtra("notifications_disabled", z5);
+                                                                try {
+                                                                    int i32 = Build.VERSION.SDK_INT;
+                                                                    if (i32 >= 33) {
+                                                                        intent.putExtra("accept", true);
+                                                                        VoIPPreNotificationService.show(ApplicationLoader.applicationContext, intent, phoneCall);
+                                                                    } else if (!z5 && i32 >= 26) {
+                                                                        ApplicationLoader.applicationContext.startForegroundService(intent);
+                                                                    } else {
+                                                                        ApplicationLoader.applicationContext.startService(intent);
+                                                                    }
+                                                                    if (ApplicationLoader.mainInterfacePaused || !ApplicationLoader.isScreenOn) {
+                                                                        messagesController2.ignoreSetOnline = true;
+                                                                    }
+                                                                } catch (Throwable th2) {
+                                                                    FileLog.e(th2);
+                                                                }
+                                                            }
+                                                        }
+                                                        z6 = false;
+                                                        FileLog.e("updatePhoneCall: svc=" + sharedInstance2 + " callIShouldHavePutIntoIntent=" + VoIPService.callIShouldHavePutIntoIntent + " callStateIsIdle=" + z6);
+                                                        if (sharedInstance2 == null) {
+                                                        }
+                                                        if (sharedInstance2 != null) {
+                                                        }
+                                                        if (BuildVars.LOGS_ENABLED) {
+                                                        }
+                                                        TL_phone.discardCall discardcall2 = new TL_phone.discardCall();
+                                                        TLRPC.TL_inputPhoneCall tL_inputPhoneCall2 = new TLRPC.TL_inputPhoneCall();
+                                                        discardcall2.peer = tL_inputPhoneCall2;
+                                                        tL_inputPhoneCall2.access_hash = phoneCall.access_hash;
+                                                        tL_inputPhoneCall2.id = phoneCall.id;
+                                                        discardcall2.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
+                                                        FileLog.e("discardCall " + discardcall2.reason);
+                                                        getConnectionsManager().sendRequest(discardcall2, new RequestDelegate() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda236
+                                                            @Override // org.telegram.tgnet.RequestDelegate
+                                                            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                                                                MessagesController.this.lambda$processUpdateArray$379(tLObject, tL_error);
+                                                            }
+                                                        });
+                                                    }
+                                                } else if (sharedInstance2 != null && sharedInstance2.getAccount() == messagesController2.currentAccount && phoneCall != null) {
+                                                    sharedInstance2.onCallUpdated(phoneCall);
+                                                } else {
+                                                    if (phoneCall instanceof TL_phone.TL_phoneCallDiscarded) {
+                                                        VoIPPreNotificationService.dismiss(ApplicationLoader.applicationContext, false);
+                                                    }
+                                                    if (VoIPService.callIShouldHavePutIntoIntent != null) {
+                                                        if (BuildVars.LOGS_ENABLED) {
+                                                            FileLog.d("Updated the call while the service is starting");
+                                                        }
+                                                        if (phoneCall.id == VoIPService.callIShouldHavePutIntoIntent.id) {
+                                                            if (phoneCall instanceof TL_phone.TL_phoneCallDiscarded) {
+                                                                phoneCall = null;
+                                                            }
+                                                            VoIPService.callIShouldHavePutIntoIntent = phoneCall;
+                                                            FileLog.e("(2) set VoIPService.callIShouldHavePutIntoIntent = " + VoIPService.callIShouldHavePutIntoIntent);
+                                                        }
+                                                    }
+                                                }
+                                            } else if (update instanceof TLRPC.TL_updateDialogUnreadMark) {
+                                                TLRPC.TL_updateDialogUnreadMark tL_updateDialogUnreadMark = (TLRPC.TL_updateDialogUnreadMark) update;
+                                                TLRPC.DialogPeer dialogPeer3 = tL_updateDialogUnreadMark.peer;
+                                                if (dialogPeer3 instanceof TLRPC.TL_dialogPeer) {
+                                                    TLRPC.Peer peer8 = ((TLRPC.TL_dialogPeer) dialogPeer3).peer;
+                                                    j4 = peer8.user_id;
+                                                    if (j4 == 0) {
+                                                        long j20 = peer8.chat_id;
+                                                        if (j20 == 0) {
+                                                            j20 = peer8.channel_id;
+                                                        }
+                                                        j4 = -j20;
+                                                    }
+                                                } else {
+                                                    j4 = 0;
+                                                }
+                                                getMessagesStorage().setDialogUnread(j4, tL_updateDialogUnreadMark.unread);
+                                                TLRPC.Dialog dialog4 = (TLRPC.Dialog) messagesController2.dialogs_dict.get(j4);
+                                                if (dialog4 != null) {
+                                                    boolean z15 = dialog4.unread_mark;
+                                                    boolean z16 = tL_updateDialogUnreadMark.unread;
+                                                    if (z15 != z16) {
+                                                        dialog4.unread_mark = z16;
+                                                        if (dialog4.unread_count == 0 && !messagesController2.isDialogMuted(j4, 0L)) {
+                                                            if (dialog4.unread_mark) {
+                                                                messagesController2.unreadUnmutedDialogs++;
+                                                            } else {
+                                                                messagesController2.unreadUnmutedDialogs--;
+                                                            }
+                                                        }
+                                                        i3 |= UPDATE_MASK_READ_DIALOG_MESSAGE;
+                                                        i15 |= DIALOG_FILTER_FLAG_EXCLUDE_READ;
+                                                    }
+                                                }
+                                            } else if (update instanceof TLRPC.TL_updateMessagePoll) {
+                                                TLRPC.TL_updateMessagePoll tL_updateMessagePoll = (TLRPC.TL_updateMessagePoll) update;
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdatePollResults, Long.valueOf(tL_updateMessagePoll.poll_id), tL_updateMessagePoll.poll, tL_updateMessagePoll.results);
+                                            } else if (update instanceof TLRPC.TL_updatePeerSettings) {
+                                                TLRPC.TL_updatePeerSettings tL_updatePeerSettings = (TLRPC.TL_updatePeerSettings) update;
+                                                TLRPC.Peer peer9 = tL_updatePeerSettings.peer;
+                                                if (peer9 instanceof TLRPC.TL_peerUser) {
+                                                    j3 = peer9.user_id;
+                                                } else {
+                                                    if (peer9 instanceof TLRPC.TL_peerChat) {
+                                                        j2 = peer9.chat_id;
+                                                    } else {
+                                                        j2 = peer9.channel_id;
+                                                    }
+                                                    j3 = -j2;
+                                                }
+                                                messagesController2.savePeerSettings(j3, tL_updatePeerSettings.settings, true);
+                                            } else if (update instanceof TLRPC.TL_updatePeerLocated) {
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.newPeopleNearbyAvailable, update);
+                                            } else if (update instanceof TLRPC.TL_updateMessageReactions) {
+                                                TLRPC.TL_updateMessageReactions tL_updateMessageReactions = (TLRPC.TL_updateMessageReactions) update;
+                                                long peerId = MessageObject.getPeerId(tL_updateMessageReactions.peer);
+                                                long pendingPaidReactions = StarsController.getInstance(messagesController2.currentAccount).getPendingPaidReactions(peerId, tL_updateMessageReactions.msg_id);
+                                                if (pendingPaidReactions != 0) {
+                                                    MessageObject.addPaidReactions(messagesController2.currentAccount, tL_updateMessageReactions.reactions, (int) pendingPaidReactions, StarsController.getInstance(messagesController2.currentAccount).getPaidReactionsDialogId(StarsController.MessageId.from(peerId, tL_updateMessageReactions.msg_id), tL_updateMessageReactions.reactions), true);
+                                                }
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(peerId), Integer.valueOf(tL_updateMessageReactions.msg_id), tL_updateMessageReactions.reactions);
+                                            } else if (update instanceof TLRPC.TL_updateMessageExtendedMedia) {
+                                                TLRPC.TL_updateMessageExtendedMedia tL_updateMessageExtendedMedia = (TLRPC.TL_updateMessageExtendedMedia) update;
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateExtendedMedia, Long.valueOf(DialogObject.getPeerDialogId(tL_updateMessageExtendedMedia.peer)), Integer.valueOf(tL_updateMessageExtendedMedia.msg_id), tL_updateMessageExtendedMedia.extended_media);
+                                            } else if (update instanceof TLRPC.TL_updateTheme) {
+                                                Theme.setThemeUploadInfo(null, null, (TLRPC.TL_theme) ((TLRPC.TL_updateTheme) update).theme, messagesController2.currentAccount, true);
+                                            } else if (update instanceof TLRPC.TL_updateDialogFilter) {
+                                                messagesController2.loadRemoteFilters(true);
+                                            } else if (update instanceof TLRPC.TL_updateDialogFilterOrder) {
+                                                messagesController2.loadRemoteFilters(true);
+                                            } else if (update instanceof TLRPC.TL_updateDialogFilters) {
+                                                messagesController2.loadRemoteFilters(true);
+                                            } else if (update instanceof TLRPC.TL_updateRecentEmojiStatuses) {
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.recentEmojiStatusesUpdate, new Object[0]);
+                                            } else if (update instanceof TLRPC.TL_updateWebViewResultSent) {
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.webViewResultSent, Long.valueOf(((TLRPC.TL_updateWebViewResultSent) update).query_id));
+                                            } else if (update instanceof TLRPC.TL_updateAttachMenuBots) {
+                                                getMediaDataController().loadAttachMenuBots(false, true);
+                                            } else if (update instanceof TL_bots.TL_updateBotMenuButton) {
+                                                TL_bots.TL_updateBotMenuButton tL_updateBotMenuButton = (TL_bots.TL_updateBotMenuButton) update;
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateBotMenuButton, Long.valueOf(tL_updateBotMenuButton.bot_id), tL_updateBotMenuButton.button);
+                                            } else if (update instanceof TLRPC.TL_updateReadChannelDiscussionInbox) {
+                                                TLRPC.TL_updateReadChannelDiscussionInbox tL_updateReadChannelDiscussionInbox = (TLRPC.TL_updateReadChannelDiscussionInbox) update;
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.threadMessagesRead, Long.valueOf(-tL_updateReadChannelDiscussionInbox.channel_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.top_msg_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.read_max_id), 0);
+                                                if ((tL_updateReadChannelDiscussionInbox.flags & 1) != 0) {
+                                                    getMessagesStorage().updateRepliesMaxReadId(tL_updateReadChannelDiscussionInbox.broadcast_id, tL_updateReadChannelDiscussionInbox.broadcast_post, tL_updateReadChannelDiscussionInbox.read_max_id, 0, true);
+                                                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.commentsRead, Long.valueOf(tL_updateReadChannelDiscussionInbox.broadcast_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.broadcast_post), Integer.valueOf(tL_updateReadChannelDiscussionInbox.read_max_id));
+                                                }
+                                            } else if (update instanceof TLRPC.TL_updateReadChannelDiscussionOutbox) {
+                                                TLRPC.TL_updateReadChannelDiscussionOutbox tL_updateReadChannelDiscussionOutbox = (TLRPC.TL_updateReadChannelDiscussionOutbox) update;
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.threadMessagesRead, Long.valueOf(-tL_updateReadChannelDiscussionOutbox.channel_id), Integer.valueOf(tL_updateReadChannelDiscussionOutbox.top_msg_id), 0, Integer.valueOf(tL_updateReadChannelDiscussionOutbox.read_max_id));
+                                            } else if (update instanceof TLRPC.TL_updateReadMonoForumInbox) {
+                                                TLRPC.TL_updateReadMonoForumInbox tL_updateReadMonoForumInbox = (TLRPC.TL_updateReadMonoForumInbox) update;
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.monoForumMessagesRead, Long.valueOf(-tL_updateReadMonoForumInbox.channel_id), Long.valueOf(DialogObject.getPeerDialogId(tL_updateReadMonoForumInbox.saved_peer_id)), Integer.valueOf(tL_updateReadMonoForumInbox.read_max_id), 0);
+                                                getMessagesStorage().updateRepliesMaxReadId(tL_updateReadMonoForumInbox.channel_id, DialogObject.getPeerDialogId(tL_updateReadMonoForumInbox.saved_peer_id), tL_updateReadMonoForumInbox.read_max_id, 0, true);
+                                            } else if (update instanceof TLRPC.TL_updateReadMonoForumOutbox) {
+                                                TLRPC.TL_updateReadMonoForumOutbox tL_updateReadMonoForumOutbox = (TLRPC.TL_updateReadMonoForumOutbox) update;
+                                                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.monoForumMessagesRead, Long.valueOf(-tL_updateReadMonoForumOutbox.channel_id), Long.valueOf(DialogObject.getPeerDialogId(tL_updateReadMonoForumOutbox.saved_peer_id)), 0, Integer.valueOf(tL_updateReadMonoForumOutbox.read_max_id));
+                                            } else if (update instanceof TLRPC.TL_updatePeerHistoryTTL) {
+                                                TLRPC.TL_updatePeerHistoryTTL tL_updatePeerHistoryTTL = (TLRPC.TL_updatePeerHistoryTTL) update;
+                                                long peerId2 = MessageObject.getPeerId(tL_updatePeerHistoryTTL.peer);
+                                                if (peerId2 > 0) {
+                                                    TLRPC.UserFull userFull2 = messagesController2.getUserFull(peerId2);
+                                                    if (userFull2 != null) {
+                                                        int i33 = tL_updatePeerHistoryTTL.ttl_period;
+                                                        userFull2.ttl_period = i33;
+                                                        if (i33 == 0) {
+                                                            userFull2.flags &= -16385;
+                                                        } else {
+                                                            userFull2.flags |= 16384;
+                                                        }
+                                                    }
+                                                    userFull = userFull2;
+                                                    chatFull = null;
+                                                } else {
+                                                    chatFull = messagesController2.getChatFull(-peerId2);
+                                                    if (chatFull != null) {
+                                                        int i34 = tL_updatePeerHistoryTTL.ttl_period;
+                                                        chatFull.ttl_period = i34;
+                                                        if (chatFull instanceof TLRPC.TL_channelFull) {
+                                                            if (i34 == 0) {
+                                                                chatFull.flags &= -16777217;
+                                                            } else {
+                                                                chatFull.flags |= 16777216;
+                                                            }
+                                                        } else if (i34 == 0) {
+                                                            chatFull.flags &= -16385;
+                                                        } else {
+                                                            chatFull.flags |= 16384;
+                                                        }
+                                                    }
+                                                    userFull = null;
+                                                }
+                                                if (chatFull != null) {
+                                                    NotificationCenter notificationCenter = getNotificationCenter();
+                                                    int i35 = NotificationCenter.chatInfoDidLoad;
+                                                    Boolean bool4 = Boolean.FALSE;
+                                                    notificationCenter.lambda$postNotificationNameOnUIThread$1(i35, chatFull, 0, bool4, bool4);
+                                                    getMessagesStorage().updateChatInfo(chatFull, false);
+                                                } else if (userFull != null) {
+                                                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(peerId2), userFull);
+                                                    getMessagesStorage().updateUserInfo(userFull, false);
+                                                }
+                                                getMessagesStorage().setDialogTtl(peerId2, tL_updatePeerHistoryTTL.ttl_period);
+                                                TLRPC.Dialog dialog5 = (TLRPC.Dialog) messagesController2.dialogs_dict.get(peerId2);
+                                                if (dialog5 != null) {
+                                                    dialog5.ttl_period = tL_updatePeerHistoryTTL.ttl_period;
+                                                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
+                                                }
+                                            } else if (update instanceof TLRPC.TL_updatePendingJoinRequests) {
+                                                getMemberRequestsController().onPendingRequestsUpdated((TLRPC.TL_updatePendingJoinRequests) update);
+                                            } else if (update instanceof TLRPC.TL_updateSavedRingtones) {
+                                                getMediaDataController().ringtoneDataStore.loadUserRingtones(true);
+                                            } else if (update instanceof TLRPC.TL_updateTranscribeAudio) {
+                                                FileLog.e("Received legacy TL_updateTranscribeAudio update");
+                                            } else if (update instanceof TLRPC.TL_updateTranscribedAudio) {
+                                                TLRPC.TL_updateTranscribedAudio tL_updateTranscribedAudio = (TLRPC.TL_updateTranscribedAudio) update;
+                                                if (BuildVars.LOGS_ENABLED) {
+                                                    FileLog.d("Transcription update received, pending=" + tL_updateTranscribedAudio.pending + " id=" + tL_updateTranscribedAudio.transcription_id + " text=" + tL_updateTranscribedAudio.text);
+                                                }
+                                                if ((!tL_updateTranscribedAudio.pending || !TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !TranscribeButton.finishTranscription(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
+                                                    getMessagesStorage().updateMessageVoiceTranscription(DialogObject.getPeerDialogId(tL_updateTranscribedAudio.peer), tL_updateTranscribedAudio.msg_id, tL_updateTranscribedAudio.text, tL_updateTranscribedAudio.transcription_id, !tL_updateTranscribedAudio.pending);
+                                                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.voiceTranscriptionUpdate, null, Long.valueOf(tL_updateTranscribedAudio.transcription_id), tL_updateTranscribedAudio.text, null, Boolean.valueOf(!tL_updateTranscribedAudio.pending));
+                                                }
+                                            } else if (update instanceof TLRPC.TL_updateSentStoryReaction) {
+                                                TLRPC.TL_updateSentStoryReaction tL_updateSentStoryReaction = (TLRPC.TL_updateSentStoryReaction) update;
+                                                getStoriesController().updateStoryReaction(DialogObject.getPeerDialogId(tL_updateSentStoryReaction.peer), tL_updateSentStoryReaction.story_id, tL_updateSentStoryReaction.reaction);
+                                            } else if (update instanceof TLRPC.TL_updateChannelViewForumAsMessages) {
+                                                TLRPC.TL_updateChannelViewForumAsMessages tL_updateChannelViewForumAsMessages = (TLRPC.TL_updateChannelViewForumAsMessages) update;
+                                                TLRPC.ChatFull chatFull3 = messagesController2.getChatFull(tL_updateChannelViewForumAsMessages.channel_id);
+                                                if (chatFull3 != null) {
+                                                    boolean z17 = chatFull3.view_forum_as_messages;
+                                                    boolean z18 = tL_updateChannelViewForumAsMessages.enabled;
+                                                    if (z17 != z18) {
+                                                        chatFull3.view_forum_as_messages = z18;
+                                                        if (z18) {
+                                                            chatFull3.flags2 |= 64;
+                                                        } else {
+                                                            chatFull3.flags2 &= -65;
+                                                        }
+                                                        getMessagesStorage().updateChatInfo(chatFull3, false);
+                                                    }
+                                                } else {
+                                                    getMessagesController().loadFullChat(tL_updateChannelViewForumAsMessages.channel_id, 0, true);
+                                                }
+                                                TLRPC.Dialog dialog6 = messagesController2.getDialog(-tL_updateChannelViewForumAsMessages.channel_id);
+                                                if (dialog6 != null) {
+                                                    boolean z19 = dialog6.view_forum_as_messages;
+                                                    boolean z20 = tL_updateChannelViewForumAsMessages.enabled;
+                                                    if (z19 != z20) {
+                                                        dialog6.view_forum_as_messages = z20;
+                                                        getMessagesStorage().setDialogViewThreadAsMessages(-tL_updateChannelViewForumAsMessages.channel_id, tL_updateChannelViewForumAsMessages.enabled);
+                                                    }
+                                                } else {
+                                                    getMessagesStorage().setDialogViewThreadAsMessages(-tL_updateChannelViewForumAsMessages.channel_id, tL_updateChannelViewForumAsMessages.enabled);
+                                                }
+                                            } else if ((update instanceof TLRPC.TL_updatePinnedSavedDialogs) || (update instanceof TLRPC.TL_updateSavedDialogPinned)) {
+                                                getSavedMessagesController().processUpdate(update);
+                                            } else if (!QuickRepliesController.getInstance(messagesController2.currentAccount).processUpdate(update, null, 0)) {
+                                                if (update instanceof TLRPC.TL_updatePaidReactionPrivacy) {
+                                                    SharedPreferences.Editor edit = messagesController2.mainPreferences.edit();
+                                                    long currentTimeMillis = System.currentTimeMillis();
+                                                    messagesController2.paidReactionsPrivacyTime = currentTimeMillis;
+                                                    SharedPreferences.Editor putLong = edit.putLong("paidReactionsAnonymousTime", currentTimeMillis);
+                                                    long dialogId = ((TLRPC.TL_updatePaidReactionPrivacy) update).privacy.getDialogId();
+                                                    messagesController2.paidReactionsPrivacy = Long.valueOf(dialogId);
+                                                    putLong.putLong("paidReactionsDialogId", dialogId).apply();
+                                                    messagesController2.loadingArePaidReactionsAnonymous = false;
+                                                } else if (update instanceof TLRPC.TL_updateGroupCallChainBlocks) {
+                                                    VoIPService sharedInstance3 = VoIPService.getSharedInstance();
+                                                    if (sharedInstance3 != null && (conferenceCall = sharedInstance3.conference) != null) {
+                                                        conferenceCall.applyUpdate(null, (TLRPC.TL_updateGroupCallChainBlocks) update, true, null);
+                                                    }
+                                                } else {
+                                                    ApplicationLoader applicationLoader = ApplicationLoader.applicationLoaderInstance;
+                                                    if (applicationLoader != null) {
+                                                        applicationLoader.processUpdate(messagesController2.currentAccount, update);
+                                                    }
+                                                }
+                                            }
                                         }
-                                        long j18 = j16;
-                                        TLRPC.Peer peer6 = tL_updateDraftMessage.saved_peer_id;
-                                        getMediaDataController().saveDraft(j18, peer6 != null ? DialogObject.getPeerDialogId(peer6) : tL_updateDraftMessage.top_msg_id, tL_updateDraftMessage.draft, null, true);
-                                        z9 = true;
                                         arrayList9 = arrayList;
                                         i14 = i9 + 1;
                                         size = i10;
                                         arrayList11 = arrayList7;
                                         i13 = 0;
-                                    } else if (update instanceof TL_stories.TL_updateStoriesStealthMode) {
-                                        getStoriesController().setStealthMode(((TL_stories.TL_updateStoriesStealthMode) update).stealth_mode);
-                                    } else if (update instanceof TLRPC.TL_updateReadFeaturedStickers) {
-                                        getMediaDataController().markFeaturedStickersAsRead(false, false);
-                                    } else if (update instanceof TLRPC.TL_updateReadFeaturedEmojiStickers) {
-                                        getMediaDataController().markFeaturedStickersAsRead(true, false);
-                                    } else if (update instanceof TLRPC.TL_updateMoveStickerSetToTop) {
-                                        TLRPC.TL_updateMoveStickerSetToTop tL_updateMoveStickerSetToTop = (TLRPC.TL_updateMoveStickerSetToTop) update;
-                                        getMediaDataController().moveStickerSetToTop(tL_updateMoveStickerSetToTop.stickerset, tL_updateMoveStickerSetToTop.emojis, tL_updateMoveStickerSetToTop.masks);
-                                    } else if (update instanceof TLRPC.TL_updatePinnedForumTopic) {
-                                        TLRPC.TL_updatePinnedForumTopic tL_updatePinnedForumTopic = (TLRPC.TL_updatePinnedForumTopic) update;
-                                        long j19 = -DialogObject.getPeerDialogId(tL_updatePinnedForumTopic.peer);
-                                        ArrayList<Integer> currentPinnedOrder = getTopicsController().getCurrentPinnedOrder(j19);
-                                        currentPinnedOrder.remove(Integer.valueOf(tL_updatePinnedForumTopic.topic_id));
-                                        if (tL_updatePinnedForumTopic.pinned) {
-                                            currentPinnedOrder.add(0, Integer.valueOf(tL_updatePinnedForumTopic.topic_id));
-                                        }
-                                        getTopicsController().applyPinnedOrder(j19, currentPinnedOrder);
-                                    } else if (update instanceof TLRPC.TL_updatePinnedForumTopics) {
-                                        TLRPC.TL_updatePinnedForumTopics tL_updatePinnedForumTopics = (TLRPC.TL_updatePinnedForumTopics) update;
-                                        long peerDialogId3 = DialogObject.getPeerDialogId(tL_updatePinnedForumTopics.peer);
-                                        if ((tL_updatePinnedForumTopics.flags & 1) != 0) {
-                                            getTopicsController().applyPinnedOrder(-peerDialogId3, tL_updatePinnedForumTopics.order);
-                                        } else {
-                                            getTopicsController().reloadTopics(-peerDialogId3, false);
-                                        }
-                                    } else if (update instanceof TLRPC.TL_updatePhoneCallSignalingData) {
-                                        TLRPC.TL_updatePhoneCallSignalingData tL_updatePhoneCallSignalingData = (TLRPC.TL_updatePhoneCallSignalingData) update;
-                                        VoIPService sharedInstance = VoIPService.getSharedInstance();
-                                        if (sharedInstance != null) {
-                                            sharedInstance.onSignalingData(tL_updatePhoneCallSignalingData);
-                                        }
-                                    } else if (update instanceof TLRPC.TL_updateGroupCallParticipants) {
-                                        TLRPC.TL_updateGroupCallParticipants tL_updateGroupCallParticipants = (TLRPC.TL_updateGroupCallParticipants) update;
-                                        ChatObject.Call call = (ChatObject.Call) this.groupCalls.get(tL_updateGroupCallParticipants.call.id);
-                                        if (call != null) {
-                                            call.processParticipantsUpdate(tL_updateGroupCallParticipants, false);
-                                        }
-                                        if (VoIPService.getSharedInstance() != null) {
-                                            VoIPService.getSharedInstance().onGroupCallParticipantsUpdate(tL_updateGroupCallParticipants);
-                                        }
-                                    } else if (update instanceof TLRPC.TL_updateGroupCall) {
-                                        TLRPC.TL_updateGroupCall tL_updateGroupCall3 = (TLRPC.TL_updateGroupCall) update;
-                                        if (tL_updateGroupCall3.live_story) {
-                                            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.storyGroupCallUpdated, Long.valueOf(DialogObject.getPeerDialogId(tL_updateGroupCall3.peer)), tL_updateGroupCall3.call);
-                                        }
-                                        ChatObject.Call call2 = (ChatObject.Call) this.groupCalls.get(tL_updateGroupCall3.call.id);
-                                        if (call2 != null) {
-                                            call2.processGroupCallUpdate(tL_updateGroupCall3);
-                                            TLRPC.Chat chat4 = getChat(Long.valueOf(call2.chatId));
-                                            if (chat4 != null) {
-                                                chat4.call_active = tL_updateGroupCall3.call instanceof TLRPC.TL_groupCall;
-                                            }
-                                        } else {
-                                            TLRPC.Peer peer7 = tL_updateGroupCall3.peer;
-                                            if (peer7 != null && (chatFull2 = getChatFull((j5 = -DialogObject.getPeerDialogId(peer7)))) != null && ((inputGroupCall = chatFull2.call) == null || inputGroupCall.id != tL_updateGroupCall3.call.id)) {
-                                                loadFullChat(j5, 0, true);
-                                            }
-                                        }
-                                        if (VoIPService.getSharedInstance() != null) {
-                                            VoIPService.getSharedInstance().onGroupCallUpdated(tL_updateGroupCall3.call);
-                                        }
-                                    } else if (update instanceof TLRPC.TL_updatePhoneCall) {
-                                        TL_phone.PhoneCall phoneCall = ((TLRPC.TL_updatePhoneCall) update).phone_call;
-                                        VoIPService sharedInstance2 = VoIPService.getSharedInstance();
-                                        if (BuildVars.LOGS_ENABLED) {
-                                            FileLog.d("Received call in update: " + phoneCall);
-                                            FileLog.d("call id " + phoneCall.id);
-                                        }
-                                        VoIPDebugToSend voIPDebugToSend = this.voipDebug;
-                                        if (voIPDebugToSend != null && (phoneCall instanceof TL_phone.TL_phoneCallDiscarded)) {
-                                            TL_phone.TL_phoneCallDiscarded tL_phoneCallDiscarded = (TL_phone.TL_phoneCallDiscarded) phoneCall;
-                                            voIPDebugToSend.done(tL_phoneCallDiscarded.id, tL_phoneCallDiscarded.need_debug);
-                                        }
-                                        if (phoneCall instanceof TL_phone.phoneCallRequested) {
-                                            if (phoneCall.date + (this.callRingTimeout / MediaDataController.MAX_STYLE_RUNS_COUNT) < getConnectionsManager().getCurrentTime()) {
-                                                if (BuildVars.LOGS_ENABLED) {
-                                                    FileLog.d("ignoring too old call");
-                                                }
-                                            } else {
-                                                int i31 = Build.VERSION.SDK_INT;
-                                                if (NotificationManagerCompat.from(ApplicationLoader.applicationContext).areNotificationsEnabled()) {
-                                                    z5 = false;
-                                                } else if (!ApplicationLoader.mainInterfacePaused && ApplicationLoader.isScreenOn) {
-                                                    z5 = true;
-                                                } else if (BuildVars.LOGS_ENABLED) {
-                                                    FileLog.d("Ignoring incoming call because notifications are disabled in system");
-                                                }
-                                                TelephonyManager telephonyManager = (TelephonyManager) ApplicationLoader.applicationContext.getSystemService("phone");
-                                                if (i31 >= 31) {
-                                                    try {
-                                                        if (ContextCompat.checkSelfPermission(ApplicationLoader.applicationContext, "android.permission.READ_PHONE_STATE") == 0) {
-                                                            callStateForSubscription = telephonyManager.getCallStateForSubscription();
-                                                            if (callStateForSubscription == 0) {
-                                                            }
-                                                        }
-                                                    } catch (Throwable th) {
-                                                        FileLog.e(th);
-                                                    }
-                                                    z6 = true;
-                                                    FileLog.e("updatePhoneCall: svc=" + sharedInstance2 + " callIShouldHavePutIntoIntent=" + VoIPService.callIShouldHavePutIntoIntent + " callStateIsIdle=" + z6);
-                                                    if (sharedInstance2 == null || VoIPService.callIShouldHavePutIntoIntent != null || !z6) {
-                                                        if (sharedInstance2 != null || sharedInstance2.getAccount() == this.currentAccount || sharedInstance2.getUser() == null || sharedInstance2.getUser().id != getUserConfig().getClientUserId()) {
-                                                            if (BuildVars.LOGS_ENABLED) {
-                                                                FileLog.d("Auto-declining call " + phoneCall.id + " because there's already active one");
-                                                            }
-                                                            TL_phone.discardCall discardcall = new TL_phone.discardCall();
-                                                            TLRPC.TL_inputPhoneCall tL_inputPhoneCall = new TLRPC.TL_inputPhoneCall();
-                                                            discardcall.peer = tL_inputPhoneCall;
-                                                            tL_inputPhoneCall.access_hash = phoneCall.access_hash;
-                                                            tL_inputPhoneCall.id = phoneCall.id;
-                                                            discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
-                                                            FileLog.e("discardCall " + discardcall.reason);
-                                                            getConnectionsManager().sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda236
-                                                                @Override // org.telegram.tgnet.RequestDelegate
-                                                                public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                                                    MessagesController.this.lambda$processUpdateArray$379(tLObject, tL_error);
-                                                                }
-                                                            });
-                                                        }
-                                                    } else {
-                                                        if (BuildVars.LOGS_ENABLED) {
-                                                            FileLog.d("Starting service for call " + phoneCall.id);
-                                                        }
-                                                        VoIPService.callIShouldHavePutIntoIntent = phoneCall;
-                                                        FileLog.e("set VoIPService.callIShouldHavePutIntoIntent = " + phoneCall);
-                                                        Intent intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) VoIPService.class);
-                                                        intent.putExtra("is_outgoing", false);
-                                                        intent.putExtra("user_id", phoneCall.participant_id == getUserConfig().getClientUserId() ? phoneCall.admin_id : phoneCall.participant_id);
-                                                        intent.putExtra("account", this.currentAccount);
-                                                        intent.putExtra("notifications_disabled", z5);
-                                                        try {
-                                                            int i32 = Build.VERSION.SDK_INT;
-                                                            if (i32 >= 33) {
-                                                                intent.putExtra("accept", true);
-                                                                VoIPPreNotificationService.show(ApplicationLoader.applicationContext, intent, phoneCall);
-                                                            } else if (!z5 && i32 >= 26) {
-                                                                ApplicationLoader.applicationContext.startForegroundService(intent);
-                                                            } else {
-                                                                ApplicationLoader.applicationContext.startService(intent);
-                                                            }
-                                                            if (ApplicationLoader.mainInterfacePaused || !ApplicationLoader.isScreenOn) {
-                                                                this.ignoreSetOnline = true;
-                                                            }
-                                                        } catch (Throwable th2) {
-                                                            FileLog.e(th2);
-                                                        }
-                                                    }
-                                                }
-                                                z6 = false;
-                                                FileLog.e("updatePhoneCall: svc=" + sharedInstance2 + " callIShouldHavePutIntoIntent=" + VoIPService.callIShouldHavePutIntoIntent + " callStateIsIdle=" + z6);
-                                                if (sharedInstance2 == null) {
-                                                }
-                                                if (sharedInstance2 != null) {
-                                                }
-                                                if (BuildVars.LOGS_ENABLED) {
-                                                }
-                                                TL_phone.discardCall discardcall2 = new TL_phone.discardCall();
-                                                TLRPC.TL_inputPhoneCall tL_inputPhoneCall2 = new TLRPC.TL_inputPhoneCall();
-                                                discardcall2.peer = tL_inputPhoneCall2;
-                                                tL_inputPhoneCall2.access_hash = phoneCall.access_hash;
-                                                tL_inputPhoneCall2.id = phoneCall.id;
-                                                discardcall2.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
-                                                FileLog.e("discardCall " + discardcall2.reason);
-                                                getConnectionsManager().sendRequest(discardcall2, new RequestDelegate() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda236
-                                                    @Override // org.telegram.tgnet.RequestDelegate
-                                                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                                        MessagesController.this.lambda$processUpdateArray$379(tLObject, tL_error);
-                                                    }
-                                                });
-                                            }
-                                        } else if (sharedInstance2 != null && sharedInstance2.getAccount() == this.currentAccount && phoneCall != null) {
-                                            sharedInstance2.onCallUpdated(phoneCall);
-                                        } else {
-                                            if (phoneCall instanceof TL_phone.TL_phoneCallDiscarded) {
-                                                VoIPPreNotificationService.dismiss(ApplicationLoader.applicationContext, false);
-                                            }
-                                            if (VoIPService.callIShouldHavePutIntoIntent != null) {
-                                                if (BuildVars.LOGS_ENABLED) {
-                                                    FileLog.d("Updated the call while the service is starting");
-                                                }
-                                                if (phoneCall.id == VoIPService.callIShouldHavePutIntoIntent.id) {
-                                                    if (phoneCall instanceof TL_phone.TL_phoneCallDiscarded) {
-                                                        phoneCall = null;
-                                                    }
-                                                    VoIPService.callIShouldHavePutIntoIntent = phoneCall;
-                                                    FileLog.e("(2) set VoIPService.callIShouldHavePutIntoIntent = " + VoIPService.callIShouldHavePutIntoIntent);
-                                                }
-                                            }
-                                        }
-                                    } else if (update instanceof TLRPC.TL_updateDialogUnreadMark) {
-                                        TLRPC.TL_updateDialogUnreadMark tL_updateDialogUnreadMark = (TLRPC.TL_updateDialogUnreadMark) update;
-                                        TLRPC.DialogPeer dialogPeer3 = tL_updateDialogUnreadMark.peer;
-                                        if (dialogPeer3 instanceof TLRPC.TL_dialogPeer) {
-                                            TLRPC.Peer peer8 = ((TLRPC.TL_dialogPeer) dialogPeer3).peer;
-                                            j4 = peer8.user_id;
-                                            if (j4 == 0) {
-                                                long j20 = peer8.chat_id;
-                                                if (j20 == 0) {
-                                                    j20 = peer8.channel_id;
-                                                }
-                                                j4 = -j20;
-                                            }
-                                        } else {
-                                            j4 = 0;
-                                        }
-                                        getMessagesStorage().setDialogUnread(j4, tL_updateDialogUnreadMark.unread);
-                                        TLRPC.Dialog dialog4 = (TLRPC.Dialog) this.dialogs_dict.get(j4);
-                                        if (dialog4 != null) {
-                                            boolean z15 = dialog4.unread_mark;
-                                            boolean z16 = tL_updateDialogUnreadMark.unread;
-                                            if (z15 != z16) {
-                                                dialog4.unread_mark = z16;
-                                                if (dialog4.unread_count == 0 && !isDialogMuted(j4, 0L)) {
-                                                    if (dialog4.unread_mark) {
-                                                        this.unreadUnmutedDialogs++;
-                                                    } else {
-                                                        this.unreadUnmutedDialogs--;
-                                                    }
-                                                }
-                                                i3 |= UPDATE_MASK_READ_DIALOG_MESSAGE;
-                                                i15 |= DIALOG_FILTER_FLAG_EXCLUDE_READ;
-                                            }
-                                        }
-                                    } else if (update instanceof TLRPC.TL_updateMessagePoll) {
-                                        TLRPC.TL_updateMessagePoll tL_updateMessagePoll = (TLRPC.TL_updateMessagePoll) update;
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdatePollResults, Long.valueOf(tL_updateMessagePoll.poll_id), tL_updateMessagePoll.poll, tL_updateMessagePoll.results);
-                                    } else if (update instanceof TLRPC.TL_updatePeerSettings) {
-                                        TLRPC.TL_updatePeerSettings tL_updatePeerSettings = (TLRPC.TL_updatePeerSettings) update;
-                                        TLRPC.Peer peer9 = tL_updatePeerSettings.peer;
-                                        if (peer9 instanceof TLRPC.TL_peerUser) {
-                                            j3 = peer9.user_id;
-                                        } else {
-                                            if (peer9 instanceof TLRPC.TL_peerChat) {
-                                                j2 = peer9.chat_id;
-                                            } else {
-                                                j2 = peer9.channel_id;
-                                            }
-                                            j3 = -j2;
-                                        }
-                                        savePeerSettings(j3, tL_updatePeerSettings.settings, true);
-                                    } else if (update instanceof TLRPC.TL_updatePeerLocated) {
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.newPeopleNearbyAvailable, update);
-                                    } else if (update instanceof TLRPC.TL_updateMessageReactions) {
-                                        TLRPC.TL_updateMessageReactions tL_updateMessageReactions = (TLRPC.TL_updateMessageReactions) update;
-                                        long peerId = MessageObject.getPeerId(tL_updateMessageReactions.peer);
-                                        long pendingPaidReactions = StarsController.getInstance(this.currentAccount).getPendingPaidReactions(peerId, tL_updateMessageReactions.msg_id);
-                                        if (pendingPaidReactions != 0) {
-                                            MessageObject.addPaidReactions(this.currentAccount, tL_updateMessageReactions.reactions, (int) pendingPaidReactions, StarsController.getInstance(this.currentAccount).getPaidReactionsDialogId(StarsController.MessageId.from(peerId, tL_updateMessageReactions.msg_id), tL_updateMessageReactions.reactions), true);
-                                        }
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(peerId), Integer.valueOf(tL_updateMessageReactions.msg_id), tL_updateMessageReactions.reactions);
-                                    } else if (update instanceof TLRPC.TL_updateMessageExtendedMedia) {
-                                        TLRPC.TL_updateMessageExtendedMedia tL_updateMessageExtendedMedia = (TLRPC.TL_updateMessageExtendedMedia) update;
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateExtendedMedia, Long.valueOf(DialogObject.getPeerDialogId(tL_updateMessageExtendedMedia.peer)), Integer.valueOf(tL_updateMessageExtendedMedia.msg_id), tL_updateMessageExtendedMedia.extended_media);
-                                    } else if (update instanceof TLRPC.TL_updateTheme) {
-                                        Theme.setThemeUploadInfo(null, null, (TLRPC.TL_theme) ((TLRPC.TL_updateTheme) update).theme, this.currentAccount, true);
-                                    } else if (update instanceof TLRPC.TL_updateDialogFilter) {
-                                        loadRemoteFilters(true);
-                                    } else if (update instanceof TLRPC.TL_updateDialogFilterOrder) {
-                                        loadRemoteFilters(true);
-                                    } else if (update instanceof TLRPC.TL_updateDialogFilters) {
-                                        loadRemoteFilters(true);
-                                    } else if (update instanceof TLRPC.TL_updateRecentEmojiStatuses) {
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.recentEmojiStatusesUpdate, new Object[0]);
-                                    } else if (update instanceof TLRPC.TL_updateWebViewResultSent) {
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.webViewResultSent, Long.valueOf(((TLRPC.TL_updateWebViewResultSent) update).query_id));
-                                    } else if (update instanceof TLRPC.TL_updateAttachMenuBots) {
-                                        getMediaDataController().loadAttachMenuBots(false, true);
-                                    } else if (update instanceof TL_bots.TL_updateBotMenuButton) {
-                                        TL_bots.TL_updateBotMenuButton tL_updateBotMenuButton = (TL_bots.TL_updateBotMenuButton) update;
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateBotMenuButton, Long.valueOf(tL_updateBotMenuButton.bot_id), tL_updateBotMenuButton.button);
-                                    } else if (update instanceof TLRPC.TL_updateReadChannelDiscussionInbox) {
-                                        TLRPC.TL_updateReadChannelDiscussionInbox tL_updateReadChannelDiscussionInbox = (TLRPC.TL_updateReadChannelDiscussionInbox) update;
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.threadMessagesRead, Long.valueOf(-tL_updateReadChannelDiscussionInbox.channel_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.top_msg_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.read_max_id), 0);
-                                        if ((tL_updateReadChannelDiscussionInbox.flags & 1) != 0) {
-                                            getMessagesStorage().updateRepliesMaxReadId(tL_updateReadChannelDiscussionInbox.broadcast_id, tL_updateReadChannelDiscussionInbox.broadcast_post, tL_updateReadChannelDiscussionInbox.read_max_id, 0, true);
-                                            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.commentsRead, Long.valueOf(tL_updateReadChannelDiscussionInbox.broadcast_id), Integer.valueOf(tL_updateReadChannelDiscussionInbox.broadcast_post), Integer.valueOf(tL_updateReadChannelDiscussionInbox.read_max_id));
-                                        }
-                                    } else if (update instanceof TLRPC.TL_updateReadChannelDiscussionOutbox) {
-                                        TLRPC.TL_updateReadChannelDiscussionOutbox tL_updateReadChannelDiscussionOutbox = (TLRPC.TL_updateReadChannelDiscussionOutbox) update;
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.threadMessagesRead, Long.valueOf(-tL_updateReadChannelDiscussionOutbox.channel_id), Integer.valueOf(tL_updateReadChannelDiscussionOutbox.top_msg_id), 0, Integer.valueOf(tL_updateReadChannelDiscussionOutbox.read_max_id));
-                                    } else if (update instanceof TLRPC.TL_updateReadMonoForumInbox) {
-                                        TLRPC.TL_updateReadMonoForumInbox tL_updateReadMonoForumInbox = (TLRPC.TL_updateReadMonoForumInbox) update;
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.monoForumMessagesRead, Long.valueOf(-tL_updateReadMonoForumInbox.channel_id), Long.valueOf(DialogObject.getPeerDialogId(tL_updateReadMonoForumInbox.saved_peer_id)), Integer.valueOf(tL_updateReadMonoForumInbox.read_max_id), 0);
-                                        getMessagesStorage().updateRepliesMaxReadId(tL_updateReadMonoForumInbox.channel_id, DialogObject.getPeerDialogId(tL_updateReadMonoForumInbox.saved_peer_id), tL_updateReadMonoForumInbox.read_max_id, 0, true);
-                                    } else if (update instanceof TLRPC.TL_updateReadMonoForumOutbox) {
-                                        TLRPC.TL_updateReadMonoForumOutbox tL_updateReadMonoForumOutbox = (TLRPC.TL_updateReadMonoForumOutbox) update;
-                                        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.monoForumMessagesRead, Long.valueOf(-tL_updateReadMonoForumOutbox.channel_id), Long.valueOf(DialogObject.getPeerDialogId(tL_updateReadMonoForumOutbox.saved_peer_id)), 0, Integer.valueOf(tL_updateReadMonoForumOutbox.read_max_id));
-                                    } else if (update instanceof TLRPC.TL_updatePeerHistoryTTL) {
-                                        TLRPC.TL_updatePeerHistoryTTL tL_updatePeerHistoryTTL = (TLRPC.TL_updatePeerHistoryTTL) update;
-                                        long peerId2 = MessageObject.getPeerId(tL_updatePeerHistoryTTL.peer);
-                                        if (peerId2 > 0) {
-                                            TLRPC.UserFull userFull2 = getUserFull(peerId2);
-                                            if (userFull2 != null) {
-                                                int i33 = tL_updatePeerHistoryTTL.ttl_period;
-                                                userFull2.ttl_period = i33;
-                                                if (i33 == 0) {
-                                                    userFull2.flags &= -16385;
-                                                } else {
-                                                    userFull2.flags |= 16384;
-                                                }
-                                            }
-                                            userFull = userFull2;
-                                            chatFull = null;
-                                        } else {
-                                            chatFull = getChatFull(-peerId2);
-                                            if (chatFull != null) {
-                                                int i34 = tL_updatePeerHistoryTTL.ttl_period;
-                                                chatFull.ttl_period = i34;
-                                                if (chatFull instanceof TLRPC.TL_channelFull) {
-                                                    if (i34 == 0) {
-                                                        chatFull.flags &= -16777217;
-                                                    } else {
-                                                        chatFull.flags |= 16777216;
-                                                    }
-                                                } else if (i34 == 0) {
-                                                    chatFull.flags &= -16385;
-                                                } else {
-                                                    chatFull.flags |= 16384;
-                                                }
-                                            }
-                                            userFull = null;
-                                        }
-                                        if (chatFull != null) {
-                                            NotificationCenter notificationCenter = getNotificationCenter();
-                                            int i35 = NotificationCenter.chatInfoDidLoad;
-                                            Boolean bool4 = Boolean.FALSE;
-                                            notificationCenter.lambda$postNotificationNameOnUIThread$1(i35, chatFull, 0, bool4, bool4);
-                                            getMessagesStorage().updateChatInfo(chatFull, false);
-                                        } else if (userFull != null) {
-                                            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(peerId2), userFull);
-                                            getMessagesStorage().updateUserInfo(userFull, false);
-                                        }
-                                        getMessagesStorage().setDialogTtl(peerId2, tL_updatePeerHistoryTTL.ttl_period);
-                                        TLRPC.Dialog dialog5 = (TLRPC.Dialog) this.dialogs_dict.get(peerId2);
-                                        if (dialog5 != null) {
-                                            dialog5.ttl_period = tL_updatePeerHistoryTTL.ttl_period;
-                                            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
-                                        }
-                                    } else if (update instanceof TLRPC.TL_updatePendingJoinRequests) {
-                                        getMemberRequestsController().onPendingRequestsUpdated((TLRPC.TL_updatePendingJoinRequests) update);
-                                    } else if (update instanceof TLRPC.TL_updateSavedRingtones) {
-                                        getMediaDataController().ringtoneDataStore.loadUserRingtones(true);
-                                    } else if (update instanceof TLRPC.TL_updateTranscribeAudio) {
-                                        FileLog.e("Received legacy TL_updateTranscribeAudio update");
-                                    } else if (update instanceof TLRPC.TL_updateTranscribedAudio) {
-                                        TLRPC.TL_updateTranscribedAudio tL_updateTranscribedAudio = (TLRPC.TL_updateTranscribedAudio) update;
-                                        if (BuildVars.LOGS_ENABLED) {
-                                            FileLog.d("Transcription update received, pending=" + tL_updateTranscribedAudio.pending + " id=" + tL_updateTranscribedAudio.transcription_id + " text=" + tL_updateTranscribedAudio.text);
-                                        }
-                                        if ((!tL_updateTranscribedAudio.pending || !TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !TranscribeButton.finishTranscription(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
-                                            getMessagesStorage().updateMessageVoiceTranscription(DialogObject.getPeerDialogId(tL_updateTranscribedAudio.peer), tL_updateTranscribedAudio.msg_id, tL_updateTranscribedAudio.text, tL_updateTranscribedAudio.transcription_id, !tL_updateTranscribedAudio.pending);
-                                            getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.voiceTranscriptionUpdate, null, Long.valueOf(tL_updateTranscribedAudio.transcription_id), tL_updateTranscribedAudio.text, null, Boolean.valueOf(!tL_updateTranscribedAudio.pending));
-                                        }
-                                    } else if (update instanceof TLRPC.TL_updateSentStoryReaction) {
-                                        TLRPC.TL_updateSentStoryReaction tL_updateSentStoryReaction = (TLRPC.TL_updateSentStoryReaction) update;
-                                        getStoriesController().updateStoryReaction(DialogObject.getPeerDialogId(tL_updateSentStoryReaction.peer), tL_updateSentStoryReaction.story_id, tL_updateSentStoryReaction.reaction);
-                                    } else if (update instanceof TLRPC.TL_updateChannelViewForumAsMessages) {
-                                        TLRPC.TL_updateChannelViewForumAsMessages tL_updateChannelViewForumAsMessages = (TLRPC.TL_updateChannelViewForumAsMessages) update;
-                                        TLRPC.ChatFull chatFull3 = getChatFull(tL_updateChannelViewForumAsMessages.channel_id);
-                                        if (chatFull3 != null) {
-                                            boolean z17 = chatFull3.view_forum_as_messages;
-                                            boolean z18 = tL_updateChannelViewForumAsMessages.enabled;
-                                            if (z17 != z18) {
-                                                chatFull3.view_forum_as_messages = z18;
-                                                if (z18) {
-                                                    chatFull3.flags2 |= 64;
-                                                } else {
-                                                    chatFull3.flags2 &= -65;
-                                                }
-                                                getMessagesStorage().updateChatInfo(chatFull3, false);
-                                            }
-                                        } else {
-                                            getMessagesController().loadFullChat(tL_updateChannelViewForumAsMessages.channel_id, 0, true);
-                                        }
-                                        TLRPC.Dialog dialog6 = getDialog(-tL_updateChannelViewForumAsMessages.channel_id);
-                                        if (dialog6 != null) {
-                                            boolean z19 = dialog6.view_forum_as_messages;
-                                            boolean z20 = tL_updateChannelViewForumAsMessages.enabled;
-                                            if (z19 != z20) {
-                                                dialog6.view_forum_as_messages = z20;
-                                                getMessagesStorage().setDialogViewThreadAsMessages(-tL_updateChannelViewForumAsMessages.channel_id, tL_updateChannelViewForumAsMessages.enabled);
-                                            }
-                                        } else {
-                                            getMessagesStorage().setDialogViewThreadAsMessages(-tL_updateChannelViewForumAsMessages.channel_id, tL_updateChannelViewForumAsMessages.enabled);
-                                        }
-                                    } else if ((update instanceof TLRPC.TL_updatePinnedSavedDialogs) || (update instanceof TLRPC.TL_updateSavedDialogPinned)) {
-                                        getSavedMessagesController().processUpdate(update);
-                                    } else if (!QuickRepliesController.getInstance(this.currentAccount).processUpdate(update, null, 0)) {
-                                        if (update instanceof TLRPC.TL_updatePaidReactionPrivacy) {
-                                            SharedPreferences.Editor edit = this.mainPreferences.edit();
-                                            long currentTimeMillis = System.currentTimeMillis();
-                                            this.paidReactionsPrivacyTime = currentTimeMillis;
-                                            SharedPreferences.Editor putLong = edit.putLong("paidReactionsAnonymousTime", currentTimeMillis);
-                                            long dialogId = ((TLRPC.TL_updatePaidReactionPrivacy) update).privacy.getDialogId();
-                                            this.paidReactionsPrivacy = Long.valueOf(dialogId);
-                                            putLong.putLong("paidReactionsDialogId", dialogId).apply();
-                                            this.loadingArePaidReactionsAnonymous = false;
-                                        } else if (update instanceof TLRPC.TL_updateGroupCallChainBlocks) {
-                                            VoIPService sharedInstance3 = VoIPService.getSharedInstance();
-                                            if (sharedInstance3 != null && (conferenceCall = sharedInstance3.conference) != null) {
-                                                conferenceCall.applyUpdate(null, (TLRPC.TL_updateGroupCallChainBlocks) update, true, null);
-                                            }
-                                        } else {
-                                            ApplicationLoader applicationLoader = ApplicationLoader.applicationLoaderInstance;
-                                            if (applicationLoader != null) {
-                                                applicationLoader.processUpdate(this.currentAccount, update);
-                                            }
-                                        }
                                     }
                                 }
-                                arrayList9 = arrayList;
-                                i14 = i9 + 1;
-                                size = i10;
-                                arrayList11 = arrayList7;
-                                i13 = 0;
                             }
+                            i9 = i14;
+                            arrayList7 = arrayList11;
+                            i10 = i8;
                         }
                     }
                     i9 = i14;
                     arrayList7 = arrayList11;
-                    i10 = i8;
+                    i10 = size;
                 }
                 arrayList9 = arrayList;
                 i14 = i9 + 1;

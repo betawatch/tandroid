@@ -1350,37 +1350,37 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             updateItems(z, true);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:105:0x054b  */
-        /* JADX WARN: Removed duplicated region for block: B:134:0x05da  */
-        /* JADX WARN: Removed duplicated region for block: B:13:0x0232  */
-        /* JADX WARN: Removed duplicated region for block: B:140:0x0608  */
-        /* JADX WARN: Removed duplicated region for block: B:142:0x0612  */
-        /* JADX WARN: Removed duplicated region for block: B:160:0x0691  */
-        /* JADX WARN: Removed duplicated region for block: B:16:0x0253  */
-        /* JADX WARN: Removed duplicated region for block: B:170:0x06b9  */
-        /* JADX WARN: Removed duplicated region for block: B:177:0x06ca  */
-        /* JADX WARN: Removed duplicated region for block: B:189:0x070d  */
-        /* JADX WARN: Removed duplicated region for block: B:196:0x075b  */
-        /* JADX WARN: Removed duplicated region for block: B:199:0x078e  */
-        /* JADX WARN: Removed duplicated region for block: B:205:0x0a7f  */
-        /* JADX WARN: Removed duplicated region for block: B:30:0x02bc  */
-        /* JADX WARN: Removed duplicated region for block: B:328:0x0c94  */
-        /* JADX WARN: Removed duplicated region for block: B:330:0x0c9b  */
-        /* JADX WARN: Removed duplicated region for block: B:33:0x02e5  */
-        /* JADX WARN: Removed duplicated region for block: B:36:0x0311  */
-        /* JADX WARN: Removed duplicated region for block: B:377:0x01e2  */
-        /* JADX WARN: Removed duplicated region for block: B:380:0x01f7  */
-        /* JADX WARN: Removed duplicated region for block: B:385:0x01e4  */
+        /* JADX WARN: Removed duplicated region for block: B:105:0x054a  */
+        /* JADX WARN: Removed duplicated region for block: B:134:0x05d9  */
+        /* JADX WARN: Removed duplicated region for block: B:13:0x0231  */
+        /* JADX WARN: Removed duplicated region for block: B:140:0x0607  */
+        /* JADX WARN: Removed duplicated region for block: B:142:0x0611  */
+        /* JADX WARN: Removed duplicated region for block: B:160:0x0690  */
+        /* JADX WARN: Removed duplicated region for block: B:16:0x0252  */
+        /* JADX WARN: Removed duplicated region for block: B:170:0x06b8  */
+        /* JADX WARN: Removed duplicated region for block: B:177:0x06c9  */
+        /* JADX WARN: Removed duplicated region for block: B:189:0x070c  */
+        /* JADX WARN: Removed duplicated region for block: B:196:0x075a  */
+        /* JADX WARN: Removed duplicated region for block: B:199:0x078f  */
+        /* JADX WARN: Removed duplicated region for block: B:205:0x0a80  */
+        /* JADX WARN: Removed duplicated region for block: B:30:0x02bb  */
+        /* JADX WARN: Removed duplicated region for block: B:328:0x0c95  */
+        /* JADX WARN: Removed duplicated region for block: B:330:0x0c9c  */
+        /* JADX WARN: Removed duplicated region for block: B:33:0x02e4  */
+        /* JADX WARN: Removed duplicated region for block: B:36:0x0310  */
+        /* JADX WARN: Removed duplicated region for block: B:377:0x01e1  */
+        /* JADX WARN: Removed duplicated region for block: B:380:0x01f6  */
+        /* JADX WARN: Removed duplicated region for block: B:385:0x01e3  */
         /* JADX WARN: Removed duplicated region for block: B:44:0x0348  */
         /* JADX WARN: Removed duplicated region for block: B:47:0x0369  */
         /* JADX WARN: Removed duplicated region for block: B:61:0x03de  */
         /* JADX WARN: Removed duplicated region for block: B:67:0x03f0  */
         /* JADX WARN: Removed duplicated region for block: B:72:0x034a  */
-        /* JADX WARN: Removed duplicated region for block: B:73:0x0313  */
-        /* JADX WARN: Removed duplicated region for block: B:74:0x02be  */
-        /* JADX WARN: Removed duplicated region for block: B:75:0x0234  */
+        /* JADX WARN: Removed duplicated region for block: B:73:0x0312  */
+        /* JADX WARN: Removed duplicated region for block: B:74:0x02bd  */
+        /* JADX WARN: Removed duplicated region for block: B:75:0x0233  */
         /* JADX WARN: Removed duplicated region for block: B:78:0x042e  */
-        /* JADX WARN: Removed duplicated region for block: B:9:0x0220  */
+        /* JADX WARN: Removed duplicated region for block: B:9:0x021f  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -1638,7 +1638,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                                 this.items.add(ItemInner.asButton(5, LocaleController.getString(R.string.LiveStoryRTMPSettings), ""));
                                 asPad.subtractHeight += AndroidUtilities.dp(50.0f);
                                 this.items.add(ItemInner.asShadow(null));
-                                asPad.subtractHeight += AndroidUtilities.dp(12.0f);
+                                asPad.subtractHeight += AndroidUtilities.dp(52.0f);
                             }
                             if (StoryPrivacyBottomSheet.this.isLive && StoryPrivacyBottomSheet.this.allowComments) {
                                 this.items.add(ItemInner.asHeaderCell(LocaleController.getString(R.string.LiveStoryPricePerComment)));
@@ -4275,7 +4275,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
         @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
             float scrollY = getScrollY();
-            canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.didReplacedPhotoInMemCache, 31);
+            canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, NotificationCenter.cameraInitied, 31);
             super.dispatchDraw(canvas);
             canvas.save();
             float f = this.topGradientAlpha.set(canScrollVertically(-1));

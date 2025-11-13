@@ -1791,9 +1791,9 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                     } else if (starsTransaction.stargift instanceof TL_stars.TL_starGiftUnique) {
                         this.subtitleTextView.setText(LocaleController.getString(starsTransaction.refund ? R.string.StarGiftTransactionGiftTransferRefund : R.string.StarGiftTransactionGiftTransfer));
                     } else if (starsTransaction.refund) {
-                        this.subtitleTextView.setText(TextUtils.concat(spannableString, " ", LocaleController.getString(starsTransaction.amount.amount > 0 ? starsTransaction.stargift_upgrade ? R.string.Gift2TransactionRefundedUpgrade : R.string.Gift2TransactionRefundedSent : R.string.Gift2TransactionRefundedConverted)));
+                        this.subtitleTextView.setText(TextUtils.concat(spannableString, " ", LocaleController.getString(starsTransaction.stargift_auction_bid ? R.string.Gift2TransactionRefundedAuctionBid : starsTransaction.amount.amount > 0 ? starsTransaction.stargift_upgrade ? R.string.Gift2TransactionRefundedUpgrade : R.string.Gift2TransactionRefundedSent : R.string.Gift2TransactionRefundedConverted)));
                     } else {
-                        this.subtitleTextView.setText(TextUtils.concat(spannableString, " ", LocaleController.getString(starsTransaction.amount.amount > 0 ? R.string.Gift2TransactionConverted : starsTransaction.stargift_upgrade ? R.string.Gift2TransactionUpgraded : R.string.Gift2TransactionSent)));
+                        this.subtitleTextView.setText(TextUtils.concat(spannableString, " ", LocaleController.getString(starsTransaction.stargift_auction_bid ? R.string.Gift2TransactionAuctionBid : starsTransaction.amount.amount > 0 ? R.string.Gift2TransactionConverted : starsTransaction.stargift_upgrade ? R.string.Gift2TransactionUpgraded : R.string.Gift2TransactionSent)));
                     }
                 } else if (starsTransaction.subscription) {
                     this.titleTextView.setText(str2);
@@ -3792,7 +3792,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         return spannableStringBuilder;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x0171, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:116:0x017f, code lost:
     
         r5 = org.telegram.messenger.R.string.StarsTransactionFragment;
      */
@@ -3832,9 +3832,9 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 return LocaleController.getString(R.string.Gift2TransactionPrepaidUpgrade);
             }
             if (starsTransaction.refund) {
-                return LocaleController.getString(starsAmount.amount > 0 ? starsTransaction.stargift_upgrade ? R.string.Gift2TransactionRefundedUpgrade : R.string.Gift2TransactionRefundedSent : R.string.Gift2TransactionRefundedConverted);
+                return LocaleController.getString(starsTransaction.stargift_auction_bid ? R.string.Gift2TransactionRefundedAuctionBid : starsAmount.amount > 0 ? starsTransaction.stargift_upgrade ? R.string.Gift2TransactionRefundedUpgrade : R.string.Gift2TransactionRefundedSent : R.string.Gift2TransactionRefundedConverted);
             }
-            return LocaleController.getString(starsAmount.amount > 0 ? R.string.Gift2TransactionConverted : starsTransaction.stargift_upgrade ? R.string.Gift2TransactionUpgraded : R.string.Gift2TransactionSent);
+            return LocaleController.getString(starsTransaction.stargift_auction_bid ? R.string.Gift2TransactionAuctionBid : starsAmount.amount > 0 ? R.string.Gift2TransactionConverted : starsTransaction.stargift_upgrade ? R.string.Gift2TransactionUpgraded : R.string.Gift2TransactionSent);
         }
         if (starsTransaction.subscription) {
             int i3 = starsTransaction.subscription_period;

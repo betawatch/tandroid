@@ -1594,7 +1594,7 @@ public class ViewPagerFixed extends FrameLayout {
                     int dp = measuredWidth + this.currentTab.titleWidth + AndroidUtilities.dp(6.0f);
                     int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(20.0f)) / 2;
                     if (this.currentTab.id == Integer.MAX_VALUE || ((!TabsView.this.isEditing && TabsView.this.editingStartAnimationProgress == 0.0f) || str2 != null)) {
-                        TabsView.this.counterPaint.setAlpha(NotificationCenter.didReplacedPhotoInMemCache);
+                        TabsView.this.counterPaint.setAlpha(NotificationCenter.cameraInitied);
                     } else {
                         TabsView.this.counterPaint.setAlpha((int) (TabsView.this.editingStartAnimationProgress * 255.0f));
                     }

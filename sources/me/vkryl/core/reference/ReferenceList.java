@@ -12,17 +12,18 @@ import me.vkryl.core.reference.ReferenceCreator;
 /* loaded from: classes.dex */
 public final class ReferenceList implements Iterable, ReferenceCreator {
     private final boolean cacheIterator;
+    private final FullnessListener fullnessListener;
+    private boolean isFull;
     private boolean isLocked;
     private final List items;
     private final List itemsToAdd;
     private final List itemsToRemove;
     private Itr itr;
+    ReferenceList next;
     private final Semaphore semaphore;
 
     public interface FullnessListener {
-    }
-
-    private void checkFull() {
+        void onFullnessStateChanged(ReferenceList referenceList, boolean z);
     }
 
     @Override // me.vkryl.core.reference.ReferenceCreator
@@ -34,12 +35,26 @@ public final class ReferenceList implements Iterable, ReferenceCreator {
         this(false, true, null);
     }
 
+    public ReferenceList(boolean z) {
+        this(z, true, null);
+    }
+
     public ReferenceList(boolean z, boolean z2, FullnessListener fullnessListener) {
         this.itemsToRemove = new ArrayList();
         this.itemsToAdd = new ArrayList();
         this.semaphore = z ? new Semaphore(1) : null;
         this.cacheIterator = z2;
         this.items = new ArrayList();
+        this.fullnessListener = fullnessListener;
+    }
+
+    private void checkFull() {
+        boolean z;
+        if (this.fullnessListener == null || this.isFull == (!this.items.isEmpty())) {
+            return;
+        }
+        this.isFull = z;
+        this.fullnessListener.onFullnessStateChanged(this, z);
     }
 
     private void lock() {
@@ -94,6 +109,43 @@ public final class ReferenceList implements Iterable, ReferenceCreator {
                 return true;
             } catch (Throwable th) {
                 throw th;
+            }
+        }
+    }
+
+    public final boolean remove(Object obj) {
+        synchronized (this.items) {
+            try {
+                int indexOf = indexOf(obj);
+                if (indexOf == -1) {
+                    return false;
+                }
+                if (this.isLocked) {
+                    Reference reference = (Reference) this.items.get(indexOf);
+                    if (!this.itemsToRemove.contains(reference)) {
+                        this.itemsToRemove.add(reference);
+                    }
+                    ReferenceUtils.removeReference(this.itemsToAdd, reference.get());
+                } else {
+                    this.items.remove(indexOf);
+                    checkFull();
+                }
+                return true;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    public final boolean isEmpty() {
+        synchronized (this.items) {
+            try {
+                if (this.isLocked) {
+                    return this.items.isEmpty() && this.itemsToAdd.isEmpty();
+                }
+                ReferenceUtils.gcReferenceList(this.items);
+                return this.items.isEmpty();
+            } finally {
             }
         }
     }
