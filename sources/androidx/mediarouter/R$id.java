@@ -60,5 +60,5 @@ public abstract class R$id {
     public static final int mr_volume_group_list = 2131296563;
     public static final int mr_volume_item_icon = 2131296564;
     public static final int mr_volume_slider = 2131296565;
-    public static final int volume_item_container = 2131296716;
+    public static final int volume_item_container = 2131296717;
 }

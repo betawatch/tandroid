@@ -1,6 +1,7 @@
 package androidx.fragment.app;
 
 import android.view.ViewGroup;
+import androidx.fragment.app.strictmode.FragmentStrictMode;
 import androidx.lifecycle.Lifecycle;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -31,6 +32,8 @@ public abstract class FragmentTransaction {
 
     public abstract int commitAllowingStateLoss();
 
+    public abstract void commitNow();
+
     public abstract void commitNowAllowingStateLoss();
 
     static final class Op {
@@ -39,6 +42,7 @@ public abstract class FragmentTransaction {
         int mEnterAnim;
         int mExitAnim;
         Fragment mFragment;
+        boolean mFromExpandedOp;
         Lifecycle.State mOldMaxState;
         int mPopEnterAnim;
         int mPopExitAnim;
@@ -49,6 +53,16 @@ public abstract class FragmentTransaction {
         Op(int i, Fragment fragment) {
             this.mCmd = i;
             this.mFragment = fragment;
+            this.mFromExpandedOp = false;
+            Lifecycle.State state = Lifecycle.State.RESUMED;
+            this.mOldMaxState = state;
+            this.mCurrentMaxState = state;
+        }
+
+        Op(int i, Fragment fragment, boolean z) {
+            this.mCmd = i;
+            this.mFragment = fragment;
+            this.mFromExpandedOp = z;
             Lifecycle.State state = Lifecycle.State.RESUMED;
             this.mOldMaxState = state;
             this.mCurrentMaxState = state;
@@ -78,20 +92,25 @@ public abstract class FragmentTransaction {
         return this;
     }
 
-    FragmentTransaction add(ViewGroup viewGroup, Fragment fragment, String str) {
+    public final FragmentTransaction add(ViewGroup viewGroup, Fragment fragment, String str) {
         fragment.mContainer = viewGroup;
+        fragment.mInDynamicContainer = true;
         return add(viewGroup.getId(), fragment, str);
     }
 
     void doAddOp(int i, Fragment fragment, String str, int i2) {
+        String str2 = fragment.mPreviousWho;
+        if (str2 != null) {
+            FragmentStrictMode.onFragmentReuse(fragment, str2);
+        }
         Class<?> cls = fragment.getClass();
         int modifiers = cls.getModifiers();
         if (cls.isAnonymousClass() || !Modifier.isPublic(modifiers) || (cls.isMemberClass() && !Modifier.isStatic(modifiers))) {
             throw new IllegalStateException("Fragment " + cls.getCanonicalName() + " must be a public static class to be  properly recreated from instance state.");
         }
         if (str != null) {
-            String str2 = fragment.mTag;
-            if (str2 != null && !str.equals(str2)) {
+            String str3 = fragment.mTag;
+            if (str3 != null && !str.equals(str3)) {
                 throw new IllegalStateException("Can't change tag of fragment " + fragment + ": was " + fragment.mTag + " now " + str);
             }
             fragment.mTag = str;
@@ -125,6 +144,17 @@ public abstract class FragmentTransaction {
 
     public FragmentTransaction setReorderingAllowed(boolean z) {
         this.mReorderingAllowed = z;
+        return this;
+    }
+
+    FragmentTransaction runOnCommitInternal(boolean z, Runnable runnable) {
+        if (!z) {
+            disallowAddToBackStack();
+        }
+        if (this.mCommitRunnables == null) {
+            this.mCommitRunnables = new ArrayList();
+        }
+        this.mCommitRunnables.add(runnable);
         return this;
     }
 }

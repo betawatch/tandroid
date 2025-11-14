@@ -4,6 +4,7 @@ import android.graphics.Rect;
 import android.transition.Transition;
 import android.transition.TransitionManager;
 import android.transition.TransitionSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.core.os.CancellationSignal;
@@ -171,6 +172,24 @@ class FragmentTransitionCompat21 extends FragmentTransitionImpl {
     }
 
     @Override // androidx.fragment.app.FragmentTransitionImpl
+    public boolean isSeekingSupported() {
+        if (!FragmentManager.isLoggingEnabled(4)) {
+            return false;
+        }
+        Log.i("FragmentManager", "Predictive back not available using Framework Transitions. Please switch to AndroidX Transition 1.5.0 or higher to enable seeking.");
+        return false;
+    }
+
+    @Override // androidx.fragment.app.FragmentTransitionImpl
+    public boolean isSeekingSupported(Object obj) {
+        if (!FragmentManager.isLoggingEnabled(2)) {
+            return false;
+        }
+        Log.v("FragmentManager", "Predictive back not available for framework transition " + obj + ". Please switch to AndroidX Transition 1.5.0 or higher to enable seeking.");
+        return false;
+    }
+
+    @Override // androidx.fragment.app.FragmentTransitionImpl
     public void scheduleRemoveTargets(Object obj, final Object obj2, final ArrayList arrayList, final Object obj3, final ArrayList arrayList2, final Object obj4, final ArrayList arrayList3) {
         ((Transition) obj).addListener(new Transition.TransitionListener() { // from class: androidx.fragment.app.FragmentTransitionCompat21.3
             @Override // android.transition.Transition.TransitionListener
@@ -244,7 +263,6 @@ class FragmentTransitionCompat21 extends FragmentTransitionImpl {
         }
     }
 
-    @Override // androidx.fragment.app.FragmentTransitionImpl
     public void replaceTargets(Object obj, ArrayList arrayList, ArrayList arrayList2) {
         List<View> targets;
         Transition transition = (Transition) obj;
@@ -275,13 +293,6 @@ class FragmentTransitionCompat21 extends FragmentTransitionImpl {
     public void addTarget(Object obj, View view) {
         if (obj != null) {
             ((Transition) obj).addTarget(view);
-        }
-    }
-
-    @Override // androidx.fragment.app.FragmentTransitionImpl
-    public void removeTarget(Object obj, View view) {
-        if (obj != null) {
-            ((Transition) obj).removeTarget(view);
         }
     }
 

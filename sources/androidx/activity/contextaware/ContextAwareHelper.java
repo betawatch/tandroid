@@ -4,28 +4,32 @@ import android.content.Context;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
+import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
 public final class ContextAwareHelper {
-    private volatile Context mContext;
-    private final Set mListeners = new CopyOnWriteArraySet();
+    private volatile Context context;
+    private final Set listeners = new CopyOnWriteArraySet();
 
-    public void addOnContextAvailableListener(OnContextAvailableListener onContextAvailableListener) {
-        if (this.mContext != null) {
-            onContextAvailableListener.onContextAvailable(this.mContext);
+    public final void addOnContextAvailableListener(OnContextAvailableListener listener) {
+        Intrinsics.checkNotNullParameter(listener, "listener");
+        Context context = this.context;
+        if (context != null) {
+            listener.onContextAvailable(context);
         }
-        this.mListeners.add(onContextAvailableListener);
+        this.listeners.add(listener);
     }
 
-    public void dispatchOnContextAvailable(Context context) {
-        this.mContext = context;
-        Iterator it = this.mListeners.iterator();
+    public final void dispatchOnContextAvailable(Context context) {
+        Intrinsics.checkNotNullParameter(context, "context");
+        this.context = context;
+        Iterator it = this.listeners.iterator();
         while (it.hasNext()) {
             ((OnContextAvailableListener) it.next()).onContextAvailable(context);
         }
     }
 
-    public void clearAvailableContext() {
-        this.mContext = null;
+    public final void clearAvailableContext() {
+        this.context = null;
     }
 }

@@ -122,19 +122,38 @@ final class FragmentManagerViewModel extends ViewModel {
         return viewModelStore2;
     }
 
-    void clearNonConfigState(Fragment fragment) {
+    void clearNonConfigState(Fragment fragment, boolean z) {
         if (FragmentManager.isLoggingEnabled(3)) {
             Log.d("FragmentManager", "Clearing non-config state for " + fragment);
         }
-        FragmentManagerViewModel fragmentManagerViewModel = (FragmentManagerViewModel) this.mChildNonConfigs.get(fragment.mWho);
-        if (fragmentManagerViewModel != null) {
-            fragmentManagerViewModel.onCleared();
-            this.mChildNonConfigs.remove(fragment.mWho);
+        clearNonConfigStateInternal(fragment.mWho, z);
+    }
+
+    void clearNonConfigState(String str, boolean z) {
+        if (FragmentManager.isLoggingEnabled(3)) {
+            Log.d("FragmentManager", "Clearing non-config state for saved state of Fragment " + str);
         }
-        ViewModelStore viewModelStore = (ViewModelStore) this.mViewModelStores.get(fragment.mWho);
+        clearNonConfigStateInternal(str, z);
+    }
+
+    private void clearNonConfigStateInternal(String str, boolean z) {
+        FragmentManagerViewModel fragmentManagerViewModel = (FragmentManagerViewModel) this.mChildNonConfigs.get(str);
+        if (fragmentManagerViewModel != null) {
+            if (z) {
+                ArrayList arrayList = new ArrayList();
+                arrayList.addAll(fragmentManagerViewModel.mChildNonConfigs.keySet());
+                Iterator it = arrayList.iterator();
+                while (it.hasNext()) {
+                    fragmentManagerViewModel.clearNonConfigState((String) it.next(), true);
+                }
+            }
+            fragmentManagerViewModel.onCleared();
+            this.mChildNonConfigs.remove(str);
+        }
+        ViewModelStore viewModelStore = (ViewModelStore) this.mViewModelStores.get(str);
         if (viewModelStore != null) {
             viewModelStore.clear();
-            this.mViewModelStores.remove(fragment.mWho);
+            this.mViewModelStores.remove(str);
         }
     }
 

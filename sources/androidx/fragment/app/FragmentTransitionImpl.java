@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import androidx.core.os.CancellationSignal;
 import androidx.core.view.OneShotPreDrawListener;
 import androidx.core.view.ViewCompat;
-import androidx.core.view.ViewGroupCompat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -18,23 +17,36 @@ public abstract class FragmentTransitionImpl {
 
     public abstract void addTargets(Object obj, ArrayList arrayList);
 
+    public void animateToEnd(Object obj) {
+    }
+
+    public void animateToStart(Object obj, Runnable runnable) {
+    }
+
     public abstract void beginDelayedTransition(ViewGroup viewGroup, Object obj);
 
     public abstract boolean canHandle(Object obj);
 
     public abstract Object cloneTransition(Object obj);
 
+    public Object controlDelayedTransition(ViewGroup viewGroup, Object obj) {
+        return null;
+    }
+
+    public abstract boolean isSeekingSupported();
+
+    public abstract boolean isSeekingSupported(Object obj);
+
     public abstract Object mergeTransitionsInSequence(Object obj, Object obj2, Object obj3);
 
     public abstract Object mergeTransitionsTogether(Object obj, Object obj2, Object obj3);
 
-    public abstract void removeTarget(Object obj, View view);
-
-    public abstract void replaceTargets(Object obj, ArrayList arrayList, ArrayList arrayList2);
-
     public abstract void scheduleHideFragmentView(Object obj, View view, ArrayList arrayList);
 
     public abstract void scheduleRemoveTargets(Object obj, Object obj2, ArrayList arrayList, Object obj3, ArrayList arrayList2, Object obj4, ArrayList arrayList3);
+
+    public void setCurrentPlayTime(Object obj, float f) {
+    }
 
     public abstract void setEpicenter(Object obj, Rect rect);
 
@@ -49,7 +61,7 @@ public abstract class FragmentTransitionImpl {
     public abstract Object wrapTransitionInSet(Object obj);
 
     protected void getBoundsOnScreen(View view, Rect rect) {
-        if (ViewCompat.isAttachedToWindow(view)) {
+        if (view.isAttachedToWindow()) {
             RectF rectF = new RectF();
             rectF.set(0.0f, 0.0f, view.getWidth(), view.getHeight());
             view.getMatrix().mapRect(rectF);
@@ -113,67 +125,8 @@ public abstract class FragmentTransitionImpl {
         });
     }
 
-    void captureTransitioningViews(ArrayList arrayList, View view) {
-        if (view.getVisibility() == 0) {
-            if (view instanceof ViewGroup) {
-                ViewGroup viewGroup = (ViewGroup) view;
-                if (ViewGroupCompat.isTransitionGroup(viewGroup)) {
-                    arrayList.add(viewGroup);
-                    return;
-                }
-                int childCount = viewGroup.getChildCount();
-                for (int i = 0; i < childCount; i++) {
-                    captureTransitioningViews(arrayList, viewGroup.getChildAt(i));
-                }
-                return;
-            }
-            arrayList.add(view);
-        }
-    }
-
-    void findNamedViews(Map map, View view) {
-        if (view.getVisibility() == 0) {
-            String transitionName = ViewCompat.getTransitionName(view);
-            if (transitionName != null) {
-                map.put(transitionName, view);
-            }
-            if (view instanceof ViewGroup) {
-                ViewGroup viewGroup = (ViewGroup) view;
-                int childCount = viewGroup.getChildCount();
-                for (int i = 0; i < childCount; i++) {
-                    findNamedViews(map, viewGroup.getChildAt(i));
-                }
-            }
-        }
-    }
-
-    void setNameOverridesOrdered(View view, final ArrayList arrayList, final Map map) {
-        OneShotPreDrawListener.add(view, new Runnable() { // from class: androidx.fragment.app.FragmentTransitionImpl.2
-            @Override // java.lang.Runnable
-            public void run() {
-                int size = arrayList.size();
-                for (int i = 0; i < size; i++) {
-                    View view2 = (View) arrayList.get(i);
-                    String transitionName = ViewCompat.getTransitionName(view2);
-                    if (transitionName != null) {
-                        ViewCompat.setTransitionName(view2, FragmentTransitionImpl.findKeyForValue(map, transitionName));
-                    }
-                }
-            }
-        });
-    }
-
-    void scheduleNameReset(ViewGroup viewGroup, final ArrayList arrayList, final Map map) {
-        OneShotPreDrawListener.add(viewGroup, new Runnable() { // from class: androidx.fragment.app.FragmentTransitionImpl.3
-            @Override // java.lang.Runnable
-            public void run() {
-                int size = arrayList.size();
-                for (int i = 0; i < size; i++) {
-                    View view = (View) arrayList.get(i);
-                    ViewCompat.setTransitionName(view, (String) map.get(ViewCompat.getTransitionName(view)));
-                }
-            }
-        });
+    public void setListenerForTransitionEnd(Fragment fragment, Object obj, CancellationSignal cancellationSignal, Runnable runnable, Runnable runnable2) {
+        runnable2.run();
     }
 
     protected static void bfsAddViewChildren(List list, View view) {
@@ -210,14 +163,5 @@ public abstract class FragmentTransitionImpl {
 
     protected static boolean isNullOrEmpty(List list) {
         return list == null || list.isEmpty();
-    }
-
-    static String findKeyForValue(Map map, String str) {
-        for (Map.Entry entry : map.entrySet()) {
-            if (str.equals(entry.getValue())) {
-                return (String) entry.getKey();
-            }
-        }
-        return null;
     }
 }

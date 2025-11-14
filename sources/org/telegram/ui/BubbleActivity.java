@@ -207,7 +207,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         return true;
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity
+    @Override // androidx.activity.ComponentActivity, android.app.Activity
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         handleIntent(intent, true, false, false, UserConfig.selectedAccount, 0);
@@ -343,7 +343,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         }
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity, android.content.ComponentCallbacks
+    @Override // androidx.activity.ComponentActivity, android.app.Activity, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
         AndroidUtilities.checkDisplaySize(this, configuration);
         AndroidUtilities.setPreferredMaxRefreshRate(getWindow());
@@ -369,7 +369,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         }
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, android.app.Activity, android.content.ComponentCallbacks
+    @Override // android.app.Activity, android.content.ComponentCallbacks
     public void onLowMemory() {
         super.onLowMemory();
         this.actionBarLayout.onLowMemory();

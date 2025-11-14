@@ -179,12 +179,12 @@ public class ColorPickerBottomSheet extends BottomSheet {
             }
         });
         pipettePickerView.animateShow();
-        lambda$new$3();
+        dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(View view) {
-        lambda$new$3();
+        dismiss();
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
@@ -237,9 +237,8 @@ public class ColorPickerBottomSheet extends BottomSheet {
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$3() {
-        super.lambda$new$3();
+    public void dismiss() {
+        super.dismiss();
         Consumer consumer = this.colorListener;
         if (consumer != null) {
             consumer.accept(Integer.valueOf(this.mColor));

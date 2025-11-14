@@ -21,34 +21,43 @@ public class MenuHostHelper {
 
     public void onPrepareMenu(Menu menu) {
         Iterator it = this.mMenuProviders.iterator();
-        if (it.hasNext()) {
-            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
-            throw null;
+        while (it.hasNext()) {
+            ((MenuProvider) it.next()).onPrepareMenu(menu);
         }
     }
 
     public void onCreateMenu(Menu menu, MenuInflater menuInflater) {
         Iterator it = this.mMenuProviders.iterator();
-        if (it.hasNext()) {
-            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
-            throw null;
+        while (it.hasNext()) {
+            ((MenuProvider) it.next()).onCreateMenu(menu, menuInflater);
         }
     }
 
     public boolean onMenuItemSelected(MenuItem menuItem) {
         Iterator it = this.mMenuProviders.iterator();
-        if (!it.hasNext()) {
-            return false;
+        while (it.hasNext()) {
+            if (((MenuProvider) it.next()).onMenuItemSelected(menuItem)) {
+                return true;
+            }
         }
-        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
-        throw null;
+        return false;
     }
 
     public void onMenuClosed(Menu menu) {
         Iterator it = this.mMenuProviders.iterator();
-        if (it.hasNext()) {
-            WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
-            throw null;
+        while (it.hasNext()) {
+            ((MenuProvider) it.next()).onMenuClosed(menu);
         }
+    }
+
+    public void addMenuProvider(MenuProvider menuProvider) {
+        this.mMenuProviders.add(menuProvider);
+        this.mOnInvalidateMenuCallback.run();
+    }
+
+    public void removeMenuProvider(MenuProvider menuProvider) {
+        this.mMenuProviders.remove(menuProvider);
+        WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(this.mProviderToLifecycleContainers.remove(menuProvider));
+        this.mOnInvalidateMenuCallback.run();
     }
 }

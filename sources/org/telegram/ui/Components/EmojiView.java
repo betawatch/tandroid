@@ -4442,10 +4442,9 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         arrayList.add(tL_inputStickerSetID);
         new EmojiPacksAlert(this.fragment, getContext(), this.resourcesProvider, arrayList) { // from class: org.telegram.ui.Components.EmojiView.34
             @Override // org.telegram.ui.Components.EmojiPacksAlert, org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-            /* renamed from: dismiss */
-            public void lambda$new$3() {
+            public void dismiss() {
                 EmojiView.this.emojiPackAlertOpened = false;
-                super.lambda$new$3();
+                super.dismiss();
             }
 
             @Override // org.telegram.ui.Components.EmojiPacksAlert

@@ -1,21 +1,21 @@
 package androidx.fragment.app;
 
+import android.R;
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
-import androidx.core.os.CancellationSignal;
 import androidx.core.view.OneShotPreDrawListener;
 import androidx.fragment.R$animator;
 import androidx.fragment.R$id;
-import androidx.fragment.app.FragmentTransition;
 
 /* loaded from: classes.dex */
 abstract class FragmentAnim {
@@ -43,7 +43,7 @@ abstract class FragmentAnim {
             return new AnimationOrAnimator(onCreateAnimator);
         }
         if (nextAnim == 0 && nextTransition != 0) {
-            nextAnim = transitToAnimResourceId(nextTransition, z);
+            nextAnim = transitToAnimResourceId(context, nextTransition, z);
         }
         if (nextAnim != 0) {
             boolean equals = "anim".equals(context.getResources().getResourceTypeName(nextAnim));
@@ -89,86 +89,41 @@ abstract class FragmentAnim {
         return fragment.getExitAnim();
     }
 
-    static void animateRemoveFragment(final Fragment fragment, AnimationOrAnimator animationOrAnimator, final FragmentTransition.Callback callback) {
-        final View view = fragment.mView;
-        final ViewGroup viewGroup = fragment.mContainer;
-        viewGroup.startViewTransition(view);
-        final CancellationSignal cancellationSignal = new CancellationSignal();
-        cancellationSignal.setOnCancelListener(new CancellationSignal.OnCancelListener() { // from class: androidx.fragment.app.FragmentAnim.1
-            @Override // androidx.core.os.CancellationSignal.OnCancelListener
-            public void onCancel() {
-                if (Fragment.this.getAnimatingAway() != null) {
-                    View animatingAway = Fragment.this.getAnimatingAway();
-                    Fragment.this.setAnimatingAway(null);
-                    animatingAway.clearAnimation();
-                }
-                Fragment.this.setAnimator(null);
-            }
-        });
-        callback.onStart(fragment, cancellationSignal);
-        if (animationOrAnimator.animation != null) {
-            EndViewTransitionAnimation endViewTransitionAnimation = new EndViewTransitionAnimation(animationOrAnimator.animation, viewGroup, view);
-            fragment.setAnimatingAway(fragment.mView);
-            endViewTransitionAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: androidx.fragment.app.FragmentAnim.2
-                @Override // android.view.animation.Animation.AnimationListener
-                public void onAnimationRepeat(Animation animation) {
-                }
-
-                @Override // android.view.animation.Animation.AnimationListener
-                public void onAnimationStart(Animation animation) {
-                }
-
-                @Override // android.view.animation.Animation.AnimationListener
-                public void onAnimationEnd(Animation animation) {
-                    viewGroup.post(new Runnable() { // from class: androidx.fragment.app.FragmentAnim.2.1
-                        @Override // java.lang.Runnable
-                        public void run() {
-                            if (fragment.getAnimatingAway() != null) {
-                                fragment.setAnimatingAway(null);
-                                2 r0 = 2.this;
-                                callback.onComplete(fragment, cancellationSignal);
-                            }
-                        }
-                    });
-                }
-            });
-            fragment.mView.startAnimation(endViewTransitionAnimation);
-            return;
-        }
-        Animator animator = animationOrAnimator.animator;
-        fragment.setAnimator(animator);
-        animator.addListener(new AnimatorListenerAdapter() { // from class: androidx.fragment.app.FragmentAnim.3
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationEnd(Animator animator2) {
-                viewGroup.endViewTransition(view);
-                Animator animator3 = fragment.getAnimator();
-                fragment.setAnimator(null);
-                if (animator3 == null || viewGroup.indexOfChild(view) >= 0) {
-                    return;
-                }
-                callback.onComplete(fragment, cancellationSignal);
-            }
-        });
-        animator.setTarget(fragment.mView);
-        animator.start();
-    }
-
-    private static int transitToAnimResourceId(int i, boolean z) {
+    private static int transitToAnimResourceId(Context context, int i, boolean z) {
         if (i == 4097) {
             return z ? R$animator.fragment_open_enter : R$animator.fragment_open_exit;
+        }
+        if (i == 8194) {
+            return z ? R$animator.fragment_close_enter : R$animator.fragment_close_exit;
+        }
+        if (i == 8197) {
+            if (z) {
+                return toActivityTransitResId(context, R.attr.activityCloseEnterAnimation);
+            }
+            return toActivityTransitResId(context, R.attr.activityCloseExitAnimation);
         }
         if (i == 4099) {
             return z ? R$animator.fragment_fade_enter : R$animator.fragment_fade_exit;
         }
-        if (i != 8194) {
+        if (i != 4100) {
             return -1;
         }
-        return z ? R$animator.fragment_close_enter : R$animator.fragment_close_exit;
+        if (z) {
+            return toActivityTransitResId(context, R.attr.activityOpenEnterAnimation);
+        }
+        return toActivityTransitResId(context, R.attr.activityOpenExitAnimation);
+    }
+
+    private static int toActivityTransitResId(Context context, int i) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(R.style.Animation.Activity, new int[]{i});
+        int resourceId = obtainStyledAttributes.getResourceId(0, -1);
+        obtainStyledAttributes.recycle();
+        return resourceId;
     }
 
     static class AnimationOrAnimator {
         public final Animation animation;
-        public final Animator animator;
+        public final AnimatorSet animator;
 
         AnimationOrAnimator(Animation animation) {
             this.animation = animation;
@@ -180,7 +135,9 @@ abstract class FragmentAnim {
 
         AnimationOrAnimator(Animator animator) {
             this.animation = null;
-            this.animator = animator;
+            AnimatorSet animatorSet = new AnimatorSet();
+            this.animator = animatorSet;
+            animatorSet.play(animator);
             if (animator == null) {
                 throw new IllegalStateException("Animator cannot be null");
             }

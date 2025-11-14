@@ -49,17 +49,17 @@ public abstract class AppCompatDialog extends ComponentDialog implements AppComp
         getDelegate().onCreate(bundle);
     }
 
-    @Override // android.app.Dialog
+    @Override // androidx.activity.ComponentDialog, android.app.Dialog
     public void setContentView(int i) {
         getDelegate().setContentView(i);
     }
 
-    @Override // android.app.Dialog
+    @Override // androidx.activity.ComponentDialog, android.app.Dialog
     public void setContentView(View view) {
         getDelegate().setContentView(view);
     }
 
-    @Override // android.app.Dialog
+    @Override // androidx.activity.ComponentDialog, android.app.Dialog
     public void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
         getDelegate().setContentView(view, layoutParams);
     }
@@ -81,7 +81,7 @@ public abstract class AppCompatDialog extends ComponentDialog implements AppComp
         getDelegate().setTitle(getContext().getString(i));
     }
 
-    @Override // android.app.Dialog
+    @Override // androidx.activity.ComponentDialog, android.app.Dialog
     public void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
         getDelegate().addContentView(view, layoutParams);
     }

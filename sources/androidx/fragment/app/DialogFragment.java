@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import androidx.activity.ComponentDialog;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewTreeLifecycleOwner;
@@ -84,15 +85,16 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
         this.mDismissed = false;
         this.mShownByMe = true;
         FragmentTransaction beginTransaction = fragmentManager.beginTransaction();
+        beginTransaction.setReorderingAllowed(true);
         beginTransaction.add(this, str);
         beginTransaction.commit();
     }
 
     public void dismissAllowingStateLoss() {
-        dismissInternal(true, false);
+        dismissInternal(true, false, false);
     }
 
-    private void dismissInternal(boolean z, boolean z2) {
+    private void dismissInternal(boolean z, boolean z2, boolean z3) {
         if (this.mDismissed) {
             return;
         }
@@ -112,13 +114,20 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
         }
         this.mViewDestroyed = true;
         if (this.mBackStackId >= 0) {
-            getParentFragmentManager().popBackStack(this.mBackStackId, 1);
+            if (z3) {
+                getParentFragmentManager().popBackStackImmediate(this.mBackStackId, 1);
+            } else {
+                getParentFragmentManager().popBackStack(this.mBackStackId, 1, z);
+            }
             this.mBackStackId = -1;
             return;
         }
         FragmentTransaction beginTransaction = getParentFragmentManager().beginTransaction();
+        beginTransaction.setReorderingAllowed(true);
         beginTransaction.remove(this);
-        if (z) {
+        if (z3) {
+            beginTransaction.commitNow();
+        } else if (z) {
             beginTransaction.commitAllowingStateLoss();
         } else {
             beginTransaction.commit();
@@ -254,7 +263,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
         if (FragmentManager.isLoggingEnabled(3)) {
             Log.d("FragmentManager", "onCreateDialog called for DialogFragment " + this);
         }
-        return new Dialog(requireContext(), getTheme());
+        return new ComponentDialog(requireContext(), getTheme());
     }
 
     @Override // android.content.DialogInterface.OnDismissListener
@@ -265,7 +274,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
         if (FragmentManager.isLoggingEnabled(3)) {
             Log.d("FragmentManager", "onDismiss called for DialogFragment " + this);
         }
-        dismissInternal(true, true);
+        dismissInternal(true, true, false);
     }
 
     private void prepareDialog(Bundle bundle) {
@@ -303,6 +312,11 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
             return;
         }
         this.mDialog.onRestoreInstanceState(bundle2);
+    }
+
+    @Override // androidx.fragment.app.Fragment
+    public void onActivityCreated(Bundle bundle) {
+        super.onActivityCreated(bundle);
     }
 
     @Override // androidx.fragment.app.Fragment

@@ -12,11 +12,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Random;
+import kotlin.random.Random;
 
 /* loaded from: classes.dex */
 public abstract class ActivityResultRegistry {
-    private Random mRandom = new Random();
     private final Map mRcToKey = new HashMap();
     final Map mKeyToRc = new HashMap();
     private final Map mKeyToLifecycleContainers = new HashMap();
@@ -148,7 +147,6 @@ public abstract class ActivityResultRegistry {
         bundle.putStringArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS", new ArrayList<>(this.mKeyToRc.keySet()));
         bundle.putStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS", new ArrayList<>(this.mLaunchedKeys));
         bundle.putBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT", (Bundle) this.mPendingResults.clone());
-        bundle.putSerializable("KEY_COMPONENT_ACTIVITY_RANDOM_OBJECT", this.mRandom);
     }
 
     public final void onRestoreInstanceState(Bundle bundle) {
@@ -161,7 +159,6 @@ public abstract class ActivityResultRegistry {
             return;
         }
         this.mLaunchedKeys = bundle.getStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS");
-        this.mRandom = (Random) bundle.getSerializable("KEY_COMPONENT_ACTIVITY_RANDOM_OBJECT");
         this.mPendingResults.putAll(bundle.getBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT"));
         for (int i = 0; i < stringArrayList.size(); i++) {
             String str = stringArrayList.get(i);
@@ -221,13 +218,13 @@ public abstract class ActivityResultRegistry {
     }
 
     private int generateRandomNumber() {
-        int nextInt = this.mRandom.nextInt(2147418112);
+        int nextInt = Random.Default.nextInt(2147418112);
         while (true) {
             int i = nextInt + 65536;
             if (!this.mRcToKey.containsKey(Integer.valueOf(i))) {
                 return i;
             }
-            nextInt = this.mRandom.nextInt(2147418112);
+            nextInt = Random.Default.nextInt(2147418112);
         }
     }
 

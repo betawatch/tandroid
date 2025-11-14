@@ -8,7 +8,4 @@ public interface HasDefaultViewModelProviderFactory {
     CreationExtras getDefaultViewModelCreationExtras();
 
     ViewModelProvider.Factory getDefaultViewModelProviderFactory();
-
-    public abstract /* synthetic */ class -CC {
-    }
 }

@@ -3,9 +3,10 @@ package kotlin.collections;
 import java.util.Set;
 import kotlin.jvm.internal.Intrinsics;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-abstract class SetsKt__SetsKt extends SetsKt__SetsJVMKt {
-    public static final Set emptySet() {
+public abstract class SetsKt__SetsKt extends SetsKt__SetsJVMKt {
+    public static Set emptySet() {
         return EmptySet.INSTANCE;
     }
 
@@ -15,6 +16,6 @@ abstract class SetsKt__SetsKt extends SetsKt__SetsJVMKt {
         if (size != 0) {
             return size != 1 ? set : SetsKt__SetsJVMKt.setOf(set.iterator().next());
         }
-        return emptySet();
+        return SetsKt.emptySet();
     }
 }

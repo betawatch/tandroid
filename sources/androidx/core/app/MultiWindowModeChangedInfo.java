@@ -12,6 +12,10 @@ public final class MultiWindowModeChangedInfo {
         this.isInMultiWindowMode = z;
     }
 
+    public final boolean isInMultiWindowMode() {
+        return this.isInMultiWindowMode;
+    }
+
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public MultiWindowModeChangedInfo(boolean z, Configuration newConfig) {
         this(z);

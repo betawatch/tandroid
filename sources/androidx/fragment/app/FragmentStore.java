@@ -1,5 +1,6 @@
 package androidx.fragment.app;
 
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ class FragmentStore {
     private FragmentManagerViewModel mNonConfig;
     private final ArrayList mAdded = new ArrayList();
     private final HashMap mActive = new HashMap();
+    private final HashMap mSavedState = new HashMap();
 
     FragmentStore() {
     }
@@ -100,6 +102,9 @@ class FragmentStore {
                 fragmentStateManager2.moveToExpectedState();
                 Fragment fragment = fragmentStateManager2.getFragment();
                 if (fragment.mRemoving && !fragment.isInBackStack()) {
+                    if (fragment.mBeingSaved && !this.mSavedState.containsKey(fragment.mWho)) {
+                        setSavedState(fragment.mWho, fragmentStateManager2.saveState());
+                    }
                     makeInactive(fragmentStateManager2);
                 }
             }
@@ -118,7 +123,7 @@ class FragmentStore {
         if (fragment.mRetainInstance) {
             this.mNonConfig.removeRetainedFragment(fragment);
         }
-        if (((FragmentStateManager) this.mActive.put(fragment.mWho, null)) != null && FragmentManager.isLoggingEnabled(2)) {
+        if (this.mActive.get(fragment.mWho) == fragmentStateManager && ((FragmentStateManager) this.mActive.put(fragment.mWho, null)) != null && FragmentManager.isLoggingEnabled(2)) {
             Log.v("FragmentManager", "Removed fragment from active set " + fragment);
         }
     }
@@ -127,15 +132,35 @@ class FragmentStore {
         this.mActive.values().removeAll(Collections.singleton(null));
     }
 
+    Bundle getSavedState(String str) {
+        return (Bundle) this.mSavedState.get(str);
+    }
+
+    Bundle setSavedState(String str, Bundle bundle) {
+        if (bundle != null) {
+            return (Bundle) this.mSavedState.put(str, bundle);
+        }
+        return (Bundle) this.mSavedState.remove(str);
+    }
+
+    void restoreSaveState(HashMap hashMap) {
+        this.mSavedState.clear();
+        this.mSavedState.putAll(hashMap);
+    }
+
+    HashMap getAllSavedState() {
+        return this.mSavedState;
+    }
+
     ArrayList saveActiveFragments() {
         ArrayList arrayList = new ArrayList(this.mActive.size());
         for (FragmentStateManager fragmentStateManager : this.mActive.values()) {
             if (fragmentStateManager != null) {
                 Fragment fragment = fragmentStateManager.getFragment();
-                FragmentState saveState = fragmentStateManager.saveState();
-                arrayList.add(saveState);
+                setSavedState(fragment.mWho, fragmentStateManager.saveState());
+                arrayList.add(fragment.mWho);
                 if (FragmentManager.isLoggingEnabled(2)) {
-                    Log.v("FragmentManager", "Saved state of " + fragment + ": " + saveState.mSavedFragmentState);
+                    Log.v("FragmentManager", "Saved state of " + fragment + ": " + fragment.mSavedFragmentState);
                 }
             }
         }

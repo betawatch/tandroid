@@ -5,23 +5,29 @@ import android.view.View;
 import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
+import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
-class FragmentLifecycleCallbacksDispatcher {
-    private final FragmentManager mFragmentManager;
-    private final CopyOnWriteArrayList mLifecycleCallbacks = new CopyOnWriteArrayList();
+public final class FragmentLifecycleCallbacksDispatcher {
+    private final FragmentManager fragmentManager;
+    private final CopyOnWriteArrayList lifecycleCallbacks;
 
-    FragmentLifecycleCallbacksDispatcher(FragmentManager fragmentManager) {
-        this.mFragmentManager = fragmentManager;
+    public FragmentLifecycleCallbacksDispatcher(FragmentManager fragmentManager) {
+        Intrinsics.checkNotNullParameter(fragmentManager, "fragmentManager");
+        this.fragmentManager = fragmentManager;
+        this.lifecycleCallbacks = new CopyOnWriteArrayList();
     }
 
-    void dispatchOnFragmentPreAttached(Fragment fragment, boolean z) {
-        this.mFragmentManager.getHost().getContext();
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentPreAttached(Fragment f, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        this.fragmentManager.getHost().getContext();
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentPreAttached(fragment, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentPreAttached(f, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -31,13 +37,16 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentAttached(Fragment fragment, boolean z) {
-        this.mFragmentManager.getHost().getContext();
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentAttached(Fragment f, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        this.fragmentManager.getHost().getContext();
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentAttached(fragment, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentAttached(f, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -47,12 +56,15 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentPreCreated(Fragment fragment, Bundle bundle, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentPreCreated(Fragment f, Bundle bundle, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentPreCreated(fragment, bundle, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentPreCreated(f, bundle, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -62,12 +74,15 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentCreated(Fragment fragment, Bundle bundle, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentCreated(Fragment f, Bundle bundle, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentCreated(fragment, bundle, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentCreated(f, bundle, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -77,12 +92,15 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentActivityCreated(Fragment fragment, Bundle bundle, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentActivityCreated(Fragment f, Bundle bundle, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentActivityCreated(fragment, bundle, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentActivityCreated(f, bundle, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -92,12 +110,16 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentViewCreated(Fragment fragment, View view, Bundle bundle, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentViewCreated(Fragment f, View v, Bundle bundle, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Intrinsics.checkNotNullParameter(v, "v");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentViewCreated(fragment, view, bundle, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentViewCreated(f, v, bundle, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -107,12 +129,15 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentStarted(Fragment fragment, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentStarted(Fragment f, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentStarted(fragment, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentStarted(f, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -122,12 +147,15 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentResumed(Fragment fragment, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentResumed(Fragment f, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentResumed(fragment, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentResumed(f, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -137,12 +165,15 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentPaused(Fragment fragment, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentPaused(Fragment f, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentPaused(fragment, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentPaused(f, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -152,12 +183,15 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentStopped(Fragment fragment, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentStopped(Fragment f, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentStopped(fragment, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentStopped(f, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -167,12 +201,16 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentSaveInstanceState(Fragment fragment, Bundle bundle, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentSaveInstanceState(Fragment f, Bundle outState, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Intrinsics.checkNotNullParameter(outState, "outState");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentSaveInstanceState(fragment, bundle, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentSaveInstanceState(f, outState, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -182,12 +220,15 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentViewDestroyed(Fragment fragment, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentViewDestroyed(Fragment f, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentViewDestroyed(fragment, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentViewDestroyed(f, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -197,12 +238,15 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentDestroyed(Fragment fragment, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentDestroyed(Fragment f, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentDestroyed(fragment, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentDestroyed(f, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {
@@ -212,12 +256,15 @@ class FragmentLifecycleCallbacksDispatcher {
         }
     }
 
-    void dispatchOnFragmentDetached(Fragment fragment, boolean z) {
-        Fragment parent = this.mFragmentManager.getParent();
+    public final void dispatchOnFragmentDetached(Fragment f, boolean z) {
+        Intrinsics.checkNotNullParameter(f, "f");
+        Fragment parent = this.fragmentManager.getParent();
         if (parent != null) {
-            parent.getParentFragmentManager().getLifecycleCallbacksDispatcher().dispatchOnFragmentDetached(fragment, true);
+            FragmentManager parentFragmentManager = parent.getParentFragmentManager();
+            Intrinsics.checkNotNullExpressionValue(parentFragmentManager, "parent.getParentFragmentManager()");
+            parentFragmentManager.getLifecycleCallbacksDispatcher().dispatchOnFragmentDetached(f, true);
         }
-        Iterator it = this.mLifecycleCallbacks.iterator();
+        Iterator it = this.lifecycleCallbacks.iterator();
         if (it.hasNext()) {
             WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(it.next());
             if (z) {

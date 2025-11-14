@@ -1,6 +1,7 @@
 package androidx.core.app;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -56,5 +57,37 @@ public abstract class ComponentActivity extends Activity implements LifecycleOwn
             return true;
         }
         return KeyEventDispatcher.dispatchKeyEvent(this, decorView, this, event);
+    }
+
+    protected final boolean shouldDumpInternalState(String[] strArr) {
+        return !shouldSkipDump(strArr);
+    }
+
+    private final boolean shouldSkipDump(String[] strArr) {
+        if (strArr == null || strArr.length == 0) {
+            return false;
+        }
+        String str = strArr[0];
+        switch (str.hashCode()) {
+            case -645125871:
+                return str.equals("--translation") && Build.VERSION.SDK_INT >= 31;
+            case 100470631:
+                if (!str.equals("--dump-dumpable")) {
+                    return false;
+                }
+                break;
+            case 472614934:
+                if (!str.equals("--list-dumpables")) {
+                    return false;
+                }
+                break;
+            case 1159329357:
+                return str.equals("--contentcapture") && Build.VERSION.SDK_INT >= 29;
+            case 1455016274:
+                return str.equals("--autofill") && Build.VERSION.SDK_INT >= 26;
+            default:
+                return false;
+        }
+        return Build.VERSION.SDK_INT >= 33;
     }
 }

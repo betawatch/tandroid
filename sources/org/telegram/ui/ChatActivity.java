@@ -58057,14 +58057,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
         public void onDiceFinished() {
-            if (ChatActivity.this.fireworksOverlay.isStarted()) {
-                return;
-            }
-            ChatActivity.this.fireworksOverlay.start();
-            try {
-                ChatActivity.this.fireworksOverlay.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
+            ChatActivity.this.startFireworks();
         }
 
         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -63855,5 +63848,17 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             return;
         }
         this.chatActivityEnterView.getEditField().setAllowDrawCursor(true);
+    }
+
+    public void startFireworks() {
+        FireworksOverlay fireworksOverlay = this.fireworksOverlay;
+        if (fireworksOverlay == null || fireworksOverlay.isStarted()) {
+            return;
+        }
+        this.fireworksOverlay.start();
+        try {
+            this.fireworksOverlay.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
     }
 }

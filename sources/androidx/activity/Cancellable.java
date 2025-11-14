@@ -1,6 +1,6 @@
 package androidx.activity;
 
 /* loaded from: classes.dex */
-interface Cancellable {
+public interface Cancellable {
     void cancel();
 }

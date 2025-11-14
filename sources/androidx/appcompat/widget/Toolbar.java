@@ -22,7 +22,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.window.OnBackInvokedCallback;
 import android.window.OnBackInvokedDispatcher;
-import androidx.activity.OnBackPressedDispatcher$Api33Impl$$ExternalSyntheticLambda0;
 import androidx.appcompat.R$attr;
 import androidx.appcompat.R$styleable;
 import androidx.appcompat.app.ActionBar;
@@ -36,7 +35,9 @@ import androidx.appcompat.view.menu.SubMenuBuilder;
 import androidx.appcompat.widget.ActionMenuView;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.MarginLayoutParamsCompat;
+import androidx.core.view.MenuHost;
 import androidx.core.view.MenuHostHelper;
+import androidx.core.view.MenuProvider;
 import androidx.core.view.ViewCompat;
 import androidx.customview.view.AbsSavedState;
 import j$.util.Objects;
@@ -47,7 +48,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
-public class Toolbar extends ViewGroup {
+public class Toolbar extends ViewGroup implements MenuHost {
     private MenuPresenter.Callback mActionMenuPresenterCallback;
     private OnBackInvokedCallback mBackInvokedCallback;
     private boolean mBackInvokedCallbackEnabled;
@@ -1601,6 +1602,16 @@ public class Toolbar extends ViewGroup {
         this.mProvidedMenuItems = currentMenuItems2;
     }
 
+    @Override // androidx.core.view.MenuHost
+    public void addMenuProvider(MenuProvider menuProvider) {
+        this.mMenuHostHelper.addMenuProvider(menuProvider);
+    }
+
+    @Override // androidx.core.view.MenuHost
+    public void removeMenuProvider(MenuProvider menuProvider) {
+        this.mMenuHostHelper.removeMenuProvider(menuProvider);
+    }
+
     public void invalidateMenu() {
         Iterator it = this.mProvidedMenuItems.iterator();
         while (it.hasNext()) {
@@ -1837,9 +1848,14 @@ public class Toolbar extends ViewGroup {
             return view.findOnBackInvokedDispatcher();
         }
 
-        static OnBackInvokedCallback newOnBackInvokedCallback(Runnable runnable) {
+        static OnBackInvokedCallback newOnBackInvokedCallback(final Runnable runnable) {
             Objects.requireNonNull(runnable);
-            return new OnBackPressedDispatcher$Api33Impl$$ExternalSyntheticLambda0(runnable);
+            return new OnBackInvokedCallback() { // from class: androidx.appcompat.widget.Toolbar$Api33Impl$$ExternalSyntheticLambda0
+                @Override // android.window.OnBackInvokedCallback
+                public final void onBackInvoked() {
+                    runnable.run();
+                }
+            };
         }
     }
 }

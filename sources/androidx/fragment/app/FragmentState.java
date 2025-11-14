@@ -1,8 +1,8 @@
 package androidx.fragment.app;
 
-import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import androidx.lifecycle.Lifecycle;
 
 /* loaded from: classes.dex */
 final class FragmentState implements Parcelable {
@@ -17,18 +17,20 @@ final class FragmentState implements Parcelable {
             return new FragmentState[i];
         }
     };
-    final Bundle mArguments;
     final String mClassName;
     final int mContainerId;
     final boolean mDetached;
     final int mFragmentId;
     final boolean mFromLayout;
     final boolean mHidden;
+    final boolean mInDynamicContainer;
     final int mMaxLifecycleState;
     final boolean mRemoving;
     final boolean mRetainInstance;
-    Bundle mSavedFragmentState;
     final String mTag;
+    final int mTargetRequestCode;
+    final String mTargetWho;
+    final boolean mUserVisibleHint;
     final String mWho;
 
     @Override // android.os.Parcelable
@@ -40,31 +42,56 @@ final class FragmentState implements Parcelable {
         this.mClassName = fragment.getClass().getName();
         this.mWho = fragment.mWho;
         this.mFromLayout = fragment.mFromLayout;
+        this.mInDynamicContainer = fragment.mInDynamicContainer;
         this.mFragmentId = fragment.mFragmentId;
         this.mContainerId = fragment.mContainerId;
         this.mTag = fragment.mTag;
         this.mRetainInstance = fragment.mRetainInstance;
         this.mRemoving = fragment.mRemoving;
         this.mDetached = fragment.mDetached;
-        this.mArguments = fragment.mArguments;
         this.mHidden = fragment.mHidden;
         this.mMaxLifecycleState = fragment.mMaxState.ordinal();
+        this.mTargetWho = fragment.mTargetWho;
+        this.mTargetRequestCode = fragment.mTargetRequestCode;
+        this.mUserVisibleHint = fragment.mUserVisibleHint;
     }
 
     FragmentState(Parcel parcel) {
         this.mClassName = parcel.readString();
         this.mWho = parcel.readString();
         this.mFromLayout = parcel.readInt() != 0;
+        this.mInDynamicContainer = parcel.readInt() != 0;
         this.mFragmentId = parcel.readInt();
         this.mContainerId = parcel.readInt();
         this.mTag = parcel.readString();
         this.mRetainInstance = parcel.readInt() != 0;
         this.mRemoving = parcel.readInt() != 0;
         this.mDetached = parcel.readInt() != 0;
-        this.mArguments = parcel.readBundle();
         this.mHidden = parcel.readInt() != 0;
-        this.mSavedFragmentState = parcel.readBundle();
         this.mMaxLifecycleState = parcel.readInt();
+        this.mTargetWho = parcel.readString();
+        this.mTargetRequestCode = parcel.readInt();
+        this.mUserVisibleHint = parcel.readInt() != 0;
+    }
+
+    Fragment instantiate(FragmentFactory fragmentFactory, ClassLoader classLoader) {
+        Fragment instantiate = fragmentFactory.instantiate(classLoader, this.mClassName);
+        instantiate.mWho = this.mWho;
+        instantiate.mFromLayout = this.mFromLayout;
+        instantiate.mInDynamicContainer = this.mInDynamicContainer;
+        instantiate.mRestored = true;
+        instantiate.mFragmentId = this.mFragmentId;
+        instantiate.mContainerId = this.mContainerId;
+        instantiate.mTag = this.mTag;
+        instantiate.mRetainInstance = this.mRetainInstance;
+        instantiate.mRemoving = this.mRemoving;
+        instantiate.mDetached = this.mDetached;
+        instantiate.mHidden = this.mHidden;
+        instantiate.mMaxState = Lifecycle.State.values()[this.mMaxLifecycleState];
+        instantiate.mTargetWho = this.mTargetWho;
+        instantiate.mTargetRequestCode = this.mTargetRequestCode;
+        instantiate.mUserVisibleHint = this.mUserVisibleHint;
+        return instantiate;
     }
 
     public String toString() {
@@ -76,6 +103,9 @@ final class FragmentState implements Parcelable {
         sb.append(")}:");
         if (this.mFromLayout) {
             sb.append(" fromLayout");
+        }
+        if (this.mInDynamicContainer) {
+            sb.append(" dynamicContainer");
         }
         if (this.mContainerId != 0) {
             sb.append(" id=0x");
@@ -98,6 +128,15 @@ final class FragmentState implements Parcelable {
         if (this.mHidden) {
             sb.append(" hidden");
         }
+        if (this.mTargetWho != null) {
+            sb.append(" targetWho=");
+            sb.append(this.mTargetWho);
+            sb.append(" targetRequestCode=");
+            sb.append(this.mTargetRequestCode);
+        }
+        if (this.mUserVisibleHint) {
+            sb.append(" userVisibleHint");
+        }
         return sb.toString();
     }
 
@@ -106,15 +145,17 @@ final class FragmentState implements Parcelable {
         parcel.writeString(this.mClassName);
         parcel.writeString(this.mWho);
         parcel.writeInt(this.mFromLayout ? 1 : 0);
+        parcel.writeInt(this.mInDynamicContainer ? 1 : 0);
         parcel.writeInt(this.mFragmentId);
         parcel.writeInt(this.mContainerId);
         parcel.writeString(this.mTag);
         parcel.writeInt(this.mRetainInstance ? 1 : 0);
         parcel.writeInt(this.mRemoving ? 1 : 0);
         parcel.writeInt(this.mDetached ? 1 : 0);
-        parcel.writeBundle(this.mArguments);
         parcel.writeInt(this.mHidden ? 1 : 0);
-        parcel.writeBundle(this.mSavedFragmentState);
         parcel.writeInt(this.mMaxLifecycleState);
+        parcel.writeString(this.mTargetWho);
+        parcel.writeInt(this.mTargetRequestCode);
+        parcel.writeInt(this.mUserVisibleHint ? 1 : 0);
     }
 }

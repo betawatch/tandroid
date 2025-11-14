@@ -5,19 +5,6 @@ public final class CancellationSignal {
     private boolean mCancelInProgress;
     private Object mCancellationSignalObj;
     private boolean mIsCanceled;
-    private OnCancelListener mOnCancelListener;
-
-    public interface OnCancelListener {
-        void onCancel();
-    }
-
-    public boolean isCanceled() {
-        boolean z;
-        synchronized (this) {
-            z = this.mIsCanceled;
-        }
-        return z;
-    }
 
     public void cancel() {
         synchronized (this) {
@@ -27,11 +14,10 @@ public final class CancellationSignal {
                 }
                 this.mIsCanceled = true;
                 this.mCancelInProgress = true;
-                OnCancelListener onCancelListener = this.mOnCancelListener;
                 Object obj = this.mCancellationSignalObj;
-                if (onCancelListener != null) {
+                if (obj != null) {
                     try {
-                        onCancelListener.onCancel();
+                        ((android.os.CancellationSignal) obj).cancel();
                     } catch (Throwable th) {
                         synchronized (this) {
                             this.mCancelInProgress = false;
@@ -40,30 +26,12 @@ public final class CancellationSignal {
                         }
                     }
                 }
-                if (obj != null) {
-                    ((android.os.CancellationSignal) obj).cancel();
-                }
                 synchronized (this) {
                     this.mCancelInProgress = false;
                     notifyAll();
                 }
-            } finally {
-            }
-        }
-    }
-
-    public void setOnCancelListener(OnCancelListener onCancelListener) {
-        synchronized (this) {
-            try {
-                waitForCancelFinishedLocked();
-                if (this.mOnCancelListener == onCancelListener) {
-                    return;
-                }
-                this.mOnCancelListener = onCancelListener;
-                if (this.mIsCanceled && onCancelListener != null) {
-                    onCancelListener.onCancel();
-                }
-            } finally {
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -85,14 +53,5 @@ public final class CancellationSignal {
             }
         }
         return obj;
-    }
-
-    private void waitForCancelFinishedLocked() {
-        while (this.mCancelInProgress) {
-            try {
-                wait();
-            } catch (InterruptedException unused) {
-            }
-        }
     }
 }

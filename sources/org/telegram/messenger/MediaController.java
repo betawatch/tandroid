@@ -865,7 +865,9 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
 
         /* JADX WARN: Removed duplicated region for block: B:13:0x00af  */
-        /* JADX WARN: Removed duplicated region for block: B:21:0x00dc  */
+        /* JADX WARN: Removed duplicated region for block: B:18:0x014b  */
+        /* JADX WARN: Removed duplicated region for block: B:21:? A[RETURN, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:23:0x00dc  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -931,15 +933,22 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
-                    decodeFile.recycle();
+                    if (decodeFile != null) {
+                        decodeFile.recycle();
+                    }
                 }
-                bitmap.recycle();
+                if (bitmap == null) {
+                    bitmap.recycle();
+                    return;
+                }
+                return;
             }
             bitmap = createBitmap;
             str = this.fullPaintPath;
             if (str != null) {
             }
-            bitmap.recycle();
+            if (bitmap == null) {
+            }
         }
 
         /* JADX INFO: Access modifiers changed from: private */

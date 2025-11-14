@@ -1,49 +1,62 @@
 package androidx.activity;
 
-import androidx.core.util.Consumer;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
 public abstract class OnBackPressedCallback {
-    private CopyOnWriteArrayList mCancellables = new CopyOnWriteArrayList();
-    private boolean mEnabled;
-    private Consumer mEnabledConsumer;
+    private final CopyOnWriteArrayList cancellables = new CopyOnWriteArrayList();
+    private Function0 enabledChangedCallback;
+    private boolean isEnabled;
+
+    public abstract void handleOnBackCancelled();
 
     public abstract void handleOnBackPressed();
 
-    public OnBackPressedCallback(boolean z) {
-        this.mEnabled = z;
-    }
+    public abstract void handleOnBackProgressed(BackEventCompat backEventCompat);
 
-    public final void setEnabled(boolean z) {
-        this.mEnabled = z;
-        Consumer consumer = this.mEnabledConsumer;
-        if (consumer != null) {
-            consumer.accept(Boolean.valueOf(z));
-        }
+    public abstract void handleOnBackStarted(BackEventCompat backEventCompat);
+
+    public OnBackPressedCallback(boolean z) {
+        this.isEnabled = z;
     }
 
     public final boolean isEnabled() {
-        return this.mEnabled;
+        return this.isEnabled;
+    }
+
+    public final void setEnabled(boolean z) {
+        this.isEnabled = z;
+        Function0 function0 = this.enabledChangedCallback;
+        if (function0 != null) {
+            function0.invoke();
+        }
+    }
+
+    public final Function0 getEnabledChangedCallback$activity_release() {
+        return this.enabledChangedCallback;
+    }
+
+    public final void setEnabledChangedCallback$activity_release(Function0 function0) {
+        this.enabledChangedCallback = function0;
     }
 
     public final void remove() {
-        Iterator it = this.mCancellables.iterator();
+        Iterator it = this.cancellables.iterator();
         while (it.hasNext()) {
             ((Cancellable) it.next()).cancel();
         }
     }
 
-    void addCancellable(Cancellable cancellable) {
-        this.mCancellables.add(cancellable);
+    public final void addCancellable(Cancellable cancellable) {
+        Intrinsics.checkNotNullParameter(cancellable, "cancellable");
+        this.cancellables.add(cancellable);
     }
 
-    void removeCancellable(Cancellable cancellable) {
-        this.mCancellables.remove(cancellable);
-    }
-
-    void setIsEnabledConsumer(Consumer consumer) {
-        this.mEnabledConsumer = consumer;
+    public final void removeCancellable(Cancellable cancellable) {
+        Intrinsics.checkNotNullParameter(cancellable, "cancellable");
+        this.cancellables.remove(cancellable);
     }
 }

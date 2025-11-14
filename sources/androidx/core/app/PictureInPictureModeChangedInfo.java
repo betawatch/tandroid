@@ -12,6 +12,10 @@ public final class PictureInPictureModeChangedInfo {
         this.isInPictureInPictureMode = z;
     }
 
+    public final boolean isInPictureInPictureMode() {
+        return this.isInPictureInPictureMode;
+    }
+
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public PictureInPictureModeChangedInfo(boolean z, Configuration newConfig) {
         this(z);

@@ -12567,7 +12567,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                         }
                                     }
                                     if (!z15 && !"android.intent.action.MAIN".equals(intent.getAction()) && (groupCallActivity = GroupCallActivity.groupCallInstance) != null) {
-                                        groupCallActivity.lambda$new$3();
+                                        groupCallActivity.dismiss();
                                     }
                                     r1.setAction(r12);
                                     return z20;
@@ -12626,7 +12626,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                                         if (z52) {
                                         }
                                         if (!z15) {
-                                            groupCallActivity.lambda$new$3();
+                                            groupCallActivity.dismiss();
                                         }
                                         r1.setAction(r12);
                                         return z20;
@@ -13366,7 +13366,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         StoryRecorder.destroyInstance();
         GroupCallActivity groupCallActivity = GroupCallActivity.groupCallInstance;
         if (groupCallActivity != null) {
-            groupCallActivity.lambda$new$3();
+            groupCallActivity.dismiss();
         }
         if (z) {
             return;
@@ -13818,7 +13818,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             StoryRecorder.destroyInstance();
             GroupCallActivity groupCallActivity = GroupCallActivity.groupCallInstance;
             if (groupCallActivity != null) {
-                groupCallActivity.lambda$new$3();
+                groupCallActivity.dismiss();
             }
             this.drawerLayoutContainer.setAllowOpenDrawer(false, false);
             if (AndroidUtilities.isTablet()) {
@@ -14521,9 +14521,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$runLinkRequest$56(Runnable runnable, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState, TLRPC.TL_error tL_error) {
         if (tL_error != null) {
-            BulletinFactory.of((BaseFragment) mainFragmentsStack.get(r9.size() - 1)).createSimpleBulletin(R.raw.error, getString(R.string.GiftAuctionNotFound)).show();
+            BulletinFactory.of((BaseFragment) mainFragmentsStack.get(r10.size() - 1)).createSimpleBulletin(R.raw.error, getString(R.string.GiftAuctionNotFound)).show();
         } else if (tL_StarGiftAuctionState != null) {
-            AuctionJoinSheet.show(this, (Theme.ResourcesProvider) null, this.currentAccount, 0L, tL_StarGiftAuctionState.gift.id);
+            AuctionJoinSheet.show(this, (Theme.ResourcesProvider) null, this.currentAccount, 0L, tL_StarGiftAuctionState.gift.id, (Runnable) null);
         }
         try {
             runnable.run();
@@ -14780,7 +14780,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         StoryRecorder.destroyInstance();
                         GroupCallActivity groupCallActivity = GroupCallActivity.groupCallInstance;
                         if (groupCallActivity != null) {
-                            groupCallActivity.lambda$new$3();
+                            groupCallActivity.dismiss();
                         }
                         this.drawerLayoutContainer.setAllowOpenDrawer(false, false);
                         if (AndroidUtilities.isTablet()) {
@@ -17002,7 +17002,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         this.navigateToPremiumGiftCallback = runnable;
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity
+    @Override // androidx.activity.ComponentActivity, android.app.Activity
     public void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         handleIntent(intent, true, false, false, null, true, true);
@@ -18134,7 +18134,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity, android.content.ComponentCallbacks
+    @Override // androidx.activity.ComponentActivity, android.app.Activity, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
         AndroidUtilities.checkDisplaySize(this, configuration);
         AndroidUtilities.setPreferredMaxRefreshRate(getWindow());
@@ -18166,7 +18166,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity
+    @Override // androidx.activity.ComponentActivity, android.app.Activity
     public void onMultiWindowModeChanged(boolean z) {
         AndroidUtilities.isInMultiwindow = z;
         checkLayout();
@@ -19787,7 +19787,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, android.app.Activity, android.content.ComponentCallbacks
+    @Override // android.app.Activity, android.content.ComponentCallbacks
     public void onLowMemory() {
         super.onLowMemory();
         ActionBarLayout actionBarLayout = this.actionBarLayout;

@@ -57,7 +57,7 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
             @Override // android.view.ViewGroup
             public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0 && SharingLocationsAlert.this.scrollOffsetY != 0 && motionEvent.getY() < SharingLocationsAlert.this.scrollOffsetY) {
-                    SharingLocationsAlert.this.lambda$new$3();
+                    SharingLocationsAlert.this.dismiss();
                     return true;
                 }
                 return super.onInterceptTouchEvent(motionEvent);
@@ -188,7 +188,7 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
             return;
         }
         this.delegate.didSelectLocation(getLocation(i2));
-        lambda$new$3();
+        dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -196,12 +196,12 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
         for (int i = 0; i < 4; i++) {
             LocationController.getInstance(i).removeAllLocationSharings();
         }
-        lambda$new$3();
+        dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(View view) {
-        lambda$new$3();
+        dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -233,7 +233,7 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
     public void didReceivedNotification(int i, int i2, Object... objArr) {
         if (i == NotificationCenter.liveLocationsChanged) {
             if (LocationController.getLocationsCount() == 0) {
-                lambda$new$3();
+                dismiss();
             } else {
                 this.adapter.notifyDataSetChanged();
             }
@@ -254,9 +254,8 @@ public class SharingLocationsAlert extends BottomSheet implements NotificationCe
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-    /* renamed from: dismiss */
-    public void lambda$new$3() {
-        super.lambda$new$3();
+    public void dismiss() {
+        super.dismiss();
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.liveLocationsChanged);
     }
 

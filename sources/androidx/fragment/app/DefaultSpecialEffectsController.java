@@ -2,613 +2,389 @@ package androidx.fragment.app;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.content.Context;
 import android.graphics.Rect;
+import android.os.Build;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import androidx.activity.BackEventCompat;
+import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import androidx.collection.ArrayMap;
 import androidx.core.os.CancellationSignal;
-import androidx.core.util.Preconditions;
 import androidx.core.view.OneShotPreDrawListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewGroupCompat;
+import androidx.fragment.app.DefaultSpecialEffectsController;
 import androidx.fragment.app.FragmentAnim;
 import androidx.fragment.app.SpecialEffectsController;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
+import java.util.Set;
+import kotlin.Pair;
+import kotlin.TuplesKt;
+import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Lambda;
+import kotlin.jvm.internal.Ref$ObjectRef;
 
 /* loaded from: classes.dex */
-class DefaultSpecialEffectsController extends SpecialEffectsController {
-    DefaultSpecialEffectsController(ViewGroup viewGroup) {
-        super(viewGroup);
+public final class DefaultSpecialEffectsController extends SpecialEffectsController {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public DefaultSpecialEffectsController(ViewGroup container) {
+        super(container);
+        Intrinsics.checkNotNullParameter(container, "container");
     }
 
     @Override // androidx.fragment.app.SpecialEffectsController
-    void executeOperations(List list, boolean z) {
-        Iterator it = list.iterator();
-        SpecialEffectsController.Operation operation = null;
-        SpecialEffectsController.Operation operation2 = null;
-        while (it.hasNext()) {
-            SpecialEffectsController.Operation operation3 = (SpecialEffectsController.Operation) it.next();
-            SpecialEffectsController.Operation.State from = SpecialEffectsController.Operation.State.from(operation3.getFragment().mView);
-            int i = 10.$SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[operation3.getFinalState().ordinal()];
-            if (i == 1 || i == 2 || i == 3) {
-                if (from == SpecialEffectsController.Operation.State.VISIBLE && operation == null) {
-                    operation = operation3;
-                }
-            } else if (i == 4 && from != SpecialEffectsController.Operation.State.VISIBLE) {
-                operation2 = operation3;
+    public void collectEffects(List operations, boolean z) {
+        Object obj;
+        Object obj2;
+        Intrinsics.checkNotNullParameter(operations, "operations");
+        if (FragmentManager.isLoggingEnabled(2)) {
+            Log.v("FragmentManager", "Collecting Effects");
+        }
+        Iterator it = operations.iterator();
+        while (true) {
+            obj = null;
+            if (!it.hasNext()) {
+                obj2 = null;
+                break;
             }
+            obj2 = it.next();
+            SpecialEffectsController.Operation operation = (SpecialEffectsController.Operation) obj2;
+            SpecialEffectsController.Operation.State.Companion companion = SpecialEffectsController.Operation.State.Companion;
+            View view = operation.getFragment().mView;
+            Intrinsics.checkNotNullExpressionValue(view, "operation.fragment.mView");
+            SpecialEffectsController.Operation.State asOperationState = companion.asOperationState(view);
+            SpecialEffectsController.Operation.State state = SpecialEffectsController.Operation.State.VISIBLE;
+            if (asOperationState == state && operation.getFinalState() != state) {
+                break;
+            }
+        }
+        SpecialEffectsController.Operation operation2 = (SpecialEffectsController.Operation) obj2;
+        ListIterator listIterator = operations.listIterator(operations.size());
+        while (true) {
+            if (!listIterator.hasPrevious()) {
+                break;
+            }
+            Object previous = listIterator.previous();
+            SpecialEffectsController.Operation operation3 = (SpecialEffectsController.Operation) previous;
+            SpecialEffectsController.Operation.State.Companion companion2 = SpecialEffectsController.Operation.State.Companion;
+            View view2 = operation3.getFragment().mView;
+            Intrinsics.checkNotNullExpressionValue(view2, "operation.fragment.mView");
+            SpecialEffectsController.Operation.State asOperationState2 = companion2.asOperationState(view2);
+            SpecialEffectsController.Operation.State state2 = SpecialEffectsController.Operation.State.VISIBLE;
+            if (asOperationState2 != state2 && operation3.getFinalState() == state2) {
+                obj = previous;
+                break;
+            }
+        }
+        SpecialEffectsController.Operation operation4 = (SpecialEffectsController.Operation) obj;
+        if (FragmentManager.isLoggingEnabled(2)) {
+            Log.v("FragmentManager", "Executing operations from " + operation2 + " to " + operation4);
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        final ArrayList arrayList3 = new ArrayList(list);
-        Iterator it2 = list.iterator();
+        syncAnimations(operations);
+        Iterator it2 = operations.iterator();
         while (it2.hasNext()) {
-            final SpecialEffectsController.Operation operation4 = (SpecialEffectsController.Operation) it2.next();
-            CancellationSignal cancellationSignal = new CancellationSignal();
-            operation4.markStartedSpecialEffect(cancellationSignal);
-            arrayList.add(new AnimationInfo(operation4, cancellationSignal, z));
-            CancellationSignal cancellationSignal2 = new CancellationSignal();
-            operation4.markStartedSpecialEffect(cancellationSignal2);
+            final SpecialEffectsController.Operation operation5 = (SpecialEffectsController.Operation) it2.next();
+            arrayList.add(new AnimationInfo(operation5, z));
             boolean z2 = false;
             if (z) {
-                if (operation4 != operation) {
-                    arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
-                    operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
+                if (operation5 != operation2) {
+                    arrayList2.add(new TransitionInfo(operation5, z, z2));
+                    operation5.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
-                        public void run() {
-                            if (arrayList3.contains(operation4)) {
-                                arrayList3.remove(operation4);
-                                DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
-                            }
+                        public final void run() {
+                            DefaultSpecialEffectsController.collectEffects$lambda$2(DefaultSpecialEffectsController.this, operation5);
                         }
                     });
                 }
                 z2 = true;
-                arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
-                operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
+                arrayList2.add(new TransitionInfo(operation5, z, z2));
+                operation5.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
-                    public void run() {
-                        if (arrayList3.contains(operation4)) {
-                            arrayList3.remove(operation4);
-                            DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
-                        }
+                    public final void run() {
+                        DefaultSpecialEffectsController.collectEffects$lambda$2(DefaultSpecialEffectsController.this, operation5);
                     }
                 });
             } else {
-                if (operation4 != operation2) {
-                    arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
-                    operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
+                if (operation5 != operation4) {
+                    arrayList2.add(new TransitionInfo(operation5, z, z2));
+                    operation5.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
-                        public void run() {
-                            if (arrayList3.contains(operation4)) {
-                                arrayList3.remove(operation4);
-                                DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
-                            }
+                        public final void run() {
+                            DefaultSpecialEffectsController.collectEffects$lambda$2(DefaultSpecialEffectsController.this, operation5);
                         }
                     });
                 }
                 z2 = true;
-                arrayList2.add(new TransitionInfo(operation4, cancellationSignal2, z, z2));
-                operation4.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.1
+                arrayList2.add(new TransitionInfo(operation5, z, z2));
+                operation5.addCompletionListener(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
-                    public void run() {
-                        if (arrayList3.contains(operation4)) {
-                            arrayList3.remove(operation4);
-                            DefaultSpecialEffectsController.this.applyContainerChanges(operation4);
-                        }
+                    public final void run() {
+                        DefaultSpecialEffectsController.collectEffects$lambda$2(DefaultSpecialEffectsController.this, operation5);
                     }
                 });
             }
         }
-        Map startTransitions = startTransitions(arrayList2, arrayList3, z, operation, operation2);
-        startAnimations(arrayList, arrayList3, startTransitions.containsValue(Boolean.TRUE), startTransitions);
-        Iterator it3 = arrayList3.iterator();
-        while (it3.hasNext()) {
-            applyContainerChanges((SpecialEffectsController.Operation) it3.next());
-        }
-        arrayList3.clear();
+        createTransitionEffect(arrayList2, z, operation2, operation4);
+        collectAnimEffects(arrayList);
     }
 
-    static /* synthetic */ class 10 {
-        static final /* synthetic */ int[] $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State;
-
-        static {
-            int[] iArr = new int[SpecialEffectsController.Operation.State.values().length];
-            $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State = iArr;
-            try {
-                iArr[SpecialEffectsController.Operation.State.GONE.ordinal()] = 1;
-            } catch (NoSuchFieldError unused) {
-            }
-            try {
-                $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[SpecialEffectsController.Operation.State.INVISIBLE.ordinal()] = 2;
-            } catch (NoSuchFieldError unused2) {
-            }
-            try {
-                $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[SpecialEffectsController.Operation.State.REMOVED.ordinal()] = 3;
-            } catch (NoSuchFieldError unused3) {
-            }
-            try {
-                $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[SpecialEffectsController.Operation.State.VISIBLE.ordinal()] = 4;
-            } catch (NoSuchFieldError unused4) {
-            }
-        }
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void collectEffects$lambda$2(DefaultSpecialEffectsController this$0, SpecialEffectsController.Operation operation) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(operation, "$operation");
+        this$0.applyContainerChangesToOperation$fragment_release(operation);
     }
 
-    private void startAnimations(List list, List list2, boolean z, Map map) {
-        final ViewGroup container = getContainer();
-        Context context = container.getContext();
-        ArrayList arrayList = new ArrayList();
+    private final void syncAnimations(List list) {
+        Fragment fragment = ((SpecialEffectsController.Operation) CollectionsKt.last(list)).getFragment();
         Iterator it = list.iterator();
-        boolean z2 = false;
         while (it.hasNext()) {
-            final AnimationInfo animationInfo = (AnimationInfo) it.next();
-            if (animationInfo.isVisibilityUnchanged()) {
-                animationInfo.completeSpecialEffect();
-            } else {
-                FragmentAnim.AnimationOrAnimator animation = animationInfo.getAnimation(context);
-                if (animation == null) {
-                    animationInfo.completeSpecialEffect();
+            SpecialEffectsController.Operation operation = (SpecialEffectsController.Operation) it.next();
+            operation.getFragment().mAnimationInfo.mEnterAnim = fragment.mAnimationInfo.mEnterAnim;
+            operation.getFragment().mAnimationInfo.mExitAnim = fragment.mAnimationInfo.mExitAnim;
+            operation.getFragment().mAnimationInfo.mPopEnterAnim = fragment.mAnimationInfo.mPopEnterAnim;
+            operation.getFragment().mAnimationInfo.mPopExitAnim = fragment.mAnimationInfo.mPopExitAnim;
+        }
+    }
+
+    private final void collectAnimEffects(List list) {
+        ArrayList<AnimationInfo> arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            CollectionsKt.addAll(arrayList2, ((AnimationInfo) it.next()).getOperation().getEffects$fragment_release());
+        }
+        boolean isEmpty = arrayList2.isEmpty();
+        Iterator it2 = list.iterator();
+        boolean z = false;
+        while (it2.hasNext()) {
+            AnimationInfo animationInfo = (AnimationInfo) it2.next();
+            Context context = getContainer().getContext();
+            SpecialEffectsController.Operation operation = animationInfo.getOperation();
+            Intrinsics.checkNotNullExpressionValue(context, "context");
+            FragmentAnim.AnimationOrAnimator animation = animationInfo.getAnimation(context);
+            if (animation != null) {
+                if (animation.animator == null) {
+                    arrayList.add(animationInfo);
                 } else {
-                    final Animator animator = animation.animator;
-                    if (animator == null) {
-                        arrayList.add(animationInfo);
-                    } else {
-                        final SpecialEffectsController.Operation operation = animationInfo.getOperation();
-                        Fragment fragment = operation.getFragment();
-                        if (Boolean.TRUE.equals(map.get(operation))) {
-                            if (FragmentManager.isLoggingEnabled(2)) {
-                                Log.v("FragmentManager", "Ignoring Animator set on " + fragment + " as this Fragment was involved in a Transition.");
-                            }
-                            animationInfo.completeSpecialEffect();
-                        } else {
-                            final boolean z3 = operation.getFinalState() == SpecialEffectsController.Operation.State.GONE;
-                            if (z3) {
-                                list2.remove(operation);
-                            }
-                            final View view = fragment.mView;
-                            container.startViewTransition(view);
-                            animator.addListener(new AnimatorListenerAdapter() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.2
-                                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                                public void onAnimationEnd(Animator animator2) {
-                                    container.endViewTransition(view);
-                                    if (z3) {
-                                        operation.getFinalState().applyState(view);
-                                    }
-                                    animationInfo.completeSpecialEffect();
-                                }
-                            });
-                            animator.setTarget(view);
-                            animator.start();
-                            animationInfo.getSignal().setOnCancelListener(new CancellationSignal.OnCancelListener() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.3
-                                @Override // androidx.core.os.CancellationSignal.OnCancelListener
-                                public void onCancel() {
-                                    animator.end();
-                                }
-                            });
-                            z2 = true;
+                    Fragment fragment = operation.getFragment();
+                    if (!operation.getEffects$fragment_release().isEmpty()) {
+                        if (FragmentManager.isLoggingEnabled(2)) {
+                            Log.v("FragmentManager", "Ignoring Animator set on " + fragment + " as this Fragment was involved in a Transition.");
                         }
+                    } else {
+                        if (operation.getFinalState() == SpecialEffectsController.Operation.State.GONE) {
+                            operation.setAwaitingContainerChanges(false);
+                        }
+                        operation.addEffect(new AnimatorEffect(animationInfo));
+                        z = true;
                     }
                 }
             }
         }
-        Iterator it2 = arrayList.iterator();
-        while (it2.hasNext()) {
-            final AnimationInfo animationInfo2 = (AnimationInfo) it2.next();
+        for (AnimationInfo animationInfo2 : arrayList) {
             SpecialEffectsController.Operation operation2 = animationInfo2.getOperation();
             Fragment fragment2 = operation2.getFragment();
-            if (z) {
-                if (FragmentManager.isLoggingEnabled(2)) {
-                    Log.v("FragmentManager", "Ignoring Animation set on " + fragment2 + " as Animations cannot run alongside Transitions.");
-                }
-                animationInfo2.completeSpecialEffect();
-            } else if (z2) {
-                if (FragmentManager.isLoggingEnabled(2)) {
-                    Log.v("FragmentManager", "Ignoring Animation set on " + fragment2 + " as Animations cannot run alongside Animators.");
-                }
-                animationInfo2.completeSpecialEffect();
-            } else {
-                final View view2 = fragment2.mView;
-                Animation animation2 = (Animation) Preconditions.checkNotNull(((FragmentAnim.AnimationOrAnimator) Preconditions.checkNotNull(animationInfo2.getAnimation(context))).animation);
-                if (operation2.getFinalState() != SpecialEffectsController.Operation.State.REMOVED) {
-                    view2.startAnimation(animation2);
-                    animationInfo2.completeSpecialEffect();
-                } else {
-                    container.startViewTransition(view2);
-                    FragmentAnim.EndViewTransitionAnimation endViewTransitionAnimation = new FragmentAnim.EndViewTransitionAnimation(animation2, container, view2);
-                    endViewTransitionAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.4
-                        @Override // android.view.animation.Animation.AnimationListener
-                        public void onAnimationRepeat(Animation animation3) {
-                        }
-
-                        @Override // android.view.animation.Animation.AnimationListener
-                        public void onAnimationStart(Animation animation3) {
-                        }
-
-                        @Override // android.view.animation.Animation.AnimationListener
-                        public void onAnimationEnd(Animation animation3) {
-                            container.post(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.4.1
-                                @Override // java.lang.Runnable
-                                public void run() {
-                                    4 r0 = 4.this;
-                                    container.endViewTransition(view2);
-                                    animationInfo2.completeSpecialEffect();
-                                }
-                            });
-                        }
-                    });
-                    view2.startAnimation(endViewTransitionAnimation);
-                }
-                animationInfo2.getSignal().setOnCancelListener(new CancellationSignal.OnCancelListener() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.5
-                    @Override // androidx.core.os.CancellationSignal.OnCancelListener
-                    public void onCancel() {
-                        view2.clearAnimation();
-                        container.endViewTransition(view2);
-                        animationInfo2.completeSpecialEffect();
+            if (isEmpty) {
+                if (z) {
+                    if (FragmentManager.isLoggingEnabled(2)) {
+                        Log.v("FragmentManager", "Ignoring Animation set on " + fragment2 + " as Animations cannot run alongside Animators.");
                     }
-                });
+                } else {
+                    operation2.addEffect(new AnimationEffect(animationInfo2));
+                }
+            } else if (FragmentManager.isLoggingEnabled(2)) {
+                Log.v("FragmentManager", "Ignoring Animation set on " + fragment2 + " as Animations cannot run alongside Transitions.");
             }
         }
     }
 
-    private Map startTransitions(List list, List list2, final boolean z, final SpecialEffectsController.Operation operation, final SpecialEffectsController.Operation operation2) {
-        View view;
+    private final void createTransitionEffect(List list, boolean z, SpecialEffectsController.Operation operation, SpecialEffectsController.Operation operation2) {
         Object obj;
-        ArrayList arrayList;
-        Object obj2;
-        ArrayList arrayList2;
-        SpecialEffectsController.Operation operation3;
-        SpecialEffectsController.Operation operation4;
-        View view2;
-        Object mergeTransitionsTogether;
-        ArrayMap arrayMap;
-        ArrayList arrayList3;
-        SpecialEffectsController.Operation operation5;
-        ArrayList arrayList4;
-        Rect rect;
-        View view3;
         FragmentTransitionImpl fragmentTransitionImpl;
-        SpecialEffectsController.Operation operation6;
-        final View view4;
-        boolean z2 = z;
-        SpecialEffectsController.Operation operation7 = operation;
-        SpecialEffectsController.Operation operation8 = operation2;
-        HashMap hashMap = new HashMap();
-        Iterator it = list.iterator();
-        final FragmentTransitionImpl fragmentTransitionImpl2 = null;
-        while (it.hasNext()) {
-            TransitionInfo transitionInfo = (TransitionInfo) it.next();
-            if (!transitionInfo.isVisibilityUnchanged()) {
-                FragmentTransitionImpl handlingImpl = transitionInfo.getHandlingImpl();
-                if (fragmentTransitionImpl2 == null) {
-                    fragmentTransitionImpl2 = handlingImpl;
-                } else if (handlingImpl != null && fragmentTransitionImpl2 != handlingImpl) {
-                    throw new IllegalArgumentException("Mixing framework transitions and AndroidX transitions is not allowed. Fragment " + transitionInfo.getOperation().getFragment() + " returned Transition " + transitionInfo.getTransition() + " which uses a different Transition  type than other Fragments.");
-                }
+        Iterator it;
+        Pair pair;
+        ArrayList arrayList = new ArrayList();
+        for (Object obj2 : list) {
+            if (!((TransitionInfo) obj2).isVisibilityUnchanged()) {
+                arrayList.add(obj2);
             }
+        }
+        ArrayList<TransitionInfo> arrayList2 = new ArrayList();
+        for (Object obj3 : arrayList) {
+            if (((TransitionInfo) obj3).getHandlingImpl() != null) {
+                arrayList2.add(obj3);
+            }
+        }
+        FragmentTransitionImpl fragmentTransitionImpl2 = null;
+        for (TransitionInfo transitionInfo : arrayList2) {
+            FragmentTransitionImpl handlingImpl = transitionInfo.getHandlingImpl();
+            if (fragmentTransitionImpl2 != null && handlingImpl != fragmentTransitionImpl2) {
+                throw new IllegalArgumentException(("Mixing framework transitions and AndroidX transitions is not allowed. Fragment " + transitionInfo.getOperation().getFragment() + " returned Transition " + transitionInfo.getTransition() + " which uses a different Transition type than other Fragments.").toString());
+            }
+            fragmentTransitionImpl2 = handlingImpl;
         }
         if (fragmentTransitionImpl2 == null) {
-            Iterator it2 = list.iterator();
-            while (it2.hasNext()) {
-                TransitionInfo transitionInfo2 = (TransitionInfo) it2.next();
-                hashMap.put(transitionInfo2.getOperation(), Boolean.FALSE);
-                transitionInfo2.completeSpecialEffect();
-            }
-            return hashMap;
+            return;
         }
-        View view5 = new View(getContainer().getContext());
-        final Rect rect2 = new Rect();
+        ArrayList arrayList3 = new ArrayList();
+        ArrayList arrayList4 = new ArrayList();
+        ArrayMap arrayMap = new ArrayMap();
         ArrayList arrayList5 = new ArrayList();
         ArrayList arrayList6 = new ArrayList();
         ArrayMap arrayMap2 = new ArrayMap();
-        Iterator it3 = list.iterator();
-        Object obj3 = null;
-        View view6 = null;
-        boolean z3 = false;
-        while (it3.hasNext()) {
-            TransitionInfo transitionInfo3 = (TransitionInfo) it3.next();
-            if (!transitionInfo3.hasSharedElementTransition() || operation7 == null || operation8 == null) {
-                arrayMap = arrayMap2;
-                arrayList3 = arrayList6;
-                operation5 = operation7;
-                arrayList4 = arrayList5;
-                rect = rect2;
-                view3 = view5;
-                fragmentTransitionImpl = fragmentTransitionImpl2;
-                operation6 = operation8;
-                view6 = view6;
-            } else {
-                Object wrapTransitionInSet = fragmentTransitionImpl2.wrapTransitionInSet(fragmentTransitionImpl2.cloneTransition(transitionInfo3.getSharedElementTransition()));
-                ArrayList sharedElementSourceNames = operation2.getFragment().getSharedElementSourceNames();
-                ArrayList sharedElementSourceNames2 = operation.getFragment().getSharedElementSourceNames();
-                ArrayList sharedElementTargetNames = operation.getFragment().getSharedElementTargetNames();
-                View view7 = view6;
-                int i = 0;
-                while (i < sharedElementTargetNames.size()) {
-                    int indexOf = sharedElementSourceNames.indexOf(sharedElementTargetNames.get(i));
-                    ArrayList arrayList7 = sharedElementTargetNames;
-                    if (indexOf != -1) {
-                        sharedElementSourceNames.set(indexOf, sharedElementSourceNames2.get(i));
-                    }
-                    i++;
-                    sharedElementTargetNames = arrayList7;
-                }
-                ArrayList sharedElementTargetNames2 = operation2.getFragment().getSharedElementTargetNames();
-                if (!z2) {
-                    operation.getFragment().getExitTransitionCallback();
-                    operation2.getFragment().getEnterTransitionCallback();
-                } else {
-                    operation.getFragment().getEnterTransitionCallback();
-                    operation2.getFragment().getExitTransitionCallback();
-                }
-                int i2 = 0;
-                for (int size = sharedElementSourceNames.size(); i2 < size; size = size) {
-                    arrayMap2.put((String) sharedElementSourceNames.get(i2), (String) sharedElementTargetNames2.get(i2));
-                    i2++;
-                }
-                ArrayMap arrayMap3 = new ArrayMap();
-                findNamedViews(arrayMap3, operation.getFragment().mView);
-                arrayMap3.retainAll(sharedElementSourceNames);
-                arrayMap2.retainAll(arrayMap3.keySet());
-                final ArrayMap arrayMap4 = new ArrayMap();
-                findNamedViews(arrayMap4, operation2.getFragment().mView);
-                arrayMap4.retainAll(sharedElementTargetNames2);
-                arrayMap4.retainAll(arrayMap2.values());
-                FragmentTransition.retainValues(arrayMap2, arrayMap4);
-                retainMatchingViews(arrayMap3, arrayMap2.keySet());
-                retainMatchingViews(arrayMap4, arrayMap2.values());
-                if (arrayMap2.isEmpty()) {
-                    arrayList5.clear();
-                    arrayList6.clear();
-                    arrayMap = arrayMap2;
-                    arrayList3 = arrayList6;
-                    operation5 = operation7;
-                    arrayList4 = arrayList5;
-                    rect = rect2;
-                    view3 = view5;
-                    fragmentTransitionImpl = fragmentTransitionImpl2;
-                    view6 = view7;
-                    obj3 = null;
-                    operation6 = operation8;
-                } else {
-                    FragmentTransition.callSharedElementStartEnd(operation2.getFragment(), operation.getFragment(), z2, arrayMap3, true);
-                    arrayMap = arrayMap2;
-                    ArrayList arrayList8 = arrayList6;
-                    OneShotPreDrawListener.add(getContainer(), new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.6
-                        @Override // java.lang.Runnable
-                        public void run() {
-                            FragmentTransition.callSharedElementStartEnd(operation2.getFragment(), operation.getFragment(), z, arrayMap4, false);
+        ArrayMap arrayMap3 = new ArrayMap();
+        Iterator it2 = arrayList2.iterator();
+        ArrayList arrayList7 = arrayList5;
+        ArrayList arrayList8 = arrayList6;
+        loop3: while (true) {
+            obj = null;
+            while (it2.hasNext()) {
+                TransitionInfo transitionInfo2 = (TransitionInfo) it2.next();
+                if (transitionInfo2.hasSharedElementTransition() && operation != null && operation2 != null) {
+                    obj = fragmentTransitionImpl2.wrapTransitionInSet(fragmentTransitionImpl2.cloneTransition(transitionInfo2.getSharedElementTransition()));
+                    arrayList8 = operation2.getFragment().getSharedElementSourceNames();
+                    Intrinsics.checkNotNullExpressionValue(arrayList8, "lastIn.fragment.sharedElementSourceNames");
+                    ArrayList sharedElementSourceNames = operation.getFragment().getSharedElementSourceNames();
+                    Intrinsics.checkNotNullExpressionValue(sharedElementSourceNames, "firstOut.fragment.sharedElementSourceNames");
+                    ArrayList sharedElementTargetNames = operation.getFragment().getSharedElementTargetNames();
+                    Intrinsics.checkNotNullExpressionValue(sharedElementTargetNames, "firstOut.fragment.sharedElementTargetNames");
+                    int size = sharedElementTargetNames.size();
+                    it = it2;
+                    int i = 0;
+                    while (i < size) {
+                        int i2 = size;
+                        int indexOf = arrayList8.indexOf(sharedElementTargetNames.get(i));
+                        ArrayList arrayList9 = sharedElementTargetNames;
+                        if (indexOf != -1) {
+                            arrayList8.set(indexOf, sharedElementSourceNames.get(i));
                         }
-                    });
-                    arrayList5.addAll(arrayMap3.values());
-                    if (sharedElementSourceNames.isEmpty()) {
-                        view6 = view7;
+                        i++;
+                        size = i2;
+                        sharedElementTargetNames = arrayList9;
+                    }
+                    arrayList7 = operation2.getFragment().getSharedElementTargetNames();
+                    Intrinsics.checkNotNullExpressionValue(arrayList7, "lastIn.fragment.sharedElementTargetNames");
+                    if (z) {
+                        operation.getFragment().getEnterTransitionCallback();
+                        operation2.getFragment().getExitTransitionCallback();
+                        pair = TuplesKt.to(null, null);
                     } else {
-                        view6 = (View) arrayMap3.get((String) sharedElementSourceNames.get(0));
-                        fragmentTransitionImpl2.setEpicenter(wrapTransitionInSet, view6);
+                        operation.getFragment().getExitTransitionCallback();
+                        operation2.getFragment().getEnterTransitionCallback();
+                        pair = TuplesKt.to(null, null);
                     }
-                    arrayList3 = arrayList8;
-                    arrayList3.addAll(arrayMap4.values());
-                    if (!sharedElementTargetNames2.isEmpty() && (view4 = (View) arrayMap4.get((String) sharedElementTargetNames2.get(0))) != null) {
-                        OneShotPreDrawListener.add(getContainer(), new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.7
-                            @Override // java.lang.Runnable
-                            public void run() {
-                                fragmentTransitionImpl2.getBoundsOnScreen(view4, rect2);
-                            }
-                        });
-                        z3 = true;
+                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(pair.component1());
+                    WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0.m(pair.component2());
+                    int size2 = arrayList8.size();
+                    int i3 = 0;
+                    while (i3 < size2) {
+                        Object obj4 = arrayList8.get(i3);
+                        int i4 = size2;
+                        Intrinsics.checkNotNullExpressionValue(obj4, "exitingNames[i]");
+                        Object obj5 = arrayList7.get(i3);
+                        Intrinsics.checkNotNullExpressionValue(obj5, "enteringNames[i]");
+                        arrayMap.put((String) obj4, (String) obj5);
+                        i3++;
+                        size2 = i4;
+                        fragmentTransitionImpl2 = fragmentTransitionImpl2;
                     }
-                    fragmentTransitionImpl2.setSharedElementTargets(wrapTransitionInSet, view5, arrayList5);
-                    arrayList4 = arrayList5;
-                    rect = rect2;
-                    view3 = view5;
                     fragmentTransitionImpl = fragmentTransitionImpl2;
-                    fragmentTransitionImpl2.scheduleRemoveTargets(wrapTransitionInSet, null, null, null, null, wrapTransitionInSet, arrayList3);
-                    Boolean bool = Boolean.TRUE;
-                    operation5 = operation;
-                    hashMap.put(operation5, bool);
-                    operation6 = operation2;
-                    hashMap.put(operation6, bool);
-                    obj3 = wrapTransitionInSet;
+                    if (FragmentManager.isLoggingEnabled(2)) {
+                        Log.v("FragmentManager", ">>> entering view names <<<");
+                        for (Iterator it3 = arrayList7.iterator(); it3.hasNext(); it3 = it3) {
+                            Log.v("FragmentManager", "Name: " + ((String) it3.next()));
+                        }
+                        Log.v("FragmentManager", ">>> exiting view names <<<");
+                        for (Iterator it4 = arrayList8.iterator(); it4.hasNext(); it4 = it4) {
+                            Log.v("FragmentManager", "Name: " + ((String) it4.next()));
+                        }
+                    }
+                    View view = operation.getFragment().mView;
+                    Intrinsics.checkNotNullExpressionValue(view, "firstOut.fragment.mView");
+                    findNamedViews(arrayMap2, view);
+                    arrayMap2.retainAll(arrayList8);
+                    arrayMap.retainAll(arrayMap2.keySet());
+                    View view2 = operation2.getFragment().mView;
+                    Intrinsics.checkNotNullExpressionValue(view2, "lastIn.fragment.mView");
+                    findNamedViews(arrayMap3, view2);
+                    arrayMap3.retainAll(arrayList7);
+                    arrayMap3.retainAll(arrayMap.values());
+                    FragmentTransition.retainValues(arrayMap, arrayMap3);
+                    Collection keySet = arrayMap.keySet();
+                    Intrinsics.checkNotNullExpressionValue(keySet, "sharedElementNameMapping.keys");
+                    retainMatchingViews(arrayMap2, keySet);
+                    Collection values = arrayMap.values();
+                    Intrinsics.checkNotNullExpressionValue(values, "sharedElementNameMapping.values");
+                    retainMatchingViews(arrayMap3, values);
+                    if (arrayMap.isEmpty()) {
+                        break;
+                    }
+                } else {
+                    fragmentTransitionImpl = fragmentTransitionImpl2;
+                    it = it2;
                 }
+                it2 = it;
+                fragmentTransitionImpl2 = fragmentTransitionImpl;
             }
-            operation7 = operation5;
-            arrayList5 = arrayList4;
-            rect2 = rect;
-            view5 = view3;
-            operation8 = operation6;
-            arrayMap2 = arrayMap;
-            z2 = z;
-            arrayList6 = arrayList3;
+            Log.i("FragmentManager", "Ignoring shared elements transition " + obj + " between " + operation + " and " + operation2 + " as there are no matching elements in both the entering and exiting fragment. In order to run a SharedElementTransition, both fragments involved must have the element.");
+            arrayList3.clear();
+            arrayList4.clear();
+            it2 = it;
             fragmentTransitionImpl2 = fragmentTransitionImpl;
         }
-        View view8 = view6;
-        ArrayMap arrayMap5 = arrayMap2;
-        ArrayList arrayList9 = arrayList6;
-        SpecialEffectsController.Operation operation9 = operation7;
-        ArrayList arrayList10 = arrayList5;
-        Rect rect3 = rect2;
-        View view9 = view5;
         FragmentTransitionImpl fragmentTransitionImpl3 = fragmentTransitionImpl2;
-        SpecialEffectsController.Operation operation10 = operation8;
-        ArrayList arrayList11 = new ArrayList();
-        Iterator it4 = list.iterator();
-        Object obj4 = null;
-        Object obj5 = null;
-        while (it4.hasNext()) {
-            TransitionInfo transitionInfo4 = (TransitionInfo) it4.next();
-            if (transitionInfo4.isVisibilityUnchanged()) {
-                hashMap.put(transitionInfo4.getOperation(), Boolean.FALSE);
-                transitionInfo4.completeSpecialEffect();
-            } else {
-                Object cloneTransition = fragmentTransitionImpl3.cloneTransition(transitionInfo4.getTransition());
-                SpecialEffectsController.Operation operation11 = transitionInfo4.getOperation();
-                boolean z4 = obj3 != null && (operation11 == operation9 || operation11 == operation10);
-                if (cloneTransition == null) {
-                    if (!z4) {
-                        hashMap.put(operation11, Boolean.FALSE);
-                        transitionInfo4.completeSpecialEffect();
-                    }
-                    arrayList2 = arrayList9;
-                    arrayList = arrayList10;
-                    view = view9;
-                    mergeTransitionsTogether = obj4;
-                    operation3 = operation10;
-                    view2 = view8;
-                } else {
-                    final ArrayList arrayList12 = new ArrayList();
-                    Object obj6 = obj4;
-                    captureTransitioningViews(arrayList12, operation11.getFragment().mView);
-                    if (z4) {
-                        if (operation11 == operation9) {
-                            arrayList12.removeAll(arrayList10);
-                        } else {
-                            arrayList12.removeAll(arrayList9);
-                        }
-                    }
-                    if (arrayList12.isEmpty()) {
-                        fragmentTransitionImpl3.addTarget(cloneTransition, view9);
-                        arrayList2 = arrayList9;
-                        arrayList = arrayList10;
-                        view = view9;
-                        operation4 = operation11;
-                        obj2 = obj5;
-                        operation3 = operation10;
-                        obj = obj6;
-                    } else {
-                        fragmentTransitionImpl3.addTargets(cloneTransition, arrayList12);
-                        view = view9;
-                        obj = obj6;
-                        arrayList = arrayList10;
-                        obj2 = obj5;
-                        arrayList2 = arrayList9;
-                        operation3 = operation10;
-                        fragmentTransitionImpl3.scheduleRemoveTargets(cloneTransition, cloneTransition, arrayList12, null, null, null, null);
-                        if (operation11.getFinalState() == SpecialEffectsController.Operation.State.GONE) {
-                            operation4 = operation11;
-                            list2.remove(operation4);
-                            ArrayList arrayList13 = new ArrayList(arrayList12);
-                            arrayList13.remove(operation4.getFragment().mView);
-                            fragmentTransitionImpl3.scheduleHideFragmentView(cloneTransition, operation4.getFragment().mView, arrayList13);
-                            OneShotPreDrawListener.add(getContainer(), new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.8
-                                @Override // java.lang.Runnable
-                                public void run() {
-                                    FragmentTransition.setViewVisibility(arrayList12, 4);
-                                }
-                            });
-                        } else {
-                            operation4 = operation11;
-                        }
-                    }
-                    if (operation4.getFinalState() == SpecialEffectsController.Operation.State.VISIBLE) {
-                        arrayList11.addAll(arrayList12);
-                        if (z3) {
-                            fragmentTransitionImpl3.setEpicenter(cloneTransition, rect3);
-                        }
-                        view2 = view8;
-                    } else {
-                        view2 = view8;
-                        fragmentTransitionImpl3.setEpicenter(cloneTransition, view2);
-                    }
-                    hashMap.put(operation4, Boolean.TRUE);
-                    if (transitionInfo4.isOverlapAllowed()) {
-                        obj5 = fragmentTransitionImpl3.mergeTransitionsTogether(obj2, cloneTransition, null);
-                        mergeTransitionsTogether = obj;
-                    } else {
-                        mergeTransitionsTogether = fragmentTransitionImpl3.mergeTransitionsTogether(obj, cloneTransition, null);
-                        obj5 = obj2;
-                    }
-                }
-                operation10 = operation3;
-                obj4 = mergeTransitionsTogether;
-                view8 = view2;
-                view9 = view;
-                arrayList10 = arrayList;
-                arrayList9 = arrayList2;
-            }
-        }
-        ArrayList arrayList14 = arrayList9;
-        ArrayList arrayList15 = arrayList10;
-        SpecialEffectsController.Operation operation12 = operation10;
-        Object mergeTransitionsInSequence = fragmentTransitionImpl3.mergeTransitionsInSequence(obj5, obj4, obj3);
-        Iterator it5 = list.iterator();
-        while (it5.hasNext()) {
-            final TransitionInfo transitionInfo5 = (TransitionInfo) it5.next();
-            if (!transitionInfo5.isVisibilityUnchanged()) {
-                Object transition = transitionInfo5.getTransition();
-                SpecialEffectsController.Operation operation13 = transitionInfo5.getOperation();
-                boolean z5 = obj3 != null && (operation13 == operation9 || operation13 == operation12);
-                if (transition != null || z5) {
-                    if (!ViewCompat.isLaidOut(getContainer())) {
-                        if (FragmentManager.isLoggingEnabled(2)) {
-                            Log.v("FragmentManager", "SpecialEffectsController: Container " + getContainer() + " has not been laid out. Completing operation " + operation13);
-                        }
-                        transitionInfo5.completeSpecialEffect();
-                    } else {
-                        fragmentTransitionImpl3.setListenerForTransitionEnd(transitionInfo5.getOperation().getFragment(), mergeTransitionsInSequence, transitionInfo5.getSignal(), new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.9
-                            @Override // java.lang.Runnable
-                            public void run() {
-                                transitionInfo5.completeSpecialEffect();
-                            }
-                        });
-                    }
-                }
-            }
-        }
-        if (!ViewCompat.isLaidOut(getContainer())) {
-            return hashMap;
-        }
-        FragmentTransition.setViewVisibility(arrayList11, 4);
-        ArrayList prepareSetNameOverridesReordered = fragmentTransitionImpl3.prepareSetNameOverridesReordered(arrayList14);
-        fragmentTransitionImpl3.beginDelayedTransition(getContainer(), mergeTransitionsInSequence);
-        fragmentTransitionImpl3.setNameOverridesReordered(getContainer(), arrayList15, arrayList14, prepareSetNameOverridesReordered, arrayMap5);
-        FragmentTransition.setViewVisibility(arrayList11, 0);
-        fragmentTransitionImpl3.swapSharedElementTargets(obj3, arrayList15, arrayList14);
-        return hashMap;
-    }
-
-    void retainMatchingViews(ArrayMap arrayMap, Collection collection) {
-        Iterator it = arrayMap.entrySet().iterator();
-        while (it.hasNext()) {
-            if (!collection.contains(ViewCompat.getTransitionName((View) ((Map.Entry) it.next()).getValue()))) {
-                it.remove();
-            }
-        }
-    }
-
-    void captureTransitioningViews(ArrayList arrayList, View view) {
-        if (view instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) view;
-            if (ViewGroupCompat.isTransitionGroup(viewGroup)) {
-                if (arrayList.contains(view)) {
-                    return;
-                }
-                arrayList.add(viewGroup);
+        if (obj == null) {
+            if (arrayList2.isEmpty()) {
                 return;
             }
-            int childCount = viewGroup.getChildCount();
-            for (int i = 0; i < childCount; i++) {
-                View childAt = viewGroup.getChildAt(i);
-                if (childAt.getVisibility() == 0) {
-                    captureTransitioningViews(arrayList, childAt);
+            Iterator it5 = arrayList2.iterator();
+            while (it5.hasNext()) {
+                if (((TransitionInfo) it5.next()).getTransition() == null) {
                 }
             }
             return;
         }
-        if (arrayList.contains(view)) {
-            return;
+        TransitionEffect transitionEffect = new TransitionEffect(arrayList2, operation, operation2, fragmentTransitionImpl3, obj, arrayList3, arrayList4, arrayMap, arrayList7, arrayList8, arrayMap2, arrayMap3, z);
+        Iterator it6 = arrayList2.iterator();
+        while (it6.hasNext()) {
+            ((TransitionInfo) it6.next()).getOperation().addEffect(transitionEffect);
         }
-        arrayList.add(view);
     }
 
-    void findNamedViews(Map map, View view) {
+    private final void retainMatchingViews(ArrayMap arrayMap, final Collection collection) {
+        Set entries = arrayMap.entrySet();
+        Intrinsics.checkNotNullExpressionValue(entries, "entries");
+        CollectionsKt.retainAll(entries, new Function1() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$retainMatchingViews$1
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final Boolean invoke(Map.Entry entry) {
+                Intrinsics.checkNotNullParameter(entry, "entry");
+                return Boolean.valueOf(CollectionsKt.contains(collection, ViewCompat.getTransitionName((View) entry.getValue())));
+            }
+        });
+    }
+
+    private final void findNamedViews(Map map, View view) {
         String transitionName = ViewCompat.getTransitionName(view);
         if (transitionName != null) {
             map.put(transitionName, view);
@@ -617,136 +393,128 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
             ViewGroup viewGroup = (ViewGroup) view;
             int childCount = viewGroup.getChildCount();
             for (int i = 0; i < childCount; i++) {
-                View childAt = viewGroup.getChildAt(i);
-                if (childAt.getVisibility() == 0) {
-                    findNamedViews(map, childAt);
+                View child = viewGroup.getChildAt(i);
+                if (child.getVisibility() == 0) {
+                    Intrinsics.checkNotNullExpressionValue(child, "child");
+                    findNamedViews(map, child);
                 }
             }
         }
     }
 
-    void applyContainerChanges(SpecialEffectsController.Operation operation) {
-        operation.getFinalState().applyState(operation.getFragment().mView);
-    }
+    public static class SpecialEffectsInfo {
+        private final SpecialEffectsController.Operation operation;
 
-    private static class SpecialEffectsInfo {
-        private final SpecialEffectsController.Operation mOperation;
-        private final CancellationSignal mSignal;
-
-        SpecialEffectsInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal) {
-            this.mOperation = operation;
-            this.mSignal = cancellationSignal;
+        public SpecialEffectsInfo(SpecialEffectsController.Operation operation) {
+            Intrinsics.checkNotNullParameter(operation, "operation");
+            this.operation = operation;
         }
 
-        SpecialEffectsController.Operation getOperation() {
-            return this.mOperation;
+        public final SpecialEffectsController.Operation getOperation() {
+            return this.operation;
         }
 
-        CancellationSignal getSignal() {
-            return this.mSignal;
-        }
-
-        boolean isVisibilityUnchanged() {
+        public final boolean isVisibilityUnchanged() {
             SpecialEffectsController.Operation.State state;
-            SpecialEffectsController.Operation.State from = SpecialEffectsController.Operation.State.from(this.mOperation.getFragment().mView);
-            SpecialEffectsController.Operation.State finalState = this.mOperation.getFinalState();
-            return from == finalState || !(from == (state = SpecialEffectsController.Operation.State.VISIBLE) || finalState == state);
-        }
-
-        void completeSpecialEffect() {
-            this.mOperation.completeSpecialEffect(this.mSignal);
+            View view = this.operation.getFragment().mView;
+            SpecialEffectsController.Operation.State asOperationState = view != null ? SpecialEffectsController.Operation.State.Companion.asOperationState(view) : null;
+            SpecialEffectsController.Operation.State finalState = this.operation.getFinalState();
+            return asOperationState == finalState || !(asOperationState == (state = SpecialEffectsController.Operation.State.VISIBLE) || finalState == state);
         }
     }
 
-    private static class AnimationInfo extends SpecialEffectsInfo {
-        private FragmentAnim.AnimationOrAnimator mAnimation;
-        private boolean mIsPop;
-        private boolean mLoadedAnim;
+    /* JADX INFO: Access modifiers changed from: private */
+    static final class AnimationInfo extends SpecialEffectsInfo {
+        private FragmentAnim.AnimationOrAnimator animation;
+        private boolean isAnimLoaded;
+        private final boolean isPop;
 
-        AnimationInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal, boolean z) {
-            super(operation, cancellationSignal);
-            this.mLoadedAnim = false;
-            this.mIsPop = z;
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public AnimationInfo(SpecialEffectsController.Operation operation, boolean z) {
+            super(operation);
+            Intrinsics.checkNotNullParameter(operation, "operation");
+            this.isPop = z;
         }
 
-        FragmentAnim.AnimationOrAnimator getAnimation(Context context) {
-            if (this.mLoadedAnim) {
-                return this.mAnimation;
+        public final FragmentAnim.AnimationOrAnimator getAnimation(Context context) {
+            Intrinsics.checkNotNullParameter(context, "context");
+            if (this.isAnimLoaded) {
+                return this.animation;
             }
-            FragmentAnim.AnimationOrAnimator loadAnimation = FragmentAnim.loadAnimation(context, getOperation().getFragment(), getOperation().getFinalState() == SpecialEffectsController.Operation.State.VISIBLE, this.mIsPop);
-            this.mAnimation = loadAnimation;
-            this.mLoadedAnim = true;
+            FragmentAnim.AnimationOrAnimator loadAnimation = FragmentAnim.loadAnimation(context, getOperation().getFragment(), getOperation().getFinalState() == SpecialEffectsController.Operation.State.VISIBLE, this.isPop);
+            this.animation = loadAnimation;
+            this.isAnimLoaded = true;
             return loadAnimation;
         }
     }
 
-    private static class TransitionInfo extends SpecialEffectsInfo {
-        private final boolean mOverlapAllowed;
-        private final Object mSharedElementTransition;
-        private final Object mTransition;
+    /* JADX INFO: Access modifiers changed from: private */
+    static final class TransitionInfo extends SpecialEffectsInfo {
+        private final boolean isOverlapAllowed;
+        private final Object sharedElementTransition;
+        private final Object transition;
 
-        TransitionInfo(SpecialEffectsController.Operation operation, CancellationSignal cancellationSignal, boolean z, boolean z2) {
-            super(operation, cancellationSignal);
-            Object exitTransition;
-            Object enterTransition;
-            boolean allowEnterTransitionOverlap;
-            if (operation.getFinalState() == SpecialEffectsController.Operation.State.VISIBLE) {
-                if (z) {
-                    enterTransition = operation.getFragment().getReenterTransition();
-                } else {
-                    enterTransition = operation.getFragment().getEnterTransition();
-                }
-                this.mTransition = enterTransition;
-                if (z) {
-                    allowEnterTransitionOverlap = operation.getFragment().getAllowReturnTransitionOverlap();
-                } else {
-                    allowEnterTransitionOverlap = operation.getFragment().getAllowEnterTransitionOverlap();
-                }
-                this.mOverlapAllowed = allowEnterTransitionOverlap;
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public TransitionInfo(SpecialEffectsController.Operation operation, boolean z, boolean z2) {
+            super(operation);
+            Object returnTransition;
+            boolean z3;
+            Object obj;
+            Intrinsics.checkNotNullParameter(operation, "operation");
+            SpecialEffectsController.Operation.State finalState = operation.getFinalState();
+            SpecialEffectsController.Operation.State state = SpecialEffectsController.Operation.State.VISIBLE;
+            if (finalState == state) {
+                Fragment fragment = operation.getFragment();
+                returnTransition = z ? fragment.getReenterTransition() : fragment.getEnterTransition();
             } else {
-                if (z) {
-                    exitTransition = operation.getFragment().getReturnTransition();
-                } else {
-                    exitTransition = operation.getFragment().getExitTransition();
-                }
-                this.mTransition = exitTransition;
-                this.mOverlapAllowed = true;
+                Fragment fragment2 = operation.getFragment();
+                returnTransition = z ? fragment2.getReturnTransition() : fragment2.getExitTransition();
             }
-            if (!z2) {
-                this.mSharedElementTransition = null;
+            this.transition = returnTransition;
+            if (operation.getFinalState() != state) {
+                z3 = true;
             } else if (z) {
-                this.mSharedElementTransition = operation.getFragment().getSharedElementReturnTransition();
+                z3 = operation.getFragment().getAllowReturnTransitionOverlap();
             } else {
-                this.mSharedElementTransition = operation.getFragment().getSharedElementEnterTransition();
+                z3 = operation.getFragment().getAllowEnterTransitionOverlap();
             }
+            this.isOverlapAllowed = z3;
+            if (!z2) {
+                obj = null;
+            } else if (z) {
+                obj = operation.getFragment().getSharedElementReturnTransition();
+            } else {
+                obj = operation.getFragment().getSharedElementEnterTransition();
+            }
+            this.sharedElementTransition = obj;
         }
 
-        Object getTransition() {
-            return this.mTransition;
+        public final Object getTransition() {
+            return this.transition;
         }
 
-        boolean isOverlapAllowed() {
-            return this.mOverlapAllowed;
+        public final boolean isOverlapAllowed() {
+            return this.isOverlapAllowed;
         }
 
-        public boolean hasSharedElementTransition() {
-            return this.mSharedElementTransition != null;
+        public final Object getSharedElementTransition() {
+            return this.sharedElementTransition;
         }
 
-        public Object getSharedElementTransition() {
-            return this.mSharedElementTransition;
+        public final boolean hasSharedElementTransition() {
+            return this.sharedElementTransition != null;
         }
 
-        FragmentTransitionImpl getHandlingImpl() {
-            FragmentTransitionImpl handlingImpl = getHandlingImpl(this.mTransition);
-            FragmentTransitionImpl handlingImpl2 = getHandlingImpl(this.mSharedElementTransition);
+        public final FragmentTransitionImpl getHandlingImpl() {
+            FragmentTransitionImpl handlingImpl = getHandlingImpl(this.transition);
+            FragmentTransitionImpl handlingImpl2 = getHandlingImpl(this.sharedElementTransition);
             if (handlingImpl == null || handlingImpl2 == null || handlingImpl == handlingImpl2) {
-                return handlingImpl != null ? handlingImpl : handlingImpl2;
+                return handlingImpl == null ? handlingImpl2 : handlingImpl;
             }
-            throw new IllegalArgumentException("Mixing framework transitions and AndroidX transitions is not allowed. Fragment " + getOperation().getFragment() + " returned Transition " + this.mTransition + " which uses a different Transition  type than its shared element transition " + this.mSharedElementTransition);
+            throw new IllegalArgumentException(("Mixing framework transitions and AndroidX transitions is not allowed. Fragment " + getOperation().getFragment() + " returned Transition " + this.transition + " which uses a different Transition  type than its shared element transition " + this.sharedElementTransition).toString());
         }
 
-        private FragmentTransitionImpl getHandlingImpl(Object obj) {
+        private final FragmentTransitionImpl getHandlingImpl(Object obj) {
             if (obj == null) {
                 return null;
             }
@@ -761,4 +529,917 @@ class DefaultSpecialEffectsController extends SpecialEffectsController {
             throw new IllegalArgumentException("Transition " + obj + " for fragment " + getOperation().getFragment() + " is not a valid framework Transition or AndroidX Transition");
         }
     }
-}
+
+    /* JADX INFO: Access modifiers changed from: private */
+    static final class AnimationEffect extends SpecialEffectsController.Effect {
+        private final AnimationInfo animationInfo;
+
+        public AnimationEffect(AnimationInfo animationInfo) {
+            Intrinsics.checkNotNullParameter(animationInfo, "animationInfo");
+            this.animationInfo = animationInfo;
+        }
+
+        public final AnimationInfo getAnimationInfo() {
+            return this.animationInfo;
+        }
+
+        @Override // androidx.fragment.app.SpecialEffectsController.Effect
+        public void onCommit(ViewGroup container) {
+            Intrinsics.checkNotNullParameter(container, "container");
+            if (this.animationInfo.isVisibilityUnchanged()) {
+                this.animationInfo.getOperation().completeEffect(this);
+                return;
+            }
+            Context context = container.getContext();
+            SpecialEffectsController.Operation operation = this.animationInfo.getOperation();
+            View view = operation.getFragment().mView;
+            AnimationInfo animationInfo = this.animationInfo;
+            Intrinsics.checkNotNullExpressionValue(context, "context");
+            FragmentAnim.AnimationOrAnimator animation = animationInfo.getAnimation(context);
+            if (animation == null) {
+                throw new IllegalStateException("Required value was null.");
+            }
+            Animation animation2 = animation.animation;
+            if (animation2 == null) {
+                throw new IllegalStateException("Required value was null.");
+            }
+            if (operation.getFinalState() != SpecialEffectsController.Operation.State.REMOVED) {
+                view.startAnimation(animation2);
+                this.animationInfo.getOperation().completeEffect(this);
+                return;
+            }
+            container.startViewTransition(view);
+            FragmentAnim.EndViewTransitionAnimation endViewTransitionAnimation = new FragmentAnim.EndViewTransitionAnimation(animation2, container, view);
+            endViewTransitionAnimation.setAnimationListener(new DefaultSpecialEffectsController$AnimationEffect$onCommit$1(operation, container, view, this));
+            view.startAnimation(endViewTransitionAnimation);
+            if (FragmentManager.isLoggingEnabled(2)) {
+                Log.v("FragmentManager", "Animation from operation " + operation + " has started.");
+            }
+        }
+
+        @Override // androidx.fragment.app.SpecialEffectsController.Effect
+        public void onCancel(ViewGroup container) {
+            Intrinsics.checkNotNullParameter(container, "container");
+            SpecialEffectsController.Operation operation = this.animationInfo.getOperation();
+            View view = operation.getFragment().mView;
+            view.clearAnimation();
+            container.endViewTransition(view);
+            this.animationInfo.getOperation().completeEffect(this);
+            if (FragmentManager.isLoggingEnabled(2)) {
+                Log.v("FragmentManager", "Animation from operation " + operation + " has been cancelled.");
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    static final class AnimatorEffect extends SpecialEffectsController.Effect {
+        private AnimatorSet animator;
+        private final AnimationInfo animatorInfo;
+
+        @Override // androidx.fragment.app.SpecialEffectsController.Effect
+        public boolean isSeekingSupported() {
+            return true;
+        }
+
+        public AnimatorEffect(AnimationInfo animatorInfo) {
+            Intrinsics.checkNotNullParameter(animatorInfo, "animatorInfo");
+            this.animatorInfo = animatorInfo;
+        }
+
+        public final AnimationInfo getAnimatorInfo() {
+            return this.animatorInfo;
+        }
+
+        @Override // androidx.fragment.app.SpecialEffectsController.Effect
+        public void onStart(final ViewGroup container) {
+            Intrinsics.checkNotNullParameter(container, "container");
+            if (this.animatorInfo.isVisibilityUnchanged()) {
+                return;
+            }
+            Context context = container.getContext();
+            AnimationInfo animationInfo = this.animatorInfo;
+            Intrinsics.checkNotNullExpressionValue(context, "context");
+            FragmentAnim.AnimationOrAnimator animation = animationInfo.getAnimation(context);
+            this.animator = animation != null ? animation.animator : null;
+            final SpecialEffectsController.Operation operation = this.animatorInfo.getOperation();
+            Fragment fragment = operation.getFragment();
+            final boolean z = operation.getFinalState() == SpecialEffectsController.Operation.State.GONE;
+            final View view = fragment.mView;
+            container.startViewTransition(view);
+            AnimatorSet animatorSet = this.animator;
+            if (animatorSet != null) {
+                animatorSet.addListener(new AnimatorListenerAdapter() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$AnimatorEffect$onStart$1
+                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                    public void onAnimationEnd(Animator anim) {
+                        Intrinsics.checkNotNullParameter(anim, "anim");
+                        container.endViewTransition(view);
+                        if (z || operation.getFinalState() == SpecialEffectsController.Operation.State.GONE) {
+                            SpecialEffectsController.Operation.State finalState = operation.getFinalState();
+                            View viewToAnimate = view;
+                            Intrinsics.checkNotNullExpressionValue(viewToAnimate, "viewToAnimate");
+                            finalState.applyState(viewToAnimate, container);
+                        }
+                        this.getAnimatorInfo().getOperation().completeEffect(this);
+                        if (FragmentManager.isLoggingEnabled(2)) {
+                            Log.v("FragmentManager", "Animator from operation " + operation + " has ended.");
+                        }
+                    }
+                });
+            }
+            AnimatorSet animatorSet2 = this.animator;
+            if (animatorSet2 != null) {
+                animatorSet2.setTarget(view);
+            }
+        }
+
+        @Override // androidx.fragment.app.SpecialEffectsController.Effect
+        public void onProgress(BackEventCompat backEvent, ViewGroup container) {
+            Intrinsics.checkNotNullParameter(backEvent, "backEvent");
+            Intrinsics.checkNotNullParameter(container, "container");
+            SpecialEffectsController.Operation operation = this.animatorInfo.getOperation();
+            AnimatorSet animatorSet = this.animator;
+            if (animatorSet == null) {
+                this.animatorInfo.getOperation().completeEffect(this);
+                return;
+            }
+            if (Build.VERSION.SDK_INT < 34 || !operation.getFragment().mTransitioning) {
+                return;
+            }
+            if (FragmentManager.isLoggingEnabled(2)) {
+                Log.v("FragmentManager", "Adding BackProgressCallbacks for Animators to operation " + operation);
+            }
+            long j = Api24Impl.INSTANCE.totalDuration(animatorSet);
+            long progress = (long) (backEvent.getProgress() * j);
+            if (progress == 0) {
+                progress = 1;
+            }
+            if (progress == j) {
+                progress = j - 1;
+            }
+            if (FragmentManager.isLoggingEnabled(2)) {
+                Log.v("FragmentManager", "Setting currentPlayTime to " + progress + " for Animator " + animatorSet + " on operation " + operation);
+            }
+            Api26Impl.INSTANCE.setCurrentPlayTime(animatorSet, progress);
+        }
+
+        @Override // androidx.fragment.app.SpecialEffectsController.Effect
+        public void onCommit(ViewGroup container) {
+            Intrinsics.checkNotNullParameter(container, "container");
+            SpecialEffectsController.Operation operation = this.animatorInfo.getOperation();
+            AnimatorSet animatorSet = this.animator;
+            if (animatorSet == null) {
+                this.animatorInfo.getOperation().completeEffect(this);
+                return;
+            }
+            animatorSet.start();
+            if (FragmentManager.isLoggingEnabled(2)) {
+                Log.v("FragmentManager", "Animator from operation " + operation + " has started.");
+            }
+        }
+
+        @Override // androidx.fragment.app.SpecialEffectsController.Effect
+        public void onCancel(ViewGroup container) {
+            Intrinsics.checkNotNullParameter(container, "container");
+            AnimatorSet animatorSet = this.animator;
+            if (animatorSet == null) {
+                this.animatorInfo.getOperation().completeEffect(this);
+                return;
+            }
+            SpecialEffectsController.Operation operation = this.animatorInfo.getOperation();
+            if (operation.isSeeking()) {
+                if (Build.VERSION.SDK_INT >= 26) {
+                    Api26Impl.INSTANCE.reverse(animatorSet);
+                }
+            } else {
+                animatorSet.end();
+            }
+            if (FragmentManager.isLoggingEnabled(2)) {
+                StringBuilder sb = new StringBuilder();
+                sb.append("Animator from operation ");
+                sb.append(operation);
+                sb.append(" has been canceled");
+                sb.append(operation.isSeeking() ? " with seeking." : ".");
+                sb.append(' ');
+                Log.v("FragmentManager", sb.toString());
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    static final class TransitionEffect extends SpecialEffectsController.Effect {
+        private Object controller;
+        private final ArrayList enteringNames;
+        private final ArrayList exitingNames;
+        private final SpecialEffectsController.Operation firstOut;
+        private final ArrayMap firstOutViews;
+        private final boolean isPop;
+        private final SpecialEffectsController.Operation lastIn;
+        private final ArrayMap lastInViews;
+        private boolean noControllerReturned;
+        private final ArrayList sharedElementFirstOutViews;
+        private final ArrayList sharedElementLastInViews;
+        private final ArrayMap sharedElementNameMapping;
+        private final Object sharedElementTransition;
+        private final FragmentTransitionImpl transitionImpl;
+        private final List transitionInfos;
+        private final CancellationSignal transitionSignal;
+
+        public final List getTransitionInfos() {
+            return this.transitionInfos;
+        }
+
+        public final SpecialEffectsController.Operation getFirstOut() {
+            return this.firstOut;
+        }
+
+        public final SpecialEffectsController.Operation getLastIn() {
+            return this.lastIn;
+        }
+
+        public final FragmentTransitionImpl getTransitionImpl() {
+            return this.transitionImpl;
+        }
+
+        public TransitionEffect(List transitionInfos, SpecialEffectsController.Operation operation, SpecialEffectsController.Operation operation2, FragmentTransitionImpl transitionImpl, Object obj, ArrayList sharedElementFirstOutViews, ArrayList sharedElementLastInViews, ArrayMap sharedElementNameMapping, ArrayList enteringNames, ArrayList exitingNames, ArrayMap firstOutViews, ArrayMap lastInViews, boolean z) {
+            Intrinsics.checkNotNullParameter(transitionInfos, "transitionInfos");
+            Intrinsics.checkNotNullParameter(transitionImpl, "transitionImpl");
+            Intrinsics.checkNotNullParameter(sharedElementFirstOutViews, "sharedElementFirstOutViews");
+            Intrinsics.checkNotNullParameter(sharedElementLastInViews, "sharedElementLastInViews");
+            Intrinsics.checkNotNullParameter(sharedElementNameMapping, "sharedElementNameMapping");
+            Intrinsics.checkNotNullParameter(enteringNames, "enteringNames");
+            Intrinsics.checkNotNullParameter(exitingNames, "exitingNames");
+            Intrinsics.checkNotNullParameter(firstOutViews, "firstOutViews");
+            Intrinsics.checkNotNullParameter(lastInViews, "lastInViews");
+            this.transitionInfos = transitionInfos;
+            this.firstOut = operation;
+            this.lastIn = operation2;
+            this.transitionImpl = transitionImpl;
+            this.sharedElementTransition = obj;
+            this.sharedElementFirstOutViews = sharedElementFirstOutViews;
+            this.sharedElementLastInViews = sharedElementLastInViews;
+            this.sharedElementNameMapping = sharedElementNameMapping;
+            this.enteringNames = enteringNames;
+            this.exitingNames = exitingNames;
+            this.firstOutViews = firstOutViews;
+            this.lastInViews = lastInViews;
+            this.isPop = z;
+            this.transitionSignal = new CancellationSignal();
+        }
+
+        public final Object getController() {
+            return this.controller;
+        }
+
+        public final void setController(Object obj) {
+            this.controller = obj;
+        }
+
+        public final void setNoControllerReturned(boolean z) {
+            this.noControllerReturned = z;
+        }
+
+        @Override // androidx.fragment.app.SpecialEffectsController.Effect
+        public boolean isSeekingSupported() {
+            if (this.transitionImpl.isSeekingSupported()) {
+                List<TransitionInfo> list = this.transitionInfos;
+                if (!(list instanceof Collection) || !list.isEmpty()) {
+                    for (TransitionInfo transitionInfo : list) {
+                        if (Build.VERSION.SDK_INT < 34 || transitionInfo.getTransition() == null || !this.transitionImpl.isSeekingSupported(transitionInfo.getTransition())) {
+                            break;
+                        }
+                    }
+                }
+                Object obj = this.sharedElementTransition;
+                if (obj == null || this.transitionImpl.isSeekingSupported(obj)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public final boolean getTransitioning() {
+            List list = this.transitionInfos;
+            if ((list instanceof Collection) && list.isEmpty()) {
+                return true;
+            }
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                if (!((TransitionInfo) it.next()).getOperation().getFragment().mTransitioning) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        @Override // androidx.fragment.app.SpecialEffectsController.Effect
+        public void onStart(final ViewGroup container) {
+            Intrinsics.checkNotNullParameter(container, "container");
+            if (!container.isLaidOut()) {
+                Iterator it = this.transitionInfos.iterator();
+                while (it.hasNext()) {
+                    SpecialEffectsController.Operation operation = ((TransitionInfo) it.next()).getOperation();
+                    if (FragmentManager.isLoggingEnabled(2)) {
+                        Log.v("FragmentManager", "SpecialEffectsController: Container " + container + " has not been laid out. Skipping onStart for operation " + operation);
+                    }
+                }
+                return;
+            }
+            if (getTransitioning() && this.sharedElementTransition != null && !isSeekingSupported()) {
+                Log.i("FragmentManager", "Ignoring shared elements transition " + this.sharedElementTransition + " between " + this.firstOut + " and " + this.lastIn + " as neither fragment has set a Transition. In order to run a SharedElementTransition, you must also set either an enter or exit transition on a fragment involved in the transaction. The sharedElementTransition will run after the back gesture has been committed.");
+            }
+            if (isSeekingSupported() && getTransitioning()) {
+                final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
+                Pair createMergedTransition = createMergedTransition(container, this.lastIn, this.firstOut);
+                ArrayList arrayList = (ArrayList) createMergedTransition.component1();
+                final Object component2 = createMergedTransition.component2();
+                List list = this.transitionInfos;
+                ArrayList<SpecialEffectsController.Operation> arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+                Iterator it2 = list.iterator();
+                while (it2.hasNext()) {
+                    arrayList2.add(((TransitionInfo) it2.next()).getOperation());
+                }
+                for (final SpecialEffectsController.Operation operation2 : arrayList2) {
+                    this.transitionImpl.setListenerForTransitionEnd(operation2.getFragment(), component2, this.transitionSignal, new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$$ExternalSyntheticLambda0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            DefaultSpecialEffectsController.TransitionEffect.onStart$lambda$6$lambda$4(Ref$ObjectRef.this);
+                        }
+                    }, new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$$ExternalSyntheticLambda1
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            DefaultSpecialEffectsController.TransitionEffect.onStart$lambda$6$lambda$5(SpecialEffectsController.Operation.this, this);
+                        }
+                    });
+                }
+                runTransition(arrayList, container, new Function0() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(0);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function0
+                    public /* bridge */ /* synthetic */ Object invoke() {
+                        invoke();
+                        return Unit.INSTANCE;
+                    }
+
+                    public final void invoke() {
+                        if (FragmentManager.isLoggingEnabled(2)) {
+                            Log.v("FragmentManager", "Attempting to create TransitionSeekController");
+                        }
+                        DefaultSpecialEffectsController.TransitionEffect transitionEffect = DefaultSpecialEffectsController.TransitionEffect.this;
+                        transitionEffect.setController(transitionEffect.getTransitionImpl().controlDelayedTransition(container, component2));
+                        if (DefaultSpecialEffectsController.TransitionEffect.this.getController() == null) {
+                            if (FragmentManager.isLoggingEnabled(2)) {
+                                Log.v("FragmentManager", "TransitionSeekController was not created.");
+                            }
+                            DefaultSpecialEffectsController.TransitionEffect.this.setNoControllerReturned(true);
+                            return;
+                        }
+                        ref$ObjectRef.element = new 1(DefaultSpecialEffectsController.TransitionEffect.this, component2, container);
+                        if (FragmentManager.isLoggingEnabled(2)) {
+                            Log.v("FragmentManager", "Started executing operations from " + DefaultSpecialEffectsController.TransitionEffect.this.getFirstOut() + " to " + DefaultSpecialEffectsController.TransitionEffect.this.getLastIn());
+                        }
+                    }
+
+                    static final class 1 extends Lambda implements Function0 {
+                        final /* synthetic */ ViewGroup $container;
+                        final /* synthetic */ Object $mergedTransition;
+                        final /* synthetic */ DefaultSpecialEffectsController.TransitionEffect this$0;
+
+                        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                        1(DefaultSpecialEffectsController.TransitionEffect transitionEffect, Object obj, ViewGroup viewGroup) {
+                            super(0);
+                            this.this$0 = transitionEffect;
+                            this.$mergedTransition = obj;
+                            this.$container = viewGroup;
+                        }
+
+                        @Override // kotlin.jvm.functions.Function0
+                        public /* bridge */ /* synthetic */ Object invoke() {
+                            invoke();
+                            return Unit.INSTANCE;
+                        }
+
+                        public final void invoke() {
+                            List transitionInfos = this.this$0.getTransitionInfos();
+                            if (!(transitionInfos instanceof Collection) || !transitionInfos.isEmpty()) {
+                                Iterator it = transitionInfos.iterator();
+                                while (it.hasNext()) {
+                                    if (!((DefaultSpecialEffectsController.TransitionInfo) it.next()).getOperation().isSeeking()) {
+                                        if (FragmentManager.isLoggingEnabled(2)) {
+                                            Log.v("FragmentManager", "Completing animating immediately");
+                                        }
+                                        CancellationSignal cancellationSignal = new CancellationSignal();
+                                        FragmentTransitionImpl transitionImpl = this.this$0.getTransitionImpl();
+                                        Fragment fragment = ((DefaultSpecialEffectsController.TransitionInfo) this.this$0.getTransitionInfos().get(0)).getOperation().getFragment();
+                                        Object obj = this.$mergedTransition;
+                                        final DefaultSpecialEffectsController.TransitionEffect transitionEffect = this.this$0;
+                                        transitionImpl.setListenerForTransitionEnd(fragment, obj, cancellationSignal, 
+                                        /*  JADX ERROR: Method code generation error
+                                            jadx.core.utils.exceptions.CodegenException: Error generate insn: 0x0067: INVOKE 
+                                              (r1v7 'transitionImpl' androidx.fragment.app.FragmentTransitionImpl)
+                                              (r2v6 'fragment' androidx.fragment.app.Fragment)
+                                              (r3v2 'obj' java.lang.Object)
+                                              (r0v5 'cancellationSignal' androidx.core.os.CancellationSignal)
+                                              (wrap:java.lang.Runnable:0x0064: CONSTRUCTOR (r4v0 'transitionEffect' androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect A[DONT_INLINE]) A[MD:(androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect):void (m), WRAPPED] call: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4$1$$ExternalSyntheticLambda1.<init>(androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect):void type: CONSTRUCTOR)
+                                             VIRTUAL call: androidx.fragment.app.FragmentTransitionImpl.setListenerForTransitionEnd(androidx.fragment.app.Fragment, java.lang.Object, androidx.core.os.CancellationSignal, java.lang.Runnable):void A[MD:(androidx.fragment.app.Fragment, java.lang.Object, androidx.core.os.CancellationSignal, java.lang.Runnable):void (m)] in method: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4.1.invoke():void, file: classes.dex
+                                            	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:310)
+                                            	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:273)
+                                            	at jadx.core.codegen.RegionGen.makeSimpleBlock(RegionGen.java:94)
+                                            	at jadx.core.dex.nodes.IBlock.generate(IBlock.java:15)
+                                            	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:66)
+                                            	at jadx.core.dex.regions.Region.generate(Region.java:35)
+                                            	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:66)
+                                            	at jadx.core.codegen.RegionGen.makeRegionIndent(RegionGen.java:83)
+                                            	at jadx.core.codegen.RegionGen.makeIf(RegionGen.java:126)
+                                            	at jadx.core.dex.regions.conditions.IfRegion.generate(IfRegion.java:90)
+                                            	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:66)
+                                            	at jadx.core.dex.regions.Region.generate(Region.java:35)
+                                            	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:66)
+                                            	at jadx.core.dex.regions.Region.generate(Region.java:35)
+                                            	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:66)
+                                            	at jadx.core.codegen.RegionGen.makeRegionIndent(RegionGen.java:83)
+                                            	at jadx.core.codegen.RegionGen.makeLoop(RegionGen.java:226)
+                                            	at jadx.core.dex.regions.loops.LoopRegion.generate(LoopRegion.java:171)
+                                            	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:66)
+                                            	at jadx.core.dex.regions.Region.generate(Region.java:35)
+                                            	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:66)
+                                            	at jadx.core.codegen.RegionGen.makeRegionIndent(RegionGen.java:83)
+                                            	at jadx.core.codegen.RegionGen.makeIf(RegionGen.java:126)
+                                            	at jadx.core.dex.regions.conditions.IfRegion.generate(IfRegion.java:90)
+                                            	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:66)
+                                            	at jadx.core.dex.regions.Region.generate(Region.java:35)
+                                            	at jadx.core.codegen.RegionGen.makeRegion(RegionGen.java:66)
+                                            	at jadx.core.codegen.MethodGen.addRegionInsns(MethodGen.java:297)
+                                            	at jadx.core.codegen.MethodGen.addInstructions(MethodGen.java:276)
+                                            	at jadx.core.codegen.ClassGen.addMethodCode(ClassGen.java:406)
+                                            	at jadx.core.codegen.ClassGen.addMethod(ClassGen.java:335)
+                                            	at jadx.core.codegen.ClassGen.lambda$addInnerClsAndMethods$3(ClassGen.java:301)
+                                            	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+                                            	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+                                            	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:395)
+                                            	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+                                            Caused by: jadx.core.utils.exceptions.JadxRuntimeException: Expected class to be processed at this point, class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4$1$$ExternalSyntheticLambda1, state: NOT_LOADED
+                                            	at jadx.core.dex.nodes.ClassNode.ensureProcessed(ClassNode.java:305)
+                                            	at jadx.core.codegen.InsnGen.inlineAnonymousConstructor(InsnGen.java:807)
+                                            	at jadx.core.codegen.InsnGen.makeConstructor(InsnGen.java:730)
+                                            	at jadx.core.codegen.InsnGen.makeInsnBody(InsnGen.java:418)
+                                            	at jadx.core.codegen.InsnGen.addWrappedArg(InsnGen.java:145)
+                                            	at jadx.core.codegen.InsnGen.addArg(InsnGen.java:121)
+                                            	at jadx.core.codegen.InsnGen.addArg(InsnGen.java:108)
+                                            	at jadx.core.codegen.InsnGen.generateMethodArguments(InsnGen.java:1143)
+                                            	at jadx.core.codegen.InsnGen.makeInvoke(InsnGen.java:910)
+                                            	at jadx.core.codegen.InsnGen.makeInsnBody(InsnGen.java:422)
+                                            	at jadx.core.codegen.InsnGen.makeInsn(InsnGen.java:303)
+                                            	... 35 more
+                                            */
+                                        /*
+                                            this = this;
+                                            androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect r0 = r6.this$0
+                                            java.util.List r0 = r0.getTransitionInfos()
+                                            java.lang.Iterable r0 = (java.lang.Iterable) r0
+                                            boolean r1 = r0 instanceof java.util.Collection
+                                            java.lang.String r2 = "FragmentManager"
+                                            r3 = 2
+                                            if (r1 == 0) goto L19
+                                            r1 = r0
+                                            java.util.Collection r1 = (java.util.Collection) r1
+                                            boolean r1 = r1.isEmpty()
+                                            if (r1 == 0) goto L19
+                                            goto L6e
+                                        L19:
+                                            java.util.Iterator r0 = r0.iterator()
+                                        L1d:
+                                            boolean r1 = r0.hasNext()
+                                            if (r1 == 0) goto L6e
+                                            java.lang.Object r1 = r0.next()
+                                            androidx.fragment.app.DefaultSpecialEffectsController$TransitionInfo r1 = (androidx.fragment.app.DefaultSpecialEffectsController.TransitionInfo) r1
+                                            androidx.fragment.app.SpecialEffectsController$Operation r1 = r1.getOperation()
+                                            boolean r1 = r1.isSeeking()
+                                            if (r1 != 0) goto L1d
+                                            boolean r0 = androidx.fragment.app.FragmentManager.isLoggingEnabled(r3)
+                                            if (r0 == 0) goto L3e
+                                            java.lang.String r0 = "Completing animating immediately"
+                                            android.util.Log.v(r2, r0)
+                                        L3e:
+                                            androidx.core.os.CancellationSignal r0 = new androidx.core.os.CancellationSignal
+                                            r0.<init>()
+                                            androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect r1 = r6.this$0
+                                            androidx.fragment.app.FragmentTransitionImpl r1 = r1.getTransitionImpl()
+                                            androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect r2 = r6.this$0
+                                            java.util.List r2 = r2.getTransitionInfos()
+                                            r3 = 0
+                                            java.lang.Object r2 = r2.get(r3)
+                                            androidx.fragment.app.DefaultSpecialEffectsController$TransitionInfo r2 = (androidx.fragment.app.DefaultSpecialEffectsController.TransitionInfo) r2
+                                            androidx.fragment.app.SpecialEffectsController$Operation r2 = r2.getOperation()
+                                            androidx.fragment.app.Fragment r2 = r2.getFragment()
+                                            java.lang.Object r3 = r6.$mergedTransition
+                                            androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect r4 = r6.this$0
+                                            androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4$1$$ExternalSyntheticLambda1 r5 = new androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4$1$$ExternalSyntheticLambda1
+                                            r5.<init>(r4)
+                                            r1.setListenerForTransitionEnd(r2, r3, r0, r5)
+                                            r0.cancel()
+                                            goto L94
+                                        L6e:
+                                            boolean r0 = androidx.fragment.app.FragmentManager.isLoggingEnabled(r3)
+                                            if (r0 == 0) goto L79
+                                            java.lang.String r0 = "Animating to start"
+                                            android.util.Log.v(r2, r0)
+                                        L79:
+                                            androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect r0 = r6.this$0
+                                            androidx.fragment.app.FragmentTransitionImpl r0 = r0.getTransitionImpl()
+                                            androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect r1 = r6.this$0
+                                            java.lang.Object r1 = r1.getController()
+                                            kotlin.jvm.internal.Intrinsics.checkNotNull(r1)
+                                            androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect r2 = r6.this$0
+                                            android.view.ViewGroup r3 = r6.$container
+                                            androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4$1$$ExternalSyntheticLambda0 r4 = new androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4$1$$ExternalSyntheticLambda0
+                                            r4.<init>(r2, r3)
+                                            r0.animateToStart(r1, r4)
+                                        L94:
+                                            return
+                                        */
+                                        throw new UnsupportedOperationException("Method not decompiled: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onStart$4.1.invoke():void");
+                                    }
+
+                                    /* JADX INFO: Access modifiers changed from: private */
+                                    public static final void invoke$lambda$2(DefaultSpecialEffectsController.TransitionEffect this$0, ViewGroup container) {
+                                        Intrinsics.checkNotNullParameter(this$0, "this$0");
+                                        Intrinsics.checkNotNullParameter(container, "$container");
+                                        Iterator it = this$0.getTransitionInfos().iterator();
+                                        while (it.hasNext()) {
+                                            SpecialEffectsController.Operation operation = ((DefaultSpecialEffectsController.TransitionInfo) it.next()).getOperation();
+                                            View view = operation.getFragment().getView();
+                                            if (view != null) {
+                                                operation.getFinalState().applyState(view, container);
+                                            }
+                                        }
+                                    }
+
+                                    /* JADX INFO: Access modifiers changed from: private */
+                                    public static final void invoke$lambda$4(DefaultSpecialEffectsController.TransitionEffect this$0) {
+                                        Intrinsics.checkNotNullParameter(this$0, "this$0");
+                                        if (FragmentManager.isLoggingEnabled(2)) {
+                                            Log.v("FragmentManager", "Transition for all operations has completed");
+                                        }
+                                        Iterator it = this$0.getTransitionInfos().iterator();
+                                        while (it.hasNext()) {
+                                            ((DefaultSpecialEffectsController.TransitionInfo) it.next()).getOperation().completeEffect(this$0);
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }
+
+                    /* JADX INFO: Access modifiers changed from: private */
+                    public static final void onStart$lambda$6$lambda$4(Ref$ObjectRef seekCancelLambda) {
+                        Intrinsics.checkNotNullParameter(seekCancelLambda, "$seekCancelLambda");
+                        Function0 function0 = (Function0) seekCancelLambda.element;
+                        if (function0 != null) {
+                            function0.invoke();
+                        }
+                    }
+
+                    /* JADX INFO: Access modifiers changed from: private */
+                    public static final void onStart$lambda$6$lambda$5(SpecialEffectsController.Operation operation, TransitionEffect this$0) {
+                        Intrinsics.checkNotNullParameter(operation, "$operation");
+                        Intrinsics.checkNotNullParameter(this$0, "this$0");
+                        if (FragmentManager.isLoggingEnabled(2)) {
+                            Log.v("FragmentManager", "Transition for operation " + operation + " has completed");
+                        }
+                        operation.completeEffect(this$0);
+                    }
+
+                    @Override // androidx.fragment.app.SpecialEffectsController.Effect
+                    public void onProgress(BackEventCompat backEvent, ViewGroup container) {
+                        Intrinsics.checkNotNullParameter(backEvent, "backEvent");
+                        Intrinsics.checkNotNullParameter(container, "container");
+                        Object obj = this.controller;
+                        if (obj != null) {
+                            this.transitionImpl.setCurrentPlayTime(obj, backEvent.getProgress());
+                        }
+                    }
+
+                    @Override // androidx.fragment.app.SpecialEffectsController.Effect
+                    public void onCommit(final ViewGroup container) {
+                        Intrinsics.checkNotNullParameter(container, "container");
+                        if (container.isLaidOut() && !this.noControllerReturned) {
+                            Object obj = this.controller;
+                            if (obj != null) {
+                                FragmentTransitionImpl fragmentTransitionImpl = this.transitionImpl;
+                                Intrinsics.checkNotNull(obj);
+                                fragmentTransitionImpl.animateToEnd(obj);
+                                if (FragmentManager.isLoggingEnabled(2)) {
+                                    Log.v("FragmentManager", "Ending execution of operations from " + this.firstOut + " to " + this.lastIn);
+                                    return;
+                                }
+                                return;
+                            }
+                            Pair createMergedTransition = createMergedTransition(container, this.lastIn, this.firstOut);
+                            ArrayList arrayList = (ArrayList) createMergedTransition.component1();
+                            final Object component2 = createMergedTransition.component2();
+                            List list = this.transitionInfos;
+                            ArrayList<SpecialEffectsController.Operation> arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+                            Iterator it = list.iterator();
+                            while (it.hasNext()) {
+                                arrayList2.add(((TransitionInfo) it.next()).getOperation());
+                            }
+                            for (final SpecialEffectsController.Operation operation : arrayList2) {
+                                this.transitionImpl.setListenerForTransitionEnd(operation.getFragment(), component2, this.transitionSignal, new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$$ExternalSyntheticLambda2
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        DefaultSpecialEffectsController.TransitionEffect.onCommit$lambda$11$lambda$10(SpecialEffectsController.Operation.this, this);
+                                    }
+                                });
+                            }
+                            runTransition(arrayList, container, new Function0() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$onCommit$4
+                                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                                {
+                                    super(0);
+                                }
+
+                                @Override // kotlin.jvm.functions.Function0
+                                public /* bridge */ /* synthetic */ Object invoke() {
+                                    invoke();
+                                    return Unit.INSTANCE;
+                                }
+
+                                public final void invoke() {
+                                    DefaultSpecialEffectsController.TransitionEffect.this.getTransitionImpl().beginDelayedTransition(container, component2);
+                                }
+                            });
+                            if (FragmentManager.isLoggingEnabled(2)) {
+                                Log.v("FragmentManager", "Completed executing operations from " + this.firstOut + " to " + this.lastIn);
+                                return;
+                            }
+                            return;
+                        }
+                        for (TransitionInfo transitionInfo : this.transitionInfos) {
+                            SpecialEffectsController.Operation operation2 = transitionInfo.getOperation();
+                            if (FragmentManager.isLoggingEnabled(2)) {
+                                if (this.noControllerReturned) {
+                                    Log.v("FragmentManager", "SpecialEffectsController: TransitionSeekController was not created. Completing operation " + operation2);
+                                } else {
+                                    Log.v("FragmentManager", "SpecialEffectsController: Container " + container + " has not been laid out. Completing operation " + operation2);
+                                }
+                            }
+                            transitionInfo.getOperation().completeEffect(this);
+                        }
+                        this.noControllerReturned = false;
+                    }
+
+                    /* JADX INFO: Access modifiers changed from: private */
+                    public static final void onCommit$lambda$11$lambda$10(SpecialEffectsController.Operation operation, TransitionEffect this$0) {
+                        Intrinsics.checkNotNullParameter(operation, "$operation");
+                        Intrinsics.checkNotNullParameter(this$0, "this$0");
+                        if (FragmentManager.isLoggingEnabled(2)) {
+                            Log.v("FragmentManager", "Transition for operation " + operation + " has completed");
+                        }
+                        operation.completeEffect(this$0);
+                    }
+
+                    private final Pair createMergedTransition(ViewGroup viewGroup, SpecialEffectsController.Operation operation, final SpecialEffectsController.Operation operation2) {
+                        final SpecialEffectsController.Operation operation3 = operation;
+                        View view = new View(viewGroup.getContext());
+                        final Rect rect = new Rect();
+                        Iterator it = this.transitionInfos.iterator();
+                        View view2 = null;
+                        boolean z = false;
+                        while (it.hasNext()) {
+                            if (((TransitionInfo) it.next()).hasSharedElementTransition() && operation2 != null && operation3 != null && !this.sharedElementNameMapping.isEmpty() && this.sharedElementTransition != null) {
+                                FragmentTransition.callSharedElementStartEnd(operation.getFragment(), operation2.getFragment(), this.isPop, this.firstOutViews, true);
+                                OneShotPreDrawListener.add(viewGroup, new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$$ExternalSyntheticLambda3
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        DefaultSpecialEffectsController.TransitionEffect.createMergedTransition$lambda$12(SpecialEffectsController.Operation.this, operation2, this);
+                                    }
+                                });
+                                this.sharedElementFirstOutViews.addAll(this.firstOutViews.values());
+                                if (!this.exitingNames.isEmpty()) {
+                                    Object obj = this.exitingNames.get(0);
+                                    Intrinsics.checkNotNullExpressionValue(obj, "exitingNames[0]");
+                                    view2 = (View) this.firstOutViews.get((String) obj);
+                                    this.transitionImpl.setEpicenter(this.sharedElementTransition, view2);
+                                }
+                                this.sharedElementLastInViews.addAll(this.lastInViews.values());
+                                if (!this.enteringNames.isEmpty()) {
+                                    Object obj2 = this.enteringNames.get(0);
+                                    Intrinsics.checkNotNullExpressionValue(obj2, "enteringNames[0]");
+                                    final View view3 = (View) this.lastInViews.get((String) obj2);
+                                    if (view3 != null) {
+                                        final FragmentTransitionImpl fragmentTransitionImpl = this.transitionImpl;
+                                        OneShotPreDrawListener.add(viewGroup, new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$$ExternalSyntheticLambda4
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                DefaultSpecialEffectsController.TransitionEffect.createMergedTransition$lambda$13(FragmentTransitionImpl.this, view3, rect);
+                                            }
+                                        });
+                                        z = true;
+                                    }
+                                }
+                                this.transitionImpl.setSharedElementTargets(this.sharedElementTransition, view, this.sharedElementFirstOutViews);
+                                FragmentTransitionImpl fragmentTransitionImpl2 = this.transitionImpl;
+                                Object obj3 = this.sharedElementTransition;
+                                fragmentTransitionImpl2.scheduleRemoveTargets(obj3, null, null, null, null, obj3, this.sharedElementLastInViews);
+                            }
+                        }
+                        ArrayList arrayList = new ArrayList();
+                        Iterator it2 = this.transitionInfos.iterator();
+                        Object obj4 = null;
+                        Object obj5 = null;
+                        while (it2.hasNext()) {
+                            TransitionInfo transitionInfo = (TransitionInfo) it2.next();
+                            SpecialEffectsController.Operation operation4 = transitionInfo.getOperation();
+                            Iterator it3 = it2;
+                            Object cloneTransition = this.transitionImpl.cloneTransition(transitionInfo.getTransition());
+                            if (cloneTransition != null) {
+                                final ArrayList arrayList2 = new ArrayList();
+                                Object obj6 = obj5;
+                                View view4 = operation4.getFragment().mView;
+                                Object obj7 = obj4;
+                                Intrinsics.checkNotNullExpressionValue(view4, "operation.fragment.mView");
+                                captureTransitioningViews(arrayList2, view4);
+                                if (this.sharedElementTransition != null && (operation4 == operation2 || operation4 == operation3)) {
+                                    if (operation4 == operation2) {
+                                        arrayList2.removeAll(CollectionsKt.toSet(this.sharedElementFirstOutViews));
+                                    } else {
+                                        arrayList2.removeAll(CollectionsKt.toSet(this.sharedElementLastInViews));
+                                    }
+                                }
+                                if (arrayList2.isEmpty()) {
+                                    this.transitionImpl.addTarget(cloneTransition, view);
+                                } else {
+                                    this.transitionImpl.addTargets(cloneTransition, arrayList2);
+                                    this.transitionImpl.scheduleRemoveTargets(cloneTransition, cloneTransition, arrayList2, null, null, null, null);
+                                    if (operation4.getFinalState() == SpecialEffectsController.Operation.State.GONE) {
+                                        operation4.setAwaitingContainerChanges(false);
+                                        ArrayList arrayList3 = new ArrayList(arrayList2);
+                                        arrayList3.remove(operation4.getFragment().mView);
+                                        this.transitionImpl.scheduleHideFragmentView(cloneTransition, operation4.getFragment().mView, arrayList3);
+                                        OneShotPreDrawListener.add(viewGroup, new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController$TransitionEffect$$ExternalSyntheticLambda5
+                                            @Override // java.lang.Runnable
+                                            public final void run() {
+                                                DefaultSpecialEffectsController.TransitionEffect.createMergedTransition$lambda$14(arrayList2);
+                                            }
+                                        });
+                                    }
+                                }
+                                if (operation4.getFinalState() == SpecialEffectsController.Operation.State.VISIBLE) {
+                                    arrayList.addAll(arrayList2);
+                                    if (z) {
+                                        this.transitionImpl.setEpicenter(cloneTransition, rect);
+                                    }
+                                    if (FragmentManager.isLoggingEnabled(2)) {
+                                        Log.v("FragmentManager", "Entering Transition: " + cloneTransition);
+                                        Log.v("FragmentManager", ">>>>> EnteringViews <<<<<");
+                                        Iterator it4 = arrayList2.iterator();
+                                        while (it4.hasNext()) {
+                                            Object transitioningViews = it4.next();
+                                            Intrinsics.checkNotNullExpressionValue(transitioningViews, "transitioningViews");
+                                            Log.v("FragmentManager", "View: " + ((View) transitioningViews));
+                                        }
+                                    }
+                                } else {
+                                    this.transitionImpl.setEpicenter(cloneTransition, view2);
+                                    if (FragmentManager.isLoggingEnabled(2)) {
+                                        Log.v("FragmentManager", "Exiting Transition: " + cloneTransition);
+                                        Log.v("FragmentManager", ">>>>> ExitingViews <<<<<");
+                                        Iterator it5 = arrayList2.iterator();
+                                        while (it5.hasNext()) {
+                                            Object transitioningViews2 = it5.next();
+                                            Intrinsics.checkNotNullExpressionValue(transitioningViews2, "transitioningViews");
+                                            Log.v("FragmentManager", "View: " + ((View) transitioningViews2));
+                                        }
+                                    }
+                                }
+                                if (transitionInfo.isOverlapAllowed()) {
+                                    obj4 = this.transitionImpl.mergeTransitionsTogether(obj7, cloneTransition, null);
+                                    operation3 = operation;
+                                    it2 = it3;
+                                    obj5 = obj6;
+                                } else {
+                                    obj4 = obj7;
+                                    obj5 = this.transitionImpl.mergeTransitionsTogether(obj6, cloneTransition, null);
+                                }
+                            }
+                            operation3 = operation;
+                            it2 = it3;
+                        }
+                        Object mergeTransitionsInSequence = this.transitionImpl.mergeTransitionsInSequence(obj4, obj5, this.sharedElementTransition);
+                        if (FragmentManager.isLoggingEnabled(2)) {
+                            Log.v("FragmentManager", "Final merged transition: " + mergeTransitionsInSequence + " for container " + viewGroup);
+                        }
+                        return new Pair(arrayList, mergeTransitionsInSequence);
+                    }
+
+                    /* JADX INFO: Access modifiers changed from: private */
+                    public static final void createMergedTransition$lambda$12(SpecialEffectsController.Operation operation, SpecialEffectsController.Operation operation2, TransitionEffect this$0) {
+                        Intrinsics.checkNotNullParameter(this$0, "this$0");
+                        FragmentTransition.callSharedElementStartEnd(operation.getFragment(), operation2.getFragment(), this$0.isPop, this$0.lastInViews, false);
+                    }
+
+                    /* JADX INFO: Access modifiers changed from: private */
+                    public static final void createMergedTransition$lambda$13(FragmentTransitionImpl impl, View view, Rect lastInEpicenterRect) {
+                        Intrinsics.checkNotNullParameter(impl, "$impl");
+                        Intrinsics.checkNotNullParameter(lastInEpicenterRect, "$lastInEpicenterRect");
+                        impl.getBoundsOnScreen(view, lastInEpicenterRect);
+                    }
+
+                    /* JADX INFO: Access modifiers changed from: private */
+                    public static final void createMergedTransition$lambda$14(ArrayList transitioningViews) {
+                        Intrinsics.checkNotNullParameter(transitioningViews, "$transitioningViews");
+                        FragmentTransition.setViewVisibility(transitioningViews, 4);
+                    }
+
+                    private final void runTransition(ArrayList arrayList, ViewGroup viewGroup, Function0 function0) {
+                        FragmentTransition.setViewVisibility(arrayList, 4);
+                        ArrayList prepareSetNameOverridesReordered = this.transitionImpl.prepareSetNameOverridesReordered(this.sharedElementLastInViews);
+                        if (FragmentManager.isLoggingEnabled(2)) {
+                            Log.v("FragmentManager", ">>>>> Beginning transition <<<<<");
+                            Log.v("FragmentManager", ">>>>> SharedElementFirstOutViews <<<<<");
+                            Iterator it = this.sharedElementFirstOutViews.iterator();
+                            while (it.hasNext()) {
+                                Object sharedElementFirstOutViews = it.next();
+                                Intrinsics.checkNotNullExpressionValue(sharedElementFirstOutViews, "sharedElementFirstOutViews");
+                                View view = (View) sharedElementFirstOutViews;
+                                Log.v("FragmentManager", "View: " + view + " Name: " + ViewCompat.getTransitionName(view));
+                            }
+                            Log.v("FragmentManager", ">>>>> SharedElementLastInViews <<<<<");
+                            Iterator it2 = this.sharedElementLastInViews.iterator();
+                            while (it2.hasNext()) {
+                                Object sharedElementLastInViews = it2.next();
+                                Intrinsics.checkNotNullExpressionValue(sharedElementLastInViews, "sharedElementLastInViews");
+                                View view2 = (View) sharedElementLastInViews;
+                                Log.v("FragmentManager", "View: " + view2 + " Name: " + ViewCompat.getTransitionName(view2));
+                            }
+                        }
+                        function0.invoke();
+                        this.transitionImpl.setNameOverridesReordered(viewGroup, this.sharedElementFirstOutViews, this.sharedElementLastInViews, prepareSetNameOverridesReordered, this.sharedElementNameMapping);
+                        FragmentTransition.setViewVisibility(arrayList, 0);
+                        this.transitionImpl.swapSharedElementTargets(this.sharedElementTransition, this.sharedElementFirstOutViews, this.sharedElementLastInViews);
+                    }
+
+                    @Override // androidx.fragment.app.SpecialEffectsController.Effect
+                    public void onCancel(ViewGroup container) {
+                        Intrinsics.checkNotNullParameter(container, "container");
+                        this.transitionSignal.cancel();
+                    }
+
+                    private final void captureTransitioningViews(ArrayList arrayList, View view) {
+                        if (view instanceof ViewGroup) {
+                            ViewGroup viewGroup = (ViewGroup) view;
+                            if (ViewGroupCompat.isTransitionGroup(viewGroup)) {
+                                if (arrayList.contains(view)) {
+                                    return;
+                                }
+                                arrayList.add(view);
+                                return;
+                            }
+                            int childCount = viewGroup.getChildCount();
+                            for (int i = 0; i < childCount; i++) {
+                                View child = viewGroup.getChildAt(i);
+                                if (child.getVisibility() == 0) {
+                                    Intrinsics.checkNotNullExpressionValue(child, "child");
+                                    captureTransitioningViews(arrayList, child);
+                                }
+                            }
+                            return;
+                        }
+                        if (arrayList.contains(view)) {
+                            return;
+                        }
+                        arrayList.add(view);
+                    }
+                }
+
+                public static final class Api24Impl {
+                    public static final Api24Impl INSTANCE = new Api24Impl();
+
+                    private Api24Impl() {
+                    }
+
+                    public final long totalDuration(AnimatorSet animatorSet) {
+                        Intrinsics.checkNotNullParameter(animatorSet, "animatorSet");
+                        return animatorSet.getTotalDuration();
+                    }
+                }
+
+                public static final class Api26Impl {
+                    public static final Api26Impl INSTANCE = new Api26Impl();
+
+                    private Api26Impl() {
+                    }
+
+                    public final void reverse(AnimatorSet animatorSet) {
+                        Intrinsics.checkNotNullParameter(animatorSet, "animatorSet");
+                        animatorSet.reverse();
+                    }
+
+                    public final void setCurrentPlayTime(AnimatorSet animatorSet, long j) {
+                        Intrinsics.checkNotNullParameter(animatorSet, "animatorSet");
+                        animatorSet.setCurrentPlayTime(j);
+                    }
+                }
+            }

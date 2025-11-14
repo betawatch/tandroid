@@ -1,6 +1,5 @@
 package androidx.fragment.app;
 
-import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.fragment.app.FragmentManager;
@@ -21,12 +20,12 @@ final class FragmentManagerState implements Parcelable {
     };
     ArrayList mActive;
     ArrayList mAdded;
-    BackStackState[] mBackStack;
+    BackStackRecordState[] mBackStack;
     int mBackStackIndex;
+    ArrayList mBackStackStateKeys;
+    ArrayList mBackStackStates;
     ArrayList mLaunchedFragments;
     String mPrimaryNavActiveWho;
-    ArrayList mResultKeys;
-    ArrayList mResults;
 
     @Override // android.os.Parcelable
     public int describeContents() {
@@ -35,33 +34,33 @@ final class FragmentManagerState implements Parcelable {
 
     public FragmentManagerState() {
         this.mPrimaryNavActiveWho = null;
-        this.mResultKeys = new ArrayList();
-        this.mResults = new ArrayList();
+        this.mBackStackStateKeys = new ArrayList();
+        this.mBackStackStates = new ArrayList();
     }
 
     public FragmentManagerState(Parcel parcel) {
         this.mPrimaryNavActiveWho = null;
-        this.mResultKeys = new ArrayList();
-        this.mResults = new ArrayList();
-        this.mActive = parcel.createTypedArrayList(FragmentState.CREATOR);
+        this.mBackStackStateKeys = new ArrayList();
+        this.mBackStackStates = new ArrayList();
+        this.mActive = parcel.createStringArrayList();
         this.mAdded = parcel.createStringArrayList();
-        this.mBackStack = (BackStackState[]) parcel.createTypedArray(BackStackState.CREATOR);
+        this.mBackStack = (BackStackRecordState[]) parcel.createTypedArray(BackStackRecordState.CREATOR);
         this.mBackStackIndex = parcel.readInt();
         this.mPrimaryNavActiveWho = parcel.readString();
-        this.mResultKeys = parcel.createStringArrayList();
-        this.mResults = parcel.createTypedArrayList(Bundle.CREATOR);
+        this.mBackStackStateKeys = parcel.createStringArrayList();
+        this.mBackStackStates = parcel.createTypedArrayList(BackStackState.CREATOR);
         this.mLaunchedFragments = parcel.createTypedArrayList(FragmentManager.LaunchedFragmentInfo.CREATOR);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeTypedList(this.mActive);
+        parcel.writeStringList(this.mActive);
         parcel.writeStringList(this.mAdded);
         parcel.writeTypedArray(this.mBackStack, i);
         parcel.writeInt(this.mBackStackIndex);
         parcel.writeString(this.mPrimaryNavActiveWho);
-        parcel.writeStringList(this.mResultKeys);
-        parcel.writeTypedList(this.mResults);
+        parcel.writeStringList(this.mBackStackStateKeys);
+        parcel.writeTypedList(this.mBackStackStates);
         parcel.writeTypedList(this.mLaunchedFragments);
     }
 }

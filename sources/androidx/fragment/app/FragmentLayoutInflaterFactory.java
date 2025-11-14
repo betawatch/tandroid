@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.R$styleable;
+import androidx.fragment.app.strictmode.FragmentStrictMode;
 
 /* loaded from: classes.dex */
 class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
@@ -82,7 +83,9 @@ class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
                 Log.v("FragmentManager", "Retained Fragment " + findFragmentById + " has been re-attached via the <fragment> tag: id=0x" + Integer.toHexString(resourceId));
             }
         }
-        findFragmentById.mContainer = (ViewGroup) view;
+        ViewGroup viewGroup = (ViewGroup) view;
+        FragmentStrictMode.onFragmentTagUsage(findFragmentById, viewGroup);
+        findFragmentById.mContainer = viewGroup;
         createOrGetFragmentStateManager.moveToExpectedState();
         createOrGetFragmentStateManager.ensureInflatedView();
         View view2 = findFragmentById.mView;

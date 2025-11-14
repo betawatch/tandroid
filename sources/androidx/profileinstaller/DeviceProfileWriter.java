@@ -55,9 +55,18 @@ public class DeviceProfileWriter {
             result(3, Integer.valueOf(Build.VERSION.SDK_INT));
             return false;
         }
-        if (!this.mCurProfile.canWrite()) {
-            result(4, null);
-            return false;
+        if (this.mCurProfile.exists()) {
+            if (!this.mCurProfile.canWrite()) {
+                result(4, null);
+                return false;
+            }
+        } else {
+            try {
+                this.mCurProfile.createNewFile();
+            } catch (IOException unused) {
+                result(4, null);
+                return false;
+            }
         }
         this.mDeviceSupportsAotProfile = true;
         return true;
@@ -255,7 +264,7 @@ public class DeviceProfileWriter {
 
     private static byte[] desiredVersion() {
         int i = Build.VERSION.SDK_INT;
-        if (i < 24 || i > 33) {
+        if (i < 24 || i > 34) {
             return null;
         }
         switch (i) {
@@ -273,6 +282,7 @@ public class DeviceProfileWriter {
             case 31:
             case 32:
             case 33:
+            case 34:
                 return ProfileVersion.V015_S;
             default:
                 return null;
@@ -281,7 +291,7 @@ public class DeviceProfileWriter {
 
     private static boolean requiresMetadata() {
         int i = Build.VERSION.SDK_INT;
-        if (i < 24 || i > 33) {
+        if (i < 24 || i > 34) {
             return false;
         }
         if (i != 24 && i != 25) {
@@ -289,6 +299,7 @@ public class DeviceProfileWriter {
                 case 31:
                 case 32:
                 case 33:
+                case 34:
                     break;
                 default:
                     return false;

@@ -7566,9 +7566,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         }
                         PhotoViewer.this.masksAlert = new StickersAlert(PhotoViewer.this.parentActivity, PhotoViewer.this.currentMessageObject, tLObject, this.val$resourcesProvider) { // from class: org.telegram.ui.PhotoViewer.17.1
                             @Override // org.telegram.ui.Components.StickersAlert, org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
-                            /* renamed from: dismiss */
-                            public void lambda$new$3() {
-                                super.lambda$new$3();
+                            public void dismiss() {
+                                super.dismiss();
                                 if (PhotoViewer.this.masksAlert == this) {
                                     PhotoViewer.this.masksAlert = null;
                                 }
