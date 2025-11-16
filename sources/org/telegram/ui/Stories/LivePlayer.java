@@ -80,7 +80,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     private float volume;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$init$10(int[] iArr, float[] fArr, boolean[] zArr) {
+    public static /* synthetic */ void lambda$init$11(int[] iArr, float[] fArr, boolean[] zArr) {
     }
 
     public boolean isMuted() {
@@ -238,32 +238,32 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         NativeInstance makeGroup = NativeInstance.makeGroup(VoIPHelper.getLogFilePath("live_" + this.inputCall.id), 0L, false, SharedConfig.noiseSupression, new NativeInstance.PayloadCallback() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.voip.NativeInstance.PayloadCallback
             public final void run(int i, String str) {
-                LivePlayer.this.lambda$init$9(i, str);
+                LivePlayer.this.lambda$init$10(i, str);
             }
         }, new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
             public final void run(int[] iArr, float[] fArr, boolean[] zArr) {
-                LivePlayer.lambda$init$10(iArr, fArr, zArr);
+                LivePlayer.lambda$init$11(iArr, fArr, zArr);
             }
         }, new NativeInstance.VideoSourcesCallback() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.voip.NativeInstance.VideoSourcesCallback
             public final void run(long j, int[] iArr) {
-                LivePlayer.this.lambda$init$12(j, iArr);
+                LivePlayer.this.lambda$init$13(j, iArr);
             }
         }, new NativeInstance.RequestBroadcastPartCallback() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback
             public final void run(long j, long j2, int i, int i2) {
-                LivePlayer.this.lambda$init$17(j, j2, i, i2);
+                LivePlayer.this.lambda$init$18(j, j2, i, i2);
             }
         }, new NativeInstance.RequestBroadcastPartCallback() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback
             public final void run(long j, long j2, int i, int i2) {
-                LivePlayer.this.lambda$init$19(j, j2, i, i2);
+                LivePlayer.this.lambda$init$20(j, j2, i, i2);
             }
         }, new NativeInstance.RequestCurrentTimeCallback() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.voip.NativeInstance.RequestCurrentTimeCallback
             public final void run(long j) {
-                LivePlayer.this.lambda$init$22(j);
+                LivePlayer.this.lambda$init$23(j);
             }
         }, false);
         this.instance = makeGroup;
@@ -272,7 +272,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$9(int i, String str) {
+    public /* synthetic */ void lambda$init$10(int i, String str) {
         this.mySource = i;
         TL_phone.joinGroupCall joingroupcall = new TL_phone.joinGroupCall();
         boolean z = !this.outgoing;
@@ -285,16 +285,16 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         TLRPC.TL_inputPeerUser tL_inputPeerUser = new TLRPC.TL_inputPeerUser();
         joingroupcall.join_as = tL_inputPeerUser;
         tL_inputPeerUser.user_id = AccountInstance.getInstance(this.currentAccount).getUserConfig().getClientUserId();
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(joingroupcall, new RequestDelegate() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda8
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(joingroupcall, new RequestDelegate() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda10
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LivePlayer.this.lambda$init$8(tLObject, tL_error);
+                LivePlayer.this.lambda$init$9(tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$8(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$init$9(final TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject instanceof TLRPC.Updates) {
             TLRPC.Updates updates = (TLRPC.Updates) tLObject;
             MessagesController.getInstance(this.currentAccount).putUsers(updates.users, false);
@@ -338,11 +338,19 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             while (it3.hasNext()) {
                 tL_dataJSON = ((TLRPC.TL_updateGroupCallConnection) it3.next()).params;
             }
-            if (this.destroyed || this.instance == null) {
-                return;
-            }
             FileLog.d("[LivePlayer] joined call " + this.inputCall.id);
             this.joined = true;
+            if (this.destroyed || this.instance == null) {
+                TL_phone.leaveGroupCall leavegroupcall = new TL_phone.leaveGroupCall();
+                leavegroupcall.call = this.inputCall;
+                ConnectionsManager.getInstance(this.currentAccount).sendRequest(leavegroupcall, new RequestDelegate() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda22
+                    @Override // org.telegram.tgnet.RequestDelegate
+                    public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
+                        LivePlayer.this.lambda$init$2(tLObject, tLObject2, tL_error2);
+                    }
+                });
+                return;
+            }
             if (tL_dataJSON != null && !tL_dataJSON.data.startsWith("{\"stream\":true")) {
                 this.instance.setJoinResponsePayload(tL_dataJSON.data);
             } else {
@@ -362,7 +370,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda20
                             @Override // java.lang.Runnable
                             public final void run() {
-                                LivePlayer.this.lambda$init$6();
+                                LivePlayer.this.lambda$init$7();
                             }
                         });
                     }
@@ -372,7 +380,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                     ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamchannels, new RequestDelegateTimestamp() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda18
                         @Override // org.telegram.tgnet.RequestDelegateTimestamp
                         public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2, long j) {
-                            LivePlayer.this.lambda$init$3(tLObject2, tL_error2, j);
+                            LivePlayer.this.lambda$init$4(tLObject2, tL_error2, j);
                         }
                     }, 65536, 2, getCallStreamDatacenterId());
                 } else {
@@ -382,7 +390,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                     ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcall, new RequestDelegate() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda19
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
-                            LivePlayer.this.lambda$init$5(tLObject2, tL_error2);
+                            LivePlayer.this.lambda$init$6(tLObject2, tL_error2);
                         }
                     });
                 }
@@ -390,10 +398,15 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda21
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LivePlayer.this.lambda$init$7();
+                    LivePlayer.this.lambda$init$8();
                 }
             });
+            return;
         }
+        if (tL_error == null || !"GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
+            return;
+        }
+        AndroidUtilities.runOnUIThread(new LivePlayer$$ExternalSyntheticLambda23(this));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -406,7 +419,14 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$3(TLObject tLObject, TLRPC.TL_error tL_error, long j) {
+    public /* synthetic */ void lambda$init$2(TLObject tLObject, TLObject tLObject2, TLRPC.TL_error tL_error) {
+        if (tLObject2 instanceof TLRPC.Updates) {
+            MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$init$4(TLObject tLObject, TLRPC.TL_error tL_error, long j) {
         if (tL_error != null || this.instance == null || this.destroyed) {
             return;
         }
@@ -415,10 +435,10 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             long j2 = groupcallstreamchannels.channels.get(0).last_timestamp_ms;
         }
         if (groupcallstreamchannels.channels.isEmpty()) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda26
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda30
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LivePlayer.this.lambda$init$2();
+                    LivePlayer.this.lambda$init$3();
                 }
             });
         }
@@ -443,12 +463,12 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$2() {
+    public /* synthetic */ void lambda$init$3() {
         setEmptyStream(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$5(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$init$6(TLObject tLObject, TLRPC.TL_error tL_error) {
         TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo;
         if (tLObject instanceof TL_phone.groupCall) {
             TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
@@ -472,10 +492,10 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             if (groupCallParticipant != null && (tL_groupCallParticipantVideo = groupCallParticipant.video) != null) {
                 this.instance.addIncomingVideoOutput(2, tL_groupCallParticipantVideo.endpoint, pushSources(createSsrcGroups(tL_groupCallParticipantVideo)), this.instanceSink, DialogObject.getPeerDialogId(this.participant.peer));
             } else {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda28
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda29
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LivePlayer.this.lambda$init$4();
+                        LivePlayer.this.lambda$init$5();
                     }
                 });
             }
@@ -483,23 +503,23 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$4() {
-        setEmptyStream(true);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$6() {
+    public /* synthetic */ void lambda$init$5() {
         setEmptyStream(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$init$7() {
+        setEmptyStream(true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$init$8() {
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(this.call.id));
         setPolling(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$12(final long j, final int[] iArr) {
+    public /* synthetic */ void lambda$init$13(final long j, final int[] iArr) {
         if (this.instance == null) {
             return;
         }
@@ -509,16 +529,16 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         for (int i : iArr) {
             getgroupparticipants.sources.add(Integer.valueOf(i));
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupparticipants, new RequestDelegate() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda12
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupparticipants, new RequestDelegate() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda15
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LivePlayer.this.lambda$init$11(iArr, j, tLObject, tL_error);
+                LivePlayer.this.lambda$init$12(iArr, j, tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$11(int[] iArr, long j, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$init$12(int[] iArr, long j, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject instanceof TL_phone.groupParticipants) {
             TL_phone.groupParticipants groupparticipants = (TL_phone.groupParticipants) tLObject;
             MessagesController.getInstance(this.currentAccount).putUsers(groupparticipants.users, false);
@@ -545,7 +565,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$17(final long j, final long j2, final int i, final int i2) {
+    public /* synthetic */ void lambda$init$18(final long j, final long j2, final int i, final int i2) {
         StringBuilder sb;
         if (this.call == null) {
             return;
@@ -587,29 +607,29 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             sb.append(i2);
         }
         final String sb3 = sb.toString();
-        final int sendRequest = AccountInstance.getInstance(this.currentAccount).getConnectionsManager().sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda9
+        final int sendRequest = AccountInstance.getInstance(this.currentAccount).getConnectionsManager().sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda11
             @Override // org.telegram.tgnet.RequestDelegateTimestamp
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error, long j3) {
-                LivePlayer.this.lambda$init$15(sb3, currentTimeMillis, j, j2, i, i2, tLObject, tL_error, j3);
+                LivePlayer.this.lambda$init$16(sb3, currentTimeMillis, j, j2, i, i2, tLObject, tL_error, j3);
             }
         }, 2, 2, getCallStreamDatacenterId());
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda10
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                LivePlayer.this.lambda$init$16(sb3, sendRequest);
+                LivePlayer.this.lambda$init$17(sb3, sendRequest);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$15(final String str, long j, long j2, long j3, int i, int i2, TLObject tLObject, TLRPC.TL_error tL_error, long j4) {
+    public /* synthetic */ void lambda$init$16(final String str, long j, long j2, long j3, int i, int i2, TLObject tLObject, TLRPC.TL_error tL_error, long j4) {
         if (this.destroyed) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda22
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
-                LivePlayer.this.lambda$init$13(str);
+                LivePlayer.this.lambda$init$14(str);
             }
         });
         if (tLObject != null) {
@@ -633,11 +653,16 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             nativeInstance.onStreamPartAvailable(j2, nativeByteBuffer.buffer, nativeByteBuffer.limit(), j4, i, i2);
             return;
         }
+        if ("GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
+            this.instance.onStreamPartAvailable(j2, null, -1, j4, i, i2);
+            AndroidUtilities.runOnUIThread(new LivePlayer$$ExternalSyntheticLambda23(this));
+            return;
+        }
         if ("GROUPCALL_JOIN_MISSING".equals(tL_error.text)) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda23
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LivePlayer.this.lambda$init$14();
+                    LivePlayer.this.lambda$init$15();
                 }
             });
             StringBuilder sb2 = new StringBuilder();
@@ -676,12 +701,12 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$13(String str) {
+    public /* synthetic */ void lambda$init$14(String str) {
         this.currentStreamRequestTimestamp.remove(str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$14() {
+    public /* synthetic */ void lambda$init$15() {
         if (this.instance != null) {
             DispatchQueue dispatchQueue = Utilities.globalQueue;
             NativeInstance nativeInstance = this.instance;
@@ -694,12 +719,12 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$16(String str, int i) {
+    public /* synthetic */ void lambda$init$17(String str, int i) {
         this.currentStreamRequestTimestamp.put(str, Integer.valueOf(i));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$19(final long j, long j2, final int i, final int i2) {
+    public /* synthetic */ void lambda$init$20(final long j, long j2, final int i, final int i2) {
         StringBuilder sb = new StringBuilder();
         sb.append("[LivePlayer] cancelling getFile time_ms=");
         sb.append(j);
@@ -710,16 +735,16 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         }
         sb.append(str);
         FileLog.d(sb.toString());
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda15
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                LivePlayer.this.lambda$init$18(i, j, i2);
+                LivePlayer.this.lambda$init$19(i, j, i2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$18(int i, long j, int i2) {
+    public /* synthetic */ void lambda$init$19(int i, long j, int i2) {
         String str;
         if (i == 0) {
             str = "" + j;
@@ -734,7 +759,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$22(final long j) {
+    public /* synthetic */ void lambda$init$23(final long j) {
         TLRPC.GroupCall groupCall = this.call;
         if (groupCall != null && groupCall.rtmp_stream) {
             TL_phone.getGroupCallStreamChannels getgroupcallstreamchannels = new TL_phone.getGroupCallStreamChannels();
@@ -742,10 +767,10 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             if (this.call == null || this.instance == null) {
                 return;
             }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamchannels, new RequestDelegateTimestamp() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda11
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamchannels, new RequestDelegateTimestamp() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda8
                 @Override // org.telegram.tgnet.RequestDelegateTimestamp
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error, long j2) {
-                    LivePlayer.this.lambda$init$21(j, tLObject, tL_error, j2);
+                    LivePlayer.this.lambda$init$22(j, tLObject, tL_error, j2);
                 }
             }, 65536, 2, getCallStreamDatacenterId());
             return;
@@ -757,7 +782,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$21(long j, TLObject tLObject, TLRPC.TL_error tL_error, long j2) {
+    public /* synthetic */ void lambda$init$22(long j, TLObject tLObject, TLRPC.TL_error tL_error, long j2) {
         if (tL_error == null) {
             if (this.instance == null || this.destroyed) {
                 return;
@@ -768,7 +793,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda25
                     @Override // java.lang.Runnable
                     public final void run() {
-                        LivePlayer.this.lambda$init$20();
+                        LivePlayer.this.lambda$init$21();
                     }
                 });
             }
@@ -798,7 +823,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$20() {
+    public /* synthetic */ void lambda$init$21() {
         setEmptyStream(true);
     }
 
@@ -899,6 +924,16 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         }
     }
 
+    public void storyDeleted() {
+        TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
+        tL_updateStory.peer = MessagesController.getInstance(this.currentAccount).getPeer(this.dialogId);
+        TL_stories.TL_storyItemDeleted tL_storyItemDeleted = new TL_stories.TL_storyItemDeleted();
+        tL_updateStory.story = tL_storyItemDeleted;
+        tL_storyItemDeleted.id = this.storyId;
+        MessagesController.getInstance(this.currentAccount).getStoriesController().processUpdate(tL_updateStory);
+        destroy();
+    }
+
     public boolean equals(TLRPC.InputGroupCall inputGroupCall) {
         TLRPC.InputGroupCall inputGroupCall2 = this.inputCall;
         return inputGroupCall2 == inputGroupCall || inputGroupCall2.id == inputGroupCall.id;
@@ -918,7 +953,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(leavegroupcall, new RequestDelegate() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda6
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    LivePlayer.this.lambda$destroy$23(tLObject, tL_error);
+                    LivePlayer.this.lambda$destroy$24(tLObject, tL_error);
                 }
             });
         }
@@ -949,7 +984,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$destroy$23(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$destroy$24(TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject instanceof TLRPC.Updates) {
             MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
         }
@@ -1006,6 +1041,9 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     private void setPolling(boolean z) {
+        if (this.destroyed) {
+            z = false;
+        }
         if (this.polling == z) {
             return;
         }
@@ -1039,7 +1077,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         Runnable runnable4 = new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
-                LivePlayer.this.lambda$setPolling$24();
+                LivePlayer.this.lambda$setPolling$25();
             }
         };
         this.pollRunnable = runnable4;
@@ -1051,7 +1089,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         Runnable runnable6 = new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                LivePlayer.this.lambda$setPolling$25();
+                LivePlayer.this.lambda$setPolling$26();
             }
         };
         this.poll2Runnable = runnable6;
@@ -1064,7 +1102,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: poll2, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public void lambda$setPolling$25() {
+    public void lambda$setPolling$26() {
         this.poll2Runnable = null;
         if (this.destroyed) {
             return;
@@ -1074,23 +1112,23 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcall, new RequestDelegate() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda16
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                LivePlayer.this.lambda$poll2$29(tLObject, tL_error);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$poll2$29(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda28
+            @Override // java.lang.Runnable
+            public final void run() {
                 LivePlayer.this.lambda$poll2$28(tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$poll2$28(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda29
-            @Override // java.lang.Runnable
-            public final void run() {
-                LivePlayer.this.lambda$poll2$27(tLObject, tL_error);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$poll2$27(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$poll2$28(TLObject tLObject, TLRPC.TL_error tL_error) {
         if (this.destroyed) {
             return;
         }
@@ -1100,16 +1138,18 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             MessagesController.getInstance(this.currentAccount).putChats(groupcall.chats, false);
             this.call = groupcall.call;
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(this.call.id));
+        } else if (tL_error != null && "GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
+            AndroidUtilities.runOnUIThread(new LivePlayer$$ExternalSyntheticLambda23(this));
         }
         if (this.polling) {
             Runnable runnable = this.poll2Runnable;
             if (runnable != null) {
                 AndroidUtilities.cancelRunOnUIThread(runnable);
             }
-            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda32
+            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda34
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LivePlayer.this.lambda$poll2$26();
+                    LivePlayer.this.lambda$poll2$27();
                 }
             };
             this.poll2Runnable = runnable2;
@@ -1119,7 +1159,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: poll, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public void lambda$setPolling$24() {
+    public void lambda$setPolling$25() {
         this.pollRunnable = null;
         if (this.destroyed) {
             return;
@@ -1130,23 +1170,23 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(checkgroupcall, new RequestDelegate() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda24
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                LivePlayer.this.lambda$poll$33(tLObject, tL_error);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$poll$33(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda31
+            @Override // java.lang.Runnable
+            public final void run() {
                 LivePlayer.this.lambda$poll$32(tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$poll$32(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda27
-            @Override // java.lang.Runnable
-            public final void run() {
-                LivePlayer.this.lambda$poll$31(tLObject, tL_error);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$poll$31(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$poll$32(TLObject tLObject, TLRPC.TL_error tL_error) {
         if (this.destroyed) {
             return;
         }
@@ -1168,24 +1208,28 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
             MessagesController.getInstance(this.currentAccount).putChats(groupcall.chats, false);
             this.call = groupcall.call;
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(this.call.id));
-        } else if (tL_error != null && "GROUPCALL_JOIN_MISSING".equals(tL_error.text)) {
-            FileLog.d("[LivePlayer] received GROUPCALL_JOIN_MISSING on checkGroupCall => rejoining");
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda30
-                @Override // java.lang.Runnable
-                public final void run() {
-                    LivePlayer.this.lambda$poll$29();
-                }
-            });
+        } else if (tL_error != null) {
+            if ("GROUPCALL_JOIN_MISSING".equals(tL_error.text)) {
+                FileLog.d("[LivePlayer] received GROUPCALL_JOIN_MISSING on checkGroupCall => rejoining");
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda32
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        LivePlayer.this.lambda$poll$30();
+                    }
+                });
+            } else if ("GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
+                AndroidUtilities.runOnUIThread(new LivePlayer$$ExternalSyntheticLambda23(this));
+            }
         }
         if (this.polling) {
             Runnable runnable = this.pollRunnable;
             if (runnable != null) {
                 AndroidUtilities.cancelRunOnUIThread(runnable);
             }
-            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda31
+            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda33
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LivePlayer.this.lambda$poll$30();
+                    LivePlayer.this.lambda$poll$31();
                 }
             };
             this.pollRunnable = runnable2;
@@ -1194,7 +1238,7 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$poll$29() {
+    public /* synthetic */ void lambda$poll$30() {
         if (this.instance != null) {
             DispatchQueue dispatchQueue = Utilities.globalQueue;
             NativeInstance nativeInstance = this.instance;
@@ -1266,8 +1310,28 @@ public class LivePlayer implements NotificationCenter.NotificationCenterDelegate
         }
         TL_phone.discardGroupCall discardgroupcall = new TL_phone.discardGroupCall();
         discardgroupcall.call = this.inputCall;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(discardgroupcall, null);
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(discardgroupcall, new RequestDelegate() { // from class: org.telegram.ui.Stories.LivePlayer$$ExternalSyntheticLambda35
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                LivePlayer.this.lambda$end$34(tLObject, tL_error);
+            }
+        });
         destroy();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$end$34(TLObject tLObject, TLRPC.TL_error tL_error) {
+        if (tLObject instanceof TLRPC.Updates) {
+            TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+            MessagesController.getInstance(this.currentAccount).putUsers(updates.users, false);
+            MessagesController.getInstance(this.currentAccount).putChats(updates.chats, false);
+            MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
+            return;
+        }
+        if (tL_error == null || !"GROUPCALL_ALREADY_DISCARDED".equalsIgnoreCase(tL_error.text)) {
+            return;
+        }
+        AndroidUtilities.runOnUIThread(new LivePlayer$$ExternalSyntheticLambda23(this));
     }
 
     public TLRPC.Peer getDefaultSendAs() {

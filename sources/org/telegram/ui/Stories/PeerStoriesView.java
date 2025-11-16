@@ -2345,13 +2345,13 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
                     if ((messageMedia2 instanceof TLRPC.TL_messageMediaVideoStream) && (livePlayer2 = LivePlayer.recording) != null && livePlayer2.equals(((TLRPC.TL_messageMediaVideoStream) messageMedia2).call)) {
                         LivePlayer livePlayer3 = LivePlayer.recording;
                         final boolean z5 = livePlayer3 != null && livePlayer3.isMuted();
-                        ActionBarMenuItem.addItem(actionBarPopupWindowLayout, z5 ? R.drawable.msg_voice_unmuted : R.drawable.msg_voice_muted, z5 ? "Unmute" : "Mute", false, this.val$resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.PeerStoriesView$8$$ExternalSyntheticLambda15
+                        ActionBarMenuItem.addItem(actionBarPopupWindowLayout, z5 ? R.drawable.msg_voice_unmuted : R.drawable.msg_voice_muted, LocaleController.getString(z5 ? R.string.Unmute : R.string.Mute), false, this.val$resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.PeerStoriesView$8$$ExternalSyntheticLambda15
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
                                 PeerStoriesView.8.this.lambda$onCreate$33(z5, view);
                             }
                         });
-                        ActionBarMenuItem.addItem(actionBarPopupWindowLayout, R.drawable.menu_camera_retake, "Switch Camera", false, this.val$resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.PeerStoriesView$8$$ExternalSyntheticLambda16
+                        ActionBarMenuItem.addItem(actionBarPopupWindowLayout, R.drawable.menu_camera_retake, LocaleController.getString(R.string.AccDescrSwitchCamera), false, this.val$resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.PeerStoriesView$8$$ExternalSyntheticLambda16
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
                                 PeerStoriesView.8.this.lambda$onCreate$34(view);
