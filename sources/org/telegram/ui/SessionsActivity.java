@@ -571,7 +571,7 @@ public class SessionsActivity extends BaseFragment implements NotificationCenter
 
         @Override // org.telegram.ui.Components.UndoView
         public void hide(boolean z, int i) {
-            if (!z) {
+            if (!z && getCurrentInfoObject() != null) {
                 final TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
                 TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
                 resetauthorization.hash = tL_authorization.hash;
