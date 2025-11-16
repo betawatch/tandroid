@@ -16,6 +16,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.utils.CountdownTimer;
 import org.telegram.tgnet.ConnectionsManager;
@@ -177,7 +178,7 @@ public class ActiveGiftAuctionsHintCell extends BlurredFrameLayout implements Gi
         private final Drawable drawable;
         private int endTime;
         private final Paint fillPaint;
-        public final AnimatedTextView textView;
+        public final AnimatedTextView.AnimatedTextDrawable textView;
         private final CountdownTimer timer;
 
         public CountDown(Context context, int i) {
@@ -191,17 +192,21 @@ public class ActiveGiftAuctionsHintCell extends BlurredFrameLayout implements Gi
                 }
             });
             this.currentAccount = i;
-            Drawable mutate = context.getResources().getDrawable(R.drawable.filled_gift_sell_24).mutate();
-            this.drawable = mutate;
-            mutate.setBounds(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(26.0f), AndroidUtilities.dp(23.0f));
-            AnimatedTextView animatedTextView = new AnimatedTextView(context);
-            this.textView = animatedTextView;
-            animatedTextView.setTypeface(AndroidUtilities.bold());
-            animatedTextView.setTextSize(AndroidUtilities.dp(14.0f));
-            animatedTextView.setTextColor(-1);
-            animatedTextView.setGravity(17);
+            this.drawable = context.getResources().getDrawable(R.drawable.filled_gift_sell_24).mutate();
+            AnimatedTextView.AnimatedTextDrawable animatedTextDrawable = new AnimatedTextView.AnimatedTextDrawable();
+            this.textView = animatedTextDrawable;
+            animatedTextDrawable.setOverrideFullWidth(AndroidUtilities.displaySize.x);
+            animatedTextDrawable.setCallback(this);
+            animatedTextDrawable.setTypeface(AndroidUtilities.bold());
+            animatedTextDrawable.setTextSize(AndroidUtilities.dp(14.0f));
+            animatedTextDrawable.setTextColor(-1);
+            animatedTextDrawable.setGravity(3);
             paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(72.0f), 0.0f, new int[]{-13460514, -10042885}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-            addView(animatedTextView, LayoutHelper.createFrame(40, -2.0f, 21, 0.0f, 0.0f, 6.0f, 0.0f));
+        }
+
+        @Override // android.view.View
+        protected boolean verifyDrawable(Drawable drawable) {
+            return drawable == this.textView || super.verifyDrawable(drawable);
         }
 
         public void start(int i) {
@@ -214,6 +219,7 @@ public class ActiveGiftAuctionsHintCell extends BlurredFrameLayout implements Gi
         }
 
         public void stop() {
+            this.endTime = 0;
             this.timer.stop();
         }
 
@@ -240,14 +246,22 @@ public class ActiveGiftAuctionsHintCell extends BlurredFrameLayout implements Gi
 
         @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
-            canvas.drawRoundRect(0.0f, 0.0f, getWidth(), getHeight(), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.fillPaint);
+            int measuredWidth = (getMeasuredWidth() - AndroidUtilities.dp(8.0f)) - ((int) this.textView.getCurrentWidth());
+            int dp = measuredWidth - AndroidUtilities.dp(30.0f);
+            canvas.save();
+            canvas.translate(dp, 0.0f);
+            canvas.drawRoundRect(0.0f, 0.0f, getWidth() - dp, getHeight(), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.fillPaint);
+            canvas.restore();
+            this.textView.setBounds(measuredWidth, 0, getMeasuredWidth() - AndroidUtilities.dp(8.0f), getMeasuredHeight() - AndroidUtilities.dp(1.0f));
+            this.textView.draw(canvas);
+            this.drawable.setBounds(AndroidUtilities.dp(-22.0f) + measuredWidth, AndroidUtilities.dp(5.0f), measuredWidth + AndroidUtilities.dp(-4.0f), AndroidUtilities.dp(23.0f));
             this.drawable.draw(canvas);
             super.dispatchDraw(canvas);
         }
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(LayoutHelper.measureSpecExactlyDp(72), LayoutHelper.measureSpecExactlyDp(28));
+            super.onMeasure(LayoutHelper.measureSpecExactlyDp(NotificationCenter.didEndCall), LayoutHelper.measureSpecExactlyDp(28));
         }
     }
 }

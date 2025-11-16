@@ -2018,6 +2018,13 @@ public class LocaleController {
         return sb.toString();
     }
 
+    public static String formatNumberWithMillion(long j, char c) {
+        if (j < 1000000) {
+            return formatNumber(j, c);
+        }
+        return AndroidUtilities.formatWholeNumber((int) j, MediaController.VIDEO_BITRATE_480);
+    }
+
     public static String formatString(int i, Object... objArr) {
         String str = resourcesCacheMap.get(Integer.valueOf(i));
         if (str == null) {

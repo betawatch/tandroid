@@ -102,7 +102,8 @@ class PipSourcePlaceholder {
         @Override // android.graphics.drawable.Drawable
         public void setBounds(int i, int i2, int i3, int i4) {
             super.setBounds(i, i2, i3, i4);
-            if (this.bitmap.isRecycled()) {
+            Bitmap bitmap = this.bitmap;
+            if (bitmap == null || bitmap.isRecycled()) {
                 return;
             }
             int i5 = i3 - i;
