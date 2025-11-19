@@ -1179,30 +1179,29 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30));
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:104:0x08f9  */
+        /* JADX WARN: Removed duplicated region for block: B:104:0x095b  */
         /* JADX WARN: Removed duplicated region for block: B:114:? A[RETURN, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:116:0x080e  */
-        /* JADX WARN: Removed duplicated region for block: B:118:0x0735  */
-        /* JADX WARN: Removed duplicated region for block: B:119:0x0711  */
-        /* JADX WARN: Removed duplicated region for block: B:120:0x0559  */
-        /* JADX WARN: Removed duplicated region for block: B:123:0x04ac  */
-        /* JADX WARN: Removed duplicated region for block: B:126:0x045a  */
-        /* JADX WARN: Removed duplicated region for block: B:56:0x044f  */
-        /* JADX WARN: Removed duplicated region for block: B:68:0x04ea  */
-        /* JADX WARN: Removed duplicated region for block: B:71:0x0527  */
-        /* JADX WARN: Removed duplicated region for block: B:74:0x05bd  */
-        /* JADX WARN: Removed duplicated region for block: B:77:0x062e  */
-        /* JADX WARN: Removed duplicated region for block: B:83:0x0727  */
-        /* JADX WARN: Removed duplicated region for block: B:88:0x074e  */
-        /* JADX WARN: Removed duplicated region for block: B:94:0x0826  */
-        /* JADX WARN: Removed duplicated region for block: B:96:0x0882  */
+        /* JADX WARN: Removed duplicated region for block: B:116:0x0868  */
+        /* JADX WARN: Removed duplicated region for block: B:118:0x07a3  */
+        /* JADX WARN: Removed duplicated region for block: B:119:0x078a  */
+        /* JADX WARN: Removed duplicated region for block: B:120:0x055e  */
+        /* JADX WARN: Removed duplicated region for block: B:123:0x04b1  */
+        /* JADX WARN: Removed duplicated region for block: B:126:0x045f  */
+        /* JADX WARN: Removed duplicated region for block: B:55:0x0454  */
+        /* JADX WARN: Removed duplicated region for block: B:67:0x04ef  */
+        /* JADX WARN: Removed duplicated region for block: B:70:0x052c  */
+        /* JADX WARN: Removed duplicated region for block: B:73:0x05c0  */
+        /* JADX WARN: Removed duplicated region for block: B:76:0x06a0  */
+        /* JADX WARN: Removed duplicated region for block: B:83:0x0795  */
+        /* JADX WARN: Removed duplicated region for block: B:88:0x07a8  */
+        /* JADX WARN: Removed duplicated region for block: B:94:0x0888  */
+        /* JADX WARN: Removed duplicated region for block: B:96:0x08e4  */
         @Override // android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         protected void onDraw(Canvas canvas) {
             float f;
-            float dp;
             float dpf2;
             float f2;
             float f3;
@@ -1210,16 +1209,20 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             float f5;
             float f6;
             float f7;
+            float f8;
             float dpf22;
             float dpf23;
             BlurredBackgroundDrawable blurredBackgroundDrawable;
             HintView2 hintView2;
-            float f8;
-            float f9;
             float clamp;
+            float f9;
+            float f10;
+            float f11;
+            float f12;
+            float f13;
             Drawable drawable;
             float max;
-            float f10 = ChatActivityEnterView.this.scale <= 0.5f ? ChatActivityEnterView.this.scale / 0.5f : ChatActivityEnterView.this.scale <= 0.75f ? 1.0f - (((ChatActivityEnterView.this.scale - 0.5f) / 0.25f) * 0.1f) : (((ChatActivityEnterView.this.scale - 0.75f) / 0.25f) * 0.1f) + 0.9f;
+            float f14 = ChatActivityEnterView.this.scale <= 0.5f ? ChatActivityEnterView.this.scale / 0.5f : ChatActivityEnterView.this.scale <= 0.75f ? 1.0f - (((ChatActivityEnterView.this.scale - 0.5f) / 0.25f) * 0.1f) : (((ChatActivityEnterView.this.scale - 0.75f) / 0.25f) * 0.1f) + 0.9f;
             long currentTimeMillis = System.currentTimeMillis() - this.lastUpdateTime;
             this.lastUpdateTime = System.currentTimeMillis();
             if (ChatActivityEnterView.this.lockAnimatedTranslation != 10000.0f) {
@@ -1231,33 +1234,33 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 f = 0.0f;
             }
             int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp2(26.0f);
-            float dp2 = 1.0f - (f / AndroidUtilities.dp(57.0f));
+            float dp = 1.0f - (f / AndroidUtilities.dp(57.0f));
             float measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(194.0f);
             if (ChatActivityEnterView.this.sendButtonVisible) {
-                float dp3 = AndroidUtilities.dp(36.0f);
-                dp = (((AndroidUtilities.dp(60.0f) + measuredHeight) + (AndroidUtilities.dpf2(30.0f) * (1.0f - f10))) - f) + (AndroidUtilities.dpf2(14.0f) * dp2);
-                dpf2 = (((dp3 / 2.0f) + dp) - AndroidUtilities.dpf2(8.0f)) + AndroidUtilities.dpf2(2.0f);
+                float dp2 = AndroidUtilities.dp(36.0f);
+                float dp3 = (((AndroidUtilities.dp(60.0f) + measuredHeight) + (AndroidUtilities.dpf2(30.0f) * (1.0f - f14))) - f) + (AndroidUtilities.dpf2(14.0f) * dp);
+                dpf2 = (((dp2 / 2.0f) + dp3) - AndroidUtilities.dpf2(8.0f)) + AndroidUtilities.dpf2(2.0f);
                 AndroidUtilities.dpf2(16.0f);
                 AndroidUtilities.dpf2(2.0f);
-                f2 = (((1.0f - dp2) * 9.0f) * (1.0f - ChatActivityEnterView.this.snapAnimationProgress)) - ((ChatActivityEnterView.this.snapAnimationProgress * 15.0f) * (1.0f - (dp2 > 0.4f ? 1.0f : dp2 / 0.4f)));
-                f4 = dp2;
-                f3 = dp3;
+                f2 = dp2;
+                f3 = (((1.0f - dp) * 9.0f) * (1.0f - ChatActivityEnterView.this.snapAnimationProgress)) - ((ChatActivityEnterView.this.snapAnimationProgress * 15.0f) * (1.0f - (dp > 0.4f ? 1.0f : dp / 0.4f)));
+                f4 = dp3;
+                f5 = dp;
             } else {
-                float dp4 = AndroidUtilities.dp(36.0f) + ((int) (AndroidUtilities.dp(14.0f) * dp2));
-                dp = (((AndroidUtilities.dp(60.0f) + measuredHeight) + ((int) (AndroidUtilities.dp(30.0f) * (1.0f - f10)))) - ((int) f)) + (ChatActivityEnterView.this.idleProgress * dp2 * (-AndroidUtilities.dp(8.0f)));
-                dpf2 = (((dp4 / 2.0f) + dp) - AndroidUtilities.dpf2(8.0f)) + AndroidUtilities.dpf2(2.0f) + (AndroidUtilities.dpf2(2.0f) * dp2);
+                float dp4 = AndroidUtilities.dp(36.0f) + ((int) (AndroidUtilities.dp(14.0f) * dp));
+                float dp5 = (((AndroidUtilities.dp(60.0f) + measuredHeight) + ((int) (AndroidUtilities.dp(30.0f) * (1.0f - f14)))) - ((int) f)) + (ChatActivityEnterView.this.idleProgress * dp * (-AndroidUtilities.dp(8.0f)));
+                dpf2 = (((dp4 / 2.0f) + dp5) - AndroidUtilities.dpf2(8.0f)) + AndroidUtilities.dpf2(2.0f) + (AndroidUtilities.dpf2(2.0f) * dp);
                 AndroidUtilities.dpf2(16.0f);
                 AndroidUtilities.dpf2(2.0f);
                 AndroidUtilities.dpf2(2.0f);
-                f2 = (1.0f - dp2) * 9.0f;
                 ChatActivityEnterView.this.snapAnimationProgress = 0.0f;
-                f3 = dp4;
-                f4 = 0.0f;
+                f2 = dp4;
+                f3 = (1.0f - dp) * 9.0f;
+                f4 = dp5;
+                f5 = 0.0f;
             }
-            float f11 = dp;
-            float f12 = f2;
             if ((ChatActivityEnterView.this.showTooltip && System.currentTimeMillis() - ChatActivityEnterView.this.showTooltipStartTime > 200) || ChatActivityEnterView.this.tooltipAlpha != 0.0f) {
-                if (dp2 < 0.8f || ChatActivityEnterView.this.sendButtonVisible || ChatActivityEnterView.this.exitTransition != 0.0f || ChatActivityEnterView.this.transformToSeekbar != 0.0f) {
+                if (dp < 0.8f || ChatActivityEnterView.this.sendButtonVisible || ChatActivityEnterView.this.exitTransition != 0.0f || ChatActivityEnterView.this.transformToSeekbar != 0.0f) {
                     ChatActivityEnterView.this.showTooltip = false;
                 }
                 if (!ChatActivityEnterView.this.showTooltip) {
@@ -1305,28 +1308,28 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     canvas.restore();
                 }
             }
-            float f13 = this.hidePauseT.set(ChatActivityEnterView.this.isInVideoMode && ChatActivityEnterView.this.millisecondsRecorded >= 59000);
+            float f15 = this.hidePauseT.set(ChatActivityEnterView.this.isInVideoMode && ChatActivityEnterView.this.millisecondsRecorded >= 59000);
             if (ChatActivityEnterView.this.transformToSeekbar != 0.0f) {
                 ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
                 if (chatActivityEnterView.audioTimelineView != null) {
-                    float f14 = chatActivityEnterView.transformToSeekbar > 0.38f ? 1.0f : ChatActivityEnterView.this.transformToSeekbar / 0.38f;
+                    float f16 = chatActivityEnterView.transformToSeekbar > 0.38f ? 1.0f : ChatActivityEnterView.this.transformToSeekbar / 0.38f;
                     if (ChatActivityEnterView.this.transformToSeekbar > 0.63f) {
-                        f5 = 0.0f;
+                        f6 = 0.0f;
                         max = 1.0f;
                     } else {
-                        f5 = 0.0f;
+                        f6 = 0.0f;
                         max = Math.max(0.0f, (ChatActivityEnterView.this.transformToSeekbar - 0.38f) / 0.25f);
                     }
                     CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_BOTH;
-                    float interpolation = cubicBezierInterpolator.getInterpolation(f14);
+                    float interpolation = cubicBezierInterpolator.getInterpolation(f16);
                     cubicBezierInterpolator.getInterpolation(max);
-                    f6 = interpolation;
+                    f7 = interpolation;
                     canvas.save();
                     canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight() - ChatActivityEnterView.this.textFieldContainer.getMeasuredHeight());
                     if (1.0f - ChatActivityEnterView.this.controlsScale == 0.0f) {
-                        f7 = 1.0f - ChatActivityEnterView.this.controlsScale;
+                        f8 = 1.0f - ChatActivityEnterView.this.controlsScale;
                     } else {
-                        f7 = f5 != 0.0f ? f5 : 0.0f;
+                        f8 = f6 != 0.0f ? f6 : 0.0f;
                     }
                     if (ChatActivityEnterView.this.slideToCancelProgress >= 0.7f || ChatActivityEnterView.this.canceledByGesture) {
                         ChatActivityEnterView.this.showTooltip = false;
@@ -1343,17 +1346,18 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         }
                     }
                     dpf22 = AndroidUtilities.dpf2(72.0f);
-                    dpf23 = (dpf22 * f7) + (AndroidUtilities.dpf2(24.0f) * f6 * (1.0f - f7)) + ((1.0f - ChatActivityEnterView.this.slideToCancelLockProgress) * dpf22);
-                    if (dpf23 <= dpf22) {
-                        dpf22 = dpf23;
+                    dpf23 = (dpf22 * f8) + (AndroidUtilities.dpf2(24.0f) * f7 * (1.0f - f8)) + ((1.0f - ChatActivityEnterView.this.slideToCancelLockProgress) * dpf22);
+                    if (dpf23 > dpf22) {
+                        dpf23 = dpf22;
                     }
-                    float f15 = (1.0f - f13) * ChatActivityEnterView.this.controlsScale * (1.0f - f5) * ChatActivityEnterView.this.slideToCancelLockProgress;
-                    float f16 = measuredWidth;
-                    float f17 = dpf2 + dpf22;
-                    canvas.scale(f15, f15, f16, f17);
-                    float f18 = f6;
-                    float f19 = f11 + dpf22;
-                    this.rectF.set(f16 - AndroidUtilities.dpf2(18.0f), f19, f16 + AndroidUtilities.dpf2(18.0f), f19 + f3);
+                    float f17 = (1.0f - f15) * ChatActivityEnterView.this.controlsScale * (1.0f - f6) * ChatActivityEnterView.this.slideToCancelLockProgress;
+                    float f18 = measuredWidth;
+                    float f19 = dpf2 + dpf23;
+                    canvas.scale(f17, f17, f18, f19);
+                    float f20 = f3;
+                    float f21 = f4 + dpf23;
+                    float f22 = f4;
+                    this.rectF.set(f18 - AndroidUtilities.dpf2(18.0f), f21, f18 + AndroidUtilities.dpf2(18.0f), f21 + f2);
                     blurredBackgroundDrawable = this.lockBackgroundDrawable;
                     if (blurredBackgroundDrawable == null) {
                         blurredBackgroundDrawable.setBounds((int) (this.rectF.left - AndroidUtilities.dpf2(3.0f)), (int) (this.rectF.top - AndroidUtilities.dpf2(3.0f)), (int) (this.rectF.right + AndroidUtilities.dpf2(3.0f)), (int) (this.rectF.bottom + AndroidUtilities.dpf2(3.0f)));
@@ -1364,111 +1368,121 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         canvas.drawRoundRect(this.rectF, AndroidUtilities.dpf2(18.0f), AndroidUtilities.dpf2(18.0f), this.lockBackgroundPaint);
                     }
                     ChatActivityEnterView.this.pauseRect.set(this.rectF);
-                    scale(ChatActivityEnterView.this.pauseRect, f15);
+                    scale(ChatActivityEnterView.this.pauseRect, f17);
                     hintView2 = this.pauseHint;
                     if (hintView2 != null) {
                         hintView2.setJointPx(0.0f, this.rectF.centerY());
                         this.pauseHint.invalidate();
                     }
-                    float f20 = 1.0f - f4;
-                    this.rectF.set((f16 - AndroidUtilities.dpf2(6.0f)) - (AndroidUtilities.dpf2(2.0f) * f20), f17 - (AndroidUtilities.dpf2(2.0f) * f20), measuredWidth + AndroidUtilities.dp(6.0f) + (AndroidUtilities.dpf2(2.0f) * f20), f17 + AndroidUtilities.dp(12.0f) + (AndroidUtilities.dpf2(2.0f) * f20));
+                    float f23 = 1.0f - f5;
+                    this.rectF.set((f18 - AndroidUtilities.dpf2(6.0f)) - (AndroidUtilities.dpf2(2.0f) * f23), f19 - (AndroidUtilities.dpf2(2.0f) * f23), measuredWidth + AndroidUtilities.dp(6.0f) + (AndroidUtilities.dpf2(2.0f) * f23), f19 + AndroidUtilities.dp(12.0f) + (AndroidUtilities.dpf2(2.0f) * f23));
                     RectF rectF = this.rectF;
-                    float f21 = rectF.bottom;
+                    float f24 = rectF.bottom;
                     float centerX = rectF.centerX();
                     float centerY = this.rectF.centerY();
                     canvas.save();
-                    float f22 = 1.0f - dp2;
-                    canvas.translate(0.0f, AndroidUtilities.dpf2(2.0f) * f22);
-                    canvas.rotate(f12, centerX, centerY);
-                    if (f4 == 1.0f) {
+                    clamp = Utilities.clamp(ChatActivityEnterView.this.transformToSeekbar * 2.0f, 1.0f, 0.0f);
+                    int alpha = this.lockPaint.getAlpha();
+                    f9 = f5;
+                    float f25 = f2;
+                    int saveLayerAlpha = canvas.saveLayerAlpha(centerX - AndroidUtilities.dp(24.0f), centerY - AndroidUtilities.dp(24.0f), centerX + AndroidUtilities.dp(24.0f), centerY + AndroidUtilities.dp(24.0f), (int) (alpha * (1.0f - clamp)), 31);
+                    this.lockOutlinePaint.setAlpha(NotificationCenter.cameraInitied);
+                    this.lockPaint.setAlpha(NotificationCenter.cameraInitied);
+                    float f26 = 1.0f - dp;
+                    canvas.translate(0.0f, AndroidUtilities.dpf2(2.0f) * f26);
+                    canvas.rotate(f20, centerX, centerY);
+                    if (f9 == 1.0f) {
                         RectF rectF2 = AndroidUtilities.rectTmp;
                         rectF2.set(0.0f, 0.0f, AndroidUtilities.dpf2(8.0f), AndroidUtilities.dpf2(8.0f));
                         canvas.save();
-                        canvas.clipRect(0.0f, 0.0f, getMeasuredWidth(), f21 + dpf22 + (AndroidUtilities.dpf2(2.0f) * f22));
-                        canvas.translate(f16 - AndroidUtilities.dpf2(4.0f), ((this.rectF.top - AndroidUtilities.dp(6.0f)) - AndroidUtilities.lerp(AndroidUtilities.dpf2(2.0f), AndroidUtilities.dpf2(1.5f) * (1.0f - ChatActivityEnterView.this.idleProgress), dp2)) + (AndroidUtilities.dpf2(12.0f) * f4) + (AndroidUtilities.dpf2(2.0f) * ChatActivityEnterView.this.snapAnimationProgress));
-                        if (f12 > 0.0f) {
-                            canvas.rotate(f12, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+                        canvas.clipRect(0.0f, 0.0f, getMeasuredWidth(), f24 + dpf23 + (AndroidUtilities.dpf2(2.0f) * f26));
+                        canvas.translate(f18 - AndroidUtilities.dpf2(4.0f), ((this.rectF.top - AndroidUtilities.dp(6.0f)) - AndroidUtilities.lerp(AndroidUtilities.dpf2(2.0f), AndroidUtilities.dpf2(1.5f) * (1.0f - ChatActivityEnterView.this.idleProgress), dp)) + (AndroidUtilities.dpf2(12.0f) * f9) + (AndroidUtilities.dpf2(2.0f) * ChatActivityEnterView.this.snapAnimationProgress));
+                        if (f20 > 0.0f) {
+                            canvas.rotate(f20, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
                         }
-                        f8 = f3;
-                        f9 = f4;
-                        canvas.drawLine(AndroidUtilities.dpf2(8.0f), AndroidUtilities.dpf2(4.0f), AndroidUtilities.dpf2(8.0f), (AndroidUtilities.dpf2(4.0f) * f20) + AndroidUtilities.dpf2(6.0f), this.lockOutlinePaint);
+                        f10 = dpf23;
+                        f12 = f9;
+                        f11 = f7;
+                        f13 = centerY;
+                        canvas.drawLine(AndroidUtilities.dpf2(8.0f), AndroidUtilities.dpf2(4.0f), AndroidUtilities.dpf2(8.0f), (AndroidUtilities.dpf2(4.0f) * f23) + AndroidUtilities.dpf2(6.0f), this.lockOutlinePaint);
                         canvas.drawArc(rectF2, 0.0f, -180.0f, false, this.lockOutlinePaint);
                         float dpf24 = AndroidUtilities.dpf2(4.0f);
                         float dpf25 = AndroidUtilities.dpf2(4.0f);
                         float dpf26 = AndroidUtilities.dpf2(4.0f);
                         ChatActivityEnterView chatActivityEnterView2 = ChatActivityEnterView.this;
-                        canvas.drawLine(0.0f, dpf24, 0.0f, dpf25 + (dpf26 * chatActivityEnterView2.idleProgress * dp2 * (!chatActivityEnterView2.sendButtonVisible ? 1 : 0)) + (AndroidUtilities.dpf2(4.0f) * ChatActivityEnterView.this.snapAnimationProgress * f22), this.lockOutlinePaint);
+                        canvas.drawLine(0.0f, dpf24, 0.0f, dpf25 + (dpf26 * chatActivityEnterView2.idleProgress * dp * (!chatActivityEnterView2.sendButtonVisible ? 1 : 0)) + (AndroidUtilities.dpf2(4.0f) * ChatActivityEnterView.this.snapAnimationProgress * f26), this.lockOutlinePaint);
                         canvas.restore();
                     } else {
-                        f8 = f3;
-                        f9 = f4;
+                        f10 = dpf23;
+                        f11 = f7;
+                        f12 = f9;
+                        f13 = centerY;
                     }
-                    clamp = Utilities.clamp(ChatActivityEnterView.this.transformToSeekbar * 2.0f, 1.0f, 0.0f);
                     if (clamp <= 0.0f) {
                         drawable = ChatActivityEnterView.this.isInVideoMode ? this.vidDrawable : this.micDrawable;
                     } else {
                         drawable = null;
                     }
-                    int alpha = this.lockPaint.getAlpha();
-                    this.lockPaint.setAlpha((int) (alpha * (1.0f - clamp)));
-                    if (f9 <= 0.0f) {
+                    if (f12 <= 0.0f) {
                         if (this.periodBackgroundDrawable == null) {
                             canvas.drawRoundRect(this.rectF, AndroidUtilities.dpf2(3.0f), AndroidUtilities.dpf2(3.0f), this.lockBackgroundPaint);
                         }
                         this.path2.rewind();
                         RectF rectF3 = AndroidUtilities.rectTmp;
                         rectF3.set(this.rectF);
-                        rectF3.right = this.rectF.centerX() - (AndroidUtilities.dp(1.66f) * f9);
+                        rectF3.right = this.rectF.centerX() - (AndroidUtilities.dp(1.66f) * f12);
                         float[] fArr = this.radiiLeft;
-                        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(1.5f), f9);
+                        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(1.5f), f12);
                         fArr[7] = lerp;
                         fArr[6] = lerp;
                         fArr[1] = lerp;
                         fArr[0] = lerp;
                         float[] fArr2 = this.radiiLeft;
-                        float dp5 = AndroidUtilities.dp(1.5f) * f9;
-                        fArr2[5] = dp5;
-                        fArr2[4] = dp5;
-                        fArr2[3] = dp5;
-                        fArr2[2] = dp5;
+                        float dp6 = AndroidUtilities.dp(1.5f) * f12;
+                        fArr2[5] = dp6;
+                        fArr2[4] = dp6;
+                        fArr2[3] = dp6;
+                        fArr2[2] = dp6;
                         Path path = this.path2;
                         float[] fArr3 = this.radiiLeft;
                         Path.Direction direction = Path.Direction.CW;
                         path.addRoundRect(rectF3, fArr3, direction);
                         rectF3.set(this.rectF);
-                        rectF3.left = this.rectF.centerX() + (AndroidUtilities.dp(1.66f) * f9);
+                        rectF3.left = this.rectF.centerX() + (AndroidUtilities.dp(1.66f) * f12);
                         float[] fArr4 = this.radiiRight;
-                        float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(1.5f), f9);
+                        float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(1.5f), f12);
                         fArr4[5] = lerp2;
                         fArr4[4] = lerp2;
                         fArr4[3] = lerp2;
                         fArr4[2] = lerp2;
                         float[] fArr5 = this.radiiRight;
-                        float dp6 = AndroidUtilities.dp(1.5f) * f9;
-                        fArr5[7] = dp6;
-                        fArr5[6] = dp6;
-                        fArr5[1] = dp6;
-                        fArr5[0] = dp6;
+                        float dp7 = AndroidUtilities.dp(1.5f) * f12;
+                        fArr5[7] = dp7;
+                        fArr5[6] = dp7;
+                        fArr5[1] = dp7;
+                        fArr5[0] = dp7;
                         this.path2.addRoundRect(rectF3, this.radiiRight, direction);
                         canvas.drawPath(this.path2, this.lockPaint);
                     } else {
                         canvas.drawRoundRect(this.rectF, AndroidUtilities.dpf2(3.0f), AndroidUtilities.dpf2(3.0f), this.lockPaint);
                     }
                     this.lockPaint.setAlpha(alpha);
+                    this.lockOutlinePaint.setAlpha(alpha);
+                    canvas.restoreToCount(saveLayerAlpha);
                     if (drawable != null) {
                         android.graphics.Rect rect = AndroidUtilities.rectTmp2;
                         rect.set((int) (this.rectF.centerX() - ((drawable.getIntrinsicWidth() / 2) * 0.9285f)), (int) (this.rectF.centerY() - ((drawable.getIntrinsicHeight() / 2) * 0.9285f)), (int) (this.rectF.centerX() + ((drawable.getIntrinsicWidth() / 2) * 0.9285f)), (int) (this.rectF.centerY() + ((drawable.getIntrinsicHeight() / 2) * 0.9285f)));
                         drawable.setBounds(rect);
-                        drawable.setAlpha((int) (clamp * 255.0f));
+                        drawable.setAlpha((int) (255.0f * clamp));
                         drawable.draw(canvas);
                     }
-                    if (f4 != 1.0f) {
-                        canvas.drawCircle(centerX, centerY, AndroidUtilities.dpf2(2.0f) * f20, this.lockBackgroundPaint);
+                    if (f9 != 1.0f) {
+                        canvas.drawCircle(centerX, f13, AndroidUtilities.dpf2(2.0f) * f23, this.lockBackgroundPaint);
                     }
                     canvas.restore();
                     canvas.restore();
-                    float lerp3 = AndroidUtilities.lerp(f11, getMeasuredHeight() - AndroidUtilities.dp(118.0f), Math.max(ChatActivityEnterView.this.exitTransition, Math.min(f18, ChatActivityEnterView.this.slideToCancelLockProgress))) + dpf22 + (AndroidUtilities.dp(38.0f) * f13);
-                    this.rectF.set(f16 - AndroidUtilities.dpf2(18.0f), lerp3, f16 + AndroidUtilities.dpf2(18.0f), lerp3 + f8);
+                    float lerp3 = AndroidUtilities.lerp(f22, getMeasuredHeight() - AndroidUtilities.dp(118.0f), Math.max(ChatActivityEnterView.this.exitTransition, Math.min(f11, ChatActivityEnterView.this.slideToCancelLockProgress))) + f10 + (AndroidUtilities.dp(38.0f) * f15);
+                    this.rectF.set(f18 - AndroidUtilities.dpf2(18.0f), lerp3, f18 + AndroidUtilities.dpf2(18.0f), lerp3 + f25);
                     ChatActivityEnterView chatActivityEnterView3 = ChatActivityEnterView.this;
                     chatActivityEnterView3.onceVisible = chatActivityEnterView3.delegate == null && ChatActivityEnterView.this.delegate.onceVoiceAvailable();
                     if (ChatActivityEnterView.this.onceVisible) {
@@ -1476,10 +1490,10 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
                     float dpf27 = AndroidUtilities.dpf2(12.0f);
                     RectF rectF4 = this.rectF;
-                    float f23 = rectF4.left;
+                    float f27 = rectF4.left;
                     float dpf28 = (rectF4.top - AndroidUtilities.dpf2(36.0f)) - dpf27;
                     RectF rectF5 = this.rectF;
-                    rectF4.set(f23, dpf28, rectF5.right, rectF5.top - dpf27);
+                    rectF4.set(f27, dpf28, rectF5.right, rectF5.top - dpf27);
                     HintView2 hintView22 = this.onceHint;
                     if (hintView22 != null) {
                         hintView22.setJointPx(0.0f, this.rectF.centerY());
@@ -1487,8 +1501,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                     }
                     this.onceRect.set(this.rectF);
                     canvas.save();
-                    float f24 = ChatActivityEnterView.this.controlsScale * (1.0f - ChatActivityEnterView.this.exitTransition) * ChatActivityEnterView.this.slideToCancelLockProgress * ChatActivityEnterView.this.snapAnimationProgress;
-                    canvas.scale(f24, f24, this.rectF.centerX(), this.rectF.centerY());
+                    float f28 = ChatActivityEnterView.this.controlsScale * (1.0f - ChatActivityEnterView.this.exitTransition) * ChatActivityEnterView.this.slideToCancelLockProgress * ChatActivityEnterView.this.snapAnimationProgress;
+                    canvas.scale(f28, f28, this.rectF.centerX(), this.rectF.centerY());
                     BlurredBackgroundDrawable blurredBackgroundDrawable2 = this.periodBackgroundDrawable;
                     if (blurredBackgroundDrawable2 != null) {
                         blurredBackgroundDrawable2.setBounds((int) (this.rectF.left - AndroidUtilities.dpf2(3.0f)), (int) (this.rectF.top - AndroidUtilities.dpf2(3.0f)), (int) (this.rectF.right + AndroidUtilities.dpf2(3.0f)), (int) (this.rectF.bottom + AndroidUtilities.dpf2(3.0f)));
@@ -1507,16 +1521,16 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
             }
             if (ChatActivityEnterView.this.exitTransition != 0.0f) {
-                float f25 = ChatActivityEnterView.this.exitTransition > 0.6f ? 1.0f : ChatActivityEnterView.this.exitTransition / 0.6f;
+                float f29 = ChatActivityEnterView.this.exitTransition > 0.6f ? 1.0f : ChatActivityEnterView.this.exitTransition / 0.6f;
                 ChatActivityEnterView chatActivityEnterView4 = ChatActivityEnterView.this;
                 float max2 = chatActivityEnterView4.messageTransitionIsRunning ? chatActivityEnterView4.exitTransition : Math.max(0.0f, (chatActivityEnterView4.exitTransition - 0.6f) / 0.4f);
                 CubicBezierInterpolator cubicBezierInterpolator2 = CubicBezierInterpolator.EASE_BOTH;
-                float interpolation2 = cubicBezierInterpolator2.getInterpolation(f25);
-                f5 = cubicBezierInterpolator2.getInterpolation(max2);
-                f6 = interpolation2;
+                float interpolation2 = cubicBezierInterpolator2.getInterpolation(f29);
+                f6 = cubicBezierInterpolator2.getInterpolation(max2);
+                f7 = interpolation2;
             } else {
-                f5 = 0.0f;
                 f6 = 0.0f;
+                f7 = 0.0f;
             }
             canvas.save();
             canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight() - ChatActivityEnterView.this.textFieldContainer.getMeasuredHeight());
@@ -1528,52 +1542,59 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (ChatActivityEnterView.this.slideToCancelLockProgress != 0.0f) {
             }
             dpf22 = AndroidUtilities.dpf2(72.0f);
-            dpf23 = (dpf22 * f7) + (AndroidUtilities.dpf2(24.0f) * f6 * (1.0f - f7)) + ((1.0f - ChatActivityEnterView.this.slideToCancelLockProgress) * dpf22);
-            if (dpf23 <= dpf22) {
+            dpf23 = (dpf22 * f8) + (AndroidUtilities.dpf2(24.0f) * f7 * (1.0f - f8)) + ((1.0f - ChatActivityEnterView.this.slideToCancelLockProgress) * dpf22);
+            if (dpf23 > dpf22) {
             }
-            float f152 = (1.0f - f13) * ChatActivityEnterView.this.controlsScale * (1.0f - f5) * ChatActivityEnterView.this.slideToCancelLockProgress;
-            float f162 = measuredWidth;
-            float f172 = dpf2 + dpf22;
-            canvas.scale(f152, f152, f162, f172);
-            float f182 = f6;
-            float f192 = f11 + dpf22;
-            this.rectF.set(f162 - AndroidUtilities.dpf2(18.0f), f192, f162 + AndroidUtilities.dpf2(18.0f), f192 + f3);
+            float f172 = (1.0f - f15) * ChatActivityEnterView.this.controlsScale * (1.0f - f6) * ChatActivityEnterView.this.slideToCancelLockProgress;
+            float f182 = measuredWidth;
+            float f192 = dpf2 + dpf23;
+            canvas.scale(f172, f172, f182, f192);
+            float f202 = f3;
+            float f212 = f4 + dpf23;
+            float f222 = f4;
+            this.rectF.set(f182 - AndroidUtilities.dpf2(18.0f), f212, f182 + AndroidUtilities.dpf2(18.0f), f212 + f2);
             blurredBackgroundDrawable = this.lockBackgroundDrawable;
             if (blurredBackgroundDrawable == null) {
             }
             ChatActivityEnterView.this.pauseRect.set(this.rectF);
-            scale(ChatActivityEnterView.this.pauseRect, f152);
+            scale(ChatActivityEnterView.this.pauseRect, f172);
             hintView2 = this.pauseHint;
             if (hintView2 != null) {
             }
-            float f202 = 1.0f - f4;
-            this.rectF.set((f162 - AndroidUtilities.dpf2(6.0f)) - (AndroidUtilities.dpf2(2.0f) * f202), f172 - (AndroidUtilities.dpf2(2.0f) * f202), measuredWidth + AndroidUtilities.dp(6.0f) + (AndroidUtilities.dpf2(2.0f) * f202), f172 + AndroidUtilities.dp(12.0f) + (AndroidUtilities.dpf2(2.0f) * f202));
+            float f232 = 1.0f - f5;
+            this.rectF.set((f182 - AndroidUtilities.dpf2(6.0f)) - (AndroidUtilities.dpf2(2.0f) * f232), f192 - (AndroidUtilities.dpf2(2.0f) * f232), measuredWidth + AndroidUtilities.dp(6.0f) + (AndroidUtilities.dpf2(2.0f) * f232), f192 + AndroidUtilities.dp(12.0f) + (AndroidUtilities.dpf2(2.0f) * f232));
             RectF rectF7 = this.rectF;
-            float f212 = rectF7.bottom;
+            float f242 = rectF7.bottom;
             float centerX2 = rectF7.centerX();
             float centerY2 = this.rectF.centerY();
             canvas.save();
-            float f222 = 1.0f - dp2;
-            canvas.translate(0.0f, AndroidUtilities.dpf2(2.0f) * f222);
-            canvas.rotate(f12, centerX2, centerY2);
-            if (f4 == 1.0f) {
-            }
             clamp = Utilities.clamp(ChatActivityEnterView.this.transformToSeekbar * 2.0f, 1.0f, 0.0f);
+            int alpha2 = this.lockPaint.getAlpha();
+            f9 = f5;
+            float f252 = f2;
+            int saveLayerAlpha2 = canvas.saveLayerAlpha(centerX2 - AndroidUtilities.dp(24.0f), centerY2 - AndroidUtilities.dp(24.0f), centerX2 + AndroidUtilities.dp(24.0f), centerY2 + AndroidUtilities.dp(24.0f), (int) (alpha2 * (1.0f - clamp)), 31);
+            this.lockOutlinePaint.setAlpha(NotificationCenter.cameraInitied);
+            this.lockPaint.setAlpha(NotificationCenter.cameraInitied);
+            float f262 = 1.0f - dp;
+            canvas.translate(0.0f, AndroidUtilities.dpf2(2.0f) * f262);
+            canvas.rotate(f202, centerX2, centerY2);
+            if (f9 == 1.0f) {
+            }
             if (clamp <= 0.0f) {
             }
-            int alpha2 = this.lockPaint.getAlpha();
-            this.lockPaint.setAlpha((int) (alpha2 * (1.0f - clamp)));
-            if (f9 <= 0.0f) {
+            if (f12 <= 0.0f) {
             }
             this.lockPaint.setAlpha(alpha2);
+            this.lockOutlinePaint.setAlpha(alpha2);
+            canvas.restoreToCount(saveLayerAlpha2);
             if (drawable != null) {
             }
-            if (f4 != 1.0f) {
+            if (f9 != 1.0f) {
             }
             canvas.restore();
             canvas.restore();
-            float lerp32 = AndroidUtilities.lerp(f11, getMeasuredHeight() - AndroidUtilities.dp(118.0f), Math.max(ChatActivityEnterView.this.exitTransition, Math.min(f182, ChatActivityEnterView.this.slideToCancelLockProgress))) + dpf22 + (AndroidUtilities.dp(38.0f) * f13);
-            this.rectF.set(f162 - AndroidUtilities.dpf2(18.0f), lerp32, f162 + AndroidUtilities.dpf2(18.0f), lerp32 + f8);
+            float lerp32 = AndroidUtilities.lerp(f222, getMeasuredHeight() - AndroidUtilities.dp(118.0f), Math.max(ChatActivityEnterView.this.exitTransition, Math.min(f11, ChatActivityEnterView.this.slideToCancelLockProgress))) + f10 + (AndroidUtilities.dp(38.0f) * f15);
+            this.rectF.set(f182 - AndroidUtilities.dpf2(18.0f), lerp32, f182 + AndroidUtilities.dpf2(18.0f), lerp32 + f252);
             ChatActivityEnterView chatActivityEnterView32 = ChatActivityEnterView.this;
             chatActivityEnterView32.onceVisible = chatActivityEnterView32.delegate == null && ChatActivityEnterView.this.delegate.onceVoiceAvailable();
             if (ChatActivityEnterView.this.onceVisible) {
@@ -12524,6 +12545,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
         };
         this.emojiView = emojiView2;
+        emojiView2.shouldDrawStickerSettings = true;
         if (!this.shouldDrawBackground) {
             emojiView2.updateColors();
         }
@@ -12618,7 +12640,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         });
         EmojiView emojiView4 = this.emojiView;
         if (emojiView4 != null) {
-            emojiView4.setStickersBanned(!this.sendPlainEnabled, !this.stickersEnabled, -this.dialog_id);
+            emojiView4.setStickersBanned(!this.sendPlainEnabled, true ^ this.stickersEnabled, -this.dialog_id);
         }
         attachEmojiView();
         checkChannelRights();

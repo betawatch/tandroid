@@ -261,6 +261,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
     private Drawable searchIconDrawable;
     private View shadowLine;
     private boolean shouldDrawBackground;
+    public boolean shouldDrawStickerSettings;
     public boolean shouldLightenBackground;
     private boolean showGifs;
     private AnimatorSet showStickersBanAnimator;
@@ -1706,8 +1707,8 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r4v36 */
     /* JADX WARN: Type inference failed for: r4v37, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r4v41 */
-    /* JADX WARN: Type inference failed for: r6v15 */
+    /* JADX WARN: Type inference failed for: r4v44 */
+    /* JADX WARN: Type inference failed for: r6v17 */
     /* JADX WARN: Type inference failed for: r6v2 */
     /* JADX WARN: Type inference failed for: r6v3, types: [boolean, int] */
     public EmojiView(BaseFragment baseFragment, boolean z, boolean z2, boolean z3, Context context, boolean z4, TLRPC.ChatFull chatFull, ViewGroup viewGroup, boolean z5, final Theme.ResourcesProvider resourcesProvider, boolean z6, boolean z7) {
@@ -1715,7 +1716,9 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         ?? r6;
         int i;
         final boolean z8;
-        final Theme.ResourcesProvider resourcesProvider2;
+        Theme.ResourcesProvider resourcesProvider2;
+        1 r14;
+        final Theme.ResourcesProvider resourcesProvider3;
         ?? r4;
         1 r5;
         this.emojiCacheType = 2;
@@ -2256,7 +2259,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                         rect.set(0, 0, 0, 0);
                     }
                 });
-                this.gifGridView.setPadding(0, this.searchFieldHeight, 0, AndroidUtilities.dp(44.0f));
+                this.gifGridView.setPadding(0, this.searchFieldHeight, 0, AndroidUtilities.dp(44.0f) + this.bottomInset);
                 this.gifGridView.setOverScrollMode(2);
                 ((SimpleItemAnimator) this.gifGridView.getItemAnimator()).setSupportsChangeAnimations(false);
                 RecyclerListView recyclerListView3 = this.gifGridView;
@@ -2265,12 +2268,12 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                 recyclerListView3.setAdapter(gifAdapter);
                 this.gifSearchAdapter = new GifAdapter(this, context);
                 this.gifGridView.setOnScrollListener(new TypedScrollListener(2));
-                resourcesProvider2 = resourcesProvider;
+                resourcesProvider3 = resourcesProvider;
                 this.gifGridView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda8
                     @Override // android.view.View.OnTouchListener
                     public final boolean onTouch(View view3, MotionEvent motionEvent) {
                         boolean lambda$new$4;
-                        lambda$new$4 = EmojiView.this.lambda$new$4(resourcesProvider2, view3, motionEvent);
+                        lambda$new$4 = EmojiView.this.lambda$new$4(resourcesProvider3, view3, motionEvent);
                         return lambda$new$4;
                     }
                 });
@@ -2294,7 +2297,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                 };
                 this.gifSearchField = searchField2;
                 this.gifContainer.addView(searchField2, new FrameLayout.LayoutParams(i, this.searchFieldHeight + AndroidUtilities.getShadowHeight()));
-                DraggableScrollSlidingTabStrip draggableScrollSlidingTabStrip = new DraggableScrollSlidingTabStrip(context, resourcesProvider2);
+                DraggableScrollSlidingTabStrip draggableScrollSlidingTabStrip = new DraggableScrollSlidingTabStrip(context, resourcesProvider3);
                 this.gifTabs = draggableScrollSlidingTabStrip;
                 draggableScrollSlidingTabStrip.setType(ScrollSlidingTabStrip.Type.TAB);
                 this.gifTabs.setUnderlineHeight(AndroidUtilities.getShadowHeight());
@@ -2310,7 +2313,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                 });
                 this.gifAdapter.loadTrendingGifs();
             } else {
-                resourcesProvider2 = resourcesProvider;
+                resourcesProvider3 = resourcesProvider;
                 r4 = 0;
                 r5 = null;
             }
@@ -2457,7 +2460,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view3, MotionEvent motionEvent) {
                     boolean lambda$new$7;
-                    lambda$new$7 = EmojiView.this.lambda$new$7(resourcesProvider2, view3, motionEvent);
+                    lambda$new$7 = EmojiView.this.lambda$new$7(resourcesProvider3, view3, motionEvent);
                     return lambda$new$7;
                 }
             });
@@ -2483,9 +2486,11 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             };
             this.stickersSearchField = searchField3;
             this.stickersContainer.addView(searchField3, new FrameLayout.LayoutParams(i, this.searchFieldHeight + AndroidUtilities.getShadowHeight()));
-            23 r3 = new 23(context, resourcesProvider, baseFragment, z5);
-            this.stickersTab = r3;
-            r3.setDragEnabled(true);
+            resourcesProvider2 = resourcesProvider3;
+            r14 = r5;
+            23 r42 = new 23(context, resourcesProvider, baseFragment, z5);
+            this.stickersTab = r42;
+            r42.setDragEnabled(true);
             this.stickersTab.setWillNotDraw(false);
             this.stickersTab.setType(ScrollSlidingTabStrip.Type.TAB);
             this.stickersTab.setUnderlineHeight(this.stickersGridView.canScrollVertically(-1) ? AndroidUtilities.getShadowHeight() : 0);
@@ -2535,6 +2540,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         } else {
             z8 = z5;
             resourcesProvider2 = resourcesProvider;
+            r14 = null;
         }
         this.currentTabs.clear();
         this.currentTabs.addAll(this.allTabs);
@@ -2719,7 +2725,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                     boolean z9 = false;
                     EmojiView.this.showBackspaceButton(i8 == 0, true);
                     EmojiView emojiView = EmojiView.this;
-                    if (i8 == 2 && z8) {
+                    if (i8 == 2 && (z8 || emojiView.shouldDrawStickerSettings)) {
                         z9 = true;
                     }
                     emojiView.showStickerSettingsButton(z9, true);
@@ -4850,16 +4856,12 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                         public void onAnimationEnd(Animator animator) {
                             if (animator.equals(EmojiView.this.searchAnimation)) {
                                 recyclerListView.setTranslationY(0.0f);
-                                if (recyclerListView != EmojiView.this.stickersGridView) {
-                                    if (recyclerListView != EmojiView.this.emojiGridView) {
-                                        if (recyclerListView == EmojiView.this.gifGridView) {
-                                            recyclerListView.setPadding(0, EmojiView.this.searchFieldHeight, 0, 0);
-                                        }
-                                    } else {
-                                        recyclerListView.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
-                                    }
-                                } else {
-                                    recyclerListView.setPadding(0, 0, 0, 0);
+                                if (recyclerListView == EmojiView.this.stickersGridView) {
+                                    recyclerListView.setPadding(0, 0, 0, EmojiView.this.bottomInset);
+                                } else if (recyclerListView == EmojiView.this.emojiGridView) {
+                                    recyclerListView.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), EmojiView.this.bottomInset);
+                                } else if (recyclerListView == EmojiView.this.gifGridView) {
+                                    recyclerListView.setPadding(0, EmojiView.this.searchFieldHeight, 0, EmojiView.this.bottomInset);
                                 }
                                 EmojiView.this.searchAnimation = null;
                             }
@@ -4879,11 +4881,11 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                         view.setTranslationY(-AndroidUtilities.dp(40.0f));
                     }
                     if (recyclerListView == this.stickersGridView) {
-                        recyclerListView.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
+                        recyclerListView.setPadding(0, AndroidUtilities.dp(4.0f), 0, this.bottomInset);
                     } else if (recyclerListView == this.emojiGridView) {
-                        recyclerListView.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
+                        recyclerListView.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), this.bottomInset);
                     } else if (recyclerListView == this.gifGridView) {
-                        recyclerListView.setPadding(0, this.searchFieldHeight, 0, 0);
+                        recyclerListView.setPadding(0, this.searchFieldHeight, 0, this.bottomInset);
                     }
                     if (recyclerListView == this.gifGridView) {
                         if (this.gifSearchAdapter.showTrendingWhenSearchEmpty = this.gifAdapter.results.size() > 0) {
@@ -5053,14 +5055,12 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                             if (animator.equals(EmojiView.this.searchAnimation)) {
                                 int findFirstVisibleItemPosition = gridLayoutManager.findFirstVisibleItemPosition();
                                 recyclerListView.setTranslationY(0.0f);
-                                if (recyclerListView != EmojiView.this.stickersGridView) {
-                                    if (recyclerListView == EmojiView.this.gifGridView) {
-                                        recyclerListView.setPadding(0, EmojiView.this.searchFieldHeight, 0, AndroidUtilities.dp(44.0f));
-                                    } else if (recyclerListView == EmojiView.this.emojiGridView) {
-                                        recyclerListView.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(44.0f));
-                                    }
-                                } else {
-                                    recyclerListView.setPadding(0, AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(44.0f));
+                                if (recyclerListView == EmojiView.this.stickersGridView) {
+                                    recyclerListView.setPadding(0, AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(44.0f) + EmojiView.this.bottomInset);
+                                } else if (recyclerListView == EmojiView.this.gifGridView) {
+                                    recyclerListView.setPadding(0, EmojiView.this.searchFieldHeight, 0, AndroidUtilities.dp(44.0f) + EmojiView.this.bottomInset);
+                                } else if (recyclerListView == EmojiView.this.emojiGridView) {
+                                    recyclerListView.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(44.0f) + EmojiView.this.bottomInset);
                                 }
                                 if (findFirstVisibleItemPosition != -1) {
                                     gridLayoutManager.scrollToPositionWithOffset(findFirstVisibleItemPosition, 0);
@@ -5085,11 +5085,11 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                         view.setTranslationY(0.0f);
                     }
                     if (recyclerListView == this.stickersGridView) {
-                        recyclerListView.setPadding(0, AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(44.0f));
+                        recyclerListView.setPadding(0, AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(44.0f) + this.bottomInset);
                     } else if (recyclerListView == this.gifGridView) {
-                        recyclerListView.setPadding(0, AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(44.0f));
+                        recyclerListView.setPadding(0, AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(44.0f) + this.bottomInset);
                     } else if (recyclerListView == this.emojiGridView) {
-                        recyclerListView.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(44.0f));
+                        recyclerListView.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(44.0f) + this.bottomInset);
                     }
                     gridLayoutManager.scrollToPositionWithOffset(0, 0);
                 }
@@ -6224,7 +6224,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             int i = this.currentPage;
             if (i == 1) {
                 showBackspaceButton(false, false);
-                showStickerSettingsButton(this.shouldDrawBackground, false);
+                showStickerSettingsButton(this.shouldDrawBackground || this.shouldDrawStickerSettings, false);
                 if (this.pager.getCurrentItem() != 2) {
                     this.pager.setCurrentItem(2, false);
                 }
@@ -9532,7 +9532,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             return false;
         }
 
-        static /* synthetic */ int access$19004(StickersSearchGridAdapter stickersSearchGridAdapter) {
+        static /* synthetic */ int access$19104(StickersSearchGridAdapter stickersSearchGridAdapter) {
             int i = stickersSearchGridAdapter.emojiSearchId + 1;
             stickersSearchGridAdapter.emojiSearchId = i;
             return i;
@@ -9855,7 +9855,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                     StickersSearchGridAdapter.this.notifyDataSetChanged();
                     return;
                 }
-                this.lastId = StickersSearchGridAdapter.access$19004(StickersSearchGridAdapter.this);
+                this.lastId = StickersSearchGridAdapter.access$19104(StickersSearchGridAdapter.this);
                 this.query = StickersSearchGridAdapter.this.searchQuery;
                 this.serverPacks.clear();
                 this.localPacks.clear();

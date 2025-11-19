@@ -1,16 +1,13 @@
 package org.telegram.ui.Components.blur3.drawable;
 
-import android.graphics.BlendMode;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.RecordingCanvas;
 import android.graphics.Rect;
-import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.os.Build;
-import androidx.core.math.MathUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotFullscreenButtons$$ExternalSyntheticApiModelOutline9;
 import org.telegram.ui.ActionBar.Theme;
@@ -21,7 +18,6 @@ import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode
 
 /* loaded from: classes5.dex */
 public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawable {
-    private int lastBackgroundColor;
     private LiquidGlassEffect liquidGlassEffect;
     private final Outline outline = new Outline();
     private final Rect outlineRect = new Rect();
@@ -67,6 +63,7 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
 
     @Override // org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable
     protected void onBoundPropsChanged() {
+        super.onBoundPropsChanged();
         this.paintStrokeTop.setStrokeWidth(this.boundProps.strokeWidthTop);
         this.paintStrokeBottom.setStrokeWidth(this.boundProps.strokeWidthBottom);
         this.outlineRect.set(0, 0, this.boundProps.boundsWithPadding.width(), this.boundProps.boundsWithPadding.height());
@@ -84,7 +81,14 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
 
     @Override // org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable
     protected void onSourceOffsetChange(float f, float f2) {
+        super.onSourceOffsetChange(f, f2);
         this.renderNodeInvalidated = true;
+    }
+
+    public boolean hasDisplayList() {
+        boolean hasDisplayList;
+        hasDisplayList = this.renderNode.hasDisplayList();
+        return hasDisplayList;
     }
 
     private void updateDisplayList() {
@@ -113,7 +117,7 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
             }
             float f7 = i;
             BlurredBackgroundDrawable.Props props2 = this.boundProps;
-            liquidGlassEffect.update(0.0f, 0.0f, width, height, f3, f4, f5, f6, f7, props2.liquidIntensity, props2.liquidIndex);
+            liquidGlassEffect.update(0.0f, 0.0f, width, height, f3, f4, f5, f6, f7, props2.liquidIntensity, props2.liquidIndex, this.backgroundColor);
         }
         BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode = this.source;
         Rect rect2 = this.boundProps.boundsWithPadding;
@@ -139,7 +143,7 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
         }
         beginRecording2 = this.renderNode.beginRecording();
         beginRecording2.drawRenderNode(this.renderNodeFill);
-        if ((Build.VERSION.SDK_INT < 31 || this.liquidGlassEffect != null) && this.backgroundColor != 0) {
+        if (this.liquidGlassEffect == null && Color.alpha(this.backgroundColor) != 0) {
             beginRecording2.drawPaint(this.paintFill);
         }
         if (z) {
@@ -150,28 +154,9 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
 
     @Override // org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable
     public void updateColors() {
-        BlendMode blendMode;
-        RenderEffect createColorFilterEffect;
         super.updateColors();
-        int i = this.lastBackgroundColor;
-        int i2 = this.backgroundColor;
-        if (i != i2) {
-            this.lastBackgroundColor = i2;
-            if (this.liquidGlassEffect == null && Build.VERSION.SDK_INT >= 31) {
-                if (Color.alpha(i2) != 0) {
-                    RenderNode renderNode = this.renderNodeFill;
-                    BlurredBackgroundDrawableRenderNode$$ExternalSyntheticApiModelOutline1.m();
-                    int i3 = this.backgroundColor;
-                    blendMode = BlendMode.SRC_OVER;
-                    createColorFilterEffect = RenderEffect.createColorFilterEffect(BlurredBackgroundDrawableRenderNode$$ExternalSyntheticApiModelOutline0.m(i3, blendMode));
-                    renderNode.setRenderEffect(createColorFilterEffect);
-                } else {
-                    this.renderNodeFill.setRenderEffect(null);
-                }
-            }
-        }
         this.paintShadow.setShadowLayer(AndroidUtilities.dpf2(1.0f), 0.0f, AndroidUtilities.dpf2(0.33333334f), this.shadowColor);
-        this.paintFill.setColor(Theme.multAlpha(this.backgroundColor, this.boundProps.fillAlpha));
+        this.paintFill.setColor(this.backgroundColor);
         this.paintStrokeTop.setColor(this.strokeColorTop);
         this.paintStrokeBottom.setColor(this.strokeColorBottom);
         this.renderNodeInvalidated = true;
@@ -201,36 +186,10 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
         updateDisplayList();
         int i = this.shadowColor;
         alpha = this.renderNode.getAlpha();
-        int multAlpha = Theme.multAlpha(i, alpha);
-        if (Color.alpha(multAlpha) != 0) {
-            this.paintShadow.setShadowLayer(AndroidUtilities.dpf2(1.0f), 0.0f, AndroidUtilities.dpf2(0.33333334f), multAlpha);
-            if (this.inAppKeyboardOptimization) {
-                BlurredBackgroundDrawable.Props props = this.boundProps;
-                Rect rect = props.boundsWithPadding;
-                float f = rect.left;
-                float f2 = rect.top;
-                float f3 = rect.right;
-                float clamp = MathUtils.clamp((props.radii[0] * 2.0f) + f2, f2, rect.bottom);
-                float f4 = this.boundProps.radii[0];
-                canvas.drawRoundRect(f, f2, f3, clamp, f4, f4, this.paintShadow);
-            } else {
-                BlurredBackgroundDrawable.Props props2 = this.boundProps;
-                if (props2.radiiAreSame) {
-                    Rect rect2 = props2.boundsWithPadding;
-                    float f5 = rect2.left;
-                    float f6 = rect2.top;
-                    float f7 = rect2.right;
-                    float f8 = rect2.bottom;
-                    float f9 = props2.radii[0];
-                    canvas.drawRoundRect(f5, f6, f7, f8, f9, f9, this.paintShadow);
-                } else {
-                    canvas.drawPath(props2.path, this.paintShadow);
-                }
-            }
-        }
+        Color.alpha(Theme.multAlpha(i, alpha));
         canvas.save();
-        Rect rect3 = this.boundProps.boundsWithPadding;
-        canvas.translate(rect3.left, rect3.top);
+        Rect rect = this.boundProps.boundsWithPadding;
+        canvas.translate(rect.left, rect.top);
         canvas.drawRenderNode(this.renderNode);
         canvas.restore();
     }

@@ -17,8 +17,6 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawableRenderNode$$ExternalSyntheticApiModelOutline0;
-import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawableRenderNode$$ExternalSyntheticApiModelOutline1;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 
 /* loaded from: classes5.dex */
@@ -95,9 +93,9 @@ public class ChatActivityBlurredRoundButton extends FrameLayout implements Facto
             return;
         }
         if (Build.VERSION.SDK_INT >= 29) {
-            BlurredBackgroundDrawableRenderNode$$ExternalSyntheticApiModelOutline1.m();
+            ChatActivityBlurredRoundButton$$ExternalSyntheticApiModelOutline1.m();
             blendMode = BlendMode.SRC_IN;
-            imageView.setColorFilter(BlurredBackgroundDrawableRenderNode$$ExternalSyntheticApiModelOutline0.m(i, blendMode));
+            imageView.setColorFilter(ChatActivityBlurredRoundButton$$ExternalSyntheticApiModelOutline0.m(i, blendMode));
             return;
         }
         imageView.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));

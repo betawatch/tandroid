@@ -1347,6 +1347,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             if (VoIPService.getSharedInstance() != null) {
                 VoIPService.getSharedInstance().unregisterStateListener(this);
             }
+            ReplaceAnimator replaceAnimator = this.callMessagesAnimator;
+            if (replaceAnimator != null) {
+                replaceAnimator.replace(null, true);
+            }
         }
         this.currentStyle = i;
         this.frameLayout.setWillNotDraw(i != 4);

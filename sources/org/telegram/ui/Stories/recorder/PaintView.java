@@ -3503,7 +3503,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                                     mediaArea = mediaEntity.mediaArea;
                                     if (mediaArea != null && (mediaAreaCoordinates = mediaArea.coordinates) != null && d > 0.0d) {
                                         mediaAreaCoordinates.flags |= 1;
-                                        mediaAreaCoordinates.radius = ((scaleX * d) / paintView.entitiesView.getMeasuredWidth()) * 100.0d;
+                                        mediaAreaCoordinates.radius = ((scaleX * d) / view.getWidth()) * 100.0d;
                                     }
                                     z5 = z8;
                                     z6 = z9;
@@ -3752,7 +3752,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                                                         mediaArea = mediaEntity.mediaArea;
                                                         if (mediaArea != null) {
                                                             mediaAreaCoordinates.flags |= 1;
-                                                            mediaAreaCoordinates.radius = ((scaleX * d) / paintView.entitiesView.getMeasuredWidth()) * 100.0d;
+                                                            mediaAreaCoordinates.radius = ((scaleX * d) / view.getWidth()) * 100.0d;
                                                         }
                                                         z5 = z8;
                                                         z6 = z9;

@@ -102,7 +102,9 @@ public class WallpaperBitmapProvider {
         if (bitmap == null || bitmap.isRecycled()) {
             return null;
         }
-        return Utilities.stackBlurBitmapWithScaleFactor(bitmap, Math.max(bitmap.getWidth() / 90.0f, bitmap.getHeight() / 120.0f));
+        Bitmap stackBlurBitmapWithScaleFactor = Utilities.stackBlurBitmapWithScaleFactor(bitmap, Math.max(bitmap.getWidth() / 90.0f, bitmap.getHeight() / 120.0f));
+        stackBlurBitmapWithScaleFactor.setHasAlpha(false);
+        return stackBlurBitmapWithScaleFactor;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

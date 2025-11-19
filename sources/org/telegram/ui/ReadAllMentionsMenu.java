@@ -2,6 +2,7 @@ package org.telegram.ui;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.PointF;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -14,6 +15,7 @@ import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.chat.ViewPositionWatcher;
 
 /* loaded from: classes4.dex */
 public abstract class ReadAllMentionsMenu {
@@ -41,14 +43,16 @@ public abstract class ReadAllMentionsMenu {
         actionBarPopupWindow.setInputMethodMode(2);
         actionBarPopupWindow.setSoftInputMode(0);
         actionBarPopupWindow.getContentView().setFocusableInTouchMode(true);
-        float x = ((view.getX() + view.getWidth()) - actionBarPopupWindowLayout.getMeasuredWidth()) + AndroidUtilities.dp(8.0f);
-        float y = view.getY() - actionBarPopupWindowLayout.getMeasuredHeight();
+        PointF pointF = new PointF();
+        ViewPositionWatcher.computeCoordinatesInParent(view, frameLayout, pointF);
+        float width = ((pointF.x + view.getWidth()) - actionBarPopupWindowLayout.getMeasuredWidth()) + AndroidUtilities.dp(8.0f);
+        float measuredHeight = pointF.y - actionBarPopupWindowLayout.getMeasuredHeight();
         if (AndroidUtilities.isTablet()) {
             ViewGroup view2 = iNavigationLayout.getView();
-            x += view2.getX() + view2.getPaddingLeft();
-            y += view2.getY() + view2.getPaddingTop();
+            width += view2.getX() + view2.getPaddingLeft();
+            measuredHeight += view2.getY() + view2.getPaddingTop();
         }
-        actionBarPopupWindow.showAtLocation(frameLayout, 51, (int) x, (int) y);
+        actionBarPopupWindow.showAtLocation(frameLayout, 51, (int) width, (int) measuredHeight);
         return actionBarPopupWindow;
     }
 
