@@ -21,7 +21,6 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
     private LiquidGlassEffect liquidGlassEffect;
     private final Outline outline = new Outline();
     private final Rect outlineRect = new Rect();
-    private final Paint paintFill;
     private final Paint paintShadow;
     private final Paint paintStrokeBottom;
     private final Paint paintStrokeTop;
@@ -34,7 +33,6 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
     public BlurredBackgroundDrawableRenderNode(BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode) {
         Paint paint = new Paint(1);
         this.paintShadow = paint;
-        this.paintFill = new Paint(1);
         Paint paint2 = new Paint(1);
         this.paintStrokeTop = paint2;
         Paint paint3 = new Paint(1);
@@ -83,12 +81,6 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
     protected void onSourceOffsetChange(float f, float f2) {
         super.onSourceOffsetChange(f, f2);
         this.renderNodeInvalidated = true;
-    }
-
-    public boolean hasDisplayList() {
-        boolean hasDisplayList;
-        hasDisplayList = this.renderNode.hasDisplayList();
-        return hasDisplayList;
     }
 
     private void updateDisplayList() {
@@ -144,7 +136,7 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
         beginRecording2 = this.renderNode.beginRecording();
         beginRecording2.drawRenderNode(this.renderNodeFill);
         if (this.liquidGlassEffect == null && Color.alpha(this.backgroundColor) != 0) {
-            beginRecording2.drawPaint(this.paintFill);
+            beginRecording2.drawColor(this.backgroundColor);
         }
         if (z) {
             beginRecording2.drawRenderNode(this.renderNodeStroke);
@@ -156,7 +148,6 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
     public void updateColors() {
         super.updateColors();
         this.paintShadow.setShadowLayer(AndroidUtilities.dpf2(1.0f), 0.0f, AndroidUtilities.dpf2(0.33333334f), this.shadowColor);
-        this.paintFill.setColor(this.backgroundColor);
         this.paintStrokeTop.setColor(this.strokeColorTop);
         this.paintStrokeBottom.setColor(this.strokeColorBottom);
         this.renderNodeInvalidated = true;
@@ -186,7 +177,11 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
         updateDisplayList();
         int i = this.shadowColor;
         alpha = this.renderNode.getAlpha();
-        Color.alpha(Theme.multAlpha(i, alpha));
+        int multAlpha = Theme.multAlpha(i, alpha);
+        if (Color.alpha(multAlpha) != 0) {
+            this.paintShadow.setShadowLayer(AndroidUtilities.dpf2(1.0f), 0.0f, AndroidUtilities.dpf2(0.33333334f), multAlpha);
+            this.boundProps.drawShadows(canvas, this.paintShadow, this.inAppKeyboardOptimization);
+        }
         canvas.save();
         Rect rect = this.boundProps.boundsWithPadding;
         canvas.translate(rect.left, rect.top);

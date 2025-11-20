@@ -2,20 +2,15 @@ package org.telegram.ui.Components.blur3.source;
 
 import android.graphics.Canvas;
 import android.graphics.RecordingCanvas;
-import android.graphics.RectF;
 import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.Shader;
-import java.util.Iterator;
-import java.util.List;
-import me.vkryl.core.reference.ReferenceList;
 import org.telegram.messenger.BotFullscreenButtons$$ExternalSyntheticApiModelOutline9;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawableRenderNode;
 
 /* loaded from: classes5.dex */
 public class BlurredBackgroundSourceRenderNode implements BlurredBackgroundSource {
-    private final ReferenceList drawables = new ReferenceList();
     private final BlurredBackgroundSource fallbackSource;
     private boolean inRecording;
     private RecordingCanvas recordingCanvas;
@@ -97,33 +92,8 @@ public class BlurredBackgroundSourceRenderNode implements BlurredBackgroundSourc
         return this.fallbackSource;
     }
 
-    public int getVisiblePositions(List list, int i, int i2) {
-        RectF rectF;
-        Iterator it = this.drawables.iterator();
-        int i3 = 0;
-        while (it.hasNext()) {
-            BlurredBackgroundDrawableRenderNode blurredBackgroundDrawableRenderNode = (BlurredBackgroundDrawableRenderNode) it.next();
-            if (blurredBackgroundDrawableRenderNode.hasDisplayList() && blurredBackgroundDrawableRenderNode.getAlpha() > 0) {
-                if (i < list.size()) {
-                    rectF = (RectF) list.get(i);
-                } else {
-                    rectF = new RectF();
-                    list.add(rectF);
-                }
-                blurredBackgroundDrawableRenderNode.getPositionRelativeSource(rectF);
-                float f = -i2;
-                rectF.inset(f, f);
-                i++;
-                i3++;
-            }
-        }
-        return i3;
-    }
-
     @Override // org.telegram.ui.Components.blur3.source.BlurredBackgroundSource
     public BlurredBackgroundDrawable createDrawable() {
-        BlurredBackgroundDrawableRenderNode blurredBackgroundDrawableRenderNode = new BlurredBackgroundDrawableRenderNode(this);
-        this.drawables.add(blurredBackgroundDrawableRenderNode);
-        return blurredBackgroundDrawableRenderNode;
+        return new BlurredBackgroundDrawableRenderNode(this);
     }
 }
