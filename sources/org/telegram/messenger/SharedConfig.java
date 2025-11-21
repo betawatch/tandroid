@@ -78,6 +78,7 @@ public class SharedConfig {
     public static boolean drawDialogIcons = false;
     public static int emojiInteractionsHintCount = 0;
     public static int fastScrollHintCount = 0;
+    public static boolean fastWallpaperDisabled = false;
     public static int fontSize = 0;
     public static boolean fontSizeIsDefault = false;
     public static boolean forceDisableTabletMode = false;
@@ -519,14 +520,14 @@ public class SharedConfig {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x025a  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x02a8 A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0229, B:34:0x0235, B:37:0x025f, B:39:0x02a8, B:40:0x02aa, B:43:0x0479, B:46:0x0487, B:47:0x04cd, B:51:0x046e, B:80:0x01b0, B:81:0x0125, B:82:0x04cf), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x046d  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0484  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0486  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x046e A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0229, B:34:0x0235, B:37:0x025f, B:39:0x02a8, B:40:0x02aa, B:43:0x0479, B:46:0x0487, B:47:0x04cd, B:51:0x046e, B:80:0x01b0, B:81:0x0125, B:82:0x04cf), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x02b0 A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0229, B:34:0x0235, B:37:0x025f, B:39:0x02b0, B:40:0x02b2, B:43:0x0481, B:46:0x048f, B:47:0x04d5, B:51:0x0476, B:80:0x01b0, B:81:0x0125, B:82:0x04d7), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0475  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x048c  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x048e  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0476 A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0229, B:34:0x0235, B:37:0x025f, B:39:0x02b0, B:40:0x02b2, B:43:0x0481, B:46:0x048f, B:47:0x04d5, B:51:0x0476, B:80:0x01b0, B:81:0x0125, B:82:0x04d7), top: B:3:0x0003 }] */
     /* JADX WARN: Removed duplicated region for block: B:52:0x025d  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0189 A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0229, B:34:0x0235, B:37:0x025f, B:39:0x02a8, B:40:0x02aa, B:43:0x0479, B:46:0x0487, B:47:0x04cd, B:51:0x046e, B:80:0x01b0, B:81:0x0125, B:82:0x04cf), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x018f A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0229, B:34:0x0235, B:37:0x025f, B:39:0x02a8, B:40:0x02aa, B:43:0x0479, B:46:0x0487, B:47:0x04cd, B:51:0x046e, B:80:0x01b0, B:81:0x0125, B:82:0x04cf), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0189 A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0229, B:34:0x0235, B:37:0x025f, B:39:0x02b0, B:40:0x02b2, B:43:0x0481, B:46:0x048f, B:47:0x04d5, B:51:0x0476, B:80:0x01b0, B:81:0x0125, B:82:0x04d7), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x018f A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:55:0x016a, B:57:0x017c, B:59:0x0189, B:61:0x018f, B:62:0x0191, B:64:0x0195, B:66:0x019b, B:68:0x01a1, B:70:0x01a5, B:74:0x0183, B:29:0x01b3, B:31:0x0229, B:34:0x0235, B:37:0x025f, B:39:0x02b0, B:40:0x02b2, B:43:0x0481, B:46:0x048f, B:47:0x04d5, B:51:0x0476, B:80:0x01b0, B:81:0x0125, B:82:0x04d7), top: B:3:0x0003 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -640,6 +641,7 @@ public class SharedConfig {
                             useSystemEmoji = sharedPreferences.getBoolean("useSystemEmoji", false);
                             useSystemBoldFont = sharedPreferences.getBoolean("useSystemBoldFont", false);
                             forceForumTabs = sharedPreferences.getBoolean("forceForumTabs", false);
+                            fastWallpaperDisabled = sharedPreferences.getBoolean("fastWallpaperDisabled", false);
                             if (useSystemBoldFont) {
                             }
                             streamMedia = sharedPreferences.getBoolean("streamMedia", true);
@@ -754,6 +756,7 @@ public class SharedConfig {
                 useSystemEmoji = sharedPreferences.getBoolean("useSystemEmoji", false);
                 useSystemBoldFont = sharedPreferences.getBoolean("useSystemBoldFont", false);
                 forceForumTabs = sharedPreferences.getBoolean("forceForumTabs", false);
+                fastWallpaperDisabled = sharedPreferences.getBoolean("fastWallpaperDisabled", false);
                 if (useSystemBoldFont) {
                     AndroidUtilities.mediumTypeface = null;
                 }
@@ -1271,6 +1274,13 @@ public class SharedConfig {
         forceForumTabs = !forceForumTabs;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("forceForumTabs", forceForumTabs);
+        edit.apply();
+    }
+
+    public static void toggleFastWallpaperDisabled() {
+        fastWallpaperDisabled = !fastWallpaperDisabled;
+        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+        edit.putBoolean("fastWallpaperDisabled", fastWallpaperDisabled);
         edit.apply();
     }
 
