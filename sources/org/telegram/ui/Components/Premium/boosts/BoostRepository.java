@@ -83,7 +83,7 @@ public abstract class BoostRepository {
 
     public static void loadParticipantsCount(final Utilities.Callback callback) {
         final MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda8
+        messagesStorage.getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 BoostRepository.lambda$loadParticipantsCount$1(MessagesStorage.this, callback);
@@ -773,7 +773,7 @@ public abstract class BoostRepository {
             tL_payments_getPremiumGiftCodeOptions.flags = 1;
             tL_payments_getPremiumGiftCodeOptions.boost_peer = messagesController.getInputPeer(-chat.id);
         }
-        return connectionsManager.sendRequest(tL_payments_getPremiumGiftCodeOptions, new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda4
+        return connectionsManager.sendRequest(tL_payments_getPremiumGiftCodeOptions, new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda3
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 BoostRepository.lambda$loadGiftOptions$31(TLRPC.Chat.this, i, callback, tLObject, tL_error);
@@ -1054,7 +1054,7 @@ public abstract class BoostRepository {
         final MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
         TLRPC.TL_payments_checkGiftCode tL_payments_checkGiftCode = new TLRPC.TL_payments_checkGiftCode();
         tL_payments_checkGiftCode.slug = str;
-        connectionsManager.sendRequest(tL_payments_checkGiftCode, new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda5
+        connectionsManager.sendRequest(tL_payments_checkGiftCode, new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda4
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 BoostRepository.lambda$checkGiftCode$40(MessagesController.this, callback, callback2, tLObject, tL_error);
@@ -1064,7 +1064,7 @@ public abstract class BoostRepository {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$checkGiftCode$40(final MessagesController messagesController, final Utilities.Callback callback, final Utilities.Callback callback2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda9
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 BoostRepository.lambda$checkGiftCode$39(TLObject.this, messagesController, callback, callback2, tL_error);
@@ -1120,7 +1120,7 @@ public abstract class BoostRepository {
         TLRPC.TL_payments_getGiveawayInfo tL_payments_getGiveawayInfo = new TLRPC.TL_payments_getGiveawayInfo();
         tL_payments_getGiveawayInfo.msg_id = messageObject.getId();
         tL_payments_getGiveawayInfo.peer = messagesController.getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
-        connectionsManager.sendRequest(tL_payments_getGiveawayInfo, new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda1
+        connectionsManager.sendRequest(tL_payments_getGiveawayInfo, new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 BoostRepository.lambda$getGiveawayInfo$44(Utilities.Callback.this, callback, tLObject, tL_error);
@@ -1130,7 +1130,7 @@ public abstract class BoostRepository {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$getGiveawayInfo$44(final Utilities.Callback callback, final Utilities.Callback callback2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda6
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 BoostRepository.lambda$getGiveawayInfo$43(TLRPC.TL_error.this, callback, tLObject, callback2);
@@ -1150,7 +1150,7 @@ public abstract class BoostRepository {
     public static void getMyBoosts(final Utilities.Callback callback, final Utilities.Callback callback2) {
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
         final MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-        connectionsManager.sendRequest(new TL_stories.TL_premium_getMyBoosts(), new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda2
+        connectionsManager.sendRequest(new TL_stories.TL_premium_getMyBoosts(), new RequestDelegate() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 BoostRepository.lambda$getMyBoosts$46(Utilities.Callback.this, messagesController, callback, tLObject, tL_error);
@@ -1160,7 +1160,7 @@ public abstract class BoostRepository {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$getMyBoosts$46(final Utilities.Callback callback, final MessagesController messagesController, final Utilities.Callback callback2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda7
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 BoostRepository.lambda$getMyBoosts$45(TLRPC.TL_error.this, callback, tLObject, messagesController, callback2);
@@ -1197,7 +1197,7 @@ public abstract class BoostRepository {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$applyBoost$48(final Utilities.Callback callback, final MessagesController messagesController, final Utilities.Callback callback2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda3
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostRepository$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 BoostRepository.lambda$applyBoost$47(TLRPC.TL_error.this, callback, tLObject, messagesController, callback2);

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.utils.FrameTickScheduler;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Stars.StarsReactionsSheet;
@@ -11,11 +13,18 @@ import org.telegram.ui.Stars.StarsReactionsSheet;
 /* loaded from: classes5.dex */
 public class ProfilePremiumCell extends TextCell {
     private final int colorKey;
+    private final Runnable invalidateRunnable;
     private final StarsReactionsSheet.Particles particles;
 
     public ProfilePremiumCell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
         super(context, resourcesProvider);
-        this.particles = new StarsReactionsSheet.Particles(1, 30);
+        this.particles = new StarsReactionsSheet.Particles(1, 15);
+        this.invalidateRunnable = new Runnable() { // from class: org.telegram.ui.Components.Premium.ProfilePremiumCell$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                ProfilePremiumCell.this.invalidate();
+            }
+        };
         this.colorKey = i == 1 ? Theme.key_starsGradient1 : Theme.key_premiumGradient2;
     }
 
@@ -31,9 +40,19 @@ public class ProfilePremiumCell extends TextCell {
 
     @Override // org.telegram.ui.Cells.TextCell, android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
-        this.particles.process();
-        this.particles.draw(canvas, Theme.getColor(this.colorKey));
-        invalidate();
+        if (LiteMode.isEnabled(131072)) {
+            this.particles.process();
+            this.particles.draw(canvas, Theme.getColor(this.colorKey));
+            FrameTickScheduler.subscribe(this.invalidateRunnable, 15);
+        } else {
+            FrameTickScheduler.unsubscribe(this.invalidateRunnable);
+        }
         super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Cells.TextCell, android.view.ViewGroup, android.view.View
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        FrameTickScheduler.unsubscribe(this.invalidateRunnable);
     }
 }

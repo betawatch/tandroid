@@ -432,6 +432,7 @@ public class Bulletin {
                     Bulletin.this.currentDelegate.onShow(Bulletin.this);
                 }
                 if (!Bulletin.isTransitionsEnabled() || Bulletin.this.skipShowAnimation) {
+                    Bulletin.this.layout.delegate = Bulletin.this.currentDelegate;
                     if (Bulletin.this.currentDelegate != null && !this.val$top) {
                         Bulletin.this.currentDelegate.onBottomOffsetChange(Bulletin.this.layout.getHeight() - Bulletin.this.currentBottomOffset);
                     }

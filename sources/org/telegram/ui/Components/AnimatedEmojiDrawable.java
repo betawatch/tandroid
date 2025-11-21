@@ -40,6 +40,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.utils.FrameTickScheduler;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.RequestDelegate;
@@ -1259,6 +1260,7 @@ public class AnimatedEmojiDrawable extends Drawable {
         private final Drawable[] drawables;
         private boolean hasParticles;
         private boolean invalidateParent;
+        private final Runnable invalidateRunnable;
         private Integer lastColor;
         private int offsetX;
         private int offsetY;
@@ -1301,6 +1303,12 @@ public class AnimatedEmojiDrawable extends Drawable {
             this.drawables = new Drawable[2];
             this.alpha = NotificationCenter.cameraInitied;
             this.bounds = new android.graphics.Rect();
+            this.invalidateRunnable = new Runnable() { // from class: org.telegram.ui.Components.AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable.this.invalidate();
+                }
+            };
             this.parentView = view;
             animatedFloat.setParent(view);
             this.parentView = view;
@@ -1390,7 +1398,9 @@ public class AnimatedEmojiDrawable extends Drawable {
                 StarsReactionsSheet.Particles particles = this.particles;
                 Integer num = this.lastColor;
                 particles.draw(canvas, Theme.multAlpha(num == null ? -1 : num.intValue(), f2));
-                invalidate();
+                FrameTickScheduler.subscribe(this.invalidateRunnable, 15);
+            } else {
+                FrameTickScheduler.unsubscribe(this.invalidateRunnable);
             }
             Drawable drawable = this.drawables[1];
             if (drawable != null && f < 1.0f) {
