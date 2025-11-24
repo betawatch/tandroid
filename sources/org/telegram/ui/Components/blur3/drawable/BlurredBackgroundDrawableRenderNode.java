@@ -6,6 +6,7 @@ import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.RecordingCanvas;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
@@ -81,6 +82,12 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
     protected void onSourceOffsetChange(float f, float f2) {
         super.onSourceOffsetChange(f, f2);
         this.renderNodeInvalidated = true;
+    }
+
+    public boolean hasDisplayList() {
+        boolean hasDisplayList;
+        hasDisplayList = this.renderNode.hasDisplayList();
+        return hasDisplayList;
     }
 
     private void updateDisplayList() {
@@ -194,5 +201,11 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
         super.setAlpha(i);
         this.renderNode.setAlpha(i / 255.0f);
         this.renderNodeInvalidated = true;
+    }
+
+    @Override // org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable
+    protected void onSourceRelativePositionChanged(RectF rectF) {
+        super.onSourceRelativePositionChanged(rectF);
+        this.source.dispatchOnDrawablesRelativePositionChange();
     }
 }

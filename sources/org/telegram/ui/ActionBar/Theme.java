@@ -138,7 +138,9 @@ import org.telegram.ui.ThemePreviewActivity;
 /* loaded from: classes4.dex */
 public abstract class Theme {
     public static Paint DEBUG_BLUE;
+    public static Paint DEBUG_GREEN_STROKE;
     public static Paint DEBUG_RED;
+    public static Paint DEBUG_RED_STROKE;
     private static Method StateListDrawable_getStateDrawableMethod;
     private static SensorEventListener ambientSensorListener;
     private static HashMap animatedOutVisualizerDrawables;
@@ -4420,6 +4422,18 @@ public abstract class Theme {
             Paint paint2 = new Paint();
             DEBUG_BLUE = paint2;
             paint2.setColor(-16776961);
+            Paint paint3 = new Paint();
+            DEBUG_RED_STROKE = paint3;
+            paint3.setColor(-65536);
+            DEBUG_RED_STROKE.setStrokeWidth(2.0f);
+            Paint paint4 = DEBUG_RED_STROKE;
+            Paint.Style style = Paint.Style.STROKE;
+            paint4.setStyle(style);
+            Paint paint5 = new Paint();
+            DEBUG_GREEN_STROKE = paint5;
+            paint5.setColor(-16711936);
+            DEBUG_GREEN_STROKE.setStrokeWidth(2.0f);
+            DEBUG_GREEN_STROKE.setStyle(style);
         } catch (Exception th) {
             throw new RuntimeException(th);
         }

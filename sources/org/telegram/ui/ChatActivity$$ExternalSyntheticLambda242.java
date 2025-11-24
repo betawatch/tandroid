@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.function.Supplier;
 
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ChatActivity$$ExternalSyntheticLambda240 implements Supplier {
+public final /* synthetic */ class ChatActivity$$ExternalSyntheticLambda242 implements Supplier {
     @Override // java.util.function.Supplier
     public final Object get() {
         return new ArrayList();

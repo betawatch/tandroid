@@ -208,7 +208,7 @@ import org.telegram.ui.Components.TermsOfServiceView;
 import org.telegram.ui.Components.TextStyleSpan;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.inset.WindowRootInsetsListener;
+import org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider;
 import org.telegram.ui.Components.spoilers.SpoilerEffect2;
 import org.telegram.ui.Components.voip.RTMPStreamPipOverlay;
 import org.telegram.ui.Components.voip.VoIPHelper;
@@ -313,6 +313,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private int requsetPermissionsPointer;
     private ActionBarLayout rightActionBarLayout;
     private View rippleAbove;
+    private WindowAnimatedInsetsProvider rootAnimatedInsetsListener;
     private SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialog;
     private String sendingText;
     private FrameLayout shadowTablet;
@@ -336,7 +337,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private String voicePath;
     private boolean wasMutedByAdminRaisedHand;
     private Utilities.Callback webviewShareAPIDoneListener;
-    public final WindowRootInsetsListener windowRootInsetsListener;
     public static final Pattern PREFIX_T_ME_PATTERN = Pattern.compile("^(?:http(?:s|)://|)([A-z0-9-]+?)\\.t\\.me");
     private static final ArrayList mainFragmentsStack = new ArrayList();
     private static final ArrayList layerFragmentsStack = new ArrayList();
@@ -377,7 +377,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
         };
         this.batteryReceiver = new LiteMode.BatteryReceiver();
-        this.windowRootInsetsListener = new WindowRootInsetsListener();
         this.firstAppUpdateCheck = true;
     }
 
@@ -389,6 +388,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
         }
         return null;
+    }
+
+    public WindowAnimatedInsetsProvider getRootAnimatedInsetsListener() {
+        return this.rootAnimatedInsetsListener;
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
@@ -467,6 +470,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         frameLayout.setClipToPadding(false);
         this.frameLayout.setClipChildren(false);
         setContentView(this.frameLayout);
+        this.rootAnimatedInsetsListener = new WindowAnimatedInsetsProvider(this.frameLayout);
         this.pipActivityController.addPipListener(new IPipActivityListener() { // from class: org.telegram.ui.LaunchActivity.3
             @Override // org.telegram.messenger.pip.activity.IPipActivityListener
             public /* synthetic */ void onCompleteExitFromPip(boolean z2) {
@@ -940,7 +944,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         });
         getWindow().getDecorView().setSystemUiVisibility(1792);
         AndroidUtilities.enableEdgeToEdge(this);
-        this.windowRootInsetsListener.attach(getWindow());
         BackupAgent.requestBackup(this);
         RestrictedLanguagesSelectActivity.checkRestrictedLanguages(false);
     }

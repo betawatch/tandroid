@@ -193,6 +193,10 @@ public abstract class LayoutHelper {
         return new LinearLayout.LayoutParams(getSize(f), getSize(f2), getAbsoluteGravity(i));
     }
 
+    public static int measureSpecExactly(int i) {
+        return View.MeasureSpec.makeMeasureSpec(i, TLObject.FLAG_30);
+    }
+
     public static int measureSpecExactlyDp(int i) {
         return View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(i), TLObject.FLAG_30);
     }

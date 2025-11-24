@@ -1,10 +1,10 @@
 package org.telegram.ui;
 
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ChatActivity$$ExternalSyntheticLambda100 implements Runnable {
+public final /* synthetic */ class ChatActivity$$ExternalSyntheticLambda102 implements Runnable {
     public final /* synthetic */ ChatActivity f$0;
 
-    public /* synthetic */ ChatActivity$$ExternalSyntheticLambda100(ChatActivity chatActivity) {
+    public /* synthetic */ ChatActivity$$ExternalSyntheticLambda102(ChatActivity chatActivity) {
         this.f$0 = chatActivity;
     }
 
