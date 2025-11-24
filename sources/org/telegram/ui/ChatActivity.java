@@ -555,7 +555,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private long chatLeaveTime;
     private ChatListItemAnimator chatListItemAnimator;
     private ThanosEffect chatListThanosEffect;
-    private RecyclerListView chatListView;
+    private ChatListRecyclerView chatListView;
     public float chatListViewPaddingTop;
     public int chatListViewPaddingVisibleOffset;
     private ChatListViewPaddingsAnimator chatListViewPaddingsAnimator;
@@ -1379,9 +1379,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 this.chatAdapter.frozenMessages.add(messageObject);
             }
         }
-        RecyclerListView recyclerListView = this.chatListView;
-        if (recyclerListView != null) {
-            recyclerListView.setEmptyView(null);
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+        if (chatListRecyclerView != null) {
+            chatListRecyclerView.setEmptyView(null);
         }
         if (this.chatAdapter.frozenMessages.isEmpty()) {
             showProgressView(true);
@@ -4923,10 +4923,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         this.chatListView.setDisableHighlightState(true);
                         this.chatListView.setTag(1);
                         this.chatListView.setVerticalScrollBarEnabled(!SharedConfig.chatBlurEnabled());
-                        RecyclerListView recyclerListView = this.chatListView;
+                        ChatListRecyclerView chatListRecyclerView = this.chatListView;
                         ChatActivityAdapter chatActivityAdapter = new ChatActivityAdapter(context);
                         this.chatAdapter = chatActivityAdapter;
-                        recyclerListView.setAdapter(chatActivityAdapter);
+                        chatListRecyclerView.setAdapter(chatActivityAdapter);
                         this.chatListView.setClipToPadding(false);
                         if (!ChatObject.isMonoForum(this.currentChat) || ChatObject.areTabsEnabled(this.currentChat)) {
                             this.chatListView.setClipChildren(false);
@@ -5542,10 +5542,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
                         linearLayoutManager.setOrientation(1);
                         this.messagesSearchListView.setLayoutManager(linearLayoutManager);
-                        RecyclerListView recyclerListView2 = this.messagesSearchListView;
+                        RecyclerListView recyclerListView = this.messagesSearchListView;
                         MessagesSearchAdapter messagesSearchAdapter = new MessagesSearchAdapter(context, this, this.themeDelegate, this.searchType, this.dialog_id == getUserConfig().getClientUserId());
                         this.messagesSearchAdapter = messagesSearchAdapter;
-                        recyclerListView2.setAdapter(messagesSearchAdapter);
+                        recyclerListView.setAdapter(messagesSearchAdapter);
                         checkHashtagStories(true);
                         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
                         defaultItemAnimator.setSupportsChangeAnimations(false);
@@ -6020,7 +6020,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 }
                                 if (getVisibility() != 8) {
                                     ChatActivity.this.hideHints(true);
-                                    RecyclerListView unused2 = ChatActivity.this.chatListView;
+                                    ChatListRecyclerView unused2 = ChatActivity.this.chatListView;
                                     if (ChatActivity.this.progressView != null) {
                                         ChatActivity.this.progressView.setTranslationY(f);
                                     }
@@ -6037,7 +6037,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             public void setVisibility(int i22) {
                                 super.setVisibility(i22);
                                 if (i22 == 8) {
-                                    RecyclerListView unused2 = ChatActivity.this.chatListView;
+                                    ChatListRecyclerView unused2 = ChatActivity.this.chatListView;
                                     if (ChatActivity.this.progressView != null) {
                                         ChatActivity.this.progressView.setTranslationY(0.0f);
                                     }
@@ -6710,10 +6710,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 this.chatListView.setDisableHighlightState(true);
                 this.chatListView.setTag(1);
                 this.chatListView.setVerticalScrollBarEnabled(!SharedConfig.chatBlurEnabled());
-                RecyclerListView recyclerListView3 = this.chatListView;
+                ChatListRecyclerView chatListRecyclerView2 = this.chatListView;
                 ChatActivityAdapter chatActivityAdapter2 = new ChatActivityAdapter(context);
                 this.chatAdapter = chatActivityAdapter2;
-                recyclerListView3.setAdapter(chatActivityAdapter2);
+                chatListRecyclerView2.setAdapter(chatActivityAdapter2);
                 this.chatListView.setClipToPadding(false);
                 if (!ChatObject.isMonoForum(this.currentChat)) {
                 }
@@ -7290,10 +7290,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 final LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(context);
                 linearLayoutManager2.setOrientation(1);
                 this.messagesSearchListView.setLayoutManager(linearLayoutManager2);
-                RecyclerListView recyclerListView22 = this.messagesSearchListView;
+                RecyclerListView recyclerListView2 = this.messagesSearchListView;
                 MessagesSearchAdapter messagesSearchAdapter2 = new MessagesSearchAdapter(context, this, this.themeDelegate, this.searchType, this.dialog_id == getUserConfig().getClientUserId());
                 this.messagesSearchAdapter = messagesSearchAdapter2;
-                recyclerListView22.setAdapter(messagesSearchAdapter2);
+                recyclerListView2.setAdapter(messagesSearchAdapter2);
                 checkHashtagStories(true);
                 DefaultItemAnimator defaultItemAnimator2 = new DefaultItemAnimator();
                 defaultItemAnimator2.setSupportsChangeAnimations(false);
@@ -7563,7 +7563,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         }
                         if (getVisibility() != 8) {
                             ChatActivity.this.hideHints(true);
-                            RecyclerListView unused2 = ChatActivity.this.chatListView;
+                            ChatListRecyclerView unused2 = ChatActivity.this.chatListView;
                             if (ChatActivity.this.progressView != null) {
                                 ChatActivity.this.progressView.setTranslationY(f);
                             }
@@ -7580,7 +7580,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     public void setVisibility(int i222) {
                         super.setVisibility(i222);
                         if (i222 == 8) {
-                            RecyclerListView unused2 = ChatActivity.this.chatListView;
+                            ChatListRecyclerView unused2 = ChatActivity.this.chatListView;
                             if (ChatActivity.this.progressView != null) {
                                 ChatActivity.this.progressView.setTranslationY(0.0f);
                             }
@@ -8189,10 +8189,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.chatListView.setDisableHighlightState(true);
         this.chatListView.setTag(1);
         this.chatListView.setVerticalScrollBarEnabled(!SharedConfig.chatBlurEnabled());
-        RecyclerListView recyclerListView32 = this.chatListView;
+        ChatListRecyclerView chatListRecyclerView22 = this.chatListView;
         ChatActivityAdapter chatActivityAdapter22 = new ChatActivityAdapter(context);
         this.chatAdapter = chatActivityAdapter22;
-        recyclerListView32.setAdapter(chatActivityAdapter22);
+        chatListRecyclerView22.setAdapter(chatActivityAdapter22);
         this.chatListView.setClipToPadding(false);
         if (!ChatObject.isMonoForum(this.currentChat)) {
         }
@@ -8769,10 +8769,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         final LinearLayoutManager linearLayoutManager22 = new LinearLayoutManager(context);
         linearLayoutManager22.setOrientation(1);
         this.messagesSearchListView.setLayoutManager(linearLayoutManager22);
-        RecyclerListView recyclerListView222 = this.messagesSearchListView;
+        RecyclerListView recyclerListView22 = this.messagesSearchListView;
         MessagesSearchAdapter messagesSearchAdapter22 = new MessagesSearchAdapter(context, this, this.themeDelegate, this.searchType, this.dialog_id == getUserConfig().getClientUserId());
         this.messagesSearchAdapter = messagesSearchAdapter22;
-        recyclerListView222.setAdapter(messagesSearchAdapter22);
+        recyclerListView22.setAdapter(messagesSearchAdapter22);
         checkHashtagStories(true);
         DefaultItemAnimator defaultItemAnimator22 = new DefaultItemAnimator();
         defaultItemAnimator22.setSupportsChangeAnimations(false);
@@ -8904,7 +8904,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
                 if (getVisibility() != 8) {
                     ChatActivity.this.hideHints(true);
-                    RecyclerListView unused2 = ChatActivity.this.chatListView;
+                    ChatListRecyclerView unused2 = ChatActivity.this.chatListView;
                     if (ChatActivity.this.progressView != null) {
                         ChatActivity.this.progressView.setTranslationY(f);
                     }
@@ -8921,7 +8921,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             public void setVisibility(int i2222) {
                 super.setVisibility(i2222);
                 if (i2222 == 8) {
-                    RecyclerListView unused2 = ChatActivity.this.chatListView;
+                    ChatListRecyclerView unused2 = ChatActivity.this.chatListView;
                     if (ChatActivity.this.progressView != null) {
                         ChatActivity.this.progressView.setTranslationY(0.0f);
                     }
@@ -10216,7 +10216,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         toggleMute(true);
     }
 
-    class 17 extends RecyclerListViewInternal {
+    class 17 extends ChatListRecyclerView {
         private final ArrayList drawCaptionAfter;
         private final ArrayList drawNamesAfter;
         private final ArrayList drawReactionsAfter;
@@ -11046,7 +11046,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        private void drawChatForegroundElements(Canvas canvas) {
+        @Override // org.telegram.ui.ChatActivity.ChatListRecyclerView
+        protected void drawChatForegroundElements(Canvas canvas) {
             int size = this.drawTimeAfter.size();
             boolean z = 1;
             boolean z2 = false;
@@ -11153,7 +11154,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         /* JADX WARN: Type inference failed for: r13v21, types: [boolean, int] */
         /* JADX WARN: Type inference failed for: r13v22 */
         /* JADX WARN: Type inference failed for: r13v23 */
-        private void drawChatBackgroundElements(Canvas canvas) {
+        @Override // org.telegram.ui.ChatActivity.ChatListRecyclerView
+        protected void drawChatBackgroundElements(Canvas canvas) {
             int i;
             int i2;
             int i3;
@@ -12255,6 +12257,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 ChatActivity.this.chatListView.setOverScrollMode(0);
                 ChatActivity.this.textSelectionHelper.stopScrolling();
                 ChatActivity.this.updateVisibleRows();
+                ChatActivity.this.invalidateMergedVisibleBlurredPositionsAndSources(1);
                 ChatActivity.this.scrollByTouch = false;
                 return;
             }
@@ -12388,8 +12391,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             ChatActivity.this.textSelectionHelper.onParentScrolled();
             ChatActivity.this.emojiAnimationsOverlay.onScrolled(i2);
             ReactionsEffectOverlay.onScrolled(i2);
-            int i3 = Build.VERSION.SDK_INT;
-            if (i3 >= 31 && ChatActivity.this.scrollableViewNoiseSuppressor != null) {
+            if (Build.VERSION.SDK_INT >= 31 && ChatActivity.this.scrollableViewNoiseSuppressor != null) {
                 ChatActivity.this.scrollableViewNoiseSuppressor.onScrolled(i, i2);
             }
             ChatActivity.this.checkTranslation(false);
@@ -12444,9 +12446,6 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
             if (ChatActivity.this.starReactionsOverlay != null) {
                 ChatActivity.this.starReactionsOverlay.invalidate();
-            }
-            if (i3 >= 31) {
-                DownscaleScrollableNoiseSuppressor unused = ChatActivity.this.scrollableViewNoiseSuppressor;
             }
         }
     }
@@ -17216,13 +17215,14 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 chatActionCell2.setTranslationY((((this.chatListView.getTranslationY() - f) + this.chatListViewPaddingTop) + this.floatingDateViewOffset) - AndroidUtilities.dp(4.0f));
             }
             updateFloatingTopicView();
-            RecyclerListView recyclerListView = this.chatListView;
-            if (recyclerListView != null && this.chatLayoutManager != null && this.chatAdapter != null) {
-                int paddingTop = recyclerListView.getPaddingTop();
+            ChatListRecyclerView chatListRecyclerView = this.chatListView;
+            if (chatListRecyclerView != null && this.chatLayoutManager != null && this.chatAdapter != null) {
+                int paddingTop = chatListRecyclerView.getPaddingTop();
                 int paddingBottom = this.chatListView.getPaddingBottom();
                 checkUi_chatListViewPaddings();
                 if (this.chatListView.getPaddingTop() != paddingTop || this.chatListView.getPaddingBottom() != paddingBottom) {
                     invalidateMessagesVisiblePart();
+                    invalidateMergedVisibleBlurredPositionsAndSourcesPositions();
                 }
                 this.chatListView.setTopGlowOffset((int) ((this.chatListViewPaddingTop - this.chatListViewPaddingVisibleOffset) - AndroidUtilities.dp(4.0f)));
                 if (f2 != this.chatListViewPaddingTop) {
@@ -17279,9 +17279,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             if (chatActivityFragmentView != null) {
                 chatActivityFragmentView.invalidate();
             }
-            RecyclerListView recyclerListView = this.chatListView;
-            if (recyclerListView != null) {
-                recyclerListView.invalidate();
+            ChatListRecyclerView chatListRecyclerView = this.chatListView;
+            if (chatListRecyclerView != null) {
+                chatListRecyclerView.invalidate();
             }
         }
         BlurredFrameLayout blurredFrameLayout = this.topChatPanelView;
@@ -19213,8 +19213,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         final int i2 = -1;
         final int i3 = 0;
         for (int i4 = 0; i4 < this.chatListView.getChildCount(); i4++) {
-            RecyclerListView recyclerListView = this.chatListView;
-            int childAdapterPosition = recyclerListView.getChildAdapterPosition(recyclerListView.getChildAt(i4));
+            ChatListRecyclerView chatListRecyclerView = this.chatListView;
+            int childAdapterPosition = chatListRecyclerView.getChildAdapterPosition(chatListRecyclerView.getChildAt(i4));
             if (childAdapterPosition != -1) {
                 if (i2 == -1 || childAdapterPosition < i2) {
                     i2 = childAdapterPosition;
@@ -21578,9 +21578,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (chatActivityAdapter != null) {
             showProgressView(chatActivityAdapter.botInfoRow < 0);
         }
-        RecyclerListView recyclerListView = this.chatListView;
-        if (recyclerListView != null) {
-            recyclerListView.setEmptyView(null);
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+        if (chatListRecyclerView != null) {
+            chatListRecyclerView.setEmptyView(null);
         }
         for (int i = 0; i < 2; i++) {
             this.messagesDict[i].clear();
@@ -21957,11 +21957,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         ChatListItemAnimator chatListItemAnimator2;
         ChatListItemAnimator chatListItemAnimator3;
         boolean z14;
-        RecyclerListView recyclerListView = this.chatListView;
-        if (recyclerListView == null || this.fragmentView == null) {
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+        if (chatListRecyclerView == null || this.fragmentView == null) {
             return;
         }
-        int childCount = recyclerListView.getChildCount();
+        int childCount = chatListRecyclerView.getChildCount();
         int measuredHeight2 = this.chatListView.getMeasuredHeight();
         boolean z15 = this.threadMessageVisible;
         int i19 = this.currentPinnedMessageId;
@@ -23841,7 +23841,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         public void drawList(Canvas canvas, RectF rectF) {
             long uptimeMillis = SystemClock.uptimeMillis();
             canvas.save();
+            canvas.clipRect(rectF);
             canvas.translate(0.0f, ChatActivity.this.chatListView.getY());
+            ChatActivity.this.chatListView.drawChatBackgroundElements(canvas);
             for (int i = 0; i < ChatActivity.this.chatListView.getChildCount(); i++) {
                 View childAt = ChatActivity.this.chatListView.getChildAt(i);
                 this.tmpViewRectF.set(childAt.getX(), childAt.getY() + ChatActivity.this.chatListView.getY(), childAt.getX() + childAt.getWidth(), childAt.getY() + ChatActivity.this.chatListView.getY() + childAt.getHeight());
@@ -23858,6 +23860,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         }
                         canvas.restore();
                         ChatActivity.this.chatListView.drawChild(canvas, childAt, uptimeMillis);
+                        if (chatMessageCell.hasOutboundsContent()) {
+                            canvas.save();
+                            canvas.translate(chatMessageCell.getX(), chatMessageCell.getY());
+                            chatMessageCell.drawOutboundsContent(canvas);
+                            canvas.restore();
+                        }
                     } else if (!(childAt instanceof ChatActionCell)) {
                         ChatActivity.this.chatListView.drawChild(canvas, childAt, uptimeMillis);
                     } else {
@@ -23869,6 +23877,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     }
                 }
             }
+            ChatActivity.this.chatListView.drawChatForegroundElements(canvas);
             canvas.restore();
         }
 
@@ -27479,9 +27488,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 this.startMessageAppearTransitionMs = 1L;
             }
             isSkeletonVisible();
-            RecyclerListView recyclerListView = this.chatListView;
-            if (recyclerListView != null) {
-                recyclerListView.invalidate();
+            ChatListRecyclerView chatListRecyclerView = this.chatListView;
+            if (chatListRecyclerView != null) {
+                chatListRecyclerView.invalidate();
             }
         }
     }
@@ -29606,9 +29615,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     }
                                     if (i18 != 0 && ((this.mergeDialogId != 0 && c3 == 0) || (this.currentEncryptedChat != null && !this.endReached[0]))) {
                                         this.first = true;
-                                        RecyclerListView recyclerListView = this.chatListView;
-                                        if (recyclerListView != null) {
-                                            recyclerListView.setEmptyView(null);
+                                        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+                                        if (chatListRecyclerView != null) {
+                                            chatListRecyclerView.setEmptyView(null);
                                         }
                                         FrameLayout frameLayout2 = this.emptyViewContainer;
                                         if (frameLayout2 != null) {
@@ -30308,9 +30317,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         } else {
             if (i == NotificationCenter.invalidateMotionBackground) {
-                RecyclerListView recyclerListView2 = this.chatListView;
-                if (recyclerListView2 != null) {
-                    recyclerListView2.invalidateViews();
+                ChatListRecyclerView chatListRecyclerView2 = this.chatListView;
+                if (chatListRecyclerView2 != null) {
+                    chatListRecyclerView2.invalidateViews();
                 }
                 MessageEnterTransitionContainer messageEnterTransitionContainer = this.messageEnterTransitionContainer;
                 if (messageEnterTransitionContainer != null) {
@@ -30387,9 +30396,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 return;
             }
             if (i == NotificationCenter.emojiLoaded) {
-                RecyclerListView recyclerListView3 = this.chatListView;
-                if (recyclerListView3 != null) {
-                    recyclerListView3.invalidateViews();
+                ChatListRecyclerView chatListRecyclerView3 = this.chatListView;
+                if (chatListRecyclerView3 != null) {
+                    chatListRecyclerView3.invalidateViews();
                 }
                 SimpleTextView simpleTextView = this.replyObjectTextView;
                 if (simpleTextView != null) {
@@ -30409,9 +30418,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 if (mentionsContainerView != null) {
                     mentionsContainerView.getListView().invalidateViews();
                 }
-                RecyclerListView recyclerListView4 = this.messagesSearchListView;
-                if (recyclerListView4 != null) {
-                    recyclerListView4.invalidateViews();
+                RecyclerListView recyclerListView = this.messagesSearchListView;
+                if (recyclerListView != null) {
+                    recyclerListView.invalidateViews();
                 }
                 UndoView undoView = this.undoView;
                 if (undoView != null) {
@@ -30862,9 +30871,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     if (this.messages.isEmpty()) {
                         if (!this.endReached[0] && !this.loading) {
                             showProgressView(false);
-                            RecyclerListView recyclerListView5 = this.chatListView;
-                            if (recyclerListView5 != null) {
-                                recyclerListView5.setEmptyView(null);
+                            ChatListRecyclerView chatListRecyclerView4 = this.chatListView;
+                            if (chatListRecyclerView4 != null) {
+                                chatListRecyclerView4.setEmptyView(null);
                             }
                             if (this.currentEncryptedChat == null) {
                                 int[] iArr8 = this.maxMessageId;
@@ -31423,9 +31432,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 getMediaDataController().loadBotInfo(user8.id, -this.chatInfo.id, true, this.classGuid);
                             }
                         }
-                        RecyclerListView recyclerListView6 = this.chatListView;
-                        if (recyclerListView6 != null) {
-                            recyclerListView6.invalidateViews();
+                        ChatListRecyclerView chatListRecyclerView5 = this.chatListView;
+                        if (chatListRecyclerView5 != null) {
+                            chatListRecyclerView5.invalidateViews();
                         }
                     } else if (chatFull7 instanceof TLRPC.TL_channelFull) {
                         this.hasBotsCommands = false;
@@ -31439,9 +31448,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             }
                             this.botInfo.put(botInfo.user_id, botInfo);
                         }
-                        RecyclerListView recyclerListView7 = this.chatListView;
-                        if (recyclerListView7 != null) {
-                            recyclerListView7.invalidateViews();
+                        ChatListRecyclerView chatListRecyclerView6 = this.chatListView;
+                        if (chatListRecyclerView6 != null) {
+                            chatListRecyclerView6.invalidateViews();
                         }
                         if (!ChatObject.isChannel(this.currentChat) || ((chat2 = this.currentChat) != null && chat2.megagroup)) {
                             MentionsContainerView mentionsContainerView3 = this.mentionContainer;
@@ -31691,9 +31700,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             MediaController.getInstance().setTextureView(createTextureView(true), this.aspectRatioFrameLayout, this.videoPlayerContainer, true);
                         }
                     }
-                    RecyclerListView recyclerListView8 = this.chatListView;
-                    if (recyclerListView8 != null) {
-                        int childCount = recyclerListView8.getChildCount();
+                    ChatListRecyclerView chatListRecyclerView7 = this.chatListView;
+                    if (chatListRecyclerView7 != null) {
+                        int childCount = chatListRecyclerView7.getChildCount();
                         for (int i153 = 0; i153 < childCount; i153++) {
                             View childAt4 = this.chatListView.getChildAt(i153);
                             if ((childAt4 instanceof ChatMessageCell) && (messageObject9 = (chatMessageCell6 = (ChatMessageCell) childAt4).getMessageObject()) != null) {
@@ -31795,9 +31804,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         AndroidUtilities.runOnUIThread(this.destroyTextureViewRunnable);
                     }
                     int intValue23 = ((Integer) objArr[0]).intValue();
-                    RecyclerListView recyclerListView9 = this.chatListView;
-                    if (recyclerListView9 != null) {
-                        int childCount4 = recyclerListView9.getChildCount();
+                    ChatListRecyclerView chatListRecyclerView8 = this.chatListView;
+                    if (chatListRecyclerView8 != null) {
+                        int childCount4 = chatListRecyclerView8.getChildCount();
                         for (int i156 = 0; i156 < childCount4; i156++) {
                             View childAt7 = this.chatListView.getChildAt(i156);
                             if ((childAt7 instanceof ChatMessageCell) && (messageObject2 = (chatMessageCell = (ChatMessageCell) childAt7).getMessageObject()) != null) {
@@ -31840,9 +31849,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
                 if (i == NotificationCenter.messagePlayingProgressDidChanged) {
                     Integer num7 = (Integer) objArr[0];
-                    RecyclerListView recyclerListView10 = this.chatListView;
-                    if (recyclerListView10 != null) {
-                        int childCount6 = recyclerListView10.getChildCount();
+                    ChatListRecyclerView chatListRecyclerView9 = this.chatListView;
+                    if (chatListRecyclerView9 != null) {
+                        int childCount6 = chatListRecyclerView9.getChildCount();
                         for (int i158 = 0; i158 < childCount6; i158++) {
                             View childAt9 = this.chatListView.getChildAt(i158);
                             if ((childAt9 instanceof ChatMessageCell) && (messageObject7 = (chatMessageCell5 = (ChatMessageCell) childAt9).getMessageObject()) != null && messageObject7.getId() == num7.intValue()) {
@@ -33083,11 +33092,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         return;
                     }
                     if (i == NotificationCenter.diceStickersDidLoad) {
-                        RecyclerListView recyclerListView11 = this.chatListView;
-                        if (recyclerListView11 == null) {
+                        ChatListRecyclerView chatListRecyclerView10 = this.chatListView;
+                        if (chatListRecyclerView10 == null) {
                             return;
                         }
-                        int childCount8 = recyclerListView11.getChildCount();
+                        int childCount8 = chatListRecyclerView10.getChildCount();
                         for (int i196 = 0; i196 < childCount8; i196++) {
                             View childAt12 = this.chatListView.getChildAt(i196);
                             if (childAt12 instanceof ChatMessageCell) {
@@ -36315,9 +36324,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         if (!this.chatAdapter.isFiltered) {
                             showProgressView(false);
                         }
-                        RecyclerListView recyclerListView = this.chatListView;
-                        if (recyclerListView != null) {
-                            recyclerListView.setEmptyView(null);
+                        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+                        if (chatListRecyclerView != null) {
+                            chatListRecyclerView.setEmptyView(null);
                         }
                         if (this.currentEncryptedChat == null) {
                             int[] iArr = this.maxMessageId;
@@ -36887,9 +36896,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     public /* synthetic */ void lambda$showInfoHint$192(int i) {
         ChatMessageCell chatMessageCell;
         MessageObject messageObject;
-        RecyclerListView recyclerListView = this.chatListView;
-        if (recyclerListView != null) {
-            int childCount = recyclerListView.getChildCount();
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+        if (chatListRecyclerView != null) {
+            int childCount = chatListRecyclerView.getChildCount();
             for (int i2 = 0; i2 < childCount; i2++) {
                 View childAt = this.chatListView.getChildAt(i2);
                 if ((childAt instanceof ChatMessageCell) && (messageObject = (chatMessageCell = (ChatMessageCell) childAt).getMessageObject()) != null && messageObject.equals(this.hintMessageObject)) {
@@ -42048,9 +42057,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 lazyItem.setAlpha(z ? 0.0f : 1.0f);
             }
         }
-        RecyclerListView recyclerListView = this.chatListView;
-        if (recyclerListView != null) {
-            int childCount = recyclerListView.getChildCount();
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+        if (chatListRecyclerView != null) {
+            int childCount = chatListRecyclerView.getChildCount();
             for (int i2 = 0; i2 < childCount; i2++) {
                 View childAt = this.chatListView.getChildAt(i2);
                 boolean z2 = childAt instanceof ChatMessageCell;
@@ -42894,9 +42903,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
         if (this.currentEncryptedChat != null) {
             ArrayList<Long> arrayList = new ArrayList<>();
-            RecyclerListView recyclerListView = this.chatListView;
-            if (recyclerListView != null) {
-                int childCount = recyclerListView.getChildCount();
+            ChatListRecyclerView chatListRecyclerView = this.chatListView;
+            if (chatListRecyclerView != null) {
+                int childCount = chatListRecyclerView.getChildCount();
                 for (int i = 0; i < childCount; i++) {
                     View childAt = this.chatListView.getChildAt(i);
                     MessageObject messageObject = childAt instanceof ChatMessageCell ? ((ChatMessageCell) childAt).getMessageObject() : null;
@@ -47709,11 +47718,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     public BaseCell findMessageCell(int i, boolean z) {
         MessageObject messageObject;
-        RecyclerListView recyclerListView = this.chatListView;
-        if (recyclerListView == null) {
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+        if (chatListRecyclerView == null) {
             return null;
         }
-        int childCount = recyclerListView.getChildCount();
+        int childCount = chatListRecyclerView.getChildCount();
         for (int i2 = 0; i2 < childCount; i2++) {
             View childAt = this.chatListView.getChildAt(i2);
             if (childAt instanceof ChatMessageCell) {
@@ -47737,11 +47746,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     public View findCell(int i, boolean z) {
         MessageObject messageObject;
-        RecyclerListView recyclerListView = this.chatListView;
-        if (recyclerListView == null) {
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+        if (chatListRecyclerView == null) {
             return null;
         }
-        int childCount = recyclerListView.getChildCount();
+        int childCount = chatListRecyclerView.getChildCount();
         for (int i2 = 0; i2 < childCount; i2++) {
             View childAt = this.chatListView.getChildAt(i2);
             if (childAt instanceof ChatMessageCell) {
@@ -49810,13 +49819,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         String str;
         String str2;
         Integer num;
-        RecyclerListView recyclerListView = this.chatListView;
-        if (recyclerListView == null) {
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+        if (chatListRecyclerView == null) {
             return;
         }
         boolean z4 = false;
         if (!this.wasManualScroll && this.unreadMessageObject != null) {
-            int childCount = recyclerListView.getChildCount();
+            int childCount = chatListRecyclerView.getChildCount();
             int i4 = 0;
             while (true) {
                 if (i4 >= childCount) {
@@ -49948,12 +49957,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private void updateVisibleRows(Utilities.CallbackReturn callbackReturn) {
         int i;
         int i2;
-        RecyclerListView recyclerListView = this.chatListView;
-        if (recyclerListView == null) {
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+        if (chatListRecyclerView == null) {
             return;
         }
         if (!this.wasManualScroll && this.unreadMessageObject != null) {
-            int childCount = recyclerListView.getChildCount();
+            int childCount = chatListRecyclerView.getChildCount();
             int i3 = 0;
             while (true) {
                 if (i3 >= childCount) {
@@ -51000,9 +51009,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.savedNoDiscussion = false;
         this.savedNoHistory = false;
         this.savedHistory = null;
-        RecyclerListView recyclerListView = this.chatListView;
-        if (recyclerListView != null) {
-            recyclerListView.invalidateViews();
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
+        if (chatListRecyclerView != null) {
+            chatListRecyclerView.invalidateViews();
         }
         if (this.commentMessagesRequestId != -1) {
             getConnectionsManager().cancelRequest(this.commentMessagesRequestId, false);
@@ -51016,9 +51025,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.commentLoadingMessageId = i4;
         this.hideCommentLoading = false;
         this.commentLoadingStartedAt = System.currentTimeMillis();
-        RecyclerListView recyclerListView2 = this.chatListView;
-        if (recyclerListView2 != null) {
-            recyclerListView2.invalidateViews();
+        ChatListRecyclerView chatListRecyclerView2 = this.chatListView;
+        if (chatListRecyclerView2 != null) {
+            chatListRecyclerView2.invalidateViews();
         }
         final int i5 = this.commentLoadingGuid + 1;
         this.commentLoadingGuid = i5;
@@ -52225,9 +52234,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (this.currentEncryptedChat != null) {
             return;
         }
-        RecyclerListView recyclerListView = this.chatListView;
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
         MentionsContainerView mentionsContainerView = this.mentionContainer;
-        recyclerListView.setImportantForAccessibility(((mentionsContainerView == null || !mentionsContainerView.isOpen()) && ((actionBarPopupWindow = this.scrimPopupWindow) == null || !actionBarPopupWindow.isShowing())) ? 0 : 4);
+        chatListRecyclerView.setImportantForAccessibility(((mentionsContainerView == null || !mentionsContainerView.isOpen()) && ((actionBarPopupWindow = this.scrimPopupWindow) == null || !actionBarPopupWindow.isShowing())) ? 0 : 4);
     }
 
     private void markSponsoredAsRead(MessageObject messageObject) {
@@ -59267,10 +59276,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (chatAttachAlert != null) {
             chatAttachAlert.checkColors();
         }
-        RecyclerListView recyclerListView = this.chatListView;
+        ChatListRecyclerView chatListRecyclerView = this.chatListView;
         int i = 0;
-        if (recyclerListView != null) {
-            int childCount = recyclerListView.getChildCount();
+        if (chatListRecyclerView != null) {
+            int childCount = chatListRecyclerView.getChildCount();
             for (int i2 = 0; i2 < childCount; i2++) {
                 View childAt = this.chatListView.getChildAt(i2);
                 if (childAt instanceof ChatMessageCell) {
@@ -59280,9 +59289,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
             }
         }
-        RecyclerListView recyclerListView2 = this.messagesSearchListView;
-        if (recyclerListView2 != null) {
-            int childCount2 = recyclerListView2.getChildCount();
+        RecyclerListView recyclerListView = this.messagesSearchListView;
+        if (recyclerListView != null) {
+            int childCount2 = recyclerListView.getChildCount();
             for (int i3 = 0; i3 < childCount2; i3++) {
                 View childAt2 = this.messagesSearchListView.getChildAt(i3);
                 if (childAt2 instanceof DialogCell) {
@@ -62307,10 +62316,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 this.scrimViewReactionOffset = i;
                             }
                             ActionBarPopupWindow actionBarPopupWindow2 = this.scrimPopupWindow;
-                            RecyclerListView recyclerListView = this.chatListView;
+                            ChatListRecyclerView chatListRecyclerView = this.chatListView;
                             this.scrimPopupX = max;
                             this.scrimPopupY = i2;
-                            actionBarPopupWindow2.showAtLocation(recyclerListView, 51, max, i2);
+                            actionBarPopupWindow2.showAtLocation(chatListRecyclerView, 51, max, i2);
                             this.chatListView.stopScroll();
                             this.chatLayoutManager.setCanScrollVertically(false);
                             this.scrimViewTask = null;
@@ -62389,10 +62398,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             if (frameLayout.getVisibility() != 0) {
             }
             ActionBarPopupWindow actionBarPopupWindow22 = this.scrimPopupWindow;
-            RecyclerListView recyclerListView2 = this.chatListView;
+            ChatListRecyclerView chatListRecyclerView2 = this.chatListView;
             this.scrimPopupX = max2;
             this.scrimPopupY = i2;
-            actionBarPopupWindow22.showAtLocation(recyclerListView2, 51, max2, i2);
+            actionBarPopupWindow22.showAtLocation(chatListRecyclerView2, 51, max2, i2);
             this.chatListView.stopScroll();
             this.chatLayoutManager.setCanScrollVertically(false);
             this.scrimViewTask = null;
@@ -64027,5 +64036,15 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             return;
         }
         this.clipBoundsTmp.set(0, 0, this.contentView.getMeasuredWidth(), this.contentView.getMeasuredHeight() - max);
+    }
+
+    private abstract class ChatListRecyclerView extends RecyclerListViewInternal {
+        abstract void drawChatBackgroundElements(Canvas canvas);
+
+        abstract void drawChatForegroundElements(Canvas canvas);
+
+        public ChatListRecyclerView(Context context, ThemeDelegate themeDelegate) {
+            super(context, themeDelegate);
+        }
     }
 }

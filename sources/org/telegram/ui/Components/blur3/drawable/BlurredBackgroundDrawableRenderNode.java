@@ -160,17 +160,10 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
         this.renderNodeInvalidated = true;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0021, code lost:
-    
-        if (r0 == false) goto L13;
-     */
     @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void draw(Canvas canvas) {
-        float alpha;
         boolean hasDisplayList;
+        float alpha;
         if (this.boundProps.boundsWithPadding.isEmpty()) {
             return;
         }
@@ -178,10 +171,14 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
             drawSource(canvas, this.source);
             return;
         }
-        if (!this.renderNodeInvalidated) {
-            hasDisplayList = this.renderNode.hasDisplayList();
+        hasDisplayList = this.renderNode.hasDisplayList();
+        if (!hasDisplayList) {
+            this.source.dispatchOnDrawablesRelativePositionChange();
+            updateDisplayList();
+        } else if (this.renderNodeInvalidated) {
+            updateDisplayList();
         }
-        updateDisplayList();
+        this.renderNodeInvalidated = false;
         int i = this.shadowColor;
         alpha = this.renderNode.getAlpha();
         int multAlpha = Theme.multAlpha(i, alpha);
@@ -198,9 +195,14 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
 
     @Override // org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable, android.graphics.drawable.Drawable
     public void setAlpha(int i) {
+        int alpha = getAlpha();
         super.setAlpha(i);
         this.renderNode.setAlpha(i / 255.0f);
         this.renderNodeInvalidated = true;
+        if (alpha != 0 || i <= 0) {
+            return;
+        }
+        this.source.dispatchOnDrawablesRelativePositionChange();
     }
 
     @Override // org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable
