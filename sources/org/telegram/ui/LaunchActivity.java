@@ -13230,33 +13230,34 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: openEmailSettings, reason: merged with bridge method [inline-methods] */
     public void lambda$handleIntent$24(TL_account.Password password) {
-        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(password.login_email_pattern);
-        int indexOf = password.login_email_pattern.indexOf(42);
-        int lastIndexOf = password.login_email_pattern.lastIndexOf(42);
-        if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-            TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
-            textStyleRun.flags |= 256;
-            textStyleRun.start = indexOf;
-            int i = lastIndexOf + 1;
-            textStyleRun.end = i;
-            valueOf.setSpan(new TextStyleSpan(textStyleRun), indexOf, i, 0);
-        }
+        String str;
         final LoginActivity changeEmail = new LoginActivity().changeEmail(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda126
             @Override // java.lang.Runnable
             public final void run() {
                 LaunchActivity.this.lambda$openEmailSettings$33();
             }
         });
-        if (password.login_email_pattern != null) {
+        if (password != null && (str = password.login_email_pattern) != null) {
+            SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(str);
+            int indexOf = password.login_email_pattern.indexOf(42);
+            int lastIndexOf = password.login_email_pattern.lastIndexOf(42);
+            if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
+                TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
+                textStyleRun.flags |= 256;
+                textStyleRun.start = indexOf;
+                int i = lastIndexOf + 1;
+                textStyleRun.end = i;
+                valueOf.setSpan(new TextStyleSpan(textStyleRun), indexOf, i, 0);
+            }
             new AlertDialog.Builder(this).setTitle(valueOf).setMessage(getString(R.string.EmailLoginChangeMessage)).setPositiveButton(getString(R.string.ChangeEmail), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda127
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
                     LaunchActivity.this.lambda$openEmailSettings$34(changeEmail, alertDialog, i2);
                 }
             }).setNegativeButton(getString(R.string.Cancel), null).show();
-        } else {
-            lambda$runLinkRequest$101(changeEmail);
+            return;
         }
+        lambda$runLinkRequest$101(changeEmail);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

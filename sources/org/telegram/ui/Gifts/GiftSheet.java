@@ -1803,15 +1803,16 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:47:0x021d  */
-        /* JADX WARN: Removed duplicated region for block: B:53:0x0267  */
-        /* JADX WARN: Removed duplicated region for block: B:56:0x028c  */
-        /* JADX WARN: Removed duplicated region for block: B:59:0x029e  */
-        /* JADX WARN: Removed duplicated region for block: B:62:0x02ac  */
-        /* JADX WARN: Removed duplicated region for block: B:64:0x02b0  */
-        /* JADX WARN: Removed duplicated region for block: B:68:0x0290  */
-        /* JADX WARN: Removed duplicated region for block: B:69:0x026b  */
-        /* JADX WARN: Removed duplicated region for block: B:74:0x0230  */
+        /* JADX WARN: Removed duplicated region for block: B:47:0x021e  */
+        /* JADX WARN: Removed duplicated region for block: B:55:0x026e  */
+        /* JADX WARN: Removed duplicated region for block: B:58:0x0293  */
+        /* JADX WARN: Removed duplicated region for block: B:61:0x02a5  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x02b3  */
+        /* JADX WARN: Removed duplicated region for block: B:66:0x02b7  */
+        /* JADX WARN: Removed duplicated region for block: B:70:0x0297  */
+        /* JADX WARN: Removed duplicated region for block: B:71:0x0272  */
+        /* JADX WARN: Removed duplicated region for block: B:78:0x024a  */
+        /* JADX WARN: Removed duplicated region for block: B:80:0x024d  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -1828,7 +1829,6 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) StarsController.findAttribute(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
             this.cardBackground.setBackdrop(stargiftattributebackdrop);
             this.cardBackground.setPattern((TL_stars.starGiftAttributePattern) StarsController.findAttribute(starGift.attributes, TL_stars.starGiftAttributePattern.class));
-            long j2 = 0;
             if (!starGift.auction || ((z6 = starGift.sold_out) && !this.priotityAuction)) {
                 this.cardBackground.setStrokeColors((!starGift.require_premium || (z3 && starGift.availability_resale > 0)) ? null : PREMIUM_STROKE);
             } else if (z6) {
@@ -1876,12 +1876,12 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             } else {
                 this.priceView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f), 0);
                 if (z3) {
-                    long j3 = starGift.availability_resale;
-                    if (j3 > 0) {
+                    long j2 = starGift.availability_resale;
+                    if (j2 > 0) {
                         j = starGift.resell_min_stars;
-                        if (j3 > 1 && j < MessagesController.getInstance(this.currentAccount).config.starsStarGiftResaleAmountMax.get()) {
+                        if (j2 > 1 && j < MessagesController.getInstance(this.currentAccount).config.starsStarGiftResaleAmountMax.get()) {
                             z5 = true;
-                            if (starGift.auction) {
+                            if (!starGift.auction && starGift.availability_resale == 0) {
                                 this.priceView.setText(LocaleController.getString(starGift.sold_out ? R.string.Gift2AuctionPriceView : R.string.Gift2AuctionPriceJoin));
                             } else {
                                 TextView textView = this.priceView;
@@ -1898,8 +1898,14 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                             this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), z7 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                         }
                         z5 = false;
-                        if (starGift.auction) {
+                        if (!starGift.auction) {
                         }
+                        TextView textView2 = this.priceView;
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append("XTR ");
+                        sb2.append(LocaleController.formatNumber(j, ','));
+                        sb2.append(z5 ? "+" : "");
+                        textView2.setText(StarsIntroActivity.replaceStarsWithPlain(sb2.toString(), 0.71f));
                         boolean z72 = starGift instanceof TL_stars.TL_starGiftUnique;
                         this.priceBackground.setBackground(new StarsBackground(z72 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                         this.priceView.setTextColor(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
@@ -1907,14 +1913,16 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                         this.tonOnlySaleView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(13.0f), z72 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                     }
                 }
-                long j4 = starGift.stars;
-                if (z2 && starGift.can_upgrade) {
-                    j2 = starGift.upgrade_stars;
-                }
-                j = j4 + j2;
+                j = ((z2 && starGift.can_upgrade) ? starGift.upgrade_stars : 0L) + starGift.stars;
                 z5 = false;
-                if (starGift.auction) {
+                if (!starGift.auction) {
                 }
+                TextView textView22 = this.priceView;
+                StringBuilder sb22 = new StringBuilder();
+                sb22.append("XTR ");
+                sb22.append(LocaleController.formatNumber(j, ','));
+                sb22.append(z5 ? "+" : "");
+                textView22.setText(StarsIntroActivity.replaceStarsWithPlain(sb22.toString(), 0.71f));
                 boolean z722 = starGift instanceof TL_stars.TL_starGiftUnique;
                 this.priceBackground.setBackground(new StarsBackground(z722 ? 1090519039 : Theme.isCurrentThemeDark() ? 518759725 : 1088989954));
                 this.priceView.setTextColor(Theme.isCurrentThemeDark() ? -1333971 : -2722014);
