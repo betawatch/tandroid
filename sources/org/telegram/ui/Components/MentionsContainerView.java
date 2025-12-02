@@ -46,7 +46,7 @@ import org.telegram.ui.ContentPreviewViewer;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class MentionsContainerView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private MentionsAdapter adapter;
     private int animationIndex;

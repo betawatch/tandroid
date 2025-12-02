@@ -39,7 +39,7 @@ import kotlin.jvm.functions.Function9;
 import kotlin.reflect.KClass;
 import kotlin.text.StringsKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ClassReference implements KClass, ClassBasedDeclarationContainer {
     public static final Companion Companion = new Companion(null);
     private static final Map FUNCTION_CLASSES;
@@ -73,7 +73,7 @@ public final class ClassReference implements KClass, ClassBasedDeclarationContai
     }
 
     public String toString() {
-        return getJClass().toString() + " (Kotlin reflection is not available)";
+        return getJClass() + " (Kotlin reflection is not available)";
     }
 
     public static final class Companion {
@@ -84,7 +84,7 @@ public final class ClassReference implements KClass, ClassBasedDeclarationContai
         private Companion() {
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:8:0x003d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:8:0x003b, code lost:
         
             if (r2 == null) goto L13;
          */
@@ -100,19 +100,19 @@ public final class ClassReference implements KClass, ClassBasedDeclarationContai
                 return null;
             }
             if (jClass.isLocalClass()) {
-                String name = jClass.getSimpleName();
+                String simpleName = jClass.getSimpleName();
                 Method enclosingMethod = jClass.getEnclosingMethod();
                 if (enclosingMethod != null) {
-                    Intrinsics.checkNotNullExpressionValue(name, "name");
-                    str = StringsKt.substringAfter$default(name, enclosingMethod.getName() + '$', (String) null, 2, (Object) null);
+                    Intrinsics.checkNotNull(simpleName);
+                    str = StringsKt.substringAfter$default(simpleName, enclosingMethod.getName() + '$', (String) null, 2, (Object) null);
                 }
                 Constructor<?> enclosingConstructor = jClass.getEnclosingConstructor();
                 if (enclosingConstructor == null) {
-                    Intrinsics.checkNotNullExpressionValue(name, "name");
-                    return StringsKt.substringAfter$default(name, '$', (String) null, 2, (Object) null);
+                    Intrinsics.checkNotNull(simpleName);
+                    return StringsKt.substringAfter$default(simpleName, '$', (String) null, 2, (Object) null);
                 }
-                Intrinsics.checkNotNullExpressionValue(name, "name");
-                return StringsKt.substringAfter$default(name, enclosingConstructor.getName() + '$', (String) null, 2, (Object) null);
+                Intrinsics.checkNotNull(simpleName);
+                return StringsKt.substringAfter$default(simpleName, enclosingConstructor.getName() + '$', (String) null, 2, (Object) null);
             }
             if (!jClass.isArray()) {
                 String str4 = (String) ClassReference.simpleNames.get(jClass.getName());
@@ -186,14 +186,14 @@ public final class ClassReference implements KClass, ClassBasedDeclarationContai
         hashMap3.putAll(hashMap);
         hashMap3.putAll(hashMap2);
         Collection<String> values = hashMap.values();
-        Intrinsics.checkNotNullExpressionValue(values, "primitiveFqNames.values");
-        for (String kotlinName : values) {
+        Intrinsics.checkNotNullExpressionValue(values, "<get-values>(...)");
+        for (String str : values) {
             StringBuilder sb = new StringBuilder();
             sb.append("kotlin.jvm.internal.");
-            Intrinsics.checkNotNullExpressionValue(kotlinName, "kotlinName");
-            sb.append(StringsKt.substringAfterLast$default(kotlinName, '.', null, 2, null));
+            Intrinsics.checkNotNull(str);
+            sb.append(StringsKt.substringAfterLast$default(str, '.', null, 2, null));
             sb.append("CompanionObject");
-            Pair pair = TuplesKt.to(sb.toString(), kotlinName + ".Companion");
+            Pair pair = TuplesKt.to(sb.toString(), str + ".Companion");
             hashMap3.put(pair.getFirst(), pair.getSecond());
         }
         for (Map.Entry entry : FUNCTION_CLASSES.entrySet()) {
@@ -202,7 +202,10 @@ public final class ClassReference implements KClass, ClassBasedDeclarationContai
         classFqNames = hashMap3;
         LinkedHashMap linkedHashMap = new LinkedHashMap(MapsKt.mapCapacity(hashMap3.size()));
         for (Map.Entry entry2 : hashMap3.entrySet()) {
-            linkedHashMap.put(entry2.getKey(), StringsKt.substringAfterLast$default((String) entry2.getValue(), '.', null, 2, null));
+            Object key = entry2.getKey();
+            String str2 = (String) entry2.getValue();
+            Intrinsics.checkNotNull(str2);
+            linkedHashMap.put(key, StringsKt.substringAfterLast$default(str2, '.', null, 2, null));
         }
         simpleNames = linkedHashMap;
     }

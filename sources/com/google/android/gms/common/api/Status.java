@@ -1,7 +1,9 @@
 package com.google.android.gms.common.api;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.PendingIntent;
+import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.ConnectionResult;
@@ -10,6 +12,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import com.google.android.gms.common.util.PlatformVersion;
 
 /* loaded from: classes.dex */
 public final class Status extends AbstractSafeParcelable implements Result, ReflectedParcelable {
@@ -25,7 +28,7 @@ public final class Status extends AbstractSafeParcelable implements Result, Refl
     public static final Status RESULT_CANCELED = new Status(16);
     public static final Status zza = new Status(17);
     public static final Status RESULT_DEAD_CLIENT = new Status(18);
-    public static final Parcelable.Creator<Status> CREATOR = new zzb();
+    public static final Parcelable.Creator<Status> CREATOR = new zze();
 
     public Status(int i) {
         this(i, (String) null);
@@ -80,10 +83,21 @@ public final class Status extends AbstractSafeParcelable implements Result, Refl
     }
 
     public void startResolutionForResult(Activity activity, int i) {
+        Bundle bundle;
+        ActivityOptions makeBasic;
+        ActivityOptions pendingIntentBackgroundActivityStartMode;
         if (hasResolution()) {
+            if (PlatformVersion.isAtLeastU()) {
+                makeBasic = ActivityOptions.makeBasic();
+                pendingIntentBackgroundActivityStartMode = makeBasic.setPendingIntentBackgroundActivityStartMode(1);
+                bundle = pendingIntentBackgroundActivityStartMode.toBundle();
+            } else {
+                bundle = null;
+            }
+            Bundle bundle2 = bundle;
             PendingIntent pendingIntent = this.zzd;
             Preconditions.checkNotNull(pendingIntent);
-            activity.startIntentSenderForResult(pendingIntent.getIntentSender(), i, null, 0, 0, 0);
+            activity.startIntentSenderForResult(pendingIntent.getIntentSender(), i, null, 0, 0, 0, bundle2);
         }
     }
 

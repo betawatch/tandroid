@@ -4,7 +4,7 @@ import java.util.concurrent.locks.LockSupport;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class BlockingCoroutine extends AbstractCoroutine {
     private final Thread blockedThread;
     private final EventLoop eventLoop;
@@ -26,12 +26,12 @@ final class BlockingCoroutine extends AbstractCoroutine {
             return;
         }
         Thread thread = this.blockedThread;
-        AbstractTimeSourceKt.getTimeSource();
+        AbstractTimeSourceKt.access$getTimeSource$p();
         LockSupport.unpark(thread);
     }
 
     public final Object joinBlocking() {
-        AbstractTimeSourceKt.getTimeSource();
+        AbstractTimeSourceKt.access$getTimeSource$p();
         try {
             EventLoop eventLoop = this.eventLoop;
             if (eventLoop != null) {
@@ -42,14 +42,14 @@ final class BlockingCoroutine extends AbstractCoroutine {
                     EventLoop eventLoop2 = this.eventLoop;
                     long processNextEvent = eventLoop2 != null ? eventLoop2.processNextEvent() : Long.MAX_VALUE;
                     if (!isCompleted()) {
-                        AbstractTimeSourceKt.getTimeSource();
+                        AbstractTimeSourceKt.access$getTimeSource$p();
                         LockSupport.parkNanos(this, processNextEvent);
                     } else {
                         EventLoop eventLoop3 = this.eventLoop;
                         if (eventLoop3 != null) {
                             EventLoop.decrementUseCount$default(eventLoop3, false, 1, null);
                         }
-                        AbstractTimeSourceKt.getTimeSource();
+                        AbstractTimeSourceKt.access$getTimeSource$p();
                         Object unboxState = JobSupportKt.unboxState(getState$kotlinx_coroutines_core());
                         CompletedExceptionally completedExceptionally = unboxState instanceof CompletedExceptionally ? (CompletedExceptionally) unboxState : null;
                         if (completedExceptionally == null) {
@@ -69,7 +69,7 @@ final class BlockingCoroutine extends AbstractCoroutine {
             cancelCoroutine(interruptedException);
             throw interruptedException;
         } catch (Throwable th2) {
-            AbstractTimeSourceKt.getTimeSource();
+            AbstractTimeSourceKt.access$getTimeSource$p();
             throw th2;
         }
     }

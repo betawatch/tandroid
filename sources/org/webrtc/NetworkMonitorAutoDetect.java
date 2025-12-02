@@ -25,7 +25,7 @@ import java.util.List;
 import org.webrtc.NetworkChangeDetector;
 import org.webrtc.NetworkMonitorAutoDetect;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class NetworkMonitorAutoDetect extends BroadcastReceiver implements NetworkChangeDetector {
     private static final long INVALID_NET_ID = -1;
     private static final String TAG = "NetworkMonitorAutoDetect";

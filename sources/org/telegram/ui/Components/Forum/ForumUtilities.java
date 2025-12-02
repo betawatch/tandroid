@@ -43,7 +43,7 @@ import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.LetterDrawable;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ForumUtilities {
     static SparseArray dialogForumDrawables = new SparseArray();
     static Drawable dialogGeneralIcon;

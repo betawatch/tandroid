@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref$ObjectRef;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CoroutineContextKt {
     public static final String getCoroutineName(CoroutineContext coroutineContext) {
         return null;

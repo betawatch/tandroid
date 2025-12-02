@@ -155,7 +155,7 @@ import org.telegram.ui.Stories.recorder.StoryRecorder;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class SharedMediaLayout extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, DialogCell.DialogCellDelegate {
     private ActionBar actionBar;
     private AnimatorSet actionModeAnimation;
@@ -4502,8 +4502,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x008c  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x008a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

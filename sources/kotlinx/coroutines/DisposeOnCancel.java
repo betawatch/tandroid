@@ -1,22 +1,14 @@
 package kotlinx.coroutines;
 
-import kotlin.Unit;
-
-/* loaded from: classes.dex */
-final class DisposeOnCancel extends CancelHandler {
+/* loaded from: classes3.dex */
+final class DisposeOnCancel implements CancelHandler {
     private final DisposableHandle handle;
 
     public DisposeOnCancel(DisposableHandle disposableHandle) {
         this.handle = disposableHandle;
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public /* bridge */ /* synthetic */ Object invoke(Object obj) {
-        invoke((Throwable) obj);
-        return Unit.INSTANCE;
-    }
-
-    @Override // kotlinx.coroutines.CancelHandlerBase
+    @Override // kotlinx.coroutines.CancelHandler
     public void invoke(Throwable th) {
         this.handle.dispose();
     }

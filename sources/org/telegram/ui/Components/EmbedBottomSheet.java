@@ -63,7 +63,7 @@ import org.telegram.ui.Components.WebPlayerView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EmbedBottomSheet extends BottomSheet {
     private static EmbedBottomSheet instance;
     private boolean animationInProgress;

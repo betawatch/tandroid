@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.EmptyCoroutineContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class GlobalScope implements CoroutineScope {
     public static final GlobalScope INSTANCE = new GlobalScope();
 

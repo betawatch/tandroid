@@ -9,7 +9,7 @@ import java.util.RandomAccess;
 import kotlin.jvm.internal.CollectionToArray;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class EmptyList implements List, Serializable, RandomAccess {
     public static final EmptyList INSTANCE = new EmptyList();
 

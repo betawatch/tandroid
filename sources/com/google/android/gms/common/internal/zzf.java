@@ -44,7 +44,7 @@ public final class zzf extends zza {
             if (createServiceInterface == null || !(BaseGmsClient.zzn(this.zzf, 2, 4, createServiceInterface) || BaseGmsClient.zzn(this.zzf, 3, 4, createServiceInterface))) {
                 return false;
             }
-            this.zzf.zzB = null;
+            this.zzf.zzC = null;
             BaseGmsClient baseGmsClient = this.zzf;
             Bundle connectionHint = baseGmsClient.getConnectionHint();
             baseConnectionCallbacks = baseGmsClient.zzw;

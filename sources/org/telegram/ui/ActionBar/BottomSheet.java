@@ -1310,6 +1310,14 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         return this.keyboardVisible;
     }
 
+    public int getSystemBottomInset() {
+        WindowInsets windowInsets = this.lastInsets;
+        if (windowInsets != null) {
+            return windowInsets.getSystemWindowInsetBottom();
+        }
+        return 0;
+    }
+
     public void setCalcMandatoryInsets(boolean z) {
         this.calcMandatoryInsets = z;
         this.drawNavigationBar = z;

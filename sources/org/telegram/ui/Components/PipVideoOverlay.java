@@ -56,7 +56,7 @@ import org.telegram.ui.Components.VideoForwardDrawable;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PipVideoOverlay implements IPipSourceDelegate {
     private static final FloatPropertyCompat PIP_X_PROPERTY = new SimpleFloatPropertyCompat("pipX", new SimpleFloatPropertyCompat.Getter() { // from class: org.telegram.ui.Components.PipVideoOverlay$$ExternalSyntheticLambda1
         @Override // org.telegram.ui.Components.SimpleFloatPropertyCompat.Getter

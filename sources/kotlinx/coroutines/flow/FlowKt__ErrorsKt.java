@@ -12,7 +12,7 @@ import kotlin.jvm.internal.Ref$ObjectRef;
 import kotlinx.coroutines.Job;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract /* synthetic */ class FlowKt__ErrorsKt {
     public static final Flow catch(Flow flow, Function3 function3) {
         return new FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1(flow, function3);

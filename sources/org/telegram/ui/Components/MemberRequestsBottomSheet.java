@@ -12,7 +12,7 @@ import org.telegram.ui.ChatActivity;
 import org.telegram.ui.Delegates.MemberRequestsDelegate;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class MemberRequestsBottomSheet extends UsersAlertBase {
     private final FlickerLoadingView currentLoadingView;
     private final MemberRequestsDelegate delegate;

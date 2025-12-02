@@ -5,7 +5,7 @@ import android.opengl.Matrix;
 import android.view.View;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class RendererCommon {
     private static float BALANCED_VISIBLE_FRACTION = 0.5625f;
 

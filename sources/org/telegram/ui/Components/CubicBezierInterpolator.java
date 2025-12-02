@@ -5,7 +5,7 @@ import android.view.animation.Interpolator;
 import android.view.animation.PathInterpolator;
 import androidx.core.graphics.PathParser;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CubicBezierInterpolator implements Interpolator {
     protected PointF a;
     protected PointF b;

@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SideMenultItemAnimator extends SimpleItemAnimator {
     private static TimeInterpolator sDefaultInterpolator;
     private RecyclerListView parentRecyclerView;

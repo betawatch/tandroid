@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ChatActivityEnterTopView extends FrameLayout {
     private boolean editMode;
     private EditView editView;

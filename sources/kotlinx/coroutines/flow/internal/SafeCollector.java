@@ -16,12 +16,12 @@ import kotlin.text.StringsKt;
 import kotlinx.coroutines.JobKt;
 import kotlinx.coroutines.flow.FlowCollector;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class SafeCollector extends ContinuationImpl implements FlowCollector, CoroutineStackFrame {
     public final CoroutineContext collectContext;
     public final int collectContextSize;
     public final FlowCollector collector;
-    private Continuation completion;
+    private Continuation completion_;
     private CoroutineContext lastEmissionContext;
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -47,7 +47,7 @@ public final class SafeCollector extends ContinuationImpl implements FlowCollect
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl, kotlin.coroutines.jvm.internal.CoroutineStackFrame
     public CoroutineStackFrame getCallerFrame() {
-        Continuation continuation = this.completion;
+        Continuation continuation = this.completion_;
         if (continuation instanceof CoroutineStackFrame) {
             return (CoroutineStackFrame) continuation;
         }
@@ -66,7 +66,7 @@ public final class SafeCollector extends ContinuationImpl implements FlowCollect
         if (th != null) {
             this.lastEmissionContext = new DownstreamExceptionContext(th, getContext());
         }
-        Continuation continuation = this.completion;
+        Continuation continuation = this.completion_;
         if (continuation != null) {
             continuation.resumeWith(obj);
         }
@@ -101,14 +101,14 @@ public final class SafeCollector extends ContinuationImpl implements FlowCollect
             checkContext(context, coroutineContext, obj);
             this.lastEmissionContext = context;
         }
-        this.completion = continuation;
+        this.completion_ = continuation;
         function3 = SafeCollectorKt.emitFun;
         FlowCollector flowCollector = this.collector;
         Intrinsics.checkNotNull(flowCollector, "null cannot be cast to non-null type kotlinx.coroutines.flow.FlowCollector<kotlin.Any?>");
         Intrinsics.checkNotNull(this, "null cannot be cast to non-null type kotlin.coroutines.Continuation<kotlin.Unit>");
         Object invoke = function3.invoke(flowCollector, obj, this);
         if (!Intrinsics.areEqual(invoke, IntrinsicsKt.getCOROUTINE_SUSPENDED())) {
-            this.completion = null;
+            this.completion_ = null;
         }
         return invoke;
     }

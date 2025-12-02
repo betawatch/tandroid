@@ -2,7 +2,7 @@ package kotlinx.coroutines.internal;
 
 import kotlin.jvm.functions.Function2;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ConcurrentLinkedListKt {
     private static final Symbol CLOSED = new Symbol("CLOSED");
 

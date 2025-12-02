@@ -76,7 +76,7 @@ public final class zzbf {
             r3 = 0
             android.content.pm.PackageManager$PackageInfoFlags r3 = com.google.android.recaptcha.internal.zzbf$$ExternalSyntheticApiModelOutline2.m(r3)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L92
             android.content.pm.PackageInfo r8 = com.google.android.recaptcha.internal.zzbf$$ExternalSyntheticApiModelOutline3.m(r1, r8, r3)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L92
-            long r3 = com.google.android.recaptcha.internal.zzbf$$ExternalSyntheticApiModelOutline4.m(r8)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L92
+            long r3 = androidx.credentials.playservices.controllers.identityauth.createpublickeycredential.PublicKeyCredentialControllerUtility$GetGMSVersion$$ExternalSyntheticApiModelOutline0.m(r8)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L92
             java.lang.String r0 = java.lang.String.valueOf(r3)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L92
             goto L92
         L66:
@@ -86,7 +86,7 @@ public final class zzbf {
             android.content.pm.PackageManager r1 = r8.getPackageManager()     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L92
             java.lang.String r8 = r8.getPackageName()     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L92
             android.content.pm.PackageInfo r8 = r1.getPackageInfo(r8, r4)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L92
-            long r3 = com.google.android.recaptcha.internal.zzbf$$ExternalSyntheticApiModelOutline4.m(r8)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L92
+            long r3 = androidx.credentials.playservices.controllers.identityauth.createpublickeycredential.PublicKeyCredentialControllerUtility$GetGMSVersion$$ExternalSyntheticApiModelOutline0.m(r8)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L92
             java.lang.String r0 = java.lang.String.valueOf(r3)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L92
             goto L92
         L80:

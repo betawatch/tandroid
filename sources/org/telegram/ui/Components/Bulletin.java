@@ -77,7 +77,7 @@ import org.telegram.ui.Components.quickforward.BlurVisibilityDrawable;
 import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Bulletin {
     private static final HashMap delegates = new HashMap();
     private static final HashMap fragmentDelegates = new HashMap();

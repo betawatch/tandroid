@@ -35,7 +35,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.NumberPicker;
 import org.telegram.ui.Components.ProximitySheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ProximitySheet extends FrameLayout {
     private int backgroundPaddingLeft;
     private Paint backgroundPaint;

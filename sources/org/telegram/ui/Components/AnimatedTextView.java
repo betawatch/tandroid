@@ -36,12 +36,13 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedTextView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AnimatedTextView extends View {
     public boolean adaptWidth;
     private Drawable backgroundDrawable;
     private final AnimatedTextDrawable drawable;
     private boolean first;
+    private boolean hideBackgroundIfEmpty;
     private int lastMaxWidth;
     private int maxWidth;
     private boolean toSetMoveDown;
@@ -1260,9 +1261,8 @@ public class AnimatedTextView extends View {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
-        Drawable drawable = this.backgroundDrawable;
-        if (drawable != null) {
-            drawable.setBounds(0, 0, (int) (getPaddingLeft() + this.drawable.getCurrentWidth() + getPaddingRight()), getHeight());
+        if (this.backgroundDrawable != null && (!this.hideBackgroundIfEmpty || this.drawable.isNotEmpty() > 0.0f)) {
+            this.backgroundDrawable.setBounds(0, 0, (int) (getPaddingLeft() + this.drawable.getCurrentWidth() + getPaddingRight()), getHeight());
             this.backgroundDrawable.draw(canvas);
         }
         this.drawable.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
@@ -1316,6 +1316,14 @@ public class AnimatedTextView extends View {
     public void setSizeableBackground(Drawable drawable) {
         this.backgroundDrawable = drawable;
         invalidate();
+    }
+
+    public void setHideBackgroundIfEmpty(boolean z) {
+        this.hideBackgroundIfEmpty = z;
+    }
+
+    public Drawable getSizeableBackground() {
+        return this.backgroundDrawable;
     }
 
     public int width() {

@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public enum VideoCodecStatus {
     TARGET_BITRATE_OVERSHOOT(5),
     REQUEST_SLI(2),

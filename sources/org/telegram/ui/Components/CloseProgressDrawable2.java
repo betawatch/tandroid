@@ -11,7 +11,7 @@ import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class CloseProgressDrawable2 extends Drawable {
     private float angle;
     private boolean animating;

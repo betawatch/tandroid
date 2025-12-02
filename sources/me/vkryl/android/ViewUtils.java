@@ -2,7 +2,7 @@ package me.vkryl.android;
 
 import android.view.View;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ViewUtils {
     public static void onClick(View view) {
         if (view != null) {

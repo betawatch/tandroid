@@ -3,15 +3,15 @@ package kotlinx.coroutines;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CompletedExceptionally {
-    private static final AtomicIntegerFieldUpdater _handled$FU = AtomicIntegerFieldUpdater.newUpdater(CompletedExceptionally.class, "_handled");
-    private volatile int _handled;
+    private static final /* synthetic */ AtomicIntegerFieldUpdater _handled$volatile$FU = AtomicIntegerFieldUpdater.newUpdater(CompletedExceptionally.class, "_handled$volatile");
+    private volatile /* synthetic */ int _handled$volatile;
     public final Throwable cause;
 
     public CompletedExceptionally(Throwable th, boolean z) {
         this.cause = th;
-        this._handled = z ? 1 : 0;
+        this._handled$volatile = z ? 1 : 0;
     }
 
     public /* synthetic */ CompletedExceptionally(Throwable th, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -19,11 +19,11 @@ public class CompletedExceptionally {
     }
 
     public final boolean getHandled() {
-        return _handled$FU.get(this) != 0;
+        return _handled$volatile$FU.get(this) != 0;
     }
 
     public final boolean makeHandled() {
-        return _handled$FU.compareAndSet(this, 0, 1);
+        return _handled$volatile$FU.compareAndSet(this, 0, 1);
     }
 
     public String toString() {

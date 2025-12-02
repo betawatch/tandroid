@@ -56,7 +56,7 @@ import org.telegram.ui.Components.SharedMediaLayout;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MediaActivity extends BaseFragment implements SharedMediaLayout.SharedMediaPreloaderDelegate, FloatingDebugProvider, NotificationCenter.NotificationCenterDelegate {
     private SparseArray actionModeMessageObjects;
     private Runnable applyBulletin;

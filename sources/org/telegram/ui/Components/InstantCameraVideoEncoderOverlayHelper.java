@@ -13,7 +13,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class InstantCameraVideoEncoderOverlayHelper {
     private final FloatBuffer attributeTextureBuffer;
     private final FloatBuffer attributeVertexBuffer;

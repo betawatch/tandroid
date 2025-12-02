@@ -61,6 +61,6 @@ public class GoogleSignInClient extends GoogleApi {
     }
 
     GoogleSignInClient(Context context, GoogleSignInOptions googleSignInOptions) {
-        super(context, Auth.GOOGLE_SIGN_IN_API, googleSignInOptions, new ApiExceptionMapper());
+        super(context, Auth.GOOGLE_SIGN_IN_API, googleSignInOptions, new GoogleApi.Settings.Builder().setMapper(new ApiExceptionMapper()).build());
     }
 }

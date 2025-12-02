@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.coroutines.CoroutineContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface CoroutineExceptionHandler extends CoroutineContext.Element {
     public static final Key Key = Key.$$INSTANCE;
 

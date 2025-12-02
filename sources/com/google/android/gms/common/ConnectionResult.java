@@ -91,6 +91,8 @@ public final class ConnectionResult extends AbstractSafeParcelable {
                         return "API_DISABLED";
                     case 24:
                         return "API_DISABLED_FOR_CONNECTION";
+                    case 25:
+                        return "API_INSTALL_REQUIRED";
                     default:
                         return "UNKNOWN_ERROR_CODE(" + i + ")";
                 }

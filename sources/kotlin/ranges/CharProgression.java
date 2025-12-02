@@ -4,7 +4,7 @@ import kotlin.collections.CharIterator;
 import kotlin.internal.ProgressionUtilKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CharProgression implements Iterable {
     public static final Companion Companion = new Companion(null);
     private final char first;
@@ -19,7 +19,7 @@ public abstract class CharProgression implements Iterable {
             throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
         }
         this.first = c;
-        this.last = (char) ProgressionUtilKt.getProgressionLastElement((int) c, (int) c2, i);
+        this.last = (char) ProgressionUtilKt.getProgressionLastElement(c, c2, i);
         this.step = i;
     }
 

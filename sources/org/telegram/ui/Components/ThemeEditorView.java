@@ -67,7 +67,7 @@ import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.WallpaperUpdater;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ThemeEditorView {
     private static volatile ThemeEditorView Instance;
     private ArrayList currentThemeDesription;
@@ -1829,8 +1829,8 @@ public class ThemeEditorView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0181  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x017b  */
     /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

@@ -6,7 +6,7 @@ import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Shaker {
     private final Runnable invalidate;
     private final float r;

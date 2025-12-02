@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import me.vkryl.android.AnimatorUtils;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class FactorAnimator {
     private ValueAnimator animator;
     private long duration;

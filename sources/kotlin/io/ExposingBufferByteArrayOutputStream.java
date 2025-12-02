@@ -3,7 +3,7 @@ package kotlin.io;
 import java.io.ByteArrayOutputStream;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class ExposingBufferByteArrayOutputStream extends ByteArrayOutputStream {
     public ExposingBufferByteArrayOutputStream(int i) {
         super(i);

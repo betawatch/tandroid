@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.Forum.ForumUtilities;
 import org.telegram.ui.Components.TopicSeparator;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TopicSeparator {
     private final Paint arrowPaint;
     private final Path arrowPath;

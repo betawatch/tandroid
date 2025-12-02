@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.Premium.PremiumGradient;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AvatarsImageView extends View {
     public final AvatarsDrawable avatarsDrawable;
     private Paint plusBgPaint;

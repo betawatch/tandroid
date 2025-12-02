@@ -59,6 +59,11 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
             mutableStateFlow2 = this.this$0.downstreamFlow;
             final Flow dropWhile = FlowKt.dropWhile(mutableStateFlow2, new 1(state, null));
             Flow flow = new Flow() { // from class: androidx.datastore.core.SingleProcessDataStore$data$1$invokeSuspend$$inlined$map$1
+                @Override // kotlinx.coroutines.flow.Flow
+                public Object collect(FlowCollector flowCollector2, Continuation continuation) {
+                    Object collect = Flow.this.collect(new 2(flowCollector2), continuation);
+                    return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
+                }
 
                 public static final class 2 implements FlowCollector {
                     final /* synthetic */ FlowCollector $this_unsafeFlow$inlined;
@@ -138,12 +143,6 @@ final class SingleProcessDataStore$data$1 extends SuspendLambda implements Funct
                         }
                         return Unit.INSTANCE;
                     }
-                }
-
-                @Override // kotlinx.coroutines.flow.Flow
-                public Object collect(FlowCollector flowCollector2, Continuation continuation) {
-                    Object collect = Flow.this.collect(new 2(flowCollector2), continuation);
-                    return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
                 }
             };
             this.label = 1;

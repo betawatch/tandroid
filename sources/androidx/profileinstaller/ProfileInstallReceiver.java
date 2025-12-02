@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Process;
+import androidx.credentials.CredentialManager$$ExternalSyntheticLambda0;
 import androidx.profileinstaller.ProfileInstaller;
 
 /* loaded from: classes.dex */
@@ -18,7 +19,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
         }
         String action = intent.getAction();
         if ("androidx.profileinstaller.action.INSTALL_PROFILE".equals(action)) {
-            ProfileInstaller.writeProfile(context, new ProfileInstallReceiver$$ExternalSyntheticLambda0(), new ResultDiagnostics(), true);
+            ProfileInstaller.writeProfile(context, new CredentialManager$$ExternalSyntheticLambda0(), new ResultDiagnostics(), true);
             return;
         }
         if ("androidx.profileinstaller.action.SKIP_FILE".equals(action)) {
@@ -26,11 +27,11 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
             if (extras2 != null) {
                 String string = extras2.getString("EXTRA_SKIP_FILE_OPERATION");
                 if ("WRITE_SKIP_FILE".equals(string)) {
-                    ProfileInstaller.writeSkipFile(context, new ProfileInstallReceiver$$ExternalSyntheticLambda0(), new ResultDiagnostics());
+                    ProfileInstaller.writeSkipFile(context, new CredentialManager$$ExternalSyntheticLambda0(), new ResultDiagnostics());
                     return;
                 } else {
                     if ("DELETE_SKIP_FILE".equals(string)) {
-                        ProfileInstaller.deleteSkipFile(context, new ProfileInstallReceiver$$ExternalSyntheticLambda0(), new ResultDiagnostics());
+                        ProfileInstaller.deleteSkipFile(context, new CredentialManager$$ExternalSyntheticLambda0(), new ResultDiagnostics());
                         return;
                     }
                     return;

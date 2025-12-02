@@ -34,7 +34,7 @@ import org.telegram.ui.Components.GroupCallPip;
 import org.telegram.ui.Components.voip.RTMPStreamPipOverlay;
 import org.telegram.ui.GroupCallActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GroupCallPip implements NotificationCenter.NotificationCenterDelegate {
     private static boolean forceRemoved = true;
     private static GroupCallPip instance;

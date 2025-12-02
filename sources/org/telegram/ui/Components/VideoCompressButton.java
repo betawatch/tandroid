@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.AnimatedTextView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class VideoCompressButton extends View {
     private final Paint clearPaint;
     private boolean disabled;

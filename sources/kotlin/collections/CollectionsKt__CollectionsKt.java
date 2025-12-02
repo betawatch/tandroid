@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CollectionsKt__CollectionsKt extends CollectionsKt__CollectionsJVMKt {
     public static final Collection asCollection(Object[] objArr) {
         Intrinsics.checkNotNullParameter(objArr, "<this>");
@@ -32,7 +32,7 @@ public abstract class CollectionsKt__CollectionsKt extends CollectionsKt__Collec
         return list.size() - 1;
     }
 
-    public static List optimizeReadOnlyList(List list) {
+    public static final List optimizeReadOnlyList(List list) {
         Intrinsics.checkNotNullParameter(list, "<this>");
         int size = list.size();
         if (size != 0) {

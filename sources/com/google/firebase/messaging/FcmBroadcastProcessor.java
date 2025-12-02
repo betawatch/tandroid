@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Base64;
 import android.util.Log;
-import androidx.profileinstaller.ProfileInstallReceiver$$ExternalSyntheticLambda0;
+import androidx.credentials.CredentialManager$$ExternalSyntheticLambda0;
 import com.google.android.gms.common.util.PlatformVersion;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
@@ -18,7 +18,7 @@ public class FcmBroadcastProcessor {
     private static WithinAppServiceConnection fcmServiceConn;
     private static final Object lock = new Object();
     private final Context context;
-    private final Executor executor = new ProfileInstallReceiver$$ExternalSyntheticLambda0();
+    private final Executor executor = new CredentialManager$$ExternalSyntheticLambda0();
 
     public FcmBroadcastProcessor(Context context) {
         this.context = context;
@@ -63,7 +63,7 @@ public class FcmBroadcastProcessor {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ Task lambda$startMessagingService$2(Context context, Intent intent, boolean z, Task task) {
-        return (PlatformVersion.isAtLeastO() && ((Integer) task.getResult()).intValue() == 402) ? bindToMessagingService(context, intent, z).continueWith(new ProfileInstallReceiver$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda2
+        return (PlatformVersion.isAtLeastO() && ((Integer) task.getResult()).intValue() == 402) ? bindToMessagingService(context, intent, z).continueWith(new CredentialManager$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda2
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
                 Integer lambda$startMessagingService$1;
@@ -91,7 +91,7 @@ public class FcmBroadcastProcessor {
             }
             return Tasks.forResult(-1);
         }
-        return serviceConnection.sendIntent(intent).continueWith(new ProfileInstallReceiver$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda3
+        return serviceConnection.sendIntent(intent).continueWith(new CredentialManager$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda3
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task) {
                 Integer lambda$bindToMessagingService$3;

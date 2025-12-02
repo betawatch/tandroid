@@ -14,25 +14,24 @@ import kotlinx.coroutines.flow.internal.NullSurrogateKt;
 import kotlinx.coroutines.internal.Symbol;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow, Flow {
-    private static final AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(StateFlowImpl.class, Object.class, "_state");
-    private volatile Object _state;
+    private static final /* synthetic */ AtomicReferenceFieldUpdater _state$volatile$FU = AtomicReferenceFieldUpdater.newUpdater(StateFlowImpl.class, Object.class, "_state$volatile");
+    private volatile /* synthetic */ Object _state$volatile;
     private int sequence;
 
     private final boolean updateState(Object obj, Object obj2) {
         int i;
         AbstractSharedFlowSlot[] slots;
         synchronized (this) {
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
-            Object obj3 = atomicReferenceFieldUpdater.get(this);
+            Object obj3 = _state$volatile$FU.get(this);
             if (obj != null && !Intrinsics.areEqual(obj3, obj)) {
                 return false;
             }
             if (Intrinsics.areEqual(obj3, obj2)) {
                 return true;
             }
-            atomicReferenceFieldUpdater.set(this, obj2);
+            _state$volatile$FU.set(this, obj2);
             int i2 = this.sequence;
             if ((i2 & 1) != 0) {
                 this.sequence = i2 + 2;
@@ -67,13 +66,13 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
     }
 
     public StateFlowImpl(Object obj) {
-        this._state = obj;
+        this._state$volatile = obj;
     }
 
     @Override // kotlinx.coroutines.flow.MutableStateFlow
     public Object getValue() {
         Symbol symbol = NullSurrogateKt.NULL;
-        Object obj = _state$FU.get(this);
+        Object obj = _state$volatile$FU.get(this);
         if (obj == symbol) {
             return null;
         }
@@ -94,17 +93,17 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0097 A[Catch: all -> 0x0042, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0097, B:19:0x009c, B:21:0x00bd, B:23:0x00c3, B:27:0x00a2, B:30:0x00a9, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x009c A[Catch: all -> 0x0042, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0097, B:19:0x009c, B:21:0x00bd, B:23:0x00c3, B:27:0x00a2, B:30:0x00a9, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00c3 A[Catch: all -> 0x0042, TRY_LEAVE, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0097, B:19:0x009c, B:21:0x00bd, B:23:0x00c3, B:27:0x00a2, B:30:0x00a9, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00a6  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00bb A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0099 A[Catch: all -> 0x0042, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0099, B:19:0x009e, B:21:0x00bf, B:23:0x00c5, B:27:0x00a4, B:30:0x00ab, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x009e A[Catch: all -> 0x0042, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0099, B:19:0x009e, B:21:0x00bf, B:23:0x00c5, B:27:0x00a4, B:30:0x00ab, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00c5 A[Catch: all -> 0x0042, TRY_LEAVE, TryCatch #0 {all -> 0x0042, blocks: (B:14:0x003e, B:15:0x008f, B:17:0x0099, B:19:0x009e, B:21:0x00bf, B:23:0x00c5, B:27:0x00a4, B:30:0x00ab, B:39:0x005f, B:41:0x0071, B:42:0x0080), top: B:7:0x0023 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00bd A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00aa  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x0075  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0025  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x00c1 -> B:15:0x008f). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:24:0x00d3 -> B:15:0x008f). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x00c3 -> B:15:0x008f). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:24:0x00d5 -> B:15:0x008f). Please report as a decompilation issue!!! */
     @Override // kotlinx.coroutines.flow.Flow
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -147,7 +146,7 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
                         ResultKt.throwOnFailure(obj4);
                         if (!stateFlowSlot.takePending()) {
                         }
-                        obj2 = _state$FU.get(stateFlowImpl);
+                        obj2 = _state$volatile$FU.get(stateFlowImpl);
                         if (job != null) {
                         }
                         if (obj != null) {
@@ -172,7 +171,7 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
                         flowCollector2 = (FlowCollector) stateFlowImpl$collect$1.L$1;
                         stateFlowImpl = (StateFlowImpl) stateFlowImpl$collect$1.L$0;
                         ResultKt.throwOnFailure(obj4);
-                        obj2 = _state$FU.get(stateFlowImpl);
+                        obj2 = _state$volatile$FU.get(stateFlowImpl);
                         if (job != null) {
                             JobKt.ensureActive(job);
                         }
@@ -200,7 +199,7 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
                                 return coroutine_suspended;
                             }
                         }
-                        obj2 = _state$FU.get(stateFlowImpl);
+                        obj2 = _state$volatile$FU.get(stateFlowImpl);
                         if (job != null) {
                         }
                         if (obj != null) {
@@ -219,7 +218,7 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
                     flowCollector2 = flowCollector;
                     job = (Job) stateFlowImpl$collect$1.getContext().get(Job.Key);
                     obj = null;
-                    obj2 = _state$FU.get(stateFlowImpl);
+                    obj2 = _state$volatile$FU.get(stateFlowImpl);
                     if (job != null) {
                     }
                     if (obj != null) {
@@ -241,7 +240,7 @@ final class StateFlowImpl extends AbstractSharedFlow implements MutableStateFlow
             flowCollector2 = flowCollector;
             job = (Job) stateFlowImpl$collect$1.getContext().get(Job.Key);
             obj = null;
-            obj2 = _state$FU.get(stateFlowImpl);
+            obj2 = _state$volatile$FU.get(stateFlowImpl);
             if (job != null) {
             }
             if (obj != null) {

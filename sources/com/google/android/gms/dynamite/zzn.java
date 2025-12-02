@@ -1,11 +1,23 @@
 package com.google.android.gms.dynamite;
 
-import android.database.Cursor;
+import android.content.Context;
+import com.google.android.gms.dynamite.DynamiteModule;
 
 /* loaded from: classes.dex */
-final class zzn {
-    public Cursor zza;
+final class zzn implements DynamiteModule.VersionPolicy.IVersions {
+    private final int zza;
 
-    /* synthetic */ zzn(zzm zzmVar) {
+    public zzn(int i, int i2) {
+        this.zza = i;
+    }
+
+    @Override // com.google.android.gms.dynamite.DynamiteModule.VersionPolicy.IVersions
+    public final int zza(Context context, String str) {
+        return this.zza;
+    }
+
+    @Override // com.google.android.gms.dynamite.DynamiteModule.VersionPolicy.IVersions
+    public final int zzb(Context context, String str, boolean z) {
+        return 0;
     }
 }

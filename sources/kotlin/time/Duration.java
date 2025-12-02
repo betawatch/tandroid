@@ -3,12 +3,11 @@ package kotlin.time;
 import com.google.firebase.sessions.SessionDetails$$ExternalSyntheticBackport0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.LongRange;
 import kotlin.text.StringsKt;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Duration implements Comparable {
     private static final long INFINITE;
     private static final long NEG_INFINITE;
@@ -76,14 +75,17 @@ public final class Duration implements Comparable {
     public static long constructor-impl(long j) {
         if (DurationJvmKt.getDurationAssertionsEnabled()) {
             if (isInNanos-impl(j)) {
-                if (!new LongRange(-4611686018426999999L, 4611686018426999999L).contains(getValue-impl(j))) {
+                long j2 = getValue-impl(j);
+                if (-4611686018426999999L > j2 || j2 >= 4611686018427000000L) {
                     throw new AssertionError(getValue-impl(j) + " ns is out of nanoseconds range");
                 }
             } else {
-                if (!new LongRange(-4611686018427387903L, 4611686018427387903L).contains(getValue-impl(j))) {
+                long j3 = getValue-impl(j);
+                if (-4611686018427387903L > j3 || j3 >= 4611686018427387904L) {
                     throw new AssertionError(getValue-impl(j) + " ms is out of milliseconds range");
                 }
-                if (new LongRange(-4611686018426L, 4611686018426L).contains(getValue-impl(j))) {
+                long j4 = getValue-impl(j);
+                if (-4611686018426L <= j4 && j4 < 4611686018427L) {
                     throw new AssertionError(getValue-impl(j) + " ms is denormalized");
                 }
             }
@@ -278,9 +280,7 @@ public final class Duration implements Comparable {
         if (z && i5 > 1) {
             sb.insert(1, '(').append(')');
         }
-        String sb2 = sb.toString();
-        Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder().apply(builderAction).toString()");
-        return sb2;
+        return sb.toString();
     }
 
     private static final void appendFractional-impl(long j, StringBuilder sb, int i, int i2, int i3, String str, boolean z) {
@@ -306,10 +306,10 @@ public final class Duration implements Comparable {
             int i6 = i4 + 1;
             if (!z && i6 < 3) {
                 sb.append((CharSequence) padStart, 0, i6);
-                Intrinsics.checkNotNullExpressionValue(sb, "this.append(value, startIndex, endIndex)");
+                Intrinsics.checkNotNullExpressionValue(sb, "append(...)");
             } else {
                 sb.append((CharSequence) padStart, 0, ((i4 + 3) / 3) * 3);
-                Intrinsics.checkNotNullExpressionValue(sb, "this.append(value, startIndex, endIndex)");
+                Intrinsics.checkNotNullExpressionValue(sb, "append(...)");
             }
         }
         sb.append(str);

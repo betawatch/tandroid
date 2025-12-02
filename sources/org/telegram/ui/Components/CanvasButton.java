@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.BaseCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CanvasButton {
     private static final int[] pressedState = {R.attr.state_enabled, R.attr.state_pressed};
     boolean buttonPressed;

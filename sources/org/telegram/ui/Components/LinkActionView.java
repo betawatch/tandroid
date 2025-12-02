@@ -42,7 +42,7 @@ import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.DialogCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class LinkActionView extends LinearLayout {
     private ActionBarPopupWindow actionBarPopupWindow;
     private final AvatarsContainer avatarsContainer;

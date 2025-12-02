@@ -12,7 +12,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.FloatingToolbar;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MenuToItemOptions implements Menu {
     private final ItemOptions itemOptions;
     private final Utilities.Callback onMenuClicked;

@@ -6,7 +6,7 @@ import android.app.Application;
 import android.content.ComponentCallbacks2;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import com.google.android.gms.common.util.PlatformVersion;
+import com.google.android.gms.common.util.ProcessUtils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -126,7 +126,7 @@ public final class BackgroundDetector implements Application.ActivityLifecycleCa
 
     public boolean readCurrentStateIfPossible(boolean z) {
         if (!this.zzc.get()) {
-            if (!PlatformVersion.isAtLeastJellyBean()) {
+            if (ProcessUtils.zza()) {
                 return z;
             }
             ActivityManager.RunningAppProcessInfo runningAppProcessInfo = new ActivityManager.RunningAppProcessInfo();

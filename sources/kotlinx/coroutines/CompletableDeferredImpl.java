@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class CompletableDeferredImpl extends JobSupport implements CompletableDeferred {
     @Override // kotlinx.coroutines.JobSupport
     public boolean getOnCancelComplete$kotlinx_coroutines_core() {

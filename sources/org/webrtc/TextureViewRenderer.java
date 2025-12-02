@@ -19,7 +19,7 @@ import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class TextureViewRenderer extends TextureView implements TextureView.SurfaceTextureListener, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "TextureViewRenderer";
     private TextureView backgroundRenderer;

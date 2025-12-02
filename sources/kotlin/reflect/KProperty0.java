@@ -2,7 +2,7 @@ package kotlin.reflect;
 
 import kotlin.jvm.functions.Function0;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface KProperty0 extends KProperty, Function0 {
     Object get();
 }

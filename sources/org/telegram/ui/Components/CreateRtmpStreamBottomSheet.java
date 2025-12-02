@@ -39,7 +39,7 @@ import org.telegram.ui.Components.TextStyleSpan;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CreateRtmpStreamBottomSheet extends BottomSheetWithRecyclerListView {
     private UniversalAdapter adapter;
     private boolean hasButton;

@@ -59,7 +59,7 @@ import org.telegram.ui.Stories.StoriesUtilities;
 import org.telegram.ui.Stories.StoryViewer;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAvatarContainer extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public boolean allowDrawStories;
     public boolean allowShorterStatus;
@@ -603,7 +603,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         };
         final ActionBarPopupWindow[] actionBarPopupWindowArr = {actionBarPopupWindow};
         actionBarPopupWindow.setPauseNotifications(true);
-        actionBarPopupWindowArr[0].setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+        actionBarPopupWindowArr[0].setDismissAnimationDuration(220);
         actionBarPopupWindowArr[0].setOutsideTouchable(true);
         actionBarPopupWindowArr[0].setClippingEnabled(true);
         actionBarPopupWindowArr[0].setAnimationStyle(R.style.PopupContextAnimation);

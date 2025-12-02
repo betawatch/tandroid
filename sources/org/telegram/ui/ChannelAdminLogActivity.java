@@ -2037,7 +2037,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
         };
         this.scrimPopupWindow = actionBarPopupWindow;
         actionBarPopupWindow.setPauseNotifications(true);
-        this.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+        this.scrimPopupWindow.setDismissAnimationDuration(220);
         this.scrimPopupWindow.setOutsideTouchable(true);
         this.scrimPopupWindow.setClippingEnabled(true);
         this.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);

@@ -2,7 +2,7 @@ package kotlin.time;
 
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class DurationUnitKt__DurationUnitJvmKt {
     public static final long convertDurationUnitOverflow(long j, DurationUnit sourceUnit, DurationUnit targetUnit) {
         Intrinsics.checkNotNullParameter(sourceUnit, "sourceUnit");

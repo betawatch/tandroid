@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.DispatchQueue;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ProfileMetaballView extends View {
     public static final DispatchQueue profileBlurQueue = new DispatchQueue("profileBlurQueue");
 

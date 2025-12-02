@@ -2,14 +2,16 @@ package kotlin.collections;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Set;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     public static final boolean contains(Object[] objArr, Object obj) {
         Intrinsics.checkNotNullParameter(objArr, "<this>");
@@ -18,7 +20,7 @@ public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
 
     public static Object getOrNull(Object[] objArr, int i) {
         Intrinsics.checkNotNullParameter(objArr, "<this>");
-        if (i < 0 || i > getLastIndex(objArr)) {
+        if (i < 0 || i >= objArr.length) {
             return null;
         }
         return objArr[i];
@@ -86,6 +88,15 @@ public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
     public static final int getLastIndex(Object[] objArr) {
         Intrinsics.checkNotNullParameter(objArr, "<this>");
         return objArr.length - 1;
+    }
+
+    public static final Collection toCollection(Object[] objArr, Collection destination) {
+        Intrinsics.checkNotNullParameter(objArr, "<this>");
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        for (Object obj : objArr) {
+            destination.add(obj);
+        }
+        return destination;
     }
 
     public static List toList(Object[] objArr) {
@@ -229,6 +240,18 @@ public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
             arrayList.add(Double.valueOf(d));
         }
         return arrayList;
+    }
+
+    public static final Set toSet(Object[] objArr) {
+        Intrinsics.checkNotNullParameter(objArr, "<this>");
+        int length = objArr.length;
+        if (length == 0) {
+            return SetsKt.emptySet();
+        }
+        if (length == 1) {
+            return SetsKt__SetsJVMKt.setOf(objArr[0]);
+        }
+        return (Set) toCollection(objArr, new LinkedHashSet(MapsKt.mapCapacity(objArr.length)));
     }
 
     public static final Appendable joinTo(Object[] objArr, Appendable buffer, CharSequence separator, CharSequence prefix, CharSequence postfix, int i, CharSequence truncated, Function1 function1) {
@@ -430,9 +453,7 @@ public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
         Intrinsics.checkNotNullParameter(truncated, "truncated");
-        String sb = ((StringBuilder) joinTo(objArr, new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
-        Intrinsics.checkNotNullExpressionValue(sb, "joinTo(StringBuilder(), …ed, transform).toString()");
-        return sb;
+        return ((StringBuilder) joinTo(objArr, new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
     }
 
     public static /* synthetic */ String joinToString$default(short[] sArr, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, int i, CharSequence charSequence4, Function1 function1, int i2, Object obj) {
@@ -458,9 +479,7 @@ public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
         Intrinsics.checkNotNullParameter(truncated, "truncated");
-        String sb = ((StringBuilder) joinTo(sArr, (Appendable) new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
-        Intrinsics.checkNotNullExpressionValue(sb, "joinTo(StringBuilder(), …ed, transform).toString()");
-        return sb;
+        return ((StringBuilder) joinTo(sArr, (Appendable) new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
     }
 
     public static /* synthetic */ String joinToString$default(int[] iArr, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, int i, CharSequence charSequence4, Function1 function1, int i2, Object obj) {
@@ -486,9 +505,7 @@ public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
         Intrinsics.checkNotNullParameter(truncated, "truncated");
-        String sb = ((StringBuilder) joinTo(iArr, (Appendable) new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
-        Intrinsics.checkNotNullExpressionValue(sb, "joinTo(StringBuilder(), …ed, transform).toString()");
-        return sb;
+        return ((StringBuilder) joinTo(iArr, (Appendable) new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
     }
 
     public static /* synthetic */ String joinToString$default(long[] jArr, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, int i, CharSequence charSequence4, Function1 function1, int i2, Object obj) {
@@ -514,9 +531,7 @@ public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
         Intrinsics.checkNotNullParameter(truncated, "truncated");
-        String sb = ((StringBuilder) joinTo(jArr, (Appendable) new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
-        Intrinsics.checkNotNullExpressionValue(sb, "joinTo(StringBuilder(), …ed, transform).toString()");
-        return sb;
+        return ((StringBuilder) joinTo(jArr, (Appendable) new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
     }
 
     public static /* synthetic */ String joinToString$default(float[] fArr, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, int i, CharSequence charSequence4, Function1 function1, int i2, Object obj) {
@@ -542,9 +557,7 @@ public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
         Intrinsics.checkNotNullParameter(truncated, "truncated");
-        String sb = ((StringBuilder) joinTo(fArr, (Appendable) new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
-        Intrinsics.checkNotNullExpressionValue(sb, "joinTo(StringBuilder(), …ed, transform).toString()");
-        return sb;
+        return ((StringBuilder) joinTo(fArr, (Appendable) new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
     }
 
     public static /* synthetic */ String joinToString$default(double[] dArr, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, int i, CharSequence charSequence4, Function1 function1, int i2, Object obj) {
@@ -570,8 +583,6 @@ public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
         Intrinsics.checkNotNullParameter(truncated, "truncated");
-        String sb = ((StringBuilder) joinTo(dArr, new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
-        Intrinsics.checkNotNullExpressionValue(sb, "joinTo(StringBuilder(), …ed, transform).toString()");
-        return sb;
+        return ((StringBuilder) joinTo(dArr, new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
     }
 }

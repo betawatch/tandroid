@@ -9,7 +9,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 import kotlinx.coroutines.internal.ThreadContextKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class UndispatchedCoroutine extends ScopeCoroutine {
     private volatile boolean threadLocalIsSet;
     private final ThreadLocal threadStateToRecover;

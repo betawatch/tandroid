@@ -12,7 +12,7 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.MediaDataController;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class FileVideoCapturer implements VideoCapturer {
     private static final String TAG = "FileVideoCapturer";
     private CapturerObserver capturerObserver;

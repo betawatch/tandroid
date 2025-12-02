@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import kotlin.coroutines.CoroutineContext;
 import kotlinx.coroutines.internal.ConcurrentKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDispatcher implements Delay {
     private final Executor executor;
 
@@ -26,10 +26,10 @@ public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDisp
     public void dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         try {
             Executor executor = getExecutor();
-            AbstractTimeSourceKt.getTimeSource();
+            AbstractTimeSourceKt.access$getTimeSource$p();
             executor.execute(runnable);
         } catch (RejectedExecutionException e) {
-            AbstractTimeSourceKt.getTimeSource();
+            AbstractTimeSourceKt.access$getTimeSource$p();
             cancelJobOnRejection(coroutineContext, e);
             Dispatchers.getIO().dispatch(coroutineContext, runnable);
         }

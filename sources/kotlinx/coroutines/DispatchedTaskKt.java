@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.ThreadContextKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class DispatchedTaskKt {
     public static final boolean isCancellableMode(int i) {
         return i == 1 || i == 2;

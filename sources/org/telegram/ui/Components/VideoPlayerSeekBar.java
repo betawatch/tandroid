@@ -26,7 +26,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class VideoPlayerSeekBar {
     private static Paint paint;
     private static Paint strokePaint;

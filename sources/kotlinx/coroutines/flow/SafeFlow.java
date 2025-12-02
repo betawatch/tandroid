@@ -5,7 +5,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function2;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class SafeFlow extends AbstractFlow {
     private final Function2 block;
 

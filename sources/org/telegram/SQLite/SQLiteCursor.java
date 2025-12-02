@@ -4,7 +4,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.NativeByteBuffer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class SQLiteCursor {
     public static final int FIELD_TYPE_BYTEARRAY = 4;
     public static final int FIELD_TYPE_FLOAT = 2;

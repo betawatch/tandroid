@@ -14,7 +14,9 @@ public abstract class zzi extends zzb implements zzj {
         if (i != 1) {
             return false;
         }
-        zzb((Status) zzc.zza(parcel, Status.CREATOR));
+        Status status = (Status) zzc.zza(parcel, Status.CREATOR);
+        zzc.zzb(parcel);
+        zzb(status);
         return true;
     }
 }

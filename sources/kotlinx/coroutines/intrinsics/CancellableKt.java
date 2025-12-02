@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.internal.DispatchedContinuationKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CancellableKt {
     public static /* synthetic */ void startCoroutineCancellable$default(Function2 function2, Object obj, Continuation continuation, Function1 function1, int i, Object obj2) {
         if ((i & 4) != 0) {

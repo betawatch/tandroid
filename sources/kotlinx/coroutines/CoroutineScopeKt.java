@@ -9,7 +9,7 @@ import kotlinx.coroutines.internal.ContextScope;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 import kotlinx.coroutines.intrinsics.UndispatchedKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CoroutineScopeKt {
     public static final CoroutineScope MainScope() {
         return new ContextScope(SupervisorKt.SupervisorJob$default(null, 1, null).plus(Dispatchers.getMain()));

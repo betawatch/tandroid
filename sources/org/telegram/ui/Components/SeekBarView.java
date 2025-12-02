@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AudioPlayerAlert;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SeekBarView extends FrameLayout {
     private static Path tmpPath;
     private static float[] tmpRadii;

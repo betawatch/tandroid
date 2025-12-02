@@ -162,13 +162,13 @@ public class TextureRenderer {
         return this.collageParts != null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0229  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x04ac  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x057f  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0586  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x051d  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0480  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x024f  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x04ab  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x057e  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0585  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x051c  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x047f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -973,26 +973,26 @@ public class TextureRenderer {
         editTextOutline.setBreakStrategy(0);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0026, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0023, code lost:
     
         r11 = org.telegram.messenger.video.TextureRenderer.VERTEX_SHADER;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0039, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0034, code lost:
     
         r12 = r11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0037, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0032, code lost:
     
         if (r9 != null) goto L21;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0023, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0020, code lost:
     
         if (r9 != null) goto L21;
      */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0434  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x043c  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x043f  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x0437  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0426  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x042e  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x0431  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x0429  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

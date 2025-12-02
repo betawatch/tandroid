@@ -55,23 +55,20 @@ public abstract class Preconditions {
     }
 
     public static void checkMainThread(String str) {
-        if (!com.google.android.gms.common.util.zzb.zza()) {
+        if (!com.google.android.gms.common.util.zzd.zza()) {
             throw new IllegalStateException(str);
         }
     }
 
     public static void checkNotGoogleApiHandlerThread(String str) {
         Looper myLooper = Looper.myLooper();
-        if (myLooper != null) {
-            String name = myLooper.getThread().getName();
-            if (name == "GoogleApiHandler" || (name != null && name.equals("GoogleApiHandler"))) {
-                throw new IllegalStateException(str);
-            }
+        if (myLooper != null && j$.util.Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
+            throw new IllegalStateException(str);
         }
     }
 
     public static void checkNotMainThread(String str) {
-        if (com.google.android.gms.common.util.zzb.zza()) {
+        if (com.google.android.gms.common.util.zzd.zza()) {
             throw new IllegalStateException(str);
         }
     }

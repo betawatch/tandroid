@@ -13,14 +13,14 @@ import kotlinx.coroutines.internal.Symbol;
 import kotlinx.coroutines.internal.ThreadSafeHeap;
 import kotlinx.coroutines.internal.ThreadSafeHeapNode;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class EventLoopImplBase extends EventLoopImplPlatform implements Delay {
-    private volatile Object _delayed;
-    private volatile int _isCompleted = 0;
-    private volatile Object _queue;
-    private static final AtomicReferenceFieldUpdater _queue$FU = AtomicReferenceFieldUpdater.newUpdater(EventLoopImplBase.class, Object.class, "_queue");
-    private static final AtomicReferenceFieldUpdater _delayed$FU = AtomicReferenceFieldUpdater.newUpdater(EventLoopImplBase.class, Object.class, "_delayed");
-    private static final AtomicIntegerFieldUpdater _isCompleted$FU = AtomicIntegerFieldUpdater.newUpdater(EventLoopImplBase.class, "_isCompleted");
+    private volatile /* synthetic */ Object _delayed$volatile;
+    private volatile /* synthetic */ int _isCompleted$volatile = 0;
+    private volatile /* synthetic */ Object _queue$volatile;
+    private static final /* synthetic */ AtomicReferenceFieldUpdater _queue$volatile$FU = AtomicReferenceFieldUpdater.newUpdater(EventLoopImplBase.class, Object.class, "_queue$volatile");
+    private static final /* synthetic */ AtomicReferenceFieldUpdater _delayed$volatile$FU = AtomicReferenceFieldUpdater.newUpdater(EventLoopImplBase.class, Object.class, "_delayed$volatile");
+    private static final /* synthetic */ AtomicIntegerFieldUpdater _isCompleted$volatile$FU = AtomicIntegerFieldUpdater.newUpdater(EventLoopImplBase.class, "_isCompleted$volatile");
 
     public static abstract class DelayedTask implements Runnable, Comparable, DisposableHandle, ThreadSafeHeapNode {
         private volatile Object _heap;
@@ -148,11 +148,11 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean isCompleted() {
-        return _isCompleted$FU.get(this) != 0;
+        return _isCompleted$volatile$FU.get(this) != 0;
     }
 
     private final void setCompleted(boolean z) {
-        _isCompleted$FU.set(this, z ? 1 : 0);
+        _isCompleted$volatile$FU.set(this, z ? 1 : 0);
     }
 
     protected boolean isEmpty() {
@@ -160,11 +160,11 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
         if (!isUnconfinedQueueEmpty()) {
             return false;
         }
-        DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) _delayed$FU.get(this);
+        DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) _delayed$volatile$FU.get(this);
         if (delayedTaskQueue != null && !delayedTaskQueue.isEmpty()) {
             return false;
         }
-        Object obj = _queue$FU.get(this);
+        Object obj = _queue$volatile$FU.get(this);
         if (obj != null) {
             if (obj instanceof LockFreeTaskQueueCore) {
                 return ((LockFreeTaskQueueCore) obj).isEmpty();
@@ -184,7 +184,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
         if (super.getNextTime() == 0) {
             return 0L;
         }
-        Object obj = _queue$FU.get(this);
+        Object obj = _queue$volatile$FU.get(this);
         if (obj != null) {
             if (!(obj instanceof LockFreeTaskQueueCore)) {
                 symbol = EventLoop_commonKt.CLOSED_EMPTY;
@@ -194,12 +194,12 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
                 return 0L;
             }
         }
-        DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) _delayed$FU.get(this);
+        DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) _delayed$volatile$FU.get(this);
         if (delayedTaskQueue == null || (delayedTask = (DelayedTask) delayedTaskQueue.peek()) == null) {
             return Long.MAX_VALUE;
         }
         long j = delayedTask.nanoTime;
-        AbstractTimeSourceKt.getTimeSource();
+        AbstractTimeSourceKt.access$getTimeSource$p();
         return RangesKt.coerceAtLeast(j - System.nanoTime(), 0L);
     }
 
@@ -216,7 +216,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     protected final DisposableHandle scheduleInvokeOnTimeout(long j, Runnable runnable) {
         long delayToNanos = EventLoop_commonKt.delayToNanos(j);
         if (delayToNanos < 4611686018427387903L) {
-            AbstractTimeSourceKt.getTimeSource();
+            AbstractTimeSourceKt.access$getTimeSource$p();
             long nanoTime = System.nanoTime();
             DelayedRunnableTask delayedRunnableTask = new DelayedRunnableTask(delayToNanos + nanoTime, runnable);
             schedule(nanoTime, delayedRunnableTask);
@@ -231,9 +231,9 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
         if (processUnconfinedEvent()) {
             return 0L;
         }
-        DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) _delayed$FU.get(this);
+        DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) _delayed$volatile$FU.get(this);
         if (delayedTaskQueue != null && !delayedTaskQueue.isEmpty()) {
-            AbstractTimeSourceKt.getTimeSource();
+            AbstractTimeSourceKt.access$getTimeSource$p();
             long nanoTime = System.nanoTime();
             do {
                 synchronized (delayedTaskQueue) {
@@ -272,14 +272,14 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     private final boolean enqueueImpl(Runnable runnable) {
         Symbol symbol;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _queue$FU;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _queue$volatile$FU;
         while (true) {
             Object obj = atomicReferenceFieldUpdater.get(this);
             if (isCompleted()) {
                 return false;
             }
             if (obj == null) {
-                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$FU, this, null, runnable)) {
+                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$volatile$FU, this, null, runnable)) {
                     return true;
                 }
             } else if (!(obj instanceof LockFreeTaskQueueCore)) {
@@ -291,7 +291,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
                 Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type java.lang.Runnable{ kotlinx.coroutines.RunnableKt.Runnable }");
                 lockFreeTaskQueueCore.addLast((Runnable) obj);
                 lockFreeTaskQueueCore.addLast(runnable);
-                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$FU, this, obj, lockFreeTaskQueueCore)) {
+                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$volatile$FU, this, obj, lockFreeTaskQueueCore)) {
                     return true;
                 }
             } else {
@@ -302,7 +302,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
                     return true;
                 }
                 if (addLast == 1) {
-                    AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$FU, this, obj, lockFreeTaskQueueCore2.next());
+                    AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$volatile$FU, this, obj, lockFreeTaskQueueCore2.next());
                 } else if (addLast == 2) {
                     return false;
                 }
@@ -312,7 +312,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     private final Runnable dequeue() {
         Symbol symbol;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _queue$FU;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _queue$volatile$FU;
         while (true) {
             Object obj = atomicReferenceFieldUpdater.get(this);
             if (obj == null) {
@@ -323,7 +323,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
                 if (obj == symbol) {
                     return null;
                 }
-                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$FU, this, obj, null)) {
+                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$volatile$FU, this, obj, null)) {
                     Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type java.lang.Runnable{ kotlinx.coroutines.RunnableKt.Runnable }");
                     return (Runnable) obj;
                 }
@@ -334,7 +334,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
                 if (removeFirstOrNull != LockFreeTaskQueueCore.REMOVE_FROZEN) {
                     return (Runnable) removeFirstOrNull;
                 }
-                AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$FU, this, obj, lockFreeTaskQueueCore.next());
+                AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$volatile$FU, this, obj, lockFreeTaskQueueCore.next());
             }
         }
     }
@@ -342,11 +342,11 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     private final void closeQueue() {
         Symbol symbol;
         Symbol symbol2;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _queue$FU;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _queue$volatile$FU;
         while (true) {
             Object obj = atomicReferenceFieldUpdater.get(this);
             if (obj == null) {
-                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = _queue$FU;
+                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = _queue$volatile$FU;
                 symbol = EventLoop_commonKt.CLOSED_EMPTY;
                 if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater2, this, null, symbol)) {
                     return;
@@ -359,7 +359,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
                 LockFreeTaskQueueCore lockFreeTaskQueueCore = new LockFreeTaskQueueCore(8, true);
                 Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type java.lang.Runnable{ kotlinx.coroutines.RunnableKt.Runnable }");
                 lockFreeTaskQueueCore.addLast((Runnable) obj);
-                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$FU, this, obj, lockFreeTaskQueueCore)) {
+                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_queue$volatile$FU, this, obj, lockFreeTaskQueueCore)) {
                     return;
                 }
             } else {
@@ -383,7 +383,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     }
 
     private final boolean shouldUnpark(DelayedTask delayedTask) {
-        DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) _delayed$FU.get(this);
+        DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) _delayed$volatile$FU.get(this);
         return (delayedTaskQueue != null ? (DelayedTask) delayedTaskQueue.peek() : null) == delayedTask;
     }
 
@@ -391,11 +391,10 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
         if (isCompleted()) {
             return 1;
         }
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _delayed$FU;
-        DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) atomicReferenceFieldUpdater.get(this);
+        DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) _delayed$volatile$FU.get(this);
         if (delayedTaskQueue == null) {
-            AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater, this, null, new DelayedTaskQueue(j));
-            Object obj = atomicReferenceFieldUpdater.get(this);
+            AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_delayed$volatile$FU, this, null, new DelayedTaskQueue(j));
+            Object obj = _delayed$volatile$FU.get(this);
             Intrinsics.checkNotNull(obj);
             delayedTaskQueue = (DelayedTaskQueue) obj;
         }
@@ -403,16 +402,16 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     }
 
     protected final void resetAll() {
-        _queue$FU.set(this, null);
-        _delayed$FU.set(this, null);
+        _queue$volatile$FU.set(this, null);
+        _delayed$volatile$FU.set(this, null);
     }
 
     private final void rescheduleAllDelayed() {
         DelayedTask delayedTask;
-        AbstractTimeSourceKt.getTimeSource();
+        AbstractTimeSourceKt.access$getTimeSource$p();
         long nanoTime = System.nanoTime();
         while (true) {
-            DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) _delayed$FU.get(this);
+            DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) _delayed$volatile$FU.get(this);
             if (delayedTaskQueue == null || (delayedTask = (DelayedTask) delayedTaskQueue.removeFirstOrNull()) == null) {
                 return;
             } else {

@@ -17,7 +17,7 @@ import java.lang.ref.WeakReference;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.utils.ColorShader;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MotionBackgroundPaint {
     private ColorShader alphaShader;
     private int alphaShaderLastAlpha;

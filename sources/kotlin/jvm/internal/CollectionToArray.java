@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CollectionToArray {
     private static final Object[] EMPTY = new Object[0];
 
@@ -52,14 +52,14 @@ public abstract class CollectionToArray {
                     }
                 }
                 objArr2 = Arrays.copyOf(objArr2, i3);
-                Intrinsics.checkNotNullExpressionValue(objArr2, "copyOf(result, newSize)");
+                Intrinsics.checkNotNullExpressionValue(objArr2, "copyOf(...)");
             } else if (!it.hasNext()) {
                 if (objArr2 == objArr) {
                     objArr[i2] = null;
                     return objArr;
                 }
                 Object[] copyOf = Arrays.copyOf(objArr2, i2);
-                Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(result, size)");
+                Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
                 return copyOf;
             }
             i = i2;
@@ -89,10 +89,10 @@ public abstract class CollectionToArray {
                             }
                         }
                         objArr = Arrays.copyOf(objArr, i3);
-                        Intrinsics.checkNotNullExpressionValue(objArr, "copyOf(result, newSize)");
+                        Intrinsics.checkNotNullExpressionValue(objArr, "copyOf(...)");
                     } else if (!it.hasNext()) {
                         Object[] copyOf = Arrays.copyOf(objArr, i2);
-                        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(result, size)");
+                        Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
                         return copyOf;
                     }
                     i = i2;

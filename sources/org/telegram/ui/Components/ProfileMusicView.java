@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ProfileActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ProfileMusicView extends View {
     private final Paint arrowPaint;
     private final Path arrowPath;

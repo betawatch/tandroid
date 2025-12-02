@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicReference;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ConstrainedOnceSequence implements Sequence {
     private final AtomicReference sequenceRef;
 

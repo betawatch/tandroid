@@ -12,6 +12,13 @@ public final class Objects {
         return obj == obj2 || (obj != null && obj.equals(obj2));
     }
 
+    public static int hashCode(Object obj) {
+        if (obj != null) {
+            return obj.hashCode();
+        }
+        return 0;
+    }
+
     public static int hash(Object... objArr) {
         return Arrays.hashCode(objArr);
     }

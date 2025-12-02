@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.fragment.app.FragmentActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.SignInAccount;
 import com.google.android.gms.common.api.Status;
 
@@ -69,10 +68,12 @@ public class SignInHubActivity extends FragmentActivity {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && signInAccount.zba() != null) {
                 GoogleSignInAccount zba2 = signInAccount.zba();
-                zbn zbc = zbn.zbc(this);
-                GoogleSignInOptions zba3 = this.zbc.zba();
-                zba2.getClass();
-                zbc.zbe(zba3, zba2);
+                if (zba2 == null) {
+                    Log.e("AuthSignInClient", "Google account is null");
+                    zbd(12500);
+                    return;
+                }
+                zbn.zbc(this).zbe(this.zbc.zba(), zba2);
                 intent.removeExtra("signInAccount");
                 intent.putExtra("googleSignInAccount", zba2);
                 this.zbd = true;
@@ -98,8 +99,13 @@ public class SignInHubActivity extends FragmentActivity {
         super.onCreate(bundle);
         Intent intent = getIntent();
         String action = intent.getAction();
-        action.getClass();
-        if ("com.google.android.gms.auth.NO_IMPL".equals(action)) {
+        if (action == null) {
+            Log.e("AuthSignInClient", "Null action");
+            zbd(12500);
+            return;
+        }
+        if (action.equals("com.google.android.gms.auth.NO_IMPL")) {
+            Log.e("AuthSignInClient", "Action not implemented");
             zbd(12500);
             return;
         }
@@ -109,7 +115,12 @@ public class SignInHubActivity extends FragmentActivity {
             return;
         }
         Bundle bundleExtra = intent.getBundleExtra("config");
-        bundleExtra.getClass();
+        if (bundleExtra == null) {
+            Log.e("AuthSignInClient", "Activity started with no configuration.");
+            setResult(0);
+            finish();
+            return;
+        }
         SignInConfiguration signInConfiguration = (SignInConfiguration) bundleExtra.getParcelable("config");
         if (signInConfiguration == null) {
             Log.e("AuthSignInClient", "Activity started with invalid configuration.");
@@ -134,9 +145,14 @@ public class SignInHubActivity extends FragmentActivity {
         if (z) {
             this.zbe = bundle.getInt("signInResultCode");
             Intent intent2 = (Intent) bundle.getParcelable("signInResultData");
-            intent2.getClass();
-            this.zbf = intent2;
-            zbc();
+            if (intent2 != null) {
+                this.zbf = intent2;
+                zbc();
+            } else {
+                Log.e("AuthSignInClient", "Sign in result data cannot be null");
+                setResult(0);
+                finish();
+            }
         }
     }
 

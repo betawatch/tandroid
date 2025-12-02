@@ -45,11 +45,7 @@ public abstract class DeviceProperties {
 
     public static boolean zza(Context context) {
         if (zzf == null) {
-            boolean z = false;
-            if (PlatformVersion.isAtLeastLollipop() && context.getPackageManager().hasSystemFeature("cn.google")) {
-                z = true;
-            }
-            zzf = Boolean.valueOf(z);
+            zzf = Boolean.valueOf(context.getPackageManager().hasSystemFeature("cn.google"));
         }
         return zzf.booleanValue();
     }
@@ -67,11 +63,7 @@ public abstract class DeviceProperties {
 
     public static boolean zzd(PackageManager packageManager) {
         if (zze == null) {
-            boolean z = false;
-            if (PlatformVersion.isAtLeastKitKatWatch() && packageManager.hasSystemFeature("android.hardware.type.watch")) {
-                z = true;
-            }
-            zze = Boolean.valueOf(z);
+            zze = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
         }
         return zze.booleanValue();
     }

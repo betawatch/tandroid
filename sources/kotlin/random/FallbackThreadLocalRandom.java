@@ -2,7 +2,7 @@ package kotlin.random;
 
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class FallbackThreadLocalRandom extends AbstractPlatformRandom {
     private final FallbackThreadLocalRandom$implStorage$1 implStorage = new ThreadLocal() { // from class: kotlin.random.FallbackThreadLocalRandom$implStorage$1
         /* JADX INFO: Access modifiers changed from: protected */
@@ -15,7 +15,7 @@ public final class FallbackThreadLocalRandom extends AbstractPlatformRandom {
     @Override // kotlin.random.AbstractPlatformRandom
     public java.util.Random getImpl() {
         Object obj = get();
-        Intrinsics.checkNotNullExpressionValue(obj, "implStorage.get()");
+        Intrinsics.checkNotNullExpressionValue(obj, "get(...)");
         return (java.util.Random) obj;
     }
 }

@@ -9,7 +9,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AwaitKt {
     public static final Object awaitAll(Deferred[] deferredArr, Continuation continuation) {
         return deferredArr.length == 0 ? CollectionsKt.emptyList() : new AwaitAll(deferredArr).await(continuation);

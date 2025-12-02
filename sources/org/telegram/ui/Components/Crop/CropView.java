@@ -35,7 +35,7 @@ import org.telegram.ui.Components.Crop.CropGestureDetector;
 import org.telegram.ui.Components.PaintingOverlay;
 import org.telegram.ui.Components.VideoEditTextureView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CropView extends FrameLayout implements CropAreaView.AreaViewListener, CropGestureDetector.CropGestureListener {
     private boolean animating;
     public CropAreaView areaView;

@@ -2,13 +2,14 @@ package com.google.android.gms.common.internal;
 
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.StrictMode;
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.stats.ConnectionTracker;
-import com.google.android.gms.common.util.PlatformVersion;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -27,6 +28,55 @@ final class zzp implements ServiceConnection, zzt {
     public zzp(zzs zzsVar, zzo zzoVar) {
         this.zza = zzsVar;
         this.zzf = zzoVar;
+    }
+
+    static /* bridge */ /* synthetic */ ConnectionResult zzd(zzp zzpVar, String str, Executor executor) {
+        Context context;
+        ConnectionTracker connectionTracker;
+        Context context2;
+        ConnectionResult connectionResult;
+        ConnectionTracker connectionTracker2;
+        Context context3;
+        Handler handler;
+        Handler handler2;
+        long j;
+        try {
+            zzo zzoVar = zzpVar.zzf;
+            context = zzpVar.zza.zzc;
+            Intent zzb = zzoVar.zzb(context);
+            zzpVar.zzc = 3;
+            StrictMode.VmPolicy zza = com.google.android.gms.common.util.zzc.zza();
+            try {
+                zzs zzsVar = zzpVar.zza;
+                connectionTracker = zzsVar.zzf;
+                context2 = zzsVar.zzc;
+                boolean zza2 = connectionTracker.zza(context2, str, zzb, zzpVar, 4225, executor);
+                zzpVar.zzd = zza2;
+                if (zza2) {
+                    handler = zzpVar.zza.zzd;
+                    Message obtainMessage = handler.obtainMessage(1, zzpVar.zzf);
+                    handler2 = zzpVar.zza.zzd;
+                    j = zzpVar.zza.zzh;
+                    handler2.sendMessageDelayed(obtainMessage, j);
+                    connectionResult = ConnectionResult.RESULT_SUCCESS;
+                } else {
+                    zzpVar.zzc = 2;
+                    try {
+                        zzs zzsVar2 = zzpVar.zza;
+                        connectionTracker2 = zzsVar2.zzf;
+                        context3 = zzsVar2.zzc;
+                        connectionTracker2.unbindService(context3, zzpVar);
+                    } catch (IllegalArgumentException unused) {
+                    }
+                    connectionResult = new ConnectionResult(16);
+                }
+                return connectionResult;
+            } finally {
+                StrictMode.setVmPolicy(zza);
+            }
+        } catch (zzaj e) {
+            return e.zza;
+        }
     }
 
     @Override // android.content.ServiceConnection
@@ -90,55 +140,8 @@ final class zzp implements ServiceConnection, zzt {
         return this.zze;
     }
 
-    public final void zzd(ServiceConnection serviceConnection, ServiceConnection serviceConnection2, String str) {
+    public final void zze(ServiceConnection serviceConnection, ServiceConnection serviceConnection2, String str) {
         this.zzb.put(serviceConnection, serviceConnection2);
-    }
-
-    public final void zze(String str, Executor executor) {
-        ConnectionTracker connectionTracker;
-        Context context;
-        Context context2;
-        ConnectionTracker connectionTracker2;
-        Context context3;
-        Handler handler;
-        Handler handler2;
-        long j;
-        StrictMode.VmPolicy.Builder permitUnsafeIntentLaunch;
-        this.zzc = 3;
-        StrictMode.VmPolicy vmPolicy = StrictMode.getVmPolicy();
-        if (PlatformVersion.isAtLeastS()) {
-            permitUnsafeIntentLaunch = new StrictMode.VmPolicy.Builder(vmPolicy).permitUnsafeIntentLaunch();
-            StrictMode.setVmPolicy(permitUnsafeIntentLaunch.build());
-        }
-        try {
-            zzs zzsVar = this.zza;
-            connectionTracker = zzsVar.zzf;
-            context = zzsVar.zzc;
-            zzo zzoVar = this.zzf;
-            context2 = zzsVar.zzc;
-            boolean zza = connectionTracker.zza(context, str, zzoVar.zzb(context2), this, 4225, executor);
-            this.zzd = zza;
-            if (zza) {
-                handler = this.zza.zzd;
-                Message obtainMessage = handler.obtainMessage(1, this.zzf);
-                handler2 = this.zza.zzd;
-                j = this.zza.zzh;
-                handler2.sendMessageDelayed(obtainMessage, j);
-            } else {
-                this.zzc = 2;
-                try {
-                    zzs zzsVar2 = this.zza;
-                    connectionTracker2 = zzsVar2.zzf;
-                    context3 = zzsVar2.zzc;
-                    connectionTracker2.unbindService(context3, this);
-                } catch (IllegalArgumentException unused) {
-                }
-            }
-            StrictMode.setVmPolicy(vmPolicy);
-        } catch (Throwable th) {
-            StrictMode.setVmPolicy(vmPolicy);
-            throw th;
-        }
     }
 
     public final void zzf(ServiceConnection serviceConnection, String str) {

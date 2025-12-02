@@ -14,7 +14,7 @@ final class zza extends Api.AbstractClientBuilder {
     }
 
     @Override // com.google.android.gms.common.api.Api.AbstractClientBuilder
-    public final /* bridge */ /* synthetic */ Api.Client buildClient(Context context, Looper looper, ClientSettings clientSettings, Object obj, ConnectionCallbacks connectionCallbacks, OnConnectionFailedListener onConnectionFailedListener) {
+    public final /* synthetic */ Api.Client buildClient(Context context, Looper looper, ClientSettings clientSettings, Object obj, ConnectionCallbacks connectionCallbacks, OnConnectionFailedListener onConnectionFailedListener) {
         return new zzw(context, looper, clientSettings, connectionCallbacks, onConnectionFailedListener);
     }
 }

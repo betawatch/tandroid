@@ -4,7 +4,7 @@ import java.util.Collection;
 import kotlin.jvm.internal.Intrinsics;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CollectionsKt__IterablesKt extends CollectionsKt__CollectionsKt {
     public static int collectionSizeOrDefault(Iterable iterable, int i) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");

@@ -48,7 +48,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.PhotoViewerWebView;
 import org.telegram.ui.PhotoViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class PhotoViewerWebView extends FrameLayout {
     private float bufferedPosition;
     private int currentAccount;
@@ -719,8 +719,8 @@ public abstract class PhotoViewerWebView extends FrameLayout {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x00ac A[Catch: Exception -> 0x008a, LOOP:0: B:9:0x00a5->B:11:0x00ac, LOOP_END, TryCatch #0 {Exception -> 0x008a, blocks: (B:3:0x0013, B:5:0x0017, B:8:0x008d, B:9:0x00a5, B:11:0x00ac, B:13:0x00b0, B:41:0x0086, B:42:0x00df, B:27:0x002d, B:29:0x0033, B:31:0x0049, B:33:0x0052, B:35:0x005b, B:37:0x0061, B:38:0x007d), top: B:2:0x0013, inners: #1 }] */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00b0 A[EDGE_INSN: B:12:0x00b0->B:13:0x00b0 BREAK  A[LOOP:0: B:9:0x00a5->B:11:0x00ac], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x00a9 A[Catch: Exception -> 0x0088, LOOP:0: B:9:0x00a2->B:11:0x00a9, LOOP_END, TryCatch #0 {Exception -> 0x0088, blocks: (B:3:0x0013, B:5:0x0017, B:8:0x008b, B:9:0x00a2, B:11:0x00a9, B:13:0x00ad, B:41:0x0084, B:42:0x00db, B:27:0x002d, B:29:0x0033, B:31:0x0049, B:33:0x0051, B:35:0x0059, B:37:0x005f, B:38:0x007b), top: B:2:0x0013, inners: #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00ad A[EDGE_INSN: B:12:0x00ad->B:13:0x00ad BREAK  A[LOOP:0: B:9:0x00a2->B:11:0x00a9], SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.text.TextUtils;
+import androidx.core.app.PendingIntentCompat;
+import com.google.android.gms.common.internal.zzu;
 import com.google.android.gms.common.util.DeviceProperties;
 import com.google.android.gms.common.wrappers.Wrappers;
-import com.google.android.gms.internal.common.zzd;
 import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
@@ -64,12 +65,14 @@ public class GoogleApiAvailabilityLight {
             if (i != 3) {
                 return null;
             }
+            int i2 = zzu.$r8$clinit;
             Uri fromParts = Uri.fromParts("package", "com.google.android.gms", null);
             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(fromParts);
             return intent;
         }
         if (context != null && DeviceProperties.isWearableWithoutPlayStore(context)) {
+            int i3 = zzu.$r8$clinit;
             Intent intent2 = new Intent("com.google.android.clockwork.home.UPDATE_ANDROID_WEAR_ACTION");
             intent2.setPackage("com.google.android.wearable.app");
             return intent2;
@@ -93,6 +96,7 @@ public class GoogleApiAvailabilityLight {
             }
         }
         String sb2 = sb.toString();
+        int i4 = zzu.$r8$clinit;
         Intent intent3 = new Intent("android.intent.action.VIEW");
         Uri.Builder appendQueryParameter = Uri.parse("market://details").buildUpon().appendQueryParameter("id", "com.google.android.gms");
         if (!TextUtils.isEmpty(sb2)) {
@@ -109,7 +113,7 @@ public class GoogleApiAvailabilityLight {
         if (errorResolutionIntent == null) {
             return null;
         }
-        return PendingIntent.getActivity(context, i2, errorResolutionIntent, zzd.zza | TLObject.FLAG_27);
+        return PendingIntentCompat.getActivity(context, i2, errorResolutionIntent, TLObject.FLAG_27, false);
     }
 
     public int isGooglePlayServicesAvailable(Context context, int i) {

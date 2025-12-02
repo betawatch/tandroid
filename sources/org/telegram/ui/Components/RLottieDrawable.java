@@ -34,7 +34,7 @@ import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RLottieDrawable extends BitmapDrawable implements Animatable, BitmapsCache.Cacheable {
     public static DispatchQueue lottieCacheGenerateQueue;
     private boolean allowDrawFramesWhileCacheGenerating;
@@ -993,8 +993,8 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.timeBetweenFrames = Math.max(this.shouldLimitFps ? 33 : 16, (int) (1000.0f / iArr2[c]));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x006c A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x005a A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x006b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0059 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -63,7 +63,7 @@ import org.telegram.ui.Components.UsersAlertBase;
 import org.telegram.ui.GroupCreateActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class InviteMembersBottomSheet extends UsersAlertBase implements NotificationCenter.NotificationCenterDelegate {
     private int additionalHeight;
     private long chatId;

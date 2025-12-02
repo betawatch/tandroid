@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.core.graphics.ColorUtils;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AnimatedPaint extends Paint {
     private final AnimatedColor color;
     private final Theme.ResourcesProvider resourcesProvider;

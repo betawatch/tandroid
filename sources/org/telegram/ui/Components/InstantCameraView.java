@@ -105,7 +105,7 @@ import org.telegram.ui.Stories.recorder.StoryEntry;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class InstantCameraView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final int[] ALLOW_BIG_CAMERA_WHITELIST = {285904780, -1394191079};
     public boolean WRITE_TO_FILE_IN_BACKGROUND;

@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextSettingsCell;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StorageUsageView extends FrameLayout {
     private Paint bgPaint;
     private boolean calculating;
@@ -59,7 +59,7 @@ public class StorageUsageView extends FrameLayout {
         this.paintProgress = new Paint(1);
         this.paintProgress2 = new Paint(1);
         this.bgPaint = new Paint();
-        this.cellFlickerDrawable = new CellFlickerDrawable(NotificationCenter.starBalanceUpdated, NotificationCenter.cameraInitied);
+        this.cellFlickerDrawable = new CellFlickerDrawable(220, NotificationCenter.cameraInitied);
         setWillNotDraw(false);
         this.cellFlickerDrawable.drawFrame = false;
         this.paintFill.setStrokeWidth(AndroidUtilities.dp(6.0f));

@@ -5,7 +5,7 @@ import android.text.Layout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CorrectlyMeasuringTextView extends TextView {
     public CorrectlyMeasuringTextView(Context context) {
         super(context);

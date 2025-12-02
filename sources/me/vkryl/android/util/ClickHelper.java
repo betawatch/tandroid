@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import me.vkryl.android.ViewUtils;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ClickHelper {
     private int bottom;
     private final Delegate delegate;

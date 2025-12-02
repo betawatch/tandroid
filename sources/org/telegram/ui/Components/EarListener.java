@@ -16,7 +16,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EarListener implements SensorEventListener {
     private Sensor accelerometerSensor;
     private boolean accelerometerVertical;

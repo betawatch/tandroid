@@ -28,16 +28,15 @@ public abstract class JsonUtils {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String next = keys.next();
-                if (!jSONObject2.has(next)) {
-                    return false;
+                if (jSONObject2.has(next)) {
+                    try {
+                        Preconditions.checkNotNull(next);
+                        if (!areJsonValuesEquivalent(jSONObject.get(next), jSONObject2.get(next))) {
+                        }
+                    } catch (JSONException unused) {
+                    }
                 }
-                try {
-                    Preconditions.checkNotNull(next);
-                } catch (JSONException unused) {
-                }
-                if (!areJsonValuesEquivalent(jSONObject.get(next), jSONObject2.get(next))) {
-                    return false;
-                }
+                return false;
             }
             return true;
         }

@@ -6,7 +6,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ContinuationKt {
     public static final void startCoroutine(Function2 function2, Object obj, Continuation completion) {
         Intrinsics.checkNotNullParameter(function2, "<this>");

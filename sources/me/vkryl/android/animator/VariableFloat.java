@@ -1,6 +1,6 @@
 package me.vkryl.android.animator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class VariableFloat {
     private float from;
     private float now;

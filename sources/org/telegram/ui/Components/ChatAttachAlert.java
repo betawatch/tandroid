@@ -148,7 +148,7 @@ import org.telegram.ui.bots.BotWebViewMenuContainer$ActionBarColorsAnimating;
 import org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout;
 import org.telegram.ui.web.BotWebViewContainer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAttachAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate, BottomSheet.BottomSheetDelegateInterface {
     public final Property ATTACH_ALERT_LAYOUT_TRANSLATION;
     private final Property ATTACH_ALERT_PROGRESS;
@@ -7096,10 +7096,6 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.isStoryLocationPicker = true;
         this.buttonsRecyclerView.setVisibility(8);
         this.shadow.setVisibility(8);
-    }
-
-    public void setStoryAudioPicker() {
-        this.isStoryAudioPicker = true;
     }
 
     public void setMaxSelectedPhotos(int i, boolean z) {

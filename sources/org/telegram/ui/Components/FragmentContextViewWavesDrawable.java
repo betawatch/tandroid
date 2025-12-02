@@ -20,7 +20,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FragmentContextViewWavesDrawable {
     private float amplitude;
     private float amplitude2;

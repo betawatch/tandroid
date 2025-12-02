@@ -97,7 +97,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StickersAlert extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private GridAdapter adapter;
     private List animatingDescriptions;

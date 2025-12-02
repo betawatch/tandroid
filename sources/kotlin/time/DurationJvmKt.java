@@ -1,6 +1,6 @@
 package kotlin.time;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class DurationJvmKt {
     private static final boolean durationAssertionsEnabled = false;
     private static final ThreadLocal[] precisionFormats;

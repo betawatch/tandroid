@@ -26,7 +26,7 @@ import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.FloatingDebug.FloatingDebugView$$ExternalSyntheticLambda10;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ScrollSlidingTextTabStrip extends HorizontalScrollView {
     private int activeTextColorKey;
     private int allTextWidth;

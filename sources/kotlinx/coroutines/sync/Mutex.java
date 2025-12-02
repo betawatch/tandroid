@@ -2,7 +2,7 @@ package kotlinx.coroutines.sync;
 
 import kotlin.coroutines.Continuation;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface Mutex {
     boolean isLocked();
 

@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class PullForegroundDrawable {
     private ValueAnimator accentRevalAnimatorIn;
     private ValueAnimator accentRevalAnimatorOut;

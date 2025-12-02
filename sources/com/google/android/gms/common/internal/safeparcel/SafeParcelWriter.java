@@ -80,6 +80,15 @@ public abstract class SafeParcelWriter {
         parcel.writeDouble(d);
     }
 
+    public static void writeDoubleObject(Parcel parcel, int i, Double d, boolean z) {
+        if (d != null) {
+            zzc(parcel, i, 8);
+            parcel.writeDouble(d.doubleValue());
+        } else if (z) {
+            zzc(parcel, i, 0);
+        }
+    }
+
     public static void writeFloat(Parcel parcel, int i, float f) {
         zzc(parcel, i, 4);
         parcel.writeFloat(f);
@@ -205,6 +214,11 @@ public abstract class SafeParcelWriter {
             parcelable.writeToParcel(parcel, i2);
             zzb(parcel, zza);
         }
+    }
+
+    public static void writeShort(Parcel parcel, int i, short s) {
+        zzc(parcel, i, 4);
+        parcel.writeInt(s);
     }
 
     public static void writeString(Parcel parcel, int i, String str, boolean z) {

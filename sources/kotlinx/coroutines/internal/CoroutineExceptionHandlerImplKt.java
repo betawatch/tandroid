@@ -5,7 +5,7 @@ import java.util.ServiceLoader;
 import kotlin.sequences.SequencesKt;
 import kotlinx.coroutines.CoroutineExceptionHandler;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CoroutineExceptionHandlerImplKt {
     private static final Collection platformExceptionHandlers = SequencesKt.toList(SequencesKt.asSequence(ServiceLoader.load(CoroutineExceptionHandler.class, CoroutineExceptionHandler.class.getClassLoader()).iterator()));
 

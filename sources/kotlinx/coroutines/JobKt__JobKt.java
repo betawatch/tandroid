@@ -6,8 +6,22 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.sequences.Sequence;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract /* synthetic */ class JobKt__JobKt {
+    public static /* synthetic */ DisposableHandle invokeOnCompletion$default(Job job, boolean z, boolean z2, InternalCompletionHandler internalCompletionHandler, int i, Object obj) {
+        if ((i & 1) != 0) {
+            z = false;
+        }
+        if ((i & 2) != 0) {
+            z2 = true;
+        }
+        return JobKt.invokeOnCompletion(job, z, z2, internalCompletionHandler);
+    }
+
+    public static final DisposableHandle invokeOnCompletion(Job job, boolean z, boolean z2, InternalCompletionHandler internalCompletionHandler) {
+        return job instanceof JobSupport ? ((JobSupport) job).invokeOnCompletionInternal$kotlinx_coroutines_core(z, z2, internalCompletionHandler) : job.invokeOnCompletion(z, z2, new JobKt__JobKt$invokeOnCompletion$1(internalCompletionHandler));
+    }
+
     public static final CompletableJob Job(Job job) {
         return new JobImpl(job);
     }
@@ -20,7 +34,7 @@ public abstract /* synthetic */ class JobKt__JobKt {
     }
 
     public static final DisposableHandle disposeOnCompletion(Job job, DisposableHandle disposableHandle) {
-        return job.invokeOnCompletion(new DisposeOnCompletion(disposableHandle));
+        return invokeOnCompletion$default(job, false, false, new DisposeOnCompletion(disposableHandle), 3, null);
     }
 
     public static /* synthetic */ void cancel$default(CoroutineContext coroutineContext, CancellationException cancellationException, int i, Object obj) {

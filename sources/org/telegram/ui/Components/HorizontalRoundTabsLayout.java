@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class HorizontalRoundTabsLayout extends HorizontalScrollView {
     private static final RectF tmpRect = new RectF();
     private final Paint bgPaint;

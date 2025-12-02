@@ -216,6 +216,15 @@ public abstract class SafeParcelReader {
         return parcel.readDouble();
     }
 
+    public static Double readDoubleObject(Parcel parcel, int i) {
+        int readSize = readSize(parcel, i);
+        if (readSize == 0) {
+            return null;
+        }
+        zza(parcel, i, readSize, 8);
+        return Double.valueOf(parcel.readDouble());
+    }
+
     public static float readFloat(Parcel parcel, int i) {
         zzb(parcel, i, 4);
         return parcel.readFloat();
@@ -262,6 +271,11 @@ public abstract class SafeParcelReader {
     public static long readLong(Parcel parcel, int i) {
         zzb(parcel, i, 8);
         return parcel.readLong();
+    }
+
+    public static short readShort(Parcel parcel, int i) {
+        zzb(parcel, i, 4);
+        return (short) parcel.readInt();
     }
 
     public static int readSize(Parcel parcel, int i) {

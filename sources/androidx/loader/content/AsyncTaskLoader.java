@@ -1,22 +1,23 @@
 package androidx.loader.content;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.SystemClock;
-import androidx.core.util.TimeUtils;
+import android.text.format.DateUtils;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
+import java.util.concurrent.TimeUnit;
 
 /* loaded from: classes.dex */
 public abstract class AsyncTaskLoader extends Loader {
-    volatile LoadTask mCancellingTask;
-    private final Executor mExecutor;
-    Handler mHandler;
-    long mLastLoadCompleteTime;
-    volatile LoadTask mTask;
-    long mUpdateThrottle;
+    private volatile LoadTask mCancellingTask;
+    private Executor mExecutor;
+    private Handler mHandler;
+    private long mLastLoadCompleteTime;
+    private volatile LoadTask mTask;
+    private long mUpdateThrottle;
 
     public void cancelLoadInBackground() {
     }
@@ -27,34 +28,24 @@ public abstract class AsyncTaskLoader extends Loader {
     }
 
     final class LoadTask extends ModernAsyncTask implements Runnable {
-        private final CountDownLatch mDone = new CountDownLatch(1);
         boolean waiting;
 
         LoadTask() {
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // androidx.loader.content.ModernAsyncTask
-        public Object doInBackground(Void... voidArr) {
+        protected Object doInBackground() {
             return AsyncTaskLoader.this.onLoadInBackground();
         }
 
         @Override // androidx.loader.content.ModernAsyncTask
         protected void onPostExecute(Object obj) {
-            try {
-                AsyncTaskLoader.this.dispatchOnLoadComplete(this, obj);
-            } finally {
-                this.mDone.countDown();
-            }
+            AsyncTaskLoader.this.dispatchOnLoadComplete(this, obj);
         }
 
         @Override // androidx.loader.content.ModernAsyncTask
         protected void onCancelled(Object obj) {
-            try {
-                AsyncTaskLoader.this.dispatchOnCancelled(this, obj);
-            } finally {
-                this.mDone.countDown();
-            }
+            AsyncTaskLoader.this.dispatchOnCancelled(this, obj);
         }
 
         @Override // java.lang.Runnable
@@ -65,13 +56,8 @@ public abstract class AsyncTaskLoader extends Loader {
     }
 
     public AsyncTaskLoader(Context context) {
-        this(context, ModernAsyncTask.THREAD_POOL_EXECUTOR);
-    }
-
-    private AsyncTaskLoader(Context context, Executor executor) {
         super(context);
         this.mLastLoadCompleteTime = -10000L;
-        this.mExecutor = executor;
     }
 
     @Override // androidx.loader.content.Loader
@@ -87,8 +73,8 @@ public abstract class AsyncTaskLoader extends Loader {
         if (this.mTask == null) {
             return false;
         }
-        if (!this.mStarted) {
-            this.mContentChanged = true;
+        if (!isStarted()) {
+            onContentChanged();
         }
         if (this.mCancellingTask != null) {
             if (this.mTask.waiting) {
@@ -125,7 +111,10 @@ public abstract class AsyncTaskLoader extends Loader {
             this.mTask.waiting = true;
             this.mHandler.postAtTime(this.mTask, this.mLastLoadCompleteTime + this.mUpdateThrottle);
         } else {
-            this.mTask.executeOnExecutor(this.mExecutor, null);
+            if (this.mExecutor == null) {
+                this.mExecutor = getExecutor();
+            }
+            this.mTask.executeOnExecutor(this.mExecutor);
         }
     }
 
@@ -159,8 +148,13 @@ public abstract class AsyncTaskLoader extends Loader {
         return loadInBackground();
     }
 
+    protected Executor getExecutor() {
+        return AsyncTask.THREAD_POOL_EXECUTOR;
+    }
+
     @Override // androidx.loader.content.Loader
     public void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        String str2;
         super.dump(str, fileDescriptor, printWriter, strArr);
         if (this.mTask != null) {
             printWriter.print(str);
@@ -179,9 +173,15 @@ public abstract class AsyncTaskLoader extends Loader {
         if (this.mUpdateThrottle != 0) {
             printWriter.print(str);
             printWriter.print("mUpdateThrottle=");
-            TimeUtils.formatDuration(this.mUpdateThrottle, printWriter);
+            TimeUnit timeUnit = TimeUnit.MILLISECONDS;
+            printWriter.print(DateUtils.formatElapsedTime(timeUnit.toSeconds(this.mUpdateThrottle)));
             printWriter.print(" mLastLoadCompleteTime=");
-            TimeUtils.formatDuration(this.mLastLoadCompleteTime, SystemClock.uptimeMillis(), printWriter);
+            if (this.mLastLoadCompleteTime == -10000) {
+                str2 = "--";
+            } else {
+                str2 = "-" + DateUtils.formatElapsedTime(timeUnit.toSeconds(SystemClock.uptimeMillis() - this.mLastLoadCompleteTime));
+            }
+            printWriter.print(str2);
             printWriter.println();
         }
     }

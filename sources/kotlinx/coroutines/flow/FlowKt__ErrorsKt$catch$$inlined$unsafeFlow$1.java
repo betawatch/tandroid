@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.InlineMarker;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1 implements Flow {
     final /* synthetic */ Function3 $action$inlined;
     final /* synthetic */ Flow $this_catch$inlined;

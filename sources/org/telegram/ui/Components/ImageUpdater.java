@@ -49,7 +49,7 @@ import org.telegram.ui.PhotoCropActivity;
 import org.telegram.ui.PhotoPickerActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ImageUpdater implements NotificationCenter.NotificationCenterDelegate, PhotoCropActivity.PhotoEditActivityDelegate {
     private TLRPC.PhotoSize bigPhoto;
     private boolean canSelectVideo;

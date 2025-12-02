@@ -4,7 +4,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class CompletedContinuation {
     public final Throwable cancelCause;
     public final CancelHandler cancelHandler;

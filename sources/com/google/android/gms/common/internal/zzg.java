@@ -9,7 +9,7 @@ public final class zzg extends zza {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public zzg(BaseGmsClient baseGmsClient, int i, Bundle bundle) {
-        super(baseGmsClient, i, null);
+        super(baseGmsClient, i, bundle);
         this.zze = baseGmsClient;
     }
 

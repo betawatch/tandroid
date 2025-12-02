@@ -16,7 +16,7 @@ import kotlin.ranges.RangesKt;
 import kotlin.text.StringsKt;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJvmKt {
     public static boolean contains(Iterable iterable, Object obj) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
@@ -88,34 +88,6 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
         return list.get(CollectionsKt.getLastIndex(list));
     }
 
-    public static Object single(Iterable iterable) {
-        Intrinsics.checkNotNullParameter(iterable, "<this>");
-        if (iterable instanceof List) {
-            return single((List) iterable);
-        }
-        Iterator it = iterable.iterator();
-        if (!it.hasNext()) {
-            throw new NoSuchElementException("Collection is empty.");
-        }
-        Object next = it.next();
-        if (it.hasNext()) {
-            throw new IllegalArgumentException("Collection has more than one element.");
-        }
-        return next;
-    }
-
-    public static final Object single(List list) {
-        Intrinsics.checkNotNullParameter(list, "<this>");
-        int size = list.size();
-        if (size == 0) {
-            throw new NoSuchElementException("List is empty.");
-        }
-        if (size == 1) {
-            return list.get(0);
-        }
-        throw new IllegalArgumentException("List has more than one element.");
-    }
-
     public static List filterNotNull(Iterable iterable) {
         Intrinsics.checkNotNullParameter(iterable, "<this>");
         return (List) filterNotNullTo(iterable, new ArrayList());
@@ -158,7 +130,7 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
                 break;
             }
         }
-        return CollectionsKt.optimizeReadOnlyList(arrayList);
+        return CollectionsKt__CollectionsKt.optimizeReadOnlyList(arrayList);
     }
 
     public static List sortedWith(Iterable iterable, Comparator comparator) {
@@ -235,9 +207,9 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
             if (size != 1) {
                 return CollectionsKt.toMutableList(collection);
             }
-            return CollectionsKt.listOf(iterable instanceof List ? ((List) iterable).get(0) : iterable.iterator().next());
+            return CollectionsKt.listOf(iterable instanceof List ? ((List) iterable).get(0) : collection.iterator().next());
         }
-        return CollectionsKt.optimizeReadOnlyList(toMutableList(iterable));
+        return CollectionsKt__CollectionsKt.optimizeReadOnlyList(toMutableList(iterable));
     }
 
     public static final List toMutableList(Iterable iterable) {
@@ -264,7 +236,7 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
             if (size != 1) {
                 return (Set) toCollection(iterable, new LinkedHashSet(MapsKt.mapCapacity(collection.size())));
             }
-            return SetsKt__SetsJVMKt.setOf(iterable instanceof List ? ((List) iterable).get(0) : iterable.iterator().next());
+            return SetsKt__SetsJVMKt.setOf(iterable instanceof List ? ((List) iterable).get(0) : collection.iterator().next());
         }
         return SetsKt__SetsKt.optimizeReadOnlySet((Set) toCollection(iterable, new LinkedHashSet()));
     }
@@ -391,8 +363,6 @@ public abstract class CollectionsKt___CollectionsKt extends CollectionsKt___Coll
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         Intrinsics.checkNotNullParameter(postfix, "postfix");
         Intrinsics.checkNotNullParameter(truncated, "truncated");
-        String sb = ((StringBuilder) joinTo(iterable, new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
-        Intrinsics.checkNotNullExpressionValue(sb, "joinTo(StringBuilder(), …ed, transform).toString()");
-        return sb;
+        return ((StringBuilder) joinTo(iterable, new StringBuilder(), separator, prefix, postfix, i, truncated, function1)).toString();
     }
 }

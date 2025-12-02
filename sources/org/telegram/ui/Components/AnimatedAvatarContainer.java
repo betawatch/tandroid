@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AnimatedAvatarContainer extends FrameLayout {
     private int leftPadding;
     boolean occupyStatusBar;

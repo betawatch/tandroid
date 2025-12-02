@@ -6,7 +6,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.CoroutineExceptionHandlerKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class OnUndeliveredElementKt {
     public static /* synthetic */ UndeliveredElementException callUndeliveredElementCatchingException$default(Function1 function1, Object obj, UndeliveredElementException undeliveredElementException, int i, Object obj2) {
         if ((i & 2) != 0) {
@@ -19,10 +19,11 @@ public abstract class OnUndeliveredElementKt {
         try {
             function1.invoke(obj);
         } catch (Throwable th) {
-            if (undeliveredElementException == null || undeliveredElementException.getCause() == th) {
+            if (undeliveredElementException != null && undeliveredElementException.getCause() != th) {
+                ExceptionsKt.addSuppressed(undeliveredElementException, th);
+            } else {
                 return new UndeliveredElementException("Exception in undelivered element handler for " + obj, th);
             }
-            ExceptionsKt.addSuppressed(undeliveredElementException, th);
         }
         return undeliveredElementException;
     }

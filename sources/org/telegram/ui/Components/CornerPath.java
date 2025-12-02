@@ -6,7 +6,7 @@ import android.os.Build;
 import java.util.ArrayList;
 import java.util.List;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CornerPath extends Path {
     private static ArrayList recycled;
     private boolean isPathCreated;

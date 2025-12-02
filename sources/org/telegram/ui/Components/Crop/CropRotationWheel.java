@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CropRotationWheel extends FrameLayout {
     private ImageView aspectRatioButton;
     private Paint bluePaint;

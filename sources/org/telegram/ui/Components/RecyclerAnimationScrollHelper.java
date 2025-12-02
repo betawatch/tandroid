@@ -17,7 +17,7 @@ import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.Components.RecyclerAnimationScrollHelper;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RecyclerAnimationScrollHelper {
     private AnimationCallback animationCallback;
     private ValueAnimator animator;

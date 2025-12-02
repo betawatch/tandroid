@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 import me.vkryl.core.reference.ReferenceList;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ReferenceMap {
     private final boolean cacheIterator;
     private int fullnessCounter;

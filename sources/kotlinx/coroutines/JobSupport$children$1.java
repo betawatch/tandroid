@@ -11,7 +11,7 @@ import kotlin.sequences.SequenceScope;
 import kotlinx.coroutines.internal.LockFreeLinkedListHead;
 import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class JobSupport$children$1 extends RestrictedSuspendLambda implements Function2 {
     private /* synthetic */ Object L$0;
     Object L$1;

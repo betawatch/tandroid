@@ -5,7 +5,7 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface CoroutineContext {
 
     public interface Key {
@@ -22,31 +22,38 @@ public interface CoroutineContext {
     public static final class DefaultImpls {
         public static CoroutineContext plus(CoroutineContext coroutineContext, CoroutineContext context) {
             Intrinsics.checkNotNullParameter(context, "context");
-            return context == EmptyCoroutineContext.INSTANCE ? coroutineContext : (CoroutineContext) context.fold(coroutineContext, new Function2() { // from class: kotlin.coroutines.CoroutineContext$plus$1
+            return context == EmptyCoroutineContext.INSTANCE ? coroutineContext : (CoroutineContext) context.fold(coroutineContext, new Function2() { // from class: kotlin.coroutines.CoroutineContext$DefaultImpls$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
-                public final CoroutineContext invoke(CoroutineContext acc, CoroutineContext.Element element) {
-                    CombinedContext combinedContext;
-                    Intrinsics.checkNotNullParameter(acc, "acc");
-                    Intrinsics.checkNotNullParameter(element, "element");
-                    CoroutineContext minusKey = acc.minusKey(element.getKey());
-                    EmptyCoroutineContext emptyCoroutineContext = EmptyCoroutineContext.INSTANCE;
-                    if (minusKey == emptyCoroutineContext) {
-                        return element;
-                    }
-                    ContinuationInterceptor.Key key = ContinuationInterceptor.Key;
-                    ContinuationInterceptor continuationInterceptor = (ContinuationInterceptor) minusKey.get(key);
-                    if (continuationInterceptor == null) {
-                        combinedContext = new CombinedContext(minusKey, element);
-                    } else {
-                        CoroutineContext minusKey2 = minusKey.minusKey(key);
-                        if (minusKey2 == emptyCoroutineContext) {
-                            return new CombinedContext(element, continuationInterceptor);
-                        }
-                        combinedContext = new CombinedContext(new CombinedContext(minusKey2, element), continuationInterceptor);
-                    }
-                    return combinedContext;
+                public final Object invoke(Object obj, Object obj2) {
+                    CoroutineContext plus$lambda$0;
+                    plus$lambda$0 = CoroutineContext.DefaultImpls.plus$lambda$0((CoroutineContext) obj, (CoroutineContext.Element) obj2);
+                    return plus$lambda$0;
                 }
             });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static CoroutineContext plus$lambda$0(CoroutineContext acc, Element element) {
+            CombinedContext combinedContext;
+            Intrinsics.checkNotNullParameter(acc, "acc");
+            Intrinsics.checkNotNullParameter(element, "element");
+            CoroutineContext minusKey = acc.minusKey(element.getKey());
+            EmptyCoroutineContext emptyCoroutineContext = EmptyCoroutineContext.INSTANCE;
+            if (minusKey == emptyCoroutineContext) {
+                return element;
+            }
+            ContinuationInterceptor.Key key = ContinuationInterceptor.Key;
+            ContinuationInterceptor continuationInterceptor = (ContinuationInterceptor) minusKey.get(key);
+            if (continuationInterceptor == null) {
+                combinedContext = new CombinedContext(minusKey, element);
+            } else {
+                CoroutineContext minusKey2 = minusKey.minusKey(key);
+                if (minusKey2 == emptyCoroutineContext) {
+                    return new CombinedContext(element, continuationInterceptor);
+                }
+                combinedContext = new CombinedContext(new CombinedContext(minusKey2, element), continuationInterceptor);
+            }
+            return combinedContext;
         }
     }
 

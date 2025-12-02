@@ -3,7 +3,7 @@ package kotlin.collections;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class EmptyIterator implements ListIterator {
     public static final EmptyIterator INSTANCE = new EmptyIterator();
 

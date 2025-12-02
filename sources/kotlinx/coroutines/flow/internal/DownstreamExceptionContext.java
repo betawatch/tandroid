@@ -3,7 +3,7 @@ package kotlinx.coroutines.flow.internal;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DownstreamExceptionContext implements CoroutineContext {
     private final /* synthetic */ CoroutineContext $$delegate_0;
     public final Throwable e;

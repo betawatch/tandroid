@@ -6,7 +6,7 @@ import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.internal.Symbol;
 import kotlinx.coroutines.internal.SystemPropsKt__SystemProps_commonKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class BufferedChannelKt {
     public static final Symbol BUFFERED;
     private static final Symbol CHANNEL_CLOSED;

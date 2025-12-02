@@ -6,7 +6,7 @@ import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractSharedFlow {
     private int nCollectors;
     private int nextIndex;
@@ -26,7 +26,7 @@ public abstract class AbstractSharedFlow {
                     this.slots = abstractSharedFlowSlotArr;
                 } else if (this.nCollectors >= abstractSharedFlowSlotArr.length) {
                     Object[] copyOf = Arrays.copyOf(abstractSharedFlowSlotArr, abstractSharedFlowSlotArr.length * 2);
-                    Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(this, newSize)");
+                    Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
                     this.slots = (AbstractSharedFlowSlot[]) copyOf;
                     abstractSharedFlowSlotArr = (AbstractSharedFlowSlot[]) copyOf;
                 }

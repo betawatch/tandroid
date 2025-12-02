@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.Paint.Views.EditTextOutline;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PaintingOverlay extends FrameLayout {
     private Drawable backgroundDrawable;
     public boolean drawChildren;

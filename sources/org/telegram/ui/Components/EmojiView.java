@@ -129,7 +129,7 @@ import org.telegram.ui.ContentPreviewViewer;
 import org.telegram.ui.SelectAnimatedEmojiDialog;
 import org.telegram.ui.StickersActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EmojiView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, InAppKeyboardInsetView {
     private ArrayList allTabs;
     private boolean allowAnimatedEmoji;

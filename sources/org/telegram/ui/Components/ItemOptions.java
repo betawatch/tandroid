@@ -56,7 +56,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ItemOptions {
     public ActionBarPopupWindow actionBarPopupWindow;
     private boolean allowCenter;

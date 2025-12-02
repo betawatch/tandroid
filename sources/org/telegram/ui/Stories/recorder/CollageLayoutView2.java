@@ -1004,7 +1004,7 @@ public abstract class CollageLayoutView2 extends FrameLayout implements ItemOpti
             onValueChange.fixWidth = AndroidUtilities.dp(220.0f);
             makeOptions.addView(onValueChange).addSpaceGap();
         }
-        makeOptions.setFixedWidth(NotificationCenter.starBalanceUpdated).add(R.drawable.menu_camera_retake, LocaleController.getString(R.string.StoreCollageRetake), new Runnable() { // from class: org.telegram.ui.Stories.recorder.CollageLayoutView2$$ExternalSyntheticLambda6
+        makeOptions.setFixedWidth(220).add(R.drawable.menu_camera_retake, LocaleController.getString(R.string.StoreCollageRetake), new Runnable() { // from class: org.telegram.ui.Stories.recorder.CollageLayoutView2$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 CollageLayoutView2.this.lambda$onLongPress$2();
@@ -1014,7 +1014,7 @@ public abstract class CollageLayoutView2 extends FrameLayout implements ItemOpti
             public final void run() {
                 CollageLayoutView2.this.lambda$onLongPress$3();
             }
-        }).addSpaceGap().addView(frameLayout, LayoutHelper.createLinear(NotificationCenter.starBalanceUpdated, -2)).setOnDismiss(new Runnable() { // from class: org.telegram.ui.Stories.recorder.CollageLayoutView2$$ExternalSyntheticLambda8
+        }).addSpaceGap().addView(frameLayout, LayoutHelper.createLinear(220, -2)).setOnDismiss(new Runnable() { // from class: org.telegram.ui.Stories.recorder.CollageLayoutView2$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 CollageLayoutView2.lambda$onLongPress$4();

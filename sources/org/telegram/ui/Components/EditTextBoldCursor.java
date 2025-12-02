@@ -55,7 +55,7 @@ import org.telegram.ui.Cells.TextSelectionHelper$$ExternalSyntheticApiModelOutli
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.QuoteSpan;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EditTextBoldCursor extends EditTextEffects {
     private static Class editorClass;
     private static Method getVerticalOffsetMethod;

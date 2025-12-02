@@ -5,7 +5,7 @@ import kotlin.coroutines.ContinuationInterceptor;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ContinuationImpl extends BaseContinuationImpl {
     private final CoroutineContext _context;
     private transient Continuation intercepted;

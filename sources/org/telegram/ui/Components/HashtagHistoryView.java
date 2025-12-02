@@ -22,7 +22,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class HashtagHistoryView extends FrameLayout {
     private UniversalAdapter adapter;
     private AnimatorSet animation;

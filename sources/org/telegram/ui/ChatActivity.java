@@ -45135,7 +45135,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                                     };
                                                     chatActivity.scrimPopupWindow = actionBarPopupWindow;
                                                     actionBarPopupWindow.setPauseNotifications(true);
-                                                    chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+                                                    chatActivity.scrimPopupWindow.setDismissAnimationDuration(220);
                                                     chatActivity.scrimPopupWindow.setOutsideTouchable(true);
                                                     chatActivity.scrimPopupWindow.setClippingEnabled(true);
                                                     if (z9 || reactionsContainerLayout == null || !ReactionsContainerLayout.allowSmoothEnterTransition()) {
@@ -45333,7 +45333,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                                 };
                                                 chatActivity.scrimPopupWindow = actionBarPopupWindow2;
                                                 actionBarPopupWindow2.setPauseNotifications(true);
-                                                chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+                                                chatActivity.scrimPopupWindow.setDismissAnimationDuration(220);
                                                 chatActivity.scrimPopupWindow.setOutsideTouchable(true);
                                                 chatActivity.scrimPopupWindow.setClippingEnabled(true);
                                                 if (z9) {
@@ -45503,7 +45503,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                             };
                                             chatActivity.scrimPopupWindow = actionBarPopupWindow22;
                                             actionBarPopupWindow22.setPauseNotifications(true);
-                                            chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+                                            chatActivity.scrimPopupWindow.setDismissAnimationDuration(220);
                                             chatActivity.scrimPopupWindow.setOutsideTouchable(true);
                                             chatActivity.scrimPopupWindow.setClippingEnabled(true);
                                             if (z9) {
@@ -45666,7 +45666,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         };
                                         chatActivity.scrimPopupWindow = actionBarPopupWindow222;
                                         actionBarPopupWindow222.setPauseNotifications(true);
-                                        chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+                                        chatActivity.scrimPopupWindow.setDismissAnimationDuration(220);
                                         chatActivity.scrimPopupWindow.setOutsideTouchable(true);
                                         chatActivity.scrimPopupWindow.setClippingEnabled(true);
                                         if (z9) {
@@ -45841,7 +45841,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         };
                                         chatActivity.scrimPopupWindow = actionBarPopupWindow2222;
                                         actionBarPopupWindow2222.setPauseNotifications(true);
-                                        chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+                                        chatActivity.scrimPopupWindow.setDismissAnimationDuration(220);
                                         chatActivity.scrimPopupWindow.setOutsideTouchable(true);
                                         chatActivity.scrimPopupWindow.setClippingEnabled(true);
                                         if (z9) {
@@ -46010,7 +46010,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 };
                                 chatActivity.scrimPopupWindow = actionBarPopupWindow22222;
                                 actionBarPopupWindow22222.setPauseNotifications(true);
-                                chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+                                chatActivity.scrimPopupWindow.setDismissAnimationDuration(220);
                                 chatActivity.scrimPopupWindow.setOutsideTouchable(true);
                                 chatActivity.scrimPopupWindow.setClippingEnabled(true);
                                 if (z9) {
@@ -46186,7 +46186,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             };
                             chatActivity.scrimPopupWindow = actionBarPopupWindow222222;
                             actionBarPopupWindow222222.setPauseNotifications(true);
-                            chatActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+                            chatActivity.scrimPopupWindow.setDismissAnimationDuration(220);
                             chatActivity.scrimPopupWindow.setOutsideTouchable(true);
                             chatActivity.scrimPopupWindow.setClippingEnabled(true);
                             if (z9) {
@@ -56725,7 +56725,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 })).show(true);
                 return false;
             }
-            ChatActivity.this.getSendMessagesHelper().toggleTodo(chatMessageCell.getMessageObject(), todoItem, z, null);
+            ChatActivity chatActivity = ChatActivity.this;
+            ChatActivity.this.getSendMessagesHelper().toggleTodo(ChatObject.getSendAsPeerId(chatActivity.currentChat, chatActivity.chatInfo, true), chatMessageCell.getMessageObject(), todoItem, z, null);
             return true;
         }
 
@@ -60760,7 +60761,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
         }};
         actionBarPopupWindow.setPauseNotifications(true);
-        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+        actionBarPopupWindow.setDismissAnimationDuration(220);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -62257,7 +62258,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             };
                             this.scrimPopupWindow = actionBarPopupWindow;
                             actionBarPopupWindow.setPauseNotifications(true);
-                            this.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+                            this.scrimPopupWindow.setDismissAnimationDuration(220);
                             this.scrimPopupWindow.setOutsideTouchable(true);
                             this.scrimPopupWindow.setClippingEnabled(true);
                             this.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -62373,7 +62374,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             };
             this.scrimPopupWindow = actionBarPopupWindow3;
             actionBarPopupWindow3.setPauseNotifications(true);
-            this.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+            this.scrimPopupWindow.setDismissAnimationDuration(220);
             this.scrimPopupWindow.setOutsideTouchable(true);
             this.scrimPopupWindow.setClippingEnabled(true);
             this.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);

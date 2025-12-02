@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class TypeIntrinsics {
     private static Throwable sanitizeStackTrace(Throwable th) {
         return Intrinsics.sanitizeStackTrace(th, TypeIntrinsics.class.getName());

@@ -27,7 +27,7 @@ public final class zzn implements Parcelable.Creator {
         SafeParcelWriter.writeBoolean(parcel, 12, getServiceRequest.zzm);
         SafeParcelWriter.writeInt(parcel, 13, getServiceRequest.zzn);
         SafeParcelWriter.writeBoolean(parcel, 14, getServiceRequest.zzo);
-        SafeParcelWriter.writeString(parcel, 15, getServiceRequest.zza(), false);
+        SafeParcelWriter.writeString(parcel, 15, getServiceRequest.getAttributionTag(), false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 

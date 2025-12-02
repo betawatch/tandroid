@@ -26,7 +26,7 @@ import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StickerEmptyView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private boolean animateLayoutChange;
     public final ButtonWithCounterView button;

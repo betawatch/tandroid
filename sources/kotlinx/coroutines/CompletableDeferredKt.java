@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlin.Result;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CompletableDeferredKt {
     public static final boolean completeWith(CompletableDeferred completableDeferred, Object obj) {
         Throwable th = Result.exceptionOrNull-impl(obj);

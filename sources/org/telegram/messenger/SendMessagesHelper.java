@@ -1700,7 +1700,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     }
                     if (c == 0) {
                         final File file = new File(FileLoader.getDirectory(4), Utilities.MD5(str15) + "." + ImageLoader.getHttpUrlExtension(str15, "file"));
-                        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda63
+                        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda62
                             @Override // java.lang.Runnable
                             public final void run() {
                                 SendMessagesHelper.this.lambda$didReceivedNotification$2(file, messageObject, delayedMessage7, str15);
@@ -1708,7 +1708,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         });
                     } else if (c == 1) {
                         final File file2 = new File(FileLoader.getDirectory(4), Utilities.MD5(str15) + ".gif");
-                        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda64
+                        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda63
                             @Override // java.lang.Runnable
                             public final void run() {
                                 SendMessagesHelper.this.lambda$didReceivedNotification$4(delayedMessage7, file2, messageObject);
@@ -1744,7 +1744,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$didReceivedNotification$2(final File file, final MessageObject messageObject, final DelayedMessage delayedMessage, final String str) {
         final TLRPC.TL_photo generatePhotoSizes = generatePhotoSizes(file.toString(), null);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda61
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda60
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$didReceivedNotification$1(generatePhotoSizes, messageObject, file, delayedMessage, str);
@@ -1797,7 +1797,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 FileLog.e(e);
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda78
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda77
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$didReceivedNotification$3(delayedMessage, file, document, messageObject);
@@ -2107,8 +2107,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         checkUnsentMessages();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0098  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00ce  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2455,20 +2455,20 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX WARN: Removed duplicated region for block: B:307:0x098a  */
     /* JADX WARN: Removed duplicated region for block: B:310:0x09a6  */
     /* JADX WARN: Removed duplicated region for block: B:313:0x09ca  */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x09f1  */
-    /* JADX WARN: Removed duplicated region for block: B:320:0x09ff  */
-    /* JADX WARN: Removed duplicated region for block: B:323:0x0a0f  */
-    /* JADX WARN: Removed duplicated region for block: B:329:0x0a58  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x0a71  */
-    /* JADX WARN: Removed duplicated region for block: B:336:0x0a7d  */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x0a97  */
-    /* JADX WARN: Removed duplicated region for block: B:343:0x0abd  */
-    /* JADX WARN: Removed duplicated region for block: B:346:0x0b16  */
-    /* JADX WARN: Removed duplicated region for block: B:349:0x0b21  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x0ac0  */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x0a93  */
-    /* JADX WARN: Removed duplicated region for block: B:355:0x0a69 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:356:0x0a39  */
+    /* JADX WARN: Removed duplicated region for block: B:318:0x09f0  */
+    /* JADX WARN: Removed duplicated region for block: B:320:0x09fe  */
+    /* JADX WARN: Removed duplicated region for block: B:323:0x0a0e  */
+    /* JADX WARN: Removed duplicated region for block: B:329:0x0a57  */
+    /* JADX WARN: Removed duplicated region for block: B:334:0x0a70  */
+    /* JADX WARN: Removed duplicated region for block: B:336:0x0a7c  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x0a96  */
+    /* JADX WARN: Removed duplicated region for block: B:343:0x0abc  */
+    /* JADX WARN: Removed duplicated region for block: B:346:0x0b15  */
+    /* JADX WARN: Removed duplicated region for block: B:349:0x0b20  */
+    /* JADX WARN: Removed duplicated region for block: B:352:0x0abf  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x0a92  */
+    /* JADX WARN: Removed duplicated region for block: B:355:0x0a68 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:356:0x0a38  */
     /* JADX WARN: Removed duplicated region for block: B:358:0x09a8  */
     /* JADX WARN: Removed duplicated region for block: B:359:0x098d  */
     /* JADX WARN: Removed duplicated region for block: B:361:0x08c6  */
@@ -4252,7 +4252,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                 sparseLongArray = sparseLongArray2;
                                 final int i16 = i11;
                                 final TLRPC.Message message5 = message2;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda49
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda48
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         SendMessagesHelper.this.lambda$sendMessage$10(arrayList5, i15, i13, message3, i16, message5, messageObject, i);
@@ -4261,7 +4261,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             } else {
                                 sparseLongArray = sparseLongArray2;
                                 final TLRPC.Message message6 = message2;
-                                getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda50
+                                getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda49
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         SendMessagesHelper.this.lambda$sendMessage$12(i, message6, message3, peer, i13, arrayList5, j, mediaExistanceFlags);
@@ -4319,7 +4319,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tL_error2 = tL_error;
         } else {
             tL_error2 = tL_error;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda51
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda50
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$sendMessage$13(tL_error2, tL_messages_forwardMessages);
@@ -4335,7 +4335,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 message7.errorNewPriceStars = Long.parseLong(tL_error2.text.substring(23)) / tL_messages_forwardMessages.id.size();
                 getMessagesStorage().updateMessageCustomParams(MessageObject.getDialogId(message7), message7);
             }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda52
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda51
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$sendMessage$14(message7, i);
@@ -4345,7 +4345,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         if (tL_error2 == null || (str = tL_error2.text) == null || !str.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda53
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda52
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendMessage$15(arrayList2);
@@ -4366,7 +4366,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendMessage$9(ArrayList arrayList, final int i, final int i2, final TLRPC.Message message, final int i3, final TLRPC.Message message2, final MessageObject messageObject, final int i4) {
         getMessagesStorage().putMessages((ArrayList<TLRPC.Message>) arrayList, true, false, false, 0, i, 0L);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda77
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda76
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendMessage$8(i2, message, i3, i, message2, messageObject, i4);
@@ -4392,7 +4392,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         int i4 = (message.quick_reply_shortcut_id == 0 && message.quick_reply_shortcut == null) ? i != 0 ? 1 : 0 : 5;
         getMessagesStorage().updateMessageStateAndId(message2.random_id, MessageObject.getPeerId(peer), Integer.valueOf(i2), message2.id, 0, false, i != 0 ? 1 : 0, message.quick_reply_shortcut_id);
         getMessagesStorage().putMessages((ArrayList<TLRPC.Message>) arrayList, true, false, false, 0, i4, message.quick_reply_shortcut_id);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda47
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda46
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendMessage$11(message2, j, i2, message, i3, i);
@@ -4497,29 +4497,29 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x05b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x05b1, code lost:
     
         if (r4 == 19) goto L281;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:231:0x0466, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:233:0x0462, code lost:
     
         if (r7.muted == false) goto L221;
      */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x05b0 A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x05d6 A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x05ea A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x05fd A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x060c A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0654 A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0659 A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0671  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x05df A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0351  */
-    /* JADX WARN: Removed duplicated region for block: B:344:0x0164 A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:347:0x0174 A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:348:0x0184  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x02a2 A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x030f A[Catch: Exception -> 0x004d, TryCatch #0 {Exception -> 0x004d, blocks: (B:9:0x0026, B:11:0x0030, B:13:0x0042, B:19:0x0059, B:22:0x0063, B:25:0x0068, B:27:0x006c, B:28:0x0099, B:31:0x009f, B:33:0x00a5, B:34:0x00ac, B:35:0x01c8, B:37:0x01cc, B:38:0x01d0, B:43:0x01e8, B:48:0x01f1, B:50:0x01f5, B:52:0x0203, B:54:0x0207, B:55:0x021c, B:57:0x0220, B:59:0x0226, B:60:0x0210, B:62:0x0216, B:63:0x022c, B:65:0x0230, B:66:0x026c, B:67:0x026f, B:69:0x02a2, B:71:0x02aa, B:74:0x02af, B:75:0x02b6, B:76:0x02b9, B:78:0x02e7, B:80:0x02ef, B:88:0x030f, B:90:0x0313, B:92:0x0317, B:95:0x0331, B:97:0x0335, B:100:0x05ac, B:102:0x05b0, B:107:0x05b9, B:109:0x05d6, B:110:0x05e6, B:112:0x05ea, B:113:0x05f6, B:115:0x05fd, B:116:0x0608, B:118:0x060c, B:120:0x0622, B:122:0x064e, B:123:0x062a, B:125:0x063e, B:127:0x0644, B:129:0x0654, B:132:0x0659, B:139:0x0679, B:141:0x068e, B:148:0x069b, B:150:0x06b2, B:154:0x06ba, B:161:0x06d9, B:163:0x06ef, B:170:0x06fc, B:172:0x0712, B:176:0x071a, B:179:0x05df, B:181:0x05e3, B:184:0x031d, B:186:0x0321, B:189:0x0356, B:191:0x035f, B:193:0x0367, B:195:0x0378, B:197:0x038f, B:198:0x0398, B:201:0x03c8, B:203:0x03de, B:205:0x03e4, B:207:0x03ea, B:210:0x03ed, B:211:0x03a5, B:213:0x03bf, B:214:0x03c4, B:217:0x040e, B:219:0x0417, B:221:0x0421, B:223:0x0432, B:225:0x0443, B:227:0x0452, B:230:0x0462, B:233:0x046f, B:235:0x0475, B:237:0x047f, B:240:0x04b5, B:242:0x04cd, B:244:0x04da, B:245:0x04de, B:247:0x04e8, B:249:0x0500, B:251:0x04f7, B:253:0x04fb, B:254:0x048e, B:256:0x04ac, B:257:0x04b1, B:263:0x0513, B:266:0x0553, B:269:0x0569, B:272:0x0570, B:274:0x057d, B:276:0x0582, B:277:0x052f, B:279:0x054a, B:280:0x054f, B:283:0x0591, B:285:0x059b, B:294:0x023b, B:296:0x024f, B:298:0x0255, B:299:0x025e, B:301:0x0266, B:304:0x01dd, B:306:0x01e5, B:308:0x0074, B:310:0x0078, B:315:0x0088, B:317:0x008b, B:322:0x00bb, B:324:0x00cd, B:325:0x00d2, B:327:0x00fd, B:329:0x0110, B:331:0x0116, B:333:0x011c, B:335:0x01b6, B:336:0x011f, B:338:0x0145, B:344:0x0164, B:345:0x016e, B:347:0x0174, B:349:0x0186, B:351:0x01aa), top: B:8:0x0026 }] */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x05ab A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x05d1 A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x05e5 A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x0604 A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0613 A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x065b A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0660 A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0678  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x05da A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x034d  */
+    /* JADX WARN: Removed duplicated region for block: B:346:0x0161 A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:349:0x0170 A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:350:0x0180  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x029e A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x030b A[Catch: Exception -> 0x004b, TryCatch #0 {Exception -> 0x004b, blocks: (B:9:0x0024, B:11:0x002e, B:13:0x0040, B:19:0x0057, B:22:0x0061, B:25:0x0066, B:27:0x006a, B:28:0x0097, B:31:0x009d, B:33:0x00a3, B:34:0x00aa, B:35:0x01c4, B:37:0x01c8, B:38:0x01cc, B:43:0x01e4, B:48:0x01ed, B:50:0x01f1, B:52:0x01ff, B:54:0x0203, B:55:0x0218, B:57:0x021c, B:59:0x0222, B:60:0x020c, B:62:0x0212, B:63:0x0228, B:65:0x022c, B:66:0x0268, B:67:0x026b, B:69:0x029e, B:71:0x02a6, B:74:0x02ab, B:75:0x02b2, B:76:0x02b5, B:78:0x02e3, B:80:0x02eb, B:88:0x030b, B:90:0x030f, B:92:0x0313, B:95:0x032d, B:97:0x0331, B:100:0x05a7, B:102:0x05ab, B:107:0x05b4, B:109:0x05d1, B:110:0x05e1, B:112:0x05e5, B:114:0x05f5, B:115:0x05fd, B:117:0x0604, B:118:0x060f, B:120:0x0613, B:122:0x0629, B:124:0x0655, B:125:0x0631, B:127:0x0645, B:129:0x064b, B:131:0x065b, B:134:0x0660, B:141:0x0680, B:143:0x0695, B:150:0x06a2, B:152:0x06b9, B:156:0x06c1, B:163:0x06e0, B:165:0x06f6, B:172:0x0703, B:174:0x0719, B:178:0x0721, B:181:0x05da, B:183:0x05de, B:186:0x0319, B:188:0x031d, B:191:0x0352, B:193:0x035b, B:195:0x0363, B:197:0x0374, B:199:0x038b, B:200:0x0394, B:203:0x03c4, B:205:0x03da, B:207:0x03e0, B:209:0x03e6, B:212:0x03e9, B:213:0x03a1, B:215:0x03bb, B:216:0x03c0, B:219:0x040a, B:221:0x0413, B:223:0x041d, B:225:0x042e, B:227:0x043f, B:229:0x044e, B:232:0x045e, B:235:0x046b, B:237:0x0471, B:239:0x047a, B:242:0x04b0, B:244:0x04c8, B:246:0x04d5, B:247:0x04d9, B:249:0x04e3, B:251:0x04fb, B:253:0x04f2, B:255:0x04f6, B:256:0x0489, B:258:0x04a7, B:259:0x04ac, B:265:0x050e, B:268:0x054e, B:271:0x0564, B:274:0x056b, B:276:0x0578, B:278:0x057d, B:279:0x052a, B:281:0x0545, B:282:0x054a, B:285:0x058c, B:287:0x0596, B:296:0x0237, B:298:0x024b, B:300:0x0251, B:301:0x025a, B:303:0x0262, B:306:0x01d9, B:308:0x01e1, B:310:0x0072, B:312:0x0076, B:317:0x0086, B:319:0x0089, B:324:0x00b9, B:326:0x00cb, B:327:0x00d0, B:329:0x00fa, B:331:0x010d, B:333:0x0113, B:335:0x0119, B:337:0x01b2, B:338:0x011c, B:340:0x0142, B:346:0x0161, B:347:0x016a, B:349:0x0170, B:351:0x0182, B:353:0x01a6), top: B:8:0x0024 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -5056,7 +5056,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 }
                 if (messageObject.scheduled) {
                     tL_messages_editMessage.schedule_date = message.date;
-                    tL_messages_editMessage.flags |= 32768;
+                    int i5 = tL_messages_editMessage.flags;
+                    tL_messages_editMessage.flags = 32768 | i5;
+                    int i6 = message.schedule_repeat_period;
+                    if (i6 != 0) {
+                        tL_messages_editMessage.schedule_repeat_period = i6;
+                        tL_messages_editMessage.flags = i5 | 294912;
+                    }
                 }
                 if ((message.flags & TLObject.FLAG_30) != 0) {
                     tL_messages_editMessage.quick_reply_shortcut_id = message.quick_reply_shortcut_id;
@@ -5065,13 +5071,13 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 charSequence = messageObject.editingMessage;
                 if (charSequence != null) {
                     tL_messages_editMessage.message = charSequence.toString();
-                    int i5 = tL_messages_editMessage.flags;
-                    tL_messages_editMessage.flags = i5 | 2048;
+                    int i7 = tL_messages_editMessage.flags;
+                    tL_messages_editMessage.flags = i7 | 2048;
                     tL_messages_editMessage.no_webpage = !messageObject.editingMessageSearchWebPage;
                     ArrayList<TLRPC.MessageEntity> arrayList7 = messageObject.editingMessageEntities;
                     if (arrayList7 != null) {
                         tL_messages_editMessage.entities = arrayList7;
-                        tL_messages_editMessage.flags = i5 | 2056;
+                        tL_messages_editMessage.flags = i7 | 2056;
                     } else {
                         ArrayList<TLRPC.MessageEntity> entities2 = getMediaDataController().getEntities(new CharSequence[]{messageObject.editingMessage}, z3);
                         if (entities2 != null && !entities2.isEmpty()) {
@@ -5195,7 +5201,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 tL_messages_editMessage.flags = i3 | 294912;
             }
         }
-        return getConnectionsManager().sendRequest(tL_messages_editMessage, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda55
+        return getConnectionsManager().sendRequest(tL_messages_editMessage, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda54
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 SendMessagesHelper.this.lambda$editMessage$20(baseFragment, tL_messages_editMessage, tLObject, tL_error);
@@ -5268,7 +5274,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     public void sendNotificationCallback(final long j, final int i, final byte[] bArr) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda38
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendNotificationCallback$23(j, i, bArr);
@@ -5307,7 +5313,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             tL_messages_getBotCallbackAnswer.flags |= 1;
             tL_messages_getBotCallbackAnswer.data = bArr;
         }
-        getConnectionsManager().sendRequest(tL_messages_getBotCallbackAnswer, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda43
+        getConnectionsManager().sendRequest(tL_messages_getBotCallbackAnswer, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda42
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 SendMessagesHelper.this.lambda$sendNotificationCallback$22(str, list, tLObject, tL_error);
@@ -5318,7 +5324,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$sendNotificationCallback$22(final String str, final List list, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda79
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda78
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$sendNotificationCallback$21(str, list);
@@ -5412,7 +5418,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return this.waitingForTodoUpdate.get(Integer.valueOf(Objects.hash(Long.valueOf(messageObject.getDialogId()), Integer.valueOf(messageObject.getId()), Integer.valueOf(todoItem.id))));
     }
 
-    public int toggleTodo(final MessageObject messageObject, final TLRPC.TodoItem todoItem, final boolean z, final Runnable runnable) {
+    public int toggleTodo(final long j, final MessageObject messageObject, final TLRPC.TodoItem todoItem, final boolean z, final Runnable runnable) {
         if (messageObject == null) {
             return 0;
         }
@@ -5426,21 +5432,21 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         } else {
             tL_messages_toggleTodoCompleted.incompleted.add(Integer.valueOf(todoItem.id));
         }
-        return getConnectionsManager().sendRequest(tL_messages_toggleTodoCompleted, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda31
+        return getConnectionsManager().sendRequest(tL_messages_toggleTodoCompleted, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda81
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                SendMessagesHelper.this.lambda$toggleTodo$27(messageObject, todoItem, z, hash, runnable, tLObject, tL_error);
+                SendMessagesHelper.this.lambda$toggleTodo$27(messageObject, todoItem, z, j, hash, runnable, tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$toggleTodo$27(MessageObject messageObject, TLRPC.TodoItem todoItem, final boolean z, final int i, final Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$toggleTodo$27(MessageObject messageObject, TLRPC.TodoItem todoItem, final boolean z, long j, final int i, final Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tL_error == null) {
-            getMessagesStorage().toggleTodo(messageObject.getDialogId(), messageObject.getId(), todoItem.id, z);
+            getMessagesStorage().toggleTodo(messageObject.getDialogId(), messageObject.getId(), todoItem.id, z, j);
             getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda37
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda31
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$toggleTodo$26(i, z, runnable);
@@ -6075,7 +6081,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         */
     public void sendMessage(org.telegram.messenger.SendMessagesHelper.SendMessageParams r111) {
         /*
-            Method dump skipped, instructions count: 10267
+            Method dump skipped, instructions count: 10257
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SendMessagesHelper.sendMessage(org.telegram.messenger.SendMessagesHelper$SendMessageParams):void");
@@ -6124,7 +6130,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:342:0x0891  */
+    /* JADX WARN: Removed duplicated region for block: B:342:0x088f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -6697,7 +6703,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendDelayedMessage$45(final TLRPC.InputMedia inputMedia, final DelayedMessage delayedMessage, final String str, final MessageObject messageObject, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda54
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda53
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendDelayedMessage$44(tLObject, inputMedia, delayedMessage, str, messageObject);
@@ -6851,7 +6857,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 }
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda45
+        getConnectionsManager().sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda44
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                 SendMessagesHelper.this.lambda$uploadMultiMedia$49(inputMedia, delayedMessage, tLObject2, tL_error);
@@ -6861,7 +6867,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$uploadMultiMedia$49(final TLRPC.InputMedia inputMedia, final DelayedMessage delayedMessage, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda39
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda38
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$uploadMultiMedia$48(tLObject, inputMedia, delayedMessage);
@@ -6871,8 +6877,8 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0086  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00e8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -7287,18 +7293,18 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         for (int i = 0; i < size; i++) {
             putToSendingMessages(arrayList.get(i).messageOwner, z);
         }
-        if (StarsController.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, arrayList, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda69
+        if (StarsController.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, arrayList, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda68
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequestMulti$51(tLObject, arrayList, arrayList2, arrayList3, delayedMessage, z);
             }
-        }) && BotForumHelper.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, arrayList, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda70
+        }) && BotForumHelper.getInstance(this.currentAccount).beforeSendingFinalRequest(tLObject, arrayList, new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda69
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequestMulti$52(tLObject, arrayList, arrayList2, arrayList3, delayedMessage, z);
             }
         })) {
-            getConnectionsManager().sendRequest(tLObject, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda71
+            getConnectionsManager().sendRequest(tLObject, new RequestDelegate() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda70
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                     SendMessagesHelper.this.lambda$performSendMessageRequestMulti$61(arrayList3, tLObject, arrayList, arrayList2, delayedMessage, z, tLObject2, tL_error);
@@ -7520,7 +7526,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         final TLRPC.TL_updateNewMessage tL_updateNewMessage = (TLRPC.TL_updateNewMessage) update;
                         TLRPC.Message message3 = tL_updateNewMessage.message;
                         sparseArray2.put(message3.id, message3);
-                        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda56
+                        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda55
                             @Override // java.lang.Runnable
                             public final void run() {
                                 SendMessagesHelper.this.lambda$performSendMessageRequestMulti$54(tL_updateNewMessage);
@@ -7560,7 +7566,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         }
                         TLRPC.Message message4 = tL_updateNewChannelMessage.message;
                         sparseArray2.put(message4.id, message4);
-                        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda57
+                        Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda56
                             @Override // java.lang.Runnable
                             public final void run() {
                                 SendMessagesHelper.this.lambda$performSendMessageRequestMulti$55(tL_updateNewChannelMessage);
@@ -7569,7 +7575,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                         arrayList6.remove(i5);
                         i5--;
                         if (tL_updateNewChannelMessage.message.pinned) {
-                            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda58
+                            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda57
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     SendMessagesHelper.this.lambda$performSendMessageRequestMulti$56(tL_updateNewChannelMessage, updateChannelId);
@@ -7689,7 +7695,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 final int[] iArr3 = iArr;
                 final SparseArray sparseArray4 = sparseArray;
                 arrayList7 = arrayList7;
-                getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda59
+                getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda58
                     @Override // java.lang.Runnable
                     public final void run() {
                         SendMessagesHelper.this.lambda$performSendMessageRequestMulti$58(z4, message9, i11, arrayList9, iArr2, iArr3, z, messageObject, sparseArray4, arrayList7, j, mediaExistanceFlags);
@@ -7707,7 +7713,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             c = 0;
             sendMessagesHelper = this;
             final TLRPC.Updates updates4 = updates;
-            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda60
+            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda59
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$performSendMessageRequestMulti$59(updates4);
@@ -7770,7 +7776,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         int i3 = (message.quick_reply_shortcut_id == 0 && message.quick_reply_shortcut == null) ? z ? 1 : 0 : 5;
         getMessagesStorage().updateMessageStateAndId(message.random_id, MessageObject.getPeerId(message.peer_id), Integer.valueOf(i), message.id, 0, false, i3, message.quick_reply_shortcut_id);
         getMessagesStorage().putMessages((ArrayList<TLRPC.Message>) arrayList, true, false, false, 0, i3, message.quick_reply_shortcut_id);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda71
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequestMulti$57(iArr, iArr2, z2, z, messageObject, sparseArray, arrayList2, message, i, j, i2);
@@ -8055,7 +8061,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 ImageLoader.saveMessageThumbs(message3);
                 updateMediaPaths(messageObject, message3, message3.id, str, false);
             }
-            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda76
+            Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda75
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.this.lambda$performSendMessageRequest$66(updates, message, z);
@@ -8071,7 +8077,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$performSendMessageRequest$66(TLRPC.Updates updates, final TLRPC.Message message, final boolean z) {
         getMessagesController().processUpdates(updates, false);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda80
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda79
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$performSendMessageRequest$65(message, z);
@@ -8564,16 +8570,16 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         updateMediaPaths(messageObject, message, i, Collections.singletonList(str), z, -1);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:286:0x06fd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:286:0x06f9, code lost:
     
         if (r8.h > 90) goto L322;
      */
     /* JADX WARN: Removed duplicated region for block: B:19:0x01e2  */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x099f  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x09fe  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x0a44  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x0a47  */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x09a7  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x099b  */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x09fa  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x0a40  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x0a43  */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x09a3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -9375,7 +9381,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             long j2 = -j;
             TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(j2));
             if (chat != null && !chat.megagroup) {
-                getMessagesController().convertToMegaGroup(null, j2, null, new MessagesStorage.LongCallback() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda41
+                getMessagesController().convertToMegaGroup(null, j2, null, new MessagesStorage.LongCallback() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda40
                     @Override // org.telegram.messenger.MessagesStorage.LongCallback
                     public final void run(long j3) {
                         SendMessagesHelper.this.lambda$prepareImportHistory$82(uri, arrayList, longCallback, j3);
@@ -9384,7 +9390,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 return;
             }
         }
-        new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda42
+        new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda41
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$prepareImportHistory$87(arrayList, j, uri, longCallback);
@@ -9418,7 +9424,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             if (uri2 == null || AndroidUtilities.isInternalUri(uri2)) {
                 i = i3;
                 if (i == 0) {
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda67
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda66
                         @Override // java.lang.Runnable
                         public final void run() {
                             MessagesStorage.LongCallback.this.run(0L);
@@ -9504,7 +9510,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             } else {
                                 if (length > 33554432) {
                                     file2.delete();
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda65
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda64
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             SendMessagesHelper.lambda$prepareImportHistory$85(MessagesStorage.LongCallback.this);
@@ -9520,7 +9526,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     }
                     i = i3;
                     if (i == 0) {
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda66
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda65
                             @Override // java.lang.Runnable
                             public final void run() {
                                 MessagesStorage.LongCallback.this.run(0L);
@@ -9533,7 +9539,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             i3 = i + 1;
             i2 = 0;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda68
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda67
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$prepareImportHistory$86(hashMap, j, importingHistory, longCallback);
@@ -9595,7 +9601,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 }
             }
             if (i == 0) {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda74
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
                     @Override // java.lang.Runnable
                     public final void run() {
                         MessagesStorage.StringCallback.this.run(null);
@@ -9604,7 +9610,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 return;
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda75
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda74
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.this.lambda$prepareImportStickers$89(importingStickers, hashMap, str2, stringCallback);
@@ -9667,27 +9673,27 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
         return tL_photo2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0462  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0480 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x04f3  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x0513  */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x0523  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x052d A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0536  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0542  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x059c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0519  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x0507  */
-    /* JADX WARN: Removed duplicated region for block: B:253:0x028f  */
-    /* JADX WARN: Removed duplicated region for block: B:254:0x0248  */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x01b4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:314:0x01dd A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x045e  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x047c A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x04ef  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x050f  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x051f  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0528 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0531  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x053c  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0595 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x0515  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x0503  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x028c  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x0245  */
+    /* JADX WARN: Removed duplicated region for block: B:304:0x01b1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x01da A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:321:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x01ed  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x021f  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0293 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0341  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x01ea  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x021c  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x024d  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0290 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x033e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -9896,7 +9902,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             if (z8) {
                                                             }
                                                             final TLRPC.TL_document tL_document4 = tL_document2;
-                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
                                                                     SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
@@ -9976,7 +9982,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             if (z8) {
                                                             }
                                                             final TLRPC.TL_document tL_document42 = tL_document2;
-                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
                                                                     SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
@@ -10043,7 +10049,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         if (z8) {
                                                         }
                                                         final TLRPC.TL_document tL_document422 = tL_document2;
-                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
                                                                 SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
@@ -10125,7 +10131,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                                     if (z8) {
                                                                     }
                                                                     final TLRPC.TL_document tL_document4222 = tL_document2;
-                                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                                                                         @Override // java.lang.Runnable
                                                                         public final void run() {
                                                                             SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
@@ -10181,7 +10187,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             if (z8) {
                                                             }
                                                             final TLRPC.TL_document tL_document42222 = tL_document2;
-                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
                                                                     SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
@@ -10193,52 +10199,114 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         str24 = str26;
                                                         bitmap4 = null;
                                                     }
-                                                } catch (Exception e6) {
-                                                    e = e6;
-                                                    str24 = str26;
-                                                }
-                                            } catch (Exception e7) {
-                                                e = e7;
-                                            }
-                                            try {
-                                                if (messageObject3 == null) {
-                                                    lowerCase = str25;
                                                     try {
-                                                        if (lowerCase.equals("ogg")) {
-                                                            cover = bitmap4;
-                                                            if (MediaController.isOpusFile(file.getAbsolutePath()) == 1) {
-                                                                z10 = true;
-                                                                mediaMetadataRetriever2.release();
+                                                        if (messageObject3 == null) {
+                                                            lowerCase = str25;
+                                                            try {
+                                                                if (lowerCase.equals("ogg")) {
+                                                                    cover = bitmap4;
+                                                                    if (MediaController.isOpusFile(file.getAbsolutePath()) == 1) {
+                                                                        z10 = true;
+                                                                        mediaMetadataRetriever2.release();
+                                                                        str11 = str23;
+                                                                        str10 = str24;
+                                                                        z5 = z10;
+                                                                        i4 = i11;
+                                                                        j5 = 0;
+                                                                    }
+                                                                    z10 = false;
+                                                                    mediaMetadataRetriever2.release();
+                                                                    str11 = str23;
+                                                                    str10 = str24;
+                                                                    z5 = z10;
+                                                                    i4 = i11;
+                                                                    j5 = 0;
+                                                                }
+                                                            } catch (Exception e6) {
+                                                                Bitmap bitmap5 = bitmap4;
+                                                                exc = e6;
+                                                                bitmap3 = bitmap5;
+                                                                i10 = i11;
+                                                                bitmap2 = bitmap3;
+                                                                FileLog.e(exc);
+                                                                if (mediaMetadataRetriever2 != null) {
+                                                                }
                                                                 str11 = str23;
+                                                                cover = bitmap2;
                                                                 str10 = str24;
-                                                                z5 = z10;
-                                                                i4 = i11;
+                                                                i4 = i10;
                                                                 j5 = 0;
+                                                                z5 = false;
+                                                                String str2722222 = lowerCase;
+                                                                if (i4 != 0) {
+                                                                }
+                                                                if (str2 == null) {
+                                                                }
+                                                                z6 = false;
+                                                                if (!z6) {
+                                                                }
+                                                                bitmap = cover;
+                                                                file2 = file;
+                                                                str13 = str5;
+                                                                str14 = str12;
+                                                                str15 = "";
+                                                                z7 = isEncryptedDialog;
+                                                                mimeTypeMap = singleton;
+                                                                tL_documentAttributeAudio2 = tL_documentAttributeAudio;
+                                                                j6 = j5;
+                                                                i5 = 0;
+                                                                i6 = 2;
+                                                                i7 = -1;
+                                                                str16 = null;
+                                                                tL_document = null;
+                                                                if (tL_document != null) {
+                                                                }
+                                                                if (charSequence != null) {
+                                                                }
+                                                                hashMap = new HashMap();
+                                                                str19 = str14;
+                                                                if (str19 != null) {
+                                                                }
+                                                                if (z3) {
+                                                                }
+                                                                if (str16 != null) {
+                                                                }
+                                                                Integer valueOf22222 = Integer.valueOf(i5);
+                                                                if (numArr != null) {
+                                                                }
+                                                                z9 = false;
+                                                                if (z8) {
+                                                                }
+                                                                final TLRPC.TL_document tL_document422222 = tL_document2;
+                                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
+                                                                    @Override // java.lang.Runnable
+                                                                    public final void run() {
+                                                                        SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
+                                                                    }
+                                                                });
+                                                                return 0;
                                                             }
-                                                            z10 = false;
-                                                            mediaMetadataRetriever2.release();
-                                                            str11 = str23;
-                                                            str10 = str24;
-                                                            z5 = z10;
-                                                            i4 = i11;
-                                                            j5 = 0;
+                                                        } else {
+                                                            lowerCase = str25;
                                                         }
-                                                    } catch (Exception e8) {
-                                                        Bitmap bitmap5 = bitmap4;
-                                                        exc = e8;
-                                                        bitmap3 = bitmap5;
+                                                        mediaMetadataRetriever2.release();
+                                                        str11 = str23;
+                                                        str10 = str24;
+                                                        z5 = z10;
+                                                        i4 = i11;
+                                                        j5 = 0;
+                                                    } catch (Exception e7) {
+                                                        e = e7;
                                                         i10 = i11;
-                                                        bitmap2 = bitmap3;
-                                                        FileLog.e(exc);
-                                                        if (mediaMetadataRetriever2 != null) {
-                                                        }
+                                                        bitmap2 = cover;
+                                                        FileLog.e(e);
                                                         str11 = str23;
                                                         cover = bitmap2;
                                                         str10 = str24;
-                                                        i4 = i10;
                                                         j5 = 0;
-                                                        z5 = false;
-                                                        String str2722222 = lowerCase;
+                                                        z5 = z10;
+                                                        i4 = i10;
+                                                        String str27222222 = lowerCase;
                                                         if (i4 != 0) {
                                                         }
                                                         if (str2 == null) {
@@ -10272,92 +10340,30 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                         }
                                                         if (str16 != null) {
                                                         }
-                                                        Integer valueOf22222 = Integer.valueOf(i5);
+                                                        Integer valueOf222222 = Integer.valueOf(i5);
                                                         if (numArr != null) {
                                                         }
                                                         z9 = false;
                                                         if (z8) {
                                                         }
-                                                        final TLRPC.TL_document tL_document422222 = tL_document2;
-                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                                                        final TLRPC.TL_document tL_document4222222 = tL_document2;
+                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                                                             @Override // java.lang.Runnable
                                                             public final void run() {
-                                                                SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
+                                                                SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                             }
                                                         });
                                                         return 0;
                                                     }
-                                                } else {
-                                                    lowerCase = str25;
+                                                    cover = bitmap4;
+                                                    z10 = false;
+                                                } catch (Exception e8) {
+                                                    e = e8;
+                                                    str24 = str26;
                                                 }
-                                                mediaMetadataRetriever2.release();
-                                                str11 = str23;
-                                                str10 = str24;
-                                                z5 = z10;
-                                                i4 = i11;
-                                                j5 = 0;
                                             } catch (Exception e9) {
                                                 e = e9;
-                                                i10 = i11;
-                                                bitmap2 = cover;
-                                                FileLog.e(e);
-                                                str11 = str23;
-                                                cover = bitmap2;
-                                                str10 = str24;
-                                                j5 = 0;
-                                                z5 = z10;
-                                                i4 = i10;
-                                                String str27222222 = lowerCase;
-                                                if (i4 != 0) {
-                                                }
-                                                if (str2 == null) {
-                                                }
-                                                z6 = false;
-                                                if (!z6) {
-                                                }
-                                                bitmap = cover;
-                                                file2 = file;
-                                                str13 = str5;
-                                                str14 = str12;
-                                                str15 = "";
-                                                z7 = isEncryptedDialog;
-                                                mimeTypeMap = singleton;
-                                                tL_documentAttributeAudio2 = tL_documentAttributeAudio;
-                                                j6 = j5;
-                                                i5 = 0;
-                                                i6 = 2;
-                                                i7 = -1;
-                                                str16 = null;
-                                                tL_document = null;
-                                                if (tL_document != null) {
-                                                }
-                                                if (charSequence != null) {
-                                                }
-                                                hashMap = new HashMap();
-                                                str19 = str14;
-                                                if (str19 != null) {
-                                                }
-                                                if (z3) {
-                                                }
-                                                if (str16 != null) {
-                                                }
-                                                Integer valueOf222222 = Integer.valueOf(i5);
-                                                if (numArr != null) {
-                                                }
-                                                z9 = false;
-                                                if (z8) {
-                                                }
-                                                final TLRPC.TL_document tL_document4222222 = tL_document2;
-                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
-                                                    @Override // java.lang.Runnable
-                                                    public final void run() {
-                                                        SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
-                                                    }
-                                                });
-                                                return 0;
                                             }
-                                            cover = bitmap4;
-                                            z10 = false;
                                         } catch (Throwable th3) {
                                             th = th3;
                                             if (mediaMetadataRetriever2 != null) {
@@ -10662,7 +10668,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     if (z8) {
                                                     }
                                                     final TLRPC.TL_document tL_document42222222 = tL_document2;
-                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
@@ -10685,52 +10691,29 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                     try {
                                                         options.inJustDecodeBounds = true;
                                                         str17 = str13;
-                                                        try {
-                                                            BitmapFactory.decodeFile(str17, options);
-                                                        } catch (Exception e14) {
-                                                            e = e14;
-                                                            FileLog.e(e);
-                                                            i8 = options.outWidth;
-                                                            if (i8 != 0) {
-                                                                TLRPC.TL_documentAttributeSticker tL_documentAttributeSticker = new TLRPC.TL_documentAttributeSticker();
-                                                                str18 = str15;
-                                                                tL_documentAttributeSticker.alt = str18;
-                                                                tL_documentAttributeSticker.stickerset = new TLRPC.TL_inputStickerSetEmpty();
-                                                                tL_document5.attributes.add(tL_documentAttributeSticker);
-                                                                TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
-                                                                tL_documentAttributeImageSize.w = options.outWidth;
-                                                                tL_documentAttributeImageSize.h = options.outHeight;
-                                                                tL_document5.attributes.add(tL_documentAttributeImageSize);
-                                                                scaleAndSaveImage = ImageLoader.scaleAndSaveImage(null, ImageLoader.loadBitmap(file2.getAbsolutePath(), null, 400.0f, 400.0f, true), Bitmap.CompressFormat.PNG, false, 400.0f, 400.0f, 100, z8, 0, 0, false);
-                                                                if (scaleAndSaveImage != null) {
-                                                                }
-                                                                tL_document2 = tL_document5;
-                                                                if (charSequence != null) {
-                                                                }
-                                                                hashMap = new HashMap();
-                                                                str19 = str14;
-                                                                if (str19 != null) {
-                                                                }
-                                                                if (z3) {
-                                                                }
-                                                                if (str16 != null) {
-                                                                }
-                                                                Integer valueOf22222222 = Integer.valueOf(i5);
-                                                                if (numArr != null) {
-                                                                }
-                                                                z9 = false;
-                                                                if (z8) {
-                                                                }
-                                                                final TLRPC.TL_document tL_document422222222 = tL_document2;
-                                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
-                                                                    @Override // java.lang.Runnable
-                                                                    public final void run() {
-                                                                        SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
-                                                                    }
-                                                                });
-                                                                return 0;
-                                                            }
+                                                    } catch (Exception e14) {
+                                                        e = e14;
+                                                        str17 = str13;
+                                                    }
+                                                    try {
+                                                        BitmapFactory.decodeFile(str17, options);
+                                                    } catch (Exception e15) {
+                                                        e = e15;
+                                                        FileLog.e(e);
+                                                        i8 = options.outWidth;
+                                                        if (i8 != 0) {
+                                                            TLRPC.TL_documentAttributeSticker tL_documentAttributeSticker = new TLRPC.TL_documentAttributeSticker();
                                                             str18 = str15;
+                                                            tL_documentAttributeSticker.alt = str18;
+                                                            tL_documentAttributeSticker.stickerset = new TLRPC.TL_inputStickerSetEmpty();
+                                                            tL_document5.attributes.add(tL_documentAttributeSticker);
+                                                            TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
+                                                            tL_documentAttributeImageSize.w = options.outWidth;
+                                                            tL_documentAttributeImageSize.h = options.outHeight;
+                                                            tL_document5.attributes.add(tL_documentAttributeImageSize);
+                                                            scaleAndSaveImage = ImageLoader.scaleAndSaveImage(null, ImageLoader.loadBitmap(file2.getAbsolutePath(), null, 400.0f, 400.0f, true), Bitmap.CompressFormat.PNG, false, 400.0f, 400.0f, 100, z8, 0, 0, false);
+                                                            if (scaleAndSaveImage != null) {
+                                                            }
                                                             tL_document2 = tL_document5;
                                                             if (charSequence != null) {
                                                             }
@@ -10742,24 +10725,47 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                             }
                                                             if (str16 != null) {
                                                             }
-                                                            Integer valueOf222222222 = Integer.valueOf(i5);
+                                                            Integer valueOf22222222 = Integer.valueOf(i5);
                                                             if (numArr != null) {
                                                             }
                                                             z9 = false;
                                                             if (z8) {
                                                             }
-                                                            final TLRPC.TL_document tL_document4222222222 = tL_document2;
-                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                                                            final TLRPC.TL_document tL_document422222222 = tL_document2;
+                                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
-                                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
+                                                                    SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
                                                                 }
                                                             });
                                                             return 0;
                                                         }
-                                                    } catch (Exception e15) {
-                                                        e = e15;
-                                                        str17 = str13;
+                                                        str18 = str15;
+                                                        tL_document2 = tL_document5;
+                                                        if (charSequence != null) {
+                                                        }
+                                                        hashMap = new HashMap();
+                                                        str19 = str14;
+                                                        if (str19 != null) {
+                                                        }
+                                                        if (z3) {
+                                                        }
+                                                        if (str16 != null) {
+                                                        }
+                                                        Integer valueOf222222222 = Integer.valueOf(i5);
+                                                        if (numArr != null) {
+                                                        }
+                                                        z9 = false;
+                                                        if (z8) {
+                                                        }
+                                                        final TLRPC.TL_document tL_document4222222222 = tL_document2;
+                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
+                                                            @Override // java.lang.Runnable
+                                                            public final void run() {
+                                                                SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222222222, str17, hashMap, str16, j, messageObject, messageObject2, r14, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
+                                                            }
+                                                        });
+                                                        return 0;
                                                     }
                                                     i8 = options.outWidth;
                                                     if (i8 != 0 && (i9 = options.outHeight) != 0 && i8 <= 800 && i9 <= 800) {
@@ -10831,7 +10837,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                                 }
                                             }
                                             final TLRPC.TL_document tL_document42222222222 = tL_document2;
-                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                                                 @Override // java.lang.Runnable
                                                 public final void run() {
                                                     SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
@@ -10852,7 +10858,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                                     if (z8) {
                                     }
                                     final TLRPC.TL_document tL_document422222222222 = tL_document2;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document422222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
@@ -10904,7 +10910,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                             if (z8) {
                             }
                             final TLRPC.TL_document tL_document4222222222222 = tL_document2;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document4222222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
@@ -10968,7 +10974,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                     if (z8) {
                     }
                     final TLRPC.TL_document tL_document42222222222222 = tL_document2;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda73
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda72
                         @Override // java.lang.Runnable
                         public final void run() {
                             SendMessagesHelper.lambda$prepareSendingDocumentInternal$91(MessageObject.this, accountInstance, tL_document42222222222222, str17, hashMap, str16, j, messageObject, messageObject2, charSequence2, arrayList, z2, i, i2, storyItem, replyQuote, str4, i3, j2, z4, j3, j4, messageSuggestionParams);
@@ -11042,7 +11048,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     public static void prepareSendingAudioDocuments(final AccountInstance accountInstance, final ArrayList<MessageObject> arrayList, final CharSequence charSequence, final long j, final MessageObject messageObject, final MessageObject messageObject2, final TL_stories.StoryItem storyItem, final boolean z, final int i, final int i2, final MessageObject messageObject3, final String str, final int i3, final long j2, final boolean z2, final long j3) {
-        new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda81
+        new Thread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda80
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.lambda$prepareSendingAudioDocuments$93(arrayList, j, accountInstance, charSequence, messageObject3, messageObject, messageObject2, z, i, i2, storyItem, str, i3, j2, z2, j3);
@@ -11055,7 +11061,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX WARN: Removed duplicated region for block: B:31:0x00a4  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x00b3  */
     /* JADX WARN: Removed duplicated region for block: B:36:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00c9  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x00af  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -11169,7 +11175,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     private static void finishGroup(final AccountInstance accountInstance, final long j, final int i) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda46
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda45
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.lambda$finishGroup$94(AccountInstance.this, j, i);
@@ -11206,7 +11212,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             return;
         }
         if (arrayList == null || arrayList2 == null || arrayList.size() == arrayList2.size()) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda48
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda47
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.lambda$prepareSendingDocuments$95(j, arrayList, str, accountInstance, i, arrayList2, str2, messageObject, messageObject2, storyItem, replyQuote, arrayList4, messageObject3, z, i2, inputContentInfoCompat, str3, i3, j2, z2, j3, j4, messageSuggestionParams, arrayList3);
@@ -11318,7 +11324,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
 
     private static void handleError(final int i, final AccountInstance accountInstance) {
         if (i != 0) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda40
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda39
                 @Override // java.lang.Runnable
                 public final void run() {
                     SendMessagesHelper.lambda$handleError$96(i, accountInstance);
@@ -11517,18 +11523,18 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0480  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0486  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0492  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x04bc  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x04ca  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x04dd A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x04e8  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0525  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x056d  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x057d  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0578  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0565  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0477  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x047d  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0489  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x04b3  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x04c1  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x04d3 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x04de  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x051b  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0563  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0573  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x056e  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x055b  */
     /* JADX WARN: Type inference failed for: r0v82, types: [org.telegram.tgnet.TLRPC$TL_game] */
     /* JADX WARN: Type inference failed for: r16v8, types: [org.telegram.tgnet.TLRPC$TL_game] */
     /* JADX WARN: Type inference failed for: r2v13 */
@@ -12181,7 +12187,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     public static void prepareSendingText(final AccountInstance accountInstance, final String str, final long j, final long j2, final boolean z, final int i, final int i2, final long j3) {
-        accountInstance.getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda62
+        accountInstance.getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda61
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.lambda$prepareSendingText$103(str, j2, accountInstance, j, z, i, i2, j3);
@@ -12346,7 +12352,7 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
                 i5++;
             }
         }
-        mediaSendQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda44
+        mediaSendQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.SendMessagesHelper$$ExternalSyntheticLambda43
             @Override // java.lang.Runnable
             public final void run() {
                 SendMessagesHelper.lambda$prepareSendingMedia$109(arrayList, j, z, z6, accountInstance, messageObject3, messageObject, messageObject2, z3, i, i2, storyItem, replyQuote, str, i4, j2, z5, j3, j4, messageSuggestionParams, inputContentInfoCompat, z4);
@@ -12355,55 +12361,55 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:335:0x0a5c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:339:0x0a57, code lost:
     
         if (r1 == (r10 - 1)) goto L434;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:436:0x0778, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:436:0x0774, code lost:
     
-        if (r8 != null) goto L742;
+        if (r8 != null) goto L744;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x00fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x00f9, code lost:
     
         if (shouldSendWebPAsSticker(null, r8.uri) != false) goto L68;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x03dd A[Catch: Exception -> 0x03c0, TRY_LEAVE, TryCatch #9 {Exception -> 0x03c0, blocks: (B:189:0x03b8, B:146:0x03c5, B:183:0x03d4, B:148:0x03dd), top: B:188:0x03b8 }] */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x0419  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x045a  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x0467  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x045c  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x0444  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x03ea A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x03cf A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x055b  */
-    /* JADX WARN: Removed duplicated region for block: B:294:0x0817  */
-    /* JADX WARN: Removed duplicated region for block: B:299:0x0865  */
-    /* JADX WARN: Removed duplicated region for block: B:332:0x0a36  */
-    /* JADX WARN: Removed duplicated region for block: B:341:0x0a6c  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0124  */
-    /* JADX WARN: Removed duplicated region for block: B:382:0x090f  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x014c  */
-    /* JADX WARN: Removed duplicated region for block: B:401:0x093c  */
-    /* JADX WARN: Removed duplicated region for block: B:437:0x0773 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:475:0x0b3c  */
-    /* JADX WARN: Removed duplicated region for block: B:520:0x0ce4  */
-    /* JADX WARN: Removed duplicated region for block: B:563:0x0df5  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x019d  */
-    /* JADX WARN: Removed duplicated region for block: B:596:0x0f3e  */
-    /* JADX WARN: Removed duplicated region for block: B:600:0x0f4d A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:613:0x0fa9  */
-    /* JADX WARN: Removed duplicated region for block: B:616:0x0fb0  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0207  */
-    /* JADX WARN: Removed duplicated region for block: B:654:0x0e62  */
-    /* JADX WARN: Removed duplicated region for block: B:656:0x0dfb  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x020d  */
-    /* JADX WARN: Removed duplicated region for block: B:665:0x0e79  */
-    /* JADX WARN: Removed duplicated region for block: B:712:0x10b8  */
-    /* JADX WARN: Removed duplicated region for block: B:714:0x10d6  */
-    /* JADX WARN: Removed duplicated region for block: B:715:0x0b3e  */
-    /* JADX WARN: Removed duplicated region for block: B:741:0x119d  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0148  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x03d9 A[Catch: Exception -> 0x03bc, TRY_LEAVE, TryCatch #10 {Exception -> 0x03bc, blocks: (B:189:0x03b4, B:146:0x03c1, B:183:0x03d0, B:148:0x03d9), top: B:188:0x03b4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x0415  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x0456  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0463  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0458  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x0440  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x03e6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x03cb A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x0557  */
+    /* JADX WARN: Removed duplicated region for block: B:298:0x0812  */
+    /* JADX WARN: Removed duplicated region for block: B:303:0x0860  */
+    /* JADX WARN: Removed duplicated region for block: B:336:0x0a31  */
+    /* JADX WARN: Removed duplicated region for block: B:345:0x0a67  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:386:0x090a  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:405:0x0937  */
+    /* JADX WARN: Removed duplicated region for block: B:437:0x076f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:475:0x0b37  */
+    /* JADX WARN: Removed duplicated region for block: B:520:0x0cdf  */
+    /* JADX WARN: Removed duplicated region for block: B:563:0x0dee  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x019a  */
+    /* JADX WARN: Removed duplicated region for block: B:596:0x0f37  */
+    /* JADX WARN: Removed duplicated region for block: B:600:0x0f46 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:613:0x0fa1  */
+    /* JADX WARN: Removed duplicated region for block: B:616:0x0fa8  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0204  */
+    /* JADX WARN: Removed duplicated region for block: B:654:0x0e5b  */
+    /* JADX WARN: Removed duplicated region for block: B:656:0x0df4  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x020a  */
+    /* JADX WARN: Removed duplicated region for block: B:665:0x0e72  */
+    /* JADX WARN: Removed duplicated region for block: B:712:0x10b0  */
+    /* JADX WARN: Removed duplicated region for block: B:714:0x10ce  */
+    /* JADX WARN: Removed duplicated region for block: B:715:0x0b39  */
+    /* JADX WARN: Removed duplicated region for block: B:741:0x1195  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0145  */
     /* JADX WARN: Type inference failed for: r38v20 */
     /* JADX WARN: Type inference failed for: r38v6 */
     /* JADX WARN: Type inference failed for: r38v7 */
@@ -14970,21 +14976,21 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x04c2  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0318  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0294  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x032c  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0453  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x04c0  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x0317  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0293  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x032b  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0452  */
     /* JADX WARN: Removed duplicated region for block: B:166:0x0100  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x00fe  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x0107  */
     /* JADX WARN: Removed duplicated region for block: B:50:0x0138  */
     /* JADX WARN: Removed duplicated region for block: B:72:0x025d  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x046f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0479  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x04b2  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x04ba  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x027a  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x046e A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0478  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x04b1  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x04b9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

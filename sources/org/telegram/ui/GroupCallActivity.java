@@ -9863,7 +9863,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         };
         groupCallActivity.scrimPopupWindow = actionBarPopupWindow2;
         actionBarPopupWindow2.setPauseNotifications(true);
-        groupCallActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+        groupCallActivity.scrimPopupWindow.setDismissAnimationDuration(220);
         groupCallActivity.scrimPopupWindow.setOutsideTouchable(true);
         groupCallActivity.scrimPopupWindow.setClippingEnabled(true);
         groupCallActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);

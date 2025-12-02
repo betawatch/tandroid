@@ -85,7 +85,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.FilteredSearchView;
 import org.telegram.ui.PhotoPickerActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLayout {
     private float additionalTranslationY;
     private boolean allowMusic;
@@ -1346,12 +1346,12 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:114:0x0188, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x0185, code lost:
     
-        if (r3 == null) goto L100;
+        if (r3 == null) goto L102;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0233 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0230 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r3v11, types: [java.io.BufferedReader] */
     /* JADX WARN: Type inference failed for: r3v12, types: [java.io.BufferedReader] */
     /* JADX WARN: Type inference failed for: r3v13 */

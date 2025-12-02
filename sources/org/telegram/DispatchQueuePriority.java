@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.FileLog;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DispatchQueuePriority {
     private volatile CountDownLatch pauseLatch;
     ThreadPoolExecutor threadPoolExecutor;

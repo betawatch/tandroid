@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BottomSheetLayouted extends BottomSheetWithRecyclerListView {
     public ButtonWithCounterView button;
     public FrameLayout buttonContainer;

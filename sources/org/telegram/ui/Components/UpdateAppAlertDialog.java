@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UpdateAppAlertDialog extends BottomSheet {
     private int accountNum;
     private BetaUpdate appUpdate;

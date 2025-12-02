@@ -5,21 +5,21 @@ import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CombinedContext implements CoroutineContext, Serializable {
     private final CoroutineContext.Element element;
     private final CoroutineContext left;
+
+    @Override // kotlin.coroutines.CoroutineContext
+    public CoroutineContext plus(CoroutineContext coroutineContext) {
+        return CoroutineContext.DefaultImpls.plus(this, coroutineContext);
+    }
 
     public CombinedContext(CoroutineContext left, CoroutineContext.Element element) {
         Intrinsics.checkNotNullParameter(left, "left");
         Intrinsics.checkNotNullParameter(element, "element");
         this.left = left;
         this.element = element;
-    }
-
-    @Override // kotlin.coroutines.CoroutineContext
-    public CoroutineContext plus(CoroutineContext coroutineContext) {
-        return CoroutineContext.DefaultImpls.plus(this, coroutineContext);
     }
 
     @Override // kotlin.coroutines.CoroutineContext
@@ -103,16 +103,23 @@ public final class CombinedContext implements CoroutineContext, Serializable {
     }
 
     public String toString() {
-        return '[' + ((String) fold("", new Function2() { // from class: kotlin.coroutines.CombinedContext$toString$1
+        return '[' + ((String) fold("", new Function2() { // from class: kotlin.coroutines.CombinedContext$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
-            public final String invoke(String acc, CoroutineContext.Element element) {
-                Intrinsics.checkNotNullParameter(acc, "acc");
-                Intrinsics.checkNotNullParameter(element, "element");
-                if (acc.length() == 0) {
-                    return element.toString();
-                }
-                return acc + ", " + element;
+            public final Object invoke(Object obj, Object obj2) {
+                String string$lambda$2;
+                string$lambda$2 = CombinedContext.toString$lambda$2((String) obj, (CoroutineContext.Element) obj2);
+                return string$lambda$2;
             }
         })) + ']';
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final String toString$lambda$2(String acc, CoroutineContext.Element element) {
+        Intrinsics.checkNotNullParameter(acc, "acc");
+        Intrinsics.checkNotNullParameter(element, "element");
+        if (acc.length() == 0) {
+            return element.toString();
+        }
+        return acc + ", " + element;
     }
 }

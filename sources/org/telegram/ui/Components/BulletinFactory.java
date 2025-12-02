@@ -48,7 +48,7 @@ import org.telegram.ui.PeerColorActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BulletinFactory {
     private final FrameLayout containerLayout;
     private final BaseFragment fragment;
@@ -100,6 +100,24 @@ public final class BulletinFactory {
                 createErrorBulletin.show(z);
             } else {
                 Bulletin createErrorBulletin2 = createErrorBulletin(LocaleController.formatString(R.string.UnknownErrorCode, tL_error.text));
+                createErrorBulletin2.hideAfterBottomSheet = false;
+                createErrorBulletin2.show(z);
+            }
+        }
+    }
+
+    public void showForError(String str) {
+        showForError(str, false);
+    }
+
+    public void showForError(String str, boolean z) {
+        if (LaunchActivity.isActive) {
+            if (TextUtils.isEmpty(str)) {
+                Bulletin createErrorBulletin = createErrorBulletin(LocaleController.formatString(R.string.UnknownError, new Object[0]));
+                createErrorBulletin.hideAfterBottomSheet = false;
+                createErrorBulletin.show(z);
+            } else {
+                Bulletin createErrorBulletin2 = createErrorBulletin(LocaleController.formatString(R.string.UnknownErrorCode, str));
                 createErrorBulletin2.hideAfterBottomSheet = false;
                 createErrorBulletin2.show(z);
             }

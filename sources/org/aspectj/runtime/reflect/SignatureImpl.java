@@ -4,7 +4,7 @@ import java.lang.ref.SoftReference;
 import java.util.StringTokenizer;
 import org.aspectj.lang.Signature;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class SignatureImpl implements Signature {
     private static boolean useCache = true;
     Class declaringType;

@@ -1,20 +1,19 @@
 package androidx.loader.content;
 
 import android.content.Context;
-import androidx.core.util.DebugUtils;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
 /* loaded from: classes.dex */
 public abstract class Loader {
-    Context mContext;
-    int mId;
-    OnLoadCompleteListener mListener;
-    boolean mStarted = false;
-    boolean mAbandoned = false;
-    boolean mReset = true;
-    boolean mContentChanged = false;
-    boolean mProcessingChange = false;
+    private Context mContext;
+    private int mId;
+    private OnLoadCompleteListener mListener;
+    private boolean mStarted = false;
+    private boolean mAbandoned = false;
+    private boolean mReset = true;
+    private boolean mContentChanged = false;
+    private boolean mProcessingChange = false;
 
     public interface OnLoadCompleteListener {
         void onLoadComplete(Loader loader, Object obj);
@@ -67,6 +66,10 @@ public abstract class Loader {
             throw new IllegalArgumentException("Attempting to unregister the wrong listener");
         }
         this.mListener = null;
+    }
+
+    public boolean isStarted() {
+        return this.mStarted;
     }
 
     public boolean isAbandoned() {
@@ -127,14 +130,24 @@ public abstract class Loader {
 
     public String dataToString(Object obj) {
         StringBuilder sb = new StringBuilder(64);
-        DebugUtils.buildShortClassTag(obj, sb);
-        sb.append("}");
+        if (obj == null) {
+            sb.append("null");
+        } else {
+            Class<?> cls = obj.getClass();
+            sb.append(cls.getSimpleName());
+            sb.append("{");
+            sb.append(Integer.toHexString(System.identityHashCode(cls)));
+            sb.append("}");
+        }
         return sb.toString();
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder(64);
-        DebugUtils.buildShortClassTag(this, sb);
+        Class<?> cls = getClass();
+        sb.append(cls.getSimpleName());
+        sb.append("{");
+        sb.append(Integer.toHexString(System.identityHashCode(cls)));
         sb.append(" id=");
         sb.append(this.mId);
         sb.append("}");

@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ForumBubbleDrawable extends Drawable {
     static final SparseArray colorsMap;
     private static SvgHelper.SvgDrawable mainDrawable;

@@ -3,7 +3,7 @@ package me.vkryl.core.reference;
 import java.lang.ref.Reference;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ReferenceUtils {
     public static boolean removeReference(List list, Object obj) {
         for (int size = list.size() - 1; size >= 0; size--) {

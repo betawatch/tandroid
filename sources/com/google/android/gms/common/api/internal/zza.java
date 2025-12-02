@@ -1,58 +1,99 @@
 package com.google.android.gms.common.api.internal;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.lang.ref.WeakReference;
+import java.util.WeakHashMap;
 
 /* loaded from: classes.dex */
-final class zza implements Runnable {
-    final /* synthetic */ LifecycleCallback zza;
-    final /* synthetic */ String zzb;
-    final /* synthetic */ zzb zzc;
+public final class zza extends Fragment implements LifecycleFragment {
+    private static final WeakHashMap zza = new WeakHashMap();
+    private final zzc zzb = new zzc();
 
-    zza(zzb zzbVar, LifecycleCallback lifecycleCallback, String str) {
-        this.zzc = zzbVar;
-        this.zza = lifecycleCallback;
-        this.zzb = str;
+    public static zza zza(Activity activity) {
+        zza zzaVar;
+        WeakHashMap weakHashMap = zza;
+        WeakReference weakReference = (WeakReference) weakHashMap.get(activity);
+        if (weakReference != null && (zzaVar = (zza) weakReference.get()) != null) {
+            return zzaVar;
+        }
+        try {
+            zza zzaVar2 = (zza) activity.getFragmentManager().findFragmentByTag("LifecycleFragmentImpl");
+            if (zzaVar2 == null || zzaVar2.isRemoving()) {
+                zzaVar2 = new zza();
+                activity.getFragmentManager().beginTransaction().add(zzaVar2, "LifecycleFragmentImpl").commitAllowingStateLoss();
+            }
+            weakHashMap.put(activity, new WeakReference(zzaVar2));
+            return zzaVar2;
+        } catch (ClassCastException e) {
+            throw new IllegalStateException("Fragment with tag LifecycleFragmentImpl is not a LifecycleFragmentImpl", e);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i;
-        int i2;
-        int i3;
-        int i4;
-        int i5;
-        Bundle bundle;
-        Bundle bundle2;
-        Bundle bundle3;
-        zzb zzbVar = this.zzc;
-        i = zzbVar.zzc;
-        if (i > 0) {
-            LifecycleCallback lifecycleCallback = this.zza;
-            bundle = zzbVar.zzd;
-            if (bundle != null) {
-                String str = this.zzb;
-                bundle3 = zzbVar.zzd;
-                bundle2 = bundle3.getBundle(str);
-            } else {
-                bundle2 = null;
-            }
-            lifecycleCallback.onCreate(bundle2);
-        }
-        i2 = this.zzc.zzc;
-        if (i2 >= 2) {
-            this.zza.onStart();
-        }
-        i3 = this.zzc.zzc;
-        if (i3 >= 3) {
-            this.zza.onResume();
-        }
-        i4 = this.zzc.zzc;
-        if (i4 >= 4) {
-            this.zza.onStop();
-        }
-        i5 = this.zzc.zzc;
-        if (i5 >= 5) {
-            this.zza.onDestroy();
-        }
+    @Override // com.google.android.gms.common.api.internal.LifecycleFragment
+    public final void addCallback(String str, LifecycleCallback lifecycleCallback) {
+        this.zzb.zzd(str, lifecycleCallback);
+    }
+
+    @Override // android.app.Fragment
+    public final void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        super.dump(str, fileDescriptor, printWriter, strArr);
+        this.zzb.zze(str, fileDescriptor, printWriter, strArr);
+    }
+
+    @Override // com.google.android.gms.common.api.internal.LifecycleFragment
+    public final LifecycleCallback getCallbackOrNull(String str, Class cls) {
+        return this.zzb.zzc(str, cls);
+    }
+
+    @Override // com.google.android.gms.common.api.internal.LifecycleFragment
+    public final Activity getLifecycleActivity() {
+        return getActivity();
+    }
+
+    @Override // android.app.Fragment
+    public final void onActivityResult(int i, int i2, Intent intent) {
+        super.onActivityResult(i, i2, intent);
+        this.zzb.zzf(i, i2, intent);
+    }
+
+    @Override // android.app.Fragment
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        this.zzb.zzg(bundle);
+    }
+
+    @Override // android.app.Fragment
+    public final void onDestroy() {
+        super.onDestroy();
+        this.zzb.zzh();
+    }
+
+    @Override // android.app.Fragment
+    public final void onResume() {
+        super.onResume();
+        this.zzb.zzi();
+    }
+
+    @Override // android.app.Fragment
+    public final void onSaveInstanceState(Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        this.zzb.zzj(bundle);
+    }
+
+    @Override // android.app.Fragment
+    public final void onStart() {
+        super.onStart();
+        this.zzb.zzk();
+    }
+
+    @Override // android.app.Fragment
+    public final void onStop() {
+        super.onStop();
+        this.zzb.zzl();
     }
 }

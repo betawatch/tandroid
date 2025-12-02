@@ -56,7 +56,7 @@ import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.Premium.boosts.BoostRepository;
 import org.telegram.ui.PaymentFormActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UndoView extends FrameLayout {
     public static int ACTION_RINGTONE_ADDED = 83;
     private float additionalTranslationY;
@@ -386,16 +386,16 @@ public class UndoView extends FrameLayout {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x084e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x087e  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x1892  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x18b9  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x19b2  */
-    /* JADX WARN: Removed duplicated region for block: B:562:0x1872  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x084d  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x087d  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x188b  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x18b2  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x19ab  */
+    /* JADX WARN: Removed duplicated region for block: B:562:0x186b  */
     /* JADX WARN: Removed duplicated region for block: B:66:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x18ff  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x08bf  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0875  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x18f8  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x08be  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0874  */
     /* JADX WARN: Type inference failed for: r3v246, types: [java.lang.CharSequence] */
     /* JADX WARN: Type inference failed for: r3v252, types: [java.lang.CharSequence] */
     /* JADX WARN: Type inference failed for: r3v261, types: [java.lang.CharSequence] */

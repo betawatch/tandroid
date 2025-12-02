@@ -52,7 +52,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.VideoEditTextureView;
 import org.telegram.ui.Stories.recorder.StoryRecorder;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PhotoFilterView extends FrameLayout implements FilterShaders.FilterShadersDelegate, StoryRecorder.Touchable {
     private Bitmap bitmapMask;
     private Bitmap bitmapToEdit;

@@ -9,7 +9,7 @@ import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt;
 import kotlin.sequences.Sequence;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class DelimitedRangesSequence implements Sequence {
     private final Function2 getNextMatch;
     private final CharSequence input;

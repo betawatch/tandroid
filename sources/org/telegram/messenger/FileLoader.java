@@ -1636,8 +1636,8 @@ public class FileLoader extends BaseController {
         return getPathToAttach(tLObject, null, str, z, z2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x017e  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0176  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x017c  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0174  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

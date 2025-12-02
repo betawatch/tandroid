@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.CancellableContinuationImpl;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class TasksKt {
     public static final Object await(Task task, Continuation continuation) {
         return awaitImpl(task, null, continuation);

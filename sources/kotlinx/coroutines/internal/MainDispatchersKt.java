@@ -4,7 +4,7 @@ import java.util.List;
 import kotlin.KotlinNothingValueException;
 import kotlinx.coroutines.MainCoroutineDispatcher;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class MainDispatchersKt {
     public static final MainCoroutineDispatcher tryCreateDispatcher(MainDispatcherFactory mainDispatcherFactory, List list) {
         try {

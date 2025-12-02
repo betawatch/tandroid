@@ -1,58 +1,101 @@
 package com.google.android.gms.common.api.internal;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
+import androidx.collection.ArrayMap;
+import com.google.android.gms.internal.common.zzh;
+import j$.util.DesugarCollections;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.Map;
 
 /* loaded from: classes.dex */
-final class zzc implements Runnable {
-    final /* synthetic */ LifecycleCallback zza;
-    final /* synthetic */ String zzb;
-    final /* synthetic */ zzd zzc;
+final class zzc {
+    private final Map zza = DesugarCollections.synchronizedMap(new ArrayMap());
+    private int zzb = 0;
+    private Bundle zzc;
 
-    zzc(zzd zzdVar, LifecycleCallback lifecycleCallback, String str) {
-        this.zzc = zzdVar;
-        this.zza = lifecycleCallback;
-        this.zzb = str;
+    zzc() {
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i;
-        int i2;
-        int i3;
-        int i4;
-        int i5;
-        Bundle bundle;
-        Bundle bundle2;
-        Bundle bundle3;
-        zzd zzdVar = this.zzc;
-        i = zzdVar.zzc;
-        if (i > 0) {
-            LifecycleCallback lifecycleCallback = this.zza;
-            bundle = zzdVar.zzd;
-            if (bundle != null) {
-                String str = this.zzb;
-                bundle3 = zzdVar.zzd;
-                bundle2 = bundle3.getBundle(str);
-            } else {
-                bundle2 = null;
-            }
-            lifecycleCallback.onCreate(bundle2);
+    final LifecycleCallback zzc(String str, Class cls) {
+        return (LifecycleCallback) cls.cast(this.zza.get(str));
+    }
+
+    final void zzd(String str, LifecycleCallback lifecycleCallback) {
+        if (this.zza.containsKey(str)) {
+            throw new IllegalArgumentException("LifecycleCallback with tag " + str + " already added to this fragment.");
         }
-        i2 = this.zzc.zzc;
-        if (i2 >= 2) {
-            this.zza.onStart();
+        this.zza.put(str, lifecycleCallback);
+        if (this.zzb > 0) {
+            new zzh(Looper.getMainLooper()).post(new zzb(this, lifecycleCallback, str));
         }
-        i3 = this.zzc.zzc;
-        if (i3 >= 3) {
-            this.zza.onResume();
+    }
+
+    final void zze(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
+        Iterator it = this.zza.values().iterator();
+        while (it.hasNext()) {
+            ((LifecycleCallback) it.next()).dump(str, fileDescriptor, printWriter, strArr);
         }
-        i4 = this.zzc.zzc;
-        if (i4 >= 4) {
-            this.zza.onStop();
+    }
+
+    final void zzf(int i, int i2, Intent intent) {
+        Iterator it = this.zza.values().iterator();
+        while (it.hasNext()) {
+            ((LifecycleCallback) it.next()).onActivityResult(i, i2, intent);
         }
-        i5 = this.zzc.zzc;
-        if (i5 >= 5) {
-            this.zza.onDestroy();
+    }
+
+    final void zzg(Bundle bundle) {
+        this.zzb = 1;
+        this.zzc = bundle;
+        for (Map.Entry entry : this.zza.entrySet()) {
+            ((LifecycleCallback) entry.getValue()).onCreate(bundle != null ? bundle.getBundle((String) entry.getKey()) : null);
+        }
+    }
+
+    final void zzh() {
+        this.zzb = 5;
+        Iterator it = this.zza.values().iterator();
+        while (it.hasNext()) {
+            ((LifecycleCallback) it.next()).onDestroy();
+        }
+    }
+
+    final void zzi() {
+        this.zzb = 3;
+        Iterator it = this.zza.values().iterator();
+        while (it.hasNext()) {
+            ((LifecycleCallback) it.next()).onResume();
+        }
+    }
+
+    final void zzj(Bundle bundle) {
+        if (bundle == null) {
+            return;
+        }
+        for (Map.Entry entry : this.zza.entrySet()) {
+            Bundle bundle2 = new Bundle();
+            ((LifecycleCallback) entry.getValue()).onSaveInstanceState(bundle2);
+            bundle.putBundle((String) entry.getKey(), bundle2);
+        }
+    }
+
+    final void zzk() {
+        this.zzb = 2;
+        Iterator it = this.zza.values().iterator();
+        while (it.hasNext()) {
+            ((LifecycleCallback) it.next()).onStart();
+        }
+    }
+
+    final void zzl() {
+        this.zzb = 4;
+        Iterator it = this.zza.values().iterator();
+        while (it.hasNext()) {
+            ((LifecycleCallback) it.next()).onStop();
         }
     }
 }

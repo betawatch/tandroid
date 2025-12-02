@@ -4,7 +4,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.EmptyCoroutineContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class RestrictedContinuationImpl extends BaseContinuationImpl {
     public RestrictedContinuationImpl(Continuation continuation) {
         super(continuation);

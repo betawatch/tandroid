@@ -1,6 +1,6 @@
 package kotlinx.coroutines.flow;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface MutableStateFlow extends Flow, FlowCollector {
     Object getValue();
 

@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.VideoPlayer;
 import org.telegram.ui.Components.VideoSeekPreviewImage;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class VideoSeekPreviewImage extends View implements NotificationCenter.NotificationCenterDelegate {
     private Paint bitmapPaint;
     private RectF bitmapRect;

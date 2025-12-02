@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class CustomPopupMenu {
     boolean isShowing;
     ActionBarPopupWindow.ActionBarPopupWindowLayout popupLayout;

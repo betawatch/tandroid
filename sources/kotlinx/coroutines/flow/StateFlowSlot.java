@@ -1,7 +1,7 @@
 package kotlinx.coroutines.flow;
 
-import androidx.concurrent.futures.AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import com.google.android.exoplayer2.mediacodec.AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1;
+import java.util.concurrent.atomic.AtomicReference;
 import kotlin.Result;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -11,28 +11,28 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CancellableContinuationImpl;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlowKt;
 import kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot;
+import kotlinx.coroutines.internal.Concurrent_commonKt;
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class StateFlowSlot extends AbstractSharedFlowSlot {
-    private static final AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(StateFlowSlot.class, Object.class, "_state");
-    private volatile Object _state;
+    private final AtomicReference _state = new AtomicReference(null);
 
     @Override // kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot
     public boolean allocateLocked(StateFlowImpl stateFlowImpl) {
         Symbol symbol;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
-        if (atomicReferenceFieldUpdater.get(this) != null) {
+        if (Concurrent_commonKt.getValue(this._state) != null) {
             return false;
         }
+        AtomicReference atomicReference = this._state;
         symbol = StateFlowKt.NONE;
-        atomicReferenceFieldUpdater.set(this, symbol);
+        Concurrent_commonKt.setValue(atomicReference, symbol);
         return true;
     }
 
     @Override // kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot
     public Continuation[] freeLocked(StateFlowImpl stateFlowImpl) {
-        _state$FU.set(this, null);
+        Concurrent_commonKt.setValue(this._state, null);
         return AbstractSharedFlowKt.EMPTY_RESUMES;
     }
 
@@ -41,29 +41,29 @@ final class StateFlowSlot extends AbstractSharedFlowSlot {
         Symbol symbol2;
         Symbol symbol3;
         Symbol symbol4;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        AtomicReference atomicReference = this._state;
         while (true) {
-            Object obj = atomicReferenceFieldUpdater.get(this);
-            if (obj == null) {
+            Object value = Concurrent_commonKt.getValue(atomicReference);
+            if (value == null) {
                 return;
             }
             symbol = StateFlowKt.PENDING;
-            if (obj == symbol) {
+            if (value == symbol) {
                 return;
             }
             symbol2 = StateFlowKt.NONE;
-            if (obj == symbol2) {
-                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = _state$FU;
+            if (value == symbol2) {
+                AtomicReference atomicReference2 = this._state;
                 symbol3 = StateFlowKt.PENDING;
-                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater2, this, obj, symbol3)) {
+                if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(atomicReference2, value, symbol3)) {
                     return;
                 }
             } else {
-                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3 = _state$FU;
+                AtomicReference atomicReference3 = this._state;
                 symbol4 = StateFlowKt.NONE;
-                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater3, this, obj, symbol4)) {
+                if (AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(atomicReference3, value, symbol4)) {
                     Result.Companion companion = Result.Companion;
-                    ((CancellableContinuationImpl) obj).resumeWith(Result.constructor-impl(Unit.INSTANCE));
+                    ((CancellableContinuationImpl) value).resumeWith(Result.constructor-impl(Unit.INSTANCE));
                     return;
                 }
             }
@@ -73,9 +73,9 @@ final class StateFlowSlot extends AbstractSharedFlowSlot {
     public final boolean takePending() {
         Symbol symbol;
         Symbol symbol2;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        AtomicReference atomicReference = this._state;
         symbol = StateFlowKt.NONE;
-        Object andSet = atomicReferenceFieldUpdater.getAndSet(this, symbol);
+        Object andSet = atomicReference.getAndSet(symbol);
         Intrinsics.checkNotNull(andSet);
         symbol2 = StateFlowKt.PENDING;
         return andSet == symbol2;
@@ -85,9 +85,9 @@ final class StateFlowSlot extends AbstractSharedFlowSlot {
         Symbol symbol;
         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(continuation), 1);
         cancellableContinuationImpl.initCancellability();
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        AtomicReference atomicReference = this._state;
         symbol = StateFlowKt.NONE;
-        if (!AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater, this, symbol, cancellableContinuationImpl)) {
+        if (!AsynchronousMediaCodecBufferEnqueuer$$ExternalSyntheticBackportWithForwarding1.m(atomicReference, symbol, cancellableContinuationImpl)) {
             Result.Companion companion = Result.Companion;
             cancellableContinuationImpl.resumeWith(Result.constructor-impl(Unit.INSTANCE));
         }

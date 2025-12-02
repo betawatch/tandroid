@@ -34,11 +34,6 @@ public final class ZoneRules implements Serializable {
     private final TimeZone g;
     private final transient ConcurrentHashMap h = new ConcurrentHashMap();
 
-    public final int hashCode() {
-        TimeZone timeZone = this.g;
-        return (((((timeZone != null ? timeZone.hashCode() : 0) ^ Arrays.hashCode(this.a)) ^ Arrays.hashCode(this.b)) ^ Arrays.hashCode(this.c)) ^ Arrays.hashCode(this.e)) ^ Arrays.hashCode(this.f);
-    }
-
     public static ZoneRules h(ZoneOffset zoneOffset) {
         Objects.requireNonNull(zoneOffset, "offset");
         return new ZoneRules(zoneOffset);
@@ -397,6 +392,10 @@ public final class ZoneRules implements Serializable {
         }
         ZoneRules zoneRules = (ZoneRules) obj;
         return Objects.equals(this.g, zoneRules.g) && Arrays.equals(this.a, zoneRules.a) && Arrays.equals(this.b, zoneRules.b) && Arrays.equals(this.c, zoneRules.c) && Arrays.equals(this.e, zoneRules.e) && Arrays.equals(this.f, zoneRules.f);
+    }
+
+    public final int hashCode() {
+        return ((((Objects.hashCode(this.g) ^ Arrays.hashCode(this.a)) ^ Arrays.hashCode(this.b)) ^ Arrays.hashCode(this.c)) ^ Arrays.hashCode(this.e)) ^ Arrays.hashCode(this.f);
     }
 
     public final String toString() {

@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.core.math.MathUtils;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AnimatedFloat {
     private boolean firstSet;
     private Runnable invalidate;

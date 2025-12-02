@@ -5,7 +5,7 @@ import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.coroutines.jvm.internal.BaseContinuationImpl;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class StackTraceRecoveryKt {
     private static final StackTraceElement ARTIFICIAL_FRAME = new ArtificialStackFrames().coroutineBoundary();
     private static final String baseContinuationImplClassName;

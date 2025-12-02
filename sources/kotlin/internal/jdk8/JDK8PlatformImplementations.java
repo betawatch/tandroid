@@ -4,7 +4,7 @@ import kotlin.internal.jdk7.JDK7PlatformImplementations;
 import kotlin.random.Random;
 import kotlin.random.jdk8.PlatformThreadLocalRandom;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class JDK8PlatformImplementations extends JDK7PlatformImplementations {
 
     private static final class ReflectSdkVersion {

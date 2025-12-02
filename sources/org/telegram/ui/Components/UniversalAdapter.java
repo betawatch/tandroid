@@ -16,7 +16,6 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
@@ -52,7 +51,7 @@ import org.telegram.ui.StatisticActivity;
 import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UniversalAdapter extends AdapterWithDiffUtils {
     private boolean allowReorder;
     private boolean applyBackground;
@@ -685,7 +684,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 if (itemViewType == 7 || itemViewType == 8) {
                     TextInfoPrivacyCell textInfoPrivacyCell2 = (TextInfoPrivacyCell) viewHolder.itemView;
                     if (TextUtils.isEmpty(item.text)) {
-                        textInfoPrivacyCell2.setFixedSize(itemViewType == 8 ? NotificationCenter.starBalanceUpdated : 12);
+                        textInfoPrivacyCell2.setFixedSize(itemViewType == 8 ? 220 : 12);
                         textInfoPrivacyCell2.setText("");
                     } else {
                         textInfoPrivacyCell2.setFixedSize(0);

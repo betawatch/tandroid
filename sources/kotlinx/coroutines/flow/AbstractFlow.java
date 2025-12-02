@@ -7,7 +7,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlinx.coroutines.flow.internal.SafeCollector;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractFlow implements Flow {
     public abstract Object collectSafely(FlowCollector flowCollector, Continuation continuation);
 

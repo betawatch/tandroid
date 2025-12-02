@@ -6,7 +6,7 @@ import java.util.ServiceLoader;
 import kotlin.sequences.SequencesKt;
 import kotlinx.coroutines.MainCoroutineDispatcher;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class MainDispatcherLoader {
     public static final MainDispatcherLoader INSTANCE;
     public static final MainCoroutineDispatcher dispatcher;

@@ -6,7 +6,7 @@ import kotlin.coroutines.EmptyCoroutineContext;
 import kotlin.jvm.functions.Function2;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract /* synthetic */ class BuildersKt__BuildersKt {
     public static /* synthetic */ Object runBlocking$default(CoroutineContext coroutineContext, Function2 function2, int i, Object obj) {
         if ((i & 1) != 0) {

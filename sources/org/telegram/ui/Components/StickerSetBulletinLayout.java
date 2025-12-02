@@ -24,7 +24,7 @@ import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
     public StickerSetBulletinLayout(Context context, TLObject tLObject, int i, TLRPC.Document document, Theme.ResourcesProvider resourcesProvider) {
         this(context, tLObject, 1, i, document, resourcesProvider);
@@ -32,17 +32,17 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
 
     /* JADX WARN: Removed duplicated region for block: B:108:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0077 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x0115  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x013e  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x01ca  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0253  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0265  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0277  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0289  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0304  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x036e  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x013b  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0250  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0262  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0274  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0286  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0301  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x036b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

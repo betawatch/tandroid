@@ -105,7 +105,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.Stories.recorder.AlbumButton;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
     private static boolean mediaFromExternalCamera;
     private PhotoAttachAdapter adapter;
@@ -3209,21 +3209,21 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(16:22|(1:24)|25|(1:100)(1:30)|(6:32|(5:34|(1:36)|37|(1:39)|(1:41))|98|43|(1:97)|47)(1:99)|(1:96)|52|53|(2:54|55)|(4:57|58|(2:60|61)|63)|64|65|67|68|69|70) */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x00f9, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(15:22|(1:24)|25|(1:100)(1:30)|(6:32|(5:34|(1:36)|37|(1:39)|(1:41))|98|43|(1:97)|47)(1:99)|(1:96)|52|(2:53|(2:54|55))|(4:57|58|(2:60|61)|63)|64|65|67|68|69|70) */
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x00f6, code lost:
     
         if (new java.io.File(r0).exists() != false) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x0199, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x0196, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x019a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x0197, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:89:0x0161 -> B:64:0x0164). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:92:0x015e -> B:64:0x0161). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3308,15 +3308,15 @@ public class ChatAttachAlertPhotoLayout extends ChatAttachAlert.AttachAlertLayou
                 try {
                     try {
                         mediaMetadataRetriever = new MediaMetadataRetriever();
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Throwable th) {
+                        th = th;
+                        mediaMetadataRetriever = bitmap;
                     }
-                } catch (Exception e2) {
-                    e = e2;
+                } catch (Exception e) {
+                    e = e;
                 }
-            } catch (Throwable th) {
-                th = th;
-                mediaMetadataRetriever = bitmap;
+            } catch (Exception e2) {
+                FileLog.e(e2);
             }
             try {
                 mediaMetadataRetriever.setDataSource(str3);

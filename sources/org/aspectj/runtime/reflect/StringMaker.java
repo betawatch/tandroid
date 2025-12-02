@@ -2,7 +2,7 @@ package org.aspectj.runtime.reflect;
 
 import java.lang.reflect.Modifier;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class StringMaker {
     static StringMaker longStringMaker;
     static StringMaker middleStringMaker;

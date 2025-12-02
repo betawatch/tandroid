@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Storage.CacheModel;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class StorageDiagramView extends View implements NotificationCenter.NotificationCenterDelegate {
     private float[] animateToPercentage;
     private AvatarDrawable avatarDrawable;

@@ -3,27 +3,29 @@ package com.google.android.gms.common.internal;
 import android.content.Context;
 import android.content.ServiceConnection;
 import android.os.HandlerThread;
+import com.google.android.gms.common.ConnectionResult;
 import java.util.concurrent.Executor;
 
 /* loaded from: classes.dex */
 public abstract class GmsClientSupervisor {
     static HandlerThread zza = null;
     private static final Object zzb = new Object();
-    private static zzs zzc = null;
-    private static Executor zzd = null;
-    private static boolean zze = false;
+    private static int zzc = 9;
+    private static zzs zzd = null;
+    private static Executor zze = null;
+    private static boolean zzf = false;
 
     public static GmsClientSupervisor getInstance(Context context) {
         synchronized (zzb) {
             try {
-                if (zzc == null) {
-                    zzc = new zzs(context.getApplicationContext(), zze ? getOrStartHandlerThread().getLooper() : context.getMainLooper(), zzd);
+                if (zzd == null) {
+                    zzd = new zzs(context.getApplicationContext(), zzf ? getOrStartHandlerThread().getLooper() : context.getMainLooper(), zze);
                 }
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return zzc;
+        return zzd;
     }
 
     public static HandlerThread getOrStartHandlerThread() {
@@ -33,7 +35,7 @@ public abstract class GmsClientSupervisor {
                 if (handlerThread != null) {
                     return handlerThread;
                 }
-                HandlerThread handlerThread2 = new HandlerThread("GoogleApiHandler", 9);
+                HandlerThread handlerThread2 = new HandlerThread("GoogleApiHandler", zzc);
                 zza = handlerThread2;
                 handlerThread2.start();
                 return zza;
@@ -43,11 +45,11 @@ public abstract class GmsClientSupervisor {
         }
     }
 
-    protected abstract void zza(zzo zzoVar, ServiceConnection serviceConnection, String str);
+    protected abstract ConnectionResult zza(zzo zzoVar, ServiceConnection serviceConnection, String str, Executor executor);
 
-    public final void zzb(String str, String str2, int i, ServiceConnection serviceConnection, String str3, boolean z) {
-        zza(new zzo(str, str2, 4225, z), serviceConnection, str3);
+    protected abstract void zzb(zzo zzoVar, ServiceConnection serviceConnection, String str);
+
+    public final void zzc(String str, String str2, int i, ServiceConnection serviceConnection, String str3, boolean z) {
+        zzb(new zzo(str, str2, 4225, z), serviceConnection, str3);
     }
-
-    protected abstract boolean zzc(zzo zzoVar, ServiceConnection serviceConnection, String str, Executor executor);
 }

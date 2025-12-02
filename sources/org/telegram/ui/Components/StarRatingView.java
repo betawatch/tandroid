@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StarRatingView extends View {
     private final Colors colors;
     private Delegate delegate;

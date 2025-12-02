@@ -2,7 +2,7 @@ package kotlin.jvm.internal;
 
 import java.io.Serializable;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Ref$ObjectRef implements Serializable {
     public Object element;
 

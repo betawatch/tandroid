@@ -54,7 +54,7 @@ import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.ChatAttachAlertContactsLayout;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PhonebookShareAlert extends BottomSheet {
     private ActionBar actionBar;
     private AnimatorSet actionBarAnimation;

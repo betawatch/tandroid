@@ -31,7 +31,7 @@ import org.telegram.messenger.utils.BitmapsCache;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AnimatedFileDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, BitmapsCache.Cacheable {
     private final int MAX_TRIES;
     private boolean PRERENDER_FRAME;

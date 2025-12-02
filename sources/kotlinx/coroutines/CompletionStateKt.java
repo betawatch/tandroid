@@ -5,7 +5,7 @@ import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function1;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CompletionStateKt {
     public static /* synthetic */ Object toState$default(Object obj, Function1 function1, int i, Object obj2) {
         if ((i & 1) != 0) {

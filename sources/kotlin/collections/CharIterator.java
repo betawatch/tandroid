@@ -2,7 +2,7 @@ package kotlin.collections;
 
 import java.util.Iterator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CharIterator implements Iterator {
     public abstract char nextChar();
 

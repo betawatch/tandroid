@@ -70,7 +70,7 @@ import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class InviteLinkBottomSheet extends BottomSheet {
     Adapter adapter;
     private boolean canEdit;

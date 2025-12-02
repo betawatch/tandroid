@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.AnimatedTextView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BadgeLevelDrawable extends Drawable implements Drawable.Callback {
     private static int[] res;
     private final Context context;

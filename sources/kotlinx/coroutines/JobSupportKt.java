@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class JobSupportKt {
     private static final Symbol COMPLETING_ALREADY = new Symbol("COMPLETING_ALREADY");
     public static final Symbol COMPLETING_WAITING_CHILDREN = new Symbol("COMPLETING_WAITING_CHILDREN");

@@ -2,7 +2,7 @@ package kotlin.jvm.internal;
 
 import java.io.Serializable;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class Lambda implements FunctionBase, Serializable {
     private final int arity;
 
@@ -17,7 +17,7 @@ public abstract class Lambda implements FunctionBase, Serializable {
 
     public String toString() {
         String renderLambdaToString = Reflection.renderLambdaToString(this);
-        Intrinsics.checkNotNullExpressionValue(renderLambdaToString, "renderLambdaToString(this)");
+        Intrinsics.checkNotNullExpressionValue(renderLambdaToString, "renderLambdaToString(...)");
         return renderLambdaToString;
     }
 }

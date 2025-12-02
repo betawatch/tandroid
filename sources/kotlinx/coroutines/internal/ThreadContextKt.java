@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.ThreadContextElement;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ThreadContextKt {
     public static final Symbol NO_THREAD_ELEMENTS = new Symbol("NO_THREAD_ELEMENTS");
     private static final Function2 countAll = new Function2() { // from class: kotlinx.coroutines.internal.ThreadContextKt$countAll$1

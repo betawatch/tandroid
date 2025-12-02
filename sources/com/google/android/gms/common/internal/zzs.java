@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.ServiceConnection;
 import android.os.Handler;
 import android.os.Looper;
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.stats.ConnectionTracker;
 import java.util.HashMap;
 import java.util.concurrent.Executor;
@@ -13,17 +14,17 @@ final class zzs extends GmsClientSupervisor {
     private final HashMap zzb = new HashMap();
     private final Context zzc;
     private volatile Handler zzd;
-    private final zzr zze;
+    private final zzq zze;
     private final ConnectionTracker zzf;
     private final long zzg;
     private final long zzh;
     private volatile Executor zzi;
 
     zzs(Context context, Looper looper, Executor executor) {
-        zzr zzrVar = new zzr(this, null);
-        this.zze = zzrVar;
+        zzq zzqVar = new zzq(this, null);
+        this.zze = zzqVar;
         this.zzc = context.getApplicationContext();
-        this.zzd = new com.google.android.gms.internal.common.zzi(looper, zzrVar);
+        this.zzd = new com.google.android.gms.internal.common.zzh(looper, zzqVar);
         this.zzf = ConnectionTracker.getInstance();
         this.zzg = 5000L;
         this.zzh = 300000L;
@@ -31,7 +32,49 @@ final class zzs extends GmsClientSupervisor {
     }
 
     @Override // com.google.android.gms.common.internal.GmsClientSupervisor
-    protected final void zza(zzo zzoVar, ServiceConnection serviceConnection, String str) {
+    protected final ConnectionResult zza(zzo zzoVar, ServiceConnection serviceConnection, String str, Executor executor) {
+        ConnectionResult connectionResult;
+        Preconditions.checkNotNull(serviceConnection, "ServiceConnection must not be null");
+        synchronized (this.zzb) {
+            try {
+                zzp zzpVar = (zzp) this.zzb.get(zzoVar);
+                if (executor == null) {
+                    executor = this.zzi;
+                }
+                if (zzpVar == null) {
+                    zzpVar = new zzp(this, zzoVar);
+                    zzpVar.zze(serviceConnection, serviceConnection, str);
+                    connectionResult = zzp.zzd(zzpVar, str, executor);
+                    this.zzb.put(zzoVar, zzpVar);
+                } else {
+                    this.zzd.removeMessages(0, zzoVar);
+                    if (zzpVar.zzh(serviceConnection)) {
+                        throw new IllegalStateException("Trying to bind a GmsServiceConnection that was already connected before.  config=" + zzoVar.toString());
+                    }
+                    zzpVar.zze(serviceConnection, serviceConnection, str);
+                    int zza = zzpVar.zza();
+                    if (zza == 1) {
+                        serviceConnection.onServiceConnected(zzpVar.zzb(), zzpVar.zzc());
+                    } else if (zza == 2) {
+                        connectionResult = zzp.zzd(zzpVar, str, executor);
+                    }
+                    connectionResult = null;
+                }
+                if (zzpVar.zzj()) {
+                    return ConnectionResult.RESULT_SUCCESS;
+                }
+                if (connectionResult == null) {
+                    connectionResult = new ConnectionResult(-1);
+                }
+                return connectionResult;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+    }
+
+    @Override // com.google.android.gms.common.internal.GmsClientSupervisor
+    protected final void zzb(zzo zzoVar, ServiceConnection serviceConnection, String str) {
         Preconditions.checkNotNull(serviceConnection, "ServiceConnection must not be null");
         synchronized (this.zzb) {
             try {
@@ -50,41 +93,5 @@ final class zzs extends GmsClientSupervisor {
                 throw th;
             }
         }
-    }
-
-    @Override // com.google.android.gms.common.internal.GmsClientSupervisor
-    protected final boolean zzc(zzo zzoVar, ServiceConnection serviceConnection, String str, Executor executor) {
-        boolean zzj;
-        Preconditions.checkNotNull(serviceConnection, "ServiceConnection must not be null");
-        synchronized (this.zzb) {
-            try {
-                zzp zzpVar = (zzp) this.zzb.get(zzoVar);
-                if (executor == null) {
-                    executor = this.zzi;
-                }
-                if (zzpVar == null) {
-                    zzpVar = new zzp(this, zzoVar);
-                    zzpVar.zzd(serviceConnection, serviceConnection, str);
-                    zzpVar.zze(str, executor);
-                    this.zzb.put(zzoVar, zzpVar);
-                } else {
-                    this.zzd.removeMessages(0, zzoVar);
-                    if (zzpVar.zzh(serviceConnection)) {
-                        throw new IllegalStateException("Trying to bind a GmsServiceConnection that was already connected before.  config=" + zzoVar.toString());
-                    }
-                    zzpVar.zzd(serviceConnection, serviceConnection, str);
-                    int zza = zzpVar.zza();
-                    if (zza == 1) {
-                        serviceConnection.onServiceConnected(zzpVar.zzb(), zzpVar.zzc());
-                    } else if (zza == 2) {
-                        zzpVar.zze(str, executor);
-                    }
-                }
-                zzj = zzpVar.zzj();
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return zzj;
     }
 }

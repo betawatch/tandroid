@@ -23,7 +23,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.WallpapersListActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatAttachAlertColorsLayout extends ChatAttachAlert.AttachAlertLayout {
     Adapter adapter;
     public int currentItemTop;

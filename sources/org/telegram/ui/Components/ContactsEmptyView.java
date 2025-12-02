@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LinkSpanDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ContactsEmptyView extends LinearLayout {
     private LinkSpanDrawable.LinksTextView buttonTextView;
     private int currentAccount;

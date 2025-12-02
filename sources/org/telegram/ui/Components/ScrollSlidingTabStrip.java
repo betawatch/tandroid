@@ -43,7 +43,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.ScrollSlidingTabStrip;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ScrollSlidingTabStrip extends HorizontalScrollView {
     public static float EXPANDED_WIDTH = 64.0f;
     private boolean animateFromPosition;

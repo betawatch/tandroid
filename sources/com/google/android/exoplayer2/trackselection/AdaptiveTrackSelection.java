@@ -21,7 +21,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.messenger.FileLog;
 
 /* loaded from: classes.dex */
 public class AdaptiveTrackSelection extends BaseTrackSelection {
@@ -239,7 +238,6 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
 
     private int determineIdealSelectedIndex(int i, long j, long j2) {
         long allocatedBandwidth = getAllocatedBandwidth(j2);
-        FileLog.d("debug_loading_player: determineIdealSelectedIndex: type=" + i + " effectiveBitrate=" + allocatedBandwidth);
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
         int i2 = 0;
@@ -267,7 +265,6 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
             while (it.hasNext()) {
                 int intValue = ((Integer) it.next()).intValue();
                 if (getFormat(intValue).cached) {
-                    FileLog.d("debug_loading_player: determineIdealSelectedIndex: initial setup, choose cached format#" + intValue);
                     return intValue;
                 }
             }
@@ -276,13 +273,10 @@ public class AdaptiveTrackSelection extends BaseTrackSelection {
         while (it2.hasNext()) {
             i2 = ((Integer) it2.next()).intValue();
             Format format3 = getFormat(i2);
-            FileLog.d("debug_loading_player: determineIdealSelectedIndex: format#" + i2 + " bitrate=" + format3.bitrate + " " + format3.width + "x" + format3.height + " codecs=" + format3.codecs + " (cached=" + format3.cached + ")");
             if (canSelectFormat(format3, format3.bitrate, allocatedBandwidth)) {
-                FileLog.d("debug_loading_player: determineIdealSelectedIndex: selected format#" + i2);
-                return i2;
+                break;
             }
         }
-        FileLog.d("debug_loading_player: determineIdealSelectedIndex: selected format#" + i2 + " (lowest, nothing is fit)");
         return i2;
     }
 

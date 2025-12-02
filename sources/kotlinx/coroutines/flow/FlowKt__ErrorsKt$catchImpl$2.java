@@ -7,7 +7,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.internal.Ref$ObjectRef;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class FlowKt__ErrorsKt$catchImpl$2 implements FlowCollector {
     final /* synthetic */ FlowCollector $collector;
     final /* synthetic */ Ref$ObjectRef $fromDownstream;

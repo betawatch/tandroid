@@ -111,6 +111,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Business.TimezonesController;
 import org.telegram.ui.CacheControlActivity;
 import org.telegram.ui.Cells.AccountSelectCell;
 import org.telegram.ui.Cells.CheckBoxCell;
@@ -143,7 +144,7 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.ThemePreviewActivity;
 import org.telegram.ui.TooManyCommunitiesActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class AlertsCreator {
 
     public interface AccountSelectDelegate {
@@ -191,6 +192,11 @@ public abstract class AlertsCreator {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$createChangeNameAlert$64(TLObject tLObject, TLRPC.TL_error tL_error) {
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ boolean lambda$createCustomPicker$217(View view, MotionEvent motionEvent) {
+        return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1281,6 +1287,9 @@ public abstract class AlertsCreator {
     }
 
     public static Dialog showSimpleAlert(BaseFragment baseFragment, String str, String str2, Theme.ResourcesProvider resourcesProvider) {
+        if (baseFragment == null) {
+            baseFragment = LaunchActivity.getSafeLastFragment();
+        }
         if (str2 == null || baseFragment == null || baseFragment.getParentActivity() == null) {
             return null;
         }
@@ -1659,12 +1668,12 @@ public abstract class AlertsCreator {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0112  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0123  */
     /* JADX WARN: Removed duplicated region for block: B:29:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0113  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00fc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3604,7 +3613,7 @@ public abstract class AlertsCreator {
         }
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(view, -2, -2);
         actionBarPopupWindow.setPauseNotifications(true);
-        actionBarPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+        actionBarPopupWindow.setDismissAnimationDuration(220);
         actionBarPopupWindow.setOutsideTouchable(true);
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -9109,5 +9118,108 @@ public abstract class AlertsCreator {
                 runnable.run();
             }
         }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).show();
+    }
+
+    public static BottomSheet createCustomPicker(Context context, String str, int i, final String[] strArr, final Utilities.Callback callback) {
+        if (TimezonesController.getInstance(UserConfig.selectedAccount).getTimezones().isEmpty()) {
+            return null;
+        }
+        ScheduleDatePickerColors scheduleDatePickerColors = new ScheduleDatePickerColors();
+        BottomSheet.Builder builder = new BottomSheet.Builder(context, false, null);
+        builder.setApplyBottomPadding(false);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        linearLayout.setWeightSum(1.0f);
+        final NumberPicker numberPicker = new NumberPicker(context);
+        numberPicker.setAllItemsCount(strArr.length);
+        numberPicker.setItemCount(Math.min(strArr.length, 8));
+        numberPicker.setTextColor(scheduleDatePickerColors.textColor);
+        numberPicker.setGravity(17);
+        numberPicker.setMinValue(0);
+        numberPicker.setMaxValue(strArr.length - 1);
+        numberPicker.setValue(i);
+        linearLayout.addView(numberPicker, LayoutHelper.createLinear(0, 432, 1.0f));
+        numberPicker.setFormatter(new NumberPicker.Formatter() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda210
+            @Override // org.telegram.ui.Components.NumberPicker.Formatter
+            public final String format(int i2) {
+                String lambda$createCustomPicker$216;
+                lambda$createCustomPicker$216 = AlertsCreator.lambda$createCustomPicker$216(strArr, i2);
+                return lambda$createCustomPicker$216;
+            }
+        });
+        LinearLayout linearLayout2 = new LinearLayout(context) { // from class: org.telegram.ui.Components.AlertsCreator.63
+            boolean ignoreLayout = false;
+
+            @Override // android.widget.LinearLayout, android.view.View
+            protected void onMeasure(int i2, int i3) {
+                this.ignoreLayout = true;
+                numberPicker.getLayoutParams().height = AndroidUtilities.dp(42.0f) * 8;
+                this.ignoreLayout = false;
+                super.onMeasure(i2, i3);
+            }
+
+            @Override // android.view.View, android.view.ViewParent
+            public void requestLayout() {
+                if (this.ignoreLayout) {
+                    return;
+                }
+                super.requestLayout();
+            }
+        };
+        linearLayout2.setOrientation(1);
+        FrameLayout frameLayout = new FrameLayout(context);
+        TextView textView = new TextView(context);
+        textView.setText(str);
+        textView.setTextColor(scheduleDatePickerColors.textColor);
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        frameLayout.addView(textView, LayoutHelper.createFrame(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
+        textView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda211
+            @Override // android.view.View.OnTouchListener
+            public final boolean onTouch(View view, MotionEvent motionEvent) {
+                boolean lambda$createCustomPicker$217;
+                lambda$createCustomPicker$217 = AlertsCreator.lambda$createCustomPicker$217(view, motionEvent);
+                return lambda$createCustomPicker$217;
+            }
+        });
+        linearLayout2.addView(frameLayout, LayoutHelper.createLinear(-1, -2, 51, 22, 0, 0, 4));
+        linearLayout2.addView(linearLayout, LayoutHelper.createLinear(-1, -2, 1.0f, 0, 0, 12, 0, 12));
+        ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, null);
+        buttonWithCounterView.setText(LocaleController.getString(R.string.Select), false);
+        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda212
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                AlertsCreator.lambda$createCustomPicker$218(r1, view);
+            }
+        });
+        linearLayout2.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 0, 16, 12, 16, 12));
+        builder.setCustomView(linearLayout2);
+        BottomSheet show = builder.show();
+        show.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda213
+            @Override // android.content.DialogInterface.OnDismissListener
+            public final void onDismiss(DialogInterface dialogInterface) {
+                AlertsCreator.lambda$createCustomPicker$219(Utilities.Callback.this, numberPicker, dialogInterface);
+            }
+        });
+        show.setBackgroundColor(scheduleDatePickerColors.backgroundColor);
+        show.fixNavigationBar(scheduleDatePickerColors.backgroundColor);
+        BottomSheet create = builder.create();
+        final BottomSheet[] bottomSheetArr = {create};
+        return create;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ String lambda$createCustomPicker$216(String[] strArr, int i) {
+        return strArr[i];
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$createCustomPicker$218(BottomSheet[] bottomSheetArr, View view) {
+        bottomSheetArr[0].lambda$new$0();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$createCustomPicker$219(Utilities.Callback callback, NumberPicker numberPicker, DialogInterface dialogInterface) {
+        callback.run(Integer.valueOf(numberPicker.getValue()));
     }
 }

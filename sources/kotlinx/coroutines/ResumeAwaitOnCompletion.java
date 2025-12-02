@@ -2,23 +2,16 @@ package kotlinx.coroutines;
 
 import kotlin.Result;
 import kotlin.ResultKt;
-import kotlin.Unit;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class ResumeAwaitOnCompletion extends JobNode {
     private final CancellableContinuationImpl continuation;
-
-    @Override // kotlin.jvm.functions.Function1
-    public /* bridge */ /* synthetic */ Object invoke(Object obj) {
-        invoke((Throwable) obj);
-        return Unit.INSTANCE;
-    }
 
     public ResumeAwaitOnCompletion(CancellableContinuationImpl cancellableContinuationImpl) {
         this.continuation = cancellableContinuationImpl;
     }
 
-    @Override // kotlinx.coroutines.CompletionHandlerBase
+    @Override // kotlinx.coroutines.InternalCompletionHandler
     public void invoke(Throwable th) {
         Object state$kotlinx_coroutines_core = getJob().getState$kotlinx_coroutines_core();
         if (state$kotlinx_coroutines_core instanceof CompletedExceptionally) {

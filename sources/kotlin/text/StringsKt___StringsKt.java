@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
     public static char last(CharSequence charSequence) {
         Intrinsics.checkNotNullParameter(charSequence, "<this>");
@@ -21,7 +21,7 @@ public abstract class StringsKt___StringsKt extends StringsKt___StringsJvmKt {
             throw new IllegalArgumentException(("Requested character count " + i + " is less than zero.").toString());
         }
         String substring = str.substring(RangesKt.coerceAtMost(i, str.length()));
-        Intrinsics.checkNotNullExpressionValue(substring, "this as java.lang.String).substring(startIndex)");
+        Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
         return substring;
     }
 }

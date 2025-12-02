@@ -5,8 +5,8 @@ import com.google.android.gms.common.api.Status;
 
 /* loaded from: classes.dex */
 public class GoogleSignInResult implements Result {
-    private Status zba;
-    private GoogleSignInAccount zbb;
+    private final Status zba;
+    private final GoogleSignInAccount zbb;
 
     public GoogleSignInResult(GoogleSignInAccount googleSignInAccount, Status status) {
         this.zbb = googleSignInAccount;

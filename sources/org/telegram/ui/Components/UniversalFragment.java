@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.BackDrawable;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class UniversalFragment extends BaseFragment {
     public UniversalRecyclerView listView;
     private int savedScrollOffset;

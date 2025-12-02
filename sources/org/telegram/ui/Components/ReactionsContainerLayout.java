@@ -77,7 +77,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ReactionsContainerLayout extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final Property TRANSITION_PROGRESS_VALUE = new Property(Float.class, "transitionProgress") { // from class: org.telegram.ui.Components.ReactionsContainerLayout.1
         @Override // android.util.Property

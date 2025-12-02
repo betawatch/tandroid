@@ -5,14 +5,14 @@ import java.io.StringWriter;
 import java.io.Writer;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class TextStreamsKt {
     public static final String readText(Reader reader) {
         Intrinsics.checkNotNullParameter(reader, "<this>");
         StringWriter stringWriter = new StringWriter();
         copyTo$default(reader, stringWriter, 0, 2, null);
         String stringWriter2 = stringWriter.toString();
-        Intrinsics.checkNotNullExpressionValue(stringWriter2, "buffer.toString()");
+        Intrinsics.checkNotNullExpressionValue(stringWriter2, "toString(...)");
         return stringWriter2;
     }
 

@@ -212,7 +212,7 @@ public class EditWidgetActivity extends BaseFragment {
                     linearLayout2.addView(this.cells[i], LayoutHelper.createLinear(-1, -2));
                     i++;
                 }
-                linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(218, NotificationCenter.albumsDidLoad, 17));
+                linearLayout2.addView(EditWidgetActivity.this.previewImageView, LayoutHelper.createLinear(NotificationCenter.starGiftOptionsLoaded, NotificationCenter.albumsDidLoad, 17));
                 EditWidgetActivity.this.previewImageView.setImageResource(R.drawable.chats_widget_preview);
             } else if (EditWidgetActivity.this.widgetType == 1) {
                 while (i < 2) {

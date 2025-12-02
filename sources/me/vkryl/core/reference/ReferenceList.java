@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.Semaphore;
 import me.vkryl.core.reference.ReferenceCreator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ReferenceList implements Iterable, ReferenceCreator {
     private final boolean cacheIterator;
     private final FullnessListener fullnessListener;

@@ -40,7 +40,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class TranscribeButton {
     private static final int[] pressedState = {R.attr.state_enabled, R.attr.state_pressed};
     private static HashMap transcribeOperationsByDialogPosition;

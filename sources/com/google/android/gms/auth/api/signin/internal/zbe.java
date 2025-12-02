@@ -11,7 +11,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.ClientSettings;
 import com.google.android.gms.common.internal.GmsClient;
-import com.google.android.gms.internal.auth-api.zbbb;
+import com.google.android.gms.internal.auth-api.zbat;
 import java.util.Iterator;
 
 /* loaded from: classes.dex */
@@ -21,7 +21,7 @@ public final class zbe extends GmsClient {
     public zbe(Context context, Looper looper, ClientSettings clientSettings, GoogleSignInOptions googleSignInOptions, GoogleApiClient.ConnectionCallbacks connectionCallbacks, GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
         super(context, looper, 91, clientSettings, connectionCallbacks, onConnectionFailedListener);
         GoogleSignInOptions.Builder builder = googleSignInOptions != null ? new GoogleSignInOptions.Builder(googleSignInOptions) : new GoogleSignInOptions.Builder();
-        builder.setLogSessionId(zbbb.zba());
+        builder.setLogSessionId(zbat.zba());
         if (!clientSettings.getAllRequestedScopes().isEmpty()) {
             Iterator it = clientSettings.getAllRequestedScopes().iterator();
             while (it.hasNext()) {

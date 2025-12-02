@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import java.util.concurrent.CancellationException;
 import kotlin.coroutines.CoroutineContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class JobKt {
     public static final CompletableJob Job(Job job) {
         return JobKt__JobKt.Job(job);
@@ -31,5 +31,9 @@ public abstract class JobKt {
 
     public static final Job getJob(CoroutineContext coroutineContext) {
         return JobKt__JobKt.getJob(coroutineContext);
+    }
+
+    public static final DisposableHandle invokeOnCompletion(Job job, boolean z, boolean z2, InternalCompletionHandler internalCompletionHandler) {
+        return JobKt__JobKt.invokeOnCompletion(job, z, z2, internalCompletionHandler);
     }
 }

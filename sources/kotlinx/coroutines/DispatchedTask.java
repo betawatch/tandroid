@@ -12,7 +12,7 @@ import kotlinx.coroutines.internal.ThreadContextKt;
 import kotlinx.coroutines.scheduling.Task;
 import kotlinx.coroutines.scheduling.TaskContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class DispatchedTask extends Task {
     public int resumeMode;
 
@@ -28,20 +28,6 @@ public abstract class DispatchedTask extends Task {
 
     public DispatchedTask(int i) {
         this.resumeMode = i;
-    }
-
-    public final void handleFatalException$kotlinx_coroutines_core(Throwable th, Throwable th2) {
-        if (th == null && th2 == null) {
-            return;
-        }
-        if (th != null && th2 != null) {
-            kotlin.ExceptionsKt.addSuppressed(th, th2);
-        }
-        if (th == null) {
-            th = th2;
-        }
-        Intrinsics.checkNotNull(th);
-        CoroutineExceptionHandlerKt.handleCoroutineException(getDelegate$kotlinx_coroutines_core().getContext(), new CoroutinesInternalError("Fatal exception in coroutines machinery for " + this + ". Please read KDoc to 'handleFatalException' method and report this incident to maintainers", th));
     }
 
     public Throwable getExceptionalResult$kotlinx_coroutines_core(Object obj) {
@@ -112,5 +98,19 @@ public abstract class DispatchedTask extends Task {
             }
             handleFatalException$kotlinx_coroutines_core(th3, Result.exceptionOrNull-impl(obj));
         }
+    }
+
+    public final void handleFatalException$kotlinx_coroutines_core(Throwable th, Throwable th2) {
+        if (th == null && th2 == null) {
+            return;
+        }
+        if (th != null && th2 != null) {
+            kotlin.ExceptionsKt.addSuppressed(th, th2);
+        }
+        if (th == null) {
+            th = th2;
+        }
+        Intrinsics.checkNotNull(th);
+        CoroutineExceptionHandlerKt.handleCoroutineException(getDelegate$kotlinx_coroutines_core().getContext(), new CoroutinesInternalError("Fatal exception in coroutines machinery for " + this + ". Please read KDoc to 'handleFatalException' method and report this incident to maintainers", th));
     }
 }

@@ -11,7 +11,7 @@ import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.PhotoFilterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PhotoFilterCurvesControl extends View {
     private int activeSegment;
     private Rect actualArea;

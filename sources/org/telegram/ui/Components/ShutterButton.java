@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ShutterButton extends View {
     private ShutterButtonDelegate delegate;
     private DecelerateInterpolator interpolator;

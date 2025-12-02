@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.CollectionToArray;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractCollection implements Collection {
     @Override // java.util.Collection
     public boolean add(Object obj) {
@@ -40,12 +40,12 @@ public abstract class AbstractCollection implements Collection {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    protected AbstractCollection() {
-    }
-
     @Override // java.util.Collection
     public final /* bridge */ int size() {
         return getSize();
+    }
+
+    protected AbstractCollection() {
     }
 
     @Override // java.util.Collection
@@ -70,16 +70,19 @@ public abstract class AbstractCollection implements Collection {
     }
 
     public String toString() {
-        return CollectionsKt.joinToString$default(this, ", ", "[", "]", 0, null, new Function1() { // from class: kotlin.collections.AbstractCollection$toString$1
-            {
-                super(1);
-            }
-
+        return CollectionsKt.joinToString$default(this, ", ", "[", "]", 0, null, new Function1() { // from class: kotlin.collections.AbstractCollection$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public final CharSequence invoke(Object obj) {
-                return obj == AbstractCollection.this ? "(this Collection)" : String.valueOf(obj);
+            public final Object invoke(Object obj) {
+                CharSequence string$lambda$2;
+                string$lambda$2 = AbstractCollection.toString$lambda$2(AbstractCollection.this, obj);
+                return string$lambda$2;
             }
         }, 24, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final CharSequence toString$lambda$2(AbstractCollection abstractCollection, Object obj) {
+        return obj == abstractCollection ? "(this Collection)" : String.valueOf(obj);
     }
 
     @Override // java.util.Collection

@@ -85,7 +85,7 @@ import org.telegram.ui.StatisticActivity;
 import org.telegram.ui.ThemePreviewActivity;
 import org.telegram.ui.WallpapersListActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatThemeBottomSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
     private final Adapter adapter;
     private final View applyButton;

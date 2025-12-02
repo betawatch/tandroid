@@ -1,6 +1,6 @@
 package me.vkryl.core;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class BitwiseUtils {
     public static boolean hasFlag(int i, int i2) {
         return (i & i2) != 0;

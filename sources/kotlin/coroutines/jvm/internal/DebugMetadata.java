@@ -7,7 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 /* JADX WARN: Method from annotation default annotation not found: n */
 /* JADX WARN: Method from annotation default annotation not found: s */
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public @interface DebugMetadata {
     String c() default "";
 

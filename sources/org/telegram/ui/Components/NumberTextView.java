@@ -15,7 +15,7 @@ import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class NumberTextView extends View {
     private boolean addNumber;
     private ObjectAnimator animator;

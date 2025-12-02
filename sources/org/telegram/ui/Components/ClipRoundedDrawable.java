@@ -6,7 +6,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ClipRoundedDrawable extends Drawable {
     private Drawable drawable;
     private Path path;

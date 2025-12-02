@@ -11,10 +11,10 @@ import org.telegram.messenger.NotificationCenter;
 /* loaded from: classes.dex */
 public class GoogleSignatureVerifier {
     private static GoogleSignatureVerifier zza;
-    private final Context zzc;
+    private final Context zzd;
 
     public GoogleSignatureVerifier(Context context) {
-        this.zzc = context.getApplicationContext();
+        this.zzd = context.getApplicationContext();
     }
 
     public static GoogleSignatureVerifier getInstance(Context context) {
@@ -88,7 +88,7 @@ public class GoogleSignatureVerifier {
             return true;
         }
         if (zzb(packageInfo, true)) {
-            if (GooglePlayServicesUtilLight.honorsDebugCertificates(this.zzc)) {
+            if (GooglePlayServicesUtilLight.honorsDebugCertificates(this.zzd)) {
                 return true;
             }
             Log.w("GoogleSignatureVerifier", "Test-keys aren't accepted on this build.");

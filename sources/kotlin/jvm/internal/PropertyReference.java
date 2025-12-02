@@ -3,7 +3,7 @@ package kotlin.jvm.internal;
 import kotlin.reflect.KCallable;
 import kotlin.reflect.KProperty;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class PropertyReference extends CallableReference implements KProperty {
     private final boolean syntheticJavaProperty;
 
@@ -15,7 +15,7 @@ public abstract class PropertyReference extends CallableReference implements KPr
     @Override // kotlin.jvm.internal.CallableReference
     protected KProperty getReflected() {
         if (this.syntheticJavaProperty) {
-            throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties");
+            throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties. Please follow/upvote https://youtrack.jetbrains.com/issue/KT-55980");
         }
         return (KProperty) super.getReflected();
     }

@@ -12,7 +12,7 @@ public final class zzh extends zza implements IInterface {
 
     public final void zzg(zzj zzjVar) {
         Parcel zza = zza();
-        zzc.zzb(zza, zzjVar);
+        zzc.zzc(zza, zzjVar);
         zzb(1, zza);
     }
 }

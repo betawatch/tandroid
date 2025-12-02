@@ -10,7 +10,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BatteryDrawable extends Drawable {
     private Paint connectorPaint;
     private Paint fillPaint;

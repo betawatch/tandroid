@@ -54,7 +54,7 @@ import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.Components.GestureDetectorFixDoubleTap;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RecyclerListView extends RecyclerView {
     private static int[] attributes;
     private static boolean gotAttributes;

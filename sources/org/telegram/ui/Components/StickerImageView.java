@@ -10,7 +10,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class StickerImageView extends BackupImageView implements NotificationCenter.NotificationCenterDelegate {
     int currentAccount;
     int stickerNum;
@@ -58,7 +58,7 @@ public class StickerImageView extends BackupImageView implements NotificationCen
     /* JADX WARN: Removed duplicated region for block: B:10:0x0034  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x0042  */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0049  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0056  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

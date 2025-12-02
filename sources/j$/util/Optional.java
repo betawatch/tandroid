@@ -19,14 +19,6 @@ public final class Optional<T> {
         this.a = Objects.requireNonNull(obj);
     }
 
-    public final int hashCode() {
-        Object obj = this.a;
-        if (obj != null) {
-            return obj.hashCode();
-        }
-        return 0;
-    }
-
     public static <T> Optional<T> of(T t) {
         return new Optional<>(t);
     }
@@ -51,6 +43,10 @@ public final class Optional<T> {
             return Objects.equals(this.a, ((Optional) obj).a);
         }
         return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hashCode(this.a);
     }
 
     public final String toString() {

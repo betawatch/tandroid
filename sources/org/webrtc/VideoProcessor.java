@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public interface VideoProcessor extends CapturerObserver {
     void onFrameCaptured(VideoFrame videoFrame, FrameAdaptationParameters frameAdaptationParameters);
 

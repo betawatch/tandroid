@@ -23,6 +23,7 @@ public class BuildVars {
     public static boolean NO_SCOPED_STORAGE = false;
     public static String PLAYSTORE_APP_URL = null;
     public static String SAFETYNET_KEY = null;
+    public static boolean SUPPORTS_PASSKEYS = false;
     public static boolean USE_CLOUD_STRINGS = true;
     private static Boolean betaApp;
 
@@ -30,6 +31,7 @@ public class BuildVars {
         boolean z = true;
         NO_SCOPED_STORAGE = Build.VERSION.SDK_INT <= 29;
         BUILD_VERSION_STRING = BuildConfig.BUILD_VERSION_STRING;
+        SUPPORTS_PASSKEYS = true;
         APP_ID = 4;
         APP_HASH = "014b35b6184100b085b0d0572f9b5103";
         SAFETYNET_KEY = "AIzaSyDqt8P-7F7CPCseMkOiVRgb1LY8RN1bvH8";

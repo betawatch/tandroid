@@ -43,7 +43,7 @@ import org.telegram.ui.FilteredSearchView;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SearchDownloadsContainer extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     DownloadsAdapter adapter;
     boolean checkingFilesExist;

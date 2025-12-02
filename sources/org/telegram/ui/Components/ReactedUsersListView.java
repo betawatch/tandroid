@@ -34,7 +34,7 @@ import org.telegram.ui.Components.ReactedHeaderView;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ReactedUsersListView extends FrameLayout {
     private RecyclerView.Adapter adapter;
     public boolean canLoadMore;

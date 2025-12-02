@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref$BooleanRef;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class FlowKt__LimitKt$dropWhile$1$1 implements FlowCollector {
     final /* synthetic */ Ref$BooleanRef $matched;
     final /* synthetic */ Function2 $predicate;

@@ -23,7 +23,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.IUpdateButton;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UpdateButton extends IUpdateButton {
     private AnimatorSet animator;
     private RadialProgress2 icon;

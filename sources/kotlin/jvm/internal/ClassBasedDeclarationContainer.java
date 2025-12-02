@@ -2,7 +2,7 @@ package kotlin.jvm.internal;
 
 import kotlin.reflect.KDeclarationContainer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface ClassBasedDeclarationContainer extends KDeclarationContainer {
     Class getJClass();
 }

@@ -445,7 +445,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     private ProxyVideoSink[] currentBackgroundSink = new ProxyVideoSink[2];
     private String[] currentBackgroundEndpointId = new String[2];
     private HashMap<String, ProxyVideoSink> remoteSinks = new HashMap<>();
-    private final Runnable destroyConvertingRunnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda124
+    private final Runnable destroyConvertingRunnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda123
         @Override // java.lang.Runnable
         public final void run() {
             VoIPService.this.destroyConverting();
@@ -653,7 +653,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             if (z3) {
                 editCallMember(UserConfig.getInstance(this.currentAccount).getCurrentUser(), Boolean.valueOf(z), null, null, null, null);
                 DispatchQueue dispatchQueue = Utilities.globalQueue;
-                Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda49
+                Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda48
                     @Override // java.lang.Runnable
                     public final void run() {
                         VoIPService.this.lambda$setMicMute$0();
@@ -1030,7 +1030,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (this.joinConference != null) {
             if (!PermissionRequest.hasPermission("android.permission.RECORD_AUDIO")) {
                 this.micMute = true;
-                PermissionRequest.requestPermission("android.permission.RECORD_AUDIO", new Utilities.Callback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda70
+                PermissionRequest.requestPermission("android.permission.RECORD_AUDIO", new Utilities.Callback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda69
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         VoIPService.this.lambda$onStartCommand$1((Boolean) obj);
@@ -1056,7 +1056,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                     contactsController.createOrUpdateConnectionServiceContact(user.id, user.first_name, user.last_name);
                     telecomManager.placeCall(Uri.fromParts("tel", "+99084" + this.user.id, null), bundle);
                 } else {
-                    Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda71
+                    Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda70
                         @Override // java.lang.Runnable
                         public final void run() {
                             VoIPService.this.lambda$onStartCommand$2();
@@ -1121,7 +1121,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             }
         }
         initializeAccountRelatedThings();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda72
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda71
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$onStartCommand$3();
@@ -1223,7 +1223,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             }
             TL_phone.discardGroupCall discardgroupcall = new TL_phone.discardGroupCall();
             discardgroupcall.call = this.groupCall.getInputGroupCall();
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(discardgroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda136
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(discardgroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda135
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     VoIPService.this.lambda$hangUp$4(tLObject, tL_error);
@@ -1234,7 +1234,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         TL_phone.leaveGroupCall leavegroupcall = new TL_phone.leaveGroupCall();
         leavegroupcall.call = this.groupCall.getInputGroupCall();
         leavegroupcall.source = this.mySource[0];
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(leavegroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda137
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(leavegroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda136
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$hangUp$5(tLObject, tL_error);
@@ -1265,7 +1265,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         showNotification();
         startConnectingSound();
         dispatchStateChanged(14);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda92
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda91
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.lambda$startOutgoingCall$6();
@@ -1276,7 +1276,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         tL_messages_getDhConfig.random_length = 256;
         final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         tL_messages_getDhConfig.version = messagesStorage.getLastSecretVersion();
-        this.callReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getDhConfig, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda93
+        this.callReqId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getDhConfig, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda92
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$startOutgoingCall$11(messagesStorage, tLObject, tL_error);
@@ -1331,7 +1331,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             this.g_a = byteArray;
             requestcall.g_a_hash = Utilities.computeSHA256(byteArray, 0, byteArray.length);
             requestcall.random_id = Utilities.random.nextInt();
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(requestcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda83
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(requestcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda82
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
                     VoIPService.this.lambda$startOutgoingCall$10(bArr, tLObject2, tL_error2);
@@ -1347,7 +1347,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startOutgoingCall$10(final byte[] bArr, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda99
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda98
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startOutgoingCall$9(tL_error, tLObject, bArr);
@@ -1372,7 +1372,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 }
                 this.pendingUpdates.clear();
             }
-            Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda68
+            Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda67
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$startOutgoingCall$8();
@@ -1412,7 +1412,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         tL_inputPhoneCall.id = phoneCall.id;
         discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonMissed();
         FileLog.e("discardCall " + discardcall.reason);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda63
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda62
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$startOutgoingCall$7(tLObject, tL_error);
@@ -1429,7 +1429,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 FileLog.d("phone.discardCall " + tLObject);
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda94
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda93
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.callFailed();
@@ -1466,7 +1466,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         TL_phone.PhoneCall phoneCall2 = this.privateCall;
         tL_inputPhoneCall.id = phoneCall2.id;
         tL_inputPhoneCall.access_hash = phoneCall2.access_hash;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(receivedcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda128
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(receivedcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda127
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$acknowledgeCall$13(z, tLObject, tL_error);
@@ -1476,7 +1476,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$acknowledgeCall$13(final boolean z, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda53
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda52
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$acknowledgeCall$12(tLObject, tL_error, z);
@@ -1638,7 +1638,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             this.micSwitching = true;
         }
         if (this.groupCall != null) {
-            editCallMember(UserConfig.getInstance(this.currentAccount).getCurrentUser(), Boolean.valueOf(!z2), Boolean.valueOf(this.videoState[0] != 2), null, null, new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda67
+            editCallMember(UserConfig.getInstance(this.currentAccount).getCurrentUser(), Boolean.valueOf(!z2), Boolean.valueOf(this.videoState[0] != 2), null, null, new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda66
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$setupCaptureDevice$14();
@@ -1711,7 +1711,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
         TL_phone.leaveGroupCallPresentation leavegroupcallpresentation = new TL_phone.leaveGroupCallPresentation();
         leavegroupcallpresentation.call = this.groupCall.getInputGroupCall();
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(leavegroupcallpresentation, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda117
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(leavegroupcallpresentation, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda116
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$stopScreenCapture$15(tLObject, tL_error);
@@ -1719,7 +1719,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         });
         NativeInstance nativeInstance = this.tgVoip[1];
         if (nativeInstance != null) {
-            Utilities.globalQueue.postRunnable(new VoIPService$$ExternalSyntheticLambda106(nativeInstance));
+            Utilities.globalQueue.postRunnable(new VoIPService$$ExternalSyntheticLambda105(nativeInstance));
         }
         this.mySource[1] = 0;
         this.tgVoip[1] = null;
@@ -1952,9 +1952,9 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x004f  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0052  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2022,8 +2022,8 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         this.lastGroupCallUpdate = groupCall;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:76:0x019d  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x01aa  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0199  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x01a6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2085,7 +2085,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             if (phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonBusy) {
                 dispatchStateChanged(17);
                 this.playingSound = true;
-                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda163
+                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda162
                     @Override // java.lang.Runnable
                     public final void run() {
                         VoIPService.this.lambda$onCallUpdated$16();
@@ -2179,7 +2179,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 AndroidUtilities.cancelRunOnUIThread(runnable);
                 this.connectingSoundRunnable = null;
             }
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda164
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda163
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$onCallUpdated$17();
@@ -2190,7 +2190,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 AndroidUtilities.cancelRunOnUIThread(runnable2);
                 this.timeoutRunnable = null;
             }
-            Runnable runnable3 = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda165
+            Runnable runnable3 = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda164
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$onCallUpdated$18();
@@ -2286,7 +2286,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             tL_phoneCallProtocol2.udp_reflector = true;
             tL_phoneCallProtocol2.udp_p2p = true;
             Collections.addAll(tL_phoneCallProtocol2.library_versions, NativeInstance.getAllVersions());
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(confirmcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda86
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(confirmcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda85
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     VoIPService.this.lambda$processAcceptedCall$20(tLObject, tL_error);
@@ -2316,7 +2316,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         tL_phoneCallProtocol22.udp_reflector = true;
         tL_phoneCallProtocol22.udp_p2p = true;
         Collections.addAll(tL_phoneCallProtocol22.library_versions, NativeInstance.getAllVersions());
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(confirmcall2, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda86
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(confirmcall2, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda85
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$processAcceptedCall$20(tLObject, tL_error);
@@ -2326,7 +2326,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processAcceptedCall$20(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda79
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda78
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$processAcceptedCall$19(tL_error, tLObject);
@@ -2413,7 +2413,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 creategroupcall.flags |= 4;
             }
             this.groupCallBottomSheetLatch = new CountDownLatch(1);
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(creategroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda96
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(creategroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda95
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     VoIPService.this.lambda$startGroupCall$23(tLObject, tL_error);
@@ -2432,7 +2432,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             }
             configureDeviceForCall();
             showNotification();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda97
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda96
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.lambda$startGroupCall$24();
@@ -2467,7 +2467,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             joingroupcall.join_as = tL_inputPeerUser;
             tL_inputPeerUser.user_id = AccountInstance.getInstance(this.currentAccount).getUserConfig().getClientUserId();
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(joingroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda98
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(joingroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda97
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$startGroupCall$29(i, z, tLObject, tL_error);
@@ -2492,7 +2492,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 TLRPC.Update update = updates.updates.get(i);
                 if (update instanceof TLRPC.TL_updateGroupCall) {
                     final TLRPC.TL_updateGroupCall tL_updateGroupCall = (TLRPC.TL_updateGroupCall) update;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda61
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda60
                         @Override // java.lang.Runnable
                         public final void run() {
                             VoIPService.this.lambda$startGroupCall$21(tL_updateGroupCall);
@@ -2505,7 +2505,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda62
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda61
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startGroupCall$22(tL_error);
@@ -2547,7 +2547,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startGroupCall$29(final int i, final boolean z, TLObject tLObject, final TLRPC.TL_error tL_error) {
         if (tLObject != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda56
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda55
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$startGroupCall$25(i);
@@ -2566,7 +2566,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                         if (i3 < size2) {
                             final TLRPC.GroupCallParticipant groupCallParticipant = tL_updateGroupCallParticipants.participants.get(i3);
                             if (MessageObject.getPeerId(groupCallParticipant.peer) == selfId) {
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda57
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda56
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         VoIPService.this.lambda$startGroupCall$26(groupCallParticipant);
@@ -2588,7 +2588,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 }
             }
             MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda58
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda57
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$startGroupCall$27(z);
@@ -2597,7 +2597,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             startGroupCheckShortpoll();
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda59
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda58
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startGroupCall$28(tL_error);
@@ -2655,7 +2655,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             this.convertingVoip = nativeInstance;
             nativeInstanceArr[0] = null;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda60
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda59
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$convertToConferenceCall$30();
@@ -2706,7 +2706,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
             createconferencecall.random_id = Utilities.random.nextInt();
             this.groupCallBottomSheetLatch = new CountDownLatch(1);
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda87
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda86
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     VoIPService.this.lambda$startConferenceGroupCall$32(accountInstance, tLObject, tL_error);
@@ -2759,7 +2759,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
             getgroupcall.call = this.joinConference;
             getgroupcall.limit = 10;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda88
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda87
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     VoIPService.this.lambda$startConferenceGroupCall$34(i, str, tLObject, tL_error);
@@ -2770,7 +2770,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (str == null) {
             configureDeviceForCall();
             showNotification();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda89
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda88
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.lambda$startConferenceGroupCall$35();
@@ -2808,7 +2808,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("initital source = " + i);
             }
-            final Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda90
+            final Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda89
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$startConferenceGroupCall$55(str, i, z);
@@ -2817,7 +2817,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             if (z2) {
                 this.conference.reset();
             }
-            this.conference.requestLastBlock(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda91
+            this.conference.requestLastBlock(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda90
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$startConferenceGroupCall$56(runnable);
@@ -2828,7 +2828,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startConferenceGroupCall$32(final AccountInstance accountInstance, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda42
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda41
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startConferenceGroupCall$31(tLObject, accountInstance, tL_error);
@@ -2923,7 +2923,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startConferenceGroupCall$34(final int i, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda148
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda147
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startConferenceGroupCall$33(tLObject, i, str, tL_error);
@@ -2988,7 +2988,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             joingroupcall.join_as = tL_inputPeerUser;
             tL_inputPeerUser.user_id = AccountInstance.getInstance(this.currentAccount).getUserConfig().getClientUserId();
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(joingroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda78
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(joingroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda77
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$startConferenceGroupCall$54(i, z, str, tLObject, tL_error);
@@ -3004,7 +3004,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startConferenceGroupCall$54(final int i, final boolean z, final String str, TLObject tLObject, final TLRPC.TL_error tL_error) {
         if (tLObject != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda45
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda44
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$startConferenceGroupCall$36(i);
@@ -3037,7 +3037,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                     if (i2 < size) {
                         final TLRPC.GroupCallParticipant groupCallParticipant = tL_updateGroupCallParticipants.participants.get(i2);
                         if (MessageObject.getPeerId(groupCallParticipant.peer) == selfId) {
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda46
+                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda45
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     VoIPService.this.lambda$startConferenceGroupCall$37(groupCallParticipant);
@@ -3060,7 +3060,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 }
             }
             MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda47
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda46
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$startConferenceGroupCall$52(findUpdatesAndRemove, z);
@@ -3068,7 +3068,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             });
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda48
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda47
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startConferenceGroupCall$53(tL_error, str);
@@ -3113,7 +3113,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             TLRPC.GroupCall groupCall = this.groupCall.call;
             tL_inputGroupCall.id = groupCall.id;
             tL_inputGroupCall.access_hash = groupCall.access_hash;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(exportgroupcallinvite, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda146
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(exportgroupcallinvite, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda145
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     VoIPService.this.lambda$startConferenceGroupCall$45(phoneCall, exportgroupcallinvite, tLObject, tL_error);
@@ -3140,7 +3140,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 final AtomicInteger atomicInteger2 = atomicInteger;
                 AtomicInteger atomicInteger3 = atomicInteger;
                 final int i3 = length;
-                ConnectionsManager.getInstance(this.currentAccount).sendRequest(inviteconferencecallparticipant, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda147
+                ConnectionsManager.getInstance(this.currentAccount).sendRequest(inviteconferencecallparticipant, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda146
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         VoIPService.this.lambda$startConferenceGroupCall$51(j, hashSet, atomicInteger2, i3, str, tLObject, tL_error);
@@ -3159,7 +3159,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startConferenceGroupCall$45(final TL_phone.PhoneCall phoneCall, final TL_phone.exportGroupCallInvite exportgroupcallinvite, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda149
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda148
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startConferenceGroupCall$44(tLObject, phoneCall, exportgroupcallinvite);
@@ -3196,7 +3196,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 inviteconferencecallparticipant.user_id = MessagesController.getInstance(this.currentAccount).getInputUser(longValue);
                 inviteconferencecallparticipant.call = exportgroupcallinvite.call;
                 final AtomicInteger atomicInteger2 = atomicInteger;
-                ConnectionsManager.getInstance(this.currentAccount).sendRequest(inviteconferencecallparticipant, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda100
+                ConnectionsManager.getInstance(this.currentAccount).sendRequest(inviteconferencecallparticipant, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda99
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                         VoIPService.this.lambda$startConferenceGroupCall$43(longValue, hashSet, atomicInteger2, size, str2, tLObject2, tL_error);
@@ -3214,7 +3214,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (tLObject instanceof TLRPC.Updates) {
             final TLRPC.Updates updates = (TLRPC.Updates) tLObject;
             MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda139
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda138
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$startConferenceGroupCall$38(updates, j);
@@ -3226,7 +3226,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (atomicInteger.incrementAndGet() != i || hashSet.isEmpty()) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda140
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda139
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startConferenceGroupCall$42(hashSet, str);
@@ -3291,7 +3291,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             arrayList.add(MessagesController.getInstance(this.currentAccount).getUser(l));
             getrequirementstocontact.id.add(MessagesController.getInstance(this.currentAccount).getInputUser(longValue));
         }
-        final Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda65
+        final Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda64
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startConferenceGroupCall$39(arrayList, arrayList2, arrayList3, str);
@@ -3300,7 +3300,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (UserConfig.getInstance(this.currentAccount).isPremium()) {
             runnable.run();
         } else {
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getrequirementstocontact, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda66
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getrequirementstocontact, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda65
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     VoIPService.lambda$startConferenceGroupCall$41(arrayList, arrayList2, runnable, tLObject, tL_error);
@@ -3322,7 +3322,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$startConferenceGroupCall$41(final ArrayList arrayList, final ArrayList arrayList2, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda150
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda149
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.lambda$startConferenceGroupCall$40(TLObject.this, arrayList, arrayList2, runnable);
@@ -3348,7 +3348,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (tLObject instanceof TLRPC.Updates) {
             final TLRPC.Updates updates = (TLRPC.Updates) tLObject;
             MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda73
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda72
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$startConferenceGroupCall$46(updates, j);
@@ -3360,7 +3360,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (atomicInteger.incrementAndGet() != i || hashSet.isEmpty()) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda74
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda73
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startConferenceGroupCall$50(hashSet, str);
@@ -3425,7 +3425,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             arrayList.add(MessagesController.getInstance(this.currentAccount).getUser(l));
             getrequirementstocontact.id.add(MessagesController.getInstance(this.currentAccount).getInputUser(longValue));
         }
-        final Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda142
+        final Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda141
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startConferenceGroupCall$47(arrayList, arrayList2, arrayList3, str);
@@ -3434,7 +3434,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (UserConfig.getInstance(this.currentAccount).isPremium()) {
             runnable.run();
         } else {
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getrequirementstocontact, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda143
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getrequirementstocontact, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda142
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     VoIPService.lambda$startConferenceGroupCall$49(arrayList, arrayList2, runnable, tLObject, tL_error);
@@ -3456,7 +3456,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$startConferenceGroupCall$49(final ArrayList arrayList, final ArrayList arrayList2, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda34
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.lambda$startConferenceGroupCall$48(TLObject.this, arrayList, arrayList2, runnable);
@@ -3553,7 +3553,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
         joingroupcallpresentation.params = tL_dataJSON;
         tL_dataJSON.data = str;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(joingroupcallpresentation, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda166
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(joingroupcallpresentation, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda165
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$startScreenCapture$60(i, tLObject, tL_error);
@@ -3569,14 +3569,14 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startScreenCapture$60(final int i, TLObject tLObject, final TLRPC.TL_error tL_error) {
         if (tLObject != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda102
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda101
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$startScreenCapture$57(i);
                 }
             });
             final TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda103
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda102
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$startScreenCapture$58(updates);
@@ -3586,7 +3586,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             startGroupCheckShortpoll();
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda104
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda103
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startScreenCapture$59(tL_error);
@@ -3678,7 +3678,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (iArr[0] == 0 && iArr[1] == 0 && ((groupCall = call.call) == null || !groupCall.rtmp_stream)) {
             return;
         }
-        Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda95
+        Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda94
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startGroupCheckShortpoll$65();
@@ -3715,7 +3715,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 }
                 i++;
             } else {
-                this.checkRequestId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(checkgroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda138
+                this.checkRequestId = ConnectionsManager.getInstance(this.currentAccount).sendRequest(checkgroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda137
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         VoIPService.this.lambda$startGroupCheckShortpoll$64(checkgroupcall, tLObject, tL_error);
@@ -3728,7 +3728,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startGroupCheckShortpoll$64(final TL_phone.checkGroupCall checkgroupcall, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda123
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda122
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startGroupCheckShortpoll$63(tL_error, tLObject, checkgroupcall);
@@ -3754,7 +3754,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (this.conference != null && tL_error != null && "GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text) && this.groupCall.getInputGroupCall(true) != null && this.groupCall.getInputGroupCall(false) != null) {
             TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
             getgroupcall.call = this.groupCall.getInputGroupCall(false);
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda75
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda74
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
                     VoIPService.this.lambda$startGroupCheckShortpoll$62(tLObject2, tL_error2);
@@ -3818,7 +3818,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startGroupCheckShortpoll$62(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda157
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda156
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startGroupCheckShortpoll$61(tLObject, tL_error);
@@ -3944,38 +3944,38 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             } else {
                 logFilePath = VoIPHelper.getLogFilePath(str, false);
             }
-            this.tgVoip[i] = NativeInstance.makeGroup(logFilePath, this.captureDevice[i], i == 1, i == 0 && SharedConfig.noiseSupression, new NativeInstance.PayloadCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda109
+            this.tgVoip[i] = NativeInstance.makeGroup(logFilePath, this.captureDevice[i], i == 1, i == 0 && SharedConfig.noiseSupression, new NativeInstance.PayloadCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda108
                 @Override // org.telegram.messenger.voip.NativeInstance.PayloadCallback
                 public final void run(int i2, String str2) {
                     VoIPService.this.lambda$createGroupInstance$66(i, zArr, i2, str2);
                 }
-            }, new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda110
+            }, new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda109
                 @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
                 public final void run(int[] iArr, float[] fArr, boolean[] zArr2) {
                     VoIPService.this.lambda$createGroupInstance$68(i, iArr, fArr, zArr2);
                 }
-            }, new NativeInstance.VideoSourcesCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda111
+            }, new NativeInstance.VideoSourcesCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda110
                 @Override // org.telegram.messenger.voip.NativeInstance.VideoSourcesCallback
                 public final void run(long j, int[] iArr) {
                     VoIPService.this.lambda$createGroupInstance$70(i, j, iArr);
                 }
-            }, new NativeInstance.RequestBroadcastPartCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda112
+            }, new NativeInstance.RequestBroadcastPartCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda111
                 @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback
                 public final void run(long j, long j2, int i2, int i3) {
                     VoIPService.this.lambda$createGroupInstance$75(i, j, j2, i2, i3);
                 }
-            }, new NativeInstance.RequestBroadcastPartCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda113
+            }, new NativeInstance.RequestBroadcastPartCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda112
                 @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback
                 public final void run(long j, long j2, int i2, int i3) {
                     VoIPService.this.lambda$createGroupInstance$77(i, j, j2, i2, i3);
                 }
-            }, new NativeInstance.RequestCurrentTimeCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda114
+            }, new NativeInstance.RequestCurrentTimeCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda113
                 @Override // org.telegram.messenger.voip.NativeInstance.RequestCurrentTimeCallback
                 public final void run(long j) {
                     VoIPService.this.lambda$createGroupInstance$79(i, j);
                 }
             }, this.conference != null);
-            this.tgVoip[i].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda115
+            this.tgVoip[i].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda114
                 @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
                 public final void onStateUpdated(int i2, boolean z4) {
                     VoIPService.this.lambda$createGroupInstance$80(i, i2, z4);
@@ -4028,7 +4028,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                     TLRPC.TL_messages_setTyping tL_messages_setTyping = new TLRPC.TL_messages_setTyping();
                     tL_messages_setTyping.action = new TLRPC.TL_speakingInGroupCallAction();
                     tL_messages_setTyping.peer = MessagesController.getInputPeer(this.chat);
-                    ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_setTyping, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda119
+                    ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_setTyping, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda118
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                             VoIPService.lambda$createGroupInstance$67(tLObject, tL_error);
@@ -4056,7 +4056,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (sharedInstance == null || (call = this.groupCall) == null || i != 0) {
             return;
         }
-        call.processUnknownVideoParticipants(iArr, new ChatObject.Call.OnParticipantsLoad() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda156
+        call.processUnknownVideoParticipants(iArr, new ChatObject.Call.OnParticipantsLoad() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda155
             @Override // org.telegram.messenger.ChatObject.Call.OnParticipantsLoad
             public final void onLoad(ArrayList arrayList) {
                 VoIPService.this.lambda$createGroupInstance$69(j, iArr, arrayList);
@@ -4105,13 +4105,13 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             sb.append(i3);
         }
         final String sb2 = sb.toString();
-        final int sendRequest = AccountInstance.getInstance(this.currentAccount).getConnectionsManager().sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda50
+        final int sendRequest = AccountInstance.getInstance(this.currentAccount).getConnectionsManager().sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda49
             @Override // org.telegram.tgnet.RequestDelegateTimestamp
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error, long j3) {
                 VoIPService.this.lambda$createGroupInstance$73(sb2, i, j, i2, i3, tLObject, tL_error, j3);
             }
         }, 65536, 2, this.groupCall.call.stream_dc_id);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda51
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda50
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$createGroupInstance$74(sb2, sendRequest);
@@ -4126,7 +4126,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createGroupInstance$73(final String str, final int i, long j, int i2, int i3, TLObject tLObject, TLRPC.TL_error tL_error, long j2) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda81
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda80
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$createGroupInstance$71(str);
@@ -4140,7 +4140,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             NativeByteBuffer nativeByteBuffer = ((TLRPC.TL_upload_file) tLObject).bytes;
             nativeInstance.onStreamPartAvailable(j, nativeByteBuffer.buffer, nativeByteBuffer.limit(), j2, i2, i3);
         } else if ("GROUPCALL_JOIN_MISSING".equals(tL_error.text)) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda82
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda81
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$createGroupInstance$72(i);
@@ -4166,7 +4166,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (i != 0) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda141
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda140
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$createGroupInstance$76(i2, j, i3);
@@ -4205,7 +4205,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 }
                 return;
             }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamchannels, new RequestDelegateTimestamp() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda69
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(getgroupcallstreamchannels, new RequestDelegateTimestamp() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda68
                 @Override // org.telegram.tgnet.RequestDelegateTimestamp
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error, long j2) {
                     VoIPService.this.lambda$createGroupInstance$78(i, j, tLObject, tL_error, j2);
@@ -4244,7 +4244,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
         dispatchStateChanged((i2 == 1 || this.switchingStream) ? 3 : 5);
         if (this.switchingStream && (i2 == 0 || (i2 == 1 && z))) {
-            Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda129
+            Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda128
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$updateConnectionState$81(i);
@@ -4258,7 +4258,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             if (!this.playedConnectedSound || this.spPlayId != 0 || this.switchingStream || this.switchingAccount) {
                 return;
             }
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda130
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda129
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$updateConnectionState$82();
@@ -4277,7 +4277,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             this.switchingStreamTimeoutRunnable = null;
         }
         if (this.playedConnectedSound) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda131
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda130
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$updateConnectionState$83();
@@ -4365,25 +4365,25 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         return this.switchingStream;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:128:0x0325, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:128:0x031c, code lost:
     
         if (r2 == 0) goto L114;
      */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x027a A[Catch: Exception -> 0x0210, TRY_LEAVE, TryCatch #0 {Exception -> 0x0210, blocks: (B:75:0x01af, B:77:0x0203, B:79:0x0215, B:90:0x0228, B:92:0x0238, B:93:0x0241, B:95:0x0247, B:99:0x025c, B:102:0x027a), top: B:74:0x01af }] */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0293 A[Catch: Exception -> 0x002b, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0141, B:68:0x016e, B:71:0x019d, B:104:0x027e, B:105:0x0287, B:107:0x0293, B:109:0x029c, B:111:0x02b1, B:113:0x02b7, B:114:0x02d9, B:117:0x02fa, B:120:0x0306, B:121:0x0311, B:123:0x0315, B:125:0x0319, B:127:0x031f, B:129:0x0327, B:130:0x033c, B:131:0x0341, B:133:0x03ad, B:134:0x03b0, B:136:0x03b8, B:138:0x03c8, B:146:0x016b, B:147:0x012a, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x02f7  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x0304 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0315 A[Catch: Exception -> 0x002b, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0141, B:68:0x016e, B:71:0x019d, B:104:0x027e, B:105:0x0287, B:107:0x0293, B:109:0x029c, B:111:0x02b1, B:113:0x02b7, B:114:0x02d9, B:117:0x02fa, B:120:0x0306, B:121:0x0311, B:123:0x0315, B:125:0x0319, B:127:0x031f, B:129:0x0327, B:130:0x033c, B:131:0x0341, B:133:0x03ad, B:134:0x03b0, B:136:0x03b8, B:138:0x03c8, B:146:0x016b, B:147:0x012a, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x03ad A[Catch: Exception -> 0x002b, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0141, B:68:0x016e, B:71:0x019d, B:104:0x027e, B:105:0x0287, B:107:0x0293, B:109:0x029c, B:111:0x02b1, B:113:0x02b7, B:114:0x02d9, B:117:0x02fa, B:120:0x0306, B:121:0x0311, B:123:0x0315, B:125:0x0319, B:127:0x031f, B:129:0x0327, B:130:0x033c, B:131:0x0341, B:133:0x03ad, B:134:0x03b0, B:136:0x03b8, B:138:0x03c8, B:146:0x016b, B:147:0x012a, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x02f9  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x0285  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x019c  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x016b A[Catch: Exception -> 0x002b, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0141, B:68:0x016e, B:71:0x019d, B:104:0x027e, B:105:0x0287, B:107:0x0293, B:109:0x029c, B:111:0x02b1, B:113:0x02b7, B:114:0x02d9, B:117:0x02fa, B:120:0x0306, B:121:0x0311, B:123:0x0315, B:125:0x0319, B:127:0x031f, B:129:0x0327, B:130:0x033c, B:131:0x0341, B:133:0x03ad, B:134:0x03b0, B:136:0x03b8, B:138:0x03c8, B:146:0x016b, B:147:0x012a, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x012a A[Catch: Exception -> 0x002b, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0141, B:68:0x016e, B:71:0x019d, B:104:0x027e, B:105:0x0287, B:107:0x0293, B:109:0x029c, B:111:0x02b1, B:113:0x02b7, B:114:0x02d9, B:117:0x02fa, B:120:0x0306, B:121:0x0311, B:123:0x0315, B:125:0x0319, B:127:0x031f, B:129:0x0327, B:130:0x033c, B:131:0x0341, B:133:0x03ad, B:134:0x03b0, B:136:0x03b8, B:138:0x03c8, B:146:0x016b, B:147:0x012a, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x010f A[Catch: Exception -> 0x002b, TRY_ENTER, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0141, B:68:0x016e, B:71:0x019d, B:104:0x027e, B:105:0x0287, B:107:0x0293, B:109:0x029c, B:111:0x02b1, B:113:0x02b7, B:114:0x02d9, B:117:0x02fa, B:120:0x0306, B:121:0x0311, B:123:0x0315, B:125:0x0319, B:127:0x031f, B:129:0x0327, B:130:0x033c, B:131:0x0341, B:133:0x03ad, B:134:0x03b0, B:136:0x03b8, B:138:0x03c8, B:146:0x016b, B:147:0x012a, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x019a  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01af A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0238 A[Catch: Exception -> 0x0210, TryCatch #0 {Exception -> 0x0210, blocks: (B:75:0x01af, B:77:0x0203, B:79:0x0215, B:90:0x0228, B:92:0x0238, B:93:0x0241, B:95:0x0247, B:99:0x025c, B:102:0x027a), top: B:74:0x01af }] */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0278 A[Catch: Exception -> 0x020e, TRY_LEAVE, TryCatch #0 {Exception -> 0x020e, blocks: (B:75:0x01ad, B:77:0x0201, B:79:0x0213, B:90:0x0226, B:92:0x0236, B:93:0x023f, B:95:0x0245, B:99:0x025a, B:102:0x0278), top: B:74:0x01ad }] */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0290 A[Catch: Exception -> 0x002b, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0140, B:68:0x016d, B:71:0x019b, B:104:0x027c, B:105:0x0285, B:107:0x0290, B:109:0x0298, B:111:0x02ab, B:113:0x02b1, B:114:0x02d0, B:117:0x02f1, B:120:0x02fd, B:121:0x0308, B:123:0x030c, B:125:0x0310, B:127:0x0316, B:129:0x031e, B:130:0x0333, B:131:0x0338, B:133:0x03a4, B:134:0x03a7, B:136:0x03af, B:138:0x03bf, B:146:0x016a, B:147:0x0129, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x02ee  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x02fb A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x030c A[Catch: Exception -> 0x002b, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0140, B:68:0x016d, B:71:0x019b, B:104:0x027c, B:105:0x0285, B:107:0x0290, B:109:0x0298, B:111:0x02ab, B:113:0x02b1, B:114:0x02d0, B:117:0x02f1, B:120:0x02fd, B:121:0x0308, B:123:0x030c, B:125:0x0310, B:127:0x0316, B:129:0x031e, B:130:0x0333, B:131:0x0338, B:133:0x03a4, B:134:0x03a7, B:136:0x03af, B:138:0x03bf, B:146:0x016a, B:147:0x0129, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x03a4 A[Catch: Exception -> 0x002b, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0140, B:68:0x016d, B:71:0x019b, B:104:0x027c, B:105:0x0285, B:107:0x0290, B:109:0x0298, B:111:0x02ab, B:113:0x02b1, B:114:0x02d0, B:117:0x02f1, B:120:0x02fd, B:121:0x0308, B:123:0x030c, B:125:0x0310, B:127:0x0316, B:129:0x031e, B:130:0x0333, B:131:0x0338, B:133:0x03a4, B:134:0x03a7, B:136:0x03af, B:138:0x03bf, B:146:0x016a, B:147:0x0129, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:141:0x02f0  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x0283  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x019a  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x016a A[Catch: Exception -> 0x002b, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0140, B:68:0x016d, B:71:0x019b, B:104:0x027c, B:105:0x0285, B:107:0x0290, B:109:0x0298, B:111:0x02ab, B:113:0x02b1, B:114:0x02d0, B:117:0x02f1, B:120:0x02fd, B:121:0x0308, B:123:0x030c, B:125:0x0310, B:127:0x0316, B:129:0x031e, B:130:0x0333, B:131:0x0338, B:133:0x03a4, B:134:0x03a7, B:136:0x03af, B:138:0x03bf, B:146:0x016a, B:147:0x0129, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x0129 A[Catch: Exception -> 0x002b, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0140, B:68:0x016d, B:71:0x019b, B:104:0x027c, B:105:0x0285, B:107:0x0290, B:109:0x0298, B:111:0x02ab, B:113:0x02b1, B:114:0x02d0, B:117:0x02f1, B:120:0x02fd, B:121:0x0308, B:123:0x030c, B:125:0x0310, B:127:0x0316, B:129:0x031e, B:130:0x0333, B:131:0x0338, B:133:0x03a4, B:134:0x03a7, B:136:0x03af, B:138:0x03bf, B:146:0x016a, B:147:0x0129, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x010f A[Catch: Exception -> 0x002b, TRY_ENTER, TryCatch #2 {Exception -> 0x002b, blocks: (B:5:0x0010, B:7:0x0014, B:8:0x002e, B:10:0x003a, B:11:0x0045, B:12:0x006c, B:14:0x0075, B:15:0x007f, B:17:0x0085, B:33:0x0092, B:30:0x00a3, B:38:0x00a9, B:43:0x00ad, B:50:0x00c5, B:52:0x00f3, B:57:0x00ff, B:61:0x0109, B:64:0x010f, B:65:0x0140, B:68:0x016d, B:71:0x019b, B:104:0x027c, B:105:0x0285, B:107:0x0290, B:109:0x0298, B:111:0x02ab, B:113:0x02b1, B:114:0x02d0, B:117:0x02f1, B:120:0x02fd, B:121:0x0308, B:123:0x030c, B:125:0x0310, B:127:0x0316, B:129:0x031e, B:130:0x0333, B:131:0x0338, B:133:0x03a4, B:134:0x03a7, B:136:0x03af, B:138:0x03bf, B:146:0x016a, B:147:0x0129, B:153:0x0040, B:20:0x0096), top: B:4:0x0010, inners: #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0198  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01ad A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0236 A[Catch: Exception -> 0x020e, TryCatch #0 {Exception -> 0x020e, blocks: (B:75:0x01ad, B:77:0x0201, B:79:0x0213, B:90:0x0226, B:92:0x0236, B:93:0x023f, B:95:0x0245, B:99:0x025a, B:102:0x0278), top: B:74:0x01ad }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -4539,7 +4539,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                         voIPService = this;
                     } else {
                         voIPService = this;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda36
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda35
                             @Override // java.lang.Runnable
                             public final void run() {
                                 VoIPService.this.lambda$initiateActualEncryptedCall$84();
@@ -4569,31 +4569,31 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                                 }
                                 voIPService.videoState[0] = 0;
                             }
-                            voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config3, absolutePath, endpointArr3, proxy, getNetworkType(), encryptionKey, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
+                            voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config3, absolutePath, endpointArr3, proxy, getNetworkType(), encryptionKey, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda36
                                 @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
                                 public final void run(int[] iArr, float[] fArr, boolean[] zArr) {
                                     VoIPService.this.lambda$initiateActualEncryptedCall$85(iArr, fArr, zArr);
                                 }
                             });
-                            voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
+                            voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
                                 @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
                                 public final void onStateUpdated(int i9, boolean z11) {
                                     VoIPService.this.onConnectionStateChanged(i9, z11);
                                 }
                             });
-                            voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
+                            voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
                                 @Override // org.telegram.messenger.voip.Instance.OnSignalBarsUpdatedListener
                                 public final void onSignalBarsUpdated(int i9) {
                                     VoIPService.this.onSignalBarCountChanged(i9);
                                 }
                             });
-                            voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
+                            voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
                                 @Override // org.telegram.messenger.voip.Instance.OnSignalingDataListener
                                 public final void onSignalingData(byte[] bArr) {
                                     VoIPService.this.onSignalingData(bArr);
                                 }
                             });
-                            voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda41
+                            voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
                                 @Override // org.telegram.messenger.voip.Instance.OnRemoteMediaStateUpdatedListener
                                 public final void onMediaStateUpdated(int i9, int i10) {
                                     VoIPService.this.lambda$initiateActualEncryptedCall$87(i9, i10);
@@ -4631,31 +4631,31 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                     }
                     if (!voIPService.isOutgoing) {
                     }
-                    voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config3, absolutePath, endpointArr3, proxy, getNetworkType(), encryptionKey2, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
+                    voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config3, absolutePath, endpointArr3, proxy, getNetworkType(), encryptionKey2, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda36
                         @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
                         public final void run(int[] iArr, float[] fArr, boolean[] zArr) {
                             VoIPService.this.lambda$initiateActualEncryptedCall$85(iArr, fArr, zArr);
                         }
                     });
-                    voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
+                    voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
                         @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
                         public final void onStateUpdated(int i92, boolean z11) {
                             VoIPService.this.onConnectionStateChanged(i92, z11);
                         }
                     });
-                    voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
+                    voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
                         @Override // org.telegram.messenger.voip.Instance.OnSignalBarsUpdatedListener
                         public final void onSignalBarsUpdated(int i92) {
                             VoIPService.this.onSignalBarCountChanged(i92);
                         }
                     });
-                    voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
+                    voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
                         @Override // org.telegram.messenger.voip.Instance.OnSignalingDataListener
                         public final void onSignalingData(byte[] bArr) {
                             VoIPService.this.onSignalingData(bArr);
                         }
                     });
-                    voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda41
+                    voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
                         @Override // org.telegram.messenger.voip.Instance.OnRemoteMediaStateUpdatedListener
                         public final void onMediaStateUpdated(int i92, int i10) {
                             VoIPService.this.lambda$initiateActualEncryptedCall$87(i92, i10);
@@ -4720,31 +4720,31 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                         }
                         if (!voIPService.isOutgoing) {
                         }
-                        voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config32, absolutePath2, endpointArr32, proxy, getNetworkType(), encryptionKey22, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
+                        voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config32, absolutePath2, endpointArr32, proxy, getNetworkType(), encryptionKey22, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda36
                             @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
                             public final void run(int[] iArr, float[] fArr, boolean[] zArr) {
                                 VoIPService.this.lambda$initiateActualEncryptedCall$85(iArr, fArr, zArr);
                             }
                         });
-                        voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
+                        voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
                             @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
                             public final void onStateUpdated(int i92, boolean z11) {
                                 VoIPService.this.onConnectionStateChanged(i92, z11);
                             }
                         });
-                        voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
+                        voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
                             @Override // org.telegram.messenger.voip.Instance.OnSignalBarsUpdatedListener
                             public final void onSignalBarsUpdated(int i92) {
                                 VoIPService.this.onSignalBarCountChanged(i92);
                             }
                         });
-                        voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
+                        voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
                             @Override // org.telegram.messenger.voip.Instance.OnSignalingDataListener
                             public final void onSignalingData(byte[] bArr) {
                                 VoIPService.this.onSignalingData(bArr);
                             }
                         });
-                        voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda41
+                        voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
                             @Override // org.telegram.messenger.voip.Instance.OnRemoteMediaStateUpdatedListener
                             public final void onMediaStateUpdated(int i92, int i10) {
                                 VoIPService.this.lambda$initiateActualEncryptedCall$87(i92, i10);
@@ -4775,31 +4775,31 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 }
                 if (!voIPService.isOutgoing) {
                 }
-                voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config32, absolutePath2, endpointArr32, proxy, getNetworkType(), encryptionKey222, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
+                voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config32, absolutePath2, endpointArr32, proxy, getNetworkType(), encryptionKey222, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda36
                     @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
                     public final void run(int[] iArr, float[] fArr, boolean[] zArr) {
                         VoIPService.this.lambda$initiateActualEncryptedCall$85(iArr, fArr, zArr);
                     }
                 });
-                voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
+                voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
                     @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
                     public final void onStateUpdated(int i92, boolean z11) {
                         VoIPService.this.onConnectionStateChanged(i92, z11);
                     }
                 });
-                voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
+                voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
                     @Override // org.telegram.messenger.voip.Instance.OnSignalBarsUpdatedListener
                     public final void onSignalBarsUpdated(int i92) {
                         VoIPService.this.onSignalBarCountChanged(i92);
                     }
                 });
-                voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
+                voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
                     @Override // org.telegram.messenger.voip.Instance.OnSignalingDataListener
                     public final void onSignalingData(byte[] bArr) {
                         VoIPService.this.onSignalingData(bArr);
                     }
                 });
-                voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda41
+                voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
                     @Override // org.telegram.messenger.voip.Instance.OnRemoteMediaStateUpdatedListener
                     public final void onMediaStateUpdated(int i92, int i10) {
                         VoIPService.this.lambda$initiateActualEncryptedCall$87(i92, i10);
@@ -4864,31 +4864,31 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 }
                 if (!voIPService.isOutgoing) {
                 }
-                voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config322, absolutePath22, endpointArr322, proxy, getNetworkType(), encryptionKey2222, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
+                voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config322, absolutePath22, endpointArr322, proxy, getNetworkType(), encryptionKey2222, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda36
                     @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
                     public final void run(int[] iArr, float[] fArr, boolean[] zArr) {
                         VoIPService.this.lambda$initiateActualEncryptedCall$85(iArr, fArr, zArr);
                     }
                 });
-                voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
+                voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
                     @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
                     public final void onStateUpdated(int i92, boolean z11) {
                         VoIPService.this.onConnectionStateChanged(i92, z11);
                     }
                 });
-                voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
+                voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
                     @Override // org.telegram.messenger.voip.Instance.OnSignalBarsUpdatedListener
                     public final void onSignalBarsUpdated(int i92) {
                         VoIPService.this.onSignalBarCountChanged(i92);
                     }
                 });
-                voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
+                voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
                     @Override // org.telegram.messenger.voip.Instance.OnSignalingDataListener
                     public final void onSignalingData(byte[] bArr) {
                         VoIPService.this.onSignalingData(bArr);
                     }
                 });
-                voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda41
+                voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
                     @Override // org.telegram.messenger.voip.Instance.OnRemoteMediaStateUpdatedListener
                     public final void onMediaStateUpdated(int i92, int i10) {
                         VoIPService.this.lambda$initiateActualEncryptedCall$87(i92, i10);
@@ -4951,31 +4951,31 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             }
             if (!voIPService.isOutgoing) {
             }
-            voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config3222, absolutePath222, endpointArr3222, proxy, getNetworkType(), encryptionKey22222, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
+            voIPService.tgVoip[0] = Instance.makeInstance(voIPService.privateCall.protocol.library_versions.get(0), config3222, absolutePath222, endpointArr3222, proxy, getNetworkType(), encryptionKey22222, voIPService.remoteSink[0], voIPService.captureDevice[0], new NativeInstance.AudioLevelsCallback() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda36
                 @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
                 public final void run(int[] iArr, float[] fArr, boolean[] zArr) {
                     VoIPService.this.lambda$initiateActualEncryptedCall$85(iArr, fArr, zArr);
                 }
             });
-            voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
+            voIPService.tgVoip[0].setOnStateUpdatedListener(new Instance.OnStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda37
                 @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
                 public final void onStateUpdated(int i92, boolean z11) {
                     VoIPService.this.onConnectionStateChanged(i92, z11);
                 }
             });
-            voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
+            voIPService.tgVoip[0].setOnSignalBarsUpdatedListener(new Instance.OnSignalBarsUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda38
                 @Override // org.telegram.messenger.voip.Instance.OnSignalBarsUpdatedListener
                 public final void onSignalBarsUpdated(int i92) {
                     VoIPService.this.onSignalBarCountChanged(i92);
                 }
             });
-            voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
+            voIPService.tgVoip[0].setOnSignalDataListener(new Instance.OnSignalingDataListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda39
                 @Override // org.telegram.messenger.voip.Instance.OnSignalingDataListener
                 public final void onSignalingData(byte[] bArr) {
                     VoIPService.this.onSignalingData(bArr);
                 }
             });
-            voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda41
+            voIPService.tgVoip[0].setOnRemoteMediaStateUpdatedListener(new Instance.OnRemoteMediaStateUpdatedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda40
                 @Override // org.telegram.messenger.voip.Instance.OnRemoteMediaStateUpdatedListener
                 public final void onMediaStateUpdated(int i92, int i10) {
                     VoIPService.this.lambda$initiateActualEncryptedCall$87(i92, i10);
@@ -5016,7 +5016,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$initiateActualEncryptedCall$87(final int i, final int i2) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda77
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda76
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$initiateActualEncryptedCall$86(i, i2);
@@ -5040,7 +5040,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     }
 
     public void playConnectedSound() {
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda135
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda134
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$playConnectedSound$88();
@@ -5050,7 +5050,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     }
 
     private void startConnectingSound() {
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda122
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda121
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$startConnectingSound$89();
@@ -5289,7 +5289,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             FileLog.d("edit group call flags = " + editgroupcallparticipant.flags);
         }
         final int i = this.currentAccount;
-        AccountInstance.getInstance(i).getConnectionsManager().sendRequest(editgroupcallparticipant, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda101
+        AccountInstance.getInstance(i).getConnectionsManager().sendRequest(editgroupcallparticipant, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda100
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$editCallMember$90(i, runnable, tLObject2, tL_error);
@@ -5318,7 +5318,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     }
 
     public void switchToSpeaker() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda52
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda51
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$switchToSpeaker$92();
@@ -5333,7 +5333,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             return;
         }
         voipAudioManager.setSpeakerphoneOn(true);
-        voipAudioManager.isBluetoothAndSpeakerOnAsync(new Utilities.Callback2() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda134
+        voipAudioManager.isBluetoothAndSpeakerOnAsync(new Utilities.Callback2() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda133
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 VoIPService.this.lambda$switchToSpeaker$91((Boolean) obj, (Boolean) obj2);
@@ -5370,14 +5370,14 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             if (str == null) {
                 str = LocaleController.getString(R.string.VoipAudioRoutingBluetooth);
             }
-            BottomSheet.Builder items = cellType.setItems(new CharSequence[]{string, string2, str}, new int[]{R.drawable.msg_call_speaker, this.isHeadsetPlugged ? R.drawable.calls_menu_headset : R.drawable.msg_call_earpiece, R.drawable.msg_call_bluetooth}, new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda125
+            BottomSheet.Builder items = cellType.setItems(new CharSequence[]{string, string2, str}, new int[]{R.drawable.msg_call_speaker, this.isHeadsetPlugged ? R.drawable.calls_menu_headset : R.drawable.msg_call_earpiece, R.drawable.msg_call_bluetooth}, new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda124
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     VoIPService.this.lambda$toggleSpeakerphoneOrShowRouteSheet$93(dialogInterface, i);
                 }
             });
             final BottomSheet create = items.create();
-            create.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda126
+            create.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda125
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
                     VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$94(BottomSheet.this, num, dialogInterface);
@@ -5422,7 +5422,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             } else {
                 audioManager.setBluetoothScoOn(!audioManager.isBluetoothScoOn());
             }
-            voipAudioManager.isBluetoothAndSpeakerOnAsync(new Utilities.Callback2() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda127
+            voipAudioManager.isBluetoothAndSpeakerOnAsync(new Utilities.Callback2() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda126
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     VoIPService.this.lambda$toggleSpeakerphoneOrShowRouteSheet$95((Boolean) obj, (Boolean) obj2);
@@ -5696,10 +5696,10 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00fd A[Catch: all -> 0x0026, TryCatch #1 {all -> 0x0026, Exception -> 0x008a, blocks: (B:10:0x0020, B:12:0x0024, B:14:0x0029, B:16:0x0041, B:19:0x005c, B:21:0x0073, B:23:0x0094, B:25:0x00b2, B:26:0x00e6, B:28:0x00fd, B:32:0x011f, B:34:0x0125, B:36:0x0133, B:39:0x014a, B:40:0x0159, B:47:0x012d, B:49:0x0113, B:51:0x0099, B:53:0x009d, B:55:0x00a7, B:56:0x00ad, B:57:0x008c, B:60:0x00da, B:62:0x00e1, B:63:0x0047, B:65:0x0050, B:68:0x0059), top: B:9:0x0020 }] */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0140  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0143  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0113 A[Catch: all -> 0x0026, TryCatch #1 {all -> 0x0026, Exception -> 0x008a, blocks: (B:10:0x0020, B:12:0x0024, B:14:0x0029, B:16:0x0041, B:19:0x005c, B:21:0x0073, B:23:0x0094, B:25:0x00b2, B:26:0x00e6, B:28:0x00fd, B:32:0x011f, B:34:0x0125, B:36:0x0133, B:39:0x014a, B:40:0x0159, B:47:0x012d, B:49:0x0113, B:51:0x0099, B:53:0x009d, B:55:0x00a7, B:56:0x00ad, B:57:0x008c, B:60:0x00da, B:62:0x00e1, B:63:0x0047, B:65:0x0050, B:68:0x0059), top: B:9:0x0020 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00fb A[Catch: all -> 0x0026, TryCatch #0 {all -> 0x0026, Exception -> 0x0089, blocks: (B:10:0x0020, B:12:0x0024, B:14:0x0029, B:16:0x0041, B:19:0x005c, B:21:0x0073, B:23:0x0093, B:25:0x00b1, B:26:0x00e4, B:28:0x00fb, B:32:0x011c, B:34:0x0122, B:36:0x0130, B:39:0x0146, B:40:0x0155, B:47:0x012a, B:49:0x0111, B:51:0x0098, B:53:0x009c, B:55:0x00a6, B:56:0x00ac, B:57:0x008b, B:60:0x00d8, B:62:0x00df, B:63:0x0047, B:65:0x0050, B:68:0x0059), top: B:9:0x0020 }] */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x013c  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x013f  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0111 A[Catch: all -> 0x0026, TryCatch #0 {all -> 0x0026, Exception -> 0x0089, blocks: (B:10:0x0020, B:12:0x0024, B:14:0x0029, B:16:0x0041, B:19:0x005c, B:21:0x0073, B:23:0x0093, B:25:0x00b1, B:26:0x00e4, B:28:0x00fb, B:32:0x011c, B:34:0x0122, B:36:0x0130, B:39:0x0146, B:40:0x0155, B:47:0x012a, B:49:0x0111, B:51:0x0098, B:53:0x009c, B:55:0x00a6, B:56:0x00ac, B:57:0x008b, B:60:0x00d8, B:62:0x00df, B:63:0x0047, B:65:0x0050, B:68:0x0059), top: B:9:0x0020 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -5729,7 +5729,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             }
             MediaPlayer mediaPlayer2 = new MediaPlayer();
             this.ringtonePlayer = mediaPlayer2;
-            mediaPlayer2.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda76
+            mediaPlayer2.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda75
                 @Override // android.media.MediaPlayer.OnPreparedListener
                 public final void onPrepared(MediaPlayer mediaPlayer3) {
                     VoIPService.this.lambda$startRingtoneAndVibration$96(mediaPlayer3);
@@ -5844,7 +5844,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         FileLog.e("(5) set sharedInstance = null");
         Arrays.fill(this.mySource, 0);
         cancelGroupCheckShortPoll();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda105
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda104
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.lambda$onDestroy$97();
@@ -5857,7 +5857,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 NativeInstance nativeInstance = this.tgVoip[0];
                 DispatchQueue dispatchQueue = Utilities.globalQueue;
                 Objects.requireNonNull(nativeInstance);
-                dispatchQueue.postRunnable(new VoIPService$$ExternalSyntheticLambda106(nativeInstance));
+                dispatchQueue.postRunnable(new VoIPService$$ExternalSyntheticLambda105(nativeInstance));
                 Iterator<Map.Entry<String, Integer>> it = this.currentStreamRequestTimestamp.entrySet().iterator();
                 while (it.hasNext()) {
                     AccountInstance.getInstance(this.currentAccount).getConnectionsManager().cancelRequest(it.next().getValue().intValue(), true);
@@ -5876,7 +5876,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         destroyConverting();
         NativeInstance nativeInstance2 = this.tgVoip[1];
         if (nativeInstance2 != null) {
-            Utilities.globalQueue.postRunnable(new VoIPService$$ExternalSyntheticLambda106(nativeInstance2));
+            Utilities.globalQueue.postRunnable(new VoIPService$$ExternalSyntheticLambda105(nativeInstance2));
             this.tgVoip[1] = null;
         }
         int i = 0;
@@ -5908,7 +5908,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 }
                 if (this.onDestroyRunnable == null) {
                     DispatchQueue dispatchQueue2 = Utilities.globalQueue;
-                    Runnable runnable3 = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda107
+                    Runnable runnable3 = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda106
                         @Override // java.lang.Runnable
                         public final void run() {
                             VoIPService.lambda$onDestroy$98(audioManager);
@@ -5928,7 +5928,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             if (audioDeviceCallback != null) {
                 audioManager.unregisterAudioDeviceCallback(audioDeviceCallback);
             }
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda108
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda107
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$onDestroy$99();
@@ -6034,7 +6034,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         configureDeviceForCall();
         startConnectingSound();
         dispatchStateChanged(12);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda43
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda42
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.lambda$acceptIncomingCall$100();
@@ -6044,7 +6044,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         TLRPC.TL_messages_getDhConfig tL_messages_getDhConfig = new TLRPC.TL_messages_getDhConfig();
         tL_messages_getDhConfig.random_length = 256;
         tL_messages_getDhConfig.version = messagesStorage.getLastSecretVersion();
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getDhConfig, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda44
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getDhConfig, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda43
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$acceptIncomingCall$103(messagesStorage, tLObject, tL_error);
@@ -6109,7 +6109,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             tL_phoneCallProtocol.min_layer = 65;
             tL_phoneCallProtocol.max_layer = Instance.getConnectionMaxLayer();
             Collections.addAll(acceptcall.protocol.library_versions, NativeInstance.getAllVersions());
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(acceptcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda121
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(acceptcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda120
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
                     VoIPService.this.lambda$acceptIncomingCall$102(tLObject2, tL_error2);
@@ -6122,7 +6122,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$acceptIncomingCall$102(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda80
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda79
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$acceptIncomingCall$101(tL_error, tLObject);
@@ -6166,7 +6166,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             } else {
                 dispatchStateChanged(10);
                 this.endCallAfterRequest = true;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda84
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda83
                     @Override // java.lang.Runnable
                     public final void run() {
                         VoIPService.this.lambda$declineIncomingCall$104();
@@ -6212,7 +6212,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonHangup();
         }
         FileLog.e("discardCall " + discardcall.reason);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda85
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda84
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.this.lambda$declineIncomingCall$105(tLObject, tL_error);
@@ -6264,7 +6264,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             this.systemCallConnection = callConnection;
             callConnection.setInitializing();
             if (this.isOutgoing) {
-                Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda151
+                Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda150
                     @Override // java.lang.Runnable
                     public final void run() {
                         VoIPService.this.lambda$getConnectionAndStartCall$106();
@@ -6333,7 +6333,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     private void updateServerConfig() {
         final SharedPreferences mainSettings = MessagesController.getMainSettings(this.currentAccount);
         Instance.setGlobalServerConfig(mainSettings.getString("voip_server_config", "{}"));
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_phone.getCallConfig(), new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda118
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(new TL_phone.getCallConfig(), new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda117
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 VoIPService.lambda$updateServerConfig$107(mainSettings, tLObject, tL_error);
@@ -6563,7 +6563,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     private void loadResources() {
         WebRtcAudioTrack.setAudioTrackUsageAttribute(2);
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda64
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda63
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$loadResources$108();
@@ -6649,7 +6649,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         this.needPlayEndSound = true;
         final AudioManager audioManager = (AudioManager) getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
         if (!USE_CONNECTION_SERVICE) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda120
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda119
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$configureDeviceForCall$111(audioManager);
@@ -6679,7 +6679,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (hasRtmpStream()) {
             audioManager.setMode(0);
             audioManager.setBluetoothScoOn(false);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda132
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda131
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.lambda$configureDeviceForCall$109();
@@ -6687,7 +6687,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             });
         } else {
             audioManager.setMode(3);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda133
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda132
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$configureDeviceForCall$110(audioManager);
@@ -6854,7 +6854,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 }
                 if (!hasRtmpStream()) {
                     this.needSwitchToBluetoothAfterScoActivates = true;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda116
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda115
                         @Override // java.lang.Runnable
                         public final void run() {
                             VoIPService.lambda$updateBluetoothHeadsetState$112(audioManager);
@@ -7038,7 +7038,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00e2  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x00e0  */
     /* JADX WARN: Type inference failed for: r15v2 */
     /* JADX WARN: Type inference failed for: r15v4 */
     /*
@@ -7271,7 +7271,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             discardcall.connection_id = nativeInstance != null ? nativeInstance.getPreferredRelayId() : 0L;
             discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonDisconnect();
             FileLog.e("discardCall " + discardcall.reason);
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda153
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(discardcall, new RequestDelegate() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda152
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     VoIPService.lambda$callFailed$113(tLObject, tL_error);
@@ -7283,7 +7283,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         } catch (Exception e) {
             FileLog.e(e);
             this.lastError = str;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda154
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda153
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$callFailed$114();
@@ -7291,7 +7291,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             });
             if (TextUtils.equals(str, Instance.ERROR_LOCALIZED) && this.soundPool != null) {
                 this.playingSound = true;
-                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda155
+                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda154
                     @Override // java.lang.Runnable
                     public final void run() {
                         VoIPService.this.lambda$callFailed$115();
@@ -7300,7 +7300,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 AndroidUtilities.runOnUIThread(this.afterSoundRunnable, 1000L);
             }
             if (USE_CONNECTION_SERVICE && (callConnection = this.systemCallConnection) != null) {
-                callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline28.m(1));
+                callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline27.m(1));
                 this.systemCallConnection.destroy();
                 this.systemCallConnection = null;
             }
@@ -7342,7 +7342,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     @Override // org.telegram.messenger.voip.VoIPController.ConnectionStateListener
     public void onConnectionStateChanged(final int i, boolean z) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda158
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda157
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$onConnectionStateChanged$118(i);
@@ -7368,7 +7368,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                 AndroidUtilities.cancelRunOnUIThread(runnable);
                 this.connectingSoundRunnable = null;
             }
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda54
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda53
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$onConnectionStateChanged$116();
@@ -7399,7 +7399,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             }
         }
         if (i == 5 && !this.isCallEnded) {
-            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda55
+            Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda54
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$onConnectionStateChanged$117();
@@ -7433,7 +7433,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     }
 
     public void playStartRecordSound() {
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda144
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda143
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$playStartRecordSound$119();
@@ -7447,7 +7447,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     }
 
     public void playAllowTalkSound() {
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda145
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda144
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$playAllowTalkSound$120();
@@ -7457,7 +7457,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     @Override // org.telegram.messenger.voip.VoIPController.ConnectionStateListener
     public void onSignalBarCountChanged(final int i) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda152
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda151
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$onSignalBarCountChanged$121(i);
@@ -7493,13 +7493,13 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (this.groupCall != null && (!this.playedConnectedSound || this.onDestroyRunnable != null)) {
             this.needPlayEndSound = false;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda159
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda158
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$callEnded$122();
             }
         });
-        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda160
+        Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda159
             @Override // java.lang.Runnable
             public final void run() {
                 VoIPService.this.lambda$callEnded$123();
@@ -7514,14 +7514,14 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (this.needPlayEndSound) {
             this.playingSound = true;
             if (this.groupCall == null) {
-                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda161
+                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda160
                     @Override // java.lang.Runnable
                     public final void run() {
                         VoIPService.this.lambda$callEnded$124();
                     }
                 });
             } else {
-                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda162
+                Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda161
                     @Override // java.lang.Runnable
                     public final void run() {
                         VoIPService.this.lambda$callEnded$125();
@@ -7566,7 +7566,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     private void endConnectionServiceCall(long j) {
         if (USE_CONNECTION_SERVICE) {
-            Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda35
+            Runnable runnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda34
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPService.this.lambda$endConnectionServiceCall$126();
@@ -7586,19 +7586,19 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (callConnection != null) {
             int i = this.callDiscardReason;
             if (i == 1) {
-                VoIPService$$ExternalSyntheticApiModelOutline29.m();
-                callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline28.m(this.isOutgoing ? 2 : 6));
+                VoIPService$$ExternalSyntheticApiModelOutline28.m();
+                callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline27.m(this.isOutgoing ? 2 : 6));
             } else if (i != 2) {
                 if (i == 3) {
-                    VoIPService$$ExternalSyntheticApiModelOutline29.m();
-                    callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline28.m(this.isOutgoing ? 4 : 5));
+                    VoIPService$$ExternalSyntheticApiModelOutline28.m();
+                    callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline27.m(this.isOutgoing ? 4 : 5));
                 } else if (i == 4) {
-                    callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline28.m(7));
+                    callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline27.m(7));
                 } else {
-                    callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline28.m(3));
+                    callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline27.m(3));
                 }
             } else {
-                callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline28.m(1));
+                callConnection.setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline27.m(1));
             }
             this.systemCallConnection.destroy();
             this.systemCallConnection = null;
@@ -7707,10 +7707,10 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         PhoneAccount build;
         TelecomManager telecomManager = (TelecomManager) getSystemService("telecom");
         TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
+        VoIPService$$ExternalSyntheticApiModelOutline31.m();
+        PhoneAccountHandle m = VoIPService$$ExternalSyntheticApiModelOutline29.m(new ComponentName(this, (Class<?>) TelegramConnectionService.class), "" + currentUser.id);
         VoIPService$$ExternalSyntheticApiModelOutline32.m();
-        PhoneAccountHandle m = VoIPService$$ExternalSyntheticApiModelOutline30.m(new ComponentName(this, (Class<?>) TelegramConnectionService.class), "" + currentUser.id);
-        VoIPService$$ExternalSyntheticApiModelOutline33.m();
-        capabilities = VoIPService$$ExternalSyntheticApiModelOutline31.m(m, ContactsController.formatName(currentUser.first_name, currentUser.last_name)).setCapabilities(2048);
+        capabilities = VoIPService$$ExternalSyntheticApiModelOutline30.m(m, ContactsController.formatName(currentUser.first_name, currentUser.last_name)).setCapabilities(2048);
         createWithResource = Icon.createWithResource(this, R.drawable.ic_launcher_dr);
         icon = capabilities.setIcon(createWithResource);
         highlightColor = icon.setHighlightColor(-13851168);
@@ -7742,7 +7742,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("ConnectionService onDisconnect");
             }
-            setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline28.m(2));
+            setDisconnected(VoIPService$$ExternalSyntheticApiModelOutline27.m(2));
             destroy();
             VoIPService.this.systemCallConnection = null;
             VoIPService.this.hangUp();

@@ -11,6 +11,7 @@ public class BagRandomizer {
     private int currentIndex;
     private Object next;
     private final Random random;
+    private boolean reshuffleIfEnd = true;
     private final List shuffledBag;
 
     public BagRandomizer(List list) {
@@ -29,7 +30,11 @@ public class BagRandomizer {
         }
         Object obj = this.next;
         if (this.currentIndex >= this.shuffledBag.size()) {
-            reshuffle();
+            if (this.reshuffleIfEnd) {
+                reshuffle();
+            } else {
+                this.currentIndex = 0;
+            }
         }
         List list = this.shuffledBag;
         int i = this.currentIndex;
@@ -38,8 +43,17 @@ public class BagRandomizer {
         return obj;
     }
 
+    public void setReshuffleIfEnd(boolean z) {
+        this.reshuffleIfEnd = z;
+    }
+
     public Object getNext() {
         return this.next;
+    }
+
+    public void reset() {
+        this.currentIndex = 0;
+        next();
     }
 
     private void reshuffle() {

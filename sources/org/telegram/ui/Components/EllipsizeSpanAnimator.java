@@ -13,7 +13,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.Reactions.HwEmojis;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EllipsizeSpanAnimator {
     boolean attachedToWindow;
     private final AnimatorSet ellAnimator;

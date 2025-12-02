@@ -34,7 +34,7 @@ import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.DialogsBotsAdapter;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class DialogsBotsAdapter extends UniversalAdapter {
     private int allCount;
     private final Context context;

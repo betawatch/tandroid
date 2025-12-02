@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class ReportAlert extends BottomSheet {
     private BottomSheetCell clearButton;
     private EditTextBoldCursor editText;

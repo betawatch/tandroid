@@ -2,7 +2,7 @@ package kotlin.ranges;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class IntRange extends IntProgression {
     public static final Companion Companion = new Companion(null);
     private static final IntRange EMPTY = new IntRange(1, 0);
@@ -17,10 +17,6 @@ public final class IntRange extends IntProgression {
 
     public Integer getEndInclusive() {
         return Integer.valueOf(getLast());
-    }
-
-    public boolean contains(int i) {
-        return getFirst() <= i && i <= getLast();
     }
 
     @Override // kotlin.ranges.IntProgression

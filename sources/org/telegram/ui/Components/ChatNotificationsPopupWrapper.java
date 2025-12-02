@@ -13,7 +13,6 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
@@ -29,7 +28,7 @@ import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.ChatNotificationsPopupWrapper;
 import org.telegram.ui.ProfileNotificationsActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatNotificationsPopupWrapper {
     View backItem;
     Callback callback;
@@ -360,7 +359,7 @@ public class ChatNotificationsPopupWrapper {
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.windowLayout, -2, -2);
         this.popupWindow = actionBarPopupWindow;
         actionBarPopupWindow.setPauseNotifications(true);
-        this.popupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+        this.popupWindow.setDismissAnimationDuration(220);
         this.popupWindow.setOutsideTouchable(true);
         this.popupWindow.setClippingEnabled(true);
         this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);

@@ -17,7 +17,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RLottieImageView extends ImageView {
     private boolean attachedToWindow;
     private boolean autoRepeat;

@@ -359,12 +359,12 @@ public class FileRefController extends BaseController {
         return null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x0146, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x0142, code lost:
     
         if ("update".equals(r0) != false) goto L75;
      */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0153  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x016a  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0166  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1392,10 +1392,10 @@ public class FileRefController extends BaseController {
         getSendMessagesHelper().lambda$performSendMessageRequest$63((TLObject) objArr[0], (MessageObject) objArr[1], (String) objArr[2], (SendMessagesHelper.DelayedMessage) objArr[3], ((Boolean) objArr[4]).booleanValue(), (SendMessagesHelper.DelayedMessage) objArr[5], null, null, ((Boolean) objArr[6]).booleanValue());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00a1 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0940  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x095d  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x009e A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x093d  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x095a  */
     /* JADX WARN: Type inference failed for: r13v0 */
     /* JADX WARN: Type inference failed for: r13v19 */
     /*
@@ -2652,7 +2652,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x004a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0047, code lost:
     
         if ("update".equals(r11) != false) goto L26;
      */

@@ -1,6 +1,6 @@
 package org.aspectj.runtime.internal;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class Conversions {
     public static Object intObject(int i) {
         return new Integer(i);

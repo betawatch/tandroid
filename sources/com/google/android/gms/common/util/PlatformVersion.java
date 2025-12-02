@@ -12,14 +12,6 @@ public abstract class PlatformVersion {
         return true;
     }
 
-    public static boolean isAtLeastJellyBeanMR2() {
-        return true;
-    }
-
-    public static boolean isAtLeastKitKat() {
-        return true;
-    }
-
     public static boolean isAtLeastKitKatWatch() {
         return true;
     }
@@ -50,5 +42,9 @@ public abstract class PlatformVersion {
 
     public static boolean isAtLeastS() {
         return Build.VERSION.SDK_INT >= 31;
+    }
+
+    public static boolean isAtLeastU() {
+        return Build.VERSION.SDK_INT >= 34;
     }
 }

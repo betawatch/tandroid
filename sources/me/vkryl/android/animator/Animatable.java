@@ -1,6 +1,6 @@
 package me.vkryl.android.animator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface Animatable {
 
     public abstract /* synthetic */ class -CC {

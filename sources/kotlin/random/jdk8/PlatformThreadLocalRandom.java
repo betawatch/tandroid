@@ -5,12 +5,12 @@ import java.util.Random;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.random.AbstractPlatformRandom;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class PlatformThreadLocalRandom extends AbstractPlatformRandom {
     @Override // kotlin.random.AbstractPlatformRandom
     public Random getImpl() {
         ThreadLocalRandom current = ThreadLocalRandom.current();
-        Intrinsics.checkNotNullExpressionValue(current, "current()");
+        Intrinsics.checkNotNullExpressionValue(current, "current(...)");
         return current;
     }
 }

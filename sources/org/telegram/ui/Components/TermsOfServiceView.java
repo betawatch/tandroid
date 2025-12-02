@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TermsOfServiceView extends FrameLayout {
     private int currentAccount;
     private TLRPC.TL_help_termsOfService currentTos;

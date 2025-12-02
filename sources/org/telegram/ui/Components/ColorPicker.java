@@ -41,7 +41,7 @@ import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ColorPicker extends FrameLayout {
     private ImageView addButton;
     private Drawable circleDrawable;

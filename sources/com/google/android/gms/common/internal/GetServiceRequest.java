@@ -59,12 +59,12 @@ public class GetServiceRequest extends AbstractSafeParcelable {
         this.zzp = str2;
     }
 
+    public String getAttributionTag() {
+        return this.zzp;
+    }
+
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         zzn.zza(this, parcel, i);
-    }
-
-    public final String zza() {
-        return this.zzp;
     }
 }

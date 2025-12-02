@@ -2,7 +2,7 @@ package kotlinx.coroutines.sync;
 
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class MutexKt {
     private static final Symbol NO_OWNER = new Symbol("NO_OWNER");
     private static final Symbol ON_LOCK_ALREADY_LOCKED_BY_OWNER = new Symbol("ALREADY_LOCKED_BY_OWNER");

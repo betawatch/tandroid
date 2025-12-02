@@ -17,7 +17,7 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.GallerySheet;
 import org.telegram.ui.Stories.recorder.TimelineView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PhotoViewerCoverEditor extends FrameLayout {
     public ActionBar actionBar;
     private float aspectRatio;

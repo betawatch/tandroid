@@ -1,6 +1,6 @@
 package kotlin.jvm.internal;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class PackageReference implements ClassBasedDeclarationContainer {
     private final Class jClass;
     private final String moduleName;
@@ -26,6 +26,6 @@ public final class PackageReference implements ClassBasedDeclarationContainer {
     }
 
     public String toString() {
-        return getJClass().toString() + " (Kotlin reflection is not available)";
+        return getJClass() + " (Kotlin reflection is not available)";
     }
 }

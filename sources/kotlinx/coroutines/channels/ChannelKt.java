@@ -3,7 +3,7 @@ package kotlinx.coroutines.channels;
 import kotlin.jvm.functions.Function1;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ChannelKt {
     public static /* synthetic */ Channel Channel$default(int i, BufferOverflow bufferOverflow, Function1 function1, int i2, Object obj) {
         if ((i2 & 1) != 0) {

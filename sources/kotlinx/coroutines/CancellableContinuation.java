@@ -3,13 +3,15 @@ package kotlinx.coroutines;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function1;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface CancellableContinuation extends Continuation {
     boolean cancel(Throwable th);
 
     void completeResume(Object obj);
 
     void invokeOnCancellation(Function1 function1);
+
+    boolean isActive();
 
     boolean isCompleted();
 

@@ -2,7 +2,7 @@ package kotlinx.coroutines.flow.internal;
 
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class NullSurrogateKt {
     public static final Symbol NULL = new Symbol("NULL");
     public static final Symbol UNINITIALIZED = new Symbol("UNINITIALIZED");

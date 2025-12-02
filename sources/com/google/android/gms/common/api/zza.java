@@ -2,32 +2,32 @@ package com.google.android.gms.common.api;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 
 /* loaded from: classes.dex */
-public final class zza implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
-        int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        String str = null;
-        int i = 0;
-        while (parcel.dataPosition() < validateObjectHeader) {
-            int readHeader = SafeParcelReader.readHeader(parcel);
-            int fieldId = SafeParcelReader.getFieldId(readHeader);
-            if (fieldId == 1) {
-                i = SafeParcelReader.readInt(parcel, readHeader);
-            } else if (fieldId != 2) {
-                SafeParcelReader.skipUnknownField(parcel, readHeader);
-            } else {
-                str = SafeParcelReader.createString(parcel, readHeader);
-            }
-        }
-        SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new Scope(i, str);
+final class zza implements Parcelable.Creator {
+    private static final zza zza = new zza(new zzb());
+    private final Parcelable.Creator zzb;
+
+    private zza(Parcelable.Creator creator) {
+        this.zzb = creator;
+    }
+
+    public static zza zza() {
+        return zza;
     }
 
     @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i) {
-        return new Scope[i];
+    public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
+        int dataPosition = parcel.dataPosition();
+        if (parcel.readInt() == -204102970) {
+            return zzb.zza(parcel);
+        }
+        parcel.setDataPosition(dataPosition - 4);
+        return ApiMetadata.getEmptyInstance();
+    }
+
+    @Override // android.os.Parcelable.Creator
+    public final /* bridge */ /* synthetic */ Object[] newArray(int i) {
+        return new ApiMetadata[i];
     }
 }

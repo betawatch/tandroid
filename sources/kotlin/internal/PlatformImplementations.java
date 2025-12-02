@@ -6,8 +6,8 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.random.FallbackThreadLocalRandom;
 import kotlin.random.Random;
 
-/* loaded from: classes.dex */
-public class PlatformImplementations {
+/* loaded from: classes3.dex */
+public abstract class PlatformImplementations {
 
     private static final class ReflectThrowable {
         public static final ReflectThrowable INSTANCE = new ReflectThrowable();
@@ -20,9 +20,9 @@ public class PlatformImplementations {
         static {
             Method method;
             Method method2;
-            Method[] throwableMethods = Throwable.class.getMethods();
-            Intrinsics.checkNotNullExpressionValue(throwableMethods, "throwableMethods");
-            int length = throwableMethods.length;
+            Method[] methods = Throwable.class.getMethods();
+            Intrinsics.checkNotNull(methods);
+            int length = methods.length;
             int i = 0;
             int i2 = 0;
             while (true) {
@@ -31,10 +31,10 @@ public class PlatformImplementations {
                     method2 = null;
                     break;
                 }
-                method2 = throwableMethods[i2];
+                method2 = methods[i2];
                 if (Intrinsics.areEqual(method2.getName(), "addSuppressed")) {
                     Class<?>[] parameterTypes = method2.getParameterTypes();
-                    Intrinsics.checkNotNullExpressionValue(parameterTypes, "it.parameterTypes");
+                    Intrinsics.checkNotNullExpressionValue(parameterTypes, "getParameterTypes(...)");
                     if (Intrinsics.areEqual(ArraysKt.singleOrNull(parameterTypes), Throwable.class)) {
                         break;
                     }
@@ -42,12 +42,12 @@ public class PlatformImplementations {
                 i2++;
             }
             addSuppressed = method2;
-            int length2 = throwableMethods.length;
+            int length2 = methods.length;
             while (true) {
                 if (i >= length2) {
                     break;
                 }
-                Method method3 = throwableMethods[i];
+                Method method3 = methods[i];
                 if (Intrinsics.areEqual(method3.getName(), "getSuppressed")) {
                     method = method3;
                     break;

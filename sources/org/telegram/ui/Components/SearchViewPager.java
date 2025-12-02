@@ -66,7 +66,7 @@ import org.telegram.ui.ReportBottomSheet;
 import org.telegram.ui.SearchAdsInfoBottomSheet;
 import org.telegram.ui.TopicsFragment;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class SearchViewPager extends ViewPagerFixed implements FilteredSearchView.UiCallback, NotificationCenter.NotificationCenterDelegate {
     private ActionBarMenu actionMode;
     int animateFromCount;

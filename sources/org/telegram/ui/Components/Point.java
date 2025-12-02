@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Point {
     public float x;
     public float y;

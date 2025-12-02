@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.os.Build;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class BatchParticlesDrawHelper {
     public static boolean isAvailable() {
         return Build.VERSION.SDK_INT >= 29;

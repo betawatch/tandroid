@@ -41,7 +41,7 @@ import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
 import org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorBtnCell;
 import org.telegram.ui.Components.RecyclerListView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class DeleteMessagesBottomSheet extends BottomSheetWithRecyclerListView {
     private TextView actionButton;
     private UniversalAdapter adapter;

@@ -10,9 +10,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 /* loaded from: classes.dex */
 public class SignInAccount extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<SignInAccount> CREATOR = new zbc();
-    String zba;
-    String zbb;
-    private GoogleSignInAccount zbc;
+    final String zba;
+    final String zbb;
+    private final GoogleSignInAccount zbc;
 
     SignInAccount(String str, GoogleSignInAccount googleSignInAccount, String str2) {
         this.zbc = googleSignInAccount;
@@ -22,8 +22,9 @@ public class SignInAccount extends AbstractSafeParcelable implements ReflectedPa
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
+        String str = this.zba;
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeString(parcel, 4, this.zba, false);
+        SafeParcelWriter.writeString(parcel, 4, str, false);
         SafeParcelWriter.writeParcelable(parcel, 7, this.zbc, i, false);
         SafeParcelWriter.writeString(parcel, 8, this.zbb, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);

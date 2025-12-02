@@ -3,7 +3,7 @@ package kotlinx.coroutines.channels;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ChannelResult {
     public static final Companion Companion = new Companion(null);
     private static final Failed failed = new Failed();

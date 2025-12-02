@@ -3,7 +3,7 @@ package kotlin.coroutines;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface ContinuationInterceptor extends CoroutineContext.Element {
     public static final Key Key = Key.$$INSTANCE;
 

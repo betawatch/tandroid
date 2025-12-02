@@ -36,7 +36,7 @@ import org.telegram.messenger.wallpaper.WallpaperGiftPatternPosition;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MotionBackgroundDrawable extends Drawable {
     private static boolean errorWhileGenerateLegacyBitmap;
     private static float legacyBitmapScale;

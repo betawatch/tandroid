@@ -61,7 +61,7 @@ import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.GradientClip;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class TopicsTabsView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private long animateFromSelectedTopicId;
     private ValueAnimator animator;

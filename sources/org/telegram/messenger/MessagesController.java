@@ -18199,27 +18199,27 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0063, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0060, code lost:
     
         if (r13.restricted == false) goto L31;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x006b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0068, code lost:
     
         r2 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x0091, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x008e, code lost:
     
         if (r3.restricted == false) goto L31;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0135  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x012f  */
     /* JADX WARN: Removed duplicated region for block: B:12:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00f7  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0116  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00fb  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00a4  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00f2  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00ff  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0110  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00a1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -19519,44 +19519,44 @@ public class MessagesController extends BaseController implements NotificationCe
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:165:0x054e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:165:0x054c, code lost:
     
-        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] >= 218) goto L216;
+        if (org.telegram.messenger.MessageObject.getMedia(r0).bytes[0] >= 220) goto L216;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:170:0x0566, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:170:0x0564, code lost:
     
-        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 218) goto L222;
+        if (org.telegram.messenger.Utilities.bytesToInt(org.telegram.messenger.MessageObject.getMedia(r0).bytes) < 220) goto L222;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:290:0x0206, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:290:0x0204, code lost:
     
         r1 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:293:0x01b4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:293:0x01b2, code lost:
     
         if ((android.os.SystemClock.elapsedRealtime() - ((java.lang.Long) r35.lastQuickReplyServerQueryTime.get(r2, java.lang.Long.valueOf(r29))).longValue()) > 60000) goto L61;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0190, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x018e, code lost:
     
         if ((android.os.SystemClock.elapsedRealtime() - ((java.lang.Long) r35.lastScheduledServerQueryTime.get(r38, java.lang.Long.valueOf(r29))).longValue()) > 60000) goto L61;
      */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0482  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x04c9  */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x057b  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x05d0 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x05ec  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0603  */
-    /* JADX WARN: Removed duplicated region for block: B:189:0x0639  */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x0643  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x0635  */
-    /* JADX WARN: Removed duplicated region for block: B:238:0x048c  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x048f  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0146 A[LOOP:0: B:26:0x013e->B:28:0x0146, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x0194  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x015f A[LOOP:1: B:31:0x0157->B:33:0x015f, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0175  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x037a A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0388  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0480  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x04c7  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x0579  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x05ce A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x05ea  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x0601  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x0636  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x0640  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x0632  */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x048a  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x048d  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0144 A[LOOP:0: B:26:0x013c->B:28:0x0144, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x0192  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x015d A[LOOP:1: B:31:0x0155->B:33:0x015d, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0173  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0378 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0386  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -19845,7 +19845,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     messageObject.scheduled = i11 == 1;
                     arrayList.add(messageObject);
                     if (z) {
-                        if (message4.legacy && message4.layer < 218) {
+                        if (message4.legacy && message4.layer < 220) {
                             arrayList2.add(Integer.valueOf(message4.id));
                         } else if ((MessageObject.getMedia(message4) instanceof TLRPC.TL_messageMediaUnsupported) && MessageObject.getMedia(message4).bytes != null) {
                             if (MessageObject.getMedia(message4).bytes.length != 0) {
@@ -21247,8 +21247,8 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x0361 A[Catch: Exception -> 0x0065, TryCatch #0 {Exception -> 0x0065, blocks: (B:3:0x0006, B:4:0x001e, B:7:0x002a, B:9:0x0036, B:11:0x006a, B:14:0x0071, B:18:0x0073, B:20:0x0077, B:21:0x00a4, B:23:0x00af, B:24:0x00ff, B:25:0x0112, B:27:0x011a, B:29:0x012b, B:31:0x0130, B:34:0x013d, B:35:0x015d, B:37:0x0163, B:39:0x0174, B:41:0x017a, B:42:0x0180, B:44:0x0188, B:47:0x01ab, B:48:0x019a, B:51:0x01a7, B:55:0x01ad, B:58:0x01b1, B:60:0x01b8, B:61:0x01d2, B:63:0x01e9, B:64:0x01f5, B:67:0x01ff, B:73:0x0211, B:75:0x025d, B:77:0x0267, B:79:0x0297, B:81:0x02af, B:84:0x02bf, B:91:0x02d2, B:97:0x02e1, B:99:0x031f, B:101:0x0323, B:103:0x034c, B:105:0x0361, B:106:0x0378, B:108:0x0380, B:112:0x0394, B:110:0x039e, B:113:0x042b, B:119:0x03a1, B:121:0x03a7, B:122:0x03be, B:124:0x03c6, B:128:0x03da, B:126:0x03e3, B:130:0x03e6, B:132:0x03ec, B:133:0x0403, B:135:0x040b, B:139:0x041f, B:137:0x0428, B:143:0x00b4, B:145:0x00b8, B:148:0x00c0), top: B:2:0x0006 }] */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x03a1 A[Catch: Exception -> 0x0065, TryCatch #0 {Exception -> 0x0065, blocks: (B:3:0x0006, B:4:0x001e, B:7:0x002a, B:9:0x0036, B:11:0x006a, B:14:0x0071, B:18:0x0073, B:20:0x0077, B:21:0x00a4, B:23:0x00af, B:24:0x00ff, B:25:0x0112, B:27:0x011a, B:29:0x012b, B:31:0x0130, B:34:0x013d, B:35:0x015d, B:37:0x0163, B:39:0x0174, B:41:0x017a, B:42:0x0180, B:44:0x0188, B:47:0x01ab, B:48:0x019a, B:51:0x01a7, B:55:0x01ad, B:58:0x01b1, B:60:0x01b8, B:61:0x01d2, B:63:0x01e9, B:64:0x01f5, B:67:0x01ff, B:73:0x0211, B:75:0x025d, B:77:0x0267, B:79:0x0297, B:81:0x02af, B:84:0x02bf, B:91:0x02d2, B:97:0x02e1, B:99:0x031f, B:101:0x0323, B:103:0x034c, B:105:0x0361, B:106:0x0378, B:108:0x0380, B:112:0x0394, B:110:0x039e, B:113:0x042b, B:119:0x03a1, B:121:0x03a7, B:122:0x03be, B:124:0x03c6, B:128:0x03da, B:126:0x03e3, B:130:0x03e6, B:132:0x03ec, B:133:0x0403, B:135:0x040b, B:139:0x041f, B:137:0x0428, B:143:0x00b4, B:145:0x00b8, B:148:0x00c0), top: B:2:0x0006 }] */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x0360 A[Catch: Exception -> 0x0064, TryCatch #0 {Exception -> 0x0064, blocks: (B:3:0x0006, B:4:0x001e, B:7:0x002a, B:9:0x0036, B:11:0x0069, B:14:0x0070, B:18:0x0072, B:20:0x0076, B:21:0x00a3, B:23:0x00ae, B:24:0x00fe, B:25:0x0111, B:27:0x0119, B:29:0x012a, B:31:0x012f, B:34:0x013c, B:35:0x015c, B:37:0x0162, B:39:0x0173, B:41:0x0179, B:42:0x017f, B:44:0x0187, B:47:0x01aa, B:48:0x0199, B:51:0x01a6, B:55:0x01ac, B:58:0x01b0, B:60:0x01b7, B:61:0x01d1, B:63:0x01e8, B:64:0x01f4, B:67:0x01fe, B:73:0x0210, B:75:0x025c, B:77:0x0266, B:79:0x0296, B:81:0x02ae, B:84:0x02be, B:91:0x02d1, B:97:0x02e0, B:99:0x031e, B:101:0x0322, B:103:0x034b, B:105:0x0360, B:106:0x0377, B:108:0x037f, B:112:0x0393, B:110:0x039d, B:113:0x042a, B:119:0x03a0, B:121:0x03a6, B:122:0x03bd, B:124:0x03c5, B:128:0x03d9, B:126:0x03e2, B:130:0x03e5, B:132:0x03eb, B:133:0x0402, B:135:0x040a, B:139:0x041e, B:137:0x0427, B:143:0x00b3, B:145:0x00b7, B:148:0x00bf), top: B:2:0x0006 }] */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x03a0 A[Catch: Exception -> 0x0064, TryCatch #0 {Exception -> 0x0064, blocks: (B:3:0x0006, B:4:0x001e, B:7:0x002a, B:9:0x0036, B:11:0x0069, B:14:0x0070, B:18:0x0072, B:20:0x0076, B:21:0x00a3, B:23:0x00ae, B:24:0x00fe, B:25:0x0111, B:27:0x0119, B:29:0x012a, B:31:0x012f, B:34:0x013c, B:35:0x015c, B:37:0x0162, B:39:0x0173, B:41:0x0179, B:42:0x017f, B:44:0x0187, B:47:0x01aa, B:48:0x0199, B:51:0x01a6, B:55:0x01ac, B:58:0x01b0, B:60:0x01b7, B:61:0x01d1, B:63:0x01e8, B:64:0x01f4, B:67:0x01fe, B:73:0x0210, B:75:0x025c, B:77:0x0266, B:79:0x0296, B:81:0x02ae, B:84:0x02be, B:91:0x02d1, B:97:0x02e0, B:99:0x031e, B:101:0x0322, B:103:0x034b, B:105:0x0360, B:106:0x0377, B:108:0x037f, B:112:0x0393, B:110:0x039d, B:113:0x042a, B:119:0x03a0, B:121:0x03a6, B:122:0x03bd, B:124:0x03c5, B:128:0x03d9, B:126:0x03e2, B:130:0x03e5, B:132:0x03eb, B:133:0x0402, B:135:0x040a, B:139:0x041e, B:137:0x0427, B:143:0x00b3, B:145:0x00b7, B:148:0x00bf), top: B:2:0x0006 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -22371,7 +22371,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x00f4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x00f3, code lost:
     
         r5 = true;
      */
@@ -22800,7 +22800,7 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x03d0  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x03c8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -26056,8 +26056,8 @@ public class MessagesController extends BaseController implements NotificationCe
     /* JADX WARN: Removed duplicated region for block: B:36:0x01db  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x01ef  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x01f6  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x026e  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0277  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x026c  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0275  */
     /* JADX WARN: Removed duplicated region for block: B:50:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:76:0x017d  */
     /*
@@ -27594,217 +27594,217 @@ public class MessagesController extends BaseController implements NotificationCe
         return 0L;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:130:0x055e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:130:0x0559, code lost:
     
         if (getMessagesStorage().getLastSeqValue() != r30.seq_start) goto L233;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:132:0x057f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:132:0x057a, code lost:
     
         if (org.telegram.messenger.BuildVars.LOGS_ENABLED == false) goto L238;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:133:0x0581, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:133:0x057c, code lost:
     
         if (r0 == false) goto L237;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:134:0x0583, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:134:0x057e, code lost:
     
         org.telegram.messenger.FileLog.d("need get diff TL_updatesCombined, seq: " + getMessagesStorage().getLastSeqValue() + " " + r30.seq_start);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:135:0x05a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:135:0x05a3, code lost:
     
         org.telegram.messenger.FileLog.d("need get diff TL_updates, seq: " + getMessagesStorage().getLastSeqValue() + " " + r30.seq);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:137:0x05d0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:137:0x05c9, code lost:
     
         if (r29.gettingDifference != false) goto L248;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:139:0x05d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:139:0x05d1, code lost:
     
         if (r29.updatesStartWaitTimeSeq == 0) goto L248;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:141:0x05e9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:141:0x05e2, code lost:
     
         if (java.lang.Math.abs(java.lang.System.currentTimeMillis() - r29.updatesStartWaitTimeSeq) > 1500) goto L245;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:142:0x05ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:142:0x05e5, code lost:
     
         r0 = r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:146:0x05f8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:146:0x05f1, code lost:
     
         if (r29.updatesStartWaitTimeSeq != 0) goto L251;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:147:0x05fa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:147:0x05f3, code lost:
     
         r29.updatesStartWaitTimeSeq = java.lang.System.currentTimeMillis();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:149:0x0602, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x05fb, code lost:
     
         if (org.telegram.messenger.BuildVars.LOGS_ENABLED == false) goto L254;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:150:0x0604, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:150:0x05fd, code lost:
     
         org.telegram.messenger.FileLog.d("add TL_updates/Combined to queue");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:151:0x0609, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:151:0x0602, code lost:
     
         r29.updatesQueueSeq.add(r30);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:163:0x0579, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:163:0x0574, code lost:
     
         if (r2 != getMessagesStorage().getLastSeqValue()) goto L233;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:249:0x03fe, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:249:0x03fb, code lost:
     
         r2 = r4.pts_count + r1;
         r3 = r4.pts;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:250:0x0403, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:250:0x0400, code lost:
     
         if (r2 != r3) goto L182;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:252:0x0416, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:252:0x0413, code lost:
     
         if (processUpdateArray(r4.updates, r30.users, r30.chats, false, r30.date) != false) goto L181;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:254:0x041a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:254:0x0417, code lost:
     
         if (org.telegram.messenger.BuildVars.LOGS_ENABLED == false) goto L175;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:255:0x041c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:255:0x0419, code lost:
     
         org.telegram.messenger.FileLog.d("need get channel diff inner TL_updates, channel_id = " + r8);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:256:0x0431, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:256:0x042d, code lost:
     
         r2 = r23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:257:0x0433, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:257:0x042f, code lost:
     
         if (r2 != null) goto L178;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:258:0x0435, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:258:0x0431, code lost:
     
         r5 = new java.util.ArrayList();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:260:0x0444, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:260:0x0440, code lost:
     
         if (r2.contains(java.lang.Long.valueOf(r8)) != false) goto L212;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:261:0x0446, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:261:0x0442, code lost:
     
         r2.add(java.lang.Long.valueOf(r8));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:262:0x044f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:262:0x044b, code lost:
     
         r2 = r23;
         r29.channelsPts.put(r8, r4.pts);
         getMessagesStorage().saveChannelPts(r8, r4.pts);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:263:0x0463, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:263:0x045f, code lost:
     
         r2 = r23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:264:0x0466, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:264:0x0462, code lost:
     
         if (r1 == r3) goto L212;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:266:0x046a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:266:0x0466, code lost:
     
         if (org.telegram.messenger.BuildVars.LOGS_ENABLED == false) goto L187;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:267:0x046c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:267:0x0468, code lost:
     
         org.telegram.messenger.FileLog.d(r0 + " need get channel diff, pts: " + r1 + " " + r4.pts + " count = " + r4.pts_count + " channelId = " + r8);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:268:0x049b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:268:0x0497, code lost:
     
         r0 = r29.updatesStartWaitTimeChannels.get(r8);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:269:0x04af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:269:0x04ab, code lost:
     
         if (((java.lang.Boolean) r29.gettingDifferenceChannels.get(r8, java.lang.Boolean.FALSE)).booleanValue() != false) goto L193;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:271:0x04b5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:271:0x04b1, code lost:
     
         if (r0 == 0) goto L193;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:273:0x04c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:273:0x04c0, code lost:
     
         if (java.lang.Math.abs(java.lang.System.currentTimeMillis() - r0) > 1500) goto L194;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:274:0x04c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:274:0x04c5, code lost:
     
         if (r2 != null) goto L196;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:275:0x04cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:275:0x04c7, code lost:
     
         r5 = new java.util.ArrayList();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:277:0x04d9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:277:0x04d5, code lost:
     
         if (r2.contains(java.lang.Long.valueOf(r8)) != false) goto L212;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:278:0x04db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:278:0x04d7, code lost:
     
         r2.add(java.lang.Long.valueOf(r8));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:281:0x04e5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:281:0x04e1, code lost:
     
         if (r0 != 0) goto L202;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:282:0x04e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:282:0x04e3, code lost:
     
         r29.updatesStartWaitTimeChannels.put(r8, java.lang.System.currentTimeMillis());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:284:0x04f2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:284:0x04ee, code lost:
     
         if (org.telegram.messenger.BuildVars.LOGS_ENABLED == false) goto L205;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:285:0x04f4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:285:0x04f0, code lost:
     
         org.telegram.messenger.FileLog.d("add to queue");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:286:0x04f7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:286:0x04f3, code lost:
     
         r0 = (java.util.ArrayList) r29.updatesQueueChannels.get(r8);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:287:0x04ff, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:287:0x04fb, code lost:
     
         if (r0 != null) goto L208;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:288:0x0501, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:288:0x04fd, code lost:
     
         r0 = new java.util.ArrayList();
         r29.updatesQueueChannels.put(r8, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:289:0x050b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:289:0x0507, code lost:
     
         r0.add(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:452:0x075d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:452:0x0755, code lost:
     
         if (r2 != null) goto L326;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:454:0x0761, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:454:0x0759, code lost:
     
         if (r8 != null) goto L329;
      */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0535 A[LOOP:4: B:99:0x0130->B:122:0x0535, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0533 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0621  */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x063b  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0a15  */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x06f9  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0a2e  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x0718  */
-    /* JADX WARN: Removed duplicated region for block: B:348:0x077a  */
-    /* JADX WARN: Removed duplicated region for block: B:367:0x07b1 A[EDGE_INSN: B:367:0x07b1->B:368:0x07b1 BREAK  A[LOOP:9: B:346:0x0772->B:355:0x07ae], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:379:0x07ea  */
-    /* JADX WARN: Removed duplicated region for block: B:445:0x0732  */
-    /* JADX WARN: Removed duplicated region for block: B:456:0x0712  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x09db  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0530 A[LOOP:4: B:99:0x012e->B:122:0x0530, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x052e A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x061a  */
+    /* JADX WARN: Removed duplicated region for block: B:304:0x0634  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0a0c  */
+    /* JADX WARN: Removed duplicated region for block: B:328:0x06f1  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0a25  */
+    /* JADX WARN: Removed duplicated region for block: B:334:0x0710  */
+    /* JADX WARN: Removed duplicated region for block: B:348:0x0772  */
+    /* JADX WARN: Removed duplicated region for block: B:367:0x07a9 A[EDGE_INSN: B:367:0x07a9->B:368:0x07a9 BREAK  A[LOOP:9: B:346:0x076a->B:355:0x07a6], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:379:0x07e2  */
+    /* JADX WARN: Removed duplicated region for block: B:445:0x072a  */
+    /* JADX WARN: Removed duplicated region for block: B:456:0x070a  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x09d2  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0117  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -28513,7 +28513,7 @@ public class MessagesController extends BaseController implements NotificationCe
         */
     public boolean processUpdateArray(java.util.ArrayList<org.telegram.tgnet.TLRPC.Update> r82, java.util.ArrayList<org.telegram.tgnet.TLRPC.User> r83, java.util.ArrayList<org.telegram.tgnet.TLRPC.Chat> r84, boolean r85, int r86) {
         /*
-            Method dump skipped, instructions count: 7649
+            Method dump skipped, instructions count: 7646
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.MessagesController.processUpdateArray(java.util.ArrayList, java.util.ArrayList, java.util.ArrayList, boolean, int):boolean");
@@ -28665,32 +28665,32 @@ public class MessagesController extends BaseController implements NotificationCe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:295:0x0688, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:295:0x0687, code lost:
     
         if (r4 == r15) goto L286;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:297:0x068c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:297:0x068b, code lost:
     
         if (r7 == r6) goto L289;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:539:0x0bfb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:539:0x0bf6, code lost:
     
         if (r4.getCallState() == 0) goto L537;
      */
-    /* JADX WARN: Removed duplicated region for block: B:300:0x06b8  */
-    /* JADX WARN: Removed duplicated region for block: B:581:0x0cfb  */
-    /* JADX WARN: Removed duplicated region for block: B:874:0x14d7  */
-    /* JADX WARN: Removed duplicated region for block: B:890:0x1521  */
-    /* JADX WARN: Removed duplicated region for block: B:896:0x153c  */
-    /* JADX WARN: Removed duplicated region for block: B:965:0x1667  */
-    /* JADX WARN: Removed duplicated region for block: B:967:0x1675  */
-    /* JADX WARN: Removed duplicated region for block: B:969:0x167b  */
-    /* JADX WARN: Removed duplicated region for block: B:972:0x1687  */
-    /* JADX WARN: Removed duplicated region for block: B:977:0x16a0 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:981:0x16c3  */
-    /* JADX WARN: Removed duplicated region for block: B:984:0x16d9  */
+    /* JADX WARN: Removed duplicated region for block: B:300:0x06b6  */
+    /* JADX WARN: Removed duplicated region for block: B:581:0x0cf2  */
+    /* JADX WARN: Removed duplicated region for block: B:874:0x14cc  */
+    /* JADX WARN: Removed duplicated region for block: B:890:0x1516  */
+    /* JADX WARN: Removed duplicated region for block: B:896:0x1531  */
+    /* JADX WARN: Removed duplicated region for block: B:965:0x165c  */
+    /* JADX WARN: Removed duplicated region for block: B:967:0x166a  */
+    /* JADX WARN: Removed duplicated region for block: B:969:0x1670  */
+    /* JADX WARN: Removed duplicated region for block: B:972:0x167c  */
+    /* JADX WARN: Removed duplicated region for block: B:977:0x1695 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:981:0x16b8  */
+    /* JADX WARN: Removed duplicated region for block: B:984:0x16ce  */
     /* JADX WARN: Removed duplicated region for block: B:987:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:991:0x150b  */
+    /* JADX WARN: Removed duplicated region for block: B:991:0x1500  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -30969,8 +30969,10 @@ public class MessagesController extends BaseController implements NotificationCe
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:183:0x04c8  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x04cd  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x035d  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x03c0  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x04c7  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x04cc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -30981,10 +30983,11 @@ public class MessagesController extends BaseController implements NotificationCe
         LongSparseArray longSparseArray;
         boolean z2;
         boolean z3;
+        int i2;
         boolean z4;
         TLRPC.Chat chat;
         long j3;
-        int i2;
+        int i3;
         TLRPC.ChatFull chatFull;
         TLRPC.InputGroupCall inputGroupCall;
         if (arrayList == null || arrayList.isEmpty()) {
@@ -31000,12 +31003,12 @@ public class MessagesController extends BaseController implements NotificationCe
             z = false;
         } else {
             long j5 = 0;
-            int i3 = 0;
+            int i4 = 0;
             MessageObject messageObject2 = null;
             boolean z7 = false;
             z = false;
-            while (i3 < arrayList.size()) {
-                MessageObject messageObject3 = arrayList.get(i3);
+            while (i4 < arrayList.size()) {
+                MessageObject messageObject3 = arrayList.get(i4);
                 if (messageObject2 == null || ((!isEncryptedDialog && messageObject3.getId() > messageObject2.getId()) || (((isEncryptedDialog || (messageObject3.getId() < 0 && messageObject2.getId() < 0)) && messageObject3.getId() < messageObject2.getId()) || messageObject3.messageOwner.date > messageObject2.messageOwner.date))) {
                     long j6 = messageObject3.messageOwner.peer_id.channel_id;
                     if (j6 != j4) {
@@ -31034,12 +31037,12 @@ public class MessagesController extends BaseController implements NotificationCe
                     }
                 }
                 if (messageObject3.isOut() && messageObject3.isSent()) {
-                    i2 = 1;
+                    i3 = 1;
                     z = true;
                 } else {
-                    i2 = 1;
+                    i3 = 1;
                 }
-                i3 += i2;
+                i4 += i3;
                 j4 = 0;
             }
             messageObject = messageObject2;
@@ -31063,18 +31066,18 @@ public class MessagesController extends BaseController implements NotificationCe
                 this.dialogsMyChannels.remove(tL_dialog);
                 this.dialogsChannelsOnly.remove(tL_dialog);
                 this.dialogsGroupsOnly.remove(tL_dialog);
-                int i4 = 0;
+                int i5 = 0;
                 while (true) {
                     DialogFilter[] dialogFilterArr = this.selectedDialogFilter;
-                    if (i4 >= dialogFilterArr.length) {
+                    if (i5 >= dialogFilterArr.length) {
                         break;
                     }
-                    DialogFilter dialogFilter = dialogFilterArr[i4];
+                    DialogFilter dialogFilter = dialogFilterArr[i5];
                     if (dialogFilter != null) {
                         dialogFilter.dialogs.remove(tL_dialog);
-                        this.selectedDialogFilter[i4].dialogsForward.remove(tL_dialog);
+                        this.selectedDialogFilter[i5].dialogsForward.remove(tL_dialog);
                     }
-                    i4++;
+                    i5++;
                 }
                 this.dialogsUsersOnly.remove(tL_dialog);
                 this.dialogsForBlock.remove(tL_dialog);
@@ -31082,9 +31085,9 @@ public class MessagesController extends BaseController implements NotificationCe
                 this.dialogs_dict.remove(tL_dialog.id);
                 this.dialogs_read_inbox_max.remove(Long.valueOf(tL_dialog.id));
                 this.dialogs_read_outbox_max.remove(Long.valueOf(tL_dialog.id));
-                int i5 = this.nextDialogsCacheOffset.get(tL_dialog.folder_id, 0);
-                if (i5 > 0) {
-                    this.nextDialogsCacheOffset.put(tL_dialog.folder_id, i5 - 1);
+                int i6 = this.nextDialogsCacheOffset.get(tL_dialog.folder_id, 0);
+                if (i6 > 0) {
+                    this.nextDialogsCacheOffset.put(tL_dialog.folder_id, i6 - 1);
                 }
                 this.dialogMessage.remove(tL_dialog.id);
                 ArrayList<TLRPC.Dialog> arrayList2 = this.dialogsByFolder.get(tL_dialog.folder_id);
@@ -31145,43 +31148,59 @@ public class MessagesController extends BaseController implements NotificationCe
                 if (!isDialogMuted(j, 0L)) {
                     this.unreadUnmutedDialogs++;
                 }
-                int i6 = 0;
+                int i7 = 0;
                 while (true) {
                     DialogFilter[] dialogFilterArr2 = this.selectedDialogFilter;
-                    if (i6 >= dialogFilterArr2.length) {
+                    if (i7 >= dialogFilterArr2.length) {
                         break;
                     }
-                    DialogFilter dialogFilter2 = dialogFilterArr2[i6];
+                    DialogFilter dialogFilter2 = dialogFilterArr2[i7];
                     if (dialogFilter2 != null && (dialogFilter2.flags & DIALOG_FILTER_FLAG_EXCLUDE_READ) != 0) {
                         z3 = true;
                         break;
                     }
-                    i6++;
+                    i7++;
                 }
+                this.dialogs_dict.put(j, tL_dialog2);
+                this.allDialogs.add(tL_dialog2);
+                ArrayList arrayList3 = new ArrayList();
+                for (i2 = 0; i2 < arrayList.size(); i2++) {
+                    MessageObject messageObject5 = arrayList.get(i2);
+                    if (messageObject5 != null && (messageObject5.getId() == messageObject.getId() || (messageObject5.hasValidGroupId() && messageObject.hasValidGroupId() && messageObject5.getGroupIdForUse() == messageObject.getGroupIdForUse()))) {
+                        arrayList3.add(messageObject5);
+                        if (messageObject5.messageOwner.peer_id.channel_id == 0) {
+                            this.dialogMessagesByIds.put(messageObject5.getId(), messageObject5);
+                            long j8 = messageObject5.messageOwner.random_id;
+                            if (j8 != 0) {
+                                this.dialogMessagesByRandomIds.put(j8, messageObject5);
+                            }
+                        }
+                    }
+                }
+                this.dialogMessage.put(j, arrayList3);
+                getTranslateController().checkDialogMessage(j);
+                longSparseArray = null;
+                if (z3) {
+                    sortDialogs(null);
+                    getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
+                }
+                getMessagesStorage().getDialogFolderId(j, new MessagesStorage.IntCallback() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda77
+                    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+                    public final void run(int i8) {
+                        MessagesController.this.lambda$updateInterfaceWithMessages$401(tL_dialog2, id, j, i8);
+                    }
+                });
             }
             z3 = false;
             this.dialogs_dict.put(j, tL_dialog2);
             this.allDialogs.add(tL_dialog2);
-            ArrayList arrayList3 = new ArrayList();
-            for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                MessageObject messageObject5 = arrayList.get(i7);
-                if (messageObject5 != null && (messageObject5.getId() == messageObject.getId() || (messageObject5.hasValidGroupId() && messageObject.hasValidGroupId() && messageObject5.getGroupIdForUse() == messageObject.getGroupIdForUse()))) {
-                    arrayList3.add(messageObject5);
-                    if (messageObject5.messageOwner.peer_id.channel_id == 0) {
-                        this.dialogMessagesByIds.put(messageObject5.getId(), messageObject5);
-                        long j8 = messageObject5.messageOwner.random_id;
-                        if (j8 != 0) {
-                            this.dialogMessagesByRandomIds.put(j8, messageObject5);
-                        }
-                    }
-                }
+            ArrayList arrayList32 = new ArrayList();
+            while (i2 < arrayList.size()) {
             }
-            this.dialogMessage.put(j, arrayList3);
+            this.dialogMessage.put(j, arrayList32);
             getTranslateController().checkDialogMessage(j);
             longSparseArray = null;
             if (z3) {
-                sortDialogs(null);
-                getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsNeedReload, new Object[0]);
             }
             getMessagesStorage().getDialogFolderId(j, new MessagesStorage.IntCallback() { // from class: org.telegram.messenger.MessagesController$$ExternalSyntheticLambda77
                 @Override // org.telegram.messenger.MessagesStorage.IntCallback

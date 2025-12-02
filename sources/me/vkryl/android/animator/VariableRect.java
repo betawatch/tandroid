@@ -3,7 +3,7 @@ package me.vkryl.android.animator;
 import android.graphics.RectF;
 import me.vkryl.android.animator.Animatable;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class VariableRect implements Animatable {
     private final VariableFloat bottom;
     private final VariableFloat left;

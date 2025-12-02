@@ -15,20 +15,20 @@ import kotlinx.coroutines.internal.Segment;
 import kotlinx.coroutines.internal.SegmentOrClosed;
 import kotlinx.coroutines.internal.Symbol;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class SemaphoreImpl {
-    private volatile int _availablePermits;
-    private volatile long deqIdx;
-    private volatile long enqIdx;
-    private volatile Object head;
+    private volatile /* synthetic */ int _availablePermits$volatile;
+    private volatile /* synthetic */ long deqIdx$volatile;
+    private volatile /* synthetic */ long enqIdx$volatile;
+    private volatile /* synthetic */ Object head$volatile;
     private final Function1 onCancellationRelease;
     private final int permits;
-    private volatile Object tail;
-    private static final AtomicReferenceFieldUpdater head$FU = AtomicReferenceFieldUpdater.newUpdater(SemaphoreImpl.class, Object.class, "head");
-    private static final AtomicLongFieldUpdater deqIdx$FU = AtomicLongFieldUpdater.newUpdater(SemaphoreImpl.class, "deqIdx");
-    private static final AtomicReferenceFieldUpdater tail$FU = AtomicReferenceFieldUpdater.newUpdater(SemaphoreImpl.class, Object.class, "tail");
-    private static final AtomicLongFieldUpdater enqIdx$FU = AtomicLongFieldUpdater.newUpdater(SemaphoreImpl.class, "enqIdx");
-    private static final AtomicIntegerFieldUpdater _availablePermits$FU = AtomicIntegerFieldUpdater.newUpdater(SemaphoreImpl.class, "_availablePermits");
+    private volatile /* synthetic */ Object tail$volatile;
+    private static final /* synthetic */ AtomicReferenceFieldUpdater head$volatile$FU = AtomicReferenceFieldUpdater.newUpdater(SemaphoreImpl.class, Object.class, "head$volatile");
+    private static final /* synthetic */ AtomicLongFieldUpdater deqIdx$volatile$FU = AtomicLongFieldUpdater.newUpdater(SemaphoreImpl.class, "deqIdx$volatile");
+    private static final /* synthetic */ AtomicReferenceFieldUpdater tail$volatile$FU = AtomicReferenceFieldUpdater.newUpdater(SemaphoreImpl.class, Object.class, "tail$volatile");
+    private static final /* synthetic */ AtomicLongFieldUpdater enqIdx$volatile$FU = AtomicLongFieldUpdater.newUpdater(SemaphoreImpl.class, "enqIdx$volatile");
+    private static final /* synthetic */ AtomicIntegerFieldUpdater _availablePermits$volatile$FU = AtomicIntegerFieldUpdater.newUpdater(SemaphoreImpl.class, "_availablePermits$volatile");
 
     public SemaphoreImpl(int i, int i2) {
         this.permits = i;
@@ -39,9 +39,9 @@ public class SemaphoreImpl {
             throw new IllegalArgumentException(("The number of acquired permits should be in 0.." + i).toString());
         }
         SemaphoreSegment semaphoreSegment = new SemaphoreSegment(0L, null, 2);
-        this.head = semaphoreSegment;
-        this.tail = semaphoreSegment;
-        this._availablePermits = i - i2;
+        this.head$volatile = semaphoreSegment;
+        this.tail$volatile = semaphoreSegment;
+        this._availablePermits$volatile = i - i2;
         this.onCancellationRelease = new Function1() { // from class: kotlinx.coroutines.sync.SemaphoreImpl$onCancellationRelease$1
             {
                 super(1);
@@ -60,20 +60,19 @@ public class SemaphoreImpl {
     }
 
     public int getAvailablePermits() {
-        return Math.max(_availablePermits$FU.get(this), 0);
+        return Math.max(_availablePermits$volatile$FU.get(this), 0);
     }
 
     public boolean tryAcquire() {
         while (true) {
-            AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _availablePermits$FU;
-            int i = atomicIntegerFieldUpdater.get(this);
+            int i = _availablePermits$volatile$FU.get(this);
             if (i > this.permits) {
                 coerceAvailablePermitsAtMaximum();
             } else {
                 if (i <= 0) {
                     return false;
                 }
-                if (atomicIntegerFieldUpdater.compareAndSet(this, i, i - 1)) {
+                if (_availablePermits$volatile$FU.compareAndSet(this, i, i - 1)) {
                     return true;
                 }
             }
@@ -93,14 +92,14 @@ public class SemaphoreImpl {
     private final int decPermits() {
         int andDecrement;
         do {
-            andDecrement = _availablePermits$FU.getAndDecrement(this);
+            andDecrement = _availablePermits$volatile$FU.getAndDecrement(this);
         } while (andDecrement > this.permits);
         return andDecrement;
     }
 
     public void release() {
         do {
-            int andIncrement = _availablePermits$FU.getAndIncrement(this);
+            int andIncrement = _availablePermits$volatile$FU.getAndIncrement(this);
             if (andIncrement >= this.permits) {
                 coerceAvailablePermitsAtMaximum();
                 throw new IllegalStateException(("The number of released permits cannot be greater than " + this.permits).toString());
@@ -112,17 +111,13 @@ public class SemaphoreImpl {
     }
 
     private final void coerceAvailablePermitsAtMaximum() {
-        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater;
         int i;
-        int i2;
         do {
-            atomicIntegerFieldUpdater = _availablePermits$FU;
-            i = atomicIntegerFieldUpdater.get(this);
-            i2 = this.permits;
-            if (i <= i2) {
+            i = _availablePermits$volatile$FU.get(this);
+            if (i <= this.permits) {
                 return;
             }
-        } while (!atomicIntegerFieldUpdater.compareAndSet(this, i, i2));
+        } while (!_availablePermits$volatile$FU.compareAndSet(this, i, this.permits));
     }
 
     private final boolean addAcquireToQueue(Waiter waiter) {
@@ -131,10 +126,10 @@ public class SemaphoreImpl {
         int i2;
         Symbol symbol;
         Symbol symbol2;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = tail$FU;
-        SemaphoreSegment semaphoreSegment = (SemaphoreSegment) atomicReferenceFieldUpdater.get(this);
-        long andIncrement = enqIdx$FU.getAndIncrement(this);
+        SemaphoreSegment semaphoreSegment = (SemaphoreSegment) tail$volatile$FU.get(this);
+        long andIncrement = enqIdx$volatile$FU.getAndIncrement(this);
         SemaphoreImpl$addAcquireToQueue$createNewSegment$1 semaphoreImpl$addAcquireToQueue$createNewSegment$1 = SemaphoreImpl$addAcquireToQueue$createNewSegment$1.INSTANCE;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = tail$volatile$FU;
         i = SemaphoreKt.SEGMENT_SIZE;
         long j = andIncrement / i;
         loop0: while (true) {
@@ -191,12 +186,12 @@ public class SemaphoreImpl {
         Symbol symbol3;
         Symbol symbol4;
         Symbol symbol5;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = head$FU;
-        SemaphoreSegment semaphoreSegment = (SemaphoreSegment) atomicReferenceFieldUpdater.get(this);
-        long andIncrement = deqIdx$FU.getAndIncrement(this);
+        SemaphoreSegment semaphoreSegment = (SemaphoreSegment) head$volatile$FU.get(this);
+        long andIncrement = deqIdx$volatile$FU.getAndIncrement(this);
         i = SemaphoreKt.SEGMENT_SIZE;
         long j = andIncrement / i;
         SemaphoreImpl$tryResumeNextFromQueue$createNewSegment$1 semaphoreImpl$tryResumeNextFromQueue$createNewSegment$1 = SemaphoreImpl$tryResumeNextFromQueue$createNewSegment$1.INSTANCE;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = head$volatile$FU;
         loop0: while (true) {
             findSegmentInternal = ConcurrentLinkedListKt.findSegmentInternal(semaphoreSegment, j, semaphoreImpl$tryResumeNextFromQueue$createNewSegment$1);
             if (SegmentOrClosed.isClosed-impl(findSegmentInternal)) {

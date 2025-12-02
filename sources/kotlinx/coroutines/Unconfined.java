@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import androidx.appcompat.app.WindowDecorActionBar$$ExternalSyntheticThrowCCEIfNotNull0;
 import kotlin.coroutines.CoroutineContext;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Unconfined extends CoroutineDispatcher {
     public static final Unconfined INSTANCE = new Unconfined();
 

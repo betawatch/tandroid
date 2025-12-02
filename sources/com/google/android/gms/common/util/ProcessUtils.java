@@ -5,6 +5,10 @@ import android.os.Build;
 import android.os.Process;
 import android.os.StrictMode;
 import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.internal.common.zzab;
+import com.google.android.gms.internal.common.zzac;
+import com.google.android.gms.internal.common.zzj;
+import com.google.android.gms.internal.common.zzl;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,6 +17,31 @@ import java.io.IOException;
 public abstract class ProcessUtils {
     private static String zza;
     private static int zzb;
+    private static Boolean zzc;
+
+    public static boolean zza() {
+        boolean isIsolated;
+        Boolean bool = zzc;
+        if (bool == null) {
+            if (PlatformVersion.isAtLeastP()) {
+                isIsolated = Process.isIsolated();
+                bool = Boolean.valueOf(isIsolated);
+            } else {
+                try {
+                    Object zza2 = zzl.zza(Process.class, "isIsolated", new zzj[0]);
+                    Object[] objArr = new Object[0];
+                    if (zza2 == null) {
+                        throw new zzac(zzab.zza("expected a non-null reference", objArr));
+                    }
+                    bool = (Boolean) zza2;
+                } catch (ReflectiveOperationException unused) {
+                    bool = Boolean.FALSE;
+                }
+            }
+            zzc = bool;
+        }
+        return bool.booleanValue();
+    }
 
     public static String getMyProcessName() {
         BufferedReader bufferedReader;

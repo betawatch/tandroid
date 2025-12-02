@@ -272,9 +272,9 @@ public class CameraSession {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0060  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

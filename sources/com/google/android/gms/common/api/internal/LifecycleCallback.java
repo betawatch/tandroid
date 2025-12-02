@@ -9,15 +9,11 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
 /* loaded from: classes.dex */
-public class LifecycleCallback {
+public abstract class LifecycleCallback {
     protected final LifecycleFragment mLifecycleFragment;
 
     protected LifecycleCallback(LifecycleFragment lifecycleFragment) {
         this.mLifecycleFragment = lifecycleFragment;
-    }
-
-    private static LifecycleFragment getChimeraLifecycleFragmentImpl(LifecycleActivity lifecycleActivity) {
-        throw new IllegalStateException("Method not available in SDK.");
     }
 
     public static LifecycleFragment getFragment(Activity activity) {
@@ -60,10 +56,10 @@ public class LifecycleCallback {
 
     protected static LifecycleFragment getFragment(LifecycleActivity lifecycleActivity) {
         if (lifecycleActivity.zzd()) {
-            return zzd.zzc(lifecycleActivity.zzb());
+            return zzd.zza(lifecycleActivity.zzb());
         }
         if (lifecycleActivity.zzc()) {
-            return zzb.zzc(lifecycleActivity.zza());
+            return zza.zza(lifecycleActivity.zza());
         }
         throw new IllegalArgumentException("Can't get fragment for unexpected activity.");
     }

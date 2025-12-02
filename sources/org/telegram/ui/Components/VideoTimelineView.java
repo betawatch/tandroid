@@ -25,7 +25,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class VideoTimelineView extends View {
     private static final Object sync = new Object();
     private final Paint backgroundGrayPaint;

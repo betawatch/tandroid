@@ -55,7 +55,7 @@ import org.telegram.ui.Components.FilterTabsView;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Stories.recorder.HintView2;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class FilterTabsView extends FrameLayout {
     private final Property COLORS;
     private int aActiveTextColorKey;

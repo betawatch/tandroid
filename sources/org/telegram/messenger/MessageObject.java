@@ -128,6 +128,8 @@ public class MessageObject {
     public static final int TYPE_FILE = 9;
     public static final int TYPE_GEO = 4;
     public static final int TYPE_GIF = 8;
+    public static final int TYPE_GIFT_OFFER = 33;
+    public static final int TYPE_GIFT_OFFER_REJECTED = 34;
     public static final int TYPE_GIFT_PREMIUM = 18;
     public static final int TYPE_GIFT_PREMIUM_CHANNEL = 25;
     public static final int TYPE_GIFT_STARS = 30;
@@ -1258,7 +1260,7 @@ public class MessageObject {
             return this.maxSizeWidth / f;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:302:0x07b6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:302:0x07b1, code lost:
         
             if (r15[2] > r15[3]) goto L251;
          */
@@ -1266,17 +1268,17 @@ public class MessageObject {
         
             if ((org.telegram.messenger.MessageObject.getMedia(r15.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) == false) goto L44;
          */
-        /* JADX WARN: Removed duplicated region for block: B:119:0x0870  */
+        /* JADX WARN: Removed duplicated region for block: B:119:0x086b  */
         /* JADX WARN: Removed duplicated region for block: B:17:0x0068  */
         /* JADX WARN: Removed duplicated region for block: B:19:0x006e  */
         /* JADX WARN: Removed duplicated region for block: B:42:0x00ef  */
         /* JADX WARN: Removed duplicated region for block: B:45:0x00ff  */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x0123  */
-        /* JADX WARN: Removed duplicated region for block: B:51:0x013e  */
-        /* JADX WARN: Removed duplicated region for block: B:58:0x015a  */
-        /* JADX WARN: Removed duplicated region for block: B:61:0x0163  */
-        /* JADX WARN: Removed duplicated region for block: B:67:0x0155  */
-        /* JADX WARN: Removed duplicated region for block: B:68:0x0106  */
+        /* JADX WARN: Removed duplicated region for block: B:48:0x0120  */
+        /* JADX WARN: Removed duplicated region for block: B:51:0x013b  */
+        /* JADX WARN: Removed duplicated region for block: B:58:0x0157  */
+        /* JADX WARN: Removed duplicated region for block: B:61:0x0160  */
+        /* JADX WARN: Removed duplicated region for block: B:67:0x0152  */
+        /* JADX WARN: Removed duplicated region for block: B:68:0x0105  */
         /* JADX WARN: Removed duplicated region for block: B:72:0x00f2  */
         /* JADX WARN: Removed duplicated region for block: B:89:0x00c2  */
         /* JADX WARN: Removed duplicated region for block: B:90:0x006b  */
@@ -2349,33 +2351,33 @@ public class MessageObject {
         return Theme.chat_msgTextPaint;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x02a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:122:0x02a2, code lost:
     
         if ((r3.new_participant instanceof org.telegram.tgnet.TLRPC.TL_channelParticipant) != false) goto L66;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:687:0x0c21, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:687:0x0c1e, code lost:
     
         if (r10.id == r12.id) goto L480;
      */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x1c1f  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x1c71  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x1c76  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x1d0c A[ADDED_TO_REGION, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x1d0d  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x1d22  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x1d34  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x1d42  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x1d4d  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x1d84  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x1d45  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x1d27  */
-    /* JADX WARN: Removed duplicated region for block: B:661:0x0c47  */
-    /* JADX WARN: Removed duplicated region for block: B:664:0x0c88  */
-    /* JADX WARN: Removed duplicated region for block: B:670:0x0d24  */
-    /* JADX WARN: Removed duplicated region for block: B:672:0x0d2f  */
-    /* JADX WARN: Removed duplicated region for block: B:674:0x0c54  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x1d03  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x1c73  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x1c1b  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x1c6d  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x1c72  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x1d08 A[ADDED_TO_REGION, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x1d09  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x1d1e  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x1d30  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x1d3e  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x1d49  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x1d80  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x1d41  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x1d23  */
+    /* JADX WARN: Removed duplicated region for block: B:661:0x0c44  */
+    /* JADX WARN: Removed duplicated region for block: B:664:0x0c85  */
+    /* JADX WARN: Removed duplicated region for block: B:670:0x0d21  */
+    /* JADX WARN: Removed duplicated region for block: B:672:0x0d2c  */
+    /* JADX WARN: Removed duplicated region for block: B:674:0x0c51  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x1cff  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x1c6f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -4261,24 +4263,25 @@ public class MessageObject {
         MessageObject messageObject = this.replyMessageObject;
         boolean z2 = (messageObject == null || messageObject == this || !messageObject.updateTranslation(z)) ? false : true;
         TranslateController translateController = MessagesController.getInstance(this.currentAccount).getTranslateController();
-        if (TranslateController.isTranslatable(this) && translateController.isTranslatingDialog(getDialogId()) && !translateController.isTranslateDialogHidden(getDialogId()) && (message = this.messageOwner) != null && ((message.translatedText != null || message.translatedPoll != null) && TextUtils.equals(translateController.getDialogTranslateTo(getDialogId()), this.messageOwner.translatedToLanguage))) {
+        TLRPC.Message message2 = this.messageOwner;
+        TLRPC.TL_textWithEntities tL_textWithEntities = message2 != null ? message2.voiceTranscriptionOpen ? message2.translatedVoiceTranscription : message2.translatedText : null;
+        if (TranslateController.isTranslatable(this) && translateController.isTranslatingDialog(getDialogId()) && !translateController.isTranslateDialogHidden(getDialogId()) && (message = this.messageOwner) != null && ((tL_textWithEntities != null || message.translatedPoll != null) && TextUtils.equals(translateController.getDialogTranslateTo(getDialogId()), this.messageOwner.translatedToLanguage))) {
             if (this.translated) {
                 return z2;
             }
             this.translated = true;
-            TLRPC.TL_textWithEntities tL_textWithEntities = this.messageOwner.translatedText;
             if (tL_textWithEntities != null) {
                 applyNewText(tL_textWithEntities.text);
                 generateCaption();
             }
             return true;
         }
-        TLRPC.Message message2 = this.messageOwner;
-        if (message2 == null || !(z || this.translated)) {
+        TLRPC.Message message3 = this.messageOwner;
+        if (message3 == null || !(z || this.translated)) {
             return z2;
         }
         this.translated = false;
-        applyNewText(message2.message);
+        applyNewText(message3.message);
         generateCaption();
         return true;
     }
@@ -4289,14 +4292,31 @@ public class MessageObject {
     }
 
     public void applyNewText(CharSequence charSequence) {
+        ArrayList<TLRPC.MessageEntity> arrayList;
         TextPaint textPaint;
-        TLRPC.TL_textWithEntities tL_textWithEntities;
         if (TextUtils.isEmpty(charSequence)) {
             return;
         }
         TLRPC.User user = isFromUser() ? MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.messageOwner.from_id.user_id)) : null;
         this.messageText = charSequence;
-        ArrayList<TLRPC.MessageEntity> arrayList = (!this.translated || (tL_textWithEntities = this.messageOwner.translatedText) == null) ? this.messageOwner.entities : tL_textWithEntities.entities;
+        if (this.translated) {
+            TLRPC.Message message = this.messageOwner;
+            if (message.voiceTranscriptionOpen) {
+                TLRPC.TL_textWithEntities tL_textWithEntities = message.translatedVoiceTranscription;
+                if (tL_textWithEntities != null) {
+                    arrayList = tL_textWithEntities.entities;
+                }
+                arrayList = null;
+            } else {
+                TLRPC.TL_textWithEntities tL_textWithEntities2 = message.translatedText;
+                if (tL_textWithEntities2 != null) {
+                    arrayList = tL_textWithEntities2.entities;
+                }
+                arrayList = null;
+            }
+        } else {
+            arrayList = this.messageOwner.entities;
+        }
         if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) {
             textPaint = Theme.chat_msgGameTextPaint;
         } else {
@@ -5191,51 +5211,50 @@ public class MessageObject {
         updateMessageText(MessagesController.getInstance(this.currentAccount).getUsers(), MessagesController.getInstance(this.currentAccount).getChats(), null, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1318:0x2153, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1354:0x227a, code lost:
     
-        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) != 0) goto L1296;
+        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r4).flags & 4) != 0) goto L1333;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1225:0x1f52  */
-    /* JADX WARN: Removed duplicated region for block: B:1240:0x1faa  */
-    /* JADX WARN: Removed duplicated region for block: B:1242:0x1fad  */
-    /* JADX WARN: Removed duplicated region for block: B:1415:0x003b  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x23cc  */
-    /* JADX WARN: Removed duplicated region for block: B:299:0x0803  */
-    /* JADX WARN: Removed duplicated region for block: B:308:0x0822  */
-    /* JADX WARN: Removed duplicated region for block: B:326:0x0860  */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x087e  */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x08a5  */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x0870  */
-    /* JADX WARN: Removed duplicated region for block: B:365:0x08fb  */
-    /* JADX WARN: Removed duplicated region for block: B:373:0x0921  */
-    /* JADX WARN: Removed duplicated region for block: B:618:0x0fb1  */
-    /* JADX WARN: Removed duplicated region for block: B:622:0x0fcb  */
-    /* JADX WARN: Removed duplicated region for block: B:641:0x1029  */
-    /* JADX WARN: Removed duplicated region for block: B:642:0x103d  */
-    /* JADX WARN: Removed duplicated region for block: B:658:0x1083  */
-    /* JADX WARN: Removed duplicated region for block: B:659:0x108d  */
-    /* JADX WARN: Removed duplicated region for block: B:685:0x118f  */
-    /* JADX WARN: Removed duplicated region for block: B:687:0x119c  */
-    /* JADX WARN: Removed duplicated region for block: B:690:0x119f A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:691:0x1192  */
-    /* JADX WARN: Removed duplicated region for block: B:6:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:751:0x1287  */
-    /* JADX WARN: Removed duplicated region for block: B:771:0x1327  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:1261:0x207b  */
+    /* JADX WARN: Removed duplicated region for block: B:1276:0x20d1  */
+    /* JADX WARN: Removed duplicated region for block: B:1278:0x20d4  */
+    /* JADX WARN: Removed duplicated region for block: B:1451:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x24f3  */
+    /* JADX WARN: Removed duplicated region for block: B:298:0x0802  */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x0821  */
+    /* JADX WARN: Removed duplicated region for block: B:325:0x085f  */
+    /* JADX WARN: Removed duplicated region for block: B:327:0x087d  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x08a4  */
+    /* JADX WARN: Removed duplicated region for block: B:349:0x086f  */
+    /* JADX WARN: Removed duplicated region for block: B:364:0x08fa  */
+    /* JADX WARN: Removed duplicated region for block: B:372:0x0920  */
+    /* JADX WARN: Removed duplicated region for block: B:628:0x0fe6  */
+    /* JADX WARN: Removed duplicated region for block: B:632:0x1000  */
+    /* JADX WARN: Removed duplicated region for block: B:651:0x105a  */
+    /* JADX WARN: Removed duplicated region for block: B:652:0x106e  */
+    /* JADX WARN: Removed duplicated region for block: B:668:0x10b4  */
+    /* JADX WARN: Removed duplicated region for block: B:669:0x10be  */
+    /* JADX WARN: Removed duplicated region for block: B:6:0x003a  */
+    /* JADX WARN: Removed duplicated region for block: B:760:0x12b7  */
+    /* JADX WARN: Removed duplicated region for block: B:780:0x1358  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0051  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void updateMessageText(AbstractMap<Long, TLRPC.User> abstractMap, AbstractMap<Long, TLRPC.Chat> abstractMap2, LongSparseArray longSparseArray, LongSparseArray longSparseArray2) {
+        String str;
         TLRPC.User user;
         TLRPC.Chat chat;
         TLRPC.Message message;
-        String str;
+        String str2;
         char c;
         String formatPluralString;
         TLRPC.TL_textWithEntities tL_textWithEntities;
         String publicUsername;
         boolean isChannelAndNotMegaGroup;
-        String str2;
+        String str3;
+        int i;
+        int i2;
         TLRPC.Chat chat2;
         TLRPC.TodoItem todoItem;
         TLRPC.User user2;
@@ -5243,58 +5262,57 @@ public class MessageObject {
         CharSequence formatSpannable;
         CharSequence formatSpannable2;
         String publicUsername2;
-        String str3;
-        TLRPC.Chat chat3;
         String str4;
-        TLRPC.User user3;
-        TLRPC.Chat chat4;
-        TLRPC.Chat chat5;
-        String sb;
-        TLRPC.Chat chat6;
-        long j;
         String str5;
+        TLRPC.User user3;
+        TLRPC.Chat chat3;
+        TLRPC.Chat chat4;
+        String sb;
+        TLRPC.Chat chat5;
+        long j;
         String str6;
-        Object obj;
-        Object chat7;
+        String str7;
+        TLObject tLObject;
+        TLRPC.Chat chat6;
+        TLRPC.Chat chat7;
         TLRPC.Chat chat8;
-        TLRPC.Chat chat9;
-        TLRPC.Chat chat10;
         ArrayList<TLRPC.VideoSize> arrayList;
+        TLObject chat9;
+        TLObject chat10;
         TLObject chat11;
         TLObject chat12;
         TLObject chat13;
-        TLObject chat14;
-        TLObject chat15;
-        int i;
-        TLObject tLObject;
+        int i3;
+        TLObject tLObject2;
         TLRPC.Peer peer;
-        TLRPC.Chat chat16;
+        TLRPC.Chat chat14;
         TLRPC.TL_messageActionGiveawayResults tL_messageActionGiveawayResults;
-        TLRPC.Chat chat17;
-        String str7;
-        boolean z;
-        TLRPC.Chat chat18;
-        AmountUtils$Amount amountUtils$Amount;
-        int i2;
-        AmountUtils$Amount amountUtils$Amount2;
-        TLRPC.Chat chat19;
-        TLObject chat20;
-        TLObject chat21;
-        TLObject chat22;
+        TLRPC.Chat chat15;
         String str8;
+        boolean z;
+        TLRPC.Chat chat16;
+        AmountUtils$Amount amountUtils$Amount;
+        int i4;
+        AmountUtils$Amount amountUtils$Amount2;
+        TLRPC.Chat chat17;
+        TLObject chat18;
+        TLObject chat19;
+        TLObject chat20;
+        String str9;
         String formatPluralString2;
         TLRPC.Peer peer2 = this.messageOwner.from_id;
         if (peer2 instanceof TLRPC.TL_peerUser) {
+            str = ", ";
             user = getUser(abstractMap, longSparseArray, peer2.user_id);
         } else {
+            str = ", ";
             if (peer2 instanceof TLRPC.TL_peerChannel) {
                 chat = getChat(abstractMap2, longSparseArray2, peer2.channel_id);
                 user = null;
-                TLObject tLObject2 = user == null ? user : chat;
+                TLObject tLObject3 = user == null ? user : chat;
                 this.drawServiceWithDefaultTypeface = false;
                 this.channelJoined = false;
                 message = this.messageOwner;
-                String str9 = "";
                 if (!(message instanceof TLRPC.TL_messageService)) {
                     TLRPC.MessageAction messageAction = message.action;
                     if (messageAction != null) {
@@ -5323,7 +5341,7 @@ public class MessageObject {
                                 this.messageText = LocaleController.formatString(R.string.ActionSetWallpaperForThisGroupByUser, UserObject.getFirstName(user));
                             }
                         } else {
-                            String str11 = ", ";
+                            String str11 = str;
                             if (messageAction instanceof TLRPC.TL_messageActionSetChatWallPaper) {
                                 this.contentType = 1;
                                 TLRPC.TL_messageActionSetChatWallPaper tL_messageActionSetChatWallPaper = (TLRPC.TL_messageActionSetChatWallPaper) messageAction;
@@ -5375,45 +5393,44 @@ public class MessageObject {
                                 } else {
                                     this.messageText = LocaleController.formatString(R.string.ActionChannelCallScheduled, LocaleController.formatStartsTime(tL_messageActionGroupCallScheduled.schedule_date, 3, false));
                                 }
-                            } else {
-                                TLRPC.Chat chat23 = chat;
-                                String str12 = "un1";
-                                if (messageAction instanceof TLRPC.TL_messageActionGroupCall) {
-                                    int i3 = messageAction.duration;
-                                    if (i3 != 0) {
-                                        int i4 = i3 / 86400;
-                                        if (i4 > 0) {
-                                            formatPluralString2 = LocaleController.formatPluralString("Days", i4, new Object[0]);
+                            } else if (messageAction instanceof TLRPC.TL_messageActionGroupCall) {
+                                int i5 = messageAction.duration;
+                                if (i5 != 0) {
+                                    int i6 = i5 / 86400;
+                                    if (i6 > 0) {
+                                        formatPluralString2 = LocaleController.formatPluralString("Days", i6, new Object[0]);
+                                    } else {
+                                        int i7 = i5 / 3600;
+                                        if (i7 > 0) {
+                                            formatPluralString2 = LocaleController.formatPluralString("Hours", i7, new Object[0]);
                                         } else {
-                                            int i5 = i3 / 3600;
-                                            if (i5 > 0) {
-                                                formatPluralString2 = LocaleController.formatPluralString("Hours", i5, new Object[0]);
+                                            int i8 = i5 / 60;
+                                            if (i8 > 0) {
+                                                formatPluralString2 = LocaleController.formatPluralString("Minutes", i8, new Object[0]);
                                             } else {
-                                                int i6 = i3 / 60;
-                                                if (i6 > 0) {
-                                                    formatPluralString2 = LocaleController.formatPluralString("Minutes", i6, new Object[0]);
-                                                } else {
-                                                    formatPluralString2 = LocaleController.formatPluralString("Seconds", i3, new Object[0]);
-                                                }
+                                                formatPluralString2 = LocaleController.formatPluralString("Seconds", i5, new Object[0]);
                                             }
                                         }
-                                        if (!(this.messageOwner.peer_id instanceof TLRPC.TL_peerChat) && !isSupergroup()) {
-                                            this.messageText = LocaleController.formatString(R.string.ActionChannelCallEnded, formatPluralString2);
-                                        } else if (isOut()) {
-                                            this.messageText = LocaleController.formatString(R.string.ActionGroupCallEndedByYou, formatPluralString2);
-                                        } else {
-                                            this.messageText = replaceWithLink(LocaleController.formatString(R.string.ActionGroupCallEndedBy, formatPluralString2), "un1", tLObject2);
-                                        }
-                                    } else if ((message.peer_id instanceof TLRPC.TL_peerChat) || isSupergroup()) {
-                                        if (isOut()) {
-                                            this.messageText = LocaleController.getString(R.string.ActionGroupCallStartedByYou);
-                                        } else {
-                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionGroupCallStarted), "un1", tLObject2);
-                                        }
-                                    } else {
-                                        this.messageText = LocaleController.getString(R.string.ActionChannelCallJustStarted);
                                     }
-                                } else if (messageAction instanceof TLRPC.TL_messageActionInviteToGroupCall) {
+                                    if (!(this.messageOwner.peer_id instanceof TLRPC.TL_peerChat) && !isSupergroup()) {
+                                        this.messageText = LocaleController.formatString(R.string.ActionChannelCallEnded, formatPluralString2);
+                                    } else if (isOut()) {
+                                        this.messageText = LocaleController.formatString(R.string.ActionGroupCallEndedByYou, formatPluralString2);
+                                    } else {
+                                        this.messageText = replaceWithLink(LocaleController.formatString(R.string.ActionGroupCallEndedBy, formatPluralString2), "un1", tLObject3);
+                                    }
+                                } else if ((message.peer_id instanceof TLRPC.TL_peerChat) || isSupergroup()) {
+                                    if (isOut()) {
+                                        this.messageText = LocaleController.getString(R.string.ActionGroupCallStartedByYou);
+                                    } else {
+                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionGroupCallStarted), "un1", tLObject3);
+                                    }
+                                } else {
+                                    this.messageText = LocaleController.getString(R.string.ActionChannelCallJustStarted);
+                                }
+                            } else {
+                                String str12 = "un2";
+                                if (messageAction instanceof TLRPC.TL_messageActionInviteToGroupCall) {
                                     long j2 = messageAction.user_id;
                                     if (j2 == 0 && messageAction.users.size() == 1) {
                                         j2 = this.messageOwner.action.users.get(0).longValue();
@@ -5423,369 +5440,369 @@ public class MessageObject {
                                         if (isOut()) {
                                             this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionGroupCallYouInvited), "un2", user7);
                                         } else if (j2 == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
-                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionGroupCallInvitedYou), "un1", tLObject2);
+                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionGroupCallInvitedYou), "un1", tLObject3);
                                         } else {
                                             CharSequence replaceWithLink = replaceWithLink(LocaleController.getString(R.string.ActionGroupCallInvited), "un2", user7);
                                             this.messageText = replaceWithLink;
-                                            this.messageText = replaceWithLink(replaceWithLink, "un1", tLObject2);
+                                            this.messageText = replaceWithLink(replaceWithLink, "un1", tLObject3);
                                         }
                                     } else {
                                         if (isOut()) {
-                                            str8 = str10;
+                                            str9 = str10;
                                             this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionGroupCallYouInvited), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
                                         } else {
-                                            str8 = str10;
+                                            str9 = str10;
                                             CharSequence replaceWithLink2 = replaceWithLink(LocaleController.getString(R.string.ActionGroupCallInvited), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
                                             this.messageText = replaceWithLink2;
-                                            this.messageText = replaceWithLink(replaceWithLink2, "un1", tLObject2);
+                                            this.messageText = replaceWithLink(replaceWithLink2, "un1", tLObject3);
                                         }
-                                        str = str8;
+                                        str2 = str9;
+                                    }
+                                } else if (messageAction instanceof TLRPC.TL_messageActionGeoProximityReached) {
+                                    TLRPC.TL_messageActionGeoProximityReached tL_messageActionGeoProximityReached = (TLRPC.TL_messageActionGeoProximityReached) messageAction;
+                                    long peerId = getPeerId(tL_messageActionGeoProximityReached.from_id);
+                                    if (peerId > 0) {
+                                        chat19 = getUser(abstractMap, longSparseArray, peerId);
+                                    } else {
+                                        chat19 = getChat(abstractMap2, longSparseArray2, -peerId);
+                                    }
+                                    long peerId2 = getPeerId(tL_messageActionGeoProximityReached.to_id);
+                                    long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
+                                    if (peerId2 == clientUserId) {
+                                        this.messageText = replaceWithLink(LocaleController.formatString(R.string.ActionUserWithinRadius, LocaleController.formatDistance(tL_messageActionGeoProximityReached.distance, 2)), "un1", chat19);
+                                    } else {
+                                        if (peerId2 > 0) {
+                                            chat20 = getUser(abstractMap, longSparseArray, peerId2);
+                                        } else {
+                                            chat20 = getChat(abstractMap2, longSparseArray2, -peerId2);
+                                        }
+                                        if (peerId == clientUserId) {
+                                            this.messageText = replaceWithLink(LocaleController.formatString(R.string.ActionUserWithinYouRadius, LocaleController.formatDistance(tL_messageActionGeoProximityReached.distance, 2)), "un1", chat20);
+                                        } else {
+                                            CharSequence replaceWithLink3 = replaceWithLink(LocaleController.formatString(R.string.ActionUserWithinOtherRadius, LocaleController.formatDistance(tL_messageActionGeoProximityReached.distance, 2)), "un2", chat20);
+                                            this.messageText = replaceWithLink3;
+                                            this.messageText = replaceWithLink(replaceWithLink3, "un1", chat19);
+                                        }
+                                    }
+                                } else if (messageAction instanceof TLRPC.TL_messageActionCustomAction) {
+                                    this.messageText = messageAction.message;
+                                } else if (messageAction instanceof TLRPC.TL_messageActionChatCreate) {
+                                    if (isOut()) {
+                                        this.messageText = LocaleController.getString(R.string.ActionYouCreateGroup);
+                                    } else {
+                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionCreateGroup), "un1", tLObject3);
+                                    }
+                                } else if (messageAction instanceof TLRPC.TL_messageActionChatDeleteUser) {
+                                    if (isFromUser()) {
+                                        TLRPC.Message message2 = this.messageOwner;
+                                        if (message2.action.user_id == message2.from_id.user_id) {
+                                            if (isOut()) {
+                                                this.messageText = LocaleController.getString(R.string.ActionYouLeftUser);
+                                            } else {
+                                                this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionLeftUser), "un1", tLObject3);
+                                            }
+                                        }
+                                    }
+                                    TLRPC.User user8 = getUser(abstractMap, longSparseArray, this.messageOwner.action.user_id);
+                                    if (isOut()) {
+                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionYouKickUser), "un2", user8);
+                                    } else if (this.messageOwner.action.user_id == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
+                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionKickUserYou), "un1", tLObject3);
+                                    } else {
+                                        CharSequence replaceWithLink4 = replaceWithLink(LocaleController.getString(R.string.ActionKickUser), "un2", user8);
+                                        this.messageText = replaceWithLink4;
+                                        this.messageText = replaceWithLink(replaceWithLink4, "un1", tLObject3);
                                     }
                                 } else {
-                                    str9 = str10;
-                                    if (messageAction instanceof TLRPC.TL_messageActionGeoProximityReached) {
-                                        TLRPC.TL_messageActionGeoProximityReached tL_messageActionGeoProximityReached = (TLRPC.TL_messageActionGeoProximityReached) messageAction;
-                                        long peerId = getPeerId(tL_messageActionGeoProximityReached.from_id);
-                                        if (peerId > 0) {
-                                            chat21 = getUser(abstractMap, longSparseArray, peerId);
+                                    TLRPC.Chat chat21 = chat;
+                                    if (messageAction instanceof TLRPC.TL_messageActionPaymentRefunded) {
+                                        TLRPC.TL_messageActionPaymentRefunded tL_messageActionPaymentRefunded = (TLRPC.TL_messageActionPaymentRefunded) messageAction;
+                                        long peerDialogId = DialogObject.getPeerDialogId(tL_messageActionPaymentRefunded.peer);
+                                        if (peerDialogId >= 0) {
+                                            chat18 = getUser(abstractMap, longSparseArray, peerDialogId);
                                         } else {
-                                            chat21 = getChat(abstractMap2, longSparseArray2, -peerId);
+                                            chat18 = getChat(abstractMap2, longSparseArray2, -peerDialogId);
                                         }
-                                        TLObject tLObject3 = chat21;
-                                        long peerId2 = getPeerId(tL_messageActionGeoProximityReached.to_id);
-                                        long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
-                                        if (peerId2 == clientUserId) {
-                                            this.messageText = replaceWithLink(LocaleController.formatString(R.string.ActionUserWithinRadius, LocaleController.formatDistance(tL_messageActionGeoProximityReached.distance, 2)), "un1", tLObject3);
-                                        } else {
-                                            if (peerId2 > 0) {
-                                                chat22 = getUser(abstractMap, longSparseArray, peerId2);
-                                            } else {
-                                                chat22 = getChat(abstractMap2, longSparseArray2, -peerId2);
-                                            }
-                                            if (peerId == clientUserId) {
-                                                this.messageText = replaceWithLink(LocaleController.formatString(R.string.ActionUserWithinYouRadius, LocaleController.formatDistance(tL_messageActionGeoProximityReached.distance, 2)), "un1", chat22);
-                                            } else {
-                                                CharSequence replaceWithLink3 = replaceWithLink(LocaleController.formatString(R.string.ActionUserWithinOtherRadius, LocaleController.formatDistance(tL_messageActionGeoProximityReached.distance, 2)), "un2", chat22);
-                                                this.messageText = replaceWithLink3;
-                                                this.messageText = replaceWithLink(replaceWithLink3, "un1", tLObject3);
-                                            }
-                                        }
-                                    } else if (messageAction instanceof TLRPC.TL_messageActionCustomAction) {
-                                        this.messageText = messageAction.message;
-                                    } else if (messageAction instanceof TLRPC.TL_messageActionChatCreate) {
-                                        if (isOut()) {
-                                            this.messageText = LocaleController.getString(R.string.ActionYouCreateGroup);
-                                        } else {
-                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionCreateGroup), "un1", tLObject2);
-                                        }
-                                    } else if (messageAction instanceof TLRPC.TL_messageActionChatDeleteUser) {
-                                        if (isFromUser()) {
-                                            TLRPC.Message message2 = this.messageOwner;
-                                            if (message2.action.user_id == message2.from_id.user_id) {
-                                                if (isOut()) {
-                                                    this.messageText = LocaleController.getString(R.string.ActionYouLeftUser);
-                                                } else {
-                                                    this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionLeftUser), "un1", tLObject2);
-                                                }
-                                            }
-                                        }
-                                        TLRPC.User user8 = getUser(abstractMap, longSparseArray, this.messageOwner.action.user_id);
-                                        if (isOut()) {
-                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionYouKickUser), "un2", user8);
-                                        } else if (this.messageOwner.action.user_id == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
-                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionKickUserYou), "un1", tLObject2);
-                                        } else {
-                                            CharSequence replaceWithLink4 = replaceWithLink(LocaleController.getString(R.string.ActionKickUser), "un2", user8);
-                                            this.messageText = replaceWithLink4;
-                                            this.messageText = replaceWithLink(replaceWithLink4, "un1", tLObject2);
-                                        }
+                                        this.messageText = StarsIntroActivity.replaceStars(replaceWithLink(LocaleController.formatString(R.string.ActionRefunded, tL_messageActionPaymentRefunded.currency + " " + LocaleController.formatNumber(tL_messageActionPaymentRefunded.total_amount, ',')), "un1", chat18));
                                     } else {
-                                        str10 = str9;
-                                        if (messageAction instanceof TLRPC.TL_messageActionPaymentRefunded) {
-                                            TLRPC.TL_messageActionPaymentRefunded tL_messageActionPaymentRefunded = (TLRPC.TL_messageActionPaymentRefunded) messageAction;
-                                            long peerDialogId = DialogObject.getPeerDialogId(tL_messageActionPaymentRefunded.peer);
-                                            if (peerDialogId >= 0) {
-                                                chat20 = getUser(abstractMap, longSparseArray, peerDialogId);
-                                            } else {
-                                                chat20 = getChat(abstractMap2, longSparseArray2, -peerDialogId);
+                                        TLRPC.User user9 = user;
+                                        if (TlUtils.isInstance(messageAction, TLRPC.TL_messageActionSuggestedPostRefund.class, TLRPC.TL_messageActionSuggestedPostSuccess.class)) {
+                                            String monoForumTitle = ForumUtilities.getMonoForumTitle(this.currentAccount, DialogObject.getPeerDialogId(this.messageOwner.peer_id), true);
+                                            if (monoForumTitle == null) {
+                                                TLRPC.Chat chat22 = getChat(abstractMap2, longSparseArray2, -DialogObject.getPeerDialogId(this.messageOwner.peer_id));
+                                                if (chat22 != null) {
+                                                    long j3 = chat22.linked_monoforum_id;
+                                                    if (j3 != 0 && (chat17 = getChat(abstractMap2, longSparseArray2, j3)) != null) {
+                                                        chat22 = chat17;
+                                                    }
+                                                }
+                                                monoForumTitle = DialogObject.getDialogTitle(chat22);
                                             }
-                                            this.messageText = StarsIntroActivity.replaceStars(replaceWithLink(LocaleController.formatString(R.string.ActionRefunded, tL_messageActionPaymentRefunded.currency + " " + LocaleController.formatNumber(tL_messageActionPaymentRefunded.total_amount, ',')), "un1", chat20));
+                                            String name = DialogObject.getName(getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(this.messageOwner.saved_peer_id)));
+                                            MessageSuggestionParams obtainSuggestionOfferFromReply = obtainSuggestionOfferFromReply();
+                                            TLRPC.MessageAction messageAction2 = this.messageOwner.action;
+                                            if (messageAction2 instanceof TLRPC.TL_messageActionSuggestedPostRefund) {
+                                                boolean z2 = ((TLRPC.TL_messageActionSuggestedPostRefund) messageAction2).payer_initiated;
+                                                if (obtainSuggestionOfferFromReply == null || (amountUtils$Amount2 = obtainSuggestionOfferFromReply.amount) == null) {
+                                                    if (z2) {
+                                                        i4 = R.string.SuggestedOfferRefundByUserAmountUnknown;
+                                                    } else {
+                                                        i4 = R.string.SuggestedOfferRefundByAdminAmountUnknown;
+                                                    }
+                                                    this.messageText = LocaleController.formatString(i4, name, monoForumTitle);
+                                                } else {
+                                                    this.messageText = StarsIntroActivity.replaceStars(amountUtils$Amount2.currency == AmountUtils$Currency.TON, LocaleController.formatString(z2 ? R.string.SuggestedOfferRefundByUserAmountF : R.string.SuggestedOfferRefundByAdminAmountF, name, monoForumTitle, amountUtils$Amount2.asDecimalString()));
+                                                }
+                                            } else if (messageAction2 instanceof TLRPC.TL_messageActionSuggestedPostSuccess) {
+                                                if (obtainSuggestionOfferFromReply == null || (amountUtils$Amount = obtainSuggestionOfferFromReply.amount) == null) {
+                                                    this.messageText = LocaleController.formatString(R.string.SuggestedOfferCompleteAmountUnknown, monoForumTitle);
+                                                } else {
+                                                    this.messageText = StarsIntroActivity.replaceStars(amountUtils$Amount.currency == AmountUtils$Currency.TON, LocaleController.formatString(R.string.SuggestedOfferCompleteAmountF, monoForumTitle, amountUtils$Amount.asDecimalString()));
+                                                }
+                                            }
                                         } else {
-                                            TLRPC.User user9 = user;
-                                            if (TlUtils.isInstance(messageAction, TLRPC.TL_messageActionSuggestedPostRefund.class, TLRPC.TL_messageActionSuggestedPostSuccess.class)) {
-                                                String monoForumTitle = ForumUtilities.getMonoForumTitle(this.currentAccount, DialogObject.getPeerDialogId(this.messageOwner.peer_id), true);
-                                                if (monoForumTitle == null) {
-                                                    TLRPC.Chat chat24 = getChat(abstractMap2, longSparseArray2, -DialogObject.getPeerDialogId(this.messageOwner.peer_id));
-                                                    if (chat24 != null) {
-                                                        long j3 = chat24.linked_monoforum_id;
-                                                        if (j3 != 0 && (chat19 = getChat(abstractMap2, longSparseArray2, j3)) != null) {
-                                                            chat24 = chat19;
-                                                        }
-                                                    }
-                                                    monoForumTitle = DialogObject.getDialogTitle(chat24);
+                                            TLRPC.Message message3 = this.messageOwner;
+                                            TLRPC.MessageAction messageAction3 = message3.action;
+                                            if (messageAction3 instanceof TLRPC.TL_messageActionChatAddUser) {
+                                                long j4 = messageAction3.user_id;
+                                                if (j4 == 0 && messageAction3.users.size() == 1) {
+                                                    j4 = this.messageOwner.action.users.get(0).longValue();
                                                 }
-                                                String name = DialogObject.getName(getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(this.messageOwner.saved_peer_id)));
-                                                MessageSuggestionParams obtainSuggestionOfferFromReply = obtainSuggestionOfferFromReply();
-                                                TLRPC.MessageAction messageAction2 = this.messageOwner.action;
-                                                if (messageAction2 instanceof TLRPC.TL_messageActionSuggestedPostRefund) {
-                                                    boolean z2 = ((TLRPC.TL_messageActionSuggestedPostRefund) messageAction2).payer_initiated;
-                                                    if (obtainSuggestionOfferFromReply == null || (amountUtils$Amount2 = obtainSuggestionOfferFromReply.amount) == null) {
-                                                        if (z2) {
-                                                            i2 = R.string.SuggestedOfferRefundByUserAmountUnknown;
-                                                        } else {
-                                                            i2 = R.string.SuggestedOfferRefundByAdminAmountUnknown;
-                                                        }
-                                                        this.messageText = LocaleController.formatString(i2, name, monoForumTitle);
-                                                    } else {
-                                                        this.messageText = StarsIntroActivity.replaceStars(amountUtils$Amount2.currency == AmountUtils$Currency.TON, LocaleController.formatString(z2 ? R.string.SuggestedOfferRefundByUserAmountF : R.string.SuggestedOfferRefundByAdminAmountF, name, monoForumTitle, amountUtils$Amount2.asDecimalString()));
-                                                    }
-                                                } else if (messageAction2 instanceof TLRPC.TL_messageActionSuggestedPostSuccess) {
-                                                    if (obtainSuggestionOfferFromReply == null || (amountUtils$Amount = obtainSuggestionOfferFromReply.amount) == null) {
-                                                        this.messageText = LocaleController.formatString(R.string.SuggestedOfferCompleteAmountUnknown, monoForumTitle);
-                                                    } else {
-                                                        this.messageText = StarsIntroActivity.replaceStars(amountUtils$Amount.currency == AmountUtils$Currency.TON, LocaleController.formatString(R.string.SuggestedOfferCompleteAmountF, monoForumTitle, amountUtils$Amount.asDecimalString()));
-                                                    }
-                                                }
-                                            } else {
-                                                TLRPC.Message message3 = this.messageOwner;
-                                                TLRPC.MessageAction messageAction3 = message3.action;
-                                                if (messageAction3 instanceof TLRPC.TL_messageActionChatAddUser) {
-                                                    long j4 = messageAction3.user_id;
-                                                    if (j4 == 0 && messageAction3.users.size() == 1) {
-                                                        j4 = this.messageOwner.action.users.get(0).longValue();
-                                                    }
-                                                    if (j4 != 0) {
-                                                        TLRPC.User user10 = getUser(abstractMap, longSparseArray, j4);
-                                                        long j5 = this.messageOwner.peer_id.channel_id;
-                                                        TLRPC.Chat chat25 = j5 != 0 ? getChat(abstractMap2, longSparseArray2, j5) : null;
-                                                        TLRPC.Peer peer3 = this.messageOwner.from_id;
-                                                        if (peer3 != null && j4 == peer3.user_id) {
-                                                            if (ChatObject.isChannel(chat25) && !chat25.megagroup) {
-                                                                this.channelJoined = true;
-                                                                this.messageText = LocaleController.getString(R.string.ChannelJoined);
-                                                            } else if (this.messageOwner.peer_id.channel_id != 0) {
-                                                                if (j4 == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
-                                                                    this.messageText = LocaleController.getString(R.string.ChannelMegaJoined);
-                                                                } else {
-                                                                    this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionAddUserSelfMega), "un1", tLObject2);
-                                                                }
-                                                            } else if (isOut()) {
-                                                                this.messageText = LocaleController.getString(R.string.ActionAddUserSelfYou);
+                                                if (j4 != 0) {
+                                                    TLRPC.User user10 = getUser(abstractMap, longSparseArray, j4);
+                                                    long j5 = this.messageOwner.peer_id.channel_id;
+                                                    TLRPC.Chat chat23 = j5 != 0 ? getChat(abstractMap2, longSparseArray2, j5) : null;
+                                                    TLRPC.Peer peer3 = this.messageOwner.from_id;
+                                                    if (peer3 != null && j4 == peer3.user_id) {
+                                                        if (ChatObject.isChannel(chat23) && !chat23.megagroup) {
+                                                            this.channelJoined = true;
+                                                            this.messageText = LocaleController.getString(R.string.ChannelJoined);
+                                                        } else if (this.messageOwner.peer_id.channel_id != 0) {
+                                                            if (j4 == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
+                                                                this.messageText = LocaleController.getString(R.string.ChannelMegaJoined);
                                                             } else {
-                                                                this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionAddUserSelf), "un1", tLObject2);
+                                                                this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionAddUserSelfMega), "un1", tLObject3);
                                                             }
                                                         } else if (isOut()) {
-                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionYouAddUser), "un2", user10);
-                                                        } else if (j4 != UserConfig.getInstance(this.currentAccount).getClientUserId()) {
-                                                            CharSequence replaceWithLink5 = replaceWithLink(LocaleController.getString(R.string.ActionAddUser), "un2", user10);
-                                                            this.messageText = replaceWithLink5;
-                                                            this.messageText = replaceWithLink(replaceWithLink5, "un1", tLObject2);
-                                                        } else if (this.messageOwner.peer_id.channel_id != 0) {
-                                                            if (chat25 != null && chat25.megagroup) {
-                                                                this.messageText = replaceWithLink(LocaleController.getString(R.string.MegaAddedBy), "un1", tLObject2);
-                                                            } else {
-                                                                this.messageText = replaceWithLink(LocaleController.getString(R.string.ChannelAddedBy), "un1", tLObject2);
-                                                            }
+                                                            this.messageText = LocaleController.getString(R.string.ActionAddUserSelfYou);
                                                         } else {
-                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionAddUserYou), "un1", tLObject2);
+                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionAddUserSelf), "un1", tLObject3);
+                                                        }
+                                                    } else if (isOut()) {
+                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionYouAddUser), "un2", user10);
+                                                    } else if (j4 != UserConfig.getInstance(this.currentAccount).getClientUserId()) {
+                                                        CharSequence replaceWithLink5 = replaceWithLink(LocaleController.getString(R.string.ActionAddUser), "un2", user10);
+                                                        this.messageText = replaceWithLink5;
+                                                        this.messageText = replaceWithLink(replaceWithLink5, "un1", tLObject3);
+                                                    } else if (this.messageOwner.peer_id.channel_id != 0) {
+                                                        if (chat23 != null && chat23.megagroup) {
+                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.MegaAddedBy), "un1", tLObject3);
+                                                        } else {
+                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ChannelAddedBy), "un1", tLObject3);
                                                         }
                                                     } else {
-                                                        if (isOut()) {
-                                                            str2 = str10;
-                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionYouAddUser), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
-                                                        } else {
-                                                            str2 = str10;
-                                                            CharSequence replaceWithLink6 = replaceWithLink(LocaleController.getString(R.string.ActionAddUser), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
-                                                            this.messageText = replaceWithLink6;
-                                                            this.messageText = replaceWithLink(replaceWithLink6, "un1", tLObject2);
-                                                        }
-                                                        str = str2;
+                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionAddUserYou), "un1", tLObject3);
                                                     }
                                                 } else {
-                                                    str2 = str10;
-                                                    if (messageAction3 instanceof TLRPC.TL_messageActionChatJoinedByLink) {
-                                                        if (isOut()) {
-                                                            this.messageText = LocaleController.getString(R.string.ActionInviteYou);
-                                                        } else {
-                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionInviteUser), "un1", tLObject2);
-                                                        }
-                                                    } else if (messageAction3 instanceof TLRPC.TL_messageActionGiveawayLaunch) {
-                                                        TLRPC.TL_messageActionGiveawayLaunch tL_messageActionGiveawayLaunch = (TLRPC.TL_messageActionGiveawayLaunch) messageAction3;
-                                                        TLRPC.Peer peer4 = message3.peer_id;
-                                                        if (peer4 != null) {
-                                                            long j6 = peer4.channel_id;
-                                                            if (j6 != 0) {
-                                                                chat18 = getChat(abstractMap2, longSparseArray2, j6);
-                                                                boolean isChannelAndNotMegaGroup2 = ChatObject.isChannelAndNotMegaGroup(chat18);
-                                                                if ((tL_messageActionGiveawayLaunch.flags & 1) == 0) {
-                                                                    this.messageText = LocaleController.formatPluralStringComma(isChannelAndNotMegaGroup2 ? "BoostingStarsGiveawayJustStarted" : "BoostingStarsGiveawayJustStartedGroup", (int) tL_messageActionGiveawayLaunch.stars, chat18 != null ? chat18.title : str2);
-                                                                } else {
-                                                                    this.messageText = LocaleController.formatString(isChannelAndNotMegaGroup2 ? R.string.BoostingGiveawayJustStarted : R.string.BoostingGiveawayJustStartedGroup, chat18 != null ? chat18.title : str2);
-                                                                }
-                                                            }
-                                                        }
-                                                        chat18 = null;
-                                                        boolean isChannelAndNotMegaGroup22 = ChatObject.isChannelAndNotMegaGroup(chat18);
-                                                        if ((tL_messageActionGiveawayLaunch.flags & 1) == 0) {
-                                                        }
-                                                    } else if (messageAction3 instanceof TLRPC.TL_messageActionBoostApply) {
-                                                        TLRPC.Peer peer5 = message3.peer_id;
-                                                        if (peer5 != null) {
-                                                            long j7 = peer5.channel_id;
-                                                            if (j7 != 0) {
-                                                                chat17 = getChat(abstractMap2, longSparseArray2, j7);
-                                                                boolean isChannelAndNotMegaGroup3 = ChatObject.isChannelAndNotMegaGroup(chat17);
-                                                                TLRPC.TL_messageActionBoostApply tL_messageActionBoostApply = (TLRPC.TL_messageActionBoostApply) this.messageOwner.action;
-                                                                if (!(tLObject2 instanceof TLRPC.User)) {
-                                                                    TLRPC.User user11 = (TLRPC.User) tLObject2;
-                                                                    z = UserObject.isUserSelf(user11);
-                                                                    str7 = UserObject.getFirstName(user11);
-                                                                } else {
-                                                                    str7 = tLObject2 instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject2).title : str2;
-                                                                    z = false;
-                                                                }
-                                                                if (!z) {
-                                                                    int i7 = tL_messageActionBoostApply.boosts;
-                                                                    if (i7 <= 1) {
-                                                                        this.messageText = LocaleController.getString(isChannelAndNotMegaGroup3 ? R.string.BoostingBoostsChannelByYouServiceMsg : R.string.BoostingBoostsGroupByYouServiceMsg);
-                                                                    } else {
-                                                                        this.messageText = LocaleController.formatPluralString(isChannelAndNotMegaGroup3 ? "BoostingBoostsChannelByYouServiceMsgCount" : "BoostingBoostsGroupByYouServiceMsgCount", i7, new Object[0]);
-                                                                    }
-                                                                } else {
-                                                                    int i8 = tL_messageActionBoostApply.boosts;
-                                                                    if (i8 <= 1) {
-                                                                        this.messageText = LocaleController.formatString(isChannelAndNotMegaGroup3 ? R.string.BoostingBoostsChannelByUserServiceMsg : R.string.BoostingBoostsGroupByUserServiceMsg, str7);
-                                                                    } else {
-                                                                        this.messageText = LocaleController.formatPluralString(isChannelAndNotMegaGroup3 ? "BoostingBoostsChannelByUserServiceMsgCount" : "BoostingBoostsGroupByUserServiceMsgCount", i8, str7);
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                        chat17 = null;
-                                                        boolean isChannelAndNotMegaGroup32 = ChatObject.isChannelAndNotMegaGroup(chat17);
-                                                        TLRPC.TL_messageActionBoostApply tL_messageActionBoostApply2 = (TLRPC.TL_messageActionBoostApply) this.messageOwner.action;
-                                                        if (!(tLObject2 instanceof TLRPC.User)) {
-                                                        }
-                                                        if (!z) {
-                                                        }
-                                                    } else if (messageAction3 instanceof TLRPC.TL_messageActionGiveawayResults) {
-                                                        TLRPC.Peer peer6 = message3.peer_id;
-                                                        if (peer6 != null) {
-                                                            long j8 = peer6.channel_id;
-                                                            if (j8 != 0) {
-                                                                chat16 = getChat(abstractMap2, longSparseArray2, j8);
-                                                                boolean isChannelAndNotMegaGroup4 = ChatObject.isChannelAndNotMegaGroup(chat16);
-                                                                tL_messageActionGiveawayResults = (TLRPC.TL_messageActionGiveawayResults) this.messageOwner.action;
-                                                                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                                                                if (!tL_messageActionGiveawayResults.stars) {
-                                                                    spannableStringBuilder.append((CharSequence) LocaleController.formatPluralStringComma("BoostingStarsGiveawayServiceWinnersSelected", tL_messageActionGiveawayResults.winners_count));
-                                                                    if (tL_messageActionGiveawayResults.unclaimed_count > 0) {
-                                                                        spannableStringBuilder.append((CharSequence) "\n");
-                                                                        spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString(isChannelAndNotMegaGroup4 ? "BoostingStarsGiveawayServiceUndistributed" : "BoostingStarsGiveawayServiceUndistributedGroup", tL_messageActionGiveawayResults.unclaimed_count, new Object[0]));
-                                                                    }
-                                                                } else {
-                                                                    spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("BoostingGiveawayServiceWinnersSelected", tL_messageActionGiveawayResults.winners_count, new Object[0]));
-                                                                    if (tL_messageActionGiveawayResults.unclaimed_count > 0) {
-                                                                        spannableStringBuilder.append((CharSequence) "\n");
-                                                                        spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString(isChannelAndNotMegaGroup4 ? "BoostingGiveawayServiceUndistributed" : "BoostingGiveawayServiceUndistributedGroup", tL_messageActionGiveawayResults.unclaimed_count, new Object[0]));
-                                                                    }
-                                                                }
-                                                                this.messageText = spannableStringBuilder;
-                                                            }
-                                                        }
-                                                        chat16 = null;
-                                                        boolean isChannelAndNotMegaGroup42 = ChatObject.isChannelAndNotMegaGroup(chat16);
-                                                        tL_messageActionGiveawayResults = (TLRPC.TL_messageActionGiveawayResults) this.messageOwner.action;
-                                                        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                                                        if (!tL_messageActionGiveawayResults.stars) {
-                                                        }
-                                                        this.messageText = spannableStringBuilder2;
-                                                    } else if (messageAction3 instanceof TLRPC.TL_messageActionPrizeStars) {
-                                                        TLRPC.TL_messageActionPrizeStars tL_messageActionPrizeStars = (TLRPC.TL_messageActionPrizeStars) messageAction3;
-                                                        this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("ActionStarGiveawayPrize", (int) tL_messageActionPrizeStars.stars)), "un1", getChat(abstractMap2, longSparseArray2, -DialogObject.getPeerDialogId(tL_messageActionPrizeStars.boost_peer)));
-                                                    } else if (messageAction3 instanceof TLRPC.TL_messageActionStarGift) {
-                                                        TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction3;
-                                                        if (tL_messageActionStarGift.prepaid_upgrade) {
-                                                            i = (int) tL_messageActionStarGift.upgrade_stars;
-                                                        } else {
-                                                            TL_stars.StarGift starGift = tL_messageActionStarGift.gift;
-                                                            i = starGift != null ? (int) starGift.stars : 0;
-                                                            if (!tL_messageActionStarGift.upgrade_separate) {
-                                                                i += (int) tL_messageActionStarGift.upgrade_stars;
-                                                            }
-                                                        }
-                                                        TLRPC.Peer peer7 = tL_messageActionStarGift.peer;
-                                                        boolean z3 = peer7 != null && DialogObject.getPeerDialogId(peer7) < 0;
-                                                        TLRPC.User user12 = getUser(abstractMap, longSparseArray, this.messageOwner.peer_id.user_id);
-                                                        if (!tL_messageActionStarGift.prepaid_upgrade && (peer = tL_messageActionStarGift.from_id) != null) {
-                                                            long peerDialogId2 = DialogObject.getPeerDialogId(peer);
-                                                            if (peerDialogId2 >= 0) {
-                                                                tLObject2 = getUser(abstractMap, longSparseArray, peerDialogId2);
+                                                    if (isOut()) {
+                                                        str3 = str10;
+                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionYouAddUser), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
+                                                    } else {
+                                                        str3 = str10;
+                                                        CharSequence replaceWithLink6 = replaceWithLink(LocaleController.getString(R.string.ActionAddUser), "un2", this.messageOwner.action.users, abstractMap, longSparseArray);
+                                                        this.messageText = replaceWithLink6;
+                                                        this.messageText = replaceWithLink(replaceWithLink6, "un1", tLObject3);
+                                                    }
+                                                    str2 = str3;
+                                                }
+                                            } else {
+                                                String str13 = "un1";
+                                                str3 = str10;
+                                                if (messageAction3 instanceof TLRPC.TL_messageActionChatJoinedByLink) {
+                                                    if (isOut()) {
+                                                        this.messageText = LocaleController.getString(R.string.ActionInviteYou);
+                                                    } else {
+                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionInviteUser), str13, tLObject3);
+                                                    }
+                                                } else if (messageAction3 instanceof TLRPC.TL_messageActionGiveawayLaunch) {
+                                                    TLRPC.TL_messageActionGiveawayLaunch tL_messageActionGiveawayLaunch = (TLRPC.TL_messageActionGiveawayLaunch) messageAction3;
+                                                    TLRPC.Peer peer4 = message3.peer_id;
+                                                    if (peer4 != null) {
+                                                        long j6 = peer4.channel_id;
+                                                        if (j6 != 0) {
+                                                            chat16 = getChat(abstractMap2, longSparseArray2, j6);
+                                                            boolean isChannelAndNotMegaGroup2 = ChatObject.isChannelAndNotMegaGroup(chat16);
+                                                            if ((tL_messageActionGiveawayLaunch.flags & 1) == 0) {
+                                                                this.messageText = LocaleController.formatPluralStringComma(isChannelAndNotMegaGroup2 ? "BoostingStarsGiveawayJustStarted" : "BoostingStarsGiveawayJustStartedGroup", (int) tL_messageActionGiveawayLaunch.stars, chat16 != null ? chat16.title : str3);
                                                             } else {
-                                                                tLObject2 = getChat(abstractMap2, longSparseArray2, -peerDialogId2);
+                                                                this.messageText = LocaleController.formatString(isChannelAndNotMegaGroup2 ? R.string.BoostingGiveawayJustStarted : R.string.BoostingGiveawayJustStartedGroup, chat16 != null ? chat16.title : str3);
                                                             }
                                                         }
-                                                        TLRPC.Peer peer8 = tL_messageActionStarGift.peer;
-                                                        if (peer8 != null) {
-                                                            long peerDialogId3 = DialogObject.getPeerDialogId(peer8);
-                                                            if (peerDialogId3 >= 0) {
-                                                                tLObject = getUser(abstractMap, longSparseArray, peerDialogId3);
+                                                    }
+                                                    chat16 = null;
+                                                    boolean isChannelAndNotMegaGroup22 = ChatObject.isChannelAndNotMegaGroup(chat16);
+                                                    if ((tL_messageActionGiveawayLaunch.flags & 1) == 0) {
+                                                    }
+                                                } else if (messageAction3 instanceof TLRPC.TL_messageActionBoostApply) {
+                                                    TLRPC.Peer peer5 = message3.peer_id;
+                                                    if (peer5 != null) {
+                                                        long j7 = peer5.channel_id;
+                                                        if (j7 != 0) {
+                                                            chat15 = getChat(abstractMap2, longSparseArray2, j7);
+                                                            boolean isChannelAndNotMegaGroup3 = ChatObject.isChannelAndNotMegaGroup(chat15);
+                                                            TLRPC.TL_messageActionBoostApply tL_messageActionBoostApply = (TLRPC.TL_messageActionBoostApply) this.messageOwner.action;
+                                                            if (!(tLObject3 instanceof TLRPC.User)) {
+                                                                TLRPC.User user11 = (TLRPC.User) tLObject3;
+                                                                z = UserObject.isUserSelf(user11);
+                                                                str8 = UserObject.getFirstName(user11);
                                                             } else {
-                                                                tLObject = getChat(abstractMap2, longSparseArray2, -peerDialogId3);
+                                                                str8 = tLObject3 instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject3).title : str3;
+                                                                z = false;
                                                             }
-                                                        } else {
-                                                            tLObject = null;
-                                                        }
-                                                        if (tL_messageActionStarGift.prepaid_upgrade) {
-                                                            if ((tLObject2 instanceof TLRPC.User) && ((TLRPC.User) tLObject2).self && !tL_messageActionStarGift.forceIn) {
-                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionPrepaidGiftOutbound)), "un1", user12);
-                                                            } else {
-                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionPrepaidGiftInbound)), "un1", tLObject2);
-                                                            }
-                                                        } else if (UserObject.isService(getDialogId()) && tL_messageActionStarGift.from_id == null) {
-                                                            this.messageText = AndroidUtilities.replaceTags(LocaleController.getString(tL_messageActionStarGift.auction_acquired ? R.string.ActionGiftAuctionSelf : R.string.ActionGiftSomeone));
-                                                            this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
-                                                        } else if (z3) {
-                                                            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("ActionGiftChannel", i));
-                                                            this.messageText = replaceTags;
-                                                            CharSequence replaceWithLink7 = replaceWithLink(replaceTags, "un1", tLObject2);
-                                                            this.messageText = replaceWithLink7;
-                                                            this.messageText = replaceWithLink(replaceWithLink7, "un2", tLObject);
-                                                            this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
-                                                        } else if (UserObject.isUserSelf(user12)) {
-                                                            this.messageText = AndroidUtilities.replaceTags(LocaleController.getString(tL_messageActionStarGift.auction_acquired ? R.string.ActionGiftAuctionSelf : R.string.ActionGiftSelf));
-                                                            this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
-                                                        } else {
-                                                            boolean z4 = tLObject2 instanceof TLRPC.User;
-                                                            if (z4 && ((TLRPC.User) tLObject2).self && !tL_messageActionStarGift.forceIn) {
-                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftOutbound)), "un1", user12);
-                                                                TLRPC.TL_textWithEntities tL_textWithEntities2 = tL_messageActionStarGift.message;
-                                                                if (tL_textWithEntities2 != null && !TextUtils.isEmpty(tL_textWithEntities2.text)) {
-                                                                    SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(tL_messageActionStarGift.message.text);
-                                                                    addEntitiesToText(spannableStringBuilder3, tL_messageActionStarGift.message.entities, isOutOwner(), false, false, false);
-                                                                    this.messageTextShort = spannableStringBuilder3;
+                                                            if (!z) {
+                                                                int i9 = tL_messageActionBoostApply.boosts;
+                                                                if (i9 <= 1) {
+                                                                    this.messageText = LocaleController.getString(isChannelAndNotMegaGroup3 ? R.string.BoostingBoostsChannelByYouServiceMsg : R.string.BoostingBoostsGroupByYouServiceMsg);
                                                                 } else {
-                                                                    this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
+                                                                    this.messageText = LocaleController.formatPluralString(isChannelAndNotMegaGroup3 ? "BoostingBoostsChannelByYouServiceMsgCount" : "BoostingBoostsGroupByYouServiceMsgCount", i9, new Object[0]);
                                                                 }
-                                                            } else if (z4 && UserObject.isService(((TLRPC.User) tLObject2).id)) {
-                                                                this.messageText = TextUtils.replace(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), new String[]{"un1"}, new CharSequence[]{LocaleController.getString(R.string.StarsTransactionUnknown)});
                                                             } else {
-                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), "un1", tLObject2);
-                                                                TLRPC.TL_textWithEntities tL_textWithEntities3 = tL_messageActionStarGift.message;
-                                                                if (tL_textWithEntities3 != null && !TextUtils.isEmpty(tL_textWithEntities3.text)) {
-                                                                    SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(tL_messageActionStarGift.message.text);
-                                                                    addEntitiesToText(spannableStringBuilder4, tL_messageActionStarGift.message.entities, isOutOwner(), false, false, false);
-                                                                    this.messageTextShort = spannableStringBuilder4;
+                                                                int i10 = tL_messageActionBoostApply.boosts;
+                                                                if (i10 <= 1) {
+                                                                    this.messageText = LocaleController.formatString(isChannelAndNotMegaGroup3 ? R.string.BoostingBoostsChannelByUserServiceMsg : R.string.BoostingBoostsGroupByUserServiceMsg, str8);
                                                                 } else {
-                                                                    this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
+                                                                    this.messageText = LocaleController.formatPluralString(isChannelAndNotMegaGroup3 ? "BoostingBoostsChannelByUserServiceMsgCount" : "BoostingBoostsGroupByUserServiceMsgCount", i10, str8);
                                                                 }
                                                             }
                                                         }
-                                                        int indexOf = this.messageText.toString().indexOf("un2");
-                                                        if (indexOf != -1) {
-                                                            this.messageText = SpannableStringBuilder.valueOf(this.messageText).replace(indexOf, indexOf + 3, (CharSequence) LocaleController.formatPluralStringComma("Gift2StarsCount", i));
+                                                    }
+                                                    chat15 = null;
+                                                    boolean isChannelAndNotMegaGroup32 = ChatObject.isChannelAndNotMegaGroup(chat15);
+                                                    TLRPC.TL_messageActionBoostApply tL_messageActionBoostApply2 = (TLRPC.TL_messageActionBoostApply) this.messageOwner.action;
+                                                    if (!(tLObject3 instanceof TLRPC.User)) {
+                                                    }
+                                                    if (!z) {
+                                                    }
+                                                } else if (messageAction3 instanceof TLRPC.TL_messageActionGiveawayResults) {
+                                                    TLRPC.Peer peer6 = message3.peer_id;
+                                                    if (peer6 != null) {
+                                                        long j8 = peer6.channel_id;
+                                                        if (j8 != 0) {
+                                                            chat14 = getChat(abstractMap2, longSparseArray2, j8);
+                                                            boolean isChannelAndNotMegaGroup4 = ChatObject.isChannelAndNotMegaGroup(chat14);
+                                                            tL_messageActionGiveawayResults = (TLRPC.TL_messageActionGiveawayResults) this.messageOwner.action;
+                                                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                                                            if (!tL_messageActionGiveawayResults.stars) {
+                                                                spannableStringBuilder.append((CharSequence) LocaleController.formatPluralStringComma("BoostingStarsGiveawayServiceWinnersSelected", tL_messageActionGiveawayResults.winners_count));
+                                                                if (tL_messageActionGiveawayResults.unclaimed_count > 0) {
+                                                                    spannableStringBuilder.append((CharSequence) "\n");
+                                                                    spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString(isChannelAndNotMegaGroup4 ? "BoostingStarsGiveawayServiceUndistributed" : "BoostingStarsGiveawayServiceUndistributedGroup", tL_messageActionGiveawayResults.unclaimed_count, new Object[0]));
+                                                                }
+                                                            } else {
+                                                                spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString("BoostingGiveawayServiceWinnersSelected", tL_messageActionGiveawayResults.winners_count, new Object[0]));
+                                                                if (tL_messageActionGiveawayResults.unclaimed_count > 0) {
+                                                                    spannableStringBuilder.append((CharSequence) "\n");
+                                                                    spannableStringBuilder.append((CharSequence) LocaleController.formatPluralString(isChannelAndNotMegaGroup4 ? "BoostingGiveawayServiceUndistributed" : "BoostingGiveawayServiceUndistributedGroup", tL_messageActionGiveawayResults.unclaimed_count, new Object[0]));
+                                                                }
+                                                            }
+                                                            this.messageText = spannableStringBuilder;
                                                         }
-                                                    } else if (messageAction3 instanceof TLRPC.TL_messageActionStarGiftUnique) {
+                                                    }
+                                                    chat14 = null;
+                                                    boolean isChannelAndNotMegaGroup42 = ChatObject.isChannelAndNotMegaGroup(chat14);
+                                                    tL_messageActionGiveawayResults = (TLRPC.TL_messageActionGiveawayResults) this.messageOwner.action;
+                                                    SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
+                                                    if (!tL_messageActionGiveawayResults.stars) {
+                                                    }
+                                                    this.messageText = spannableStringBuilder2;
+                                                } else if (messageAction3 instanceof TLRPC.TL_messageActionPrizeStars) {
+                                                    TLRPC.TL_messageActionPrizeStars tL_messageActionPrizeStars = (TLRPC.TL_messageActionPrizeStars) messageAction3;
+                                                    this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("ActionStarGiveawayPrize", (int) tL_messageActionPrizeStars.stars)), str13, getChat(abstractMap2, longSparseArray2, -DialogObject.getPeerDialogId(tL_messageActionPrizeStars.boost_peer)));
+                                                } else if (messageAction3 instanceof TLRPC.TL_messageActionStarGift) {
+                                                    TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction3;
+                                                    if (tL_messageActionStarGift.prepaid_upgrade) {
+                                                        i3 = (int) tL_messageActionStarGift.upgrade_stars;
+                                                    } else {
+                                                        TL_stars.StarGift starGift = tL_messageActionStarGift.gift;
+                                                        i3 = starGift != null ? (int) starGift.stars : 0;
+                                                        if (!tL_messageActionStarGift.upgrade_separate) {
+                                                            i3 += (int) tL_messageActionStarGift.upgrade_stars;
+                                                        }
+                                                    }
+                                                    TLRPC.Peer peer7 = tL_messageActionStarGift.peer;
+                                                    boolean z3 = peer7 != null && DialogObject.getPeerDialogId(peer7) < 0;
+                                                    TLRPC.User user12 = getUser(abstractMap, longSparseArray, this.messageOwner.peer_id.user_id);
+                                                    if (!tL_messageActionStarGift.prepaid_upgrade && (peer = tL_messageActionStarGift.from_id) != null) {
+                                                        long peerDialogId2 = DialogObject.getPeerDialogId(peer);
+                                                        if (peerDialogId2 >= 0) {
+                                                            tLObject3 = getUser(abstractMap, longSparseArray, peerDialogId2);
+                                                        } else {
+                                                            tLObject3 = getChat(abstractMap2, longSparseArray2, -peerDialogId2);
+                                                        }
+                                                    }
+                                                    TLRPC.Peer peer8 = tL_messageActionStarGift.peer;
+                                                    if (peer8 != null) {
+                                                        long peerDialogId3 = DialogObject.getPeerDialogId(peer8);
+                                                        if (peerDialogId3 >= 0) {
+                                                            tLObject2 = getUser(abstractMap, longSparseArray, peerDialogId3);
+                                                        } else {
+                                                            tLObject2 = getChat(abstractMap2, longSparseArray2, -peerDialogId3);
+                                                        }
+                                                    } else {
+                                                        tLObject2 = null;
+                                                    }
+                                                    if (tL_messageActionStarGift.prepaid_upgrade) {
+                                                        if ((tLObject3 instanceof TLRPC.User) && ((TLRPC.User) tLObject3).self && !tL_messageActionStarGift.forceIn) {
+                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionPrepaidGiftOutbound)), str13, user12);
+                                                        } else {
+                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionPrepaidGiftInbound)), str13, tLObject3);
+                                                        }
+                                                    } else if (UserObject.isService(getDialogId()) && tL_messageActionStarGift.from_id == null) {
+                                                        this.messageText = AndroidUtilities.replaceTags(LocaleController.getString(tL_messageActionStarGift.auction_acquired ? R.string.ActionGiftAuctionSelf : R.string.ActionGiftSomeone));
+                                                        this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
+                                                    } else if (z3) {
+                                                        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("ActionGiftChannel", i3));
+                                                        this.messageText = replaceTags;
+                                                        CharSequence replaceWithLink7 = replaceWithLink(replaceTags, str13, tLObject3);
+                                                        this.messageText = replaceWithLink7;
+                                                        this.messageText = replaceWithLink(replaceWithLink7, "un2", tLObject2);
+                                                        this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
+                                                    } else if (UserObject.isUserSelf(user12)) {
+                                                        this.messageText = AndroidUtilities.replaceTags(LocaleController.getString(tL_messageActionStarGift.auction_acquired ? R.string.ActionGiftAuctionSelf : R.string.ActionGiftSelf));
+                                                        this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
+                                                    } else {
+                                                        boolean z4 = tLObject3 instanceof TLRPC.User;
+                                                        if (z4 && ((TLRPC.User) tLObject3).self && !tL_messageActionStarGift.forceIn) {
+                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftOutbound)), str13, user12);
+                                                            TLRPC.TL_textWithEntities tL_textWithEntities2 = tL_messageActionStarGift.message;
+                                                            if (tL_textWithEntities2 != null && !TextUtils.isEmpty(tL_textWithEntities2.text)) {
+                                                                SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(tL_messageActionStarGift.message.text);
+                                                                addEntitiesToText(spannableStringBuilder3, tL_messageActionStarGift.message.entities, isOutOwner(), false, false, false);
+                                                                this.messageTextShort = spannableStringBuilder3;
+                                                            } else {
+                                                                this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
+                                                            }
+                                                        } else if (z4 && UserObject.isService(((TLRPC.User) tLObject3).id)) {
+                                                            this.messageText = TextUtils.replace(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), new String[]{str13}, new CharSequence[]{LocaleController.getString(R.string.StarsTransactionUnknown)});
+                                                        } else {
+                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), str13, tLObject3);
+                                                            TLRPC.TL_textWithEntities tL_textWithEntities3 = tL_messageActionStarGift.message;
+                                                            if (tL_textWithEntities3 != null && !TextUtils.isEmpty(tL_textWithEntities3.text)) {
+                                                                SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(tL_messageActionStarGift.message.text);
+                                                                addEntitiesToText(spannableStringBuilder4, tL_messageActionStarGift.message.entities, isOutOwner(), false, false, false);
+                                                                this.messageTextShort = spannableStringBuilder4;
+                                                            } else {
+                                                                this.messageTextShort = LocaleController.getString(R.string.ActionStarGift);
+                                                            }
+                                                        }
+                                                    }
+                                                    int indexOf = this.messageText.toString().indexOf("un2");
+                                                    if (indexOf != -1) {
+                                                        this.messageText = SpannableStringBuilder.valueOf(this.messageText).replace(indexOf, 3 + indexOf, (CharSequence) LocaleController.formatPluralStringComma("Gift2StarsCount", i3));
+                                                    }
+                                                } else {
+                                                    str10 = str3;
+                                                    if (messageAction3 instanceof TLRPC.TL_messageActionStarGiftUnique) {
                                                         TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction3;
                                                         TLRPC.User user13 = getUser(abstractMap, longSparseArray, getDialogId());
                                                         TL_stars.StarsAmount starsAmount = tL_messageActionStarGiftUnique.resale_amount;
@@ -5797,46 +5814,53 @@ public class MessageObject {
                                                                 dialogId = DialogObject.getPeerDialogId(peer9);
                                                             }
                                                             if (dialogId >= 0) {
-                                                                chat14 = getUser(abstractMap, longSparseArray, dialogId);
+                                                                chat12 = getUser(abstractMap, longSparseArray, dialogId);
                                                             } else {
-                                                                chat14 = getChat(abstractMap2, longSparseArray2, -dialogId);
+                                                                chat12 = getChat(abstractMap2, longSparseArray2, -dialogId);
                                                             }
-                                                            TLObject tLObject4 = chat14;
                                                             TLRPC.Peer peer10 = tL_messageActionStarGiftUnique.peer;
                                                             if (peer10 != null) {
                                                                 long peerDialogId4 = DialogObject.getPeerDialogId(peer10);
                                                                 if (peerDialogId4 >= 0) {
-                                                                    chat15 = getUser(abstractMap, longSparseArray, peerDialogId4);
+                                                                    chat13 = getUser(abstractMap, longSparseArray, peerDialogId4);
                                                                 } else {
-                                                                    chat15 = getChat(abstractMap2, longSparseArray2, -peerDialogId4);
+                                                                    chat13 = getChat(abstractMap2, longSparseArray2, -peerDialogId4);
                                                                 }
                                                                 if (ofSafe.currency == AmountUtils$Currency.TON) {
                                                                     this.messageText = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.ActionUniqueGiftResaleServiceTON, ofSafe.asFormatString()));
                                                                 } else {
                                                                     this.messageText = AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("ActionUniqueGiftResaleService", (int) ofSafe.asDecimal()));
                                                                 }
-                                                                CharSequence replaceWithLink8 = replaceWithLink(this.messageText, "un1", tLObject4);
+                                                                CharSequence replaceWithLink8 = replaceWithLink(this.messageText, str13, chat12);
                                                                 this.messageText = replaceWithLink8;
-                                                                this.messageText = replaceWithLink(replaceWithLink8, "un2", chat15);
-                                                            } else if (ofSafe.currency == AmountUtils$Currency.TON) {
-                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(isOutOwner() ? R.string.ActionUniqueGiftResaleOutboundTON : R.string.ActionUniqueGiftResaleInboundTON, ofSafe.asFormatString())), "un1", tLObject4);
+                                                                this.messageText = replaceWithLink(replaceWithLink8, "un2", chat13);
                                                             } else {
-                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(isOutOwner() ? "ActionUniqueGiftResaleOutbound" : "ActionUniqueGiftResaleInbound", (int) ofSafe.asDecimal())), "un1", tLObject4);
+                                                                if (tL_messageActionStarGiftUnique.from_offer) {
+                                                                    if (ofSafe.currency == AmountUtils$Currency.TON) {
+                                                                        this.messageText = AndroidUtilities.replaceTags(LocaleController.formatString(isOutOwner() ? R.string.ActionUniqueGiftResaleSoldOutboundTON : R.string.ActionUniqueGiftResaleOutboundTON, ofSafe.asFormatString()));
+                                                                    } else {
+                                                                        this.messageText = AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(isOutOwner() ? "ActionUniqueGiftResaleSoldOutbound" : "ActionUniqueGiftResaleOutbound", (int) ofSafe.asDecimal()));
+                                                                    }
+                                                                } else if (ofSafe.currency == AmountUtils$Currency.TON) {
+                                                                    this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(isOutOwner() ? R.string.ActionUniqueGiftResaleOutboundTON : R.string.ActionUniqueGiftResaleInboundTON, ofSafe.asFormatString())), str13, chat12);
+                                                                } else {
+                                                                    this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(isOutOwner() ? "ActionUniqueGiftResaleOutbound" : "ActionUniqueGiftResaleInbound", (int) ofSafe.asDecimal())), str13, chat12);
+                                                                }
                                                             }
                                                         } else if (tL_messageActionStarGiftUnique.upgrade) {
                                                             TLRPC.Peer peer11 = tL_messageActionStarGiftUnique.peer;
                                                             if (peer11 != null) {
                                                                 long peerDialogId5 = DialogObject.getPeerDialogId(peer11);
                                                                 if (peerDialogId5 >= 0) {
-                                                                    chat13 = getUser(abstractMap, longSparseArray, peerDialogId5);
+                                                                    chat11 = getUser(abstractMap, longSparseArray, peerDialogId5);
                                                                 } else {
-                                                                    chat13 = getChat(abstractMap2, longSparseArray2, -peerDialogId5);
+                                                                    chat11 = getChat(abstractMap2, longSparseArray2, -peerDialogId5);
                                                                 }
-                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionUniqueGiftUpgradeInboundChannel)), "un1", chat13);
+                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionUniqueGiftUpgradeInboundChannel)), str13, chat11);
                                                             } else if (UserObject.isUserSelf(user13)) {
                                                                 this.messageText = AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionUniqueGiftUpgradeSelf));
                                                             } else {
-                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(isOutOwner() ? R.string.ActionUniqueGiftUpgradeOutbound : R.string.ActionUniqueGiftUpgradeInbound)), "un1", user13);
+                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(isOutOwner() ? R.string.ActionUniqueGiftUpgradeOutbound : R.string.ActionUniqueGiftUpgradeInbound)), str13, user13);
                                                             }
                                                         } else {
                                                             long dialogId2 = getDialogId();
@@ -5845,37 +5869,37 @@ public class MessageObject {
                                                                 dialogId2 = DialogObject.getPeerDialogId(peer12);
                                                             }
                                                             if (dialogId2 >= 0) {
-                                                                chat11 = getUser(abstractMap, longSparseArray, dialogId2);
+                                                                chat9 = getUser(abstractMap, longSparseArray, dialogId2);
                                                             } else {
-                                                                chat11 = getChat(abstractMap2, longSparseArray2, -dialogId2);
+                                                                chat9 = getChat(abstractMap2, longSparseArray2, -dialogId2);
                                                             }
                                                             TLRPC.Peer peer13 = tL_messageActionStarGiftUnique.peer;
                                                             if (peer13 != null) {
                                                                 long peerDialogId6 = DialogObject.getPeerDialogId(peer13);
                                                                 if (peerDialogId6 >= 0) {
-                                                                    chat12 = getUser(abstractMap, longSparseArray, peerDialogId6);
+                                                                    chat10 = getUser(abstractMap, longSparseArray, peerDialogId6);
                                                                 } else {
-                                                                    chat12 = getChat(abstractMap2, longSparseArray2, -peerDialogId6);
+                                                                    chat10 = getChat(abstractMap2, longSparseArray2, -peerDialogId6);
                                                                 }
                                                                 SpannableStringBuilder replaceTags2 = AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionUniqueGiftTransferService));
                                                                 this.messageText = replaceTags2;
-                                                                CharSequence replaceWithLink9 = replaceWithLink(replaceTags2, "un1", chat11);
+                                                                CharSequence replaceWithLink9 = replaceWithLink(replaceTags2, str13, chat9);
                                                                 this.messageText = replaceWithLink9;
-                                                                this.messageText = replaceWithLink(replaceWithLink9, "un2", chat12);
+                                                                this.messageText = replaceWithLink(replaceWithLink9, "un2", chat10);
                                                             } else if (tL_messageActionStarGiftUnique.assigned) {
-                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.ActionUniqueGiftTransferOutboundAssigned, tL_messageActionStarGiftUnique.gift.title + " #" + LocaleController.formatNumber(tL_messageActionStarGiftUnique.gift.num, ','))), "un1", chat11);
+                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.ActionUniqueGiftTransferOutboundAssigned, tL_messageActionStarGiftUnique.gift.title + " #" + LocaleController.formatNumber(tL_messageActionStarGiftUnique.gift.num, ','))), str13, chat9);
                                                             } else {
-                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(isOutOwner() ? R.string.ActionUniqueGiftTransferOutbound : R.string.ActionUniqueGiftTransferInbound)), "un1", chat11);
+                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(isOutOwner() ? R.string.ActionUniqueGiftTransferOutbound : R.string.ActionUniqueGiftTransferInbound)), str13, chat9);
                                                             }
                                                         }
                                                     } else if (messageAction3 instanceof TLRPC.TL_messageActionGiftStars) {
-                                                        boolean z5 = tLObject2 instanceof TLRPC.User;
-                                                        if (z5 && ((TLRPC.User) tLObject2).self) {
-                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftOutbound)), "un1", getUser(abstractMap, longSparseArray, message3.peer_id.user_id));
-                                                        } else if (z5 && UserObject.isService(((TLRPC.User) tLObject2).id)) {
-                                                            this.messageText = TextUtils.replace(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), new String[]{"un1"}, new CharSequence[]{LocaleController.getString(R.string.StarsTransactionUnknown)});
+                                                        boolean z5 = tLObject3 instanceof TLRPC.User;
+                                                        if (z5 && ((TLRPC.User) tLObject3).self) {
+                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftOutbound)), str13, getUser(abstractMap, longSparseArray, message3.peer_id.user_id));
+                                                        } else if (z5 && UserObject.isService(((TLRPC.User) tLObject3).id)) {
+                                                            this.messageText = TextUtils.replace(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), new String[]{str13}, new CharSequence[]{LocaleController.getString(R.string.StarsTransactionUnknown)});
                                                         } else {
-                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), "un1", tLObject2);
+                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), str13, tLObject3);
                                                         }
                                                         int indexOf2 = this.messageText.toString().indexOf("un2");
                                                         if (indexOf2 != -1) {
@@ -5891,12 +5915,12 @@ public class MessageObject {
                                                     } else if ((messageAction3 instanceof TLRPC.TL_messageActionGiftCode) && ((TLRPC.TL_messageActionGiftCode) messageAction3).boost_peer != null) {
                                                         this.messageText = LocaleController.getString(R.string.BoostingReceivedGiftNoName);
                                                     } else if (TlUtils.isInstance(messageAction3, TLRPC.TL_messageActionGiftPremium.class, TLRPC.TL_messageActionGiftCode.class, TLRPC.TL_messageActionGiftTon.class)) {
-                                                        if ((tLObject2 instanceof TLRPC.User) && ((TLRPC.User) tLObject2).self) {
-                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftOutbound)), "un1", getUser(abstractMap, longSparseArray, this.messageOwner.peer_id.user_id));
+                                                        if ((tLObject3 instanceof TLRPC.User) && ((TLRPC.User) tLObject3).self) {
+                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftOutbound)), str13, getUser(abstractMap, longSparseArray, this.messageOwner.peer_id.user_id));
                                                         } else if (this.messageOwner.action instanceof TLRPC.TL_messageActionGiftTon) {
                                                             this.messageText = AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftTonInbound));
                                                         } else {
-                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), "un1", tLObject2);
+                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionGiftInbound)), str13, tLObject3);
                                                         }
                                                         int indexOf3 = this.messageText.toString().indexOf("un2");
                                                         if (indexOf3 != -1) {
@@ -5917,7 +5941,7 @@ public class MessageObject {
                                                             if (isOutOwner()) {
                                                                 this.messageText = LocaleController.getString(R.string.ActionYouSuggestBirthday);
                                                             } else {
-                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionSuggestBirthday)), "un1", tLObject2);
+                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionSuggestBirthday)), str13, tLObject3);
                                                             }
                                                         } else if (messageAction6 instanceof TLRPC.TL_messageActionSuggestProfilePhoto) {
                                                             TLRPC.Photo photo = messageAction6.photo;
@@ -5931,8 +5955,8 @@ public class MessageObject {
                                                             if (peer14 != null) {
                                                                 long j9 = peer14.channel_id;
                                                                 if (j9 != 0) {
-                                                                    chat10 = getChat(abstractMap2, longSparseArray2, j9);
-                                                                    if (!ChatObject.isChannel(chat10) && !chat10.megagroup) {
+                                                                    chat8 = getChat(abstractMap2, longSparseArray2, j9);
+                                                                    if (!ChatObject.isChannel(chat8) && !chat8.megagroup) {
                                                                         if (isVideoAvatar()) {
                                                                             this.messageText = LocaleController.getString(R.string.ActionChannelChangedVideo);
                                                                         } else {
@@ -5945,14 +5969,14 @@ public class MessageObject {
                                                                             this.messageText = LocaleController.getString(R.string.ActionYouChangedPhoto);
                                                                         }
                                                                     } else if (isVideoAvatar()) {
-                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionChangedVideo), "un1", tLObject2);
+                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionChangedVideo), str13, tLObject3);
                                                                     } else {
-                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionChangedPhoto), "un1", tLObject2);
+                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionChangedPhoto), str13, tLObject3);
                                                                     }
                                                                 }
                                                             }
-                                                            chat10 = null;
-                                                            if (!ChatObject.isChannel(chat10)) {
+                                                            chat8 = null;
+                                                            if (!ChatObject.isChannel(chat8)) {
                                                             }
                                                             if (!isOut()) {
                                                             }
@@ -5961,18 +5985,18 @@ public class MessageObject {
                                                             if (peer15 != null) {
                                                                 long j10 = peer15.channel_id;
                                                                 if (j10 != 0) {
-                                                                    chat9 = getChat(abstractMap2, longSparseArray2, j10);
-                                                                    if (!ChatObject.isChannel(chat9) && !chat9.megagroup) {
+                                                                    chat7 = getChat(abstractMap2, longSparseArray2, j10);
+                                                                    if (!ChatObject.isChannel(chat7) && !chat7.megagroup) {
                                                                         this.messageText = LocaleController.getString(R.string.ActionChannelChangedTitle).replace("un2", this.messageOwner.action.title);
                                                                     } else if (!isOut()) {
                                                                         this.messageText = LocaleController.getString(R.string.ActionYouChangedTitle).replace("un2", this.messageOwner.action.title);
                                                                     } else {
-                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionChangedTitle).replace("un2", this.messageOwner.action.title), "un1", tLObject2);
+                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionChangedTitle).replace("un2", this.messageOwner.action.title), str13, tLObject3);
                                                                     }
                                                                 }
                                                             }
-                                                            chat9 = null;
-                                                            if (!ChatObject.isChannel(chat9)) {
+                                                            chat7 = null;
+                                                            if (!ChatObject.isChannel(chat7)) {
                                                             }
                                                             if (!isOut()) {
                                                             }
@@ -5981,18 +6005,18 @@ public class MessageObject {
                                                             if (peer16 != null) {
                                                                 long j11 = peer16.channel_id;
                                                                 if (j11 != 0) {
-                                                                    chat8 = getChat(abstractMap2, longSparseArray2, j11);
-                                                                    if (!ChatObject.isChannel(chat8) && !chat8.megagroup) {
+                                                                    chat6 = getChat(abstractMap2, longSparseArray2, j11);
+                                                                    if (!ChatObject.isChannel(chat6) && !chat6.megagroup) {
                                                                         this.messageText = LocaleController.getString(R.string.ActionChannelRemovedPhoto);
                                                                     } else if (!isOut()) {
                                                                         this.messageText = LocaleController.getString(R.string.ActionYouRemovedPhoto);
                                                                     } else {
-                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionRemovedPhoto), "un1", tLObject2);
+                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionRemovedPhoto), str13, tLObject3);
                                                                     }
                                                                 }
                                                             }
-                                                            chat8 = null;
-                                                            if (!ChatObject.isChannel(chat8)) {
+                                                            chat6 = null;
+                                                            if (!ChatObject.isChannel(chat6)) {
                                                             }
                                                             if (!isOut()) {
                                                             }
@@ -6010,233 +6034,226 @@ public class MessageObject {
                                                             }
                                                         } else if (messageAction6 instanceof TLRPC.TL_messageActionRequestedPeer) {
                                                             ArrayList arrayList4 = new ArrayList();
-                                                            int i9 = 0;
-                                                            int i10 = 0;
                                                             int i11 = 0;
+                                                            int i12 = 0;
+                                                            int i13 = 0;
                                                             for (TLRPC.Peer peer17 : ((TLRPC.TL_messageActionRequestedPeer) this.messageOwner.action).peers) {
                                                                 boolean z6 = peer17 instanceof TLRPC.TL_peerUser;
                                                                 if (z6) {
-                                                                    str5 = str2;
                                                                     str6 = str12;
-                                                                    chat7 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peer17.user_id));
-                                                                    if (chat7 == null) {
-                                                                        chat7 = getUser(abstractMap, longSparseArray, peer17.user_id);
+                                                                    str7 = str13;
+                                                                    tLObject = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peer17.user_id));
+                                                                    if (tLObject == null) {
+                                                                        tLObject = getUser(abstractMap, longSparseArray, peer17.user_id);
                                                                     }
                                                                 } else {
-                                                                    str5 = str2;
                                                                     str6 = str12;
+                                                                    str7 = str13;
                                                                     if (peer17 instanceof TLRPC.TL_peerChat) {
-                                                                        chat7 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(peer17.chat_id));
-                                                                        if (chat7 == null) {
-                                                                            chat7 = getChat(abstractMap2, longSparseArray2, peer17.chat_id);
+                                                                        tLObject = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(peer17.chat_id));
+                                                                        if (tLObject == null) {
+                                                                            tLObject = getChat(abstractMap2, longSparseArray2, peer17.chat_id);
                                                                         }
                                                                     } else if (peer17 instanceof TLRPC.TL_peerChannel) {
-                                                                        chat7 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(peer17.channel_id));
-                                                                        if (chat7 == null) {
-                                                                            chat7 = getChat(abstractMap2, longSparseArray2, peer17.channel_id);
+                                                                        tLObject = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(peer17.channel_id));
+                                                                        if (tLObject == null) {
+                                                                            tLObject = getChat(abstractMap2, longSparseArray2, peer17.channel_id);
                                                                         }
                                                                     } else {
-                                                                        obj = null;
-                                                                        if (!z6) {
-                                                                            i9++;
-                                                                        } else if (peer17 instanceof TLRPC.TL_peerChat) {
-                                                                            i11++;
-                                                                        } else {
-                                                                            i10++;
-                                                                        }
-                                                                        if (obj == null) {
-                                                                            arrayList4.add(obj);
-                                                                        }
-                                                                        str2 = str5;
-                                                                        str12 = str6;
+                                                                        tLObject = null;
                                                                     }
                                                                 }
-                                                                obj = chat7;
-                                                                if (!z6) {
+                                                                if (z6) {
+                                                                    i11++;
+                                                                } else if (peer17 instanceof TLRPC.TL_peerChat) {
+                                                                    i13++;
+                                                                } else {
+                                                                    i12++;
                                                                 }
-                                                                if (obj == null) {
+                                                                if (tLObject != null) {
+                                                                    arrayList4.add(tLObject);
                                                                 }
-                                                                str2 = str5;
                                                                 str12 = str6;
+                                                                str13 = str7;
                                                             }
-                                                            str10 = str2;
-                                                            String str13 = str12;
-                                                            if (i9 > 0 && i9 != arrayList4.size()) {
-                                                                this.messageText = LocaleController.getPluralString("ActionRequestedPeerUserPlural", i9);
-                                                            } else if (i10 > 0 && i10 != arrayList4.size()) {
-                                                                this.messageText = LocaleController.getPluralString("ActionRequestedPeerChannelPlural", i10);
-                                                            } else if (i11 > 0 && i11 != arrayList4.size()) {
-                                                                this.messageText = LocaleController.getPluralString("ActionRequestedPeerChatPlural", i11);
+                                                            String str14 = str12;
+                                                            String str15 = str13;
+                                                            if (i11 > 0 && i11 != arrayList4.size()) {
+                                                                this.messageText = LocaleController.getPluralString("ActionRequestedPeerUserPlural", i11);
+                                                            } else if (i12 > 0 && i12 != arrayList4.size()) {
+                                                                this.messageText = LocaleController.getPluralString("ActionRequestedPeerChannelPlural", i12);
+                                                            } else if (i13 > 0 && i13 != arrayList4.size()) {
+                                                                this.messageText = LocaleController.getPluralString("ActionRequestedPeerChatPlural", i13);
                                                             } else {
                                                                 SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder();
-                                                                int i12 = 0;
-                                                                while (i12 < arrayList4.size()) {
-                                                                    String str14 = str13;
-                                                                    spannableStringBuilder5.append(replaceWithLink(str14, str14, (TLObject) arrayList4.get(i12)));
-                                                                    String str15 = str11;
-                                                                    if (i12 < arrayList4.size() - 1) {
-                                                                        spannableStringBuilder5.append((CharSequence) str15);
+                                                                int i14 = 0;
+                                                                while (i14 < arrayList4.size()) {
+                                                                    String str16 = str15;
+                                                                    spannableStringBuilder5.append(replaceWithLink(str16, str16, (TLObject) arrayList4.get(i14)));
+                                                                    String str17 = str11;
+                                                                    if (i14 < arrayList4.size() - 1) {
+                                                                        spannableStringBuilder5.append((CharSequence) str17);
                                                                     }
-                                                                    i12++;
-                                                                    str13 = str14;
-                                                                    str11 = str15;
+                                                                    i14++;
+                                                                    str15 = str16;
+                                                                    str11 = str17;
                                                                 }
-                                                                this.messageText = AndroidUtilities.replaceCharSequence(str13, LocaleController.getString(R.string.ActionRequestedPeer), spannableStringBuilder5);
+                                                                this.messageText = AndroidUtilities.replaceCharSequence(str15, LocaleController.getString(R.string.ActionRequestedPeer), spannableStringBuilder5);
                                                             }
                                                             TLRPC.User user14 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(getDialogId()));
                                                             if (user14 == null) {
                                                                 user14 = getUser(abstractMap, longSparseArray, getDialogId());
                                                             }
-                                                            this.messageText = replaceWithLink(this.messageText, "un2", user14);
-                                                        } else {
-                                                            str10 = str2;
-                                                            if (messageAction6 instanceof TLRPC.TL_messageActionSetMessagesTTL) {
-                                                                TLRPC.TL_messageActionSetMessagesTTL tL_messageActionSetMessagesTTL = (TLRPC.TL_messageActionSetMessagesTTL) messageAction6;
-                                                                TLRPC.Peer peer18 = message4.peer_id;
-                                                                if (peer18 != null) {
-                                                                    long j12 = peer18.channel_id;
-                                                                    if (j12 != 0) {
-                                                                        chat6 = getChat(abstractMap2, longSparseArray2, j12);
-                                                                        if (chat6 == null && !chat6.megagroup) {
-                                                                            int i13 = tL_messageActionSetMessagesTTL.period;
-                                                                            if (i13 != 0) {
-                                                                                this.messageText = LocaleController.formatString(R.string.ActionTTLChannelChanged, LocaleController.formatTTLString(i13));
-                                                                            } else {
-                                                                                this.messageText = LocaleController.getString(R.string.ActionTTLChannelDisabled);
-                                                                            }
+                                                            this.messageText = replaceWithLink(this.messageText, str14, user14);
+                                                        } else if (messageAction6 instanceof TLRPC.TL_messageActionSetMessagesTTL) {
+                                                            TLRPC.TL_messageActionSetMessagesTTL tL_messageActionSetMessagesTTL = (TLRPC.TL_messageActionSetMessagesTTL) messageAction6;
+                                                            TLRPC.Peer peer18 = message4.peer_id;
+                                                            if (peer18 != null) {
+                                                                long j12 = peer18.channel_id;
+                                                                if (j12 != 0) {
+                                                                    chat5 = getChat(abstractMap2, longSparseArray2, j12);
+                                                                    if (chat5 == null && !chat5.megagroup) {
+                                                                        int i15 = tL_messageActionSetMessagesTTL.period;
+                                                                        if (i15 != 0) {
+                                                                            this.messageText = LocaleController.formatString(R.string.ActionTTLChannelChanged, LocaleController.formatTTLString(i15));
                                                                         } else {
-                                                                            j = tL_messageActionSetMessagesTTL.auto_setting_from;
-                                                                            if (j == 0) {
-                                                                                this.drawServiceWithDefaultTypeface = true;
-                                                                                if (j == UserConfig.getInstance(this.currentAccount).clientUserId) {
-                                                                                    this.messageText = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AutoDeleteGlobalActionFromYou, LocaleController.formatTTLString(tL_messageActionSetMessagesTTL.period)));
-                                                                                } else {
-                                                                                    TLRPC.Chat chat26 = longSparseArray != null ? (TLObject) longSparseArray.get(tL_messageActionSetMessagesTTL.auto_setting_from) : null;
-                                                                                    if (chat26 == null && abstractMap != null) {
-                                                                                        chat26 = abstractMap.get(Long.valueOf(tL_messageActionSetMessagesTTL.auto_setting_from));
-                                                                                    }
-                                                                                    if (chat26 == null && abstractMap2 != null) {
-                                                                                        chat26 = abstractMap2.get(Long.valueOf(tL_messageActionSetMessagesTTL.auto_setting_from));
-                                                                                    }
-                                                                                    if (chat26 == null) {
-                                                                                        if (tL_messageActionSetMessagesTTL.auto_setting_from > 0) {
-                                                                                            chat26 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_messageActionSetMessagesTTL.auto_setting_from));
-                                                                                        } else {
-                                                                                            chat26 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tL_messageActionSetMessagesTTL.auto_setting_from));
-                                                                                        }
-                                                                                    }
-                                                                                    if (chat26 != null) {
-                                                                                        tLObject2 = chat26;
-                                                                                    }
-                                                                                    this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AutoDeleteGlobalAction, LocaleController.formatTTLString(tL_messageActionSetMessagesTTL.period))), "un1", tLObject2);
-                                                                                }
-                                                                            } else if (tL_messageActionSetMessagesTTL.period != 0) {
-                                                                                if (isOut()) {
-                                                                                    this.messageText = LocaleController.formatString(R.string.ActionTTLYouChanged, LocaleController.formatTTLString(tL_messageActionSetMessagesTTL.period));
-                                                                                } else {
-                                                                                    this.messageText = replaceWithLink(LocaleController.formatString(R.string.ActionTTLChanged, LocaleController.formatTTLString(tL_messageActionSetMessagesTTL.period)), "un1", tLObject2);
-                                                                                }
-                                                                            } else if (isOut()) {
-                                                                                this.messageText = LocaleController.getString(R.string.ActionTTLYouDisabled);
+                                                                            this.messageText = LocaleController.getString(R.string.ActionTTLChannelDisabled);
+                                                                        }
+                                                                    } else {
+                                                                        j = tL_messageActionSetMessagesTTL.auto_setting_from;
+                                                                        if (j == 0) {
+                                                                            this.drawServiceWithDefaultTypeface = true;
+                                                                            if (j == UserConfig.getInstance(this.currentAccount).clientUserId) {
+                                                                                this.messageText = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AutoDeleteGlobalActionFromYou, LocaleController.formatTTLString(tL_messageActionSetMessagesTTL.period)));
                                                                             } else {
-                                                                                this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionTTLDisabled), "un1", tLObject2);
+                                                                                TLRPC.Chat chat24 = longSparseArray != null ? (TLObject) longSparseArray.get(tL_messageActionSetMessagesTTL.auto_setting_from) : null;
+                                                                                if (chat24 == null && abstractMap != null) {
+                                                                                    chat24 = abstractMap.get(Long.valueOf(tL_messageActionSetMessagesTTL.auto_setting_from));
+                                                                                }
+                                                                                if (chat24 == null && abstractMap2 != null) {
+                                                                                    chat24 = abstractMap2.get(Long.valueOf(tL_messageActionSetMessagesTTL.auto_setting_from));
+                                                                                }
+                                                                                if (chat24 == null) {
+                                                                                    if (tL_messageActionSetMessagesTTL.auto_setting_from > 0) {
+                                                                                        chat24 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_messageActionSetMessagesTTL.auto_setting_from));
+                                                                                    } else {
+                                                                                        chat24 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tL_messageActionSetMessagesTTL.auto_setting_from));
+                                                                                    }
+                                                                                }
+                                                                                if (chat24 != null) {
+                                                                                    tLObject3 = chat24;
+                                                                                }
+                                                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AutoDeleteGlobalAction, LocaleController.formatTTLString(tL_messageActionSetMessagesTTL.period))), str13, tLObject3);
                                                                             }
-                                                                        }
-                                                                    }
-                                                                }
-                                                                chat6 = null;
-                                                                if (chat6 == null) {
-                                                                }
-                                                                j = tL_messageActionSetMessagesTTL.auto_setting_from;
-                                                                if (j == 0) {
-                                                                }
-                                                            } else if (messageAction6 instanceof TLRPC.TL_messageActionLoginUnknownLocation) {
-                                                                long j13 = message4.date * 1000;
-                                                                if (LocaleController.getInstance().getFormatterDay() != null && LocaleController.getInstance().getFormatterYear() != null) {
-                                                                    sb = LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(j13), LocaleController.getInstance().getFormatterDay().format(j13));
-                                                                    str = str10;
-                                                                } else {
-                                                                    StringBuilder sb2 = new StringBuilder();
-                                                                    str = str10;
-                                                                    sb2.append(str);
-                                                                    sb2.append(this.messageOwner.date);
-                                                                    sb = sb2.toString();
-                                                                }
-                                                                TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
-                                                                if (currentUser == null) {
-                                                                    currentUser = getUser(abstractMap, longSparseArray, this.messageOwner.peer_id.user_id);
-                                                                }
-                                                                String firstName = currentUser != null ? UserObject.getFirstName(currentUser) : str;
-                                                                int i14 = R.string.NotificationUnrecognizedDevice;
-                                                                TLRPC.MessageAction messageAction7 = this.messageOwner.action;
-                                                                this.messageText = LocaleController.formatString(i14, firstName, sb, messageAction7.title, messageAction7.address);
-                                                            } else {
-                                                                str = str10;
-                                                                if ((messageAction6 instanceof TLRPC.TL_messageActionUserJoined) || (messageAction6 instanceof TLRPC.TL_messageActionContactSignUp)) {
-                                                                    this.messageText = LocaleController.formatString(R.string.NotificationContactJoined, UserObject.getUserName(user9));
-                                                                } else if (messageAction6 instanceof TLRPC.TL_messageActionUserUpdatedPhoto) {
-                                                                    this.messageText = LocaleController.formatString(R.string.NotificationContactNewPhoto, UserObject.getUserName(user9));
-                                                                } else if (messageAction6 instanceof TLRPC.TL_messageEncryptedAction) {
-                                                                    TLRPC.DecryptedMessageAction decryptedMessageAction = messageAction6.encryptedAction;
-                                                                    if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionScreenshotMessages) {
-                                                                        if (isOut()) {
-                                                                            this.messageText = LocaleController.getString(R.string.ActionTakeScreenshootYou);
-                                                                        } else {
-                                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionTakeScreenshoot), "un1", tLObject2);
-                                                                        }
-                                                                    } else if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionSetMessageTTL) {
-                                                                        TLRPC.TL_decryptedMessageActionSetMessageTTL tL_decryptedMessageActionSetMessageTTL = (TLRPC.TL_decryptedMessageActionSetMessageTTL) decryptedMessageAction;
-                                                                        if (tL_decryptedMessageActionSetMessageTTL.ttl_seconds != 0) {
+                                                                        } else if (tL_messageActionSetMessagesTTL.period != 0) {
                                                                             if (isOut()) {
-                                                                                this.messageText = LocaleController.formatString(R.string.MessageLifetimeChangedOutgoing, LocaleController.formatTTLString(tL_decryptedMessageActionSetMessageTTL.ttl_seconds));
+                                                                                this.messageText = LocaleController.formatString(R.string.ActionTTLYouChanged, LocaleController.formatTTLString(tL_messageActionSetMessagesTTL.period));
                                                                             } else {
-                                                                                this.messageText = LocaleController.formatString(R.string.MessageLifetimeChanged, UserObject.getFirstName(user9), LocaleController.formatTTLString(tL_decryptedMessageActionSetMessageTTL.ttl_seconds));
+                                                                                this.messageText = replaceWithLink(LocaleController.formatString(R.string.ActionTTLChanged, LocaleController.formatTTLString(tL_messageActionSetMessagesTTL.period)), str13, tLObject3);
                                                                             }
                                                                         } else if (isOut()) {
-                                                                            this.messageText = LocaleController.getString(R.string.MessageLifetimeYouRemoved);
+                                                                            this.messageText = LocaleController.getString(R.string.ActionTTLYouDisabled);
                                                                         } else {
-                                                                            this.messageText = LocaleController.formatString(R.string.MessageLifetimeRemoved, UserObject.getFirstName(user9));
+                                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionTTLDisabled), str13, tLObject3);
                                                                         }
                                                                     }
-                                                                } else if (messageAction6 instanceof TLRPC.TL_messageActionScreenshotTaken) {
+                                                                }
+                                                            }
+                                                            chat5 = null;
+                                                            if (chat5 == null) {
+                                                            }
+                                                            j = tL_messageActionSetMessagesTTL.auto_setting_from;
+                                                            if (j == 0) {
+                                                            }
+                                                        } else if (messageAction6 instanceof TLRPC.TL_messageActionLoginUnknownLocation) {
+                                                            long j13 = message4.date * 1000;
+                                                            if (LocaleController.getInstance().getFormatterDay() != null && LocaleController.getInstance().getFormatterYear() != null) {
+                                                                sb = LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(j13), LocaleController.getInstance().getFormatterDay().format(j13));
+                                                                str2 = str10;
+                                                            } else {
+                                                                StringBuilder sb2 = new StringBuilder();
+                                                                str2 = str10;
+                                                                sb2.append(str2);
+                                                                sb2.append(this.messageOwner.date);
+                                                                sb = sb2.toString();
+                                                            }
+                                                            TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
+                                                            if (currentUser == null) {
+                                                                currentUser = getUser(abstractMap, longSparseArray, this.messageOwner.peer_id.user_id);
+                                                            }
+                                                            String firstName = currentUser != null ? UserObject.getFirstName(currentUser) : str2;
+                                                            int i16 = R.string.NotificationUnrecognizedDevice;
+                                                            TLRPC.MessageAction messageAction7 = this.messageOwner.action;
+                                                            this.messageText = LocaleController.formatString(i16, firstName, sb, messageAction7.title, messageAction7.address);
+                                                        } else {
+                                                            str2 = str10;
+                                                            if ((messageAction6 instanceof TLRPC.TL_messageActionUserJoined) || (messageAction6 instanceof TLRPC.TL_messageActionContactSignUp)) {
+                                                                this.messageText = LocaleController.formatString(R.string.NotificationContactJoined, UserObject.getUserName(user9));
+                                                            } else if (messageAction6 instanceof TLRPC.TL_messageActionUserUpdatedPhoto) {
+                                                                this.messageText = LocaleController.formatString(R.string.NotificationContactNewPhoto, UserObject.getUserName(user9));
+                                                            } else if (messageAction6 instanceof TLRPC.TL_messageEncryptedAction) {
+                                                                TLRPC.DecryptedMessageAction decryptedMessageAction = messageAction6.encryptedAction;
+                                                                if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionScreenshotMessages) {
                                                                     if (isOut()) {
                                                                         this.messageText = LocaleController.getString(R.string.ActionTakeScreenshootYou);
                                                                     } else {
-                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionTakeScreenshoot), "un1", tLObject2);
+                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionTakeScreenshoot), str13, tLObject3);
                                                                     }
-                                                                } else if (messageAction6 instanceof TLRPC.TL_messageActionCreatedBroadcastList) {
-                                                                    this.messageText = LocaleController.getString(R.string.YouCreatedBroadcastList);
-                                                                } else if (messageAction6 instanceof TLRPC.TL_messageActionChannelCreate) {
-                                                                    TLRPC.Peer peer19 = message4.peer_id;
-                                                                    if (peer19 != null) {
-                                                                        long j14 = peer19.channel_id;
-                                                                        if (j14 != 0) {
-                                                                            chat5 = getChat(abstractMap2, longSparseArray2, j14);
-                                                                            if (!ChatObject.isChannel(chat5) && chat5.megagroup) {
-                                                                                this.messageText = LocaleController.getString(R.string.ActionCreateMega);
-                                                                            } else {
-                                                                                this.messageText = LocaleController.getString(R.string.ActionCreateChannel);
-                                                                            }
+                                                                } else if (decryptedMessageAction instanceof TLRPC.TL_decryptedMessageActionSetMessageTTL) {
+                                                                    TLRPC.TL_decryptedMessageActionSetMessageTTL tL_decryptedMessageActionSetMessageTTL = (TLRPC.TL_decryptedMessageActionSetMessageTTL) decryptedMessageAction;
+                                                                    if (tL_decryptedMessageActionSetMessageTTL.ttl_seconds != 0) {
+                                                                        if (isOut()) {
+                                                                            this.messageText = LocaleController.formatString(R.string.MessageLifetimeChangedOutgoing, LocaleController.formatTTLString(tL_decryptedMessageActionSetMessageTTL.ttl_seconds));
+                                                                        } else {
+                                                                            this.messageText = LocaleController.formatString(R.string.MessageLifetimeChanged, UserObject.getFirstName(user9), LocaleController.formatTTLString(tL_decryptedMessageActionSetMessageTTL.ttl_seconds));
+                                                                        }
+                                                                    } else if (isOut()) {
+                                                                        this.messageText = LocaleController.getString(R.string.MessageLifetimeYouRemoved);
+                                                                    } else {
+                                                                        this.messageText = LocaleController.formatString(R.string.MessageLifetimeRemoved, UserObject.getFirstName(user9));
+                                                                    }
+                                                                }
+                                                            } else if (messageAction6 instanceof TLRPC.TL_messageActionScreenshotTaken) {
+                                                                if (isOut()) {
+                                                                    this.messageText = LocaleController.getString(R.string.ActionTakeScreenshootYou);
+                                                                } else {
+                                                                    this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionTakeScreenshoot), str13, tLObject3);
+                                                                }
+                                                            } else if (messageAction6 instanceof TLRPC.TL_messageActionCreatedBroadcastList) {
+                                                                this.messageText = LocaleController.getString(R.string.YouCreatedBroadcastList);
+                                                            } else if (messageAction6 instanceof TLRPC.TL_messageActionChannelCreate) {
+                                                                TLRPC.Peer peer19 = message4.peer_id;
+                                                                if (peer19 != null) {
+                                                                    long j14 = peer19.channel_id;
+                                                                    if (j14 != 0) {
+                                                                        chat4 = getChat(abstractMap2, longSparseArray2, j14);
+                                                                        if (!ChatObject.isChannel(chat4) && chat4.megagroup) {
+                                                                            this.messageText = LocaleController.getString(R.string.ActionCreateMega);
+                                                                        } else {
+                                                                            this.messageText = LocaleController.getString(R.string.ActionCreateChannel);
                                                                         }
                                                                     }
-                                                                    chat5 = null;
-                                                                    if (!ChatObject.isChannel(chat5)) {
-                                                                    }
-                                                                    this.messageText = LocaleController.getString(R.string.ActionCreateChannel);
-                                                                } else if (messageAction6 instanceof TLRPC.TL_messageActionChatMigrateTo) {
-                                                                    this.messageText = LocaleController.getString(R.string.ActionMigrateFromGroup);
-                                                                } else if (messageAction6 instanceof TLRPC.TL_messageActionChannelMigrateFrom) {
-                                                                    this.messageText = LocaleController.getString(R.string.ActionMigrateFromGroup);
-                                                                } else if (messageAction6 instanceof TLRPC.TL_messageActionPinMessage) {
-                                                                    if (user9 == null) {
-                                                                        chat4 = getChat(abstractMap2, longSparseArray2, message4.peer_id.channel_id);
-                                                                        user3 = user9;
-                                                                    } else {
-                                                                        user3 = user9;
-                                                                        chat4 = null;
-                                                                    }
-                                                                    generatePinMessageText(user3, chat4);
-                                                                } else if (messageAction6 instanceof TLRPC.TL_messageActionHistoryClear) {
+                                                                }
+                                                                chat4 = null;
+                                                                if (!ChatObject.isChannel(chat4)) {
+                                                                }
+                                                                this.messageText = LocaleController.getString(R.string.ActionCreateChannel);
+                                                            } else if (messageAction6 instanceof TLRPC.TL_messageActionChatMigrateTo) {
+                                                                this.messageText = LocaleController.getString(R.string.ActionMigrateFromGroup);
+                                                            } else if (messageAction6 instanceof TLRPC.TL_messageActionChannelMigrateFrom) {
+                                                                this.messageText = LocaleController.getString(R.string.ActionMigrateFromGroup);
+                                                            } else if (messageAction6 instanceof TLRPC.TL_messageActionPinMessage) {
+                                                                if (user9 == null) {
+                                                                    chat3 = getChat(abstractMap2, longSparseArray2, message4.peer_id.channel_id);
+                                                                    user3 = user9;
+                                                                } else {
+                                                                    user3 = user9;
+                                                                    chat3 = null;
+                                                                }
+                                                                generatePinMessageText(user3, chat3);
+                                                            } else {
+                                                                TLRPC.User user15 = user9;
+                                                                if (messageAction6 instanceof TLRPC.TL_messageActionHistoryClear) {
                                                                     this.messageText = LocaleController.getString(R.string.HistoryCleared);
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionTopicCreate) {
                                                                     this.messageText = LocaleController.getString(R.string.TopicCreated);
@@ -6248,65 +6265,64 @@ public class MessageObject {
                                                                     this.messageTextShort = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.TopicWasCreatedAction), ForumUtilities.getTopicSpannedName(tL_forumTopic, null, false));
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionTopicEdit) {
                                                                     TLRPC.TL_messageActionTopicEdit tL_messageActionTopicEdit = (TLRPC.TL_messageActionTopicEdit) messageAction6;
-                                                                    if (user9 != null) {
-                                                                        str3 = ContactsController.formatName(user9.first_name, user9.last_name);
-                                                                        chat3 = user9;
-                                                                    } else if (chat23 != null) {
-                                                                        chat3 = chat23;
-                                                                        str3 = chat3.title;
+                                                                    if (user15 != null) {
+                                                                        str4 = ContactsController.formatName(user15.first_name, user15.last_name);
+                                                                    } else if (chat21 != null) {
+                                                                        str4 = chat21.title;
+                                                                        user15 = chat21;
                                                                     } else {
-                                                                        str3 = null;
-                                                                        chat3 = null;
+                                                                        str4 = null;
+                                                                        user15 = null;
                                                                     }
-                                                                    if (str3 != null) {
-                                                                        str4 = str3.trim();
+                                                                    if (str4 != null) {
+                                                                        str5 = str4.trim();
                                                                     } else {
-                                                                        str4 = "DELETED";
+                                                                        str5 = "DELETED";
                                                                     }
                                                                     TLRPC.MessageAction messageAction8 = this.messageOwner.action;
-                                                                    int i15 = messageAction8.flags;
-                                                                    if ((i15 & 8) > 0) {
+                                                                    int i17 = messageAction8.flags;
+                                                                    if ((i17 & 8) > 0) {
                                                                         if (((TLRPC.TL_messageActionTopicEdit) messageAction8).hidden) {
-                                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.TopicHidden2), "%s", chat3);
+                                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.TopicHidden2), "%s", user15);
                                                                             this.messageTextShort = LocaleController.getString(R.string.TopicHidden);
                                                                         } else {
-                                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.TopicShown2), "%s", chat3);
+                                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.TopicShown2), "%s", user15);
                                                                             this.messageTextShort = LocaleController.getString(R.string.TopicShown);
                                                                         }
-                                                                    } else if ((4 & i15) <= 0) {
-                                                                        int i16 = 2 & i15;
-                                                                        if (i16 != 0 && (i15 & 1) != 0) {
+                                                                    } else if ((4 & i17) <= 0) {
+                                                                        int i18 = 2 & i17;
+                                                                        if (i18 != 0 && (i17 & 1) != 0) {
                                                                             TLRPC.TL_forumTopic tL_forumTopic2 = new TLRPC.TL_forumTopic();
                                                                             tL_forumTopic2.icon_emoji_id = tL_messageActionTopicEdit.icon_emoji_id;
                                                                             tL_forumTopic2.title = tL_messageActionTopicEdit.title;
                                                                             tL_forumTopic2.icon_color = ForumBubbleDrawable.serverSupportedColor[0];
                                                                             CharSequence topicSpannedName = ForumUtilities.getTopicSpannedName(tL_forumTopic2, null, this.topicIconDrawable, false);
-                                                                            this.messageText = AndroidUtilities.replaceCharSequence("%2$s", AndroidUtilities.replaceCharSequence("%1$s", LocaleController.getString(R.string.TopicChangeIconAndTitleTo), str4), topicSpannedName);
+                                                                            this.messageText = AndroidUtilities.replaceCharSequence("%2$s", AndroidUtilities.replaceCharSequence("%1$s", LocaleController.getString(R.string.TopicChangeIconAndTitleTo), str5), topicSpannedName);
                                                                             this.messageTextShort = LocaleController.getString(R.string.TopicRenamed);
                                                                             this.messageTextForReply = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.TopicChangeIconAndTitleToInReply), topicSpannedName);
-                                                                        } else if (i16 != 0) {
+                                                                        } else if (i18 != 0) {
                                                                             TLRPC.TL_forumTopic tL_forumTopic3 = new TLRPC.TL_forumTopic();
                                                                             tL_forumTopic3.icon_emoji_id = tL_messageActionTopicEdit.icon_emoji_id;
-                                                                            tL_forumTopic3.title = str;
+                                                                            tL_forumTopic3.title = str2;
                                                                             tL_forumTopic3.icon_color = ForumBubbleDrawable.serverSupportedColor[0];
                                                                             CharSequence topicSpannedName2 = ForumUtilities.getTopicSpannedName(tL_forumTopic3, null, this.topicIconDrawable, false);
-                                                                            this.messageText = AndroidUtilities.replaceCharSequence("%2$s", AndroidUtilities.replaceCharSequence("%1$s", LocaleController.getString(R.string.TopicIconChangedTo), str4), topicSpannedName2);
+                                                                            this.messageText = AndroidUtilities.replaceCharSequence("%2$s", AndroidUtilities.replaceCharSequence("%1$s", LocaleController.getString(R.string.TopicIconChangedTo), str5), topicSpannedName2);
                                                                             this.messageTextShort = LocaleController.getString(R.string.TopicIconChanged);
                                                                             this.messageTextForReply = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.TopicIconChangedToInReply), topicSpannedName2);
-                                                                        } else if ((1 & i15) != 0) {
-                                                                            this.messageText = AndroidUtilities.replaceCharSequence("%2$s", AndroidUtilities.replaceCharSequence("%1$s", LocaleController.getString(R.string.TopicRenamedTo), str4), tL_messageActionTopicEdit.title);
+                                                                        } else if ((1 & i17) != 0) {
+                                                                            this.messageText = AndroidUtilities.replaceCharSequence("%2$s", AndroidUtilities.replaceCharSequence("%1$s", LocaleController.getString(R.string.TopicRenamedTo), str5), tL_messageActionTopicEdit.title);
                                                                             this.messageTextShort = LocaleController.getString(R.string.TopicRenamed);
                                                                             this.messageTextForReply = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.TopicRenamedToInReply), tL_messageActionTopicEdit.title);
                                                                         }
                                                                     } else if (((TLRPC.TL_messageActionTopicEdit) messageAction8).closed) {
-                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.TopicClosed2), "%s", chat3);
+                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.TopicClosed2), "%s", user15);
                                                                         this.messageTextShort = LocaleController.getString(R.string.TopicClosed);
                                                                     } else {
-                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.TopicRestarted2), "%s", chat3);
+                                                                        this.messageText = replaceWithLink(LocaleController.getString(R.string.TopicRestarted2), "%s", user15);
                                                                         this.messageTextShort = LocaleController.getString(R.string.TopicRestarted);
                                                                     }
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionGameScore) {
-                                                                    generateGameMessageText(user9);
+                                                                    generateGameMessageText(user15);
                                                                 } else if (messageAction6 instanceof TLRPC.TL_messageActionConferenceCall) {
                                                                     TLRPC.TL_messageActionConferenceCall tL_messageActionConferenceCall = (TLRPC.TL_messageActionConferenceCall) messageAction6;
                                                                     if (isOutOwner()) {
@@ -6316,9 +6332,9 @@ public class MessageObject {
                                                                     } else {
                                                                         this.messageText = LocaleController.getString(R.string.ConferenceCallIncoming);
                                                                     }
-                                                                    int i17 = tL_messageActionConferenceCall.duration;
-                                                                    if (i17 > 0) {
-                                                                        String formatCallDuration = LocaleController.formatCallDuration(i17);
+                                                                    int i19 = tL_messageActionConferenceCall.duration;
+                                                                    if (i19 > 0) {
+                                                                        String formatCallDuration = LocaleController.formatCallDuration(i19);
                                                                         String formatString = LocaleController.formatString(R.string.CallMessageWithDuration, this.messageText, formatCallDuration);
                                                                         this.messageText = formatString;
                                                                         String charSequence = formatString.toString();
@@ -6368,9 +6384,9 @@ public class MessageObject {
                                                                     } else {
                                                                         this.messageText = LocaleController.getString(R.string.CallMessageIncoming);
                                                                     }
-                                                                    int i18 = tL_messageActionPhoneCall.duration;
-                                                                    if (i18 > 0) {
-                                                                        String formatCallDuration2 = LocaleController.formatCallDuration(i18);
+                                                                    int i20 = tL_messageActionPhoneCall.duration;
+                                                                    if (i20 > 0) {
+                                                                        String formatCallDuration2 = LocaleController.formatCallDuration(i20);
                                                                         String formatString2 = LocaleController.formatString(R.string.CallMessageWithDuration, this.messageText, formatCallDuration2);
                                                                         this.messageText = formatString2;
                                                                         String charSequence2 = formatString2.toString();
@@ -6396,32 +6412,32 @@ public class MessageObject {
                                                                     boolean z8 = messageAction6 instanceof TLRPC.TL_messageActionBotAllowed;
                                                                     if (z8) {
                                                                         TLRPC.TL_messageActionBotAllowed tL_messageActionBotAllowed = (TLRPC.TL_messageActionBotAllowed) messageAction6;
-                                                                        String str16 = tL_messageActionBotAllowed.domain;
+                                                                        String str18 = tL_messageActionBotAllowed.domain;
                                                                         TLRPC.BotApp botApp = tL_messageActionBotAllowed.app;
                                                                         if (tL_messageActionBotAllowed.from_request) {
                                                                             this.messageText = LocaleController.getString(R.string.ActionBotAllowedWebapp);
                                                                         } else if (botApp != null) {
-                                                                            String str17 = botApp.title;
-                                                                            if (str17 == null) {
-                                                                                str17 = str;
+                                                                            String str19 = botApp.title;
+                                                                            if (str19 == null) {
+                                                                                str19 = str2;
                                                                             }
                                                                             String string2 = LocaleController.getString(R.string.ActionBotAllowedApp);
                                                                             int indexOf6 = string2.indexOf("%1$s");
-                                                                            SpannableString spannableString5 = new SpannableString(String.format(string2, str17));
-                                                                            TLRPC.User user15 = getUser(abstractMap, longSparseArray, getDialogId());
-                                                                            if (indexOf6 >= 0 && user15 != null && (publicUsername2 = UserObject.getPublicUsername(user15)) != null) {
-                                                                                spannableString5.setSpan(new URLSpanNoUnderlineBold("https://" + MessagesController.getInstance(this.currentAccount).linkPrefix + "/" + publicUsername2 + "/" + botApp.short_name), indexOf6, str17.length() + indexOf6, 33);
+                                                                            SpannableString spannableString5 = new SpannableString(String.format(string2, str19));
+                                                                            TLRPC.User user16 = getUser(abstractMap, longSparseArray, getDialogId());
+                                                                            if (indexOf6 >= 0 && user16 != null && (publicUsername2 = UserObject.getPublicUsername(user16)) != null) {
+                                                                                spannableString5.setSpan(new URLSpanNoUnderlineBold("https://" + MessagesController.getInstance(this.currentAccount).linkPrefix + "/" + publicUsername2 + "/" + botApp.short_name), indexOf6, str19.length() + indexOf6, 33);
                                                                             }
                                                                             this.messageText = spannableString5;
                                                                         } else {
-                                                                            if (str16 == null) {
-                                                                                str16 = str;
+                                                                            if (str18 == null) {
+                                                                                str18 = str2;
                                                                             }
                                                                             String string3 = LocaleController.getString(R.string.ActionBotAllowed);
                                                                             int indexOf7 = string3.indexOf("%1$s");
-                                                                            SpannableString spannableString6 = new SpannableString(String.format(string3, str16));
-                                                                            if (indexOf7 >= 0 && !TextUtils.isEmpty(str16)) {
-                                                                                spannableString6.setSpan(new URLSpanNoUnderlineBold("http://" + str16), indexOf7, str16.length() + indexOf7, 33);
+                                                                            SpannableString spannableString6 = new SpannableString(String.format(string3, str18));
+                                                                            if (indexOf7 >= 0 && !TextUtils.isEmpty(str18)) {
+                                                                                spannableString6.setSpan(new URLSpanNoUnderlineBold("http://" + str18), indexOf7, str18.length() + indexOf7, 33);
                                                                             }
                                                                             this.messageText = spannableString6;
                                                                         }
@@ -6431,8 +6447,8 @@ public class MessageObject {
                                                                         TLRPC.TL_messageActionSecureValuesSent tL_messageActionSecureValuesSent = (TLRPC.TL_messageActionSecureValuesSent) messageAction6;
                                                                         StringBuilder sb3 = new StringBuilder();
                                                                         int size = tL_messageActionSecureValuesSent.types.size();
-                                                                        for (int i19 = 0; i19 < size; i19++) {
-                                                                            TLRPC.SecureValueType secureValueType = tL_messageActionSecureValuesSent.types.get(i19);
+                                                                        for (int i21 = 0; i21 < size; i21++) {
+                                                                            TLRPC.SecureValueType secureValueType = tL_messageActionSecureValuesSent.types.get(i21);
                                                                             if (sb3.length() > 0) {
                                                                                 sb3.append(str11);
                                                                             }
@@ -6476,12 +6492,12 @@ public class MessageObject {
                                                                             TlUtils.getGiftDocument(((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift);
                                                                             themeEmoticonOrGiftTitle = spannableStringBuilder6;
                                                                         }
-                                                                        String firstName2 = UserObject.getFirstName(user9);
-                                                                        boolean z9 = user9 == null && chat23 != null;
+                                                                        String firstName2 = UserObject.getFirstName(user15);
+                                                                        boolean z9 = user15 == null && chat21 != null;
                                                                         if (z9) {
-                                                                            firstName2 = chat23.title;
+                                                                            firstName2 = chat21.title;
                                                                         }
-                                                                        boolean isUserSelf = UserObject.isUserSelf(user9);
+                                                                        boolean isUserSelf = UserObject.isUserSelf(user15);
                                                                         if (TextUtils.isEmpty(themeEmoticonOrGiftTitle)) {
                                                                             if (isUserSelf) {
                                                                                 formatSpannable2 = LocaleController.formatSpannable(R.string.ChatThemeDisabledYou, new Object[0]);
@@ -6498,7 +6514,7 @@ public class MessageObject {
                                                                             this.messageText = formatSpannable;
                                                                         }
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionChatJoinedByRequest) {
-                                                                        if (UserObject.isUserSelf(user9)) {
+                                                                        if (UserObject.isUserSelf(user15)) {
                                                                             if (ChatObject.isChannelAndNotMegaGroup(this.messageOwner.peer_id.channel_id, this.currentAccount)) {
                                                                                 string = LocaleController.getString(R.string.RequestToJoinChannelApproved);
                                                                             } else {
@@ -6506,25 +6522,25 @@ public class MessageObject {
                                                                             }
                                                                             this.messageText = string;
                                                                         } else {
-                                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.UserAcceptedToGroupAction), "un1", tLObject2);
+                                                                            this.messageText = replaceWithLink(LocaleController.getString(R.string.UserAcceptedToGroupAction), str13, tLObject3);
                                                                         }
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionPaidMessagesPrice) {
                                                                         TLRPC.TL_messageActionPaidMessagesPrice tL_messageActionPaidMessagesPrice = (TLRPC.TL_messageActionPaidMessagesPrice) messageAction6;
-                                                                        if (ChatObject.isChannel(chat23) && chat23 != null && chat23.broadcast) {
+                                                                        if (ChatObject.isChannel(chat21) && chat21 != null && chat21.broadcast) {
                                                                             if ((tL_messageActionPaidMessagesPrice.flags & 1) != 0) {
                                                                                 long j15 = tL_messageActionPaidMessagesPrice.stars;
                                                                                 if (j15 > 0) {
-                                                                                    this.messageText = replaceWithLink(LocaleController.formatPluralStringComma("PostSuggestionsPriceUpdated", (int) j15), "un1", tLObject2);
+                                                                                    this.messageText = replaceWithLink(LocaleController.formatPluralStringComma("PostSuggestionsPriceUpdated", (int) j15), str13, tLObject3);
                                                                                 } else {
-                                                                                    this.messageText = replaceWithLink(LocaleController.getString(R.string.PostSuggestionsEnabledUpdated), "un1", tLObject2);
+                                                                                    this.messageText = replaceWithLink(LocaleController.getString(R.string.PostSuggestionsEnabledUpdated), str13, tLObject3);
                                                                                 }
                                                                             } else {
-                                                                                this.messageText = replaceWithLink(LocaleController.getString(R.string.PostSuggestionsDisabledUpdated), "un1", tLObject2);
+                                                                                this.messageText = replaceWithLink(LocaleController.getString(R.string.PostSuggestionsDisabledUpdated), str13, tLObject3);
                                                                             }
                                                                         } else if (isOutOwner()) {
                                                                             this.messageText = LocaleController.formatPluralStringComma("PaidMessagesPriceUpdatedOut", (int) tL_messageActionPaidMessagesPrice.stars);
                                                                         } else {
-                                                                            this.messageText = replaceWithLink(LocaleController.formatPluralStringComma("PaidMessagesPriceUpdated", (int) tL_messageActionPaidMessagesPrice.stars), "un1", tLObject2);
+                                                                            this.messageText = replaceWithLink(LocaleController.formatPluralStringComma("PaidMessagesPriceUpdated", (int) tL_messageActionPaidMessagesPrice.stars), str13, tLObject3);
                                                                         }
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionPaidMessagesRefunded) {
                                                                         TLRPC.TL_messageActionPaidMessagesRefunded tL_messageActionPaidMessagesRefunded = (TLRPC.TL_messageActionPaidMessagesRefunded) messageAction6;
@@ -6536,9 +6552,9 @@ public class MessageObject {
                                                                             } else {
                                                                                 user2 = getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(message5.peer_id));
                                                                             }
-                                                                            this.messageText = replaceWithLink(LocaleController.formatPluralStringComma("PaidMessagesRefundedOut", (int) tL_messageActionPaidMessagesRefunded.stars), "un1", user2);
+                                                                            this.messageText = replaceWithLink(LocaleController.formatPluralStringComma("PaidMessagesRefundedOut", (int) tL_messageActionPaidMessagesRefunded.stars), str13, user2);
                                                                         } else {
-                                                                            this.messageText = replaceWithLink(LocaleController.formatPluralStringComma("PaidMessagesRefunded", (int) tL_messageActionPaidMessagesRefunded.stars), "un1", tLObject2);
+                                                                            this.messageText = replaceWithLink(LocaleController.formatPluralStringComma("PaidMessagesRefunded", (int) tL_messageActionPaidMessagesRefunded.stars), str13, tLObject3);
                                                                         }
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionTodoCompletions) {
                                                                         TLRPC.TL_messageActionTodoCompletions tL_messageActionTodoCompletions = (TLRPC.TL_messageActionTodoCompletions) messageAction6;
@@ -6547,8 +6563,8 @@ public class MessageObject {
                                                                         MessageObject messageObject = this.replyMessageObject;
                                                                         if (messageObject != null && (getMedia(messageObject.messageOwner) instanceof TLRPC.TL_messageMediaToDo)) {
                                                                             TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) getMedia(this.replyMessageObject.messageOwner);
-                                                                            for (int i20 = 0; i20 < tL_messageMediaToDo.todo.list.size(); i20++) {
-                                                                                TLRPC.TodoItem todoItem2 = tL_messageMediaToDo.todo.list.get(i20);
+                                                                            for (int i22 = 0; i22 < tL_messageMediaToDo.todo.list.size(); i22++) {
+                                                                                TLRPC.TodoItem todoItem2 = tL_messageMediaToDo.todo.list.get(i22);
                                                                                 if (todoItem2.id == intValue) {
                                                                                     todoItem = todoItem2;
                                                                                     break;
@@ -6560,7 +6576,7 @@ public class MessageObject {
                                                                             if (isOutOwner()) {
                                                                                 this.messageText = LocaleController.getString(!isEmpty ? R.string.TodoTaskCompletedOutUnknown : R.string.TodoTaskNotCompletedOutUnknown);
                                                                             } else {
-                                                                                this.messageText = replaceWithLink(LocaleController.getString(!isEmpty ? R.string.TodoTaskCompletedUnknown : R.string.TodoTaskNotCompletedUnknown), "un1", tLObject2);
+                                                                                this.messageText = replaceWithLink(LocaleController.getString(!isEmpty ? R.string.TodoTaskCompletedUnknown : R.string.TodoTaskNotCompletedUnknown), str13, tLObject3);
                                                                             }
                                                                         } else {
                                                                             Theme.createCommonChatResources();
@@ -6568,7 +6584,7 @@ public class MessageObject {
                                                                             if (isOutOwner()) {
                                                                                 this.messageText = LocaleController.formatSpannable(!isEmpty ? R.string.TodoTaskCompletedOut : R.string.TodoTaskNotCompletedOut, formatTaskTitle);
                                                                             } else {
-                                                                                this.messageText = replaceWithLink(LocaleController.formatSpannable(!isEmpty ? R.string.TodoTaskCompleted : R.string.TodoTaskNotCompleted, formatTaskTitle), "un1", tLObject2);
+                                                                                this.messageText = replaceWithLink(LocaleController.formatSpannable(!isEmpty ? R.string.TodoTaskCompleted : R.string.TodoTaskNotCompleted, formatTaskTitle), str13, tLObject3);
                                                                             }
                                                                         }
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionTodoAppendTasks) {
@@ -6584,46 +6600,72 @@ public class MessageObject {
                                                                                 this.messageText = LocaleController.formatPluralSpannable("TodoAddedMoreTasksOut", tL_messageActionTodoAppendTasks.list.size() - 3, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(2)));
                                                                             }
                                                                         } else if (tL_messageActionTodoAppendTasks.list.size() == 1) {
-                                                                            this.messageText = replaceWithLink(LocaleController.formatSpannable(R.string.TodoAddedOneTask, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0))), "un1", tLObject2);
+                                                                            this.messageText = replaceWithLink(LocaleController.formatSpannable(R.string.TodoAddedOneTask, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0))), str13, tLObject3);
                                                                         } else if (tL_messageActionTodoAppendTasks.list.size() == 2) {
-                                                                            this.messageText = replaceWithLink(LocaleController.formatSpannable(R.string.TodoAddedTwoTask, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1))), "un1", tLObject2);
+                                                                            this.messageText = replaceWithLink(LocaleController.formatSpannable(R.string.TodoAddedTwoTask, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1))), str13, tLObject3);
                                                                         } else if (tL_messageActionTodoAppendTasks.list.size() == 3) {
-                                                                            this.messageText = replaceWithLink(LocaleController.formatSpannable(R.string.TodoAddedThreeTask, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(2))), "un1", tLObject2);
+                                                                            this.messageText = replaceWithLink(LocaleController.formatSpannable(R.string.TodoAddedThreeTask, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(2))), str13, tLObject3);
                                                                         } else if (tL_messageActionTodoAppendTasks.list.size() >= 4) {
-                                                                            this.messageText = replaceWithLink(LocaleController.formatPluralSpannable("TodoAddedMoreTasks", tL_messageActionTodoAppendTasks.list.size() - 3, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(2))), "un1", tLObject2);
+                                                                            this.messageText = replaceWithLink(LocaleController.formatPluralSpannable("TodoAddedMoreTasks", tL_messageActionTodoAppendTasks.list.size() - 3, formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(0)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(1)), formatTaskTitle(tL_messageActionTodoAppendTasks.list.get(2))), str13, tLObject3);
                                                                         }
                                                                     } else if (messageAction6 instanceof TLRPC.TL_messageActionSuggestedPostApproval) {
                                                                         String monoForumTitle2 = ForumUtilities.getMonoForumTitle(this.currentAccount, DialogObject.getPeerDialogId(message4.peer_id), true);
                                                                         if (monoForumTitle2 == null) {
-                                                                            TLRPC.Chat chat27 = getChat(abstractMap2, longSparseArray2, -DialogObject.getPeerDialogId(this.messageOwner.peer_id));
-                                                                            if (chat27 != null) {
-                                                                                long j16 = chat27.linked_monoforum_id;
+                                                                            TLRPC.Chat chat25 = getChat(abstractMap2, longSparseArray2, -DialogObject.getPeerDialogId(this.messageOwner.peer_id));
+                                                                            if (chat25 != null) {
+                                                                                long j16 = chat25.linked_monoforum_id;
                                                                                 if (j16 != 0 && (chat2 = getChat(abstractMap2, longSparseArray2, j16)) != null) {
-                                                                                    chat27 = chat2;
+                                                                                    chat25 = chat2;
                                                                                 }
                                                                             }
-                                                                            monoForumTitle2 = DialogObject.getDialogTitle(chat27);
+                                                                            monoForumTitle2 = DialogObject.getDialogTitle(chat25);
                                                                         }
                                                                         this.messageText = getActionSuggestionApprovalText(monoForumTitle2, DialogObject.getName(getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(this.messageOwner.saved_peer_id))));
+                                                                    } else if (messageAction6 instanceof TLRPC.TL_messageActionStarGiftPurchaseOffer) {
+                                                                        TLRPC.TL_messageActionStarGiftPurchaseOffer tL_messageActionStarGiftPurchaseOffer = (TLRPC.TL_messageActionStarGiftPurchaseOffer) messageAction6;
+                                                                        AmountUtils$Amount ofSafe2 = AmountUtils$Amount.ofSafe(tL_messageActionStarGiftPurchaseOffer.price);
+                                                                        String str20 = tL_messageActionStarGiftPurchaseOffer.gift.title + " #" + LocaleController.formatNumber(tL_messageActionStarGiftPurchaseOffer.gift.num, ',');
+                                                                        String shortName = DialogObject.getShortName(getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(this.messageOwner.peer_id)));
+                                                                        SpannableStringBuilder spannableStringBuilder7 = new SpannableStringBuilder();
+                                                                        if (ofSafe2.currency == AmountUtils$Currency.STARS) {
+                                                                            i2 = isOut() ? R.string.GiftOfferOfferedTextStarsOut : R.string.GiftOfferOfferedTextStars;
+                                                                        } else {
+                                                                            i2 = isOut() ? R.string.GiftOfferOfferedTextTONOut : R.string.GiftOfferOfferedTextTON;
+                                                                        }
+                                                                        spannableStringBuilder7.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i2, shortName, ofSafe2.asFormatString(), str20)));
+                                                                        this.messageText = spannableStringBuilder7;
+                                                                    } else if (messageAction6 instanceof TLRPC.TL_messageActionStarGiftPurchaseOfferDeclined) {
+                                                                        TLRPC.TL_messageActionStarGiftPurchaseOfferDeclined tL_messageActionStarGiftPurchaseOfferDeclined = (TLRPC.TL_messageActionStarGiftPurchaseOfferDeclined) messageAction6;
+                                                                        AmountUtils$Amount ofSafe3 = AmountUtils$Amount.ofSafe(tL_messageActionStarGiftPurchaseOfferDeclined.price);
+                                                                        String str21 = tL_messageActionStarGiftPurchaseOfferDeclined.gift.title + " #" + LocaleController.formatNumber(tL_messageActionStarGiftPurchaseOfferDeclined.gift.num, ',');
+                                                                        String shortName2 = DialogObject.getShortName(getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(this.messageOwner.peer_id)));
+                                                                        String asFormatString = ofSafe3.asFormatString();
+                                                                        if (ofSafe3.currency == AmountUtils$Currency.STARS) {
+                                                                            i = isOut() ? R.string.GiftOfferOfferedTextStarsRejectedOut : R.string.GiftOfferOfferedTextStarsRejected;
+                                                                        } else {
+                                                                            i = isOut() ? R.string.GiftOfferOfferedTextTONRejectedOut : R.string.GiftOfferOfferedTextTONRejected;
+                                                                        }
+                                                                        this.messageText = AndroidUtilities.replaceTags(LocaleController.formatString(i, shortName2, asFormatString, str21));
                                                                     }
                                                                 }
                                                             }
                                                         }
                                                     }
-                                                    str = str2;
                                                 }
+                                                str2 = str3;
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                        str = str10;
+                        str2 = str10;
+                    } else {
+                        str2 = "";
                     }
-                    str = str9;
                 } else {
-                    TLRPC.Chat chat28 = chat;
-                    str = "";
+                    str2 = "";
+                    TLRPC.Chat chat26 = chat;
                     this.isRestrictedMessage = false;
                     String restrictionReason = MessagesController.getInstance(this.currentAccount).getRestrictionReason(this.messageOwner.restriction_reason);
                     if (!TextUtils.isEmpty(restrictionReason)) {
@@ -6639,20 +6681,20 @@ public class MessageObject {
                                     this.messageText = LocaleController.getString(!isChannelAndNotMegaGroup ? R.string.BoostingGiveawayChannelStarted : R.string.BoostingGiveawayGroupStarted);
                                 }
                             }
-                            isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat28);
+                            isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat26);
                             this.messageText = LocaleController.getString(!isChannelAndNotMegaGroup ? R.string.BoostingGiveawayChannelStarted : R.string.BoostingGiveawayGroupStarted);
                         } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGiveawayResults) {
                             this.messageText = LocaleController.getString(R.string.BoostingGiveawayResults);
                         } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaStory) {
                             if (getMedia(this.messageOwner).via_mention) {
-                                TLRPC.User user16 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(getMedia(this.messageOwner).user_id));
-                                String str18 = (user16 == null || (publicUsername = UserObject.getPublicUsername(user16)) == null) ? null : MessagesController.getInstance(this.currentAccount).linkPrefix + "/" + publicUsername + "/s/" + getMedia(this.messageOwner).id;
-                                if (str18 != null) {
-                                    SpannableString spannableString7 = new SpannableString(str18);
+                                TLRPC.User user17 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(getMedia(this.messageOwner).user_id));
+                                String str22 = (user17 == null || (publicUsername = UserObject.getPublicUsername(user17)) == null) ? null : MessagesController.getInstance(this.currentAccount).linkPrefix + "/" + publicUsername + "/s/" + getMedia(this.messageOwner).id;
+                                if (str22 != null) {
+                                    SpannableString spannableString7 = new SpannableString(str22);
                                     this.messageText = spannableString7;
-                                    spannableString7.setSpan(new URLSpanReplacement("https://" + str18, new TextStyleSpan.TextStyleRun()), 0, this.messageText.length(), 33);
+                                    spannableString7.setSpan(new URLSpanReplacement("https://" + str22, new TextStyleSpan.TextStyleRun()), 0, this.messageText.length(), 33);
                                 } else {
-                                    this.messageText = str;
+                                    this.messageText = str2;
                                 }
                             } else {
                                 this.messageText = LocaleController.getString(R.string.ForwardedStory);
@@ -6681,8 +6723,8 @@ public class MessageObject {
                             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = (TLRPC.TL_messageMediaPaidMedia) getMedia(this.messageOwner);
                             int size2 = tL_messageMediaPaidMedia.extended_media.size();
                             boolean z10 = false;
-                            for (int i21 = 0; i21 < size2; i21++) {
-                                TLRPC.MessageExtendedMedia messageExtendedMedia = tL_messageMediaPaidMedia.extended_media.get(i21);
+                            for (int i23 = 0; i23 < size2; i23++) {
+                                TLRPC.MessageExtendedMedia messageExtendedMedia = tL_messageMediaPaidMedia.extended_media.get(i23);
                                 if (messageExtendedMedia instanceof TLRPC.TL_messageExtendedMedia) {
                                     TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
                                     z10 = (messageMedia instanceof TLRPC.TL_messageMediaDocument) && isVideoDocument(messageMedia.document);
@@ -6696,15 +6738,14 @@ public class MessageObject {
                                 formatPluralString = LocaleController.getString(z10 ? R.string.AttachVideo : R.string.AttachPhoto);
                                 c = 0;
                             } else {
-                                String str19 = z10 ? "Media" : "Photos";
                                 c = 0;
-                                formatPluralString = LocaleController.formatPluralString(str19, size2, new Object[0]);
+                                formatPluralString = LocaleController.formatPluralString(z10 ? "Media" : "Photos", size2, new Object[0]);
                             }
                             this.messageText = formatPluralString;
-                            int i22 = R.string.AttachPaidMedia;
+                            int i24 = R.string.AttachPaidMedia;
                             Object[] objArr = new Object[1];
                             objArr[c] = formatPluralString;
-                            this.messageText = StarsIntroActivity.replaceStars(LocaleController.formatString(i22, objArr));
+                            this.messageText = StarsIntroActivity.replaceStars(LocaleController.formatString(i24, objArr));
                         } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto) {
                             if (getMedia(this.messageOwner).ttl_seconds != 0 && !(this.messageOwner instanceof TLRPC.TL_message_secret)) {
                                 this.messageText = LocaleController.getString(R.string.AttachDestructingPhoto);
@@ -6768,10 +6809,10 @@ public class MessageObject {
                             }
                         }
                     } else {
-                        String str20 = this.messageOwner.message;
-                        if (str20 != null) {
+                        String str23 = this.messageOwner.message;
+                        if (str23 != null) {
                             try {
-                                if (str20.length() > 200) {
+                                if (str23.length() > 200) {
                                     this.messageText = AndroidUtilities.BAD_CHARS_MESSAGE_LONG_PATTERN.matcher(this.messageOwner.message).replaceAll("\u200c");
                                 } else {
                                     this.messageText = AndroidUtilities.BAD_CHARS_MESSAGE_PATTERN.matcher(this.messageOwner.message).replaceAll("\u200c");
@@ -6780,12 +6821,12 @@ public class MessageObject {
                                 this.messageText = this.messageOwner.message;
                             }
                         } else {
-                            this.messageText = str20;
+                            this.messageText = str23;
                         }
                     }
                 }
                 if (this.messageText == null) {
-                    this.messageText = str;
+                    this.messageText = str2;
                 }
                 this.isEmbedVideoCached = null;
                 this.cachedStartsTimestamp = null;
@@ -6799,7 +6840,6 @@ public class MessageObject {
         this.drawServiceWithDefaultTypeface = false;
         this.channelJoined = false;
         message = this.messageOwner;
-        String str92 = "";
         if (!(message instanceof TLRPC.TL_messageService)) {
         }
         if (this.messageText == null) {
@@ -7234,6 +7274,12 @@ public class MessageObject {
                             this.type = 16;
                         } else if ((messageAction instanceof TLRPC.TL_messageActionSetChatTheme) && (((TLRPC.TL_messageActionSetChatTheme) messageAction).theme instanceof TLRPC.TL_chatThemeUniqueGift)) {
                             this.type = 31;
+                            this.contentType = 1;
+                        } else if (messageAction instanceof TLRPC.TL_messageActionStarGiftPurchaseOffer) {
+                            this.type = 33;
+                            this.contentType = 1;
+                        } else if (messageAction instanceof TLRPC.TL_messageActionStarGiftPurchaseOfferDeclined) {
+                            this.type = 34;
                             this.contentType = 1;
                         } else if (messageAction instanceof TLRPC.TL_messageActionSuggestBirthday) {
                             this.type = 32;
@@ -7945,7 +7991,7 @@ public class MessageObject {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0113  */
     /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -8025,6 +8071,7 @@ public class MessageObject {
 
     public CharSequence getVoiceTranscription() {
         String str;
+        TLRPC.TL_textWithEntities tL_textWithEntities;
         TLRPC.Message message = this.messageOwner;
         if (message == null || (str = message.voiceTranscription) == null) {
             return null;
@@ -8040,7 +8087,7 @@ public class MessageObject {
             }, 0, spannableString.length(), 33);
             return spannableString;
         }
-        String str2 = this.messageOwner.voiceTranscription;
+        String str2 = (!this.translated || (tL_textWithEntities = this.messageOwner.translatedVoiceTranscription) == null) ? this.messageOwner.voiceTranscription : tL_textWithEntities.text;
         return !TextUtils.isEmpty(str2) ? Emoji.replaceEmoji(str2, Theme.chat_msgTextPaint.getFontMetricsInt(), false) : str2;
     }
 
@@ -8086,7 +8133,7 @@ public class MessageObject {
         TLRPC.TL_textWithEntities tL_textWithEntities;
         TL_stories.StoryItem storyItem;
         if (this.caption != null) {
-            if ((this.messageOwner.translatedText != null && this.translated) == this.captionTranslated) {
+            if ((this.translated && this.messageOwner.translatedText != null) == this.captionTranslated) {
                 return;
             }
         }
@@ -8155,12 +8202,12 @@ public class MessageObject {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:100:0x01f5  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x022a  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0249  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x01e2 A[Catch: Exception -> 0x001e, TryCatch #0 {Exception -> 0x001e, blocks: (B:10:0x0011, B:12:0x0015, B:13:0x0021, B:14:0x004d, B:17:0x0052, B:18:0x0056, B:22:0x0060, B:25:0x0071, B:29:0x0081, B:30:0x0083, B:40:0x00a3, B:46:0x022c, B:48:0x0236, B:50:0x0239, B:51:0x023f, B:56:0x00ca, B:59:0x00ef, B:60:0x0110, B:61:0x0131, B:64:0x0139, B:66:0x0152, B:68:0x015e, B:69:0x0167, B:75:0x009d, B:77:0x0171, B:80:0x01b2, B:84:0x01c5, B:89:0x01d8, B:91:0x01e2, B:94:0x01e7, B:96:0x01ec, B:102:0x01f8, B:103:0x0226, B:104:0x0210, B:113:0x0028, B:115:0x002c, B:116:0x0034, B:117:0x003b, B:119:0x003f, B:120:0x0047), top: B:6:0x000a }] */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x01ec A[Catch: Exception -> 0x001e, TryCatch #0 {Exception -> 0x001e, blocks: (B:10:0x0011, B:12:0x0015, B:13:0x0021, B:14:0x004d, B:17:0x0052, B:18:0x0056, B:22:0x0060, B:25:0x0071, B:29:0x0081, B:30:0x0083, B:40:0x00a3, B:46:0x022c, B:48:0x0236, B:50:0x0239, B:51:0x023f, B:56:0x00ca, B:59:0x00ef, B:60:0x0110, B:61:0x0131, B:64:0x0139, B:66:0x0152, B:68:0x015e, B:69:0x0167, B:75:0x009d, B:77:0x0171, B:80:0x01b2, B:84:0x01c5, B:89:0x01d8, B:91:0x01e2, B:94:0x01e7, B:96:0x01ec, B:102:0x01f8, B:103:0x0226, B:104:0x0210, B:113:0x0028, B:115:0x002c, B:116:0x0034, B:117:0x003b, B:119:0x003f, B:120:0x0047), top: B:6:0x000a }] */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x01f3  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x01f4  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0247  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x01e1 A[Catch: Exception -> 0x001e, TryCatch #0 {Exception -> 0x001e, blocks: (B:10:0x0011, B:12:0x0015, B:13:0x0021, B:14:0x004d, B:17:0x0052, B:18:0x0056, B:22:0x0060, B:25:0x0071, B:29:0x0081, B:30:0x0083, B:40:0x00a3, B:46:0x022a, B:48:0x0234, B:50:0x0237, B:51:0x023d, B:56:0x00ca, B:59:0x00ef, B:60:0x0110, B:61:0x0131, B:64:0x0139, B:66:0x0152, B:68:0x015e, B:69:0x0166, B:75:0x009d, B:77:0x0170, B:80:0x01b1, B:84:0x01c4, B:89:0x01d7, B:91:0x01e1, B:94:0x01e6, B:96:0x01eb, B:102:0x01f7, B:103:0x0224, B:104:0x020e, B:113:0x0028, B:115:0x002c, B:116:0x0034, B:117:0x003b, B:119:0x003f, B:120:0x0047), top: B:6:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x01eb A[Catch: Exception -> 0x001e, TryCatch #0 {Exception -> 0x001e, blocks: (B:10:0x0011, B:12:0x0015, B:13:0x0021, B:14:0x004d, B:17:0x0052, B:18:0x0056, B:22:0x0060, B:25:0x0071, B:29:0x0081, B:30:0x0083, B:40:0x00a3, B:46:0x022a, B:48:0x0234, B:50:0x0237, B:51:0x023d, B:56:0x00ca, B:59:0x00ef, B:60:0x0110, B:61:0x0131, B:64:0x0139, B:66:0x0152, B:68:0x015e, B:69:0x0166, B:75:0x009d, B:77:0x0170, B:80:0x01b1, B:84:0x01c4, B:89:0x01d7, B:91:0x01e1, B:94:0x01e6, B:96:0x01eb, B:102:0x01f7, B:103:0x0224, B:104:0x020e, B:113:0x0028, B:115:0x002c, B:116:0x0034, B:117:0x003b, B:119:0x003f, B:120:0x0047), top: B:6:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x01f2  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8440,25 +8487,18 @@ public class MessageObject {
     }
 
     public boolean addEntitiesToText(CharSequence charSequence, boolean z, boolean z2) {
-        ArrayList<TLRPC.MessageEntity> arrayList;
         if (charSequence == null) {
             return false;
         }
         if (this.isRestrictedMessage || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaUnsupported)) {
-            ArrayList arrayList2 = new ArrayList();
+            ArrayList arrayList = new ArrayList();
             TLRPC.TL_messageEntityItalic tL_messageEntityItalic = new TLRPC.TL_messageEntityItalic();
             tL_messageEntityItalic.offset = 0;
             tL_messageEntityItalic.length = charSequence.length();
-            arrayList2.add(tL_messageEntityItalic);
-            return addEntitiesToText(charSequence, arrayList2, isOutOwner(), true, z, z2);
+            arrayList.add(tL_messageEntityItalic);
+            return addEntitiesToText(charSequence, arrayList, isOutOwner(), true, z, z2);
         }
-        if (this.translated) {
-            TLRPC.TL_textWithEntities tL_textWithEntities = this.messageOwner.translatedText;
-            arrayList = tL_textWithEntities == null ? null : tL_textWithEntities.entities;
-        } else {
-            arrayList = this.messageOwner.entities;
-        }
-        return addEntitiesToText(charSequence, arrayList, isOutOwner(), true, z, z2);
+        return addEntitiesToText(charSequence, getEntities(), isOutOwner(), true, z, z2);
     }
 
     public void replaceEmojiToLottieFrame(CharSequence charSequence, int[] iArr) {
@@ -8494,9 +8534,30 @@ public class MessageObject {
         }
     }
 
+    public ArrayList<TLRPC.MessageEntity> getEntities() {
+        TLRPC.Message message = this.messageOwner;
+        if (message == null) {
+            return null;
+        }
+        if (this.translated) {
+            if (message.voiceTranscriptionOpen) {
+                TLRPC.TL_textWithEntities tL_textWithEntities = message.translatedVoiceTranscription;
+                if (tL_textWithEntities != null) {
+                    return tL_textWithEntities.entities;
+                }
+                return null;
+            }
+            TLRPC.TL_textWithEntities tL_textWithEntities2 = message.translatedText;
+            if (tL_textWithEntities2 != null) {
+                return tL_textWithEntities2.entities;
+            }
+            return null;
+        }
+        return message.entities;
+    }
+
     public Spannable replaceAnimatedEmoji(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt) {
-        TLRPC.TL_textWithEntities tL_textWithEntities;
-        return replaceAnimatedEmoji(charSequence, (!this.translated || (tL_textWithEntities = this.messageOwner.translatedText) == null) ? this.messageOwner.entities : tL_textWithEntities.entities, fontMetricsInt, false);
+        return replaceAnimatedEmoji(charSequence, getEntities(), fontMetricsInt, false);
     }
 
     public static Spannable replaceAnimatedEmoji(CharSequence charSequence, ArrayList<TLRPC.MessageEntity> arrayList, Paint.FontMetricsInt fontMetricsInt) {
@@ -8562,8 +8623,8 @@ public class MessageObject {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x0245 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x04a6  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x04c3 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x04a3  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x04c0 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:68:0x0191  */
     /* JADX WARN: Removed duplicated region for block: B:97:0x0242  */
     /*
@@ -9082,7 +9143,7 @@ public class MessageObject {
         return z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0130  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x012f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -9193,24 +9254,22 @@ public class MessageObject {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0060, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0053, code lost:
     
-        if (r9.messageOwner.send_state == 0) goto L35;
+        if (r8.messageOwner.send_state == 0) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0066, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0059, code lost:
     
-        if (r9.messageOwner.id >= 0) goto L38;
+        if (r8.messageOwner.id >= 0) goto L32;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private boolean applyEntities() {
-        TLRPC.TL_textWithEntities tL_textWithEntities;
         generateLinkDescription();
-        ArrayList<TLRPC.MessageEntity> arrayList = (!this.translated || (tL_textWithEntities = this.messageOwner.translatedText) == null) ? this.messageOwner.entities : tL_textWithEntities.entities;
         spoilLoginCode();
         boolean z = false;
-        if (!(this.messageOwner.send_state != 0 ? false : !arrayList.isEmpty())) {
+        if (!(this.messageOwner.send_state != 0 ? false : !getEntities().isEmpty())) {
             if (this.eventId == 0) {
                 TLRPC.Message message = this.messageOwner;
                 if (!(message instanceof TLRPC.TL_message_old)) {
@@ -9301,55 +9360,55 @@ public class MessageObject {
 
     /* JADX WARN: Can't wrap try/catch for region: R(16:265|266|267|268|269|(1:271)(11:300|(1:302)|273|274|275|(1:277)|278|(2:280|(3:282|(5:285|286|(1:291)|288|289)|290))(1:297)|296|(1:295)(5:285|286|(0)|288|289)|290)|272|273|274|275|(0)|278|(0)(0)|296|(0)(0)|290) */
     /* JADX WARN: Can't wrap try/catch for region: R(48:144|(1:146)|147|(1:149)(1:416)|150|(1:152)(1:415)|153|(1:155)|(1:157)|(1:414)(1:162)|163|(1:413)(1:170)|171|(2:173|(2:(1:396)|397)(1:176))(2:398|(7:400|(1:402)(1:412)|403|(1:405)(1:411)|406|(1:408)(1:410)|409))|177|(3:179|(1:181)(1:(1:392)(1:393))|182)(1:394)|183|(1:185)(2:387|(1:389)(1:390))|186|(5:188|(1:363)(8:194|(1:196)(1:362)|197|198|(1:200)(1:361)|201|(1:203)(1:360)|204)|205|(2:207|(2:209|(2:211|(1:213))(1:214))(1:215))|216)(3:364|(2:366|367)(8:368|369|370|(1:381)(1:374)|375|376|(1:378)(1:380)|379)|329)|217|218|219|220|(2:224|225)|356|231|232|233|(1:235)(17:350|(1:352)|237|(1:239)|240|(1:242)|243|(3:245|(7:247|248|249|250|251|253|254)|260)|261|(6:263|(16:265|266|267|268|269|(1:271)(11:300|(1:302)|273|274|275|(1:277)|278|(2:280|(3:282|(5:285|286|(1:291)|288|289)|290))(1:297)|296|(1:295)(5:285|286|(0)|288|289)|290)|272|273|274|275|(0)|278|(0)(0)|296|(0)(0)|290)|305|306|(2:(1:309)|310)(1:(1:336))|311)(3:337|(5:339|(1:341)(1:348)|342|(1:344)(1:347)|345)(1:349)|346)|312|(3:314|(1:316)(1:318)|317)|319|(1:334)(3:323|(1:325)(3:330|(1:332)|333)|326)|327|328|329)|236|237|(0)|240|(0)|243|(0)|261|(0)(0)|312|(0)|319|(1:321)|334|327|328|329|142) */
-    /* JADX WARN: Code restructure failed: missing block: B:299:0x0612, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:299:0x0611, code lost:
     
         r13 = 0.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:354:0x0566, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:354:0x0565, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:355:0x0567, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:355:0x0566, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
         r0 = 0.0f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:358:0x0553, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:358:0x0552, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:359:0x0554, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:359:0x0553, code lost:
     
         r11 = 0.0f;
      */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0218  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0236  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0240 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0247  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x025b  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x02f5  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x056f  */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x058e  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x0593  */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x05ad  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x05d5  */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x061b  */
-    /* JADX WARN: Removed duplicated region for block: B:280:0x0622  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x064c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x0657 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x0657 A[ADDED_TO_REGION, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x0637  */
-    /* JADX WARN: Removed duplicated region for block: B:314:0x06f0  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x071e  */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x06a6  */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x0578  */
-    /* JADX WARN: Removed duplicated region for block: B:420:0x0770  */
-    /* JADX WARN: Removed duplicated region for block: B:435:0x026d  */
-    /* JADX WARN: Removed duplicated region for block: B:449:0x02b7  */
-    /* JADX WARN: Removed duplicated region for block: B:452:0x02ba  */
-    /* JADX WARN: Removed duplicated region for block: B:460:0x0249  */
-    /* JADX WARN: Removed duplicated region for block: B:462:0x0238  */
-    /* JADX WARN: Removed duplicated region for block: B:463:0x0220  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0217  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x0235  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x023f A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0246  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x02f4  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x056e  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x058d  */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x0592  */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x05ac  */
+    /* JADX WARN: Removed duplicated region for block: B:263:0x05d4  */
+    /* JADX WARN: Removed duplicated region for block: B:277:0x061a  */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x0621  */
+    /* JADX WARN: Removed duplicated region for block: B:284:0x064b A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x0656 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:295:0x0656 A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x0636  */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x06ef  */
+    /* JADX WARN: Removed duplicated region for block: B:321:0x071d  */
+    /* JADX WARN: Removed duplicated region for block: B:337:0x06a5  */
+    /* JADX WARN: Removed duplicated region for block: B:350:0x0577  */
+    /* JADX WARN: Removed duplicated region for block: B:420:0x076f  */
+    /* JADX WARN: Removed duplicated region for block: B:435:0x026c  */
+    /* JADX WARN: Removed duplicated region for block: B:449:0x02b6  */
+    /* JADX WARN: Removed duplicated region for block: B:452:0x02b9  */
+    /* JADX WARN: Removed duplicated region for block: B:460:0x0248  */
+    /* JADX WARN: Removed duplicated region for block: B:462:0x0237  */
+    /* JADX WARN: Removed duplicated region for block: B:463:0x021f  */
     /* JADX WARN: Removed duplicated region for block: B:468:0x0136  */
     /* JADX WARN: Removed duplicated region for block: B:469:0x012d  */
     /* JADX WARN: Removed duplicated region for block: B:473:0x011e  */
@@ -10156,49 +10215,49 @@ public class MessageObject {
 
         /* JADX WARN: Can't wrap try/catch for region: R(14:210|(3:211|212|213)|214|(1:216)(11:245|(1:247)|218|219|220|(1:222)|223|(2:225|(3:227|(5:230|231|(1:236)|233|234)|235))(1:242)|241|(1:240)(5:230|231|(0)|233|234)|235)|217|218|219|220|(0)|223|(0)(0)|241|(0)(0)|235) */
         /* JADX WARN: Can't wrap try/catch for region: R(43:117|(1:119)|120|(1:122)(1:354)|123|(1:125)(1:353)|126|(1:128)|(1:130)|(1:352)(1:135)|136|(2:138|(2:(1:335)|336)(1:141))(2:337|(7:339|(1:341)(1:351)|342|(1:344)(1:350)|345|(1:347)(1:349)|348))|142|(3:144|(1:146)(2:329|(1:331)(1:332))|147)(1:333)|148|(1:150)(1:(1:327)(1:328))|151|(3:153|(1:306)(4:159|(1:161)(1:305)|162|163)|164)(3:307|(2:309|310)(6:311|312|313|(1:320)(1:317)|318|319)|276)|165|(1:171)|172|173|174|(1:178)|179|180|181|182|(1:184)|185|(1:187)|188|(3:190|(7:192|193|194|195|196|198|199)|205)|206|(6:208|(16:210|211|212|213|214|(1:216)(11:245|(1:247)|218|219|220|(1:222)|223|(2:225|(3:227|(5:230|231|(1:236)|233|234)|235))(1:242)|241|(1:240)(5:230|231|(0)|233|234)|235)|217|218|219|220|(0)|223|(0)(0)|241|(0)(0)|235)|250|251|(2:(1:254)|255)(1:(1:283))|256)(3:284|(5:286|(1:288)(1:295)|289|(1:291)(1:294)|292)(1:296)|293)|257|(3:259|(1:261)(1:263)|262)|264|(1:281)(3:270|(1:272)(3:277|(1:279)|280)|273)|274|275|276|115) */
-        /* JADX WARN: Code restructure failed: missing block: B:244:0x0558, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:244:0x0557, code lost:
         
             r2 = 0.0f;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:298:0x04c8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:298:0x04c7, code lost:
         
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:299:0x04c9, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:299:0x04c8, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
             r0 = 0.0f;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:301:0x04b2, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:301:0x04b1, code lost:
         
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:302:0x04b6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:302:0x04b5, code lost:
         
             if (r8 == 0) goto L247;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:303:0x04b8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:303:0x04b7, code lost:
         
             r31.textXOffset = 0.0f;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:304:0x04bb, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:304:0x04ba, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
             r12 = 0.0f;
          */
-        /* JADX WARN: Removed duplicated region for block: B:100:0x01d8  */
-        /* JADX WARN: Removed duplicated region for block: B:103:0x01f8  */
-        /* JADX WARN: Removed duplicated region for block: B:106:0x01ff  */
-        /* JADX WARN: Removed duplicated region for block: B:117:0x0271  */
-        /* JADX WARN: Removed duplicated region for block: B:222:0x0561  */
-        /* JADX WARN: Removed duplicated region for block: B:225:0x0568  */
-        /* JADX WARN: Removed duplicated region for block: B:229:0x0592 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:236:0x059d A[SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:240:0x059d A[ADDED_TO_REGION, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:242:0x057d  */
-        /* JADX WARN: Removed duplicated region for block: B:370:0x0201  */
-        /* JADX WARN: Removed duplicated region for block: B:371:0x01fa  */
-        /* JADX WARN: Removed duplicated region for block: B:372:0x01df  */
+        /* JADX WARN: Removed duplicated region for block: B:100:0x01d7  */
+        /* JADX WARN: Removed duplicated region for block: B:103:0x01f7  */
+        /* JADX WARN: Removed duplicated region for block: B:106:0x01fe  */
+        /* JADX WARN: Removed duplicated region for block: B:117:0x0270  */
+        /* JADX WARN: Removed duplicated region for block: B:222:0x0560  */
+        /* JADX WARN: Removed duplicated region for block: B:225:0x0567  */
+        /* JADX WARN: Removed duplicated region for block: B:229:0x0591 A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:236:0x059c A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:240:0x059c A[ADDED_TO_REGION, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:242:0x057c  */
+        /* JADX WARN: Removed duplicated region for block: B:370:0x0200  */
+        /* JADX WARN: Removed duplicated region for block: B:371:0x01f9  */
+        /* JADX WARN: Removed duplicated region for block: B:372:0x01de  */
         /* JADX WARN: Removed duplicated region for block: B:57:0x0107  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -12186,7 +12245,7 @@ public class MessageObject {
         if (i3 == 14) {
             return AndroidUtilities.dp(82.0f);
         }
-        if (i3 == 10) {
+        if (i3 == 10 || i3 == 33 || i3 == 34) {
             return AndroidUtilities.dp(30.0f);
         }
         if (i3 == 11 || i3 == 18 || i3 == 31 || i3 == 30 || i3 == 25 || i3 == 21) {
@@ -12852,7 +12911,7 @@ public class MessageObject {
 
     public boolean canForwardMessage() {
         int i;
-        return (isQuickReply() || (i = this.type) == 30 || i == 31 || i == 32 || (this.messageOwner instanceof TLRPC.TL_message_secret) || needDrawBluredPreview() || isLiveLocation() || this.type == 16 || isSponsored() || this.messageOwner.noforwards) ? false : true;
+        return (isQuickReply() || (i = this.type) == 30 || i == 31 || i == 32 || i == 33 || (this.messageOwner instanceof TLRPC.TL_message_secret) || needDrawBluredPreview() || isLiveLocation() || this.type == 16 || isSponsored() || this.messageOwner.noforwards) ? false : true;
     }
 
     public boolean isNoforwards() {
@@ -14736,16 +14795,20 @@ public class MessageObject {
         while (i4 < tL_messageMediaToDo.completions.size()) {
             if (tL_messageMediaToDo.completions.get(i4).id == i2) {
                 tL_messageMediaToDo.completions.remove(i4);
+                if (tL_messageMediaToDo.completions.isEmpty()) {
+                    tL_messageMediaToDo.flags &= -2;
+                }
                 i4--;
             }
             i4++;
         }
         if (z) {
-            TLRPC.TodoCompletion todoCompletion = new TLRPC.TodoCompletion();
-            todoCompletion.id = i2;
-            todoCompletion.completed_by = MessagesController.getInstance(i).getSendAsSelectedPeer(j);
-            todoCompletion.date = i3;
-            tL_messageMediaToDo.completions.add(todoCompletion);
+            TLRPC.TL_todoCompletion tL_todoCompletion = new TLRPC.TL_todoCompletion();
+            tL_todoCompletion.id = i2;
+            tL_todoCompletion.completed_by = MessagesController.getInstance(i).getPeer(j);
+            tL_todoCompletion.date = i3;
+            tL_messageMediaToDo.flags |= 1;
+            tL_messageMediaToDo.completions.add(tL_todoCompletion);
         }
     }
 

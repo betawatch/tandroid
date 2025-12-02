@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class SearchField extends FrameLayout {
     private ImageView clearSearchImageView;
     private CloseProgressDrawable2 progressDrawable;

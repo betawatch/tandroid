@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function2;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class UndispatchedMarker implements CoroutineContext.Element, CoroutineContext.Key {
     public static final UndispatchedMarker INSTANCE = new UndispatchedMarker();
 

@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatActionCell;
 import org.telegram.ui.LaunchActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SuggestBirthdayActionLayout {
     private TL_account.TL_birthday birthday;
     private final ButtonBounce bounce;

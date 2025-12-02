@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedTextView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SeekSpeedDrawable extends Drawable {
     private final AnimatedFloat animatedDirection;
     private final AnimatedFloat animatedHintShown;

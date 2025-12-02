@@ -3,7 +3,7 @@ package kotlinx.coroutines.channels;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 /* synthetic */ class BufferedChannelKt$createSegmentFunction$1 extends FunctionReferenceImpl implements Function2 {
     public static final BufferedChannelKt$createSegmentFunction$1 INSTANCE = new BufferedChannelKt$createSegmentFunction$1();
 

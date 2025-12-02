@@ -26,7 +26,7 @@ import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.IUpdateLayout;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UpdateLayout extends IUpdateLayout {
     private Activity activity;
     private ViewGroup sideMenu;

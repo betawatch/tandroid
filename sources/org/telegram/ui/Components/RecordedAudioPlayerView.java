@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.VideoPlayer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class RecordedAudioPlayerView extends View {
     public boolean allowDraw;
     private final Paint backgroundPaint;

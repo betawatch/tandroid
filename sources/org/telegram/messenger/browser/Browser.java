@@ -290,22 +290,17 @@ public abstract class Browser {
         openUrl(context, uri, z, z2, false, progress, null, false, true, false);
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(9:19|(1:21)|(3:115|116|117)|24|25|(1:27)|(10:108|(3:86|87|(2:89|(2:91|(2:93|(7:95|(1:103)|60|61|62|(1:64)|(1:(2:71|(4:73|(2:77|(1:79))|80|81)(1:82))(2:83|84))(2:68|69))))))|58|(6:85|61|62|(0)|(1:66)|(0)(0))|60|61|62|(0)|(0)|(0)(0))|45|(2:47|48)(5:49|50|51|52|53)) */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x0148, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x00f8, code lost:
     
-        r0 = e;
+        if ("https".equals(r1) != false) goto L140;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x00fc, code lost:
-    
-        if ("https".equals(r1) != false) goto L149;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0127 A[Catch: Exception -> 0x0148, TryCatch #5 {Exception -> 0x0148, blocks: (B:25:0x010b, B:27:0x0127, B:29:0x014c, B:31:0x0150, B:34:0x0156, B:36:0x015f, B:38:0x0169, B:40:0x016e, B:42:0x0178, B:45:0x0186, B:47:0x0192, B:49:0x01a4), top: B:24:0x010b }] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0273 A[Catch: Exception -> 0x025b, TRY_ENTER, TryCatch #3 {Exception -> 0x025b, blocks: (B:87:0x0216, B:89:0x021a, B:91:0x021e, B:93:0x0224, B:95:0x0233, B:97:0x0239, B:99:0x0243, B:101:0x024d, B:61:0x026b, B:64:0x0273, B:66:0x027c, B:68:0x0280, B:71:0x028e, B:73:0x0298, B:75:0x029e, B:77:0x02a8, B:79:0x02bd, B:80:0x02c1, B:83:0x02c9, B:58:0x025e), top: B:86:0x0216 }] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x027c A[Catch: Exception -> 0x025b, TryCatch #3 {Exception -> 0x025b, blocks: (B:87:0x0216, B:89:0x021a, B:91:0x021e, B:93:0x0224, B:95:0x0233, B:97:0x0239, B:99:0x0243, B:101:0x024d, B:61:0x026b, B:64:0x0273, B:66:0x027c, B:68:0x0280, B:71:0x028e, B:73:0x0298, B:75:0x029e, B:77:0x02a8, B:79:0x02bd, B:80:0x02c1, B:83:0x02c9, B:58:0x025e), top: B:86:0x0216 }] */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x028e A[Catch: Exception -> 0x025b, TryCatch #3 {Exception -> 0x025b, blocks: (B:87:0x0216, B:89:0x021a, B:91:0x021e, B:93:0x0224, B:95:0x0233, B:97:0x0239, B:99:0x0243, B:101:0x024d, B:61:0x026b, B:64:0x0273, B:66:0x027c, B:68:0x0280, B:71:0x028e, B:73:0x0298, B:75:0x029e, B:77:0x02a8, B:79:0x02bd, B:80:0x02c1, B:83:0x02c9, B:58:0x025e), top: B:86:0x0216 }] */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x02c9 A[Catch: Exception -> 0x025b, TRY_LEAVE, TryCatch #3 {Exception -> 0x025b, blocks: (B:87:0x0216, B:89:0x021a, B:91:0x021e, B:93:0x0224, B:95:0x0233, B:97:0x0239, B:99:0x0243, B:101:0x024d, B:61:0x026b, B:64:0x0273, B:66:0x027c, B:68:0x0280, B:71:0x028e, B:73:0x0298, B:75:0x029e, B:77:0x02a8, B:79:0x02bd, B:80:0x02c1, B:83:0x02c9, B:58:0x025e), top: B:86:0x0216 }] */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x026a  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0216 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0123 A[Catch: Exception -> 0x0144, TryCatch #7 {Exception -> 0x0144, blocks: (B:25:0x0107, B:27:0x0123, B:29:0x0148, B:31:0x014c, B:34:0x0152, B:36:0x015a, B:38:0x0164, B:40:0x0169, B:42:0x0173, B:45:0x0181, B:47:0x018d, B:49:0x019f), top: B:24:0x0107 }] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x026d A[Catch: Exception -> 0x0255, TRY_ENTER, TryCatch #6 {Exception -> 0x0255, blocks: (B:87:0x0211, B:89:0x0215, B:91:0x0219, B:93:0x021f, B:95:0x022e, B:97:0x0234, B:99:0x023e, B:101:0x0248, B:61:0x0265, B:64:0x026d, B:66:0x0276, B:68:0x027a, B:71:0x0288, B:73:0x0292, B:75:0x0298, B:77:0x02a2, B:79:0x02b7, B:80:0x02bb, B:83:0x02c3, B:58:0x0258), top: B:86:0x0211 }] */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0276 A[Catch: Exception -> 0x0255, TryCatch #6 {Exception -> 0x0255, blocks: (B:87:0x0211, B:89:0x0215, B:91:0x0219, B:93:0x021f, B:95:0x022e, B:97:0x0234, B:99:0x023e, B:101:0x0248, B:61:0x0265, B:64:0x026d, B:66:0x0276, B:68:0x027a, B:71:0x0288, B:73:0x0292, B:75:0x0298, B:77:0x02a2, B:79:0x02b7, B:80:0x02bb, B:83:0x02c3, B:58:0x0258), top: B:86:0x0211 }] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0288 A[Catch: Exception -> 0x0255, TryCatch #6 {Exception -> 0x0255, blocks: (B:87:0x0211, B:89:0x0215, B:91:0x0219, B:93:0x021f, B:95:0x022e, B:97:0x0234, B:99:0x023e, B:101:0x0248, B:61:0x0265, B:64:0x026d, B:66:0x0276, B:68:0x027a, B:71:0x0288, B:73:0x0292, B:75:0x0298, B:77:0x02a2, B:79:0x02b7, B:80:0x02bb, B:83:0x02c3, B:58:0x0258), top: B:86:0x0211 }] */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x02c3 A[Catch: Exception -> 0x0255, TRY_LEAVE, TryCatch #6 {Exception -> 0x0255, blocks: (B:87:0x0211, B:89:0x0215, B:91:0x0219, B:93:0x021f, B:95:0x022e, B:97:0x0234, B:99:0x023e, B:101:0x0248, B:61:0x0265, B:64:0x026d, B:66:0x0276, B:68:0x027a, B:71:0x0288, B:73:0x0292, B:75:0x0298, B:77:0x02a2, B:79:0x02b7, B:80:0x02bb, B:83:0x02c3, B:58:0x0258), top: B:86:0x0211 }] */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0264  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0211 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -398,7 +393,7 @@ public abstract class Browser {
                     }
                     if (!isInternalUri) {
                     }
-                    if (z9) {
+                    if (!z9) {
                     }
                 }
             } else {
@@ -408,6 +403,18 @@ public abstract class Browser {
         } catch (Exception e2) {
             e = e2;
             uri2 = uri;
+            FileLog.e(e);
+            if (z5) {
+            }
+            if (!isTonsite(uri2.toString())) {
+            }
+            z9 = true;
+            if (uri2.getScheme() != null) {
+            }
+            if (!isInternalUri) {
+            }
+            if (!z9) {
+            }
         }
         if (str3 != null && str3.contains(".")) {
             return;
@@ -433,12 +440,28 @@ public abstract class Browser {
             }
             if (!isInternalUri) {
             }
-            if (z9) {
+            if (!z9) {
             }
         }
-        hostAuthority = AndroidUtilities.getHostAuthority(uri2.toString().toLowerCase());
-        if (AccountInstance.getInstance(i).getMessagesController().autologinDomains.contains(hostAuthority)) {
-            uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(AccountInstance.getInstance(UserConfig.selectedAccount).getMessagesController().autologinToken, "UTF-8")).build();
+        try {
+            hostAuthority = AndroidUtilities.getHostAuthority(uri2.toString().toLowerCase());
+            if (AccountInstance.getInstance(i).getMessagesController().autologinDomains.contains(hostAuthority)) {
+                uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(AccountInstance.getInstance(UserConfig.selectedAccount).getMessagesController().autologinToken, "UTF-8")).build();
+            }
+        } catch (Exception e4) {
+            e = e4;
+            FileLog.e(e);
+            if (z5) {
+            }
+            if (!isTonsite(uri2.toString())) {
+            }
+            z9 = true;
+            if (uri2.getScheme() != null) {
+            }
+            if (!isInternalUri) {
+            }
+            if (!z9) {
+            }
         }
         if (z7 || SharedConfig.inappBrowser || !SharedConfig.customTabs || isInternalUri || str3.equals("tel") || isTonsite(uri2.toString()) || (!zArr[0] && openInExternalApp(context, uri2.toString(), false) && hasAppToOpen(context, uri2.toString()))) {
             if (z5) {
@@ -457,7 +480,7 @@ public abstract class Browser {
                                         openAsInternalIntent(launchActivity, uri2.toString(), z3, z6, progress);
                                         return;
                                     }
-                                    if (z9) {
+                                    if (!z9) {
                                         if (openInExternalApp(context, uri2.toString(), z4)) {
                                             return;
                                         }
@@ -476,8 +499,8 @@ public abstract class Browser {
                             }
                         }
                     }
-                } catch (Exception e4) {
-                    FileLog.e(e4);
+                } catch (Exception e5) {
+                    FileLog.e(e5);
                     return;
                 }
             }
@@ -487,7 +510,7 @@ public abstract class Browser {
                 }
                 if (!isInternalUri) {
                 }
-                if (z9) {
+                if (!z9) {
                 }
             }
             z9 = true;
@@ -495,7 +518,7 @@ public abstract class Browser {
             }
             if (!isInternalUri) {
             }
-            if (z9) {
+            if (!z9) {
             }
         }
         if (MessagesController.getInstance(i).authDomains.contains(hostAuthority)) {
@@ -516,8 +539,8 @@ public abstract class Browser {
             CustomTabsIntent build = builder.build();
             build.setUseNewTask();
             build.launchUrl(context, uri2);
-        } catch (Exception e5) {
-            e = e5;
+        } catch (Exception e6) {
+            e = e6;
             FileLog.e(e);
             if (z5) {
             }
@@ -528,7 +551,7 @@ public abstract class Browser {
             }
             if (!isInternalUri) {
             }
-            if (z9) {
+            if (!z9) {
             }
         }
     }

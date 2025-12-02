@@ -4,7 +4,7 @@ import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class FlowKt {
     public static final Flow catch(Flow flow, Function3 function3) {
         return FlowKt__ErrorsKt.catch(flow, function3);

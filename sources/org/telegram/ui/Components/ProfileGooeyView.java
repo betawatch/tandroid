@@ -26,7 +26,7 @@ import org.telegram.messenger.NotchInfoUtils;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ProfileGooeyView extends FrameLayout {
     private final Paint blackPaint;
     private float blurIntensity;

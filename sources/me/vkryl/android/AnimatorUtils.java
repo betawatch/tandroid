@@ -11,7 +11,7 @@ import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AnimatorUtils {
     public static final AnticipateOvershootInterpolator ANTICIPATE_OVERSHOOT_INTERPOLATOR = new AnticipateOvershootInterpolator();
     public static final DecelerateInterpolator DECELERATE_INTERPOLATOR = new DecelerateInterpolator();

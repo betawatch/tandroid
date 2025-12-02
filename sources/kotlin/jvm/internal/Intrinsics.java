@@ -3,7 +3,7 @@ package kotlin.jvm.internal;
 import java.util.Arrays;
 import kotlin.UninitializedPropertyAccessException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class Intrinsics {
     public static int compare(int i, int i2) {
         if (i < i2) {

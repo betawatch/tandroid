@@ -194,7 +194,7 @@ import org.telegram.ui.bots.BotWebViewSheet;
 import org.telegram.ui.bots.ChatActivityBotWebViewButton;
 import org.telegram.ui.bots.WebViewRequestProps;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ChatActivityEnterView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate, StickersAlert.StickersAlertDelegate, SuggestEmojiView.AnchorViewDelegate, FactorAnimator.Target {
     private final Property ATTACH_LAYOUT_ALPHA;
     private final Property ATTACH_LAYOUT_TRANSLATION_X;
@@ -4426,7 +4426,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             };
             this.senderSelectPopupWindow = senderSelectPopup2;
             senderSelectPopup2.setPauseNotifications(true);
-            this.senderSelectPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
+            this.senderSelectPopupWindow.setDismissAnimationDuration(220);
             this.senderSelectPopupWindow.setOutsideTouchable(true);
             this.senderSelectPopupWindow.setClippingEnabled(true);
             this.senderSelectPopupWindow.setFocusable(true);
@@ -9460,8 +9460,8 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x03a5  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x03a8  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x03a3  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x03a6  */
     /* JADX WARN: Type inference failed for: r6v49 */
     /* JADX WARN: Type inference failed for: r6v50, types: [android.view.ViewGroup] */
     /* JADX WARN: Type inference failed for: r6v99 */
@@ -9683,19 +9683,19 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 try {
                     wakeLock.release();
                     layoutParams = null;
-                } catch (Exception e2) {
-                    e = e2;
-                    layoutParams = null;
-                }
-                try {
-                    this.wakeLock = null;
+                    try {
+                        this.wakeLock = null;
+                    } catch (Exception e2) {
+                        e = e2;
+                        FileLog.e(e);
+                        AndroidUtilities.unlockOrientation(this.parentActivity);
+                        this.wasSendTyping = false;
+                        if (this.recordInterfaceState != 0) {
+                        }
+                    }
                 } catch (Exception e3) {
                     e = e3;
-                    FileLog.e(e);
-                    AndroidUtilities.unlockOrientation(this.parentActivity);
-                    this.wasSendTyping = false;
-                    if (this.recordInterfaceState != 0) {
-                    }
+                    layoutParams = null;
                 }
             } else {
                 layoutParams = null;
@@ -11391,23 +11391,23 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return this.messageEditText.getText();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x00a5, code lost:
     
         if (org.telegram.messenger.MessagesController.getInstance(r9.currentAccount).getMainSettings().getBoolean("show_gift_for_" + r9.parentFragment.getDialogId(), true) == false) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0106, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0105, code lost:
     
         if (r0.getChatMode() == 0) goto L60;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x00de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x00dd, code lost:
     
         if (org.telegram.messenger.MessagesController.getInstance(r9.currentAccount).getMainSettings().getBoolean(java.util.Calendar.getInstance().get(1) + "show_gift_for_" + r9.parentFragment.getDialogId(), true) == false) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x00e8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x00e7, code lost:
     
         if (r2.display_gifts_button == false) goto L59;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:83:0x00fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x00fb, code lost:
     
         if (r0.disallow_unique_stargifts != false) goto L59;
      */

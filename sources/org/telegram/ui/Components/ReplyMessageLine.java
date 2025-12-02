@@ -21,7 +21,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class ReplyMessageLine {
     public int backgroundColor;
     public final AnimatedColor backgroundColorAnimated;

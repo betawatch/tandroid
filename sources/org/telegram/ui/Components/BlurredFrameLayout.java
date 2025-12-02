@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.SharedConfig;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class BlurredFrameLayout extends FrameLayout {
     public int backgroundColor;
     public int backgroundPaddingBottom;

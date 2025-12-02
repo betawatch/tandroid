@@ -12,7 +12,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 public final class SignInConfiguration extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<SignInConfiguration> CREATOR = new zbu();
     private final String zba;
-    private GoogleSignInOptions zbb;
+    private final GoogleSignInOptions zbb;
 
     public SignInConfiguration(String str, GoogleSignInOptions googleSignInOptions) {
         this.zba = Preconditions.checkNotEmpty(str);
@@ -44,8 +44,9 @@ public final class SignInConfiguration extends AbstractSafeParcelable implements
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
+        String str = this.zba;
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
-        SafeParcelWriter.writeString(parcel, 2, this.zba, false);
+        SafeParcelWriter.writeString(parcel, 2, str, false);
         SafeParcelWriter.writeParcelable(parcel, 5, this.zbb, i, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }

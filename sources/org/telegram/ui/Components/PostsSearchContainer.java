@@ -41,7 +41,7 @@ import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PostsSearchContainer extends FrameLayout {
     private ColoredImageSpan arrowSpan;
     private ForegroundColorAlphaSpan colorSpan;

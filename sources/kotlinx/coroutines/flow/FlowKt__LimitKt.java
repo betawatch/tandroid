@@ -6,7 +6,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref$BooleanRef;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract /* synthetic */ class FlowKt__LimitKt {
     public static final Flow dropWhile(final Flow flow, final Function2 function2) {
         return new Flow() { // from class: kotlinx.coroutines.flow.FlowKt__LimitKt$dropWhile$$inlined$unsafeFlow$1

@@ -1,28 +1,20 @@
 package kotlinx.coroutines;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class InvokeOnCancelling extends JobCancellingNode {
-    private static final AtomicIntegerFieldUpdater _invoked$FU = AtomicIntegerFieldUpdater.newUpdater(InvokeOnCancelling.class, "_invoked");
-    private volatile int _invoked;
-    private final Function1 handler;
+    private static final /* synthetic */ AtomicIntegerFieldUpdater _invoked$volatile$FU = AtomicIntegerFieldUpdater.newUpdater(InvokeOnCancelling.class, "_invoked$volatile");
+    private volatile /* synthetic */ int _invoked$volatile;
+    private final InternalCompletionHandler handler;
 
-    @Override // kotlin.jvm.functions.Function1
-    public /* bridge */ /* synthetic */ Object invoke(Object obj) {
-        invoke((Throwable) obj);
-        return Unit.INSTANCE;
+    public InvokeOnCancelling(InternalCompletionHandler internalCompletionHandler) {
+        this.handler = internalCompletionHandler;
     }
 
-    public InvokeOnCancelling(Function1 function1) {
-        this.handler = function1;
-    }
-
-    @Override // kotlinx.coroutines.CompletionHandlerBase
+    @Override // kotlinx.coroutines.InternalCompletionHandler
     public void invoke(Throwable th) {
-        if (_invoked$FU.compareAndSet(this, 0, 1)) {
+        if (_invoked$volatile$FU.compareAndSet(this, 0, 1)) {
             this.handler.invoke(th);
         }
     }

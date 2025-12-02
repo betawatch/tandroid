@@ -3,8 +3,15 @@ package kotlinx.coroutines;
 import kotlin.coroutines.Continuation;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CancellableContinuationKt {
+    public static final void invokeOnCancellation(CancellableContinuation cancellableContinuation, CancelHandler cancelHandler) {
+        if (!(cancellableContinuation instanceof CancellableContinuationImpl)) {
+            throw new UnsupportedOperationException("third-party implementation of CancellableContinuation is not supported");
+        }
+        ((CancellableContinuationImpl) cancellableContinuation).invokeOnCancellationInternal$kotlinx_coroutines_core(cancelHandler);
+    }
+
     public static final CancellableContinuationImpl getOrCreateCancellableContinuation(Continuation continuation) {
         if (!(continuation instanceof DispatchedContinuation)) {
             return new CancellableContinuationImpl(continuation, 1);
@@ -22,6 +29,6 @@ public abstract class CancellableContinuationKt {
     }
 
     public static final void disposeOnCancellation(CancellableContinuation cancellableContinuation, DisposableHandle disposableHandle) {
-        cancellableContinuation.invokeOnCancellation(new DisposeOnCancel(disposableHandle));
+        invokeOnCancellation(cancellableContinuation, new DisposeOnCancel(disposableHandle));
     }
 }

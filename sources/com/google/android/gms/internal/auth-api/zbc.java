@@ -34,10 +34,6 @@ public abstract class zbc {
     }
 
     public static void zbd(Parcel parcel, IInterface iInterface) {
-        if (iInterface == null) {
-            parcel.writeStrongBinder(null);
-        } else {
-            parcel.writeStrongBinder(iInterface.asBinder());
-        }
+        parcel.writeStrongBinder(iInterface.asBinder());
     }
 }

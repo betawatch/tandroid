@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.TrendingStickersAlert;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TrendingStickersAlert extends BottomSheet {
     private final AlertContainerView alertContainerView;
     private final TrendingStickersLayout layout;

@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Cells.ChatMessageCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class QuoteHighlight extends Path {
     public final ChatMessageCell cell;
     private int cornerPathEffectSize;

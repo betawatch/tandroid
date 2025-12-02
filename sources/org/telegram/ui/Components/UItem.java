@@ -20,7 +20,7 @@ import org.telegram.ui.ChannelMonetizationLayout;
 import org.telegram.ui.Components.ListView.AdapterWithDiffUtils;
 import org.telegram.ui.StatisticActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class UItem extends AdapterWithDiffUtils.Item {
     private static LongSparseArray factories = null;
     private static HashMap factoryInstances = null;

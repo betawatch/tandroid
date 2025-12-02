@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class IceCandidateErrorEvent {
     public final String address;
     public final int errorCode;

@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Regex implements Serializable {
     public static final Companion Companion = new Companion(null);
     private final Pattern nativePattern;
@@ -23,7 +23,7 @@ public final class Regex implements Serializable {
         this(r2);
         Intrinsics.checkNotNullParameter(pattern, "pattern");
         Pattern compile = Pattern.compile(pattern);
-        Intrinsics.checkNotNullExpressionValue(compile, "compile(pattern)");
+        Intrinsics.checkNotNullExpressionValue(compile, "compile(...)");
     }
 
     public final boolean matches(CharSequence input) {
@@ -35,13 +35,13 @@ public final class Regex implements Serializable {
         Intrinsics.checkNotNullParameter(input, "input");
         Intrinsics.checkNotNullParameter(replacement, "replacement");
         String replaceAll = this.nativePattern.matcher(input).replaceAll(replacement);
-        Intrinsics.checkNotNullExpressionValue(replaceAll, "nativePattern.matcher(in…).replaceAll(replacement)");
+        Intrinsics.checkNotNullExpressionValue(replaceAll, "replaceAll(...)");
         return replaceAll;
     }
 
     public String toString() {
         String pattern = this.nativePattern.toString();
-        Intrinsics.checkNotNullExpressionValue(pattern, "nativePattern.toString()");
+        Intrinsics.checkNotNullExpressionValue(pattern, "toString(...)");
         return pattern;
     }
 

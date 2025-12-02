@@ -6,7 +6,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.intrinsics.CancellableKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class LazyStandaloneCoroutine extends StandaloneCoroutine {
     private final Continuation continuation;
 

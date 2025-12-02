@@ -3,7 +3,7 @@ package kotlinx.coroutines;
 import kotlin.coroutines.Continuation;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class TimeoutCoroutine extends ScopeCoroutine implements Runnable {
     public final long time;
 

@@ -11,22 +11,22 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.Job;
+import kotlinx.coroutines.CancelHandler;
 import kotlinx.coroutines.internal.DispatchedContinuation;
 import kotlinx.coroutines.internal.Segment;
 import kotlinx.coroutines.internal.Symbol;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CancellableContinuationImpl extends DispatchedTask implements CancellableContinuation, CoroutineStackFrame, Waiter {
-    private volatile int _decisionAndIndex;
-    private volatile Object _parentHandle;
-    private volatile Object _state;
+    private volatile /* synthetic */ int _decisionAndIndex$volatile;
+    private volatile /* synthetic */ Object _parentHandle$volatile;
+    private volatile /* synthetic */ Object _state$volatile;
     private final CoroutineContext context;
     private final Continuation delegate;
-    private static final AtomicIntegerFieldUpdater _decisionAndIndex$FU = AtomicIntegerFieldUpdater.newUpdater(CancellableContinuationImpl.class, "_decisionAndIndex");
-    private static final AtomicReferenceFieldUpdater _state$FU = AtomicReferenceFieldUpdater.newUpdater(CancellableContinuationImpl.class, Object.class, "_state");
-    private static final AtomicReferenceFieldUpdater _parentHandle$FU = AtomicReferenceFieldUpdater.newUpdater(CancellableContinuationImpl.class, Object.class, "_parentHandle");
+    private static final /* synthetic */ AtomicIntegerFieldUpdater _decisionAndIndex$volatile$FU = AtomicIntegerFieldUpdater.newUpdater(CancellableContinuationImpl.class, "_decisionAndIndex$volatile");
+    private static final /* synthetic */ AtomicReferenceFieldUpdater _state$volatile$FU = AtomicReferenceFieldUpdater.newUpdater(CancellableContinuationImpl.class, Object.class, "_state$volatile");
+    private static final /* synthetic */ AtomicReferenceFieldUpdater _parentHandle$volatile$FU = AtomicReferenceFieldUpdater.newUpdater(CancellableContinuationImpl.class, Object.class, "_parentHandle$volatile");
 
     @Override // kotlinx.coroutines.DispatchedTask
     public final Continuation getDelegate$kotlinx_coroutines_core() {
@@ -37,8 +37,8 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
         super(i);
         this.delegate = continuation;
         this.context = continuation.getContext();
-        this._decisionAndIndex = 536870911;
-        this._state = Active.INSTANCE;
+        this._decisionAndIndex$volatile = 536870911;
+        this._state$volatile = Active.INSTANCE;
     }
 
     @Override // kotlin.coroutines.Continuation
@@ -47,11 +47,16 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
     }
 
     private final DisposableHandle getParentHandle() {
-        return (DisposableHandle) _parentHandle$FU.get(this);
+        return (DisposableHandle) _parentHandle$volatile$FU.get(this);
     }
 
     public final Object getState$kotlinx_coroutines_core() {
-        return _state$FU.get(this);
+        return _state$volatile$FU.get(this);
+    }
+
+    @Override // kotlinx.coroutines.CancellableContinuation
+    public boolean isActive() {
+        return getState$kotlinx_coroutines_core() instanceof NotCompleted;
     }
 
     @Override // kotlinx.coroutines.CancellableContinuation
@@ -68,7 +73,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
         DisposableHandle installParentHandle = installParentHandle();
         if (installParentHandle != null && isCompleted()) {
             installParentHandle.dispose();
-            _parentHandle$FU.set(this, NonDisposableHandle.INSTANCE);
+            _parentHandle$volatile$FU.set(this, NonDisposableHandle.INSTANCE);
         }
     }
 
@@ -84,11 +89,10 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
     }
 
     public final boolean resetStateReusable() {
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
-        Object obj = atomicReferenceFieldUpdater.get(this);
+        Object obj = _state$volatile$FU.get(this);
         if (!(obj instanceof CompletedContinuation) || ((CompletedContinuation) obj).idempotentResume == null) {
-            _decisionAndIndex$FU.set(this, 536870911);
-            atomicReferenceFieldUpdater.set(this, Active.INSTANCE);
+            _decisionAndIndex$volatile$FU.set(this, 536870911);
+            _state$volatile$FU.set(this, Active.INSTANCE);
             return true;
         }
         detachChild$kotlinx_coroutines_core();
@@ -111,7 +115,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
 
     @Override // kotlinx.coroutines.DispatchedTask
     public void cancelCompletedResult$kotlinx_coroutines_core(Object obj, Throwable th) {
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$volatile$FU;
         while (true) {
             Object obj2 = atomicReferenceFieldUpdater.get(this);
             if (obj2 instanceof NotCompleted) {
@@ -125,11 +129,11 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
                 if (completedContinuation.getCancelled()) {
                     throw new IllegalStateException("Must be called at most once");
                 }
-                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$FU, this, obj2, CompletedContinuation.copy$default(completedContinuation, null, null, null, null, th, 15, null))) {
+                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, this, obj2, CompletedContinuation.copy$default(completedContinuation, null, null, null, null, th, 15, null))) {
                     completedContinuation.invokeHandlers(this, th);
                     return;
                 }
-            } else if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$FU, this, obj2, new CompletedContinuation(obj2, null, null, null, th, 14, null))) {
+            } else if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, this, obj2, new CompletedContinuation(obj2, null, null, null, th, 14, null))) {
                 return;
             }
         }
@@ -147,13 +151,13 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
     @Override // kotlinx.coroutines.CancellableContinuation
     public boolean cancel(Throwable th) {
         Object obj;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$volatile$FU;
         do {
             obj = atomicReferenceFieldUpdater.get(this);
             if (!(obj instanceof NotCompleted)) {
                 return false;
             }
-        } while (!AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$FU, this, obj, new CancelledContinuation(this, th, (obj instanceof CancelHandler) || (obj instanceof Segment))));
+        } while (!AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, this, obj, new CancelledContinuation(this, th, (obj instanceof CancelHandler) || (obj instanceof Segment))));
         NotCompleted notCompleted = (NotCompleted) obj;
         if (notCompleted instanceof CancelHandler) {
             callCancelHandler((CancelHandler) obj, th);
@@ -182,7 +186,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
     }
 
     private final void callSegmentOnCancellation(Segment segment, Throwable th) {
-        int i = _decisionAndIndex$FU.get(this) & 536870911;
+        int i = _decisionAndIndex$volatile$FU.get(this) & 536870911;
         if (i == 536870911) {
             throw new IllegalStateException("The index for Segment.onCancellation(..) is broken");
         }
@@ -207,7 +211,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
 
     private final boolean trySuspend() {
         int i;
-        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _decisionAndIndex$FU;
+        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _decisionAndIndex$volatile$FU;
         do {
             i = atomicIntegerFieldUpdater.get(this);
             int i2 = i >> 29;
@@ -217,13 +221,13 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
                 }
                 throw new IllegalStateException("Already suspended");
             }
-        } while (!_decisionAndIndex$FU.compareAndSet(this, i, TLObject.FLAG_29 + (536870911 & i)));
+        } while (!_decisionAndIndex$volatile$FU.compareAndSet(this, i, TLObject.FLAG_29 + (536870911 & i)));
         return true;
     }
 
     private final boolean tryResume() {
         int i;
-        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _decisionAndIndex$FU;
+        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _decisionAndIndex$volatile$FU;
         do {
             i = atomicIntegerFieldUpdater.get(this);
             int i2 = i >> 29;
@@ -233,7 +237,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
                 }
                 throw new IllegalStateException("Already resumed");
             }
-        } while (!_decisionAndIndex$FU.compareAndSet(this, i, TLObject.FLAG_30 + (536870911 & i)));
+        } while (!_decisionAndIndex$volatile$FU.compareAndSet(this, i, TLObject.FLAG_30 + (536870911 & i)));
         return true;
     }
 
@@ -269,8 +273,8 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
         if (job == null) {
             return null;
         }
-        DisposableHandle invokeOnCompletion$default = Job.DefaultImpls.invokeOnCompletion$default(job, true, false, new ChildContinuation(this), 2, null);
-        AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_parentHandle$FU, this, null, invokeOnCompletion$default);
+        DisposableHandle invokeOnCompletion$default = JobKt__JobKt.invokeOnCompletion$default(job, true, false, new ChildContinuation(this), 2, null);
+        AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_parentHandle$volatile$FU, this, null, invokeOnCompletion$default);
         return invokeOnCompletion$default;
     }
 
@@ -298,7 +302,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
     @Override // kotlinx.coroutines.Waiter
     public void invokeOnCancellation(Segment segment, int i) {
         int i2;
-        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _decisionAndIndex$FU;
+        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = _decisionAndIndex$volatile$FU;
         do {
             i2 = atomicIntegerFieldUpdater.get(this);
             if ((i2 & 536870911) != 536870911) {
@@ -310,15 +314,19 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
 
     @Override // kotlinx.coroutines.CancellableContinuation
     public void invokeOnCancellation(Function1 function1) {
-        invokeOnCancellationImpl(makeCancelHandler(function1));
+        CancellableContinuationKt.invokeOnCancellation(this, new CancelHandler.UserSupplied(function1));
+    }
+
+    public final void invokeOnCancellationInternal$kotlinx_coroutines_core(CancelHandler cancelHandler) {
+        invokeOnCancellationImpl(cancelHandler);
     }
 
     private final void invokeOnCancellationImpl(Object obj) {
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$volatile$FU;
         while (true) {
             Object obj2 = atomicReferenceFieldUpdater.get(this);
             if (obj2 instanceof Active) {
-                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$FU, this, obj2, obj)) {
+                if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, this, obj2, obj)) {
                     return;
                 }
             } else {
@@ -360,7 +368,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
                             callCancelHandler(cancelHandler, completedContinuation.cancelCause);
                             return;
                         } else {
-                            if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$FU, this, obj2, CompletedContinuation.copy$default(completedContinuation, null, cancelHandler, null, null, null, 29, null))) {
+                            if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, this, obj2, CompletedContinuation.copy$default(completedContinuation, null, cancelHandler, null, null, null, 29, null))) {
                                 return;
                             }
                         }
@@ -369,7 +377,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
                             return;
                         }
                         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlinx.coroutines.CancelHandler");
-                        if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$FU, this, obj2, new CompletedContinuation(obj2, (CancelHandler) obj, null, null, null, 28, null))) {
+                        if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, this, obj2, new CompletedContinuation(obj2, (CancelHandler) obj, null, null, null, 28, null))) {
                             return;
                         }
                     }
@@ -380,10 +388,6 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
 
     private final void multipleHandlersError(Object obj, Object obj2) {
         throw new IllegalStateException(("It's prohibited to register multiple handlers, tried to register " + obj + ", already has " + obj2).toString());
-    }
-
-    private final CancelHandler makeCancelHandler(Function1 function1) {
-        return function1 instanceof CancelHandler ? (CancelHandler) function1 : new InvokeOnCancel(function1);
     }
 
     private final void dispatchResume(int i) {
@@ -406,19 +410,9 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
         return new CompletedContinuation(obj, notCompleted instanceof CancelHandler ? (CancelHandler) notCompleted : null, function1, obj2, null, 16, null);
     }
 
-    static /* synthetic */ void resumeImpl$default(CancellableContinuationImpl cancellableContinuationImpl, Object obj, int i, Function1 function1, int i2, Object obj2) {
-        if (obj2 != null) {
-            throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: resumeImpl");
-        }
-        if ((i2 & 4) != 0) {
-            function1 = null;
-        }
-        cancellableContinuationImpl.resumeImpl(obj, i, function1);
-    }
-
     private final void resumeImpl(Object obj, int i, Function1 function1) {
         Object obj2;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$volatile$FU;
         do {
             obj2 = atomicReferenceFieldUpdater.get(this);
             if (obj2 instanceof NotCompleted) {
@@ -436,14 +430,24 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
                 alreadyResumedError(obj);
                 throw new KotlinNothingValueException();
             }
-        } while (!AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$FU, this, obj2, resumedState((NotCompleted) obj2, obj, i, function1, null)));
+        } while (!AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, this, obj2, resumedState((NotCompleted) obj2, obj, i, function1, null)));
         detachChildIfNonResuable();
         dispatchResume(i);
     }
 
+    static /* synthetic */ void resumeImpl$default(CancellableContinuationImpl cancellableContinuationImpl, Object obj, int i, Function1 function1, int i2, Object obj2) {
+        if (obj2 != null) {
+            throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: resumeImpl");
+        }
+        if ((i2 & 4) != 0) {
+            function1 = null;
+        }
+        cancellableContinuationImpl.resumeImpl(obj, i, function1);
+    }
+
     private final Symbol tryResumeImpl(Object obj, Object obj2, Function1 function1) {
         Object obj3;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$FU;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = _state$volatile$FU;
         do {
             obj3 = atomicReferenceFieldUpdater.get(this);
             if (obj3 instanceof NotCompleted) {
@@ -453,7 +457,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
                 }
                 return null;
             }
-        } while (!AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$FU, this, obj3, resumedState((NotCompleted) obj3, obj, this.resumeMode, function1, obj2)));
+        } while (!AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(_state$volatile$FU, this, obj3, resumedState((NotCompleted) obj3, obj, this.resumeMode, function1, obj2)));
         detachChildIfNonResuable();
         return CancellableContinuationImplKt.RESUME_TOKEN;
     }
@@ -475,7 +479,7 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
             return;
         }
         parentHandle.dispose();
-        _parentHandle$FU.set(this, NonDisposableHandle.INSTANCE);
+        _parentHandle$volatile$FU.set(this, NonDisposableHandle.INSTANCE);
     }
 
     @Override // kotlinx.coroutines.CancellableContinuation

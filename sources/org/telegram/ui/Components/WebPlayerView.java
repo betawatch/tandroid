@@ -68,7 +68,7 @@ import org.telegram.ui.Components.VideoPlayer;
 import org.telegram.ui.Components.WebPlayerView;
 import org.webrtc.MediaStreamTrack;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerDelegate, AudioManager.OnAudioFocusChangeListener {
     private static int lastContainerId = 4001;
     private boolean allowInlineAnimation;
@@ -425,15 +425,15 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         return downloadUrlContent(asyncTask, str, null, true);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x0171, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x0170, code lost:
     
         if (r3 == (-1)) goto L102;
      */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0191  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0196  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x019b A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x012c A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0186 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0190  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0195  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x019a A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x012b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0185 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -613,100 +613,100 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        /* JADX WARN: Code restructure failed: missing block: B:126:0x026d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:126:0x0266, code lost:
         
             r2 = r23.result;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:127:0x0272, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:127:0x026b, code lost:
         
             if (r2[0] != null) goto L105;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:128:0x0274, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:128:0x026d, code lost:
         
             if (r10 == null) goto L105;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:129:0x0276, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:129:0x026f, code lost:
         
             r2[0] = r10;
             r2[1] = "other";
          */
-        /* JADX WARN: Code restructure failed: missing block: B:130:0x027e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:130:0x0276, code lost:
         
             r2 = r2[0];
          */
-        /* JADX WARN: Code restructure failed: missing block: B:131:0x0280, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:131:0x0278, code lost:
         
             if (r2 == null) goto L111;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:132:0x0282, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:132:0x027a, code lost:
         
             if (r0 != false) goto L112;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:134:0x0288, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:134:0x0280, code lost:
         
             if (r2.contains("/s/") == false) goto L111;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:135:0x028e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:135:0x0286, code lost:
         
             if (r3 == null) goto L111;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:136:0x0290, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:136:0x0288, code lost:
         
             r0 = r23.result[0].indexOf("/s/");
             r2 = r23.result[0].indexOf(47, r0 + 10);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:137:0x02a5, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:137:0x029d, code lost:
         
             if (r0 == (-1)) goto L171;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:138:0x02a7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:138:0x029f, code lost:
         
             if (r2 != (-1)) goto L117;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:139:0x02a9, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:139:0x02a1, code lost:
         
             r2 = r23.result[0].length();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:140:0x02b1, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:140:0x02a9, code lost:
         
             r23.sig = r23.result[0].substring(r0, r2);
             r0 = org.telegram.ui.Components.WebPlayerView.jsPattern.matcher(r3);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:141:0x02c7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:141:0x02bf, code lost:
         
             if (r0.find() == false) goto L125;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:199:0x02c9, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:199:0x02c1, code lost:
         
             r0 = new org.json.JSONTokener(r0.group(1)).nextValue();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:200:0x02d9, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:200:0x02d1, code lost:
         
             if ((r0 instanceof java.lang.String) == false) goto L125;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:202:0x02dd, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:202:0x02d5, code lost:
         
             r2 = (java.lang.String) r0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:204:0x02df, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:204:0x02d7, code lost:
         
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:205:0x02e0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:205:0x02d8, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:207:0x028b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:207:0x0283, code lost:
         
             r6 = null;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:208:0x0422, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:208:0x0418, code lost:
         
             r7 = r0;
          */
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:165:0x03e7  */
-        /* JADX WARN: Removed duplicated region for block: B:171:0x0429 A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:165:0x03dd  */
+        /* JADX WARN: Removed duplicated region for block: B:171:0x041f A[ADDED_TO_REGION] */
         /* JADX WARN: Type inference failed for: r16v0 */
         /* JADX WARN: Type inference failed for: r16v1 */
         /* JADX WARN: Type inference failed for: r16v3, types: [java.lang.String] */
@@ -2498,19 +2498,19 @@ public class WebPlayerView extends ViewGroup implements VideoPlayer.VideoPlayerD
         showProgress(true, false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:105:0x00b9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x009b A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x014d  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0160  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x018e  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x019c  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x01a1  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0257 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x01bb  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0188  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0113 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x00f5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x00d7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x00b7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0099 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x014b  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x015e  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x018c  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x019a  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x019f  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0254 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x01b8  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0186  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0111 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x00f3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x00d5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

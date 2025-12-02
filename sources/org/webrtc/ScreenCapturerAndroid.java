@@ -9,7 +9,7 @@ import android.view.Surface;
 import org.telegram.messenger.FileLog;
 import org.webrtc.VideoSink;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     private static final int DISPLAY_FLAGS = 3;
     private static final int VIRTUAL_DISPLAY_DPI = 400;

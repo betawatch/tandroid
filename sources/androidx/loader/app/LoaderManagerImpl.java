@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 import androidx.collection.SparseArrayCompat;
-import androidx.core.util.DebugUtils;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
@@ -142,7 +141,10 @@ class LoaderManagerImpl extends LoaderManager {
             sb.append(" #");
             sb.append(this.mId);
             sb.append(" : ");
-            DebugUtils.buildShortClassTag(this.mLoader, sb);
+            Class<?> cls = this.mLoader.getClass();
+            sb.append(cls.getSimpleName());
+            sb.append("{");
+            sb.append(Integer.toHexString(System.identityHashCode(cls)));
             sb.append("}}");
             return sb.toString();
         }
@@ -187,8 +189,8 @@ class LoaderManagerImpl extends LoaderManager {
             if (LoaderManagerImpl.DEBUG) {
                 Log.v("LoaderManager", "  onLoadFinished in " + this.mLoader + ": " + this.mLoader.dataToString(obj));
             }
-            this.mCallback.onLoadFinished(this.mLoader, obj);
             this.mDeliveredData = true;
+            this.mCallback.onLoadFinished(this.mLoader, obj);
         }
 
         boolean hasDeliveredData() {
@@ -351,7 +353,10 @@ class LoaderManagerImpl extends LoaderManager {
         sb.append("LoaderManager{");
         sb.append(Integer.toHexString(System.identityHashCode(this)));
         sb.append(" in ");
-        DebugUtils.buildShortClassTag(this.mLifecycleOwner, sb);
+        Class<?> cls = this.mLifecycleOwner.getClass();
+        sb.append(cls.getSimpleName());
+        sb.append("{");
+        sb.append(Integer.toHexString(System.identityHashCode(cls)));
         sb.append("}}");
         return sb.toString();
     }

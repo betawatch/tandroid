@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import me.vkryl.android.animator.FactorAnimator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class BoolAnimator implements FactorAnimator.Target {
     private FactorAnimator animator;
     private long duration;

@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.GroupCreateUserCell;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GroupCreateSpan extends View {
     private AvatarDrawable avatarDrawable;
     private int[] colors;
@@ -70,14 +70,14 @@ public class GroupCreateSpan extends View {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0303  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0312  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x031e  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0330  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x038f  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0341  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0315  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0305  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x02fe  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x030d  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0319  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x032b  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x038a  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x033c  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0310  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0300  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

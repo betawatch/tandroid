@@ -1,6 +1,6 @@
 package kotlinx.coroutines.channels;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface SendChannel {
     boolean close(Throwable th);
 

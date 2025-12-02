@@ -26,7 +26,7 @@ import org.telegram.ui.Components.Crop.CropRotationWheel;
 import org.telegram.ui.Components.Crop.CropTransform;
 import org.telegram.ui.Components.Crop.CropView;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PhotoCropView extends FrameLayout {
     public final Property ANIMATION_VALUE;
     public final Property PROGRESS_VALUE;

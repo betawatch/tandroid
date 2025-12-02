@@ -3,7 +3,7 @@ package me.vkryl.core;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class ArrayUtils {
     public static boolean removeSorted(ArrayList arrayList, Comparable comparable) {
         int binarySearch = Collections.binarySearch(arrayList, comparable);

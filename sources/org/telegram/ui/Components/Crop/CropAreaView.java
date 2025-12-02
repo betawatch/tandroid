@@ -25,7 +25,7 @@ import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.BubbleActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CropAreaView extends ViewGroup {
     private Control activeControl;
     private RectF actualRect;

@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.BubbleActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PhotoFilterBlurControl extends FrameLayout {
     private static final float BlurInsetProximity = AndroidUtilities.dp(20.0f);
     private static final float BlurViewCenterInset = AndroidUtilities.dp(30.0f);

@@ -6,6 +6,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.util.Log;
+import androidx.credentials.CredentialManager$$ExternalSyntheticLambda0;
 import androidx.profileinstaller.ProfileInstaller;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -159,7 +160,7 @@ public abstract class ProfileInstaller {
     }
 
     public static void writeProfile(Context context) {
-        writeProfile(context, new ProfileInstallReceiver$$ExternalSyntheticLambda0(), EMPTY_DIAGNOSTICS);
+        writeProfile(context, new CredentialManager$$ExternalSyntheticLambda0(), EMPTY_DIAGNOSTICS);
     }
 
     public static void writeProfile(Context context, Executor executor, DiagnosticsCallback diagnosticsCallback) {

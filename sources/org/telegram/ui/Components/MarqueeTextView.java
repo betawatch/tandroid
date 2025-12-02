@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.core.math.MathUtils;
 import org.telegram.messenger.AndroidUtilities;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class MarqueeTextView extends TextView {
     private LinearGradient gradient;
     private final Matrix gradientMatrix;

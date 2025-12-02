@@ -4,7 +4,7 @@ import android.graphics.Matrix;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class VideoFrame implements RefCounted {
     private final Buffer buffer;
     private final int rotation;

@@ -64,7 +64,7 @@ import org.telegram.ui.Components.PasscodeView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.recorder.KeyboardNotifier;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class PasscodeView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final int[] ids = {R.id.passcode_btn_0, R.id.passcode_btn_1, R.id.passcode_btn_2, R.id.passcode_btn_3, R.id.passcode_btn_4, R.id.passcode_btn_5, R.id.passcode_btn_6, R.id.passcode_btn_7, R.id.passcode_btn_8, R.id.passcode_btn_9, R.id.passcode_btn_backspace, R.id.passcode_btn_fingerprint};
     private final int BUTTON_SIZE;

@@ -4,7 +4,7 @@ import kotlinx.coroutines.internal.MainDispatcherLoader;
 import kotlinx.coroutines.scheduling.DefaultIoScheduler;
 import kotlinx.coroutines.scheduling.DefaultScheduler;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Dispatchers {
     public static final Dispatchers INSTANCE = new Dispatchers();
     private static final CoroutineDispatcher Default = DefaultScheduler.INSTANCE;

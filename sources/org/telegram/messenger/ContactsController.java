@@ -750,10 +750,10 @@ public class ContactsController extends BaseController {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x055e A[Catch: all -> 0x0562, TRY_LEAVE, TryCatch #0 {all -> 0x0562, blocks: (B:103:0x0559, B:105:0x055e), top: B:102:0x0559 }] */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0575  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x055d A[Catch: all -> 0x0561, TRY_LEAVE, TryCatch #0 {all -> 0x0561, blocks: (B:103:0x0558, B:105:0x055d), top: B:102:0x0558 }] */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0574  */
     /* JADX WARN: Removed duplicated region for block: B:112:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0567 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0566 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r0v36, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r0v51 */
     /* JADX WARN: Type inference failed for: r0v57 */
@@ -1365,35 +1365,35 @@ public class ContactsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:124:0x0314, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:124:0x0313, code lost:
     
         if (r11.intValue() == 1) goto L135;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:144:0x014b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:144:0x014a, code lost:
     
         if (r2.last_name.equals(r8.last_name) == false) goto L52;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x0136, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x0135, code lost:
     
         if (r2.first_name.equals(r8.first_name) != false) goto L48;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x014d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x014c, code lost:
     
         r0 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x0232, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x0231, code lost:
     
         if (r5.equals(r8.last_name) != false) goto L105;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x0242, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x0241, code lost:
     
         if (android.text.TextUtils.isEmpty(r8.last_name) != false) goto L105;
      */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x027d  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x04e0  */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x050d  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x051f  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01f5  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x027c  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x04de  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x050a  */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x051c  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01f4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2781,23 +2781,23 @@ public class ContactsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x0109, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0107, code lost:
     
         if (r4 != null) goto L53;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x0115, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x0113, code lost:
     
         org.telegram.messenger.FileLog.d("performWriteContactsToPhoneBookInternal " + (java.lang.System.currentTimeMillis() - r2));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x012f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x012c, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x0112, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x0110, code lost:
     
         r4.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x0110, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x010e, code lost:
     
         if (r4 == null) goto L54;
      */

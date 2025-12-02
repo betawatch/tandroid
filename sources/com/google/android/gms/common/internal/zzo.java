@@ -1,11 +1,15 @@
 package com.google.android.gms.common.internal;
 
+import android.app.PendingIntent;
 import android.content.ComponentName;
+import android.content.ContentProviderClient;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.RemoteException;
 import android.util.Log;
+import com.google.android.gms.common.ConnectionResult;
 
 /* loaded from: classes.dex */
 public final class zzo {
@@ -44,26 +48,84 @@ public final class zzo {
         return this.zzd;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:41:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Intent zzb(Context context) {
         Bundle bundle;
+        PendingIntent pendingIntent;
+        ContentProviderClient acquireUnstableContentProviderClient;
         if (this.zzb == null) {
             return new Intent().setComponent(this.zzd);
         }
+        Intent intent = null;
         if (this.zzf) {
             Bundle bundle2 = new Bundle();
             bundle2.putString("serviceActionBundleKey", this.zzb);
             try {
-                bundle = context.getContentResolver().call(zza, "serviceIntentCall", (String) null, bundle2);
-            } catch (IllegalArgumentException e) {
-                Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
+                acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(zza);
+            } catch (RemoteException e) {
+                e = e;
                 bundle = null;
+                Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
+                if (bundle == null) {
+                }
+                if (intent == null) {
+                }
+                if (intent == null) {
+                }
+            } catch (IllegalArgumentException e2) {
+                e = e2;
+                bundle = null;
+                Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
+                if (bundle == null) {
+                }
+                if (intent == null) {
+                }
+                if (intent == null) {
+                }
             }
-            r2 = bundle != null ? (Intent) bundle.getParcelable("serviceResponseIntentKey") : null;
-            if (r2 == null) {
-                Log.w("ConnectionStatusConfig", "Dynamic lookup for intent failed for action: ".concat(String.valueOf(this.zzb)));
+            if (acquireUnstableContentProviderClient == null) {
+                throw new RemoteException("Failed to acquire ContentProviderClient");
+            }
+            try {
+                bundle = acquireUnstableContentProviderClient.call("serviceIntentCall", null, bundle2);
+                try {
+                } catch (RemoteException e3) {
+                    e = e3;
+                    Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
+                    if (bundle == null) {
+                    }
+                    if (intent == null) {
+                    }
+                    if (intent == null) {
+                    }
+                } catch (IllegalArgumentException e4) {
+                    e = e4;
+                    Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
+                    if (bundle == null) {
+                    }
+                    if (intent == null) {
+                    }
+                    if (intent == null) {
+                    }
+                }
+                if (bundle == null && (intent = (Intent) bundle.getParcelable("serviceResponseIntentKey")) == null && (pendingIntent = (PendingIntent) bundle.getParcelable("serviceMissingResolutionIntentKey")) != null) {
+                    Log.w("ConnectionStatusConfig", "Dynamic lookup for intent failed for action " + this.zzb + " but has possible resolution");
+                    throw new zzaj(new ConnectionResult(25, pendingIntent));
+                }
+                if (intent == null) {
+                    Log.w("ConnectionStatusConfig", "Dynamic lookup for intent failed for action: ".concat(String.valueOf(this.zzb)));
+                }
+            } finally {
+                acquireUnstableContentProviderClient.release();
             }
         }
-        return r2 == null ? new Intent(this.zzb).setPackage(this.zzc) : r2;
+        return intent == null ? new Intent(this.zzb).setPackage(this.zzc) : intent;
     }
 
     public final String zzc() {

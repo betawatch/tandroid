@@ -2262,6 +2262,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             imageView.setVisibility(8);
             linearLayout.addView(imageView, LayoutHelper.createLinear(18, 18, 19, 0, 0, 3, 0));
             TextView textView = new TextView(context) { // from class: org.telegram.ui.Stories.LiveCommentsView.LiveTopSenderView.2
+                private int width = -1;
                 private final GradientClip clip = new GradientClip();
 
                 @Override // android.widget.TextView, android.view.View
@@ -2269,16 +2270,29 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                     super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31), i2);
                 }
 
+                @Override // android.widget.TextView
+                public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+                    super.setText(charSequence, bufferType);
+                    this.width = -1;
+                }
+
                 @Override // android.widget.TextView, android.view.View
                 protected void onDraw(Canvas canvas) {
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.cameraInitied, 31);
+                    if (this.width < 0) {
+                        this.width = getLayout() != null ? (int) getLayout().getLineWidth(0) : 0;
+                    }
+                    if (this.width > AndroidUtilities.dp(100.0f)) {
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.cameraInitied, 31);
+                        super.onDraw(canvas);
+                        canvas.save();
+                        RectF rectF = AndroidUtilities.rectTmp;
+                        rectF.set(getWidth() - AndroidUtilities.dp(15.0f), 0.0f, getWidth(), getHeight());
+                        this.clip.draw(canvas, rectF, 2, 1.0f);
+                        canvas.restore();
+                        canvas.restore();
+                        return;
+                    }
                     super.onDraw(canvas);
-                    canvas.save();
-                    RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set(getWidth() - AndroidUtilities.dp(15.0f), 0.0f, getWidth(), getHeight());
-                    this.clip.draw(canvas, rectF, 2, 1.0f);
-                    canvas.restore();
-                    canvas.restore();
                 }
             };
             this.textView = textView;

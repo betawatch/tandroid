@@ -87,7 +87,7 @@ import org.telegram.ui.LocationActivity;
 import org.telegram.ui.Stories.LivePlayer;
 import org.telegram.ui.Stories.StoryViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FragmentContextView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener, GroupCallMessagesController.CallMessageListener {
     private static final float[] speeds = {0.5f, 1.0f, 1.2f, 1.5f, 1.7f, 2.0f};
     private final int account;
@@ -2572,8 +2572,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.titleTextView.setText(LocaleController.formatPluralStringComma("LiveStoryTopPanelWatching", livePlayer.getWatchersCount()));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0130  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x012f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

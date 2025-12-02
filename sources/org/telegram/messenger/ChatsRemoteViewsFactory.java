@@ -87,11 +87,11 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(8:114|(1:116)(2:124|(1:126)(8:127|(1:129)(1:131)|130|118|119|120|96|97))|117|118|119|120|96|97) */
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x03e2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:122:0x03da, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x03e3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x03db, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
         r10 = r10;

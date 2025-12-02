@@ -45,6 +45,11 @@ public final class SessionDatastoreImpl implements SessionDatastore {
         this.currentSessionFromDatastore = new AtomicReference();
         final Flow flow = FlowKt.catch(Companion.getDataStore(context).getData(), new SessionDatastoreImpl$firebaseSessionDataFlow$1(null));
         this.firebaseSessionDataFlow = new Flow() { // from class: com.google.firebase.sessions.SessionDatastoreImpl$special$$inlined$map$1
+            @Override // kotlinx.coroutines.flow.Flow
+            public Object collect(FlowCollector flowCollector, Continuation continuation) {
+                Object collect = Flow.this.collect(new 2(flowCollector, this), continuation);
+                return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
+            }
 
             public static final class 2 implements FlowCollector {
                 final /* synthetic */ FlowCollector $this_unsafeFlow;
@@ -114,12 +119,6 @@ public final class SessionDatastoreImpl implements SessionDatastore {
                     }
                     return Unit.INSTANCE;
                 }
-            }
-
-            @Override // kotlinx.coroutines.flow.Flow
-            public Object collect(FlowCollector flowCollector, Continuation continuation) {
-                Object collect = Flow.this.collect(new 2(flowCollector, this), continuation);
-                return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
             }
         };
         BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(backgroundDispatcher), null, null, new 1(null), 3, null);

@@ -1,6 +1,6 @@
 package kotlinx.coroutines;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class Active implements NotCompleted {
     public static final Active INSTANCE = new Active();
 

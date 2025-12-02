@@ -7,7 +7,7 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.internal.ScopeCoroutine;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class SafeCollector_commonKt {
     public static final void checkContext(final SafeCollector safeCollector, CoroutineContext coroutineContext) {
         if (((Number) coroutineContext.fold(0, new Function2() { // from class: kotlinx.coroutines.flow.internal.SafeCollector_commonKt$checkContext$result$1

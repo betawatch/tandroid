@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FilterShaders {
     private BlurProgram blurProgram;
     private boolean blurTextureCreated;

@@ -39,7 +39,7 @@ import org.telegram.ui.Components.EmojiView;
 import org.telegram.ui.Components.Premium.PremiumLockIconView;
 import org.telegram.ui.Components.Reactions.HwEmojis;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class EmojiTabsStrip extends ScrollableHorizontalScrollView {
     private final int accentColor;
     public boolean animateAppear;

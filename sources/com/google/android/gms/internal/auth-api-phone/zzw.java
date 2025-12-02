@@ -18,7 +18,7 @@ public final class zzw extends GmsClient {
     }
 
     @Override // com.google.android.gms.common.internal.BaseGmsClient
-    protected final /* bridge */ /* synthetic */ IInterface createServiceInterface(IBinder iBinder) {
+    protected final /* synthetic */ IInterface createServiceInterface(IBinder iBinder) {
         if (iBinder == null) {
             return null;
         }

@@ -20,7 +20,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class FlickerLoadingView extends View implements Theme.Colorable {
     private Paint backgroundPaint;
     private int color0;

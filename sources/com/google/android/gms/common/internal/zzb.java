@@ -8,7 +8,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.internal.BaseGmsClient;
 
 /* loaded from: classes.dex */
-final class zzb extends com.google.android.gms.internal.common.zzi {
+final class zzb extends com.google.android.gms.internal.common.zzh {
     final /* synthetic */ BaseGmsClient zza;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -49,26 +49,26 @@ final class zzb extends com.google.android.gms.internal.common.zzi {
         }
         int i2 = message.what;
         if (i2 == 4) {
-            this.zza.zzB = new ConnectionResult(message.arg2);
+            this.zza.zzC = new ConnectionResult(message.arg2);
             if (BaseGmsClient.zzo(this.zza)) {
                 BaseGmsClient baseGmsClient = this.zza;
-                z = baseGmsClient.zzC;
+                z = baseGmsClient.zzD;
                 if (!z) {
                     baseGmsClient.zzp(3, null);
                     return;
                 }
             }
             BaseGmsClient baseGmsClient2 = this.zza;
-            connectionResult2 = baseGmsClient2.zzB;
-            ConnectionResult connectionResult3 = connectionResult2 != null ? baseGmsClient2.zzB : new ConnectionResult(8);
+            connectionResult2 = baseGmsClient2.zzC;
+            ConnectionResult connectionResult3 = connectionResult2 != null ? baseGmsClient2.zzC : new ConnectionResult(8);
             this.zza.zzc.onReportServiceBinding(connectionResult3);
             this.zza.onConnectionFailed(connectionResult3);
             return;
         }
         if (i2 == 5) {
             BaseGmsClient baseGmsClient3 = this.zza;
-            connectionResult = baseGmsClient3.zzB;
-            ConnectionResult connectionResult4 = connectionResult != null ? baseGmsClient3.zzB : new ConnectionResult(8);
+            connectionResult = baseGmsClient3.zzC;
+            ConnectionResult connectionResult4 = connectionResult != null ? baseGmsClient3.zzC : new ConnectionResult(8);
             this.zza.zzc.onReportServiceBinding(connectionResult4);
             this.zza.onConnectionFailed(connectionResult4);
             return;

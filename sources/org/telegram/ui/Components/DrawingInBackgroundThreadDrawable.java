@@ -12,7 +12,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class DrawingInBackgroundThreadDrawable implements NotificationCenter.NotificationCenterDelegate {
     public static DispatchQueuePool queuePool;
     boolean attachedToWindow;

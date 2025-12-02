@@ -38,7 +38,7 @@ import org.telegram.ui.Components.voip.GroupCallRenderersContainer;
 import org.telegram.ui.Components.voip.GroupCallStatusIcon;
 import org.telegram.ui.GroupCallActivity;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class GroupCallFullscreenAdapter extends RecyclerListView.SelectionAdapter {
     private final GroupCallActivity activity;
     private ArrayList attachedRenderers;

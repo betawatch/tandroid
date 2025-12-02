@@ -1,6 +1,6 @@
 package me.vkryl.core.lambda;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public interface Destroyable {
     void performDestroy();
 }

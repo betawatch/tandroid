@@ -2,7 +2,7 @@ package kotlinx.coroutines;
 
 import java.util.concurrent.CancellationException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class TimeoutCancellationException extends CancellationException {
     public final transient Job coroutine;
 

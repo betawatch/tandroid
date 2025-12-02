@@ -778,7 +778,7 @@ public class QuickShareSelectorDrawable extends Drawable implements Animator.Ani
             LINEAR_INTERPOLATOR = linearInterpolator;
             closeAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, NotificationCenter.appConfigUpdated, NotificationCenter.appConfigUpdated);
             closeAvatarPosition = QuickShareSelectorDrawable.interpolator(linearInterpolator, 0, NotificationCenter.appConfigUpdated, NotificationCenter.appConfigUpdated);
-            closeAvatarAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), NotificationCenter.starBalanceUpdated, NotificationCenter.appConfigUpdated, NotificationCenter.appConfigUpdated);
+            closeAvatarAlpha = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 220, NotificationCenter.appConfigUpdated, NotificationCenter.appConfigUpdated);
             buttonRotationUp = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), 0, NotificationCenter.channelRecommendationsLoaded, 560);
             buttonRotationDown = QuickShareSelectorDrawable.interpolator(new CubicBezierInterpolator(0.7f, -0.6f, 0.4f, 1.0f), NotificationCenter.channelRecommendationsLoaded, 400, 560, true);
             buttonJumpUp = QuickShareSelectorDrawable.interpolator(new DecelerateInterpolator(), 0, 150, 560);

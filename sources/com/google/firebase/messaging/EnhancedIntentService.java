@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
-import androidx.profileinstaller.ProfileInstallReceiver$$ExternalSyntheticLambda0;
+import androidx.credentials.CredentialManager$$ExternalSyntheticLambda0;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -91,7 +91,7 @@ public abstract class EnhancedIntentService extends Service {
             finishTask(intent);
             return 2;
         }
-        processIntent.addOnCompleteListener(new ProfileInstallReceiver$$ExternalSyntheticLambda0(), new OnCompleteListener() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda0
+        processIntent.addOnCompleteListener(new CredentialManager$$ExternalSyntheticLambda0(), new OnCompleteListener() { // from class: com.google.firebase.messaging.EnhancedIntentService$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task) {
                 EnhancedIntentService.this.lambda$onStartCommand$1(intent, task);

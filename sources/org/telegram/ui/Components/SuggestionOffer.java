@@ -20,7 +20,7 @@ import org.telegram.messenger.utils.tlutils.AmountUtils$Amount;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SuggestionOffer {
     public int height;
     private final Theme.ResourcesProvider resourcesProvider;

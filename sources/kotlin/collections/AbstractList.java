@@ -8,8 +8,9 @@ import java.util.NoSuchElementException;
 import java.util.RandomAccess;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractList extends AbstractCollection implements List {
     public static final Companion Companion = new Companion(null);
 
@@ -182,6 +183,20 @@ public abstract class AbstractList extends AbstractCollection implements List {
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
+        }
+
+        public final int newCapacity$kotlin_stdlib(int i, int i2) {
+            int i3 = i + (i >> 1);
+            if (i3 - i2 < 0) {
+                i3 = i2;
+            }
+            if (i3 - 2147483639 <= 0) {
+                return i3;
+            }
+            if (i2 > 2147483639) {
+                return ConnectionsManager.DEFAULT_DATACENTER_ID;
+            }
+            return 2147483639;
         }
 
         private Companion() {

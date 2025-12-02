@@ -9,7 +9,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Cells.DialogCell;
 import org.telegram.ui.PhotoViewer;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class AnimationProperties {
     public static final Property COLOR_DRAWABLE_ALPHA;
     public static final Property PAINT_ALPHA;

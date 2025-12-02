@@ -21,7 +21,7 @@ import org.webrtc.GlUtil;
 import org.webrtc.RendererCommon;
 import org.webrtc.VideoSink;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class EglRenderer implements VideoSink {
     private static final long LOG_INTERVAL_SEC = 4;
     private static final String TAG = "EglRenderer";

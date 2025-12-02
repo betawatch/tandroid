@@ -13,7 +13,6 @@ import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.zzah;
 import com.google.android.gms.common.util.DeviceProperties;
-import com.google.android.gms.common.util.PlatformVersion;
 import com.google.android.gms.common.util.zza;
 import com.google.android.gms.common.wrappers.Wrappers;
 import java.util.Iterator;
@@ -109,9 +108,6 @@ public abstract class GooglePlayServicesUtilLight {
     }
 
     public static boolean isRestrictedUserProfile(Context context) {
-        if (!PlatformVersion.isAtLeastJellyBeanMR2()) {
-            return false;
-        }
         Object systemService = context.getSystemService("user");
         Preconditions.checkNotNull(systemService);
         Bundle applicationRestrictions = ((UserManager) systemService).getApplicationRestrictions(context.getPackageName());
@@ -125,21 +121,15 @@ public abstract class GooglePlayServicesUtilLight {
     static boolean zza(Context context, String str) {
         ApplicationInfo applicationInfo;
         boolean equals = str.equals("com.google.android.gms");
-        if (PlatformVersion.isAtLeastLollipop()) {
-            try {
-                Iterator<PackageInstaller.SessionInfo> it = context.getPackageManager().getPackageInstaller().getAllSessions().iterator();
-                while (it.hasNext()) {
-                    if (str.equals(it.next().getAppPackageName())) {
-                        return true;
-                    }
-                }
-            } catch (Exception unused) {
-                return false;
-            }
-        }
         try {
+            Iterator<PackageInstaller.SessionInfo> it = context.getPackageManager().getPackageInstaller().getAllSessions().iterator();
+            while (it.hasNext()) {
+                if (str.equals(it.next().getAppPackageName())) {
+                    return true;
+                }
+            }
             applicationInfo = context.getPackageManager().getApplicationInfo(str, 8192);
-        } catch (PackageManager.NameNotFoundException unused2) {
+        } catch (PackageManager.NameNotFoundException | Exception unused) {
         }
         return equals ? applicationInfo.enabled : applicationInfo.enabled && !isRestrictedUserProfile(context);
     }

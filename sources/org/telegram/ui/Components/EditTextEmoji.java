@@ -47,7 +47,7 @@ import org.telegram.ui.Components.EmojiView;
 import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class EditTextEmoji extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate {
     AdjustPanLayoutHelper adjustPanLayoutHelper;
     private boolean allowAnimatedEmoji;

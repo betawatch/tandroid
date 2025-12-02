@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class TextViewSwitcher extends ViewSwitcher {
     public TextViewSwitcher(Context context) {
         super(context);

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
-import androidx.profileinstaller.ProfileInstallReceiver$$ExternalSyntheticLambda0;
+import androidx.credentials.CredentialManager$$ExternalSyntheticLambda0;
 import com.google.android.gms.cloudmessaging.Rpc;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
@@ -162,7 +162,7 @@ class GmsRpc {
     }
 
     private Task extractResponseWhenComplete(Task task) {
-        return task.continueWith(new ProfileInstallReceiver$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
+        return task.continueWith(new CredentialManager$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
                 String lambda$extractResponseWhenComplete$0;

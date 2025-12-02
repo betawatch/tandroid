@@ -3,7 +3,7 @@ package kotlinx.coroutines.internal;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import kotlin.ranges.RangesKt;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class ResizableAtomicArray {
     private volatile AtomicReferenceArray<Object> array;
 

@@ -357,7 +357,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         this.points = new float[2];
         this.isCoverPreview = false;
         this.pos = new int[2];
-        this.openKeyboardRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView.30
+        this.openKeyboardRunnable = new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView.28
             @Override // java.lang.Runnable
             public void run() {
                 if (PaintView.this.currentEntityView instanceof TextPaintView) {
@@ -2702,110 +2702,19 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         onOpenCloseStickersAlert(false);
     }
 
-    private void showAudioAlert(final Utilities.Callback callback) {
-        ChatAttachAlert chatAttachAlert = new ChatAttachAlert(getContext(), new ChatActivity(null) { // from class: org.telegram.ui.Stories.recorder.PaintView.26
-            @Override // org.telegram.ui.ChatActivity, org.telegram.ui.Components.ChatActivityInterface, org.telegram.ui.Components.InstantCameraView.Delegate
-            public long getDialogId() {
-                return 0L;
-            }
-
-            @Override // org.telegram.ui.ChatActivity
-            public boolean isKeyboardVisible() {
-                return false;
-            }
-
-            @Override // org.telegram.ui.ChatActivity, org.telegram.ui.ActionBar.BaseFragment
-            public boolean isLightStatusBar() {
-                return false;
-            }
-
-            @Override // org.telegram.ui.ChatActivity, org.telegram.ui.ActionBar.BaseFragment
-            public Theme.ResourcesProvider getResourceProvider() {
-                return PaintView.this.resourcesProvider;
-            }
-
-            @Override // org.telegram.ui.ActionBar.BaseFragment
-            public Activity getParentActivity() {
-                return AndroidUtilities.findActivity(PaintView.this.getContext());
-            }
-
-            @Override // org.telegram.ui.ChatActivity, org.telegram.ui.Components.ChatActivityInterface
-            public TLRPC.User getCurrentUser() {
-                return UserConfig.getInstance(this.currentAccount).getCurrentUser();
-            }
-
-            @Override // org.telegram.ui.ChatActivity
-            public void sendAudio(ArrayList arrayList, CharSequence charSequence, boolean z, int i, int i2, long j, boolean z2, long j2) {
-                MessageObject messageObject;
-                if (arrayList.isEmpty() || (messageObject = (MessageObject) arrayList.get(0)) == null) {
-                    return;
-                }
-                callback.run(messageObject);
-                ChatAttachAlert chatAttachAlert2 = r4[0];
-                if (chatAttachAlert2 != null) {
-                    chatAttachAlert2.lambda$new$0();
-                }
-            }
-        }, false, true, false, this.resourcesProvider);
-        final ChatAttachAlert[] chatAttachAlertArr = {chatAttachAlert};
-        chatAttachAlert.setDelegate(new ChatAttachAlert.ChatAttachViewDelegate() { // from class: org.telegram.ui.Stories.recorder.PaintView.27
-            @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-            public void didPressedButton(int i, boolean z, boolean z2, int i2, int i3, long j, boolean z3, boolean z4, long j2) {
-            }
-
-            @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-            public /* synthetic */ void didSelectBot(TLRPC.User user) {
-                ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$didSelectBot(this, user);
-            }
-
-            @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-            public /* synthetic */ void doOnIdle(Runnable runnable) {
-                runnable.run();
-            }
-
-            @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-            public /* synthetic */ boolean needEnterComment() {
-                return ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$needEnterComment(this);
-            }
-
-            @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-            public /* synthetic */ void onCameraOpened() {
-                ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$onCameraOpened(this);
-            }
-
-            @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-            public /* synthetic */ void onWallpaperSelected(Object obj) {
-                ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$onWallpaperSelected(this, obj);
-            }
-
-            @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-            public /* synthetic */ void openAvatarsSearch() {
-                ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$openAvatarsSearch(this);
-            }
-
-            @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-            public /* synthetic */ boolean selectItemOnClicking() {
-                return ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$selectItemOnClicking(this);
-            }
-
-            @Override // org.telegram.ui.Components.ChatAttachAlert.ChatAttachViewDelegate
-            public /* synthetic */ void sendAudio(ArrayList arrayList, CharSequence charSequence, boolean z, int i, int i2, long j, boolean z2, long j2) {
-                ChatAttachAlert.ChatAttachViewDelegate.-CC.$default$sendAudio(this, arrayList, charSequence, z, i, i2, j, z2, j2);
+    private void showAudioAlert(Utilities.Callback callback) {
+        SelectAudioAlert selectAudioAlert = new SelectAudioAlert(getContext(), callback);
+        selectAudioAlert.setOnDismissListener(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda57
+            @Override // java.lang.Runnable
+            public final void run() {
+                PaintView.this.lambda$showAudioAlert$31();
             }
         });
-        chatAttachAlertArr[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$$ExternalSyntheticLambda57
-            @Override // android.content.DialogInterface.OnDismissListener
-            public final void onDismiss(DialogInterface dialogInterface) {
-                PaintView.this.lambda$showAudioAlert$31(dialogInterface);
-            }
-        });
-        chatAttachAlertArr[0].setStoryAudioPicker();
-        chatAttachAlertArr[0].init();
-        chatAttachAlertArr[0].show();
+        selectAudioAlert.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAudioAlert$31(DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$showAudioAlert$31() {
         onOpenCloseStickersAlert(false);
     }
 
@@ -5492,7 +5401,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
 
     public MessageEntityView createMessage(ArrayList arrayList, boolean z, boolean z2) {
         this.forceChanges = true;
-        MessageEntityView messageEntityView = new MessageEntityView(getContext(), centerPositionForEntity(), 0.0f, 1.0f, arrayList, this.blurManager, z2, this.videoTextureHolder) { // from class: org.telegram.ui.Stories.recorder.PaintView.28
+        MessageEntityView messageEntityView = new MessageEntityView(getContext(), centerPositionForEntity(), 0.0f, 1.0f, arrayList, this.blurManager, z2, this.videoTextureHolder) { // from class: org.telegram.ui.Stories.recorder.PaintView.26
             @Override // org.telegram.ui.Components.Paint.Views.MessageEntityView
             public boolean drawForBitmap() {
                 return PaintView.this.drawForThemeToggle;
@@ -5533,7 +5442,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
 
     private StickerView createSticker(Object obj, TLRPC.Document document, boolean z) {
         StickerPosition calculateStickerPosition = calculateStickerPosition(document);
-        StickerView stickerView = new StickerView(getContext(), calculateStickerPosition.position, calculateStickerPosition.angle, calculateStickerPosition.scale, baseStickerSize(), document, obj) { // from class: org.telegram.ui.Stories.recorder.PaintView.29
+        StickerView stickerView = new StickerView(getContext(), calculateStickerPosition.position, calculateStickerPosition.angle, calculateStickerPosition.scale, baseStickerSize(), document, obj) { // from class: org.telegram.ui.Stories.recorder.PaintView.27
             @Override // org.telegram.ui.Components.Paint.Views.StickerView
             protected void didSetAnimatedSticker(RLottieDrawable rLottieDrawable) {
                 PaintView.this.didSetAnimatedSticker(rLottieDrawable);
@@ -5824,7 +5733,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                             PaintView.this.lambda$showEmojiPopup$63(valueAnimator);
                         }
                     });
-                    ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.PaintView.31
+                    ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.PaintView.29
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             PaintView.this.emojiView.setTranslationY(0.0f);
@@ -5877,7 +5786,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
                     }
                 });
                 this.isAnimatePopupClosing = true;
-                ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.PaintView.32
+                ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.PaintView.30
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         PaintView.this.isAnimatePopupClosing = false;
@@ -6032,11 +5941,11 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         if (AndroidUtilities.isTablet()) {
             this.emojiView.setForseMultiwindowLayout(true);
         }
-        this.emojiView.setDelegate(new 33());
+        this.emojiView.setDelegate(new 31());
         this.parent.addView(this.emojiView);
     }
 
-    class 33 implements EmojiView.EmojiViewDelegate {
+    class 31 implements EmojiView.EmojiViewDelegate {
         int innerTextChange;
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
@@ -6144,7 +6053,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
             EmojiView.EmojiViewDelegate.-CC.$default$showTrendingStickersAlert(this, trendingStickersLayout);
         }
 
-        33() {
+        31() {
         }
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
@@ -6229,10 +6138,10 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
             AlertDialog.Builder builder = new AlertDialog.Builder(PaintView.this.getContext(), PaintView.this.resourcesProvider);
             builder.setTitle(LocaleController.getString(R.string.ClearRecentEmojiTitle));
             builder.setMessage(LocaleController.getString(R.string.ClearRecentEmojiText));
-            builder.setPositiveButton(LocaleController.getString(R.string.ClearButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$33$$ExternalSyntheticLambda0
+            builder.setPositiveButton(LocaleController.getString(R.string.ClearButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Stories.recorder.PaintView$31$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
-                    PaintView.33.this.lambda$onClearEmojiRecent$0(alertDialog, i);
+                    PaintView.31.this.lambda$onClearEmojiRecent$0(alertDialog, i);
                 }
             });
             builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);

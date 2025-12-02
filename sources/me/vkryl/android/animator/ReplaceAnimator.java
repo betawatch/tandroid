@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import me.vkryl.android.animator.ListAnimator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ReplaceAnimator implements Iterable {
     private final ListAnimator list;
 
