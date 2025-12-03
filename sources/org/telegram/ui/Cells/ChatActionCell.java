@@ -88,9 +88,11 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.AvatarSpan;
 import org.telegram.ui.ChannelAdminLogActivity;
 import org.telegram.ui.ChatBackgroundDrawable;
+import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.AvatarDrawable;
+import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ButtonBounce;
 import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -214,6 +216,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     private ArrayList lineHeights;
     private ArrayList lineWidths;
     private LoadingDrawable loadingDrawable;
+    private boolean offerExpired;
     private int overriddenMaxWidth;
     private int overrideBackground;
     private Paint overrideBackgroundPaint;
@@ -668,23 +671,23 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0870  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x0887  */
     /* JADX WARN: Removed duplicated region for block: B:121:0x01eb  */
     /* JADX WARN: Removed duplicated region for block: B:129:0x02a9  */
     /* JADX WARN: Removed duplicated region for block: B:130:0x02b5  */
     /* JADX WARN: Removed duplicated region for block: B:132:0x0210  */
     /* JADX WARN: Removed duplicated region for block: B:216:0x0485  */
     /* JADX WARN: Removed duplicated region for block: B:217:0x04a1  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x0780  */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x0809  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0880  */
+    /* JADX WARN: Removed duplicated region for block: B:264:0x0797  */
+    /* JADX WARN: Removed duplicated region for block: B:282:0x0820  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0897  */
     /* JADX WARN: Type inference failed for: r15v2 */
     /* JADX WARN: Type inference failed for: r15v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r15v4 */
     /* JADX WARN: Type inference failed for: r15v6 */
     /* JADX WARN: Type inference failed for: r1v36, types: [org.telegram.messenger.ImageReceiver] */
-    /* JADX WARN: Type inference failed for: r2v183 */
     /* JADX WARN: Type inference failed for: r2v184 */
+    /* JADX WARN: Type inference failed for: r2v185 */
     /* JADX WARN: Type inference failed for: r2v37, types: [org.telegram.tgnet.TLRPC$messages_StickerSet] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -921,7 +924,8 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                                 } else {
                                     document2 = null;
                                 }
-                                if (!messageObject.isOut() && !tL_messageActionStarGiftPurchaseOffer.accepted && !tL_messageActionStarGiftPurchaseOffer.declined) {
+                                this.offerExpired = tL_messageActionStarGiftPurchaseOffer.expires_at < ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
+                                if (!messageObject.isOut() && !tL_messageActionStarGiftPurchaseOffer.accepted && !tL_messageActionStarGiftPurchaseOffer.declined && !this.offerExpired) {
                                     BotInlineKeyboard.Builder builder = new BotInlineKeyboard.Builder();
                                     builder.addGiftOfferKeyboard();
                                     BotInlineKeyboard.Source build = builder.build();
@@ -2017,8 +2021,8 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     }
 
     /* JADX WARN: Removed duplicated region for block: B:43:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x04cf  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x04e9  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x04d3  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x04ed  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x0157  */
     @Override // android.view.View
     /*
@@ -2223,7 +2227,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     r8 = dp11;
                     if (messageObject != null && !messageObject.isOut() && messageObject.type == 33) {
                         TLRPC.TL_messageActionStarGiftPurchaseOffer tL_messageActionStarGiftPurchaseOffer = (TLRPC.TL_messageActionStarGiftPurchaseOffer) messageObject.messageOwner.action;
-                        if (!tL_messageActionStarGiftPurchaseOffer.accepted && !tL_messageActionStarGiftPurchaseOffer.declined) {
+                        if (!tL_messageActionStarGiftPurchaseOffer.accepted && !tL_messageActionStarGiftPurchaseOffer.declined && !this.offerExpired) {
                             r8 += AndroidUtilities.dp(44.0f);
                         }
                     }
@@ -2299,6 +2303,8 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         TLRPC.TL_textWithEntities tL_textWithEntities;
         CharSequence charSequence4;
         String formatString2;
+        int i;
+        char c;
         long j;
         long j2;
         boolean z2;
@@ -2311,12 +2317,12 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         TL_stars.StarGift starGift3;
         CharSequence charSequence7;
         String publicUsername;
-        char c;
+        char c2;
         Object valueOf;
         TLRPC.Peer peer;
         TLRPC.Message message;
         TLRPC.MessageAction messageAction;
-        int i;
+        int i2;
         TLRPC.MessageMedia messageMedia;
         this.giftRectEmpty = false;
         MessageObject messageObject = this.currentMessageObject;
@@ -2361,21 +2367,21 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         }
         if (messageObject2 != null && (message = messageObject2.messageOwner) != null && (messageAction = message.action) != null) {
             if (messageAction instanceof TLRPC.TL_messageActionTodoAppendTasks) {
-                i = org.telegram.messenger.R.drawable.mini_checklist_add;
+                i2 = org.telegram.messenger.R.drawable.mini_checklist_add;
             } else if (messageAction instanceof TLRPC.TL_messageActionTodoCompletions) {
                 TLRPC.TL_messageActionTodoCompletions tL_messageActionTodoCompletions = (TLRPC.TL_messageActionTodoCompletions) messageAction;
                 if (tL_messageActionTodoCompletions.incompleted.size() > tL_messageActionTodoCompletions.completed.size()) {
-                    i = org.telegram.messenger.R.drawable.mini_checklist_undone;
+                    i2 = org.telegram.messenger.R.drawable.mini_checklist_undone;
                 } else {
-                    i = org.telegram.messenger.R.drawable.mini_checklist_done;
+                    i2 = org.telegram.messenger.R.drawable.mini_checklist_done;
                 }
             } else {
-                i = 0;
+                i2 = 0;
             }
-            if (i != 0) {
+            if (i2 != 0) {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
                 spannableStringBuilder.insert(0, (CharSequence) "i ");
-                spannableStringBuilder.setSpan(new ColoredImageSpan(i), 0, 1, 33);
+                spannableStringBuilder.setSpan(new ColoredImageSpan(i2), 0, 1, 33);
                 charSequence = spannableStringBuilder;
             }
         }
@@ -2413,14 +2419,14 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     this.giftRectEmpty = true;
                 }
             }
-            int i2 = messageObject.type;
-            if (i2 == 11) {
+            int i3 = messageObject.type;
+            if (i3 == 11) {
                 float dp = this.textHeight + AndroidUtilities.dp(19.0f);
                 float f = AndroidUtilities.roundMessageSize;
                 this.imageReceiver.setImageCoords((this.previousWidth - AndroidUtilities.roundMessageSize) / 2.0f, dp, f, f);
-            } else if (i2 == 25) {
+            } else if (i3 == 25) {
                 createGiftPremiumChannelLayouts();
-            } else if (i2 == 30) {
+            } else if (i3 == 30) {
                 TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.currentMessageObject.getDialogId()));
                 TLRPC.MessageAction messageAction4 = messageObject.messageOwner.action;
                 if (messageAction4 instanceof TLRPC.TL_messageActionGiftStars) {
@@ -2547,18 +2553,18 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                             CharSequence charSequence8 = replaceTags;
                             starGift2 = tL_messageActionStarGift.gift;
                             if (starGift2 == null && starGift2.limited) {
-                                int i3 = org.telegram.messenger.R.string.Gift2Limited1OfRibbon;
-                                int i4 = starGift2.availability_total;
-                                if (i4 > 1500) {
-                                    c = 0;
-                                    valueOf = AndroidUtilities.formatWholeNumber(i4, 0);
+                                int i4 = org.telegram.messenger.R.string.Gift2Limited1OfRibbon;
+                                int i5 = starGift2.availability_total;
+                                if (i5 > 1500) {
+                                    c2 = 0;
+                                    valueOf = AndroidUtilities.formatWholeNumber(i5, 0);
                                 } else {
-                                    c = 0;
-                                    valueOf = Integer.valueOf(i4);
+                                    c2 = 0;
+                                    valueOf = Integer.valueOf(i5);
                                 }
                                 Object[] objArr = new Object[1];
-                                objArr[c] = valueOf;
-                                charSequence5 = LocaleController.formatString(i3, objArr);
+                                objArr[c2] = valueOf;
+                                charSequence5 = LocaleController.formatString(i4, objArr);
                             } else {
                                 charSequence5 = null;
                             }
@@ -2638,7 +2644,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     this.titleHeight = 0;
                     this.textY = 0;
                 }
-            } else if (i2 == 33) {
+            } else if (i3 == 33) {
                 TLRPC.TL_messageActionStarGiftPurchaseOffer tL_messageActionStarGiftPurchaseOffer = (TLRPC.TL_messageActionStarGiftPurchaseOffer) message3.action;
                 SpannableStringBuilder spannableStringBuilder6 = new SpannableStringBuilder(charSequence);
                 spannableStringBuilder6.append((CharSequence) "\n\n");
@@ -2651,7 +2657,19 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     if (max == 0) {
                         spannableStringBuilder6.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.getString(org.telegram.messenger.R.string.GiftOfferStatusExpired)));
                     } else {
-                        spannableStringBuilder6.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(org.telegram.messenger.R.string.GiftOfferStatusPending, LocaleController.formatShortDuration2(max))));
+                        String formatShortDuration2 = LocaleController.formatShortDuration2(max);
+                        if (formatShortDuration2.endsWith(".")) {
+                            i = 1;
+                            c = 0;
+                            formatShortDuration2 = formatShortDuration2.substring(0, formatShortDuration2.length() - 1);
+                        } else {
+                            i = 1;
+                            c = 0;
+                        }
+                        int i6 = org.telegram.messenger.R.string.GiftOfferStatusPending;
+                        Object[] objArr2 = new Object[i];
+                        objArr2[c] = formatShortDuration2;
+                        spannableStringBuilder6.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i6, objArr2)));
                     }
                 }
                 createGiftPremiumLayouts(null, null, null, spannableStringBuilder6, false, null, 11, null, this.giftRectSize, false, false);
@@ -2661,7 +2679,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 this.titleHeight = 0;
                 this.textY = 0;
                 this.giftRectEmpty = false;
-            } else if (i2 == 34) {
+            } else if (i3 == 34) {
                 createGiftPremiumLayouts(null, null, null, charSequence, false, null, 11, null, this.giftRectSize, false, true);
                 this.textLayout = null;
                 this.textHeight = 0;
@@ -2669,7 +2687,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 this.titleHeight = 0;
                 this.textY = 0;
                 this.giftRectEmpty = true;
-            } else if (i2 == 31) {
+            } else if (i3 == 31) {
                 String str2 = ((TLRPC.TL_chatThemeUniqueGift) ((TLRPC.TL_messageActionSetChatTheme) message3.action).theme).gift.title + " #" + LocaleController.formatNumber(r0.num, ',');
                 long fromChatId2 = messageObject.getFromChatId();
                 if (UserConfig.getInstance(this.currentAccount).getClientUserId() == fromChatId2) {
@@ -2683,7 +2701,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 this.titleLayout = null;
                 this.titleHeight = 0;
                 this.textY = 0;
-            } else if (i2 == 18) {
+            } else if (i3 == 18) {
                 TLRPC.MessageAction messageAction5 = message3.action;
                 if (messageAction5 instanceof TLRPC.TL_messageActionGiftPremium) {
                     tL_textWithEntities = ((TLRPC.TL_messageActionGiftPremium) messageAction5).message;
@@ -2699,7 +2717,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     charSequence4 = MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji((CharSequence) spannableStringBuilder7, this.giftTextPaint.getFontMetricsInt(), false, (int[]) null), tL_textWithEntities.entities, this.giftTextPaint.getFontMetricsInt());
                 }
                 createGiftPremiumLayouts(LocaleController.formatPluralStringComma("ActionGiftPremiumTitle2", messageObject.messageOwner.action.months), null, null, charSequence4 == null ? LocaleController.getString(org.telegram.messenger.R.string.ActionGiftPremiumText) : charSequence4, true, LocaleController.getString((!isGiftCode() || isSelfGiftCode()) ? org.telegram.messenger.R.string.ActionGiftPremiumView : org.telegram.messenger.R.string.GiftPremiumUseGiftBtn), 11, null, this.giftRectSize, false, false);
-            } else if (i2 == 21) {
+            } else if (i3 == 21) {
                 TLRPC.TL_messageActionSuggestProfilePhoto tL_messageActionSuggestProfilePhoto = (TLRPC.TL_messageActionSuggestProfilePhoto) message3.action;
                 TLRPC.User user3 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.isOutOwner() ? 0L : messageObject.getDialogId()));
                 boolean z6 = tL_messageActionSuggestProfilePhoto.video || !((photo = tL_messageActionSuggestProfilePhoto.photo) == null || (arrayList2 = photo.video_sizes) == null || arrayList2.isEmpty());
@@ -2727,7 +2745,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 this.titleLayout = null;
                 this.titleHeight = 0;
                 this.textY = 0;
-            } else if (i2 == 22) {
+            } else if (i3 == 22) {
                 TLRPC.User user5 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.isOutOwner() ? 0L : messageObject.getDialogId()));
                 if (messageObject.getDialogId() < 0) {
                     charSequence3 = messageObject.messageText;
@@ -4139,7 +4157,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     TLRPC.MessageAction messageAction = messageObject2.messageOwner.action;
                     if (messageAction instanceof TLRPC.TL_messageActionStarGiftPurchaseOffer) {
                         TLRPC.TL_messageActionStarGiftPurchaseOffer tL_messageActionStarGiftPurchaseOffer = (TLRPC.TL_messageActionStarGiftPurchaseOffer) messageAction;
-                        if (!tL_messageActionStarGiftPurchaseOffer.accepted && !tL_messageActionStarGiftPurchaseOffer.declined) {
+                        if (!tL_messageActionStarGiftPurchaseOffer.accepted && !tL_messageActionStarGiftPurchaseOffer.declined && !this.offerExpired) {
                             Arrays.fill(this.radii, AndroidUtilities.dp(16.0f));
                             float[] fArr = this.radii;
                             float dp8 = AndroidUtilities.dp(6.0f);
@@ -4318,13 +4336,15 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         }
         int i = buttonCustom.id;
         if (i == 5) {
-            TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
-            tL_resolveStarGiftOffer.offer_msg_id = getMessageObject().getId();
-            tL_resolveStarGiftOffer.decline = true;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_resolveStarGiftOffer, new Utilities.Callback2() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda9
-                @Override // org.telegram.messenger.Utilities.Callback2
-                public final void run(Object obj, Object obj2) {
-                    ChatActionCell.this.lambda$didPressCustomBotButton$6((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+            ChatActionCellDelegate chatActionCellDelegate = this.delegate;
+            final BaseFragment baseFragment = chatActionCellDelegate != null ? chatActionCellDelegate.getBaseFragment() : null;
+            if (baseFragment == null || this.currentMessageObject == null) {
+                return;
+            }
+            AlertsCreator.showSimpleConfirmAlert(baseFragment, LocaleController.getString(org.telegram.messenger.R.string.GiftOfferRejectConfirmTitle), AndroidUtilities.replaceTags(LocaleController.formatString(org.telegram.messenger.R.string.GiftOfferRejectConfirmText, DialogObject.getShortName(this.currentMessageObject.getDialogId()))), LocaleController.getString(org.telegram.messenger.R.string.GiftOfferRejectConfirmConfirm), true, new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda9
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ChatActionCell.this.lambda$didPressCustomBotButton$8(baseFragment);
                 }
             });
             return;
@@ -4339,10 +4359,36 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didPressCustomBotButton$6(TLRPC.Updates updates, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$didPressCustomBotButton$8(final BaseFragment baseFragment) {
+        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+        tL_resolveStarGiftOffer.offer_msg_id = getMessageObject().getId();
+        tL_resolveStarGiftOffer.decline = true;
+        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(tL_resolveStarGiftOffer, new Utilities.Callback2() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda11
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                ChatActionCell.this.lambda$didPressCustomBotButton$7(baseFragment, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$didPressCustomBotButton$7(final BaseFragment baseFragment, TLRPC.Updates updates, final TLRPC.TL_error tL_error) {
         if (updates != null) {
             MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
         }
+        if (tL_error != null) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.ChatActionCell$$ExternalSyntheticLambda12
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ChatActionCell.lambda$didPressCustomBotButton$6(BaseFragment.this, tL_error);
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$didPressCustomBotButton$6(BaseFragment baseFragment, TLRPC.TL_error tL_error) {
+        BulletinFactory.of(baseFragment).showForError(tL_error);
     }
 
     public void drawReactions(Canvas canvas, boolean z, Integer num) {

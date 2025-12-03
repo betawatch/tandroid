@@ -62705,11 +62705,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX WARN: Code restructure failed: missing block: B:102:0x01b8, code lost:
     
-        if (r15.getDialogId() != r30.mergeDialogId) goto L128;
+        if (r4.getDialogId() != r30.mergeDialogId) goto L128;
      */
     /* JADX WARN: Code restructure failed: missing block: B:445:0x08e1, code lost:
     
-        if (r4.edit_messages != false) goto L492;
+        if (r6.edit_messages != false) goto L492;
      */
     /* JADX WARN: Removed duplicated region for block: B:106:0x0200  */
     /* JADX WARN: Removed duplicated region for block: B:115:0x0219  */
@@ -62720,20 +62720,20 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:145:0x02e1  */
     /* JADX WARN: Removed duplicated region for block: B:149:0x02f6  */
     /* JADX WARN: Removed duplicated region for block: B:164:0x034e  */
-    /* JADX WARN: Removed duplicated region for block: B:501:0x0e7b  */
-    /* JADX WARN: Removed duplicated region for block: B:514:0x0ef4  */
-    /* JADX WARN: Removed duplicated region for block: B:537:0x0f82  */
-    /* JADX WARN: Removed duplicated region for block: B:549:0x0fab  */
-    /* JADX WARN: Removed duplicated region for block: B:551:0x0fae  */
-    /* JADX WARN: Removed duplicated region for block: B:554:0x0fce  */
-    /* JADX WARN: Removed duplicated region for block: B:572:0x1032  */
-    /* JADX WARN: Removed duplicated region for block: B:575:0x103d  */
-    /* JADX WARN: Removed duplicated region for block: B:588:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:589:0x1034  */
-    /* JADX WARN: Removed duplicated region for block: B:590:0x0f87  */
-    /* JADX WARN: Removed duplicated region for block: B:591:0x0e97  */
+    /* JADX WARN: Removed duplicated region for block: B:505:0x0e83  */
+    /* JADX WARN: Removed duplicated region for block: B:518:0x0efc  */
+    /* JADX WARN: Removed duplicated region for block: B:541:0x0f8a  */
+    /* JADX WARN: Removed duplicated region for block: B:553:0x0fb3  */
+    /* JADX WARN: Removed duplicated region for block: B:555:0x0fb6  */
+    /* JADX WARN: Removed duplicated region for block: B:558:0x0fd6  */
+    /* JADX WARN: Removed duplicated region for block: B:576:0x103a  */
+    /* JADX WARN: Removed duplicated region for block: B:579:0x1045  */
+    /* JADX WARN: Removed duplicated region for block: B:592:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:593:0x103c  */
+    /* JADX WARN: Removed duplicated region for block: B:594:0x0f8f  */
+    /* JADX WARN: Removed duplicated region for block: B:595:0x0e9f  */
     /* JADX WARN: Removed duplicated region for block: B:72:0x014a A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:817:0x02e5  */
+    /* JADX WARN: Removed duplicated region for block: B:821:0x02e5  */
     /* JADX WARN: Removed duplicated region for block: B:92:0x0195  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -63244,7 +63244,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                             arrayList.add(Integer.valueOf(R.drawable.msg_shareout));
                                         }
                                     }
-                                    if (!this.selectedObject.isSponsored() && (i3 = this.chatMode) != 5 && i3 != 1 && ((!this.selectedObject.needDrawBluredPreview() || this.selectedObject.hasExtendedMediaPreview()) && !this.selectedObject.isLiveLocation() && (i4 = (messageObject3 = this.selectedObject).type) != 16 && !z12 && i4 != 18 && i4 != 25 && i4 != 21 && !messageObject3.isWallpaperAction() && !messageObject5.isExpiredStory() && (i5 = messageObject5.type) != 24 && i5 != 30)) {
+                                    if (!this.selectedObject.isSponsored() && (i3 = this.chatMode) != 5 && i3 != 1 && ((!this.selectedObject.needDrawBluredPreview() || this.selectedObject.hasExtendedMediaPreview()) && !this.selectedObject.isLiveLocation() && (i4 = (messageObject3 = this.selectedObject).type) != 16 && !z12 && i4 != 18 && i4 != 33 && i4 != 34 && i4 != 25 && i4 != 21 && !messageObject3.isWallpaperAction() && !messageObject5.isExpiredStory() && (i5 = messageObject5.type) != 24 && i5 != 30)) {
                                         arrayList2.add(LocaleController.getString(R.string.Forward));
                                         arrayList3.add(2);
                                         arrayList.add(Integer.valueOf(R.drawable.msg_forward));
