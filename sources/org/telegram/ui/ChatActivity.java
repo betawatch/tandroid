@@ -46557,6 +46557,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$instantiateItem$0(ReactedUsersListView reactedUsersListView, ArrayList arrayList) {
+            if (ChatActivity.this.getParentActivity() == null || ChatActivity.this.getContext() == null) {
+                return;
+            }
             ChatActivity chatActivity = ChatActivity.this;
             EmojiPacksAlert emojiPacksAlert = new EmojiPacksAlert(chatActivity, chatActivity.getParentActivity(), ChatActivity.this.themeDelegate, arrayList) { // from class: org.telegram.ui.ChatActivity.111.1
                 @Override // org.telegram.ui.Components.EmojiPacksAlert, org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
@@ -46603,6 +46606,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createMenu$247(ReactedUsersListView reactedUsersListView, ArrayList arrayList) {
+        if (getParentActivity() == null || getContext() == null) {
+            return;
+        }
         EmojiPacksAlert emojiPacksAlert = new EmojiPacksAlert(this, getParentActivity(), this.themeDelegate, arrayList) { // from class: org.telegram.ui.ChatActivity.113
             @Override // org.telegram.ui.Components.EmojiPacksAlert, org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
             /* renamed from: dismiss */
@@ -55984,7 +55990,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$didLongPressUserAvatar$6(ChatMessageCell chatMessageCell, TLRPC.User user, AvatarPreviewer.MenuItem menuItem) {
-            int i = 145.$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem[menuItem.ordinal()];
+            int i = 144.$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem[menuItem.ordinal()];
             if (i == 1) {
                 lambda$didLongPressUserAvatar$7(user);
                 return;
@@ -56208,7 +56214,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$didLongPressChannelAvatar$13(TLRPC.Chat chat, ChatMessageCell chatMessageCell, AvatarPreviewer.MenuItem menuItem) {
-            int i = 145.$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem[menuItem.ordinal()];
+            int i = 144.$SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem[menuItem.ordinal()];
             if (i == 1) {
                 lambda$didLongPressChannelAvatar$14(chat);
                 return;
@@ -57968,6 +57974,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
             MediaDataController.getInstance(((BaseFragment) ChatActivity.this).currentAccount).putStickerSet(tL_messages_stickerSet, false);
+            if (ChatActivity.this.getParentActivity() == null || ChatActivity.this.getContext() == null) {
+                return;
+            }
             TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
             TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
             tL_inputStickerSetID.access_hash = stickerSet.access_hash;
@@ -58315,7 +58324,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
     }
 
-    static /* synthetic */ class 145 {
+    static /* synthetic */ class 144 {
         static final /* synthetic */ int[] $SwitchMap$org$telegram$ui$AvatarPreviewer$MenuItem;
 
         static {
@@ -62015,13 +62024,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         return chatSearchTabs.getCurrentHeight();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:106:0x03c3  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x03f0  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x03fd  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0470  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x04ba  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x04c1  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x045d  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x03ca  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x03f7  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0404  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0477  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x04c1  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x04c8  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x0464  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -62050,7 +62059,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         int i4;
         ReactionsLayoutInBubble.VisibleReaction visibleReaction2;
         TLRPC.TL_messageReactions tL_messageReactions2;
-        if (getParentActivity() == null) {
+        if (getParentActivity() == null || getContext() == null) {
             return;
         }
         HintView2 hintView2 = this.savedMessagesTagHint;
@@ -62232,7 +62241,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             frameLayout.addView(messageContainsEmojiButton, LayoutHelper.createFrame(NotificationCenter.appConfigUpdated, -2.0f));
                             z2 = true;
                             int i6 = -2;
-                            ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(frameLayout, i6, i6) { // from class: org.telegram.ui.ChatActivity.144
+                            ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(frameLayout, i6, i6) { // from class: org.telegram.ui.ChatActivity.143
                                 @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
                                 public void dismiss() {
                                     super.dismiss();
@@ -62348,7 +62357,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
             z2 = false;
             int i62 = -2;
-            ActionBarPopupWindow actionBarPopupWindow3 = new ActionBarPopupWindow(frameLayout, i62, i62) { // from class: org.telegram.ui.ChatActivity.144
+            ActionBarPopupWindow actionBarPopupWindow3 = new ActionBarPopupWindow(frameLayout, i62, i62) { // from class: org.telegram.ui.ChatActivity.143
                 @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
                 public void dismiss() {
                     super.dismiss();
@@ -62457,6 +62466,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$didPressReaction$429(ReactedUsersListView reactedUsersListView, ArrayList arrayList) {
+        if (getParentActivity() == null || getContext() == null) {
+            return;
+        }
         EmojiPacksAlert emojiPacksAlert = new EmojiPacksAlert(this, getParentActivity(), this.themeDelegate, arrayList) { // from class: org.telegram.ui.ChatActivity.142
             @Override // org.telegram.ui.Components.EmojiPacksAlert, org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
             /* renamed from: dismiss */
@@ -62487,22 +62499,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$didPressReaction$431(ArrayList arrayList, View view) {
-        new EmojiPacksAlert(new BaseFragment() { // from class: org.telegram.ui.ChatActivity.143
-            @Override // org.telegram.ui.ActionBar.BaseFragment
-            public int getCurrentAccount() {
-                return this.currentAccount;
-            }
-
-            @Override // org.telegram.ui.ActionBar.BaseFragment
-            public Context getContext() {
-                return ChatActivity.this.getContext();
-            }
-
-            @Override // org.telegram.ui.ActionBar.BaseFragment
-            public Theme.ResourcesProvider getResourceProvider() {
-                return ChatActivity.this.themeDelegate;
-            }
-        }, getContext(), this.themeDelegate, arrayList).show();
+        if (getParentActivity() == null || getContext() == null) {
+            return;
+        }
+        new EmojiPacksAlert(this, getContext(), this.themeDelegate, arrayList).show();
         closeMenu();
     }
 
