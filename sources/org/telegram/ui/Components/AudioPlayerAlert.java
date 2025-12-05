@@ -96,7 +96,7 @@ import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.CastSync;
 import org.telegram.ui.Cells.AudioPlayerCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda363;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda270;
 import org.telegram.ui.ChooseQualityLayout$QualityIcon;
 import org.telegram.ui.Components.AudioPlayerAlert;
 import org.telegram.ui.Components.Bulletin;
@@ -3224,7 +3224,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             TLRPC.Document document = messageObject.getDocument();
             long j = document != null ? document.id : 0L;
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda363(makeOptions));
+            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda270(makeOptions));
             makeSwipeback.addGap();
             makeSwipeback.addIf(!savedMusicIds.ids.contains(Long.valueOf(j)), R.drawable.left_status_profile, LocaleController.getString(R.string.AudioSaveToMyProfile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
@@ -3599,7 +3599,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 }
                 i3 = i2 + 1;
             }
-            dialogsActivity.lambda$onBackPressed$340();
+            dialogsActivity.finishFragment();
             BaseFragment lastFragment = LaunchActivity.getLastFragment();
             if (lastFragment == null) {
                 return true;
@@ -3639,7 +3639,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 dialogsActivity.removeSelfFromStack();
             }
         } else {
-            dialogsActivity.lambda$onBackPressed$340();
+            dialogsActivity.finishFragment();
         }
         return true;
     }

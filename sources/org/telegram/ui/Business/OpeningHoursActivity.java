@@ -60,8 +60,8 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    if (OpeningHoursActivity.this.onBackPressed()) {
-                        OpeningHoursActivity.this.lambda$onBackPressed$340();
+                    if (OpeningHoursActivity.this.onBackPressed(true)) {
+                        OpeningHoursActivity.this.finishFragment();
                     }
                 } else if (i == 1) {
                     OpeningHoursActivity.this.processDone();
@@ -409,7 +409,7 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
             return;
         }
         if (!hasChanges()) {
-            lambda$onBackPressed$340();
+            finishFragment();
             return;
         }
         this.doneButtonDrawable.animateToProgress(1.0f);
@@ -466,7 +466,7 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
             if (this.isFinished || this.finishing) {
                 return;
             }
-            lambda$onBackPressed$340();
+            finishFragment();
         }
     }
 

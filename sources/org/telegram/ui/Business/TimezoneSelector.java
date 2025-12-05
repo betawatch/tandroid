@@ -48,7 +48,7 @@ public class TimezoneSelector extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    TimezoneSelector.this.lambda$onBackPressed$340();
+                    TimezoneSelector.this.finishFragment();
                 }
             }
         });

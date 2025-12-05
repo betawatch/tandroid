@@ -65,8 +65,8 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    if (AwayMessagesActivity.this.onBackPressed()) {
-                        AwayMessagesActivity.this.lambda$onBackPressed$340();
+                    if (AwayMessagesActivity.this.onBackPressed(true)) {
+                        AwayMessagesActivity.this.finishFragment();
                     }
                 } else if (i == 1) {
                     AwayMessagesActivity.this.processDone();
@@ -231,7 +231,7 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
             return;
         }
         if (!hasChanges()) {
-            lambda$onBackPressed$340();
+            finishFragment();
             return;
         }
         QuickRepliesController.QuickReply findReply = QuickRepliesController.getInstance(this.currentAccount).findReply("away");
@@ -310,13 +310,16 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
             this.doneButtonDrawable.animateToProgress(0.0f);
             BulletinFactory.of(this).createErrorBulletin(LocaleController.getString(R.string.UnknownError)).show();
         } else {
-            lambda$onBackPressed$340();
+            finishFragment();
         }
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
-        if (hasChanges()) {
+    public boolean onBackPressed(boolean z) {
+        if (!hasChanges()) {
+            return super.onBackPressed(z);
+        }
+        if (z) {
             if (!this.enabled) {
                 processDone();
                 return false;
@@ -337,9 +340,8 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
                 }
             });
             showDialog(builder.create());
-            return false;
         }
-        return super.onBackPressed();
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -349,7 +351,7 @@ public class AwayMessagesActivity extends BaseFragment implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onBackPressed$4(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

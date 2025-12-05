@@ -1049,7 +1049,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PremiumPreviewFragment.this.lambda$onBackPressed$340();
+                    PremiumPreviewFragment.this.finishFragment();
                 }
             }
         });
@@ -2661,12 +2661,15 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
-        if (this.settingsView != null) {
-            closeSetting();
+    public boolean onBackPressed(boolean z) {
+        if (this.settingsView == null) {
+            return super.onBackPressed(z);
+        }
+        if (!z) {
             return false;
         }
-        return super.onBackPressed();
+        closeSetting();
+        return false;
     }
 
     private void closeSetting() {

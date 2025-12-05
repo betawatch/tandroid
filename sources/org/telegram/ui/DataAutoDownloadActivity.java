@@ -126,7 +126,7 @@ public class DataAutoDownloadActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    DataAutoDownloadActivity.this.lambda$onBackPressed$340();
+                    DataAutoDownloadActivity.this.finishFragment();
                 }
             }
         });

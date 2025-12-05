@@ -64,7 +64,7 @@ public class ChangeBioActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    ChangeBioActivity.this.lambda$onBackPressed$340();
+                    ChangeBioActivity.this.finishFragment();
                 } else if (i2 == 1) {
                     ChangeBioActivity.this.saveName();
                 }
@@ -211,7 +211,7 @@ public class ChangeBioActivity extends BaseFragment {
         }
         final String replace = this.firstNameField.getText().toString().replace("\n", "");
         if (str.equals(replace)) {
-            lambda$onBackPressed$340();
+            finishFragment();
             return;
         }
         final AlertDialog alertDialog = new AlertDialog(getParentActivity(), 3);
@@ -263,7 +263,7 @@ public class ChangeBioActivity extends BaseFragment {
         }
         userFull.about = str;
         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(user.id), userFull);
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -451,7 +451,7 @@ public class QrActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$1(View view) {
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

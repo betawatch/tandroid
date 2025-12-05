@@ -554,7 +554,7 @@ public class AvatarConstructorFragment extends BaseFragment {
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
             builder.setMessage(LocaleController.getString(R.string.PhotoEditorDiscardAlert));
             builder.setTitle(LocaleController.getString(R.string.DiscardChanges));
-            builder.setPositiveButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AvatarConstructorFragment$$ExternalSyntheticLambda3
+            builder.setPositiveButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AvatarConstructorFragment$$ExternalSyntheticLambda5
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     AvatarConstructorFragment.this.lambda$discardEditor$2(alertDialog, i);
@@ -566,12 +566,12 @@ public class AvatarConstructorFragment extends BaseFragment {
             create.redPositive();
             return;
         }
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$discardEditor$2(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -628,7 +628,7 @@ public class AvatarConstructorFragment extends BaseFragment {
             return;
         }
         if (isLocked()) {
-            BulletinFactory.of(this.bottomBulletinContainer, this.resourceProvider).createSimpleBulletin(R.raw.star_premium_2, AndroidUtilities.premiumText(LocaleController.getString(R.string.PremiumAvatarToast), new Runnable() { // from class: org.telegram.ui.Components.AvatarConstructorFragment$$ExternalSyntheticLambda5
+            BulletinFactory.of(this.bottomBulletinContainer, this.resourceProvider).createSimpleBulletin(R.raw.star_premium_2, AndroidUtilities.premiumText(LocaleController.getString(R.string.PremiumAvatarToast), new Runnable() { // from class: org.telegram.ui.Components.AvatarConstructorFragment$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
                     AvatarConstructorFragment.this.lambda$onDonePressed$3();
@@ -642,7 +642,7 @@ public class AvatarConstructorFragment extends BaseFragment {
             delegate.onDone(previewView.backgroundGradient, previewView.documentId, previewView.document, previewView);
         }
         if (this.finishOnDone) {
-            lambda$onBackPressed$340();
+            finishFragment();
         }
     }
 
@@ -1220,7 +1220,7 @@ public class AvatarConstructorFragment extends BaseFragment {
             }
         }).alpha(1.0f).setDuration(200L).start();
         this.colorPickerGradient = new BackgroundGradient();
-        ColorPicker colorPicker = new ColorPicker(getContext(), z, new ColorPicker.ColorPickerDelegate() { // from class: org.telegram.ui.Components.AvatarConstructorFragment$$ExternalSyntheticLambda6
+        ColorPicker colorPicker = new ColorPicker(getContext(), z, new ColorPicker.ColorPickerDelegate() { // from class: org.telegram.ui.Components.AvatarConstructorFragment$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.Components.ColorPicker.ColorPickerDelegate
             public /* synthetic */ void deleteTheme() {
                 ColorPicker.ColorPickerDelegate.-CC.$default$deleteTheme(this);
@@ -1282,7 +1282,7 @@ public class AvatarConstructorFragment extends BaseFragment {
         textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         frameLayout.addView(textView, LayoutHelper.createFrame(-2, -2, 17));
         linearLayout.addView(frameLayout, LayoutHelper.createFrame(-1, 48.0f, 0, 16.0f, -8.0f, 16.0f, 16.0f));
-        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AvatarConstructorFragment$$ExternalSyntheticLambda7
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AvatarConstructorFragment$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AvatarConstructorFragment.this.lambda$showColorPicker$6(zArr, view);
@@ -1672,9 +1672,32 @@ public class AvatarConstructorFragment extends BaseFragment {
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
-        discardEditor();
+    public boolean onBackPressed(boolean z) {
+        if (!this.wasChanged) {
+            return super.onBackPressed(z);
+        }
+        if (!z) {
+            return false;
+        }
+        AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+        builder.setMessage(LocaleController.getString(R.string.PhotoEditorDiscardAlert));
+        builder.setTitle(LocaleController.getString(R.string.DiscardChanges));
+        builder.setPositiveButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AvatarConstructorFragment$$ExternalSyntheticLambda3
+            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+            public final void onClick(AlertDialog alertDialog, int i) {
+                AvatarConstructorFragment.this.lambda$onBackPressed$8(alertDialog, i);
+            }
+        });
+        builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
+        AlertDialog create = builder.create();
+        showDialog(create);
+        create.redPositive();
         return false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onBackPressed$8(AlertDialog alertDialog, int i) {
+        finishFragment();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

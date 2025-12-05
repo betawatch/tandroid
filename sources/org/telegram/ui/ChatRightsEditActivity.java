@@ -536,8 +536,8 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
-                    if (ChatRightsEditActivity.this.checkDiscard()) {
-                        ChatRightsEditActivity.this.lambda$onBackPressed$340();
+                    if (ChatRightsEditActivity.this.checkDiscard(true)) {
+                        ChatRightsEditActivity.this.finishFragment();
                     }
                 } else if (i2 == 1) {
                     ChatRightsEditActivity.this.onDonePressed();
@@ -624,7 +624,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                 }
             }
         });
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ChatRightsEditActivity$$ExternalSyntheticLambda1
+        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.ChatRightsEditActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view2, int i3) {
                 ChatRightsEditActivity.this.lambda$createView$6(context, view2, i3);
@@ -703,7 +703,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                     if (chatRightsEditActivityDelegate != null) {
                         chatRightsEditActivityDelegate.didSetRights(0, this.adminRights, this.bannedRights, this.currentRank);
                     }
-                    lambda$onBackPressed$340();
+                    finishFragment();
                     return;
                 }
                 if (i4 == 1) {
@@ -1210,7 +1210,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                 this.delegate.didChangeOwner(this.currentUser);
                 removeSelfFromStack();
                 twoStepVerificationActivity.needHideProgress();
-                twoStepVerificationActivity.lambda$onBackPressed$340();
+                twoStepVerificationActivity.finishFragment();
                 return;
             }
             return;
@@ -1341,7 +1341,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
         }
         if (twoStepVerificationActivity != null) {
             twoStepVerificationActivity.needHideProgress();
-            twoStepVerificationActivity.lambda$onBackPressed$340();
+            twoStepVerificationActivity.finishFragment();
         }
         AlertsCreator.showAddUserAlert(tL_error.text, this, this.isChannel, tL_channels_editCreator);
     }
@@ -1401,7 +1401,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
             if ((-this.chatId) == ((Long) objArr[0]).longValue()) {
                 INavigationLayout iNavigationLayout = this.parentLayout;
                 if (iNavigationLayout != null && iNavigationLayout.getLastFragment() == this) {
-                    lambda$onBackPressed$340();
+                    finishFragment();
                 } else {
                     removeSelfFromStack();
                 }
@@ -1772,7 +1772,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
             r1 = true;
         }
         if (r1) {
-            lambda$onBackPressed$340();
+            finishFragment();
         }
     }
 
@@ -1791,7 +1791,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
         if (chatRightsEditActivityDelegate != null) {
             TLRPC.TL_chatAdminRights tL_chatAdminRights = this.adminRights;
             chatRightsEditActivityDelegate.didSetRights((tL_chatAdminRights.change_info || tL_chatAdminRights.post_messages || tL_chatAdminRights.manage_direct_messages || tL_chatAdminRights.edit_messages || tL_chatAdminRights.delete_messages || tL_chatAdminRights.ban_users || tL_chatAdminRights.invite_users || (this.isForum && tL_chatAdminRights.manage_topics) || tL_chatAdminRights.pin_messages || tL_chatAdminRights.add_admins || tL_chatAdminRights.anonymous || tL_chatAdminRights.manage_call || ((this.isChannel && (tL_chatAdminRights.post_stories || tL_chatAdminRights.edit_stories || tL_chatAdminRights.delete_stories)) || tL_chatAdminRights.other)) ? 1 : 0, tL_chatAdminRights, this.bannedRights, this.currentRank);
-            lambda$onBackPressed$340();
+            finishFragment();
         }
     }
 
@@ -1920,7 +1920,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public boolean checkDiscard() {
+    public boolean checkDiscard(boolean z) {
         boolean equals;
         int i = this.currentType;
         if (i == 2) {
@@ -1934,22 +1934,24 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
         if (equals) {
             return true;
         }
-        AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getString(R.string.UserRestrictionsApplyChanges));
-        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("UserRestrictionsApplyChangesText", R.string.UserRestrictionsApplyChangesText, MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(this.chatId)).title)));
-        builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChatRightsEditActivity$$ExternalSyntheticLambda2
-            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog, int i2) {
-                ChatRightsEditActivity.this.lambda$checkDiscard$23(alertDialog, i2);
-            }
-        });
-        builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChatRightsEditActivity$$ExternalSyntheticLambda3
-            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-            public final void onClick(AlertDialog alertDialog, int i2) {
-                ChatRightsEditActivity.this.lambda$checkDiscard$24(alertDialog, i2);
-            }
-        });
-        showDialog(builder.create());
+        if (z) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+            builder.setTitle(LocaleController.getString(R.string.UserRestrictionsApplyChanges));
+            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("UserRestrictionsApplyChangesText", R.string.UserRestrictionsApplyChangesText, MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(this.chatId)).title)));
+            builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChatRightsEditActivity$$ExternalSyntheticLambda0
+                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                public final void onClick(AlertDialog alertDialog, int i2) {
+                    ChatRightsEditActivity.this.lambda$checkDiscard$23(alertDialog, i2);
+                }
+            });
+            builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChatRightsEditActivity$$ExternalSyntheticLambda1
+                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                public final void onClick(AlertDialog alertDialog, int i2) {
+                    ChatRightsEditActivity.this.lambda$checkDiscard$24(alertDialog, i2);
+                }
+            });
+            showDialog(builder.create());
+        }
         return false;
     }
 
@@ -1960,7 +1962,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$24(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1982,8 +1984,8 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
-        return checkDiscard();
+    public boolean onBackPressed(boolean z) {
+        return checkDiscard(z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3022,7 +3024,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.ChatRightsEditActivity$$ExternalSyntheticLambda0
+        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.ChatRightsEditActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 ChatRightsEditActivity.this.lambda$getThemeDescriptions$26();

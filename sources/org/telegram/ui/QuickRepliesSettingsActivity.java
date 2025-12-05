@@ -61,7 +61,7 @@ public class QuickRepliesSettingsActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    QuickRepliesSettingsActivity.this.lambda$onBackPressed$340();
+                    QuickRepliesSettingsActivity.this.finishFragment();
                 }
             }
         });

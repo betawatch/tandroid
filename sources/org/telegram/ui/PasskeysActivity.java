@@ -60,7 +60,7 @@ public class PasskeysActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    PasskeysActivity.this.lambda$onBackPressed$340();
+                    PasskeysActivity.this.finishFragment();
                 }
             }
         });

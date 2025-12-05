@@ -381,7 +381,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    ProxyListActivity.this.lambda$onBackPressed$340();
+                    ProxyListActivity.this.finishFragment();
                 }
             }
         });
@@ -643,7 +643,7 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
                     ProxyListActivity.this.listAdapter.clearSelected();
                     return;
                 } else {
-                    ProxyListActivity.this.lambda$onBackPressed$340();
+                    ProxyListActivity.this.finishFragment();
                     return;
                 }
             }
@@ -690,9 +690,12 @@ public class ProxyListActivity extends BaseFragment implements NotificationCente
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
+    public boolean onBackPressed(boolean z) {
         if (this.selectedItems.isEmpty()) {
-            return true;
+            return super.onBackPressed(z);
+        }
+        if (!z) {
+            return false;
         }
         this.listAdapter.clearSelected();
         return false;

@@ -1125,7 +1125,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
             boolean equals;
             Theme.ThemeInfo theme;
             if (i == -1) {
-                ThemeActivity.this.lambda$onBackPressed$340();
+                ThemeActivity.this.finishFragment();
                 return;
             }
             if (i == 1) {

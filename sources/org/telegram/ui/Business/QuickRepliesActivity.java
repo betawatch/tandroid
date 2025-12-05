@@ -167,7 +167,7 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
                     QuickRepliesActivity.this.clearSelection();
                     return;
                 } else {
-                    QuickRepliesActivity.this.lambda$onBackPressed$340();
+                    QuickRepliesActivity.this.finishFragment();
                     return;
                 }
             }

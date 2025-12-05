@@ -690,10 +690,6 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
     public void onAdjustPanTransitionUpdate(float f, float f2, boolean z) {
     }
 
-    public boolean onBotWebViewBackPressed() {
-        return false;
-    }
-
     protected void onChangedIslandTotalHeight(float f) {
     }
 
@@ -12431,7 +12427,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         }
         TLRPC.User user = this.accountInstance.getMessagesController().getUser(Long.valueOf(j));
         if (user == null) {
-            dialogsActivity.lambda$onBackPressed$340();
+            dialogsActivity.finishFragment();
             return true;
         }
         long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
@@ -12452,13 +12448,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.parentFragment.removeSelfFromStack();
                     }
                 } else {
-                    dialogsActivity.lambda$onBackPressed$340();
+                    dialogsActivity.finishFragment();
                 }
             } else {
-                dialogsActivity.lambda$onBackPressed$340();
+                dialogsActivity.finishFragment();
             }
         } else {
-            dialogsActivity.lambda$onBackPressed$340();
+            dialogsActivity.finishFragment();
         }
         return true;
     }
@@ -12497,7 +12493,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             }
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_sendBotRequestedPeer, null);
         }
-        dialogsActivity.lambda$onBackPressed$340();
+        dialogsActivity.finishFragment();
         return true;
     }
 
@@ -13694,9 +13690,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         return this.emojiViewVisible || this.botKeyboardViewVisible;
     }
 
-    public boolean closeCreationLinkDialog() {
+    public boolean closeCreationLinkDialog(boolean z) {
         EditTextCaption editTextCaption = this.messageEditText;
-        return editTextCaption != null && editTextCaption.closeCreationLinkDialog();
+        return editTextCaption != null && editTextCaption.closeCreationLinkDialog(z);
     }
 
     public boolean isKeyboardVisible() {

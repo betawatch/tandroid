@@ -311,10 +311,13 @@ public class ChannelCreateActivity extends BaseFragment implements NotificationC
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
+    public boolean onBackPressed(boolean z) {
         EditTextEmoji editTextEmoji = this.nameTextView;
         if (editTextEmoji == null || !editTextEmoji.isPopupShowing()) {
             return true;
+        }
+        if (!z) {
+            return false;
         }
         this.nameTextView.hidePopup(true);
         return false;
@@ -933,7 +936,7 @@ public class ChannelCreateActivity extends BaseFragment implements NotificationC
                     ChannelCreateActivity.this.showDoneCancelDialog();
                     return;
                 } else {
-                    ChannelCreateActivity.this.lambda$onBackPressed$340();
+                    ChannelCreateActivity.this.finishFragment();
                     return;
                 }
             }

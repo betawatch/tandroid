@@ -489,7 +489,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
                     if (channelColorActivity.currentLevel >= channelColorActivity.minLevelRequired() && ChannelColorActivity.this.hasUnsavedChanged()) {
                         ChannelColorActivity.this.showUnsavedAlert();
                     } else {
-                        ChannelColorActivity.this.lambda$onBackPressed$340();
+                        ChannelColorActivity.this.finishFragment();
                     }
                 }
             }
@@ -745,12 +745,15 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
-        if (this.currentLevel >= minLevelRequired() && hasUnsavedChanged()) {
-            showUnsavedAlert();
+    public boolean onBackPressed(boolean z) {
+        if (this.currentLevel < minLevelRequired() || !hasUnsavedChanged()) {
+            return super.onBackPressed(z);
+        }
+        if (!z) {
             return false;
         }
-        return super.onBackPressed();
+        showUnsavedAlert();
+        return false;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -952,7 +955,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
             });
         }
         if (iArr[r2] == 0) {
-            lambda$onBackPressed$340();
+            finishFragment();
             this.button.setLoading(r2);
             return;
         }
@@ -994,7 +997,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
         int i2 = i + 1;
         iArr[0] = i2;
         if (i2 == iArr2[0]) {
-            lambda$onBackPressed$340();
+            finishFragment();
             showBulletin();
             this.button.setLoading(false);
         }
@@ -1184,7 +1187,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showUnsavedAlert$14(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3075,7 +3078,7 @@ public class ChannelColorActivity extends BaseFragment implements NotificationCe
             if (this.dialogId == ((Long) objArr[0]).longValue()) {
                 INavigationLayout iNavigationLayout = this.parentLayout;
                 if (iNavigationLayout != null && iNavigationLayout.getLastFragment() == this) {
-                    lambda$onBackPressed$340();
+                    finishFragment();
                 } else {
                     removeSelfFromStack();
                 }

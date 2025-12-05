@@ -77,8 +77,8 @@ public class PostSuggestionsEditActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    if (PostSuggestionsEditActivity.this.onBackPressed()) {
-                        PostSuggestionsEditActivity.this.lambda$onBackPressed$340();
+                    if (PostSuggestionsEditActivity.this.onBackPressed(true)) {
+                        PostSuggestionsEditActivity.this.finishFragment();
                     }
                 } else if (i == 1) {
                     PostSuggestionsEditActivity.this.processDone();
@@ -215,7 +215,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
             return;
         }
         if (!hasChanges()) {
-            lambda$onBackPressed$340();
+            finishFragment();
             return;
         }
         this.doneButtonDrawable.animateToProgress(1.0f);
@@ -285,7 +285,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
         if (longCallback != null) {
             longCallback.run(updatepaidmessagesprice.suggestions_allowed ? updatepaidmessagesprice.send_paid_messages_stars : -1L);
         }
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     private boolean hasChanges() {
@@ -309,27 +309,30 @@ public class PostSuggestionsEditActivity extends BaseFragment {
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
-        if (hasChanges()) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-            builder.setTitle(LocaleController.getString(R.string.UnsavedChanges));
-            builder.setMessage(LocaleController.getString(R.string.MessageSuggestionsUnsavedChanges));
-            builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda0
-                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                public final void onClick(AlertDialog alertDialog, int i) {
-                    PostSuggestionsEditActivity.this.lambda$onBackPressed$4(alertDialog, i);
-                }
-            });
-            builder.setNegativeButton(LocaleController.getString(R.string.Discard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda1
-                @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                public final void onClick(AlertDialog alertDialog, int i) {
-                    PostSuggestionsEditActivity.this.lambda$onBackPressed$5(alertDialog, i);
-                }
-            });
-            showDialog(builder.create());
+    public boolean onBackPressed(boolean z) {
+        if (!hasChanges()) {
+            return super.onBackPressed(z);
+        }
+        if (!z) {
             return false;
         }
-        return super.onBackPressed();
+        AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+        builder.setTitle(LocaleController.getString(R.string.UnsavedChanges));
+        builder.setMessage(LocaleController.getString(R.string.MessageSuggestionsUnsavedChanges));
+        builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda0
+            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+            public final void onClick(AlertDialog alertDialog, int i) {
+                PostSuggestionsEditActivity.this.lambda$onBackPressed$4(alertDialog, i);
+            }
+        });
+        builder.setNegativeButton(LocaleController.getString(R.string.Discard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PostSuggestionsEditActivity$$ExternalSyntheticLambda1
+            @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+            public final void onClick(AlertDialog alertDialog, int i) {
+                PostSuggestionsEditActivity.this.lambda$onBackPressed$5(alertDialog, i);
+            }
+        });
+        showDialog(builder.create());
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -339,7 +342,7 @@ public class PostSuggestionsEditActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onBackPressed$5(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

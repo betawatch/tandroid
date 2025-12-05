@@ -532,9 +532,9 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onClick$6(HistoryFragment[] historyFragmentArr, BrowserHistory.Entry entry) {
-        historyFragmentArr[0].lambda$onBackPressed$340();
+        historyFragmentArr[0].finishFragment();
         if (this.whenHistoryClicked != null) {
-            lambda$onBackPressed$340();
+            finishFragment();
             this.whenHistoryClicked.run(entry);
         } else {
             Browser.openUrl(getContext(), entry.url);

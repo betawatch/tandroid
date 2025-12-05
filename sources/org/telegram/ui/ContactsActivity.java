@@ -280,7 +280,7 @@ public class ContactsActivity extends BaseFragment implements NotificationCenter
                         ContactsActivity.this.hideActionMode();
                         return;
                     } else {
-                        ContactsActivity.this.lambda$onBackPressed$340();
+                        ContactsActivity.this.finishFragment();
                         return;
                     }
                 }
@@ -1191,7 +1191,7 @@ public class ContactsActivity extends BaseFragment implements NotificationCenter
             }
         }
         if (this.needFinishFragment) {
-            lambda$onBackPressed$340();
+            finishFragment();
         }
     }
 
@@ -1210,12 +1210,15 @@ public class ContactsActivity extends BaseFragment implements NotificationCenter
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
-        if (this.actionBar.isActionModeShowed()) {
-            hideActionMode();
+    public boolean onBackPressed(boolean z) {
+        if (!this.actionBar.isActionModeShowed()) {
+            return super.onBackPressed(z);
+        }
+        if (!z) {
             return false;
         }
-        return super.onBackPressed();
+        hideActionMode();
+        return false;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

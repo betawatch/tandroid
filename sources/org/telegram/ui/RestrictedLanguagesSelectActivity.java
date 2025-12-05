@@ -151,7 +151,7 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    RestrictedLanguagesSelectActivity.this.lambda$onBackPressed$340();
+                    RestrictedLanguagesSelectActivity.this.finishFragment();
                 }
             }
         });

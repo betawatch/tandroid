@@ -1406,7 +1406,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 passportActivityDelegate2.saveValue(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, secureDocument22, arrayList32, secureDocument32, secureDocument, runnable, errorRunnable);
                 return true;
             }
-            PassportActivity.this.lambda$onBackPressed$340();
+            PassportActivity.this.finishFragment();
             return false;
         }
 
@@ -1457,13 +1457,13 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
             String str;
             String obj;
             if (i == -1) {
-                if (PassportActivity.this.checkDiscard()) {
+                if (PassportActivity.this.checkDiscard(true)) {
                     return;
                 }
                 if (PassportActivity.this.currentActivityType == 0 || PassportActivity.this.currentActivityType == 5) {
                     PassportActivity.this.callCallback(false);
                 }
-                PassportActivity.this.lambda$onBackPressed$340();
+                PassportActivity.this.finishFragment();
                 return;
             }
             if (i == 1) {
@@ -1576,7 +1576,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                         }
                         PassportActivity.this.delegate.saveValue(PassportActivity.this.currentType, null, jSONObject != null ? jSONObject.toString() : null, PassportActivity.this.currentDocumentsType, null, PassportActivity.this.documents, PassportActivity.this.selfieDocument, PassportActivity.this.translationDocuments, null, null, runnable, errorRunnable);
                     } else {
-                        PassportActivity.this.lambda$onBackPressed$340();
+                        PassportActivity.this.finishFragment();
                         return;
                     }
                 } else if (PassportActivity.this.currentActivityType != 1) {
@@ -1602,7 +1602,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemClick$4() {
-            PassportActivity.this.lambda$onBackPressed$340();
+            PassportActivity.this.finishFragment();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -3088,7 +3088,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         if (tL_error == null) {
             this.ignoreOnFailure = true;
             callCallback(true);
-            lambda$onBackPressed$340();
+            finishFragment();
         } else {
             showEditDoneProgress(false, false);
             if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
@@ -4037,7 +4037,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
             this.uploadDocumentCell = textSettingsCell;
             textSettingsCell.setBackgroundDrawable(Theme.getSelectorDrawable(true));
             this.linearLayout2.addView(this.uploadDocumentCell, LayoutHelper.createLinear(-1, -2));
-            this.uploadDocumentCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda26
+            this.uploadDocumentCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda27
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     PassportActivity.this.lambda$createAddressInterface$32(view);
@@ -4096,7 +4096,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 this.uploadTranslationCell = textSettingsCell2;
                 textSettingsCell2.setBackgroundDrawable(Theme.getSelectorDrawable(true));
                 this.linearLayout2.addView(this.uploadTranslationCell, LayoutHelper.createLinear(-1, -2));
-                this.uploadTranslationCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda27
+                this.uploadTranslationCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda28
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         PassportActivity.this.lambda$createAddressInterface$33(view);
@@ -4232,7 +4232,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
             this.inputFields[i6].setCursorWidth(1.5f);
             this.inputFields[i6].setLineColors(Theme.getColor(Theme.key_windowBackgroundWhiteInputField), Theme.getColor(Theme.key_windowBackgroundWhiteInputFieldActivated), Theme.getColor(Theme.key_text_RedRegular));
             if (i6 == 5) {
-                this.inputFields[i6].setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda28
+                this.inputFields[i6].setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda29
                     @Override // android.view.View.OnTouchListener
                     public final boolean onTouch(View view3, MotionEvent motionEvent) {
                         boolean lambda$createAddressInterface$35;
@@ -4331,7 +4331,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
             this.inputFields[i6].setPadding(0, 0, 0, 0);
             this.inputFields[i6].setGravity((LocaleController.isRTL ? 5 : 3) | 16);
             frameLayout.addView(this.inputFields[i6], LayoutHelper.createFrame(-1, 64.0f, 51, 21.0f, 0.0f, 21.0f, 0.0f));
-            this.inputFields[i6].setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda29
+            this.inputFields[i6].setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda30
                 @Override // android.widget.TextView.OnEditorActionListener
                 public final boolean onEditorAction(TextView textView, int i9, KeyEvent keyEvent) {
                     boolean lambda$createAddressInterface$36;
@@ -4368,7 +4368,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 textSettingsCell3.setText(LocaleController.getString(R.string.PassportDeleteDocument), false);
             }
             this.linearLayout2.addView(textSettingsCell3, LayoutHelper.createLinear(-1, -2));
-            textSettingsCell3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda30
+            textSettingsCell3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda31
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
                     PassportActivity.this.lambda$createAddressInterface$37(view3);
@@ -4500,7 +4500,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         }
         this.currentDocumentValues.clear();
         this.delegate.deleteValue(this.currentType, this.currentDocumentsType, this.availableDocumentTypes, zArr[0], null, null);
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -8882,26 +8882,30 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
+    public boolean onBackPressed(boolean z) {
         int i = this.currentActivityType;
         int i2 = 0;
         if (i == 7) {
-            this.views[this.currentViewNum].onBackPressed(true);
-            while (true) {
-                SlideView[] slideViewArr = this.views;
-                if (i2 >= slideViewArr.length) {
-                    break;
+            if (z) {
+                this.views[this.currentViewNum].onBackPressed(true);
+                while (true) {
+                    SlideView[] slideViewArr = this.views;
+                    if (i2 >= slideViewArr.length) {
+                        break;
+                    }
+                    SlideView slideView = slideViewArr[i2];
+                    if (slideView != null) {
+                        slideView.onDestroyActivity();
+                    }
+                    i2++;
                 }
-                SlideView slideView = slideViewArr[i2];
-                if (slideView != null) {
-                    slideView.onDestroyActivity();
-                }
-                i2++;
             }
         } else if (i == 0 || i == 5) {
-            callCallback(false);
+            if (z) {
+                callCallback(false);
+            }
         } else if (i == 1 || i == 2) {
-            return !checkDiscard();
+            return !checkDiscard(z);
         }
         return true;
     }
@@ -9243,12 +9247,15 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public boolean checkDiscard() {
+    public boolean checkDiscard(boolean z) {
         if (isHasNotAnyChanges()) {
             return false;
         }
+        if (!z) {
+            return true;
+        }
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setPositiveButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda31
+        builder.setPositiveButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.PassportActivity$$ExternalSyntheticLambda26
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 PassportActivity.this.lambda$checkDiscard$69(alertDialog, i);
@@ -9263,7 +9270,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$69(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -9841,7 +9848,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$resendCode$1(AlertDialog alertDialog, int i) {
             onBackPressed(true);
-            PassportActivity.this.lambda$onBackPressed$340();
+            PassportActivity.this.finishFragment();
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -10316,7 +10323,7 @@ public class PassportActivity extends BaseFragment implements NotificationCenter
                 passportActivityDelegate.saveValue(tL_secureRequiredType, str, null, null, null, null, null, null, null, null, new Runnable() { // from class: org.telegram.ui.PassportActivity$PhoneConfirmationView$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PassportActivity.this.lambda$onBackPressed$340();
+                        PassportActivity.this.finishFragment();
                     }
                 }, null);
                 return;

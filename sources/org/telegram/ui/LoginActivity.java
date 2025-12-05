@@ -414,8 +414,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             public void onItemClick(int i5) {
                 if (i5 == 1) {
                     LoginActivity.this.onDoneButtonPressed();
-                } else if (i5 == -1 && LoginActivity.this.onBackPressed()) {
-                    LoginActivity.this.lambda$onBackPressed$340();
+                } else if (i5 == -1 && LoginActivity.this.onBackPressed(true)) {
+                    LoginActivity.this.finishFragment();
                 }
             }
         });
@@ -881,8 +881,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$3(View view) {
-        if (onBackPressed()) {
-            lambda$onBackPressed$340();
+        if (onBackPressed(true)) {
+            finishFragment();
         }
     }
 
@@ -892,7 +892,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         if (runnable != null) {
             runnable.run();
         }
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1214,52 +1214,66 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
+    public boolean onBackPressed(boolean z) {
         int i = 0;
         if (this.emailChangeIsSuggestion && this.currentViewNum == 12) {
             return false;
         }
         int i2 = this.currentViewNum;
-        if (i2 != 0 && (this.activityMode != 3 || i2 != 12)) {
-            if (i2 == 6) {
+        if (i2 == 0 || (this.activityMode == 3 && i2 == 12)) {
+            if (z) {
+                while (true) {
+                    SlideView[] slideViewArr = this.views;
+                    if (i >= slideViewArr.length) {
+                        break;
+                    }
+                    SlideView slideView = slideViewArr[i];
+                    if (slideView != null) {
+                        slideView.onDestroyActivity();
+                    }
+                    i++;
+                }
+                clearCurrentState();
+            }
+            return true;
+        }
+        if (i2 == 6) {
+            if (z) {
                 this.views[i2].onBackPressed(true);
                 setPage(0, true, null, true);
-            } else if (i2 == 7 || i2 == 8) {
+            }
+        } else if (i2 == 7 || i2 == 8) {
+            if (z) {
                 this.views[i2].onBackPressed(true);
                 setPage(6, true, null, true);
-            } else if ((i2 >= 1 && i2 <= 4) || i2 == 11 || i2 == 15) {
-                if (this.views[i2].onBackPressed(false)) {
-                    setPage(0, true, null, true);
-                }
-            } else if (i2 == 5) {
-                ((LoginActivityRegisterView) this.views[i2]).wrongNumber.callOnClick();
-            } else if (i2 == 9) {
-                this.views[i2].onBackPressed(true);
-                setPage(7, true, null, true);
-            } else if (i2 == 10) {
-                this.views[i2].onBackPressed(true);
-                setPage(9, true, null, true);
-            } else if (i2 == 13) {
-                this.views[i2].onBackPressed(true);
-                setPage(12, true, null, true);
-            } else if (this.views[i2].onBackPressed(true)) {
+            }
+        } else if ((i2 >= 1 && i2 <= 4) || i2 == 11 || i2 == 15) {
+            if (z && this.views[i2].onBackPressed(false)) {
                 setPage(0, true, null, true);
             }
-            return false;
-        }
-        while (true) {
-            SlideView[] slideViewArr = this.views;
-            if (i < slideViewArr.length) {
-                SlideView slideView = slideViewArr[i];
-                if (slideView != null) {
-                    slideView.onDestroyActivity();
-                }
-                i++;
-            } else {
-                clearCurrentState();
-                return true;
+        } else if (i2 == 5) {
+            if (z) {
+                ((LoginActivityRegisterView) this.views[i2]).wrongNumber.callOnClick();
             }
+        } else if (i2 == 9) {
+            if (z) {
+                this.views[i2].onBackPressed(true);
+                setPage(7, true, null, true);
+            }
+        } else if (i2 == 10) {
+            if (z) {
+                this.views[i2].onBackPressed(true);
+                setPage(9, true, null, true);
+            }
+        } else if (i2 == 13) {
+            if (z) {
+                this.views[i2].onBackPressed(true);
+                setPage(12, true, null, true);
+            }
+        } else if (z && this.views[i2].onBackPressed(true)) {
+            setPage(0, true, null, true);
         }
+        return false;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -1900,7 +1914,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     }
                 });
                 this.pendingSwitchingAccount = false;
-                lambda$onBackPressed$340();
+                finishFragment();
                 return;
             }
             if (z && z2) {
@@ -3869,7 +3883,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (UserConfig.selectedAccount != i) {
                 ((LaunchActivity) LoginActivity.this.getParentActivity()).switchToAccount(i, false);
             }
-            LoginActivity.this.lambda$onBackPressed$340();
+            LoginActivity.this.finishFragment();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -4221,7 +4235,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         if (UserConfig.selectedAccount != i) {
                             ((LaunchActivity) LoginActivity.this.getParentActivity()).switchToAccount(i, false);
                         }
-                        LoginActivity.this.lambda$onBackPressed$340();
+                        LoginActivity.this.finishFragment();
                         LoginActivity.this.needHideProgress(false);
                         return;
                     }
@@ -6095,7 +6109,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$22(DialogInterface dialogInterface) {
-            LoginActivity.this.lambda$onBackPressed$340();
+            LoginActivity.this.finishFragment();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -6167,7 +6181,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$26(DialogInterface dialogInterface) {
-            LoginActivity.this.lambda$onBackPressed$340();
+            LoginActivity.this.finishFragment();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -6458,7 +6472,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         @Override // org.telegram.ui.Components.SlideView
         public boolean onBackPressed(boolean z) {
             if (LoginActivity.this.activityMode != 0) {
-                LoginActivity.this.lambda$onBackPressed$340();
+                LoginActivity.this.finishFragment();
                 return false;
             }
             int i = this.prevType;
@@ -7930,7 +7944,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$5(TLObject tLObject, Bundle bundle, TLRPC.TL_error tL_error, TL_account.verifyEmail verifyemail) {
             if ((tLObject instanceof TL_account.TL_emailVerified) && LoginActivity.this.activityMode == 3) {
-                LoginActivity.this.lambda$onBackPressed$340();
+                LoginActivity.this.finishFragment();
                 LoginActivity.this.emailChangeFinishCallback.run();
                 return;
             }
@@ -9096,7 +9110,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$18(TLObject tLObject, Bundle bundle) {
             if ((tLObject instanceof TL_account.TL_emailVerified) && LoginActivity.this.activityMode == 3) {
-                LoginActivity.this.lambda$onBackPressed$340();
+                LoginActivity.this.finishFragment();
                 LoginActivity.this.emailChangeFinishCallback.run();
             } else if (tLObject instanceof TL_account.TL_emailVerifiedLogin) {
                 LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, ((TL_account.TL_emailVerifiedLogin) tLObject).sent_code);
@@ -11770,7 +11784,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         if (i == NotificationCenter.didUpdateConnectionState) {
             updateProxyButton(true, false);
         } else if (i == NotificationCenter.newSuggestionsAvailable && this.emailChangeIsSuggestion && !getMessagesController().hasSetupEmailSuggestion()) {
-            lambda$onBackPressed$340();
+            finishFragment();
         }
     }
 
@@ -13493,7 +13507,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$setParams$3(PaymentFormActivity paymentFormActivity, TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, TLRPC.PaymentForm paymentForm) {
-            paymentFormActivity.lambda$onBackPressed$340();
+            paymentFormActivity.finishFragment();
             startPoll(tL_inputStorePaymentAuthCode.phone_number, tL_inputStorePaymentAuthCode.phone_code_hash, paymentForm.form_id);
         }
 

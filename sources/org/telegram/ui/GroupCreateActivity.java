@@ -635,8 +635,8 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i4) {
                 if (i4 == -1) {
-                    if (GroupCreateActivity.this.checkDiscard()) {
-                        GroupCreateActivity.this.lambda$onBackPressed$340();
+                    if (GroupCreateActivity.this.checkDiscard(true)) {
+                        GroupCreateActivity.this.finishFragment();
                     }
                 } else if (i4 == 1) {
                     GroupCreateActivity.this.onDonePressed(true);
@@ -1020,7 +1020,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             CallLogActivity.createCallLink(context, this.currentAccount, this.resourceProvider, new Runnable() { // from class: org.telegram.ui.GroupCreateActivity$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GroupCreateActivity.this.lambda$onBackPressed$340();
+                    GroupCreateActivity.this.finishFragment();
                 }
             });
             return;
@@ -1385,28 +1385,31 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
         if (contactsAddActivityDelegate != null) {
             contactsAddActivityDelegate.didSelectUsers(arrayList, i);
         }
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean canBeginSlide() {
-        return checkDiscard();
+        return checkDiscard(true);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
-        return checkDiscard();
+    public boolean onBackPressed(boolean z) {
+        if (checkDiscard(z)) {
+            return super.onBackPressed(z);
+        }
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:22:0x004d  */
     /* JADX WARN: Removed duplicated region for block: B:32:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00aa A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00ac A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public boolean checkDiscard() {
-        boolean z;
+    public boolean checkDiscard(boolean z) {
+        boolean z2;
         if (!this.showDiscardConfirm) {
             return true;
         }
@@ -1416,8 +1419,8 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
         }
         if (this.initialPremium == (this.selectedPremium != null)) {
             if (this.initialMiniapps == (this.selectedMiniapps != null) && hashSet.size() == this.initialIds.size()) {
-                z = false;
-                if (!z) {
+                z2 = false;
+                if (!z2) {
                     Iterator it = hashSet.iterator();
                     while (true) {
                         if (!it.hasNext()) {
@@ -1426,37 +1429,39 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                         Long l = (Long) it.next();
                         l.longValue();
                         if (!this.initialIds.contains(l)) {
-                            z = true;
+                            z2 = true;
                             break;
                         }
                     }
                 }
-                if (z) {
+                if (z2) {
                     return true;
                 }
-                AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                builder.setTitle(LocaleController.getString(R.string.UserRestrictionsApplyChanges));
-                builder.setMessage(LocaleController.getString(R.string.PrivacySettingsChangedAlert));
-                builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.GroupCreateActivity$$ExternalSyntheticLambda7
-                    @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                    public final void onClick(AlertDialog alertDialog, int i2) {
-                        GroupCreateActivity.this.lambda$checkDiscard$10(alertDialog, i2);
-                    }
-                });
-                builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.GroupCreateActivity$$ExternalSyntheticLambda8
-                    @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                    public final void onClick(AlertDialog alertDialog, int i2) {
-                        GroupCreateActivity.this.lambda$checkDiscard$11(alertDialog, i2);
-                    }
-                });
-                showDialog(builder.create());
+                if (z) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+                    builder.setTitle(LocaleController.getString(R.string.UserRestrictionsApplyChanges));
+                    builder.setMessage(LocaleController.getString(R.string.PrivacySettingsChangedAlert));
+                    builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.GroupCreateActivity$$ExternalSyntheticLambda7
+                        @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                        public final void onClick(AlertDialog alertDialog, int i2) {
+                            GroupCreateActivity.this.lambda$checkDiscard$10(alertDialog, i2);
+                        }
+                    });
+                    builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.GroupCreateActivity$$ExternalSyntheticLambda8
+                        @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
+                        public final void onClick(AlertDialog alertDialog, int i2) {
+                            GroupCreateActivity.this.lambda$checkDiscard$11(alertDialog, i2);
+                        }
+                    });
+                    showDialog(builder.create());
+                }
                 return false;
             }
         }
-        z = true;
-        if (!z) {
+        z2 = true;
+        if (!z2) {
         }
-        if (z) {
+        if (z2) {
         }
     }
 
@@ -1467,7 +1472,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$11(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     private HashSet getSelectedUsers() {
@@ -1579,7 +1584,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                     if (groupCreateActivityDelegate != null) {
                         groupCreateActivityDelegate.didSelectUsers(this.selectedPremium != null, this.selectedMiniapps != null, arrayList2);
                     }
-                    lambda$onBackPressed$340();
+                    finishFragment();
                 } else {
                     Bundle bundle2 = new Bundle();
                     int size = arrayList2.size();

@@ -112,7 +112,7 @@ public class FilterChatlistActivity extends BaseFragment {
     private int chatsStartRow = -1;
     private int chatsEndRow = -1;
     private int chatsSectionRow = -1;
-    private Runnable enableDoneLoading = new Runnable() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda3
+    private Runnable enableDoneLoading = new Runnable() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda1
         @Override // java.lang.Runnable
         public final void run() {
             FilterChatlistActivity.this.lambda$new$7();
@@ -153,8 +153,8 @@ public class FilterChatlistActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
-                    if (FilterChatlistActivity.this.checkDiscard()) {
-                        FilterChatlistActivity.this.lambda$onBackPressed$340();
+                    if (FilterChatlistActivity.this.checkDiscard(true)) {
+                        FilterChatlistActivity.this.finishFragment();
                     }
                 } else if (i == 1) {
                     if (Math.abs(FilterChatlistActivity.this.doneButtonAlpha - 1.0f) < 0.1f) {
@@ -190,7 +190,7 @@ public class FilterChatlistActivity extends BaseFragment {
         ListAdapter listAdapter = new ListAdapter();
         this.adapter = listAdapter;
         recyclerListView2.setAdapter(listAdapter);
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda4
+        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
                 FilterChatlistActivity.this.lambda$createView$0(view, i2);
@@ -318,13 +318,13 @@ public class FilterChatlistActivity extends BaseFragment {
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
-        return checkDiscard();
+    public boolean onBackPressed(boolean z) {
+        return checkDiscard(z);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean canBeginSlide() {
-        return checkDiscard();
+        return checkDiscard(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -383,7 +383,7 @@ public class FilterChatlistActivity extends BaseFragment {
         } else if (tL_error != null && "CHATLISTS_TOO_MUCH".equals(tL_error.text)) {
             showDialog(new LimitReachedBottomSheet(this, getContext(), 13, this.currentAccount, null));
         } else {
-            lambda$onBackPressed$340();
+            finishFragment();
         }
     }
 
@@ -596,7 +596,7 @@ public class FilterChatlistActivity extends BaseFragment {
                 if (FilterChatlistActivity.this.onDelete != null) {
                     FilterChatlistActivity.this.onDelete.run(FilterChatlistActivity.this.invite);
                 }
-                FilterChatlistActivity.this.lambda$onBackPressed$340();
+                FilterChatlistActivity.this.finishFragment();
             }
 
             @Override // org.telegram.ui.FilterChatlistActivity.InviteLinkCell
@@ -1017,20 +1017,23 @@ public class FilterChatlistActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public boolean checkDiscard() {
+    public boolean checkDiscard(boolean z) {
         if (this.selectedPeers.isEmpty() || !this.peersChanged) {
             return true;
+        }
+        if (!z) {
+            return false;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         builder.setTitle(LocaleController.getString(R.string.UnsavedChanges));
         builder.setMessage(LocaleController.getString(R.string.UnsavedChangesMessage));
-        builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda1
+        builder.setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 FilterChatlistActivity.this.lambda$checkDiscard$9(alertDialog, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda2
+        builder.setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda4
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 FilterChatlistActivity.this.lambda$checkDiscard$10(alertDialog, i);
@@ -1047,7 +1050,7 @@ public class FilterChatlistActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkDiscard$10(AlertDialog alertDialog, int i) {
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     public static class InviteLinkCell extends FrameLayout {

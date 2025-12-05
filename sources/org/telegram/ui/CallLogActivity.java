@@ -681,7 +681,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                         CallLogActivity.this.hideActionMode(true);
                         return;
                     } else {
-                        CallLogActivity.this.lambda$onBackPressed$340();
+                        CallLogActivity.this.finishFragment();
                         return;
                     }
                 }
@@ -2265,7 +2265,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                     }
                 });
             }
-            lambda$onBackPressed$340();
+            finishFragment();
         }
 
         /* JADX INFO: Access modifiers changed from: private */

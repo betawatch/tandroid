@@ -166,7 +166,7 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
-                    PhotoAlbumPickerActivity.this.lambda$onBackPressed$340();
+                    PhotoAlbumPickerActivity.this.finishFragment();
                     return;
                 }
                 if (i3 != 1) {
@@ -498,14 +498,14 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
             });
         } else {
             sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, true, 0);
-            lambda$onBackPressed$340();
+            finishFragment();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$2(boolean z, int i, int i2) {
         sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, z, i);
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -614,14 +614,14 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
             });
         } else {
             sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, true, 0);
-            lambda$onBackPressed$340();
+            finishFragment();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$5(boolean z, int i, int i2) {
         sendSelectedPhotos(this.selectedPhotos, this.selectedPhotosOrder, z, i);
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -682,13 +682,16 @@ public class PhotoAlbumPickerActivity extends BaseFragment implements Notificati
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
+    public boolean onBackPressed(boolean z) {
         EditTextEmoji editTextEmoji = this.commentTextView;
-        if (editTextEmoji != null && editTextEmoji.isPopupShowing()) {
-            this.commentTextView.hidePopup(true);
+        if (editTextEmoji == null || !editTextEmoji.isPopupShowing()) {
+            return super.onBackPressed(z);
+        }
+        if (!z) {
             return false;
         }
-        return super.onBackPressed();
+        this.commentTextView.hidePopup(true);
+        return false;
     }
 
     public void setMaxSelectedPhotos(int i, boolean z) {

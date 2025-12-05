@@ -701,7 +701,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                     if (PaymentFormActivity.this.donePressed) {
                         return;
                     }
-                    PaymentFormActivity.this.lambda$onBackPressed$340();
+                    PaymentFormActivity.this.finishFragment();
                     return;
                 }
                 if (i6 != 1 || PaymentFormActivity.this.donePressed) {
@@ -4280,7 +4280,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             PaymentFormActivityDelegate paymentFormActivityDelegate = this.delegate;
             if (paymentFormActivityDelegate != null) {
                 paymentFormActivityDelegate.didSelectNewAddress(this.validateRequest);
-                lambda$onBackPressed$340();
+                finishFragment();
                 return;
             }
             if (this.paymentForm.invoice.flexible) {
@@ -4378,7 +4378,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             PaymentFormActivityDelegate paymentFormActivityDelegate2 = this.delegate;
             if (paymentFormActivityDelegate2 != null) {
                 paymentFormActivityDelegate2.didSelectNewCard(this.paymentJson, this.cardName, this.saveCardInfo, this.googlePayCredentials, null);
-                lambda$onBackPressed$340();
+                finishFragment();
                 return;
             } else {
                 presentFragment(new PaymentFormActivity(this.invoiceInput, paymentForm, this.messageObject, this.invoiceSlug, 4, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, this.allowUnregistered), this.isWebView);
@@ -4397,7 +4397,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
                 presentFragment(new PaymentFormActivity(this.invoiceInput, this.paymentForm, this.messageObject, this.invoiceSlug, 4, this.requestedInfo, this.shippingOption, this.tipAmount, this.paymentJson, this.cardName, this.validateRequest, this.saveCardInfo, this.googlePayCredentials, this.parentFragment, false), true);
                 return;
             } else {
-                lambda$onBackPressed$340();
+                finishFragment();
                 return;
             }
         }
@@ -4409,7 +4409,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             if (onCheckoutSuccess(getParentLayout(), getParentActivity()) || isFinishing()) {
                 return;
             }
-            lambda$onBackPressed$340();
+            finishFragment();
             return;
         }
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PaymentFormActivity$$ExternalSyntheticLambda38
@@ -4430,13 +4430,13 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             if (paymentFormCallback != null) {
                 paymentFormCallback.onInvoiceStatusChanged(invoiceStatus);
             }
-            lambda$onBackPressed$340();
+            finishFragment();
             return;
         }
         if (this.invoiceStatus != InvoiceStatus.PAID || isFinishing()) {
             return;
         }
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     private boolean onCheckoutSuccess(INavigationLayout iNavigationLayout, Activity activity) {
@@ -4764,7 +4764,7 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
             password.has_password = false;
             password.current_algo = null;
             this.delegate.currentPasswordUpdated(password);
-            lambda$onBackPressed$340();
+            finishFragment();
             return;
         }
         if (tL_error == null && (tLObject instanceof TLRPC.TL_boolTrue)) {
@@ -6144,14 +6144,16 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean onBackPressed() {
+    public boolean onBackPressed(boolean z) {
         WebView webView = this.webView;
-        if (webView != null && this.shouldNavigateBack) {
+        if (webView == null || !this.shouldNavigateBack) {
+            return !this.donePressed;
+        }
+        if (z) {
             webView.loadUrl(this.webViewUrl);
             this.shouldNavigateBack = false;
-            return false;
         }
-        return !this.donePressed;
+        return false;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment

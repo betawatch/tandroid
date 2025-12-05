@@ -135,7 +135,7 @@ public class LinkEditActivity extends BaseFragment {
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i4) {
                 if (i4 == -1) {
-                    LinkEditActivity.this.lambda$onBackPressed$340();
+                    LinkEditActivity.this.finishFragment();
                     AndroidUtilities.hideKeyboard(LinkEditActivity.this.usesEditText);
                 }
             }
@@ -905,7 +905,7 @@ public class LinkEditActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$9(AlertDialog alertDialog, int i) {
         this.callback.revokeLink(this.inviteToEdit);
-        lambda$onBackPressed$340();
+        finishFragment();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1065,7 +1065,7 @@ public class LinkEditActivity extends BaseFragment {
                     });
                     return;
                 }
-                lambda$onBackPressed$340();
+                finishFragment();
                 return;
             }
             if (this.inviteToEdit.usage_limit != 0) {
@@ -1111,7 +1111,7 @@ public class LinkEditActivity extends BaseFragment {
             if (callback != null) {
                 callback.onLinkCreated(tLObject);
             }
-            lambda$onBackPressed$340();
+            finishFragment();
             return;
         }
         AlertsCreator.showSimpleAlert(this, tL_error.text);
@@ -1142,7 +1142,7 @@ public class LinkEditActivity extends BaseFragment {
             if (callback != null) {
                 callback.onLinkEdited(this.inviteToEdit, tLObject);
             }
-            lambda$onBackPressed$340();
+            finishFragment();
             return;
         }
         AlertsCreator.showSimpleAlert(this, tL_error.text);
@@ -1336,11 +1336,10 @@ public class LinkEditActivity extends BaseFragment {
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    /* renamed from: finishFragment */
-    public void lambda$onBackPressed$340() {
+    public void finishFragment() {
         this.scrollView.getLayoutParams().height = this.scrollView.getHeight();
         this.finished = true;
-        super.lambda$onBackPressed$340();
+        super.finishFragment();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
