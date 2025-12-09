@@ -913,7 +913,7 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
             final float f4 = cropState2.y;
             final float f5 = cropState2.scale;
             final float f6 = cropState2.rotation;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Crop.CropView$$ExternalSyntheticLambda4
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.Crop.CropView$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     CropView.this.lambda$maximize$2(rectF, rectF2, f3, f4, f6, f5, f, valueAnimator);
@@ -1372,14 +1372,14 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
             }
             i++;
         }
-        AlertDialog create = new AlertDialog.Builder(getContext()).setItems(strArr, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.Crop.CropView$$ExternalSyntheticLambda2
+        AlertDialog create = new AlertDialog.Builder(getContext()).setItems(strArr, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.Crop.CropView$$ExternalSyntheticLambda3
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i3) {
                 CropView.this.lambda$showAspectRatioDialog$3(numArr, dialogInterface, i3);
             }
         }).create();
         create.setCanceledOnTouchOutside(true);
-        create.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.Crop.CropView$$ExternalSyntheticLambda3
+        create.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.Crop.CropView$$ExternalSyntheticLambda4
             @Override // android.content.DialogInterface.OnCancelListener
             public final void onCancel(DialogInterface dialogInterface) {
                 CropView.this.lambda$showAspectRatioDialog$4(dialogInterface);

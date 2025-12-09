@@ -152,7 +152,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
             } else {
                 formatPluralString = LocaleController.formatPluralString("Seconds", i, new Object[0]);
             }
-            this.timerPopup.add(0, formatPluralString, new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda4
+            this.timerPopup.add(0, formatPluralString, new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     CaptionPhotoViewer.this.lambda$new$0(i);
@@ -314,7 +314,7 @@ public abstract class CaptionPhotoViewer extends CaptionContainerView {
         int i = 0;
         if (z2) {
             this.timerButton.setVisibility(0);
-            this.timerButton.animate().alpha(z ? 1.0f : 0.0f).translationX(z ? 0.0f : AndroidUtilities.dp(8.0f)).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda3
+            this.timerButton.animate().alpha(z ? 1.0f : 0.0f).translationX(z ? 0.0f : AndroidUtilities.dp(8.0f)).withEndAction(new Runnable() { // from class: org.telegram.ui.Components.CaptionPhotoViewer$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     CaptionPhotoViewer.this.lambda$setTimerVisible$4(z);

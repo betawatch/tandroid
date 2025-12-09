@@ -1807,16 +1807,16 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:47:0x021e  */
-        /* JADX WARN: Removed duplicated region for block: B:55:0x026e  */
-        /* JADX WARN: Removed duplicated region for block: B:58:0x0293  */
-        /* JADX WARN: Removed duplicated region for block: B:61:0x02a5  */
-        /* JADX WARN: Removed duplicated region for block: B:64:0x02b3  */
-        /* JADX WARN: Removed duplicated region for block: B:66:0x02b7  */
-        /* JADX WARN: Removed duplicated region for block: B:70:0x0297  */
-        /* JADX WARN: Removed duplicated region for block: B:71:0x0272  */
-        /* JADX WARN: Removed duplicated region for block: B:78:0x024a  */
-        /* JADX WARN: Removed duplicated region for block: B:80:0x024d  */
+        /* JADX WARN: Removed duplicated region for block: B:50:0x0226  */
+        /* JADX WARN: Removed duplicated region for block: B:58:0x0276  */
+        /* JADX WARN: Removed duplicated region for block: B:61:0x029b  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x02ad  */
+        /* JADX WARN: Removed duplicated region for block: B:67:0x02bb  */
+        /* JADX WARN: Removed duplicated region for block: B:69:0x02bf  */
+        /* JADX WARN: Removed duplicated region for block: B:73:0x029f  */
+        /* JADX WARN: Removed duplicated region for block: B:74:0x027a  */
+        /* JADX WARN: Removed duplicated region for block: B:81:0x0252  */
+        /* JADX WARN: Removed duplicated region for block: B:83:0x0255  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -1833,7 +1833,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) StarsController.findAttribute(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
             this.cardBackground.setBackdrop(stargiftattributebackdrop);
             this.cardBackground.setPattern((TL_stars.starGiftAttributePattern) StarsController.findAttribute(starGift.attributes, TL_stars.starGiftAttributePattern.class));
-            if (!starGift.auction || ((z6 = starGift.sold_out) && !this.priotityAuction)) {
+            if (!starGift.auction || (((z6 = starGift.sold_out) && !this.priotityAuction) || (z3 && starGift.availability_resale > 0))) {
                 this.cardBackground.setStrokeColors((!starGift.require_premium || (z3 && starGift.availability_resale > 0)) ? null : PREMIUM_STROKE);
             } else if (z6) {
                 CardBackground cardBackground = this.cardBackground;
@@ -2680,6 +2680,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
         private final RectF rect;
         private final Theme.ResourcesProvider resourcesProvider;
         private boolean selected;
+        public int selectedColorKey;
         private final Paint selectedPaint;
         private final Path strokeClipPath;
         private int[] strokeColors;
@@ -2719,6 +2720,8 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     GiftSheet.CardBackground.this.invalidate();
                 }
             }, 320L, CubicBezierInterpolator.EASE_OUT_QUINT);
+            int i = Theme.key_windowBackgroundWhite;
+            this.selectedColorKey = i;
             this.view = view;
             this.resourcesProvider = resourcesProvider;
             this.pattern = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(view, AndroidUtilities.dp(28.0f)) { // from class: org.telegram.ui.Gifts.GiftSheet.CardBackground.1
@@ -2744,7 +2747,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
             if (view.isAttachedToWindow()) {
                 this.pattern.attach();
             }
-            paint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider));
+            paint.setColor(Theme.getColor(i, resourcesProvider));
             if (z) {
                 paint.setShadowLayer(AndroidUtilities.dp(1.66f), 0.0f, AndroidUtilities.dp(0.33f), Theme.getColor(Theme.key_dialogCardShadow, resourcesProvider));
             }
@@ -2853,7 +2856,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                 canvas.restore();
             }
             if (f2 > 0.0f) {
-                this.selectedPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider));
+                this.selectedPaint.setColor(Theme.getColor(this.selectedColorKey, this.resourcesProvider));
                 this.selectedPaint.setStrokeWidth(AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(1.667f), f2));
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(this.rect);

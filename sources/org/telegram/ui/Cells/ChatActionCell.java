@@ -2277,12 +2277,12 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         return i;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:170:0x060c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:170:0x060f, code lost:
     
         if (r8 == false) goto L271;
      */
     /* JADX WARN: Removed duplicated region for block: B:155:0x044b  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x0608  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x060b  */
     /* JADX WARN: Removed duplicated region for block: B:186:0x0454  */
     /* JADX WARN: Removed duplicated region for block: B:247:0x03a4  */
     /* JADX WARN: Removed duplicated region for block: B:255:0x03d1  */
@@ -2507,7 +2507,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                                     MessageObject.addEntitiesToText(spannableStringBuilder4, tL_messageActionStarGift.message.entities, false, false, true, true);
                                     replaceTags = MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji((CharSequence) spannableStringBuilder4, this.giftTextPaint.getFontMetricsInt(), false, (int[]) null), tL_messageActionStarGift.message.entities, this.giftTextPaint.getFontMetricsInt());
                                 } else if (tL_messageActionStarGift.auction_acquired) {
-                                    replaceTags = LocaleController.formatString(org.telegram.messenger.R.string.Gift2ActionWonActionText, LocaleController.formatNumber(tL_messageActionStarGift.gift.stars, ','));
+                                    replaceTags = LocaleController.formatString(org.telegram.messenger.R.string.Gift2ActionWonActionText, LocaleController.formatNumber(tL_messageActionStarGift.gift.stars + tL_messageActionStarGift.upgrade_stars, ','));
                                 } else if (!z3) {
                                     long j4 = j;
                                     if (z4) {
@@ -2783,7 +2783,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 this.textY = 0;
             } else if (messageObject.isStoryMention()) {
                 TLRPC.User user6 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.messageOwner.media.user_id));
-                createGiftPremiumLayouts(null, null, null, user6.self ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryYouMentionedTitle", org.telegram.messenger.R.string.StoryYouMentionedTitle, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId())).first_name)) : AndroidUtilities.replaceTags(LocaleController.formatString("StoryMentionedTitle", org.telegram.messenger.R.string.StoryMentionedTitle, user6.first_name)), false, LocaleController.getString(org.telegram.messenger.R.string.StoryMentionedAction), 11, null, this.giftRectSize, true, false);
+                createGiftPremiumLayouts(null, null, null, user6.self ? AndroidUtilities.replaceTags(LocaleController.formatString(org.telegram.messenger.R.string.StoryYouMentionedTitle, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId())).first_name)) : AndroidUtilities.replaceTags(LocaleController.formatString(org.telegram.messenger.R.string.StoryMentionedTitle, user6.first_name)), false, LocaleController.getString(org.telegram.messenger.R.string.StoryMentionedAction), 11, null, this.giftRectSize, true, false);
                 this.textLayout = null;
                 this.textHeight = 0;
                 this.titleLayout = null;
@@ -2990,40 +2990,40 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         return this.customDate;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0568 A[LOOP:1: B:100:0x0562->B:102:0x0568, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x053e  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0541  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x05a2  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x05af  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x063a  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x074e  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0764  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x0c24  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0c2b  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x0c3a  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0c47  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0c8d  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x0d8a  */
-    /* JADX WARN: Removed duplicated region for block: B:238:0x0db3  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x0e04  */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x0e4d  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x0ed7  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x0f0d  */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x0f4a  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x0fb3  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x0f79  */
-    /* JADX WARN: Removed duplicated region for block: B:282:0x0f85  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x0f89  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x0f7d  */
-    /* JADX WARN: Removed duplicated region for block: B:286:0x0f4f  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x0f23  */
-    /* JADX WARN: Removed duplicated region for block: B:288:0x0ea9  */
-    /* JADX WARN: Removed duplicated region for block: B:294:0x0d9a  */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x0c5b  */
-    /* JADX WARN: Removed duplicated region for block: B:314:0x0a88  */
-    /* JADX WARN: Removed duplicated region for block: B:337:0x06ae  */
-    /* JADX WARN: Removed duplicated region for block: B:341:0x05d4  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x051a  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0572 A[LOOP:1: B:105:0x056c->B:107:0x0572, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0548  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x054b  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x05ac  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x05b9  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0644  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x0758  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x076e  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x0c2e  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x0c35  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x0c44  */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x0c51  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x0c97  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x0d94  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x0dbd  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x0e0e  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x0e57  */
+    /* JADX WARN: Removed duplicated region for block: B:260:0x0ee1  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x0f17  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x0f54  */
+    /* JADX WARN: Removed duplicated region for block: B:276:0x0fbd  */
+    /* JADX WARN: Removed duplicated region for block: B:284:0x0f83  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x0f8f  */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x0f93  */
+    /* JADX WARN: Removed duplicated region for block: B:290:0x0f87  */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x0f59  */
+    /* JADX WARN: Removed duplicated region for block: B:292:0x0f2d  */
+    /* JADX WARN: Removed duplicated region for block: B:293:0x0eb3  */
+    /* JADX WARN: Removed duplicated region for block: B:299:0x0da4  */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x0c65  */
+    /* JADX WARN: Removed duplicated region for block: B:319:0x0a92  */
+    /* JADX WARN: Removed duplicated region for block: B:342:0x06b8  */
+    /* JADX WARN: Removed duplicated region for block: B:346:0x05de  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0524  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3062,30 +3062,33 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         if (!this.starGiftLayout.has() && this.birthdayLayout == null && isButtonLayout(messageObject)) {
             this.stickerSize = this.giftRectSize - AndroidUtilities.dp(106.0f);
             if (isNewStyleButtonLayout()) {
-                int imageSize = getImageSize(messageObject);
-                float f8 = (this.previousWidth - imageSize) / 2.0f;
+                i6 = getImageSize(messageObject);
+                float f8 = (this.previousWidth - i6) / 2.0f;
                 float dp3 = this.textY + this.textHeight + AndroidUtilities.dp(4.0f) + AndroidUtilities.dp(16.0f);
                 if (messageObject.isStoryMention()) {
                     this.avatarStoryParams.storyItem = messageObject.messageOwner.media.storyItem;
                 }
-                float f9 = imageSize;
+                float f9 = i6;
                 this.avatarStoryParams.originalAvatarRect.set(f8, dp3, f8 + f9, f9 + dp3);
                 int i7 = messageObject.type;
                 if (i7 == 31 || i7 == 33 || i7 == 34) {
                     f8 += AndroidUtilities.dp(10.0f);
                     dp3 += AndroidUtilities.dp(10.0f);
-                    imageSize -= AndroidUtilities.dp(20.0f);
+                    i6 -= AndroidUtilities.dp(20.0f);
                 }
-                this.imageReceiver.setImageCoords(f8, dp3, Math.max(0, imageSize), Math.max(0, imageSize));
-                i6 = imageSize + AndroidUtilities.dp(20.0f);
-            } else {
+                this.imageReceiver.setImageCoords(f8, dp3, Math.max(0, i6), Math.max(0, i6));
                 int i8 = messageObject.type;
-                if (i8 == 11) {
+                if (i8 == 31 || i8 == 33 || i8 == 34) {
+                    i6 += AndroidUtilities.dp(20.0f);
+                }
+            } else {
+                int i9 = messageObject.type;
+                if (i9 == 11) {
                     ImageReceiver imageReceiver = this.imageReceiver;
-                    int i9 = this.previousWidth;
+                    int i10 = this.previousWidth;
                     float f10 = this.stickerSize;
-                    imageReceiver.setImageCoords((i9 - r3) / 2.0f, this.textY + this.textHeight + (this.giftRectSize * 0.075f), f10, f10);
-                } else if (i8 == 25) {
+                    imageReceiver.setImageCoords((i10 - r3) / 2.0f, this.textY + this.textHeight + (this.giftRectSize * 0.075f), f10, f10);
+                } else if (i9 == 25) {
                     i6 = (int) (this.stickerSize * (AndroidUtilities.isTablet() ? 1.0f : 1.2f));
                     float f11 = i6;
                     this.imageReceiver.setImageCoords((this.previousWidth - i6) / 2.0f, ((this.textY + this.textHeight) + (this.giftRectSize * 0.075f)) - AndroidUtilities.dp(22.0f), f11, f11);
@@ -3127,7 +3130,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 }
             }
         }
-        int i10 = i6;
+        int i11 = i6;
         drawBackground(canvas, false);
         if (this.starGiftLayout.has()) {
             canvas.save();
@@ -3176,8 +3179,8 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 this.imageReceiver.draw(canvas);
             }
             this.radialProgress.setProgressRect(this.imageReceiver.getImageX(), this.imageReceiver.getImageY(), this.imageReceiver.getImageX() + this.imageReceiver.getImageWidth(), this.imageReceiver.getImageY() + this.imageReceiver.getImageHeight());
-            int i11 = messageObject.type;
-            if (i11 == 21) {
+            int i12 = messageObject.type;
+            if (i12 == 21) {
                 ImageUpdater imageUpdater = MessagesController.getInstance(this.currentAccount).photoSuggestion.get(messageObject.messageOwner.local_id);
                 if (imageUpdater != null) {
                     this.radialProgress.setProgress(imageUpdater.getCurrentImageProgress(), true);
@@ -3192,7 +3195,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 }
                 this.radialProgress.draw(canvas);
             } else {
-                if (i11 == 22) {
+                if (i12 == 22) {
                     float uploadingInfoProgress = getUploadingInfoProgress(messageObject);
                     this.radialProgress.setProgress(uploadingInfoProgress, true);
                     this.radialProgress.setCircleRadius(AndroidUtilities.dp(26.0f));
@@ -3264,13 +3267,13 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                     float f17 = f16;
                     if (!isNewStyleButtonLayout()) {
                         RectF rectF = this.backgroundRect;
-                        dp = (rectF != null ? rectF.top : this.textY + this.textHeight + AndroidUtilities.dp(4.0f)) + (i10 > 0 ? (AndroidUtilities.dp(f) * 2) + i10 : AndroidUtilities.dp(f));
+                        dp = (rectF != null ? rectF.top : this.textY + this.textHeight + AndroidUtilities.dp(4.0f)) + (i11 > 0 ? (AndroidUtilities.dp(f) * 2) + i11 : AndroidUtilities.dp(f));
                     } else {
                         float f18 = this.textY + this.textHeight + (this.giftRectSize * 0.075f);
                         if (messageObject.type != 21) {
-                            i10 = this.stickerSize;
+                            i11 = this.stickerSize;
                         }
-                        dp = f18 + i10 + AndroidUtilities.dp(4.0f);
+                        dp = f18 + i11 + AndroidUtilities.dp(4.0f);
                         if (messageObject.type == 21) {
                             dp += AndroidUtilities.dp(f);
                         }
@@ -3431,9 +3434,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                             canvas.translate((this.giftRectSize - this.settingWallpaperProgressTextLayout.getWidth()) / 2.0f, 0.0f);
                             SpoilerEffect.layoutDrawMaybe(this.settingWallpaperProgressTextLayout, canvas);
                             canvas.restore();
-                            int i12 = i4;
-                            this.giftTextPaint.setColor(i12);
-                            this.giftTextPaint.linkColor = i12;
+                            int i13 = i4;
+                            this.giftTextPaint.setColor(i13);
+                            this.giftTextPaint.linkColor = i13;
                         } else {
                             f3 = f6;
                             canvas.save();

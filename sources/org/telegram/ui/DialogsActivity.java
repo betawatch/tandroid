@@ -426,6 +426,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     private boolean rightFragmentTransitionIsOpen;
     public RightSlidingDialogContainer rightSlidingDialogContainer;
     public int scheduleDate;
+    public int scheduleRepeatPeriod;
     private float scrollAdditionalOffset;
     private boolean scrollBarVisible;
     private boolean scrollUpdated;
@@ -513,7 +514,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
 
         boolean canSelectStories();
 
-        boolean didSelectDialogs(DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, TopicsFragment topicsFragment);
+        boolean didSelectDialogs(DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment);
 
         boolean didSelectStories(DialogsActivity dialogsActivity);
     }
@@ -5978,7 +5979,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                         DialogsActivity.this.removeSelfFromStack();
                     }
                     DialogsActivity dialogsActivity = DialogsActivity.this;
-                    dialogsActivityDelegate.didSelectDialogs(dialogsActivity, arrayList, null, true, dialogsActivity.notify, dialogsActivity.scheduleDate, null);
+                    dialogsActivityDelegate.didSelectDialogs(dialogsActivity, arrayList, null, true, dialogsActivity.notify, dialogsActivity.scheduleDate, dialogsActivity.scheduleRepeatPeriod, null);
                 }
             });
             presentFragment(groupCreateFinalActivity);
@@ -6038,7 +6039,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             for (int i = 0; i < this.selectedDialogs.size(); i++) {
                 arrayList.add(MessagesStorage.TopicKey.of(((Long) this.selectedDialogs.get(i)).longValue(), 0L));
             }
-            this.delegate.didSelectDialogs(this, arrayList, null, false, this.notify, this.scheduleDate, null);
+            this.delegate.didSelectDialogs(this, arrayList, null, false, this.notify, this.scheduleDate, this.scheduleRepeatPeriod, null);
             return;
         }
         if (this.floatingButton.getVisibility() != 0) {
@@ -6272,7 +6273,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             for (int i3 = 0; i3 < DialogsActivity.this.selectedDialogs.size(); i3++) {
                 arrayList.add(MessagesStorage.TopicKey.of(((Long) DialogsActivity.this.selectedDialogs.get(i3)).longValue(), 0L));
             }
-            DialogsActivity.this.delegate.didSelectDialogs(DialogsActivity.this, arrayList, charSequence, false, z, i, null);
+            DialogsActivity.this.delegate.didSelectDialogs(DialogsActivity.this, arrayList, charSequence, false, z, i, i2, null);
         }
 
         @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
@@ -6296,7 +6297,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         for (int i = 0; i < this.selectedDialogs.size(); i++) {
             arrayList.add(MessagesStorage.TopicKey.of(((Long) this.selectedDialogs.get(i)).longValue(), 0L));
         }
-        this.delegate.didSelectDialogs(this, arrayList, this.commentView.getFieldText(), false, this.notify, this.scheduleDate, null);
+        this.delegate.didSelectDialogs(this, arrayList, this.commentView.getFieldText(), false, this.notify, this.scheduleDate, this.scheduleRepeatPeriod, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -7991,7 +7992,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         if (dialogsActivityDelegate != null) {
             ArrayList arrayList = new ArrayList();
             arrayList.add(MessagesStorage.TopicKey.of(-l.longValue(), 0L));
-            dialogsActivityDelegate.didSelectDialogs(this, arrayList, null, false, this.notify, this.scheduleDate, null);
+            dialogsActivityDelegate.didSelectDialogs(this, arrayList, null, false, this.notify, this.scheduleDate, this.scheduleRepeatPeriod, null);
         }
     }
 
@@ -8182,7 +8183,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(MessagesStorage.TopicKey.of(-j, 0L));
                 DialogsActivity dialogsActivity = DialogsActivity.this;
-                dialogsActivityDelegate.didSelectDialogs(dialogsActivity, arrayList, null, false, dialogsActivity.notify, dialogsActivity.scheduleDate, null);
+                dialogsActivityDelegate.didSelectDialogs(dialogsActivity, arrayList, null, false, dialogsActivity.notify, dialogsActivity.scheduleDate, dialogsActivity.scheduleRepeatPeriod, null);
             }
         }
     }
@@ -15025,7 +15026,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         didSelectResult(j, j2, z, z2, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0180  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0185  */
     /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -15038,6 +15039,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         String string2;
         String str;
         String str2;
+        String str3;
         TLRPC.TL_forumTopic findTopic;
         String string3;
         AlertDialog create;
@@ -15115,7 +15117,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             if (this.delegate != null) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(MessagesStorage.TopicKey.of(j, j2));
-                if (this.delegate.didSelectDialogs(this, arrayList, null, z2, this.notify, this.scheduleDate, topicsFragment) && this.resetDelegate) {
+                if (this.delegate.didSelectDialogs(this, arrayList, null, z2, this.notify, this.scheduleDate, this.scheduleRepeatPeriod, topicsFragment) && this.resetDelegate) {
                     this.delegate = null;
                     return;
                 }
@@ -15133,8 +15135,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             if (user3 == null) {
                 return;
             }
-            str2 = LocaleController.getString(R.string.SendMessageTitle);
-            formatStringSimple = LocaleController.formatStringSimple(this.selectAlertString, UserObject.getUserName(user3));
+            str = LocaleController.getString(R.string.SendMessageTitle);
+            str2 = LocaleController.formatStringSimple(this.selectAlertString, UserObject.getUserName(user3));
             string3 = LocaleController.getString(R.string.Send);
         } else {
             if (!DialogObject.isUserDialog(j)) {
@@ -15142,24 +15144,25 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 if (chat3 == null) {
                     return;
                 }
-                String str3 = chat3.title;
+                String str4 = chat3.title;
                 if (j2 != 0 && (findTopic = getMessagesController().getTopicsController().findTopic(chat3.id, j2)) != null) {
-                    str3 = ((Object) str3) + " " + findTopic.title;
+                    str4 = ((Object) str4) + " " + findTopic.title;
                 }
                 if (this.addToGroupAlertString != null) {
                     string = LocaleController.getString(R.string.AddToTheGroupAlertTitle);
-                    formatStringSimple = LocaleController.formatStringSimple(this.addToGroupAlertString, str3);
+                    formatStringSimple = LocaleController.formatStringSimple(this.addToGroupAlertString, str4);
                     string2 = LocaleController.getString(R.string.Add);
                 } else {
                     string = LocaleController.getString(R.string.SendMessageTitle);
-                    formatStringSimple = LocaleController.formatStringSimple(this.selectAlertStringGroup, str3);
+                    formatStringSimple = LocaleController.formatStringSimple(this.selectAlertStringGroup, str4);
                     string2 = LocaleController.getString(R.string.Send);
                 }
-                str = string2;
-                str2 = string;
-                builder.setTitle(str2);
-                builder.setMessage(AndroidUtilities.replaceTags(formatStringSimple));
-                builder.setPositiveButton(str, new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda81
+                str = string;
+                str2 = formatStringSimple;
+                str3 = string2;
+                builder.setTitle(str);
+                builder.setMessage(AndroidUtilities.replaceTags(str2));
+                builder.setPositiveButton(str3, new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda81
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog2, int i2) {
                         DialogsActivity.this.lambda$didSelectResult$126(j, j2, topicsFragment, alertDialog2, i2);
@@ -15174,23 +15177,23 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 return;
             }
             if (j == getUserConfig().getClientUserId()) {
-                str2 = LocaleController.getString(R.string.SendMessageTitle);
-                formatStringSimple = LocaleController.formatStringSimple(this.selectAlertStringGroup, LocaleController.getString(R.string.SavedMessages));
+                str = LocaleController.getString(R.string.SendMessageTitle);
+                str2 = LocaleController.formatStringSimple(this.selectAlertStringGroup, LocaleController.getString(R.string.SavedMessages));
                 string3 = LocaleController.getString(R.string.Send);
             } else {
                 TLRPC.User user4 = getMessagesController().getUser(Long.valueOf(j));
                 if (user4 == null || this.selectAlertString == null) {
                     return;
                 }
-                str2 = LocaleController.getString(R.string.SendMessageTitle);
-                formatStringSimple = LocaleController.formatStringSimple(this.selectAlertString, UserObject.getUserName(user4));
+                str = LocaleController.getString(R.string.SendMessageTitle);
+                str2 = LocaleController.formatStringSimple(this.selectAlertString, UserObject.getUserName(user4));
                 string3 = LocaleController.getString(R.string.Send);
             }
         }
-        str = string3;
-        builder.setTitle(str2);
-        builder.setMessage(AndroidUtilities.replaceTags(formatStringSimple));
-        builder.setPositiveButton(str, new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda81
+        str3 = string3;
+        builder.setTitle(str);
+        builder.setMessage(AndroidUtilities.replaceTags(str2));
+        builder.setPositiveButton(str3, new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda81
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog2, int i2) {
                 DialogsActivity.this.lambda$didSelectResult$126(j, j2, topicsFragment, alertDialog2, i2);
@@ -15238,7 +15241,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         setDialogsListFrozen(true);
         ArrayList arrayList = new ArrayList();
         arrayList.add(MessagesStorage.TopicKey.of(j, 0L));
-        this.delegate.didSelectDialogs(this, arrayList, null, z, this.notify, this.scheduleDate, null);
+        this.delegate.didSelectDialogs(this, arrayList, null, z, this.notify, this.scheduleDate, this.scheduleRepeatPeriod, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -15251,7 +15254,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         if (this.delegate != null) {
             ArrayList arrayList = new ArrayList();
             arrayList.add(MessagesStorage.TopicKey.of(j, j2));
-            this.delegate.didSelectDialogs(this, arrayList, null, z, this.notify, this.scheduleDate, topicsFragment);
+            this.delegate.didSelectDialogs(this, arrayList, null, z, this.notify, this.scheduleDate, this.scheduleRepeatPeriod, topicsFragment);
             if (this.resetDelegate) {
                 this.delegate = null;
                 return;
@@ -15462,7 +15465,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         for (int i = 0; i < this.selectedDialogs.size(); i++) {
             arrayList.add(MessagesStorage.TopicKey.of(((Long) this.selectedDialogs.get(i)).longValue(), 0L));
         }
-        this.delegate.didSelectDialogs(this, arrayList, this.commentView.getFieldText(), false, this.notify, this.scheduleDate, null);
+        this.delegate.didSelectDialogs(this, arrayList, this.commentView.getFieldText(), false, this.notify, this.scheduleDate, this.scheduleRepeatPeriod, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -15476,6 +15479,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             public void didSelectDate(boolean z2, int i, int i2) {
                 DialogsActivity dialogsActivity = DialogsActivity.this;
                 dialogsActivity.scheduleDate = i;
+                dialogsActivity.scheduleRepeatPeriod = i2;
                 if (dialogsActivity.delegate == null || DialogsActivity.this.selectedDialogs.isEmpty()) {
                     return;
                 }
@@ -15485,7 +15489,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 }
                 DialogsActivityDelegate dialogsActivityDelegate = DialogsActivity.this.delegate;
                 DialogsActivity dialogsActivity2 = DialogsActivity.this;
-                dialogsActivityDelegate.didSelectDialogs(dialogsActivity2, arrayList, dialogsActivity2.commentView.getFieldText(), false, z2, i, null);
+                dialogsActivityDelegate.didSelectDialogs(dialogsActivity2, arrayList, dialogsActivity2.commentView.getFieldText(), false, z2, i, i2, null);
             }
         }, resourcesProvider);
     }

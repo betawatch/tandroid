@@ -634,9 +634,9 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
                     }
 
                     @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
-                    public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList2, CharSequence charSequence, boolean z6, boolean z7, int i5, TopicsFragment topicsFragment) {
+                    public final boolean didSelectDialogs(DialogsActivity dialogsActivity2, ArrayList arrayList2, CharSequence charSequence, boolean z6, boolean z7, int i5, int i6, TopicsFragment topicsFragment) {
                         boolean lambda$createView$8;
-                        lambda$createView$8 = NotificationsCustomSettingsActivity.this.lambda$createView$8(dialogsActivity2, arrayList2, charSequence, z6, z7, i5, topicsFragment);
+                        lambda$createView$8 = NotificationsCustomSettingsActivity.this.lambda$createView$8(dialogsActivity2, arrayList2, charSequence, z6, z7, i5, i6, topicsFragment);
                         return lambda$createView$8;
                     }
 
@@ -1084,8 +1084,8 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$8(DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, TopicsFragment topicsFragment) {
-        int i2 = 0;
+    public /* synthetic */ boolean lambda$createView$8(DialogsActivity dialogsActivity, ArrayList arrayList, CharSequence charSequence, boolean z, boolean z2, int i, int i2, TopicsFragment topicsFragment) {
+        int i3 = 0;
         long j = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
         if (this.currentType == 3) {
             ArrayList arrayList2 = this.autoExceptions;
@@ -1111,9 +1111,9 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
             notificationException.story = true;
             Boolean bool = this.storiesEnabled;
             if (bool != null && bool.booleanValue()) {
-                i2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                i3 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             }
-            notificationException.notify = i2;
+            notificationException.notify = i3;
             if (this.exceptions == null) {
                 this.exceptions = new ArrayList();
             }

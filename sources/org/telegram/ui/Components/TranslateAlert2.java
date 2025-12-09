@@ -42,6 +42,7 @@ import java.util.Locale;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.LocaleController;
@@ -1125,28 +1126,42 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
             actionBarPopupWindowLayout.setBackground(mutate);
             final Runnable[] runnableArr = new Runnable[1];
             ArrayList<LocaleController.LocaleInfo> locales = TranslateController.getLocales();
-            int i = 0;
             boolean z = true;
+            if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), 2, true, false, ((BottomSheet) TranslateAlert2.this).resourcesProvider);
+                actionBarMenuSubItem.setText("Summarize");
+                actionBarMenuSubItem.setChecked(TextUtils.equals(TranslateAlert2.this.toLanguage, "sum"));
+                actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateAlert2$HeaderView$$ExternalSyntheticLambda2
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        TranslateAlert2.HeaderView.this.lambda$openLanguagesSelect$2(runnableArr, view);
+                    }
+                });
+                actionBarPopupWindowLayout.addView(actionBarMenuSubItem);
+                z = false;
+            }
+            boolean z2 = z;
+            int i = 0;
             while (i < locales.size()) {
                 final LocaleController.LocaleInfo localeInfo = locales.get(i);
                 if (!localeInfo.pluralLangCode.equals(TranslateAlert2.this.fromLanguage) && "remote".equals(localeInfo.pathToFile)) {
                     TextUtils.equals(TranslateAlert2.this.toLanguage, localeInfo.pluralLangCode);
-                    ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), 2, z, i == locales.size() - 1, ((BottomSheet) TranslateAlert2.this).resourcesProvider);
-                    actionBarMenuSubItem.setText(TranslateAlert2.capitalFirst(TranslateAlert2.languageName(localeInfo.pluralLangCode)));
-                    actionBarMenuSubItem.setChecked(TextUtils.equals(TranslateAlert2.this.toLanguage, localeInfo.pluralLangCode));
-                    actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateAlert2$HeaderView$$ExternalSyntheticLambda2
+                    ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(getContext(), 2, z2, i == locales.size() - 1, ((BottomSheet) TranslateAlert2.this).resourcesProvider);
+                    actionBarMenuSubItem2.setText(TranslateAlert2.capitalFirst(TranslateAlert2.languageName(localeInfo.pluralLangCode)));
+                    actionBarMenuSubItem2.setChecked(TextUtils.equals(TranslateAlert2.this.toLanguage, localeInfo.pluralLangCode));
+                    actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateAlert2$HeaderView$$ExternalSyntheticLambda3
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            TranslateAlert2.HeaderView.this.lambda$openLanguagesSelect$2(runnableArr, localeInfo, view);
+                            TranslateAlert2.HeaderView.this.lambda$openLanguagesSelect$3(runnableArr, localeInfo, view);
                         }
                     });
-                    actionBarPopupWindowLayout.addView(actionBarMenuSubItem);
-                    z = false;
+                    actionBarPopupWindowLayout.addView(actionBarMenuSubItem2);
+                    z2 = false;
                 }
                 i++;
             }
             final ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, -2, -2);
-            runnableArr[0] = new Runnable() { // from class: org.telegram.ui.Components.TranslateAlert2$HeaderView$$ExternalSyntheticLambda3
+            runnableArr[0] = new Runnable() { // from class: org.telegram.ui.Components.TranslateAlert2$HeaderView$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     ActionBarPopupWindow.this.dismiss();
@@ -1167,7 +1182,26 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$openLanguagesSelect$2(Runnable[] runnableArr, LocaleController.LocaleInfo localeInfo, View view) {
+        public /* synthetic */ void lambda$openLanguagesSelect$2(Runnable[] runnableArr, View view) {
+            Runnable runnable = runnableArr[0];
+            if (runnable != null) {
+                runnable.run();
+            }
+            if (TextUtils.equals(TranslateAlert2.this.toLanguage, "sum")) {
+                return;
+            }
+            if (TranslateAlert2.this.adapter.mMainView == TranslateAlert2.this.textViewContainer) {
+                TranslateAlert2 translateAlert2 = TranslateAlert2.this;
+                translateAlert2.prevToLanguage = translateAlert2.toLanguage;
+            }
+            this.toLanguageTextView.setText(TranslateAlert2.capitalFirst(TranslateAlert2.languageName(TranslateAlert2.this.toLanguage = "sum")));
+            TranslateAlert2.this.adapter.updateMainView(TranslateAlert2.this.loadingTextView);
+            TranslateAlert2.setToLanguage(TranslateAlert2.this.toLanguage);
+            TranslateAlert2.this.translate();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$openLanguagesSelect$3(Runnable[] runnableArr, LocaleController.LocaleInfo localeInfo, View view) {
             Runnable runnable = runnableArr[0];
             if (runnable != null) {
                 runnable.run();
@@ -1343,6 +1377,9 @@ public abstract class TranslateAlert2 extends BottomSheet implements Notificatio
     }
 
     public static String languageName(String str, boolean[] zArr) {
+        if (str != null && "sum".equalsIgnoreCase(str)) {
+            return "Summarize";
+        }
         if (str == null || str.equals(TranslateController.UNKNOWN_LANGUAGE) || str.equals("auto")) {
             return null;
         }
