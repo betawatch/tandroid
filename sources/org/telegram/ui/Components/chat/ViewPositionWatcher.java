@@ -143,13 +143,15 @@ public final class ViewPositionWatcher implements ViewTreeObserver.OnPreDrawList
         float f2 = 0.0f;
         View view2 = view;
         while (view2 != null && view2 != viewGroup) {
-            f += view2.getX();
-            f2 += view2.getY();
+            float x = f + view2.getX();
+            float y = f2 + view2.getY();
             Object parent = view2.getParent();
             if (!(parent instanceof View)) {
                 return false;
             }
             view2 = (View) parent;
+            f = x - view2.getScrollX();
+            f2 = y - view2.getScrollY();
         }
         if (view2 != viewGroup) {
             return false;

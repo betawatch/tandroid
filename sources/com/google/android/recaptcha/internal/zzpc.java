@@ -1,36 +1,56 @@
 package com.google.android.recaptcha.internal;
 
 /* loaded from: classes.dex */
-public final class zzpc extends zzin implements zzkf {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private zzpc() {
-        super(r0);
-        zzpd zzpdVar;
-        zzpdVar = zzpd.zzb;
+public abstract class zzpc {
+    private static final char[] zza = "0123456789abcdef".toCharArray();
+    public static final /* synthetic */ int zzb = 0;
+
+    zzpc() {
     }
 
-    public final zzpc zzd(zznf zznfVar) {
-        zzm();
-        zzpd.zzH((zzpd) this.zza, zznfVar);
-        return this;
+    public final boolean equals(Object obj) {
+        if (obj instanceof zzpc) {
+            zzpc zzpcVar = (zzpc) obj;
+            if (zzb() == zzpcVar.zzb() && zzc(zzpcVar)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public final zzpc zze(zznu zznuVar) {
-        zzm();
-        zzpd.zzI((zzpd) this.zza, zznuVar);
-        return this;
+    public final int hashCode() {
+        if (zzb() >= 32) {
+            return zza();
+        }
+        byte[] zze = zze();
+        int i = zze[0] & 255;
+        for (int i2 = 1; i2 < zze.length; i2++) {
+            i |= (zze[i2] & 255) << (i2 * 8);
+        }
+        return i;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzpc(zzor zzorVar) {
-        super(r1);
-        zzpd zzpdVar;
-        zzpdVar = zzpd.zzb;
+    public final String toString() {
+        byte[] zze = zze();
+        int length = zze.length;
+        StringBuilder sb = new StringBuilder(length + length);
+        for (byte b : zze) {
+            char[] cArr = zza;
+            sb.append(cArr[(b >> 4) & 15]);
+            sb.append(cArr[b & 15]);
+        }
+        return sb.toString();
+    }
+
+    public abstract int zza();
+
+    public abstract int zzb();
+
+    abstract boolean zzc(zzpc zzpcVar);
+
+    public abstract byte[] zzd();
+
+    byte[] zze() {
+        throw null;
     }
 }

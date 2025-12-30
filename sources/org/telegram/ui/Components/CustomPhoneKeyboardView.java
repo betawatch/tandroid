@@ -22,15 +22,15 @@ import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
 public class CustomPhoneKeyboardView extends ViewGroup {
-    private ImageView backButton;
-    private Runnable detectLongClick;
+    private final ImageView backButton;
+    private final Runnable detectLongClick;
     private boolean dispatchBackWhenEmpty;
     private EditText editText;
-    private Runnable onBackButton;
+    private final Runnable onBackButton;
     private boolean postedLongClick;
     private boolean runningLongClick;
     private View viewToFindFocus;
-    private View[] views;
+    private final View[] views;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$new$3(View view) {
@@ -85,9 +85,10 @@ public class CustomPhoneKeyboardView extends ViewGroup {
             }
         };
         int i = 0;
-        while (i < 11) {
-            if (i != 9) {
-                switch (i) {
+        int i2 = 0;
+        while (i2 < 11) {
+            if (i2 != 9) {
+                switch (i2) {
                     case 1:
                         str = "ABC";
                         break;
@@ -120,17 +121,17 @@ public class CustomPhoneKeyboardView extends ViewGroup {
                         str = "+";
                         break;
                 }
-                final String valueOf = String.valueOf(i != 10 ? i + 1 : 0);
-                this.views[i] = new NumberButtonView(context, valueOf, str);
-                this.views[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CustomPhoneKeyboardView$$ExternalSyntheticLambda2
+                final String valueOf = String.valueOf(i2 != 10 ? i2 + 1 : 0);
+                this.views[i2] = new NumberButtonView(context, valueOf, str);
+                this.views[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CustomPhoneKeyboardView$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         CustomPhoneKeyboardView.this.lambda$new$2(valueOf, view);
                     }
                 });
-                addView(this.views[i]);
+                addView(this.views[i2]);
             }
-            i++;
+            i2++;
         }
         final GestureDetectorCompat gestureDetectorCompat = setupBackButtonDetector(context);
         ImageView imageView = new ImageView(context) { // from class: org.telegram.ui.Components.CustomPhoneKeyboardView.1
@@ -148,20 +149,29 @@ public class CustomPhoneKeyboardView extends ViewGroup {
         };
         this.backButton = imageView;
         imageView.setImageResource(R.drawable.msg_clear_input);
-        this.backButton.setColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-        this.backButton.setBackground(getButtonDrawable());
+        imageView.setColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         int dp = AndroidUtilities.dp(11.0f);
-        this.backButton.setPadding(dp, dp, dp, dp);
-        this.backButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CustomPhoneKeyboardView$$ExternalSyntheticLambda3
+        imageView.setPadding(dp, dp, dp, dp);
+        imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.CustomPhoneKeyboardView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomPhoneKeyboardView.lambda$new$3(view);
             }
         });
-        View[] viewArr = this.views;
-        ImageView imageView2 = this.backButton;
-        viewArr[11] = imageView2;
-        addView(imageView2);
+        this.views[11] = imageView;
+        addView(imageView);
+        while (true) {
+            View[] viewArr = this.views;
+            if (i >= viewArr.length) {
+                return;
+            }
+            View view = viewArr[i];
+            if (view != null) {
+                ScaleStateListAnimator.apply(view, 0.02f, 1.2f);
+                view.setBackground(getButtonDrawable(i));
+            }
+            i++;
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -280,42 +290,62 @@ public class CustomPhoneKeyboardView extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static Drawable getButtonDrawable() {
-        int dp = AndroidUtilities.dp(6.0f);
-        int i = Theme.key_listSelector;
-        return Theme.createSimpleSelectorRoundRectDrawable(dp, Theme.getColor(i), ColorUtils.setAlphaComponent(Theme.getColor(i), 60));
+    private static Drawable getButtonDrawable(int i) {
+        boolean z = i < 3;
+        int i2 = i % 3;
+        boolean z2 = i2 == 0;
+        boolean z3 = i2 == 2;
+        boolean z4 = i > 8;
+        int i3 = Theme.key_listSelector;
+        int color = Theme.getColor(i3);
+        int alphaComponent = ColorUtils.setAlphaComponent(Theme.getColor(i3), 30);
+        float f = 12.0f;
+        int dp = AndroidUtilities.dp((z2 && z) ? 24.0f : 12.0f);
+        int dp2 = AndroidUtilities.dp((z3 && z) ? 24.0f : 12.0f);
+        int dp3 = AndroidUtilities.dp((z3 && z4) ? 24.0f : 12.0f);
+        if (z2 && z4) {
+            f = 24.0f;
+        }
+        return Theme.createSimpleSelectorRoundRectDrawable(dp, dp2, dp3, AndroidUtilities.dp(f), color, alphaComponent, alphaComponent);
     }
 
     public void updateColors() {
         this.backButton.setColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-        for (View view : this.views) {
+        int i = 0;
+        while (true) {
+            View[] viewArr = this.views;
+            if (i >= viewArr.length) {
+                return;
+            }
+            View view = viewArr[i];
             if (view != null) {
-                view.setBackground(getButtonDrawable());
+                view.setBackground(getButtonDrawable(i));
                 if (view instanceof NumberButtonView) {
                     ((NumberButtonView) view).updateColors();
                 }
             }
+            i++;
         }
     }
 
     private static final class NumberButtonView extends View {
-        private String mNumber;
-        private String mSymbols;
-        private TextPaint numberTextPaint;
-        private android.graphics.Rect rect;
-        private TextPaint symbolsTextPaint;
+        private final String mNumber;
+        private final String mSymbols;
+        private final TextPaint numberTextPaint;
+        private final android.graphics.Rect rect;
+        private final TextPaint symbolsTextPaint;
 
         public NumberButtonView(Context context, String str, String str2) {
             super(context);
-            this.numberTextPaint = new TextPaint(1);
-            this.symbolsTextPaint = new TextPaint(1);
+            TextPaint textPaint = new TextPaint(1);
+            this.numberTextPaint = textPaint;
+            TextPaint textPaint2 = new TextPaint(1);
+            this.symbolsTextPaint = textPaint2;
             this.rect = new android.graphics.Rect();
             this.mNumber = str;
             this.mSymbols = str2;
-            this.numberTextPaint.setTextSize(AndroidUtilities.dp(24.0f));
-            this.symbolsTextPaint.setTextSize(AndroidUtilities.dp(14.0f));
-            setBackground(CustomPhoneKeyboardView.getButtonDrawable());
+            textPaint.setTextSize(AndroidUtilities.dp(24.0f));
+            textPaint2.setTextSize(AndroidUtilities.dp(14.0f));
             updateColors();
         }
 

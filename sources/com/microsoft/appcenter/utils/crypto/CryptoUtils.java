@@ -15,7 +15,7 @@ import java.util.Map;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class CryptoUtils {
     static final ICryptoFactory DEFAULT_CRYPTO_FACTORY = new ICryptoFactory() { // from class: com.microsoft.appcenter.utils.crypto.CryptoUtils.1
         @Override // com.microsoft.appcenter.utils.crypto.CryptoUtils.ICryptoFactory

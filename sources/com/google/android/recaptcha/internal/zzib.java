@@ -1,51 +1,29 @@
 package com.google.android.recaptcha.internal;
 
+import kotlin.Lazy;
+import kotlin.LazyKt;
+import kotlin.coroutines.Continuation;
+
 /* loaded from: classes.dex */
-public final class zzib extends zzit implements zzkf {
-    private static final zzib zzb;
-    private long zzd;
-    private int zze;
+public final class zzib {
+    private final Lazy zza;
+    private final Lazy zzb;
 
-    static {
-        zzib zzibVar = new zzib();
-        zzb = zzibVar;
-        zzit.zzD(zzib.class, zzibVar);
+    public zzib() {
+        int i = zzby.zza;
+        this.zza = LazyKt.lazy(zzhz.zza);
+        this.zzb = LazyKt.lazy(zzia.zza);
     }
 
-    private zzib() {
+    public static final /* synthetic */ zzbt zza(zzib zzibVar) {
+        return (zzbt) zzibVar.zza.getValue();
     }
 
-    public static zzia zzi() {
-        return (zzia) zzb.zzp();
+    public static final /* synthetic */ zzhn zzb(zzib zzibVar) {
+        return (zzhn) zzibVar.zzb.getValue();
     }
 
-    public final int zzf() {
-        return this.zze;
-    }
-
-    public final long zzg() {
-        return this.zzd;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzit
-    protected final Object zzh(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return new zzkp(zzb, "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u0002\u0002\u0004", new Object[]{"zzd", "zze"});
-        }
-        if (i2 == 3) {
-            return new zzib();
-        }
-        zzhz zzhzVar = null;
-        if (i2 == 4) {
-            return new zzia(zzhzVar);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+    public final Object zzc(zzxn zzxnVar, Continuation continuation) {
+        return new zzhg(new zzhv(this, zzxnVar, null));
     }
 }

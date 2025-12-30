@@ -1,40 +1,37 @@
 package com.google.android.recaptcha.internal;
 
-/* loaded from: classes.dex */
-final /* synthetic */ class zzng {
-    static final /* synthetic */ int[] zza;
+import java.util.HashMap;
+import java.util.Map;
 
-    static {
-        zzis.zza();
-        int[] iArr = new int[7];
-        zza = iArr;
-        try {
-            iArr[3] = 1;
-        } catch (NoSuchFieldError unused) {
+/* loaded from: classes.dex */
+public final class zzng {
+    private static final zznj zza = new zzne();
+    private static final zzni zzb = new zznf();
+    private final Map zzc = new HashMap();
+    private final Map zzd = new HashMap();
+
+    /* synthetic */ zzng(zznj zznjVar, zznk zznkVar) {
+    }
+
+    public final zznl zza() {
+        return new zznh(this, null);
+    }
+
+    final void zzd(zzmx zzmxVar) {
+        zzot.zza(zzmxVar, "key");
+        if (!zzmxVar.zzb()) {
+            zznj zznjVar = zza;
+            zzot.zza(zzmxVar, "key");
+            this.zzd.remove(zzmxVar);
+            this.zzc.put(zzmxVar, zznjVar);
+            return;
         }
-        try {
-            zza[4] = 2;
-        } catch (NoSuchFieldError unused2) {
+        zzni zzniVar = zzb;
+        zzot.zza(zzmxVar, "key");
+        if (!zzmxVar.zzb()) {
+            throw new IllegalArgumentException("key must be repeating");
         }
-        try {
-            zza[2] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            zza[5] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            zza[6] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            zza[0] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            zza[1] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
+        this.zzc.remove(zzmxVar);
+        this.zzd.put(zzmxVar, zzniVar);
     }
 }

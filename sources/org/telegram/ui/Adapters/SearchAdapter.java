@@ -381,25 +381,29 @@ public abstract class SearchAdapter extends RecyclerListView.SelectionAdapter {
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View profileSearchCell;
+        View view;
         if (i != 0) {
             if (i == 1) {
-                profileSearchCell = new GraySectionCell(this.mContext);
+                view = new GraySectionCell(this.mContext);
             } else if (i != 3) {
-                profileSearchCell = new TextCell(this.mContext, 16, false);
+                view = new TextCell(this.mContext, 16, false);
             } else {
-                profileSearchCell = new ProfileSearchCell(this.mContext);
+                ProfileSearchCell profileSearchCell = new ProfileSearchCell(this.mContext);
+                profileSearchCell.setCallCellStyle();
+                view = profileSearchCell;
             }
         } else if (this.useUserCell) {
-            profileSearchCell = new UserCell(this.mContext, 1, 1, false);
+            view = new UserCell(this.mContext, 1, 1, false);
         } else {
-            profileSearchCell = new ProfileSearchCell(this.mContext);
+            ProfileSearchCell profileSearchCell2 = new ProfileSearchCell(this.mContext);
+            profileSearchCell2.setCallCellStyle();
+            view = profileSearchCell2;
         }
-        return new RecyclerListView.Holder(profileSearchCell);
+        return new RecyclerListView.Holder(view);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:65:0x01c0  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01d5  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x01bb  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01d0  */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -411,6 +415,7 @@ public abstract class SearchAdapter extends RecyclerListView.SelectionAdapter {
         boolean z;
         CharSequence charSequence;
         CharSequence charSequence2;
+        int indexOfIgnoreCase;
         int itemViewType = viewHolder.getItemViewType();
         if (itemViewType != 0) {
             if (itemViewType == 1) {
@@ -438,7 +443,6 @@ public abstract class SearchAdapter extends RecyclerListView.SelectionAdapter {
             }
             ProfileSearchCell profileSearchCell = (ProfileSearchCell) viewHolder.itemView;
             ContactsController.Contact contact = (ContactsController.Contact) getItem(i);
-            profileSearchCell.useSeparator = getItem(i + 1) instanceof ContactsController.Contact;
             profileSearchCell.setData(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), PhoneFormat.getInstance().format("+" + contact.shortPhones.get(0)), false, false);
             return;
         }
@@ -478,7 +482,7 @@ public abstract class SearchAdapter extends RecyclerListView.SelectionAdapter {
             if (charSequence != null && str != null && str.length() > 0) {
                 if (charSequence.toString().startsWith("@" + str)) {
                     charSequence2 = charSequence;
-                    if (this.useUserCell) {
+                    if (!this.useUserCell) {
                         UserCell userCell = (UserCell) viewHolder.itemView;
                         userCell.setData(tLObject, charSequence3, charSequence2, 0);
                         userCell.setChecked(this.selectedUsers.indexOfKey(j2) >= 0, false);
@@ -486,7 +490,6 @@ public abstract class SearchAdapter extends RecyclerListView.SelectionAdapter {
                     } else {
                         ProfileSearchCell profileSearchCell2 = (ProfileSearchCell) viewHolder.itemView;
                         profileSearchCell2.setData(tLObject, null, z ? LocaleController.getString(R.string.SavedMessages) : charSequence3, charSequence2, false, z);
-                        profileSearchCell2.useSeparator = (i == getItemCount() - 1 || i == this.searchResult.size() - 1) ? false : true;
                         profileSearchCell2.setChecked(this.selectedUsers.indexOfKey(j2) >= 0, false);
                         return;
                     }
@@ -503,31 +506,25 @@ public abstract class SearchAdapter extends RecyclerListView.SelectionAdapter {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) "@");
                 spannableStringBuilder.append((CharSequence) str);
-                charSequence2 = spannableStringBuilder;
-                if (lastFoundUsername != null) {
-                    int indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(str, lastFoundUsername);
-                    charSequence2 = spannableStringBuilder;
-                    if (indexOfIgnoreCase != -1) {
-                        int length = lastFoundUsername.length();
-                        if (indexOfIgnoreCase == 0) {
-                            length++;
-                        } else {
-                            indexOfIgnoreCase++;
-                        }
-                        spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_windowBackgroundWhiteBlueText4), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
-                        charSequence2 = spannableStringBuilder;
+                if (lastFoundUsername != null && (indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(str, lastFoundUsername)) != -1) {
+                    int length = lastFoundUsername.length();
+                    if (indexOfIgnoreCase == 0) {
+                        length++;
+                    } else {
+                        indexOfIgnoreCase++;
                     }
+                    spannableStringBuilder.setSpan(new ForegroundColorSpanThemable(Theme.key_windowBackgroundWhiteBlueText4), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
                 }
+                charSequence = null;
+                charSequence3 = spannableStringBuilder;
             } catch (Exception e) {
                 FileLog.e(e);
                 charSequence2 = str;
             }
-            if (this.useUserCell) {
-            }
         }
-        charSequence2 = null;
+        charSequence2 = charSequence3;
         charSequence3 = charSequence;
-        if (this.useUserCell) {
+        if (!this.useUserCell) {
         }
     }
 

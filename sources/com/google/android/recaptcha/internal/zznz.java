@@ -1,54 +1,81 @@
 package com.google.android.recaptcha.internal;
 
+import android.os.Build;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
+
 /* loaded from: classes.dex */
-public final class zznz extends zzit implements zzkf {
-    private static final zznz zzb;
-    private int zzd;
-    private zznx zze;
-    private zznx zzf;
+final class zznz extends zzns {
+    static final boolean zza;
+    static final boolean zzb;
+    static final boolean zzc;
+    private static final AtomicReference zzd;
+    private static final AtomicLong zze;
+    private static final ConcurrentLinkedQueue zzf;
+    private volatile zznb zzg;
 
     static {
-        zznz zznzVar = new zznz();
-        zzb = zznzVar;
-        zzit.zzD(zznz.class, zznzVar);
+        String str = Build.FINGERPRINT;
+        zza = str == null || "robolectric".equals(str);
+        String str2 = Build.HARDWARE;
+        zzb = "goldfish".equals(str2) || "ranchu".equals(str2);
+        String str3 = Build.TYPE;
+        zzc = "eng".equals(str3) || "userdebug".equals(str3);
+        zzd = new AtomicReference();
+        zze = new AtomicLong();
+        zzf = new ConcurrentLinkedQueue();
     }
 
-    private zznz() {
+    private zznz(String str) {
+        super(str);
+        if (zza || zzb) {
+            this.zzg = new zznt().zza(zza());
+        } else if (zzc) {
+            this.zzg = zzoe.zzc().zzb(false).zza(zza());
+        } else {
+            this.zzg = null;
+        }
     }
 
-    public static zznz zzj(byte[] bArr) {
-        return (zznz) zzit.zzu(zzb, bArr);
-    }
-
-    public final zznx zzf() {
-        zznx zznxVar = this.zze;
-        return zznxVar == null ? zznx.zzg() : zznxVar;
-    }
-
-    public final zznx zzg() {
-        zznx zznxVar = this.zzf;
-        return zznxVar == null ? zznx.zzg() : zznxVar;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzit
-    protected final Object zzh(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
+    public static zznb zzb(String str) {
+        AtomicReference atomicReference = zzd;
+        if (atomicReference.get() != null) {
+            return ((zznu) atomicReference.get()).zza(str);
         }
-        if (i2 == 2) {
-            return zzit.zzA(zzb, "\u0000\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဉ\u0001", new Object[]{"zzd", "zze", "zzf"});
+        int length = str.length();
+        while (true) {
+            length--;
+            if (length >= 0) {
+                char charAt = str.charAt(length);
+                if (charAt != '$') {
+                    if (charAt == '.') {
+                        break;
+                    }
+                } else {
+                    str = str.replace('$', '.');
+                    break;
+                }
+            } else {
+                break;
+            }
         }
-        if (i2 == 3) {
-            return new zznz();
+        zznz zznzVar = new zznz(str);
+        ConcurrentLinkedQueue concurrentLinkedQueue = zznx.zza;
+        concurrentLinkedQueue.offer(zznzVar);
+        if (atomicReference.get() != null) {
+            while (true) {
+                zznz zznzVar2 = (zznz) concurrentLinkedQueue.poll();
+                if (zznzVar2 == null) {
+                    break;
+                }
+                zznzVar2.zzg = ((zznu) atomicReference.get()).zza(zznzVar2.zza());
+            }
+            if (((zzny) zzf.poll()) != null) {
+                zze.getAndDecrement();
+                throw null;
+            }
         }
-        zznv zznvVar = null;
-        if (i2 == 4) {
-            return new zzny(zznvVar);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+        return zznzVar;
     }
 }

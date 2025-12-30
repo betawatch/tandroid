@@ -14,7 +14,7 @@ import java.util.UUID;
 import org.json.JSONException;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class DistributeUtils {
     static int getNotificationId() {
         return Distribute.class.getName().hashCode();

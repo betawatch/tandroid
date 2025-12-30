@@ -1810,7 +1810,7 @@ public class RecyclerListView extends RecyclerView {
                 LinearLayoutManager linearLayoutManager = (LinearLayoutManager) layoutManager;
                 if (linearLayoutManager.getOrientation() == 1) {
                     if (this.sectionsAdapter != null) {
-                        int paddingTop = getPaddingTop();
+                        int paddingTop = this.sectionsType == 1 ? 0 : getPaddingTop();
                         int i2 = this.sectionsType;
                         int i3 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                         if (i2 != 1 && i2 != 3) {
@@ -2662,87 +2662,74 @@ public class RecyclerListView extends RecyclerView {
         this.translateSelector = i;
     }
 
+    private void drawSelectors2(Canvas canvas) {
+        Drawable drawable;
+        Consumer consumer;
+        View view;
+        if (this.selectorRect.isEmpty() || (drawable = this.selectorDrawable) == null) {
+            return;
+        }
+        int i = this.translateSelector;
+        if ((i == -2 || i == this.selectorPosition) && this.selectorView != null) {
+            this.selectorDrawable.setBounds(this.selectorView.getLeft(), this.selectorView.getTop(), this.selectorView.getRight(), this.selectorView.getBottom() - (getAdapter() instanceof SelectionAdapter ? ((SelectionAdapter) getAdapter()).getSelectionBottomPadding(this.selectorView) : 0));
+        } else {
+            drawable.setBounds(this.selectorRect);
+        }
+        canvas.save();
+        int i2 = this.translateSelector;
+        if ((i2 == -2 || i2 == this.selectorPosition) && (consumer = this.selectorTransformer) != null) {
+            consumer.accept(canvas);
+        }
+        int i3 = this.translateSelector;
+        if ((i3 == -2 || i3 == this.selectorPosition) && (view = this.selectorView) != null) {
+            canvas.translate(view.getX() - this.selectorRect.left, this.selectorView.getY() - this.selectorRect.top);
+            this.selectorDrawable.setAlpha((int) (this.selectorView.getAlpha() * 255.0f));
+        }
+        this.selectorDrawable.draw(canvas);
+        canvas.restore();
+    }
+
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         View view;
-        Drawable drawable;
-        Consumer consumer;
-        View view2;
-        Drawable drawable2;
-        Consumer consumer2;
-        View view3;
         RecyclerItemsEnterAnimator recyclerItemsEnterAnimator = this.itemsEnterAnimator;
         if (recyclerItemsEnterAnimator != null) {
             recyclerItemsEnterAnimator.dispatchDraw();
         }
-        if (this.drawSelection && this.drawSelectorBehind && !this.selectorRect.isEmpty() && (drawable2 = this.selectorDrawable) != null) {
-            int i = this.translateSelector;
-            if ((i == -2 || i == this.selectorPosition) && this.selectorView != null) {
-                this.selectorDrawable.setBounds(this.selectorView.getLeft(), this.selectorView.getTop(), this.selectorView.getRight(), this.selectorView.getBottom() - (getAdapter() instanceof SelectionAdapter ? ((SelectionAdapter) getAdapter()).getSelectionBottomPadding(this.selectorView) : 0));
-            } else {
-                drawable2.setBounds(this.selectorRect);
-            }
-            canvas.save();
-            int i2 = this.translateSelector;
-            if ((i2 == -2 || i2 == this.selectorPosition) && (consumer2 = this.selectorTransformer) != null) {
-                consumer2.accept(canvas);
-            }
-            int i3 = this.translateSelector;
-            if ((i3 == -2 || i3 == this.selectorPosition) && (view3 = this.selectorView) != null) {
-                canvas.translate(view3.getX() - this.selectorRect.left, this.selectorView.getY() - this.selectorRect.top);
-                this.selectorDrawable.setAlpha((int) (this.selectorView.getAlpha() * 255.0f));
-            }
-            this.selectorDrawable.draw(canvas);
-            canvas.restore();
+        if (this.drawSelection && this.drawSelectorBehind) {
+            drawSelectors2(canvas);
         }
         super.dispatchDraw(canvas);
-        if (this.drawSelection && !this.drawSelectorBehind && !this.selectorRect.isEmpty() && (drawable = this.selectorDrawable) != null) {
-            int i4 = this.translateSelector;
-            if ((i4 == -2 || i4 == this.selectorPosition) && this.selectorView != null) {
-                this.selectorDrawable.setBounds(this.selectorView.getLeft(), this.selectorView.getTop(), this.selectorView.getRight(), this.selectorView.getBottom() - (getAdapter() instanceof SelectionAdapter ? ((SelectionAdapter) getAdapter()).getSelectionBottomPadding(this.selectorView) : 0));
-            } else {
-                drawable.setBounds(this.selectorRect);
-            }
-            canvas.save();
-            int i5 = this.translateSelector;
-            if ((i5 == -2 || i5 == this.selectorPosition) && (consumer = this.selectorTransformer) != null) {
-                consumer.accept(canvas);
-            }
-            int i6 = this.translateSelector;
-            if ((i6 == -2 || i6 == this.selectorPosition) && (view2 = this.selectorView) != null) {
-                canvas.translate(view2.getX() - this.selectorRect.left, this.selectorView.getY() - this.selectorRect.top);
-                this.selectorDrawable.setAlpha((int) (this.selectorView.getAlpha() * 255.0f));
-            }
-            this.selectorDrawable.draw(canvas);
-            canvas.restore();
+        if (this.drawSelection && !this.drawSelectorBehind) {
+            drawSelectors2(canvas);
         }
         FrameLayout frameLayout = this.overlayContainer;
         if (frameLayout != null) {
             frameLayout.draw(canvas);
         }
-        int i7 = this.sectionsType;
-        if (i7 == 1) {
+        int i = this.sectionsType;
+        if (i == 1) {
             if (this.sectionsAdapter == null || this.headers.isEmpty()) {
                 return;
             }
-            for (int i8 = 0; i8 < this.headers.size(); i8++) {
-                View view4 = (View) this.headers.get(i8);
+            for (int i2 = 0; i2 < this.headers.size(); i2++) {
+                View view2 = (View) this.headers.get(i2);
                 int save = canvas.save();
-                canvas.translate(LocaleController.isRTL ? getWidth() - view4.getWidth() : 0.0f, ((Integer) view4.getTag()).intValue());
-                canvas.clipRect(0, 0, getWidth(), view4.getMeasuredHeight());
-                view4.draw(canvas);
+                canvas.translate(LocaleController.isRTL ? getWidth() - view2.getWidth() : 0.0f, ((Integer) view2.getTag()).intValue());
+                canvas.clipRect(0, 0, getWidth(), view2.getMeasuredHeight());
+                view2.draw(canvas);
                 canvas.restoreToCount(save);
             }
             return;
         }
-        if (i7 != 2 || this.sectionsAdapter == null || (view = this.pinnedHeader) == null || view.getAlpha() == 0.0f) {
+        if (i != 2 || this.sectionsAdapter == null || (view = this.pinnedHeader) == null || view.getAlpha() == 0.0f) {
             return;
         }
         int save2 = canvas.save();
         canvas.translate(LocaleController.isRTL ? getWidth() - this.pinnedHeader.getWidth() : 0.0f, ((Integer) this.pinnedHeader.getTag()).intValue());
-        Drawable drawable3 = this.pinnedHeaderShadowDrawable;
-        if (drawable3 != null) {
-            drawable3.setBounds(0, this.pinnedHeader.getMeasuredHeight(), getWidth(), this.pinnedHeader.getMeasuredHeight() + this.pinnedHeaderShadowDrawable.getIntrinsicHeight());
+        Drawable drawable = this.pinnedHeaderShadowDrawable;
+        if (drawable != null) {
+            drawable.setBounds(0, this.pinnedHeader.getMeasuredHeight(), getWidth(), this.pinnedHeader.getMeasuredHeight() + this.pinnedHeaderShadowDrawable.getIntrinsicHeight());
             this.pinnedHeaderShadowDrawable.setAlpha((int) (this.pinnedHeaderShadowAlpha * 255.0f));
             this.pinnedHeaderShadowDrawable.draw(canvas);
             long elapsedRealtime = SystemClock.elapsedRealtime();

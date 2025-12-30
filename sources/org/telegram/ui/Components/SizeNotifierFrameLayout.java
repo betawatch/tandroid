@@ -1034,14 +1034,21 @@ public class SizeNotifierFrameLayout extends FrameLayout {
         return 4.0f;
     }
 
+    protected float getBlurRadiusInternal() {
+        return getBlurRadius();
+    }
+
     public void drawBlurRect(Canvas canvas, float f, android.graphics.Rect rect, Paint paint, boolean z) {
+        drawBlurRect(canvas, f, rect, paint, z, Color.alpha(Theme.getColor((DRAW_USING_RENDERNODE() && SharedConfig.getDevicePerformanceClass() == 2) ? Theme.key_chat_BlurAlpha : Theme.key_chat_BlurAlphaSlow, getResourceProvider())));
+    }
+
+    public void drawBlurRect(Canvas canvas, float f, android.graphics.Rect rect, Paint paint, boolean z, int i) {
         float f2;
         RecordingCanvas beginRecording;
         Shader.TileMode tileMode;
         RenderEffect createBlurEffect;
         RenderEffect createColorFilterEffect;
         RenderEffect createChainEffect;
-        int alpha = Color.alpha(Theme.getColor((DRAW_USING_RENDERNODE() && SharedConfig.getDevicePerformanceClass() == 2) ? Theme.key_chat_BlurAlpha : Theme.key_chat_BlurAlphaSlow, getResourceProvider()));
         if (!SharedConfig.chatBlurEnabled()) {
             canvas.drawRect(rect, paint);
             return;
@@ -1055,31 +1062,31 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                 this.blurNodes = new RenderNode[2];
             }
             float renderNodeScale = getRenderNodeScale();
-            int i = !z ? 1 : 0;
-            if (!z && !this.blurNodeInvalidated[i] && Math.abs(getBottomOffset() - this.lastDrawnBottomBlurOffset) > 0.1f) {
-                this.blurNodeInvalidated[i] = true;
+            int i2 = !z ? 1 : 0;
+            if (!z && !this.blurNodeInvalidated[i2] && Math.abs(getBottomOffset() - this.lastDrawnBottomBlurOffset) > 0.1f) {
+                this.blurNodeInvalidated[i2] = true;
             }
             int dp = AndroidUtilities.dp(36.0f);
-            if (alpha < 255 && this.blurNodeInvalidated[i] && !this.blurNodeInvalidatedThisFrame[i]) {
+            if (i < 255 && this.blurNodeInvalidated[i2] && !this.blurNodeInvalidatedThisFrame[i2]) {
                 RenderNode[] renderNodeArr = this.blurNodes;
-                if (renderNodeArr[i] == null) {
+                if (renderNodeArr[i2] == null) {
                     PipSourceSnapshot$$ExternalSyntheticApiModelOutline0.m();
-                    renderNodeArr[i] = BotFullscreenButtons$$ExternalSyntheticApiModelOutline9.m("blurNode" + i);
+                    renderNodeArr[i2] = BotFullscreenButtons$$ExternalSyntheticApiModelOutline9.m("blurNode" + i2);
                     ColorMatrix colorMatrix = new ColorMatrix();
                     colorMatrix.setSaturation(2.0f);
-                    RenderNode renderNode = this.blurNodes[i];
-                    float blurRadius = getBlurRadius();
-                    float blurRadius2 = getBlurRadius();
+                    RenderNode renderNode = this.blurNodes[i2];
+                    float blurRadiusInternal = getBlurRadiusInternal();
+                    float blurRadiusInternal2 = getBlurRadiusInternal();
                     tileMode = Shader.TileMode.DECAL;
-                    createBlurEffect = RenderEffect.createBlurEffect(blurRadius, blurRadius2, tileMode);
+                    createBlurEffect = RenderEffect.createBlurEffect(blurRadiusInternal, blurRadiusInternal2, tileMode);
                     createColorFilterEffect = RenderEffect.createColorFilterEffect(new ColorMatrixColorFilter(colorMatrix));
                     createChainEffect = RenderEffect.createChainEffect(createBlurEffect, createColorFilterEffect);
                     renderNode.setRenderEffect(createChainEffect);
                 }
                 int measuredWidth = getMeasuredWidth();
                 int currentActionBarHeight = ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.dp(100.0f);
-                this.blurNodes[i].setPosition(0, 0, (int) (measuredWidth / renderNodeScale), (int) (((dp * 2) + currentActionBarHeight) / renderNodeScale));
-                beginRecording = this.blurNodes[i].beginRecording();
+                this.blurNodes[i2].setPosition(0, 0, (int) (measuredWidth / renderNodeScale), (int) (((dp * 2) + currentActionBarHeight) / renderNodeScale));
+                beginRecording = this.blurNodes[i2].beginRecording();
                 drawingBlur = true;
                 float f3 = 1.0f / renderNodeScale;
                 beginRecording.scale(f3, f3);
@@ -1094,20 +1101,20 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                 }
                 drawListWithCallbacks(beginRecording, z);
                 drawingBlur = false;
-                this.blurNodes[i].endRecording();
-                this.blurNodeInvalidatedThisFrame[i] = true;
-                this.blurNodeInvalidated[i] = false;
+                this.blurNodes[i2].endRecording();
+                this.blurNodeInvalidatedThisFrame[i2] = true;
+                this.blurNodeInvalidated[i2] = false;
             }
             if (!invalidateOptimized()) {
-                this.blurNodeInvalidated[i] = true;
+                this.blurNodeInvalidated[i2] = true;
                 invalidateBlurredViews();
             }
             canvas.save();
             canvas.drawRect(rect, paint);
             canvas.clipRect(rect);
-            RenderNode renderNode2 = this.blurNodes[i];
-            if (renderNode2 != null && alpha < 255) {
-                renderNode2.setAlpha(1.0f - (alpha / 255.0f));
+            RenderNode renderNode2 = this.blurNodes[i2];
+            if (renderNode2 != null && i < 255) {
+                renderNode2.setAlpha(1.0f - (i / 255.0f));
                 if (z) {
                     f2 = 0.0f;
                     canvas.translate(0.0f, (-f) - getTranslationY());
@@ -1117,7 +1124,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                 }
                 canvas.translate(f2, -dp);
                 canvas.scale(renderNodeScale, renderNodeScale);
-                canvas.drawRenderNode(this.blurNodes[i]);
+                canvas.drawRenderNode(this.blurNodes[i2]);
             }
             canvas.restore();
             return;
@@ -1139,7 +1146,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
             canvas.drawRect(rect, paint);
             canvas.drawRect(rect, this.selectedBlurPaint);
         }
-        paint.setAlpha(alpha);
+        paint.setAlpha(i);
         canvas.drawRect(rect, paint);
     }
 

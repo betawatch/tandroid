@@ -1,60 +1,39 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.AbstractSet;
-import java.util.Iterator;
+import android.content.Context;
 import java.util.Map;
+import kotlin.TuplesKt;
+import kotlin.collections.MapsKt;
+import org.webrtc.MediaStreamTrack;
 
 /* loaded from: classes.dex */
-final class zzlc extends AbstractSet {
-    final /* synthetic */ zzle zza;
+public final class zzlc implements zzlb {
+    private final Context zza;
+    private final Map zzb = MapsKt.mapOf(TuplesKt.to(2, "activity"), TuplesKt.to(3, "phone"), TuplesKt.to(4, "input_method"), TuplesKt.to(5, MediaStreamTrack.AUDIO_TRACK_KIND));
 
-    /* synthetic */ zzlc(zzle zzleVar, zzlb zzlbVar) {
-        this.zza = zzleVar;
+    public zzlc(Context context) {
+        this.zza = context;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        Map.Entry entry = (Map.Entry) obj;
-        if (contains(entry)) {
-            return false;
+    @Override // com.google.android.recaptcha.internal.zzlb
+    public final /* synthetic */ Object cs(Object[] objArr) {
+        return zzla.zza(this, objArr);
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzlb
+    public final Object zza(Object... objArr) {
+        Object obj = objArr[0];
+        if (true != (obj instanceof Integer)) {
+            obj = null;
         }
-        this.zza.put((Comparable) entry.getKey(), entry.getValue());
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        this.zza.clear();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        Map.Entry entry = (Map.Entry) obj;
-        Object obj2 = this.zza.get(entry.getKey());
-        Object value = entry.getValue();
-        if (obj2 != value) {
-            return obj2 != null && obj2.equals(value);
+        Integer num = (Integer) obj;
+        if (num == null) {
+            throw new zzdm(4, 5, null);
         }
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        return new zzla(this.zza, null);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean remove(Object obj) {
-        Map.Entry entry = (Map.Entry) obj;
-        if (!contains(entry)) {
-            return false;
+        Object obj2 = this.zzb.get(Integer.valueOf(num.intValue()));
+        if (obj2 != null) {
+            return this.zza.getSystemService((String) obj2);
         }
-        this.zza.remove(entry.getKey());
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.zza.size();
+        throw new zzdm(4, 4, null);
     }
 }

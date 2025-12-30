@@ -1,95 +1,150 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import kotlin.collections.ArraysKt;
-import kotlin.collections.CollectionsKt;
+import java.util.concurrent.CancellationException;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.CoroutineContext;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function2;
+import kotlin.sequences.Sequence;
+import kotlinx.coroutines.ChildHandle;
+import kotlinx.coroutines.ChildJob;
+import kotlinx.coroutines.CompletableDeferred;
+import kotlinx.coroutines.Deferred;
+import kotlinx.coroutines.DisposableHandle;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.selects.SelectClause0;
+import kotlinx.coroutines.selects.SelectClause1;
 
 /* loaded from: classes.dex */
-public final class zzde implements zzdd {
-    public static final zzde zza = new zzde();
+public final class zzde implements Deferred {
+    private final /* synthetic */ CompletableDeferred zza;
 
-    private zzde() {
+    zzde(CompletableDeferred completableDeferred) {
+        this.zza = completableDeferred;
     }
 
-    private static final List zzc(Object obj) {
-        if (obj instanceof byte[]) {
-            return ArraysKt.toList((byte[]) obj);
-        }
-        if (obj instanceof short[]) {
-            return ArraysKt.toList((short[]) obj);
-        }
-        if (obj instanceof int[]) {
-            return ArraysKt.toList((int[]) obj);
-        }
-        if (obj instanceof long[]) {
-            return ArraysKt.toList((long[]) obj);
-        }
-        if (obj instanceof float[]) {
-            return ArraysKt.toList((float[]) obj);
-        }
-        if (obj instanceof double[]) {
-            return ArraysKt.toList((double[]) obj);
-        }
-        return null;
+    @Override // kotlinx.coroutines.Job
+    public final ChildHandle attachChild(ChildJob childJob) {
+        return this.zza.attachChild(childJob);
     }
 
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        if (zzpqVarArr.length != 2) {
-            throw new zzae(4, 3, null);
-        }
-        Object zza2 = zzcjVar.zzc().zza(zzpqVarArr[0]);
-        if (true != (zza2 instanceof Object)) {
-            zza2 = null;
-        }
-        if (zza2 == null) {
-            throw new zzae(4, 5, null);
-        }
-        Object zza3 = zzcjVar.zzc().zza(zzpqVarArr[1]);
-        if (true != (zza3 instanceof Object)) {
-            zza3 = null;
-        }
-        if (zza3 == null) {
-            throw new zzae(4, 5, null);
-        }
-        zzcjVar.zzc().zzf(i, zzb(zza2, zza3));
+    @Override // kotlinx.coroutines.Deferred
+    public final Object await(Continuation continuation) {
+        return this.zza.await(continuation);
     }
 
-    public final Object zzb(Object obj, Object obj2) {
-        List zzc = zzc(obj);
-        List zzc2 = zzc(obj2);
-        if (obj instanceof Number) {
-            if (obj2 instanceof Number) {
-                return Double.valueOf(Math.pow(((Number) obj).doubleValue(), ((Number) obj2).doubleValue()));
-            }
-            if (zzc2 != null) {
-                ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(zzc2, 10));
-                Iterator it = zzc2.iterator();
-                while (it.hasNext()) {
-                    arrayList.add(Double.valueOf(Math.pow(((Number) it.next()).doubleValue(), ((Number) obj).doubleValue())));
-                }
-                return arrayList.toArray(new Double[0]);
-            }
-        }
-        if (zzc != null && (obj2 instanceof Number)) {
-            ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(zzc, 10));
-            Iterator it2 = zzc.iterator();
-            while (it2.hasNext()) {
-                arrayList2.add(Double.valueOf(Math.pow(((Number) it2.next()).doubleValue(), ((Number) obj2).doubleValue())));
-            }
-            return arrayList2.toArray(new Double[0]);
-        }
-        if (zzc == null || zzc2 == null) {
-            throw new zzae(4, 5, null);
-        }
-        zzdc.zza(this, zzc.size(), zzc2.size());
-        int size = zzc.size();
-        Double[] dArr = new Double[size];
-        for (int i = 0; i < size; i++) {
-            dArr[i] = Double.valueOf(Math.pow(((Number) zzc.get(i)).doubleValue(), ((Number) zzc2.get(i)).doubleValue()));
-        }
-        return dArr;
+    @Override // kotlinx.coroutines.Job
+    public final /* synthetic */ void cancel() {
+        this.zza.cancel();
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final void cancel(CancellationException cancellationException) {
+        this.zza.cancel(cancellationException);
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final /* synthetic */ boolean cancel(Throwable th) {
+        return this.zza.cancel(th);
+    }
+
+    @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
+    public final Object fold(Object obj, Function2 function2) {
+        return this.zza.fold(obj, function2);
+    }
+
+    @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
+    public final CoroutineContext.Element get(CoroutineContext.Key key) {
+        return this.zza.get(key);
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final CancellationException getCancellationException() {
+        return this.zza.getCancellationException();
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final Sequence getChildren() {
+        return this.zza.getChildren();
+    }
+
+    @Override // kotlinx.coroutines.Deferred
+    public final Object getCompleted() {
+        return this.zza.getCompleted();
+    }
+
+    @Override // kotlinx.coroutines.Deferred
+    public final Throwable getCompletionExceptionOrNull() {
+        return this.zza.getCompletionExceptionOrNull();
+    }
+
+    @Override // kotlin.coroutines.CoroutineContext.Element
+    public final CoroutineContext.Key getKey() {
+        return this.zza.getKey();
+    }
+
+    @Override // kotlinx.coroutines.Deferred
+    public final SelectClause1 getOnAwait() {
+        return this.zza.getOnAwait();
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final SelectClause0 getOnJoin() {
+        return this.zza.getOnJoin();
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final Job getParent() {
+        return this.zza.getParent();
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final DisposableHandle invokeOnCompletion(Function1 function1) {
+        return this.zza.invokeOnCompletion(function1);
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final DisposableHandle invokeOnCompletion(boolean z, boolean z2, Function1 function1) {
+        return this.zza.invokeOnCompletion(z, z2, function1);
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final boolean isActive() {
+        return this.zza.isActive();
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final boolean isCancelled() {
+        return this.zza.isCancelled();
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final boolean isCompleted() {
+        return this.zza.isCompleted();
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final Object join(Continuation continuation) {
+        return this.zza.join(continuation);
+    }
+
+    @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
+    public final CoroutineContext minusKey(CoroutineContext.Key key) {
+        return this.zza.minusKey(key);
+    }
+
+    @Override // kotlin.coroutines.CoroutineContext
+    public final CoroutineContext plus(CoroutineContext coroutineContext) {
+        return this.zza.plus(coroutineContext);
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final Job plus(Job job) {
+        return this.zza.plus(job);
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public final boolean start() {
+        return this.zza.start();
     }
 }

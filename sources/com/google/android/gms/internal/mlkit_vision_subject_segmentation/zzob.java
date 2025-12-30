@@ -130,7 +130,7 @@ public enum zzob implements zzcb {
     zzbt(NotificationCenter.starOptionsLoaded),
     zzbu(NotificationCenter.starGiftOptionsLoaded),
     zzbv(NotificationCenter.starGiveawayOptionsLoaded),
-    zzbw(220),
+    zzbw(NotificationCenter.starBalanceUpdated),
     zzbx(NotificationCenter.proxyCheckDone),
     zzby(NotificationCenter.proxyChangedByRotation),
     zzbz(NotificationCenter.liveLocationsChanged),

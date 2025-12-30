@@ -1,29 +1,46 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Iterator;
-import java.util.Map;
-
 /* loaded from: classes.dex */
-final class zzji implements Iterator {
-    private final Iterator zza;
+public final class zzji implements zzjt {
+    public static final zzji zza = new zzji();
 
-    public zzji(Iterator it) {
-        this.zza = it;
+    private zzji() {
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.zza.hasNext();
-    }
-
-    @Override // java.util.Iterator
-    public final /* bridge */ /* synthetic */ Object next() {
-        Map.Entry entry = (Map.Entry) this.zza.next();
-        return entry.getValue() instanceof zzjj ? new zzjh(entry, null) : entry;
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        this.zza.remove();
+    @Override // com.google.android.recaptcha.internal.zzjt
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+        boolean z = true;
+        if (zzztVarArr.length != 1) {
+            throw new zzdm(4, 3, null);
+        }
+        Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
+        if (true != (zza2 instanceof Object)) {
+            zza2 = null;
+        }
+        if (zza2 == null) {
+            throw new zzdm(4, 5, null);
+        }
+        try {
+            try {
+                if (zza2 instanceof String) {
+                    zza2 = zzizVar.zzh().zza((String) zza2);
+                }
+                zzja zzc = zzizVar.zzc();
+                try {
+                    zziy.zza(zza2);
+                } catch (zzdm e) {
+                    if (e.zzb() == 8 || e.zzb() == 6) {
+                        z = false;
+                    } else if (e.zzb() != 47) {
+                        throw e;
+                    }
+                }
+                zzc.zze(i, Boolean.valueOf(z));
+            } catch (zzdm e2) {
+                throw e2;
+            }
+        } catch (Exception e3) {
+            throw new zzdm(6, 8, e3);
+        }
     }
 }

@@ -1,53 +1,54 @@
 package com.google.android.recaptcha.internal;
 
+import java.util.Iterator;
+import java.util.Set;
+import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt;
+
 /* loaded from: classes.dex */
-final class zziq implements zzii {
-    final int zza;
-    final zzmb zzb;
+public final class zziq {
+    private Set zza;
+    private Set zzb;
+    private Long zzc;
+    private int zzd;
 
-    zziq(zziw zziwVar, int i, zzmb zzmbVar, boolean z, boolean z2) {
-        this.zza = i;
-        this.zzb = zzmbVar;
-    }
-
-    @Override // java.lang.Comparable
-    public final /* synthetic */ int compareTo(Object obj) {
-        return this.zza - ((zziq) obj).zza;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzii
-    public final int zza() {
-        return this.zza;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzii
-    public final zzkd zzb(zzkd zzkdVar, zzke zzkeVar) {
-        ((zzin) zzkdVar).zzg((zzit) zzkeVar);
-        return zzkdVar;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzii
-    public final zzkj zzc(zzkj zzkjVar, zzkj zzkjVar2) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzii
-    public final zzmb zzd() {
-        return this.zzb;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzii
-    public final zzmc zze() {
-        return this.zzb.zza();
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzii
-    public final boolean zzf() {
+    private static final boolean zzc(String str, Set set) {
+        Iterator it = StringsKt.split$default(str, new char[]{'.'}, false, 0, 6, null).iterator();
+        String str2 = "";
+        while (it.hasNext()) {
+            String concat = str2.concat(String.valueOf((String) it.next()));
+            if (set.contains(concat)) {
+                return true;
+            }
+            str2 = concat.concat(".");
+        }
         return false;
     }
 
-    @Override // com.google.android.recaptcha.internal.zzii
-    public final boolean zzg() {
-        return false;
+    public final void zza(zzxg zzxgVar) {
+        this.zza = CollectionsKt.toSet(zzxgVar.zzf().zzi());
+        this.zzb = CollectionsKt.toSet(zzxgVar.zzg().zzi());
+    }
+
+    public final boolean zzb(String str) {
+        Set set = this.zza;
+        if (set == null || this.zzb == null) {
+            if (this.zzc == null) {
+                this.zzc = Long.valueOf(System.currentTimeMillis());
+            }
+            this.zzd++;
+            return true;
+        }
+        Intrinsics.checkNotNull(set, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>");
+        if (set.isEmpty()) {
+            return true;
+        }
+        Set set2 = this.zzb;
+        Intrinsics.checkNotNull(set2, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>");
+        if (zzc(str, set2)) {
+            return false;
+        }
+        return zzc(str, set);
     }
 }

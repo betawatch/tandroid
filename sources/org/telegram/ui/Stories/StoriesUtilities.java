@@ -104,12 +104,12 @@ public abstract class StoriesUtilities {
         drawAvatarWithStory(j, canvas, imageReceiver, UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId() != j && MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().hasStories(j), avatarStoryParams);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:153:0x045d  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0464  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x047e  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x04a0  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x0466  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x046d  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0489  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x04ab  */
     /* JADX WARN: Removed duplicated region for block: B:169:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x045f  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0468  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -274,9 +274,10 @@ public abstract class StoriesUtilities {
                 gradientTools.paint.setAlpha((int) (avatarStoryParams.alpha * 255.0f * f11));
                 dp3 = f12 + (AndroidUtilities.dp(5.0f) * (f3 - f11));
             }
+            float f13 = dp3 + avatarStoryParams.additionalInset;
             RectF rectF3 = rectTmp;
             rectF3.set(avatarStoryParams.originalAvatarRect);
-            rectF3.inset(dp3, dp3);
+            rectF3.inset(f13, f13);
             drawCircleInternal(canvas, imageReceiver.getParentView(), avatarStoryParams, gradientTools.paint, z3);
         }
         int i9 = avatarStoryParams.prevState;
@@ -329,9 +330,10 @@ public abstract class StoriesUtilities {
                 paint9.setAlpha((int) (avatarStoryParams.alpha * 255.0f * f11));
                 dp2 = f8 + (AndroidUtilities.dp(5.0f) * (f3 - f11));
             }
+            float f14 = dp2 + avatarStoryParams.additionalInset;
             RectF rectF4 = rectTmp;
             rectF4.set(avatarStoryParams.originalAvatarRect);
-            rectF4.inset(dp2, dp2);
+            rectF4.inset(f14, f14);
             if (avatarStoryParams.drawSegments) {
                 i5 = 3;
                 f5 = 1.0f;
@@ -391,22 +393,23 @@ public abstract class StoriesUtilities {
                 paint10.setAlpha((int) (avatarStoryParams.alpha * 255.0f * f11));
                 dp = f7 + (AndroidUtilities.dp(5.0f) * (f5 - f11));
             }
+            float f15 = dp + avatarStoryParams.additionalInset;
             RectF rectF5 = rectTmp;
             rectF5.set(avatarStoryParams.originalAvatarRect);
-            rectF5.inset(dp, dp);
+            rectF5.inset(f15, f15);
             boolean z6 = avatarStoryParams.drawSegments;
             if (z6 && avatarStoryParams.currentState == i5) {
-                float f13 = avatarStoryParams.progressToProgressSegments;
-                if (f13 != f5) {
-                    float f14 = f13 + f4;
-                    avatarStoryParams.progressToProgressSegments = f14;
-                    if (f14 > f5) {
+                float f16 = avatarStoryParams.progressToProgressSegments;
+                if (f16 != f5) {
+                    float f17 = f16 + f4;
+                    avatarStoryParams.progressToProgressSegments = f17;
+                    if (f17 > f5) {
                         avatarStoryParams.progressToProgressSegments = f5;
                     }
-                    float f15 = avatarStoryParams.progressToSegments;
+                    float f18 = avatarStoryParams.progressToSegments;
                     avatarStoryParams.progressToSegments = f5 - avatarStoryParams.progressToProgressSegments;
                     drawSegmentsInternal(canvas, storiesController, imageReceiver, avatarStoryParams, paint10, paint2, paint3, paint4, z3);
-                    avatarStoryParams.progressToSegments = f15;
+                    avatarStoryParams.progressToSegments = f18;
                     if (imageReceiver.getParentView() != null) {
                         imageReceiver.invalidate();
                         imageReceiver.getParentView().invalidate();
@@ -424,20 +427,20 @@ public abstract class StoriesUtilities {
                         }
                         drawProgress(canvas, avatarStoryParams, imageReceiver.getParentView(), paint10);
                         imageReceiver.draw(canvas);
-                        float f16 = f;
-                        avatarStoryParams.drawnLive = f16 > 0.5f;
+                        float f19 = f;
+                        avatarStoryParams.drawnLive = f19 > 0.5f;
                         if (f9 > 0.0f) {
+                            float f20 = f2 + avatarStoryParams.additionalInset;
                             RectF rectF6 = rectTmp;
                             rectF6.set(avatarStoryParams.originalAvatarRect);
-                            float f17 = f2;
-                            rectF6.inset(f17, f17);
-                            drawLive(canvas, rectF6, f16, imageReceiver.getVisible(), 0.0f);
+                            rectF6.inset(f20, f20);
+                            drawLive(canvas, rectF6, f19, imageReceiver.getVisible(), 0.0f);
                         }
                         f6 = avatarStoryParams.progressToSate;
                         if (f6 != f5) {
-                            float f18 = f6 + (AndroidUtilities.screenRefreshTime / 250.0f);
-                            avatarStoryParams.progressToSate = f18;
-                            if (f18 > f5) {
+                            float f21 = f6 + (AndroidUtilities.screenRefreshTime / 250.0f);
+                            avatarStoryParams.progressToSate = f21;
+                            if (f21 > f5) {
                                 avatarStoryParams.progressToSate = f5;
                             }
                             if (imageReceiver.getParentView() != null) {
@@ -457,8 +460,8 @@ public abstract class StoriesUtilities {
             }
             drawProgress(canvas, avatarStoryParams, imageReceiver.getParentView(), paint10);
             imageReceiver.draw(canvas);
-            float f162 = f;
-            avatarStoryParams.drawnLive = f162 > 0.5f;
+            float f192 = f;
+            avatarStoryParams.drawnLive = f192 > 0.5f;
             if (f9 > 0.0f) {
             }
             f6 = avatarStoryParams.progressToSate;
@@ -469,8 +472,8 @@ public abstract class StoriesUtilities {
             }
         }
         imageReceiver.draw(canvas);
-        float f1622 = f;
-        avatarStoryParams.drawnLive = f1622 > 0.5f;
+        float f1922 = f;
+        avatarStoryParams.drawnLive = f1922 > 0.5f;
         if (f9 > 0.0f) {
         }
         f6 = avatarStoryParams.progressToSate;
@@ -832,7 +835,7 @@ public abstract class StoriesUtilities {
             } else {
                 gradientTools.setColors(Theme.getColor(Theme.key_stories_circle1), Theme.getColor(Theme.key_stories_circle2));
             }
-            storiesGradientTools[z ? 1 : 0].paint.setStrokeWidth(AndroidUtilities.dpf2(2.3f));
+            storiesGradientTools[z ? 1 : 0].paint.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
             storiesGradientTools[z ? 1 : 0].paint.setStyle(Paint.Style.STROKE);
             storiesGradientTools[z ? 1 : 0].paint.setStrokeCap(Paint.Cap.ROUND);
         }
@@ -869,7 +872,7 @@ public abstract class StoriesUtilities {
             gradientTools.isDiagonal = true;
             gradientTools.isRotate = true;
             gradientTools.setColors(Theme.getColor(Theme.key_stories_circle_closeFriends1), Theme.getColor(Theme.key_stories_circle_closeFriends2));
-            closeFriendsGradientTools.paint.setStrokeWidth(AndroidUtilities.dpf2(2.3f));
+            closeFriendsGradientTools.paint.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
             closeFriendsGradientTools.paint.setStyle(Paint.Style.STROKE);
             closeFriendsGradientTools.paint.setStrokeCap(Paint.Cap.ROUND);
         }
@@ -884,7 +887,7 @@ public abstract class StoriesUtilities {
             gradientTools.isDiagonal = true;
             gradientTools.isRotate = true;
             gradientTools.setColors(Theme.getColor(Theme.key_stories_circle_live1), Theme.getColor(Theme.key_stories_circle_live2));
-            liveGradientTools.paint.setStrokeWidth(AndroidUtilities.dpf2(2.3f));
+            liveGradientTools.paint.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
             liveGradientTools.paint.setStyle(Paint.Style.STROKE);
             liveGradientTools.paint.setStrokeCap(Paint.Cap.ROUND);
         }
@@ -901,7 +904,7 @@ public abstract class StoriesUtilities {
             int color = Theme.getColor(Theme.key_color_orange);
             int color2 = Theme.getColor(Theme.key_text_RedBold);
             errorGradientTools.setColors(ColorUtils.blendARGB(color, color2, 0.25f), color2);
-            errorGradientTools.paint.setStrokeWidth(AndroidUtilities.dpf2(2.3f));
+            errorGradientTools.paint.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
             errorGradientTools.paint.setStyle(Paint.Style.STROKE);
             errorGradientTools.paint.setStrokeCap(Paint.Cap.ROUND);
         }
@@ -918,7 +921,7 @@ public abstract class StoriesUtilities {
             int color = Theme.getColor(Theme.key_color_orange);
             int color2 = Theme.getColor(Theme.key_text_RedBold);
             errorGradientTools.setColors(ColorUtils.blendARGB(color, color2, 0.25f), color2);
-            errorGradientTools.paint.setStrokeWidth(AndroidUtilities.dpf2(2.3f));
+            errorGradientTools.paint.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
             errorGradientTools.paint.setStyle(Paint.Style.STROKE);
             errorGradientTools.paint.setStrokeCap(Paint.Cap.ROUND);
         }
@@ -1281,6 +1284,7 @@ public abstract class StoriesUtilities {
     }
 
     public static class AvatarStoryParams {
+        public float additionalInset;
         public boolean allowLongress;
         public float alpha;
         public boolean animate;
@@ -1677,7 +1681,7 @@ public abstract class StoriesUtilities {
             gradientTools.isDiagonal = true;
             gradientTools.isRotate = true;
             resetColors(false);
-            gradientTools.paint.setStrokeWidth(AndroidUtilities.dpf2(2.3f));
+            gradientTools.paint.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
             gradientTools.paint.setStyle(Paint.Style.STROKE);
             gradientTools.paint.setStrokeCap(Paint.Cap.ROUND);
         }

@@ -2,7 +2,6 @@ package org.telegram.ui.Components;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +10,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -58,6 +56,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.utils.ViewOutlineProviderImpl;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBar;
@@ -526,20 +525,12 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 int themedColor = getThemedColor(i3);
                 int i4 = Theme.key_location_actionPressedBackground;
                 Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(dp, themedColor, getThemedColor(i4));
-                StateListAnimator stateListAnimator = new StateListAnimator();
-                int[] iArr = {android.R.attr.state_pressed};
+                ScaleStateListAnimator.apply(this.searchAreaButton);
+                this.searchAreaButton.setTranslationZ(AndroidUtilities.dp(2.0f));
                 SearchButton searchButton2 = this.searchAreaButton;
-                Property property = View.TRANSLATION_Z;
-                stateListAnimator.addState(iArr, ObjectAnimator.ofFloat(searchButton2, (Property<SearchButton, Float>) property, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-                stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this.searchAreaButton, (Property<SearchButton, Float>) property, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-                this.searchAreaButton.setStateListAnimator(stateListAnimator);
-                this.searchAreaButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.3
-                    @Override // android.view.ViewOutlineProvider
-                    public void getOutline(View view2, Outline outline) {
-                        outline.setRoundRect(0, 0, view2.getMeasuredWidth(), view2.getMeasuredHeight(), view2.getMeasuredHeight() / 2);
-                    }
-                });
-                this.searchAreaButton.setBackgroundDrawable(createSimpleSelectorRoundRectDrawable);
+                ViewOutlineProvider viewOutlineProvider = ViewOutlineProviderImpl.BOUNDS_OVAL;
+                searchButton2.setOutlineProvider(viewOutlineProvider);
+                this.searchAreaButton.setBackground(createSimpleSelectorRoundRectDrawable);
                 SearchButton searchButton3 = this.searchAreaButton;
                 int i5 = Theme.key_location_actionActiveIcon;
                 searchButton3.setTextColor(getThemedColor(i5));
@@ -566,17 +557,10 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.mapTypeButton.addSubItem(4, R.drawable.msg_hybrid, LocaleController.getString(R.string.Hybrid), resourcesProvider);
                 this.mapTypeButton.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
                 Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i3), getThemedColor(i4));
-                StateListAnimator stateListAnimator2 = new StateListAnimator();
-                stateListAnimator2.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.mapTypeButton, (Property<ActionBarMenuItem, Float>) property, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-                stateListAnimator2.addState(new int[0], ObjectAnimator.ofFloat(this.mapTypeButton, (Property<ActionBarMenuItem, Float>) property, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-                this.mapTypeButton.setStateListAnimator(stateListAnimator2);
-                this.mapTypeButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4
-                    @Override // android.view.ViewOutlineProvider
-                    public void getOutline(View view2, Outline outline) {
-                        outline.setOval(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-                    }
-                });
-                this.mapTypeButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable);
+                ScaleStateListAnimator.apply(this.mapTypeButton);
+                this.mapTypeButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+                this.mapTypeButton.setOutlineProvider(viewOutlineProvider);
+                this.mapTypeButton.setBackground(createSimpleSelectorCircleDrawable);
                 this.mapTypeButton.setIcon(R.drawable.msg_map_type);
                 this.mapViewClip.addView(this.mapTypeButton, LayoutHelper.createFrame(40, 40.0f, 53, 0.0f, 12.0f, 12.0f, 0.0f));
                 this.mapTypeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda10
@@ -593,17 +577,10 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 });
                 this.locationButton = new ImageView(context);
                 Drawable createSimpleSelectorCircleDrawable2 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i3), getThemedColor(i4));
-                StateListAnimator stateListAnimator3 = new StateListAnimator();
-                stateListAnimator3.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.locationButton, (Property<ImageView, Float>) property, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-                stateListAnimator3.addState(new int[0], ObjectAnimator.ofFloat(this.locationButton, (Property<ImageView, Float>) property, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-                this.locationButton.setStateListAnimator(stateListAnimator3);
-                this.locationButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.5
-                    @Override // android.view.ViewOutlineProvider
-                    public void getOutline(View view2, Outline outline) {
-                        outline.setOval(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-                    }
-                });
-                this.locationButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable2);
+                ScaleStateListAnimator.apply(this.locationButton);
+                this.locationButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+                this.locationButton.setOutlineProvider(viewOutlineProvider);
+                this.locationButton.setBackground(createSimpleSelectorCircleDrawable2);
                 this.locationButton.setImageResource(R.drawable.msg_current_location);
                 this.locationButton.setScaleType(ImageView.ScaleType.CENTER);
                 ImageView imageView = this.locationButton;
@@ -655,7 +632,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.emptySubtitleTextView.setTextSize(1, 15.0f);
                 this.emptySubtitleTextView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
                 this.emptyView.addView(this.emptySubtitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 6, 0, 0));
-                RecyclerListView recyclerListView = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.6
+                RecyclerListView recyclerListView = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.3
                     @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
                     protected void onLayout(boolean z2, int i7, int i8, int i9, int i10) {
                         super.onLayout(z2, i7, i8, i9, i10);
@@ -686,10 +663,10 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.adapter.setMyLocationDenied(this.locationDenied, this.askedForLocation);
                 this.listView.setVerticalScrollBarEnabled(false);
                 RecyclerListView recyclerListView3 = this.listView;
-                FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, 1, false, 0, recyclerListView3) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.7
+                FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, 1, false, 0, recyclerListView3) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4
                     @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
                     public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i8) {
-                        LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.7.1
+                        LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4.1
                             @Override // androidx.recyclerview.widget.LinearSmoothScroller
                             public int calculateDyToMakeVisible(View view2, int i9) {
                                 return super.calculateDyToMakeVisible(view2, i9) - (ChatAttachAlertLocationLayout.this.listView.getPaddingTop() - (ChatAttachAlertLocationLayout.this.mapHeight - ChatAttachAlertLocationLayout.this.overScrollHeight));
@@ -707,7 +684,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.layoutManager = fillLastLinearLayoutManager;
                 recyclerListView3.setLayoutManager(fillLastLinearLayoutManager);
                 addView(this.listView, LayoutHelper.createFrame(-1, -1, 51));
-                this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.8
+                this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.5
                     @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
                     public void onScrollStateChanged(RecyclerView recyclerView, int i8) {
                         RecyclerListView.Holder holder;
@@ -783,7 +760,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 recyclerListView4.setVisibility(8);
                 this.searchListView.setLayoutManager(new LinearLayoutManager(context, 1, false));
                 ChatAttachAlert chatAttachAlert4 = this.parentAlert;
-                LocationActivitySearchAdapter locationActivitySearchAdapter2 = new LocationActivitySearchAdapter(context, resourcesProvider, chatAttachAlert4.isStoryLocationPicker, chatAttachAlert4.isBizLocationPicker) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.9
+                LocationActivitySearchAdapter locationActivitySearchAdapter2 = new LocationActivitySearchAdapter(context, resourcesProvider, chatAttachAlert4.isStoryLocationPicker, chatAttachAlert4.isBizLocationPicker) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.6
                     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
                     public void notifyDataSetChanged() {
                         if (ChatAttachAlertLocationLayout.this.searchItem != null) {
@@ -805,7 +782,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 });
                 this.searchListView.setItemAnimator(null);
                 addView(this.searchListView, LayoutHelper.createFrame(-1, -1, 51));
-                this.searchListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.10
+                this.searchListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.7
                     @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
                     public void onScrollStateChanged(RecyclerView recyclerView, int i8) {
                         if (i8 == 1 && ChatAttachAlertLocationLayout.this.searching && ChatAttachAlertLocationLayout.this.searchWas) {
@@ -949,20 +926,12 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         int themedColor3 = getThemedColor(i32);
         int i42 = Theme.key_location_actionPressedBackground;
         Drawable createSimpleSelectorRoundRectDrawable2 = Theme.createSimpleSelectorRoundRectDrawable(dp2, themedColor3, getThemedColor(i42));
-        StateListAnimator stateListAnimator4 = new StateListAnimator();
-        int[] iArr2 = {android.R.attr.state_pressed};
+        ScaleStateListAnimator.apply(this.searchAreaButton);
+        this.searchAreaButton.setTranslationZ(AndroidUtilities.dp(2.0f));
         SearchButton searchButton22 = this.searchAreaButton;
-        Property property2 = View.TRANSLATION_Z;
-        stateListAnimator4.addState(iArr2, ObjectAnimator.ofFloat(searchButton22, (Property<SearchButton, Float>) property2, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator4.addState(new int[0], ObjectAnimator.ofFloat(this.searchAreaButton, (Property<SearchButton, Float>) property2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        this.searchAreaButton.setStateListAnimator(stateListAnimator4);
-        this.searchAreaButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.3
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view22, Outline outline) {
-                outline.setRoundRect(0, 0, view22.getMeasuredWidth(), view22.getMeasuredHeight(), view22.getMeasuredHeight() / 2);
-            }
-        });
-        this.searchAreaButton.setBackgroundDrawable(createSimpleSelectorRoundRectDrawable2);
+        ViewOutlineProvider viewOutlineProvider2 = ViewOutlineProviderImpl.BOUNDS_OVAL;
+        searchButton22.setOutlineProvider(viewOutlineProvider2);
+        this.searchAreaButton.setBackground(createSimpleSelectorRoundRectDrawable2);
         SearchButton searchButton32 = this.searchAreaButton;
         int i52 = Theme.key_location_actionActiveIcon;
         searchButton32.setTextColor(getThemedColor(i52));
@@ -989,17 +958,10 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.mapTypeButton.addSubItem(4, R.drawable.msg_hybrid, LocaleController.getString(R.string.Hybrid), resourcesProvider);
         this.mapTypeButton.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
         Drawable createSimpleSelectorCircleDrawable3 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i32), getThemedColor(i42));
-        StateListAnimator stateListAnimator22 = new StateListAnimator();
-        stateListAnimator22.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.mapTypeButton, (Property<ActionBarMenuItem, Float>) property2, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator22.addState(new int[0], ObjectAnimator.ofFloat(this.mapTypeButton, (Property<ActionBarMenuItem, Float>) property2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        this.mapTypeButton.setStateListAnimator(stateListAnimator22);
-        this.mapTypeButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view22, Outline outline) {
-                outline.setOval(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-            }
-        });
-        this.mapTypeButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable3);
+        ScaleStateListAnimator.apply(this.mapTypeButton);
+        this.mapTypeButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+        this.mapTypeButton.setOutlineProvider(viewOutlineProvider2);
+        this.mapTypeButton.setBackground(createSimpleSelectorCircleDrawable3);
         this.mapTypeButton.setIcon(R.drawable.msg_map_type);
         this.mapViewClip.addView(this.mapTypeButton, LayoutHelper.createFrame(40, 40.0f, 53, 0.0f, 12.0f, 12.0f, 0.0f));
         this.mapTypeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda10
@@ -1016,17 +978,10 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         });
         this.locationButton = new ImageView(context);
         Drawable createSimpleSelectorCircleDrawable22 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i32), getThemedColor(i42));
-        StateListAnimator stateListAnimator32 = new StateListAnimator();
-        stateListAnimator32.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.locationButton, (Property<ImageView, Float>) property2, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator32.addState(new int[0], ObjectAnimator.ofFloat(this.locationButton, (Property<ImageView, Float>) property2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        this.locationButton.setStateListAnimator(stateListAnimator32);
-        this.locationButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.5
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view22, Outline outline) {
-                outline.setOval(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-            }
-        });
-        this.locationButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable22);
+        ScaleStateListAnimator.apply(this.locationButton);
+        this.locationButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+        this.locationButton.setOutlineProvider(viewOutlineProvider2);
+        this.locationButton.setBackground(createSimpleSelectorCircleDrawable22);
         this.locationButton.setImageResource(R.drawable.msg_current_location);
         this.locationButton.setScaleType(ImageView.ScaleType.CENTER);
         ImageView imageView4 = this.locationButton;
@@ -1078,7 +1033,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.emptySubtitleTextView.setTextSize(1, 15.0f);
         this.emptySubtitleTextView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
         this.emptyView.addView(this.emptySubtitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 6, 0, 0));
-        RecyclerListView recyclerListView5 = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.6
+        RecyclerListView recyclerListView5 = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.3
             @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
             protected void onLayout(boolean z2, int i72, int i82, int i9, int i10) {
                 super.onLayout(z2, i72, i82, i9, i10);
@@ -1109,10 +1064,10 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.adapter.setMyLocationDenied(this.locationDenied, this.askedForLocation);
         this.listView.setVerticalScrollBarEnabled(false);
         RecyclerView recyclerListView32 = this.listView;
-        FillLastLinearLayoutManager fillLastLinearLayoutManager2 = new FillLastLinearLayoutManager(context, 1, false, 0, recyclerListView32) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.7
+        FillLastLinearLayoutManager fillLastLinearLayoutManager2 = new FillLastLinearLayoutManager(context, 1, false, 0, recyclerListView32) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i82) {
-                LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.7.1
+                LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4.1
                     @Override // androidx.recyclerview.widget.LinearSmoothScroller
                     public int calculateDyToMakeVisible(View view22, int i9) {
                         return super.calculateDyToMakeVisible(view22, i9) - (ChatAttachAlertLocationLayout.this.listView.getPaddingTop() - (ChatAttachAlertLocationLayout.this.mapHeight - ChatAttachAlertLocationLayout.this.overScrollHeight));
@@ -1130,7 +1085,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.layoutManager = fillLastLinearLayoutManager2;
         recyclerListView32.setLayoutManager(fillLastLinearLayoutManager2);
         addView(this.listView, LayoutHelper.createFrame(-1, -1, 51));
-        this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.8
+        this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.5
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i82) {
                 RecyclerListView.Holder holder;
@@ -1206,7 +1161,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         recyclerListView42.setVisibility(8);
         this.searchListView.setLayoutManager(new LinearLayoutManager(context, 1, false));
         ChatAttachAlert chatAttachAlert42 = this.parentAlert;
-        LocationActivitySearchAdapter locationActivitySearchAdapter22 = new LocationActivitySearchAdapter(context, resourcesProvider, chatAttachAlert42.isStoryLocationPicker, chatAttachAlert42.isBizLocationPicker) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.9
+        LocationActivitySearchAdapter locationActivitySearchAdapter22 = new LocationActivitySearchAdapter(context, resourcesProvider, chatAttachAlert42.isStoryLocationPicker, chatAttachAlert42.isBizLocationPicker) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.6
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public void notifyDataSetChanged() {
                 if (ChatAttachAlertLocationLayout.this.searchItem != null) {
@@ -1228,7 +1183,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         });
         this.searchListView.setItemAnimator(null);
         addView(this.searchListView, LayoutHelper.createFrame(-1, -1, 51));
-        this.searchListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.10
+        this.searchListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.7
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i82) {
                 if (i82 == 1 && ChatAttachAlertLocationLayout.this.searching && ChatAttachAlertLocationLayout.this.searchWas) {

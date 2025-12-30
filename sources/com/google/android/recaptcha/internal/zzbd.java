@@ -1,42 +1,108 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.jvm.internal.DefaultConstructorMarker;
+import com.google.android.play.core.integrity.StandardIntegrityException;
+import com.google.android.play.core.integrity.StandardIntegrityManager;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Ref$ObjectRef;
+import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.DelayKt;
 
 /* loaded from: classes.dex */
-public final class zzbd {
-    public static final zzbc zza = new zzbc(null);
-    private String zzb;
-    private String zzc;
-    private String zzd;
+final class zzbd extends SuspendLambda implements Function2 {
+    long zza;
+    boolean zzb;
+    int zzc;
+    final /* synthetic */ zzbo zzd;
+    final /* synthetic */ Ref$ObjectRef zze;
 
-    private zzbd(zzbd zzbdVar) {
-        this(zzbdVar.zzb, zzbdVar.zzc);
-        this.zzd = zzbdVar.zzd;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzbd(zzbo zzboVar, Ref$ObjectRef ref$ObjectRef, Continuation continuation) {
+        super(2, continuation);
+        this.zzd = zzboVar;
+        this.zze = ref$ObjectRef;
     }
 
-    private zzbd(String str, String str2) {
-        this.zzb = str;
-        this.zzc = str2;
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        return new zzbd(this.zzd, this.zze, continuation);
     }
 
-    public /* synthetic */ zzbd(String str, String str2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, str2);
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzbd) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
-    public final zzbb zza(zzne zzneVar) {
-        return new zzbb(zzneVar, this.zzb, this.zzc, this.zzd, null);
-    }
-
-    public final zzbd zzb() {
-        return new zzbd(this);
-    }
-
-    public final zzbd zzc(String str) {
-        this.zzd = str;
-        return this;
-    }
-
-    public final String zzd() {
-        return this.zzc;
+    /* JADX WARN: Removed duplicated region for block: B:35:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0025 A[Catch: Exception -> 0x001b, TRY_ENTER, TryCatch #0 {Exception -> 0x001b, blocks: (B:8:0x0025, B:10:0x0031, B:39:0x0017), top: B:38:0x0017 }] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0041 -> B:7:0x0023). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x0075 -> B:5:0x0013). Please report as a decompilation issue!!! */
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object invokeSuspend(Object obj) {
+        long j;
+        boolean z;
+        boolean z2;
+        int errorCode;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.zzc;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            j = 1000;
+            z = true;
+            if (!z) {
+            }
+        } else if (i != 1) {
+            z2 = this.zzb;
+            j = this.zza;
+            ResultKt.throwOnFailure(obj);
+            z = z2;
+            j += j;
+            if (!z) {
+                zzbo zzboVar = this.zzd;
+                this.zza = j;
+                this.zzc = 1;
+                obj = zzboVar.zzl(this);
+                if (obj == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                zzbo zzboVar2 = this.zzd;
+                zzboVar2.zzf().complete((StandardIntegrityManager.StandardIntegrityTokenProvider) obj);
+                zzboVar2.zzc = zzbp.zzc;
+                z = false;
+                if (!z) {
+                    return Unit.INSTANCE;
+                }
+            }
+        } else {
+            j = this.zza;
+            try {
+                ResultKt.throwOnFailure(obj);
+            } catch (Exception e) {
+                this.zze.element = e;
+                z2 = (e instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);
+                if (!z2) {
+                    throw e;
+                }
+                this.zza = j;
+                this.zzb = true;
+                this.zzc = 2;
+                if (DelayKt.delay(j, this) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+            }
+            zzbo zzboVar22 = this.zzd;
+            zzboVar22.zzf().complete((StandardIntegrityManager.StandardIntegrityTokenProvider) obj);
+            zzboVar22.zzc = zzbp.zzc;
+            z = false;
+            if (!z) {
+            }
+        }
     }
 }

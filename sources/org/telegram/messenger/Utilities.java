@@ -102,8 +102,6 @@ public class Utilities {
 
     private static native void aesIgeEncryptionByteArray(byte[] bArr, byte[] bArr2, byte[] bArr3, boolean z, int i, int i2);
 
-    public static native void applyAlphaThreshold(Bitmap bitmap, int i);
-
     public static native void blurBitmap(Object obj, int i, int i2, int i3, int i4, int i5);
 
     public static native void calcCDT(ByteBuffer byteBuffer, int i, int i2, ByteBuffer byteBuffer2, ByteBuffer byteBuffer3);
@@ -659,5 +657,9 @@ public class Utilities {
         } catch (Exception unused) {
             return j;
         }
+    }
+
+    public static int divCeil(int i, int i2) {
+        return ((i + i2) - 1) / i2;
     }
 }

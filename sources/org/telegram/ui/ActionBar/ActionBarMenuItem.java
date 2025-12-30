@@ -430,7 +430,7 @@ public class ActionBarMenuItem extends FrameLayout {
         }
         this.rect = new Rect();
         this.location = new int[2];
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext(), R.drawable.popup_fixed_alert2, this.resourcesProvider, 1);
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext(), R.drawable.popup_fixed_alert4, this.resourcesProvider, 1);
         this.popupLayout = actionBarPopupWindowLayout;
         actionBarPopupWindowLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda9
             @Override // android.view.View.OnTouchListener
@@ -993,6 +993,11 @@ public class ActionBarMenuItem extends FrameLayout {
         return frameLayout != null && frameLayout.getVisibility() == 0;
     }
 
+    public boolean isSearchFieldVisible2() {
+        FrameLayout frameLayout = this.searchContainer;
+        return (frameLayout == null || frameLayout.getTag() == null) ? false : true;
+    }
+
     public boolean toggleSearch(boolean z) {
         ActionBarMenuItemSearchListener actionBarMenuItemSearchListener;
         RLottieImageView iconView;
@@ -1096,11 +1101,11 @@ public class ActionBarMenuItem extends FrameLayout {
         if (z) {
             AndroidUtilities.showKeyboard(this.searchField);
         }
+        this.searchContainer.setTag(1);
         ActionBarMenuItemSearchListener actionBarMenuItemSearchListener5 = this.listener;
         if (actionBarMenuItemSearchListener5 != null) {
             actionBarMenuItemSearchListener5.onSearchExpand();
         }
-        this.searchContainer.setTag(1);
         return true;
     }
 

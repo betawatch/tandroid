@@ -5995,7 +5995,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
                 if (groupCallInvitedCell.hasAvatarSet()) {
                     bundle.putBoolean("expandPhoto", true);
                 }
-                this.parentActivity.lambda$runLinkRequest$102(new ProfileActivity(bundle));
+                this.parentActivity.lambda$runLinkRequest$96(new ProfileActivity(bundle));
                 dismiss();
                 return;
             }
@@ -9281,7 +9281,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             } else {
                 bundle.putLong("chat_id", -j);
             }
-            this.parentActivity.lambda$runLinkRequest$102(new ChatActivity(bundle));
+            this.parentActivity.lambda$runLinkRequest$96(new ChatActivity(bundle));
             dismiss();
             return;
         }
@@ -9298,7 +9298,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             } else {
                 bundle2.putLong("chat_id", -j);
             }
-            this.parentActivity.lambda$runLinkRequest$102(new ChatActivity(bundle2));
+            this.parentActivity.lambda$runLinkRequest$96(new ChatActivity(bundle2));
             dismiss();
             return;
         }
@@ -9863,7 +9863,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         };
         groupCallActivity.scrimPopupWindow = actionBarPopupWindow2;
         actionBarPopupWindow2.setPauseNotifications(true);
-        groupCallActivity.scrimPopupWindow.setDismissAnimationDuration(220);
+        groupCallActivity.scrimPopupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
         groupCallActivity.scrimPopupWindow.setOutsideTouchable(true);
         groupCallActivity.scrimPopupWindow.setClippingEnabled(true);
         groupCallActivity.scrimPopupWindow.setAnimationStyle(R.style.PopupContextAnimation);

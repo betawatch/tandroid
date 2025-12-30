@@ -1,29 +1,66 @@
 package com.google.android.recaptcha.internal;
 
-import org.telegram.messenger.MediaDataController;
+import android.content.ContentResolver;
+import android.os.Build;
+import kotlin.Lazy;
+import kotlin.LazyKt;
+import kotlin.coroutines.Continuation;
 
 /* loaded from: classes.dex */
-public final class zzx {
-    public static final zzw zza = new zzw(null);
-    public static final zzx zzb = new zzx(9999);
-    public static final zzx zzc = new zzx(MediaDataController.MAX_STYLE_RUNS_COUNT);
-    public static final zzx zzd = new zzx(1001);
-    public static final zzx zze = new zzx(1002);
-    public static final zzx zzf = new zzx(1003);
-    public static final zzx zzg = new zzx(1004);
-    public static final zzx zzh = new zzx(1005);
-    public static final zzx zzi = new zzx(1006);
-    public static final zzx zzj = new zzx(1007);
-    public static final zzx zzk = new zzx(1008);
-    public static final zzx zzl = new zzx(1009);
-    public static final zzx zzm = new zzx(1010);
-    private final int zzn;
+public final class zzx implements zzar {
+    private final Lazy zza;
 
-    private zzx(int i) {
-        this.zzn = i;
+    public zzx() {
+        int i = zzby.zza;
+        this.zza = LazyKt.lazy(zzw.zza);
     }
 
+    public static final /* synthetic */ ContentResolver zzb(zzx zzxVar) {
+        return (ContentResolver) zzxVar.zza.getValue();
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzar
     public final int zza() {
-        return this.zzn;
+        return 17;
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzar
+    public final /* synthetic */ Object zzc(String str, Continuation continuation) {
+        return zzam.zza(this, str, continuation);
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzar
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, Continuation continuation) {
+        Object zzd;
+        zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), continuation);
+        return zzd;
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzar
+    public final Object zze(String str, Continuation continuation) {
+        return new zzhg(new zzv(this, null));
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzar
+    public final /* synthetic */ Object zzf(zzxp zzxpVar, Continuation continuation) {
+        return zzam.zzc(this, zzxpVar, continuation);
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzar
+    public final Object zzg(Exception exc, Continuation continuation) {
+        int i = Build.VERSION.SDK_INT;
+        zzys zzf = zzyt.zzf();
+        zzf.zzr(16);
+        zzf.zzq(i > 34 ? 59 : 58);
+        return zzas.zza(this, (zzyt) zzf.zzk());
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzar
+    public final /* synthetic */ void zzh(zzyg zzygVar) {
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzar
+    public final boolean zzi() {
+        return true;
     }
 }

@@ -1,68 +1,163 @@
 package com.google.android.recaptcha.internal;
 
-import android.net.TrafficStats;
-import android.webkit.URLUtil;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import javax.net.ssl.HttpsURLConnection;
-import kotlin.collections.CollectionsKt;
-import kotlin.jvm.internal.Intrinsics;
+import com.google.android.play.core.integrity.StandardIntegrityManager;
+import kotlin.Lazy;
+import kotlin.LazyKt;
+import kotlin.ResultKt;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlinx.coroutines.CompletableDeferred;
+import kotlinx.coroutines.Deferred;
+import kotlinx.coroutines.sync.Mutex;
+import kotlinx.coroutines.sync.MutexKt;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
-public final class zzbo implements zzbn {
-    private final String zza;
+public final class zzbo {
+    public CompletableDeferred zza;
+    private final Lazy zzb;
+    private zzbp zzc;
+    private final Lazy zzd;
+    private long zze;
+    private final Mutex zzf;
+    private boolean zzg;
 
-    public zzbo(String str) {
-        this.zza = str;
+    public zzbo() {
+        this(28800000L);
     }
 
-    private static final void zzb(byte[] bArr) {
-        for (zznf zznfVar : zzni.zzk(bArr).zzH()) {
-            if (CollectionsKt.listOf((Object[]) new String[]{"INIT_TOTAL", "EXECUTE_TOTAL"}).contains(zznfVar.zzj().name()) && zznfVar.zzT()) {
-                zznfVar.zzJ();
-                zznfVar.zzK();
-                zznfVar.zzj().name();
-                zznfVar.zzg().zzk();
-                zznfVar.zzg().zzf();
-                zznfVar.zzU();
-            } else {
-                zznfVar.zzJ();
-                zznfVar.zzK();
-                zznfVar.zzj().name();
-                zznfVar.zzU();
-            }
-        }
+    public static final /* synthetic */ zzcr zzb(zzbo zzboVar) {
+        return (zzcr) zzboVar.zzb.getValue();
     }
 
-    @Override // com.google.android.recaptcha.internal.zzbn
-    public final boolean zza(byte[] bArr) {
-        HttpURLConnection httpURLConnection;
-        try {
-            TrafficStats.setThreadStatsTag((int) Thread.currentThread().getId());
-            zzb(bArr);
-            if (URLUtil.isHttpUrl(this.zza)) {
-                URLConnection openConnection = new URL(this.zza).openConnection();
-                Intrinsics.checkNotNull(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
-                httpURLConnection = (HttpURLConnection) openConnection;
-            } else {
-                if (!URLUtil.isHttpsUrl(this.zza)) {
-                    throw new MalformedURLException("Recaptcha server url only allows using Http or Https.");
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object zzl(Continuation continuation) {
+        zzbc zzbcVar;
+        int i;
+        if (continuation instanceof zzbc) {
+            zzbcVar = (zzbc) continuation;
+            int i2 = zzbcVar.zzc;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                zzbcVar.zzc = i2 - TLObject.FLAG_31;
+                Object obj = zzbcVar.zza;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = zzbcVar.zzc;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    Deferred zza = zzdf.zza(((StandardIntegrityManager) this.zzd.getValue()).prepareIntegrityToken(StandardIntegrityManager.PrepareIntegrityTokenRequest.builder().setCloudProjectNumber(this.zze).build()));
+                    zzbcVar.zzc = 1;
+                    obj = zza.await(zzbcVar);
+                    if (obj == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    ResultKt.throwOnFailure(obj);
                 }
-                URLConnection openConnection2 = new URL(this.zza).openConnection();
-                Intrinsics.checkNotNull(openConnection2, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
-                httpURLConnection = (HttpsURLConnection) openConnection2;
+                return obj;
             }
-            httpURLConnection.setRequestMethod("POST");
-            httpURLConnection.setDoOutput(true);
-            httpURLConnection.setRequestProperty("Content-Type", "application/x-protobuffer");
-            httpURLConnection.connect();
-            httpURLConnection.getOutputStream().write(bArr);
-            return httpURLConnection.getResponseCode() == 200;
-        } catch (Exception e) {
-            e.getMessage();
-            return false;
         }
+        zzbcVar = new zzbc(this, continuation);
+        Object obj2 = zzbcVar.zza;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = zzbcVar.zzc;
+        if (i != 0) {
+        }
+        return obj2;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x006a, code lost:
+    
+        if (r7 != r1) goto L21;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0074, code lost:
+    
+        return r1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0049, code lost:
+    
+        if (r7 != r1) goto L18;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x003a  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object zzm(String str, Continuation continuation) {
+        zzbg zzbgVar;
+        int i;
+        if (continuation instanceof zzbg) {
+            zzbgVar = (zzbg) continuation;
+            int i2 = zzbgVar.zzc;
+            if ((i2 & TLObject.FLAG_31) != 0) {
+                zzbgVar.zzc = i2 - TLObject.FLAG_31;
+                Object obj = zzbgVar.zza;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = zzbgVar.zzc;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    CompletableDeferred zzf = zzf();
+                    zzbgVar.zzd = str;
+                    zzbgVar.zzc = 1;
+                    obj = zzf.await(zzbgVar);
+                } else {
+                    if (i != 1) {
+                        if (i != 2) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        ResultKt.throwOnFailure(obj);
+                        return ((StandardIntegrityManager.StandardIntegrityToken) obj).token();
+                    }
+                    str = zzbgVar.zzd;
+                    ResultKt.throwOnFailure(obj);
+                }
+                Deferred zza = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
+                zzbgVar.zzd = null;
+                zzbgVar.zzc = 2;
+                obj = zza.await(zzbgVar);
+            }
+        }
+        zzbgVar = new zzbg(this, continuation);
+        Object obj2 = zzbgVar.zza;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = zzbgVar.zzc;
+        if (i != 0) {
+        }
+        Deferred zza2 = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj2).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
+        zzbgVar.zzd = null;
+        zzbgVar.zzc = 2;
+        obj2 = zza2.await(zzbgVar);
+    }
+
+    public final Object zze(Continuation continuation) {
+        return new zzhg(new zzbn(this, null));
+    }
+
+    public final CompletableDeferred zzf() {
+        CompletableDeferred completableDeferred = this.zza;
+        if (completableDeferred != null) {
+            return completableDeferred;
+        }
+        return null;
+    }
+
+    public final void zzj(long j) {
+        this.zze = j;
+    }
+
+    public zzbo(long j) {
+        int i = zzby.zza;
+        this.zzb = LazyKt.lazy(zzbk.zza);
+        this.zzc = zzbp.zza;
+        this.zzd = LazyKt.lazy(zzbl.zza);
+        this.zzf = MutexKt.Mutex$default(false, 1, null);
     }
 }

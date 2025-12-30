@@ -16,7 +16,7 @@ abstract class bm extends com.google.android.play.integrity.internal.t {
     public final void a(Exception exc) {
         if (!(exc instanceof com.google.android.play.integrity.internal.af)) {
             super.a(exc);
-        } else if (bn.k(this.f)) {
+        } else if (bn.l(this.f)) {
             super.a(new StandardIntegrityException(-2, exc));
         } else {
             super.a(new StandardIntegrityException(-9, exc));

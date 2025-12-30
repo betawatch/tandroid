@@ -16,10 +16,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
+import org.telegram.ui.ProfileActivity;
 
 /* loaded from: classes4.dex */
 public class SettingsSearchCell extends FrameLayout {
@@ -199,6 +204,42 @@ public class SettingsSearchCell extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
             canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(this.left), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(this.left) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+        }
+    }
+
+    public static class Factory extends UItem.UItemFactory {
+        static {
+            UItem.UItemFactory.setup(new Factory());
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public SettingsSearchCell createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            return new SettingsSearchCell(context);
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
+            Object obj = uItem.object;
+            if (obj instanceof ProfileActivity.SearchAdapter.SearchResult) {
+                ProfileActivity.SearchAdapter.SearchResult searchResult = (ProfileActivity.SearchAdapter.SearchResult) obj;
+                ((SettingsSearchCell) view).setTextAndValueAndIcon(uItem.text, searchResult.path, searchResult.iconResId, z);
+            } else if (obj instanceof MessagesController.FaqSearchResult) {
+                ((SettingsSearchCell) view).setTextAndValue(uItem.text, ((MessagesController.FaqSearchResult) obj).path, true, z);
+            }
+        }
+
+        public static UItem of(CharSequence charSequence, ProfileActivity.SearchAdapter.SearchResult searchResult) {
+            UItem ofFactory = UItem.ofFactory(Factory.class);
+            ofFactory.text = charSequence;
+            ofFactory.object = searchResult;
+            return ofFactory;
+        }
+
+        public static UItem of(CharSequence charSequence, MessagesController.FaqSearchResult faqSearchResult) {
+            UItem ofFactory = UItem.ofFactory(Factory.class);
+            ofFactory.text = charSequence;
+            ofFactory.object = faqSearchResult;
+            return ofFactory;
         }
     }
 }

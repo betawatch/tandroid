@@ -405,7 +405,7 @@ public class PopupSwipeBackLayout extends FrameLayout {
         }
         int save = canvas.save();
         this.mPath.rewind();
-        int dp = AndroidUtilities.dp(6.0f);
+        int dp = AndroidUtilities.dp(12.0f);
         if (this.stickToRight) {
             this.mRect.set(getWidth() - measuredWidth, top, getWidth(), measuredHeight + top);
         } else {

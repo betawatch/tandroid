@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.List;
-
 /* loaded from: classes.dex */
-public interface zzjm extends List {
-    zzjm zze();
+public final class zzjm implements zzjt {
+    public static final zzjm zza = new zzjm();
 
-    Object zzf(int i);
+    private zzjm() {
+    }
 
-    List zzh();
-
-    void zzi(zzgw zzgwVar);
+    @Override // com.google.android.recaptcha.internal.zzjt
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+        throw new zzdm(5, 19, null);
+    }
 }

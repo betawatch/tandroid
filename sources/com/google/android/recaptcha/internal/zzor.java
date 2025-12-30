@@ -1,40 +1,31 @@
 package com.google.android.recaptcha.internal;
 
-/* loaded from: classes.dex */
-final /* synthetic */ class zzor {
-    static final /* synthetic */ int[] zza;
+import java.util.Collections;
+import java.util.Comparator;
 
-    static {
-        zzis.zza();
-        int[] iArr = new int[7];
-        zza = iArr;
-        try {
-            iArr[3] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            zza[4] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            zza[2] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            zza[5] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            zza[6] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            zza[0] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            zza[1] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
+/* loaded from: classes.dex */
+public final class zzor {
+    private static final Comparator zza = new zzok();
+    private static final zzor zzb = new zzor(new zzop(Collections.emptyList()));
+    private final zzop zzc;
+
+    private zzor(zzop zzopVar) {
+        this.zzc = zzopVar;
+    }
+
+    public static zzor zza() {
+        return zzb;
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof zzor) && ((zzor) obj).zzc.equals(this.zzc);
+    }
+
+    public final int hashCode() {
+        return ~this.zzc.hashCode();
+    }
+
+    public final String toString() {
+        return this.zzc.toString();
     }
 }

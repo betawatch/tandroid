@@ -2,8 +2,8 @@ package com.google.android.recaptcha;
 
 import android.app.Application;
 import com.google.android.gms.tasks.Task;
-import com.google.android.recaptcha.internal.zzam;
-import com.google.android.recaptcha.internal.zzaw;
+import com.google.android.recaptcha.internal.zzdz;
+import com.google.android.recaptcha.internal.zzeq;
 import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.coroutines.Continuation;
@@ -17,6 +17,10 @@ public final class Recaptcha {
     private Recaptcha() {
     }
 
+    public static final Task<RecaptchaTasksClient> fetchTaskClient(Application application, String str) {
+        return zzdz.zze(application, str);
+    }
+
     public static /* synthetic */ Object getClient-BWLJW6A$default(Recaptcha recaptcha, Application application, String str, long j, Continuation continuation, int i, Object obj) {
         if ((i & 4) != 0) {
             j = 10000;
@@ -25,15 +29,19 @@ public final class Recaptcha {
     }
 
     public static final Task<RecaptchaTasksClient> getTasksClient(Application application, String str) {
-        return zzam.zzd(application, str, 10000L);
+        return zzdz.zzc(application, str, 10000L);
+    }
+
+    public final Object fetchClient(Application application, String str, Continuation continuation) {
+        return zzdz.zzd(application, str, continuation);
     }
 
     public static final Task<RecaptchaTasksClient> getTasksClient(Application application, String str, long j) {
-        return zzam.zzd(application, str, j);
+        return zzdz.zzc(application, str, j);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0023  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -46,16 +54,14 @@ public final class Recaptcha {
                 int i2 = recaptcha$getClient$1.zzc;
                 if ((i2 & TLObject.FLAG_31) != 0) {
                     recaptcha$getClient$1.zzc = i2 - TLObject.FLAG_31;
-                    Recaptcha$getClient$1 recaptcha$getClient$12 = recaptcha$getClient$1;
-                    Object obj = recaptcha$getClient$12.zza;
+                    Object obj = recaptcha$getClient$1.zza;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    i = recaptcha$getClient$12.zzc;
+                    i = recaptcha$getClient$1.zzc;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         Result.Companion companion = Result.Companion;
-                        zzam zzamVar = zzam.zza;
-                        recaptcha$getClient$12.zzc = 1;
-                        obj = zzam.zzc(application, str, j, null, recaptcha$getClient$12);
+                        recaptcha$getClient$1.zzc = 1;
+                        obj = zzdz.zzb(application, str, j, recaptcha$getClient$1);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -65,20 +71,19 @@ public final class Recaptcha {
                         }
                         ResultKt.throwOnFailure(obj);
                     }
-                    return Result.constructor-impl((zzaw) obj);
+                    return Result.constructor-impl((zzeq) obj);
                 }
             }
             if (i != 0) {
             }
-            return Result.constructor-impl((zzaw) obj);
+            return Result.constructor-impl((zzeq) obj);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
             return Result.constructor-impl(ResultKt.createFailure(th));
         }
         recaptcha$getClient$1 = new Recaptcha$getClient$1(this, continuation);
-        Recaptcha$getClient$1 recaptcha$getClient$122 = recaptcha$getClient$1;
-        Object obj2 = recaptcha$getClient$122.zza;
+        Object obj2 = recaptcha$getClient$1.zza;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = recaptcha$getClient$122.zzc;
+        i = recaptcha$getClient$1.zzc;
     }
 }

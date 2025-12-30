@@ -1,44 +1,23 @@
 package com.google.android.recaptcha.internal;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /* loaded from: classes.dex */
-public final class zznh extends zzin implements zzkf {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private zznh() {
-        super(r0);
-        zzni zzniVar;
-        zzniVar = zzni.zzb;
-    }
+final class zznh extends zznl {
+    private final Map zza;
+    private final Map zzb;
 
-    public final int zzd() {
-        return ((zzni) this.zza).zzf();
-    }
-
-    public final int zze() {
-        return ((zzni) this.zza).zzg();
-    }
-
-    public final zznh zzp(zznf zznfVar) {
-        zzm();
-        zzni.zzI((zzni) this.zza, zznfVar);
-        return this;
-    }
-
-    public final zznh zzq(zznu zznuVar) {
-        zzm();
-        zzni.zzJ((zzni) this.zza, zznuVar);
-        return this;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zznh(zzng zzngVar) {
-        super(r1);
-        zzni zzniVar;
-        zzniVar = zzni.zzb;
+    /* synthetic */ zznh(zzng zzngVar, zznk zznkVar) {
+        Map map;
+        Map map2;
+        HashMap hashMap = new HashMap();
+        this.zza = hashMap;
+        HashMap hashMap2 = new HashMap();
+        this.zzb = hashMap2;
+        map = zzngVar.zzc;
+        hashMap.putAll(map);
+        map2 = zzngVar.zzd;
+        hashMap2.putAll(map2);
     }
 }

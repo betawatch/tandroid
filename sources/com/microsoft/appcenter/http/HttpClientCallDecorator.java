@@ -3,7 +3,7 @@ package com.microsoft.appcenter.http;
 import com.microsoft.appcenter.http.HttpClient;
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class HttpClientCallDecorator implements Runnable, ServiceCall, ServiceCallback {
     private final HttpClient.CallTemplate mCallTemplate;
     private final HttpClient mDecoratedApi;

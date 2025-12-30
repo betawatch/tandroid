@@ -6,35 +6,44 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.CoroutineScopeKt;
 
 /* loaded from: classes.dex */
 final class zzes extends SuspendLambda implements Function2 {
-    final /* synthetic */ zzez zza;
-    final /* synthetic */ String zzb;
+    int zza;
+    final /* synthetic */ zzfp zzb;
+    final /* synthetic */ zzye zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzes(zzez zzezVar, String str, Continuation continuation) {
+    zzes(zzfp zzfpVar, zzye zzyeVar, Continuation continuation) {
         super(2, continuation);
-        this.zza = zzezVar;
-        this.zzb = str;
+        this.zzb = zzfpVar;
+        this.zzc = zzyeVar;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation create(Object obj, Continuation continuation) {
-        return new zzes(this.zza, this.zzb, continuation);
+        return new zzes(this.zzb, this.zzc, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzes) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzes) create((zzgr) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.zza;
         ResultKt.throwOnFailure(obj);
-        this.zza.zzc().evaluateJavascript("recaptcha.m.Main.execute(\"" + this.zzb + "\")", null);
-        return Unit.INSTANCE;
+        if (i == 0) {
+            zzer zzerVar = new zzer(this.zzb, this.zzc, null);
+            this.zza = 1;
+            obj = CoroutineScopeKt.coroutineScope(zzerVar, this);
+            if (obj == coroutine_suspended) {
+                return coroutine_suspended;
+            }
+        }
+        return obj;
     }
 }

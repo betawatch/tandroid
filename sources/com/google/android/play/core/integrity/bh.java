@@ -16,18 +16,18 @@ final class bh extends bm {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     bh(bn bnVar, TaskCompletionSource taskCompletionSource, Bundle bundle, Activity activity, TaskCompletionSource taskCompletionSource2, int i) {
         super(bnVar, taskCompletionSource);
-        this.e = bnVar;
         this.a = bundle;
         this.b = activity;
         this.c = taskCompletionSource2;
         this.d = i;
+        this.e = bnVar;
     }
 
     @Override // com.google.android.play.integrity.internal.t
     protected final void b() {
         com.google.android.play.integrity.internal.s sVar;
         at atVar;
-        if (bn.k(this.e)) {
+        if (bn.l(this.e)) {
             super.a(new StandardIntegrityException(-2, null));
             return;
         }

@@ -1,49 +1,94 @@
 package com.google.android.recaptcha.internal;
 
-/* loaded from: classes.dex */
-public final class zzcq implements zzdd {
-    public static final zzcq zza = new zzcq();
+import android.content.Context;
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Iterator;
+import kotlin.collections.CharIterator;
+import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.CharRange;
+import kotlin.text.StringsKt;
 
-    private zzcq() {
+/* loaded from: classes.dex */
+public final class zzcq implements zzbt {
+    private final Context zza;
+    private final String zzb = "rce_";
+
+    public zzcq(Context context) {
+        this.zza = context;
+        new zzdl(context);
     }
 
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        if (zzpqVarArr.length == 0) {
-            throw new zzae(4, 3, null);
+    @Override // com.google.android.recaptcha.internal.zzbt
+    public final String zza(String str) {
+        File file = new File(this.zza.getCacheDir(), this.zzb.concat(String.valueOf(str)));
+        if (file.exists()) {
+            return new String(zzdl.zza(file), StandardCharsets.UTF_8);
         }
-        zzpi zzf = zzpl.zzf();
-        for (zzpq zzpqVar : zzpqVarArr) {
-            Object zza2 = zzcjVar.zzc().zza(zzpqVar);
-            if (zza2 == null) {
-                throw new zzae(4, 4, null);
+        return null;
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzbt
+    public final void zzb() {
+        try {
+            File[] listFiles = this.zza.getCacheDir().listFiles();
+            if (listFiles != null) {
+                ArrayList arrayList = new ArrayList();
+                for (File file : listFiles) {
+                    if (StringsKt.startsWith$default(file.getName(), this.zzb, false, 2, null)) {
+                        arrayList.add(file);
+                    }
+                }
+                Iterator it = arrayList.iterator();
+                while (it.hasNext()) {
+                    ((File) it.next()).delete();
+                }
             }
-            zzpj zzf2 = zzpk.zzf();
-            if (zza2 instanceof Integer) {
-                zzf2.zzt(((Number) zza2).intValue());
-            } else if (zza2 instanceof Short) {
-                zzf2.zzs(((Number) zza2).shortValue());
-            } else if (zza2 instanceof Byte) {
-                zzf2.zze(zzgw.zzm(new byte[]{((Number) zza2).byteValue()}, 0, 1));
-            } else if (zza2 instanceof Long) {
-                zzf2.zzu(((Number) zza2).longValue());
-            } else if (zza2 instanceof Double) {
-                zzf2.zzq(((Number) zza2).doubleValue());
-            } else if (zza2 instanceof Float) {
-                zzf2.zzr(((Number) zza2).floatValue());
-            } else if (zza2 instanceof Boolean) {
-                zzf2.zzd(((Boolean) zza2).booleanValue());
-            } else if (zza2 instanceof Character) {
-                zzf2.zzp(zza2.toString());
-            } else if (zza2 instanceof String) {
-                zzf2.zzv((String) zza2);
-            } else {
-                zzf2.zzv(zza2.toString());
-            }
-            zzf.zze((zzpk) zzf2.zzj());
+        } catch (Exception unused) {
         }
-        zzck zzc = zzcjVar.zzc();
-        byte[] zzd = ((zzpl) zzf.zzj()).zzd();
-        zzc.zzf(i, zzfy.zzh().zzi(zzd, 0, zzd.length));
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzbt
+    public final void zzc(String str, String str2) {
+        CharRange charRange = new CharRange('A', 'z');
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(charRange, 10));
+        Iterator it = charRange.iterator();
+        while (it.hasNext()) {
+            arrayList.add(Character.valueOf(((CharIterator) it).nextChar()));
+        }
+        String joinToString$default = CollectionsKt.joinToString$default(CollectionsKt.shuffled(arrayList).subList(0, 8), "", null, null, 0, null, null, 62, null);
+        Context context = this.zza;
+        String str3 = this.zzb;
+        File file = new File(context.getCacheDir(), str3.concat(String.valueOf(joinToString$default)));
+        zzdl.zzb(file, String.valueOf(str2).getBytes(StandardCharsets.UTF_8));
+        file.renameTo(new File(context.getCacheDir(), str3.concat(String.valueOf(str))));
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzbt
+    public final boolean zzd(String str) {
+        try {
+            File[] listFiles = this.zza.getCacheDir().listFiles();
+            File file = null;
+            if (listFiles != null) {
+                int length = listFiles.length;
+                int i = 0;
+                while (true) {
+                    if (i >= length) {
+                        break;
+                    }
+                    File file2 = listFiles[i];
+                    if (Intrinsics.areEqual(file2.getName(), this.zzb + str)) {
+                        file = file2;
+                        break;
+                    }
+                    i++;
+                }
+            }
+            return file != null;
+        } catch (Exception unused) {
+            return false;
+        }
     }
 }

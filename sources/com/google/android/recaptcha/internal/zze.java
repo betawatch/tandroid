@@ -1,6 +1,5 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -11,22 +10,23 @@ import kotlinx.coroutines.CoroutineScope;
 
 /* loaded from: classes.dex */
 final class zze extends SuspendLambda implements Function2 {
-    int zza;
-    final /* synthetic */ zza zzb;
-    final /* synthetic */ long zzc;
-    final /* synthetic */ zzoe zzd;
+    Object zza;
+    int zzb;
+    final /* synthetic */ zzgr zzc;
+    final /* synthetic */ zzg zzd;
+    final /* synthetic */ String zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zze(zza zzaVar, long j, zzoe zzoeVar, Continuation continuation) {
+    zze(zzgr zzgrVar, zzg zzgVar, String str, Continuation continuation) {
         super(2, continuation);
-        this.zzb = zzaVar;
-        this.zzc = j;
-        this.zzd = zzoeVar;
+        this.zzc = zzgrVar;
+        this.zzd = zzgVar;
+        this.zze = str;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation create(Object obj, Continuation continuation) {
-        return new zze(this.zzb, this.zzc, this.zzd, continuation);
+        return new zze(this.zzc, this.zzd, this.zze, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -36,22 +36,30 @@ final class zze extends SuspendLambda implements Function2 {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object zzb;
+        zzgr zzgrVar;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
-        ResultKt.throwOnFailure(obj);
-        if (i != 0) {
-            zzb = ((Result) obj).unbox-impl();
-        } else {
-            zza zzaVar = this.zzb;
-            long j = this.zzc;
-            zzoe zzoeVar = this.zzd;
-            this.zza = 1;
-            zzb = zzaVar.zzb(j, zzoeVar, this);
-            if (zzb == coroutine_suspended) {
+        int i = this.zzb;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            zzgrVar = this.zzc;
+            zzg zzgVar = this.zzd;
+            String str = this.zze;
+            this.zza = zzgrVar;
+            this.zzb = 1;
+            obj = zzgVar.zzb(str, this);
+            if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
+        } else {
+            if (i != 1) {
+                ResultKt.throwOnFailure(obj);
+            }
+            zzgrVar = (zzgr) this.zza;
+            ResultKt.throwOnFailure(obj);
         }
-        return Result.box-impl(zzb);
+        this.zza = null;
+        this.zzb = 2;
+        obj = ((zzhg) obj).zza(zzgrVar.zza(), this);
+        return obj == coroutine_suspended ? coroutine_suspended : obj;
     }
 }

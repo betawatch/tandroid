@@ -221,7 +221,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
 
     public int fixScrollGap(RecyclerListView recyclerListView, int i, int i2, boolean z, boolean z2, boolean z3, boolean z4) {
         getItemCount();
-        int dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f);
+        int dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f);
         recyclerListView.getPaddingTop();
         int paddingTop = ((recyclerListView.getPaddingTop() + i2) - (i * dp)) - i;
         if (z2) {
@@ -860,9 +860,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x0465  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x0489  */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x0467  */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x0447  */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x046b  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0449  */
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -947,8 +947,8 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 profileSearchCell.setChecked(this.selectedDialogs.contains(Long.valueOf(profileSearchCell.getDialogId())), dialogId == profileSearchCell.getDialogId());
             } else {
                 DialogCell dialogCell = (DialogCell) viewHolder.itemView;
-                dialogCell.useSeparator = dialog2 != null;
-                dialogCell.fullSeparator = (!dialog.pinned || dialog2 == null || dialog2.pinned) ? false : true;
+                dialogCell.useSeparator = false;
+                dialogCell.fullSeparator = false;
                 if (i2 == 0 && AndroidUtilities.isTablet()) {
                     dialogCell.setDialogSelected(dialog.id == this.openedDialogId);
                 }
@@ -1035,7 +1035,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             }
         } else if (itemViewType == 11) {
             TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-            textInfoPrivacyCell.setText(LocaleController.getString(R.string.TapOnThePencil));
+            textInfoPrivacyCell.setText(LocaleController.getString(R.string.TapOnThePencilButton));
             if (this.arrowDrawable == null) {
                 Drawable drawable = this.mContext.getResources().getDrawable(R.drawable.arrow_newchat);
                 this.arrowDrawable = drawable;
@@ -1083,16 +1083,12 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 graySectionCell.setText(LocaleController.getString(R.string.ReplyDialogYourChats));
             }
         } else if (itemViewType == 21) {
-            TLRPC.Dialog dialog3 = (TLRPC.Dialog) getItem(i + 1);
             DialogCell dialogCell2 = (DialogCell) viewHolder.itemView;
             DialogCell.CustomDialog customDialog = new DialogCell.CustomDialog();
             customDialog.name = LocaleController.getString(R.string.StoriesForwardTitle);
             customDialog.message = LocaleController.getString(R.string.StoriesForwardText);
-            dialogCell2.useSeparator = dialog3 != null;
-            if (dialog3 != null && !dialog3.pinned) {
-                r7 = true;
-            }
-            dialogCell2.fullSeparator = r7;
+            dialogCell2.useSeparator = false;
+            dialogCell2.fullSeparator = false;
             dialogCell2.setDialog(customDialog);
             dialogCell2.checkHeight();
         } else {
@@ -1439,15 +1435,15 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             super(context);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:80:0x016e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:80:0x0173, code lost:
         
             if (r6 != false) goto L89;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:81:0x01a7, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:81:0x01ad, code lost:
         
-            r12 = r12 - r7;
+            r13 = r13 - r7;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:94:0x01a5, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:94:0x01ab, code lost:
         
             if (r6 != false) goto L89;
          */
@@ -1463,7 +1459,9 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             View view = (View) getParent();
             int i5 = view instanceof BlurredRecyclerView ? ((BlurredRecyclerView) view).blurTopPadding : 0;
             boolean z2 = DialogsAdapter.this.collapsedView;
-            int paddingTop = view.getPaddingTop() - i5;
+            int paddingTop = view.getPaddingTop();
+            int paddingBottom = view.getPaddingBottom();
+            int i6 = paddingTop - i5;
             if (DialogsAdapter.this.folderId == 1 && size == 1 && ((ItemInternal) DialogsAdapter.this.itemInternals.get(0)).viewType == 19) {
                 i3 = View.MeasureSpec.getSize(i2);
                 if (i3 == 0) {
@@ -1476,7 +1474,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                     i3 += AndroidUtilities.dp(81.0f);
                 }
             } else {
-                if (size != 0 && (paddingTop != 0 || z)) {
+                if (size != 0 && (i6 != 0 || z)) {
                     int size2 = View.MeasureSpec.getSize(i2);
                     if (size2 == 0) {
                         size2 = view.getMeasuredHeight();
@@ -1484,29 +1482,29 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                     if (size2 == 0) {
                         size2 = (AndroidUtilities.displaySize.y - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight;
                     }
-                    int i6 = size2 - i5;
-                    int dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f);
-                    int i7 = 0;
-                    for (int i8 = 0; i8 < size; i8++) {
-                        if (((ItemInternal) DialogsAdapter.this.itemInternals.get(i8)).viewType == 0) {
-                            if (((ItemInternal) DialogsAdapter.this.itemInternals.get(i8)).isForumCell && !z2) {
-                                i7 += AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 86.0f : 91.0f);
+                    int i7 = size2 - i5;
+                    int dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f);
+                    int i8 = 0;
+                    for (int i9 = 0; i9 < size; i9++) {
+                        if (((ItemInternal) DialogsAdapter.this.itemInternals.get(i9)).viewType == 0) {
+                            if (((ItemInternal) DialogsAdapter.this.itemInternals.get(i9)).isForumCell && !z2) {
+                                i8 += AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 86.0f : 91.0f);
                             }
-                            i7 += dp;
+                            i8 += dp;
                         } else {
-                            if (((ItemInternal) DialogsAdapter.this.itemInternals.get(i8)).viewType != 1) {
+                            if (((ItemInternal) DialogsAdapter.this.itemInternals.get(i9)).viewType != 1) {
                             }
-                            i7 += dp;
+                            i8 += dp;
                         }
                     }
-                    int i9 = i7 + (size - 1);
+                    int i10 = i8 + (size - 1);
                     if (DialogsAdapter.this.onlineContacts != null) {
-                        i9 += (DialogsAdapter.this.onlineContacts.size() * AndroidUtilities.dp(58.0f)) + (DialogsAdapter.this.onlineContacts.size() - 1) + AndroidUtilities.dp(52.0f);
+                        i10 += (DialogsAdapter.this.onlineContacts.size() * AndroidUtilities.dp(58.0f)) + (DialogsAdapter.this.onlineContacts.size() - 1) + AndroidUtilities.dp(52.0f);
                     }
-                    int i10 = z ? dp + 1 : 0;
-                    if (i9 < i6) {
-                        i3 = (i6 - i9) + i10;
-                        if (paddingTop != 0) {
+                    int i11 = z ? dp + 1 : 0;
+                    if (i10 < i7) {
+                        i3 = ((i7 - i10) + i11) - paddingBottom;
+                        if (i6 != 0) {
                             i3 -= AndroidUtilities.statusBarHeight;
                             if (DialogsAdapter.this.parentFragment.hasStories && !z2 && !DialogsAdapter.this.isTransitionSupport) {
                                 i3 -= ActionBar.getCurrentActionBarHeight();
@@ -1517,10 +1515,10 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                             }
                         }
                     } else {
-                        int i11 = i9 - i6;
-                        if (i11 < i10) {
-                            i3 = i10 - i11;
-                            if (paddingTop != 0) {
+                        int i12 = i10 - i7;
+                        if (i12 < i11) {
+                            i3 = (i11 - i12) - paddingBottom;
+                            if (i6 != 0) {
                                 i3 -= AndroidUtilities.statusBarHeight;
                                 if (DialogsAdapter.this.parentFragment.hasStories && !z2 && !DialogsAdapter.this.isTransitionSupport) {
                                     i3 -= ActionBar.getCurrentActionBarHeight();
@@ -1535,11 +1533,11 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 }
                 i3 = 0;
             }
-            int i12 = i3 >= 0 ? i3 : 0;
+            int i13 = i3 >= 0 ? i3 : 0;
             if (DialogsAdapter.this.isTransitionSupport) {
-                i12 += AndroidUtilities.dp(1000.0f);
+                i13 += AndroidUtilities.dp(1000.0f);
             }
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30));
         }
     }
 
@@ -1779,13 +1777,15 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
     }
 
     public int getItemHeight(int i) {
-        int dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f);
+        int dp;
         if (((ItemInternal) this.itemInternals.get(i)).viewType != 0) {
             return 0;
         }
-        if (!((ItemInternal) this.itemInternals.get(i)).isForumCell || this.collapsedView) {
-            return dp;
+        if (((ItemInternal) this.itemInternals.get(i)).isForumCell && !this.collapsedView) {
+            dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 86.0f : 91.0f);
+        } else {
+            dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f);
         }
-        return AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 86.0f : 91.0f);
+        return dp + 1;
     }
 }

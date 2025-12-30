@@ -1,69 +1,73 @@
 package com.google.android.recaptcha.internal;
 
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+
 /* loaded from: classes.dex */
-public final class zznr extends zzit implements zzkf {
-    private static final zznr zzb;
-    private int zzd;
-    private zzmu zzf;
-    private zzmo zzg;
-    private zzmx zzh;
-    private String zze = "";
-    private String zzi = "";
-    private String zzj = "";
+public abstract class zznr {
+    private static String zza = "com.google.android.recaptcha.internal.zznv";
+    private static String zzb = "com.google.common.flogger.backend.google.GooglePlatform";
+    private static String zzc = "com.google.common.flogger.backend.system.DefaultPlatform";
+    private static final String[] zzd = {"com.google.android.recaptcha.internal.zznv", "com.google.common.flogger.backend.google.GooglePlatform", "com.google.common.flogger.backend.system.DefaultPlatform"};
 
-    static {
-        zznr zznrVar = new zznr();
-        zzb = zznrVar;
-        zzit.zzD(zznr.class, zznrVar);
+    public static int zza() {
+        return zzov.zza();
     }
 
-    private zznr() {
+    public static long zzb() {
+        zznr zznrVar;
+        zznrVar = zznp.zza;
+        return zznrVar.zzc();
     }
 
-    static /* synthetic */ void zzH(zznr zznrVar, zzmo zzmoVar) {
-        zzmoVar.getClass();
-        zznrVar.zzg = zzmoVar;
-        zznrVar.zzd |= 2;
+    public static zznb zzd(String str) {
+        zznr zznrVar;
+        zznrVar = zznp.zza;
+        return zznrVar.zze(str);
     }
 
-    public static zznq zzf() {
-        return (zznq) zzb.zzp();
+    public static zznd zzf() {
+        return zzi().zza();
     }
 
-    static /* synthetic */ void zzi(zznr zznrVar, String str) {
-        str.getClass();
-        zznrVar.zze = str;
+    public static zznq zzg() {
+        zznr zznrVar;
+        zznrVar = zznp.zza;
+        return zznrVar.zzh();
     }
 
-    static /* synthetic */ void zzj(zznr zznrVar, String str) {
-        str.getClass();
-        zznrVar.zzi = str;
+    public static zzof zzi() {
+        zznr zznrVar;
+        zznrVar = zznp.zza;
+        return zznrVar.zzj();
     }
 
-    static /* synthetic */ void zzk(zznr zznrVar, String str) {
-        str.getClass();
-        zznrVar.zzj = str;
+    public static zzor zzk() {
+        return zzi().zzc();
     }
 
-    @Override // com.google.android.recaptcha.internal.zzit
-    protected final Object zzh(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return zzit.zzA(zzb, "\u0000\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001Ȉ\u0002ဉ\u0000\u0003ဉ\u0001\u0004ဉ\u0002\u0005Ȉ\u0006Ȉ", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi", "zzj"});
-        }
-        if (i2 == 3) {
-            return new zznr();
-        }
-        zznp zznpVar = null;
-        if (i2 == 4) {
-            return new zznq(zznpVar);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+    public static String zzl() {
+        zznr zznrVar;
+        zznrVar = zznp.zza;
+        return zznrVar.zzm();
     }
+
+    public static boolean zzn(String str, Level level, boolean z) {
+        zzi().zzd(str, level, z);
+        return false;
+    }
+
+    protected long zzc() {
+        return TimeUnit.MILLISECONDS.toNanos(System.currentTimeMillis());
+    }
+
+    protected abstract zznb zze(String str);
+
+    protected abstract zznq zzh();
+
+    protected zzof zzj() {
+        return zzof.zze();
+    }
+
+    protected abstract String zzm();
 }

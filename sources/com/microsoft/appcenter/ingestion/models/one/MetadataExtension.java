@@ -5,7 +5,7 @@ import java.util.Iterator;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class MetadataExtension implements Model {
     private JSONObject mMetadata = new JSONObject();
 

@@ -59,9 +59,15 @@ public interface CoroutineContext {
 
     public interface Element extends CoroutineContext {
         @Override // kotlin.coroutines.CoroutineContext
+        Object fold(Object obj, Function2 function2);
+
+        @Override // kotlin.coroutines.CoroutineContext
         Element get(Key key);
 
         Key getKey();
+
+        @Override // kotlin.coroutines.CoroutineContext
+        CoroutineContext minusKey(Key key);
 
         public static final class DefaultImpls {
             public static CoroutineContext plus(Element element, CoroutineContext context) {

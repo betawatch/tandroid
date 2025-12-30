@@ -12,6 +12,6 @@ final class bt {
     }
 
     final /* synthetic */ Task a(long j, long j2, int i, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest) {
-        return this.a.d(standardIntegrityTokenRequest.a(), j, j2, 0);
+        return this.a.d(standardIntegrityTokenRequest, j, j2, 0);
     }
 }

@@ -94,6 +94,26 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         return charSequence.subSequence(range.getStart().intValue(), range.getEndInclusive().intValue() + 1).toString();
     }
 
+    public static /* synthetic */ String substringBefore$default(String str, String str2, String str3, int i, Object obj) {
+        if ((i & 2) != 0) {
+            str3 = str;
+        }
+        return substringBefore(str, str2, str3);
+    }
+
+    public static final String substringBefore(String str, String delimiter, String missingDelimiterValue) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        Intrinsics.checkNotNullParameter(delimiter, "delimiter");
+        Intrinsics.checkNotNullParameter(missingDelimiterValue, "missingDelimiterValue");
+        int indexOf$default = indexOf$default((CharSequence) str, delimiter, 0, false, 6, (Object) null);
+        if (indexOf$default == -1) {
+            return missingDelimiterValue;
+        }
+        String substring = str.substring(0, indexOf$default);
+        Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
+        return substring;
+    }
+
     public static /* synthetic */ String substringAfter$default(String str, char c, String str2, int i, Object obj) {
         if ((i & 2) != 0) {
             str2 = str;
@@ -117,10 +137,10 @@ public abstract class StringsKt__StringsKt extends StringsKt__StringsJVMKt {
         if ((i & 2) != 0) {
             str3 = str;
         }
-        return substringAfter(str, str2, str3);
+        return StringsKt.substringAfter(str, str2, str3);
     }
 
-    public static final String substringAfter(String str, String delimiter, String missingDelimiterValue) {
+    public static String substringAfter(String str, String delimiter, String missingDelimiterValue) {
         Intrinsics.checkNotNullParameter(str, "<this>");
         Intrinsics.checkNotNullParameter(delimiter, "delimiter");
         Intrinsics.checkNotNullParameter(missingDelimiterValue, "missingDelimiterValue");

@@ -10,7 +10,7 @@ import com.stripe.android.net.StripeApiHandler;
 import com.stripe.android.util.StripeNetworkUtils;
 import java.util.concurrent.Executor;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Stripe {
     private String defaultPublishableKey;
     TokenCreator tokenCreator = new TokenCreator() { // from class: com.stripe.android.Stripe.1

@@ -571,8 +571,9 @@ public class DeleteMessagesBottomSheet extends BottomSheetWithRecyclerListView {
         Bulletin.hideVisible();
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // org.telegram.ui.Components.BottomSheetWithRecyclerListView
-    protected boolean canHighlightChildAt(View view, float f, float f2) {
+    public boolean canHighlightChildAt(View view, float f, float f2) {
         return !(view instanceof CollapseTextCell);
     }
 

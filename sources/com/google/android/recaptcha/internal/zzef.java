@@ -1,27 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Iterator;
-import java.util.List;
-import kotlin.collections.ArraysKt;
-import kotlin.collections.CollectionsKt;
+import kotlin.jvm.functions.Function0;
 
 /* loaded from: classes.dex */
-public final class zzef {
-    private List zza = CollectionsKt.emptyList();
+public final class zzef implements Function0 {
+    public static final zzef zza = new zzef();
 
-    public final long zza(long[] jArr) {
-        Iterator it = CollectionsKt.plus(this.zza, ArraysKt.toList(jArr)).iterator();
-        if (!it.hasNext()) {
-            throw new UnsupportedOperationException("Empty collection can't be reduced.");
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzcr.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzcr) zzb;
         }
-        Object next = it.next();
-        while (it.hasNext()) {
-            next = Long.valueOf(((Number) next).longValue() ^ ((Number) it.next()).longValue());
-        }
-        return ((Number) next).longValue();
-    }
-
-    public final void zzb(long[] jArr) {
-        this.zza = ArraysKt.toList(jArr);
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

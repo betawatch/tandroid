@@ -67,7 +67,7 @@ public class ActionBarMenuSubItem extends FrameLayout {
 
     public ActionBarMenuSubItem(Context context, int i, boolean z, boolean z2, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        this.selectorRad = 6;
+        this.selectorRad = 12;
         this.itemHeight = 48;
         this.resourcesProvider = resourcesProvider;
         this.top = z;
@@ -241,6 +241,20 @@ public class ActionBarMenuSubItem extends FrameLayout {
         }
         this.imageView.setVisibility(4);
         this.backupImageView.setImage(imageLocation, str, drawable, obj);
+    }
+
+    public void setIconColorImage(int i) {
+        BackupImageView backupImageView = this.backupImageView;
+        if (backupImageView != null) {
+            backupImageView.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.SRC_IN));
+        }
+    }
+
+    public void setImageSize(int i, int i2) {
+        BackupImageView backupImageView = this.backupImageView;
+        if (backupImageView != null) {
+            backupImageView.setLayoutParams(LayoutHelper.createFrame(i, i2, (LocaleController.isRTL ? 5 : 3) | 16));
+        }
     }
 
     public ActionBarMenuSubItem setColors(int i, int i2) {

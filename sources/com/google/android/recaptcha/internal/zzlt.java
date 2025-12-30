@@ -1,53 +1,73 @@
 package com.google.android.recaptcha.internal;
 
-import sun.misc.Unsafe;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.CoroutineScope;
 
 /* loaded from: classes.dex */
-final class zzlt extends zzlu {
-    zzlt(Unsafe unsafe) {
-        super(unsafe);
+final class zzlt extends SuspendLambda implements Function2 {
+    Object zza;
+    int zzb;
+    final /* synthetic */ zzhk zzc;
+    final /* synthetic */ zzly zzd;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzlt(zzhk zzhkVar, zzly zzlyVar, Continuation continuation) {
+        super(2, continuation);
+        this.zzc = zzhkVar;
+        this.zzd = zzlyVar;
     }
 
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final double zza(Object obj, long j) {
-        return Double.longBitsToDouble(this.zza.getLong(obj, j));
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        return new zzlt(this.zzc, this.zzd, continuation);
     }
 
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final float zzb(Object obj, long j) {
-        return Float.intBitsToFloat(this.zza.getInt(obj, j));
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzlt) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final void zzc(Object obj, long j, boolean z) {
-        if (zzlv.zzb) {
-            zzlv.zzD(obj, j, r3 ? (byte) 1 : (byte) 0);
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x003c, code lost:
+    
+        if (com.google.android.recaptcha.internal.zzhj.zzb(r1, (com.google.android.recaptcha.internal.zzhf) r6, r5) == r0) goto L14;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0042, code lost:
+    
+        return r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x002f, code lost:
+    
+        if (r6 != r0) goto L9;
+     */
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object invokeSuspend(Object obj) {
+        zzhk zzhkVar;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.zzb;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            zzhkVar = this.zzc;
+            zzly zzlyVar = this.zzd;
+            this.zza = zzhkVar;
+            this.zzb = 1;
+            obj = new zzhf(42, new zzlx(zzlyVar, null), null);
         } else {
-            zzlv.zzE(obj, j, r3 ? (byte) 1 : (byte) 0);
+            if (i != 1) {
+                ResultKt.throwOnFailure(obj);
+                return Unit.INSTANCE;
+            }
+            zzhkVar = (zzhk) this.zza;
+            ResultKt.throwOnFailure(obj);
         }
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final void zzd(Object obj, long j, byte b) {
-        if (zzlv.zzb) {
-            zzlv.zzD(obj, j, b);
-        } else {
-            zzlv.zzE(obj, j, b);
-        }
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final void zze(Object obj, long j, double d) {
-        this.zza.putLong(obj, j, Double.doubleToLongBits(d));
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final void zzf(Object obj, long j, float f) {
-        this.zza.putInt(obj, j, Float.floatToIntBits(f));
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final boolean zzg(Object obj, long j) {
-        return zzlv.zzb ? zzlv.zzt(obj, j) : zzlv.zzu(obj, j);
+        this.zza = null;
+        this.zzb = 2;
     }
 }

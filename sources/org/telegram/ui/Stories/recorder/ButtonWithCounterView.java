@@ -89,6 +89,11 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         this(context, true, resourcesProvider);
     }
 
+    public ButtonWithCounterView setRound() {
+        setRoundRadius(24);
+        return this;
+    }
+
     public void setRoundRadius(int i) {
         this.radiusDp = i;
         if (this.filled) {
@@ -275,6 +280,10 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
 
     public boolean isTimerActive() {
         return this.timerSeconds > 0;
+    }
+
+    public void setText(CharSequence charSequence) {
+        setText(charSequence, false);
     }
 
     public void setText(CharSequence charSequence, boolean z) {

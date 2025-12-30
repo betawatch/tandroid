@@ -2,6 +2,7 @@ package com.google.android.play.core.integrity;
 
 import android.app.Activity;
 import com.google.android.gms.tasks.Task;
+import java.util.Set;
 
 /* loaded from: classes.dex */
 public interface StandardIntegrityManager {
@@ -41,13 +42,19 @@ public interface StandardIntegrityManager {
             public abstract StandardIntegrityTokenRequest build();
 
             public abstract Builder setRequestHash(String str);
+
+            public abstract Builder setVerdictOptOut(Set<Integer> set);
         }
 
         public static Builder builder() {
-            return new f();
+            f fVar = new f();
+            fVar.setVerdictOptOut(com.google.android.play.integrity.internal.as.h());
+            return fVar;
         }
 
-        public abstract String a();
+        public abstract String requestHash();
+
+        public abstract Set<Integer> verdictOptOut();
     }
 
     Task<StandardIntegrityTokenProvider> prepareIntegrityToken(PrepareIntegrityTokenRequest prepareIntegrityTokenRequest);

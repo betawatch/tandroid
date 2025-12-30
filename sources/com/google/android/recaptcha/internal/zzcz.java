@@ -1,64 +1,86 @@
 package com.google.android.recaptcha.internal;
 
-import java.lang.reflect.Proxy;
+import android.content.Context;
+import android.content.pm.InstallSourceInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import com.google.android.gms.common.GoogleApiAvailabilityLight;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
-public final class zzcz implements zzdd {
-    public static final zzcz zza = new zzcz();
+public final class zzcz implements zzda {
+    private final GoogleApiAvailabilityLight zza;
 
-    private zzcz() {
+    public zzcz() {
+        this.zza = GoogleApiAvailabilityLight.getInstance();
     }
 
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        int length = zzpqVarArr.length;
-        if (length != 4 && length != 5) {
-            throw new zzae(4, 3, null);
-        }
-        Object zza2 = zzcjVar.zzc().zza(zzpqVarArr[0]);
-        if (true != (zza2 instanceof Integer)) {
-            zza2 = null;
-        }
-        Integer num = (Integer) zza2;
-        if (num == null) {
-            throw new zzae(4, 5, null);
-        }
-        int intValue = num.intValue();
-        Object zza3 = zzcjVar.zzc().zza(zzpqVarArr[1]);
-        if (true != (zza3 instanceof Integer)) {
-            zza3 = null;
-        }
-        Integer num2 = (Integer) zza3;
-        if (num2 == null) {
-            throw new zzae(4, 5, null);
-        }
-        int intValue2 = num2.intValue();
-        Object zza4 = zzcjVar.zzc().zza(zzpqVarArr[2]);
-        if (true != (zza4 instanceof String)) {
-            zza4 = null;
-        }
-        String str = (String) zza4;
-        if (str == null) {
-            throw new zzae(4, 5, null);
-        }
-        String zza5 = zzcjVar.zzh().zza(str);
-        Object zza6 = zzcjVar.zzc().zza(zzpqVarArr[3]);
-        if (true != (zza6 instanceof String)) {
-            zza6 = null;
-        }
-        String str2 = (String) zza6;
-        if (str2 == null) {
-            throw new zzae(4, 5, null);
-        }
-        String zza7 = zzcjVar.zzh().zza(str2);
-        Object zza8 = length == 5 ? zzcjVar.zzc().zza(zzpqVarArr[4]) : null;
-        zzcg zzcgVar = new zzcg(intValue2);
+    public zzcz(GoogleApiAvailabilityLight googleApiAvailabilityLight) {
+        this.zza = googleApiAvailabilityLight;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0021, code lost:
+    
+        if (r5 == null) goto L13;
+     */
+    @Override // com.google.android.recaptcha.internal.zzda
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String zza(Context context) {
+        PackageManager packageManager;
+        String packageName;
+        String installerPackageName;
+        InstallSourceInfo installSourceInfo;
+        String str = "";
         try {
-            Class zza9 = zzci.zza(zza5);
-            zzcjVar.zzc().zzf(intValue, Proxy.newProxyInstance(zza9.getClassLoader(), new Class[]{zza9}, new zzch(zzcgVar, zza7, zza8)));
-            zzcjVar.zzc().zzf(i, zzcgVar);
-        } catch (Exception e) {
-            throw new zzae(6, 20, e);
+            packageManager = context.getPackageManager();
+            packageName = context.getPackageName();
+        } catch (Exception unused) {
         }
+        if (Build.VERSION.SDK_INT >= 30) {
+            installSourceInfo = packageManager.getInstallSourceInfo(packageName);
+            installerPackageName = installSourceInfo.getInitiatingPackageName();
+            if (installerPackageName == null) {
+                return str;
+            }
+            str = installerPackageName;
+            return str;
+        }
+        installerPackageName = packageManager.getInstallerPackageName(packageName);
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzda
+    public final boolean zzb(Context context) {
+        return zzd(context) == 3;
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzda
+    public final boolean zzc(Context context) {
+        try {
+            List<PackageInfo> installedPackages = context.getPackageManager().getInstalledPackages(0);
+            if ((installedPackages instanceof Collection) && installedPackages.isEmpty()) {
+                return false;
+            }
+            Iterator<T> it = installedPackages.iterator();
+            while (it.hasNext()) {
+                if (Intrinsics.areEqual(((PackageInfo) it.next()).packageName, "com.android.vending")) {
+                    return true;
+                }
+            }
+            return false;
+        } catch (Exception unused) {
+            return false;
+        }
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzda
+    public final int zzd(Context context) {
+        int isGooglePlayServicesAvailable = this.zza.isGooglePlayServicesAvailable(context);
+        return (isGooglePlayServicesAvailable == 1 || isGooglePlayServicesAvailable == 3 || isGooglePlayServicesAvailable == 9) ? 4 : 3;
     }
 }

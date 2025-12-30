@@ -153,6 +153,7 @@ import org.telegram.ui.bots.ChannelAffiliateProgramsFragment;
 /* loaded from: classes5.dex */
 public class StarsIntroActivity extends GradientHeaderActivity implements NotificationCenter.NotificationCenterDelegate {
     private static DecimalFormat floatFormat;
+    private static DecimalFormat floatFormat2;
     private FrameLayout aboveTitleView;
     private UniversalAdapter adapter;
     private LinearLayout balanceLayout;
@@ -3707,6 +3708,45 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         return spannableStringBuilder;
     }
 
+    public static SpannableStringBuilder replaceDiamond(CharSequence charSequence) {
+        return replaceDiamond(charSequence, 0.9f, null, 0.0f, 0.0f, 1.0f);
+    }
+
+    public static SpannableStringBuilder replaceDiamond(CharSequence charSequence, float f) {
+        return replaceDiamond(charSequence, f, null, 0.0f, 0.0f, 1.0f);
+    }
+
+    public static SpannableStringBuilder replaceDiamond(CharSequence charSequence, float f, ColoredImageSpan[] coloredImageSpanArr, float f2, float f3, float f4) {
+        SpannableStringBuilder spannableStringBuilder;
+        ColoredImageSpan coloredImageSpan;
+        if (charSequence == null) {
+            return null;
+        }
+        if (!(charSequence instanceof SpannableStringBuilder)) {
+            spannableStringBuilder = new SpannableStringBuilder(charSequence);
+        } else {
+            spannableStringBuilder = (SpannableStringBuilder) charSequence;
+        }
+        SpannableString spannableString = new SpannableString("💎 ");
+        if (coloredImageSpanArr == null || (coloredImageSpan = coloredImageSpanArr[0]) == null) {
+            coloredImageSpan = new ColoredImageSpan(R.drawable.diamond);
+            if (coloredImageSpanArr != null) {
+                coloredImageSpanArr[0] = coloredImageSpan;
+            }
+        }
+        coloredImageSpan.recolorDrawable = false;
+        coloredImageSpan.translate(f2, f3);
+        coloredImageSpan.spaceScaleX = f4;
+        coloredImageSpan.setScale(f, f);
+        spannableString.setSpan(coloredImageSpan, 0, spannableString.length() - 1, 33);
+        AndroidUtilities.replaceMultipleCharSequence("💎️", spannableStringBuilder, "💎");
+        AndroidUtilities.replaceMultipleCharSequence("💎 ", spannableStringBuilder, "💎");
+        AndroidUtilities.replaceMultipleCharSequence("💎", spannableStringBuilder, spannableString);
+        AndroidUtilities.replaceMultipleCharSequence("XTR ", spannableStringBuilder, "XTR");
+        AndroidUtilities.replaceMultipleCharSequence("XTR", spannableStringBuilder, spannableString);
+        return spannableStringBuilder;
+    }
+
     public static SpannableStringBuilder replaceStars(CharSequence charSequence, ColoredImageSpan[] coloredImageSpanArr) {
         return replaceStars(false, charSequence, coloredImageSpanArr);
     }
@@ -7219,6 +7259,19 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         int i = starGift.availability_remains;
         int i2 = starGift.availability_total;
         textView.setText(i <= 0 ? LocaleController.formatPluralStringComma("Gift2Availability2ValueNone", i2) : LocaleController.formatPluralStringComma("Gift2Availability4Value", i, LocaleController.formatNumber(i2, ',')));
+    }
+
+    public static String formatTON(long j) {
+        if (floatFormat2 == null) {
+            floatFormat2 = new DecimalFormat("0.####", new DecimalFormatSymbols(Locale.US));
+        }
+        if (j % 1000000000 != 0) {
+            return floatFormat2.format(j / 1.0E9d);
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append(j < 0 ? "-" : "");
+        sb.append(LocaleController.formatNumber(Math.abs(j / 1000000000), ','));
+        return sb.toString();
     }
 
     public static CharSequence formatStarsAmount(TL_stars.StarsAmount starsAmount) {

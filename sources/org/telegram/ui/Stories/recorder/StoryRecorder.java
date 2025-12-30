@@ -517,48 +517,6 @@ public class StoryRecorder implements NotificationCenter.NotificationCenterDeleg
             return sourceView;
         }
 
-        class 3 extends SourceView {
-            final /* synthetic */ FrameLayout val$floatingButton;
-
-            3(FrameLayout frameLayout) {
-                this.val$floatingButton = frameLayout;
-            }
-
-            @Override // org.telegram.ui.Stories.recorder.StoryRecorder.SourceView
-            protected void show(boolean z) {
-                this.val$floatingButton.setVisibility(0);
-            }
-
-            @Override // org.telegram.ui.Stories.recorder.StoryRecorder.SourceView
-            protected void hide() {
-                final FrameLayout frameLayout = this.val$floatingButton;
-                frameLayout.post(new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryRecorder$SourceView$3$$ExternalSyntheticLambda0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        frameLayout.setVisibility(8);
-                    }
-                });
-            }
-        }
-
-        public static SourceView fromFloatingButton(FrameLayout frameLayout) {
-            if (frameLayout == null) {
-                return null;
-            }
-            3 r0 = new 3(frameLayout);
-            int[] iArr = new int[2];
-            frameLayout.getChildAt(0).getLocationOnScreen(iArr);
-            r0.screenRect.set(iArr[0], iArr[1], r2 + r3.getWidth(), iArr[1] + r3.getHeight());
-            r0.hasShadow = true;
-            Paint paint = new Paint(1);
-            r0.backgroundPaint = paint;
-            paint.setColor(Theme.getColor(Theme.key_chats_actionBackground));
-            r0.iconDrawable = frameLayout.getContext().getResources().getDrawable(R.drawable.story_camera).mutate();
-            r0.iconSize = AndroidUtilities.dp(56.0f);
-            r0.rounding = Math.max(r0.screenRect.width(), r0.screenRect.height()) / 2.0f;
-            return r0;
-        }
-
         class 4 extends SourceView {
             final /* synthetic */ BackupImageView val$imageView;
 

@@ -16,6 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
@@ -581,8 +582,8 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     View view3 = item.view;
                     if (view3 != null) {
                         AndroidUtilities.removeFromParent(view3);
-                        if (itemViewType == -1 || itemViewType == -3) {
-                            createFrame = LayoutHelper.createFrame(-1, -1.0f);
+                        if (itemViewType == -1) {
+                            createFrame = LayoutHelper.createFrame(-1, item.intValue);
                         } else {
                             createFrame = LayoutHelper.createFrame(-2, -2.0f);
                         }
@@ -684,7 +685,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 if (itemViewType == 7 || itemViewType == 8) {
                     TextInfoPrivacyCell textInfoPrivacyCell2 = (TextInfoPrivacyCell) viewHolder.itemView;
                     if (TextUtils.isEmpty(item.text)) {
-                        textInfoPrivacyCell2.setFixedSize(itemViewType == 8 ? 220 : 12);
+                        textInfoPrivacyCell2.setFixedSize(itemViewType == 8 ? NotificationCenter.starBalanceUpdated : 12);
                         textInfoPrivacyCell2.setText("");
                     } else {
                         textInfoPrivacyCell2.setFixedSize(0);

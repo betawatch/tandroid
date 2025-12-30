@@ -3,7 +3,7 @@ package kotlin;
 import java.io.Serializable;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class Pair implements Serializable {
     private final Object first;
     private final Object second;

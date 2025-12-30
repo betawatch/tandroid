@@ -1,93 +1,55 @@
 package com.google.android.recaptcha.internal;
 
-import android.content.Context;
-import java.io.File;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Iterator;
-import kotlin.collections.CharIterator;
+import android.os.Build;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.ranges.CharRange;
-import kotlin.text.StringsKt;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function2;
 
 /* loaded from: classes.dex */
-public final class zzy implements zzh {
-    private final Context zza;
-    private final String zzb = "rce_";
-    private final zzad zzc;
+final class zzy extends SuspendLambda implements Function2 {
+    final /* synthetic */ zzz zza;
 
-    public zzy(Context context) {
-        this.zza = context;
-        this.zzc = new zzad(context);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzy(zzz zzzVar, Continuation continuation) {
+        super(2, continuation);
+        this.zza = zzzVar;
     }
 
-    @Override // com.google.android.recaptcha.internal.zzh
-    public final String zza(String str) {
-        File file = new File(this.zza.getCacheDir(), this.zzb.concat(String.valueOf(str)));
-        if (file.exists()) {
-            return new String(zzad.zza(file), StandardCharsets.UTF_8);
-        }
-        return null;
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        return new zzy(this.zza, continuation);
     }
 
-    @Override // com.google.android.recaptcha.internal.zzh
-    public final void zzb() {
-        try {
-            File[] listFiles = this.zza.getCacheDir().listFiles();
-            if (listFiles != null) {
-                ArrayList arrayList = new ArrayList();
-                for (File file : listFiles) {
-                    if (StringsKt.startsWith$default(file.getName(), this.zzb, false, 2, null)) {
-                        arrayList.add(file);
-                    }
-                }
-                Iterator it = arrayList.iterator();
-                while (it.hasNext()) {
-                    ((File) it.next()).delete();
-                }
-            }
-        } catch (Exception unused) {
-        }
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzy) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
-    @Override // com.google.android.recaptcha.internal.zzh
-    public final void zzc(String str, String str2) {
-        CharRange charRange = new CharRange('A', 'z');
-        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(charRange, 10));
-        Iterator it = charRange.iterator();
-        while (it.hasNext()) {
-            arrayList.add(Character.valueOf(((CharIterator) it).nextChar()));
-        }
-        String joinToString$default = CollectionsKt.joinToString$default(CollectionsKt.shuffled(arrayList).subList(0, 8), "", null, null, 0, null, null, 62, null);
-        File file = new File(this.zza.getCacheDir(), this.zzb.concat(String.valueOf(joinToString$default)));
-        zzad.zzb(file, String.valueOf(str2).getBytes(StandardCharsets.UTF_8));
-        file.renameTo(new File(this.zza.getCacheDir(), this.zzb.concat(String.valueOf(str))));
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzh
-    public final boolean zzd(String str) {
-        try {
-            File[] listFiles = this.zza.getCacheDir().listFiles();
-            File file = null;
-            if (listFiles != null) {
-                int length = listFiles.length;
-                int i = 0;
-                while (true) {
-                    if (i >= length) {
-                        break;
-                    }
-                    File file2 = listFiles[i];
-                    if (Intrinsics.areEqual(file2.getName(), this.zzb + str)) {
-                        file = file2;
-                        break;
-                    }
-                    i++;
-                }
-            }
-            return file != null;
-        } catch (Exception unused) {
-            return false;
-        }
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        ResultKt.throwOnFailure(obj);
+        zzyu zzf = zzyx.zzf();
+        zzz zzzVar = this.zza;
+        zzyw zzb = zzz.zzb(zzzVar, Build.MANUFACTURER);
+        zzyw zzb2 = zzz.zzb(zzzVar, Build.MODEL);
+        zzyw zzb3 = zzz.zzb(zzzVar, Build.DEVICE);
+        zzyw zzb4 = zzz.zzb(zzzVar, Build.HARDWARE);
+        zzyw zzb5 = zzz.zzb(zzzVar, Build.FINGERPRINT);
+        zzyw zzb6 = zzz.zzb(zzzVar, Build.PRODUCT);
+        zzyw zzb7 = zzz.zzb(zzzVar, Build.BOARD);
+        zzyw zzb8 = zzz.zzb(zzzVar, Build.BRAND);
+        zzyw zzb9 = zzz.zzb(zzzVar, ArraysKt.joinToString$default(Build.SUPPORTED_ABIS, ",", "[", "]", 0, (CharSequence) null, (Function1) null, 56, (Object) null));
+        long j = Build.TIME;
+        zzyv zzf2 = zzyw.zzf();
+        zzf2.zzv(j);
+        zzf.zze(CollectionsKt.listOf((Object[]) new zzyw[]{zzb, zzb2, zzb3, zzb4, zzb5, zzb6, zzb7, zzb8, zzb9, (zzyw) zzf2.zzk(), zzz.zzb(zzzVar, Build.ID), zzz.zzb(zzzVar, Build.BOOTLOADER), zzz.zzb(zzzVar, Build.DISPLAY), zzz.zzb(zzzVar, Build.TYPE), zzz.zzb(zzzVar, Build.TAGS)}));
+        return zzas.zzb(zzzVar, (zzyx) zzf.zzk());
     }
 }

@@ -4,7 +4,7 @@ import android.net.Uri;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ReleaseDetails {
     private String distributionGroupId;
     private Uri downloadUrl;

@@ -17,8 +17,10 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$ObjectRef;
+import kotlin.jvm.internal.TypeIntrinsics;
 import kotlin.sequences.Sequence;
 import kotlin.sequences.SequencesKt;
 import kotlinx.coroutines.InternalCompletionHandler;
@@ -27,6 +29,11 @@ import kotlinx.coroutines.internal.LockFreeLinkedListKt;
 import kotlinx.coroutines.internal.LockFreeLinkedListNode;
 import kotlinx.coroutines.internal.OpDescriptor;
 import kotlinx.coroutines.internal.Symbol;
+import kotlinx.coroutines.selects.SelectClause0;
+import kotlinx.coroutines.selects.SelectClause0Impl;
+import kotlinx.coroutines.selects.SelectClause1;
+import kotlinx.coroutines.selects.SelectClause1Impl;
+import kotlinx.coroutines.selects.SelectInstance;
 
 /* loaded from: classes3.dex */
 public class JobSupport implements Job, ChildJob, ParentJob {
@@ -67,7 +74,12 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         this._state$volatile = z ? JobSupportKt.EMPTY_ACTIVE : JobSupportKt.EMPTY_NEW;
     }
 
-    @Override // kotlin.coroutines.CoroutineContext
+    @Override // kotlinx.coroutines.Job
+    public /* synthetic */ void cancel() {
+        cancel((CancellationException) null);
+    }
+
+    @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
     public Object fold(Object obj, Function2 function2) {
         return Job.DefaultImpls.fold(this, obj, function2);
     }
@@ -77,7 +89,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         return Job.DefaultImpls.get(this, key);
     }
 
-    @Override // kotlin.coroutines.CoroutineContext
+    @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
     public CoroutineContext minusKey(CoroutineContext.Key key) {
         return Job.DefaultImpls.minusKey(this, key);
     }
@@ -85,6 +97,11 @@ public class JobSupport implements Job, ChildJob, ParentJob {
     @Override // kotlin.coroutines.CoroutineContext
     public CoroutineContext plus(CoroutineContext coroutineContext) {
         return Job.DefaultImpls.plus(this, coroutineContext);
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public Job plus(Job job) {
+        return Job.DefaultImpls.plus((Job) this, job);
     }
 
     @Override // kotlin.coroutines.CoroutineContext.Element
@@ -314,6 +331,7 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         return (state$kotlinx_coroutines_core instanceof Incomplete) && ((Incomplete) state$kotlinx_coroutines_core).isActive();
     }
 
+    @Override // kotlinx.coroutines.Job
     public final boolean isCompleted() {
         return !(getState$kotlinx_coroutines_core() instanceof Incomplete);
     }
@@ -699,9 +717,46 @@ public class JobSupport implements Job, ChildJob, ParentJob {
         return joinSuspend == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? joinSuspend : Unit.INSTANCE;
     }
 
+    @Override // kotlinx.coroutines.Job
+    public final SelectClause0 getOnJoin() {
+        JobSupport$onJoin$1 jobSupport$onJoin$1 = JobSupport$onJoin$1.INSTANCE;
+        Intrinsics.checkNotNull(jobSupport$onJoin$1, "null cannot be cast to non-null type kotlin.Function3<@[ParameterName(name = 'clauseObject')] kotlin.Any, @[ParameterName(name = 'select')] kotlinx.coroutines.selects.SelectInstance<*>, @[ParameterName(name = 'param')] kotlin.Any?, kotlin.Unit>{ kotlinx.coroutines.selects.SelectKt.RegistrationFunction }");
+        return new SelectClause0Impl(this, (Function3) TypeIntrinsics.beforeCheckcastToFunctionOfArity(jobSupport$onJoin$1, 3), null, 4, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void registerSelectForOnJoin(SelectInstance selectInstance, Object obj) {
+        if (!joinInternal()) {
+            selectInstance.selectInRegistrationPhase(Unit.INSTANCE);
+        } else {
+            selectInstance.disposeOnCompletion(JobKt__JobKt.invokeOnCompletion$default(this, false, false, new SelectOnJoinCompletionHandler(selectInstance), 3, null));
+        }
+    }
+
+    private final class SelectOnJoinCompletionHandler extends JobNode {
+        public SelectOnJoinCompletionHandler(SelectInstance selectInstance) {
+        }
+
+        @Override // kotlinx.coroutines.InternalCompletionHandler
+        public void invoke(Throwable th) {
+            Unit unit = Unit.INSTANCE;
+            throw null;
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: protected */
     public String cancellationExceptionMessage() {
         return "Job was cancelled";
+    }
+
+    @Override // kotlinx.coroutines.Job
+    public /* synthetic */ boolean cancel(Throwable th) {
+        Throwable jobCancellationException;
+        if (th == null || (jobCancellationException = toCancellationException$default(this, th, null, 1, null)) == null) {
+            jobCancellationException = new JobCancellationException(cancellationExceptionMessage(), null, this);
+        }
+        cancelInternal(jobCancellationException);
+        return true;
     }
 
     public void cancelInternal(Throwable th) {
@@ -1178,5 +1233,52 @@ public class JobSupport implements Job, ChildJob, ParentJob {
             DebugProbesKt.probeCoroutineSuspended(continuation);
         }
         return result;
+    }
+
+    protected final SelectClause1 getOnAwaitInternal() {
+        JobSupport$onAwaitInternal$1 jobSupport$onAwaitInternal$1 = JobSupport$onAwaitInternal$1.INSTANCE;
+        Intrinsics.checkNotNull(jobSupport$onAwaitInternal$1, "null cannot be cast to non-null type kotlin.Function3<@[ParameterName(name = 'clauseObject')] kotlin.Any, @[ParameterName(name = 'select')] kotlinx.coroutines.selects.SelectInstance<*>, @[ParameterName(name = 'param')] kotlin.Any?, kotlin.Unit>{ kotlinx.coroutines.selects.SelectKt.RegistrationFunction }");
+        Function3 function3 = (Function3) TypeIntrinsics.beforeCheckcastToFunctionOfArity(jobSupport$onAwaitInternal$1, 3);
+        JobSupport$onAwaitInternal$2 jobSupport$onAwaitInternal$2 = JobSupport$onAwaitInternal$2.INSTANCE;
+        Intrinsics.checkNotNull(jobSupport$onAwaitInternal$2, "null cannot be cast to non-null type kotlin.Function3<@[ParameterName(name = 'clauseObject')] kotlin.Any, @[ParameterName(name = 'param')] kotlin.Any?, @[ParameterName(name = 'clauseResult')] kotlin.Any?, kotlin.Any?>{ kotlinx.coroutines.selects.SelectKt.ProcessResultFunction }");
+        return new SelectClause1Impl(this, function3, (Function3) TypeIntrinsics.beforeCheckcastToFunctionOfArity(jobSupport$onAwaitInternal$2, 3), null, 8, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void onAwaitInternalRegFunc(SelectInstance selectInstance, Object obj) {
+        Object state$kotlinx_coroutines_core;
+        do {
+            state$kotlinx_coroutines_core = getState$kotlinx_coroutines_core();
+            if (!(state$kotlinx_coroutines_core instanceof Incomplete)) {
+                if (!(state$kotlinx_coroutines_core instanceof CompletedExceptionally)) {
+                    state$kotlinx_coroutines_core = JobSupportKt.unboxState(state$kotlinx_coroutines_core);
+                }
+                selectInstance.selectInRegistrationPhase(state$kotlinx_coroutines_core);
+                return;
+            }
+        } while (startInternal(state$kotlinx_coroutines_core) < 0);
+        selectInstance.disposeOnCompletion(JobKt__JobKt.invokeOnCompletion$default(this, false, false, new SelectOnAwaitCompletionHandler(selectInstance), 3, null));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Object onAwaitInternalProcessResFunc(Object obj, Object obj2) {
+        if (obj2 instanceof CompletedExceptionally) {
+            throw ((CompletedExceptionally) obj2).cause;
+        }
+        return obj2;
+    }
+
+    private final class SelectOnAwaitCompletionHandler extends JobNode {
+        public SelectOnAwaitCompletionHandler(SelectInstance selectInstance) {
+        }
+
+        @Override // kotlinx.coroutines.InternalCompletionHandler
+        public void invoke(Throwable th) {
+            Object state$kotlinx_coroutines_core = JobSupport.this.getState$kotlinx_coroutines_core();
+            if (!(state$kotlinx_coroutines_core instanceof CompletedExceptionally)) {
+                JobSupportKt.unboxState(state$kotlinx_coroutines_core);
+            }
+            throw null;
+        }
     }
 }

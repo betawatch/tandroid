@@ -36,6 +36,18 @@ public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDisp
     }
 
     @Override // kotlinx.coroutines.Delay
+    public void scheduleResumeAfterDelay(long j, CancellableContinuation cancellableContinuation) {
+        Executor executor = getExecutor();
+        ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;
+        ScheduledFuture scheduleBlock = scheduledExecutorService != null ? scheduleBlock(scheduledExecutorService, new ResumeUndispatchedRunnable(this, cancellableContinuation), cancellableContinuation.getContext(), j) : null;
+        if (scheduleBlock != null) {
+            JobKt.cancelFutureOnCancellation(cancellableContinuation, scheduleBlock);
+        } else {
+            DefaultExecutor.INSTANCE.scheduleResumeAfterDelay(j, cancellableContinuation);
+        }
+    }
+
+    @Override // kotlinx.coroutines.Delay
     public DisposableHandle invokeOnTimeout(long j, Runnable runnable, CoroutineContext coroutineContext) {
         Executor executor = getExecutor();
         ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;

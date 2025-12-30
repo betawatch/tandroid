@@ -1,40 +1,18 @@
 package com.google.android.recaptcha.internal;
 
+import kotlin.jvm.functions.Function0;
+
 /* loaded from: classes.dex */
-public final class zzia extends zzin implements zzkf {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private zzia() {
-        super(r0);
-        zzib zzibVar;
-        zzibVar = zzib.zzb;
-    }
+public final class zzia implements Function0 {
+    public static final zzia zza = new zzia();
 
-    public final zzia zzd(int i) {
-        if (!this.zza.zzG()) {
-            zzn();
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzhn.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzhn) zzb;
         }
-        ((zzib) this.zza).zze = i;
-        return this;
-    }
-
-    public final zzia zze(long j) {
-        if (!this.zza.zzG()) {
-            zzn();
-        }
-        ((zzib) this.zza).zzd = j;
-        return this;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzia(zzhz zzhzVar) {
-        super(r1);
-        zzib zzibVar;
-        zzibVar = zzib.zzb;
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

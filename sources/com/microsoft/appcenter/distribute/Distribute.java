@@ -52,7 +52,7 @@ import java.util.Map;
 import org.json.JSONException;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Distribute extends AbstractAppCenterService {
     private static Distribute sInstance;
     private String mAppSecret;

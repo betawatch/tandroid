@@ -4,7 +4,7 @@ import android.content.Context;
 import com.microsoft.appcenter.distribute.ReleaseDetails;
 import com.microsoft.appcenter.distribute.download.ReleaseDownloader;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class AbstractReleaseDownloader implements ReleaseDownloader {
     private boolean mCancelled;
     protected final Context mContext;

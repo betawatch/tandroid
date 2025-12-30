@@ -1,22 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.Intrinsics;
-import kotlin.jvm.internal.Lambda;
+import kotlin.jvm.functions.Function0;
 
 /* loaded from: classes.dex */
-final class zzbw extends Lambda implements Function1 {
-    final /* synthetic */ zzca zza;
+public final /* synthetic */ class zzbw implements Function0 {
+    public static final /* synthetic */ int zza = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzbw(zzca zzcaVar) {
-        super(1);
-        this.zza = zzcaVar;
-    }
-
-    @Override // kotlin.jvm.functions.Function1
-    public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
-        Intrinsics.checkNotNull((zzpq) obj);
-        return "";
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        throw null;
     }
 }

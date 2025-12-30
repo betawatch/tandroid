@@ -94,7 +94,6 @@ public abstract class BaseFragment {
     }
 
     public interface PreviewDelegate {
-        void finishFragment();
     }
 
     public boolean allowFinishFragmentInsteadOfRemoveFromStack() {
@@ -219,6 +218,9 @@ public abstract class BaseFragment {
     }
 
     public void saveSelfArgs(Bundle bundle) {
+    }
+
+    public void setPreviewDelegate(PreviewDelegate previewDelegate) {
     }
 
     public void setPreviewOpenedProgress(float f) {
@@ -567,12 +569,9 @@ public abstract class BaseFragment {
     }
 
     public void finishFragment() {
-        PreviewDelegate previewDelegate;
         Dialog dialog = this.parentDialog;
         if (dialog != null) {
             dialog.dismiss();
-        } else if (this.inPreviewMode && (previewDelegate = this.previewDelegate) != null) {
-            previewDelegate.finishFragment();
         } else {
             finishFragment(true);
         }
@@ -1274,10 +1273,6 @@ public abstract class BaseFragment {
         return ColorUtils.calculateLuminance(color) > 0.699999988079071d;
     }
 
-    public void setPreviewDelegate(PreviewDelegate previewDelegate) {
-        this.previewDelegate = previewDelegate;
-    }
-
     public void resetFragment() {
         if (this.isFinished) {
             clearViews();
@@ -1417,6 +1412,21 @@ public abstract class BaseFragment {
         if (storyViewer2 == null) {
         }
         return storyViewer2;
+    }
+
+    public void setTitleOverlayTextIfActionBarAttached(String str, int i, Runnable runnable) {
+        ActionBar actionBar = this.actionBar;
+        if (actionBar == null || !actionBar.shouldAddToContainer()) {
+            return;
+        }
+        setTitleOverlayText(str, i, runnable);
+    }
+
+    public void setTitleOverlayText(String str, int i, Runnable runnable) {
+        ActionBar actionBar = this.actionBar;
+        if (actionBar != null) {
+            actionBar.setTitleOverlayText(str, i, runnable);
+        }
     }
 
     public void removeSheet(AttachedSheet attachedSheet) {

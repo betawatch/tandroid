@@ -21,7 +21,7 @@ final class ai extends com.google.android.play.integrity.internal.o {
         String str;
         this.a.a.v(this.c);
         this.b.d("onRequestIntegrityToken", new Object[0]);
-        kVar = this.a.e;
+        kVar = this.a.f;
         ApiException a = kVar.a(bundle);
         if (a != null) {
             this.c.trySetException(a);

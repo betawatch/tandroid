@@ -1,6 +1,7 @@
 package kotlinx.coroutines;
 
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.Future;
 import kotlin.coroutines.CoroutineContext;
 
 /* loaded from: classes3.dex */
@@ -15,6 +16,10 @@ public abstract class JobKt {
 
     public static final void cancelChildren(CoroutineContext coroutineContext, CancellationException cancellationException) {
         JobKt__JobKt.cancelChildren(coroutineContext, cancellationException);
+    }
+
+    public static final void cancelFutureOnCancellation(CancellableContinuation cancellableContinuation, Future future) {
+        JobKt__FutureKt.cancelFutureOnCancellation(cancellableContinuation, future);
     }
 
     public static final DisposableHandle disposeOnCompletion(Job job, DisposableHandle disposableHandle) {

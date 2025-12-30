@@ -70,6 +70,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
     public StoriesUtilities.AvatarStoryParams avatarStoryParams;
     private AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable botVerificationDrawable;
     private PhotoBubbleClip bubbleClip;
+    private boolean callCellStyle;
     private TLRPC.Chat chat;
     CheckBox2 checkBox;
     private ContactsController.Contact contact;
@@ -321,13 +322,18 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         }
     }
 
+    public void setCallCellStyle() {
+        this.callCellStyle = true;
+        this.customPaints = true;
+    }
+
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         CheckBox2 checkBox2 = this.checkBox;
         if (checkBox2 != null) {
             checkBox2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
         }
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.dp(60.0f) + (this.useSeparator ? 1 : 0));
+        setMeasuredDimension(View.MeasureSpec.getSize(i), this.callCellStyle ? AndroidUtilities.dp(56.0f) : AndroidUtilities.dp(60.0f) + (this.useSeparator ? 1 : 0));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -370,6 +376,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         this.drawNameLock = false;
         this.drawCheck = false;
         this.drawPremium = false;
+        float f = 11.0f;
         if (this.encryptedChat != null) {
             this.drawNameLock = true;
             this.dialog_id = DialogObject.makeEncryptedDialogId(r2.id);
@@ -496,7 +503,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                 this.namePaint = textPaint2;
                 textPaint2.setTypeface(AndroidUtilities.bold());
             }
-            this.namePaint.setTextSize(AndroidUtilities.dp(16.0f));
+            this.namePaint.setTextSize(AndroidUtilities.dp(this.callCellStyle ? 15.0f : 16.0f));
             if (this.encryptedChat != null) {
                 this.namePaint.setColor(Theme.getColor(Theme.key_chats_secretName, this.resourcesProvider));
             } else {
@@ -673,7 +680,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
             if (this.statusPaint == null) {
                 this.statusPaint = new TextPaint(1);
             }
-            this.statusPaint.setTextSize(AndroidUtilities.dp(15.0f));
+            this.statusPaint.setTextSize(AndroidUtilities.dp(this.callCellStyle ? 13.0f : 15.0f));
             if (textPaint5 == Theme.dialogs_offlinePaint) {
                 this.statusPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText3, this.resourcesProvider));
             } else if (textPaint5 == Theme.dialogs_onlinePaint) {
@@ -692,9 +699,14 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         if (LocaleController.isRTL) {
             dp = (getMeasuredWidth() - AndroidUtilities.dp(57.0f)) - getPaddingRight();
         } else {
-            dp = AndroidUtilities.dp(this.rectangularAvatar ? 15.0f : 11.0f) + getPaddingLeft();
+            if (this.callCellStyle) {
+                f = 14.0f;
+            } else if (this.rectangularAvatar) {
+                f = 15.0f;
+            }
+            dp = AndroidUtilities.dp(f) + getPaddingLeft();
         }
-        this.avatarStoryParams.originalAvatarRect.set(dp, AndroidUtilities.dp(7.0f), dp + AndroidUtilities.dp(this.rectangularAvatar ? 42.0f : 46.0f), AndroidUtilities.dp(7.0f) + AndroidUtilities.dp(46.0f));
+        this.avatarStoryParams.originalAvatarRect.set(dp, AndroidUtilities.dp(this.callCellStyle ? 6.0f : 7.0f), dp + AndroidUtilities.dp(this.callCellStyle ? 44.0f : this.rectangularAvatar ? 42.0f : 46.0f), AndroidUtilities.dp(this.callCellStyle ? 6.0f : 7.0f) + AndroidUtilities.dp(this.callCellStyle ? 44.0f : 46.0f));
         if (LocaleController.isRTL) {
             if (this.nameLayout.getLineCount() > 0 && this.nameLayout.getLineLeft(0) == 0.0f) {
                 double ceil = Math.ceil(this.nameLayout.getLineWidth(0));
@@ -731,6 +743,10 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         this.nameLeft += getPaddingLeft();
         this.statusLeft += getPaddingLeft();
         this.nameLockLeft += getPaddingLeft();
+        if (this.callCellStyle) {
+            this.nameLeft += AndroidUtilities.dp(1.0f);
+            this.nameTop += AndroidUtilities.dp(1.0f);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -997,7 +1013,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         }
         if (this.statusLayout != null) {
             canvas.save();
-            canvas.translate(this.statusLeft + this.sublabelOffsetX, AndroidUtilities.dp(33.0f) + this.sublabelOffsetY);
+            canvas.translate(this.statusLeft + this.sublabelOffsetX, AndroidUtilities.dp(this.callCellStyle ? 35.0f : 33.0f) + this.sublabelOffsetY);
             this.statusLayout.draw(canvas);
             canvas.restore();
         }

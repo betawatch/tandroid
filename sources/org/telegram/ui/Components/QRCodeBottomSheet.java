@@ -90,7 +90,7 @@ public class QRCodeBottomSheet extends BottomSheet {
         };
         frameLayout.addView(imageView, LayoutHelper.createFrame(-1, -1.0f));
         frameLayout.addView(this.iconImage, LayoutHelper.createFrame(60, 60, 17));
-        linearLayout.addView(frameLayout, LayoutHelper.createLinear(220, 220, 1, 30, 0, 30, 0));
+        linearLayout.addView(frameLayout, LayoutHelper.createLinear(NotificationCenter.starBalanceUpdated, NotificationCenter.starBalanceUpdated, 1, 30, 0, 30, 0));
         TextView textView = new TextView(context);
         this.help = textView;
         textView.setTextSize(1, 14.0f);

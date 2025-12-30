@@ -131,7 +131,7 @@ public final class zzi implements SessionManagerListener {
         zzlVar2 = zzkVar.zzh;
         zzno zzd = zzmVar.zzd(zzlVar2);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zzd, NotificationCenter.starTransactionsLoaded);
+        zzgVar.zze(zzd, 221);
     }
 
     @Override // com.google.android.gms.cast.framework.SessionManagerListener

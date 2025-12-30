@@ -3,7 +3,6 @@ package org.telegram.ui.Stars;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.PorterDuff;
@@ -12,7 +11,6 @@ import android.graphics.RecordingCanvas;
 import android.graphics.RectF;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.os.SystemClock;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +20,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.math.MathUtils;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
 import me.vkryl.android.animator.BoolAnimator;
@@ -44,7 +44,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.utils.tlutils.TlUtils;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda2;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
@@ -58,11 +60,14 @@ import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
 import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
+import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
 import org.telegram.ui.Components.chat.ViewPositionWatcher;
+import org.telegram.ui.Components.glass.GlassTabView;
+import org.telegram.ui.Components.glass.GlassTabsView;
 import org.telegram.ui.Gifts.GiftSheet;
 import org.telegram.ui.Stars.StarGiftPreviewSheet;
 import org.telegram.ui.Stars.StarGiftSheet;
@@ -101,9 +106,8 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
     private final PointF tabsPosP;
     private final RectF tabsRectF;
     private final TabsSelectorView tabsSelectorView;
-    private final PointF tmpViewPointF;
-    private final RectF tmpViewRectF;
     private final StarGiftSheet.TopView topView;
+    private final ViewGroupPartRenderer viewGroupPartRenderer;
 
     private enum Mode {
         RANDOM,
@@ -148,10 +152,12 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         ArrayList arrayList2 = new ArrayList(1);
         this.blurredPositions = arrayList2;
         arrayList2.add(rectF);
-        this.tmpViewRectF = new RectF();
-        this.tmpViewPointF = new PointF();
         this.currentAccount = i;
         this.gift = starGift;
+        RecyclerListView recyclerListView = this.recyclerListView;
+        BottomSheet.ContainerView containerView = this.container;
+        Objects.requireNonNull(recyclerListView);
+        this.viewGroupPartRenderer = new ViewGroupPartRenderer(recyclerListView, containerView, new CallLogActivity$$ExternalSyntheticLambda2(recyclerListView));
         ArrayList findAllInstances = TlUtils.findAllInstances(arrayList, TL_stars.starGiftAttributeBackdrop.class);
         this.backdrops = findAllInstances;
         BagRandomizer bagRandomizer = new BagRandomizer(findAllInstances);
@@ -183,7 +189,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
             this.scrollableViewNoiseSuppressor = new DownscaleScrollableNoiseSuppressor();
             BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode = new BlurredBackgroundSourceRenderNode(blurredBackgroundSourceColor);
             this.glassSourceRenderNode = blurredBackgroundSourceRenderNode;
-            blurredBackgroundSourceRenderNode.setOnDrawablesRelativePositionChangeListener(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda1
+            blurredBackgroundSourceRenderNode.setOnDrawablesRelativePositionChangeListener(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftPreviewSheet.this.invalidateMergedVisibleBlurredPositionsAndSourcesPositions();
@@ -244,37 +250,37 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         FrameLayout frameLayout = new FrameLayout(context);
         this.headerView = frameLayout;
         frameLayout.setClipChildren(false);
-        StarGiftSheet.TopView topView = new StarGiftSheet.TopView(context, resourcesProvider, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda4
+        StarGiftSheet.TopView topView = new StarGiftSheet.TopView(context, resourcesProvider, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftPreviewSheet.this.onBackPressed();
             }
-        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda5
+        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StarGiftPreviewSheet.lambda$new$0(view);
             }
-        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda6
+        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StarGiftPreviewSheet.lambda$new$1(view);
             }
-        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda7
+        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StarGiftPreviewSheet.lambda$new$2(view);
             }
-        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda8
+        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StarGiftPreviewSheet.lambda$new$3(view);
             }
-        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda9
+        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StarGiftPreviewSheet.lambda$new$4(view);
             }
-        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda10
+        }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StarGiftPreviewSheet.lambda$new$5(view);
@@ -358,7 +364,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         imageView.setImageResource(R.drawable.ic_ab_back);
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda11
+        imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StarGiftPreviewSheet.this.lambda$new$6(view);
@@ -371,7 +377,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         imageView2.setBackground(Theme.createRadSelectorDrawable(0, 285212671, 16, 16));
         imageView2.setImageResource(R.drawable.filled_gift_pause_24);
         imageView2.setScaleType(scaleType);
-        imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda12
+        imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StarGiftPreviewSheet.this.lambda$new$7(arrayList, view);
@@ -834,27 +840,6 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         this.glassSourceRenderNode.endRecording();
     }
 
-    private void drawList(Canvas canvas, RectF rectF) {
-        long uptimeMillis = SystemClock.uptimeMillis();
-        ViewPositionWatcher.computeCoordinatesInParent(this.recyclerListView, this.container, this.tmpViewPointF);
-        canvas.save();
-        canvas.clipRect(rectF);
-        PointF pointF = this.tmpViewPointF;
-        canvas.translate(pointF.x, pointF.y);
-        for (int i = 0; i < this.recyclerListView.getChildCount(); i++) {
-            View childAt = this.recyclerListView.getChildAt(i);
-            ViewPositionWatcher.computeCoordinatesInParent(childAt, this.container, this.tmpViewPointF);
-            RectF rectF2 = this.tmpViewRectF;
-            PointF pointF2 = this.tmpViewPointF;
-            float f = pointF2.x;
-            rectF2.set(f, pointF2.y, childAt.getWidth() + f, this.tmpViewPointF.y + childAt.getHeight());
-            if (this.tmpViewRectF.intersect(rectF)) {
-                this.recyclerListView.drawChild(canvas, childAt, uptimeMillis);
-            }
-        }
-        canvas.restore();
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public void invalidateMergedVisibleBlurredPositionsAndSourcesPositions() {
         invalidateMergedVisibleBlurredPositionsAndSources(2);
@@ -893,14 +878,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         if (this.scrollableViewNoiseSuppressor.getRenderNodesCount() == 0) {
             return;
         }
-        RectF position = this.scrollableViewNoiseSuppressor.getPosition(0);
-        RecordingCanvas beginRecordingRect = this.scrollableViewNoiseSuppressor.beginRecordingRect(0);
-        beginRecordingRect.save();
-        beginRecordingRect.translate(-position.left, -position.top);
-        drawList(beginRecordingRect, position);
-        beginRecordingRect.restore();
-        this.scrollableViewNoiseSuppressor.endRecordingRect();
-        this.scrollableViewNoiseSuppressor.invalidateResultRenderNodes(this.container.getWidth(), this.container.getHeight());
+        this.scrollableViewNoiseSuppressor.invalidateResultRenderNodes(this.viewGroupPartRenderer, this.container.getWidth(), this.container.getHeight());
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet
@@ -946,8 +924,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
             addView(this.textView, LayoutHelper.createFrame(-1, -2.0f, 49, 4.0f, 20.0f, 4.0f, 0.0f));
             AnimatedTextView animatedTextView2 = new AnimatedTextView(context);
             this.percentView = animatedTextView2;
-            animatedTextView2.setText("WTF");
-            this.percentView.setTypeface(AndroidUtilities.bold());
+            animatedTextView2.setTypeface(AndroidUtilities.bold());
             this.percentView.setTextColor(-1);
             this.percentView.setGravity(5);
             this.percentView.setTextSize(AndroidUtilities.dp(11.0f));
@@ -958,70 +935,11 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    static class Tab extends FrameLayout implements FactorAnimator.Target {
-        private int color;
-        private final ImageView imageView;
-        private final BoolAnimator isSelectedAnimator;
-        private final TextView textView;
-
-        @Override // me.vkryl.android.animator.FactorAnimator.Target
-        public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
-            FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
-        }
-
-        public Tab(Context context) {
-            super(context);
-            this.isSelectedAnimator = new BoolAnimator(0, this, CubicBezierInterpolator.EASE_OUT_QUINT, 300L);
-            ImageView imageView = new ImageView(context);
-            this.imageView = imageView;
-            addView(imageView, LayoutHelper.createFrame(24, 24.0f, 49, 0.0f, 6.0f, 0.0f, 0.0f));
-            imageView.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
-            TextView textView = new TextView(context);
-            this.textView = textView;
-            textView.setTextSize(1, 11.0f);
-            textView.setSingleLine();
-            textView.setLines(1);
-            textView.setEllipsize(TextUtils.TruncateAt.END);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setGravity(17);
-            addView(textView, LayoutHelper.createFrame(-1, -2.0f, 49, 0.0f, 30.0f, 0.0f, 0.0f));
-        }
-
-        public static Tab create(Context context, Theme.ResourcesProvider resourcesProvider, int i, int i2, final Runnable runnable) {
-            Tab tab = new Tab(context);
-            tab.textView.setText(LocaleController.getString(i2));
-            tab.imageView.setImageResource(i);
-            tab.color = Theme.getColor(Theme.key_glass_defaultIcon, resourcesProvider);
-            tab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$Tab$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    runnable.run();
-                }
-            });
-            tab.updateColors();
-            ScaleStateListAnimator.apply(tab);
-            return tab;
-        }
-
-        @Override // me.vkryl.android.animator.FactorAnimator.Target
-        public void onFactorChanged(int i, float f, float f2, FactorAnimator factorAnimator) {
-            updateColors();
-        }
-
-        private void updateColors() {
-            int lerp = AndroidUtilities.lerp(NotificationCenter.recordProgressChanged, NotificationCenter.cameraInitied, this.isSelectedAnimator.getFloatValue());
-            this.imageView.setColorFilter(new PorterDuffColorFilter(ColorUtils.setAlphaComponent(this.color, lerp), PorterDuff.Mode.SRC_IN));
-            this.textView.setTextColor(ColorUtils.setAlphaComponent(this.color, lerp));
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    static class TabsSelectorView extends LinearLayout implements FactorAnimator.Target {
+    static class TabsSelectorView extends GlassTabsView implements FactorAnimator.Target {
         public final FactorAnimator animator;
         public final Utilities.Callback onTabSelectListener;
-        private final Paint paint;
         private int selectedTab;
-        private final Tab[] tabs;
+        private GlassTabView[] tabs;
 
         @Override // me.vkryl.android.animator.FactorAnimator.Target
         public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
@@ -1030,34 +948,31 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
 
         public TabsSelectorView(Context context, Theme.ResourcesProvider resourcesProvider, Utilities.Callback callback) {
             super(context);
-            this.animator = new FactorAnimator(0, this, CubicBezierInterpolator.EASE_OUT_QUINT, 320L);
-            Paint paint = new Paint(1);
-            this.paint = paint;
-            setOrientation(0);
+            this.animator = new FactorAnimator(0, this, CubicBezierInterpolator.EASE_OUT_QUINT, 1600L);
             this.onTabSelectListener = callback;
-            paint.setColor(Theme.getColor(Theme.key_glass_defaultIcon, resourcesProvider));
-            paint.setAlpha(16);
-            Tab[] tabArr = {Tab.create(context, resourcesProvider, R.drawable.filled_gift_models_24, R.string.GiftPreviewModels, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$TabsSelectorView$$ExternalSyntheticLambda0
+            int i = Theme.key_glass_defaultIcon;
+            setLensColor(Theme.multAlpha(Theme.getColor(i, resourcesProvider), 0.09411765f), Theme.multAlpha(Theme.getColor(i, resourcesProvider), 0.1254902f));
+            GlassTabView[] glassTabViewArr = {GlassTabView.create(context, resourcesProvider, R.drawable.filled_gift_models_24, R.string.GiftPreviewModels, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$TabsSelectorView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftPreviewSheet.TabsSelectorView.this.lambda$new$0();
                 }
-            }), Tab.create(context, resourcesProvider, R.drawable.filled_gift_palette_24, R.string.GiftPreviewBackdrops, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$TabsSelectorView$$ExternalSyntheticLambda1
+            }), GlassTabView.create(context, resourcesProvider, R.drawable.filled_gift_palette_24, R.string.GiftPreviewBackdrops, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$TabsSelectorView$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftPreviewSheet.TabsSelectorView.this.lambda$new$1();
                 }
-            }), Tab.create(context, resourcesProvider, R.drawable.filled_gift_symbols_24, R.string.GiftPreviewSymbols, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$TabsSelectorView$$ExternalSyntheticLambda2
+            }), GlassTabView.create(context, resourcesProvider, R.drawable.filled_gift_symbols_24, R.string.GiftPreviewSymbols, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$TabsSelectorView$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftPreviewSheet.TabsSelectorView.this.lambda$new$2();
                 }
             })};
-            this.tabs = tabArr;
-            addView(tabArr[0], LayoutHelper.createLinear(0, -1, 1.0f));
-            addView(tabArr[1], LayoutHelper.createLinear(0, -1, 1.0f));
-            addView(tabArr[2], LayoutHelper.createLinear(0, -1, 1.0f));
-            tabArr[0].isSelectedAnimator.setValue(true, false);
+            this.tabs = glassTabViewArr;
+            this.linearLayout.addView(glassTabViewArr[0], LayoutHelper.createLinear(0, -1, 1.0f));
+            this.linearLayout.addView(this.tabs[1], LayoutHelper.createLinear(0, -1, 1.0f));
+            this.linearLayout.addView(this.tabs[2], LayoutHelper.createLinear(0, -1, 1.0f));
+            this.tabs[0].setSelected(true, false);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1079,8 +994,8 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         public void selectTab(int i) {
             int i2 = this.selectedTab;
             if (i2 != i) {
-                this.tabs[i2].isSelectedAnimator.setValue(false, true);
-                this.tabs[i].isSelectedAnimator.setValue(true, true);
+                this.tabs[i2].setSelected(false, true);
+                this.tabs[i].setSelected(true, true);
                 this.selectedTab = i;
                 this.animator.animateTo(i);
                 this.onTabSelectListener.run(Integer.valueOf(i));
@@ -1091,15 +1006,21 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
             return this.selectedTab;
         }
 
-        @Override // android.view.ViewGroup, android.view.View
-        protected void dispatchDraw(Canvas canvas) {
+        private void updateLens() {
             float factor = this.animator.getFactor();
-            canvas.drawRoundRect(AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), getMeasuredWidth() - AndroidUtilities.dp(8.0f), factor / 3.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), getMeasuredWidth() - AndroidUtilities.dp(8.0f), (factor + 1.0f) / 3.0f), getMeasuredHeight() - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), this.paint);
-            super.dispatchDraw(canvas);
+            setLensBounds(AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), getMeasuredWidth() - AndroidUtilities.dp(8.0f), factor / 3.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), getMeasuredWidth() - AndroidUtilities.dp(8.0f), (factor + 1.0f) / 3.0f), getMeasuredHeight() - AndroidUtilities.dp(8.0f));
+            MathUtils.clamp((int) ((1.0f - Math.abs(factor - 1.0f)) * 255.0f), 0, NotificationCenter.cameraInitied);
+        }
+
+        @Override // android.view.View
+        protected void onSizeChanged(int i, int i2, int i3, int i4) {
+            super.onSizeChanged(i, i2, i3, i4);
+            updateLens();
         }
 
         @Override // me.vkryl.android.animator.FactorAnimator.Target
         public void onFactorChanged(int i, float f, float f2, FactorAnimator factorAnimator) {
+            updateLens();
             invalidate();
         }
     }

@@ -1,24 +1,25 @@
 package com.google.android.recaptcha.internal;
 
+import java.util.Iterator;
+
 /* loaded from: classes.dex */
-public final class zzmk extends zzin implements zzkf {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private zzmk() {
-        super(r0);
-        zzml zzmlVar;
-        zzmlVar = zzml.zzb;
+public abstract class zzmk implements Iterable {
+    protected zzmk() {
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzmk(zzmj zzmjVar) {
-        super(r1);
-        zzml zzmlVar;
-        zzmlVar = zzml.zzb;
+    public final String toString() {
+        Iterator it = iterator();
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        boolean z = true;
+        while (it.hasNext()) {
+            if (!z) {
+                sb.append(", ");
+            }
+            sb.append(it.next());
+            z = false;
+        }
+        sb.append(']');
+        return sb.toString();
     }
 }

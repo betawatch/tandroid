@@ -2,7 +2,7 @@ package com.stripe.android.net;
 
 import java.util.Map;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class StripeResponse {
     private String mResponseBody;
     private int mResponseCode;

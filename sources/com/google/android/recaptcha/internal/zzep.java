@@ -1,12 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.functions.Function0;
 
 /* loaded from: classes.dex */
-public final class zzep {
-    private zzep() {
-    }
+public final class zzep implements Function0 {
+    public static final zzep zza = new zzep();
 
-    public /* synthetic */ zzep(DefaultConstructorMarker defaultConstructorMarker) {
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzcr.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzcr) zzb;
+        }
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

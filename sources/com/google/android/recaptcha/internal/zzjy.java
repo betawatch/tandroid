@@ -1,151 +1,47 @@
 package com.google.android.recaptcha.internal;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import kotlin.collections.ArraysKt;
+import kotlin.jvm.internal.Intrinsics;
 
 /* loaded from: classes.dex */
-public final class zzjy extends LinkedHashMap {
-    private static final zzjy zza;
-    private boolean zzb;
-
-    static {
-        zzjy zzjyVar = new zzjy();
-        zza = zzjyVar;
-        zzjyVar.zzb = false;
-    }
+public final class zzjy implements zzjt {
+    public static final zzjy zza = new zzjy();
 
     private zzjy() {
-        this.zzb = true;
     }
 
-    public static zzjy zza() {
-        return zza;
-    }
-
-    private static int zzf(Object obj) {
-        if (!(obj instanceof byte[])) {
-            if (obj instanceof zziv) {
-                throw new UnsupportedOperationException();
-            }
-            return obj.hashCode();
+    @Override // com.google.android.recaptcha.internal.zzjt
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+        int length = zzztVarArr.length;
+        if (length < 2) {
+            throw new zzdm(4, 3, null);
         }
-        byte[] bArr = (byte[]) obj;
-        byte[] bArr2 = zzjc.zzd;
-        int length = bArr.length;
-        int zzb = zzjc.zzb(length, bArr, 0, length);
-        if (zzb == 0) {
-            return 1;
+        Class<?> zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
+        if (true != (zza2 instanceof Object)) {
+            zza2 = null;
         }
-        return zzb;
-    }
-
-    private final void zzg() {
-        if (!this.zzb) {
-            throw new UnsupportedOperationException();
+        if (zza2 == null) {
+            throw new zzdm(4, 5, null);
         }
-    }
-
-    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final void clear() {
-        zzg();
-        super.clear();
-    }
-
-    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Set entrySet() {
-        return isEmpty() ? Collections.emptySet() : super.entrySet();
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof Map)) {
-            return false;
+        Class<?> cls = zza2 instanceof Class ? zza2 : zza2.getClass();
+        Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
+        if (true != (zza3 instanceof String)) {
+            zza3 = null;
         }
-        Map map = (Map) obj;
-        if (this == map) {
-            return true;
+        String str = (String) zza3;
+        if (str == null) {
+            throw new zzdm(4, 5, null);
         }
-        if (size() != map.size()) {
-            return false;
+        String zza4 = zzizVar.zzh().zza(str);
+        if (Intrinsics.areEqual(zza4, "forName")) {
+            throw new zzdm(6, 48, null);
         }
-        Iterator it = entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry entry = (Map.Entry) it.next();
-            if (!map.containsKey(entry.getKey())) {
-                return false;
-            }
-            Object value = entry.getValue();
-            Object obj2 = map.get(entry.getKey());
-            if (!(((value instanceof byte[]) && (obj2 instanceof byte[])) ? Arrays.equals((byte[]) value, (byte[]) obj2) : value.equals(obj2))) {
-                return false;
-            }
+        Class[] zzf = zzizVar.zzc().zzf(ArraysKt.toList(zzztVarArr).subList(2, length));
+        try {
+            zzizVar.zzc().zze(i, cls.getMethod(zza4, (Class[]) Arrays.copyOf(zzf, zzf.length)));
+        } catch (Exception e) {
+            throw new zzdm(6, 13, e);
         }
-        return true;
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final int hashCode() {
-        Iterator it = entrySet().iterator();
-        int i = 0;
-        while (it.hasNext()) {
-            Map.Entry entry = (Map.Entry) it.next();
-            i += zzf(entry.getValue()) ^ zzf(entry.getKey());
-        }
-        return i;
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        zzg();
-        byte[] bArr = zzjc.zzd;
-        obj.getClass();
-        obj2.getClass();
-        return super.put(obj, obj2);
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final void putAll(Map map) {
-        zzg();
-        for (Object obj : map.keySet()) {
-            byte[] bArr = zzjc.zzd;
-            obj.getClass();
-            map.get(obj).getClass();
-        }
-        super.putAll(map);
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object remove(Object obj) {
-        zzg();
-        return super.remove(obj);
-    }
-
-    public final zzjy zzb() {
-        return isEmpty() ? new zzjy() : new zzjy(this);
-    }
-
-    public final void zzc() {
-        this.zzb = false;
-    }
-
-    public final void zzd(zzjy zzjyVar) {
-        zzg();
-        if (zzjyVar.isEmpty()) {
-            return;
-        }
-        putAll(zzjyVar);
-    }
-
-    public final boolean zze() {
-        return this.zzb;
-    }
-
-    private zzjy(Map map) {
-        super(map);
-        this.zzb = true;
     }
 }

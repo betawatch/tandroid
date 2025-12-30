@@ -1696,19 +1696,17 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
             }
             boolean z = this.isChannel;
             if (z) {
+                this.adminRights.pin_messages = false;
+            } else {
                 TLRPC.TL_chatAdminRights tL_chatAdminRights = this.adminRights;
-                tL_chatAdminRights.ban_users = false;
-                tL_chatAdminRights.pin_messages = false;
-            } else {
-                TLRPC.TL_chatAdminRights tL_chatAdminRights2 = this.adminRights;
-                tL_chatAdminRights2.edit_messages = false;
-                tL_chatAdminRights2.post_messages = false;
+                tL_chatAdminRights.edit_messages = false;
+                tL_chatAdminRights.post_messages = false;
             }
-            TLRPC.TL_chatAdminRights tL_chatAdminRights3 = this.adminRights;
-            if (!tL_chatAdminRights3.change_info && !tL_chatAdminRights3.post_messages && !tL_chatAdminRights3.edit_messages && !tL_chatAdminRights3.manage_direct_messages && !tL_chatAdminRights3.delete_messages && !tL_chatAdminRights3.ban_users && !tL_chatAdminRights3.invite_users && ((!this.isForum || !tL_chatAdminRights3.manage_topics) && !tL_chatAdminRights3.pin_messages && !tL_chatAdminRights3.add_admins && !tL_chatAdminRights3.anonymous && !tL_chatAdminRights3.manage_call && (!z || (!tL_chatAdminRights3.post_stories && !tL_chatAdminRights3.edit_stories && !tL_chatAdminRights3.delete_stories)))) {
-                tL_chatAdminRights3.other = true;
+            TLRPC.TL_chatAdminRights tL_chatAdminRights2 = this.adminRights;
+            if (!tL_chatAdminRights2.change_info && !tL_chatAdminRights2.post_messages && !tL_chatAdminRights2.edit_messages && !tL_chatAdminRights2.manage_direct_messages && !tL_chatAdminRights2.delete_messages && !tL_chatAdminRights2.ban_users && !tL_chatAdminRights2.invite_users && ((!this.isForum || !tL_chatAdminRights2.manage_topics) && !tL_chatAdminRights2.pin_messages && !tL_chatAdminRights2.add_admins && !tL_chatAdminRights2.anonymous && !tL_chatAdminRights2.manage_call && (!z || (!tL_chatAdminRights2.post_stories && !tL_chatAdminRights2.edit_stories && !tL_chatAdminRights2.delete_stories)))) {
+                tL_chatAdminRights2.other = true;
             } else {
-                tL_chatAdminRights3.other = false;
+                tL_chatAdminRights2.other = false;
             }
         }
         int i4 = this.currentType;

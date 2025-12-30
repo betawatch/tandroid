@@ -180,6 +180,7 @@ public class MessageObject {
     private Integer cachedTextHeight;
     public boolean cancelEditing;
     public CharSequence caption;
+    private boolean captionSummarized;
     private boolean captionTranslated;
     private boolean channelJoined;
     public boolean channelJoinedExpanded;
@@ -345,6 +346,7 @@ public class MessageObject {
     public TL_stories.StoryItem storyItem;
     private TLRPC.WebPage storyMentionWebpage;
     public BitmapDrawable strippedThumb;
+    public boolean summarized;
     public ArrayList<TextLayoutBlock> textLayoutBlocks;
     public int textWidth;
     public float textXOffset;
@@ -1928,6 +1930,7 @@ public class MessageObject {
         this.topicIconDrawable = new Drawable[1];
         this.spoiledLoginCode = false;
         this.translated = false;
+        this.summarized = false;
         this.currentAccount = i;
         this.storyItem = storyItem;
         if (storyItem != null) {
@@ -1956,6 +1959,7 @@ public class MessageObject {
         this.topicIconDrawable = new Drawable[1];
         this.spoiledLoginCode = false;
         this.translated = false;
+        this.summarized = false;
         this.localType = z ? 2 : 1;
         this.currentAccount = i;
         this.localName = str2;
@@ -2018,6 +2022,7 @@ public class MessageObject {
         this.topicIconDrawable = new Drawable[1];
         this.spoiledLoginCode = false;
         this.translated = false;
+        this.summarized = false;
         Theme.createCommonMessageResources();
         this.isRepostPreview = z3;
         this.isRepostVideoPreview = z4;
@@ -2352,33 +2357,33 @@ public class MessageObject {
         return Theme.chat_msgTextPaint;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x02a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:122:0x02a4, code lost:
     
         if ((r3.new_participant instanceof org.telegram.tgnet.TLRPC.TL_channelParticipant) != false) goto L66;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:687:0x0c1e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:687:0x0c20, code lost:
     
         if (r10.id == r12.id) goto L480;
      */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x1c1b  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x1c6d  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x1c72  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x1d08 A[ADDED_TO_REGION, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x1d09  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x1d1e  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x1d30  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x1d3e  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x1d49  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x1d80  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x1d41  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x1d23  */
-    /* JADX WARN: Removed duplicated region for block: B:661:0x0c44  */
-    /* JADX WARN: Removed duplicated region for block: B:664:0x0c85  */
-    /* JADX WARN: Removed duplicated region for block: B:670:0x0d21  */
-    /* JADX WARN: Removed duplicated region for block: B:672:0x0d2c  */
-    /* JADX WARN: Removed duplicated region for block: B:674:0x0c51  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x1cff  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x1c6f  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x1c1d  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x1c6f  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x1c74  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x1d0a A[ADDED_TO_REGION, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x1d0b  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x1d20  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x1d32  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x1d40  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x1d4b  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x1d82  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x1d43  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x1d25  */
+    /* JADX WARN: Removed duplicated region for block: B:661:0x0c46  */
+    /* JADX WARN: Removed duplicated region for block: B:664:0x0c87  */
+    /* JADX WARN: Removed duplicated region for block: B:670:0x0d23  */
+    /* JADX WARN: Removed duplicated region for block: B:672:0x0d2e  */
+    /* JADX WARN: Removed duplicated region for block: B:674:0x0c53  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x1d01  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x1c71  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2451,6 +2456,7 @@ public class MessageObject {
         this.topicIconDrawable = new Drawable[1];
         this.spoiledLoginCode = false;
         this.translated = false;
+        this.summarized = false;
         this.currentEvent = tL_channelAdminLogEvent2;
         this.currentAccount = i;
         TLRPC.User user4 = tL_channelAdminLogEvent2.user_id > 0 ? MessagesController.getInstance(i).getUser(Long.valueOf(tL_channelAdminLogEvent2.user_id)) : null;
@@ -4260,28 +4266,55 @@ public class MessageObject {
     }
 
     public boolean updateTranslation(boolean z) {
-        TLRPC.Message message;
         MessageObject messageObject = this.replyMessageObject;
         boolean z2 = (messageObject == null || messageObject == this || !messageObject.updateTranslation(z)) ? false : true;
         TranslateController translateController = MessagesController.getInstance(this.currentAccount).getTranslateController();
+        TLRPC.Message message = this.messageOwner;
+        TLRPC.TL_textWithEntities tL_textWithEntities = null;
+        TLRPC.TL_textWithEntities tL_textWithEntities2 = message != null ? message.voiceTranscriptionOpen ? message.translatedVoiceTranscription : message.translatedText : null;
+        TLRPC.TL_textWithEntities tL_textWithEntities3 = (message == null || !message.summarizedOpen) ? null : message.summaryText;
+        if (message != null && message.summarizedOpen) {
+            tL_textWithEntities = message.translatedSummaryText;
+        }
+        if (tL_textWithEntities != null && message != null && message.summarizedOpen && TranslateController.isSummarizable(this) && TranslateController.isTranslatable(this) && translateController.isTranslatingDialog(getDialogId()) && !translateController.isTranslateDialogHidden(getDialogId()) && TextUtils.equals(translateController.getDialogTranslateTo(getDialogId()), this.messageOwner.translatedSummaryLanguage)) {
+            if (this.summarized && this.translated) {
+                return z2;
+            }
+            this.summarized = true;
+            this.translated = true;
+            applyNewText(tL_textWithEntities.text);
+            generateCaption();
+            return true;
+        }
         TLRPC.Message message2 = this.messageOwner;
-        TLRPC.TL_textWithEntities tL_textWithEntities = message2 != null ? message2.voiceTranscriptionOpen ? message2.translatedVoiceTranscription : message2.translatedText : null;
-        if (TranslateController.isTranslatable(this) && translateController.isTranslatingDialog(getDialogId()) && !translateController.isTranslateDialogHidden(getDialogId()) && (message = this.messageOwner) != null && ((tL_textWithEntities != null || message.translatedPoll != null) && TextUtils.equals(translateController.getDialogTranslateTo(getDialogId()), this.messageOwner.translatedToLanguage))) {
-            if (this.translated) {
+        if (message2 != null && message2.summarizedOpen && TranslateController.isSummarizable(this) && tL_textWithEntities3 != null) {
+            if (this.summarized && !this.translated) {
+                return z2;
+            }
+            this.summarized = true;
+            this.translated = false;
+            applyNewText(tL_textWithEntities3.text);
+            generateCaption();
+            return true;
+        }
+        if (this.messageOwner != null && TranslateController.isTranslatable(this) && translateController.isTranslatingDialog(getDialogId()) && !translateController.isTranslateDialogHidden(getDialogId()) && ((tL_textWithEntities2 != null || this.messageOwner.translatedPoll != null) && TextUtils.equals(translateController.getDialogTranslateTo(getDialogId()), this.messageOwner.translatedToLanguage))) {
+            if (this.translated && !this.summarized) {
                 return z2;
             }
             this.translated = true;
-            if (tL_textWithEntities != null) {
-                applyNewText(tL_textWithEntities.text);
+            this.summarized = false;
+            if (tL_textWithEntities2 != null) {
+                applyNewText(tL_textWithEntities2.text);
                 generateCaption();
             }
             return true;
         }
         TLRPC.Message message3 = this.messageOwner;
-        if (message3 == null || !(z || this.translated)) {
+        if (message3 == null || !(z || this.translated || this.summarized)) {
             return z2;
         }
         this.translated = false;
+        this.summarized = false;
         applyNewText(message3.message);
         generateCaption();
         return true;
@@ -4289,35 +4322,18 @@ public class MessageObject {
 
     public void applyNewText() {
         this.translated = false;
+        this.summarized = false;
         applyNewText(this.messageOwner.message);
     }
 
     public void applyNewText(CharSequence charSequence) {
-        ArrayList<TLRPC.MessageEntity> arrayList;
         TextPaint textPaint;
         if (TextUtils.isEmpty(charSequence)) {
             return;
         }
         TLRPC.User user = isFromUser() ? MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.messageOwner.from_id.user_id)) : null;
         this.messageText = charSequence;
-        if (this.translated) {
-            TLRPC.Message message = this.messageOwner;
-            if (message.voiceTranscriptionOpen) {
-                TLRPC.TL_textWithEntities tL_textWithEntities = message.translatedVoiceTranscription;
-                if (tL_textWithEntities != null) {
-                    arrayList = tL_textWithEntities.entities;
-                }
-                arrayList = null;
-            } else {
-                TLRPC.TL_textWithEntities tL_textWithEntities2 = message.translatedText;
-                if (tL_textWithEntities2 != null) {
-                    arrayList = tL_textWithEntities2.entities;
-                }
-                arrayList = null;
-            }
-        } else {
-            arrayList = this.messageOwner.entities;
-        }
+        ArrayList<TLRPC.MessageEntity> entities = getEntities();
         if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) {
             textPaint = Theme.chat_msgGameTextPaint;
         } else {
@@ -4326,7 +4342,7 @@ public class MessageObject {
         int[] iArr = allowsBigEmoji() ? new int[1] : null;
         CharSequence replaceEmoji = Emoji.replaceEmoji(this.messageText, textPaint.getFontMetricsInt(), false, iArr);
         this.messageText = replaceEmoji;
-        Spannable replaceAnimatedEmoji = replaceAnimatedEmoji(replaceEmoji, arrayList, textPaint.getFontMetricsInt());
+        Spannable replaceAnimatedEmoji = replaceAnimatedEmoji(replaceEmoji, entities, textPaint.getFontMetricsInt());
         this.messageText = replaceAnimatedEmoji;
         if (iArr != null && iArr[0] > 1) {
             replaceEmojiToLottieFrame(replaceAnimatedEmoji, iArr);
@@ -5212,15 +5228,15 @@ public class MessageObject {
         updateMessageText(MessagesController.getInstance(this.currentAccount).getUsers(), MessagesController.getInstance(this.currentAccount).getChats(), null, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1354:0x227a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1366:0x229c, code lost:
     
-        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r4).flags & 4) != 0) goto L1333;
+        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r4).flags & 4) != 0) goto L1345;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1261:0x207b  */
-    /* JADX WARN: Removed duplicated region for block: B:1276:0x20d1  */
-    /* JADX WARN: Removed duplicated region for block: B:1278:0x20d4  */
-    /* JADX WARN: Removed duplicated region for block: B:1451:0x003c  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x24f3  */
+    /* JADX WARN: Removed duplicated region for block: B:1273:0x209d  */
+    /* JADX WARN: Removed duplicated region for block: B:1288:0x20f3  */
+    /* JADX WARN: Removed duplicated region for block: B:1290:0x20f6  */
+    /* JADX WARN: Removed duplicated region for block: B:1463:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x2515  */
     /* JADX WARN: Removed duplicated region for block: B:298:0x0802  */
     /* JADX WARN: Removed duplicated region for block: B:307:0x0821  */
     /* JADX WARN: Removed duplicated region for block: B:325:0x085f  */
@@ -6641,7 +6657,13 @@ public class MessageObject {
                                                                         String str21 = tL_messageActionStarGiftPurchaseOfferDeclined.gift.title + " #" + LocaleController.formatNumber(tL_messageActionStarGiftPurchaseOfferDeclined.gift.num, ',');
                                                                         String shortName2 = DialogObject.getShortName(getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(this.messageOwner.peer_id)));
                                                                         String asFormatString = ofSafe3.asFormatString();
-                                                                        if (ofSafe3.currency == AmountUtils$Currency.STARS) {
+                                                                        if (tL_messageActionStarGiftPurchaseOfferDeclined.expired) {
+                                                                            if (ofSafe3.currency == AmountUtils$Currency.STARS) {
+                                                                                i = isOut() ? R.string.GiftOfferOfferedTextStarsExpiredOut : R.string.GiftOfferOfferedTextStarsExpired;
+                                                                            } else {
+                                                                                i = isOut() ? R.string.GiftOfferOfferedTextTONExpiredOut : R.string.GiftOfferOfferedTextTONExpired;
+                                                                            }
+                                                                        } else if (ofSafe3.currency == AmountUtils$Currency.STARS) {
                                                                             i = isOut() ? R.string.GiftOfferOfferedTextStarsRejectedOut : R.string.GiftOfferOfferedTextStarsRejected;
                                                                         } else {
                                                                             i = isOut() ? R.string.GiftOfferOfferedTextTONRejectedOut : R.string.GiftOfferOfferedTextTONRejected;
@@ -8125,79 +8147,153 @@ public class MessageObject {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:109:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x00a1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x00ac A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0094 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00b8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void generateCaption() {
         boolean z;
+        boolean z2;
+        boolean z3;
         TLRPC.TL_textWithEntities tL_textWithEntities;
+        TLRPC.TL_textWithEntities tL_textWithEntities2;
+        TLRPC.TL_textWithEntities tL_textWithEntities3;
         TL_stories.StoryItem storyItem;
-        if (this.caption != null) {
-            if ((this.translated && this.messageOwner.translatedText != null) == this.captionTranslated) {
-                return;
-            }
-        }
+        boolean z4;
         if (isRoundVideo()) {
             return;
         }
-        TLRPC.Message message = this.messageOwner;
-        String str = message.message;
-        ArrayList<TLRPC.MessageEntity> arrayList = message.entities;
+        if (this.caption != null) {
+            if (this.translated) {
+                TLRPC.Message message = this.messageOwner;
+                if (message.translatedText != null || (this.summarized && message.translatedSummaryText != null)) {
+                    z4 = true;
+                    if (z4 == this.captionTranslated) {
+                        if ((this.summarized && this.messageOwner.summaryText != null) == this.captionSummarized) {
+                            return;
+                        }
+                    }
+                }
+            }
+            z4 = false;
+            if (z4 == this.captionTranslated) {
+            }
+        }
+        TLRPC.Message message2 = this.messageOwner;
+        String str = message2.message;
+        ArrayList<TLRPC.MessageEntity> arrayList = message2.entities;
         if (this.type == 23) {
-            TLRPC.MessageMedia messageMedia = message.media;
+            TLRPC.MessageMedia messageMedia = message2.media;
             if (messageMedia != null && (storyItem = messageMedia.storyItem) != null) {
                 str = storyItem.caption;
                 arrayList = storyItem.entities;
                 z = true;
-                tL_textWithEntities = this.messageOwner.translatedText;
-                if (tL_textWithEntities != null) {
-                    boolean z2 = this.translated;
-                    this.captionTranslated = z2;
-                    if (z2) {
-                        str = tL_textWithEntities.text;
-                        arrayList = tL_textWithEntities.entities;
-                    }
-                }
-                if (!isMediaEmpty() || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) || TextUtils.isEmpty(str)) {
-                    return;
-                }
-                CharSequence replaceEmoji = Emoji.replaceEmoji(str, Theme.chat_msgTextPaint.getFontMetricsInt(), false);
-                this.caption = replaceEmoji;
-                this.caption = replaceAnimatedEmoji(replaceEmoji, arrayList, Theme.chat_msgTextPaint.getFontMetricsInt(), false);
-                boolean z3 = z || (!(this.messageOwner.send_state != 0 ? false : arrayList.isEmpty() ^ true) && (this.eventId != 0 || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_old) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_layer68) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_layer74) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_old) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_layer68) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_layer74) || ((isOut() && this.messageOwner.send_state != 0) || this.messageOwner.id < 0)));
-                if (z3) {
-                    if (containsUrls(this.caption)) {
-                        try {
-                            AndroidUtilities.addLinksSafe((Spannable) this.caption, 5, false, true);
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                boolean z5 = this.summarized;
+                this.captionSummarized = (z5 || this.messageOwner.summaryText == null) ? false : true;
+                z2 = this.translated;
+                if (z2) {
+                    TLRPC.Message message3 = this.messageOwner;
+                    if (message3.translatedText != null || (z5 && message3.translatedSummaryText != null)) {
+                        z3 = true;
+                        this.captionTranslated = z3;
+                        TLRPC.Message message4 = this.messageOwner;
+                        tL_textWithEntities = message4.translatedSummaryText;
+                        if (tL_textWithEntities == null && z5 && z2) {
+                            str = tL_textWithEntities.text;
+                            arrayList = tL_textWithEntities.entities;
+                        } else {
+                            tL_textWithEntities2 = message4.summaryText;
+                            if (tL_textWithEntities2 == null && z5) {
+                                str = tL_textWithEntities2.text;
+                                arrayList = tL_textWithEntities2.entities;
+                            } else {
+                                tL_textWithEntities3 = message4.translatedText;
+                                if (tL_textWithEntities3 != null && z2) {
+                                    str = tL_textWithEntities3.text;
+                                    arrayList = tL_textWithEntities3.entities;
+                                }
+                            }
+                        }
+                        if (isMediaEmpty() || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) || TextUtils.isEmpty(str)) {
+                            return;
+                        }
+                        CharSequence replaceEmoji = Emoji.replaceEmoji(str, Theme.chat_msgTextPaint.getFontMetricsInt(), false);
+                        this.caption = replaceEmoji;
+                        this.caption = replaceAnimatedEmoji(replaceEmoji, arrayList, Theme.chat_msgTextPaint.getFontMetricsInt(), false);
+                        boolean z6 = z || (!(this.messageOwner.send_state != 0 ? false : arrayList.isEmpty() ^ true) && (this.eventId != 0 || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_old) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_layer68) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_layer74) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_old) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_layer68) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_layer74) || ((isOut() && this.messageOwner.send_state != 0) || this.messageOwner.id < 0)));
+                        if (z6) {
+                            if (containsUrls(this.caption)) {
+                                try {
+                                    AndroidUtilities.addLinksSafe((Spannable) this.caption, 5, false, true);
+                                } catch (Exception e) {
+                                    FileLog.e(e);
+                                }
+                            }
+                            addUrlsByPattern(isOutOwner(), this.caption, true, 0, 0, true);
+                        }
+                        addEntitiesToText(this.caption, z6);
+                        if (isVideo()) {
+                            addUrlsByPattern(isOutOwner(), this.caption, true, 3, (int) getDuration(), false);
+                            return;
+                        } else {
+                            if (isMusic() || isVoice()) {
+                                addUrlsByPattern(isOutOwner(), this.caption, true, 4, (int) getDuration(), false);
+                                return;
+                            }
+                            return;
                         }
                     }
-                    addUrlsByPattern(isOutOwner(), this.caption, true, 0, 0, true);
                 }
-                addEntitiesToText(this.caption, z3);
-                if (isVideo()) {
-                    addUrlsByPattern(isOutOwner(), this.caption, true, 3, (int) getDuration(), false);
+                z3 = false;
+                this.captionTranslated = z3;
+                TLRPC.Message message42 = this.messageOwner;
+                tL_textWithEntities = message42.translatedSummaryText;
+                if (tL_textWithEntities == null) {
+                }
+                tL_textWithEntities2 = message42.summaryText;
+                if (tL_textWithEntities2 == null) {
+                }
+                tL_textWithEntities3 = message42.translatedText;
+                if (tL_textWithEntities3 != null) {
+                    str = tL_textWithEntities3.text;
+                    arrayList = tL_textWithEntities3.entities;
+                }
+                if (isMediaEmpty()) {
                     return;
                 } else {
-                    if (isMusic() || isVoice()) {
-                        addUrlsByPattern(isOutOwner(), this.caption, true, 4, (int) getDuration(), false);
-                        return;
-                    }
                     return;
                 }
             }
             arrayList = new ArrayList<>();
             str = "";
         } else if (hasExtendedMedia()) {
-            TLRPC.Message message2 = this.messageOwner;
-            str = message2.media.description;
-            message2.message = str;
+            TLRPC.Message message5 = this.messageOwner;
+            str = message5.media.description;
+            message5.message = str;
         }
         z = false;
-        tL_textWithEntities = this.messageOwner.translatedText;
-        if (tL_textWithEntities != null) {
+        boolean z52 = this.summarized;
+        this.captionSummarized = (z52 || this.messageOwner.summaryText == null) ? false : true;
+        z2 = this.translated;
+        if (z2) {
+        }
+        z3 = false;
+        this.captionTranslated = z3;
+        TLRPC.Message message422 = this.messageOwner;
+        tL_textWithEntities = message422.translatedSummaryText;
+        if (tL_textWithEntities == null) {
+        }
+        tL_textWithEntities2 = message422.summaryText;
+        if (tL_textWithEntities2 == null) {
+        }
+        tL_textWithEntities3 = message422.translatedText;
+        if (tL_textWithEntities3 != null) {
         }
         if (isMediaEmpty()) {
         }
@@ -8536,21 +8632,32 @@ public class MessageObject {
     }
 
     public ArrayList<TLRPC.MessageEntity> getEntities() {
+        TLRPC.TL_textWithEntities tL_textWithEntities;
         TLRPC.Message message = this.messageOwner;
         if (message == null) {
             return null;
         }
+        if (this.summarized) {
+            if (this.translated && (tL_textWithEntities = message.translatedSummaryText) != null) {
+                return tL_textWithEntities.entities;
+            }
+            TLRPC.TL_textWithEntities tL_textWithEntities2 = message.summaryText;
+            if (tL_textWithEntities2 != null) {
+                return tL_textWithEntities2.entities;
+            }
+            return null;
+        }
         if (this.translated) {
             if (message.voiceTranscriptionOpen) {
-                TLRPC.TL_textWithEntities tL_textWithEntities = message.translatedVoiceTranscription;
-                if (tL_textWithEntities != null) {
-                    return tL_textWithEntities.entities;
+                TLRPC.TL_textWithEntities tL_textWithEntities3 = message.translatedVoiceTranscription;
+                if (tL_textWithEntities3 != null) {
+                    return tL_textWithEntities3.entities;
                 }
                 return null;
             }
-            TLRPC.TL_textWithEntities tL_textWithEntities2 = message.translatedText;
-            if (tL_textWithEntities2 != null) {
-                return tL_textWithEntities2.entities;
+            TLRPC.TL_textWithEntities tL_textWithEntities4 = message.translatedText;
+            if (tL_textWithEntities4 != null) {
+                return tL_textWithEntities4.entities;
             }
             return null;
         }
@@ -12384,6 +12491,30 @@ public class MessageObject {
         return getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDice;
     }
 
+    public boolean isStakedDice() {
+        TLRPC.MessageMedia media = getMedia(this.messageOwner);
+        return (media instanceof TLRPC.TL_messageMediaDice) && ((TLRPC.TL_messageMediaDice) media).game_outcome != null;
+    }
+
+    public long getStakedDiceWinAmount() {
+        TLRPC.TL_messages_emojiGameOutcome tL_messages_emojiGameOutcome;
+        TLRPC.MessageMedia media = getMedia(this.messageOwner);
+        if (!(media instanceof TLRPC.TL_messageMediaDice) || (tL_messages_emojiGameOutcome = ((TLRPC.TL_messageMediaDice) media).game_outcome) == null) {
+            return 0L;
+        }
+        long j = tL_messages_emojiGameOutcome.ton_amount;
+        return j > 0 ? j : -tL_messages_emojiGameOutcome.stake_ton_amount;
+    }
+
+    public long getStakedDiceAmount() {
+        TLRPC.TL_messages_emojiGameOutcome tL_messages_emojiGameOutcome;
+        TLRPC.MessageMedia media = getMedia(this.messageOwner);
+        if (!(media instanceof TLRPC.TL_messageMediaDice) || (tL_messages_emojiGameOutcome = ((TLRPC.TL_messageMediaDice) media).game_outcome) == null) {
+            return 0L;
+        }
+        return tL_messages_emojiGameOutcome.stake_ton_amount;
+    }
+
     public String getDiceEmoji() {
         if (!isDice()) {
             return null;
@@ -14961,7 +15092,7 @@ public class MessageObject {
 
     public CharSequence getMessageTextToTranslate(GroupedMessages groupedMessages, int[] iArr) {
         int i;
-        if (this.translated || this.isRestrictedMessage || (i = this.type) == 19 || i == 15 || i == 13) {
+        if (this.translated || this.summarized || this.isRestrictedMessage || (i = this.type) == 19 || i == 15 || i == 13) {
             return null;
         }
         CharSequence messageCaption = ChatActivity.getMessageCaption(this, groupedMessages, iArr);

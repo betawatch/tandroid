@@ -10,7 +10,7 @@ import java.net.URI;
 import java.util.Iterator;
 import java.util.List;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 abstract class BrowserUtils {
     static void openBrowser(String str, Activity activity) {
         try {

@@ -44,7 +44,6 @@ import org.telegram.ui.Components.PopupSwipeBackLayout;
 /* loaded from: classes4.dex */
 public class ActionBarPopupWindow extends PopupWindow {
     private static final ViewTreeObserver.OnScrollChangedListener NOP;
-    private static final boolean allowAnimation = true;
     private static DecelerateInterpolator decelerateInterpolator = new DecelerateInterpolator();
     private static Method layoutInScreenMethod;
     private static final Field superListenerField;
@@ -152,7 +151,7 @@ public class ActionBarPopupWindow extends PopupWindow {
             this.startAnimationPending = false;
             this.backAlpha = NotificationCenter.cameraInitied;
             this.lastStartedChild = 0;
-            this.animationEnabled = ActionBarPopupWindow.allowAnimation;
+            this.animationEnabled = true;
             this.positions = new HashMap();
             this.gapStartY = -1000000;
             this.gapEndY = -1000000;
@@ -599,7 +598,7 @@ public class ActionBarPopupWindow extends PopupWindow {
                                 } else {
                                     path.rewind();
                                 }
-                                this.path.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
+                                this.path.addRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), Path.Direction.CW);
                                 canvas.clipPath(this.path);
                                 for (int i12 = 0; i12 < this.linearLayout.getChildCount(); i12++) {
                                     if ((this.linearLayout.getChildAt(i12) instanceof GapView) && this.linearLayout.getChildAt(i12).getVisibility() == 0) {
@@ -758,7 +757,7 @@ public class ActionBarPopupWindow extends PopupWindow {
 
     public ActionBarPopupWindow(Context context) {
         super(context);
-        this.animationEnabled = allowAnimation;
+        this.animationEnabled = true;
         this.dismissAnimationDuration = 150;
         this.currentAccount = UserConfig.selectedAccount;
         this.outEmptyTime = -1L;
@@ -768,7 +767,7 @@ public class ActionBarPopupWindow extends PopupWindow {
 
     public ActionBarPopupWindow(View view, int i, int i2) {
         super(view, i, i2);
-        this.animationEnabled = allowAnimation;
+        this.animationEnabled = true;
         this.dismissAnimationDuration = 150;
         this.currentAccount = UserConfig.selectedAccount;
         this.outEmptyTime = -1L;

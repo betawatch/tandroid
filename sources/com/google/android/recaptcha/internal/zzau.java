@@ -1,59 +1,44 @@
 package com.google.android.recaptcha.internal;
 
-import com.google.android.recaptcha.RecaptchaAction;
-import kotlin.Result;
+import android.os.Build;
 import kotlin.ResultKt;
 import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
 
 /* loaded from: classes.dex */
 final class zzau extends SuspendLambda implements Function2 {
-    int zza;
-    final /* synthetic */ zzaw zzb;
-    final /* synthetic */ RecaptchaAction zzc;
-    final /* synthetic */ long zzd;
+    final /* synthetic */ zzav zza;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzau(zzaw zzawVar, RecaptchaAction recaptchaAction, long j, Continuation continuation) {
+    zzau(zzav zzavVar, Continuation continuation) {
         super(2, continuation);
-        this.zzb = zzawVar;
-        this.zzc = recaptchaAction;
-        this.zzd = j;
+        this.zza = zzavVar;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation create(Object obj, Continuation continuation) {
-        return new zzau(this.zzb, this.zzc, this.zzd, continuation);
+        return new zzau(this.zza, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzau) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzau) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object zzk;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zza;
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
         ResultKt.throwOnFailure(obj);
-        if (i != 0) {
-            zzk = ((Result) obj).unbox-impl();
-        } else {
-            zzaw zzawVar = this.zzb;
-            RecaptchaAction recaptchaAction = this.zzc;
-            long j = this.zzd;
-            this.zza = 1;
-            zzk = zzawVar.zzk(recaptchaAction, j, this);
-            if (zzk == coroutine_suspended) {
-                return coroutine_suspended;
-            }
-        }
-        ResultKt.throwOnFailure(zzk);
-        return zzk;
+        zzav zzavVar = this.zza;
+        int i = Build.VERSION.SDK_INT;
+        zzyu zzf = zzyx.zzf();
+        zzyv zzf2 = zzyw.zzf();
+        zzf2.zzw(String.valueOf(i));
+        zzf.zze(CollectionsKt.listOf(zzf2.zzk()));
+        return zzas.zzb(zzavVar, (zzyx) zzf.zzk());
     }
 }

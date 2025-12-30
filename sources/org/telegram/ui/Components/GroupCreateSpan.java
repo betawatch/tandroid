@@ -359,18 +359,18 @@ public class GroupCreateSpan extends View {
 
     public void updateColors() {
         int color = this.avatarDrawable.getColor();
-        int color2 = Theme.getColor(Theme.key_groupcreate_spanBackground, this.resourcesProvider);
-        int color3 = Theme.getColor(Theme.key_groupcreate_spanDelete, this.resourcesProvider);
-        this.colors[0] = Color.red(color2);
+        int multAlpha = Theme.multAlpha(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider), 0.05f);
+        int color2 = Theme.getColor(Theme.key_groupcreate_spanDelete, this.resourcesProvider);
+        this.colors[0] = Color.red(multAlpha);
         this.colors[1] = Color.red(color);
-        this.colors[2] = Color.green(color2);
+        this.colors[2] = Color.green(multAlpha);
         this.colors[3] = Color.green(color);
-        this.colors[4] = Color.blue(color2);
+        this.colors[4] = Color.blue(multAlpha);
         this.colors[5] = Color.blue(color);
-        this.colors[6] = Color.alpha(color2);
+        this.colors[6] = Color.alpha(multAlpha);
         this.colors[7] = Color.alpha(color);
-        this.deleteDrawable.setColorFilter(new PorterDuffColorFilter(color3, PorterDuff.Mode.MULTIPLY));
-        backPaint.setColor(color2);
+        this.deleteDrawable.setColorFilter(new PorterDuffColorFilter(color2, PorterDuff.Mode.MULTIPLY));
+        backPaint.setColor(multAlpha);
     }
 
     public boolean isDeleting() {

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import java.util.Set;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class SharedPreferencesManager {
     private static Context sContext;
     private static SharedPreferences sSharedPreferences;

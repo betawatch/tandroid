@@ -90,7 +90,7 @@ public class StarRatingView extends View {
         this.drawable.setBounds(0, 0, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
         this.drawable.setOuterColor(this.colors.backgroundColor);
         this.drawable.setInnerColor(this.colors.fillingColor);
-        this.drawable.setTextColor(this.colors.fillingTextColor);
+        this.drawable.setTextColor(this.colors.backgroundColor | (-16777216));
         this.drawable.draw(canvas);
         canvas.restore();
     }
@@ -142,9 +142,7 @@ public class StarRatingView extends View {
 
     private static class Colors {
         public int backgroundColor;
-        public int backgroundTextColor;
         public int fillingColor;
-        public int fillingTextColor;
         private float parentExpanded;
         public MessagesController.PeerColor peerColor;
         private Theme.ResourcesProvider resourcesProvider;
@@ -152,8 +150,6 @@ public class StarRatingView extends View {
         private Colors() {
             this.backgroundColor = -16777216;
             this.fillingColor = -1;
-            this.backgroundTextColor = -1;
-            this.fillingTextColor = -16777216;
         }
 
         public void update(MessagesController.PeerColor peerColor) {
@@ -162,27 +158,16 @@ public class StarRatingView extends View {
                 reset();
                 return;
             }
-            int bgColor1 = peerColor.getBgColor1(Theme.isCurrentThemeDark());
-            int bgColor2 = peerColor.getBgColor2(Theme.isCurrentThemeDark());
-            int i = AndroidUtilities.computePerceivedBrightness(this.backgroundColor) > 0.721f ? -16777216 : -1;
-            int tabsViewBackgroundColor = StarRatingView.getTabsViewBackgroundColor(this.resourcesProvider, bgColor2, bgColor1, this.parentExpanded);
-            this.fillingTextColor = tabsViewBackgroundColor;
+            int tabsViewBackgroundColor = StarRatingView.getTabsViewBackgroundColor(this.resourcesProvider, peerColor.getBgColor2(Theme.isCurrentThemeDark()), peerColor.getBgColor1(Theme.isCurrentThemeDark()), this.parentExpanded);
             this.backgroundColor = tabsViewBackgroundColor;
-            int blendARGB = ColorUtils.blendARGB(i, Theme.getColor(Theme.key_actionBarDefaultTitle, this.resourcesProvider), this.parentExpanded);
-            this.fillingColor = blendARGB;
-            this.backgroundTextColor = blendARGB;
-            this.fillingTextColor |= -16777216;
+            this.fillingColor = ColorUtils.blendARGB(AndroidUtilities.computePerceivedBrightness(tabsViewBackgroundColor) > 0.721f ? -16777216 : -1, Theme.getColor(Theme.key_actionBarDefault, this.resourcesProvider), this.parentExpanded);
         }
 
         public void reset() {
-            int i = Theme.key_actionBarDefault;
-            int tabsViewBackgroundColor = StarRatingView.getTabsViewBackgroundColor(this.resourcesProvider, Theme.getColor(i, this.resourcesProvider), Theme.getColor(i, this.resourcesProvider), this.parentExpanded);
-            this.fillingTextColor = tabsViewBackgroundColor;
-            this.backgroundColor = tabsViewBackgroundColor;
-            int color = Theme.getColor(Theme.key_actionBarDefaultTitle, this.resourcesProvider);
-            this.fillingColor = color;
-            this.backgroundTextColor = color;
-            this.fillingTextColor |= -16777216;
+            int i = Theme.key_actionBarDefaultTitle;
+            int color = Theme.getColor(i, this.resourcesProvider);
+            this.backgroundColor = StarRatingView.getTabsViewBackgroundColor(this.resourcesProvider, Theme.getColor(i, this.resourcesProvider), color, this.parentExpanded);
+            this.fillingColor = Theme.getColor(Theme.key_actionBarDefault, this.resourcesProvider);
         }
 
         public void setParentExpanded(float f) {

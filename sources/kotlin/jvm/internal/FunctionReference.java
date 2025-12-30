@@ -19,9 +19,40 @@ public abstract class FunctionReference extends CallableReference implements Fun
         return this.arity;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // kotlin.jvm.internal.CallableReference
+    public KFunction getReflected() {
+        return (KFunction) super.getReflected();
+    }
+
     @Override // kotlin.jvm.internal.CallableReference
     protected KCallable computeReflected() {
         return Reflection.function(this);
+    }
+
+    @Override // kotlin.reflect.KFunction
+    public boolean isInline() {
+        return getReflected().isInline();
+    }
+
+    @Override // kotlin.reflect.KFunction
+    public boolean isExternal() {
+        return getReflected().isExternal();
+    }
+
+    @Override // kotlin.reflect.KFunction
+    public boolean isOperator() {
+        return getReflected().isOperator();
+    }
+
+    @Override // kotlin.reflect.KFunction
+    public boolean isInfix() {
+        return getReflected().isInfix();
+    }
+
+    @Override // kotlin.reflect.KFunction
+    public boolean isSuspend() {
+        return getReflected().isSuspend();
     }
 
     public boolean equals(Object obj) {

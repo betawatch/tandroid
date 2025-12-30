@@ -1404,6 +1404,10 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.onAnimationEndListener = runnable;
     }
 
+    public boolean isDice() {
+        return this.isDice != 0;
+    }
+
     public boolean setBaseDice(File file) {
         if (this.nativePtr == 0 && !this.loadingInBackground) {
             final String readRes = AndroidUtilities.readRes(file);
@@ -1510,6 +1514,21 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.timeBetweenFrames = Math.max(16, (int) (1000.0f / iArr[1]));
         scheduleNextGetFrame();
         invalidateInternal();
+    }
+
+    public boolean isDiceRevealed() {
+        int i = this.isDice;
+        if (i == 1 || i != 2) {
+            return false;
+        }
+        if (this.setLastFrame) {
+            return true;
+        }
+        float progress = getProgress();
+        if (this.secondNativePtr != 0) {
+            progress = this.currentFrame / this.secondFramesCount;
+        }
+        return progress > 0.95f;
     }
 
     public RLottieDrawable(int i, String str, int i2, int i3, boolean z, int[] iArr) {

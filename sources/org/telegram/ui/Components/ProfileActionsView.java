@@ -48,6 +48,9 @@ public class ProfileActionsView extends View {
     private long downTime;
     private float downX;
     private float downY;
+    private final PorterDuffColorFilter filterColorBlack;
+    private final PorterDuffColorFilter filterColorWhite;
+    private boolean first;
     private Action firstAction;
     private boolean hasColorById;
     private Action hit;
@@ -57,10 +60,12 @@ public class ProfileActionsView extends View {
     private boolean isNotificationsEnabled;
     public boolean isOpeningLayout;
     private Action lastAction;
+    private boolean lastHasColor;
     private final Matrix matrix;
     public int mode;
     private OnActionClickListener onActionClickListener;
     private final Paint paint;
+    private float parentExpanded;
     private RadialGradient radialGradient;
     private RenderNode renderNode;
     private float renderNodeScale;
@@ -101,6 +106,9 @@ public class ProfileActionsView extends View {
         this.callAction = null;
         this.color = 0;
         this.matrix = new Matrix();
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        this.filterColorWhite = new PorterDuffColorFilter(-1, mode);
+        this.filterColorBlack = new PorterDuffColorFilter(-16777216, mode);
         this.hit = null;
         this.callAnimationStateLoaded = false;
         this.callBackwardAnimateFromX = -1.0f;
@@ -143,6 +151,14 @@ public class ProfileActionsView extends View {
         this.onActionClickListener = onActionClickListener;
     }
 
+    public void setParentExpanded(float f) {
+        if (this.parentExpanded != f) {
+            this.parentExpanded = f;
+            checkPaints();
+            invalidate();
+        }
+    }
+
     public void setActionsColor(int i, boolean z) {
         if (this.radialGradient != null && this.color == i && this.hasColorById == z) {
             return;
@@ -150,6 +166,19 @@ public class ProfileActionsView extends View {
         this.color = i;
         this.hasColorById = z;
         createColorShader();
+        checkPaints();
+    }
+
+    private boolean isButtonColorLight() {
+        return AndroidUtilities.computePerceivedBrightness(this.color) > 0.72f;
+    }
+
+    private void checkPaints() {
+        if (isButtonColorLight() && this.parentExpanded < 0.5f) {
+            this.paint.setShadowLayer(AndroidUtilities.dpf2(1.5f), 0.0f, 0.0f, TLObject.FLAG_29);
+        } else {
+            this.paint.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
+        }
     }
 
     private void createColorShader() {
@@ -165,9 +194,8 @@ public class ProfileActionsView extends View {
         if (measuredWidth <= 0) {
             return;
         }
-        float f = this.xpadding;
-        float f2 = ((measuredWidth - ((f / 2.0f) * (r4 - 1))) - (f * 2.0f)) / this.activeCount;
-        RadialGradient radialGradient = new RadialGradient(f2 / 2.0f, this.targetHeight / 2.0f, this.hasColorById ? f2 * 0.65f : 1.0f, Theme.multAlpha(this.color, 0.8f), this.color, Shader.TileMode.CLAMP);
+        float max = ((measuredWidth - ((this.xpadding / 2.0f) * Math.max(0, this.activeCount - 1))) - (this.xpadding * 2.0f)) / Math.max(1, this.activeCount);
+        RadialGradient radialGradient = new RadialGradient(max / 2.0f, this.targetHeight / 2.0f, this.hasColorById ? max * 0.65f : 1.0f, Theme.multAlpha(this.color, 0.8f), this.color, Shader.TileMode.CLAMP);
         this.radialGradient = radialGradient;
         this.shaderPaint.setShader(radialGradient);
     }
@@ -191,6 +219,12 @@ public class ProfileActionsView extends View {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
+        boolean z = !isButtonColorLight();
+        if (this.lastHasColor != z || !this.first) {
+            this.lastHasColor = z;
+            this.first = true;
+            updateHasColor(z);
+        }
         float f = this.clipHeight;
         if (f >= 0.0f) {
             float y = f - getY();
@@ -319,7 +353,7 @@ public class ProfileActionsView extends View {
         float f;
         float centerX = action.rect.centerX();
         action.rect.centerY();
-        float dp = AndroidUtilities.dp(this.mode == 6 ? 28.0f : 24.0f);
+        float dp = AndroidUtilities.dp(24.0f);
         float f2 = 0.5f * dp;
         action.text.setMaxWidth(action.rect.width() - AndroidUtilities.dp(2.0f));
         if (action.text.getLineCount() >= 3) {
@@ -328,7 +362,7 @@ public class ProfileActionsView extends View {
             f = action.text.getLineCount() >= 2 ? 0.85f : 1.0f;
         }
         action.textScale = f;
-        float max = Math.max(0.0f, (this.targetHeight - (action.text.getHeight() * action.textScale)) / 3.0f);
+        float max = Math.max(0.0f, ((this.targetHeight - (action.text.getHeight() * action.textScale)) / 3.0f) + AndroidUtilities.dpf2(1.33f));
         action.drawable.setBounds((int) (centerX - f2), (int) max, (int) (centerX + f2), (int) (max + dp));
     }
 
@@ -344,10 +378,10 @@ public class ProfileActionsView extends View {
         canvas.scale(scale, scale, centerX, centerY);
         canvas.clipRect(action.rect);
         updateBounds(action);
-        float height = ((action.drawable.getBounds().bottom + action.drawable.getBounds().top) - ((action.text.getHeight() * action.textScale) / 2.0f)) - AndroidUtilities.dp(2.0f);
+        float height = ((action.drawable.getBounds().bottom + action.drawable.getBounds().top) - ((action.text.getHeight() * action.textScale) / 2.0f)) - AndroidUtilities.dp(4.66f);
         canvas.save();
         canvas.scale(action.textScale, action.textScale, centerX, ((action.text.getHeight() * action.textScale) / 2.0f) + height);
-        action.text.draw(canvas, centerX - (action.text.getWidth() / 2.0f), height, -1, alpha);
+        action.text.draw(canvas, centerX - (action.text.getWidth() / 2.0f), height, (!isButtonColorLight() || this.parentExpanded >= 0.5f) ? -1 : -16777216, alpha);
         canvas.restore();
         int i = action.iconTranslationY;
         if (i != 0) {
@@ -358,6 +392,7 @@ public class ProfileActionsView extends View {
             canvas.scale(f3, f3, action.drawable.getBounds().centerX(), action.drawable.getBounds().centerY());
         }
         if (!this.isAnimatingCallAction || action.key != 5) {
+            action.drawable.setColorFilter((!isButtonColorLight() || this.parentExpanded >= 0.5f) ? this.filterColorWhite : this.filterColorBlack);
             action.drawable.setAlpha((int) (255.0f * alpha));
             action.drawable.draw(canvas);
         }
@@ -526,48 +561,37 @@ public class ProfileActionsView extends View {
         }
     }
 
-    public void addCameraAction(RLottieDrawable rLottieDrawable) {
-        Action action = new Action();
-        rLottieDrawable.setMasterParent(this);
-        rLottieDrawable.setCurrentFrame(0);
-        rLottieDrawable.start();
-        action.iconTranslationY = -AndroidUtilities.dp(2.0f);
-        action.drawable = rLottieDrawable;
+    public void addCameraAction() {
+        Action action = new Action(this, R.drawable.filled_profile_photo, R.string.SetPhoto);
         action.key = 14;
-        action.setText(LocaleController.getString(R.string.ProfileActionsEditPhoto));
-        action.iconScale = 1.5f;
-        this.actions.add(action);
-        this.activeCount = this.actions.size();
-    }
-
-    public void addEditUsernameAction() {
-        Action action = new Action();
-        int i = R.raw.profile_username;
-        RLottieDrawable rLottieDrawable = new RLottieDrawable(i, String.valueOf(i), AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), false, null);
-        rLottieDrawable.setMasterParent(this);
-        action.drawable = rLottieDrawable;
-        action.text = null;
-        action.key = 15;
-        rLottieDrawable.setCurrentFrame(14);
-        rLottieDrawable.multiplySpeed(0.4f);
-        rLottieDrawable.start();
-        action.setText(LocaleController.getString(R.string.ProfileActionsEditUsername));
         this.actions.add(action);
     }
 
-    public void addEditInfoAction() {
-        Action action = new Action();
-        int i = R.raw.profile_edit;
-        RLottieDrawable rLottieDrawable = new RLottieDrawable(i, String.valueOf(i), AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), false, null);
-        rLottieDrawable.setMasterParent(this);
-        rLottieDrawable.multiplySpeed(1.4f);
-        action.drawable = rLottieDrawable;
-        action.text = null;
-        action.key = 16;
-        action.iconTranslationY = -AndroidUtilities.dp(2.0f);
-        rLottieDrawable.start();
-        action.setText(LocaleController.getString(R.string.ProfileActionsEditInfo));
+    public void addAddStory() {
+        Action action = new Action(this, R.drawable.filled_profile_story, R.string.ProfileActionsAddStory);
+        action.key = 12;
         this.actions.add(action);
+    }
+
+    public void addSettings() {
+        Action action = new Action(this, R.drawable.filled_profile_settings, R.string.Settings);
+        action.key = 17;
+        this.actions.add(action);
+    }
+
+    private void updateHasColor(boolean z) {
+        Action findOrCreate = findOrCreate(14);
+        if (findOrCreate != null) {
+            findOrCreate.updateDrawable(false, z ? R.drawable.filled_profile_photo : R.drawable.msg_addphoto);
+        }
+        Action findOrCreate2 = findOrCreate(12);
+        if (findOrCreate2 != null) {
+            findOrCreate2.updateDrawable(false, z ? R.drawable.filled_profile_story : R.drawable.story);
+        }
+        Action findOrCreate3 = findOrCreate(17);
+        if (findOrCreate3 != null) {
+            findOrCreate3.updateDrawable(false, z ? R.drawable.filled_profile_settings : R.drawable.msg_settings);
+        }
     }
 
     public void startAnimatedActions() {
@@ -594,7 +618,7 @@ public class ProfileActionsView extends View {
 
     public void startCameraAnimation() {
         Action find = find(14);
-        if (find == null || find.drawable == null) {
+        if (find == null || !(find.drawable instanceof RLottieDrawable)) {
             return;
         }
         ((RLottieDrawable) find.drawable).start();
@@ -816,6 +840,11 @@ public class ProfileActionsView extends View {
             find.key = i;
         }
         return find;
+    }
+
+    private Action findOrCreate(int i) {
+        Action find = find(i);
+        return find == null ? getOrCreate(i) : find;
     }
 
     private Action find(int i) {

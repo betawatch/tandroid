@@ -3,6 +3,7 @@ package kotlinx.coroutines.internal;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.EmptyCoroutineContext;
+import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.CoroutineDispatcher;
 import kotlinx.coroutines.CoroutineExceptionHandlerKt;
 import kotlinx.coroutines.DefaultExecutorKt;
@@ -22,6 +23,11 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Dela
     @Override // kotlinx.coroutines.Delay
     public DisposableHandle invokeOnTimeout(long j, Runnable runnable, CoroutineContext coroutineContext) {
         return this.$$delegate_0.invokeOnTimeout(j, runnable, coroutineContext);
+    }
+
+    @Override // kotlinx.coroutines.Delay
+    public void scheduleResumeAfterDelay(long j, CancellableContinuation cancellableContinuation) {
+        this.$$delegate_0.scheduleResumeAfterDelay(j, cancellableContinuation);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

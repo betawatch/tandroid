@@ -1,40 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-/* loaded from: classes.dex */
-final /* synthetic */ class zzhz {
-    static final /* synthetic */ int[] zza;
+import kotlin.jvm.functions.Function0;
 
-    static {
-        zzis.zza();
-        int[] iArr = new int[7];
-        zza = iArr;
-        try {
-            iArr[3] = 1;
-        } catch (NoSuchFieldError unused) {
+/* loaded from: classes.dex */
+public final class zzhz implements Function0 {
+    public static final zzhz zza = new zzhz();
+
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzbt.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzbt) zzb;
         }
-        try {
-            zza[4] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            zza[2] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            zza[5] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            zza[6] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            zza[0] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            zza[1] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

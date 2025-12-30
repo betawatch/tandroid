@@ -213,6 +213,18 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
         rescheduleAllDelayed();
     }
 
+    @Override // kotlinx.coroutines.Delay
+    public void scheduleResumeAfterDelay(long j, CancellableContinuation cancellableContinuation) {
+        long delayToNanos = EventLoop_commonKt.delayToNanos(j);
+        if (delayToNanos < 4611686018427387903L) {
+            AbstractTimeSourceKt.access$getTimeSource$p();
+            long nanoTime = System.nanoTime();
+            DelayedResumeTask delayedResumeTask = new DelayedResumeTask(delayToNanos + nanoTime, cancellableContinuation);
+            schedule(nanoTime, delayedResumeTask);
+            CancellableContinuationKt.disposeOnCancellation(cancellableContinuation, delayedResumeTask);
+        }
+    }
+
     protected final DisposableHandle scheduleInvokeOnTimeout(long j, Runnable runnable) {
         long delayToNanos = EventLoop_commonKt.delayToNanos(j);
         if (delayToNanos < 4611686018427387903L) {
@@ -417,6 +429,25 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
             } else {
                 reschedule(nanoTime, delayedTask);
             }
+        }
+    }
+
+    private final class DelayedResumeTask extends DelayedTask {
+        private final CancellableContinuation cont;
+
+        public DelayedResumeTask(long j, CancellableContinuation cancellableContinuation) {
+            super(j);
+            this.cont = cancellableContinuation;
+        }
+
+        @Override // java.lang.Runnable
+        public void run() {
+            this.cont.resumeUndispatched(EventLoopImplBase.this, Unit.INSTANCE);
+        }
+
+        @Override // kotlinx.coroutines.EventLoopImplBase.DelayedTask
+        public String toString() {
+            return super.toString() + this.cont;
         }
     }
 

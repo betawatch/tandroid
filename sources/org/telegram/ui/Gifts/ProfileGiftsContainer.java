@@ -8,6 +8,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.SpannableStringBuilder;
@@ -19,7 +20,6 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -86,6 +86,12 @@ import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalRecyclerView;
 import org.telegram.ui.Components.ViewPagerFixed;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
+import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 import org.telegram.ui.Gifts.GiftSheet;
 import org.telegram.ui.Gifts.ProfileGiftsContainer;
 import org.telegram.ui.LaunchActivity;
@@ -106,7 +112,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
     private final ButtonWithCounterView button;
     private final FrameLayout buttonContainer;
     private int buttonContainerHeightDp;
-    private final View buttonShadow;
+    private int buttonContainerOffset;
     private final CheckBox2 checkbox;
     private final LinearLayout checkboxLayout;
     private int checkboxRequestId;
@@ -116,6 +122,8 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
     public ItemOptions currentMenu;
     private final long dialogId;
     private final BaseFragment fragment;
+    public IBlur3Capture iBlur3Capture;
+    private ViewGroup iBlur3CaptureParent;
     private final StarsController.GiftsList list;
     private int pendingScrollToCollectionId;
     private boolean reorderingCollections;
@@ -155,6 +163,8 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         private LinearLayout emptyView2Layout;
         private TextView emptyView2Subtitle;
         private TextView emptyView2Title;
+        private boolean hasTabs;
+        public IBlur3Capture iBlur3Capture;
         public boolean isCollection;
         public StarsController.GiftsList list;
         private final UniversalRecyclerView listView;
@@ -199,26 +209,31 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 public final Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                     return Boolean.valueOf(ProfileGiftsContainer.Page.this.onItemLongPress((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue()));
                 }
-            }, resourcesProvider, 3, 1);
+            }, resourcesProvider, 3, 1) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.1
+                @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+                protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
+                    super.onLayout(z, i2, i3, i4, i5);
+                    profileGiftsContainer.updateTabsY();
+                }
+            };
             this.listView = universalRecyclerView;
             universalRecyclerView.adapter.setApplyBackground(false);
             universalRecyclerView.setSelectorType(9);
             universalRecyclerView.setSelectorDrawableColor(0);
-            universalRecyclerView.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(30.0f));
+            universalRecyclerView.setPadding(AndroidUtilities.dp(9.0f), 0, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(86.0f));
             universalRecyclerView.setClipToPadding(false);
             universalRecyclerView.setClipChildren(false);
             addView(universalRecyclerView, LayoutHelper.createFrame(-1, -1, 119));
-            universalRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.1
+            universalRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.2
                 @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
                 public void onScrolled(RecyclerView recyclerView, int i2, int i3) {
-                    if (Page.this.isAttachedToWindow()) {
-                        if (!Page.this.listView.canScrollVertically(1) || Page.this.isLoadingVisible()) {
-                            Page.this.list.load();
-                        }
+                    if (Page.this.isAttachedToWindow() && (!Page.this.listView.canScrollVertically(1) || Page.this.isLoadingVisible())) {
+                        Page.this.list.load();
                     }
+                    profileGiftsContainer.updateTabsY();
                 }
             });
-            ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.2
+            ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.3
                 @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
                 public void onSwiped(RecyclerView.ViewHolder viewHolder, int i2) {
                 }
@@ -557,6 +572,34 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
         }
 
+        public void setHasTabs(boolean z) {
+            if (this.hasTabs == z) {
+                return;
+            }
+            this.hasTabs = z;
+            boolean canScrollVertically = this.listView.canScrollVertically(-1);
+            this.listView.adapter.update(true);
+            if (!canScrollVertically) {
+                this.listView.scrollToPosition(0);
+            }
+            this.parent.updateTabsY();
+        }
+
+        public float getTabsHeight() {
+            for (int i = 0; i < this.listView.getChildCount(); i++) {
+                View childAt = this.listView.getChildAt(i);
+                int childAdapterPosition = this.listView.getChildAdapterPosition(childAt);
+                if (childAt instanceof GiftSheet.GiftCell) {
+                    if (childAdapterPosition == 0) {
+                        return Math.max(0.0f, this.listView.getPaddingTop() + childAt.getY());
+                    }
+                } else if (childAdapterPosition == 0) {
+                    return Math.max(0.0f, this.listView.getPaddingTop() + childAt.getY() + (childAt.getHeight() * childAt.getAlpha()));
+                }
+            }
+            return 0.0f;
+        }
+
         public boolean isReordering() {
             return this.reordering;
         }
@@ -564,7 +607,6 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
             int i;
             int i2;
-            int i3;
             StarsController.GiftsList giftsList = this.list;
             if (giftsList == null) {
                 return;
@@ -576,36 +618,30 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 }
             }
             StarsController.GiftsList giftsList3 = this.list;
-            final int max = Math.max(1, (giftsList3 == null || (i3 = giftsList3.totalCount) == 0) ? 3 : Math.min(3, i3));
+            final int max = Math.max(1, (giftsList3 == null || (i2 = giftsList3.totalCount) == 0) ? 3 : Math.min(3, i2));
             StarsController.GiftsList giftsList4 = this.list;
             if (giftsList4 != null) {
                 Iterator it = giftsList4.gifts.iterator();
                 loop0: while (true) {
                     i = 3;
-                    do {
-                        i2 = 0;
-                        r5 = false;
-                        boolean z = false;
-                        if (!it.hasNext()) {
-                            break loop0;
-                        }
+                    while (it.hasNext()) {
                         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) it.next();
-                        UItem asStarGift = GiftSheet.GiftCell.Factory.asStarGift(0, savedStarGift, true, false, this.isCollection);
-                        if (this.reordering && (this.list != this.parent.list || savedStarGift.pinned_to_top)) {
-                            z = true;
-                        }
-                        arrayList.add(asStarGift.setReordering(z));
+                        arrayList.add(GiftSheet.GiftCell.Factory.asStarGift(0, savedStarGift, true, false, this.isCollection).setReordering(this.reordering && (this.list != this.parent.list || savedStarGift.pinned_to_top)));
                         i--;
-                    } while (i != 0);
+                        if (i == 0) {
+                            break;
+                        }
+                    }
                 }
                 StarsController.GiftsList giftsList5 = this.list;
                 if (giftsList5.loading || !giftsList5.endReached) {
+                    int i3 = 0;
                     while (true) {
-                        if (i2 >= (i <= 0 ? 3 : i)) {
+                        if (i3 >= (i <= 0 ? 3 : i)) {
                             break;
                         }
-                        i2++;
-                        arrayList.add(UItem.asFlicker(i2, 34).setSpanCount(1));
+                        i3++;
+                        arrayList.add(UItem.asFlicker(i3, 34).setSpanCount(1));
                     }
                 }
             }
@@ -618,11 +654,26 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             } else if (!arrayList.isEmpty()) {
                 arrayList.add(UItem.asSpace(AndroidUtilities.dp(82.0f)));
             }
+            if (!arrayList.isEmpty()) {
+                arrayList.add(0, UItem.asSpace(AndroidUtilities.dp(this.hasTabs ? 42.0f : 12.0f)));
+            }
             if (this.listView.getSpanCount() != max) {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda22
                     @Override // java.lang.Runnable
                     public final void run() {
                         ProfileGiftsContainer.Page.this.lambda$fillItems$3(max);
+                    }
+                });
+            }
+            ProfileGiftsContainer profileGiftsContainer = this.parent;
+            if (profileGiftsContainer != null) {
+                profileGiftsContainer.updateTabsY();
+                final ProfileGiftsContainer profileGiftsContainer2 = this.parent;
+                Objects.requireNonNull(profileGiftsContainer2);
+                profileGiftsContainer2.post(new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda23
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ProfileGiftsContainer.this.updateTabsY();
                     }
                 });
             }
@@ -728,7 +779,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     }
                 });
                 makeSwipeback.addGap();
-                ScrollView scrollView = new ScrollView(getContext()) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.3
+                ScrollView scrollView = new ScrollView(getContext()) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.4
                     @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i3, int i4) {
                         super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i4)), View.MeasureSpec.getMode(i4)));
@@ -765,7 +816,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     actionBarMenuSubItem2.setColors(Theme.getColor(i4, this.resourcesProvider), Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon, this.resourcesProvider));
                     actionBarMenuSubItem2.setSelectorColor(Theme.multAlpha(Theme.getColor(i4, this.resourcesProvider), f3));
                     if (tL_starGiftCollection.icon != null) {
-                        AnimatedEmojiDrawable animatedEmojiDrawable = new AnimatedEmojiDrawable(3, this.currentAccount, tL_starGiftCollection.icon) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.4
+                        AnimatedEmojiDrawable animatedEmojiDrawable = new AnimatedEmojiDrawable(3, this.currentAccount, tL_starGiftCollection.icon) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.5
                             @Override // android.graphics.drawable.Drawable
                             public int getIntrinsicHeight() {
                                 return AndroidUtilities.dp(24.0f);
@@ -909,7 +960,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemLongPress$9(ItemOptions itemOptions, final TL_stars.SavedStarGift savedStarGift, View view) {
             itemOptions.dismiss();
-            this.parent.openEnterNameAlert(null, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda23
+            this.parent.openEnterNameAlert(null, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda24
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     ProfileGiftsContainer.Page.this.lambda$onItemLongPress$8(savedStarGift, (String) obj);
@@ -919,7 +970,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemLongPress$8(final TL_stars.SavedStarGift savedStarGift, String str) {
-            this.parent.collections.createCollection(str, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda25
+            this.parent.collections.createCollection(str, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda26
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     ProfileGiftsContainer.Page.this.lambda$onItemLongPress$7(savedStarGift, (TL_stars.TL_starGiftCollection) obj);
@@ -967,7 +1018,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             boolean z = savedStarGift.pinned_to_top;
             final boolean z2 = !z;
             if (this.list.togglePinned(savedStarGift, z2, false)) {
-                new UnpinSheet(getContext(), this.parent.dialogId, savedStarGift, this.resourcesProvider, new Utilities.Callback0Return() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda24
+                new UnpinSheet(getContext(), this.parent.dialogId, savedStarGift, this.resourcesProvider, new Utilities.Callback0Return() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$Page$$ExternalSyntheticLambda25
                     @Override // org.telegram.messenger.Utilities.Callback0Return
                     public final Object run() {
                         BulletinFactory lambda$onItemLongPress$12;
@@ -1005,7 +1056,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemLongPress$16(TL_stars.SavedStarGift savedStarGift) {
-            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.5
+            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.6
                 @Override // org.telegram.ui.Stars.StarGiftSheet
                 public BulletinFactory getBulletinFactory() {
                     return BulletinFactory.of(Page.this.parent.fragment);
@@ -1021,7 +1072,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemLongPress$18(TL_stars.SavedStarGift savedStarGift) {
-            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.6
+            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.7
                 @Override // org.telegram.ui.Stars.StarGiftSheet
                 public BulletinFactory getBulletinFactory() {
                     return BulletinFactory.of(Page.this.parent.fragment);
@@ -1051,7 +1102,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemLongPress$21(TL_stars.SavedStarGift savedStarGift) {
-            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.7
+            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.8
                 @Override // org.telegram.ui.Stars.StarGiftSheet
                 public BulletinFactory getBulletinFactory() {
                     return BulletinFactory.of(Page.this.parent.fragment);
@@ -1089,11 +1140,9 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         return z ? this.viewPager.getCurrentPosition() >= this.collections.getCollections().size() : this.viewPager.getCurrentPosition() <= 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x02ad  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x02ba  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x02c4  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x02c7  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x02b0  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02c1  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x02ce  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x02c4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1102,7 +1151,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         int i2;
         String str;
         this.checkboxRequestId = -1;
-        this.sendCollectionsOrder = new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda1
+        this.sendCollectionsOrder = new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.lambda$new$11();
@@ -1144,6 +1193,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 if (baseFragment2 instanceof ProfileActivity) {
                     ((ProfileActivity) baseFragment2).updateSelectedMediaTabText();
                 }
+                ProfileGiftsContainer.this.updateTabsY();
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed
@@ -1224,6 +1274,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 }
                 page.bind(z, listByIndex);
                 page.setVisibleHeight(ProfileGiftsContainer.this.visibleHeight);
+                page.setHasTabs(!ProfileGiftsContainer.this.collections.getCollections().isEmpty());
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
@@ -1271,7 +1322,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         ViewPagerFixed.TabsView createTabsView = viewPagerFixed.createTabsView(true, 9);
         this.tabsView = createTabsView;
         createTabsView.tabMarginDp = 12;
-        createTabsView.setPreTabClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda2
+        createTabsView.setPreTabClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
                 Boolean lambda$new$0;
@@ -1279,7 +1330,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 return lambda$new$0;
             }
         });
-        createTabsView.setOnTabLongClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda3
+        createTabsView.setOnTabLongClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
                 Boolean lambda$new$6;
@@ -1287,16 +1338,23 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 return lambda$new$6;
             }
         });
-        createTabsView.setBackgroundColor(this.backgroundColor);
         addView(createTabsView, LayoutHelper.createFrame(-1, 42, 48));
+        BlurredBackgroundSourceColor blurredBackgroundSourceColor = new BlurredBackgroundSourceColor();
+        int i3 = Theme.key_windowBackgroundWhite;
+        blurredBackgroundSourceColor.setColor(Theme.getColor(i3, resourcesProvider));
+        BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory = new BlurredBackgroundDrawableViewFactory(blurredBackgroundSourceColor);
+        ProfileActivity.Button2 button2 = new ProfileActivity.Button2(context);
+        BlurredBackgroundDrawable create = blurredBackgroundDrawableViewFactory.create(button2, new BlurredBackgroundColorProviderThemed(resourcesProvider, i3));
+        create.setPadding(AndroidUtilities.dp(8.0f));
+        create.setRadius(AndroidUtilities.dp(22.0f));
+        button2.setBackground(create);
+        ScaleStateListAnimator.apply(button2, 0.02f, 1.2f);
         FrameLayout frameLayout = new FrameLayout(context);
         this.buttonContainer = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider));
-        addView(frameLayout, LayoutHelper.createFrame(-1, -2, 87));
-        View view = new View(context);
-        this.buttonShadow = view;
-        view.setBackgroundColor(Theme.getColor(Theme.key_dialogGrayLine, resourcesProvider));
-        frameLayout.addView(view, LayoutHelper.createFrame(-1.0f, 1.0f / AndroidUtilities.density, 55));
+        FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-1, 60, 87);
+        createFrame.bottomMargin += AndroidUtilities.navigationBarHeight;
+        addView(frameLayout, createFrame);
+        frameLayout.addView(button2, LayoutHelper.createFrame(NotificationCenter.starBalanceUpdated, 60, 1));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.bulletinContainer = frameLayout2;
         LinearLayout linearLayout = new LinearLayout(context);
@@ -1318,12 +1376,12 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         textView.setTextSize(1, 14.0f);
         textView.setText(LocaleController.getString(R.string.Gift2ChannelNotify));
         linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 16, 9, 0, 0, 0));
-        frameLayout.addView(linearLayout, LayoutHelper.createFrame(-2, 38.0f, 17, 0.0f, (1.0f / AndroidUtilities.density) + 6.0f, 0.0f, 6.0f));
+        button2.addView(linearLayout, LayoutHelper.createFrame(-2, 38.0f, 17, 0.0f, 6.0f, 0.0f, 6.0f));
         ScaleStateListAnimator.apply(linearLayout, 0.025f, 1.5f);
-        linearLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda4
+        linearLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                ProfileGiftsContainer.this.lambda$new$9(resourcesProvider, i, view2);
+            public final void onClick(View view) {
+                ProfileGiftsContainer.this.lambda$new$9(resourcesProvider, i, view);
             }
         });
         Boolean bool = profileGiftsList.chat_notifications_enabled;
@@ -1347,17 +1405,19 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 this.addGiftsText = spannableStringBuilder2;
                 ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
                 this.button = buttonWithCounterView;
+                buttonWithCounterView.setRoundRadius(AndroidUtilities.dp(19.0f));
                 buttonWithCounterView.setText(spannableStringBuilder, false);
-                frameLayout.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
-                buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda5
+                buttonWithCounterView.setStateListAnimator(null);
+                button2.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, -1.0f));
+                button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
-                    public final void onClick(View view2) {
-                        ProfileGiftsContainer.this.lambda$new$10(z, i, view2);
+                    public final void onClick(View view) {
+                        ProfileGiftsContainer.this.lambda$new$10(z, i, view);
                     }
                 });
                 buttonWithCounterView.setVisibility(!canSwitchNotify() ? 8 : 0);
                 linearLayout.setVisibility(canSwitchNotify() ? 0 : 8);
-                this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
+                this.buttonContainerHeightDp = 60;
                 addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 87));
                 updateColors();
                 updateTabsShown(false);
@@ -1376,17 +1436,19 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         this.addGiftsText = spannableStringBuilder22;
         ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, resourcesProvider);
         this.button = buttonWithCounterView2;
+        buttonWithCounterView2.setRoundRadius(AndroidUtilities.dp(19.0f));
         buttonWithCounterView2.setText(spannableStringBuilder3, false);
-        frameLayout.addView(buttonWithCounterView2, LayoutHelper.createFrame(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
-        buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda5
+        buttonWithCounterView2.setStateListAnimator(null);
+        button2.addView(buttonWithCounterView2, LayoutHelper.createFrame(-1, -1.0f));
+        button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                ProfileGiftsContainer.this.lambda$new$10(z, i, view2);
+            public final void onClick(View view) {
+                ProfileGiftsContainer.this.lambda$new$10(z, i, view);
             }
         });
         buttonWithCounterView2.setVisibility(!canSwitchNotify() ? 8 : 0);
         linearLayout.setVisibility(canSwitchNotify() ? 0 : 8);
-        this.buttonContainerHeightDp = !canSwitchNotify() ? 50 : 68;
+        this.buttonContainerHeightDp = 60;
         addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 87));
         updateColors();
         updateTabsShown(false);
@@ -1459,27 +1521,27 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             public void setAlpha(int i5) {
                 this.bg.setAlpha(i5);
             }
-        }).addIf(isMine, R.drawable.menu_gift_add, LocaleController.getString(R.string.Gift2CollectionsAdd), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda9
+        }).addIf(isMine, R.drawable.menu_gift_add, LocaleController.getString(R.string.Gift2CollectionsAdd), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.addGifts();
             }
-        }).addIf(!TextUtils.isEmpty(publicUsername), R.drawable.msg_share, LocaleController.getString(R.string.Gift2CollectionsShare), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda10
+        }).addIf(!TextUtils.isEmpty(publicUsername), R.drawable.msg_share, LocaleController.getString(R.string.Gift2CollectionsShare), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.lambda$new$1(i, publicUsername, tL_starGiftCollection2, context, resourcesProvider, baseFragment);
             }
-        }).addIf(isMine, R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda11
+        }).addIf(isMine, R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.lambda$new$3(tL_starGiftCollection);
             }
-        }).addIf(isMine, R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2CollectionsReorder), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda12
+        }).addIf(isMine, R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2CollectionsReorder), new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.lambda$new$4();
             }
-        }).addIf(isMine, R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Gift2CollectionsDelete), true, new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda13
+        }).addIf(isMine, R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Gift2CollectionsDelete), true, new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.lambda$new$5(i4, tL_starGiftCollection);
@@ -1521,7 +1583,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$3(final TL_stars.TL_starGiftCollection tL_starGiftCollection) {
-        openEnterNameAlert(tL_starGiftCollection.title, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda20
+        openEnterNameAlert(tL_starGiftCollection.title, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda22
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ProfileGiftsContainer.this.lambda$new$2(tL_starGiftCollection, (String) obj);
@@ -1568,7 +1630,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         TL_stars.toggleChatStarGiftNotifications togglechatstargiftnotifications = new TL_stars.toggleChatStarGiftNotifications();
         togglechatstargiftnotifications.peer = MessagesController.getInstance(i).getInputPeer(this.dialogId);
         togglechatstargiftnotifications.enabled = isChecked;
-        ConnectionsManager.getInstance(i).sendRequest(togglechatstargiftnotifications, new RequestDelegate() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda8
+        ConnectionsManager.getInstance(i).sendRequest(togglechatstargiftnotifications, new RequestDelegate() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda9
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 ProfileGiftsContainer.this.lambda$new$8(resourcesProvider, tLObject, tL_error);
@@ -1578,7 +1640,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$8(final Theme.ResourcesProvider resourcesProvider, TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda22
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGiftsContainer.this.lambda$new$7(tL_error, resourcesProvider);
@@ -1606,18 +1668,34 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
     }
 
     public void updateTabsShown(boolean z) {
-        boolean isEmpty = this.collections.getCollections().isEmpty();
-        if (z) {
-            ViewPropertyAnimator duration = this.tabsView.animate().translationY(!isEmpty ? 0.0f : AndroidUtilities.dp(-42.0f)).setDuration(200L);
-            CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
-            duration.setInterpolator(cubicBezierInterpolator).start();
-            this.viewPager.animate().translationY(isEmpty ? 0.0f : AndroidUtilities.dp(30.0f)).setDuration(200L).setInterpolator(cubicBezierInterpolator).start();
+        boolean z2 = !this.collections.getCollections().isEmpty();
+        if (this.viewPager.getViewPages() != null) {
+            for (View view : this.viewPager.getViewPages()) {
+                if (view instanceof Page) {
+                    ((Page) view).setHasTabs(z2);
+                }
+            }
+        }
+    }
+
+    public float getTabsHeight() {
+        float f = 0.0f;
+        if (this.viewPager.getViewPages() != null) {
+            for (View view : this.viewPager.getViewPages()) {
+                if (view instanceof Page) {
+                    f += (1.0f - (view.getTranslationX() / view.getWidth())) * ((Page) view).getTabsHeight();
+                }
+            }
+        }
+        return f;
+    }
+
+    public void updateTabsY() {
+        ViewPagerFixed.TabsView tabsView = this.tabsView;
+        if (tabsView == null) {
             return;
         }
-        this.tabsView.animate().cancel();
-        this.tabsView.setTranslationY(!isEmpty ? 0.0f : AndroidUtilities.dp(-42.0f));
-        this.viewPager.animate().cancel();
-        this.viewPager.setTranslationY(isEmpty ? 0.0f : AndroidUtilities.dp(30.0f));
+        tabsView.setTranslationY(Math.min(0.0f, getTabsHeight() - AndroidUtilities.dp(42.0f)));
     }
 
     public boolean isReordering() {
@@ -1738,11 +1816,21 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         } else {
             currentPositionAlpha = (((shouldHideButton(this.viewPager.getCurrentPosition()) ? 1.0f : 0.0f) * this.viewPager.getCurrentPositionAlpha()) + ((shouldHideButton(this.viewPager.getNextPosition()) ? 1.0f : 0.0f) * this.viewPager.getNextPositionAlpha())) * (AndroidUtilities.dp(68.0f) + 2);
         }
-        float max = currentPositionAlpha + ((((-this.buttonContainer.getTop()) + Math.max(AndroidUtilities.dp(240.0f), this.visibleHeight)) - AndroidUtilities.dp(this.buttonContainerHeightDp)) - 1);
-        this.bulletinContainer.setTranslationY(max - AndroidUtilities.dp(200.0f));
-        this.buttonContainer.setTranslationY(max);
+        float dp = currentPositionAlpha + ((((-this.buttonContainer.getTop()) + this.visibleHeight) - AndroidUtilities.dp(this.buttonContainerHeightDp)) - 1);
+        if (this.visibleHeight < AndroidUtilities.dp(220.0f)) {
+            dp += Math.min(AndroidUtilities.dp(220.0f) - this.visibleHeight, AndroidUtilities.dp(64.0f));
+        }
+        this.bulletinContainer.setTranslationY(dp - AndroidUtilities.dp(200.0f));
+        this.buttonContainer.setTranslationY(dp - this.buttonContainerOffset);
         this.button.setText((!this.collections.isMine() || this.viewPager.getPositionAnimated() < 0.5f) ? this.sendGiftsToFriendsText : this.addGiftsText, true);
         Bulletin.updateCurrentPosition();
+    }
+
+    public void setButtonOffset(int i) {
+        if (this.buttonContainerOffset != i) {
+            this.buttonContainerOffset = i;
+            updateButton();
+        }
     }
 
     public int getBottomOffset() {
@@ -1783,7 +1871,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
             this.button.setVisibility(canSwitchNotify() ? 8 : 0);
             this.checkboxLayout.setVisibility(canSwitchNotify() ? 0 : 8);
-            this.buttonContainerHeightDp = canSwitchNotify() ? 50 : 68;
+            this.buttonContainerHeightDp = 60;
             Boolean bool = this.list.chat_notifications_enabled;
             if (bool != null) {
                 this.checkbox.setChecked(bool.booleanValue(), true);
@@ -1802,7 +1890,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         if (i == NotificationCenter.updateInterfaces) {
             this.button.setVisibility(canSwitchNotify() ? 8 : 0);
             this.checkboxLayout.setVisibility(canSwitchNotify() ? 0 : 8);
-            this.buttonContainerHeightDp = canSwitchNotify() ? 50 : 68;
+            this.buttonContainerHeightDp = 60;
             setVisibleHeight(this.visibleHeight);
         }
     }
@@ -2008,9 +2096,8 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         int blendOver = Theme.blendOver(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider), Theme.multAlpha(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider), 0.04f));
         this.backgroundColor = blendOver;
         setBackgroundColor(blendOver);
-        this.tabsView.setBackgroundColor(this.backgroundColor);
         this.button.updateColors();
-        this.button.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(8.0f), processColor(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider))));
+        this.button.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(19.0f), processColor(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider))));
         View[] viewPages = this.viewPager.getViewPages();
         if (viewPages != null) {
             for (View view : viewPages) {
@@ -2019,8 +2106,6 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 }
             }
         }
-        this.buttonContainer.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider));
-        this.buttonShadow.setBackgroundColor(Theme.getColor(Theme.key_dialogGrayLine, this.resourcesProvider));
         this.checkboxTextView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, this.resourcesProvider));
         this.checkboxLayout.setBackground(Theme.createRadSelectorDrawable(Theme.getColor(Theme.key_listSelector, this.resourcesProvider), 6, 6));
     }
@@ -2259,13 +2344,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         builder.makeCustomMaxHeight();
         builder.setView(linearLayout);
         builder.setWidth(AndroidUtilities.dp(292.0f));
-        builder.setPositiveButton(LocaleController.getString(str != null ? R.string.Edit : R.string.Create), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda16
+        builder.setPositiveButton(LocaleController.getString(str != null ? R.string.Edit : R.string.Create), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda18
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 ProfileGiftsContainer.lambda$openEnterNameAlert$13(EditTextCaption.this, callback, alertDialog, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda17
+        builder.setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda19
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
                 alertDialog.dismiss();
@@ -2277,13 +2362,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             actionBarPopupWindow.setSoftInputMode(48);
         }
         AndroidUtilities.requestAdjustNothing(findActivity, this.fragment.getClassGuid());
-        alertDialogArr[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda18
+        alertDialogArr[0].setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda20
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 ProfileGiftsContainer.this.lambda$openEnterNameAlert$15(editTextCaption, findActivity, dialogInterface);
             }
         });
-        alertDialogArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda19
+        alertDialogArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda21
             @Override // android.content.DialogInterface.OnShowListener
             public final void onShow(DialogInterface dialogInterface) {
                 ProfileGiftsContainer.lambda$openEnterNameAlert$16(EditTextCaption.this, dialogInterface);
@@ -2319,7 +2404,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
     }
 
     public void createCollection() {
-        openEnterNameAlert(null, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda14
+        openEnterNameAlert(null, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda15
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ProfileGiftsContainer.this.lambda$createCollection$18((String) obj);
@@ -2329,7 +2414,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createCollection$18(String str) {
-        this.collections.createCollection(str, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda21
+        this.collections.createCollection(str, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda23
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ProfileGiftsContainer.this.lambda$createCollection$17((TL_stars.TL_starGiftCollection) obj);
@@ -2357,7 +2442,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             return;
         }
         final int i = giftsList.collectionId;
-        new SelectGiftsBottomSheet(this.fragment, this.dialogId, i, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda15
+        new SelectGiftsBottomSheet(this.fragment, this.dialogId, i, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda16
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ProfileGiftsContainer.this.lambda$addGifts$19(i, currentPage, (ArrayList) obj);
@@ -2741,13 +2826,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
     }
 
     public static void setGiftFilterOptionsClickListeners(View view, final StarsController.GiftsList giftsList, final Runnable runnable, final int i) {
-        view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda6
+        view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 ProfileGiftsContainer.lambda$setGiftFilterOptionsClickListeners$20(StarsController.GiftsList.this, i, runnable, view2);
             }
         });
-        view.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda7
+        view.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda8
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view2) {
                 boolean lambda$setGiftFilterOptionsClickListeners$21;
@@ -2768,5 +2853,37 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         giftsList.forceTypeIncludeFlag(i, true);
         runnable.run();
         return true;
+    }
+
+    public void initBlurCapture(ViewGroup viewGroup) {
+        this.iBlur3CaptureParent = viewGroup;
+        this.iBlur3Capture = new IBlur3Capture() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda1
+            @Override // org.telegram.ui.Components.blur3.capture.IBlur3Capture
+            public final void capture(Canvas canvas, RectF rectF) {
+                ProfileGiftsContainer.this.lambda$initBlurCapture$22(canvas, rectF);
+            }
+        };
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$initBlurCapture$22(Canvas canvas, RectF rectF) {
+        for (View view : this.viewPager.getViewPages()) {
+            if (view instanceof Page) {
+                Page page = (Page) view;
+                if (page.iBlur3Capture == null) {
+                    UniversalRecyclerView universalRecyclerView = page.listView;
+                    ViewGroup viewGroup = this.iBlur3CaptureParent;
+                    final UniversalRecyclerView universalRecyclerView2 = page.listView;
+                    Objects.requireNonNull(universalRecyclerView2);
+                    page.iBlur3Capture = new ViewGroupPartRenderer(universalRecyclerView, viewGroup, new ViewGroupPartRenderer.DrawChildMethod() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda17
+                        @Override // org.telegram.ui.Components.blur3.ViewGroupPartRenderer.DrawChildMethod
+                        public final boolean drawChild(Canvas canvas2, View view2, long j) {
+                            return UniversalRecyclerView.this.drawChild(canvas2, view2, j);
+                        }
+                    });
+                }
+                page.iBlur3Capture.capture(canvas, rectF);
+            }
+        }
     }
 }

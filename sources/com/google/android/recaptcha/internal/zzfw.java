@@ -1,10 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-import java.io.IOException;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.FunctionReferenceImpl;
 
 /* loaded from: classes.dex */
-public final class zzfw extends IOException {
-    zzfw(String str) {
-        super(str);
+final /* synthetic */ class zzfw extends FunctionReferenceImpl implements Function1 {
+    zzfw(Object obj) {
+        super(1, obj, zzgb.class, "isRetriable", "isRetriable(Ljava/lang/Exception;)Z", 0);
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj) {
+        return Boolean.valueOf(zzgb.zzo((zzgb) this.receiver, (Exception) obj));
     }
 }

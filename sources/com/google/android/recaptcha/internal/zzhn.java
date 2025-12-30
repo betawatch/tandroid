@@ -1,14 +1,8 @@
 package com.google.android.recaptcha.internal;
 
 /* loaded from: classes.dex */
-final class zzhn implements zzix {
-    static final zzix zza = new zzhn();
+public interface zzhn {
+    zzxn zza(String str, zzzd zzzdVar);
 
-    private zzhn() {
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzix
-    public final boolean zza(int i) {
-        return i == 0 || i == 1 || i == 2;
-    }
+    String zzb(String str);
 }

@@ -1,40 +1,34 @@
 package com.google.android.recaptcha.internal;
 
-/* loaded from: classes.dex */
-final /* synthetic */ class zzoa {
-    static final /* synthetic */ int[] zza;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.logging.Level;
 
-    static {
-        zzis.zza();
-        int[] iArr = new int[7];
-        zza = iArr;
-        try {
-            iArr[3] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            zza[4] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            zza[2] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            zza[5] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            zza[6] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            zza[0] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            zza[1] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
+/* loaded from: classes.dex */
+final class zzoa extends zzof {
+    private static final zzoa zza = new zzoa(zzof.zze());
+    private final AtomicReference zzb;
+
+    zzoa(zzof zzofVar) {
+        this.zzb = new AtomicReference(zzofVar);
+    }
+
+    public static final zzoa zzb() {
+        return zza;
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzof
+    public final zznd zza() {
+        return ((zzof) this.zzb.get()).zza();
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzof
+    public final zzor zzc() {
+        return ((zzof) this.zzb.get()).zzc();
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzof
+    public final boolean zzd(String str, Level level, boolean z) {
+        ((zzof) this.zzb.get()).zzd(str, level, z);
+        return false;
     }
 }

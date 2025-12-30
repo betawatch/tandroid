@@ -1,92 +1,33 @@
 package com.google.android.recaptcha.internal;
 
 /* loaded from: classes.dex */
-public class zzjk {
-    private static final zzie zzb = zzie.zza;
-    protected volatile zzke zza;
-    private volatile zzgw zzc;
+public final class zzjk implements zzjt {
+    public static final zzjk zza = new zzjk();
 
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof zzjk)) {
-            return false;
-        }
-        zzjk zzjkVar = (zzjk) obj;
-        zzke zzkeVar = this.zza;
-        zzke zzkeVar2 = zzjkVar.zza;
-        if (zzkeVar == null && zzkeVar2 == null) {
-            return zzb().equals(zzjkVar.zzb());
-        }
-        if (zzkeVar != null && zzkeVar2 != null) {
-            return zzkeVar.equals(zzkeVar2);
-        }
-        if (zzkeVar != null) {
-            zzjkVar.zzd(zzkeVar.zzY());
-            return zzkeVar.equals(zzjkVar.zza);
-        }
-        zzd(zzkeVar2.zzY());
-        return this.zza.equals(zzkeVar2);
+    private zzjk() {
     }
 
-    public int hashCode() {
-        return 1;
-    }
-
-    public final int zza() {
-        if (this.zzc != null) {
-            return ((zzgt) this.zzc).zza.length;
+    @Override // com.google.android.recaptcha.internal.zzjt
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+        if (zzztVarArr.length != 2) {
+            throw new zzdm(4, 3, null);
         }
-        if (this.zza != null) {
-            return this.zza.zzn();
+        Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
+        if (true != (zza2 instanceof String)) {
+            zza2 = null;
         }
-        return 0;
-    }
-
-    public final zzgw zzb() {
-        if (this.zzc != null) {
-            return this.zzc;
+        String str = (String) zza2;
+        if (str == null) {
+            throw new zzdm(4, 5, null);
         }
-        synchronized (this) {
-            try {
-                if (this.zzc != null) {
-                    return this.zzc;
-                }
-                if (this.zza == null) {
-                    this.zzc = zzgw.zzb;
-                } else {
-                    this.zzc = this.zza.zzb();
-                }
-                return this.zzc;
-            } catch (Throwable th) {
-                throw th;
-            }
+        Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
+        if (true != (zza3 instanceof String)) {
+            zza3 = null;
         }
-    }
-
-    public final zzke zzc(zzke zzkeVar) {
-        zzke zzkeVar2 = this.zza;
-        this.zzc = null;
-        this.zza = zzkeVar;
-        return zzkeVar2;
-    }
-
-    protected final void zzd(zzke zzkeVar) {
-        if (this.zza != null) {
-            return;
+        String str2 = (String) zza3;
+        if (str2 == null) {
+            throw new zzdm(4, 5, null);
         }
-        synchronized (this) {
-            if (this.zza != null) {
-                return;
-            }
-            try {
-                this.zza = zzkeVar;
-                this.zzc = zzgw.zzb;
-            } catch (zzje unused) {
-                this.zza = zzkeVar;
-                this.zzc = zzgw.zzb;
-            }
-        }
+        zzizVar.zzc().zze(i, str.concat(str2));
     }
 }

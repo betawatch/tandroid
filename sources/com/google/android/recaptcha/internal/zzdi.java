@@ -1,47 +1,27 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Arrays;
-import kotlin.collections.ArraysKt;
-import kotlin.jvm.internal.Intrinsics;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
-public final class zzdi implements zzdd {
-    public static final zzdi zza = new zzdi();
+final class zzdi extends ContinuationImpl {
+    Object zza;
+    /* synthetic */ Object zzb;
+    final /* synthetic */ zzdj zzc;
+    int zzd;
+    zzmc zze;
 
-    private zzdi() {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzdi(zzdj zzdjVar, Continuation continuation) {
+        super(continuation);
+        this.zzc = zzdjVar;
     }
 
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        int length = zzpqVarArr.length;
-        if (length < 2) {
-            throw new zzae(4, 3, null);
-        }
-        Class<?> zza2 = zzcjVar.zzc().zza(zzpqVarArr[0]);
-        if (true != (zza2 instanceof Object)) {
-            zza2 = null;
-        }
-        if (zza2 == null) {
-            throw new zzae(4, 5, null);
-        }
-        Class<?> cls = zza2 instanceof Class ? zza2 : zza2.getClass();
-        Object zza3 = zzcjVar.zzc().zza(zzpqVarArr[1]);
-        if (true != (zza3 instanceof String)) {
-            zza3 = null;
-        }
-        String str = (String) zza3;
-        if (str == null) {
-            throw new zzae(4, 5, null);
-        }
-        String zza4 = zzcjVar.zzh().zza(str);
-        if (Intrinsics.areEqual(zza4, "forName")) {
-            throw new zzae(6, 48, null);
-        }
-        Class[] zzg = zzcjVar.zzc().zzg(ArraysKt.toList(zzpqVarArr).subList(2, length));
-        try {
-            zzcjVar.zzc().zzf(i, cls.getMethod(zza4, (Class[]) Arrays.copyOf(zzg, zzg.length)));
-        } catch (Exception e) {
-            throw new zzae(6, 13, e);
-        }
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        this.zzb = obj;
+        this.zzd |= TLObject.FLAG_31;
+        return this.zzc.zzc(null, this);
     }
 }

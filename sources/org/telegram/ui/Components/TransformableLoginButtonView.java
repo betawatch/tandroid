@@ -12,28 +12,30 @@ import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
 public class TransformableLoginButtonView extends View {
-    private Paint backgroundPaint;
+    private final Paint backgroundPaint;
     private String buttonText;
     private float buttonWidth;
     private boolean drawBackground;
-    private Paint outlinePaint;
+    private final Paint outlinePaint;
     private float progress;
-    private RectF rect;
+    private final RectF rect;
     private Drawable rippleDrawable;
     private TextPaint textPaint;
     private int transformType;
 
     public TransformableLoginButtonView(Context context) {
         super(context);
-        this.backgroundPaint = new Paint(1);
-        this.outlinePaint = new Paint(1);
+        Paint paint = new Paint(1);
+        this.backgroundPaint = paint;
+        Paint paint2 = new Paint(1);
+        this.outlinePaint = paint2;
         this.drawBackground = true;
         this.transformType = 0;
         this.rect = new RectF();
-        this.backgroundPaint.setColor(Theme.getColor(Theme.key_chats_actionBackground));
-        this.outlinePaint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        this.outlinePaint.setStyle(Paint.Style.STROKE);
-        this.outlinePaint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setColor(Theme.getColor(Theme.key_chats_actionBackground));
+        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint2.setStyle(Paint.Style.STROKE);
+        paint2.setStrokeCap(Paint.Cap.ROUND);
     }
 
     public void setDrawBackground(boolean z) {

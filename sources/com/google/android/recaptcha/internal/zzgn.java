@@ -1,30 +1,24 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.NoSuchElementException;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.text.StringsKt;
 
 /* loaded from: classes.dex */
-final class zzgn extends zzgp {
-    final /* synthetic */ zzgw zza;
-    private int zzb = 0;
-    private final int zzc;
-
-    zzgn(zzgw zzgwVar) {
-        this.zza = zzgwVar;
-        this.zzc = zzgwVar.zzd();
+public final class zzgn {
+    private zzgn() {
+        throw null;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.zzb < this.zzc;
+    public /* synthetic */ zzgn(DefaultConstructorMarker defaultConstructorMarker) {
     }
 
-    @Override // com.google.android.recaptcha.internal.zzgr
-    public final byte zza() {
-        int i = this.zzb;
-        if (i >= this.zzc) {
-            throw new NoSuchElementException();
-        }
-        this.zzb = i + 1;
-        return this.zza.zzb(i);
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final int zzc(String str) {
+        return Integer.parseInt(StringsKt.substringBefore$default(StringsKt.replace$default("18.7.1", ".", "", false, 4, null), "-", null, 2, null));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final String zzd(String str) {
+        return "cesdb".concat(String.valueOf(StringsKt.substringAfter("18.7.1", "-", "")));
     }
 }

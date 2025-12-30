@@ -14,10 +14,13 @@ import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
 import android.os.Looper;
 import android.os.Parcelable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ImageSpan;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,6 +64,7 @@ import org.telegram.ui.Components.BottomPagesView;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
+import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.SimpleThemeDescription;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
 import org.telegram.ui.IntroActivity;
@@ -79,15 +83,17 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
     private boolean isOnLogout;
     private boolean justEndDragging;
     private LocaleController.LocaleInfo localeInfo;
+    private Drawable logoDrawable;
     private String[] messages;
     private int startDragX;
     private TextView startMessagingButton;
+    private GradientDrawable startMessagingButtonBackground;
     private TextView switchLanguageTextView;
-    private String[] titles;
+    private CharSequence[] titles;
     private ViewPager viewPager;
     private final Object pagerHeaderTag = new Object();
     private final Object pagerMessageTag = new Object();
-    private int currentAccount = UserConfig.selectedAccount;
+    private final int currentAccount = UserConfig.selectedAccount;
     private int lastPage = 0;
     private boolean justCreated = false;
     private boolean startPressed = false;
@@ -100,13 +106,19 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean onFragmentCreate() {
         MessagesController.getGlobalMainSettings().edit().putLong("intro_crashed_time", System.currentTimeMillis()).apply();
-        this.titles = new String[]{LocaleController.getString(R.string.Page1Title), LocaleController.getString(R.string.Page2Title), LocaleController.getString(R.string.Page3Title), LocaleController.getString(R.string.Page5Title), LocaleController.getString(R.string.Page4Title), LocaleController.getString(R.string.Page6Title)};
+        this.titles = new CharSequence[]{null, LocaleController.getString(R.string.Page2Title), LocaleController.getString(R.string.Page3Title), LocaleController.getString(R.string.Page5Title), LocaleController.getString(R.string.Page4Title), LocaleController.getString(R.string.Page6Title)};
         this.messages = new String[]{LocaleController.getString(R.string.Page1Message), LocaleController.getString(R.string.Page2Message), LocaleController.getString(R.string.Page3Message), LocaleController.getString(R.string.Page5Message), LocaleController.getString(R.string.Page4Message), LocaleController.getString(R.string.Page6Message)};
         return true;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
+        Drawable mutate = context.getResources().getDrawable(R.drawable.telegram_logo).mutate();
+        this.logoDrawable = mutate;
+        mutate.setBounds(0, AndroidUtilities.dp(8.666f), AndroidUtilities.dp(115.0f), AndroidUtilities.dp(35.0f));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.Page1Title));
+        spannableStringBuilder.setSpan(new ImageSpan(this.logoDrawable), 0, spannableStringBuilder.length(), 33);
+        this.titles[0] = spannableStringBuilder;
         this.actionBar.setAddToContainer(false);
         ScrollView scrollView = new ScrollView(context);
         scrollView.setFillViewport(true);
@@ -122,7 +134,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
                 int i7 = i6 * 3;
                 int dp = (i7 - AndroidUtilities.dp(275.0f)) / 2;
                 IntroActivity.this.frameLayout2.layout(0, dp, IntroActivity.this.frameLayout2.getMeasuredWidth(), IntroActivity.this.frameLayout2.getMeasuredHeight() + dp);
-                int dp2 = dp + AndroidUtilities.dp(150.0f) + AndroidUtilities.dp(122.0f);
+                int dp2 = dp + AndroidUtilities.dp(150.0f) + AndroidUtilities.dp(139.0f);
                 int measuredWidth = (getMeasuredWidth() - IntroActivity.this.bottomPages.getMeasuredWidth()) / 2;
                 IntroActivity.this.bottomPages.layout(measuredWidth, dp2, IntroActivity.this.bottomPages.getMeasuredWidth() + measuredWidth, IntroActivity.this.bottomPages.getMeasuredHeight() + dp2);
                 IntroActivity.this.viewPager.layout(0, 0, IntroActivity.this.viewPager.getMeasuredWidth(), IntroActivity.this.viewPager.getMeasuredHeight());
@@ -204,22 +216,37 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
                 }
             }
         });
+        this.startMessagingButtonBackground = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
         TextView textView = new TextView(context) { // from class: org.telegram.ui.IntroActivity.4
-            CellFlickerDrawable cellFlickerDrawable;
+            private final CellFlickerDrawable cellFlickerDrawable;
+
+            {
+                CellFlickerDrawable cellFlickerDrawable = new CellFlickerDrawable();
+                this.cellFlickerDrawable = cellFlickerDrawable;
+                cellFlickerDrawable.drawFrame = false;
+                cellFlickerDrawable.repeatProgress = 2.0f;
+            }
+
+            @Override // android.view.View
+            protected void onSizeChanged(int i3, int i4, int i5, int i6) {
+                super.onSizeChanged(i3, i4, i5, i6);
+                IntroActivity.this.startMessagingButtonBackground.setBounds(0, 0, i3, i4);
+                IntroActivity.this.startMessagingButtonBackground.setCornerRadius(Math.min(i3, i4) / 2.0f);
+                this.cellFlickerDrawable.setParentWidth(i3);
+            }
+
+            @Override // android.view.View
+            public void draw(Canvas canvas) {
+                IntroActivity.this.startMessagingButtonBackground.draw(canvas);
+                super.draw(canvas);
+            }
 
             @Override // android.widget.TextView, android.view.View
             protected void onDraw(Canvas canvas) {
                 super.onDraw(canvas);
-                if (this.cellFlickerDrawable == null) {
-                    CellFlickerDrawable cellFlickerDrawable = new CellFlickerDrawable();
-                    this.cellFlickerDrawable = cellFlickerDrawable;
-                    cellFlickerDrawable.drawFrame = false;
-                    cellFlickerDrawable.repeatProgress = 2.0f;
-                }
-                this.cellFlickerDrawable.setParentWidth(getMeasuredWidth());
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                this.cellFlickerDrawable.draw(canvas, rectF, AndroidUtilities.dp(4.0f), null);
+                this.cellFlickerDrawable.draw(canvas, rectF, getMeasuredHeight() / 2.0f, null);
                 invalidate();
             }
 
@@ -233,12 +260,13 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             }
         };
         this.startMessagingButton = textView;
-        textView.setText(LocaleController.getString(R.string.StartMessaging));
+        ScaleStateListAnimator.apply(textView, 0.02f, 1.2f);
+        this.startMessagingButton.setText(LocaleController.getString(R.string.StartMessaging));
         this.startMessagingButton.setGravity(17);
         this.startMessagingButton.setTypeface(AndroidUtilities.bold());
         this.startMessagingButton.setTextSize(1, 15.0f);
         this.startMessagingButton.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-        this.frameContainerView.addView(this.startMessagingButton, LayoutHelper.createFrame(-1, 50.0f, 81, 16.0f, 0.0f, 16.0f, 76.0f));
+        this.frameContainerView.addView(this.startMessagingButton, LayoutHelper.createFrame(-1, 48.0f, 81, 16.0f, 0.0f, 16.0f, 76.0f));
         this.startMessagingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.IntroActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -565,22 +593,25 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             FrameLayout frameLayout = new FrameLayout(viewGroup.getContext()) { // from class: org.telegram.ui.IntroActivity.IntroAdapter.1
                 @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
                 protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
-                    int dp = (((((i5 - i3) / 4) * 3) - AndroidUtilities.dp(275.0f)) / 2) + AndroidUtilities.dp(150.0f) + AndroidUtilities.dp(16.0f);
+                    int dp = (((((i5 - i3) / 4) * 3) - AndroidUtilities.dp(275.0f)) / 2) + AndroidUtilities.dp(150.0f) + AndroidUtilities.dp(25.0f);
                     int dp2 = AndroidUtilities.dp(18.0f);
                     TextView textView3 = textView;
                     textView3.layout(dp2, dp, textView3.getMeasuredWidth() + dp2, textView.getMeasuredHeight() + dp);
-                    int textSize = ((int) (dp + textView.getTextSize())) + AndroidUtilities.dp(16.0f);
+                    int textSize = dp + ((int) textView.getTextSize()) + AndroidUtilities.dp(18.0f);
                     int dp3 = AndroidUtilities.dp(16.0f);
                     TextView textView4 = textView2;
                     textView4.layout(dp3, textSize, textView4.getMeasuredWidth() + dp3, textView2.getMeasuredHeight() + textSize);
                 }
             };
-            textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+            int i2 = Theme.key_windowBackgroundWhiteBlackText;
+            textView.setTextColor(Theme.getColor(i2));
             textView.setTextSize(1, 26.0f);
+            textView.setTypeface(AndroidUtilities.bold());
             textView.setGravity(17);
             frameLayout.addView(textView, LayoutHelper.createFrame(-1, -2.0f, 51, 18.0f, 244.0f, 18.0f, 0.0f));
-            textView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText3));
+            textView2.setTextColor(Theme.getColor(i2));
             textView2.setTextSize(1, 15.0f);
+            textView2.setLineSpacing(AndroidUtilities.dpf2(2.33f), 1.0f);
             textView2.setGravity(17);
             frameLayout.addView(textView2, LayoutHelper.createFrame(-1, -2.0f, 51, 16.0f, 286.0f, 16.0f, 0.0f));
             viewGroup.addView(frameLayout, 0);
@@ -618,8 +649,8 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         private long lastDrawFrame;
         private float maxRefreshRate;
         private SurfaceTexture surfaceTexture;
-        private GenericProvider telegramMaskProvider;
-        private int[] textures;
+        private final GenericProvider telegramMaskProvider;
+        private final int[] textures;
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ Bitmap lambda$new$0(Void r6) {
@@ -802,7 +833,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ Bitmap lambda$initGL$1(Void r4) {
             Paint paint = new Paint(1);
-            paint.setColor(-13851168);
+            paint.setColor(-14509328);
             int dp = AndroidUtilities.dp(150.0f);
             Bitmap createBitmap = Bitmap.createBitmap(dp, dp, Bitmap.Config.ARGB_8888);
             float f = dp / 2.0f;
@@ -939,20 +970,21 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.-CC.$default$onAnimationProgress(this, f);
             }
-        }, Theme.key_windowBackgroundWhite, Theme.key_windowBackgroundWhiteBlueText4, Theme.key_chats_actionBackground, Theme.key_chats_actionPressedBackground, Theme.key_featuredStickers_buttonText, Theme.key_windowBackgroundWhiteBlackText, Theme.key_windowBackgroundWhiteGrayText3);
+        }, Theme.key_windowBackgroundWhite, Theme.key_windowBackgroundWhiteBlueText4, Theme.key_chats_actionBackground, Theme.key_chats_actionPressedBackground, Theme.key_featuredStickers_buttonText, Theme.key_windowBackgroundWhiteBlackText);
     }
 
     private void updateColors(boolean z) {
+        GradientDrawable gradientDrawable = this.startMessagingButtonBackground;
+        int i = Theme.key_featuredStickers_addButton;
+        gradientDrawable.setColors(new int[]{getThemedColor(i), getThemedColor(Theme.key_featuredStickers_addButton2)});
+        this.logoDrawable.setColorFilter(Theme.multAlpha(getThemedColor(Theme.key_actionBarDefaultTitle), 0.9f), PorterDuff.Mode.MULTIPLY);
         View view = this.fragmentView;
-        int i = Theme.key_windowBackgroundWhite;
-        view.setBackgroundColor(Theme.getColor(i));
+        int i2 = Theme.key_windowBackgroundWhite;
+        view.setBackgroundColor(Theme.getColor(i2));
         this.switchLanguageTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4));
         this.startMessagingButton.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-        TextView textView = this.startMessagingButton;
-        int dp = AndroidUtilities.dp(6.0f);
-        int i2 = Theme.key_changephoneinfo_image2;
-        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(dp, Theme.getColor(i2), Theme.getColor(Theme.key_chats_actionPressedBackground)));
-        this.darkThemeDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.SRC_IN));
+        this.startMessagingButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(24.0f), 0, Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
+        this.darkThemeDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
         this.bottomPages.invalidate();
         if (z) {
             EGLThread eGLThread = this.eglThread;
@@ -966,12 +998,14 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             }
             for (int i3 = 0; i3 < this.viewPager.getChildCount(); i3++) {
                 View childAt = this.viewPager.getChildAt(i3);
-                ((TextView) childAt.findViewWithTag(this.pagerHeaderTag)).setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-                ((TextView) childAt.findViewWithTag(this.pagerMessageTag)).setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText3));
+                TextView textView = (TextView) childAt.findViewWithTag(this.pagerHeaderTag);
+                int i4 = Theme.key_windowBackgroundWhiteBlackText;
+                textView.setTextColor(Theme.getColor(i4));
+                ((TextView) childAt.findViewWithTag(this.pagerMessageTag)).setTextColor(Theme.getColor(i4));
             }
             return;
         }
-        Intro.setBackgroundColor(Theme.getColor(i));
+        Intro.setBackgroundColor(Theme.getColor(i2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

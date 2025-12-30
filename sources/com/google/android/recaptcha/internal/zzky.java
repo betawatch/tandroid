@@ -1,71 +1,47 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Map;
+import java.net.ConnectException;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /* loaded from: classes.dex */
-final class zzky implements Map.Entry, Comparable {
-    final /* synthetic */ zzle zza;
-    private final Comparable zzb;
-    private Object zzc;
-
-    zzky(zzle zzleVar, Comparable comparable, Object obj) {
-        this.zza = zzleVar;
-        this.zzb = comparable;
-        this.zzc = obj;
-    }
-
-    private static final boolean zzb(Object obj, Object obj2) {
-        return obj == null ? obj2 == null : obj.equals(obj2);
-    }
-
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
-        return this.zzb.compareTo(((zzky) obj).zzb);
-    }
-
-    @Override // java.util.Map.Entry
-    public final boolean equals(Object obj) {
-        if (obj == this) {
+public final class zzky implements zzlb {
+    private static final boolean zzb(int i) {
+        try {
+            new Socket("localhost", i).close();
             return true;
-        }
-        if (!(obj instanceof Map.Entry)) {
+        } catch (ConnectException unused) {
             return false;
         }
-        Map.Entry entry = (Map.Entry) obj;
-        return zzb(this.zzb, entry.getKey()) && zzb(this.zzc, entry.getValue());
     }
 
-    @Override // java.util.Map.Entry
-    public final /* synthetic */ Object getKey() {
-        return this.zzb;
+    @Override // com.google.android.recaptcha.internal.zzlb
+    public final /* synthetic */ Object cs(Object[] objArr) {
+        return zzla.zza(this, objArr);
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.zzc;
-    }
-
-    @Override // java.util.Map.Entry
-    public final int hashCode() {
-        Comparable comparable = this.zzb;
-        int hashCode = comparable == null ? 0 : comparable.hashCode();
-        Object obj = this.zzc;
-        return hashCode ^ (obj != null ? obj.hashCode() : 0);
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        this.zza.zzn();
-        Object obj2 = this.zzc;
-        this.zzc = obj;
-        return obj2;
-    }
-
-    public final String toString() {
-        return String.valueOf(this.zzb) + "=" + String.valueOf(this.zzc);
-    }
-
-    public final Comparable zza() {
-        return this.zzb;
+    @Override // com.google.android.recaptcha.internal.zzlb
+    public final Object zza(Object... objArr) {
+        ArrayList arrayList = new ArrayList(objArr.length);
+        for (Object obj : objArr) {
+            if (true != (obj instanceof Integer)) {
+                obj = null;
+            }
+            Integer num = (Integer) obj;
+            if (num == null) {
+                throw new zzdm(4, 5, null);
+            }
+            arrayList.add(Integer.valueOf(num.intValue()));
+        }
+        ArrayList arrayList2 = new ArrayList();
+        Iterator it = arrayList.iterator();
+        while (it.hasNext()) {
+            int intValue = ((Number) it.next()).intValue();
+            if (zzb(intValue)) {
+                arrayList2.add(Integer.valueOf(intValue));
+            }
+        }
+        return arrayList2;
     }
 }

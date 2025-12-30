@@ -464,7 +464,7 @@ public class ChatAttachAlertDocumentLayout extends ChatAttachAlert.AttachAlertLa
             }
         });
         this.filtersView.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
-        addView(this.filtersView, LayoutHelper.createFrame(-1, -2, 48));
+        addView(this.filtersView, LayoutHelper.createFrame(-1, 44, 48));
         this.filtersView.setTranslationY(-AndroidUtilities.dp(44.0f));
         this.filtersView.setVisibility(4);
         listRoots();

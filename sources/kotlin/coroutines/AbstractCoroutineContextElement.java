@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class AbstractCoroutineContextElement implements CoroutineContext.Element {
     private final CoroutineContext.Key key;
 
-    @Override // kotlin.coroutines.CoroutineContext
+    @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
     public Object fold(Object obj, Function2 function2) {
         return CoroutineContext.Element.DefaultImpls.fold(this, obj, function2);
     }
@@ -18,7 +18,7 @@ public abstract class AbstractCoroutineContextElement implements CoroutineContex
         return CoroutineContext.Element.DefaultImpls.get(this, key);
     }
 
-    @Override // kotlin.coroutines.CoroutineContext
+    @Override // kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
     public CoroutineContext minusKey(CoroutineContext.Key key) {
         return CoroutineContext.Element.DefaultImpls.minusKey(this, key);
     }

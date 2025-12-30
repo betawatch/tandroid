@@ -99,21 +99,6 @@ public class MenuDrawable extends Drawable {
         invalidateSelf();
     }
 
-    public void setType(int i, boolean z) {
-        int i2 = this.type;
-        if (i2 == i) {
-            return;
-        }
-        this.previousType = i2;
-        this.type = i;
-        if (z) {
-            this.typeAnimationProgress = 0.0f;
-        } else {
-            this.typeAnimationProgress = 1.0f;
-        }
-        invalidateSelf();
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:33:0x010c  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0377  */
     /* JADX WARN: Removed duplicated region for block: B:55:0x03e8  */
@@ -412,21 +397,6 @@ public class MenuDrawable extends Drawable {
         }
         invalidateSelf();
         canvas.restore();
-    }
-
-    public void setUpdateDownloadProgress(float f, boolean z) {
-        if (!z) {
-            this.animatedDownloadProgress = f;
-            this.downloadProgressAnimationStart = f;
-        } else {
-            if (this.animatedDownloadProgress > f) {
-                this.animatedDownloadProgress = f;
-            }
-            this.downloadProgressAnimationStart = this.animatedDownloadProgress;
-        }
-        this.downloadProgress = f;
-        this.downloadProgressTime = 0.0f;
-        invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable

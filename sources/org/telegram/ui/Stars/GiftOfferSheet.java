@@ -122,12 +122,12 @@ public class GiftOfferSheet extends BottomSheetWithRecyclerListView {
         long j2 = tL_starGiftUnique.offer_min_stars;
         AmountUtils$Currency amountUtils$Currency = AmountUtils$Currency.STARS;
         AmountUtils$Amount fromDecimal = AmountUtils$Amount.fromDecimal(j2, amountUtils$Currency);
-        AmountUtils$Amount fromDecimal2 = AmountUtils$Amount.fromDecimal(Math.max(fromDecimal.asDecimal() * 2, appGlobalConfig.starsSuggestedPostAmountMax.get()), amountUtils$Currency);
+        AmountUtils$Amount fromDecimal2 = AmountUtils$Amount.fromDecimal(Math.max(fromDecimal.asDecimal() * 2, appGlobalConfig.starsStarGiftResaleAmountMax.get()), amountUtils$Currency);
         AmountUtils$Currency amountUtils$Currency2 = AmountUtils$Currency.TON;
-        AmountUtils$Amount round = fromDecimal.convertTo(amountUtils$Currency2).round(2);
-        AmountUtils$Amount fromNano = AmountUtils$Amount.fromNano(Math.max(round.asNano() * 2, appGlobalConfig.tonSuggestedPostAmountMax.get()), amountUtils$Currency2);
+        AmountUtils$Amount fromNano = AmountUtils$Amount.fromNano(Math.max(fromDecimal.convertTo(amountUtils$Currency2).round(2).asNano(), appGlobalConfig.tonStarGiftResaleAmountMin.get()), amountUtils$Currency2);
+        AmountUtils$Amount fromNano2 = AmountUtils$Amount.fromNano(Math.max(fromNano.asNano() * 2, appGlobalConfig.tonStarGiftResaleAmountMax.get()), amountUtils$Currency2);
         amountUtils$AmountLimits.set(fromDecimal, fromDecimal2);
-        amountUtils$AmountLimits.set(round, fromNano);
+        amountUtils$AmountLimits.set(fromNano, fromNano2);
         BalanceCloud balanceCloud = new BalanceCloud(context, i, resourcesProvider);
         this.balanceCloud = balanceCloud;
         balanceCloud.setScaleX(0.6f);

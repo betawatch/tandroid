@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 import org.json.JSONException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class JSONDateUtils {
     private static final ThreadLocal DATE_FORMAT = new ThreadLocal() { // from class: com.microsoft.appcenter.ingestion.models.json.JSONDateUtils.1
         /* JADX INFO: Access modifiers changed from: protected */

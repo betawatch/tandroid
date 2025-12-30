@@ -21,9 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.UpdateAppAlertDialog;
-import org.telegram.ui.Components.UpdateButton;
 import org.telegram.ui.Components.UpdateLayout;
-import org.telegram.ui.IUpdateButton;
 import org.telegram.ui.IUpdateLayout;
 
 /* loaded from: classes3.dex */
@@ -275,17 +273,9 @@ public class ApplicationLoaderImpl extends ApplicationLoader {
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
-    public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup, ViewGroup viewGroup2) {
+    public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup) {
         if (isCustomUpdate()) {
-            return new UpdateLayout(activity, viewGroup, viewGroup2);
-        }
-        return null;
-    }
-
-    @Override // org.telegram.messenger.ApplicationLoader
-    public IUpdateButton takeUpdateButton(Context context) {
-        if (isCustomUpdate()) {
-            return new UpdateButton(context);
+            return new UpdateLayout(activity, viewGroup);
         }
         return null;
     }

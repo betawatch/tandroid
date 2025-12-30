@@ -6,7 +6,9 @@ import android.os.Parcelable;
 
 /* loaded from: classes.dex */
 public abstract class c {
-    private static final ClassLoader a = c.class.getClassLoader();
+    static {
+        c.class.getClassLoader();
+    }
 
     public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
         if (parcel.readInt() == 0) {

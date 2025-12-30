@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class HttpClientRetryer extends HttpClientDecorator {
     static final long[] RETRY_INTERVALS;
     private final Handler mHandler;

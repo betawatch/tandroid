@@ -1,33 +1,32 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Map;
-
 /* loaded from: classes.dex */
-final class zzjh implements Map.Entry {
-    private final Map.Entry zza;
+public final class zzjh implements zzjt {
+    public static final zzjh zza = new zzjh();
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.zza.getKey();
+    private zzjh() {
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        if (((zzjj) this.zza.getValue()) == null) {
-            return null;
+    @Override // com.google.android.recaptcha.internal.zzjt
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+        if (zzztVarArr.length != 2) {
+            throw new zzdm(4, 3, null);
         }
-        throw null;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        if (obj instanceof zzke) {
-            return ((zzjj) this.zza.getValue()).zzc((zzke) obj);
+        Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
+        if (true != (zza2 instanceof String)) {
+            zza2 = null;
         }
-        throw new IllegalArgumentException("LazyField now only used for MessageSet, and the value of MessageSet must be an instance of MessageLite");
-    }
-
-    public final zzjj zza() {
-        return (zzjj) this.zza.getValue();
+        String str = (String) zza2;
+        if (str == null) {
+            throw new zzdm(4, 5, null);
+        }
+        Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
+        if (zza3 == null) {
+            throw new zzdm(4, 4, null);
+        }
+        if (!(zza3 instanceof Integer) && !(zza3 instanceof Short) && !(zza3 instanceof Byte) && !(zza3 instanceof Long) && !(zza3 instanceof Double) && !(zza3 instanceof Float) && !(zza3 instanceof Boolean) && !(zza3 instanceof Character) && !(zza3 instanceof String)) {
+            throw new zzdm(4, 7, null);
+        }
+        zzizVar.zzi().zzb(str, zza3.toString());
     }
 }

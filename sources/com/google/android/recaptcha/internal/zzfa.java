@@ -1,32 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import android.os.Build;
-import java.util.Map;
-import kotlin.TuplesKt;
-import kotlin.collections.MapsKt;
+import kotlin.jvm.functions.Function0;
 
 /* loaded from: classes.dex */
-public final class zzfa {
+public final class zzfa implements Function0 {
     public static final zzfa zza = new zzfa();
 
-    private zzfa() {
-    }
-
-    public static final Map zza() {
-        Map mutableMapOf = MapsKt.mutableMapOf(TuplesKt.to(-4, zzl.zzz), TuplesKt.to(-12, zzl.zzA), TuplesKt.to(-6, zzl.zzv), TuplesKt.to(-11, zzl.zzx), TuplesKt.to(-13, zzl.zzB), TuplesKt.to(-14, zzl.zzC), TuplesKt.to(-2, zzl.zzw), TuplesKt.to(-7, zzl.zzD), TuplesKt.to(-5, zzl.zzE), TuplesKt.to(-9, zzl.zzF), TuplesKt.to(-8, zzl.zzP), TuplesKt.to(-15, zzl.zzy), TuplesKt.to(-1, zzl.zzG), TuplesKt.to(-3, zzl.zzI), TuplesKt.to(-10, zzl.zzJ));
-        int i = Build.VERSION.SDK_INT;
-        if (i >= 26) {
-            mutableMapOf.put(-16, zzl.zzH);
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzch.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzch) zzb;
         }
-        if (i >= 27) {
-            mutableMapOf.put(1, zzl.zzL);
-            mutableMapOf.put(2, zzl.zzM);
-            mutableMapOf.put(0, zzl.zzN);
-            mutableMapOf.put(3, zzl.zzO);
-        }
-        if (i >= 29) {
-            mutableMapOf.put(4, zzl.zzK);
-        }
-        return mutableMapOf;
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

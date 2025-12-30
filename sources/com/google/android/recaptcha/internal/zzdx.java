@@ -1,42 +1,54 @@
 package com.google.android.recaptcha.internal;
 
-/* loaded from: classes.dex */
-public final class zzdx implements zzdd {
-    public static final zzdx zza = new zzdx();
+import android.app.Application;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.CoroutineScope;
 
-    private zzdx() {
+/* loaded from: classes.dex */
+final class zzdx extends SuspendLambda implements Function2 {
+    int zza;
+    final /* synthetic */ Application zzb;
+    final /* synthetic */ String zzc;
+    final /* synthetic */ long zzd;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzdx(Application application, String str, long j, Continuation continuation) {
+        super(2, continuation);
+        this.zzb = application;
+        this.zzc = str;
+        this.zzd = j;
     }
 
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        if (zzpqVarArr.length != 2) {
-            throw new zzae(4, 3, null);
-        }
-        Object zza2 = zzcjVar.zzc().zza(zzpqVarArr[0]);
-        if (true != (zza2 instanceof int[])) {
-            zza2 = null;
-        }
-        int[] iArr = (int[]) zza2;
-        if (iArr == null) {
-            throw new zzae(4, 5, null);
-        }
-        Object zza3 = zzcjVar.zzc().zza(zzpqVarArr[1]);
-        if (true != (zza3 instanceof String)) {
-            zza3 = null;
-        }
-        String str = (String) zza3;
-        if (str == null) {
-            throw new zzae(4, 5, null);
-        }
-        zzck zzc = zzcjVar.zzc();
-        StringBuilder sb = new StringBuilder();
-        try {
-            for (int i2 : iArr) {
-                sb.append(str.charAt(i2));
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        return new zzdx(this.zzb, this.zzc, this.zzd, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzdx) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.zza;
+        ResultKt.throwOnFailure(obj);
+        if (i == 0) {
+            Application application = this.zzb;
+            String str = this.zzc;
+            long j = this.zzd;
+            this.zza = 1;
+            obj = zzdz.zzb(application, str, j, this);
+            if (obj == coroutine_suspended) {
+                return coroutine_suspended;
             }
-            zzc.zzf(i, sb.toString());
-        } catch (Exception e) {
-            throw new zzae(4, 22, e);
         }
+        return obj;
     }
 }

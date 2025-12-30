@@ -1,89 +1,74 @@
 package com.google.android.recaptcha.internal;
 
-import java.math.RoundingMode;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Intrinsics;
+import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CompletableDeferred;
+import kotlinx.coroutines.CompletableDeferredKt;
 
 /* loaded from: classes.dex */
-public final class zzga {
-    public static int zzb(int i, RoundingMode roundingMode) {
-        if (i <= 0) {
-            throw new IllegalArgumentException("x (0) must be > 0");
-        }
-        switch (zzfz.zza[roundingMode.ordinal()]) {
-            case 1:
-                zzgc.zzb(((i + (-1)) & i) == 0);
-                break;
-            case 2:
-            case 3:
-                break;
-            case 4:
-            case 5:
-                return 32 - Integer.numberOfLeadingZeros(i - 1);
-            case 6:
-            case 7:
-            case 8:
-                int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i);
-                return (31 - numberOfLeadingZeros) + ((((-1257966797) >>> numberOfLeadingZeros) - i) >>> 31);
-            default:
-                throw new AssertionError();
-        }
-        return 31 - Integer.numberOfLeadingZeros(i);
+final class zzga extends SuspendLambda implements Function2 {
+    final /* synthetic */ zzgb zza;
+    final /* synthetic */ long zzb;
+    private /* synthetic */ Object zzc;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzga(zzgb zzgbVar, long j, Continuation continuation) {
+        super(2, continuation);
+        this.zza = zzgbVar;
+        this.zzb = j;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x003e, code lost:
-    
-        if (((r0 & 1) & (r7 != java.math.RoundingMode.HALF_EVEN ? 0 : 1)) != 0) goto L27;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0041, code lost:
-    
-        if (r1 > 0) goto L27;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0044, code lost:
-    
-        if (r5 > 0) goto L27;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0047, code lost:
-    
-        if (r5 < 0) goto L27;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int zza(int i, int i2, RoundingMode roundingMode) {
-        roundingMode.getClass();
-        if (i2 == 0) {
-            throw new ArithmeticException("/ by zero");
-        }
-        int i3 = i / i2;
-        int i4 = i - (i2 * i3);
-        if (i4 != 0) {
-            int i5 = ((i ^ i2) >> 31) | 1;
-            switch (zzfz.zza[roundingMode.ordinal()]) {
-                case 1:
-                    zzgc.zzb(false);
-                case 2:
-                    return i3;
-                case 3:
-                    break;
-                case 4:
-                    return i3 + i5;
-                case 5:
-                    break;
-                case 6:
-                case 7:
-                case 8:
-                    int abs = Math.abs(i4);
-                    int abs2 = abs - (Math.abs(i2) - abs);
-                    if (abs2 == 0) {
-                        if (roundingMode != RoundingMode.HALF_UP) {
-                            break;
-                        }
-                        return i3 + i5;
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        zzga zzgaVar = new zzga(this.zza, this.zzb, continuation);
+        zzgaVar.zzc = obj;
+        return zzgaVar;
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzga) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        zzds zzdsVar;
+        zzdt zzdtVar;
+        zzdr zzdrVar;
+        zzdt zzdtVar2;
+        zzcg zzcgVar;
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        ResultKt.throwOnFailure(obj);
+        zzhk zzhkVar = (zzhk) this.zzc;
+        zzgb zzgbVar = this.zza;
+        zzdv zze = zzgbVar.zze();
+        zzdsVar = zzdv.zzb;
+        if (!Intrinsics.areEqual(zze, zzdsVar)) {
+            zzdv zze2 = zzgbVar.zze();
+            zzdtVar = zzdv.zzc;
+            if (!Intrinsics.areEqual(zze2, zzdtVar)) {
+                zzdv zze3 = zzgbVar.zze();
+                zzdrVar = zzdv.zzd;
+                if (Intrinsics.areEqual(zze3, zzdrVar)) {
+                    zzcgVar = zzgbVar.zzd;
+                    if (!zzgb.zzo(zzgbVar, zzcgVar)) {
+                        return Unit.INSTANCE;
                     }
-                    break;
-                default:
-                    throw new AssertionError();
+                }
+                zzdtVar2 = zzdv.zzc;
+                zzgbVar.zzf = zzdtVar2;
+                CompletableDeferred CompletableDeferred$default = CompletableDeferredKt.CompletableDeferred$default(null, 1, null);
+                zzgbVar.zzb = CompletableDeferred$default;
+                BuildersKt__Builders_commonKt.launch$default(zzgb.zzd(zzgbVar).zza(), null, null, new zzfz(zzgbVar, CompletableDeferred$default, zzhkVar, this.zzb, null), 3, null);
+                return Unit.INSTANCE;
             }
         }
-        return i3;
+        return Unit.INSTANCE;
     }
 }

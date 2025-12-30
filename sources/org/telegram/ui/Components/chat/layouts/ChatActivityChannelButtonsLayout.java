@@ -95,7 +95,7 @@ public abstract class ChatActivityChannelButtonsLayout extends FrameLayout imple
             if (buttonHolder != null || z) {
                 if (buttonHolder == null) {
                     BoolAnimator boolAnimator = new BoolAnimator((i << 16) | 1, this, CubicBezierInterpolator.EASE_OUT_QUINT, 300L);
-                    ChatActivityBlurredRoundButton create = ChatActivityBlurredRoundButton.create(getContext(), this.blurredBackgroundDrawableViewFactory, this.colorProvider, this.resourcesProvider, buttonIcons[i]);
+                    ChatActivityBlurredRoundButton create = ChatActivityBlurredRoundButton.create(getContext(), this.blurredBackgroundDrawableViewFactory, this.colorProvider, this.resourcesProvider, buttonIcons[i], 48);
                     ScaleStateListAnimator.apply(create, 0.13f, 2.0f);
                     create.setVisibility(8);
                     create.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.chat.layouts.ChatActivityChannelButtonsLayout$$ExternalSyntheticLambda0

@@ -19,7 +19,7 @@ public final class s {
             try {
                 str2 = String.format(Locale.US, str2, objArr);
             } catch (IllegalFormatException e) {
-                Log.e("PlayCore", "Unable to format ".concat(str2), e);
+                Log.e("PlayCore", "Unable to format ".concat(String.valueOf(str2)), e);
                 str2 = str2 + " [" + TextUtils.join(", ", objArr) + "]";
             }
         }

@@ -368,7 +368,7 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             this.headerStatus.setTextSize(1, 12.0f);
             GiftAuctionController.Auction auction3 = this.auction;
             if (auction3.auctionStateFinished != null) {
-                this.headerStatus.setText(LocaleController.getString(R.string.Gift2AuctionEnded));
+                this.headerStatus.setText(LocaleController.getString(R.string.Gift2AuctionEndedNoDot));
             } else if (auction3.isUpcoming()) {
                 this.headerStatus.setText(LocaleController.getString(R.string.Gift2LinkUpcomingAuction));
             } else {

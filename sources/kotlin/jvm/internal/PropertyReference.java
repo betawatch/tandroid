@@ -12,8 +12,9 @@ public abstract class PropertyReference extends CallableReference implements KPr
         this.syntheticJavaProperty = (i & 2) == 2;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // kotlin.jvm.internal.CallableReference
-    protected KProperty getReflected() {
+    public KProperty getReflected() {
         if (this.syntheticJavaProperty) {
             throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties. Please follow/upvote https://youtrack.jetbrains.com/issue/KT-55980");
         }

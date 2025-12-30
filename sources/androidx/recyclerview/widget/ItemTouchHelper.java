@@ -23,6 +23,7 @@ import org.telegram.messenger.MediaDataController;
 /* loaded from: classes.dex */
 public class ItemTouchHelper extends RecyclerView.ItemDecoration implements RecyclerView.OnChildAttachStateChangeListener {
     Callback mCallback;
+    private RecyclerView.ChildDrawingOrderCallback mChildDrawingOrderCallback;
     private List mDistances;
     private long mDragScrollStartTimeInMs;
     float mDx;
@@ -64,7 +65,6 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
             ViewCompat.postOnAnimation(ItemTouchHelper.this.mRecyclerView, this);
         }
     };
-    private RecyclerView.ChildDrawingOrderCallback mChildDrawingOrderCallback = null;
     View mOverdrawChild = null;
     int mOverdrawChildPosition = -1;
     private final RecyclerView.OnItemTouchListener mOnItemTouchListener = new RecyclerView.OnItemTouchListener() { // from class: androidx.recyclerview.widget.ItemTouchHelper.2

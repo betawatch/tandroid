@@ -82,16 +82,20 @@ public class BlurredBackgroundSourceRenderNode implements BlurredBackgroundSourc
     @Override // org.telegram.ui.Components.blur3.source.BlurredBackgroundSource
     public void draw(Canvas canvas, float f, float f2, float f3, float f4) {
         if (!canvas.isHardwareAccelerated()) {
-            this.fallbackSource.draw(canvas, f, f2, f3, f4);
-        } else {
-            if (this.inRecording) {
-                throw new IllegalStateException();
+            BlurredBackgroundSource blurredBackgroundSource = this.fallbackSource;
+            if (blurredBackgroundSource != null) {
+                blurredBackgroundSource.draw(canvas, f, f2, f3, f4);
+                return;
             }
-            canvas.save();
-            canvas.clipRect(f, f2, f3, f4);
-            canvas.drawRenderNode(this.renderNode);
-            canvas.restore();
+            return;
         }
+        if (this.inRecording) {
+            throw new IllegalStateException();
+        }
+        canvas.save();
+        canvas.clipRect(f, f2, f3, f4);
+        canvas.drawRenderNode(this.renderNode);
+        canvas.restore();
     }
 
     public BlurredBackgroundSource getFallbackSource() {

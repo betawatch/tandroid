@@ -14,7 +14,7 @@ import com.microsoft.appcenter.utils.AsyncTaskUtils;
 import com.microsoft.appcenter.utils.HandlerUtils;
 import com.microsoft.appcenter.utils.storage.SharedPreferencesManager;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DownloadManagerReleaseDownloader extends AbstractReleaseDownloader {
     private long mDownloadId;
     private DownloadManagerRequestTask mRequestTask;

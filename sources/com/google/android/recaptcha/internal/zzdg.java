@@ -1,34 +1,27 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Arrays;
-import kotlin.collections.ArraysKt;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
-public final class zzdg implements zzdd {
-    public static final zzdg zza = new zzdg();
+final class zzdg extends ContinuationImpl {
+    Object zza;
+    /* synthetic */ Object zzb;
+    final /* synthetic */ zzdj zzc;
+    int zzd;
+    zzmc zze;
 
-    private zzdg() {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzdg(zzdj zzdjVar, Continuation continuation) {
+        super(continuation);
+        this.zzc = zzdjVar;
     }
 
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        int length = zzpqVarArr.length;
-        if (length == 0) {
-            throw new zzae(4, 3, null);
-        }
-        Object zza2 = zzcjVar.zzc().zza(zzpqVarArr[0]);
-        if (true != (zza2 instanceof Class)) {
-            zza2 = null;
-        }
-        Class cls = (Class) zza2;
-        if (cls == null) {
-            throw new zzae(4, 5, null);
-        }
-        Class[] zzg = zzcjVar.zzc().zzg(ArraysKt.toList(zzpqVarArr).subList(1, length));
-        try {
-            zzcjVar.zzc().zzf(i, cls.getConstructor((Class[]) Arrays.copyOf(zzg, zzg.length)));
-        } catch (Exception e) {
-            throw new zzae(6, 9, e);
-        }
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        this.zzb = obj;
+        this.zzd |= TLObject.FLAG_31;
+        return this.zzc.zza(null, this);
     }
 }

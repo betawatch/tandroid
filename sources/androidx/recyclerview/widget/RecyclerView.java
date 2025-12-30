@@ -942,7 +942,6 @@ public abstract class RecyclerView extends ViewGroup {
         if (childDrawingOrderCallback == this.mChildDrawingOrderCallback) {
             return;
         }
-        this.mChildDrawingOrderCallback = childDrawingOrderCallback;
         setChildrenDrawingOrderEnabled(childDrawingOrderCallback != null);
     }
 

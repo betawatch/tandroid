@@ -1,31 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Iterator;
+import kotlin.jvm.functions.Function0;
 
 /* loaded from: classes.dex */
-final class zzlp implements Iterator {
-    final Iterator zza;
-    final /* synthetic */ zzlq zzb;
+public final class zzlp implements Function0 {
+    public static final zzlp zza = new zzlp();
 
-    zzlp(zzlq zzlqVar) {
-        zzjm zzjmVar;
-        this.zzb = zzlqVar;
-        zzjmVar = zzlqVar.zza;
-        this.zza = zzjmVar.iterator();
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.zza.hasNext();
-    }
-
-    @Override // java.util.Iterator
-    public final /* bridge */ /* synthetic */ Object next() {
-        return (String) this.zza.next();
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException();
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzib.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzib) zzb;
+        }
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
@@ -17,7 +16,6 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
-import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
@@ -75,6 +73,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.utils.ViewOutlineProviderImpl;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -110,6 +109,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.MapPlaceholderDrawable;
 import org.telegram.ui.Components.ProximitySheet;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.SharedMediaLayout;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.UndoView;
@@ -501,26 +501,26 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         this.isSharingAllowed = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0ad8  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0ade  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x090a  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0830  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0664  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x00eb  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00de  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0653  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x082d  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0876  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0aeb  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0af8 A[LOOP:0: B:93:0x0af6->B:94:0x0af8, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0b56  */
-    /* JADX WARN: Type inference failed for: r15v1 */
-    /* JADX WARN: Type inference failed for: r15v2, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r15v3 */
-    /* JADX WARN: Type inference failed for: r15v4 */
-    /* JADX WARN: Type inference failed for: r15v5 */
-    /* JADX WARN: Type inference failed for: r15v6 */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x097b  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x0989  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x098f  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x07c5  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x06e9  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x051f  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0315  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x02fa  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x050e  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0526  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x06e6  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0730  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x07f6  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x089d  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x099c  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x09a9 A[LOOP:0: B:93:0x09a7->B:94:0x09a9, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0a08  */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -530,30 +530,24 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         Rect rect;
         int i;
         FrameLayout.LayoutParams layoutParams;
-        FrameLayout.LayoutParams layoutParams2;
         MessageObject messageObject;
-        FrameLayout.LayoutParams layoutParams3;
-        Rect rect2;
         MessageObject messageObject2;
-        Rect rect3;
+        FrameLayout.LayoutParams layoutParams2;
+        Rect rect2;
         final LocationActivity locationActivity;
-        NestedFrameLayout nestedFrameLayout;
-        FrameLayout.LayoutParams layoutParams4;
         int i2;
         int i3;
         boolean z2;
         int i4;
         MessageObject messageObject3;
         MessageObject messageObject4;
-        ?? r15;
+        boolean z3;
         TLRPC.TL_channelLocation tL_channelLocation;
         MessageObject messageObject5;
         int i5;
-        int i6;
-        long j;
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia;
-        int i7;
+        int i6;
         int checkSelfPermission;
         this.searchWas = false;
         this.searching = false;
@@ -583,12 +577,12 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 z = true;
                 this.locationDenied = z;
                 ActionBar actionBar = this.actionBar;
-                int i8 = Theme.key_dialogBackground;
-                actionBar.setBackgroundColor(getThemedColor(i8));
+                int i7 = Theme.key_dialogBackground;
+                actionBar.setBackgroundColor(getThemedColor(i7));
                 ActionBar actionBar2 = this.actionBar;
-                int i9 = Theme.key_dialogTextBlack;
-                actionBar2.setTitleColor(getThemedColor(i9));
-                this.actionBar.setItemsColor(getThemedColor(i9), false);
+                int i8 = Theme.key_dialogTextBlack;
+                actionBar2.setTitleColor(getThemedColor(i8));
+                this.actionBar.setItemsColor(getThemedColor(i8), false);
                 this.actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_dialogButtonSelector), false);
                 this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
                 this.actionBar.setAllowOverlayTitle(true);
@@ -598,17 +592,17 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 this.actionBar.setAddToContainer(false);
                 this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LocationActivity.1
                     @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-                    public void onItemClick(int i10) {
-                        if (i10 == -1) {
+                    public void onItemClick(int i9) {
+                        if (i9 == -1) {
                             LocationActivity.this.finishFragment();
                             return;
                         }
-                        if (i10 != 1) {
-                            if (i10 == 5) {
+                        if (i9 != 1) {
+                            if (i9 == 5) {
                                 LocationActivity.this.openShareLiveLocation(false, 0);
                                 return;
                             } else {
-                                if (i10 == 6) {
+                                if (i9 == 6) {
                                     LocationActivity.this.openDirections(null);
                                     return;
                                 }
@@ -713,22 +707,22 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                                 }
                             });
                             this.searchItem = actionBarMenuItemSearchListener;
-                            int i10 = R.string.Search;
-                            actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString(i10));
-                            this.searchItem.setContentDescription(LocaleController.getString(i10));
+                            int i9 = R.string.Search;
+                            actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString(i9));
+                            this.searchItem.setContentDescription(LocaleController.getString(i9));
                             EditTextBoldCursor searchField = this.searchItem.getSearchField();
-                            searchField.setTextColor(getThemedColor(i9));
-                            searchField.setCursorColor(getThemedColor(i9));
+                            searchField.setTextColor(getThemedColor(i8));
+                            searchField.setCursorColor(getThemedColor(i8));
                             searchField.setHintTextColor(getThemedColor(Theme.key_chat_messagePanelHint));
                         }
                     }
                 }
-                NestedFrameLayout nestedFrameLayout2 = new NestedFrameLayout(context);
-                this.fragmentView = nestedFrameLayout2;
-                nestedFrameLayout2.setBackgroundColor(getThemedColor(i8));
+                NestedFrameLayout nestedFrameLayout = new NestedFrameLayout(context);
+                this.fragmentView = nestedFrameLayout;
+                nestedFrameLayout.setBackgroundColor(getThemedColor(i7));
                 Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
                 this.shadowDrawable = mutate;
-                int themedColor = getThemedColor(i8);
+                int themedColor = getThemedColor(i7);
                 PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                 mutate.setColorFilter(new PorterDuffColorFilter(themedColor, mode));
                 rect = new Rect();
@@ -739,12 +733,12 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 } else {
                     layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.dp(6.0f) + rect.top);
                 }
-                layoutParams2 = layoutParams;
-                layoutParams2.gravity = 83;
+                FrameLayout.LayoutParams layoutParams3 = layoutParams;
+                layoutParams3.gravity = 83;
                 FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.LocationActivity.3
                     @Override // android.widget.FrameLayout, android.view.View
-                    protected void onMeasure(int i11, int i12) {
-                        super.onMeasure(i11, i12);
+                    protected void onMeasure(int i10, int i11) {
+                        super.onMeasure(i10, i11);
                         if (LocationActivity.this.overlayView != null) {
                             LocationActivity.this.overlayView.updatePositions();
                         }
@@ -753,29 +747,14 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 this.mapViewClip = frameLayout;
                 frameLayout.setBackgroundDrawable(new MapPlaceholderDrawable(isActiveThemeDark()));
                 messageObject = this.messageObject;
-                if ((messageObject == null || !((i7 = this.locationType) == 0 || i7 == 1)) && (messageObject == null || this.locationType != 3)) {
-                    layoutParams3 = layoutParams2;
-                    rect2 = rect;
-                } else {
+                if ((messageObject == null && ((i6 = this.locationType) == 0 || i6 == 1)) || (messageObject != null && this.locationType == 3)) {
                     SearchButton searchButton = new SearchButton(context);
                     this.searchAreaButton = searchButton;
                     searchButton.setTranslationX(-AndroidUtilities.dp(80.0f));
                     Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(40.0f), getThemedColor(Theme.key_location_actionBackground), getThemedColor(Theme.key_location_actionPressedBackground));
-                    StateListAnimator stateListAnimator = new StateListAnimator();
-                    int[] iArr = {android.R.attr.state_pressed};
-                    SearchButton searchButton2 = this.searchAreaButton;
-                    Property property = View.TRANSLATION_Z;
-                    layoutParams3 = layoutParams2;
-                    rect2 = rect;
-                    stateListAnimator.addState(iArr, ObjectAnimator.ofFloat(searchButton2, (Property<SearchButton, Float>) property, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-                    stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this.searchAreaButton, (Property<SearchButton, Float>) property, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-                    this.searchAreaButton.setStateListAnimator(stateListAnimator);
-                    this.searchAreaButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.LocationActivity.4
-                        @Override // android.view.ViewOutlineProvider
-                        public void getOutline(View view, Outline outline) {
-                            outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), view.getMeasuredHeight() / 2);
-                        }
-                    });
+                    ScaleStateListAnimator.apply(this.searchAreaButton);
+                    this.searchAreaButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+                    this.searchAreaButton.setOutlineProvider(ViewOutlineProviderImpl.BOUNDS_ROUND_RECT);
                     this.searchAreaButton.setBackgroundDrawable(createSimpleSelectorRoundRectDrawable);
                     this.searchAreaButton.setTextColor(getThemedColor(Theme.key_location_actionActiveIcon));
                     this.searchAreaButton.setTextSize(1, 14.0f);
@@ -802,9 +781,8 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                         });
                     }
                 }
-                int i11 = Theme.key_location_actionIcon;
-                FrameLayout.LayoutParams layoutParams5 = layoutParams3;
-                ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(context, (ActionBarMenu) null, 0, getThemedColor(i11), getResourceProvider());
+                int i10 = Theme.key_location_actionIcon;
+                ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(context, (ActionBarMenu) null, 0, getThemedColor(i10), getResourceProvider());
                 this.mapTypeButton = actionBarMenuItem;
                 actionBarMenuItem.setClickable(true);
                 this.mapTypeButton.setSubMenuOpenSide(2);
@@ -815,23 +793,15 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 this.mapTypeButton.addSubItem(4, R.drawable.msg_hybrid, LocaleController.getString(R.string.Hybrid), getResourceProvider());
                 this.mapTypeButton.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
                 int dp = AndroidUtilities.dp(40.0f);
-                int i12 = Theme.key_location_actionBackground;
-                int themedColor2 = getThemedColor(i12);
-                int i13 = Theme.key_location_actionPressedBackground;
-                Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(dp, themedColor2, getThemedColor(i13));
-                StateListAnimator stateListAnimator2 = new StateListAnimator();
-                int[] iArr2 = {android.R.attr.state_pressed};
+                int i11 = Theme.key_location_actionBackground;
+                int themedColor2 = getThemedColor(i11);
+                int i12 = Theme.key_location_actionPressedBackground;
+                Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(dp, themedColor2, getThemedColor(i12));
+                ScaleStateListAnimator.apply(this.mapTypeButton);
+                this.mapTypeButton.setTranslationZ(AndroidUtilities.dp(2.0f));
                 ActionBarMenuItem actionBarMenuItem2 = this.mapTypeButton;
-                Property property2 = View.TRANSLATION_Z;
-                stateListAnimator2.addState(iArr2, ObjectAnimator.ofFloat(actionBarMenuItem2, (Property<ActionBarMenuItem, Float>) property2, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-                stateListAnimator2.addState(new int[0], ObjectAnimator.ofFloat(this.mapTypeButton, (Property<ActionBarMenuItem, Float>) property2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-                this.mapTypeButton.setStateListAnimator(stateListAnimator2);
-                this.mapTypeButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.LocationActivity.5
-                    @Override // android.view.ViewOutlineProvider
-                    public void getOutline(View view, Outline outline) {
-                        outline.setOval(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-                    }
-                });
+                ViewOutlineProvider viewOutlineProvider = ViewOutlineProviderImpl.BOUNDS_OVAL;
+                actionBarMenuItem2.setOutlineProvider(viewOutlineProvider);
                 this.mapTypeButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable);
                 this.mapTypeButton.setIcon(R.drawable.msg_map_type);
                 this.mapViewClip.addView(this.mapTypeButton, LayoutHelper.createFrame(40, 40.0f, 53, 0.0f, 12.0f, 12.0f, 0.0f));
@@ -843,35 +813,27 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 });
                 this.mapTypeButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda11
                     @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
-                    public final void onItemClick(int i14) {
-                        LocationActivity.this.lambda$createView$3(i14);
+                    public final void onItemClick(int i13) {
+                        LocationActivity.this.lambda$createView$3(i13);
                     }
                 });
                 this.locationButton = new ImageView(context);
-                Drawable createSimpleSelectorCircleDrawable2 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i12), getThemedColor(i13));
-                StateListAnimator stateListAnimator3 = new StateListAnimator();
-                stateListAnimator3.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.locationButton, (Property<ImageView, Float>) property2, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-                stateListAnimator3.addState(new int[0], ObjectAnimator.ofFloat(this.locationButton, (Property<ImageView, Float>) property2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-                this.locationButton.setStateListAnimator(stateListAnimator3);
-                this.locationButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.LocationActivity.6
-                    @Override // android.view.ViewOutlineProvider
-                    public void getOutline(View view, Outline outline) {
-                        outline.setOval(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-                    }
-                });
+                Drawable createSimpleSelectorCircleDrawable2 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i11), getThemedColor(i12));
+                ScaleStateListAnimator.apply(this.locationButton);
+                this.locationButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+                this.locationButton.setOutlineProvider(viewOutlineProvider);
                 this.locationButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable2);
                 this.locationButton.setImageResource(R.drawable.msg_current_location);
                 ImageView imageView = this.locationButton;
                 ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
                 imageView.setScaleType(scaleType);
                 ImageView imageView2 = this.locationButton;
-                int i14 = Theme.key_location_actionActiveIcon;
-                imageView2.setColorFilter(new PorterDuffColorFilter(getThemedColor(i14), mode));
-                this.locationButton.setTag(Integer.valueOf(i14));
+                int i13 = Theme.key_location_actionActiveIcon;
+                imageView2.setColorFilter(new PorterDuffColorFilter(getThemedColor(i13), mode));
+                this.locationButton.setTag(Integer.valueOf(i13));
                 this.locationButton.setContentDescription(LocaleController.getString(R.string.AccDescrMyLocation));
                 FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(40, 40.0f, 85, 0.0f, 0.0f, 12.0f, 12.0f);
-                Rect rect4 = rect2;
-                createFrame.bottomMargin += layoutParams5.height - rect4.top;
+                createFrame.bottomMargin += layoutParams3.height - rect.top;
                 this.mapViewClip.addView(this.locationButton, createFrame);
                 this.locationButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda12
                     @Override // android.view.View.OnClickListener
@@ -880,18 +842,11 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                     }
                 });
                 this.proximityButton = new ImageView(context);
-                Drawable createSimpleSelectorCircleDrawable3 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i12), getThemedColor(i13));
-                StateListAnimator stateListAnimator4 = new StateListAnimator();
-                stateListAnimator4.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.proximityButton, (Property<ImageView, Float>) property2, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-                stateListAnimator4.addState(new int[0], ObjectAnimator.ofFloat(this.proximityButton, (Property<ImageView, Float>) property2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-                this.proximityButton.setStateListAnimator(stateListAnimator4);
-                this.proximityButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.LocationActivity.7
-                    @Override // android.view.ViewOutlineProvider
-                    public void getOutline(View view, Outline outline) {
-                        outline.setOval(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-                    }
-                });
-                this.proximityButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i11), mode));
+                Drawable createSimpleSelectorCircleDrawable3 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i11), getThemedColor(i12));
+                ScaleStateListAnimator.apply(this.proximityButton);
+                this.proximityButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+                this.proximityButton.setOutlineProvider(viewOutlineProvider);
+                this.proximityButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i10), mode));
                 this.proximityButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable3);
                 this.proximityButton.setScaleType(scaleType);
                 this.proximityButton.setContentDescription(LocaleController.getString(R.string.AccDescrLocationNotify));
@@ -902,7 +857,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                         LocationActivity.this.lambda$createView$7(view);
                     }
                 });
-                TLRPC.Chat chat = !DialogObject.isChatDialog(this.dialogId) ? getMessagesController().getChat(Long.valueOf(-this.dialogId)) : null;
+                TLRPC.Chat chat = DialogObject.isChatDialog(this.dialogId) ? getMessagesController().getChat(Long.valueOf(-this.dialogId)) : null;
                 messageObject2 = this.messageObject;
                 if (messageObject2 != null || !messageObject2.isLiveLocation() || this.messageObject.isExpiredLiveLocation(getConnectionsManager().getCurrentTime()) || (ChatObject.isChannel(chat) && !chat.megagroup)) {
                     this.proximityButton.setVisibility(8);
@@ -934,7 +889,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 this.emptyView.setGravity(1);
                 this.emptyView.setPadding(0, AndroidUtilities.dp(160.0f), 0, 0);
                 this.emptyView.setVisibility(8);
-                nestedFrameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1.0f));
+                nestedFrameLayout.addView(this.emptyView, LayoutHelper.createFrame(-1, -1.0f));
                 this.emptyView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda14
                     @Override // android.view.View.OnTouchListener
                     public final boolean onTouch(View view, MotionEvent motionEvent) {
@@ -950,8 +905,8 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 this.emptyView.addView(this.emptyImageView, LayoutHelper.createLinear(-2, -2));
                 TextView textView = new TextView(context);
                 this.emptyTitleTextView = textView;
-                int i15 = Theme.key_dialogEmptyText;
-                textView.setTextColor(getThemedColor(i15));
+                int i14 = Theme.key_dialogEmptyText;
+                textView.setTextColor(getThemedColor(i14));
                 this.emptyTitleTextView.setGravity(17);
                 this.emptyTitleTextView.setTypeface(AndroidUtilities.bold());
                 this.emptyTitleTextView.setTextSize(1, 17.0f);
@@ -959,7 +914,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 this.emptyView.addView(this.emptyTitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 11, 0, 0));
                 TextView textView2 = new TextView(context);
                 this.emptySubtitleTextView = textView2;
-                textView2.setTextColor(getThemedColor(i15));
+                textView2.setTextColor(getThemedColor(i14));
                 this.emptySubtitleTextView.setGravity(17);
                 this.emptySubtitleTextView.setTextSize(1, 15.0f);
                 this.emptySubtitleTextView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
@@ -967,7 +922,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 RecyclerListView recyclerListView = new RecyclerListView(context);
                 this.listView = recyclerListView;
                 TLRPC.Chat chat2 = chat;
-                LocationActivityAdapter locationActivityAdapter2 = new LocationActivityAdapter(context, this.locationType, this.dialogId, false, getResourceProvider(), false, this.fromStories, this.locationType != 8) { // from class: org.telegram.ui.LocationActivity.8
+                LocationActivityAdapter locationActivityAdapter2 = new LocationActivityAdapter(context, this.locationType, this.dialogId, false, getResourceProvider(), false, this.fromStories, this.locationType == 8) { // from class: org.telegram.ui.LocationActivity.4
                     private boolean firstSet = true;
 
                     @Override // org.telegram.ui.Adapters.LocationActivityAdapter
@@ -977,24 +932,24 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
 
                     @Override // org.telegram.ui.Adapters.LocationActivityAdapter
                     public void setLiveLocations(ArrayList arrayList) {
-                        int i16;
+                        int i15;
                         if (LocationActivity.this.messageObject != null && LocationActivity.this.messageObject.isLiveLocation()) {
                             if (arrayList != null) {
-                                i16 = 0;
-                                for (int i17 = 0; i17 < arrayList.size(); i17++) {
-                                    LiveLocation liveLocation = (LiveLocation) arrayList.get(i17);
+                                i15 = 0;
+                                for (int i16 = 0; i16 < arrayList.size(); i16++) {
+                                    LiveLocation liveLocation = (LiveLocation) arrayList.get(i16);
                                     if (liveLocation != null && !UserObject.isUserSelf(liveLocation.user)) {
-                                        i16++;
+                                        i15++;
                                     }
                                 }
                             } else {
-                                i16 = 0;
+                                i15 = 0;
                             }
-                            if (this.firstSet && i16 == 1) {
+                            if (this.firstSet && i15 == 1) {
                                 LocationActivity.this.selectedMarkerId = ((LiveLocation) arrayList.get(0)).id;
                             }
                             this.firstSet = false;
-                            LocationActivity.this.otherItem.setVisibility(i16 != 1 ? 8 : 0);
+                            LocationActivity.this.otherItem.setVisibility(i15 != 1 ? 8 : 0);
                         }
                         super.setLiveLocations(arrayList);
                     }
@@ -1005,13 +960,12 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, 1, false);
                 this.layoutManager = linearLayoutManager;
                 recyclerListView2.setLayoutManager(linearLayoutManager);
-                if (this.searchStoriesArea == null) {
+                if (this.searchStoriesArea != null) {
                     this.sharedMediaHeader = new GraySectionCell(context, this.resourceProvider);
                     i4 = 1;
-                    rect3 = rect4;
-                    layoutParams4 = layoutParams5;
-                    nestedFrameLayout = nestedFrameLayout2;
-                    SharedMediaLayout sharedMediaLayout = new SharedMediaLayout(context, 0L, new SharedMediaLayout.SharedMediaPreloader(this), 0, null, null, null, 8, 0, this, new SharedMediaLayout.Delegate() { // from class: org.telegram.ui.LocationActivity.9
+                    layoutParams2 = layoutParams3;
+                    rect2 = rect;
+                    SharedMediaLayout sharedMediaLayout = new SharedMediaLayout(context, 0L, new SharedMediaLayout.SharedMediaPreloader(this), 0, null, null, null, 8, 0, this, new SharedMediaLayout.Delegate() { // from class: org.telegram.ui.LocationActivity.5
                         @Override // org.telegram.ui.Components.SharedMediaLayout.Delegate
                         public boolean canSearchMembers() {
                             return false;
@@ -1028,7 +982,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                         }
 
                         @Override // org.telegram.ui.Components.SharedMediaLayout.Delegate
-                        public boolean onMemberClick(TLRPC.ChatParticipant chatParticipant, boolean z3, boolean z4, View view) {
+                        public boolean onMemberClick(TLRPC.ChatParticipant chatParticipant, boolean z4, boolean z5, View view) {
                             return false;
                         }
 
@@ -1049,7 +1003,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                                 LocationActivity.this.listView.smoothScrollBy(0, AndroidUtilities.dp(200.0f));
                             }
                         }
-                    }, 0, getResourceProvider()) { // from class: org.telegram.ui.LocationActivity.10
+                    }, 0, getResourceProvider()) { // from class: org.telegram.ui.LocationActivity.6
                         @Override // org.telegram.ui.Components.SharedMediaLayout
                         protected boolean customTabs() {
                             return true;
@@ -1072,7 +1026,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                     };
                     locationActivity = this;
                     locationActivity.sharedMediaLayout = sharedMediaLayout;
-                    sharedMediaLayout.setBackgroundColor(locationActivity.getThemedColor(i8));
+                    sharedMediaLayout.setBackgroundColor(locationActivity.getThemedColor(i7));
                     i2 = -1;
                     locationActivity.sharedMediaLayout.addView(locationActivity.sharedMediaHeader, LayoutHelper.createFrame(-1, 32, 55));
                     locationActivity.adapter.setSharedMediaLayout(locationActivity.sharedMediaLayout);
@@ -1086,10 +1040,9 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                     defaultItemAnimator.setDurations(350L);
                     locationActivity.listView.setItemAnimator(defaultItemAnimator);
                 } else {
-                    rect3 = rect4;
+                    layoutParams2 = layoutParams3;
+                    rect2 = rect;
                     locationActivity = this;
-                    nestedFrameLayout = nestedFrameLayout2;
-                    layoutParams4 = layoutParams5;
                     i2 = -1;
                     i3 = 2;
                     z2 = false;
@@ -1103,16 +1056,15 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                     }
                 });
                 locationActivity.listView.setVerticalScrollBarEnabled(z2);
-                NestedFrameLayout nestedFrameLayout3 = nestedFrameLayout;
-                nestedFrameLayout3.addView(locationActivity.listView, LayoutHelper.createFrame(i2, i2, 51));
+                nestedFrameLayout.addView(locationActivity.listView, LayoutHelper.createFrame(i2, i2, 51));
                 messageObject3 = locationActivity.messageObject;
                 if (messageObject3 != null && (message = messageObject3.messageOwner) != null && (messageMedia = message.media) != null && !TextUtils.isEmpty(messageMedia.address)) {
                     locationActivity.adapter.setAddressNameOverride(locationActivity.messageObject.messageOwner.media.address);
                 }
-                locationActivity.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.LocationActivity.11
+                locationActivity.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.LocationActivity.7
                     @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-                    public void onScrollStateChanged(RecyclerView recyclerView, int i16) {
-                        LocationActivity.this.scrolling = i16 != 0;
+                    public void onScrollStateChanged(RecyclerView recyclerView, int i15) {
+                        LocationActivity.this.scrolling = i15 != 0;
                         if (LocationActivity.this.scrolling || LocationActivity.this.forceUpdate == null) {
                             return;
                         }
@@ -1120,26 +1072,26 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                     }
 
                     @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-                    public void onScrolled(RecyclerView recyclerView, int i16, int i17) {
+                    public void onScrolled(RecyclerView recyclerView, int i15, int i16) {
                         LocationActivity.this.updateClipView(false);
                         if (LocationActivity.this.forceUpdate != null) {
-                            LocationActivity.access$3116(LocationActivity.this, i17);
+                            LocationActivity.access$3116(LocationActivity.this, i16);
                         }
                     }
                 });
                 ((DefaultItemAnimator) locationActivity.listView.getItemAnimator()).setDelayAnimations(z2);
                 locationActivity.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda16
                     @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
-                    public final boolean onItemClick(View view, int i16) {
+                    public final boolean onItemClick(View view, int i15) {
                         boolean lambda$createView$11;
-                        lambda$createView$11 = LocationActivity.this.lambda$createView$11(context, view, i16);
+                        lambda$createView$11 = LocationActivity.this.lambda$createView$11(context, view, i15);
                         return lambda$createView$11;
                     }
                 });
                 locationActivity.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda0
                     @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-                    public final void onItemClick(View view, int i16) {
-                        LocationActivity.this.lambda$createView$17(view, i16);
+                    public final void onItemClick(View view, int i15) {
+                        LocationActivity.this.lambda$createView$17(view, i15);
                     }
                 });
                 locationActivity.adapter.setDelegate(locationActivity.dialogId, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda1
@@ -1149,7 +1101,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                     }
                 });
                 locationActivity.adapter.setOverScrollHeight(locationActivity.overScrollHeight);
-                nestedFrameLayout3.addView(locationActivity.mapViewClip, LayoutHelper.createFrame(i2, i2, 51));
+                nestedFrameLayout.addView(locationActivity.mapViewClip, LayoutHelper.createFrame(i2, i2, 51));
                 IMapsProvider.IMapView onCreateMapView = ApplicationLoader.getMapsProvider().onCreateMapView(context);
                 locationActivity.mapView = onCreateMapView;
                 onCreateMapView.getView().setAlpha(0.0f);
@@ -1184,38 +1136,29 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 }).start();
                 messageObject4 = locationActivity.messageObject;
                 if (messageObject4 != null && locationActivity.chatLocation == null) {
-                    if (chat2 == null || locationActivity.locationType != 4) {
-                        i6 = 49;
-                        j = 0;
-                    } else {
-                        j = 0;
-                        if (locationActivity.dialogId != 0) {
-                            FrameLayout frameLayout2 = new FrameLayout(context);
-                            frameLayout2.setBackgroundResource(R.drawable.livepin);
-                            i6 = 49;
-                            locationActivity.mapViewClip.addView(frameLayout2, LayoutHelper.createFrame(62, 76, 49));
-                            BackupImageView backupImageView = new BackupImageView(context);
-                            backupImageView.setRoundRadius(AndroidUtilities.dp(26.0f));
-                            backupImageView.setForUserOrChat(chat2, new AvatarDrawable(chat2));
-                            frameLayout2.addView(backupImageView, LayoutHelper.createFrame(52, 52.0f, 51, 5.0f, 5.0f, 0.0f, 0.0f));
-                            locationActivity.markerImageView = frameLayout2;
-                            frameLayout2.setTag(Integer.valueOf(i4));
-                        } else {
-                            i6 = 49;
-                        }
+                    if (chat2 != null && locationActivity.locationType == 4 && locationActivity.dialogId != 0) {
+                        FrameLayout frameLayout2 = new FrameLayout(context);
+                        frameLayout2.setBackgroundResource(R.drawable.livepin);
+                        locationActivity.mapViewClip.addView(frameLayout2, LayoutHelper.createFrame(62, 76, 49));
+                        BackupImageView backupImageView = new BackupImageView(context);
+                        backupImageView.setRoundRadius(AndroidUtilities.dp(26.0f));
+                        backupImageView.setForUserOrChat(chat2, new AvatarDrawable(chat2));
+                        frameLayout2.addView(backupImageView, LayoutHelper.createFrame(52, 52.0f, 51, 5.0f, 5.0f, 0.0f, 0.0f));
+                        locationActivity.markerImageView = frameLayout2;
+                        frameLayout2.setTag(Integer.valueOf(i4));
                     }
                     if (locationActivity.markerImageView == null) {
                         ImageView imageView4 = new ImageView(context);
                         imageView4.setImageResource(R.drawable.map_pin2);
-                        locationActivity.mapViewClip.addView(imageView4, LayoutHelper.createFrame(28, 48, i6));
+                        locationActivity.mapViewClip.addView(imageView4, LayoutHelper.createFrame(28, 48, 49));
                         locationActivity.markerImageView = imageView4;
                     }
                     RecyclerListView recyclerListView3 = new RecyclerListView(context);
                     locationActivity.searchListView = recyclerListView3;
                     recyclerListView3.setVisibility(8);
-                    r15 = 1;
+                    z3 = true;
                     locationActivity.searchListView.setLayoutManager(new LinearLayoutManager(context, 1, z2));
-                    LocationActivitySearchAdapter locationActivitySearchAdapter2 = new LocationActivitySearchAdapter(context, getResourceProvider(), false, locationActivity.locationType == 8) { // from class: org.telegram.ui.LocationActivity.13
+                    LocationActivitySearchAdapter locationActivitySearchAdapter2 = new LocationActivitySearchAdapter(context, getResourceProvider(), false, locationActivity.locationType == 8) { // from class: org.telegram.ui.LocationActivity.9
                         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
                         public void notifyDataSetChanged() {
                             if (LocationActivity.this.searchItem != null) {
@@ -1228,35 +1171,32 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                         }
                     };
                     locationActivity.searchAdapter = locationActivitySearchAdapter2;
-                    locationActivitySearchAdapter2.setDelegate(j, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda6
+                    locationActivitySearchAdapter2.setDelegate(0L, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda6
                         @Override // org.telegram.ui.Adapters.BaseLocationAdapter.BaseLocationAdapterDelegate
                         public final void didLoadSearchResult(ArrayList arrayList) {
                             LocationActivity.this.lambda$createView$25(arrayList);
                         }
                     });
-                    nestedFrameLayout3.addView(locationActivity.searchListView, LayoutHelper.createFrame(i2, i2, 51));
-                    locationActivity.searchListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.LocationActivity.14
+                    nestedFrameLayout.addView(locationActivity.searchListView, LayoutHelper.createFrame(i2, i2, 51));
+                    locationActivity.searchListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.LocationActivity.10
                         @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-                        public void onScrollStateChanged(RecyclerView recyclerView, int i16) {
-                            if (i16 == 1 && LocationActivity.this.searching && LocationActivity.this.searchWas) {
+                        public void onScrollStateChanged(RecyclerView recyclerView, int i15) {
+                            if (i15 == 1 && LocationActivity.this.searching && LocationActivity.this.searchWas) {
                                 AndroidUtilities.hideKeyboard(LocationActivity.this.getParentActivity().getCurrentFocus());
                             }
                         }
                     });
                     locationActivity.searchListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda7
                         @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-                        public final void onItemClick(View view, int i16) {
-                            LocationActivity.this.lambda$createView$27(createMenu, view, i16);
+                        public final void onItemClick(View view, int i15) {
+                            LocationActivity.this.lambda$createView$27(createMenu, view, i15);
                         }
                     });
                 } else {
-                    r15 = 1;
-                    r15 = 1;
-                    r15 = 1;
-                    r15 = 1;
+                    z3 = true;
                     if ((messageObject4 != null && !messageObject4.isLiveLocation()) || locationActivity.chatLocation != null) {
                         tL_channelLocation = locationActivity.chatLocation;
-                        if (tL_channelLocation != null) {
+                        if (tL_channelLocation == null) {
                             locationActivity.adapter.setChatLocation(tL_channelLocation);
                         } else {
                             MessageObject messageObject7 = locationActivity.messageObject;
@@ -1270,23 +1210,23 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 if (messageObject5 != null && locationActivity.locationType == 6) {
                     locationActivity.adapter.setMessageObject(messageObject5);
                 }
-                for (i5 = 0; i5 < i3; i5 += r15) {
+                for (i5 = 0; i5 < i3; i5++) {
                     locationActivity.undoView[i5] = new UndoView(context);
                     locationActivity.undoView[i5].setAdditionalTranslationY(AndroidUtilities.dp(10.0f));
                     locationActivity.undoView[i5].setTranslationZ(AndroidUtilities.dp(5.0f));
                     locationActivity.mapViewClip.addView(locationActivity.undoView[i5], LayoutHelper.createFrame(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
                 }
-                final Rect rect5 = rect3;
-                View view = new View(context) { // from class: org.telegram.ui.LocationActivity.15
+                final Rect rect3 = rect2;
+                View view = new View(context) { // from class: org.telegram.ui.LocationActivity.11
                     private RectF rect = new RectF();
 
                     @Override // android.view.View
                     protected void onDraw(Canvas canvas) {
-                        LocationActivity.this.shadowDrawable.setBounds(-rect5.left, 0, getMeasuredWidth() + rect5.right, getMeasuredHeight());
+                        LocationActivity.this.shadowDrawable.setBounds(-rect3.left, 0, getMeasuredWidth() + rect3.right, getMeasuredHeight());
                         LocationActivity.this.shadowDrawable.draw(canvas);
                         if (LocationActivity.this.locationType == 0 || LocationActivity.this.locationType == 1) {
                             int dp2 = AndroidUtilities.dp(36.0f);
-                            this.rect.set((getMeasuredWidth() - dp2) / 2, rect5.top + AndroidUtilities.dp(10.0f), (getMeasuredWidth() + dp2) / 2, r1 + AndroidUtilities.dp(4.0f));
+                            this.rect.set((getMeasuredWidth() - dp2) / 2, rect3.top + AndroidUtilities.dp(10.0f), (getMeasuredWidth() + dp2) / 2, r1 + AndroidUtilities.dp(4.0f));
                             int themedColor3 = LocationActivity.this.getThemedColor(Theme.key_sheet_scrollUp);
                             Color.alpha(themedColor3);
                             Theme.dialogs_onlineCirclePaint.setColor(themedColor3);
@@ -1296,15 +1236,15 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 };
                 locationActivity.shadow = view;
                 view.setTranslationZ(AndroidUtilities.dp(6.0f));
-                locationActivity.mapViewClip.addView(locationActivity.shadow, layoutParams4);
+                locationActivity.mapViewClip.addView(locationActivity.shadow, layoutParams2);
                 if (locationActivity.messageObject == null && locationActivity.chatLocation == null && locationActivity.initialLocation != null) {
-                    locationActivity.userLocationMoved = r15;
+                    locationActivity.userLocationMoved = z3;
                     ImageView imageView5 = locationActivity.locationButton;
-                    int i16 = Theme.key_location_actionIcon;
-                    imageView5.setColorFilter(new PorterDuffColorFilter(locationActivity.getThemedColor(i16), PorterDuff.Mode.MULTIPLY));
-                    locationActivity.locationButton.setTag(Integer.valueOf(i16));
+                    int i15 = Theme.key_location_actionIcon;
+                    imageView5.setColorFilter(new PorterDuffColorFilter(locationActivity.getThemedColor(i15), PorterDuff.Mode.MULTIPLY));
+                    locationActivity.locationButton.setTag(Integer.valueOf(i15));
                 }
-                nestedFrameLayout3.addView(locationActivity.actionBar);
+                nestedFrameLayout.addView(locationActivity.actionBar);
                 updateEmptyView();
                 return locationActivity.fragmentView;
             }
@@ -1312,12 +1252,12 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         z = false;
         this.locationDenied = z;
         ActionBar actionBar3 = this.actionBar;
-        int i82 = Theme.key_dialogBackground;
-        actionBar3.setBackgroundColor(getThemedColor(i82));
+        int i72 = Theme.key_dialogBackground;
+        actionBar3.setBackgroundColor(getThemedColor(i72));
         ActionBar actionBar22 = this.actionBar;
-        int i92 = Theme.key_dialogTextBlack;
-        actionBar22.setTitleColor(getThemedColor(i92));
-        this.actionBar.setItemsColor(getThemedColor(i92), false);
+        int i82 = Theme.key_dialogTextBlack;
+        actionBar22.setTitleColor(getThemedColor(i82));
+        this.actionBar.setItemsColor(getThemedColor(i82), false);
         this.actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_dialogButtonSelector), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
@@ -1326,17 +1266,17 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         this.actionBar.setAddToContainer(false);
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LocationActivity.1
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i102) {
-                if (i102 == -1) {
+            public void onItemClick(int i92) {
+                if (i92 == -1) {
                     LocationActivity.this.finishFragment();
                     return;
                 }
-                if (i102 != 1) {
-                    if (i102 == 5) {
+                if (i92 != 1) {
+                    if (i92 == 5) {
                         LocationActivity.this.openShareLiveLocation(false, 0);
                         return;
                     } else {
-                        if (i102 == 6) {
+                        if (i92 == 6) {
                             LocationActivity.this.openDirections(null);
                             return;
                         }
@@ -1355,12 +1295,12 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         final ActionBarMenu createMenu2 = this.actionBar.createMenu();
         if (this.chatLocation == null) {
         }
-        NestedFrameLayout nestedFrameLayout22 = new NestedFrameLayout(context);
-        this.fragmentView = nestedFrameLayout22;
-        nestedFrameLayout22.setBackgroundColor(getThemedColor(i82));
+        NestedFrameLayout nestedFrameLayout2 = new NestedFrameLayout(context);
+        this.fragmentView = nestedFrameLayout2;
+        nestedFrameLayout2.setBackgroundColor(getThemedColor(i72));
         Drawable mutate2 = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate2;
-        int themedColor3 = getThemedColor(i82);
+        int themedColor3 = getThemedColor(i72);
         PorterDuff.Mode mode2 = PorterDuff.Mode.MULTIPLY;
         mutate2.setColorFilter(new PorterDuffColorFilter(themedColor3, mode2));
         rect = new Rect();
@@ -1369,12 +1309,12 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         if (i != 0) {
         }
         layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.dp(21.0f) + rect.top);
-        layoutParams2 = layoutParams;
-        layoutParams2.gravity = 83;
+        FrameLayout.LayoutParams layoutParams32 = layoutParams;
+        layoutParams32.gravity = 83;
         FrameLayout frameLayout3 = new FrameLayout(context) { // from class: org.telegram.ui.LocationActivity.3
             @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i112, int i122) {
-                super.onMeasure(i112, i122);
+            protected void onMeasure(int i102, int i112) {
+                super.onMeasure(i102, i112);
                 if (LocationActivity.this.overlayView != null) {
                     LocationActivity.this.overlayView.updatePositions();
                 }
@@ -1384,14 +1324,378 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         frameLayout3.setBackgroundDrawable(new MapPlaceholderDrawable(isActiveThemeDark()));
         messageObject = this.messageObject;
         if (messageObject == null) {
+            SearchButton searchButton2 = new SearchButton(context);
+            this.searchAreaButton = searchButton2;
+            searchButton2.setTranslationX(-AndroidUtilities.dp(80.0f));
+            Drawable createSimpleSelectorRoundRectDrawable2 = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(40.0f), getThemedColor(Theme.key_location_actionBackground), getThemedColor(Theme.key_location_actionPressedBackground));
+            ScaleStateListAnimator.apply(this.searchAreaButton);
+            this.searchAreaButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+            this.searchAreaButton.setOutlineProvider(ViewOutlineProviderImpl.BOUNDS_ROUND_RECT);
+            this.searchAreaButton.setBackgroundDrawable(createSimpleSelectorRoundRectDrawable2);
+            this.searchAreaButton.setTextColor(getThemedColor(Theme.key_location_actionActiveIcon));
+            this.searchAreaButton.setTextSize(1, 14.0f);
+            this.searchAreaButton.setTypeface(AndroidUtilities.bold());
+            this.searchAreaButton.setGravity(17);
+            this.searchAreaButton.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+            this.mapViewClip.addView(this.searchAreaButton, LayoutHelper.createFrame(-2, 40.0f, 49, 80.0f, 12.0f, 80.0f, 0.0f));
+            if (this.locationType == 3) {
+            }
+            int i102 = Theme.key_location_actionIcon;
+            ActionBarMenuItem actionBarMenuItem3 = new ActionBarMenuItem(context, (ActionBarMenu) null, 0, getThemedColor(i102), getResourceProvider());
+            this.mapTypeButton = actionBarMenuItem3;
+            actionBarMenuItem3.setClickable(true);
+            this.mapTypeButton.setSubMenuOpenSide(2);
+            this.mapTypeButton.setAdditionalXOffset(AndroidUtilities.dp(10.0f));
+            this.mapTypeButton.setAdditionalYOffset(-AndroidUtilities.dp(10.0f));
+            this.mapTypeButton.addSubItem(2, R.drawable.msg_map, LocaleController.getString(R.string.Map), getResourceProvider());
+            this.mapTypeButton.addSubItem(3, R.drawable.msg_satellite, LocaleController.getString(R.string.Satellite), getResourceProvider());
+            this.mapTypeButton.addSubItem(4, R.drawable.msg_hybrid, LocaleController.getString(R.string.Hybrid), getResourceProvider());
+            this.mapTypeButton.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
+            int dp2 = AndroidUtilities.dp(40.0f);
+            int i112 = Theme.key_location_actionBackground;
+            int themedColor22 = getThemedColor(i112);
+            int i122 = Theme.key_location_actionPressedBackground;
+            Drawable createSimpleSelectorCircleDrawable4 = Theme.createSimpleSelectorCircleDrawable(dp2, themedColor22, getThemedColor(i122));
+            ScaleStateListAnimator.apply(this.mapTypeButton);
+            this.mapTypeButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+            ActionBarMenuItem actionBarMenuItem22 = this.mapTypeButton;
+            ViewOutlineProvider viewOutlineProvider2 = ViewOutlineProviderImpl.BOUNDS_OVAL;
+            actionBarMenuItem22.setOutlineProvider(viewOutlineProvider2);
+            this.mapTypeButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable4);
+            this.mapTypeButton.setIcon(R.drawable.msg_map_type);
+            this.mapViewClip.addView(this.mapTypeButton, LayoutHelper.createFrame(40, 40.0f, 53, 0.0f, 12.0f, 12.0f, 0.0f));
+            this.mapTypeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda10
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view2) {
+                    LocationActivity.this.lambda$createView$2(view2);
+                }
+            });
+            this.mapTypeButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda11
+                @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+                public final void onItemClick(int i132) {
+                    LocationActivity.this.lambda$createView$3(i132);
+                }
+            });
+            this.locationButton = new ImageView(context);
+            Drawable createSimpleSelectorCircleDrawable22 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i112), getThemedColor(i122));
+            ScaleStateListAnimator.apply(this.locationButton);
+            this.locationButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+            this.locationButton.setOutlineProvider(viewOutlineProvider2);
+            this.locationButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable22);
+            this.locationButton.setImageResource(R.drawable.msg_current_location);
+            ImageView imageView6 = this.locationButton;
+            ImageView.ScaleType scaleType2 = ImageView.ScaleType.CENTER;
+            imageView6.setScaleType(scaleType2);
+            ImageView imageView22 = this.locationButton;
+            int i132 = Theme.key_location_actionActiveIcon;
+            imageView22.setColorFilter(new PorterDuffColorFilter(getThemedColor(i132), mode2));
+            this.locationButton.setTag(Integer.valueOf(i132));
+            this.locationButton.setContentDescription(LocaleController.getString(R.string.AccDescrMyLocation));
+            FrameLayout.LayoutParams createFrame2 = LayoutHelper.createFrame(40, 40.0f, 85, 0.0f, 0.0f, 12.0f, 12.0f);
+            createFrame2.bottomMargin += layoutParams32.height - rect.top;
+            this.mapViewClip.addView(this.locationButton, createFrame2);
+            this.locationButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda12
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view2) {
+                    LocationActivity.this.lambda$createView$4(view2);
+                }
+            });
+            this.proximityButton = new ImageView(context);
+            Drawable createSimpleSelectorCircleDrawable32 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i112), getThemedColor(i122));
+            ScaleStateListAnimator.apply(this.proximityButton);
+            this.proximityButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+            this.proximityButton.setOutlineProvider(viewOutlineProvider2);
+            this.proximityButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i102), mode2));
+            this.proximityButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable32);
+            this.proximityButton.setScaleType(scaleType2);
+            this.proximityButton.setContentDescription(LocaleController.getString(R.string.AccDescrLocationNotify));
+            this.mapViewClip.addView(this.proximityButton, LayoutHelper.createFrame(40, 40.0f, 53, 0.0f, 62.0f, 12.0f, 0.0f));
+            this.proximityButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda13
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view2) {
+                    LocationActivity.this.lambda$createView$7(view2);
+                }
+            });
+            if (DialogObject.isChatDialog(this.dialogId)) {
+            }
+            messageObject2 = this.messageObject;
+            if (messageObject2 != null) {
+            }
+            this.proximityButton.setVisibility(8);
+            this.proximityButton.setImageResource(R.drawable.msg_location_alert);
+            HintView2 hintView22 = new HintView2(context, 1);
+            this.hintView = hintView22;
+            hintView22.setLayerType(2, null);
+            this.hintView.setDuration(4000L);
+            this.hintView.setJoint(1.0f, -25.0f);
+            this.hintView.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
+            this.mapViewClip.addView(this.hintView, LayoutHelper.createFrame(-1, -2.0f, 51, 8.0f, 106.0f, 8.0f, 0.0f));
+            LinearLayout linearLayout2 = new LinearLayout(context);
+            this.emptyView = linearLayout2;
+            linearLayout2.setOrientation(1);
+            this.emptyView.setGravity(1);
+            this.emptyView.setPadding(0, AndroidUtilities.dp(160.0f), 0, 0);
+            this.emptyView.setVisibility(8);
+            nestedFrameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1.0f));
+            this.emptyView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda14
+                @Override // android.view.View.OnTouchListener
+                public final boolean onTouch(View view2, MotionEvent motionEvent) {
+                    boolean lambda$createView$8;
+                    lambda$createView$8 = LocationActivity.lambda$createView$8(view2, motionEvent);
+                    return lambda$createView$8;
+                }
+            });
+            ImageView imageView32 = new ImageView(context);
+            this.emptyImageView = imageView32;
+            imageView32.setImageResource(R.drawable.location_empty);
+            this.emptyImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogEmptyImage), mode2));
+            this.emptyView.addView(this.emptyImageView, LayoutHelper.createLinear(-2, -2));
+            TextView textView3 = new TextView(context);
+            this.emptyTitleTextView = textView3;
+            int i142 = Theme.key_dialogEmptyText;
+            textView3.setTextColor(getThemedColor(i142));
+            this.emptyTitleTextView.setGravity(17);
+            this.emptyTitleTextView.setTypeface(AndroidUtilities.bold());
+            this.emptyTitleTextView.setTextSize(1, 17.0f);
+            this.emptyTitleTextView.setText(LocaleController.getString(R.string.NoPlacesFound));
+            this.emptyView.addView(this.emptyTitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 11, 0, 0));
+            TextView textView22 = new TextView(context);
+            this.emptySubtitleTextView = textView22;
+            textView22.setTextColor(getThemedColor(i142));
+            this.emptySubtitleTextView.setGravity(17);
+            this.emptySubtitleTextView.setTextSize(1, 15.0f);
+            this.emptySubtitleTextView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
+            this.emptyView.addView(this.emptySubtitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 6, 0, 0));
+            RecyclerListView recyclerListView4 = new RecyclerListView(context);
+            this.listView = recyclerListView4;
+            TLRPC.Chat chat22 = chat;
+            LocationActivityAdapter locationActivityAdapter22 = new LocationActivityAdapter(context, this.locationType, this.dialogId, false, getResourceProvider(), false, this.fromStories, this.locationType == 8) { // from class: org.telegram.ui.LocationActivity.4
+                private boolean firstSet = true;
+
+                @Override // org.telegram.ui.Adapters.LocationActivityAdapter
+                protected void onDirectionClick() {
+                    LocationActivity.this.openDirections(null);
+                }
+
+                @Override // org.telegram.ui.Adapters.LocationActivityAdapter
+                public void setLiveLocations(ArrayList arrayList) {
+                    int i152;
+                    if (LocationActivity.this.messageObject != null && LocationActivity.this.messageObject.isLiveLocation()) {
+                        if (arrayList != null) {
+                            i152 = 0;
+                            for (int i16 = 0; i16 < arrayList.size(); i16++) {
+                                LiveLocation liveLocation = (LiveLocation) arrayList.get(i16);
+                                if (liveLocation != null && !UserObject.isUserSelf(liveLocation.user)) {
+                                    i152++;
+                                }
+                            }
+                        } else {
+                            i152 = 0;
+                        }
+                        if (this.firstSet && i152 == 1) {
+                            LocationActivity.this.selectedMarkerId = ((LiveLocation) arrayList.get(0)).id;
+                        }
+                        this.firstSet = false;
+                        LocationActivity.this.otherItem.setVisibility(i152 != 1 ? 8 : 0);
+                    }
+                    super.setLiveLocations(arrayList);
+                }
+            };
+            this.adapter = locationActivityAdapter22;
+            recyclerListView4.setAdapter(locationActivityAdapter22);
+            RecyclerListView recyclerListView22 = this.listView;
+            LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(context, 1, false);
+            this.layoutManager = linearLayoutManager2;
+            recyclerListView22.setLayoutManager(linearLayoutManager2);
+            if (this.searchStoriesArea != null) {
+            }
+            locationActivity.adapter.setMyLocationDenied(locationActivity.locationDenied, z2);
+            locationActivity.adapter.setUpdateRunnable(new Runnable() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda15
+                @Override // java.lang.Runnable
+                public final void run() {
+                    LocationActivity.this.lambda$createView$9();
+                }
+            });
+            locationActivity.listView.setVerticalScrollBarEnabled(z2);
+            nestedFrameLayout2.addView(locationActivity.listView, LayoutHelper.createFrame(i2, i2, 51));
+            messageObject3 = locationActivity.messageObject;
+            if (messageObject3 != null) {
+                locationActivity.adapter.setAddressNameOverride(locationActivity.messageObject.messageOwner.media.address);
+            }
+            locationActivity.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.LocationActivity.7
+                @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+                public void onScrollStateChanged(RecyclerView recyclerView, int i152) {
+                    LocationActivity.this.scrolling = i152 != 0;
+                    if (LocationActivity.this.scrolling || LocationActivity.this.forceUpdate == null) {
+                        return;
+                    }
+                    LocationActivity.this.forceUpdate = null;
+                }
+
+                @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+                public void onScrolled(RecyclerView recyclerView, int i152, int i16) {
+                    LocationActivity.this.updateClipView(false);
+                    if (LocationActivity.this.forceUpdate != null) {
+                        LocationActivity.access$3116(LocationActivity.this, i16);
+                    }
+                }
+            });
+            ((DefaultItemAnimator) locationActivity.listView.getItemAnimator()).setDelayAnimations(z2);
+            locationActivity.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda16
+                @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
+                public final boolean onItemClick(View view2, int i152) {
+                    boolean lambda$createView$11;
+                    lambda$createView$11 = LocationActivity.this.lambda$createView$11(context, view2, i152);
+                    return lambda$createView$11;
+                }
+            });
+            locationActivity.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda0
+                @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
+                public final void onItemClick(View view2, int i152) {
+                    LocationActivity.this.lambda$createView$17(view2, i152);
+                }
+            });
+            locationActivity.adapter.setDelegate(locationActivity.dialogId, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda1
+                @Override // org.telegram.ui.Adapters.BaseLocationAdapter.BaseLocationAdapterDelegate
+                public final void didLoadSearchResult(ArrayList arrayList) {
+                    LocationActivity.this.updatePlacesMarkers(arrayList);
+                }
+            });
+            locationActivity.adapter.setOverScrollHeight(locationActivity.overScrollHeight);
+            nestedFrameLayout2.addView(locationActivity.mapViewClip, LayoutHelper.createFrame(i2, i2, 51));
+            IMapsProvider.IMapView onCreateMapView2 = ApplicationLoader.getMapsProvider().onCreateMapView(context);
+            locationActivity.mapView = onCreateMapView2;
+            onCreateMapView2.getView().setAlpha(0.0f);
+            locationActivity.mapView.setOnDispatchTouchEventInterceptor(new IMapsProvider.ITouchInterceptor() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda2
+                @Override // org.telegram.messenger.IMapsProvider.ITouchInterceptor
+                public final boolean onInterceptTouchEvent(MotionEvent motionEvent, IMapsProvider.ICallableMethod iCallableMethod) {
+                    boolean lambda$createView$18;
+                    lambda$createView$18 = LocationActivity.this.lambda$createView$18(motionEvent, iCallableMethod);
+                    return lambda$createView$18;
+                }
+            });
+            locationActivity.mapView.setOnInterceptTouchEventInterceptor(new IMapsProvider.ITouchInterceptor() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda3
+                @Override // org.telegram.messenger.IMapsProvider.ITouchInterceptor
+                public final boolean onInterceptTouchEvent(MotionEvent motionEvent, IMapsProvider.ICallableMethod iCallableMethod) {
+                    boolean lambda$createView$19;
+                    lambda$createView$19 = LocationActivity.this.lambda$createView$19(motionEvent, iCallableMethod);
+                    return lambda$createView$19;
+                }
+            });
+            locationActivity.mapView.setOnLayoutListener(new Runnable() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda4
+                @Override // java.lang.Runnable
+                public final void run() {
+                    LocationActivity.this.lambda$createView$21();
+                }
+            });
+            final IMapsProvider.IMapView iMapView2 = locationActivity.mapView;
+            new Thread(new Runnable() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda5
+                @Override // java.lang.Runnable
+                public final void run() {
+                    LocationActivity.this.lambda$createView$24(iMapView2);
+                }
+            }).start();
+            messageObject4 = locationActivity.messageObject;
+            if (messageObject4 != null) {
+            }
+            z3 = true;
+            if (messageObject4 != null) {
+                tL_channelLocation = locationActivity.chatLocation;
+                if (tL_channelLocation == null) {
+                }
+                messageObject5 = locationActivity.messageObject;
+                if (messageObject5 != null) {
+                    locationActivity.adapter.setMessageObject(messageObject5);
+                }
+                while (i5 < i3) {
+                }
+                final Rect rect32 = rect2;
+                View view2 = new View(context) { // from class: org.telegram.ui.LocationActivity.11
+                    private RectF rect = new RectF();
+
+                    @Override // android.view.View
+                    protected void onDraw(Canvas canvas) {
+                        LocationActivity.this.shadowDrawable.setBounds(-rect32.left, 0, getMeasuredWidth() + rect32.right, getMeasuredHeight());
+                        LocationActivity.this.shadowDrawable.draw(canvas);
+                        if (LocationActivity.this.locationType == 0 || LocationActivity.this.locationType == 1) {
+                            int dp22 = AndroidUtilities.dp(36.0f);
+                            this.rect.set((getMeasuredWidth() - dp22) / 2, rect32.top + AndroidUtilities.dp(10.0f), (getMeasuredWidth() + dp22) / 2, r1 + AndroidUtilities.dp(4.0f));
+                            int themedColor32 = LocationActivity.this.getThemedColor(Theme.key_sheet_scrollUp);
+                            Color.alpha(themedColor32);
+                            Theme.dialogs_onlineCirclePaint.setColor(themedColor32);
+                            canvas.drawRoundRect(this.rect, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), Theme.dialogs_onlineCirclePaint);
+                        }
+                    }
+                };
+                locationActivity.shadow = view2;
+                view2.setTranslationZ(AndroidUtilities.dp(6.0f));
+                locationActivity.mapViewClip.addView(locationActivity.shadow, layoutParams2);
+                if (locationActivity.messageObject == null) {
+                    locationActivity.userLocationMoved = z3;
+                    ImageView imageView52 = locationActivity.locationButton;
+                    int i152 = Theme.key_location_actionIcon;
+                    imageView52.setColorFilter(new PorterDuffColorFilter(locationActivity.getThemedColor(i152), PorterDuff.Mode.MULTIPLY));
+                    locationActivity.locationButton.setTag(Integer.valueOf(i152));
+                }
+                nestedFrameLayout2.addView(locationActivity.actionBar);
+                updateEmptyView();
+                return locationActivity.fragmentView;
+            }
+            tL_channelLocation = locationActivity.chatLocation;
+            if (tL_channelLocation == null) {
+            }
+            messageObject5 = locationActivity.messageObject;
+            if (messageObject5 != null) {
+            }
+            while (i5 < i3) {
+            }
+            final Rect rect322 = rect2;
+            View view22 = new View(context) { // from class: org.telegram.ui.LocationActivity.11
+                private RectF rect = new RectF();
+
+                @Override // android.view.View
+                protected void onDraw(Canvas canvas) {
+                    LocationActivity.this.shadowDrawable.setBounds(-rect322.left, 0, getMeasuredWidth() + rect322.right, getMeasuredHeight());
+                    LocationActivity.this.shadowDrawable.draw(canvas);
+                    if (LocationActivity.this.locationType == 0 || LocationActivity.this.locationType == 1) {
+                        int dp22 = AndroidUtilities.dp(36.0f);
+                        this.rect.set((getMeasuredWidth() - dp22) / 2, rect322.top + AndroidUtilities.dp(10.0f), (getMeasuredWidth() + dp22) / 2, r1 + AndroidUtilities.dp(4.0f));
+                        int themedColor32 = LocationActivity.this.getThemedColor(Theme.key_sheet_scrollUp);
+                        Color.alpha(themedColor32);
+                        Theme.dialogs_onlineCirclePaint.setColor(themedColor32);
+                        canvas.drawRoundRect(this.rect, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), Theme.dialogs_onlineCirclePaint);
+                    }
+                }
+            };
+            locationActivity.shadow = view22;
+            view22.setTranslationZ(AndroidUtilities.dp(6.0f));
+            locationActivity.mapViewClip.addView(locationActivity.shadow, layoutParams2);
+            if (locationActivity.messageObject == null) {
+            }
+            nestedFrameLayout2.addView(locationActivity.actionBar);
+            updateEmptyView();
+            return locationActivity.fragmentView;
         }
-        layoutParams3 = layoutParams2;
-        rect2 = rect;
-        int i112 = Theme.key_location_actionIcon;
-        FrameLayout.LayoutParams layoutParams52 = layoutParams3;
-        ActionBarMenuItem actionBarMenuItem3 = new ActionBarMenuItem(context, (ActionBarMenu) null, 0, getThemedColor(i112), getResourceProvider());
-        this.mapTypeButton = actionBarMenuItem3;
-        actionBarMenuItem3.setClickable(true);
+        SearchButton searchButton22 = new SearchButton(context);
+        this.searchAreaButton = searchButton22;
+        searchButton22.setTranslationX(-AndroidUtilities.dp(80.0f));
+        Drawable createSimpleSelectorRoundRectDrawable22 = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(40.0f), getThemedColor(Theme.key_location_actionBackground), getThemedColor(Theme.key_location_actionPressedBackground));
+        ScaleStateListAnimator.apply(this.searchAreaButton);
+        this.searchAreaButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+        this.searchAreaButton.setOutlineProvider(ViewOutlineProviderImpl.BOUNDS_ROUND_RECT);
+        this.searchAreaButton.setBackgroundDrawable(createSimpleSelectorRoundRectDrawable22);
+        this.searchAreaButton.setTextColor(getThemedColor(Theme.key_location_actionActiveIcon));
+        this.searchAreaButton.setTextSize(1, 14.0f);
+        this.searchAreaButton.setTypeface(AndroidUtilities.bold());
+        this.searchAreaButton.setGravity(17);
+        this.searchAreaButton.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        this.mapViewClip.addView(this.searchAreaButton, LayoutHelper.createFrame(-2, 40.0f, 49, 80.0f, 12.0f, 80.0f, 0.0f));
+        if (this.locationType == 3) {
+        }
+        int i1022 = Theme.key_location_actionIcon;
+        ActionBarMenuItem actionBarMenuItem32 = new ActionBarMenuItem(context, (ActionBarMenu) null, 0, getThemedColor(i1022), getResourceProvider());
+        this.mapTypeButton = actionBarMenuItem32;
+        actionBarMenuItem32.setClickable(true);
         this.mapTypeButton.setSubMenuOpenSide(2);
         this.mapTypeButton.setAdditionalXOffset(AndroidUtilities.dp(10.0f));
         this.mapTypeButton.setAdditionalYOffset(-AndroidUtilities.dp(10.0f));
@@ -1399,148 +1703,125 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         this.mapTypeButton.addSubItem(3, R.drawable.msg_satellite, LocaleController.getString(R.string.Satellite), getResourceProvider());
         this.mapTypeButton.addSubItem(4, R.drawable.msg_hybrid, LocaleController.getString(R.string.Hybrid), getResourceProvider());
         this.mapTypeButton.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
-        int dp2 = AndroidUtilities.dp(40.0f);
-        int i122 = Theme.key_location_actionBackground;
-        int themedColor22 = getThemedColor(i122);
-        int i132 = Theme.key_location_actionPressedBackground;
-        Drawable createSimpleSelectorCircleDrawable4 = Theme.createSimpleSelectorCircleDrawable(dp2, themedColor22, getThemedColor(i132));
-        StateListAnimator stateListAnimator22 = new StateListAnimator();
-        int[] iArr22 = {android.R.attr.state_pressed};
-        ActionBarMenuItem actionBarMenuItem22 = this.mapTypeButton;
-        Property property22 = View.TRANSLATION_Z;
-        stateListAnimator22.addState(iArr22, ObjectAnimator.ofFloat(actionBarMenuItem22, (Property<ActionBarMenuItem, Float>) property22, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator22.addState(new int[0], ObjectAnimator.ofFloat(this.mapTypeButton, (Property<ActionBarMenuItem, Float>) property22, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        this.mapTypeButton.setStateListAnimator(stateListAnimator22);
-        this.mapTypeButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.LocationActivity.5
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view2, Outline outline) {
-                outline.setOval(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-            }
-        });
-        this.mapTypeButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable4);
+        int dp22 = AndroidUtilities.dp(40.0f);
+        int i1122 = Theme.key_location_actionBackground;
+        int themedColor222 = getThemedColor(i1122);
+        int i1222 = Theme.key_location_actionPressedBackground;
+        Drawable createSimpleSelectorCircleDrawable42 = Theme.createSimpleSelectorCircleDrawable(dp22, themedColor222, getThemedColor(i1222));
+        ScaleStateListAnimator.apply(this.mapTypeButton);
+        this.mapTypeButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+        ActionBarMenuItem actionBarMenuItem222 = this.mapTypeButton;
+        ViewOutlineProvider viewOutlineProvider22 = ViewOutlineProviderImpl.BOUNDS_OVAL;
+        actionBarMenuItem222.setOutlineProvider(viewOutlineProvider22);
+        this.mapTypeButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable42);
         this.mapTypeButton.setIcon(R.drawable.msg_map_type);
         this.mapViewClip.addView(this.mapTypeButton, LayoutHelper.createFrame(40, 40.0f, 53, 0.0f, 12.0f, 12.0f, 0.0f));
         this.mapTypeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                LocationActivity.this.lambda$createView$2(view2);
+            public final void onClick(View view23) {
+                LocationActivity.this.lambda$createView$2(view23);
             }
         });
         this.mapTypeButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
-            public final void onItemClick(int i142) {
-                LocationActivity.this.lambda$createView$3(i142);
+            public final void onItemClick(int i1322) {
+                LocationActivity.this.lambda$createView$3(i1322);
             }
         });
         this.locationButton = new ImageView(context);
-        Drawable createSimpleSelectorCircleDrawable22 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i122), getThemedColor(i132));
-        StateListAnimator stateListAnimator32 = new StateListAnimator();
-        stateListAnimator32.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.locationButton, (Property<ImageView, Float>) property22, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator32.addState(new int[0], ObjectAnimator.ofFloat(this.locationButton, (Property<ImageView, Float>) property22, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        this.locationButton.setStateListAnimator(stateListAnimator32);
-        this.locationButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.LocationActivity.6
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view2, Outline outline) {
-                outline.setOval(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-            }
-        });
-        this.locationButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable22);
+        Drawable createSimpleSelectorCircleDrawable222 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i1122), getThemedColor(i1222));
+        ScaleStateListAnimator.apply(this.locationButton);
+        this.locationButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+        this.locationButton.setOutlineProvider(viewOutlineProvider22);
+        this.locationButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable222);
         this.locationButton.setImageResource(R.drawable.msg_current_location);
-        ImageView imageView6 = this.locationButton;
-        ImageView.ScaleType scaleType2 = ImageView.ScaleType.CENTER;
-        imageView6.setScaleType(scaleType2);
-        ImageView imageView22 = this.locationButton;
-        int i142 = Theme.key_location_actionActiveIcon;
-        imageView22.setColorFilter(new PorterDuffColorFilter(getThemedColor(i142), mode2));
-        this.locationButton.setTag(Integer.valueOf(i142));
+        ImageView imageView62 = this.locationButton;
+        ImageView.ScaleType scaleType22 = ImageView.ScaleType.CENTER;
+        imageView62.setScaleType(scaleType22);
+        ImageView imageView222 = this.locationButton;
+        int i1322 = Theme.key_location_actionActiveIcon;
+        imageView222.setColorFilter(new PorterDuffColorFilter(getThemedColor(i1322), mode2));
+        this.locationButton.setTag(Integer.valueOf(i1322));
         this.locationButton.setContentDescription(LocaleController.getString(R.string.AccDescrMyLocation));
-        FrameLayout.LayoutParams createFrame2 = LayoutHelper.createFrame(40, 40.0f, 85, 0.0f, 0.0f, 12.0f, 12.0f);
-        Rect rect42 = rect2;
-        createFrame2.bottomMargin += layoutParams52.height - rect42.top;
-        this.mapViewClip.addView(this.locationButton, createFrame2);
+        FrameLayout.LayoutParams createFrame22 = LayoutHelper.createFrame(40, 40.0f, 85, 0.0f, 0.0f, 12.0f, 12.0f);
+        createFrame22.bottomMargin += layoutParams32.height - rect.top;
+        this.mapViewClip.addView(this.locationButton, createFrame22);
         this.locationButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                LocationActivity.this.lambda$createView$4(view2);
+            public final void onClick(View view23) {
+                LocationActivity.this.lambda$createView$4(view23);
             }
         });
         this.proximityButton = new ImageView(context);
-        Drawable createSimpleSelectorCircleDrawable32 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i122), getThemedColor(i132));
-        StateListAnimator stateListAnimator42 = new StateListAnimator();
-        stateListAnimator42.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.proximityButton, (Property<ImageView, Float>) property22, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator42.addState(new int[0], ObjectAnimator.ofFloat(this.proximityButton, (Property<ImageView, Float>) property22, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        this.proximityButton.setStateListAnimator(stateListAnimator42);
-        this.proximityButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.LocationActivity.7
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view2, Outline outline) {
-                outline.setOval(0, 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-            }
-        });
-        this.proximityButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i112), mode2));
-        this.proximityButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable32);
-        this.proximityButton.setScaleType(scaleType2);
+        Drawable createSimpleSelectorCircleDrawable322 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(40.0f), getThemedColor(i1122), getThemedColor(i1222));
+        ScaleStateListAnimator.apply(this.proximityButton);
+        this.proximityButton.setTranslationZ(AndroidUtilities.dp(2.0f));
+        this.proximityButton.setOutlineProvider(viewOutlineProvider22);
+        this.proximityButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i1022), mode2));
+        this.proximityButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable322);
+        this.proximityButton.setScaleType(scaleType22);
         this.proximityButton.setContentDescription(LocaleController.getString(R.string.AccDescrLocationNotify));
         this.mapViewClip.addView(this.proximityButton, LayoutHelper.createFrame(40, 40.0f, 53, 0.0f, 62.0f, 12.0f, 0.0f));
         this.proximityButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                LocationActivity.this.lambda$createView$7(view2);
+            public final void onClick(View view23) {
+                LocationActivity.this.lambda$createView$7(view23);
             }
         });
-        if (!DialogObject.isChatDialog(this.dialogId)) {
+        if (DialogObject.isChatDialog(this.dialogId)) {
         }
         messageObject2 = this.messageObject;
         if (messageObject2 != null) {
         }
         this.proximityButton.setVisibility(8);
         this.proximityButton.setImageResource(R.drawable.msg_location_alert);
-        HintView2 hintView22 = new HintView2(context, 1);
-        this.hintView = hintView22;
-        hintView22.setLayerType(2, null);
+        HintView2 hintView222 = new HintView2(context, 1);
+        this.hintView = hintView222;
+        hintView222.setLayerType(2, null);
         this.hintView.setDuration(4000L);
         this.hintView.setJoint(1.0f, -25.0f);
         this.hintView.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
         this.mapViewClip.addView(this.hintView, LayoutHelper.createFrame(-1, -2.0f, 51, 8.0f, 106.0f, 8.0f, 0.0f));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        this.emptyView = linearLayout2;
-        linearLayout2.setOrientation(1);
+        LinearLayout linearLayout22 = new LinearLayout(context);
+        this.emptyView = linearLayout22;
+        linearLayout22.setOrientation(1);
         this.emptyView.setGravity(1);
         this.emptyView.setPadding(0, AndroidUtilities.dp(160.0f), 0, 0);
         this.emptyView.setVisibility(8);
-        nestedFrameLayout22.addView(this.emptyView, LayoutHelper.createFrame(-1, -1.0f));
+        nestedFrameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1.0f));
         this.emptyView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda14
             @Override // android.view.View.OnTouchListener
-            public final boolean onTouch(View view2, MotionEvent motionEvent) {
+            public final boolean onTouch(View view23, MotionEvent motionEvent) {
                 boolean lambda$createView$8;
-                lambda$createView$8 = LocationActivity.lambda$createView$8(view2, motionEvent);
+                lambda$createView$8 = LocationActivity.lambda$createView$8(view23, motionEvent);
                 return lambda$createView$8;
             }
         });
-        ImageView imageView32 = new ImageView(context);
-        this.emptyImageView = imageView32;
-        imageView32.setImageResource(R.drawable.location_empty);
+        ImageView imageView322 = new ImageView(context);
+        this.emptyImageView = imageView322;
+        imageView322.setImageResource(R.drawable.location_empty);
         this.emptyImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogEmptyImage), mode2));
         this.emptyView.addView(this.emptyImageView, LayoutHelper.createLinear(-2, -2));
-        TextView textView3 = new TextView(context);
-        this.emptyTitleTextView = textView3;
-        int i152 = Theme.key_dialogEmptyText;
-        textView3.setTextColor(getThemedColor(i152));
+        TextView textView32 = new TextView(context);
+        this.emptyTitleTextView = textView32;
+        int i1422 = Theme.key_dialogEmptyText;
+        textView32.setTextColor(getThemedColor(i1422));
         this.emptyTitleTextView.setGravity(17);
         this.emptyTitleTextView.setTypeface(AndroidUtilities.bold());
         this.emptyTitleTextView.setTextSize(1, 17.0f);
         this.emptyTitleTextView.setText(LocaleController.getString(R.string.NoPlacesFound));
         this.emptyView.addView(this.emptyTitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 11, 0, 0));
-        TextView textView22 = new TextView(context);
-        this.emptySubtitleTextView = textView22;
-        textView22.setTextColor(getThemedColor(i152));
+        TextView textView222 = new TextView(context);
+        this.emptySubtitleTextView = textView222;
+        textView222.setTextColor(getThemedColor(i1422));
         this.emptySubtitleTextView.setGravity(17);
         this.emptySubtitleTextView.setTextSize(1, 15.0f);
         this.emptySubtitleTextView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
         this.emptyView.addView(this.emptySubtitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 6, 0, 0));
-        RecyclerListView recyclerListView4 = new RecyclerListView(context);
-        this.listView = recyclerListView4;
-        TLRPC.Chat chat22 = chat;
-        LocationActivityAdapter locationActivityAdapter22 = new LocationActivityAdapter(context, this.locationType, this.dialogId, false, getResourceProvider(), false, this.fromStories, this.locationType != 8) { // from class: org.telegram.ui.LocationActivity.8
+        RecyclerListView recyclerListView42 = new RecyclerListView(context);
+        this.listView = recyclerListView42;
+        TLRPC.Chat chat222 = chat;
+        LocationActivityAdapter locationActivityAdapter222 = new LocationActivityAdapter(context, this.locationType, this.dialogId, false, getResourceProvider(), false, this.fromStories, this.locationType == 8) { // from class: org.telegram.ui.LocationActivity.4
             private boolean firstSet = true;
 
             @Override // org.telegram.ui.Adapters.LocationActivityAdapter
@@ -1550,35 +1831,35 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
 
             @Override // org.telegram.ui.Adapters.LocationActivityAdapter
             public void setLiveLocations(ArrayList arrayList) {
-                int i162;
+                int i1522;
                 if (LocationActivity.this.messageObject != null && LocationActivity.this.messageObject.isLiveLocation()) {
                     if (arrayList != null) {
-                        i162 = 0;
-                        for (int i17 = 0; i17 < arrayList.size(); i17++) {
-                            LiveLocation liveLocation = (LiveLocation) arrayList.get(i17);
+                        i1522 = 0;
+                        for (int i16 = 0; i16 < arrayList.size(); i16++) {
+                            LiveLocation liveLocation = (LiveLocation) arrayList.get(i16);
                             if (liveLocation != null && !UserObject.isUserSelf(liveLocation.user)) {
-                                i162++;
+                                i1522++;
                             }
                         }
                     } else {
-                        i162 = 0;
+                        i1522 = 0;
                     }
-                    if (this.firstSet && i162 == 1) {
+                    if (this.firstSet && i1522 == 1) {
                         LocationActivity.this.selectedMarkerId = ((LiveLocation) arrayList.get(0)).id;
                     }
                     this.firstSet = false;
-                    LocationActivity.this.otherItem.setVisibility(i162 != 1 ? 8 : 0);
+                    LocationActivity.this.otherItem.setVisibility(i1522 != 1 ? 8 : 0);
                 }
                 super.setLiveLocations(arrayList);
             }
         };
-        this.adapter = locationActivityAdapter22;
-        recyclerListView4.setAdapter(locationActivityAdapter22);
-        RecyclerListView recyclerListView22 = this.listView;
-        LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(context, 1, false);
-        this.layoutManager = linearLayoutManager2;
-        recyclerListView22.setLayoutManager(linearLayoutManager2);
-        if (this.searchStoriesArea == null) {
+        this.adapter = locationActivityAdapter222;
+        recyclerListView42.setAdapter(locationActivityAdapter222);
+        RecyclerListView recyclerListView222 = this.listView;
+        LinearLayoutManager linearLayoutManager22 = new LinearLayoutManager(context, 1, false);
+        this.layoutManager = linearLayoutManager22;
+        recyclerListView222.setLayoutManager(linearLayoutManager22);
+        if (this.searchStoriesArea != null) {
         }
         locationActivity.adapter.setMyLocationDenied(locationActivity.locationDenied, z2);
         locationActivity.adapter.setUpdateRunnable(new Runnable() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda15
@@ -1588,16 +1869,14 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             }
         });
         locationActivity.listView.setVerticalScrollBarEnabled(z2);
-        NestedFrameLayout nestedFrameLayout32 = nestedFrameLayout;
-        nestedFrameLayout32.addView(locationActivity.listView, LayoutHelper.createFrame(i2, i2, 51));
+        nestedFrameLayout2.addView(locationActivity.listView, LayoutHelper.createFrame(i2, i2, 51));
         messageObject3 = locationActivity.messageObject;
         if (messageObject3 != null) {
-            locationActivity.adapter.setAddressNameOverride(locationActivity.messageObject.messageOwner.media.address);
         }
-        locationActivity.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.LocationActivity.11
+        locationActivity.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.LocationActivity.7
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrollStateChanged(RecyclerView recyclerView, int i162) {
-                LocationActivity.this.scrolling = i162 != 0;
+            public void onScrollStateChanged(RecyclerView recyclerView, int i1522) {
+                LocationActivity.this.scrolling = i1522 != 0;
                 if (LocationActivity.this.scrolling || LocationActivity.this.forceUpdate == null) {
                     return;
                 }
@@ -1605,26 +1884,26 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i162, int i17) {
+            public void onScrolled(RecyclerView recyclerView, int i1522, int i16) {
                 LocationActivity.this.updateClipView(false);
                 if (LocationActivity.this.forceUpdate != null) {
-                    LocationActivity.access$3116(LocationActivity.this, i17);
+                    LocationActivity.access$3116(LocationActivity.this, i16);
                 }
             }
         });
         ((DefaultItemAnimator) locationActivity.listView.getItemAnimator()).setDelayAnimations(z2);
         locationActivity.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda16
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
-            public final boolean onItemClick(View view2, int i162) {
+            public final boolean onItemClick(View view23, int i1522) {
                 boolean lambda$createView$11;
-                lambda$createView$11 = LocationActivity.this.lambda$createView$11(context, view2, i162);
+                lambda$createView$11 = LocationActivity.this.lambda$createView$11(context, view23, i1522);
                 return lambda$createView$11;
             }
         });
         locationActivity.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view2, int i162) {
-                LocationActivity.this.lambda$createView$17(view2, i162);
+            public final void onItemClick(View view23, int i1522) {
+                LocationActivity.this.lambda$createView$17(view23, i1522);
             }
         });
         locationActivity.adapter.setDelegate(locationActivity.dialogId, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda1
@@ -1634,10 +1913,10 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             }
         });
         locationActivity.adapter.setOverScrollHeight(locationActivity.overScrollHeight);
-        nestedFrameLayout32.addView(locationActivity.mapViewClip, LayoutHelper.createFrame(i2, i2, 51));
-        IMapsProvider.IMapView onCreateMapView2 = ApplicationLoader.getMapsProvider().onCreateMapView(context);
-        locationActivity.mapView = onCreateMapView2;
-        onCreateMapView2.getView().setAlpha(0.0f);
+        nestedFrameLayout2.addView(locationActivity.mapViewClip, LayoutHelper.createFrame(i2, i2, 51));
+        IMapsProvider.IMapView onCreateMapView22 = ApplicationLoader.getMapsProvider().onCreateMapView(context);
+        locationActivity.mapView = onCreateMapView22;
+        onCreateMapView22.getView().setAlpha(0.0f);
         locationActivity.mapView.setOnDispatchTouchEventInterceptor(new IMapsProvider.ITouchInterceptor() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.IMapsProvider.ITouchInterceptor
             public final boolean onInterceptTouchEvent(MotionEvent motionEvent, IMapsProvider.ICallableMethod iCallableMethod) {
@@ -1660,81 +1939,38 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 LocationActivity.this.lambda$createView$21();
             }
         });
-        final IMapsProvider.IMapView iMapView2 = locationActivity.mapView;
+        final IMapsProvider.IMapView iMapView22 = locationActivity.mapView;
         new Thread(new Runnable() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                LocationActivity.this.lambda$createView$24(iMapView2);
+                LocationActivity.this.lambda$createView$24(iMapView22);
             }
         }).start();
         messageObject4 = locationActivity.messageObject;
         if (messageObject4 != null) {
         }
-        r15 = 1;
-        r15 = 1;
-        r15 = 1;
-        r15 = 1;
+        z3 = true;
         if (messageObject4 != null) {
-            tL_channelLocation = locationActivity.chatLocation;
-            if (tL_channelLocation != null) {
-            }
-            messageObject5 = locationActivity.messageObject;
-            if (messageObject5 != null) {
-                locationActivity.adapter.setMessageObject(messageObject5);
-            }
-            while (i5 < i3) {
-            }
-            final Rect rect52 = rect3;
-            View view2 = new View(context) { // from class: org.telegram.ui.LocationActivity.15
-                private RectF rect = new RectF();
-
-                @Override // android.view.View
-                protected void onDraw(Canvas canvas) {
-                    LocationActivity.this.shadowDrawable.setBounds(-rect52.left, 0, getMeasuredWidth() + rect52.right, getMeasuredHeight());
-                    LocationActivity.this.shadowDrawable.draw(canvas);
-                    if (LocationActivity.this.locationType == 0 || LocationActivity.this.locationType == 1) {
-                        int dp22 = AndroidUtilities.dp(36.0f);
-                        this.rect.set((getMeasuredWidth() - dp22) / 2, rect52.top + AndroidUtilities.dp(10.0f), (getMeasuredWidth() + dp22) / 2, r1 + AndroidUtilities.dp(4.0f));
-                        int themedColor32 = LocationActivity.this.getThemedColor(Theme.key_sheet_scrollUp);
-                        Color.alpha(themedColor32);
-                        Theme.dialogs_onlineCirclePaint.setColor(themedColor32);
-                        canvas.drawRoundRect(this.rect, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), Theme.dialogs_onlineCirclePaint);
-                    }
-                }
-            };
-            locationActivity.shadow = view2;
-            view2.setTranslationZ(AndroidUtilities.dp(6.0f));
-            locationActivity.mapViewClip.addView(locationActivity.shadow, layoutParams4);
-            if (locationActivity.messageObject == null) {
-                locationActivity.userLocationMoved = r15;
-                ImageView imageView52 = locationActivity.locationButton;
-                int i162 = Theme.key_location_actionIcon;
-                imageView52.setColorFilter(new PorterDuffColorFilter(locationActivity.getThemedColor(i162), PorterDuff.Mode.MULTIPLY));
-                locationActivity.locationButton.setTag(Integer.valueOf(i162));
-            }
-            nestedFrameLayout32.addView(locationActivity.actionBar);
-            updateEmptyView();
-            return locationActivity.fragmentView;
         }
         tL_channelLocation = locationActivity.chatLocation;
-        if (tL_channelLocation != null) {
+        if (tL_channelLocation == null) {
         }
         messageObject5 = locationActivity.messageObject;
         if (messageObject5 != null) {
         }
         while (i5 < i3) {
         }
-        final Rect rect522 = rect3;
-        View view22 = new View(context) { // from class: org.telegram.ui.LocationActivity.15
+        final Rect rect3222 = rect2;
+        View view222 = new View(context) { // from class: org.telegram.ui.LocationActivity.11
             private RectF rect = new RectF();
 
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
-                LocationActivity.this.shadowDrawable.setBounds(-rect522.left, 0, getMeasuredWidth() + rect522.right, getMeasuredHeight());
+                LocationActivity.this.shadowDrawable.setBounds(-rect3222.left, 0, getMeasuredWidth() + rect3222.right, getMeasuredHeight());
                 LocationActivity.this.shadowDrawable.draw(canvas);
                 if (LocationActivity.this.locationType == 0 || LocationActivity.this.locationType == 1) {
-                    int dp22 = AndroidUtilities.dp(36.0f);
-                    this.rect.set((getMeasuredWidth() - dp22) / 2, rect522.top + AndroidUtilities.dp(10.0f), (getMeasuredWidth() + dp22) / 2, r1 + AndroidUtilities.dp(4.0f));
+                    int dp222 = AndroidUtilities.dp(36.0f);
+                    this.rect.set((getMeasuredWidth() - dp222) / 2, rect3222.top + AndroidUtilities.dp(10.0f), (getMeasuredWidth() + dp222) / 2, r1 + AndroidUtilities.dp(4.0f));
                     int themedColor32 = LocationActivity.this.getThemedColor(Theme.key_sheet_scrollUp);
                     Color.alpha(themedColor32);
                     Theme.dialogs_onlineCirclePaint.setColor(themedColor32);
@@ -1742,12 +1978,12 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 }
             }
         };
-        locationActivity.shadow = view22;
-        view22.setTranslationZ(AndroidUtilities.dp(6.0f));
-        locationActivity.mapViewClip.addView(locationActivity.shadow, layoutParams4);
+        locationActivity.shadow = view222;
+        view222.setTranslationZ(AndroidUtilities.dp(6.0f));
+        locationActivity.mapViewClip.addView(locationActivity.shadow, layoutParams2);
         if (locationActivity.messageObject == null) {
         }
-        nestedFrameLayout32.addView(locationActivity.actionBar);
+        nestedFrameLayout2.addView(locationActivity.actionBar);
         updateEmptyView();
         return locationActivity.fragmentView;
     }
@@ -1905,7 +2141,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 });
                 actionBarPopupWindowLayout.addView(actionBarMenuSubItem);
                 int i2 = -2;
-                ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, i2, i2) { // from class: org.telegram.ui.LocationActivity.12
+                ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, i2, i2) { // from class: org.telegram.ui.LocationActivity.8
                     @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
                     public void dismiss() {
                         super.dismiss();
@@ -3453,7 +3689,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 if (this.proximityButton.getVisibility() != 8 && MessageObject.getFromChatId(message) != getUserConfig().getClientUserId()) {
                     this.proximityButton.setVisibility(0);
                     this.proximityAnimationInProgress = true;
-                    this.proximityButton.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(180L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LocationActivity.16
+                    this.proximityButton.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(180L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LocationActivity.12
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             LocationActivity.this.proximityAnimationInProgress = false;

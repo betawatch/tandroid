@@ -12,16 +12,20 @@ final class bf extends bm {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     bf(bn bnVar, TaskCompletionSource taskCompletionSource, int i, long j, TaskCompletionSource taskCompletionSource2) {
         super(bnVar, taskCompletionSource);
-        this.c = bnVar;
         this.a = j;
         this.b = taskCompletionSource2;
+        this.c = bnVar;
     }
 
     @Override // com.google.android.play.integrity.internal.t
     protected final void b() {
         com.google.android.play.integrity.internal.s sVar;
-        if (bn.k(this.c)) {
+        if (bn.l(this.c)) {
             super.a(new StandardIntegrityException(-2, null));
+            return;
+        }
+        if (bn.k(this.c, 0)) {
+            super.a(new StandardIntegrityException(-14, null));
             return;
         }
         try {

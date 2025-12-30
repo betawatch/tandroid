@@ -13,6 +13,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotFullscreenButtons$$ExternalSyntheticApiModelOutline9;
 import org.telegram.messenger.LiteMode;
+import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
 
 /* loaded from: classes5.dex */
 public class DownscaleScrollableNoiseSuppressor {
@@ -191,7 +192,7 @@ public class DownscaleScrollableNoiseSuppressor {
         }
     }
 
-    public void invalidateResultRenderNodes(int i, int i2) {
+    private void invalidateResultRenderNodes(int i, int i2) {
         RecordingCanvas beginRecording;
         DownscaledRenderNode downscaledRenderNode;
         for (int i3 = 0; i3 < 2; i3++) {
@@ -214,6 +215,19 @@ public class DownscaleScrollableNoiseSuppressor {
             }
             renderNode.endRecording();
         }
+    }
+
+    public void invalidateResultRenderNodes(IBlur3Capture iBlur3Capture, int i, int i2) {
+        for (int i3 = 0; i3 < this.rectRenderNodesCount; i3++) {
+            RectF position = getPosition(i3);
+            RecordingCanvas beginRecordingRect = beginRecordingRect(i3);
+            beginRecordingRect.save();
+            beginRecordingRect.translate(-position.left, -position.top);
+            iBlur3Capture.capture(beginRecordingRect, position);
+            beginRecordingRect.restore();
+            endRecordingRect();
+        }
+        invalidateResultRenderNodes(i, i2);
     }
 
     private class SourcePart {
@@ -286,11 +300,11 @@ public class DownscaleScrollableNoiseSuppressor {
         }
     }
 
-    public RectF getPosition(int i) {
+    private RectF getPosition(int i) {
         return ((SourcePart) this.rectRenderNodes.get(i)).position;
     }
 
-    public RecordingCanvas beginRecordingRect(int i) {
+    private RecordingCanvas beginRecordingRect(int i) {
         RecordingCanvas beginRecording;
         if (this.recordingPos != null) {
             throw new IllegalStateException();
@@ -305,7 +319,7 @@ public class DownscaleScrollableNoiseSuppressor {
         return beginRecording;
     }
 
-    public void endRecordingRect() {
+    private void endRecordingRect() {
         if (this.recordingPos == null) {
             throw new IllegalStateException();
         }

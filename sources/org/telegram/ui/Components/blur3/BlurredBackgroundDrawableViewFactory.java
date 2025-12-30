@@ -41,6 +41,10 @@ public class BlurredBackgroundDrawableViewFactory {
         this.isLiquidGlassEffectAllowed = z;
     }
 
+    public BlurredBackgroundDrawable create() {
+        return create(null);
+    }
+
     public BlurredBackgroundDrawable create(View view) {
         return create(view, null);
     }
@@ -57,7 +61,7 @@ public class BlurredBackgroundDrawableViewFactory {
             referenceList.add(view);
         }
         ViewPositionWatcher viewPositionWatcher = this.viewPositionWatcher;
-        if (viewPositionWatcher != null && (viewGroup = this.parent) != null) {
+        if (viewPositionWatcher != null && (viewGroup = this.parent) != null && view != null) {
             viewPositionWatcher.subscribe(view, viewGroup, new ViewPositionWatcher.OnChangedListener() { // from class: org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.Components.chat.ViewPositionWatcher.OnChangedListener
                 public final void onPositionChanged(View view2, RectF rectF) {

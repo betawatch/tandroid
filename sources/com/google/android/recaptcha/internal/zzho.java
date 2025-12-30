@@ -1,14 +1,18 @@
 package com.google.android.recaptcha.internal;
 
+import kotlin.jvm.functions.Function0;
+
 /* loaded from: classes.dex */
-final class zzho implements zzix {
-    static final zzix zza = new zzho();
+public final class zzho implements Function0 {
+    public static final zzho zza = new zzho();
 
-    private zzho() {
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzix
-    public final boolean zza(int i) {
-        return i == 0 || i == 1 || i == 2 || i == 3;
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzhm.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzhm) zzb;
+        }
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

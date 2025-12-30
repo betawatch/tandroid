@@ -6,7 +6,7 @@ import com.microsoft.appcenter.ingestion.models.json.JSONUtils;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CommonSchemaLog extends AbstractLog {
     private String cV;
     private Data data;

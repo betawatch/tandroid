@@ -1,24 +1,62 @@
 package com.google.android.recaptcha.internal;
 
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.CoroutineScope;
+
 /* loaded from: classes.dex */
-final class zzid {
-    private final Object zza;
-    private final int zzb;
+final class zzid extends SuspendLambda implements Function2 {
+    final /* synthetic */ zzif zza;
+    final /* synthetic */ zzcy zzb;
+    final /* synthetic */ zzye zzc;
 
-    zzid(Object obj, int i) {
-        this.zza = obj;
-        this.zzb = i;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzid(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, Continuation continuation) {
+        super(2, continuation);
+        this.zza = zzifVar;
+        this.zzb = zzcyVar;
+        this.zzc = zzyeVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof zzid)) {
-            return false;
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        return new zzid(this.zza, this.zzb, this.zzc, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzid) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        ResultKt.throwOnFailure(obj);
+        zzhl zzhlVar = null;
+        try {
+            try {
+                try {
+                    zzhlVar = zzif.zza(this.zza).zza(this.zzb.zzd());
+                    zzhlVar.zzc();
+                    zzhlVar.zze(this.zzc.zzd());
+                    zzyg zzygVar = (zzyg) zzhlVar.zza(zzyg.zzi());
+                    zzhlVar.zzd();
+                    return zzygVar;
+                } catch (Exception e) {
+                    throw new zzcg(zzce.zzc, zzcd.zzF, e.getMessage(), null, 8, null);
+                }
+            } catch (zzcg e2) {
+                throw e2;
+            }
+        } catch (Throwable th) {
+            if (zzhlVar != null) {
+                zzhlVar.zzd();
+            }
+            throw th;
         }
-        zzid zzidVar = (zzid) obj;
-        return this.zza == zzidVar.zza && this.zzb == zzidVar.zzb;
-    }
-
-    public final int hashCode() {
-        return (System.identityHashCode(this.zza) * 65535) + this.zzb;
     }
 }

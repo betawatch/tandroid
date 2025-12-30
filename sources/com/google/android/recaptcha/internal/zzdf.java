@@ -1,33 +1,30 @@
 package com.google.android.recaptcha.internal;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import kotlinx.coroutines.CompletableDeferred;
+import kotlinx.coroutines.CompletableDeferredKt;
+import kotlinx.coroutines.Deferred;
+import kotlinx.coroutines.Job;
+
 /* loaded from: classes.dex */
-public final class zzdf implements zzdd {
-    public static final zzdf zza = new zzdf();
-
-    private zzdf() {
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        if (zzpqVarArr.length != 1) {
-            throw new zzae(4, 3, null);
-        }
-        Object zza2 = zzcjVar.zzc().zza(zzpqVarArr[0]);
-        if (true != (zza2 instanceof Object)) {
-            zza2 = null;
-        }
-        if (zza2 == null) {
-            throw new zzae(4, 5, null);
-        }
-        try {
-            if (zza2 instanceof String) {
-                zza2 = zzcjVar.zzh().zza((String) zza2);
+public final class zzdf {
+    public static final Deferred zza(Task task) {
+        final CompletableDeferred CompletableDeferred$default = CompletableDeferredKt.CompletableDeferred$default(null, 1, null);
+        task.addOnCompleteListener(zzdd.zza, new OnCompleteListener() { // from class: com.google.android.recaptcha.internal.zzdc
+            @Override // com.google.android.gms.tasks.OnCompleteListener
+            public final void onComplete(Task task2) {
+                CompletableDeferred completableDeferred = CompletableDeferred.this;
+                Exception exception = task2.getException();
+                if (exception != null) {
+                    completableDeferred.completeExceptionally(exception);
+                } else if (task2.isCanceled()) {
+                    Job.DefaultImpls.cancel$default(completableDeferred, null, 1, null);
+                } else {
+                    completableDeferred.complete(task2.getResult());
+                }
             }
-            zzcjVar.zzc().zzf(i, zzci.zza(zza2));
-        } catch (zzae e) {
-            throw e;
-        } catch (Exception e2) {
-            throw new zzae(6, 8, e2);
-        }
+        });
+        return new zzde(CompletableDeferred$default);
     }
 }

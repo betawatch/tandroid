@@ -184,13 +184,14 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         textTab.setFocusable(true);
         textTab.setGravity(17);
         textTab.setText(charSequence);
+        ScaleStateListAnimator.apply(textTab, 0.025f, 1.2f);
         textTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PagerSlidingTabStrip$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PagerSlidingTabStrip.this.lambda$addTab$1(i, view);
             }
         });
-        textTab.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+        textTab.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         this.tabsContainer.addView(textTab, LayoutHelper.createLinear(-2, -2, 10.0f, 0.0f, 10.0f, 0.0f));
         textTab.setSelected(i == this.currentPosition);
     }
@@ -288,7 +289,8 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
             if (this.indicatorHeight != 0) {
                 this.rectPaint.setColor(this.indicatorColor);
                 RectF rectF2 = AndroidUtilities.rectTmp;
-                rectF2.set(f - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), f2 + AndroidUtilities.dp(12.0f), height - AndroidUtilities.dp(6.0f));
+                rectF2.set(f - AndroidUtilities.dp(11.0f), getPaddingTop(), f2 + AndroidUtilities.dp(11.0f), height - getPaddingBottom());
+                rectF2.offset(getPaddingLeft(), 0.0f);
                 canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, this.rectPaint);
             }
         }

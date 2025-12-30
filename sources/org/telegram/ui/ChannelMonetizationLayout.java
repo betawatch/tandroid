@@ -1920,7 +1920,7 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
         Browser.openUrl(context, LocaleController.getString(z ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
     }
 
-    private static class FeatureCell extends FrameLayout {
+    public static class FeatureCell extends FrameLayout {
         public FeatureCell(Context context, int i, CharSequence charSequence, CharSequence charSequence2, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             ImageView imageView = new ImageView(context);
@@ -1932,17 +1932,20 @@ public class ChannelMonetizationLayout extends SizeNotifierFrameLayout implement
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(1);
             addView(linearLayout, LayoutHelper.createFrame(-1, -2.0f, 55, 42.0f, 0.0f, 0.0f, 0.0f));
-            TextView textView = new TextView(context);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setTextSize(1, 14.0f);
-            textView.setTextColor(Theme.getColor(i2, resourcesProvider));
-            textView.setText(charSequence);
-            linearLayout.addView(textView, LayoutHelper.createLinear(-1, -2, 55, 0, 0, 0, 2));
-            TextView textView2 = new TextView(context);
-            textView2.setTextSize(1, 14.0f);
-            textView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, resourcesProvider));
-            textView2.setText(charSequence2);
-            linearLayout.addView(textView2, LayoutHelper.createLinear(-1, -2, 55, 0, 0, 0, 0));
+            LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
+            linksTextView.setTypeface(AndroidUtilities.bold());
+            linksTextView.setTextSize(1, 14.0f);
+            linksTextView.setTextColor(Theme.getColor(i2, resourcesProvider));
+            int i3 = Theme.key_chat_messageLinkIn;
+            linksTextView.setLinkTextColor(Theme.getColor(i3, resourcesProvider));
+            linksTextView.setText(charSequence);
+            linearLayout.addView(linksTextView, LayoutHelper.createLinear(-1, -2, 55, 0, 0, 0, 2));
+            LinkSpanDrawable.LinksTextView linksTextView2 = new LinkSpanDrawable.LinksTextView(context);
+            linksTextView2.setTextSize(1, 14.0f);
+            linksTextView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, resourcesProvider));
+            linksTextView2.setLinkTextColor(Theme.getColor(i3, resourcesProvider));
+            linksTextView2.setText(charSequence2);
+            linearLayout.addView(linksTextView2, LayoutHelper.createLinear(-1, -2, 55, 0, 0, 0, 0));
         }
 
         @Override // android.widget.FrameLayout, android.view.View

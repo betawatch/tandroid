@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DefaultAppCenterFuture implements AppCenterFuture {
     private Collection mConsumers;
     private final CountDownLatch mLatch = new CountDownLatch(1);

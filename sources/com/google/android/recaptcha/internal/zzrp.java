@@ -1,0 +1,59 @@
+package com.google.android.recaptcha.internal;
+
+/* loaded from: classes.dex */
+public final class zzrp extends zzsn implements zztt {
+    private static final zzrp zzb;
+    private static volatile zzua zzd;
+    private int zze;
+    private boolean zzg;
+    private byte zzh = 2;
+    private String zzf = "";
+
+    static {
+        zzrp zzrpVar = new zzrp();
+        zzb = zzrpVar;
+        zzsn.zzI(zzrp.class, zzrpVar);
+    }
+
+    private zzrp() {
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzsn
+    protected final Object zzh(int i, Object obj, Object obj2) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return Byte.valueOf(this.zzh);
+        }
+        if (i2 == 2) {
+            return new zzue(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0002\u0001ᔈ\u0000\u0002ᔇ\u0001", new Object[]{"zze", "zzf", "zzg"});
+        }
+        if (i2 == 3) {
+            return new zzrp();
+        }
+        zzrr zzrrVar = null;
+        if (i2 == 4) {
+            return new zzro(zzrrVar);
+        }
+        if (i2 == 5) {
+            return zzb;
+        }
+        if (i2 != 6) {
+            this.zzh = obj == null ? (byte) 0 : (byte) 1;
+            return null;
+        }
+        zzua zzuaVar = zzd;
+        if (zzuaVar == null) {
+            synchronized (zzrp.class) {
+                try {
+                    zzuaVar = zzd;
+                    if (zzuaVar == null) {
+                        zzuaVar = new zzsi(zzb);
+                        zzd = zzuaVar;
+                    }
+                } finally {
+                }
+            }
+        }
+        return zzuaVar;
+    }
+}

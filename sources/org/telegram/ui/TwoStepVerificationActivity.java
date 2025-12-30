@@ -2,11 +2,9 @@ package org.telegram.ui;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Configuration;
-import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Typeface;
@@ -20,7 +18,6 @@ import android.util.Property;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -56,6 +53,7 @@ import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.EmptyTextProgressView;
+import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.OutlineTextContainerView;
 import org.telegram.ui.Components.RLottieImageView;
@@ -79,7 +77,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
     private String delegateTypeString;
     private boolean destroyed;
     private EmptyTextProgressView emptyView;
-    private FrameLayout floatingButtonContainer;
+    private FragmentFloatingButton floatingButton;
     private TransformableLoginButtonView floatingButtonIcon;
     private boolean forgotPasswordOnShow;
     private ListAdapter listAdapter;
@@ -187,15 +185,15 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
         AndroidUtilities.removeAdjustResize(getParentActivity(), this.classGuid);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0222  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x023b  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x026e  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x04e4  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0549  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x055e  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x052a  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x023d  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0224  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0220  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0239  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x026c  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0446  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x04aa  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x04bf  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x048b  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x023b  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0222  */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -368,19 +366,10 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
                     }
                 });
                 VerticalPositionAutoAnimator.attach(this.cancelResetButton);
-                this.floatingButtonContainer = new FrameLayout(context);
-                StateListAnimator stateListAnimator = new StateListAnimator();
-                stateListAnimator.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-                stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-                this.floatingButtonContainer.setStateListAnimator(stateListAnimator);
-                this.floatingButtonContainer.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.TwoStepVerificationActivity.3
-                    @Override // android.view.ViewOutlineProvider
-                    public void getOutline(View view, Outline outline) {
-                        outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-                    }
-                });
-                VerticalPositionAutoAnimator.attach(this.floatingButtonContainer);
-                this.floatingButtonContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TwoStepVerificationActivity$$ExternalSyntheticLambda8
+                FragmentFloatingButton fragmentFloatingButton = new FragmentFloatingButton(context, this.resourceProvider);
+                this.floatingButton = fragmentFloatingButton;
+                VerticalPositionAutoAnimator.attach(fragmentFloatingButton);
+                this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TwoStepVerificationActivity$$ExternalSyntheticLambda8
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         TwoStepVerificationActivity.this.lambda$createView$5(view);
@@ -392,10 +381,10 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
                 this.floatingButtonIcon.setProgress(0.0f);
                 this.floatingButtonIcon.setColor(Theme.getColor(Theme.key_chats_actionIcon));
                 this.floatingButtonIcon.setDrawBackground(false);
-                this.floatingButtonContainer.setContentDescription(LocaleController.getString(R.string.Next));
-                this.floatingButtonContainer.addView(this.floatingButtonIcon, LayoutHelper.createFrame(56, 56.0f));
-                this.floatingButtonContainer.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(56.0f), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
-                frameLayout.addView(this.floatingButtonContainer, LayoutHelper.createFrame(56, 56.0f, 85, 0.0f, 0.0f, 24.0f, 16.0f));
+                this.floatingButton.setContentDescription(LocaleController.getString(R.string.Next));
+                this.floatingButton.addView(this.floatingButtonIcon, LayoutHelper.createFrame(56, 56, 17));
+                this.floatingButton.addAdditionalView(this.floatingButtonIcon);
+                frameLayout.addView(this.floatingButton, FragmentFloatingButton.createDefaultLayoutParams());
                 EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context);
                 this.emptyView = emptyTextProgressView;
                 emptyTextProgressView.showProgress();
@@ -416,7 +405,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
                         TwoStepVerificationActivity.this.lambda$createView$7(view, i8);
                     }
                 });
-                RadialProgressView radialProgressView = new RadialProgressView(context) { // from class: org.telegram.ui.TwoStepVerificationActivity.4
+                RadialProgressView radialProgressView = new RadialProgressView(context) { // from class: org.telegram.ui.TwoStepVerificationActivity.3
                     @Override // android.view.View
                     protected void onMeasure(int i8, int i9) {
                         super.onMeasure(i8, i9);
@@ -586,19 +575,10 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
             }
         });
         VerticalPositionAutoAnimator.attach(this.cancelResetButton);
-        this.floatingButtonContainer = new FrameLayout(context);
-        StateListAnimator stateListAnimator2 = new StateListAnimator();
-        stateListAnimator2.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator2.addState(new int[0], ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        this.floatingButtonContainer.setStateListAnimator(stateListAnimator2);
-        this.floatingButtonContainer.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.TwoStepVerificationActivity.3
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view2, Outline outline) {
-                outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-            }
-        });
-        VerticalPositionAutoAnimator.attach(this.floatingButtonContainer);
-        this.floatingButtonContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TwoStepVerificationActivity$$ExternalSyntheticLambda8
+        FragmentFloatingButton fragmentFloatingButton2 = new FragmentFloatingButton(context, this.resourceProvider);
+        this.floatingButton = fragmentFloatingButton2;
+        VerticalPositionAutoAnimator.attach(fragmentFloatingButton2);
+        this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TwoStepVerificationActivity$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 TwoStepVerificationActivity.this.lambda$createView$5(view2);
@@ -610,10 +590,10 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
         this.floatingButtonIcon.setProgress(0.0f);
         this.floatingButtonIcon.setColor(Theme.getColor(Theme.key_chats_actionIcon));
         this.floatingButtonIcon.setDrawBackground(false);
-        this.floatingButtonContainer.setContentDescription(LocaleController.getString(R.string.Next));
-        this.floatingButtonContainer.addView(this.floatingButtonIcon, LayoutHelper.createFrame(56, 56.0f));
-        this.floatingButtonContainer.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(56.0f), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
-        frameLayout.addView(this.floatingButtonContainer, LayoutHelper.createFrame(56, 56.0f, 85, 0.0f, 0.0f, 24.0f, 16.0f));
+        this.floatingButton.setContentDescription(LocaleController.getString(R.string.Next));
+        this.floatingButton.addView(this.floatingButtonIcon, LayoutHelper.createFrame(56, 56, 17));
+        this.floatingButton.addAdditionalView(this.floatingButtonIcon);
+        frameLayout.addView(this.floatingButton, FragmentFloatingButton.createDefaultLayoutParams());
         EmptyTextProgressView emptyTextProgressView2 = new EmptyTextProgressView(context);
         this.emptyView = emptyTextProgressView2;
         emptyTextProgressView2.showProgress();
@@ -634,7 +614,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
                 TwoStepVerificationActivity.this.lambda$createView$7(view2, i82);
             }
         });
-        RadialProgressView radialProgressView2 = new RadialProgressView(context) { // from class: org.telegram.ui.TwoStepVerificationActivity.4
+        RadialProgressView radialProgressView2 = new RadialProgressView(context) { // from class: org.telegram.ui.TwoStepVerificationActivity.3
             @Override // android.view.View
             protected void onMeasure(int i82, int i92) {
                 super.onMeasure(i82, i92);
@@ -1001,7 +981,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
         if (tL_error == null) {
             TL_account.Password password = this.currentPassword;
             password.email_unconfirmed_pattern = ((TLRPC.TL_auth_passwordRecovery) tLObject).email_pattern;
-            TwoStepVerificationSetupActivity twoStepVerificationSetupActivity = new TwoStepVerificationSetupActivity(this.currentAccount, 4, password) { // from class: org.telegram.ui.TwoStepVerificationActivity.5
+            TwoStepVerificationSetupActivity twoStepVerificationSetupActivity = new TwoStepVerificationSetupActivity(this.currentAccount, 4, password) { // from class: org.telegram.ui.TwoStepVerificationActivity.4
                 @Override // org.telegram.ui.TwoStepVerificationSetupActivity
                 protected void onReset() {
                     TwoStepVerificationActivity.this.resetPasswordOnShow = true;
@@ -1225,7 +1205,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
                     this.listView.setEmptyView(this.emptyView);
                 }
                 if (this.passwordEditText != null) {
-                    this.floatingButtonContainer.setVisibility(8);
+                    this.floatingButton.setButtonVisible(false, false);
                     this.passwordEditText.setVisibility(4);
                     this.titleTextView.setVisibility(4);
                     this.bottomTextView.setVisibility(8);
@@ -1246,7 +1226,7 @@ public class TwoStepVerificationActivity extends BaseFragment implements Notific
                 this.emptyView.setVisibility(4);
             }
             if (this.passwordEditText != null) {
-                this.floatingButtonContainer.setVisibility(0);
+                this.floatingButton.setButtonVisible(true, false);
                 this.passwordEditText.setVisibility(0);
                 View view2 = this.fragmentView;
                 int i3 = Theme.key_windowBackgroundWhite;

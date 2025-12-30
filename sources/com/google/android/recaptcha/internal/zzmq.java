@@ -1,42 +1,16 @@
 package com.google.android.recaptcha.internal;
 
+import java.util.Collection;
+import java.util.Iterator;
+
 /* loaded from: classes.dex */
-public final class zzmq extends zzin implements zzkf {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private zzmq() {
-        super(r0);
-        zzmr zzmrVar;
-        zzmrVar = zzmr.zzb;
-    }
-
-    public final zzmq zzd(int i) {
-        zzm();
-        ((zzmr) this.zza).zzf = i;
-        return this;
-    }
-
-    public final zzmq zze(String str) {
-        zzm();
-        ((zzmr) this.zza).zzh = str;
-        return this;
-    }
-
-    public final zzmq zzp(String str) {
-        zzm();
-        zzmr.zzH((zzmr) this.zza, str);
-        return this;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzmq(zzmp zzmpVar) {
-        super(r1);
-        zzmr zzmrVar;
-        zzmrVar = zzmr.zzb;
+public final class zzmq {
+    public static boolean zza(Collection collection, Iterator it) {
+        it.getClass();
+        boolean z = false;
+        while (it.hasNext()) {
+            z |= collection.add(it.next());
+        }
+        return z;
     }
 }

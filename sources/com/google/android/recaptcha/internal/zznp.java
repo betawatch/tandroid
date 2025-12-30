@@ -1,40 +1,36 @@
 package com.google.android.recaptcha.internal;
 
-/* loaded from: classes.dex */
-final /* synthetic */ class zznp {
-    static final /* synthetic */ int[] zza;
+import java.lang.reflect.InvocationTargetException;
 
-    static {
-        zzis.zza();
-        int[] iArr = new int[7];
-        zza = iArr;
+/* loaded from: classes.dex */
+final class zznp {
+    private static final zznr zza = zzb(zznr.zzd);
+
+    private static zznr zzb(String[] strArr) {
+        zznv zznvVar;
         try {
-            iArr[3] = 1;
-        } catch (NoSuchFieldError unused) {
+            zznvVar = zznw.zza;
+        } catch (NoClassDefFoundError unused) {
+            zznvVar = null;
         }
-        try {
-            zza[4] = 2;
-        } catch (NoSuchFieldError unused2) {
+        if (zznvVar != null) {
+            return zznvVar;
         }
-        try {
-            zza[2] = 3;
-        } catch (NoSuchFieldError unused3) {
+        StringBuilder sb = new StringBuilder();
+        for (String str : strArr) {
+            try {
+                return (zznr) Class.forName(str).getConstructor(null).newInstance(null);
+            } catch (Throwable th) {
+                th = th;
+                sb.append('\n');
+                sb.append(str);
+                sb.append(": ");
+                if (th instanceof InvocationTargetException) {
+                    th = th.getCause();
+                }
+                sb.append(th);
+            }
         }
-        try {
-            zza[5] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            zza[6] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            zza[0] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            zza[1] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
+        throw new IllegalStateException(sb.insert(0, "No logging platforms found:").toString());
     }
 }

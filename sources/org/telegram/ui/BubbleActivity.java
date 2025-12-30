@@ -32,7 +32,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
     protected DrawerLayoutContainer drawerLayoutContainer;
     private boolean finished;
     private Runnable lockRunnable;
-    private ArrayList mainFragmentsStack = new ArrayList();
+    private final ArrayList mainFragmentsStack = new ArrayList();
     private Intent passcodeSaveIntent;
     private int passcodeSaveIntentAccount;
     private boolean passcodeSaveIntentIsNew;
@@ -83,7 +83,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         requestWindowFeature(1);
         setTheme(R.style.Theme_TMessages);
         getWindow().setBackgroundDrawableResource(R.drawable.transparent);
-        if (SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture) {
+        if (!SharedConfig.passcodeHash.isEmpty() && !SharedConfig.allowScreenCapture) {
             try {
                 getWindow().setFlags(8192, 8192);
                 AndroidUtilities.logFlagSecure();
@@ -92,7 +92,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
             }
         }
         super.onCreate(bundle);
-        if (SharedConfig.passcodeHash.length() != 0 && SharedConfig.appLocked) {
+        if (!SharedConfig.passcodeHash.isEmpty() && SharedConfig.appLocked) {
             SharedConfig.lastPauseTime = (int) (SystemClock.elapsedRealtime() / 1000);
         }
         AndroidUtilities.fillStatusBarHeight(this, false);
@@ -104,8 +104,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         this.actionBarLayout.setRemoveActionBarExtraHeight(true);
         DrawerLayoutContainer drawerLayoutContainer = new DrawerLayoutContainer(this);
         this.drawerLayoutContainer = drawerLayoutContainer;
-        drawerLayoutContainer.setAllowOpenDrawer(false, false);
-        setContentView(this.drawerLayoutContainer, new ViewGroup.LayoutParams(-1, -1));
+        setContentView(drawerLayoutContainer, new ViewGroup.LayoutParams(-1, -1));
         RelativeLayout relativeLayout = new RelativeLayout(this);
         this.drawerLayoutContainer.addView(relativeLayout, LayoutHelper.createFrame(-1, -1.0f));
         relativeLayout.addView(this.actionBarLayout.getView(), LayoutHelper.createRelative(-1, -1));
@@ -137,7 +136,6 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         }
         this.passcodeView.onShow(true, false);
         SharedConfig.isWaitingForPasscodeEnter = true;
-        this.drawerLayoutContainer.setAllowOpenDrawer(false, false);
         this.passcodeView.setDelegate(new PasscodeView.PasscodeViewDelegate() { // from class: org.telegram.ui.BubbleActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.PasscodeView.PasscodeViewDelegate
             public final void didAcceptedPassword(PasscodeView passcodeView) {
@@ -154,7 +152,6 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
             handleIntent(intent, this.passcodeSaveIntentIsNew, this.passcodeSaveIntentIsRestore, true, this.passcodeSaveIntentAccount, this.passcodeSaveIntentState);
             this.passcodeSaveIntent = null;
         }
-        this.drawerLayoutContainer.setAllowOpenDrawer(true, false);
         this.actionBarLayout.showLastFragment();
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.passcodeDismissed, passcodeView);
     }
@@ -258,16 +255,17 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         if (themeEditorView != null) {
             themeEditorView.onActivityResult(i, i2, intent);
         }
-        if (this.actionBarLayout.getFragmentStack().size() != 0) {
-            ((BaseFragment) this.actionBarLayout.getFragmentStack().get(this.actionBarLayout.getFragmentStack().size() - 1)).onActivityResultFragment(i, i2, intent);
+        if (this.actionBarLayout.getFragmentStack().isEmpty()) {
+            return;
         }
+        ((BaseFragment) this.actionBarLayout.getFragmentStack().get(this.actionBarLayout.getFragmentStack().size() - 1)).onActivityResultFragment(i, i2, intent);
     }
 
     @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, android.app.Activity
     public void onRequestPermissionsResult(int i, String[] strArr, int[] iArr) {
         super.onRequestPermissionsResult(i, strArr, iArr);
         if (checkPermissionsResult(i, strArr, iArr)) {
-            if (this.actionBarLayout.getFragmentStack().size() != 0) {
+            if (!this.actionBarLayout.getFragmentStack().isEmpty()) {
                 ((BaseFragment) this.actionBarLayout.getFragmentStack().get(this.actionBarLayout.getFragmentStack().size() - 1)).onRequestPermissionsResultFragment(i, strArr, iArr);
             }
             VoIPFragment.onRequestPermissionsResult(i, strArr, iArr);
@@ -295,7 +293,7 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
             AndroidUtilities.cancelRunOnUIThread(runnable);
             this.lockRunnable = null;
         }
-        if (SharedConfig.passcodeHash.length() != 0) {
+        if (!SharedConfig.passcodeHash.isEmpty()) {
             SharedConfig.lastPauseTime = (int) (SystemClock.elapsedRealtime() / 1000);
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.BubbleActivity.1
                 @Override // java.lang.Runnable
@@ -358,12 +356,8 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         }
         if (this.passcodeView.getVisibility() == 0) {
             finish();
-            return;
-        }
-        if (PhotoViewer.getInstance().isVisible()) {
+        } else if (PhotoViewer.getInstance().isVisible()) {
             PhotoViewer.getInstance().closePhoto(true, false);
-        } else if (this.drawerLayoutContainer.isDrawerOpened()) {
-            this.drawerLayoutContainer.closeDrawer(false);
         } else {
             this.actionBarLayout.onBackPressed();
         }

@@ -1,10 +1,36 @@
 package com.google.android.recaptcha.internal;
 
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import kotlin.collections.ArraysKt;
+
 /* loaded from: classes.dex */
-interface zzkb {
-    zzke zza();
+public final class zzkb implements zzjt {
+    public static final zzkb zza = new zzkb();
 
-    boolean zzb();
+    private zzkb() {
+    }
 
-    int zzc();
+    @Override // com.google.android.recaptcha.internal.zzjt
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+        int length = zzztVarArr.length;
+        if (length < 2) {
+            throw new zzdm(4, 3, null);
+        }
+        Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
+        if (true != (zza2 instanceof Method)) {
+            zza2 = null;
+        }
+        Method method = (Method) zza2;
+        if (method == null) {
+            throw new zzdm(4, 5, null);
+        }
+        Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
+        Object[] zzg = zzizVar.zzc().zzg(ArraysKt.toList(zzztVarArr).subList(2, length));
+        try {
+            zzizVar.zzc().zze(i, method.invoke(zza3, Arrays.copyOf(zzg, zzg.length)));
+        } catch (Exception e) {
+            throw new zzdm(6, 15, e);
+        }
+    }
 }

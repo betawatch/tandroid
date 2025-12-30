@@ -202,11 +202,6 @@ public class FiltersView extends RecyclerListView {
         setSelectorDrawableColor(getThemedColor(Theme.key_listSelector));
     }
 
-    @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
-    }
-
     public MediaFilterData getFilterAt(int i) {
         if (this.usersFilters.isEmpty()) {
             return filters[i];
@@ -567,9 +562,7 @@ public class FiltersView extends RecyclerListView {
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
             ViewHolder viewHolder = FiltersView.this.new ViewHolder(new FilterView(viewGroup.getContext(), ((RecyclerListView) FiltersView.this).resourcesProvider));
-            RecyclerView.LayoutParams layoutParams = new RecyclerView.LayoutParams(-2, AndroidUtilities.dp(32.0f));
-            ((ViewGroup.MarginLayoutParams) layoutParams).topMargin = AndroidUtilities.dp(6.0f);
-            viewHolder.itemView.setLayoutParams(layoutParams);
+            viewHolder.itemView.setLayoutParams(new RecyclerView.LayoutParams(-2, AndroidUtilities.dp(30.0f)));
             return viewHolder;
         }
 
@@ -596,11 +589,11 @@ public class FiltersView extends RecyclerListView {
             this.resourcesProvider = resourcesProvider;
             BackupImageView backupImageView = new BackupImageView(context);
             this.avatarImageView = backupImageView;
-            addView(backupImageView, LayoutHelper.createFrame(32, 32.0f));
+            addView(backupImageView, LayoutHelper.createFrame(30, 30.0f));
             TextView textView = new TextView(context);
             this.titleView = textView;
             textView.setTextSize(1, 14.0f);
-            addView(this.titleView, LayoutHelper.createFrame(-2, -2.0f, 16, 38.0f, 0.0f, 16.0f, 0.0f));
+            addView(this.titleView, LayoutHelper.createFrame(-2, -2.0f, 16, 36.0f, 0.0f, 14.0f, 0.0f));
             updateColors();
         }
 

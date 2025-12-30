@@ -1,47 +1,52 @@
 package com.google.android.recaptcha.internal;
 
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+
 /* loaded from: classes.dex */
-public final class zzhx extends zzit implements zzkf {
-    private static final zzhx zzb;
-    private int zzd;
-    private long zzg;
-    private long zzh;
-    private double zzi;
-    private byte zzl = 2;
-    private zzjb zze = zzko.zze();
-    private String zzf = "";
-    private zzgw zzj = zzgw.zzb;
-    private String zzk = "";
+final class zzhx extends SuspendLambda implements Function2 {
+    final /* synthetic */ zzib zza;
+    final /* synthetic */ String zzb;
 
-    static {
-        zzhx zzhxVar = new zzhx();
-        zzb = zzhxVar;
-        zzit.zzD(zzhx.class, zzhxVar);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzhx(zzib zzibVar, String str, Continuation continuation) {
+        super(2, continuation);
+        this.zza = zzibVar;
+        this.zzb = str;
     }
 
-    private zzhx() {
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        return new zzhx(this.zza, this.zzb, continuation);
     }
 
-    @Override // com.google.android.recaptcha.internal.zzit
-    protected final Object zzh(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return Byte.valueOf(this.zzl);
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzhx) create((zzgr) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        ResultKt.throwOnFailure(obj);
+        zzib zzibVar = this.zza;
+        zzbt zza = zzib.zza(zzibVar);
+        String str = this.zzb;
+        if (!zza.zzd(str)) {
+            throw new zzcg(zzce.zzk, zzcd.zzS, null, null, 12, null);
         }
-        if (i2 == 2) {
-            return new zzkp(zzb, "\u0001\u0007\u0000\u0001\u0002\b\u0007\u0000\u0001\u0001\u0002Л\u0003ဈ\u0000\u0004ဃ\u0001\u0005ဂ\u0002\u0006က\u0003\u0007ည\u0004\bဈ\u0005", new Object[]{"zzd", "zze", zzhw.class, "zzf", "zzg", "zzh", "zzi", "zzj", "zzk"});
+        try {
+            String zza2 = zzib.zza(zzibVar).zza(str);
+            if (zza2 != null) {
+                return zza2;
+            }
+            throw new zzcg(zzce.zzk, zzcd.zzS, null, null, 12, null);
+        } catch (Exception e) {
+            throw new zzcg(zzce.zzk, zzcd.zzR, e.getMessage(), null, 8, null);
         }
-        if (i2 == 3) {
-            return new zzhx();
-        }
-        zzhj zzhjVar = null;
-        if (i2 == 4) {
-            return new zzhu(zzhjVar);
-        }
-        if (i2 == 5) {
-            return zzb;
-        }
-        this.zzl = obj == null ? (byte) 0 : (byte) 1;
-        return null;
     }
 }

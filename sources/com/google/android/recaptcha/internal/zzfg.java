@@ -1,41 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.concurrent.TimeUnit;
+import kotlin.jvm.functions.Function0;
 
 /* loaded from: classes.dex */
-final /* synthetic */ class zzfg {
-    static final /* synthetic */ int[] zza;
+public final class zzfg implements Function0 {
+    public static final zzfg zza = new zzfg();
 
-    static {
-        int[] iArr = new int[TimeUnit.values().length];
-        zza = iArr;
-        try {
-            iArr[TimeUnit.NANOSECONDS.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzcy.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzcy) zzb;
         }
-        try {
-            zza[TimeUnit.MICROSECONDS.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            zza[TimeUnit.MILLISECONDS.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            zza[TimeUnit.SECONDS.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            zza[TimeUnit.MINUTES.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            zza[TimeUnit.HOURS.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            zza[TimeUnit.DAYS.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

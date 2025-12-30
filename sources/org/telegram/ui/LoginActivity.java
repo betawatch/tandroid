@@ -1,11 +1,9 @@
 package org.telegram.ui;
 
-import android.R;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
@@ -20,9 +18,9 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.PointF;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
@@ -57,7 +55,6 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
@@ -143,6 +140,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.PasskeysController;
 import org.telegram.messenger.PushListenerController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.SRPHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
@@ -169,6 +167,7 @@ import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.CustomPhoneKeyboardView;
 import org.telegram.ui.Components.Easings;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.ImageUpdater;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
@@ -193,6 +192,7 @@ import org.telegram.ui.Components.TextViewSwitcher;
 import org.telegram.ui.Components.TransformableLoginButtonView;
 import org.telegram.ui.Components.URLSpanNoUnderline;
 import org.telegram.ui.Components.VerticalPositionAutoAnimator;
+import org.telegram.ui.Components.chat.ViewPositionWatcher;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
 import org.telegram.ui.CountrySelectActivity;
 import org.telegram.ui.LoginActivity;
@@ -229,9 +229,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     private TextView emailChangeSkipButton;
     private Runnable emailChangeSkipCallback;
     private VerticalPositionAutoAnimator floatingAutoAnimator;
-    private FrameLayout floatingButtonContainer;
+    private FragmentFloatingButton floatingButton;
     private TransformableLoginButtonView floatingButtonIcon;
-    private RadialProgressView floatingProgressView;
     private boolean forceDisableSafetyNet;
     private View introView;
     private boolean isAnimatingIntro;
@@ -266,6 +265,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     private final SlideView[] views;
 
     private static class ProgressView extends View {
+    }
+
+    public LoginActivity setIntroView(View view, TextView textView) {
+        return this;
     }
 
     static {
@@ -379,17 +382,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         return super.onFragmentCreate();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:107:0x04f2, code lost:
-    
-        if (r2 != 4) goto L126;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x04ec A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x051a A[EDGE_INSN: B:123:0x051a->B:124:0x051a BREAK  A[LOOP:1: B:71:0x0481->B:110:0x0516], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0525  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x024e  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x047e  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0486  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x047a A[EDGE_INSN: B:115:0x047a->B:116:0x047a BREAK  A[LOOP:1: B:68:0x03ee->B:103:0x0476], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0485  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x03eb  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x03f3  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0458 A[ADDED_TO_REGION] */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -397,11 +394,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     public View createView(Context context) {
         Bundle bundle;
         int i;
-        int i2;
         SlideView[] slideViewArr;
-        int i3;
         boolean z;
-        int i4;
+        int i2;
         View view = this.cachedFragmentView;
         if (view != null) {
             this.fragmentView = view;
@@ -411,10 +406,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         this.actionBar.setAddToContainer(false);
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LoginActivity.1
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i5) {
-                if (i5 == 1) {
+            public void onItemClick(int i3) {
+                if (i3 == 1) {
                     LoginActivity.this.onDoneButtonPressed();
-                } else if (i5 == -1 && LoginActivity.this.onBackPressed(true)) {
+                } else if (i3 == -1 && LoginActivity.this.onBackPressed(true)) {
                     LoginActivity.this.finishFragment();
                 }
             }
@@ -425,24 +420,24 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         zArr[1] = false;
         SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.LoginActivity.2
             @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i5, int i6) {
-                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) LoginActivity.this.floatingButtonContainer.getLayoutParams();
-                int dp = LoginActivity.this.isCustomKeyboardVisible() ? AndroidUtilities.dp(230.0f) : 0;
+            protected void onMeasure(int i3, int i4) {
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) LoginActivity.this.floatingButton.getLayoutParams();
+                int dp = LoginActivity.this.isCustomKeyboardVisible() ? AndroidUtilities.dp(226.0f) : 0;
                 if (LoginActivity.this.isCustomKeyboardVisible() && measureKeyboardHeight() > AndroidUtilities.dp(20.0f)) {
                     dp -= measureKeyboardHeight();
                 }
                 if (Bulletin.getVisibleBulletin() != null && Bulletin.getVisibleBulletin().isShowing()) {
-                    super.onMeasure(i5, i6);
-                    marginLayoutParams.bottomMargin = ((AndroidUtilities.dp(16.0f) + Bulletin.getVisibleBulletin().getLayout().getMeasuredHeight()) - AndroidUtilities.dp(10.0f)) + dp;
+                    super.onMeasure(i3, i4);
+                    marginLayoutParams.bottomMargin = ((AndroidUtilities.dp(14.0f) + Bulletin.getVisibleBulletin().getLayout().getMeasuredHeight()) - AndroidUtilities.dp(10.0f)) + dp;
                 } else {
-                    marginLayoutParams.bottomMargin = AndroidUtilities.dp(16.0f) + dp;
+                    marginLayoutParams.bottomMargin = AndroidUtilities.dp(14.0f) + dp;
                 }
-                int i7 = AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight;
-                ((ViewGroup.MarginLayoutParams) LoginActivity.this.backButtonView.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i7;
-                ((ViewGroup.MarginLayoutParams) LoginActivity.this.proxyButtonView.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i7;
-                ((ViewGroup.MarginLayoutParams) LoginActivity.this.radialProgressView.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i7;
+                int i5 = AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight;
+                ((ViewGroup.MarginLayoutParams) LoginActivity.this.backButtonView.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i5;
+                ((ViewGroup.MarginLayoutParams) LoginActivity.this.proxyButtonView.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i5;
+                ((ViewGroup.MarginLayoutParams) LoginActivity.this.radialProgressView.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i5;
                 if (LoginActivity.this.emailChangeSkipButton != null) {
-                    ((ViewGroup.MarginLayoutParams) LoginActivity.this.emailChangeSkipButton.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i7;
+                    ((ViewGroup.MarginLayoutParams) LoginActivity.this.emailChangeSkipButton.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i5;
                 }
                 if (measureKeyboardHeight() > AndroidUtilities.dp(20.0f) && LoginActivity.this.keyboardView.getVisibility() != 8 && !LoginActivity.this.isCustomKeyboardForceDisabled() && !LoginActivity.this.customKeyboardWasVisible) {
                     if (LoginActivity.this.keyboardAnimator != null) {
@@ -450,14 +445,14 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     }
                     LoginActivity.this.keyboardView.setVisibility(8);
                 }
-                super.onMeasure(i5, i6);
+                super.onMeasure(i3, i4);
             }
         };
         this.sizeNotifierFrameLayout = sizeNotifierFrameLayout;
         sizeNotifierFrameLayout.setDelegate(new SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate
-            public final void onSizeChanged(int i5, boolean z2) {
-                LoginActivity.this.lambda$createView$0(i5, z2);
+            public final void onSizeChanged(int i3, boolean z2) {
+                LoginActivity.this.lambda$createView$0(i3, z2);
             }
         });
         this.fragmentView = this.sizeNotifierFrameLayout;
@@ -481,8 +476,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         this.keyboardLinearLayout.addView(space);
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.LoginActivity.4
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z2, int i5, int i6, int i7, int i8) {
-                super.onLayout(z2, i5, i6, i7, i8);
+            protected void onLayout(boolean z2, int i3, int i4, int i5, int i6) {
+                super.onLayout(z2, i3, i4, i5, i6);
                 for (SlideView slideView : LoginActivity.this.views) {
                     ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) slideView.getLayoutParams();
                     int height = getHeight() + AndroidUtilities.dp(16.0f);
@@ -494,8 +489,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
 
             @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i5, int i6) {
-                super.onMeasure(i5, i6);
+            protected void onMeasure(int i3, int i4) {
+                super.onMeasure(i3, i4);
                 int measuredWidth = getMeasuredWidth();
                 int measuredHeight = getMeasuredHeight();
                 for (SlideView slideView : LoginActivity.this.views) {
@@ -532,59 +527,51 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         this.views[15] = new LoginActivitySmsView(context, 15);
         this.views[16] = new LoginActivityPhraseView(context, 16);
         this.views[17] = new LoginActivityPhraseView(context, 17);
+        int i3 = 18;
         this.views[18] = new LoginPayView(context);
-        int i5 = 0;
+        int i4 = 0;
         while (true) {
             SlideView[] slideViewArr2 = this.views;
-            if (i5 >= slideViewArr2.length) {
+            if (i4 >= slideViewArr2.length) {
                 break;
             }
-            slideViewArr2[i5].setVisibility(i5 == 0 ? 0 : 8);
-            this.slideViewsContainer.addView(this.views[i5], LayoutHelper.createFrame(-1, -1.0f, 17, AndroidUtilities.isTablet() ? 26.0f : 18.0f, i5 != 18 ? 30.0f : 0.0f, AndroidUtilities.isTablet() ? 26.0f : 18.0f, 0.0f));
-            i5++;
+            slideViewArr2[i4].setVisibility(i4 == 0 ? 0 : 8);
+            this.slideViewsContainer.addView(this.views[i4], LayoutHelper.createFrame(-1, -1.0f, 17, AndroidUtilities.isTablet() ? 26.0f : 18.0f, i4 != i3 ? 30.0f : 0.0f, AndroidUtilities.isTablet() ? 26.0f : 18.0f, 0.0f));
+            i4++;
+            i3 = 18;
         }
         Bundle loadCurrentState = this.activityMode == 0 ? loadCurrentState(this.newAccount, this.currentAccount) : null;
-        if (loadCurrentState != null && ((i4 = loadCurrentState.getInt("currentViewNum", 0)) < 0 || i4 >= this.views.length)) {
+        if (loadCurrentState != null && ((i2 = loadCurrentState.getInt("currentViewNum", 0)) < 0 || i2 >= this.views.length)) {
             loadCurrentState = null;
         }
         if (loadCurrentState != null) {
             this.currentViewNum = loadCurrentState.getInt("currentViewNum", 0);
             this.syncContacts = loadCurrentState.getInt("syncContacts", 1) == 1;
-            int i6 = this.currentViewNum;
-            if (i6 >= 1 && i6 <= 4) {
-                int i7 = loadCurrentState.getInt("open");
-                if (i7 != 0 && Math.abs((System.currentTimeMillis() / 1000) - i7) >= 86400) {
+            int i5 = this.currentViewNum;
+            if (i5 >= 1 && i5 <= 4) {
+                int i6 = loadCurrentState.getInt("open");
+                if (i6 != 0 && Math.abs((System.currentTimeMillis() / 1000) - i6) >= 86400) {
                     this.currentViewNum = 0;
                     clearCurrentState();
                     bundle = null;
                 }
-            } else if (i6 == 6) {
+            } else if (i5 == 6) {
                 if (((LoginActivityPasswordView) this.views[6]).currentPassword == null) {
                     this.currentViewNum = 0;
                     clearCurrentState();
                     bundle = null;
                 }
-            } else if (i6 == 7 && ((LoginActivityRecoverView) this.views[7]).passwordString == null) {
+            } else if (i5 == 7 && ((LoginActivityRecoverView) this.views[7]).passwordString == null) {
                 this.currentViewNum = 0;
                 clearCurrentState();
                 bundle = null;
             }
-            FrameLayout frameLayout2 = new FrameLayout(context);
-            this.floatingButtonContainer = frameLayout2;
-            frameLayout2.setVisibility(!this.doneButtonVisible[0] ? 0 : 8);
-            StateListAnimator stateListAnimator = new StateListAnimator();
-            stateListAnimator.addState(new int[]{R.attr.state_pressed}, ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-            stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-            this.floatingButtonContainer.setStateListAnimator(stateListAnimator);
-            this.floatingButtonContainer.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.LoginActivity.5
-                @Override // android.view.ViewOutlineProvider
-                public void getOutline(View view2, Outline outline) {
-                    outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-                }
-            });
-            this.floatingAutoAnimator = VerticalPositionAutoAnimator.attach(this.floatingButtonContainer);
-            this.sizeNotifierFrameLayout.addView(this.floatingButtonContainer, LayoutHelper.createFrame(56, 56.0f, 85, 0.0f, 0.0f, 24.0f, 16.0f));
-            this.floatingButtonContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda9
+            FragmentFloatingButton fragmentFloatingButton = new FragmentFloatingButton(context, this.resourceProvider);
+            this.floatingButton = fragmentFloatingButton;
+            fragmentFloatingButton.setButtonVisible(this.doneButtonVisible[0], false);
+            this.floatingAutoAnimator = VerticalPositionAutoAnimator.attach(this.floatingButton);
+            this.sizeNotifierFrameLayout.addView(this.floatingButton, FragmentFloatingButton.createDefaultLayoutParamsBig());
+            this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     LoginActivity.this.lambda$createView$1(view2);
@@ -598,14 +585,14 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             });
             ImageView imageView = new ImageView(context);
             this.backButtonView = imageView;
-            imageView.setImageResource(org.telegram.messenger.R.drawable.ic_ab_back);
+            imageView.setImageResource(R.drawable.ic_ab_back);
             this.backButtonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda11
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     LoginActivity.this.lambda$createView$3(view2);
                 }
             });
-            this.backButtonView.setContentDescription(LocaleController.getString(org.telegram.messenger.R.string.Back));
+            this.backButtonView.setContentDescription(LocaleController.getString(R.string.Back));
             int dp = AndroidUtilities.dp(4.0f);
             this.backButtonView.setPadding(dp, dp, dp, dp);
             this.sizeNotifierFrameLayout.addView(this.backButtonView, LayoutHelper.createFrame(32, 32.0f, 51, 16.0f, 16.0f, 0.0f, 0.0f));
@@ -616,7 +603,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 this.emailChangeSkipButton.setTextSize(1, 15.0f);
                 this.emailChangeSkipButton.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                 this.emailChangeSkipButton.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-                this.emailChangeSkipButton.setText(LocaleController.getString(org.telegram.messenger.R.string.YourEmailSkip));
+                this.emailChangeSkipButton.setText(LocaleController.getString(R.string.YourEmailSkip));
                 this.emailChangeSkipButton.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4));
                 this.sizeNotifierFrameLayout.addView(this.emailChangeSkipButton, LayoutHelper.createFrame(-2, 30.0f, 53, 0.0f, 16.0f, 16.0f, 0.0f));
                 this.emailChangeSkipButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda12
@@ -653,110 +640,75 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             transformableLoginButtonView.setTransformType(0);
             this.floatingButtonIcon.setProgress(1.0f);
             this.floatingButtonIcon.setDrawBackground(false);
-            this.floatingButtonContainer.setContentDescription(LocaleController.getString("Done", org.telegram.messenger.R.string.Done));
-            this.floatingButtonContainer.addView(this.floatingButtonIcon, LayoutHelper.createFrame(56, 56.0f));
-            RadialProgressView radialProgressView2 = new RadialProgressView(context);
-            this.floatingProgressView = radialProgressView2;
-            radialProgressView2.setSize(AndroidUtilities.dp(22.0f));
-            this.floatingProgressView.setAlpha(0.0f);
-            this.floatingProgressView.setScaleX(0.1f);
-            this.floatingProgressView.setScaleY(0.1f);
-            this.floatingProgressView.setVisibility(4);
-            this.floatingButtonContainer.addView(this.floatingProgressView, LayoutHelper.createFrame(-1, -1.0f));
-            i = 1;
+            this.floatingButton.setContentDescription(LocaleController.getString(R.string.Done));
+            this.floatingButton.addView(this.floatingButtonIcon, LayoutHelper.createFrame(56, 56, 17));
+            this.floatingButton.addAdditionalView(this.floatingButtonIcon);
             if (bundle != null) {
                 this.restoringState = true;
             }
-            i2 = 0;
+            i = 0;
             while (true) {
                 slideViewArr = this.views;
-                if (i2 < slideViewArr.length) {
+                if (i < slideViewArr.length) {
                     break;
                 }
-                SlideView slideView = slideViewArr[i2];
+                SlideView slideView = slideViewArr[i];
                 if (bundle != null) {
-                    if (i2 >= i && i2 <= 4) {
-                        if (i2 == this.currentViewNum) {
+                    if (i >= 1 && i <= 4) {
+                        if (i == this.currentViewNum) {
                             slideView.restoreStateParams(bundle);
                         }
                     } else {
                         slideView.restoreStateParams(bundle);
                     }
                 }
-                if (this.currentViewNum == i2) {
+                if (this.currentViewNum == i) {
                     this.backButtonView.setVisibility((slideView.needBackButton() || this.newAccount || this.activityMode == 2) ? 0 : 8);
                     slideView.setVisibility(0);
                     slideView.onShow();
                     setCustomKeyboardVisible(slideView.hasCustomKeyboard(), false);
                     this.currentDoneType = 0;
-                    if (i2 != 0 && i2 != 5) {
-                        if (i2 != 6) {
-                            if (i2 != 9) {
-                                if (i2 != 10 && i2 != 12) {
-                                    z = false;
-                                    showDoneButton(z, false);
-                                    i3 = 1;
-                                    if (i2 == 1 && i2 != 2) {
-                                        if (i2 != 3) {
-                                        }
-                                    }
+                    if (i != 0 && i != 5 && i != 6) {
+                        if (i != 9) {
+                            if (i != 10 && i != 12) {
+                                z = false;
+                                showDoneButton(z, false);
+                                if (i != 1 || i == 2 || i == 3 || i == 4) {
                                     this.currentDoneType = 1;
                                 }
-                                z = true;
-                                showDoneButton(z, false);
-                                i3 = 1;
-                                if (i2 == 1) {
-                                }
-                                this.currentDoneType = 1;
                             }
                             z = true;
                             showDoneButton(z, false);
-                            i3 = 1;
-                            if (i2 == 1) {
+                            if (i != 1) {
                             }
                             this.currentDoneType = 1;
                         }
                     }
                     z = true;
                     showDoneButton(z, false);
-                    i3 = 1;
-                    if (i2 == 1) {
+                    if (i != 1) {
                     }
                     this.currentDoneType = 1;
-                } else {
-                    i3 = 1;
-                    if (slideView.getVisibility() != 8) {
-                        slideView.setVisibility(8);
-                        slideView.onHide();
-                    }
+                } else if (slideView.getVisibility() != 8) {
+                    slideView.setVisibility(8);
+                    slideView.onHide();
                 }
-                i2 += i3;
-                i = 1;
+                i++;
             }
             this.restoringState = false;
             updateColors();
             if (isInCancelAccountDeletionMode()) {
-                lambda$fillNextCodeParams$28(this.cancelDeletionParams, this.cancelDeletionCode, false);
+                lambda$fillNextCodeParams$26(this.cancelDeletionParams, this.cancelDeletionCode, false);
             }
             return this.fragmentView;
         }
         bundle = loadCurrentState;
-        FrameLayout frameLayout22 = new FrameLayout(context);
-        this.floatingButtonContainer = frameLayout22;
-        frameLayout22.setVisibility(!this.doneButtonVisible[0] ? 0 : 8);
-        StateListAnimator stateListAnimator2 = new StateListAnimator();
-        stateListAnimator2.addState(new int[]{R.attr.state_pressed}, ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator2.addState(new int[0], ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        this.floatingButtonContainer.setStateListAnimator(stateListAnimator2);
-        this.floatingButtonContainer.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.LoginActivity.5
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view2, Outline outline) {
-                outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-            }
-        });
-        this.floatingAutoAnimator = VerticalPositionAutoAnimator.attach(this.floatingButtonContainer);
-        this.sizeNotifierFrameLayout.addView(this.floatingButtonContainer, LayoutHelper.createFrame(56, 56.0f, 85, 0.0f, 0.0f, 24.0f, 16.0f));
-        this.floatingButtonContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda9
+        FragmentFloatingButton fragmentFloatingButton2 = new FragmentFloatingButton(context, this.resourceProvider);
+        this.floatingButton = fragmentFloatingButton2;
+        fragmentFloatingButton2.setButtonVisible(this.doneButtonVisible[0], false);
+        this.floatingAutoAnimator = VerticalPositionAutoAnimator.attach(this.floatingButton);
+        this.sizeNotifierFrameLayout.addView(this.floatingButton, FragmentFloatingButton.createDefaultLayoutParamsBig());
+        this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 LoginActivity.this.lambda$createView$1(view2);
@@ -770,14 +722,14 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         });
         ImageView imageView3 = new ImageView(context);
         this.backButtonView = imageView3;
-        imageView3.setImageResource(org.telegram.messenger.R.drawable.ic_ab_back);
+        imageView3.setImageResource(R.drawable.ic_ab_back);
         this.backButtonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 LoginActivity.this.lambda$createView$3(view2);
             }
         });
-        this.backButtonView.setContentDescription(LocaleController.getString(org.telegram.messenger.R.string.Back));
+        this.backButtonView.setContentDescription(LocaleController.getString(R.string.Back));
         int dp2 = AndroidUtilities.dp(4.0f);
         this.backButtonView.setPadding(dp2, dp2, dp2, dp2);
         this.sizeNotifierFrameLayout.addView(this.backButtonView, LayoutHelper.createFrame(32, 32.0f, 51, 16.0f, 16.0f, 0.0f, 0.0f));
@@ -788,7 +740,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.emailChangeSkipButton.setTextSize(1, 15.0f);
             this.emailChangeSkipButton.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             this.emailChangeSkipButton.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-            this.emailChangeSkipButton.setText(LocaleController.getString(org.telegram.messenger.R.string.YourEmailSkip));
+            this.emailChangeSkipButton.setText(LocaleController.getString(R.string.YourEmailSkip));
             this.emailChangeSkipButton.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4));
             this.sizeNotifierFrameLayout.addView(this.emailChangeSkipButton, LayoutHelper.createFrame(-2, 30.0f, 53, 0.0f, 16.0f, 16.0f, 0.0f));
             this.emailChangeSkipButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda12
@@ -813,9 +765,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         this.proxyButtonView.setVisibility(8);
         this.sizeNotifierFrameLayout.addView(this.proxyButtonView, LayoutHelper.createFrame(32, 32.0f, 53, 16.0f, 16.0f, 16.0f, 16.0f));
         updateProxyButton(false, true);
-        RadialProgressView radialProgressView3 = new RadialProgressView(context);
-        this.radialProgressView = radialProgressView3;
-        radialProgressView3.setSize(AndroidUtilities.dp(20.0f));
+        RadialProgressView radialProgressView2 = new RadialProgressView(context);
+        this.radialProgressView = radialProgressView2;
+        radialProgressView2.setSize(AndroidUtilities.dp(20.0f));
         this.radialProgressView.setAlpha(0.0f);
         this.radialProgressView.setScaleX(0.1f);
         this.radialProgressView.setScaleY(0.1f);
@@ -825,26 +777,17 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         transformableLoginButtonView2.setTransformType(0);
         this.floatingButtonIcon.setProgress(1.0f);
         this.floatingButtonIcon.setDrawBackground(false);
-        this.floatingButtonContainer.setContentDescription(LocaleController.getString("Done", org.telegram.messenger.R.string.Done));
-        this.floatingButtonContainer.addView(this.floatingButtonIcon, LayoutHelper.createFrame(56, 56.0f));
-        RadialProgressView radialProgressView22 = new RadialProgressView(context);
-        this.floatingProgressView = radialProgressView22;
-        radialProgressView22.setSize(AndroidUtilities.dp(22.0f));
-        this.floatingProgressView.setAlpha(0.0f);
-        this.floatingProgressView.setScaleX(0.1f);
-        this.floatingProgressView.setScaleY(0.1f);
-        this.floatingProgressView.setVisibility(4);
-        this.floatingButtonContainer.addView(this.floatingProgressView, LayoutHelper.createFrame(-1, -1.0f));
-        i = 1;
+        this.floatingButton.setContentDescription(LocaleController.getString(R.string.Done));
+        this.floatingButton.addView(this.floatingButtonIcon, LayoutHelper.createFrame(56, 56, 17));
+        this.floatingButton.addAdditionalView(this.floatingButtonIcon);
         if (bundle != null) {
         }
-        i2 = 0;
+        i = 0;
         while (true) {
             slideViewArr = this.views;
-            if (i2 < slideViewArr.length) {
+            if (i < slideViewArr.length) {
             }
-            i2 += i3;
-            i = 1;
+            i++;
         }
         this.restoringState = false;
         updateColors();
@@ -932,7 +875,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         LoginActivity.this.lambda$setCustomKeyboardVisible$6(valueAnimator);
                     }
                 });
-                this.keyboardAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.6
+                this.keyboardAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.5
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationStart(Animator animator) {
                         LoginActivity.this.keyboardView.setVisibility(0);
@@ -962,7 +905,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     LoginActivity.this.lambda$setCustomKeyboardVisible$7(valueAnimator);
                 }
             });
-            this.keyboardAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.7
+            this.keyboardAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.6
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     LoginActivity.this.keyboardView.setVisibility(8);
@@ -1292,7 +1235,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         builder.setTitle(str);
         builder.setMessage(str2);
-        builder.setPositiveButton(LocaleController.getString("OK", org.telegram.messenger.R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), null);
         showDialog(builder.create());
     }
 
@@ -1304,7 +1247,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
         AndroidUtilities.shakeViewSpring(view, 3.5f);
         if (z && (view instanceof OutlineTextContainerView)) {
-            int i = org.telegram.messenger.R.id.timeout_callback;
+            int i = R.id.timeout_callback;
             Runnable runnable = (Runnable) view.getTag(i);
             if (runnable != null) {
                 view.removeCallbacks(runnable);
@@ -1312,9 +1255,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             final OutlineTextContainerView outlineTextContainerView = (OutlineTextContainerView) view;
             AtomicReference atomicReference = new AtomicReference();
             final EditText attachedEditText = outlineTextContainerView.getAttachedEditText();
-            final 8 r3 = new 8(attachedEditText, atomicReference);
+            final 7 r3 = new 7(attachedEditText, atomicReference);
             outlineTextContainerView.animateError(1.0f);
-            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda37
+            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda34
                 @Override // java.lang.Runnable
                 public final void run() {
                     LoginActivity.lambda$onFieldError$11(OutlineTextContainerView.this, view, attachedEditText, r3);
@@ -1329,7 +1272,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
     }
 
-    class 8 implements TextWatcher {
+    class 7 implements TextWatcher {
         final /* synthetic */ EditText val$editText;
         final /* synthetic */ AtomicReference val$timeoutCallbackRef;
 
@@ -1341,7 +1284,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         }
 
-        8(EditText editText, AtomicReference atomicReference) {
+        7(EditText editText, AtomicReference atomicReference) {
             this.val$editText = editText;
             this.val$timeoutCallbackRef = atomicReference;
         }
@@ -1350,10 +1293,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             final EditText editText = this.val$editText;
             final AtomicReference atomicReference = this.val$timeoutCallbackRef;
-            editText.post(new Runnable() { // from class: org.telegram.ui.LoginActivity$8$$ExternalSyntheticLambda0
+            editText.post(new Runnable() { // from class: org.telegram.ui.LoginActivity$7$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.8.this.lambda$beforeTextChanged$0(editText, atomicReference);
+                    LoginActivity.7.this.lambda$beforeTextChanged$0(editText, atomicReference);
                 }
             });
         }
@@ -1369,9 +1312,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onFieldError$11(OutlineTextContainerView outlineTextContainerView, View view, final EditText editText, final TextWatcher textWatcher) {
         outlineTextContainerView.animateError(0.0f);
-        view.setTag(org.telegram.messenger.R.id.timeout_callback, null);
+        view.setTag(R.id.timeout_callback, null);
         if (editText != null) {
-            editText.post(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda40
+            editText.post(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda37
                 @Override // java.lang.Runnable
                 public final void run() {
                     editText.removeTextChangedListener(textWatcher);
@@ -1390,11 +1333,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
         if (z) {
-            builder.setTitle(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle));
-            builder.setMessage(LocaleController.getString("BannedPhoneNumber", org.telegram.messenger.R.string.BannedPhoneNumber));
+            builder.setTitle(LocaleController.getString(R.string.RestorePasswordNoEmailTitle));
+            builder.setMessage(LocaleController.getString("BannedPhoneNumber", R.string.BannedPhoneNumber));
         } else if (phoneInputData == null || phoneInputData.patterns == null || phoneInputData.patterns.isEmpty() || phoneInputData.country == null) {
-            builder.setTitle(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle));
-            builder.setMessage(LocaleController.getString(org.telegram.messenger.R.string.InvalidPhoneNumber));
+            builder.setTitle(LocaleController.getString(R.string.RestorePasswordNoEmailTitle));
+            builder.setMessage(LocaleController.getString(R.string.InvalidPhoneNumber));
         } else {
             Iterator it = phoneInputData.patterns.iterator();
             int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -1405,20 +1348,20 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             }
             if (PhoneFormat.stripExceptNumbers(str).length() - phoneInputData.country.code.length() < i) {
-                builder.setTitle(LocaleController.getString(org.telegram.messenger.R.string.WrongNumberFormat));
-                builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("ShortNumberInfo", org.telegram.messenger.R.string.ShortNumberInfo, phoneInputData.country.name, phoneInputData.phoneNumber)));
+                builder.setTitle(LocaleController.getString(R.string.WrongNumberFormat));
+                builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("ShortNumberInfo", R.string.ShortNumberInfo, phoneInputData.country.name, phoneInputData.phoneNumber)));
             } else {
-                builder.setTitle(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle));
-                builder.setMessage(LocaleController.getString(org.telegram.messenger.R.string.InvalidPhoneNumber));
+                builder.setTitle(LocaleController.getString(R.string.RestorePasswordNoEmailTitle));
+                builder.setMessage(LocaleController.getString(R.string.InvalidPhoneNumber));
             }
         }
-        builder.setNeutralButton(LocaleController.getString("BotHelp", org.telegram.messenger.R.string.BotHelp), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda31
+        builder.setNeutralButton(LocaleController.getString("BotHelp", R.string.BotHelp), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda30
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
                 LoginActivity.lambda$needShowInvalidAlert$12(z, str, baseFragment, alertDialog, i2);
             }
         });
-        builder.setPositiveButton(LocaleController.getString("OK", org.telegram.messenger.R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), null);
         baseFragment.showDialog(builder.create());
     }
 
@@ -1440,9 +1383,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             baseFragment.getParentActivity().startActivity(Intent.createChooser(intent, "Send email..."));
         } catch (Exception unused) {
             AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
-            builder.setTitle(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle));
-            builder.setMessage(LocaleController.getString("NoMailInstalled", org.telegram.messenger.R.string.NoMailInstalled));
-            builder.setPositiveButton(LocaleController.getString("OK", org.telegram.messenger.R.string.OK), null);
+            builder.setTitle(LocaleController.getString(R.string.RestorePasswordNoEmailTitle));
+            builder.setMessage(LocaleController.getString("NoMailInstalled", R.string.NoMailInstalled));
+            builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), null);
             baseFragment.showDialog(builder.create());
         }
     }
@@ -1466,68 +1409,26 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         int i2 = this.currentDoneType;
         zArr[i2] = z;
         if (!z2) {
-            if (z) {
-                if (z3) {
-                    this.floatingButtonContainer.setVisibility(0);
-                    this.floatingAutoAnimator.setOffsetY(0.0f);
-                    return;
-                }
-                return;
-            }
             if (z3) {
-                this.floatingButtonContainer.setVisibility(8);
-                this.floatingAutoAnimator.setOffsetY(AndroidUtilities.dpf2(70.0f));
+                this.floatingButton.setButtonVisible(z, z2);
                 return;
             }
             return;
         }
         this.showDoneAnimation[i2] = new AnimatorSet();
-        if (z) {
-            if (z3) {
-                if (this.floatingButtonContainer.getVisibility() != 0) {
-                    this.floatingAutoAnimator.setOffsetY(AndroidUtilities.dpf2(70.0f));
-                    this.floatingButtonContainer.setVisibility(0);
-                }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.floatingAutoAnimator.getOffsetY(), 0.0f);
-                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda24
-                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        LoginActivity.this.lambda$showDoneButton$13(valueAnimator);
-                    }
-                });
-                this.showDoneAnimation[this.currentDoneType].play(ofFloat);
-            }
-        } else if (z3) {
-            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.floatingAutoAnimator.getOffsetY(), AndroidUtilities.dpf2(70.0f));
-            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda25
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    LoginActivity.this.lambda$showDoneButton$14(valueAnimator);
-                }
-            });
-            this.showDoneAnimation[this.currentDoneType].play(ofFloat2);
+        if (z3) {
+            this.floatingButton.setButtonVisible(z, z2);
         }
-        this.showDoneAnimation[this.currentDoneType].addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.9
+        this.showDoneAnimation[this.currentDoneType].addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.8
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                if (LoginActivity.this.showDoneAnimation[!z3 ? 1 : 0] == null || !LoginActivity.this.showDoneAnimation[!z3 ? 1 : 0].equals(animator) || z) {
-                    return;
-                }
-                if (z3) {
-                    LoginActivity.this.floatingButtonContainer.setVisibility(8);
-                }
-                if (!z3 || LoginActivity.this.floatingButtonIcon.getAlpha() == 1.0f) {
+                if (LoginActivity.this.showDoneAnimation[!z3 ? 1 : 0] == null || !LoginActivity.this.showDoneAnimation[!z3 ? 1 : 0].equals(animator) || z || !z3 || LoginActivity.this.floatingButtonIcon.getAlpha() == 1.0f) {
                     return;
                 }
                 LoginActivity.this.floatingButtonIcon.setAlpha(1.0f);
                 LoginActivity.this.floatingButtonIcon.setScaleX(1.0f);
                 LoginActivity.this.floatingButtonIcon.setScaleY(1.0f);
                 LoginActivity.this.floatingButtonIcon.setVisibility(0);
-                LoginActivity.this.floatingButtonContainer.setEnabled(true);
-                LoginActivity.this.floatingProgressView.setAlpha(0.0f);
-                LoginActivity.this.floatingProgressView.setScaleX(0.1f);
-                LoginActivity.this.floatingProgressView.setScaleY(0.1f);
-                LoginActivity.this.floatingProgressView.setVisibility(4);
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -1553,20 +1454,6 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showDoneButton$13(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.floatingAutoAnimator.setOffsetY(floatValue);
-        this.floatingButtonContainer.setAlpha(1.0f - (floatValue / AndroidUtilities.dpf2(70.0f)));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showDoneButton$14(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.floatingAutoAnimator.setOffsetY(floatValue);
-        this.floatingButtonContainer.setAlpha(1.0f - (floatValue / AndroidUtilities.dpf2(70.0f)));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public void onDoneButtonPressed() {
         if (this.doneButtonVisible[this.currentDoneType]) {
             if (this.radialProgressView.getTag() != null) {
@@ -1574,13 +1461,13 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     return;
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                builder.setTitle(LocaleController.getString("StopLoadingTitle", org.telegram.messenger.R.string.StopLoadingTitle));
-                builder.setMessage(LocaleController.getString("StopLoading", org.telegram.messenger.R.string.StopLoading));
-                builder.setPositiveButton(LocaleController.getString("WaitMore", org.telegram.messenger.R.string.WaitMore), null);
-                builder.setNegativeButton(LocaleController.getString("Stop", org.telegram.messenger.R.string.Stop), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda32
+                builder.setTitle(LocaleController.getString("StopLoadingTitle", R.string.StopLoadingTitle));
+                builder.setMessage(LocaleController.getString("StopLoading", R.string.StopLoading));
+                builder.setPositiveButton(LocaleController.getString("WaitMore", R.string.WaitMore), null);
+                builder.setNegativeButton(LocaleController.getString("Stop", R.string.Stop), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda31
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
-                        LoginActivity.this.lambda$onDoneButtonPressed$15(alertDialog, i);
+                        LoginActivity.this.lambda$onDoneButtonPressed$13(alertDialog, i);
                     }
                 });
                 showDialog(builder.create());
@@ -1591,32 +1478,32 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onDoneButtonPressed$15(AlertDialog alertDialog, int i) {
+    public /* synthetic */ void lambda$onDoneButtonPressed$13(AlertDialog alertDialog, int i) {
         this.views[this.currentViewNum].onCancelPressed();
         needHideProgress(true);
     }
 
     private void showEditDoneProgress(boolean z, boolean z2) {
-        lambda$showEditDoneProgress$16(z, z2, false);
+        lambda$showEditDoneProgress$14(z, z2, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: showEditDoneProgress, reason: merged with bridge method [inline-methods] */
-    public void lambda$showEditDoneProgress$16(final boolean z, final boolean z2, final boolean z3) {
+    public void lambda$showEditDoneProgress$14(final boolean z, final boolean z2, final boolean z3) {
         if (z2 && this.doneProgressVisible[this.currentDoneType] == z && !z3) {
             return;
         }
         if (Looper.myLooper() != Looper.getMainLooper()) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda26
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda24
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.this.lambda$showEditDoneProgress$16(z, z2, z3);
+                    LoginActivity.this.lambda$showEditDoneProgress$14(z, z2, z3);
                 }
             });
             return;
         }
         final int i = this.currentDoneType;
-        final boolean z4 = i == 0;
+        boolean z4 = i == 0;
         if (!z3 && !z4) {
             this.doneProgressVisible[i] = z;
             if (z2) {
@@ -1626,10 +1513,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     return;
                 } else if (z) {
                     Runnable[] runnableArr = this.editDoneCallback;
-                    Runnable runnable = new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda27
+                    Runnable runnable = new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda25
                         @Override // java.lang.Runnable
                         public final void run() {
-                            LoginActivity.this.lambda$showEditDoneProgress$17(i, z, z2);
+                            LoginActivity.this.lambda$showEditDoneProgress$15(i, z, z2);
                         }
                     };
                     runnableArr[i] = runnable;
@@ -1646,35 +1533,24 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         if (animatorSet != null) {
             animatorSet.cancel();
         }
+        if (z4) {
+            this.floatingButton.setProgressVisible(z, z2);
+            return;
+        }
         if (z2) {
             this.doneItemAnimation = new AnimatorSet();
             ValueAnimator ofFloat = ValueAnimator.ofFloat(z ? 0.0f : 1.0f, z ? 1.0f : 0.0f);
-            ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.10
+            ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.9
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationStart(Animator animator) {
                     if (z) {
-                        if (z4) {
-                            LoginActivity.this.floatingButtonIcon.setVisibility(0);
-                            LoginActivity.this.floatingProgressView.setVisibility(0);
-                            LoginActivity.this.floatingButtonContainer.setEnabled(false);
-                            return;
-                        }
                         LoginActivity.this.radialProgressView.setVisibility(0);
                     }
                 }
 
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
-                    if (z4) {
-                        if (!z) {
-                            LoginActivity.this.floatingProgressView.setVisibility(4);
-                            LoginActivity.this.floatingButtonIcon.setVisibility(0);
-                            LoginActivity.this.floatingButtonContainer.setEnabled(true);
-                        } else {
-                            LoginActivity.this.floatingButtonIcon.setVisibility(4);
-                            LoginActivity.this.floatingProgressView.setVisibility(0);
-                        }
-                    } else if (!z) {
+                    if (!z) {
                         LoginActivity.this.radialProgressView.setVisibility(4);
                     }
                     if (LoginActivity.this.doneItemAnimation == null || !LoginActivity.this.doneItemAnimation.equals(animator)) {
@@ -1683,10 +1559,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     LoginActivity.this.doneItemAnimation = null;
                 }
             });
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda28
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda26
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    LoginActivity.this.lambda$showEditDoneProgress$18(z4, valueAnimator);
+                    LoginActivity.this.lambda$showEditDoneProgress$16(valueAnimator);
                 }
             });
             this.doneItemAnimation.playTogether(ofFloat);
@@ -1695,18 +1571,6 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             return;
         }
         if (z) {
-            if (z4) {
-                this.floatingProgressView.setVisibility(0);
-                this.floatingButtonIcon.setVisibility(4);
-                this.floatingButtonContainer.setEnabled(false);
-                this.floatingButtonIcon.setScaleX(0.1f);
-                this.floatingButtonIcon.setScaleY(0.1f);
-                this.floatingButtonIcon.setAlpha(0.0f);
-                this.floatingProgressView.setScaleX(1.0f);
-                this.floatingProgressView.setScaleY(1.0f);
-                this.floatingProgressView.setAlpha(1.0f);
-                return;
-            }
             this.radialProgressView.setVisibility(0);
             this.radialProgressView.setScaleX(1.0f);
             this.radialProgressView.setScaleY(1.0f);
@@ -1714,18 +1578,6 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             return;
         }
         this.radialProgressView.setTag(null);
-        if (z4) {
-            this.floatingProgressView.setVisibility(4);
-            this.floatingButtonIcon.setVisibility(0);
-            this.floatingButtonContainer.setEnabled(true);
-            this.floatingProgressView.setScaleX(0.1f);
-            this.floatingProgressView.setScaleY(0.1f);
-            this.floatingProgressView.setAlpha(0.0f);
-            this.floatingButtonIcon.setScaleX(1.0f);
-            this.floatingButtonIcon.setScaleY(1.0f);
-            this.floatingButtonIcon.setAlpha(1.0f);
-            return;
-        }
         this.radialProgressView.setVisibility(4);
         this.radialProgressView.setScaleX(0.1f);
         this.radialProgressView.setScaleY(0.1f);
@@ -1733,31 +1585,19 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showEditDoneProgress$17(int i, boolean z, boolean z2) {
+    public /* synthetic */ void lambda$showEditDoneProgress$15(int i, boolean z, boolean z2) {
         int i2 = this.currentDoneType;
         this.currentDoneType = i;
-        lambda$showEditDoneProgress$16(z, z2, true);
+        lambda$showEditDoneProgress$14(z, z2, true);
         this.currentDoneType = i2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showEditDoneProgress$18(boolean z, ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$showEditDoneProgress$16(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        if (z) {
-            float f = 1.0f - floatValue;
-            float f2 = (f * 0.9f) + 0.1f;
-            this.floatingButtonIcon.setScaleX(f2);
-            this.floatingButtonIcon.setScaleY(f2);
-            this.floatingButtonIcon.setAlpha(f);
-            float f3 = (0.9f * floatValue) + 0.1f;
-            this.floatingProgressView.setScaleX(f3);
-            this.floatingProgressView.setScaleY(f3);
-            this.floatingProgressView.setAlpha(floatValue);
-            return;
-        }
-        float f4 = (0.9f * floatValue) + 0.1f;
-        this.radialProgressView.setScaleX(f4);
-        this.radialProgressView.setScaleY(f4);
+        float f = (0.9f * floatValue) + 0.1f;
+        this.radialProgressView.setScaleX(f);
+        this.radialProgressView.setScaleY(f);
         this.radialProgressView.setAlpha(floatValue);
     }
 
@@ -1841,7 +1681,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             slideView2.setX(z2 ? -AndroidUtilities.displaySize.x : AndroidUtilities.displaySize.x);
             slideView2.setVisibility(0);
             AnimatorSet animatorSet = new AnimatorSet();
-            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.11
+            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.10
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (LoginActivity.this.currentDoneType == 0 && z3) {
@@ -1905,12 +1745,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (this.newAccount) {
                 this.newAccount = false;
                 this.pendingSwitchingAccount = true;
-                ((LaunchActivity) getParentActivity()).switchToAccount(this.currentAccount, false, new GenericProvider() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda43
+                ((LaunchActivity) getParentActivity()).switchToAccount(this.currentAccount, false, new GenericProvider() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda41
                     @Override // org.telegram.messenger.GenericProvider
                     public final Object provide(Object obj) {
-                        DialogsActivity lambda$needFinishActivity$19;
-                        lambda$needFinishActivity$19 = LoginActivity.lambda$needFinishActivity$19(z, (Void) obj);
-                        return lambda$needFinishActivity$19;
+                        MainTabsActivity lambda$needFinishActivity$17;
+                        lambda$needFinishActivity$17 = LoginActivity.lambda$needFinishActivity$17(z, (Void) obj);
+                        return lambda$needFinishActivity$17;
                     }
                 });
                 this.pendingSwitchingAccount = false;
@@ -1925,7 +1765,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             } else {
                 Bundle bundle = new Bundle();
                 bundle.putBoolean("afterSignup", z);
-                presentFragment(new DialogsActivity(bundle), true);
+                MainTabsActivity mainTabsActivity = new MainTabsActivity();
+                mainTabsActivity.prepareDialogsActivity(bundle);
+                presentFragment(mainTabsActivity, true);
             }
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
             LocaleController.getInstance().loadRemoteLanguages(this.currentAccount);
@@ -1938,10 +1780,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ DialogsActivity lambda$needFinishActivity$19(boolean z, Void r2) {
+    public static /* synthetic */ MainTabsActivity lambda$needFinishActivity$17(boolean z, Void r2) {
         Bundle bundle = new Bundle();
         bundle.putBoolean("afterSignup", z);
-        return new DialogsActivity(bundle);
+        MainTabsActivity mainTabsActivity = new MainTabsActivity();
+        mainTabsActivity.prepareDialogsActivity(bundle);
+        return mainTabsActivity;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1989,8 +1833,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: fillNextCodeParams, reason: merged with bridge method [inline-methods] */
-    public void lambda$resendCodeFromSafetyNet$20(Bundle bundle, TLRPC.auth_SentCode auth_sentcode) {
-        lambda$fillNextCodeParams$28(bundle, auth_sentcode, true);
+    public void lambda$resendCodeFromSafetyNet$18(Bundle bundle, TLRPC.auth_SentCode auth_sentcode) {
+        lambda$fillNextCodeParams$26(bundle, auth_sentcode, true);
     }
 
     private void resendCodeFromSafetyNet(final Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str) {
@@ -2004,49 +1848,49 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 tL_auth_resendCode.flags |= 1;
                 tL_auth_resendCode.reason = str;
             }
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda30
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda28
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    LoginActivity.this.lambda$resendCodeFromSafetyNet$23(bundle, tLObject, tL_error);
+                    LoginActivity.this.lambda$resendCodeFromSafetyNet$21(bundle, tLObject, tL_error);
                 }
             }, 10);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$resendCodeFromSafetyNet$23(final Bundle bundle, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$resendCodeFromSafetyNet$21(final Bundle bundle, final TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject != null && !(((TLRPC.auth_SentCode) tLObject).type instanceof TLRPC.TL_auth_sentCodeTypeFirebaseSms)) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda34
-                @Override // java.lang.Runnable
-                public final void run() {
-                    LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, tLObject);
-                }
-            });
-        } else {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda35
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.this.lambda$resendCodeFromSafetyNet$22();
+                    LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, tLObject);
+                }
+            });
+        } else {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda36
+                @Override // java.lang.Runnable
+                public final void run() {
+                    LoginActivity.this.lambda$resendCodeFromSafetyNet$20();
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$resendCodeFromSafetyNet$22() {
+    public /* synthetic */ void lambda$resendCodeFromSafetyNet$20() {
         if (getParentActivity() == null || getParentActivity().isFinishing() || getContext() == null) {
             return;
         }
-        new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getString(org.telegram.messenger.R.string.SafetyNetErrorOccurred)).setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda39
+        new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getString(R.string.SafetyNetErrorOccurred)).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda38
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                LoginActivity.this.lambda$resendCodeFromSafetyNet$21(alertDialog, i);
+                LoginActivity.this.lambda$resendCodeFromSafetyNet$19(alertDialog, i);
             }
         }).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$resendCodeFromSafetyNet$21(AlertDialog alertDialog, int i) {
+    public /* synthetic */ void lambda$resendCodeFromSafetyNet$19(AlertDialog alertDialog, int i) {
         this.forceDisableSafetyNet = true;
         if (this.currentViewNum != 0) {
             setPage(0, true, null, true);
@@ -2073,12 +1917,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         bundle.putString("phone", "+" + str);
         bundle.putString("ephone", "+" + str);
         bundle.putString("phoneFormated", str);
-        lambda$fillNextCodeParams$28(bundle, auth_sentcode, true);
+        lambda$fillNextCodeParams$26(bundle, auth_sentcode, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: fillNextCodeParams, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
-    public void lambda$fillNextCodeParams$28(final Bundle bundle, final TLRPC.auth_SentCode auth_sentcode, final boolean z) {
+    public void lambda$fillNextCodeParams$26(final Bundle bundle, final TLRPC.auth_SentCode auth_sentcode, final boolean z) {
         if (auth_sentcode instanceof TLRPC.TL_auth_sentCodePaymentRequired) {
             TLRPC.TL_auth_sentCodePaymentRequired tL_auth_sentCodePaymentRequired = (TLRPC.TL_auth_sentCodePaymentRequired) auth_sentcode;
             bundle.putString("product", tL_auth_sentCodePaymentRequired.store_product);
@@ -2104,12 +1948,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     create.requestIntegrityToken(IntegrityTokenRequest.builder().setNonce(str).setCloudProjectNumber(tL_auth_sentCodeTypeFirebaseSms.play_integrity_project_id).build()).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda20
                         @Override // com.google.android.gms.tasks.OnSuccessListener
                         public final void onSuccess(Object obj) {
-                            LoginActivity.this.lambda$fillNextCodeParams$26(bundle, auth_sentcode, string, z, (IntegrityTokenResponse) obj);
+                            LoginActivity.this.lambda$fillNextCodeParams$24(bundle, auth_sentcode, string, z, (IntegrityTokenResponse) obj);
                         }
                     }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda21
                         @Override // com.google.android.gms.tasks.OnFailureListener
                         public final void onFailure(Exception exc) {
-                            LoginActivity.this.lambda$fillNextCodeParams$27(bundle, auth_sentcode, exc);
+                            LoginActivity.this.lambda$fillNextCodeParams$25(bundle, auth_sentcode, exc);
                         }
                     });
                     return;
@@ -2117,12 +1961,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 SafetyNet.getClient(ApplicationLoader.applicationContext).attest(auth_sentcode.type.nonce, BuildVars.SAFETYNET_KEY).addOnSuccessListener(new OnSuccessListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda22
                     @Override // com.google.android.gms.tasks.OnSuccessListener
                     public final void onSuccess(Object obj) {
-                        LoginActivity.this.lambda$fillNextCodeParams$30(string, auth_sentcode, bundle, z, (SafetyNetApi.AttestationResponse) obj);
+                        LoginActivity.this.lambda$fillNextCodeParams$28(string, auth_sentcode, bundle, z, (SafetyNetApi.AttestationResponse) obj);
                     }
                 }).addOnFailureListener(new OnFailureListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda23
                     @Override // com.google.android.gms.tasks.OnFailureListener
                     public final void onFailure(Exception exc) {
-                        LoginActivity.this.lambda$fillNextCodeParams$31(bundle, auth_sentcode, exc);
+                        LoginActivity.this.lambda$fillNextCodeParams$29(bundle, auth_sentcode, exc);
                     }
                 });
                 return;
@@ -2221,7 +2065,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillNextCodeParams$26(final Bundle bundle, final TLRPC.auth_SentCode auth_sentcode, String str, final boolean z, IntegrityTokenResponse integrityTokenResponse) {
+    public /* synthetic */ void lambda$fillNextCodeParams$24(final Bundle bundle, final TLRPC.auth_SentCode auth_sentcode, String str, final boolean z, IntegrityTokenResponse integrityTokenResponse) {
         String str2 = integrityTokenResponse.token();
         if (str2 == null) {
             FileLog.d("Resend firebase sms because integrity token = null");
@@ -2233,24 +2077,24 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         tL_auth_requestFirebaseSms.phone_code_hash = auth_sentcode.phone_code_hash;
         tL_auth_requestFirebaseSms.play_integrity_token = str2;
         tL_auth_requestFirebaseSms.flags |= 4;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_auth_requestFirebaseSms, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda29
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_auth_requestFirebaseSms, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda27
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LoginActivity.this.lambda$fillNextCodeParams$25(auth_sentcode, bundle, z, tLObject, tL_error);
+                LoginActivity.this.lambda$fillNextCodeParams$23(auth_sentcode, bundle, z, tLObject, tL_error);
             }
         }, 10);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillNextCodeParams$25(final TLRPC.auth_SentCode auth_sentcode, final Bundle bundle, final boolean z, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$fillNextCodeParams$23(final TLRPC.auth_SentCode auth_sentcode, final Bundle bundle, final boolean z, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject instanceof TLRPC.TL_boolTrue) {
             needHideProgress(false);
             this.isRequestingFirebaseSms = false;
             auth_sentcode.type.verifiedFirebase = true;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda38
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda33
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.this.lambda$fillNextCodeParams$24(bundle, auth_sentcode, z);
+                    LoginActivity.this.lambda$fillNextCodeParams$22(bundle, auth_sentcode, z);
                 }
             });
             return;
@@ -2260,14 +2104,14 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillNextCodeParams$27(Bundle bundle, TLRPC.auth_SentCode auth_sentcode, Exception exc) {
+    public /* synthetic */ void lambda$fillNextCodeParams$25(Bundle bundle, TLRPC.auth_SentCode auth_sentcode, Exception exc) {
         String str = "PLAYINTEGRITY_EXCEPTION_" + errorString(exc);
         FileLog.e("{" + str + "} Resend firebase sms because integrity threw error", exc);
         resendCodeFromSafetyNet(bundle, auth_sentcode, str);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillNextCodeParams$30(String str, final TLRPC.auth_SentCode auth_sentcode, final Bundle bundle, final boolean z, SafetyNetApi.AttestationResponse attestationResponse) {
+    public /* synthetic */ void lambda$fillNextCodeParams$28(String str, final TLRPC.auth_SentCode auth_sentcode, final Bundle bundle, final boolean z, SafetyNetApi.AttestationResponse attestationResponse) {
         String jwsResult = attestationResponse.getJwsResult();
         if (jwsResult != null) {
             TLRPC.TL_auth_requestFirebaseSms tL_auth_requestFirebaseSms = new TLRPC.TL_auth_requestFirebaseSms();
@@ -2282,10 +2126,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     boolean optBoolean = jSONObject.optBoolean("basicIntegrity");
                     boolean optBoolean2 = jSONObject.optBoolean("ctsProfileMatch");
                     if (optBoolean && optBoolean2) {
-                        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_auth_requestFirebaseSms, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda33
+                        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_auth_requestFirebaseSms, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda29
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                LoginActivity.this.lambda$fillNextCodeParams$29(auth_sentcode, bundle, z, tLObject, tL_error);
+                                LoginActivity.this.lambda$fillNextCodeParams$27(auth_sentcode, bundle, z, tLObject, tL_error);
                             }
                         }, 10);
                     } else if (!optBoolean && !optBoolean2) {
@@ -2315,15 +2159,15 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillNextCodeParams$29(final TLRPC.auth_SentCode auth_sentcode, final Bundle bundle, final boolean z, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$fillNextCodeParams$27(final TLRPC.auth_SentCode auth_sentcode, final Bundle bundle, final boolean z, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject instanceof TLRPC.TL_boolTrue) {
             needHideProgress(false);
             this.isRequestingFirebaseSms = false;
             auth_sentcode.type.verifiedFirebase = true;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda36
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda32
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.this.lambda$fillNextCodeParams$28(bundle, auth_sentcode, z);
+                    LoginActivity.this.lambda$fillNextCodeParams$26(bundle, auth_sentcode, z);
                 }
             });
             return;
@@ -2333,7 +2177,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$fillNextCodeParams$31(Bundle bundle, TLRPC.auth_SentCode auth_sentcode, Exception exc) {
+    public /* synthetic */ void lambda$fillNextCodeParams$29(Bundle bundle, TLRPC.auth_SentCode auth_sentcode, Exception exc) {
         FileLog.e(exc);
         String str = "SAFETYNET_EXCEPTION_" + errorString(exc);
         FileLog.d("{" + str + "} Resend firebase sms because of safetynet exception");
@@ -2384,7 +2228,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
 
         private void showDebugMenu() {
-            new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(org.telegram.messenger.R.string.SettingsDebug)).setItems(new String[]{LocaleController.getString(BuildVars.LOGS_ENABLED ? org.telegram.messenger.R.string.DebugMenuDisableLogs : org.telegram.messenger.R.string.DebugMenuEnableLogs), LocaleController.getString(org.telegram.messenger.R.string.DebugSendLogs)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda22
+            new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(R.string.SettingsDebug)).setItems(new String[]{LocaleController.getString(BuildVars.LOGS_ENABLED ? R.string.DebugMenuDisableLogs : R.string.DebugMenuEnableLogs), LocaleController.getString(R.string.DebugSendLogs)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda22
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     LoginActivity.PhoneView.this.lambda$showDebugMenu$0(dialogInterface, i);
@@ -2397,7 +2241,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (i == 0) {
                 BuildVars.LOGS_ENABLED = !BuildVars.LOGS_ENABLED;
                 ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).commit();
-                BulletinFactory.of(LoginActivity.this).createSimpleBulletin(org.telegram.messenger.R.raw.chats_infotip, BuildVars.LOGS_ENABLED ? "Logs enabled." : "Logs disabled.").show();
+                BulletinFactory.of(LoginActivity.this).createSimpleBulletin(R.raw.chats_infotip, BuildVars.LOGS_ENABLED ? "Logs enabled." : "Logs disabled.").show();
                 if (BuildVars.LOGS_ENABLED) {
                     FileLog.d("app start time = " + ApplicationLoader.startTime);
                     try {
@@ -2439,7 +2283,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.titleView = textView;
             textView.setTextSize(1, 18.0f);
             this.titleView.setTypeface(AndroidUtilities.bold());
-            this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode == 2 ? org.telegram.messenger.R.string.ChangePhoneNewNumber : org.telegram.messenger.R.string.YourNumber));
+            this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode == 2 ? R.string.ChangePhoneNewNumber : R.string.YourNumber));
             this.titleView.setGravity(17);
             this.titleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             addView(this.titleView, LayoutHelper.createFrame(-1, -2.0f, 1, 32.0f, 0.0f, 32.0f, 0.0f));
@@ -2451,7 +2295,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             });
             LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
             this.subtitleView = linksTextView;
-            linksTextView.setText(LocaleController.getString(LoginActivity.this.activityMode == 2 ? org.telegram.messenger.R.string.ChangePhoneHelp : org.telegram.messenger.R.string.StartText));
+            linksTextView.setText(LocaleController.getString(LoginActivity.this.activityMode == 2 ? R.string.ChangePhoneHelp : R.string.StartText));
             this.subtitleView.setTextSize(1, 14.0f);
             this.subtitleView.setGravity(17);
             this.subtitleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
@@ -2466,12 +2310,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     return lambda$new$2;
                 }
             });
-            Animation loadAnimation = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.text_in);
+            Animation loadAnimation = AnimationUtils.loadAnimation(context, R.anim.text_in);
             loadAnimation.setInterpolator(Easings.easeInOutQuad);
             this.countryButton.setInAnimation(loadAnimation);
             ImageView imageView = new ImageView(context);
             this.chevronRight = imageView;
-            imageView.setImageResource(org.telegram.messenger.R.drawable.msg_inputarrow);
+            imageView.setImageResource(R.drawable.msg_inputarrow);
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(0);
             linearLayout.setGravity(16);
@@ -2479,7 +2323,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             linearLayout.addView(this.chevronRight, LayoutHelper.createLinearRelatively(24.0f, 24.0f, 0, 0.0f, 0.0f, 14.0f, 0.0f));
             OutlineTextContainerView outlineTextContainerView = new OutlineTextContainerView(context);
             this.countryOutlineView = outlineTextContainerView;
-            int i4 = org.telegram.messenger.R.string.Country;
+            int i4 = R.string.Country;
             outlineTextContainerView.setText(LocaleController.getString(i4));
             this.countryOutlineView.addView(linearLayout, LayoutHelper.createFrame(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
             this.countryOutlineView.setForceUseCenter(true);
@@ -2504,7 +2348,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.phoneOutlineView = outlineTextContainerView2;
             outlineTextContainerView2.addView(linearLayout2, LayoutHelper.createFrame(-1, -2.0f, 16, 16.0f, 8.0f, 16.0f, 8.0f));
             OutlineTextContainerView outlineTextContainerView3 = this.phoneOutlineView;
-            int i5 = org.telegram.messenger.R.string.PhoneNumber;
+            int i5 = R.string.PhoneNumber;
             outlineTextContainerView3.setText(LocaleController.getString(i5));
             addView(this.phoneOutlineView, LayoutHelper.createLinear(-1, 58, 16.0f, 8.0f, 16.0f, 8.0f));
             TextView textView2 = new TextView(context);
@@ -2534,7 +2378,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.codeField.setImeOptions(268435461);
             this.codeField.setBackground(null);
             this.codeField.setShowSoftInputOnFocus(!hasCustomKeyboard() || LoginActivity.this.isCustomKeyboardForceDisabled());
-            this.codeField.setContentDescription(LocaleController.getString(org.telegram.messenger.R.string.LoginAccessibilityCountryCode));
+            this.codeField.setContentDescription(LocaleController.getString(R.string.LoginAccessibilityCountryCode));
             linearLayout2.addView(this.codeField, LayoutHelper.createLinear(55, 36, -9.0f, 0.0f, 0.0f, 0.0f));
             this.codeField.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.LoginActivity.PhoneView.2
                 @Override // android.text.TextWatcher
@@ -2721,7 +2565,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         LoginActivity.this.keyboardView.setEditText(this);
                         LoginActivity.this.keyboardView.setDispatchBackWhenEmpty(true);
                         if (PhoneView.this.countryState == 2) {
-                            PhoneView.this.setCountryButtonText(LocaleController.getString(org.telegram.messenger.R.string.WrongCountry));
+                            PhoneView.this.setCountryButtonText(LocaleController.getString(R.string.WrongCountry));
                             return;
                         }
                         return;
@@ -2839,7 +2683,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (LoginActivity.this.newAccount && LoginActivity.this.activityMode == 0) {
                 CheckBoxCell checkBoxCell = new CheckBoxCell(context, 2);
                 this.syncContactsBox = checkBoxCell;
-                checkBoxCell.setText(LocaleController.getString("SyncContacts", org.telegram.messenger.R.string.SyncContacts), "", LoginActivity.this.syncContacts, false);
+                checkBoxCell.setText(LocaleController.getString("SyncContacts", R.string.SyncContacts), "", LoginActivity.this.syncContacts, false);
                 CheckBoxCell checkBoxCell2 = this.syncContactsBox;
                 if (LocaleController.isRTL && AndroidUtilities.isSmallScreen()) {
                     i2 = 16;
@@ -2863,7 +2707,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (z && LoginActivity.this.activityMode == 0) {
                 CheckBoxCell checkBoxCell3 = new CheckBoxCell(context, 2);
                 this.testBackendCheckBox = checkBoxCell3;
-                checkBoxCell3.setText(LocaleController.getString(org.telegram.messenger.R.string.DebugTestBackend), "", LoginActivity.this.testBackend = LoginActivity.this.getConnectionsManager().isTestBackend(), false);
+                checkBoxCell3.setText(LocaleController.getString(R.string.DebugTestBackend), "", LoginActivity.this.testBackend = LoginActivity.this.getConnectionsManager().isTestBackend(), false);
                 addView(this.testBackendCheckBox, LayoutHelper.createLinear(-2, -1, 51, 16, 0, 16 + ((LocaleController.isRTL && AndroidUtilities.isSmallScreen()) ? 56 : 0), 0));
                 i -= 24;
                 this.testBackendCheckBox.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda12
@@ -3054,7 +2898,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 lambda$onNextPressed$16(null);
                 return true;
             }
-            LoginActivity.this.phoneNumberConfirmView.popupFabContainer.callOnClick();
+            LoginActivity.this.phoneNumberConfirmView.fabButton.callOnClick();
             return true;
         }
 
@@ -3066,9 +2910,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             LoginActivity.this.syncContacts = !r0.syncContacts;
             ((CheckBoxCell) view).setChecked(LoginActivity.this.syncContacts, true);
             if (LoginActivity.this.syncContacts) {
-                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(org.telegram.messenger.R.raw.contacts_sync_on, LocaleController.getString("SyncContactsOn", org.telegram.messenger.R.string.SyncContactsOn)).show();
+                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(R.raw.contacts_sync_on, LocaleController.getString("SyncContactsOn", R.string.SyncContactsOn)).show();
             } else {
-                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(org.telegram.messenger.R.raw.contacts_sync_off, LocaleController.getString("SyncContactsOff", org.telegram.messenger.R.string.SyncContactsOff)).show();
+                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(R.raw.contacts_sync_off, LocaleController.getString("SyncContactsOff", R.string.SyncContactsOff)).show();
             }
         }
 
@@ -3349,7 +3193,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public void setCountryButtonText(CharSequence charSequence) {
-            Animation loadAnimation = AnimationUtils.loadAnimation(ApplicationLoader.applicationContext, (this.countryButton.getCurrentView().getText() == null || charSequence != null) ? org.telegram.messenger.R.anim.text_out : org.telegram.messenger.R.anim.text_out_down);
+            Animation loadAnimation = AnimationUtils.loadAnimation(ApplicationLoader.applicationContext, (this.countryButton.getCurrentView().getText() == null || charSequence != null) ? R.anim.text_out : R.anim.text_out_down);
             loadAnimation.setInterpolator(Easings.easeInOutQuad);
             this.countryButton.setOutAnimation(loadAnimation);
             CharSequence text = this.countryButton.getCurrentView().getText();
@@ -3446,7 +3290,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 LoginActivity loginActivity = LoginActivity.this;
                 Context context = LoginActivity.this.fragmentView.getContext();
                 LoginActivity loginActivity2 = LoginActivity.this;
-                loginActivity.phoneNumberConfirmView = new PhoneNumberConfirmView(context, (ViewGroup) loginActivity2.fragmentView, loginActivity2.floatingButtonContainer, str2, new 6(str));
+                loginActivity.phoneNumberConfirmView = new PhoneNumberConfirmView(context, (ViewGroup) loginActivity2.fragmentView, loginActivity2.floatingButton, str2, new 6(str));
                 LoginActivity.this.phoneNumberConfirmView.show();
                 return;
             }
@@ -3507,16 +3351,16 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                                         }
                                         globalMainSettings.edit().putBoolean("firstlogin", false).commit();
                                         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-                                        builder.setPositiveButton(LocaleController.getString("Continue", org.telegram.messenger.R.string.Continue), null);
+                                        builder.setPositiveButton(LocaleController.getString("Continue", R.string.Continue), null);
                                         if (!z && (!z2 || !z3)) {
-                                            builder.setMessage(LocaleController.getString("AllowReadCallAndLog", org.telegram.messenger.R.string.AllowReadCallAndLog));
-                                            i2 = org.telegram.messenger.R.raw.calls_log;
+                                            builder.setMessage(LocaleController.getString("AllowReadCallAndLog", R.string.AllowReadCallAndLog));
+                                            i2 = R.raw.calls_log;
                                         } else if (!z2 || !z3) {
-                                            builder.setMessage(LocaleController.getString("AllowReadCallLog", org.telegram.messenger.R.string.AllowReadCallLog));
-                                            i2 = org.telegram.messenger.R.raw.calls_log;
+                                            builder.setMessage(LocaleController.getString("AllowReadCallLog", R.string.AllowReadCallLog));
+                                            i2 = R.raw.calls_log;
                                         } else {
-                                            builder.setMessage(LocaleController.getString("AllowReadCall", org.telegram.messenger.R.string.AllowReadCall));
-                                            i2 = org.telegram.messenger.R.raw.incoming_calls;
+                                            builder.setMessage(LocaleController.getString("AllowReadCall", R.string.AllowReadCall));
+                                            i2 = R.raw.incoming_calls;
                                         }
                                         builder.setTopAnimation(i2, 46, false, Theme.getColor(Theme.key_dialogTopBackground));
                                         LoginActivity loginActivity3 = LoginActivity.this;
@@ -3544,12 +3388,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             int i4 = this.countryState;
             if (i4 == i) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ChooseCountry", org.telegram.messenger.R.string.ChooseCountry));
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ChooseCountry", R.string.ChooseCountry));
                 LoginActivity.this.needHideProgress(false);
                 return;
             }
             if (i4 == 2 && !BuildVars.DEBUG_VERSION) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.WrongCountry));
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.WrongCountry));
                 LoginActivity.this.needHideProgress(false);
                 return;
             }
@@ -3559,15 +3403,15 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     UserConfig userConfig = UserConfig.getInstance(i5);
                     if (userConfig.isClientActivated() && PhoneNumberUtils.compare(stripExceptNumbers, userConfig.getCurrentUser().phone) && ConnectionsManager.getInstance(i5).isTestBackend() == LoginActivity.this.testBackend) {
                         AlertDialog.Builder builder2 = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-                        builder2.setTitle(LocaleController.getString(org.telegram.messenger.R.string.AppName));
-                        builder2.setMessage(LocaleController.getString("AccountAlreadyLoggedIn", org.telegram.messenger.R.string.AccountAlreadyLoggedIn));
-                        builder2.setPositiveButton(LocaleController.getString("AccountSwitch", org.telegram.messenger.R.string.AccountSwitch), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda3
+                        builder2.setTitle(LocaleController.getString(R.string.AppName));
+                        builder2.setMessage(LocaleController.getString("AccountAlreadyLoggedIn", R.string.AccountAlreadyLoggedIn));
+                        builder2.setPositiveButton(LocaleController.getString("AccountSwitch", R.string.AccountSwitch), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda3
                             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                             public final void onClick(AlertDialog alertDialog, int i6) {
                                 LoginActivity.PhoneView.this.lambda$onNextPressed$18(i5, alertDialog, i6);
                             }
                         });
-                        builder2.setNegativeButton(LocaleController.getString("OK", org.telegram.messenger.R.string.OK), null);
+                        builder2.setNegativeButton(LocaleController.getString("OK", R.string.OK), null);
                         LoginActivity.this.showDialog(builder2.create());
                         LoginActivity.this.needHideProgress(false);
                         return;
@@ -3811,16 +3655,16 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                                             }
                                             globalMainSettings.edit().putBoolean("firstlogin", false).commit();
                                             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-                                            builder.setPositiveButton(LocaleController.getString("Continue", org.telegram.messenger.R.string.Continue), null);
+                                            builder.setPositiveButton(LocaleController.getString("Continue", R.string.Continue), null);
                                             if (!z3 && (!z4 || !z)) {
-                                                builder.setMessage(LocaleController.getString("AllowReadCallAndLog", org.telegram.messenger.R.string.AllowReadCallAndLog));
-                                                i = org.telegram.messenger.R.raw.calls_log;
+                                                builder.setMessage(LocaleController.getString("AllowReadCallAndLog", R.string.AllowReadCallAndLog));
+                                                i = R.raw.calls_log;
                                             } else if (!z4 || !z) {
-                                                builder.setMessage(LocaleController.getString("AllowReadCallLog", org.telegram.messenger.R.string.AllowReadCallLog));
-                                                i = org.telegram.messenger.R.raw.calls_log;
+                                                builder.setMessage(LocaleController.getString("AllowReadCallLog", R.string.AllowReadCallLog));
+                                                i = R.raw.calls_log;
                                             } else {
-                                                builder.setMessage(LocaleController.getString("AllowReadCall", org.telegram.messenger.R.string.AllowReadCall));
-                                                i = org.telegram.messenger.R.raw.incoming_calls;
+                                                builder.setMessage(LocaleController.getString("AllowReadCall", R.string.AllowReadCall));
+                                                i = R.raw.incoming_calls;
                                             }
                                             builder.setTopAnimation(i, 46, false, Theme.getColor(Theme.key_dialogTopBackground));
                                             LoginActivity loginActivity = LoginActivity.this;
@@ -3874,7 +3718,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             /* JADX INFO: Access modifiers changed from: private */
             public /* synthetic */ void lambda$onConfirm$0(String str, PhoneNumberConfirmView phoneNumberConfirmView) {
                 PhoneView.this.lambda$onNextPressed$16(str);
-                LoginActivity.this.floatingProgressView.sync(phoneNumberConfirmView.floatingProgressView);
+                LoginActivity.this.floatingButton.progressView.sync(phoneNumberConfirmView.fabButton.progressView);
             }
         }
 
@@ -3901,7 +3745,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.nextPressed = false;
             if (tL_error == null) {
                 if (!(tLObject instanceof TLRPC.TL_auth_sentCodeSuccess)) {
-                    LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, (TLRPC.auth_SentCode) tLObject);
+                    LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, (TLRPC.auth_SentCode) tLObject);
                 } else {
                     TLRPC.auth_Authorization auth_authorization = ((TLRPC.TL_auth_sentCodeSuccess) tLObject).authorization;
                     if (!(auth_authorization instanceof TLRPC.TL_auth_authorizationSignUpRequired)) {
@@ -3927,19 +3771,19 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     } else if (tL_error.text.contains("PHONE_NUMBER_INVALID")) {
                         LoginActivity.needShowInvalidAlert(LoginActivity.this, str, phoneInputData, false);
                     } else if (tL_error.text.contains("PHONE_PASSWORD_FLOOD")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", org.telegram.messenger.R.string.FloodWait));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                     } else if (tL_error.text.contains("PHONE_NUMBER_FLOOD")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("PhoneNumberFlood", org.telegram.messenger.R.string.PhoneNumberFlood));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("PhoneNumberFlood", R.string.PhoneNumberFlood));
                     } else if (tL_error.text.contains("PHONE_NUMBER_BANNED")) {
                         LoginActivity.needShowInvalidAlert(LoginActivity.this, str, phoneInputData, true);
                     } else if (tL_error.text.contains("PHONE_CODE_EMPTY") || tL_error.text.contains("PHONE_CODE_INVALID")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.InvalidCode));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidCode));
                     } else if (tL_error.text.contains("PHONE_CODE_EXPIRED")) {
                         onBackPressed(true);
                         LoginActivity.this.setPage(0, true, null, true);
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", org.telegram.messenger.R.string.CodeExpired));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                     } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", org.telegram.messenger.R.string.FloodWait));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                     } else if (tL_error.code != -1000) {
                         AlertsCreator.processError(((BaseFragment) LoginActivity.this).currentAccount, tL_error, LoginActivity.this, tLObject2, phoneInputData.phoneNumber);
                     }
@@ -3966,12 +3810,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.nextPressed = false;
             LoginActivity.this.showDoneButton(false, true);
             if (tL_error != null) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                 return;
             }
             TL_account.Password password = (TL_account.Password) tLObject;
             if (!TwoStepVerificationActivity.canHandleCurrentPassword(password, true)) {
-                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", org.telegram.messenger.R.string.UpdateAppAlert), true);
+                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                 return;
             }
             Bundle bundle = new Bundle();
@@ -4140,9 +3984,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             globalMainSettings.edit().putBoolean("firstloginshow", false).commit();
             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-            builder.setTopAnimation(org.telegram.messenger.R.raw.incoming_calls, 46, false, Theme.getColor(Theme.key_dialogTopBackground));
-            builder.setPositiveButton(LocaleController.getString("Continue", org.telegram.messenger.R.string.Continue), null);
-            builder.setMessage(LocaleController.getString("AllowFillNumber", org.telegram.messenger.R.string.AllowFillNumber));
+            builder.setTopAnimation(R.raw.incoming_calls, 46, false, Theme.getColor(Theme.key_dialogTopBackground));
+            builder.setPositiveButton(LocaleController.getString("Continue", R.string.Continue), null);
+            builder.setMessage(LocaleController.getString("AllowFillNumber", R.string.AllowFillNumber));
             LoginActivity loginActivity = LoginActivity.this;
             loginActivity.permissionsShowDialog = loginActivity.showDialog(builder.create(), true, null);
             LoginActivity.this.needRequestPermissions = true;
@@ -4220,7 +4064,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (this.subtitleView == null || !"CANCELLED".equals(str)) {
                     return;
                 }
-                this.subtitleView.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(org.telegram.messenger.R.string.StartTextPasskey), new Runnable() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda23
+                this.subtitleView.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StartTextPasskey), new Runnable() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda23
                     @Override // java.lang.Runnable
                     public final void run() {
                         LoginActivity.PhoneView.this.lambda$requestPasskey$26();
@@ -4280,12 +4124,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.nextPressed = false;
             LoginActivity.this.showDoneButton(false, true);
             if (tL_error != null) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                 return;
             }
             TL_account.Password password = (TL_account.Password) tLObject;
             if (!TwoStepVerificationActivity.canHandleCurrentPassword(password, true)) {
-                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", org.telegram.messenger.R.string.UpdateAppAlert), true);
+                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                 return;
             }
             Bundle bundle = new Bundle();
@@ -4297,7 +4141,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // org.telegram.ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("YourPhone", org.telegram.messenger.R.string.YourPhone);
+            return LocaleController.getString("YourPhone", R.string.YourPhone);
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -4435,18 +4279,18 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             return true;
         }
 
-        static /* synthetic */ ProgressView access$10500(LoginActivitySmsView loginActivitySmsView) {
+        static /* synthetic */ ProgressView access$10300(LoginActivitySmsView loginActivitySmsView) {
             loginActivitySmsView.getClass();
             return null;
         }
 
-        static /* synthetic */ int access$8826(LoginActivitySmsView loginActivitySmsView, double d) {
+        static /* synthetic */ int access$8626(LoginActivitySmsView loginActivitySmsView, double d) {
             int i = (int) (loginActivitySmsView.time - d);
             loginActivitySmsView.time = i;
             return i;
         }
 
-        static /* synthetic */ int access$9826(LoginActivitySmsView loginActivitySmsView, double d) {
+        static /* synthetic */ int access$9626(LoginActivitySmsView loginActivitySmsView, double d) {
             int i = (int) (loginActivitySmsView.codeTime - d);
             loginActivitySmsView.codeTime = i;
             return i;
@@ -4509,17 +4353,17 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.titleTextView.setGravity(LocaleController.isRTL ? 5 : 3);
             this.titleTextView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             this.titleTextView.setGravity(49);
-            String string = LoginActivity.this.activityMode != 1 ? null : LocaleController.getString(org.telegram.messenger.R.string.CancelAccountReset);
+            String string = LoginActivity.this.activityMode != 1 ? null : LocaleController.getString(R.string.CancelAccountReset);
             int i2 = this.currentType;
             if (i2 == 11) {
-                this.titleTextView.setText(string == null ? LocaleController.getString(org.telegram.messenger.R.string.MissedCallDescriptionTitle) : string);
+                this.titleTextView.setText(string == null ? LocaleController.getString(R.string.MissedCallDescriptionTitle) : string);
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 this.missedCallArrowIcon = new ImageView(context);
                 this.missedCallPhoneIcon = new ImageView(context);
                 frameLayout2.addView(this.missedCallArrowIcon);
                 frameLayout2.addView(this.missedCallPhoneIcon);
-                this.missedCallArrowIcon.setImageResource(org.telegram.messenger.R.drawable.login_arrow1);
-                this.missedCallPhoneIcon.setImageResource(org.telegram.messenger.R.drawable.login_phone1);
+                this.missedCallArrowIcon.setImageResource(R.drawable.login_arrow1);
+                this.missedCallPhoneIcon.setImageResource(R.drawable.login_phone1);
                 addView(frameLayout2, LayoutHelper.createLinear(64, 64, 1, 0, 16, 0, 0));
                 addView(this.titleTextView, LayoutHelper.createLinear(-2, -2, 49, 0, 8, 0, 0));
                 TextView textView3 = new TextView(context);
@@ -4527,7 +4371,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 textView3.setTextSize(1, 14.0f);
                 this.missedCallDescriptionSubtitle.setGravity(1);
                 this.missedCallDescriptionSubtitle.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                this.missedCallDescriptionSubtitle.setText(AndroidUtilities.replaceTags(LocaleController.getString(org.telegram.messenger.R.string.MissedCallDescriptionSubtitle)));
+                this.missedCallDescriptionSubtitle.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MissedCallDescriptionSubtitle)));
                 addView(this.missedCallDescriptionSubtitle, LayoutHelper.createLinear(-1, -2, 49, 36, 16, 36, 0));
                 this.codeFieldContainer = new CodeFieldContainer(context) { // from class: org.telegram.ui.LoginActivity.LoginActivitySmsView.1
                     @Override // org.telegram.ui.CodeFieldContainer
@@ -4552,7 +4396,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 textView5.setTextSize(1, 14.0f);
                 this.missedCallDescriptionSubtitle2.setGravity(1);
                 this.missedCallDescriptionSubtitle2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                this.missedCallDescriptionSubtitle2.setText(AndroidUtilities.replaceTags(LocaleController.getString(org.telegram.messenger.R.string.MissedCallDescriptionSubtitle2)));
+                this.missedCallDescriptionSubtitle2.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MissedCallDescriptionSubtitle2)));
                 addView(this.missedCallDescriptionSubtitle2, LayoutHelper.createLinear(-1, -2, 49, 36, 28, 36, 12));
             } else {
                 if (i2 == 3) {
@@ -4567,12 +4411,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     FrameLayout frameLayout4 = new FrameLayout(context);
                     linearLayout2.addView(frameLayout4, LayoutHelper.createFrame(-2, -2, 1));
                     this.blueImageView = new RLottieImageView(context);
-                    int i3 = org.telegram.messenger.R.raw.phone_flash_call;
+                    int i3 = R.raw.phone_flash_call;
                     RLottieDrawable rLottieDrawable = new RLottieDrawable(i3, String.valueOf(i3), AndroidUtilities.dp(64.0f), AndroidUtilities.dp(64.0f), true, null);
                     this.hintDrawable = rLottieDrawable;
                     this.blueImageView.setAnimation(rLottieDrawable);
                     frameLayout4.addView(this.blueImageView, LayoutHelper.createFrame(64, 64.0f));
-                    this.titleTextView.setText(string == null ? LocaleController.getString(org.telegram.messenger.R.string.YourCode) : string);
+                    this.titleTextView.setText(string == null ? LocaleController.getString(R.string.YourCode) : string);
                     linearLayout2.addView(this.titleTextView, LayoutHelper.createLinear(-2, -2, 1, 0, 16, 0, 0));
                     linearLayout2.addView(this.confirmTextView, LayoutHelper.createLinear(-2, -2, 1, 0, 8, 0, 0));
                     frameLayout = frameLayout3;
@@ -4641,11 +4485,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         }
                     };
                     if (this.currentType == 15) {
-                        Animation loadAnimation = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.text_in);
+                        Animation loadAnimation = AnimationUtils.loadAnimation(context, R.anim.text_in);
                         Interpolator interpolator = Easings.easeInOutQuad;
                         loadAnimation.setInterpolator(interpolator);
                         this.errorViewSwitcher.setInAnimation(loadAnimation);
-                        Animation loadAnimation2 = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.text_out);
+                        Animation loadAnimation2 = AnimationUtils.loadAnimation(context, R.anim.text_out);
                         loadAnimation2.setInterpolator(interpolator);
                         this.errorViewSwitcher.setOutAnimation(loadAnimation2);
                         LoadingTextView loadingTextView3 = new LoadingTextView(context) { // from class: org.telegram.ui.LoginActivity.LoginActivitySmsView.5
@@ -4671,11 +4515,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         this.problemFrame.addView(this.problemText, LayoutHelper.createFrame(-1, -2, 17));
                         this.errorViewSwitcher.addView(this.problemFrame, LayoutHelper.createFrame(-2, -2, 17));
                     } else {
-                        Animation loadAnimation3 = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.scale_in);
+                        Animation loadAnimation3 = AnimationUtils.loadAnimation(context, R.anim.scale_in);
                         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.DEFAULT;
                         loadAnimation3.setInterpolator(cubicBezierInterpolator);
                         this.errorViewSwitcher.setInAnimation(loadAnimation3);
-                        Animation loadAnimation4 = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.scale_out);
+                        Animation loadAnimation4 = AnimationUtils.loadAnimation(context, R.anim.scale_out);
                         loadAnimation4.setInterpolator(cubicBezierInterpolator);
                         this.errorViewSwitcher.setOutAnimation(loadAnimation4);
                         LinearLayout linearLayout3 = new LinearLayout(context);
@@ -4693,11 +4537,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         this.errorViewSwitcher.addView(this.openFragmentButton, LayoutHelper.createFrame(-1, 52.0f));
                         RLottieImageView rLottieImageView = new RLottieImageView(context);
                         this.openFragmentImageView = rLottieImageView;
-                        rLottieImageView.setAnimation(org.telegram.messenger.R.raw.fragment, 36, 36);
+                        rLottieImageView.setAnimation(R.raw.fragment, 36, 36);
                         this.openFragmentButton.addView(this.openFragmentImageView, LayoutHelper.createLinear(36, 36, 16, 0, 0, 2, 0));
                         TextView textView6 = new TextView(context);
                         this.openFragmentButtonText = textView6;
-                        textView6.setText(LocaleController.getString(org.telegram.messenger.R.string.OpenFragment));
+                        textView6.setText(LocaleController.getString(R.string.OpenFragment));
                         this.openFragmentButtonText.setTextColor(-1);
                         this.openFragmentButtonText.setTextSize(1, 15.0f);
                         this.openFragmentButtonText.setGravity(17);
@@ -4706,7 +4550,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     }
                     TextView textView7 = new TextView(context);
                     this.wrongCode = textView7;
-                    textView7.setText(LocaleController.getString(org.telegram.messenger.R.string.WrongCode));
+                    textView7.setText(LocaleController.getString(R.string.WrongCode));
                     this.wrongCode.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                     this.wrongCode.setTextSize(1, 15.0f);
                     this.wrongCode.setGravity(49);
@@ -4738,18 +4582,18 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 int i5 = this.currentType;
                 int i6 = i5 == 1 ? 128 : 64;
                 if (i5 == 1) {
-                    int i7 = org.telegram.messenger.R.raw.code_laptop;
+                    int i7 = R.raw.code_laptop;
                     float f = i6;
                     this.hintDrawable = new RLottieDrawable(i7, String.valueOf(i7), AndroidUtilities.dp(f), AndroidUtilities.dp(f), true, null);
                 } else {
-                    int i8 = org.telegram.messenger.R.raw.sms_incoming_info;
+                    int i8 = R.raw.sms_incoming_info;
                     float f2 = i6;
                     this.hintDrawable = new RLottieDrawable(i8, String.valueOf(i8), AndroidUtilities.dp(f2), AndroidUtilities.dp(f2), true, null);
-                    int i9 = org.telegram.messenger.R.raw.phone_stars_to_dots;
+                    int i9 = R.raw.phone_stars_to_dots;
                     this.starsToDotsDrawable = new RLottieDrawable(i9, String.valueOf(i9), AndroidUtilities.dp(f2), AndroidUtilities.dp(f2), true, null);
-                    int i10 = org.telegram.messenger.R.raw.phone_dots;
+                    int i10 = R.raw.phone_dots;
                     this.dotsDrawable = new RLottieDrawable(i10, String.valueOf(i10), AndroidUtilities.dp(f2), AndroidUtilities.dp(f2), true, null);
-                    int i11 = org.telegram.messenger.R.raw.phone_dots_to_stars;
+                    int i11 = R.raw.phone_dots_to_stars;
                     this.dotsToStarsDrawable = new RLottieDrawable(i11, String.valueOf(i11), AndroidUtilities.dp(f2), AndroidUtilities.dp(f2), true, null);
                 }
                 RLottieImageView rLottieImageView2 = new RLottieImageView(context);
@@ -4761,7 +4605,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 frameLayout6.addView(this.blueImageView, LayoutHelper.createFrame(i6, i6, 51, 0.0f, 0.0f, 0.0f, (this.currentType != 1 || AndroidUtilities.isSmallScreen()) ? 0.0f : -AndroidUtilities.dp(16.0f)));
                 TextView textView8 = this.titleTextView;
                 if (string == null) {
-                    string = LocaleController.getString(this.currentType == 1 ? org.telegram.messenger.R.string.SentAppCodeTitle : org.telegram.messenger.R.string.SentSmsCodeTitle);
+                    string = LocaleController.getString(this.currentType == 1 ? R.string.SentAppCodeTitle : R.string.SentSmsCodeTitle);
                 }
                 textView8.setText(string);
                 addView(this.titleTextView, LayoutHelper.createLinear(-2, -2, 49, 0, 18, 0, 0));
@@ -4828,7 +4672,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             TextView textView72 = new TextView(context);
             this.wrongCode = textView72;
-            textView72.setText(LocaleController.getString(org.telegram.messenger.R.string.WrongCode));
+            textView72.setText(LocaleController.getString(R.string.WrongCode));
             this.wrongCode.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             this.wrongCode.setTextSize(1, 15.0f);
             this.wrongCode.setGravity(49);
@@ -4866,9 +4710,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     return;
                 }
                 if (i == 4 || i == 11) {
-                    this.timeText.setText(LocaleController.getString(org.telegram.messenger.R.string.Calling));
+                    this.timeText.setText(LocaleController.getString(R.string.Calling));
                 } else {
-                    this.timeText.setText(LocaleController.getString(org.telegram.messenger.R.string.SendingSms));
+                    this.timeText.setText(LocaleController.getString(R.string.SendingSms));
                 }
                 final Bundle bundle = new Bundle();
                 bundle.putString("phone", this.phone);
@@ -4921,7 +4765,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             } else if (auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeSmsWord) {
                 this.nextType = 16;
             }
-            LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, tL_auth_sentCode);
+            LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, tL_auth_sentCode);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -4943,7 +4787,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             TLRPC.TL_auth_sentCode tL_auth_sentCode;
             Bundle bundle = this.nextCodeParams;
             if (bundle != null && (tL_auth_sentCode = this.nextCodeAuth) != null) {
-                LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, tL_auth_sentCode);
+                LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, tL_auth_sentCode);
                 return;
             }
             if (this.nextPressed) {
@@ -4972,12 +4816,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     FileLog.e(e);
                 }
                 LoginActivity.this.getConnectionsManager().sendRequest(tL_auth_reportMissingCode, null, 8);
-                new AlertDialog.Builder(context).setTitle(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(org.telegram.messenger.R.string.DidNotGetTheCodeInfo, this.phone))).setNeutralButton(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCodeHelpButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda23
+                new AlertDialog.Builder(context).setTitle(LocaleController.getString(R.string.RestorePasswordNoEmailTitle)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.DidNotGetTheCodeInfo, this.phone))).setNeutralButton(LocaleController.getString(R.string.DidNotGetTheCodeHelpButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda23
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         LoginActivity.LoginActivitySmsView.this.lambda$new$7(context, alertDialog, i);
                     }
-                }).setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.Close), null).setNegativeButton(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCodeEditNumberButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda24
+                }).setPositiveButton(LocaleController.getString(R.string.Close), null).setNegativeButton(LocaleController.getString(R.string.DidNotGetTheCodeEditNumberButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda24
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         LoginActivity.LoginActivitySmsView.this.lambda$new$8(alertDialog, i);
@@ -5153,7 +4997,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 intent.putExtra("android.intent.extra.TEXT", sb2.toString());
                 getContext().startActivity(Intent.createChooser(intent, "Send email..."));
             } catch (Exception unused) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.AppName), LocaleController.getString("NoMailInstalled", org.telegram.messenger.R.string.NoMailInstalled));
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.AppName), LocaleController.getString("NoMailInstalled", R.string.NoMailInstalled));
             }
         }
 
@@ -5266,22 +5110,22 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 } else if (auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeSmsWord) {
                     this.nextType = 16;
                 }
-                LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, tL_auth_sentCode);
+                LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, tL_auth_sentCode);
             } else {
                 String str = tL_error.text;
                 if (str != null) {
                     if (str.contains("PHONE_NUMBER_INVALID")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.InvalidPhoneNumber));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidPhoneNumber));
                     } else if (tL_error.text.contains("PHONE_CODE_EMPTY") || tL_error.text.contains("PHONE_CODE_INVALID")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.InvalidCode));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidCode));
                     } else if (tL_error.text.contains("PHONE_CODE_EXPIRED")) {
                         onBackPressed(true);
                         LoginActivity.this.setPage(0, true, null, true);
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.CodeExpired));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
                     } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.FloodWait));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.FloodWait));
                     } else if (tL_error.code != -1000) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.ErrorOccurred) + "\n" + tL_error.text);
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.ErrorOccurred) + "\n" + tL_error.text);
                     }
                 }
             }
@@ -5432,7 +5276,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (i == 3 || i == 11) {
                 return this.phone;
             }
-            return LocaleController.getString("YourCode", org.telegram.messenger.R.string.YourCode);
+            return LocaleController.getString("YourCode", R.string.YourCode);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -5471,11 +5315,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.problemText.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteValueText));
                     int i3 = this.nextType;
                     if (i3 == 17) {
-                        i2 = org.telegram.messenger.R.string.ReturnEnteringPhrase;
+                        i2 = R.string.ReturnEnteringPhrase;
                     } else if (i3 == 16) {
-                        i2 = org.telegram.messenger.R.string.ReturnEnteringWord;
+                        i2 = R.string.ReturnEnteringWord;
                     } else {
-                        i2 = org.telegram.messenger.R.string.ReturnEnteringSMS;
+                        i2 = R.string.ReturnEnteringSMS;
                     }
                     this.problemText.setText(AndroidUtilities.replaceArrows(LocaleController.getString(i2), true, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
                     return;
@@ -5550,10 +5394,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             int i5 = this.prevType;
             if (i5 == 17) {
                 this.prevTypeTextView.setVisibility(0);
-                this.prevTypeTextView.setText(AndroidUtilities.replaceArrows(LocaleController.getString(org.telegram.messenger.R.string.BackEnteringPhrase), true, AndroidUtilities.dp(-1.0f), AndroidUtilities.dp(1.0f)));
+                this.prevTypeTextView.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.BackEnteringPhrase), true, AndroidUtilities.dp(-1.0f), AndroidUtilities.dp(1.0f)));
             } else if (i5 == 16) {
                 this.prevTypeTextView.setVisibility(0);
-                this.prevTypeTextView.setText(AndroidUtilities.replaceArrows(LocaleController.getString(org.telegram.messenger.R.string.BackEnteringWord), true, AndroidUtilities.dp(-1.0f), AndroidUtilities.dp(1.0f)));
+                this.prevTypeTextView.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.BackEnteringWord), true, AndroidUtilities.dp(-1.0f), AndroidUtilities.dp(1.0f)));
             } else {
                 this.prevTypeTextView.setVisibility(8);
             }
@@ -5562,7 +5406,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             String format = PhoneFormat.getInstance().format(this.phone);
             if (LoginActivity.this.isInCancelAccountDeletionMode()) {
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatString("CancelAccountResetInfo2", org.telegram.messenger.R.string.CancelAccountResetInfo2, PhoneFormat.getInstance().format("+" + format))));
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatString("CancelAccountResetInfo2", R.string.CancelAccountResetInfo2, PhoneFormat.getInstance().format("+" + format))));
                 int indexOf = TextUtils.indexOf((CharSequence) spannableStringBuilder, '*');
                 int lastIndexOf = TextUtils.lastIndexOf(spannableStringBuilder, '*');
                 str = spannableStringBuilder;
@@ -5577,7 +5421,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             } else {
                 int i6 = this.currentType;
-                str = i6 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("SentAppCodeWithPhone", org.telegram.messenger.R.string.SentAppCodeWithPhone, LocaleController.addNbsp(format))) : i6 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("SentSmsCode", org.telegram.messenger.R.string.SentSmsCode, LocaleController.addNbsp(format))) : i6 == 3 ? AndroidUtilities.replaceTags(LocaleController.formatString("SentCallCode", org.telegram.messenger.R.string.SentCallCode, LocaleController.addNbsp(format))) : i6 == 4 ? AndroidUtilities.replaceTags(LocaleController.formatString("SentCallOnly", org.telegram.messenger.R.string.SentCallOnly, LocaleController.addNbsp(format))) : i6 == 15 ? AndroidUtilities.replaceTags(LocaleController.formatString("SentFragmentCode", org.telegram.messenger.R.string.SentFragmentCode, LocaleController.addNbsp(format))) : "";
+                str = i6 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("SentAppCodeWithPhone", R.string.SentAppCodeWithPhone, LocaleController.addNbsp(format))) : i6 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("SentSmsCode", R.string.SentSmsCode, LocaleController.addNbsp(format))) : i6 == 3 ? AndroidUtilities.replaceTags(LocaleController.formatString("SentCallCode", R.string.SentCallCode, LocaleController.addNbsp(format))) : i6 == 4 ? AndroidUtilities.replaceTags(LocaleController.formatString("SentCallOnly", R.string.SentCallOnly, LocaleController.addNbsp(format))) : i6 == 15 ? AndroidUtilities.replaceTags(LocaleController.formatString("SentFragmentCode", R.string.SentFragmentCode, LocaleController.addNbsp(format))) : "";
             }
             this.confirmTextView.setText(str);
             int i7 = this.currentType;
@@ -5585,16 +5429,16 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (i7 == 1) {
                     int i8 = this.nextType;
                     if (i8 == 3 || i8 == 4 || i8 == 11) {
-                        this.problemText.setText(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCodePhone));
+                        this.problemText.setText(LocaleController.getString(R.string.DidNotGetTheCodePhone));
                     } else if (i8 == 15) {
-                        this.problemText.setText(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCodeFragment));
+                        this.problemText.setText(LocaleController.getString(R.string.DidNotGetTheCodeFragment));
                     } else if (i8 == 0) {
-                        this.problemText.setText(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCode));
+                        this.problemText.setText(LocaleController.getString(R.string.DidNotGetTheCode));
                     } else {
-                        this.problemText.setText(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCodeSms));
+                        this.problemText.setText(LocaleController.getString(R.string.DidNotGetTheCodeSms));
                     }
                 } else {
-                    this.problemText.setText(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCode));
+                    this.problemText.setText(LocaleController.getString(R.string.DidNotGetTheCode));
                 }
             }
             if (this.currentType != 3) {
@@ -5622,9 +5466,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.problemText.setVisibility(8);
                     int i11 = this.nextType;
                     if (i11 == 4 || i11 == 11) {
-                        this.timeText.setText(LocaleController.formatString("CallAvailableIn", org.telegram.messenger.R.string.CallAvailableIn, 1, 0));
+                        this.timeText.setText(LocaleController.formatString("CallAvailableIn", R.string.CallAvailableIn, 1, 0));
                     } else if (i11 == 2 || i11 == 17 || i11 == 16) {
-                        this.timeText.setText(LocaleController.formatString("SmsAvailableIn", org.telegram.messenger.R.string.SmsAvailableIn, 1, 0));
+                        this.timeText.setText(LocaleController.formatString("SmsAvailableIn", R.string.SmsAvailableIn, 1, 0));
                     }
                 } else {
                     this.timeText.setVisibility(8);
@@ -5645,9 +5489,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             } else if (i9 == 2 && ((i = this.nextType) == 2 || i == 17 || i == 16 || i == 4 || i == 3)) {
                 if (i == 2 || i == 17 || i == 16) {
-                    this.timeText.setText(LocaleController.formatString("SmsAvailableIn", org.telegram.messenger.R.string.SmsAvailableIn, 1, 0));
+                    this.timeText.setText(LocaleController.formatString("SmsAvailableIn", R.string.SmsAvailableIn, 1, 0));
                 } else {
-                    this.timeText.setText(LocaleController.formatString("CallAvailableIn", org.telegram.messenger.R.string.CallAvailableIn, 2, 0));
+                    this.timeText.setText(LocaleController.formatString("CallAvailableIn", R.string.CallAvailableIn, 2, 0));
                 }
                 setProblemTextVisible(this.time < 1000);
                 this.timeText.setVisibility(this.time < 1000 ? 8 : 0);
@@ -5676,9 +5520,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     int i13 = this.nextType;
                     int i14 = (i13 == 2 || i13 == 17 || i13 == 11) ? 16 : 16;
                     if (i13 == 2 || i13 == 17 || i13 == i14) {
-                        this.timeText.setText(LocaleController.formatString("SmsAvailableIn", org.telegram.messenger.R.string.SmsAvailableIn, 1, 0));
+                        this.timeText.setText(LocaleController.formatString("SmsAvailableIn", R.string.SmsAvailableIn, 1, 0));
                     } else {
-                        this.timeText.setText(LocaleController.formatString("CallAvailableIn", org.telegram.messenger.R.string.CallAvailableIn, 2, 0));
+                        this.timeText.setText(LocaleController.formatString("CallAvailableIn", R.string.CallAvailableIn, 2, 0));
                     }
                     setProblemTextVisible(this.time < 1000);
                     this.timeText.setVisibility(this.time < 1000 ? 8 : 0);
@@ -5696,9 +5540,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         this.problemText.setVisibility(8);
                         int i16 = this.nextType;
                         if (i16 == 4 || i16 == 11) {
-                            this.timeText.setText(LocaleController.formatString("CallAvailableIn", org.telegram.messenger.R.string.CallAvailableIn, 1, 0));
+                            this.timeText.setText(LocaleController.formatString("CallAvailableIn", R.string.CallAvailableIn, 1, 0));
                         } else if (i16 == 2 || i16 == 17 || i16 == 16) {
-                            this.timeText.setText(LocaleController.formatString("SmsAvailableIn", org.telegram.messenger.R.string.SmsAvailableIn, 1, 0));
+                            this.timeText.setText(LocaleController.formatString("SmsAvailableIn", R.string.SmsAvailableIn, 1, 0));
                         }
                         createTimer();
                     }
@@ -5774,7 +5618,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 double currentTimeMillis = System.currentTimeMillis();
                 double d = currentTimeMillis - LoginActivitySmsView.this.lastCodeTime;
                 LoginActivitySmsView.this.lastCodeTime = currentTimeMillis;
-                LoginActivitySmsView.access$9826(LoginActivitySmsView.this, d);
+                LoginActivitySmsView.access$9626(LoginActivitySmsView.this, d);
                 if (LoginActivitySmsView.this.codeTime <= 1000) {
                     LoginActivitySmsView.this.setProblemTextVisible(true);
                     LoginActivitySmsView.this.timeText.setVisibility(8);
@@ -5811,7 +5655,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             LoadingTextView loadingTextView = this.timeText;
             int i = Theme.key_windowBackgroundWhiteGrayText6;
             loadingTextView.setTextColor(Theme.getColor(i));
-            this.timeText.setTag(org.telegram.messenger.R.id.color_key_tag, Integer.valueOf(i));
+            this.timeText.setTag(R.id.color_key_tag, Integer.valueOf(i));
             Timer timer = new Timer();
             this.timeTimer = timer;
             timer.schedule(new 8(), 0L, 1000L);
@@ -5839,35 +5683,35 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 double currentTimeMillis = System.currentTimeMillis();
                 double d = currentTimeMillis - LoginActivitySmsView.this.lastCurrentTime;
                 LoginActivitySmsView.this.lastCurrentTime = currentTimeMillis;
-                LoginActivitySmsView.access$8826(LoginActivitySmsView.this, d);
+                LoginActivitySmsView.access$8626(LoginActivitySmsView.this, d);
                 if (LoginActivitySmsView.this.time >= 1000) {
                     int i = (LoginActivitySmsView.this.time / MediaDataController.MAX_STYLE_RUNS_COUNT) / 60;
                     int i2 = (LoginActivitySmsView.this.time / MediaDataController.MAX_STYLE_RUNS_COUNT) - (i * 60);
                     if (LoginActivitySmsView.this.nextType == 4 || LoginActivitySmsView.this.nextType == 3 || LoginActivitySmsView.this.nextType == 11) {
-                        LoginActivitySmsView.this.timeText.setText(LocaleController.formatString("CallAvailableIn", org.telegram.messenger.R.string.CallAvailableIn, Integer.valueOf(i), Integer.valueOf(i2)));
+                        LoginActivitySmsView.this.timeText.setText(LocaleController.formatString("CallAvailableIn", R.string.CallAvailableIn, Integer.valueOf(i), Integer.valueOf(i2)));
                     } else if (LoginActivitySmsView.this.currentType != 2 || (LoginActivitySmsView.this.nextType != 2 && LoginActivitySmsView.this.nextType != 17 && LoginActivitySmsView.this.nextType != 16)) {
                         if (LoginActivitySmsView.this.nextType == 2 || LoginActivitySmsView.this.nextType == 17 || LoginActivitySmsView.this.nextType == 16) {
-                            LoginActivitySmsView.this.timeText.setText(LocaleController.formatString("SmsAvailableIn", org.telegram.messenger.R.string.SmsAvailableIn, Integer.valueOf(i), Integer.valueOf(i2)));
+                            LoginActivitySmsView.this.timeText.setText(LocaleController.formatString("SmsAvailableIn", R.string.SmsAvailableIn, Integer.valueOf(i), Integer.valueOf(i2)));
                         }
                     } else {
-                        LoginActivitySmsView.this.timeText.setText(LocaleController.formatString("ResendSmsAvailableIn", org.telegram.messenger.R.string.ResendSmsAvailableIn, Integer.valueOf(i), Integer.valueOf(i2)));
+                        LoginActivitySmsView.this.timeText.setText(LocaleController.formatString("ResendSmsAvailableIn", R.string.ResendSmsAvailableIn, Integer.valueOf(i), Integer.valueOf(i2)));
                     }
-                    LoginActivitySmsView.access$10500(LoginActivitySmsView.this);
+                    LoginActivitySmsView.access$10300(LoginActivitySmsView.this);
                     return;
                 }
                 LoginActivitySmsView.this.destroyTimer();
                 if (LoginActivitySmsView.this.nextType == 3 || LoginActivitySmsView.this.nextType == 4 || LoginActivitySmsView.this.nextType == 2 || LoginActivitySmsView.this.nextType == 17 || LoginActivitySmsView.this.nextType == 16 || LoginActivitySmsView.this.nextType == 11) {
                     if (LoginActivitySmsView.this.nextType == 4) {
-                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestCallButton", org.telegram.messenger.R.string.RequestCallButton));
+                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestCallButton", R.string.RequestCallButton));
                     } else if (LoginActivitySmsView.this.nextType == 11 || LoginActivitySmsView.this.nextType == 3) {
-                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString(org.telegram.messenger.R.string.RequestMissedCall));
+                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString(R.string.RequestMissedCall));
                     } else {
-                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestSmsButton", org.telegram.messenger.R.string.RequestSmsButton));
+                        LoginActivitySmsView.this.timeText.setText(LocaleController.getString("RequestSmsButton", R.string.RequestSmsButton));
                     }
                     LoadingTextView loadingTextView = LoginActivitySmsView.this.timeText;
                     int i3 = Theme.key_chats_actionBackground;
                     loadingTextView.setTextColor(Theme.getColor(i3));
-                    LoginActivitySmsView.this.timeText.setTag(org.telegram.messenger.R.id.color_key_tag, Integer.valueOf(i3));
+                    LoginActivitySmsView.this.timeText.setTag(R.id.color_key_tag, Integer.valueOf(i3));
                 }
             }
         }
@@ -5877,7 +5721,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             LoadingTextView loadingTextView = this.timeText;
             int i = Theme.key_windowBackgroundWhiteGrayText6;
             loadingTextView.setTextColor(Theme.getColor(i));
-            this.timeText.setTag(org.telegram.messenger.R.id.color_key_tag, Integer.valueOf(i));
+            this.timeText.setTag(R.id.color_key_tag, Integer.valueOf(i));
             try {
                 synchronized (this.timerSync) {
                     try {
@@ -6062,7 +5906,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 return;
             }
             if (tL_error.text.contains("PHONE_NUMBER_INVALID")) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", org.telegram.messenger.R.string.InvalidPhoneNumber));
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
             } else {
                 if (tL_error.text.contains("PHONE_CODE_EMPTY") || tL_error.text.contains("PHONE_CODE_INVALID")) {
                     shakeWrongCode();
@@ -6071,11 +5915,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (tL_error.text.contains("PHONE_CODE_EXPIRED")) {
                     onBackPressed(true);
                     LoginActivity.this.setPage(0, true, null, true);
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", org.telegram.messenger.R.string.CodeExpired));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                 } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", org.telegram.messenger.R.string.FloodWait));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                 } else {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", org.telegram.messenger.R.string.ErrorOccurred) + "\n" + tL_error.text);
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error.text);
                 }
             }
             int i6 = 0;
@@ -6099,7 +5943,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 LoginActivity.this.fragmentView.performHapticFeedback(3, 2);
             } catch (Exception unused) {
             }
-            new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(org.telegram.messenger.R.string.YourPasswordSuccess)).setMessage(LocaleController.formatString(org.telegram.messenger.R.string.ChangePhoneNumberSuccessWithPhone, PhoneFormat.getInstance().format("+" + this.requestPhone))).setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.OK), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda46
+            new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(R.string.YourPasswordSuccess)).setMessage(LocaleController.formatString(R.string.ChangePhoneNumberSuccessWithPhone, PhoneFormat.getInstance().format("+" + this.requestPhone))).setPositiveButton(LocaleController.getString(R.string.OK), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda46
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     LoginActivity.LoginActivitySmsView.this.lambda$onNextPressed$22(dialogInterface);
@@ -6171,7 +6015,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$27(Activity activity) {
-            new AlertDialog.Builder(activity).setTitle(LocaleController.getString(org.telegram.messenger.R.string.CancelLinkSuccessTitle)).setMessage(LocaleController.formatString("CancelLinkSuccess", org.telegram.messenger.R.string.CancelLinkSuccess, PhoneFormat.getInstance().format("+" + this.phone))).setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.Close), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda43
+            new AlertDialog.Builder(activity).setTitle(LocaleController.getString(R.string.CancelLinkSuccessTitle)).setMessage(LocaleController.formatString("CancelLinkSuccess", R.string.CancelLinkSuccess, PhoneFormat.getInstance().format("+" + this.phone))).setPositiveButton(LocaleController.getString(R.string.Close), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda43
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     LoginActivity.LoginActivitySmsView.this.lambda$onNextPressed$26(dialogInterface);
@@ -6268,7 +6112,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         return;
                     }
                     if (tL_error.text.contains("PHONE_NUMBER_INVALID")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", org.telegram.messenger.R.string.InvalidPhoneNumber));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
                     } else {
                         if (tL_error.text.contains("PHONE_CODE_EMPTY") || tL_error.text.contains("PHONE_CODE_INVALID")) {
                             shakeWrongCode();
@@ -6277,11 +6121,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         if (tL_error.text.contains("PHONE_CODE_EXPIRED")) {
                             onBackPressed(true);
                             LoginActivity.this.setPage(0, true, null, true);
-                            LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", org.telegram.messenger.R.string.CodeExpired));
+                            LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                         } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                            LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", org.telegram.messenger.R.string.FloodWait));
+                            LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                         } else {
-                            LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", org.telegram.messenger.R.string.ErrorOccurred) + "\n" + tL_error.text);
+                            LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error.text);
                         }
                     }
                     int i6 = 0;
@@ -6330,12 +6174,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.nextPressed = false;
             LoginActivity.this.showDoneButton(false, true);
             if (tL_error != null) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                 return;
             }
             TL_account.Password password = (TL_account.Password) tLObject;
             if (!TwoStepVerificationActivity.canHandleCurrentPassword(password, true)) {
-                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", org.telegram.messenger.R.string.UpdateAppAlert), true);
+                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                 return;
             }
             final Bundle bundle = new Bundle();
@@ -6482,7 +6326,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             if (!z) {
                 LoginActivity loginActivity = LoginActivity.this;
-                loginActivity.showDialog(new AlertDialog.Builder(loginActivity.getParentActivity()).setTitle(LocaleController.getString(org.telegram.messenger.R.string.EditNumber)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("EditNumberInfo", org.telegram.messenger.R.string.EditNumberInfo, this.phone))).setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.Close), null).setNegativeButton(LocaleController.getString(org.telegram.messenger.R.string.Edit), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda17
+                loginActivity.showDialog(new AlertDialog.Builder(loginActivity.getParentActivity()).setTitle(LocaleController.getString(R.string.EditNumber)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("EditNumberInfo", R.string.EditNumberInfo, this.phone))).setPositiveButton(LocaleController.getString(R.string.Close), null).setNegativeButton(LocaleController.getString(R.string.Edit), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivitySmsView$$ExternalSyntheticLambda17
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i2) {
                         LoginActivity.LoginActivitySmsView.this.lambda$onBackPressed$42(alertDialog, i2);
@@ -6753,7 +6597,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         public boolean onTouchEvent(MotionEvent motionEvent) {
             if (isRippleEnabled() && motionEvent.getAction() == 0) {
                 this.rippleDrawable.setHotspot(motionEvent.getX(), motionEvent.getY());
-                this.rippleDrawable.setState(new int[]{R.attr.state_enabled, R.attr.state_pressed});
+                this.rippleDrawable.setState(new int[]{android.R.attr.state_enabled, android.R.attr.state_pressed});
             } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 1) {
                 this.rippleDrawable.setState(new int[0]);
             }
@@ -6793,7 +6637,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             FrameLayout frameLayout = new FrameLayout(context);
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.lockImageView = rLottieImageView;
-            rLottieImageView.setAnimation(org.telegram.messenger.R.raw.tsv_setup_intro, 120, 120);
+            rLottieImageView.setAnimation(R.raw.tsv_setup_intro, 120, 120);
             this.lockImageView.setAutoRepeat(false);
             frameLayout.addView(this.lockImageView, LayoutHelper.createFrame(120, 120, 1));
             if (!AndroidUtilities.isSmallScreen()) {
@@ -6806,7 +6650,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.titleView = textView;
                     textView.setTextSize(1, 18.0f);
                     this.titleView.setTypeface(AndroidUtilities.bold());
-                    this.titleView.setText(LocaleController.getString(org.telegram.messenger.R.string.YourPasswordHeader));
+                    this.titleView.setText(LocaleController.getString(R.string.YourPasswordHeader));
                     this.titleView.setGravity(17);
                     this.titleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                     addView(this.titleView, LayoutHelper.createFrame(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -6815,11 +6659,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     textView2.setTextSize(1, 14.0f);
                     this.confirmTextView.setGravity(1);
                     this.confirmTextView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                    this.confirmTextView.setText(LocaleController.getString(org.telegram.messenger.R.string.LoginPasswordTextShort));
+                    this.confirmTextView.setText(LocaleController.getString(R.string.LoginPasswordTextShort));
                     addView(this.confirmTextView, LayoutHelper.createLinear(-2, -2, 1, 12, 8, 12, 0));
                     OutlineTextContainerView outlineTextContainerView = new OutlineTextContainerView(context);
                     this.outlineCodeField = outlineTextContainerView;
-                    outlineTextContainerView.setText(LocaleController.getString(org.telegram.messenger.R.string.EnterPassword));
+                    outlineTextContainerView.setText(LocaleController.getString(R.string.EnterPassword));
                     EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
                     this.codeField = editTextBoldCursor;
                     editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -6854,12 +6698,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     TextView textView3 = new TextView(context);
                     this.cancelButton = textView3;
                     textView3.setGravity(19);
-                    this.cancelButton.setText(LocaleController.getString(org.telegram.messenger.R.string.ForgotPassword));
+                    this.cancelButton.setText(LocaleController.getString(R.string.ForgotPassword));
                     this.cancelButton.setTextSize(1, 15.0f);
                     this.cancelButton.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                     this.cancelButton.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
                     FrameLayout frameLayout2 = new FrameLayout(context);
-                    frameLayout2.addView(this.cancelButton, LayoutHelper.createFrame(-1, 56, 80, 0.0f, 0.0f, 0.0f, 32.0f));
+                    frameLayout2.addView(this.cancelButton, LayoutHelper.createFrame(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
                     addView(frameLayout2, LayoutHelper.createLinear(-1, -1, 80));
                     VerticalPositionAutoAnimator.attach(this.cancelButton);
                     this.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda3
@@ -6877,7 +6721,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.titleView = textView4;
             textView4.setTextSize(1, 18.0f);
             this.titleView.setTypeface(AndroidUtilities.bold());
-            this.titleView.setText(LocaleController.getString(org.telegram.messenger.R.string.YourPasswordHeader));
+            this.titleView.setText(LocaleController.getString(R.string.YourPasswordHeader));
             this.titleView.setGravity(17);
             this.titleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             addView(this.titleView, LayoutHelper.createFrame(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -6886,11 +6730,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             textView22.setTextSize(1, 14.0f);
             this.confirmTextView.setGravity(1);
             this.confirmTextView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-            this.confirmTextView.setText(LocaleController.getString(org.telegram.messenger.R.string.LoginPasswordTextShort));
+            this.confirmTextView.setText(LocaleController.getString(R.string.LoginPasswordTextShort));
             addView(this.confirmTextView, LayoutHelper.createLinear(-2, -2, 1, 12, 8, 12, 0));
             OutlineTextContainerView outlineTextContainerView2 = new OutlineTextContainerView(context);
             this.outlineCodeField = outlineTextContainerView2;
-            outlineTextContainerView2.setText(LocaleController.getString(org.telegram.messenger.R.string.EnterPassword));
+            outlineTextContainerView2.setText(LocaleController.getString(R.string.EnterPassword));
             EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context);
             this.codeField = editTextBoldCursor2;
             editTextBoldCursor2.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -6925,12 +6769,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             TextView textView32 = new TextView(context);
             this.cancelButton = textView32;
             textView32.setGravity(19);
-            this.cancelButton.setText(LocaleController.getString(org.telegram.messenger.R.string.ForgotPassword));
+            this.cancelButton.setText(LocaleController.getString(R.string.ForgotPassword));
             this.cancelButton.setTextSize(1, 15.0f);
             this.cancelButton.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             this.cancelButton.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
             FrameLayout frameLayout22 = new FrameLayout(context);
-            frameLayout22.addView(this.cancelButton, LayoutHelper.createFrame(-1, 56, 80, 0.0f, 0.0f, 0.0f, 32.0f));
+            frameLayout22.addView(this.cancelButton, LayoutHelper.createFrame(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
             addView(frameLayout22, LayoutHelper.createLinear(-1, -1, 80));
             VerticalPositionAutoAnimator.attach(this.cancelButton);
             this.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda3
@@ -6970,7 +6814,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }, 10);
             } else {
                 AndroidUtilities.hideKeyboard(this.codeField);
-                new AlertDialog.Builder(context).setTitle(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailText)).setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.Close), null).setNegativeButton(LocaleController.getString(org.telegram.messenger.R.string.ResetAccount), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda6
+                new AlertDialog.Builder(context).setTitle(LocaleController.getString(R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getString(R.string.RestorePasswordNoEmailText)).setPositiveButton(LocaleController.getString(R.string.Close), null).setNegativeButton(LocaleController.getString(R.string.ResetAccount), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda6
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         LoginActivity.LoginActivityPasswordView.this.lambda$new$5(alertDialog, i);
@@ -7011,9 +6855,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     textStyleRun.end = i;
                     valueOf.setSpan(new TextStyleSpan(textStyleRun), indexOf, i, 0);
                 }
-                builder.setMessage(AndroidUtilities.formatSpannable(LocaleController.getString(org.telegram.messenger.R.string.RestoreEmailSent), valueOf));
-                builder.setTitle(LocaleController.getString("RestoreEmailSentTitle", org.telegram.messenger.R.string.RestoreEmailSentTitle));
-                builder.setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda10
+                builder.setMessage(AndroidUtilities.formatSpannable(LocaleController.getString(R.string.RestoreEmailSent), valueOf));
+                builder.setTitle(LocaleController.getString("RestoreEmailSentTitle", R.string.RestoreEmailSentTitle));
+                builder.setPositiveButton(LocaleController.getString(R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda10
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i2) {
                         LoginActivity.LoginActivityPasswordView.this.lambda$new$2(tL_auth_passwordRecovery, alertDialog, i2);
@@ -7028,7 +6872,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 return;
             }
             if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                 return;
             }
             int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
@@ -7037,7 +6881,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             } else {
                 formatPluralString = LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0]);
             }
-            LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.WrongCodeTitle), LocaleController.formatString("FloodWaitTime", org.telegram.messenger.R.string.FloodWaitTime, formatPluralString));
+            LoginActivity.this.needShowAlert(LocaleController.getString(R.string.WrongCodeTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, formatPluralString));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -7071,7 +6915,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // org.telegram.ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("LoginPassword", org.telegram.messenger.R.string.LoginPassword);
+            return LocaleController.getString("LoginPassword", R.string.LoginPassword);
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -7203,7 +7047,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 return;
             }
             if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                 return;
             }
             int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
@@ -7212,7 +7056,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             } else {
                 formatPluralString = LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0]);
             }
-            LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", org.telegram.messenger.R.string.FloodWaitTime, formatPluralString));
+            LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, formatPluralString));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -7329,7 +7173,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.waitImageView = rLottieImageView;
             rLottieImageView.setAutoRepeat(true);
-            this.waitImageView.setAnimation(org.telegram.messenger.R.raw.sandclock, 120, 120);
+            this.waitImageView.setAnimation(R.raw.sandclock, 120, 120);
             frameLayout.addView(this.waitImageView, LayoutHelper.createFrame(120, 120, 1));
             Point point = AndroidUtilities.displaySize;
             frameLayout.setVisibility((point.x <= point.y || AndroidUtilities.isTablet()) ? 0 : 8);
@@ -7339,7 +7183,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             textView.setTextSize(1, 18.0f);
             this.titleView.setTypeface(AndroidUtilities.bold());
             TextView textView2 = this.titleView;
-            int i = org.telegram.messenger.R.string.ResetAccount;
+            int i = R.string.ResetAccount;
             textView2.setText(LocaleController.getString(i));
             this.titleView.setGravity(17);
             this.titleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
@@ -7354,7 +7198,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             TextView textView4 = new TextView(context);
             this.resetAccountText = textView4;
             textView4.setGravity(1);
-            this.resetAccountText.setText(LocaleController.getString("ResetAccountStatus", org.telegram.messenger.R.string.ResetAccountStatus));
+            this.resetAccountText.setText(LocaleController.getString("ResetAccountStatus", R.string.ResetAccountStatus));
             this.resetAccountText.setTextSize(1, 14.0f);
             this.resetAccountText.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             addView(this.resetAccountText, LayoutHelper.createLinear(-2, -2, 49, 0, 24, 0, 0));
@@ -7389,12 +7233,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 return;
             }
             LoginActivity loginActivity = LoginActivity.this;
-            loginActivity.showDialog(new AlertDialog.Builder(loginActivity.getParentActivity()).setTitle(LocaleController.getString("ResetMyAccountWarning", org.telegram.messenger.R.string.ResetMyAccountWarning)).setMessage(LocaleController.getString("ResetMyAccountWarningText", org.telegram.messenger.R.string.ResetMyAccountWarningText)).setPositiveButton(LocaleController.getString("ResetMyAccountWarningReset", org.telegram.messenger.R.string.ResetMyAccountWarningReset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityResetWaitView$$ExternalSyntheticLambda1
+            loginActivity.showDialog(new AlertDialog.Builder(loginActivity.getParentActivity()).setTitle(LocaleController.getString("ResetMyAccountWarning", R.string.ResetMyAccountWarning)).setMessage(LocaleController.getString("ResetMyAccountWarningText", R.string.ResetMyAccountWarningText)).setPositiveButton(LocaleController.getString("ResetMyAccountWarningReset", R.string.ResetMyAccountWarningReset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityResetWaitView$$ExternalSyntheticLambda1
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     LoginActivity.LoginActivityResetWaitView.this.lambda$new$2(alertDialog, i);
                 }
-            }).setNegativeButton(LocaleController.getString("Cancel", org.telegram.messenger.R.string.Cancel), null).create());
+            }).setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null).create());
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -7436,9 +7280,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 return;
             }
             if (tL_error.text.equals("2FA_RECENT_CONFIRM")) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ResetAccountCancelledAlert", org.telegram.messenger.R.string.ResetAccountCancelledAlert));
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ResetAccountCancelledAlert", R.string.ResetAccountCancelledAlert));
             } else {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
             }
         }
 
@@ -7455,7 +7299,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // org.telegram.ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("ResetAccount", org.telegram.messenger.R.string.ResetAccount);
+            return LocaleController.getString("ResetAccount", R.string.ResetAccount);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -7500,7 +7344,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.phoneCode = bundle.getString("code");
             this.startTime = bundle.getInt("startTime");
             this.waitTime = bundle.getInt("waitTime");
-            this.confirmTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ResetAccountInfo", org.telegram.messenger.R.string.ResetAccountInfo, LocaleController.addNbsp(PhoneFormat.getInstance().format("+" + this.requestPhone)))));
+            this.confirmTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ResetAccountInfo", R.string.ResetAccountInfo, LocaleController.addNbsp(PhoneFormat.getInstance().format("+" + this.requestPhone)))));
             updateTimeText();
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.LoginActivity.LoginActivityResetWaitView.1
                 @Override // java.lang.Runnable
@@ -7573,7 +7417,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             FrameLayout frameLayout = new FrameLayout(context);
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.inboxImageView = rLottieImageView;
-            rLottieImageView.setAnimation(org.telegram.messenger.R.raw.tsv_setup_mail, 120, 120);
+            rLottieImageView.setAnimation(R.raw.tsv_setup_mail, 120, 120);
             this.inboxImageView.setAutoRepeat(false);
             frameLayout.addView(this.inboxImageView, LayoutHelper.createFrame(120, 120, 1));
             if (!AndroidUtilities.isSmallScreen()) {
@@ -7586,7 +7430,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.titleView = textView;
                     textView.setTextSize(1, 18.0f);
                     this.titleView.setTypeface(AndroidUtilities.bold());
-                    this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? org.telegram.messenger.R.string.EnterNewEmail : org.telegram.messenger.R.string.AddEmailTitle));
+                    this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? R.string.EnterNewEmail : R.string.AddEmailTitle));
                     this.titleView.setGravity(17);
                     this.titleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                     addView(this.titleView, LayoutHelper.createFrame(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -7595,11 +7439,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     linksTextView.setTextSize(1, 14.0f);
                     this.subtitleView.setGravity(17);
                     this.subtitleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                    this.subtitleView.setText(LocaleController.getString(org.telegram.messenger.R.string.AddEmailSubtitle));
+                    this.subtitleView.setText(LocaleController.getString(R.string.AddEmailSubtitle));
                     addView(this.subtitleView, LayoutHelper.createLinear(-2, -2, 1, 32, 8, 32, 0));
                     OutlineTextContainerView outlineTextContainerView = new OutlineTextContainerView(context);
                     this.emailOutlineView = outlineTextContainerView;
-                    outlineTextContainerView.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? org.telegram.messenger.R.string.YourNewEmail : org.telegram.messenger.R.string.YourEmail));
+                    outlineTextContainerView.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? R.string.YourNewEmail : R.string.YourEmail));
                     EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
                     this.emailField = editTextBoldCursor;
                     editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -7635,7 +7479,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.signInWithGoogleView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
                     this.signInWithGoogleView.setMaxLines(2);
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d ");
-                    Drawable drawable = ContextCompat.getDrawable(context, org.telegram.messenger.R.drawable.googleg_standard_color_18);
+                    Drawable drawable = ContextCompat.getDrawable(context, R.drawable.googleg_standard_color_18);
                     drawable.setBounds(0, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(27.0f));
                     spannableStringBuilder.setSpan(new ImageSpan(drawable, 0), 0, 1, 33);
                     spannableStringBuilder.setSpan(new ReplacementSpan() { // from class: org.telegram.ui.LoginActivity.LoginActivitySetupEmail.1
@@ -7648,7 +7492,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                             return AndroidUtilities.dp(12.0f);
                         }
                     }, 1, 2, 33);
-                    spannableStringBuilder.append((CharSequence) LocaleController.getString(org.telegram.messenger.R.string.SignInWithGoogle));
+                    spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.SignInWithGoogle));
                     this.signInWithGoogleView.setText(spannableStringBuilder);
                     this.loginOrView = new LoginOrView(context);
                     addView(new Space(context), LayoutHelper.createLinear(0, 0, 1.0f));
@@ -7673,7 +7517,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.titleView = textView3;
             textView3.setTextSize(1, 18.0f);
             this.titleView.setTypeface(AndroidUtilities.bold());
-            this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? org.telegram.messenger.R.string.EnterNewEmail : org.telegram.messenger.R.string.AddEmailTitle));
+            this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? R.string.EnterNewEmail : R.string.AddEmailTitle));
             this.titleView.setGravity(17);
             this.titleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             addView(this.titleView, LayoutHelper.createFrame(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -7682,11 +7526,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             linksTextView2.setTextSize(1, 14.0f);
             this.subtitleView.setGravity(17);
             this.subtitleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-            this.subtitleView.setText(LocaleController.getString(org.telegram.messenger.R.string.AddEmailSubtitle));
+            this.subtitleView.setText(LocaleController.getString(R.string.AddEmailSubtitle));
             addView(this.subtitleView, LayoutHelper.createLinear(-2, -2, 1, 32, 8, 32, 0));
             OutlineTextContainerView outlineTextContainerView2 = new OutlineTextContainerView(context);
             this.emailOutlineView = outlineTextContainerView2;
-            outlineTextContainerView2.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? org.telegram.messenger.R.string.YourNewEmail : org.telegram.messenger.R.string.YourEmail));
+            outlineTextContainerView2.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? R.string.YourNewEmail : R.string.YourEmail));
             EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context);
             this.emailField = editTextBoldCursor2;
             editTextBoldCursor2.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -7722,7 +7566,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.signInWithGoogleView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
             this.signInWithGoogleView.setMaxLines(2);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("d ");
-            Drawable drawable2 = ContextCompat.getDrawable(context, org.telegram.messenger.R.drawable.googleg_standard_color_18);
+            Drawable drawable2 = ContextCompat.getDrawable(context, R.drawable.googleg_standard_color_18);
             drawable2.setBounds(0, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(27.0f));
             spannableStringBuilder2.setSpan(new ImageSpan(drawable2, 0), 0, 1, 33);
             spannableStringBuilder2.setSpan(new ReplacementSpan() { // from class: org.telegram.ui.LoginActivity.LoginActivitySetupEmail.1
@@ -7735,7 +7579,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     return AndroidUtilities.dp(12.0f);
                 }
             }, 1, 2, 33);
-            spannableStringBuilder2.append((CharSequence) LocaleController.getString(org.telegram.messenger.R.string.SignInWithGoogle));
+            spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.SignInWithGoogle));
             this.signInWithGoogleView.setText(spannableStringBuilder2);
             this.loginOrView = new LoginOrView(context);
             addView(new Space(context), LayoutHelper.createLinear(0, 0, 1.0f));
@@ -7823,7 +7667,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // org.telegram.ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("AddEmailTitle", org.telegram.messenger.R.string.AddEmailTitle);
+            return LocaleController.getString("AddEmailTitle", R.string.AddEmailTitle);
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -7951,12 +7795,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (tLObject instanceof TL_account.TL_emailVerifiedLogin) {
                 TL_account.TL_emailVerifiedLogin tL_emailVerifiedLogin = (TL_account.TL_emailVerifiedLogin) tLObject;
                 bundle.putString("email", tL_emailVerifiedLogin.email);
-                LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, tL_emailVerifiedLogin.sent_code);
+                LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, tL_emailVerifiedLogin.sent_code);
             } else if (tL_error != null) {
                 if (tL_error.text.contains("EMAIL_NOT_ALLOWED")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.EmailNotAllowed));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailNotAllowed));
                 } else if (tL_error.text.contains("EMAIL_TOKEN_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.EmailTokenInvalid));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailTokenInvalid));
                 } else if (tL_error.code != -1000) {
                     AlertsCreator.processError(((BaseFragment) LoginActivity.this).currentAccount, tL_error, LoginActivity.this, verifyemail, new Object[0]);
                 }
@@ -7988,27 +7832,27 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     return;
                 }
                 if (tL_error.text.contains("EMAIL_NOT_ALLOWED")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.EmailNotAllowed));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailNotAllowed));
                     return;
                 }
                 if (tL_error.text.contains("PHONE_PASSWORD_FLOOD")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", org.telegram.messenger.R.string.FloodWait));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                     return;
                 }
                 if (tL_error.text.contains("PHONE_NUMBER_FLOOD")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("PhoneNumberFlood", org.telegram.messenger.R.string.PhoneNumberFlood));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("PhoneNumberFlood", R.string.PhoneNumberFlood));
                     return;
                 }
                 if (tL_error.text.contains("PHONE_CODE_EMPTY") || tL_error.text.contains("PHONE_CODE_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", org.telegram.messenger.R.string.InvalidCode));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", R.string.InvalidCode));
                     return;
                 }
                 if (tL_error.text.contains("PHONE_CODE_EXPIRED")) {
                     onBackPressed(true);
                     LoginActivity.this.setPage(0, true, null, true);
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", org.telegram.messenger.R.string.CodeExpired));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                 } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", org.telegram.messenger.R.string.FloodWait));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                 } else if (tL_error.code != -1000) {
                     AlertsCreator.processError(((BaseFragment) LoginActivity.this).currentAccount, tL_error, LoginActivity.this, sendverifyemailcode, this.requestPhone);
                 }
@@ -8167,9 +8011,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             FrameLayout frameLayout = new FrameLayout(context);
             this.inboxImageView = new RLottieImageView(context);
             if (!z || LoginActivity.this.activityMode == 3) {
-                this.inboxImageView.setAnimation(org.telegram.messenger.R.raw.email_check_inbox, 120, 120);
+                this.inboxImageView.setAnimation(R.raw.email_check_inbox, 120, 120);
             } else {
-                this.inboxImageView.setAnimation(org.telegram.messenger.R.raw.email_setup_heart, 120, 120);
+                this.inboxImageView.setAnimation(R.raw.email_setup_heart, 120, 120);
             }
             this.inboxImageView.setAutoRepeat(false);
             frameLayout.addView(this.inboxImageView, LayoutHelper.createFrame(120, 120, 1));
@@ -8183,7 +8027,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.titleView = textView;
                     textView.setTextSize(1, 18.0f);
                     this.titleView.setTypeface(AndroidUtilities.bold());
-                    this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? org.telegram.messenger.R.string.CheckYourNewEmail : z ? org.telegram.messenger.R.string.VerificationCode : org.telegram.messenger.R.string.CheckYourEmail));
+                    this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? R.string.CheckYourNewEmail : z ? R.string.VerificationCode : R.string.CheckYourEmail));
                     this.titleView.setGravity(17);
                     this.titleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                     addView(this.titleView, LayoutHelper.createFrame(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -8209,7 +8053,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.signInWithGoogleView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
                     this.signInWithGoogleView.setMaxLines(2);
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("d ");
-                    Drawable drawable = ContextCompat.getDrawable(context, org.telegram.messenger.R.drawable.googleg_standard_color_18);
+                    Drawable drawable = ContextCompat.getDrawable(context, R.drawable.googleg_standard_color_18);
                     drawable.setBounds(0, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(27.0f));
                     spannableStringBuilder.setSpan(new ImageSpan(drawable, 0), 0, 1, 33);
                     spannableStringBuilder.setSpan(new ReplacementSpan() { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.2
@@ -8222,7 +8066,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                             return AndroidUtilities.dp(12.0f);
                         }
                     }, 1, 2, 33);
-                    spannableStringBuilder.append((CharSequence) LocaleController.getString(org.telegram.messenger.R.string.SignInWithGoogle));
+                    spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.SignInWithGoogle));
                     this.signInWithGoogleView.setText(spannableStringBuilder);
                     this.signInWithGoogleView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda5
                         @Override // android.view.View.OnClickListener
@@ -8240,7 +8084,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         }
                     };
                     this.cantAccessEmailView = textView3;
-                    textView3.setText(LocaleController.getString(org.telegram.messenger.R.string.LoginCantAccessThisEmail));
+                    textView3.setText(LocaleController.getString(R.string.LoginCantAccessThisEmail));
                     this.cantAccessEmailView.setGravity(17);
                     this.cantAccessEmailView.setTextSize(1, 14.0f);
                     this.cantAccessEmailView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
@@ -8279,7 +8123,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.resendCodeView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                     this.resendCodeView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
                     this.resendCodeView.setMaxLines(2);
-                    this.resendCodeView.setText(LocaleController.getString(org.telegram.messenger.R.string.ResendCode));
+                    this.resendCodeView.setText(LocaleController.getString(R.string.ResendCode));
                     this.resendCodeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda8
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -8296,11 +8140,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                             super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                         }
                     };
-                    Animation loadAnimation = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.text_in);
+                    Animation loadAnimation = AnimationUtils.loadAnimation(context, R.anim.text_in);
                     Interpolator interpolator = Easings.easeInOutQuad;
                     loadAnimation.setInterpolator(interpolator);
                     this.errorViewSwitcher.setInAnimation(loadAnimation);
-                    Animation loadAnimation2 = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.text_out);
+                    Animation loadAnimation2 = AnimationUtils.loadAnimation(context, R.anim.text_out);
                     loadAnimation2.setInterpolator(interpolator);
                     this.errorViewSwitcher.setOutAnimation(loadAnimation2);
                     FrameLayout frameLayout3 = new FrameLayout(context);
@@ -8309,7 +8153,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.errorViewSwitcher.addView(this.resendFrameLayout);
                     TextView textView6 = new TextView(context);
                     this.wrongCodeView = textView6;
-                    textView6.setText(LocaleController.getString("WrongCode", org.telegram.messenger.R.string.WrongCode));
+                    textView6.setText(LocaleController.getString("WrongCode", R.string.WrongCode));
                     this.wrongCodeView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                     this.wrongCodeView.setTextSize(1, 15.0f);
                     this.wrongCodeView.setGravity(49);
@@ -8334,7 +8178,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.titleView = textView7;
             textView7.setTextSize(1, 18.0f);
             this.titleView.setTypeface(AndroidUtilities.bold());
-            this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? org.telegram.messenger.R.string.CheckYourNewEmail : z ? org.telegram.messenger.R.string.VerificationCode : org.telegram.messenger.R.string.CheckYourEmail));
+            this.titleView.setText(LocaleController.getString(LoginActivity.this.activityMode != 3 ? R.string.CheckYourNewEmail : z ? R.string.VerificationCode : R.string.CheckYourEmail));
             this.titleView.setGravity(17);
             this.titleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             addView(this.titleView, LayoutHelper.createFrame(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -8360,7 +8204,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.signInWithGoogleView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
             this.signInWithGoogleView.setMaxLines(2);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("d ");
-            Drawable drawable2 = ContextCompat.getDrawable(context, org.telegram.messenger.R.drawable.googleg_standard_color_18);
+            Drawable drawable2 = ContextCompat.getDrawable(context, R.drawable.googleg_standard_color_18);
             drawable2.setBounds(0, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(27.0f));
             spannableStringBuilder2.setSpan(new ImageSpan(drawable2, 0), 0, 1, 33);
             spannableStringBuilder2.setSpan(new ReplacementSpan() { // from class: org.telegram.ui.LoginActivity.LoginActivityEmailCodeView.2
@@ -8373,7 +8217,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     return AndroidUtilities.dp(12.0f);
                 }
             }, 1, 2, 33);
-            spannableStringBuilder2.append((CharSequence) LocaleController.getString(org.telegram.messenger.R.string.SignInWithGoogle));
+            spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.SignInWithGoogle));
             this.signInWithGoogleView.setText(spannableStringBuilder2);
             this.signInWithGoogleView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
@@ -8391,7 +8235,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             };
             this.cantAccessEmailView = textView32;
-            textView32.setText(LocaleController.getString(org.telegram.messenger.R.string.LoginCantAccessThisEmail));
+            textView32.setText(LocaleController.getString(R.string.LoginCantAccessThisEmail));
             this.cantAccessEmailView.setGravity(17);
             this.cantAccessEmailView.setTextSize(1, 14.0f);
             this.cantAccessEmailView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
@@ -8430,7 +8274,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.resendCodeView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             this.resendCodeView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
             this.resendCodeView.setMaxLines(2);
-            this.resendCodeView.setText(LocaleController.getString(org.telegram.messenger.R.string.ResendCode));
+            this.resendCodeView.setText(LocaleController.getString(R.string.ResendCode));
             this.resendCodeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -8447,11 +8291,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
                 }
             };
-            Animation loadAnimation3 = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.text_in);
+            Animation loadAnimation3 = AnimationUtils.loadAnimation(context, R.anim.text_in);
             Interpolator interpolator2 = Easings.easeInOutQuad;
             loadAnimation3.setInterpolator(interpolator2);
             this.errorViewSwitcher.setInAnimation(loadAnimation3);
-            Animation loadAnimation22 = AnimationUtils.loadAnimation(context, org.telegram.messenger.R.anim.text_out);
+            Animation loadAnimation22 = AnimationUtils.loadAnimation(context, R.anim.text_out);
             loadAnimation22.setInterpolator(interpolator2);
             this.errorViewSwitcher.setOutAnimation(loadAnimation22);
             FrameLayout frameLayout32 = new FrameLayout(context);
@@ -8460,7 +8304,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.errorViewSwitcher.addView(this.resendFrameLayout);
             TextView textView62 = new TextView(context);
             this.wrongCodeView = textView62;
-            textView62.setText(LocaleController.getString("WrongCode", org.telegram.messenger.R.string.WrongCode));
+            textView62.setText(LocaleController.getString("WrongCode", R.string.WrongCode));
             this.wrongCodeView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             this.wrongCodeView.setTextSize(1, 15.0f);
             this.wrongCodeView.setGravity(49);
@@ -8522,12 +8366,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 textStyleRun.end = i;
                 spannableStringBuilder.setSpan(new TextStyleSpan(textStyleRun), indexOf, i, 0);
             }
-            new AlertDialog.Builder(context).setTitle(LocaleController.getString(org.telegram.messenger.R.string.LoginEmailResetTitle)).setMessage(AndroidUtilities.formatSpannable(AndroidUtilities.replaceTags(LocaleController.getString(org.telegram.messenger.R.string.LoginEmailResetMessage)), spannableStringBuilder, getTimePattern(this.resetAvailablePeriod))).setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.LoginEmailResetButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda15
+            new AlertDialog.Builder(context).setTitle(LocaleController.getString(R.string.LoginEmailResetTitle)).setMessage(AndroidUtilities.formatSpannable(AndroidUtilities.replaceTags(LocaleController.getString(R.string.LoginEmailResetMessage)), spannableStringBuilder, getTimePattern(this.resetAvailablePeriod))).setPositiveButton(LocaleController.getString(R.string.LoginEmailResetButton), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda15
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
                     LoginActivity.LoginActivityEmailCodeView.this.lambda$new$6(alertDialog, i2);
                 }
-            }).setNegativeButton(LocaleController.getString(org.telegram.messenger.R.string.Cancel), null).show();
+            }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).show();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -8567,7 +8411,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     auth_sentcodetype.email_pattern = this.currentParams.getString("emailPattern");
                     this.resetRequestPending = true;
                 }
-                LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, tL_auth_sentCode);
+                LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, tL_auth_sentCode);
                 return;
             }
             if (tL_error == null || (str = tL_error.text) == null) {
@@ -8579,7 +8423,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             onBackPressed(true);
             LoginActivity.this.setPage(0, true, null, true);
-            LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", org.telegram.messenger.R.string.CodeExpired));
+            LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -8620,7 +8464,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$9(TLObject tLObject, Bundle bundle, TLRPC.TL_error tL_error, TLRPC.TL_auth_resendCode tL_auth_resendCode) {
             if (tLObject instanceof TLRPC.TL_auth_sentCode) {
-                LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, (TLRPC.TL_auth_sentCode) tLObject);
+                LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, (TLRPC.TL_auth_sentCode) tLObject);
             } else {
                 if (tL_error == null || tL_error.text == null) {
                     return;
@@ -8668,14 +8512,14 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             this.requestingEmailReset = false;
             if (tLObject instanceof TLRPC.TL_auth_sentCode) {
-                LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, (TLRPC.TL_auth_sentCode) tLObject);
+                LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, (TLRPC.TL_auth_sentCode) tLObject);
                 return;
             }
             if (tL_error == null || (str = tL_error.text) == null) {
                 return;
             }
             if (str.contains("TASK_ALREADY_EXISTS")) {
-                new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(org.telegram.messenger.R.string.LoginEmailResetPremiumRequiredTitle)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(org.telegram.messenger.R.string.LoginEmailResetPremiumRequiredMessage, LocaleController.addNbsp(PhoneFormat.getInstance().format("+" + this.requestPhone))))).setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.OK), null).show();
+                new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(R.string.LoginEmailResetPremiumRequiredTitle)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LoginEmailResetPremiumRequiredMessage, LocaleController.addNbsp(PhoneFormat.getInstance().format("+" + this.requestPhone))))).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
                 return;
             }
             if (!tL_error.text.contains("PHONE_CODE_EXPIRED")) {
@@ -8684,7 +8528,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             onBackPressed(true);
             LoginActivity.this.setPage(0, true, null, true);
-            LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", org.telegram.messenger.R.string.CodeExpired));
+            LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -8722,7 +8566,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // org.telegram.ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString(org.telegram.messenger.R.string.VerificationCode);
+            return LocaleController.getString(R.string.VerificationCode);
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -8742,10 +8586,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.resetPendingDate = this.currentParams.getInt("resetPendingDate");
             int i = 8;
             if (LoginActivity.this.activityMode == 3) {
-                this.confirmTextView.setText(LocaleController.formatString(org.telegram.messenger.R.string.CheckYourNewEmailSubtitle, this.email));
+                this.confirmTextView.setText(LocaleController.formatString(R.string.CheckYourNewEmailSubtitle, this.email));
                 AndroidUtilities.updateViewVisibilityAnimated(this.cantAccessEmailFrameLayout, false, 1.0f, false);
             } else if (this.isSetup) {
-                this.confirmTextView.setText(LocaleController.formatString(org.telegram.messenger.R.string.VerificationCodeSubtitle, this.email));
+                this.confirmTextView.setText(LocaleController.formatString(R.string.VerificationCodeSubtitle, this.email));
                 AndroidUtilities.updateViewVisibilityAnimated(this.cantAccessEmailFrameLayout, false, 1.0f, false);
             } else {
                 AndroidUtilities.updateViewVisibilityAnimated(this.cantAccessEmailFrameLayout, true, 1.0f, false);
@@ -8797,7 +8641,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     textStyleRun.end = i2;
                     spannableStringBuilder.setSpan(new TextStyleSpan(textStyleRun), indexOf, i2, 0);
                 }
-                this.confirmTextView.setText(AndroidUtilities.formatSpannable(LocaleController.getString(org.telegram.messenger.R.string.CheckYourEmailSubtitle), spannableStringBuilder));
+                this.confirmTextView.setText(AndroidUtilities.formatSpannable(LocaleController.getString(R.string.CheckYourEmailSubtitle), spannableStringBuilder));
             }
             if (bundle.getBoolean("googleSignInAllowed") && PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices()) {
                 i = 0;
@@ -8841,14 +8685,14 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 i2++;
             }
             if (i2 != 0) {
-                return LocaleController.formatString(org.telegram.messenger.R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Days", i2, new Object[0]));
+                return LocaleController.formatString(R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Days", i2, new Object[0]));
             }
             StringBuilder sb = new StringBuilder();
             sb.append(i4 != 0 ? String.format(Locale.ROOT, "%02d:", Integer.valueOf(i4)) : "");
             Locale locale = Locale.ROOT;
             sb.append(String.format(locale, "%02d:", Integer.valueOf(i6)));
             sb.append(String.format(locale, "%02d", Integer.valueOf(i7)));
-            return LocaleController.formatString(org.telegram.messenger.R.string.LoginEmailResetInSinglePattern, sb.toString());
+            return LocaleController.formatString(R.string.LoginEmailResetInSinglePattern, sb.toString());
         }
 
         private String getTimePattern(int i) {
@@ -8859,7 +8703,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (i2 == 0 && i4 == 0) {
                 i5 = Math.max(1, i5);
             }
-            return (i2 == 0 || i4 == 0) ? (i4 == 0 || i5 == 0) ? i2 != 0 ? LocaleController.formatString(org.telegram.messenger.R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Days", i2, new Object[0])) : i4 != 0 ? LocaleController.formatString(org.telegram.messenger.R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Hours", i2, new Object[0])) : LocaleController.formatString(org.telegram.messenger.R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Minutes", i5, new Object[0])) : LocaleController.formatString(org.telegram.messenger.R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Hours", i4, new Object[0]), LocaleController.formatPluralString("Minutes", i5, new Object[0])) : LocaleController.formatString(org.telegram.messenger.R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Days", i2, new Object[0]), LocaleController.formatPluralString("Hours", i4, new Object[0]));
+            return (i2 == 0 || i4 == 0) ? (i4 == 0 || i5 == 0) ? i2 != 0 ? LocaleController.formatString(R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Days", i2, new Object[0])) : i4 != 0 ? LocaleController.formatString(R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Hours", i2, new Object[0])) : LocaleController.formatString(R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Minutes", i5, new Object[0])) : LocaleController.formatString(R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Hours", i4, new Object[0]), LocaleController.formatPluralString("Minutes", i5, new Object[0])) : LocaleController.formatString(R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Days", i2, new Object[0]), LocaleController.formatPluralString("Hours", i4, new Object[0]));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -8867,7 +8711,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             int currentTimeMillis = (int) (this.resetPendingDate - (System.currentTimeMillis() / 1000));
             if (this.resetPendingDate <= 0 || currentTimeMillis <= 0) {
                 this.emailResetInView.setVisibility(0);
-                this.emailResetInView.setText(LocaleController.getString(org.telegram.messenger.R.string.LoginEmailResetPleaseWait));
+                this.emailResetInView.setText(LocaleController.getString(R.string.LoginEmailResetPleaseWait));
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda14
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -8876,7 +8720,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }, 1000L);
                 return;
             }
-            String formatString = LocaleController.formatString(org.telegram.messenger.R.string.LoginEmailResetInTime, getTimePatternForTimer(currentTimeMillis));
+            String formatString = LocaleController.formatString(R.string.LoginEmailResetInTime, getTimePatternForTimer(currentTimeMillis));
             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(formatString);
             int indexOf = formatString.indexOf(42);
             int lastIndexOf = formatString.lastIndexOf(42);
@@ -9069,21 +8913,21 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 this.nextPressed = false;
                 LoginActivity.this.showDoneButton(false, true);
                 if (tL_error.text.contains("EMAIL_ADDRESS_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.EmailAddressInvalid));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailAddressInvalid));
                 } else if (tL_error.text.contains("PHONE_NUMBER_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", org.telegram.messenger.R.string.InvalidPhoneNumber));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
                 } else if (tL_error.text.contains("CODE_EMPTY") || tL_error.text.contains("CODE_INVALID") || tL_error.text.contains("EMAIL_CODE_INVALID") || tL_error.text.contains("PHONE_CODE_INVALID")) {
                     shakeWrongCode();
                 } else if (tL_error.text.contains("EMAIL_TOKEN_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.EmailTokenInvalid));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailTokenInvalid));
                 } else if (tL_error.text.contains("EMAIL_VERIFY_EXPIRED")) {
                     onBackPressed(true);
                     LoginActivity.this.setPage(0, true, null, true);
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", org.telegram.messenger.R.string.CodeExpired));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                 } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", org.telegram.messenger.R.string.FloodWait));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                 } else {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", org.telegram.messenger.R.string.ErrorOccurred) + "\n" + tL_error.text);
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error.text);
                 }
                 if (this.codeFieldContainer.codeField != null) {
                     int i = 0;
@@ -9113,7 +8957,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 LoginActivity.this.finishFragment();
                 LoginActivity.this.emailChangeFinishCallback.run();
             } else if (tLObject instanceof TL_account.TL_emailVerifiedLogin) {
-                LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, ((TL_account.TL_emailVerifiedLogin) tLObject).sent_code);
+                LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, ((TL_account.TL_emailVerifiedLogin) tLObject).sent_code);
             } else if (tLObject instanceof TLRPC.TL_auth_authorization) {
                 LoginActivity.this.onAuthSuccess((TLRPC.TL_auth_authorization) tLObject);
             }
@@ -9134,12 +8978,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.nextPressed = false;
             LoginActivity.this.showDoneButton(false, true);
             if (tL_error != null) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                 return;
             }
             TL_account.Password password = (TL_account.Password) tLObject;
             if (!TwoStepVerificationActivity.canHandleCurrentPassword(password, true)) {
-                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", org.telegram.messenger.R.string.UpdateAppAlert), true);
+                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                 return;
             }
             final Bundle bundle = new Bundle();
@@ -9377,7 +9221,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             FrameLayout frameLayout = new FrameLayout(context);
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.inboxImageView = rLottieImageView;
-            rLottieImageView.setAnimation(org.telegram.messenger.R.raw.tsv_setup_mail, 120, 120);
+            rLottieImageView.setAnimation(R.raw.tsv_setup_mail, 120, 120);
             this.inboxImageView.setAutoRepeat(false);
             frameLayout.addView(this.inboxImageView, LayoutHelper.createFrame(120, 120, 1));
             if (!AndroidUtilities.isSmallScreen()) {
@@ -9390,7 +9234,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.titleView = textView;
                     textView.setTextSize(1, 18.0f);
                     this.titleView.setTypeface(AndroidUtilities.bold());
-                    this.titleView.setText(LocaleController.getString(org.telegram.messenger.R.string.EnterCode));
+                    this.titleView.setText(LocaleController.getString(R.string.EnterCode));
                     this.titleView.setGravity(17);
                     this.titleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                     addView(this.titleView, LayoutHelper.createFrame(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -9399,7 +9243,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     textView2.setTextSize(1, 14.0f);
                     this.confirmTextView.setGravity(17);
                     this.confirmTextView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                    this.confirmTextView.setText(LocaleController.getString(org.telegram.messenger.R.string.RestoreEmailSentInfo));
+                    this.confirmTextView.setText(LocaleController.getString(R.string.RestoreEmailSentInfo));
                     addView(this.confirmTextView, LayoutHelper.createLinear(-2, -2, 1, 12, 8, 12, 0));
                     CodeFieldContainer codeFieldContainer = new CodeFieldContainer(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityRecoverView.1
                         @Override // org.telegram.ui.CodeFieldContainer
@@ -9463,7 +9307,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.titleView = textView3;
             textView3.setTextSize(1, 18.0f);
             this.titleView.setTypeface(AndroidUtilities.bold());
-            this.titleView.setText(LocaleController.getString(org.telegram.messenger.R.string.EnterCode));
+            this.titleView.setText(LocaleController.getString(R.string.EnterCode));
             this.titleView.setGravity(17);
             this.titleView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             addView(this.titleView, LayoutHelper.createFrame(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
@@ -9472,7 +9316,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             textView22.setTextSize(1, 14.0f);
             this.confirmTextView.setGravity(17);
             this.confirmTextView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-            this.confirmTextView.setText(LocaleController.getString(org.telegram.messenger.R.string.RestoreEmailSentInfo));
+            this.confirmTextView.setText(LocaleController.getString(R.string.RestoreEmailSentInfo));
             addView(this.confirmTextView, LayoutHelper.createLinear(-2, -2, 1, 12, 8, 12, 0));
             CodeFieldContainer codeFieldContainer2 = new CodeFieldContainer(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityRecoverView.1
                 @Override // org.telegram.ui.CodeFieldContainer
@@ -9514,12 +9358,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$4(View view) {
-            Dialog showDialog = LoginActivity.this.showDialog(new AlertDialog.Builder(LoginActivity.this.getParentActivity()).setTitle(LocaleController.getString("RestorePasswordNoEmailTitle", org.telegram.messenger.R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getString("RestoreEmailTroubleText", org.telegram.messenger.R.string.RestoreEmailTroubleText)).setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRecoverView$$ExternalSyntheticLambda6
+            Dialog showDialog = LoginActivity.this.showDialog(new AlertDialog.Builder(LoginActivity.this.getParentActivity()).setTitle(LocaleController.getString("RestorePasswordNoEmailTitle", R.string.RestorePasswordNoEmailTitle)).setMessage(LocaleController.getString("RestoreEmailTroubleText", R.string.RestoreEmailTroubleText)).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRecoverView$$ExternalSyntheticLambda6
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     LoginActivity.LoginActivityRecoverView.this.lambda$new$2(alertDialog, i);
                 }
-            }).setNegativeButton(LocaleController.getString(org.telegram.messenger.R.string.ResetAccount), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRecoverView$$ExternalSyntheticLambda7
+            }).setNegativeButton(LocaleController.getString(R.string.ResetAccount), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRecoverView$$ExternalSyntheticLambda7
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     LoginActivity.LoginActivityRecoverView.this.lambda$new$3(alertDialog, i);
@@ -9562,7 +9406,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // org.telegram.ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("LoginPassword", org.telegram.messenger.R.string.LoginPassword);
+            return LocaleController.getString("LoginPassword", R.string.LoginPassword);
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -9588,7 +9432,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 textStyleRun.end = i;
                 valueOf.setSpan(new TextStyleSpan(textStyleRun), indexOf, i, 0);
             }
-            this.troubleButton.setText(AndroidUtilities.formatSpannable(LocaleController.getString(org.telegram.messenger.R.string.RestoreEmailNoAccess), valueOf));
+            this.troubleButton.setText(AndroidUtilities.formatSpannable(LocaleController.getString(R.string.RestoreEmailNoAccess), valueOf));
             LoginActivity.this.showKeyboard(this.codeFieldContainer);
             this.codeFieldContainer.requestFocus();
         }
@@ -9702,7 +9546,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 return;
             }
             if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                 return;
             }
             int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
@@ -9711,7 +9555,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             } else {
                 formatPluralString = LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0]);
             }
-            LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", org.telegram.messenger.R.string.FloodWaitTime, formatPluralString));
+            LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, formatPluralString));
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -9805,7 +9649,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.titleTextView.setTypeface(AndroidUtilities.bold());
             this.titleTextView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             this.titleTextView.setGravity(49);
-            this.titleTextView.setText(LocaleController.getString(org.telegram.messenger.R.string.SetNewPassword));
+            this.titleTextView.setText(LocaleController.getString(R.string.SetNewPassword));
             int i4 = 16;
             addView(this.titleTextView, LayoutHelper.createLinear(-2, -2, 1, 8, AndroidUtilities.isSmallScreen() ? 16 : 72, 8, 0));
             TextView textView2 = new TextView(context);
@@ -9819,9 +9663,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 final OutlineTextContainerView outlineTextContainerView = new OutlineTextContainerView(context);
                 this.outlineFields[i5] = outlineTextContainerView;
                 if (i == 0) {
-                    i2 = i5 == 0 ? org.telegram.messenger.R.string.PleaseEnterNewFirstPasswordHint : org.telegram.messenger.R.string.PleaseEnterNewSecondPasswordHint;
+                    i2 = i5 == 0 ? R.string.PleaseEnterNewFirstPasswordHint : R.string.PleaseEnterNewSecondPasswordHint;
                 } else {
-                    i2 = org.telegram.messenger.R.string.PasswordHintPlaceholder;
+                    i2 = R.string.PasswordHintPlaceholder;
                 }
                 outlineTextContainerView.setText(LocaleController.getString(i2));
                 this.codeField[i5] = new EditTextBoldCursor(context);
@@ -9880,7 +9724,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     linearLayout.addView(this.codeField[i5], LayoutHelper.createLinear(0, -2, 1.0f));
                     ImageView imageView = new ImageView(context);
                     this.passwordButton = imageView;
-                    imageView.setImageResource(org.telegram.messenger.R.drawable.msg_message);
+                    imageView.setImageResource(R.drawable.msg_message);
                     AndroidUtilities.updateViewVisibilityAnimated(this.passwordButton, true, 0.1f, false);
                     this.passwordButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityNewPasswordView$$ExternalSyntheticLambda3
                         @Override // android.view.View.OnClickListener
@@ -9908,9 +9752,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 i4 = 16;
             }
             if (i == 0) {
-                this.confirmTextView.setText(LocaleController.getString("PleaseEnterNewFirstPasswordLogin", org.telegram.messenger.R.string.PleaseEnterNewFirstPasswordLogin));
+                this.confirmTextView.setText(LocaleController.getString("PleaseEnterNewFirstPasswordLogin", R.string.PleaseEnterNewFirstPasswordLogin));
             } else {
-                this.confirmTextView.setText(LocaleController.getString("PasswordHintTextLogin", org.telegram.messenger.R.string.PasswordHintTextLogin));
+                this.confirmTextView.setText(LocaleController.getString("PasswordHintTextLogin", R.string.PasswordHintTextLogin));
             }
             TextView textView3 = new TextView(context);
             this.cancelButton = textView3;
@@ -9918,9 +9762,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.cancelButton.setTextSize(1, 15.0f);
             this.cancelButton.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             this.cancelButton.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-            this.cancelButton.setText(LocaleController.getString(org.telegram.messenger.R.string.YourEmailSkip));
+            this.cancelButton.setText(LocaleController.getString(R.string.YourEmailSkip));
             FrameLayout frameLayout = new FrameLayout(context);
-            frameLayout.addView(this.cancelButton, LayoutHelper.createFrame(-1, 56, 80, 0.0f, 0.0f, 0.0f, 32.0f));
+            frameLayout.addView(this.cancelButton, LayoutHelper.createFrame(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
             addView(frameLayout, LayoutHelper.createLinear(-1, -1, 80));
             VerticalPositionAutoAnimator.attach(this.cancelButton);
             this.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityNewPasswordView$$ExternalSyntheticLambda5
@@ -10006,7 +9850,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // org.telegram.ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("NewPassword", org.telegram.messenger.R.string.NewPassword);
+            return LocaleController.getString("NewPassword", R.string.NewPassword);
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -10140,18 +9984,18 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 LoginActivity.this.needHideProgress(false);
                 if (tLObject instanceof TLRPC.auth_Authorization) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-                    builder.setPositiveButton(LocaleController.getString(org.telegram.messenger.R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityNewPasswordView$$ExternalSyntheticLambda9
+                    builder.setPositiveButton(LocaleController.getString(R.string.Continue), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityNewPasswordView$$ExternalSyntheticLambda9
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i) {
                             LoginActivity.LoginActivityNewPasswordView.this.lambda$recoverPassword$6(tLObject, alertDialog, i);
                         }
                     });
                     if (TextUtils.isEmpty(str)) {
-                        builder.setMessage(LocaleController.getString(org.telegram.messenger.R.string.YourPasswordReset));
+                        builder.setMessage(LocaleController.getString(R.string.YourPasswordReset));
                     } else {
-                        builder.setMessage(LocaleController.getString(org.telegram.messenger.R.string.YourPasswordChangedSuccessText));
+                        builder.setMessage(LocaleController.getString(R.string.YourPasswordChangedSuccessText));
                     }
-                    builder.setTitle(LocaleController.getString(org.telegram.messenger.R.string.TwoStepVerificationTitle));
+                    builder.setTitle(LocaleController.getString(R.string.TwoStepVerificationTitle));
                     Dialog showDialog = LoginActivity.this.showDialog(builder.create());
                     if (showDialog != null) {
                         showDialog.setCanceledOnTouchOutside(false);
@@ -10163,7 +10007,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (tL_error != null) {
                     this.nextPressed = false;
                     if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                         return;
                     }
                     int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
@@ -10172,7 +10016,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     } else {
                         formatPluralString = LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0]);
                     }
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", org.telegram.messenger.R.string.FloodWaitTime, formatPluralString));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, formatPluralString));
                     return;
                 }
                 return;
@@ -10346,22 +10190,22 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 return;
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-            builder.setTitle(LocaleController.getString("TermsOfService", org.telegram.messenger.R.string.TermsOfService));
+            builder.setTitle(LocaleController.getString("TermsOfService", R.string.TermsOfService));
             if (z) {
-                builder.setPositiveButton(LocaleController.getString("Accept", org.telegram.messenger.R.string.Accept), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda10
+                builder.setPositiveButton(LocaleController.getString("Accept", R.string.Accept), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda10
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         LoginActivity.LoginActivityRegisterView.this.lambda$showTermsOfService$0(alertDialog, i);
                     }
                 });
-                builder.setNegativeButton(LocaleController.getString("Decline", org.telegram.messenger.R.string.Decline), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda11
+                builder.setNegativeButton(LocaleController.getString("Decline", R.string.Decline), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda11
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         LoginActivity.LoginActivityRegisterView.this.lambda$showTermsOfService$3(alertDialog, i);
                     }
                 });
             } else {
-                builder.setPositiveButton(LocaleController.getString("OK", org.telegram.messenger.R.string.OK), null);
+                builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), null);
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LoginActivity.this.currentTermsOfService.text);
             MessageObject.addEntitiesToText(spannableStringBuilder, LoginActivity.this.currentTermsOfService.entities, false, false, false, false);
@@ -10378,15 +10222,15 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$showTermsOfService$3(AlertDialog alertDialog, int i) {
             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-            builder.setTitle(LocaleController.getString("TermsOfService", org.telegram.messenger.R.string.TermsOfService));
-            builder.setMessage(LocaleController.getString("TosDecline", org.telegram.messenger.R.string.TosDecline));
-            builder.setPositiveButton(LocaleController.getString("SignUp", org.telegram.messenger.R.string.SignUp), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda15
+            builder.setTitle(LocaleController.getString("TermsOfService", R.string.TermsOfService));
+            builder.setMessage(LocaleController.getString("TosDecline", R.string.TosDecline));
+            builder.setPositiveButton(LocaleController.getString("SignUp", R.string.SignUp), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda15
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog2, int i2) {
                     LoginActivity.LoginActivityRegisterView.this.lambda$showTermsOfService$1(alertDialog2, i2);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Decline", org.telegram.messenger.R.string.Decline), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda16
+            builder.setNegativeButton(LocaleController.getString("Decline", R.string.Decline), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda16
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog2, int i2) {
                     LoginActivity.LoginActivityRegisterView.this.lambda$showTermsOfService$2(alertDialog2, i2);
@@ -10466,9 +10310,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     LoginActivity.LoginActivityRegisterView.this.lambda$new$7(view2);
                 }
             });
-            int i = org.telegram.messenger.R.raw.camera;
+            int i = R.raw.camera;
             this.cameraDrawable = new RLottieDrawable(i, String.valueOf(i), AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f), false, null);
-            int i2 = org.telegram.messenger.R.raw.camera_wait;
+            int i2 = R.raw.camera_wait;
             this.cameraWaitDrawable = new RLottieDrawable(i2, String.valueOf(i2), AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f), false, null);
             RLottieImageView rLottieImageView = new RLottieImageView(context) { // from class: org.telegram.ui.LoginActivity.LoginActivityRegisterView.3
                 @Override // android.view.View
@@ -10504,7 +10348,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             showAvatarProgress(false, false);
             TextView textView = new TextView(context);
             this.titleTextView = textView;
-            textView.setText(LocaleController.getString(org.telegram.messenger.R.string.RegistrationProfileInfo));
+            textView.setText(LocaleController.getString(R.string.RegistrationProfileInfo));
             this.titleTextView.setTextSize(1, 18.0f);
             this.titleTextView.setTypeface(AndroidUtilities.bold());
             this.titleTextView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
@@ -10512,7 +10356,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             addView(this.titleTextView, LayoutHelper.createLinear(-2, -2, 1, 8, 12, 8, 0));
             TextView textView2 = new TextView(context);
             this.descriptionTextView = textView2;
-            textView2.setText(LocaleController.getString("RegisterText2", org.telegram.messenger.R.string.RegisterText2));
+            textView2.setText(LocaleController.getString("RegisterText2", R.string.RegisterText2));
             this.descriptionTextView.setGravity(1);
             this.descriptionTextView.setTextSize(1, 14.0f);
             this.descriptionTextView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
@@ -10522,7 +10366,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             addView(frameLayout2, LayoutHelper.createLinear(-1, -2, 8.0f, 21.0f, 8.0f, 0.0f));
             OutlineTextContainerView outlineTextContainerView = new OutlineTextContainerView(context);
             this.firstNameOutlineView = outlineTextContainerView;
-            outlineTextContainerView.setText(LocaleController.getString(org.telegram.messenger.R.string.FirstName));
+            outlineTextContainerView.setText(LocaleController.getString(R.string.FirstName));
             EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
             this.firstNameField = editTextBoldCursor;
             editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -10551,7 +10395,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             });
             OutlineTextContainerView outlineTextContainerView2 = new OutlineTextContainerView(context);
             this.lastNameOutlineView = outlineTextContainerView2;
-            outlineTextContainerView2.setText(LocaleController.getString(org.telegram.messenger.R.string.LastName));
+            outlineTextContainerView2.setText(LocaleController.getString(R.string.LastName));
             EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context);
             this.lastNameField = editTextBoldCursor2;
             editTextBoldCursor2.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -10581,7 +10425,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             buildEditTextLayout(AndroidUtilities.isSmallScreen());
             TextView textView3 = new TextView(context);
             this.wrongNumber = textView3;
-            textView3.setText(LocaleController.getString("CancelRegistration", org.telegram.messenger.R.string.CancelRegistration));
+            textView3.setText(LocaleController.getString("CancelRegistration", R.string.CancelRegistration));
             this.wrongNumber.setGravity((LocaleController.isRTL ? 5 : 3) | 1);
             this.wrongNumber.setTextSize(1, 14.0f);
             this.wrongNumber.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
@@ -10604,7 +10448,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.privacyView.setGravity(16);
             frameLayout3.addView(this.privacyView, LayoutHelper.createFrame(-2, 56.0f, 83, 14.0f, 0.0f, 70.0f, 32.0f));
             VerticalPositionAutoAnimator.attach(this.privacyView);
-            String string = LocaleController.getString("TermsOfServiceLogin", org.telegram.messenger.R.string.TermsOfServiceLogin);
+            String string = LocaleController.getString("TermsOfServiceLogin", R.string.TermsOfServiceLogin);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
             int indexOf = string.indexOf(42);
             int lastIndexOf = string.lastIndexOf(42);
@@ -10799,8 +10643,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (z) {
                 LinearLayout linearLayout = new LinearLayout(LoginActivity.this.getParentActivity());
                 linearLayout.setOrientation(0);
-                this.firstNameOutlineView.setText(LocaleController.getString(org.telegram.messenger.R.string.FirstNameSmall));
-                this.lastNameOutlineView.setText(LocaleController.getString(org.telegram.messenger.R.string.LastNameSmall));
+                this.firstNameOutlineView.setText(LocaleController.getString(R.string.FirstNameSmall));
+                this.lastNameOutlineView.setText(LocaleController.getString(R.string.LastNameSmall));
                 linearLayout.addView(this.firstNameOutlineView, LayoutHelper.createLinear(0, -2, 1.0f, 0, 0, 8, 0));
                 linearLayout.addView(this.lastNameOutlineView, LayoutHelper.createLinear(0, -2, 1.0f, 8, 0, 0, 0));
                 this.editTextContainer.addView(linearLayout);
@@ -10817,8 +10661,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     return;
                 }
             }
-            this.firstNameOutlineView.setText(LocaleController.getString(org.telegram.messenger.R.string.FirstName));
-            this.lastNameOutlineView.setText(LocaleController.getString(org.telegram.messenger.R.string.LastName));
+            this.firstNameOutlineView.setText(LocaleController.getString(R.string.FirstName));
+            this.lastNameOutlineView.setText(LocaleController.getString(R.string.LastName));
             this.editTextContainer.addView(this.firstNameOutlineView, LayoutHelper.createFrame(-1, -2.0f, 48, 8.0f, 0.0f, 8.0f, 0.0f));
             this.editTextContainer.addView(this.lastNameOutlineView, LayoutHelper.createFrame(-1, -2.0f, 48, 8.0f, 82.0f, 8.0f, 0.0f));
         }
@@ -10910,15 +10754,15 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 return true;
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
-            builder.setTitle(LocaleController.getString(org.telegram.messenger.R.string.Warning));
-            builder.setMessage(LocaleController.getString("AreYouSureRegistration", org.telegram.messenger.R.string.AreYouSureRegistration));
-            builder.setNegativeButton(LocaleController.getString("Stop", org.telegram.messenger.R.string.Stop), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda0
+            builder.setTitle(LocaleController.getString(R.string.Warning));
+            builder.setMessage(LocaleController.getString("AreYouSureRegistration", R.string.AreYouSureRegistration));
+            builder.setNegativeButton(LocaleController.getString("Stop", R.string.Stop), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$LoginActivityRegisterView$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i) {
                     LoginActivity.LoginActivityRegisterView.this.lambda$onBackPressed$14(alertDialog, i);
                 }
             });
-            builder.setPositiveButton(LocaleController.getString("Continue", org.telegram.messenger.R.string.Continue), null);
+            builder.setPositiveButton(LocaleController.getString("Continue", R.string.Continue), null);
             LoginActivity.this.showDialog(builder.create());
             return false;
         }
@@ -10932,7 +10776,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // org.telegram.ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("YourName", org.telegram.messenger.R.string.YourName);
+            return LocaleController.getString("YourName", R.string.YourName);
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -11034,26 +10878,26 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (!(tLObject instanceof TLRPC.TL_auth_authorization)) {
                 LoginActivity.this.needHideProgress(false);
                 if (tL_error.text.contains("PHONE_NUMBER_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", org.telegram.messenger.R.string.InvalidPhoneNumber));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
                     return;
                 }
                 if (tL_error.text.contains("PHONE_CODE_EMPTY") || tL_error.text.contains("PHONE_CODE_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", org.telegram.messenger.R.string.InvalidCode));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", R.string.InvalidCode));
                     return;
                 }
                 if (tL_error.text.contains("PHONE_CODE_EXPIRED")) {
                     onBackPressed(true);
                     LoginActivity.this.setPage(0, true, null, true);
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", org.telegram.messenger.R.string.CodeExpired));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                     return;
                 } else if (tL_error.text.contains("FIRSTNAME_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidFirstName", org.telegram.messenger.R.string.InvalidFirstName));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidFirstName", R.string.InvalidFirstName));
                     return;
                 } else if (tL_error.text.contains("LASTNAME_INVALID")) {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidLastName", org.telegram.messenger.R.string.InvalidLastName));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidLastName", R.string.InvalidLastName));
                     return;
                 } else {
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                     return;
                 }
             }
@@ -11151,13 +10995,6 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         return AndroidUtilities.showKeyboard(view);
     }
 
-    public LoginActivity setIntroView(View view, TextView textView) {
-        this.introView = view;
-        this.startMessagingButton = textView;
-        this.isAnimatingIntro = true;
-        return this;
-    }
-
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public AnimatorSet onCustomTransitionAnimation(boolean z, final Runnable runnable) {
         if (!z || this.introView == null) {
@@ -11182,13 +11019,13 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         final float f2 = iArr[1] - i3;
         transformableLoginButtonView.setTranslationX(f);
         transformableLoginButtonView.setTranslationY(f2);
-        final int width2 = (((getParentLayout().getView().getWidth() - this.floatingButtonIcon.getLayoutParams().width) - ((ViewGroup.MarginLayoutParams) this.floatingButtonContainer.getLayoutParams()).rightMargin) - getParentLayout().getView().getPaddingLeft()) - getParentLayout().getView().getPaddingRight();
-        final int height2 = ((((getParentLayout().getView().getHeight() - this.floatingButtonIcon.getLayoutParams().height) - ((ViewGroup.MarginLayoutParams) this.floatingButtonContainer.getLayoutParams()).bottomMargin) - (isCustomKeyboardVisible() ? AndroidUtilities.dp(230.0f) : 0)) - getParentLayout().getView().getPaddingTop()) - getParentLayout().getView().getPaddingBottom();
+        final int width2 = (((getParentLayout().getView().getWidth() - this.floatingButtonIcon.getLayoutParams().width) - AndroidUtilities.dp(20.0f)) - getParentLayout().getView().getPaddingLeft()) - getParentLayout().getView().getPaddingRight();
+        final int height2 = ((((getParentLayout().getView().getHeight() - this.floatingButtonIcon.getLayoutParams().height) - AndroidUtilities.dp(14.0f)) - (isCustomKeyboardVisible() ? AndroidUtilities.dp(230.0f) : 0)) - getParentLayout().getView().getPaddingTop()) - getParentLayout().getView().getPaddingBottom();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.12
+        ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.11
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
-                LoginActivity.this.floatingButtonContainer.setVisibility(4);
+                LoginActivity.this.floatingButton.setButtonVisible(false, false);
                 LoginActivity.this.keyboardLinearLayout.setAlpha(0.0f);
                 LoginActivity.this.fragmentView.setBackgroundColor(0);
                 LoginActivity.this.startMessagingButton.setVisibility(4);
@@ -11200,7 +11037,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 LoginActivity.this.keyboardLinearLayout.setAlpha(1.0f);
                 LoginActivity.this.startMessagingButton.setVisibility(0);
                 LoginActivity.this.fragmentView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                LoginActivity.this.floatingButtonContainer.setVisibility(0);
+                LoginActivity.this.floatingButton.setButtonVisible(true, false);
                 ((FrameLayout) LoginActivity.this.fragmentView).removeView(transformableLoginButtonView);
                 if (LoginActivity.this.animationFinishCallback != null) {
                     AndroidUtilities.runOnUIThread(LoginActivity.this.animationFinishCallback);
@@ -11215,7 +11052,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda18
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                LoginActivity.this.lambda$onCustomTransitionAnimation$32(color, alpha, layoutParams, width, i, height, transformableLoginButtonView, f, width2, f2, height2, valueAnimator);
+                LoginActivity.this.lambda$onCustomTransitionAnimation$30(color, alpha, layoutParams, width, i, height, transformableLoginButtonView, f, width2, f2, height2, valueAnimator);
             }
         });
         ofFloat.setInterpolator(CubicBezierInterpolator.DEFAULT);
@@ -11227,7 +11064,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onCustomTransitionAnimation$32(int i, int i2, ViewGroup.MarginLayoutParams marginLayoutParams, int i3, int i4, int i5, TransformableLoginButtonView transformableLoginButtonView, float f, int i6, float f2, int i7, ValueAnimator valueAnimator) {
+    public /* synthetic */ void lambda$onCustomTransitionAnimation$30(int i, int i2, ViewGroup.MarginLayoutParams marginLayoutParams, int i3, int i4, int i5, TransformableLoginButtonView transformableLoginButtonView, float f, int i6, float f2, int i7, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.keyboardLinearLayout.setAlpha(floatValue);
         this.fragmentView.setBackgroundColor(ColorUtils.setAlphaComponent(i, (int) (i2 * floatValue)));
@@ -11235,7 +11072,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         this.slideViewsContainer.setTranslationY(AndroidUtilities.dp(20.0f) * f3);
         if (!isCustomKeyboardForceDisabled()) {
             this.keyboardView.setTranslationY(r4.getLayoutParams().height * f3);
-            this.floatingButtonContainer.setTranslationY(this.keyboardView.getLayoutParams().height * f3);
+            this.floatingButton.setTranslationY(this.keyboardView.getLayoutParams().height * f3);
         }
         this.introView.setTranslationY((-AndroidUtilities.dp(20.0f)) * floatValue);
         float f4 = (f3 * 0.05f) + 0.95f;
@@ -11252,25 +11089,21 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     /* JADX INFO: Access modifiers changed from: private */
     public void updateColors() {
         this.fragmentView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-        getParentActivity();
-        int dp = AndroidUtilities.dp(56.0f);
-        int i = Theme.key_chats_actionBackground;
-        this.floatingButtonContainer.setBackground(Theme.createSimpleSelectorCircleDrawable(dp, Theme.getColor(i), Theme.getColor(Theme.key_chats_actionPressedBackground)));
         ImageView imageView = this.backButtonView;
-        int i2 = Theme.key_windowBackgroundWhiteBlackText;
-        imageView.setColorFilter(Theme.getColor(i2));
+        int i = Theme.key_windowBackgroundWhiteBlackText;
+        imageView.setColorFilter(Theme.getColor(i));
         ImageView imageView2 = this.backButtonView;
-        int i3 = Theme.key_listSelector;
-        imageView2.setBackground(Theme.createSelectorDrawable(Theme.getColor(i3)));
-        this.proxyDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.SRC_IN));
-        this.proxyDrawable.setColorKey(i2);
-        this.proxyButtonView.setBackground(Theme.createSelectorDrawable(Theme.getColor(i3)));
-        this.radialProgressView.setProgressColor(Theme.getColor(i));
-        TransformableLoginButtonView transformableLoginButtonView = this.floatingButtonIcon;
-        int i4 = Theme.key_chats_actionIcon;
-        transformableLoginButtonView.setColor(Theme.getColor(i4));
-        this.floatingButtonIcon.setBackgroundColor(Theme.getColor(i));
-        this.floatingProgressView.setProgressColor(Theme.getColor(i4));
+        int i2 = Theme.key_listSelector;
+        imageView2.setBackground(Theme.createSelectorDrawable(Theme.getColor(i2)));
+        this.proxyDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
+        this.proxyDrawable.setColorKey(i);
+        this.proxyButtonView.setBackground(Theme.createSelectorDrawable(Theme.getColor(i2)));
+        RadialProgressView radialProgressView = this.radialProgressView;
+        int i3 = Theme.key_chats_actionBackground;
+        radialProgressView.setProgressColor(Theme.getColor(i3));
+        this.floatingButton.updateColors();
+        this.floatingButtonIcon.setColor(Theme.getColor(Theme.key_chats_actionIcon));
+        this.floatingButtonIcon.setBackgroundColor(Theme.getColor(i3));
         for (SlideView slideView : this.views) {
             slideView.updateColors();
         }
@@ -11302,43 +11135,43 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setMessage(LocaleController.getString("ResetMyAccountWarningText", org.telegram.messenger.R.string.ResetMyAccountWarningText));
-        builder.setTitle(LocaleController.getString("ResetMyAccountWarning", org.telegram.messenger.R.string.ResetMyAccountWarning));
-        builder.setPositiveButton(LocaleController.getString("ResetMyAccountWarningReset", org.telegram.messenger.R.string.ResetMyAccountWarningReset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda41
+        builder.setMessage(LocaleController.getString("ResetMyAccountWarningText", R.string.ResetMyAccountWarningText));
+        builder.setTitle(LocaleController.getString("ResetMyAccountWarning", R.string.ResetMyAccountWarning));
+        builder.setPositiveButton(LocaleController.getString("ResetMyAccountWarningReset", R.string.ResetMyAccountWarningReset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda39
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                LoginActivity.this.lambda$tryResetAccount$35(str, str2, str3, alertDialog, i);
+                LoginActivity.this.lambda$tryResetAccount$33(str, str2, str3, alertDialog, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", org.telegram.messenger.R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
         showDialog(builder.create());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$tryResetAccount$35(final String str, final String str2, final String str3, AlertDialog alertDialog, int i) {
+    public /* synthetic */ void lambda$tryResetAccount$33(final String str, final String str2, final String str3, AlertDialog alertDialog, int i) {
         needShowProgress(0);
         TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
         deleteaccount.reason = "Forgot password";
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(deleteaccount, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda42
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(deleteaccount, new RequestDelegate() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda40
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                LoginActivity.this.lambda$tryResetAccount$34(str, str2, str3, tLObject, tL_error);
+                LoginActivity.this.lambda$tryResetAccount$32(str, str2, str3, tLObject, tL_error);
             }
         }, 10);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$tryResetAccount$34(final String str, final String str2, final String str3, TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda44
+    public /* synthetic */ void lambda$tryResetAccount$32(final String str, final String str2, final String str3, TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda42
             @Override // java.lang.Runnable
             public final void run() {
-                LoginActivity.this.lambda$tryResetAccount$33(tL_error, str, str2, str3);
+                LoginActivity.this.lambda$tryResetAccount$31(tL_error, str, str2, str3);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$tryResetAccount$33(TLRPC.TL_error tL_error, String str, String str2, String str3) {
+    public /* synthetic */ void lambda$tryResetAccount$31(TLRPC.TL_error tL_error, String str, String str2, String str3) {
         needHideProgress(false);
         if (tL_error == null) {
             if (str == null || str2 == null || str3 == null) {
@@ -11353,7 +11186,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             return;
         }
         if (tL_error.text.equals("2FA_RECENT_CONFIRM")) {
-            needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ResetAccountCancelledAlert", org.telegram.messenger.R.string.ResetAccountCancelledAlert));
+            needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ResetAccountCancelledAlert", R.string.ResetAccountCancelledAlert));
             return;
         }
         if (tL_error.text.startsWith("2FA_CONFIRM_WAIT_")) {
@@ -11366,7 +11199,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             setPage(8, true, bundle2, false);
             return;
         }
-        needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+        needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -11378,12 +11211,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         private View dimmView;
         private boolean dismissed;
         private TextView editTextView;
+        private FragmentFloatingButton fabButton;
         private View fabContainer;
         private TransformableLoginButtonView fabTransform;
-        private RadialProgressView floatingProgressView;
         private ViewGroup fragmentView;
         private TextView numberView;
-        private FrameLayout popupFabContainer;
+        private final PointF pointF;
         private FrameLayout popupLayout;
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -11399,6 +11232,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         private PhoneNumberConfirmView(Context context, ViewGroup viewGroup, View view, String str, final IConfirmDialogCallback iConfirmDialogCallback) {
             super(context);
+            this.pointF = new PointF();
             this.fragmentView = viewGroup;
             this.fabContainer = view;
             this.callback = iConfirmDialogCallback;
@@ -11420,30 +11254,24 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.fabTransform = transformableLoginButtonView;
             transformableLoginButtonView.setTransformType(1);
             this.fabTransform.setDrawBackground(false);
-            FrameLayout frameLayout = new FrameLayout(context);
-            this.popupFabContainer = frameLayout;
-            frameLayout.addView(this.fabTransform, LayoutHelper.createFrame(-1, -1.0f));
-            this.popupFabContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneNumberConfirmView$$ExternalSyntheticLambda3
+            FragmentFloatingButton fragmentFloatingButton = new FragmentFloatingButton(context, null);
+            this.fabButton = fragmentFloatingButton;
+            fragmentFloatingButton.addView(this.fabTransform, LayoutHelper.createFrame(56, 56, 17));
+            this.fabButton.addAdditionalView(this.fabTransform);
+            this.fabButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneNumberConfirmView$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view4) {
                     LoginActivity.PhoneNumberConfirmView.this.lambda$new$1(iConfirmDialogCallback, view4);
                 }
             });
-            RadialProgressView radialProgressView = new RadialProgressView(context);
-            this.floatingProgressView = radialProgressView;
-            radialProgressView.setSize(AndroidUtilities.dp(22.0f));
-            this.floatingProgressView.setAlpha(0.0f);
-            this.floatingProgressView.setScaleX(0.1f);
-            this.floatingProgressView.setScaleY(0.1f);
-            this.popupFabContainer.addView(this.floatingProgressView, LayoutHelper.createFrame(-1, -1.0f));
-            this.popupFabContainer.setContentDescription(LocaleController.getString(org.telegram.messenger.R.string.Done));
-            addView(this.popupFabContainer, LayoutHelper.createFrame(56, 56.0f));
-            FrameLayout frameLayout2 = new FrameLayout(context);
-            this.popupLayout = frameLayout2;
-            addView(frameLayout2, LayoutHelper.createFrame(-1, 140.0f, 49, 24.0f, 0.0f, 24.0f, 0.0f));
+            this.fabButton.setContentDescription(LocaleController.getString(R.string.Done));
+            addView(this.fabButton, LayoutHelper.createFrame(56, 56, 51));
+            FrameLayout frameLayout = new FrameLayout(context);
+            this.popupLayout = frameLayout;
+            addView(frameLayout, LayoutHelper.createFrame(-1, 140.0f, 49, 24.0f, 0.0f, 24.0f, 0.0f));
             TextView textView = new TextView(context);
             this.confirmMessageView = textView;
-            textView.setText(LocaleController.getString(org.telegram.messenger.R.string.ConfirmCorrectNumber));
+            textView.setText(LocaleController.getString(R.string.ConfirmCorrectNumber));
             this.confirmMessageView.setTextSize(1, 14.0f);
             this.confirmMessageView.setSingleLine();
             this.popupLayout.addView(this.confirmMessageView, LayoutHelper.createFrame(-1, -2.0f, LocaleController.isRTL ? 5 : 3, 24.0f, 20.0f, 24.0f, 0.0f));
@@ -11457,7 +11285,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             int dp = AndroidUtilities.dp(16.0f);
             TextView textView3 = new TextView(context);
             this.editTextView = textView3;
-            textView3.setText(LocaleController.getString(org.telegram.messenger.R.string.Edit));
+            textView3.setText(LocaleController.getString(R.string.Edit));
             this.editTextView.setSingleLine();
             this.editTextView.setTextSize(1, 16.0f);
             TextView textView4 = this.editTextView;
@@ -11479,7 +11307,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.popupLayout.addView(this.editTextView, LayoutHelper.createFrame(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, f, f, f, f));
             TextView textView6 = new TextView(context);
             this.confirmTextView = textView6;
-            textView6.setText(LocaleController.getString(org.telegram.messenger.R.string.CheckPhoneNumberYes));
+            textView6.setText(LocaleController.getString(R.string.CheckPhoneNumberYes));
             this.confirmTextView.setSingleLine();
             this.confirmTextView.setTextSize(1, 16.0f);
             this.confirmTextView.setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(6.0f), Theme.getColor(i)));
@@ -11518,48 +11346,37 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public void updateFabPosition() {
-            int[] iArr = new int[2];
-            this.fragmentView.getLocationInWindow(iArr);
-            int i = iArr[0];
-            int i2 = iArr[1];
-            this.fabContainer.getLocationInWindow(iArr);
-            this.popupFabContainer.setTranslationX(iArr[0] - i);
-            this.popupFabContainer.setTranslationY(iArr[1] - i2);
+            ViewPositionWatcher.computeCoordinatesInParent(this.fabContainer, this.fragmentView, this.pointF);
+            this.fabButton.setTranslationX(this.pointF.x);
+            this.fabButton.setTranslationY(this.pointF.y);
             requestLayout();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void updateColors() {
-            TransformableLoginButtonView transformableLoginButtonView = this.fabTransform;
-            int i = Theme.key_chats_actionIcon;
-            transformableLoginButtonView.setColor(Theme.getColor(i));
-            TransformableLoginButtonView transformableLoginButtonView2 = this.fabTransform;
-            int i2 = Theme.key_chats_actionBackground;
-            transformableLoginButtonView2.setBackgroundColor(Theme.getColor(i2));
+            this.fabTransform.setColor(Theme.getColor(Theme.key_chats_actionIcon));
+            this.fabTransform.setBackgroundColor(Theme.getColor(Theme.key_chats_actionBackground));
             this.popupLayout.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(12.0f), Theme.getColor(Theme.key_dialogBackground)));
             this.confirmMessageView.setTextColor(Theme.getColor(Theme.key_dialogTextGray2));
             this.numberView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
             TextView textView = this.editTextView;
-            int i3 = Theme.key_changephoneinfo_image2;
-            textView.setTextColor(Theme.getColor(i3));
-            this.confirmTextView.setTextColor(Theme.getColor(i3));
-            this.popupFabContainer.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(56.0f), Theme.getColor(i2), Theme.getColor(Theme.key_chats_actionPressedBackground)));
-            this.floatingProgressView.setProgressColor(Theme.getColor(i));
+            int i = Theme.key_changephoneinfo_image2;
+            textView.setTextColor(Theme.getColor(i));
+            this.confirmTextView.setTextColor(Theme.getColor(i));
+            this.fabButton.updateColors();
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
         protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
             super.onLayout(z, i, i2, i3, i4);
             int measuredHeight = this.popupLayout.getMeasuredHeight();
-            int translationY = (int) (this.popupFabContainer.getTranslationY() - AndroidUtilities.dp(32.0f));
+            int translationY = (int) (this.fabButton.getTranslationY() - AndroidUtilities.dp(32.0f));
             FrameLayout frameLayout = this.popupLayout;
             frameLayout.layout(frameLayout.getLeft(), translationY - measuredHeight, this.popupLayout.getRight(), translationY);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void show() {
-            View view = this.fabContainer;
-            ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Z, view.getTranslationZ(), 0.0f).setDuration(150L).start();
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(250L);
             duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.PhoneNumberConfirmView.1
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -11582,7 +11399,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
-                        PhoneNumberConfirmView.this.popupFabContainer.requestFocus();
+                        PhoneNumberConfirmView.this.fabButton.requestFocus();
                     }
                 }
             });
@@ -11609,36 +11426,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public void animateProgress(final Runnable runnable) {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.PhoneNumberConfirmView.2
-                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationEnd(Animator animator) {
-                    runnable.run();
-                }
-            });
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LoginActivity$PhoneNumberConfirmView$$ExternalSyntheticLambda6
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    LoginActivity.PhoneNumberConfirmView.this.lambda$animateProgress$5(valueAnimator);
-                }
-            });
-            ofFloat.setDuration(150L);
-            ofFloat.start();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$animateProgress$5(ValueAnimator valueAnimator) {
-            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            float f = 1.0f - floatValue;
-            float f2 = (f * 0.9f) + 0.1f;
-            this.fabTransform.setScaleX(f2);
-            this.fabTransform.setScaleY(f2);
-            this.fabTransform.setAlpha(f);
-            float f3 = (0.9f * floatValue) + 0.1f;
-            this.floatingProgressView.setScaleX(f3);
-            this.floatingProgressView.setScaleY(f3);
-            this.floatingProgressView.setAlpha(floatValue);
+        public void animateProgress(Runnable runnable) {
+            this.fabButton.setProgressVisible(true, true);
+            AndroidUtilities.runOnUIThread(runnable, 400L);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -11649,20 +11439,19 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.dismissed = true;
             this.callback.onDismiss(this);
             ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(250L);
-            duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.PhoneNumberConfirmView.3
+            duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.LoginActivity.PhoneNumberConfirmView.2
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (PhoneNumberConfirmView.this.getParent() instanceof ViewGroup) {
                         ((ViewGroup) PhoneNumberConfirmView.this.getParent()).removeView(PhoneNumberConfirmView.this);
                     }
-                    ObjectAnimator.ofFloat(PhoneNumberConfirmView.this.fabContainer, (Property<View, Float>) View.TRANSLATION_Z, 0.0f, AndroidUtilities.dp(2.0f)).setDuration(150L).start();
                     PhoneNumberConfirmView.this.fabContainer.setVisibility(0);
                 }
             });
             duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.LoginActivity$PhoneNumberConfirmView$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    LoginActivity.PhoneNumberConfirmView.this.lambda$dismiss$6(valueAnimator);
+                    LoginActivity.PhoneNumberConfirmView.this.lambda$dismiss$5(valueAnimator);
                 }
             });
             duration.setInterpolator(CubicBezierInterpolator.DEFAULT);
@@ -11670,7 +11459,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$dismiss$6(ValueAnimator valueAnimator) {
+        public /* synthetic */ void lambda$dismiss$5(ValueAnimator valueAnimator) {
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             this.blurredView.setAlpha(floatValue);
             this.dimmView.setAlpha(floatValue);
@@ -11733,7 +11522,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
-                LoginActivity.this.lambda$showProxyButtonDelayed$36();
+                LoginActivity.this.lambda$showProxyButtonDelayed$34();
             }
         };
         this.showProxyButtonDelayed = runnable2;
@@ -11741,7 +11530,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showProxyButtonDelayed$36() {
+    public /* synthetic */ void lambda$showProxyButtonDelayed$34() {
         this.proxyButtonVisible = false;
         showProxyButton(true, true);
     }
@@ -11762,7 +11551,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.proxyButtonView.animate().alpha(z ? 1.0f : 0.0f).withEndAction(new Runnable() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda17
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LoginActivity.this.lambda$showProxyButton$37(z);
+                    LoginActivity.this.lambda$showProxyButton$35(z);
                 }
             }).start();
         } else {
@@ -11772,7 +11561,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showProxyButton$37(boolean z) {
+    public /* synthetic */ void lambda$showProxyButton$35(boolean z) {
         if (z) {
             return;
         }
@@ -11834,7 +11623,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             return true;
         }
 
-        static /* synthetic */ int access$18426(LoginActivityPhraseView loginActivityPhraseView, double d) {
+        static /* synthetic */ int access$18226(LoginActivityPhraseView loginActivityPhraseView, double d) {
             int i = (int) (loginActivityPhraseView.time - d);
             loginActivityPhraseView.time = i;
             return i;
@@ -11889,7 +11678,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.imageView = rLottieImageView;
             rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
-            rLottieImageView.setAnimation(org.telegram.messenger.R.raw.bubble, 95, 95);
+            rLottieImageView.setAnimation(R.raw.bubble, 95, 95);
             if (!AndroidUtilities.isSmallScreen()) {
                 Point point = AndroidUtilities.displaySize;
                 if (point.x <= point.y || AndroidUtilities.isTablet()) {
@@ -11902,7 +11691,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     textView.setTypeface(AndroidUtilities.bold());
                     textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                     textView.setGravity(49);
-                    textView.setText(LocaleController.getString(z2 ? org.telegram.messenger.R.string.SMSWordTitle : org.telegram.messenger.R.string.SMSPhraseTitle));
+                    textView.setText(LocaleController.getString(z2 ? R.string.SMSWordTitle : R.string.SMSPhraseTitle));
                     addView(textView, LayoutHelper.createLinear(-2, -2, 1, 8, !z ? 25 : 0, 8, 0));
                     TextView textView2 = new TextView(context);
                     this.confirmTextView = textView2;
@@ -11912,7 +11701,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     addView(textView2, LayoutHelper.createLinear(-2, -2, 1, 8, 5, 8, 16));
                     OutlineTextContainerView outlineTextContainerView = new OutlineTextContainerView(context);
                     this.outlineField = outlineTextContainerView;
-                    outlineTextContainerView.setText(LocaleController.getString(z2 ? org.telegram.messenger.R.string.SMSWord : org.telegram.messenger.R.string.SMSPhrase));
+                    outlineTextContainerView.setText(LocaleController.getString(z2 ? R.string.SMSWord : R.string.SMSPhrase));
                     1 r11 = new 1(context, LoginActivity.this);
                     this.codeField = r11;
                     r11.setSingleLine();
@@ -11923,7 +11712,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     r11.setTextSize(1, 18.0f);
                     r11.setMaxLines(1);
                     r11.setBackground(null);
-                    r11.setHint(LocaleController.getString(z2 ? org.telegram.messenger.R.string.SMSWordHint : org.telegram.messenger.R.string.SMSPhraseHint));
+                    r11.setHint(LocaleController.getString(z2 ? R.string.SMSWordHint : R.string.SMSPhraseHint));
                     r11.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.LoginActivity.LoginActivityPhraseView.2
                         private boolean ignoreTextChange;
                         private int trimmedLength;
@@ -11980,7 +11769,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.pasteTextView = textView3;
                     textView3.setTextSize(1, 12.0f);
                     textView3.setTypeface(AndroidUtilities.bold());
-                    textView3.setText(LocaleController.getString(org.telegram.messenger.R.string.Paste));
+                    textView3.setText(LocaleController.getString(R.string.Paste));
                     textView3.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
                     textView3.setGravity(17);
                     int color = Theme.getColor(Theme.key_windowBackgroundWhiteBlueText2, ((BaseFragment) LoginActivity.this).resourceProvider);
@@ -12033,7 +11822,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.errorTextView = textView4;
                     textView4.setPivotX(0.0f);
                     textView4.setPivotY(0.0f);
-                    textView4.setText(LocaleController.getString(z2 ? org.telegram.messenger.R.string.SMSWordError : org.telegram.messenger.R.string.SMSPhraseError));
+                    textView4.setText(LocaleController.getString(z2 ? R.string.SMSWordError : R.string.SMSPhraseError));
                     textView4.setTextColor(LoginActivity.this.getThemedColor(Theme.key_text_RedRegular));
                     textView4.setTextSize(1, 13.0f);
                     frameLayout.addView(textView4, LayoutHelper.createFrame(-1, -2.0f, 119, 16.0f, 8.0f, 16.0f, 8.0f));
@@ -12045,7 +11834,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.infoTextView = textView5;
                     textView5.setPivotX(0.0f);
                     textView5.setPivotY(0.0f);
-                    textView5.setText(LocaleController.getString(z2 ? org.telegram.messenger.R.string.SMSWordPasteHint : org.telegram.messenger.R.string.SMSPhrasePasteHint));
+                    textView5.setText(LocaleController.getString(z2 ? R.string.SMSWordPasteHint : R.string.SMSPhrasePasteHint));
                     textView5.setTextColor(LoginActivity.this.getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
                     textView5.setTextSize(1, 13.0f);
                     frameLayout.addView(textView5, LayoutHelper.createFrame(-1, -2.0f, 119, 16.0f, 8.0f, 16.0f, 8.0f));
@@ -12077,7 +11866,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                         }
                     });
                     FrameLayout frameLayout2 = new FrameLayout(context);
-                    frameLayout2.addView(loadingTextView2, LayoutHelper.createFrame(-1, 56, 80, 6.0f, 0.0f, 60.0f, 28.0f));
+                    frameLayout2.addView(loadingTextView2, LayoutHelper.createFrame(-1, 56.0f, 80, 6.0f, 0.0f, 60.0f, 28.0f));
                     addView(frameLayout2, LayoutHelper.createLinear(-1, -1, 80));
                     VerticalPositionAutoAnimator.attach(loadingTextView2);
                 }
@@ -12091,7 +11880,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             textView6.setTypeface(AndroidUtilities.bold());
             textView6.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             textView6.setGravity(49);
-            textView6.setText(LocaleController.getString(z2 ? org.telegram.messenger.R.string.SMSWordTitle : org.telegram.messenger.R.string.SMSPhraseTitle));
+            textView6.setText(LocaleController.getString(z2 ? R.string.SMSWordTitle : R.string.SMSPhraseTitle));
             addView(textView6, LayoutHelper.createLinear(-2, -2, 1, 8, !z ? 25 : 0, 8, 0));
             TextView textView22 = new TextView(context);
             this.confirmTextView = textView22;
@@ -12101,7 +11890,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             addView(textView22, LayoutHelper.createLinear(-2, -2, 1, 8, 5, 8, 16));
             OutlineTextContainerView outlineTextContainerView2 = new OutlineTextContainerView(context);
             this.outlineField = outlineTextContainerView2;
-            outlineTextContainerView2.setText(LocaleController.getString(z2 ? org.telegram.messenger.R.string.SMSWord : org.telegram.messenger.R.string.SMSPhrase));
+            outlineTextContainerView2.setText(LocaleController.getString(z2 ? R.string.SMSWord : R.string.SMSPhrase));
             1 r112 = new 1(context, LoginActivity.this);
             this.codeField = r112;
             r112.setSingleLine();
@@ -12112,7 +11901,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             r112.setTextSize(1, 18.0f);
             r112.setMaxLines(1);
             r112.setBackground(null);
-            r112.setHint(LocaleController.getString(z2 ? org.telegram.messenger.R.string.SMSWordHint : org.telegram.messenger.R.string.SMSPhraseHint));
+            r112.setHint(LocaleController.getString(z2 ? R.string.SMSWordHint : R.string.SMSPhraseHint));
             r112.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.LoginActivity.LoginActivityPhraseView.2
                 private boolean ignoreTextChange;
                 private int trimmedLength;
@@ -12169,7 +11958,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.pasteTextView = textView32;
             textView32.setTextSize(1, 12.0f);
             textView32.setTypeface(AndroidUtilities.bold());
-            textView32.setText(LocaleController.getString(org.telegram.messenger.R.string.Paste));
+            textView32.setText(LocaleController.getString(R.string.Paste));
             textView32.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
             textView32.setGravity(17);
             int color2 = Theme.getColor(Theme.key_windowBackgroundWhiteBlueText2, ((BaseFragment) LoginActivity.this).resourceProvider);
@@ -12222,7 +12011,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.errorTextView = textView42;
             textView42.setPivotX(0.0f);
             textView42.setPivotY(0.0f);
-            textView42.setText(LocaleController.getString(z2 ? org.telegram.messenger.R.string.SMSWordError : org.telegram.messenger.R.string.SMSPhraseError));
+            textView42.setText(LocaleController.getString(z2 ? R.string.SMSWordError : R.string.SMSPhraseError));
             textView42.setTextColor(LoginActivity.this.getThemedColor(Theme.key_text_RedRegular));
             textView42.setTextSize(1, 13.0f);
             frameLayout3.addView(textView42, LayoutHelper.createFrame(-1, -2.0f, 119, 16.0f, 8.0f, 16.0f, 8.0f));
@@ -12234,7 +12023,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.infoTextView = textView52;
             textView52.setPivotX(0.0f);
             textView52.setPivotY(0.0f);
-            textView52.setText(LocaleController.getString(z2 ? org.telegram.messenger.R.string.SMSWordPasteHint : org.telegram.messenger.R.string.SMSPhrasePasteHint));
+            textView52.setText(LocaleController.getString(z2 ? R.string.SMSWordPasteHint : R.string.SMSPhrasePasteHint));
             textView52.setTextColor(LoginActivity.this.getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
             textView52.setTextSize(1, 13.0f);
             frameLayout3.addView(textView52, LayoutHelper.createFrame(-1, -2.0f, 119, 16.0f, 8.0f, 16.0f, 8.0f));
@@ -12266,7 +12055,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
             });
             FrameLayout frameLayout22 = new FrameLayout(context);
-            frameLayout22.addView(loadingTextView22, LayoutHelper.createFrame(-1, 56, 80, 6.0f, 0.0f, 60.0f, 28.0f));
+            frameLayout22.addView(loadingTextView22, LayoutHelper.createFrame(-1, 56.0f, 80, 6.0f, 0.0f, 60.0f, 28.0f));
             addView(frameLayout22, LayoutHelper.createLinear(-1, -1, 80));
             VerticalPositionAutoAnimator.attach(loadingTextView22);
         }
@@ -12348,7 +12137,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (this.time <= 0 || this.timeTimer == null) {
                 Bundle bundle = this.nextCodeParams;
                 if (bundle != null && (tL_auth_sentCode = this.nextCodeAuth) != null) {
-                    LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, tL_auth_sentCode);
+                    LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, tL_auth_sentCode);
                     return;
                 }
                 int i = this.nextType;
@@ -12367,9 +12156,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 this.timeText.setTextSize(1, 15.0f);
                 int i2 = this.nextType;
                 if (i2 == 4 || i2 == 11) {
-                    this.timeText.setText(LocaleController.getString(org.telegram.messenger.R.string.Calling));
+                    this.timeText.setText(LocaleController.getString(R.string.Calling));
                 } else {
-                    this.timeText.setText(LocaleController.getString(org.telegram.messenger.R.string.SendingSms));
+                    this.timeText.setText(LocaleController.getString(R.string.SendingSms));
                 }
                 final Bundle bundle2 = new Bundle();
                 bundle2.putString("phone", this.phone);
@@ -12407,24 +12196,24 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 this.nextCodeParams = bundle;
                 TLRPC.TL_auth_sentCode tL_auth_sentCode = (TLRPC.TL_auth_sentCode) tLObject;
                 this.nextCodeAuth = tL_auth_sentCode;
-                LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, tL_auth_sentCode);
+                LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, tL_auth_sentCode);
                 return;
             }
             if (tL_error == null || (str = tL_error.text) == null) {
                 return;
             }
             if (str.contains("PHONE_NUMBER_INVALID")) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.InvalidPhoneNumber));
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidPhoneNumber));
             } else if (tL_error.text.contains("PHONE_CODE_EMPTY") || tL_error.text.contains("PHONE_CODE_INVALID")) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.InvalidCode));
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidCode));
             } else if (tL_error.text.contains("PHONE_CODE_EXPIRED")) {
                 onBackPressed(true);
                 LoginActivity.this.setPage(0, true, null, true);
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.CodeExpired));
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
             } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.FloodWait));
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.FloodWait));
             } else if (tL_error.code != -1000) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.ErrorOccurred) + "\n" + tL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.ErrorOccurred) + "\n" + tL_error.text);
             }
             this.lastError = tL_error.text;
         }
@@ -12497,7 +12286,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         @Override // org.telegram.ui.Components.SlideView
         public String getHeaderName() {
-            return LocaleController.getString("NewPassword", org.telegram.messenger.R.string.NewPassword);
+            return LocaleController.getString("NewPassword", R.string.NewPassword);
         }
 
         @Override // org.telegram.ui.Components.SlideView
@@ -12510,13 +12299,13 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 this.timeText.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteValueText));
                 int i2 = this.nextType;
                 if (i2 == 17) {
-                    i = org.telegram.messenger.R.string.ReturnEnteringPhrase;
+                    i = R.string.ReturnEnteringPhrase;
                 } else if (i2 == 16) {
-                    i = org.telegram.messenger.R.string.ReturnEnteringWord;
+                    i = R.string.ReturnEnteringWord;
                 } else if (i2 == 3) {
-                    i = org.telegram.messenger.R.string.ReturnPhoneCall;
+                    i = R.string.ReturnPhoneCall;
                 } else {
-                    i = org.telegram.messenger.R.string.ReturnEnteringSMS;
+                    i = R.string.ReturnEnteringSMS;
                 }
                 this.timeText.setText(AndroidUtilities.replaceArrows(LocaleController.getString(i), true, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
                 return;
@@ -12537,13 +12326,13 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             int i3 = this.prevType;
             if (i3 == 17) {
                 this.prevTypeTextView.setVisibility(0);
-                this.prevTypeTextView.setText(AndroidUtilities.replaceArrows(LocaleController.getString(org.telegram.messenger.R.string.BackEnteringPhrase), true, AndroidUtilities.dp(-1.0f), AndroidUtilities.dp(1.0f)));
+                this.prevTypeTextView.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.BackEnteringPhrase), true, AndroidUtilities.dp(-1.0f), AndroidUtilities.dp(1.0f)));
             } else if (i3 == 16) {
                 this.prevTypeTextView.setVisibility(0);
-                this.prevTypeTextView.setText(AndroidUtilities.replaceArrows(LocaleController.getString(org.telegram.messenger.R.string.BackEnteringWord), true, AndroidUtilities.dp(-1.0f), AndroidUtilities.dp(1.0f)));
+                this.prevTypeTextView.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.BackEnteringWord), true, AndroidUtilities.dp(-1.0f), AndroidUtilities.dp(1.0f)));
             } else if (i3 == 1 || i3 == 2 || i3 == 4 || i3 == 3 || i3 == 15) {
                 this.prevTypeTextView.setVisibility(0);
-                this.prevTypeTextView.setText(AndroidUtilities.replaceArrows(LocaleController.getString(org.telegram.messenger.R.string.BackEnteringCode), true, AndroidUtilities.dp(-1.0f), AndroidUtilities.dp(1.0f)));
+                this.prevTypeTextView.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.BackEnteringCode), true, AndroidUtilities.dp(-1.0f), AndroidUtilities.dp(1.0f)));
             } else {
                 this.prevTypeTextView.setVisibility(8);
             }
@@ -12557,9 +12346,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             String str = "+" + PhoneFormat.getInstance().format(PhoneFormat.stripExceptNumbers(this.phone));
             String str2 = this.beginning;
             if (str2 == null) {
-                this.confirmTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(!z2 ? org.telegram.messenger.R.string.SMSWordText : org.telegram.messenger.R.string.SMSPhraseText, str)));
+                this.confirmTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(!z2 ? R.string.SMSWordText : R.string.SMSPhraseText, str)));
             } else {
-                this.confirmTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(!z2 ? org.telegram.messenger.R.string.SMSWordBeginningText : org.telegram.messenger.R.string.SMSPhraseBeginningText, str, str2)));
+                this.confirmTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(!z2 ? R.string.SMSWordBeginningText : R.string.SMSPhraseBeginningText, str, str2)));
             }
             LoginActivity.this.showKeyboard(this.codeField);
             this.codeField.requestFocus();
@@ -12619,11 +12408,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             boolean z2 = this.currentType != 16;
             if (z) {
-                this.errorTextView.setText(LocaleController.getString(!z2 ? org.telegram.messenger.R.string.SMSWordBeginningError : org.telegram.messenger.R.string.SMSPhraseBeginningError));
+                this.errorTextView.setText(LocaleController.getString(!z2 ? R.string.SMSWordBeginningError : R.string.SMSPhraseBeginningError));
             } else if (TextUtils.isEmpty(this.codeField.getText())) {
                 this.errorTextView.setText("");
             } else {
-                this.errorTextView.setText(LocaleController.getString(!z2 ? org.telegram.messenger.R.string.SMSWordError : org.telegram.messenger.R.string.SMSPhraseError));
+                this.errorTextView.setText(LocaleController.getString(!z2 ? R.string.SMSWordError : R.string.SMSPhraseError));
             }
             if (!this.errorShown && !this.pasted) {
                 AndroidUtilities.shakeViewSpring(this.codeField, this.shiftDp);
@@ -12710,7 +12499,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     this.nextPressed = false;
                     if (this.currentType != 3) {
                         if (tL_error.text.contains("PHONE_NUMBER_INVALID")) {
-                            LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", org.telegram.messenger.R.string.InvalidPhoneNumber));
+                            LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
                         } else {
                             if (tL_error.text.contains("PHONE_CODE_EMPTY") || tL_error.text.contains("PHONE_CODE_INVALID")) {
                                 onInputError(false);
@@ -12725,11 +12514,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                             if (tL_error.text.contains("PHONE_CODE_EXPIRED")) {
                                 onBackPressed(true);
                                 LoginActivity.this.setPage(0, true, null, true);
-                                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", org.telegram.messenger.R.string.CodeExpired));
+                                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                             } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", org.telegram.messenger.R.string.FloodWait));
+                                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                             } else {
-                                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", org.telegram.messenger.R.string.ErrorOccurred) + "\n" + tL_error.text);
+                                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error.text);
                             }
                         }
                         this.codeField.setText("");
@@ -12760,12 +12549,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.nextPressed = false;
             LoginActivity.this.showDoneButton(false, true);
             if (tL_error != null) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                 return;
             }
             TL_account.Password password = (TL_account.Password) tLObject;
             if (!TwoStepVerificationActivity.canHandleCurrentPassword(password, true)) {
-                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", org.telegram.messenger.R.string.UpdateAppAlert), true);
+                AlertsCreator.showUpdateAppAlert(LoginActivity.this.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                 return;
             }
             Bundle bundle = new Bundle();
@@ -12831,22 +12620,22 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         public /* synthetic */ void lambda$resendCode$14(TLRPC.TL_error tL_error, Bundle bundle, TLObject tLObject) {
             this.nextPressed = false;
             if (tL_error == null) {
-                LoginActivity.this.lambda$resendCodeFromSafetyNet$20(bundle, (TLRPC.TL_auth_sentCode) tLObject);
+                LoginActivity.this.lambda$resendCodeFromSafetyNet$18(bundle, (TLRPC.TL_auth_sentCode) tLObject);
             } else {
                 String str = tL_error.text;
                 if (str != null) {
                     if (str.contains("PHONE_NUMBER_INVALID")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.InvalidPhoneNumber));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidPhoneNumber));
                     } else if (tL_error.text.contains("PHONE_CODE_EMPTY") || tL_error.text.contains("PHONE_CODE_INVALID")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.InvalidCode));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidCode));
                     } else if (tL_error.text.contains("PHONE_CODE_EXPIRED")) {
                         onBackPressed(true);
                         LoginActivity.this.setPage(0, true, null, true);
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.CodeExpired));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
                     } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.FloodWait));
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.FloodWait));
                     } else if (tL_error.code != -1000) {
-                        LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.ErrorOccurred) + "\n" + tL_error.text);
+                        LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.ErrorOccurred) + "\n" + tL_error.text);
                     }
                 }
             }
@@ -12923,7 +12712,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             LoadingTextView loadingTextView = this.timeText;
             int i = Theme.key_windowBackgroundWhiteGrayText;
             loadingTextView.setTextColor(Theme.getColor(i));
-            this.timeText.setTag(org.telegram.messenger.R.id.color_key_tag, Integer.valueOf(i));
+            this.timeText.setTag(R.id.color_key_tag, Integer.valueOf(i));
             Timer timer = new Timer();
             this.timeTimer = timer;
             timer.schedule(new 4(), 0L, 1000L);
@@ -12951,17 +12740,17 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 double currentTimeMillis = System.currentTimeMillis();
                 double d = currentTimeMillis - LoginActivityPhraseView.this.lastCurrentTime;
                 LoginActivityPhraseView.this.lastCurrentTime = currentTimeMillis;
-                LoginActivityPhraseView.access$18426(LoginActivityPhraseView.this, d);
+                LoginActivityPhraseView.access$18226(LoginActivityPhraseView.this, d);
                 if (LoginActivityPhraseView.this.time >= 1000) {
                     int i = (LoginActivityPhraseView.this.time / MediaDataController.MAX_STYLE_RUNS_COUNT) / 60;
                     int i2 = (LoginActivityPhraseView.this.time / MediaDataController.MAX_STYLE_RUNS_COUNT) - (i * 60);
                     LoginActivityPhraseView.this.timeText.setTextSize(1, 13.0f);
                     if (LoginActivityPhraseView.this.nextType == 4 || LoginActivityPhraseView.this.nextType == 3 || LoginActivityPhraseView.this.nextType == 11) {
-                        LoginActivityPhraseView.this.timeText.setText(LocaleController.formatString(org.telegram.messenger.R.string.CallAvailableIn2, Integer.valueOf(i), Integer.valueOf(i2)));
+                        LoginActivityPhraseView.this.timeText.setText(LocaleController.formatString(R.string.CallAvailableIn2, Integer.valueOf(i), Integer.valueOf(i2)));
                         return;
                     } else {
                         if (LoginActivityPhraseView.this.nextType == 2) {
-                            LoginActivityPhraseView.this.timeText.setText(LocaleController.formatString(org.telegram.messenger.R.string.SmsAvailableIn2, Integer.valueOf(i), Integer.valueOf(i2)));
+                            LoginActivityPhraseView.this.timeText.setText(LocaleController.formatString(R.string.SmsAvailableIn2, Integer.valueOf(i), Integer.valueOf(i2)));
                             return;
                         }
                         return;
@@ -12971,18 +12760,18 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (LoginActivityPhraseView.this.nextType == 3 || LoginActivityPhraseView.this.nextType == 4 || LoginActivityPhraseView.this.nextType == 2 || LoginActivityPhraseView.this.nextType == 11) {
                     LoginActivityPhraseView.this.timeText.setTextSize(1, 15.0f);
                     if (LoginActivityPhraseView.this.nextType == 4) {
-                        LoginActivityPhraseView.this.timeText.setText(LocaleController.getString(org.telegram.messenger.R.string.RequestCallButton));
+                        LoginActivityPhraseView.this.timeText.setText(LocaleController.getString(R.string.RequestCallButton));
                     } else if (LoginActivityPhraseView.this.nextType == 15) {
-                        LoginActivityPhraseView.this.timeText.setText(LocaleController.getString(org.telegram.messenger.R.string.DidNotGetTheCodeFragment));
+                        LoginActivityPhraseView.this.timeText.setText(LocaleController.getString(R.string.DidNotGetTheCodeFragment));
                     } else if (LoginActivityPhraseView.this.nextType == 11 || LoginActivityPhraseView.this.nextType == 3) {
-                        LoginActivityPhraseView.this.timeText.setText(LocaleController.getString(org.telegram.messenger.R.string.RequestMissedCall));
+                        LoginActivityPhraseView.this.timeText.setText(LocaleController.getString(R.string.RequestMissedCall));
                     } else {
-                        LoginActivityPhraseView.this.timeText.setText(AndroidUtilities.replaceArrows(LocaleController.getString(org.telegram.messenger.R.string.RequestAnotherSMS), true, 0.0f, 0.0f));
+                        LoginActivityPhraseView.this.timeText.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.RequestAnotherSMS), true, 0.0f, 0.0f));
                     }
                     LoadingTextView loadingTextView = LoginActivityPhraseView.this.timeText;
                     int i3 = Theme.key_chats_actionBackground;
                     loadingTextView.setTextColor(Theme.getColor(i3));
-                    LoginActivityPhraseView.this.timeText.setTag(org.telegram.messenger.R.id.color_key_tag, Integer.valueOf(i3));
+                    LoginActivityPhraseView.this.timeText.setTag(R.id.color_key_tag, Integer.valueOf(i3));
                 }
             }
         }
@@ -12992,7 +12781,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             LoadingTextView loadingTextView = this.timeText;
             int i = Theme.key_windowBackgroundWhiteGrayText;
             loadingTextView.setTextColor(Theme.getColor(i));
-            this.timeText.setTag(org.telegram.messenger.R.id.color_key_tag, Integer.valueOf(i));
+            this.timeText.setTag(R.id.color_key_tag, Integer.valueOf(i));
             try {
                 synchronized (this.timerSync) {
                     try {
@@ -13098,7 +12887,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             frameLayout.addView(starParticlesView, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 119));
             ImageView imageView = new ImageView(context);
             this.optionsButton = imageView;
-            imageView.setImageResource(org.telegram.messenger.R.drawable.ic_ab_other);
+            imageView.setImageResource(R.drawable.ic_ab_other);
             this.optionsButton.setScaleType(ImageView.ScaleType.CENTER);
             ImageView imageView2 = this.optionsButton;
             int i = Theme.key_windowBackgroundWhiteBlackText;
@@ -13130,25 +12919,25 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             gLIconRenderer.updateColors();
             frameLayout.addView(gLIconTextureView, LayoutHelper.createFrame(NotificationCenter.albumsDidLoad, NotificationCenter.albumsDidLoad, 1));
             TextView textView = new TextView(context);
-            textView.setText(LocaleController.getString(org.telegram.messenger.R.string.SMSFeeTitle));
+            textView.setText(LocaleController.getString(R.string.SMSFeeTitle));
             textView.setTextColor(Theme.getColor(i));
             textView.setTextSize(1, 20.0f);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setGravity(17);
             frameLayout.addView(textView, LayoutHelper.createFrame(-1, -2.0f, 49, 16.0f, 152.0f, 16.0f, 0.0f));
             this.cells[0] = new ExplainStarsSheet.FeatureCell(context, 1, ((BaseFragment) LoginActivity.this).resourceProvider);
-            this.cells[0].set(org.telegram.messenger.R.drawable.menu_high_price, LocaleController.getString(org.telegram.messenger.R.string.SMSFee1Title), LocaleController.getString(org.telegram.messenger.R.string.SMSFee1Text));
+            this.cells[0].set(R.drawable.menu_high_price, LocaleController.getString(R.string.SMSFee1Title), LocaleController.getString(R.string.SMSFee1Text));
             addView(this.cells[0], LayoutHelper.createLinear(-1, -2, 55, 0, 0, 0, 6));
             this.cells[1] = new ExplainStarsSheet.FeatureCell(context, 1, ((BaseFragment) LoginActivity.this).resourceProvider);
-            this.cells[1].set(org.telegram.messenger.R.drawable.menu_feature_code, LocaleController.getString(org.telegram.messenger.R.string.SMSFee2Title), LocaleController.getString(org.telegram.messenger.R.string.SMSFee2Text));
+            this.cells[1].set(R.drawable.menu_feature_code, LocaleController.getString(R.string.SMSFee2Title), LocaleController.getString(R.string.SMSFee2Text));
             addView(this.cells[1], LayoutHelper.createLinear(-1, -2, 55, 0, 0, 0, 6));
             this.cells[2] = new ExplainStarsSheet.FeatureCell(context, 1, ((BaseFragment) LoginActivity.this).resourceProvider);
-            this.cells[2].set(org.telegram.messenger.R.drawable.menu_feature_hands, AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(org.telegram.messenger.R.string.SMSFee3Title), new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda9
+            this.cells[2].set(R.drawable.menu_feature_hands, AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SMSFee3Title), new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
                     LoginActivity.LoginPayView.this.lambda$new$0();
                 }
-            }), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)), LocaleController.getString(org.telegram.messenger.R.string.SMSFee3Text));
+            }), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)), LocaleController.getString(R.string.SMSFee3Text));
             addView(this.cells[2], LayoutHelper.createLinear(-1, -2, 55, 0, 0, 0, 6));
             addView(new Space(context), LayoutHelper.createLinear(0, 0, 1.0f, 119));
             ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, null);
@@ -13170,9 +12959,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.params = bundle;
             String countryName = LocaleController.getCountryName(bundle == null ? null : bundle.getString("country"));
             if (TextUtils.isEmpty(countryName)) {
-                this.cells[0].subtitleView.setText(LocaleController.getString(org.telegram.messenger.R.string.SMSFee1Text));
+                this.cells[0].subtitleView.setText(LocaleController.getString(R.string.SMSFee1Text));
             } else {
-                this.cells[0].subtitleView.setText(LocaleController.formatString(org.telegram.messenger.R.string.SMSFee1TextCountry, countryName));
+                this.cells[0].subtitleView.setText(LocaleController.formatString(R.string.SMSFee1TextCountry, countryName));
             }
             final String string = bundle == null ? null : bundle.getString("product");
             final String string2 = bundle == null ? null : bundle.getString("phoneFormated");
@@ -13193,8 +12982,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (!TextUtils.isEmpty(string6) && j > 0) {
                     this.button.setVisibility(0);
                     this.button.setLoading(false);
-                    this.button.setText(LocaleController.formatString(org.telegram.messenger.R.string.SMSFeePurchaseTitle, BillingController.getInstance().formatCurrency(j, string6)), false);
-                    this.button.setSubText(LocaleController.getString(org.telegram.messenger.R.string.SMSFeePurchaseText), false);
+                    this.button.setText(LocaleController.formatString(R.string.SMSFeePurchaseTitle, BillingController.getInstance().formatCurrency(j, string6)), false);
+                    this.button.setSubText(LocaleController.getString(R.string.SMSFeePurchaseText), false);
                     final long j2 = j;
                     this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda7
                         @Override // android.view.View.OnClickListener
@@ -13207,7 +12996,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 this.button.setVisibility(0);
                 this.button.setLoading(false);
                 this.button.setEnabled(false);
-                this.button.setText(LocaleController.getString(org.telegram.messenger.R.string.Unavailable), false);
+                this.button.setText(LocaleController.getString(R.string.Unavailable), false);
                 return;
             }
             if (TextUtils.isEmpty(string)) {
@@ -13231,7 +13020,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$setParams$2(final String str, final String str2, final String str3, View view) {
-            ItemOptions.makeOptions(LoginActivity.this, this.optionsButton).add(org.telegram.messenger.R.drawable.msg_help, LocaleController.getString(org.telegram.messenger.R.string.SettingsHelp), new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda12
+            ItemOptions.makeOptions(LoginActivity.this, this.optionsButton).add(R.drawable.msg_help, LocaleController.getString(R.string.SettingsHelp), new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
                     LoginActivity.LoginPayView.this.lambda$setParams$1(str, str2, str3);
@@ -13409,7 +13198,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 intent.putExtra("android.intent.extra.TEXT", sb.toString());
                 getContext().startActivity(Intent.createChooser(intent, "Send email..."));
             } catch (Exception unused) {
-                LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.AppName), LocaleController.getString("NoMailInstalled", org.telegram.messenger.R.string.NoMailInstalled));
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.AppName), LocaleController.getString("NoMailInstalled", R.string.NoMailInstalled));
             }
         }
 
@@ -13481,7 +13270,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 return;
             }
             if (tL_error == null) {
-                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(org.telegram.messenger.R.raw.error, LocaleController.getString(org.telegram.messenger.R.string.UnknownError));
+                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.UnknownError));
             } else if ("PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda18
                     @Override // java.lang.Runnable
@@ -13491,7 +13280,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 });
             } else {
                 this.lastError = tL_error.text;
-                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(org.telegram.messenger.R.raw.error, LocaleController.formatString(org.telegram.messenger.R.string.UnknownErrorCode, tL_error.text));
+                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, tL_error.text));
             }
         }
 
@@ -13529,14 +13318,14 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         public /* synthetic */ void lambda$setParams$5() {
             onBackPressed(true);
             LoginActivity.this.setPage(0, true, null, true);
-            LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.CodeExpired));
+            LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$setParams$7() {
             onBackPressed(true);
             LoginActivity.this.setPage(0, true, null, true);
-            LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.CodeExpired));
+            LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -13567,7 +13356,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             FileLog.d("LoginBilling queried \"" + str + "\" product: " + BillingController.getResponseCodeString(billingResult.getResponseCode()));
             if (billingResult.getResponseCode() != 0) {
                 this.lastError = "BILLING_" + BillingController.getResponseCodeString(billingResult.getResponseCode());
-                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(org.telegram.messenger.R.raw.error, LocaleController.formatString(org.telegram.messenger.R.string.UnknownErrorCode, BillingController.getResponseCodeString(billingResult.getResponseCode())));
+                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, BillingController.getResponseCodeString(billingResult.getResponseCode())));
                 return;
             }
             if (list != null && !list.isEmpty()) {
@@ -13590,7 +13379,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 return;
             }
             this.lastError = "PRODUCT_NOT_FOUND";
-            BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(org.telegram.messenger.R.raw.error, LocaleController.formatString(org.telegram.messenger.R.string.UnknownErrorCode, "PRODUCT_NOT_FOUND"));
+            BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, "PRODUCT_NOT_FOUND"));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -13607,8 +13396,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         public /* synthetic */ void lambda$setParams$24(TLObject tLObject, TLRPC.TL_error tL_error, ProductDetails.OneTimePurchaseOfferDetails oneTimePurchaseOfferDetails, final ProductDetails productDetails, final TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode, final String str, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
             FileLog.d("LoginBilling canPurchaseStore returned " + tLObject + " " + tL_error);
             if (tLObject instanceof TLRPC.TL_boolTrue) {
-                this.button.setText(LocaleController.formatString(org.telegram.messenger.R.string.SMSFeePurchaseTitle, oneTimePurchaseOfferDetails.getFormattedPrice()), false);
-                this.button.setSubText(LocaleController.getString(org.telegram.messenger.R.string.SMSFeePurchaseText), false);
+                this.button.setText(LocaleController.formatString(R.string.SMSFeePurchaseTitle, oneTimePurchaseOfferDetails.getFormattedPrice()), false);
+                this.button.setSubText(LocaleController.getString(R.string.SMSFeePurchaseText), false);
                 this.button.setLoading(false);
                 this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LoginActivity$LoginPayView$$ExternalSyntheticLambda22
                     @Override // android.view.View.OnClickListener
@@ -13620,7 +13409,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             if (tLObject instanceof TLRPC.TL_boolFalse) {
                 this.lastError = "RESPONSE_FALSE";
-                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(org.telegram.messenger.R.raw.error, LocaleController.formatString(org.telegram.messenger.R.string.UnknownErrorCode, "RESPONSE_FALSE"));
+                BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, "RESPONSE_FALSE"));
             } else if (tL_error != null) {
                 this.lastError = tL_error.text;
                 BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).showForError(tL_error);
@@ -13835,7 +13624,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (tLObject instanceof TLRPC.auth_SentCode) {
                 this.polling = false;
                 this.button.setLoading(false);
-                LoginActivity.this.lambda$resendCodeFromSafetyNet$20(this.params, (TLRPC.auth_SentCode) tLObject);
+                LoginActivity.this.lambda$resendCodeFromSafetyNet$18(this.params, (TLRPC.auth_SentCode) tLObject);
                 return;
             }
             if (tL_error != null) {
@@ -13853,12 +13642,12 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 if (str2 != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(str2)) {
                     onBackPressed(true);
                     LoginActivity.this.setPage(0, true, null, true);
-                    LoginActivity.this.needShowAlert(LocaleController.getString(org.telegram.messenger.R.string.RestorePasswordNoEmailTitle), LocaleController.getString(org.telegram.messenger.R.string.CodeExpired));
+                    LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
                 } else {
                     this.lastError = tL_error.text;
                     this.polling = false;
                     this.button.setLoading(false);
-                    BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(org.telegram.messenger.R.raw.error, LocaleController.formatString(org.telegram.messenger.R.string.UnknownErrorCode, tL_error.text));
+                    BulletinFactory.of(LoginActivity.this.slideViewsContainer, null).createSimpleBulletin(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, tL_error.text));
                 }
             }
         }

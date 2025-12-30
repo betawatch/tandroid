@@ -50,6 +50,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
     protected AvatarDrawable avatarDrawable;
     public BackupImageView avatarImageView;
     private final AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable botVerification;
+    private boolean callCellStyle;
     private CheckBox2 checkBox;
     private ImageView checkBox3;
     private CheckBoxSquare checkBoxBig;
@@ -69,6 +70,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
     private int lastStatus;
     protected SimpleTextView nameTextView;
     public boolean needDivider;
+    private final int padding;
     private Drawable premiumDrawable;
     protected Theme.ResourcesProvider resourcesProvider;
     private boolean selfAsSavedMessages;
@@ -133,6 +135,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         } else {
             i3 = 0;
         }
+        this.padding = i;
         this.statusColor = Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, resourcesProvider);
         this.statusOnlineColor = Theme.getColor(Theme.key_windowBackgroundWhiteBlueText, resourcesProvider);
         this.avatarDrawable = new AvatarDrawable();
@@ -242,7 +245,11 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
     }
 
     public void setAvatarPadding(int i) {
-        int i2;
+        setAvatarPadding(i, 0);
+    }
+
+    public void setAvatarPadding(int i, int i2) {
+        int i3;
         float f;
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.avatarImageView.getLayoutParams();
         layoutParams.leftMargin = AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : i + 7);
@@ -250,25 +257,25 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         this.avatarImageView.setLayoutParams(layoutParams);
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.nameTextView.getLayoutParams();
         if (LocaleController.isRTL) {
-            i2 = (this.checkBoxBig != null ? 18 : 0) + 28;
+            i3 = (this.checkBoxBig != null ? 18 : 0) + 28;
         } else {
-            i2 = i + 64;
+            i3 = i + 64 + i2;
         }
-        layoutParams2.leftMargin = AndroidUtilities.dp(i2);
+        layoutParams2.leftMargin = AndroidUtilities.dp(i3);
         if (LocaleController.isRTL) {
-            f = i + 64;
+            f = i + 64 + i2;
         } else {
             f = (this.checkBoxBig != null ? 18 : 0) + 28;
         }
         layoutParams2.rightMargin = AndroidUtilities.dp(f);
         FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) this.statusTextView.getLayoutParams();
-        layoutParams3.leftMargin = AndroidUtilities.dp(LocaleController.isRTL ? 28.0f : i + 64);
-        layoutParams3.rightMargin = AndroidUtilities.dp(LocaleController.isRTL ? i + 64 : 28.0f);
+        layoutParams3.leftMargin = AndroidUtilities.dp(LocaleController.isRTL ? 28.0f : i + 64 + i2);
+        layoutParams3.rightMargin = AndroidUtilities.dp(LocaleController.isRTL ? i + 64 + i2 : 28.0f);
         CheckBox2 checkBox2 = this.checkBox;
         if (checkBox2 != null) {
             FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) checkBox2.getLayoutParams();
-            layoutParams4.leftMargin = AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : i + 37);
-            layoutParams4.rightMargin = AndroidUtilities.dp(LocaleController.isRTL ? i + 37 : 0.0f);
+            layoutParams4.leftMargin = AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : i + 37 + i2);
+            layoutParams4.rightMargin = AndroidUtilities.dp(LocaleController.isRTL ? i + 37 + i2 : 0.0f);
         }
     }
 
@@ -472,9 +479,30 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         }
     }
 
+    public void setCallCellStyle(int i) {
+        this.callCellStyle = true;
+        this.nameTextView.setTextSize(15);
+        SimpleTextView simpleTextView = this.nameTextView;
+        boolean z = LocaleController.isRTL;
+        simpleTextView.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, (z ? 5 : 3) | 48, z ? 30.0f : i + 66, 10.0f, z ? i + 66 : 30.0f, 0.0f));
+        this.statusTextView.setTextSize(13);
+        SimpleTextView simpleTextView2 = this.statusTextView;
+        boolean z2 = LocaleController.isRTL;
+        simpleTextView2.setLayoutParams(LayoutHelper.createFrame(-1, 20.0f, (z2 ? 5 : 3) | 48, z2 ? 30.0f : i + 66, 32.0f, z2 ? i + 66 : 30.0f, 0.0f));
+        this.avatarImageView.setRoundRadius(AndroidUtilities.dp(22.0f));
+        BackupImageView backupImageView = this.avatarImageView;
+        boolean z3 = LocaleController.isRTL;
+        backupImageView.setLayoutParams(LayoutHelper.createFrame(44, 44.0f, (z3 ? 5 : 3) | 48, z3 ? 0.0f : i + 8, 6.0f, z3 ? i + 8 : 0.0f, 0.0f));
+        CheckBox2 checkBox2 = this.checkBox;
+        if (checkBox2 != null) {
+            boolean z4 = LocaleController.isRTL;
+            checkBox2.setLayoutParams(LayoutHelper.createFrame(24, 24.0f, (z4 ? 5 : 3) | 48, z4 ? 0.0f : i + 37, 32.0f, z4 ? i + 37 : 0.0f, 0.0f));
+        }
+    }
+
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.callCellStyle ? 56.0f : 58.0f) + (this.needDivider ? 1 : 0), TLObject.FLAG_30));
     }
 
     @Override // android.view.View

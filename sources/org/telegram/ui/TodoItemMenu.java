@@ -402,6 +402,13 @@ public class TodoItemMenu extends Dialog {
                 protected void onMeasure(int i4, int i5) {
                     setMeasuredDimension(width, height);
                 }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell
+                public void drawOverlays(Canvas canvas) {
+                    this.firstVisiblePollButton = 0;
+                    this.lastVisiblePollButton = this.pollButtons.size() - 1;
+                    super.drawOverlays(canvas);
+                }
             };
             this.myTaskCell = chatMessageCell2;
             this.cell.copyParamsTo(chatMessageCell2);
@@ -597,6 +604,11 @@ public class TodoItemMenu extends Dialog {
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressSponsoredInfo(ChatMessageCell chatMessageCell3, float f, float f2) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSponsoredInfo(this, chatMessageCell3, f, f2);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didPressSummarize(ChatMessageCell chatMessageCell3, boolean z) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSummarize(this, chatMessageCell3, z);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -797,6 +809,13 @@ public class TodoItemMenu extends Dialog {
                 protected void onMeasure(int i4, int i5) {
                     setMeasuredDimension(width, height);
                 }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell
+                public void drawOverlays(Canvas canvas) {
+                    this.firstVisiblePollButton = 0;
+                    this.lastVisiblePollButton = this.pollButtons.size() - 1;
+                    super.drawOverlays(canvas);
+                }
             };
             this.myCell = chatMessageCell5;
             this.cell.copyVisiblePartTo(chatMessageCell5);
@@ -993,6 +1012,11 @@ public class TodoItemMenu extends Dialog {
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressSponsoredInfo(ChatMessageCell chatMessageCell6, float f, float f2) {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSponsoredInfo(this, chatMessageCell6, f, f2);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didPressSummarize(ChatMessageCell chatMessageCell6, boolean z) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSummarize(this, chatMessageCell6, z);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

@@ -1,25 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import kotlin.jvm.functions.Function0;
 
 /* loaded from: classes.dex */
-public final class zzie {
-    static final zzie zza = new zzie(true);
-    public static final /* synthetic */ int zzb = 0;
-    private static volatile boolean zzc = false;
-    private final Map zzd;
+public final class zzie implements Function0 {
+    public static final zzie zza = new zzie();
 
-    zzie() {
-        this.zzd = new HashMap();
-    }
-
-    public final zzir zza(zzke zzkeVar, int i) {
-        return (zzir) this.zzd.get(new zzid(zzkeVar, i));
-    }
-
-    zzie(boolean z) {
-        this.zzd = Collections.emptyMap();
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzhm.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzhm) zzb;
+        }
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

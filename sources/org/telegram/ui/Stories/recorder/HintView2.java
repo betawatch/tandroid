@@ -54,7 +54,7 @@ import org.telegram.ui.Components.LinkPath;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda63;
+import org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda56;
 
 /* loaded from: classes5.dex */
 public class HintView2 extends View {
@@ -181,7 +181,7 @@ public class HintView2 extends View {
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         this.show = new AnimatedFloat(this, 350L, cubicBezierInterpolator);
         this.iconMargin = AndroidUtilities.dp(2.0f);
-        this.hideRunnable = new ProfileActivity$$ExternalSyntheticLambda63(this);
+        this.hideRunnable = new ProfileActivity$$ExternalSyntheticLambda56(this);
         this.bounceT = 1.0f;
         this.bounce = new ButtonBounce(this, 2.0f, 5.0f);
         this.boundsWithArrow = new Rect();
@@ -425,6 +425,48 @@ public class HintView2 extends View {
             }
         }
         return (int) Math.ceil(Math.max(f2, f3));
+    }
+
+    public static CharSequence cutInFancyHalfText(CharSequence charSequence, TextPaint textPaint) {
+        int i;
+        int i2;
+        if (TextUtils.indexOf(charSequence, '\n') >= 0) {
+            return charSequence;
+        }
+        int length = charSequence.length() / 2;
+        int i3 = length;
+        float f = 0.0f;
+        float f2 = Float.MAX_VALUE;
+        int i4 = 0;
+        int i5 = -1;
+        while (i4 < 10) {
+            i3 = length;
+            while (i3 > 0 && i3 < charSequence.length() && charSequence.charAt(i3) != ' ') {
+                i3 += i5;
+            }
+            float measureCorrectly = measureCorrectly(charSequence.subSequence(0, i3), textPaint);
+            float measureCorrectly2 = measureCorrectly(AndroidUtilities.getTrimmedString(charSequence.subSequence(i3, charSequence.length())), textPaint);
+            if (measureCorrectly == f && measureCorrectly2 == f2) {
+                break;
+            }
+            if (measureCorrectly < measureCorrectly2) {
+                i = i3 + 1;
+                i2 = 1;
+            } else {
+                i = i3 - 1;
+                i2 = -1;
+            }
+            if (i <= 0 || i >= charSequence.length()) {
+                return charSequence;
+            }
+            i4++;
+            int i6 = i;
+            f = measureCorrectly;
+            length = i6;
+            i5 = i2;
+            f2 = measureCorrectly2;
+        }
+        return TextUtils.concat(AndroidUtilities.getTrimmedString(charSequence.subSequence(0, i3)), "\n", AndroidUtilities.getTrimmedString(charSequence.subSequence(i3, charSequence.length())));
     }
 
     public HintView2 useScale(boolean z) {

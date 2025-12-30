@@ -1,14 +1,14 @@
 package com.google.android.play.core.integrity;
 
 /* loaded from: classes.dex */
-public final class bu implements com.google.android.play.integrity.internal.ak {
-    private final com.google.android.play.integrity.internal.an a;
+public final class bu implements com.google.android.play.integrity.internal.ay {
+    private final com.google.android.play.integrity.internal.bd a;
 
-    public bu(com.google.android.play.integrity.internal.an anVar) {
-        this.a = anVar;
+    public bu(com.google.android.play.integrity.internal.bd bdVar) {
+        this.a = bdVar;
     }
 
-    @Override // com.google.android.play.integrity.internal.an
+    @Override // com.google.android.play.integrity.internal.bd
     public final /* bridge */ /* synthetic */ Object a() {
         return new bt((bn) this.a.a());
     }

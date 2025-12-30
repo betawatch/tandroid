@@ -1,7 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 /* loaded from: classes.dex */
-final class zzmm implements zziz {
-    zzmm() {
+public abstract class zzmm {
+    protected zzmm() {
     }
+
+    public final String toString() {
+        return zzb().toString();
+    }
+
+    protected abstract Object zzb();
 }

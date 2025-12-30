@@ -10,13 +10,8 @@ import org.telegram.ui.Cells.GroupCreateSectionCell;
 
 /* loaded from: classes5.dex */
 public class GroupCreateDividerItemDecoration extends RecyclerView.ItemDecoration {
-    private boolean searching;
     private boolean single;
     private int skipRows;
-
-    public void setSearching(boolean z) {
-        this.searching = z;
-    }
 
     public void setSingle(boolean z) {
         this.single = z;

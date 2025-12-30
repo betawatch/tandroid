@@ -43,7 +43,7 @@ public class ChatActivityActionsButtonsLayout extends LinearLayout {
         ButtonHolder buttonHolder2 = new ButtonHolder();
         this.forwardButton = buttonHolder2;
         this.resourcesProvider = resourcesProvider;
-        ChatActivityBlurredRoundButton create = ChatActivityBlurredRoundButton.create(context, blurredBackgroundDrawableViewFactory, blurredBackgroundColorProvider, resourcesProvider, 0);
+        ChatActivityBlurredRoundButton create = ChatActivityBlurredRoundButton.create(context, blurredBackgroundDrawableViewFactory, blurredBackgroundColorProvider, resourcesProvider);
         buttonHolder.button = create;
         create.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.chat.layouts.ChatActivityActionsButtonsLayout$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -52,7 +52,7 @@ public class ChatActivityActionsButtonsLayout extends LinearLayout {
             }
         });
         ScaleStateListAnimator.apply(buttonHolder.button, 0.065f, 2.0f);
-        ChatActivityBlurredRoundButton create2 = ChatActivityBlurredRoundButton.create(context, blurredBackgroundDrawableViewFactory, blurredBackgroundColorProvider, resourcesProvider, 0);
+        ChatActivityBlurredRoundButton create2 = ChatActivityBlurredRoundButton.create(context, blurredBackgroundDrawableViewFactory, blurredBackgroundColorProvider, resourcesProvider);
         buttonHolder2.button = create2;
         create2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.chat.layouts.ChatActivityActionsButtonsLayout$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener

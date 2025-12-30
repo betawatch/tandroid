@@ -47,9 +47,6 @@ public class ProfileGooeyView extends FrameLayout {
             public static void $default$onSizeChanged(Impl impl, int i, int i2) {
             }
 
-            public static void $default$release(Impl impl) {
-            }
-
             public static void $default$setBlurIntensity(Impl impl, float f) {
             }
 
@@ -60,8 +57,6 @@ public class ProfileGooeyView extends FrameLayout {
         void draw(Drawer drawer, Canvas canvas);
 
         void onSizeChanged(int i, int i2);
-
-        void release();
 
         void setBlurIntensity(float f);
 
@@ -76,10 +71,8 @@ public class ProfileGooeyView extends FrameLayout {
         paint.setColor(-16777216);
         if (Build.VERSION.SDK_INT >= 31 && SharedConfig.getDevicePerformanceClass() >= 1) {
             this.impl = new GPUImpl(SharedConfig.getDevicePerformanceClass() == 2 ? 1.0f : 1.5f);
-        } else if (SharedConfig.getDevicePerformanceClass() >= 2) {
-            this.impl = new CPUImpl();
         } else {
-            this.impl = new NoopImpl();
+            this.impl = new CPUImpl();
         }
         setIntensity(15.0f);
         setBlurIntensity(0.0f);
@@ -161,45 +154,6 @@ public class ProfileGooeyView extends FrameLayout {
         canvas.restore();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.impl.release();
-    }
-
-    private static final class NoopImpl implements Impl {
-        @Override // org.telegram.ui.Components.ProfileGooeyView.Impl
-        public /* synthetic */ void onSizeChanged(int i, int i2) {
-            Impl.-CC.$default$onSizeChanged(this, i, i2);
-        }
-
-        @Override // org.telegram.ui.Components.ProfileGooeyView.Impl
-        public /* synthetic */ void release() {
-            Impl.-CC.$default$release(this);
-        }
-
-        @Override // org.telegram.ui.Components.ProfileGooeyView.Impl
-        public /* synthetic */ void setBlurIntensity(float f) {
-            Impl.-CC.$default$setBlurIntensity(this, f);
-        }
-
-        @Override // org.telegram.ui.Components.ProfileGooeyView.Impl
-        public /* synthetic */ void setIntensity(float f) {
-            Impl.-CC.$default$setIntensity(this, f);
-        }
-
-        private NoopImpl() {
-        }
-
-        @Override // org.telegram.ui.Components.ProfileGooeyView.Impl
-        public void draw(Drawer drawer, Canvas canvas) {
-            canvas.save();
-            canvas.translate(0.0f, -AndroidUtilities.dp(32.0f));
-            drawer.draw(canvas);
-            canvas.restore();
-        }
-    }
-
     private final class CPUImpl implements Impl {
         private Bitmap bitmap;
         private Canvas bitmapCanvas;
@@ -226,7 +180,7 @@ public class ProfileGooeyView extends FrameLayout {
             this.bitmapPaint = paint;
             Paint paint2 = new Paint();
             this.bitmapPaint2 = paint2;
-            this.scaleConst = 5.0f;
+            this.scaleConst = 6.0f;
             paint.setFlags(7);
             paint.setFilterBitmap(true);
             paint2.setFlags(7);
@@ -240,6 +194,7 @@ public class ProfileGooeyView extends FrameLayout {
             Bitmap bitmap = this.bitmap;
             if (bitmap != null) {
                 bitmap.recycle();
+                this.bitmap = null;
             }
             this.optimizedW = Math.min(AndroidUtilities.dp(120.0f), i);
             int min = Math.min(AndroidUtilities.dp(220.0f), i2);
@@ -247,13 +202,14 @@ public class ProfileGooeyView extends FrameLayout {
             this.bitmapOrigW = this.optimizedW;
             int dp = min + AndroidUtilities.dp(32.0f);
             this.bitmapOrigH = dp;
-            this.bitmap = Bitmap.createBitmap((int) (this.bitmapOrigW / 5.0f), (int) (dp / 5.0f), Bitmap.Config.ARGB_8888);
+            this.bitmap = Bitmap.createBitmap((int) (this.bitmapOrigW / 6.0f), (int) (dp / 6.0f), Bitmap.Config.ARGB_8888);
             this.bitmapCanvas = new Canvas(this.bitmap);
         }
 
         @Override // org.telegram.ui.Components.ProfileGooeyView.Impl
         public void draw(Drawer drawer, Canvas canvas) {
-            if (this.bitmap == null) {
+            Bitmap bitmap = this.bitmap;
+            if (bitmap == null || bitmap.isRecycled()) {
                 return;
             }
             int clamp = (int) ((1.0f - ((MathUtils.clamp(ProfileGooeyView.this.blurIntensity, 0.2f, 0.3f) - 0.2f) / 0.10000001f)) * 255.0f);
@@ -294,7 +250,7 @@ public class ProfileGooeyView extends FrameLayout {
                     this.bitmapCanvas.restore();
                 }
                 this.bitmapCanvas.restore();
-                Utilities.stackBlurBitmap(this.bitmap, (int) ((ProfileGooeyView.this.intensity * 2.0f) / 5.0f));
+                Utilities.stackBlurBitmap(this.bitmap, (int) ((ProfileGooeyView.this.intensity * 2.0f) / 6.0f));
                 canvas.save();
                 canvas.translate(width, 0.0f);
                 canvas.saveLayer(0.0f, 0.0f, this.bitmapOrigW, this.bitmapOrigH, null);
@@ -315,14 +271,6 @@ public class ProfileGooeyView extends FrameLayout {
             }
             canvas.restore();
         }
-
-        @Override // org.telegram.ui.Components.ProfileGooeyView.Impl
-        public void release() {
-            Bitmap bitmap = this.bitmap;
-            if (bitmap != null) {
-                bitmap.recycle();
-            }
-        }
     }
 
     private final class GPUImpl implements Impl {
@@ -340,11 +288,6 @@ public class ProfileGooeyView extends FrameLayout {
         @Override // org.telegram.ui.Components.ProfileGooeyView.Impl
         public /* synthetic */ void onSizeChanged(int i, int i2) {
             Impl.-CC.$default$onSizeChanged(this, i, i2);
-        }
-
-        @Override // org.telegram.ui.Components.ProfileGooeyView.Impl
-        public /* synthetic */ void release() {
-            Impl.-CC.$default$release(this);
         }
 
         private GPUImpl(float f) {

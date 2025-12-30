@@ -1,66 +1,80 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Map;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CompletableDeferred;
-import kotlinx.coroutines.CompletableDeferredKt;
-import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.TimeoutCancellationException;
 
 /* loaded from: classes.dex */
 final class zzet extends SuspendLambda implements Function2 {
     int zza;
-    final /* synthetic */ String zzb;
-    final /* synthetic */ zzez zzc;
+    final /* synthetic */ zzfp zzb;
+    final /* synthetic */ String zzc;
+    final /* synthetic */ long zzd;
+    private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzet(String str, zzez zzezVar, Continuation continuation) {
+    zzet(zzfp zzfpVar, String str, long j, Continuation continuation) {
         super(2, continuation);
-        this.zzb = str;
-        this.zzc = zzezVar;
+        this.zzb = zzfpVar;
+        this.zzc = str;
+        this.zzd = j;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation create(Object obj, Continuation continuation) {
-        return new zzet(this.zzb, this.zzc, continuation);
+        zzet zzetVar = new zzet(this.zzb, this.zzc, this.zzd, continuation);
+        zzetVar.zze = obj;
+        return zzetVar;
     }
 
     @Override // kotlin.jvm.functions.Function2
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzet) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzet) create((zzgr) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Map map;
-        zzt zztVar;
+        zzgr zzgrVar;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.zza;
-        ResultKt.throwOnFailure(obj);
-        if (i == 0) {
-            zzez zzezVar = this.zzc;
-            String str = this.zzb;
-            CompletableDeferred CompletableDeferred$default = CompletableDeferredKt.CompletableDeferred$default(null, 1, null);
-            map = zzezVar.zzl;
-            map.put(str, CompletableDeferred$default);
-            String str2 = this.zzb;
-            zzou zzf = zzov.zzf();
-            zzf.zzd(str2);
-            byte[] zzd = ((zzov) zzf.zzj()).zzd();
-            String zzi = zzfy.zzh().zzi(zzd, 0, zzd.length);
-            zztVar = this.zzc.zzq;
-            BuildersKt__Builders_commonKt.launch$default(zztVar.zzb(), null, null, new zzes(this.zzc, zzi, null), 3, null);
-            this.zza = 1;
-            obj = CompletableDeferred$default.await(this);
+        try {
+            if (i == 0) {
+                ResultKt.throwOnFailure(obj);
+                zzgrVar = (zzgr) this.zze;
+                zzq zzb = zzfp.zzb(this.zzb);
+                String str = this.zzc;
+                long j = this.zzd;
+                this.zze = zzgrVar;
+                this.zza = 1;
+                obj = zzb.zzb(str, j, this);
+                if (obj == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+            } else {
+                if (i != 1) {
+                    ResultKt.throwOnFailure(obj);
+                    return (zzxx) obj;
+                }
+                zzgrVar = (zzgr) this.zze;
+                ResultKt.throwOnFailure(obj);
+            }
+            this.zze = null;
+            this.zza = 2;
+            obj = ((zzhf) obj).zza(zzgrVar.zza(), this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
+            return (zzxx) obj;
+        } catch (zzcg e) {
+            throw e;
+        } catch (TimeoutCancellationException e2) {
+            throw new zzcg(zzce.zzb, zzcd.zzb, e2.getMessage(), null, 8, null);
+        } catch (Exception e3) {
+            throw new zzcg(zzce.zzb, zzcd.zzaa, e3.getMessage(), null, 8, null);
         }
-        return obj;
     }
 }

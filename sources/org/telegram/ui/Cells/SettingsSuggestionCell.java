@@ -126,7 +126,7 @@ public abstract class SettingsSuggestionCell extends LinearLayout {
             return;
         }
         TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(UserConfig.getInstance(this.currentAccount).clientUserId));
-        this.textView.setText(LocaleController.formatString("CheckPhoneNumber", R.string.CheckPhoneNumber, PhoneFormat.getInstance().format("+" + user.phone)));
+        this.textView.setText(LocaleController.formatString(R.string.CheckPhoneNumber, PhoneFormat.getInstance().format("+" + user.phone)));
         String string = LocaleController.getString(R.string.CheckPhoneNumberInfo);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
         int indexOf = string.indexOf("**");

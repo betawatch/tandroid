@@ -53,6 +53,7 @@ public class LocaleController {
     public static int nameDisplayOrder = 1;
     private static Boolean useImperialSystemType;
     private volatile FastDateFormat chatDate;
+    private volatile FastDateFormat chatDateShort;
     private volatile FastDateFormat chatFullDate;
     private boolean checkingUpdateForCurrentRemoteLocale;
     private HashMap<String, String> currencyValues;
@@ -458,6 +459,24 @@ public class LocaleController {
             }
         }
         return this.chatDate;
+    }
+
+    public FastDateFormat getChatDateShort() {
+        if (this.chatDateShort == null) {
+            synchronized (this) {
+                try {
+                    if (this.chatDateShort == null) {
+                        Locale locale = this.currentLocale;
+                        if (locale == null) {
+                            locale = Locale.getDefault();
+                        }
+                        this.chatDateShort = createFormatter(locale, getStringInternal("chatDateShort", R.string.chatDateShort), "d MMM");
+                    }
+                } finally {
+                }
+            }
+        }
+        return this.chatDateShort;
     }
 
     public FastDateFormat getChatFullDate() {
@@ -2827,7 +2846,7 @@ public class LocaleController {
             if (i3 == i && i2 == i4) {
                 return getInstance().getFormatterDay().format(new Date(j2));
             }
-            return (i3 + 1 == i && i2 == i4) ? formatString(R.string.YesterdayAtFormatted, getInstance().getFormatterDay().format(new Date(j2))) : Math.abs(System.currentTimeMillis() - j2) < 31536000000L ? formatString(R.string.formatDateAtTime, getInstance().getChatDate().format(new Date(j2)), getInstance().getFormatterDay().format(new Date(j2))) : formatString(R.string.formatDateAtTime, getInstance().getChatFullDate().format(new Date(j2)), getInstance().getFormatterDay().format(new Date(j2)));
+            return (i3 + 1 == i && i2 == i4) ? formatString(R.string.YesterdayAtFormatted, getInstance().getFormatterDay().format(new Date(j2))) : Math.abs(System.currentTimeMillis() - j2) < 31536000000L ? formatString(R.string.formatDateAtTime, getInstance().getChatDateShort().format(new Date(j2)), getInstance().getFormatterDay().format(new Date(j2))) : formatString(R.string.formatDateAtTime, getInstance().getChatFullDate().format(new Date(j2)), getInstance().getFormatterDay().format(new Date(j2)));
         } catch (Exception e) {
             FileLog.e(e);
             return "LOC_ERR";

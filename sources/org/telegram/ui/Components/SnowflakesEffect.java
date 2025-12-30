@@ -111,11 +111,6 @@ public class SnowflakesEffect {
         }
     }
 
-    public void setColorKey(int i) {
-        this.colorKey = i;
-        updateColors();
-    }
-
     public void updateColors() {
         int color = Theme.getColor(this.colorKey) & (-1644826);
         if (this.color != color) {

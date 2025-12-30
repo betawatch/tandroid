@@ -1100,10 +1100,6 @@ public class ActionBar extends FrameLayout {
         return this.actionMode != null && this.actionModeVisible && (((str2 = this.actionModeTag) == null && str == null) || (str2 != null && str2.equals(str)));
     }
 
-    public void listenToBackgroundUpdate(Runnable runnable) {
-        this.backgroundUpdateListener = runnable;
-    }
-
     public void onSearchFieldVisibilityChanged(final boolean z) {
         this.isSearchFieldVisible = z;
         AnimatorSet animatorSet = this.searchVisibleAnimator;
@@ -1240,14 +1236,6 @@ public class ActionBar extends FrameLayout {
         }
         boolean z2 = !this.isSearchFieldVisible;
         actionBarMenu.openSearchField(z2, z2, str, z);
-    }
-
-    public void openSearchField(boolean z) {
-        ActionBarMenu actionBarMenu = this.menu;
-        if (actionBarMenu == null) {
-            return;
-        }
-        actionBarMenu.openSearchField(!this.isSearchFieldVisible, false, "", z);
     }
 
     public void setSearchFilter(FiltersView.MediaFilterData mediaFilterData) {

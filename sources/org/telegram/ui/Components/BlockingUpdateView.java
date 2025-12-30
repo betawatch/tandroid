@@ -36,7 +36,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.voip.CellFlickerDrawable;
 
 /* loaded from: classes5.dex */
-public abstract class BlockingUpdateView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+public class BlockingUpdateView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private FrameLayout acceptButton;
     private TextView acceptTextView;
     private int accountNum;

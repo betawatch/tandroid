@@ -13,7 +13,7 @@ public abstract class MapsKt__MapsJVMKt extends MapsKt__MapWithDefaultKt {
         return i < 0 ? i : i < 3 ? i + 1 : i < 1073741824 ? (int) ((i / 0.75f) + 1.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
-    public static final Map mapOf(Pair pair) {
+    public static Map mapOf(Pair pair) {
         Intrinsics.checkNotNullParameter(pair, "pair");
         Map singletonMap = Collections.singletonMap(pair.getFirst(), pair.getSecond());
         Intrinsics.checkNotNullExpressionValue(singletonMap, "singletonMap(...)");

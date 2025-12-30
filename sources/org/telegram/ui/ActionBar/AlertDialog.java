@@ -305,7 +305,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         this.blurredBackground = (z2 || (!supportsNativeBlur() && SharedConfig.getDevicePerformanceClass() >= 2 && LiteMode.isEnabled(256))) && z;
         this.backgroundPaddings = new Rect();
         if (i != 3 || this.blurredBackground) {
-            Drawable mutate = context.getResources().getDrawable(R.drawable.popup_fixed_alert3).mutate();
+            Drawable mutate = context.getResources().getDrawable(R.drawable.popup_fixed_alert4).mutate();
             this.shadowDrawable = mutate;
             if (i == 3) {
                 f = 0.55f;

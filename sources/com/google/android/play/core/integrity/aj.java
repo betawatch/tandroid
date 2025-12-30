@@ -17,14 +17,16 @@ final class aj {
     final com.google.android.play.integrity.internal.ae a;
     private final com.google.android.play.integrity.internal.s b;
     private final String c;
-    private final at d;
-    private final k e;
+    private final Context d;
+    private final at e;
+    private final k f;
 
     aj(Context context, com.google.android.play.integrity.internal.s sVar, at atVar, k kVar) {
         this.c = context.getPackageName();
         this.b = sVar;
-        this.d = atVar;
-        this.e = kVar;
+        this.e = atVar;
+        this.f = kVar;
+        this.d = context;
         if (com.google.android.play.integrity.internal.ai.b(context)) {
             this.a = new com.google.android.play.integrity.internal.ae(context, sVar, "IntegrityService", ak.a, new com.google.android.play.integrity.internal.z() { // from class: com.google.android.play.core.integrity.ae
                 @Override // com.google.android.play.integrity.internal.z
@@ -43,10 +45,13 @@ final class aj {
         bundle.putString("package.name", ajVar.c);
         bundle.putByteArray("nonce", bArr);
         bundle.putInt("playcore.integrity.version.major", 1);
-        bundle.putInt("playcore.integrity.version.minor", 3);
+        bundle.putInt("playcore.integrity.version.minor", 4);
         bundle.putInt("playcore.integrity.version.patch", 0);
         if (l != null) {
             bundle.putLong("cloud.prj", l.longValue());
+        }
+        if (parcelable != null) {
+            bundle.putParcelable("network", parcelable);
         }
         ArrayList arrayList = new ArrayList();
         com.google.android.play.integrity.internal.d.b(3, arrayList);
@@ -68,6 +73,9 @@ final class aj {
     public final Task c(IntegrityTokenRequest integrityTokenRequest) {
         if (this.a == null) {
             return Tasks.forException(new IntegrityServiceException(-2, null));
+        }
+        if (com.google.android.play.integrity.internal.ai.a(this.d) < 82380000) {
+            return Tasks.forException(new IntegrityServiceException(-14, null));
         }
         try {
             byte[] decode = Base64.decode(integrityTokenRequest.nonce(), 10);

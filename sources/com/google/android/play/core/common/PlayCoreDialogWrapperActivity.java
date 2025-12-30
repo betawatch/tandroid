@@ -38,12 +38,12 @@ public class PlayCoreDialogWrapperActivity extends Activity {
         int intExtra = getIntent().getIntExtra("window_flags", 0);
         if (intExtra != 0) {
             getWindow().getDecorView().setSystemUiVisibility(intExtra);
-            intent = new Intent();
-            intent.putExtra("window_flags", intExtra);
+            Intent intent2 = new Intent();
+            intent2.putExtra("window_flags", intExtra);
+            intent = intent2;
         } else {
             intent = null;
         }
-        Intent intent2 = intent;
         super.onCreate(bundle);
         if (bundle != null) {
             this.zza = (ResultReceiver) bundle.getParcelable("result_receiver");
@@ -51,12 +51,13 @@ public class PlayCoreDialogWrapperActivity extends Activity {
         }
         this.zza = (ResultReceiver) getIntent().getParcelableExtra("result_receiver");
         Bundle extras = getIntent().getExtras();
-        if (extras == null) {
+        PendingIntent pendingIntent = extras != null ? (PendingIntent) extras.get("confirmation_intent") : null;
+        if (extras == null || pendingIntent == null) {
             zza();
             finish();
         } else {
             try {
-                startIntentSenderForResult(((PendingIntent) extras.get("confirmation_intent")).getIntentSender(), 0, intent2, 0, 0, 0);
+                startIntentSenderForResult(pendingIntent.getIntentSender(), 0, intent, 0, 0, 0);
             } catch (IntentSender.SendIntentException unused) {
                 zza();
                 finish();

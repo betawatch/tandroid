@@ -11,8 +11,8 @@ final class be extends com.google.android.play.integrity.internal.t {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     be(bn bnVar, TaskCompletionSource taskCompletionSource, Context context) {
         super(taskCompletionSource);
-        this.b = bnVar;
         this.a = context;
+        this.b = bnVar;
     }
 
     @Override // com.google.android.play.integrity.internal.t

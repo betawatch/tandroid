@@ -1,40 +1,90 @@
 package com.google.android.recaptcha.internal;
 
-/* loaded from: classes.dex */
-final /* synthetic */ class zzlh {
-    static final /* synthetic */ int[] zza;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 
-    static {
-        zzis.zza();
-        int[] iArr = new int[7];
-        zza = iArr;
+/* loaded from: classes.dex */
+final class zzlh extends SuspendLambda implements Function2 {
+    Object zza;
+    int zzb;
+    final /* synthetic */ zzly zzc;
+    final /* synthetic */ zzxn zzd;
+    private /* synthetic */ Object zze;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzlh(zzly zzlyVar, zzxn zzxnVar, Continuation continuation) {
+        super(2, continuation);
+        this.zzc = zzlyVar;
+        this.zzd = zzxnVar;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        zzlh zzlhVar = new zzlh(this.zzc, this.zzd, continuation);
+        zzlhVar.zze = obj;
+        return zzlhVar;
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzlh) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        zzhk zzhkVar;
+        zzhk zzhkVar2;
+        zzhk zzhkVar3;
+        zzcr zzD;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.zzb;
         try {
-            iArr[3] = 1;
-        } catch (NoSuchFieldError unused) {
+        } catch (zzcg e) {
+            this.zzc.zzz().completeExceptionally(e);
         }
-        try {
-            zza[4] = 2;
-        } catch (NoSuchFieldError unused2) {
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            zzhkVar = (zzhk) this.zze;
+            zzib zzp = zzly.zzp(this.zzc);
+            zzxn zzxnVar = this.zzd;
+            this.zze = zzhkVar;
+            this.zza = zzhkVar;
+            this.zzb = 1;
+            obj = zzp.zzc(zzxnVar, this);
+            if (obj != coroutine_suspended) {
+                zzhkVar2 = zzhkVar;
+            }
+            return coroutine_suspended;
         }
-        try {
-            zza[2] = 3;
-        } catch (NoSuchFieldError unused3) {
+        if (i != 1) {
+            zzhkVar3 = (zzhk) this.zze;
+            ResultKt.throwOnFailure(obj);
+            zzly zzlyVar = this.zzc;
+            zzD = zzlyVar.zzD();
+            BuildersKt__Builders_commonKt.launch$default(zzD.zzb(), null, null, new zzlg(zzlyVar, zzhkVar3, (String) obj, null), 3, null);
+            return Unit.INSTANCE;
         }
-        try {
-            zza[5] = 4;
-        } catch (NoSuchFieldError unused4) {
+        zzhk zzhkVar4 = (zzhk) this.zza;
+        zzhk zzhkVar5 = (zzhk) this.zze;
+        ResultKt.throwOnFailure(obj);
+        zzhkVar2 = zzhkVar4;
+        zzhkVar = zzhkVar5;
+        this.zze = zzhkVar;
+        this.zza = null;
+        this.zzb = 2;
+        obj = ((zzhg) obj).zza(zzhkVar2, this);
+        if (obj == coroutine_suspended) {
+            return coroutine_suspended;
         }
-        try {
-            zza[6] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            zza[0] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            zza[1] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
+        zzhkVar3 = zzhkVar;
+        zzly zzlyVar2 = this.zzc;
+        zzD = zzlyVar2.zzD();
+        BuildersKt__Builders_commonKt.launch$default(zzD.zzb(), null, null, new zzlg(zzlyVar2, zzhkVar3, (String) obj, null), 3, null);
+        return Unit.INSTANCE;
     }
 }

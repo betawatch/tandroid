@@ -1,68 +1,49 @@
 package com.google.android.recaptcha.internal;
 
-import java.io.IOException;
+import java.lang.reflect.Array;
 
 /* loaded from: classes.dex */
-public class zzje extends IOException {
-    private zzke zza;
-    private boolean zzb;
+public final class zzje implements zzjt {
+    public static final zzje zza = new zzje();
 
-    public zzje(IOException iOException) {
-        super(iOException.getMessage(), iOException);
-        this.zza = null;
+    private zzje() {
     }
 
-    static zzjd zza() {
-        return new zzjd("Protocol message tag had invalid wire type.");
-    }
-
-    static zzje zzb() {
-        return new zzje("Protocol message end-group tag did not match expected tag.");
-    }
-
-    static zzje zzc() {
-        return new zzje("Protocol message contained an invalid tag (zero).");
-    }
-
-    static zzje zzd() {
-        return new zzje("Protocol message had invalid UTF-8.");
-    }
-
-    static zzje zze() {
-        return new zzje("CodedInputStream encountered a malformed varint.");
-    }
-
-    static zzje zzf() {
-        return new zzje("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
-    }
-
-    static zzje zzg() {
-        return new zzje("Failed to parse the message.");
-    }
-
-    static zzje zzi() {
-        return new zzje("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit.");
-    }
-
-    static zzje zzj() {
-        return new zzje("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
-    }
-
-    public final zzje zzh(zzke zzkeVar) {
-        this.zza = zzkeVar;
-        return this;
-    }
-
-    final void zzk() {
-        this.zzb = true;
-    }
-
-    final boolean zzl() {
-        return this.zzb;
-    }
-
-    public zzje(String str) {
-        super(str);
-        this.zza = null;
+    @Override // com.google.android.recaptcha.internal.zzjt
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+        if (zzztVarArr.length != 3) {
+            throw new zzdm(4, 3, null);
+        }
+        Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
+        if (true != (zza2 instanceof Object)) {
+            zza2 = null;
+        }
+        if (zza2 == null) {
+            throw new zzdm(4, 5, null);
+        }
+        Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
+        if (true != (zza3 instanceof Integer)) {
+            zza3 = null;
+        }
+        Integer num = (Integer) zza3;
+        if (num == null) {
+            throw new zzdm(4, 5, null);
+        }
+        int intValue = num.intValue();
+        Object zza4 = zzizVar.zzc().zza(zzztVarArr[2]);
+        if (true != (zza4 instanceof Object)) {
+            zza4 = null;
+        }
+        if (zza4 == null) {
+            throw new zzdm(4, 5, null);
+        }
+        try {
+            Array.set(zza2, intValue, zza4);
+        } catch (Exception e) {
+            if (!(e instanceof ArrayIndexOutOfBoundsException)) {
+                throw new zzdm(4, 25, e);
+            }
+            throw new zzdm(4, 22, e);
+        }
     }
 }

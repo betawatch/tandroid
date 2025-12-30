@@ -2,7 +2,7 @@ package com.stripe.android.util;
 
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class StripeJsonUtils {
     public static String getString(JSONObject jSONObject, String str) {
         return nullIfNullOrEmpty(jSONObject.getString(str));

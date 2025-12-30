@@ -1,16 +1,22 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Iterator;
+import android.content.Context;
 
 /* loaded from: classes.dex */
-final class zzkw implements Iterable {
-    zzkw() {
+public final class zzkw implements zzlb {
+    private final Context zza;
+
+    public zzkw(Context context) {
+        this.zza = context;
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        Iterator it;
-        it = zzkx.zza;
-        return it;
+    @Override // com.google.android.recaptcha.internal.zzlb
+    public final /* synthetic */ Object cs(Object[] objArr) {
+        return zzla.zza(this, objArr);
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzlb
+    public final Object zza(Object... objArr) {
+        return zzbs.zza(this.zza.getContentResolver());
     }
 }

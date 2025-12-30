@@ -1,22 +1,106 @@
 package com.google.android.recaptcha.internal;
 
-import j$.util.DesugarTimeZone;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 /* loaded from: classes.dex */
-final class zzmf extends ThreadLocal {
+public final class zzmf {
+    private boolean zza;
+    private long zzb;
+    private long zzc;
+
     zzmf() {
+        int i = zzmi.zzb;
     }
 
-    @Override // java.lang.ThreadLocal
-    protected final /* synthetic */ Object initialValue() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
-        GregorianCalendar gregorianCalendar = new GregorianCalendar(DesugarTimeZone.getTimeZone("UTC"));
-        gregorianCalendar.setGregorianChange(new Date(Long.MIN_VALUE));
-        simpleDateFormat.setCalendar(gregorianCalendar);
-        return simpleDateFormat;
+    public static zzmf zzb() {
+        zzmf zzmfVar = new zzmf();
+        zzmfVar.zze();
+        return zzmfVar;
+    }
+
+    public static zzmf zzc() {
+        return new zzmf();
+    }
+
+    private final long zzg() {
+        return this.zza ? (System.nanoTime() - this.zzc) + this.zzb : this.zzb;
+    }
+
+    public final String toString() {
+        String str;
+        long zzg = zzg();
+        TimeUnit timeUnit = TimeUnit.DAYS;
+        TimeUnit timeUnit2 = TimeUnit.NANOSECONDS;
+        if (timeUnit.convert(zzg, timeUnit2) <= 0) {
+            timeUnit = TimeUnit.HOURS;
+            if (timeUnit.convert(zzg, timeUnit2) <= 0) {
+                timeUnit = TimeUnit.MINUTES;
+                if (timeUnit.convert(zzg, timeUnit2) <= 0) {
+                    timeUnit = TimeUnit.SECONDS;
+                    if (timeUnit.convert(zzg, timeUnit2) <= 0) {
+                        timeUnit = TimeUnit.MILLISECONDS;
+                        if (timeUnit.convert(zzg, timeUnit2) <= 0) {
+                            timeUnit = TimeUnit.MICROSECONDS;
+                            if (timeUnit.convert(zzg, timeUnit2) <= 0) {
+                                timeUnit = timeUnit2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        String format = String.format(Locale.ROOT, "%.4g", Double.valueOf(zzg / timeUnit2.convert(1L, timeUnit)));
+        switch (zzme.zza[timeUnit.ordinal()]) {
+            case 1:
+                str = "ns";
+                break;
+            case 2:
+                str = "μs";
+                break;
+            case 3:
+                str = "ms";
+                break;
+            case 4:
+                str = "s";
+                break;
+            case 5:
+                str = "min";
+                break;
+            case 6:
+                str = "h";
+                break;
+            case 7:
+                str = "d";
+                break;
+            default:
+                throw new AssertionError();
+        }
+        return format + " " + str;
+    }
+
+    public final long zza(TimeUnit timeUnit) {
+        return timeUnit.convert(zzg(), TimeUnit.NANOSECONDS);
+    }
+
+    public final zzmf zzd() {
+        this.zzb = 0L;
+        this.zza = false;
+        return this;
+    }
+
+    public final zzmf zze() {
+        zzmd.zze(!this.zza, "This stopwatch is already running.");
+        this.zza = true;
+        this.zzc = System.nanoTime();
+        return this;
+    }
+
+    public final zzmf zzf() {
+        long nanoTime = System.nanoTime();
+        zzmd.zze(this.zza, "This stopwatch is already stopped.");
+        this.zza = false;
+        this.zzb += nanoTime - this.zzc;
+        return this;
     }
 }

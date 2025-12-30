@@ -1,33 +1,32 @@
 package com.google.android.recaptcha.internal;
 
-/* loaded from: classes.dex */
-public final class zzcu implements zzdd {
-    public static final zzcu zza = new zzcu();
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.jvm.internal.Ref$LongRef;
+import org.telegram.tgnet.TLObject;
 
-    private zzcu() {
+/* loaded from: classes.dex */
+final class zzcu extends ContinuationImpl {
+    long zza;
+    double zzb;
+    Object zzc;
+    int zzd;
+    int zze;
+    /* synthetic */ Object zzf;
+    final /* synthetic */ zzcx zzg;
+    int zzh;
+    Ref$LongRef zzi;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzcu(zzcx zzcxVar, Continuation continuation) {
+        super(continuation);
+        this.zzg = zzcxVar;
     }
 
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        if (zzpqVarArr.length != 2) {
-            throw new zzae(4, 3, null);
-        }
-        Object zza2 = zzcjVar.zzc().zza(zzpqVarArr[0]);
-        if (true != (zza2 instanceof String)) {
-            zza2 = null;
-        }
-        String str = (String) zza2;
-        if (str == null) {
-            throw new zzae(4, 5, null);
-        }
-        Object zza3 = zzcjVar.zzc().zza(zzpqVarArr[1]);
-        if (true != (zza3 instanceof String)) {
-            zza3 = null;
-        }
-        String str2 = (String) zza3;
-        if (str2 == null) {
-            throw new zzae(4, 5, null);
-        }
-        zzcjVar.zzc().zzf(i, str.concat(str2));
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        this.zzf = obj;
+        this.zzh |= TLObject.FLAG_31;
+        return this.zzg.zza(0, 0L, 0L, 0.0d, null, this);
     }
 }

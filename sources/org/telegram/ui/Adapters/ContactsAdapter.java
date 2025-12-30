@@ -400,9 +400,14 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
     public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup viewGroup, int i) {
         View view;
         if (i == 0) {
-            view = new UserCell(this.mContext, 58, 1, false);
+            UserCell userCell = new UserCell(this.mContext, 58, 1, false);
+            userCell.setCallCellStyle(58);
+            view = userCell;
         } else if (i == 1) {
-            view = new TextCell(this.mContext);
+            TextCell textCell = new TextCell(this.mContext);
+            int i2 = Theme.key_telegram_color;
+            textCell.setColors(i2, i2);
+            view = textCell;
         } else if (i == 2) {
             view = new GraySectionCell(this.mContext);
         } else if (i == 3) {
@@ -412,8 +417,8 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
         } else if (i == 4) {
             FrameLayout frameLayout = new FrameLayout(this.mContext) { // from class: org.telegram.ui.Adapters.ContactsAdapter.1
                 @Override // android.widget.FrameLayout, android.view.View
-                protected void onMeasure(int i2, int i3) {
-                    int size = View.MeasureSpec.getSize(i3);
+                protected void onMeasure(int i3, int i4) {
+                    int size = View.MeasureSpec.getSize(i4);
                     if (size == 0) {
                         size = viewGroup.getMeasuredHeight();
                     }
@@ -425,7 +430,8 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
                     if (!ContactsAdapter.this.isAdmin && !ContactsAdapter.this.needPhonebook) {
                         dp2 += dp;
                     }
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2 < size ? size - dp2 : 0, TLObject.FLAG_30));
+                    int paddingTop = (size - viewGroup.getPaddingTop()) - viewGroup.getPaddingBottom();
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2 < paddingTop ? paddingTop - dp2 : 0, TLObject.FLAG_30));
                 }
             };
             frameLayout.addView(new ContactsEmptyView(this.mContext), LayoutHelper.createFrame(-2, -2, 17));
@@ -461,7 +467,7 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
     public void onBindViewHolder(int i, int i2, RecyclerView.ViewHolder viewHolder) {
         ArrayList<TLRPC.TL_contact> arrayList;
         boolean z = this.hasStories;
-        int i3 = 6;
+        int i3 = 7;
         if (z && i == 1) {
             int itemViewType = viewHolder.getItemViewType();
             if (itemViewType != 0) {
@@ -482,7 +488,7 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
                 }
             }
             UserCell userCell = (UserCell) viewHolder.itemView;
-            userCell.setAvatarPadding(6);
+            userCell.setAvatarPadding(7, 1);
             userCell.storyParams.drawSegments = true;
             StoriesController storiesController = MessagesController.getInstance(this.currentAccount).getStoriesController();
             TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(DialogObject.getPeerDialogId(((TL_stories.PeerStories) this.userStories.get(i2)).peer)));
@@ -506,7 +512,7 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
             if (this.sortType != 2 && !this.disableSections) {
                 i3 = 58;
             }
-            userCell2.setAvatarPadding(i3);
+            userCell2.setAvatarPadding(i3, 1);
             if (this.sortType == 2) {
                 arrayList = this.onlineContacts;
             } else {

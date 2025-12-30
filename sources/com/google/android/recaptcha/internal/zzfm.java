@@ -1,27 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Iterator;
+import kotlin.jvm.functions.Function0;
 
 /* loaded from: classes.dex */
-public abstract class zzfm implements Iterable {
-    private final zzfe zza = zzfe.zza();
+public final class zzfm implements Function0 {
+    public static final zzfm zza = new zzfm();
 
-    protected zzfm() {
-    }
-
-    public final String toString() {
-        Iterator it = iterator();
-        StringBuilder sb = new StringBuilder();
-        sb.append('[');
-        boolean z = true;
-        while (it.hasNext()) {
-            if (!z) {
-                sb.append(", ");
-            }
-            sb.append(it.next());
-            z = false;
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzq.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzq) zzb;
         }
-        sb.append(']');
-        return sb.toString();
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

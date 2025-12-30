@@ -37,7 +37,6 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.EditTextCaption;
 import org.telegram.ui.Components.EditTextEmoji;
 import org.telegram.ui.Components.EmptyTextProgressView;
-import org.telegram.ui.Components.GroupCreateCheckBox;
 import org.telegram.ui.Components.GroupCreateSpan;
 import org.telegram.ui.Components.LetterDrawable;
 import org.telegram.ui.Components.LineProgressView;
@@ -717,8 +716,6 @@ public class ThemeDescription {
                                     } else if ((i6 & FLAG_CHECKBOXCHECK) != 0) {
                                         ((CheckBox) obj).setCheckColor(i);
                                     }
-                                } else if (obj instanceof GroupCreateCheckBox) {
-                                    ((GroupCreateCheckBox) obj).updateColors();
                                 } else if (obj instanceof Integer) {
                                     field.set(view, Integer.valueOf(i));
                                 } else if (obj instanceof RadioButton) {

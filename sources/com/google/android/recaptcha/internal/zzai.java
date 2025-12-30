@@ -1,32 +1,52 @@
 package com.google.android.recaptcha.internal;
 
+import kotlin.ResultKt;
+import kotlin.Unit;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.jvm.internal.ContinuationImpl;
-import kotlinx.coroutines.sync.Mutex;
-import org.telegram.tgnet.TLObject;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.CoroutineScopeKt;
 
 /* loaded from: classes.dex */
-final class zzai extends ContinuationImpl {
-    Object zza;
-    Object zzb;
-    Object zzc;
-    long zzd;
-    /* synthetic */ Object zze;
-    final /* synthetic */ zzam zzf;
-    int zzg;
-    Mutex zzh;
-    zzt zzi;
+final class zzai extends SuspendLambda implements Function2 {
+    int zza;
+    final /* synthetic */ zzxn zzb;
+    final /* synthetic */ zzaj zzc;
+    private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzai(zzam zzamVar, Continuation continuation) {
-        super(continuation);
-        this.zzf = zzamVar;
+    zzai(zzxn zzxnVar, zzaj zzajVar, Continuation continuation) {
+        super(2, continuation);
+        this.zzb = zzxnVar;
+        this.zzc = zzajVar;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        zzai zzaiVar = new zzai(this.zzb, this.zzc, continuation);
+        zzaiVar.zzd = obj;
+        return zzaiVar;
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzai) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        this.zze = obj;
-        this.zzg |= TLObject.FLAG_31;
-        return this.zzf.zza(null, null, 0L, null, null, null, null, this);
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.zza;
+        ResultKt.throwOnFailure(obj);
+        if (i == 0) {
+            zzah zzahVar = new zzah(this.zzb, this.zzc, (zzhk) this.zzd, null);
+            this.zza = 1;
+            obj = CoroutineScopeKt.coroutineScope(zzahVar, this);
+            if (obj == coroutine_suspended) {
+                return coroutine_suspended;
+            }
+        }
+        return obj;
     }
 }

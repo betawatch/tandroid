@@ -1,35 +1,32 @@
 package com.google.android.recaptcha.internal;
 
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import kotlin.collections.ArraysKt;
-
 /* loaded from: classes.dex */
-public final class zzdm implements zzdd {
-    public static final zzdm zza = new zzdm();
+public final class zzdm extends Exception {
+    private final Throwable zza;
+    private final zzys zzb;
+    private final int zzc;
+    private final int zzd;
 
-    private zzdm() {
+    public zzdm(int i, int i2, Throwable th) {
+        this.zzc = i;
+        this.zzd = i2;
+        this.zza = th;
+        zzys zzf = zzyt.zzf();
+        zzf.zzq(i2);
+        zzf.zzr(i);
+        this.zzb = zzf;
     }
 
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        int length = zzpqVarArr.length;
-        if (length == 0) {
-            throw new zzae(4, 3, null);
-        }
-        Object zza2 = zzcjVar.zzc().zza(zzpqVarArr[0]);
-        if (true != (zza2 instanceof Method)) {
-            zza2 = null;
-        }
-        Method method = (Method) zza2;
-        if (method == null) {
-            throw new zzae(4, 5, null);
-        }
-        Object[] zzh = zzcjVar.zzc().zzh(ArraysKt.toList(zzpqVarArr).subList(1, length));
-        try {
-            zzcjVar.zzc().zzf(i, method.invoke(null, Arrays.copyOf(zzh, zzh.length)));
-        } catch (Exception e) {
-            throw new zzae(6, 15, e);
-        }
+    @Override // java.lang.Throwable
+    public final Throwable getCause() {
+        return this.zza;
+    }
+
+    public final zzys zza() {
+        return this.zzb;
+    }
+
+    public final int zzb() {
+        return this.zzd;
     }
 }

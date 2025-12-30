@@ -1,31 +1,31 @@
 package com.google.android.recaptcha.internal;
 
+import android.app.Application;
+import android.os.Build;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 
 /* loaded from: classes.dex */
 final class zzey extends SuspendLambda implements Function2 {
-    final /* synthetic */ zzez zza;
-    final /* synthetic */ zzoe zzb;
-    final /* synthetic */ zzbb zzc;
+    int zza;
+    final /* synthetic */ zzfp zzb;
+    final /* synthetic */ zzhk zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzey(zzez zzezVar, zzoe zzoeVar, zzbb zzbbVar, Continuation continuation) {
+    zzey(zzfp zzfpVar, zzhk zzhkVar, Continuation continuation) {
         super(2, continuation);
-        this.zza = zzezVar;
-        this.zzb = zzoeVar;
-        this.zzc = zzbbVar;
+        this.zzb = zzfpVar;
+        this.zzc = zzhkVar;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation create(Object obj, Continuation continuation) {
-        return new zzey(this.zza, this.zzb, this.zzc, continuation);
+        return new zzey(this.zzb, this.zzc, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -35,26 +35,47 @@ final class zzey extends SuspendLambda implements Function2 {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        zzbg zzbgVar;
-        zzbd zzbdVar;
-        zzt zztVar;
-        IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        String str;
+        Application zzs;
+        Application zzs2;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.zza;
         ResultKt.throwOnFailure(obj);
-        try {
-            zzez zzezVar = this.zza;
-            zzbq zzf = zzezVar.zzf();
-            zzoe zzoeVar = this.zzb;
-            zzbdVar = zzezVar.zzp;
-            String zzb = zzf.zzb(zzoeVar, zzbdVar);
-            zztVar = this.zza.zzq;
-            BuildersKt__Builders_commonKt.launch$default(zztVar.zzb(), null, null, new zzex(this.zza, zzb, null), 3, null);
-        } catch (zzp e) {
-            zzez zzezVar2 = this.zza;
-            zzbb zzbbVar = this.zzc;
-            zzbgVar = zzezVar2.zzi;
-            zzbgVar.zzb(zzbbVar, e, null);
-            this.zza.zzk().completeExceptionally(e);
+        if (i == 0) {
+            zzfp zzfpVar = this.zzb;
+            str = zzfpVar.zza;
+            zzs = zzfpVar.zzs();
+            String packageName = zzs.getPackageName();
+            String zza = this.zzc.zza().zza();
+            zzci zze = zzfp.zze(zzfpVar);
+            zzda zzh = zzfp.zzh(zzfpVar);
+            zzs2 = zzfpVar.zzs();
+            int i2 = Build.VERSION.SDK_INT;
+            String zza2 = zze.zza();
+            zzzc zzf = zzzd.zzf();
+            zzf.zzw(str);
+            zzf.zzt(packageName);
+            zzf.zzx(zzh.zzd(zzs2));
+            zzf.zzu("18.7.1");
+            zzf.zzv(zza);
+            zzf.zzs(String.valueOf(i2));
+            zzf.zzr(zza2);
+            zzf.zzf(zzh.zzb(zzs2));
+            zzf.zzq(zzh.zzc(zzs2));
+            zzf.zze(zzh.zza(zzs2));
+            zzzd zzzdVar = (zzzd) zzf.zzk();
+            zzzd zza3 = zzfp.zzb(zzfpVar).zza();
+            zzzc zzzcVar = (zzzc) zzzdVar.zzr();
+            zzzcVar.zzh(zza3);
+            zzzd zzzdVar2 = (zzzd) zzzcVar.zzk();
+            zzht zzi = zzfp.zzi(zzfpVar);
+            String zzb = zzfp.zzg(zzfpVar).zzb();
+            this.zza = 1;
+            obj = zzi.zzc(zzb, zzzdVar2, this);
+            if (obj == coroutine_suspended) {
+                return coroutine_suspended;
+            }
         }
-        return Unit.INSTANCE;
+        return obj;
     }
 }

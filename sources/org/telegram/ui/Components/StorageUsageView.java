@@ -59,7 +59,7 @@ public class StorageUsageView extends FrameLayout {
         this.paintProgress = new Paint(1);
         this.paintProgress2 = new Paint(1);
         this.bgPaint = new Paint();
-        this.cellFlickerDrawable = new CellFlickerDrawable(220, NotificationCenter.cameraInitied);
+        this.cellFlickerDrawable = new CellFlickerDrawable(NotificationCenter.starBalanceUpdated, NotificationCenter.cameraInitied);
         setWillNotDraw(false);
         this.cellFlickerDrawable.drawFrame = false;
         this.paintFill.setStrokeWidth(AndroidUtilities.dp(6.0f));

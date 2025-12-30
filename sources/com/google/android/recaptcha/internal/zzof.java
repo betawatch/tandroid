@@ -1,30 +1,22 @@
 package com.google.android.recaptcha.internal;
 
+import java.util.logging.Level;
+
 /* loaded from: classes.dex */
-public final class zzof extends zzin implements zzkf {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private zzof() {
-        super(r0);
-        zzog zzogVar;
-        zzogVar = zzog.zzb;
+public class zzof {
+    public static zzof zze() {
+        return zzoi.zzb();
     }
 
-    public final zzof zzd(String str) {
-        zzm();
-        zzog.zzJ((zzog) this.zza, str);
-        return this;
+    public zznd zza() {
+        return zznd.zza();
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzof(zzoa zzoaVar) {
-        super(r1);
-        zzog zzogVar;
-        zzogVar = zzog.zzb;
+    public zzor zzc() {
+        return zzor.zza();
+    }
+
+    public boolean zzd(String str, Level level, boolean z) {
+        return false;
     }
 }

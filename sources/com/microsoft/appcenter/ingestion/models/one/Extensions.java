@@ -4,7 +4,7 @@ import com.microsoft.appcenter.ingestion.models.Model;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class Extensions implements Model {
     private AppExtension app;
     private DeviceExtension device;

@@ -227,22 +227,6 @@ public class ActionBarMenu extends LinearLayout {
             }
         }
 
-        public void setOverrideMenuClick(boolean z) {
-            this.overrideMenuClick = Boolean.valueOf(z);
-            ActionBarMenuItem actionBarMenuItem = this.cell;
-            if (actionBarMenuItem != null) {
-                actionBarMenuItem.setOverrideMenuClick(z);
-            }
-        }
-
-        public void setAllowCloseAnimation(boolean z) {
-            this.allowCloseAnimation = Boolean.valueOf(z);
-            ActionBarMenuItem actionBarMenuItem = this.cell;
-            if (actionBarMenuItem != null) {
-                actionBarMenuItem.setAllowCloseAnimation(z);
-            }
-        }
-
         public void setAlpha(float f) {
             this.alpha = f;
             ActionBarMenuItem actionBarMenuItem = this.cell;

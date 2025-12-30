@@ -74,6 +74,7 @@ import org.telegram.ui.Components.GroupCallPip;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.EmptyBaseFragment;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.MainTabsActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Stories.StoryViewer;
 import org.telegram.ui.bots.BotWebViewSheet;
@@ -571,7 +572,6 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.INavigationLayout
     public boolean allowSwipe() {
         EmptyBaseFragment emptyBaseFragment = this.sheetFragment;
         return emptyBaseFragment == null || emptyBaseFragment.getLastSheet() == null || !this.sheetFragment.getLastSheet().isShown();
@@ -767,12 +767,10 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     }
 
     public void updateTitleOverlay() {
-        ActionBar actionBar;
         BaseFragment lastFragment = getLastFragment();
-        if (lastFragment == null || (actionBar = lastFragment.actionBar) == null) {
-            return;
+        if (lastFragment != null) {
+            lastFragment.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
         }
-        actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
     }
 
     @Override // android.view.View
@@ -1428,41 +1426,12 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.INavigationLayout
     public float getCurrentPreviewFragmentAlpha() {
         if (!this.inPreviewMode && !this.transitionAnimationPreviewMode && !this.previewOpenAnimationInProgress) {
             return 0.0f;
         }
         BaseFragment baseFragment = this.oldFragment;
         return ((baseFragment == null || !baseFragment.inPreviewMode) ? this.containerView : this.containerViewBack).getAlpha();
-    }
-
-    @Override // org.telegram.ui.ActionBar.INavigationLayout
-    public void drawCurrentPreviewFragment(Canvas canvas, Drawable drawable) {
-        View childAt;
-        if (this.inPreviewMode || this.transitionAnimationPreviewMode || this.previewOpenAnimationInProgress) {
-            BaseFragment baseFragment = this.oldFragment;
-            LayoutContainer layoutContainer = (baseFragment == null || !baseFragment.inPreviewMode) ? this.containerView : this.containerViewBack;
-            drawPreviewDrawables(canvas, layoutContainer);
-            if (layoutContainer.getAlpha() < 1.0f) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (layoutContainer.getAlpha() * 255.0f), 31);
-            } else {
-                canvas.save();
-            }
-            canvas.concat(layoutContainer.getMatrix());
-            layoutContainer.draw(canvas);
-            if (drawable != null && (childAt = layoutContainer.getChildAt(0)) != null) {
-                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) childAt.getLayoutParams();
-                Rect rect = new Rect();
-                childAt.getLocalVisibleRect(rect);
-                rect.offset(marginLayoutParams.leftMargin, marginLayoutParams.topMargin);
-                rect.top += AndroidUtilities.statusBarHeight - 1;
-                drawable.setAlpha((int) (layoutContainer.getAlpha() * 255.0f));
-                drawable.setBounds(rect);
-                drawable.draw(canvas);
-            }
-            canvas.restore();
-        }
     }
 
     private void drawPreviewDrawables(Canvas canvas, ViewGroup viewGroup) {
@@ -1581,8 +1550,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 baseFragment.actionBar.setOccupyStatusBar(false);
             }
             this.containerViewBack.addView(baseFragment.actionBar);
-            baseFragment.actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
         }
+        baseFragment.setTitleOverlayTextIfActionBarAttached(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
         baseFragment.attachSheets(this.containerViewBack);
         if (!baseFragment.hasOwnBackground && view.getBackground() == null) {
             view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
@@ -1896,6 +1865,11 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             return null;
         }
         return (BaseFragment) this.fragmentsStack.get(r0.size() - 1);
+    }
+
+    public BaseFragment getLastFragmentIncludeMainTabs() {
+        BaseFragment lastFragment = getLastFragment();
+        return lastFragment instanceof MainTabsActivity ? ((MainTabsActivity) lastFragment).getCurrentVisibleFragment() : lastFragment;
     }
 
     @Override // org.telegram.ui.ActionBar.INavigationLayout
@@ -2224,8 +2198,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             }
             AndroidUtilities.removeFromParent(baseFragment2.actionBar);
             this.containerViewBack.addView(baseFragment2.actionBar);
-            baseFragment2.actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
         }
+        baseFragment2.setTitleOverlayTextIfActionBarAttached(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
         baseFragment2.attachSheets(this.containerViewBack);
         this.fragmentsStack.add(baseFragment2);
         onFragmentStackChanged("presentFragment");
@@ -2576,8 +2550,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 viewGroup2.removeView(baseFragment.actionBar);
             }
             this.containerView.addView(baseFragment.actionBar);
-            baseFragment.actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
         }
+        baseFragment.setTitleOverlayTextIfActionBarAttached(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
         baseFragment.attachSheets(this.containerView);
     }
 
@@ -2608,8 +2582,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 viewGroup2.removeView(baseFragment.actionBar);
             }
             this.containerView.addView(baseFragment.actionBar);
-            baseFragment.actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
         }
+        baseFragment.setTitleOverlayTextIfActionBarAttached(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
         baseFragment.attachSheets(this.containerView);
     }
 
@@ -2782,8 +2756,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                         }
                         AndroidUtilities.removeFromParent(baseFragment.actionBar);
                         this.containerView.addView(baseFragment.actionBar);
-                        baseFragment.actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
                     }
+                    baseFragment.setTitleOverlayTextIfActionBarAttached(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
                     baseFragment.attachSheets(this.containerView);
                 }
                 this.newFragment = baseFragment;
@@ -2929,10 +2903,6 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         if (view != null) {
             view.setVisibility(8);
         }
-        DrawerLayoutContainer drawerLayoutContainer = this.drawerLayoutContainer;
-        if (drawerLayoutContainer != null) {
-            drawerLayoutContainer.setAllowOpenDrawer(true, false);
-        }
     }
 
     public void bringToFront(int i) {
@@ -2976,10 +2946,11 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 }
                 AndroidUtilities.removeFromParent(baseFragment2.actionBar);
                 this.containerView.addView(baseFragment2.actionBar);
-                baseFragment2.actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
             }
+            baseFragment2.setTitleOverlayTextIfActionBarAttached(this.titleOverlayText, this.titleOverlayTextId, this.overlayAction);
             baseFragment2.attachSheets(this.containerView);
             baseFragment2.onResume();
+            baseFragment2.onBecomeFullyVisible();
             this.currentActionBar = baseFragment2.actionBar;
             if (baseFragment2.hasOwnBackground || view2.getBackground() != null) {
                 return;
@@ -3539,10 +3510,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.titleOverlayTextId = i;
         this.overlayAction = runnable;
         for (int i2 = 0; i2 < this.fragmentsStack.size(); i2++) {
-            ActionBar actionBar = ((BaseFragment) this.fragmentsStack.get(i2)).actionBar;
-            if (actionBar != null) {
-                actionBar.setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, runnable);
-            }
+            ((BaseFragment) this.fragmentsStack.get(i2)).setTitleOverlayText(this.titleOverlayText, this.titleOverlayTextId, runnable);
         }
     }
 

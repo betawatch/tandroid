@@ -13,6 +13,7 @@ import kotlin.jvm.functions.Function3;
 import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.CancellableContinuationImpl;
 import kotlinx.coroutines.CancellableContinuationKt;
+import kotlinx.coroutines.CoroutineDispatcher;
 import kotlinx.coroutines.DebugStringsKt;
 import kotlinx.coroutines.Waiter;
 import kotlinx.coroutines.internal.Segment;
@@ -183,6 +184,11 @@ public class MutexImpl extends SemaphoreImpl implements Mutex {
         @Override // kotlinx.coroutines.CancellableContinuation
         public boolean isCompleted() {
             return this.cont.isCompleted();
+        }
+
+        @Override // kotlinx.coroutines.CancellableContinuation
+        public void resumeUndispatched(CoroutineDispatcher coroutineDispatcher, Unit unit) {
+            this.cont.resumeUndispatched(coroutineDispatcher, unit);
         }
 
         @Override // kotlin.coroutines.Continuation

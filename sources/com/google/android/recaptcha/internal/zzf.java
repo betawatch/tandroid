@@ -1,9 +1,5 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
 import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -11,26 +7,22 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Ref$ObjectRef;
-import kotlinx.coroutines.AwaitKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.Deferred;
+import kotlinx.coroutines.TimeoutKt;
 
 /* loaded from: classes.dex */
 final class zzf extends SuspendLambda implements Function2 {
     int zza;
-    final /* synthetic */ zzg zzb;
-    final /* synthetic */ long zzc;
-    final /* synthetic */ zzoe zzd;
+    final /* synthetic */ long zzb;
+    final /* synthetic */ zzg zzc;
+    final /* synthetic */ String zzd;
     private /* synthetic */ Object zze;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzf(zzg zzgVar, long j, zzoe zzoeVar, Continuation continuation) {
+    zzf(long j, zzg zzgVar, String str, Continuation continuation) {
         super(2, continuation);
-        this.zzb = zzgVar;
-        this.zzc = j;
-        this.zzd = zzoeVar;
+        this.zzb = j;
+        this.zzc = zzgVar;
+        this.zzd = str;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -42,61 +34,46 @@ final class zzf extends SuspendLambda implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzf) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+        return ((zzf) create((zzgr) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object awaitAll;
-        Ref$ObjectRef ref$ObjectRef;
-        Deferred async$default;
-        Object obj2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (this.zza != 0) {
-            ref$ObjectRef = (Ref$ObjectRef) this.zze;
-            ResultKt.throwOnFailure(obj);
-            awaitAll = obj;
-        } else {
-            ResultKt.throwOnFailure(obj);
-            CoroutineScope coroutineScope = (CoroutineScope) this.zze;
-            ArrayList arrayList = new ArrayList();
-            Iterator it = this.zzb.zzc().iterator();
-            while (it.hasNext()) {
-                async$default = BuildersKt__Builders_commonKt.async$default(coroutineScope, null, null, new zze((zza) it.next(), this.zzc, this.zzd, null), 3, null);
-                arrayList.add(async$default);
+        int i = this.zza;
+        try {
+            if (i == 0) {
+                ResultKt.throwOnFailure(obj);
+                zzgr zzgrVar = (zzgr) this.zze;
+                long j = this.zzb;
+                zze zzeVar = new zze(zzgrVar, this.zzc, this.zzd, null);
+                this.zza = 1;
+                obj = TimeoutKt.withTimeout(j, zzeVar, this);
+                if (obj == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+            } else {
+                if (i != 1) {
+                    zzcg zzcgVar = (zzcg) this.zze;
+                    ResultKt.throwOnFailure(obj);
+                    throw zzcgVar;
+                }
+                ResultKt.throwOnFailure(obj);
             }
-            Ref$ObjectRef ref$ObjectRef2 = new Ref$ObjectRef();
-            Deferred[] deferredArr = (Deferred[]) arrayList.toArray(new Deferred[0]);
-            Deferred[] deferredArr2 = (Deferred[]) Arrays.copyOf(deferredArr, deferredArr.length);
-            this.zze = ref$ObjectRef2;
-            this.zza = 1;
-            awaitAll = AwaitKt.awaitAll(deferredArr2, this);
-            if (awaitAll == coroutine_suspended) {
+            Object obj2 = ((Result) obj).unbox-impl();
+            ResultKt.throwOnFailure(obj2);
+            return (zzxx) obj2;
+        } catch (Exception e) {
+            zzcg zza = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzaa, e.getMessage(), null, 8, null));
+            zzg zzgVar = this.zzc;
+            String str = this.zzd;
+            long j2 = this.zzb;
+            this.zze = zza;
+            this.zza = 2;
+            if (zzgVar.zze(str, j2, e, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
-            ref$ObjectRef = ref$ObjectRef2;
+            throw zza;
         }
-        Iterator it2 = ((List) awaitAll).iterator();
-        while (it2.hasNext()) {
-            Throwable th = Result.exceptionOrNull-impl(((Result) it2.next()).unbox-impl());
-            if (th != null) {
-                zzp zzpVar = null;
-                if (ref$ObjectRef.element != null) {
-                    zzpVar = new zzp(zzn.zzc, zzl.zzal, null);
-                } else if (th instanceof zzp) {
-                    zzpVar = (zzp) th;
-                }
-                ref$ObjectRef.element = zzpVar;
-            }
-        }
-        zzp zzpVar2 = (zzp) ref$ObjectRef.element;
-        if (zzpVar2 != null) {
-            Result.Companion companion = Result.Companion;
-            obj2 = ResultKt.createFailure(zzpVar2);
-        } else {
-            Result.Companion companion2 = Result.Companion;
-            obj2 = Unit.INSTANCE;
-        }
-        return Result.box-impl(Result.constructor-impl(obj2));
     }
 }

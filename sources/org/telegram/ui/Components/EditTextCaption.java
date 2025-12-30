@@ -633,6 +633,14 @@ public class EditTextCaption extends EditTextBoldCursor {
         }
     }
 
+    public boolean isNearRightCaption(int i) {
+        Layout layout = getLayout();
+        if (layout == null || layout.getLineCount() <= 0) {
+            return false;
+        }
+        return layout.getLineCount() > 1 || layout.getLineRight(0) + ((float) i) >= ((float) ((getWidth() - getPaddingLeft()) - getPaddingRight()));
+    }
+
     public String getCaption() {
         return this.caption;
     }

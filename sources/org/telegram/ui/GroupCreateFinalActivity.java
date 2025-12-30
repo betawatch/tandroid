@@ -4,16 +4,12 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Canvas;
-import android.graphics.Outline;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
@@ -25,7 +21,6 @@ import android.util.Property;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -59,9 +54,9 @@ import org.telegram.ui.Components.AutoDeletePopupWrapper;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.ContextProgressView;
 import org.telegram.ui.Components.EditTextEmoji;
 import org.telegram.ui.Components.FillLastLinearLayoutManager;
+import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.ImageUpdater;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.ListView.AdapterWithDiffUtils;
@@ -92,12 +87,10 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
     private String currentGroupCreateAddress;
     private Location currentGroupCreateLocation;
     private GroupCreateFinalActivityDelegate delegate;
-    private AnimatorSet doneItemAnimation;
     private boolean donePressed;
     private EditTextEmoji editText;
     private FrameLayout editTextContainer;
-    private FrameLayout floatingButtonContainer;
-    private ImageView floatingButtonIcon;
+    private FragmentFloatingButton floatingButton;
     private boolean forImport;
     private ImageUpdater imageUpdater;
     private TLRPC.VideoSize inputEmojiMarkup;
@@ -108,7 +101,6 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
     private RecyclerListView listView;
     private String nameToSet;
     ActionBarPopupWindow popupWindow;
-    private ContextProgressView progressView;
     private int reqId;
     private ArrayList selectedContacts;
     private Drawable shadowDrawable;
@@ -573,8 +565,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             }
         };
         this.avatarEditor = rLottieImageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        rLottieImageView.setScaleType(scaleType);
+        rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         this.avatarEditor.setAnimation(this.cameraDrawable);
         this.avatarEditor.setEnabled(false);
         this.avatarEditor.setClickable(false);
@@ -651,43 +642,18 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                 GroupCreateFinalActivity.this.lambda$createView$6(view2, i3, f, f2);
             }
         });
-        this.floatingButtonContainer = new FrameLayout(context);
-        this.floatingButtonContainer.setBackgroundDrawable(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(56.0f), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
-        StateListAnimator stateListAnimator = new StateListAnimator();
-        stateListAnimator.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this.floatingButtonIcon, "translationZ", AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        this.floatingButtonContainer.setStateListAnimator(stateListAnimator);
-        this.floatingButtonContainer.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.GroupCreateFinalActivity.10
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view2, Outline outline) {
-                outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-            }
-        });
-        VerticalPositionAutoAnimator.attach(this.floatingButtonContainer);
-        View view2 = this.floatingButtonContainer;
-        boolean z6 = LocaleController.isRTL;
-        sizeNotifierFrameLayout.addView(view2, LayoutHelper.createFrame(56, 56.0f, (z6 ? 3 : 5) | 80, z6 ? 14.0f : 0.0f, 0.0f, z6 ? 0.0f : 14.0f, 14.0f));
-        this.floatingButtonContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.GroupCreateFinalActivity$$ExternalSyntheticLambda4
+        FragmentFloatingButton fragmentFloatingButton = new FragmentFloatingButton(context, this.resourceProvider);
+        this.floatingButton = fragmentFloatingButton;
+        VerticalPositionAutoAnimator.attach(fragmentFloatingButton);
+        sizeNotifierFrameLayout.addView(this.floatingButton, FragmentFloatingButton.createDefaultLayoutParams());
+        this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.GroupCreateFinalActivity$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
-                GroupCreateFinalActivity.this.lambda$createView$7(view3);
+            public final void onClick(View view2) {
+                GroupCreateFinalActivity.this.lambda$createView$7(view2);
             }
         });
-        ImageView imageView = new ImageView(context);
-        this.floatingButtonIcon = imageView;
-        imageView.setScaleType(scaleType);
-        this.floatingButtonIcon.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.MULTIPLY));
-        this.floatingButtonIcon.setImageResource(R.drawable.checkbig);
-        this.floatingButtonIcon.setPadding(0, AndroidUtilities.dp(2.0f), 0, 0);
-        this.floatingButtonContainer.setContentDescription(LocaleController.getString(R.string.Done));
-        this.floatingButtonContainer.addView(this.floatingButtonIcon, LayoutHelper.createFrame(56, 56.0f));
-        ContextProgressView contextProgressView = new ContextProgressView(context, 1);
-        this.progressView = contextProgressView;
-        contextProgressView.setAlpha(0.0f);
-        this.progressView.setScaleX(0.1f);
-        this.progressView.setScaleY(0.1f);
-        this.progressView.setVisibility(4);
-        this.floatingButtonContainer.addView(this.progressView, LayoutHelper.createFrame(-1, -1.0f));
+        this.floatingButton.setContentDescription(LocaleController.getString(R.string.Done));
+        this.floatingButton.imageView.setImageResource(R.drawable.checkbig);
         return this.fragmentView;
     }
 
@@ -776,7 +742,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             ActionBarPopupWindow actionBarPopupWindow2 = new ActionBarPopupWindow(autoDeletePopupWrapper.windowLayout, -2, -2);
             this.popupWindow = actionBarPopupWindow2;
             actionBarPopupWindow2.setPauseNotifications(true);
-            this.popupWindow.setDismissAnimationDuration(220);
+            this.popupWindow.setDismissAnimationDuration(NotificationCenter.starBalanceUpdated);
             this.popupWindow.setOutsideTouchable(true);
             this.popupWindow.setClippingEnabled(true);
             this.popupWindow.setAnimationStyle(R.style.PopupContextAnimation);
@@ -921,7 +887,7 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             animatorSet3.playTogether(ObjectAnimator.ofFloat(rLottieImageView2, (Property<RLottieImageView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(this.avatarProgressView, (Property<RadialProgressView, Float>) property2, 0.0f));
         }
         this.avatarAnimation.setDuration(180L);
-        this.avatarAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.GroupCreateFinalActivity.11
+        this.avatarAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.GroupCreateFinalActivity.10
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (GroupCreateFinalActivity.this.avatarAnimation == null || GroupCreateFinalActivity.this.avatarEditor == null) {
@@ -1042,47 +1008,11 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         }
     }
 
-    private void showEditDoneProgress(final boolean z) {
-        if (this.floatingButtonIcon == null) {
-            return;
+    private void showEditDoneProgress(boolean z) {
+        FragmentFloatingButton fragmentFloatingButton = this.floatingButton;
+        if (fragmentFloatingButton != null) {
+            fragmentFloatingButton.setProgressVisible(z, true);
         }
-        AnimatorSet animatorSet = this.doneItemAnimation;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        this.doneItemAnimation = new AnimatorSet();
-        if (z) {
-            this.progressView.setVisibility(0);
-            this.floatingButtonContainer.setEnabled(false);
-            this.doneItemAnimation.playTogether(ObjectAnimator.ofFloat(this.floatingButtonIcon, "scaleX", 0.1f), ObjectAnimator.ofFloat(this.floatingButtonIcon, "scaleY", 0.1f), ObjectAnimator.ofFloat(this.floatingButtonIcon, "alpha", 0.0f), ObjectAnimator.ofFloat(this.progressView, "scaleX", 1.0f), ObjectAnimator.ofFloat(this.progressView, "scaleY", 1.0f), ObjectAnimator.ofFloat(this.progressView, "alpha", 1.0f));
-        } else {
-            this.floatingButtonIcon.setVisibility(0);
-            this.floatingButtonContainer.setEnabled(true);
-            this.doneItemAnimation.playTogether(ObjectAnimator.ofFloat(this.progressView, "scaleX", 0.1f), ObjectAnimator.ofFloat(this.progressView, "scaleY", 0.1f), ObjectAnimator.ofFloat(this.progressView, "alpha", 0.0f), ObjectAnimator.ofFloat(this.floatingButtonIcon, "scaleX", 1.0f), ObjectAnimator.ofFloat(this.floatingButtonIcon, "scaleY", 1.0f), ObjectAnimator.ofFloat(this.floatingButtonIcon, "alpha", 1.0f));
-        }
-        this.doneItemAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.GroupCreateFinalActivity.12
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationEnd(Animator animator) {
-                if (GroupCreateFinalActivity.this.doneItemAnimation == null || !GroupCreateFinalActivity.this.doneItemAnimation.equals(animator)) {
-                    return;
-                }
-                if (!z) {
-                    GroupCreateFinalActivity.this.progressView.setVisibility(4);
-                } else {
-                    GroupCreateFinalActivity.this.floatingButtonIcon.setVisibility(4);
-                }
-            }
-
-            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-            public void onAnimationCancel(Animator animator) {
-                if (GroupCreateFinalActivity.this.doneItemAnimation == null || !GroupCreateFinalActivity.this.doneItemAnimation.equals(animator)) {
-                    return;
-                }
-                GroupCreateFinalActivity.this.doneItemAnimation = null;
-            }
-        });
-        this.doneItemAnimation.setDuration(150L);
-        this.doneItemAnimation.start();
     }
 
     public class GroupCreateAdapter extends RecyclerListView.SelectionAdapter {
@@ -1290,8 +1220,6 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundBlue));
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundPink));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4));
-        arrayList.add(new ThemeDescription(this.progressView, 0, null, null, null, null, Theme.key_contextProgressInner2));
-        arrayList.add(new ThemeDescription(this.progressView, 0, null, null, null, null, Theme.key_contextProgressOuter2));
         arrayList.add(new ThemeDescription(this.editText, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, i4));
         arrayList.add(new ThemeDescription(this.editText, ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteHintText));
         return arrayList;
@@ -1308,6 +1236,10 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                     ((GroupCreateUserCell) childAt).update(0);
                 }
             }
+        }
+        FragmentFloatingButton fragmentFloatingButton = this.floatingButton;
+        if (fragmentFloatingButton != null) {
+            fragmentFloatingButton.updateColors();
         }
     }
 }

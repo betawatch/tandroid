@@ -1,6 +1,6 @@
 package com.stripe.android.util;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class StripeTextUtils {
     public static boolean hasAnyPrefix(String str, String... strArr) {
         if (str == null) {

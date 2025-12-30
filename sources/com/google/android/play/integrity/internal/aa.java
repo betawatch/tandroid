@@ -11,8 +11,8 @@ final class aa extends t {
     final /* synthetic */ ad b;
 
     aa(ad adVar, IBinder iBinder) {
-        this.b = adVar;
         this.a = iBinder;
+        this.b = adVar;
     }
 
     @Override // com.google.android.play.integrity.internal.t

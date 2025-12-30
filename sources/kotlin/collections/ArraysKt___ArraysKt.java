@@ -13,7 +13,7 @@ import kotlin.text.StringsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public abstract class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
-    public static final boolean contains(Object[] objArr, Object obj) {
+    public static boolean contains(Object[] objArr, Object obj) {
         Intrinsics.checkNotNullParameter(objArr, "<this>");
         return indexOf(objArr, obj) >= 0;
     }

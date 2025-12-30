@@ -1,85 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.List;
-
 /* loaded from: classes.dex */
-interface zzkq {
-    void zzA(List list);
+public final class zzkq {
+    private final long zza;
+    private final long zzb;
 
-    void zzB(List list);
+    public zzkq(long j, long j2, long j3) {
+        this.zza = j2;
+        this.zzb = j3;
+    }
 
-    @Deprecated
-    void zzC(List list, zzkr zzkrVar, zzie zzieVar);
+    public final long zza() {
+        return this.zzb;
+    }
 
-    void zzD(List list);
-
-    void zzE(List list);
-
-    void zzF(List list, zzkr zzkrVar, zzie zzieVar);
-
-    void zzG(List list);
-
-    void zzH(List list);
-
-    void zzI(List list);
-
-    void zzJ(List list);
-
-    void zzL(List list);
-
-    void zzM(List list);
-
-    boolean zzN();
-
-    boolean zzO();
-
-    double zza();
-
-    float zzb();
-
-    int zzc();
-
-    int zzd();
-
-    int zze();
-
-    int zzf();
-
-    int zzg();
-
-    int zzh();
-
-    int zzi();
-
-    int zzj();
-
-    long zzk();
-
-    long zzl();
-
-    long zzm();
-
-    long zzn();
-
-    long zzo();
-
-    zzgw zzp();
-
-    String zzr();
-
-    String zzs();
-
-    void zzt(Object obj, zzkr zzkrVar, zzie zzieVar);
-
-    void zzu(Object obj, zzkr zzkrVar, zzie zzieVar);
-
-    void zzv(List list);
-
-    void zzw(List list);
-
-    void zzx(List list);
-
-    void zzy(List list);
-
-    void zzz(List list);
+    public final long zzb() {
+        return this.zza;
+    }
 }

@@ -1,43 +1,45 @@
 package com.google.android.recaptcha.internal;
 
-import java.lang.reflect.Array;
-import java.util.List;
+import kotlin.comparisons.ComparisonsKt;
+import kotlin.text.StringsKt;
 
 /* loaded from: classes.dex */
-public final class zzcn implements zzdd {
-    public static final zzcn zza = new zzcn();
+public final class zzcn implements Comparable {
+    private int zza;
+    private long zzb;
+    private long zzc;
 
-    private zzcn() {
+    public final String toString() {
+        return "avgExecutionTime: " + StringsKt.padEnd$default(String.valueOf(this.zzb / this.zza), 10, (char) 0, 2, null) + " us| maxExecutionTime: " + StringsKt.padEnd$default(String.valueOf(this.zzc), 10, (char) 0, 2, null) + " us| totalTime: " + StringsKt.padEnd$default(String.valueOf(this.zzb), 10, (char) 0, 2, null) + " us| #Usages: " + StringsKt.padEnd$default(String.valueOf(this.zza), 5, (char) 0, 2, null);
     }
 
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        if (zzpqVarArr.length != 2) {
-            throw new zzae(4, 3, null);
-        }
-        Object zza2 = zzcjVar.zzc().zza(zzpqVarArr[0]);
-        if (true != (zza2 instanceof Object)) {
-            zza2 = null;
-        }
-        if (zza2 == null) {
-            throw new zzae(4, 5, null);
-        }
-        Object zza3 = zzcjVar.zzc().zza(zzpqVarArr[1]);
-        if (true != (zza3 instanceof Integer)) {
-            zza3 = null;
-        }
-        Integer num = (Integer) zza3;
-        if (num == null) {
-            throw new zzae(4, 5, null);
-        }
-        int intValue = num.intValue();
-        try {
-            zzcjVar.zzc().zzf(i, zza2 instanceof String ? String.valueOf(((String) zza2).charAt(intValue)) : zza2 instanceof List ? ((List) zza2).get(intValue) : Array.get(zza2, intValue));
-        } catch (Exception e) {
-            if (!(e instanceof ArrayIndexOutOfBoundsException)) {
-                throw new zzae(4, 23, e);
-            }
-            throw new zzae(4, 22, e);
-        }
+    @Override // java.lang.Comparable
+    /* renamed from: zza, reason: merged with bridge method [inline-methods] */
+    public final int compareTo(zzcn zzcnVar) {
+        return ComparisonsKt.compareValues(Long.valueOf(this.zzb), Long.valueOf(zzcnVar.zzb));
+    }
+
+    public final int zzb() {
+        return this.zza;
+    }
+
+    public final long zzc() {
+        return this.zzc;
+    }
+
+    public final long zzd() {
+        return this.zzb;
+    }
+
+    public final void zze(long j) {
+        this.zzc = j;
+    }
+
+    public final void zzf(long j) {
+        this.zzb = j;
+    }
+
+    public final void zzg(int i) {
+        this.zza = i;
     }
 }

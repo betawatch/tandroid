@@ -511,7 +511,7 @@ public class ChatThemeBottomSheet extends BottomSheet implements NotificationCen
                     AndroidUtilities.updateViewVisibilityAnimated(this.cancelOrResetTextView, false, 0.9f, false, z);
                     AndroidUtilities.updateViewVisibilityAnimated(this.applyButton, true, 1.0f, false, z);
                     AndroidUtilities.updateViewVisibilityAnimated(this.applyTextView, true, 0.9f, false, z);
-                    AndroidUtilities.updateViewVisibilityAnimated(this.applySubTextView, z2, 0.9f, false, 0.7f, z);
+                    AndroidUtilities.updateViewVisibilityAnimated(this.applySubTextView, z2, 0.9f, false, 0.7f, z, null);
                     AndroidUtilities.updateViewVisibilityAnimated(this.themeHintTextView, true, 0.9f, false, z);
                     return;
                 }
@@ -522,7 +522,7 @@ public class ChatThemeBottomSheet extends BottomSheet implements NotificationCen
             AndroidUtilities.updateViewVisibilityAnimated(this.cancelOrResetTextView, false, 0.9f, false, z);
             AndroidUtilities.updateViewVisibilityAnimated(this.applyButton, true, 1.0f, false, z);
             AndroidUtilities.updateViewVisibilityAnimated(this.applyTextView, true, 0.9f, false, z);
-            AndroidUtilities.updateViewVisibilityAnimated(this.applySubTextView, z2, 0.9f, false, 0.7f, z);
+            AndroidUtilities.updateViewVisibilityAnimated(this.applySubTextView, z2, 0.9f, false, 0.7f, z, null);
             AndroidUtilities.updateViewVisibilityAnimated(this.themeHintTextView, true, 0.9f, false, z);
             return;
         }

@@ -1,64 +1,52 @@
 package com.google.android.recaptcha.internal;
 
+import java.io.Serializable;
+
 /* loaded from: classes.dex */
-public enum zzpb implements zziv {
-    zza(0),
-    zzb(1),
-    zzc(2),
-    zzd(3),
-    zze(4),
-    zzf(5),
-    zzg(6),
-    zzh(7),
-    zzi(8),
-    zzj(9),
-    zzk(-1);
+final class zzpb extends zzpc implements Serializable {
+    final byte[] zza;
 
-    private static final zziw zzl = new zziw() { // from class: com.google.android.recaptcha.internal.zzpa
-    };
-    private final int zzn;
-
-    zzpb(int i) {
-        this.zzn = i;
+    @Override // com.google.android.recaptcha.internal.zzpc
+    public final int zzb() {
+        return this.zza.length * 8;
     }
 
-    public static zzpb zzb(int i) {
-        switch (i) {
-            case 0:
-                return zza;
-            case 1:
-                return zzb;
-            case 2:
-                return zzc;
-            case 3:
-                return zzd;
-            case 4:
-                return zze;
-            case 5:
-                return zzf;
-            case 6:
-                return zzg;
-            case 7:
-                return zzh;
-            case 8:
-                return zzi;
-            case 9:
-                return zzj;
-            default:
-                return null;
+    @Override // com.google.android.recaptcha.internal.zzpc
+    final boolean zzc(zzpc zzpcVar) {
+        int length = zzpcVar.zze().length;
+        byte[] bArr = this.zza;
+        if (bArr.length != length) {
+            return false;
         }
+        boolean z = true;
+        for (int i = 0; i < bArr.length; i++) {
+            z &= bArr[i] == zzpcVar.zze()[i];
+        }
+        return z;
     }
 
-    @Override // java.lang.Enum
-    public final String toString() {
-        return Integer.toString(zza());
+    @Override // com.google.android.recaptcha.internal.zzpc
+    public final byte[] zzd() {
+        return (byte[]) this.zza.clone();
     }
 
-    @Override // com.google.android.recaptcha.internal.zziv
+    @Override // com.google.android.recaptcha.internal.zzpc
+    final byte[] zze() {
+        return this.zza;
+    }
+
+    zzpb(byte[] bArr) {
+        bArr.getClass();
+        this.zza = bArr;
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzpc
     public final int zza() {
-        if (this != zzk) {
-            return this.zzn;
+        byte[] bArr = this.zza;
+        int length = bArr.length;
+        if (length >= 4) {
+            return ((bArr[1] & 255) << 8) | (bArr[0] & 255) | ((bArr[2] & 255) << 16) | ((bArr[3] & 255) << 24);
         }
-        throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
+        throw new IllegalStateException(zzmg.zza("HashCode#asInt() requires >= 4 bytes (it only has %s bytes).", Integer.valueOf(length)));
     }
 }

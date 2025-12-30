@@ -1,97 +1,81 @@
 package com.google.android.recaptcha.internal;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.lang.reflect.Proxy;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function2;
 
 /* loaded from: classes.dex */
-final class zzjo extends zzjs {
-    private static final Class zza = DesugarCollections.unmodifiableList(Collections.emptyList()).getClass();
+public final class zzjo implements zzjt {
+    public static final zzjo zza = new zzjo();
 
     private zzjo() {
-        super(null);
     }
 
-    /* synthetic */ zzjo(zzjn zzjnVar) {
-        super(null);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    private static List zzf(Object obj, long j, int i) {
-        zzjl zzjlVar;
-        List list = (List) zzlv.zzf(obj, j);
-        if (list.isEmpty()) {
-            List zzjlVar2 = list instanceof zzjm ? new zzjl(i) : ((list instanceof zzkm) && (list instanceof zzjb)) ? ((zzjb) list).zzd(i) : new ArrayList(i);
-            zzlv.zzs(obj, j, zzjlVar2);
-            return zzjlVar2;
+    @Override // com.google.android.recaptcha.internal.zzjt
+    public final void zza(int i, final zziz zzizVar, zzzt... zzztVarArr) {
+        final int i2;
+        int length = zzztVarArr.length;
+        if (length != 4 && length != 5) {
+            throw new zzdm(4, 3, null);
         }
-        if (zza.isAssignableFrom(list.getClass())) {
-            ArrayList arrayList = new ArrayList(list.size() + i);
-            arrayList.addAll(list);
-            zzlv.zzs(obj, j, arrayList);
-            zzjlVar = arrayList;
+        Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
+        if (true != (zza2 instanceof String)) {
+            zza2 = null;
+        }
+        final String str = (String) zza2;
+        if (str == null) {
+            throw new zzdm(4, 5, null);
+        }
+        Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
+        if (true != (zza3 instanceof Object)) {
+            zza3 = null;
+        }
+        if (zza3 == null) {
+            throw new zzdm(4, 5, null);
+        }
+        Object zza4 = zzizVar.zzc().zza(zzztVarArr[2]);
+        if (true != (zza4 instanceof String)) {
+            zza4 = null;
+        }
+        String str2 = (String) zza4;
+        if (str2 == null) {
+            throw new zzdm(4, 5, null);
+        }
+        String zza5 = zzizVar.zzh().zza(str2);
+        Object zza6 = zzizVar.zzc().zza(zzztVarArr[3]);
+        if (length == 5) {
+            Object zza7 = zzizVar.zzc().zza(zzztVarArr[4]);
+            if (true != (zza7 instanceof Integer)) {
+                zza7 = null;
+            }
+            Integer num = (Integer) zza7;
+            if (num == null) {
+                throw new zzdm(4, 5, null);
+            }
+            i2 = num.intValue();
         } else {
-            if (!(list instanceof zzlq)) {
-                if (!(list instanceof zzkm) || !(list instanceof zzjb)) {
-                    return list;
-                }
-                zzjb zzjbVar = (zzjb) list;
-                if (zzjbVar.zzc()) {
-                    return list;
-                }
-                zzjb zzd = zzjbVar.zzd(list.size() + i);
-                zzlv.zzs(obj, j, zzd);
-                return zzd;
+            i2 = -1;
+        }
+        try {
+            if (zza3 instanceof String) {
+                zza3 = zzizVar.zzh().zza((String) zza3);
             }
-            zzjl zzjlVar3 = new zzjl(list.size() + i);
-            zzjlVar3.addAll(zzjlVar3.size(), (zzlq) list);
-            zzlv.zzs(obj, j, zzjlVar3);
-            zzjlVar = zzjlVar3;
-        }
-        return zzjlVar;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzjs
-    final List zza(Object obj, long j) {
-        return zzf(obj, j, 10);
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzjs
-    final void zzb(Object obj, long j) {
-        Object unmodifiableList;
-        List list = (List) zzlv.zzf(obj, j);
-        if (list instanceof zzjm) {
-            unmodifiableList = ((zzjm) list).zze();
-        } else {
-            if (zza.isAssignableFrom(list.getClass())) {
-                return;
-            }
-            if ((list instanceof zzkm) && (list instanceof zzjb)) {
-                zzjb zzjbVar = (zzjb) list;
-                if (zzjbVar.zzc()) {
-                    zzjbVar.zzb();
-                    return;
+            Class zza8 = zziy.zza(zza3);
+            zzizVar.zzc().zze(i, Proxy.newProxyInstance(zza8.getClassLoader(), new Class[]{zza8}, new zziu(new Function2() { // from class: com.google.android.recaptcha.internal.zzjn
+                @Override // kotlin.jvm.functions.Function2
+                public final Object invoke(Object obj, Object obj2) {
+                    zziz zzizVar2 = zziz.this;
+                    Object[] objArr = (Object[]) obj;
+                    zzizVar2.zzi().zzb(str, (String) obj2);
+                    int i3 = i2;
+                    if (i3 != -1) {
+                        zzizVar2.zzc().zze(i3, objArr);
+                    }
+                    return Unit.INSTANCE;
                 }
-                return;
-            }
-            unmodifiableList = DesugarCollections.unmodifiableList(list);
+            }, zza5, zza6)));
+        } catch (Exception e) {
+            throw new zzdm(6, 20, e);
         }
-        zzlv.zzs(obj, j, unmodifiableList);
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzjs
-    final void zzc(Object obj, Object obj2, long j) {
-        List list = (List) zzlv.zzf(obj2, j);
-        List zzf = zzf(obj, j, list.size());
-        int size = zzf.size();
-        int size2 = list.size();
-        if (size > 0 && size2 > 0) {
-            zzf.addAll(list);
-        }
-        if (size > 0) {
-            list = zzf;
-        }
-        zzlv.zzs(obj, j, list);
     }
 }

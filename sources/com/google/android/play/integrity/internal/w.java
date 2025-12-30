@@ -12,9 +12,9 @@ final class w extends t {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     w(ae aeVar, TaskCompletionSource taskCompletionSource, TaskCompletionSource taskCompletionSource2, t tVar) {
         super(taskCompletionSource);
-        this.c = aeVar;
         this.a = taskCompletionSource2;
         this.b = tVar;
+        this.c = aeVar;
     }
 
     @Override // com.google.android.play.integrity.internal.t

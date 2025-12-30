@@ -2,11 +2,10 @@ package org.telegram.ui;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.text.SpannableStringBuilder;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,15 +15,18 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.Components.BlurredFrameLayout;
 import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.ViewPagerFixed;
 import org.telegram.ui.Stories.StoriesController;
 
 /* loaded from: classes4.dex */
-public abstract class ProfileStoriesCollectionTabs extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+public abstract class ProfileStoriesCollectionTabs extends BlurredFrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private final Adapter adapter;
+    private final Rect clipRect;
     private final StoriesController.StoriesCollections collections;
     int initialAlbumId;
     private boolean reorderingCollections;
@@ -49,11 +51,12 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
 
     protected abstract void updatedReordering(boolean z);
 
-    public ProfileStoriesCollectionTabs(Context context, final StoriesController.StoriesCollections storiesCollections, final Delegate delegate) {
-        super(context);
+    public ProfileStoriesCollectionTabs(Context context, SizeNotifierFrameLayout sizeNotifierFrameLayout, final StoriesController.StoriesCollections storiesCollections, final Delegate delegate) {
+        super(context, sizeNotifierFrameLayout);
+        this.clipRect = new Rect();
         this.collections = storiesCollections;
         Objects.requireNonNull(storiesCollections);
-        this.sendCollectionsOrder = new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda0
+        this.sendCollectionsOrder = new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 StoriesController.StoriesCollections.this.sendOrder();
@@ -96,7 +99,7 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
         ViewPagerFixed.TabsView createTabsView = viewPagerFixed.createTabsView(true, 9);
         this.tabsView = createTabsView;
         createTabsView.tabMarginDp = 12;
-        createTabsView.setPreTabClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda1
+        createTabsView.setPreTabClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
                 Boolean lambda$new$0;
@@ -104,7 +107,7 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
                 return lambda$new$0;
             }
         });
-        createTabsView.setOnTabLongClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda2
+        createTabsView.setOnTabLongClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
                 Boolean lambda$new$1;
@@ -143,7 +146,7 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
 
     public void setInitialTabId(final int i) {
         if (this.adapter.getItemPosition(i) != -1) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda3
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     ProfileStoriesCollectionTabs.this.lambda$setInitialTabId$2(i);
@@ -167,13 +170,13 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
         return this.tabsView.getPageIdByPosition(i);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.BlurredFrameLayout, android.view.ViewGroup, android.view.View
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         NotificationCenter.getInstance(this.collections.currentAccount).addObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.BlurredFrameLayout, android.view.ViewGroup, android.view.View
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         NotificationCenter.getInstance(this.collections.currentAccount).addObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
@@ -191,7 +194,7 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
             if (i3 > 0) {
                 if (this.adapter.getItemPosition(i3) != -1) {
                     final int i4 = this.initialAlbumId;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda5
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda2
                         @Override // java.lang.Runnable
                         public final void run() {
                             ProfileStoriesCollectionTabs.this.lambda$didReceivedNotification$3(i4);
@@ -218,6 +221,12 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
         this.tabsView.scrollToTab(i, this.adapter.getItemPosition(i));
     }
 
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        super.onLayout(z, i, i2, i3, i4);
+        checkUi_clipRect();
+    }
+
     public boolean isReordering() {
         return this.reorderingCollections;
     }
@@ -237,7 +246,7 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
             final BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
             if (safeLastFragment instanceof ProfileActivity) {
                 ((ProfileActivity) safeLastFragment).scrollToSharedMedia(false);
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda4
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ProfileStoriesCollectionTabs$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
                         ProfileStoriesCollectionTabs.lambda$setReorderingAlbums$4(BaseFragment.this);
@@ -298,7 +307,13 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
     }
 
     protected void onVisibilityChange(float f) {
+        checkUi_clipRect();
         invalidate();
+    }
+
+    private void checkUi_clipRect() {
+        this.clipRect.set(0, 0, getMeasuredWidth(), (int) getVisualHeight());
+        setClipBounds(this.clipRect);
     }
 
     public float getVisibilityFactor() {
@@ -312,17 +327,6 @@ public abstract class ProfileStoriesCollectionTabs extends FrameLayout implement
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         return this.visibilityValue && super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        if (this.visibilityFactor == 0.0f) {
-            return;
-        }
-        canvas.save();
-        canvas.clipRect(0.0f, 0.0f, getMeasuredWidth(), getVisualHeight());
-        super.draw(canvas);
-        canvas.restore();
     }
 
     private class Adapter extends ViewPagerFixed.Adapter {

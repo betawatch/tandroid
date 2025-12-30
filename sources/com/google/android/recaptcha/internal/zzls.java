@@ -1,53 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import sun.misc.Unsafe;
+import kotlin.jvm.functions.Function0;
 
 /* loaded from: classes.dex */
-final class zzls extends zzlu {
-    zzls(Unsafe unsafe) {
-        super(unsafe);
-    }
+public final class zzls implements Function0 {
+    public static final zzls zza = new zzls();
 
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final double zza(Object obj, long j) {
-        return Double.longBitsToDouble(this.zza.getLong(obj, j));
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final float zzb(Object obj, long j) {
-        return Float.intBitsToFloat(this.zza.getInt(obj, j));
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final void zzc(Object obj, long j, boolean z) {
-        if (zzlv.zzb) {
-            zzlv.zzD(obj, j, r3 ? (byte) 1 : (byte) 0);
-        } else {
-            zzlv.zzE(obj, j, r3 ? (byte) 1 : (byte) 0);
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzgs.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzgs) zzb;
         }
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final void zzd(Object obj, long j, byte b) {
-        if (zzlv.zzb) {
-            zzlv.zzD(obj, j, b);
-        } else {
-            zzlv.zzE(obj, j, b);
-        }
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final void zze(Object obj, long j, double d) {
-        this.zza.putLong(obj, j, Double.doubleToLongBits(d));
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final void zzf(Object obj, long j, float f) {
-        this.zza.putInt(obj, j, Float.floatToIntBits(f));
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzlu
-    public final boolean zzg(Object obj, long j) {
-        return zzlv.zzb ? zzlv.zzt(obj, j) : zzlv.zzu(obj, j);
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

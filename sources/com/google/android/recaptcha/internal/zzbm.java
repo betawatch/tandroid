@@ -1,89 +1,73 @@
 package com.google.android.recaptcha.internal;
 
-import android.content.Context;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Timer;
-import kotlin.collections.CollectionsKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 
 /* loaded from: classes.dex */
-public final class zzbm implements zzbh {
-    public static final zzbi zza = new zzbi(null);
-    private static Timer zzb;
-    private final zzbn zzc;
-    private final CoroutineScope zzd;
-    private final zzaz zze;
+final class zzbm extends SuspendLambda implements Function2 {
+    Object zza;
+    int zzb;
+    final /* synthetic */ zzhk zzc;
+    final /* synthetic */ zzbo zzd;
 
-    public zzbm(Context context, zzbn zzbnVar, CoroutineScope coroutineScope) {
-        zzaz zzazVar;
-        this.zzc = zzbnVar;
-        this.zzd = coroutineScope;
-        zzaz zzazVar2 = null;
-        try {
-            zzazVar = zzaz.zzc;
-            zzazVar = zzazVar == null ? new zzaz(context, null) : zzazVar;
-            zzaz.zzc = zzazVar;
-            zzazVar2 = zzazVar;
-        } catch (Exception unused) {
-        }
-        this.zze = zzazVar2;
-        zzh();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzbm(zzhk zzhkVar, zzbo zzboVar, Continuation continuation) {
+        super(2, continuation);
+        this.zzc = zzhkVar;
+        this.zzd = zzboVar;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void zzg() {
-        zzaz zzazVar;
-        zzpd zzk;
-        int zzJ;
-        int i;
-        zzaz zzazVar2 = this.zze;
-        if (zzazVar2 != null) {
-            for (List<zzba> list : CollectionsKt.windowed(zzazVar2.zzd(), 20, 20, true)) {
-                zznh zzi = zzni.zzi();
-                ArrayList arrayList = new ArrayList();
-                for (zzba zzbaVar : list) {
-                    try {
-                        zzk = zzpd.zzk(zzfy.zzg().zzj(zzbaVar.zzc()));
-                        zzJ = zzk.zzJ();
-                        i = zzJ - 1;
-                    } catch (Exception unused) {
-                        zzaz zzazVar3 = this.zze;
-                        if (zzazVar3 != null) {
-                            zzazVar3.zzf(zzbaVar);
-                        }
-                    }
-                    if (zzJ == 0) {
-                        throw null;
-                    }
-                    if (i == 0) {
-                        zzi.zzp(zzk.zzf());
-                    } else if (i == 1) {
-                        zzi.zzq(zzk.zzg());
-                    }
-                    arrayList.add(zzbaVar);
-                }
-                if (zzi.zzd() + zzi.zze() != 0) {
-                    if (this.zzc.zza(((zzni) zzi.zzj()).zzd()) && (zzazVar = this.zze) != null) {
-                        zzazVar.zza(arrayList);
-                    }
-                }
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        return new zzbm(this.zzc, this.zzd, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzbm) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x003b, code lost:
+    
+        if (com.google.android.recaptcha.internal.zzhj.zzb(r1, (com.google.android.recaptcha.internal.zzhf) r6, r5) == r0) goto L14;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0041, code lost:
+    
+        return r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x002f, code lost:
+    
+        if (r6 != r0) goto L9;
+     */
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object invokeSuspend(Object obj) {
+        zzhk zzhkVar;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.zzb;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            zzhkVar = this.zzc;
+            zzbo zzboVar = this.zzd;
+            this.zza = zzhkVar;
+            this.zzb = 1;
+            obj = zzhj.zzd(38, 2, new zzbf(zzboVar, null), this);
+        } else {
+            if (i != 1) {
+                ResultKt.throwOnFailure(obj);
+                return Unit.INSTANCE;
             }
+            zzhkVar = (zzhk) this.zza;
+            ResultKt.throwOnFailure(obj);
         }
-    }
-
-    private final void zzh() {
-        if (zzb == null) {
-            Timer timer = new Timer();
-            zzb = timer;
-            timer.schedule(new zzbj(this), 120000L, 120000L);
-        }
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzbh
-    public final void zza(zzpd zzpdVar) {
-        BuildersKt__Builders_commonKt.launch$default(this.zzd, null, null, new zzbl(this, zzpdVar, null), 3, null);
-        zzh();
+        this.zza = null;
+        this.zzb = 2;
     }
 }

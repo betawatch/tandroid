@@ -1,9 +1,14 @@
 package kotlin.jvm.internal;
 
 import java.io.Serializable;
+import java.lang.annotation.Annotation;
+import java.util.List;
+import java.util.Map;
 import kotlin.jvm.KotlinReflectionNotSupportedError;
 import kotlin.reflect.KCallable;
 import kotlin.reflect.KDeclarationContainer;
+import kotlin.reflect.KType;
+import kotlin.reflect.KVisibility;
 
 /* loaded from: classes3.dex */
 public abstract class CallableReference implements KCallable, Serializable {
@@ -68,5 +73,56 @@ public abstract class CallableReference implements KCallable, Serializable {
 
     public String getSignature() {
         return this.signature;
+    }
+
+    @Override // kotlin.reflect.KCallable
+    public List<Object> getParameters() {
+        return getReflected().getParameters();
+    }
+
+    @Override // kotlin.reflect.KCallable
+    public KType getReturnType() {
+        getReflected().getReturnType();
+        return null;
+    }
+
+    @Override // kotlin.reflect.KAnnotatedElement
+    public List<Annotation> getAnnotations() {
+        return getReflected().getAnnotations();
+    }
+
+    @Override // kotlin.reflect.KCallable
+    public List<Object> getTypeParameters() {
+        return getReflected().getTypeParameters();
+    }
+
+    @Override // kotlin.reflect.KCallable
+    public Object call(Object... objArr) {
+        return getReflected().call(objArr);
+    }
+
+    @Override // kotlin.reflect.KCallable
+    public Object callBy(Map map) {
+        return getReflected().callBy(map);
+    }
+
+    @Override // kotlin.reflect.KCallable
+    public KVisibility getVisibility() {
+        return getReflected().getVisibility();
+    }
+
+    @Override // kotlin.reflect.KCallable
+    public boolean isFinal() {
+        return getReflected().isFinal();
+    }
+
+    @Override // kotlin.reflect.KCallable
+    public boolean isOpen() {
+        return getReflected().isOpen();
+    }
+
+    @Override // kotlin.reflect.KCallable
+    public boolean isAbstract() {
+        return getReflected().isAbstract();
     }
 }

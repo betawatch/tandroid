@@ -1,24 +1,21 @@
 package com.google.android.recaptcha.internal;
 
+import java.util.UUID;
+
 /* loaded from: classes.dex */
-public final class zzhk extends zzio implements zzkf {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private zzhk() {
-        super(r0);
-        zzhl zzhlVar;
-        zzhlVar = zzhl.zzd;
+public final class zzhk {
+    private final zzhh zza;
+    private final String zzb = UUID.randomUUID().toString();
+
+    public zzhk(zzhh zzhhVar) {
+        this.zza = zzhhVar;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzhk(zzhj zzhjVar) {
-        super(r1);
-        zzhl zzhlVar;
-        zzhlVar = zzhl.zzd;
+    public final zzhh zza() {
+        return this.zza;
+    }
+
+    public final String zzb() {
+        return this.zzb;
     }
 }

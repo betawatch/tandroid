@@ -70,7 +70,7 @@ public class BottomPagesView extends View {
         if (i3 >= 0) {
             this.paint.setColor(Theme.getColor(i3));
         } else {
-            this.paint.setColor(-13851168);
+            this.paint.setColor(-14509328);
         }
         int dp = this.currentPage * AndroidUtilities.dp(11.0f);
         if (this.progress != 0.0f) {

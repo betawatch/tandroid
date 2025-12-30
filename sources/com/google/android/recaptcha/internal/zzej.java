@@ -1,47 +1,28 @@
 package com.google.android.recaptcha.internal;
 
-import java.net.ConnectException;
-import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Iterator;
+import kotlin.Result;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
-public final class zzej implements zzen {
-    private static final boolean zzb(int i) {
-        try {
-            new Socket("localhost", i).close();
-            return true;
-        } catch (ConnectException unused) {
-            return false;
-        }
+final class zzej extends ContinuationImpl {
+    /* synthetic */ Object zza;
+    final /* synthetic */ zzeq zzb;
+    int zzc;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzej(zzeq zzeqVar, Continuation continuation) {
+        super(continuation);
+        this.zzb = zzeqVar;
     }
 
-    @Override // com.google.android.recaptcha.internal.zzen
-    public final /* synthetic */ Object cs(Object[] objArr) {
-        return zzel.zza(this, objArr);
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzen
-    public final Object zza(Object... objArr) {
-        ArrayList arrayList = new ArrayList(objArr.length);
-        for (Object obj : objArr) {
-            if (true != (obj instanceof Integer)) {
-                obj = null;
-            }
-            Integer num = (Integer) obj;
-            if (num == null) {
-                throw new zzae(4, 5, null);
-            }
-            arrayList.add(Integer.valueOf(num.intValue()));
-        }
-        ArrayList arrayList2 = new ArrayList();
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            int intValue = ((Number) it.next()).intValue();
-            if (zzb(intValue)) {
-                arrayList2.add(Integer.valueOf(intValue));
-            }
-        }
-        return arrayList2;
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        this.zza = obj;
+        this.zzc |= TLObject.FLAG_31;
+        Object obj2 = this.zzb.execute-gIAlu-s(null, this);
+        return obj2 == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? obj2 : Result.box-impl(obj2);
     }
 }

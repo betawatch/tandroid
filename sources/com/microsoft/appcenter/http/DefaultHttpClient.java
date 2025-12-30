@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.RejectedExecutionException;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class DefaultHttpClient implements HttpClient, DefaultHttpClientCallTask.Tracker {
     private final boolean mCompressionEnabled;
     private final Set mTasks = new HashSet();

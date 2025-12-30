@@ -61,7 +61,7 @@ public class PostsSearchContainer extends FrameLayout {
     private boolean isEmpty;
     private String lastQuery;
     private int lastRate;
-    private final UniversalRecyclerView listView;
+    public final UniversalRecyclerView listView;
     private boolean loading;
     private final ArrayList messages;
     private final ArrayList newsMessages;
@@ -111,7 +111,8 @@ public class PostsSearchContainer extends FrameLayout {
                 if (!(TextUtils.isEmpty(PostsSearchContainer.this.lastQuery) ? PostsSearchContainer.this.newsMessages : PostsSearchContainer.this.messages).isEmpty() && (!PostsSearchContainer.this.listView.canScrollVertically(1) || PostsSearchContainer.this.isLoadingVisible())) {
                     PostsSearchContainer.this.load(false);
                 }
-                if (!PostsSearchContainer.this.listView.scrollingByUser || PostsSearchContainer.this.isEmpty || (baseFragment2 = baseFragment) == null || baseFragment2.getParentActivity() == null) {
+                PostsSearchContainer postsSearchContainer = PostsSearchContainer.this;
+                if (!postsSearchContainer.listView.scrollingByUser || postsSearchContainer.isEmpty || (baseFragment2 = baseFragment) == null || baseFragment2.getParentActivity() == null) {
                     return;
                 }
                 AndroidUtilities.hideKeyboard(baseFragment.getParentActivity().getCurrentFocus());

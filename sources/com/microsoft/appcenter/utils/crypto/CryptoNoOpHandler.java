@@ -4,7 +4,7 @@ import android.content.Context;
 import com.microsoft.appcenter.utils.crypto.CryptoUtils;
 import java.security.KeyStore;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 class CryptoNoOpHandler implements CryptoHandler {
     @Override // com.microsoft.appcenter.utils.crypto.CryptoHandler
     public byte[] decrypt(CryptoUtils.ICryptoFactory iCryptoFactory, int i, KeyStore.Entry entry, byte[] bArr) {

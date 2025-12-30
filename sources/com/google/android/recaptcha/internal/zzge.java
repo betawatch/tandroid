@@ -1,20 +1,28 @@
 package com.google.android.recaptcha.internal;
 
-import com.google.android.recaptcha.internal.zzge;
-import com.google.android.recaptcha.internal.zzgf;
+import com.google.android.recaptcha.RecaptchaAction;
+import kotlin.coroutines.Continuation;
 
 /* loaded from: classes.dex */
-public abstract class zzge<MessageType extends zzgf<MessageType, BuilderType>, BuilderType extends zzge<MessageType, BuilderType>> implements zzkd {
-    @Override // 
-    public abstract zzge zza();
+public final class zzge implements zzdw {
+    private final zzfp zza;
+    private zzdv zzb;
+    private zzxn zzc;
 
-    protected abstract zzge zzb(zzgf zzgfVar);
+    public zzge(zzfp zzfpVar) {
+        zzdu zzduVar;
+        this.zza = zzfpVar;
+        zzduVar = zzdv.zza;
+        this.zzb = zzduVar;
+    }
 
-    @Override // com.google.android.recaptcha.internal.zzkd
-    public final /* bridge */ /* synthetic */ zzkd zzc(zzke zzkeVar) {
-        if (zzY().getClass().isInstance(zzkeVar)) {
-            return zzb((zzgf) zzkeVar);
-        }
-        throw new IllegalArgumentException("mergeFrom(MessageLite) can only merge messages of the same type.");
+    @Override // com.google.android.recaptcha.internal.zzdw
+    public final Object zza(String str, RecaptchaAction recaptchaAction, long j, Continuation continuation) {
+        return new zzhg(new zzgc(this, j, str, recaptchaAction, null));
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzdw
+    public final Object zzb(long j, Continuation continuation) {
+        return new zzhg(new zzgd(this, j, null));
     }
 }

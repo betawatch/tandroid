@@ -24,6 +24,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.math.MathUtils;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -53,7 +54,7 @@ import org.telegram.ui.Stories.recorder.HintView2;
 
 /* loaded from: classes5.dex */
 public class ViewPagerFixed extends FrameLayout {
-    private static final Interpolator interpolator = new Interpolator() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda0
+    private static final Interpolator interpolator = new Interpolator() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda1
         @Override // android.animation.TimeInterpolator
         public final float getInterpolation(float f) {
             float lambda$static$0;
@@ -103,6 +104,10 @@ public class ViewPagerFixed extends FrameLayout {
         return true;
     }
 
+    protected boolean canScrollBackward(MotionEvent motionEvent) {
+        return true;
+    }
+
     protected void invalidateBlur() {
     }
 
@@ -133,6 +138,13 @@ public class ViewPagerFixed extends FrameLayout {
 
     protected int tabMarginDp() {
         return 16;
+    }
+
+    public float getPositionVisibility(int i) {
+        if (getMeasuredWidth() == 0) {
+            return MathUtils.clamp(1 - Math.abs(getCurrentPosition() - i), 0, 1);
+        }
+        return MathUtils.clamp(1.0f - Math.abs(getPositionAnimated() - i), 0.0f, 1.0f);
     }
 
     public float getPositionAnimated() {
@@ -260,7 +272,7 @@ public class ViewPagerFixed extends FrameLayout {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.manualScrolling = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda2
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 ViewPagerFixed.this.lambda$scrollToPosition$1(valueAnimator2);
@@ -558,6 +570,9 @@ public class ViewPagerFixed extends FrameLayout {
         if (z && !canScrollForward(motionEvent)) {
             return false;
         }
+        if (!z && !canScrollBackward(motionEvent)) {
+            return false;
+        }
         Adapter adapter = this.adapter;
         if (adapter != null) {
             if (!adapter.canScrollTo(this.currentPosition + (z ? 1 : -1))) {
@@ -794,7 +809,7 @@ public class ViewPagerFixed extends FrameLayout {
                 }
                 if (this.nextPosition < 0) {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(this.backProgress, this.backAnimation ? 0.0f : 1.0f);
-                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda1
+                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$$ExternalSyntheticLambda2
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                             ViewPagerFixed.this.lambda$onTouchEventInternal$2(valueAnimator);

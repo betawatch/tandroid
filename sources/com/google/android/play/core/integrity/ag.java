@@ -16,11 +16,11 @@ final class ag extends com.google.android.play.integrity.internal.t {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     ag(aj ajVar, TaskCompletionSource taskCompletionSource, Bundle bundle, Activity activity, TaskCompletionSource taskCompletionSource2, int i) {
         super(taskCompletionSource);
-        this.e = ajVar;
         this.a = bundle;
         this.b = activity;
         this.c = taskCompletionSource2;
         this.d = i;
+        this.e = ajVar;
     }
 
     @Override // com.google.android.play.integrity.internal.t
@@ -31,7 +31,7 @@ final class ag extends com.google.android.play.integrity.internal.t {
             com.google.android.play.integrity.internal.n nVar = (com.google.android.play.integrity.internal.n) this.e.a.e();
             Bundle bundle = this.a;
             aj ajVar = this.e;
-            atVar = ajVar.d;
+            atVar = ajVar.e;
             nVar.c(bundle, atVar.a(this.b, this.c, ajVar.a));
         } catch (RemoteException e) {
             aj ajVar2 = this.e;

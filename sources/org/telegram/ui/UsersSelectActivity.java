@@ -4,14 +4,10 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Point;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
@@ -27,8 +23,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
-import android.widget.ImageView;
+import android.widget.FrameLayout;
 import android.widget.ScrollView;
 import androidx.collection.LongSparseArray;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -63,6 +58,7 @@ import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.FlickerLoadingView;
+import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.GroupCreateSpan;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
@@ -84,7 +80,8 @@ public class UsersSelectActivity extends BaseFragment implements NotificationCen
     private StickerEmptyView emptyView;
     private int fieldY;
     private int filterFlags;
-    private ImageView floatingButton;
+    private FragmentFloatingButton floatingButton;
+    private FrameLayout.LayoutParams floatingButtonLp;
     private boolean ignoreScrollEvent;
     private ArrayList initialIds;
     private boolean isInclude;
@@ -104,7 +101,7 @@ public class UsersSelectActivity extends BaseFragment implements NotificationCen
         void didSelectChats(ArrayList arrayList, int i);
     }
 
-    static /* synthetic */ int access$2172(UsersSelectActivity usersSelectActivity, int i) {
+    static /* synthetic */ int access$2272(UsersSelectActivity usersSelectActivity, int i) {
         int i2 = i & usersSelectActivity.filterFlags;
         usersSelectActivity.filterFlags = i2;
         return i2;
@@ -487,8 +484,8 @@ public class UsersSelectActivity extends BaseFragment implements NotificationCen
                 UsersSelectActivity.this.emptyView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - UsersSelectActivity.this.scrollView.getMeasuredHeight(), TLObject.FLAG_30));
                 UsersSelectActivity.this.progressView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2 - UsersSelectActivity.this.scrollView.getMeasuredHeight(), TLObject.FLAG_30));
                 if (UsersSelectActivity.this.floatingButton != null) {
-                    int dp2 = AndroidUtilities.dp(56.0f);
-                    UsersSelectActivity.this.floatingButton.measure(View.MeasureSpec.makeMeasureSpec(dp2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2, TLObject.FLAG_30));
+                    int i6 = UsersSelectActivity.this.floatingButtonLp.width;
+                    UsersSelectActivity.this.floatingButton.measure(View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30));
                 }
             }
 
@@ -499,9 +496,9 @@ public class UsersSelectActivity extends BaseFragment implements NotificationCen
                 UsersSelectActivity.this.emptyView.layout(0, UsersSelectActivity.this.scrollView.getMeasuredHeight(), UsersSelectActivity.this.emptyView.getMeasuredWidth(), UsersSelectActivity.this.scrollView.getMeasuredHeight() + UsersSelectActivity.this.emptyView.getMeasuredHeight());
                 UsersSelectActivity.this.progressView.layout(0, UsersSelectActivity.this.scrollView.getMeasuredHeight(), UsersSelectActivity.this.emptyView.getMeasuredWidth(), UsersSelectActivity.this.scrollView.getMeasuredHeight() + UsersSelectActivity.this.progressView.getMeasuredHeight());
                 if (UsersSelectActivity.this.floatingButton != null) {
-                    int dp = LocaleController.isRTL ? AndroidUtilities.dp(14.0f) : ((i6 - i4) - AndroidUtilities.dp(14.0f)) - UsersSelectActivity.this.floatingButton.getMeasuredWidth();
-                    int dp2 = ((i7 - i5) - AndroidUtilities.dp(14.0f)) - UsersSelectActivity.this.floatingButton.getMeasuredHeight();
-                    UsersSelectActivity.this.floatingButton.layout(dp, dp2, UsersSelectActivity.this.floatingButton.getMeasuredWidth() + dp, UsersSelectActivity.this.floatingButton.getMeasuredHeight() + dp2);
+                    int measuredWidth = LocaleController.isRTL ? UsersSelectActivity.this.floatingButtonLp.leftMargin : ((i6 - i4) - UsersSelectActivity.this.floatingButtonLp.rightMargin) - UsersSelectActivity.this.floatingButton.getMeasuredWidth();
+                    int measuredHeight = ((i7 - i5) - UsersSelectActivity.this.floatingButtonLp.bottomMargin) - UsersSelectActivity.this.floatingButton.getMeasuredHeight();
+                    UsersSelectActivity.this.floatingButton.layout(measuredWidth, measuredHeight, UsersSelectActivity.this.floatingButton.getMeasuredWidth() + measuredWidth, UsersSelectActivity.this.floatingButton.getMeasuredHeight() + measuredHeight);
                 }
             }
 
@@ -606,30 +603,30 @@ public class UsersSelectActivity extends BaseFragment implements NotificationCen
                         UsersSelectActivity.this.spansContainer.removeSpan(groupCreateSpan);
                         if (UsersSelectActivity.this.type == 2) {
                             if (groupCreateSpan.getUid() == -9223372036854775800L) {
-                                UsersSelectActivity.access$2172(UsersSelectActivity.this, -2);
+                                UsersSelectActivity.access$2272(UsersSelectActivity.this, -2);
                             } else if (groupCreateSpan.getUid() == -9223372036854775799L) {
-                                UsersSelectActivity.access$2172(UsersSelectActivity.this, -3);
+                                UsersSelectActivity.access$2272(UsersSelectActivity.this, -3);
                             } else if (groupCreateSpan.getUid() == Long.MIN_VALUE) {
-                                UsersSelectActivity.access$2172(UsersSelectActivity.this, -5);
+                                UsersSelectActivity.access$2272(UsersSelectActivity.this, -5);
                             } else if (groupCreateSpan.getUid() == -9223372036854775807L) {
-                                UsersSelectActivity.access$2172(UsersSelectActivity.this, -9);
+                                UsersSelectActivity.access$2272(UsersSelectActivity.this, -9);
                             }
                         } else if (groupCreateSpan.getUid() == Long.MIN_VALUE) {
-                            UsersSelectActivity.access$2172(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_CONTACTS);
+                            UsersSelectActivity.access$2272(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_CONTACTS);
                         } else if (groupCreateSpan.getUid() == -9223372036854775807L) {
-                            UsersSelectActivity.access$2172(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS);
+                            UsersSelectActivity.access$2272(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS);
                         } else if (groupCreateSpan.getUid() == -9223372036854775806L) {
-                            UsersSelectActivity.access$2172(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_GROUPS);
+                            UsersSelectActivity.access$2272(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_GROUPS);
                         } else if (groupCreateSpan.getUid() == -9223372036854775805L) {
-                            UsersSelectActivity.access$2172(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_CHANNELS);
+                            UsersSelectActivity.access$2272(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_CHANNELS);
                         } else if (groupCreateSpan.getUid() == -9223372036854775804L) {
-                            UsersSelectActivity.access$2172(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_BOTS);
+                            UsersSelectActivity.access$2272(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_BOTS);
                         } else if (groupCreateSpan.getUid() == -9223372036854775803L) {
-                            UsersSelectActivity.access$2172(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED);
+                            UsersSelectActivity.access$2272(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED);
                         } else if (groupCreateSpan.getUid() == -9223372036854775802L) {
-                            UsersSelectActivity.access$2172(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ);
+                            UsersSelectActivity.access$2272(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ);
                         } else if (groupCreateSpan.getUid() == -9223372036854775801L) {
-                            UsersSelectActivity.access$2172(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED);
+                            UsersSelectActivity.access$2272(UsersSelectActivity.this, ~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED);
                         }
                         UsersSelectActivity.this.updateHint();
                         UsersSelectActivity.this.checkVisibleRows();
@@ -717,26 +714,11 @@ public class UsersSelectActivity extends BaseFragment implements NotificationCen
                 }
             }
         });
-        ImageView imageView = new ImageView(context);
-        this.floatingButton = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.floatingButton.setBackgroundDrawable(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(56.0f), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
-        this.floatingButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.MULTIPLY));
-        this.floatingButton.setImageResource(R.drawable.floating_check);
-        StateListAnimator stateListAnimator = new StateListAnimator();
-        int[] iArr = {android.R.attr.state_pressed};
-        ImageView imageView2 = this.floatingButton;
-        Property property = View.TRANSLATION_Z;
-        stateListAnimator.addState(iArr, ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this.floatingButton, (Property<ImageView, Float>) property, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        this.floatingButton.setStateListAnimator(stateListAnimator);
-        this.floatingButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.UsersSelectActivity.10
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view, Outline outline) {
-                outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-            }
-        });
-        viewGroup.addView(this.floatingButton);
+        this.floatingButtonLp = FragmentFloatingButton.createDefaultLayoutParams();
+        FragmentFloatingButton fragmentFloatingButton = new FragmentFloatingButton(context, this.resourceProvider);
+        this.floatingButton = fragmentFloatingButton;
+        fragmentFloatingButton.setImageResource(R.drawable.floating_check);
+        viewGroup.addView(this.floatingButton, this.floatingButtonLp);
         this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.UsersSelectActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

@@ -1,81 +1,92 @@
 package com.google.android.recaptcha.internal;
 
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+
 /* loaded from: classes.dex */
-abstract class zzll {
-    zzll() {
+final class zzll extends SuspendLambda implements Function2 {
+    int zza;
+    final /* synthetic */ zzxn zzb;
+    final /* synthetic */ zzly zzc;
+    private /* synthetic */ Object zzd;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzll(zzxn zzxnVar, zzly zzlyVar, Continuation continuation) {
+        super(2, continuation);
+        this.zzb = zzxnVar;
+        this.zzc = zzlyVar;
     }
 
-    abstract int zza(Object obj);
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        zzll zzllVar = new zzll(this.zzb, this.zzc, continuation);
+        zzllVar.zzd = obj;
+        return zzllVar;
+    }
 
-    abstract int zzb(Object obj);
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzll) create((zzhk) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
+    }
 
-    abstract Object zzc(Object obj);
-
-    abstract Object zzd(Object obj);
-
-    abstract Object zze(Object obj, Object obj2);
-
-    abstract Object zzf();
-
-    abstract Object zzg(Object obj);
-
-    abstract void zzh(Object obj, int i, int i2);
-
-    abstract void zzi(Object obj, int i, long j);
-
-    abstract void zzj(Object obj, int i, Object obj2);
-
-    abstract void zzk(Object obj, int i, zzgw zzgwVar);
-
-    abstract void zzl(Object obj, int i, long j);
-
-    abstract void zzm(Object obj);
-
-    abstract void zzn(Object obj, Object obj2);
-
-    abstract void zzo(Object obj, Object obj2);
-
-    abstract void zzp(Object obj, zzmd zzmdVar);
-
-    abstract void zzq(Object obj, zzmd zzmdVar);
-
-    abstract boolean zzs(zzkq zzkqVar);
-
-    final boolean zzr(Object obj, zzkq zzkqVar) {
-        int zzd = zzkqVar.zzd();
-        int i = zzd >>> 3;
-        int i2 = zzd & 7;
-        if (i2 == 0) {
-            zzl(obj, i, zzkqVar.zzl());
-            return true;
-        }
-        if (i2 == 1) {
-            zzi(obj, i, zzkqVar.zzk());
-            return true;
-        }
-        if (i2 == 2) {
-            zzk(obj, i, zzkqVar.zzp());
-            return true;
-        }
-        if (i2 != 3) {
-            if (i2 == 4) {
-                return false;
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0056, code lost:
+    
+        if (((com.google.android.recaptcha.internal.zzhg) r8).zza(r1, r7) == r0) goto L27;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0048, code lost:
+    
+        if (r8 != r0) goto L18;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0070, code lost:
+    
+        if (r8.zzc(r1, r7) != r0) goto L24;
+     */
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object invokeSuspend(Object obj) {
+        zzhk zzhkVar;
+        Object obj2;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.zza;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            zzhkVar = (zzhk) this.zzd;
+            zzxn zzxnVar = this.zzb;
+            if (zzxnVar.zzV() && zzxnVar.zzT() && zzxnVar.zzS()) {
+                zzly zzlyVar = this.zzc;
+                zzlyVar.zze = zzxnVar;
+                this.zzd = zzhkVar;
+                this.zza = 2;
+                obj = zzly.zzu(zzlyVar, this);
+            } else {
+                zzdj zzn = this.zzc.zzn();
+                zzmc zzmcVar = zzmc.zzd;
+                this.zza = 1;
             }
-            if (i2 != 5) {
-                throw zzje.zza();
-            }
-            zzh(obj, i, zzkqVar.zzf());
-            return true;
+            return coroutine_suspended;
         }
-        Object zzf = zzf();
-        int i3 = i << 3;
-        while (zzkqVar.zzc() != Integer.MAX_VALUE && zzr(zzf, zzkqVar)) {
+        if (i == 1) {
+            ResultKt.throwOnFailure(obj);
+            Result.Companion companion = Result.Companion;
+            obj2 = Result.constructor-impl(ResultKt.createFailure(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
+            return Result.box-impl(obj2);
         }
-        if ((4 | i3) != zzkqVar.zzd()) {
-            throw zzje.zzb();
+        if (i != 2) {
+            ResultKt.throwOnFailure(obj);
+            Result.Companion companion2 = Result.Companion;
+            obj2 = Result.constructor-impl(Unit.INSTANCE);
+            return Result.box-impl(obj2);
         }
-        zzg(zzf);
-        zzj(obj, i, zzf);
-        return true;
+        zzhkVar = (zzhk) this.zzd;
+        ResultKt.throwOnFailure(obj);
+        this.zzd = null;
+        this.zza = 3;
     }
 }

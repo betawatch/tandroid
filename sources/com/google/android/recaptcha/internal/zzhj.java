@@ -1,40 +1,73 @@
 package com.google.android.recaptcha.internal;
 
-/* loaded from: classes.dex */
-final /* synthetic */ class zzhj {
-    static final /* synthetic */ int[] zza;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.Boxing;
+import kotlin.jvm.functions.Function2;
+import org.telegram.tgnet.TLObject;
 
-    static {
-        zzis.zza();
-        int[] iArr = new int[7];
-        zza = iArr;
+/* loaded from: classes.dex */
+public final class zzhj {
+    public static final Object zza(zzhh zzhhVar, Function2 function2, Continuation continuation) {
+        return function2.invoke(new zzhk(zzhhVar), continuation);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0023  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object zzb(zzhk zzhkVar, zzhf zzhfVar, Continuation continuation) {
+        zzhi zzhiVar;
+        int i;
         try {
-            iArr[3] = 1;
-        } catch (NoSuchFieldError unused) {
+            if (continuation instanceof zzhi) {
+                zzhiVar = (zzhi) continuation;
+                int i2 = zzhiVar.zzb;
+                if ((i2 & TLObject.FLAG_31) != 0) {
+                    zzhiVar.zzb = i2 - TLObject.FLAG_31;
+                    Object obj = zzhiVar.zza;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = zzhiVar.zzb;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
+                        zzhiVar.zzb = 1;
+                        if (zzhfVar.zza(zzhkVar, zzhiVar) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                    } else {
+                        if (i != 1) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        ResultKt.throwOnFailure(obj);
+                    }
+                    return Unit.INSTANCE;
+                }
+            }
+            if (i != 0) {
+            }
+            return Unit.INSTANCE;
+        } catch (Exception unused) {
+            return Unit.INSTANCE;
         }
-        try {
-            zza[4] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            zza[2] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            zza[5] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            zza[6] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            zza[0] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            zza[1] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
+        zzhiVar = new zzhi(continuation);
+        Object obj2 = zzhiVar.zza;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = zzhiVar.zzb;
+    }
+
+    public static final Object zzc(zzgr zzgrVar, zzhg zzhgVar, Continuation continuation) {
+        Object zza = zzhgVar.zza(zzgrVar.zza(), continuation);
+        return zza == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? zza : Unit.INSTANCE;
+    }
+
+    public static final Object zzd(int i, int i2, Function2 function2, Continuation continuation) {
+        return new zzhf(i, function2, Boxing.boxInt(i2));
+    }
+
+    public static final Object zze(zzhk zzhkVar, int i, Function2 function2, Continuation continuation) {
+        return new zzhf(i, function2, null).zza(zzhkVar, continuation);
     }
 }

@@ -30,7 +30,7 @@ abstract class y {
                 bundle.putInt("dialog.intent.type", i);
                 bundle.putString("package.name", this.b);
                 bundle.putInt("playcore.integrity.version.major", 1);
-                bundle.putInt("playcore.integrity.version.minor", 3);
+                bundle.putInt("playcore.integrity.version.minor", 4);
                 bundle.putInt("playcore.integrity.version.patch", 0);
                 bundle.putLong("request.token.sid", this.c);
                 return b(activity, bundle);

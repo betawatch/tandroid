@@ -1,49 +1,34 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.HashMap;
-import org.telegram.messenger.NotificationCenter;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.CoroutineScope;
 
 /* loaded from: classes.dex */
-public final class zzcl {
-    private final zzaa zza;
-    private final zzck zzb;
-    private final HashMap zzc;
-    private final zzcd zzd;
-    private final zzag zze;
-
-    public zzcl(zzcd zzcdVar, zzag zzagVar, zzaa zzaaVar) {
-        this.zzd = zzcdVar;
-        this.zze = zzagVar;
-        this.zza = zzaaVar;
-        zzck zzckVar = new zzck();
-        this.zzb = zzckVar;
-        HashMap hashMap = new HashMap();
-        this.zzc = hashMap;
-        zzckVar.zze(NotificationCenter.closeInCallActivity, hashMap);
+final class zzcl extends SuspendLambda implements Function2 {
+    zzcl(Continuation continuation) {
+        super(2, continuation);
     }
 
-    public final zzaa zza() {
-        return this.zza;
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        return new zzcl(continuation);
     }
 
-    public final zzck zzb() {
-        return this.zzb;
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzcl) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
-    public final void zzc() {
-        this.zzb.zzd();
-        this.zzb.zze(NotificationCenter.closeInCallActivity, this.zzc);
-    }
-
-    public final zzag zzd() {
-        return this.zze;
-    }
-
-    public final zzcd zze() {
-        return this.zzd;
-    }
-
-    public final void zzf(int i, Object obj) {
-        this.zzc.put(Integer.valueOf(i - 2), obj);
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        ResultKt.throwOnFailure(obj);
+        Thread.currentThread().setPriority(8);
+        return Unit.INSTANCE;
     }
 }

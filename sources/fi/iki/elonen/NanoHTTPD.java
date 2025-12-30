@@ -43,7 +43,7 @@ import java.util.zip.GZIPOutputStream;
 import javax.net.ssl.SSLException;
 import org.telegram.messenger.NotificationCenter;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class NanoHTTPD {
     protected AsyncRunner asyncRunner;
     private final String hostname;

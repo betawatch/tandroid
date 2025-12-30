@@ -1,22 +1,29 @@
 package com.google.android.recaptcha.internal;
 
-import android.content.Context;
+import kotlin.Result;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
-public final class zzek implements zzen {
-    private final Context zzb;
+final class zzek extends ContinuationImpl {
+    /* synthetic */ Object zza;
+    final /* synthetic */ zzeq zzb;
+    int zzc;
 
-    public zzek(Context context) {
-        this.zzb = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzek(zzeq zzeqVar, Continuation continuation) {
+        super(continuation);
+        this.zzb = zzeqVar;
     }
 
-    @Override // com.google.android.recaptcha.internal.zzen
-    public final /* synthetic */ Object cs(Object[] objArr) {
-        return zzel.zza(this, objArr);
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzen
-    public final Object zza(Object... objArr) {
-        return this.zzb.getSharedPreferences("_GRECAPTCHA", 0);
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        Object zze;
+        this.zza = obj;
+        this.zzc |= TLObject.FLAG_31;
+        zze = this.zzb.zze(null, 0L, this);
+        return zze == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? zze : Result.box-impl(zze);
     }
 }

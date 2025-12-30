@@ -31,7 +31,6 @@ public class BuildVars {
         boolean z = true;
         NO_SCOPED_STORAGE = Build.VERSION.SDK_INT <= 29;
         BUILD_VERSION_STRING = BuildConfig.BUILD_VERSION_STRING;
-        SUPPORTS_PASSKEYS = true;
         APP_ID = 4;
         APP_HASH = "014b35b6184100b085b0d0572f9b5103";
         SAFETYNET_KEY = "AIzaSyDqt8P-7F7CPCseMkOiVRgb1LY8RN1bvH8";
@@ -40,6 +39,7 @@ public class BuildVars {
         GOOGLE_AUTH_CLIENT_ID = "760348033671-81kmi3pi84p11ub8hp9a1funsv0rn2p9.apps.googleusercontent.com";
         HUAWEI_APP_ID = "101184875";
         IS_BILLING_UNAVAILABLE = false;
+        SUPPORTS_PASSKEYS = true;
         if (ApplicationLoader.applicationContext != null) {
             SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0);
             boolean z2 = DEBUG_VERSION;

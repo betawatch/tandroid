@@ -1,8 +1,43 @@
 package com.google.android.recaptcha.internal;
 
+import java.lang.reflect.Array;
+import java.util.List;
+
 /* loaded from: classes.dex */
-public final class zzjd extends zzje {
-    public zzjd(String str) {
-        super("Protocol message tag had invalid wire type.");
+public final class zzjd implements zzjt {
+    public static final zzjd zza = new zzjd();
+
+    private zzjd() {
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzjt
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+        if (zzztVarArr.length != 2) {
+            throw new zzdm(4, 3, null);
+        }
+        Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
+        if (true != (zza2 instanceof Object)) {
+            zza2 = null;
+        }
+        if (zza2 == null) {
+            throw new zzdm(4, 5, null);
+        }
+        Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
+        if (true != (zza3 instanceof Integer)) {
+            zza3 = null;
+        }
+        Integer num = (Integer) zza3;
+        if (num == null) {
+            throw new zzdm(4, 5, null);
+        }
+        int intValue = num.intValue();
+        try {
+            zzizVar.zzc().zze(i, zza2 instanceof String ? String.valueOf(((String) zza2).charAt(intValue)) : zza2 instanceof List ? ((List) zza2).get(intValue) : Array.get(zza2, intValue));
+        } catch (Exception e) {
+            if (!(e instanceof ArrayIndexOutOfBoundsException)) {
+                throw new zzdm(4, 23, e);
+            }
+            throw new zzdm(4, 22, e);
+        }
     }
 }

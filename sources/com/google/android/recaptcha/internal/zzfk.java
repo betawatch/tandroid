@@ -1,13 +1,18 @@
 package com.google.android.recaptcha.internal;
 
+import kotlin.jvm.functions.Function0;
+
 /* loaded from: classes.dex */
-public class zzfk {
-    private static final zzfk zza = new zzfj();
+public final class zzfk implements Function0 {
+    public static final zzfk zza = new zzfk();
 
-    protected zzfk() {
-    }
-
-    public static zzfk zza() {
-        return zza;
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzda.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzda) zzb;
+        }
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

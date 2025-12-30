@@ -175,36 +175,8 @@ public abstract class BaseCell extends ViewGroup implements SizeNotifierFrameLay
         super.invalidate();
     }
 
-    public void setCaching(boolean z, boolean z2) {
-        boolean z3 = false;
-        if (z) {
-            if (SharedConfig.useNewBlur && z2) {
-                z3 = true;
-            }
-            this.cachingTop = z3;
-            return;
-        }
-        if (SharedConfig.useNewBlur && z2) {
-            z3 = true;
-        }
-        this.cachingBottom = z3;
-    }
-
     public void forceNotCacheNextFrame() {
         this.forceNotCacheNextFrame = true;
-    }
-
-    public void drawCached(Canvas canvas) {
-        RenderNode renderNode;
-        boolean hasDisplayList;
-        if (Build.VERSION.SDK_INT >= 29 && (renderNode = this.renderNode) != null) {
-            hasDisplayList = renderNode.hasDisplayList();
-            if (hasDisplayList && canvas.isHardwareAccelerated() && !this.updatedContent) {
-                canvas.drawRenderNode(this.renderNode);
-                return;
-            }
-        }
-        draw(canvas);
     }
 
     @Override // android.view.View

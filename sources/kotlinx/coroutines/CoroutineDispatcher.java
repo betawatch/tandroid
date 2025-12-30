@@ -27,7 +27,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
         return ContinuationInterceptor.DefaultImpls.get(this, key);
     }
 
-    @Override // kotlin.coroutines.AbstractCoroutineContextElement, kotlin.coroutines.CoroutineContext
+    @Override // kotlin.coroutines.AbstractCoroutineContextElement, kotlin.coroutines.CoroutineContext.Element, kotlin.coroutines.CoroutineContext
     public CoroutineContext minusKey(CoroutineContext.Key key) {
         return ContinuationInterceptor.DefaultImpls.minusKey(this, key);
     }

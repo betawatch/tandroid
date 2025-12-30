@@ -1,56 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import java.util.Timer;
-import kotlin.ResultKt;
-import kotlin.Unit;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlinx.coroutines.CoroutineScope;
+import kotlin.jvm.functions.Function0;
 
 /* loaded from: classes.dex */
-final class zzbk extends SuspendLambda implements Function2 {
-    final /* synthetic */ zzbm zza;
+public final class zzbk implements Function0 {
+    public static final zzbk zza = new zzbk();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzbk(zzbm zzbmVar, Continuation continuation) {
-        super(2, continuation);
-        this.zza = zzbmVar;
-    }
-
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzbk(this.zza, continuation);
-    }
-
-    @Override // kotlin.jvm.functions.Function2
-    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbk) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
-    }
-
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Object invokeSuspend(Object obj) {
-        zzaz zzazVar;
-        Timer timer;
-        IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        ResultKt.throwOnFailure(obj);
-        zzbm zzbmVar = this.zza;
-        synchronized (zzbh.class) {
-            try {
-                zzazVar = zzbmVar.zze;
-                if (zzazVar != null && zzazVar.zzb() == 0) {
-                    timer = zzbm.zzb;
-                    if (timer != null) {
-                        timer.cancel();
-                    }
-                    zzbm.zzb = null;
-                }
-                zzbmVar.zzg();
-            } catch (Throwable th) {
-                throw th;
-            }
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzcr.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzcr) zzb;
         }
-        return Unit.INSTANCE;
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

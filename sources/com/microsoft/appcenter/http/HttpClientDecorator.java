@@ -1,6 +1,6 @@
 package com.microsoft.appcenter.http;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class HttpClientDecorator implements HttpClient {
     final HttpClient mDecoratedApi;
 

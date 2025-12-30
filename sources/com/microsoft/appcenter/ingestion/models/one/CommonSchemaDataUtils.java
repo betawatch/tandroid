@@ -13,7 +13,7 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class CommonSchemaDataUtils {
     public static void addCommonSchemaData(List list, CommonSchemaLog commonSchemaLog) {
         Iterator it;

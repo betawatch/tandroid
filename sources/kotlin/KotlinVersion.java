@@ -3,7 +3,7 @@ package kotlin;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class KotlinVersion implements Comparable {
     private final int major;
     private final int minor;

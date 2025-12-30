@@ -1,33 +1,19 @@
 package com.google.android.recaptcha.internal;
 
+import android.app.Application;
+import kotlin.jvm.functions.Function0;
+
 /* loaded from: classes.dex */
-public abstract class zzgg implements zzkj {
-    public final /* synthetic */ Object clone() {
-        throw null;
-    }
+public final class zzgg implements Function0 {
+    public static final zzgg zza = new zzgg();
 
-    @Override // com.google.android.recaptcha.internal.zzke
-    public final zzkd zzW() {
-        throw null;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzke
-    public final zzkd zzX() {
-        throw null;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzke
-    public final zzgw zzb() {
-        throw null;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzkj
-    public final zzkj zzd() {
-        throw null;
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzke
-    public final void zze(zzhh zzhhVar) {
-        throw null;
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(Application.class.getName().hashCode());
+        if (zzb != null) {
+            return (Application) zzb;
+        }
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

@@ -4,17 +4,13 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Outline;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
@@ -23,8 +19,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
-import android.widget.ImageView;
 import android.widget.ScrollView;
 import androidx.collection.LongSparseArray;
 import androidx.core.graphics.ColorUtils;
@@ -73,13 +67,12 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
     private int copyLinkRow;
     private AnimatorSet currentAnimation;
     private GroupCreateSpan currentDeletingSpan;
-    private AnimatorSet currentDoneButtonAnimation;
     private GroupCreateActivity.ContactsAddActivityDelegate delegate;
     private InviteMembersBottomSheetDelegate dialogsDelegate;
     private ArrayList dialogsServerOnly;
     private int emptyRow;
     boolean enterEventSent;
-    private final ImageView floatingButton;
+    private final FragmentFloatingButton floatingButton;
     private LongSparseArray ignoreUsers;
     TLRPC.TL_chatInviteExported invite;
     private int lastRow;
@@ -184,34 +177,18 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
         scrollView.setClipChildren(false);
         scrollView.addView(spansContainer);
         this.containerView.addView(scrollView);
-        ImageView imageView = new ImageView(context);
-        this.floatingButton = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setBackgroundDrawable(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(56.0f), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(R.drawable.floating_check);
-        StateListAnimator stateListAnimator = new StateListAnimator();
-        stateListAnimator.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(imageView, "translationZ", AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(imageView, "translationZ", AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        imageView.setStateListAnimator(stateListAnimator);
-        imageView.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet.3
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view, Outline outline) {
-                outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-            }
-        });
-        imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda3
+        FragmentFloatingButton fragmentFloatingButton = new FragmentFloatingButton(context, resourcesProvider);
+        this.floatingButton = fragmentFloatingButton;
+        fragmentFloatingButton.setImageResource(R.drawable.floating_check);
+        fragmentFloatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InviteMembersBottomSheet.this.lambda$new$2(context, j, view);
             }
         });
-        imageView.setVisibility(4);
-        imageView.setScaleX(0.0f);
-        imageView.setScaleY(0.0f);
-        imageView.setAlpha(0.0f);
-        imageView.setContentDescription(LocaleController.getString(R.string.Next));
-        this.containerView.addView(imageView, LayoutHelper.createFrame(56, 56, 85, 14.0f, 14.0f, 14.0f, 14.0f));
+        fragmentFloatingButton.setButtonVisible(false, false);
+        fragmentFloatingButton.setContentDescription(LocaleController.getString(R.string.Next));
+        this.containerView.addView(fragmentFloatingButton, FragmentFloatingButton.createDefaultLayoutParams());
         ((ViewGroup.MarginLayoutParams) this.emptyView.getLayoutParams()).topMargin = AndroidUtilities.dp(20.0f);
         ((ViewGroup.MarginLayoutParams) this.emptyView.getLayoutParams()).leftMargin = AndroidUtilities.dp(4.0f);
         ((ViewGroup.MarginLayoutParams) this.emptyView.getLayoutParams()).rightMargin = AndroidUtilities.dp(4.0f);
@@ -301,7 +278,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2(Context context, long j, View view) {
         Activity findActivity;
-        if ((this.dialogsDelegate == null && this.selectedContacts.size() == 0) || (findActivity = AndroidUtilities.findActivity(context)) == null) {
+        if ((this.dialogsDelegate == null && this.selectedContacts.isEmpty()) || (findActivity = AndroidUtilities.findActivity(context)) == null) {
             return;
         }
         if (this.dialogsDelegate != null) {
@@ -465,19 +442,20 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
 
     /* JADX INFO: Access modifiers changed from: private */
     public void spansCountChanged(boolean z) {
-        final boolean z2 = this.selectedContacts.size() > 0;
-        if (this.spanEnter != z2) {
+        boolean z2 = true;
+        final boolean z3 = this.selectedContacts.size() > 0;
+        if (this.spanEnter != z3) {
             ValueAnimator valueAnimator = this.spansEnterAnimator;
             if (valueAnimator != null) {
                 valueAnimator.removeAllListeners();
                 this.spansEnterAnimator.cancel();
             }
-            this.spanEnter = z2;
-            if (z2) {
+            this.spanEnter = z3;
+            if (z3) {
                 this.spansScrollView.setVisibility(0);
             }
             if (z) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.spansEnterProgress, z2 ? 1.0f : 0.0f);
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.spansEnterProgress, z3 ? 1.0f : 0.0f);
                 this.spansEnterAnimator = ofFloat;
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet$$ExternalSyntheticLambda4
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -485,12 +463,12 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                         InviteMembersBottomSheet.this.lambda$spansCountChanged$3(valueAnimator2);
                     }
                 });
-                this.spansEnterAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet.4
+                this.spansEnterAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet.3
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
-                        InviteMembersBottomSheet.this.spansEnterProgress = z2 ? 1.0f : 0.0f;
+                        InviteMembersBottomSheet.this.spansEnterProgress = z3 ? 1.0f : 0.0f;
                         ((BottomSheet) InviteMembersBottomSheet.this).containerView.invalidate();
-                        if (z2) {
+                        if (z3) {
                             return;
                         }
                         InviteMembersBottomSheet.this.spansScrollView.setVisibility(8);
@@ -498,55 +476,18 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
                 });
                 this.spansEnterAnimator.setDuration(150L);
                 this.spansEnterAnimator.start();
-                if (!this.spanEnter && this.dialogsDelegate == null) {
-                    AnimatorSet animatorSet = this.currentDoneButtonAnimation;
-                    if (animatorSet != null) {
-                        animatorSet.cancel();
-                    }
-                    AnimatorSet animatorSet2 = new AnimatorSet();
-                    this.currentDoneButtonAnimation = animatorSet2;
-                    animatorSet2.playTogether(ObjectAnimator.ofFloat(this.floatingButton, (Property<ImageView, Float>) View.SCALE_X, 0.0f), ObjectAnimator.ofFloat(this.floatingButton, (Property<ImageView, Float>) View.SCALE_Y, 0.0f), ObjectAnimator.ofFloat(this.floatingButton, (Property<ImageView, Float>) View.ALPHA, 0.0f));
-                    this.currentDoneButtonAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.InviteMembersBottomSheet.5
-                        @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                        public void onAnimationEnd(Animator animator) {
-                            InviteMembersBottomSheet.this.floatingButton.setVisibility(4);
-                        }
-                    });
-                    this.currentDoneButtonAnimation.setDuration(180L);
-                    this.currentDoneButtonAnimation.start();
-                    return;
+            } else {
+                this.spansEnterProgress = z3 ? 1.0f : 0.0f;
+                this.containerView.invalidate();
+                if (!z3) {
+                    this.spansScrollView.setVisibility(8);
                 }
-                AnimatorSet animatorSet3 = this.currentDoneButtonAnimation;
-                if (animatorSet3 != null) {
-                    animatorSet3.cancel();
-                }
-                this.currentDoneButtonAnimation = new AnimatorSet();
-                this.floatingButton.setVisibility(0);
-                this.currentDoneButtonAnimation.playTogether(ObjectAnimator.ofFloat(this.floatingButton, (Property<ImageView, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(this.floatingButton, (Property<ImageView, Float>) View.SCALE_Y, 1.0f), ObjectAnimator.ofFloat(this.floatingButton, (Property<ImageView, Float>) View.ALPHA, 1.0f));
-                this.currentDoneButtonAnimation.setDuration(180L);
-                this.currentDoneButtonAnimation.start();
-                return;
             }
-            this.spansEnterProgress = z2 ? 1.0f : 0.0f;
-            this.containerView.invalidate();
-            if (!z2) {
-                this.spansScrollView.setVisibility(8);
-            }
-            AnimatorSet animatorSet4 = this.currentDoneButtonAnimation;
-            if (animatorSet4 != null) {
-                animatorSet4.cancel();
-            }
+            FragmentFloatingButton fragmentFloatingButton = this.floatingButton;
             if (!this.spanEnter && this.dialogsDelegate == null) {
-                this.floatingButton.setScaleY(0.0f);
-                this.floatingButton.setScaleX(0.0f);
-                this.floatingButton.setAlpha(0.0f);
-                this.floatingButton.setVisibility(4);
-                return;
+                z2 = false;
             }
-            this.floatingButton.setScaleY(1.0f);
-            this.floatingButton.setScaleX(1.0f);
-            this.floatingButton.setAlpha(1.0f);
-            this.floatingButton.setVisibility(0);
+            fragmentFloatingButton.setButtonVisible(z2, z);
         }
     }
 
@@ -1394,7 +1335,7 @@ public class InviteMembersBottomSheet extends UsersAlertBase implements Notifica
 
     @Override // org.telegram.ui.Components.UsersAlertBase
     protected UsersAlertBase.ContainerView createContainerView(Context context) {
-        return new UsersAlertBase.ContainerView(context) { // from class: org.telegram.ui.Components.InviteMembersBottomSheet.6
+        return new UsersAlertBase.ContainerView(context) { // from class: org.telegram.ui.Components.InviteMembersBottomSheet.4
             float animateToEmptyViewOffset;
             float deltaOffset;
             float emptyViewOffset;

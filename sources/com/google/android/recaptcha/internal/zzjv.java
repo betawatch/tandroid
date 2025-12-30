@@ -1,31 +1,33 @@
 package com.google.android.recaptcha.internal;
 
 /* loaded from: classes.dex */
-final class zzjv implements zzkc {
-    private final zzkc[] zza;
+public final class zzjv implements zzjt {
+    public static final zzjv zza = new zzjv();
 
-    zzjv(zzkc... zzkcVarArr) {
-        this.zza = zzkcVarArr;
+    private zzjv() {
     }
 
-    @Override // com.google.android.recaptcha.internal.zzkc
-    public final zzkb zzb(Class cls) {
-        for (int i = 0; i < 2; i++) {
-            zzkc zzkcVar = this.zza[i];
-            if (zzkcVar.zzc(cls)) {
-                return zzkcVar.zzb(cls);
-            }
+    @Override // com.google.android.recaptcha.internal.zzjt
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+        if (zzztVarArr.length != 1) {
+            throw new zzdm(4, 3, null);
         }
-        throw new UnsupportedOperationException("No factory is available for message type: ".concat(cls.getName()));
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzkc
-    public final boolean zzc(Class cls) {
-        for (int i = 0; i < 2; i++) {
-            if (this.zza[i].zzc(cls)) {
-                return true;
-            }
+        Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
+        if (true != (zza2 instanceof Object)) {
+            zza2 = null;
         }
-        return false;
+        if (zza2 == null) {
+            throw new zzdm(4, 5, null);
+        }
+        try {
+            if (zza2 instanceof String) {
+                zza2 = zzizVar.zzh().zza((String) zza2);
+            }
+            zzizVar.zzc().zze(i, zziy.zza(zza2));
+        } catch (zzdm e) {
+            throw e;
+        } catch (Exception e2) {
+            throw new zzdm(6, 8, e2);
+        }
     }
 }

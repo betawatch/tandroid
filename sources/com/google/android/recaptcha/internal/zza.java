@@ -1,10 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.coroutines.Continuation;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
 
 /* loaded from: classes.dex */
-public interface zza {
-    Object zza(String str, long j, Continuation continuation);
-
-    Object zzb(long j, zzoe zzoeVar, Continuation continuation);
+public final class zza {
+    public zza() {
+        new ArrayList();
+        new ArrayDeque();
+    }
 }

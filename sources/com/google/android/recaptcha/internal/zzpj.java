@@ -1,78 +1,54 @@
 package com.google.android.recaptcha.internal;
 
+import java.io.Serializable;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 /* loaded from: classes.dex */
-public final class zzpj extends zzin implements zzkf {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private zzpj() {
-        super(r0);
-        zzpk zzpkVar;
-        zzpkVar = zzpk.zzb;
+final class zzpj extends zzoz implements Serializable {
+    private final MessageDigest zza;
+    private final int zzb;
+    private final boolean zzc;
+    private final String zzd;
+
+    zzpj(String str, String str2) {
+        MessageDigest zzc = zzc("SHA-256");
+        this.zza = zzc;
+        this.zzb = zzc.getDigestLength();
+        this.zzd = "Hashing.sha256()";
+        this.zzc = zzd(zzc);
     }
 
-    public final zzpj zzd(boolean z) {
-        zzm();
-        zzpk.zzJ((zzpk) this.zza, z);
-        return this;
+    private static MessageDigest zzc(String str) {
+        try {
+            return MessageDigest.getInstance(str);
+        } catch (NoSuchAlgorithmException e) {
+            throw new AssertionError(e);
+        }
     }
 
-    public final zzpj zze(zzgw zzgwVar) {
-        zzm();
-        zzpk.zzK((zzpk) this.zza, zzgwVar);
-        return this;
+    private static boolean zzd(MessageDigest messageDigest) {
+        try {
+            messageDigest.clone();
+            return true;
+        } catch (CloneNotSupportedException unused) {
+            return false;
+        }
     }
 
-    public final zzpj zzp(String str) {
-        zzm();
-        zzpk.zzL((zzpk) this.zza, str);
-        return this;
+    public final String toString() {
+        return this.zzd;
     }
 
-    public final zzpj zzq(double d) {
-        zzm();
-        zzpk.zzH((zzpk) this.zza, d);
-        return this;
-    }
-
-    public final zzpj zzr(float f) {
-        zzm();
-        zzpk.zzk((zzpk) this.zza, f);
-        return this;
-    }
-
-    public final zzpj zzs(int i) {
-        zzm();
-        zzpk.zzM((zzpk) this.zza, i);
-        return this;
-    }
-
-    public final zzpj zzt(int i) {
-        zzm();
-        zzpk.zzi((zzpk) this.zza, i);
-        return this;
-    }
-
-    public final zzpj zzu(long j) {
-        zzm();
-        zzpk.zzj((zzpk) this.zza, j);
-        return this;
-    }
-
-    public final zzpj zzv(String str) {
-        zzm();
-        zzpk.zzI((zzpk) this.zza, str);
-        return this;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzpj(zzor zzorVar) {
-        super(r1);
-        zzpk zzpkVar;
-        zzpkVar = zzpk.zzb;
+    @Override // com.google.android.recaptcha.internal.zzpd
+    public final zzpe zzb() {
+        zzpi zzpiVar = null;
+        if (this.zzc) {
+            try {
+                return new zzph((MessageDigest) this.zza.clone(), this.zzb, zzpiVar);
+            } catch (CloneNotSupportedException unused) {
+            }
+        }
+        return new zzph(zzc(this.zza.getAlgorithm()), this.zzb, zzpiVar);
     }
 }

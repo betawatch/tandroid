@@ -1,28 +1,18 @@
 package com.google.android.recaptcha.internal;
 
+import kotlin.jvm.functions.Function0;
+
 /* loaded from: classes.dex */
-final class zzih {
-    private static final zzif zza = new zzig();
-    private static final zzif zzb;
+public final class zzih implements Function0 {
+    public static final zzih zza = new zzih();
 
-    static {
-        zzif zzifVar = null;
-        try {
-            zzifVar = (zzif) Class.forName("com.google.protobuf.ExtensionSchemaFull").getDeclaredConstructor(null).newInstance(null);
-        } catch (Exception unused) {
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        int i = zzby.zza;
+        Object zzb = zzbx.zza().zzb(zzig.class.getName().hashCode());
+        if (zzb != null) {
+            return (zzig) zzb;
         }
-        zzb = zzifVar;
-    }
-
-    static zzif zza() {
-        zzif zzifVar = zzb;
-        if (zzifVar != null) {
-            return zzifVar;
-        }
-        throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
-    }
-
-    static zzif zzb() {
-        return zza;
+        throw new zzcg(zzce.zzb, zzcd.zzaA, null, null, 12, null);
     }
 }

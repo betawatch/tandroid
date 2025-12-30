@@ -1,48 +1,85 @@
 package com.google.android.recaptcha.internal;
 
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.CoroutineScope;
+
 /* loaded from: classes.dex */
-final class zzlw {
-    static /* bridge */ /* synthetic */ void zza(byte b, byte b2, byte b3, byte b4, char[] cArr, int i) {
-        if (zze(b2) || (((b << 28) + (b2 + 112)) >> 30) != 0 || zze(b3) || zze(b4)) {
-            throw zzje.zzd();
-        }
-        int i2 = ((b & 7) << 18) | ((b2 & 63) << 12) | ((b3 & 63) << 6) | (b4 & 63);
-        cArr[i] = (char) ((i2 >>> 10) + 55232);
-        cArr[i + 1] = (char) ((i2 & 1023) + 56320);
+final class zzlw extends SuspendLambda implements Function2 {
+    Object zza;
+    int zzb;
+    final /* synthetic */ zzly zzc;
+    final /* synthetic */ zzgr zzd;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    zzlw(zzly zzlyVar, zzgr zzgrVar, Continuation continuation) {
+        super(2, continuation);
+        this.zzc = zzlyVar;
+        this.zzd = zzgrVar;
     }
 
-    static /* bridge */ /* synthetic */ void zzc(byte b, byte b2, char[] cArr, int i) {
-        if (b < -62 || zze(b2)) {
-            throw zzje.zzd();
-        }
-        cArr[i] = (char) (((b & 31) << 6) | (b2 & 63));
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation create(Object obj, Continuation continuation) {
+        return new zzlw(this.zzc, this.zzd, continuation);
     }
 
-    static /* bridge */ /* synthetic */ boolean zzd(byte b) {
-        return b >= 0;
+    @Override // kotlin.jvm.functions.Function2
+    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return ((zzlw) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
     }
 
-    private static boolean zze(byte b) {
-        return b > -65;
-    }
-
-    static /* bridge */ /* synthetic */ void zzb(byte b, byte b2, byte b3, char[] cArr, int i) {
-        if (!zze(b2)) {
-            if (b == -32) {
-                if (b2 >= -96) {
-                    b = -32;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x003f, code lost:
+    
+        if (kotlinx.coroutines.TimeoutKt.withTimeout(20000, r10, r9) == r0) goto L23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0071, code lost:
+    
+        return r0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x002b, code lost:
+    
+        if (r10.zzw(r9) != r0) goto L16;
+     */
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object invokeSuspend(Object obj) {
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.zzb;
+        try {
+            if (i == 0) {
+                ResultKt.throwOnFailure(obj);
+                zzly zzlyVar = this.zzc;
+                this.zzb = 1;
+            } else {
+                if (i != 1) {
+                    if (i == 2) {
+                        ResultKt.throwOnFailure(obj);
+                        return Unit.INSTANCE;
+                    }
+                    zzcg zzcgVar = (zzcg) this.zza;
+                    ResultKt.throwOnFailure(obj);
+                    throw zzcgVar;
                 }
+                ResultKt.throwOnFailure(obj);
             }
-            if (b == -19) {
-                if (b2 < -96) {
-                    b = -19;
-                }
-            }
-            if (!zze(b3)) {
-                cArr[i] = (char) (((b & 15) << 12) | ((b2 & 63) << 6) | (b3 & 63));
-                return;
+            zzlv zzlvVar = new zzlv(this.zzc, this.zzd, null);
+            this.zzb = 2;
+        } catch (Exception e) {
+            e.getMessage();
+            zzcg zza = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzV, e.getMessage(), null, 8, null));
+            zzdj zzn = this.zzc.zzn();
+            zzmc zzmcVar = zzmc.zza;
+            this.zza = zza;
+            this.zzb = 3;
+            if (zzn.zzc(zzmcVar, this) != coroutine_suspended) {
+                throw zza;
             }
         }
-        throw zzje.zzd();
     }
 }

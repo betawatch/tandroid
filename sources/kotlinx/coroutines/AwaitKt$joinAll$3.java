@@ -1,5 +1,6 @@
 package kotlinx.coroutines;
 
+import java.util.Collection;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import org.telegram.tgnet.TLObject;
@@ -18,6 +19,6 @@ final class AwaitKt$joinAll$3 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= TLObject.FLAG_31;
-        return AwaitKt.joinAll(null, this);
+        return AwaitKt.joinAll((Collection) null, this);
     }
 }

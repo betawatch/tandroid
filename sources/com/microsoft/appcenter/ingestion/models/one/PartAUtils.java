@@ -6,7 +6,7 @@ import com.microsoft.appcenter.utils.context.UserIdContext;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class PartAUtils {
     private static final Pattern NAME_REGEX = Pattern.compile("^[a-zA-Z0-9]((\\.(?!(\\.|$)))|[_a-zA-Z0-9]){3,99}$");
 

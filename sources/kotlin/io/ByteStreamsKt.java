@@ -1,5 +1,6 @@
 package kotlin.io;
 
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import kotlin.jvm.internal.Intrinsics;
@@ -25,5 +26,14 @@ public abstract class ByteStreamsKt {
             read = inputStream.read(bArr);
         }
         return j;
+    }
+
+    public static final byte[] readBytes(InputStream inputStream) {
+        Intrinsics.checkNotNullParameter(inputStream, "<this>");
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(Math.max(8192, inputStream.available()));
+        copyTo$default(inputStream, byteArrayOutputStream, 0, 2, null);
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        Intrinsics.checkNotNullExpressionValue(byteArray, "toByteArray(...)");
+        return byteArray;
     }
 }

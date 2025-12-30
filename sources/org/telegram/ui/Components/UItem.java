@@ -31,6 +31,7 @@ public class UItem extends AdapterWithDiffUtils.Item {
     public String chatType;
     public boolean checked;
     public View.OnClickListener clickCallback;
+    public View.OnClickListener clickCallback2;
     public boolean collapsed;
     public long dialogId;
     public Drawable drawable;
@@ -77,12 +78,21 @@ public class UItem extends AdapterWithDiffUtils.Item {
         UItem uItem = new UItem(-1, false);
         uItem.id = i;
         uItem.view = view;
+        uItem.intValue = -1;
         return uItem;
     }
 
     public static UItem asCustom(View view) {
         UItem uItem = new UItem(-1, false);
         uItem.view = view;
+        uItem.intValue = -1;
+        return uItem;
+    }
+
+    public static UItem asCustom(View view, int i) {
+        UItem uItem = new UItem(-1, false);
+        uItem.view = view;
+        uItem.intValue = i;
         return uItem;
     }
 

@@ -6,7 +6,7 @@ import java.util.List;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ProtocolExtension implements Model {
     private String devMake;
     private String devModel;

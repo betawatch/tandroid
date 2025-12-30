@@ -6,7 +6,7 @@ import com.stripe.android.util.StripeTextUtils;
 import java.util.Date;
 import org.json.JSONObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class TokenParser {
     public static Token parseToken(String str) {
         JSONObject jSONObject = new JSONObject(str);

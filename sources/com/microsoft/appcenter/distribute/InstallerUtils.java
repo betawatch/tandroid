@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public abstract class InstallerUtils {
     private static final Set LOCAL_STORES;
     private static Boolean sInstalledFromAppStore;

@@ -4,19 +4,21 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Canvas;
-import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.RecordingCanvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Layout;
 import android.text.SpannableString;
@@ -27,19 +29,19 @@ import android.util.Property;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
-import android.view.ViewTreeObserver;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.collection.LongSparseArray;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Collection;
-import j$.util.function.Function$-CC;
+import j$.util.Objects;
 import j$.util.function.Predicate$-CC;
 import j$.util.stream.Collectors;
 import java.util.ArrayList;
@@ -47,16 +49,17 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Function;
 import java.util.function.Predicate;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
@@ -89,6 +92,7 @@ import org.telegram.ui.Components.CheckBox2;
 import org.telegram.ui.Components.ColoredImageSpan;
 import org.telegram.ui.Components.FlickerLoadingView;
 import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.LinkSpanDrawable;
@@ -96,28 +100,52 @@ import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.ProgressButton;
 import org.telegram.ui.Components.QRCodeBottomSheet;
 import org.telegram.ui.Components.RLottieImageView;
+import org.telegram.ui.Components.RecyclerAnimationScrollHelper;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.ShareAlert;
+import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.TextHelper;
+import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
+import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
+import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
 import org.telegram.ui.Components.voip.VoIPHelper;
+import org.telegram.ui.MainTabsActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.HintView2;
 
 /* loaded from: classes4.dex */
-public class CallLogActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
+public class CallLogActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, MainTabsActivity.TabFragmentDelegate {
+    private final int ADDITIONAL_LIST_HEIGHT_DP;
+    private ImageView actionModeCloseView;
+    private final ArrayList actionModeViews;
     private ArrayList activeGroupCalls;
+    private int additionFloatingButtonOffset;
+    private int additionNavigationBarHeight;
+    private float additionalFloatingTranslation;
+    private final ArrayList calls;
+    private SizeNotifierFrameLayout contentView;
     private EmptyTextProgressView emptyView;
     private boolean endReached;
     private boolean firstLoaded;
     private FlickerLoadingView flickerLoadingView;
-    private ImageView floatingButton;
-    private boolean floatingHidden;
+    private FragmentFloatingButton floatingButton;
     private FragmentContextView fragmentContextView;
+    private ImageSpan getIconMissedOut;
     private Drawable greenDrawable;
     private Drawable greenDrawable2;
+    private boolean hasMainTabs;
+    private HeaderShadowView headerShadowView;
+    private IBlur3Capture iBlur3Capture;
+    private boolean iBlur3Invalidated;
+    private final RectF iBlur3PositionActionBar;
+    private final RectF iBlur3PositionMainTabs;
+    private final ArrayList iBlur3Positions;
+    private final BlurredBackgroundSourceRenderNode iBlur3SourceGlass;
+    private final BlurredBackgroundSourceRenderNode iBlur3SourceGlassFrosted;
     private ImageSpan iconIn;
-    private ImageSpan iconMissed;
+    private ImageSpan iconMissedIn;
     private ImageSpan iconOut;
     private TLRPC.Chat lastCallChat;
     private TLRPC.User lastCallUser;
@@ -125,21 +153,31 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     private RecyclerListView listView;
     private ListAdapter listViewAdapter;
     private boolean loading;
+    private int navigationBarHeight;
+    private boolean needFinishFragment;
     private boolean openTransitionStarted;
     private ActionBarMenuItem otherItem;
-    private int prevPosition;
-    private int prevTop;
     private Drawable redDrawable;
-    private boolean scrollUpdated;
+    private Drawable redDrawable2;
+    private RecyclerAnimationScrollHelper scrollHelper;
+    private final DownscaleScrollableNoiseSuppressor scrollableViewNoiseSuppressor;
     private NumberTextView selectedDialogsCountTextView;
+    private final ArrayList selectedIds;
+    private final Rect tmpClipRect;
     private Long waitingForCallChatId;
-    private ArrayList actionModeViews = new ArrayList();
-    private ArrayList calls = new ArrayList();
-    private ArrayList selectedIds = new ArrayList();
-    private final AccelerateDecelerateInterpolator floatingInterpolator = new AccelerateDecelerateInterpolator();
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ boolean lambda$createActionMode$10(View view, MotionEvent motionEvent) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.MainTabsActivity.TabFragmentDelegate
+    public boolean canParentTabsSlide(MotionEvent motionEvent, boolean z) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
         return true;
     }
 
@@ -148,12 +186,44 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         return true;
     }
 
+    public CallLogActivity() {
+        this(null);
+    }
+
+    public CallLogActivity(Bundle bundle) {
+        super(bundle);
+        int i = Build.VERSION.SDK_INT;
+        this.ADDITIONAL_LIST_HEIGHT_DP = i >= 31 ? 48 : 0;
+        this.needFinishFragment = true;
+        this.actionModeViews = new ArrayList();
+        this.calls = new ArrayList();
+        this.selectedIds = new ArrayList();
+        this.tmpClipRect = new Rect();
+        ArrayList arrayList = new ArrayList();
+        this.iBlur3Positions = arrayList;
+        RectF rectF = new RectF();
+        this.iBlur3PositionActionBar = rectF;
+        RectF rectF2 = new RectF();
+        this.iBlur3PositionMainTabs = rectF2;
+        arrayList.add(rectF);
+        arrayList.add(rectF2);
+        if (i >= 31) {
+            this.scrollableViewNoiseSuppressor = new DownscaleScrollableNoiseSuppressor();
+            this.iBlur3SourceGlassFrosted = new BlurredBackgroundSourceRenderNode(null);
+            this.iBlur3SourceGlass = new BlurredBackgroundSourceRenderNode(null);
+        } else {
+            this.scrollableViewNoiseSuppressor = null;
+            this.iBlur3SourceGlassFrosted = null;
+            this.iBlur3SourceGlass = null;
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     static class EmptyTextProgressView extends FrameLayout {
-        private TextView emptyTextView1;
-        private TextView emptyTextView2;
-        private RLottieImageView imageView;
-        private View progressView;
+        private final TextView emptyTextView1;
+        private final TextView emptyTextView2;
+        private final RLottieImageView imageView;
+        private final View progressView;
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ boolean lambda$new$1(View view, MotionEvent motionEvent) {
@@ -172,9 +242,9 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.imageView = rLottieImageView;
             rLottieImageView.setAnimation(R.raw.utyan_call, 120, 120);
-            this.imageView.setAutoRepeat(false);
-            addView(this.imageView, LayoutHelper.createFrame(NotificationCenter.fileLoadProgressChanged, 140.0f, 17, 52.0f, 4.0f, 52.0f, 60.0f));
-            this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$EmptyTextProgressView$$ExternalSyntheticLambda0
+            rLottieImageView.setAutoRepeat(false);
+            addView(rLottieImageView, LayoutHelper.createFrame(NotificationCenter.fileLoadProgressChanged, 140.0f, 17, 52.0f, 4.0f, 52.0f, 60.0f));
+            rLottieImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$EmptyTextProgressView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     CallLogActivity.EmptyTextProgressView.this.lambda$new$0(view2);
@@ -183,26 +253,27 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             TextView textView = new TextView(context);
             this.emptyTextView1 = textView;
             textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-            this.emptyTextView1.setText(LocaleController.getString(R.string.NoRecentCalls));
-            this.emptyTextView1.setTextSize(1, 20.0f);
-            this.emptyTextView1.setTypeface(AndroidUtilities.bold());
-            this.emptyTextView1.setGravity(17);
-            addView(this.emptyTextView1, LayoutHelper.createFrame(-1, -2.0f, 17, 17.0f, 40.0f, 17.0f, 0.0f));
-            this.emptyTextView2 = new TextView(context);
+            textView.setText(LocaleController.getString(R.string.NoRecentCalls));
+            textView.setTextSize(1, 20.0f);
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setGravity(17);
+            addView(textView, LayoutHelper.createFrame(-1, -2.0f, 17, 17.0f, 40.0f, 17.0f, 0.0f));
+            TextView textView2 = new TextView(context);
+            this.emptyTextView2 = textView2;
             String string = LocaleController.getString(R.string.NoRecentCallsInfo);
             if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                 string = string.replace('\n', ' ');
             }
-            this.emptyTextView2.setText(string);
-            this.emptyTextView2.setTextColor(Theme.getColor(Theme.key_emptyListPlaceholder));
-            this.emptyTextView2.setTextSize(1, 14.0f);
-            this.emptyTextView2.setGravity(17);
-            this.emptyTextView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-            addView(this.emptyTextView2, LayoutHelper.createFrame(-1, -2.0f, 17, 17.0f, 80.0f, 17.0f, 0.0f));
+            textView2.setText(string);
+            textView2.setTextColor(Theme.getColor(Theme.key_emptyListPlaceholder));
+            textView2.setTextSize(1, 14.0f);
+            textView2.setGravity(17);
+            textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+            addView(textView2, LayoutHelper.createFrame(-1, -2.0f, 17, 17.0f, 80.0f, 17.0f, 0.0f));
             view.setAlpha(0.0f);
-            this.imageView.setAlpha(0.0f);
-            this.emptyTextView1.setAlpha(0.0f);
-            this.emptyTextView2.setAlpha(0.0f);
+            rLottieImageView.setAlpha(0.0f);
+            textView.setAlpha(0.0f);
+            textView2.setAlpha(0.0f);
             setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.CallLogActivity$EmptyTextProgressView$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view2, MotionEvent motionEvent) {
@@ -257,9 +328,12 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                         if (i3 == 1 && ((phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonMissed) || (phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonBusy))) {
                             i3 = 2;
                         }
-                        if (this.calls.size() > 0) {
+                        if (i3 != 0 || (!(phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonMissed) && !(phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonBusy))) {
+                            r9 = i3;
+                        }
+                        if (!this.calls.isEmpty()) {
                             CallLogRow callLogRow2 = (CallLogRow) this.calls.get(0);
-                            if (eq(j, callLogRow2.users) && callLogRow2.type == i3) {
+                            if (eq(j, callLogRow2.users) && callLogRow2.type == r9) {
                                 callLogRow2.calls.add(0, messageObject.messageOwner);
                                 ListAdapter listAdapter2 = this.listViewAdapter;
                                 listAdapter2.notifyItemChanged(listAdapter2.callsStartRow);
@@ -273,7 +347,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                         if (user != null) {
                             callLogRow3.users.add(user);
                         }
-                        callLogRow3.type = i3;
+                        callLogRow3.type = r9;
                         callLogRow3.video = messageObject.isVideoCall();
                         this.calls.add(0, callLogRow3);
                         this.listViewAdapter.updateRows();
@@ -282,28 +356,14 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                     } else if (messageAction instanceof TLRPC.TL_messageActionConferenceCall) {
                         TLRPC.TL_messageActionConferenceCall tL_messageActionConferenceCall = (TLRPC.TL_messageActionConferenceCall) messageAction;
                         long fromChatId2 = messageObject.getFromChatId();
-                        Set<Long> set = (Set) Collection.-EL.stream(tL_messageActionConferenceCall.other_participants).map(new Function() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda5
-                            public /* synthetic */ Function andThen(Function function) {
-                                return Function$-CC.$default$andThen(this, function);
-                            }
-
-                            @Override // java.util.function.Function
-                            public final Object apply(Object obj) {
-                                Long lambda$didReceivedNotification$0;
-                                lambda$didReceivedNotification$0 = CallLogActivity.lambda$didReceivedNotification$0((TLRPC.Peer) obj);
-                                return lambda$didReceivedNotification$0;
-                            }
-
-                            public /* synthetic */ Function compose(Function function) {
-                                return Function$-CC.$default$compose(this, function);
-                            }
-                        }).collect(Collectors.toSet());
+                        Set<Long> set = (Set) Collection.-EL.stream(tL_messageActionConferenceCall.other_participants).map(new CallLogActivity$$ExternalSyntheticLambda8()).collect(Collectors.toSet());
                         set.add(Long.valueOf(fromChatId2 == getUserConfig().getClientUserId() ? messageObject.messageOwner.peer_id.user_id : fromChatId2));
                         int i4 = fromChatId2 == getUserConfig().getClientUserId() ? 0 : 1;
                         if (i4 == 1 && tL_messageActionConferenceCall.missed) {
                             i4 = 2;
                         }
-                        if (this.calls.size() > 0) {
+                        r9 = (i4 == 0 && tL_messageActionConferenceCall.missed) ? 3 : i4;
+                        if (!this.calls.isEmpty()) {
                             int i5 = 0;
                             while (true) {
                                 if (i5 >= this.calls.size()) {
@@ -353,7 +413,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                                 callLogRow4.users.add(user3);
                             }
                         }
-                        callLogRow4.type = i4;
+                        callLogRow4.type = r9;
                         callLogRow4.video = messageObject.isVideoCall();
                         this.calls.add(0, callLogRow4);
                         ListAdapter listAdapter5 = this.listViewAdapter;
@@ -382,7 +442,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                             r4 = 1;
                         }
                     }
-                    if (callLogRow5.calls.size() == 0) {
+                    if (callLogRow5.calls.isEmpty()) {
                         it3.remove();
                     }
                 }
@@ -418,11 +478,6 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Long lambda$didReceivedNotification$0(TLRPC.Peer peer) {
-        return Long.valueOf(DialogObject.getPeerDialogId(peer));
-    }
-
     private static boolean eq(long j, ArrayList arrayList) {
         return arrayList.size() == 1 && ((TLRPC.User) arrayList.get(0)).id == j;
     }
@@ -449,26 +504,25 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
         public CallCell(Context context) {
             super(context);
-            int i = Theme.key_windowBackgroundWhite;
-            setBackgroundColor(Theme.getColor(i));
             ProfileSearchCell profileSearchCell = new ProfileSearchCell(context);
             this.profileSearchCell = profileSearchCell;
+            profileSearchCell.setCallCellStyle();
             profileSearchCell.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(32.0f), 0);
-            profileSearchCell.setSublabelOffset(AndroidUtilities.dp(LocaleController.isRTL ? 2.0f : -2.0f), -AndroidUtilities.dp(4.0f));
+            profileSearchCell.setSublabelOffset(AndroidUtilities.dp(LocaleController.isRTL ? 2.0f : -2.0f), -AndroidUtilities.dp(7.0f));
             addView(profileSearchCell, LayoutHelper.createFrame(-1, -1.0f));
             AvatarsImageView avatarsImageView = new AvatarsImageView(context, false);
             this.avatarsImageView = avatarsImageView;
             avatarsImageView.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
             avatarsImageView.setStepFactor(0.4f);
-            avatarsImageView.setSize(AndroidUtilities.dp(30.0f));
+            avatarsImageView.setSize(AndroidUtilities.dp(29.0f));
             avatarsImageView.setCentered(true);
             avatarsImageView.setVisibility(8);
             addView(avatarsImageView, LayoutHelper.createFrame(72, -1.0f, LocaleController.isRTL ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
-            imageView.setAlpha(NotificationCenter.customStickerCreated);
-            imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addButton), PorterDuff.Mode.MULTIPLY));
-            imageView.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 1));
+            int i = Theme.key_telegram_color;
+            imageView.setColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN);
+            imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 1));
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$CallCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
@@ -480,7 +534,8 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             addView(imageView, LayoutHelper.createFrame(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 16, 8.0f, 0.0f, 8.0f, 0.0f));
             CheckBox2 checkBox2 = new CheckBox2(context, 21);
             this.checkBox = checkBox2;
-            checkBox2.setColor(-1, i, Theme.key_checkboxCheck);
+            checkBox2.getCheckBoxBase().setBackgroundColor(Theme.getColor(i));
+            checkBox2.setColor(-1, Theme.key_windowBackgroundWhite, Theme.key_checkboxCheck);
             checkBox2.setDrawUnchecked(false);
             checkBox2.setDrawBackgroundAsArc(3);
             addView(checkBox2, LayoutHelper.createFrame(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 42.0f, 32.0f, 42.0f, 0.0f));
@@ -572,29 +627,30 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     class GroupCallCell extends FrameLayout {
-        private ProgressButton button;
+        private final ProgressButton button;
         private TLRPC.Chat currentChat;
-        private ProfileSearchCell profileSearchCell;
+        private final ProfileSearchCell profileSearchCell;
 
         public GroupCallCell(Context context) {
             super(context);
-            setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             String string = LocaleController.getString(R.string.VoipChatJoin);
-            this.button = new ProgressButton(context);
-            int ceil = (int) Math.ceil(r0.getPaint().measureText(string));
+            ProgressButton progressButton = new ProgressButton(context);
+            this.button = progressButton;
+            int ceil = (int) Math.ceil(progressButton.getPaint().measureText(string));
             ProfileSearchCell profileSearchCell = new ProfileSearchCell(context);
             this.profileSearchCell = profileSearchCell;
+            profileSearchCell.setCallCellStyle();
             profileSearchCell.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(44.0f) + ceil : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(44.0f) + ceil, 0);
-            this.profileSearchCell.setSublabelOffset(0, -AndroidUtilities.dp(1.0f));
-            addView(this.profileSearchCell, LayoutHelper.createFrame(-1, -1.0f));
-            this.button.setText(string);
-            this.button.setTextSize(1, 14.0f);
-            this.button.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-            this.button.setProgressColor(Theme.getColor(Theme.key_featuredStickers_buttonProgress));
-            this.button.setBackgroundRoundRect(Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed), 16.0f);
-            this.button.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-            addView(this.button, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
-            this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$GroupCallCell$$ExternalSyntheticLambda0
+            profileSearchCell.setSublabelOffset(0, -AndroidUtilities.dp(4.0f));
+            addView(profileSearchCell, LayoutHelper.createFrame(-1, -1.0f));
+            progressButton.setText(string);
+            progressButton.setTextSize(1, 14.0f);
+            progressButton.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
+            progressButton.setProgressColor(Theme.getColor(Theme.key_featuredStickers_buttonProgress));
+            progressButton.setBackgroundRoundRect(Theme.getColor(Theme.key_telegram_color), Theme.getColor(Theme.key_featuredStickers_addButtonPressed), 16.0f);
+            progressButton.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
+            addView(progressButton, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
+            progressButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$GroupCallCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     CallLogActivity.GroupCallCell.this.lambda$new$0(view);
@@ -634,6 +690,13 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         getNotificationCenter().addObserver(this, NotificationCenter.activeGroupCallsUpdated);
         getNotificationCenter().addObserver(this, NotificationCenter.chatInfoDidLoad);
         getNotificationCenter().addObserver(this, NotificationCenter.groupCallUpdated);
+        Bundle bundle = this.arguments;
+        if (bundle != null) {
+            this.needFinishFragment = bundle.getBoolean("needFinishFragment", true);
+            this.hasMainTabs = this.arguments.getBoolean("hasMainTabs", false);
+        }
+        this.additionNavigationBarHeight = this.hasMainTabs ? AndroidUtilities.dp(72.0f) : 0;
+        this.additionFloatingButtonOffset = this.hasMainTabs ? AndroidUtilities.dp(64.0f) : 0;
         return true;
     }
 
@@ -649,34 +712,45 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        Drawable mutate = getParentActivity().getResources().getDrawable(R.drawable.ic_call_made_green_18dp).mutate();
+        Resources resources = getParentActivity().getResources();
+        int i = R.drawable.mini_call_out_16;
+        Drawable mutate = resources.getDrawable(i).mutate();
         this.greenDrawable = mutate;
         mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), this.greenDrawable.getIntrinsicHeight());
         Drawable drawable = this.greenDrawable;
-        int i = Theme.key_calls_callReceivedGreenIcon;
-        int color = Theme.getColor(i);
+        int i2 = Theme.key_windowBackgroundWhiteGrayText3;
+        int color = Theme.getColor(i2);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         drawable.setColorFilter(new PorterDuffColorFilter(color, mode));
         this.iconOut = new ImageSpan(this.greenDrawable, 0);
-        Resources resources = getParentActivity().getResources();
-        int i2 = R.drawable.ic_call_received_green_18dp;
-        Drawable mutate2 = resources.getDrawable(i2).mutate();
+        Resources resources2 = getParentActivity().getResources();
+        int i3 = R.drawable.mini_call_in_16;
+        Drawable mutate2 = resources2.getDrawable(i3).mutate();
         this.greenDrawable2 = mutate2;
         mutate2.setBounds(0, 0, mutate2.getIntrinsicWidth(), this.greenDrawable2.getIntrinsicHeight());
-        this.greenDrawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), mode));
+        this.greenDrawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), mode));
         this.iconIn = new ImageSpan(this.greenDrawable2, 0);
-        Drawable mutate3 = getParentActivity().getResources().getDrawable(i2).mutate();
+        Drawable mutate3 = getParentActivity().getResources().getDrawable(i3).mutate();
         this.redDrawable = mutate3;
         mutate3.setBounds(0, 0, mutate3.getIntrinsicWidth(), this.redDrawable.getIntrinsicHeight());
-        this.redDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_fill_RedNormal), mode));
-        this.iconMissed = new ImageSpan(this.redDrawable, 0);
-        this.actionBar.setBackButtonDrawable(new BackDrawable(false));
+        Drawable drawable2 = this.redDrawable;
+        int i4 = Theme.key_fill_RedNormal;
+        drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i4), mode));
+        this.iconMissedIn = new ImageSpan(this.redDrawable, 0);
+        Drawable mutate4 = getParentActivity().getResources().getDrawable(i).mutate();
+        this.redDrawable2 = mutate4;
+        mutate4.setBounds(0, 0, mutate4.getIntrinsicWidth(), this.redDrawable2.getIntrinsicHeight());
+        this.redDrawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i4), mode));
+        this.getIconMissedOut = new ImageSpan(this.redDrawable2, 0);
+        if (!this.hasMainTabs) {
+            this.actionBar.setBackButtonDrawable(new BackDrawable(false));
+        }
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.Calls));
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CallLogActivity.1
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i3) {
-                if (i3 == -1) {
+            public void onItemClick(int i5) {
+                if (i5 == -1) {
                     if (((BaseFragment) CallLogActivity.this).actionBar.isActionModeShowed()) {
                         CallLogActivity.this.hideActionMode(true);
                         return;
@@ -685,9 +759,9 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                         return;
                     }
                 }
-                if (i3 == 1) {
+                if (i5 == 1) {
                     CallLogActivity.this.showDeleteAlert(true);
-                } else if (i3 == 2) {
+                } else if (i5 == 2) {
                     CallLogActivity.this.showDeleteAlert(false);
                 }
             }
@@ -696,10 +770,77 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         this.otherItem = addItem;
         addItem.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
         this.otherItem.addSubItem(1, R.drawable.msg_delete, LocaleController.getString(R.string.DeleteAllCalls));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
-        FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
+        this.listView = new RecyclerListView(context);
+        SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.CallLogActivity.2
+            @Override // android.widget.FrameLayout, android.view.View
+            protected void onMeasure(int i5, int i6) {
+                measureChildWithMargins(((BaseFragment) CallLogActivity.this).actionBar, i5, 0, i6, 0);
+                ((ViewGroup.MarginLayoutParams) CallLogActivity.this.fragmentContextView.getLayoutParams()).topMargin = ((BaseFragment) CallLogActivity.this).actionBar.getMeasuredHeight() - AndroidUtilities.dp(36.0f);
+                ((ViewGroup.MarginLayoutParams) CallLogActivity.this.emptyView.getLayoutParams()).topMargin = ((BaseFragment) CallLogActivity.this).actionBar.getMeasuredHeight();
+                ((ViewGroup.MarginLayoutParams) CallLogActivity.this.headerShadowView.getLayoutParams()).topMargin = ((BaseFragment) CallLogActivity.this).actionBar.getMeasuredHeight();
+                CallLogActivity.this.checkUi_listViewPadding();
+                super.onMeasure(i5, i6);
+            }
+
+            @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+            protected void onLayout(boolean z, int i5, int i6, int i7, int i8) {
+                super.onLayout(z, i5, i6, i7, i8);
+                CallLogActivity.this.checkUi_floatingButton();
+                CallLogActivity.this.checkUi_listClip();
+            }
+
+            @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View
+            protected void dispatchDraw(Canvas canvas) {
+                if (Build.VERSION.SDK_INT >= 31 && CallLogActivity.this.scrollableViewNoiseSuppressor != null) {
+                    CallLogActivity.this.blur3_InvalidateBlur();
+                    int measuredWidth = getMeasuredWidth();
+                    int measuredHeight = getMeasuredHeight();
+                    if (CallLogActivity.this.iBlur3SourceGlassFrosted != null && !CallLogActivity.this.iBlur3SourceGlassFrosted.inRecording()) {
+                        RecordingCanvas beginRecording = CallLogActivity.this.iBlur3SourceGlassFrosted.beginRecording(measuredWidth, measuredHeight);
+                        beginRecording.drawColor(CallLogActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
+                        if (SharedConfig.chatBlurEnabled()) {
+                            CallLogActivity.this.scrollableViewNoiseSuppressor.draw(beginRecording, -3);
+                        }
+                        CallLogActivity.this.iBlur3SourceGlassFrosted.endRecording();
+                    }
+                    if (CallLogActivity.this.iBlur3SourceGlass != null && !CallLogActivity.this.iBlur3SourceGlass.inRecording()) {
+                        RecordingCanvas beginRecording2 = CallLogActivity.this.iBlur3SourceGlass.beginRecording(measuredWidth, measuredHeight);
+                        beginRecording2.drawColor(CallLogActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
+                        if (SharedConfig.chatBlurEnabled()) {
+                            CallLogActivity.this.scrollableViewNoiseSuppressor.draw(beginRecording2, -2);
+                        }
+                        CallLogActivity.this.iBlur3SourceGlass.endRecording();
+                    }
+                    CallLogActivity.this.iBlur3Invalidated = false;
+                }
+                super.dispatchDraw(canvas);
+                if (CallLogActivity.this.hasMainTabs) {
+                    return;
+                }
+                AndroidUtilities.drawNavigationBarProtection(canvas, this, CallLogActivity.this.getThemedColor(Theme.key_windowBackgroundWhite), CallLogActivity.this.navigationBarHeight);
+            }
+
+            @Override // org.telegram.ui.Components.SizeNotifierFrameLayout
+            public void drawBlurRect(Canvas canvas, float f, Rect rect, Paint paint, boolean z) {
+                if (Build.VERSION.SDK_INT < 29 || !SharedConfig.chatBlurEnabled() || CallLogActivity.this.iBlur3SourceGlassFrosted == null) {
+                    canvas.drawRect(rect, paint);
+                    return;
+                }
+                canvas.save();
+                canvas.translate(0.0f, -f);
+                CallLogActivity.this.iBlur3SourceGlassFrosted.draw(canvas, rect.left, rect.top + f, rect.right, rect.bottom + f);
+                canvas.restore();
+                int alpha = paint.getAlpha();
+                paint.setAlpha(NotificationCenter.configLoaded);
+                canvas.drawRect(rect, paint);
+                paint.setAlpha(alpha);
+            }
+        };
+        this.contentView = sizeNotifierFrameLayout;
+        RecyclerListView recyclerListView = this.listView;
+        Objects.requireNonNull(recyclerListView);
+        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView, sizeNotifierFrameLayout, new CallLogActivity$$ExternalSyntheticLambda2(recyclerListView));
+        this.fragmentView = this.contentView;
         FlickerLoadingView flickerLoadingView = new FlickerLoadingView(context);
         this.flickerLoadingView = flickerLoadingView;
         flickerLoadingView.setViewType(8);
@@ -707,10 +848,9 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         this.flickerLoadingView.showDate(false);
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context, this.flickerLoadingView);
         this.emptyView = emptyTextProgressView;
-        frameLayout2.addView(emptyTextProgressView, LayoutHelper.createFrame(-1, -1.0f));
-        RecyclerListView recyclerListView = new RecyclerListView(context);
-        this.listView = recyclerListView;
-        recyclerListView.setEmptyView(this.emptyView);
+        this.contentView.addView(emptyTextProgressView, LayoutHelper.createFrame(-1, -1.0f));
+        this.listView.setClipToPadding(false);
+        this.listView.setEmptyView(this.emptyView);
         RecyclerListView recyclerListView2 = this.listView;
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, 1, false);
         this.layoutManager = linearLayoutManager;
@@ -720,63 +860,121 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         this.listViewAdapter = listAdapter;
         recyclerListView3.setAdapter(listAdapter);
         this.listView.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        frameLayout2.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda2
+        RecyclerAnimationScrollHelper recyclerAnimationScrollHelper = new RecyclerAnimationScrollHelper(this.listView, this.layoutManager);
+        this.scrollHelper = recyclerAnimationScrollHelper;
+        recyclerAnimationScrollHelper.setScrollListener(new RecyclerAnimationScrollHelper.ScrollListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda3
+            @Override // org.telegram.ui.Components.RecyclerAnimationScrollHelper.ScrollListener
+            public final void onScroll() {
+                CallLogActivity.this.blur3_InvalidateBlur();
+            }
+        });
+        SizeNotifierFrameLayout sizeNotifierFrameLayout2 = this.contentView;
+        RecyclerListView recyclerListView4 = this.listView;
+        float f = -this.ADDITIONAL_LIST_HEIGHT_DP;
+        sizeNotifierFrameLayout2.addView(recyclerListView4, LayoutHelper.createFrame(-1, -1.0f, 3, 0.0f, f, 0.0f, f));
+        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda4
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i3) {
-                CallLogActivity.this.lambda$createView$4(view, i3);
+            public final void onItemClick(View view, int i5) {
+                CallLogActivity.this.lambda$createView$3(view, i5);
             }
         });
-        this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda3
+        this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda5
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
-            public final boolean onItemClick(View view, int i3) {
-                boolean lambda$createView$5;
-                lambda$createView$5 = CallLogActivity.this.lambda$createView$5(view, i3);
-                return lambda$createView$5;
+            public final boolean onItemClick(View view, int i5) {
+                boolean lambda$createView$4;
+                lambda$createView$4 = CallLogActivity.this.lambda$createView$4(view, i5);
+                return lambda$createView$4;
             }
         });
-        this.listView.setOnScrollListener(new 2());
+        this.listView.setOnScrollListener(new 3());
         if (this.loading) {
             this.emptyView.showProgress();
         } else {
             this.emptyView.showTextView();
         }
-        ImageView imageView = new ImageView(context);
-        this.floatingButton = imageView;
-        imageView.setVisibility(0);
-        this.floatingButton.setScaleType(ImageView.ScaleType.CENTER);
-        this.floatingButton.setBackgroundDrawable(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(56.0f), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
-        this.floatingButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), mode));
-        this.floatingButton.setImageResource(R.drawable.filled_calls_plus);
+        FragmentFloatingButton fragmentFloatingButton = new FragmentFloatingButton(context, this.resourceProvider);
+        this.floatingButton = fragmentFloatingButton;
+        fragmentFloatingButton.imageView.setImageResource(R.drawable.filled_calls_plus);
         this.floatingButton.setContentDescription(LocaleController.getString(R.string.Call));
-        StateListAnimator stateListAnimator = new StateListAnimator();
-        stateListAnimator.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(this.floatingButton, "translationZ", AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f)).setDuration(200L));
-        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this.floatingButton, "translationZ", AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f)).setDuration(200L));
-        this.floatingButton.setStateListAnimator(stateListAnimator);
-        this.floatingButton.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.CallLogActivity.3
-            @Override // android.view.ViewOutlineProvider
-            public void getOutline(View view, Outline outline) {
-                outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-            }
-        });
-        ImageView imageView2 = this.floatingButton;
-        boolean z = LocaleController.isRTL;
-        frameLayout2.addView(imageView2, LayoutHelper.createFrame(56, 56.0f, (z ? 3 : 5) | 80, z ? 14.0f : 0.0f, 0.0f, z ? 0.0f : 14.0f, 14.0f));
-        this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda4
+        this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CallLogActivity.this.lambda$createView$6(view);
+                CallLogActivity.this.lambda$createView$5(view);
             }
         });
-        FragmentContextView fragmentContextView = new FragmentContextView(context, this, false);
+        this.contentView.addView(this.floatingButton, FragmentFloatingButton.createDefaultLayoutParams());
+        FragmentContextView fragmentContextView = new FragmentContextView(context, this, this.contentView, false, this.resourceProvider) { // from class: org.telegram.ui.CallLogActivity.4
+            @Override // org.telegram.ui.Components.FragmentContextView
+            public void setTopPadding(float f2) {
+                this.topPadding = f2;
+                setTranslationY(f2);
+                CallLogActivity.this.checkUi_listViewPadding();
+            }
+        };
         this.fragmentContextView = fragmentContextView;
         fragmentContextView.setLayoutParams(LayoutHelper.createFrame(-1, 38.0f, 51, 0.0f, -36.0f, 0.0f, 0.0f));
-        frameLayout2.addView(this.fragmentContextView);
+        this.contentView.addView(this.fragmentContextView);
+        this.contentView.addView(this.actionBar);
+        HeaderShadowView headerShadowView = new HeaderShadowView(context, this.parentLayout);
+        this.headerShadowView = headerShadowView;
+        headerShadowView.setShadowVisible(false, false);
+        this.contentView.addView(this.headerShadowView, LayoutHelper.createFrame(-1, 5, 48));
+        this.actionBar.setDrawBlurBackground(this.contentView);
+        Bulletin.addDelegate(this, new Bulletin.Delegate() { // from class: org.telegram.ui.CallLogActivity.5
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ boolean allowLayoutChanges() {
+                return Bulletin.Delegate.-CC.$default$allowLayoutChanges(this);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ boolean bottomOffsetAnimated() {
+                return Bulletin.Delegate.-CC.$default$bottomOffsetAnimated(this);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ boolean clipWithGradient(int i5) {
+                return Bulletin.Delegate.-CC.$default$clipWithGradient(this, i5);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ int getTopOffset(int i5) {
+                return Bulletin.Delegate.-CC.$default$getTopOffset(this, i5);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ void onHide(Bulletin bulletin) {
+                Bulletin.Delegate.-CC.$default$onHide(this, bulletin);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public /* synthetic */ void onShow(Bulletin bulletin) {
+                Bulletin.Delegate.-CC.$default$onShow(this, bulletin);
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public void onBottomOffsetChange(float f2) {
+                CallLogActivity.this.additionalFloatingTranslation = Math.max(0.0f, (f2 - r0.navigationBarHeight) - CallLogActivity.this.additionFloatingButtonOffset);
+                CallLogActivity.this.checkUi_floatingButton();
+            }
+
+            @Override // org.telegram.ui.Components.Bulletin.Delegate
+            public int getBottomOffset(int i5) {
+                return CallLogActivity.this.navigationBarHeight + CallLogActivity.this.additionFloatingButtonOffset;
+            }
+        });
+        ViewCompat.setOnApplyWindowInsetsListener(this.fragmentView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda7
+            @Override // androidx.core.view.OnApplyWindowInsetsListener
+            public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+                WindowInsetsCompat onApplyWindowInsets;
+                onApplyWindowInsets = CallLogActivity.this.onApplyWindowInsets(view, windowInsetsCompat);
+                return onApplyWindowInsets;
+            }
+        });
         return this.fragmentView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$4(View view, int i) {
+    public /* synthetic */ void lambda$createView$3(View view, int i) {
         if (i == this.listViewAdapter.createCallRow) {
             openCreateCall();
             return;
@@ -786,7 +984,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                 Bundle bundle = new Bundle();
                 bundle.putLong("chat_id", ((GroupCallCell) view).currentChat.id);
                 getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-                presentFragment(new ChatActivity(bundle), true);
+                presentFragment(new ChatActivity(bundle), this.needFinishFragment);
                 return;
             }
             return;
@@ -812,13 +1010,13 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             final int sendRequest = getConnectionsManager().sendRequest(getgroupcall, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda10
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    CallLogActivity.this.lambda$createView$2(alertDialog, hashSet, tL_inputGroupCallInviteMessage, z, tLObject, tL_error);
+                    CallLogActivity.this.lambda$createView$1(alertDialog, hashSet, tL_inputGroupCallInviteMessage, z, tLObject, tL_error);
                 }
             });
             alertDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda11
                 @Override // android.content.DialogInterface.OnCancelListener
                 public final void onCancel(DialogInterface dialogInterface) {
-                    CallLogActivity.this.lambda$createView$3(sendRequest, dialogInterface);
+                    CallLogActivity.this.lambda$createView$2(sendRequest, dialogInterface);
                 }
             });
             alertDialog.showDelayed(600L);
@@ -828,21 +1026,21 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         bundle2.putLong("user_id", MessageObject.getDialogId((TLRPC.Message) callLogRow.calls.get(0)));
         bundle2.putInt("message_id", ((TLRPC.Message) callLogRow.calls.get(0)).id);
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-        presentFragment(new ChatActivity(bundle2), true);
+        presentFragment(new ChatActivity(bundle2), this.needFinishFragment);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$2(final AlertDialog alertDialog, final HashSet hashSet, final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, final boolean z, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda16
+    public /* synthetic */ void lambda$createView$1(final AlertDialog alertDialog, final HashSet hashSet, final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, final boolean z, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
-                CallLogActivity.this.lambda$createView$1(alertDialog, tLObject, hashSet, tL_inputGroupCallInviteMessage, z, tL_error);
+                CallLogActivity.this.lambda$createView$0(alertDialog, tLObject, hashSet, tL_inputGroupCallInviteMessage, z, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$1(AlertDialog alertDialog, TLObject tLObject, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, boolean z, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$createView$0(AlertDialog alertDialog, TLObject tLObject, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, boolean z, TLRPC.TL_error tL_error) {
         alertDialog.dismiss();
         if (tLObject instanceof TL_phone.groupCall) {
             TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
@@ -864,12 +1062,12 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$3(int i, DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$createView$2(int i, DialogInterface dialogInterface) {
         getConnectionsManager().cancelRequest(i, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ boolean lambda$createView$5(View view, int i) {
+    public /* synthetic */ boolean lambda$createView$4(View view, int i) {
         if (!(view instanceof CallCell)) {
             return false;
         }
@@ -877,48 +1075,40 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         return true;
     }
 
-    class 2 extends RecyclerView.OnScrollListener {
-        2() {
+    class 3 extends RecyclerView.OnScrollListener {
+        private boolean scrollUpdated;
+
+        3() {
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrolled(RecyclerView recyclerView, int i, int i2) {
-            boolean z;
             int findFirstVisibleItemPosition = CallLogActivity.this.layoutManager.findFirstVisibleItemPosition();
-            boolean z2 = false;
             int abs = findFirstVisibleItemPosition == -1 ? 0 : Math.abs(CallLogActivity.this.layoutManager.findLastVisibleItemPosition() - findFirstVisibleItemPosition) + 1;
             if (abs > 0) {
                 int itemCount = CallLogActivity.this.listViewAdapter.getItemCount();
                 if (!CallLogActivity.this.endReached && !CallLogActivity.this.loading && !CallLogActivity.this.calls.isEmpty() && abs + findFirstVisibleItemPosition >= itemCount - 5) {
                     final CallLogRow callLogRow = (CallLogRow) CallLogActivity.this.calls.get(CallLogActivity.this.calls.size() - 1);
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$2$$ExternalSyntheticLambda0
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$3$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            CallLogActivity.2.this.lambda$onScrolled$0(callLogRow);
+                            CallLogActivity.3.this.lambda$onScrolled$0(callLogRow);
                         }
                     });
                 }
             }
-            if (CallLogActivity.this.floatingButton.getVisibility() != 8) {
-                View childAt = recyclerView.getChildAt(0);
-                int top = childAt != null ? childAt.getTop() : 0;
-                if (CallLogActivity.this.prevPosition == findFirstVisibleItemPosition) {
-                    int i3 = CallLogActivity.this.prevTop - top;
-                    z = top < CallLogActivity.this.prevTop;
-                    if (Math.abs(i3) > 1) {
-                        z2 = true;
-                    }
-                } else {
-                    z2 = true;
-                    z = findFirstVisibleItemPosition > CallLogActivity.this.prevPosition;
-                }
-                if (z2 && CallLogActivity.this.scrollUpdated) {
-                    CallLogActivity.this.hideFloatingButton(z);
-                }
-                CallLogActivity.this.prevPosition = findFirstVisibleItemPosition;
-                CallLogActivity.this.prevTop = top;
-                CallLogActivity.this.scrollUpdated = true;
+            View childAt = recyclerView.getChildAt(0);
+            int top = childAt != null ? childAt.getTop() : 0;
+            if (i2 != 0 && this.scrollUpdated) {
+                CallLogActivity.this.floatingButton.setButtonVisible(i2 < 0, true);
             }
+            this.scrollUpdated = true;
+            CallLogActivity.this.headerShadowView.setShadowVisible(findFirstVisibleItemPosition != 0 || top < CallLogActivity.this.listView.getPaddingTop(), true);
+            if (Build.VERSION.SDK_INT < 31 || CallLogActivity.this.scrollableViewNoiseSuppressor == null) {
+                return;
+            }
+            CallLogActivity.this.scrollableViewNoiseSuppressor.onScrolled(i, i2);
+            CallLogActivity.this.blur3_InvalidateBlur();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -928,8 +1118,15 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$createView$6(View view) {
+    public /* synthetic */ void lambda$createView$5(View view) {
         openCreateCall();
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public ActionBar createActionBar(Context context) {
+        ActionBar createActionBar = super.createActionBar(context);
+        createActionBar.setAddToContainer(false);
+        return createActionBar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -945,21 +1142,21 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         final boolean[] zArr = {false};
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
         CheckBoxCell checkBoxCell = new CheckBoxCell(getParentActivity(), 1);
-        checkBoxCell.setBackgroundDrawable(Theme.getSelectorDrawable(false));
+        checkBoxCell.setBackground(Theme.getSelectorDrawable(false));
         checkBoxCell.setText(LocaleController.getString(R.string.DeleteCallsForEveryone), "", false, false);
         checkBoxCell.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(8.0f) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(8.0f), 0);
         frameLayout.addView(checkBoxCell, LayoutHelper.createFrame(-1, 48.0f, 51, 8.0f, 0.0f, 8.0f, 0.0f));
-        checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda8
+        checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CallLogActivity.lambda$showDeleteAlert$7(zArr, view);
+                CallLogActivity.lambda$showDeleteAlert$6(zArr, view);
             }
         });
         builder.setView(frameLayout);
-        builder.setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda9
+        builder.setPositiveButton(LocaleController.getString(R.string.Delete), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda14
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {
-                CallLogActivity.this.lambda$showDeleteAlert$8(z, zArr, alertDialog, i);
+                CallLogActivity.this.lambda$showDeleteAlert$7(z, zArr, alertDialog, i);
             }
         });
         builder.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -972,14 +1169,14 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showDeleteAlert$7(boolean[] zArr, View view) {
+    public static /* synthetic */ void lambda$showDeleteAlert$6(boolean[] zArr, View view) {
         boolean z = !zArr[0];
         zArr[0] = z;
         ((CheckBoxCell) view).setChecked(z, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showDeleteAlert$8(boolean z, boolean[] zArr, AlertDialog alertDialog, int i) {
+    public /* synthetic */ void lambda$showDeleteAlert$7(boolean z, boolean[] zArr, AlertDialog alertDialog, int i) {
         if (z) {
             deleteAllMessages(zArr[0]);
             this.calls.clear();
@@ -999,13 +1196,13 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         getConnectionsManager().sendRequest(tL_messages_deletePhoneCallHistory, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda17
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                CallLogActivity.this.lambda$deleteAllMessages$9(z, tLObject, tL_error);
+                CallLogActivity.this.lambda$deleteAllMessages$8(z, tLObject, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteAllMessages$9(boolean z, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$deleteAllMessages$8(boolean z, TLObject tLObject, TLRPC.TL_error tL_error) {
         if (tLObject != null) {
             TLRPC.TL_messages_affectedFoundMessages tL_messages_affectedFoundMessages = (TLRPC.TL_messages_affectedFoundMessages) tLObject;
             TLRPC.TL_updateDeleteMessages tL_updateDeleteMessages = new TLRPC.TL_updateDeleteMessages();
@@ -1050,13 +1247,29 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             return;
         }
         ActionBarMenu createActionMode = this.actionBar.createActionMode();
+        if (this.hasMainTabs) {
+            ImageView imageView = new ImageView(getContext());
+            this.actionModeCloseView = imageView;
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
+            this.actionModeCloseView.setImageDrawable(new BackDrawable(true));
+            this.actionModeCloseView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), PorterDuff.Mode.MULTIPLY));
+            this.actionModeCloseView.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_actionBarActionModeDefaultSelector)));
+            this.actionModeCloseView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda15
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    CallLogActivity.this.lambda$createActionMode$9(view);
+                }
+            });
+            createActionMode.addView(this.actionModeCloseView, LayoutHelper.createLinear(54, 54, 16));
+            this.actionModeViews.add(this.actionModeCloseView);
+        }
         NumberTextView numberTextView = new NumberTextView(createActionMode.getContext());
         this.selectedDialogsCountTextView = numberTextView;
         numberTextView.setTextSize(18);
         this.selectedDialogsCountTextView.setTypeface(AndroidUtilities.bold());
         this.selectedDialogsCountTextView.setTextColor(Theme.getColor(Theme.key_actionBarActionModeDefaultIcon));
-        createActionMode.addView(this.selectedDialogsCountTextView, LayoutHelper.createLinear(0, -1, 1.0f, 72, 0, 0, 0));
-        this.selectedDialogsCountTextView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda12
+        createActionMode.addView(this.selectedDialogsCountTextView, LayoutHelper.createLinear(0, -1, 1.0f, this.hasMainTabs ? 18 : 72, 0, 0, 0));
+        this.selectedDialogsCountTextView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda16
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 boolean lambda$createActionMode$10;
@@ -1065,6 +1278,11 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             }
         });
         this.actionModeViews.add(createActionMode.addItemWithWidth(2, R.drawable.msg_delete, AndroidUtilities.dp(54.0f), LocaleController.getString(R.string.Delete)));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$createActionMode$9(View view) {
+        hideActionMode(true);
     }
 
     private boolean addOrRemoveSelectedDialog(ArrayList arrayList, CallCell callCell) {
@@ -1106,7 +1324,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             ArrayList arrayList = new ArrayList();
             for (int i = 0; i < this.actionModeViews.size(); i++) {
                 View view = (View) this.actionModeViews.get(i);
-                view.setPivotY(ActionBar.getCurrentActionBarHeight() / 2);
+                view.setPivotY(ActionBar.getCurrentActionBarHeight() / 2.0f);
                 AndroidUtilities.clearDrawableAnimation(view);
                 arrayList.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.1f, 1.0f));
             }
@@ -1116,18 +1334,6 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             z = false;
         }
         this.selectedDialogsCountTextView.setNumber(this.selectedIds.size(), z);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void hideFloatingButton(boolean z) {
-        if (this.floatingHidden == z) {
-            return;
-        }
-        this.floatingHidden = z;
-        ObjectAnimator duration = ObjectAnimator.ofFloat(this.floatingButton, "translationY", z ? AndroidUtilities.dp(100.0f) : 0.0f).setDuration(300L);
-        duration.setInterpolator(this.floatingInterpolator);
-        this.floatingButton.setClickable(!z);
-        duration.start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1153,32 +1359,33 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_search, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                CallLogActivity.this.lambda$getCalls$15(tLObject, tL_error);
+                CallLogActivity.this.lambda$getCalls$14(tLObject, tL_error);
             }
         }, 2), this.classGuid);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getCalls$15(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda7
+    public /* synthetic */ void lambda$getCalls$14(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                CallLogActivity.this.lambda$getCalls$14(tL_error, tLObject);
+                CallLogActivity.this.lambda$getCalls$13(tL_error, tLObject);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0105  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0147  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0110  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0152  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$getCalls$14(TLRPC.TL_error tL_error, TLObject tLObject) {
+    public /* synthetic */ void lambda$getCalls$13(TLRPC.TL_error tL_error, TLObject tLObject) {
         CallLogRow callLogRow;
         TLRPC.messages_Messages messages_messages;
         int i;
         TLRPC.User user;
+        int i2;
         CallLogRow callLogRow2;
         TLRPC.User user2;
         int max = Math.max(this.listViewAdapter.callsStartRow, 0) + this.calls.size();
@@ -1188,54 +1395,41 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             MessagesController.getInstance(this.currentAccount).putUsers(messages_messages2.users, false);
             MessagesController.getInstance(this.currentAccount).putChats(messages_messages2.chats, false);
             this.endReached = messages_messages2.messages.isEmpty();
-            if (this.calls.size() > 0) {
+            if (this.calls.isEmpty()) {
+                callLogRow = null;
+            } else {
                 ArrayList arrayList = this.calls;
                 callLogRow = (CallLogRow) arrayList.get(arrayList.size() - 1);
-            } else {
-                callLogRow = null;
             }
-            int i2 = 0;
-            while (i2 < messages_messages2.messages.size()) {
-                TLRPC.Message message = messages_messages2.messages.get(i2);
+            int i3 = 0;
+            while (i3 < messages_messages2.messages.size()) {
+                TLRPC.Message message = messages_messages2.messages.get(i3);
                 TLRPC.MessageAction messageAction = message.action;
                 if (messageAction == null || (messageAction instanceof TLRPC.TL_messageActionHistoryClear)) {
                     messages_messages = messages_messages2;
-                    i = i2;
+                    i = i3;
                 } else {
                     final long fromChatId = MessageObject.getFromChatId(message);
                     if (fromChatId == getUserConfig().getClientUserId()) {
                         fromChatId = message.peer_id.user_id;
                     }
                     HashSet<Long> hashSet = new HashSet();
-                    int i3 = MessageObject.getFromChatId(message) == getUserConfig().getClientUserId() ? 0 : 1;
+                    int i4 = MessageObject.getFromChatId(message) == getUserConfig().getClientUserId() ? 0 : 1;
                     TLRPC.MessageAction messageAction2 = message.action;
                     if (messageAction2 instanceof TLRPC.TL_messageActionConferenceCall) {
                         TLRPC.TL_messageActionConferenceCall tL_messageActionConferenceCall = (TLRPC.TL_messageActionConferenceCall) messageAction2;
                         hashSet.add(Long.valueOf(fromChatId));
-                        hashSet.addAll((java.util.Collection) Collection.-EL.stream(tL_messageActionConferenceCall.other_participants).map(new Function() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda13
-                            public /* synthetic */ Function andThen(Function function) {
-                                return Function$-CC.$default$andThen(this, function);
-                            }
-
-                            @Override // java.util.function.Function
-                            public final Object apply(Object obj) {
-                                Long lambda$getCalls$11;
-                                lambda$getCalls$11 = CallLogActivity.lambda$getCalls$11((TLRPC.Peer) obj);
-                                return lambda$getCalls$11;
-                            }
-
-                            public /* synthetic */ Function compose(Function function) {
-                                return Function$-CC.$default$compose(this, function);
-                            }
-                        }).collect(Collectors.toSet()));
-                        if (i3 == z && tL_messageActionConferenceCall.missed) {
-                            i3 = 2;
+                        hashSet.addAll((java.util.Collection) Collection.-EL.stream(tL_messageActionConferenceCall.other_participants).map(new CallLogActivity$$ExternalSyntheticLambda8()).collect(Collectors.toSet()));
+                        if (i4 == z && tL_messageActionConferenceCall.missed) {
+                            i4 = 2;
                         }
+                        int i5 = (i4 == 0 && tL_messageActionConferenceCall.missed) ? 3 : i4;
+                        messages_messages = messages_messages2;
                         if (callLogRow != null) {
-                            messages_messages = messages_messages2;
+                            i2 = i5;
                             if (callLogRow.call_id == tL_messageActionConferenceCall.call_id) {
                                 callLogRow2 = callLogRow;
-                                i = i2;
+                                i = i3;
                                 if (callLogRow2 == null) {
                                     callLogRow2.calls.add(0, message);
                                     for (Long l : hashSet) {
@@ -1264,7 +1458,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                                     callLogRow3.calls.add(message);
                                     for (Long l2 : hashSet) {
                                         l2.longValue();
-                                        if (Collection.-EL.stream(callLogRow3.users).noneMatch(new Predicate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda14
+                                        if (Collection.-EL.stream(callLogRow3.users).noneMatch(new Predicate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda18
                                             public /* synthetic */ Predicate and(Predicate predicate) {
                                                 return Predicate$-CC.$default$and(this, predicate);
                                             }
@@ -1279,49 +1473,50 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
                                             @Override // java.util.function.Predicate
                                             public final boolean test(Object obj) {
-                                                boolean lambda$getCalls$12;
-                                                lambda$getCalls$12 = CallLogActivity.lambda$getCalls$12(fromChatId, (TLRPC.User) obj);
-                                                return lambda$getCalls$12;
+                                                boolean lambda$getCalls$11;
+                                                lambda$getCalls$11 = CallLogActivity.lambda$getCalls$11(fromChatId, (TLRPC.User) obj);
+                                                return lambda$getCalls$11;
                                             }
                                         }) && (user2 = getMessagesController().getUser(l2)) != null) {
                                             callLogRow3.users.add(user2);
                                         }
                                     }
-                                    callLogRow3.type = i3;
+                                    callLogRow3.type = i2;
                                     TLRPC.MessageAction messageAction3 = message.action;
                                     callLogRow3.video = messageAction3 != null && messageAction3.video;
                                     callLogRow = callLogRow3;
                                 }
                             }
                         } else {
-                            messages_messages = messages_messages2;
+                            i2 = i5;
                         }
-                        int i4 = 0;
+                        int i6 = 0;
                         while (true) {
-                            if (i4 >= this.calls.size()) {
-                                i = i2;
+                            if (i6 >= this.calls.size()) {
+                                i = i3;
                                 callLogRow2 = null;
                                 break;
                             }
-                            callLogRow2 = (CallLogRow) this.calls.get(i4);
-                            i = i2;
+                            callLogRow2 = (CallLogRow) this.calls.get(i6);
+                            i = i3;
                             if (callLogRow2.call_id == tL_messageActionConferenceCall.call_id) {
                                 break;
                             }
-                            i4++;
-                            i2 = i;
+                            i6++;
+                            i3 = i;
                         }
                         if (callLogRow2 == null) {
                         }
                     } else {
                         messages_messages = messages_messages2;
-                        i = i2;
+                        i = i3;
                         hashSet.add(Long.valueOf(fromChatId));
                         TLRPC.PhoneCallDiscardReason phoneCallDiscardReason = message.action.reason;
-                        if (i3 == 1 && ((phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonMissed) || (phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonBusy))) {
-                            i3 = 2;
+                        if (i4 == 1 && ((phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonMissed) || (phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonBusy))) {
+                            i4 = 2;
                         }
-                        if (callLogRow == null || !eq(hashSet, callLogRow.users) || callLogRow.type != i3) {
+                        int i7 = (i4 == 0 && ((phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonMissed) || (phoneCallDiscardReason instanceof TLRPC.TL_phoneCallDiscardReasonBusy))) ? 3 : i4;
+                        if (callLogRow == null || !eq(hashSet, callLogRow.users) || callLogRow.type != i7) {
                             if (callLogRow != null && !this.calls.contains(callLogRow)) {
                                 this.calls.add(callLogRow);
                             }
@@ -1329,7 +1524,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                             callLogRow.calls.clear();
                             for (Long l3 : hashSet) {
                                 l3.longValue();
-                                if (Collection.-EL.stream(callLogRow.users).noneMatch(new Predicate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda15
+                                if (Collection.-EL.stream(callLogRow.users).noneMatch(new Predicate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda19
                                     public /* synthetic */ Predicate and(Predicate predicate) {
                                         return Predicate$-CC.$default$and(this, predicate);
                                     }
@@ -1344,29 +1539,29 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
                                     @Override // java.util.function.Predicate
                                     public final boolean test(Object obj) {
-                                        boolean lambda$getCalls$13;
-                                        lambda$getCalls$13 = CallLogActivity.lambda$getCalls$13(fromChatId, (TLRPC.User) obj);
-                                        return lambda$getCalls$13;
+                                        boolean lambda$getCalls$12;
+                                        lambda$getCalls$12 = CallLogActivity.lambda$getCalls$12(fromChatId, (TLRPC.User) obj);
+                                        return lambda$getCalls$12;
                                     }
                                 }) && (user = getMessagesController().getUser(l3)) != null) {
                                     callLogRow.users.add(user);
                                 }
                             }
-                            callLogRow.type = i3;
+                            callLogRow.type = i7;
                             TLRPC.MessageAction messageAction4 = message.action;
                             callLogRow.video = messageAction4 != null && messageAction4.video;
                         }
                         callLogRow.calls.add(message);
-                        i2 = i + 1;
+                        i3 = i + 1;
                         messages_messages2 = messages_messages;
                         z = true;
                     }
                 }
-                i2 = i + 1;
+                i3 = i + 1;
                 messages_messages2 = messages_messages;
                 z = true;
             }
-            if (callLogRow != null && callLogRow.calls.size() > 0 && !this.calls.contains(callLogRow)) {
+            if (callLogRow != null && !callLogRow.calls.isEmpty() && !this.calls.contains(callLogRow)) {
                 this.calls.add(callLogRow);
             }
             z = true;
@@ -1391,17 +1586,12 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ Long lambda$getCalls$11(TLRPC.Peer peer) {
-        return Long.valueOf(DialogObject.getPeerDialogId(peer));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$getCalls$12(long j, TLRPC.User user) {
+    public static /* synthetic */ boolean lambda$getCalls$11(long j, TLRPC.User user) {
         return user.id == j;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ boolean lambda$getCalls$13(long j, TLRPC.User user) {
+    public static /* synthetic */ boolean lambda$getCalls$12(long j, TLRPC.User user) {
         return user.id == j;
     }
 
@@ -1418,9 +1608,10 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     public void onRequestPermissionsResultFragment(int i, String[] strArr, int[] iArr) {
         boolean z;
         if (i == 101 || i == 102 || i == 103) {
+            int length = iArr.length;
             int i2 = 0;
             while (true) {
-                if (i2 >= iArr.length) {
+                if (i2 >= length) {
                     z = true;
                     break;
                 } else {
@@ -1444,17 +1635,13 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
     private class ListAdapter extends RecyclerListView.SelectionAdapter {
         private int activeEndRow;
-        private int activeHeaderRow;
         private int activeStartRow;
         private int callsEndRow;
-        private int callsHeaderRow;
         private int callsStartRow;
-        private int createCallInfoRow;
         private int createCallRow;
         private int loadingCallsRow;
-        private Context mContext;
+        private final Context mContext;
         private int rowsCount;
-        private int sectionRow;
 
         public ListAdapter(Context context) {
             this.mContext = context;
@@ -1462,47 +1649,41 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
         /* JADX INFO: Access modifiers changed from: private */
         public void updateRows() {
-            this.activeHeaderRow = -1;
-            this.callsHeaderRow = -1;
+            this.createCallRow = -1;
             this.activeStartRow = -1;
             this.activeEndRow = -1;
             this.callsStartRow = -1;
             this.callsEndRow = -1;
             this.loadingCallsRow = -1;
-            this.sectionRow = -1;
-            this.createCallRow = 0;
-            this.rowsCount = 2;
-            this.createCallInfoRow = 1;
-            if (!CallLogActivity.this.activeGroupCalls.isEmpty()) {
+            this.rowsCount = 0;
+            boolean isEmpty = CallLogActivity.this.activeGroupCalls.isEmpty();
+            boolean isEmpty2 = CallLogActivity.this.calls.isEmpty();
+            if (!isEmpty || !isEmpty2) {
                 int i = this.rowsCount;
-                int i2 = i + 1;
-                this.rowsCount = i2;
-                this.activeHeaderRow = i;
+                this.rowsCount = i + 1;
+                this.createCallRow = i;
+            }
+            if (!isEmpty) {
+                int i2 = this.rowsCount;
                 this.activeStartRow = i2;
                 int size = i2 + CallLogActivity.this.activeGroupCalls.size();
                 this.rowsCount = size;
                 this.activeEndRow = size;
             }
-            if (CallLogActivity.this.calls.isEmpty()) {
+            if (isEmpty2) {
                 return;
             }
-            if (this.activeHeaderRow != -1) {
-                int i3 = this.rowsCount;
-                this.sectionRow = i3;
-                this.rowsCount = i3 + 2;
-                this.callsHeaderRow = i3 + 1;
-            }
-            int i4 = this.rowsCount;
-            this.callsStartRow = i4;
-            int size2 = i4 + CallLogActivity.this.calls.size();
+            int i3 = this.rowsCount;
+            this.callsStartRow = i3;
+            int size2 = i3 + CallLogActivity.this.calls.size();
             this.rowsCount = size2;
             this.callsEndRow = size2;
             if (CallLogActivity.this.endReached) {
                 return;
             }
-            int i5 = this.rowsCount;
-            this.rowsCount = i5 + 1;
-            this.loadingCallsRow = i5;
+            int i4 = this.rowsCount;
+            this.rowsCount = i4 + 1;
+            this.loadingCallsRow = i4;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -1564,39 +1745,26 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             return this.rowsCount;
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            FrameLayout frameLayout;
+            View callCell;
             if (i == 0) {
-                frameLayout = CallLogActivity.this.new CallCell(this.mContext);
+                callCell = CallLogActivity.this.new CallCell(this.mContext);
             } else if (i == 1) {
                 FlickerLoadingView flickerLoadingView = new FlickerLoadingView(this.mContext);
                 flickerLoadingView.setIsSingleCell(true);
                 flickerLoadingView.setViewType(8);
                 flickerLoadingView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 flickerLoadingView.showDate(false);
-                frameLayout = flickerLoadingView;
-            } else if (i == 2) {
-                FrameLayout textInfoPrivacyCell = new TextInfoPrivacyCell(this.mContext);
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-                frameLayout = textInfoPrivacyCell;
-            } else if (i == 3) {
-                FrameLayout headerCell = new HeaderCell(this.mContext, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, 2, false, CallLogActivity.this.getResourceProvider());
-                headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                frameLayout = headerCell;
+                callCell = flickerLoadingView;
             } else if (i == 4) {
-                frameLayout = CallLogActivity.this.new GroupCallCell(this.mContext);
+                callCell = CallLogActivity.this.new GroupCallCell(this.mContext);
             } else if (i == 6) {
-                FrameLayout textCell = new TextCell(this.mContext);
-                textCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                frameLayout = textCell;
+                callCell = new TextCell(this.mContext);
             } else {
-                TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(this.mContext);
-                textInfoPrivacyCell2.setFixedSize(12);
-                frameLayout = textInfoPrivacyCell2;
+                callCell = new View(this.mContext);
             }
-            return new RecyclerListView.Holder(frameLayout);
+            return new RecyclerListView.Holder(callCell);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -1612,43 +1780,17 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             String lowerCase;
             int itemViewType = viewHolder.getItemViewType();
             if (itemViewType != 0) {
-                if (itemViewType == 3) {
-                    HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
-                    if (i == this.activeHeaderRow) {
-                        headerCell.setText(LocaleController.getString(R.string.VoipChatActiveChats));
-                        return;
-                    } else {
-                        if (i == this.callsHeaderRow) {
-                            headerCell.setText(LocaleController.getString(R.string.VoipChatRecentCalls));
-                            return;
-                        }
-                        return;
-                    }
-                }
                 if (itemViewType != 4) {
-                    if (itemViewType != 5) {
-                        if (itemViewType != 6) {
-                            return;
-                        }
-                        TextCell textCell = (TextCell) viewHolder.itemView;
-                        textCell.setTextAndIcon((CharSequence) LocaleController.getString(R.string.GroupCallCreate), R.drawable.menu_call_create, false);
-                        int i2 = Theme.key_windowBackgroundWhiteBlueText4;
-                        textCell.setColors(i2, i2);
+                    if (itemViewType != 6) {
                         return;
                     }
-                    TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-                    if (i == this.createCallInfoRow) {
-                        textInfoPrivacyCell.setText(LocaleController.formatPluralStringComma("GroupCallCreateInfo", CallLogActivity.this.getMessagesController().conferenceCallSizeLimit));
-                        textInfoPrivacyCell.setFixedSize(0);
-                        return;
-                    } else {
-                        textInfoPrivacyCell.setText(null);
-                        textInfoPrivacyCell.setFixedSize(12);
-                        return;
-                    }
+                    TextCell textCell = (TextCell) viewHolder.itemView;
+                    textCell.setTextAndIcon((CharSequence) LocaleController.getString(R.string.GroupCallCreate2), R.drawable.menu_call_create, false);
+                    int i2 = Theme.key_telegram_color;
+                    textCell.setColors(i2, i2);
+                    return;
                 }
-                int i3 = i - this.activeStartRow;
-                TLRPC.Chat chat = CallLogActivity.this.getMessagesController().getChat((Long) CallLogActivity.this.activeGroupCalls.get(i3));
+                TLRPC.Chat chat = CallLogActivity.this.getMessagesController().getChat((Long) CallLogActivity.this.activeGroupCalls.get(i - this.activeStartRow));
                 GroupCallCell groupCallCell = (GroupCallCell) viewHolder.itemView;
                 groupCallCell.setChat(chat);
                 groupCallCell.button.setTag(Long.valueOf(chat.id));
@@ -1665,74 +1807,65 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                 } else {
                     lowerCase = LocaleController.getString(R.string.MegaPublic).toLowerCase();
                 }
-                String str = lowerCase;
-                groupCallCell.profileSearchCell.useSeparator = (i3 == CallLogActivity.this.activeGroupCalls.size() - 1 || CallLogActivity.this.endReached) ? false : true;
-                groupCallCell.profileSearchCell.setData(chat, null, null, str, false, false);
+                groupCallCell.profileSearchCell.setData(chat, null, null, lowerCase, false, false);
                 return;
             }
-            int i4 = i - this.callsStartRow;
-            CallLogRow callLogRow = (CallLogRow) CallLogActivity.this.calls.get(i4);
+            CallLogRow callLogRow = (CallLogRow) CallLogActivity.this.calls.get(i - this.callsStartRow);
             CallCell callCell = (CallCell) viewHolder.itemView;
-            callCell.imageView.setImageResource(callLogRow.video ? R.drawable.profile_video : R.drawable.profile_phone);
+            callCell.imageView.setImageResource(callLogRow.video ? R.drawable.menu_videocall : R.drawable.menu_call_create_2_24);
             TLRPC.Message message = (TLRPC.Message) callLogRow.calls.get(0);
-            String str2 = LocaleController.isRTL ? "\u202b" : "";
+            String str = LocaleController.isRTL ? "\u202b" : "";
             if (callLogRow.calls.size() == 1) {
-                spannableString = new SpannableString(str2 + "  " + LocaleController.formatDateCallLog(message.date));
+                spannableString = new SpannableString(str + "  " + LocaleController.formatDateCallLog(message.date));
             } else {
-                spannableString = new SpannableString(String.format(str2 + "  (%d) %s", Integer.valueOf(callLogRow.calls.size()), LocaleController.formatDateCallLog(message.date)));
+                spannableString = new SpannableString(String.format(str + "  (%d) %s", Integer.valueOf(callLogRow.calls.size()), LocaleController.formatDateCallLog(message.date)));
             }
-            int i5 = callLogRow.type;
-            if (i5 == 0) {
-                spannableString.setSpan(CallLogActivity.this.iconOut, str2.length(), str2.length() + 1, 0);
-            } else if (i5 == 1) {
-                spannableString.setSpan(CallLogActivity.this.iconIn, str2.length(), str2.length() + 1, 0);
-            } else if (i5 == 2) {
-                spannableString.setSpan(CallLogActivity.this.iconMissed, str2.length(), str2.length() + 1, 0);
+            SpannableString spannableString2 = spannableString;
+            int i3 = callLogRow.type;
+            if (i3 == 0) {
+                spannableString2.setSpan(CallLogActivity.this.iconOut, str.length(), str.length() + 1, 33);
+            } else if (i3 == 1) {
+                spannableString2.setSpan(CallLogActivity.this.iconIn, str.length(), str.length() + 1, 33);
+            } else if (i3 == 2) {
+                spannableString2.setSpan(CallLogActivity.this.iconMissedIn, str.length(), str.length() + 1, 33);
+            } else if (i3 == 3) {
+                spannableString2.setSpan(CallLogActivity.this.getIconMissedOut, str.length(), str.length() + 1, 33);
             }
             if (callLogRow.call_id == 0) {
                 callCell.profileSearchCell.setAllowEmojiStatus(true);
-                callCell.profileSearchCell.setData(callLogRow.users.isEmpty() ? null : callLogRow.users.get(0), null, null, spannableString, false, false);
+                callCell.profileSearchCell.setData(callLogRow.users.isEmpty() ? null : callLogRow.users.get(0), null, null, spannableString2, false, false);
                 callCell.avatarsImageView.setVisibility(8);
                 callCell.profileSearchCell.dontDrawAvatar = false;
             } else {
                 StringBuilder sb = new StringBuilder();
-                for (int i6 = 0; i6 < Math.min(3, callLogRow.users.size()); i6++) {
-                    if (i6 > 0) {
+                for (int i4 = 0; i4 < Math.min(3, callLogRow.users.size()); i4++) {
+                    if (i4 > 0) {
                         sb.append(", ");
                     }
-                    sb.append(DialogObject.getShortName((TLObject) callLogRow.users.get(i6)));
+                    sb.append(DialogObject.getShortName((TLObject) callLogRow.users.get(i4)));
                 }
                 if (callLogRow.users.size() > 3) {
                     sb.append(" ");
                     sb.append(LocaleController.formatPluralString("AndOther", callLogRow.users.size() - 3, new Object[0]));
                 }
-                ArrayList arrayList = new ArrayList();
-                arrayList.addAll(callLogRow.users);
+                ArrayList arrayList = new ArrayList(callLogRow.users);
                 arrayList.add(CallLogActivity.this.getUserConfig().getCurrentUser());
                 callCell.profileSearchCell.setAllowEmojiStatus(false);
-                callCell.profileSearchCell.setData(callLogRow.users.isEmpty() ? null : callLogRow.users.get(0), null, sb.toString(), spannableString, false, false);
+                callCell.profileSearchCell.setData(callLogRow.users.isEmpty() ? null : callLogRow.users.get(0), null, sb.toString(), spannableString2, false, false);
                 callCell.avatarsImageView.setVisibility(0);
                 callCell.profileSearchCell.avatarImage.clearImage();
                 callCell.profileSearchCell.dontDrawAvatar = true;
                 int min = Math.min(3, arrayList.size());
-                for (int i7 = 0; i7 < min; i7++) {
-                    callCell.avatarsImageView.setObject(i7, ((BaseFragment) CallLogActivity.this).currentAccount, (TLObject) arrayList.get(i7));
+                for (int i5 = 0; i5 < min; i5++) {
+                    callCell.avatarsImageView.setObject(i5, ((BaseFragment) CallLogActivity.this).currentAccount, (TLObject) arrayList.get(i5));
                 }
                 callCell.avatarsImageView.commitTransition(false);
             }
-            ProfileSearchCell profileSearchCell = callCell.profileSearchCell;
-            if (i4 == CallLogActivity.this.calls.size() - 1 && CallLogActivity.this.endReached) {
-                r7 = false;
-            }
-            profileSearchCell.useSeparator = r7;
             callCell.imageView.setTag(callLogRow);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            if (i == this.activeHeaderRow || i == this.callsHeaderRow) {
-                return 3;
-            }
             if (i >= this.callsStartRow && i < this.callsEndRow) {
                 return 0;
             }
@@ -1741,9 +1874,6 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             }
             if (i == this.loadingCallsRow) {
                 return 1;
-            }
-            if (i == this.sectionRow || i == this.createCallInfoRow) {
-                return 5;
             }
             return i == this.createCallRow ? 6 : 2;
         }
@@ -1785,53 +1915,96 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         if (view != null) {
             this.listView.removeView(view);
         }
-        this.listView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.CallLogActivity.4
-            @Override // android.view.ViewTreeObserver.OnPreDrawListener
-            public boolean onPreDraw() {
-                CallLogActivity.this.listView.getViewTreeObserver().removeOnPreDrawListener(this);
-                int childCount = CallLogActivity.this.listView.getChildCount();
-                AnimatorSet animatorSet = new AnimatorSet();
-                for (int i3 = 0; i3 < childCount; i3++) {
-                    View childAt2 = CallLogActivity.this.listView.getChildAt(i3);
-                    RecyclerView.ViewHolder childViewHolder = CallLogActivity.this.listView.getChildViewHolder(childAt2);
-                    if (childAt2 != view && CallLogActivity.this.listView.getChildAdapterPosition(childAt2) >= i && !(childAt2 instanceof GroupCallCell) && (!(childAt2 instanceof HeaderCell) || childViewHolder.getAdapterPosition() != CallLogActivity.this.listViewAdapter.activeHeaderRow)) {
-                        childAt2.setAlpha(0.0f);
-                        int min = (int) ((Math.min(CallLogActivity.this.listView.getMeasuredHeight(), Math.max(0, childAt2.getTop())) / CallLogActivity.this.listView.getMeasuredHeight()) * 100.0f);
-                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt2, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-                        ofFloat.setStartDelay(min);
-                        ofFloat.setDuration(200L);
-                        animatorSet.playTogether(ofFloat);
-                    }
-                }
-                View view2 = view;
-                if (view2 != null && view2.getParent() == null) {
-                    CallLogActivity.this.listView.addView(view);
-                    final RecyclerView.LayoutManager layoutManager = CallLogActivity.this.listView.getLayoutManager();
-                    if (layoutManager != null) {
-                        layoutManager.ignoreView(view);
-                        View view3 = view;
-                        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(view3, (Property<View, Float>) View.ALPHA, view3.getAlpha(), 0.0f);
-                        ofFloat2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.CallLogActivity.4.1
-                            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                            public void onAnimationEnd(Animator animator) {
-                                view.setAlpha(1.0f);
-                                layoutManager.stopIgnoringView(view);
-                                CallLogActivity.this.listView.removeView(view);
-                            }
-                        });
-                        ofFloat2.start();
-                    }
-                }
-                animatorSet.start();
-                return true;
+        AndroidUtilities.doOnPreDraw(this.listView, new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda21
+            @Override // java.lang.Runnable
+            public final void run() {
+                CallLogActivity.this.lambda$showItemsAnimated$15(view, i);
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$showItemsAnimated$15(final View view, int i) {
+        int childCount = this.listView.getChildCount();
+        AnimatorSet animatorSet = new AnimatorSet();
+        for (int i2 = 0; i2 < childCount; i2++) {
+            View childAt = this.listView.getChildAt(i2);
+            if (childAt != view && this.listView.getChildAdapterPosition(childAt) >= i && !(childAt instanceof GroupCallCell)) {
+                childAt.setAlpha(0.0f);
+                int min = (int) ((Math.min(this.listView.getMeasuredHeight(), Math.max(0, childAt.getTop())) / this.listView.getMeasuredHeight()) * 100.0f);
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
+                ofFloat.setStartDelay(min);
+                ofFloat.setDuration(200L);
+                animatorSet.playTogether(ofFloat);
+            }
+        }
+        if (view != null && view.getParent() == null) {
+            this.listView.addView(view);
+            final RecyclerView.LayoutManager layoutManager = this.listView.getLayoutManager();
+            if (layoutManager != null) {
+                layoutManager.ignoreView(view);
+                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f);
+                ofFloat2.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.CallLogActivity.6
+                    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                    public void onAnimationEnd(Animator animator) {
+                        view.setAlpha(1.0f);
+                        layoutManager.stopIgnoringView(view);
+                        CallLogActivity.this.listView.removeView(view);
+                    }
+                });
+                ofFloat2.start();
+            }
+        }
+        animatorSet.start();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+        this.navigationBarHeight = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+        checkUi_listViewPadding();
+        checkUi_floatingButton();
+        return WindowInsetsCompat.CONSUMED;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkUi_floatingButton() {
+        this.floatingButton.setTranslationY(((-this.navigationBarHeight) - this.additionFloatingButtonOffset) - this.additionalFloatingTranslation);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkUi_listViewPadding() {
+        FragmentContextView fragmentContextView = this.fragmentContextView;
+        float f = 0.0f;
+        if (fragmentContextView != null) {
+            f = 0.0f + Math.max(0.0f, fragmentContextView.getTopPadding());
+            this.fragmentContextView.setTranslationY(f);
+        }
+        this.listView.setTranslationY(f);
+        this.listView.setPadding(0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP) + this.actionBar.getMeasuredHeight(), 0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP) + this.navigationBarHeight + this.additionNavigationBarHeight + Math.round(f));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkUi_listClip() {
+        this.tmpClipRect.set(0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP) + this.actionBar.getMeasuredHeight(), this.listView.getMeasuredWidth(), this.listView.getMeasuredHeight() - AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP));
+        this.listView.setClipBounds(this.tmpClipRect);
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean onBackPressed(boolean z) {
+        if (!this.actionBar.isActionModeShowed()) {
+            return super.onBackPressed(z);
+        }
+        if (!z) {
+            return false;
+        }
+        hideActionMode(true);
+        return false;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda6
+        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda9
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CallLogActivity.this.lambda$getThemeDescriptions$16();
@@ -1861,13 +2034,17 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         int i4 = Theme.key_windowBackgroundGrayShadow;
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i4));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
-        arrayList.add(new ThemeDescription(this.floatingButton, ThemeDescription.FLAG_IMAGECOLOR, null, null, null, null, Theme.key_chats_actionIcon));
-        arrayList.add(new ThemeDescription(this.floatingButton, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, Theme.key_chats_actionBackground));
-        arrayList.add(new ThemeDescription(this.floatingButton, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, null, null, null, null, Theme.key_chats_actionPressedBackground));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_featuredStickers_addButton));
+        if (this.floatingButton != null) {
+            arrayList.add(new ThemeDescription(this.floatingButton.imageView, ThemeDescription.FLAG_IMAGECOLOR, null, null, null, null, Theme.key_chats_actionIcon));
+            arrayList.add(new ThemeDescription(this.floatingButton.imageView, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, Theme.key_chats_actionBackground));
+            arrayList.add(new ThemeDescription(this.floatingButton.imageView, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, null, null, null, null, Theme.key_chats_actionPressedBackground));
+        }
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_telegram_color));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, null, new Drawable[]{Theme.dialogs_verifiedCheckDrawable}, null, Theme.key_chats_verifiedCheck));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, null, new Drawable[]{Theme.dialogs_verifiedDrawable}, null, Theme.key_chats_verifiedBackground));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, Theme.dialogs_offlinePaint, null, null, Theme.key_windowBackgroundWhiteGrayText3));
+        TextPaint textPaint = Theme.dialogs_offlinePaint;
+        int i5 = Theme.key_windowBackgroundWhiteGrayText3;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, textPaint, null, null, i5));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, Theme.dialogs_onlinePaint, null, null, Theme.key_windowBackgroundWhiteBlueText3));
         TextPaint[] textPaintArr = Theme.dialogs_namePaint;
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, (String[]) null, new Paint[]{textPaintArr[0], textPaintArr[1], Theme.dialogs_searchNamePaint}, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_chats_name));
@@ -1881,8 +2058,8 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundCyan));
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundBlue));
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundPink));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, null, new Drawable[]{this.greenDrawable, this.greenDrawable2, Theme.calllog_msgCallUpRedDrawable, Theme.calllog_msgCallDownRedDrawable}, null, Theme.key_calls_callReceivedGreenIcon));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, null, new Drawable[]{this.redDrawable, Theme.calllog_msgCallUpGreenDrawable, Theme.calllog_msgCallDownGreenDrawable}, null, Theme.key_fill_RedNormal));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, null, new Drawable[]{this.greenDrawable, this.greenDrawable2, Theme.calllog_msgCallUpRedDrawable, Theme.calllog_msgCallDownRedDrawable}, null, i5));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, null, new Drawable[]{this.redDrawable, this.redDrawable2, Theme.calllog_msgCallUpGreenDrawable, Theme.calllog_msgCallDownGreenDrawable}, null, Theme.key_fill_RedNormal));
         arrayList.add(new ThemeDescription(this.flickerLoadingView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, i4));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader));
@@ -1900,6 +2077,11 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                     ((CallCell) childAt).profileSearchCell.update(0);
                 }
             }
+        }
+        ImageView imageView = this.actionModeCloseView;
+        if (imageView != null) {
+            imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), PorterDuff.Mode.MULTIPLY));
+            this.actionModeCloseView.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_actionBarActionModeDefaultSelector)));
         }
     }
 
@@ -1978,7 +2160,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         linearLayout2.addView(buttonWithCounterView2, LayoutHelper.createLinear(-1, 48, 1.0f, 51, 6, 0, 0, 0));
         final BottomSheet[] bottomSheetArr = new BottomSheet[1];
         if (z) {
-            TextView textView = new TextView(context) { // from class: org.telegram.ui.CallLogActivity.5
+            TextView textView = new TextView(context) { // from class: org.telegram.ui.CallLogActivity.7
                 private final Paint paint = new Paint(1);
 
                 @Override // android.view.View
@@ -2003,7 +2185,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             textView.setText(" " + LocaleController.getString(R.string.GroupCallCreatedLinkJoinOr) + " ");
             textView.setTextSize(14.0f);
             linearLayout.addView(textView, LayoutHelper.createLinear(NotificationCenter.boostByChannelCreated, -2, 1, 28, 12, 28, 8));
-            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda20
+            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda24
                 @Override // java.lang.Runnable
                 public final void run() {
                     CallLogActivity.lambda$showCallLinkSheet$17(str, i, bottomSheetArr);
@@ -2015,7 +2197,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             makeLinkTextView4.setMaxWidth(HintView2.cutInFancyHalf(makeLinkTextView4.getText(), makeLinkTextView4.getPaint()));
             linearLayout.addView(makeLinkTextView4, LayoutHelper.createLinear(-1, -2, 17, 32, 8, 32, 12));
             ScaleStateListAnimator.apply(makeLinkTextView4, 0.05f, 1.2f);
-            makeLinkTextView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda21
+            makeLinkTextView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda25
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     runnable.run();
@@ -2025,38 +2207,38 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         builder.setCustomView(linearLayout);
         final BottomSheet show = builder.show();
         bottomSheetArr[0] = show;
-        frameLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda22
+        frameLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda26
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CallLogActivity.lambda$showCallLinkSheet$19(strArr, show, resourcesProvider, view);
             }
         });
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda23
+        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda27
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CallLogActivity.lambda$showCallLinkSheet$20(strArr, show, resourcesProvider, view);
             }
         });
-        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda24
+        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
                 CallLogActivity.lambda$showCallLinkSheet$25(TLRPC.InputGroupCall.this, i, strArr, frameLayout3, makeLinkTextView3, show, resourcesProvider);
             }
         };
-        imageView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda25
+        imageView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda29
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CallLogActivity.lambda$showCallLinkSheet$28(BottomSheet.this, resourcesProvider, frameLayout3, strArr, context, z2, runnable2, view);
             }
         });
-        buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda26
+        buttonWithCounterView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda30
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CallLogActivity.lambda$showCallLinkSheet$29(context, str, strArr, resourcesProvider, show, view);
             }
         });
         if (z2) {
-            imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda27
+            imageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda31
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     CallLogActivity.lambda$showCallLinkSheet$30(BottomSheet.this, resourcesProvider, imageView2, runnable2, view);
@@ -2090,7 +2272,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         TL_phone.toggleGroupCallSettings togglegroupcallsettings = new TL_phone.toggleGroupCallSettings();
         togglegroupcallsettings.call = inputGroupCall;
         togglegroupcallsettings.reset_invite_hash = true;
-        ConnectionsManager.getInstance(i).sendRequest(togglegroupcallsettings, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda29
+        ConnectionsManager.getInstance(i).sendRequest(togglegroupcallsettings, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda33
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 CallLogActivity.lambda$showCallLinkSheet$24(i, inputGroupCall, strArr, frameLayout, linksTextView, bottomSheet, resourcesProvider, tLObject, tL_error);
@@ -2105,7 +2287,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         }
         TL_phone.exportGroupCallInvite exportgroupcallinvite = new TL_phone.exportGroupCallInvite();
         exportgroupcallinvite.call = inputGroupCall;
-        ConnectionsManager.getInstance(i).sendRequest(exportgroupcallinvite, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda32
+        ConnectionsManager.getInstance(i).sendRequest(exportgroupcallinvite, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda36
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject2, TLRPC.TL_error tL_error2) {
                 CallLogActivity.lambda$showCallLinkSheet$23(strArr, frameLayout, linksTextView, bottomSheet, resourcesProvider, tLObject2, tL_error2);
@@ -2115,7 +2297,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showCallLinkSheet$23(final String[] strArr, final FrameLayout frameLayout, final LinkSpanDrawable.LinksTextView linksTextView, final BottomSheet bottomSheet, final Theme.ResourcesProvider resourcesProvider, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda34
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda38
             @Override // java.lang.Runnable
             public final void run() {
                 CallLogActivity.lambda$showCallLinkSheet$22(TLObject.this, strArr, frameLayout, linksTextView, bottomSheet, resourcesProvider);
@@ -2139,7 +2321,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                     CallLogActivity.lambda$showCallLinkSheet$21(frameLayout, atomicBoolean, linksTextView, str, valueAnimator);
                 }
             });
-            duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.CallLogActivity.6
+            duration.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.CallLogActivity.8
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (atomicBoolean.get()) {
@@ -2169,12 +2351,12 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showCallLinkSheet$28(final BottomSheet bottomSheet, final Theme.ResourcesProvider resourcesProvider, FrameLayout frameLayout, final String[] strArr, final Context context, boolean z, Runnable runnable, View view) {
-        ItemOptions.makeOptions(bottomSheet.container, resourcesProvider, frameLayout).add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda30
+        ItemOptions.makeOptions(bottomSheet.container, resourcesProvider, frameLayout).add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
                 CallLogActivity.lambda$showCallLinkSheet$26(strArr, bottomSheet, resourcesProvider);
             }
-        }).add(R.drawable.msg_qrcode, LocaleController.getString(R.string.GetQRCode), new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda31
+        }).add(R.drawable.msg_qrcode, LocaleController.getString(R.string.GetQRCode), new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
                 CallLogActivity.lambda$showCallLinkSheet$27(context, strArr);
@@ -2198,7 +2380,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showCallLinkSheet$29(Context context, String str, String[] strArr, Theme.ResourcesProvider resourcesProvider, final BottomSheet bottomSheet, View view) {
         ArrayList arrayList = null;
-        new ShareAlert(context, arrayList, str, false, strArr[0], false, resourcesProvider) { // from class: org.telegram.ui.CallLogActivity.7
+        new ShareAlert(context, arrayList, str, false, strArr[0], false, resourcesProvider) { // from class: org.telegram.ui.CallLogActivity.9
             @Override // org.telegram.ui.Components.ShareAlert
             protected void onSend(LongSparseArray longSparseArray, int i, TLRPC.TL_forumTopic tL_forumTopic, boolean z) {
                 String formatString;
@@ -2229,11 +2411,11 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     private void openCreateCall() {
         Bundle bundle = new Bundle();
         bundle.putBoolean("isCall", true);
-        presentFragment(new 8(bundle));
+        presentFragment(new 10(bundle));
     }
 
-    class 8 extends GroupCreateActivity {
-        8(Bundle bundle) {
+    class 10 extends GroupCreateActivity {
+        10(Bundle bundle) {
             super(bundle);
         }
 
@@ -2247,10 +2429,10 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                 } else {
                     TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
                     tL_users_getFullUser.id = getMessagesController().getInputUser(user.id);
-                    getConnectionsManager().sendRequest(tL_users_getFullUser, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$8$$ExternalSyntheticLambda0
+                    getConnectionsManager().sendRequest(tL_users_getFullUser, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$10$$ExternalSyntheticLambda0
                         @Override // org.telegram.tgnet.RequestDelegate
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                            CallLogActivity.8.this.lambda$onCallUsersSelected$1(user, z, tLObject, tL_error);
+                            CallLogActivity.10.this.lambda$onCallUsersSelected$1(user, z, tLObject, tL_error);
                         }
                     });
                     return;
@@ -2258,10 +2440,10 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             } else {
                 TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
                 createconferencecall.random_id = Utilities.random.nextInt();
-                ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$8$$ExternalSyntheticLambda1
+                ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$10$$ExternalSyntheticLambda1
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        CallLogActivity.8.this.lambda$onCallUsersSelected$3(z, hashSet, tLObject, tL_error);
+                        CallLogActivity.10.this.lambda$onCallUsersSelected$3(z, hashSet, tLObject, tL_error);
                     }
                 });
             }
@@ -2270,10 +2452,10 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onCallUsersSelected$1(final TLRPC.User user, final boolean z, final TLObject tLObject, TLRPC.TL_error tL_error) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$8$$ExternalSyntheticLambda2
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$10$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CallLogActivity.8.this.lambda$onCallUsersSelected$0(tLObject, user, z);
+                    CallLogActivity.10.this.lambda$onCallUsersSelected$0(tLObject, user, z);
                 }
             });
         }
@@ -2295,10 +2477,10 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onCallUsersSelected$3(final boolean z, final HashSet hashSet, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$8$$ExternalSyntheticLambda3
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$10$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CallLogActivity.8.this.lambda$onCallUsersSelected$2(tLObject, z, hashSet, tL_error);
+                    CallLogActivity.10.this.lambda$onCallUsersSelected$2(tLObject, z, hashSet, tL_error);
                 }
             });
         }
@@ -2349,7 +2531,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         alertDialog.showDelayed(500L);
         TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
         createconferencecall.random_id = Utilities.random.nextInt();
-        ConnectionsManager.getInstance(i).sendRequest(createconferencecall, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda18
+        ConnectionsManager.getInstance(i).sendRequest(createconferencecall, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda22
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 CallLogActivity.lambda$createCallLink$34(i, alertDialog, context, resourcesProvider, runnable, tLObject, tL_error);
@@ -2359,7 +2541,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$createCallLink$34(final int i, final AlertDialog alertDialog, final Context context, final Theme.ResourcesProvider resourcesProvider, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda19
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
                 CallLogActivity.lambda$createCallLink$33(TLObject.this, i, alertDialog, context, resourcesProvider, runnable);
@@ -2399,7 +2581,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             TLRPC.GroupCall groupCall2 = groupcall.call;
             tL_inputGroupCall2.id = groupCall2.id;
             tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-            ConnectionsManager.getInstance(i).sendRequest(exportgroupcallinvite, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda28
+            ConnectionsManager.getInstance(i).sendRequest(exportgroupcallinvite, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda32
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                     CallLogActivity.lambda$createCallLink$32(AlertDialog.this, context, i, exportgroupcallinvite, resourcesProvider, runnable, tLObject2, tL_error);
@@ -2413,7 +2595,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$createCallLink$32(final AlertDialog alertDialog, final Context context, final int i, final TL_phone.exportGroupCallInvite exportgroupcallinvite, final Theme.ResourcesProvider resourcesProvider, final Runnable runnable, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda33
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
                 CallLogActivity.lambda$createCallLink$31(TLObject.this, alertDialog, context, i, exportgroupcallinvite, resourcesProvider, runnable);
@@ -2430,5 +2612,35 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             alertDialog.dismiss();
         }
         AndroidUtilities.runOnUIThread(runnable);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void blur3_InvalidateBlur() {
+        if (Build.VERSION.SDK_INT < 31 || this.scrollableViewNoiseSuppressor == null) {
+            return;
+        }
+        int dp = AndroidUtilities.dp(48.0f);
+        int measuredHeight = (this.fragmentView.getMeasuredHeight() - this.navigationBarHeight) - AndroidUtilities.dp(8.0f);
+        int dp2 = measuredHeight - AndroidUtilities.dp(56.0f);
+        this.iBlur3PositionActionBar.set(0.0f, -dp, this.fragmentView.getMeasuredWidth(), this.actionBar.getMeasuredHeight() + dp);
+        this.iBlur3PositionMainTabs.set(0.0f, dp2, this.fragmentView.getMeasuredWidth(), measuredHeight);
+        this.iBlur3PositionMainTabs.inset(0.0f, LiteMode.isEnabled(262144) ? 0.0f : -AndroidUtilities.dp(48.0f));
+        this.scrollableViewNoiseSuppressor.setupRenderNodes(this.iBlur3Positions, this.hasMainTabs ? 2 : 1);
+        this.scrollableViewNoiseSuppressor.invalidateResultRenderNodes(this.iBlur3Capture, this.fragmentView.getMeasuredWidth(), this.fragmentView.getMeasuredHeight());
+    }
+
+    @Override // org.telegram.ui.MainTabsActivity.TabFragmentDelegate
+    public BlurredBackgroundSourceRenderNode getGlassSource() {
+        return this.iBlur3SourceGlass;
+    }
+
+    @Override // org.telegram.ui.MainTabsActivity.TabFragmentDelegate
+    public void onParentScrollToTop() {
+        if (this.layoutManager.findFirstVisibleItemPosition() < 15) {
+            this.listView.smoothScrollToPosition(0);
+        } else {
+            this.scrollHelper.setScrollDirection(1);
+            this.scrollHelper.scrollToPosition(0, 0, false, true);
+        }
     }
 }

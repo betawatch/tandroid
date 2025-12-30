@@ -1,14 +1,10 @@
 package com.google.android.recaptcha.internal;
 
 /* loaded from: classes.dex */
-public final class zzdq implements zzdd {
-    public static final zzdq zza = new zzdq();
+public final class zzdq {
+    public static final zzdq zza = new zzdq(0);
+    public static final zzdq zzb = new zzdq(1);
 
-    private zzdq() {
-    }
-
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        zzcjVar.zze();
+    public zzdq(int i) {
     }
 }

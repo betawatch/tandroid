@@ -497,6 +497,13 @@ public class CancellableContinuationImpl extends DispatchedTask implements Cance
         dispatchResume(this.resumeMode);
     }
 
+    @Override // kotlinx.coroutines.CancellableContinuation
+    public void resumeUndispatched(CoroutineDispatcher coroutineDispatcher, Object obj) {
+        Continuation continuation = this.delegate;
+        DispatchedContinuation dispatchedContinuation = continuation instanceof DispatchedContinuation ? (DispatchedContinuation) continuation : null;
+        resumeImpl$default(this, obj, (dispatchedContinuation != null ? dispatchedContinuation.dispatcher : null) == coroutineDispatcher ? 4 : this.resumeMode, null, 4, null);
+    }
+
     @Override // kotlinx.coroutines.DispatchedTask
     public Object getSuccessfulResult$kotlinx_coroutines_core(Object obj) {
         return obj instanceof CompletedContinuation ? ((CompletedContinuation) obj).result : obj;

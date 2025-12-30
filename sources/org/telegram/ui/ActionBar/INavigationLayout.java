@@ -29,8 +29,6 @@ public interface INavigationLayout {
 
     boolean addFragmentToStack(BaseFragment baseFragment, int i);
 
-    boolean allowSwipe();
-
     void animateThemedValues(ThemeAnimationSettings themeAnimationSettings, Runnable runnable);
 
     void animateThemedValues(Theme.ThemeInfo themeInfo, int i, boolean z, boolean z2);
@@ -44,8 +42,6 @@ public interface INavigationLayout {
     void closeLastFragment(boolean z);
 
     void dismissDialogs();
-
-    void drawCurrentPreviewFragment(Canvas canvas, Drawable drawable);
 
     void drawHeaderShadow(Canvas canvas, int i);
 
@@ -62,8 +58,6 @@ public interface INavigationLayout {
     BottomSheet getBottomSheet();
 
     int getBottomTabsHeight(boolean z);
-
-    float getCurrentPreviewFragmentAlpha();
 
     DrawerLayoutContainer getDrawerLayoutContainer();
 

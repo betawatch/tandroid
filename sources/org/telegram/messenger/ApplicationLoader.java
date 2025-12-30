@@ -20,7 +20,6 @@ import android.os.SystemClock;
 import android.view.ViewGroup;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Locale;
 import org.json.JSONObject;
 import org.telegram.messenger.PushListenerController;
@@ -28,9 +27,8 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BaseFragment;
-import org.telegram.ui.Adapters.DrawerLayoutAdapter;
 import org.telegram.ui.Components.ForegroundDetector;
-import org.telegram.ui.IUpdateButton;
+import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.IUpdateLayout;
 import org.telegram.ui.LauncherIconController;
 
@@ -58,6 +56,9 @@ public class ApplicationLoader extends Application {
     private static PushListenerController.IPushListenerServiceProvider pushProvider;
     public static long startTime;
 
+    public void addItemOptions(ItemOptions itemOptions) {
+    }
+
     protected void appCenterLogInternal(Throwable th) {
     }
 
@@ -83,10 +84,6 @@ public class ApplicationLoader extends Application {
     }
 
     public void downloadUpdate() {
-    }
-
-    public boolean extendDrawer(ArrayList<DrawerLayoutAdapter.Item> arrayList) {
-        return false;
     }
 
     public File getDownloadedUpdateFile() {
@@ -173,11 +170,7 @@ public class ApplicationLoader extends Application {
     protected void startAppCenterInternal(Activity activity) {
     }
 
-    public IUpdateButton takeUpdateButton(Context context) {
-        return null;
-    }
-
-    public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup, ViewGroup viewGroup2) {
+    public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup) {
         return null;
     }
 

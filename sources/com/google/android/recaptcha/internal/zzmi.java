@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
 /* loaded from: classes.dex */
-public final class zzmi {
+public class zzmi {
+    public static final /* synthetic */ int zzb = 0;
 }

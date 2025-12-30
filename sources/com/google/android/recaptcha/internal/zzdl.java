@@ -1,36 +1,23 @@
 package com.google.android.recaptcha.internal;
 
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import kotlin.collections.ArraysKt;
+import android.content.Context;
+import java.io.File;
+import java.io.IOException;
+import kotlin.io.FilesKt;
 
 /* loaded from: classes.dex */
-public final class zzdl implements zzdd {
-    public static final zzdl zza = new zzdl();
-
-    private zzdl() {
+public final class zzdl {
+    public zzdl(Context context) {
     }
 
-    @Override // com.google.android.recaptcha.internal.zzdd
-    public final void zza(int i, zzcj zzcjVar, zzpq... zzpqVarArr) {
-        int length = zzpqVarArr.length;
-        if (length < 2) {
-            throw new zzae(4, 3, null);
+    public static final byte[] zza(File file) {
+        return FilesKt.readBytes(file);
+    }
+
+    public static final void zzb(File file, byte[] bArr) {
+        if (file.exists() && !file.delete()) {
+            throw new IOException("Unable to delete existing encrypted file");
         }
-        Object zza2 = zzcjVar.zzc().zza(zzpqVarArr[0]);
-        if (true != (zza2 instanceof Method)) {
-            zza2 = null;
-        }
-        Method method = (Method) zza2;
-        if (method == null) {
-            throw new zzae(4, 5, null);
-        }
-        Object zza3 = zzcjVar.zzc().zza(zzpqVarArr[1]);
-        Object[] zzh = zzcjVar.zzc().zzh(ArraysKt.toList(zzpqVarArr).subList(2, length));
-        try {
-            zzcjVar.zzc().zzf(i, method.invoke(zza3, Arrays.copyOf(zzh, zzh.length)));
-        } catch (Exception e) {
-            throw new zzae(6, 15, e);
-        }
+        FilesKt.writeBytes(file, bArr);
     }
 }

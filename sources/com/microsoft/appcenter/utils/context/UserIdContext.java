@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Set;
 
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class UserIdContext {
     private static UserIdContext sInstance;
     private final Set mListeners = Collections.newSetFromMap(new ConcurrentHashMap());

@@ -1,30 +1,12 @@
 package com.google.android.recaptcha.internal;
 
 /* loaded from: classes.dex */
-public final class zzou extends zzin implements zzkf {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private zzou() {
-        super(r0);
-        zzov zzovVar;
-        zzovVar = zzov.zzb;
+final class zzou extends ThreadLocal {
+    zzou() {
     }
 
-    public final zzou zzd(String str) {
-        zzm();
-        zzov.zzi((zzov) this.zza, str);
-        return this;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzou(zzor zzorVar) {
-        super(r1);
-        zzov zzovVar;
-        zzovVar = zzov.zzb;
+    @Override // java.lang.ThreadLocal
+    protected final /* synthetic */ Object initialValue() {
+        return new zzov();
     }
 }

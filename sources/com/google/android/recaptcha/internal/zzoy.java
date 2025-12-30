@@ -1,24 +1,15 @@
 package com.google.android.recaptcha.internal;
 
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+
 /* loaded from: classes.dex */
-public final class zzoy extends zzin implements zzkf {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private zzoy() {
-        super(r0);
-        zzoz zzozVar;
-        zzozVar = zzoz.zzb;
+abstract class zzoy extends zzpa {
+    zzoy() {
+        ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN);
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    /* synthetic */ zzoy(zzor zzorVar) {
-        super(r1);
-        zzoz zzozVar;
-        zzozVar = zzoz.zzb;
+    protected void zza(byte[] bArr, int i, int i2) {
+        throw null;
     }
 }

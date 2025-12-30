@@ -1,40 +1,80 @@
 package com.google.android.recaptcha.internal;
 
+import java.util.Collection;
+import java.util.Iterator;
+
 /* loaded from: classes.dex */
-public final class zzml extends zzit implements zzkf {
-    private static final zzml zzb;
-    private int zzd;
-    private zzib zze;
-    private int zzf;
-
-    static {
-        zzml zzmlVar = new zzml();
-        zzb = zzmlVar;
-        zzit.zzD(zzml.class, zzmlVar);
+public abstract class zzml extends zzmm implements Collection {
+    protected zzml() {
     }
 
-    private zzml() {
+    public boolean add(Object obj) {
+        return zzc().add(obj);
     }
 
-    @Override // com.google.android.recaptcha.internal.zzit
-    protected final Object zzh(int i, Object obj, Object obj2) {
-        int i2 = i - 1;
-        if (i2 == 0) {
-            return (byte) 1;
-        }
-        if (i2 == 2) {
-            return zzit.zzA(zzb, "\u0000\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဉ\u0000\u0002\u0004", new Object[]{"zzd", "zze", "zzf"});
-        }
-        if (i2 == 3) {
-            return new zzml();
-        }
-        zzmj zzmjVar = null;
-        if (i2 == 4) {
-            return new zzmk(zzmjVar);
-        }
-        if (i2 != 5) {
-            return null;
-        }
-        return zzb;
+    public boolean addAll(Collection collection) {
+        return zzc().addAll(collection);
+    }
+
+    @Override // java.util.Collection
+    public final void clear() {
+        zzc().clear();
+    }
+
+    @Override // java.util.Collection
+    public final boolean contains(Object obj) {
+        return zzc().contains(obj);
+    }
+
+    @Override // java.util.Collection
+    public final boolean containsAll(Collection collection) {
+        return zzc().containsAll(collection);
+    }
+
+    @Override // java.util.Collection
+    public final boolean isEmpty() {
+        return zzc().isEmpty();
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public final Iterator iterator() {
+        return zzc().iterator();
+    }
+
+    @Override // java.util.Collection
+    public final boolean remove(Object obj) {
+        return zzc().remove(obj);
+    }
+
+    @Override // java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        return zzc().removeAll(collection);
+    }
+
+    @Override // java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        return zzc().retainAll(collection);
+    }
+
+    @Override // java.util.Collection
+    public final int size() {
+        return zzc().size();
+    }
+
+    @Override // java.util.Collection
+    public final Object[] toArray() {
+        return zzc().toArray();
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzmm
+    protected /* bridge */ /* synthetic */ Object zzb() {
+        throw null;
+    }
+
+    protected abstract Collection zzc();
+
+    @Override // java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        return zzc().toArray(objArr);
     }
 }

@@ -10,6 +10,7 @@ import org.telegram.messenger.SharedConfig;
 /* loaded from: classes5.dex */
 public class BlurredRecyclerView extends RecyclerListView {
     public int additionalClipBottom;
+    public boolean alwaysDrawChild;
     public int blurTopPadding;
     public int bottomPadding;
     boolean globalIgnoreLayout;
@@ -68,10 +69,10 @@ public class BlurredRecyclerView extends RecyclerListView {
 
     @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j) {
-        if (view.getY() + view.getMeasuredHeight() < this.blurTopPadding) {
-            return true;
+        if (view.getY() + view.getMeasuredHeight() >= this.blurTopPadding || this.alwaysDrawChild) {
+            return super.drawChild(canvas, view, j);
         }
-        return super.drawChild(canvas, view, j);
+        return true;
     }
 
     @Override // android.view.View

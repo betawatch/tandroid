@@ -1,33 +1,42 @@
 package com.google.android.recaptcha.internal;
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-
 /* loaded from: classes.dex */
-final class zzkn {
-    public static final /* synthetic */ int zza = 0;
-    private static final zzkn zzb = new zzkn();
-    private final ConcurrentMap zzd = new ConcurrentHashMap();
-    private final zzks zzc = new zzjw();
+public final class zzkn implements zzjt {
+    public static final zzkn zza = new zzkn();
 
     private zzkn() {
     }
 
-    public static zzkn zza() {
-        return zzb;
-    }
-
-    public final zzkr zzb(Class cls) {
-        zzjc.zzc(cls, "messageType");
-        zzkr zzkrVar = (zzkr) this.zzd.get(cls);
-        if (zzkrVar == null) {
-            zzkrVar = this.zzc.zza(cls);
-            zzjc.zzc(cls, "messageType");
-            zzkr zzkrVar2 = (zzkr) this.zzd.putIfAbsent(cls, zzkrVar);
-            if (zzkrVar2 != null) {
-                return zzkrVar2;
-            }
+    @Override // com.google.android.recaptcha.internal.zzjt
+    public final void zza(int i, zziz zzizVar, zzzt... zzztVarArr) {
+        if (zzztVarArr.length != 2) {
+            throw new zzdm(4, 3, null);
         }
-        return zzkrVar;
+        Object zza2 = zzizVar.zzc().zza(zzztVarArr[0]);
+        if (true != (zza2 instanceof int[])) {
+            zza2 = null;
+        }
+        int[] iArr = (int[]) zza2;
+        if (iArr == null) {
+            throw new zzdm(4, 5, null);
+        }
+        Object zza3 = zzizVar.zzc().zza(zzztVarArr[1]);
+        if (true != (zza3 instanceof String)) {
+            zza3 = null;
+        }
+        String str = (String) zza3;
+        if (str == null) {
+            throw new zzdm(4, 5, null);
+        }
+        zzja zzc = zzizVar.zzc();
+        StringBuilder sb = new StringBuilder();
+        try {
+            for (int i2 : iArr) {
+                sb.append(str.charAt(i2));
+            }
+            zzc.zze(i, sb.toString());
+        } catch (Exception e) {
+            throw new zzdm(4, 22, e);
+        }
     }
 }

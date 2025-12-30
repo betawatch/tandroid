@@ -1,129 +1,144 @@
 package com.google.android.recaptcha.internal;
 
-import android.app.Application;
-import android.webkit.WebView;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
-import kotlin.Result;
-import kotlin.ResultKt;
-import kotlin.Unit;
+import java.util.Map;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.collections.CollectionsKt;
+import kotlin.collections.MapsKt;
 import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.SuspendLambda;
-import kotlin.jvm.functions.Function2;
-import kotlin.sequences.SequencesKt;
-import kotlinx.coroutines.AwaitKt;
-import kotlinx.coroutines.BuildersKt;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.JobKt;
-import kotlinx.coroutines.JobKt__JobKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.ranges.RangesKt;
 
 /* loaded from: classes.dex */
-final class zzaj extends SuspendLambda implements Function2 {
-    Object zza;
-    int zzb;
-    final /* synthetic */ Application zzc;
-    final /* synthetic */ zzab zzd;
-    final /* synthetic */ String zze;
-    final /* synthetic */ zzbq zzf;
-    final /* synthetic */ zzbd zzg;
-    final /* synthetic */ zzbg zzh;
-    final /* synthetic */ long zzi;
-    final /* synthetic */ zzt zzj;
+public final class zzaj extends zzg {
+    private final List zza;
+    private zzqm zzb;
+    private final Map zzc;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    zzaj(Application application, zzab zzabVar, String str, zzbq zzbqVar, zzbd zzbdVar, zzt zztVar, WebView webView, zzbg zzbgVar, long j, Continuation continuation) {
-        super(2, continuation);
-        this.zzc = application;
-        this.zzd = zzabVar;
-        this.zze = str;
-        this.zzf = zzbqVar;
-        this.zzg = zzbdVar;
-        this.zzj = zztVar;
-        this.zzh = zzbgVar;
-        this.zzi = j;
+    /* JADX WARN: Multi-variable type inference failed */
+    public zzaj() {
+        this(null, 1, 0 == true ? 1 : 0);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Continuation create(Object obj, Continuation continuation) {
-        return new zzaj(this.zzc, this.zzd, this.zze, this.zzf, this.zzg, this.zzj, null, this.zzh, this.zzi, continuation);
+    public /* synthetic */ zzaj(List list, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this.zza = CollectionsKt.listOf((Object[]) new zzar[]{new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null)});
+        this.zzc = new LinkedHashMap();
     }
 
-    @Override // kotlin.jvm.functions.Function2
-    public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaj) create((CoroutineScope) obj, (Continuation) obj2)).invokeSuspend(Unit.INSTANCE);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x008e, code lost:
-    
-        if (r3 != r1) goto L7;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0058, code lost:
-    
-        if (r2 != r1) goto L12;
-     */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object invokeSuspend(Object obj) {
-        Object withContext;
-        zzoe zzoeVar;
-        Object zzb;
-        Throwable th;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.zzb;
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
-            zzam zzamVar = zzam.zza;
-            Application application = this.zzc;
-            zzab zzabVar = this.zzd;
-            String str = this.zze;
-            zzbq zzbqVar = this.zzf;
-            zzbd zzbdVar = this.zzg;
-            zzt zztVar = this.zzj;
-            this.zzb = 1;
-            withContext = BuildersKt.withContext(zztVar.zza().getCoroutineContext(), new zzal(application, str, zzbdVar, zzbqVar, zzabVar, null), this);
-        } else {
-            if (i != 1) {
-                if (i != 2) {
-                    th = (Throwable) this.zza;
-                    ResultKt.throwOnFailure(obj);
-                    zzam zzamVar2 = zzam.zza;
-                    zzam.zzf(new zzg(null, 1, null));
-                    throw th;
-                }
-                zzoeVar = (zzoe) this.zza;
-                ResultKt.throwOnFailure(obj);
-                zzb = ((Result) obj).unbox-impl();
-                zzoe zzoeVar2 = zzoeVar;
-                zzt zztVar2 = this.zzj;
-                Throwable th2 = Result.exceptionOrNull-impl(zzb);
-                if (th2 == null) {
-                    Application application2 = this.zzc;
-                    zzam zzamVar3 = zzam.zza;
-                    return new zzaw(application2, zzam.zze(), this.zze, this.zzj, this.zzd, zzoeVar2, this.zzg, this.zzh, new zzq(application2), new zzbs());
-                }
-                JobKt__JobKt.cancelChildren$default(zztVar2.zzc().getCoroutineContext(), null, 1, null);
-                List list = SequencesKt.toList(JobKt.getJob(zztVar2.zzc().getCoroutineContext()).getChildren());
-                this.zza = th2;
-                this.zzb = 3;
-                if (AwaitKt.joinAll(list, this) != coroutine_suspended) {
-                    th = th2;
-                    zzam zzamVar22 = zzam.zza;
-                    zzam.zzf(new zzg(null, 1, null));
-                    throw th;
-                }
-                return coroutine_suspended;
+    /* JADX INFO: Access modifiers changed from: private */
+    public final zzxx zzp(String str) {
+        Map emptyMap;
+        List list = (List) this.zzc.remove(str);
+        if (list != null) {
+            List<zzat> list2 = list;
+            emptyMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(list2, 10)), 16));
+            for (zzat zzatVar : list2) {
+                emptyMap.put(Integer.valueOf(zzatVar.zzb()), zzatVar);
             }
-            ResultKt.throwOnFailure(obj);
-            withContext = obj;
+        } else {
+            emptyMap = MapsKt.emptyMap();
         }
-        zzoeVar = (zzoe) withContext;
-        zzam.zze().zzd(new zzez(new WebView(this.zzc), this.zze, this.zzc, this.zzd, this.zzg, this.zzj, this.zzh, this.zzf));
-        long j = this.zzi;
-        zzg zze = zzam.zze();
-        this.zza = zzoeVar;
-        this.zzb = 2;
-        zzb = zze.zzb(j, zzoeVar, this);
+        zzyo zzr = zzr(emptyMap, str);
+        zzxw zzf = zzxx.zzf();
+        zzf.zze(str);
+        zzxq zzf2 = zzxr.zzf();
+        byte[] zzd = zzr.zzd();
+        zzf2.zze(zzpp.zzh().zzi(zzd, 0, zzd.length));
+        zzf.zzq(zzf2);
+        return (zzxx) zzf.zzk();
+    }
+
+    private final zzym zzq(zzat zzatVar) {
+        zzqm zzqmVar;
+        zzyk zzf = zzym.zzf();
+        zzf.zzq(3);
+        if (zzatVar instanceof zzal) {
+            zzyx zza = ((zzal) zzatVar).zza();
+            zzqm zzqmVar2 = this.zzb;
+            zzqmVar = zzqmVar2 != null ? zzqmVar2 : null;
+            byte[] zzd = zza.zzd();
+            zzf.zzf(zzdn.zza(zzpp.zzh().zzi(zzd, 0, zzd.length), zzqmVar));
+        } else {
+            if (!(zzatVar instanceof zzak)) {
+                throw new NoWhenBranchMatchedException();
+            }
+            zzyt zza2 = ((zzak) zzatVar).zza();
+            zzqm zzqmVar3 = this.zzb;
+            zzqmVar = zzqmVar3 != null ? zzqmVar3 : null;
+            byte[] zzd2 = zza2.zzd();
+            zzf.zze(zzdn.zza(zzpp.zzh().zzi(zzd2, 0, zzd2.length), zzqmVar));
+        }
+        return (zzym) zzf.zzk();
+    }
+
+    private final zzyo zzr(Map map, String str) {
+        zzyn zzf = zzyo.zzf();
+        zzf.zzq(str);
+        List list = this.zza;
+        ArrayList<zzar> arrayList = new ArrayList();
+        for (Object obj : list) {
+            if (((zzar) obj).zzi()) {
+                arrayList.add(obj);
+            }
+        }
+        for (zzar zzarVar : arrayList) {
+            if (!map.containsKey(Integer.valueOf(zzarVar.zza()))) {
+                int zza = zzarVar.zza();
+                zzys zzf2 = zzyt.zzf();
+                zzf2.zzf(zza);
+                zzf2.zzr(13);
+                zzf2.zzq(27);
+                zzf.zzf(zzq(new zzak(zza, (zzyt) zzf2.zzk())));
+            }
+        }
+        Collection values = map.values();
+        ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(values, 10));
+        Iterator it = values.iterator();
+        while (it.hasNext()) {
+            arrayList2.add(zzq((zzat) it.next()));
+        }
+        zzf.zze(arrayList2);
+        return (zzyo) zzf.zzk();
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzg
+    protected final Object zza(String str, Continuation continuation) {
+        return zzp(str);
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzg
+    protected final Object zzb(String str, Continuation continuation) {
+        return new zzhg(new zzag(this, str, null));
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzg
+    protected final Object zzd(zzxn zzxnVar, Continuation continuation) {
+        return new zzhg(new zzai(zzxnVar, this, null));
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzg
+    protected final void zzh(zzyg zzygVar) {
+        Iterator it = this.zza.iterator();
+        while (it.hasNext()) {
+            ((zzar) it.next()).zzh(zzygVar);
+        }
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzg
+    protected final int zzj() {
+        return 35;
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzg
+    protected final int zzk() {
+        return 34;
+    }
+
+    public final Map zzn() {
+        return this.zzc;
     }
 }

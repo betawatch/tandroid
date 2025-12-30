@@ -24,6 +24,7 @@ import javax.microedition.khronos.opengles.GL10;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.EmuDetector;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.Premium.GLIcon.GLIconTextureView;
@@ -199,7 +200,7 @@ public class GLIconTextureView extends TextureView implements TextureView.Surfac
             GLIconTextureView.this.animatorSet = new AnimatorSet();
             ValueAnimator ofFloat = ValueAnimator.ofFloat(GLIconTextureView.this.mRenderer.angleX, f);
             ofFloat.addUpdateListener(GLIconTextureView.this.xUpdater);
-            long j = 220;
+            long j = NotificationCenter.starBalanceUpdated;
             ofFloat.setDuration(j);
             CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
             ofFloat.setInterpolator(cubicBezierInterpolator);
