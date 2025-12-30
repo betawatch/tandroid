@@ -23,6 +23,7 @@ public class ChatActivitySideControlsButtonsLayout extends FrameLayout implement
     private final String[] buttonDescriptions;
     private final ButtonHolder[] buttonHolders;
     private final BlurredBackgroundColorProvider colorProvider;
+    private int gravity;
     private ButtonOnClickListener onClickListener;
     private ButtonOnLongClickListener onLongClickListener;
     private final Theme.ResourcesProvider resourcesProvider;
@@ -42,9 +43,14 @@ public class ChatActivitySideControlsButtonsLayout extends FrameLayout implement
         super(context);
         this.buttonDescriptions = new String[]{LocaleController.getString(R.string.AttachMenu), LocaleController.getString(R.string.AccDescrPageDown), LocaleController.getString(R.string.AccDescrMentionDown), LocaleController.getString(R.string.AccDescrReactionMentionDown), LocaleController.getString(R.string.AccDescrSearchPrev), LocaleController.getString(R.string.AccDescrSearchNext)};
         this.buttonHolders = new ButtonHolder[6];
+        this.gravity = 83;
         this.blurredBackgroundDrawableViewFactory = blurredBackgroundDrawableViewFactory;
         this.colorProvider = blurredBackgroundColorProvider;
         this.resourcesProvider = resourcesProvider;
+    }
+
+    public void setGravity(int i) {
+        this.gravity = i;
     }
 
     public void setOnClickListener(ButtonOnClickListener buttonOnClickListener) {
@@ -181,7 +187,7 @@ public class ChatActivitySideControlsButtonsLayout extends FrameLayout implement
             if (i == 1) {
                 create.reverseCounter();
             }
-            addView(create, LayoutHelper.createFrame(i2, i2 + 8, 83));
+            addView(create, LayoutHelper.createFrame(i2, i2 + 8, this.gravity));
             this.buttonHolders[i] = new ButtonHolder(create, boolAnimator);
             checkButtonsPositionsAndVisibility();
         }

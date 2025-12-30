@@ -1114,6 +1114,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private ActionBarMenuItem.Item timeItem2;
     private HintView timerHintView;
     private boolean toPullingDownTransition;
+    private ChatActivitySideControlsButtonsLayout topButtonsLayout;
     private BlurredFrameLayout topChatPanelView;
     private BlurredFrameLayout topChatPanelView2;
     private AnimatorSet topChatPanelView2Animator;
@@ -4185,46 +4186,46 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:336:0x0ae3  */
     /* JADX WARN: Removed duplicated region for block: B:339:0x0b5e  */
     /* JADX WARN: Removed duplicated region for block: B:342:0x0c59  */
-    /* JADX WARN: Removed duplicated region for block: B:345:0x0d05  */
-    /* JADX WARN: Removed duplicated region for block: B:348:0x0d4b  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x0d7a  */
-    /* JADX WARN: Removed duplicated region for block: B:355:0x0d94  */
-    /* JADX WARN: Removed duplicated region for block: B:358:0x0dbd  */
-    /* JADX WARN: Removed duplicated region for block: B:363:0x0e2e  */
-    /* JADX WARN: Removed duplicated region for block: B:366:0x0ebe  */
-    /* JADX WARN: Removed duplicated region for block: B:369:0x0f5c  */
-    /* JADX WARN: Removed duplicated region for block: B:374:0x0ff5  */
-    /* JADX WARN: Removed duplicated region for block: B:377:0x1016  */
-    /* JADX WARN: Removed duplicated region for block: B:380:0x1046  */
-    /* JADX WARN: Removed duplicated region for block: B:383:0x1074  */
-    /* JADX WARN: Removed duplicated region for block: B:389:0x1090  */
-    /* JADX WARN: Removed duplicated region for block: B:392:0x1099  */
-    /* JADX WARN: Removed duplicated region for block: B:396:0x10ab  */
-    /* JADX WARN: Removed duplicated region for block: B:400:0x10f8  */
-    /* JADX WARN: Removed duplicated region for block: B:403:0x1157  */
-    /* JADX WARN: Removed duplicated region for block: B:406:0x12ed  */
-    /* JADX WARN: Removed duplicated region for block: B:416:0x1333  */
-    /* JADX WARN: Removed duplicated region for block: B:429:0x1546  */
-    /* JADX WARN: Removed duplicated region for block: B:448:0x1655  */
-    /* JADX WARN: Removed duplicated region for block: B:451:0x168b  */
-    /* JADX WARN: Removed duplicated region for block: B:459:0x16f8  */
-    /* JADX WARN: Removed duplicated region for block: B:462:0x1712  */
-    /* JADX WARN: Removed duplicated region for block: B:468:0x1772  */
-    /* JADX WARN: Removed duplicated region for block: B:471:0x17c8  */
-    /* JADX WARN: Removed duplicated region for block: B:474:0x17fb  */
-    /* JADX WARN: Removed duplicated region for block: B:478:0x183a  */
-    /* JADX WARN: Removed duplicated region for block: B:481:0x18dd  */
-    /* JADX WARN: Removed duplicated region for block: B:482:0x1842  */
-    /* JADX WARN: Removed duplicated region for block: B:485:0x1933  */
-    /* JADX WARN: Removed duplicated region for block: B:488:0x196b  */
-    /* JADX WARN: Removed duplicated region for block: B:491:0x1994  */
-    /* JADX WARN: Removed duplicated region for block: B:496:0x19bb  */
-    /* JADX WARN: Removed duplicated region for block: B:506:0x17d3  */
-    /* JADX WARN: Removed duplicated region for block: B:515:0x1021  */
-    /* JADX WARN: Removed duplicated region for block: B:516:0x0ff7  */
-    /* JADX WARN: Removed duplicated region for block: B:517:0x0ec0  */
-    /* JADX WARN: Removed duplicated region for block: B:518:0x0d97  */
-    /* JADX WARN: Removed duplicated region for block: B:519:0x0d7c  */
+    /* JADX WARN: Removed duplicated region for block: B:345:0x0d3a  */
+    /* JADX WARN: Removed duplicated region for block: B:348:0x0d80  */
+    /* JADX WARN: Removed duplicated region for block: B:352:0x0daf  */
+    /* JADX WARN: Removed duplicated region for block: B:355:0x0dc9  */
+    /* JADX WARN: Removed duplicated region for block: B:358:0x0df2  */
+    /* JADX WARN: Removed duplicated region for block: B:363:0x0e63  */
+    /* JADX WARN: Removed duplicated region for block: B:366:0x0ef3  */
+    /* JADX WARN: Removed duplicated region for block: B:369:0x0f91  */
+    /* JADX WARN: Removed duplicated region for block: B:374:0x102a  */
+    /* JADX WARN: Removed duplicated region for block: B:377:0x104b  */
+    /* JADX WARN: Removed duplicated region for block: B:380:0x107b  */
+    /* JADX WARN: Removed duplicated region for block: B:383:0x10a9  */
+    /* JADX WARN: Removed duplicated region for block: B:389:0x10c5  */
+    /* JADX WARN: Removed duplicated region for block: B:392:0x10ce  */
+    /* JADX WARN: Removed duplicated region for block: B:396:0x10e0  */
+    /* JADX WARN: Removed duplicated region for block: B:400:0x112d  */
+    /* JADX WARN: Removed duplicated region for block: B:403:0x118c  */
+    /* JADX WARN: Removed duplicated region for block: B:406:0x1322  */
+    /* JADX WARN: Removed duplicated region for block: B:416:0x1368  */
+    /* JADX WARN: Removed duplicated region for block: B:429:0x157b  */
+    /* JADX WARN: Removed duplicated region for block: B:448:0x168a  */
+    /* JADX WARN: Removed duplicated region for block: B:451:0x16c0  */
+    /* JADX WARN: Removed duplicated region for block: B:459:0x172d  */
+    /* JADX WARN: Removed duplicated region for block: B:462:0x1747  */
+    /* JADX WARN: Removed duplicated region for block: B:468:0x17a7  */
+    /* JADX WARN: Removed duplicated region for block: B:471:0x17fd  */
+    /* JADX WARN: Removed duplicated region for block: B:474:0x1830  */
+    /* JADX WARN: Removed duplicated region for block: B:478:0x186f  */
+    /* JADX WARN: Removed duplicated region for block: B:481:0x1912  */
+    /* JADX WARN: Removed duplicated region for block: B:482:0x1877  */
+    /* JADX WARN: Removed duplicated region for block: B:485:0x1968  */
+    /* JADX WARN: Removed duplicated region for block: B:488:0x19a0  */
+    /* JADX WARN: Removed duplicated region for block: B:491:0x19c9  */
+    /* JADX WARN: Removed duplicated region for block: B:496:0x19f0  */
+    /* JADX WARN: Removed duplicated region for block: B:506:0x1808  */
+    /* JADX WARN: Removed duplicated region for block: B:515:0x1056  */
+    /* JADX WARN: Removed duplicated region for block: B:516:0x102c  */
+    /* JADX WARN: Removed duplicated region for block: B:517:0x0ef5  */
+    /* JADX WARN: Removed duplicated region for block: B:518:0x0dcc  */
+    /* JADX WARN: Removed duplicated region for block: B:519:0x0db1  */
     /* JADX WARN: Removed duplicated region for block: B:525:0x0923  */
     /* JADX WARN: Type inference failed for: r12v5, types: [android.view.View, android.widget.FrameLayout, java.lang.String, org.telegram.ui.ChatActivity$1, org.telegram.ui.Components.InstantCameraView] */
     /* JADX WARN: Type inference failed for: r13v0 */
@@ -4432,7 +4433,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         } else {
             final int i11 = this.startLoadFromDate;
             if (i11 != 0) {
-                this.actionBar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda57
+                this.actionBar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda55
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         ChatActivity.this.lambda$createView$20(i11, view);
@@ -4445,7 +4446,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 tL_messages_getHistory.offset_date = this.startLoadFromDate;
                 tL_messages_getHistory.limit = 1;
                 tL_messages_getHistory.add_offset = i;
-                getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getHistory, new RequestDelegate() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda68
+                getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getHistory, new RequestDelegate() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda66
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         ChatActivity.this.lambda$createView$24(tLObject, tL_error);
@@ -4597,7 +4598,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 this.chatNotificationsPopupWrapper = chatNotificationsPopupWrapper;
                 ActionBarMenuItem.Item lazilyAddSwipeBackItem = this.headerItem.lazilyAddSwipeBackItem(R.drawable.msg_mute, r8, r8, chatNotificationsPopupWrapper.windowLayout);
                 this.muteItem = lazilyAddSwipeBackItem;
-                lazilyAddSwipeBackItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda78
+                lazilyAddSwipeBackItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda77
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         ChatActivity.this.lambda$createView$26(view);
@@ -5145,8 +5146,26 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         this.botAdView = r8;
                         this.bizBotButton = r8;
                         ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout = new ChatActivitySideControlsButtonsLayout(context, this.resourceProvider, this.blurredBackgroundColorProvider, this.glassBackgroundDrawableFactory);
-                        this.sideControlsButtonsLayout = chatActivitySideControlsButtonsLayout;
+                        this.topButtonsLayout = chatActivitySideControlsButtonsLayout;
                         chatActivitySideControlsButtonsLayout.setOnClickListener(new ButtonOnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda47
+                            @Override // org.telegram.ui.Components.chat.layouts.ButtonOnClickListener
+                            public final void onClick(int i21, View view2) {
+                                ChatActivity.this.onSideControlButtonOnClick(i21, view2);
+                            }
+                        });
+                        this.topButtonsLayout.setOnLongClickListener(new ButtonOnLongClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda48
+                            @Override // org.telegram.ui.Components.chat.layouts.ButtonOnLongClickListener
+                            public final boolean onLongClick(int i21, View view2) {
+                                boolean onSideControlButtonOnLongClick;
+                                onSideControlButtonOnLongClick = ChatActivity.this.onSideControlButtonOnLongClick(i21, view2);
+                                return onSideControlButtonOnLongClick;
+                            }
+                        });
+                        this.topButtonsLayout.setGravity(53);
+                        this.contentView.addView(this.topButtonsLayout, LayoutHelper.createFrame(57, NotificationCenter.currentUserPremiumStatusChanged, 53));
+                        ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout2 = new ChatActivitySideControlsButtonsLayout(context, this.resourceProvider, this.blurredBackgroundColorProvider, this.glassBackgroundDrawableFactory);
+                        this.sideControlsButtonsLayout = chatActivitySideControlsButtonsLayout2;
+                        chatActivitySideControlsButtonsLayout2.setOnClickListener(new ButtonOnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda47
                             @Override // org.telegram.ui.Components.chat.layouts.ButtonOnClickListener
                             public final void onClick(int i21, View view2) {
                                 ChatActivity.this.onSideControlButtonOnClick(i21, view2);
@@ -5928,7 +5947,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         } else {
                             this.chatActivityEnterView.setDelegate(new ChatActivityEnterViewDelegate());
                         }
-                        this.chatActivityEnterView.setSideButtonsForAttach(this.sideControlsButtonsLayout);
+                        this.chatActivityEnterView.setSideButtonsForAttach(this.topButtonsLayout);
                         this.chatActivityEnterView.setInAppInsetsController(this.windowInsetsStateHolder);
                         this.chatActivityEnterView.setDialogId(this.dialog_id, this.currentAccount);
                         chatFull = this.chatInfo;
@@ -5970,7 +5989,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 ChatActivity.this.lambda$createView$45(view3);
                             }
                         });
-                        this.actionsButtonsLayout.setReplyButtonOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda55
+                        this.actionsButtonsLayout.setReplyButtonOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda56
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view3) {
                                 ChatActivity.this.lambda$createView$46(view3);
@@ -6026,7 +6045,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         final FrameLayout frameLayout3 = new FrameLayout(context);
                         this.chatActivityEnterTopView.addReplyView(frameLayout3, LayoutHelper.createFrame(-1, -1.0f, 0, 0.0f, 0.0f, 52.0f, 0.0f));
                         final boolean[] zArr = new boolean[1];
-                        frameLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda56
+                        frameLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda57
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view3) {
                                 ChatActivity.this.lambda$createView$48(zArr, context, view3);
@@ -6232,13 +6251,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 ChatActivity.this.lambda$createView$56(view3);
                             }
                         });
-                        this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(1, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda66
+                        this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(1, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda67
                             @Override // org.telegram.ui.Components.chat.layouts.ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener
                             public final void onButtonFullyVisible(View view3, int i23, boolean z4) {
                                 ChatActivity.this.lambda$createView$59(view3, i23, z4);
                             }
                         });
-                        this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(2, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda67
+                        this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(2, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda68
                             @Override // org.telegram.ui.Components.chat.layouts.ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener
                             public final void onButtonFullyVisible(View view3, int i23, boolean z4) {
                                 ChatActivity.this.lambda$createView$62(view3, i23, z4);
@@ -6653,7 +6672,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             this.windowInsetsStateHolder.setupAnimatedInsetsProvider(((LaunchActivity) context).getRootAnimatedInsetsListener(), this.fragmentView);
                         }
                         onBottomItemsVisibilityChanged();
-                        ViewCompat.setOnApplyWindowInsetsListener(this.fragmentView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda77
+                        ViewCompat.setOnApplyWindowInsetsListener(this.fragmentView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda78
                             @Override // androidx.core.view.OnApplyWindowInsetsListener
                             public final WindowInsetsCompat onApplyWindowInsets(View view3, WindowInsetsCompat windowInsetsCompat) {
                                 WindowInsetsCompat onApplyWindowInsets;
@@ -6903,9 +6922,27 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 this.topicsTabs = r8;
                 this.botAdView = r8;
                 this.bizBotButton = r8;
-                ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout2 = new ChatActivitySideControlsButtonsLayout(context, this.resourceProvider, this.blurredBackgroundColorProvider, this.glassBackgroundDrawableFactory);
-                this.sideControlsButtonsLayout = chatActivitySideControlsButtonsLayout2;
-                chatActivitySideControlsButtonsLayout2.setOnClickListener(new ButtonOnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda47
+                ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout3 = new ChatActivitySideControlsButtonsLayout(context, this.resourceProvider, this.blurredBackgroundColorProvider, this.glassBackgroundDrawableFactory);
+                this.topButtonsLayout = chatActivitySideControlsButtonsLayout3;
+                chatActivitySideControlsButtonsLayout3.setOnClickListener(new ButtonOnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda47
+                    @Override // org.telegram.ui.Components.chat.layouts.ButtonOnClickListener
+                    public final void onClick(int i212, View view22) {
+                        ChatActivity.this.onSideControlButtonOnClick(i212, view22);
+                    }
+                });
+                this.topButtonsLayout.setOnLongClickListener(new ButtonOnLongClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda48
+                    @Override // org.telegram.ui.Components.chat.layouts.ButtonOnLongClickListener
+                    public final boolean onLongClick(int i212, View view22) {
+                        boolean onSideControlButtonOnLongClick;
+                        onSideControlButtonOnLongClick = ChatActivity.this.onSideControlButtonOnLongClick(i212, view22);
+                        return onSideControlButtonOnLongClick;
+                    }
+                });
+                this.topButtonsLayout.setGravity(53);
+                this.contentView.addView(this.topButtonsLayout, LayoutHelper.createFrame(57, NotificationCenter.currentUserPremiumStatusChanged, 53));
+                ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout22 = new ChatActivitySideControlsButtonsLayout(context, this.resourceProvider, this.blurredBackgroundColorProvider, this.glassBackgroundDrawableFactory);
+                this.sideControlsButtonsLayout = chatActivitySideControlsButtonsLayout22;
+                chatActivitySideControlsButtonsLayout22.setOnClickListener(new ButtonOnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda47
                     @Override // org.telegram.ui.Components.chat.layouts.ButtonOnClickListener
                     public final void onClick(int i212, View view22) {
                         ChatActivity.this.onSideControlButtonOnClick(i212, view22);
@@ -7473,7 +7510,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 this.chatActivityEnterView.getEditField().adaptiveCreateLinkDialog = true;
                 if (this.chatMode == 6) {
                 }
-                this.chatActivityEnterView.setSideButtonsForAttach(this.sideControlsButtonsLayout);
+                this.chatActivityEnterView.setSideButtonsForAttach(this.topButtonsLayout);
                 this.chatActivityEnterView.setInAppInsetsController(this.windowInsetsStateHolder);
                 this.chatActivityEnterView.setDialogId(this.dialog_id, this.currentAccount);
                 chatFull = this.chatInfo;
@@ -7511,7 +7548,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         ChatActivity.this.lambda$createView$45(view32);
                     }
                 });
-                this.actionsButtonsLayout.setReplyButtonOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda55
+                this.actionsButtonsLayout.setReplyButtonOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda56
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view32) {
                         ChatActivity.this.lambda$createView$46(view32);
@@ -7566,7 +7603,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 final FrameLayout frameLayout32 = new FrameLayout(context);
                 this.chatActivityEnterTopView.addReplyView(frameLayout32, LayoutHelper.createFrame(-1, -1.0f, 0, 0.0f, 0.0f, 52.0f, 0.0f));
                 final boolean[] zArr2 = new boolean[1];
-                frameLayout32.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda56
+                frameLayout32.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda57
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view32) {
                         ChatActivity.this.lambda$createView$48(zArr2, context, view32);
@@ -7728,13 +7765,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                         ChatActivity.this.lambda$createView$56(view32);
                     }
                 });
-                this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(1, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda66
+                this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(1, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda67
                     @Override // org.telegram.ui.Components.chat.layouts.ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener
                     public final void onButtonFullyVisible(View view32, int i23, boolean z4) {
                         ChatActivity.this.lambda$createView$59(view32, i23, z4);
                     }
                 });
-                this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(2, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda67
+                this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(2, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda68
                     @Override // org.telegram.ui.Components.chat.layouts.ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener
                     public final void onButtonFullyVisible(View view32, int i23, boolean z4) {
                         ChatActivity.this.lambda$createView$62(view32, i23, z4);
@@ -8069,7 +8106,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     if (context instanceof LaunchActivity) {
                     }
                     onBottomItemsVisibilityChanged();
-                    ViewCompat.setOnApplyWindowInsetsListener(this.fragmentView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda77
+                    ViewCompat.setOnApplyWindowInsetsListener(this.fragmentView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda78
                         @Override // androidx.core.view.OnApplyWindowInsetsListener
                         public final WindowInsetsCompat onApplyWindowInsets(View view32, WindowInsetsCompat windowInsetsCompat) {
                             WindowInsetsCompat onApplyWindowInsets;
@@ -8084,7 +8121,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 if (context instanceof LaunchActivity) {
                 }
                 onBottomItemsVisibilityChanged();
-                ViewCompat.setOnApplyWindowInsetsListener(this.fragmentView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda77
+                ViewCompat.setOnApplyWindowInsetsListener(this.fragmentView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda78
                     @Override // androidx.core.view.OnApplyWindowInsetsListener
                     public final WindowInsetsCompat onApplyWindowInsets(View view32, WindowInsetsCompat windowInsetsCompat) {
                         WindowInsetsCompat onApplyWindowInsets;
@@ -8404,9 +8441,27 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.topicsTabs = r8;
         this.botAdView = r8;
         this.bizBotButton = r8;
-        ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout22 = new ChatActivitySideControlsButtonsLayout(context, this.resourceProvider, this.blurredBackgroundColorProvider, this.glassBackgroundDrawableFactory);
-        this.sideControlsButtonsLayout = chatActivitySideControlsButtonsLayout22;
-        chatActivitySideControlsButtonsLayout22.setOnClickListener(new ButtonOnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda47
+        ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout32 = new ChatActivitySideControlsButtonsLayout(context, this.resourceProvider, this.blurredBackgroundColorProvider, this.glassBackgroundDrawableFactory);
+        this.topButtonsLayout = chatActivitySideControlsButtonsLayout32;
+        chatActivitySideControlsButtonsLayout32.setOnClickListener(new ButtonOnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda47
+            @Override // org.telegram.ui.Components.chat.layouts.ButtonOnClickListener
+            public final void onClick(int i2122, View view222) {
+                ChatActivity.this.onSideControlButtonOnClick(i2122, view222);
+            }
+        });
+        this.topButtonsLayout.setOnLongClickListener(new ButtonOnLongClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda48
+            @Override // org.telegram.ui.Components.chat.layouts.ButtonOnLongClickListener
+            public final boolean onLongClick(int i2122, View view222) {
+                boolean onSideControlButtonOnLongClick;
+                onSideControlButtonOnLongClick = ChatActivity.this.onSideControlButtonOnLongClick(i2122, view222);
+                return onSideControlButtonOnLongClick;
+            }
+        });
+        this.topButtonsLayout.setGravity(53);
+        this.contentView.addView(this.topButtonsLayout, LayoutHelper.createFrame(57, NotificationCenter.currentUserPremiumStatusChanged, 53));
+        ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout222 = new ChatActivitySideControlsButtonsLayout(context, this.resourceProvider, this.blurredBackgroundColorProvider, this.glassBackgroundDrawableFactory);
+        this.sideControlsButtonsLayout = chatActivitySideControlsButtonsLayout222;
+        chatActivitySideControlsButtonsLayout222.setOnClickListener(new ButtonOnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda47
             @Override // org.telegram.ui.Components.chat.layouts.ButtonOnClickListener
             public final void onClick(int i2122, View view222) {
                 ChatActivity.this.onSideControlButtonOnClick(i2122, view222);
@@ -8836,7 +8891,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.chatActivityEnterView.getEditField().adaptiveCreateLinkDialog = true;
         if (this.chatMode == 6) {
         }
-        this.chatActivityEnterView.setSideButtonsForAttach(this.sideControlsButtonsLayout);
+        this.chatActivityEnterView.setSideButtonsForAttach(this.topButtonsLayout);
         this.chatActivityEnterView.setInAppInsetsController(this.windowInsetsStateHolder);
         this.chatActivityEnterView.setDialogId(this.dialog_id, this.currentAccount);
         chatFull = this.chatInfo;
@@ -8874,7 +8929,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 ChatActivity.this.lambda$createView$45(view322);
             }
         });
-        this.actionsButtonsLayout.setReplyButtonOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda55
+        this.actionsButtonsLayout.setReplyButtonOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda56
             @Override // android.view.View.OnClickListener
             public final void onClick(View view322) {
                 ChatActivity.this.lambda$createView$46(view322);
@@ -8929,7 +8984,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         final FrameLayout frameLayout322 = new FrameLayout(context);
         this.chatActivityEnterTopView.addReplyView(frameLayout322, LayoutHelper.createFrame(-1, -1.0f, 0, 0.0f, 0.0f, 52.0f, 0.0f));
         final boolean[] zArr22 = new boolean[1];
-        frameLayout322.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda56
+        frameLayout322.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda57
             @Override // android.view.View.OnClickListener
             public final void onClick(View view322) {
                 ChatActivity.this.lambda$createView$48(zArr22, context, view322);
@@ -9091,13 +9146,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 ChatActivity.this.lambda$createView$56(view322);
             }
         });
-        this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(1, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda66
+        this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(1, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda67
             @Override // org.telegram.ui.Components.chat.layouts.ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener
             public final void onButtonFullyVisible(View view322, int i23, boolean z4) {
                 ChatActivity.this.lambda$createView$59(view322, i23, z4);
             }
         });
-        this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(2, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda67
+        this.bottomChannelButtonsLayout.setButtonOnFullyVisibleListener(2, new ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda68
             @Override // org.telegram.ui.Components.chat.layouts.ChatActivityChannelButtonsLayout.OnButtonFullyVisibleListener
             public final void onButtonFullyVisible(View view322, int i23, boolean z4) {
                 ChatActivity.this.lambda$createView$62(view322, i23, z4);
@@ -9404,7 +9459,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (context instanceof LaunchActivity) {
         }
         onBottomItemsVisibilityChanged();
-        ViewCompat.setOnApplyWindowInsetsListener(this.fragmentView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda77
+        ViewCompat.setOnApplyWindowInsetsListener(this.fragmentView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda78
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view322, WindowInsetsCompat windowInsetsCompat) {
                 WindowInsetsCompat onApplyWindowInsets;
@@ -17317,7 +17372,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         ChatActivityMemberRequestsDelegate chatActivityMemberRequestsDelegate = this.pendingRequestsDelegate;
         View view = chatActivityMemberRequestsDelegate != null ? chatActivityMemberRequestsDelegate.getView() : null;
         if (view != null) {
-            view.setTranslationY(max3 + this.pendingRequestsDelegate.getViewEnterOffset());
+            view.setTranslationY(this.pendingRequestsDelegate.getViewEnterOffset() + max3);
+        }
+        ChatActivitySideControlsButtonsLayout chatActivitySideControlsButtonsLayout = this.topButtonsLayout;
+        if (chatActivitySideControlsButtonsLayout != null) {
+            chatActivitySideControlsButtonsLayout.setTranslationY(max3);
         }
         float dp = (this.topicsTabs != null ? (AndroidUtilities.dp(48.0f) * (1.0f - this.topicsTabs.sidemenuT)) + 0.0f : 0.0f) + (this.actionBarSearchTags != null ? r5.getCurrentHeight() : 0.0f) + (this.hashtagSearchTabs != null ? r5.getCurrentHeight() : 0.0f);
         if (this.fragmentContextView != null) {

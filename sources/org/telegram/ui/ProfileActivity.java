@@ -756,14 +756,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         return ImageUpdater.ImageUpdaterDelegate.-CC.$default$supportsBulletin(this);
     }
 
-    static /* synthetic */ int access$11212(ProfileActivity profileActivity, int i) {
+    static /* synthetic */ int access$11312(ProfileActivity profileActivity, int i) {
         int i2 = profileActivity.listContentHeight + i;
         profileActivity.listContentHeight = i2;
         return i2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$40300(ProfileActivity profileActivity, View view) {
+    public static /* synthetic */ void access$40400(ProfileActivity profileActivity, View view) {
         profileActivity.onTextDetailCellImageClicked(view);
     }
 
@@ -2087,7 +2087,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             this.indicatorRect.right = getMeasuredWidth() - AndroidUtilities.dp(54.0f);
             RectF rectF = this.indicatorRect;
             rectF.left = rectF.right - (measureText + AndroidUtilities.dpf2(16.0f));
-            this.indicatorRect.top = (((BaseFragment) ProfileActivity.this).actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) + AndroidUtilities.dp(15.0f);
+            this.indicatorRect.top = ((((BaseFragment) ProfileActivity.this).actionBar == null || !((BaseFragment) ProfileActivity.this).actionBar.getOccupyStatusBar()) ? 0 : AndroidUtilities.statusBarHeight) + AndroidUtilities.dp(15.0f);
             RectF rectF2 = this.indicatorRect;
             rectF2.bottom = rectF2.top + AndroidUtilities.dp(26.0f);
             setPivotX(this.indicatorRect.centerX());
@@ -4901,10 +4901,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         RecyclerView.ViewHolder createViewHolder = ProfileActivity.this.listAdapter.createViewHolder(null, itemViewType);
                         ProfileActivity.this.listAdapter.onBindViewHolder(createViewHolder, i4);
                         createViewHolder.itemView.measure(makeMeasureSpec, makeMeasureSpec2);
-                        ProfileActivity.access$11212(ProfileActivity.this, createViewHolder.itemView.getMeasuredHeight());
+                        ProfileActivity.access$11312(ProfileActivity.this, createViewHolder.itemView.getMeasuredHeight());
                     } else {
                         ProfileActivity profileActivity = ProfileActivity.this;
-                        ProfileActivity.access$11212(profileActivity, profileActivity.listView.getMeasuredHeight());
+                        ProfileActivity.access$11312(profileActivity, profileActivity.listView.getMeasuredHeight());
                     }
                 }
                 if (ProfileActivity.this.emptyView != null) {
@@ -16899,7 +16899,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                         textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda4
                                             @Override // android.view.View.OnClickListener
                                             public final void onClick(View view) {
-                                                ProfileActivity.access$40300(ProfileActivity.this, view);
+                                                ProfileActivity.access$40400(ProfileActivity.this, view);
                                             }
                                         });
                                     }
@@ -16912,7 +16912,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                     textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda5
                                         @Override // android.view.View.OnClickListener
                                         public final void onClick(View view) {
-                                            ProfileActivity.access$40300(ProfileActivity.this, view);
+                                            ProfileActivity.access$40400(ProfileActivity.this, view);
                                         }
                                     });
                                 } else {

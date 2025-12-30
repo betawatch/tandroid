@@ -252,14 +252,18 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             }
         });
         final ItemOptions makeOptions = ItemOptions.makeOptions(this, view);
-        makeOptions.add(R.drawable.msg_addbot, LocaleController.getString(R.string.AddAccount), new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda4
-            @Override // java.lang.Runnable
-            public final void run() {
-                MainTabsActivity.this.lambda$openAccountSelector$3();
-            }
-        });
+        if (UserConfig.getActivatedAccountsCount() < 4) {
+            makeOptions.add(R.drawable.msg_addbot, LocaleController.getString(R.string.AddAccount), new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda4
+                @Override // java.lang.Runnable
+                public final void run() {
+                    MainTabsActivity.this.lambda$openAccountSelector$3();
+                }
+            });
+        }
         if (arrayList.size() > 0) {
-            makeOptions.addGap();
+            if (makeOptions.getItemsCount() > 0) {
+                makeOptions.addGap();
+            }
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
                 final int intValue = ((Integer) it.next()).intValue();

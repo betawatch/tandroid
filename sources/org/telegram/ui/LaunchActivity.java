@@ -356,13 +356,13 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         return this.rootAnimatedInsetsListener;
     }
 
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
     @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     protected void onCreate(Bundle bundle) {
         OnBackInvokedDispatcher onBackInvokedDispatcher;
         OnBackInvokedDispatcher onBackInvokedDispatcher2;
         boolean isBackgroundRestricted;
         ActionBarLayout actionBarLayout;
+        Bundle bundle2;
         boolean isInMultiWindowMode;
         Intent intent;
         Uri data;
@@ -464,7 +464,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         r3.setClipChildren(false);
         this.drawerLayoutContainer.setClipToPadding(false);
         this.drawerLayoutContainer.setBehindKeyboardColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-        char c = 65535;
         this.frameLayout.addView(this.drawerLayoutContainer, LayoutHelper.createFrame(-1, -1.0f));
         View view = new View(this) { // from class: org.telegram.ui.LaunchActivity.5
             @Override // android.view.View
@@ -553,82 +552,58 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 try {
                     String string = bundle.getString("fragment");
                     if (string != null) {
-                        Bundle bundle2 = bundle.getBundle("args");
-                        switch (string.hashCode()) {
-                            case -1529105743:
-                                if (string.equals("wallpapers")) {
-                                    c = 5;
-                                    break;
+                        bundle2 = bundle.getBundle("args");
+                        switch (string) {
+                            case "chat":
+                                if (bundle2 != null) {
+                                    ChatActivity chatActivity = new ChatActivity(bundle2);
+                                    if (this.actionBarLayout.addFragmentToStack(chatActivity)) {
+                                        chatActivity.restoreSelfArgs(bundle);
+                                        break;
+                                    }
                                 }
                                 break;
-                            case -1349522494:
-                                if (string.equals("chat_profile")) {
-                                    c = 4;
-                                    break;
-                                }
-                                break;
-                            case 3052376:
-                                if (string.equals("chat")) {
-                                    c = 0;
-                                    break;
-                                }
-                                break;
-                            case 98629247:
-                                if (string.equals("group")) {
-                                    c = 2;
-                                    break;
-                                }
-                                break;
-                            case 738950403:
-                                if (string.equals("channel")) {
-                                    c = 3;
-                                    break;
-                                }
-                                break;
-                            case 1434631203:
-                                if (string.equals("settings")) {
-                                    c = 1;
-                                    break;
-                                }
-                                break;
-                        }
-                        if (c != 0) {
-                            if (c == 1) {
+                            case "settings":
                                 bundle2.putLong("user_id", UserConfig.getInstance(this.currentAccount).clientUserId);
                                 ProfileActivity profileActivity = new ProfileActivity(bundle2);
                                 this.actionBarLayout.addFragmentToStack(profileActivity);
                                 profileActivity.restoreSelfArgs(bundle);
-                            } else if (c != 2) {
-                                if (c != 3) {
-                                    if (c != 4) {
-                                        if (c == 5) {
-                                            WallpapersListActivity wallpapersListActivity = new WallpapersListActivity(0);
-                                            this.actionBarLayout.addFragmentToStack(wallpapersListActivity);
-                                            wallpapersListActivity.restoreSelfArgs(bundle);
-                                        }
-                                    } else if (bundle2 != null) {
-                                        ProfileActivity profileActivity2 = new ProfileActivity(bundle2);
-                                        if (this.actionBarLayout.addFragmentToStack(profileActivity2)) {
-                                            profileActivity2.restoreSelfArgs(bundle);
-                                        }
+                                break;
+                            case "settings2":
+                                this.actionBarLayout.addFragmentToStack(new SettingsActivity());
+                                break;
+                            case "group":
+                                if (bundle2 != null) {
+                                    GroupCreateFinalActivity groupCreateFinalActivity = new GroupCreateFinalActivity(bundle2);
+                                    if (this.actionBarLayout.addFragmentToStack(groupCreateFinalActivity)) {
+                                        groupCreateFinalActivity.restoreSelfArgs(bundle);
+                                        break;
                                     }
-                                } else if (bundle2 != null) {
+                                }
+                                break;
+                            case "channel":
+                                if (bundle2 != null) {
                                     ChannelCreateActivity channelCreateActivity = new ChannelCreateActivity(bundle2);
                                     if (this.actionBarLayout.addFragmentToStack(channelCreateActivity)) {
                                         channelCreateActivity.restoreSelfArgs(bundle);
+                                        break;
                                     }
                                 }
-                            } else if (bundle2 != null) {
-                                GroupCreateFinalActivity groupCreateFinalActivity = new GroupCreateFinalActivity(bundle2);
-                                if (this.actionBarLayout.addFragmentToStack(groupCreateFinalActivity)) {
-                                    groupCreateFinalActivity.restoreSelfArgs(bundle);
+                                break;
+                            case "chat_profile":
+                                if (bundle2 != null) {
+                                    ProfileActivity profileActivity2 = new ProfileActivity(bundle2);
+                                    if (this.actionBarLayout.addFragmentToStack(profileActivity2)) {
+                                        profileActivity2.restoreSelfArgs(bundle);
+                                        break;
+                                    }
                                 }
-                            }
-                        } else if (bundle2 != null) {
-                            ChatActivity chatActivity = new ChatActivity(bundle2);
-                            if (this.actionBarLayout.addFragmentToStack(chatActivity)) {
-                                chatActivity.restoreSelfArgs(bundle);
-                            }
+                                break;
+                            case "wallpapers":
+                                WallpapersListActivity wallpapersListActivity = new WallpapersListActivity(0);
+                                this.actionBarLayout.addFragmentToStack(wallpapersListActivity);
+                                wallpapersListActivity.restoreSelfArgs(bundle);
+                                break;
                         }
                     }
                 } catch (Exception e) {
@@ -1615,7 +1590,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         */
     private boolean handleIntent(android.content.Intent r122, boolean r123, boolean r124, boolean r125, org.telegram.messenger.browser.Browser.Progress r126, boolean r127, boolean r128) {
         /*
-            Method dump skipped, instructions count: 16036
+            Method dump skipped, instructions count: 16018
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.LaunchActivity.handleIntent(android.content.Intent, boolean, boolean, boolean, org.telegram.messenger.browser.Browser$Progress, boolean, boolean):boolean");
@@ -8118,8 +8093,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         actionMode.finish();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x00a8 A[Catch: Exception -> 0x0031, TRY_LEAVE, TryCatch #0 {Exception -> 0x0031, blocks: (B:2:0x0000, B:4:0x0009, B:6:0x000d, B:8:0x0017, B:10:0x00a8, B:14:0x00b6, B:15:0x0112, B:19:0x00bf, B:22:0x00c5, B:23:0x00ce, B:25:0x00d2, B:26:0x00d8, B:28:0x00dc, B:30:0x00e5, B:31:0x00eb, B:34:0x00f3, B:35:0x00fc, B:38:0x0102, B:40:0x010a, B:42:0x0034, B:44:0x0038, B:46:0x0042, B:47:0x005b, B:49:0x0067, B:51:0x0080, B:53:0x008c), top: B:1:0x0000 }] */
-    /* JADX WARN: Removed duplicated region for block: B:41:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x00a8 A[Catch: Exception -> 0x0031, TRY_LEAVE, TryCatch #0 {Exception -> 0x0031, blocks: (B:2:0x0000, B:4:0x0009, B:6:0x000d, B:8:0x0017, B:10:0x00a8, B:14:0x00b6, B:15:0x011c, B:19:0x00bf, B:22:0x00c5, B:23:0x00ce, B:25:0x00d2, B:26:0x00d8, B:28:0x00dc, B:30:0x00e5, B:31:0x00eb, B:34:0x00f3, B:35:0x00fc, B:38:0x0102, B:40:0x010a, B:41:0x0113, B:43:0x0117, B:45:0x0034, B:47:0x0038, B:49:0x0042, B:50:0x005b, B:52:0x0067, B:54:0x0080, B:56:0x008c), top: B:1:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
     @Override // androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -8164,6 +8139,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     } else if ((baseFragment instanceof ChannelCreateActivity) && arguments != null && arguments.getInt("step") == 0) {
                         bundle.putBundle("args", arguments);
                         bundle.putString("fragment", "channel");
+                    } else if (baseFragment instanceof SettingsActivity) {
+                        bundle.putString("fragment", "settings2");
                     }
                     baseFragment.saveSelfArgs(bundle);
                     return;
