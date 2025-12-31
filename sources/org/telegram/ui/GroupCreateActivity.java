@@ -92,11 +92,12 @@ import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
 import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
 import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
+import org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider;
 import org.telegram.ui.GroupCreateActivity;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
 /* loaded from: classes4.dex */
-public class GroupCreateActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target, View.OnClickListener {
+public class GroupCreateActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target, View.OnClickListener, WindowAnimatedInsetsProvider.Listener {
     private final int ADDITIONAL_LIST_HEIGHT_DP;
     private View actionBarBackgroundView;
     private GroupCreateAdapter adapter;
@@ -131,6 +132,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
     private final BlurredBackgroundSourceRenderNode iBlur3SourceGlassFrosted;
     private boolean ignoreScrollEvent;
     private LongSparseArray ignoreUsers;
+    private int imeInsetAnimatedHeight;
     private TLRPC.ChatFull info;
     private final HashSet initialIds;
     private boolean initialMiniApps;
@@ -994,6 +996,10 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
         headerShadowView.setShadowVisible(false, false);
         this.contentView.addView(this.headerShadowView, LayoutHelper.createFrame(-1, 5, 48));
         this.actionBar.setDrawBlurBackground(this.contentView);
+        LaunchActivity launchActivity = LaunchActivity.instance;
+        if (launchActivity != null) {
+            launchActivity.getRootAnimatedInsetsListener().subscribeToWindowInsetsAnimation(this);
+        }
         ViewCompat.setOnApplyWindowInsetsListener(this.fragmentView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.GroupCreateActivity$$ExternalSyntheticLambda6
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view3, WindowInsetsCompat windowInsetsCompat) {
@@ -2437,6 +2443,17 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
         this.listView.scrollBy(0, paddingTop - paddingTop2);
     }
 
+    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
+    public View getAnimatedInsetsTargetView() {
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
+    public void onAnimatedInsetsChanged(View view, WindowInsetsCompat windowInsetsCompat) {
+        this.imeInsetAnimatedHeight = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime()).bottom;
+        checkUi_floatingButton();
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
         ViewGroup.MarginLayoutParams marginLayoutParams;
@@ -2485,7 +2502,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
     public void checkUi_floatingButton() {
         FragmentFloatingButton fragmentFloatingButton = this.floatingButton;
         if (fragmentFloatingButton != null) {
-            fragmentFloatingButton.setTranslationY(-this.navigationBarHeight);
+            fragmentFloatingButton.setTranslationY(-Math.max(this.navigationBarHeight, this.imeInsetAnimatedHeight));
         }
     }
 

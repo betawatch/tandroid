@@ -1140,9 +1140,9 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         return z ? this.viewPager.getCurrentPosition() >= this.collections.getCollections().size() : this.viewPager.getCurrentPosition() <= 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x02c1  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x02ce  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x02c4  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02c9  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x02d6  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x02cc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1354,7 +1354,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-1, 60, 87);
         createFrame.bottomMargin += AndroidUtilities.navigationBarHeight;
         addView(frameLayout, createFrame);
-        frameLayout.addView(button2, LayoutHelper.createFrame(NotificationCenter.starBalanceUpdated, 60, 1));
+        frameLayout.addView(button2, LayoutHelper.createFrame(-2, 60, 1));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.bulletinContainer = frameLayout2;
         LinearLayout linearLayout = new LinearLayout(context);
@@ -1405,10 +1405,12 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                 this.addGiftsText = spannableStringBuilder2;
                 ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
                 this.button = buttonWithCounterView;
+                buttonWithCounterView.setUseWrapContent(true);
+                buttonWithCounterView.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
                 buttonWithCounterView.setRoundRadius(AndroidUtilities.dp(19.0f));
                 buttonWithCounterView.setText(spannableStringBuilder, false);
                 buttonWithCounterView.setStateListAnimator(null);
-                button2.addView(buttonWithCounterView, LayoutHelper.createFrame(-1, -1.0f));
+                button2.addView(buttonWithCounterView, LayoutHelper.createFrame(-2, -1, 17));
                 button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda6
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -1436,10 +1438,12 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         this.addGiftsText = spannableStringBuilder22;
         ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, resourcesProvider);
         this.button = buttonWithCounterView2;
+        buttonWithCounterView2.setUseWrapContent(true);
+        buttonWithCounterView2.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
         buttonWithCounterView2.setRoundRadius(AndroidUtilities.dp(19.0f));
         buttonWithCounterView2.setText(spannableStringBuilder3, false);
         buttonWithCounterView2.setStateListAnimator(null);
-        button2.addView(buttonWithCounterView2, LayoutHelper.createFrame(-1, -1.0f));
+        button2.addView(buttonWithCounterView2, LayoutHelper.createFrame(-2, -1, 17));
         button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

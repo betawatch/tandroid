@@ -58,6 +58,14 @@ public class BlurredFrameLayout extends FrameLayout {
     }
 
     @Override // android.view.View
+    public void setTranslationY(float f) {
+        if (SharedConfig.chatBlurEnabled() && f != getTranslationY()) {
+            invalidate();
+        }
+        super.setTranslationY(f);
+    }
+
+    @Override // android.view.View
     public void setBackgroundColor(int i) {
         if (SharedConfig.chatBlurEnabled() && this.sizeNotifierFrameLayout != null) {
             this.backgroundColor = i;

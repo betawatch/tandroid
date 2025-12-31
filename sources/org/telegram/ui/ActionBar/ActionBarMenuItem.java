@@ -1235,7 +1235,10 @@ public class ActionBarMenuItem extends FrameLayout {
                 i3++;
             }
         }
-        this.searchFilterLayout.setTag(!isEmpty ? 1 : null);
+        LinearLayout linearLayout = this.searchFilterLayout;
+        if (linearLayout != null) {
+            linearLayout.setTag(!isEmpty ? 1 : null);
+        }
         final float x = this.searchField.getX();
         if (this.searchContainer.getTag() != null) {
             this.searchField.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem.6

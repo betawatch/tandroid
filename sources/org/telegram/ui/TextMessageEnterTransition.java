@@ -1003,8 +1003,11 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         }
         ViewPositionWatcher.computeCoordinatesInParent(this.enterView.getSendButton(), this.chatActivity.contentView, this.tmpPointF);
         canvas.save();
-        canvas.translate((this.tmpPointF.x - this.container.getX()) + (AndroidUtilities.dp(52.0f) * f51), this.tmpPointF.y - this.container.getY());
-        this.enterView.getSendButton().draw(canvas);
+        canvas.translate(this.tmpPointF.x - this.container.getX(), this.tmpPointF.y - this.container.getY());
+        View sendButton = this.enterView.getSendButton();
+        canvas.saveLayerAlpha(0.0f, 0.0f, sendButton.getWidth(), sendButton.getHeight(), (int) ((1.0f - f51) * 255.0f));
+        sendButton.draw(canvas);
+        canvas.restore();
         canvas.restore();
         canvas.restore();
     }

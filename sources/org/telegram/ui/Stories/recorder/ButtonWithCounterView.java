@@ -50,6 +50,7 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
     private LoadingDrawable flickeringLoadingDrawable;
     private int globalAlpha;
     private int lastCount;
+    private int lastWrapWidth;
     private boolean loading;
     private ValueAnimator loadingAnimator;
     private CircularProgressDrawable loadingDrawable;
@@ -68,6 +69,7 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
     public final AnimatedTextView.AnimatedTextDrawable text;
     private Runnable tick;
     private int timerSeconds;
+    public boolean useWrapContent;
     private boolean withCounterIcon;
     public boolean wrapContentDynamic;
     private boolean wrapWidth;
@@ -87,6 +89,10 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
 
     public ButtonWithCounterView(Context context, Theme.ResourcesProvider resourcesProvider) {
         this(context, true, resourcesProvider);
+    }
+
+    public void setUseWrapContent(boolean z) {
+        this.useWrapContent = z;
     }
 
     public ButtonWithCounterView setRound() {
@@ -520,6 +526,7 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
+        int wrapWidth;
         boolean z;
         this.rippleView.draw(canvas);
         if (this.flickeringLoading) {
@@ -622,6 +629,11 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
                 canvas.restore();
             }
         }
+        if (!this.useWrapContent || this.lastWrapWidth == (wrapWidth = getWrapWidth())) {
+            return;
+        }
+        this.lastWrapWidth = wrapWidth;
+        requestLayout();
     }
 
     @Override // android.view.View
@@ -647,9 +659,17 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         this.minWidth = i;
     }
 
+    private int getWrapWidth() {
+        return getPaddingLeft() + ((int) (this.text.getCurrentWidth() + (this.withCounterIcon ? AndroidUtilities.dp(12.0f) : 0.0f) + calculateCounterWidth(AndroidUtilities.dp(15.66f) + this.countText.getCurrentWidth(), this.countAlphaAnimated.set(this.countAlpha)))) + getPaddingRight();
+    }
+
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        if (this.wrapWidth) {
+        if (this.useWrapContent) {
+            int wrapWidth = getWrapWidth();
+            this.lastWrapWidth = wrapWidth;
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(wrapWidth, View.MeasureSpec.getSize(i)), TLObject.FLAG_30), i2);
+        } else if (this.wrapWidth) {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.min(Math.max(getPaddingLeft() + this.text.getCurrentWidth() + getPaddingRight(), this.minWidth), View.MeasureSpec.getSize(i)), TLObject.FLAG_30), i2);
         } else {
             super.onMeasure(i, i2);

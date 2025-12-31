@@ -27,7 +27,6 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.EmojiThemes;
 import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Cells.DrawerProfileCell;
 import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Components.ChatThemeBottomSheet;
 import org.telegram.ui.Components.FlickerLoadingView;
@@ -221,12 +220,12 @@ public class DefaultThemesPreviewCell extends LinearLayout {
         public void onClick(View view) {
             boolean isCurrentThemeDark;
             Theme.ThemeInfo theme;
-            if (DrawerProfileCell.switchingTheme) {
+            if (DialogsActivity.switchingTheme) {
                 return;
             }
             final int color = Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4);
             final int color2 = Theme.getColor(Theme.key_windowBackgroundGray);
-            DrawerProfileCell.switchingTheme = true;
+            DialogsActivity.switchingTheme = true;
             SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
             String str = "Blue";
             String string = sharedPreferences.getString("lastDayTheme", "Blue");

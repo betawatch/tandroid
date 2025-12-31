@@ -602,7 +602,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
             public final void run(Object obj) {
                 ContactAddActivity.this.lambda$createView$13((TL_account.TL_birthday) obj);
             }
-        }, null, false, this.resourcesProvider).create());
+        }, null, false, false, this.resourcesProvider).create());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

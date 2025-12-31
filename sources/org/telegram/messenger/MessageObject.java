@@ -8147,25 +8147,13 @@ public class MessageObject {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:109:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x00a1 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x00ac A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0094 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00b8  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void generateCaption() {
         boolean z;
-        boolean z2;
-        boolean z3;
         TLRPC.TL_textWithEntities tL_textWithEntities;
         TLRPC.TL_textWithEntities tL_textWithEntities2;
         TLRPC.TL_textWithEntities tL_textWithEntities3;
         TL_stories.StoryItem storyItem;
-        boolean z4;
+        boolean z2;
         if (isRoundVideo()) {
             return;
         }
@@ -8173,16 +8161,15 @@ public class MessageObject {
             if (this.translated) {
                 TLRPC.Message message = this.messageOwner;
                 if (message.translatedText != null || (this.summarized && message.translatedSummaryText != null)) {
-                    z4 = true;
-                    if (z4 == this.captionTranslated) {
-                        if ((this.summarized && this.messageOwner.summaryText != null) == this.captionSummarized) {
-                            return;
-                        }
+                    z2 = true;
+                    if (z2 == this.captionTranslated && this.summarized == this.captionSummarized) {
+                        return;
                     }
                 }
             }
-            z4 = false;
-            if (z4 == this.captionTranslated) {
+            z2 = false;
+            if (z2 == this.captionTranslated) {
+                return;
             }
         }
         TLRPC.Message message2 = this.messageOwner;
@@ -8194,107 +8181,82 @@ public class MessageObject {
                 str = storyItem.caption;
                 arrayList = storyItem.entities;
                 z = true;
-                boolean z5 = this.summarized;
-                this.captionSummarized = (z5 || this.messageOwner.summaryText == null) ? false : true;
-                z2 = this.translated;
-                if (z2) {
-                    TLRPC.Message message3 = this.messageOwner;
-                    if (message3.translatedText != null || (z5 && message3.translatedSummaryText != null)) {
-                        z3 = true;
-                        this.captionTranslated = z3;
-                        TLRPC.Message message4 = this.messageOwner;
-                        tL_textWithEntities = message4.translatedSummaryText;
-                        if (tL_textWithEntities == null && z5 && z2) {
-                            str = tL_textWithEntities.text;
-                            arrayList = tL_textWithEntities.entities;
+                TLRPC.Message message3 = this.messageOwner;
+                tL_textWithEntities = message3.translatedSummaryText;
+                if (tL_textWithEntities == null && this.summarized && this.translated) {
+                    this.captionSummarized = true;
+                    this.captionTranslated = true;
+                    str = tL_textWithEntities.text;
+                    arrayList = tL_textWithEntities.entities;
+                } else {
+                    tL_textWithEntities2 = message3.summaryText;
+                    if (tL_textWithEntities2 == null && this.summarized) {
+                        this.captionSummarized = true;
+                        this.captionTranslated = false;
+                        str = tL_textWithEntities2.text;
+                        arrayList = tL_textWithEntities2.entities;
+                    } else {
+                        tL_textWithEntities3 = message3.translatedText;
+                        if (tL_textWithEntities3 == null && this.translated) {
+                            this.captionSummarized = false;
+                            this.captionTranslated = true;
+                            str = tL_textWithEntities3.text;
+                            arrayList = tL_textWithEntities3.entities;
                         } else {
-                            tL_textWithEntities2 = message4.summaryText;
-                            if (tL_textWithEntities2 == null && z5) {
-                                str = tL_textWithEntities2.text;
-                                arrayList = tL_textWithEntities2.entities;
-                            } else {
-                                tL_textWithEntities3 = message4.translatedText;
-                                if (tL_textWithEntities3 != null && z2) {
-                                    str = tL_textWithEntities3.text;
-                                    arrayList = tL_textWithEntities3.entities;
-                                }
-                            }
-                        }
-                        if (isMediaEmpty() || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) || TextUtils.isEmpty(str)) {
-                            return;
-                        }
-                        CharSequence replaceEmoji = Emoji.replaceEmoji(str, Theme.chat_msgTextPaint.getFontMetricsInt(), false);
-                        this.caption = replaceEmoji;
-                        this.caption = replaceAnimatedEmoji(replaceEmoji, arrayList, Theme.chat_msgTextPaint.getFontMetricsInt(), false);
-                        boolean z6 = z || (!(this.messageOwner.send_state != 0 ? false : arrayList.isEmpty() ^ true) && (this.eventId != 0 || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_old) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_layer68) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_layer74) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_old) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_layer68) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_layer74) || ((isOut() && this.messageOwner.send_state != 0) || this.messageOwner.id < 0)));
-                        if (z6) {
-                            if (containsUrls(this.caption)) {
-                                try {
-                                    AndroidUtilities.addLinksSafe((Spannable) this.caption, 5, false, true);
-                                } catch (Exception e) {
-                                    FileLog.e(e);
-                                }
-                            }
-                            addUrlsByPattern(isOutOwner(), this.caption, true, 0, 0, true);
-                        }
-                        addEntitiesToText(this.caption, z6);
-                        if (isVideo()) {
-                            addUrlsByPattern(isOutOwner(), this.caption, true, 3, (int) getDuration(), false);
-                            return;
-                        } else {
-                            if (isMusic() || isVoice()) {
-                                addUrlsByPattern(isOutOwner(), this.caption, true, 4, (int) getDuration(), false);
-                                return;
-                            }
-                            return;
+                            this.captionSummarized = false;
+                            this.captionTranslated = false;
                         }
                     }
                 }
-                z3 = false;
-                this.captionTranslated = z3;
-                TLRPC.Message message42 = this.messageOwner;
-                tL_textWithEntities = message42.translatedSummaryText;
-                if (tL_textWithEntities == null) {
+                if (!isMediaEmpty() || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaGame) || TextUtils.isEmpty(str)) {
+                    return;
                 }
-                tL_textWithEntities2 = message42.summaryText;
-                if (tL_textWithEntities2 == null) {
+                CharSequence replaceEmoji = Emoji.replaceEmoji(str, Theme.chat_msgTextPaint.getFontMetricsInt(), false);
+                this.caption = replaceEmoji;
+                this.caption = replaceAnimatedEmoji(replaceEmoji, arrayList, Theme.chat_msgTextPaint.getFontMetricsInt(), false);
+                boolean z3 = z || (!(this.messageOwner.send_state != 0 ? false : arrayList.isEmpty() ^ true) && (this.eventId != 0 || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_old) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_layer68) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto_layer74) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_old) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_layer68) || (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaDocument_layer74) || ((isOut() && this.messageOwner.send_state != 0) || this.messageOwner.id < 0)));
+                if (z3) {
+                    if (containsUrls(this.caption)) {
+                        try {
+                            AndroidUtilities.addLinksSafe((Spannable) this.caption, 5, false, true);
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                        }
+                    }
+                    addUrlsByPattern(isOutOwner(), this.caption, true, 0, 0, true);
                 }
-                tL_textWithEntities3 = message42.translatedText;
-                if (tL_textWithEntities3 != null) {
-                    str = tL_textWithEntities3.text;
-                    arrayList = tL_textWithEntities3.entities;
-                }
-                if (isMediaEmpty()) {
+                addEntitiesToText(this.caption, z3);
+                if (isVideo()) {
+                    addUrlsByPattern(isOutOwner(), this.caption, true, 3, (int) getDuration(), false);
                     return;
                 } else {
+                    if (isMusic() || isVoice()) {
+                        addUrlsByPattern(isOutOwner(), this.caption, true, 4, (int) getDuration(), false);
+                        return;
+                    }
                     return;
                 }
             }
             arrayList = new ArrayList<>();
             str = "";
         } else if (hasExtendedMedia()) {
-            TLRPC.Message message5 = this.messageOwner;
-            str = message5.media.description;
-            message5.message = str;
+            TLRPC.Message message4 = this.messageOwner;
+            str = message4.media.description;
+            message4.message = str;
         }
         z = false;
-        boolean z52 = this.summarized;
-        this.captionSummarized = (z52 || this.messageOwner.summaryText == null) ? false : true;
-        z2 = this.translated;
-        if (z2) {
-        }
-        z3 = false;
-        this.captionTranslated = z3;
-        TLRPC.Message message422 = this.messageOwner;
-        tL_textWithEntities = message422.translatedSummaryText;
+        TLRPC.Message message32 = this.messageOwner;
+        tL_textWithEntities = message32.translatedSummaryText;
         if (tL_textWithEntities == null) {
         }
-        tL_textWithEntities2 = message422.summaryText;
+        tL_textWithEntities2 = message32.summaryText;
         if (tL_textWithEntities2 == null) {
         }
-        tL_textWithEntities3 = message422.translatedText;
-        if (tL_textWithEntities3 != null) {
+        tL_textWithEntities3 = message32.translatedText;
+        if (tL_textWithEntities3 == null) {
         }
+        this.captionSummarized = false;
+        this.captionTranslated = false;
         if (isMediaEmpty()) {
         }
     }

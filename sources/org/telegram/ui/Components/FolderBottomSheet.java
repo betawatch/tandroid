@@ -60,6 +60,7 @@ import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.FilterCreateActivity;
 import org.telegram.ui.FiltersSetupActivity;
+import org.telegram.ui.MainTabsActivity;
 
 /* loaded from: classes5.dex */
 public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
@@ -673,7 +674,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         final BaseFragment baseFragment = null;
         for (int size = fragmentStack.size() - 1; size >= 0; size--) {
             baseFragment = (BaseFragment) fragmentStack.get(size);
-            if (baseFragment instanceof DialogsActivity) {
+            if ((baseFragment instanceof DialogsActivity) || (baseFragment instanceof MainTabsActivity)) {
                 break;
             }
             if (z) {
@@ -683,9 +684,10 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 baseFragment.removeSelfFromStack();
             }
         }
-        if (baseFragment instanceof DialogsActivity) {
-            final DialogsActivity dialogsActivity = (DialogsActivity) baseFragment;
-            dialogsActivity.closeSearching();
+        BaseFragment dialogsActivity = baseFragment instanceof MainTabsActivity ? ((MainTabsActivity) baseFragment).getDialogsActivity() : baseFragment;
+        if (dialogsActivity instanceof DialogsActivity) {
+            final DialogsActivity dialogsActivity2 = (DialogsActivity) dialogsActivity;
+            dialogsActivity2.closeSearching();
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {

@@ -25505,23 +25505,21 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                                         ChatActivity chatActivity4 = ChatActivity.this;
                                                         i10 -= chatActivity4.blurredViewTopOffset + chatActivity4.chatListViewPaddingsAnimator.getCurrentAdditionalHeight();
                                                     }
-                                                    childAt.layout(i7, i10, measuredWidth + i7, measuredHeight2 + i10);
                                                 } else {
                                                     i11 = this.inputFieldHeight;
                                                 }
                                                 i10 -= i11;
-                                                childAt.layout(i7, i10, measuredWidth + i7, measuredHeight2 + i10);
                                             } else {
                                                 currentMaxBottomInset = chatActivity.windowInsetsStateHolder.getCurrentMaxBottomInset();
                                                 dp = AndroidUtilities.dp(9.0f);
                                             }
                                         }
+                                        i11 = currentMaxBottomInset + dp;
+                                        i10 -= i11;
                                     } else {
-                                        currentMaxBottomInset = ChatActivity.this.windowInsetsStateHolder.getCurrentMaxBottomInset();
-                                        dp = AndroidUtilities.dp(7.0f);
+                                        i10 -= ChatActivity.this.windowInsetsStateHolder.getCurrentMaxBottomInset() + AndroidUtilities.dp(7.0f);
+                                        i7 -= AndroidUtilities.dp(3.0f);
                                     }
-                                    i11 = currentMaxBottomInset + dp;
-                                    i10 -= i11;
                                     childAt.layout(i7, i10, measuredWidth + i7, measuredHeight2 + i10);
                                 }
                                 i10 += measuredHeight;
@@ -33880,12 +33878,15 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
     private void saveGeneralScroll() {
         ChatMessageCell chatMessageCell = null;
-        for (int i = 0; i < this.chatListView.getChildCount(); i++) {
-            View childAt = this.chatListView.getChildAt(i);
+        int i = 0;
+        for (int i2 = 0; i2 < this.chatListView.getChildCount(); i2++) {
+            View childAt = this.chatListView.getChildAt(i2);
             if (childAt instanceof ChatMessageCell) {
                 ChatMessageCell chatMessageCell2 = (ChatMessageCell) childAt;
-                if (Math.min(chatMessageCell2.getBottom(), this.chatListView.getHeight()) - Math.max(0, chatMessageCell2.getTop()) > 0) {
+                int min = Math.min(chatMessageCell2.getBottom(), this.chatListView.getHeight()) - Math.max(0, chatMessageCell2.getTop());
+                if (min > i) {
                     chatMessageCell = chatMessageCell2;
+                    i = min;
                 }
             }
         }
@@ -33900,10 +33901,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         return (this.chatListView.getMeasuredHeight() - view.getBottom()) - this.chatListView.getPaddingBottom();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0179 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0128  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x018d A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -33943,6 +33944,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     TLRPC.Message message4 = messageObject.messageOwner;
                     message3.translatedText = message4.translatedText;
                     message3.translatedToLanguage = message4.translatedToLanguage;
+                    message3.summaryText = message4.summaryText;
+                    message3.translatedSummaryText = message4.translatedSummaryText;
+                    message3.translatedSummaryLanguage = message4.translatedSummaryLanguage;
                     if (messageObject2.updateTranslation(false)) {
                         ArrayList arrayList2 = (ArrayList) this.replyMessageOwners.get(messageObject2.getId());
                         if (arrayList2 != null) {
@@ -33966,6 +33970,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             TLRPC.Message message6 = messageObject.messageOwner;
                             message5.translatedText = message6.translatedText;
                             message5.translatedToLanguage = message6.translatedToLanguage;
+                            message5.translatedSummaryText = message6.translatedSummaryText;
+                            message5.translatedSummaryLanguage = message6.translatedSummaryLanguage;
                             if (messageObject4.updateTranslation(false)) {
                                 z2 = true;
                             }
@@ -34008,6 +34014,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     TLRPC.Message message62 = messageObject.messageOwner;
                     message52.translatedText = message62.translatedText;
                     message52.translatedToLanguage = message62.translatedToLanguage;
+                    message52.translatedSummaryText = message62.translatedSummaryText;
+                    message52.translatedSummaryLanguage = message62.translatedSummaryLanguage;
                     if (messageObject4.updateTranslation(false)) {
                     }
                 }

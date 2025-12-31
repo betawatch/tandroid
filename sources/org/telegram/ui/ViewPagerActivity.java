@@ -135,8 +135,8 @@ public abstract class ViewPagerActivity extends BaseFragment {
                     baseFragment.onFragmentCreate();
                     fragmentState.onCreateCalled = true;
                 }
+                baseFragment.setParentLayout(ViewPagerActivity.this.getParentLayout());
                 if (baseFragment.getFragmentView() == null) {
-                    baseFragment.setParentLayout(ViewPagerActivity.this.getParentLayout());
                     baseFragment.createView(context);
                     baseFragment.setTitleOverlayText(ViewPagerActivity.this.titleOverlay, ViewPagerActivity.this.titleOverlayId, ViewPagerActivity.this.titleOverlayAction);
                 }
@@ -212,7 +212,7 @@ public abstract class ViewPagerActivity extends BaseFragment {
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean isLightStatusBar() {
         BaseFragment currentVisibleFragment = getCurrentVisibleFragment();
-        return currentVisibleFragment != null ? currentVisibleFragment.isLightStatusBar() : super.isLightStatusBar();
+        return (currentVisibleFragment == null || currentVisibleFragment.fragmentView == null) ? super.isLightStatusBar() : currentVisibleFragment.isLightStatusBar();
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -237,7 +237,10 @@ public abstract class ViewPagerActivity extends BaseFragment {
         for (int i = 0; i < size; i++) {
             FragmentState fragmentState = (FragmentState) this.fragmentsArr.valueAt(i);
             if (fragmentState != null) {
-                arrayList.addAll(fragmentState.fragment.getThemeDescriptions());
+                BaseFragment baseFragment = fragmentState.fragment;
+                if (baseFragment.fragmentView != null) {
+                    arrayList.addAll(baseFragment.getThemeDescriptions());
+                }
             }
         }
         return arrayList;
@@ -254,6 +257,7 @@ public abstract class ViewPagerActivity extends BaseFragment {
     public void onResume() {
         super.onResume();
         this.isResumed = true;
+        checkSystemBarColors();
         checkFragmentsVisibility();
     }
 
@@ -281,6 +285,7 @@ public abstract class ViewPagerActivity extends BaseFragment {
         this.visibilityByParent = 1.0f;
         this.isFullyVisible = true;
         checkFragmentsVisibility();
+        checkSystemBarColors();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
