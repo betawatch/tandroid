@@ -9,7 +9,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.BadWayToMakeButtonRound;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.ScaleStateListAnimator;
 
 /* loaded from: classes4.dex */
 public class LocationDirectionCell extends FrameLayout {
@@ -35,6 +37,8 @@ public class LocationDirectionCell extends FrameLayout {
         this.buttonTextView.setLeftDrawable(R.drawable.filled_directions);
         this.buttonTextView.setTypeface(AndroidUtilities.bold());
         this.frameLayout.addView(this.buttonTextView, LayoutHelper.createFrame(-1, -1.0f));
+        BadWayToMakeButtonRound.round(this.frameLayout);
+        ScaleStateListAnimator.apply(this.frameLayout, 0.02f, 1.2f);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

@@ -6786,10 +6786,10 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:198:0x036d  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x038f  */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x049e  */
-    /* JADX WARN: Removed duplicated region for block: B:292:0x04bf A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x0385  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x03a7  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x04b6  */
+    /* JADX WARN: Removed duplicated region for block: B:304:0x04d7 A[SYNTHETIC] */
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -6899,7 +6899,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                             if (i9 >= mediaPageArr.length) {
                                 break;
                             }
-                            if (mediaPageArr[i9].listView.getAdapter() == adapter3) {
+                            MediaPage mediaPage = mediaPageArr[i9];
+                            if (mediaPage != null && mediaPage.listView != null && this.mediaPages[i9].listView.getAdapter() == adapter3) {
                                 internalListView = this.mediaPages[i9].listView;
                                 this.mediaPages[i9].listView.stopScroll();
                             }
@@ -6974,7 +6975,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     if (i6 >= mediaPageArr2.length) {
                         break;
                     }
-                    if (mediaPageArr2[i6].listView.getAdapter() == adapter2) {
+                    MediaPage mediaPage2 = mediaPageArr2[i6];
+                    if (mediaPage2 != null && mediaPage2.listView != null && this.mediaPages[i6].listView.getAdapter() == adapter2) {
                         this.mediaPages[i6].listView.stopScroll();
                     }
                     i6++;
@@ -7158,13 +7160,16 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     if (i17 >= mediaPageArr4.length) {
                         return;
                     }
-                    int childCount = mediaPageArr4[i17].listView.getChildCount();
-                    for (int i18 = 0; i18 < childCount; i18++) {
-                        View childAt = this.mediaPages[i17].listView.getChildAt(i18);
-                        if (childAt instanceof SharedAudioCell) {
-                            SharedAudioCell sharedAudioCell = (SharedAudioCell) childAt;
-                            if (sharedAudioCell.getMessage() != null) {
-                                sharedAudioCell.updateButtonState(false, true);
+                    MediaPage mediaPage3 = mediaPageArr4[i17];
+                    if (mediaPage3 != null && mediaPage3.listView != null) {
+                        int childCount = this.mediaPages[i17].listView.getChildCount();
+                        for (int i18 = 0; i18 < childCount; i18++) {
+                            View childAt = this.mediaPages[i17].listView.getChildAt(i18);
+                            if (childAt instanceof SharedAudioCell) {
+                                SharedAudioCell sharedAudioCell = (SharedAudioCell) childAt;
+                                if (sharedAudioCell.getMessage() != null) {
+                                    sharedAudioCell.updateButtonState(false, true);
+                                }
                             }
                         }
                     }
@@ -7196,17 +7201,17 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         } else {
             if (i == NotificationCenter.storiesListUpdated) {
                 StoriesController.StoriesList storiesList = (StoriesController.StoriesList) objArr[0];
-                MediaPage mediaPage = getMediaPage(storyAlbums_getTabTypeByStoriesList(storiesList));
-                if (mediaPage != null) {
-                    if (mediaPage.fastScrollEnabled != (storiesList.getCount() > 0)) {
-                        mediaPage.fastScrollEnabled = storiesList.getCount() > 0;
-                        updateFastScrollVisibility(mediaPage, true);
+                MediaPage mediaPage4 = getMediaPage(storyAlbums_getTabTypeByStoriesList(storiesList));
+                if (mediaPage4 != null) {
+                    if (mediaPage4.fastScrollEnabled != (storiesList.getCount() > 0)) {
+                        mediaPage4.fastScrollEnabled = storiesList.getCount() > 0;
+                        updateFastScrollVisibility(mediaPage4, true);
                     }
                 }
-                if (mediaPage != null) {
-                    AndroidUtilities.notifyDataSetChanged(mediaPage.listView);
-                    if (mediaPage.listView.getLayoutManager() instanceof LinearLayoutManager) {
-                        checkLoadMoreScroll(mediaPage, mediaPage.listView, (LinearLayoutManager) mediaPage.listView.getLayoutManager());
+                if (mediaPage4 != null) {
+                    AndroidUtilities.notifyDataSetChanged(mediaPage4.listView);
+                    if (mediaPage4.listView.getLayoutManager() instanceof LinearLayoutManager) {
+                        checkLoadMoreScroll(mediaPage4, mediaPage4.listView, (LinearLayoutManager) mediaPage4.listView.getLayoutManager());
                     }
                 }
                 Delegate delegate = this.delegate;
@@ -7217,17 +7222,17 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 return;
             }
             if (i == NotificationCenter.storiesUpdated) {
-                for (MediaPage mediaPage2 : this.mediaPages) {
-                    if (mediaPage2 != null && mediaPage2.listView != null && isAnyStoryPageType(mediaPage2.selectedType)) {
-                        if (!isBot() || mediaPage2.listView.getAdapter() == null) {
-                            for (int i21 = 0; i21 < mediaPage2.listView.getChildCount(); i21++) {
-                                View childAt3 = mediaPage2.listView.getChildAt(i21);
+                for (MediaPage mediaPage5 : this.mediaPages) {
+                    if (mediaPage5 != null && mediaPage5.listView != null && isAnyStoryPageType(mediaPage5.selectedType)) {
+                        if (!isBot() || mediaPage5.listView.getAdapter() == null) {
+                            for (int i21 = 0; i21 < mediaPage5.listView.getChildCount(); i21++) {
+                                View childAt3 = mediaPage5.listView.getChildAt(i21);
                                 if (childAt3 instanceof SharedPhotoVideoCell2) {
                                     ((SharedPhotoVideoCell2) childAt3).updateViews();
                                 }
                             }
                         } else {
-                            AndroidUtilities.notifyDataSetChanged(mediaPage2.listView);
+                            AndroidUtilities.notifyDataSetChanged(mediaPage5.listView);
                         }
                     }
                 }

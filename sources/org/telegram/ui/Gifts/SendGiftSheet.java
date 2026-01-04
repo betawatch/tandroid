@@ -311,6 +311,12 @@ public class SendGiftSheet extends BottomSheetWithRecyclerListView implements No
                 SendGiftSheet.this.chatLinearLayout.setTranslationY(((i6 - i4) - SendGiftSheet.this.chatLinearLayout.getMeasuredHeight()) / 2.0f);
                 SendGiftSheet.this.actionCell.setVisiblePart(SendGiftSheet.this.chatLinearLayout.getY() + SendGiftSheet.this.actionCell.getY(), getBackgroundSizeY());
             }
+
+            @Override // org.telegram.ui.Components.SizeNotifierFrameLayout
+            protected void onBackgroundViewInvalidate() {
+                super.onBackgroundViewInvalidate();
+                ((BottomSheetWithRecyclerListView) SendGiftSheet.this).recyclerListView.invalidate();
+            }
         };
         this.chatView = sizeNotifierFrameLayout;
         Drawable backgroundDrawable = PreviewView.getBackgroundDrawable((Drawable) null, i, j, Theme.isCurrentThemeDark());

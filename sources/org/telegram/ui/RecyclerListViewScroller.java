@@ -27,20 +27,20 @@ public class RecyclerListViewScroller {
             valueAnimator.removeAllListeners();
             this.valueAnimator.cancel();
         }
+        final int[] iArr = new int[1];
         this.lastScrolled = 0;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.valueAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.RecyclerListViewScroller$$ExternalSyntheticLambda0
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, i);
+        this.valueAnimator = ofInt;
+        ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.RecyclerListViewScroller$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                RecyclerListViewScroller.this.lambda$smoothScrollBy$0(i, valueAnimator2);
+                RecyclerListViewScroller.this.lambda$smoothScrollBy$0(iArr, valueAnimator2);
             }
         });
         this.valueAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.RecyclerListViewScroller.1
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                RecyclerListViewScroller recyclerListViewScroller = RecyclerListViewScroller.this;
-                recyclerListViewScroller.recyclerListView.scrollBy(0, i - recyclerListViewScroller.lastScrolled);
+                RecyclerListViewScroller.this.recyclerListView.scrollBy(0, i - iArr[0]);
                 RecyclerListViewScroller.this.valueAnimator = null;
             }
         });
@@ -50,10 +50,12 @@ public class RecyclerListViewScroller {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$smoothScrollBy$0(int i, ValueAnimator valueAnimator) {
-        int floatValue = (int) (i * ((Float) valueAnimator.getAnimatedValue()).floatValue());
-        this.recyclerListView.scrollBy(0, floatValue - this.lastScrolled);
-        this.lastScrolled = floatValue;
+    public /* synthetic */ void lambda$smoothScrollBy$0(int[] iArr, ValueAnimator valueAnimator) {
+        int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+        int i = intValue - this.lastScrolled;
+        this.recyclerListView.scrollBy(0, i);
+        iArr[0] = iArr[0] + i;
+        this.lastScrolled = intValue;
     }
 
     public void cancel() {

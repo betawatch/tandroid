@@ -61,7 +61,6 @@ import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ViewPagerActivity;
 
 /* loaded from: classes4.dex */
 public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
@@ -2788,10 +2787,12 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     }
 
     public void makeAttached(BaseFragment baseFragment) {
-        if (AndroidUtilities.isTablet() || (baseFragment instanceof ViewPagerActivity)) {
+        if (AndroidUtilities.isTablet()) {
             return;
         }
-        this.attachedFragment = baseFragment;
+        if (baseFragment == null || !baseFragment.isSupportEdgeToEdge()) {
+            this.attachedFragment = baseFragment;
+        }
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment.AttachedSheet

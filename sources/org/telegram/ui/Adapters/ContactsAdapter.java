@@ -29,6 +29,8 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.DividerCell;
 import org.telegram.ui.Cells.GraySectionCell;
+import org.telegram.ui.Cells.HeaderCell;
+import org.telegram.ui.Cells.InviteUserCell;
 import org.telegram.ui.Cells.LetterSectionCell;
 import org.telegram.ui.Cells.ShadowSectionCell;
 import org.telegram.ui.Cells.TextCell;
@@ -45,18 +47,20 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
     DialogStoriesCell dialogStoriesCell;
     private boolean disableSections;
     BaseFragment fragment;
+    private boolean hasPhonebook;
     public boolean hasStories;
-    private LongSparseArray ignoreUsers;
-    private boolean isAdmin;
-    private boolean isChannel;
-    public boolean isEmpty;
-    private Context mContext;
-    private boolean needPhonebook;
+    private final LongSparseArray ignoreUsers;
+    private final boolean isAdmin;
+    private final boolean isChannel;
+    private boolean isEmpty;
+    private boolean isEmptyWithMainTabs;
+    private final Context mContext;
+    private final boolean needPhonebook;
     private ArrayList onlineContacts;
-    private int onlyUsers;
-    private LongSparseArray selectedContacts;
+    private final int onlyUsers;
+    private final LongSparseArray selectedContacts;
     private int sortType;
-    private int currentAccount = UserConfig.selectedAccount;
+    private final int currentAccount = UserConfig.selectedAccount;
     public ArrayList userStories = new ArrayList();
 
     public void onStoryLongPressed(View view, long j) {
@@ -103,6 +107,10 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
             return;
         }
         notifyDataSetChanged();
+    }
+
+    public boolean isEmpty() {
+        return this.isEmpty;
     }
 
     public void sortOnlineContacts() {
@@ -201,6 +209,10 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
 
     @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
     public Object getItem(int i, int i2) {
+        int i3;
+        if (this.isEmptyWithMainTabs && i == 1 && i2 > 1 && i2 - 2 < ContactsController.getInstance(this.currentAccount).phoneBookContacts.size()) {
+            return ContactsController.getInstance(this.currentAccount).phoneBookContacts.get(i3);
+        }
         if (getItemViewType(i, i2) == 2) {
             return this.hasStories ? "Stories" : "Header";
         }
@@ -226,9 +238,9 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
             return null;
         }
         if (this.sortType != 2) {
-            int i3 = i - 1;
-            if (i3 < arrayList.size()) {
-                ArrayList<TLRPC.TL_contact> arrayList3 = hashMap.get(arrayList.get(i3));
+            int i4 = i - 1;
+            if (i4 < arrayList.size()) {
+                ArrayList<TLRPC.TL_contact> arrayList3 = hashMap.get(arrayList.get(i4));
                 if (i2 < arrayList3.size()) {
                     return MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(arrayList3.get(i2).user_id));
                 }
@@ -257,6 +269,9 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
 
     @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
     public boolean isEnabled(RecyclerView.ViewHolder viewHolder, int i, int i2) {
+        if (this.isEmptyWithMainTabs) {
+            return i == 1 && i2 > 1;
+        }
         boolean z = this.hasStories;
         if (z && i == 1) {
             return i2 != this.userStories.size();
@@ -283,27 +298,64 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
         return true;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:10:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0068  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x006c A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0035  */
     @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public int getSectionCount() {
+        ArrayList<String> arrayList;
+        int size;
+        boolean z = false;
         this.isEmpty = false;
-        int i = 1;
         if (this.sortType == 2) {
             this.isEmpty = this.onlineContacts.isEmpty();
         } else {
-            int size = (this.onlyUsers == 2 ? ContactsController.getInstance(this.currentAccount).sortedUsersMutualSectionsArray : ContactsController.getInstance(this.currentAccount).sortedUsersSectionsArray).size();
+            if (this.onlyUsers == 2) {
+                arrayList = ContactsController.getInstance(this.currentAccount).sortedUsersMutualSectionsArray;
+            } else {
+                arrayList = ContactsController.getInstance(this.currentAccount).sortedUsersSectionsArray;
+            }
+            size = arrayList.size();
             if (size == 0) {
                 this.isEmpty = true;
-            } else {
-                i = size;
             }
+            if (this.onlyUsers == 0) {
+                size++;
+            }
+            if (this.isAdmin) {
+                size++;
+            }
+            if (this.hasStories) {
+                size++;
+            }
+            boolean isEmpty = ContactsController.getInstance(this.currentAccount).phoneBookContacts.isEmpty();
+            this.hasPhonebook = !isEmpty;
+            if (this.isEmpty && this.needPhonebook && !this.isAdmin && this.onlyUsers == 0) {
+                z = true;
+            }
+            this.isEmptyWithMainTabs = z;
+            return !z ? !isEmpty ? 2 : 1 : size;
         }
+        size = 1;
         if (this.onlyUsers == 0) {
-            i++;
         }
         if (this.isAdmin) {
-            i++;
         }
-        return this.hasStories ? i + 1 : i;
+        if (this.hasStories) {
+        }
+        boolean isEmpty2 = ContactsController.getInstance(this.currentAccount).phoneBookContacts.isEmpty();
+        this.hasPhonebook = !isEmpty2;
+        if (this.isEmpty) {
+            z = true;
+        }
+        this.isEmptyWithMainTabs = z;
+        if (!z) {
+        }
     }
 
     @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
@@ -312,6 +364,15 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
     }
 
     private int getCountForSectionInternal(int i) {
+        if (this.isEmptyWithMainTabs) {
+            if (i == 0) {
+                return 1;
+            }
+            if (i == 1) {
+                return ContactsController.getInstance(this.currentAccount).phoneBookContacts.size() + 2;
+            }
+            return 0;
+        }
         HashMap<String, ArrayList<TLRPC.TL_contact>> hashMap = this.onlyUsers == 2 ? ContactsController.getInstance(this.currentAccount).usersMutualSectionsDict : ContactsController.getInstance(this.currentAccount).usersSectionsDict;
         ArrayList<String> arrayList = this.onlyUsers == 2 ? ContactsController.getInstance(this.currentAccount).sortedUsersMutualSectionsArray : ContactsController.getInstance(this.currentAccount).sortedUsersSectionsArray;
         boolean z = this.hasStories;
@@ -323,6 +384,9 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
         }
         if (this.onlyUsers == 0 || this.isAdmin) {
             if (i == 0) {
+                if (this.isEmpty) {
+                    return 1;
+                }
                 return (this.isAdmin || this.needPhonebook) ? 2 : 4;
             }
             if (this.isEmpty) {
@@ -399,66 +463,88 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup viewGroup, int i) {
         View view;
-        if (i == 0) {
-            UserCell userCell = new UserCell(this.mContext, 58, 1, false);
-            userCell.setCallCellStyle(58);
-            view = userCell;
-        } else if (i == 1) {
-            TextCell textCell = new TextCell(this.mContext);
-            int i2 = Theme.key_telegram_color;
-            textCell.setColors(i2, i2);
-            view = textCell;
-        } else if (i == 2) {
-            view = new GraySectionCell(this.mContext);
-        } else if (i == 3) {
-            View dividerCell = new DividerCell(this.mContext);
-            dividerCell.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 28.0f : 72.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(LocaleController.isRTL ? 72.0f : 28.0f), AndroidUtilities.dp(8.0f));
-            view = dividerCell;
-        } else if (i == 4) {
-            FrameLayout frameLayout = new FrameLayout(this.mContext) { // from class: org.telegram.ui.Adapters.ContactsAdapter.1
-                @Override // android.widget.FrameLayout, android.view.View
-                protected void onMeasure(int i3, int i4) {
-                    int size = View.MeasureSpec.getSize(i4);
-                    if (size == 0) {
-                        size = viewGroup.getMeasuredHeight();
-                    }
-                    if (size == 0) {
-                        size = (AndroidUtilities.displaySize.y - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight;
-                    }
-                    int dp = AndroidUtilities.dp(50.0f);
-                    int dp2 = ContactsAdapter.this.onlyUsers != 0 ? 0 : AndroidUtilities.dp(30.0f) + dp;
-                    if (!ContactsAdapter.this.isAdmin && !ContactsAdapter.this.needPhonebook) {
-                        dp2 += dp;
-                    }
-                    int paddingTop = (size - viewGroup.getPaddingTop()) - viewGroup.getPaddingBottom();
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2 < paddingTop ? paddingTop - dp2 : 0, TLObject.FLAG_30));
-                }
-            };
-            frameLayout.addView(new ContactsEmptyView(this.mContext), LayoutHelper.createFrame(-2, -2, 17));
-            view = frameLayout;
-        } else if (i == 6) {
-            DialogStoriesCell dialogStoriesCell = this.dialogStoriesCell;
-            if (dialogStoriesCell == null) {
-                DialogStoriesCell dialogStoriesCell2 = new DialogStoriesCell(this.mContext, this.fragment, this.currentAccount, 1) { // from class: org.telegram.ui.Adapters.ContactsAdapter.2
-                    @Override // org.telegram.ui.Stories.DialogStoriesCell
-                    public void onUserLongPressed(View view2, long j) {
-                        ContactsAdapter.this.onStoryLongPressed(view2, j);
+        switch (i) {
+            case 0:
+                UserCell userCell = new UserCell(this.mContext, 58, 1, false);
+                userCell.setCallCellStyle(58);
+                view = userCell;
+                break;
+            case 1:
+                TextCell textCell = new TextCell(this.mContext);
+                int i2 = Theme.key_telegram_color_text;
+                textCell.setColors(i2, i2);
+                view = textCell;
+                break;
+            case 2:
+                view = new GraySectionCell(this.mContext);
+                break;
+            case 3:
+                View dividerCell = new DividerCell(this.mContext);
+                dividerCell.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 28.0f : 72.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(LocaleController.isRTL ? 72.0f : 28.0f), AndroidUtilities.dp(8.0f));
+                view = dividerCell;
+                break;
+            case 4:
+                FrameLayout frameLayout = new FrameLayout(this.mContext) { // from class: org.telegram.ui.Adapters.ContactsAdapter.1
+                    @Override // android.widget.FrameLayout, android.view.View
+                    protected void onMeasure(int i3, int i4) {
+                        if (ContactsAdapter.this.isEmptyWithMainTabs && ContactsAdapter.this.hasPhonebook) {
+                            super.onMeasure(i3, i4);
+                            return;
+                        }
+                        int size = View.MeasureSpec.getSize(i4);
+                        if (size == 0) {
+                            size = viewGroup.getMeasuredHeight();
+                        }
+                        if (size == 0) {
+                            size = (AndroidUtilities.displaySize.y - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight;
+                        }
+                        int dp = AndroidUtilities.dp(50.0f);
+                        int dp2 = ContactsAdapter.this.onlyUsers != 0 ? 0 : AndroidUtilities.dp(30.0f) + dp;
+                        if (!ContactsAdapter.this.isAdmin && !ContactsAdapter.this.needPhonebook) {
+                            dp2 += dp;
+                        }
+                        int paddingTop = (size - viewGroup.getPaddingTop()) - viewGroup.getPaddingBottom();
+                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2 < paddingTop ? paddingTop - dp2 : 0, TLObject.FLAG_30));
                     }
                 };
-                this.dialogStoriesCell = dialogStoriesCell2;
-                dialogStoriesCell2.setProgressToCollapse(0.0f, false);
-            } else {
-                AndroidUtilities.removeFromParent(dialogStoriesCell);
-            }
-            FrameLayout frameLayout2 = new FrameLayout(this.mContext);
-            frameLayout2.addView(this.dialogStoriesCell, LayoutHelper.createFrame(-1, -2.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
-            view = frameLayout2;
-        } else {
-            View shadowSectionCell = new ShadowSectionCell(this.mContext);
-            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
-            combinedDrawable.setFullsize(true);
-            shadowSectionCell.setBackgroundDrawable(combinedDrawable);
-            view = shadowSectionCell;
+                frameLayout.addView(new ContactsEmptyView(this.mContext), LayoutHelper.createFrame(-1, -2, 17));
+                frameLayout.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
+                view = frameLayout;
+                break;
+            case 5:
+            default:
+                View shadowSectionCell = new ShadowSectionCell(this.mContext);
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                combinedDrawable.setFullsize(true);
+                shadowSectionCell.setBackgroundDrawable(combinedDrawable);
+                view = shadowSectionCell;
+                break;
+            case 6:
+                DialogStoriesCell dialogStoriesCell = this.dialogStoriesCell;
+                if (dialogStoriesCell == null) {
+                    DialogStoriesCell dialogStoriesCell2 = new DialogStoriesCell(this.mContext, this.fragment, this.currentAccount, 1) { // from class: org.telegram.ui.Adapters.ContactsAdapter.2
+                        @Override // org.telegram.ui.Stories.DialogStoriesCell
+                        public void onUserLongPressed(View view2, long j) {
+                            ContactsAdapter.this.onStoryLongPressed(view2, j);
+                        }
+                    };
+                    this.dialogStoriesCell = dialogStoriesCell2;
+                    dialogStoriesCell2.setProgressToCollapse(0.0f, false);
+                } else {
+                    AndroidUtilities.removeFromParent(dialogStoriesCell);
+                }
+                FrameLayout frameLayout2 = new FrameLayout(this.mContext);
+                frameLayout2.addView(this.dialogStoriesCell, LayoutHelper.createFrame(-1, -2.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
+                view = frameLayout2;
+                break;
+            case 7:
+                HeaderCell headerCell = new HeaderCell(this.mContext, Theme.key_windowBackgroundWhiteBlueHeader, 21, 14, 5, false, null);
+                headerCell.setText(LocaleController.getString(R.string.InviteFriends));
+                view = headerCell;
+                break;
+            case 8:
+                view = new InviteUserCell(this.mContext, false);
+                break;
         }
         return new RecyclerListView.Holder(view);
     }
@@ -535,6 +621,19 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
         }
         if (itemViewType2 != 1) {
             if (itemViewType2 != 2) {
+                if (itemViewType2 == 4) {
+                    viewHolder.itemView.setPadding(0, AndroidUtilities.dp(!this.hasPhonebook ? 96.0f : 25.0f), 0, AndroidUtilities.dp(18.0f));
+                    return;
+                }
+                if (itemViewType2 != 8) {
+                    return;
+                }
+                InviteUserCell inviteUserCell = (InviteUserCell) viewHolder.itemView;
+                int i5 = i2 - 2;
+                if (i5 < 0 || i5 >= ContactsController.getInstance(this.currentAccount).phoneBookContacts.size()) {
+                    return;
+                }
+                inviteUserCell.setUser(ContactsController.getInstance(this.currentAccount).phoneBookContacts.get(i5), null);
                 return;
             }
             GraySectionCell graySectionCell2 = (GraySectionCell) viewHolder.itemView;
@@ -542,11 +641,11 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
                 graySectionCell2.setText(LocaleController.getString(R.string.HiddenStories));
                 return;
             }
-            int i5 = this.sortType;
-            if (i5 == 0) {
+            int i6 = this.sortType;
+            if (i6 == 0) {
                 graySectionCell2.setText(LocaleController.getString(R.string.Contacts));
                 return;
-            } else if (i5 == 1) {
+            } else if (i6 == 1) {
                 graySectionCell2.setText(LocaleController.getString(R.string.SortedByName));
                 return;
             } else {
@@ -601,6 +700,18 @@ public abstract class ContactsAdapter extends RecyclerListView.SectionsAdapter {
 
     @Override // org.telegram.ui.Components.RecyclerListView.SectionsAdapter
     public int getItemViewType(int i, int i2) {
+        if (this.isEmptyWithMainTabs) {
+            if (i == 0) {
+                return 4;
+            }
+            if (i != 1) {
+                return 8;
+            }
+            if (i2 == 0) {
+                return 5;
+            }
+            return i2 == 1 ? 7 : 8;
+        }
         HashMap<String, ArrayList<TLRPC.TL_contact>> hashMap = this.onlyUsers == 2 ? ContactsController.getInstance(this.currentAccount).usersMutualSectionsDict : ContactsController.getInstance(this.currentAccount).usersSectionsDict;
         ArrayList<String> arrayList = this.onlyUsers == 2 ? ContactsController.getInstance(this.currentAccount).sortedUsersMutualSectionsArray : ContactsController.getInstance(this.currentAccount).sortedUsersSectionsArray;
         boolean z = this.hasStories;

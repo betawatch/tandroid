@@ -29,6 +29,7 @@ import org.telegram.ui.Components.RLottieImageView;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.FilterCreateActivity;
 import org.telegram.ui.PeerColorActivity;
+import org.telegram.ui.SettingsActivity;
 import org.telegram.ui.Stories.recorder.HintView2;
 
 /* loaded from: classes4.dex */
@@ -472,7 +473,7 @@ public class TextCell extends FrameLayout {
         animatedTextView.setText(ellipsize, z);
     }
 
-    public void setTextAndValueAndColorfulIcon(String str, CharSequence charSequence, boolean z, int i, int i2, boolean z2) {
+    public void setTextAndValueAndColorfulIcon(String str, CharSequence charSequence, boolean z, int i, int i2, int i3, boolean z2) {
         CharSequence ellipsize;
         this.imageLeft = 21;
         this.offsetFromImage = getOffsetFromImage(false);
@@ -488,7 +489,7 @@ public class TextCell extends FrameLayout {
         animatedTextView.setText(ellipsize, z);
         this.valueTextView.setVisibility(0);
         this.valueSpoilersTextView.setVisibility(8);
-        setColorfulIcon(i2, i);
+        setColorfulIcon(i2, i3, i);
         this.valueImageView.setVisibility(8);
         this.needDivider = z2;
         setWillNotDraw(!z2);
@@ -611,13 +612,22 @@ public class TextCell extends FrameLayout {
     }
 
     public void setColorfulIcon(int i, int i2) {
+        setColorfulIcon(i, i, i2);
+    }
+
+    public void setColorfulIcon(int i, int i2, int i3) {
         this.offsetFromImage = getOffsetFromImage(true);
         this.imageView.setVisibility(0);
         this.imageView.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         this.imageView.setTranslationX(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : -3.0f));
-        this.imageView.setImageResource(i2);
+        this.imageView.setImageResource(i3);
         this.imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        this.imageView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(9.0f), i));
+        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
+        boolean isDark = resourcesProvider != null ? resourcesProvider.isDark() : Theme.isCurrentThemeDark();
+        SettingsActivity.SettingCell.Background background = new SettingsActivity.SettingCell.Background();
+        background.setColor(i, i2);
+        background.setDrawBorder(isDark);
+        this.imageView.setBackground(background);
     }
 
     public void setTextAndCheck(CharSequence charSequence, boolean z, boolean z2) {

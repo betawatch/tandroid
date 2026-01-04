@@ -170,6 +170,8 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     private String source;
     private int statusBarHeight;
     int statusRow;
+    Paint strokePaint;
+    Shader strokeShader;
     final ArrayList subscriptionTiers;
     PremiumGradient.PremiumGradientTools tiersGradientTools;
     int totalGradientHeight;
@@ -696,6 +698,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         this.subscriptionTiers = new ArrayList();
         boolean z = false;
         this.selectedTierIndex = 0;
+        this.strokePaint = new Paint(1);
         this.matrix = new Matrix();
         this.gradientPaint = new Paint(1);
         Bitmap createBitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
@@ -727,12 +730,17 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
         this.hasOwnBackground = true;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{1308622847, 0, 452984831}, new float[]{0.0f, 0.5f, 1.0f}, tileMode);
+        this.strokeShader = linearGradient;
+        this.strokePaint.setShader(linearGradient);
+        this.strokePaint.setStyle(Paint.Style.STROKE);
         int color = Theme.getColor(Theme.key_premiumGradient4);
         int color2 = Theme.getColor(Theme.key_premiumGradient3);
         int i = Theme.key_premiumGradient2;
-        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 100.0f, new int[]{color, color2, Theme.getColor(i), Theme.getColor(Theme.key_premiumGradient1), Theme.getColor(Theme.key_premiumGradient0)}, new float[]{0.0f, 0.32f, 0.5f, 0.7f, 1.0f}, Shader.TileMode.CLAMP);
-        this.shader = linearGradient;
-        linearGradient.setLocalMatrix(this.matrix);
+        LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 0.0f, 100.0f, new int[]{color, color2, Theme.getColor(i), Theme.getColor(Theme.key_premiumGradient1), Theme.getColor(Theme.key_premiumGradient0)}, new float[]{0.0f, 0.32f, 0.5f, 0.7f, 1.0f}, tileMode);
+        this.shader = linearGradient2;
+        linearGradient2.setLocalMatrix(this.matrix);
         this.gradientPaint.setShader(this.shader);
         this.dummyCell = new PremiumFeatureCell(context);
         this.dummyTierCell = new PremiumTierCell(context);
@@ -1807,14 +1815,26 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                     view = new PremiumFeatureCell(context) { // from class: org.telegram.ui.PremiumPreviewFragment.Adapter.2
                         @Override // org.telegram.ui.PremiumFeatureCell, android.view.ViewGroup, android.view.View
                         protected void dispatchDraw(Canvas canvas) {
+                            float dp = AndroidUtilities.dp(10.0f);
                             RectF rectF = AndroidUtilities.rectTmp;
                             rectF.set(this.imageView.getLeft(), this.imageView.getTop(), this.imageView.getRight(), this.imageView.getBottom());
                             PremiumPreviewFragment.this.matrix.reset();
-                            PremiumPreviewFragment.this.matrix.postScale(1.0f, r1.totalGradientHeight / 100.0f, 0.0f, 0.0f);
+                            PremiumPreviewFragment.this.matrix.postScale(1.0f, r2.totalGradientHeight / 100.0f, 0.0f, 0.0f);
                             PremiumPreviewFragment.this.matrix.postTranslate(0.0f, -this.data.yOffset);
                             PremiumPreviewFragment premiumPreviewFragment = PremiumPreviewFragment.this;
                             premiumPreviewFragment.shader.setLocalMatrix(premiumPreviewFragment.matrix);
-                            canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), PremiumPreviewFragment.this.gradientPaint);
+                            canvas.drawRoundRect(rectF, dp, dp, PremiumPreviewFragment.this.gradientPaint);
+                            if (((BaseFragment) PremiumPreviewFragment.this).resourceProvider != null ? ((BaseFragment) PremiumPreviewFragment.this).resourceProvider.isDark() : Theme.isCurrentThemeDark()) {
+                                float dp2 = AndroidUtilities.dp(1.0f);
+                                PremiumPreviewFragment.this.strokePaint.setStrokeWidth(dp2);
+                                canvas.save();
+                                canvas.translate(rectF.left, rectF.top);
+                                rectF.offset(-rectF.left, -rectF.top);
+                                float f = dp2 / 2.0f;
+                                rectF.inset(f, f);
+                                canvas.drawRoundRect(rectF, dp, dp, PremiumPreviewFragment.this.strokePaint);
+                                canvas.restore();
+                            }
                             super.dispatchDraw(canvas);
                         }
                     };

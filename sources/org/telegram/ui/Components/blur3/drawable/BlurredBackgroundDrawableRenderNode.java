@@ -154,7 +154,7 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
     @Override // org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable
     public void updateColors() {
         super.updateColors();
-        this.paintShadow.setShadowLayer(AndroidUtilities.dpf2(1.0f), 0.0f, AndroidUtilities.dpf2(0.33333334f), this.shadowColor);
+        this.paintShadow.setShadowLayer(this.shadowLayerRadius, this.shadowLayerDx, this.shadowLayerDy, this.shadowColor);
         this.paintStrokeTop.setColor(this.strokeColorTop);
         this.paintStrokeBottom.setColor(this.strokeColorBottom);
         this.renderNodeInvalidated = true;
@@ -183,7 +183,7 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
         alpha = this.renderNode.getAlpha();
         int multAlpha = Theme.multAlpha(i, alpha);
         if (Color.alpha(multAlpha) != 0) {
-            this.paintShadow.setShadowLayer(AndroidUtilities.dpf2(1.0f), 0.0f, AndroidUtilities.dpf2(0.33333334f), multAlpha);
+            this.paintShadow.setShadowLayer(this.shadowLayerRadius, this.shadowLayerDx, this.shadowLayerDy, multAlpha);
             this.boundProps.drawShadows(canvas, this.paintShadow, this.inAppKeyboardOptimization);
         }
         canvas.save();

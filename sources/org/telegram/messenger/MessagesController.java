@@ -104,6 +104,7 @@ import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.TranscribeButton;
 import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.MainTabsActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
@@ -32159,7 +32160,8 @@ public class MessagesController extends BaseController implements NotificationCe
                 }
             }
         }
-        boolean z2 = LaunchActivity.getLastFragment() instanceof DialogsActivity;
+        BaseFragment lastFragment = LaunchActivity.getLastFragment();
+        boolean z2 = (lastFragment instanceof DialogsActivity) || (lastFragment instanceof MainTabsActivity);
         if (restrictionReason != null) {
             showCantOpenAlert(baseFragment, restrictionReason);
             return;

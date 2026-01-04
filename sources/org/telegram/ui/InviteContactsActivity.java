@@ -52,7 +52,6 @@ import org.telegram.ui.Cells.InviteTextCell;
 import org.telegram.ui.Cells.InviteUserCell;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.FlickerLoadingView;
-import org.telegram.ui.Components.GroupCreateDividerItemDecoration;
 import org.telegram.ui.Components.GroupCreateSpan;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RecyclerListView;
@@ -66,7 +65,6 @@ public class InviteContactsActivity extends BaseFragment implements Notification
     private TextView counterTextView;
     private FrameLayout counterView;
     private GroupCreateSpan currentDeletingSpan;
-    private GroupCreateDividerItemDecoration decoration;
     private EditTextBoldCursor editText;
     private StickerEmptyView emptyView;
     private int fieldY;
@@ -533,10 +531,6 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.listView.setLayoutManager(linearLayoutManager);
         this.listView.setVerticalScrollBarEnabled(true);
         this.listView.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        RecyclerListView recyclerListView2 = this.listView;
-        GroupCreateDividerItemDecoration groupCreateDividerItemDecoration = new GroupCreateDividerItemDecoration();
-        this.decoration = groupCreateDividerItemDecoration;
-        recyclerListView2.addItemDecoration(groupCreateDividerItemDecoration);
         viewGroup.addView(this.listView);
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
@@ -978,10 +972,10 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         public void notifyDataSetChanged() {
             super.notifyDataSetChanged();
             int itemCount = getItemCount();
-            if (!this.searching) {
-                InviteContactsActivity.this.emptyView.setVisibility(itemCount == 1 ? 0 : 4);
+            if (this.searching) {
+                return;
             }
-            InviteContactsActivity.this.decoration.setSingle(itemCount == 1);
+            InviteContactsActivity.this.emptyView.setVisibility(itemCount == 1 ? 0 : 4);
         }
     }
 

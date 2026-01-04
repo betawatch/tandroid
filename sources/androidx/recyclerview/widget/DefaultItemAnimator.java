@@ -261,6 +261,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
                 }
                 view.setTranslationX(0.0f);
                 view.setTranslationY(0.0f);
+                DefaultItemAnimator.this.onRemoveAnimationUpdate(viewHolder);
                 DefaultItemAnimator.this.dispatchRemoveFinished(viewHolder);
                 DefaultItemAnimator.this.mRemoveAnimations.remove(viewHolder);
                 DefaultItemAnimator.this.dispatchFinishedWhenDone();
@@ -317,6 +318,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 animate.setListener(null);
+                DefaultItemAnimator.this.onAddAnimationUpdate(viewHolder);
                 DefaultItemAnimator.this.dispatchAddFinished(viewHolder);
                 DefaultItemAnimator.this.mAddAnimations.remove(viewHolder);
                 DefaultItemAnimator.this.dispatchFinishedWhenDone();
@@ -404,6 +406,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 animate.setListener(null);
+                DefaultItemAnimator.this.onMoveAnimationUpdate(viewHolder);
                 DefaultItemAnimator.this.dispatchMoveFinished(viewHolder);
                 DefaultItemAnimator.this.mMoveAnimations.remove(viewHolder);
                 DefaultItemAnimator.this.dispatchFinishedWhenDone();
@@ -489,6 +492,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
                     }
                     view.setTranslationX(0.0f);
                     view.setTranslationY(0.0f);
+                    DefaultItemAnimator.this.onChangeAnimationUpdate(changeInfo.oldHolder);
                     DefaultItemAnimator.this.dispatchChangeFinished(changeInfo.oldHolder, true);
                     DefaultItemAnimator.this.mChangeAnimations.remove(changeInfo.oldHolder);
                     DefaultItemAnimator.this.dispatchFinishedWhenDone();
@@ -524,6 +528,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
                     }
                     view2.setTranslationX(0.0f);
                     view2.setTranslationY(0.0f);
+                    DefaultItemAnimator.this.onChangeAnimationUpdate(changeInfo.newHolder);
                     DefaultItemAnimator.this.dispatchChangeFinished(changeInfo.newHolder, false);
                     DefaultItemAnimator.this.mChangeAnimations.remove(changeInfo.newHolder);
                     DefaultItemAnimator.this.dispatchFinishedWhenDone();

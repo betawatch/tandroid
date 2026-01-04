@@ -2475,6 +2475,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
             updateExceptions();
         }
+        long clientUserId = getUserConfig().getClientUserId();
+        if ((this.userId == clientUserId || this.dialogId == clientUserId) && !this.myProfile) {
+            this.myProfile = true;
+        }
         SharedMediaLayout.SharedMediaPreloader sharedMediaPreloader = this.sharedMediaPreloader;
         if (sharedMediaPreloader != null && sharedMediaPreloader.getTopicId() != this.topicId) {
             this.sharedMediaPreloader.onDestroy(this);
@@ -2802,7 +2806,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         actionBar.setOccupyStatusBar(z);
         if (this.hasMainTabs) {
             actionBar.setBackButtonDrawable(new BackDrawable(false));
-            actionBar.backButtonImageView.setImageResource(R.drawable.msg_qr_mini);
+            actionBar.backButtonImageView.setImageResource(R.drawable.outline_header_qr_24);
             actionBar.backButtonImageView.setColorFilter(getThemedColor(i), PorterDuff.Mode.SRC_IN);
             actionBar.backButtonImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda30
                 @Override // android.view.View.OnClickListener
@@ -3930,7 +3934,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 if (profileActionsView2 != null) {
                     profileActionsView2.beginApplyingActions();
                     this.actionsView.addCameraAction();
-                    this.actionsView.addAddStory();
+                    this.actionsView.addEditInfo();
                     this.actionsView.addSettings();
                     this.actionsView.commitActions();
                 } else {
@@ -11868,20 +11872,20 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         checkPhotoDescriptionAlpha();
         if (this.playProfileAnimation == 2) {
             this.avatarImage.setProgressToExpand(f);
+            ProfileActionsView profileActionsView = this.actionsView;
+            if (profileActionsView != null) {
+                profileActionsView.setParentExpanded(f);
+            }
+            ProfileMusicView profileMusicView = this.musicView;
+            if (profileMusicView != null) {
+                profileMusicView.setParentExpanded(f);
+            }
+            StarRatingView starRatingView = this.ratingView;
+            if (starRatingView != null) {
+                starRatingView.setParentExpanded(f);
+            }
             updateActionsPosition();
             updateSuggestionsPosition();
-        }
-        StarRatingView starRatingView = this.ratingView;
-        if (starRatingView != null) {
-            starRatingView.setParentExpanded(f);
-        }
-        ProfileActionsView profileActionsView = this.actionsView;
-        if (profileActionsView != null) {
-            profileActionsView.setParentExpanded(f);
-        }
-        ProfileMusicView profileMusicView = this.musicView;
-        if (profileMusicView != null) {
-            profileMusicView.setParentExpanded(f);
         }
         this.listView.setAlpha(f);
         this.listView.setTranslationX(AndroidUtilities.dp(48.0f) - (AndroidUtilities.dp(48.0f) * f));
@@ -15018,6 +15022,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         goToForum();
     }
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void clearViews() {
+        this.peerColor = null;
+        super.clearViews();
+    }
+
     private void updatedPeerColor() {
         ProfileGiftsContainer profileGiftsContainer;
         SharedMediaLayout.ScrollSlidingTextTabStripInner scrollSlidingTextTabStripInner;
@@ -16659,6 +16669,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 case 25:
                     FrameLayout frameLayout = new FrameLayout(this.mContext);
                     ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(this.mContext, ProfileActivity.this.resourcesProvider);
+                    buttonWithCounterView.setRound();
                     buttonWithCounterView.setText(LocaleController.getString(R.string.ProfileBotOpenApp), false);
                     buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
@@ -16811,13 +16822,13 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         /* JADX WARN: Removed duplicated region for block: B:256:0x064b A[ADDED_TO_REGION] */
         /* JADX WARN: Removed duplicated region for block: B:259:0x0656  */
         /* JADX WARN: Removed duplicated region for block: B:261:0x065d  */
-        /* JADX WARN: Removed duplicated region for block: B:618:0x14e3  */
-        /* JADX WARN: Removed duplicated region for block: B:624:0x152a  */
-        /* JADX WARN: Type inference failed for: r12v13, types: [android.text.SpannableString, java.lang.CharSequence] */
-        /* JADX WARN: Type inference failed for: r19v10, types: [java.lang.CharSequence] */
-        /* JADX WARN: Type inference failed for: r19v12, types: [java.lang.CharSequence] */
-        /* JADX WARN: Type inference failed for: r5v114, types: [android.view.View, org.telegram.ui.Cells.TextInfoPrivacyCell] */
-        /* JADX WARN: Type inference failed for: r6v138, types: [android.text.SpannableStringBuilder, java.lang.CharSequence] */
+        /* JADX WARN: Removed duplicated region for block: B:618:0x14eb  */
+        /* JADX WARN: Removed duplicated region for block: B:624:0x1532  */
+        /* JADX WARN: Type inference failed for: r12v17, types: [android.text.SpannableString, java.lang.CharSequence] */
+        /* JADX WARN: Type inference failed for: r19v11, types: [java.lang.CharSequence] */
+        /* JADX WARN: Type inference failed for: r19v13, types: [java.lang.CharSequence] */
+        /* JADX WARN: Type inference failed for: r5v118, types: [android.view.View, org.telegram.ui.Cells.TextInfoPrivacyCell] */
+        /* JADX WARN: Type inference failed for: r6v136, types: [android.text.SpannableStringBuilder, java.lang.CharSequence] */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -16831,19 +16842,19 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             String str4;
             String str5;
             boolean z;
-            String sb;
             String string3;
-            TLRPC.TL_username tL_username;
             String str6;
+            TLRPC.TL_username tL_username;
+            String str7;
             CharSequence formatTextWithEntities;
             String string4;
-            String str7;
+            String str8;
             String formatString;
             String formatTTLString;
             boolean z2;
             String string5;
             TLRPC.ChatParticipant chatParticipant;
-            String str8 = "";
+            String str9 = "";
             r8 = null;
             CharSequence charSequence = null;
             r8 = null;
@@ -16911,7 +16922,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                             ProfileActivity profileActivity3 = ProfileActivity.this;
                             if (!profileActivity3.myProfile && isToday && !profileActivity3.getMessagesController().premiumPurchaseBlocked()) {
                                 z = false;
-                                if (r10) {
+                                if (!r10) {
                                     Drawable drawable = ContextCompat.getDrawable(textDetailCell.getContext(), R.drawable.msg_input_gift);
                                     ProfileActivity profileActivity4 = ProfileActivity.this;
                                     drawable.setColorFilter(new PorterDuffColorFilter(profileActivity4.dontApplyPeerColor(profileActivity4.getThemedColor(Theme.key_switch2TrackChecked), false), PorterDuff.Mode.MULTIPLY));
@@ -16931,7 +16942,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 } else if (z) {
                                     Drawable drawable2 = ContextCompat.getDrawable(textDetailCell.getContext(), R.drawable.header_qr_24);
                                     ProfileActivity profileActivity6 = ProfileActivity.this;
-                                    drawable2.setColorFilter(new PorterDuffColorFilter(profileActivity6.dontApplyPeerColor(profileActivity6.getThemedColor(Theme.key_switch2TrackChecked), false), PorterDuff.Mode.MULTIPLY));
+                                    drawable2.setColorFilter(new PorterDuffColorFilter(profileActivity6.dontApplyPeerColor(profileActivity6.getThemedColor(Theme.key_actionBarDefaultIcon), false), PorterDuff.Mode.MULTIPLY));
                                     textDetailCell.setImage(drawable2, LocaleController.getString(R.string.GetQRCode));
                                     final ProfileActivity profileActivity7 = ProfileActivity.this;
                                     textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda5
@@ -16954,16 +16965,16 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         TLRPC.User user = ProfileActivity.this.getMessagesController().getUser(Long.valueOf(ProfileActivity.this.userId));
                         if (user != null && !TextUtils.isEmpty(ProfileActivity.this.vcardPhone)) {
                             string4 = PhoneFormat.getInstance().format("+" + ProfileActivity.this.vcardPhone);
-                            str7 = ProfileActivity.this.vcardPhone;
+                            str8 = ProfileActivity.this.vcardPhone;
                         } else if (user != null && !TextUtils.isEmpty(user.phone)) {
                             String format = PhoneFormat.getInstance().format("+" + user.phone);
-                            str7 = user.phone;
+                            str8 = user.phone;
                             string4 = format;
                         } else {
                             string4 = LocaleController.getString(R.string.PhoneHidden);
-                            str7 = null;
+                            str8 = null;
                         }
-                        ProfileActivity.this.isFragmentPhoneNumber = str7 != null && str7.matches("888\\d{8}");
+                        ProfileActivity.this.isFragmentPhoneNumber = str8 != null && str8.matches("888\\d{8}");
                         textDetailCell.setTextAndValue(string4, LocaleController.getString(ProfileActivity.this.isFragmentPhoneNumber ? R.string.AnonymousNumber : R.string.PhoneMobile), false);
                     } else if (i == ProfileActivity.this.noteRow) {
                         TLRPC.UserFull userFull2 = ProfileActivity.this.getMessagesController().getUserFull(ProfileActivity.this.userId);
@@ -17052,23 +17063,22 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                     }
                                 }
                             }
-                            String string9 = LocaleController.getString(R.string.Username);
+                            string3 = LocaleController.getString(R.string.Username);
                             if (str3 != null) {
-                                String str9 = "@" + str3;
+                                String str10 = "@" + str3;
                                 if (tL_username == null || tL_username.editable) {
-                                    str6 = str9;
+                                    str7 = str10;
                                 } else {
-                                    ?? spannableString = new SpannableString(str9);
+                                    ?? spannableString = new SpannableString(str10);
                                     spannableString.setSpan(makeUsernameLinkSpan(tL_username), 0, spannableString.length(), 33);
-                                    str6 = spannableString;
+                                    str7 = spannableString;
                                 }
                             } else {
-                                str6 = "—";
+                                str7 = "—";
                             }
-                            str5 = str6;
+                            z = !ProfileActivity.this.myProfile;
+                            str5 = str7;
                             arrayList = arrayList2;
-                            str4 = string9;
-                            z = true;
                         } else if (ProfileActivity.this.currentChat != null) {
                             TLRPC.Chat chat = ProfileActivity.this.getMessagesController().getChat(Long.valueOf(ProfileActivity.this.chatId));
                             str3 = ChatObject.getPublicUsername(chat);
@@ -17076,44 +17086,52 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                 arrayList.addAll(chat.usernames);
                             }
                             if (ChatObject.isPublic(chat)) {
-                                StringBuilder sb2 = new StringBuilder();
-                                sb2.append(ProfileActivity.this.getMessagesController().linkPrefix);
-                                sb2.append("/");
-                                sb2.append(str3);
-                                String str10 = str8;
-                                if (ProfileActivity.this.topicId != 0) {
-                                    str10 = "/" + ProfileActivity.this.topicId;
-                                }
-                                sb2.append(str10);
-                                sb = sb2.toString();
-                                string3 = LocaleController.getString(R.string.InviteLink);
-                                z = true;
-                            } else {
-                                StringBuilder sb3 = new StringBuilder();
-                                sb3.append(ProfileActivity.this.getMessagesController().linkPrefix);
-                                sb3.append("/c/");
-                                sb3.append(ProfileActivity.this.chatId);
-                                String str11 = str8;
+                                z = !ProfileActivity.this.myProfile;
+                                StringBuilder sb = new StringBuilder();
+                                sb.append(ProfileActivity.this.getMessagesController().linkPrefix);
+                                sb.append("/");
+                                sb.append(str3);
+                                String str11 = str9;
                                 if (ProfileActivity.this.topicId != 0) {
                                     str11 = "/" + ProfileActivity.this.topicId;
                                 }
-                                sb3.append(str11);
-                                sb = sb3.toString();
+                                sb.append(str11);
+                                str6 = sb.toString();
+                                string3 = LocaleController.getString(R.string.InviteLink);
+                            } else {
+                                StringBuilder sb2 = new StringBuilder();
+                                sb2.append(ProfileActivity.this.getMessagesController().linkPrefix);
+                                sb2.append("/c/");
+                                sb2.append(ProfileActivity.this.chatId);
+                                String str12 = str9;
+                                if (ProfileActivity.this.topicId != 0) {
+                                    str12 = "/" + ProfileActivity.this.topicId;
+                                }
+                                sb2.append(str12);
+                                String sb3 = sb2.toString();
                                 string3 = LocaleController.getString(R.string.InviteLinkPrivate);
+                                str6 = sb3;
                                 z = false;
                             }
-                            str5 = sb;
-                            str4 = string3;
+                            str5 = str6;
                         } else {
                             arrayList = new ArrayList();
                             str3 = null;
                             str4 = "";
                             str5 = str4;
                             z = false;
+                            textDetailCell.setTextAndValue(str5, alsoUsernamesString(str3, arrayList, str4), ProfileActivity.this.infoEndRowEmpty != -1 && !(!ProfileActivity.this.isTopic && ProfileActivity.this.bizHoursRow == -1 && ProfileActivity.this.bizLocationRow == -1) && ProfileActivity.this.birthdayRow < 0);
+                            r10 = false;
+                            if (!r10) {
+                            }
+                            textDetailCell.setTag(Integer.valueOf(i));
+                            textDetailCell.textView.setLoading(ProfileActivity.this.loadingSpan);
+                            textDetailCell.valueTextView.setLoading(ProfileActivity.this.loadingSpan);
                         }
-                        textDetailCell.setTextAndValue(str5, alsoUsernamesString(str3, arrayList, str4), ProfileActivity.this.infoEndRowEmpty == -1 && !(!ProfileActivity.this.isTopic && ProfileActivity.this.bizHoursRow == -1 && ProfileActivity.this.bizLocationRow == -1) && ProfileActivity.this.birthdayRow < 0);
+                        str4 = string3;
+                        textDetailCell.setTextAndValue(str5, alsoUsernamesString(str3, arrayList, str4), ProfileActivity.this.infoEndRowEmpty != -1 && !(!ProfileActivity.this.isTopic && ProfileActivity.this.bizHoursRow == -1 && ProfileActivity.this.bizLocationRow == -1) && ProfileActivity.this.birthdayRow < 0);
                         r10 = false;
-                        if (r10) {
+                        if (!r10) {
                         }
                         textDetailCell.setTag(Integer.valueOf(i));
                         textDetailCell.textView.setLoading(ProfileActivity.this.loadingSpan);
@@ -17121,7 +17139,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     }
                     z = false;
                     r10 = false;
-                    if (r10) {
+                    if (!r10) {
                     }
                     textDetailCell.setTag(Integer.valueOf(i));
                     textDetailCell.textView.setLoading(ProfileActivity.this.loadingSpan);
@@ -17137,11 +17155,11 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         aboutLinkCell.setTextAndValue(ProfileActivity.this.userInfo.about, LocaleController.getString(R.string.UserBio), r10);
                         break;
                     } else if (i == ProfileActivity.this.channelInfoRow) {
-                        String str12 = ProfileActivity.this.chatInfo.about;
-                        while (str12.contains("\n\n\n")) {
-                            str12 = str12.replace("\n\n\n", "\n\n");
+                        String str13 = ProfileActivity.this.chatInfo.about;
+                        while (str13.contains("\n\n\n")) {
+                            str13 = str13.replace("\n\n\n", "\n\n");
                         }
-                        aboutLinkCell.setTextAndValue(str12, LocaleController.getString(R.string.DescriptionPlaceholder), ChatObject.isChannel(ProfileActivity.this.currentChat) && !ProfileActivity.this.currentChat.megagroup);
+                        aboutLinkCell.setTextAndValue(str13, LocaleController.getString(R.string.DescriptionPlaceholder), ChatObject.isChannel(ProfileActivity.this.currentChat) && !ProfileActivity.this.currentChat.megagroup);
                         break;
                     } else if (i == ProfileActivity.this.bioRow) {
                         if (ProfileActivity.this.userInfo == null || !TextUtils.isEmpty(ProfileActivity.this.userInfo.about)) {
@@ -17293,28 +17311,28 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                                                                                                         if (i == ProfileActivity.this.starsRow) {
                                                                                                                             StarsController starsController = StarsController.getInstance(((BaseFragment) ProfileActivity.this).currentAccount);
                                                                                                                             long j = starsController.getBalance().amount;
-                                                                                                                            String string10 = LocaleController.getString(R.string.MenuTelegramStars);
-                                                                                                                            String str13 = str8;
+                                                                                                                            String string9 = LocaleController.getString(R.string.MenuTelegramStars);
+                                                                                                                            String str14 = str9;
                                                                                                                             if (starsController.balanceAvailable()) {
-                                                                                                                                str13 = str8;
+                                                                                                                                str14 = str9;
                                                                                                                                 if (j > 0) {
-                                                                                                                                    str13 = StarsIntroActivity.formatStarsAmount(starsController.getBalance(), 0.85f, ' ');
+                                                                                                                                    str14 = StarsIntroActivity.formatStarsAmount(starsController.getBalance(), 0.85f, ' ');
                                                                                                                                 }
                                                                                                                             }
-                                                                                                                            textCell.setTextAndValueAndIcon((CharSequence) string10, (CharSequence) str13, (Drawable) new AnimatedEmojiDrawable.WrapSizeDrawable(PremiumGradient.getInstance().goldenStarMenuDrawable, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f)), true);
+                                                                                                                            textCell.setTextAndValueAndIcon((CharSequence) string9, (CharSequence) str14, (Drawable) new AnimatedEmojiDrawable.WrapSizeDrawable(PremiumGradient.getInstance().goldenStarMenuDrawable, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f)), true);
                                                                                                                             textCell.setImageLeft(23);
                                                                                                                         } else if (i == ProfileActivity.this.tonRow) {
                                                                                                                             StarsController tonInstance = StarsController.getTonInstance(((BaseFragment) ProfileActivity.this).currentAccount);
                                                                                                                             long j2 = tonInstance.getBalance().amount;
-                                                                                                                            String string11 = LocaleController.getString(R.string.MyTON);
-                                                                                                                            String str14 = str8;
+                                                                                                                            String string10 = LocaleController.getString(R.string.MyTON);
+                                                                                                                            String str15 = str9;
                                                                                                                             if (tonInstance.balanceAvailable()) {
-                                                                                                                                str14 = str8;
+                                                                                                                                str15 = str9;
                                                                                                                                 if (j2 > 0) {
-                                                                                                                                    str14 = StarsIntroActivity.formatStarsAmount(tonInstance.getBalance(), 0.85f, ' ');
+                                                                                                                                    str15 = StarsIntroActivity.formatStarsAmount(tonInstance.getBalance(), 0.85f, ' ');
                                                                                                                                 }
                                                                                                                             }
-                                                                                                                            textCell.setTextAndValueAndIcon((CharSequence) string11, (CharSequence) str14, R.drawable.menu_my_ton, true);
+                                                                                                                            textCell.setTextAndValueAndIcon((CharSequence) string10, (CharSequence) str15, R.drawable.menu_my_ton, true);
                                                                                                                             textCell.setImageLeft(23);
                                                                                                                         } else if (i != ProfileActivity.this.businessRow) {
                                                                                                                             if (i != ProfileActivity.this.premiumGiftingRow) {
@@ -17403,12 +17421,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                                         textCell.setColors(Theme.key_windowBackgroundWhiteBlueIcon, Theme.key_windowBackgroundWhiteBlueButton);
                                         int i9 = i + 1;
                                         boolean z4 = i9 >= ProfileActivity.this.membersStartRow && i9 < ProfileActivity.this.membersEndRow;
-                                        String string12 = LocaleController.getString(R.string.AddMember);
+                                        String string11 = LocaleController.getString(R.string.AddMember);
                                         int i10 = R.drawable.msg_contact_add;
                                         if (ProfileActivity.this.membersSectionRow != -1 && !z4) {
                                             r10 = false;
                                         }
-                                        textCell.setTextAndIcon(string12, i10, r10);
+                                        textCell.setTextAndIcon(string11, i10, r10);
                                     }
                                 } else {
                                     textCell.setColors(-1, Theme.key_windowBackgroundWhiteBlueText2);

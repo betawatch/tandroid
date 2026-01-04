@@ -275,7 +275,8 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         if (this.allowTopUp) {
             ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(getContext(), this.resourceProvider);
             this.buyButton = buttonWithCounterView;
-            buttonWithCounterView.setText(LocaleController.getString(R.string.TopUpViaFragment), false);
+            buttonWithCounterView.setRound();
+            this.buyButton.setText(LocaleController.getString(R.string.TopUpViaFragment), false);
             this.buyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {

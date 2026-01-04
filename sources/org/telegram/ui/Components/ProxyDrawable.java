@@ -9,20 +9,18 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.Theme;
 
 /* loaded from: classes5.dex */
 public class ProxyDrawable extends Drawable {
+    private final RectF circleRect;
     private boolean connected;
     private float connectedAnimationProgress;
-    private Drawable emptyDrawable;
-    private Drawable fullDrawable;
+    private final Drawable emptyDrawable;
+    private final Drawable fullDrawable;
     private boolean isEnabled;
     private long lastUpdateTime;
-    private Paint outerPaint = new Paint(1);
-    private RectF cicleRect = new RectF();
-    private int radOffset = 0;
-    private int colorKey = -1;
+    private final Paint outerPaint;
+    private int radOffset;
 
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {
@@ -34,11 +32,15 @@ public class ProxyDrawable extends Drawable {
     }
 
     public ProxyDrawable(Context context) {
-        this.emptyDrawable = context.getResources().getDrawable(R.drawable.msg2_proxy_off).mutate();
-        this.fullDrawable = context.getResources().getDrawable(R.drawable.msg2_proxy_on).mutate();
-        this.outerPaint.setStyle(Paint.Style.STROKE);
-        this.outerPaint.setStrokeWidth(AndroidUtilities.dp(1.66f));
-        this.outerPaint.setStrokeCap(Paint.Cap.ROUND);
+        Paint paint = new Paint(1);
+        this.outerPaint = paint;
+        this.circleRect = new RectF();
+        this.radOffset = 0;
+        this.emptyDrawable = context.getResources().getDrawable(R.drawable.outline_shield_plain_24).mutate();
+        this.fullDrawable = context.getResources().getDrawable(R.drawable.outline_shield_check).mutate();
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(1.66f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
         this.lastUpdateTime = SystemClock.elapsedRealtime();
     }
 
@@ -63,19 +65,13 @@ public class ProxyDrawable extends Drawable {
         } else if (!this.connected || this.connectedAnimationProgress != 1.0f) {
             setBounds(this.emptyDrawable);
             this.emptyDrawable.draw(canvas);
-            Paint paint = this.outerPaint;
-            int i = this.colorKey;
-            if (i < 0) {
-                i = Theme.key_contextProgressOuter2;
-            }
-            paint.setColor(Theme.getColor(i));
             this.outerPaint.setAlpha((int) ((1.0f - this.connectedAnimationProgress) * 255.0f));
-            this.radOffset = (int) (this.radOffset + ((360 * j) / 1000.0f));
+            this.radOffset += (int) ((360 * j) / 1000.0f);
             int width = getBounds().width();
             int height = getBounds().height();
             int dp = AndroidUtilities.dp(4.0f);
-            this.cicleRect.set((width / 2) - dp, (height / 2) - dp, r0 + dp + dp, r1 + dp + dp);
-            canvas.drawArc(this.cicleRect, this.radOffset - 90, 90.0f, false, this.outerPaint);
+            this.circleRect.set((width / 2) - dp, (height / 2) - dp, r0 + dp + dp, r1 + dp + dp);
+            canvas.drawArc(this.circleRect, this.radOffset - 90, 90.0f, false, this.outerPaint);
             invalidateSelf();
         }
         if (this.isEnabled && (this.connected || this.connectedAnimationProgress != 0.0f)) {
@@ -119,10 +115,7 @@ public class ProxyDrawable extends Drawable {
     public void setColorFilter(ColorFilter colorFilter) {
         this.emptyDrawable.setColorFilter(colorFilter);
         this.fullDrawable.setColorFilter(colorFilter);
-    }
-
-    public void setColorKey(int i) {
-        this.colorKey = i;
+        this.outerPaint.setColorFilter(colorFilter);
     }
 
     @Override // android.graphics.drawable.Drawable

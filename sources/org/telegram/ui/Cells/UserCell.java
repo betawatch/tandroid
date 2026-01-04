@@ -137,7 +137,7 @@ public class UserCell extends FrameLayout implements NotificationCenter.Notifica
         }
         this.padding = i;
         this.statusColor = Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, resourcesProvider);
-        this.statusOnlineColor = Theme.getColor(Theme.key_windowBackgroundWhiteBlueText, resourcesProvider);
+        this.statusOnlineColor = Theme.getColor(Theme.key_telegram_color_text, resourcesProvider);
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context) { // from class: org.telegram.ui.Cells.UserCell.2
             @Override // org.telegram.ui.Components.BackupImageView, android.view.View

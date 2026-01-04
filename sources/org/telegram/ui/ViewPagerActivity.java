@@ -9,7 +9,6 @@ import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
-import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -25,17 +24,9 @@ public abstract class ViewPagerActivity extends BaseFragment {
     private Runnable titleOverlayAction;
     private int titleOverlayId;
     protected ViewPagerFixed viewPager;
-    private final SparseArray fragmentsArr = new SparseArray();
+    protected final SparseArray fragmentsArr = new SparseArray();
     private int initialFragmentPosition = -1;
     private float visibilityByParent = 0.0f;
-    protected final Iterable fragments = new Iterable() { // from class: org.telegram.ui.ViewPagerActivity$$ExternalSyntheticLambda0
-        @Override // java.lang.Iterable
-        public final Iterator iterator() {
-            Iterator fragmentsIterator;
-            fragmentsIterator = ViewPagerActivity.this.getFragmentsIterator();
-            return fragmentsIterator;
-        }
-    };
 
     protected abstract boolean canScrollBackward(MotionEvent motionEvent);
 
@@ -156,7 +147,7 @@ public abstract class ViewPagerActivity extends BaseFragment {
         this.contentView.addView(this.viewPager, LayoutHelper.createFrame(-1, -1.0f));
         FrameLayout frameLayout = this.contentView;
         this.fragmentView = frameLayout;
-        ViewCompat.setOnApplyWindowInsetsListener(frameLayout, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ViewPagerActivity$$ExternalSyntheticLambda1
+        ViewCompat.setOnApplyWindowInsetsListener(frameLayout, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ViewPagerActivity$$ExternalSyntheticLambda0
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
                 return ViewPagerActivity.this.onApplyWindowInsets(view, windowInsetsCompat);
@@ -207,6 +198,17 @@ public abstract class ViewPagerActivity extends BaseFragment {
             }
         }
         super.clearViews();
+    }
+
+    protected void clearAllHiddenFragments() {
+        int currentPosition = this.viewPager.getCurrentPosition();
+        int size = this.fragmentsArr.size();
+        for (int i = 0; i < size; i++) {
+            FragmentState fragmentState = (FragmentState) this.fragmentsArr.valueAt(i);
+            if (this.fragmentsArr.keyAt(i) != currentPosition && fragmentState != null) {
+                fragmentState.fragment.clearViews();
+            }
+        }
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -322,7 +324,7 @@ public abstract class ViewPagerActivity extends BaseFragment {
         }
     }
 
-    private static class FragmentState {
+    protected static class FragmentState {
         public final BaseFragment fragment;
         private boolean isFullyVisible;
         private boolean isInAnimation;
@@ -370,40 +372,5 @@ public abstract class ViewPagerActivity extends BaseFragment {
         private FragmentState(BaseFragment baseFragment) {
             this.fragment = baseFragment;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public int findNext(int i) {
-        int size = this.fragmentsArr.size();
-        while (i < size) {
-            if (((FragmentState) this.fragmentsArr.valueAt(i)) != null) {
-                return i;
-            }
-            i++;
-        }
-        return -1;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public Iterator getFragmentsIterator() {
-        return new Iterator() { // from class: org.telegram.ui.ViewPagerActivity.3
-            int nextIndex;
-
-            {
-                this.nextIndex = ViewPagerActivity.this.findNext(0);
-            }
-
-            @Override // java.util.Iterator
-            public boolean hasNext() {
-                return this.nextIndex != -1;
-            }
-
-            @Override // java.util.Iterator
-            public BaseFragment next() {
-                BaseFragment baseFragment = ((FragmentState) ViewPagerActivity.this.fragmentsArr.valueAt(this.nextIndex)).fragment;
-                this.nextIndex = ViewPagerActivity.this.findNext(this.nextIndex + 1);
-                return baseFragment;
-            }
-        };
     }
 }

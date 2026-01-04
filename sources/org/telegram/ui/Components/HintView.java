@@ -60,6 +60,10 @@ public class HintView extends FrameLayout {
     public interface VisibilityListener {
     }
 
+    protected int offsetCx() {
+        return 0;
+    }
+
     public void setVisibleListener(VisibilityListener visibilityListener) {
     }
 
@@ -413,25 +417,25 @@ public class HintView extends FrameLayout {
         updatePosition(view);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x0144, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x0149, code lost:
     
         if (r1 < 0) goto L67;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x0147, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x014c, code lost:
     
         r6 = r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x0164, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x0169, code lost:
     
         if (r1 >= 0) goto L61;
      */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x017d  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x018f  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x01ae  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0134  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0152  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0182  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0194  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x01b3  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0139  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0157  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x011e  */
     /* JADX WARN: Removed duplicated region for block: B:70:0x00b4  */
     /* JADX WARN: Removed duplicated region for block: B:71:0x00b7  */
     /*
@@ -444,31 +448,31 @@ public class HintView extends FrameLayout {
         int i2;
         int measuredWidth;
         View view2;
+        int offsetCx;
         int i3;
         int i4;
-        int i5;
         int measuredWidth2;
-        int i6;
+        int i5;
         measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31));
         int[] iArr = new int[2];
         view.getLocationInWindow(iArr);
         int dp2 = iArr[1] - AndroidUtilities.dp(4.0f);
-        int i7 = this.currentType;
-        if (i7 == 4) {
+        int i6 = this.currentType;
+        if (i6 == 4) {
             i = AndroidUtilities.dp(4.0f);
         } else {
-            if (i7 == 6 && this.isTopArrow) {
+            if (i6 == 6 && this.isTopArrow) {
                 measuredHeight = view.getMeasuredHeight() + getMeasuredHeight();
                 dp = AndroidUtilities.dp(10.0f);
-            } else if (i7 == 7 || (i7 == 8 && this.isTopArrow)) {
+            } else if (i6 == 7 || (i6 == 8 && this.isTopArrow)) {
                 measuredHeight = view.getMeasuredHeight() + getMeasuredHeight();
                 dp = AndroidUtilities.dp(8.0f);
             } else {
-                if (i7 == 8) {
+                if (i6 == 8) {
                     dp2 -= AndroidUtilities.dp(10.0f);
                 }
                 i2 = this.currentType;
-                int i8 = 0;
+                int i7 = 0;
                 if (i2 == 8 || !this.isTopArrow) {
                     if (i2 != 3) {
                         measuredWidth = iArr[0];
@@ -486,10 +490,11 @@ public class HintView extends FrameLayout {
                 }
                 view2 = (View) getParent();
                 view2.getLocationInWindow(iArr);
-                i3 = measuredWidth - iArr[0];
+                int i8 = measuredWidth - iArr[0];
                 int i9 = (dp2 - iArr[1]) - this.bottomOffset;
+                offsetCx = i8 + offsetCx();
                 int measuredWidth3 = view2.getMeasuredWidth();
-                if (!this.isTopArrow && (i6 = this.currentType) != 6 && i6 != 7 && i6 != 8) {
+                if (!this.isTopArrow && (i5 = this.currentType) != 6 && i5 != 7 && i5 != 8) {
                     float f = this.extraTranslationY;
                     float dp3 = AndroidUtilities.dp(44.0f);
                     this.translationY = dp3;
@@ -501,30 +506,30 @@ public class HintView extends FrameLayout {
                     setTranslationY(f2 + measuredHeight2);
                 }
                 if (getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+                    i3 = 0;
                     i4 = 0;
-                    i5 = 0;
                 } else {
-                    i4 = ((ViewGroup.MarginLayoutParams) getLayoutParams()).leftMargin;
-                    i5 = ((ViewGroup.MarginLayoutParams) getLayoutParams()).rightMargin;
+                    i3 = ((ViewGroup.MarginLayoutParams) getLayoutParams()).leftMargin;
+                    i4 = ((ViewGroup.MarginLayoutParams) getLayoutParams()).rightMargin;
                 }
                 if (this.currentType != 8 && !this.isTopArrow) {
-                    i8 = (((measuredWidth3 - i4) - i5) - getMeasuredWidth()) / 2;
-                } else if (i3 <= view2.getMeasuredWidth() / 2) {
+                    i7 = (((measuredWidth3 - i3) - i4) - getMeasuredWidth()) / 2;
+                } else if (offsetCx <= view2.getMeasuredWidth() / 2) {
                     if (this.currentType == 3) {
                         measuredWidth2 = (int) (measuredWidth3 - (getMeasuredWidth() * 1.5f));
                     } else {
-                        i8 = (measuredWidth3 - getMeasuredWidth()) - (i5 + i4);
+                        i7 = (measuredWidth3 - getMeasuredWidth()) - (i4 + i3);
                     }
                 } else if (this.currentType == 3) {
-                    measuredWidth2 = (i3 - (getMeasuredWidth() / 2)) - this.arrowImageView.getMeasuredWidth();
+                    measuredWidth2 = (offsetCx - (getMeasuredWidth() / 2)) - this.arrowImageView.getMeasuredWidth();
                 }
-                setTranslationX(i8);
-                float measuredWidth4 = (i3 - (i4 + i8)) - (this.arrowImageView.getMeasuredWidth() / 2.0f);
+                setTranslationX(i7);
+                float measuredWidth4 = (offsetCx - (i3 + i7)) - (this.arrowImageView.getMeasuredWidth() / 2.0f);
                 if (this.currentType == 7) {
                     measuredWidth4 += AndroidUtilities.dp(2.0f);
                 }
                 this.arrowImageView.setTranslationX(measuredWidth4);
-                if (i3 <= view2.getMeasuredWidth() / 2) {
+                if (offsetCx <= view2.getMeasuredWidth() / 2) {
                     if (measuredWidth4 < AndroidUtilities.dp(10.0f)) {
                         float dp4 = measuredWidth4 - AndroidUtilities.dp(10.0f);
                         setTranslationX(getTranslationX() + dp4);
@@ -552,15 +557,16 @@ public class HintView extends FrameLayout {
         }
         dp2 += i;
         i2 = this.currentType;
-        int i82 = 0;
+        int i72 = 0;
         if (i2 == 8) {
         }
         if (i2 != 3) {
         }
         view2 = (View) getParent();
         view2.getLocationInWindow(iArr);
-        i3 = measuredWidth - iArr[0];
+        int i82 = measuredWidth - iArr[0];
         int i92 = (dp2 - iArr[1]) - this.bottomOffset;
+        offsetCx = i82 + offsetCx();
         int measuredWidth32 = view2.getMeasuredWidth();
         if (!this.isTopArrow) {
         }
@@ -572,14 +578,14 @@ public class HintView extends FrameLayout {
         }
         if (this.currentType != 8) {
         }
-        if (i3 <= view2.getMeasuredWidth() / 2) {
+        if (offsetCx <= view2.getMeasuredWidth() / 2) {
         }
-        setTranslationX(i82);
-        float measuredWidth42 = (i3 - (i4 + i82)) - (this.arrowImageView.getMeasuredWidth() / 2.0f);
+        setTranslationX(i72);
+        float measuredWidth42 = (offsetCx - (i3 + i72)) - (this.arrowImageView.getMeasuredWidth() / 2.0f);
         if (this.currentType == 7) {
         }
         this.arrowImageView.setTranslationX(measuredWidth42);
-        if (i3 <= view2.getMeasuredWidth() / 2) {
+        if (offsetCx <= view2.getMeasuredWidth() / 2) {
         }
     }
 

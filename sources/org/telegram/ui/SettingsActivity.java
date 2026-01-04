@@ -89,6 +89,7 @@ import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.SettingsSearchCell;
 import org.telegram.ui.Components.AlertsCreator;
+import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.BulletinFactory;
@@ -143,6 +144,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
     private ImageUpdater imageUpdater;
     private UniversalRecyclerView listView;
     private View navigationBar;
+    private int navigationBarHeight;
     private ActionBarMenuItem otherItem;
     private String query;
     private ProfileActivity.SearchAdapter search;
@@ -221,7 +223,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
                 super.dispatchDraw(canvas);
-                AndroidUtilities.drawNavigationBarProtection(canvas, this, SettingsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
+                AndroidUtilities.drawNavigationBarProtection(canvas, this, SettingsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite), SettingsActivity.this.navigationBarHeight);
             }
         };
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
@@ -615,7 +617,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
         if (this.searchItem.isSearchFieldVisible2()) {
-            arrayList.add(UItem.asSpace(AndroidUtilities.statusBarHeight + ActionBar.getCurrentActionBarHeight()));
+            arrayList.add(UItem.asSpace(ActionBar.getCurrentActionBarHeight()));
             this.search.fillItems(arrayList);
             return;
         }
@@ -643,7 +645,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 }
             }));
             arrayList.add(UItem.asShadow(null));
-        } else if (set.contains("VALIDATE_PHONE_NUMBER")) {
+        } else if (set.contains("VALIDATE_PHONE_NUMBER") && getUserConfig().getCurrentUser() != null) {
             arrayList.add(SuggestionCell.Factory.of(LocaleController.formatString(R.string.CheckPhoneNumber, PhoneFormat.getInstance().format("+" + getUserConfig().getCurrentUser().phone)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CheckPhoneNumberInfo), new Runnable() { // from class: org.telegram.ui.SettingsActivity$$ExternalSyntheticLambda13
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -886,7 +888,9 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-        this.listView.setPadding(0, windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).top, 0, AndroidUtilities.dp(15.0f) + windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).bottom);
+        int i = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).top;
+        this.navigationBarHeight = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+        this.listView.setPadding(0, i, 0, AndroidUtilities.dp(15.0f) + this.navigationBarHeight);
         return WindowInsetsCompat.CONSUMED;
     }
 
@@ -894,7 +898,9 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         private ImageView arrowView;
         private AvatarDrawable avatarDrawable;
         private BackupImageView avatarView;
+        private final AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable botDrawable;
         private TextView counterView;
+        private final AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable emojiStatusDrawable;
         private final Theme.ResourcesProvider resourcesProvider;
         private SimpleTextView textView;
 
@@ -914,6 +920,21 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             this.textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
             this.textView.setGravity(19);
             addView(this.textView, LayoutHelper.createLinear(0, -1, 1.0f, 119, 0, 0, 18, 0));
+            this.botDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this.textView, AndroidUtilities.dp(24.0f), 7);
+            this.emojiStatusDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this.textView, AndroidUtilities.dp(24.0f), 7);
+            this.textView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.SettingsActivity.AccountCell.1
+                @Override // android.view.View.OnAttachStateChangeListener
+                public void onViewAttachedToWindow(View view) {
+                    AccountCell.this.botDrawable.attach();
+                    AccountCell.this.emojiStatusDrawable.attach();
+                }
+
+                @Override // android.view.View.OnAttachStateChangeListener
+                public void onViewDetachedFromWindow(View view) {
+                    AccountCell.this.botDrawable.detach();
+                    AccountCell.this.emojiStatusDrawable.detach();
+                }
+            });
             TextView textView = new TextView(context);
             this.counterView = textView;
             textView.setPadding(AndroidUtilities.dp(6.66f), 0, AndroidUtilities.dp(6.66f), 0);
@@ -931,15 +952,57 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             addView(this.arrowView, LayoutHelper.createLinear(24, 24, 0.0f, 21, 0, 0, 12, 0));
         }
 
+        /* JADX WARN: Removed duplicated region for block: B:11:0x00a4  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x00b5  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x00c7  */
+        /* JADX WARN: Removed duplicated region for block: B:21:0x00a7  */
+        /* JADX WARN: Removed duplicated region for block: B:22:0x0077  */
+        /* JADX WARN: Removed duplicated region for block: B:8:0x006d  */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         public void set(int i) {
+            Long emojiStatusDocumentId;
             TLRPC.User currentUser = UserConfig.getInstance(i).getCurrentUser();
             this.avatarDrawable.setInfo(i, currentUser);
             this.avatarView.getImageReceiver().setCurrentAccount(i);
             this.avatarView.setForUserOrChat(currentUser, this.avatarDrawable);
             this.textView.setText(UserObject.getUserName(currentUser));
-            int mainUnreadCount = MessagesStorage.getInstance(i).getMainUnreadCount();
-            this.counterView.setVisibility(mainUnreadCount > 0 ? 0 : 8);
-            this.counterView.setText(LocaleController.formatNumber(mainUnreadCount, ','));
+            this.botDrawable.setCurrentAccount(i);
+            this.emojiStatusDrawable.setCurrentAccount(i);
+            AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = this.botDrawable;
+            int i2 = Theme.key_profile_verifiedBackground;
+            swapAnimatedEmojiDrawable.setColor(Integer.valueOf(Theme.getColor(i2, this.resourcesProvider)));
+            if (currentUser != null) {
+                long j = currentUser.bot_verification_icon;
+                if (j != 0) {
+                    this.botDrawable.set(j, false);
+                    emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(currentUser);
+                    this.emojiStatusDrawable.setColor(Integer.valueOf(Theme.getColor(i2, this.resourcesProvider)));
+                    if (emojiStatusDocumentId == null) {
+                        this.emojiStatusDrawable.set(emojiStatusDocumentId.longValue(), false);
+                    } else if (currentUser != null && currentUser.premium) {
+                        this.emojiStatusDrawable.set(getContext().getResources().getDrawable(R.drawable.msg_premium_liststar).mutate(), false);
+                    } else {
+                        this.emojiStatusDrawable.set((Drawable) null, false);
+                    }
+                    this.textView.setLeftDrawable(this.botDrawable.isEmpty() ? this.botDrawable : null);
+                    this.textView.setRightDrawable(this.emojiStatusDrawable.isEmpty() ? null : this.emojiStatusDrawable);
+                    int mainUnreadCount = MessagesStorage.getInstance(i).getMainUnreadCount();
+                    this.counterView.setVisibility(mainUnreadCount <= 0 ? 8 : 0);
+                    this.counterView.setText(LocaleController.formatNumber(mainUnreadCount, ','));
+                }
+            }
+            this.botDrawable.set((Drawable) null, false);
+            emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(currentUser);
+            this.emojiStatusDrawable.setColor(Integer.valueOf(Theme.getColor(i2, this.resourcesProvider)));
+            if (emojiStatusDocumentId == null) {
+            }
+            this.textView.setLeftDrawable(this.botDrawable.isEmpty() ? this.botDrawable : null);
+            this.textView.setRightDrawable(this.emojiStatusDrawable.isEmpty() ? null : this.emojiStatusDrawable);
+            int mainUnreadCount2 = MessagesStorage.getInstance(i).getMainUnreadCount();
+            this.counterView.setVisibility(mainUnreadCount2 <= 0 ? 8 : 0);
+            this.counterView.setText(LocaleController.formatNumber(mainUnreadCount2, ','));
         }
 
         @Override // android.widget.LinearLayout, android.view.View

@@ -1415,7 +1415,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
                 this.counterBackgroundColorKey = Theme.key_dialogReactionMentionBackground;
                 if (this.reactionString == null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("❤️");
-                    ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.reactionchatslist);
+                    ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.mini_like_filled);
                     coloredImageSpan.setScale(0.8f, 0.8f);
                     coloredImageSpan.spaceScaleX = 0.5f;
                     coloredImageSpan.translate(-AndroidUtilities.dp(3.0f), 0.0f);
@@ -1427,7 +1427,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
                 this.counterBackgroundColorKey = z ? Theme.key_chats_unreadCounterMuted : Theme.key_chats_unreadCounter;
                 if (this.mentionString == null) {
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("@");
-                    ColoredImageSpan coloredImageSpan2 = new ColoredImageSpan(R.drawable.mentionchatslist);
+                    ColoredImageSpan coloredImageSpan2 = new ColoredImageSpan(R.drawable.mini_mention_filled_16);
                     coloredImageSpan2.setScale(0.8f, 0.8f);
                     coloredImageSpan2.spaceScaleX = 0.5f;
                     coloredImageSpan2.translate(-AndroidUtilities.dp(3.0f), 0.0f);
@@ -2088,7 +2088,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
                 this.counterBackgroundColorKey = Theme.key_dialogReactionMentionBackground;
                 if (this.reactionString == null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("❤️");
-                    ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.reactionchatslist);
+                    ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.mini_like_filled);
                     coloredImageSpan.setScale(0.8f, 0.8f);
                     coloredImageSpan.spaceScaleX = 0.5f;
                     coloredImageSpan.translate(-AndroidUtilities.dp(3.0f), 0.0f);
@@ -2100,7 +2100,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
                 this.counterBackgroundColorKey = z ? Theme.key_chats_unreadCounterMuted : Theme.key_chats_unreadCounter;
                 if (this.mentionString == null) {
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("@");
-                    ColoredImageSpan coloredImageSpan2 = new ColoredImageSpan(R.drawable.mentionchatslist);
+                    ColoredImageSpan coloredImageSpan2 = new ColoredImageSpan(R.drawable.mini_mention_filled_16);
                     coloredImageSpan2.setScale(0.8f, 0.8f);
                     coloredImageSpan2.spaceScaleX = 0.5f;
                     coloredImageSpan2.translate(-AndroidUtilities.dp(3.0f), 0.0f);

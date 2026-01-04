@@ -219,7 +219,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    static class EmptyTextProgressView extends FrameLayout {
+    class EmptyTextProgressView extends FrameLayout {
         private final TextView emptyTextView1;
         private final TextView emptyTextView2;
         private final RLottieImageView imageView;
@@ -241,9 +241,9 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             this.progressView = view;
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.imageView = rLottieImageView;
-            rLottieImageView.setAnimation(R.raw.utyan_call, 120, 120);
+            rLottieImageView.setAnimation(R.raw.utyan_call, 110, 110);
             rLottieImageView.setAutoRepeat(false);
-            addView(rLottieImageView, LayoutHelper.createFrame(NotificationCenter.fileLoadProgressChanged, 140.0f, 17, 52.0f, 4.0f, 52.0f, 60.0f));
+            addView(rLottieImageView, LayoutHelper.createFrame(110, 110.0f, 17, 52.0f, 17.0f, 52.0f, 60.0f));
             rLottieImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$EmptyTextProgressView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -253,18 +253,18 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             TextView textView = new TextView(context);
             this.emptyTextView1 = textView;
             textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-            textView.setText(LocaleController.getString(R.string.NoRecentCalls));
+            textView.setText(LocaleController.getString(R.string.MakeYourFirstCall));
             textView.setTextSize(1, 20.0f);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setGravity(17);
             addView(textView, LayoutHelper.createFrame(-1, -2.0f, 17, 17.0f, 40.0f, 17.0f, 0.0f));
             TextView textView2 = new TextView(context);
             this.emptyTextView2 = textView2;
-            String string = LocaleController.getString(R.string.NoRecentCallsInfo);
+            String formatString = LocaleController.formatString(R.string.MakeYourFirstCallHint, Integer.valueOf(CallLogActivity.this.getMessagesController().conferenceCallSizeLimit));
             if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
-                string = string.replace('\n', ' ');
+                formatString = formatString.replace('\n', ' ');
             }
-            textView2.setText(string);
+            textView2.setText(formatString);
             textView2.setTextColor(Theme.getColor(Theme.key_emptyListPlaceholder));
             textView2.setTextSize(1, 14.0f);
             textView2.setGravity(17);
@@ -520,8 +520,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             addView(avatarsImageView, LayoutHelper.createFrame(72, -1.0f, LocaleController.isRTL ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
-            int i = Theme.key_telegram_color;
-            imageView.setColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN);
+            imageView.setColorFilter(Theme.getColor(Theme.key_telegram_color_text), PorterDuff.Mode.SRC_IN);
             imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 1));
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$CallCell$$ExternalSyntheticLambda0
@@ -534,7 +533,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             addView(imageView, LayoutHelper.createFrame(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 16, 8.0f, 0.0f, 8.0f, 0.0f));
             CheckBox2 checkBox2 = new CheckBox2(context, 21);
             this.checkBox = checkBox2;
-            checkBox2.getCheckBoxBase().setBackgroundColor(Theme.getColor(i));
+            checkBox2.getCheckBoxBase().setBackgroundColor(Theme.getColor(Theme.key_telegram_color));
             checkBox2.setColor(-1, Theme.key_windowBackgroundWhite, Theme.key_checkboxCheck);
             checkBox2.setDrawUnchecked(false);
             checkBox2.setDrawBackgroundAsArc(3);
@@ -1125,6 +1124,11 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public ActionBar createActionBar(Context context) {
         ActionBar createActionBar = super.createActionBar(context);
+        createActionBar.setUseContainerForTitles();
+        createActionBar.createTitleOverlayContainer();
+        createActionBar.getTitleOverlayContainer().setTranslationX(AndroidUtilities.dp(4.0f));
+        createActionBar.getTitleOverlayContainer().setTranslationY(-AndroidUtilities.dp(2.0f));
+        createActionBar.getTitlesContainer().setTranslationX(AndroidUtilities.dp(4.0f));
         createActionBar.setAddToContainer(false);
         return createActionBar;
     }
@@ -1786,7 +1790,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                     }
                     TextCell textCell = (TextCell) viewHolder.itemView;
                     textCell.setTextAndIcon((CharSequence) LocaleController.getString(R.string.GroupCallCreate2), R.drawable.menu_call_create, false);
-                    int i2 = Theme.key_telegram_color;
+                    int i2 = Theme.key_telegram_color_text;
                     textCell.setColors(i2, i2);
                     return;
                 }
@@ -1929,7 +1933,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         AnimatorSet animatorSet = new AnimatorSet();
         for (int i2 = 0; i2 < childCount; i2++) {
             View childAt = this.listView.getChildAt(i2);
-            if (childAt != view && this.listView.getChildAdapterPosition(childAt) >= i && !(childAt instanceof GroupCallCell)) {
+            if (childAt != view && this.listView.getChildAdapterPosition(childAt) >= i && !(childAt instanceof GroupCallCell) && !(childAt instanceof TextCell)) {
                 childAt.setAlpha(0.0f);
                 int min = (int) ((Math.min(this.listView.getMeasuredHeight(), Math.max(0, childAt.getTop())) / this.listView.getMeasuredHeight()) * 100.0f);
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
@@ -1981,6 +1985,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         }
         this.listView.setTranslationY(f);
         this.listView.setPadding(0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP) + this.actionBar.getMeasuredHeight(), 0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP) + this.navigationBarHeight + this.additionNavigationBarHeight + Math.round(f));
+        this.emptyView.setPadding(0, 0, 0, this.navigationBarHeight + this.additionNavigationBarHeight);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2042,7 +2047,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             arrayList.add(new ThemeDescription(this.floatingButton.imageView, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, Theme.key_chats_actionBackground));
             arrayList.add(new ThemeDescription(this.floatingButton.imageView, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, null, null, null, null, Theme.key_chats_actionPressedBackground));
         }
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_telegram_color));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_telegram_color_text));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, null, new Drawable[]{Theme.dialogs_verifiedCheckDrawable}, null, Theme.key_chats_verifiedCheck));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, null, new Drawable[]{Theme.dialogs_verifiedDrawable}, null, Theme.key_chats_verifiedBackground));
         TextPaint textPaint = Theme.dialogs_offlinePaint;
@@ -2085,6 +2090,10 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         if (imageView != null) {
             imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), PorterDuff.Mode.MULTIPLY));
             this.actionModeCloseView.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_actionBarActionModeDefaultSelector)));
+        }
+        ActionBar actionBar = this.actionBar;
+        if (actionBar != null) {
+            actionBar.updateColors();
         }
     }
 

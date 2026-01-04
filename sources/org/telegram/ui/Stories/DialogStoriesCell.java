@@ -13,7 +13,6 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.ClickableSpan;
@@ -26,6 +25,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.math.MathUtils;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,6 +34,9 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import me.vkryl.android.animator.BoolAnimator;
+import me.vkryl.android.animator.FactorAnimator;
+import me.vkryl.android.animator.ReplaceAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.DialogObject;
@@ -49,6 +52,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.ActionBarAnimatedSubtitleOverlayContainer;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.SimpleTextView;
@@ -76,7 +80,7 @@ import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.Stories.recorder.StoryRecorder;
 
 /* loaded from: classes5.dex */
-public abstract class DialogStoriesCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+public abstract class DialogStoriesCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target {
     float K;
     private ActionBar actionBar;
     Adapter adapter;
@@ -87,6 +91,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     public boolean allowGlobalUpdates;
     ArrayList animateToDialogIds;
     private Runnable animationRunnable;
+    private final BoolAnimator animatorHasTitleText;
     Paint backgroundPaint;
     private long checkedStoryNotificationDeletion;
     private int clipTop;
@@ -117,7 +122,6 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     CanvasButton miniItemsClickArea;
     ArrayList oldItems;
     ArrayList oldMiniItems;
-    private int overlayTextId;
     private float overscrollProgress;
     private int overscrollSelectedPosition;
     private StoryCell overscrollSelectedView;
@@ -125,6 +129,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     public RadialProgress radialProgress;
     public RecyclerListView recyclerListView;
     StoriesController storiesController;
+    ActionBarAnimatedSubtitleOverlayContainer subtitleOverlayContainer;
     ImageView telegramLogoView;
     private ValueAnimator textAnimator;
     AnimatedTextView titleView;
@@ -133,6 +138,11 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     private SpannableStringBuilder uploadingString;
     ValueAnimator valueAnimator;
     ArrayList viewsDrawInParent;
+
+    @Override // me.vkryl.android.animator.FactorAnimator.Target
+    public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
+        FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);
+    }
 
     public void onMiniListClicked() {
     }
@@ -144,6 +154,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
 
     public DialogStoriesCell(Context context, BaseFragment baseFragment, int i, int i2) {
         super(context);
+        this.animatorHasTitleText = new BoolAnimator(1, this, CubicBezierInterpolator.EASE_OUT_QUINT, 380L);
         this.oldItems = new ArrayList();
         this.oldMiniItems = new ArrayList();
         this.items = new ArrayList();
@@ -261,15 +272,23 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         ImageView imageView = new ImageView(context);
         this.telegramLogoView = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        this.telegramLogoView.setImageResource(R.drawable.telegram_logo);
-        this.telegramLogoView.setColorFilter(getTextColor(), PorterDuff.Mode.MULTIPLY);
-        addView(this.telegramLogoView, LayoutHelper.createFrame(83, 22.0f));
-        this.titleView.setAlpha(0.0f);
+        this.telegramLogoView.setImageResource(R.drawable.telegram_logo_2);
+        this.telegramLogoView.setColorFilter(getTextLogoColor(), PorterDuff.Mode.MULTIPLY);
+        addView(this.telegramLogoView, LayoutHelper.createFrame(90, 22.0f));
+        ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = new ActionBarAnimatedSubtitleOverlayContainer(context, null, this.ellipsizeSpanAnimator) { // from class: org.telegram.ui.Stories.DialogStoriesCell.3
+            @Override // org.telegram.ui.ActionBar.ActionBarAnimatedSubtitleOverlayContainer, me.vkryl.android.animator.ReplaceAnimator.Callback
+            public void onItemChanged(ReplaceAnimator replaceAnimator) {
+                super.onItemChanged(replaceAnimator);
+                DialogStoriesCell.this.invalidate();
+            }
+        };
+        this.subtitleOverlayContainer = actionBarAnimatedSubtitleOverlayContainer;
+        addView(actionBarAnimatedSubtitleOverlayContainer, LayoutHelper.createFrame(-2, -2.0f));
         this.grayPaint.setColor(-2762018);
         this.grayPaint.setStyle(Paint.Style.STROKE);
         this.grayPaint.setStrokeWidth(AndroidUtilities.dp(1.0f));
         this.addNewStoryDrawable = ContextCompat.getDrawable(getContext(), R.drawable.msg_mini_addstory);
-        RecyclerListView recyclerListView3 = new RecyclerListView(getContext()) { // from class: org.telegram.ui.Stories.DialogStoriesCell.3
+        RecyclerListView recyclerListView3 = new RecyclerListView(getContext()) { // from class: org.telegram.ui.Stories.DialogStoriesCell.4
             @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
             public boolean dispatchTouchEvent(MotionEvent motionEvent) {
                 return false;
@@ -326,7 +345,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         };
         this.listViewMini = recyclerListView3;
         recyclerListView3.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
-        this.listViewMini.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.Stories.DialogStoriesCell.4
+        this.listViewMini.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: org.telegram.ui.Stories.DialogStoriesCell.5
             @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 int childLayoutPosition = recyclerView.getChildLayoutPosition(view);
@@ -338,7 +357,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
                 }
             }
         });
-        DefaultItemAnimator defaultItemAnimator2 = new DefaultItemAnimator() { // from class: org.telegram.ui.Stories.DialogStoriesCell.5
+        DefaultItemAnimator defaultItemAnimator2 = new DefaultItemAnimator() { // from class: org.telegram.ui.Stories.DialogStoriesCell.6
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
             protected float animateByScale(View view) {
                 return 0.6f;
@@ -353,6 +372,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         addView(this.listViewMini, LayoutHelper.createFrame(-1, -2.0f, 0, 0.0f, 4.0f, 0.0f, 0.0f));
         setClipChildren(false);
         setClipToPadding(false);
+        checkUi_titleVisibility();
         updateItems(false, false);
     }
 
@@ -574,6 +594,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         if (!this.hasOverlayText) {
             this.titleView.setText(this.currentTitle, z && !LocaleController.isRTL);
         }
+        this.animatorHasTitleText.setValue(true ^ TextUtils.isEmpty(this.currentTitle), z);
         this.miniItems.clear();
         for (int i2 = 0; i2 < this.items.size(); i2++) {
             if (((Item) this.items.get(i2)).dialogId != UserConfig.getInstance(this.currentAccount).clientUserId || shouldDrawSelfInMini()) {
@@ -774,19 +795,15 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         }
         float min = Math.min(this.collapsedProgress, this.collapsedProgress2);
         if (min != f2) {
-            this.titleView.setTranslationY(((lerp + AndroidUtilities.dp(14.0f)) - ((this.titleView.getMeasuredHeight() - this.titleView.getTextHeight()) / 2.0f)) + AndroidUtilities.dp(4.0f));
-            float dp3 = f + (-r2) + AndroidUtilities.dp(6.0f) + getAvatarRight(AndroidUtilities.dp(72.0f), this.collapsedProgress) + AndroidUtilities.dp(12.0f);
+            float totalVisibility = this.subtitleOverlayContainer.getTotalVisibility() * (-AndroidUtilities.dp(10.0f));
+            this.titleView.setTranslationY(((AndroidUtilities.dp(14.0f) + lerp) - ((this.titleView.getMeasuredHeight() - this.titleView.getTextHeight()) / 2.0f)) + AndroidUtilities.dp(4.0f) + totalVisibility);
+            float dp3 = f + (-r6) + AndroidUtilities.dp(6.0f) + getAvatarRight(AndroidUtilities.dp(72.0f), this.collapsedProgress) + AndroidUtilities.dp(12.0f);
             this.titleView.setTranslationX(dp3);
             this.titleView.getDrawable().setRightPadding(dp3 + (this.actionBar.menu.getItemsMeasuredWidth(false) * min));
-            this.titleView.setAlpha(min);
-            this.titleView.setVisibility(this.currentTitle == null ? 8 : 0);
-            this.telegramLogoView.setAlpha(min);
-            this.telegramLogoView.setVisibility(this.currentTitle != null ? 8 : 0);
             this.telegramLogoView.setTranslationX(this.titleView.getTranslationX() - AndroidUtilities.dpf2(3.33f));
-            this.telegramLogoView.setTranslationY(this.titleView.getTranslationY() + AndroidUtilities.dpf2(37.33f));
-        } else {
-            this.titleView.setVisibility(8);
-            this.telegramLogoView.setVisibility(8);
+            this.telegramLogoView.setTranslationY(AndroidUtilities.dp(22.333f) + lerp + totalVisibility);
+            this.subtitleOverlayContainer.setTranslationX(this.titleView.getTranslationX() - AndroidUtilities.dp(3.5f));
+            this.subtitleOverlayContainer.setTranslationY(lerp + AndroidUtilities.dp(30.333f));
         }
         super.dispatchDraw(canvas);
         int i14 = this.currentState;
@@ -877,7 +894,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
                         DialogStoriesCell.this.lambda$setProgressToCollapse$6(valueAnimator3);
                     }
                 });
-                this.valueAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.DialogStoriesCell.6
+                this.valueAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.DialogStoriesCell.7
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         DialogStoriesCell.this.collapsedProgress2 = z2 ? 1.0f : 0.0f;
@@ -901,6 +918,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     public void checkCollapsedProgress() {
         this.collapsedProgress = 1.0f - AndroidUtilities.lerp(1.0f - this.collapsedProgress1, 1.0f, 1.0f - this.collapsedProgress2);
         updateCollapsedProgress();
+        checkUi_titleVisibility();
         float f = this.collapsedProgress;
         updateCurrentState(f == 1.0f ? 2 : f != 0.0f ? 1 : 0);
         invalidate();
@@ -918,7 +936,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         StoriesUtilities.updateColors();
         final int textColor = getTextColor();
         this.titleView.setTextColor(textColor);
-        this.telegramLogoView.setColorFilter(textColor, PorterDuff.Mode.MULTIPLY);
+        this.telegramLogoView.setColorFilter(getTextLogoColor(), PorterDuff.Mode.MULTIPLY);
         AndroidUtilities.forEachViews((RecyclerView) this.recyclerListView, new Consumer() { // from class: org.telegram.ui.Stories.DialogStoriesCell$$ExternalSyntheticLambda7
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
@@ -943,6 +961,10 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$updateColors$8(View view) {
         ((StoryCell) view).invalidate();
+    }
+
+    private int getTextLogoColor() {
+        return getThemedColor(Theme.key_telegram_color_dialogsLogo);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1052,38 +1074,8 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     public void setTitleOverlayText(String str, int i) {
-        boolean z = false;
-        if (str != null) {
-            this.hasOverlayText = true;
-            if (this.overlayTextId != i) {
-                this.overlayTextId = i;
-                String string = LocaleController.getString(str, i);
-                boolean isEmpty = TextUtils.isEmpty(string);
-                String str2 = string;
-                if (!isEmpty) {
-                    int indexOf = TextUtils.indexOf(string, "...");
-                    str2 = string;
-                    if (indexOf >= 0) {
-                        SpannableString valueOf = SpannableString.valueOf(string);
-                        this.ellipsizeSpanAnimator.wrap(valueOf, indexOf);
-                        z = true;
-                        str2 = valueOf;
-                    }
-                }
-                this.titleView.setText(str2, true ^ LocaleController.isRTL);
-            }
-        } else {
-            this.hasOverlayText = false;
-            this.overlayTextId = 0;
-            this.titleView.setText(this.currentTitle, true ^ LocaleController.isRTL);
-        }
-        if (z) {
-            this.ellipsizeSpanAnimator.addView(this.titleView);
-        } else {
-            this.ellipsizeSpanAnimator.removeView(this.titleView);
-        }
+        this.subtitleOverlayContainer.setText(str != null ? LocaleController.getString(str, i) : null, true);
     }
 
     public void setClipTop(int i) {
@@ -1896,7 +1888,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     public Drawable createVerifiedDrawable() {
         final Drawable mutate = ContextCompat.getDrawable(getContext(), R.drawable.verified_area).mutate();
         final Drawable mutate2 = ContextCompat.getDrawable(getContext(), R.drawable.verified_check).mutate();
-        CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, mutate2) { // from class: org.telegram.ui.Stories.DialogStoriesCell.7
+        CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, mutate2) { // from class: org.telegram.ui.Stories.DialogStoriesCell.8
             int lastColor;
 
             @Override // org.telegram.ui.Components.CombinedDrawable, android.graphics.drawable.Drawable
@@ -2088,5 +2080,35 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
             return Theme.getColor(i);
         }
         return this.fragment.getThemedColor(i);
+    }
+
+    @Override // me.vkryl.android.animator.FactorAnimator.Target
+    public void onFactorChanged(int i, float f, float f2, FactorAnimator factorAnimator) {
+        if (i == 1) {
+            checkUi_titleVisibility();
+        }
+    }
+
+    private void checkUi_titleVisibility() {
+        float clamp = MathUtils.clamp(Math.min(this.collapsedProgress, this.collapsedProgress2), 0.0f, 1.0f);
+        float floatValue = this.animatorHasTitleText.getFloatValue();
+        float f = 1.0f - floatValue;
+        float f2 = floatValue * clamp;
+        float f3 = f * clamp;
+        AnimatedTextView animatedTextView = this.titleView;
+        if (animatedTextView != null) {
+            animatedTextView.setAlpha(f2);
+            this.titleView.setVisibility(f2 > 0.0f ? 0 : 8);
+        }
+        ImageView imageView = this.telegramLogoView;
+        if (imageView != null) {
+            imageView.setAlpha(f3);
+            this.telegramLogoView.setVisibility(f3 > 0.0f ? 0 : 8);
+        }
+        ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.subtitleOverlayContainer;
+        if (actionBarAnimatedSubtitleOverlayContainer != null) {
+            actionBarAnimatedSubtitleOverlayContainer.setAlpha(clamp);
+            this.subtitleOverlayContainer.setVisibility(clamp > 0.0f ? 0 : 8);
+        }
     }
 }

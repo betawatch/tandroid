@@ -233,7 +233,37 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     profileGiftsContainer.updateTabsY();
                 }
             });
-            ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.3
+            DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.3
+                @Override // androidx.recyclerview.widget.DefaultItemAnimator
+                protected void onMoveAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
+                    super.onMoveAnimationUpdate(viewHolder);
+                    profileGiftsContainer.updateTabsY();
+                }
+
+                @Override // androidx.recyclerview.widget.DefaultItemAnimator
+                protected void onAddAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
+                    super.onAddAnimationUpdate(viewHolder);
+                    profileGiftsContainer.updateTabsY();
+                }
+
+                @Override // androidx.recyclerview.widget.DefaultItemAnimator
+                protected void onChangeAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
+                    super.onChangeAnimationUpdate(viewHolder);
+                    profileGiftsContainer.updateTabsY();
+                }
+
+                @Override // androidx.recyclerview.widget.DefaultItemAnimator
+                protected void onRemoveAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
+                    super.onRemoveAnimationUpdate(viewHolder);
+                    profileGiftsContainer.updateTabsY();
+                }
+            };
+            defaultItemAnimator.setSupportsChangeAnimations(false);
+            defaultItemAnimator.setDelayAnimations(false);
+            defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+            defaultItemAnimator.setDurations(350L);
+            universalRecyclerView.setItemAnimator(defaultItemAnimator);
+            ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.4
                 @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
                 public void onSwiped(RecyclerView.ViewHolder viewHolder, int i2) {
                 }
@@ -779,7 +809,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     }
                 });
                 makeSwipeback.addGap();
-                ScrollView scrollView = new ScrollView(getContext()) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.4
+                ScrollView scrollView = new ScrollView(getContext()) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.5
                     @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
                     protected void onMeasure(int i3, int i4) {
                         super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i4)), View.MeasureSpec.getMode(i4)));
@@ -816,7 +846,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
                     actionBarMenuSubItem2.setColors(Theme.getColor(i4, this.resourcesProvider), Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon, this.resourcesProvider));
                     actionBarMenuSubItem2.setSelectorColor(Theme.multAlpha(Theme.getColor(i4, this.resourcesProvider), f3));
                     if (tL_starGiftCollection.icon != null) {
-                        AnimatedEmojiDrawable animatedEmojiDrawable = new AnimatedEmojiDrawable(3, this.currentAccount, tL_starGiftCollection.icon) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.5
+                        AnimatedEmojiDrawable animatedEmojiDrawable = new AnimatedEmojiDrawable(3, this.currentAccount, tL_starGiftCollection.icon) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.6
                             @Override // android.graphics.drawable.Drawable
                             public int getIntrinsicHeight() {
                                 return AndroidUtilities.dp(24.0f);
@@ -1056,7 +1086,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemLongPress$16(TL_stars.SavedStarGift savedStarGift) {
-            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.6
+            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.7
                 @Override // org.telegram.ui.Stars.StarGiftSheet
                 public BulletinFactory getBulletinFactory() {
                     return BulletinFactory.of(Page.this.parent.fragment);
@@ -1072,7 +1102,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemLongPress$18(TL_stars.SavedStarGift savedStarGift) {
-            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.7
+            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.8
                 @Override // org.telegram.ui.Stars.StarGiftSheet
                 public BulletinFactory getBulletinFactory() {
                     return BulletinFactory.of(Page.this.parent.fragment);
@@ -1102,7 +1132,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemLongPress$21(TL_stars.SavedStarGift savedStarGift) {
-            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.8
+            new StarGiftSheet(getContext(), this.currentAccount, this.parent.dialogId, this.resourcesProvider) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.Page.9
                 @Override // org.telegram.ui.Stars.StarGiftSheet
                 public BulletinFactory getBulletinFactory() {
                     return BulletinFactory.of(Page.this.parent.fragment);
@@ -1695,11 +1725,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
     }
 
     public void updateTabsY() {
-        ViewPagerFixed.TabsView tabsView = this.tabsView;
-        if (tabsView == null) {
+        if (this.tabsView == null) {
             return;
         }
-        tabsView.setTranslationY(Math.min(0.0f, getTabsHeight() - AndroidUtilities.dp(42.0f)));
+        float min = Math.min(0.0f, getTabsHeight() - AndroidUtilities.dp(42.0f));
+        float clamp01 = Utilities.clamp01(AndroidUtilities.ilerp(min, -AndroidUtilities.dp(42.0f), 0.0f));
+        this.tabsView.setTranslationY(min);
+        this.tabsView.setAlpha(clamp01);
     }
 
     public boolean isReordering() {

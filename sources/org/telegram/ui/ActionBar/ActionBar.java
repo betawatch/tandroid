@@ -34,6 +34,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.core.graphics.ColorUtils;
 import java.util.ArrayList;
+import me.vkryl.android.animator.ReplaceAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -123,6 +124,7 @@ public class ActionBar extends FrameLayout {
     private Runnable titleActionRunnable;
     private boolean titleAnimationRunning;
     private int titleColorToSet;
+    private ActionBarAnimatedSubtitleOverlayContainer titleOverlayContainer;
     private boolean titleOverlayShown;
     private int titleRightMargin;
     private final SimpleTextView[] titleTextView;
@@ -1285,7 +1287,7 @@ public class ActionBar extends FrameLayout {
         SimpleTextView simpleTextView2;
         int makeMeasureSpec;
         int size = View.MeasureSpec.getSize(i);
-        View.MeasureSpec.getSize(i2);
+        int size2 = View.MeasureSpec.getSize(i2);
         int currentActionBarHeight = getCurrentActionBarHeight();
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(currentActionBarHeight, TLObject.FLAG_30);
         this.ignoreLayoutRequest = true;
@@ -1380,6 +1382,10 @@ public class ActionBar extends FrameLayout {
                 if (simpleTextView12 != null && simpleTextView12.getVisibility() != 8) {
                     this.subtitleTextView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
                 }
+                ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.titleOverlayContainer;
+                if (actionBarAnimatedSubtitleOverlayContainer != null) {
+                    actionBarAnimatedSubtitleOverlayContainer.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+                }
                 SimpleTextView simpleTextView13 = this.additionalSubtitleTextView;
                 if (simpleTextView13 != null && simpleTextView13.getVisibility() != 8) {
                     this.additionalSubtitleTextView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
@@ -1395,7 +1401,7 @@ public class ActionBar extends FrameLayout {
             View childAt = getChildAt(i4);
             if (childAt.getVisibility() != 8) {
                 SimpleTextView[] simpleTextViewArr = this.titleTextView;
-                if (childAt != simpleTextViewArr[0] && childAt != simpleTextViewArr[1] && childAt != this.subtitleTextView && childAt != this.menu && childAt != this.backButtonImageView && childAt != this.additionalSubtitleTextView && childAt != this.avatarSearchImageView) {
+                if (childAt != simpleTextViewArr[0] && childAt != simpleTextViewArr[1] && childAt != this.titleOverlayContainer && childAt != this.subtitleTextView && childAt != this.menu && childAt != this.backButtonImageView && childAt != this.additionalSubtitleTextView && childAt != this.avatarSearchImageView) {
                     measureChildWithMargins(childAt, i, 0, View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30), 0);
                 }
             }
@@ -1406,8 +1412,8 @@ public class ActionBar extends FrameLayout {
         this.isMenuOffsetSuppressed = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0243  */
-    /* JADX WARN: Removed duplicated region for block: B:111:0x0252  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0275  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0284  */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1460,55 +1466,61 @@ public class ActionBar extends FrameLayout {
             }
             i12++;
         }
+        if (this.titleOverlayContainer != null) {
+            int currentActionBarHeight2 = ((getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.titleOverlayContainer.getMeasuredHeight()) / 2)) - AndroidUtilities.dp(2.0f);
+            ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.titleOverlayContainer;
+            int i14 = currentActionBarHeight2 + i11;
+            actionBarAnimatedSubtitleOverlayContainer.layout(dp, i14, actionBarAnimatedSubtitleOverlayContainer.getMeasuredWidth() + dp, this.titleOverlayContainer.getMeasuredHeight() + i14);
+        }
         SimpleTextView simpleTextView4 = this.subtitleTextView;
         if (simpleTextView4 != null && simpleTextView4.getVisibility() != 8) {
-            int currentActionBarHeight2 = ((getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.subtitleTextView.getTextHeight()) / 2)) - AndroidUtilities.dp(2.0f);
+            int currentActionBarHeight3 = ((getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.subtitleTextView.getTextHeight()) / 2)) - AndroidUtilities.dp(2.0f);
             SimpleTextView simpleTextView5 = this.subtitleTextView;
-            int i14 = currentActionBarHeight2 + i11;
-            simpleTextView5.layout(dp, i14, simpleTextView5.getMeasuredWidth() + dp, this.subtitleTextView.getTextHeight() + i14);
+            int i15 = currentActionBarHeight3 + i11;
+            simpleTextView5.layout(dp, i15, simpleTextView5.getMeasuredWidth() + dp, this.subtitleTextView.getTextHeight() + i15);
         }
         SimpleTextView simpleTextView6 = this.additionalSubtitleTextView;
         if (simpleTextView6 != null && simpleTextView6.getVisibility() != 8) {
-            int currentActionBarHeight3 = (getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.additionalSubtitleTextView.getTextHeight()) / 2);
+            int currentActionBarHeight4 = (getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.additionalSubtitleTextView.getTextHeight()) / 2);
             if (!AndroidUtilities.isTablet()) {
-                int i15 = getResources().getConfiguration().orientation;
+                int i16 = getResources().getConfiguration().orientation;
             }
-            int dp3 = currentActionBarHeight3 - AndroidUtilities.dp(1.0f);
+            int dp3 = currentActionBarHeight4 - AndroidUtilities.dp(1.0f);
             SimpleTextView simpleTextView7 = this.additionalSubtitleTextView;
-            int i16 = dp3 + i11;
-            simpleTextView7.layout(dp, i16, simpleTextView7.getMeasuredWidth() + dp, this.additionalSubtitleTextView.getTextHeight() + i16);
+            int i17 = dp3 + i11;
+            simpleTextView7.layout(dp, i17, simpleTextView7.getMeasuredWidth() + dp, this.additionalSubtitleTextView.getTextHeight() + i17);
         }
         BackupImageView backupImageView = this.avatarSearchImageView;
         if (backupImageView != null) {
             backupImageView.layout(AndroidUtilities.dp(64.0f), ((getCurrentActionBarHeight() - this.avatarSearchImageView.getMeasuredHeight()) / 2) + i11, AndroidUtilities.dp(64.0f) + this.avatarSearchImageView.getMeasuredWidth(), i11 + ((getCurrentActionBarHeight() + this.avatarSearchImageView.getMeasuredHeight()) / 2));
         }
         int childCount = getChildCount();
-        for (int i17 = 0; i17 < childCount; i17++) {
-            View childAt = getChildAt(i17);
+        for (int i18 = 0; i18 < childCount; i18++) {
+            View childAt = getChildAt(i18);
             if (childAt.getVisibility() != 8) {
                 SimpleTextView[] simpleTextViewArr = this.titleTextView;
-                if (childAt != simpleTextViewArr[0] && childAt != simpleTextViewArr[1] && childAt != this.subtitleTextView && childAt != this.menu && childAt != this.backButtonImageView && childAt != this.additionalSubtitleTextView && childAt != this.avatarSearchImageView) {
+                if (childAt != simpleTextViewArr[0] && childAt != simpleTextViewArr[1] && childAt != this.titleOverlayContainer && childAt != this.subtitleTextView && childAt != this.menu && childAt != this.backButtonImageView && childAt != this.additionalSubtitleTextView && childAt != this.avatarSearchImageView) {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                     int measuredWidth = childAt.getMeasuredWidth();
                     int measuredHeight = childAt.getMeasuredHeight();
-                    int i18 = layoutParams.gravity;
-                    if (i18 == -1) {
-                        i18 = 51;
+                    int i19 = layoutParams.gravity;
+                    if (i19 == -1) {
+                        i19 = 51;
                     }
-                    int i19 = i18 & 112;
-                    int i20 = i18 & 7;
-                    if (i20 == 1) {
+                    int i20 = i19 & 112;
+                    int i21 = i19 & 7;
+                    if (i21 == 1) {
                         i5 = (((i3 - i) - measuredWidth) / 2) + layoutParams.leftMargin;
                         i6 = layoutParams.rightMargin;
-                    } else if (i20 == 5) {
+                    } else if (i21 == 5) {
                         i5 = i3 - measuredWidth;
                         i6 = layoutParams.rightMargin;
                     } else {
                         i7 = layoutParams.leftMargin;
-                        if (i19 != 16) {
+                        if (i20 != 16) {
                             i8 = (((i4 - i2) - measuredHeight) / 2) + layoutParams.topMargin;
                             i9 = layoutParams.bottomMargin;
-                        } else if (i19 == 80) {
+                        } else if (i20 == 80) {
                             i8 = (i4 - i2) - measuredHeight;
                             i9 = layoutParams.bottomMargin;
                         } else {
@@ -1519,7 +1531,7 @@ public class ActionBar extends FrameLayout {
                         childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
                     }
                     i7 = i5 - i6;
-                    if (i19 != 16) {
+                    if (i20 != 16) {
                     }
                     i10 = i8 - i9;
                     childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
@@ -1580,8 +1592,17 @@ public class ActionBar extends FrameLayout {
         }
         if (charSequence2 == null || !charSequence2.equals(str)) {
             this.lastOverlayTitle = str;
+            if (this.titleOverlayContainer != null) {
+                this.titleOverlayContainer.setText(str != null ? LocaleController.getString(str, i) : null, true);
+                if (runnable == null) {
+                    runnable = this.lastRunnable;
+                }
+                this.titleActionRunnable = runnable;
+                this.titleOverlayShown = str != null;
+                return;
+            }
             CharSequence string = str != null ? LocaleController.getString(str, i) : this.lastTitle;
-            Drawable drawable = str != null ? null : this.lastRightDrawable;
+            Drawable drawable = str == null ? this.lastRightDrawable : null;
             if (str == null || (indexOf = TextUtils.indexOf(string, "...")) < 0) {
                 z = false;
                 charSequence = string;
@@ -2028,5 +2049,35 @@ public class ActionBar extends FrameLayout {
 
     public FrameLayout getTitlesContainer() {
         return this.titlesContainer;
+    }
+
+    public void updateColors() {
+        ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.titleOverlayContainer;
+        if (actionBarAnimatedSubtitleOverlayContainer != null) {
+            actionBarAnimatedSubtitleOverlayContainer.updateColors();
+        }
+    }
+
+    public FrameLayout createTitleOverlayContainer() {
+        if (this.titleOverlayContainer == null) {
+            ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = new ActionBarAnimatedSubtitleOverlayContainer(getContext(), this.resourcesProvider, this.ellipsizeSpanAnimator) { // from class: org.telegram.ui.ActionBar.ActionBar.9
+                @Override // org.telegram.ui.ActionBar.ActionBarAnimatedSubtitleOverlayContainer, me.vkryl.android.animator.ReplaceAnimator.Callback
+                public void onItemChanged(ReplaceAnimator replaceAnimator) {
+                    super.onItemChanged(replaceAnimator);
+                    float totalVisibility = getTotalVisibility();
+                    if (ActionBar.this.titlesContainer != null) {
+                        ActionBar.this.titlesContainer.setTranslationY(totalVisibility * AndroidUtilities.dp(-9.0f));
+                    }
+                }
+            };
+            this.titleOverlayContainer = actionBarAnimatedSubtitleOverlayContainer;
+            actionBarAnimatedSubtitleOverlayContainer.setClipChildren(false);
+            addView(this.titleOverlayContainer);
+        }
+        return this.titleOverlayContainer;
+    }
+
+    public FrameLayout getTitleOverlayContainer() {
+        return this.titleOverlayContainer;
     }
 }

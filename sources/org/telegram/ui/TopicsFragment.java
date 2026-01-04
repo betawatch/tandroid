@@ -601,7 +601,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                 }
                 TopicsFragment topicsFragment = TopicsFragment.this;
                 if (topicsFragment.parentDialogsActivity == null) {
-                    AndroidUtilities.drawNavigationBarProtection(canvas, this, topicsFragment.getThemedColor(Theme.key_windowBackgroundWhite));
+                    AndroidUtilities.drawNavigationBarProtection(canvas, this, topicsFragment.getThemedColor(Theme.key_windowBackgroundWhite), TopicsFragment.this.navigationBarHeight);
                 }
             }
 
@@ -4604,7 +4604,12 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
 
     /* JADX INFO: Access modifiers changed from: private */
     public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
-        this.navigationBarHeight = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+        int i = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+        this.navigationBarHeight = i;
+        MessagesSearchContainer messagesSearchContainer = this.searchContainer;
+        if (messagesSearchContainer != null) {
+            messagesSearchContainer.setPadding(0, 0, 0, i);
+        }
         updateFloatingButtonOffset();
         updateTopView();
         return WindowInsetsCompat.CONSUMED;
