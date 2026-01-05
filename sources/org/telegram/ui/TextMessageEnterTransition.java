@@ -79,6 +79,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
     float lastMessageY;
     StaticLayout layout;
     RecyclerListView listView;
+    private float listViewTargetBottomPadding;
     private int messageId;
     private final RectF messageReplySelectorRect;
     ChatMessageCell messageView;
@@ -109,9 +110,9 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
     boolean initBitmaps = false;
     private AnimationNotificationsLocker notificationsLocker = new AnimationNotificationsLocker();
 
-    /* JADX WARN: Type inference failed for: r1v58 */
-    /* JADX WARN: Type inference failed for: r1v59, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r1v61 */
+    /* JADX WARN: Type inference failed for: r1v60 */
+    /* JADX WARN: Type inference failed for: r1v61, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r1v63 */
     public TextMessageEnterTransition(final ChatMessageCell chatMessageCell, final ChatActivity chatActivity, RecyclerListView recyclerListView, final MessageEnterTransitionContainer messageEnterTransitionContainer, Theme.ResourcesProvider resourcesProvider) {
         int i;
         int i2;
@@ -398,6 +399,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
             this.replayObjectFromColor = replyObjectTextView.getTextColor();
             this.drawableFromTop -= AndroidUtilities.dp(46.0f);
         }
+        this.listViewTargetBottomPadding = recyclerListView.getPaddingBottom() - (chatActivity.getInputIslandHeightTarget() - AndroidUtilities.dp(44.0f));
         this.gradientMatrix = new Matrix();
         Paint paint = new Paint(1);
         this.gradientPaint = paint;
@@ -462,19 +464,19 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
         return layout.getLineRight(i) == ((float) layout.getWidth()) && layout.getLineLeft(i) != 0.0f;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:243:0x041e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:243:0x0429, code lost:
     
         if (android.text.TextUtils.isEmpty(r5.caption) != false) goto L89;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:247:0x043a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:247:0x0445, code lost:
     
         if ((org.telegram.messenger.MessageObject.getMedia(r50.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) != false) goto L89;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:262:0x0486, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:262:0x0491, code lost:
     
         if (android.text.TextUtils.isEmpty(r6.caption) != false) goto L109;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:266:0x04a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:266:0x04ad, code lost:
     
         if ((org.telegram.messenger.MessageObject.getMedia(r50.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaInvoice) != false) goto L109;
      */
@@ -534,7 +536,7 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
             return;
         }
         float x2 = (this.messageView.getX() + this.listView.getX()) - this.container.getX();
-        float top = ((this.messageView.getTop() + this.messageView.getPaddingTop()) + this.listView.getTop()) - this.container.getY();
+        float top = (((this.messageView.getTop() + this.messageView.getPaddingTop()) + this.listView.getTop()) - this.container.getY()) - (this.listViewTargetBottomPadding - this.listView.getPaddingBottom());
         this.lastMessageX = x2;
         this.lastMessageY = top;
         float interpolation = ChatListItemAnimator.DEFAULT_INTERPOLATOR.getInterpolation(this.progress);

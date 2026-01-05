@@ -724,7 +724,9 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         }
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.SettingsHelp)));
         arrayList.add(SettingCell.Factory.of(17, -1007845, -1996271, R.drawable.settings_ask, LocaleController.getString(R.string.AskAQuestion)));
-        arrayList.add(SettingCell.Factory.of(18, -14965523, -15431455, R.drawable.settings_faq, LocaleController.getString(R.string.TelegramFAQ)));
+        int i4 = R.drawable.settings_faq;
+        arrayList.add(SettingCell.Factory.of(18, -14965523, -15431455, i4, LocaleController.getString(R.string.TelegramFAQ)));
+        arrayList.add(SettingCell.Factory.of(23, -3903756, -6335009, i4, LocaleController.getString(R.string.TelegramFeatures)));
         arrayList.add(SettingCell.Factory.of(19, -11154873, -14175180, R.drawable.settings_policy, LocaleController.getString(R.string.PrivacyPolicy)));
         if (BuildVars.LOGS_ENABLED || BuildVars.DEBUG_PRIVATE_VERSION) {
             arrayList.add(UItem.asShadow(null));
@@ -862,6 +864,14 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             case 22:
                 FileLog.cleanupLogs();
                 break;
+            case 23:
+                if (MessagesController.getInstance(this.currentAccount).isFrozen()) {
+                    AccountFrozenAlert.show(this.currentAccount);
+                    break;
+                } else {
+                    Browser.openUrl(getContext(), LocaleController.getString(R.string.TelegramFeaturesUrl));
+                    break;
+                }
         }
     }
 
@@ -912,14 +922,11 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             BackupImageView backupImageView = new BackupImageView(context);
             this.avatarView = backupImageView;
             backupImageView.setRoundRadius(AndroidUtilities.dp(14.0f));
-            addView(this.avatarView, LayoutHelper.createLinear(28, 28, 19, 18, 0, 18, 0));
             SimpleTextView simpleTextView = new SimpleTextView(context);
             this.textView = simpleTextView;
             simpleTextView.setTextSize(15);
             this.textView.setTypeface(AndroidUtilities.bold());
             this.textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
-            this.textView.setGravity(19);
-            addView(this.textView, LayoutHelper.createLinear(0, -1, 1.0f, 119, 0, 0, 18, 0));
             this.botDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this.textView, AndroidUtilities.dp(24.0f), 7);
             this.emojiStatusDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this.textView, AndroidUtilities.dp(24.0f), 7);
             this.textView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: org.telegram.ui.SettingsActivity.AccountCell.1
@@ -943,12 +950,24 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             this.counterView.setGravity(17);
             this.counterView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText, resourcesProvider));
             this.counterView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(10.0f), Theme.getColor(Theme.key_featuredStickers_addButton, resourcesProvider)));
-            addView(this.counterView, LayoutHelper.createLinear(-2, 20, 0.0f, 16, 0, 0, 0, 0));
             ImageView imageView = new ImageView(context);
             this.arrowView = imageView;
             imageView.setImageResource(R.drawable.msg_arrowright);
             this.arrowView.setScaleType(ImageView.ScaleType.CENTER);
             this.arrowView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon, resourcesProvider), PorterDuff.Mode.SRC_IN));
+            if (LocaleController.isRTL) {
+                this.textView.setGravity(21);
+                this.arrowView.setScaleX(-1.0f);
+                addView(this.arrowView, LayoutHelper.createLinear(24, 24, 0.0f, 19, 12, 0, 0, 0));
+                addView(this.counterView, LayoutHelper.createLinear(-2, 20, 0.0f, 16, 0, 0, 0, 0));
+                addView(this.textView, LayoutHelper.createLinear(0, -1, 1.0f, 119, 18, 0, 0, 0));
+                addView(this.avatarView, LayoutHelper.createLinear(28, 28, 21, 18, 0, 18, 0));
+                return;
+            }
+            this.textView.setGravity(19);
+            addView(this.avatarView, LayoutHelper.createLinear(28, 28, 19, 18, 0, 18, 0));
+            addView(this.textView, LayoutHelper.createLinear(0, -1, 1.0f, 119, 0, 0, 18, 0));
+            addView(this.counterView, LayoutHelper.createLinear(-2, 20, 0.0f, 16, 0, 0, 0, 0));
             addView(this.arrowView, LayoutHelper.createLinear(24, 24, 0.0f, 21, 0, 0, 12, 0));
         }
 
@@ -1064,11 +1083,9 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             Background background = new Background();
             this.iconBackground = background;
             imageView.setBackground(background);
-            addView(imageView, LayoutHelper.createLinear(28, 28, 19, 18, 0, 0, 0));
             LinearLayout linearLayout = new LinearLayout(context);
             this.textLayout = linearLayout;
             linearLayout.setOrientation(1);
-            addView(linearLayout, LayoutHelper.createLinear(0, -2, 1.0f, 23, 18, 0, 20, 0));
             TextView textView = new TextView(context);
             this.titleView = textView;
             textView.setTextSize(1, 16.0f);
@@ -1080,7 +1097,15 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             TextView textView3 = new TextView(context);
             this.valueView = textView3;
             textView3.setTextSize(1, 16.0f);
-            addView(textView3, LayoutHelper.createLinear(-2, -2, 16, 0, 0, 20, 0));
+            if (LocaleController.isRTL) {
+                addView(textView3, LayoutHelper.createLinear(-2, -2, 16, 20, 0, 0, 0));
+                addView(linearLayout, LayoutHelper.createLinear(0, -2, 1.0f, 23, 20, 0, 18, 0));
+                addView(imageView, LayoutHelper.createLinear(28, 28, 21, 0, 0, 18, 0));
+            } else {
+                addView(imageView, LayoutHelper.createLinear(28, 28, 19, 18, 0, 0, 0));
+                addView(linearLayout, LayoutHelper.createLinear(0, -2, 1.0f, 23, 18, 0, 20, 0));
+                addView(textView3, LayoutHelper.createLinear(-2, -2, 16, 0, 0, 20, 0));
+            }
             updateColors();
         }
 

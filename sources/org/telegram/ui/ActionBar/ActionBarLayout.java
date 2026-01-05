@@ -148,6 +148,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     private boolean predictiveBackInProgress;
     private boolean predictiveBackLeft;
     private float predictiveBackY;
+    private boolean predictiveInput;
     private ArrayList presentingFragmentDescriptions;
     private ColorDrawable previewBackgroundDrawable;
     private ActionBarPopupWindow.ActionBarPopupWindowLayout previewMenu;
@@ -1654,7 +1655,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 return;
             }
         }
-        if (this.predictiveBackInProgress || this.transitionAnimationPreviewMode || this.startedTracking || checkTransitionAnimation()) {
+        if (this.predictiveBackInProgress || this.predictiveInput || this.transitionAnimationPreviewMode || this.startedTracking || checkTransitionAnimation()) {
             return;
         }
         if (this.fragmentsStack.size() > 1 && !isInPreviewMode()) {
@@ -1665,6 +1666,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 if (baseFragment.onBackPressed(false) && !baseFragment.hasShownSheet() && baseFragment.canBeginSlide()) {
                     this.predictiveBackHasProgress = false;
                     this.predictiveBackInProgress = true;
+                    this.predictiveInput = true;
                     this.predictiveBackLeft = f < ((float) AndroidUtilities.displaySize.x) / 2.0f;
                     this.predictiveBackY = f2;
                     prepareForMoving();
@@ -1679,7 +1681,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     }
 
     public void onBackProgress(float f) {
-        if (this.predictiveBackInProgress) {
+        if (this.predictiveInput) {
             float dp = AndroidUtilities.dp(56.0f) * f;
             this.predictiveBackHasProgress = f > 0.0f;
             this.containerView.setTranslationX(dp);
@@ -1688,15 +1690,17 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
     }
 
     public void onBackCancelled() {
-        if (this.predictiveBackInProgress) {
+        if (this.predictiveInput) {
+            this.predictiveInput = false;
             animateBackEndAnimation(true);
         }
     }
 
     public void onBackInvoked() {
-        if (!this.predictiveBackInProgress) {
+        if (!this.predictiveInput) {
             onBackPressed();
         } else {
+            this.predictiveInput = false;
             animateBackEndAnimation(false);
         }
     }

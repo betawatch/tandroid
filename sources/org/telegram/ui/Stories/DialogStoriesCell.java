@@ -47,6 +47,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -57,6 +58,7 @@ import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimatedFloat;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.AvatarDrawable;
@@ -106,6 +108,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     private CharSequence currentTitle;
     boolean drawCircleForce;
     EllipsizeSpanAnimator ellipsizeSpanAnimator;
+    ImageView emojiStatusView;
     BaseFragment fragment;
     private StoriesUtilities.EnsureStoryFileLoadedObject globalCancelable;
     Paint grayPaint;
@@ -126,8 +129,10 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     private int overscrollSelectedPosition;
     private StoryCell overscrollSelectedView;
     private HintView2 premiumHint;
+    private Drawable premiumStar;
     public RadialProgress radialProgress;
     public RecyclerListView recyclerListView;
+    AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable statusDrawable;
     StoriesController storiesController;
     ActionBarAnimatedSubtitleOverlayContainer subtitleOverlayContainer;
     ImageView telegramLogoView;
@@ -275,6 +280,15 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         this.telegramLogoView.setImageResource(R.drawable.telegram_logo_2);
         this.telegramLogoView.setColorFilter(getTextLogoColor(), PorterDuff.Mode.MULTIPLY);
         addView(this.telegramLogoView, LayoutHelper.createFrame(90, 22.0f));
+        AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable swapAnimatedEmojiDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(null, AndroidUtilities.dp(26.0f));
+        this.statusDrawable = swapAnimatedEmojiDrawable;
+        swapAnimatedEmojiDrawable.center = true;
+        swapAnimatedEmojiDrawable.setCallback(this);
+        ImageView imageView2 = new ImageView(context);
+        this.emojiStatusView = imageView2;
+        imageView2.setScaleType(ImageView.ScaleType.CENTER);
+        this.emojiStatusView.setImageDrawable(this.statusDrawable);
+        addView(this.emojiStatusView, LayoutHelper.createFrame(40, 40.0f));
         ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = new ActionBarAnimatedSubtitleOverlayContainer(context, null, this.ellipsizeSpanAnimator) { // from class: org.telegram.ui.Stories.DialogStoriesCell.3
             @Override // org.telegram.ui.ActionBar.ActionBarAnimatedSubtitleOverlayContainer, me.vkryl.android.animator.ReplaceAnimator.Callback
             public void onItemChanged(ReplaceAnimator replaceAnimator) {
@@ -802,6 +816,8 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
             this.titleView.getDrawable().setRightPadding(dp3 + (this.actionBar.menu.getItemsMeasuredWidth(false) * min));
             this.telegramLogoView.setTranslationX(this.titleView.getTranslationX() - AndroidUtilities.dpf2(3.33f));
             this.telegramLogoView.setTranslationY(AndroidUtilities.dp(22.333f) + lerp + totalVisibility);
+            this.emojiStatusView.setTranslationX((this.titleView.getTranslationX() - AndroidUtilities.dpf2(6.33f)) + this.telegramLogoView.getMeasuredWidth());
+            this.emojiStatusView.setTranslationY(AndroidUtilities.dp(11.333f) + lerp + totalVisibility);
             this.subtitleOverlayContainer.setTranslationX(this.titleView.getTranslationX() - AndroidUtilities.dp(3.5f));
             this.subtitleOverlayContainer.setTranslationY(lerp + AndroidUtilities.dp(30.333f));
         }
@@ -826,6 +842,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         updateItems(false, false);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesUpdated);
         this.ellipsizeSpanAnimator.onAttachedToWindow();
+        this.statusDrawable.attach();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -838,6 +855,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
             ensureStoryFileLoadedObject.cancel();
             this.globalCancelable = null;
         }
+        this.statusDrawable.detach();
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -2073,6 +2091,39 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         return super.onTouchEvent(motionEvent);
     }
 
+    public void updateStatus(TLRPC.User user, boolean z) {
+        if (this.statusDrawable == null || this.actionBar == null) {
+            return;
+        }
+        Long emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(user);
+        if (emojiStatusDocumentId != null) {
+            boolean z2 = user.emoji_status instanceof TLRPC.TL_emojiStatusCollectible;
+            this.statusDrawable.set(emojiStatusDocumentId.longValue(), z);
+            this.statusDrawable.setParticles(z2, z);
+        } else if (user != null && MessagesController.getInstance(this.currentAccount).isPremiumUser(user)) {
+            if (this.premiumStar == null) {
+                this.premiumStar = getContext().getResources().getDrawable(R.drawable.msg_premium_liststar).mutate();
+                this.premiumStar = new AnimatedEmojiDrawable.WrapSizeDrawable(this.premiumStar, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f)) { // from class: org.telegram.ui.Stories.DialogStoriesCell.9
+                    @Override // org.telegram.ui.Components.AnimatedEmojiDrawable.WrapSizeDrawable, android.graphics.drawable.Drawable
+                    public void draw(Canvas canvas) {
+                        canvas.save();
+                        canvas.translate(AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(1.0f));
+                        super.draw(canvas);
+                        canvas.restore();
+                    }
+                };
+            }
+            this.premiumStar.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_profile_verifiedBackground), PorterDuff.Mode.MULTIPLY));
+            this.statusDrawable.set(this.premiumStar, z);
+            this.statusDrawable.setParticles(false, z);
+        } else {
+            this.statusDrawable.set((Drawable) null, z);
+            this.statusDrawable.setParticles(false, z);
+        }
+        this.statusDrawable.setColor(Integer.valueOf(getThemedColor(Theme.key_profile_verifiedBackground)));
+        this.emojiStatusView.invalidate();
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public int getThemedColor(int i) {
         BaseFragment baseFragment = this.fragment;
@@ -2104,6 +2155,11 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         if (imageView != null) {
             imageView.setAlpha(f3);
             this.telegramLogoView.setVisibility(f3 > 0.0f ? 0 : 8);
+        }
+        ImageView imageView2 = this.emojiStatusView;
+        if (imageView2 != null) {
+            imageView2.setAlpha(f3);
+            this.emojiStatusView.setVisibility(f3 > 0.0f ? 0 : 8);
         }
         ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.subtitleOverlayContainer;
         if (actionBarAnimatedSubtitleOverlayContainer != null) {

@@ -17736,7 +17736,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         hashMap.put("query_id", "" + botInlineResult.query_id);
         hashMap.put("bot", "" + contextBotId);
         hashMap.put("bot_name", this.mentionContainer.getAdapter().getContextBotName());
-        SendMessagesHelper.prepareSendingBotContextResult(this, getAccountInstance(), botInlineResult, hashMap, this.dialog_id, this.replyingMessageObject, getThreadMessage(), null, this.replyingQuote, z, i, 0, this.quickReplyShortcut, getQuickReplyId(), j);
+        SendMessagesHelper.prepareSendingBotContextResult(this, getAccountInstance(), botInlineResult, hashMap, this.dialog_id, this.replyingMessageObject, getThreadMessage(), null, this.replyingQuote, z, i, 0, this.quickReplyShortcut, getQuickReplyId(), j, getSendMonoForumPeerId());
         this.chatActivityEnterView.setFieldText("");
         hideFieldPanel(false);
         getMediaDataController().increaseInlineRating(contextBotId);
@@ -19639,7 +19639,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     i2 = i4;
                 } else {
                     int i5 = i4;
-                    SendMessagesHelper.prepareSendingBotContextResult(this, getAccountInstance(), sendingMediaInfo2.inlineResult, sendingMediaInfo2.params, chatActivity.dialog_id, chatActivity.replyingMessageObject, getThreadMessage(), null, chatActivity.replyingQuote, z, i, 0, chatActivity.quickReplyShortcut, getQuickReplyId(), 0L);
+                    SendMessagesHelper.prepareSendingBotContextResult(this, getAccountInstance(), sendingMediaInfo2.inlineResult, sendingMediaInfo2.params, chatActivity.dialog_id, chatActivity.replyingMessageObject, getThreadMessage(), null, chatActivity.replyingQuote, z, i, 0, chatActivity.quickReplyShortcut, getQuickReplyId(), 0L, getSendMonoForumPeerId());
                     arrayList2 = arrayList;
                     arrayList2.remove(i5);
                     i2 = i5 - 1;
@@ -63775,6 +63775,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             return Math.max(AndroidUtilities.lerp(dp, max, visibility) * f, AndroidUtilities.dp(44.0f));
         }
         return AndroidUtilities.lerp(dp, max, visibility) * f;
+    }
+
+    public float getInputIslandHeightTarget() {
+        return this.inputIslandHeightCurrent;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -8172,7 +8172,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     if (rightSlidingDialogContainer != null) {
                         BaseFragment fragment = rightSlidingDialogContainer.getFragment();
                         if ((fragment instanceof TopicsFragment) && ((TopicsFragment) fragment).getDialogId() == getDialogId()) {
-                            dialogsActivity.rightSlidingDialogContainer.finishPreview();
+                            dialogsActivity.rightSlidingDialogContainer.lambda$presentFragment$1();
                         }
                     }
                 } else if (baseFragment instanceof ChatActivity) {
@@ -15172,23 +15172,23 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         return Theme.changeColorAccent(getThemedColor(Theme.key_windowBackgroundWhiteBlueIcon), bgColor2, i, Theme.isCurrentThemeDark(), bgColor2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x07a1  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x07b8  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x05c6  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x02cc  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x03c7  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x057d  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x059c  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x05df  */
-    /* JADX WARN: Removed duplicated region for block: B:322:0x03c9  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x05e6  */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x0535  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x05fd  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0622  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x06ba  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0769  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0773  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x078a  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x078e  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x07a5  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x07bc  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x05ca  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x02d0  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x03cb  */
+    /* JADX WARN: Removed duplicated region for block: B:281:0x0581  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x05a0  */
+    /* JADX WARN: Removed duplicated region for block: B:324:0x03cd  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x05e3  */
+    /* JADX WARN: Removed duplicated region for block: B:355:0x0539  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x05ea  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0601  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0626  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x06be  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x076d  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0777  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -15242,9 +15242,11 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         this.editItemVisible = true;
                     }
                 }
-                this.otherItem.addSubItem(30, R.drawable.msg_edit, LocaleController.getString(R.string.EditInfo));
-                if (this.imageUpdater != null) {
-                    this.otherItem.addSubItem(36, R.drawable.msg_addphoto, LocaleController.getString(R.string.AddPhoto));
+                if (!this.hasMainTabs) {
+                    this.otherItem.addSubItem(30, R.drawable.msg_edit, LocaleController.getString(R.string.EditInfo));
+                    if (this.imageUpdater != null) {
+                        this.otherItem.addSubItem(36, R.drawable.msg_addphoto, LocaleController.getString(R.string.AddPhoto));
+                    }
                 }
                 this.editColorItem = this.otherItem.addSubItem(40, R.drawable.menu_profile_colors, LocaleController.getString(R.string.ProfileColorEdit));
                 updateEditColorIcon();

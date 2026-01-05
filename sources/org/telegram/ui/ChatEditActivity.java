@@ -2325,7 +2325,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                     i--;
                 }
             } else if (this.forumTabs && (fragmentStack.get(i) instanceof DialogsActivity) && (dialogsActivity = (DialogsActivity) fragmentStack.get(i)) != null && (rightSlidingDialogContainer = dialogsActivity.rightSlidingDialogContainer) != null && rightSlidingDialogContainer.hasFragment()) {
-                dialogsActivity.rightSlidingDialogContainer.finishPreview();
+                dialogsActivity.rightSlidingDialogContainer.lambda$presentFragment$1();
             }
             i++;
         }

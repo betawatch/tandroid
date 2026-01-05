@@ -188,7 +188,7 @@ public class GiftAuctionController extends BaseController {
         callback2.run(tL_StarGiftAuctionState, tL_error);
     }
 
-    private void requestAuctionUpgrades(long j, final Utilities.Callback<ArrayList<TL_stars.StarGiftAttribute>> callback) {
+    public void requestAuctionUpgrades(long j, final Utilities.Callback<ArrayList<TL_stars.StarGiftAttribute>> callback) {
         TL_stars.getStarGiftUpgradeAttributes getstargiftupgradeattributes = new TL_stars.getStarGiftUpgradeAttributes();
         getstargiftupgradeattributes.gift_id = j;
         getConnectionsManager().sendRequestTyped(getstargiftupgradeattributes, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.messenger.GiftAuctionController$$ExternalSyntheticLambda6

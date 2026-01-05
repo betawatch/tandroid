@@ -2878,7 +2878,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         paint.setShader(linearGradient);
         Interpolator interpolator = ChatListItemAnimator.DEFAULT_INTERPOLATOR;
         this.animatorInputFieldHeight = new FactorAnimator(0, this, interpolator, 250L);
-        this.animatorTopViewVisibility = new BoolAnimator(1, this, interpolator, 270L);
+        this.animatorTopViewVisibility = new BoolAnimator(1, this, interpolator, 250L);
         this.resourcesProvider = resourcesProvider;
         this.isChat = z;
         this.smoothKeyboard = z && !AndroidUtilities.isInMultiwindow && (chatActivity == null || !chatActivity.isInBubbleMode());
@@ -8186,7 +8186,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (baseFragment.getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) baseFragment.getContext()).lambda$runLinkRequest$98(new PremiumPreviewFragment(null));
+            ((LaunchActivity) baseFragment.getContext()).lambda$runLinkRequest$97(new PremiumPreviewFragment(null));
         }
     }
 
@@ -13157,7 +13157,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 hashMap.put("query_id", "" + botInlineResult.query_id);
                 hashMap.put("force_gif", "1");
                 if (replyToStory == null) {
-                    SendMessagesHelper.prepareSendingBotContextResult(ChatActivityEnterView.this.parentFragment, ChatActivityEnterView.this.accountInstance, botInlineResult, hashMap, ChatActivityEnterView.this.dialog_id, ChatActivityEnterView.this.replyingMessageObject, ChatActivityEnterView.this.getThreadMessage(), null, ChatActivityEnterView.this.replyingQuote, z, i, 0, ChatActivityEnterView.this.parentFragment != null ? ChatActivityEnterView.this.parentFragment.quickReplyShortcut : null, ChatActivityEnterView.this.parentFragment != null ? ChatActivityEnterView.this.parentFragment.getQuickReplyId() : 0, l.longValue());
+                    SendMessagesHelper.prepareSendingBotContextResult(ChatActivityEnterView.this.parentFragment, ChatActivityEnterView.this.accountInstance, botInlineResult, hashMap, ChatActivityEnterView.this.dialog_id, ChatActivityEnterView.this.replyingMessageObject, ChatActivityEnterView.this.getThreadMessage(), null, ChatActivityEnterView.this.replyingQuote, z, i, 0, ChatActivityEnterView.this.parentFragment != null ? ChatActivityEnterView.this.parentFragment.quickReplyShortcut : null, ChatActivityEnterView.this.parentFragment != null ? ChatActivityEnterView.this.parentFragment.getQuickReplyId() : 0, l.longValue(), ChatActivityEnterView.this.getSendMonoForumPeerId());
                 } else {
                     SendMessagesHelper.getInstance(ChatActivityEnterView.this.currentAccount).sendSticker(botInlineResult.document, str, ChatActivityEnterView.this.dialog_id, ChatActivityEnterView.this.replyingMessageObject, ChatActivityEnterView.this.getThreadMessage(), replyToStory, ChatActivityEnterView.this.replyingQuote, null, z, i, i2, false, obj2, ChatActivityEnterView.this.parentFragment != null ? ChatActivityEnterView.this.parentFragment.quickReplyShortcut : null, ChatActivityEnterView.this.parentFragment != null ? ChatActivityEnterView.this.parentFragment.getQuickReplyId() : 0, l.longValue(), ChatActivityEnterView.this.getSendMonoForumPeerId(), ChatActivityEnterView.this.getSendMessageSuggestionParams());
                 }
