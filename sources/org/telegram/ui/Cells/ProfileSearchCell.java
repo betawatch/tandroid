@@ -581,12 +581,8 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                 this.nameLeft += this.botVerificationDrawable.getIntrinsicWidth();
             }
         }
-        if (!this.statusDrawable.isEmpty()) {
-            if (LocaleController.isRTL) {
-                this.nameLeft += this.statusDrawable.getIntrinsicWidth();
-            } else {
-                this.nameWidth -= this.statusDrawable.getIntrinsicWidth();
-            }
+        if (!this.statusDrawable.isEmpty() && !LocaleController.isRTL) {
+            this.nameWidth -= this.statusDrawable.getIntrinsicWidth();
         }
         if (this.nameWidth < 0) {
             this.nameWidth = 0;

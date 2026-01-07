@@ -664,7 +664,7 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
                     this.scrollUpdated = true;
                 }
                 if (this.scrollingManually) {
-                    boolean z2 = ContactsActivity.this.animatorSearchHasQuery.getValue() || (findFirstVisibleItemPosition == 0 && top >= ContactsActivity.this.listView.getPaddingTop() - AndroidUtilities.dp(48.0f));
+                    boolean z2 = ContactsActivity.this.animatorSearchHasQuery.getValue() || (findFirstVisibleItemPosition == 0 && top >= ContactsActivity.this.listView.getPaddingTop());
                     float factor = ContactsActivity.this.animatorSearchFieldHeight.getFactor();
                     if (!z2 && i4 != 0) {
                         ContactsActivity.this.animatorSearchFieldHeight.forceFactor(MathUtils.clamp(factor - i4, 0.0f, AndroidUtilities.dp(48.0f)));

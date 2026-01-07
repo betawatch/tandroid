@@ -7973,8 +7973,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
         }
         final long j3 = j2;
-        if (z && this.isTopic) {
-            boolean isDialogMuted = getMessagesController().isDialogMuted(j3, this.topicId);
+        boolean isDialogMuted = getMessagesController().isDialogMuted(j3, this.topicId);
+        if (z && (this.isTopic || isDialogMuted)) {
             boolean z2 = !isDialogMuted;
             getNotificationsController().muteDialog(j3, this.topicId, z2);
             BulletinFactory.createMuteBulletin(this, z2, null).show();

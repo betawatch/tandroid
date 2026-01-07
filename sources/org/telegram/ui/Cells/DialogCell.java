@@ -335,6 +335,8 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
     private float reactionsMentionsChangeProgress;
     private int readOutboxMaxId;
     private RectF rect;
+    private int reorderGradientLastColor;
+    private Paint reorderGradientPaint;
     private float reorderIconProgress;
     public ShareDialogCell.RepostStoryDrawable repostStoryDrawable;
     private final Theme.ResourcesProvider resourcesProvider;
@@ -4937,49 +4939,50 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
     /* JADX WARN: Removed duplicated region for block: B:404:0x1135  */
     /* JADX WARN: Removed duplicated region for block: B:408:0x114d  */
     /* JADX WARN: Removed duplicated region for block: B:415:0x130f  */
-    /* JADX WARN: Removed duplicated region for block: B:419:0x1334  */
-    /* JADX WARN: Removed duplicated region for block: B:423:0x158e  */
-    /* JADX WARN: Removed duplicated region for block: B:466:0x172b  */
-    /* JADX WARN: Removed duplicated region for block: B:471:0x175b  */
-    /* JADX WARN: Removed duplicated region for block: B:475:0x176e  */
-    /* JADX WARN: Removed duplicated region for block: B:478:0x1793  */
-    /* JADX WARN: Removed duplicated region for block: B:490:0x17ad  */
-    /* JADX WARN: Removed duplicated region for block: B:494:0x17f4  */
-    /* JADX WARN: Removed duplicated region for block: B:509:0x1822  */
-    /* JADX WARN: Removed duplicated region for block: B:512:0x182d  */
-    /* JADX WARN: Removed duplicated region for block: B:517:0x183c  */
-    /* JADX WARN: Removed duplicated region for block: B:521:0x1844  */
-    /* JADX WARN: Removed duplicated region for block: B:524:0x1848  */
-    /* JADX WARN: Removed duplicated region for block: B:537:0x18b3  */
-    /* JADX WARN: Removed duplicated region for block: B:540:0x18bc  */
-    /* JADX WARN: Removed duplicated region for block: B:543:0x18c3  */
-    /* JADX WARN: Removed duplicated region for block: B:558:0x1906  */
-    /* JADX WARN: Removed duplicated region for block: B:586:0x198a  */
-    /* JADX WARN: Removed duplicated region for block: B:592:0x19da  */
-    /* JADX WARN: Removed duplicated region for block: B:597:0x1a0a  */
-    /* JADX WARN: Removed duplicated region for block: B:608:0x1a60  */
-    /* JADX WARN: Removed duplicated region for block: B:614:0x1a78  */
-    /* JADX WARN: Removed duplicated region for block: B:627:0x1abc  */
-    /* JADX WARN: Removed duplicated region for block: B:630:0x1ac4  */
+    /* JADX WARN: Removed duplicated region for block: B:419:0x1371  */
+    /* JADX WARN: Removed duplicated region for block: B:423:0x15cb  */
+    /* JADX WARN: Removed duplicated region for block: B:466:0x1768  */
+    /* JADX WARN: Removed duplicated region for block: B:471:0x1798  */
+    /* JADX WARN: Removed duplicated region for block: B:475:0x17ab  */
+    /* JADX WARN: Removed duplicated region for block: B:478:0x17d0  */
+    /* JADX WARN: Removed duplicated region for block: B:490:0x17ea  */
+    /* JADX WARN: Removed duplicated region for block: B:494:0x1831  */
+    /* JADX WARN: Removed duplicated region for block: B:509:0x185f  */
+    /* JADX WARN: Removed duplicated region for block: B:512:0x186a  */
+    /* JADX WARN: Removed duplicated region for block: B:517:0x1879  */
+    /* JADX WARN: Removed duplicated region for block: B:521:0x1881  */
+    /* JADX WARN: Removed duplicated region for block: B:524:0x1885  */
+    /* JADX WARN: Removed duplicated region for block: B:537:0x18f0  */
+    /* JADX WARN: Removed duplicated region for block: B:540:0x18f9  */
+    /* JADX WARN: Removed duplicated region for block: B:543:0x1900  */
+    /* JADX WARN: Removed duplicated region for block: B:558:0x1943  */
+    /* JADX WARN: Removed duplicated region for block: B:586:0x19c7  */
+    /* JADX WARN: Removed duplicated region for block: B:592:0x1a17  */
+    /* JADX WARN: Removed duplicated region for block: B:597:0x1a47  */
+    /* JADX WARN: Removed duplicated region for block: B:608:0x1a9d  */
+    /* JADX WARN: Removed duplicated region for block: B:614:0x1ab5  */
+    /* JADX WARN: Removed duplicated region for block: B:627:0x1af9  */
+    /* JADX WARN: Removed duplicated region for block: B:630:0x1b01  */
     /* JADX WARN: Removed duplicated region for block: B:632:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:633:0x1abe  */
-    /* JADX WARN: Removed duplicated region for block: B:634:0x1a9c  */
-    /* JADX WARN: Removed duplicated region for block: B:643:0x1a73  */
-    /* JADX WARN: Removed duplicated region for block: B:644:0x1a33  */
-    /* JADX WARN: Removed duplicated region for block: B:653:0x19e2  */
-    /* JADX WARN: Removed duplicated region for block: B:659:0x19f3  */
-    /* JADX WARN: Removed duplicated region for block: B:665:0x178d  */
-    /* JADX WARN: Removed duplicated region for block: B:667:0x1383  */
-    /* JADX WARN: Removed duplicated region for block: B:689:0x1443  */
-    /* JADX WARN: Removed duplicated region for block: B:705:0x152f  */
-    /* JADX WARN: Removed duplicated region for block: B:725:0x11a1  */
-    /* JADX WARN: Removed duplicated region for block: B:742:0x11b7  */
-    /* JADX WARN: Removed duplicated region for block: B:757:0x1207  */
-    /* JADX WARN: Removed duplicated region for block: B:825:0x1039  */
-    /* JADX WARN: Removed duplicated region for block: B:842:0x0f68  */
-    /* JADX WARN: Removed duplicated region for block: B:852:0x0cac  */
-    /* JADX WARN: Removed duplicated region for block: B:855:0x0c42  */
-    /* JADX WARN: Removed duplicated region for block: B:861:0x0d65  */
+    /* JADX WARN: Removed duplicated region for block: B:633:0x1afb  */
+    /* JADX WARN: Removed duplicated region for block: B:634:0x1ad9  */
+    /* JADX WARN: Removed duplicated region for block: B:643:0x1ab0  */
+    /* JADX WARN: Removed duplicated region for block: B:644:0x1a70  */
+    /* JADX WARN: Removed duplicated region for block: B:653:0x1a1f  */
+    /* JADX WARN: Removed duplicated region for block: B:659:0x1a30  */
+    /* JADX WARN: Removed duplicated region for block: B:665:0x17ca  */
+    /* JADX WARN: Removed duplicated region for block: B:667:0x13c0  */
+    /* JADX WARN: Removed duplicated region for block: B:689:0x1480  */
+    /* JADX WARN: Removed duplicated region for block: B:705:0x156c  */
+    /* JADX WARN: Removed duplicated region for block: B:725:0x1319  */
+    /* JADX WARN: Removed duplicated region for block: B:728:0x11a1  */
+    /* JADX WARN: Removed duplicated region for block: B:745:0x11b7  */
+    /* JADX WARN: Removed duplicated region for block: B:760:0x1207  */
+    /* JADX WARN: Removed duplicated region for block: B:828:0x1039  */
+    /* JADX WARN: Removed duplicated region for block: B:845:0x0f68  */
+    /* JADX WARN: Removed duplicated region for block: B:855:0x0cac  */
+    /* JADX WARN: Removed duplicated region for block: B:858:0x0c42  */
+    /* JADX WARN: Removed duplicated region for block: B:864:0x0d65  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -5552,6 +5555,8 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                             z2 = false;
                             if (!this.drawReorder) {
                             }
+                            if (!LocaleController.isRTL) {
+                            }
                             Theme.dialogs_reorderDrawable.setAlpha((int) (this.reorderIconProgress * 255.0f));
                             BaseCell.setDrawableBounds(Theme.dialogs_reorderDrawable, this.pinLeft, this.pinTop);
                             Theme.dialogs_reorderDrawable.draw(canvas2);
@@ -5716,6 +5721,8 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                                 z2 = false;
                                 if (!this.drawReorder) {
                                 }
+                                if (!LocaleController.isRTL) {
+                                }
                                 Theme.dialogs_reorderDrawable.setAlpha((int) (this.reorderIconProgress * 255.0f));
                                 BaseCell.setDrawableBounds(Theme.dialogs_reorderDrawable, this.pinLeft, this.pinTop);
                                 Theme.dialogs_reorderDrawable.draw(canvas2);
@@ -5783,6 +5790,8 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                             }
                             z2 = false;
                             if (!this.drawReorder) {
+                            }
+                            if (!LocaleController.isRTL) {
                             }
                             Theme.dialogs_reorderDrawable.setAlpha((int) (this.reorderIconProgress * 255.0f));
                             BaseCell.setDrawableBounds(Theme.dialogs_reorderDrawable, this.pinLeft, this.pinTop);
@@ -5987,6 +5996,8 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                         }
                         z2 = false;
                         if (!this.drawReorder) {
+                        }
+                        if (!LocaleController.isRTL) {
                         }
                         Theme.dialogs_reorderDrawable.setAlpha((int) (this.reorderIconProgress * 255.0f));
                         BaseCell.setDrawableBounds(Theme.dialogs_reorderDrawable, this.pinLeft, this.pinTop);
@@ -6196,6 +6207,14 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                     this.emojiStatus.setColor(Integer.valueOf(Theme.getColor(Theme.key_chats_verifiedBackground, this.resourcesProvider)));
                     z2 = z9;
                     if (!this.drawReorder || this.reorderIconProgress != f8) {
+                        if (!LocaleController.isRTL) {
+                            Paint paintReorderGradient = getPaintReorderGradient();
+                            paintReorderGradient.setAlpha((int) (this.reorderIconProgress * 255.0f));
+                            canvas.save();
+                            canvas2.translate(this.pinLeft - AndroidUtilities.dp(24.0f), this.pinTop);
+                            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth() - (this.pinLeft - AndroidUtilities.dp(24.0f)), AndroidUtilities.dp(24.0f), paintReorderGradient);
+                            canvas.restore();
+                        }
                         Theme.dialogs_reorderDrawable.setAlpha((int) (this.reorderIconProgress * 255.0f));
                         BaseCell.setDrawableBounds(Theme.dialogs_reorderDrawable, this.pinLeft, this.pinTop);
                         Theme.dialogs_reorderDrawable.draw(canvas2);
@@ -6418,6 +6437,8 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             }
             z2 = false;
             if (!this.drawReorder) {
+            }
+            if (!LocaleController.isRTL) {
             }
             Theme.dialogs_reorderDrawable.setAlpha((int) (this.reorderIconProgress * 255.0f));
             BaseCell.setDrawableBounds(Theme.dialogs_reorderDrawable, this.pinLeft, this.pinTop);
@@ -6668,6 +6689,18 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         if (dialogCellDelegate != null) {
             dialogCellDelegate.onButtonLongPress(this);
         }
+    }
+
+    private Paint getPaintReorderGradient() {
+        int color = Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider);
+        if (this.reorderGradientLastColor != color || this.reorderGradientPaint == null) {
+            this.reorderGradientLastColor = color;
+            if (this.reorderGradientPaint == null) {
+                this.reorderGradientPaint = new Paint(1);
+            }
+            this.reorderGradientPaint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(24.0f), 0.0f, new int[]{0, color}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        }
+        return this.reorderGradientPaint;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:58:0x023a, code lost:

@@ -393,6 +393,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     StoryPrivacyBottomSheet.Page.this.onButton1Click(view);
                 }
             });
+            buttonWithCounterView.setRound();
             buttonContainer.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 87));
             ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, false, ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider);
             this.button2 = buttonWithCounterView2;
@@ -402,6 +403,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     StoryPrivacyBottomSheet.Page.this.onButton2Click(view);
                 }
             });
+            buttonWithCounterView2.setRound();
             buttonContainer.addView(buttonWithCounterView2, LayoutHelper.createLinear(-1, 48, 87, 0, 8, 0, 0));
             View view = new View(context);
             this.underKeyboardView = view;

@@ -128,7 +128,7 @@ public abstract class BaseFragment {
         return false;
     }
 
-    protected Animator getCustomSlideTransition(boolean z, boolean z2, float f) {
+    public Animator getCustomSlideTransition(boolean z, boolean z2, float f) {
         return null;
     }
 
@@ -200,9 +200,6 @@ public abstract class BaseFragment {
     public void onSlideProgress(boolean z, float f) {
     }
 
-    public void onSlideProgressFront(boolean z, float f) {
-    }
-
     public void onTransitionAnimationProgress(boolean z, float f) {
     }
 
@@ -225,9 +222,6 @@ public abstract class BaseFragment {
     }
 
     public void setPreviewReplaceProgress(float f) {
-    }
-
-    public void setProgressToDrawerOpened(float f) {
     }
 
     protected boolean shouldOverrideSlideTransition(boolean z, boolean z2) {
