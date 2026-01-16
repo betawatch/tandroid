@@ -1244,7 +1244,7 @@ public abstract class FilterTabsView extends FrameLayout {
         this.layoutManager = linearLayoutManager;
         recyclerListView2.setLayoutManager(linearLayoutManager);
         new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(this.listView);
-        int max = Math.max(0, AndroidUtilities.dp(16.0f));
+        int max = Math.max(0, AndroidUtilities.dp(13.5f));
         this.listViewPaddingH = max;
         this.listView.setPadding(max, 0, max, 0);
         this.listView.setClipToPadding(false);
@@ -1696,7 +1696,7 @@ public abstract class FilterTabsView extends FrameLayout {
                         canvas.translate(this.listView.getTranslationX(), 0.0f);
                         canvas.scale(this.listView.getScaleX(), 1.0f, this.listView.getPivotX() + this.listView.getX(), this.listView.getPivotY());
                         int dp = (measuredHeight / 2) - AndroidUtilities.dp(13.0f);
-                        this.selectorDrawable.setBounds(((int) f2) - AndroidUtilities.dp(9.0f), dp, (int) (f2 + f + AndroidUtilities.lerp(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(5.333f), f3)), AndroidUtilities.dp(26.0f) + dp);
+                        this.selectorDrawable.setBounds(((int) f2) - AndroidUtilities.dp(12.5f), dp, (int) (f2 + f + AndroidUtilities.lerp(AndroidUtilities.dp(12.5f), AndroidUtilities.dp(5.333f), f3)), AndroidUtilities.dp(26.0f) + dp);
                         this.selectorDrawable.setAlpha(31);
                         this.selectorDrawable.draw(canvas);
                         canvas.restore();

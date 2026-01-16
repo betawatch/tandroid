@@ -14990,8 +14990,8 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 }
 
                 @Override // org.telegram.ui.web.BotWebViewContainer.Delegate
-                public /* synthetic */ String onFullscreenRequested(boolean z) {
-                    return BotWebViewContainer.Delegate.-CC.$default$onFullscreenRequested(this, z);
+                public /* synthetic */ String onFullscreenRequested(boolean z, boolean z2) {
+                    return BotWebViewContainer.Delegate.-CC.$default$onFullscreenRequested(this, z, z2);
                 }
 
                 @Override // org.telegram.ui.web.BotWebViewContainer.Delegate

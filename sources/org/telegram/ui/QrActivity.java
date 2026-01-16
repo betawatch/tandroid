@@ -75,6 +75,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserNameResolver;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
@@ -478,7 +479,7 @@ public class QrActivity extends BaseFragment {
                 return;
             }
         }
-        openCameraScanActivity();
+        openCameraScanActivity(this);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -963,6 +964,9 @@ public class QrActivity extends BaseFragment {
     }
 
     class 6 implements CameraScanActivity.CameraScanActivityDelegate {
+        final /* synthetic */ int val$currentAccount;
+        final /* synthetic */ BaseFragment val$fragment;
+
         @Override // org.telegram.ui.CameraScanActivity.CameraScanActivityDelegate
         public /* synthetic */ void didFindMrzInfo(MrzRecognizer.Result result) {
             CameraScanActivity.CameraScanActivityDelegate.-CC.$default$didFindMrzInfo(this, result);
@@ -983,32 +987,36 @@ public class QrActivity extends BaseFragment {
             return CameraScanActivity.CameraScanActivityDelegate.-CC.$default$processQr(this, str, runnable);
         }
 
-        6() {
+        6(int i, BaseFragment baseFragment) {
+            this.val$currentAccount = i;
+            this.val$fragment = baseFragment;
         }
 
         @Override // org.telegram.ui.CameraScanActivity.CameraScanActivityDelegate
         public void didFindQr(String str) {
             String extractUsername = Browser.extractUsername(str);
             if (!TextUtils.isEmpty(extractUsername)) {
-                MessagesController.getInstance(((BaseFragment) QrActivity.this).currentAccount).getUserNameResolver().resolve(extractUsername, new Consumer() { // from class: org.telegram.ui.QrActivity$6$$ExternalSyntheticLambda0
+                UserNameResolver userNameResolver = MessagesController.getInstance(this.val$currentAccount).getUserNameResolver();
+                final BaseFragment baseFragment = this.val$fragment;
+                userNameResolver.resolve(extractUsername, new Consumer() { // from class: org.telegram.ui.QrActivity$6$$ExternalSyntheticLambda0
                     @Override // com.google.android.exoplayer2.util.Consumer
                     public final void accept(Object obj) {
-                        QrActivity.6.this.lambda$didFindQr$1((Long) obj);
+                        QrActivity.6.lambda$didFindQr$1(BaseFragment.this, (Long) obj);
                     }
                 });
-            } else {
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.QrActivity$6$$ExternalSyntheticLambda1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        QrActivity.6.lambda$didFindQr$2();
-                    }
-                });
+                return;
             }
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.QrActivity$6$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    QrActivity.6.lambda$didFindQr$2();
+                }
+            });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$didFindQr$1(Long l) {
-            if (((BaseFragment) QrActivity.this).isFinished) {
+        public static /* synthetic */ void lambda$didFindQr$1(BaseFragment baseFragment, Long l) {
+            if (baseFragment.isFinished) {
                 return;
             }
             if (l == null || l.longValue() == Long.MAX_VALUE) {
@@ -1019,7 +1027,7 @@ public class QrActivity extends BaseFragment {
                     }
                 });
             } else {
-                QrActivity.this.presentFragment(ProfileActivity.of(l.longValue()), true);
+                baseFragment.presentFragment(ProfileActivity.of(l.longValue()), true);
             }
         }
 
@@ -1034,15 +1042,15 @@ public class QrActivity extends BaseFragment {
         }
     }
 
-    private void openCameraScanActivity() {
-        CameraScanActivity.showAsSheet((BaseFragment) this, false, 1, (CameraScanActivity.CameraScanActivityDelegate) new 6());
+    public static void openCameraScanActivity(BaseFragment baseFragment) {
+        CameraScanActivity.showAsSheet(baseFragment, false, 1, (CameraScanActivity.CameraScanActivityDelegate) new 6(baseFragment.getCurrentAccount(), baseFragment));
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public void onRequestPermissionsResultFragment(int i, String[] strArr, int[] iArr) {
         if (getParentActivity() != null && i == 34) {
             if (iArr.length > 0 && iArr[0] == 0) {
-                openCameraScanActivity();
+                openCameraScanActivity(this);
             } else {
                 new AlertDialog.Builder(getParentActivity()).setMessage(AndroidUtilities.replaceTags(LocaleController.getString(R.string.QRCodePermissionNoCameraWithHint))).setPositiveButton(LocaleController.getString(R.string.PermissionOpenSettings), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.QrActivity$$ExternalSyntheticLambda0
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener

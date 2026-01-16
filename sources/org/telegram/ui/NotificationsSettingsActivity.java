@@ -135,7 +135,7 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean onFragmentCreate() {
         MessagesController.getInstance(this.currentAccount).loadSignUpNotificationsSettings();
-        loadExceptions();
+        loadExceptions(null);
         if (UserConfig.getActivatedAccountsCount() > 1) {
             int i = this.rowCount;
             this.accountsSectionRow = i;
@@ -192,96 +192,102 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
         return super.onFragmentCreate();
     }
 
-    private void loadExceptions() {
+    public void loadExceptions(final Runnable runnable) {
         MediaDataController.getInstance(this.currentAccount).loadHints(true);
         final ArrayList arrayList = new ArrayList(MediaDataController.getInstance(this.currentAccount).hints);
         MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsSettingsActivity.this.lambda$loadExceptions$2(arrayList);
+                NotificationsSettingsActivity.this.lambda$loadExceptions$2(arrayList, runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:131:0x02c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:131:0x02cd, code lost:
     
-        if (r7.deleted != false) goto L102;
+        if (r10.deleted != false) goto L102;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0140, code lost:
-    
-        if (r0.deleted != false) goto L29;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x0170, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x0142, code lost:
     
         if (r0.deleted != false) goto L29;
      */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x0352  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x039b  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x03b5 A[LOOP:5: B:190:0x03b3->B:191:0x03b5, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x03cf  */
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x0173, code lost:
+    
+        if (r0.deleted != false) goto L29;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x035a  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x03a2  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x03bc A[LOOP:5: B:188:0x03ba->B:189:0x03bc, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x03d6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$loadExceptions$2(ArrayList arrayList) {
+    public /* synthetic */ void lambda$loadExceptions$2(ArrayList arrayList, final Runnable runnable) {
         ArrayList<TLRPC.EncryptedChat> arrayList2;
+        boolean z;
         ArrayList<TLRPC.Chat> arrayList3;
         ArrayList<TLRPC.User> arrayList4;
         ArrayList<TLRPC.EncryptedChat> arrayList5;
         int size;
         int i;
+        ArrayList arrayList6;
         int size2;
         int i2;
         int size3;
         int i3;
         int size4;
         int i4;
-        ArrayList arrayList6;
         ArrayList arrayList7;
+        ArrayList arrayList8;
+        ArrayList arrayList9;
         Long parseLong;
         long longValue;
-        final ArrayList arrayList8 = new ArrayList();
-        ArrayList arrayList9 = new ArrayList();
         final ArrayList arrayList10 = new ArrayList();
-        ArrayList arrayList11 = new ArrayList();
-        ArrayList arrayList12 = new ArrayList();
-        LongSparseArray longSparseArray = new LongSparseArray();
-        ArrayList<Long> arrayList13 = new ArrayList<>();
+        final ArrayList arrayList11 = new ArrayList();
+        final ArrayList arrayList12 = new ArrayList();
+        ArrayList arrayList13 = new ArrayList();
         ArrayList arrayList14 = new ArrayList();
-        ArrayList arrayList15 = new ArrayList();
-        ArrayList<TLRPC.User> arrayList16 = new ArrayList<>();
-        ArrayList<TLRPC.Chat> arrayList17 = new ArrayList<>();
-        ArrayList<TLRPC.EncryptedChat> arrayList18 = new ArrayList<>();
+        LongSparseArray longSparseArray = new LongSparseArray();
+        ArrayList<Long> arrayList15 = new ArrayList<>();
+        ArrayList arrayList16 = new ArrayList();
+        ArrayList arrayList17 = new ArrayList();
+        ArrayList<TLRPC.User> arrayList18 = new ArrayList<>();
+        ArrayList<TLRPC.Chat> arrayList19 = new ArrayList<>();
+        ArrayList<TLRPC.EncryptedChat> arrayList20 = new ArrayList<>();
         long j = UserConfig.getInstance(this.currentAccount).clientUserId;
         SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.currentAccount);
         Map<String, ?> all = notificationsSettings.getAll();
         Iterator<Map.Entry<String, ?>> it = all.entrySet().iterator();
         while (true) {
-            arrayList2 = arrayList18;
+            arrayList2 = arrayList20;
             if (!it.hasNext()) {
                 break;
             }
             Map.Entry<String, ?> next = it.next();
             String key = next.getKey();
-            ArrayList arrayList19 = arrayList12;
+            ArrayList arrayList21 = arrayList14;
             if (key.startsWith(NotificationsSettingsFacade.PROPERTY_NOTIFY)) {
                 String replace = key.replace(NotificationsSettingsFacade.PROPERTY_NOTIFY, "");
                 if (!replace.contains("_")) {
                     Long parseLong2 = Utilities.parseLong(replace);
-                    ArrayList arrayList20 = arrayList9;
-                    ArrayList arrayList21 = arrayList10;
+                    ArrayList arrayList22 = arrayList11;
+                    ArrayList arrayList23 = arrayList12;
                     long longValue2 = parseLong2.longValue();
                     if (longValue2 == 0 || longValue2 == j) {
-                        arrayList9 = arrayList20;
-                        arrayList18 = arrayList2;
-                        arrayList12 = arrayList19;
-                        arrayList10 = arrayList21;
+                        arrayList11 = arrayList22;
+                        arrayList20 = arrayList2;
+                        arrayList14 = arrayList21;
+                        arrayList12 = arrayList23;
                     } else {
-                        ArrayList arrayList22 = arrayList11;
                         NotificationException notificationException = new NotificationException();
                         notificationException.did = longValue2;
+                        ArrayList arrayList24 = arrayList13;
+                        StringBuilder sb = new StringBuilder();
                         long j2 = j;
-                        notificationException.hasCustom = notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + longValue2, false);
+                        sb.append(NotificationsSettingsFacade.PROPERTY_CUSTOM);
+                        sb.append(longValue2);
+                        notificationException.hasCustom = notificationsSettings.getBoolean(sb.toString(), false);
                         int intValue = ((Integer) next.getValue()).intValue();
                         notificationException.notify = intValue;
                         if (intValue != 0) {
@@ -294,102 +300,112 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
                             int encryptedChatId = DialogObject.getEncryptedChatId(longValue2);
                             TLRPC.EncryptedChat encryptedChat = MessagesController.getInstance(this.currentAccount).getEncryptedChat(Integer.valueOf(encryptedChatId));
                             if (encryptedChat == null) {
-                                arrayList15.add(Integer.valueOf(encryptedChatId));
+                                arrayList17.add(Integer.valueOf(encryptedChatId));
                                 longSparseArray.put(longValue2, notificationException);
                             } else {
                                 TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(encryptedChat.user_id));
                                 if (user == null) {
-                                    arrayList13.add(Long.valueOf(encryptedChat.user_id));
+                                    arrayList15.add(Long.valueOf(encryptedChat.user_id));
                                     longSparseArray.put(encryptedChat.user_id, notificationException);
                                 }
                             }
-                            arrayList8.add(notificationException);
+                            arrayList10.add(notificationException);
                         } else if (DialogObject.isUserDialog(longValue2)) {
                             TLRPC.User user2 = MessagesController.getInstance(this.currentAccount).getUser(parseLong2);
                             if (user2 == null) {
-                                arrayList13.add(parseLong2);
+                                arrayList15.add(parseLong2);
                                 longSparseArray.put(longValue2, notificationException);
                             }
-                            arrayList8.add(notificationException);
+                            arrayList10.add(notificationException);
                         } else {
                             long j3 = -longValue2;
                             TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(j3));
                             if (chat == null) {
-                                arrayList14.add(Long.valueOf(j3));
+                                arrayList16.add(Long.valueOf(j3));
                                 longSparseArray.put(longValue2, notificationException);
                             } else if (!chat.left && !chat.kicked && chat.migrated_to == null) {
                                 if (ChatObject.isChannel(chat) && !chat.megagroup) {
-                                    arrayList10 = arrayList21;
-                                    arrayList10.add(notificationException);
+                                    arrayList12 = arrayList23;
+                                    arrayList12.add(notificationException);
+                                    arrayList20 = arrayList2;
+                                    arrayList14 = arrayList21;
+                                    arrayList11 = arrayList22;
+                                    arrayList13 = arrayList24;
+                                    j = j2;
                                 } else {
-                                    arrayList10 = arrayList21;
-                                    arrayList20.add(notificationException);
+                                    arrayList12 = arrayList23;
+                                    arrayList11 = arrayList22;
+                                    arrayList11.add(notificationException);
+                                    arrayList20 = arrayList2;
+                                    arrayList14 = arrayList21;
+                                    arrayList13 = arrayList24;
+                                    j = j2;
                                 }
-                                arrayList9 = arrayList20;
-                                arrayList18 = arrayList2;
-                                arrayList12 = arrayList19;
-                                arrayList11 = arrayList22;
-                                j = j2;
                             }
                         }
-                        arrayList9 = arrayList20;
-                        arrayList18 = arrayList2;
-                        arrayList12 = arrayList19;
-                        arrayList10 = arrayList21;
+                        arrayList20 = arrayList2;
+                        arrayList14 = arrayList21;
+                        arrayList12 = arrayList23;
                         arrayList11 = arrayList22;
+                        arrayList13 = arrayList24;
                         j = j2;
                     }
                 }
             }
-            arrayList18 = arrayList2;
-            arrayList12 = arrayList19;
+            arrayList20 = arrayList2;
+            arrayList14 = arrayList21;
         }
-        final ArrayList arrayList23 = arrayList9;
-        ArrayList arrayList24 = arrayList11;
-        ArrayList arrayList25 = arrayList12;
+        ArrayList arrayList25 = arrayList13;
+        ArrayList arrayList26 = arrayList14;
         long j4 = j;
         HashSet hashSet = new HashSet();
-        for (Map.Entry<String, ?> entry : all.entrySet()) {
-            String key2 = entry.getKey();
+        Iterator<Map.Entry<String, ?>> it2 = all.entrySet().iterator();
+        while (true) {
+            z = true;
+            if (!it2.hasNext()) {
+                break;
+            }
+            Map.Entry<String, ?> next2 = it2.next();
+            String key2 = next2.getKey();
             if (key2.startsWith(NotificationsSettingsFacade.PROPERTY_STORIES_NOTIFY)) {
                 try {
                     parseLong = Utilities.parseLong(key2.substring(8));
                     longValue = parseLong.longValue();
                 } catch (Exception unused) {
-                    arrayList7 = arrayList24;
+                    arrayList9 = arrayList25;
                 }
                 if (longValue != 0 && longValue != j4) {
                     NotificationException notificationException2 = new NotificationException();
                     notificationException2.did = longValue;
-                    notificationException2.notify = ((Boolean) entry.getValue()).booleanValue() ? 0 : ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    notificationException2.notify = ((Boolean) next2.getValue()).booleanValue() ? 0 : ConnectionsManager.DEFAULT_DATACENTER_ID;
                     notificationException2.story = true;
                     if (DialogObject.isUserDialog(longValue)) {
                         TLRPC.User user3 = getMessagesController().getUser(parseLong);
                         if (user3 == null) {
                             try {
-                                arrayList13.add(parseLong);
+                                arrayList15.add(parseLong);
                                 longSparseArray.put(longValue, notificationException2);
                             } catch (Exception unused2) {
-                                arrayList7 = arrayList24;
+                                arrayList9 = arrayList25;
                             }
                         } else if (user3.deleted) {
                         }
-                        arrayList7 = arrayList24;
+                        arrayList9 = arrayList25;
                         try {
-                            arrayList7.add(notificationException2);
+                            arrayList9.add(notificationException2);
                             hashSet.add(parseLong);
                         } catch (Exception unused3) {
-                            arrayList24 = arrayList7;
+                            arrayList25 = arrayList9;
                         }
-                        arrayList24 = arrayList7;
+                        arrayList25 = arrayList9;
                     }
                 }
             }
         }
-        ArrayList arrayList26 = arrayList;
-        final ArrayList arrayList27 = arrayList24;
-        if (arrayList26 != null) {
-            Collections.sort(arrayList26, Comparator$-CC.comparingDouble(new ToDoubleFunction() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda7
+        ArrayList arrayList27 = arrayList;
+        final ArrayList arrayList28 = arrayList25;
+        if (arrayList27 != null) {
+            Collections.sort(arrayList27, Comparator$-CC.comparingDouble(new ToDoubleFunction() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda2
                 @Override // java.util.function.ToDoubleFunction
                 public final double applyAsDouble(Object obj) {
                     double d;
@@ -399,79 +415,86 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
             }));
             int max = Math.max(0, arrayList.size() - 5);
             while (max < arrayList.size()) {
-                long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_topPeer) arrayList26.get(max)).peer);
+                long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_topPeer) arrayList27.get(max)).peer);
                 if (!hashSet.contains(Long.valueOf(peerDialogId))) {
                     NotificationException notificationException3 = new NotificationException();
                     notificationException3.did = peerDialogId;
                     notificationException3.notify = 0;
-                    notificationException3.auto = true;
-                    notificationException3.story = true;
+                    notificationException3.auto = z;
+                    notificationException3.story = z;
                     if (DialogObject.isUserDialog(peerDialogId)) {
                         TLRPC.User user4 = getMessagesController().getUser(Long.valueOf(peerDialogId));
                         if (user4 == null) {
-                            arrayList13.add(Long.valueOf(peerDialogId));
+                            arrayList15.add(Long.valueOf(peerDialogId));
                             longSparseArray.put(peerDialogId, notificationException3);
                         }
-                        arrayList6 = arrayList25;
-                        arrayList6.add(0, notificationException3);
+                        arrayList8 = arrayList26;
+                        arrayList8.add(0, notificationException3);
                         hashSet.add(Long.valueOf(peerDialogId));
                         max++;
-                        arrayList26 = arrayList;
-                        arrayList25 = arrayList6;
+                        arrayList26 = arrayList8;
+                        z = true;
+                        arrayList27 = arrayList;
                     }
                 }
-                arrayList6 = arrayList25;
+                arrayList8 = arrayList26;
                 max++;
-                arrayList26 = arrayList;
-                arrayList25 = arrayList6;
+                arrayList26 = arrayList8;
+                z = true;
+                arrayList27 = arrayList;
             }
         }
-        final ArrayList arrayList28 = arrayList25;
+        ArrayList arrayList29 = arrayList26;
         if (longSparseArray.size() != 0) {
             try {
-                if (arrayList15.isEmpty()) {
+                if (arrayList17.isEmpty()) {
                     arrayList5 = arrayList2;
                 } else {
                     try {
                         arrayList5 = arrayList2;
-                        try {
-                            MessagesStorage.getInstance(this.currentAccount).getEncryptedChatsInternal(TextUtils.join(",", arrayList15), arrayList5, arrayList13);
-                        } catch (Exception e) {
-                            e = e;
-                            arrayList3 = arrayList17;
-                            arrayList4 = arrayList16;
-                            FileLog.e(e);
-                            size = arrayList3.size();
-                            while (i < size) {
-                            }
-                            size2 = arrayList4.size();
-                            while (i2 < size2) {
-                            }
-                            size3 = arrayList5.size();
-                            while (i3 < size3) {
-                            }
-                            size4 = longSparseArray.size();
-                            while (i4 < size4) {
-                            }
-                            final ArrayList<TLRPC.User> arrayList29 = arrayList4;
-                            final ArrayList<TLRPC.Chat> arrayList30 = arrayList3;
-                            final ArrayList<TLRPC.EncryptedChat> arrayList31 = arrayList5;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda8
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList29, arrayList30, arrayList31, arrayList8, arrayList23, arrayList10, arrayList27, arrayList28);
-                                }
-                            });
+                    } catch (Exception e) {
+                        e = e;
+                        arrayList5 = arrayList2;
+                        arrayList3 = arrayList19;
+                        arrayList4 = arrayList18;
+                        FileLog.e(e);
+                        size = arrayList3.size();
+                        i = 0;
+                        while (i < size) {
                         }
+                        arrayList6 = arrayList29;
+                        size2 = arrayList4.size();
+                        while (i2 < size2) {
+                        }
+                        size3 = arrayList5.size();
+                        while (i3 < size3) {
+                        }
+                        size4 = longSparseArray.size();
+                        while (i4 < size4) {
+                        }
+                        final ArrayList<TLRPC.User> arrayList30 = arrayList4;
+                        final ArrayList<TLRPC.Chat> arrayList31 = arrayList3;
+                        final ArrayList<TLRPC.EncryptedChat> arrayList32 = arrayList5;
+                        final ArrayList arrayList33 = arrayList6;
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda3
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList30, arrayList31, arrayList32, arrayList10, arrayList11, arrayList12, arrayList28, arrayList33, runnable);
+                            }
+                        });
+                    }
+                    try {
+                        MessagesStorage.getInstance(this.currentAccount).getEncryptedChatsInternal(TextUtils.join(",", arrayList17), arrayList5, arrayList15);
                     } catch (Exception e2) {
                         e = e2;
-                        arrayList5 = arrayList2;
-                        arrayList3 = arrayList17;
-                        arrayList4 = arrayList16;
+                        arrayList3 = arrayList19;
+                        arrayList4 = arrayList18;
                         FileLog.e(e);
                         size = arrayList3.size();
+                        i = 0;
                         while (i < size) {
                         }
+                        arrayList6 = arrayList29;
                         size2 = arrayList4.size();
                         while (i2 < size2) {
                         }
@@ -481,30 +504,33 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
                         size4 = longSparseArray.size();
                         while (i4 < size4) {
                         }
-                        final ArrayList arrayList292 = arrayList4;
-                        final ArrayList arrayList302 = arrayList3;
-                        final ArrayList arrayList312 = arrayList5;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda8
+                        final ArrayList arrayList302 = arrayList4;
+                        final ArrayList arrayList312 = arrayList3;
+                        final ArrayList arrayList322 = arrayList5;
+                        final ArrayList arrayList332 = arrayList6;
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda3
                             @Override // java.lang.Runnable
                             public final void run() {
-                                NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList292, arrayList302, arrayList312, arrayList8, arrayList23, arrayList10, arrayList27, arrayList28);
+                                NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList302, arrayList312, arrayList322, arrayList10, arrayList11, arrayList12, arrayList28, arrayList332, runnable);
                             }
                         });
                     }
                 }
-                if (arrayList13.isEmpty()) {
-                    arrayList4 = arrayList16;
+                if (arrayList15.isEmpty()) {
+                    arrayList4 = arrayList18;
                 } else {
                     try {
-                        arrayList4 = arrayList16;
+                        arrayList4 = arrayList18;
                     } catch (Exception e3) {
                         e = e3;
-                        arrayList4 = arrayList16;
-                        arrayList3 = arrayList17;
+                        arrayList4 = arrayList18;
+                        arrayList3 = arrayList19;
                         FileLog.e(e);
                         size = arrayList3.size();
+                        i = 0;
                         while (i < size) {
                         }
+                        arrayList6 = arrayList29;
                         size2 = arrayList4.size();
                         while (i2 < size2) {
                         }
@@ -514,25 +540,28 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
                         size4 = longSparseArray.size();
                         while (i4 < size4) {
                         }
-                        final ArrayList arrayList2922 = arrayList4;
-                        final ArrayList arrayList3022 = arrayList3;
-                        final ArrayList arrayList3122 = arrayList5;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda8
+                        final ArrayList arrayList3022 = arrayList4;
+                        final ArrayList arrayList3122 = arrayList3;
+                        final ArrayList arrayList3222 = arrayList5;
+                        final ArrayList arrayList3322 = arrayList6;
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda3
                             @Override // java.lang.Runnable
                             public final void run() {
-                                NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList2922, arrayList3022, arrayList3122, arrayList8, arrayList23, arrayList10, arrayList27, arrayList28);
+                                NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList3022, arrayList3122, arrayList3222, arrayList10, arrayList11, arrayList12, arrayList28, arrayList3322, runnable);
                             }
                         });
                     }
                     try {
-                        MessagesStorage.getInstance(this.currentAccount).getUsersInternal(arrayList13, arrayList4);
+                        MessagesStorage.getInstance(this.currentAccount).getUsersInternal(arrayList15, arrayList4);
                     } catch (Exception e4) {
                         e = e4;
-                        arrayList3 = arrayList17;
+                        arrayList3 = arrayList19;
                         FileLog.e(e);
                         size = arrayList3.size();
+                        i = 0;
                         while (i < size) {
                         }
+                        arrayList6 = arrayList29;
                         size2 = arrayList4.size();
                         while (i2 < size2) {
                         }
@@ -542,29 +571,32 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
                         size4 = longSparseArray.size();
                         while (i4 < size4) {
                         }
-                        final ArrayList arrayList29222 = arrayList4;
-                        final ArrayList arrayList30222 = arrayList3;
-                        final ArrayList arrayList31222 = arrayList5;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda8
+                        final ArrayList arrayList30222 = arrayList4;
+                        final ArrayList arrayList31222 = arrayList3;
+                        final ArrayList arrayList32222 = arrayList5;
+                        final ArrayList arrayList33222 = arrayList6;
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda3
                             @Override // java.lang.Runnable
                             public final void run() {
-                                NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList29222, arrayList30222, arrayList31222, arrayList8, arrayList23, arrayList10, arrayList27, arrayList28);
+                                NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList30222, arrayList31222, arrayList32222, arrayList10, arrayList11, arrayList12, arrayList28, arrayList33222, runnable);
                             }
                         });
                     }
                 }
-                if (arrayList14.isEmpty()) {
-                    arrayList3 = arrayList17;
+                if (arrayList16.isEmpty()) {
+                    arrayList3 = arrayList19;
                 } else {
-                    arrayList3 = arrayList17;
+                    arrayList3 = arrayList19;
                     try {
-                        MessagesStorage.getInstance(this.currentAccount).getChatsInternal(TextUtils.join(",", arrayList14), arrayList3);
+                        MessagesStorage.getInstance(this.currentAccount).getChatsInternal(TextUtils.join(",", arrayList16), arrayList3);
                     } catch (Exception e5) {
                         e = e5;
                         FileLog.e(e);
                         size = arrayList3.size();
+                        i = 0;
                         while (i < size) {
                         }
+                        arrayList6 = arrayList29;
                         size2 = arrayList4.size();
                         while (i2 < size2) {
                         }
@@ -574,41 +606,46 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
                         size4 = longSparseArray.size();
                         while (i4 < size4) {
                         }
-                        final ArrayList arrayList292222 = arrayList4;
-                        final ArrayList arrayList302222 = arrayList3;
-                        final ArrayList arrayList312222 = arrayList5;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda8
+                        final ArrayList arrayList302222 = arrayList4;
+                        final ArrayList arrayList312222 = arrayList3;
+                        final ArrayList arrayList322222 = arrayList5;
+                        final ArrayList arrayList332222 = arrayList6;
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda3
                             @Override // java.lang.Runnable
                             public final void run() {
-                                NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList292222, arrayList302222, arrayList312222, arrayList8, arrayList23, arrayList10, arrayList27, arrayList28);
+                                NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList302222, arrayList312222, arrayList322222, arrayList10, arrayList11, arrayList12, arrayList28, arrayList332222, runnable);
                             }
                         });
                     }
                 }
             } catch (Exception e6) {
                 e = e6;
-                arrayList3 = arrayList17;
-                arrayList4 = arrayList16;
+                arrayList3 = arrayList19;
+                arrayList4 = arrayList18;
                 arrayList5 = arrayList2;
             }
             size = arrayList3.size();
-            for (i = 0; i < size; i++) {
+            i = 0;
+            while (i < size) {
                 TLRPC.Chat chat2 = arrayList3.get(i);
-                if (!chat2.left && !chat2.kicked && chat2.migrated_to == null) {
-                    ArrayList arrayList32 = arrayList10;
+                if (chat2.left || chat2.kicked || chat2.migrated_to != null) {
+                    arrayList7 = arrayList29;
+                } else {
+                    arrayList7 = arrayList29;
                     NotificationException notificationException4 = (NotificationException) longSparseArray.get(-chat2.id);
                     longSparseArray.remove(-chat2.id);
-                    if (notificationException4 == null) {
-                        arrayList10 = arrayList32;
-                    } else if (ChatObject.isChannel(chat2) && !chat2.megagroup) {
-                        arrayList10 = arrayList32;
-                        arrayList10.add(notificationException4);
-                    } else {
-                        arrayList10 = arrayList32;
-                        arrayList23.add(notificationException4);
+                    if (notificationException4 != null) {
+                        if (ChatObject.isChannel(chat2) && !chat2.megagroup) {
+                            arrayList12.add(notificationException4);
+                        } else {
+                            arrayList11.add(notificationException4);
+                        }
                     }
                 }
+                i++;
+                arrayList29 = arrayList7;
             }
+            arrayList6 = arrayList29;
             size2 = arrayList4.size();
             for (i2 = 0; i2 < size2; i2++) {
                 TLRPC.User user5 = arrayList4.get(i2);
@@ -623,30 +660,32 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
             size4 = longSparseArray.size();
             for (i4 = 0; i4 < size4; i4++) {
                 if (DialogObject.isChatDialog(longSparseArray.keyAt(i4))) {
-                    arrayList23.remove(longSparseArray.valueAt(i4));
-                    arrayList10.remove(longSparseArray.valueAt(i4));
+                    arrayList11.remove(longSparseArray.valueAt(i4));
+                    arrayList12.remove(longSparseArray.valueAt(i4));
                 } else {
-                    arrayList8.remove(longSparseArray.valueAt(i4));
+                    arrayList10.remove(longSparseArray.valueAt(i4));
                 }
             }
         } else {
-            arrayList3 = arrayList17;
-            arrayList4 = arrayList16;
+            arrayList6 = arrayList29;
+            arrayList3 = arrayList19;
+            arrayList4 = arrayList18;
             arrayList5 = arrayList2;
         }
-        final ArrayList arrayList2922222 = arrayList4;
-        final ArrayList arrayList3022222 = arrayList3;
-        final ArrayList arrayList3122222 = arrayList5;
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda8
+        final ArrayList arrayList3022222 = arrayList4;
+        final ArrayList arrayList3122222 = arrayList3;
+        final ArrayList arrayList3222222 = arrayList5;
+        final ArrayList arrayList3322222 = arrayList6;
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList2922222, arrayList3022222, arrayList3122222, arrayList8, arrayList23, arrayList10, arrayList27, arrayList28);
+                NotificationsSettingsActivity.this.lambda$loadExceptions$1(arrayList3022222, arrayList3122222, arrayList3222222, arrayList10, arrayList11, arrayList12, arrayList28, arrayList3322222, runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadExceptions$1(ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6, ArrayList arrayList7, ArrayList arrayList8) {
+    public /* synthetic */ void lambda$loadExceptions$1(ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6, ArrayList arrayList7, ArrayList arrayList8, Runnable runnable) {
         MessagesController.getInstance(this.currentAccount).putUsers(arrayList, true);
         MessagesController.getInstance(this.currentAccount).putChats(arrayList2, true);
         MessagesController.getInstance(this.currentAccount).putEncryptedChats(arrayList3, true);
@@ -655,10 +694,40 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
         this.exceptionChannels = arrayList6;
         this.exceptionStories = arrayList7;
         this.exceptionAutoStories = arrayList8;
-        this.adapter.notifyItemChanged(this.privateRow);
-        this.adapter.notifyItemChanged(this.groupRow);
-        this.adapter.notifyItemChanged(this.channelsRow);
-        this.adapter.notifyItemChanged(this.storiesRow);
+        ListAdapter listAdapter = this.adapter;
+        if (listAdapter != null) {
+            listAdapter.notifyItemChanged(this.privateRow);
+            this.adapter.notifyItemChanged(this.groupRow);
+            this.adapter.notifyItemChanged(this.channelsRow);
+            this.adapter.notifyItemChanged(this.storiesRow);
+        }
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
+
+    public NotificationsCustomSettingsActivity makeNotificationsCustomSettingsActivity(int i) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        ArrayList arrayList3 = null;
+        if (i == 1) {
+            arrayList = this.exceptionUsers;
+        } else if (i == 0) {
+            arrayList = this.exceptionChats;
+        } else {
+            if (i == 4) {
+                arrayList2 = null;
+            } else if (i == 3) {
+                arrayList3 = this.exceptionStories;
+                arrayList2 = this.exceptionAutoStories;
+            } else {
+                arrayList = this.exceptionChannels;
+            }
+            return new NotificationsCustomSettingsActivity(i, arrayList3, arrayList2);
+        }
+        arrayList3 = arrayList;
+        arrayList2 = null;
+        return new NotificationsCustomSettingsActivity(i, arrayList3, arrayList2);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -770,7 +839,7 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
             final NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) view;
             if ((LocaleController.isRTL && f <= AndroidUtilities.dp(76.0f)) || (!LocaleController.isRTL && f >= view.getMeasuredWidth() - AndroidUtilities.dp(76.0f))) {
                 final boolean z2 = isGlobalNotificationsEnabled;
-                showExceptionsAlert(i, new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda6
+                showExceptionsAlert(i, new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda8
                     @Override // java.lang.Runnable
                     public final void run() {
                         NotificationsSettingsActivity.this.lambda$createView$3(i2, z2, notificationsCheckCell, i);
@@ -803,7 +872,7 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
             builder.setTitle(LocaleController.getString("ResetNotificationsAlertTitle", R.string.ResetNotificationsAlertTitle));
             builder.setMessage(LocaleController.getString("ResetNotificationsAlert", R.string.ResetNotificationsAlert));
-            builder.setPositiveButton(LocaleController.getString("Reset", R.string.Reset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda2
+            builder.setPositiveButton(LocaleController.getString("Reset", R.string.Reset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda4
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i4) {
                     NotificationsSettingsActivity.this.lambda$createView$6(alertDialog, i4);
@@ -858,7 +927,7 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
             edit6.commit();
             TL_account.setContactSignUpNotification setcontactsignupnotification = new TL_account.setContactSignUpNotification();
             setcontactsignupnotification.silent = z;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(setcontactsignupnotification, new RequestDelegate() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda3
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(setcontactsignupnotification, new RequestDelegate() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda5
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     NotificationsSettingsActivity.lambda$createView$7(tLObject, tL_error);
@@ -939,7 +1008,7 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
             if (getParentActivity() == null) {
                 return;
             } else {
-                showDialog(AlertsCreator.createVibrationSelectDialog(getParentActivity(), 0L, 0L, i == this.callsVibrateRow ? "vibrate_calls" : null, new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda4
+                showDialog(AlertsCreator.createVibrationSelectDialog(getParentActivity(), 0L, 0L, i == this.callsVibrateRow ? "vibrate_calls" : null, new Runnable() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
                         NotificationsSettingsActivity.this.lambda$createView$8(i);
@@ -949,7 +1018,7 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
         } else if (i == this.repeatRow) {
             AlertDialog.Builder builder2 = new AlertDialog.Builder(getParentActivity());
             builder2.setTitle(LocaleController.getString("RepeatNotifications", R.string.RepeatNotifications));
-            builder2.setItems(new CharSequence[]{LocaleController.getString("RepeatDisabled", R.string.RepeatDisabled), LocaleController.formatPluralString("Minutes", 5, new Object[0]), LocaleController.formatPluralString("Minutes", 10, new Object[0]), LocaleController.formatPluralString("Minutes", 30, new Object[0]), LocaleController.formatPluralString("Hours", 1, new Object[0]), LocaleController.formatPluralString("Hours", 2, new Object[0]), LocaleController.formatPluralString("Hours", 4, new Object[0])}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda5
+            builder2.setItems(new CharSequence[]{LocaleController.getString("RepeatDisabled", R.string.RepeatDisabled), LocaleController.formatPluralString("Minutes", 5, new Object[0]), LocaleController.formatPluralString("Minutes", 10, new Object[0]), LocaleController.formatPluralString("Minutes", 30, new Object[0]), LocaleController.formatPluralString("Hours", 1, new Object[0]), LocaleController.formatPluralString("Hours", 2, new Object[0]), LocaleController.formatPluralString("Hours", 4, new Object[0])}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda7
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i5) {
                     NotificationsSettingsActivity.this.lambda$createView$9(i, dialogInterface, i5);

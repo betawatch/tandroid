@@ -57,6 +57,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
     private TextView descriptionText2;
     private boolean flickerButton;
     private RLottieImageView imageView;
+    private Runnable openedSettings;
     private ActionIntroQRLoginDelegate qrLoginDelegate;
     private boolean showingAsBottomSheet;
     private GradientDrawable startMessagingButtonBackground;
@@ -70,6 +71,10 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ boolean lambda$createView$0(View view, MotionEvent motionEvent) {
         return true;
+    }
+
+    public void setOnOpenedSettings(Runnable runnable) {
+        this.openedSettings = runnable;
     }
 
     public ActionIntroActivity(int i) {
@@ -556,7 +561,7 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
         } else if (i10 == 5) {
             int[] iArr = new int[8];
             this.colors = iArr;
-            this.imageView.setAnimation(R.raw.qr_login, 334, 334, iArr);
+            this.imageView.setAnimation(R.raw.qr_login, NotificationCenter.callTabsVisibleToggled, NotificationCenter.callTabsVisibleToggled, iArr);
             this.imageView.setScaleType(ImageView.ScaleType.CENTER);
             this.titleTextView.setText(LocaleController.getString(R.string.AuthAnotherClient));
             this.buttonTextView.setText(LocaleController.getString(R.string.AuthAnotherClientScan));
@@ -617,19 +622,25 @@ public class ActionIntroActivity extends BaseFragment implements LocationControl
                 return;
             }
             presentFragment(new PasscodeActivity(1), true);
-        } else {
-            if (getParentActivity() == null) {
+            Runnable runnable = this.openedSettings;
+            if (runnable != null) {
+                AndroidUtilities.runOnUIThread(runnable);
+                this.openedSettings = null;
                 return;
             }
-            if (Build.VERSION.SDK_INT >= 23) {
-                checkSelfPermission = getParentActivity().checkSelfPermission("android.permission.CAMERA");
-                if (checkSelfPermission != 0) {
-                    getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
-                    return;
-                }
-            }
-            processOpenQrReader();
+            return;
         }
+        if (getParentActivity() == null) {
+            return;
+        }
+        if (Build.VERSION.SDK_INT >= 23) {
+            checkSelfPermission = getParentActivity().checkSelfPermission("android.permission.CAMERA");
+            if (checkSelfPermission != 0) {
+                getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
+                return;
+            }
+        }
+        processOpenQrReader();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

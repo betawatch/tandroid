@@ -92,6 +92,7 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
     private RecyclerListView listView;
     private RLottieImageView lockImageView;
     private Runnable onShowKeyboardCallback;
+    private Runnable openedSettings;
     private ActionBarMenuItem otherItem;
     private OutlineTextContainerView outlinePasswordView;
     private TextView passcodesDoNotMatchTextView;
@@ -1439,6 +1440,11 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
         getMediaDataController().buildShortcuts();
         if (z) {
             presentFragment(new PasscodeActivity(0), true);
+            Runnable runnable = this.openedSettings;
+            if (runnable != null) {
+                AndroidUtilities.runOnUIThread(runnable);
+                this.openedSettings = null;
+            }
         } else {
             finishFragment();
         }
@@ -1448,6 +1454,15 @@ public class PasscodeActivity extends BaseFragment implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$processDone$19() {
         presentFragment(new PasscodeActivity(0), true);
+        Runnable runnable = this.openedSettings;
+        if (runnable != null) {
+            AndroidUtilities.runOnUIThread(runnable);
+            this.openedSettings = null;
+        }
+    }
+
+    public void setOnOpenedSettings(Runnable runnable) {
+        this.openedSettings = runnable;
     }
 
     private void onPasscodeError() {

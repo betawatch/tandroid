@@ -66,7 +66,7 @@ public abstract class BaseFragment {
     protected boolean inBubbleMode;
     protected boolean inMenuMode;
     protected boolean inPreviewMode;
-    protected boolean isFinished;
+    public boolean isFinished;
     private boolean isFullyVisible;
     protected Dialog parentDialog;
     protected INavigationLayout parentLayout;

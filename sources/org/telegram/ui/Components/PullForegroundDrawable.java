@@ -53,7 +53,7 @@ public abstract class PullForegroundDrawable {
     public float outOverScroll;
     public float outProgress;
     public float outRadius;
-    public float pullProgress;
+    private float pullProgress;
     private StaticLayout pullTooltipLayout;
     private float pullTooltipLayoutLeft;
     private float pullTooltipLayoutScale;
@@ -236,8 +236,8 @@ public abstract class PullForegroundDrawable {
         float f;
         int i2;
         int i3;
-        int i4;
         float f2;
+        int i4;
         int i5;
         int i6;
         float f3;
@@ -253,10 +253,10 @@ public abstract class PullForegroundDrawable {
         int dp3 = AndroidUtilities.dp(9.0f);
         int dp4 = AndroidUtilities.dp(18.0f);
         int viewOffset = (int) getViewOffset();
-        int height = (int) (this.cell.getHeight() * this.pullProgress);
+        int height = (int) (this.cell.getHeight() * getPullProgress());
         float f6 = this.bounceIn ? (this.bounceProgress * 0.07f) - 0.05f : this.bounceProgress * 0.02f;
         checkTextLayouts((this.cell.getWidth() - (dp * 4)) - AndroidUtilities.dp(16.0f));
-        updateTextProgress(this.pullProgress);
+        updateTextProgress(getPullProgress());
         float f7 = this.outProgress * 2.0f;
         if (f7 > 1.0f) {
             f7 = 1.0f;
@@ -282,18 +282,17 @@ public abstract class PullForegroundDrawable {
         canvas.save();
         if (z) {
             i2 = dp4;
-            i4 = dp2;
             i3 = viewOffset;
-            canvas.clipRect(0, -AndroidUtilities.dp(4.0f), this.listView.getMeasuredWidth(), viewOffset + 1);
+            canvas.clipRect(0, 0, this.listView.getMeasuredWidth(), viewOffset + 1);
         } else {
             i2 = dp4;
             i3 = viewOffset;
-            i4 = dp2;
         }
         if (this.outProgress == 0.0f) {
             if (this.accentRevalProgress != 1.0f && this.accentRevalProgressOut != 1.0f) {
                 canvas.drawPaint(this.backgroundPaint);
             }
+            i4 = dp2;
             f2 = f6;
         } else {
             float f10 = this.outRadius;
@@ -303,6 +302,7 @@ public abstract class PullForegroundDrawable {
             }
             this.circleClipPath.reset();
             f2 = f6;
+            i4 = dp2;
             this.rectF.set(f8 - width, f9 - width, f8 + width, width + f9);
             this.circleClipPath.addOval(this.rectF, Path.Direction.CW);
             canvas.clipPath(this.circleClipPath);
@@ -397,7 +397,7 @@ public abstract class PullForegroundDrawable {
             f3 = f8;
             f4 = f9;
         }
-        if (this.pullProgress > 0.0f) {
+        if (getPullProgress() > 0.0f) {
             textIn();
         }
         float height2 = (this.cell.getHeight() - (i9 / 2.0f)) + AndroidUtilities.dp(6.0f);
@@ -771,6 +771,20 @@ public abstract class PullForegroundDrawable {
         this.textInProgress = 0.0f;
         this.animateToTextIn = false;
         this.wasSendCallback = false;
+    }
+
+    public float getPullProgress() {
+        return this.pullProgress;
+    }
+
+    public void setPullProgress(float f) {
+        if (this.pullProgress != f) {
+            this.pullProgress = f;
+            View view = this.cell;
+            if (view != null) {
+                view.invalidate();
+            }
+        }
     }
 
     private class ArrowDrawable extends Drawable {

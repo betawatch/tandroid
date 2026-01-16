@@ -55,11 +55,15 @@ import org.telegram.ui.UserInfoActivity;
 
 /* loaded from: classes4.dex */
 public class UserInfoActivity extends UniversalFragment implements NotificationCenter.NotificationCenterDelegate {
+    public int addAccountRow;
     private EditTextCell bioEdit;
     private CharSequence bioInfo;
+    public int bioRow;
     private TL_account.TL_birthday birthday;
     private CharSequence birthdayInfo;
+    public int birthdayRow;
     private TLRPC.Chat channel;
+    public int channelRow;
     private String currentBio;
     private TL_account.TL_birthday currentBirthday;
     private long currentChannel;
@@ -68,9 +72,15 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
     private ActionBarMenuItem doneButton;
     private CrossfadeDrawable doneButtonDrawable;
     private EditTextCell firstNameEdit;
+    public int firstNameRow;
     private boolean hadHours;
     private boolean hadLocation;
     private EditTextCell lastNameEdit;
+    public int lastNameRow;
+    public UniversalRecyclerView listView;
+    public int logoutRow;
+    public int numberRow;
+    public int usernameRow;
     private boolean valueSet;
     private final ArrayList accountNumbers = new ArrayList();
     private AdminedChannelsFetcher channels = new AdminedChannelsFetcher(this.currentAccount, true);
@@ -152,6 +162,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             }
         });
         super.createView(context);
+        this.listView = super.listView;
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.UserInfoActivity.4
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
@@ -209,15 +220,19 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
     @Override // org.telegram.ui.Components.UniversalFragment
     protected void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
         ArrayList<TLRPC.PrivacyRule> privacyRules;
+        this.addAccountRow = -1;
         updateAccounts();
         TLRPC.User currentUser = getUserConfig().getCurrentUser();
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.EditAccountInfoHeader)));
+        this.numberRow = arrayList.size();
         arrayList.add(InfoCell.Factory.of(6, R.drawable.menu_phone, PhoneFormat.getInstance().format("+" + currentUser.phone), LocaleController.getString(R.string.TapToChangePhone), 0));
+        this.usernameRow = arrayList.size();
         if (UserObject.getPublicUsername(currentUser) != null) {
             arrayList.add(InfoCell.Factory.of(7, R.drawable.menu_username_change, "@" + UserObject.getPublicUsername(currentUser), LocaleController.getString(R.string.Username), 0));
         } else {
             arrayList.add(InfoCell.Factory.of(7, R.drawable.menu_username_set, LocaleController.getString(R.string.AddUsername), null, 0).accent());
         }
+        this.birthdayRow = arrayList.size();
         TL_account.TL_birthday tL_birthday = this.birthday;
         if (tL_birthday != null) {
             arrayList.add(InfoCell.Factory.of(8, R.drawable.menu_birthday, birthdayString(tL_birthday), LocaleController.getString(R.string.ContactBirthday), 0));
@@ -251,13 +266,17 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
         }
         arrayList.add(UItem.asShadow(this.birthdayInfo));
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.EditProfileName)));
+        this.firstNameRow = arrayList.size();
         arrayList.add(UItem.asCustom(this.firstNameEdit));
+        this.lastNameRow = arrayList.size();
         arrayList.add(UItem.asCustom(this.lastNameEdit));
         arrayList.add(UItem.asShadow(-1, null));
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.EditProfileBio)));
+        this.bioRow = arrayList.size();
         arrayList.add(UItem.asCustom(this.bioEdit));
         arrayList.add(UItem.asShadow(this.bioInfo));
         arrayList.add(UItem.asShadow(-2, null));
+        this.channelRow = arrayList.size();
         if (this.channel == null) {
             arrayList.add(InfoCell.Factory.of(3, R.drawable.msg_channel_create, "Add Personal Channel", null, 0).accent());
         } else {
@@ -272,6 +291,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
         arrayList.add(UItem.asShadow(-3, null));
         boolean z = UserConfig.getActivatedAccountsCount() < 4;
         if (z) {
+            this.addAccountRow = arrayList.size();
             arrayList.add(InfoCell.Factory.of(9, R.drawable.outline_add_account, "Add Account", null, 0).accent());
         }
         if (!this.accountNumbers.isEmpty()) {
@@ -293,6 +313,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
                 arrayList.add(UItem.asShadow(null));
             }
         }
+        this.logoutRow = arrayList.size();
         arrayList.add(UItem.asButton(10, R.drawable.msg_leave, LocaleController.getString(R.string.LogOut)).red());
         arrayList.add(UItem.asShadow(-4, null));
     }

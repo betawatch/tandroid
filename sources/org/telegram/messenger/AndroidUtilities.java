@@ -231,6 +231,7 @@ public class AndroidUtilities {
     public static final String STICKERS_PLACEHOLDER_PACK_NAME_2 = "tg_superplaceholders_android_2";
     public static final String TYPEFACE_COURIER_NEW_BOLD = "fonts/courier_new_bold.ttf";
     public static final String TYPEFACE_MERRIWEATHER_BOLD = "fonts/mw_bold.ttf";
+    public static final String TYPEFACE_ROBOTO_EXTRA_BOLD = "fonts/rextrabold.ttf";
     public static final String TYPEFACE_ROBOTO_MEDIUM = "fonts/rmedium.ttf";
     public static final String TYPEFACE_ROBOTO_MEDIUM_ITALIC = "fonts/rmediumitalic.ttf";
     public static final String TYPEFACE_ROBOTO_MONO = "fonts/rmono.ttf";
@@ -636,7 +637,7 @@ public class AndroidUtilities {
             i3 = i4 - 2;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(replace);
-        if (runnable != null && indexOf >= 0) {
+        if (indexOf >= 0) {
             if (i2 == 3) {
                 int i5 = indexOf + i3;
                 spannableStringBuilder.replace(indexOf, i5, replaceMultipleCharSequence(" ", spannableStringBuilder.subSequence(indexOf, i5), " "));
@@ -2532,7 +2533,10 @@ public class AndroidUtilities {
                         if (Build.VERSION.SDK_INT >= 26) {
                             AndroidUtilities$$ExternalSyntheticApiModelOutline28.m();
                             Typeface.Builder m = AndroidUtilities$$ExternalSyntheticApiModelOutline27.m(ApplicationLoader.applicationContext.getAssets(), str);
-                            if (str.contains("medium")) {
+                            if (str.contains("rextrabold")) {
+                                m.setWeight(800);
+                            }
+                            if (str.contains("medium") || str.contains("rbold")) {
                                 m.setWeight(700);
                             }
                             if (str.contains("italic")) {
@@ -3174,34 +3178,31 @@ public class AndroidUtilities {
 
     public static int getViewInset(View view) {
         WindowInsets rootWindowInsets;
-        if (view != null) {
-            int i = Build.VERSION.SDK_INT;
-            if (view.getHeight() != displaySize.y && view.getHeight() != displaySize.y - statusBarHeight) {
-                try {
-                    if (i >= 23) {
-                        rootWindowInsets = view.getRootWindowInsets();
-                        if (rootWindowInsets != null) {
-                            return rootWindowInsets.getStableInsetBottom();
-                        }
-                        return 0;
+        if (view != null && view.getHeight() != displaySize.y && view.getHeight() != displaySize.y - statusBarHeight) {
+            try {
+                if (Build.VERSION.SDK_INT >= 23) {
+                    rootWindowInsets = view.getRootWindowInsets();
+                    if (rootWindowInsets != null) {
+                        return rootWindowInsets.getStableInsetBottom();
                     }
-                    if (mAttachInfoField == null) {
-                        Field declaredField = View.class.getDeclaredField("mAttachInfo");
-                        mAttachInfoField = declaredField;
-                        declaredField.setAccessible(true);
-                    }
-                    Object obj = mAttachInfoField.get(view);
-                    if (obj != null) {
-                        if (mStableInsetsField == null) {
-                            Field declaredField2 = obj.getClass().getDeclaredField("mStableInsets");
-                            mStableInsetsField = declaredField2;
-                            declaredField2.setAccessible(true);
-                        }
-                        return ((Rect) mStableInsetsField.get(obj)).bottom;
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                    return 0;
                 }
+                if (mAttachInfoField == null) {
+                    Field declaredField = View.class.getDeclaredField("mAttachInfo");
+                    mAttachInfoField = declaredField;
+                    declaredField.setAccessible(true);
+                }
+                Object obj = mAttachInfoField.get(view);
+                if (obj != null) {
+                    if (mStableInsetsField == null) {
+                        Field declaredField2 = obj.getClass().getDeclaredField("mStableInsets");
+                        mStableInsetsField = declaredField2;
+                        declaredField2.setAccessible(true);
+                    }
+                    return ((Rect) mStableInsetsField.get(obj)).bottom;
+                }
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
         return 0;
@@ -4696,17 +4697,26 @@ public class AndroidUtilities {
         return accessibilityManager.isEnabled() && accessibilityManager.isTouchExplorationEnabled();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00f9 A[Catch: Exception -> 0x0115, TRY_LEAVE, TryCatch #0 {Exception -> 0x0115, blocks: (B:6:0x0008, B:9:0x0012, B:11:0x0018, B:13:0x001f, B:16:0x0031, B:19:0x003a, B:21:0x0042, B:24:0x0052, B:26:0x0058, B:28:0x005e, B:30:0x0064, B:32:0x0082, B:33:0x0086, B:35:0x00f3, B:37:0x00f9, B:47:0x0111, B:53:0x0097, B:55:0x00a7, B:57:0x00af, B:59:0x00b7, B:61:0x00bd, B:63:0x00c5, B:65:0x00cd, B:67:0x00d7, B:68:0x00db), top: B:5:0x0008 }] */
+    public static boolean isProxyLink(Uri uri) {
+        Activity activity = getActivity();
+        if (activity == null) {
+            return false;
+        }
+        return handleProxyIntent(activity, new Intent("android.intent.action.VIEW", uri), false);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00f9 A[Catch: Exception -> 0x0117, TRY_LEAVE, TryCatch #0 {Exception -> 0x0117, blocks: (B:6:0x0008, B:9:0x0012, B:11:0x0018, B:13:0x001f, B:16:0x0031, B:19:0x003a, B:21:0x0042, B:24:0x0052, B:26:0x0058, B:28:0x005e, B:30:0x0064, B:32:0x0082, B:33:0x0086, B:35:0x00f3, B:37:0x00f9, B:48:0x0113, B:54:0x0097, B:56:0x00a7, B:58:0x00af, B:60:0x00b7, B:62:0x00bd, B:64:0x00c5, B:66:0x00cd, B:68:0x00d7, B:69:0x00db), top: B:5:0x0008 }] */
     /* JADX WARN: Removed duplicated region for block: B:41:0x0103  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x0108  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0105  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean handleProxyIntent(Activity activity, Intent intent) {
+    public static boolean handleProxyIntent(Activity activity, Intent intent, boolean z) {
         Uri data;
         String str;
         String str2;
@@ -4739,7 +4749,12 @@ public class AndroidUtilities {
                                 str4 = queryParameter;
                                 str5 = queryParameter2;
                                 if (!TextUtils.isEmpty(str4) && !TextUtils.isEmpty(str5)) {
-                                    showProxyAlert(activity, str4, str5, str2 != null ? "" : str2, str3 != null ? "" : str3, str != null ? "" : str);
+                                    String str6 = str2 != null ? "" : str2;
+                                    String str7 = str3 != null ? "" : str3;
+                                    String str8 = str != null ? "" : str;
+                                    if (z) {
+                                        showProxyAlert(activity, str4, str5, str6, str7, str8);
+                                    }
                                     return true;
                                 }
                             }
@@ -4758,7 +4773,14 @@ public class AndroidUtilities {
                         str4 = queryParameter;
                         str5 = queryParameter2;
                         if (!TextUtils.isEmpty(str4)) {
-                            showProxyAlert(activity, str4, str5, str2 != null ? "" : str2, str3 != null ? "" : str3, str != null ? "" : str);
+                            if (str2 != null) {
+                            }
+                            if (str3 != null) {
+                            }
+                            if (str != null) {
+                            }
+                            if (z) {
+                            }
                             return true;
                         }
                     }

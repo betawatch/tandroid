@@ -124,6 +124,17 @@ public class DataUsage2Activity extends BaseFragment {
         return frameLayout;
     }
 
+    public void selectTab(int i) {
+        this.tabsView.scrollToTab(i, i);
+    }
+
+    public void scrollToReset() {
+        View currentView = this.pager.getCurrentView();
+        if (currentView instanceof ListView) {
+            ((ListView) currentView).scrollTo(5);
+        }
+    }
+
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public Theme.ResourcesProvider getResourceProvider() {
         return this.resourcesProvider;
@@ -242,7 +253,7 @@ public class DataUsage2Activity extends BaseFragment {
                 AlertDialog.Builder builder = new AlertDialog.Builder(DataUsage2Activity.this.getParentActivity());
                 builder.setTitle(LocaleController.getString(R.string.ResetStatisticsAlertTitle));
                 builder.setMessage(LocaleController.getString(R.string.ResetStatisticsAlert));
-                builder.setPositiveButton(LocaleController.getString(R.string.Reset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DataUsage2Activity$ListView$$ExternalSyntheticLambda2
+                builder.setPositiveButton(LocaleController.getString(R.string.Reset), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.DataUsage2Activity$ListView$$ExternalSyntheticLambda3
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i3) {
                         DataUsage2Activity.ListView.this.lambda$new$0(alertDialog, i3);
@@ -308,7 +319,7 @@ public class DataUsage2Activity extends BaseFragment {
                 sizeArr[i] = size;
                 this.tempSizes[i] = bytesCount / this.totalSize;
             }
-            Arrays.sort(this.segments, new Comparator() { // from class: org.telegram.ui.DataUsage2Activity$ListView$$ExternalSyntheticLambda1
+            Arrays.sort(this.segments, new Comparator() { // from class: org.telegram.ui.DataUsage2Activity$ListView$$ExternalSyntheticLambda2
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
                     int lambda$setup$2;
@@ -356,9 +367,9 @@ public class DataUsage2Activity extends BaseFragment {
             this.itemInners.add(new ItemInner(0));
             long j = 0;
             if (this.totalSize > 0) {
-                formatString = LocaleController.formatString("YourNetworkUsageSince", R.string.YourNetworkUsageSince, LocaleController.getInstance().getFormatterStats().format(getResetStatsDate()));
+                formatString = LocaleController.formatString(R.string.YourNetworkUsageSince, LocaleController.getInstance().getFormatterStats().format(getResetStatsDate()));
             } else {
-                formatString = LocaleController.formatString("NoNetworkUsageSince", R.string.NoNetworkUsageSince, LocaleController.getInstance().getFormatterStats().format(getResetStatsDate()));
+                formatString = LocaleController.formatString(R.string.NoNetworkUsageSince, LocaleController.getInstance().getFormatterStats().format(getResetStatsDate()));
             }
             this.itemInners.add(ItemInner.asSubtitle(formatString));
             ArrayList arrayList = new ArrayList();
@@ -473,6 +484,37 @@ public class DataUsage2Activity extends BaseFragment {
                     adapter.notifyDataSetChanged();
                 }
             }
+        }
+
+        public void scrollTo(final int i) {
+            highlightRow(new RecyclerListView.IntReturnCallback() { // from class: org.telegram.ui.DataUsage2Activity$ListView$$ExternalSyntheticLambda1
+                @Override // org.telegram.ui.Components.RecyclerListView.IntReturnCallback
+                public final int run() {
+                    int lambda$scrollTo$3;
+                    lambda$scrollTo$3 = DataUsage2Activity.ListView.this.lambda$scrollTo$3(i);
+                    return lambda$scrollTo$3;
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ int lambda$scrollTo$3(int i) {
+            int i2 = 0;
+            while (true) {
+                if (i2 >= this.itemInners.size()) {
+                    i2 = -1;
+                    break;
+                }
+                if (((ItemInner) this.itemInners.get(i2)).viewType == i) {
+                    break;
+                }
+                i2++;
+            }
+            if (i2 < 0) {
+                return -1;
+            }
+            this.layoutManager.scrollToPositionWithOffset(i2, AndroidUtilities.dp(60.0f));
+            return i2;
         }
 
         /* JADX INFO: Access modifiers changed from: private */

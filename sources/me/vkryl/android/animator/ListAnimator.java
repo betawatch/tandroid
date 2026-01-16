@@ -1,5 +1,6 @@
 package me.vkryl.android.animator;
 
+import android.graphics.RectF;
 import android.view.animation.Interpolator;
 import androidx.core.math.MathUtils;
 import java.util.ArrayList;
@@ -23,7 +24,48 @@ public final class ListAnimator implements Iterable {
         void onItemsChanged(ListAnimator listAnimator);
     }
 
+    public interface Measurable {
+
+        public abstract /* synthetic */ class -CC {
+            public static int $default$getSpacingEnd(Measurable measurable, boolean z) {
+                return 0;
+            }
+
+            public static int $default$getSpacingStart(Measurable measurable, boolean z) {
+                return 0;
+            }
+        }
+
+        int getHeight();
+
+        int getSpacingEnd(boolean z);
+
+        int getSpacingStart(boolean z);
+
+        int getWidth();
+    }
+
     public interface MetadataCallback {
+
+        public abstract /* synthetic */ class -CC {
+            public static boolean $default$hasChanges(MetadataCallback metadataCallback, ListAnimator listAnimator) {
+                return false;
+            }
+
+            public static boolean $default$onApplyMetadataAnimation(MetadataCallback metadataCallback, ListAnimator listAnimator, float f) {
+                return false;
+            }
+
+            public static void $default$onFinishMetadataAnimation(MetadataCallback metadataCallback, ListAnimator listAnimator, boolean z) {
+            }
+
+            public static void $default$onForceApplyChanges(MetadataCallback metadataCallback, ListAnimator listAnimator) {
+            }
+
+            public static void $default$onPrepareMetadataAnimation(MetadataCallback metadataCallback, ListAnimator listAnimator) {
+            }
+        }
+
         boolean hasChanges(ListAnimator listAnimator);
 
         boolean onApplyMetadataAnimation(ListAnimator listAnimator, float f);
@@ -81,6 +123,10 @@ public final class ListAnimator implements Iterable {
             return Integer.compare(this.index, entry.index);
         }
 
+        public float getPosition() {
+            return this.position.get();
+        }
+
         public float getVisibility() {
             return MathUtils.clamp(this.visibility.get(), 0.0f, 1.0f);
         }
@@ -95,6 +141,10 @@ public final class ListAnimator implements Iterable {
             if (obj instanceof Destroyable) {
                 ((Destroyable) obj).performDestroy();
             }
+        }
+
+        public RectF getRectF() {
+            return this.measuredPositionRect.toRectF();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -163,6 +213,10 @@ public final class ListAnimator implements Iterable {
             }
         }
 
+        public float getTotalHeight() {
+            return this.totalHeight.get();
+        }
+
         public float getTotalVisibility() {
             return this.totalVisibility.get();
         }
@@ -186,6 +240,14 @@ public final class ListAnimator implements Iterable {
         } else {
             this.animator = null;
         }
+    }
+
+    public int size() {
+        return this.entries.size();
+    }
+
+    public Entry getEntry(int i) {
+        return (Entry) this.entries.get(i);
     }
 
     public Metadata getMetadata() {
@@ -295,8 +357,46 @@ public final class ListAnimator implements Iterable {
 
     public void measureImpl(boolean z) {
         Iterator it = this.actualList.iterator();
+        int i = 0;
+        int i2 = 0;
+        int i3 = 0;
+        int i4 = 0;
         while (it.hasNext()) {
-            Object obj = ((Entry) it.next()).item;
+            Entry entry = (Entry) it.next();
+            Object obj = entry.item;
+            if (obj instanceof Measurable) {
+                Measurable measurable = (Measurable) obj;
+                boolean z2 = entry.index == 0;
+                boolean z3 = entry.index + 1 == this.actualList.size();
+                int spacingStart = measurable.getSpacingStart(z2);
+                int spacingEnd = measurable.getSpacingEnd(z3);
+                int width = measurable.getWidth();
+                int height = measurable.getHeight();
+                int i5 = spacingStart + width + spacingEnd + i2;
+                int i6 = spacingStart + height + spacingEnd + i;
+                if (!z || entry.getVisibility() <= 0.0f) {
+                    entry.measuredPositionRect.set(i2, i, i5, i6);
+                    entry.measuredSpacingStart.set(spacingStart);
+                } else {
+                    float f = i2;
+                    float f2 = i;
+                    float f3 = i5;
+                    float f4 = i6;
+                    if (entry.measuredPositionRect.differs(f, f2, f3, f4)) {
+                        onBeforeListChanged();
+                        entry.measuredPositionRect.setTo(f, f2, f3, f4);
+                    }
+                    float f5 = spacingStart;
+                    if (entry.measuredSpacingStart.differs(f5)) {
+                        onBeforeListChanged();
+                        entry.measuredSpacingStart.setTo(f5);
+                    }
+                }
+                i3 = Math.max(i3, width);
+                i4 = Math.max(i4, height);
+                i2 = i5;
+                i = i6;
+            }
         }
         if (z) {
             Iterator it2 = this.entries.iterator();
@@ -326,22 +426,25 @@ public final class ListAnimator implements Iterable {
             }
         }
         if (z) {
-            float f = 0;
-            if (this.metadata.totalWidth.differs(f)) {
+            float f6 = i2;
+            if (this.metadata.totalWidth.differs(f6)) {
                 onBeforeListChanged();
-                this.metadata.totalWidth.setTo(f);
+                this.metadata.totalWidth.setTo(f6);
             }
-            if (this.metadata.totalHeight.differs(f)) {
+            float f7 = i;
+            if (this.metadata.totalHeight.differs(f7)) {
                 onBeforeListChanged();
-                this.metadata.totalHeight.setTo(f);
+                this.metadata.totalHeight.setTo(f7);
             }
-            if (this.metadata.maxItemWidth.differs(f)) {
+            float f8 = i3;
+            if (this.metadata.maxItemWidth.differs(f8)) {
                 onBeforeListChanged();
-                this.metadata.maxItemWidth.setTo(f);
+                this.metadata.maxItemWidth.setTo(f8);
             }
-            if (this.metadata.maxItemHeight.differs(f)) {
+            float f9 = i4;
+            if (this.metadata.maxItemHeight.differs(f9)) {
                 onBeforeListChanged();
-                this.metadata.maxItemHeight.setTo(f);
+                this.metadata.maxItemHeight.setTo(f9);
             }
             if (this.metadata.metadataCallback.hasChanges(this)) {
                 onBeforeListChanged();
@@ -350,11 +453,10 @@ public final class ListAnimator implements Iterable {
             }
             return;
         }
-        float f2 = 0;
-        this.metadata.totalWidth.set(f2);
-        this.metadata.totalHeight.set(f2);
-        this.metadata.maxItemWidth.set(f2);
-        this.metadata.maxItemHeight.set(f2);
+        this.metadata.totalWidth.set(i2);
+        this.metadata.totalHeight.set(i);
+        this.metadata.maxItemWidth.set(i3);
+        this.metadata.maxItemHeight.set(i4);
         this.metadata.metadataCallback.onForceApplyChanges(this);
     }
 

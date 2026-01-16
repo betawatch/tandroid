@@ -57,7 +57,7 @@ public enum zzhy implements zzak {
     zzY(NotificationCenter.botForumDraftUpdate),
     zzZ(NotificationCenter.botForumDraftDelete),
     zzaa(NotificationCenter.tlSchemeParseException),
-    zzab(334),
+    zzab(NotificationCenter.callTabsVisibleToggled),
     zzac(341),
     zzad(342),
     zzae(343),

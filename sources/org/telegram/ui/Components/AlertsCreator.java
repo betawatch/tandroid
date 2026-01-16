@@ -118,7 +118,7 @@ import org.telegram.ui.Cells.CheckBoxCell;
 import org.telegram.ui.Cells.RadioColorCell;
 import org.telegram.ui.Cells.TextColorCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda242;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda243;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.Bulletin;
@@ -1880,7 +1880,9 @@ public abstract class AlertsCreator {
         showOpenUrlAlert(baseFragment, str, z, z2, z3, false, progress, resourcesProvider);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00a4  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00c6  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00c9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1891,8 +1893,9 @@ public abstract class AlertsCreator {
             return;
         }
         final long inlineReturn = baseFragment instanceof ChatActivity ? ((ChatActivity) baseFragment).getInlineReturn() : 0L;
+        boolean isProxyLink = AndroidUtilities.isProxyLink(Uri.parse(str));
         String scheme = str == null ? null : Uri.parse(str).getScheme();
-        if (Browser.isInternalUrl(str, null) || !z3 || "mailto".equalsIgnoreCase(scheme)) {
+        if (!isProxyLink && (Browser.isInternalUrl(str, null) || !z3 || "mailto".equalsIgnoreCase(scheme))) {
             Browser.openUrl(baseFragment.getParentActivity(), Uri.parse(str), inlineReturn == 0, z2, z4 && checkInternalBotApp(str), progress, null, false, true, false);
             return;
         }
@@ -1923,7 +1926,7 @@ public abstract class AlertsCreator {
                     }
                 }
             }, 0, spannableString.length(), 33);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.OpenUrlAlert2));
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(!isProxyLink ? R.string.OpenUrlAlert3 : R.string.OpenUrlAlert2));
             indexOf = spannableStringBuilder.toString().indexOf("%1$s");
             if (indexOf >= 0) {
                 spannableStringBuilder.replace(indexOf, indexOf + 4, (CharSequence) spannableString);
@@ -1962,7 +1965,7 @@ public abstract class AlertsCreator {
                 }
             }
         }, 0, spannableString2.length(), 33);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.OpenUrlAlert2));
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(!isProxyLink ? R.string.OpenUrlAlert3 : R.string.OpenUrlAlert2));
         indexOf = spannableStringBuilder2.toString().indexOf("%1$s");
         if (indexOf >= 0) {
         }
@@ -7771,7 +7774,7 @@ public abstract class AlertsCreator {
                         lambda$createDeleteMessagesAlert$181 = AlertsCreator.lambda$createDeleteMessagesAlert$181(clientUserId, (TLObject) obj);
                         return lambda$createDeleteMessagesAlert$181;
                     }
-                }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda242()));
+                }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda243()));
                 if (!arrayList2.isEmpty()) {
                     if (channelParticipantArr == null) {
                         AlertDialog[] alertDialogArr = {new AlertDialog(parentActivity, 3)};

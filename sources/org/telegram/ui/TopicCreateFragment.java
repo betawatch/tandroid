@@ -61,10 +61,10 @@ import org.telegram.ui.TopicCreateFragment;
 /* loaded from: classes4.dex */
 public class TopicCreateFragment extends BaseFragment {
     BackupImageView[] backupImageView;
-    long chatId;
     TextCheckCell2 checkBoxCell;
     boolean created;
     Drawable defaultIconDrawable;
+    long dialogId;
     EditTextBoldCursor editTextBoldCursor;
     String firstSymbol;
     ForumBubbleDrawable forumBubbleDrawable;
@@ -98,11 +98,11 @@ public class TopicCreateFragment extends BaseFragment {
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean onFragmentCreate() {
-        this.chatId = this.arguments.getLong("chat_id");
+        this.dialogId = -this.arguments.getLong("chat_id");
         long j = this.arguments.getLong("topic_id", 0L);
         this.topicId = j;
         if (j != 0) {
-            TLRPC.TL_forumTopic findTopic = getMessagesController().getTopicsController().findTopic(this.chatId, this.topicId);
+            TLRPC.TL_forumTopic findTopic = getMessagesController().getTopicsController().findTopic(-this.dialogId, this.topicId);
             this.topicForEdit = findTopic;
             if (findTopic == null) {
                 return false;
@@ -309,7 +309,7 @@ public class TopicCreateFragment extends BaseFragment {
         1() {
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:41:0x0101, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:41:0x0100, code lost:
         
             if (r12.topicForEdit.icon_emoji_id != r12.selectedEmojiDocumentId) goto L43;
          */
@@ -340,7 +340,7 @@ public class TopicCreateFragment extends BaseFragment {
                 alertDialog.showDelayed(500L);
                 TopicCreateFragment.this.created = true;
                 TL_forum.TL_messages_createForumTopic tL_messages_createForumTopic = new TL_forum.TL_messages_createForumTopic();
-                tL_messages_createForumTopic.peer = TopicCreateFragment.this.getMessagesController().getInputPeer(-TopicCreateFragment.this.chatId);
+                tL_messages_createForumTopic.peer = TopicCreateFragment.this.getMessagesController().getInputPeer(TopicCreateFragment.this.dialogId);
                 tL_messages_createForumTopic.title = obj;
                 long j = TopicCreateFragment.this.selectedEmojiDocumentId;
                 if (j != 0) {
@@ -373,7 +373,7 @@ public class TopicCreateFragment extends BaseFragment {
                     TopicCreateFragment topicCreateFragment2 = TopicCreateFragment.this;
                 }
                 TL_forum.TL_messages_editForumTopic tL_messages_editForumTopic = new TL_forum.TL_messages_editForumTopic();
-                tL_messages_editForumTopic.peer = TopicCreateFragment.this.getMessagesController().getInputPeer(-TopicCreateFragment.this.chatId);
+                tL_messages_editForumTopic.peer = TopicCreateFragment.this.getMessagesController().getInputPeer(TopicCreateFragment.this.dialogId);
                 TLRPC.TL_forumTopic tL_forumTopic = TopicCreateFragment.this.topicForEdit;
                 tL_messages_editForumTopic.topic_id = tL_forumTopic.id;
                 if (!tL_forumTopic.title.equals(obj)) {
@@ -396,7 +396,7 @@ public class TopicCreateFragment extends BaseFragment {
                 TopicCreateFragment topicCreateFragment4 = TopicCreateFragment.this;
                 if (topicCreateFragment4.checkBoxCell != null && topicCreateFragment4.topicForEdit.id == 1 && (!r2.isChecked()) != TopicCreateFragment.this.topicForEdit.hidden) {
                     TL_forum.TL_messages_editForumTopic tL_messages_editForumTopic2 = new TL_forum.TL_messages_editForumTopic();
-                    tL_messages_editForumTopic2.peer = TopicCreateFragment.this.getMessagesController().getInputPeer(-TopicCreateFragment.this.chatId);
+                    tL_messages_editForumTopic2.peer = TopicCreateFragment.this.getMessagesController().getInputPeer(TopicCreateFragment.this.dialogId);
                     tL_messages_editForumTopic2.topic_id = TopicCreateFragment.this.topicForEdit.id;
                     tL_messages_editForumTopic2.hidden = !r2.checkBoxCell.isChecked();
                     tL_messages_editForumTopic2.flags |= 8;
@@ -422,7 +422,7 @@ public class TopicCreateFragment extends BaseFragment {
                 }
                 TopicsController topicsController = TopicCreateFragment.this.getMessagesController().getTopicsController();
                 TopicCreateFragment topicCreateFragment6 = TopicCreateFragment.this;
-                topicsController.onTopicEdited(-topicCreateFragment6.chatId, topicCreateFragment6.topicForEdit);
+                topicsController.onTopicEdited(topicCreateFragment6.dialogId, topicCreateFragment6.topicForEdit);
                 TopicCreateFragment.this.finishFragment();
             }
         }
@@ -448,13 +448,13 @@ public class TopicCreateFragment extends BaseFragment {
                         tL_messageActionTopicCreate.title = str;
                         TLRPC.TL_messageService tL_messageService = new TLRPC.TL_messageService();
                         tL_messageService.action = tL_messageActionTopicCreate;
-                        tL_messageService.peer_id = TopicCreateFragment.this.getMessagesController().getPeer(-TopicCreateFragment.this.chatId);
-                        tL_messageService.dialog_id = -TopicCreateFragment.this.chatId;
+                        tL_messageService.peer_id = TopicCreateFragment.this.getMessagesController().getPeer(TopicCreateFragment.this.dialogId);
+                        tL_messageService.dialog_id = TopicCreateFragment.this.dialogId;
                         tL_messageService.id = tL_updateMessageID.id;
                         tL_messageService.date = (int) (System.currentTimeMillis() / 1000);
                         ArrayList arrayList = new ArrayList();
                         arrayList.add(new MessageObject(((BaseFragment) TopicCreateFragment.this).currentAccount, tL_messageService, false, false));
-                        TLRPC.Chat chat = TopicCreateFragment.this.getMessagesController().getChat(Long.valueOf(TopicCreateFragment.this.chatId));
+                        TLRPC.Chat chat = TopicCreateFragment.this.getMessagesController().getChat(Long.valueOf(-TopicCreateFragment.this.dialogId));
                         TLRPC.TL_forumTopic tL_forumTopic = new TLRPC.TL_forumTopic();
                         tL_forumTopic.id = tL_updateMessageID.id;
                         TopicCreateFragment topicCreateFragment = TopicCreateFragment.this;
@@ -489,18 +489,18 @@ public class TopicCreateFragment extends BaseFragment {
                             chatActivity.hideFieldPanel(true);
                             chatActivity.applyDraftMaybe(true, true);
                             chatActivity.reloadPinnedMessages();
-                            TopicCreateFragment.this.getMessagesController().getTopicsController().onTopicCreated(-TopicCreateFragment.this.chatId, tL_forumTopic, true);
+                            TopicCreateFragment.this.getMessagesController().getTopicsController().onTopicCreated(TopicCreateFragment.this.dialogId, tL_forumTopic, true);
                             TopicCreateFragment.this.finishFragment();
                         } else {
                             Bundle bundle = new Bundle();
-                            bundle.putLong("chat_id", TopicCreateFragment.this.chatId);
+                            bundle.putLong("chat_id", -TopicCreateFragment.this.dialogId);
                             bundle.putInt("message_id", 1);
                             bundle.putInt("unread_count", 0);
                             bundle.putBoolean("historyPreloaded", false);
                             ChatActivity chatActivity2 = new ChatActivity(bundle);
                             chatActivity2.setThreadMessages(arrayList, chat, tL_messageService.id, 1, 1, tL_forumTopic);
                             chatActivity2.justCreatedTopic = true;
-                            TopicCreateFragment.this.getMessagesController().getTopicsController().onTopicCreated(-TopicCreateFragment.this.chatId, tL_forumTopic, true);
+                            TopicCreateFragment.this.getMessagesController().getTopicsController().onTopicCreated(TopicCreateFragment.this.dialogId, tL_forumTopic, true);
                             TopicCreateFragment.this.presentFragment(chatActivity2);
                         }
                     }

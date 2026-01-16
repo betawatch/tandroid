@@ -108,6 +108,10 @@ public class ViewPagerFixed extends FrameLayout {
         return true;
     }
 
+    protected long getManualScrollDuration() {
+        return 540L;
+    }
+
     protected void invalidateBlur() {
     }
 
@@ -304,7 +308,7 @@ public class ViewPagerFixed extends FrameLayout {
                 ViewPagerFixed.this.notificationsLocker.unlock();
             }
         });
-        this.manualScrolling.setDuration(540L);
+        this.manualScrolling.setDuration(getManualScrollDuration());
         this.manualScrolling.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         this.manualScrolling.start();
         return true;

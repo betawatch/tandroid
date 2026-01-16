@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
@@ -52,10 +53,12 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatActionCell;
 import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.Components.GestureDetectorFixDoubleTap;
+import org.telegram.ui.Components.OverscrollTrackerFactory;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
 
 /* loaded from: classes5.dex */
-public class RecyclerListView extends RecyclerView {
+public class RecyclerListView extends RecyclerView implements IBlur3Capture {
     private static int[] attributes;
     private static boolean gotAttributes;
     private static final Method initializeScrollbars;
@@ -109,6 +112,9 @@ public class RecyclerListView extends RecyclerView {
     private OnItemLongClickListener onItemLongClickListener;
     private OnItemLongClickListenerExtended onItemLongClickListenerExtended;
     private RecyclerView.OnScrollListener onScrollListener;
+    private OverscrollTrackerFactory.Listener overScrollListener;
+    private OverscrollTrackerFactory.Listener overScrollListenerInternal;
+    private int overScrollsCounter;
     private FrameLayout overlayContainer;
     private IntReturnCallback pendingHighlightPosition;
     private View pinnedHeader;
@@ -136,6 +142,7 @@ public class RecyclerListView extends RecyclerView {
     private int selectorType;
     protected View selectorView;
     private boolean selfOnLayout;
+    private Matrix selfTransformationsMatrix;
     private int startSection;
     int startSelectionFrom;
     private boolean stoppedAllHeavyOperations;
@@ -240,6 +247,18 @@ public class RecyclerListView extends RecyclerView {
     @Override // android.view.View
     public boolean hasOverlappingRendering() {
         return false;
+    }
+
+    static /* synthetic */ int access$3608(RecyclerListView recyclerListView) {
+        int i = recyclerListView.overScrollsCounter;
+        recyclerListView.overScrollsCounter = i + 1;
+        return i;
+    }
+
+    static /* synthetic */ int access$3610(RecyclerListView recyclerListView) {
+        int i = recyclerListView.overScrollsCounter;
+        recyclerListView.overScrollsCounter = i - 1;
+        return i;
     }
 
     static {
@@ -3051,5 +3070,116 @@ public class RecyclerListView extends RecyclerView {
 
     public void setDrawSelection(boolean z) {
         this.drawSelection = z;
+    }
+
+    public boolean hasActiveOverScroll() {
+        return this.overScrollsCounter != 0;
+    }
+
+    public void setOverScrollListener(final Runnable runnable) {
+        setOverScrollListener(new OverscrollTrackerFactory.Listener() { // from class: org.telegram.ui.Components.RecyclerListView.7
+            @Override // org.telegram.ui.Components.OverscrollTrackerFactory.Listener
+            public /* synthetic */ void onOverscrollAbsorb(int i, int i2) {
+                OverscrollTrackerFactory.Listener.-CC.$default$onOverscrollAbsorb(this, i, i2);
+            }
+
+            @Override // org.telegram.ui.Components.OverscrollTrackerFactory.Listener
+            public /* synthetic */ void onOverscrollPull(int i, float f) {
+                OverscrollTrackerFactory.Listener.-CC.$default$onOverscrollPull(this, i, f);
+            }
+
+            @Override // org.telegram.ui.Components.OverscrollTrackerFactory.Listener
+            public /* synthetic */ void onOverscrollRelease(int i) {
+                OverscrollTrackerFactory.Listener.-CC.$default$onOverscrollRelease(this, i);
+            }
+
+            @Override // org.telegram.ui.Components.OverscrollTrackerFactory.Listener
+            public void onOverscrollStart(int i) {
+                runnable.run();
+            }
+
+            @Override // org.telegram.ui.Components.OverscrollTrackerFactory.Listener
+            public void onOverscrollEnd(int i) {
+                runnable.run();
+            }
+        });
+    }
+
+    public void setOverScrollListener(OverscrollTrackerFactory.Listener listener) {
+        this.overScrollListener = listener;
+        initOverScrollTracker();
+    }
+
+    private void initOverScrollTracker() {
+        if (this.overScrollListenerInternal != null) {
+            return;
+        }
+        OverscrollTrackerFactory.Listener listener = new OverscrollTrackerFactory.Listener() { // from class: org.telegram.ui.Components.RecyclerListView.8
+            @Override // org.telegram.ui.Components.OverscrollTrackerFactory.Listener
+            public void onOverscrollStart(int i) {
+                RecyclerListView.access$3608(RecyclerListView.this);
+                if (RecyclerListView.this.overScrollListener != null) {
+                    RecyclerListView.this.overScrollListener.onOverscrollStart(i);
+                }
+            }
+
+            @Override // org.telegram.ui.Components.OverscrollTrackerFactory.Listener
+            public void onOverscrollEnd(int i) {
+                RecyclerListView.access$3610(RecyclerListView.this);
+                if (RecyclerListView.this.overScrollListener != null) {
+                    RecyclerListView.this.overScrollListener.onOverscrollEnd(i);
+                }
+            }
+
+            @Override // org.telegram.ui.Components.OverscrollTrackerFactory.Listener
+            public void onOverscrollRelease(int i) {
+                if (RecyclerListView.this.overScrollListener != null) {
+                    RecyclerListView.this.overScrollListener.onOverscrollRelease(i);
+                }
+            }
+
+            @Override // org.telegram.ui.Components.OverscrollTrackerFactory.Listener
+            public void onOverscrollPull(int i, float f) {
+                if (RecyclerListView.this.overScrollListener != null) {
+                    RecyclerListView.this.overScrollListener.onOverscrollPull(i, f);
+                }
+            }
+
+            @Override // org.telegram.ui.Components.OverscrollTrackerFactory.Listener
+            public void onOverscrollAbsorb(int i, int i2) {
+                if (RecyclerListView.this.overScrollListener != null) {
+                    RecyclerListView.this.overScrollListener.onOverscrollAbsorb(i, i2);
+                }
+            }
+        };
+        this.overScrollListenerInternal = listener;
+        setEdgeEffectFactory(new OverscrollTrackerFactory(listener));
+    }
+
+    @Override // org.telegram.ui.Components.blur3.capture.IBlur3Capture
+    public void capture(Canvas canvas, RectF rectF) {
+        long uptimeMillis = SystemClock.uptimeMillis();
+        if (hasActiveOverScroll() && getOverScrollMode() != 2) {
+            if (this.selfTransformationsMatrix == null) {
+                this.selfTransformationsMatrix = new Matrix();
+            }
+            canvas.save();
+            if (getMatrix().invert(this.selfTransformationsMatrix)) {
+                canvas.concat(this.selfTransformationsMatrix);
+            }
+            canvas.translate(-getX(), -getY());
+            drawChild(canvas, this, uptimeMillis);
+            canvas.restore();
+            return;
+        }
+        int childCount = getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View childAt = getChildAt(i);
+            float x = childAt.getX();
+            float y = childAt.getY();
+            if (rectF.intersects(x, y, childAt.getWidth() + x, childAt.getHeight() + y)) {
+                drawChild(canvas, childAt, uptimeMillis);
+            }
+        }
     }
 }

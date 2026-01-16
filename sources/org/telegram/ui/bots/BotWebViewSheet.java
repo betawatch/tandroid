@@ -68,6 +68,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
@@ -90,7 +91,7 @@ import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda271;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda326;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -149,6 +150,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     public boolean fromTab;
     private boolean fullscreen;
     private ValueAnimator fullscreenAnimator;
+    private boolean fullscreenBlur;
     private BotFullscreenButtons fullscreenButtons;
     private boolean fullscreenInProgress;
     private float fullscreenProgress;
@@ -368,6 +370,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer webViewSwipeContainer = this.swipeContainer;
         webTabData.expanded = (webViewSwipeContainer != null && webViewSwipeContainer.getSwipeOffsetY() < 0.0f) || this.forceExpnaded || isFullSize() || this.fullscreen;
         webTabData.fullscreen = this.fullscreen;
+        webTabData.fullscreenBlur = this.fullscreenBlur;
         Boolean bool = this.fullsize;
         webTabData.fullsize = bool == null ? this.defaultFullsize : bool.booleanValue();
         ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer webViewSwipeContainer2 = this.swipeContainer;
@@ -460,7 +463,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         if (buttonsState != null) {
             this.botButtons.setState(buttonsState, false);
         }
-        setFullscreen(webTabData.fullscreen, false);
+        setFullscreen(webTabData.fullscreen, false, webTabData.fullscreenBlur);
         WebViewRequestProps webViewRequestProps = webTabData.props;
         this.currentAccount = webViewRequestProps != null ? webViewRequestProps.currentAccount : UserConfig.selectedAccount;
         BotWebViewContainer.MyWebView myWebView = webTabData.webView;
@@ -699,9 +702,9 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.fullscreenButtons = botFullscreenButtons;
         botFullscreenButtons.setAlpha(0.0f);
         this.fullscreenButtons.setVisibility(8);
-        if (!MessagesController.getInstance(this.currentAccount).disableBotFullscreenBlur) {
-            this.fullscreenButtons.setParentRenderNode(this.swipeContainer.getRenderNode());
-        }
+        boolean z = !MessagesController.getInstance(this.currentAccount).disableBotFullscreenBlur && SharedConfig.getDevicePerformanceClass() >= 2;
+        this.fullscreenBlur = z;
+        this.fullscreenButtons.setParentRenderNode(z ? this.swipeContainer.getRenderNode() : null);
         this.windowView.addView(this.fullscreenButtons, LayoutHelper.createFrame(-1, -1, 119));
         this.fullscreenButtons.setOnCloseClickListener(new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda21
             @Override // java.lang.Runnable
@@ -790,8 +793,8 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         });
         this.swipeContainer.setDelegate(new ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer.Delegate() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda14
             @Override // org.telegram.ui.bots.ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer.Delegate
-            public final void onDismiss(boolean z) {
-                BotWebViewSheet.this.lambda$new$16(z);
+            public final void onDismiss(boolean z2) {
+                BotWebViewSheet.this.lambda$new$16(z2);
             }
         });
         this.swipeContainer.setIsKeyboardVisible(new GenericProvider() { // from class: org.telegram.ui.bots.BotWebViewSheet$$ExternalSyntheticLambda15
@@ -968,7 +971,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             final TLRPC.User user = MessagesController.getInstance(BotWebViewSheet.this.currentAccount).getUser(Long.valueOf(BotWebViewSheet.this.botId));
             if (z) {
                 final BulletinFactory.UndoObject undoObject = new BulletinFactory.UndoObject();
-                undoObject.undoText = LocaleController.getString(R.string.Undo);
+                undoObject.undoText = LocaleController.getString(R.string.UndoNoCaps);
                 undoObject.onUndo = new Runnable() { // from class: org.telegram.ui.bots.BotWebViewSheet$3$$ExternalSyntheticLambda11
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -1301,14 +1304,14 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         }
 
         @Override // org.telegram.ui.web.BotWebViewContainer.Delegate
-        public String onFullscreenRequested(boolean z) {
+        public String onFullscreenRequested(boolean z, boolean z2) {
             if (BotWebViewSheet.this.fullscreen == z) {
                 if (BotWebViewSheet.this.fullscreen) {
                     return "ALREADY_FULLSCREEN";
                 }
                 return null;
             }
-            BotWebViewSheet.this.setFullscreen(z, true);
+            BotWebViewSheet.this.setFullscreen(z, true, z2);
             return null;
         }
 
@@ -2209,7 +2212,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.fileItems.clear();
         if (botDownloads.hasFiles()) {
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda271(makeOptions));
+            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda326(makeOptions));
             makeSwipeback.addGap();
             Iterator it2 = botDownloads.getFiles().iterator();
             while (it2.hasNext()) {
@@ -2869,12 +2872,17 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         webView.setBackgroundColor(this.backgroundPaint.getColor());
     }
 
-    public void setFullscreen(final boolean z, boolean z2) {
+    public void setFullscreen(boolean z, boolean z2) {
+        setFullscreen(z, z2, this.fullscreenBlur);
+    }
+
+    public void setFullscreen(final boolean z, boolean z2, boolean z3) {
         float f;
         if (this.fullscreen == z) {
             return;
         }
         this.fullscreen = z;
+        this.fullscreenBlur = z3 && !MessagesController.getInstance(this.currentAccount).disableBotFullscreenBlur && SharedConfig.getDevicePerformanceClass() >= 2;
         ValueAnimator valueAnimator = this.fullscreenAnimator;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -2882,6 +2890,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         BotFullscreenButtons botFullscreenButtons = this.fullscreenButtons;
         if (botFullscreenButtons != null) {
             botFullscreenButtons.setPreview(z, z2);
+            this.fullscreenButtons.setParentRenderNode(this.fullscreenBlur ? this.swipeContainer.getRenderNode() : null);
         }
         this.swipeContainerFromWidth = this.swipeContainer.getWidth();
         this.swipeContainerFromHeight = this.swipeContainer.getHeight();
@@ -2894,14 +2903,14 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                 f = 0.0f;
             } else {
                 int i = AndroidUtilities.displaySize.x;
-                f = (i - ((int) (Math.min(i, r15.y) * 0.8f))) / 2.0f;
+                f = (i - ((int) (Math.min(i, r0.y) * 0.8f))) / 2.0f;
             }
             final float f2 = z ? this.insets.left + f : (-this.insets.left) - f;
             if (!z) {
                 f = -f;
             }
             final float f3 = f;
-            final float translationY = z ? this.swipeContainer.getTranslationY() : -AndroidUtilities.dp(24.0f);
+            float translationY = z ? this.swipeContainer.getTranslationY() : -AndroidUtilities.dp(24.0f);
             final float currentActionBarHeight = z ? -AndroidUtilities.dp(24.0f) : (ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(24.0f);
             final float currentActionBarHeight2 = ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight;
             this.swipeContainer.cancelStickTo();
@@ -2929,7 +2938,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             this.fullscreenInProgress = true;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.fullscreenAnimator = ofFloat;
-            final float f5 = f2;
+            final float f5 = translationY;
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.bots.BotWebViewSheet.14
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator2) {
@@ -2938,8 +2947,8 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
                     botWebViewSheet.fullscreenProgress = z ? botWebViewSheet.fullscreenTransitionProgress : 1.0f - botWebViewSheet.fullscreenTransitionProgress;
                     BotWebViewSheet.this.actionBar.setAlpha(1.0f - BotWebViewSheet.this.fullscreenProgress);
                     BotWebViewSheet.this.actionBar.setTranslationY((-ActionBar.getCurrentActionBarHeight()) * BotWebViewSheet.this.fullscreenProgress);
-                    BotWebViewSheet.this.swipeContainer.setTranslationY(AndroidUtilities.lerp(translationY, currentActionBarHeight, BotWebViewSheet.this.fullscreenTransitionProgress));
-                    BotWebViewSheet.this.swipeContainer.setTranslationX(AndroidUtilities.lerp(f5, 0.0f, BotWebViewSheet.this.fullscreenTransitionProgress));
+                    BotWebViewSheet.this.swipeContainer.setTranslationY(AndroidUtilities.lerp(f5, currentActionBarHeight, BotWebViewSheet.this.fullscreenTransitionProgress));
+                    BotWebViewSheet.this.swipeContainer.setTranslationX(AndroidUtilities.lerp(f2, 0.0f, BotWebViewSheet.this.fullscreenTransitionProgress));
                     BotWebViewSheet.this.botButtons.setTranslationX(AndroidUtilities.lerp(f3, 0.0f, BotWebViewSheet.this.fullscreenTransitionProgress));
                     BotWebViewSheet.this.fullscreenButtons.setAlpha(BotWebViewSheet.this.fullscreenProgress);
                     BotWebViewSheet.this.windowView.invalidate();

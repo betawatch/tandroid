@@ -54,6 +54,8 @@ import org.telegram.ui.Components.TranslateAlert2;
 /* loaded from: classes4.dex */
 public class LanguageSelectActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate {
     private EmptyTextProgressView emptyView;
+    private int infoPosition1;
+    private int languagesStartsPosition;
     private ListAdapter listAdapter;
     private RecyclerListView listView;
     private ActionBarMenuItem searchItem;
@@ -64,6 +66,11 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
     private ArrayList sortedLanguages;
     private int translateSettingsBackgroundHeight;
     private ArrayList unofficialLanguages;
+    private int settingsFromPosition = -1;
+    private int settingsToPosition = -1;
+    private int manualTranslationPosition = -1;
+    private int autoTranslationPosition = -1;
+    private int doNotTranslatePosition = -1;
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean onFragmentCreate() {
@@ -151,8 +158,8 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                 if (getAdapter() == LanguageSelectActivity.this.listAdapter && getItemAnimator() != null && getItemAnimator().isRunning()) {
                     int color = Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider);
                     drawItemBackground(canvas, 0, LanguageSelectActivity.this.translateSettingsBackgroundHeight, color);
-                    if (LanguageSelectActivity.this.listAdapter.settingsFromPosition != -1 && LanguageSelectActivity.this.listAdapter.settingsToPosition != -1) {
-                        drawSectionBackground(canvas, LanguageSelectActivity.this.listAdapter.settingsFromPosition, LanguageSelectActivity.this.listAdapter.settingsToPosition, color);
+                    if (LanguageSelectActivity.this.settingsFromPosition != -1 && LanguageSelectActivity.this.settingsToPosition != -1) {
+                        drawSectionBackground(canvas, LanguageSelectActivity.this.settingsFromPosition, LanguageSelectActivity.this.settingsToPosition, color);
                     }
                 }
                 super.dispatchDraw(canvas);
@@ -201,10 +208,10 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0021 A[Catch: Exception -> 0x0015, TryCatch #0 {Exception -> 0x0015, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000c, B:10:0x0019, B:12:0x0021, B:13:0x0086, B:15:0x008c, B:20:0x0098, B:22:0x00a0, B:24:0x00ae, B:26:0x00b6, B:28:0x00c4, B:30:0x00c8, B:32:0x00cb, B:37:0x00d0, B:39:0x00d5, B:42:0x00dc, B:44:0x00a7, B:47:0x0044, B:49:0x004c, B:51:0x0054, B:53:0x005e, B:55:0x0069, B:57:0x00e3, B:59:0x00e7, B:61:0x00f0, B:63:0x00f6, B:65:0x00fa, B:69:0x0100, B:73:0x010f, B:75:0x0118, B:77:0x0156, B:80:0x0161, B:82:0x016d, B:83:0x0172, B:85:0x0193, B:86:0x019b, B:88:0x01ae, B:90:0x01b4, B:92:0x01be, B:94:0x01c6, B:95:0x01c9, B:98:0x0121, B:101:0x012b, B:103:0x0133, B:104:0x013c, B:106:0x0144, B:107:0x014c), top: B:1:0x0000 }] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0098 A[Catch: Exception -> 0x0015, TryCatch #0 {Exception -> 0x0015, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000c, B:10:0x0019, B:12:0x0021, B:13:0x0086, B:15:0x008c, B:20:0x0098, B:22:0x00a0, B:24:0x00ae, B:26:0x00b6, B:28:0x00c4, B:30:0x00c8, B:32:0x00cb, B:37:0x00d0, B:39:0x00d5, B:42:0x00dc, B:44:0x00a7, B:47:0x0044, B:49:0x004c, B:51:0x0054, B:53:0x005e, B:55:0x0069, B:57:0x00e3, B:59:0x00e7, B:61:0x00f0, B:63:0x00f6, B:65:0x00fa, B:69:0x0100, B:73:0x010f, B:75:0x0118, B:77:0x0156, B:80:0x0161, B:82:0x016d, B:83:0x0172, B:85:0x0193, B:86:0x019b, B:88:0x01ae, B:90:0x01b4, B:92:0x01be, B:94:0x01c6, B:95:0x01c9, B:98:0x0121, B:101:0x012b, B:103:0x0133, B:104:0x013c, B:106:0x0144, B:107:0x014c), top: B:1:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x001d A[Catch: Exception -> 0x0015, TryCatch #0 {Exception -> 0x0015, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000c, B:10:0x0019, B:12:0x001d, B:13:0x007e, B:15:0x0084, B:20:0x0090, B:24:0x0098, B:26:0x00a0, B:28:0x00ae, B:30:0x00b2, B:32:0x00b5, B:37:0x00ba, B:39:0x00bf, B:42:0x00c6, B:44:0x0095, B:47:0x0040, B:49:0x0044, B:51:0x004c, B:53:0x0056, B:55:0x0061, B:57:0x00cd, B:59:0x00d1, B:61:0x00da, B:63:0x00e0, B:65:0x00e4, B:69:0x00ea, B:73:0x00f9, B:75:0x00fe, B:77:0x013c, B:80:0x0147, B:82:0x0153, B:83:0x0158, B:85:0x0179, B:86:0x0181, B:88:0x0194, B:90:0x019a, B:92:0x01a4, B:94:0x01ac, B:95:0x01af, B:98:0x0107, B:101:0x0111, B:103:0x0119, B:104:0x0122, B:106:0x012a, B:107:0x0132), top: B:1:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0090 A[Catch: Exception -> 0x0015, TryCatch #0 {Exception -> 0x0015, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000c, B:10:0x0019, B:12:0x001d, B:13:0x007e, B:15:0x0084, B:20:0x0090, B:24:0x0098, B:26:0x00a0, B:28:0x00ae, B:30:0x00b2, B:32:0x00b5, B:37:0x00ba, B:39:0x00bf, B:42:0x00c6, B:44:0x0095, B:47:0x0040, B:49:0x0044, B:51:0x004c, B:53:0x0056, B:55:0x0061, B:57:0x00cd, B:59:0x00d1, B:61:0x00da, B:63:0x00e0, B:65:0x00e4, B:69:0x00ea, B:73:0x00f9, B:75:0x00fe, B:77:0x013c, B:80:0x0147, B:82:0x0153, B:83:0x0158, B:85:0x0179, B:86:0x0181, B:88:0x0194, B:90:0x019a, B:92:0x01a4, B:94:0x01ac, B:95:0x01af, B:98:0x0107, B:101:0x0111, B:103:0x0119, B:104:0x0122, B:106:0x012a, B:107:0x0132), top: B:1:0x0000 }] */
     /* JADX WARN: Removed duplicated region for block: B:45:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0044 A[Catch: Exception -> 0x0015, TryCatch #0 {Exception -> 0x0015, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000c, B:10:0x0019, B:12:0x0021, B:13:0x0086, B:15:0x008c, B:20:0x0098, B:22:0x00a0, B:24:0x00ae, B:26:0x00b6, B:28:0x00c4, B:30:0x00c8, B:32:0x00cb, B:37:0x00d0, B:39:0x00d5, B:42:0x00dc, B:44:0x00a7, B:47:0x0044, B:49:0x004c, B:51:0x0054, B:53:0x005e, B:55:0x0069, B:57:0x00e3, B:59:0x00e7, B:61:0x00f0, B:63:0x00f6, B:65:0x00fa, B:69:0x0100, B:73:0x010f, B:75:0x0118, B:77:0x0156, B:80:0x0161, B:82:0x016d, B:83:0x0172, B:85:0x0193, B:86:0x019b, B:88:0x01ae, B:90:0x01b4, B:92:0x01be, B:94:0x01c6, B:95:0x01c9, B:98:0x0121, B:101:0x012b, B:103:0x0133, B:104:0x013c, B:106:0x0144, B:107:0x014c), top: B:1:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0040 A[Catch: Exception -> 0x0015, TryCatch #0 {Exception -> 0x0015, blocks: (B:2:0x0000, B:4:0x0006, B:6:0x000c, B:10:0x0019, B:12:0x001d, B:13:0x007e, B:15:0x0084, B:20:0x0090, B:24:0x0098, B:26:0x00a0, B:28:0x00ae, B:30:0x00b2, B:32:0x00b5, B:37:0x00ba, B:39:0x00bf, B:42:0x00c6, B:44:0x0095, B:47:0x0040, B:49:0x0044, B:51:0x004c, B:53:0x0056, B:55:0x0061, B:57:0x00cd, B:59:0x00d1, B:61:0x00da, B:63:0x00e0, B:65:0x00e4, B:69:0x00ea, B:73:0x00f9, B:75:0x00fe, B:77:0x013c, B:80:0x0147, B:82:0x0153, B:83:0x0158, B:85:0x0179, B:86:0x0181, B:88:0x0194, B:90:0x019a, B:92:0x01a4, B:94:0x01ac, B:95:0x01af, B:98:0x0107, B:101:0x0111, B:103:0x0119, B:104:0x0122, B:106:0x012a, B:107:0x0132), top: B:1:0x0000 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -216,12 +223,12 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             if (view instanceof TextCheckCell) {
                 if (!getContextValue() && !getChatValue()) {
                     z = false;
-                    if (i != this.listAdapter.manualTranslationPosition) {
+                    if (i != this.manualTranslationPosition) {
                         boolean z3 = !getContextValue();
                         getMessagesController().getTranslateController().setContextTranslateEnabled(z3);
                         ((TextCheckCell) view).setChecked(z3);
                         NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateSearchSettings, new Object[0]);
-                    } else if (i == this.listAdapter.autoTranslationPosition) {
+                    } else if (i == this.autoTranslationPosition) {
                         boolean chatValue = getChatValue();
                         boolean z4 = !chatValue;
                         if (!chatValue && !getUserConfig().isPremium()) {
@@ -236,7 +243,10 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                     if (!getContextValue() && !getChatValue()) {
                         z2 = false;
                         if (z2 == z) {
-                            int i2 = this.listAdapter.autoTranslationPosition >= 0 ? this.listAdapter.autoTranslationPosition : this.listAdapter.manualTranslationPosition;
+                            int i2 = this.autoTranslationPosition;
+                            if (i2 < 0) {
+                                i2 = this.manualTranslationPosition;
+                            }
                             TextCheckCell textCheckCell = null;
                             for (int i3 = 0; i3 < this.listView.getChildCount(); i3++) {
                                 View childAt = this.listView.getChildAt(i3);
@@ -262,7 +272,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                     }
                 }
                 z = true;
-                if (i != this.listAdapter.manualTranslationPosition) {
+                if (i != this.manualTranslationPosition) {
                 }
                 if (!getContextValue()) {
                     z2 = false;
@@ -280,7 +290,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                 if (getParentActivity() != null && this.parentLayout != null && (view instanceof TextRadioCell)) {
                     boolean z5 = this.listView.getAdapter() == this.searchListViewAdapter;
                     if (!z5) {
-                        i -= this.listAdapter.languagesStartsPosition;
+                        i -= this.languagesStartsPosition;
                     }
                     if (z5) {
                         localeInfo = (LocaleController.LocaleInfo) this.searchResult.get(i);
@@ -395,7 +405,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         if (getParentActivity() != null && this.parentLayout != null && (view instanceof TextRadioCell)) {
             boolean z = this.listView.getAdapter() == this.searchListViewAdapter;
             if (!z) {
-                i -= this.listAdapter.languagesStartsPosition;
+                i -= this.languagesStartsPosition;
             }
             if (z) {
                 localeInfo = (LocaleController.LocaleInfo) this.searchResult.get(i);
@@ -628,15 +638,8 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
     }
 
     private class ListAdapter extends RecyclerListView.SelectionAdapter {
-        private int infoPosition1;
-        private int languagesStartsPosition;
         private Context mContext;
         private boolean search;
-        private int settingsFromPosition = -1;
-        private int settingsToPosition = -1;
-        private int manualTranslationPosition = -1;
-        private int autoTranslationPosition = -1;
-        private int doNotTranslatePosition = -1;
 
         public ListAdapter(Context context, boolean z) {
             this.mContext = context;
@@ -705,31 +708,31 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:108:0x0298, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:108:0x02a8, code lost:
         
             r12 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:115:0x0255, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:115:0x0265, code lost:
         
             if (r12 == (r10.this$0.unofficialLanguages.size() - 1)) goto L100;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:124:0x0296, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:124:0x02a6, code lost:
         
             if (r12 == (r10.this$0.sortedLanguages.size() - 1)) goto L100;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:42:0x00fb, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:42:0x00ff, code lost:
         
             if (r11.getValueTextView().getPaint().measureText(r4) > java.lang.Math.min((org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(34.0f)) / 2.0f, (org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(84.0f)) - r11.getTextView().getPaint().measureText(r0))) goto L34;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:96:0x021f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:96:0x022f, code lost:
         
             if (r12 == (r10.this$0.searchResult.size() - 1)) goto L100;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:97:0x029a, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:97:0x02aa, code lost:
         
             r12 = false;
          */
-        /* JADX WARN: Removed duplicated region for block: B:18:0x0104  */
+        /* JADX WARN: Removed duplicated region for block: B:18:0x0108  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -747,7 +750,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             switch (viewHolder.getItemViewType()) {
                 case 0:
                     if (!this.search) {
-                        i -= this.languagesStartsPosition;
+                        i -= LanguageSelectActivity.this.languagesStartsPosition;
                     }
                     TextRadioCell textRadioCell = (TextRadioCell) viewHolder.itemView;
                     textRadioCell.updateRTL();
@@ -792,11 +795,11 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                 case 2:
                     TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
                     textCheckCell.updateRTL();
-                    if (i == this.manualTranslationPosition) {
+                    if (i == LanguageSelectActivity.this.manualTranslationPosition) {
                         textCheckCell.setTextAndCheck(LocaleController.getString(R.string.ShowTranslateButton), LanguageSelectActivity.this.getContextValue(), true);
                         textCheckCell.setCheckBoxIcon(0);
                         break;
-                    } else if (i == this.autoTranslationPosition) {
+                    } else if (i == LanguageSelectActivity.this.autoTranslationPosition) {
                         String string = LocaleController.getString(R.string.ShowTranslateChatButton);
                         boolean chatValue = LanguageSelectActivity.this.getChatValue();
                         if (!LanguageSelectActivity.this.getContextValue() && !LanguageSelectActivity.this.getChatValue()) {
@@ -856,7 +859,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                 case 6:
                     TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
                     textInfoPrivacyCell.updateRTL();
-                    if (i == this.infoPosition1) {
+                    if (i == LanguageSelectActivity.this.infoPosition1) {
                         textInfoPrivacyCell.setText(LocaleController.getString(R.string.TranslateMessagesInfo1));
                         textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                         textInfoPrivacyCell.setTopPadding(11);
@@ -883,7 +886,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                 return 0;
             }
             if (LanguageSelectActivity.this.getMessagesController().isTranslationsManualEnabled() || LanguageSelectActivity.this.getMessagesController().isTranslationsAutoEnabled()) {
-                this.settingsFromPosition = 0;
+                LanguageSelectActivity.this.settingsFromPosition = 0;
                 int i3 = i - 1;
                 if (i == 0) {
                     return 3;
@@ -891,40 +894,40 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                 if (LanguageSelectActivity.this.getMessagesController().isTranslationsManualEnabled()) {
                     int i4 = i - 2;
                     if (i3 == 0) {
-                        this.manualTranslationPosition = i;
+                        LanguageSelectActivity.this.manualTranslationPosition = i;
                         return 2;
                     }
                     i3 = i4;
                 } else {
-                    this.manualTranslationPosition = -1;
+                    LanguageSelectActivity.this.manualTranslationPosition = -1;
                 }
                 if (!LanguageSelectActivity.this.getMessagesController().isTranslationsAutoEnabled() || LanguageSelectActivity.this.getMessagesController().premiumFeaturesBlocked()) {
-                    this.autoTranslationPosition = -1;
+                    LanguageSelectActivity.this.autoTranslationPosition = -1;
                 } else {
                     int i5 = i3 - 1;
                     if (i3 == 0) {
-                        this.autoTranslationPosition = i;
+                        LanguageSelectActivity.this.autoTranslationPosition = i;
                         return 2;
                     }
                     i3 = i5;
                 }
                 if (LanguageSelectActivity.this.getChatValue() || LanguageSelectActivity.this.getContextValue()) {
-                    this.doNotTranslatePosition = i;
+                    LanguageSelectActivity.this.doNotTranslatePosition = i;
                     int i6 = i3 - 1;
                     if (i3 == 0) {
                         return 4;
                     }
                     i3 = i6;
                 }
-                this.settingsToPosition = (i - i3) - 1;
+                LanguageSelectActivity.this.settingsToPosition = (i - i3) - 1;
                 i2 = i3 - 1;
                 if (i3 == 0) {
-                    this.infoPosition1 = i;
+                    LanguageSelectActivity.this.infoPosition1 = i;
                     return 6;
                 }
             } else {
-                this.settingsFromPosition = -1;
-                this.settingsToPosition = -1;
+                LanguageSelectActivity.this.settingsFromPosition = -1;
+                LanguageSelectActivity.this.settingsToPosition = -1;
                 i2 = i;
             }
             int i7 = i2 - 1;
@@ -934,7 +937,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             if ((!LanguageSelectActivity.this.unofficialLanguages.isEmpty() && (i7 == LanguageSelectActivity.this.unofficialLanguages.size() || i7 == LanguageSelectActivity.this.unofficialLanguages.size() + LanguageSelectActivity.this.sortedLanguages.size() + 1)) || (LanguageSelectActivity.this.unofficialLanguages.isEmpty() && i7 == LanguageSelectActivity.this.sortedLanguages.size())) {
                 return 1;
             }
-            this.languagesStartsPosition = i - i7;
+            LanguageSelectActivity.this.languagesStartsPosition = i - i7;
             return 0;
         }
     }

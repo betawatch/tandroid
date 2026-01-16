@@ -2,8 +2,8 @@ package androidx.mediarouter;
 
 /* loaded from: classes.dex */
 public abstract class R$drawable {
-    public static final int mr_cast_checkbox = 2131231759;
-    public static final int mr_cast_mute_button = 2131231761;
-    public static final int mr_group_collapse = 2131231769;
-    public static final int mr_group_expand = 2131231770;
+    public static final int mr_cast_checkbox = 2131231765;
+    public static final int mr_cast_mute_button = 2131231767;
+    public static final int mr_group_collapse = 2131231775;
+    public static final int mr_group_expand = 2131231776;
 }

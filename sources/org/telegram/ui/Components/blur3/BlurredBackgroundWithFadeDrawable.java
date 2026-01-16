@@ -4,6 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
@@ -24,7 +25,9 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
     private final BlurredBackgroundDrawable drawable;
     private int fadeHeight;
     private final Paint maskFadeGradientPaint;
+    private final Matrix matrix;
     private boolean opacity;
+    private Shader shader;
 
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {
@@ -42,6 +45,7 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
     public BlurredBackgroundWithFadeDrawable(BlurredBackgroundDrawable blurredBackgroundDrawable) {
         Paint paint = new Paint(1);
         this.maskFadeGradientPaint = paint;
+        this.matrix = new Matrix();
         this.colorStaticPaint = new Paint(1);
         this.drawable = blurredBackgroundDrawable;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
@@ -51,8 +55,18 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
     public void setFadeHeight(int i, boolean z) {
         this.fadeHeight = i;
         this.opacity = z;
-        this.maskFadeGradientPaint.setShader(createGradient(-16777216, i, z));
+        Paint paint = this.maskFadeGradientPaint;
+        LinearGradient createGradient = createGradient(-16777216, z);
+        this.shader = createGradient;
+        paint.setShader(createGradient);
         this.colorStaticPaint.setShader(null);
+        this.matrix.reset();
+        float f = i;
+        this.matrix.setScale(1.0f, f);
+        if (i < 0) {
+            this.matrix.preTranslate(0.0f, f);
+        }
+        this.shader.setLocalMatrix(this.matrix);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -70,8 +84,10 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
         if (unwrappedSource instanceof BlurredBackgroundSourceColor) {
             int color = ((BlurredBackgroundSourceColor) unwrappedSource).getColor();
             if (this.colorStaticLast != color || this.colorStaticPaint.getShader() == null) {
+                LinearGradient createGradient = createGradient(color, this.opacity);
                 this.colorStaticLast = color;
-                this.colorStaticPaint.setShader(createGradient(color, this.fadeHeight, this.opacity));
+                this.colorStaticPaint.setShader(createGradient);
+                createGradient.setLocalMatrix(this.matrix);
             }
             canvas.save();
             canvas.translate(r0.left, r0.top);
@@ -87,11 +103,11 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
         canvas.restoreToCount(saveLayer);
     }
 
-    private static LinearGradient createGradient(int i, int i2, boolean z) {
+    private static LinearGradient createGradient(int i, boolean z) {
         int alpha = Color.alpha(i);
         if (z) {
-            return new LinearGradient(0.0f, 0.0f, 0.0f, i2, new int[]{ColorUtils.setAlphaComponent(i, 0), ColorUtils.setAlphaComponent(i, (alpha * 96) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.liveStoryMessageUpdate) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.starGiftSoldOut) / NotificationCenter.cameraInitied)}, (float[]) null, Shader.TileMode.CLAMP);
+            return new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{ColorUtils.setAlphaComponent(i, 0), ColorUtils.setAlphaComponent(i, (alpha * 96) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.liveStoryMessageUpdate) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.starGiftSoldOut) / NotificationCenter.cameraInitied)}, (float[]) null, Shader.TileMode.CLAMP);
         }
-        return new LinearGradient(0.0f, 0.0f, 0.0f, i2, new int[]{ColorUtils.setAlphaComponent(i, 0), ColorUtils.setAlphaComponent(i, (alpha * 96) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.liveStoryMessageUpdate) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.starGiftSoldOut) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.cameraInitied) / NotificationCenter.cameraInitied)}, (float[]) null, Shader.TileMode.CLAMP);
+        return new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{ColorUtils.setAlphaComponent(i, 0), ColorUtils.setAlphaComponent(i, (alpha * 96) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.liveStoryMessageUpdate) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.starGiftSoldOut) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.cameraInitied) / NotificationCenter.cameraInitied)}, (float[]) null, Shader.TileMode.CLAMP);
     }
 }

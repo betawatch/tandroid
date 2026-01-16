@@ -272,8 +272,8 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             this.selectedEmoji = 0L;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:11:0x01cf  */
-        /* JADX WARN: Removed duplicated region for block: B:15:0x01f4  */
+        /* JADX WARN: Removed duplicated region for block: B:11:0x01d4  */
+        /* JADX WARN: Removed duplicated region for block: B:15:0x01f9  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -431,7 +431,8 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             this.buttonCollectible = LocaleController.getString(R.string.UserColorApplyCollectible);
             ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(getContext(), PeerColorActivity.this.getResourceProvider());
             this.button = buttonWithCounterView;
-            buttonWithCounterView.text.setHacks(true, true, true);
+            buttonWithCounterView.setRound();
+            this.button.text.setHacks(true, true, true);
             ButtonWithCounterView buttonWithCounterView2 = this.button;
             if (!PeerColorActivity.this.isChannel) {
                 if (!PeerColorActivity.this.getUserConfig().isPremium()) {

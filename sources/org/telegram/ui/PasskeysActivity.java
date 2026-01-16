@@ -45,6 +45,7 @@ import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 
 /* loaded from: classes4.dex */
 public class PasskeysActivity extends BaseFragment {
+    public int addPasskeyRow;
     private UniversalRecyclerView listView;
     private ArrayList passkeys;
 
@@ -67,12 +68,12 @@ public class PasskeysActivity extends BaseFragment {
         });
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
-        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda4
+        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 PasskeysActivity.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
             }
-        }, new Utilities.Callback5() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda5
+        }, new Utilities.Callback5() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback5
             public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                 PasskeysActivity.this.onItemClick((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
@@ -86,9 +87,10 @@ public class PasskeysActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
+        this.addPasskeyRow = -1;
         arrayList.add(UItem.asTopView(LocaleController.getString(R.string.PasskeyTopInfo), R.raw.passkey));
         for (int i = 0; i < this.passkeys.size(); i++) {
-            arrayList.add(PasskeyCell.Factory.of((TL_account.Passkey) this.passkeys.get(i), new View.OnClickListener() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda8
+            arrayList.add(PasskeyCell.Factory.of((TL_account.Passkey) this.passkeys.get(i), new View.OnClickListener() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     PasskeysActivity.this.openMenu(view);
@@ -96,9 +98,10 @@ public class PasskeysActivity extends BaseFragment {
             }));
         }
         if (this.passkeys.size() + 1 <= getMessagesController().config.passkeysAccountPasskeysMax.get()) {
+            this.addPasskeyRow = arrayList.size();
             arrayList.add(UItem.asButton(-1, R.drawable.menu_passkey_add, LocaleController.getString(R.string.PasskeyAdd)).accent());
         }
-        arrayList.add(UItem.asShadow(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new Runnable() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda9
+        arrayList.add(UItem.asShadow(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new Runnable() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 PasskeysActivity.this.lambda$fillItems$0();
@@ -135,7 +138,7 @@ public class PasskeysActivity extends BaseFragment {
             return;
         }
         final TL_account.Passkey passkey = (TL_account.Passkey) this.passkeys.get(i);
-        ItemOptions.makeOptions(this, passkeyCell).add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Delete), true, new Runnable() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda10
+        ItemOptions.makeOptions(this, passkeyCell).add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.Delete), true, new Runnable() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 PasskeysActivity.this.lambda$openMenu$3(passkey, str, i);
@@ -187,7 +190,7 @@ public class PasskeysActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public void onItemClick(UItem uItem, View view, int i, float f, float f2) {
         if (uItem.id == -1) {
-            PasskeysController.create(getContext(), this.currentAccount, new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda7
+            PasskeysController.create(getContext(), this.currentAccount, new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda6
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     PasskeysActivity.this.lambda$onItemClick$4((TL_account.Passkey) obj, (String) obj2);
@@ -402,7 +405,7 @@ public class PasskeysActivity extends BaseFragment {
             return;
         }
         buttonWithCounterView.setLoading(true);
-        PasskeysController.create(context, i, new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda1
+        PasskeysController.create(context, i, new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 PasskeysActivity.lambda$showLearnSheet$8(ButtonWithCounterView.this, context, bottomSheet, i, (TL_account.Passkey) obj, (String) obj2);
@@ -417,7 +420,7 @@ public class PasskeysActivity extends BaseFragment {
             return;
         }
         if ("EMPTY".equalsIgnoreCase(str)) {
-            new AlertDialog.Builder(context).setTitle(LocaleController.getString(R.string.PasskeyNoOptionsTitle)).setMessage(LocaleController.getString(R.string.PasskeyNoOptionsText)).setPositiveButton(LocaleController.getString(R.string.OK), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda2
+            new AlertDialog.Builder(context).setTitle(LocaleController.getString(R.string.PasskeyNoOptionsTitle)).setMessage(LocaleController.getString(R.string.PasskeyNoOptionsText)).setPositiveButton(LocaleController.getString(R.string.OK), null).setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda4
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
                     BottomSheet.this.lambda$new$0();
@@ -452,7 +455,7 @@ public class PasskeysActivity extends BaseFragment {
                 safeLastFragment.presentFragment(new PasskeysActivity(arrayList));
                 return;
             }
-            ConnectionsManager.getInstance(i).sendRequestTyped(new TL_account.getPasskeys(), new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda3
+            ConnectionsManager.getInstance(i).sendRequestTyped(new TL_account.getPasskeys(), new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda5
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     PasskeysActivity.lambda$showLearnSheet$7(BottomSheet.this, passkey, str, (TL_account.Passkeys) obj, (TLRPC.TL_error) obj2);
@@ -485,7 +488,7 @@ public class PasskeysActivity extends BaseFragment {
         }
         final PasskeysActivity passkeysActivity = new PasskeysActivity(passkeys.passkeys);
         safeLastFragment.presentFragment(passkeysActivity);
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda6
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 PasskeysActivity.this.added(passkey);

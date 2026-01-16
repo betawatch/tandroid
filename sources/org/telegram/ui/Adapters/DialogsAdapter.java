@@ -602,7 +602,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
         notifyDataSetChanged();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x00fe, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x00fd, code lost:
     
         if (r4.isReplyTo == false) goto L22;
      */
@@ -813,7 +813,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 };
                 break;
             case 17:
-                viewGroup3 = new DialogsHintCell(this.mContext, null);
+                viewGroup3 = new DialogsHintCell(this.mContext);
                 break;
             case 18:
                 viewGroup3 = new View(this.mContext) { // from class: org.telegram.ui.Adapters.DialogsAdapter.5

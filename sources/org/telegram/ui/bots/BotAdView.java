@@ -24,7 +24,6 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.browser.Browser;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ChatActivity;
@@ -38,7 +37,6 @@ public class BotAdView extends FrameLayout {
     public final TextView channelTitleView;
     public final ImageView closeView;
     public final BackupImageView imageView;
-    private boolean invalidatedMeasure;
     private final LinearLayout layout;
     public final TextView removeView;
     private final Theme.ResourcesProvider resourcesProvider;
@@ -51,7 +49,6 @@ public class BotAdView extends FrameLayout {
 
     public BotAdView(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        this.invalidatedMeasure = true;
         this.resourcesProvider = resourcesProvider;
         LinearLayout linearLayout = new LinearLayout(context);
         this.layout = linearLayout;
@@ -106,12 +103,11 @@ public class BotAdView extends FrameLayout {
         linearLayout.addView(backupImageView, LayoutHelper.createLinear(48, 48, 53, 10, 0, 2, 2));
         ImageView imageView = new ImageView(context);
         this.closeView = imageView;
-        int i3 = Theme.key_dialogEmptyImage;
-        imageView.setBackground(Theme.createSelectorDrawable(5, Theme.multAlpha(Theme.getColor(i3, resourcesProvider), 0.2f)));
+        imageView.setBackground(Theme.createSelectorDrawable(5, Theme.multAlpha(Theme.getColor(Theme.key_dialogEmptyImage, resourcesProvider), 0.2f)));
         ScaleStateListAnimator.apply(imageView);
         imageView.setImageResource(R.drawable.msg_close);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i3, resourcesProvider), PorterDuff.Mode.SRC_IN));
+        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_topPanelClose, resourcesProvider), PorterDuff.Mode.SRC_IN));
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -126,11 +122,10 @@ public class BotAdView extends FrameLayout {
         if (messageObject == null) {
             return;
         }
-        boolean z = true;
-        this.invalidatedMeasure = true;
         CharSequence replaceEmoji = Emoji.replaceEmoji(messageObject.sponsoredTitle, this.titleView.getPaint().getFontMetricsInt(), false);
         CharSequence replaceEmoji2 = Emoji.replaceEmoji(messageObject.messageText, this.textView.getPaint().getFontMetricsInt(), false);
         final String str = messageObject.sponsoredUrl;
+        boolean z = true;
         if (messageObject.sponsoredMedia != null) {
             this.imageView.setVisibility(0);
             this.closeView.setVisibility(8);
@@ -174,7 +169,6 @@ public class BotAdView extends FrameLayout {
         }
         this.titleView.setText(spannableStringBuilder);
         this.textView.setText(replaceEmoji2);
-        setLayoutParams(LayoutHelper.createFrame(-1, -2, 83));
         this.textView.setOnLinkPressListener(new LinkSpanDrawable.LinksTextView.OnLinkPress() { // from class: org.telegram.ui.bots.BotAdView$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView.OnLinkPress
             public final void run(ClickableSpan clickableSpan) {
@@ -239,18 +233,5 @@ public class BotAdView extends FrameLayout {
         if (runnable != null) {
             runnable.run();
         }
-    }
-
-    public int height() {
-        if (this.invalidatedMeasure || getMeasuredHeight() <= 0) {
-            measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
-        }
-        return getMeasuredHeight();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        this.invalidatedMeasure = false;
     }
 }

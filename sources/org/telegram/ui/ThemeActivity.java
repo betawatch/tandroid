@@ -1037,7 +1037,7 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                 });
             }
         } else {
-            this.actionBar.setTitle(LocaleController.getString("AutoNightTheme", R.string.AutoNightTheme));
+            this.actionBar.setTitle(LocaleController.getString(R.string.AutoNightTheme));
         }
         this.actionBar.setActionBarMenuOnItemClick(new 1());
         this.listAdapter = new ListAdapter(context);

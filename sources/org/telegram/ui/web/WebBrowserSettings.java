@@ -57,8 +57,16 @@ import org.telegram.ui.web.WebMetadataCache;
 public class WebBrowserSettings extends UniversalFragment implements NotificationCenter.NotificationCenterDelegate {
     private Drawable addIcon;
     private long cacheSize;
+    public int clearCacheRow;
+    public int clearCookiesRow;
+    public int clearHistoryRow;
+    public int clearListRow;
     private long cookiesSize;
+    public int enableRow;
+    public int historyRow;
     private long historySize;
+    public int neverOpenRow;
+    public int searchRow;
     private Utilities.Callback whenHistoryClicked;
 
     @Override // org.telegram.ui.Components.UniversalFragment
@@ -191,31 +199,44 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
         return LocaleController.getString(R.string.BrowserSettingsTitle);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0117  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x014c  */
     @Override // org.telegram.ui.Components.UniversalFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     protected void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
         String str;
+        this.enableRow = -1;
+        this.clearCookiesRow = -1;
+        this.clearCacheRow = -1;
+        this.historyRow = -1;
+        this.clearHistoryRow = -1;
+        this.clearListRow = -1;
+        this.searchRow = -1;
+        this.enableRow = arrayList.size();
         arrayList.add(UItem.asRippleCheck(1, LocaleController.getString(R.string.BrowserSettingsEnable)).setChecked(SharedConfig.inappBrowser));
         arrayList.add(UItem.asShadow(LocaleController.getString(R.string.BrowserSettingsEnableInfo)));
+        this.clearCookiesRow = arrayList.size();
         int i = R.drawable.menu_clear_cookies;
         String string = LocaleController.getString(R.string.BrowserSettingsCookiesClear);
         long j = this.cookiesSize;
         arrayList.add(UItem.asButton(3, i, string, j > 0 ? AndroidUtilities.formatFileSize(j) : ""));
+        this.clearCacheRow = arrayList.size();
         int i2 = R.drawable.menu_clear_cache;
         String string2 = LocaleController.getString(R.string.BrowserSettingsCacheClear);
         long j2 = this.cacheSize;
         arrayList.add(UItem.asButton(2, i2, string2, j2 > 0 ? AndroidUtilities.formatFileSize(j2) : ""));
         arrayList.add(UItem.asShadow(LocaleController.getString(R.string.BrowserSettingsCookiesInfo)));
         if (this.historySize > 0) {
+            this.historyRow = arrayList.size();
             arrayList.add(UItem.asButton(9, R.drawable.menu_clear_recent, LocaleController.getString(R.string.BrowserSettingsHistoryShow)));
+            this.clearHistoryRow = arrayList.size();
             arrayList.add(UItem.asButton(7, i2, LocaleController.getString(R.string.BrowserSettingsHistoryClear), LocaleController.formatPluralStringComma("BrowserSettingsHistoryPages", (int) this.historySize, ',')));
             arrayList.add(UItem.asShadow(null));
         }
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.BrowserSettingsNeverOpenInTitle)));
+        this.neverOpenRow = arrayList.size();
         arrayList.add(UItem.asButton(4, this.addIcon, LocaleController.getString(R.string.BrowserSettingsNeverOpenInAdd)).accent());
         RestrictedDomainsList.getInstance().load();
         ArrayList arrayList2 = RestrictedDomainsList.getInstance().restrictedDomains;
@@ -242,9 +263,11 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
             arrayList.add(WebsiteView.Factory.as(arrayList3, str, webMetadata != null ? null : webMetadata.favicon));
         }
         if (!arrayList2.isEmpty()) {
+            this.clearListRow = arrayList.size();
             arrayList.add(UItem.asButton(5, R.drawable.msg_clearcache, LocaleController.getString(R.string.BrowserSettingsNeverOpenInClearList)).red());
         }
         arrayList.add(UItem.asShadow(LocaleController.getString(R.string.BrowserSettingsNeverOpenInInfo)));
+        this.searchRow = arrayList.size();
         arrayList.add(UItem.asButton(6, R.drawable.msg_search, LocaleController.getString(R.string.SearchEngine), SearchEngine.getCurrent().name));
         arrayList.add(UItem.asShadow(LocaleController.getString(R.string.BrowserSettingsSearchEngineInfo)));
         if (!SharedConfig.inappBrowser) {

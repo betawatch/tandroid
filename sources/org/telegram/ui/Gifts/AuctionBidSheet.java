@@ -314,6 +314,7 @@ public class AuctionBidSheet extends BottomSheetWithRecyclerListView implements 
             }
         };
         this.buttonView = buttonWithCounterView;
+        buttonWithCounterView.setRound();
         FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
         int i6 = createFrame.leftMargin;
         int i7 = this.backgroundPaddingLeft;

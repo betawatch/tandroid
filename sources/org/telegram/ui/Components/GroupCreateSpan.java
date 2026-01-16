@@ -70,14 +70,14 @@ public class GroupCreateSpan extends View {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x02fe  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x030d  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0319  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x032b  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x038a  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x033c  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0310  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0300  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x02ff  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x030e  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x031a  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x032c  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x038b  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x033d  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0311  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0301  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -299,7 +299,7 @@ public class GroupCreateSpan extends View {
                 this.uid = tL_help_country.default_name.hashCode();
                 str = str3;
             } else {
-                this.avatarDrawable.setInfo(0L, contact.first_name, contact.last_name);
+                this.avatarDrawable.setInfo(contact.contact_id, contact.first_name, contact.last_name);
                 this.uid = contact.contact_id;
                 this.key = contact.key;
                 if (!TextUtils.isEmpty(contact.first_name)) {

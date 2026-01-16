@@ -43894,6 +43894,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                     }
                 }
                 drawSideButton(canvas);
+                drawSummarizeButton(canvas);
             }
             peerColor = null;
             if (this.topicSeparator != null) {
@@ -43964,6 +43965,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 }
             }
             drawSideButton(canvas);
+            drawSummarizeButton(canvas);
         }
         i = 1;
         f = 1.0f;
@@ -44024,6 +44026,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         if (this.askBotForumSeparator != null) {
         }
         drawSideButton(canvas);
+        drawSummarizeButton(canvas);
     }
 
     public void drawAnimatedEmojis(Canvas canvas, float f) {
@@ -44286,9 +44289,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
     }
 
     public void drawSideButton(Canvas canvas, boolean z) {
-        String str;
         int i;
-        TLRPC.Message message;
         MessageObject.GroupedMessages groupedMessages;
         if ((!this.hideSideButtonByQuickShare || z) && this.drawSideButton != 0) {
             MessageObject.GroupedMessagePosition groupedMessagePosition = this.currentPosition;
@@ -44338,9 +44339,6 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                         }
                     }
                 }
-                this.summarizeButtonX = this.sideStartX;
-                this.summarizeButtonY = getPaddingTop() + AndroidUtilities.dp(8.0f);
-                this.summarizeButtonY = Math.max(Math.min((-this.childPosition2) + AndroidUtilities.dp(4.0f), this.sideStartY - AndroidUtilities.dp(42.0f)), this.summarizeButtonY);
                 if (this.drawSideButton != 4) {
                     float dp4 = ((this.layoutHeight + this.transitionParams.deltaBottom) - AndroidUtilities.dp(32.0f)) / 2.0f;
                     if (this.sideStartY < dp4) {
@@ -44357,142 +44355,148 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (!this.currentMessageObject.isOutOwner() && this.isRoundVideo && !this.hasLinkPreview) {
                     float roundPlayingMessageSize = this.isAvatarVisible ? (AndroidUtilities.roundPlayingMessageSize(this.isSideMenued) - AndroidUtilities.roundMessageSize) * 0.7f : AndroidUtilities.dp(50.0f);
                     float videoTranscriptionProgress = this.isPlayingRound ? (1.0f - getVideoTranscriptionProgress()) * roundPlayingMessageSize : 0.0f;
-                    float videoTranscriptionProgress2 = this.isPlayingRound ? (1.0f - getVideoTranscriptionProgress()) * AndroidUtilities.dp(28.0f) : 0.0f;
+                    float dp5 = this.isPlayingRound ? AndroidUtilities.dp(28.0f) * (1.0f - getVideoTranscriptionProgress()) : 0.0f;
                     TransitionParams transitionParams2 = this.transitionParams;
                     if (transitionParams2.animatePlayingRound) {
                         videoTranscriptionProgress = (this.isPlayingRound ? transitionParams2.animateChangeProgress : 1.0f - transitionParams2.animateChangeProgress) * (1.0f - getVideoTranscriptionProgress()) * roundPlayingMessageSize;
-                        videoTranscriptionProgress2 = (this.isPlayingRound ? this.transitionParams.animateChangeProgress : 1.0f - this.transitionParams.animateChangeProgress) * (1.0f - getVideoTranscriptionProgress()) * AndroidUtilities.dp(28.0f);
+                        dp5 = AndroidUtilities.dp(28.0f) * (this.isPlayingRound ? this.transitionParams.animateChangeProgress : 1.0f - this.transitionParams.animateChangeProgress) * (1.0f - getVideoTranscriptionProgress());
                     }
                     this.sideStartX -= videoTranscriptionProgress;
-                    this.sideStartY -= videoTranscriptionProgress2;
+                    this.sideStartY -= dp5;
                 }
                 this.sideButtonVisible = true;
                 if (this.drawSideButton == 3) {
                     if (!this.enterTransitionInProgress || this.currentMessageObject.isVoice()) {
                         drawCommentButton(canvas, 1.0f);
-                    }
-                    str = "paintChatActionBackgroundSelected";
-                } else {
-                    if (SizeNotifierFrameLayout.drawingBlur) {
                         return;
                     }
-                    RectF rectF = this.rect;
-                    float f3 = this.sideStartX;
-                    rectF.set(f3, this.sideStartY, AndroidUtilities.dp(32.0f) + f3, this.sideStartY + AndroidUtilities.dp(this.drawSideButton2 == 5 ? 64.0f : 32.0f));
-                    if (this.rect.right >= getMeasuredWidth()) {
-                        this.sideButtonVisible = false;
-                        return;
-                    }
-                    int floatValue = (int) ((1.0f - this.isSponsoredMessageHidden.getFloatValue()) * 255.0f);
-                    if (floatValue != 255) {
-                        float f4 = this.sideStartX;
-                        str = "paintChatActionBackgroundSelected";
-                        i = canvas.saveLayerAlpha(f4, this.sideStartY, f4 + AndroidUtilities.dp(32.0f), AndroidUtilities.dp(64.0f) + this.sideStartY, floatValue);
-                    } else {
-                        str = "paintChatActionBackgroundSelected";
-                        i = -1;
-                    }
-                    applyServiceShaderMatrix();
-                    if (this.drawSideButton == 4 && this.drawSideButton2 == 5 && this.sideButtonPressed) {
-                        Path path = this.sideButtonPath1;
-                        if (path == null) {
-                            this.sideButtonPath1 = new Path();
-                        } else {
-                            path.rewind();
-                        }
-                        Path path2 = this.sideButtonPath2;
-                        if (path2 == null) {
-                            this.sideButtonPath2 = new Path();
-                        } else {
-                            path2.rewind();
-                        }
-                        if (this.sideButtonPathCorners1 == null) {
-                            this.sideButtonPathCorners1 = new float[]{r5, r5, r5, r5, 0.0f, 0.0f, 0.0f, 0.0f};
-                            float dp5 = AndroidUtilities.dp(16.0f);
-                        }
-                        if (this.sideButtonPathCorners2 == null) {
-                            this.sideButtonPathCorners2 = new float[]{0.0f, 0.0f, 0.0f, 0.0f, r4, r4, r4, r4};
-                            float dp6 = AndroidUtilities.dp(16.0f);
-                        }
-                        RectF rectF2 = AndroidUtilities.rectTmp;
-                        float f5 = this.sideStartX;
-                        rectF2.set(f5, this.sideStartY, AndroidUtilities.dp(32.0f) + f5, this.sideStartY + AndroidUtilities.dp(32.0f));
-                        Path path3 = this.sideButtonPath1;
-                        float[] fArr = this.sideButtonPathCorners1;
-                        Path.Direction direction = Path.Direction.CW;
-                        path3.addRoundRect(rectF2, fArr, direction);
-                        rectF2.set(this.sideStartX, this.sideStartY + AndroidUtilities.dp(32.0f), this.sideStartX + AndroidUtilities.dp(32.0f), this.sideStartY + AndroidUtilities.dp(64.0f));
-                        this.sideButtonPath2.addRoundRect(rectF2, this.sideButtonPathCorners2, direction);
-                        if (this.pressedSideButton == 4) {
-                            canvas.drawPath(this.sideButtonPath1, getThemedPaint(str));
-                            canvas.drawPath(this.sideButtonPath2, getThemedPaint("paintChatActionBackground"));
-                        } else {
-                            canvas.drawPath(this.sideButtonPath1, getThemedPaint("paintChatActionBackground"));
-                            canvas.drawPath(this.sideButtonPath2, getThemedPaint(str));
-                        }
-                    } else {
-                        canvas.drawRoundRect(this.rect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), getThemedPaint(this.sideButtonPressed ? str : "paintChatActionBackground"));
-                    }
-                    if (hasGradientService()) {
-                        canvas.drawRoundRect(this.rect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Theme.chat_actionBackgroundGradientDarkenPaint);
-                    }
-                    int i2 = this.drawSideButton;
-                    if (i2 == 2) {
-                        Drawable themedDrawable = getThemedDrawable("drawableGoIcon");
-                        BaseCell.setDrawableBounds(themedDrawable, (this.sideStartX + AndroidUtilities.dp(16.0f)) - (themedDrawable.getIntrinsicWidth() / 2.0f), (this.sideStartY + AndroidUtilities.dp(16.0f)) - (themedDrawable.getIntrinsicHeight() / 2.0f));
-                        themedDrawable.draw(canvas);
-                    } else if (i2 == 4) {
-                        int dp7 = (int) (this.sideStartX + AndroidUtilities.dp(16.0f));
-                        int dp8 = (int) (this.sideStartY + AndroidUtilities.dp(16.0f));
-                        Drawable themedDrawable2 = getThemedDrawable("drawableCloseIcon");
-                        int intrinsicWidth = themedDrawable2.getIntrinsicWidth() / 2;
-                        int intrinsicHeight = themedDrawable2.getIntrinsicHeight() / 2;
-                        themedDrawable2.setBounds(dp7 - intrinsicWidth, dp8 - intrinsicHeight, intrinsicWidth + dp7, intrinsicHeight + dp8);
-                        BaseCell.setDrawableBounds(themedDrawable2, this.sideStartX + AndroidUtilities.dp(4.0f), this.sideStartY + AndroidUtilities.dp(4.0f));
-                        canvas.save();
-                        canvas.scale(0.65f, 0.65f, themedDrawable2.getBounds().centerX(), themedDrawable2.getBounds().centerY());
-                        themedDrawable2.draw(canvas);
-                        canvas.restore();
-                        if (this.drawSideButton2 == 5) {
-                            Drawable themedDrawable3 = getThemedDrawable("drawableMoreIcon");
-                            int intrinsicWidth2 = themedDrawable3.getIntrinsicWidth() / 2;
-                            int intrinsicHeight2 = themedDrawable3.getIntrinsicHeight() / 2;
-                            themedDrawable3.setBounds(dp7 - intrinsicWidth2, dp8 - intrinsicHeight2, dp7 + intrinsicWidth2, dp8 + intrinsicHeight2);
-                            BaseCell.setDrawableBounds(themedDrawable3, this.sideStartX + AndroidUtilities.dp(4.0f), this.sideStartY + AndroidUtilities.dp(34.0f));
-                            themedDrawable3.draw(canvas);
-                        }
-                    } else {
-                        int dp9 = (int) (this.sideStartX + AndroidUtilities.dp(16.0f));
-                        int dp10 = (int) (this.sideStartY + AndroidUtilities.dp(16.0f));
-                        Drawable themedDrawable4 = getThemedDrawable("drawableShareIcon");
-                        int intrinsicWidth3 = themedDrawable4.getIntrinsicWidth() / 2;
-                        int intrinsicHeight3 = themedDrawable4.getIntrinsicHeight() / 2;
-                        themedDrawable4.setBounds(dp9 - intrinsicWidth3, dp10 - intrinsicHeight3, dp9 + intrinsicWidth3, dp10 + intrinsicHeight3);
-                        BaseCell.setDrawableBounds(themedDrawable4, this.sideStartX + AndroidUtilities.dp(4.0f), this.sideStartY + AndroidUtilities.dp(4.0f));
-                        themedDrawable4.draw(canvas);
-                    }
-                    if (i != -1) {
-                        canvas.restoreToCount(i);
-                    }
+                    return;
                 }
-                if (this.drawSummarizeButton && this.sideButtonVisible) {
-                    RectF rectF3 = this.rect;
-                    float f6 = this.summarizeButtonX;
-                    rectF3.set(f6, this.summarizeButtonY, AndroidUtilities.dp(32.0f) + f6, this.summarizeButtonY + AndroidUtilities.dp(32.0f));
-                    applyServiceShaderMatrix();
-                    canvas.drawRoundRect(this.rect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), getThemedPaint(this.sideButtonPressed ? str : "paintChatActionBackground"));
-                    if (hasGradientService()) {
-                        canvas.drawRoundRect(this.rect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Theme.chat_actionBackgroundGradientDarkenPaint);
+                if (SizeNotifierFrameLayout.drawingBlur) {
+                    return;
+                }
+                RectF rectF = this.rect;
+                float f3 = this.sideStartX;
+                rectF.set(f3, this.sideStartY, AndroidUtilities.dp(32.0f) + f3, this.sideStartY + AndroidUtilities.dp(this.drawSideButton2 == 5 ? 64.0f : 32.0f));
+                if (this.rect.right >= getMeasuredWidth()) {
+                    this.sideButtonVisible = false;
+                    return;
+                }
+                int floatValue = (int) ((1.0f - this.isSponsoredMessageHidden.getFloatValue()) * 255.0f);
+                if (floatValue != 255) {
+                    float f4 = this.sideStartX;
+                    i = canvas.saveLayerAlpha(f4, this.sideStartY, f4 + AndroidUtilities.dp(32.0f), AndroidUtilities.dp(64.0f) + this.sideStartY, floatValue);
+                } else {
+                    i = -1;
+                }
+                applyServiceShaderMatrix();
+                if (this.drawSideButton == 4 && this.drawSideButton2 == 5 && this.sideButtonPressed) {
+                    Path path = this.sideButtonPath1;
+                    if (path == null) {
+                        this.sideButtonPath1 = new Path();
+                    } else {
+                        path.rewind();
                     }
-                    if (this.summarizeIcon == null) {
-                        this.summarizeIcon = new SummaryIcon(this);
+                    Path path2 = this.sideButtonPath2;
+                    if (path2 == null) {
+                        this.sideButtonPath2 = new Path();
+                    } else {
+                        path2.rewind();
                     }
-                    MessageObject messageObject2 = getMessageObject();
-                    this.summarizeIcon.set((messageObject2 == null || (message = messageObject2.messageOwner) == null || !message.summarizedOpen) ? false : true);
-                    BaseCell.setDrawableBounds(this.summarizeIcon, (this.summarizeButtonX + AndroidUtilities.dp(16.0f)) - (this.summarizeIcon.getIntrinsicWidth() / 2.0f), (this.summarizeButtonY + AndroidUtilities.dp(16.0f)) - (this.summarizeIcon.getIntrinsicHeight() / 2.0f));
-                    this.summarizeIcon.draw(canvas);
+                    if (this.sideButtonPathCorners1 == null) {
+                        this.sideButtonPathCorners1 = new float[]{r14, r14, r14, r14, 0.0f, 0.0f, 0.0f, 0.0f};
+                        float dp6 = AndroidUtilities.dp(16.0f);
+                    }
+                    if (this.sideButtonPathCorners2 == null) {
+                        this.sideButtonPathCorners2 = new float[]{0.0f, 0.0f, 0.0f, 0.0f, r9, r9, r9, r9};
+                        float dp7 = AndroidUtilities.dp(16.0f);
+                    }
+                    RectF rectF2 = AndroidUtilities.rectTmp;
+                    float f5 = this.sideStartX;
+                    rectF2.set(f5, this.sideStartY, AndroidUtilities.dp(32.0f) + f5, this.sideStartY + AndroidUtilities.dp(32.0f));
+                    Path path3 = this.sideButtonPath1;
+                    float[] fArr = this.sideButtonPathCorners1;
+                    Path.Direction direction = Path.Direction.CW;
+                    path3.addRoundRect(rectF2, fArr, direction);
+                    rectF2.set(this.sideStartX, this.sideStartY + AndroidUtilities.dp(32.0f), this.sideStartX + AndroidUtilities.dp(32.0f), this.sideStartY + AndroidUtilities.dp(64.0f));
+                    this.sideButtonPath2.addRoundRect(rectF2, this.sideButtonPathCorners2, direction);
+                    if (this.pressedSideButton == 4) {
+                        canvas.drawPath(this.sideButtonPath1, getThemedPaint("paintChatActionBackgroundSelected"));
+                        canvas.drawPath(this.sideButtonPath2, getThemedPaint("paintChatActionBackground"));
+                    } else {
+                        canvas.drawPath(this.sideButtonPath1, getThemedPaint("paintChatActionBackground"));
+                        canvas.drawPath(this.sideButtonPath2, getThemedPaint("paintChatActionBackgroundSelected"));
+                    }
+                } else {
+                    canvas.drawRoundRect(this.rect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), getThemedPaint(this.sideButtonPressed ? "paintChatActionBackgroundSelected" : "paintChatActionBackground"));
+                }
+                if (hasGradientService()) {
+                    canvas.drawRoundRect(this.rect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Theme.chat_actionBackgroundGradientDarkenPaint);
+                }
+                int i2 = this.drawSideButton;
+                if (i2 == 2) {
+                    Drawable themedDrawable = getThemedDrawable("drawableGoIcon");
+                    BaseCell.setDrawableBounds(themedDrawable, (this.sideStartX + AndroidUtilities.dp(16.0f)) - (themedDrawable.getIntrinsicWidth() / 2.0f), (this.sideStartY + AndroidUtilities.dp(16.0f)) - (themedDrawable.getIntrinsicHeight() / 2.0f));
+                    themedDrawable.draw(canvas);
+                } else if (i2 == 4) {
+                    int dp8 = (int) (this.sideStartX + AndroidUtilities.dp(16.0f));
+                    int dp9 = (int) (this.sideStartY + AndroidUtilities.dp(16.0f));
+                    Drawable themedDrawable2 = getThemedDrawable("drawableCloseIcon");
+                    int intrinsicWidth = themedDrawable2.getIntrinsicWidth() / 2;
+                    int intrinsicHeight = themedDrawable2.getIntrinsicHeight() / 2;
+                    themedDrawable2.setBounds(dp8 - intrinsicWidth, dp9 - intrinsicHeight, intrinsicWidth + dp8, intrinsicHeight + dp9);
+                    BaseCell.setDrawableBounds(themedDrawable2, this.sideStartX + AndroidUtilities.dp(4.0f), this.sideStartY + AndroidUtilities.dp(4.0f));
+                    canvas.save();
+                    canvas.scale(0.65f, 0.65f, themedDrawable2.getBounds().centerX(), themedDrawable2.getBounds().centerY());
+                    themedDrawable2.draw(canvas);
+                    canvas.restore();
+                    if (this.drawSideButton2 == 5) {
+                        Drawable themedDrawable3 = getThemedDrawable("drawableMoreIcon");
+                        int intrinsicWidth2 = themedDrawable3.getIntrinsicWidth() / 2;
+                        int intrinsicHeight2 = themedDrawable3.getIntrinsicHeight() / 2;
+                        themedDrawable3.setBounds(dp8 - intrinsicWidth2, dp9 - intrinsicHeight2, dp8 + intrinsicWidth2, dp9 + intrinsicHeight2);
+                        BaseCell.setDrawableBounds(themedDrawable3, this.sideStartX + AndroidUtilities.dp(4.0f), this.sideStartY + AndroidUtilities.dp(34.0f));
+                        themedDrawable3.draw(canvas);
+                    }
+                } else {
+                    int dp10 = (int) (this.sideStartX + AndroidUtilities.dp(16.0f));
+                    int dp11 = (int) (this.sideStartY + AndroidUtilities.dp(16.0f));
+                    Drawable themedDrawable4 = getThemedDrawable("drawableShareIcon");
+                    int intrinsicWidth3 = themedDrawable4.getIntrinsicWidth() / 2;
+                    int intrinsicHeight3 = themedDrawable4.getIntrinsicHeight() / 2;
+                    themedDrawable4.setBounds(dp10 - intrinsicWidth3, dp11 - intrinsicHeight3, dp10 + intrinsicWidth3, dp11 + intrinsicHeight3);
+                    BaseCell.setDrawableBounds(themedDrawable4, this.sideStartX + AndroidUtilities.dp(4.0f), this.sideStartY + AndroidUtilities.dp(4.0f));
+                    themedDrawable4.draw(canvas);
+                }
+                if (i != -1) {
+                    canvas.restoreToCount(i);
                 }
             }
+        }
+    }
+
+    public void drawSummarizeButton(Canvas canvas) {
+        TLRPC.Message message;
+        this.summarizeButtonX = this.sideStartX;
+        this.summarizeButtonY = getPaddingTop() + AndroidUtilities.dp(8.0f);
+        float max = Math.max(Math.min((-this.childPosition2) + AndroidUtilities.dp(4.0f), this.sideStartY - AndroidUtilities.dp(42.0f)), this.summarizeButtonY);
+        this.summarizeButtonY = max;
+        if (this.drawSummarizeButton && this.sideButtonVisible) {
+            RectF rectF = this.rect;
+            float f = this.summarizeButtonX;
+            rectF.set(f, max, AndroidUtilities.dp(32.0f) + f, this.summarizeButtonY + AndroidUtilities.dp(32.0f));
+            applyServiceShaderMatrix();
+            canvas.drawRoundRect(this.rect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), getThemedPaint(this.sideButtonPressed ? "paintChatActionBackgroundSelected" : "paintChatActionBackground"));
+            if (hasGradientService()) {
+                canvas.drawRoundRect(this.rect, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Theme.chat_actionBackgroundGradientDarkenPaint);
+            }
+            if (this.summarizeIcon == null) {
+                this.summarizeIcon = new SummaryIcon(this);
+            }
+            MessageObject messageObject = getMessageObject();
+            this.summarizeIcon.set((messageObject == null || (message = messageObject.messageOwner) == null || !message.summarizedOpen) ? false : true);
+            BaseCell.setDrawableBounds(this.summarizeIcon, (this.summarizeButtonX + AndroidUtilities.dp(16.0f)) - (this.summarizeIcon.getIntrinsicWidth() / 2.0f), (this.summarizeButtonY + AndroidUtilities.dp(16.0f)) - (this.summarizeIcon.getIntrinsicHeight() / 2.0f));
+            this.summarizeIcon.draw(canvas);
         }
     }
 
