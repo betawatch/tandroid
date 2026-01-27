@@ -8,19 +8,19 @@ import java.util.function.IntConsumer;
 import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-abstract class z3 extends C3 implements j$.util.e0 {
+abstract class z3 extends C3 implements j$.util.f0 {
     protected abstract void e(Object obj);
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.S.d(this);
+        return j$.util.T.d(this);
     }
 
     protected abstract g3 h(int i);
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.S.e(this, i);
+        return j$.util.T.e(this, i);
     }
 
     @Override // j$.util.Spliterator
@@ -28,10 +28,10 @@ abstract class z3 extends C3 implements j$.util.e0 {
         throw new IllegalStateException();
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final boolean tryAdvance(Object obj) {
         Objects.requireNonNull(obj);
-        while (d() != B3.NO_MORE && ((j$.util.e0) this.a).tryAdvance(this)) {
+        while (d() != B3.NO_MORE && ((j$.util.f0) this.a).tryAdvance(this)) {
             if (b(1L) == 1) {
                 e(obj);
                 return true;
@@ -40,7 +40,7 @@ abstract class z3 extends C3 implements j$.util.e0 {
         return false;
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final void forEachRemaining(Object obj) {
         Objects.requireNonNull(obj);
         g3 g3Var = null;
@@ -59,7 +59,7 @@ abstract class z3 extends C3 implements j$.util.e0 {
                     g3Var.b = 0;
                 }
                 long j = 0;
-                while (((j$.util.e0) spliterator).tryAdvance(g3Var)) {
+                while (((j$.util.f0) spliterator).tryAdvance(g3Var)) {
                     j++;
                     if (j >= i) {
                         break;
@@ -71,7 +71,7 @@ abstract class z3 extends C3 implements j$.util.e0 {
                     g3Var.b(obj, b(j));
                 }
             } else {
-                ((j$.util.e0) spliterator).forEachRemaining(obj);
+                ((j$.util.f0) spliterator).forEachRemaining(obj);
                 return;
             }
         }

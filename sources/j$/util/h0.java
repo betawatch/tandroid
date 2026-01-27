@@ -1,71 +1,40 @@
 package j$.util;
 
+import j$.util.function.Consumer$-CC;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class h0 implements K, IntConsumer, y {
+final class h0 implements Iterator, Consumer {
     boolean a = false;
-    int b;
-    final /* synthetic */ Y c;
+    Object b;
+    final /* synthetic */ Spliterator c;
 
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.b(this, intConsumer);
+    public final /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // j$.util.P
-    public final void forEachRemaining(IntConsumer intConsumer) {
-        Objects.requireNonNull(intConsumer);
-        while (hasNext()) {
-            intConsumer.accept(nextInt());
-        }
+    h0(Spliterator spliterator) {
+        this.c = spliterator;
     }
 
-    @Override // java.util.Iterator
-    public final Integer next() {
-        if (v0.a) {
-            v0.a(h0.class, "{0} calling PrimitiveIterator.OfInt.nextInt()");
-            throw null;
-        }
-        return Integer.valueOf(nextInt());
-    }
-
-    @Override // j$.util.K, java.util.Iterator, j$.util.y
-    public final void forEachRemaining(Consumer consumer) {
-        if (consumer instanceof IntConsumer) {
-            forEachRemaining((IntConsumer) consumer);
-            return;
-        }
-        Objects.requireNonNull(consumer);
-        if (v0.a) {
-            v0.a(h0.class, "{0} calling PrimitiveIterator.OfInt.forEachRemainingInt(action::accept)");
-            throw null;
-        }
-        Objects.requireNonNull(consumer);
-        forEachRemaining((IntConsumer) new H(consumer));
-    }
-
-    h0(Y y) {
-        this.c = y;
-    }
-
-    @Override // java.util.function.IntConsumer
-    public final void accept(int i) {
+    @Override // java.util.function.Consumer
+    public final void accept(Object obj) {
         this.a = true;
-        this.b = i;
+        this.b = obj;
     }
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
         if (!this.a) {
-            this.c.tryAdvance((IntConsumer) this);
+            this.c.tryAdvance(this);
         }
         return this.a;
     }
 
-    @Override // j$.util.K
-    public final int nextInt() {
+    @Override // java.util.Iterator
+    public final Object next() {
         if (!this.a && !hasNext()) {
             throw new NoSuchElementException();
         }

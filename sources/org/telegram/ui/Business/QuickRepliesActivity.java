@@ -145,13 +145,16 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
             }
         });
         this.listView = universalRecyclerView;
-        universalRecyclerView.listenReorder(new Utilities.Callback2() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda13
+        universalRecyclerView.setSections();
+        this.listView.adapter.setApplyBackground(false);
+        this.listView.listenReorder(new Utilities.Callback2() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda13
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 QuickRepliesActivity.this.whenReordered(((Integer) obj).intValue(), (ArrayList) obj2);
             }
         });
         sizeNotifierFrameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
+        this.actionBar.setAdaptiveBackground(this.listView);
         this.fragmentView = sizeNotifierFrameLayout;
         return sizeNotifierFrameLayout;
     }
@@ -246,7 +249,7 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
     /* JADX INFO: Access modifiers changed from: private */
     public void onClick(UItem uItem, View view, int i, float f, float f2) {
         if (uItem.id == 1) {
-            openRenameReplyAlert(getContext(), this.currentAccount, null, null, getResourceProvider(), false, new Utilities.Callback() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda15
+            openRenameReplyAlert(getContext(), this.currentAccount, null, null, getResourceProvider(), false, new Utilities.Callback() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda14
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     QuickRepliesActivity.this.lambda$onClick$1((String) obj);
@@ -607,7 +610,7 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(textView.getAlpha(), bool.booleanValue() ? 1.0f : 0.0f);
         valueAnimatorArr[0] = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda14
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Business.QuickRepliesActivity$$ExternalSyntheticLambda15
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 QuickRepliesActivity.lambda$openRenameReplyAlert$3(textView, textView2, valueAnimator2);

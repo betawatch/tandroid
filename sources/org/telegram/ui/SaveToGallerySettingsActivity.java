@@ -143,7 +143,10 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
                 this.actionBar.setTitle(LocaleController.getString(R.string.SaveToGalleryChannels));
             }
         }
-        this.recyclerListView = new RecyclerListView(context);
+        RecyclerListView recyclerListView = new RecyclerListView(context);
+        this.recyclerListView = recyclerListView;
+        recyclerListView.setSections();
+        this.actionBar.setAdaptiveBackground(this.recyclerListView);
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
         defaultItemAnimator.setDurations(400L);
         defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -151,10 +154,10 @@ public class SaveToGallerySettingsActivity extends BaseFragment {
         defaultItemAnimator.setSupportsChangeAnimations(false);
         this.recyclerListView.setItemAnimator(defaultItemAnimator);
         this.recyclerListView.setLayoutManager(new LinearLayoutManager(context));
-        RecyclerListView recyclerListView = this.recyclerListView;
+        RecyclerListView recyclerListView2 = this.recyclerListView;
         Adapter adapter = new Adapter();
         this.adapter = adapter;
-        recyclerListView.setAdapter(adapter);
+        recyclerListView2.setAdapter(adapter);
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.SaveToGallerySettingsActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
             public /* synthetic */ boolean hasDoubleTap(View view, int i2) {

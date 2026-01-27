@@ -46,6 +46,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
     private final Drawable headerShadowDrawable;
     protected int headerTotalHeight;
     protected boolean ignoreTouchActionBar;
+    private float lastTop;
     protected LinearLayoutManager layoutManager;
     public NestedSizeNotifierLayout nestedSizeNotifierLayout;
     protected RecyclerListView recyclerListView;
@@ -88,6 +89,9 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
     }
 
     protected void onPreMeasure(int i, int i2) {
+    }
+
+    public void onSheetTop(float f) {
     }
 
     public void onViewCreated(FrameLayout frameLayout) {
@@ -690,8 +694,11 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
         if (this.showHandle && this.handleOffset) {
             i4 -= AndroidUtilities.dp(this.actionBarType == ActionBarType.SLIDING ? 8.0f : 16.0f);
         }
+        float f2 = i4;
+        this.lastTop = f2;
+        onSheetTop(f2);
         ActionBarType actionBarType = this.actionBarType;
-        float f2 = 1.0f;
+        float f3 = 1.0f;
         if (actionBarType == ActionBarType.FADING) {
             f = 1.0f - ((AndroidUtilities.dp(16.0f) + i4) / getActionBarProgressHeight());
             if (f < 0.0f) {
@@ -700,27 +707,27 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             AndroidUtilities.updateViewVisibilityAnimated(this.actionBar, f != 0.0f, 1.0f, this.wasDrawn);
         } else if (actionBarType == ActionBarType.SLIDING) {
             float max = Math.max((((i4 - this.headerMoveTop) + AndroidUtilities.dp(8.0f)) + this.headerPaddingTop) - AndroidUtilities.statusBarHeight, 0.0f);
-            float f3 = this.actionBarSlideProgress.set(max == 0.0f ? 1.0f : 0.0f);
-            if (f3 != 0.0f && f3 != 1.0f) {
+            float f4 = this.actionBarSlideProgress.set(max == 0.0f ? 1.0f : 0.0f);
+            if (f4 != 0.0f && f4 != 1.0f) {
                 canvas.save();
                 canvas.clipRect(0.0f, max, this.containerView.getMeasuredWidth(), this.containerView.getMeasuredHeight());
                 this.restore = true;
             }
-            this.shadowAlpha = f3;
-            f2 = AndroidUtilities.lerp(1.0f, 0.5f, f3);
-            this.actionBar.backButtonImageView.setAlpha(f3);
-            this.actionBar.backButtonImageView.setScaleX(f3);
+            this.shadowAlpha = f4;
+            f3 = AndroidUtilities.lerp(1.0f, 0.5f, f4);
+            this.actionBar.backButtonImageView.setAlpha(f4);
+            this.actionBar.backButtonImageView.setScaleX(f4);
             this.actionBar.backButtonImageView.setPivotY(r6.getMeasuredHeight() / 2.0f);
-            this.actionBar.backButtonImageView.setScaleY(f3);
+            this.actionBar.backButtonImageView.setScaleY(f4);
             SimpleTextView titleTextView = this.actionBar.getTitleTextView();
-            titleTextView.setTranslationX(AndroidUtilities.lerp(AndroidUtilities.dp(21.0f) - titleTextView.getLeft(), 0.0f, f3));
+            titleTextView.setTranslationX(AndroidUtilities.lerp(AndroidUtilities.dp(21.0f) - titleTextView.getLeft(), 0.0f, f4));
             if (this.centerTitle) {
                 titleTextView.setTranslationX(((this.actionBar.getMeasuredWidth() - titleTextView.getTextWidth()) / 2.0f) - titleTextView.getLeft());
             }
             this.actionBar.setTranslationY(max);
-            i4 -= AndroidUtilities.lerp(0, (((this.headerTotalHeight - this.headerHeight) - this.headerPaddingTop) - this.headerPaddingBottom) + AndroidUtilities.dp(13.0f), f3);
-            this.actionBar.getBackground().setBounds(0, AndroidUtilities.lerp(this.actionBar.getHeight(), 0, f3), this.actionBar.getWidth(), this.actionBar.getHeight());
-            if (f3 > 0.5f) {
+            i4 -= AndroidUtilities.lerp(0, (((this.headerTotalHeight - this.headerHeight) - this.headerPaddingTop) - this.headerPaddingBottom) + AndroidUtilities.dp(13.0f), f4);
+            this.actionBar.getBackground().setBounds(0, AndroidUtilities.lerp(this.actionBar.getHeight(), 0, f4), this.actionBar.getWidth(), this.actionBar.getHeight());
+            if (f4 > 0.5f) {
                 if (this.actionBarIgnoreTouchEvents) {
                     this.actionBarIgnoreTouchEvents = false;
                     this.actionBar.setTag(1);
@@ -729,7 +736,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                 this.actionBarIgnoreTouchEvents = true;
                 this.actionBar.setTag(null);
             }
-            f = f3;
+            f = f4;
         } else {
             f = 0.0f;
         }
@@ -740,15 +747,20 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                 this.shadowDrawable.setBounds(-AndroidUtilities.dp(6.0f), i4, view.getMeasuredWidth() + AndroidUtilities.dp(6.0f), view.getMeasuredHeight());
             }
             this.shadowDrawable.draw(canvas);
-            if (this.showHandle && f2 > 0.0f) {
+            if (this.showHandle && f3 > 0.0f) {
                 int dp = AndroidUtilities.dp(36.0f);
                 this.handleRect.set((view.getMeasuredWidth() - dp) / 2.0f, AndroidUtilities.dp(20.0f) + i4, (view.getMeasuredWidth() + dp) / 2.0f, r3 + AndroidUtilities.dp(4.0f));
                 Theme.dialogs_onlineCirclePaint.setColor(getThemedColor(Theme.key_sheet_scrollUp));
-                Theme.dialogs_onlineCirclePaint.setAlpha((int) (r14.getAlpha() * f2));
+                Theme.dialogs_onlineCirclePaint.setAlpha((int) (r14.getAlpha() * f3));
                 canvas.drawRoundRect(this.handleRect, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), Theme.dialogs_onlineCirclePaint);
             }
         }
         onPreDraw(canvas, i4, f);
+    }
+
+    @Override // org.telegram.ui.ActionBar.BottomSheet
+    protected void onContainerViewTranslation() {
+        onSheetTop(this.lastTop);
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, org.telegram.ui.ActionBar.BaseFragment.AttachedSheet

@@ -39,7 +39,7 @@ final class h0 extends j0 {
 
     @Override // j$.util.stream.j0, j$.util.stream.LongStream
     public final void forEach(LongConsumer longConsumer) {
-        j$.util.b0 Y;
+        j$.util.c0 Y;
         if (!isParallel()) {
             Y = j0.Y(S());
             Y.forEachRemaining(longConsumer);
@@ -50,7 +50,7 @@ final class h0 extends j0 {
 
     @Override // j$.util.stream.j0, j$.util.stream.LongStream
     public final void forEachOrdered(LongConsumer longConsumer) {
-        j$.util.b0 Y;
+        j$.util.c0 Y;
         if (!isParallel()) {
             Y = j0.Y(S());
             Y.forEachRemaining(longConsumer);

@@ -4821,6 +4821,7 @@ public class StarsController {
     public static class GiftsList implements IGiftsList {
         public Boolean chat_notifications_enabled;
         public int collectionId;
+        private long craftingGiftId;
         public final int currentAccount;
         public int currentRequestId;
         public final long dialogId;
@@ -4858,6 +4859,7 @@ public class StarsController {
             this.includeFlags = 783;
             this.gifts = new ArrayList();
             this.currentRequestId = -1;
+            this.craftingGiftId = 0L;
             this.currentAccount = i;
             this.dialogId = j;
             if (z) {
@@ -5029,42 +5031,57 @@ public class StarsController {
             }
         }
 
+        public void forCrafting(long j) {
+            this.craftingGiftId = j;
+        }
+
+        /* JADX WARN: Multi-variable type inference failed */
         @Override // org.telegram.ui.Stars.StarsController.IGiftsList
         public void load() {
+            TL_stars.getSavedStarGifts getsavedstargifts;
             if (this.loading || this.endReached) {
                 return;
             }
             final boolean z = this.lastOffset == null;
             this.loading = true;
-            TL_stars.getSavedStarGifts getsavedstargifts = new TL_stars.getSavedStarGifts();
-            getsavedstargifts.sort_by_value = !this.sort_by_date;
-            getsavedstargifts.exclude_unupgradable = !isInclude_limited();
-            getsavedstargifts.exclude_upgradable = !isInclude_upgradable();
-            getsavedstargifts.exclude_unlimited = !isInclude_unlimited();
-            getsavedstargifts.exclude_unique = !isInclude_unique();
-            getsavedstargifts.exclude_saved = !isInclude_displayed();
-            getsavedstargifts.exclude_unsaved = !isInclude_hidden();
-            getsavedstargifts.peer_color_available = this.peer_color_available;
-            if (this.dialogId == 0) {
-                getsavedstargifts.peer = new TLRPC.TL_inputPeerSelf();
+            if (this.craftingGiftId != 0) {
+                TL_stars.getCraftStarGifts getcraftstargifts = new TL_stars.getCraftStarGifts();
+                getcraftstargifts.gift_id = this.craftingGiftId;
+                getcraftstargifts.offset = z ? "" : this.lastOffset;
+                getcraftstargifts.limit = z ? 15 : 30;
+                getsavedstargifts = getcraftstargifts;
             } else {
-                getsavedstargifts.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.dialogId);
-            }
-            getsavedstargifts.offset = z ? "" : this.lastOffset;
-            getsavedstargifts.limit = z ? Math.max(MessagesController.getInstance(this.currentAccount).stargiftsPinnedToTopLimit, 15) : 30;
-            final int[] iArr = new int[1];
-            if (this.isCollection) {
-                getsavedstargifts.flags |= 64;
-                getsavedstargifts.collection_id = this.collectionId;
+                TL_stars.getSavedStarGifts getsavedstargifts2 = new TL_stars.getSavedStarGifts();
+                getsavedstargifts2.sort_by_value = !this.sort_by_date;
+                getsavedstargifts2.exclude_unupgradable = !isInclude_limited();
+                getsavedstargifts2.exclude_upgradable = !isInclude_upgradable();
+                getsavedstargifts2.exclude_unlimited = !isInclude_unlimited();
+                getsavedstargifts2.exclude_unique = !isInclude_unique();
+                getsavedstargifts2.exclude_saved = !isInclude_displayed();
+                getsavedstargifts2.exclude_unsaved = !isInclude_hidden();
+                getsavedstargifts2.peer_color_available = this.peer_color_available;
+                if (this.dialogId == 0) {
+                    getsavedstargifts2.peer = new TLRPC.TL_inputPeerSelf();
+                } else {
+                    getsavedstargifts2.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(this.dialogId);
+                }
+                getsavedstargifts2.offset = z ? "" : this.lastOffset;
+                getsavedstargifts2.limit = z ? Math.max(MessagesController.getInstance(this.currentAccount).stargiftsPinnedToTopLimit, 15) : 30;
+                getsavedstargifts = getsavedstargifts2;
+                if (this.isCollection) {
+                    getsavedstargifts2.flags |= 64;
+                    getsavedstargifts2.collection_id = this.collectionId;
+                    getsavedstargifts = getsavedstargifts2;
+                }
             }
             int sendRequest = ConnectionsManager.getInstance(this.currentAccount).sendRequest(getsavedstargifts, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    StarsController.GiftsList.this.lambda$load$1(iArr, z, tLObject, tL_error);
+                    StarsController.GiftsList.this.lambda$load$1(r2, z, tLObject, tL_error);
                 }
             });
             this.currentRequestId = sendRequest;
-            iArr[0] = sendRequest;
+            final int[] iArr = {sendRequest};
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -5100,6 +5117,14 @@ public class StarsController {
                 this.endReached = true;
             }
             NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.dialogId), this);
+        }
+
+        public void cancel() {
+            if (this.currentRequestId != -1) {
+                ConnectionsManager.getInstance(this.currentAccount).cancelRequest(this.currentRequestId, true);
+                this.currentRequestId = -1;
+            }
+            this.loading = false;
         }
 
         public ArrayList getPinned() {

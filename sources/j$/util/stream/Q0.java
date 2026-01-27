@@ -32,7 +32,7 @@ final class Q0 extends T0 implements C0 {
     }
 
     @Override // j$.util.stream.I0
-    public final j$.util.e0 spliterator() {
+    public final j$.util.f0 spliterator() {
         return new h1(this);
     }
 }

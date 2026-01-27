@@ -33,7 +33,7 @@ final class f0 extends h2 {
                 if (!z) {
                     longStream.sequential().forEach(c0Var);
                 } else {
-                    j$.util.b0 spliterator = longStream.sequential().spliterator();
+                    j$.util.c0 spliterator = longStream.sequential().spliterator();
                     while (!this.a.n() && spliterator.tryAdvance((LongConsumer) c0Var)) {
                     }
                 }

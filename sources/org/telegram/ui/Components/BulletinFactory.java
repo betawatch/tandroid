@@ -61,6 +61,9 @@ public final class BulletinFactory {
     }
 
     public static BulletinFactory of(BaseFragment baseFragment) {
+        if (baseFragment == null) {
+            return global();
+        }
         return new BulletinFactory(baseFragment);
     }
 

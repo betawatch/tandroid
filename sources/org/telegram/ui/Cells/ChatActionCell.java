@@ -132,6 +132,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     private static Map monthsToEmoticon;
     private int TAG;
     private SpannableStringBuilder accessibilityText;
+    private boolean actionPressed;
     private int adaptiveEmojiColor;
     private ColorFilter adaptiveEmojiColorFilter;
     private AnimatedEmojiSpan.EmojiGroupedSpans animatedEmojiStack;
@@ -217,6 +218,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     private ArrayList lineWidths;
     private LoadingDrawable loadingDrawable;
     private boolean offerExpired;
+    private View.OnClickListener onActionClick;
     private int overriddenMaxWidth;
     private int overrideBackground;
     private Paint overrideBackgroundPaint;
@@ -1415,9 +1417,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         invalidate();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:134:0x04be  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x04c4  */
-    /* JADX WARN: Removed duplicated region for block: B:138:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x052b  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x0531  */
+    /* JADX WARN: Removed duplicated region for block: B:156:? A[RETURN, SYNTHETIC] */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1433,9 +1435,28 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         boolean z2;
         TLRPC.Message message2;
         int i;
-        boolean z3 = true;
         MessageObject messageObject = this.currentMessageObject;
+        float x = motionEvent.getX() - (this.sideMenuWidth / 2.0f);
+        this.lastTouchX = x;
+        float y = motionEvent.getY() + getPaddingTop();
+        this.lastTouchY = y;
+        boolean z3 = true;
         if (messageObject == null) {
+            if (this.onActionClick != null) {
+                if (motionEvent.getAction() == 0) {
+                    if (x >= this.backgroundLeft && x <= this.backgroundRight) {
+                        this.actionPressed = true;
+                        return true;
+                    }
+                } else if (this.actionPressed) {
+                    if (motionEvent.getAction() == 1) {
+                        this.onActionClick.onClick(this);
+                        this.actionPressed = false;
+                    } else if (motionEvent.getAction() == 3) {
+                        this.actionPressed = false;
+                    }
+                }
+            }
             return super.onTouchEvent(motionEvent);
         }
         TopicSeparator topicSeparator = this.topicSeparator;
@@ -1449,10 +1470,6 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         if ((this.starGiftLayout.has() && this.starGiftLayout.onTouchEvent(this.starGiftLayoutX, this.starGiftLayoutY, motionEvent)) || this.reactionsLayoutInBubble.checkTouchEvent(motionEvent)) {
             return true;
         }
-        float x = motionEvent.getX() - (this.sideMenuWidth / 2.0f);
-        this.lastTouchX = x;
-        float y = motionEvent.getY() + getPaddingTop();
-        this.lastTouchY = y;
         if (motionEvent.getAction() == 0) {
             if (this.delegate != null) {
                 if ((messageObject.type == 11 || isButtonLayout(messageObject)) && this.imageReceiver.isInsideImage(x, y)) {
@@ -1503,150 +1520,168 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             if (motionEvent.getAction() != 2) {
                 cancelCheckLongPress();
             }
-            if (this.textPressed) {
-                int action = motionEvent.getAction();
-                if (action == 1) {
-                    View view2 = this.rippleView;
-                    this.textPressed = false;
-                    view2.setPressed(false);
-                    this.bounce.setPressed(false);
-                    if (this.delegate != null && messageObject.replyMessageObject != null && (message = messageObject.messageOwner) != null && TlUtils.isInstance(message.action, TLRPC.TL_messageActionTodoAppendTasks.class, TLRPC.TL_messageActionTodoCompletions.class, TLRPC.TL_messageActionSuggestedPostApproval.class, TLRPC.TL_messageActionSuggestedPostRefund.class, TLRPC.TL_messageActionSuggestedPostSuccess.class)) {
-                        this.delegate.didPressReplyMessage(this, this.currentMessageObject.getReplyMsgId());
-                    } else {
-                        if (this.giftPremiumTextCollapsed && !this.giftPremiumTextUncollapsed && (textLayout2 = this.giftPremiumText) != null) {
-                            int height = textLayout2.layout.getHeight() - this.giftPremiumTextCollapsedHeight;
-                            this.giftPremiumTextUncollapsed = true;
-                            ChatActionCellDelegate chatActionCellDelegate = this.delegate;
-                            if (chatActionCellDelegate != null) {
-                                chatActionCellDelegate.forceUpdate(this, false);
-                                if (getParent() instanceof RecyclerListView) {
-                                    ((RecyclerListView) getParent()).smoothScrollBy(0, height + AndroidUtilities.dp(24.0f));
-                                }
-                            }
-                            return true;
-                        }
-                        if (this.birthdayLayout != null && this.backgroundRect.contains(motionEvent.getX(), motionEvent.getY())) {
-                            this.birthdayLayout.open();
-                            return true;
-                        }
+            if (this.actionPressed) {
+                if (motionEvent.getAction() == 2) {
+                    if (x < this.backgroundLeft || x > this.backgroundRight) {
+                        z = false;
+                        this.actionPressed = false;
                     }
-                } else if (action == 2) {
-                    TextLayout textLayout4 = this.giftPremiumText;
-                    if (textLayout4 == null || !this.giftPremiumTextCollapsed) {
-                        this.textPressed = false;
-                    } else {
-                        RectF rectF2 = AndroidUtilities.rectTmp;
-                        float f2 = textLayout4.x;
-                        rectF2.set(f2, textLayout4.y, textLayout4.layout.getWidth() + f2, this.giftPremiumText.y + r10.layout.getHeight());
-                        if (!rectF2.contains(x, y)) {
-                            this.textPressed = false;
-                        }
+                } else if (motionEvent.getAction() == 1) {
+                    View.OnClickListener onClickListener = this.onActionClick;
+                    if (onClickListener != null) {
+                        onClickListener.onClick(this);
                     }
-                    z = true;
-                } else if (action == 3) {
-                    this.textPressed = false;
-                    this.bounce.setPressed(false);
+                    this.actionPressed = false;
+                } else if (motionEvent.getAction() == 3) {
+                    this.actionPressed = false;
                 }
-            } else if (this.giftButtonPressed) {
-                int action2 = motionEvent.getAction();
-                if (action2 == 1) {
-                    this.imagePressed = false;
-                    View view3 = this.rippleView;
-                    this.giftButtonPressed = false;
-                    view3.setPressed(false);
-                    this.bounce.setPressed(false);
-                    if (this.delegate != null) {
-                        int i2 = messageObject.type;
-                        if (i2 == 31) {
-                            playSoundEffect(0);
-                            openStarsGiftTransaction();
-                        } else if (i2 == 25) {
-                            playSoundEffect(0);
-                            openPremiumGiftChannel();
-                        } else if (i2 == 18) {
-                            playSoundEffect(0);
-                            openPremiumGiftPreview();
-                        } else if (i2 == 30) {
-                            playSoundEffect(0);
-                            openStarsGiftTransaction();
+                z = false;
+            } else {
+                if (this.textPressed) {
+                    int action = motionEvent.getAction();
+                    if (action == 1) {
+                        View view2 = this.rippleView;
+                        this.textPressed = false;
+                        view2.setPressed(false);
+                        this.bounce.setPressed(false);
+                        if (this.delegate != null && messageObject.replyMessageObject != null && (message = messageObject.messageOwner) != null && TlUtils.isInstance(message.action, TLRPC.TL_messageActionTodoAppendTasks.class, TLRPC.TL_messageActionTodoCompletions.class, TLRPC.TL_messageActionSuggestedPostApproval.class, TLRPC.TL_messageActionSuggestedPostRefund.class, TLRPC.TL_messageActionSuggestedPostSuccess.class)) {
+                            this.delegate.didPressReplyMessage(this, this.currentMessageObject.getReplyMsgId());
                         } else {
-                            TLRPC.Message message3 = messageObject.messageOwner;
-                            if (message3 != null) {
-                                TLRPC.MessageAction messageAction = message3.action;
-                                if ((messageAction instanceof TLRPC.TL_messageActionSuggestedPostApproval) && ((TLRPC.TL_messageActionSuggestedPostApproval) messageAction).balance_too_low) {
-                                    playSoundEffect(0);
-                                    openStarsNeedSheet();
+                            if (this.giftPremiumTextCollapsed && !this.giftPremiumTextUncollapsed && (textLayout2 = this.giftPremiumText) != null) {
+                                int height = textLayout2.layout.getHeight() - this.giftPremiumTextCollapsedHeight;
+                                this.giftPremiumTextUncollapsed = true;
+                                ChatActionCellDelegate chatActionCellDelegate = this.delegate;
+                                if (chatActionCellDelegate != null) {
+                                    chatActionCellDelegate.forceUpdate(this, false);
+                                    if (getParent() instanceof RecyclerListView) {
+                                        ((RecyclerListView) getParent()).smoothScrollBy(0, height + AndroidUtilities.dp(24.0f));
+                                    }
                                 }
+                                return true;
                             }
-                            if (MessagesController.getInstance(this.currentAccount).photoSuggestion.get(messageObject.messageOwner.local_id) == null) {
-                                if (this.buttonClickableAsImage) {
-                                    this.delegate.didClickImage(this);
-                                } else {
-                                    this.delegate.didClickButton(this);
-                                }
+                            if (this.birthdayLayout != null && this.backgroundRect.contains(motionEvent.getX(), motionEvent.getY())) {
+                                this.birthdayLayout.open();
+                                return true;
                             }
                         }
-                    }
-                } else if (action2 != 2) {
-                    if (action2 == 3) {
-                        this.imagePressed = false;
-                        View view4 = this.rippleView;
-                        this.giftButtonPressed = false;
-                        view4.setPressed(false);
+                    } else if (action == 2) {
+                        TextLayout textLayout4 = this.giftPremiumText;
+                        if (textLayout4 == null || !this.giftPremiumTextCollapsed) {
+                            this.textPressed = false;
+                        } else {
+                            RectF rectF2 = AndroidUtilities.rectTmp;
+                            float f2 = textLayout4.x;
+                            rectF2.set(f2, textLayout4.y, textLayout4.layout.getWidth() + f2, this.giftPremiumText.y + r10.layout.getHeight());
+                            if (!rectF2.contains(x, y)) {
+                                this.textPressed = false;
+                            }
+                        }
+                        z = true;
+                    } else if (action == 3) {
+                        this.textPressed = false;
                         this.bounce.setPressed(false);
                     }
-                } else if (!isButtonLayout(messageObject) || (!this.giftButtonRect.contains(x, y) && !this.backgroundRect.contains(x, y))) {
-                    View view5 = this.rippleView;
-                    this.giftButtonPressed = false;
-                    view5.setPressed(false);
-                    this.bounce.setPressed(false);
-                }
-            } else if (this.imagePressed) {
-                int action3 = motionEvent.getAction();
-                if (action3 == 1) {
-                    this.imagePressed = false;
-                    if (this.giftPremiumTextCollapsed && !this.giftPremiumTextUncollapsed && (textLayout = this.giftPremiumText) != null) {
-                        int height2 = textLayout.layout.getHeight() - this.giftPremiumTextCollapsedHeight;
-                        this.giftPremiumTextUncollapsed = true;
-                        ChatActionCellDelegate chatActionCellDelegate2 = this.delegate;
-                        if (chatActionCellDelegate2 != null) {
-                            chatActionCellDelegate2.forceUpdate(this, false);
-                            if (getParent() instanceof RecyclerListView) {
-                                ((RecyclerListView) getParent()).smoothScrollBy(0, height2 + AndroidUtilities.dp(16.0f));
+                } else if (this.giftButtonPressed) {
+                    int action2 = motionEvent.getAction();
+                    if (action2 == 1) {
+                        this.imagePressed = false;
+                        View view3 = this.rippleView;
+                        this.giftButtonPressed = false;
+                        view3.setPressed(false);
+                        this.bounce.setPressed(false);
+                        if (this.delegate != null) {
+                            int i2 = messageObject.type;
+                            if (i2 == 31) {
+                                playSoundEffect(0);
+                                openStarsGiftTransaction();
+                            } else if (i2 == 25) {
+                                playSoundEffect(0);
+                                openPremiumGiftChannel();
+                            } else if (i2 == 18) {
+                                playSoundEffect(0);
+                                openPremiumGiftPreview();
+                            } else if (i2 == 30) {
+                                playSoundEffect(0);
+                                openStarsGiftTransaction();
+                            } else {
+                                TLRPC.Message message3 = messageObject.messageOwner;
+                                if (message3 != null) {
+                                    TLRPC.MessageAction messageAction = message3.action;
+                                    if ((messageAction instanceof TLRPC.TL_messageActionSuggestedPostApproval) && ((TLRPC.TL_messageActionSuggestedPostApproval) messageAction).balance_too_low) {
+                                        playSoundEffect(0);
+                                        openStarsNeedSheet();
+                                    }
+                                }
+                                if (MessagesController.getInstance(this.currentAccount).photoSuggestion.get(messageObject.messageOwner.local_id) == null) {
+                                    if (this.buttonClickableAsImage) {
+                                        this.delegate.didClickImage(this);
+                                    } else {
+                                        this.delegate.didClickButton(this);
+                                    }
+                                }
                             }
                         }
-                        return true;
-                    }
-                    int i3 = messageObject.type;
-                    if (i3 == 31) {
-                        openStarsGiftTransaction();
-                    } else if (i3 == 25) {
-                        openPremiumGiftChannel();
-                    } else if (i3 == 18) {
-                        openPremiumGiftPreview();
-                    } else if (i3 == 30) {
-                        openStarsGiftTransaction();
-                    } else if (this.delegate != null) {
-                        if (i3 == 21 && (imageUpdater = MessagesController.getInstance(this.currentAccount).photoSuggestion.get(messageObject.messageOwner.local_id)) != null) {
-                            imageUpdater.cancel();
-                        } else {
-                            this.delegate.didClickImage(this);
-                            playSoundEffect(0);
+                    } else if (action2 != 2) {
+                        if (action2 == 3) {
+                            this.imagePressed = false;
+                            View view4 = this.rippleView;
+                            this.giftButtonPressed = false;
+                            view4.setPressed(false);
+                            this.bounce.setPressed(false);
                         }
+                    } else if (!isButtonLayout(messageObject) || (!this.giftButtonRect.contains(x, y) && !this.backgroundRect.contains(x, y))) {
+                        View view5 = this.rippleView;
+                        this.giftButtonPressed = false;
+                        view5.setPressed(false);
+                        this.bounce.setPressed(false);
                     }
-                } else if (action3 != 2) {
-                    if (action3 == 3) {
+                } else if (this.imagePressed) {
+                    int action3 = motionEvent.getAction();
+                    if (action3 == 1) {
+                        this.imagePressed = false;
+                        if (this.giftPremiumTextCollapsed && !this.giftPremiumTextUncollapsed && (textLayout = this.giftPremiumText) != null) {
+                            int height2 = textLayout.layout.getHeight() - this.giftPremiumTextCollapsedHeight;
+                            this.giftPremiumTextUncollapsed = true;
+                            ChatActionCellDelegate chatActionCellDelegate2 = this.delegate;
+                            if (chatActionCellDelegate2 != null) {
+                                chatActionCellDelegate2.forceUpdate(this, false);
+                                if (getParent() instanceof RecyclerListView) {
+                                    ((RecyclerListView) getParent()).smoothScrollBy(0, height2 + AndroidUtilities.dp(16.0f));
+                                }
+                            }
+                            return true;
+                        }
+                        int i3 = messageObject.type;
+                        if (i3 == 31) {
+                            openStarsGiftTransaction();
+                        } else if (i3 == 25) {
+                            openPremiumGiftChannel();
+                        } else if (i3 == 18) {
+                            openPremiumGiftPreview();
+                        } else if (i3 == 30) {
+                            openStarsGiftTransaction();
+                        } else if (this.delegate != null) {
+                            if (i3 == 21 && (imageUpdater = MessagesController.getInstance(this.currentAccount).photoSuggestion.get(messageObject.messageOwner.local_id)) != null) {
+                                imageUpdater.cancel();
+                            } else {
+                                this.delegate.didClickImage(this);
+                                playSoundEffect(0);
+                            }
+                        }
+                    } else if (action3 != 2) {
+                        if (action3 == 3) {
+                            this.imagePressed = false;
+                        }
+                    } else if (isNewStyleButtonLayout()) {
+                        if (!this.backgroundRect.contains(x, y)) {
+                            this.imagePressed = false;
+                        }
+                    } else if (!this.imageReceiver.isInsideImage(x, y)) {
                         this.imagePressed = false;
                     }
-                } else if (isNewStyleButtonLayout()) {
-                    if (!this.backgroundRect.contains(x, y)) {
-                        this.imagePressed = false;
-                    }
-                } else if (!this.imageReceiver.isInsideImage(x, y)) {
-                    this.imagePressed = false;
                 }
+                z = false;
             }
-            z = false;
         }
         if (!z && (motionEvent.getAction() == 0 || ((this.pressedLink != null || this.spoilerPressed != null) && motionEvent.getAction() == 1))) {
             TextLayout textLayout5 = this.giftPremiumText;
@@ -1687,7 +1722,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             if (!z && (staticLayout = this.textLayout) != null) {
                 if (x >= this.textX) {
                     float f3 = this.textY;
-                    if (y >= f3 && x <= r3 + this.textWidth && y <= r4 + this.textHeight) {
+                    if (y >= f3 && x <= r3 + this.textWidth && y <= r7 + this.textHeight) {
                         float f4 = y - f3;
                         float f5 = x - this.textXLeft;
                         if (!z) {
@@ -1779,6 +1814,10 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             return UserObject.isUserSelf(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.currentMessageObject.messageOwner.from_id.user_id)));
         }
         return false;
+    }
+
+    public void setOnActionClickListener(View.OnClickListener onClickListener) {
+        this.onActionClick = onClickListener;
     }
 
     private boolean isGiftCode() {
@@ -2859,6 +2898,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
     private void createGiftPremiumLayouts(CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, CharSequence charSequence4, boolean z, CharSequence charSequence5, int i, CharSequence charSequence6, int i2, boolean z2, boolean z3) {
         ?? r6;
         int i3;
+        boolean z4;
         int cutInFancyHalf;
         int i4;
         CharSequence charSequence7 = charSequence4;
@@ -2943,11 +2983,14 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         if (charSequence5 != null) {
             SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(charSequence5);
             valueOf2.setSpan(new TypefaceSpan(AndroidUtilities.bold()), i3, valueOf2.length(), 33);
-            StaticLayout staticLayout = new StaticLayout(valueOf2, (TextPaint) getThemedPaint("paintChatActionText"), dp, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+            int i5 = dp;
+            z4 = false;
+            StaticLayout staticLayout = new StaticLayout(valueOf2, (TextPaint) getThemedPaint("paintChatActionText"), i5, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
             this.giftPremiumButtonLayout = staticLayout;
             this.buttonClickableAsImage = z2 && !this.giftPremiumTextCollapsed;
             this.giftPremiumButtonWidth = measureLayoutWidth(staticLayout);
         } else {
+            z4 = false;
             this.giftPremiumButtonLayout = r6;
             this.buttonClickableAsImage = false;
             this.giftPremiumButtonWidth = 0.0f;
@@ -2959,7 +3002,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             if (this.giftRibbonPath == null) {
                 Path path = new Path();
                 this.giftRibbonPath = path;
-                GiftSheet.RibbonDrawable.fillRibbonPath(path, 1.35f);
+                GiftSheet.RibbonDrawable.fillRibbonPath(path, 1.35f, z4);
             }
             Text text2 = new Text(charSequence6, i, AndroidUtilities.bold());
             this.giftRibbonText = text2;

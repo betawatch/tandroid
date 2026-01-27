@@ -221,38 +221,19 @@ public class ChangeUsernameActivity extends BaseFragment {
             }
         }
         this.fragmentView = new FrameLayout(context);
-        this.listView = new RecyclerListView(context) { // from class: org.telegram.ui.ChangeUsernameActivity.2
-            private Paint backgroundPaint = new Paint(1);
-
-            @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
-            protected void dispatchDraw(Canvas canvas) {
-                int childAdapterPosition;
-                int size = ChangeUsernameActivity.this.usernames.size() + 3;
-                int i4 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                int i5 = TLObject.FLAG_31;
-                for (int i6 = 0; i6 < getChildCount(); i6++) {
-                    View childAt = getChildAt(i6);
-                    if (childAt != null && (childAdapterPosition = getChildAdapterPosition(childAt)) >= 4 && childAdapterPosition <= size) {
-                        i4 = Math.min(childAt.getTop(), i4);
-                        i5 = Math.max(childAt.getBottom(), i5);
-                    }
-                }
-                if (i4 < i5) {
-                    this.backgroundPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider));
-                    canvas.drawRect(0.0f, i4, getWidth(), i5, this.backgroundPaint);
-                }
-                super.dispatchDraw(canvas);
-            }
-        };
+        RecyclerListView recyclerListView = new RecyclerListView(context);
+        this.listView = recyclerListView;
+        recyclerListView.setSections();
+        this.actionBar.setAdaptiveBackground(this.listView);
         this.fragmentView.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
-        RecyclerListView recyclerListView = this.listView;
+        RecyclerListView recyclerListView2 = this.listView;
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         this.layoutManager = linearLayoutManager;
-        recyclerListView.setLayoutManager(linearLayoutManager);
-        RecyclerListView recyclerListView2 = this.listView;
+        recyclerListView2.setLayoutManager(linearLayoutManager);
+        RecyclerListView recyclerListView3 = this.listView;
         Adapter adapter = new Adapter();
         this.adapter = adapter;
-        recyclerListView2.setAdapter(adapter);
+        recyclerListView3.setAdapter(adapter);
         this.listView.setSelectorDrawableColor(getThemedColor(Theme.key_listSelector));
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new TouchHelperCallback());
         this.itemTouchHelper = itemTouchHelper;
@@ -266,7 +247,7 @@ public class ChangeUsernameActivity extends BaseFragment {
                 return lambda$createView$0;
             }
         });
-        this.listView.setOnItemClickListener(new 3());
+        this.listView.setOnItemClickListener(new 2());
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChangeUsernameActivity$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
@@ -276,8 +257,8 @@ public class ChangeUsernameActivity extends BaseFragment {
         return this.fragmentView;
     }
 
-    class 3 implements RecyclerListView.OnItemClickListener {
-        3() {
+    class 2 implements RecyclerListView.OnItemClickListener {
+        2() {
         }
 
         @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
@@ -293,12 +274,12 @@ public class ChangeUsernameActivity extends BaseFragment {
                     ChangeUsernameActivity.this.focusUsernameField(true);
                     return;
                 } else {
-                    new AlertDialog.Builder(ChangeUsernameActivity.this.getContext(), ChangeUsernameActivity.this.getResourceProvider()).setTitle(LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLink : R.string.UsernameActivateLink)).setMessage(LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLinkProfileMessage : R.string.UsernameActivateLinkProfileMessage)).setPositiveButton(LocaleController.getString(tL_username.active ? R.string.Hide : R.string.Show), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChangeUsernameActivity$3$$ExternalSyntheticLambda0
+                    new AlertDialog.Builder(ChangeUsernameActivity.this.getContext(), ChangeUsernameActivity.this.getResourceProvider()).setTitle(LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLink : R.string.UsernameActivateLink)).setMessage(LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLinkProfileMessage : R.string.UsernameActivateLinkProfileMessage)).setPositiveButton(LocaleController.getString(tL_username.active ? R.string.Hide : R.string.Show), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChangeUsernameActivity$2$$ExternalSyntheticLambda0
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i2) {
-                            ChangeUsernameActivity.3.this.lambda$onItemClick$3(tL_username, i, view, alertDialog, i2);
+                            ChangeUsernameActivity.2.this.lambda$onItemClick$3(tL_username, i, view, alertDialog, i2);
                         }
-                    }).setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChangeUsernameActivity$3$$ExternalSyntheticLambda1
+                    }).setNegativeButton(LocaleController.getString(R.string.Cancel), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChangeUsernameActivity$2$$ExternalSyntheticLambda1
                         @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                         public final void onClick(AlertDialog alertDialog, int i2) {
                             alertDialog.dismiss();
@@ -331,10 +312,10 @@ public class ChangeUsernameActivity extends BaseFragment {
                 toggleusername3.active = z2;
                 toggleusername = toggleusername3;
             }
-            ChangeUsernameActivity.this.getConnectionsManager().sendRequest(toggleusername, new RequestDelegate() { // from class: org.telegram.ui.ChangeUsernameActivity$3$$ExternalSyntheticLambda2
+            ChangeUsernameActivity.this.getConnectionsManager().sendRequest(toggleusername, new RequestDelegate() { // from class: org.telegram.ui.ChangeUsernameActivity$2$$ExternalSyntheticLambda2
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    ChangeUsernameActivity.3.this.lambda$onItemClick$2(str, i, z2, tL_username, z, tLObject, tL_error);
+                    ChangeUsernameActivity.2.this.lambda$onItemClick$2(str, i, z2, tL_username, z, tLObject, tL_error);
                 }
             });
             ChangeUsernameActivity.this.loadingUsernames.add(tL_username.username);
@@ -343,10 +324,10 @@ public class ChangeUsernameActivity extends BaseFragment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemClick$2(final String str, final int i, final boolean z, final TLRPC.TL_username tL_username, final boolean z2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChangeUsernameActivity$3$$ExternalSyntheticLambda3
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChangeUsernameActivity$2$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChangeUsernameActivity.3.this.lambda$onItemClick$1(str, tLObject, i, z, tL_error, tL_username, z2);
+                    ChangeUsernameActivity.2.this.lambda$onItemClick$1(str, tLObject, i, z, tL_error, tL_username, z2);
                 }
             });
         }
@@ -360,10 +341,10 @@ public class ChangeUsernameActivity extends BaseFragment {
             } else if (tL_error != null && "USERNAMES_ACTIVE_TOO_MUCH".equals(tL_error.text)) {
                 tL_username.active = z;
                 ChangeUsernameActivity.this.toggleUsername(i, z);
-                new AlertDialog.Builder(ChangeUsernameActivity.this.getContext(), ChangeUsernameActivity.this.getResourceProvider()).setTitle(LocaleController.getString(R.string.UsernameActivateErrorTitle)).setMessage(LocaleController.getString(R.string.UsernameActivateErrorMessage)).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChangeUsernameActivity$3$$ExternalSyntheticLambda4
+                new AlertDialog.Builder(ChangeUsernameActivity.this.getContext(), ChangeUsernameActivity.this.getResourceProvider()).setTitle(LocaleController.getString(R.string.UsernameActivateErrorTitle)).setMessage(LocaleController.getString(R.string.UsernameActivateErrorMessage)).setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChangeUsernameActivity$2$$ExternalSyntheticLambda4
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i2) {
-                        ChangeUsernameActivity.3.this.lambda$onItemClick$0(tL_username, z2, alertDialog, i2);
+                        ChangeUsernameActivity.2.this.lambda$onItemClick$0(tL_username, z2, alertDialog, i2);
                     }
                 }).show();
             } else {
@@ -524,13 +505,13 @@ public class ChangeUsernameActivity extends BaseFragment {
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
             if (i == 0) {
-                HeaderCell headerCell = new HeaderCell(ChangeUsernameActivity.this.getContext());
-                headerCell.setBackgroundColor(ChangeUsernameActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
-                return new RecyclerListView.Holder(headerCell);
+                return new RecyclerListView.Holder(new HeaderCell(ChangeUsernameActivity.this.getContext()));
             }
             if (i == 1) {
                 ChangeUsernameActivity changeUsernameActivity = ChangeUsernameActivity.this;
-                return new RecyclerListView.Holder(changeUsernameActivity.new UsernameHelpCell(changeUsernameActivity.getContext()));
+                UsernameHelpCell usernameHelpCell = changeUsernameActivity.new UsernameHelpCell(changeUsernameActivity.getContext());
+                usernameHelpCell.setTag(-33024);
+                return new RecyclerListView.Holder(usernameHelpCell);
             }
             if (i == 2) {
                 return new RecyclerListView.Holder(new TextInfoPrivacyCell(ChangeUsernameActivity.this.getContext()));
@@ -563,7 +544,6 @@ public class ChangeUsernameActivity extends BaseFragment {
             }
             if (itemViewType == 2) {
                 ((TextInfoPrivacyCell) viewHolder.itemView).setText(LocaleController.getString(ChangeUsernameActivity.this.botId != 0 ? R.string.BotUsernamesHelp : R.string.UsernamesProfileHelp));
-                ((TextInfoPrivacyCell) viewHolder.itemView).setBackgroundDrawable(Theme.getThemedDrawableByKey(ChangeUsernameActivity.this.getContext(), R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                 return;
             }
             if (itemViewType == 3) {
@@ -712,7 +692,6 @@ public class ChangeUsernameActivity extends BaseFragment {
             super(context);
             ChangeUsernameActivity.this.helpCell = this;
             setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(17.0f));
-            setBackgroundDrawable(Theme.getThemedDrawableByKey(context, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
             setClipChildren(false);
             LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
             this.text1View = linksTextView;
@@ -931,7 +910,6 @@ public class ChangeUsernameActivity extends BaseFragment {
             linearLayout.addView(this.tme, LayoutHelper.createLinear(-2, -2, 0.0f, 16, 21, 15, 0, 15));
             linearLayout.addView(this.field, LayoutHelper.createLinear(-2, -2, 1.0f, 16, 0, 15, 21, 15));
             addView(linearLayout, LayoutHelper.createFrame(-1, -1, 48));
-            setBackgroundColor(ChangeUsernameActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
             if (ChangeUsernameActivity.this.botId != 0) {
                 this.field.setAlpha(0.6f);
                 this.tme.setAlpha(0.6f);
@@ -1642,7 +1620,6 @@ public class ChangeUsernameActivity extends BaseFragment {
     public ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundWhite));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));

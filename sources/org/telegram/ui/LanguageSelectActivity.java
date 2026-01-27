@@ -2,7 +2,6 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
@@ -64,7 +63,6 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
     private boolean searchWas;
     private boolean searching;
     private ArrayList sortedLanguages;
-    private int translateSettingsBackgroundHeight;
     private ArrayList unofficialLanguages;
     private int settingsFromPosition = -1;
     private int settingsToPosition = -1;
@@ -152,25 +150,15 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         this.emptyView.showTextView();
         this.emptyView.setShowAtCenter(true);
         frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1.0f));
-        RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.LanguageSelectActivity.3
-            @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
-            protected void dispatchDraw(Canvas canvas) {
-                if (getAdapter() == LanguageSelectActivity.this.listAdapter && getItemAnimator() != null && getItemAnimator().isRunning()) {
-                    int color = Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider);
-                    drawItemBackground(canvas, 0, LanguageSelectActivity.this.translateSettingsBackgroundHeight, color);
-                    if (LanguageSelectActivity.this.settingsFromPosition != -1 && LanguageSelectActivity.this.settingsToPosition != -1) {
-                        drawSectionBackground(canvas, LanguageSelectActivity.this.settingsFromPosition, LanguageSelectActivity.this.settingsToPosition, color);
-                    }
-                }
-                super.dispatchDraw(canvas);
-            }
-        };
+        RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
-        recyclerListView.setEmptyView(this.emptyView);
+        recyclerListView.setSections();
+        this.actionBar.setAdaptiveBackground(this.listView);
+        this.listView.setEmptyView(this.emptyView);
         this.listView.setLayoutManager(new LinearLayoutManager(context, 1, false));
         this.listView.setVerticalScrollBarEnabled(false);
         this.listView.setAdapter(this.listAdapter);
-        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.LanguageSelectActivity.4
+        DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.LanguageSelectActivity.3
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
             protected void onMoveAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
                 LanguageSelectActivity.this.listView.invalidate();
@@ -196,7 +184,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                 return lambda$createView$6;
             }
         });
-        this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.LanguageSelectActivity.5
+        this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.LanguageSelectActivity.4
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 if (i == 1) {
@@ -682,16 +670,12 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             View textRadioCell;
             if (i == 0) {
                 textRadioCell = new TextRadioCell(this.mContext);
-                textRadioCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 2) {
                 textRadioCell = new TextCheckCell(this.mContext);
-                textRadioCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 3) {
                 textRadioCell = new HeaderCell(this.mContext);
-                textRadioCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 4 || i == 5) {
                 textRadioCell = new TextSettingsCell(this.mContext);
-                textRadioCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 6) {
                 textRadioCell = new TextInfoPrivacyCell(this.mContext);
             } else {
@@ -708,31 +692,31 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:108:0x02a8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:108:0x028e, code lost:
         
             r12 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:115:0x0265, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:115:0x024b, code lost:
         
             if (r12 == (r10.this$0.unofficialLanguages.size() - 1)) goto L100;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:124:0x02a6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:124:0x028c, code lost:
         
             if (r12 == (r10.this$0.sortedLanguages.size() - 1)) goto L100;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:42:0x00ff, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:42:0x00e5, code lost:
         
             if (r11.getValueTextView().getPaint().measureText(r4) > java.lang.Math.min((org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(34.0f)) / 2.0f, (org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(84.0f)) - r11.getTextView().getPaint().measureText(r0))) goto L34;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:96:0x022f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:96:0x0215, code lost:
         
             if (r12 == (r10.this$0.searchResult.size() - 1)) goto L100;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:97:0x02aa, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:97:0x0290, code lost:
         
             r12 = false;
          */
-        /* JADX WARN: Removed duplicated region for block: B:18:0x0108  */
+        /* JADX WARN: Removed duplicated region for block: B:18:0x00ee  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -861,14 +845,12 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                     textInfoPrivacyCell.updateRTL();
                     if (i == LanguageSelectActivity.this.infoPosition1) {
                         textInfoPrivacyCell.setText(LocaleController.getString(R.string.TranslateMessagesInfo1));
-                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                         textInfoPrivacyCell.setTopPadding(11);
                         textInfoPrivacyCell.setBottomPadding(16);
                         break;
                     } else {
                         textInfoPrivacyCell.setTopPadding(0);
                         textInfoPrivacyCell.setBottomPadding(16);
-                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
                         break;
                     }
             }
@@ -947,11 +929,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         ArrayList arrayList = new ArrayList();
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{LanguageCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        ActionBar actionBar = this.actionBar;
-        int i = ThemeDescription.FLAG_BACKGROUND;
-        int i2 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(actionBar, i, null, null, null, null, i2));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, Theme.key_actionBarDefault));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));

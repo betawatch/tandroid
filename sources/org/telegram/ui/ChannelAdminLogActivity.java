@@ -1274,7 +1274,7 @@ public class ChannelAdminLogActivity extends BaseFragment implements Notificatio
                 super.onLayout(z, i3, i4, i5, i6);
             }
 
-            @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
             public boolean drawChild(Canvas canvas, View view, long j) {
                 ChatMessageCell chatMessageCell;
                 ImageReceiver avatarImage;

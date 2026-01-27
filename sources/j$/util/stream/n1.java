@@ -81,7 +81,7 @@ class n1 implements G0 {
     }
 
     @Override // j$.util.stream.H0, j$.util.stream.I0
-    public final j$.util.e0 spliterator() {
+    public final j$.util.f0 spliterator() {
         return Spliterators.l(this.a, 0, this.b);
     }
 

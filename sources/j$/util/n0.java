@@ -2,37 +2,37 @@ package j$.util;
 
 import java.util.Comparator;
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class n0 extends S implements Y {
+final class n0 extends T implements W {
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        S.b(this, consumer);
+        T.a(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return S.d(this);
+        return T.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return S.e(this, i);
+        return T.e(this, i);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return S.g(this, consumer);
+        return T.f(this, consumer);
     }
 
-    @Override // j$.util.S, j$.util.V, j$.util.e0, j$.util.Spliterator
-    public final /* bridge */ /* synthetic */ Y trySplit() {
+    @Override // j$.util.T, j$.util.W, j$.util.f0, j$.util.Spliterator
+    public final /* bridge */ /* synthetic */ W trySplit() {
         return null;
     }
 
-    @Override // j$.util.S, j$.util.V, j$.util.e0, j$.util.Spliterator
-    public final /* bridge */ /* synthetic */ e0 trySplit() {
+    @Override // j$.util.T, j$.util.W, j$.util.f0, j$.util.Spliterator
+    public final /* bridge */ /* synthetic */ f0 trySplit() {
         return null;
     }
 
@@ -41,14 +41,14 @@ final class n0 extends S implements Y {
         throw new IllegalStateException();
     }
 
-    @Override // j$.util.Y
-    public final boolean tryAdvance(IntConsumer intConsumer) {
-        Objects.requireNonNull(intConsumer);
+    @Override // j$.util.W
+    public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
+        Objects.requireNonNull(doubleConsumer);
         return false;
     }
 
-    @Override // j$.util.Y
-    public final void forEachRemaining(IntConsumer intConsumer) {
-        Objects.requireNonNull(intConsumer);
+    @Override // j$.util.W
+    public final void forEachRemaining(DoubleConsumer doubleConsumer) {
+        Objects.requireNonNull(doubleConsumer);
     }
 }

@@ -18,7 +18,6 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -34,6 +33,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.util.Consumer;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.android.billingclient.api.BillingFlowParams;
@@ -92,7 +94,6 @@ import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.FillLastLinearLayoutManager;
 import org.telegram.ui.Components.LayoutHelper;
@@ -108,6 +109,7 @@ import org.telegram.ui.Components.Premium.StarParticlesView;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.SimpleThemeDescription;
 import org.telegram.ui.Components.TextStyleSpan;
+import org.telegram.ui.Components.TypefaceSpan;
 import org.telegram.ui.Components.URLSpanBotCommand;
 import org.telegram.ui.Components.URLSpanBrowser;
 import org.telegram.ui.Components.URLSpanMono;
@@ -149,6 +151,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     int moreFeaturesStartRow;
     int moreHeaderRow;
     ArrayList morePremiumFeatures;
+    private int navigationBarHeight;
     int paddingRow;
     StarParticlesView particlesView;
     private PremiumButtonView premiumButtonView;
@@ -203,6 +206,11 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean isActionBarCrossfadeEnabled() {
         return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -763,7 +771,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 BusinessLinksController.getInstance(this.currentAccount).load(false);
             }
         }
-        final Rect rect = new Rect();
+        Rect rect = new Rect();
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         int i2 = Theme.key_dialogBackground;
@@ -916,19 +924,27 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                     invalidate();
                 }
                 PremiumPreviewFragment.this.gradientTools.gradientMatrix(0, 0, getMeasuredWidth(), getMeasuredHeight(), (-getMeasuredWidth()) * 0.1f * PremiumPreviewFragment.this.progress, 0.0f);
-                if (!PremiumPreviewFragment.this.whiteBackground) {
-                    canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), PremiumPreviewFragment.this.currentYOffset + AndroidUtilities.dp(20.0f), PremiumPreviewFragment.this.gradientTools.paint);
+                if (PremiumPreviewFragment.this.whiteBackground) {
+                    Paint paint = this.backgroundPaint;
+                    PremiumPreviewFragment premiumPreviewFragment8 = PremiumPreviewFragment.this;
+                    int i3 = Theme.key_windowBackgroundGray;
+                    paint.setColor(premiumPreviewFragment8.getThemedColor(i3));
+                    canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.backgroundPaint);
+                    PremiumPreviewFragment premiumPreviewFragment9 = PremiumPreviewFragment.this;
+                    if (premiumPreviewFragment9.progressToFull > 0.0f && ((BaseFragment) premiumPreviewFragment9).actionBar != null) {
+                        this.backgroundPaint.setColor(ColorUtils.blendARGB(PremiumPreviewFragment.this.getThemedColor(i3), PremiumPreviewFragment.this.getThemedColor(Theme.key_windowBackgroundWhite), PremiumPreviewFragment.this.progressToFull));
+                        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), ((BaseFragment) PremiumPreviewFragment.this).actionBar.getHeight(), this.backgroundPaint);
+                    }
                 } else {
-                    this.backgroundPaint.setColor(ColorUtils.blendARGB(PremiumPreviewFragment.this.getThemedColor(Theme.key_windowBackgroundGray), PremiumPreviewFragment.this.getThemedColor(Theme.key_windowBackgroundWhite), PremiumPreviewFragment.this.progressToFull));
-                    canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), PremiumPreviewFragment.this.currentYOffset + AndroidUtilities.dp(20.0f), this.backgroundPaint);
+                    canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), PremiumPreviewFragment.this.gradientTools.paint);
                 }
                 super.dispatchDraw(canvas);
                 if (((BaseFragment) PremiumPreviewFragment.this).parentLayout == null || !PremiumPreviewFragment.this.whiteBackground) {
                     return;
                 }
                 INavigationLayout iNavigationLayout = ((BaseFragment) PremiumPreviewFragment.this).parentLayout;
-                PremiumPreviewFragment premiumPreviewFragment8 = PremiumPreviewFragment.this;
-                iNavigationLayout.drawHeaderShadow(canvas, (int) (premiumPreviewFragment8.progressToFull * 255.0f), ((BaseFragment) premiumPreviewFragment8).actionBar.getBottom());
+                PremiumPreviewFragment premiumPreviewFragment10 = PremiumPreviewFragment.this;
+                iNavigationLayout.drawHeaderShadow(canvas, (int) (premiumPreviewFragment10.progressToFull * 255.0f), ((BaseFragment) premiumPreviewFragment10).actionBar.getBottom());
             }
 
             @Override // android.view.ViewGroup
@@ -945,25 +961,18 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         };
         this.contentView = frameLayout;
         frameLayout.setFitsSystemWindows(true);
-        RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.PremiumPreviewFragment.2
-            @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-            public void onDraw(Canvas canvas) {
-                Drawable drawable = PremiumPreviewFragment.this.shadowDrawable;
-                float f = -rect.left;
-                float dp = AndroidUtilities.dp(16.0f);
-                PremiumPreviewFragment premiumPreviewFragment = PremiumPreviewFragment.this;
-                drawable.setBounds((int) (f - (dp * premiumPreviewFragment.progressToFull)), (premiumPreviewFragment.currentYOffset - rect.top) - AndroidUtilities.dp(16.0f), (int) (getMeasuredWidth() + rect.right + (AndroidUtilities.dp(16.0f) * PremiumPreviewFragment.this.progressToFull)), getMeasuredHeight());
-                PremiumPreviewFragment.this.shadowDrawable.draw(canvas);
-                super.onDraw(canvas);
-            }
-        };
+        RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
+        recyclerListView.setSections(true);
+        this.listView.setClipToPadding(false);
+        this.listView.setPadding(0, AndroidUtilities.statusBarHeight + ActionBar.getCurrentActionBarHeight(), 0, this.navigationBarHeight);
+        RecyclerListView recyclerListView2 = this.listView;
         FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, (AndroidUtilities.dp(68.0f) + this.statusBarHeight) - AndroidUtilities.dp(16.0f), this.listView);
         this.layoutManager = fillLastLinearLayoutManager;
-        recyclerListView.setLayoutManager(fillLastLinearLayoutManager);
+        recyclerListView2.setLayoutManager(fillLastLinearLayoutManager);
         this.layoutManager.setFixedLastItemHeight();
         this.listView.setAdapter(new Adapter());
-        this.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.PremiumPreviewFragment.3
+        this.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.PremiumPreviewFragment.2
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i3) {
                 super.onScrollStateChanged(recyclerView, i3);
@@ -989,7 +998,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 PremiumPreviewFragment.this.checkButtonDivider();
             }
         });
-        this.backgroundView = new BackgroundView(context) { // from class: org.telegram.ui.PremiumPreviewFragment.4
+        this.backgroundView = new BackgroundView(context) { // from class: org.telegram.ui.PremiumPreviewFragment.3
             @Override // android.view.ViewGroup
             public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
                 return true;
@@ -1053,7 +1062,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         this.actionBar.setBackground(null);
         this.actionBar.setCastShadows(false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PremiumPreviewFragment.5
+        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PremiumPreviewFragment.4
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
@@ -1075,6 +1084,14 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         }
         MediaDataController.getInstance(this.currentAccount).preloadPremiumPreviewStickers();
         sentShowScreenStat(this.source);
+        ViewCompat.setOnApplyWindowInsetsListener(this.fragmentView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda6
+            @Override // androidx.core.view.OnApplyWindowInsetsListener
+            public final WindowInsetsCompat onApplyWindowInsets(View view2, WindowInsetsCompat windowInsetsCompat) {
+                WindowInsetsCompat onApplyWindowInsets;
+                onApplyWindowInsets = PremiumPreviewFragment.this.onApplyWindowInsets(view2, windowInsetsCompat);
+                return onApplyWindowInsets;
+            }
+        });
         return this.fragmentView;
     }
 
@@ -1091,7 +1108,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 userFull.sponsored_enabled = textCell.isChecked();
                 TL_account.toggleSponsoredMessages togglesponsoredmessages = new TL_account.toggleSponsoredMessages();
                 togglesponsoredmessages.enabled = userFull.sponsored_enabled;
-                getConnectionsManager().sendRequest(togglesponsoredmessages, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda12
+                getConnectionsManager().sendRequest(togglesponsoredmessages, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda10
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         PremiumPreviewFragment.this.lambda$createView$1(tLObject, tL_error);
@@ -1137,7 +1154,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                         return;
                     }
                     if (i2 == 12) {
-                        showSelectStatusDialog(premiumFeatureCell, UserObject.getEmojiStatusDocumentId(getUserConfig().getCurrentUser()), new Utilities.Callback2() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda13
+                        showSelectStatusDialog(premiumFeatureCell, UserObject.getEmojiStatusDocumentId(getUserConfig().getCurrentUser()), new Utilities.Callback2() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda11
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj, Object obj2) {
                                 PremiumPreviewFragment.this.lambda$createView$2(premiumFeatureCell, (Long) obj, (Integer) obj2);
@@ -1171,7 +1188,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$1(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda16
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
                 PremiumPreviewFragment.this.lambda$createView$0(tL_error, tLObject);
@@ -1214,6 +1231,14 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         getMediaDataController().loadPremiumPromo(false);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+        int i = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).top;
+        this.navigationBarHeight = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+        this.listView.setPadding(0, i + ActionBar.getCurrentActionBarHeight(), 0, this.navigationBarHeight);
+        return WindowInsetsCompat.CONSUMED;
+    }
+
     public static void buyPremium(BaseFragment baseFragment) {
         buyPremium(baseFragment, "settings");
     }
@@ -1254,7 +1279,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 i2++;
             }
         }
-        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda11
+        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda9
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$fillPremiumFeaturesList$5;
@@ -1295,7 +1320,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 i2++;
             }
         }
-        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda10
+        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda8
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$fillBusinessFeaturesList$6;
@@ -1440,7 +1465,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         if (subscriptionTier2.getOfferDetails() == null) {
             return;
         }
-        BillingController.getInstance().queryPurchases("subs", new PurchasesResponseListener() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda14
+        BillingController.getInstance().queryPurchases("subs", new PurchasesResponseListener() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda12
             @Override // com.android.billingclient.api.PurchasesResponseListener
             public final void onQueryPurchasesResponse(BillingResult billingResult, List list) {
                 PremiumPreviewFragment.lambda$buyPremium$14(BaseFragment.this, z2, currentAccount, subscriptionUpdateParams, subscriptionTier2, billingResult, list);
@@ -1461,7 +1486,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$buyPremium$13(BillingResult billingResult, final BaseFragment baseFragment, final boolean z, List list, final int i, final BillingFlowParams.SubscriptionUpdateParams subscriptionUpdateParams, final SubscriptionTier subscriptionTier) {
         if (billingResult.getResponseCode() == 0) {
-            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda17
+            final Runnable runnable = new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda18
                 @Override // java.lang.Runnable
                 public final void run() {
                     PremiumPreviewFragment.lambda$buyPremium$7(BaseFragment.this, z);
@@ -1482,7 +1507,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                             tL_inputStorePaymentPremiumSubscription.upgrade = true;
                         }
                         tL_payments_assignPlayMarketTransaction.purpose = tL_inputStorePaymentPremiumSubscription;
-                        ConnectionsManager.getInstance(i).sendRequest(tL_payments_assignPlayMarketTransaction, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda18
+                        ConnectionsManager.getInstance(i).sendRequest(tL_payments_assignPlayMarketTransaction, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda19
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                 PremiumPreviewFragment.lambda$buyPremium$9(i, runnable, baseFragment, tL_payments_assignPlayMarketTransaction, tLObject, tL_error);
@@ -1492,7 +1517,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                     }
                 }
             }
-            BillingController.getInstance().addResultListener(BillingController.PREMIUM_PRODUCT_ID, new Consumer() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda19
+            BillingController.getInstance().addResultListener(BillingController.PREMIUM_PRODUCT_ID, new Consumer() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda20
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj) {
                     PremiumPreviewFragment.lambda$buyPremium$10(runnable, (BillingResult) obj);
@@ -1504,7 +1529,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 tL_inputStorePaymentPremiumSubscription2.upgrade = true;
             }
             tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumSubscription2;
-            ConnectionsManager.getInstance(i).sendRequest(tL_payments_canPurchaseStore, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda20
+            ConnectionsManager.getInstance(i).sendRequest(tL_payments_canPurchaseStore, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda21
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                     PremiumPreviewFragment.lambda$buyPremium$12(BaseFragment.this, tL_inputStorePaymentPremiumSubscription2, subscriptionTier, subscriptionUpdateParams, i, tL_payments_canPurchaseStore, tLObject, tL_error);
@@ -1552,7 +1577,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             MessagesController.getInstance(i).processUpdates((TLRPC.Updates) tLObject, false);
             AndroidUtilities.runOnUIThread(runnable);
         } else if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda21
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda22
                 @Override // java.lang.Runnable
                 public final void run() {
                     PremiumPreviewFragment.lambda$buyPremium$8(i, tL_error, baseFragment, tL_payments_assignPlayMarketTransaction);
@@ -1575,7 +1600,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$buyPremium$12(final BaseFragment baseFragment, final TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, final SubscriptionTier subscriptionTier, final BillingFlowParams.SubscriptionUpdateParams subscriptionUpdateParams, final int i, final TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda22
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
                 PremiumPreviewFragment.lambda$buyPremium$11(TLObject.this, baseFragment, tL_inputStorePaymentPremiumSubscription, subscriptionTier, subscriptionUpdateParams, i, tL_error, tL_payments_canPurchaseStore);
@@ -1840,30 +1865,27 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                     };
                     break;
                 case 2:
-                    int i2 = Theme.key_windowBackgroundGray;
-                    view = new ShadowSectionCell(context, 12, Theme.getColor(i2));
-                    CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(i2)), Theme.getThemedDrawable(context, R.drawable.greydivider_bottom, Theme.getColor(Theme.key_windowBackgroundGrayShadow)), 0, 0);
-                    combinedDrawable.setFullsize(true);
-                    view.setBackgroundDrawable(combinedDrawable);
+                    view = new ShadowSectionCell(context, 12, 0);
                     break;
                 case 3:
                 default:
                     view = new View(context) { // from class: org.telegram.ui.PremiumPreviewFragment.Adapter.1
                         @Override // android.view.View
-                        protected void onMeasure(int i3, int i4) {
+                        protected void onMeasure(int i2, int i3) {
                             PremiumPreviewFragment premiumPreviewFragment = PremiumPreviewFragment.this;
                             if (premiumPreviewFragment.isLandscapeMode) {
-                                premiumPreviewFragment.firstViewHeight = (premiumPreviewFragment.statusBarHeight + ((BaseFragment) PremiumPreviewFragment.this).actionBar.getMeasuredHeight()) - AndroidUtilities.dp(16.0f);
+                                premiumPreviewFragment.firstViewHeight = 0;
                             } else {
-                                int dp = AndroidUtilities.dp(80.0f) + PremiumPreviewFragment.this.statusBarHeight;
-                                if (PremiumPreviewFragment.this.backgroundView.getMeasuredHeight() + AndroidUtilities.dp(24.0f) > dp) {
-                                    dp = PremiumPreviewFragment.this.backgroundView.getMeasuredHeight() + AndroidUtilities.dp(24.0f);
+                                int dp = AndroidUtilities.dp(64.0f);
+                                if (PremiumPreviewFragment.this.backgroundView.getMeasuredHeight() + AndroidUtilities.dp(8.0f) > dp) {
+                                    dp = PremiumPreviewFragment.this.backgroundView.getMeasuredHeight() + AndroidUtilities.dp(8.0f);
                                 }
                                 PremiumPreviewFragment.this.firstViewHeight = dp;
                             }
-                            super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(PremiumPreviewFragment.this.firstViewHeight, TLObject.FLAG_30));
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(PremiumPreviewFragment.this.firstViewHeight, TLObject.FLAG_30));
                         }
                     };
+                    view.setTag(-33024);
                     break;
                 case 4:
                     view = new AboutPremiumView(context);
@@ -1873,7 +1895,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                     break;
                 case 6:
                     view = new View(context);
-                    view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
+                    view.setTag(-33024);
                     break;
                 case 7:
                     view = new HeaderCell(context);
@@ -1886,8 +1908,8 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             return new RecyclerListView.Holder(view);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:74:0x0321  */
-        /* JADX WARN: Removed duplicated region for block: B:77:0x032d A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:77:0x0312  */
+        /* JADX WARN: Removed duplicated region for block: B:80:0x031e A[SYNTHETIC] */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1896,6 +1918,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             TLRPC.TL_help_premiumPromo premiumPromo;
             String str;
             int i2;
+            final Adapter adapter = this;
             PremiumPreviewFragment premiumPreviewFragment = PremiumPreviewFragment.this;
             int i3 = premiumPreviewFragment.featuresStartRow;
             int i4 = 0;
@@ -1911,18 +1934,17 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             }
             if (i == premiumPreviewFragment.sectionRow) {
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawable(textInfoPrivacyCell.getContext(), R.drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow)), 0, 0);
-                combinedDrawable.setFullsize(true);
-                textInfoPrivacyCell.setBackground(combinedDrawable);
                 textInfoPrivacyCell.setText("");
                 textInfoPrivacyCell.setFixedSize(12);
                 return;
             }
             if (i == premiumPreviewFragment.statusRow || i == premiumPreviewFragment.privacyRow || i == premiumPreviewFragment.showAdsInfoRow) {
                 TextInfoPrivacyCell textInfoPrivacyCell2 = (TextInfoPrivacyCell) viewHolder.itemView;
-                CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawable(textInfoPrivacyCell2.getContext(), R.drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow)), 0, 0);
-                combinedDrawable2.setFullsize(true);
-                textInfoPrivacyCell2.setBackground(combinedDrawable2);
+                if (!premiumPreviewFragment.whiteBackground) {
+                    textInfoPrivacyCell2.setTextColor(Theme.multAlpha(-1, 0.75f));
+                    textInfoPrivacyCell2.getTextView().setLinkTextColor(-1);
+                    textInfoPrivacyCell2.setLinkTextRippleColor(Integer.valueOf(Theme.multAlpha(-1, 0.15f)));
+                }
                 textInfoPrivacyCell2.setFixedSize(0);
                 PremiumPreviewFragment premiumPreviewFragment2 = PremiumPreviewFragment.this;
                 if (i == premiumPreviewFragment2.showAdsInfoRow) {
@@ -1983,6 +2005,9 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                             URLSpanReplacement uRLSpanReplacement = new URLSpanReplacement(textStyleRun.urlEntity.url, textStyleRun);
                             uRLSpanReplacement.setNavigateToPremiumBot(z);
                             spannableString.setSpan(uRLSpanReplacement, textStyleRun.start, textStyleRun.end, 33);
+                            if (!PremiumPreviewFragment.this.whiteBackground) {
+                                spannableString.setSpan(new TypefaceSpan(AndroidUtilities.bold()), textStyleRun.start, textStyleRun.end, 33);
+                            }
                         } else if (messageEntity2 instanceof TLRPC.TL_messageEntityMentionName) {
                             spannableString.setSpan(new URLSpanUserMention("" + ((TLRPC.TL_messageEntityMentionName) textStyleRun.urlEntity).user_id, 0, textStyleRun), textStyleRun.start, textStyleRun.end, 33);
                         } else if (messageEntity2 instanceof TLRPC.TL_inputMessageEntityMentionName) {
@@ -1994,18 +2019,21 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                             spannableString.setSpan(new TextStyleSpan(textStyleRun), textStyleRun.start, textStyleRun.end, 33);
                             i4++;
                             z = true;
+                            adapter = this;
                         }
                         if ((textStyleRun.flags & 256) == 0) {
                             spannableString.setSpan(new TextStyleSpan(textStyleRun), textStyleRun.start, textStyleRun.end, i2);
                         }
                         i4++;
                         z = true;
+                        adapter = this;
                     }
                     i2 = 33;
                     if ((textStyleRun.flags & 256) == 0) {
                     }
                     i4++;
                     z = true;
+                    adapter = this;
                 }
                 textInfoPrivacyCell2.setText(spannableString);
                 return;
@@ -2693,7 +2721,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     }
 
     private void closeSetting() {
-        this.settingsView.animate().translationY(AndroidUtilities.dp(1000.0f)).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.PremiumPreviewFragment.6
+        this.settingsView.animate().translationY(AndroidUtilities.dp(1000.0f)).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.PremiumPreviewFragment.5
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 PremiumPreviewFragment.this.contentView.removeView(PremiumPreviewFragment.this.settingsView);
@@ -2750,7 +2778,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         tL_jsonObjectValue.value = tL_jsonNull;
         tL_jsonObject.value.add(tL_jsonObjectValue);
         tL_help_saveAppLog.events.add(tL_inputAppEvent);
-        connectionsManager.sendRequest(tL_help_saveAppLog, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda8
+        connectionsManager.sendRequest(tL_help_saveAppLog, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda7
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 PremiumPreviewFragment.lambda$sentShowScreenStat$18(tLObject, tL_error);
@@ -2765,7 +2793,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         tL_inputAppEvent.type = "premium.promo_screen_accept";
         tL_inputAppEvent.data = new TLRPC.TL_jsonNull();
         tL_help_saveAppLog.events.add(tL_inputAppEvent);
-        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_help_saveAppLog, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda9
+        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_help_saveAppLog, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda16
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 PremiumPreviewFragment.lambda$sentPremiumButtonClick$19(tLObject, tL_error);
@@ -2780,7 +2808,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         tL_inputAppEvent.type = "premium.promo_screen_fail";
         tL_inputAppEvent.data = new TLRPC.TL_jsonNull();
         tL_help_saveAppLog.events.add(tL_inputAppEvent);
-        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_help_saveAppLog, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda6
+        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_help_saveAppLog, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda13
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 PremiumPreviewFragment.lambda$sentPremiumBuyCanceled$20(tLObject, tL_error);
@@ -2807,7 +2835,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         tL_jsonObjectValue.key = "item";
         tL_jsonObject.value.add(tL_jsonObjectValue);
         tL_help_saveAppLog.events.add(tL_inputAppEvent);
-        ConnectionsManager.getInstance(i).sendRequest(tL_help_saveAppLog, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda7
+        ConnectionsManager.getInstance(i).sendRequest(tL_help_saveAppLog, new RequestDelegate() { // from class: org.telegram.ui.PremiumPreviewFragment$$ExternalSyntheticLambda14
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 PremiumPreviewFragment.lambda$sentShowFeaturePreview$21(tLObject, tL_error);
@@ -2998,7 +3026,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 swapAnimatedEmojiDrawable = swapAnimatedEmojiDrawable3;
                 i2 = dp;
                 premiumFeatureCell2 = premiumFeatureCell;
-                SelectAnimatedEmojiDialog selectAnimatedEmojiDialog = new SelectAnimatedEmojiDialog(this, getContext(), true, Integer.valueOf(i), !z ? 12 : 0, true, getResourceProvider(), !z ? 24 : 16) { // from class: org.telegram.ui.PremiumPreviewFragment.7
+                SelectAnimatedEmojiDialog selectAnimatedEmojiDialog = new SelectAnimatedEmojiDialog(this, getContext(), true, Integer.valueOf(i), !z ? 12 : 0, true, getResourceProvider(), !z ? 24 : 16) { // from class: org.telegram.ui.PremiumPreviewFragment.6
                     @Override // org.telegram.ui.SelectAnimatedEmojiDialog
                     protected float getScrimDrawableTranslationY() {
                         return 0.0f;
@@ -3021,7 +3049,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 selectAnimatedEmojiDialog.setSaveState(3);
                 selectAnimatedEmojiDialog.setScrimDrawable(swapAnimatedEmojiDrawable, premiumFeatureCell2);
                 int i3 = -2;
-                SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialogWindow = new SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow(selectAnimatedEmojiDialog, i3, i3) { // from class: org.telegram.ui.PremiumPreviewFragment.8
+                SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialogWindow = new SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow(selectAnimatedEmojiDialog, i3, i3) { // from class: org.telegram.ui.PremiumPreviewFragment.7
                     @Override // org.telegram.ui.SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow, android.widget.PopupWindow
                     public void dismiss() {
                         super.dismiss();
@@ -3043,7 +3071,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         i2 = 0;
         if (!z) {
         }
-        View selectAnimatedEmojiDialog2 = new SelectAnimatedEmojiDialog(this, getContext(), true, Integer.valueOf(i), !z ? 12 : 0, true, getResourceProvider(), !z ? 24 : 16) { // from class: org.telegram.ui.PremiumPreviewFragment.7
+        View selectAnimatedEmojiDialog2 = new SelectAnimatedEmojiDialog(this, getContext(), true, Integer.valueOf(i), !z ? 12 : 0, true, getResourceProvider(), !z ? 24 : 16) { // from class: org.telegram.ui.PremiumPreviewFragment.6
             @Override // org.telegram.ui.SelectAnimatedEmojiDialog
             protected float getScrimDrawableTranslationY() {
                 return 0.0f;
@@ -3066,7 +3094,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         selectAnimatedEmojiDialog2.setSaveState(3);
         selectAnimatedEmojiDialog2.setScrimDrawable(swapAnimatedEmojiDrawable, premiumFeatureCell2);
         int i32 = -2;
-        SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialogWindow2 = new SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow(selectAnimatedEmojiDialog2, i32, i32) { // from class: org.telegram.ui.PremiumPreviewFragment.8
+        SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialogWindow2 = new SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow(selectAnimatedEmojiDialog2, i32, i32) { // from class: org.telegram.ui.PremiumPreviewFragment.7
             @Override // org.telegram.ui.SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow, android.widget.PopupWindow
             public void dismiss() {
                 super.dismiss();

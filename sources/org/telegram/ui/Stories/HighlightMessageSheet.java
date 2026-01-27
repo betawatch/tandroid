@@ -11,8 +11,6 @@ import j$.util.DesugarArrays;
 import j$.util.stream.Collectors;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.function.IntFunction;
-import java.util.function.ToIntFunction;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
@@ -20,6 +18,8 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda133;
+import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda86;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
@@ -199,12 +199,7 @@ public abstract class HighlightMessageSheet {
             return getDefaultTiers();
         }
         try {
-            return DesugarArrays.stream(str.split(",")).mapToInt(new ToIntFunction() { // from class: org.telegram.ui.Stories.HighlightMessageSheet$$ExternalSyntheticLambda0
-                @Override // java.util.function.ToIntFunction
-                public final int applyAsInt(Object obj) {
-                    return Integer.parseInt((String) obj);
-                }
-            }).toArray();
+            return DesugarArrays.stream(str.split(",")).mapToInt(new MessagesController$$ExternalSyntheticLambda86()).toArray();
         } catch (Exception e) {
             FileLog.e(e);
             return getDefaultTiers();
@@ -212,12 +207,7 @@ public abstract class HighlightMessageSheet {
     }
 
     public static String tiersToString(int[] iArr) {
-        return (String) DesugarArrays.stream(iArr).mapToObj(new IntFunction() { // from class: org.telegram.ui.Stories.HighlightMessageSheet$$ExternalSyntheticLambda1
-            @Override // java.util.function.IntFunction
-            public final Object apply(int i) {
-                return String.valueOf(i);
-            }
-        }).collect(Collectors.joining(","));
+        return (String) DesugarArrays.stream(iArr).mapToObj(new MessagesController$$ExternalSyntheticLambda133()).collect(Collectors.joining(","));
     }
 
     public static int getTierOption(int i, int i2, int i3) {
@@ -299,7 +289,7 @@ public abstract class HighlightMessageSheet {
             }
         };
         final boolean[] zArr = {true};
-        final Utilities.Callback[] callbackArr = {new Utilities.Callback() { // from class: org.telegram.ui.Stories.HighlightMessageSheet$$ExternalSyntheticLambda2
+        final Utilities.Callback[] callbackArr = {new Utilities.Callback() { // from class: org.telegram.ui.Stories.HighlightMessageSheet$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 HighlightMessageSheet.lambda$open$0(jArr, buttonWithCounterView, coloredImageSpanArr, message, liveCommentView2, i, tierValueView, tierValueView2, tierValueView3, starsSlider, zArr, (Integer) obj);
@@ -360,7 +350,7 @@ public abstract class HighlightMessageSheet {
         linearLayout.addView(liveCommentView, LayoutHelper.createLinear(-2, -2, 17, 42, 22, 42, 20));
         linearLayout.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 16.0f, 0.0f, 16.0f, 12.0f));
         final BottomSheet show = builder.show();
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.HighlightMessageSheet$$ExternalSyntheticLambda3
+        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.HighlightMessageSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 HighlightMessageSheet.lambda$open$1(Utilities.Callback.this, jArr, show, view);

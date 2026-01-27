@@ -1,7 +1,7 @@
 package j$.util.concurrent;
 
-import j$.util.S;
 import j$.util.Spliterator;
+import j$.util.T;
 import java.util.Comparator;
 import java.util.function.Consumer;
 
@@ -31,14 +31,14 @@ final class j extends p implements Spliterator {
     public final /* synthetic */ long getExactSizeIfKnown() {
         switch (this.i) {
         }
-        return S.d(this);
+        return T.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
         switch (this.i) {
         }
-        return S.e(this, i);
+        return T.e(this, i);
     }
 
     @Override // j$.util.Spliterator

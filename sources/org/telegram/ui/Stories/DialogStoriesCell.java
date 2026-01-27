@@ -211,7 +211,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         this.menuItemsOffset = AndroidUtilities.dp(68.0f);
         this.storiesController = MessagesController.getInstance(i).getStoriesController();
         RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.Stories.DialogStoriesCell.1
-            @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
             public boolean drawChild(Canvas canvas, View view, long j) {
                 if (DialogStoriesCell.this.viewsDrawInParent.contains(view)) {
                     return true;

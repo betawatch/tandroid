@@ -17,10 +17,10 @@ final class l implements Iterator, y {
     public final void forEachRemaining(Consumer consumer) {
         switch (this.a) {
             case 0:
-                S.q(this.b, consumer);
+                T.q(this.b, consumer);
                 break;
             default:
-                S.q(this.b, new p(consumer));
+                T.q(this.b, new p(consumer));
                 break;
         }
     }

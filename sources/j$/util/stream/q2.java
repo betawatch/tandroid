@@ -22,14 +22,14 @@ final class q2 extends Z {
         long F = bVar.F(spliterator);
         long j3 = this.n;
         if (F > 0 && spliterator.hasCharacteristics(16384)) {
-            j$.util.Y y = (j$.util.Y) bVar.W(spliterator);
+            j$.util.Z z = (j$.util.Z) bVar.W(spliterator);
             long j4 = this.m;
-            return new r3(y, j4, w0.B(j4, j3));
+            return new r3(z, j4, w0.B(j4, j3));
         }
         if (a3.ORDERED.m(bVar.J())) {
             return ((I0) new w2(this, bVar, spliterator, new b0(13), this.m, this.n).invoke()).spliterator();
         }
-        j$.util.Y y2 = (j$.util.Y) bVar.W(spliterator);
+        j$.util.Z z2 = (j$.util.Z) bVar.W(spliterator);
         long j5 = this.m;
         if (j5 <= F) {
             long j6 = F - j5;
@@ -42,7 +42,7 @@ final class q2 extends Z {
             j = j3;
             j2 = j5;
         }
-        return new x3(y2, j2, j);
+        return new x3(z2, j2, j);
     }
 
     @Override // j$.util.stream.b
@@ -54,7 +54,7 @@ final class q2 extends Z {
             return w0.G(bVar, w0.C(bVar.I(), spliterator, this.m, this.n), true);
         }
         if (!a3.ORDERED.m(bVar.J())) {
-            j$.util.Y y = (j$.util.Y) bVar.W(spliterator);
+            j$.util.Z z = (j$.util.Z) bVar.W(spliterator);
             long j3 = this.m;
             long j4 = this.n;
             if (j3 <= F) {
@@ -64,7 +64,7 @@ final class q2 extends Z {
                 j = j4;
                 j2 = j3;
             }
-            return w0.G(this, new x3(y, j2, j), true);
+            return w0.G(this, new x3(z, j2, j), true);
         }
         return (I0) new w2(this, bVar, spliterator, intFunction, this.m, this.n).invoke();
     }

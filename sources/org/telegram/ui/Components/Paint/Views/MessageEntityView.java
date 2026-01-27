@@ -695,7 +695,7 @@ public abstract class MessageEntityView extends EntityView {
                 if ((r8 & 1) != 0) goto L65;
              */
             /* JADX WARN: Removed duplicated region for block: B:150:0x0380  */
-            @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */

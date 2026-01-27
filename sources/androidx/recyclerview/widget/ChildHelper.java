@@ -189,7 +189,7 @@ public class ChildHelper {
         return indexOfChild - this.mBucket.countOnesBefore(indexOfChild);
     }
 
-    boolean isHidden(View view) {
+    public boolean isHidden(View view) {
         return this.mHiddenViews.contains(view);
     }
 

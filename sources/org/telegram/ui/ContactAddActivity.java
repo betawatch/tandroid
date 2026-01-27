@@ -439,7 +439,8 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
             }
         }, null);
         this.listView = universalRecyclerView;
-        universalRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.ContactAddActivity.5
+        universalRecyclerView.setSections();
+        this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.ContactAddActivity.5
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i8, int i9) {
                 if (ContactAddActivity.this.listView.scrollingByUser) {
@@ -449,6 +450,7 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
         });
         this.listView.setBackgroundColor(getThemedColor(i));
         frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1, 119));
+        this.actionBar.setAdaptiveBackground(this.listView);
         this.fragmentView = frameLayout;
         return frameLayout;
     }
@@ -1152,7 +1154,6 @@ public class ContactAddActivity extends BaseFragment implements NotificationCent
             }
         };
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundWhite));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));

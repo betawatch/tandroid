@@ -525,18 +525,18 @@ public abstract class StoriesUtilities {
         canvas.restore();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x015b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x0164, code lost:
     
-        if (r2 == 1) goto L89;
+        if (r2 == 1) goto L92;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x019d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x01a6, code lost:
     
-        if (r11.stories.get(r6).close_friends != false) goto L88;
+        if (r11.stories.get(r6).close_friends != false) goto L91;
      */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0065  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00f7  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x006e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -546,6 +546,7 @@ public abstract class StoriesUtilities {
         int size;
         Paint paint5;
         Paint paint6;
+        Paint paint7;
         checkGrayPaint(avatarStoryParams.resourcesProvider);
         checkStoryCellGrayPaint(avatarStoryParams.isArchive, avatarStoryParams.resourcesProvider);
         long j = avatarStoryParams.crossfadeToDialog;
@@ -578,7 +579,7 @@ public abstract class StoriesUtilities {
                 } else {
                     paint5 = avatarStoryParams.isStoryCell ? storyCellGreyPaint[avatarStoryParams.isArchive ? 1 : 0] : grayPaint;
                 }
-                Paint paint7 = paint5;
+                Paint paint8 = paint5;
                 if (i <= 1) {
                     float f = 360.0f / i;
                     float f2 = (i > 20 ? 3 : 5) * avatarStoryParams.progressToSegments;
@@ -586,7 +587,7 @@ public abstract class StoriesUtilities {
                     int max = avatarStoryParams.drawHiddenStoriesAsSegments ? 0 : Math.max(peerStories.max_read_id, storiesController.dialogIdToMaxReadId.get(avatarStoryParams.dialogId, 0));
                     int i3 = 0;
                     while (i3 < i) {
-                        Paint paint8 = avatarStoryParams.isStoryCell ? storyCellGreyPaint[avatarStoryParams.isArchive ? 1 : 0] : grayPaint;
+                        Paint paint9 = avatarStoryParams.isStoryCell ? storyCellGreyPaint[avatarStoryParams.isArchive ? 1 : 0] : grayPaint;
                         if (avatarStoryParams.drawHiddenStoriesAsSegments) {
                             int unreadState2 = storiesController.getUnreadState(DialogObject.getPeerDialogId(((TL_stories.PeerStories) storiesController.getHiddenList().get((i - 1) - i3)).peer));
                             if (unreadState2 != i2) {
@@ -602,7 +603,7 @@ public abstract class StoriesUtilities {
                                     }
                                     paint6 = paint3;
                                 }
-                                paint6 = paint8;
+                                paint6 = paint9;
                             }
                             paint6 = paint2;
                         }
@@ -610,15 +611,15 @@ public abstract class StoriesUtilities {
                         float f5 = f4 + f3;
                         float f6 = (f4 + f) - f3;
                         RectF rectF = rectTmp;
-                        Paint paint9 = paint6;
+                        Paint paint10 = paint6;
                         int i4 = i3;
                         int i5 = max;
                         drawSegment(canvas, rectF, paint6, f5, f6, avatarStoryParams, z);
-                        if (avatarStoryParams.progressToSegments != 1.0f && paint9 != paint7) {
-                            paint7.getStrokeWidth();
-                            paint7.setAlpha((int) ((1.0f - avatarStoryParams.progressToSegments) * 255.0f));
-                            drawSegment(canvas, rectF, paint7, f5, f6, avatarStoryParams, z);
-                            paint7.setAlpha(NotificationCenter.cameraInitied);
+                        if (avatarStoryParams.progressToSegments != 1.0f && paint10 != paint8) {
+                            paint8.getStrokeWidth();
+                            paint8.setAlpha((int) ((1.0f - avatarStoryParams.progressToSegments) * 255.0f));
+                            drawSegment(canvas, rectF, paint8, f5, f6, avatarStoryParams, z);
+                            paint8.setAlpha(NotificationCenter.cameraInitied);
                         }
                         i3 = i4 + 1;
                         max = i5;
@@ -627,19 +628,23 @@ public abstract class StoriesUtilities {
                     return;
                 }
                 int hasUnreadStoriesLive = storiesController.hasUnreadStoriesLive(avatarStoryParams.dialogId);
-                Paint paint10 = hasUnreadStoriesLive == 1 ? paint2 : hasUnreadStoriesLive == 2 ? paint3 : paint;
+                if (hasUnreadStoriesLive == 2) {
+                    paint7 = paint3;
+                } else {
+                    paint7 = paint8 == closeFriendsGradientTools.paint ? paint4 : hasUnreadStoriesLive == 1 ? paint2 : paint;
+                }
                 RectF rectF2 = rectTmp;
-                Paint paint11 = paint10;
+                Paint paint11 = paint7;
                 drawSegment(canvas, rectF2, paint11, -90.0f, 90.0f, avatarStoryParams, z);
                 drawSegment(canvas, rectF2, paint11, 90.0f, 270.0f, avatarStoryParams, z);
                 float f7 = avatarStoryParams.progressToSegments;
-                if (f7 == 1.0f || paint10 == paint7) {
+                if (f7 == 1.0f || paint7 == paint8) {
                     return;
                 }
-                paint7.setAlpha((int) ((1.0f - f7) * 255.0f));
-                drawSegment(canvas, rectF2, paint7, -90.0f, 90.0f, avatarStoryParams, z);
-                drawSegment(canvas, rectF2, paint7, 90.0f, 270.0f, avatarStoryParams, z);
-                paint7.setAlpha(NotificationCenter.cameraInitied);
+                paint8.setAlpha((int) ((1.0f - f7) * 255.0f));
+                drawSegment(canvas, rectF2, paint8, -90.0f, 90.0f, avatarStoryParams, z);
+                drawSegment(canvas, rectF2, paint8, 90.0f, 270.0f, avatarStoryParams, z);
+                paint8.setAlpha(NotificationCenter.cameraInitied);
                 return;
             }
             size = peerStories.stories.size();
@@ -647,7 +652,7 @@ public abstract class StoriesUtilities {
         i = size;
         if (unreadState != 2) {
         }
-        Paint paint72 = paint5;
+        Paint paint82 = paint5;
         if (i <= 1) {
         }
     }

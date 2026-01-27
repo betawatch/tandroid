@@ -76,19 +76,22 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
         checkDone(false);
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
-        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda1
+        UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(this, new Utilities.Callback2() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 OpeningHoursActivity.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
             }
-        }, new Utilities.Callback5() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda2
+        }, new Utilities.Callback5() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.messenger.Utilities.Callback5
             public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                 OpeningHoursActivity.this.onClick((UItem) obj, (View) obj2, ((Integer) obj3).intValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
             }
         }, null);
         this.listView = universalRecyclerView;
-        frameLayout.addView(universalRecyclerView, LayoutHelper.createFrame(-1, -1.0f));
+        universalRecyclerView.setSections();
+        this.listView.adapter.setApplyBackground(false);
+        frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
+        this.actionBar.setAdaptiveBackground(this.listView);
         setValue();
         this.fragmentView = frameLayout;
         return frameLayout;
@@ -275,7 +278,7 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
                 }
             }
         }
-        Collections.sort(arrayList3, new Comparator() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda0
+        Collections.sort(arrayList3, new Comparator() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda3
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 int lambda$adaptWeeklyOpen$0;
@@ -430,7 +433,7 @@ public class OpeningHoursActivity extends BaseFragment implements NotificationCe
             userFull.flags2 &= -2;
             userFull.business_work_hours = null;
         }
-        getConnectionsManager().sendRequest(updatebusinessworkhours, new RequestDelegate() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda3
+        getConnectionsManager().sendRequest(updatebusinessworkhours, new RequestDelegate() { // from class: org.telegram.ui.Business.OpeningHoursActivity$$ExternalSyntheticLambda2
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 OpeningHoursActivity.this.lambda$processDone$2(tLObject, tL_error);

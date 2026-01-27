@@ -37,7 +37,7 @@ class R2 extends V2 implements IntConsumer {
                 J3.a(getClass(), "{0} calling SpinedBuffer.OfInt.forEach(Consumer)");
                 throw null;
             }
-            j$.util.S.b((Q2) spliterator(), consumer);
+            j$.util.T.b((Q2) spliterator(), consumer);
         }
     }
 
@@ -67,7 +67,7 @@ class R2 extends V2 implements IntConsumer {
 
     @Override // j$.util.stream.V2, java.lang.Iterable
     /* renamed from: y, reason: merged with bridge method [inline-methods] */
-    public j$.util.Y spliterator() {
+    public j$.util.Z spliterator() {
         return new Q2(this, 0, this.c, 0, this.b);
     }
 

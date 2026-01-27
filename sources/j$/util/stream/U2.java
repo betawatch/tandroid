@@ -7,7 +7,7 @@ import java.util.function.IntConsumer;
 import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-abstract class U2 implements j$.util.e0 {
+abstract class U2 implements j$.util.f0 {
     int a;
     final int b;
     int c;
@@ -17,9 +17,9 @@ abstract class U2 implements j$.util.e0 {
 
     abstract void a(int i, Object obj, Object obj2);
 
-    abstract j$.util.e0 b(Object obj, int i, int i2);
+    abstract j$.util.f0 b(Object obj, int i, int i2);
 
-    abstract j$.util.e0 c(int i, int i2, int i3, int i4);
+    abstract j$.util.f0 c(int i, int i2, int i3, int i4);
 
     @Override // j$.util.Spliterator
     public final int characteristics() {
@@ -28,12 +28,12 @@ abstract class U2 implements j$.util.e0 {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.S.d(this);
+        return j$.util.T.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.S.e(this, i);
+        return j$.util.T.e(this, i);
     }
 
     @Override // j$.util.Spliterator
@@ -63,7 +63,7 @@ abstract class U2 implements j$.util.e0 {
         return ((jArr[i3] + i2) - jArr[i]) - this.c;
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final boolean tryAdvance(Object obj) {
         Objects.requireNonNull(obj);
         int i = this.a;
@@ -90,7 +90,7 @@ abstract class U2 implements j$.util.e0 {
         return true;
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final void forEachRemaining(Object obj) {
         V2 v2;
         Objects.requireNonNull(obj);
@@ -116,14 +116,14 @@ abstract class U2 implements j$.util.e0 {
     }
 
     @Override // j$.util.Spliterator
-    public final j$.util.e0 trySplit() {
+    public final j$.util.f0 trySplit() {
         int i = this.a;
         int i2 = this.b;
         if (i < i2) {
             int i3 = i2 - 1;
             int i4 = this.c;
             V2 v2 = this.f;
-            j$.util.e0 c = c(i, i3, i4, v2.t(v2.f[i3]));
+            j$.util.f0 c = c(i, i3, i4, v2.t(v2.f[i3]));
             this.a = i2;
             this.c = 0;
             this.e = v2.f[i2];
@@ -137,7 +137,7 @@ abstract class U2 implements j$.util.e0 {
         if (i6 == 0) {
             return null;
         }
-        j$.util.e0 b = b(this.e, i5, i6);
+        j$.util.f0 b = b(this.e, i5, i6);
         this.c += i6;
         return b;
     }
@@ -150,9 +150,9 @@ abstract class U2 implements j$.util.e0 {
         return tryAdvance((Object) intConsumer);
     }
 
-    @Override // j$.util.e0, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.Y trySplit() {
-        return (j$.util.Y) trySplit();
+    @Override // j$.util.f0, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.Z trySplit() {
+        return (j$.util.Z) trySplit();
     }
 
     public /* bridge */ /* synthetic */ void forEachRemaining(LongConsumer longConsumer) {
@@ -163,9 +163,9 @@ abstract class U2 implements j$.util.e0 {
         return tryAdvance((Object) longConsumer);
     }
 
-    @Override // j$.util.e0, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.b0 trySplit() {
-        return (j$.util.b0) trySplit();
+    @Override // j$.util.f0, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.c0 trySplit() {
+        return (j$.util.c0) trySplit();
     }
 
     public /* bridge */ /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
@@ -176,8 +176,8 @@ abstract class U2 implements j$.util.e0 {
         return tryAdvance((Object) doubleConsumer);
     }
 
-    @Override // j$.util.e0, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.V trySplit() {
-        return (j$.util.V) trySplit();
+    @Override // j$.util.f0, j$.util.Spliterator
+    public /* bridge */ /* synthetic */ j$.util.W trySplit() {
+        return (j$.util.W) trySplit();
     }
 }

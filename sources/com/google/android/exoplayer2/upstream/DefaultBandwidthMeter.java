@@ -1993,7 +1993,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case NotificationCenter.filePreparingStarted /* 143 */:
             case NotificationCenter.applyGroupCallVisibleParticipants /* 170 */:
             case NotificationCenter.didUpdatePremiumGiftFieldIcon /* 193 */:
-            case NotificationCenter.factCheckLoaded /* 223 */:
+            case 223:
                 return new int[]{0, 2, 2, 2, 2, 2};
             case 14:
             case 19:
@@ -2324,7 +2324,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case NotificationCenter.openBoostForUsersDialog /* 209 */:
                 return new int[]{4, 2, 4, 4, 2, 2};
             case NotificationCenter.chatWasBoostedByUser /* 211 */:
-            case 221:
+            case NotificationCenter.starTransactionsLoaded /* 221 */:
                 return new int[]{2, 1, 1, 1, 2, 2};
             case NotificationCenter.timezonesUpdated /* 213 */:
                 return new int[]{1, 0, 0, 1, 3, 2};

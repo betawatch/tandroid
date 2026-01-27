@@ -14,13 +14,13 @@ import java.util.function.Supplier;
 /* loaded from: classes2.dex */
 abstract class j0 extends b implements LongStream {
     @Override // j$.util.stream.LongStream
-    public final j$.util.C findAny() {
-        return (j$.util.C) C(H.d);
+    public final j$.util.D findAny() {
+        return (j$.util.D) C(H.d);
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.C findFirst() {
-        return (j$.util.C) C(H.c);
+    public final j$.util.D findFirst() {
+        return (j$.util.D) C(H.c);
     }
 
     @Override // j$.util.stream.LongStream
@@ -39,9 +39,9 @@ abstract class j0 extends b implements LongStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static j$.util.b0 Y(Spliterator spliterator) {
-        if (spliterator instanceof j$.util.b0) {
-            return (j$.util.b0) spliterator;
+    public static j$.util.c0 Y(Spliterator spliterator) {
+        if (spliterator instanceof j$.util.c0) {
+            return (j$.util.c0) spliterator;
         }
         if (J3.a) {
             J3.a(b.class, "using LongStream.adapt(Spliterator<Long> s)");
@@ -69,7 +69,7 @@ abstract class j0 extends b implements LongStream {
     final boolean G(Spliterator spliterator, m2 m2Var) {
         LongConsumer c0Var;
         boolean n;
-        j$.util.b0 Y = Y(spliterator);
+        j$.util.c0 Y = Y(spliterator);
         if (m2Var instanceof LongConsumer) {
             c0Var = (LongConsumer) m2Var;
         } else {
@@ -95,12 +95,12 @@ abstract class j0 extends b implements LongStream {
     }
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    public final j$.util.O iterator() {
+    public final j$.util.P iterator() {
         return Spliterators.h(spliterator());
     }
 
     @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.D
-    public final j$.util.b0 spliterator() {
+    public final j$.util.c0 spliterator() {
         return Y(super.spliterator());
     }
 
@@ -197,19 +197,19 @@ abstract class j0 extends b implements LongStream {
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.C min() {
+    public final j$.util.D min() {
         return reduce(new b0(0));
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.C max() {
+    public final j$.util.D max() {
         return reduce(new b0(8));
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.A average() {
+    public final j$.util.B average() {
         long j = ((long[]) collect(new b0(5), new b0(6), new b0(7)))[0];
-        return j > 0 ? j$.util.A.d(r0[1] / j) : j$.util.A.a();
+        return j > 0 ? j$.util.B.d(r0[1] / j) : j$.util.B.a();
     }
 
     @Override // j$.util.stream.LongStream
@@ -244,9 +244,9 @@ abstract class j0 extends b implements LongStream {
     }
 
     @Override // j$.util.stream.LongStream
-    public final j$.util.C reduce(LongBinaryOperator longBinaryOperator) {
+    public final j$.util.D reduce(LongBinaryOperator longBinaryOperator) {
         Objects.requireNonNull(longBinaryOperator);
-        return (j$.util.C) C(new A1(b3.LONG_VALUE, longBinaryOperator, 0));
+        return (j$.util.D) C(new A1(b3.LONG_VALUE, longBinaryOperator, 0));
     }
 
     @Override // j$.util.stream.LongStream

@@ -68,13 +68,13 @@ public class ProfileGalleryBlurView extends View {
         this.isBluring = false;
         Paint[] paintArr = {new Paint(), new Paint()};
         this.paints = paintArr;
-        this.blurTask = new Runnable() { // from class: org.telegram.ui.Components.ProfileGalleryBlurView$$ExternalSyntheticLambda8
+        this.blurTask = new Runnable() { // from class: org.telegram.ui.Components.ProfileGalleryBlurView$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGalleryBlurView.this.doBlur();
             }
         };
-        this.invalidateTask = new Runnable() { // from class: org.telegram.ui.Components.ProfileGalleryBlurView$$ExternalSyntheticLambda9
+        this.invalidateTask = new Runnable() { // from class: org.telegram.ui.Components.ProfileGalleryBlurView$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 ProfileGalleryBlurView.this.updateContent();
@@ -308,7 +308,7 @@ public class ProfileGalleryBlurView extends View {
             postInvalidateOnAnimation();
         }
         if (this.isBluring && (this.loopInvalidate || this.needNewFrame)) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ProfileGalleryBlurView$$ExternalSyntheticLambda10
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ProfileGalleryBlurView$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
                     ProfileGalleryBlurView.this.lambda$doBlur$0();

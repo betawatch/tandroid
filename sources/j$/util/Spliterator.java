@@ -14,7 +14,7 @@ public interface Spliterator<T> {
             if (spliterator == null) {
                 return null;
             }
-            return spliterator instanceof f0 ? ((f0) spliterator).a : spliterator instanceof e0 ? d0.a((e0) spliterator) : new Wrapper();
+            return spliterator instanceof g0 ? ((g0) spliterator).a : spliterator instanceof f0 ? e0.a((f0) spliterator) : new Wrapper();
         }
 
         @Override // java.util.Spliterator

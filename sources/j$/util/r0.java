@@ -1,120 +1,98 @@
 package j$.util;
 
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.function.Consumer;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-class r0 implements Spliterator {
-    private final java.util.Collection a;
-    private Iterator b = null;
+final class r0 implements Z {
+    private final int[] a;
+    private int b;
     private final int c;
-    private long d;
-    private int e;
+    private final int d;
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        T.b(this, consumer);
+    }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return S.d(this);
+        return T.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return S.e(this, i);
-    }
-
-    public r0(java.util.Collection collection, int i) {
-        this.a = collection;
-        this.c = (i & 4096) == 0 ? i | 16448 : i;
+        return T.e(this, i);
     }
 
     @Override // j$.util.Spliterator
-    public final Spliterator trySplit() {
-        long j;
-        Iterator it = this.b;
-        if (it == null) {
-            java.util.Collection collection = this.a;
-            Iterator it2 = collection.iterator();
-            this.b = it2;
-            j = collection.size();
-            this.d = j;
-            it = it2;
-        } else {
-            j = this.d;
-        }
-        if (j <= 1 || !it.hasNext()) {
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return T.g(this, consumer);
+    }
+
+    public r0(int[] iArr, int i, int i2, int i3) {
+        this.a = iArr;
+        this.b = i;
+        this.c = i2;
+        this.d = i3 | 16448;
+    }
+
+    @Override // j$.util.f0, j$.util.Spliterator
+    public final Z trySplit() {
+        int i = this.b;
+        int i2 = (this.c + i) >>> 1;
+        if (i >= i2) {
             return null;
         }
-        int i = this.e + 1024;
-        if (i > j) {
-            i = (int) j;
-        }
-        if (i > 33554432) {
-            i = 33554432;
-        }
-        Object[] objArr = new Object[i];
-        int i2 = 0;
-        do {
-            objArr[i2] = it.next();
-            i2++;
-            if (i2 >= i) {
-                break;
-            }
-        } while (it.hasNext());
-        this.e = i2;
-        long j2 = this.d;
-        if (j2 != Long.MAX_VALUE) {
-            this.d = j2 - i2;
-        }
-        return new k0(objArr, 0, i2, this.c);
+        this.b = i2;
+        return new r0(this.a, i, i2, this.d);
     }
 
-    @Override // j$.util.Spliterator
-    public final void forEachRemaining(Consumer consumer) {
-        consumer.getClass();
-        Iterator it = this.b;
-        if (it == null) {
-            Iterator it2 = this.a.iterator();
-            this.b = it2;
-            this.d = r0.size();
-            it = it2;
+    @Override // j$.util.f0
+    public final void forEachRemaining(IntConsumer intConsumer) {
+        int i;
+        intConsumer.getClass();
+        int[] iArr = this.a;
+        int length = iArr.length;
+        int i2 = this.c;
+        if (length < i2 || (i = this.b) < 0) {
+            return;
         }
-        S.q(it, consumer);
+        this.b = i2;
+        if (i < i2) {
+            do {
+                intConsumer.accept(iArr[i]);
+                i++;
+            } while (i < i2);
+        }
     }
 
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        consumer.getClass();
-        if (this.b == null) {
-            this.b = this.a.iterator();
-            this.d = r0.size();
-        }
-        if (!this.b.hasNext()) {
+    @Override // j$.util.f0
+    public final boolean tryAdvance(IntConsumer intConsumer) {
+        intConsumer.getClass();
+        int i = this.b;
+        if (i < 0 || i >= this.c) {
             return false;
         }
-        consumer.accept(this.b.next());
+        this.b = i + 1;
+        intConsumer.accept(this.a[i]);
         return true;
     }
 
     @Override // j$.util.Spliterator
     public final long estimateSize() {
-        if (this.b == null) {
-            java.util.Collection collection = this.a;
-            this.b = collection.iterator();
-            long size = collection.size();
-            this.d = size;
-            return size;
-        }
-        return this.d;
+        return this.c - this.b;
     }
 
     @Override // j$.util.Spliterator
     public final int characteristics() {
-        return this.c;
+        return this.d;
     }
 
     @Override // j$.util.Spliterator
-    public Comparator getComparator() {
-        if (S.e(this, 4)) {
+    public final Comparator getComparator() {
+        if (T.e(this, 4)) {
             return null;
         }
         throw new IllegalStateException();

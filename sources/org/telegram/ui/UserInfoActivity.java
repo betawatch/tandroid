@@ -121,7 +121,9 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
     @Override // org.telegram.ui.Components.UniversalFragment, org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
         boolean z = false;
-        EditTextCell editTextCell = new EditTextCell(context, LocaleController.getString(R.string.EditProfileFirstName), z, false, -1, this.resourceProvider) { // from class: org.telegram.ui.UserInfoActivity.1
+        int i = -1;
+        boolean z2 = false;
+        EditTextCell editTextCell = new EditTextCell(context, LocaleController.getString(R.string.EditProfileFirstName), z2, z, i, this.resourceProvider) { // from class: org.telegram.ui.UserInfoActivity.1
             @Override // org.telegram.ui.Cells.EditTextCell
             protected void onTextChanged(CharSequence charSequence) {
                 super.onTextChanged(charSequence);
@@ -129,13 +131,9 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             }
         };
         this.firstNameEdit = editTextCell;
-        int i = Theme.key_windowBackgroundWhite;
-        editTextCell.setBackgroundColor(getThemedColor(i));
-        this.firstNameEdit.setDivider(true);
+        editTextCell.setDivider(true);
         this.firstNameEdit.hideKeyboardOnEnter();
-        boolean z2 = false;
-        boolean z3 = false;
-        EditTextCell editTextCell2 = new EditTextCell(context, LocaleController.getString(R.string.EditProfileLastName), z3, z2, -1, this.resourceProvider) { // from class: org.telegram.ui.UserInfoActivity.2
+        EditTextCell editTextCell2 = new EditTextCell(context, LocaleController.getString(R.string.EditProfileLastName), z2, z, i, this.resourceProvider) { // from class: org.telegram.ui.UserInfoActivity.2
             @Override // org.telegram.ui.Cells.EditTextCell
             protected void onTextChanged(CharSequence charSequence) {
                 super.onTextChanged(charSequence);
@@ -143,9 +141,8 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             }
         };
         this.lastNameEdit = editTextCell2;
-        editTextCell2.setBackgroundColor(getThemedColor(i));
-        this.lastNameEdit.hideKeyboardOnEnter();
-        EditTextCell editTextCell3 = new EditTextCell(context, LocaleController.getString(R.string.EditProfileBioHint), true, z2, getMessagesController().getAboutLimit(), this.resourceProvider) { // from class: org.telegram.ui.UserInfoActivity.3
+        editTextCell2.hideKeyboardOnEnter();
+        EditTextCell editTextCell3 = new EditTextCell(context, LocaleController.getString(R.string.EditProfileBioHint), true, z, getMessagesController().getAboutLimit(), this.resourceProvider) { // from class: org.telegram.ui.UserInfoActivity.3
             @Override // org.telegram.ui.Cells.EditTextCell
             protected void onTextChanged(CharSequence charSequence) {
                 super.onTextChanged(charSequence);
@@ -153,8 +150,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             }
         };
         this.bioEdit = editTextCell3;
-        editTextCell3.setBackgroundColor(getThemedColor(i));
-        this.bioEdit.setShowLimitWhenEmpty(true);
+        editTextCell3.setShowLimitWhenEmpty(true);
         this.bioInfo = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.EditProfileBioInfo), new Runnable() { // from class: org.telegram.ui.UserInfoActivity$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
@@ -162,7 +158,11 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             }
         });
         super.createView(context);
-        this.listView = super.listView;
+        UniversalRecyclerView universalRecyclerView = super.listView;
+        this.listView = universalRecyclerView;
+        universalRecyclerView.setSections();
+        this.listView.setClipToPadding(false);
+        this.actionBar.setAdaptiveBackground(this.listView);
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.UserInfoActivity.4
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
@@ -968,6 +968,8 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             this.searchItem.setContentDescription(LocaleController.getString(i));
             this.searchItem.setVisibility(8);
             super.createView(context);
+            this.listView.setSections();
+            this.actionBar.setAdaptiveBackground(this.listView);
             return this.fragmentView;
         }
 
@@ -978,11 +980,12 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
 
         @Override // org.telegram.ui.Components.UniversalFragment
         protected void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
+            if (TextUtils.isEmpty(this.query) && this.selectedChannel != 0) {
+                arrayList.add(UItem.asButton(1, R.drawable.msg_archive_hide, LocaleController.getString(R.string.EditProfileChannelHide)).red());
+                arrayList.add(UItem.asShadow(null));
+            }
             if (TextUtils.isEmpty(this.query)) {
                 arrayList.add(UItem.asHeader(LocaleController.getString(R.string.EditProfileChannelSelect)));
-            }
-            if (TextUtils.isEmpty(this.query) && this.selectedChannel != 0) {
-                arrayList.add(UItem.asButton(1, R.drawable.msg_archive_hide, LocaleController.getString(R.string.EditProfileChannelHide)).accent());
             }
             Iterator it = this.channels.chats.iterator();
             int i = 0;

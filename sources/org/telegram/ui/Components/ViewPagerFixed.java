@@ -459,8 +459,19 @@ public class ViewPagerFixed extends FrameLayout {
             }
         });
         ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.ViewPagerFixed.6
+            boolean canceled;
+
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationCancel(Animator animator) {
+                super.onAnimationCancel(animator);
+                this.canceled = true;
+            }
+
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
+                if (this.canceled) {
+                    return;
+                }
                 ViewPagerFixed.this.setTranslationX(view, f);
             }
         });

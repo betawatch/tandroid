@@ -3449,7 +3449,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         RecyclerListView recyclerListView = new RecyclerListView(activity) { // from class: org.telegram.ui.GroupCallActivity.9
             private final LongSparseIntArray visiblePeerTmp = new LongSparseIntArray();
 
-            @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
             public boolean drawChild(Canvas canvas, View view, long j) {
                 if (view == GroupCallActivity.this.scrimView) {
                     return false;
@@ -4543,7 +4543,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             }
         });
         this.fullscreenUsersListView = new RecyclerListView(activity) { // from class: org.telegram.ui.GroupCallActivity.24
-            @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
             public boolean drawChild(Canvas canvas, View view3, long j) {
                 GroupCallFullscreenAdapter.GroupCallUserCell groupCallUserCell = (GroupCallFullscreenAdapter.GroupCallUserCell) view3;
                 if (!GroupCallActivity.this.renderersContainer.isAnimating() && !GroupCallActivity.this.fullscreenListItemAnimator.isRunning()) {
@@ -4725,7 +4725,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
 
             @Override // org.telegram.ui.Components.voip.GroupCallRenderersContainer
             protected void onBackPressed() {
-                GroupCallActivity.this.onBackPressed();
+                GroupCallActivity.this.lambda$openCrafting$8();
             }
         };
         this.renderersContainer = groupCallRenderersContainer;
@@ -5403,7 +5403,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             int i2;
             int color;
             if (i == -1) {
-                GroupCallActivity.this.onBackPressed();
+                GroupCallActivity.this.lambda$openCrafting$8();
                 return;
             }
             if (i == 1) {
@@ -10811,7 +10811,8 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
-    public void onBackPressed() {
+    /* renamed from: onBackPressed */
+    public void lambda$openCrafting$8() {
         PrivateVideoPreviewDialog privateVideoPreviewDialog = this.previewDialog;
         if (privateVideoPreviewDialog != null) {
             privateVideoPreviewDialog.dismiss(false, false);
@@ -10822,7 +10823,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         } else if (this.renderersContainer.inFullscreenMode) {
             fullscreenFor(null);
         } else {
-            super.onBackPressed();
+            super.lambda$openCrafting$8();
         }
     }
 

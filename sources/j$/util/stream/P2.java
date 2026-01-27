@@ -37,7 +37,7 @@ class P2 extends V2 implements DoubleConsumer {
                 J3.a(getClass(), "{0} calling SpinedBuffer.OfDouble.forEach(Consumer)");
                 throw null;
             }
-            j$.util.S.a((O2) spliterator(), consumer);
+            j$.util.T.a((O2) spliterator(), consumer);
         }
     }
 
@@ -67,7 +67,7 @@ class P2 extends V2 implements DoubleConsumer {
 
     @Override // j$.util.stream.V2, java.lang.Iterable
     /* renamed from: y, reason: merged with bridge method [inline-methods] */
-    public j$.util.V spliterator() {
+    public j$.util.W spliterator() {
         return new O2(this, 0, this.c, 0, this.b);
     }
 

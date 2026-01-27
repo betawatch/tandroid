@@ -1,7 +1,6 @@
 package j$.util;
 
 import j$.util.stream.Stream;
-import j$.util.stream.w0;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.RandomAccess;
@@ -46,7 +45,7 @@ public interface Collection<E> extends j$.lang.a {
             }
             if (collection instanceof java.util.SortedSet) {
                 java.util.SortedSet sortedSet = (java.util.SortedSet) collection;
-                return new Q(sortedSet, sortedSet);
+                return new S(sortedSet, sortedSet);
             }
             if (collection instanceof java.util.Set) {
                 return Spliterators.spliterator((java.util.Set) collection, 1);
@@ -86,11 +85,11 @@ public interface Collection<E> extends j$.lang.a {
         }
 
         public static Stream $default$stream(java.util.Collection collection) {
-            return w0.f0(-EL.c(collection), false);
+            return j$.util.stream.w0.f0(-EL.c(collection), false);
         }
 
         public static Stream $default$parallelStream(java.util.Collection collection) {
-            return w0.f0(-EL.c(collection), true);
+            return j$.util.stream.w0.f0(-EL.c(collection), true);
         }
     }
 }

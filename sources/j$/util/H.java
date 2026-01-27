@@ -1,22 +1,17 @@
 package j$.util;
 
 import java.util.function.Consumer;
-import java.util.function.IntConsumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class H implements IntConsumer {
-    public final /* synthetic */ Consumer a;
+public interface H extends Q {
+    @Override // java.util.Iterator, j$.util.y
+    void forEachRemaining(Consumer consumer);
 
-    public /* synthetic */ H(Consumer consumer) {
-        this.a = consumer;
-    }
+    void forEachRemaining(DoubleConsumer doubleConsumer);
 
-    @Override // java.util.function.IntConsumer
-    public final void accept(int i) {
-        this.a.accept(Integer.valueOf(i));
-    }
+    @Override // java.util.Iterator
+    Double next();
 
-    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.b(this, intConsumer);
-    }
+    double nextDouble();
 }

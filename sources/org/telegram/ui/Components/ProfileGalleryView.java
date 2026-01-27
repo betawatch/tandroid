@@ -290,8 +290,10 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
         this.customAvatarIndex = -1;
         this.fallbackPhotoIndex = -1;
         this.blurView = profileGalleryBlurView;
-        setPadding(0, 0, 0, profileGalleryBlurView.actionSize);
-        profileGalleryBlurView.setView(this);
+        setPadding(0, 0, 0, profileGalleryBlurView == null ? 0 : profileGalleryBlurView.actionSize);
+        if (profileGalleryBlurView != null) {
+            profileGalleryBlurView.setView(this);
+        }
         setVisibility(8);
         setOverScrollMode(2);
         setOffscreenPageLimit(2);
@@ -453,10 +455,11 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x00ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x00f0, code lost:
     
-        if (r3 >= (r2 + r0)) goto L54;
+        if (r3 >= (r2 + r0)) goto L58;
      */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0105  */
     @Override // androidx.viewpager.widget.ViewPager, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -464,6 +467,8 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
     public boolean onTouchEvent(MotionEvent motionEvent) {
         int i;
         int i2;
+        Callback callback;
+        Callback callback2;
         if (this.adapter == null) {
             return false;
         }
@@ -482,7 +487,10 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
             } else if (this.pinchToZoomHelper.checkPinchToZoom(motionEvent, this, getCurrentItemView().getImageReceiver(), null, null, null)) {
                 if (!this.isDownReleased) {
                     this.isDownReleased = true;
-                    this.callback.onRelease();
+                    Callback callback3 = this.callback;
+                    if (callback3 != null) {
+                        callback3.onRelease();
+                    }
                 }
                 return true;
             }
@@ -492,8 +500,8 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
             this.isSwipingViewPager = true;
             this.scrolledByUser = true;
             this.downPoint.set(motionEvent.getX(), motionEvent.getY());
-            if (this.adapter.getCount() > 1) {
-                this.callback.onDown(motionEvent.getX() < ((float) getWidth()) / 3.0f);
+            if (this.adapter.getCount() > 1 && (callback2 = this.callback) != null) {
+                callback2.onDown(motionEvent.getX() < ((float) getWidth()) / 3.0f);
             }
             this.isDownReleased = false;
         } else if (action == 1) {
@@ -509,11 +517,16 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
                         i = currentItem - 1;
                         if (i < extraCount) {
                             i2 = (realCount + extraCount) - 1;
-                            this.callback.onRelease();
+                            callback = this.callback;
+                            if (callback != null) {
+                                callback.onRelease();
+                            }
                             setCurrentItem(i2, false);
                         }
                         i2 = i;
-                        this.callback.onRelease();
+                        callback = this.callback;
+                        if (callback != null) {
+                        }
                         setCurrentItem(i2, false);
                     }
                 }
@@ -524,7 +537,10 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
             boolean z = Math.abs(y) >= ((float) this.touchSlop) || Math.abs(x) >= ((float) this.touchSlop);
             if (z) {
                 this.isDownReleased = true;
-                this.callback.onRelease();
+                Callback callback4 = this.callback;
+                if (callback4 != null) {
+                    callback4.onRelease();
+                }
             }
             boolean z2 = this.isSwipingViewPager;
             if (z2 && this.isScrollingListView) {
@@ -572,7 +588,10 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
             TLRPC.VideoSize closestVideoSizeWithSize = FileLoader.getClosestVideoSizeWithSize(this.chatInfo.chat_photo.video_sizes, MediaDataController.MAX_STYLE_RUNS_COUNT);
             this.videoLocations.set(0, ImageLocation.getForPhoto(closestVideoSizeWithSize, this.chatInfo.chat_photo));
             this.videoFileNames.set(0, FileLoader.getAttachFileName(closestVideoSizeWithSize));
-            this.callback.onPhotosLoaded();
+            Callback callback = this.callback;
+            if (callback != null) {
+                callback.onPhotosLoaded();
+            }
         } else {
             this.videoLocations.set(0, null);
             this.videoFileNames.add(0, null);
@@ -1253,7 +1272,9 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
 
                         @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
                         public void onAnimationReady(ImageReceiver imageReceiver) {
-                            ProfileGalleryView.this.callback.onVideoSet();
+                            if (ProfileGalleryView.this.callback != null) {
+                                ProfileGalleryView.this.callback.onVideoSet();
+                            }
                         }
                     });
                     item.imageView.getImageReceiver().setCrossfadeAlpha((byte) 2);
@@ -1276,7 +1297,9 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
 
                     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
                     public void onAnimationReady(ImageReceiver imageReceiver) {
-                        ProfileGalleryView.this.callback.onVideoSet();
+                        if (ProfileGalleryView.this.callback != null) {
+                            ProfileGalleryView.this.callback.onVideoSet();
+                        }
                     }
                 });
                 item.imageView.getImageReceiver().setCrossfadeAlpha((byte) 2);
@@ -1320,7 +1343,9 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
 
                         @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
                         public void onAnimationReady(ImageReceiver imageReceiver) {
-                            ProfileGalleryView.this.callback.onVideoSet();
+                            if (ProfileGalleryView.this.callback != null) {
+                                ProfileGalleryView.this.callback.onVideoSet();
+                            }
                         }
                     });
                     item.imageView.getImageReceiver().setCrossfadeAlpha((byte) 2);
@@ -1360,7 +1385,9 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
 
                     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
                     public void onAnimationReady(ImageReceiver imageReceiver) {
-                        ProfileGalleryView.this.callback.onVideoSet();
+                        if (ProfileGalleryView.this.callback != null) {
+                            ProfileGalleryView.this.callback.onVideoSet();
+                        }
                     }
                 });
                 item.imageView.getImageReceiver().setCrossfadeAlpha((byte) 2);
@@ -1383,7 +1410,9 @@ public class ProfileGalleryView extends CircularViewPager implements Notificatio
 
                 @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
                 public void onAnimationReady(ImageReceiver imageReceiver) {
-                    ProfileGalleryView.this.callback.onVideoSet();
+                    if (ProfileGalleryView.this.callback != null) {
+                        ProfileGalleryView.this.callback.onVideoSet();
+                    }
                 }
             });
             item.imageView.getImageReceiver().setCrossfadeAlpha((byte) 2);

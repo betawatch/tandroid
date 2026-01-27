@@ -81,6 +81,9 @@ public class ChatActivityTopPanelLayout extends AnimatedLinearLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
+        if (getMetadata().getTotalVisibility() == 0.0f) {
+            return;
+        }
         BlurredBackgroundDrawable blurredBackgroundDrawable = this.backgroundDrawable;
         if (blurredBackgroundDrawable != null) {
             blurredBackgroundDrawable.draw(canvas);

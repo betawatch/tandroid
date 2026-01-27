@@ -80,7 +80,10 @@ public class PasskeysActivity extends BaseFragment {
             }
         }, null);
         this.listView = universalRecyclerView;
-        frameLayout.addView(universalRecyclerView, LayoutHelper.createFrame(-1, -1.0f));
+        universalRecyclerView.setSections();
+        this.listView.adapter.setApplyBackground(false);
+        frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
+        this.actionBar.setAdaptiveBackground(this.listView);
         this.fragmentView = frameLayout;
         return frameLayout;
     }
@@ -143,7 +146,7 @@ public class PasskeysActivity extends BaseFragment {
             public final void run() {
                 PasskeysActivity.this.lambda$openMenu$3(passkey, str, i);
             }
-        }).show();
+        }).setScrimViewBackground(this.listView.getClipBackground(passkeyCell)).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

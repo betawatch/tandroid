@@ -13,13 +13,13 @@ import java.util.function.Supplier;
 /* loaded from: classes2.dex */
 abstract class a0 extends b implements IntStream {
     @Override // j$.util.stream.IntStream
-    public final j$.util.B findAny() {
-        return (j$.util.B) C(G.d);
+    public final j$.util.C findAny() {
+        return (j$.util.C) C(G.d);
     }
 
     @Override // j$.util.stream.IntStream
-    public final j$.util.B findFirst() {
-        return (j$.util.B) C(G.c);
+    public final j$.util.C findFirst() {
+        return (j$.util.C) C(G.c);
     }
 
     @Override // j$.util.stream.IntStream
@@ -38,9 +38,9 @@ abstract class a0 extends b implements IntStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static j$.util.Y Y(Spliterator spliterator) {
-        if (spliterator instanceof j$.util.Y) {
-            return (j$.util.Y) spliterator;
+    public static j$.util.Z Y(Spliterator spliterator) {
+        if (spliterator instanceof j$.util.Z) {
+            return (j$.util.Z) spliterator;
         }
         if (J3.a) {
             J3.a(b.class, "using IntStream.adapt(Spliterator<Integer> s)");
@@ -68,7 +68,7 @@ abstract class a0 extends b implements IntStream {
     final boolean G(Spliterator spliterator, m2 m2Var) {
         IntConsumer t;
         boolean n;
-        j$.util.Y Y = Y(spliterator);
+        j$.util.Z Y = Y(spliterator);
         if (m2Var instanceof IntConsumer) {
             t = (IntConsumer) m2Var;
         } else {
@@ -94,12 +94,12 @@ abstract class a0 extends b implements IntStream {
     }
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    public final j$.util.K iterator() {
+    public final j$.util.L iterator() {
         return Spliterators.g(spliterator());
     }
 
     @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.D
-    public final j$.util.Y spliterator() {
+    public final j$.util.Z spliterator() {
         return Y(super.spliterator());
     }
 
@@ -155,9 +155,9 @@ abstract class a0 extends b implements IntStream {
     }
 
     @Override // j$.util.stream.IntStream
-    public final j$.util.B reduce(IntBinaryOperator intBinaryOperator) {
+    public final j$.util.C reduce(IntBinaryOperator intBinaryOperator) {
         Objects.requireNonNull(intBinaryOperator);
-        return (j$.util.B) C(new A1(b3.INT_VALUE, intBinaryOperator, 3));
+        return (j$.util.C) C(new A1(b3.INT_VALUE, intBinaryOperator, 3));
     }
 
     @Override // j$.util.stream.IntStream
@@ -218,19 +218,19 @@ abstract class a0 extends b implements IntStream {
     }
 
     @Override // j$.util.stream.IntStream
-    public final j$.util.B min() {
+    public final j$.util.C min() {
         return reduce(new k(21));
     }
 
     @Override // j$.util.stream.IntStream
-    public final j$.util.B max() {
+    public final j$.util.C max() {
         return reduce(new k(25));
     }
 
     @Override // j$.util.stream.IntStream
-    public final j$.util.A average() {
+    public final j$.util.B average() {
         long j = ((long[]) collect(new k(26), new k(27), new k(28)))[0];
-        return j > 0 ? j$.util.A.d(r0[1] / j) : j$.util.A.a();
+        return j > 0 ? j$.util.B.d(r0[1] / j) : j$.util.B.a();
     }
 
     @Override // j$.util.stream.IntStream

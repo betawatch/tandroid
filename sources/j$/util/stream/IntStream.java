@@ -27,7 +27,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     LongStream asLongStream();
 
-    j$.util.A average();
+    j$.util.B average();
 
     IntStream b();
 
@@ -45,9 +45,9 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     D f();
 
-    j$.util.B findAny();
+    j$.util.C findAny();
 
-    j$.util.B findFirst();
+    j$.util.C findFirst();
 
     void forEach(IntConsumer intConsumer);
 
@@ -56,7 +56,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
     boolean g();
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    j$.util.K iterator();
+    j$.util.L iterator();
 
     LongStream l();
 
@@ -64,9 +64,9 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     <U> Stream<U> mapToObj(IntFunction<? extends U> intFunction);
 
-    j$.util.B max();
+    j$.util.C max();
 
-    j$.util.B min();
+    j$.util.C min();
 
     IntStream p(O0 o0);
 
@@ -79,7 +79,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     int reduce(int i, IntBinaryOperator intBinaryOperator);
 
-    j$.util.B reduce(IntBinaryOperator intBinaryOperator);
+    j$.util.C reduce(IntBinaryOperator intBinaryOperator);
 
     @Override // j$.util.stream.BaseStream
     IntStream sequential();
@@ -89,7 +89,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
     IntStream sorted();
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    j$.util.Y spliterator();
+    j$.util.Z spliterator();
 
     int sum();
 
@@ -132,7 +132,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalDouble average() {
-            return j$.util.S.n(IntStream.this.average());
+            return j$.util.T.n(IntStream.this.average());
         }
 
         @Override // java.util.stream.IntStream
@@ -179,12 +179,12 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalInt findAny() {
-            return j$.util.S.o(IntStream.this.findAny());
+            return j$.util.T.o(IntStream.this.findAny());
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalInt findFirst() {
-            return j$.util.S.o(IntStream.this.findFirst());
+            return j$.util.T.o(IntStream.this.findFirst());
         }
 
         @Override // java.util.stream.IntStream
@@ -213,7 +213,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream, java.util.stream.BaseStream
         public final /* synthetic */ Iterator<Integer> iterator() {
-            return j$.util.J.a(IntStream.this.iterator());
+            return j$.util.K.a(IntStream.this.iterator());
         }
 
         @Override // java.util.stream.IntStream
@@ -243,12 +243,12 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalInt max() {
-            return j$.util.S.o(IntStream.this.max());
+            return j$.util.T.o(IntStream.this.max());
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalInt min() {
-            return j$.util.S.o(IntStream.this.min());
+            return j$.util.T.o(IntStream.this.min());
         }
 
         @Override // java.util.stream.IntStream
@@ -285,7 +285,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalInt reduce(IntBinaryOperator intBinaryOperator) {
-            return j$.util.S.o(IntStream.this.reduce(intBinaryOperator));
+            return j$.util.T.o(IntStream.this.reduce(intBinaryOperator));
         }
 
         /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.IntStream] */
@@ -311,7 +311,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream, java.util.stream.BaseStream
         public final /* synthetic */ Spliterator<Integer> spliterator() {
-            return j$.util.X.a(IntStream.this.spliterator());
+            return j$.util.Y.a(IntStream.this.spliterator());
         }
 
         @Override // java.util.stream.IntStream, java.util.stream.BaseStream
@@ -384,8 +384,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.A average() {
-            return j$.util.S.j(this.a.average());
+        public final /* synthetic */ j$.util.B average() {
+            return j$.util.T.j(this.a.average());
         }
 
         @Override // j$.util.stream.IntStream
@@ -442,13 +442,13 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.B findAny() {
-            return j$.util.S.k(this.a.findAny());
+        public final /* synthetic */ j$.util.C findAny() {
+            return j$.util.T.k(this.a.findAny());
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.B findFirst() {
-            return j$.util.S.k(this.a.findFirst());
+        public final /* synthetic */ j$.util.C findFirst() {
+            return j$.util.T.k(this.a.findFirst());
         }
 
         @Override // j$.util.stream.IntStream
@@ -477,8 +477,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         /* JADX WARN: Type inference failed for: r0v1, types: [java.util.PrimitiveIterator$OfInt] */
         @Override // j$.util.stream.IntStream, j$.util.stream.BaseStream, j$.util.stream.D
-        public final /* synthetic */ j$.util.K iterator() {
-            return j$.util.I.a(this.a.iterator());
+        public final /* synthetic */ j$.util.L iterator() {
+            return j$.util.J.a(this.a.iterator());
         }
 
         @Override // j$.util.stream.BaseStream, j$.util.stream.D
@@ -502,13 +502,13 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.B max() {
-            return j$.util.S.k(this.a.max());
+        public final /* synthetic */ j$.util.C max() {
+            return j$.util.T.k(this.a.max());
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.B min() {
-            return j$.util.S.k(this.a.min());
+        public final /* synthetic */ j$.util.C min() {
+            return j$.util.T.k(this.a.min());
         }
 
         @Override // j$.util.stream.BaseStream
@@ -542,8 +542,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ j$.util.B reduce(IntBinaryOperator intBinaryOperator) {
-            return j$.util.S.k(this.a.reduce(intBinaryOperator));
+        public final /* synthetic */ j$.util.C reduce(IntBinaryOperator intBinaryOperator) {
+            return j$.util.T.k(this.a.reduce(intBinaryOperator));
         }
 
         @Override // j$.util.stream.BaseStream
@@ -568,13 +568,13 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // j$.util.stream.BaseStream, j$.util.stream.D
         public final /* synthetic */ j$.util.Spliterator spliterator() {
-            return j$.util.f0.a(this.a.spliterator());
+            return j$.util.g0.a(this.a.spliterator());
         }
 
         /* JADX WARN: Type inference failed for: r0v1, types: [java.util.Spliterator$OfInt] */
         @Override // j$.util.stream.IntStream, j$.util.stream.BaseStream, j$.util.stream.D
-        public final /* synthetic */ j$.util.Y spliterator() {
-            return j$.util.W.a(this.a.spliterator());
+        public final /* synthetic */ j$.util.Z spliterator() {
+            return j$.util.X.a(this.a.spliterator());
         }
 
         @Override // j$.util.stream.IntStream

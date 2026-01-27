@@ -80,19 +80,19 @@ abstract class C3 {
         return this.a.characteristics() & (-16465);
     }
 
-    public /* bridge */ /* synthetic */ j$.util.e0 trySplit() {
-        return (j$.util.e0) trySplit();
+    public /* bridge */ /* synthetic */ j$.util.f0 trySplit() {
+        return (j$.util.f0) trySplit();
     }
 
-    public /* bridge */ /* synthetic */ j$.util.Y trySplit() {
-        return (j$.util.Y) trySplit();
+    public /* bridge */ /* synthetic */ j$.util.Z trySplit() {
+        return (j$.util.Z) trySplit();
     }
 
-    public /* bridge */ /* synthetic */ j$.util.b0 trySplit() {
-        return (j$.util.b0) trySplit();
+    public /* bridge */ /* synthetic */ j$.util.c0 trySplit() {
+        return (j$.util.c0) trySplit();
     }
 
-    public /* bridge */ /* synthetic */ j$.util.V trySplit() {
-        return (j$.util.V) trySplit();
+    public /* bridge */ /* synthetic */ j$.util.W trySplit() {
+        return (j$.util.W) trySplit();
     }
 }

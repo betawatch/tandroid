@@ -6136,7 +6136,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             setSelectorDrawableColor(Theme.getColor(Theme.key_listSelector, this.resourcesProvider));
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+        @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
         public boolean drawChild(Canvas canvas, View view, long j) {
             return super.drawChild(canvas, view, j);
         }

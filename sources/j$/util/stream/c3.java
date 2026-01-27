@@ -23,7 +23,7 @@ abstract class c3 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.S.e(this, i);
+        return j$.util.T.e(this, i);
     }
 
     c3(b bVar, Supplier supplier, boolean z) {
@@ -120,7 +120,7 @@ abstract class c3 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final Comparator getComparator() {
-        if (j$.util.S.e(this, 4)) {
+        if (j$.util.T.e(this, 4)) {
             return null;
         }
         throw new IllegalStateException();

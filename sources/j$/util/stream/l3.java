@@ -6,15 +6,15 @@ import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class l3 extends c3 implements j$.util.V {
+final class l3 extends c3 implements j$.util.W {
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.util.S.a(this, consumer);
+        j$.util.T.a(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.util.S.f(this, consumer);
+        return j$.util.T.f(this, consumer);
     }
 
     @Override // j$.util.stream.c3
@@ -33,20 +33,20 @@ final class l3 extends c3 implements j$.util.V {
 
     @Override // j$.util.stream.c3, j$.util.Spliterator
     public final Spliterator trySplit() {
-        return (j$.util.V) super.trySplit();
+        return (j$.util.W) super.trySplit();
     }
 
     @Override // j$.util.stream.c3, j$.util.Spliterator
-    public final j$.util.V trySplit() {
-        return (j$.util.V) super.trySplit();
+    public final j$.util.W trySplit() {
+        return (j$.util.W) super.trySplit();
     }
 
     @Override // j$.util.stream.c3, j$.util.Spliterator
-    public final j$.util.e0 trySplit() {
-        return (j$.util.V) super.trySplit();
+    public final j$.util.f0 trySplit() {
+        return (j$.util.W) super.trySplit();
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
         double d;
         Objects.requireNonNull(doubleConsumer);
@@ -65,7 +65,7 @@ final class l3 extends c3 implements j$.util.V {
         return a;
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final void forEachRemaining(DoubleConsumer doubleConsumer) {
         if (this.h == null && !this.i) {
             Objects.requireNonNull(doubleConsumer);

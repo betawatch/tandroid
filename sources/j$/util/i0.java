@@ -2,70 +2,70 @@ package j$.util;
 
 import java.util.NoSuchElementException;
 import java.util.function.Consumer;
-import java.util.function.LongConsumer;
+import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class i0 implements O, LongConsumer, y {
+final class i0 implements L, IntConsumer, y {
     boolean a = false;
-    long b;
-    final /* synthetic */ b0 c;
+    int b;
+    final /* synthetic */ Z c;
 
-    public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.c(this, longConsumer);
+    public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+        return j$.com.android.tools.r8.a.b(this, intConsumer);
     }
 
-    @Override // j$.util.P
-    public final void forEachRemaining(LongConsumer longConsumer) {
-        Objects.requireNonNull(longConsumer);
+    @Override // j$.util.Q
+    public final void forEachRemaining(IntConsumer intConsumer) {
+        Objects.requireNonNull(intConsumer);
         while (hasNext()) {
-            longConsumer.accept(nextLong());
+            intConsumer.accept(nextInt());
         }
     }
 
     @Override // java.util.Iterator
-    public final Long next() {
-        if (v0.a) {
-            v0.a(i0.class, "{0} calling PrimitiveIterator.OfLong.nextLong()");
+    public final Integer next() {
+        if (w0.a) {
+            w0.a(i0.class, "{0} calling PrimitiveIterator.OfInt.nextInt()");
             throw null;
         }
-        return Long.valueOf(nextLong());
+        return Integer.valueOf(nextInt());
     }
 
-    @Override // j$.util.O, java.util.Iterator, j$.util.y
+    @Override // j$.util.L, java.util.Iterator, j$.util.y
     public final void forEachRemaining(Consumer consumer) {
-        if (consumer instanceof LongConsumer) {
-            forEachRemaining((LongConsumer) consumer);
+        if (consumer instanceof IntConsumer) {
+            forEachRemaining((IntConsumer) consumer);
             return;
         }
         Objects.requireNonNull(consumer);
-        if (v0.a) {
-            v0.a(i0.class, "{0} calling PrimitiveIterator.OfLong.forEachRemainingLong(action::accept)");
+        if (w0.a) {
+            w0.a(i0.class, "{0} calling PrimitiveIterator.OfInt.forEachRemainingInt(action::accept)");
             throw null;
         }
         Objects.requireNonNull(consumer);
-        forEachRemaining((LongConsumer) new L(consumer));
+        forEachRemaining((IntConsumer) new I(consumer));
     }
 
-    i0(b0 b0Var) {
-        this.c = b0Var;
+    i0(Z z) {
+        this.c = z;
     }
 
-    @Override // java.util.function.LongConsumer
-    public final void accept(long j) {
+    @Override // java.util.function.IntConsumer
+    public final void accept(int i) {
         this.a = true;
-        this.b = j;
+        this.b = i;
     }
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
         if (!this.a) {
-            this.c.tryAdvance((LongConsumer) this);
+            this.c.tryAdvance((IntConsumer) this);
         }
         return this.a;
     }
 
-    @Override // j$.util.O
-    public final long nextLong() {
+    @Override // j$.util.L
+    public final int nextInt() {
         if (!this.a && !hasNext()) {
             throw new NoSuchElementException();
         }

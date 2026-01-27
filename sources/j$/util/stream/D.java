@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 public interface D extends BaseStream {
     D a();
 
-    j$.util.A average();
+    j$.util.B average();
 
     D b();
 
@@ -29,9 +29,9 @@ public interface D extends BaseStream {
 
     D e(a aVar);
 
-    j$.util.A findAny();
+    j$.util.B findAny();
 
-    j$.util.A findFirst();
+    j$.util.B findFirst();
 
     void forEach(DoubleConsumer doubleConsumer);
 
@@ -41,15 +41,15 @@ public interface D extends BaseStream {
 
     LongStream i();
 
-    j$.util.G iterator();
+    j$.util.H iterator();
 
     D limit(long j);
 
     Stream mapToObj(DoubleFunction doubleFunction);
 
-    j$.util.A max();
+    j$.util.B max();
 
-    j$.util.A min();
+    j$.util.B min();
 
     boolean o();
 
@@ -60,7 +60,7 @@ public interface D extends BaseStream {
 
     double reduce(double d, DoubleBinaryOperator doubleBinaryOperator);
 
-    j$.util.A reduce(DoubleBinaryOperator doubleBinaryOperator);
+    j$.util.B reduce(DoubleBinaryOperator doubleBinaryOperator);
 
     @Override // j$.util.stream.BaseStream
     D sequential();
@@ -69,7 +69,7 @@ public interface D extends BaseStream {
 
     D sorted();
 
-    j$.util.V spliterator();
+    j$.util.W spliterator();
 
     double sum();
 

@@ -904,7 +904,7 @@ public class QrActivity extends BaseFragment {
         this.resourcesProvider.initColors(this.currentTheme, this.isCurrentThemeDark);
     }
 
-    private void performShare() {
+    public void performShare() {
         Point point = AndroidUtilities.displaySize;
         int min = Math.min(point.x, point.y);
         Point point2 = AndroidUtilities.displaySize;

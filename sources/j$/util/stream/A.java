@@ -15,13 +15,13 @@ import java.util.function.Supplier;
 /* loaded from: classes2.dex */
 abstract class A extends b implements D {
     @Override // j$.util.stream.D
-    public final j$.util.A findAny() {
-        return (j$.util.A) C(F.d);
+    public final j$.util.B findAny() {
+        return (j$.util.B) C(F.d);
     }
 
     @Override // j$.util.stream.D
-    public final j$.util.A findFirst() {
-        return (j$.util.A) C(F.c);
+    public final j$.util.B findFirst() {
+        return (j$.util.B) C(F.c);
     }
 
     @Override // j$.util.stream.D
@@ -30,9 +30,9 @@ abstract class A extends b implements D {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static j$.util.V Y(Spliterator spliterator) {
-        if (spliterator instanceof j$.util.V) {
-            return (j$.util.V) spliterator;
+    public static j$.util.W Y(Spliterator spliterator) {
+        if (spliterator instanceof j$.util.W) {
+            return (j$.util.W) spliterator;
         }
         if (J3.a) {
             J3.a(b.class, "using DoubleStream.adapt(Spliterator<Double> s)");
@@ -72,7 +72,7 @@ abstract class A extends b implements D {
     final boolean G(Spliterator spliterator, m2 m2Var) {
         DoubleConsumer pVar;
         boolean n;
-        j$.util.V Y = Y(spliterator);
+        j$.util.W Y = Y(spliterator);
         if (m2Var instanceof DoubleConsumer) {
             pVar = (DoubleConsumer) m2Var;
         } else {
@@ -98,12 +98,12 @@ abstract class A extends b implements D {
     }
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    public final j$.util.G iterator() {
+    public final j$.util.H iterator() {
         return Spliterators.f(spliterator());
     }
 
     @Override // j$.util.stream.b, j$.util.stream.BaseStream, j$.util.stream.D
-    public final j$.util.V spliterator() {
+    public final j$.util.W spliterator() {
         return Y(super.spliterator());
     }
 
@@ -199,20 +199,20 @@ abstract class A extends b implements D {
     }
 
     @Override // j$.util.stream.D
-    public final j$.util.A min() {
+    public final j$.util.B min() {
         return reduce(new k(4));
     }
 
     @Override // j$.util.stream.D
-    public final j$.util.A max() {
+    public final j$.util.B max() {
         return reduce(new k(11));
     }
 
     @Override // j$.util.stream.D
-    public final j$.util.A average() {
+    public final j$.util.B average() {
         double[] dArr = (double[]) collect(new k(5), new j(5), new j(6));
         if (dArr[2] <= 0.0d) {
-            return j$.util.A.a();
+            return j$.util.B.a();
         }
         Set set = Collectors.a;
         double d = dArr[0] + dArr[1];
@@ -220,7 +220,7 @@ abstract class A extends b implements D {
         if (Double.isNaN(d) && Double.isInfinite(d2)) {
             d = d2;
         }
-        return j$.util.A.d(d / dArr[2]);
+        return j$.util.B.d(d / dArr[2]);
     }
 
     @Override // j$.util.stream.D
@@ -265,9 +265,9 @@ abstract class A extends b implements D {
     }
 
     @Override // j$.util.stream.D
-    public final j$.util.A reduce(DoubleBinaryOperator doubleBinaryOperator) {
+    public final j$.util.B reduce(DoubleBinaryOperator doubleBinaryOperator) {
         Objects.requireNonNull(doubleBinaryOperator);
-        return (j$.util.A) C(new A1(b3.DOUBLE_VALUE, doubleBinaryOperator, 1));
+        return (j$.util.B) C(new A1(b3.DOUBLE_VALUE, doubleBinaryOperator, 1));
     }
 
     @Override // j$.util.stream.D

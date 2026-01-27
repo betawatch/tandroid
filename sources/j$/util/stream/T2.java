@@ -37,7 +37,7 @@ class T2 extends V2 implements LongConsumer {
                 J3.a(getClass(), "{0} calling SpinedBuffer.OfLong.forEach(Consumer)");
                 throw null;
             }
-            j$.util.S.c((S2) spliterator(), consumer);
+            j$.util.T.c((S2) spliterator(), consumer);
         }
     }
 
@@ -67,7 +67,7 @@ class T2 extends V2 implements LongConsumer {
 
     @Override // j$.util.stream.V2, java.lang.Iterable
     /* renamed from: y, reason: merged with bridge method [inline-methods] */
-    public j$.util.b0 spliterator() {
+    public j$.util.c0 spliterator() {
         return new S2(this, 0, this.c, 0, this.b);
     }
 

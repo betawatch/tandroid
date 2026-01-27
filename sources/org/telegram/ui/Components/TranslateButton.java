@@ -224,7 +224,7 @@ public abstract class TranslateButton extends FrameLayout {
             }
         });
         if (UserConfig.getInstance(this.currentAccount).isPremium() && languageName != null) {
-            ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(getContext(), true, false, this.resourcesProvider);
+            ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(getContext(), false, false, this.resourcesProvider);
             if (this.accusative[0]) {
                 formatString = LocaleController.formatString(R.string.DoNotTranslateLanguage, languageName);
             } else {
@@ -240,7 +240,7 @@ public abstract class TranslateButton extends FrameLayout {
             });
             actionBarPopupWindowLayout.addView(actionBarMenuSubItem3);
         }
-        ActionBarMenuSubItem actionBarMenuSubItem4 = new ActionBarMenuSubItem(getContext(), true, false, this.resourcesProvider);
+        ActionBarMenuSubItem actionBarMenuSubItem4 = new ActionBarMenuSubItem(getContext(), false, false, this.resourcesProvider);
         actionBarMenuSubItem4.setTextAndIcon(LocaleController.getString(R.string.Hide), R.drawable.msg_cancel);
         actionBarMenuSubItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TranslateButton$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
@@ -22,6 +23,7 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.Property;
 import android.util.SparseIntArray;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -53,6 +55,7 @@ import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimationProperties;
 import org.telegram.ui.Components.FilterTabsView;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Stories.recorder.HintView2;
 
 /* loaded from: classes5.dex */
@@ -63,15 +66,18 @@ public abstract class FilterTabsView extends FrameLayout {
     private int aTabLineColorKey;
     private int aUnactiveTextColorKey;
     private int activeTextColorKey;
-    private ListAdapter adapter;
+    int activeTouches;
+    private final ListAdapter adapter;
     private int additionalTabWidth;
     private int allTabsWidth;
     private boolean animatingIndicator;
     private float animatingIndicatorProgress;
-    private Runnable animationRunnable;
+    private final Runnable animationRunnable;
     private float animationTime;
     private float animationValue;
     private int backgroundColorKey;
+    BlurredBackgroundDrawable blurredBackgroundDrawable;
+    private final Path clipPath;
     private AnimatorSet colorChangeAnimator;
     private final Paint counterPaint;
     private int currentPosition;
@@ -81,27 +87,27 @@ public abstract class FilterTabsView extends FrameLayout {
     private boolean editingForwardAnimation;
     private float editingStartAnimationProgress;
     private ColorFilter emojiColorFilter;
-    private SparseIntArray idToPosition;
+    private final SparseIntArray idToPosition;
     private boolean ignoreLayout;
-    private CubicBezierInterpolator interpolator;
+    private final CubicBezierInterpolator interpolator;
     private boolean invalidated;
     private boolean isEditing;
     DefaultItemAnimator itemAnimator;
     private long lastAnimationTime;
     private long lastEditingAnimationTime;
-    private LinearLayoutManager layoutManager;
-    private RecyclerListView listView;
+    private final LinearLayoutManager layoutManager;
+    private final RecyclerListView listView;
     private final int listViewPaddingH;
     private Drawable lockDrawable;
     private int lockDrawableColor;
     private int manualScrollingToId;
     private int manualScrollingToPosition;
     private boolean orderChanged;
-    private SparseIntArray positionToCount;
-    private SparseIntArray positionToId;
-    private SparseIntArray positionToStableId;
-    private SparseIntArray positionToWidth;
-    private SparseIntArray positionToX;
+    private final SparseIntArray positionToCount;
+    private final SparseIntArray positionToId;
+    private final SparseIntArray positionToStableId;
+    private final SparseIntArray positionToWidth;
+    private final SparseIntArray positionToX;
     private int prevLayoutWidth;
     private int previousId;
     private int previousPosition;
@@ -109,9 +115,9 @@ public abstract class FilterTabsView extends FrameLayout {
     private int scrollingToChild;
     private int selectedTabId;
     private int selectorColorKey;
-    private GradientDrawable selectorDrawable;
+    private final GradientDrawable selectorDrawable;
     private int tabLineColorKey;
-    private ArrayList tabs;
+    private final ArrayList tabs;
     private final TextPaint textCounterPaint;
     public final TextPaint textPaint;
     private int unactiveTextColorKey;
@@ -255,7 +261,7 @@ public abstract class FilterTabsView extends FrameLayout {
         private float locIconXOffset;
         StaticLayout outCounter;
         private float progressToLocked;
-        private RectF rect;
+        private final RectF rect;
         StaticLayout stableCounter;
         private float tabCounterVisible;
         private int tabWidth;
@@ -1158,6 +1164,7 @@ public abstract class FilterTabsView extends FrameLayout {
                 return Float.valueOf(FilterTabsView.this.animationValue);
             }
         };
+        this.clipPath = new Path();
         this.resourcesProvider = resourcesProvider;
         textPaint2.setTextSize(AndroidUtilities.dpf2(11.0f));
         textPaint2.setTypeface(AndroidUtilities.bold());
@@ -1166,10 +1173,11 @@ public abstract class FilterTabsView extends FrameLayout {
         textPaint3.setStyle(Paint.Style.STROKE);
         textPaint3.setStrokeCap(Paint.Cap.ROUND);
         textPaint3.setStrokeWidth(AndroidUtilities.dp(1.5f));
-        this.selectorDrawable = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
+        GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
+        this.selectorDrawable = gradientDrawable;
         float dpf2 = AndroidUtilities.dpf2(13.0f);
-        this.selectorDrawable.setCornerRadii(new float[]{dpf2, dpf2, dpf2, dpf2, dpf2, dpf2, dpf2, dpf2});
-        this.selectorDrawable.setColor(Theme.getColor(this.tabLineColorKey, resourcesProvider));
+        gradientDrawable.setCornerRadii(new float[]{dpf2, dpf2, dpf2, dpf2, dpf2, dpf2, dpf2, dpf2});
+        gradientDrawable.setColor(Theme.getColor(this.tabLineColorKey, resourcesProvider));
         setHorizontalScrollBarEnabled(false);
         RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.Components.FilterTabsView.3
             @Override // android.view.View
@@ -1181,6 +1189,11 @@ public abstract class FilterTabsView extends FrameLayout {
             @Override // org.telegram.ui.Components.RecyclerListView
             protected boolean allowSelectChildAtPosition(View view) {
                 return FilterTabsView.this.isEnabled() && FilterTabsView.this.delegate.canPerformActions();
+            }
+
+            @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
+            protected void dispatchDraw(Canvas canvas) {
+                super.dispatchDraw(canvas);
             }
 
             @Override // org.telegram.ui.Components.RecyclerListView
@@ -1197,14 +1210,13 @@ public abstract class FilterTabsView extends FrameLayout {
         };
         this.listView = recyclerListView;
         recyclerListView.setClipChildren(false);
-        4 r0 = new 4();
-        this.itemAnimator = r0;
-        r0.setDelayAnimations(false);
-        this.listView.setItemAnimator(this.itemAnimator);
-        this.listView.setSelectorType(9);
-        this.listView.setSelectorRadius(6);
-        this.listView.setSelectorDrawableColor(Theme.getColor(this.selectorColorKey, resourcesProvider));
-        RecyclerListView recyclerListView2 = this.listView;
+        4 r2 = new 4();
+        this.itemAnimator = r2;
+        r2.setDelayAnimations(false);
+        recyclerListView.setItemAnimator(this.itemAnimator);
+        recyclerListView.setSelectorType(9);
+        recyclerListView.setSelectorRadius(6);
+        recyclerListView.setSelectorDrawableColor(Theme.getColor(this.selectorColorKey, resourcesProvider));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, 0, 0 == true ? 1 : 0) { // from class: org.telegram.ui.Components.FilterTabsView.5
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public boolean supportsPredictiveItemAnimations() {
@@ -1242,18 +1254,18 @@ public abstract class FilterTabsView extends FrameLayout {
             }
         };
         this.layoutManager = linearLayoutManager;
-        recyclerListView2.setLayoutManager(linearLayoutManager);
-        new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(this.listView);
+        recyclerListView.setLayoutManager(linearLayoutManager);
+        new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(recyclerListView);
         int max = Math.max(0, AndroidUtilities.dp(13.5f));
         this.listViewPaddingH = max;
-        this.listView.setPadding(max, 0, max, 0);
-        this.listView.setClipToPadding(false);
-        this.listView.setDrawSelectorBehind(true);
+        recyclerListView.setPadding(max, 0, max, 0);
+        recyclerListView.setClipToPadding(false);
+        recyclerListView.setDrawSelectorBehind(true);
         ListAdapter listAdapter = new ListAdapter(context);
         this.adapter = listAdapter;
         listAdapter.setHasStableIds(true);
-        this.listView.setAdapter(this.adapter);
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.Components.FilterTabsView$$ExternalSyntheticLambda0
+        recyclerListView.setAdapter(listAdapter);
+        recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.Components.FilterTabsView$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
             public /* synthetic */ boolean hasDoubleTap(View view, int i) {
                 return RecyclerListView.OnItemClickListenerExtended.-CC.$default$hasDoubleTap(this, view, i);
@@ -1269,7 +1281,7 @@ public abstract class FilterTabsView extends FrameLayout {
                 FilterTabsView.this.lambda$new$0(view, i, f, f2);
             }
         });
-        this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.FilterTabsView$$ExternalSyntheticLambda1
+        recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.FilterTabsView$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i) {
                 boolean lambda$new$1;
@@ -1277,13 +1289,15 @@ public abstract class FilterTabsView extends FrameLayout {
                 return lambda$new$1;
             }
         });
-        this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.FilterTabsView.6
+        recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.FilterTabsView.6
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
+                FilterTabsView.this.listView.invalidate();
                 FilterTabsView.this.invalidate();
             }
         });
-        addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
+        recyclerListView.setOverScrollMode(2);
+        addView(recyclerListView, LayoutHelper.createFrame(-1, -1.0f));
     }
 
     class 4 extends DefaultItemAnimator {
@@ -1336,6 +1350,7 @@ public abstract class FilterTabsView extends FrameLayout {
                 if (animateChange) {
                     tabView.changeProgress = 0.0f;
                     tabView.animateChange = true;
+                    FilterTabsView.this.listView.invalidate();
                     FilterTabsView.this.invalidate();
                 }
                 if (i5 == 0 && i6 == 0 && !animateChange) {
@@ -1455,6 +1470,11 @@ public abstract class FilterTabsView extends FrameLayout {
         this.animatingIndicator = false;
     }
 
+    public void setBlurredBackground(BlurredBackgroundDrawable blurredBackgroundDrawable) {
+        this.blurredBackgroundDrawable = blurredBackgroundDrawable;
+        setBackground(blurredBackgroundDrawable);
+    }
+
     public void scrollToTab(Tab tab, int i) {
         if (tab.isLocked) {
             FilterTabsViewDelegate filterTabsViewDelegate = this.delegate;
@@ -1508,6 +1528,7 @@ public abstract class FilterTabsView extends FrameLayout {
     public void setAnimationIdicatorProgress(float f) {
         this.animatingIndicatorProgress = f;
         this.listView.invalidateViews();
+        this.listView.invalidate();
         invalidate();
         FilterTabsViewDelegate filterTabsViewDelegate = this.delegate;
         if (filterTabsViewDelegate != null) {
@@ -1647,87 +1668,11 @@ public abstract class FilterTabsView extends FrameLayout {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x012a  */
     @Override // android.view.ViewGroup
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     protected boolean drawChild(Canvas canvas, View view, long j) {
-        RecyclerView.ViewHolder findViewHolderForAdapterPosition;
-        int i;
-        int i2;
-        float left;
-        float f;
-        float f2;
-        float f3;
-        float measuredWidth;
         boolean drawChild = super.drawChild(canvas, view, j);
         if (view == this.listView) {
-            int measuredHeight = getMeasuredHeight();
-            this.selectorDrawable.setAlpha((int) (this.listView.getAlpha() * 255.0f));
-            if (this.animatingIndicator || this.manualScrollingToPosition != -1) {
-                int findFirstVisibleItemPosition = this.layoutManager.findFirstVisibleItemPosition();
-                if (findFirstVisibleItemPosition != -1 && (findViewHolderForAdapterPosition = this.listView.findViewHolderForAdapterPosition(findFirstVisibleItemPosition)) != null) {
-                    if (this.animatingIndicator) {
-                        i = this.previousPosition;
-                        i2 = this.currentPosition;
-                    } else {
-                        i = this.currentPosition;
-                        i2 = this.manualScrollingToPosition;
-                    }
-                    int i3 = this.positionToX.get(i);
-                    int i4 = this.positionToX.get(i2);
-                    int i5 = this.positionToWidth.get(i);
-                    int i6 = this.positionToWidth.get(i2);
-                    float f4 = this.positionToCount.get(i) != 0 ? 1.0f : 0.0f;
-                    float f5 = this.positionToCount.get(i2) != 0 ? 1.0f : 0.0f;
-                    if (this.additionalTabWidth != 0) {
-                        left = ((int) (i3 + ((i4 - i3) * this.animatingIndicatorProgress))) + AndroidUtilities.dp(10.0f);
-                    } else {
-                        left = (((int) (i3 + ((i4 - i3) * this.animatingIndicatorProgress))) - (this.positionToX.get(findFirstVisibleItemPosition) - findViewHolderForAdapterPosition.itemView.getLeft())) + AndroidUtilities.dp(10.0f);
-                    }
-                    float f6 = this.animatingIndicatorProgress;
-                    f = (int) (i5 + ((i6 - i5) * f6));
-                    float lerp = AndroidUtilities.lerp(f4, f5, f6);
-                    f2 = left;
-                    f3 = lerp;
-                    if (f != 0.0f) {
-                        canvas.save();
-                        canvas.translate(this.listView.getTranslationX(), 0.0f);
-                        canvas.scale(this.listView.getScaleX(), 1.0f, this.listView.getPivotX() + this.listView.getX(), this.listView.getPivotY());
-                        int dp = (measuredHeight / 2) - AndroidUtilities.dp(13.0f);
-                        this.selectorDrawable.setBounds(((int) f2) - AndroidUtilities.dp(12.5f), dp, (int) (f2 + f + AndroidUtilities.lerp(AndroidUtilities.dp(12.5f), AndroidUtilities.dp(5.333f), f3)), AndroidUtilities.dp(26.0f) + dp);
-                        this.selectorDrawable.setAlpha(31);
-                        this.selectorDrawable.draw(canvas);
-                        canvas.restore();
-                    }
-                }
-                f3 = 0.0f;
-                f = 0.0f;
-                f2 = 0.0f;
-                if (f != 0.0f) {
-                }
-            } else {
-                RecyclerView.ViewHolder findViewHolderForAdapterPosition2 = this.listView.findViewHolderForAdapterPosition(this.currentPosition);
-                if (findViewHolderForAdapterPosition2 != null) {
-                    TabView tabView = (TabView) findViewHolderForAdapterPosition2.itemView;
-                    f = Math.max(AndroidUtilities.dp(16.0f), tabView.animateTabWidth ? AndroidUtilities.lerp(tabView.animateFromTabWidth, tabView.tabWidth, tabView.changeProgress) : tabView.tabWidth);
-                    if (tabView.animateTabWidth) {
-                        measuredWidth = AndroidUtilities.lerp(tabView.animateFromTabWidth, tabView.getMeasuredWidth(), tabView.changeProgress);
-                    } else {
-                        measuredWidth = tabView.getMeasuredWidth();
-                    }
-                    f2 = (int) (tabView.getX() + ((measuredWidth - f) / 2.0f));
-                    f3 = tabView.tabCounterVisible;
-                    if (f != 0.0f) {
-                    }
-                }
-                f3 = 0.0f;
-                f = 0.0f;
-                f2 = 0.0f;
-                if (f != 0.0f) {
-                }
-            }
+            drawSelector(canvas);
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
         long min = Math.min(17L, elapsedRealtime - this.lastEditingAnimationTime);
@@ -1736,11 +1681,11 @@ public abstract class FilterTabsView extends FrameLayout {
         boolean z2 = true;
         if (z || this.editingAnimationProgress != 0.0f) {
             if (this.editingForwardAnimation) {
-                float f7 = this.editingAnimationProgress;
-                boolean z3 = f7 <= 0.0f;
-                float f8 = f7 + (min / 420.0f);
-                this.editingAnimationProgress = f8;
-                if (!z && z3 && f8 >= 0.0f) {
+                float f = this.editingAnimationProgress;
+                boolean z3 = f <= 0.0f;
+                float f2 = f + (min / 420.0f);
+                this.editingAnimationProgress = f2;
+                if (!z && z3 && f2 >= 0.0f) {
                     this.editingAnimationProgress = 0.0f;
                 }
                 if (this.editingAnimationProgress >= 1.0f) {
@@ -1748,11 +1693,11 @@ public abstract class FilterTabsView extends FrameLayout {
                     this.editingForwardAnimation = false;
                 }
             } else {
-                float f9 = this.editingAnimationProgress;
-                r3 = f9 >= 0.0f;
-                float f10 = f9 - (min / 420.0f);
-                this.editingAnimationProgress = f10;
-                if (!z && r3 && f10 <= 0.0f) {
+                float f3 = this.editingAnimationProgress;
+                r10 = f3 >= 0.0f;
+                float f4 = f3 - (min / 420.0f);
+                this.editingAnimationProgress = f4;
+                if (!z && r10 && f4 <= 0.0f) {
                     this.editingAnimationProgress = 0.0f;
                 }
                 if (this.editingAnimationProgress <= -1.0f) {
@@ -1760,36 +1705,148 @@ public abstract class FilterTabsView extends FrameLayout {
                     this.editingForwardAnimation = true;
                 }
             }
-            r3 = true;
+            r10 = true;
         }
         if (z) {
-            float f11 = this.editingStartAnimationProgress;
-            if (f11 < 1.0f) {
-                float f12 = f11 + (min / 180.0f);
-                this.editingStartAnimationProgress = f12;
-                if (f12 > 1.0f) {
+            float f5 = this.editingStartAnimationProgress;
+            if (f5 < 1.0f) {
+                float f6 = f5 + (min / 180.0f);
+                this.editingStartAnimationProgress = f6;
+                if (f6 > 1.0f) {
                     this.editingStartAnimationProgress = 1.0f;
                 }
             }
-            z2 = r3;
+            z2 = r10;
         } else {
             if (!z) {
-                float f13 = this.editingStartAnimationProgress;
-                if (f13 > 0.0f) {
-                    float f14 = f13 - (min / 180.0f);
-                    this.editingStartAnimationProgress = f14;
-                    if (f14 < 0.0f) {
+                float f7 = this.editingStartAnimationProgress;
+                if (f7 > 0.0f) {
+                    float f8 = f7 - (min / 180.0f);
+                    this.editingStartAnimationProgress = f8;
+                    if (f8 < 0.0f) {
                         this.editingStartAnimationProgress = 0.0f;
                     }
                 }
             }
-            z2 = r3;
+            z2 = r10;
         }
         if (z2) {
             this.listView.invalidateViews();
+            this.listView.invalidate();
             invalidate();
         }
         return drawChild;
+    }
+
+    private void drawSelector(Canvas canvas) {
+        RecyclerView.ViewHolder findViewHolderForAdapterPosition;
+        int i;
+        int i2;
+        float lerp;
+        float lerp2;
+        float f;
+        float f2;
+        float measuredWidth;
+        int measuredHeight = getMeasuredHeight();
+        this.selectorDrawable.setAlpha((int) (this.listView.getAlpha() * 255.0f));
+        if (this.animatingIndicator || this.manualScrollingToPosition != -1) {
+            int findFirstVisibleItemPosition = this.layoutManager.findFirstVisibleItemPosition();
+            if (findFirstVisibleItemPosition != -1 && (findViewHolderForAdapterPosition = this.listView.findViewHolderForAdapterPosition(findFirstVisibleItemPosition)) != null) {
+                if (this.animatingIndicator) {
+                    i = this.previousPosition;
+                    i2 = this.currentPosition;
+                } else {
+                    i = this.currentPosition;
+                    i2 = this.manualScrollingToPosition;
+                }
+                int i3 = this.positionToX.get(i);
+                int i4 = this.positionToX.get(i2);
+                int i5 = this.positionToWidth.get(i);
+                int i6 = this.positionToWidth.get(i2);
+                float f3 = this.positionToCount.get(i) != 0 ? 1.0f : 0.0f;
+                float f4 = this.positionToCount.get(i2) != 0 ? 1.0f : 0.0f;
+                if (this.additionalTabWidth != 0) {
+                    lerp = AndroidUtilities.lerp(i3, i4, this.animatingIndicatorProgress) + AndroidUtilities.dp(10.0f);
+                } else {
+                    lerp = (AndroidUtilities.lerp(i3, i4, this.animatingIndicatorProgress) - (this.positionToX.get(findFirstVisibleItemPosition) - findViewHolderForAdapterPosition.itemView.getLeft())) + AndroidUtilities.dp(10.0f);
+                }
+                lerp2 = AndroidUtilities.lerp(i5, i6, this.animatingIndicatorProgress);
+                float lerp3 = AndroidUtilities.lerp(f3, f4, this.animatingIndicatorProgress);
+                f = lerp;
+                f2 = lerp3;
+            }
+            f2 = 0.0f;
+            lerp2 = 0.0f;
+            f = 0.0f;
+        } else {
+            RecyclerView.ViewHolder findViewHolderForAdapterPosition2 = this.listView.findViewHolderForAdapterPosition(this.currentPosition);
+            if (findViewHolderForAdapterPosition2 != null) {
+                TabView tabView = (TabView) findViewHolderForAdapterPosition2.itemView;
+                lerp2 = Math.max(AndroidUtilities.dp(16.0f), tabView.animateTabWidth ? AndroidUtilities.lerp(tabView.animateFromTabWidth, tabView.tabWidth, tabView.changeProgress) : tabView.tabWidth);
+                if (tabView.animateTabWidth) {
+                    measuredWidth = AndroidUtilities.lerp(tabView.animateFromTabWidth + AndroidUtilities.dp(20.0f), tabView.getMeasuredWidth(), tabView.changeProgress);
+                } else {
+                    measuredWidth = tabView.getMeasuredWidth();
+                }
+                f = (int) (tabView.getX() + ((measuredWidth - lerp2) / 2.0f));
+                f2 = tabView.tabCounterVisible;
+            }
+            f2 = 0.0f;
+            lerp2 = 0.0f;
+            f = 0.0f;
+        }
+        if (lerp2 != 0.0f) {
+            canvas.save();
+            canvas.translate(this.listView.getTranslationX(), 0.0f);
+            canvas.scale(this.listView.getScaleX(), 1.0f, this.listView.getPivotX() + this.listView.getX(), this.listView.getPivotY());
+            float f5 = this.additionalTabWidth / 2.0f;
+            int dp = (measuredHeight / 2) - AndroidUtilities.dp(14.0f);
+            this.selectorDrawable.setBounds((int) ((f - AndroidUtilities.dp(12.5f)) - f5), dp, (int) (f + lerp2 + AndroidUtilities.lerp(AndroidUtilities.dp(12.5f), AndroidUtilities.dp(5.333f), f5 <= 0.0f ? f2 : 0.0f) + f5), AndroidUtilities.dp(28.0f) + dp);
+            this.selectorDrawable.setAlpha(31);
+            this.selectorDrawable.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.View
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
+        super.onSizeChanged(i, i2, i3, i4);
+        this.clipPath.rewind();
+        this.clipPath.addRoundRect(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), i - AndroidUtilities.dp(9.0f), i2 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    protected void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.clipPath);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    public void updateColors() {
+        BlurredBackgroundDrawable blurredBackgroundDrawable = this.blurredBackgroundDrawable;
+        if (blurredBackgroundDrawable != null) {
+            blurredBackgroundDrawable.updateColors();
+        }
+        invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        int action = motionEvent.getAction();
+        if (action == 0) {
+            if (this.activeTouches == 0) {
+                this.listView.setOverScrollMode(0);
+            }
+            this.activeTouches++;
+        } else if (action == 1 || action == 3) {
+            int i = this.activeTouches - 1;
+            this.activeTouches = i;
+            if (i == 0) {
+                this.listView.setOverScrollMode(2);
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -1800,12 +1857,16 @@ public abstract class FilterTabsView extends FrameLayout {
             if (findDefaultTab != null) {
                 int i3 = R.string.FilterAllChats;
                 findDefaultTab.setTitle(LocaleController.getString(i3), null, false);
-                findDefaultTab.getWidth(false);
-                findDefaultTab.setTitle(this.allTabsWidth > size ? LocaleController.getString(R.string.FilterAllChatsShort) : LocaleController.getString(i3), null, false);
-                findDefaultTab.getWidth(false);
+                int width = findDefaultTab.getWidth(false);
+                if (this.allTabsWidth > size) {
+                    i3 = R.string.FilterAllChatsShort;
+                }
+                findDefaultTab.setTitle(LocaleController.getString(i3), null, false);
+                int width2 = (this.allTabsWidth - width) + findDefaultTab.getWidth(false);
                 int i4 = this.additionalTabWidth;
-                this.additionalTabWidth = 0;
-                if (i4 != 0) {
+                int size2 = width2 < size ? (size - width2) / this.tabs.size() : 0;
+                this.additionalTabWidth = size2;
+                if (i4 != size2) {
                     this.ignoreLayout = true;
                     RecyclerView.ItemAnimator itemAnimator = this.listView.getItemAnimator();
                     this.listView.setItemAnimator(null);
@@ -1883,6 +1944,7 @@ public abstract class FilterTabsView extends FrameLayout {
         }
         this.animatingIndicatorProgress = f;
         this.listView.invalidateViews();
+        this.listView.invalidate();
         invalidate();
         scrollToChild(i2);
         if (f >= 1.0f) {
@@ -1901,6 +1963,7 @@ public abstract class FilterTabsView extends FrameLayout {
         this.isEditing = z;
         this.editingForwardAnimation = true;
         this.listView.invalidateViews();
+        this.listView.invalidate();
         this.adapter.notifyDataSetChanged();
         invalidate();
         if (this.isEditing || !this.orderChanged) {
@@ -1987,7 +2050,7 @@ public abstract class FilterTabsView extends FrameLayout {
     }
 
     private class ListAdapter extends RecyclerListView.SelectionAdapter {
-        private Context mContext;
+        private final Context mContext;
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
@@ -2114,7 +2177,7 @@ public abstract class FilterTabsView extends FrameLayout {
     }
 
     public class TouchHelperCallback extends ItemTouchHelper.Callback {
-        private Runnable resetDefaultPosition = new Runnable() { // from class: org.telegram.ui.Components.FilterTabsView$TouchHelperCallback$$ExternalSyntheticLambda0
+        private final Runnable resetDefaultPosition = new Runnable() { // from class: org.telegram.ui.Components.FilterTabsView$TouchHelperCallback$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 FilterTabsView.TouchHelperCallback.this.lambda$new$0();

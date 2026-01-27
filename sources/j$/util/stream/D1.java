@@ -82,6 +82,6 @@ final class D1 implements S1, j2 {
 
     @Override // java.util.function.Supplier
     public final Object get() {
-        return this.a ? j$.util.A.a() : j$.util.A.d(this.b);
+        return this.a ? j$.util.B.a() : j$.util.B.d(this.b);
     }
 }

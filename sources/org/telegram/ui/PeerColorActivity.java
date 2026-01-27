@@ -272,8 +272,8 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             this.selectedEmoji = 0L;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:11:0x01d4  */
-        /* JADX WARN: Removed duplicated region for block: B:15:0x01f9  */
+        /* JADX WARN: Removed duplicated region for block: B:11:0x01cf  */
+        /* JADX WARN: Removed duplicated region for block: B:15:0x01f4  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -347,8 +347,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                 }
             };
             this.listView = recyclerListView;
-            recyclerListView.setClipToPadding(false);
-            ((DefaultItemAnimator) this.listView.getItemAnimator()).setSupportsChangeAnimations(false);
+            ((DefaultItemAnimator) recyclerListView.getItemAnimator()).setSupportsChangeAnimations(false);
             GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
             this.layoutManager = gridLayoutManager;
             gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.PeerColorActivity.Page.2
@@ -742,7 +741,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                         int i7 = i - page4.giftsStartRow;
                         if (page4.resaleGifts != null && i7 >= 0 && i7 < Page.this.uniqueGifts.size()) {
                             TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) Page.this.uniqueGifts.get(i7);
-                            giftCell2.setStarsGift(tL_starGiftUnique2, false, false, false, true);
+                            giftCell2.setStarsGift(tL_starGiftUnique2, false, false, false, true, false);
                             if ((Page.this.selectedEmojiCollectible == null || Page.this.selectedEmojiCollectible.collectible_id != tL_starGiftUnique2.id) && (Page.this.selectedPeerCollectible == null || Page.this.selectedPeerCollectible.collectible_id != tL_starGiftUnique2.id)) {
                                 z = false;
                             }
@@ -812,7 +811,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
                     int i2 = adapterPosition2 - page2.giftsStartRow;
                     if (page2.resaleGifts != null && i2 >= 0 && i2 < Page.this.uniqueGifts.size()) {
                         TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) Page.this.uniqueGifts.get(i2);
-                        giftCell2.setStarsGift(tL_starGiftUnique2, false, false, false, true);
+                        giftCell2.setStarsGift(tL_starGiftUnique2, false, false, false, true, false);
                         if ((Page.this.selectedEmojiCollectible == null || Page.this.selectedEmojiCollectible.collectible_id != tL_starGiftUnique2.id) && (Page.this.selectedPeerCollectible == null || Page.this.selectedPeerCollectible.collectible_id != tL_starGiftUnique2.id)) {
                             z = false;
                         }
@@ -2179,7 +2178,7 @@ public class PeerColorActivity extends BaseFragment implements NotificationCente
             return;
         }
         final boolean[] zArr = new boolean[1];
-        StarGiftSheet.ResaleBuyTransferAlert resaleBuyTransferAlert = new StarGiftSheet.ResaleBuyTransferAlert(getContext(), this.resourceProvider, tL_starGiftUnique, new StarGiftSheet.PaymentFormState(amountUtils$Currency, tL_payments_paymentFormStarGift), this.currentAccount, j, tL_starGiftUnique.title + " #" + LocaleController.formatNumber(tL_starGiftUnique.num, ','), new Utilities.Callback2() { // from class: org.telegram.ui.PeerColorActivity$$ExternalSyntheticLambda10
+        StarGiftSheet.ResaleBuyTransferAlert resaleBuyTransferAlert = new StarGiftSheet.ResaleBuyTransferAlert(getContext(), this.resourceProvider, tL_starGiftUnique, new StarGiftSheet.PaymentFormState(amountUtils$Currency, tL_payments_paymentFormStarGift), this.currentAccount, j, tL_starGiftUnique.title + " #" + LocaleController.formatNumber(tL_starGiftUnique.num, ','), false, new Utilities.Callback2() { // from class: org.telegram.ui.PeerColorActivity$$ExternalSyntheticLambda10
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 PeerColorActivity.this.lambda$buy$7(zArr, tL_starGiftUnique, j, callback, (StarGiftSheet.PaymentFormState) obj, (Browser.Progress) obj2);

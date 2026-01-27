@@ -81,7 +81,7 @@ class V0 implements C0 {
     }
 
     @Override // j$.util.stream.H0, j$.util.stream.I0
-    public final j$.util.e0 spliterator() {
+    public final j$.util.f0 spliterator() {
         return Spliterators.j(this.a, 0, this.b);
     }
 

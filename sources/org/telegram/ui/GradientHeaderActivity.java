@@ -22,6 +22,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
@@ -40,7 +41,9 @@ import org.telegram.ui.Components.NestedSizeNotifierLayout;
 import org.telegram.ui.Components.Premium.PremiumGradient;
 import org.telegram.ui.Components.Premium.StarParticlesView;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda2;
 import org.telegram.ui.Components.SimpleThemeDescription;
+import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Stories.recorder.HintView2;
 
 /* loaded from: classes4.dex */
@@ -123,13 +126,13 @@ public abstract class GradientHeaderActivity extends BaseFragment {
         return i;
     }
 
-    static /* synthetic */ float access$1416(GradientHeaderActivity gradientHeaderActivity, float f) {
+    static /* synthetic */ float access$1316(GradientHeaderActivity gradientHeaderActivity, float f) {
         float f2 = gradientHeaderActivity.progress + f;
         gradientHeaderActivity.progress = f2;
         return f2;
     }
 
-    static /* synthetic */ float access$1424(GradientHeaderActivity gradientHeaderActivity, float f) {
+    static /* synthetic */ float access$1324(GradientHeaderActivity gradientHeaderActivity, float f) {
         float f2 = gradientHeaderActivity.progress - f;
         gradientHeaderActivity.progress = f2;
         return f2;
@@ -148,7 +151,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
     }
 
     protected View getHeader(Context context) {
-        return new View(context) { // from class: org.telegram.ui.GradientHeaderActivity.3
+        View view = new View(context) { // from class: org.telegram.ui.GradientHeaderActivity.3
             @Override // android.view.View
             protected void onMeasure(int i, int i2) {
                 GradientHeaderActivity gradientHeaderActivity = GradientHeaderActivity.this;
@@ -167,12 +170,14 @@ public abstract class GradientHeaderActivity extends BaseFragment {
                 super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(GradientHeaderActivity.this.firstViewHeight, TLObject.FLAG_30));
             }
         };
+        view.setTag(-33024);
+        return view;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
         this.hasOwnBackground = true;
-        final Rect rect = new Rect();
+        Rect rect = new Rect();
         Drawable mutate = ContextCompat.getDrawable(context, R.drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
@@ -181,14 +186,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
         ContentView createContentView = createContentView();
         this.contentView = createContentView;
         createContentView.setFitsSystemWindows(true);
-        this.listView = new RecyclerListView(context) { // from class: org.telegram.ui.GradientHeaderActivity.4
-            @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-            public void onDraw(Canvas canvas) {
-                GradientHeaderActivity.this.shadowDrawable.setBounds((int) ((-rect.left) - (AndroidUtilities.dp(16.0f) * GradientHeaderActivity.this.progressToFull)), ((GradientHeaderActivity.this.currentYOffset + ((int) (GradientHeaderActivity.this.yOffset * (1.0f - (GradientHeaderActivity.this.totalProgress > 0.5f ? (GradientHeaderActivity.this.totalProgress - 0.5f) / 0.5f : 0.0f))))) - rect.top) - AndroidUtilities.dp(16.0f), (int) (getMeasuredWidth() + rect.right + (AndroidUtilities.dp(16.0f) * GradientHeaderActivity.this.progressToFull)), getMeasuredHeight());
-                GradientHeaderActivity.this.shadowDrawable.draw(canvas);
-                super.onDraw(canvas);
-            }
-        };
+        this.listView = new RecyclerListView(context);
         if (this.useFillLastLayoutManager) {
             this.layoutManager = new FillLastLinearLayoutManager(context, (AndroidUtilities.dp(68.0f) + this.statusBarHeight) - AndroidUtilities.dp(16.0f), this.listView);
         } else {
@@ -199,8 +197,28 @@ public abstract class GradientHeaderActivity extends BaseFragment {
         if (linearLayoutManager instanceof FillLastLinearLayoutManager) {
             ((FillLastLinearLayoutManager) linearLayoutManager).setFixedLastItemHeight();
         }
-        this.listView.setAdapter(createAdapter());
-        this.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.GradientHeaderActivity.5
+        RecyclerView.Adapter createAdapter = createAdapter();
+        this.listView.setAdapter(createAdapter);
+        if (createAdapter instanceof UniversalAdapter) {
+            RecyclerListView recyclerListView = this.listView;
+            Utilities.CallbackReturn callbackReturn = new Utilities.CallbackReturn() { // from class: org.telegram.ui.GradientHeaderActivity$$ExternalSyntheticLambda1
+                @Override // org.telegram.messenger.Utilities.CallbackReturn
+                public final Object run(Object obj) {
+                    Boolean lambda$createView$0;
+                    lambda$createView$0 = GradientHeaderActivity.this.lambda$createView$0((View) obj);
+                    return lambda$createView$0;
+                }
+            };
+            int dp = AndroidUtilities.dp(12.0f);
+            float dp2 = AndroidUtilities.dp(16.0f);
+            RecyclerListView recyclerListView2 = this.listView;
+            Objects.requireNonNull(recyclerListView2);
+            recyclerListView.setSections(callbackReturn, dp, dp2, new RecyclerListView$$ExternalSyntheticLambda2(recyclerListView2), true);
+        } else {
+            this.listView.setSections(true);
+        }
+        this.listView.setClipToPadding(false);
+        this.listView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.GradientHeaderActivity.4
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 super.onScrollStateChanged(recyclerView, i);
@@ -225,7 +243,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
                 GradientHeaderActivity.this.contentView.invalidate();
             }
         });
-        this.backgroundView = new BackgroundView(context) { // from class: org.telegram.ui.GradientHeaderActivity.6
+        this.backgroundView = new BackgroundView(context) { // from class: org.telegram.ui.GradientHeaderActivity.5
         };
         FrameLayout frameLayout = this.contentView;
         StarParticlesView createParticlesView = createParticlesView();
@@ -237,7 +255,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
         this.actionBar.setBackground(null);
         this.actionBar.setCastShadows(false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.GradientHeaderActivity.7
+        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.GradientHeaderActivity.6
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
@@ -248,6 +266,11 @@ public abstract class GradientHeaderActivity extends BaseFragment {
         this.actionBar.setForceSkipTouches(true);
         updateColors();
         return this.fragmentView;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ Boolean lambda$createView$0(View view) {
+        return view.getParent() != this.listView ? Boolean.FALSE : Boolean.valueOf(!UniversalAdapter.isShadow(r1.getChildViewHolder(view).getItemViewType()));
     }
 
     protected ContentView createContentView() {
@@ -356,12 +379,12 @@ public abstract class GradientHeaderActivity extends BaseFragment {
             BackgroundView backgroundView = gradientHeaderActivity.backgroundView;
             if (!gradientHeaderActivity.isDialogVisible) {
                 if (GradientHeaderActivity.this.inc) {
-                    GradientHeaderActivity.access$1416(GradientHeaderActivity.this, 0.016f);
+                    GradientHeaderActivity.access$1316(GradientHeaderActivity.this, 0.016f);
                     if (GradientHeaderActivity.this.progress > 3.0f) {
                         GradientHeaderActivity.this.inc = false;
                     }
                 } else {
-                    GradientHeaderActivity.access$1424(GradientHeaderActivity.this, 0.016f);
+                    GradientHeaderActivity.access$1324(GradientHeaderActivity.this, 0.016f);
                     if (GradientHeaderActivity.this.progress < 1.0f) {
                         GradientHeaderActivity.this.inc = true;
                     }
@@ -409,14 +432,14 @@ public abstract class GradientHeaderActivity extends BaseFragment {
             }
             GradientHeaderActivity.this.gradientTools.gradientMatrix(0, 0, getMeasuredWidth(), getMeasuredHeight(), (-getMeasuredWidth()) * 0.1f * GradientHeaderActivity.this.progress, 0.0f);
             if (!GradientHeaderActivity.this.whiteBackground) {
-                canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), GradientHeaderActivity.this.currentYOffset + GradientHeaderActivity.this.yOffset + AndroidUtilities.dp(20.0f), GradientHeaderActivity.this.gradientTools.paint);
+                canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), GradientHeaderActivity.this.gradientTools.paint);
             } else {
                 if (this.backgroundGradient == null) {
                     LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(350.0f), new int[]{GradientHeaderActivity.this.getThemedColor(Theme.key_windowBackgroundWhite), GradientHeaderActivity.this.getThemedColor(Theme.key_windowBackgroundGray)}, new float[]{0.3f, 1.0f}, Shader.TileMode.CLAMP);
                     this.backgroundGradient = linearGradient;
                     this.backgroundGradientPaint.setShader(linearGradient);
                 }
-                canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), GradientHeaderActivity.this.currentYOffset + GradientHeaderActivity.this.yOffset + AndroidUtilities.dp(20.0f), this.backgroundGradientPaint);
+                canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.backgroundGradientPaint);
             }
             int themedColor = GradientHeaderActivity.this.getThemedColor(Theme.key_dialogTextBlack);
             GradientHeaderActivity gradientHeaderActivity5 = GradientHeaderActivity.this;
@@ -425,7 +448,7 @@ public abstract class GradientHeaderActivity extends BaseFragment {
             backgroundView.titleView.setTextColor(blendARGB);
             GradientHeaderActivity.this.headerBgPaint.setAlpha((int) ((1.0f - f3) * 255.0f));
             setLightStatusBar(Theme.blendOver(Theme.getColor(Theme.key_premiumGradientBackground4, ((BaseFragment) GradientHeaderActivity.this).resourceProvider), GradientHeaderActivity.this.headerBgPaint.getColor()));
-            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), GradientHeaderActivity.this.currentYOffset + GradientHeaderActivity.this.yOffset + AndroidUtilities.dp(20.0f), GradientHeaderActivity.this.headerBgPaint);
+            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), ((BaseFragment) GradientHeaderActivity.this).actionBar.getMeasuredHeight(), GradientHeaderActivity.this.headerBgPaint);
             super.dispatchDraw(canvas);
             if (f3 > 0.01f || !GradientHeaderActivity.this.drawActionBarShadow()) {
                 return;
@@ -457,10 +480,10 @@ public abstract class GradientHeaderActivity extends BaseFragment {
     }
 
     public StarParticlesView createParticlesView() {
-        return new StarParticlesView(getContext()) { // from class: org.telegram.ui.GradientHeaderActivity.8
+        return new StarParticlesView(getContext()) { // from class: org.telegram.ui.GradientHeaderActivity.7
             @Override // org.telegram.ui.Components.Premium.StarParticlesView
             protected void configure() {
-                StarParticlesView.Drawable drawable = new StarParticlesView.Drawable(50) { // from class: org.telegram.ui.GradientHeaderActivity.8.1
+                StarParticlesView.Drawable drawable = new StarParticlesView.Drawable(50) { // from class: org.telegram.ui.GradientHeaderActivity.7.1
                     @Override // org.telegram.ui.Components.Premium.StarParticlesView.Drawable
                     protected int getPathColor(int i) {
                         return ColorUtils.setAlphaComponent(Theme.getDefaultColor(this.colorKey), NotificationCenter.channelRecommendationsLoaded);

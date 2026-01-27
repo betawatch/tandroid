@@ -58,6 +58,6 @@ final class n implements ListIterator, y {
 
     @Override // java.util.Iterator, j$.util.y
     public final void forEachRemaining(Consumer consumer) {
-        S.q(this.a, consumer);
+        T.q(this.a, consumer);
     }
 }

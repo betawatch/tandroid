@@ -146,7 +146,7 @@ public final /* synthetic */ class a implements Supplier, Consumer, BooleanSuppl
                 return ((b) this.b).L();
             case 1:
                 Set set = Collectors.a;
-                return new j$.util.t0((CharSequence) this.b);
+                return new j$.util.u0((CharSequence) this.b);
             default:
                 return (Spliterator) this.b;
         }

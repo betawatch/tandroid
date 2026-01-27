@@ -39,7 +39,7 @@ final class Y extends a0 {
 
     @Override // j$.util.stream.a0, j$.util.stream.IntStream
     public final void forEach(IntConsumer intConsumer) {
-        j$.util.Y Y;
+        j$.util.Z Y;
         if (!isParallel()) {
             Y = a0.Y(S());
             Y.forEachRemaining(intConsumer);
@@ -50,7 +50,7 @@ final class Y extends a0 {
 
     @Override // j$.util.stream.a0, j$.util.stream.IntStream
     public final void forEachOrdered(IntConsumer intConsumer) {
-        j$.util.Y Y;
+        j$.util.Z Y;
         if (!isParallel()) {
             Y = a0.Y(S());
             Y.forEachRemaining(intConsumer);

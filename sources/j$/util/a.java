@@ -17,12 +17,12 @@ final class a implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return S.d(this);
+        return T.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return S.e(this, i);
+        return T.e(this, i);
     }
 
     @Override // j$.util.Spliterator

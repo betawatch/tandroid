@@ -46,7 +46,7 @@ public final /* synthetic */ class C implements DoubleStream {
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble average() {
-        return j$.util.S.n(this.a.average());
+        return j$.util.T.n(this.a.average());
     }
 
     @Override // java.util.stream.DoubleStream
@@ -93,12 +93,12 @@ public final /* synthetic */ class C implements DoubleStream {
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble findAny() {
-        return j$.util.S.n(this.a.findAny());
+        return j$.util.T.n(this.a.findAny());
     }
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble findFirst() {
-        return j$.util.S.n(this.a.findFirst());
+        return j$.util.T.n(this.a.findFirst());
     }
 
     @Override // java.util.stream.DoubleStream
@@ -127,7 +127,7 @@ public final /* synthetic */ class C implements DoubleStream {
 
     @Override // java.util.stream.DoubleStream, java.util.stream.BaseStream
     public final /* synthetic */ Iterator<Double> iterator() {
-        return j$.util.F.a(this.a.iterator());
+        return j$.util.G.a(this.a.iterator());
     }
 
     @Override // java.util.stream.DoubleStream
@@ -157,12 +157,12 @@ public final /* synthetic */ class C implements DoubleStream {
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble max() {
-        return j$.util.S.n(this.a.max());
+        return j$.util.T.n(this.a.max());
     }
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble min() {
-        return j$.util.S.n(this.a.min());
+        return j$.util.T.n(this.a.min());
     }
 
     @Override // java.util.stream.DoubleStream
@@ -199,7 +199,7 @@ public final /* synthetic */ class C implements DoubleStream {
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble reduce(DoubleBinaryOperator doubleBinaryOperator) {
-        return j$.util.S.n(this.a.reduce(doubleBinaryOperator));
+        return j$.util.T.n(this.a.reduce(doubleBinaryOperator));
     }
 
     /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.DoubleStream] */
@@ -225,7 +225,7 @@ public final /* synthetic */ class C implements DoubleStream {
 
     @Override // java.util.stream.DoubleStream, java.util.stream.BaseStream
     public final /* synthetic */ Spliterator<Double> spliterator() {
-        return j$.util.U.a(this.a.spliterator());
+        return j$.util.V.a(this.a.spliterator());
     }
 
     @Override // java.util.stream.DoubleStream, java.util.stream.BaseStream

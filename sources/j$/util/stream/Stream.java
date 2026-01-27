@@ -96,12 +96,12 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional findAny() {
-            return j$.util.S.i(this.a.findAny());
+            return j$.util.T.i(this.a.findAny());
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional findFirst() {
-            return j$.util.S.i(this.a.findFirst());
+            return j$.util.T.i(this.a.findFirst());
         }
 
         @Override // j$.util.stream.Stream
@@ -155,12 +155,12 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional max(Comparator comparator) {
-            return j$.util.S.i(this.a.max(comparator));
+            return j$.util.T.i(this.a.max(comparator));
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional min(Comparator comparator) {
-            return j$.util.S.i(this.a.min(comparator));
+            return j$.util.T.i(this.a.min(comparator));
         }
 
         @Override // j$.util.stream.Stream
@@ -190,7 +190,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional reduce(BinaryOperator binaryOperator) {
-            return j$.util.S.i(this.a.reduce(binaryOperator));
+            return j$.util.T.i(this.a.reduce(binaryOperator));
         }
 
         @Override // j$.util.stream.Stream
@@ -230,7 +230,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // j$.util.stream.BaseStream, j$.util.stream.D
         public final /* synthetic */ Spliterator spliterator() {
-            return j$.util.f0.a(this.a.spliterator());
+            return j$.util.g0.a(this.a.spliterator());
         }
 
         @Override // j$.util.stream.Stream
@@ -330,12 +330,12 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional findAny() {
-            return j$.util.S.m(Stream.this.findAny());
+            return j$.util.T.m(Stream.this.findAny());
         }
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional findFirst() {
-            return j$.util.S.m(Stream.this.findFirst());
+            return j$.util.T.m(Stream.this.findFirst());
         }
 
         @Override // java.util.stream.Stream
@@ -409,12 +409,12 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional max(Comparator comparator) {
-            return j$.util.S.m(Stream.this.max(comparator));
+            return j$.util.T.m(Stream.this.max(comparator));
         }
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional min(Comparator comparator) {
-            return j$.util.S.m(Stream.this.min(comparator));
+            return j$.util.T.m(Stream.this.min(comparator));
         }
 
         @Override // java.util.stream.Stream
@@ -449,7 +449,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional reduce(BinaryOperator binaryOperator) {
-            return j$.util.S.m(Stream.this.reduce(binaryOperator));
+            return j$.util.T.m(Stream.this.reduce(binaryOperator));
         }
 
         @Override // java.util.stream.BaseStream

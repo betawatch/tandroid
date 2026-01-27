@@ -8,7 +8,6 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -63,7 +62,6 @@ import org.telegram.ui.Cells.ShadowSectionCell;
 import org.telegram.ui.Cells.TextCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.Cells.WallpaperCell;
-import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.EmptyTextProgressView;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.NumberTextView;
@@ -393,78 +391,51 @@ public class WallpapersListActivity extends BaseFragment implements Notification
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.WallpapersListActivity.4
-            private Paint paint = new Paint();
-
-            @Override // org.telegram.ui.Components.RecyclerListView, android.view.View
-            public boolean hasOverlappingRendering() {
-                return false;
-            }
-
-            /* JADX WARN: Code restructure failed: missing block: B:9:0x0033, code lost:
-            
-                if (r0.itemView.getBottom() >= r1) goto L12;
-             */
-            @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-            /*
-                Code decompiled incorrectly, please refer to instructions dump.
-            */
-            public void onDraw(Canvas canvas) {
-                int i4;
-                RecyclerView.ViewHolder findViewHolderForAdapterPosition = (getAdapter() != WallpapersListActivity.this.listAdapter || WallpapersListActivity.this.resetInfoRow == -1) ? null : findViewHolderForAdapterPosition(WallpapersListActivity.this.resetInfoRow);
-                int measuredHeight = getMeasuredHeight();
-                if (findViewHolderForAdapterPosition != null) {
-                    i4 = findViewHolderForAdapterPosition.itemView.getBottom();
-                }
-                i4 = measuredHeight;
-                this.paint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                float f = i4;
-                canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), f, this.paint);
-                if (i4 != measuredHeight) {
-                    this.paint.setColor(Theme.getColor(Theme.key_windowBackgroundGray));
-                    canvas.drawRect(0.0f, f, getMeasuredWidth(), measuredHeight, this.paint);
-                }
-            }
-        };
+        RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
-        recyclerListView.setClipToPadding(false);
+        recyclerListView.setSections();
+        this.actionBar.setAdaptiveBackground(this.listView);
+        RecyclerListView recyclerListView2 = this.listView;
+        int i4 = Theme.key_windowBackgroundGray;
+        recyclerListView2.setBackgroundColor(getThemedColor(i4));
+        this.listView.setClipToPadding(false);
         this.listView.setHorizontalScrollBarEnabled(false);
         this.listView.setVerticalScrollBarEnabled(false);
         this.listView.setItemAnimator(null);
         this.listView.setLayoutAnimation(null);
-        RecyclerListView recyclerListView2 = this.listView;
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, i, z) { // from class: org.telegram.ui.WallpapersListActivity.5
+        RecyclerListView recyclerListView3 = this.listView;
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, i, z) { // from class: org.telegram.ui.WallpapersListActivity.4
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public boolean supportsPredictiveItemAnimations() {
                 return false;
             }
         };
         this.layoutManager = linearLayoutManager;
-        recyclerListView2.setLayoutManager(linearLayoutManager);
+        recyclerListView3.setLayoutManager(linearLayoutManager);
         frameLayout.addView(this.listView, LayoutHelper.createFrame(-1, -1, 51));
-        RecyclerListView recyclerListView3 = this.listView;
+        RecyclerListView recyclerListView4 = this.listView;
         ListAdapter listAdapter = new ListAdapter(context);
         this.listAdapter = listAdapter;
-        recyclerListView3.setAdapter(listAdapter);
+        recyclerListView4.setAdapter(listAdapter);
         this.searchAdapter = new SearchAdapter(context);
         this.listView.setGlowColor(Theme.getColor(Theme.key_avatar_backgroundActionBarBlue));
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.WallpapersListActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i4) {
-                WallpapersListActivity.this.lambda$createView$4(view, i4);
+            public final void onItemClick(View view, int i5) {
+                WallpapersListActivity.this.lambda$createView$4(view, i5);
             }
         });
-        this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.WallpapersListActivity.6
+        this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.WallpapersListActivity.5
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrollStateChanged(RecyclerView recyclerView, int i4) {
-                if (i4 == 1) {
+            public void onScrollStateChanged(RecyclerView recyclerView, int i5) {
+                if (i5 == 1) {
                     AndroidUtilities.hideKeyboard(WallpapersListActivity.this.getParentActivity().getCurrentFocus());
                 }
-                WallpapersListActivity.this.scrolling = i4 != 0;
+                WallpapersListActivity.this.scrolling = i5 != 0;
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i4, int i5) {
+            public void onScrolled(RecyclerView recyclerView, int i5, int i6) {
                 if (WallpapersListActivity.this.listView.getAdapter() == WallpapersListActivity.this.searchAdapter) {
                     int findFirstVisibleItemPosition = WallpapersListActivity.this.layoutManager.findFirstVisibleItemPosition();
                     int abs = findFirstVisibleItemPosition == -1 ? 0 : Math.abs(WallpapersListActivity.this.layoutManager.findLastVisibleItemPosition() - findFirstVisibleItemPosition) + 1;
@@ -482,7 +453,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
         this.searchEmptyView = emptyTextProgressView;
         emptyTextProgressView.setVisibility(8);
         this.searchEmptyView.setShowAtCenter(true);
-        this.searchEmptyView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        this.searchEmptyView.setBackgroundColor(Theme.getColor(i4));
         this.searchEmptyView.setText(LocaleController.getString(R.string.NoResult));
         this.listView.setEmptyView(this.searchEmptyView);
         frameLayout.addView(this.searchEmptyView, LayoutHelper.createFrame(-1, -1.0f));
@@ -949,7 +920,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
                 obj4 = colorWallpaper;
             }
         }
-        ThemePreviewActivity themePreviewActivity = new ThemePreviewActivity(obj4, null, true, false) { // from class: org.telegram.ui.WallpapersListActivity.7
+        ThemePreviewActivity themePreviewActivity = new ThemePreviewActivity(obj4, null, true, false) { // from class: org.telegram.ui.WallpapersListActivity.6
             @Override // org.telegram.ui.ThemePreviewActivity
             public boolean insideBottomSheet() {
                 return true;
@@ -1507,7 +1478,7 @@ public class WallpapersListActivity extends BaseFragment implements Notification
     private void fixLayout() {
         RecyclerListView recyclerListView = this.listView;
         if (recyclerListView != null) {
-            recyclerListView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.WallpapersListActivity.8
+            recyclerListView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.WallpapersListActivity.7
                 @Override // android.view.ViewTreeObserver.OnPreDrawListener
                 public boolean onPreDraw() {
                     WallpapersListActivity.this.fixLayoutInternal();
@@ -1968,34 +1939,24 @@ public class WallpapersListActivity extends BaseFragment implements Notification
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
             View textCell;
-            View shadowSectionCell;
-            if (i != 0) {
-                if (i == 1) {
-                    shadowSectionCell = new ShadowSectionCell(this.mContext);
-                    CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, WallpapersListActivity.this.wallPaperStartRow == -1 ? R.drawable.greydivider_bottom : R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
-                    combinedDrawable.setFullsize(true);
-                    shadowSectionCell.setBackgroundDrawable(combinedDrawable);
-                } else if (i == 3) {
-                    shadowSectionCell = new TextInfoPrivacyCell(this.mContext);
-                    CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-                    combinedDrawable2.setFullsize(true);
-                    shadowSectionCell.setBackgroundDrawable(combinedDrawable2);
-                } else {
-                    textCell = new WallpaperCell(this.mContext) { // from class: org.telegram.ui.WallpapersListActivity.ListAdapter.1
-                        @Override // org.telegram.ui.Cells.WallpaperCell
-                        protected void onWallpaperClick(Object obj, int i2) {
-                            WallpapersListActivity.this.onItemClick(this, obj, i2);
-                        }
-
-                        @Override // org.telegram.ui.Cells.WallpaperCell
-                        protected boolean onWallpaperLongClick(Object obj, int i2) {
-                            return WallpapersListActivity.this.onItemLongClick(this, obj, i2);
-                        }
-                    };
-                }
-                textCell = shadowSectionCell;
-            } else {
+            if (i == 0) {
                 textCell = new TextCell(this.mContext);
+            } else if (i == 1) {
+                textCell = new ShadowSectionCell(this.mContext);
+            } else if (i == 3) {
+                textCell = new TextInfoPrivacyCell(this.mContext);
+            } else {
+                textCell = new WallpaperCell(this.mContext) { // from class: org.telegram.ui.WallpapersListActivity.ListAdapter.1
+                    @Override // org.telegram.ui.Cells.WallpaperCell
+                    protected void onWallpaperClick(Object obj, int i2) {
+                        WallpapersListActivity.this.onItemClick(this, obj, i2);
+                    }
+
+                    @Override // org.telegram.ui.Cells.WallpaperCell
+                    protected boolean onWallpaperLongClick(Object obj, int i2) {
+                        return WallpapersListActivity.this.onItemLongClick(this, obj, i2);
+                    }
+                };
             }
             return new RecyclerListView.Holder(textCell);
         }
@@ -2109,20 +2070,14 @@ public class WallpapersListActivity extends BaseFragment implements Notification
         View view2 = this.fragmentView;
         int i2 = Theme.key_windowBackgroundGray;
         arrayList.add(new ThemeDescription(view2, 0, null, null, null, null, i2));
-        ActionBar actionBar = this.actionBar;
-        int i3 = ThemeDescription.FLAG_BACKGROUND;
-        int i4 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(actionBar, i3, null, null, null, null, i4));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i4));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, Theme.key_actionBarDefault));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
-        int i5 = Theme.key_windowBackgroundGrayShadow;
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i5));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, i5));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText));

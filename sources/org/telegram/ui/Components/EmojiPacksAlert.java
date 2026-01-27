@@ -413,7 +413,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         RecyclerListView recyclerListView = new RecyclerListView(context, this.resourcesProvider) { // from class: org.telegram.ui.Components.EmojiPacksAlert.4
             private Paint highlightPaint = new Paint(1);
 
-            @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
             public boolean drawChild(Canvas canvas, View view, long j) {
                 return false;
             }
@@ -750,11 +750,12 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
-    public void onBackPressed() {
+    /* renamed from: onBackPressed */
+    public void lambda$openCrafting$8() {
         if (ContentPreviewViewer.getInstance().isVisible()) {
             ContentPreviewViewer.getInstance().closeWithMenu();
         } else {
-            super.onBackPressed();
+            super.lambda$openCrafting$8();
         }
     }
 

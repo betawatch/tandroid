@@ -48,7 +48,7 @@ public abstract class PremiumStickersPreviewRecycler extends RecyclerListView im
     private int size;
     ArrayList sortedView;
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j) {
         return true;
     }

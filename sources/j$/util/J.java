@@ -5,39 +5,39 @@ import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class J implements PrimitiveIterator.OfInt {
-    public final /* synthetic */ K a;
+public final /* synthetic */ class J implements L, y {
+    public final /* synthetic */ PrimitiveIterator.OfInt a;
 
-    private /* synthetic */ J(K k) {
-        this.a = k;
+    private /* synthetic */ J(PrimitiveIterator.OfInt ofInt) {
+        this.a = ofInt;
     }
 
-    public static /* synthetic */ PrimitiveIterator.OfInt a(K k) {
-        if (k == null) {
+    public static /* synthetic */ L a(PrimitiveIterator.OfInt ofInt) {
+        if (ofInt == null) {
             return null;
         }
-        return k instanceof I ? ((I) k).a : new J(k);
+        return ofInt instanceof K ? ((K) ofInt).a : new J(ofInt);
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        K k = this.a;
+        PrimitiveIterator.OfInt ofInt = this.a;
         if (obj instanceof J) {
             obj = ((J) obj).a;
         }
-        return k.equals(obj);
+        return ofInt.equals(obj);
     }
 
-    @Override // java.util.PrimitiveIterator
-    public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        this.a.forEachRemaining((Object) intConsumer);
+    @Override // j$.util.Q
+    public final /* synthetic */ void forEachRemaining(Object obj) {
+        this.a.forEachRemaining((PrimitiveIterator.OfInt) obj);
     }
 
-    @Override // java.util.PrimitiveIterator.OfInt, java.util.Iterator
+    @Override // j$.util.L, java.util.Iterator, j$.util.y
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(consumer);
+        this.a.forEachRemaining((Consumer<? super Integer>) consumer);
     }
 
-    @Override // java.util.PrimitiveIterator.OfInt
+    @Override // j$.util.L
     public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
         this.a.forEachRemaining(intConsumer);
     }
@@ -51,17 +51,17 @@ public final /* synthetic */ class J implements PrimitiveIterator.OfInt {
         return this.a.hashCode();
     }
 
-    @Override // java.util.PrimitiveIterator.OfInt, java.util.Iterator
+    @Override // j$.util.L, java.util.Iterator
     public final /* synthetic */ Integer next() {
         return this.a.next();
     }
 
-    @Override // java.util.PrimitiveIterator.OfInt, java.util.Iterator
+    @Override // java.util.Iterator
     public final /* synthetic */ Object next() {
         return this.a.next();
     }
 
-    @Override // java.util.PrimitiveIterator.OfInt
+    @Override // j$.util.L
     public final /* synthetic */ int nextInt() {
         return this.a.nextInt();
     }

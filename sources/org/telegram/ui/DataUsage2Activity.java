@@ -215,6 +215,7 @@ public class DataUsage2Activity extends BaseFragment {
             Adapter adapter = new Adapter();
             this.adapter = adapter;
             setAdapter(adapter);
+            setSections();
             setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.DataUsage2Activity$ListView$$ExternalSyntheticLambda0
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view, int i) {
@@ -596,51 +597,56 @@ public class DataUsage2Activity extends BaseFragment {
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
                 View view;
+                View view2;
                 if (i == 0) {
                     ListView.this.chart = new 1(ListView.this.getContext(), DataUsage2Activity.colors.length, DataUsage2Activity.colors, 1, DataUsage2Activity.particles);
                     ListView.this.chart.setInterceptTouch(false);
                     view = ListView.this.chart;
+                    view.setTag(-33024);
                 } else if (i == 1) {
                     ListView listView = ListView.this;
                     view = DataUsage2Activity.this.new SubtitleCell(listView.getContext());
-                } else if (i == 3) {
-                    view = new TextInfoPrivacyCell(ListView.this.getContext());
-                } else if (i == 4) {
-                    View headerCell = new HeaderCell(ListView.this.getContext());
-                    headerCell.setBackgroundColor(ListView.this.getThemedColor(Theme.key_windowBackgroundWhite));
-                    view = headerCell;
-                } else if (i == 5) {
-                    TextCell textCell = new TextCell(ListView.this.getContext());
-                    textCell.setTextColor(ListView.this.getThemedColor(Theme.key_text_RedRegular));
-                    textCell.setBackgroundColor(ListView.this.getThemedColor(Theme.key_windowBackgroundWhite));
-                    view = textCell;
-                } else if (i == 6) {
-                    view = new RoundingCell(ListView.this.getContext());
-                } else if (i == 7) {
-                    view = new View(ListView.this.getContext()) { // from class: org.telegram.ui.DataUsage2Activity.ListView.Adapter.2
-                        {
-                            setBackgroundColor(ListView.this.getThemedColor(Theme.key_windowBackgroundWhite));
-                        }
-
-                        @Override // android.view.View
-                        protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLObject.FLAG_30));
-                        }
-                    };
+                    view.setTag(-33024);
                 } else {
-                    ListView listView2 = ListView.this;
-                    view = DataUsage2Activity.this.new Cell(listView2.getContext());
+                    if (i == 3) {
+                        view2 = new TextInfoPrivacyCell(ListView.this.getContext());
+                    } else if (i == 4) {
+                        HeaderCell headerCell = new HeaderCell(ListView.this.getContext());
+                        headerCell.setBackgroundColor(ListView.this.getThemedColor(Theme.key_windowBackgroundWhite));
+                        view2 = headerCell;
+                    } else if (i == 5) {
+                        TextCell textCell = new TextCell(ListView.this.getContext());
+                        textCell.setTextColor(ListView.this.getThemedColor(Theme.key_text_RedRegular));
+                        textCell.setBackgroundColor(ListView.this.getThemedColor(Theme.key_windowBackgroundWhite));
+                        view2 = textCell;
+                    } else if (i == 6) {
+                        view2 = new RoundingCell(ListView.this.getContext());
+                    } else if (i == 7) {
+                        view2 = new View(ListView.this.getContext()) { // from class: org.telegram.ui.DataUsage2Activity.ListView.Adapter.2
+                            {
+                                setBackgroundColor(ListView.this.getThemedColor(Theme.key_windowBackgroundWhite));
+                            }
+
+                            @Override // android.view.View
+                            protected void onMeasure(int i2, int i3) {
+                                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLObject.FLAG_30));
+                            }
+                        };
+                    } else {
+                        ListView listView2 = ListView.this;
+                        view2 = DataUsage2Activity.this.new Cell(listView2.getContext());
+                    }
+                    return new RecyclerListView.Holder(view2);
                 }
-                return new RecyclerListView.Holder(view);
+                view2 = view;
+                return new RecyclerListView.Holder(view2);
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
                 int i2;
-                int i3;
                 ItemInner itemInner = (ItemInner) ListView.this.itemInners.get(viewHolder.getAdapterPosition());
                 int itemViewType = viewHolder.getItemViewType();
-                boolean z = false;
                 if (itemViewType == 0) {
                     CacheChart cacheChart = (CacheChart) viewHolder.itemView;
                     if (ListView.this.segments != null) {
@@ -649,60 +655,28 @@ public class DataUsage2Activity extends BaseFragment {
                     ListView.this.animateChart = false;
                     return;
                 }
-                Boolean bool = null;
                 if (itemViewType == 1) {
-                    SubtitleCell subtitleCell = (SubtitleCell) viewHolder.itemView;
-                    subtitleCell.setText(itemInner.text);
-                    int i4 = i + 1;
-                    if (i4 < ListView.this.itemInners.size() && (i3 = ((ItemInner) ListView.this.itemInners.get(i4)).viewType) != itemInner.viewType && i3 != 3 && i3 != 6) {
-                        subtitleCell.setBackground(Theme.getThemedDrawableByKey(ListView.this.getContext(), R.drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
-                        return;
-                    } else {
-                        subtitleCell.setBackground(null);
-                        return;
-                    }
+                    ((SubtitleCell) viewHolder.itemView).setText(itemInner.text);
+                    return;
                 }
                 if (itemViewType == 2) {
                     Cell cell = (Cell) viewHolder.itemView;
-                    int i5 = i + 1;
-                    cell.set(itemInner.imageColorTop, itemInner.imageColorBottom, itemInner.imageResId, itemInner.text, itemInner.valueText, i5 < getItemCount() && ((ItemInner) ListView.this.itemInners.get(i5)).viewType == itemViewType);
-                    if (!itemInner.pad && (i2 = itemInner.index) >= 0 && (i2 >= ListView.this.segments.length || ListView.this.segments[itemInner.index].size > 0)) {
-                        bool = Boolean.valueOf(ListView.this.collapsed[itemInner.index]);
-                    }
-                    cell.setArrow(bool);
+                    int i3 = i + 1;
+                    cell.set(itemInner.imageColorTop, itemInner.imageColorBottom, itemInner.imageResId, itemInner.text, itemInner.valueText, i3 < getItemCount() && ((ItemInner) ListView.this.itemInners.get(i3)).viewType == itemViewType);
+                    cell.setArrow((itemInner.pad || (i2 = itemInner.index) < 0 || (i2 < ListView.this.segments.length && ListView.this.segments[itemInner.index].size <= 0)) ? null : Boolean.valueOf(ListView.this.collapsed[itemInner.index]));
                     return;
                 }
-                if (itemViewType != 3) {
-                    if (itemViewType == 4) {
-                        ((HeaderCell) viewHolder.itemView).setText(itemInner.text);
-                        return;
-                    } else if (itemViewType == 5) {
-                        ((TextCell) viewHolder.itemView).setText(itemInner.text.toString(), false);
-                        return;
-                    } else {
-                        if (itemViewType == 6) {
-                            ((RoundingCell) viewHolder.itemView).setTop(true);
-                            return;
-                        }
-                        return;
-                    }
+                if (itemViewType == 3) {
+                    ((TextInfoPrivacyCell) viewHolder.itemView).setText(itemInner.text);
+                    return;
                 }
-                TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-                boolean z2 = i > 0 && itemInner.viewType != ((ItemInner) ListView.this.itemInners.get(i + (-1))).viewType;
-                int i6 = i + 1;
-                if (i6 < ListView.this.itemInners.size() && ((ItemInner) ListView.this.itemInners.get(i6)).viewType != itemInner.viewType) {
-                    z = true;
+                if (itemViewType == 4) {
+                    ((HeaderCell) viewHolder.itemView).setText(itemInner.text);
+                } else if (itemViewType == 5) {
+                    ((TextCell) viewHolder.itemView).setText(itemInner.text.toString(), false);
+                } else if (itemViewType == 6) {
+                    ((RoundingCell) viewHolder.itemView).setTop(true);
                 }
-                if (z2 && z) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(ListView.this.getContext(), R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
-                } else if (z2) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(ListView.this.getContext(), R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-                } else if (z) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(ListView.this.getContext(), R.drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
-                } else {
-                    textInfoPrivacyCell.setBackground(null);
-                }
-                textInfoPrivacyCell.setText(itemInner.text);
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter

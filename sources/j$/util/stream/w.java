@@ -33,7 +33,7 @@ final class w extends f2 {
                 if (!z) {
                     d2.sequential().forEach(pVar);
                 } else {
-                    j$.util.V spliterator = d2.sequential().spliterator();
+                    j$.util.W spliterator = d2.sequential().spliterator();
                     while (!this.a.n() && spliterator.tryAdvance((DoubleConsumer) pVar)) {
                     }
                 }

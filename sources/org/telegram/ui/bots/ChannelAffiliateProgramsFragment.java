@@ -133,13 +133,13 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         this.iconTextureView.setStarParticlesView(this.particlesView);
         this.aboveTitleView.addView(this.iconTextureView, LayoutHelper.createFrame(NotificationCenter.boostByChannelCreated, 190.0f, 17, 0.0f, 32.0f, 0.0f, 12.0f));
         configureHeader(LocaleController.getString(R.string.ChannelAffiliateProgramTitle), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ChannelAffiliateProgramText)), this.aboveTitleView, null);
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda7
+        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda6
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view2, int i) {
                 ChannelAffiliateProgramsFragment.this.lambda$createView$0(context, view2, i);
             }
         });
-        this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda8
+        this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view2, int i) {
                 boolean lambda$createView$8;
@@ -292,7 +292,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
 
     @Override // org.telegram.ui.GradientHeaderActivity
     protected RecyclerView.Adapter createAdapter() {
-        UniversalAdapter universalAdapter = new UniversalAdapter(this.listView, getContext(), this.currentAccount, this.classGuid, true, new Utilities.Callback2() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda0
+        UniversalAdapter universalAdapter = new UniversalAdapter(this.listView, getContext(), this.currentAccount, this.classGuid, true, new Utilities.Callback2() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda15
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 ChannelAffiliateProgramsFragment.this.fillItems((ArrayList) obj, (UniversalAdapter) obj2);
@@ -914,7 +914,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         buttonWithCounterView.setText(LocaleController.getString(R.string.ChannelAffiliateProgramJoinButton), false);
         linearLayout2.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48));
         LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context, resourcesProvider);
-        linksTextView.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChannelAffiliateProgramJoinButtonInfo), new Runnable() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda9
+        linksTextView.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChannelAffiliateProgramJoinButtonInfo), new Runnable() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 ChannelAffiliateProgramsFragment.lambda$showConnectAffiliateAlert$9(context);
@@ -927,7 +927,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         linearLayout2.addView(linksTextView, LayoutHelper.createLinear(-1, -2, 49, 14, 14, 14, 6));
         builder.setCustomView(linearLayout2);
         final BottomSheet create = builder.create();
-        backupImageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda10
+        backupImageView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChannelAffiliateProgramsFragment.lambda$showConnectAffiliateAlert$10(BottomSheet.this, starrefprogram, view);
@@ -936,13 +936,13 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         final long[] jArr3 = jArr;
         final LinearLayout linearLayout5 = linearLayout;
         final TLRPC.User user3 = user;
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda11
+        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChannelAffiliateProgramsFragment.lambda$showConnectAffiliateAlert$13(ButtonWithCounterView.this, jArr3, i, starrefprogram, create, j, z, context, resourcesProvider, user3, view);
             }
         });
-        create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda12
+        create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda11
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 ChannelAffiliateProgramsFragment.lambda$showConnectAffiliateAlert$14(dialogInterface);
@@ -951,7 +951,7 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         final long[] jArr4 = jArr;
         final BackupImageView backupImageView5 = backupImageView;
         final TextView textView10 = textView;
-        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda13
+        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
                 ChannelAffiliateProgramsFragment.lambda$showConnectAffiliateAlert$15(jArr4, i, backupImageView3, backupImageView5, textView10);
@@ -962,14 +962,14 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
             BotStarsController.getInstance(i).loadAdminedBots();
             BotStarsController.getInstance(i).loadAdminedChannels();
             final long[] jArr5 = jArr;
-            linearLayout5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda14
+            linearLayout5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     ChannelAffiliateProgramsFragment.lambda$showConnectAffiliateAlert$17(i, create, resourcesProvider, linearLayout5, jArr5, runnable, view);
                 }
             });
         }
-        linearLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda15
+        linearLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChannelAffiliateProgramsFragment.lambda$showConnectAffiliateAlert$18(BottomSheet.this, starrefprogram, view);
@@ -1398,27 +1398,27 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
         builder3.setCustomView(linearLayout3);
         final BottomSheet create = builder3.create();
         final TLRPC.User user4 = user;
-        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda1
+        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 ChannelAffiliateProgramsFragment.lambda$showShareAffiliateAlert$19(TL_payments.connectedBotStarRef.this, create, resourcesProvider, user4);
             }
         };
         if (!connectedbotstarref.revoked) {
-            textView7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda2
+            textView7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     runnable.run();
                 }
             });
         }
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda3
+        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 ChannelAffiliateProgramsFragment.lambda$showShareAffiliateAlert$23(TL_payments.connectedBotStarRef.this, i, create, context, j, resourcesProvider, runnable, view2);
             }
         });
-        create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda4
+        create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda3
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 ChannelAffiliateProgramsFragment.lambda$showShareAffiliateAlert$24(dialogInterface);
@@ -1428,14 +1428,14 @@ public class ChannelAffiliateProgramsFragment extends GradientHeaderActivity imp
             BotStarsController.getInstance(i).loadAdminedBots();
             BotStarsController.getInstance(i).loadAdminedChannels();
             final LinearLayout linearLayout6 = linearLayout2;
-            linearLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda5
+            linearLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     ChannelAffiliateProgramsFragment.lambda$showShareAffiliateAlert$29(i, create, resourcesProvider, linearLayout6, j, context, connectedbotstarref, view2);
                 }
             });
         }
-        linearLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda6
+        linearLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.bots.ChannelAffiliateProgramsFragment$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 ChannelAffiliateProgramsFragment.lambda$showShareAffiliateAlert$30(BottomSheet.this, connectedbotstarref, view2);

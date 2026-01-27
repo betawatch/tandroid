@@ -95,13 +95,16 @@ public class LiteModeSettingsActivity extends BaseFragment {
         frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
+        recyclerListView.setSections();
+        this.actionBar.setAdaptiveBackground(this.listView);
+        RecyclerListView recyclerListView2 = this.listView;
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         this.layoutManager = linearLayoutManager;
-        recyclerListView.setLayoutManager(linearLayoutManager);
-        RecyclerListView recyclerListView2 = this.listView;
+        recyclerListView2.setLayoutManager(linearLayoutManager);
+        RecyclerListView recyclerListView3 = this.listView;
         Adapter adapter = new Adapter();
         this.adapter = adapter;
-        recyclerListView2.setAdapter(adapter);
+        recyclerListView3.setAdapter(adapter);
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
         defaultItemAnimator.setDurations(350L);
         defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -351,10 +354,8 @@ public class LiteModeSettingsActivity extends BaseFragment {
             Context context = viewGroup.getContext();
             if (i == 0) {
                 switchCell = new HeaderCell(context);
-                switchCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 1) {
                 switchCell = LiteModeSettingsActivity.this.new PowerSaverSlider(context);
-                switchCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 2) {
                 switchCell = new TextInfoPrivacyCell(context) { // from class: org.telegram.ui.LiteModeSettingsActivity.Adapter.1
                     @Override // org.telegram.ui.Cells.TextInfoPrivacyCell, android.view.View
@@ -372,11 +373,8 @@ public class LiteModeSettingsActivity extends BaseFragment {
                 };
             } else if (i == 3 || i == 4) {
                 switchCell = LiteModeSettingsActivity.this.new SwitchCell(context);
-            } else if (i == 5) {
-                switchCell = new TextCell(context, 23, false, true, null);
-                switchCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else {
-                switchCell = null;
+                switchCell = i == 5 ? new TextCell(context, 23, false, true, null) : null;
             }
             return new RecyclerListView.Holder(switchCell);
         }
@@ -396,44 +394,26 @@ public class LiteModeSettingsActivity extends BaseFragment {
                 ((PowerSaverSlider) viewHolder.itemView).update();
                 return;
             }
-            if (itemViewType != 2) {
-                if (itemViewType == 3 || itemViewType == 4) {
-                    int i2 = i + 1;
-                    ((SwitchCell) viewHolder.itemView).set(item, i2 < LiteModeSettingsActivity.this.items.size() && ((Item) LiteModeSettingsActivity.this.items.get(i2)).viewType != 2);
-                    return;
+            if (itemViewType == 2) {
+                TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
+                if (TextUtils.isEmpty(item.text)) {
+                    textInfoPrivacyCell.setFixedSize(12);
                 } else {
-                    if (itemViewType == 5) {
-                        TextCell textCell = (TextCell) viewHolder.itemView;
-                        if (item.type == 1) {
-                            textCell.setTextAndCheck(item.text, MessagesController.getGlobalMainSettings().getBoolean("view_animations", true), false);
-                            return;
-                        }
-                        return;
-                    }
-                    return;
+                    textInfoPrivacyCell.setFixedSize(0);
                 }
-            }
-            TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-            if (TextUtils.isEmpty(item.text)) {
-                textInfoPrivacyCell.setFixedSize(12);
-            } else {
-                textInfoPrivacyCell.setFixedSize(0);
-            }
-            textInfoPrivacyCell.setText(item.text);
-            textInfoPrivacyCell.setContentDescription(item.text);
-            boolean z = i > 0 && ((Item) LiteModeSettingsActivity.this.items.get(i + (-1))).viewType != 2;
-            int i3 = i + 1;
-            boolean z2 = i3 < LiteModeSettingsActivity.this.items.size() && ((Item) LiteModeSettingsActivity.this.items.get(i3)).viewType != 2;
-            if (z && z2) {
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(LiteModeSettingsActivity.this.getContext(), R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                textInfoPrivacyCell.setText(item.text);
+                textInfoPrivacyCell.setContentDescription(item.text);
+                textInfoPrivacyCell.setBackground(null);
                 return;
             }
-            if (z) {
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(LiteModeSettingsActivity.this.getContext(), R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-            } else if (z2) {
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(LiteModeSettingsActivity.this.getContext(), R.drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
-            } else {
-                textInfoPrivacyCell.setBackground(null);
+            if (itemViewType == 3 || itemViewType == 4) {
+                int i2 = i + 1;
+                ((SwitchCell) viewHolder.itemView).set(item, i2 < LiteModeSettingsActivity.this.items.size() && ((Item) LiteModeSettingsActivity.this.items.get(i2)).viewType != 2);
+            } else if (itemViewType == 5) {
+                TextCell textCell = (TextCell) viewHolder.itemView;
+                if (item.type == 1) {
+                    textCell.setTextAndCheck(item.text, MessagesController.getGlobalMainSettings().getBoolean("view_animations", true), false);
+                }
             }
         }
 
@@ -474,8 +454,6 @@ public class LiteModeSettingsActivity extends BaseFragment {
         public SwitchCell(Context context) {
             super(context);
             setImportantForAccessibility(1);
-            int i = Theme.key_windowBackgroundWhite;
-            setBackgroundColor(Theme.getColor(i));
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
             int color = Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon);
@@ -485,11 +463,11 @@ public class LiteModeSettingsActivity extends BaseFragment {
             addView(this.imageView, LayoutHelper.createFrame(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 20.0f, 0.0f, 20.0f, 0.0f));
             TextView textView = new TextView(context) { // from class: org.telegram.ui.LiteModeSettingsActivity.SwitchCell.1
                 @Override // android.widget.TextView, android.view.View
-                protected void onMeasure(int i2, int i3) {
-                    if (View.MeasureSpec.getMode(i2) == Integer.MIN_VALUE) {
-                        i2 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) - AndroidUtilities.dp(52.0f), TLObject.FLAG_31);
+                protected void onMeasure(int i, int i2) {
+                    if (View.MeasureSpec.getMode(i) == Integer.MIN_VALUE) {
+                        i = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i) - AndroidUtilities.dp(52.0f), TLObject.FLAG_31);
                     }
-                    super.onMeasure(i2, i3);
+                    super.onMeasure(i, i2);
                 }
             };
             this.textView = textView;
@@ -498,8 +476,8 @@ public class LiteModeSettingsActivity extends BaseFragment {
             this.textView.setEllipsize(TextUtils.TruncateAt.END);
             this.textView.setTextSize(1, 16.0f);
             TextView textView2 = this.textView;
-            int i2 = Theme.key_windowBackgroundWhiteBlackText;
-            textView2.setTextColor(Theme.getColor(i2));
+            int i = Theme.key_windowBackgroundWhiteBlackText;
+            textView2.setTextColor(Theme.getColor(i));
             this.textView.setGravity(LocaleController.isRTL ? 5 : 3);
             this.textView.setImportantForAccessibility(2);
             AnimatedTextView animatedTextView = new AnimatedTextView(context, false, true, true);
@@ -507,12 +485,12 @@ public class LiteModeSettingsActivity extends BaseFragment {
             animatedTextView.setAnimationProperties(0.35f, 0L, 200L, CubicBezierInterpolator.EASE_OUT_QUINT);
             this.countTextView.setTypeface(AndroidUtilities.bold());
             this.countTextView.setTextSize(AndroidUtilities.dp(14.0f));
-            this.countTextView.setTextColor(Theme.getColor(i2));
+            this.countTextView.setTextColor(Theme.getColor(i));
             this.countTextView.setImportantForAccessibility(2);
             ImageView imageView2 = new ImageView(context);
             this.arrowView = imageView2;
             imageView2.setVisibility(8);
-            this.arrowView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), mode));
+            this.arrowView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), mode));
             this.arrowView.setImageResource(R.drawable.arrow_more);
             LinearLayout linearLayout = new LinearLayout(context);
             this.textViewLayout = linearLayout;
@@ -528,10 +506,14 @@ public class LiteModeSettingsActivity extends BaseFragment {
                 this.textViewLayout.addView(this.arrowView, LayoutHelper.createLinear(16, 16, 0.0f, 16, 2, 0, 0, 0));
             }
             addView(this.textViewLayout, LayoutHelper.createFrame(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 64.0f, 0.0f, 8.0f, 0.0f));
-            Switch r5 = new Switch(context);
-            this.switchView = r5;
-            r5.setVisibility(8);
-            this.switchView.setColors(Theme.key_switchTrack, Theme.key_switchTrackChecked, i, i);
+            Switch r4 = new Switch(context);
+            this.switchView = r4;
+            r4.setVisibility(8);
+            Switch r42 = this.switchView;
+            int i2 = Theme.key_switchTrack;
+            int i3 = Theme.key_switchTrackChecked;
+            int i4 = Theme.key_windowBackgroundWhite;
+            r42.setColors(i2, i3, i4, i4);
             this.switchView.setImportantForAccessibility(2);
             addView(this.switchView, LayoutHelper.createFrame(37, 50.0f, (LocaleController.isRTL ? 3 : 5) | 16, 19.0f, 0.0f, 19.0f, 0.0f));
             CheckBox2 checkBox2 = new CheckBox2(context, 21);

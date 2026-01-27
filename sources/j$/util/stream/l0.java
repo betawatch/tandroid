@@ -52,7 +52,7 @@ public final /* synthetic */ class l0 implements java.util.stream.LongStream {
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalDouble average() {
-        return j$.util.S.n(this.a.average());
+        return j$.util.T.n(this.a.average());
     }
 
     @Override // java.util.stream.LongStream
@@ -99,12 +99,12 @@ public final /* synthetic */ class l0 implements java.util.stream.LongStream {
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalLong findAny() {
-        return j$.util.S.p(this.a.findAny());
+        return j$.util.T.p(this.a.findAny());
     }
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalLong findFirst() {
-        return j$.util.S.p(this.a.findFirst());
+        return j$.util.T.p(this.a.findFirst());
     }
 
     @Override // java.util.stream.LongStream
@@ -133,7 +133,7 @@ public final /* synthetic */ class l0 implements java.util.stream.LongStream {
 
     @Override // java.util.stream.LongStream, java.util.stream.BaseStream
     public final /* synthetic */ Iterator<Long> iterator() {
-        return j$.util.N.a(this.a.iterator());
+        return j$.util.O.a(this.a.iterator());
     }
 
     @Override // java.util.stream.LongStream
@@ -163,12 +163,12 @@ public final /* synthetic */ class l0 implements java.util.stream.LongStream {
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalLong max() {
-        return j$.util.S.p(this.a.max());
+        return j$.util.T.p(this.a.max());
     }
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalLong min() {
-        return j$.util.S.p(this.a.min());
+        return j$.util.T.p(this.a.min());
     }
 
     @Override // java.util.stream.LongStream
@@ -205,7 +205,7 @@ public final /* synthetic */ class l0 implements java.util.stream.LongStream {
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalLong reduce(LongBinaryOperator longBinaryOperator) {
-        return j$.util.S.p(this.a.reduce(longBinaryOperator));
+        return j$.util.T.p(this.a.reduce(longBinaryOperator));
     }
 
     /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.LongStream] */
@@ -231,7 +231,7 @@ public final /* synthetic */ class l0 implements java.util.stream.LongStream {
 
     @Override // java.util.stream.LongStream, java.util.stream.BaseStream
     public final /* synthetic */ Spliterator<Long> spliterator() {
-        return j$.util.a0.a(this.a.spliterator());
+        return j$.util.b0.a(this.a.spliterator());
     }
 
     @Override // java.util.stream.LongStream, java.util.stream.BaseStream

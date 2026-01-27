@@ -73,9 +73,10 @@ public abstract class MemberRequestsBottomSheet extends UsersAlertBase {
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
-    public void onBackPressed() {
+    /* renamed from: onBackPressed */
+    public void lambda$openCrafting$8() {
         if (this.delegate.onBackPressed(true)) {
-            super.onBackPressed();
+            super.lambda$openCrafting$8();
         }
     }
 

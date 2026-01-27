@@ -6,27 +6,27 @@ import java.util.NoSuchElementException;
 public final class B {
     private static final B c = new B();
     private final boolean a;
-    private final int b;
+    private final double b;
 
     private B() {
         this.a = false;
-        this.b = 0;
+        this.b = Double.NaN;
     }
 
     public static B a() {
         return c;
     }
 
-    private B(int i) {
+    private B(double d) {
         this.a = true;
-        this.b = i;
+        this.b = d;
     }
 
-    public static B d(int i) {
-        return new B(i);
+    public static B d(double d) {
+        return new B(d);
     }
 
-    public final int b() {
+    public final double b() {
         if (!this.a) {
             throw new NoSuchElementException("No value present");
         }
@@ -47,7 +47,7 @@ public final class B {
         B b = (B) obj;
         boolean z = this.a;
         if (z && b.a) {
-            if (this.b == b.b) {
+            if (Double.compare(this.b, b.b) == 0) {
                 return true;
             }
         } else if (z == b.a) {
@@ -57,16 +57,17 @@ public final class B {
     }
 
     public final int hashCode() {
-        if (this.a) {
-            return this.b;
+        if (!this.a) {
+            return 0;
         }
-        return 0;
+        long doubleToLongBits = Double.doubleToLongBits(this.b);
+        return (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
     }
 
     public final String toString() {
         if (this.a) {
-            return "OptionalInt[" + this.b + "]";
+            return "OptionalDouble[" + this.b + "]";
         }
-        return "OptionalInt.empty";
+        return "OptionalDouble.empty";
     }
 }

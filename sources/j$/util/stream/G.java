@@ -19,14 +19,14 @@ final class G extends J implements k2 {
     @Override // java.util.function.Supplier
     public final Object get() {
         if (this.a) {
-            return j$.util.B.d(((Integer) this.b).intValue());
+            return j$.util.C.d(((Integer) this.b).intValue());
         }
         return null;
     }
 
     static {
         b3 b3Var = b3.INT_VALUE;
-        c = new E(true, b3Var, j$.util.B.a(), new k(14), new j(9));
-        d = new E(false, b3Var, j$.util.B.a(), new k(14), new j(9));
+        c = new E(true, b3Var, j$.util.C.a(), new k(14), new j(9));
+        d = new E(false, b3Var, j$.util.C.a(), new k(14), new j(9));
     }
 }

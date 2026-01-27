@@ -26,6 +26,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -51,6 +52,7 @@ import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
+import org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1;
 import org.telegram.ui.Cells.HeaderCell;
 import org.telegram.ui.Cells.PollEditTextCell;
 import org.telegram.ui.Cells.ShadowSectionCell;
@@ -66,6 +68,7 @@ import org.telegram.ui.Components.EmojiView;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.SuggestEmojiView;
+import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
 import org.telegram.ui.Stories.recorder.KeyboardNotifier;
 
 /* loaded from: classes5.dex */
@@ -268,6 +271,12 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             }
         };
         this.listView = recyclerListView;
+        ViewGroup containerView = chatAttachAlert.getContainerView();
+        RecyclerListView recyclerListView2 = this.listView;
+        Objects.requireNonNull(recyclerListView2);
+        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView, containerView, new ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1(recyclerListView2));
+        this.occupyNavigationBar = true;
+        RecyclerListView recyclerListView3 = this.listView;
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.3
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
             protected void onMoveAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
@@ -278,14 +287,14 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             }
         };
         this.itemAnimator = defaultItemAnimator;
-        recyclerListView.setItemAnimator(defaultItemAnimator);
+        recyclerListView3.setItemAnimator(defaultItemAnimator);
         this.itemAnimator.setSupportsChangeAnimations(false);
         this.itemAnimator.setDelayAnimations(false);
         this.itemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         this.itemAnimator.setDurations(350L);
         this.listView.setClipToPadding(false);
         this.listView.setVerticalScrollBarEnabled(false);
-        RecyclerListView recyclerListView2 = this.listView;
+        RecyclerListView recyclerListView4 = this.listView;
         FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, 1, false, AndroidUtilities.dp(53.0f), this.listView) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.4
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i) {
@@ -318,7 +327,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             }
         };
         this.layoutManager = fillLastLinearLayoutManager;
-        recyclerListView2.setLayoutManager(fillLastLinearLayoutManager);
+        recyclerListView4.setLayoutManager(fillLastLinearLayoutManager);
         this.layoutManager.setSkipFirstItem();
         new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(this.listView);
         addView(this.listView, LayoutHelper.createFrame(-1, -1, 51));
@@ -807,8 +816,9 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             this.parentAlert.setAllowNestedScroll(this.allowNesterScroll);
         }
         this.ignoreLayout = true;
-        if (this.topPadding != dp) {
+        if (this.topPadding != dp || this.listView.getPaddingBottom() != this.listPaddingBottom) {
             this.topPadding = dp;
+            this.listView.setPaddingWithoutRequestLayout(0, 0, 0, this.listPaddingBottom);
             this.listView.setItemAnimator(null);
             this.listAdapter.notifyItemChanged(this.paddingRow);
         }
@@ -1502,6 +1512,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         }
         this.emojiView.setDelegate(new 9());
         this.parentAlert.sizeNotifierFrameLayout.addView(this.emojiView);
+        this.emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
     }
 
     class 9 implements EmojiView.EmojiViewDelegate {

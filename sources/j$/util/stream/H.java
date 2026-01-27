@@ -19,14 +19,14 @@ final class H extends J implements l2 {
     @Override // java.util.function.Supplier
     public final Object get() {
         if (this.a) {
-            return j$.util.C.d(((Long) this.b).longValue());
+            return j$.util.D.d(((Long) this.b).longValue());
         }
         return null;
     }
 
     static {
         b3 b3Var = b3.LONG_VALUE;
-        c = new E(true, b3Var, j$.util.C.a(), new k(15), new j(10));
-        d = new E(false, b3Var, j$.util.C.a(), new k(15), new j(10));
+        c = new E(true, b3Var, j$.util.D.a(), new k(15), new j(10));
+        d = new E(false, b3Var, j$.util.D.a(), new k(15), new j(10));
     }
 }

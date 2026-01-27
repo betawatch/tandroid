@@ -3099,7 +3099,11 @@ public abstract class RecyclerView extends ViewGroup {
         if (view == null) {
             return null;
         }
-        return ((LayoutParams) view.getLayoutParams()).mViewHolder;
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        if (layoutParams instanceof LayoutParams) {
+            return ((LayoutParams) layoutParams).mViewHolder;
+        }
+        return null;
     }
 
     public int getChildAdapterPosition(View view) {
@@ -5700,7 +5704,7 @@ public abstract class RecyclerView extends ViewGroup {
         List mUnmodifiedPayloads = null;
         private int mIsRecyclableCount = 0;
         Recycler mScrapContainer = null;
-        boolean mInChangeScrap = false;
+        public boolean mInChangeScrap = false;
         private int mWasImportantForAccessibilityBeforeHidden = 0;
         int mPendingAccessibilityState = -1;
 

@@ -13,7 +13,7 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     D asDoubleStream();
 
-    j$.util.A average();
+    j$.util.B average();
 
     LongStream b();
 
@@ -31,16 +31,16 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     LongStream e(a aVar);
 
-    j$.util.C findAny();
+    j$.util.D findAny();
 
-    j$.util.C findFirst();
+    j$.util.D findFirst();
 
     void forEach(LongConsumer longConsumer);
 
     void forEachOrdered(LongConsumer longConsumer);
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    j$.util.O iterator();
+    j$.util.P iterator();
 
     D k();
 
@@ -50,9 +50,9 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     <U> Stream<U> mapToObj(LongFunction<? extends U> longFunction);
 
-    j$.util.C max();
+    j$.util.D max();
 
-    j$.util.C min();
+    j$.util.D min();
 
     @Override // j$.util.stream.BaseStream
     LongStream parallel();
@@ -63,7 +63,7 @@ public interface LongStream extends BaseStream<Long, LongStream> {
 
     long reduce(long j, LongBinaryOperator longBinaryOperator);
 
-    j$.util.C reduce(LongBinaryOperator longBinaryOperator);
+    j$.util.D reduce(LongBinaryOperator longBinaryOperator);
 
     @Override // j$.util.stream.BaseStream
     LongStream sequential();
@@ -73,7 +73,7 @@ public interface LongStream extends BaseStream<Long, LongStream> {
     LongStream sorted();
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
-    j$.util.b0 spliterator();
+    j$.util.c0 spliterator();
 
     long sum();
 

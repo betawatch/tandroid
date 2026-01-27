@@ -7,7 +7,7 @@ import java.util.function.IntFunction;
 final class Q3 extends Z implements Z3 {
     @Override // j$.util.stream.b
     final Spliterator O(b bVar, Spliterator spliterator) {
-        return a3.ORDERED.m(bVar.J()) ? N(bVar, spliterator, new b0(19)).spliterator() : new e4((j$.util.Y) bVar.W(spliterator), 0);
+        return a3.ORDERED.m(bVar.J()) ? N(bVar, spliterator, new b0(19)).spliterator() : new e4((j$.util.Z) bVar.W(spliterator), 0);
     }
 
     @Override // j$.util.stream.b

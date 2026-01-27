@@ -37,8 +37,8 @@ public final /* synthetic */ class k0 implements LongStream {
     }
 
     @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.A average() {
-        return j$.util.S.j(this.a.average());
+    public final /* synthetic */ j$.util.B average() {
+        return j$.util.T.j(this.a.average());
     }
 
     @Override // j$.util.stream.LongStream
@@ -90,13 +90,13 @@ public final /* synthetic */ class k0 implements LongStream {
     }
 
     @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.C findAny() {
-        return j$.util.S.l(this.a.findAny());
+    public final /* synthetic */ j$.util.D findAny() {
+        return j$.util.T.l(this.a.findAny());
     }
 
     @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.C findFirst() {
-        return j$.util.S.l(this.a.findFirst());
+    public final /* synthetic */ j$.util.D findFirst() {
+        return j$.util.T.l(this.a.findFirst());
     }
 
     @Override // j$.util.stream.LongStream
@@ -120,8 +120,8 @@ public final /* synthetic */ class k0 implements LongStream {
 
     /* JADX WARN: Type inference failed for: r0v1, types: [java.util.PrimitiveIterator$OfLong] */
     @Override // j$.util.stream.LongStream, j$.util.stream.BaseStream, j$.util.stream.D
-    public final /* synthetic */ j$.util.O iterator() {
-        return j$.util.M.a(this.a.iterator());
+    public final /* synthetic */ j$.util.P iterator() {
+        return j$.util.N.a(this.a.iterator());
     }
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
@@ -150,13 +150,13 @@ public final /* synthetic */ class k0 implements LongStream {
     }
 
     @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.C max() {
-        return j$.util.S.l(this.a.max());
+    public final /* synthetic */ j$.util.D max() {
+        return j$.util.T.l(this.a.max());
     }
 
     @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.C min() {
-        return j$.util.S.l(this.a.min());
+    public final /* synthetic */ j$.util.D min() {
+        return j$.util.T.l(this.a.min());
     }
 
     @Override // j$.util.stream.BaseStream
@@ -190,8 +190,8 @@ public final /* synthetic */ class k0 implements LongStream {
     }
 
     @Override // j$.util.stream.LongStream
-    public final /* synthetic */ j$.util.C reduce(LongBinaryOperator longBinaryOperator) {
-        return j$.util.S.l(this.a.reduce(longBinaryOperator));
+    public final /* synthetic */ j$.util.D reduce(LongBinaryOperator longBinaryOperator) {
+        return j$.util.T.l(this.a.reduce(longBinaryOperator));
     }
 
     @Override // j$.util.stream.BaseStream
@@ -216,13 +216,13 @@ public final /* synthetic */ class k0 implements LongStream {
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
     public final /* synthetic */ Spliterator spliterator() {
-        return j$.util.f0.a(this.a.spliterator());
+        return j$.util.g0.a(this.a.spliterator());
     }
 
     /* JADX WARN: Type inference failed for: r0v1, types: [java.util.Spliterator$OfLong] */
     @Override // j$.util.stream.LongStream, j$.util.stream.BaseStream, j$.util.stream.D
-    public final /* synthetic */ j$.util.b0 spliterator() {
-        return j$.util.Z.a(this.a.spliterator());
+    public final /* synthetic */ j$.util.c0 spliterator() {
+        return j$.util.a0.a(this.a.spliterator());
     }
 
     @Override // j$.util.stream.LongStream

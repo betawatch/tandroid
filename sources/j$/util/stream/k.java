@@ -68,7 +68,7 @@ public final /* synthetic */ class k implements Function, Supplier, BiConsumer, 
 
     @Override // java.util.function.Function
     public Object apply(Object obj) {
-        return ((j$.util.t0) obj).toString();
+        return ((j$.util.u0) obj).toString();
     }
 
     @Override // java.util.function.DoubleBinaryOperator
@@ -113,11 +113,11 @@ public final /* synthetic */ class k implements Function, Supplier, BiConsumer, 
     public boolean test(Object obj) {
         switch (this.a) {
             case 13:
-                return ((j$.util.A) obj).c();
-            case 14:
                 return ((j$.util.B) obj).c();
-            case 15:
+            case 14:
                 return ((j$.util.C) obj).c();
+            case 15:
+                return ((j$.util.D) obj).c();
             default:
                 return ((Optional) obj).isPresent();
         }

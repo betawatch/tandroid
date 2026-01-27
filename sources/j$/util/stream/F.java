@@ -19,14 +19,14 @@ final class F extends J implements j2 {
     @Override // java.util.function.Supplier
     public final Object get() {
         if (this.a) {
-            return j$.util.A.d(((Double) this.b).doubleValue());
+            return j$.util.B.d(((Double) this.b).doubleValue());
         }
         return null;
     }
 
     static {
         b3 b3Var = b3.DOUBLE_VALUE;
-        c = new E(true, b3Var, j$.util.A.a(), new k(13), new j(8));
-        d = new E(false, b3Var, j$.util.A.a(), new k(13), new j(8));
+        c = new E(true, b3Var, j$.util.B.a(), new k(13), new j(8));
+        d = new E(false, b3Var, j$.util.B.a(), new k(13), new j(8));
     }
 }

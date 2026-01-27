@@ -1157,7 +1157,7 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
         this.shadow[0].setTag(1);
         this.containerView.addView(this.shadow[0], layoutParams);
         RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.Components.StickersAlert.4
-            @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
             public boolean drawChild(Canvas canvas, View view2, long j) {
                 if ((view2 instanceof StickerEmojiCell) && StickersAlert.this.isEditModeEnabled) {
                     int adapterPosition = StickersAlert.this.gridView.getChildViewHolder(view2).getAdapterPosition();
@@ -3232,11 +3232,12 @@ public class StickersAlert extends BottomSheet implements NotificationCenter.Not
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
-    public void onBackPressed() {
+    /* renamed from: onBackPressed */
+    public void lambda$openCrafting$8() {
         if (ContentPreviewViewer.getInstance().isVisible()) {
             ContentPreviewViewer.getInstance().closeWithMenu();
         } else {
-            super.onBackPressed();
+            super.lambda$openCrafting$8();
         }
     }
 

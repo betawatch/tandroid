@@ -1,13 +1,13 @@
 package j$.util.concurrent;
 
-import j$.util.S;
-import j$.util.Y;
+import j$.util.T;
+import j$.util.Z;
 import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-final class z implements Y {
+final class z implements Z {
     long a;
     final long b;
     final int c;
@@ -20,22 +20,22 @@ final class z implements Y {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        S.b(this, consumer);
+        T.b(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return S.d(this);
+        return T.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return S.e(this, i);
+        return T.e(this, i);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return S.g(this, consumer);
+        return T.g(this, consumer);
     }
 
     @Override // j$.util.Spliterator
@@ -50,7 +50,7 @@ final class z implements Y {
         this.d = i2;
     }
 
-    @Override // j$.util.e0, j$.util.Spliterator
+    @Override // j$.util.f0, j$.util.Spliterator
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
     public final z trySplit() {
         long j = this.a;
@@ -67,7 +67,7 @@ final class z implements Y {
         return this.b - this.a;
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final boolean tryAdvance(IntConsumer intConsumer) {
         intConsumer.getClass();
         long j = this.a;
@@ -79,7 +79,7 @@ final class z implements Y {
         return true;
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final void forEachRemaining(IntConsumer intConsumer) {
         intConsumer.getClass();
         long j = this.a;

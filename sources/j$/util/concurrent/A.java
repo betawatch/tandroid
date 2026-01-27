@@ -1,13 +1,13 @@
 package j$.util.concurrent;
 
-import j$.util.S;
-import j$.util.b0;
+import j$.util.T;
+import j$.util.c0;
 import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-final class A implements b0 {
+final class A implements c0 {
     long a;
     final long b;
     final long c;
@@ -20,22 +20,22 @@ final class A implements b0 {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        S.c(this, consumer);
+        T.c(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return S.d(this);
+        return T.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return S.e(this, i);
+        return T.e(this, i);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return S.h(this, consumer);
+        return T.h(this, consumer);
     }
 
     @Override // j$.util.Spliterator
@@ -50,7 +50,7 @@ final class A implements b0 {
         this.d = j4;
     }
 
-    @Override // j$.util.e0, j$.util.Spliterator
+    @Override // j$.util.f0, j$.util.Spliterator
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
     public final A trySplit() {
         long j = this.a;
@@ -67,7 +67,7 @@ final class A implements b0 {
         return this.b - this.a;
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final boolean tryAdvance(LongConsumer longConsumer) {
         longConsumer.getClass();
         long j = this.a;
@@ -79,7 +79,7 @@ final class A implements b0 {
         return true;
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final void forEachRemaining(LongConsumer longConsumer) {
         longConsumer.getClass();
         long j = this.a;

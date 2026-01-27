@@ -1,104 +1,211 @@
 package j$.util;
 
-import java.util.Comparator;
-import java.util.Spliterator;
+import java.util.Iterator;
+import java.util.OptionalDouble;
+import java.util.OptionalInt;
+import java.util.OptionalLong;
 import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
+import java.util.function.IntConsumer;
+import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class T implements V {
-    public final /* synthetic */ Spliterator.OfDouble a;
-
-    private /* synthetic */ T(Spliterator.OfDouble ofDouble) {
-        this.a = ofDouble;
-    }
-
-    public static /* synthetic */ V a(Spliterator.OfDouble ofDouble) {
-        if (ofDouble == null) {
+public abstract /* synthetic */ class T {
+    public static java.util.Optional m(Optional optional) {
+        if (optional == null) {
             return null;
         }
-        return ofDouble instanceof U ? ((U) ofDouble).a : new T(ofDouble);
-    }
-
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ int characteristics() {
-        return this.a.characteristics();
-    }
-
-    public final /* synthetic */ boolean equals(Object obj) {
-        Spliterator.OfDouble ofDouble = this.a;
-        if (obj instanceof T) {
-            obj = ((T) obj).a;
+        if (optional.isPresent()) {
+            return java.util.Optional.of(optional.get());
         }
-        return ofDouble.equals(obj);
+        return java.util.Optional.empty();
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long estimateSize() {
-        return this.a.estimateSize();
+    public static Optional i(java.util.Optional optional) {
+        if (optional == null) {
+            return null;
+        }
+        if (optional.isPresent()) {
+            return Optional.of(optional.get());
+        }
+        return Optional.empty();
     }
 
-    @Override // j$.util.e0
-    public final /* synthetic */ void forEachRemaining(Object obj) {
-        this.a.forEachRemaining((Spliterator.OfDouble) obj);
+    public static OptionalDouble n(B b) {
+        if (b == null) {
+            return null;
+        }
+        if (b.c()) {
+            return OptionalDouble.of(b.b());
+        }
+        return OptionalDouble.empty();
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining((Consumer<? super Double>) consumer);
+    public static B j(OptionalDouble optionalDouble) {
+        if (optionalDouble == null) {
+            return null;
+        }
+        if (optionalDouble.isPresent()) {
+            return B.d(optionalDouble.getAsDouble());
+        }
+        return B.a();
     }
 
-    @Override // j$.util.V
-    public final /* synthetic */ void forEachRemaining(DoubleConsumer doubleConsumer) {
-        this.a.forEachRemaining(doubleConsumer);
+    public static OptionalLong p(D d) {
+        if (d == null) {
+            return null;
+        }
+        if (d.c()) {
+            return OptionalLong.of(d.b());
+        }
+        return OptionalLong.empty();
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ Comparator getComparator() {
-        return this.a.getComparator();
+    public static D l(OptionalLong optionalLong) {
+        if (optionalLong == null) {
+            return null;
+        }
+        if (optionalLong.isPresent()) {
+            return D.d(optionalLong.getAsLong());
+        }
+        return D.a();
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return this.a.getExactSizeIfKnown();
+    public static OptionalInt o(C c) {
+        if (c == null) {
+            return null;
+        }
+        if (c.c()) {
+            return OptionalInt.of(c.b());
+        }
+        return OptionalInt.empty();
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return this.a.hasCharacteristics(i);
+    public static C k(OptionalInt optionalInt) {
+        if (optionalInt == null) {
+            return null;
+        }
+        if (optionalInt.isPresent()) {
+            return C.d(optionalInt.getAsInt());
+        }
+        return C.a();
     }
 
-    public final /* synthetic */ int hashCode() {
-        return this.a.hashCode();
+    public static void q(Iterator it, Consumer consumer) {
+        if (it instanceof y) {
+            ((y) it).forEachRemaining(consumer);
+            return;
+        }
+        Objects.requireNonNull(consumer);
+        while (it.hasNext()) {
+            consumer.accept(it.next());
+        }
     }
 
-    @Override // j$.util.e0
-    public final /* synthetic */ boolean tryAdvance(Object obj) {
-        return this.a.tryAdvance((Spliterator.OfDouble) obj);
+    public static long d(Spliterator spliterator) {
+        if ((spliterator.characteristics() & 64) == 0) {
+            return -1L;
+        }
+        return spliterator.estimateSize();
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return this.a.tryAdvance((Consumer<? super Double>) consumer);
+    public static boolean e(Spliterator spliterator, int i) {
+        return (spliterator.characteristics() & i) == i;
     }
 
-    @Override // j$.util.V
-    public final /* synthetic */ boolean tryAdvance(DoubleConsumer doubleConsumer) {
-        return this.a.tryAdvance(doubleConsumer);
+    public static boolean g(Z z, Consumer consumer) {
+        if (consumer instanceof IntConsumer) {
+            return z.tryAdvance((IntConsumer) consumer);
+        }
+        if (w0.a) {
+            w0.a(z.getClass(), "{0} calling Spliterator.OfInt.tryAdvance((IntConsumer) action::accept)");
+            throw null;
+        }
+        Objects.requireNonNull(consumer);
+        return z.tryAdvance((IntConsumer) new I(consumer));
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ Spliterator trySplit() {
-        return f0.a(this.a.trySplit());
+    public static void b(Z z, Consumer consumer) {
+        if (consumer instanceof IntConsumer) {
+            z.forEachRemaining((IntConsumer) consumer);
+        } else {
+            if (w0.a) {
+                w0.a(z.getClass(), "{0} calling Spliterator.OfInt.forEachRemaining((IntConsumer) action::accept)");
+                throw null;
+            }
+            Objects.requireNonNull(consumer);
+            z.forEachRemaining((IntConsumer) new I(consumer));
+        }
     }
 
-    @Override // j$.util.V, j$.util.e0, j$.util.Spliterator
-    public final /* synthetic */ V trySplit() {
-        return a(this.a.trySplit());
+    public static boolean h(c0 c0Var, Consumer consumer) {
+        if (consumer instanceof LongConsumer) {
+            return c0Var.tryAdvance((LongConsumer) consumer);
+        }
+        if (w0.a) {
+            w0.a(c0Var.getClass(), "{0} calling Spliterator.OfLong.tryAdvance((LongConsumer) action::accept)");
+            throw null;
+        }
+        Objects.requireNonNull(consumer);
+        return c0Var.tryAdvance((LongConsumer) new M(consumer));
     }
 
-    @Override // j$.util.e0, j$.util.Spliterator
-    public final /* synthetic */ e0 trySplit() {
-        return c0.a(this.a.trySplit());
+    public static void c(c0 c0Var, Consumer consumer) {
+        if (consumer instanceof LongConsumer) {
+            c0Var.forEachRemaining((LongConsumer) consumer);
+        } else {
+            if (w0.a) {
+                w0.a(c0Var.getClass(), "{0} calling Spliterator.OfLong.forEachRemaining((LongConsumer) action::accept)");
+                throw null;
+            }
+            Objects.requireNonNull(consumer);
+            c0Var.forEachRemaining((LongConsumer) new M(consumer));
+        }
+    }
+
+    public static boolean f(W w, Consumer consumer) {
+        if (consumer instanceof DoubleConsumer) {
+            return w.tryAdvance((DoubleConsumer) consumer);
+        }
+        if (w0.a) {
+            w0.a(w.getClass(), "{0} calling Spliterator.OfDouble.tryAdvance((DoubleConsumer) action::accept)");
+            throw null;
+        }
+        Objects.requireNonNull(consumer);
+        return w.tryAdvance((DoubleConsumer) new E(consumer));
+    }
+
+    public static void a(W w, Consumer consumer) {
+        if (consumer instanceof DoubleConsumer) {
+            w.forEachRemaining((DoubleConsumer) consumer);
+        } else {
+            if (w0.a) {
+                w0.a(w.getClass(), "{0} calling Spliterator.OfDouble.forEachRemaining((DoubleConsumer) action::accept)");
+                throw null;
+            }
+            Objects.requireNonNull(consumer);
+            w.forEachRemaining((DoubleConsumer) new E(consumer));
+        }
+    }
+
+    public Spliterator trySplit() {
+        return null;
+    }
+
+    public boolean tryAdvance(Object obj) {
+        Objects.requireNonNull(obj);
+        return false;
+    }
+
+    public void forEachRemaining(Object obj) {
+        Objects.requireNonNull(obj);
+    }
+
+    public long estimateSize() {
+        return 0L;
+    }
+
+    public int characteristics() {
+        return 16448;
     }
 }

@@ -90,6 +90,8 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
         super(context, null, false, false, false, false, BottomSheetWithRecyclerListView.ActionBarType.FADING, resourcesProvider);
         AvatarDrawable avatarDrawable;
         TLRPC.Chat chat;
+        TextView textView;
+        int i;
         LinkSpanDrawable.LinksTextView linksTextView;
         this.starGift = starGift;
         long j2 = starGift.id;
@@ -131,29 +133,29 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
         this.buttonView = buttonWithCounterView;
         buttonWithCounterView.setRound();
         FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
-        int i = createFrame.leftMargin;
-        int i2 = this.backgroundPaddingLeft;
-        createFrame.leftMargin = i + i2;
-        createFrame.rightMargin += i2;
+        int i2 = createFrame.leftMargin;
+        int i3 = this.backgroundPaddingLeft;
+        createFrame.leftMargin = i2 + i3;
+        createFrame.rightMargin += i3;
         this.containerView.addView(buttonWithCounterView, createFrame);
         RecyclerListView recyclerListView = this.recyclerListView;
-        int i3 = this.backgroundPaddingLeft;
-        recyclerListView.setPadding(i3, 0, i3, AndroidUtilities.dp(64.0f));
+        int i4 = this.backgroundPaddingLeft;
+        recyclerListView.setPadding(i4, 0, i4, AndroidUtilities.dp(64.0f));
         this.adapter.update(false);
-        int i4 = z ? NotificationCenter.starBalanceUpdated : NotificationCenter.storyQualityUpdate;
+        int i5 = z ? NotificationCenter.starBalanceUpdated : NotificationCenter.storyQualityUpdate;
         this.auction = GiftAuctionController.getInstance(this.currentAccount).subscribeToGiftAuction(j2, this);
-        final int i5 = i4;
+        final int i6 = i5;
         StarGiftSheet.TopView topView = new StarGiftSheet.TopView(context, resourcesProvider, new Runnable() { // from class: org.telegram.ui.Gifts.AuctionWearingSheet$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                AuctionWearingSheet.this.onBackPressed();
+                AuctionWearingSheet.this.lambda$openCrafting$8();
             }
         }, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionWearingSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AuctionWearingSheet.lambda$new$0(view);
             }
-        }, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionWearingSheet$$ExternalSyntheticLambda4
+        }, null, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionWearingSheet$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AuctionWearingSheet.lambda$new$1(view);
@@ -184,17 +186,17 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
 
             @Override // org.telegram.ui.Stars.StarGiftSheet.TopView
             public float getRealHeight() {
-                return AndroidUtilities.dp(i5);
+                return AndroidUtilities.dp(i6);
             }
 
             @Override // org.telegram.ui.Stars.StarGiftSheet.TopView
             public int getFinalHeight() {
-                return AndroidUtilities.dp(i5);
+                return AndroidUtilities.dp(i6);
             }
 
             @Override // android.view.View
-            protected void onSizeChanged(int i6, int i7, int i8, int i9) {
-                super.onSizeChanged(i6, i7, i8, i9);
+            protected void onSizeChanged(int i7, int i8, int i9, int i10) {
+                super.onSizeChanged(i7, i8, i9, i10);
                 float[] fArr = this.r;
                 float dp = AndroidUtilities.dp(12.0f);
                 fArr[3] = dp;
@@ -202,7 +204,7 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
                 fArr[1] = dp;
                 fArr[0] = dp;
                 this.path.rewind();
-                this.path.addRoundRect(0.0f, 0.0f, i6, i7, this.r, Path.Direction.CW);
+                this.path.addRoundRect(0.0f, 0.0f, i7, i8, this.r, Path.Direction.CW);
             }
 
             @Override // android.view.ViewGroup
@@ -222,9 +224,9 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
             }
 
             @Override // org.telegram.ui.Stars.StarGiftSheet.TopView
-            protected void updateButtonsBackgrounds(int i6) {
-                super.updateButtonsBackgrounds(i6);
-                AuctionWearingSheet.this.giftCell2.setRibbonColor(i6);
+            protected void updateButtonsBackgrounds(int i7) {
+                super.updateButtonsBackgrounds(i7);
+                AuctionWearingSheet.this.giftCell2.setRibbonColor(i7);
             }
 
             @Override // android.view.View
@@ -239,7 +241,7 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
         topView.onSwitchPage(new StarGiftSheet.PageTransition(1, 1, 1.0f));
         topView.setPreviewingAttributes(arrayList);
         topView.hideCloseButton();
-        frameLayout.addView(topView, 0, LayoutHelper.createFrame(-1, i5, 48));
+        frameLayout.addView(topView, 0, LayoutHelper.createFrame(-1, i6, 48));
         BackupImageView backupImageView = new BackupImageView(context);
         backupImageView.setRoundRadius(AndroidUtilities.dp(45.0f));
         frameLayout.addView(backupImageView, LayoutHelper.createFrame(90, 90.0f, 49, 0.0f, 42.0f, 0.0f, 0.0f));
@@ -257,39 +259,43 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
             chat = chat2;
         }
         backupImageView.setForUserOrChat(chat, avatarDrawable);
-        TextView textView = new TextView(context);
-        this.giftNameTextView = textView;
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 21.0f);
-        textView.setText(DialogObject.getShortName(j != 0 ? j : UserConfig.getInstance(this.currentAccount).getClientUserId()));
-        textView.setGravity(17);
-        textView.setTextColor(-1);
-        textView.setPadding(0, 0, AndroidUtilities.dp(36.0f), 0);
-        textView.setSingleLine();
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setMaxLines(1);
-        frameLayout.addView(textView, LayoutHelper.createFrame(-2, -2.0f, 81, 16.0f, 0.0f, 16.0f, 40.0f));
         TextView textView2 = new TextView(context);
-        textView2.setTextSize(1, 13.0f);
-        textView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        this.giftNameTextView = textView2;
+        textView2.setTypeface(AndroidUtilities.bold());
+        textView2.setTextSize(1, 21.0f);
+        textView2.setText(DialogObject.getShortName(j != 0 ? j : UserConfig.getInstance(this.currentAccount).getClientUserId()));
         textView2.setGravity(17);
-        textView2.setTextColor(-1342177281);
+        textView2.setTextColor(-1);
+        textView2.setPadding(0, 0, AndroidUtilities.dp(36.0f), 0);
+        textView2.setSingleLine();
+        textView2.setEllipsize(TextUtils.TruncateAt.END);
+        textView2.setMaxLines(1);
+        frameLayout.addView(textView2, LayoutHelper.createFrame(-2, -2.0f, 81, 16.0f, 0.0f, 16.0f, 40.0f));
+        TextView textView3 = new TextView(context);
+        textView3.setTextSize(1, 13.0f);
+        textView3.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        textView3.setGravity(17);
+        textView3.setTextColor(-1342177281);
         if (z) {
-            textView2.setText(LocaleController.getString(R.string.GiftAuctionWearInfoOnline));
+            textView3.setText(LocaleController.getString(R.string.GiftAuctionWearInfoOnline));
+            textView = textView3;
+            i = 17;
         } else {
-            textView2.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.Gift2AuctionLearnMore3), false, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
-            textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionWearingSheet$$ExternalSyntheticLambda9
+            textView3.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.Gift2AuctionLearnMore3), false, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+            textView = textView3;
+            i = 17;
+            textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionWearingSheet$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     AuctionWearingSheet.lambda$new$6(context, resourcesProvider, j, starGift, arrayList, view);
                 }
             });
-            ScaleStateListAnimator.apply(textView2, 0.02f, 1.5f);
+            ScaleStateListAnimator.apply(textView, 0.02f, 1.5f);
         }
-        frameLayout.addView(textView2, LayoutHelper.createFrame(-1, -2.0f, 87, 16.0f, 0.0f, 16.0f, 12.0f));
+        frameLayout.addView(textView, LayoutHelper.createFrame(-1, -2.0f, 87, 16.0f, 0.0f, 16.0f, 12.0f));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
-        linearLayout2.setGravity(17);
+        linearLayout2.setGravity(i);
         linearLayout2.setClickable(true);
         GiftSheet.GiftCell giftCell = new GiftSheet.GiftCell(context, this.currentAccount, resourcesProvider) { // from class: org.telegram.ui.Gifts.AuctionWearingSheet.3
             @Override // android.view.ViewGroup, android.view.View
@@ -298,7 +304,7 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
             }
         };
         giftCell.setPriorityAuction();
-        giftCell.setStarsGift(starGift, true, false, false, false);
+        giftCell.setStarsGift(starGift, true, false, false, false, false);
         giftCell.setImageSize(AndroidUtilities.dp(84.0f));
         giftCell.setImageLayer(7);
         giftCell.hidePrice();
@@ -321,10 +327,10 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
             }
 
             @Override // android.view.View
-            protected void onSizeChanged(int i6, int i7, int i8, int i9) {
-                super.onSizeChanged(i6, i7, i8, i9);
+            protected void onSizeChanged(int i7, int i8, int i9, int i10) {
+                super.onSizeChanged(i7, i8, i9, i10);
                 this.path.rewind();
-                this.rectF.set(0.0f, 0.0f, i6, i7);
+                this.rectF.set(0.0f, 0.0f, i7, i8);
                 this.rectF.inset(AndroidUtilities.dp(3.33f), AndroidUtilities.dp(4.0f));
                 this.path.addRoundRect(this.rectF, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(11.0f), Path.Direction.CW);
             }
@@ -359,7 +365,7 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
         this.giftCell2 = giftCell2;
         giftCell2.removeImage();
         giftCell2.setPriorityAuction();
-        giftCell2.setStarsGift(starGift, true, false, false, false);
+        giftCell2.setStarsGift(starGift, true, false, false, false, false);
         giftCell2.setImageSize(AndroidUtilities.dp(100.0f));
         giftCell2.setImageLayer(7);
         giftCell2.hidePrice();
@@ -367,36 +373,36 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
         giftCell2.setRibbonTextOneOf(this.auction.gift.availability_total);
         giftCell2.setRibbonText(LocaleController.getString(R.string.Gift2AuctionUpgradedShort));
         linearLayout2.addView(giftCell2, LayoutHelper.createLinear(116, 116, 0.0f));
-        TextView textView3 = new TextView(context);
-        textView3.setTextSize(1, 13.0f);
-        textView3.setGravity(17);
-        textView3.setText(LocaleController.getString(R.string.Gift2WearingHint));
-        int i6 = Theme.key_windowBackgroundWhiteGrayText;
-        textView3.setTextColor(getThemedColor(i6));
+        TextView textView4 = new TextView(context);
+        textView4.setTextSize(1, 13.0f);
+        textView4.setGravity(17);
+        textView4.setText(LocaleController.getString(R.string.Gift2WearingHint));
+        int i7 = Theme.key_windowBackgroundWhiteGrayText;
+        textView4.setTextColor(getThemedColor(i7));
         final float clamp = Utilities.clamp(starGift.availability_remains / starGift.availability_total, 1.0f, 0.0f);
         FrameLayout frameLayout2 = new FrameLayout(context);
         int dp = AndroidUtilities.dp(14.0f);
         int color = Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider);
-        int i7 = Theme.key_windowBackgroundWhiteBlackText;
-        frameLayout2.setBackground(Theme.createRoundRectDrawable(dp, ColorUtils.blendARGB(color, Theme.getColor(i7, resourcesProvider), 0.2f)));
-        TextView textView4 = new TextView(context);
-        textView4.setTextSize(1, 13.0f);
-        textView4.setGravity(19);
-        textView4.setTypeface(AndroidUtilities.bold());
-        textView4.setTextColor(Theme.getColor(i7, resourcesProvider));
-        textView4.setText(LocaleController.formatPluralStringComma("Gift2AvailabilityLeft", starGift.availability_remains));
-        frameLayout2.addView(textView4, LayoutHelper.createFrame(-1, -1.0f, 3, 11.0f, 0.0f, 11.0f, 0.0f));
+        int i8 = Theme.key_windowBackgroundWhiteBlackText;
+        frameLayout2.setBackground(Theme.createRoundRectDrawable(dp, ColorUtils.blendARGB(color, Theme.getColor(i8, resourcesProvider), 0.2f)));
         TextView textView5 = new TextView(context);
         textView5.setTextSize(1, 13.0f);
-        textView5.setGravity(21);
+        textView5.setGravity(19);
         textView5.setTypeface(AndroidUtilities.bold());
-        textView5.setTextColor(Theme.getColor(i7, resourcesProvider));
-        textView5.setText(LocaleController.formatPluralStringComma("Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
-        frameLayout2.addView(textView5, LayoutHelper.createFrame(-1, -1.0f, 5, 11.0f, 0.0f, 11.0f, 0.0f));
+        textView5.setTextColor(Theme.getColor(i8, resourcesProvider));
+        textView5.setText(LocaleController.formatPluralStringComma("Gift2AvailabilityLeft", starGift.availability_remains));
+        frameLayout2.addView(textView5, LayoutHelper.createFrame(-1, -1.0f, 3, 11.0f, 0.0f, 11.0f, 0.0f));
+        TextView textView6 = new TextView(context);
+        textView6.setTextSize(1, 13.0f);
+        textView6.setGravity(21);
+        textView6.setTypeface(AndroidUtilities.bold());
+        textView6.setTextColor(Theme.getColor(i8, resourcesProvider));
+        textView6.setText(LocaleController.formatPluralStringComma("Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
+        frameLayout2.addView(textView6, LayoutHelper.createFrame(-1, -1.0f, 5, 11.0f, 0.0f, 11.0f, 0.0f));
         View view = new View(context) { // from class: org.telegram.ui.Gifts.AuctionWearingSheet.5
             @Override // android.view.View
-            protected void onMeasure(int i8, int i9) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i8) * clamp), TLObject.FLAG_30), i9);
+            protected void onMeasure(int i9, int i10) {
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (View.MeasureSpec.getSize(i9) * clamp), TLObject.FLAG_30), i10);
             }
         };
         view.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(14.0f), Theme.getColor(Theme.key_featuredStickers_addButton, resourcesProvider)));
@@ -412,20 +418,20 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
         };
         frameLayout3.setWillNotDraw(false);
         frameLayout2.addView(frameLayout3, LayoutHelper.createFrame(-1, -1, 119));
-        TextView textView6 = new TextView(context);
-        textView6.setTextSize(1, 13.0f);
-        textView6.setGravity(19);
-        textView6.setTypeface(AndroidUtilities.bold());
-        textView6.setTextColor(-1);
-        textView6.setText(LocaleController.formatPluralStringComma("Gift2AvailabilityLeft", starGift.availability_remains));
-        frameLayout3.addView(textView6, LayoutHelper.createFrame(-1, -1.0f, 3, 11.0f, 0.0f, 11.0f, 0.0f));
         TextView textView7 = new TextView(context);
         textView7.setTextSize(1, 13.0f);
-        textView7.setGravity(21);
+        textView7.setGravity(19);
         textView7.setTypeface(AndroidUtilities.bold());
         textView7.setTextColor(-1);
-        textView7.setText(LocaleController.formatPluralStringComma("Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
-        frameLayout3.addView(textView7, LayoutHelper.createFrame(-1, -1.0f, 5, 11.0f, 0.0f, 11.0f, 0.0f));
+        textView7.setText(LocaleController.formatPluralStringComma("Gift2AvailabilityLeft", starGift.availability_remains));
+        frameLayout3.addView(textView7, LayoutHelper.createFrame(-1, -1.0f, 3, 11.0f, 0.0f, 11.0f, 0.0f));
+        TextView textView8 = new TextView(context);
+        textView8.setTextSize(1, 13.0f);
+        textView8.setGravity(21);
+        textView8.setTypeface(AndroidUtilities.bold());
+        textView8.setTextColor(-1);
+        textView8.setText(LocaleController.formatPluralStringComma("Gift2AvailabilitySold", starGift.availability_total - starGift.availability_remains));
+        frameLayout3.addView(textView8, LayoutHelper.createFrame(-1, -1.0f, 5, 11.0f, 0.0f, 11.0f, 0.0f));
         GiftAuctionController.Auction auction = this.auction;
         if (auction == null || auction.auctionStateActive == null) {
             linksTextView = null;
@@ -433,7 +439,7 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
             linksTextView = new LinkSpanDrawable.LinksTextView(context);
             linksTextView.setTextSize(1, 13.0f);
             linksTextView.setGravity(17);
-            linksTextView.setTextColor(getThemedColor(i6));
+            linksTextView.setTextColor(getThemedColor(i7));
             linksTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.Gift2AuctionInfo3, LocaleController.formatNumber(starGift.availability_total, ','), Integer.valueOf(this.auction.auctionStateActive.total_rounds), Integer.valueOf(starGift.gifts_per_round), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2AuctionInfoLearnMore), new Runnable() { // from class: org.telegram.ui.Gifts.AuctionWearingSheet$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -453,7 +459,7 @@ public class AuctionWearingSheet extends BottomSheetWithRecyclerListView impleme
             });
         } else {
             linearLayout.addView(linearLayout2, LayoutHelper.createLinear(-1, -2, 0.0f, 20.0f, 0.0f, 10.0f));
-            linearLayout.addView(textView3, LayoutHelper.createLinear(-1, -2, 40.0f, 0.0f, 40.0f, 15.0f));
+            linearLayout.addView(textView4, LayoutHelper.createLinear(-1, -2, 40.0f, 0.0f, 40.0f, 15.0f));
             linearLayout.addView(frameLayout2, LayoutHelper.createLinear(-1, 28, 14.0f, 18.0f, 14.0f, 10.0f));
             if (linksTextView != null) {
                 linearLayout.addView(linksTextView, LayoutHelper.createLinear(-1, -2, 40.0f, 0.0f, 40.0f, 32.0f));

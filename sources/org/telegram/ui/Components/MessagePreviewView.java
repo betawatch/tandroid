@@ -432,7 +432,7 @@ public abstract class MessagePreviewView extends FrameLayout {
                 }
             });
             RecyclerListView recyclerListView = new RecyclerListView(context, MessagePreviewView.this.resourcesProvider) { // from class: org.telegram.ui.Components.MessagePreviewView.Page.6
-                @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+                @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
                 public boolean drawChild(Canvas canvas, View view, long j) {
                     if (!(view instanceof ChatMessageCell)) {
                         return true;

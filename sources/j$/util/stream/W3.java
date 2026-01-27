@@ -7,7 +7,7 @@ import java.util.function.IntFunction;
 final class W3 extends z {
     @Override // j$.util.stream.b
     final Spliterator O(b bVar, Spliterator spliterator) {
-        return a3.ORDERED.m(bVar.J()) ? N(bVar, spliterator, new b0(22)).spliterator() : new d4((j$.util.V) bVar.W(spliterator), 1);
+        return a3.ORDERED.m(bVar.J()) ? N(bVar, spliterator, new b0(22)).spliterator() : new d4((j$.util.W) bVar.W(spliterator), 1);
     }
 
     @Override // j$.util.stream.b

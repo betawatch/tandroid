@@ -64,6 +64,15 @@ import org.telegram.ui.LaunchActivity;
 public class BusinessLinksActivity extends UniversalFragment implements NotificationCenter.NotificationCenterDelegate {
     private static AlertDialog currentDialog;
 
+    @Override // org.telegram.ui.Components.UniversalFragment, org.telegram.ui.ActionBar.BaseFragment
+    public View createView(Context context) {
+        super.createView(context);
+        this.listView.setSections();
+        this.listView.adapter.setApplyBackground(false);
+        this.actionBar.setAdaptiveBackground(this.listView);
+        return this.fragmentView;
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r11v0, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
     public static void openRenameAlert(Context context, final int i, final TL_account.TL_businessChatLink tL_businessChatLink, final Theme.ResourcesProvider resourcesProvider, boolean z) {
@@ -460,6 +469,7 @@ public class BusinessLinksActivity extends UniversalFragment implements Notifica
                 BusinessLinksActivity.this.lambda$onLongClick$12(tL_businessChatLink);
             }
         });
+        makeOptions.setScrimViewBackground(this.listView.getClipBackground(view));
         makeOptions.show();
         return true;
     }

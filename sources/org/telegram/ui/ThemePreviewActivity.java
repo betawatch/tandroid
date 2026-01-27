@@ -1112,7 +1112,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                 float startX;
                                 float startY;
 
-                                @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+                                @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
                                 public boolean drawChild(Canvas canvas, View view, long j) {
                                     RecyclerView.ViewHolder childViewHolder;
                                     boolean drawChild = super.drawChild(canvas, view, j);
@@ -2244,7 +2244,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                         float startX;
                         float startY;
 
-                        @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+                        @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
                         public boolean drawChild(Canvas canvas, View view3, long j) {
                             RecyclerView.ViewHolder childViewHolder;
                             boolean drawChild = super.drawChild(canvas, view3, j);
@@ -2589,7 +2589,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                 float startX;
                 float startY;
 
-                @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+                @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
                 public boolean drawChild(Canvas canvas, View view3, long j) {
                     RecyclerView.ViewHolder childViewHolder;
                     boolean drawChild = super.drawChild(canvas, view3, j);
@@ -3124,7 +3124,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
             float startX;
             float startY;
 
-            @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+            @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
             public boolean drawChild(Canvas canvas, View view3, long j) {
                 RecyclerView.ViewHolder childViewHolder;
                 boolean drawChild = super.drawChild(canvas, view3, j);

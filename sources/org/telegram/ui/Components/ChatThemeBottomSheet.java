@@ -733,7 +733,8 @@ public class ChatThemeBottomSheet extends BottomSheet implements NotificationCen
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
-    public void onBackPressed() {
+    /* renamed from: onBackPressed */
+    public void lambda$openCrafting$8() {
         close();
     }
 

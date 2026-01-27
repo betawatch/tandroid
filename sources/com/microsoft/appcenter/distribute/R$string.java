@@ -2,24 +2,24 @@ package com.microsoft.appcenter.distribute;
 
 /* loaded from: classes3.dex */
 public abstract class R$string {
-    public static final int appcenter_distribute_dialog_actioned_on_disabled_toast = 2131699671;
-    public static final int appcenter_distribute_download_progress_number_format = 2131699672;
-    public static final int appcenter_distribute_downloading_error = 2131699673;
-    public static final int appcenter_distribute_downloading_update = 2131699675;
-    public static final int appcenter_distribute_install = 2131699676;
-    public static final int appcenter_distribute_install_ready_message = 2131699677;
-    public static final int appcenter_distribute_install_ready_title = 2131699678;
-    public static final int appcenter_distribute_notification_category = 2131699679;
-    public static final int appcenter_distribute_unknown_sources_dialog_message = 2131699680;
-    public static final int appcenter_distribute_unknown_sources_dialog_settings = 2131699681;
-    public static final int appcenter_distribute_update_dialog_download = 2131699682;
-    public static final int appcenter_distribute_update_dialog_message_mandatory = 2131699683;
-    public static final int appcenter_distribute_update_dialog_message_optional = 2131699684;
-    public static final int appcenter_distribute_update_dialog_postpone = 2131699685;
-    public static final int appcenter_distribute_update_dialog_title = 2131699686;
-    public static final int appcenter_distribute_update_dialog_view_release_notes = 2131699687;
-    public static final int appcenter_distribute_update_failed_dialog_ignore = 2131699688;
-    public static final int appcenter_distribute_update_failed_dialog_message = 2131699689;
-    public static final int appcenter_distribute_update_failed_dialog_reinstall = 2131699690;
-    public static final int appcenter_distribute_update_failed_dialog_title = 2131699691;
+    public static final int appcenter_distribute_dialog_actioned_on_disabled_toast = 2131699699;
+    public static final int appcenter_distribute_download_progress_number_format = 2131699700;
+    public static final int appcenter_distribute_downloading_error = 2131699701;
+    public static final int appcenter_distribute_downloading_update = 2131699703;
+    public static final int appcenter_distribute_install = 2131699704;
+    public static final int appcenter_distribute_install_ready_message = 2131699705;
+    public static final int appcenter_distribute_install_ready_title = 2131699706;
+    public static final int appcenter_distribute_notification_category = 2131699707;
+    public static final int appcenter_distribute_unknown_sources_dialog_message = 2131699708;
+    public static final int appcenter_distribute_unknown_sources_dialog_settings = 2131699709;
+    public static final int appcenter_distribute_update_dialog_download = 2131699710;
+    public static final int appcenter_distribute_update_dialog_message_mandatory = 2131699711;
+    public static final int appcenter_distribute_update_dialog_message_optional = 2131699712;
+    public static final int appcenter_distribute_update_dialog_postpone = 2131699713;
+    public static final int appcenter_distribute_update_dialog_title = 2131699714;
+    public static final int appcenter_distribute_update_dialog_view_release_notes = 2131699715;
+    public static final int appcenter_distribute_update_failed_dialog_ignore = 2131699716;
+    public static final int appcenter_distribute_update_failed_dialog_message = 2131699717;
+    public static final int appcenter_distribute_update_failed_dialog_reinstall = 2131699718;
+    public static final int appcenter_distribute_update_failed_dialog_title = 2131699719;
 }

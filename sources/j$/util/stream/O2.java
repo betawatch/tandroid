@@ -5,17 +5,17 @@ import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class O2 extends U2 implements j$.util.V {
+final class O2 extends U2 implements j$.util.W {
     final /* synthetic */ P2 g;
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.util.S.a(this, consumer);
+        j$.util.T.a(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.util.S.f(this, consumer);
+        return j$.util.T.f(this, consumer);
     }
 
     @Override // j$.util.stream.U2
@@ -24,7 +24,7 @@ final class O2 extends U2 implements j$.util.V {
     }
 
     @Override // j$.util.stream.U2
-    final j$.util.e0 b(Object obj, int i, int i2) {
+    final j$.util.f0 b(Object obj, int i, int i2) {
         return Spliterators.j((double[]) obj, i, i2 + i);
     }
 
@@ -35,7 +35,7 @@ final class O2 extends U2 implements j$.util.V {
     }
 
     @Override // j$.util.stream.U2
-    final j$.util.e0 c(int i, int i2, int i3, int i4) {
+    final j$.util.f0 c(int i, int i2, int i3, int i4) {
         return new O2(this.g, i, i2, i3, i4);
     }
 }

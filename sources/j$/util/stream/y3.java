@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 import java.util.function.LongConsumer;
 
 /* loaded from: classes2.dex */
-final class y3 extends z3 implements j$.util.b0, LongConsumer {
+final class y3 extends z3 implements j$.util.c0, LongConsumer {
     long f;
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
@@ -14,17 +14,17 @@ final class y3 extends z3 implements j$.util.b0, LongConsumer {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.util.S.c(this, consumer);
+        j$.util.T.c(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.util.S.h(this, consumer);
+        return j$.util.T.h(this, consumer);
     }
 
     @Override // j$.util.stream.C3
     protected final Spliterator c(Spliterator spliterator) {
-        return new y3((j$.util.b0) spliterator, this);
+        return new y3((j$.util.c0) spliterator, this);
     }
 
     @Override // j$.util.stream.z3

@@ -186,7 +186,10 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
                 this.translateX = AndroidUtilities.dp(2.0f);
             }
         };
-        return super.createView(context);
+        this.fragmentView = super.createView(context);
+        this.listView.setSections();
+        this.actionBar.setAdaptiveBackground(this.listView);
+        return this.fragmentView;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -199,8 +202,8 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
         return LocaleController.getString(R.string.BrowserSettingsTitle);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x014a  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0195  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0197  */
     @Override // org.telegram.ui.Components.UniversalFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -217,6 +220,13 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
         this.enableRow = arrayList.size();
         arrayList.add(UItem.asRippleCheck(1, LocaleController.getString(R.string.BrowserSettingsEnable)).setChecked(SharedConfig.inappBrowser));
         arrayList.add(UItem.asShadow(LocaleController.getString(R.string.BrowserSettingsEnableInfo)));
+        if (!SharedConfig.inappBrowser) {
+            arrayList.add(UItem.asHeader(LocaleController.getString(R.string.BrowserSettingsCustomTabsTitle)));
+            arrayList.add(UItem.asRadio(10, LocaleController.getString(R.string.BrowserSettingsCustomTabs)).setChecked(SharedConfig.customTabs));
+            arrayList.add(UItem.asRadio(11, LocaleController.getString(R.string.BrowserSettingsNoCustomTabs)).setChecked(true ^ SharedConfig.customTabs));
+            arrayList.add(UItem.asShadow(LocaleController.getString(R.string.BrowserSettingsNoCustomTabsInfo)));
+            return;
+        }
         this.clearCookiesRow = arrayList.size();
         int i = R.drawable.menu_clear_cookies;
         String string = LocaleController.getString(R.string.BrowserSettingsCookiesClear);
@@ -270,12 +280,6 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
         this.searchRow = arrayList.size();
         arrayList.add(UItem.asButton(6, R.drawable.msg_search, LocaleController.getString(R.string.SearchEngine), SearchEngine.getCurrent().name));
         arrayList.add(UItem.asShadow(LocaleController.getString(R.string.BrowserSettingsSearchEngineInfo)));
-        if (!SharedConfig.inappBrowser) {
-            arrayList.add(UItem.asHeader(LocaleController.getString(R.string.BrowserSettingsCustomTabsTitle)));
-            arrayList.add(UItem.asRadio(10, LocaleController.getString(R.string.BrowserSettingsCustomTabs)).setChecked(SharedConfig.customTabs));
-            arrayList.add(UItem.asRadio(11, LocaleController.getString(R.string.BrowserSettingsNoCustomTabs)).setChecked(true ^ SharedConfig.customTabs));
-            arrayList.add(UItem.asShadow(LocaleController.getString(R.string.BrowserSettingsNoCustomTabsInfo)));
-        }
         if (BuildVars.DEBUG_PRIVATE_VERSION) {
             arrayList.add(UItem.asCheck(12, "adaptable colors").setChecked(SharedConfig.adaptableColorInBrowser));
             arrayList.add(UItem.asCheck(13, "only local IV").setChecked(SharedConfig.onlyLocalInstantView));

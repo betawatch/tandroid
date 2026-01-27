@@ -6,7 +6,7 @@ import java.util.function.DoubleConsumer;
 import java.util.function.DoublePredicate;
 
 /* loaded from: classes2.dex */
-final class d4 extends h4 implements DoubleConsumer, j$.util.V {
+final class d4 extends h4 implements DoubleConsumer, j$.util.W {
     double e;
     public final /* synthetic */ int f;
 
@@ -28,15 +28,15 @@ final class d4 extends h4 implements DoubleConsumer, j$.util.V {
 
     @Override // j$.util.stream.h4, j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.util.S.a(this, consumer);
+        j$.util.T.a(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.util.S.f(this, consumer);
+        return j$.util.T.f(this, consumer);
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final void forEachRemaining(DoubleConsumer doubleConsumer) {
         while (tryAdvance(doubleConsumer)) {
         }
@@ -52,9 +52,9 @@ final class d4 extends h4 implements DoubleConsumer, j$.util.V {
     final Spliterator c(Spliterator spliterator) {
         switch (this.f) {
             case 0:
-                return new d4((j$.util.V) spliterator, this, 0);
+                return new d4((j$.util.W) spliterator, this, 0);
             default:
-                return new d4((j$.util.V) spliterator, this, 1);
+                return new d4((j$.util.W) spliterator, this, 1);
         }
     }
 
@@ -69,7 +69,7 @@ final class d4 extends h4 implements DoubleConsumer, j$.util.V {
     }
 
     @Override // j$.util.stream.h4, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.e0 trySplit() {
+    public /* bridge */ /* synthetic */ j$.util.f0 trySplit() {
         switch (this.f) {
             case 1:
                 return trySplit();
@@ -78,7 +78,7 @@ final class d4 extends h4 implements DoubleConsumer, j$.util.V {
         }
     }
 
-    @Override // j$.util.V
+    @Override // j$.util.W
     public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
         switch (this.f) {
             case 0:
@@ -86,7 +86,7 @@ final class d4 extends h4 implements DoubleConsumer, j$.util.V {
                 Spliterator spliterator = this.a;
                 if (z) {
                     this.c = false;
-                    boolean tryAdvance = ((j$.util.V) spliterator).tryAdvance((DoubleConsumer) this);
+                    boolean tryAdvance = ((j$.util.W) spliterator).tryAdvance((DoubleConsumer) this);
                     if (tryAdvance && b()) {
                         DoublePredicate doublePredicate = null;
                         doublePredicate.test(this.e);
@@ -98,9 +98,9 @@ final class d4 extends h4 implements DoubleConsumer, j$.util.V {
                     doubleConsumer.accept(this.e);
                     return tryAdvance;
                 }
-                return ((j$.util.V) spliterator).tryAdvance(doubleConsumer);
+                return ((j$.util.W) spliterator).tryAdvance(doubleConsumer);
             default:
-                if (this.c && b() && ((j$.util.V) this.a).tryAdvance((DoubleConsumer) this)) {
+                if (this.c && b() && ((j$.util.W) this.a).tryAdvance((DoubleConsumer) this)) {
                     DoublePredicate doublePredicate2 = null;
                     doublePredicate2.test(this.e);
                     throw null;
@@ -111,19 +111,19 @@ final class d4 extends h4 implements DoubleConsumer, j$.util.V {
     }
 
     @Override // j$.util.stream.h4, j$.util.Spliterator
-    public j$.util.V trySplit() {
+    public j$.util.W trySplit() {
         switch (this.f) {
             case 1:
                 if (this.b.get()) {
                     return null;
                 }
-                return (j$.util.V) super.trySplit();
+                return (j$.util.W) super.trySplit();
             default:
                 return super.trySplit();
         }
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public /* bridge */ /* synthetic */ boolean tryAdvance(Object obj) {
         switch (this.f) {
             case 1:

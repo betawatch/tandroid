@@ -2,7 +2,6 @@ package j$.util;
 
 import j$.util.Collection;
 import j$.util.stream.Stream;
-import j$.util.stream.w0;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
@@ -25,12 +24,12 @@ final class s extends v {
 
     @Override // j$.util.m, java.util.Collection, j$.util.Collection
     public final Stream stream() {
-        return w0.f0(spliterator(), false);
+        return j$.util.stream.w0.f0(spliterator(), false);
     }
 
     @Override // j$.util.m, java.util.Collection, j$.util.Collection
     public final Stream parallelStream() {
-        return w0.f0(spliterator(), true);
+        return j$.util.stream.w0.f0(spliterator(), true);
     }
 
     @Override // j$.util.m, java.util.Collection, java.lang.Iterable

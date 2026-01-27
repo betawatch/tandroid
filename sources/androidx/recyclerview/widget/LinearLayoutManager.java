@@ -16,6 +16,7 @@ import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes.dex */
 public class LinearLayoutManager extends RecyclerView.LayoutManager implements ItemTouchHelper.ViewDropHandler, RecyclerView.SmoothScroller.ScrollVectorProvider {
+    private int addExtraLayoutSpace;
     final AnchorInfo mAnchorInfo;
     private boolean mDisableScroll;
     public boolean mIgnoreTopPadding;
@@ -212,9 +213,9 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
 
     protected int getExtraLayoutSpace(RecyclerView.State state) {
         if (state.hasTargetScrollPosition()) {
-            return this.mOrientationHelper.getTotalSpace();
+            return this.addExtraLayoutSpace + this.mOrientationHelper.getTotalSpace();
         }
-        return 0;
+        return this.addExtraLayoutSpace;
     }
 
     protected void calculateExtraLayoutSpace(RecyclerView.State state, int[] iArr) {

@@ -193,7 +193,7 @@ public abstract class CaptionStory extends CaptionContainerView {
         ImageView imageView2 = this.roundButton;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView2.setScaleType(scaleType);
-        addView(this.roundButton, LayoutHelper.createFrame(44, 44.0f, 85, 0.0f, 0.0f, 11.0f, 10.0f));
+        addView(this.roundButton, LayoutHelper.createFrame(44, 44.0f, 85, 0.0f, 0.0f, 11.0f, 6.0f));
         this.roundButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.CaptionStory$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -208,7 +208,7 @@ public abstract class CaptionStory extends CaptionContainerView {
         this.periodButton.setBackground(Theme.createSelectorDrawable(1090519039, 1, AndroidUtilities.dp(18.0f)));
         this.periodButton.setScaleType(scaleType);
         setPeriod(86400, false);
-        addView(this.periodButton, LayoutHelper.createFrame(44, 44.0f, 85, 0.0f, 0.0f, 51.0f, 10.0f));
+        addView(this.periodButton, LayoutHelper.createFrame(44, 44.0f, 85, 0.0f, 0.0f, 51.0f, 6.0f));
         this.periodButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.CaptionStory$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -310,7 +310,7 @@ public abstract class CaptionStory extends CaptionContainerView {
         if (this.flipButton != null) {
             return;
         }
-        this.flipButton = (AnimatedVectorDrawable) ContextCompat.getDrawable(getContext(), R.drawable.avd_flip);
+        this.flipButton = ContextCompat.getDrawable(getContext(), R.drawable.avd_flip);
     }
 
     public void setHasRoundVideo(boolean z) {

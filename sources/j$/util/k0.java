@@ -1,89 +1,75 @@
 package j$.util;
 
-import java.util.Comparator;
+import java.util.NoSuchElementException;
 import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class k0 implements Spliterator {
-    private final Object[] a;
-    private int b;
-    private final int c;
-    private final int d;
+final class k0 implements H, DoubleConsumer, y {
+    boolean a = false;
+    double b;
+    final /* synthetic */ W c;
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ long getExactSizeIfKnown() {
-        return S.d(this);
+    public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {
+        return j$.com.android.tools.r8.a.a(this, doubleConsumer);
     }
 
-    @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return S.e(this, i);
-    }
-
-    public k0(Object[] objArr, int i, int i2, int i3) {
-        this.a = objArr;
-        this.b = i;
-        this.c = i2;
-        this.d = i3 | 16448;
-    }
-
-    @Override // j$.util.Spliterator
-    public final Spliterator trySplit() {
-        int i = this.b;
-        int i2 = (this.c + i) >>> 1;
-        if (i >= i2) {
-            return null;
+    @Override // j$.util.Q
+    public final void forEachRemaining(DoubleConsumer doubleConsumer) {
+        Objects.requireNonNull(doubleConsumer);
+        while (hasNext()) {
+            doubleConsumer.accept(nextDouble());
         }
-        this.b = i2;
-        return new k0(this.a, i, i2, this.d);
     }
 
-    @Override // j$.util.Spliterator
+    @Override // java.util.Iterator
+    public final Double next() {
+        if (w0.a) {
+            w0.a(k0.class, "{0} calling PrimitiveIterator.OfDouble.nextLong()");
+            throw null;
+        }
+        return Double.valueOf(nextDouble());
+    }
+
+    @Override // j$.util.H, java.util.Iterator, j$.util.y
     public final void forEachRemaining(Consumer consumer) {
-        int i;
-        consumer.getClass();
-        Object[] objArr = this.a;
-        int length = objArr.length;
-        int i2 = this.c;
-        if (length < i2 || (i = this.b) < 0) {
+        if (consumer instanceof DoubleConsumer) {
+            forEachRemaining((DoubleConsumer) consumer);
             return;
         }
-        this.b = i2;
-        if (i < i2) {
-            do {
-                consumer.accept(objArr[i]);
-                i++;
-            } while (i < i2);
+        Objects.requireNonNull(consumer);
+        if (w0.a) {
+            w0.a(k0.class, "{0} calling PrimitiveIterator.OfDouble.forEachRemainingDouble(action::accept)");
+            throw null;
         }
+        Objects.requireNonNull(consumer);
+        forEachRemaining((DoubleConsumer) new E(consumer));
     }
 
-    @Override // j$.util.Spliterator
-    public final boolean tryAdvance(Consumer consumer) {
-        consumer.getClass();
-        int i = this.b;
-        if (i < 0 || i >= this.c) {
-            return false;
+    k0(W w) {
+        this.c = w;
+    }
+
+    @Override // java.util.function.DoubleConsumer
+    public final void accept(double d) {
+        this.a = true;
+        this.b = d;
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        if (!this.a) {
+            this.c.tryAdvance((DoubleConsumer) this);
         }
-        this.b = i + 1;
-        consumer.accept(this.a[i]);
-        return true;
+        return this.a;
     }
 
-    @Override // j$.util.Spliterator
-    public final long estimateSize() {
-        return this.c - this.b;
-    }
-
-    @Override // j$.util.Spliterator
-    public final int characteristics() {
-        return this.d;
-    }
-
-    @Override // j$.util.Spliterator
-    public final Comparator getComparator() {
-        if (S.e(this, 4)) {
-            return null;
+    @Override // j$.util.H
+    public final double nextDouble() {
+        if (!this.a && !hasNext()) {
+            throw new NoSuchElementException();
         }
-        throw new IllegalStateException();
+        this.a = false;
+        return this.b;
     }
 }

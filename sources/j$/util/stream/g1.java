@@ -101,7 +101,7 @@ final class g1 extends R2 implements E0, y0 {
     }
 
     @Override // j$.util.stream.R2, j$.util.stream.V2, java.lang.Iterable
-    public final j$.util.e0 spliterator() {
+    public final j$.util.f0 spliterator() {
         return super.spliterator();
     }
 

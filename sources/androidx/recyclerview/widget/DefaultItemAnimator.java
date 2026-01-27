@@ -19,6 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 public class DefaultItemAnimator extends SimpleItemAnimator {
     private static final boolean DEBUG = BuildVars.DEBUG_VERSION;
     private static TimeInterpolator sDefaultInterpolator;
+    private Runnable animationUpdatesListener;
     protected Interpolator translationInterpolator;
     protected ArrayList mPendingRemovals = new ArrayList();
     protected ArrayList mPendingAdditions = new ArrayList();
@@ -262,6 +263,9 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
                 view.setTranslationX(0.0f);
                 view.setTranslationY(0.0f);
                 DefaultItemAnimator.this.onRemoveAnimationUpdate(viewHolder);
+                if (DefaultItemAnimator.this.animationUpdatesListener != null) {
+                    DefaultItemAnimator.this.animationUpdatesListener.run();
+                }
                 DefaultItemAnimator.this.dispatchRemoveFinished(viewHolder);
                 DefaultItemAnimator.this.mRemoveAnimations.remove(viewHolder);
                 DefaultItemAnimator.this.dispatchFinishedWhenDone();
@@ -272,6 +276,10 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$animateRemoveImpl$0(RecyclerView.ViewHolder viewHolder, ValueAnimator valueAnimator) {
         onRemoveAnimationUpdate(viewHolder);
+        Runnable runnable = this.animationUpdatesListener;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 
     @Override // androidx.recyclerview.widget.SimpleItemAnimator
@@ -319,6 +327,9 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             public void onAnimationEnd(Animator animator) {
                 animate.setListener(null);
                 DefaultItemAnimator.this.onAddAnimationUpdate(viewHolder);
+                if (DefaultItemAnimator.this.animationUpdatesListener != null) {
+                    DefaultItemAnimator.this.animationUpdatesListener.run();
+                }
                 DefaultItemAnimator.this.dispatchAddFinished(viewHolder);
                 DefaultItemAnimator.this.mAddAnimations.remove(viewHolder);
                 DefaultItemAnimator.this.dispatchFinishedWhenDone();
@@ -329,6 +340,10 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$animateAddImpl$1(RecyclerView.ViewHolder viewHolder, ValueAnimator valueAnimator) {
         onAddAnimationUpdate(viewHolder);
+        Runnable runnable = this.animationUpdatesListener;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 
     @Override // androidx.recyclerview.widget.SimpleItemAnimator
@@ -407,6 +422,9 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             public void onAnimationEnd(Animator animator) {
                 animate.setListener(null);
                 DefaultItemAnimator.this.onMoveAnimationUpdate(viewHolder);
+                if (DefaultItemAnimator.this.animationUpdatesListener != null) {
+                    DefaultItemAnimator.this.animationUpdatesListener.run();
+                }
                 DefaultItemAnimator.this.dispatchMoveFinished(viewHolder);
                 DefaultItemAnimator.this.mMoveAnimations.remove(viewHolder);
                 DefaultItemAnimator.this.dispatchFinishedWhenDone();
@@ -418,6 +436,10 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$animateMoveImpl$2(RecyclerView.ViewHolder viewHolder, ValueAnimator valueAnimator) {
         onMoveAnimationUpdate(viewHolder);
+        Runnable runnable = this.animationUpdatesListener;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 
     @Override // androidx.recyclerview.widget.SimpleItemAnimator
@@ -493,6 +515,9 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
                     view.setTranslationX(0.0f);
                     view.setTranslationY(0.0f);
                     DefaultItemAnimator.this.onChangeAnimationUpdate(changeInfo.oldHolder);
+                    if (DefaultItemAnimator.this.animationUpdatesListener != null) {
+                        DefaultItemAnimator.this.animationUpdatesListener.run();
+                    }
                     DefaultItemAnimator.this.dispatchChangeFinished(changeInfo.oldHolder, true);
                     DefaultItemAnimator.this.mChangeAnimations.remove(changeInfo.oldHolder);
                     DefaultItemAnimator.this.dispatchFinishedWhenDone();
@@ -529,6 +554,9 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
                     view2.setTranslationX(0.0f);
                     view2.setTranslationY(0.0f);
                     DefaultItemAnimator.this.onChangeAnimationUpdate(changeInfo.newHolder);
+                    if (DefaultItemAnimator.this.animationUpdatesListener != null) {
+                        DefaultItemAnimator.this.animationUpdatesListener.run();
+                    }
                     DefaultItemAnimator.this.dispatchChangeFinished(changeInfo.newHolder, false);
                     DefaultItemAnimator.this.mChangeAnimations.remove(changeInfo.newHolder);
                     DefaultItemAnimator.this.dispatchFinishedWhenDone();
@@ -543,11 +571,19 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$animateChangeImpl$3(ChangeInfo changeInfo, ValueAnimator valueAnimator) {
         onChangeAnimationUpdate(changeInfo.oldHolder);
+        Runnable runnable = this.animationUpdatesListener;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$animateChangeImpl$4(ChangeInfo changeInfo, ValueAnimator valueAnimator) {
         onChangeAnimationUpdate(changeInfo.newHolder);
+        Runnable runnable = this.animationUpdatesListener;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 
     private void endChangeAnimation(List list, RecyclerView.ViewHolder viewHolder) {

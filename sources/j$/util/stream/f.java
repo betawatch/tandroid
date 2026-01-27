@@ -65,7 +65,7 @@ public final /* synthetic */ class f implements BaseStream {
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
     public final /* synthetic */ Spliterator spliterator() {
-        return j$.util.f0.a(this.a.spliterator());
+        return j$.util.g0.a(this.a.spliterator());
     }
 
     @Override // j$.util.stream.BaseStream

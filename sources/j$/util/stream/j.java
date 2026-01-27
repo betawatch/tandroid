@@ -156,7 +156,7 @@ public final /* synthetic */ class j implements BinaryOperator, Function, BiCons
                 ((Set) obj).add(obj2);
                 break;
             default:
-                ((j$.util.t0) obj).a((CharSequence) obj2);
+                ((j$.util.u0) obj).a((CharSequence) obj2);
                 break;
         }
     }
@@ -198,9 +198,9 @@ public final /* synthetic */ class j implements BinaryOperator, Function, BiCons
             case 18:
                 return new U0((I0) obj, (I0) obj2);
             default:
-                j$.util.t0 t0Var = (j$.util.t0) obj;
-                t0Var.d((j$.util.t0) obj2);
-                return t0Var;
+                j$.util.u0 u0Var = (j$.util.u0) obj;
+                u0Var.d((j$.util.u0) obj2);
+                return u0Var;
         }
     }
 }

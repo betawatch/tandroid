@@ -150,7 +150,7 @@ public class StarGiftUniqueActionLayout {
                     }
                     StarsIntroActivity.setGiftImage(this.imageReceiver, this.model.document, 110);
                 }
-                this.ribbon.setBackdrop(this.backdrop, true);
+                this.ribbon.setBackdrop(this.backdrop, true, false);
                 this.ribbon.setText(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
                 if (this.repost) {
                     this.width = AndroidUtilities.dp(200.0f);

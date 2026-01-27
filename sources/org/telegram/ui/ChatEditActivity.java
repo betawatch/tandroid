@@ -11,7 +11,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -29,7 +28,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import com.google.android.exoplayer2.util.Consumer;
 import java.text.DecimalFormat;
@@ -82,7 +80,6 @@ import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.BulletinFactory;
-import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.EditTextEmoji;
@@ -94,6 +91,7 @@ import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Reactions.ChatCustomReactionsEditActivity;
 import org.telegram.ui.Components.Reactions.ReactionsUtils;
+import org.telegram.ui.Components.SectionsScrollView;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.FilterCreateActivity;
@@ -587,14 +585,14 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:144:0x07b0  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0831  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x087b  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x08b5  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x08dd  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x08ea  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x08f7  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x091d  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x076e  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x07ef  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x083a  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0874  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x089e  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x08ab  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x08b8  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x08de  */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -602,13 +600,14 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
     public View createView(final Context context) {
         CharSequence charSequence;
         int i;
+        int i2;
         CharSequence charSequence2;
-        boolean z;
         TL_bots.BotInfo botInfo;
         TL_bots.BotInfo botInfo2;
-        int i2;
-        TextCell textCell;
         int i3;
+        TextCell textCell;
+        int i4;
+        int i5;
         TextCell textCell2;
         TextCell textCell3;
         TextCell textCell4;
@@ -624,12 +623,12 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChatEditActivity.2
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i4) {
-                if (i4 == -1) {
+            public void onItemClick(int i6) {
+                if (i6 == -1) {
                     if (ChatEditActivity.this.checkDiscard(true)) {
                         ChatEditActivity.this.finishFragment();
                     }
-                } else if (i4 == 1) {
+                } else if (i6 == 1) {
                     ChatEditActivity.this.processDone();
                 }
             }
@@ -638,20 +637,20 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             private boolean ignoreLayout;
 
             @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i4, int i5) {
-                int size = View.MeasureSpec.getSize(i4);
-                int size2 = View.MeasureSpec.getSize(i5);
+            protected void onMeasure(int i6, int i7) {
+                int size = View.MeasureSpec.getSize(i6);
+                int size2 = View.MeasureSpec.getSize(i7);
                 setMeasuredDimension(size, size2);
                 int paddingTop = size2 - getPaddingTop();
-                measureChildWithMargins(((BaseFragment) ChatEditActivity.this).actionBar, i4, 0, i5, 0);
+                measureChildWithMargins(((BaseFragment) ChatEditActivity.this).actionBar, i6, 0, i7, 0);
                 if (measureKeyboardHeight() > AndroidUtilities.dp(20.0f)) {
                     this.ignoreLayout = true;
                     ChatEditActivity.this.nameTextView.hideEmojiView();
                     this.ignoreLayout = false;
                 }
                 int childCount = getChildCount();
-                for (int i6 = 0; i6 < childCount; i6++) {
-                    View childAt = getChildAt(i6);
+                for (int i8 = 0; i8 < childCount; i8++) {
+                    View childAt = getChildAt(i8);
                     if (childAt != null && childAt.getVisibility() != 8 && childAt != ((BaseFragment) ChatEditActivity.this).actionBar) {
                         if (ChatEditActivity.this.nameTextView != null && ChatEditActivity.this.nameTextView.isPopupView(childAt)) {
                             if (AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) {
@@ -664,7 +663,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                                 childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
                             }
                         } else {
-                            measureChildWithMargins(childAt, i4, 0, i5, 0);
+                            measureChildWithMargins(childAt, i6, 0, i7, 0);
                         }
                     }
                 }
@@ -679,47 +678,47 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
-            protected void onLayout(boolean z2, int i4, int i5, int i6, int i7) {
-                int i8;
-                int i9;
+            protected void onLayout(boolean z, int i6, int i7, int i8, int i9) {
                 int i10;
                 int i11;
                 int i12;
                 int i13;
+                int i14;
+                int i15;
                 int measuredHeight;
                 int measuredHeight2;
                 int childCount = getChildCount();
                 int measureKeyboardHeight = measureKeyboardHeight();
                 int emojiPadding = (measureKeyboardHeight > AndroidUtilities.dp(20.0f) || AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) ? 0 : ChatEditActivity.this.nameTextView.getEmojiPadding();
                 setBottomClip(emojiPadding);
-                for (int i14 = 0; i14 < childCount; i14++) {
-                    View childAt = getChildAt(i14);
+                for (int i16 = 0; i16 < childCount; i16++) {
+                    View childAt = getChildAt(i16);
                     if (childAt.getVisibility() != 8) {
                         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                         int measuredWidth = childAt.getMeasuredWidth();
                         int measuredHeight3 = childAt.getMeasuredHeight();
-                        int i15 = layoutParams.gravity;
-                        if (i15 == -1) {
-                            i15 = 51;
+                        int i17 = layoutParams.gravity;
+                        if (i17 == -1) {
+                            i17 = 51;
                         }
-                        int i16 = i15 & 112;
-                        int i17 = i15 & 7;
-                        if (i17 == 1) {
-                            i8 = (((i6 - i4) - measuredWidth) / 2) + layoutParams.leftMargin;
-                            i9 = layoutParams.rightMargin;
-                        } else if (i17 == 5) {
-                            i8 = i6 - measuredWidth;
-                            i9 = layoutParams.rightMargin;
+                        int i18 = i17 & 112;
+                        int i19 = i17 & 7;
+                        if (i19 == 1) {
+                            i10 = (((i8 - i6) - measuredWidth) / 2) + layoutParams.leftMargin;
+                            i11 = layoutParams.rightMargin;
+                        } else if (i19 == 5) {
+                            i10 = i8 - measuredWidth;
+                            i11 = layoutParams.rightMargin;
                         } else {
-                            i10 = layoutParams.leftMargin;
-                            if (i16 == 16) {
-                                if (i16 == 48) {
-                                    i13 = layoutParams.topMargin + getPaddingTop();
-                                } else if (i16 == 80) {
-                                    i11 = ((i7 - emojiPadding) - i5) - measuredHeight3;
-                                    i12 = layoutParams.bottomMargin;
+                            i12 = layoutParams.leftMargin;
+                            if (i18 == 16) {
+                                if (i18 == 48) {
+                                    i15 = layoutParams.topMargin + getPaddingTop();
+                                } else if (i18 == 80) {
+                                    i13 = ((i9 - emojiPadding) - i7) - measuredHeight3;
+                                    i14 = layoutParams.bottomMargin;
                                 } else {
-                                    i13 = layoutParams.topMargin;
+                                    i15 = layoutParams.topMargin;
                                 }
                                 if (ChatEditActivity.this.nameTextView != null && ChatEditActivity.this.nameTextView.isPopupView(childAt)) {
                                     if (!AndroidUtilities.isTablet()) {
@@ -729,28 +728,28 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                                         measuredHeight = getMeasuredHeight() + measureKeyboardHeight;
                                         measuredHeight2 = childAt.getMeasuredHeight();
                                     }
-                                    i13 = measuredHeight - measuredHeight2;
+                                    i15 = measuredHeight - measuredHeight2;
                                 }
-                                childAt.layout(i10, i13, measuredWidth + i10, measuredHeight3 + i13);
+                                childAt.layout(i12, i15, measuredWidth + i12, measuredHeight3 + i15);
                             } else {
-                                i11 = ((((i7 - emojiPadding) - i5) - measuredHeight3) / 2) + layoutParams.topMargin;
-                                i12 = layoutParams.bottomMargin;
+                                i13 = ((((i9 - emojiPadding) - i7) - measuredHeight3) / 2) + layoutParams.topMargin;
+                                i14 = layoutParams.bottomMargin;
                             }
-                            i13 = i11 - i12;
+                            i15 = i13 - i14;
                             if (ChatEditActivity.this.nameTextView != null) {
                                 if (!AndroidUtilities.isTablet()) {
                                 }
-                                i13 = measuredHeight - measuredHeight2;
+                                i15 = measuredHeight - measuredHeight2;
                             }
-                            childAt.layout(i10, i13, measuredWidth + i10, measuredHeight3 + i13);
+                            childAt.layout(i12, i15, measuredWidth + i12, measuredHeight3 + i15);
                         }
-                        i10 = i8 - i9;
-                        if (i16 == 16) {
+                        i12 = i10 - i11;
+                        if (i18 == 16) {
                         }
-                        i13 = i11 - i12;
+                        i15 = i13 - i14;
                         if (ChatEditActivity.this.nameTextView != null) {
                         }
-                        childAt.layout(i10, i13, measuredWidth + i10, measuredHeight3 + i13);
+                        childAt.layout(i12, i15, measuredWidth + i12, measuredHeight3 + i15);
                     }
                 }
                 notifyHeightChanged();
@@ -773,23 +772,21 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             }
         });
         this.fragmentView = sizeNotifierFrameLayout;
-        int i4 = Theme.key_windowBackgroundGray;
-        sizeNotifierFrameLayout.setBackgroundColor(Theme.getColor(i4));
-        ScrollView scrollView = new ScrollView(context);
-        scrollView.setFillViewport(true);
-        sizeNotifierFrameLayout.addView(scrollView, LayoutHelper.createFrame(-1, -1.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.linearLayout = linearLayout;
-        scrollView.addView(linearLayout, new FrameLayout.LayoutParams(-1, -2));
-        linearLayout.setOrientation(1);
+        sizeNotifierFrameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
+        SectionsScrollView.SectionsLinearLayout sectionsLinearLayout = new SectionsScrollView.SectionsLinearLayout(context);
+        this.linearLayout = sectionsLinearLayout;
+        SectionsScrollView sectionsScrollView = new SectionsScrollView(context, this.linearLayout, this.resourceProvider, false);
+        sectionsScrollView.setFillViewport(true);
+        sizeNotifierFrameLayout.addView(sectionsScrollView, LayoutHelper.createFrame(-1, -1.0f));
+        this.actionBar.setAdaptiveBackground(sectionsScrollView);
+        sectionsScrollView.addView(sectionsLinearLayout, new FrameLayout.LayoutParams(-1, -2));
+        sectionsLinearLayout.setOrientation(1);
         this.actionBar.setTitle(LocaleController.getString(R.string.ChannelEdit));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        this.avatarContainer = linearLayout2;
-        linearLayout2.setOrientation(1);
-        LinearLayout linearLayout3 = this.avatarContainer;
-        int i5 = Theme.key_windowBackgroundWhite;
-        linearLayout3.setBackgroundColor(Theme.getColor(i5));
-        linearLayout.addView(this.avatarContainer, LayoutHelper.createLinear(-1, -2));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.avatarContainer = linearLayout;
+        linearLayout.setOrientation(1);
+        this.avatarContainer.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        sectionsLinearLayout.addView(this.avatarContainer, LayoutHelper.createLinear(-1, -2));
         final FrameLayout frameLayout = new FrameLayout(context);
         this.avatarContainer.addView(frameLayout, LayoutHelper.createLinear(-1, -2));
         BackupImageView backupImageView = new BackupImageView(context) { // from class: org.telegram.ui.ChatEditActivity.4
@@ -813,8 +810,8 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         backupImageView.setRoundRadius(this.forum ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(32.0f));
         if (this.currentUser != null || ChatObject.canChangeChatInfo(this.currentChat)) {
             BackupImageView backupImageView2 = this.avatarImage;
-            boolean z2 = LocaleController.isRTL;
-            frameLayout.addView(backupImageView2, LayoutHelper.createFrame(64, 64.0f, (z2 ? 5 : 3) | 48, z2 ? 0.0f : 16.0f, 12.0f, z2 ? 16.0f : 0.0f, 8.0f));
+            boolean z = LocaleController.isRTL;
+            frameLayout.addView(backupImageView2, LayoutHelper.createFrame(64, 64.0f, (z ? 5 : 3) | 48, z ? 0.0f : 16.0f, 12.0f, z ? 16.0f : 0.0f, 8.0f));
             final Paint paint = new Paint(1);
             paint.setColor(1426063360);
             View view = new View(context) { // from class: org.telegram.ui.ChatEditActivity.5
@@ -828,16 +825,16 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                 }
             };
             this.avatarOverlay = view;
-            boolean z3 = LocaleController.isRTL;
-            frameLayout.addView(view, LayoutHelper.createFrame(64, 64.0f, (z3 ? 5 : 3) | 48, z3 ? 0.0f : 16.0f, 12.0f, z3 ? 16.0f : 0.0f, 8.0f));
+            boolean z2 = LocaleController.isRTL;
+            frameLayout.addView(view, LayoutHelper.createFrame(64, 64.0f, (z2 ? 5 : 3) | 48, z2 ? 0.0f : 16.0f, 12.0f, z2 ? 16.0f : 0.0f, 8.0f));
             RadialProgressView radialProgressView = new RadialProgressView(context);
             this.avatarProgressView = radialProgressView;
             radialProgressView.setSize(AndroidUtilities.dp(30.0f));
             this.avatarProgressView.setProgressColor(-1);
             this.avatarProgressView.setNoProgress(false);
             RadialProgressView radialProgressView2 = this.avatarProgressView;
-            boolean z4 = LocaleController.isRTL;
-            frameLayout.addView(radialProgressView2, LayoutHelper.createFrame(64, 64.0f, (z4 ? 5 : 3) | 48, z4 ? 0.0f : 16.0f, 12.0f, z4 ? 16.0f : 0.0f, 8.0f));
+            boolean z3 = LocaleController.isRTL;
+            frameLayout.addView(radialProgressView2, LayoutHelper.createFrame(64, 64.0f, (z3 ? 5 : 3) | 48, z3 ? 0.0f : 16.0f, 12.0f, z3 ? 16.0f : 0.0f, 8.0f));
             showAvatarProgress(false, false);
             this.avatarContainer.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatEditActivity$$ExternalSyntheticLambda11
                 @Override // android.view.View.OnClickListener
@@ -847,8 +844,8 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             });
         } else {
             BackupImageView backupImageView3 = this.avatarImage;
-            boolean z5 = LocaleController.isRTL;
-            frameLayout.addView(backupImageView3, LayoutHelper.createFrame(64, 64.0f, (z5 ? 5 : 3) | 48, z5 ? 0.0f : 16.0f, 12.0f, z5 ? 16.0f : 0.0f, 12.0f));
+            boolean z4 = LocaleController.isRTL;
+            frameLayout.addView(backupImageView3, LayoutHelper.createFrame(64, 64.0f, (z4 ? 5 : 3) | 48, z4 ? 0.0f : 16.0f, 12.0f, z4 ? 16.0f : 0.0f, 12.0f));
         }
         EditTextEmoji editTextEmoji2 = new EditTextEmoji(context, sizeNotifierFrameLayout, this, 0, false);
         this.nameTextView = editTextEmoji2;
@@ -883,13 +880,12 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         });
         this.nameTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(128)});
         EditTextEmoji editTextEmoji5 = this.nameTextView;
-        boolean z6 = LocaleController.isRTL;
-        frameLayout.addView(editTextEmoji5, LayoutHelper.createFrame(-1, -2.0f, 16, z6 ? 5.0f : 96.0f, 0.0f, z6 ? 96.0f : 5.0f, 0.0f));
-        LinearLayout linearLayout4 = new LinearLayout(context);
-        this.settingsContainer = linearLayout4;
-        linearLayout4.setOrientation(1);
-        this.settingsContainer.setBackgroundColor(Theme.getColor(i5));
-        linearLayout.addView(this.settingsContainer, LayoutHelper.createLinear(-1, -2));
+        boolean z5 = LocaleController.isRTL;
+        frameLayout.addView(editTextEmoji5, LayoutHelper.createFrame(-1, -2.0f, 16, z5 ? 5.0f : 96.0f, 0.0f, z5 ? 96.0f : 5.0f, 0.0f));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        this.settingsContainer = linearLayout2;
+        linearLayout2.setOrientation(1);
+        sectionsLinearLayout.addView(this.settingsContainer, LayoutHelper.createLinear(-1, -2));
         if (this.currentUser != null || ChatObject.canChangeChatInfo(this.currentChat)) {
             TextCell textCell6 = new TextCell(context) { // from class: org.telegram.ui.ChatEditActivity.7
                 @Override // org.telegram.ui.Cells.TextCell, android.view.View
@@ -956,11 +952,11 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         });
         ShadowSectionCell shadowSectionCell = new ShadowSectionCell(context);
         this.settingsTopSectionCell = shadowSectionCell;
-        linearLayout.addView(shadowSectionCell, LayoutHelper.createLinear(-1, -2));
-        LinearLayout linearLayout5 = new LinearLayout(context);
-        this.typeEditContainer = linearLayout5;
-        linearLayout5.setOrientation(1);
-        linearLayout.addView(this.typeEditContainer, LayoutHelper.createLinear(-1, -2));
+        sectionsLinearLayout.addView(shadowSectionCell, LayoutHelper.createLinear(-1, -2));
+        LinearLayout linearLayout3 = new LinearLayout(context);
+        this.typeEditContainer = linearLayout3;
+        linearLayout3.setOrientation(1);
+        sectionsLinearLayout.addView(this.typeEditContainer, LayoutHelper.createLinear(-1, -2));
         TLRPC.Chat chat2 = this.currentChat;
         if (chat2 != null) {
             if (chat2.megagroup && ((chatFull3 = this.info) == null || chatFull3.can_set_location)) {
@@ -1104,24 +1100,23 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         }
         if (this.locationCell == null && this.historyCell == null && this.typeCell == null && this.linkedCell == null && this.forumsCell == null) {
             i = -1;
+            i2 = -2;
         } else {
-            this.settingsSectionCell = new TextInfoPrivacyCell(context);
-            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(getThemedColor(i4)), Theme.getThemedDrawable(context, R.drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow, getResourceProvider())), 0, 0);
-            combinedDrawable.setFullsize(true);
-            this.settingsSectionCell.setBackground(combinedDrawable);
+            TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context);
+            this.settingsSectionCell = textInfoPrivacyCell;
             if (this.forumsCell != null) {
-                this.settingsSectionCell.setText(LocaleController.getString(R.string.ForumToggleDescription));
+                textInfoPrivacyCell.setText(LocaleController.getString(R.string.ForumToggleDescription));
             } else {
-                this.settingsSectionCell.setFixedSize(12);
+                textInfoPrivacyCell.setFixedSize(12);
             }
             i = -1;
-            linearLayout.addView(this.settingsSectionCell, LayoutHelper.createLinear(-1, -2));
+            i2 = -2;
+            sectionsLinearLayout.addView(this.settingsSectionCell, LayoutHelper.createLinear(-1, -2));
         }
-        LinearLayout linearLayout6 = new LinearLayout(context);
-        this.infoContainer = linearLayout6;
-        linearLayout6.setOrientation(1);
-        this.infoContainer.setBackgroundColor(Theme.getColor(i5));
-        linearLayout.addView(this.infoContainer, LayoutHelper.createLinear(i, -2));
+        LinearLayout linearLayout4 = new LinearLayout(context);
+        this.infoContainer = linearLayout4;
+        linearLayout4.setOrientation(1);
+        sectionsLinearLayout.addView(this.infoContainer, LayoutHelper.createLinear(i, i2));
         if (this.currentChat != null) {
             TextCell textCell14 = new TextCell(context);
             this.blockCell = textCell14;
@@ -1130,8 +1125,8 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             if (!ChatObject.isChannel(this.currentChat)) {
                 TLRPC.Chat chat3 = this.currentChat;
                 if (!chat3.creator && (!ChatObject.hasAdminRights(chat3) || !ChatObject.canChangeChatInfo(this.currentChat))) {
-                    i2 = 8;
-                    textCell15.setVisibility(i2);
+                    i3 = 8;
+                    textCell15.setVisibility(i3);
                     this.blockCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatEditActivity$$ExternalSyntheticLambda6
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
@@ -1237,22 +1232,24 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                         this.infoContainer.addView(this.inviteLinksCell, LayoutHelper.createLinear(-1, -2));
                     }
                     if (!this.isChannel || this.currentChat.gigagroup) {
-                        i3 = -1;
+                        i4 = -1;
+                        i5 = -2;
                         this.infoContainer.addView(this.blockCell, LayoutHelper.createLinear(-1, -2));
                     } else {
-                        i3 = -1;
+                        i4 = -1;
+                        i5 = -2;
                     }
                     textCell2 = this.statsAndBoosts;
                     if (textCell2 != null) {
-                        this.infoContainer.addView(textCell2, LayoutHelper.createLinear(i3, -2));
+                        this.infoContainer.addView(textCell2, LayoutHelper.createLinear(i4, i5));
                     }
                     textCell3 = this.logCell;
                     if (textCell3 != null) {
-                        this.infoContainer.addView(textCell3, LayoutHelper.createLinear(i3, -2));
+                        this.infoContainer.addView(textCell3, LayoutHelper.createLinear(i4, i5));
                     }
                     textCell4 = this.channelAffiliateProgramsCell;
                     if (textCell4 != null) {
-                        this.infoContainer.addView(textCell4, LayoutHelper.createLinear(i3, -2));
+                        this.infoContainer.addView(textCell4, LayoutHelper.createLinear(i4, i5));
                     }
                     if (this.channelAffiliateProgramsCell != null && getMessagesController().starrefConnectAllowed && ChatObject.isChannelAndNotMegaGroup(this.currentChat)) {
                         this.channelAffiliateProgramsCell.setVisibility(0);
@@ -1264,8 +1261,8 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                     }
                 }
             }
-            i2 = 0;
-            textCell15.setVisibility(i2);
+            i3 = 0;
+            textCell15.setVisibility(i3);
             this.blockCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatEditActivity$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -1351,7 +1348,8 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             }
             if (this.isChannel) {
             }
-            i3 = -1;
+            i4 = -1;
+            i5 = -2;
             this.infoContainer.addView(this.blockCell, LayoutHelper.createLinear(-1, -2));
             textCell2 = this.statsAndBoosts;
             if (textCell2 != null) {
@@ -1447,7 +1445,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             if (this.stickersCell == null) {
                 ShadowSectionCell shadowSectionCell2 = new ShadowSectionCell(context);
                 this.infoSectionCell = shadowSectionCell2;
-                linearLayout.addView(shadowSectionCell2, LayoutHelper.createLinear(-1, -2));
+                sectionsLinearLayout.addView(shadowSectionCell2, LayoutHelper.createLinear(-1, -2));
             }
         } else if (this.currentUser != null) {
             this.botInfoCell = new TextInfoPrivacyCell(context);
@@ -1468,21 +1466,16 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                     }
                 }, indexOf, indexOf + 10, 33);
             }
-            TextInfoPrivacyCell textInfoPrivacyCell = this.botInfoCell;
-            Context context2 = getContext();
-            int i7 = R.drawable.greydivider_bottom;
-            int i8 = Theme.key_windowBackgroundGrayShadow;
-            textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(context2, i7, i8));
             this.botInfoCell.setText(valueOf);
-            linearLayout.addView(this.botInfoCell, LayoutHelper.createLinear(-1, -2));
+            sectionsLinearLayout.addView(this.botInfoCell, LayoutHelper.createLinear(-1, -2));
             TextCell textCell30 = new TextCell(context);
             this.verifyCell = textCell30;
             textCell30.setBackground(Theme.getSelectorDrawable(true));
             this.verifyCell.setTextAndIcon((CharSequence) LocaleController.getString(R.string.BotVerifyAccounts), R.drawable.menu_factcheck, false);
             TextCell textCell31 = this.verifyCell;
-            int i9 = Theme.key_windowBackgroundWhiteBlueText4;
-            textCell31.setColors(i9, i9);
-            linearLayout.addView(this.verifyCell, LayoutHelper.createLinear(-1, -2));
+            int i7 = Theme.key_windowBackgroundWhiteBlueText4;
+            textCell31.setColors(i7, i7);
+            sectionsLinearLayout.addView(this.verifyCell, LayoutHelper.createLinear(-1, -2));
             this.verifyCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatEditActivity$$ExternalSyntheticLambda21
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -1492,8 +1485,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(context);
             this.verifyInfoCell = textInfoPrivacyCell2;
             textInfoPrivacyCell2.setFixedSize(12);
-            this.verifyInfoCell.setBackground(Theme.getThemedDrawableByKey(getContext(), i7, i8));
-            linearLayout.addView(this.verifyInfoCell, LayoutHelper.createLinear(-1, -2));
+            sectionsLinearLayout.addView(this.verifyInfoCell, LayoutHelper.createLinear(-1, -2));
             TextCell textCell32 = this.verifyCell;
             TLRPC.UserFull userFull2 = this.userInfo;
             textCell32.setVisibility((userFull2 == null || (botInfo2 = userFull2.bot_info) == null || botInfo2.verifier_settings == null) ? 8 : 0);
@@ -1502,11 +1494,10 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             textInfoPrivacyCell3.setVisibility((userFull3 == null || (botInfo = userFull3.bot_info) == null || botInfo.verifier_settings == null) ? 8 : 0);
             TLRPC.User user = this.currentUser;
             if (user.bot && user.bot_can_edit) {
-                LinearLayout linearLayout7 = new LinearLayout(context);
-                this.balanceContainer = linearLayout7;
-                linearLayout7.setOrientation(1);
-                this.balanceContainer.setBackgroundColor(Theme.getColor(i5));
-                linearLayout.addView(this.balanceContainer, LayoutHelper.createLinear(-1, -2));
+                LinearLayout linearLayout5 = new LinearLayout(context);
+                this.balanceContainer = linearLayout5;
+                linearLayout5.setOrientation(1);
+                sectionsLinearLayout.addView(this.balanceContainer, LayoutHelper.createLinear(-1, -2));
                 HeaderCell headerCell = new HeaderCell(context);
                 headerCell.setText(LocaleController.getString(R.string.BotBalance));
                 this.balanceContainer.addView(headerCell, LayoutHelper.createLinear(-1, -2));
@@ -1564,19 +1555,15 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                 } else {
                     TextCell textCell35 = this.starsBalanceCell;
                     String string2 = LocaleController.getString(R.string.BotBalanceStars);
-                    if (botStarsController.getBotStarsBalance(this.userId).amount <= 0) {
-                        z = false;
-                    } else {
-                        z = false;
+                    if (botStarsController.getBotStarsBalance(this.userId).amount > 0) {
                         charSequence2 = StarsIntroActivity.replaceStarsWithPlain(TextUtils.concat("XTR", StarsIntroActivity.formatStarsAmountShort(botStarsController.getBotStarsBalance(this.userId), 0.85f, ' ')), 0.85f);
                     }
-                    textCell35.setTextAndValueAndIcon(string2, charSequence2, R.drawable.menu_premium_main, z);
+                    textCell35.setTextAndValueAndIcon((CharSequence) string2, charSequence2, R.drawable.menu_premium_main, false);
                 }
                 this.starsBalanceCell.setVisibility(botStarsController.botHasStars(this.userId) ? 0 : 8);
                 TextInfoPrivacyCell textInfoPrivacyCell4 = new TextInfoPrivacyCell(context, getResourceProvider());
-                textInfoPrivacyCell4.setBackground(Theme.getThemedDrawableByKey(context, i7, i8));
                 textInfoPrivacyCell4.setTag(R.id.fit_width_tag, 1);
-                linearLayout.addView(textInfoPrivacyCell4, LayoutHelper.createLinear(-1, 8));
+                sectionsLinearLayout.addView(textInfoPrivacyCell4, LayoutHelper.createLinear(-1, 8));
                 this.balanceContainer.setVisibility((this.starsBalanceCell.getVisibility() == 0 || this.tonBalanceCell.getVisibility() == 0) ? 0 : 8);
             }
         }
@@ -1584,8 +1571,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         if (chat5 != null && chat5.creator) {
             FrameLayout frameLayout2 = new FrameLayout(context);
             this.deleteContainer = frameLayout2;
-            frameLayout2.setBackgroundColor(Theme.getColor(i5));
-            linearLayout.addView(this.deleteContainer, LayoutHelper.createLinear(-1, -2));
+            sectionsLinearLayout.addView(frameLayout2, LayoutHelper.createLinear(-1, -2));
             TextSettingsCell textSettingsCell = new TextSettingsCell(context);
             this.deleteCell = textSettingsCell;
             textSettingsCell.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
@@ -1593,9 +1579,9 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             if (this.currentUser != null) {
                 this.deleteCell.setText(LocaleController.getString(R.string.DeleteBot), false);
             } else if (this.isChannel) {
-                this.deleteCell.setText(LocaleController.getString("ChannelDelete", R.string.ChannelDelete), false);
+                this.deleteCell.setText(LocaleController.getString(R.string.ChannelDelete), false);
             } else {
-                this.deleteCell.setText(LocaleController.getString("DeleteAndExitButton", R.string.DeleteAndExitButton), false);
+                this.deleteCell.setText(LocaleController.getString(R.string.DeleteAndExitButton), false);
             }
             this.deleteContainer.addView(this.deleteCell, LayoutHelper.createFrame(-1, -2.0f));
             this.deleteCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ChatEditActivity$$ExternalSyntheticLambda25
@@ -1606,16 +1592,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             });
             ShadowSectionCell shadowSectionCell3 = new ShadowSectionCell(context);
             this.deleteInfoCell = shadowSectionCell3;
-            shadowSectionCell3.setBackground(Theme.getThemedDrawableByKey(context, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-            linearLayout.addView(this.deleteInfoCell, LayoutHelper.createLinear(-1, -2));
-        }
-        TextInfoPrivacyCell textInfoPrivacyCell5 = this.stickersInfoCell;
-        if (textInfoPrivacyCell5 != null) {
-            if (this.deleteInfoCell == null) {
-                textInfoPrivacyCell5.setBackground(Theme.getThemedDrawableByKey(context, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-            } else {
-                textInfoPrivacyCell5.setBackground(Theme.getThemedDrawableByKey(context, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
-            }
+            sectionsLinearLayout.addView(shadowSectionCell3, LayoutHelper.createLinear(-1, -2));
         }
         UndoView undoView = new UndoView(context);
         this.undoView = undoView;
@@ -3578,7 +3555,6 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             }
         };
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));

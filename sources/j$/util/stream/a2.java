@@ -58,7 +58,7 @@ final class a2 extends i2 {
                         if (!z) {
                             longStream.sequential().forEach(c0Var);
                         } else {
-                            j$.util.b0 spliterator = longStream.sequential().spliterator();
+                            j$.util.c0 spliterator = longStream.sequential().spliterator();
                             while (!this.a.n() && spliterator.tryAdvance((LongConsumer) c0Var)) {
                             }
                         }
@@ -85,7 +85,7 @@ final class a2 extends i2 {
                         if (!z2) {
                             intStream.sequential().forEach(t);
                         } else {
-                            j$.util.Y spliterator2 = intStream.sequential().spliterator();
+                            j$.util.Z spliterator2 = intStream.sequential().spliterator();
                             while (!this.a.n() && spliterator2.tryAdvance((IntConsumer) t)) {
                             }
                         }
@@ -112,7 +112,7 @@ final class a2 extends i2 {
                         if (!z3) {
                             d.sequential().forEach(pVar);
                         } else {
-                            j$.util.V spliterator3 = d.sequential().spliterator();
+                            j$.util.W spliterator3 = d.sequential().spliterator();
                             while (!this.a.n() && spliterator3.tryAdvance((DoubleConsumer) pVar)) {
                             }
                         }

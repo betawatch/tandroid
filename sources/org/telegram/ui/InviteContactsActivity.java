@@ -51,6 +51,7 @@ import org.telegram.ui.ActionBar.BackDrawable;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
+import org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1;
 import org.telegram.ui.Cells.GroupCreateSectionCell;
 import org.telegram.ui.Cells.InviteUserCell;
 import org.telegram.ui.Cells.ShadowSectionCell;
@@ -404,12 +405,12 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     InviteContactsActivity.this.maxSize = AndroidUtilities.dp(56.0f);
                 }
                 measureChildWithMargins(((BaseFragment) InviteContactsActivity.this).actionBar, i, 0, i2, 0);
-                ((ViewGroup.MarginLayoutParams) InviteContactsActivity.this.emptyView.getLayoutParams()).topMargin = ((BaseFragment) InviteContactsActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
+                ((ViewGroup.MarginLayoutParams) InviteContactsActivity.this.emptyView.getLayoutParams()).topMargin = ((BaseFragment) InviteContactsActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(44.0f);
                 ((ViewGroup.MarginLayoutParams) InviteContactsActivity.this.headerShadowView.getLayoutParams()).topMargin = ((BaseFragment) InviteContactsActivity.this).actionBar.getMeasuredHeight();
                 ((ViewGroup.MarginLayoutParams) InviteContactsActivity.this.searchField.getLayoutParams()).topMargin = ((BaseFragment) InviteContactsActivity.this).actionBar.getMeasuredHeight();
                 ((ViewGroup.MarginLayoutParams) InviteContactsActivity.this.scrollView.getLayoutParams()).topMargin = ((BaseFragment) InviteContactsActivity.this).actionBar.getMeasuredHeight();
                 InviteContactsActivity.this.scrollView.getLayoutParams().height = InviteContactsActivity.this.maxSize;
-                ((ViewGroup.MarginLayoutParams) InviteContactsActivity.this.actionBarBackgroundView.getLayoutParams()).height = ((BaseFragment) InviteContactsActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(53.0f) + InviteContactsActivity.this.maxSize;
+                ((ViewGroup.MarginLayoutParams) InviteContactsActivity.this.actionBarBackgroundView.getLayoutParams()).height = ((BaseFragment) InviteContactsActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(49.0f) + InviteContactsActivity.this.maxSize;
                 InviteContactsActivity.this.checkUi_listViewPadding();
                 super.onMeasure(i, i2);
             }
@@ -566,7 +567,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             @Override // android.view.View
             protected void dispatchDraw(Canvas canvas) {
                 super.dispatchDraw(canvas);
-                int dp = AndroidUtilities.dp(48.0f) + ((int) InviteContactsActivity.this.animatorSelectorContainerHeight.getFactor());
+                int dp = AndroidUtilities.dp(44.0f) + ((int) InviteContactsActivity.this.animatorSelectorContainerHeight.getFactor());
                 this.paint.setColor(InviteContactsActivity.this.getThemedColor(Theme.key_actionBarDefault));
                 this.rectTmp.set(0, 0, getMeasuredWidth(), ((BaseFragment) InviteContactsActivity.this).actionBar.getMeasuredHeight() + dp);
                 canvas.drawRect(this.rectTmp, this.paint);
@@ -586,13 +587,14 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.actionBar.setBackgroundColor(0);
         RecyclerListView recyclerListView2 = this.listView;
         Objects.requireNonNull(recyclerListView2);
-        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView2, frameLayout, new CallLogActivity$$ExternalSyntheticLambda3(recyclerListView2));
-        this.listView.setOverScrollListener(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda4
+        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView2, frameLayout, new ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1(recyclerListView2));
+        this.listView.addEdgeEffectListener(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 InviteContactsActivity.this.lambda$createView$3();
             }
         });
+        checkUi_emptyViewVisible();
         frameLayout.addView(this.floatingButton, FragmentFloatingButton.createDefaultLayoutParams());
         frameLayout.addView(this.actionBarBackgroundView, LayoutHelper.createFrame(-1, 0, 48));
         frameLayout.addView(this.actionBar);
@@ -995,12 +997,17 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void notifyDataSetChanged() {
             super.notifyDataSetChanged();
-            int itemCount = getItemCount();
-            if (this.searching) {
-                return;
-            }
-            InviteContactsActivity.this.emptyView.setVisibility(itemCount == 1 ? 0 : 4);
+            InviteContactsActivity.this.checkUi_emptyViewVisible();
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkUi_emptyViewVisible() {
+        InviteAdapter inviteAdapter = this.adapter;
+        if (inviteAdapter == null || this.searching) {
+            return;
+        }
+        this.emptyView.setVisibility(inviteAdapter.getItemCount() == 2 ? 0 : 4);
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -1114,12 +1121,12 @@ public class InviteContactsActivity extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkUi_headerShadowY() {
-        this.headerShadowView.setTranslationY(AndroidUtilities.dp(48.0f) + this.animatorSelectorContainerHeight.getFactor());
+        this.headerShadowView.setTranslationY(AndroidUtilities.dp(44.0f) + this.animatorSelectorContainerHeight.getFactor());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkUi_listViewPadding() {
-        this.listView.setPadding(0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP + 48) + this.actionBar.getMeasuredHeight() + ((int) this.animatorSelectorContainerHeight.getFactor()), 0, this.navigationBarHeight);
+        this.listView.setPadding(0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP + 44) + this.actionBar.getMeasuredHeight() + ((int) this.animatorSelectorContainerHeight.getFactor()), 0, this.navigationBarHeight);
         this.emptyView.setPadding(0, 0, 0, this.navigationBarHeight);
     }
 
@@ -1133,11 +1140,11 @@ public class InviteContactsActivity extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkUi_listClip() {
-        if (this.listView.hasActiveOverScroll()) {
+        if (this.listView.hasActiveEdgeEffects()) {
             this.listView.setClipBounds(null);
             return;
         }
-        this.tmpClipRect.set(0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP + 48) + this.actionBar.getMeasuredHeight() + ((int) this.animatorSelectorContainerHeight.getFactor()), this.listView.getMeasuredWidth(), this.listView.getMeasuredHeight());
+        this.tmpClipRect.set(0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP + 44) + this.actionBar.getMeasuredHeight() + ((int) this.animatorSelectorContainerHeight.getFactor()), this.listView.getMeasuredWidth(), this.listView.getMeasuredHeight());
         this.listView.setClipBounds(this.tmpClipRect);
     }
 
@@ -1147,7 +1154,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             return;
         }
         int dp = AndroidUtilities.dp(48.0f);
-        this.iBlur3PositionActionBar.set(0.0f, -dp, this.fragmentView.getMeasuredWidth(), this.actionBar.getMeasuredHeight() + dp + AndroidUtilities.dp(48.0f) + this.maxSize);
+        this.iBlur3PositionActionBar.set(0.0f, -dp, this.fragmentView.getMeasuredWidth(), this.actionBar.getMeasuredHeight() + dp + AndroidUtilities.dp(44.0f) + this.maxSize);
         this.scrollableViewNoiseSuppressor.setupRenderNodes(this.iBlur3Positions, 1);
         this.scrollableViewNoiseSuppressor.invalidateResultRenderNodes(this.iBlur3Capture, this.fragmentView.getMeasuredWidth(), this.fragmentView.getMeasuredHeight());
     }

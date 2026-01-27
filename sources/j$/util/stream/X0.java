@@ -101,7 +101,7 @@ final class X0 extends P2 implements C0, x0 {
     }
 
     @Override // j$.util.stream.P2, j$.util.stream.V2, java.lang.Iterable
-    public final j$.util.e0 spliterator() {
+    public final j$.util.f0 spliterator() {
         return super.spliterator();
     }
 

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import me.vkryl.core.BitwiseUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
@@ -342,6 +343,15 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
             }
         } else {
             switch (i) {
+                case -4:
+                case -1:
+                    view = new FrameLayout(this.context) { // from class: org.telegram.ui.Components.UniversalAdapter.1
+                        @Override // android.widget.FrameLayout, android.view.View
+                        protected void onMeasure(int i3, int i4) {
+                            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), i4);
+                        }
+                    };
+                    break;
                 case -3:
                     view = new FullscreenCustomFrameLayout(this.context);
                     break;
@@ -356,14 +366,6 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                                 i5 = Math.max(i5, getChildAt(i6).getMeasuredHeight());
                             }
                             super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i5, TLObject.FLAG_30));
-                        }
-                    };
-                    break;
-                case -1:
-                    view = new FrameLayout(this.context) { // from class: org.telegram.ui.Components.UniversalAdapter.1
-                        @Override // android.widget.FrameLayout, android.view.View
-                        protected void onMeasure(int i3, int i4) {
-                            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i3), TLObject.FLAG_30), i4);
                         }
                     };
                     break;
@@ -467,7 +469,17 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     view = new TextRightIconCell(this.context, this.resourcesProvider);
                     break;
                 case 31:
-                    view = new GraySectionCell(this.context, this.resourcesProvider);
+                    GraySectionCell graySectionCell = new GraySectionCell(this.context, 28, this.resourcesProvider);
+                    RecyclerListView recyclerListView = this.listView;
+                    view = graySectionCell;
+                    if (recyclerListView != null) {
+                        view = graySectionCell;
+                        if (recyclerListView.hasSections()) {
+                            graySectionCell.setNoBackground(true);
+                            view = graySectionCell;
+                            break;
+                        }
+                    }
                     break;
                 case 32:
                     view = new ProfileSearchCell(this.context);
@@ -521,9 +533,9 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
         return (item == null || item.hideDivider || item2 == null || isShadow(item2.viewType) != isShadow(item.viewType)) ? false : true;
     }
 
-    public boolean isShadow(int i) {
+    public static boolean isShadow(int i) {
         if (i < UItem.factoryViewTypeStartsWith) {
-            return i == 7 || i == 8 || i == 38 || i == 31 || i == 34;
+            return i == 7 || i == 8 || i == 38 || i == 31 || i == -4 || i == 28 || i == 2 || i == -2;
         }
         UItem.UItemFactory findFactory = UItem.findFactory(i);
         return findFactory != null && findFactory.isShadow();
@@ -533,6 +545,7 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
         FrameLayout.LayoutParams createFrame;
+        TextInfoPrivacyCell textInfoPrivacyCell;
         int i2;
         String publicUsername;
         CharSequence charSequence;
@@ -548,7 +561,6 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
         int itemViewType = viewHolder.getItemViewType();
         boolean hasDivider = hasDivider(i);
         updateColors(viewHolder);
-        TextInfoPrivacyCell textInfoPrivacyCell = null;
         if (itemViewType >= UItem.factoryViewTypeStartsWith) {
             UItem.UItemFactory findFactory = UItem.findFactory(itemViewType);
             if (findFactory != null) {
@@ -561,33 +573,35 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
         }
         String str = "";
         switch (itemViewType) {
-            case -3:
-                FullscreenCustomFrameLayout fullscreenCustomFrameLayout = (FullscreenCustomFrameLayout) viewHolder.itemView;
-                fullscreenCustomFrameLayout.setMinusHeight(item.intValue);
-                if (fullscreenCustomFrameLayout.getChildCount() != (item.view != null) || fullscreenCustomFrameLayout.getChildAt(0) != item.view) {
-                    fullscreenCustomFrameLayout.removeAllViews();
-                    View view2 = item.view;
-                    if (view2 != null) {
-                        AndroidUtilities.removeFromParent(view2);
-                        fullscreenCustomFrameLayout.addView(item.view, LayoutHelper.createFrame(-1, -1.0f));
-                        break;
-                    }
-                }
-                break;
+            case -4:
             case -2:
             case -1:
                 FrameLayout frameLayout = (FrameLayout) viewHolder.itemView;
                 if (frameLayout.getChildCount() != (item.view != null) || frameLayout.getChildAt(0) != item.view) {
                     frameLayout.removeAllViews();
-                    View view3 = item.view;
-                    if (view3 != null) {
-                        AndroidUtilities.removeFromParent(view3);
-                        if (itemViewType == -1) {
+                    View view2 = item.view;
+                    if (view2 != null) {
+                        AndroidUtilities.removeFromParent(view2);
+                        if (itemViewType == -1 || itemViewType == -4) {
                             createFrame = LayoutHelper.createFrame(-1, item.intValue);
                         } else {
                             createFrame = LayoutHelper.createFrame(-2, -2.0f);
                         }
                         frameLayout.addView(item.view, createFrame);
+                        break;
+                    }
+                }
+                break;
+            case -3:
+                FullscreenCustomFrameLayout fullscreenCustomFrameLayout = (FullscreenCustomFrameLayout) viewHolder.itemView;
+                fullscreenCustomFrameLayout.setMinusHeight(item.intValue);
+                fullscreenCustomFrameLayout.setMinusPadding(BitwiseUtils.hasFlag(item.flags, 1));
+                if (fullscreenCustomFrameLayout.getChildCount() != (item.view != null) || fullscreenCustomFrameLayout.getChildAt(0) != item.view) {
+                    fullscreenCustomFrameLayout.removeAllViews();
+                    View view3 = item.view;
+                    if (view3 != null) {
+                        AndroidUtilities.removeFromParent(view3);
+                        fullscreenCustomFrameLayout.addView(item.view, LayoutHelper.createFrame(-1, -1.0f));
                         break;
                     }
                 }
@@ -716,25 +730,32 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                         collapseTextCell.setColor(Theme.key_windowBackgroundWhiteBlackText);
                         textInfoPrivacyCell = collapseTextCell;
                     }
+                } else {
+                    textInfoPrivacyCell = null;
                 }
                 boolean z2 = (item3 == null || isShadow(item3.viewType)) ? false : true;
                 boolean z3 = (item2 == null || isShadow(item2.viewType)) ? false : true;
-                if (z2 && z3) {
-                    i2 = R.drawable.greydivider;
-                } else if (z2) {
-                    i2 = R.drawable.greydivider_bottom;
-                } else if (z3) {
-                    i2 = R.drawable.greydivider_top;
-                } else {
-                    i2 = R.drawable.field_carret_empty;
-                }
-                Drawable themedDrawableByKey = Theme.getThemedDrawableByKey(this.context, i2, Theme.key_windowBackgroundGrayShadow, this.resourcesProvider);
-                if (this.dialog) {
-                    textInfoPrivacyCell.setBackground(new LayerDrawable(new Drawable[]{new ColorDrawable(getThemedColor(Theme.key_dialogBackgroundGray)), themedDrawableByKey}));
+                if (this.listView.hasSections()) {
+                    textInfoPrivacyCell.setBackground(null);
                     break;
                 } else {
-                    textInfoPrivacyCell.setBackground(themedDrawableByKey);
-                    break;
+                    if (z2 && z3) {
+                        i2 = R.drawable.greydivider;
+                    } else if (z2) {
+                        i2 = R.drawable.greydivider_bottom;
+                    } else if (z3) {
+                        i2 = R.drawable.greydivider_top;
+                    } else {
+                        i2 = R.drawable.field_carret_empty;
+                    }
+                    Drawable themedDrawableByKey = Theme.getThemedDrawableByKey(this.context, i2, Theme.key_windowBackgroundGrayShadow, this.resourcesProvider);
+                    if (this.dialog) {
+                        textInfoPrivacyCell.setBackground(new LayerDrawable(new Drawable[]{new ColorDrawable(getThemedColor(Theme.key_dialogBackgroundGray)), themedDrawableByKey}));
+                        break;
+                    } else {
+                        textInfoPrivacyCell.setBackground(themedDrawableByKey);
+                        break;
+                    }
                 }
                 break;
             case 10:
@@ -843,7 +864,13 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
             case 28:
                 if (item.transparent) {
                     viewHolder.itemView.setBackgroundColor(0);
+                } else {
+                    int i8 = item.iconResId;
+                    if (i8 != 0) {
+                        viewHolder.itemView.setBackgroundColor(i8);
+                    }
                 }
+                viewHolder.itemView.setId(item.id);
                 viewHolder.itemView.setLayoutParams(new RecyclerView.LayoutParams(-1, item.intValue));
                 break;
             case 29:
@@ -1089,8 +1116,9 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
         return Theme.getColor(i, this.resourcesProvider);
     }
 
-    private class FullscreenCustomFrameLayout extends FrameLayout {
+    private static class FullscreenCustomFrameLayout extends FrameLayout {
         private int minusHeight;
+        private boolean minusPadding;
 
         public FullscreenCustomFrameLayout(Context context) {
             super(context);
@@ -1099,29 +1127,38 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            if ((getParent() instanceof View) && ((View) getParent()).getMeasuredHeight() > 0) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(((View) getParent()).getMeasuredHeight() - this.minusHeight, TLObject.FLAG_30));
+            int i3 = this.minusHeight;
+            View view = getParent() instanceof View ? (View) getParent() : null;
+            if (this.minusPadding && view != null) {
+                i3 = i3 + view.getPaddingTop() + view.getPaddingBottom();
+            }
+            if (view != null && view.getMeasuredHeight() > 0) {
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight() - i3, TLObject.FLAG_30));
                 return;
             }
             if (View.MeasureSpec.getMode(i2) != 0) {
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) - this.minusHeight, TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2) - i3, TLObject.FLAG_30));
                 return;
             }
             int size = View.MeasureSpec.getSize(i2);
             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), TLObject.FLAG_30);
             measureChildren(makeMeasureSpec, i2);
-            int i3 = 0;
-            for (int i4 = 0; i4 < getChildCount(); i4++) {
-                i3 = Math.max(i3, getChildAt(i4).getMeasuredHeight());
+            int i4 = 0;
+            for (int i5 = 0; i5 < getChildCount(); i5++) {
+                i4 = Math.max(i4, getChildAt(i5).getMeasuredHeight());
             }
             if (size > 0) {
-                i3 = Math.min(i3, size - this.minusHeight);
+                i4 = Math.min(i4, size - i3);
             }
-            super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i3, TLObject.FLAG_30));
+            super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i4, TLObject.FLAG_30));
         }
 
         public void setMinusHeight(int i) {
             this.minusHeight = i;
+        }
+
+        public void setMinusPadding(boolean z) {
+            this.minusPadding = z;
         }
     }
 }

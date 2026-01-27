@@ -131,6 +131,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
         android.graphics.Point point = AndroidUtilities.displaySize;
         this.isPortrait = point.y > point.x;
         this.themeDelegate = resourcesProvider;
+        this.occupyNavigationBar = true;
         setWillNotDraw(false);
         ActionBarMenu createMenu = this.parentAlert.actionBar.createMenu();
         this.header = new TextView(context);
@@ -205,7 +206,6 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
         this.listView.setClipToPadding(false);
         this.listView.setOverScrollMode(2);
         this.listView.setVerticalScrollBarEnabled(false);
-        this.listView.setPadding(0, 0, 0, AndroidUtilities.dp(46.0f));
         PreviewGroupsView previewGroupsView = new PreviewGroupsView(context);
         this.groupsView = previewGroupsView;
         previewGroupsView.setClipToPadding(true);
@@ -974,8 +974,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
         return top;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x006d  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0039  */
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
     /*
@@ -995,9 +994,9 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
                 if (dp < 0) {
                     this.paddingTop = 0;
                 }
-                if (this.listView.getPaddingTop() != this.paddingTop) {
+                if (this.listView.getPaddingTop() == this.paddingTop || this.listView.getPaddingBottom() != this.listPaddingBottom) {
                     RecyclerListView recyclerListView = this.listView;
-                    recyclerListView.setPadding(recyclerListView.getPaddingLeft(), this.paddingTop, this.listView.getPaddingRight(), this.listView.getPaddingBottom());
+                    recyclerListView.setPaddingWithoutRequestLayout(recyclerListView.getPaddingLeft(), this.paddingTop, this.listView.getPaddingRight(), this.listPaddingBottom);
                     invalidate();
                 }
                 TextView textView = this.header;
@@ -1019,8 +1018,11 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
         this.paddingTop = dp;
         if (dp < 0) {
         }
-        if (this.listView.getPaddingTop() != this.paddingTop) {
+        if (this.listView.getPaddingTop() == this.paddingTop) {
         }
+        RecyclerListView recyclerListView2 = this.listView;
+        recyclerListView2.setPaddingWithoutRequestLayout(recyclerListView2.getPaddingLeft(), this.paddingTop, this.listView.getPaddingRight(), this.listPaddingBottom);
+        invalidate();
         TextView textView2 = this.header;
         if (!AndroidUtilities.isTablet()) {
         }

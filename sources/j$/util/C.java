@@ -6,27 +6,27 @@ import java.util.NoSuchElementException;
 public final class C {
     private static final C c = new C();
     private final boolean a;
-    private final long b;
+    private final int b;
 
     private C() {
         this.a = false;
-        this.b = 0L;
+        this.b = 0;
     }
 
     public static C a() {
         return c;
     }
 
-    private C(long j) {
+    private C(int i) {
         this.a = true;
-        this.b = j;
+        this.b = i;
     }
 
-    public static C d(long j) {
-        return new C(j);
+    public static C d(int i) {
+        return new C(i);
     }
 
-    public final long b() {
+    public final int b() {
         if (!this.a) {
             throw new NoSuchElementException("No value present");
         }
@@ -57,17 +57,16 @@ public final class C {
     }
 
     public final int hashCode() {
-        if (!this.a) {
-            return 0;
+        if (this.a) {
+            return this.b;
         }
-        long j = this.b;
-        return (int) (j ^ (j >>> 32));
+        return 0;
     }
 
     public final String toString() {
         if (this.a) {
-            return "OptionalLong[" + this.b + "]";
+            return "OptionalInt[" + this.b + "]";
         }
-        return "OptionalLong.empty";
+        return "OptionalInt.empty";
     }
 }

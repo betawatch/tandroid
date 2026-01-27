@@ -33,8 +33,8 @@ public final /* synthetic */ class B implements D {
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ j$.util.A average() {
-        return j$.util.S.j(this.a.average());
+    public final /* synthetic */ j$.util.B average() {
+        return j$.util.T.j(this.a.average());
     }
 
     @Override // j$.util.stream.D
@@ -86,13 +86,13 @@ public final /* synthetic */ class B implements D {
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ j$.util.A findAny() {
-        return j$.util.S.j(this.a.findAny());
+    public final /* synthetic */ j$.util.B findAny() {
+        return j$.util.T.j(this.a.findAny());
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ j$.util.A findFirst() {
-        return j$.util.S.j(this.a.findFirst());
+    public final /* synthetic */ j$.util.B findFirst() {
+        return j$.util.T.j(this.a.findFirst());
     }
 
     @Override // j$.util.stream.D
@@ -126,8 +126,8 @@ public final /* synthetic */ class B implements D {
 
     /* JADX WARN: Type inference failed for: r0v1, types: [java.util.PrimitiveIterator$OfDouble] */
     @Override // j$.util.stream.D
-    public final /* synthetic */ j$.util.G iterator() {
-        return j$.util.E.a(this.a.iterator());
+    public final /* synthetic */ j$.util.H iterator() {
+        return j$.util.F.a(this.a.iterator());
     }
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
@@ -146,13 +146,13 @@ public final /* synthetic */ class B implements D {
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ j$.util.A max() {
-        return j$.util.S.j(this.a.max());
+    public final /* synthetic */ j$.util.B max() {
+        return j$.util.T.j(this.a.max());
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ j$.util.A min() {
-        return j$.util.S.j(this.a.min());
+    public final /* synthetic */ j$.util.B min() {
+        return j$.util.T.j(this.a.min());
     }
 
     @Override // j$.util.stream.D
@@ -186,8 +186,8 @@ public final /* synthetic */ class B implements D {
     }
 
     @Override // j$.util.stream.D
-    public final /* synthetic */ j$.util.A reduce(DoubleBinaryOperator doubleBinaryOperator) {
-        return j$.util.S.j(this.a.reduce(doubleBinaryOperator));
+    public final /* synthetic */ j$.util.B reduce(DoubleBinaryOperator doubleBinaryOperator) {
+        return j$.util.T.j(this.a.reduce(doubleBinaryOperator));
     }
 
     @Override // j$.util.stream.BaseStream
@@ -212,13 +212,13 @@ public final /* synthetic */ class B implements D {
 
     @Override // j$.util.stream.BaseStream, j$.util.stream.D
     public final /* synthetic */ Spliterator spliterator() {
-        return j$.util.f0.a(this.a.spliterator());
+        return j$.util.g0.a(this.a.spliterator());
     }
 
     /* JADX WARN: Type inference failed for: r0v1, types: [java.util.Spliterator$OfDouble] */
     @Override // j$.util.stream.D
-    public final /* synthetic */ j$.util.V spliterator() {
-        return j$.util.T.a(this.a.spliterator());
+    public final /* synthetic */ j$.util.W spliterator() {
+        return j$.util.U.a(this.a.spliterator());
     }
 
     @Override // j$.util.stream.D

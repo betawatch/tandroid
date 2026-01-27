@@ -64,6 +64,8 @@ import org.telegram.ui.Components.MentionsContainerView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.Text;
+import org.telegram.ui.Components.blur3.StrokeDrawable;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.CaptionContainerView;
@@ -85,6 +87,7 @@ public abstract class CaptionContainerView extends FrameLayout {
     public final RectF bounds;
     protected final BlurringShader.StoryBlurDrawer captionBlur;
     private final RectF clickBounds;
+    private final Path clipPath;
     private int codePointCount;
     private RadialGradient collapseGradient;
     private Matrix collapseGradientMatrix;
@@ -138,6 +141,7 @@ public abstract class CaptionContainerView extends FrameLayout {
     private ObjectAnimator scrollAnimator;
     private int shiftDp;
     private final SizeNotifierFrameLayout sizeNotifierFrameLayout;
+    protected final StrokeDrawable strokeDrawable;
     private final Runnable textChangeRunnable;
     public boolean toKeyboardShow;
     private Runnable updateShowKeyboard;
@@ -172,7 +176,7 @@ public abstract class CaptionContainerView extends FrameLayout {
     }
 
     protected float forceRound() {
-        return 0.0f;
+        return 1.0f;
     }
 
     protected int getCaptionDefaultLimit() {
@@ -219,6 +223,8 @@ public abstract class CaptionContainerView extends FrameLayout {
 
     public CaptionContainerView(Context context, FrameLayout frameLayout, SizeNotifierFrameLayout sizeNotifierFrameLayout, FrameLayout frameLayout2, Theme.ResourcesProvider resourcesProvider, final BlurringShader.BlurManager blurManager) {
         super(context);
+        StrokeDrawable strokeDrawable = new StrokeDrawable();
+        this.strokeDrawable = strokeDrawable;
         Paint paint = new Paint(1);
         this.backgroundPaint = paint;
         Paint paint2 = new Paint(1);
@@ -250,6 +256,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         this.rectF = new RectF();
         this.bounds = new RectF();
         this.clickBounds = new RectF();
+        this.clipPath = new Path();
         this.collapsedT = new AnimatedFloat(this, 500L, cubicBezierInterpolator);
         this.resourcesProvider = resourcesProvider;
         this.rootView = frameLayout;
@@ -259,6 +266,14 @@ public abstract class CaptionContainerView extends FrameLayout {
         this.backgroundBlur = new BlurringShader.StoryBlurDrawer(blurManager, this, 0, !customBlur());
         this.replyBackgroundBlur = new BlurringShader.StoryBlurDrawer(blurManager, this, 8);
         this.replyTextBlur = new BlurringShader.StoryBlurDrawer(blurManager, this, 9);
+        strokeDrawable.nonRound = true;
+        strokeDrawable.setColorProvider(new BlurredBackgroundColorProviderThemed(resourcesProvider, Theme.key_windowBackgroundWhite, 0.0f) { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView.1
+            @Override // org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed
+            public boolean isDark() {
+                return true;
+            }
+        });
+        strokeDrawable.setBackgroundColor(0);
         paint.setColor(TLObject.FLAG_31);
         this.keyboardNotifier = new KeyboardNotifier(frameLayout, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
@@ -266,7 +281,7 @@ public abstract class CaptionContainerView extends FrameLayout {
                 CaptionContainerView.this.updateKeyboard(((Integer) obj).intValue());
             }
         });
-        EditTextEmoji editTextEmoji = new EditTextEmoji(context, sizeNotifierFrameLayout, null, getEditTextStyle(), true, new DarkThemeResourceProvider()) { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView.1
+        EditTextEmoji editTextEmoji = new EditTextEmoji(context, sizeNotifierFrameLayout, null, getEditTextStyle(), true, new DarkThemeResourceProvider()) { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView.2
             private BlurringShader.StoryBlurDrawer blurDrawer;
 
             @Override // org.telegram.ui.Components.EditTextEmoji
@@ -359,7 +374,7 @@ public abstract class CaptionContainerView extends FrameLayout {
                 captionContainerView2.scrollAnimator = ObjectAnimator.ofInt(editText, "scrollY", i2, i);
                 CaptionContainerView.this.scrollAnimator.setDuration(240L);
                 CaptionContainerView.this.scrollAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-                CaptionContainerView.this.scrollAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView.1.1
+                CaptionContainerView.this.scrollAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView.2.1
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         if (CaptionContainerView.this.scrollAnimator != animator) {
@@ -394,18 +409,20 @@ public abstract class CaptionContainerView extends FrameLayout {
             editTextEmoji.getEditText().setGravity(48);
         }
         editTextEmoji.getEmojiButton().setAlpha(0.0f);
-        editTextEmoji.getEditText().addTextChangedListener(new 2());
+        editTextEmoji.getEmojiButton().setTranslationY(AndroidUtilities.dp(isAtTop() ? 1.0f : -1.0f));
+        editTextEmoji.setTranslationY(AndroidUtilities.dp(isAtTop() ? 1.0f : -1.0f));
+        editTextEmoji.getEditText().addTextChangedListener(new 3());
         editTextEmoji.getEditText().setLinkTextColor(-1);
-        addView(editTextEmoji, LayoutHelper.createFrame(-1, -2.0f, (isAtTop() ? 48 : 80) | 7, 12.0f, 12.0f, additionalRightMargin() + 12, 12.0f));
+        addView(editTextEmoji, LayoutHelper.createFrame(-1, -2.0f, (isAtTop() ? 48 : 80) | 7, 12.0f, 8.0f, additionalRightMargin() + 12, 8.0f));
         BounceableImageView bounceableImageView = new BounceableImageView(context);
         this.applyButton = bounceableImageView;
         ScaleStateListAnimator.apply(bounceableImageView, 0.05f, 1.25f);
         Drawable mutate = context.getResources().getDrawable(R.drawable.input_done).mutate();
         this.applyButtonCheck = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogFloatingIcon), PorterDuff.Mode.SRC_IN));
-        CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.dp(16.0f), Theme.getColor(Theme.key_chat_editMediaButton, resourcesProvider)), this.applyButtonCheck, 0, AndroidUtilities.dp(1.0f));
+        CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.dp(18.0f), Theme.getColor(Theme.key_chat_editMediaButton, resourcesProvider)), this.applyButtonCheck, 0, AndroidUtilities.dp(1.0f));
         this.applyButtonDrawable = combinedDrawable;
-        combinedDrawable.setCustomSize(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f));
+        combinedDrawable.setCustomSize(AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f));
         this.applyButton.setImageDrawable(this.applyButtonDrawable);
         this.applyButton.setScaleType(ImageView.ScaleType.CENTER);
         this.applyButton.setAlpha(0.0f);
@@ -416,8 +433,7 @@ public abstract class CaptionContainerView extends FrameLayout {
                 CaptionContainerView.this.lambda$new$0(view);
             }
         });
-        this.applyButton.setTranslationY(-AndroidUtilities.dp(1.0f));
-        addView(this.applyButton, LayoutHelper.createFrame(44, 44, (isAtTop() ? 48 : 80) | 5));
+        addView(this.applyButton, LayoutHelper.createFrame(44, 44.0f, (isAtTop() ? 48 : 80) | 5, 8.0f, 8.0f, 8.0f, 8.0f));
         AnimatedTextView animatedTextView = new AnimatedTextView(context, false, true, true);
         this.limitTextView = animatedTextView;
         animatedTextView.setGravity(17);
@@ -434,11 +450,11 @@ public abstract class CaptionContainerView extends FrameLayout {
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
     }
 
-    class 2 implements TextWatcher {
+    class 3 implements TextWatcher {
         private int lastLength;
         private boolean lastOverLimit;
 
-        2() {
+        3() {
         }
 
         @Override // android.text.TextWatcher
@@ -494,10 +510,10 @@ public abstract class CaptionContainerView extends FrameLayout {
                 AndroidUtilities.runOnUIThread(CaptionContainerView.this.textChangeRunnable, 1500L);
             }
             CaptionContainerView.this.ignoreTextChange = false;
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView$2$$ExternalSyntheticLambda0
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CaptionContainerView.2.this.lambda$afterTextChanged$0();
+                    CaptionContainerView.3.this.lambda$afterTextChanged$0();
                 }
             });
         }
@@ -602,7 +618,7 @@ public abstract class CaptionContainerView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void createMentionsContainer() {
-        MentionsContainerView mentionsContainerView = new MentionsContainerView(getContext(), UserConfig.getInstance(this.currentAccount).getClientUserId(), 0L, LaunchActivity.getLastFragment(), new DarkThemeResourceProvider()) { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView.3
+        MentionsContainerView mentionsContainerView = new MentionsContainerView(getContext(), UserConfig.getInstance(this.currentAccount).getClientUserId(), 0L, LaunchActivity.getLastFragment(), new DarkThemeResourceProvider()) { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView.4
             @Override // org.telegram.ui.Components.MentionsContainerView
             protected boolean isStories() {
                 return true;
@@ -630,7 +646,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         };
         this.mentionContainer = mentionsContainerView;
         this.mentionBackgroundBlur = new BlurringShader.StoryBlurDrawer(this.blurManager, mentionsContainerView, 0);
-        this.mentionContainer.withDelegate(new MentionsContainerView.Delegate() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView.4
+        this.mentionContainer.withDelegate(new MentionsContainerView.Delegate() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView.5
             @Override // org.telegram.ui.Components.MentionsContainerView.Delegate
             public /* synthetic */ void addEmojiToRecent(String str) {
                 MentionsContainerView.Delegate.-CC.$default$addEmojiToRecent(this, str);
@@ -798,7 +814,7 @@ public abstract class CaptionContainerView extends FrameLayout {
             if (!z) {
                 this.editText.getEditText().setAllowDrawCursor(false);
             }
-            this.keyboardAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView.5
+            this.keyboardAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView.6
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     if (!z) {
@@ -825,8 +841,6 @@ public abstract class CaptionContainerView extends FrameLayout {
         } else {
             this.keyboardT = z ? 1.0f : 0.0f;
             this.editText.getEditText().setTranslationX(AndroidUtilities.lerp(AndroidUtilities.dp(-22.0f) + getEditTextLeft(), AndroidUtilities.dp(2.0f), this.keyboardT));
-            this.editText.setTranslationX(AndroidUtilities.lerp(0, AndroidUtilities.dp(-8.0f), this.keyboardT));
-            this.editText.setTranslationY(AndroidUtilities.lerp(0, AndroidUtilities.dp(isAtTop() ? -10.0f : 10.0f), this.keyboardT));
             this.limitTextContainer.setTranslationX(AndroidUtilities.lerp(-AndroidUtilities.dp(8.0f), AndroidUtilities.dp(2.0f), this.keyboardT));
             this.limitTextContainer.setTranslationY(AndroidUtilities.lerp(-AndroidUtilities.dp(8.0f), 0, this.keyboardT));
             this.editText.getEmojiButton().setAlpha(this.keyboardT);
@@ -878,8 +892,6 @@ public abstract class CaptionContainerView extends FrameLayout {
     public /* synthetic */ void lambda$updateShowKeyboard$3(ValueAnimator valueAnimator) {
         this.keyboardT = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.editText.getEditText().setTranslationX(AndroidUtilities.lerp(AndroidUtilities.dp(-22.0f) + getEditTextLeft(), AndroidUtilities.dp(2.0f), this.keyboardT));
-        this.editText.setTranslationX(AndroidUtilities.lerp(0, AndroidUtilities.dp(-8.0f), this.keyboardT));
-        this.editText.setTranslationY(AndroidUtilities.lerp(0, AndroidUtilities.dp(isAtTop() ? -10.0f : 10.0f), this.keyboardT));
         this.limitTextContainer.setTranslationX(AndroidUtilities.lerp(-AndroidUtilities.dp(8.0f), AndroidUtilities.dp(2.0f), this.keyboardT));
         this.limitTextContainer.setTranslationY(AndroidUtilities.lerp(-AndroidUtilities.dp(8.0f), 0, this.keyboardT));
         this.editText.getEmojiButton().setAlpha(this.keyboardT);
@@ -1038,7 +1050,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x01c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x01c7, code lost:
     
         if ((r0 <= 0.0f) != (r1 <= 0.0f)) goto L59;
      */
@@ -1056,9 +1068,9 @@ public abstract class CaptionContainerView extends FrameLayout {
         }
         int height = this.editText.getHeight();
         if (this.collapsed) {
-            min = AndroidUtilities.dp(40.0f);
+            min = AndroidUtilities.dp(44.0f);
         } else if (this.keyboardShown) {
-            min = Math.max(AndroidUtilities.dp(46.0f), height);
+            min = Math.max(AndroidUtilities.dp(44.0f), height);
         } else {
             min = Math.min(AndroidUtilities.dp(82.0f), height);
         }
@@ -1076,21 +1088,21 @@ public abstract class CaptionContainerView extends FrameLayout {
             this.lastHeight = min;
         }
         updateMentionsLayoutPosition();
-        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), 0, this.keyboardT * (1.0f - forceRound()));
+        int dp2 = AndroidUtilities.dp(7.0f);
+        int dp3 = AndroidUtilities.dp(8.0f);
         if (isAtTop()) {
-            float f3 = i2 + lerp;
-            this.bounds.set(lerp, lerp, getWidth() - lerp, f3);
-            this.clickBounds.set(lerp, lerp, getWidth() - lerp, f3 + AndroidUtilities.dp(24.0f));
+            float f3 = dp2;
+            float f4 = dp3;
+            this.bounds.set(f3, f4, getWidth() - dp2, dp3 + i2);
+            this.clickBounds.set(f3, f4, getWidth() - dp2, r3 + AndroidUtilities.dp(24.0f));
         } else {
-            float dpf2 = (AndroidUtilities.dpf2(-1.0f) * this.keyboardT) + f2;
-            float f4 = i2;
-            float f5 = dpf2 - f4;
-            if (Math.abs(this.lastHeightTranslation - f5) >= 1.0f && !this.collapsed) {
+            float lerp = (AndroidUtilities.lerp(AndroidUtilities.dpf2(1.0f), AndroidUtilities.dpf2(-1.0f), this.keyboardT) + f2) - i2;
+            if (Math.abs(this.lastHeightTranslation - lerp) >= 1.0f && !this.collapsed) {
                 EditTextCaption editText = this.editText.getEditText();
-                this.lastHeightTranslation = f5;
-                editText.setTranslationY(f5);
+                this.lastHeightTranslation = lerp;
+                editText.setTranslationY(lerp);
             }
-            this.bounds.set(lerp, (getHeight() - lerp) - f4, getWidth() - lerp, getHeight() - lerp);
+            this.bounds.set(dp2, (getHeight() - dp3) - i2, getWidth() - dp2, getHeight() - dp3);
             this.clickBounds.set(0.0f, (getHeight() - i2) - AndroidUtilities.dp(24.0f), getWidth(), getHeight());
         }
         canvas.save();
@@ -1123,32 +1135,32 @@ public abstract class CaptionContainerView extends FrameLayout {
                 canvas.drawRoundRect(this.bounds, f, f, this.backgroundPaint);
             }
         }
-        float f6 = this.collapsedT.get();
-        float f7 = this.collapsedT.set(this.collapsed);
-        if (Math.abs(f6 - f7) <= 0.001f) {
+        float f5 = this.collapsedT.get();
+        float f6 = this.collapsedT.set(this.collapsed);
+        if (Math.abs(f5 - f6) <= 0.001f) {
         }
         invalidateDrawOver2();
-        if (f7 > 0.0f) {
+        if (f6 > 0.0f) {
             canvas.saveLayerAlpha(this.bounds, NotificationCenter.cameraInitied, 31);
         }
         drawReply(canvas);
         super.dispatchDraw(canvas);
-        if (f7 > 0.0f) {
+        if (f6 > 0.0f) {
             int i3 = this.collapsedFromX;
             if (i3 == Integer.MAX_VALUE) {
                 dp = this.bounds.right - AndroidUtilities.dp(20.0f);
             } else {
                 dp = i3 == Integer.MIN_VALUE ? this.bounds.left + AndroidUtilities.dp(20.0f) : i3;
             }
-            float dp2 = this.bounds.bottom - AndroidUtilities.dp(20.0f);
+            float dp4 = this.bounds.bottom - AndroidUtilities.dp(20.0f);
             RectF rectF = this.bounds;
-            float distance = MathUtils.distance(rectF.left, rectF.top, dp, dp2);
+            float distance = MathUtils.distance(rectF.left, rectF.top, dp, dp4);
             RectF rectF2 = this.bounds;
-            float max = Math.max(distance, MathUtils.distance(rectF2.left, rectF2.bottom, dp, dp2));
+            float max = Math.max(distance, MathUtils.distance(rectF2.left, rectF2.bottom, dp, dp4));
             RectF rectF3 = this.bounds;
-            float distance2 = MathUtils.distance(rectF3.right, rectF3.top, dp, dp2);
+            float distance2 = MathUtils.distance(rectF3.right, rectF3.top, dp, dp4);
             RectF rectF4 = this.bounds;
-            float max2 = Math.max(max, Math.max(distance2, MathUtils.distance(rectF4.right, rectF4.bottom, dp, dp2))) * f7;
+            float max2 = Math.max(max, Math.max(distance2, MathUtils.distance(rectF4.right, rectF4.bottom, dp, dp4))) * f6;
             if (this.collapsePaint == null) {
                 Paint paint3 = new Paint(i);
                 this.collapsePaint = paint3;
@@ -1167,7 +1179,7 @@ public abstract class CaptionContainerView extends FrameLayout {
                 this.collapseOutPaint.setShader(radialGradient2);
             }
             this.collapseGradientMatrix.reset();
-            this.collapseGradientMatrix.postTranslate(dp, dp2);
+            this.collapseGradientMatrix.postTranslate(dp, dp4);
             this.collapseGradientMatrix.preScale(Math.max(1.0f, max2) / 16.0f, Math.max(1.0f, max2) / 16.0f);
             this.collapseGradient.setLocalMatrix(this.collapseGradientMatrix);
             canvas.save();
@@ -1177,7 +1189,7 @@ public abstract class CaptionContainerView extends FrameLayout {
             canvas.saveLayerAlpha(this.bounds, NotificationCenter.cameraInitied, 31);
             drawOver(canvas, this.bounds);
             this.collapseGradientMatrix.reset();
-            this.collapseGradientMatrix.postTranslate(dp, dp2);
+            this.collapseGradientMatrix.postTranslate(dp, dp4);
             this.collapseGradientMatrix.preScale(Math.max(1.0f, max2) / 16.0f, Math.max(1.0f, max2) / 16.0f);
             this.collapseOutGradient.setLocalMatrix(this.collapseGradientMatrix);
             canvas.save();
@@ -1185,9 +1197,19 @@ public abstract class CaptionContainerView extends FrameLayout {
             canvas.restore();
             canvas.restore();
             if (!drawOver2FromParent()) {
-                drawOver2(canvas, this.bounds, f7);
+                drawOver2(canvas, this.bounds, f6);
             }
         }
+        canvas.restore();
+        this.clipPath.rewind();
+        this.clipPath.addRoundRect(this.bounds, f, f, Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(this.clipPath);
+        StrokeDrawable strokeDrawable = this.strokeDrawable;
+        strokeDrawable.radius = f;
+        RectF rectF5 = this.bounds;
+        strokeDrawable.setBounds((int) rectF5.left, (int) rectF5.top, (int) rectF5.right, (int) rectF5.bottom);
+        this.strokeDrawable.draw(canvas);
         canvas.restore();
     }
 

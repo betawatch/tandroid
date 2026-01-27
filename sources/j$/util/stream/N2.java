@@ -22,12 +22,12 @@ final class N2 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.S.d(this);
+        return j$.util.T.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.S.e(this, i);
+        return j$.util.T.e(this, i);
     }
 
     N2(W2 w2, int i, int i2, int i3, int i4) {

@@ -9,7 +9,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -51,6 +50,7 @@ import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ArticleViewer;
+import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.EmptyBaseFragment;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.StoryViewer;
@@ -119,9 +119,6 @@ public abstract class BaseFragment {
 
     public boolean dismissDialogOnPause(Dialog dialog) {
         return true;
-    }
-
-    public void drawOverlay(Canvas canvas, View view) {
     }
 
     public boolean extendActionMode(Menu menu) {
@@ -235,6 +232,8 @@ public abstract class BaseFragment {
 
         void dismiss(boolean z);
 
+        BulletinFactory getBulletinFactory();
+
         int getNavigationBarColor(int i);
 
         View getWindowView();
@@ -256,6 +255,10 @@ public abstract class BaseFragment {
         boolean showDialog(Dialog dialog);
 
         public abstract /* synthetic */ class -CC {
+            public static BulletinFactory $default$getBulletinFactory(AttachedSheet attachedSheet) {
+                return null;
+            }
+
             public static void $default$setLastVisible(AttachedSheet attachedSheet, boolean z) {
             }
         }
@@ -1135,10 +1138,11 @@ public abstract class BaseFragment {
         }
 
         @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
-        public void onBackPressed() {
+        /* renamed from: onBackPressed */
+        public void lambda$openCrafting$8() {
             INavigationLayout iNavigationLayout = this.val$actionBarLayout[0];
             if (iNavigationLayout == null || iNavigationLayout.getFragmentStack().size() <= 1) {
-                super.onBackPressed();
+                super.lambda$openCrafting$8();
             } else {
                 this.val$actionBarLayout[0].onBackPressed();
             }

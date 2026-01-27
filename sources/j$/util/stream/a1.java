@@ -39,7 +39,7 @@ final class a1 extends c1 implements G0 {
     }
 
     @Override // j$.util.stream.I0
-    public final j$.util.e0 spliterator() {
+    public final j$.util.f0 spliterator() {
         return Spliterators.d();
     }
 

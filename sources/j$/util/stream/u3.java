@@ -9,12 +9,12 @@ import java.util.function.Consumer;
 final class u3 extends v3 implements Spliterator {
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.S.d(this);
+        return j$.util.T.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.S.e(this, i);
+        return j$.util.T.e(this, i);
     }
 
     @Override // j$.util.Spliterator

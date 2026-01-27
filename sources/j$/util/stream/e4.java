@@ -6,7 +6,7 @@ import java.util.function.IntConsumer;
 import java.util.function.IntPredicate;
 
 /* loaded from: classes2.dex */
-final class e4 extends h4 implements IntConsumer, j$.util.Y {
+final class e4 extends h4 implements IntConsumer, j$.util.Z {
     int e;
     public final /* synthetic */ int f;
 
@@ -28,15 +28,15 @@ final class e4 extends h4 implements IntConsumer, j$.util.Y {
 
     @Override // j$.util.stream.h4, j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.util.S.b(this, consumer);
+        j$.util.T.b(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.util.S.g(this, consumer);
+        return j$.util.T.g(this, consumer);
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final void forEachRemaining(IntConsumer intConsumer) {
         while (tryAdvance(intConsumer)) {
         }
@@ -52,9 +52,9 @@ final class e4 extends h4 implements IntConsumer, j$.util.Y {
     final Spliterator c(Spliterator spliterator) {
         switch (this.f) {
             case 0:
-                return new e4((j$.util.Y) spliterator, this, 0);
+                return new e4((j$.util.Z) spliterator, this, 0);
             default:
-                return new e4((j$.util.Y) spliterator, this, 1);
+                return new e4((j$.util.Z) spliterator, this, 1);
         }
     }
 
@@ -69,7 +69,7 @@ final class e4 extends h4 implements IntConsumer, j$.util.Y {
     }
 
     @Override // j$.util.stream.h4, j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.e0 trySplit() {
+    public /* bridge */ /* synthetic */ j$.util.f0 trySplit() {
         switch (this.f) {
             case 1:
                 return trySplit();
@@ -78,7 +78,7 @@ final class e4 extends h4 implements IntConsumer, j$.util.Y {
         }
     }
 
-    @Override // j$.util.Y
+    @Override // j$.util.Z
     public final boolean tryAdvance(IntConsumer intConsumer) {
         switch (this.f) {
             case 0:
@@ -86,7 +86,7 @@ final class e4 extends h4 implements IntConsumer, j$.util.Y {
                 Spliterator spliterator = this.a;
                 if (z) {
                     this.c = false;
-                    boolean tryAdvance = ((j$.util.Y) spliterator).tryAdvance((IntConsumer) this);
+                    boolean tryAdvance = ((j$.util.Z) spliterator).tryAdvance((IntConsumer) this);
                     if (tryAdvance && b()) {
                         IntPredicate intPredicate = null;
                         intPredicate.test(this.e);
@@ -98,9 +98,9 @@ final class e4 extends h4 implements IntConsumer, j$.util.Y {
                     intConsumer.accept(this.e);
                     return tryAdvance;
                 }
-                return ((j$.util.Y) spliterator).tryAdvance(intConsumer);
+                return ((j$.util.Z) spliterator).tryAdvance(intConsumer);
             default:
-                if (this.c && b() && ((j$.util.Y) this.a).tryAdvance((IntConsumer) this)) {
+                if (this.c && b() && ((j$.util.Z) this.a).tryAdvance((IntConsumer) this)) {
                     IntPredicate intPredicate2 = null;
                     intPredicate2.test(this.e);
                     throw null;
@@ -111,19 +111,19 @@ final class e4 extends h4 implements IntConsumer, j$.util.Y {
     }
 
     @Override // j$.util.stream.h4, j$.util.Spliterator
-    public j$.util.Y trySplit() {
+    public j$.util.Z trySplit() {
         switch (this.f) {
             case 1:
                 if (this.b.get()) {
                     return null;
                 }
-                return (j$.util.Y) super.trySplit();
+                return (j$.util.Z) super.trySplit();
             default:
                 return super.trySplit();
         }
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public /* bridge */ /* synthetic */ boolean tryAdvance(Object obj) {
         switch (this.f) {
             case 1:

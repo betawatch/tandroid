@@ -90,6 +90,7 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -202,7 +203,6 @@ import org.telegram.ui.web.WebInstantView;
 
 /* loaded from: classes4.dex */
 public class ArticleViewer implements NotificationCenter.NotificationCenterDelegate {
-    private static volatile ArticleViewer Instance;
     private static TextPaint channelNamePaint;
     private static TextPaint channelNamePhotoPaint;
     private static Paint dividerPaint;
@@ -327,6 +327,8 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
     private Dialog visibleDialog;
     private WindowManager.LayoutParams windowLayoutParams;
     private WindowView windowView;
+    public static HashSet activeSheets = new HashSet();
+    private static volatile ArticleViewer Instance = null;
     public static final Property ARTICLE_VIEWER_INNER_TRANSLATION_X = new AnimationProperties.FloatProperty("innerTranslationX") { // from class: org.telegram.ui.ArticleViewer.1
         @Override // org.telegram.ui.Components.AnimationProperties.FloatProperty
         public void setValue(WindowView windowView, float f) {
@@ -15898,6 +15900,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (pageLayout2 != null) {
                 pageLayout2.resume();
             }
+            ArticleViewer.activeSheets.add(ArticleViewer.this);
         }
 
         public void show() {
@@ -15974,6 +15977,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 runnable.run();
                 this.onDismissListener = null;
             }
+            ArticleViewer.activeSheets.remove(ArticleViewer.this);
         }
 
         public void dismissInstant() {
@@ -16539,6 +16543,23 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         public void updateLastVisible() {
             ArticleViewer.this.pages[0].setLastVisible(this.lastVisible);
             ArticleViewer.this.pages[1].setLastVisible(false);
+        }
+
+        @Override // org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
+        public BulletinFactory getBulletinFactory() {
+            FrameLayout frameLayout;
+            if (!ArticleViewer.this.pages[0].isWeb()) {
+                if (ArticleViewer.this.pages[0].adapter.currentPage == null) {
+                    return null;
+                }
+                frameLayout = ArticleViewer.this.pages[0];
+            } else {
+                if (ArticleViewer.this.pages[0].getWebView() == null) {
+                    return null;
+                }
+                frameLayout = ArticleViewer.this.pages[0].webViewContainer;
+            }
+            return BulletinFactory.of(frameLayout, ArticleViewer.this.getResourcesProvider());
         }
     }
 

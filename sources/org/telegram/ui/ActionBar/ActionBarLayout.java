@@ -384,6 +384,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         protected boolean drawChild(Canvas canvas, View view, long j) {
             int i;
             int i2;
+            int i3;
             BaseFragment baseFragment = !ActionBarLayout.this.fragmentsStack.isEmpty() ? (BaseFragment) ActionBarLayout.this.fragmentsStack.get(ActionBarLayout.this.fragmentsStack.size() - 1) : null;
             if (ActionBarLayout.this.sheetFragment != null && ActionBarLayout.this.sheetFragment.sheetsStack != null && !ActionBarLayout.this.sheetFragment.sheetsStack.isEmpty()) {
                 baseFragment = ActionBarLayout.this.sheetFragment;
@@ -396,26 +397,34 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 return super.drawChild(canvas, view, j);
             }
             int childCount = getChildCount();
-            int i3 = 0;
+            int i4 = 0;
             while (true) {
-                if (i3 >= childCount) {
+                if (i4 >= childCount) {
                     break;
                 }
-                View childAt = getChildAt(i3);
-                if (childAt == view || !(childAt instanceof ActionBar) || childAt.getVisibility() != 0) {
-                    i3++;
-                } else if (((ActionBar) childAt).getCastShadows()) {
-                    i = childAt.getMeasuredHeight();
-                    i2 = (int) childAt.getY();
+                View childAt = getChildAt(i4);
+                if (childAt != view && (childAt instanceof ActionBar) && childAt.getVisibility() == 0) {
+                    ActionBar actionBar = (ActionBar) childAt;
+                    if (actionBar.getCastShadows() && actionBar.getShadowAlpha() > 0) {
+                        i2 = childAt.getMeasuredHeight();
+                        i3 = (int) childAt.getY();
+                        i = actionBar.getShadowAlpha();
+                    }
+                } else {
+                    i4++;
                 }
             }
             i = 0;
             i2 = 0;
+            i3 = 0;
             boolean drawChild = super.drawChild(canvas, view, j);
-            if (i != 0 && ActionBarLayout.headerShadowDrawable != null) {
-                int i4 = i2 + i;
-                ActionBarLayout.headerShadowDrawable.setBounds(0, i4, getMeasuredWidth(), ActionBarLayout.headerShadowDrawable.getIntrinsicHeight() + i4);
+            if (i2 != 0 && ActionBarLayout.headerShadowDrawable != null) {
+                int alpha = ActionBarLayout.headerShadowDrawable.getAlpha();
+                int i5 = i3 + i2;
+                ActionBarLayout.headerShadowDrawable.setBounds(0, i5, getMeasuredWidth(), ActionBarLayout.headerShadowDrawable.getIntrinsicHeight() + i5);
+                ActionBarLayout.headerShadowDrawable.setAlpha(i);
                 ActionBarLayout.headerShadowDrawable.draw(canvas);
+                ActionBarLayout.headerShadowDrawable.setAlpha(alpha);
             }
             return drawChild;
         }
@@ -1017,24 +1026,24 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         super.dispatchDraw(canvas);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x0369, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:146:0x0377, code lost:
     
-        if (r20.overrideWidthOffset != (-1)) goto L178;
+        if (r20.overrideWidthOffset != (-1)) goto L184;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:185:0x01de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:191:0x01de, code lost:
     
         r1 = getRootWindowInsets();
      */
     /* JADX WARN: Removed duplicated region for block: B:102:0x0262  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x02bc  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x031d  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x0338  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x0366  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x0376  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x037c  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x03c7  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x0370  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x01d9  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x02c6  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x032b  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0346  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x0374  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0384  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x038a  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x03d5  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x037e  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x01d9  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x00af  */
     /* JADX WARN: Removed duplicated region for block: B:82:0x0218  */
     /* JADX WARN: Removed duplicated region for block: B:87:0x0227  */
@@ -1059,6 +1068,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         LayoutContainer layoutContainer3;
         BaseFragment lastFragment;
         LayoutContainer layoutContainer4;
+        BaseFragment lastFragment2;
         int childCount;
         int i6;
         WindowInsets rootWindowInsets;
@@ -1202,7 +1212,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     }
                 }
                 z = false;
-                if (this.drawerLayoutContainer != null && !this.isLayersLayout && view == (layoutContainer4 = this.containerView) && ((!layoutContainer4.isSupportEdgeToEdge || z) && this.lastWindowInsetsCompat != null)) {
+                if (this.drawerLayoutContainer != null && !this.isLayersLayout && view == (layoutContainer4 = this.containerView) && ((!layoutContainer4.isSupportEdgeToEdge || z) && this.lastWindowInsetsCompat != null && (lastFragment2 = getLastFragment()) != null && !lastFragment2.inPreviewMode)) {
                     Paint internalNavbarPaint = this.drawerLayoutContainer.getInternalNavbarPaint();
                     int alpha = internalNavbarPaint.getAlpha();
                     internalNavbarPaint.setAlpha((int) (view.getAlpha() * 255.0f));
@@ -1210,7 +1220,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     canvas.drawRect(max, getMeasuredHeight() - this.navigationBarInsetHeight, max + view.getMeasuredWidth(), getMeasuredHeight(), internalNavbarPaint);
                     internalNavbarPaint.setAlpha(alpha);
                 }
-                if (this.drawerLayoutContainer != null && !this.isLayersLayout && view == (layoutContainer3 = this.containerViewBack) && !layoutContainer3.isSupportEdgeToEdge && this.lastWindowInsetsCompat != null && (lastFragment = getLastFragment()) != null && !lastFragment.isSupportEdgeToEdge()) {
+                if (this.drawerLayoutContainer != null && !this.isLayersLayout && view == (layoutContainer3 = this.containerViewBack) && !layoutContainer3.isSupportEdgeToEdge && this.lastWindowInsetsCompat != null && (lastFragment = getLastFragment()) != null && !lastFragment.isSupportEdgeToEdge() && !lastFragment.inPreviewMode) {
                     Paint internalNavbarPaint2 = this.drawerLayoutContainer.getInternalNavbarPaint();
                     int alpha2 = internalNavbarPaint2.getAlpha();
                     internalNavbarPaint2.setAlpha((int) (Math.min(1.0f, view.getAlpha()) * 255.0f));
@@ -1468,6 +1478,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.animationInProgress = false;
         this.containerView.setTranslationX(0.0f);
         this.containerViewBack.setTranslationX(0.0f);
+        this.containerView.setLayerType(0, null);
         setInnerTranslationX(0.0f);
     }
 
@@ -1478,7 +1489,8 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.layoutToIgnore = layoutContainer;
         layoutContainer.setVisibility(0);
         this.beginTrackingSent = false;
-        BaseFragment baseFragment = (BaseFragment) this.fragmentsStack.get(r2.size() - 2);
+        List list = this.fragmentsStack;
+        BaseFragment baseFragment = (BaseFragment) list.get(list.size() - 2);
         View view = baseFragment.fragmentView;
         if (view == null) {
             view = baseFragment.createView(this.parentActivity);
@@ -1515,8 +1527,9 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         if (this.themeAnimatorSet != null) {
             this.presentingFragmentDescriptions = baseFragment.getThemeDescriptions();
         }
-        List list = this.fragmentsStack;
-        ((BaseFragment) list.get(list.size() - 1)).prepareFragmentToSlide(true, true);
+        this.containerView.setLayerType(2, null);
+        List list2 = this.fragmentsStack;
+        ((BaseFragment) list2.get(list2.size() - 1)).prepareFragmentToSlide(true, true);
         baseFragment.prepareFragmentToSlide(false, true);
     }
 
@@ -1532,6 +1545,10 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 if (!((BaseFragment) list.get(list.size() - 1)).isSwipeBackEnabled(motionEvent)) {
                     this.maybeStartTracking = false;
                     this.startedTracking = false;
+                    LayoutContainer layoutContainer = this.containerView;
+                    if (layoutContainer != null) {
+                        layoutContainer.setLayerType(0, null);
+                    }
                     return false;
                 }
                 this.startedTrackingPointerId = motionEvent.getPointerId(0);
@@ -1612,6 +1629,10 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     this.maybeStartTracking = false;
                     this.startedTracking = false;
                     this.layoutToIgnore = null;
+                    LayoutContainer layoutContainer2 = this.containerView;
+                    if (layoutContainer2 != null) {
+                        layoutContainer2.setLayerType(0, null);
+                    }
                 }
                 VelocityTracker velocityTracker2 = this.velocityTracker;
                 if (velocityTracker2 != null) {
@@ -1622,6 +1643,10 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 this.maybeStartTracking = false;
                 this.startedTracking = false;
                 this.layoutToIgnore = null;
+                LayoutContainer layoutContainer3 = this.containerView;
+                if (layoutContainer3 != null) {
+                    layoutContainer3.setLayerType(0, null);
+                }
                 VelocityTracker velocityTracker3 = this.velocityTracker;
                 if (velocityTracker3 != null) {
                     velocityTracker3.recycle();
@@ -3069,6 +3094,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         if (iNavigationLayoutDelegate != null) {
             iNavigationLayoutDelegate.onThemeProgress(f);
         }
+        globallyUpdateColors(this);
     }
 
     @Override // org.telegram.ui.ActionBar.INavigationLayout
@@ -3290,6 +3316,21 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         }
         if (runnable != null) {
             runnable.run();
+        }
+    }
+
+    private void globallyUpdateColors(ViewGroup viewGroup) {
+        if (viewGroup == null) {
+            return;
+        }
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
+            KeyEvent.Callback childAt = viewGroup.getChildAt(i);
+            if (childAt instanceof Theme.Colorable) {
+                ((Theme.Colorable) childAt).updateColors();
+            }
+            if (childAt instanceof ViewGroup) {
+                globallyUpdateColors((ViewGroup) childAt);
+            }
         }
     }
 

@@ -14,5 +14,5 @@ public interface H0 extends I0 {
     void r(int i, Object obj);
 
     @Override // j$.util.stream.I0
-    j$.util.e0 spliterator();
+    j$.util.f0 spliterator();
 }

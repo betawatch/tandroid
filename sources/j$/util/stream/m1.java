@@ -19,12 +19,12 @@ abstract class m1 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.util.S.d(this);
+        return j$.util.T.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return j$.util.S.e(this, i);
+        return j$.util.T.e(this, i);
     }
 
     @Override // j$.util.Spliterator
@@ -132,22 +132,22 @@ abstract class m1 implements Spliterator {
     }
 
     @Override // j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.e0 trySplit() {
-        return (j$.util.e0) trySplit();
+    public /* bridge */ /* synthetic */ j$.util.f0 trySplit() {
+        return (j$.util.f0) trySplit();
     }
 
     @Override // j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.Y trySplit() {
-        return (j$.util.Y) trySplit();
+    public /* bridge */ /* synthetic */ j$.util.Z trySplit() {
+        return (j$.util.Z) trySplit();
     }
 
     @Override // j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.b0 trySplit() {
-        return (j$.util.b0) trySplit();
+    public /* bridge */ /* synthetic */ j$.util.c0 trySplit() {
+        return (j$.util.c0) trySplit();
     }
 
     @Override // j$.util.Spliterator
-    public /* bridge */ /* synthetic */ j$.util.V trySplit() {
-        return (j$.util.V) trySplit();
+    public /* bridge */ /* synthetic */ j$.util.W trySplit() {
+        return (j$.util.W) trySplit();
     }
 }

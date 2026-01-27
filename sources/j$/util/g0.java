@@ -1,44 +1,74 @@
 package j$.util;
 
-import j$.util.function.Consumer$-CC;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import j$.util.Spliterator;
+import java.util.Comparator;
+import java.util.Spliterator;
 import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-final class g0 implements Iterator, Consumer {
-    boolean a = false;
-    Object b;
-    final /* synthetic */ Spliterator c;
+public final /* synthetic */ class g0 implements Spliterator {
+    public final /* synthetic */ java.util.Spliterator a;
 
-    public final /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    private /* synthetic */ g0(java.util.Spliterator spliterator) {
+        this.a = spliterator;
     }
 
-    g0(Spliterator spliterator) {
-        this.c = spliterator;
-    }
-
-    @Override // java.util.function.Consumer
-    public final void accept(Object obj) {
-        this.a = true;
-        this.b = obj;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        if (!this.a) {
-            this.c.tryAdvance(this);
+    public static /* synthetic */ Spliterator a(java.util.Spliterator spliterator) {
+        if (spliterator == null) {
+            return null;
         }
-        return this.a;
+        return spliterator instanceof Spliterator.Wrapper ? Spliterator.this : spliterator instanceof Spliterator.OfPrimitive ? d0.a((Spliterator.OfPrimitive) spliterator) : new g0(spliterator);
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!this.a && !hasNext()) {
-            throw new NoSuchElementException();
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ int characteristics() {
+        return this.a.characteristics();
+    }
+
+    public final /* synthetic */ boolean equals(Object obj) {
+        java.util.Spliterator spliterator = this.a;
+        if (obj instanceof g0) {
+            obj = ((g0) obj).a;
         }
-        this.a = false;
-        return this.b;
+        return spliterator.equals(obj);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long estimateSize() {
+        return this.a.estimateSize();
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ void forEachRemaining(Consumer consumer) {
+        this.a.forEachRemaining(consumer);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ Comparator getComparator() {
+        return this.a.getComparator();
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        return this.a.getExactSizeIfKnown();
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i) {
+        return this.a.hasCharacteristics(i);
+    }
+
+    public final /* synthetic */ int hashCode() {
+        return this.a.hashCode();
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
+        return this.a.tryAdvance(consumer);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ Spliterator trySplit() {
+        return a(this.a.trySplit());
     }
 }

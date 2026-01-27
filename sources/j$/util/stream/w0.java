@@ -61,15 +61,15 @@ public abstract /* synthetic */ class w0 implements G3 {
             return new u3(spliterator, j, j4);
         }
         if (i == 2) {
-            return new r3((j$.util.Y) spliterator, j, j4);
+            return new r3((j$.util.Z) spliterator, j, j4);
         }
         if (i == 3) {
-            return new s3((j$.util.b0) spliterator, j, j4);
+            return new s3((j$.util.c0) spliterator, j, j4);
         }
         if (i != 4) {
             throw new IllegalStateException("Unknown shape " + b3Var);
         }
-        return new q3((j$.util.V) spliterator, j, j4);
+        return new q3((j$.util.W) spliterator, j, j4);
     }
 
     public static u0 c0(t0 t0Var, Predicate predicate) {
@@ -145,8 +145,8 @@ public abstract /* synthetic */ class w0 implements G3 {
         return new Q0((C0) i0, (C0) i02);
     }
 
-    public static IntStream T(j$.util.Y y) {
-        return new Y(y, a3.l(y), false);
+    public static IntStream T(j$.util.Z z) {
+        return new Y(z, a3.l(z), false);
     }
 
     public static u0 b0(t0 t0Var) {
@@ -188,8 +188,8 @@ public abstract /* synthetic */ class w0 implements G3 {
         k2Var.accept(num.intValue());
     }
 
-    public static LongStream V(j$.util.b0 b0Var) {
-        return new h0(b0Var, a3.l(b0Var), false);
+    public static LongStream V(j$.util.c0 c0Var) {
+        return new h0(c0Var, a3.l(c0Var), false);
     }
 
     public static void i(l2 l2Var, Long l) {
@@ -242,8 +242,8 @@ public abstract /* synthetic */ class w0 implements G3 {
         return objArr;
     }
 
-    public static D K(j$.util.V v) {
-        return new y(v, a3.l(v), false);
+    public static D K(j$.util.W w) {
+        return new y(w, a3.l(w), false);
     }
 
     static x0 J(long j) {
@@ -277,7 +277,7 @@ public abstract /* synthetic */ class w0 implements G3 {
                 J3.a(e0.getClass(), "{0} calling Node.OfInt.forEachRemaining(Consumer)");
                 throw null;
             }
-            ((j$.util.Y) e0.spliterator()).forEachRemaining(consumer);
+            ((j$.util.Z) e0.spliterator()).forEachRemaining(consumer);
         }
     }
 
@@ -304,15 +304,15 @@ public abstract /* synthetic */ class w0 implements G3 {
             return e0;
         }
         long j3 = j2 - j;
-        j$.util.Y y = (j$.util.Y) e0.spliterator();
+        j$.util.Z z = (j$.util.Z) e0.spliterator();
         y0 S = S(j3);
         S.l(j3);
-        for (int i = 0; i < j && y.tryAdvance((IntConsumer) new D0(0)); i++) {
+        for (int i = 0; i < j && z.tryAdvance((IntConsumer) new D0(0)); i++) {
         }
         if (j2 == e0.count()) {
-            y.forEachRemaining((IntConsumer) S);
+            z.forEachRemaining((IntConsumer) S);
         } else {
-            for (int i2 = 0; i2 < j3 && y.tryAdvance((IntConsumer) S); i2++) {
+            for (int i2 = 0; i2 < j3 && z.tryAdvance((IntConsumer) S); i2++) {
             }
         }
         S.k();
@@ -355,7 +355,7 @@ public abstract /* synthetic */ class w0 implements G3 {
                 J3.a(g0.getClass(), "{0} calling Node.OfLong.forEachRemaining(Consumer)");
                 throw null;
             }
-            ((j$.util.b0) g0.spliterator()).forEachRemaining(consumer);
+            ((j$.util.c0) g0.spliterator()).forEachRemaining(consumer);
         }
     }
 
@@ -375,15 +375,15 @@ public abstract /* synthetic */ class w0 implements G3 {
             return g0;
         }
         long j3 = j2 - j;
-        j$.util.b0 b0Var = (j$.util.b0) g0.spliterator();
+        j$.util.c0 c0Var = (j$.util.c0) g0.spliterator();
         z0 U = U(j3);
         U.l(j3);
-        for (int i = 0; i < j && b0Var.tryAdvance((LongConsumer) new F0(0)); i++) {
+        for (int i = 0; i < j && c0Var.tryAdvance((LongConsumer) new F0(0)); i++) {
         }
         if (j2 == g0.count()) {
-            b0Var.forEachRemaining((LongConsumer) U);
+            c0Var.forEachRemaining((LongConsumer) U);
         } else {
-            for (int i2 = 0; i2 < j3 && b0Var.tryAdvance((LongConsumer) U); i2++) {
+            for (int i2 = 0; i2 < j3 && c0Var.tryAdvance((LongConsumer) U); i2++) {
             }
         }
         U.k();
@@ -432,7 +432,7 @@ public abstract /* synthetic */ class w0 implements G3 {
                 J3.a(c0.getClass(), "{0} calling Node.OfLong.forEachRemaining(Consumer)");
                 throw null;
             }
-            ((j$.util.V) c0.spliterator()).forEachRemaining(consumer);
+            ((j$.util.W) c0.spliterator()).forEachRemaining(consumer);
         }
     }
 
@@ -465,15 +465,15 @@ public abstract /* synthetic */ class w0 implements G3 {
             return c0;
         }
         long j3 = j2 - j;
-        j$.util.V v = (j$.util.V) c0.spliterator();
+        j$.util.W w = (j$.util.W) c0.spliterator();
         x0 J = J(j3);
         J.l(j3);
-        for (int i = 0; i < j && v.tryAdvance((DoubleConsumer) new B0(0)); i++) {
+        for (int i = 0; i < j && w.tryAdvance((DoubleConsumer) new B0(0)); i++) {
         }
         if (j2 == c0.count()) {
-            v.forEachRemaining((DoubleConsumer) J);
+            w.forEachRemaining((DoubleConsumer) J);
         } else {
-            for (int i2 = 0; i2 < j3 && v.tryAdvance((DoubleConsumer) J); i2++) {
+            for (int i2 = 0; i2 < j3 && w.tryAdvance((DoubleConsumer) J); i2++) {
             }
         }
         J.k();

@@ -1,70 +1,69 @@
 package j$.util;
 
-import j$.util.Spliterator;
 import java.util.Comparator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
-public final /* synthetic */ class X implements Spliterator.OfInt {
-    public final /* synthetic */ Y a;
+public final /* synthetic */ class X implements Z {
+    public final /* synthetic */ Spliterator.OfInt a;
 
-    private /* synthetic */ X(Y y) {
-        this.a = y;
+    private /* synthetic */ X(Spliterator.OfInt ofInt) {
+        this.a = ofInt;
     }
 
-    public static /* synthetic */ Spliterator.OfInt a(Y y) {
-        if (y == null) {
+    public static /* synthetic */ Z a(Spliterator.OfInt ofInt) {
+        if (ofInt == null) {
             return null;
         }
-        return y instanceof W ? ((W) y).a : new X(y);
+        return ofInt instanceof Y ? ((Y) ofInt).a : new X(ofInt);
     }
 
-    @Override // java.util.Spliterator
+    @Override // j$.util.Spliterator
     public final /* synthetic */ int characteristics() {
         return this.a.characteristics();
     }
 
     public final /* synthetic */ boolean equals(Object obj) {
-        Y y = this.a;
+        Spliterator.OfInt ofInt = this.a;
         if (obj instanceof X) {
             obj = ((X) obj).a;
         }
-        return y.equals(obj);
+        return ofInt.equals(obj);
     }
 
-    @Override // java.util.Spliterator
+    @Override // j$.util.Spliterator
     public final /* synthetic */ long estimateSize() {
         return this.a.estimateSize();
     }
 
-    @Override // java.util.Spliterator.OfPrimitive
-    public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
-        this.a.forEachRemaining((Object) intConsumer);
+    @Override // j$.util.f0
+    public final /* synthetic */ void forEachRemaining(Object obj) {
+        this.a.forEachRemaining((Spliterator.OfInt) obj);
     }
 
-    @Override // java.util.Spliterator.OfInt, java.util.Spliterator
+    @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(consumer);
+        this.a.forEachRemaining((Consumer<? super Integer>) consumer);
     }
 
-    @Override // java.util.Spliterator.OfInt
+    @Override // j$.util.Z
     public final /* synthetic */ void forEachRemaining(IntConsumer intConsumer) {
         this.a.forEachRemaining(intConsumer);
     }
 
-    @Override // java.util.Spliterator
+    @Override // j$.util.Spliterator
     public final /* synthetic */ Comparator getComparator() {
         return this.a.getComparator();
     }
 
-    @Override // java.util.Spliterator
+    @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
         return this.a.getExactSizeIfKnown();
     }
 
-    @Override // java.util.Spliterator
+    @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
         return this.a.hasCharacteristics(i);
     }
@@ -73,33 +72,33 @@ public final /* synthetic */ class X implements Spliterator.OfInt {
         return this.a.hashCode();
     }
 
-    @Override // java.util.Spliterator.OfPrimitive
-    public final /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
-        return this.a.tryAdvance((Object) intConsumer);
+    @Override // j$.util.f0
+    public final /* synthetic */ boolean tryAdvance(Object obj) {
+        return this.a.tryAdvance((Spliterator.OfInt) obj);
     }
 
-    @Override // java.util.Spliterator.OfInt, java.util.Spliterator
+    @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return this.a.tryAdvance(consumer);
+        return this.a.tryAdvance((Consumer<? super Integer>) consumer);
     }
 
-    @Override // java.util.Spliterator.OfInt
+    @Override // j$.util.Z
     public final /* synthetic */ boolean tryAdvance(IntConsumer intConsumer) {
         return this.a.tryAdvance(intConsumer);
     }
 
-    @Override // java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
-    public final /* synthetic */ Spliterator.OfInt trySplit() {
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ Spliterator trySplit() {
+        return g0.a(this.a.trySplit());
+    }
+
+    @Override // j$.util.Z, j$.util.f0, j$.util.Spliterator
+    public final /* synthetic */ Z trySplit() {
         return a(this.a.trySplit());
     }
 
-    @Override // java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
-    public final /* synthetic */ Spliterator.OfPrimitive trySplit() {
+    @Override // j$.util.f0, j$.util.Spliterator
+    public final /* synthetic */ f0 trySplit() {
         return d0.a(this.a.trySplit());
-    }
-
-    @Override // java.util.Spliterator.OfInt, java.util.Spliterator.OfPrimitive, java.util.Spliterator
-    public final /* synthetic */ java.util.Spliterator trySplit() {
-        return Spliterator.Wrapper.convert(this.a.trySplit());
     }
 }

@@ -16,6 +16,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BirthdayController;
 import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -56,13 +57,15 @@ public class LinkManager {
     private int currentRequestId = -1;
     private boolean done;
     private boolean inited;
+    private final boolean isExternalIntent;
     private final Browser.Progress progress;
     private AlertDialog progressDialog;
 
-    public LinkManager(LaunchActivity launchActivity, int i, Browser.Progress progress) {
+    public LinkManager(LaunchActivity launchActivity, int i, Browser.Progress progress, boolean z) {
         this.activity = launchActivity;
         this.currentAccount = i;
         this.progress = progress;
+        this.isExternalIntent = z;
     }
 
     public boolean handle(Uri uri) {
@@ -140,7 +143,7 @@ public class LinkManager {
     /* JADX WARN: Type inference failed for: r0v13, types: [org.telegram.ui.Stories.recorder.StoryRecorder] */
     /* JADX WARN: Type inference failed for: r8v16, types: [int] */
     /* JADX WARN: Type inference failed for: r8v18 */
-    /* JADX WARN: Type inference failed for: r8v39 */
+    /* JADX WARN: Type inference failed for: r8v41 */
     private boolean handleTg(Uri uri) {
         Uri normalizeTgUri = normalizeTgUri(uri);
         List<String> pathSegments = normalizeTgUri.getPathSegments();
@@ -157,8 +160,14 @@ public class LinkManager {
         }
         String str = (String) arrayList.get(0);
         String str2 = arrayList.size() > 1 ? (String) arrayList.get(1) : null;
+        if ("resolve".equalsIgnoreCase(str)) {
+            return handleTgResolve(normalizeTgUri);
+        }
         if ("invoice".equalsIgnoreCase(str)) {
             return handleInvoiceSlug(normalizeTgUri.getQueryParameter("slug"));
+        }
+        if ("oauth".equalsIgnoreCase(str)) {
+            return handleOAuth(normalizeTgUri, normalizeTgUri.getQueryParameter("token"));
         }
         if ("settings".equalsIgnoreCase(str)) {
             return handleSettings(arrayList.subList(1, arrayList.size()));
@@ -221,20 +230,45 @@ public class LinkManager {
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:564:0x0a0c  */
-    /* JADX WARN: Removed duplicated region for block: B:567:0x0a19  */
-    /* JADX WARN: Removed duplicated region for block: B:570:0x0a26  */
-    /* JADX WARN: Removed duplicated region for block: B:573:0x0a31  */
-    /* JADX WARN: Removed duplicated region for block: B:576:0x0a3e  */
-    /* JADX WARN: Removed duplicated region for block: B:579:0x0a4b  */
+    private boolean handleTgResolve(Uri uri) {
+        List<String> pathSegments = uri.getPathSegments();
+        if (pathSegments == null) {
+            return false;
+        }
+        ArrayList arrayList = new ArrayList(pathSegments);
+        String authority = uri.getAuthority();
+        if (!TextUtils.isEmpty(authority)) {
+            arrayList.add(0, authority);
+        }
+        if (arrayList.isEmpty()) {
+            return false;
+        }
+        arrayList.remove(0);
+        String queryParameter = uri.getQueryParameter("domain");
+        String queryParameter2 = uri.getQueryParameter("startapp");
+        if (!"oauth".equalsIgnoreCase(queryParameter) || isEmpty(queryParameter2)) {
+            return false;
+        }
+        return handleOAuth(uri, queryParameter2);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:596:0x0a3b, code lost:
+    
+        if ("roaming".equalsIgnoreCase(r7) != false) goto L579;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:575:0x0a4d  */
+    /* JADX WARN: Removed duplicated region for block: B:578:0x0a5a  */
+    /* JADX WARN: Removed duplicated region for block: B:581:0x0a67  */
+    /* JADX WARN: Removed duplicated region for block: B:584:0x0a72  */
+    /* JADX WARN: Removed duplicated region for block: B:587:0x0a7f  */
+    /* JADX WARN: Removed duplicated region for block: B:590:0x0a8c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private boolean handleSettings(List list) {
         int i;
         int i2;
-        int i3;
-        final int i4;
+        final int i3;
         BaseFragment lastFragment;
         MainTabsActivity mainTabsActivity;
         ApplicationLoader applicationLoader;
@@ -254,7 +288,11 @@ public class LinkManager {
                 presentFragment(new ThemeActivity(0));
             } else {
                 if ("devices".equalsIgnoreCase(str)) {
-                    presentFragment(new SessionsActivity(0));
+                    SessionsActivity sessionsActivity = new SessionsActivity(0);
+                    if ("link-desktop".equalsIgnoreCase(str2)) {
+                        sessionsActivity.setHighlightLinkDesktopDevice();
+                    }
+                    presentFragment(sessionsActivity);
                     if ("terminate-sessions".equalsIgnoreCase(str2)) {
                         scrollTo("terminateAllSessionsRow");
                     }
@@ -343,10 +381,25 @@ public class LinkManager {
                     } else if ("qr-code".equalsIgnoreCase(str)) {
                         if ("scan".equalsIgnoreCase(str2) && (lastFragment = getLastFragment()) != null) {
                             QrActivity.openCameraScanActivity(lastFragment);
-                        } else {
+                        } else if ("share".equalsIgnoreCase(str2)) {
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("user_id", getUserConfig().getClientUserId());
-                            presentFragment(new QrActivity(bundle2));
+                            presentFragment(new QrActivity(bundle2) { // from class: org.telegram.ui.LinkManager.2
+                                @Override // org.telegram.ui.ActionBar.BaseFragment
+                                public void onBecomeFullyVisible() {
+                                    super.onBecomeFullyVisible();
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$2$$ExternalSyntheticLambda0
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            performShare();
+                                        }
+                                    });
+                                }
+                            });
+                        } else {
+                            Bundle bundle3 = new Bundle();
+                            bundle3.putLong("user_id", getUserConfig().getClientUserId());
+                            presentFragment(new QrActivity(bundle3));
                         }
                     } else if ("chat".equalsIgnoreCase(str) && "browser".equalsIgnoreCase(str2)) {
                         if (TextUtils.isEmpty(str3)) {
@@ -416,13 +469,13 @@ public class LinkManager {
                             if ("edit".equalsIgnoreCase(str2)) {
                                 presentFragment(new UserInfoActivity());
                             } else {
-                                Bundle bundle3 = new Bundle();
-                                bundle3.putLong("user_id", getUserConfig().getClientUserId());
-                                bundle3.putBoolean("my_profile", true);
+                                Bundle bundle4 = new Bundle();
+                                bundle4.putLong("user_id", getUserConfig().getClientUserId());
+                                bundle4.putBoolean("my_profile", true);
                                 if ("gifts".equalsIgnoreCase(str2)) {
-                                    bundle3.putBoolean("open_gifts", true);
+                                    bundle4.putBoolean("open_gifts", true);
                                 }
-                                final ProfileActivity profileActivity = new ProfileActivity(bundle3);
+                                final ProfileActivity profileActivity = new ProfileActivity(bundle4);
                                 if ("gifts".equalsIgnoreCase(str2)) {
                                     profileActivity.whenFullyVisible(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda3
                                         @Override // java.lang.Runnable
@@ -444,25 +497,25 @@ public class LinkManager {
                         } else if ("notifications".equalsIgnoreCase(str)) {
                             if (!TextUtils.isEmpty(str3) && ("private-chats".equalsIgnoreCase(str2) || "groups".equalsIgnoreCase(str2) || "channels".equalsIgnoreCase(str2) || "stories".equalsIgnoreCase(str2) || "reactions".equalsIgnoreCase(str2))) {
                                 if ("private-chats".equalsIgnoreCase(str2)) {
-                                    i4 = 1;
+                                    i3 = 1;
                                 } else {
                                     if (!"groups".equalsIgnoreCase(str2)) {
                                         if ("channels".equalsIgnoreCase(str2)) {
-                                            i4 = 2;
+                                            i3 = 2;
                                         } else if ("stories".equalsIgnoreCase(str2)) {
-                                            i4 = 3;
+                                            i3 = 3;
                                         } else if ("reactions".equalsIgnoreCase(str2)) {
-                                            i4 = 4;
+                                            i3 = 4;
                                         }
                                     }
-                                    i4 = 0;
+                                    i3 = 0;
                                 }
                                 final NotificationsSettingsActivity notificationsSettingsActivity = new NotificationsSettingsActivity();
                                 init();
                                 notificationsSettingsActivity.loadExceptions(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda5
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        LinkManager.this.lambda$handleSettings$7(notificationsSettingsActivity, i4, str3);
+                                        LinkManager.this.lambda$handleSettings$7(notificationsSettingsActivity, i3, str3);
                                     }
                                 });
                             } else {
@@ -571,34 +624,34 @@ public class LinkManager {
                                 } else {
                                     if (!TextUtils.isEmpty(str3) && ("phone-number".equalsIgnoreCase(str2) || "last-seen".equalsIgnoreCase(str2) || "profile-photos".equalsIgnoreCase(str2) || "bio".equalsIgnoreCase(str2) || "gifts".equalsIgnoreCase(str2) || "birthday".equalsIgnoreCase(str2) || "saved-music".equalsIgnoreCase(str2) || "forwards".equalsIgnoreCase(str2) || "calls".equalsIgnoreCase(str2) || "voice".equalsIgnoreCase(str2) || "messages".equalsIgnoreCase(str2) || "invites".equalsIgnoreCase(str2))) {
                                         if ("phone-number".equalsIgnoreCase(str2)) {
-                                            i3 = 6;
+                                            i2 = 6;
                                         } else {
                                             if (!"last-seen".equalsIgnoreCase(str2)) {
                                                 if ("profile-photos".equalsIgnoreCase(str2)) {
-                                                    i3 = 4;
+                                                    i2 = 4;
                                                 } else if ("bio".equalsIgnoreCase(str2)) {
-                                                    i3 = 9;
+                                                    i2 = 9;
                                                 } else if ("gifts".equalsIgnoreCase(str2)) {
-                                                    i3 = 12;
+                                                    i2 = 12;
                                                 } else if ("birthday".equalsIgnoreCase(str2)) {
-                                                    i3 = 11;
+                                                    i2 = 11;
                                                 } else if ("saved-music".equalsIgnoreCase(str2)) {
-                                                    i3 = 14;
+                                                    i2 = 14;
                                                 } else if ("forwards".equalsIgnoreCase(str2)) {
-                                                    i3 = 5;
+                                                    i2 = 5;
                                                 } else if ("calls".equalsIgnoreCase(str2)) {
-                                                    i3 = "p2p".equalsIgnoreCase(str3) ? 3 : 2;
+                                                    i2 = "p2p".equalsIgnoreCase(str3) ? 3 : 2;
                                                 } else if ("voice".equalsIgnoreCase(str2)) {
-                                                    i3 = 8;
+                                                    i2 = 8;
                                                 } else if ("messages".equalsIgnoreCase(str2)) {
-                                                    i3 = 10;
+                                                    i2 = 10;
                                                 } else if ("invites".equalsIgnoreCase(str2)) {
-                                                    i3 = 1;
+                                                    i2 = 1;
                                                 }
                                             }
-                                            i3 = 0;
+                                            i2 = 0;
                                         }
-                                        presentFragment(new PrivacyControlActivity(i3));
+                                        presentFragment(new PrivacyControlActivity(i2));
                                         if ("birthday".equalsIgnoreCase(str2) && "add".equalsIgnoreCase(str3)) {
                                             scrollTo("setBirthdayRow");
                                         }
@@ -634,6 +687,9 @@ public class LinkManager {
                                                 scrollTo("currentPhotoForRestRow");
                                             }
                                         }
+                                        return true;
+                                    }
+                                    if (!MessagesController.getInstance(this.currentAccount).autoarchiveAvailable && "archive-and-mute".equalsIgnoreCase(str2)) {
                                         return true;
                                     }
                                     presentFragment(new PrivacySettingsActivity());
@@ -745,15 +801,14 @@ public class LinkManager {
                                     }
                                     return true;
                                 }
+                                int i4 = 2;
                                 if ("auto-download".equalsIgnoreCase(str2)) {
                                     if ("mobile".equalsIgnoreCase(str3) || "wifi".equalsIgnoreCase(str3) || "roaming".equalsIgnoreCase(str3)) {
                                         if (!"mobile".equalsIgnoreCase(str3)) {
                                             if ("wifi".equalsIgnoreCase(str3)) {
-                                                i2 = 1;
-                                            } else if ("roaming".equalsIgnoreCase(str3)) {
-                                                i2 = 2;
+                                                i4 = 1;
                                             }
-                                            presentFragment(new DataAutoDownloadActivity(i2));
+                                            presentFragment(new DataAutoDownloadActivity(i4));
                                             if ("enable".equalsIgnoreCase(str4)) {
                                                 scrollTo("autoDownloadRow");
                                             }
@@ -774,8 +829,8 @@ public class LinkManager {
                                             }
                                             return true;
                                         }
-                                        i2 = 0;
-                                        presentFragment(new DataAutoDownloadActivity(i2));
+                                        i4 = 0;
+                                        presentFragment(new DataAutoDownloadActivity(i4));
                                         if ("enable".equalsIgnoreCase(str4)) {
                                         }
                                         if ("usage".equalsIgnoreCase(str4)) {
@@ -801,9 +856,9 @@ public class LinkManager {
                                     } else {
                                         i = "channels".equalsIgnoreCase(str3) ? 4 : 1;
                                     }
-                                    Bundle bundle4 = new Bundle();
-                                    bundle4.putInt("type", i);
-                                    presentFragment(new SaveToGallerySettingsActivity(bundle4));
+                                    Bundle bundle5 = new Bundle();
+                                    bundle5.putInt("type", i);
+                                    presentFragment(new SaveToGallerySettingsActivity(bundle5));
                                     if ("max-video-size".equalsIgnoreCase(str4)) {
                                         scrollTo("maxVideoSizeRow");
                                     }
@@ -1004,7 +1059,7 @@ public class LinkManager {
                                     } else {
                                         UserSelectorBottomSheet.open(0L, BirthdayController.getInstance(this.currentAccount).getState());
                                     }
-                                } else if ("ask-question".equalsIgnoreCase(str)) {
+                                } else if ("ask-question".equalsIgnoreCase(str) || "ask-a-question".equalsIgnoreCase(str)) {
                                     AlertsCreator.createSupportAlert(getLastFragment(), null).show();
                                 } else if ("faq".equalsIgnoreCase(str)) {
                                     Browser.openUrl(this.activity, LocaleController.getString(R.string.TelegramFaqUrl));
@@ -1031,7 +1086,7 @@ public class LinkManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$handleSettings$2(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda10
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.this.lambda$handleSettings$1(tLObject);
@@ -1160,7 +1215,7 @@ public class LinkManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$handleSettings$4(final ProfileActivity profileActivity) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda9
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.lambda$handleSettings$3(ProfileActivity.this);
@@ -1179,7 +1234,7 @@ public class LinkManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$handleSettings$6(final ProfileActivity profileActivity) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda11
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.lambda$handleSettings$5(ProfileActivity.this);
@@ -1265,7 +1320,7 @@ public class LinkManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$handleSettings$11(final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda15
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.this.lambda$handleSettings$10(tLObject, str);
@@ -1283,7 +1338,7 @@ public class LinkManager {
         if (!TwoStepVerificationActivity.canHandleCurrentPassword(password, false)) {
             AlertsCreator.showUpdateAppAlert(this.activity, LocaleController.getString(R.string.UpdateAppAlert), true);
         }
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda16
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.this.lambda$handleSettings$9(str);
@@ -1346,7 +1401,7 @@ public class LinkManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$handleInvoiceSlug$17(final TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda14
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
                 LinkManager.this.lambda$handleInvoiceSlug$16(tL_error, tLObject, tL_inputInvoiceSlug, str);
@@ -1368,12 +1423,12 @@ public class LinkManager {
                 LaunchActivity launchActivity = this.activity;
                 final Runnable runnable = launchActivity.navigateToPremiumGiftCallback;
                 launchActivity.navigateToPremiumGiftCallback = null;
-                StarsController.getInstance(this.currentAccount).openPaymentForm(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject, new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda17
+                StarsController.getInstance(this.currentAccount).openPaymentForm(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject, new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda18
                     @Override // java.lang.Runnable
                     public final void run() {
                         LinkManager.this.lambda$handleInvoiceSlug$13();
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda18
+                }, new Utilities.Callback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda19
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         LinkManager.lambda$handleInvoiceSlug$14(runnable, (String) obj);
@@ -1393,7 +1448,7 @@ public class LinkManager {
                 final Runnable runnable2 = launchActivity2.navigateToPremiumGiftCallback;
                 if (runnable2 != null) {
                     launchActivity2.navigateToPremiumGiftCallback = null;
-                    paymentFormActivity.setPaymentFormCallback(new PaymentFormActivity.PaymentFormCallback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda19
+                    paymentFormActivity.setPaymentFormCallback(new PaymentFormActivity.PaymentFormCallback() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda20
                         @Override // org.telegram.ui.PaymentFormActivity.PaymentFormCallback
                         public final void onInvoiceStatusChanged(PaymentFormActivity.InvoiceStatus invoiceStatus) {
                             LinkManager.lambda$handleInvoiceSlug$15(runnable2, invoiceStatus);
@@ -1418,6 +1473,33 @@ public class LinkManager {
     public static /* synthetic */ void lambda$handleInvoiceSlug$15(Runnable runnable, PaymentFormActivity.InvoiceStatus invoiceStatus) {
         if (invoiceStatus == PaymentFormActivity.InvoiceStatus.PAID) {
             runnable.run();
+        }
+    }
+
+    private boolean handleOAuth(Uri uri, String str) {
+        if (isEmpty(str)) {
+            return false;
+        }
+        init();
+        final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = new TLRPC.TL_messages_requestUrlAuth();
+        tL_messages_requestUrlAuth.flags |= 4;
+        tL_messages_requestUrlAuth.url = uri.toString();
+        getConnectionsManager().sendRequestTyped(tL_messages_requestUrlAuth, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda9
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                LinkManager.this.lambda$handleOAuth$18(tL_messages_requestUrlAuth, (TLRPC.UrlAuthResult) obj, (TLRPC.TL_error) obj2);
+            }
+        });
+        return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$handleOAuth$18(TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, TLRPC.UrlAuthResult urlAuthResult, TLRPC.TL_error tL_error) {
+        lambda$handleInvoiceSlug$13();
+        if (tL_error != null) {
+            getBulletinFactory().showForError(tL_error);
+        } else {
+            OAuthSheet.handle(this.isExternalIntent, this.currentAccount, tL_messages_requestUrlAuth, urlAuthResult);
         }
     }
 
@@ -1475,15 +1557,15 @@ public class LinkManager {
             if (this.progressDialog == null) {
                 this.progressDialog = new AlertDialog(this.activity, 3);
             }
-            this.progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda12
+            this.progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda13
                 @Override // android.content.DialogInterface.OnCancelListener
                 public final void onCancel(DialogInterface dialogInterface) {
-                    LinkManager.this.lambda$init$18(dialogInterface);
+                    LinkManager.this.lambda$init$19(dialogInterface);
                 }
             });
             this.progressDialog.showDelayed(300L);
         } else {
-            progress.onCancel(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda13
+            progress.onCancel(new Runnable() { // from class: org.telegram.ui.LinkManager$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
                     LinkManager.this.cancel();
@@ -1495,7 +1577,7 @@ public class LinkManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$init$18(DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$init$19(DialogInterface dialogInterface) {
         cancel();
     }
 
@@ -1522,5 +1604,122 @@ public class LinkManager {
             progress.end();
         }
         this.done = true;
+    }
+
+    private static boolean isEmpty(String str) {
+        return TextUtils.isEmpty(str);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0050 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0078 A[ADDED_TO_REGION, REMOVE, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0079 A[Catch: Exception -> 0x0036, TryCatch #0 {Exception -> 0x0036, blocks: (B:6:0x0004, B:9:0x000f, B:12:0x0016, B:25:0x0056, B:27:0x005e, B:29:0x0066, B:31:0x0072, B:34:0x0079, B:36:0x0093, B:38:0x009b, B:41:0x00a5, B:44:0x00b6, B:46:0x00c2, B:47:0x00c5, B:49:0x00cb, B:51:0x00d2, B:54:0x00dd, B:56:0x00e3, B:59:0x00f0, B:60:0x00f4, B:62:0x018e, B:63:0x0191, B:66:0x019e, B:71:0x00f9, B:74:0x0104, B:77:0x0110, B:80:0x011b, B:83:0x0126, B:86:0x0130, B:89:0x013a, B:92:0x0145, B:95:0x014f, B:98:0x015a, B:101:0x0165, B:104:0x0170, B:107:0x017a, B:110:0x0185, B:113:0x01a9, B:115:0x01af, B:118:0x002c, B:121:0x0039, B:124:0x0043), top: B:5:0x0004 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean isWebAppLink(String str) {
+        Uri parse;
+        String scheme;
+        String path;
+        char c;
+        if (str == null) {
+            return false;
+        }
+        try {
+            parse = Uri.parse(str);
+            scheme = parse.getScheme();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+        if (scheme == null || (path = parse.getPath()) == null) {
+            return false;
+        }
+        int hashCode = scheme.hashCode();
+        if (hashCode == 3699) {
+            if (scheme.equals("tg")) {
+                c = 2;
+                if (c != 0) {
+                }
+                if (!path.isEmpty()) {
+                }
+            }
+            c = 65535;
+            if (c != 0) {
+            }
+            if (!path.isEmpty()) {
+            }
+        } else if (hashCode != 3213448) {
+            if (hashCode == 99617003 && scheme.equals("https")) {
+                c = 1;
+                if (c != 0 || c == 1) {
+                    if (!path.isEmpty()) {
+                        return false;
+                    }
+                    String lowerCase = parse.getHost().toLowerCase();
+                    boolean find = LaunchActivity.PREFIX_T_ME_PATTERN.matcher(lowerCase).find();
+                    if (lowerCase.equals("telegram.me") || lowerCase.equals("t.me") || lowerCase.equals("telegram.dog") || find) {
+                        ArrayList arrayList = new ArrayList(parse.getPathSegments());
+                        if (arrayList.size() > 0 && ((String) arrayList.get(0)).equals("s")) {
+                            arrayList.remove(0);
+                        }
+                        if (arrayList.size() <= 0 || (arrayList.size() >= 3 && "s".equals(arrayList.get(1)))) {
+                            return false;
+                        }
+                        if (arrayList.size() > 1) {
+                            String str2 = (String) arrayList.get(0);
+                            if (TextUtils.isEmpty(str2)) {
+                                return false;
+                            }
+                            switch (str2) {
+                                case "joinchat":
+                                case "login":
+                                case "addstickers":
+                                case "addemoji":
+                                case "msg":
+                                case "share":
+                                case "confirmphone":
+                                case "setlanguage":
+                                case "addtheme":
+                                case "boost":
+                                case "c":
+                                case "contact":
+                                case "folder":
+                                case "addlist":
+                                    break;
+                                default:
+                                    String str3 = (String) arrayList.get(1);
+                                    if (!TextUtils.isEmpty(str3) && !str3.matches("^\\d+$")) {
+                                    }
+                                    break;
+                            }
+                            return false;
+                        }
+                        if (arrayList.size() == 1) {
+                            return !TextUtils.isEmpty(parse.getQueryParameter("startapp"));
+                        }
+                    }
+                } else if (c == 2 && (str.startsWith("tg:resolve") || str.startsWith("tg://resolve"))) {
+                    return !TextUtils.isEmpty(parse.getQueryParameter("appname"));
+                }
+                return false;
+            }
+            c = 65535;
+            if (c != 0) {
+            }
+            if (!path.isEmpty()) {
+            }
+        } else {
+            if (scheme.equals("http")) {
+                c = 0;
+                if (c != 0) {
+                }
+                if (!path.isEmpty()) {
+                }
+            }
+            c = 65535;
+            if (c != 0) {
+            }
+            if (!path.isEmpty()) {
+            }
+        }
     }
 }

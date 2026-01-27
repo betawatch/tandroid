@@ -33,7 +33,7 @@ final class X extends g2 {
                 if (!z) {
                     intStream.sequential().forEach(t);
                 } else {
-                    j$.util.Y spliterator = intStream.sequential().spliterator();
+                    j$.util.Z spliterator = intStream.sequential().spliterator();
                     while (!this.a.n() && spliterator.tryAdvance((IntConsumer) t)) {
                     }
                 }

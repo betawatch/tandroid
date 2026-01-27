@@ -1,13 +1,13 @@
 package j$.util.concurrent;
 
-import j$.util.S;
-import j$.util.V;
+import j$.util.T;
+import j$.util.W;
 import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 
 /* loaded from: classes2.dex */
-final class y implements V {
+final class y implements W {
     long a;
     final long b;
     final double c;
@@ -20,22 +20,22 @@ final class y implements V {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        S.a(this, consumer);
+        T.a(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return S.d(this);
+        return T.d(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i) {
-        return S.e(this, i);
+        return T.e(this, i);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return S.f(this, consumer);
+        return T.f(this, consumer);
     }
 
     @Override // j$.util.Spliterator
@@ -50,7 +50,7 @@ final class y implements V {
         this.d = d2;
     }
 
-    @Override // j$.util.e0, j$.util.Spliterator
+    @Override // j$.util.f0, j$.util.Spliterator
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
     public final y trySplit() {
         long j = this.a;
@@ -67,7 +67,7 @@ final class y implements V {
         return this.b - this.a;
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
         doubleConsumer.getClass();
         long j = this.a;
@@ -79,7 +79,7 @@ final class y implements V {
         return true;
     }
 
-    @Override // j$.util.e0
+    @Override // j$.util.f0
     public final void forEachRemaining(DoubleConsumer doubleConsumer) {
         doubleConsumer.getClass();
         long j = this.a;

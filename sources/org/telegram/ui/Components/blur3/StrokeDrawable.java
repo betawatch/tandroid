@@ -1,6 +1,7 @@
 package org.telegram.ui.Components.blur3;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.RectF;
@@ -13,7 +14,9 @@ import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorPro
 /* loaded from: classes5.dex */
 public class StrokeDrawable extends Drawable {
     private BlurredBackgroundColorProvider colorProvider;
+    public boolean nonRound;
     private int padding;
+    public float radius;
     protected int strokeColorBottom;
     protected int strokeColorTop;
     private float alpha = 1.0f;
@@ -68,7 +71,13 @@ public class StrokeDrawable extends Drawable {
         float centerY = getBounds().centerY();
         float min = (Math.min(getBounds().width(), getBounds().height()) / 2.0f) - this.padding;
         this.rect.set(centerX - min, centerY - min, centerX + min, centerY + min);
-        canvas.drawCircle(centerX, centerY, min, this.paintFill);
+        if (this.nonRound) {
+            this.rect.set(getBounds());
+            min = this.radius;
+        }
+        if (Color.alpha(this.paintFill.getColor()) > 0) {
+            canvas.drawCircle(centerX, centerY, min, this.paintFill);
+        }
         if (this.strokeColorTop != 0) {
             BlurredBackgroundDrawable.drawStroke(canvas, this.rect, min, AndroidUtilities.dpf2(1.0f), true, this.paintStrokeTop);
         }

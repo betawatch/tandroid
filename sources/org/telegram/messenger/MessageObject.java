@@ -6918,23 +6918,23 @@ public class MessageObject {
         return tL_textWithEntities2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x0198, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x019a, code lost:
     
         if (r2 != null) goto L121;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x019c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x019e, code lost:
     
         if (r8.ttl_seconds == 0) goto L121;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x0116, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0118, code lost:
     
         if (isVideoDocument(r4.document) != false) goto L65;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x0125, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0127, code lost:
     
         r4 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x0123, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x0125, code lost:
     
         if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) != 0) goto L65;
      */
@@ -6968,7 +6968,7 @@ public class MessageObject {
             return LocaleController.getString(R.string.ForwardedStory);
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaDice) {
-            return getDiceEmoji();
+            return getDiceEmoji((TLRPC.TL_messageMediaDice) messageMedia);
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
             if (((TLRPC.TL_messageMediaPoll) messageMedia).poll.quiz) {
@@ -7822,6 +7822,10 @@ public class MessageObject {
             }
         }
         return TextUtils.replace(charSequence, new String[]{str}, new CharSequence[]{spannableStringBuilder});
+    }
+
+    public static CharSequence replaceWithLink(CharSequence charSequence, String str, CharSequence charSequence2) {
+        return TextUtils.indexOf(charSequence, str) >= 0 ? TextUtils.replace(charSequence, new String[]{str}, new CharSequence[]{charSequence2}) : charSequence;
     }
 
     public static CharSequence replaceWithLink(CharSequence charSequence, String str, TLObject tLObject) {
@@ -12458,6 +12462,15 @@ public class MessageObject {
         return (media instanceof TLRPC.TL_messageMediaDice) && ((TLRPC.TL_messageMediaDice) media).game_outcome != null;
     }
 
+    public static long getStakedDiceWinAmount(TLRPC.TL_messageMediaDice tL_messageMediaDice) {
+        TLRPC.TL_messages_emojiGameOutcome tL_messages_emojiGameOutcome = tL_messageMediaDice.game_outcome;
+        if (tL_messages_emojiGameOutcome == null) {
+            return 0L;
+        }
+        long j = tL_messages_emojiGameOutcome.ton_amount;
+        return j > 0 ? j : -tL_messages_emojiGameOutcome.stake_ton_amount;
+    }
+
     public long getStakedDiceWinAmount() {
         TLRPC.TL_messages_emojiGameOutcome tL_messages_emojiGameOutcome;
         TLRPC.MessageMedia media = getMedia(this.messageOwner);
@@ -12482,6 +12495,16 @@ public class MessageObject {
             return null;
         }
         TLRPC.TL_messageMediaDice tL_messageMediaDice = (TLRPC.TL_messageMediaDice) getMedia(this.messageOwner);
+        if (TextUtils.isEmpty(tL_messageMediaDice.emoticon)) {
+            return "🎲";
+        }
+        return tL_messageMediaDice.emoticon.replace("️", "");
+    }
+
+    public String getDiceEmoji(TLRPC.TL_messageMediaDice tL_messageMediaDice) {
+        if (tL_messageMediaDice == null) {
+            return null;
+        }
         if (TextUtils.isEmpty(tL_messageMediaDice.emoticon)) {
             return "🎲";
         }
@@ -13215,6 +13238,14 @@ public class MessageObject {
             return null;
         }
         return Long.valueOf(DialogObject.getPeerDialogId(peer));
+    }
+
+    public TLObject getForwardedFromPeerObject() {
+        Long forwardedFromId = getForwardedFromId();
+        if (forwardedFromId == null) {
+            return null;
+        }
+        return MessagesController.getInstance(this.currentAccount).getUserOrChat(forwardedFromId.longValue());
     }
 
     public int getReplyMsgId() {
