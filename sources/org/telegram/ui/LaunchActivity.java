@@ -839,7 +839,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             onBackInvokedDispatcher = getOnBackInvokedDispatcher();
             onBackInvokedDispatcher.registerOnBackInvokedCallback(0, AppCompatDelegateImpl$Api33Impl$$ExternalSyntheticApiModelOutline0.m(this.onBackInvokedCallback));
         }
-        this.refreshRateController = new RefreshRateController(this);
+        if (i2 >= 24) {
+            this.refreshRateController = new RefreshRateController(this);
+        }
         checkFrameMetrics();
     }
 
@@ -18054,7 +18056,11 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             VoIPFragment.onPause();
         }
         SpoilerEffect2.pause(true);
-        this.refreshRateController.stop();
+        RefreshRateController refreshRateController = this.refreshRateController;
+        if (refreshRateController == null || Build.VERSION.SDK_INT < 24) {
+            return;
+        }
+        refreshRateController.stop();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -18309,7 +18315,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
         }
         checkAppUpdate(false, null);
-        if (Build.VERSION.SDK_INT >= 23) {
+        int i2 = Build.VERSION.SDK_INT;
+        if (i2 >= 23) {
             canDrawOverlays = Settings.canDrawOverlays(this);
             ApplicationLoader.canDrawOverlays = canDrawOverlays;
         }
@@ -18330,7 +18337,11 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (MessagesController.getInstance(this.currentAccount).hasSetupEmailSuggestion()) {
             MessagesController.getInstance(this.currentAccount).checkPromoInfo(true);
         }
-        this.refreshRateController.start();
+        RefreshRateController refreshRateController = this.refreshRateController;
+        if (refreshRateController == null || i2 < 24) {
+            return;
+        }
+        refreshRateController.start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
