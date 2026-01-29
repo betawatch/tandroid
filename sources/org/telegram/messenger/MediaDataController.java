@@ -95,6 +95,7 @@ import org.telegram.ui.Stories.StoriesStorage;
 /* loaded from: classes3.dex */
 public class MediaDataController extends BaseController {
     public static final String ATTACH_MENU_BOT_ANIMATED_ICON_KEY = "android_animated";
+    public static final String ATTACH_MENU_BOT_ANIMATED_ICON_KEY_2 = "android_active_animated";
     public static final String ATTACH_MENU_BOT_COLOR_DARK_ICON = "dark_icon";
     public static final String ATTACH_MENU_BOT_COLOR_DARK_TEXT = "dark_text";
     public static final String ATTACH_MENU_BOT_COLOR_LIGHT_ICON = "light_icon";
@@ -2760,11 +2761,11 @@ public class MediaDataController extends BaseController {
         return false;
     }
 
-    public static TLRPC.TL_attachMenuBotIcon getAnimatedAttachMenuBotIcon(TLRPC.TL_attachMenuBot tL_attachMenuBot) {
+    public static TLRPC.TL_attachMenuBotIcon getAnimatedAttachMenuBotIcon(TLRPC.TL_attachMenuBot tL_attachMenuBot, boolean z) {
         Iterator<TLRPC.TL_attachMenuBotIcon> it = tL_attachMenuBot.icons.iterator();
         while (it.hasNext()) {
             TLRPC.TL_attachMenuBotIcon next = it.next();
-            if (next.name.equals(ATTACH_MENU_BOT_ANIMATED_ICON_KEY)) {
+            if (next.name.equals(z ? ATTACH_MENU_BOT_ANIMATED_ICON_KEY_2 : ATTACH_MENU_BOT_ANIMATED_ICON_KEY)) {
                 return next;
             }
         }

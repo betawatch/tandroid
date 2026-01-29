@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Adapters.FiltersView;
 
 /* loaded from: classes5.dex */
-public class FragmentSearchField extends FrameLayout implements FactorAnimator.Target {
+public class FragmentSearchField extends FrameLayout implements FactorAnimator.Target, Theme.Colorable {
     private final LinearLayout additionalIconsLayout;
     private final BoolAnimator animatorCloseIconVisible;
     private final FactorAnimator animatorSearchFiltersWidth;
@@ -48,6 +48,7 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
     private final ImageView closeIcon;
     private final ArrayList currentSearchFilters;
     public final EditTextBoldCursor editText;
+    public boolean isSectionBackground;
     private final AnimationNotificationsLocker notificationsLocker;
     private Runnable onCloseSearch;
     private final Theme.ResourcesProvider resourcesProvider;
@@ -219,7 +220,7 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         canvas.save();
         Drawable drawable = this.bg;
         if (drawable != null) {
-            drawable.setBounds(0, 0, getWidth(), (int) (getHeight() * this.clipHeight));
+            drawable.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), (int) ((getHeight() - getPaddingBottom()) * this.clipHeight));
             this.bg.draw(canvas);
         }
         if (this.clipHeight < 1.0f) {
@@ -250,13 +251,25 @@ public class FragmentSearchField extends FrameLayout implements FactorAnimator.T
         this.editText.setPadding(i, 0, max, 0);
     }
 
+    public void setSectionBackground() {
+        this.isSectionBackground = true;
+        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
+        updateColors();
+    }
+
+    @Override // org.telegram.ui.ActionBar.Theme.Colorable
     public void updateColors() {
+        Drawable createRoundRectDrawable;
         Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
         boolean isDark = resourcesProvider != null ? resourcesProvider.isDark() : Theme.isCurrentThemeDark();
-        int dp = AndroidUtilities.dp(20.0f);
-        int i = Theme.key_windowBackgroundWhiteBlackText;
-        this.bg = Theme.createRoundRectDrawable(dp, getThemedColor(i, isDark ? 0.07f : 0.05f));
+        if (this.isSectionBackground) {
+            createRoundRectDrawable = Theme.createRoundRectDrawableShadowed(AndroidUtilities.dp(20.0f), getThemedColor(Theme.key_windowBackgroundWhite));
+        } else {
+            createRoundRectDrawable = Theme.createRoundRectDrawable(AndroidUtilities.dp(20.0f), getThemedColor(Theme.key_windowBackgroundWhiteBlackText, isDark ? 0.07f : 0.05f));
+        }
+        this.bg = createRoundRectDrawable;
         ImageView imageView = this.searchIcon;
+        int i = Theme.key_windowBackgroundWhiteBlackText;
         int themedColor = getThemedColor(i, 0.6f);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         imageView.setColorFilter(themedColor, mode);

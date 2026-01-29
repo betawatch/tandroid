@@ -1775,13 +1775,13 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         create2.setRadius(AndroidUtilities.dp(22.0f));
         this.captionContainerBg.setPadding(AndroidUtilities.dp(7.0f));
         this.frameLayout2.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(5.0f));
-        FrameLayout frameLayout7 = this.pickerBottom;
+        FrameLayout frameLayout7 = this.pickerBottomLayout;
         if (frameLayout7 != null) {
             BlurredBackgroundDrawable create3 = this.iBlur3FactoryLiquidGlass.create(frameLayout7, BlurredBackgroundProviderImpl.inputFieldShareAlert(this.resourcesProvider));
             create3.setPadding(AndroidUtilities.dp(7.0f));
             create3.setRadius(AndroidUtilities.dp(22.0f));
-            this.pickerBottom.setBackground(create3);
-            this.pickerBottom.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
+            this.pickerBottomLayout.setBackground(create3);
+            this.pickerBottomLayout.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
         }
         FrameLayout frameLayout8 = this.timestampFrameLayout;
         if (frameLayout8 != null) {

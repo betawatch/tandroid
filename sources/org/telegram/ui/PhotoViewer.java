@@ -6332,7 +6332,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         this.videoAvatarTooltip.setTextSize(1, 14.0f);
         this.videoAvatarTooltip.setTextColor(-7566196);
         this.containerView.addView(this.videoAvatarTooltip, LayoutHelper.createFrame(-1, -2.0f, 83, 0.0f, 8.0f, 0.0f, 0.0f));
-        ChatActivityEnterView.SendButton sendButton = new ChatActivityEnterView.SendButton(this.parentActivity, R.drawable.msg_input_send_mini, resourcesProvider) { // from class: org.telegram.ui.PhotoViewer.34
+        ChatActivityEnterView.SendButton sendButton = new ChatActivityEnterView.SendButton(this.parentActivity, R.drawable.send_plane_24, resourcesProvider) { // from class: org.telegram.ui.PhotoViewer.34
             @Override // org.telegram.ui.Components.ChatActivityEnterView.SendButton
             public boolean isInactive() {
                 return false;
@@ -6359,8 +6359,10 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             }
         };
         this.pickerViewSendButton = sendButton;
-        sendButton.setCircleSize(AndroidUtilities.dp(48.0f));
-        this.containerView.addView(this.pickerViewSendButton, LayoutHelper.createFrame(120, 120.0f, 85, 0.0f, 0.0f, 14.0f, 2.33f));
+        sendButton.setCircleSize(AndroidUtilities.dp(52.0f), AndroidUtilities.dp(38.0f));
+        ChatActivityEnterView.SendButton sendButton2 = this.pickerViewSendButton;
+        sendButton2.newCounterPos = true;
+        this.containerView.addView(sendButton2, LayoutHelper.createFrame(120, 120.0f, 85, 0.0f, 0.0f, 14.0f, 2.33f));
         this.pickerViewSendButton.setContentDescription(LocaleController.getString("Send", R.string.Send));
         ScaleStateListAnimator.apply(this.pickerViewSendButton);
         this.pickerViewSendButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PhotoViewer$$ExternalSyntheticLambda38
@@ -21225,14 +21227,14 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         if (sendButton != null) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) sendButton.getLayoutParams();
             if (i2 == 4 || i2 == 5) {
-                this.pickerViewSendButton.setResourceId(R.drawable.msg_input_send_mini);
+                this.pickerViewSendButton.setResourceId(R.drawable.send_plane_24);
                 layoutParams.bottomMargin = AndroidUtilities.dp(7.33f);
             } else if (i2 == 1 || i2 == 3 || i2 == 10 || i2 == 11) {
                 this.pickerViewSendButton.setResourceId(R.drawable.floating_check);
                 this.pickerViewSendButton.setPadding(0, AndroidUtilities.dp(1.0f), 0, 0);
                 layoutParams.bottomMargin = AndroidUtilities.dp(7.33f);
             } else {
-                this.pickerViewSendButton.setResourceId(R.drawable.msg_input_send_mini);
+                this.pickerViewSendButton.setResourceId(R.drawable.send_plane_24);
                 layoutParams.bottomMargin = AndroidUtilities.dp(2.33f);
             }
             this.pickerViewSendButton.setLayoutParams(layoutParams);

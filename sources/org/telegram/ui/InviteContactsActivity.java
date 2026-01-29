@@ -105,6 +105,11 @@ public class InviteContactsActivity extends BaseFragment implements Notification
     private final Rect tmpClipRect;
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean drawEdgeNavigationBar() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean isSupportEdgeToEdge() {
         return true;
     }

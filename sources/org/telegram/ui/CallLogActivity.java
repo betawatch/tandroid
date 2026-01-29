@@ -185,6 +185,11 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean drawEdgeNavigationBar() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean isSupportEdgeToEdge() {
         return true;
     }

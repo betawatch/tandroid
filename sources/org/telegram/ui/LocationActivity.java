@@ -650,7 +650,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                         this.actionBar.setTitle(LocaleController.getString(R.string.ShareLocation));
                         if (this.locationType != 4) {
                             this.overlayView = new MapOverlayView(context);
-                            ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, R.drawable.ic_ab_search, getResourceProvider()).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.LocationActivity.2
+                            ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, R.drawable.outline_header_search, getResourceProvider()).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.LocationActivity.2
                                 @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
                                 public void onSearchExpand() {
                                     LocationActivity.this.searching = true;

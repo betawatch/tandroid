@@ -376,7 +376,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
             return super.onInterceptTouchEvent(motionEvent);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:96:0x0343  */
+        /* JADX WARN: Removed duplicated region for block: B:100:0x035b  */
         @Override // android.widget.LinearLayout, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -442,16 +442,20 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
                 i3 -= AlertDialog.this.topImageView.getMeasuredHeight();
             }
             if (AlertDialog.this.topView != null) {
-                if (AlertDialog.this.aspectRatio == 0.0f) {
-                    f = size / 936.0f;
-                    f2 = 354.0f;
+                if (AlertDialog.this.aspectRatio >= 0.0f) {
+                    if (AlertDialog.this.aspectRatio == 0.0f) {
+                        f = size / 936.0f;
+                        f2 = 354.0f;
+                    } else {
+                        f = size;
+                        f2 = AlertDialog.this.aspectRatio;
+                    }
+                    int i6 = (int) (f * f2);
+                    AlertDialog.this.topView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30));
+                    AlertDialog.this.topView.getLayoutParams().height = i6;
                 } else {
-                    f = size;
-                    f2 = AlertDialog.this.aspectRatio;
+                    AlertDialog.this.topView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i2);
                 }
-                int i6 = (int) (f * f2);
-                AlertDialog.this.topView.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i6, TLObject.FLAG_30));
-                AlertDialog.this.topView.getLayoutParams().height = i6;
                 i3 -= AlertDialog.this.topView.getMeasuredHeight();
             }
             if (AlertDialog.this.progressViewStyle == 0) {
@@ -1942,27 +1946,6 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
 
         public Builder setMessage(CharSequence charSequence) {
             this.alertDialog.message = charSequence;
-            return this;
-        }
-
-        public Builder setButton(int i, CharSequence charSequence, OnButtonClickListener onButtonClickListener) {
-            if (i == -4) {
-                this.alertDialog.negative2ButtonText = charSequence;
-                this.alertDialog.negative2ButtonListener = onButtonClickListener;
-                return this;
-            }
-            if (i == -3) {
-                setNeutralButton(charSequence, onButtonClickListener);
-                return this;
-            }
-            if (i == -2) {
-                setNegativeButton(charSequence, onButtonClickListener);
-                return this;
-            }
-            if (i != -1) {
-                return this;
-            }
-            setPositiveButton(charSequence, onButtonClickListener);
             return this;
         }
 

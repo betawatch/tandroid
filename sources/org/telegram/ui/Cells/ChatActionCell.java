@@ -941,9 +941,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                                             }
                                         });
                                         botButton.buttonCustom = (BotInlineKeyboard.ButtonCustom) button;
-                                        int icon = button.getIcon();
-                                        if (icon != 0) {
-                                            Drawable drawable = getResources().getDrawable(icon);
+                                        int iconRes = button.getIconRes();
+                                        if (iconRes != 0) {
+                                            Drawable drawable = getResources().getDrawable(iconRes);
                                             botButton.iconDrawable = drawable;
                                             drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                                         }

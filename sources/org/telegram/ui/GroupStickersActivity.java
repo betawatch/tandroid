@@ -130,7 +130,7 @@ public class GroupStickersActivity extends BaseFragment implements NotificationC
                 }
             }
         });
-        ActionBarMenuItem addItem = this.actionBar.createMenu().addItem(0, R.drawable.ic_ab_search);
+        ActionBarMenuItem addItem = this.actionBar.createMenu().addItem(0, R.drawable.outline_header_search);
         this.searchItem = addItem;
         addItem.setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.GroupStickersActivity.2
             @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener

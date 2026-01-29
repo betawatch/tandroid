@@ -204,6 +204,11 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean drawEdgeNavigationBar() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean isActionBarCrossfadeEnabled() {
         return false;
     }

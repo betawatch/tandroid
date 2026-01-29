@@ -43,6 +43,7 @@ import org.telegram.ui.Components.RecyclerListView;
 /* loaded from: classes4.dex */
 public class FiltersView extends RecyclerListView {
     DiffUtil.Callback diffUtilsCallback;
+    public boolean drawDivider;
     LinearLayoutManager layoutManager;
     private ArrayList oldItems;
     private ArrayList usersFilters;
@@ -58,6 +59,7 @@ public class FiltersView extends RecyclerListView {
         super(context, resourcesProvider);
         this.usersFilters = new ArrayList();
         this.oldItems = new ArrayList();
+        this.drawDivider = true;
         this.diffUtilsCallback = new DiffUtil.Callback() { // from class: org.telegram.ui.Adapters.FiltersView.4
             @Override // androidx.recyclerview.widget.DiffUtil.Callback
             public boolean areContentsTheSame(int i, int i2) {
@@ -524,7 +526,9 @@ public class FiltersView extends RecyclerListView {
     @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), Theme.dividerPaint);
+        if (this.drawDivider) {
+            canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), Theme.dividerPaint);
+        }
     }
 
     public void updateColors() {

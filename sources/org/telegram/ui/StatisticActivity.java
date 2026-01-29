@@ -200,6 +200,11 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean drawEdgeNavigationBar() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean isSupportEdgeToEdge() {
         return true;
     }

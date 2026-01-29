@@ -1048,6 +1048,19 @@ public class AnimatedEmojiDrawable extends Drawable {
         updateAttachState();
     }
 
+    public void clear() {
+        ArrayList arrayList = this.holders;
+        if (arrayList != null) {
+            arrayList.clear();
+        }
+        ArrayList arrayList2 = this.views;
+        if (arrayList2 != null) {
+            arrayList2.clear();
+        }
+        this.preloading = false;
+        updateAttachState();
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public void updateAttachState() {
         ArrayList arrayList;

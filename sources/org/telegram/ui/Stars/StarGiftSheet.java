@@ -3730,26 +3730,29 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     }
 
     public static CharSequence getRarityName(TL_stars.StarGiftAttributeRarity starGiftAttributeRarity, Integer[] numArr) {
+        if (starGiftAttributeRarity instanceof TL_stars.TL_starGiftAttributeRarityUncommon) {
+            if (numArr != null) {
+                numArr[0] = -12539616;
+            }
+            return LocaleController.getString(R.string.GiftRarityUncommon);
+        }
         if (starGiftAttributeRarity instanceof TL_stars.TL_starGiftAttributeRarityRare) {
             if (numArr != null) {
                 numArr[0] = -4229632;
-                return "rare";
             }
-            return "rare";
+            return LocaleController.getString(R.string.GiftRarityRare);
         }
         if (starGiftAttributeRarity instanceof TL_stars.TL_starGiftAttributeRarityEpic) {
             if (numArr != null) {
                 numArr[0] = -6988581;
-                return "epic";
             }
-            return "epic";
+            return LocaleController.getString(R.string.GiftRarityEpic);
         }
         if (starGiftAttributeRarity instanceof TL_stars.TL_starGiftAttributeRarityLegendary) {
             if (numArr != null) {
                 numArr[0] = -4229632;
-                return "legendary";
             }
-            return "legendary";
+            return LocaleController.getString(R.string.GiftRarityLegendary);
         }
         if (starGiftAttributeRarity instanceof TL_stars.TL_starGiftAttributeRarity) {
             int i = ((TL_stars.TL_starGiftAttributeRarity) starGiftAttributeRarity).permille;

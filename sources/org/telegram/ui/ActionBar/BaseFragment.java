@@ -23,7 +23,9 @@ import android.view.Window;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.FrameLayout;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.graphics.Insets;
 import androidx.core.util.Supplier;
+import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
@@ -174,6 +176,9 @@ public abstract class BaseFragment {
 
     public boolean onFragmentCreate() {
         return true;
+    }
+
+    public void onInsets(int i, int i2, int i3, int i4) {
     }
 
     public void onLowMemory() {
@@ -1487,5 +1492,15 @@ public abstract class BaseFragment {
         addSheet(makeSheet.sheet);
         BottomSheetTabDialog.checkSheet(makeSheet.sheet);
         return makeSheet;
+    }
+
+    public boolean drawEdgeNavigationBar() {
+        return isSupportEdgeToEdge();
+    }
+
+    public WindowInsetsCompat onInsetsInternal(View view, WindowInsetsCompat windowInsetsCompat) {
+        Insets insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.navigationBars() | WindowInsetsCompat.Type.statusBars());
+        onInsets(insets.left, insets.top, insets.right, insets.bottom);
+        return WindowInsetsCompat.CONSUMED;
     }
 }

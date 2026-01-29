@@ -196,6 +196,11 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         ImageUpdater.ImageUpdaterDelegate.-CC.$default$didUploadFailed(this);
     }
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean drawEdgeNavigationBar() {
+        return false;
+    }
+
     @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
     public /* synthetic */ PhotoViewer.PlaceProviderObject getCloseIntoObject() {
         return ImageUpdater.ImageUpdaterDelegate.-CC.$default$getCloseIntoObject(this);
@@ -340,7 +345,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         this.actionBar.setBackgroundColor(0);
         this.actionBar.setBackground(null);
         ActionBarMenu createMenu = this.actionBar.createMenu();
-        ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, R.drawable.ic_ab_search, this.resourceProvider).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.SettingsActivity.3
+        ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, R.drawable.outline_header_search, this.resourceProvider).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.SettingsActivity.3
             @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchCollapse() {
                 SettingsActivity.this.animatorSearchPageVisible.setValue(false, true);

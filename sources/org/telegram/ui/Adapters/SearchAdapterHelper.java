@@ -112,9 +112,9 @@ public class SearchAdapterHelper {
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x0150  */
     /* JADX WARN: Removed duplicated region for block: B:52:0x0195  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x01a4  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x01c0 A[LOOP:2: B:57:0x01ba->B:59:0x01c0, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x01ac  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01b3 A[LOOP:2: B:55:0x01ad->B:57:0x01b3, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x01fc  */
+    /* JADX WARN: Removed duplicated region for block: B:62:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -213,9 +213,6 @@ public class SearchAdapterHelper {
                     }
                     z8 = false;
                 }
-                if (!z8) {
-                    this.delegate.onDataSetChanged(i2);
-                }
                 final AtomicInteger atomicInteger = new AtomicInteger(0);
                 final ArrayList arrayList3 = new ArrayList();
                 for (i3 = 0; i3 < arrayList.size(); i3++) {
@@ -231,6 +228,11 @@ public class SearchAdapterHelper {
                     }));
                     this.pendingRequestIds.add(Integer.valueOf(atomicInteger2.get()));
                 }
+                if (z8) {
+                    return;
+                }
+                this.delegate.onDataSetChanged(i2);
+                return;
             }
         }
         z8 = z7;
@@ -247,11 +249,11 @@ public class SearchAdapterHelper {
             }
             z8 = false;
         }
-        if (!z8) {
-        }
         final AtomicInteger atomicInteger3 = new AtomicInteger(0);
         final ArrayList arrayList32 = new ArrayList();
         while (i3 < arrayList.size()) {
+        }
+        if (z8) {
         }
     }
 

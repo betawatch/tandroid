@@ -9,14 +9,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.LoadingDrawable;
 import org.telegram.ui.Components.Text;
 
 /* loaded from: classes4.dex */
 class BotButton {
     public int angle;
+    public AnimatedEmojiDrawable animatedEmojiDrawable;
     public TLRPC.KeyboardButton button;
     public BotInlineKeyboard.ButtonCustom buttonCustom;
+    public BotInlineKeyboard.Button buttonImpl;
     public int height;
     public Drawable iconDrawable;
     public final Runnable invalidateRunnable;

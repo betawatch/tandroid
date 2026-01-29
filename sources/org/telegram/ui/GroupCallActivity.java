@@ -5380,9 +5380,9 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$9(DialogInterface dialogInterface) {
-        BaseFragment baseFragment = (BaseFragment) this.parentActivity.getActionBarLayout().getFragmentStack().get(this.parentActivity.getActionBarLayout().getFragmentStack().size() - 1);
-        if (this.anyEnterEventSent && (baseFragment instanceof ChatActivity)) {
-            ((ChatActivity) baseFragment).onEditTextDialogClose(true, true);
+        BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+        if (this.anyEnterEventSent && (safeLastFragment instanceof ChatActivity)) {
+            ((ChatActivity) safeLastFragment).onEditTextDialogClose(true, true);
         }
     }
 

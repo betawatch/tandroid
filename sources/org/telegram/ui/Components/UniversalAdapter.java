@@ -469,16 +469,15 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                     view = new TextRightIconCell(this.context, this.resourcesProvider);
                     break;
                 case 31:
-                    GraySectionCell graySectionCell = new GraySectionCell(this.context, 28, this.resourcesProvider);
                     RecyclerListView recyclerListView = this.listView;
-                    view = graySectionCell;
-                    if (recyclerListView != null) {
+                    if (recyclerListView != null && recyclerListView.hasSections()) {
+                        GraySectionCell graySectionCell = new GraySectionCell(this.context, 28, this.resourcesProvider);
+                        graySectionCell.setNoBackground(true);
                         view = graySectionCell;
-                        if (recyclerListView.hasSections()) {
-                            graySectionCell.setNoBackground(true);
-                            view = graySectionCell;
-                            break;
-                        }
+                        break;
+                    } else {
+                        view = new GraySectionCell(this.context, this.resourcesProvider);
+                        break;
                     }
                     break;
                 case 32:
@@ -933,11 +932,12 @@ public class UniversalAdapter extends AdapterWithDiffUtils {
                 }
                 CharSequence charSequence3 = charSequence;
                 String str2 = str;
-                boolean z5 = item.checked;
+                boolean z5 = item.locked;
                 Object obj9 = item.object2;
                 profileSearchCell.allowBotOpenButton(z5, obj9 instanceof Utilities.Callback ? (Utilities.Callback) obj9 : null);
                 profileSearchCell.setRectangularAvatar(item.red);
                 profileSearchCell.setData(obj8, null, str2, charSequence3, false, false);
+                profileSearchCell.setChecked(item.checked, false);
                 profileSearchCell.useSeparator = hasDivider;
                 break;
             case 33:

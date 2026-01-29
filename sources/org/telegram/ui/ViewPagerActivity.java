@@ -41,6 +41,11 @@ public abstract class ViewPagerActivity extends BaseFragment {
 
     protected abstract FrameLayout createContentView(Context context);
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean drawEdgeNavigationBar() {
+        return false;
+    }
+
     protected abstract int getFragmentsCount();
 
     protected abstract int getStartPosition();

@@ -6,19 +6,31 @@ import org.telegram.tgnet.TLRPC;
 /* loaded from: classes3.dex */
 public class BotInlineKeyboard {
 
+    public enum BackgroundColor {
+        NONE,
+        PRIMARY,
+        SUCCESS,
+        DANGER
+    }
+
     public static abstract class Button {
-        public abstract int getIcon();
+        public long getIconEmoji() {
+            return 0L;
+        }
+
+        public int getIconRes() {
+            return 0;
+        }
 
         public abstract String getText();
+
+        public BackgroundColor getColor() {
+            return BackgroundColor.NONE;
+        }
     }
 
     public static class ButtonBot extends Button {
         public final TLRPC.KeyboardButton button;
-
-        @Override // org.telegram.messenger.BotInlineKeyboard.Button
-        public int getIcon() {
-            return 0;
-        }
 
         public ButtonBot(TLRPC.KeyboardButton keyboardButton) {
             this.button = keyboardButton;
@@ -27,6 +39,32 @@ public class BotInlineKeyboard {
         @Override // org.telegram.messenger.BotInlineKeyboard.Button
         public String getText() {
             return this.button.text;
+        }
+
+        @Override // org.telegram.messenger.BotInlineKeyboard.Button
+        public BackgroundColor getColor() {
+            TLRPC.TL_keyboardButtonStyle tL_keyboardButtonStyle = this.button.style;
+            if (tL_keyboardButtonStyle != null) {
+                if (tL_keyboardButtonStyle.bg_success) {
+                    return BackgroundColor.SUCCESS;
+                }
+                if (tL_keyboardButtonStyle.bg_danger) {
+                    return BackgroundColor.DANGER;
+                }
+                if (tL_keyboardButtonStyle.bg_primary) {
+                    return BackgroundColor.PRIMARY;
+                }
+            }
+            return BackgroundColor.NONE;
+        }
+
+        @Override // org.telegram.messenger.BotInlineKeyboard.Button
+        public long getIconEmoji() {
+            TLRPC.TL_keyboardButtonStyle tL_keyboardButtonStyle = this.button.style;
+            if (tL_keyboardButtonStyle != null) {
+                return tL_keyboardButtonStyle.icon;
+            }
+            return 0L;
         }
     }
 
@@ -53,7 +91,7 @@ public class BotInlineKeyboard {
         }
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Button
-        public int getIcon() {
+        public int getIconRes() {
             return this.icon;
         }
     }

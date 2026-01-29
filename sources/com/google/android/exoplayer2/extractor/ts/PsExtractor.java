@@ -153,7 +153,7 @@ public final class PsExtractor implements Extractor {
                     elementaryStreamReader = new Ac3Reader();
                     this.foundAudioTrack = true;
                     this.lastTrackPosition = extractorInput.getPosition();
-                } else if ((readInt & NotificationCenter.botStarsUpdated) == 192) {
+                } else if ((readInt & 224) == 192) {
                     elementaryStreamReader = new MpegAudioReader();
                     this.foundAudioTrack = true;
                     this.lastTrackPosition = extractorInput.getPosition();

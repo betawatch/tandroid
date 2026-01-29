@@ -1985,7 +1985,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 }
             });
             if (this.dialog_id == this.profileActivity.getUserConfig().getClientUserId() && (this.profileActivity instanceof MediaActivity) && canShowSearchItem()) {
-                this.searchItemIcon = createMenu.addItem(11, R.drawable.ic_ab_search);
+                this.searchItemIcon = createMenu.addItem(11, R.drawable.outline_header_search);
             }
             ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, 0).setIsSearchField(true).setActionBarMenuItemSearchListener(new 4());
             this.searchItem = actionBarMenuItemSearchListener;
@@ -3051,7 +3051,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     show(SharedMediaLayout.this.searching && (SharedMediaLayout.this.getSelectedTab() == 11 || SharedMediaLayout.this.getSelectedTab() == 12) && SharedMediaLayout.this.searchTagsList.hasFilters());
                     ActionBarMenuItem actionBarMenuItem8 = SharedMediaLayout.this.searchItemIcon;
                     if (actionBarMenuItem8 != null) {
-                        actionBarMenuItem8.setIcon((hasFilters() && SharedMediaLayout.this.profileActivity.getUserConfig().isPremium()) ? R.drawable.navbar_search_tag : R.drawable.ic_ab_search, z);
+                        actionBarMenuItem8.setIcon((hasFilters() && SharedMediaLayout.this.profileActivity.getUserConfig().isPremium()) ? R.drawable.navbar_search_tag : R.drawable.outline_header_search, z);
                     }
                     if (SharedMediaLayout.this.searchItem != null) {
                         ActionBarMenuItem actionBarMenuItem9 = SharedMediaLayout.this.searchItem;
@@ -3485,7 +3485,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 makeOptions2.setDismissWithButtons(false).setOnTopOfScrim().setDimAlpha(0).show();
                 return;
             }
-            ItemOptions add = ItemOptions.makeOptions(SharedMediaLayout.this.profileActivity, SharedMediaLayout.this.photoVideoOptionsItem).add(R.drawable.msg_discussion, LocaleController.getString(R.string.SavedViewAsMessages), new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$5$$ExternalSyntheticLambda14
+            ItemOptions.makeOptions(SharedMediaLayout.this.profileActivity, SharedMediaLayout.this.photoVideoOptionsItem).add(R.drawable.msg_discussion, LocaleController.getString(R.string.SavedViewAsMessages), new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$5$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
                     SharedMediaLayout.5.this.lambda$onClick$8();
@@ -3495,14 +3495,10 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 public final void run() {
                     SharedMediaLayout.5.this.lambda$onClick$9();
                 }
-            });
-            int i3 = R.drawable.msg_delete;
-            String string2 = LocaleController.getString(R.string.DeleteAll);
-            final Theme.ResourcesProvider resourcesProvider2 = this.val$resourcesProvider;
-            add.add(i3, string2, new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$5$$ExternalSyntheticLambda1
+            }).add(R.drawable.msg_delete, LocaleController.getString(R.string.DeleteAll), new Runnable() { // from class: org.telegram.ui.Components.SharedMediaLayout$5$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SharedMediaLayout.5.this.lambda$onClick$11(resourcesProvider2);
+                    SharedMediaLayout.5.this.lambda$onClick$11();
                 }
             }).translate(0.0f, -AndroidUtilities.dp(52.0f)).setDimAlpha(0).show();
         }
@@ -3583,14 +3579,14 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onClick$11(Theme.ResourcesProvider resourcesProvider) {
+        public /* synthetic */ void lambda$onClick$11() {
             final TLRPC.User currentUser = SharedMediaLayout.this.profileActivity.getUserConfig().getCurrentUser();
-            AlertsCreator.createClearOrDeleteDialogAlert(SharedMediaLayout.this.profileActivity, false, null, currentUser, false, true, true, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.SharedMediaLayout$5$$ExternalSyntheticLambda17
+            AlertsCreator.createClearOrDeleteDialogAlert(SharedMediaLayout.this.profileActivity, false, null, currentUser, false, true, false, true, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.Components.SharedMediaLayout$5$$ExternalSyntheticLambda17
                 @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                 public final void run(boolean z) {
                     SharedMediaLayout.5.this.lambda$onClick$10(currentUser, z);
                 }
-            }, resourcesProvider);
+            });
         }
 
         /* JADX INFO: Access modifiers changed from: private */

@@ -7062,19 +7062,20 @@ public class TL_stars {
 
     public static class StarGiftAttributeRarity extends TLObject {
         private static StarGiftAttributeRarity fromConstructor(int i) {
-            if (i == -822614104) {
-                return new TL_starGiftAttributeRarityLegendary();
+            switch (i) {
+                case TL_starGiftAttributeRarityLegendary.constructor /* -822614104 */:
+                    return new TL_starGiftAttributeRarityLegendary();
+                case TL_starGiftAttributeRarityUncommon.constructor /* -607231095 */:
+                    return new TL_starGiftAttributeRarityUncommon();
+                case TL_starGiftAttributeRarityRare.constructor /* -259174037 */:
+                    return new TL_starGiftAttributeRarityRare();
+                case TL_starGiftAttributeRarity.constructor /* 910391095 */:
+                    return new TL_starGiftAttributeRarity();
+                case TL_starGiftAttributeRarityEpic.constructor /* 2029777832 */:
+                    return new TL_starGiftAttributeRarityEpic();
+                default:
+                    return null;
             }
-            if (i == -259174037) {
-                return new TL_starGiftAttributeRarityRare();
-            }
-            if (i == 910391095) {
-                return new TL_starGiftAttributeRarity();
-            }
-            if (i != 2029777832) {
-                return null;
-            }
-            return new TL_starGiftAttributeRarityEpic();
         }
 
         public static StarGiftAttributeRarity TLdeserialize(InputSerializedData inputSerializedData, int i, boolean z) {
@@ -7126,6 +7127,19 @@ public class TL_stars {
 
     public static class TL_starGiftAttributeRarityLegendary extends StarGiftAttributeRarity {
         public static final int constructor = -822614104;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z) {
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+        }
+    }
+
+    public static class TL_starGiftAttributeRarityUncommon extends StarGiftAttributeRarity {
+        public static final int constructor = -607231095;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z) {

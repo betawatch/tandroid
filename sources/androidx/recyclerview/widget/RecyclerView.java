@@ -133,7 +133,7 @@ public abstract class RecyclerView extends ViewGroup {
     private int mScrollPointerId;
     private int mScrollState;
     private NestedScrollingChildHelper mScrollingChildHelper;
-    final State mState;
+    public final State mState;
     final Rect mTempRect;
     private final Rect mTempRect2;
     final RectF mTempRectF;
@@ -919,6 +919,14 @@ public abstract class RecyclerView extends ViewGroup {
 
     public void addItemDecoration(ItemDecoration itemDecoration) {
         addItemDecoration(itemDecoration, -1);
+    }
+
+    public ItemDecoration getItemDecorationAt(int i) {
+        int itemDecorationCount = getItemDecorationCount();
+        if (i < 0 || i >= itemDecorationCount) {
+            throw new IndexOutOfBoundsException(i + " is an invalid index for size " + itemDecorationCount);
+        }
+        return (ItemDecoration) this.mItemDecorations.get(i);
     }
 
     public int getItemDecorationCount() {

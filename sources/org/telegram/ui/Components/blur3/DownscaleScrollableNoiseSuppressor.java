@@ -83,6 +83,13 @@ public class DownscaleScrollableNoiseSuppressor {
         }
     }
 
+    public void setAlphaForFrostedGlassWithoutSaturation(float f) {
+        if (this.isLiquidGlassEnabled) {
+            return;
+        }
+        this.resultRenderNodes[0].setAlpha(f);
+    }
+
     public static class DownscaledRenderNode {
         long lastHash;
         private final RenderNode[] renderNodeDownsampled;

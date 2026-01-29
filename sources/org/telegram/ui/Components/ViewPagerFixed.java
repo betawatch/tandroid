@@ -50,6 +50,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ViewPagerFixed;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Stories.recorder.HintView2;
 
 /* loaded from: classes5.dex */
@@ -1354,6 +1355,7 @@ public class ViewPagerFixed extends FrameLayout {
         private Runnable animationRunnable;
         private float animationTime;
         private int backgroundColorKey;
+        BlurredBackgroundDrawable blurredBackgroundDrawable;
         private final Paint counterPaint;
         private int currentPosition;
         private TabsViewDelegate delegate;
@@ -1721,15 +1723,21 @@ public class ViewPagerFixed extends FrameLayout {
             this.selectorType = i;
             textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
             textPaint2.setTypeface(AndroidUtilities.bold());
-            textPaint.setTextSize(AndroidUtilities.dp(i == 9 ? 14.0f : 15.0f));
+            textPaint.setTextSize(AndroidUtilities.dp((i == 9 || i == -2) ? 14.0f : 15.0f));
             textPaint.setTypeface(AndroidUtilities.bold());
             textPaint3.setStyle(Paint.Style.STROKE);
             textPaint3.setStrokeCap(Paint.Cap.ROUND);
             textPaint3.setStrokeWidth(AndroidUtilities.dp(1.5f));
-            this.selectorDrawable = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
-            float dpf2 = AndroidUtilities.dpf2(3.0f);
-            this.selectorDrawable.setCornerRadii(new float[]{dpf2, dpf2, dpf2, dpf2, 0.0f, 0.0f, 0.0f, 0.0f});
-            this.selectorDrawable.setColor(Theme.getColor(this.tabLineColorKey, resourcesProvider));
+            GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
+            this.selectorDrawable = gradientDrawable;
+            gradientDrawable.setColor(Theme.getColor(this.tabLineColorKey, resourcesProvider));
+            if (i == -2) {
+                float dpf2 = AndroidUtilities.dpf2(13.0f);
+                this.selectorDrawable.setCornerRadii(new float[]{dpf2, dpf2, dpf2, dpf2, dpf2, dpf2, dpf2, dpf2});
+            } else {
+                float dpf22 = AndroidUtilities.dpf2(3.0f);
+                this.selectorDrawable.setCornerRadii(new float[]{dpf22, dpf22, dpf22, dpf22, 0.0f, 0.0f, 0.0f, 0.0f});
+            }
             setHorizontalScrollBarEnabled(false);
             RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.Components.ViewPagerFixed.TabsView.2
                 @Override // android.view.ViewGroup
@@ -1771,11 +1779,16 @@ public class ViewPagerFixed extends FrameLayout {
             } else {
                 ((DefaultItemAnimator) this.listView.getItemAnimator()).setDelayAnimations(false);
             }
-            this.listView.setSelectorType(i);
-            if (i == 3) {
-                this.listView.setSelectorRadius(0);
-            } else {
+            if (i == -2) {
+                this.listView.setSelectorType(9);
                 this.listView.setSelectorRadius(6);
+            } else {
+                this.listView.setSelectorType(i);
+                if (i == 3) {
+                    this.listView.setSelectorRadius(0);
+                } else {
+                    this.listView.setSelectorRadius(6);
+                }
             }
             this.listView.setSelectorDrawableColor(Theme.getColor(this.selectorColorKey, resourcesProvider));
             RecyclerListView recyclerListView2 = this.listView;
@@ -2130,10 +2143,10 @@ public class ViewPagerFixed extends FrameLayout {
         }
 
         /* JADX WARN: Removed duplicated region for block: B:20:0x00fe  */
-        /* JADX WARN: Removed duplicated region for block: B:34:0x0090  */
-        /* JADX WARN: Removed duplicated region for block: B:37:0x00b5  */
-        /* JADX WARN: Removed duplicated region for block: B:39:0x00c7  */
-        /* JADX WARN: Removed duplicated region for block: B:40:0x0095  */
+        /* JADX WARN: Removed duplicated region for block: B:37:0x0090  */
+        /* JADX WARN: Removed duplicated region for block: B:40:0x00b5  */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x00c7  */
+        /* JADX WARN: Removed duplicated region for block: B:43:0x0095  */
         @Override // android.view.ViewGroup
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -2199,8 +2212,16 @@ public class ViewPagerFixed extends FrameLayout {
                                             x = (int) AndroidUtilities.lerp(f5, f5, f7);
                                             i3 = (int) AndroidUtilities.lerp(this.lastDrawnIndicatorW, f6, this.indicatorProgress2);
                                         }
-                                        this.selectorDrawable.setBounds(x, (int) ((measuredHeight - AndroidUtilities.dpr(4.0f)) + (this.hideProgress * AndroidUtilities.dpr(4.0f))), i3 + x, (int) (measuredHeight + (this.hideProgress * AndroidUtilities.dpr(4.0f))));
-                                        this.selectorDrawable.draw(canvas);
+                                        if (this.selectorType == -2) {
+                                            float f8 = this.additionalTabWidth / 2.0f;
+                                            int dp2 = (measuredHeight / 2) - AndroidUtilities.dp(14.0f);
+                                            this.selectorDrawable.setBounds((int) ((x - AndroidUtilities.dp(12.5f)) - f8), dp2, (int) (x + i3 + AndroidUtilities.dp(12.5f) + f8), AndroidUtilities.dp(28.0f) + dp2);
+                                            this.selectorDrawable.setAlpha(31);
+                                            this.selectorDrawable.draw(canvas);
+                                        } else {
+                                            this.selectorDrawable.setBounds(x, (int) ((measuredHeight - AndroidUtilities.dpr(4.0f)) + (this.hideProgress * AndroidUtilities.dpr(4.0f))), i3 + x, (int) (measuredHeight + (this.hideProgress * AndroidUtilities.dpr(4.0f))));
+                                            this.selectorDrawable.draw(canvas);
+                                        }
                                     }
                                 }
                             }
@@ -2228,11 +2249,11 @@ public class ViewPagerFixed extends FrameLayout {
                     }
                 }
                 if (!z) {
-                    float f8 = this.hideProgress;
-                    if (f8 != 0.0f) {
-                        float f9 = f8 - 0.12f;
-                        this.hideProgress = f9;
-                        if (f9 < 0.0f) {
+                    float f9 = this.hideProgress;
+                    if (f9 != 0.0f) {
+                        float f10 = f9 - 0.12f;
+                        this.hideProgress = f10;
+                        if (f10 < 0.0f) {
                             this.hideProgress = 0.0f;
                         }
                         invalidate();
@@ -2288,6 +2309,10 @@ public class ViewPagerFixed extends FrameLayout {
         }
 
         public void updateColors() {
+            BlurredBackgroundDrawable blurredBackgroundDrawable = this.blurredBackgroundDrawable;
+            if (blurredBackgroundDrawable != null) {
+                blurredBackgroundDrawable.updateColors();
+            }
             this.selectorDrawable.setColor(Theme.getColor(this.tabLineColorKey, this.resourcesProvider));
             this.listView.invalidateViews();
             this.listView.invalidate();
@@ -2417,6 +2442,11 @@ public class ViewPagerFixed extends FrameLayout {
                 }
             });
             this.orderChanged = false;
+        }
+
+        public void setBlurredBackground(BlurredBackgroundDrawable blurredBackgroundDrawable) {
+            this.blurredBackgroundDrawable = blurredBackgroundDrawable;
+            setBackground(blurredBackgroundDrawable);
         }
 
         private class ListAdapter extends RecyclerListView.SelectionAdapter {

@@ -327,7 +327,7 @@ public class UndoView extends FrameLayout {
                 this.currentCancelRunnable = null;
             }
             int i2 = this.currentAction;
-            if (i2 == 0 || i2 == 1 || i2 == 26 || i2 == 27) {
+            if (i2 == 0 || i2 == 1 || i2 == 95 || i2 == 26 || i2 == 27) {
                 for (int i3 = 0; i3 < this.currentDialogIds.size(); i3++) {
                     long longValue = ((Long) this.currentDialogIds.get(i3)).longValue();
                     MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
@@ -388,20 +388,20 @@ public class UndoView extends FrameLayout {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:36:0x084d  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x087d  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x188b  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x18b2  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x19ab  */
-    /* JADX WARN: Removed duplicated region for block: B:562:0x186b  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x18e8  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x190f  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x1a08  */
+    /* JADX WARN: Removed duplicated region for block: B:576:0x18c8  */
     /* JADX WARN: Removed duplicated region for block: B:66:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x18f8  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x1955  */
     /* JADX WARN: Removed duplicated region for block: B:95:0x08be  */
     /* JADX WARN: Removed duplicated region for block: B:96:0x0874  */
-    /* JADX WARN: Type inference failed for: r3v246, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r3v252, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r3v261, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r3v264, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r3v272, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r3v275, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r3v259, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r3v265, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r3v274, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r3v277, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r3v285, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r3v288, types: [java.lang.CharSequence] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1411,11 +1411,24 @@ public class UndoView extends FrameLayout {
                     this.infoTextView.setText(LocaleController.getString(R.string.HistoryClearedUndo));
                 } else if (i21 == 27) {
                     this.infoTextView.setText(LocaleController.getString(R.string.ChatsDeletedUndo));
+                } else if (i21 == 95) {
+                    if (DialogObject.isChatDialog(longValue)) {
+                        TLRPC.Chat chat7 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-longValue));
+                        if (ChatObject.isMonoForum(chat7)) {
+                            this.infoTextView.setText(LocaleController.getString(R.string.MonoforumDeletedUndo));
+                        } else if (ChatObject.isChannel(chat7) && !chat7.megagroup) {
+                            this.infoTextView.setText(LocaleController.getString(R.string.ChannelLeftUndo));
+                        } else {
+                            this.infoTextView.setText(LocaleController.getString(R.string.GroupLeftUndo));
+                        }
+                    } else {
+                        this.infoTextView.setText(LocaleController.getString(R.string.ChatDeletedUndo));
+                    }
                 } else if (DialogObject.isChatDialog(longValue)) {
-                    TLRPC.Chat chat7 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-longValue));
-                    if (ChatObject.isMonoForum(chat7)) {
+                    TLRPC.Chat chat8 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-longValue));
+                    if (ChatObject.isMonoForum(chat8)) {
                         this.infoTextView.setText(LocaleController.getString(R.string.MonoforumDeletedUndo));
-                    } else if (ChatObject.isChannel(chat7) && !chat7.megagroup) {
+                    } else if (ChatObject.isChannel(chat8) && !chat8.megagroup) {
                         this.infoTextView.setText(LocaleController.getString(R.string.ChannelDeletedUndo));
                     } else {
                         this.infoTextView.setText(LocaleController.getString(R.string.GroupDeletedUndo));
@@ -1530,7 +1543,7 @@ public class UndoView extends FrameLayout {
             this.backgroundDrawable.draw(canvas);
         }
         int i = this.currentAction;
-        if (i == 1 || i == 0 || i == 27 || i == 26 || i == 81 || i == 88) {
+        if (i == 1 || i == 95 || i == 0 || i == 27 || i == 26 || i == 81 || i == 88) {
             int ceil = this.timeLeft > 0 ? (int) Math.ceil(r10 / 1000.0f) : 0;
             if (this.prevSeconds != ceil) {
                 this.prevSeconds = ceil;

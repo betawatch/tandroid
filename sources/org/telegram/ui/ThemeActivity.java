@@ -207,6 +207,11 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
     private boolean updateSearchEngine;
     private boolean updatingLocation;
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
     public ThemeActivity highlightSensitiveRow() {
         this.highlightSensitiveRow = true;
         return this;
@@ -1768,6 +1773,12 @@ public class ThemeActivity extends BaseFragment implements NotificationCenter.No
                 return lambda$createView$14;
             }
         });
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
