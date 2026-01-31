@@ -91,7 +91,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda82;
+import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda90;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
@@ -474,9 +474,9 @@ public abstract class Theme {
     public static final int key_avatar_nameInMessageViolet;
     public static final int key_avatar_subtitleInProfileBlue;
     public static final int key_avatar_text;
-    public static final int key_bot_button_danger;
-    public static final int key_bot_button_primary;
-    public static final int key_bot_button_success;
+    public static final int key_botKeyboard_button_danger;
+    public static final int key_botKeyboard_button_primary;
+    public static final int key_botKeyboard_button_success;
     public static final int key_bot_loadingIcon;
     public static final int key_buttonNeutral;
     public static final int key_buttonNeutralText;
@@ -3560,13 +3560,13 @@ public abstract class Theme {
         key_glass_tabUnselected = i726;
         int i727 = colorsCount;
         colorsCount = i727 + 1;
-        key_bot_button_primary = i727;
+        key_botKeyboard_button_primary = i727;
         int i728 = colorsCount;
         colorsCount = i728 + 1;
-        key_bot_button_danger = i728;
+        key_botKeyboard_button_danger = i728;
         int i729 = colorsCount;
         colorsCount = i729 + 1;
-        key_bot_button_success = i729;
+        key_botKeyboard_button_success = i729;
         int i730 = colorsCount;
         colorsCount = i730 + 1;
         key_telegram_color_dialogsLogo = i730;
@@ -4417,7 +4417,7 @@ public abstract class Theme {
                 themeInfo = currentNightTheme;
             }
             applyTheme(themeInfo, false, false, needSwitchToTheme == 2);
-            AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda82());
+            AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda90());
             ambientSensorListener = new SensorEventListener() { // from class: org.telegram.ui.ActionBar.Theme.11
                 @Override // android.hardware.SensorEventListener
                 public void onAccuracyChanged(Sensor sensor, int i815) {
@@ -8807,7 +8807,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda82(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda90(), 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -8946,7 +8946,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda82(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda90(), 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -9057,7 +9057,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda82(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda90(), 2100L);
                 }
             }
             currentTheme = themeInfo;

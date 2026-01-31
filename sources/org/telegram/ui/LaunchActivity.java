@@ -14780,20 +14780,28 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$runLinkRequest$51(TLRPC.TL_error tL_error, TLObject tLObject, int i, String str, Runnable runnable) {
         if (tL_error != null) {
-            BulletinFactory.of((BaseFragment) mainFragmentsStack.get(r8.size() - 1)).createSimpleBulletin(R.raw.error, getString(R.string.UniqueGiftNotFound)).show();
+            BaseFragment safeLastFragment = getSafeLastFragment();
+            if (safeLastFragment == null) {
+                return;
+            }
+            if ("STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
+                BulletinFactory.of(safeLastFragment).createSimpleBulletin(R.raw.fire_on, getString(R.string.UniqueGiftNotFoundBurned)).show();
+            } else {
+                BulletinFactory.of(safeLastFragment).createSimpleBulletin(R.raw.error, getString(R.string.UniqueGiftNotFound)).show();
+            }
         } else if (tLObject instanceof TL_stars.TL_payments_uniqueStarGift) {
             TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject;
             MessagesController.getInstance(this.currentAccount).putUsers(tL_payments_uniqueStarGift.users, false);
             MessagesController.getInstance(this.currentAccount).putChats(tL_payments_uniqueStarGift.chats, false);
-            BaseFragment safeLastFragment = getSafeLastFragment();
+            BaseFragment safeLastFragment2 = getSafeLastFragment();
             TL_stars.StarGift starGift = tL_payments_uniqueStarGift.gift;
             if (starGift instanceof TL_stars.TL_starGiftUnique) {
                 StarGiftSheet starGiftSheet = new StarGiftSheet(this, i, 0L, null).set(str, (TL_stars.TL_starGiftUnique) starGift, null);
-                if (safeLastFragment != null) {
-                    if (safeLastFragment.getLastStoryViewer() != null && safeLastFragment.getLastStoryViewer().isFullyVisible()) {
-                        safeLastFragment.getLastStoryViewer().showDialog(starGiftSheet);
+                if (safeLastFragment2 != null) {
+                    if (safeLastFragment2.getLastStoryViewer() != null && safeLastFragment2.getLastStoryViewer().isFullyVisible()) {
+                        safeLastFragment2.getLastStoryViewer().showDialog(starGiftSheet);
                     } else {
-                        safeLastFragment.showDialog(starGiftSheet);
+                        safeLastFragment2.showDialog(starGiftSheet);
                     }
                 } else {
                     starGiftSheet.show();

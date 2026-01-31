@@ -457,7 +457,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
     public void showChatPreview(DialogCell dialogCell) {
     }
 
-    static /* synthetic */ int access$14308(SharedMediaLayout sharedMediaLayout) {
+    static /* synthetic */ int access$14408(SharedMediaLayout sharedMediaLayout) {
         int i = sharedMediaLayout.tabIndexCounter;
         sharedMediaLayout.tabIndexCounter = i + 1;
         return i;
@@ -1474,7 +1474,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         public ArrayList frozenMessages = new ArrayList();
         RecyclerView.RecycledViewPool recycledViewPool = new RecyclerView.RecycledViewPool();
 
-        static /* synthetic */ int access$11710(SharedMediaData sharedMediaData) {
+        static /* synthetic */ int access$11810(SharedMediaData sharedMediaData) {
             int i = sharedMediaData.endLoadingStubs;
             sharedMediaData.endLoadingStubs = i - 1;
             return i;
@@ -2377,6 +2377,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                         }
                     }
                     SharedMediaLayout.this.checkStoriesTabsPosition();
+                    SharedMediaLayout.this.checkUi_topPanelLayoutY();
                     SharedMediaLayout.this.invalidateBlur();
                 }
             };
@@ -4078,6 +4079,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                     }
                 }
             }
+            SharedMediaLayout.this.checkUi_topPanelLayoutY();
         }
     }
 
@@ -4377,7 +4379,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         this.topLayoutPadding = (int) this.topPanelLayout.getAnimatedHeightWithPadding(AndroidUtilities.dp(14.0f));
         ProfileGiftsContainer profileGiftsContainer = this.giftsContainer;
         if (profileGiftsContainer != null) {
-            profileGiftsContainer.setPaddingTop((int) this.topPanelLayout.getAnimatedHeightWithPadding(0.0f));
+            profileGiftsContainer.setPaddingTop((int) this.topPanelLayout.getAnimatedHeightWithPadding(AndroidUtilities.dp(10.0f)));
         }
         MediaPage[] mediaPageArr = this.mediaPages;
         if (mediaPageArr != null) {
@@ -6360,9 +6362,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             mediaPageArr[i5].setTranslationY(this.topPadding - this.lastMeasuredTopPadding);
             i5++;
         }
-        DialogsActivityTopPanelLayout dialogsActivityTopPanelLayout = this.topPanelLayout;
-        if (dialogsActivityTopPanelLayout != null) {
-            dialogsActivityTopPanelLayout.setTranslationY(AndroidUtilities.dp(48.0f) + i2);
+        if (this.topPanelLayout != null) {
+            checkUi_topPanelLayoutY();
         } else {
             FragmentContextView fragmentContextView = this.fragmentContextView;
             if (fragmentContextView != null) {
@@ -6376,6 +6377,18 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         this.additionalFloatingTranslation = i2;
         ChatActionCell chatActionCell = this.floatingDateView;
         chatActionCell.setTranslationY((chatActionCell.getTag() == null ? -AndroidUtilities.dp(48.0f) : 0) + this.additionalFloatingTranslation);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkUi_topPanelLayoutY() {
+        if (this.topPanelLayout != null) {
+            ProfileStoriesCollectionTabs profileStoriesCollectionTabs = this.storiesContainer;
+            float f = 0.0f;
+            if (profileStoriesCollectionTabs != null) {
+                f = 0.0f + (AndroidUtilities.dp(38.0f) * this.storiesContainer.getVisibilityFactor() * (1.0f - Math.abs(profileStoriesCollectionTabs.getTranslationX() / this.storiesContainer.getMeasuredWidth())));
+            }
+            this.topPanelLayout.setTranslationY(this.topPadding + f);
+        }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -6907,7 +6920,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                             MessageObject messageObject2 = (MessageObject) arrayList.get(i8);
                             if (this.sharedMediaData[intValue3].addMessage(messageObject2, i7, false, isEncryptedDialog)) {
                                 sparseBooleanArray.put(messageObject2.getId(), true);
-                                SharedMediaData.access$11710(this.sharedMediaData[intValue3]);
+                                SharedMediaData.access$11810(this.sharedMediaData[intValue3]);
                                 if (this.sharedMediaData[intValue3].endLoadingStubs < 0) {
                                     this.sharedMediaData[intValue3].endLoadingStubs = 0;
                                 }
@@ -12573,6 +12586,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                 r4 = 1.0f - (Math.abs(this.storiesContainer.getTranslationX()) / this.storiesContainer.getMeasuredWidth());
             }
         }
+        checkUi_topPanelLayoutY();
         if (this.subTabsVisibilityFactor != r4) {
             this.subTabsVisibilityFactor = r4;
             invalidateBlur();
@@ -13382,7 +13396,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
 
         private StoryAlbumData(Context context, int i) {
             this.albumId = i;
-            this.tabType = SharedMediaLayout.getStoryAlbumType(SharedMediaLayout.access$14308(SharedMediaLayout.this));
+            this.tabType = SharedMediaLayout.getStoryAlbumType(SharedMediaLayout.access$14408(SharedMediaLayout.this));
             this.adapter = new StoriesAdapter(context, i, false) { // from class: org.telegram.ui.Components.SharedMediaLayout.StoryAlbumData.1
                 {
                     SharedMediaLayout sharedMediaLayout = SharedMediaLayout.this;

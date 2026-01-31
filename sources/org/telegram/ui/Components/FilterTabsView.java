@@ -203,7 +203,7 @@ public abstract class FilterTabsView extends FrameLayout {
                 i = this.counter;
             }
             if (i > 0) {
-                i2 = AndroidUtilities.dp(5.0f) + Math.max(AndroidUtilities.dp(7.333f), (int) Math.ceil(FilterTabsView.this.textCounterPaint.measureText(String.format("%d", Integer.valueOf(i))))) + AndroidUtilities.dp(10.0f);
+                i2 = AndroidUtilities.dp(-2.0f) + Math.max(AndroidUtilities.dp(7.333f), (int) Math.ceil(FilterTabsView.this.textCounterPaint.measureText(String.format("%d", Integer.valueOf(i))))) + AndroidUtilities.dp(10.0f);
             } else if (!this.isDefault && FilterTabsView.this.isEditing) {
                 i2 = AndroidUtilities.dp(12.333f);
             }
@@ -334,32 +334,32 @@ public abstract class FilterTabsView extends FrameLayout {
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            setMeasuredDimension(this.currentTab.getWidth(false) + AndroidUtilities.dp(20.0f) + FilterTabsView.this.additionalTabWidth, View.MeasureSpec.getSize(i2));
+            setMeasuredDimension(this.currentTab.getWidth(false) + AndroidUtilities.dp(24.0f) + FilterTabsView.this.additionalTabWidth, View.MeasureSpec.getSize(i2));
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:112:0x054c, code lost:
         
-            if (r38.this$0.editingStartAnimationProgress != 0.0f) goto L164;
+            if (r37.this$0.editingStartAnimationProgress != 0.0f) goto L164;
          */
-        /* JADX WARN: Removed duplicated region for block: B:116:0x08ee  */
-        /* JADX WARN: Removed duplicated region for block: B:119:0x091b  */
-        /* JADX WARN: Removed duplicated region for block: B:125:0x0929  */
-        /* JADX WARN: Removed duplicated region for block: B:128:0x0941  */
-        /* JADX WARN: Removed duplicated region for block: B:133:0x0976  */
-        /* JADX WARN: Removed duplicated region for block: B:136:0x0998  */
-        /* JADX WARN: Removed duplicated region for block: B:139:0x09f6  */
-        /* JADX WARN: Removed duplicated region for block: B:141:0x0a29  */
-        /* JADX WARN: Removed duplicated region for block: B:144:0x094f  */
-        /* JADX WARN: Removed duplicated region for block: B:178:0x06aa  */
-        /* JADX WARN: Removed duplicated region for block: B:184:0x06f9  */
-        /* JADX WARN: Removed duplicated region for block: B:190:0x074b  */
-        /* JADX WARN: Removed duplicated region for block: B:193:0x075e  */
-        /* JADX WARN: Removed duplicated region for block: B:196:0x079c  */
-        /* JADX WARN: Removed duplicated region for block: B:199:0x07db  */
-        /* JADX WARN: Removed duplicated region for block: B:211:0x0756  */
-        /* JADX WARN: Removed duplicated region for block: B:218:0x080d  */
-        /* JADX WARN: Removed duplicated region for block: B:224:0x06ce  */
-        /* JADX WARN: Removed duplicated region for block: B:226:0x06d1  */
+        /* JADX WARN: Removed duplicated region for block: B:116:0x08f0  */
+        /* JADX WARN: Removed duplicated region for block: B:119:0x091d  */
+        /* JADX WARN: Removed duplicated region for block: B:125:0x092b  */
+        /* JADX WARN: Removed duplicated region for block: B:128:0x0943  */
+        /* JADX WARN: Removed duplicated region for block: B:133:0x0978  */
+        /* JADX WARN: Removed duplicated region for block: B:136:0x099a  */
+        /* JADX WARN: Removed duplicated region for block: B:139:0x09f8  */
+        /* JADX WARN: Removed duplicated region for block: B:141:0x0a2b  */
+        /* JADX WARN: Removed duplicated region for block: B:144:0x0951  */
+        /* JADX WARN: Removed duplicated region for block: B:178:0x06ac  */
+        /* JADX WARN: Removed duplicated region for block: B:184:0x06fb  */
+        /* JADX WARN: Removed duplicated region for block: B:190:0x074d  */
+        /* JADX WARN: Removed duplicated region for block: B:193:0x0760  */
+        /* JADX WARN: Removed duplicated region for block: B:196:0x079e  */
+        /* JADX WARN: Removed duplicated region for block: B:199:0x07dd  */
+        /* JADX WARN: Removed duplicated region for block: B:211:0x0758  */
+        /* JADX WARN: Removed duplicated region for block: B:218:0x080f  */
+        /* JADX WARN: Removed duplicated region for block: B:224:0x06d0  */
+        /* JADX WARN: Removed duplicated region for block: B:226:0x06d3  */
         @Override // android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -388,25 +388,24 @@ public abstract class FilterTabsView extends FrameLayout {
             int i14;
             float f4;
             float f5;
-            float f6;
-            int dp;
+            float dp;
             int i15;
+            float f6;
             float f7;
-            float f8;
             int dp2;
             int lineBottom;
             int lineTop;
             int i16;
             boolean z2;
             int color;
+            float f8;
             float f9;
-            float f10;
             int i17;
             boolean z3 = this.currentTab.isDefault;
             if (FilterTabsView.this.editingAnimationProgress != 0.0f) {
                 canvas.save();
-                float f11 = FilterTabsView.this.editingAnimationProgress;
-                float sin = (float) Math.sin(((f11 * (this.currentPosition % 2 == 0 ? 1.0f : -1.0f)) + r4) * 3.141592653589793d * 2.5d);
+                float f10 = FilterTabsView.this.editingAnimationProgress;
+                float sin = (float) Math.sin(((f10 * (this.currentPosition % 2 == 0 ? 1.0f : -1.0f)) + r4) * 3.141592653589793d * 2.5d);
                 double elapsedRealtime = (float) ((SystemClock.elapsedRealtime() / 400.0f) * 3.141592653589793d * (this.currentPosition % 2 == 0 ? 1.0f : -1.0f));
                 z = z3;
                 canvas.translate((float) (Math.cos(elapsedRealtime) * AndroidUtilities.dp(0.33f) * (this.currentPosition % 2 == 0 ? 1.0f : -1.0f)), (float) (Math.sin(elapsedRealtime) * (-AndroidUtilities.dp(0.33f))));
@@ -492,15 +491,15 @@ public abstract class FilterTabsView extends FrameLayout {
             if (i24 == 0 || z5) {
                 i10 = 0;
             } else {
-                i10 = AndroidUtilities.dp((str != null ? 1.0f : FilterTabsView.this.editingStartAnimationProgress) * 5.0f) + i24;
+                i10 = AndroidUtilities.dp((str != null ? 1.0f : FilterTabsView.this.editingStartAnimationProgress) * (-2.0f)) + i24;
             }
             this.tabWidth = i25 + i10;
             float measuredWidth = (getMeasuredWidth() - this.tabWidth) / 2.0f;
             if (this.animateTextX) {
-                float f12 = this.changeProgress;
-                measuredWidth = (measuredWidth * f12) + (this.animateFromTextX * (1.0f - f12));
+                float f11 = this.changeProgress;
+                measuredWidth = (measuredWidth * f11) + (this.animateFromTextX * (1.0f - f11));
             }
-            float f13 = measuredWidth;
+            float f12 = measuredWidth;
             if (!TextUtils.equals(this.currentTab.title, this.currentText)) {
                 this.currentText = this.currentTab.title;
                 StaticLayout staticLayout = new StaticLayout(this.currentText, FilterTabsView.this.textPaint, AndroidUtilities.dp(400.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
@@ -510,12 +509,12 @@ public abstract class FilterTabsView extends FrameLayout {
                 this.textOffsetX = (int) (-this.textLayout.getLineLeft(0));
             }
             if (this.animateTextChange) {
-                float f14 = this.titleXOffset * (this.animateTextChangeOut ? this.changeProgress : 1.0f - this.changeProgress);
+                float f13 = this.titleXOffset * (this.animateTextChangeOut ? this.changeProgress : 1.0f - this.changeProgress);
                 if (this.titleAnimateStableLayout != null) {
                     canvas.save();
-                    canvas.translate(this.textOffsetX + f13 + f14, ((getMeasuredHeight() - this.textHeight) / 2.0f) + 1.0f);
+                    canvas.translate(this.textOffsetX + f12 + f13, ((getMeasuredHeight() - this.textHeight) / 2.0f) + 1.0f);
                     this.titleAnimateStableLayout.draw(canvas);
-                    f9 = f13;
+                    f8 = f12;
                     i11 = i24;
                     str2 = str;
                     i13 = i21;
@@ -524,7 +523,7 @@ public abstract class FilterTabsView extends FrameLayout {
                     AnimatedEmojiSpan.drawAnimatedEmojis(canvas, this.titleAnimateStableLayout, this.titleAnimateStableLayoutEmojis, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, FilterTabsView.this.emojiColorFilter);
                     canvas.restore();
                 } else {
-                    f9 = f13;
+                    f8 = f12;
                     i11 = i24;
                     str2 = str;
                     i12 = i20;
@@ -535,33 +534,33 @@ public abstract class FilterTabsView extends FrameLayout {
                     canvas.save();
                     int alpha = FilterTabsView.this.textPaint.getAlpha();
                     FilterTabsView.this.textPaint.setAlpha((int) (alpha * (this.animateTextChangeOut ? 1.0f - this.changeProgress : this.changeProgress)));
-                    float f15 = f9;
-                    canvas.translate(f15 + this.textOffsetX + f14, ((getMeasuredHeight() - this.textHeight) / 2.0f) + 1.0f);
+                    float f14 = f8;
+                    canvas.translate(f14 + this.textOffsetX + f13, ((getMeasuredHeight() - this.textHeight) / 2.0f) + 1.0f);
                     this.titleAnimateInLayout.draw(canvas);
-                    f10 = f15;
+                    f9 = f14;
                     AnimatedEmojiSpan.drawAnimatedEmojis(canvas, this.titleAnimateInLayout, this.titleAnimateInLayoutEmojis, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, this.animateTextChangeOut ? 1.0f - this.changeProgress : this.changeProgress, FilterTabsView.this.emojiColorFilter);
                     canvas.restore();
                     FilterTabsView.this.textPaint.setAlpha(alpha);
                 } else {
-                    f10 = f9;
+                    f9 = f8;
                 }
                 if (this.titleAnimateOutLayout != null) {
                     canvas.save();
                     int alpha2 = FilterTabsView.this.textPaint.getAlpha();
                     FilterTabsView.this.textPaint.setAlpha((int) (alpha2 * (this.animateTextChangeOut ? this.changeProgress : 1.0f - this.changeProgress)));
-                    float f16 = f10;
-                    canvas.translate(f16 + this.textOffsetX + f14, ((getMeasuredHeight() - this.textHeight) / 2.0f) + 1.0f);
+                    float f15 = f9;
+                    canvas.translate(f15 + this.textOffsetX + f13, ((getMeasuredHeight() - this.textHeight) / 2.0f) + 1.0f);
                     this.titleAnimateOutLayout.draw(canvas);
-                    f3 = f16;
+                    f3 = f15;
                     AnimatedEmojiSpan.drawAnimatedEmojis(canvas, this.titleAnimateOutLayout, this.titleAnimateOutLayoutEmojis, 0.0f, null, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, this.animateTextChangeOut ? this.changeProgress : 1.0f - this.changeProgress, FilterTabsView.this.emojiColorFilter);
                     canvas.restore();
                     FilterTabsView.this.textPaint.setAlpha(alpha2);
                 } else {
-                    f3 = f10;
+                    f3 = f9;
                 }
-                f4 = f14;
+                f4 = f13;
             } else {
-                f3 = f13;
+                f3 = f12;
                 i11 = i24;
                 str2 = str;
                 i12 = i20;
@@ -583,7 +582,7 @@ public abstract class FilterTabsView extends FrameLayout {
                 } else if (!FilterTabsView.this.isEditing) {
                     f5 = 0.0f;
                 }
-                f8 = f;
+                f7 = f;
                 i15 = i11;
                 if (FilterTabsView.this.editingAnimationProgress != f5) {
                     canvas.restore();
@@ -595,7 +594,7 @@ public abstract class FilterTabsView extends FrameLayout {
                 this.lastTitle = this.currentText;
                 this.lastTitleWidth = tab.titleWidth;
                 this.lastCountWidth = i15;
-                this.lastCounterWidth = f8;
+                this.lastCounterWidth = f7;
                 this.lastTabWidth = this.tabWidth;
                 this.lastWidth = getMeasuredWidth();
                 if (this.currentTab.isLocked && this.progressToLocked == f5) {
@@ -606,9 +605,9 @@ public abstract class FilterTabsView extends FrameLayout {
                 }
                 z2 = this.currentTab.isLocked;
                 if (z2) {
-                    float f17 = this.progressToLocked;
-                    if (f17 != 1.0f) {
-                        this.progressToLocked = f17 + 0.10666667f;
+                    float f16 = this.progressToLocked;
+                    if (f16 != 1.0f) {
+                        this.progressToLocked = f16 + 0.10666667f;
                         this.progressToLocked = Utilities.clamp(this.progressToLocked, 1.0f, f5);
                         color = Theme.getColor(FilterTabsView.this.unactiveTextColorKey, FilterTabsView.this.resourcesProvider);
                         if (FilterTabsView.this.aUnactiveTextColorKey >= 0) {
@@ -626,8 +625,8 @@ public abstract class FilterTabsView extends FrameLayout {
                             return;
                         }
                         canvas.save();
-                        float f18 = this.progressToLocked;
-                        canvas.scale(f18, f18, FilterTabsView.this.lockDrawable.getBounds().centerX(), FilterTabsView.this.lockDrawable.getBounds().centerY());
+                        float f17 = this.progressToLocked;
+                        canvas.scale(f17, f17, FilterTabsView.this.lockDrawable.getBounds().centerX(), FilterTabsView.this.lockDrawable.getBounds().centerY());
                         FilterTabsView.this.lockDrawable.draw(canvas);
                         canvas.restore();
                         return;
@@ -664,21 +663,18 @@ public abstract class FilterTabsView extends FrameLayout {
                     FilterTabsView.this.counterPaint.setColor(color6);
                 }
             }
-            float f19 = this.currentTab.titleWidth;
+            float f18 = this.currentTab.titleWidth;
             boolean z7 = this.animateTextChange;
             if (z7) {
-                float f20 = this.animateFromTitleWidth;
-                float f21 = this.changeProgress;
-                f19 = (f19 * f21) + (f20 * (1.0f - f21));
+                float f19 = this.animateFromTitleWidth;
+                float f20 = this.changeProgress;
+                f18 = (f18 * f20) + (f19 * (1.0f - f20));
             }
             if (z7 && this.titleAnimateOutLayout == null) {
-                f6 = (f3 - this.titleXOffset) + f4 + f19;
-                dp = AndroidUtilities.dp(5.0f);
+                dp = (f3 - this.titleXOffset) + f4 + f18 + AndroidUtilities.dp(5.0f);
             } else {
-                f6 = f3 + f19;
-                dp = AndroidUtilities.dp(5.0f);
+                dp = AndroidUtilities.dp(5.0f) + f18 + f3;
             }
-            float f22 = f6 + dp;
             int measuredHeight3 = (getMeasuredHeight() - AndroidUtilities.dp(17.333f)) / 2;
             if (z || ((!FilterTabsView.this.isEditing && FilterTabsView.this.editingStartAnimationProgress == f5) || str3 != null)) {
                 FilterTabsView.this.counterPaint.setAlpha(NotificationCenter.cameraInitied);
@@ -686,27 +682,27 @@ public abstract class FilterTabsView extends FrameLayout {
                 FilterTabsView.this.counterPaint.setAlpha((int) (FilterTabsView.this.editingStartAnimationProgress * 255.0f));
             }
             if (z6) {
-                float f23 = this.animateFromCountWidth;
+                float f21 = this.animateFromCountWidth;
                 i15 = i11;
-                float f24 = i15;
-                if (f23 != f24) {
-                    float f25 = this.changeProgress;
-                    f7 = (f23 * (1.0f - f25)) + (f24 * f25);
+                float f22 = i15;
+                if (f21 != f22) {
+                    float f23 = this.changeProgress;
+                    f6 = (f21 * (1.0f - f23)) + (f22 * f23);
                     if (z6) {
-                        float f26 = this.animateFromCounterWidth;
-                        float f27 = this.changeProgress;
-                        f = (f26 * (1.0f - f27)) + (f * f27);
+                        float f24 = this.animateFromCounterWidth;
+                        float f25 = this.changeProgress;
+                        f = (f24 * (1.0f - f25)) + (f * f25);
                     }
-                    float f28 = measuredHeight3;
-                    this.rect.set(f22, f28, f7 + f22, AndroidUtilities.dp(17.333f) + measuredHeight3);
+                    float f26 = measuredHeight3;
+                    this.rect.set(dp, f26, f6 + dp, AndroidUtilities.dp(17.333f) + measuredHeight3);
                     if (!z4 || z5) {
                         canvas.save();
-                        float f29 = !z4 ? this.changeProgress : 1.0f - this.changeProgress;
-                        canvas.scale(f29, f29, this.rect.centerX(), this.rect.centerY());
+                        float f27 = !z4 ? this.changeProgress : 1.0f - this.changeProgress;
+                        canvas.scale(f27, f27, this.rect.centerX(), this.rect.centerY());
                     }
                     RectF rectF = this.rect;
-                    float f30 = AndroidUtilities.density * 11.5f;
-                    canvas.drawRoundRect(rectF, f30, f30, FilterTabsView.this.counterPaint);
+                    float f28 = AndroidUtilities.density * 11.5f;
+                    canvas.drawRoundRect(rectF, f28, f28, FilterTabsView.this.counterPaint);
                     if (!z6) {
                         if (this.inCounter != null) {
                             dp2 = AndroidUtilities.dp(17.333f);
@@ -722,11 +718,11 @@ public abstract class FilterTabsView extends FrameLayout {
                                 lineBottom = this.stableCounter.getLineBottom(0);
                                 lineTop = this.stableCounter.getLineTop(0);
                             }
-                            float dp3 = f28 - AndroidUtilities.dp(0.5f);
-                            float f31 = z ? 1.0f - FilterTabsView.this.editingStartAnimationProgress : 1.0f;
+                            float dp3 = f26 - AndroidUtilities.dp(0.5f);
+                            float f29 = z ? 1.0f - FilterTabsView.this.editingStartAnimationProgress : 1.0f;
                             if (this.inCounter != null) {
                                 canvas.save();
-                                FilterTabsView.this.textCounterPaint.setAlpha((int) (f31 * 255.0f * this.changeProgress));
+                                FilterTabsView.this.textCounterPaint.setAlpha((int) (f29 * 255.0f * this.changeProgress));
                                 RectF rectF2 = this.rect;
                                 canvas.translate(rectF2.left + ((rectF2.width() - f) / 2.0f), ((1.0f - this.changeProgress) * AndroidUtilities.dp(15.0f)) + dp3);
                                 this.inCounter.draw(canvas);
@@ -734,7 +730,7 @@ public abstract class FilterTabsView extends FrameLayout {
                             }
                             if (this.outCounter != null) {
                                 canvas.save();
-                                FilterTabsView.this.textCounterPaint.setAlpha((int) (f31 * 255.0f * (1.0f - this.changeProgress)));
+                                FilterTabsView.this.textCounterPaint.setAlpha((int) (f29 * 255.0f * (1.0f - this.changeProgress)));
                                 RectF rectF3 = this.rect;
                                 canvas.translate(rectF3.left + ((rectF3.width() - f) / 2.0f), (this.changeProgress * (-AndroidUtilities.dp(15.0f))) + dp3);
                                 this.outCounter.draw(canvas);
@@ -742,7 +738,7 @@ public abstract class FilterTabsView extends FrameLayout {
                             }
                             if (this.stableCounter != null) {
                                 canvas.save();
-                                FilterTabsView.this.textCounterPaint.setAlpha((int) (f31 * 255.0f));
+                                FilterTabsView.this.textCounterPaint.setAlpha((int) (f29 * 255.0f));
                                 RectF rectF4 = this.rect;
                                 canvas.translate(rectF4.left + ((rectF4.width() - f) / 2.0f), dp3);
                                 this.stableCounter.draw(canvas);
@@ -750,8 +746,8 @@ public abstract class FilterTabsView extends FrameLayout {
                             }
                             FilterTabsView.this.textCounterPaint.setAlpha(NotificationCenter.cameraInitied);
                         }
-                        f28 += (dp2 - (lineBottom - lineTop)) / 2.0f;
-                        float dp32 = f28 - AndroidUtilities.dp(0.5f);
+                        f26 += (dp2 - (lineBottom - lineTop)) / 2.0f;
+                        float dp32 = f26 - AndroidUtilities.dp(0.5f);
                         if (z) {
                         }
                         if (this.inCounter != null) {
@@ -778,7 +774,7 @@ public abstract class FilterTabsView extends FrameLayout {
                         canvas.drawLine(this.rect.centerX() - dp4, this.rect.centerY() - dp4, this.rect.centerX() + dp4, this.rect.centerY() + dp4, FilterTabsView.this.deletePaint);
                         canvas.drawLine(this.rect.centerX() - dp4, this.rect.centerY() + dp4, this.rect.centerX() + dp4, this.rect.centerY() - dp4, FilterTabsView.this.deletePaint);
                     }
-                    f8 = f;
+                    f7 = f;
                     if (FilterTabsView.this.editingAnimationProgress != f5) {
                     }
                     this.lastTextX = f3;
@@ -788,7 +784,7 @@ public abstract class FilterTabsView extends FrameLayout {
                     this.lastTitle = this.currentText;
                     this.lastTitleWidth = tab2.titleWidth;
                     this.lastCountWidth = i15;
-                    this.lastCounterWidth = f8;
+                    this.lastCounterWidth = f7;
                     this.lastTabWidth = this.tabWidth;
                     this.lastWidth = getMeasuredWidth();
                     if (this.currentTab.isLocked) {
@@ -815,20 +811,20 @@ public abstract class FilterTabsView extends FrameLayout {
             } else {
                 i15 = i11;
             }
-            f7 = i15;
+            f6 = i15;
             if (z6) {
             }
-            float f282 = measuredHeight3;
-            this.rect.set(f22, f282, f7 + f22, AndroidUtilities.dp(17.333f) + measuredHeight3);
+            float f262 = measuredHeight3;
+            this.rect.set(dp, f262, f6 + dp, AndroidUtilities.dp(17.333f) + measuredHeight3);
             if (!z4) {
             }
             canvas.save();
             if (!z4) {
             }
-            canvas.scale(f29, f29, this.rect.centerX(), this.rect.centerY());
+            canvas.scale(f27, f27, this.rect.centerX(), this.rect.centerY());
             RectF rectF6 = this.rect;
-            float f302 = AndroidUtilities.density * 11.5f;
-            canvas.drawRoundRect(rectF6, f302, f302, FilterTabsView.this.counterPaint);
+            float f282 = AndroidUtilities.density * 11.5f;
+            canvas.drawRoundRect(rectF6, f282, f282, FilterTabsView.this.counterPaint);
             if (!z6) {
             }
             if (!z4) {
@@ -841,7 +837,7 @@ public abstract class FilterTabsView extends FrameLayout {
                 canvas.drawLine(this.rect.centerX() - dp42, this.rect.centerY() - dp42, this.rect.centerX() + dp42, this.rect.centerY() + dp42, FilterTabsView.this.deletePaint);
                 canvas.drawLine(this.rect.centerX() - dp42, this.rect.centerY() + dp42, this.rect.centerX() + dp42, this.rect.centerY() - dp42, FilterTabsView.this.deletePaint);
             }
-            f8 = f;
+            f7 = f;
             if (FilterTabsView.this.editingAnimationProgress != f5) {
             }
             this.lastTextX = f3;
@@ -851,7 +847,7 @@ public abstract class FilterTabsView extends FrameLayout {
             this.lastTitle = this.currentText;
             this.lastTitleWidth = tab22.titleWidth;
             this.lastCountWidth = i15;
-            this.lastCounterWidth = f8;
+            this.lastCounterWidth = f7;
             this.lastTabWidth = this.tabWidth;
             this.lastWidth = getMeasuredWidth();
             if (this.currentTab.isLocked) {
@@ -1173,7 +1169,7 @@ public abstract class FilterTabsView extends FrameLayout {
         textPaint3.setStrokeWidth(AndroidUtilities.dp(1.5f));
         GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
         this.selectorDrawable = gradientDrawable;
-        float dpf2 = AndroidUtilities.dpf2(13.0f);
+        float dpf2 = AndroidUtilities.dpf2(14.0f);
         gradientDrawable.setCornerRadii(new float[]{dpf2, dpf2, dpf2, dpf2, dpf2, dpf2, dpf2, dpf2});
         gradientDrawable.setColor(Theme.getColor(this.tabLineColorKey, resourcesProvider));
         setHorizontalScrollBarEnabled(false);
@@ -1254,7 +1250,7 @@ public abstract class FilterTabsView extends FrameLayout {
         this.layoutManager = linearLayoutManager;
         recyclerListView.setLayoutManager(linearLayoutManager);
         new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(recyclerListView);
-        int max = Math.max(0, AndroidUtilities.dp(13.5f));
+        int max = Math.max(0, AndroidUtilities.dp(11.5f));
         this.listViewPaddingH = max;
         recyclerListView.setPadding(max, 0, max, 0);
         recyclerListView.setClipToPadding(false);
@@ -1579,7 +1575,7 @@ public abstract class FilterTabsView extends FrameLayout {
         Tab tab = new Tab(i, text(str, arrayList), z);
         tab.isDefault = z2;
         tab.isLocked = z3;
-        this.allTabsWidth += tab.getWidth(true) + AndroidUtilities.dp(20.0f);
+        this.allTabsWidth += tab.getWidth(true) + AndroidUtilities.dp(24.0f);
         this.tabs.add(tab);
     }
 
@@ -1662,7 +1658,7 @@ public abstract class FilterTabsView extends FrameLayout {
             this.positionToWidth.put(i2, width);
             this.positionToCount.put(i2, ((Tab) this.tabs.get(i2)).counter);
             this.positionToX.put(i2, (this.additionalTabWidth / 2) + i);
-            i += width + AndroidUtilities.dp(20.0f) + this.additionalTabWidth;
+            i += width + AndroidUtilities.dp(24.0f) + this.additionalTabWidth;
         }
     }
 
@@ -1743,7 +1739,6 @@ public abstract class FilterTabsView extends FrameLayout {
         float lerp;
         float lerp2;
         float f;
-        float f2;
         float measuredWidth;
         int measuredHeight = getMeasuredHeight();
         this.selectorDrawable.setAlpha((int) (this.listView.getAlpha() * 255.0f));
@@ -1761,19 +1756,17 @@ public abstract class FilterTabsView extends FrameLayout {
                 int i4 = this.positionToX.get(i2);
                 int i5 = this.positionToWidth.get(i);
                 int i6 = this.positionToWidth.get(i2);
-                float f3 = this.positionToCount.get(i) != 0 ? 1.0f : 0.0f;
-                float f4 = this.positionToCount.get(i2) != 0 ? 1.0f : 0.0f;
+                float f2 = this.positionToCount.get(i) != 0 ? 1.0f : 0.0f;
+                float f3 = this.positionToCount.get(i2) != 0 ? 1.0f : 0.0f;
                 if (this.additionalTabWidth != 0) {
-                    lerp = AndroidUtilities.lerp(i3, i4, this.animatingIndicatorProgress) + AndroidUtilities.dp(10.0f);
+                    lerp = AndroidUtilities.lerp(i3, i4, this.animatingIndicatorProgress) + AndroidUtilities.dp(12.0f);
                 } else {
-                    lerp = (AndroidUtilities.lerp(i3, i4, this.animatingIndicatorProgress) - (this.positionToX.get(findFirstVisibleItemPosition) - findViewHolderForAdapterPosition.itemView.getLeft())) + AndroidUtilities.dp(10.0f);
+                    lerp = (AndroidUtilities.lerp(i3, i4, this.animatingIndicatorProgress) - (this.positionToX.get(findFirstVisibleItemPosition) - findViewHolderForAdapterPosition.itemView.getLeft())) + AndroidUtilities.dp(12.0f);
                 }
                 lerp2 = AndroidUtilities.lerp(i5, i6, this.animatingIndicatorProgress);
-                float lerp3 = AndroidUtilities.lerp(f3, f4, this.animatingIndicatorProgress);
+                AndroidUtilities.lerp(f2, f3, this.animatingIndicatorProgress);
                 f = lerp;
-                f2 = lerp3;
             }
-            f2 = 0.0f;
             lerp2 = 0.0f;
             f = 0.0f;
         } else {
@@ -1787,9 +1780,8 @@ public abstract class FilterTabsView extends FrameLayout {
                     measuredWidth = tabView.getMeasuredWidth();
                 }
                 f = (int) (tabView.getX() + ((measuredWidth - lerp2) / 2.0f));
-                f2 = tabView.tabCounterVisible;
+                float unused = tabView.tabCounterVisible;
             }
-            f2 = 0.0f;
             lerp2 = 0.0f;
             f = 0.0f;
         }
@@ -1797,9 +1789,9 @@ public abstract class FilterTabsView extends FrameLayout {
             canvas.save();
             canvas.translate(this.listView.getTranslationX(), 0.0f);
             canvas.scale(this.listView.getScaleX(), 1.0f, this.listView.getPivotX() + this.listView.getX(), this.listView.getPivotY());
-            float f5 = this.additionalTabWidth / 2.0f;
+            float f4 = this.additionalTabWidth / 2.0f;
             int dp = (measuredHeight / 2) - AndroidUtilities.dp(14.0f);
-            this.selectorDrawable.setBounds((int) ((f - AndroidUtilities.dp(12.5f)) - f5), dp, (int) (f + lerp2 + AndroidUtilities.lerp(AndroidUtilities.dp(12.5f), AndroidUtilities.dp(5.333f), f5 <= 0.0f ? f2 : 0.0f) + f5), AndroidUtilities.dp(28.0f) + dp);
+            this.selectorDrawable.setBounds((int) ((f - AndroidUtilities.dp(12.5f)) - f4), dp, (int) (f + lerp2 + AndroidUtilities.dp(12.5f) + f4), AndroidUtilities.dp(28.0f) + dp);
             this.selectorDrawable.setAlpha(31);
             this.selectorDrawable.draw(canvas);
             canvas.restore();
@@ -1988,7 +1980,7 @@ public abstract class FilterTabsView extends FrameLayout {
                     this.allTabsWidth = 0;
                     findDefaultTab().setTitle(LocaleController.getString(R.string.FilterAllChats), null, false);
                     for (int i2 = 0; i2 < size; i2++) {
-                        this.allTabsWidth += ((Tab) this.tabs.get(i2)).getWidth(true) + AndroidUtilities.dp(20.0f);
+                        this.allTabsWidth += ((Tab) this.tabs.get(i2)).getWidth(true) + AndroidUtilities.dp(24.0f);
                     }
                     z = true;
                     if (z) {
@@ -2024,7 +2016,7 @@ public abstract class FilterTabsView extends FrameLayout {
             findDefaultTab().setTitle(LocaleController.getString(R.string.FilterAllChats), null, false);
             int size = this.tabs.size();
             for (int i3 = 0; i3 < size; i3++) {
-                this.allTabsWidth += ((Tab) this.tabs.get(i3)).getWidth(true) + AndroidUtilities.dp(20.0f);
+                this.allTabsWidth += ((Tab) this.tabs.get(i3)).getWidth(true) + AndroidUtilities.dp(24.0f);
             }
         }
     }

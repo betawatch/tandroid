@@ -567,7 +567,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
     Object[] toArray();
 
-    Object[] toArray(IntFunction intFunction);
+    <A> A[] toArray(IntFunction<A[]> intFunction);
 
     List toList();
 

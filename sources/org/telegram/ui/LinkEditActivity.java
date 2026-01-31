@@ -17,8 +17,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -50,6 +48,8 @@ import org.telegram.ui.Cells.TextSettingsCell;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.ScaleStateListAnimator;
+import org.telegram.ui.Components.SectionsScrollView;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.SlideChooseView;
 import org.telegram.ui.Stories.recorder.KeyboardNotifier;
@@ -76,7 +76,7 @@ public class LinkEditActivity extends BaseFragment {
     private TextSettingsCell revokeLink;
     boolean scrollToEnd;
     boolean scrollToStart;
-    private ScrollView scrollView;
+    private SectionsScrollView scrollView;
     private TextCheckCell subCell;
     private EditTextCell subEditPriceCell;
     private TextInfoPrivacyCell subInfoCell;
@@ -114,7 +114,7 @@ public class LinkEditActivity extends BaseFragment {
         this.chatId = j;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0526  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0547  */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -162,8 +162,22 @@ public class LinkEditActivity extends BaseFragment {
         this.createTextView.setTypeface(AndroidUtilities.bold());
         this.createTextView.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(8.0f));
         this.actionBar.addView(this.createTextView, LayoutHelper.createFrame(-2, -2.0f, 8388629, 0.0f, this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight / AndroidUtilities.dp(2.0f) : 0, 0.0f, 0.0f));
-        this.scrollView = new ScrollView(context);
-        SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.LinkEditActivity.2
+        SectionsScrollView.SectionsLinearLayout sectionsLinearLayout = new SectionsScrollView.SectionsLinearLayout(context) { // from class: org.telegram.ui.LinkEditActivity.2
+            @Override // android.widget.LinearLayout, android.view.View
+            protected void onMeasure(int i5, int i6) {
+                super.onMeasure(i5, i6);
+            }
+
+            @Override // android.view.ViewGroup, android.view.View
+            protected void dispatchDraw(Canvas canvas) {
+                super.dispatchDraw(canvas);
+                LinkEditActivity.this.firstLayout = false;
+            }
+        };
+        SectionsScrollView sectionsScrollView = new SectionsScrollView(context, sectionsLinearLayout, this.resourceProvider);
+        this.scrollView = sectionsScrollView;
+        this.actionBar.setAdaptiveBackground(sectionsScrollView);
+        SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.LinkEditActivity.3
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i5, int i6) {
                 super.onMeasure(i5, i6);
@@ -205,18 +219,6 @@ public class LinkEditActivity extends BaseFragment {
             }
         };
         this.fragmentView = sizeNotifierFrameLayout;
-        LinearLayout linearLayout = new LinearLayout(context) { // from class: org.telegram.ui.LinkEditActivity.3
-            @Override // android.widget.LinearLayout, android.view.View
-            protected void onMeasure(int i5, int i6) {
-                super.onMeasure(i5, i6);
-            }
-
-            @Override // android.view.ViewGroup, android.view.View
-            protected void dispatchDraw(Canvas canvas) {
-                super.dispatchDraw(canvas);
-                LinkEditActivity.this.firstLayout = false;
-            }
-        };
         LayoutTransition layoutTransition = new LayoutTransition();
         layoutTransition.setDuration(420L);
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
@@ -225,13 +227,14 @@ public class LinkEditActivity extends BaseFragment {
         layoutTransition.setInterpolator(4, cubicBezierInterpolator);
         layoutTransition.setInterpolator(1, cubicBezierInterpolator);
         layoutTransition.setInterpolator(3, cubicBezierInterpolator);
-        linearLayout.setLayoutTransition(layoutTransition);
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(0, 0, 0, AndroidUtilities.dp(79.0f));
-        this.scrollView.addView(linearLayout);
+        sectionsLinearLayout.setLayoutTransition(layoutTransition);
+        sectionsLinearLayout.setOrientation(1);
+        sectionsLinearLayout.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(91.0f));
+        this.scrollView.addView(sectionsLinearLayout);
         TextView textView2 = new TextView(context);
         this.buttonTextView = textView2;
-        textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+        ScaleStateListAnimator.apply(textView2, 0.02f, 1.5f);
+        this.buttonTextView.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
         this.buttonTextView.setGravity(17);
         this.buttonTextView.setTextSize(1, 14.0f);
         this.buttonTextView.setTypeface(AndroidUtilities.bold());
@@ -267,12 +270,12 @@ public class LinkEditActivity extends BaseFragment {
                     LinkEditActivity.this.lambda$createView$0(view);
                 }
             });
-            linearLayout.addView(this.approveCell, LayoutHelper.createLinear(-1, 56));
+            sectionsLinearLayout.addView(this.approveCell, LayoutHelper.createLinear(-1, 56));
             TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context);
             this.approveHintCell = textInfoPrivacyCell;
             textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(context, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
             this.approveHintCell.setText(LocaleController.getString(R.string.ApproveNewMembersDescription));
-            linearLayout.addView(this.approveHintCell);
+            sectionsLinearLayout.addView(this.approveHintCell);
             TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(this.chatId);
             if ((this.inviteToEdit == null && ChatObject.isChannelAndNotMegaGroup(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(this.chatId))) && chatFull != null && chatFull.paid_media_allowed) || ((tL_chatInviteExported = this.inviteToEdit) != null && tL_chatInviteExported.subscription_pricing != null)) {
                 TextCheckCell textCheckCell2 = new TextCheckCell(context);
@@ -292,7 +295,7 @@ public class LinkEditActivity extends BaseFragment {
                         LinkEditActivity.this.lambda$createView$3(runnableArr, view);
                     }
                 });
-                linearLayout.addView(this.subCell, LayoutHelper.createLinear(-1, 48));
+                sectionsLinearLayout.addView(this.subCell, LayoutHelper.createLinear(-1, 48));
                 TextView textView3 = new TextView(context);
                 this.subPriceView = textView3;
                 textView3.setTextSize(1, 16.0f);
@@ -336,7 +339,7 @@ public class LinkEditActivity extends BaseFragment {
                 leftDrawable.setTranslationY(AndroidUtilities.dp(-1.0f));
                 leftDrawable.setTranslationX(AndroidUtilities.dp(1.0f));
                 i = -1;
-                linearLayout.addView(this.subEditPriceCell, LayoutHelper.createLinear(-1, 48));
+                sectionsLinearLayout.addView(this.subEditPriceCell, LayoutHelper.createLinear(-1, 48));
                 this.subEditPriceCell.setVisibility(8);
                 TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(context);
                 this.subInfoCell = textInfoPrivacyCell2;
@@ -351,14 +354,14 @@ public class LinkEditActivity extends BaseFragment {
                     }));
                 }
                 i2 = -2;
-                linearLayout.addView(this.subInfoCell, LayoutHelper.createLinear(-1, -2));
+                sectionsLinearLayout.addView(this.subInfoCell, LayoutHelper.createLinear(-1, -2));
                 HeaderCell headerCell = new HeaderCell(context);
                 this.timeHeaderCell = headerCell;
                 headerCell.setText(LocaleController.getString(R.string.LimitByPeriod));
-                linearLayout.addView(this.timeHeaderCell);
+                sectionsLinearLayout.addView(this.timeHeaderCell);
                 SlideChooseView slideChooseView = new SlideChooseView(context);
                 this.timeChooseView = slideChooseView;
-                linearLayout.addView(slideChooseView);
+                sectionsLinearLayout.addView(slideChooseView);
                 TextView textView4 = new TextView(context);
                 this.timeEditText = textView4;
                 textView4.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
@@ -383,15 +386,15 @@ public class LinkEditActivity extends BaseFragment {
                     }
                 });
                 resetDates();
-                linearLayout.addView(this.timeEditText, LayoutHelper.createLinear(i, 50));
+                sectionsLinearLayout.addView(this.timeEditText, LayoutHelper.createLinear(i, 50));
                 TextInfoPrivacyCell textInfoPrivacyCell3 = new TextInfoPrivacyCell(context);
                 this.divider = textInfoPrivacyCell3;
                 textInfoPrivacyCell3.setText(LocaleController.getString(R.string.TimeLimitHelp));
-                linearLayout.addView(this.divider);
+                sectionsLinearLayout.addView(this.divider);
                 HeaderCell headerCell2 = new HeaderCell(context);
                 this.usesHeaderCell = headerCell2;
                 headerCell2.setText(LocaleController.getString(R.string.LimitNumberOfUses));
-                linearLayout.addView(this.usesHeaderCell);
+                sectionsLinearLayout.addView(this.usesHeaderCell);
                 SlideChooseView slideChooseView2 = new SlideChooseView(context);
                 this.usesChooseView = slideChooseView2;
                 slideChooseView2.setCallback(new SlideChooseView.Callback() { // from class: org.telegram.ui.LinkEditActivity$$ExternalSyntheticLambda7
@@ -406,7 +409,7 @@ public class LinkEditActivity extends BaseFragment {
                     }
                 });
                 resetUses();
-                linearLayout.addView(this.usesChooseView);
+                sectionsLinearLayout.addView(this.usesChooseView);
                 EditText editText = new EditText(context) { // from class: org.telegram.ui.LinkEditActivity.6
                     @Override // android.widget.TextView, android.view.View
                     public boolean onTouchEvent(MotionEvent motionEvent) {
@@ -453,11 +456,11 @@ public class LinkEditActivity extends BaseFragment {
                         }
                     }
                 });
-                linearLayout.addView(this.usesEditText, LayoutHelper.createLinear(i, 50));
+                sectionsLinearLayout.addView(this.usesEditText, LayoutHelper.createLinear(i, 50));
                 TextInfoPrivacyCell textInfoPrivacyCell4 = new TextInfoPrivacyCell(context);
                 this.dividerUses = textInfoPrivacyCell4;
                 textInfoPrivacyCell4.setText(LocaleController.getString(R.string.UsesLimitHelp));
-                linearLayout.addView(this.dividerUses);
+                sectionsLinearLayout.addView(this.dividerUses);
                 EditText editText2 = new EditText(context) { // from class: org.telegram.ui.LinkEditActivity.8
                     @Override // android.widget.TextView, android.view.View
                     public boolean onTouchEvent(MotionEvent motionEvent) {
@@ -496,14 +499,14 @@ public class LinkEditActivity extends BaseFragment {
                 int i9 = Theme.key_windowBackgroundWhiteBlackText;
                 editText4.setTextColor(Theme.getColor(i9));
                 this.nameEditText.setTextSize(1, 16.0f);
-                linearLayout.addView(this.nameEditText, LayoutHelper.createLinear(i, 50));
+                sectionsLinearLayout.addView(this.nameEditText, LayoutHelper.createLinear(i, 50));
                 TextInfoPrivacyCell textInfoPrivacyCell5 = new TextInfoPrivacyCell(context);
                 this.dividerName = textInfoPrivacyCell5;
                 int i10 = R.drawable.greydivider_bottom;
                 int i11 = Theme.key_windowBackgroundGrayShadow;
                 textInfoPrivacyCell5.setBackground(Theme.getThemedDrawableByKey(context, i10, i11));
                 this.dividerName.setText(LocaleController.getString(R.string.LinkNameHelp));
-                linearLayout.addView(this.dividerName);
+                sectionsLinearLayout.addView(this.dividerName);
                 if (this.type == 1) {
                     TextSettingsCell textSettingsCell = new TextSettingsCell(context);
                     this.revokeLink = textSettingsCell;
@@ -516,7 +519,7 @@ public class LinkEditActivity extends BaseFragment {
                             LinkEditActivity.this.lambda$createView$10(view);
                         }
                     });
-                    linearLayout.addView(this.revokeLink);
+                    sectionsLinearLayout.addView(this.revokeLink);
                 }
                 sizeNotifierFrameLayout.addView(this.scrollView, LayoutHelper.createFrame(i, -1.0f));
                 FrameLayout frameLayout = new FrameLayout(context);
@@ -548,9 +551,9 @@ public class LinkEditActivity extends BaseFragment {
                     }
                 });
                 this.buttonTextView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-                this.dividerUses.setBackgroundDrawable(Theme.getThemedDrawableByKey(context, i10, i11));
-                this.divider.setBackgroundDrawable(Theme.getThemedDrawableByKey(context, R.drawable.greydivider, i11));
-                this.buttonTextView.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(6.0f), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
+                this.dividerUses.setBackground(Theme.getThemedDrawableByKey(context, i10, i11));
+                this.divider.setBackground(Theme.getThemedDrawableByKey(context, R.drawable.greydivider, i11));
+                this.buttonTextView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(24.0f), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
                 this.usesEditText.setTextColor(Theme.getColor(i9));
                 this.usesEditText.setHintTextColor(Theme.getColor(i8));
                 this.timeEditText.setTextColor(Theme.getColor(i9));
@@ -559,7 +562,7 @@ public class LinkEditActivity extends BaseFragment {
                 setInviteToEdit(this.inviteToEdit);
                 sizeNotifierFrameLayout.setClipChildren(false);
                 this.scrollView.setClipChildren(false);
-                linearLayout.setClipChildren(false);
+                sectionsLinearLayout.setClipChildren(false);
                 return sizeNotifierFrameLayout;
             }
         }
@@ -568,10 +571,10 @@ public class LinkEditActivity extends BaseFragment {
         HeaderCell headerCell4 = new HeaderCell(context);
         this.timeHeaderCell = headerCell4;
         headerCell4.setText(LocaleController.getString(R.string.LimitByPeriod));
-        linearLayout.addView(this.timeHeaderCell);
+        sectionsLinearLayout.addView(this.timeHeaderCell);
         SlideChooseView slideChooseView3 = new SlideChooseView(context);
         this.timeChooseView = slideChooseView3;
-        linearLayout.addView(slideChooseView3);
+        sectionsLinearLayout.addView(slideChooseView3);
         TextView textView42 = new TextView(context);
         this.timeEditText = textView42;
         textView42.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
@@ -596,15 +599,15 @@ public class LinkEditActivity extends BaseFragment {
             }
         });
         resetDates();
-        linearLayout.addView(this.timeEditText, LayoutHelper.createLinear(i, 50));
+        sectionsLinearLayout.addView(this.timeEditText, LayoutHelper.createLinear(i, 50));
         TextInfoPrivacyCell textInfoPrivacyCell32 = new TextInfoPrivacyCell(context);
         this.divider = textInfoPrivacyCell32;
         textInfoPrivacyCell32.setText(LocaleController.getString(R.string.TimeLimitHelp));
-        linearLayout.addView(this.divider);
+        sectionsLinearLayout.addView(this.divider);
         HeaderCell headerCell22 = new HeaderCell(context);
         this.usesHeaderCell = headerCell22;
         headerCell22.setText(LocaleController.getString(R.string.LimitNumberOfUses));
-        linearLayout.addView(this.usesHeaderCell);
+        sectionsLinearLayout.addView(this.usesHeaderCell);
         SlideChooseView slideChooseView22 = new SlideChooseView(context);
         this.usesChooseView = slideChooseView22;
         slideChooseView22.setCallback(new SlideChooseView.Callback() { // from class: org.telegram.ui.LinkEditActivity$$ExternalSyntheticLambda7
@@ -619,7 +622,7 @@ public class LinkEditActivity extends BaseFragment {
             }
         });
         resetUses();
-        linearLayout.addView(this.usesChooseView);
+        sectionsLinearLayout.addView(this.usesChooseView);
         EditText editText5 = new EditText(context) { // from class: org.telegram.ui.LinkEditActivity.6
             @Override // android.widget.TextView, android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
@@ -666,11 +669,11 @@ public class LinkEditActivity extends BaseFragment {
                 }
             }
         });
-        linearLayout.addView(this.usesEditText, LayoutHelper.createLinear(i, 50));
+        sectionsLinearLayout.addView(this.usesEditText, LayoutHelper.createLinear(i, 50));
         TextInfoPrivacyCell textInfoPrivacyCell42 = new TextInfoPrivacyCell(context);
         this.dividerUses = textInfoPrivacyCell42;
         textInfoPrivacyCell42.setText(LocaleController.getString(R.string.UsesLimitHelp));
-        linearLayout.addView(this.dividerUses);
+        sectionsLinearLayout.addView(this.dividerUses);
         EditText editText22 = new EditText(context) { // from class: org.telegram.ui.LinkEditActivity.8
             @Override // android.widget.TextView, android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
@@ -709,14 +712,14 @@ public class LinkEditActivity extends BaseFragment {
         int i92 = Theme.key_windowBackgroundWhiteBlackText;
         editText42.setTextColor(Theme.getColor(i92));
         this.nameEditText.setTextSize(1, 16.0f);
-        linearLayout.addView(this.nameEditText, LayoutHelper.createLinear(i, 50));
+        sectionsLinearLayout.addView(this.nameEditText, LayoutHelper.createLinear(i, 50));
         TextInfoPrivacyCell textInfoPrivacyCell52 = new TextInfoPrivacyCell(context);
         this.dividerName = textInfoPrivacyCell52;
         int i102 = R.drawable.greydivider_bottom;
         int i112 = Theme.key_windowBackgroundGrayShadow;
         textInfoPrivacyCell52.setBackground(Theme.getThemedDrawableByKey(context, i102, i112));
         this.dividerName.setText(LocaleController.getString(R.string.LinkNameHelp));
-        linearLayout.addView(this.dividerName);
+        sectionsLinearLayout.addView(this.dividerName);
         if (this.type == 1) {
         }
         sizeNotifierFrameLayout.addView(this.scrollView, LayoutHelper.createFrame(i, -1.0f));
@@ -749,9 +752,9 @@ public class LinkEditActivity extends BaseFragment {
             }
         });
         this.buttonTextView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-        this.dividerUses.setBackgroundDrawable(Theme.getThemedDrawableByKey(context, i102, i112));
-        this.divider.setBackgroundDrawable(Theme.getThemedDrawableByKey(context, R.drawable.greydivider, i112));
-        this.buttonTextView.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(6.0f), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
+        this.dividerUses.setBackground(Theme.getThemedDrawableByKey(context, i102, i112));
+        this.divider.setBackground(Theme.getThemedDrawableByKey(context, R.drawable.greydivider, i112));
+        this.buttonTextView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(24.0f), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
         this.usesEditText.setTextColor(Theme.getColor(i92));
         this.usesEditText.setHintTextColor(Theme.getColor(i82));
         this.timeEditText.setTextColor(Theme.getColor(i92));
@@ -760,7 +763,7 @@ public class LinkEditActivity extends BaseFragment {
         setInviteToEdit(this.inviteToEdit);
         sizeNotifierFrameLayout.setClipChildren(false);
         this.scrollView.setClipChildren(false);
-        linearLayout.setClipChildren(false);
+        sectionsLinearLayout.setClipChildren(false);
         return sizeNotifierFrameLayout;
     }
 

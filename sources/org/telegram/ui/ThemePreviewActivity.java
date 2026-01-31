@@ -1466,7 +1466,7 @@ public class ThemePreviewActivity extends BaseFragment implements DownloadContro
                                         };
                                         this.dimmingSliderContainer = frameLayout3;
                                         frameLayout3.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
-                                        this.page2.addView(this.dimmingSliderContainer, LayoutHelper.createFrame(NotificationCenter.starSubscriptionsLoaded, 76, 49));
+                                        this.page2.addView(this.dimmingSliderContainer, LayoutHelper.createFrame(222, 76, 49));
                                         SliderView sliderView = new SliderView(getContext(), i10) { // from class: org.telegram.ui.ThemePreviewActivity.15
                                             @Override // org.telegram.ui.Stories.recorder.SliderView, android.view.View
                                             public boolean dispatchTouchEvent(MotionEvent motionEvent) {

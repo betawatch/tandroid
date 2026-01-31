@@ -17,9 +17,12 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
 
 /* loaded from: classes5.dex */
 public class BlurredBackgroundWithFadeDrawable extends Drawable {
+    private final Matrix bitmapMatrix;
+    private final Paint bitmapPaint;
     private int colorStaticLast;
     private final Paint colorStaticPaint;
     private final BlurredBackgroundDrawable drawable;
@@ -46,6 +49,8 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
         Paint paint = new Paint(1);
         this.maskFadeGradientPaint = paint;
         this.matrix = new Matrix();
+        this.bitmapMatrix = new Matrix();
+        this.bitmapPaint = new Paint(1);
         this.colorStaticPaint = new Paint(1);
         this.drawable = blurredBackgroundDrawable;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
@@ -95,7 +100,9 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
             canvas.restore();
             return;
         }
-        this.colorStaticPaint.setShader(null);
+        if (unwrappedSource instanceof BlurredBackgroundSourceRenderNode) {
+            return;
+        }
         int saveLayer = canvas.saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, null);
         int height = this.fadeHeight < 0 ? bounds.height() + this.fadeHeight : 0;
         this.drawable.draw(canvas);

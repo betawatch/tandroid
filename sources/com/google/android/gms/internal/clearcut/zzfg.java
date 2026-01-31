@@ -109,7 +109,7 @@ abstract class zzfg {
                     throw new zzfi(i2, length);
                 }
                 int i6 = position + 1;
-                byteBuffer.put(position, (byte) ((charAt3 >>> '\f') | 224));
+                byteBuffer.put(position, (byte) ((charAt3 >>> '\f') | NotificationCenter.botStarsUpdated));
                 position += 2;
                 byteBuffer.put(i6, (byte) (((charAt3 >>> 6) & 63) | 128));
                 byteBuffer.put(position, (byte) ((charAt3 & '?') | 128));

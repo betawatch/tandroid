@@ -176,7 +176,7 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.groupCallVisibilityChanged /* 174 */:
             case NotificationCenter.dialogFiltersUpdated /* 183 */:
             case NotificationCenter.giftsToUserSent /* 187 */:
-            case 224:
+            case NotificationCenter.botStarsUpdated /* 224 */:
             case NotificationCenter.botStarsTransactionsLoaded /* 225 */:
             case 16868:
             case 18407:

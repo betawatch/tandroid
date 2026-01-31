@@ -130,6 +130,11 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
     private final int[] vibrateLabels;
     public int vibrateRow;
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
     public void toggleShowAutoExceptions() {
         if (this.listView == null || this.adapter == null) {
             return;
@@ -2844,5 +2849,11 @@ public class NotificationsCustomSettingsActivity extends BaseFragment implements
                 }
             }
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
     }
 }

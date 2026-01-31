@@ -2122,7 +2122,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
             case 's':
             case 'w':
             case NotificationCenter.channelRecommendationsLoaded /* 200 */:
-            case 224:
+            case NotificationCenter.botStarsUpdated /* 224 */:
                 return new int[]{1, 2, 0, 0, 2, 2};
             case 'I':
                 return new int[]{1, 0, 0, 2, 2, 2};
@@ -2336,7 +2336,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{0, 1, 1, 2, 4, 2};
             case NotificationCenter.starBalanceUpdated /* 220 */:
                 return new int[]{1, 1, 4, 1, 3, 1};
-            case NotificationCenter.starSubscriptionsLoaded /* 222 */:
+            case 222:
                 return new int[]{2, 2, 3, 4, 3, 2};
             case NotificationCenter.channelStarsUpdated /* 226 */:
                 return new int[]{2, 2, 0, 1, 2, 2};

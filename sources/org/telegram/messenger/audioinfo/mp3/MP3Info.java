@@ -120,7 +120,7 @@ public class MP3Info extends AudioInfo {
         i = 0;
         read = -1;
         while (read != -1) {
-            if (i == 255 && (read & 224) == 224) {
+            if (i == 255 && (read & NotificationCenter.botStarsUpdated) == 224) {
                 mP3Input.mark(2);
                 int read2 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
                 if (read2 == -1) {
@@ -183,7 +183,7 @@ public class MP3Info extends AudioInfo {
         int read = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
         int read2 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
         if (read != -1 && read2 != -1) {
-            if (read == 255 && (read2 & 224) == 224) {
+            if (read == 255 && (read2 & NotificationCenter.botStarsUpdated) == 224) {
                 int read3 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
                 int read4 = stopReadCondition.stopRead(mP3Input) ? -1 : mP3Input.read();
                 if (read3 == -1 || read4 == -1) {

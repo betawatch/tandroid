@@ -28,7 +28,6 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
     private final RenderNode renderNode;
     private final RenderNode renderNodeFill;
     private boolean renderNodeInvalidated;
-    private final RenderNode renderNodeStroke;
     private final BlurredBackgroundSourceRenderNode source;
 
     public BlurredBackgroundDrawableRenderNode(BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode) {
@@ -41,7 +40,6 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
         RenderNode m = BotFullscreenButtons$$ExternalSyntheticApiModelOutline9.m("BlurredNode");
         this.renderNode = m;
         this.renderNodeFill = BotFullscreenButtons$$ExternalSyntheticApiModelOutline9.m("BlurredFill");
-        this.renderNodeStroke = BotFullscreenButtons$$ExternalSyntheticApiModelOutline9.m("BlurredStroke");
         m.setClipToOutline(true);
         m.setClipToBounds(true);
         this.source = blurredBackgroundSourceRenderNode;
@@ -72,7 +70,6 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
             return;
         }
         this.renderNodeFill.setPosition(0, 0, this.boundProps.boundsWithPadding.width(), this.boundProps.boundsWithPadding.height());
-        this.renderNodeStroke.setPosition(0, 0, this.boundProps.boundsWithPadding.width(), this.boundProps.boundsWithPadding.height());
         this.renderNode.setPosition(0, 0, this.boundProps.boundsWithPadding.width(), this.boundProps.boundsWithPadding.height());
         this.renderNode.setOutline(this.outline);
         this.renderNodeInvalidated = true;
@@ -93,60 +90,53 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
     private void updateDisplayList() {
         RecordingCanvas beginRecording;
         RecordingCanvas beginRecording2;
-        RecordingCanvas beginRecording3;
         float f = this.sourceOffsetX;
         float f2 = this.sourceOffsetY;
+        Rect rect = this.boundProps.boundsWithPadding;
+        float f3 = rect.left + f;
+        float f4 = rect.top + f2;
+        float f5 = rect.right + f;
+        float f6 = rect.bottom + f2;
         beginRecording = this.renderNodeFill.beginRecording();
         beginRecording.save();
-        Rect rect = this.boundProps.boundsWithPadding;
-        beginRecording.translate(-(rect.left + f), -(rect.top + f2));
+        beginRecording.translate(-f3, -f4);
         LiquidGlassEffect liquidGlassEffect = this.liquidGlassEffect;
         if (liquidGlassEffect != null && Build.VERSION.SDK_INT >= 33) {
             float width = this.boundProps.boundsWithPadding.width();
             float height = this.boundProps.boundsWithPadding.height();
             BlurredBackgroundDrawable.Props props = this.boundProps;
             float[] fArr = props.shaderRadii;
-            float f3 = fArr[0];
-            float f4 = fArr[2];
-            float f5 = fArr[4];
-            float f6 = fArr[6];
+            float f7 = fArr[0];
+            float f8 = fArr[2];
+            float f9 = fArr[4];
+            float f10 = fArr[6];
             int i = props.liquidThickness;
             if (i <= 0) {
                 i = AndroidUtilities.dp(11.0f);
             }
-            float f7 = i;
+            float f11 = i;
             BlurredBackgroundDrawable.Props props2 = this.boundProps;
-            liquidGlassEffect.update(0.0f, 0.0f, width, height, f3, f4, f5, f6, f7, props2.liquidIntensity, props2.liquidIndex, this.backgroundColor);
+            liquidGlassEffect.update(0.0f, 0.0f, width, height, f7, f8, f9, f10, f11, props2.liquidIntensity, props2.liquidIndex, this.backgroundColor);
         }
-        BlurredBackgroundSourceRenderNode blurredBackgroundSourceRenderNode = this.source;
-        Rect rect2 = this.boundProps.boundsWithPadding;
-        blurredBackgroundSourceRenderNode.draw(beginRecording, rect2.left + f, rect2.top + f2, rect2.right + f, rect2.bottom + f2);
+        this.source.draw(beginRecording, f3, f4, f5, f6);
         beginRecording.restore();
         this.renderNodeFill.endRecording();
-        boolean z = (this.strokeColorTop == 0 && this.strokeColorBottom == 0) ? false : true;
-        if (z) {
-            beginRecording3 = this.renderNodeStroke.beginRecording();
-            if (this.strokeColorTop != 0) {
-                float width2 = this.boundProps.boundsWithPadding.width();
-                float height2 = this.boundProps.boundsWithPadding.height();
-                BlurredBackgroundDrawable.Props props3 = this.boundProps;
-                BlurredBackgroundDrawable.drawStroke((Canvas) beginRecording3, 0.0f, 0.0f, width2, height2, props3.radii, props3.strokeWidthTop, true, this.paintStrokeTop);
-            }
-            if (this.strokeColorBottom != 0) {
-                float width3 = this.boundProps.boundsWithPadding.width();
-                float height3 = this.boundProps.boundsWithPadding.height();
-                BlurredBackgroundDrawable.Props props4 = this.boundProps;
-                BlurredBackgroundDrawable.drawStroke((Canvas) beginRecording3, 0.0f, 0.0f, width3, height3, props4.radii, props4.strokeWidthBottom, false, this.paintStrokeBottom);
-            }
-            this.renderNodeStroke.endRecording();
-        }
         beginRecording2 = this.renderNode.beginRecording();
         beginRecording2.drawRenderNode(this.renderNodeFill);
         if (this.liquidGlassEffect == null && Color.alpha(this.backgroundColor) != 0) {
             beginRecording2.drawColor(this.backgroundColor);
         }
-        if (z) {
-            beginRecording2.drawRenderNode(this.renderNodeStroke);
+        if (this.strokeColorTop != 0) {
+            float width2 = this.boundProps.boundsWithPadding.width();
+            float height2 = this.boundProps.boundsWithPadding.height();
+            BlurredBackgroundDrawable.Props props3 = this.boundProps;
+            BlurredBackgroundDrawable.drawStroke((Canvas) beginRecording2, 0.0f, 0.0f, width2, height2, props3.radii, props3.strokeWidthTop, true, this.paintStrokeTop);
+        }
+        if (this.strokeColorBottom != 0) {
+            float width3 = this.boundProps.boundsWithPadding.width();
+            float height3 = this.boundProps.boundsWithPadding.height();
+            BlurredBackgroundDrawable.Props props4 = this.boundProps;
+            BlurredBackgroundDrawable.drawStroke((Canvas) beginRecording2, 0.0f, 0.0f, width3, height3, props4.radii, props4.strokeWidthBottom, false, this.paintStrokeBottom);
         }
         this.renderNode.endRecording();
     }
@@ -191,6 +181,10 @@ public class BlurredBackgroundDrawableRenderNode extends BlurredBackgroundDrawab
         canvas.translate(rect.left, rect.top);
         canvas.drawRenderNode(this.renderNode);
         canvas.restore();
+    }
+
+    public void invalidateDisplayList() {
+        this.renderNodeInvalidated = true;
     }
 
     @Override // org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable, android.graphics.drawable.Drawable

@@ -78,6 +78,11 @@ public class LiteModeSettingsActivity extends BaseFragment {
     private ArrayList items = new ArrayList();
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
@@ -1094,5 +1099,11 @@ public class LiteModeSettingsActivity extends BaseFragment {
         LiteMode.savePreference();
         AnimatedEmojiDrawable.updateAll();
         Theme.reloadWallpaper(true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
     }
 }

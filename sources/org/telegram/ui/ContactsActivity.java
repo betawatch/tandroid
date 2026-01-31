@@ -174,11 +174,6 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean drawEdgeNavigationBar() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean isSupportEdgeToEdge() {
         return true;
     }
@@ -1659,6 +1654,14 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
         checkUi_floatingButtonPosition();
         checkUi_emptyView();
         return WindowInsetsCompat.CONSUMED;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.navigationBarHeight = i4;
+        checkUi_listViewPadding();
+        checkUi_floatingButtonPosition();
+        checkUi_emptyView();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

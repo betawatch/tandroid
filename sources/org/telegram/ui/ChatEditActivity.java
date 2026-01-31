@@ -166,6 +166,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
     private PhotoViewer.PhotoViewerProvider provider;
     private TextCell publicLinkCell;
     private TextCell reactionsCell;
+    private SectionsScrollView scrollView;
     private TextCell setAvatarCell;
     private LinearLayout settingsContainer;
     private TextInfoPrivacyCell settingsSectionCell;
@@ -204,6 +205,11 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
     @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
     public /* synthetic */ PhotoViewer.PlaceProviderObject getCloseIntoObject() {
         return ImageUpdater.ImageUpdaterDelegate.-CC.$default$getCloseIntoObject(this);
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
     }
 
     @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
@@ -585,14 +591,14 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:144:0x076e  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x07ef  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x083a  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0874  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x089e  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x08ab  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x08b8  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x08de  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x0776  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x07f7  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0842  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x087c  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x08a6  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x08b3  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x08c0  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x08e6  */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -776,10 +782,11 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         SectionsScrollView.SectionsLinearLayout sectionsLinearLayout = new SectionsScrollView.SectionsLinearLayout(context);
         this.linearLayout = sectionsLinearLayout;
         SectionsScrollView sectionsScrollView = new SectionsScrollView(context, this.linearLayout, this.resourceProvider, false);
+        this.scrollView = sectionsScrollView;
         sectionsScrollView.setFillViewport(true);
-        sizeNotifierFrameLayout.addView(sectionsScrollView, LayoutHelper.createFrame(-1, -1.0f));
-        this.actionBar.setAdaptiveBackground(sectionsScrollView);
-        sectionsScrollView.addView(sectionsLinearLayout, new FrameLayout.LayoutParams(-1, -2));
+        sizeNotifierFrameLayout.addView(this.scrollView, LayoutHelper.createFrame(-1, -1.0f));
+        this.actionBar.setAdaptiveBackground(this.scrollView);
+        this.scrollView.addView(sectionsLinearLayout, new FrameLayout.LayoutParams(-1, -2));
         sectionsLinearLayout.setOrientation(1);
         this.actionBar.setTitle(LocaleController.getString(R.string.ChannelEdit));
         LinearLayout linearLayout = new LinearLayout(context);
@@ -3662,6 +3669,18 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         BackupImageView backupImageView = this.avatarImage;
         if (backupImageView != null) {
             backupImageView.invalidate();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        LinearLayout linearLayout = this.linearLayout;
+        if (linearLayout != null) {
+            linearLayout.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + i4);
+        }
+        UndoView undoView = this.undoView;
+        if (undoView != null) {
+            undoView.setTranslationY(-i4);
         }
     }
 }

@@ -185,7 +185,7 @@ public class QRCodeBottomSheet extends BottomSheet {
     void updateColors() {
         this.buttonTextView.setTextColor(getThemedColor(Theme.key_featuredStickers_buttonText));
         TextView textView = this.buttonTextView;
-        int dp = AndroidUtilities.dp(6.0f);
+        int dp = AndroidUtilities.dp(24.0f);
         int i = Theme.key_featuredStickers_addButton;
         textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(dp, getThemedColor(i), getThemedColor(Theme.key_featuredStickers_addButtonPressed)));
         TextView textView2 = this.button2TextView;

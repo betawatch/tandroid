@@ -685,7 +685,6 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         public void setTranslationY(float f) {
             super.setTranslationY(f);
             DialogsActivity.this.blur3_InvalidateBlur();
-            AndroidUtilities.printStackTrace("translationY: " + f);
         }
 
         @Override // android.view.View
@@ -5264,8 +5263,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                             @Override // android.graphics.drawable.Drawable
                             public void draw(Canvas canvas) {
                                 this.bound.set(getBounds());
-                                this.bound.inset(0.0f, (this.bound.height() - AndroidUtilities.dp(26.0f)) / 2.0f);
-                                canvas.drawRoundRect(this.bound, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), this.paint);
+                                this.bound.inset(0.0f, (this.bound.height() - AndroidUtilities.dp(28.0f)) / 2.0f);
+                                canvas.drawRoundRect(this.bound, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.paint);
                             }
 
                             @Override // android.graphics.drawable.Drawable
@@ -5338,8 +5337,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     @Override // android.graphics.drawable.Drawable
                     public void draw(Canvas canvas) {
                         this.bound.set(getBounds());
-                        this.bound.inset(0.0f, (this.bound.height() - AndroidUtilities.dp(26.0f)) / 2.0f);
-                        canvas.drawRoundRect(this.bound, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), this.paint);
+                        this.bound.inset(0.0f, (this.bound.height() - AndroidUtilities.dp(28.0f)) / 2.0f);
+                        canvas.drawRoundRect(this.bound, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.paint);
                     }
 
                     @Override // android.graphics.drawable.Drawable
@@ -5679,7 +5678,6 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         @Override // androidx.recyclerview.widget.LinearLayoutManager
         public void scrollToPositionWithOffset(int i, int i2, boolean z) {
             super.scrollToPositionWithOffset(i, i2, z);
-            AndroidUtilities.printStackTrace("scrollToPositionWithOffset: " + i + " " + i2 + " " + z);
         }
 
         @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.ItemTouchHelper.ViewDropHandler
@@ -11113,7 +11111,6 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         if (this.fragmentView == null || f == this.scrollYOffset) {
             return;
         }
-        AndroidUtilities.printStackTrace("setScrollY: " + f);
         this.scrollYOffset = f;
         Bulletin bulletin = this.topBulletin;
         if (bulletin != null) {
@@ -15406,6 +15403,10 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         ViewPagerFixed.TabsView tabsView = this.searchTabsView;
         if (tabsView != null) {
             tabsView.updateColors();
+        }
+        SearchTabsAndFiltersLayout searchTabsAndFiltersLayout = this.searchTabsAndFiltersLayout;
+        if (searchTabsAndFiltersLayout != null) {
+            searchTabsAndFiltersLayout.updateColors();
         }
         View view = this.blurredView;
         if (view != null && Build.VERSION.SDK_INT >= 23) {

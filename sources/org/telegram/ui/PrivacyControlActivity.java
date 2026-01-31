@@ -214,6 +214,11 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
         return ImageUpdater.ImageUpdaterDelegate.-CC.$default$getInitialSearchString(this);
     }
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
     @Override // org.telegram.ui.Components.ImageUpdater.ImageUpdaterDelegate
     public /* synthetic */ void onUploadProgressChanged(float f) {
         ImageUpdater.ImageUpdaterDelegate.-CC.$default$onUploadProgressChanged(this, f);
@@ -3394,5 +3399,11 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
         arrayList.add(new ThemeDescription(this.listView, 0, null, null, null, null, Theme.key_chat_inTimeSelectedText));
         arrayList.add(new ThemeDescription(this.listView, 0, null, null, null, null, Theme.key_chat_outTimeSelectedText));
         return arrayList;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
     }
 }

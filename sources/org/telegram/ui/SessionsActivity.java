@@ -121,6 +121,11 @@ public class SessionsActivity extends BaseFragment implements NotificationCenter
     public static /* synthetic */ void lambda$createView$0(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
     public SessionsActivity(int i) {
         this.currentType = i;
     }
@@ -1511,5 +1516,15 @@ public class SessionsActivity extends BaseFragment implements NotificationCenter
 
     public void setDelegate(Delegate delegate) {
         this.delegate = delegate;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
+        UndoView undoView = this.undoView;
+        if (undoView != null) {
+            undoView.setTranslationY(-i4);
+        }
     }
 }

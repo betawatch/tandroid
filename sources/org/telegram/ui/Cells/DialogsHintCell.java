@@ -226,11 +226,9 @@ public class DialogsHintCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        int size = View.MeasureSpec.getSize(i);
-        if (size <= 0) {
-            size = AndroidUtilities.displaySize.x;
-        }
-        this.contentView.measure(View.MeasureSpec.makeMeasureSpec(((size - AndroidUtilities.dp(44.0f)) - getPaddingLeft()) - getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+        LinearLayout linearLayout = this.contentView;
+        linearLayout.measure(View.MeasureSpec.makeMeasureSpec(linearLayout.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
         int measuredHeight = this.contentView.getMeasuredHeight() + getPaddingTop() + getPaddingBottom();
         this.height = measuredHeight;
         super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_30));

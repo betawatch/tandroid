@@ -200,11 +200,6 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
-    public boolean drawEdgeNavigationBar() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean isSupportEdgeToEdge() {
         return true;
     }
@@ -725,6 +720,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                     StatisticActivity.this.selectTab(Math.round(positionAnimated), true);
                 }
                 StatisticActivity.this.blur3_InvalidateBlur();
+                StatisticActivity.this.checkUi_actionBar();
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed
@@ -734,6 +730,12 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
                 statisticActivity.selectTab(statisticActivity.viewPagerFixed.getCurrentPosition(), true);
                 StatisticActivity.this.setGestureSelectedOverride(0.0f, false);
                 StatisticActivity.this.blur3_InvalidateBlur();
+            }
+
+            @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+            protected void onLayout(boolean z2, int i3, int i4, int i5, int i6) {
+                super.onLayout(z2, i3, i4, i5, i6);
+                StatisticActivity.this.checkUi_actionBar();
             }
         };
         FrameLayout frameLayout2 = new FrameLayout(context);
@@ -844,6 +846,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             }
         };
         this.actionBar.setDrawBlurBackground(sizeNotifierFrameLayout);
+        sizeNotifierFrameLayout.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
         this.iBlur3FactoryLiquidGlass.setSourceRootView(new ViewPositionWatcher(sizeNotifierFrameLayout), sizeNotifierFrameLayout);
         sizeNotifierFrameLayout.addView(this.viewPagerFixed, LayoutHelper.createFrameMatchParent());
         sizeNotifierFrameLayout.addView(this.actionBar);
@@ -986,7 +989,6 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
             }
         };
         this.recyclerListView.setSections();
-        this.recyclerListView.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
         LinearLayout linearLayout = new LinearLayout(context);
         this.progressLayout = linearLayout;
         linearLayout.setOrientation(1);
@@ -1001,14 +1003,14 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         int i3 = Theme.key_player_actionBarTitle;
         textView.setTextColor(Theme.getColor(i3));
         textView.setTag(Integer.valueOf(i3));
-        textView.setText(LocaleController.getString("LoadingStats", R.string.LoadingStats));
+        textView.setText(LocaleController.getString(R.string.LoadingStats));
         textView.setGravity(1);
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 15.0f);
         int i4 = Theme.key_player_actionBarSubtitle;
         textView2.setTextColor(Theme.getColor(i4));
         textView2.setTag(Integer.valueOf(i4));
-        textView2.setText(LocaleController.getString("LoadingStatsDescription", R.string.LoadingStatsDescription));
+        textView2.setText(LocaleController.getString(R.string.LoadingStatsDescription));
         textView2.setGravity(1);
         this.progressLayout.addView(this.imageView, LayoutHelper.createLinear(120, 120, 1, 0, 0, 0, 20));
         this.progressLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));
@@ -3220,7 +3222,7 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         ArrayList arrayList = new ArrayList();
         View view = this.fragmentView;
         int i = ThemeDescription.FLAG_BACKGROUND;
-        int i2 = Theme.key_windowBackgroundWhite;
+        int i2 = Theme.key_windowBackgroundGray;
         arrayList.add(new ThemeDescription(view, i, null, null, null, null, i2));
         int i3 = Theme.key_dialogTextBlack;
         arrayList.add(new ThemeDescription(this.recyclerListView, 0, new Class[]{StatisticPostInfoCell.class}, new String[]{"message"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3));
@@ -3238,15 +3240,14 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         arrayList.add(new ThemeDescription((View) null, 0, (Class[]) null, (String[]) null, (Paint[]) null, (Drawable[]) null, themeDescriptionDelegate, Theme.key_statisticChartInactivePickerChart));
         arrayList.add(new ThemeDescription((View) null, 0, (Class[]) null, (String[]) null, (Paint[]) null, (Drawable[]) null, themeDescriptionDelegate, Theme.key_statisticChartActivePickerChart));
         arrayList.add(new ThemeDescription((View) null, 0, (Class[]) null, (String[]) null, (Paint[]) null, (Drawable[]) null, themeDescriptionDelegate, Theme.key_dialogBackground));
-        arrayList.add(new ThemeDescription((View) null, 0, (Class[]) null, (String[]) null, (Paint[]) null, (Drawable[]) null, themeDescriptionDelegate, i2));
+        arrayList.add(new ThemeDescription((View) null, 0, (Class[]) null, (String[]) null, (Paint[]) null, (Drawable[]) null, themeDescriptionDelegate, Theme.key_windowBackgroundWhite));
         arrayList.add(new ThemeDescription((View) null, 0, (Class[]) null, (String[]) null, (Paint[]) null, (Drawable[]) null, themeDescriptionDelegate, Theme.key_windowBackgroundWhiteGrayText2));
         arrayList.add(new ThemeDescription((View) null, 0, (Class[]) null, (String[]) null, (Paint[]) null, (Drawable[]) null, themeDescriptionDelegate, Theme.key_actionBarActionModeDefaultSelector));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_windowBackgroundGray));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, i2));
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_windowBackgroundGrayShadow));
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_windowBackgroundWhiteGreenText2));
         int i5 = Theme.key_text_RedRegular;
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, i5));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i2));
         ChatAvatarContainer chatAvatarContainer = this.avatarContainer;
         arrayList.add(new ThemeDescription(chatAvatarContainer != null ? chatAvatarContainer.getTitleTextView() : null, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_player_actionBarTitle));
         ChatAvatarContainer chatAvatarContainer2 = this.avatarContainer;
@@ -4165,6 +4166,11 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         return false;
     }
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        checkUi_listPaddings();
+    }
+
     private void checkUi_listPaddings() {
         int i = AndroidUtilities.navigationBarHeight;
         int i2 = AndroidUtilities.statusBarHeight;
@@ -4185,6 +4191,22 @@ public class StatisticActivity extends BaseFragment implements NotificationCente
         ChannelMonetizationLayout channelMonetizationLayout = this.monetizationLayout;
         if (channelMonetizationLayout != null) {
             channelMonetizationLayout.listView.setPadding(0, currentActionBarHeight, 0, dp);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkUi_actionBar() {
+        View currentView = this.viewPagerFixed.getCurrentView();
+        ChannelBoostLayout channelBoostLayout = this.boostLayout;
+        if (currentView == channelBoostLayout) {
+            this.actionBar.setAdaptiveBackground(channelBoostLayout.listView);
+            return;
+        }
+        ChannelMonetizationLayout channelMonetizationLayout = this.monetizationLayout;
+        if (currentView == channelMonetizationLayout) {
+            this.actionBar.setAdaptiveBackground(channelMonetizationLayout.listView);
+        } else {
+            this.actionBar.setAdaptiveBackground(this.recyclerListView);
         }
     }
 

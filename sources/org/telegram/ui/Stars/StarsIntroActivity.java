@@ -6230,11 +6230,11 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                     linksTextView7.setGravity(17);
                     linearLayout.addView(linksTextView7, LayoutHelper.createLinear(-1, -2, 26.0f, 7.0f, 26.0f, 15.0f));
                     if (starsSubscription.chat_invite_hash != null || starsSubscription.invoice_slug != null) {
-                        final ButtonWithCounterView buttonWithCounterView4 = new ButtonWithCounterView(context, true, resourcesProvider);
-                        buttonWithCounterView4.setText(LocaleController.getString(R.string.StarsSubscriptionAgain), false);
-                        linearLayout.addView(buttonWithCounterView4, LayoutHelper.createLinear(-1, 48));
+                        final ButtonWithCounterView round = new ButtonWithCounterView(context, true, resourcesProvider).setRound();
+                        round.setText(LocaleController.getString(R.string.StarsSubscriptionAgain), false);
+                        linearLayout.addView(round, LayoutHelper.createLinear(-1, 48));
                         final boolean[] zArr3 = zArr;
-                        buttonWithCounterView4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda72
+                        round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda72
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
                                 StarsIntroActivity.lambda$showSubscriptionSheet$76(ButtonWithCounterView.this, starsSubscription, i, bottomSheetArr, resourcesProvider, zArr3, context, view);

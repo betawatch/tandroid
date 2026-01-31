@@ -49,6 +49,11 @@ public class PasskeysActivity extends BaseFragment {
     private UniversalRecyclerView listView;
     private ArrayList passkeys;
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
     public PasskeysActivity(ArrayList arrayList) {
         this.passkeys = arrayList;
     }
@@ -387,16 +392,16 @@ public class PasskeysActivity extends BaseFragment {
         featureCell3.set(R.drawable.menu_privacy, LocaleController.getString(R.string.PasskeyFeature3Title), LocaleController.getString(R.string.PasskeyFeature3Subtitle));
         linearLayout.addView(featureCell3, LayoutHelper.createLinear(-1, -2, 0.0f, 0.0f, 0.0f, 8.0f));
         final BottomSheet create = builder.create();
-        final ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
-        buttonWithCounterView.setText(LocaleController.getString(R.string.PasskeyFeatureButton), false);
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda0
+        final ButtonWithCounterView round = new ButtonWithCounterView(context, resourcesProvider).setRound();
+        round.setText(LocaleController.getString(R.string.PasskeyFeatureButton), false);
+        round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PasskeysActivity$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PasskeysActivity.lambda$showLearnSheet$9(ButtonWithCounterView.this, context, i, create, view);
             }
         });
         if (z) {
-            linearLayout.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 0.0f, 16.0f, 0.0f, 8.0f));
+            linearLayout.addView(round, LayoutHelper.createLinear(-1, 48, 0.0f, 16.0f, 0.0f, 8.0f));
         }
         create.fixNavigationBar();
         create.show();
@@ -497,5 +502,11 @@ public class PasskeysActivity extends BaseFragment {
                 PasskeysActivity.this.added(passkey);
             }
         }, 150L);
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
     }
 }

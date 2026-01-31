@@ -2763,7 +2763,7 @@ public abstract class RecyclerView extends ViewGroup {
     void animateDisappearance(ViewHolder viewHolder, ItemAnimator.ItemHolderInfo itemHolderInfo, ItemAnimator.ItemHolderInfo itemHolderInfo2) {
         addAnimatingView(viewHolder);
         viewHolder.setIsRecyclable(false);
-        if (this.mItemAnimator.animateDisappearance(viewHolder, itemHolderInfo, itemHolderInfo2)) {
+        if (this.mItemAnimator.animateDisappearance(this, viewHolder, itemHolderInfo, itemHolderInfo2)) {
             postAnimationRunner();
         }
     }
@@ -5706,6 +5706,8 @@ public abstract class RecyclerView extends ViewGroup {
         long mItemId = -1;
         int mItemViewType = -1;
         int mPreLayoutPosition = -1;
+        public int mOldOldPosition = -1;
+        public int mOldCompoundPosition = -1;
         ViewHolder mShadowedHolder = null;
         ViewHolder mShadowingHolder = null;
         List mPayloads = null;
@@ -5754,6 +5756,7 @@ public abstract class RecyclerView extends ViewGroup {
             if (this.mOldPosition == -1) {
                 this.mOldPosition = this.mPosition;
             }
+            this.mOldOldPosition = this.mPosition;
         }
 
         public boolean shouldIgnore() {
@@ -5819,7 +5822,7 @@ public abstract class RecyclerView extends ViewGroup {
             this.mInChangeScrap = z;
         }
 
-        boolean isInvalid() {
+        public boolean isInvalid() {
             return (this.mFlags & 4) != 0;
         }
 
@@ -5831,7 +5834,7 @@ public abstract class RecyclerView extends ViewGroup {
             return (this.mFlags & 1) != 0;
         }
 
-        boolean isRemoved() {
+        public boolean isRemoved() {
             return (this.mFlags & 8) != 0;
         }
 
@@ -5897,6 +5900,10 @@ public abstract class RecyclerView extends ViewGroup {
 
         void resetInternal() {
             this.mFlags = 0;
+            int i = this.mPosition;
+            if (i != -1) {
+                this.mOldOldPosition = i;
+            }
             this.mPosition = -1;
             this.mOldPosition = -1;
             this.mItemId = -1L;
@@ -6589,7 +6596,7 @@ public abstract class RecyclerView extends ViewGroup {
 
         public abstract boolean animateChange(ViewHolder viewHolder, ViewHolder viewHolder2, ItemHolderInfo itemHolderInfo, ItemHolderInfo itemHolderInfo2);
 
-        public abstract boolean animateDisappearance(ViewHolder viewHolder, ItemHolderInfo itemHolderInfo, ItemHolderInfo itemHolderInfo2);
+        public abstract boolean animateDisappearance(RecyclerView recyclerView, ViewHolder viewHolder, ItemHolderInfo itemHolderInfo, ItemHolderInfo itemHolderInfo2);
 
         public abstract boolean animatePersistence(ViewHolder viewHolder, ItemHolderInfo itemHolderInfo, ItemHolderInfo itemHolderInfo2);
 

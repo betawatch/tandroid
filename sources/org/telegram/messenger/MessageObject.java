@@ -5228,15 +5228,15 @@ public class MessageObject {
         updateMessageText(MessagesController.getInstance(this.currentAccount).getUsers(), MessagesController.getInstance(this.currentAccount).getChats(), null, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:1372:0x22d2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:1378:0x22f6, code lost:
     
-        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) != 0) goto L1352;
+        if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) != 0) goto L1358;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1279:0x20d3  */
-    /* JADX WARN: Removed duplicated region for block: B:1294:0x2129  */
-    /* JADX WARN: Removed duplicated region for block: B:1296:0x212c  */
-    /* JADX WARN: Removed duplicated region for block: B:1469:0x003c  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x254b  */
+    /* JADX WARN: Removed duplicated region for block: B:1285:0x20f7  */
+    /* JADX WARN: Removed duplicated region for block: B:1300:0x214d  */
+    /* JADX WARN: Removed duplicated region for block: B:1302:0x2150  */
+    /* JADX WARN: Removed duplicated region for block: B:1475:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x256f  */
     /* JADX WARN: Removed duplicated region for block: B:303:0x083f  */
     /* JADX WARN: Removed duplicated region for block: B:312:0x085e  */
     /* JADX WARN: Removed duplicated region for block: B:330:0x089c  */
@@ -5245,15 +5245,15 @@ public class MessageObject {
     /* JADX WARN: Removed duplicated region for block: B:354:0x08ac  */
     /* JADX WARN: Removed duplicated region for block: B:369:0x0937  */
     /* JADX WARN: Removed duplicated region for block: B:377:0x095d  */
-    /* JADX WARN: Removed duplicated region for block: B:634:0x1026  */
-    /* JADX WARN: Removed duplicated region for block: B:638:0x1040  */
-    /* JADX WARN: Removed duplicated region for block: B:657:0x109a  */
-    /* JADX WARN: Removed duplicated region for block: B:658:0x10ae  */
-    /* JADX WARN: Removed duplicated region for block: B:674:0x10f4  */
-    /* JADX WARN: Removed duplicated region for block: B:675:0x10fe  */
+    /* JADX WARN: Removed duplicated region for block: B:640:0x104a  */
+    /* JADX WARN: Removed duplicated region for block: B:644:0x1064  */
+    /* JADX WARN: Removed duplicated region for block: B:663:0x10be  */
+    /* JADX WARN: Removed duplicated region for block: B:664:0x10d2  */
+    /* JADX WARN: Removed duplicated region for block: B:680:0x1118  */
+    /* JADX WARN: Removed duplicated region for block: B:681:0x1122  */
     /* JADX WARN: Removed duplicated region for block: B:6:0x003a  */
-    /* JADX WARN: Removed duplicated region for block: B:767:0x12f1  */
-    /* JADX WARN: Removed duplicated region for block: B:787:0x1392  */
+    /* JADX WARN: Removed duplicated region for block: B:773:0x1315  */
+    /* JADX WARN: Removed duplicated region for block: B:793:0x13b6  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0051  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -5831,33 +5831,37 @@ public class MessageObject {
                                                 } else {
                                                     chat12 = getChat(abstractMap2, longSparseArray2, -dialogId);
                                                 }
-                                                TLRPC.Peer peer10 = tL_messageActionStarGiftUnique.peer;
-                                                if (peer10 != null) {
-                                                    long peerDialogId4 = DialogObject.getPeerDialogId(peer10);
-                                                    if (peerDialogId4 >= 0) {
-                                                        chat13 = getUser(abstractMap, longSparseArray, peerDialogId4);
-                                                    } else {
-                                                        chat13 = getChat(abstractMap2, longSparseArray2, -peerDialogId4);
-                                                    }
-                                                    if (ofSafe.currency == AmountUtils$Currency.TON) {
-                                                        this.messageText = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.ActionUniqueGiftResaleServiceTON, ofSafe.asFormatString()));
-                                                    } else {
-                                                        this.messageText = AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("ActionUniqueGiftResaleService", (int) ofSafe.asDecimal()));
-                                                    }
-                                                    CharSequence replaceWithLink10 = replaceWithLink(this.messageText, "un1", chat12);
-                                                    this.messageText = replaceWithLink10;
-                                                    this.messageText = replaceWithLink(replaceWithLink10, "un2", chat13);
+                                                if (tL_messageActionStarGiftUnique.craft) {
+                                                    this.messageText = AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionUniqueGiftCrafted));
                                                 } else {
-                                                    if (tL_messageActionStarGiftUnique.from_offer) {
-                                                        if (ofSafe.currency == AmountUtils$Currency.TON) {
-                                                            this.messageText = AndroidUtilities.replaceTags(LocaleController.formatString(isOutOwner() ? R.string.ActionUniqueGiftResaleSoldOutboundTON : R.string.ActionUniqueGiftResaleOutboundTON, ofSafe.asFormatString()));
+                                                    TLRPC.Peer peer10 = tL_messageActionStarGiftUnique.peer;
+                                                    if (peer10 != null) {
+                                                        long peerDialogId4 = DialogObject.getPeerDialogId(peer10);
+                                                        if (peerDialogId4 >= 0) {
+                                                            chat13 = getUser(abstractMap, longSparseArray, peerDialogId4);
                                                         } else {
-                                                            this.messageText = AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(isOutOwner() ? "ActionUniqueGiftResaleSoldOutbound" : "ActionUniqueGiftResaleOutbound", (int) ofSafe.asDecimal()));
+                                                            chat13 = getChat(abstractMap2, longSparseArray2, -peerDialogId4);
                                                         }
-                                                    } else if (ofSafe.currency == AmountUtils$Currency.TON) {
-                                                        this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(isOutOwner() ? R.string.ActionUniqueGiftResaleOutboundTON : R.string.ActionUniqueGiftResaleInboundTON, ofSafe.asFormatString())), "un1", chat12);
+                                                        if (ofSafe.currency == AmountUtils$Currency.TON) {
+                                                            this.messageText = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.ActionUniqueGiftResaleServiceTON, ofSafe.asFormatString()));
+                                                        } else {
+                                                            this.messageText = AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("ActionUniqueGiftResaleService", (int) ofSafe.asDecimal()));
+                                                        }
+                                                        CharSequence replaceWithLink10 = replaceWithLink(this.messageText, "un1", chat12);
+                                                        this.messageText = replaceWithLink10;
+                                                        this.messageText = replaceWithLink(replaceWithLink10, "un2", chat13);
                                                     } else {
-                                                        this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(isOutOwner() ? "ActionUniqueGiftResaleOutbound" : "ActionUniqueGiftResaleInbound", (int) ofSafe.asDecimal())), "un1", chat12);
+                                                        if (tL_messageActionStarGiftUnique.from_offer) {
+                                                            if (ofSafe.currency == AmountUtils$Currency.TON) {
+                                                                this.messageText = AndroidUtilities.replaceTags(LocaleController.formatString(isOutOwner() ? R.string.ActionUniqueGiftResaleSoldOutboundTON : R.string.ActionUniqueGiftResaleOutboundTON, ofSafe.asFormatString()));
+                                                            } else {
+                                                                this.messageText = AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(isOutOwner() ? "ActionUniqueGiftResaleSoldOutbound" : "ActionUniqueGiftResaleOutbound", (int) ofSafe.asDecimal()));
+                                                            }
+                                                        } else if (ofSafe.currency == AmountUtils$Currency.TON) {
+                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(isOutOwner() ? R.string.ActionUniqueGiftResaleOutboundTON : R.string.ActionUniqueGiftResaleInboundTON, ofSafe.asFormatString())), "un1", chat12);
+                                                        } else {
+                                                            this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma(isOutOwner() ? "ActionUniqueGiftResaleOutbound" : "ActionUniqueGiftResaleInbound", (int) ofSafe.asDecimal())), "un1", chat12);
+                                                        }
                                                     }
                                                 }
                                             } else if (tL_messageActionStarGiftUnique.upgrade) {
@@ -5886,23 +5890,27 @@ public class MessageObject {
                                                 } else {
                                                     chat9 = getChat(abstractMap2, longSparseArray2, -dialogId2);
                                                 }
-                                                TLRPC.Peer peer13 = tL_messageActionStarGiftUnique.peer;
-                                                if (peer13 != null) {
-                                                    long peerDialogId6 = DialogObject.getPeerDialogId(peer13);
-                                                    if (peerDialogId6 >= 0) {
-                                                        chat10 = getUser(abstractMap, longSparseArray, peerDialogId6);
-                                                    } else {
-                                                        chat10 = getChat(abstractMap2, longSparseArray2, -peerDialogId6);
-                                                    }
-                                                    SpannableStringBuilder replaceTags2 = AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionUniqueGiftTransferService));
-                                                    this.messageText = replaceTags2;
-                                                    CharSequence replaceWithLink11 = replaceWithLink(replaceTags2, "un1", chat9);
-                                                    this.messageText = replaceWithLink11;
-                                                    this.messageText = replaceWithLink(replaceWithLink11, "un2", chat10);
-                                                } else if (tL_messageActionStarGiftUnique.assigned) {
-                                                    this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.ActionUniqueGiftTransferOutboundAssigned, tL_messageActionStarGiftUnique.gift.title + " #" + LocaleController.formatNumber(tL_messageActionStarGiftUnique.gift.num, ','))), "un1", chat9);
+                                                if (tL_messageActionStarGiftUnique.craft) {
+                                                    this.messageText = AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionUniqueGiftCrafted));
                                                 } else {
-                                                    this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(isOutOwner() ? R.string.ActionUniqueGiftTransferOutbound : R.string.ActionUniqueGiftTransferInbound)), "un1", chat9);
+                                                    TLRPC.Peer peer13 = tL_messageActionStarGiftUnique.peer;
+                                                    if (peer13 != null) {
+                                                        long peerDialogId6 = DialogObject.getPeerDialogId(peer13);
+                                                        if (peerDialogId6 >= 0) {
+                                                            chat10 = getUser(abstractMap, longSparseArray, peerDialogId6);
+                                                        } else {
+                                                            chat10 = getChat(abstractMap2, longSparseArray2, -peerDialogId6);
+                                                        }
+                                                        SpannableStringBuilder replaceTags2 = AndroidUtilities.replaceTags(LocaleController.getString(R.string.ActionUniqueGiftTransferService));
+                                                        this.messageText = replaceTags2;
+                                                        CharSequence replaceWithLink11 = replaceWithLink(replaceTags2, "un1", chat9);
+                                                        this.messageText = replaceWithLink11;
+                                                        this.messageText = replaceWithLink(replaceWithLink11, "un2", chat10);
+                                                    } else if (tL_messageActionStarGiftUnique.assigned) {
+                                                        this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.ActionUniqueGiftTransferOutboundAssigned, tL_messageActionStarGiftUnique.gift.title + " #" + LocaleController.formatNumber(tL_messageActionStarGiftUnique.gift.num, ','))), "un1", chat9);
+                                                    } else {
+                                                        this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(isOutOwner() ? R.string.ActionUniqueGiftTransferOutbound : R.string.ActionUniqueGiftTransferInbound)), "un1", chat9);
+                                                    }
                                                 }
                                             }
                                         } else if (messageAction3 instanceof TLRPC.TL_messageActionGiftStars) {

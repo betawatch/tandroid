@@ -37623,18 +37623,18 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:109:0x037f  */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x03cd  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x03e2  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0496  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x04a5  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x04d6  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x0499  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0426  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x03d2  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x039f  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x02f1  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x02b5  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0391  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x03df  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x03f4  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x04a8  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x04b7  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x04e8  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x04ab  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x0438  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x03e4  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x03b1  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x0303  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x02c6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -37741,11 +37741,11 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                 if (color != backgroundColor) {
                     int i7 = 11.$SwitchMap$org$telegram$messenger$BotInlineKeyboard$BackgroundColor[color.ordinal()];
                     if (i7 == 1) {
-                        this.botButtonPaint.setColor(getThemedColor(Theme.key_bot_button_danger));
+                        this.botButtonPaint.setColor(Theme.multAlpha(getThemedColor(Theme.key_botKeyboard_button_danger), 0.7f));
                     } else if (i7 == 2) {
-                        this.botButtonPaint.setColor(getThemedColor(Theme.key_bot_button_success));
+                        this.botButtonPaint.setColor(Theme.multAlpha(getThemedColor(Theme.key_botKeyboard_button_success), 0.7f));
                     } else if (i7 == 3) {
-                        this.botButtonPaint.setColor(getThemedColor(Theme.key_bot_button_primary));
+                        this.botButtonPaint.setColor(Theme.multAlpha(getThemedColor(Theme.key_botKeyboard_button_primary), 0.7f));
                     }
                     canvas.drawPath(this.botButtonPath, this.botButtonPaint);
                 }

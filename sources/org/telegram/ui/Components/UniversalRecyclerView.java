@@ -386,10 +386,10 @@ public class UniversalRecyclerView extends RecyclerListView {
             public final Object run(Object obj) {
                 return Boolean.valueOf(UniversalAdapter.isShadow(((Integer) obj).intValue()));
             }
-        }, i, f, new Utilities.Callback4() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda2
-            @Override // org.telegram.messenger.Utilities.Callback4
-            public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
-                UniversalRecyclerView.this.lambda$setSections$4((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue());
+        }, i, f, new Utilities.Callback5() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda2
+            @Override // org.telegram.messenger.Utilities.Callback5
+            public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+                UniversalRecyclerView.this.lambda$setSections$4((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue());
             }
         }, z);
     }
@@ -400,7 +400,7 @@ public class UniversalRecyclerView extends RecyclerListView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setSections$4(Canvas canvas, RectF rectF, float f, float f2) {
-        super.drawBackgroundRect(canvas, rectF, f, f2);
+    public /* synthetic */ void lambda$setSections$4(Canvas canvas, RectF rectF, float f, float f2, float f3) {
+        super.drawBackgroundRect(canvas, rectF, f, f2, f3);
     }
 }

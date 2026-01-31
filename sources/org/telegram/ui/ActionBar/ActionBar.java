@@ -41,7 +41,6 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Adapters.FiltersView;
@@ -180,7 +179,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         this.onTop = true;
         this.onTopAnimated = 1.0f;
         this.resourcesProvider = resourcesProvider;
-        setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda3
+        setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ActionBar.this.lambda$new$0(view);
@@ -211,7 +210,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         this.backButtonImageView.setBackgroundDrawable(Theme.createSelectorDrawable(this.itemsBackgroundColor));
         this.backButtonImageView.setPadding(AndroidUtilities.dp(1.0f), 0, 0, 0);
         addView(this.backButtonImageView, LayoutHelper.createFrame(54, 54, 51));
-        this.backButtonImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda4
+        this.backButtonImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ActionBar.this.lambda$createBackButtonImage$1(view);
@@ -788,7 +787,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             animatorSet2.playTogether(arrayList);
             if (this.backgroundUpdateListener != null) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda6
+                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda8
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                         ActionBar.this.lambda$showActionMode$2(valueAnimator);
@@ -2125,74 +2124,35 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         setAdaptiveBackground(recyclerView, Theme.key_windowBackgroundGray, Theme.key_actionBarDefault);
     }
 
-    public void setAdaptiveBackground(RecyclerView recyclerView, int i, int i2) {
-        this.adaptiveBackground = true;
+    public void setAdaptiveBackground(final RecyclerView recyclerView, int i, int i2) {
         this.adaptive_topColorKey = i;
         this.adaptive_lowerColorKey = i2;
-        adaptive_updateColor();
-        recyclerView.addOnScrollListener(new 10());
-    }
-
-    class 10 extends RecyclerView.OnScrollListener {
-        10() {
-        }
-
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-        public void onScrolled(RecyclerView recyclerView, int i, int i2) {
-            final boolean z = !recyclerView.canScrollVertically(-1);
-            if (ActionBar.this.onTop == z) {
-                return;
-            }
-            if (ActionBar.this.adaptive_animator != null) {
-                ActionBar.this.adaptive_animator.cancel();
-            }
-            ActionBar actionBar = ActionBar.this;
-            actionBar.adaptive_animator = ValueAnimator.ofFloat(actionBar.onTopAnimated, ActionBar.this.onTop = z ? 1.0f : 0.0f);
-            ActionBar.this.adaptive_animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBar$10$$ExternalSyntheticLambda0
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    ActionBar.10.this.lambda$onScrolled$0(valueAnimator);
-                }
-            });
-            ActionBar.this.adaptive_animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBar.10.1
-                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationEnd(Animator animator) {
-                    ActionBar.this.onTopAnimated = z ? 1.0f : 0.0f;
-                    ActionBar.this.adaptive_updateColor();
-                }
-            });
-            ActionBar.this.adaptive_animator.setDuration(320L);
-            ActionBar.this.adaptive_animator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
-            ActionBar.this.adaptive_animator.start();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onScrolled$0(ValueAnimator valueAnimator) {
-            ActionBar.this.onTopAnimated = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            ActionBar.this.adaptive_updateColor();
-        }
-    }
-
-    public void setAdaptiveBackground(SectionsScrollView sectionsScrollView) {
-        setAdaptiveBackground(sectionsScrollView, Theme.key_windowBackgroundGray, Theme.key_actionBarDefault);
-    }
-
-    public void setAdaptiveBackground(final SectionsScrollView sectionsScrollView, int i, int i2) {
-        this.adaptiveBackground = true;
-        this.adaptive_topColorKey = i;
-        this.adaptive_lowerColorKey = i2;
-        adaptive_updateColor();
-        sectionsScrollView.onScroll(new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda2
+        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ActionBar.this.lambda$setAdaptiveBackground$6(sectionsScrollView);
+                ActionBar.this.lambda$setAdaptiveBackground$6(recyclerView);
+            }
+        };
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.ActionBar.ActionBar.11
+            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+            public void onScrolled(RecyclerView recyclerView2, int i3, int i4) {
+                runnable.run();
             }
         });
+        if (this.adaptiveBackground) {
+            runnable.run();
+            return;
+        }
+        this.adaptiveBackground = true;
+        boolean canScrollVertically = recyclerView.canScrollVertically(-1);
+        this.onTop = !canScrollVertically;
+        this.onTopAnimated = !canScrollVertically ? 1.0f : 0.0f;
+        adaptive_updateColor();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$setAdaptiveBackground$6(SectionsScrollView sectionsScrollView) {
-        boolean canScrollVertically = sectionsScrollView.canScrollVertically(-1);
+    public /* synthetic */ void lambda$setAdaptiveBackground$6(RecyclerView recyclerView) {
+        boolean canScrollVertically = recyclerView.canScrollVertically(-1);
         final boolean z = !canScrollVertically;
         if (this.onTop == z) {
             return;
@@ -2205,13 +2165,13 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         this.onTop = z;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(f, !canScrollVertically ? 1.0f : 0.0f);
         this.adaptive_animator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda5
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 ActionBar.this.lambda$setAdaptiveBackground$5(valueAnimator2);
             }
         });
-        this.adaptive_animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBar.11
+        this.adaptive_animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBar.10
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 ActionBar.this.onTopAnimated = z ? 1.0f : 0.0f;
@@ -2225,6 +2185,71 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setAdaptiveBackground$5(ValueAnimator valueAnimator) {
+        this.onTopAnimated = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        adaptive_updateColor();
+    }
+
+    public void setAdaptiveBackground(SectionsScrollView sectionsScrollView) {
+        setAdaptiveBackground(sectionsScrollView, Theme.key_windowBackgroundGray, Theme.key_actionBarDefault);
+    }
+
+    public void setAdaptiveBackground(final SectionsScrollView sectionsScrollView, int i, int i2) {
+        this.adaptive_topColorKey = i;
+        this.adaptive_lowerColorKey = i2;
+        adaptive_updateColor();
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda3
+            @Override // java.lang.Runnable
+            public final void run() {
+                ActionBar.this.lambda$setAdaptiveBackground$8(sectionsScrollView);
+            }
+        };
+        sectionsScrollView.onScroll(runnable);
+        if (this.adaptiveBackground) {
+            runnable.run();
+            return;
+        }
+        this.adaptiveBackground = true;
+        boolean canScrollVertically = sectionsScrollView.canScrollVertically(-1);
+        this.onTop = !canScrollVertically;
+        this.onTopAnimated = !canScrollVertically ? 1.0f : 0.0f;
+        adaptive_updateColor();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setAdaptiveBackground$8(SectionsScrollView sectionsScrollView) {
+        boolean canScrollVertically = sectionsScrollView.canScrollVertically(-1);
+        final boolean z = !canScrollVertically;
+        if (this.onTop == z) {
+            return;
+        }
+        ValueAnimator valueAnimator = this.adaptive_animator;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        float f = this.onTopAnimated;
+        this.onTop = z;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(f, !canScrollVertically ? 1.0f : 0.0f);
+        this.adaptive_animator = ofFloat;
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ActionBar.ActionBar$$ExternalSyntheticLambda7
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                ActionBar.this.lambda$setAdaptiveBackground$7(valueAnimator2);
+            }
+        });
+        this.adaptive_animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBar.12
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationEnd(Animator animator) {
+                ActionBar.this.onTopAnimated = z ? 1.0f : 0.0f;
+                ActionBar.this.adaptive_updateColor();
+            }
+        });
+        this.adaptive_animator.setDuration(320L);
+        this.adaptive_animator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
+        this.adaptive_animator.start();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$setAdaptiveBackground$7(ValueAnimator valueAnimator) {
         this.onTopAnimated = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         adaptive_updateColor();
     }

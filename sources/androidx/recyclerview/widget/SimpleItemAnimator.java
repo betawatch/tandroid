@@ -2,6 +2,7 @@ package androidx.recyclerview.widget;
 
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes.dex */
 public abstract class SimpleItemAnimator extends RecyclerView.ItemAnimator {
@@ -51,7 +52,7 @@ public abstract class SimpleItemAnimator extends RecyclerView.ItemAnimator {
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.ItemAnimator
-    public boolean animateDisappearance(RecyclerView.ViewHolder viewHolder, RecyclerView.ItemAnimator.ItemHolderInfo itemHolderInfo, RecyclerView.ItemAnimator.ItemHolderInfo itemHolderInfo2) {
+    public boolean animateDisappearance(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ItemAnimator.ItemHolderInfo itemHolderInfo, RecyclerView.ItemAnimator.ItemHolderInfo itemHolderInfo2) {
         int i = itemHolderInfo.left;
         int i2 = itemHolderInfo.top;
         View view = viewHolder.itemView;
@@ -61,7 +62,24 @@ public abstract class SimpleItemAnimator extends RecyclerView.ItemAnimator {
             view.layout(left, top, view.getWidth() + left, view.getHeight() + top);
             return animateMove(viewHolder, itemHolderInfo, i, i2, left, top);
         }
+        int lastNotRemovedPosition = getLastNotRemovedPosition(recyclerView, viewHolder.mOldOldPosition);
+        viewHolder.mOldCompoundPosition = (lastNotRemovedPosition * MediaDataController.MAX_STYLE_RUNS_COUNT) + (viewHolder.mOldOldPosition - lastNotRemovedPosition);
         return animateRemove(viewHolder, itemHolderInfo);
+    }
+
+    private int getLastNotRemovedPosition(RecyclerView recyclerView, int i) {
+        RecyclerView.ViewHolder childViewHolder;
+        int i2;
+        int i3 = -1;
+        if (recyclerView != null && i != -1) {
+            for (int i4 = 0; i4 < recyclerView.getChildCount(); i4++) {
+                View childAt = recyclerView.getChildAt(i4);
+                if (childAt != null && (childViewHolder = recyclerView.getChildViewHolder(childAt)) != null && !childViewHolder.isRemoved() && (i2 = childViewHolder.mOldOldPosition) >= 0 && i2 < i && i2 > i3) {
+                    i3 = i2;
+                }
+            }
+        }
+        return i3;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.ItemAnimator

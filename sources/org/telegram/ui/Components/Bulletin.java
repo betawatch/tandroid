@@ -424,6 +424,50 @@ public class Bulletin {
                 Bulletin.this.layout.onShow();
                 Bulletin bulletin = Bulletin.this;
                 bulletin.currentDelegate = Bulletin.findDelegate(bulletin.containerFragment, Bulletin.this.containerLayout);
+                if (Bulletin.this.currentDelegate == null && Bulletin.this.containerFragment != null) {
+                    final BaseFragment baseFragment = Bulletin.this.containerFragment;
+                    Bulletin.this.currentDelegate = new Delegate() { // from class: org.telegram.ui.Components.Bulletin.2.1
+                        @Override // org.telegram.ui.Components.Bulletin.Delegate
+                        public /* synthetic */ boolean allowLayoutChanges() {
+                            return Delegate.-CC.$default$allowLayoutChanges(this);
+                        }
+
+                        @Override // org.telegram.ui.Components.Bulletin.Delegate
+                        public /* synthetic */ boolean bottomOffsetAnimated() {
+                            return Delegate.-CC.$default$bottomOffsetAnimated(this);
+                        }
+
+                        @Override // org.telegram.ui.Components.Bulletin.Delegate
+                        public /* synthetic */ boolean clipWithGradient(int i9) {
+                            return Delegate.-CC.$default$clipWithGradient(this, i9);
+                        }
+
+                        @Override // org.telegram.ui.Components.Bulletin.Delegate
+                        public /* synthetic */ int getTopOffset(int i9) {
+                            return Delegate.-CC.$default$getTopOffset(this, i9);
+                        }
+
+                        @Override // org.telegram.ui.Components.Bulletin.Delegate
+                        public /* synthetic */ void onBottomOffsetChange(float f) {
+                            Delegate.-CC.$default$onBottomOffsetChange(this, f);
+                        }
+
+                        @Override // org.telegram.ui.Components.Bulletin.Delegate
+                        public /* synthetic */ void onHide(Bulletin bulletin2) {
+                            Delegate.-CC.$default$onHide(this, bulletin2);
+                        }
+
+                        @Override // org.telegram.ui.Components.Bulletin.Delegate
+                        public /* synthetic */ void onShow(Bulletin bulletin2) {
+                            Delegate.-CC.$default$onShow(this, bulletin2);
+                        }
+
+                        @Override // org.telegram.ui.Components.Bulletin.Delegate
+                        public int getBottomOffset(int i9) {
+                            return baseFragment.getBottomInset();
+                        }
+                    };
+                }
                 if (Bulletin.this.bottomOffsetSpring == null || !Bulletin.this.bottomOffsetSpring.isRunning()) {
                     Bulletin bulletin2 = Bulletin.this;
                     bulletin2.lastBottomOffset = bulletin2.currentDelegate != null ? Bulletin.this.currentDelegate.getBottomOffset(Bulletin.this.tag) : 0;

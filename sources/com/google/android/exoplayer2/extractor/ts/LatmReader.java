@@ -11,6 +11,7 @@ import com.google.android.exoplayer2.util.ParsableBitArray;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import java.util.Collections;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.NotificationCenter;
 
 /* loaded from: classes.dex */
 public final class LatmReader implements ElementaryStreamReader {
@@ -77,7 +78,7 @@ public final class LatmReader implements ElementaryStreamReader {
             if (i != 0) {
                 if (i == 1) {
                     int readUnsignedByte = parsableByteArray.readUnsignedByte();
-                    if ((readUnsignedByte & 224) == 224) {
+                    if ((readUnsignedByte & NotificationCenter.botStarsUpdated) == 224) {
                         this.secondHeaderByte = readUnsignedByte;
                         this.state = 2;
                     } else if (readUnsignedByte != 86) {

@@ -19,7 +19,9 @@ import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
 
 /* loaded from: classes5.dex */
 public class DownscaleScrollableNoiseSuppressor {
+    public final boolean allowNoiseSuppress;
     public final boolean isLiquidGlassEnabled;
+    private final int k;
     long lastHash;
     private int recordingIndex;
     private Rect recordingPos;
@@ -48,13 +50,15 @@ public class DownscaleScrollableNoiseSuppressor {
     }
 
     public DownscaleScrollableNoiseSuppressor(boolean z) {
+        int i = 0;
+        this.allowNoiseSuppress = false;
         this.tmpRectF = new RectF();
         this.rectRenderNodes = new ArrayList();
         boolean isEnabled = LiteMode.isEnabled(262144);
         this.isLiquidGlassEnabled = isEnabled;
         this.simpleMode = z;
+        this.k = isEnabled ? 1 : 8;
         this.resultRenderNodes = new RenderNode[(isEnabled || !z) ? 2 : 1];
-        int i = 0;
         while (true) {
             RenderNode[] renderNodeArr = this.resultRenderNodes;
             if (i >= renderNodeArr.length) {
@@ -83,14 +87,42 @@ public class DownscaleScrollableNoiseSuppressor {
         }
     }
 
-    public void setAlphaForFrostedGlassWithoutSaturation(float f) {
-        if (this.isLiquidGlassEnabled) {
-            return;
+    /* JADX WARN: Removed duplicated region for block: B:9:0x001c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void drawInline(Canvas canvas, int i) {
+        int i2;
+        boolean quickReject;
+        boolean z = this.isLiquidGlassEnabled;
+        if (z || !this.simpleMode) {
+            i2 = 1;
+            if (i == -2) {
+                i2 = 1 ^ (z ? 1 : 0);
+            } else if (i != -4) {
+                if (i != -3) {
+                    return;
+                }
+            }
+            for (int i3 = 0; i3 < this.rectRenderNodesCount; i3++) {
+                SourcePart sourcePart = (SourcePart) this.rectRenderNodes.get(i3);
+                Rect rect = sourcePart.position;
+                quickReject = canvas.quickReject(rect.left, rect.top, rect.right, rect.bottom);
+                if (!quickReject) {
+                    canvas.save();
+                    Rect rect2 = sourcePart.position;
+                    canvas.translate(rect2.left, rect2.top);
+                    canvas.drawRenderNode(getRenderNode(i2, i3));
+                    canvas.restore();
+                }
+            }
         }
-        this.resultRenderNodes[0].setAlpha(f);
+        i2 = 0;
+        while (i3 < this.rectRenderNodesCount) {
+        }
     }
 
-    public static class DownscaledRenderNode {
+    public class DownscaledRenderNode {
         long lastHash;
         private final RenderNode[] renderNodeDownsampled;
         private final RenderNode renderNodeOriginalWithOffset;
@@ -101,7 +133,7 @@ public class DownscaleScrollableNoiseSuppressor {
         private float scrollY;
         private final boolean simpleMode;
 
-        public DownscaledRenderNode(String str, int i) {
+        public DownscaledRenderNode(DownscaleScrollableNoiseSuppressor downscaleScrollableNoiseSuppressor, String str, int i) {
             this(str, i, false);
         }
 
@@ -149,10 +181,10 @@ public class DownscaleScrollableNoiseSuppressor {
             this.renderNodeDownsampled[i + 1].setRenderEffect(renderEffect);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:15:0x007c A[EDGE_INSN: B:15:0x007c->B:16:0x007c BREAK  A[LOOP:0: B:7:0x005d->B:13:0x0078], SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:24:0x00c1  */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x012f A[SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:9:0x0062  */
+        /* JADX WARN: Removed duplicated region for block: B:15:0x009e A[EDGE_INSN: B:15:0x009e->B:16:0x009e BREAK  A[LOOP:0: B:7:0x007f->B:13:0x009a], SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:24:0x00e3  */
+        /* JADX WARN: Removed duplicated region for block: B:35:0x0151 A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:9:0x0084  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -177,15 +209,15 @@ public class DownscaleScrollableNoiseSuppressor {
             width = renderNode.getWidth();
             height = renderNode.getHeight();
             float f = width;
-            int round = Math.round(f / this.scaleX);
+            int round = Math.round((DownscaleScrollableNoiseSuppressor.this.k * f) / this.scaleX);
             float f2 = height;
-            int round2 = Math.round(f2 / this.scaleY);
+            int round2 = Math.round((DownscaleScrollableNoiseSuppressor.this.k * f2) / this.scaleY);
             float f3 = round;
             float f4 = f3 / f;
             float f5 = round2;
             float f6 = f5 / f2;
-            float f7 = f / f3;
-            float f8 = f2 / f5;
+            float f7 = (f * DownscaleScrollableNoiseSuppressor.this.k) / f3;
+            float f8 = (f2 * DownscaleScrollableNoiseSuppressor.this.k) / f5;
             uniqueId = renderNode.getUniqueId();
             long calcHash = MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(0L, uniqueId), round), round2), width), height);
             hasDisplayList = this.renderNodeOriginalWithOffset.hasDisplayList();
@@ -291,16 +323,9 @@ public class DownscaleScrollableNoiseSuppressor {
 
         public void onScrolled(float f, float f2) {
             int i = this.scaleX;
-            float f3 = i >= 2 ? (this.scrollX + f) % i : 0.0f;
-            this.scrollX = f3;
+            this.scrollX = i >= 2 ? (this.scrollX + f) % i : 0.0f;
             int i2 = this.scaleY;
             this.scrollY = i2 >= 2 ? (this.scrollY + f2) % i2 : 0.0f;
-            this.renderNodeOriginalWithOffset.setTranslationX(f3);
-            this.renderNodeOriginalWithOffset.setTranslationY(this.scrollY);
-            for (RenderNode renderNode : this.renderNodeRestored) {
-                renderNode.setTranslationX(-this.scrollX);
-                renderNode.setTranslationY(-this.scrollY);
-            }
         }
     }
 
@@ -319,7 +344,7 @@ public class DownscaleScrollableNoiseSuppressor {
         }
     }
 
-    private void invalidateResultRenderNodes(int i, int i2) {
+    private boolean invalidateResultRenderNodes(int i, int i2) {
         RecordingCanvas beginRecording;
         long uniqueId;
         boolean hasDisplayList;
@@ -349,14 +374,14 @@ public class DownscaleScrollableNoiseSuppressor {
             i3++;
         }
         if (calcHash == this.lastHash && !z) {
-            return;
+            return false;
         }
         this.lastHash = calcHash;
         int i5 = 0;
         while (true) {
             RenderNode[] renderNodeArr2 = this.resultRenderNodes;
             if (i5 >= renderNodeArr2.length) {
-                return;
+                return true;
             }
             RenderNode renderNode3 = renderNodeArr2[i5];
             renderNode3.setPosition(0, 0, i, i2);
@@ -383,7 +408,7 @@ public class DownscaleScrollableNoiseSuppressor {
         return i == 0 ? downscaledRenderNode.renderNodeRestored[0] : sourcePart.renderNodesForBlur.renderNodeRestored[0];
     }
 
-    public void invalidateResultRenderNodes(IBlur3Capture iBlur3Capture, int i, int i2) {
+    public boolean invalidateResultRenderNodes(IBlur3Capture iBlur3Capture, int i, int i2) {
         int i3;
         boolean hasDisplayList;
         int i4 = 0;
@@ -398,15 +423,16 @@ public class DownscaleScrollableNoiseSuppressor {
             sourcePart.lastHash = captureCalculateHash;
             RecordingCanvas beginRecordingRect = beginRecordingRect(i3);
             beginRecordingRect.save();
-            beginRecordingRect.translate(-r3.left, -r3.top);
+            beginRecordingRect.translate(-r4.left, -r4.top);
             iBlur3Capture.capture(beginRecordingRect, this.tmpRectF);
             beginRecordingRect.restore();
             endRecordingRect();
             i4++;
         }
         if (i4 > 0) {
-            invalidateResultRenderNodes(i, i2);
+            return invalidateResultRenderNodes(i, i2);
         }
+        return false;
     }
 
     private class SourcePart {
@@ -421,28 +447,28 @@ public class DownscaleScrollableNoiseSuppressor {
             this.position = new Rect();
             if (!DownscaleScrollableNoiseSuppressor.this.isLiquidGlassEnabled) {
                 if (DownscaleScrollableNoiseSuppressor.this.simpleMode) {
-                    DownscaledRenderNode downscaledRenderNode = new DownscaledRenderNode("blur", 0);
+                    DownscaledRenderNode downscaledRenderNode = new DownscaledRenderNode(DownscaleScrollableNoiseSuppressor.this, "blur", 0);
                     this.renderNodesForBlur = downscaledRenderNode;
-                    downscaledRenderNode.setScale(16, 16);
+                    downscaledRenderNode.setScale(8, 8);
                     downscaledRenderNode.setPrimaryEffectBlur(AndroidUtilities.dpf2(40.0f), RenderNodeEffects.getSaturationX2RenderEffect());
                     this.renderNodesForGlass = null;
                     return;
                 }
-                DownscaledRenderNode downscaledRenderNode2 = new DownscaledRenderNode("blur", 1);
+                DownscaledRenderNode downscaledRenderNode2 = new DownscaledRenderNode(DownscaleScrollableNoiseSuppressor.this, "blur", 1);
                 this.renderNodesForBlur = downscaledRenderNode2;
-                downscaledRenderNode2.setScale(16, 16);
+                downscaledRenderNode2.setScale(8, 8);
                 downscaledRenderNode2.setPrimaryEffectBlur(AndroidUtilities.dpf2(40.0f));
                 downscaledRenderNode2.setSecondaryEffect(0, RenderNodeEffects.getSaturationX2RenderEffect());
                 this.renderNodesForGlass = null;
                 return;
             }
-            DownscaledRenderNode downscaledRenderNode3 = new DownscaledRenderNode("glass", 0, true);
+            DownscaledRenderNode downscaledRenderNode3 = DownscaleScrollableNoiseSuppressor.this.new DownscaledRenderNode("glass", 0, true);
             this.renderNodesForGlass = downscaledRenderNode3;
             downscaledRenderNode3.setScale(4, 4);
             downscaledRenderNode3.setPrimaryEffectBlur(AndroidUtilities.dpf2(1.66f), RenderNodeEffects.getSaturationX2RenderEffect());
-            DownscaledRenderNode downscaledRenderNode4 = new DownscaledRenderNode("blur", 0);
+            DownscaledRenderNode downscaledRenderNode4 = new DownscaledRenderNode(DownscaleScrollableNoiseSuppressor.this, "blur", 0);
             this.renderNodesForBlur = downscaledRenderNode4;
-            downscaledRenderNode4.setScale(16, 16);
+            downscaledRenderNode4.setScale(8, 8);
             downscaledRenderNode4.setPrimaryEffectBlur(AndroidUtilities.dpf2(38.34f));
         }
 
@@ -498,10 +524,12 @@ public class DownscaleScrollableNoiseSuppressor {
         Rect rect = sourcePart.position;
         this.recordingPos = rect;
         this.recordingIndex = i;
-        int width = rect.width();
-        int height = rect.height();
+        int width = rect.width() / this.k;
+        int height = rect.height() / this.k;
         sourcePart.renderNode.setPosition(0, 0, width, height);
         beginRecording = sourcePart.renderNode.beginRecording(width, height);
+        float f = 1.0f / this.k;
+        beginRecording.scale(f, f);
         return beginRecording;
     }
 

@@ -256,6 +256,11 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean needDelayOpenAnimation() {
         return true;
     }
@@ -948,14 +953,6 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 if (view != null) {
                     view.invalidate();
                 }
-            }
-
-            @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
-            protected void dispatchDraw(Canvas canvas) {
-                if (ChatUsersActivity.this.permissionsSectionRow >= 0 && ChatUsersActivity.this.participantsDivider2Row >= 0) {
-                    drawSectionBackground(canvas, ChatUsersActivity.this.permissionsSectionRow, Math.max(0, ChatUsersActivity.this.participantsDivider2Row - 1), getThemedColor(Theme.key_windowBackgroundWhite));
-                }
-                super.dispatchDraw(canvas);
             }
         };
         this.listView = recyclerListView;
@@ -5346,5 +5343,12 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 }
             }
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
+        this.undoView.setTranslationY(-i4);
     }
 }

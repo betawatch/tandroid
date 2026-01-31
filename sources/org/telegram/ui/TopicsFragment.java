@@ -179,6 +179,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
     DialogsActivity dialogsActivity;
     private boolean disableActionBarScrolling;
     private View emptyView;
+    private EmptyViewContainer emptyViewContainer;
     HashSet excludeTopics;
     private boolean finishDialogRightSlidingPreviewOnTransitionEnd;
     FragmentFloatingButton floatingButton;
@@ -459,6 +460,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
+        int i = 0;
         this.additionNavigationBarHeight = this.parentDialogsActivity != null ? AndroidUtilities.dp(72.0f) : 0;
         this.additionFloatingButtonOffset = this.parentDialogsActivity != null ? AndroidUtilities.dp(64.0f) : 0;
         SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.TopicsFragment.1
@@ -495,24 +497,24 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             }
 
             @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i, int i2) {
-                int size = View.MeasureSpec.getSize(i);
-                int size2 = View.MeasureSpec.getSize(i2);
-                int i3 = 0;
-                for (int i4 = 0; i4 < getChildCount(); i4++) {
-                    View childAt = getChildAt(i4);
+            protected void onMeasure(int i2, int i3) {
+                int size = View.MeasureSpec.getSize(i2);
+                int size2 = View.MeasureSpec.getSize(i3);
+                int i4 = 0;
+                for (int i5 = 0; i5 < getChildCount(); i5++) {
+                    View childAt = getChildAt(i5);
                     if (childAt instanceof ActionBar) {
-                        childAt.measure(i, View.MeasureSpec.makeMeasureSpec(0, 0));
-                        i3 = childAt.getMeasuredHeight();
+                        childAt.measure(i2, View.MeasureSpec.makeMeasureSpec(0, 0));
+                        i4 = childAt.getMeasuredHeight();
                     }
                 }
-                for (int i5 = 0; i5 < getChildCount(); i5++) {
-                    View childAt2 = getChildAt(i5);
+                for (int i6 = 0; i6 < getChildCount(); i6++) {
+                    View childAt2 = getChildAt(i6);
                     if (!(childAt2 instanceof ActionBar)) {
                         if (childAt2.getFitsSystemWindows()) {
-                            measureChildWithMargins(childAt2, i, 0, i2, 0);
+                            measureChildWithMargins(childAt2, i2, 0, i3, 0);
                         } else {
-                            measureChildWithMargins(childAt2, i, 0, i2, i3);
+                            measureChildWithMargins(childAt2, i2, 0, i3, i4);
                         }
                     }
                 }
@@ -525,60 +527,60 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
-            protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-                int i5;
+            protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
                 int i6;
                 int i7;
                 int i8;
                 int i9;
                 int i10;
+                int i11;
                 int childCount = getChildCount();
                 int paddingLeft = getPaddingLeft();
-                int paddingRight = (i3 - i) - getPaddingRight();
+                int paddingRight = (i4 - i2) - getPaddingRight();
                 int paddingTop = getPaddingTop();
-                int paddingBottom = (i4 - i2) - getPaddingBottom();
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt = getChildAt(i11);
+                int paddingBottom = (i5 - i3) - getPaddingBottom();
+                for (int i12 = 0; i12 < childCount; i12++) {
+                    View childAt = getChildAt(i12);
                     if (childAt.getVisibility() != 8) {
                         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                         int measuredWidth = childAt.getMeasuredWidth();
                         int measuredHeight = childAt.getMeasuredHeight();
-                        int i12 = layoutParams.gravity;
-                        if (i12 == -1) {
-                            i12 = 0;
+                        int i13 = layoutParams.gravity;
+                        if (i13 == -1) {
+                            i13 = 0;
                         }
-                        int absoluteGravity = Gravity.getAbsoluteGravity(i12, getLayoutDirection());
-                        int i13 = i12 & 112;
-                        int i14 = absoluteGravity & 7;
-                        if (i14 == 1) {
-                            i5 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + paddingLeft + layoutParams.leftMargin;
-                            i6 = layoutParams.rightMargin;
-                        } else if (i14 == 5) {
-                            i5 = paddingRight - measuredWidth;
-                            i6 = layoutParams.rightMargin;
+                        int absoluteGravity = Gravity.getAbsoluteGravity(i13, getLayoutDirection());
+                        int i14 = i13 & 112;
+                        int i15 = absoluteGravity & 7;
+                        if (i15 == 1) {
+                            i6 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + paddingLeft + layoutParams.leftMargin;
+                            i7 = layoutParams.rightMargin;
+                        } else if (i15 == 5) {
+                            i6 = paddingRight - measuredWidth;
+                            i7 = layoutParams.rightMargin;
                         } else {
-                            i7 = layoutParams.leftMargin + paddingLeft;
-                            if (i13 != 16) {
-                                i8 = (((paddingBottom - paddingTop) - measuredHeight) / 2) + paddingTop + layoutParams.topMargin;
-                                i9 = layoutParams.bottomMargin;
-                            } else if (i13 == 80) {
-                                i8 = paddingBottom - measuredHeight;
-                                i9 = layoutParams.bottomMargin;
+                            i8 = layoutParams.leftMargin + paddingLeft;
+                            if (i14 != 16) {
+                                i9 = (((paddingBottom - paddingTop) - measuredHeight) / 2) + paddingTop + layoutParams.topMargin;
+                                i10 = layoutParams.bottomMargin;
+                            } else if (i14 == 80) {
+                                i9 = paddingBottom - measuredHeight;
+                                i10 = layoutParams.bottomMargin;
                             } else {
-                                i10 = layoutParams.topMargin + paddingTop;
+                                i11 = layoutParams.topMargin + paddingTop;
                                 if (!(childAt instanceof ActionBar) && !TopicsFragment.this.isInPreviewMode()) {
-                                    i10 += ((BaseFragment) TopicsFragment.this).actionBar.getTop() + ((BaseFragment) TopicsFragment.this).actionBar.getMeasuredHeight();
+                                    i11 += ((BaseFragment) TopicsFragment.this).actionBar.getTop() + ((BaseFragment) TopicsFragment.this).actionBar.getMeasuredHeight();
                                 }
-                                childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                                childAt.layout(i8, i11, measuredWidth + i8, measuredHeight + i11);
                             }
-                            i10 = i8 - i9;
-                            childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                            i11 = i9 - i10;
+                            childAt.layout(i8, i11, measuredWidth + i8, measuredHeight + i11);
                         }
-                        i7 = i5 - i6;
-                        if (i13 != 16) {
+                        i8 = i6 - i7;
+                        if (i14 != 16) {
                         }
-                        i10 = i8 - i9;
-                        childAt.layout(i7, i10, measuredWidth + i7, measuredHeight + i10);
+                        i11 = i9 - i10;
+                        childAt.layout(i8, i11, measuredWidth + i8, measuredHeight + i11);
                     }
                 }
             }
@@ -586,8 +588,8 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             /* JADX WARN: Multi-variable type inference failed */
             @Override // org.telegram.ui.Components.SizeNotifierFrameLayout
             protected void drawList(Canvas canvas, boolean z, ArrayList arrayList) {
-                for (int i = 0; i < TopicsFragment.this.recyclerListView.getChildCount(); i++) {
-                    View childAt = TopicsFragment.this.recyclerListView.getChildAt(i);
+                for (int i2 = 0; i2 < TopicsFragment.this.recyclerListView.getChildCount(); i2++) {
+                    View childAt = TopicsFragment.this.recyclerListView.getChildAt(i2);
                     if (childAt.getY() < AndroidUtilities.dp(100.0f) && childAt.getVisibility() == 0) {
                         int save = canvas.save();
                         canvas.translate(TopicsFragment.this.recyclerListView.getX() + childAt.getX(), getY() + TopicsFragment.this.recyclerListView.getY() + childAt.getY());
@@ -714,12 +716,12 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         addItem3.addSubItem(1, R.drawable.msg_discussion, LocaleController.getString(R.string.TopicViewAsMessages));
         this.addMemberSubMenu = this.other.addSubItem(2, R.drawable.msg_addcontact, LocaleController.getString(R.string.AddMember));
         ActionBarMenuItem actionBarMenuItem = this.other;
-        int i = R.raw.boosts;
-        this.boostGroupSubmenu = actionBarMenuItem.addSubItem(14, 0, new RLottieDrawable(i, "" + i, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f)), LocaleController.getString(R.string.BoostingBoostGroupMenu), true, false);
+        int i2 = R.raw.boosts;
+        this.boostGroupSubmenu = actionBarMenuItem.addSubItem(14, 0, new RLottieDrawable(i2, "" + i2, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f)), LocaleController.getString(R.string.BoostingBoostGroupMenu), true, false);
         ActionBarMenuItem actionBarMenuItem2 = this.other;
-        int i2 = R.drawable.msg_topic_create;
-        int i3 = R.string.CreateTopic;
-        this.createTopicSubmenu = actionBarMenuItem2.addSubItem(3, i2, LocaleController.getString(i3));
+        int i3 = R.drawable.msg_topic_create;
+        int i4 = R.string.CreateTopic;
+        this.createTopicSubmenu = actionBarMenuItem2.addSubItem(3, i3, LocaleController.getString(i4));
         this.reportSubmenu = this.other.addSubItem(15, R.drawable.msg_report, LocaleController.getString(R.string.ReportChat));
         this.deleteChatSubmenu = this.other.addSubItem(11, R.drawable.msg_leave, LocaleController.getString(R.string.LeaveMegaMenu), this.themeDelegate);
         ChatAvatarContainer chatAvatarContainer = new ChatAvatarContainer(context, this, false, this.resourceProvider);
@@ -739,8 +741,8 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         }
         this.recyclerListView = new TopicsRecyclerView(context) { // from class: org.telegram.ui.TopicsFragment.5
             @Override // org.telegram.ui.TopicsFragment.TopicsRecyclerView, org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z, int i4, int i5, int i6, int i7) {
-                super.onLayout(z, i4, i5, i6, i7);
+            protected void onLayout(boolean z, int i5, int i6, int i7, int i8) {
+                super.onLayout(z, i5, i6, i7, i8);
                 TopicsFragment.this.checkForLoadMore();
             }
 
@@ -783,9 +785,9 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         };
         this.pullForegroundDrawable = pullForegroundDrawable;
         pullForegroundDrawable.doNotShow();
-        int i4 = this.hiddenShown ? 2 : 0;
-        this.pullViewState = i4;
-        this.pullForegroundDrawable.setWillDraw(i4 != 0);
+        int i5 = this.hiddenShown ? 2 : 0;
+        this.pullViewState = i5;
+        this.pullForegroundDrawable.setWillDraw(i5 != 0);
         7 r0 = new 7();
         this.recyclerListView.setHideIfEmpty(false);
         r0.setSupportsChangeAnimations(false);
@@ -795,8 +797,8 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         topicsRecyclerView3.setItemAnimator(r0);
         this.recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.TopicsFragment.8
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i5, int i6) {
-                super.onScrolled(recyclerView, i5, i6);
+            public void onScrolled(RecyclerView recyclerView, int i6, int i7) {
+                super.onScrolled(recyclerView, i6, i7);
                 TopicsFragment.this.checkForLoadMore();
             }
         });
@@ -806,15 +808,15 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.recyclerListView.setItemsEnterAnimator(recyclerItemsEnterAnimator);
         this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i5) {
-                TopicsFragment.this.lambda$createView$3(view, i5);
+            public final void onItemClick(View view, int i6) {
+                TopicsFragment.this.lambda$createView$3(view, i6);
             }
         });
         this.recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda9
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
-            public final boolean onItemClick(View view, int i5, float f, float f2) {
+            public final boolean onItemClick(View view, int i6, float f, float f2) {
                 boolean lambda$createView$4;
-                lambda$createView$4 = TopicsFragment.this.lambda$createView$4(view, i5, f, f2);
+                lambda$createView$4 = TopicsFragment.this.lambda$createView$4(view, i6, f, f2);
                 return lambda$createView$4;
             }
 
@@ -830,12 +832,12 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         });
         this.recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.TopicsFragment.9
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i5, int i6) {
-                super.onScrolled(recyclerView, i5, i6);
+            public void onScrolled(RecyclerView recyclerView, int i6, int i7) {
+                super.onScrolled(recyclerView, i6, i7);
                 if (Build.VERSION.SDK_INT < 31 || TopicsFragment.this.scrollableViewNoiseSuppressor == null) {
                     return;
                 }
-                TopicsFragment.this.scrollableViewNoiseSuppressor.onScrolled(i5, i6);
+                TopicsFragment.this.scrollableViewNoiseSuppressor.onScrolled(i6, i7);
                 TopicsFragment.this.blur3_InvalidateBlur();
             }
         });
@@ -851,20 +853,20 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             int prevTop;
 
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
-            public void onScrolled(RecyclerView recyclerView, int i5, int i6) {
+            public void onScrolled(RecyclerView recyclerView, int i6, int i7) {
                 boolean z;
                 int findFirstVisibleItemPosition = TopicsFragment.this.layoutManager.findFirstVisibleItemPosition();
                 if (findFirstVisibleItemPosition != -1) {
                     RecyclerView.ViewHolder findViewHolderForAdapterPosition = recyclerView.findViewHolderForAdapterPosition(findFirstVisibleItemPosition);
                     int top = findViewHolderForAdapterPosition != null ? findViewHolderForAdapterPosition.itemView.getTop() : 0;
-                    int i7 = this.prevPosition;
-                    if (i7 == findFirstVisibleItemPosition) {
-                        int i8 = this.prevTop;
-                        int i9 = i8 - top;
-                        z = top < i8;
-                        Math.abs(i9);
+                    int i8 = this.prevPosition;
+                    if (i8 == findFirstVisibleItemPosition) {
+                        int i9 = this.prevTop;
+                        int i10 = i9 - top;
+                        z = top < i9;
+                        Math.abs(i10);
                     } else {
-                        z = findFirstVisibleItemPosition > i7;
+                        z = findFirstVisibleItemPosition > i8;
                     }
                     TopicsFragment topicsFragment = TopicsFragment.this;
                     topicsFragment.hideFloatingButton(z || !topicsFragment.canShowCreateTopic, true);
@@ -895,14 +897,15 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.floatingButton.imageView.setImageResource(R.drawable.ic_chatlist_add_2);
         this.floatingButton.imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         this.floatingButton.imageView.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
-        this.floatingButton.setContentDescription(LocaleController.getString(i3));
+        this.floatingButton.setContentDescription(LocaleController.getString(i4));
         FlickerLoadingView flickerLoadingView = new FlickerLoadingView(context);
         flickerLoadingView.setViewType(24);
         flickerLoadingView.setVisibility(8);
         flickerLoadingView.showDate(true);
-        final EmptyViewContainer emptyViewContainer = new EmptyViewContainer(context);
+        EmptyViewContainer emptyViewContainer = new EmptyViewContainer(context);
+        this.emptyViewContainer = emptyViewContainer;
         emptyViewContainer.textView.setAlpha(0.0f);
-        StickerEmptyView stickerEmptyView = new StickerEmptyView(context, flickerLoadingView, 0) { // from class: org.telegram.ui.TopicsFragment.13
+        StickerEmptyView stickerEmptyView = new StickerEmptyView(context, flickerLoadingView, i) { // from class: org.telegram.ui.TopicsFragment.13
             boolean showProgressInternal;
 
             @Override // org.telegram.ui.Components.StickerEmptyView
@@ -910,10 +913,10 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                 super.showProgress(z, z2);
                 this.showProgressInternal = z;
                 if (z2) {
-                    emptyViewContainer.textView.animate().alpha(z ? 0.0f : 1.0f).start();
+                    TopicsFragment.this.emptyViewContainer.textView.animate().alpha(z ? 0.0f : 1.0f).start();
                 } else {
-                    emptyViewContainer.textView.animate().cancel();
-                    emptyViewContainer.textView.setAlpha(z ? 0.0f : 1.0f);
+                    TopicsFragment.this.emptyViewContainer.textView.animate().cancel();
+                    TopicsFragment.this.emptyViewContainer.textView.setAlpha(z ? 0.0f : 1.0f);
                 }
             }
         };
@@ -925,10 +928,10 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.topicsEmptyView.showProgress(this.loadingTopics, this.fragmentBeginToShow);
         this.topicsEmptyView.title.setText(LocaleController.getString(R.string.NoTopics));
         updateTopicsEmptyViewText();
-        emptyViewContainer.addView(flickerLoadingView);
-        emptyViewContainer.addView(this.topicsEmptyView);
-        this.contentView.addView(emptyViewContainer);
-        this.recyclerListView.setEmptyView(emptyViewContainer);
+        this.emptyViewContainer.addView(flickerLoadingView);
+        this.emptyViewContainer.addView(this.topicsEmptyView);
+        this.contentView.addView(this.emptyViewContainer);
+        this.recyclerListView.setEmptyView(this.emptyViewContainer);
         this.bottomOverlayContainer = new FrameLayout(context) { // from class: org.telegram.ui.TopicsFragment.14
             @Override // android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
@@ -952,9 +955,9 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         imageView.setImageResource(R.drawable.miniplayer_close);
         this.closeReportSpam.setContentDescription(LocaleController.getString(R.string.Close));
         ImageView imageView2 = this.closeReportSpam;
-        int i5 = Theme.key_chat_topPanelClose;
-        imageView2.setBackground(Theme.AdaptiveRipple.circle(getThemedColor(i5)));
-        this.closeReportSpam.setColorFilter(new PorterDuffColorFilter(getThemedColor(i5), PorterDuff.Mode.MULTIPLY));
+        int i6 = Theme.key_chat_topPanelClose;
+        imageView2.setBackground(Theme.AdaptiveRipple.circle(getThemedColor(i6)));
+        this.closeReportSpam.setColorFilter(new PorterDuffColorFilter(getThemedColor(i6), PorterDuff.Mode.MULTIPLY));
         this.closeReportSpam.setScaleType(ImageView.ScaleType.CENTER);
         this.bottomOverlayContainer.addView(this.closeReportSpam, LayoutHelper.createFrame(36, 36.0f, 53, 0.0f, 6.0f, 2.0f, 0.0f));
         this.closeReportSpam.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda11
@@ -983,8 +986,8 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         messagesSearchContainer.setVisibility(8);
         this.fullscreenView.addView(this.searchContainer, LayoutHelper.createFrame(-1, -1.0f, 119, 0.0f, 44.0f, 0.0f, 0.0f));
         MessagesSearchContainer messagesSearchContainer2 = this.searchContainer;
-        int i6 = Theme.key_windowBackgroundWhite;
-        messagesSearchContainer2.setBackgroundColor(getThemedColor(i6));
+        int i7 = Theme.key_windowBackgroundWhite;
+        messagesSearchContainer2.setBackgroundColor(getThemedColor(i7));
         this.actionBar.setDrawBlurBackground(this.contentView);
         getMessagesStorage().loadChatInfo(this.chatId, true, null, true, false, 0);
         DialogsActivityTopPanelLayout dialogsActivityTopPanelLayout = new DialogsActivityTopPanelLayout(context);
@@ -1025,8 +1028,8 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             this.topPanelLayout.setViewVisible(this.fragmentContextViewWrapper, true, false);
             FragmentContextView fragmentContextView = new FragmentContextView(context, this, false, this.themeDelegate) { // from class: org.telegram.ui.TopicsFragment.17
                 @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-                public void setVisibility(int i7) {
-                    TopicsFragment.this.topPanelLayout.setViewVisible(TopicsFragment.this.fragmentContextViewWrapper, i7 == 0, true);
+                public void setVisibility(int i8) {
+                    TopicsFragment.this.topPanelLayout.setViewVisible(TopicsFragment.this.fragmentContextViewWrapper, i8 == 0, true);
                 }
             };
             this.fragmentContextView = fragmentContextView;
@@ -1053,7 +1056,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         };
         this.blurredView = view;
         if (Build.VERSION.SDK_INT >= 23) {
-            view.setForeground(new ColorDrawable(ColorUtils.setAlphaComponent(getThemedColor(i6), 100)));
+            view.setForeground(new ColorDrawable(ColorUtils.setAlphaComponent(getThemedColor(i7), 100)));
         }
         this.blurredView.setFocusable(false);
         this.blurredView.setImportantForAccessibility(2);
@@ -4688,6 +4691,10 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         MessagesSearchContainer messagesSearchContainer = this.searchContainer;
         if (messagesSearchContainer != null) {
             messagesSearchContainer.setPadding(0, 0, 0, i);
+        }
+        EmptyViewContainer emptyViewContainer = this.emptyViewContainer;
+        if (emptyViewContainer != null) {
+            emptyViewContainer.textView.setTranslationY(-this.navigationBarHeight);
         }
         updateFloatingButtonOffset();
         checkUi_listViewPadding();

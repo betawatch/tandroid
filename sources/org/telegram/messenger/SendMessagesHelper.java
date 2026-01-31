@@ -5574,10 +5574,10 @@ public class SendMessagesHelper extends BaseController implements NotificationCe
             }
             if (keyboardButton instanceof TLRPC.TL_keyboardButtonUrlAuth) {
                 if (tLObject instanceof TLRPC.TL_urlAuthResultRequest) {
-                    OAuthSheet.handle(false, this.currentAccount, (TLRPC.TL_messages_requestUrlAuth) tLObjectArr[0], (TLRPC.TL_urlAuthResultRequest) tLObject, keyboardButton.url, null);
+                    OAuthSheet.handle(false, this.currentAccount, (TLRPC.TL_messages_requestUrlAuth) tLObjectArr[0], (TLRPC.TL_urlAuthResultRequest) tLObject, keyboardButton.url, null, false);
                     return;
                 } else if (tLObject instanceof TLRPC.TL_urlAuthResultAccepted) {
-                    OAuthSheet.handle(false, this.currentAccount, (TLRPC.TL_messages_requestUrlAuth) tLObjectArr[0], (TLRPC.TL_urlAuthResultAccepted) tLObject, keyboardButton.url, null);
+                    OAuthSheet.handle(false, this.currentAccount, (TLRPC.TL_messages_requestUrlAuth) tLObjectArr[0], (TLRPC.TL_urlAuthResultAccepted) tLObject, keyboardButton.url, null, false);
                     return;
                 } else {
                     if (tLObject instanceof TLRPC.TL_urlAuthResultDefault) {
