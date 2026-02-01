@@ -1949,7 +1949,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 GradientDrawable gradientDrawable = this.d;
                 ChatAttachAlert chatAttachAlert = ChatAttachAlert.this;
                 int i13 = Theme.key_windowBackgroundWhite;
-                gradientDrawable.setColors(new int[]{ColorUtils.setAlphaComponent(chatAttachAlert.getThemedColor(i13), 0), ChatAttachAlert.this.getThemedColor(i13)}, null);
+                gradientDrawable.setColors(new int[]{ColorUtils.setAlphaComponent(chatAttachAlert.getThemedColor(i13), 0), ChatAttachAlert.this.getThemedColor(i13)});
                 this.d.setAlpha((int) (AndroidUtilities.getNavigationBarThirdButtonsFactor(0.0f, 0.75f, AndroidUtilities.navigationBarHeight) * 255.0f));
             }
 

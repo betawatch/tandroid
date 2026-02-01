@@ -8000,10 +8000,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                 attributes.width = -1;
                 attributes.gravity = 51;
                 attributes.dimAmount = 0.0f;
-                int i = attributes.flags & (-3);
-                attributes.flags = 131072 | i;
-                int i2 = Build.VERSION.SDK_INT;
-                attributes.flags = i | (-2147286784);
+                attributes.flags = (attributes.flags & (-3)) | (-2147286784);
                 this.contentView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.SelectAnimatedEmojiDialog$SelectStatusDurationDialog$$ExternalSyntheticLambda7
                     @Override // android.view.View.OnApplyWindowInsetsListener
                     public final WindowInsets onApplyWindowInsets(View view3, WindowInsets windowInsets) {
@@ -8016,7 +8013,7 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
                 this.contentView.setFitsSystemWindows(true);
                 this.contentView.setSystemUiVisibility(1284);
                 attributes.height = -1;
-                if (i2 >= 28) {
+                if (Build.VERSION.SDK_INT >= 28) {
                     attributes.layoutInDisplayCutoutMode = 1;
                 }
                 window.setAttributes(attributes);
@@ -8068,9 +8065,9 @@ public abstract class SelectAnimatedEmojiDialog extends FrameLayout implements N
             view.getLocationOnScreen(this.tempLocation);
             int[] iArr = this.tempLocation;
             this.parentDialogX = iArr[0];
-            int i3 = iArr[1];
-            this.parentDialogY = i3;
-            this.clipBottom = i3 + view.getHeight();
+            int i = iArr[1];
+            this.parentDialogY = i;
+            this.clipBottom = i + view.getHeight();
         }
 
         /* JADX INFO: Access modifiers changed from: private */

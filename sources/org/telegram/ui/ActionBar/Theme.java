@@ -8157,7 +8157,11 @@ public abstract class Theme {
         return createInsetRoundRectDrawable(i, f, i2, i2);
     }
 
-    public static Drawable createInsetRoundRectDrawable(int i, final float f, final int i2, final int i3) {
+    public static Drawable createInsetRoundRectDrawable(int i, float f, int i2, int i3) {
+        return createInsetRoundRectDrawable(i, f, i2, i3, i2, i3);
+    }
+
+    public static Drawable createInsetRoundRectDrawable(int i, final float f, final int i2, final int i3, final int i4, final int i5) {
         maskPaint.setColor(-1);
         return new BaseCell.RippleDrawableSafe(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{i}), null, new Drawable() { // from class: org.telegram.ui.ActionBar.Theme.9
             private final RectF rectF = new RectF();
@@ -8168,7 +8172,7 @@ public abstract class Theme {
             }
 
             @Override // android.graphics.drawable.Drawable
-            public void setAlpha(int i4) {
+            public void setAlpha(int i6) {
             }
 
             @Override // android.graphics.drawable.Drawable
@@ -8178,8 +8182,11 @@ public abstract class Theme {
             @Override // android.graphics.drawable.Drawable
             public void draw(Canvas canvas) {
                 this.rectF.set(getBounds());
-                this.rectF.inset(i2, i3);
                 RectF rectF = this.rectF;
+                rectF.left += i2;
+                rectF.top += i3;
+                rectF.right -= i4;
+                rectF.bottom -= i5;
                 float f2 = f;
                 canvas.drawRoundRect(rectF, f2, f2, Theme.maskPaint);
             }

@@ -13,6 +13,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.Layout;
+import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.ClickableSpan;
@@ -132,6 +133,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     ArrayList oldItems;
     ArrayList oldMiniItems;
     private float overScrollCoef;
+    private int overlayTextId;
     private float overscrollProgress;
     private int overscrollSelectedPosition;
     private StoryCell overscrollSelectedView;
@@ -292,7 +294,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         AnimatedTextView animatedTextView = new AnimatedTextView(getContext(), true, true, false);
         this.titleView = animatedTextView;
         animatedTextView.setGravity(3);
-        this.titleView.setTextColor(getTextColor());
+        this.titleView.setTextColor(getTextLogoColor());
         this.titleView.setEllipsizeByGradient(true);
         this.titleView.setTypeface(AndroidUtilities.bold());
         this.titleView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
@@ -592,6 +594,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     }
 
     public void updateItems(boolean z, boolean z2) {
+        boolean z3 = true;
         if ((this.currentState == 1 || this.overscrollProgress != 0.0f) && !z2) {
             this.updateOnIdleState = true;
             return;
@@ -641,7 +644,11 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         if (!this.hasOverlayText) {
             this.titleView.setText(this.currentTitle, z && !LocaleController.isRTL);
         }
-        this.animatorHasTitleText.setValue(true ^ TextUtils.isEmpty(this.currentTitle), z);
+        BoolAnimator boolAnimator = this.animatorHasTitleText;
+        if (TextUtils.isEmpty(this.currentTitle) && !this.hasOverlayText) {
+            z3 = false;
+        }
+        boolAnimator.setValue(z3, z);
         this.miniItems.clear();
         for (int i2 = 0; i2 < this.items.size(); i2++) {
             if (((Item) this.items.get(i2)).dialogId != UserConfig.getInstance(this.currentAccount).clientUserId || shouldDrawSelfInMini()) {
@@ -678,21 +685,11 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         return storyCell2.position - storyCell.position;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:121:0x0470  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x042d  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x03b8  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0383  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x034b  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x02db  */
-    /* JADX WARN: Removed duplicated region for block: B:170:0x01ab  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0197  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x01a9  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x02d7  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0326  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0372  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x03a1  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x03af  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x03d5  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x03c8  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x045e  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x041d  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x03ab  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x03a2  */
     @Override // android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -701,32 +698,29 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         int i;
         float f;
         float f2;
+        int i2;
         float f3;
         boolean z;
         boolean z2;
-        int i2;
-        double d;
         float f4;
         float f5;
         float f6;
-        float dp;
         float f7;
         float lerp;
         float f8;
         float lerp2;
-        int i3;
         float f9;
         float lerp3;
         float lerp4;
         float f10;
+        double pow;
         boolean z3;
-        int i4;
         int childAdapterPosition;
         canvas.save();
-        int i5 = this.clipTop;
+        int i3 = this.clipTop;
         boolean z4 = false;
-        if (i5 > 0) {
-            canvas.clipRect(0, i5, getMeasuredWidth(), getMeasuredHeight());
+        if (i3 > 0) {
+            canvas.clipRect(0, i3, getMeasuredWidth(), getMeasuredHeight());
         }
         float measuredHeight = (getMeasuredHeight() - ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.dp(4.0f);
         float f11 = 0.0f;
@@ -734,16 +728,16 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         this.recyclerListView.setTranslationY(lerp5);
         this.listViewMini.setTranslationY(lerp5);
         this.listViewMini.setTranslationX(this.menuItemsOffset);
-        for (int i6 = 0; i6 < this.viewsDrawInParent.size(); i6++) {
-            ((StoryCell) this.viewsDrawInParent.get(i6)).drawInParent = false;
+        for (int i4 = 0; i4 < this.viewsDrawInParent.size(); i4++) {
+            ((StoryCell) this.viewsDrawInParent.get(i4)).drawInParent = false;
         }
         this.viewsDrawInParent.clear();
-        int i7 = this.currentState;
-        int i8 = -1;
-        if ((i7 == 1 || i7 == 0) && !this.animateToDialogIds.isEmpty()) {
+        int i5 = this.currentState;
+        int i6 = -1;
+        if ((i5 == 1 || i5 == 0) && !this.animateToDialogIds.isEmpty()) {
             i = -1;
-            for (int i9 = 0; i9 < this.recyclerListView.getChildCount(); i9++) {
-                StoryCell storyCell = (StoryCell) this.recyclerListView.getChildAt(i9);
+            for (int i7 = 0; i7 < this.recyclerListView.getChildCount(); i7++) {
+                StoryCell storyCell = (StoryCell) this.recyclerListView.getChildAt(i7);
                 if (storyCell.dialogId == ((Long) this.animateToDialogIds.get(0)).longValue()) {
                     i = this.recyclerListView.getChildAdapterPosition(storyCell);
                 }
@@ -751,8 +745,8 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         } else {
             i = this.currentState == 2 ? 0 : -1;
         }
-        int i10 = this.currentState;
-        if (i10 >= 0 && i10 != 2) {
+        int i8 = this.currentState;
+        if (i8 >= 0 && i8 != 2) {
             if (i == -1) {
                 i = this.layoutManager.findFirstCompletelyVisibleItemPosition();
                 if (i == -1) {
@@ -765,322 +759,276 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
             this.recyclerListView.setAlpha(1.0f - Utilities.clamp(this.collapsedProgress / this.K, 1.0f, 0.0f));
             this.overscrollSelectedPosition = -1;
             if (this.overscrollProgress != 0.0f) {
-                int i11 = 0;
-                int i12 = -1;
-                while (i11 < this.recyclerListView.getChildCount()) {
-                    View childAt = this.recyclerListView.getChildAt(i11);
-                    if (childAt.getX() < f11 || childAt.getX() + childAt.getMeasuredWidth() > getMeasuredWidth() || (childAdapterPosition = this.recyclerListView.getChildAdapterPosition(childAt)) < 0 || (i12 != i8 && childAdapterPosition >= i12)) {
+                int i9 = 0;
+                int i10 = -1;
+                while (i9 < this.recyclerListView.getChildCount()) {
+                    View childAt = this.recyclerListView.getChildAt(i9);
+                    if (childAt.getX() < f11 || childAt.getX() + childAt.getMeasuredWidth() > getMeasuredWidth() || (childAdapterPosition = this.recyclerListView.getChildAdapterPosition(childAt)) < 0 || (i10 != i6 && childAdapterPosition >= i10)) {
                         z3 = z;
-                        i4 = i;
                     } else {
                         z3 = z;
-                        i4 = i;
                         if (((Item) this.items.get(childAdapterPosition)).dialogId != UserConfig.getInstance(this.currentAccount).clientUserId) {
                             this.overscrollSelectedView = (StoryCell) childAt;
-                            i12 = childAdapterPosition;
+                            i10 = childAdapterPosition;
                         }
                     }
-                    i11++;
+                    i9++;
                     z = z3;
-                    i = i4;
                     f11 = 0.0f;
-                    i8 = -1;
+                    i6 = -1;
                 }
                 z2 = z;
-                i2 = i;
-                this.overscrollSelectedPosition = i12;
+                this.overscrollSelectedPosition = i10;
             } else {
                 z2 = z;
-                i2 = i;
             }
             f2 = 0.0f;
-            int i13 = 0;
-            while (i13 < this.recyclerListView.getChildCount()) {
-                StoryCell storyCell2 = (StoryCell) this.recyclerListView.getChildAt(i13);
+            int i11 = 0;
+            while (i11 < this.recyclerListView.getChildCount()) {
+                StoryCell storyCell2 = (StoryCell) this.recyclerListView.getChildAt(i11);
                 storyCell2.setClipInParent(z4);
                 int childAdapterPosition2 = this.recyclerListView.getChildAdapterPosition(storyCell2);
                 float f12 = this.collapsedProgress;
-                int i14 = i2;
-                if (childAdapterPosition2 >= i14 && childAdapterPosition2 < this.animateToDialogIds.size() + i14) {
-                    int i15 = childAdapterPosition2 - i14;
-                    if (i15 == i14 + 2) {
+                if (childAdapterPosition2 >= i && childAdapterPosition2 < this.animateToDialogIds.size() + i) {
+                    int i12 = childAdapterPosition2 - i;
+                    if (i12 == i + 2) {
                         f12 = this.collapsedProgress;
-                    } else if (i15 == i14 + 1) {
-                        f12 = (float) Math.pow(this.collapsedProgress, 0.5d);
                     } else {
-                        d = 0.25d;
-                        f12 = (float) Math.pow(this.collapsedProgress, 0.25d);
-                        if (childAdapterPosition2 < i14) {
-                            f12 = (float) Math.pow(this.collapsedProgress, d);
+                        if (i12 == i + 1) {
+                            pow = Math.pow(this.collapsedProgress, 0.5d);
+                        } else {
+                            pow = Math.pow(this.collapsedProgress, 0.25d);
                         }
-                        storyCell2.setProgressToCollapsed(f12, this.collapsedProgress2, this.overscrollProgress, this.overscrollSelectedPosition != storyCell2.position);
-                        if (childAdapterPosition2 <= i14 && childAdapterPosition2 < i14 + this.animateToDialogIds.size()) {
-                            StoryCell storyCell3 = (StoryCell) this.recyclerListView.getChildAt(i13 - 1);
-                            if (storyCell3 != null) {
-                                float dp2 = AndroidUtilities.dp(48.0f);
-                                float dp3 = AndroidUtilities.dp(26.33f);
-                                float lerp6 = AndroidUtilities.lerp(dp2, dp3, storyCell3.progressToCollapsed) + AndroidUtilities.dp(8.0f);
-                                float lerp7 = (AndroidUtilities.lerp(dp2, dp3, storyCell2.progressToCollapsed) + AndroidUtilities.dp(8.0f)) / 2.0f;
-                                float centerX = storyCell3.params.originalAvatarRect.centerX() + storyCell3.getX();
-                                float centerY = storyCell3.params.originalAvatarRect.centerY() + storyCell3.getY();
-                                float centerX2 = (storyCell2.params.originalAvatarRect.centerX() + storyCell2.getX()) - centerX;
-                                float centerY2 = (storyCell2.params.originalAvatarRect.centerY() + storyCell2.getY()) - centerY;
-                                if (((float) Math.sqrt((centerX2 * centerX2) + (centerY2 * centerY2))) < (lerp6 / 2.0f) + lerp7) {
-                                    float degrees = (float) Math.toDegrees(Math.acos(r11 / r13) * 2.0d);
-                                    f4 = f2;
-                                    f5 = lerp5;
-                                    float degrees2 = (float) Math.toDegrees(Math.atan2(centerY2, centerX2));
-                                    float f13 = degrees / 2.0f;
-                                    StoriesUtilities.AvatarStoryParams avatarStoryParams = storyCell3.params;
-                                    avatarStoryParams.rightTopAngleToExclude = degrees2 - f13;
-                                    avatarStoryParams.rightBottomAngleToExclude = degrees2 + f13;
-                                    float degrees3 = (float) Math.toDegrees(Math.atan2(-centerY2, -centerX2));
-                                    float f14 = -Math.abs(degrees3 - f13);
-                                    float abs = Math.abs(degrees3 + f13);
-                                    StoriesUtilities.AvatarStoryParams avatarStoryParams2 = storyCell2.params;
-                                    avatarStoryParams2.leftTopAngleToExclude = f14;
-                                    avatarStoryParams2.leftBottomAngleToExclude = abs;
-                                    f6 = 0.0f;
-                                } else {
-                                    f4 = f2;
-                                    f5 = lerp5;
-                                    StoriesUtilities.AvatarStoryParams avatarStoryParams3 = storyCell3.params;
-                                    f6 = 0.0f;
-                                    avatarStoryParams3.rightTopAngleToExclude = 0.0f;
-                                    avatarStoryParams3.rightBottomAngleToExclude = 0.0f;
-                                    StoriesUtilities.AvatarStoryParams avatarStoryParams4 = storyCell2.params;
-                                    avatarStoryParams4.leftTopAngleToExclude = 0.0f;
-                                    avatarStoryParams4.leftBottomAngleToExclude = 0.0f;
-                                }
-                                storyCell3.params.useArcProgress = false;
-                                storyCell2.params.useArcProgress = false;
-                            } else {
-                                f4 = f2;
-                                f5 = lerp5;
-                                f6 = 0.0f;
-                            }
+                        f12 = (float) pow;
+                    }
+                }
+                if (childAdapterPosition2 < i) {
+                    f12 = (float) Math.pow(this.collapsedProgress, 0.25d);
+                }
+                storyCell2.setProgressToCollapsed(f12, this.collapsedProgress2, this.overscrollProgress, this.overscrollSelectedPosition == storyCell2.position);
+                if (childAdapterPosition2 > i && childAdapterPosition2 < this.animateToDialogIds.size() + i) {
+                    StoryCell storyCell3 = (StoryCell) this.recyclerListView.getChildAt(i11 - 1);
+                    if (storyCell3 != null) {
+                        float dp = AndroidUtilities.dp(48.0f);
+                        float dp2 = AndroidUtilities.dp(26.33f);
+                        float lerp6 = AndroidUtilities.lerp(dp, dp2, storyCell3.progressToCollapsed) + AndroidUtilities.dp(8.0f);
+                        float lerp7 = (AndroidUtilities.lerp(dp, dp2, storyCell2.progressToCollapsed) + AndroidUtilities.dp(8.0f)) / 2.0f;
+                        float centerX = storyCell3.params.originalAvatarRect.centerX() + storyCell3.getX();
+                        float centerY = storyCell3.params.originalAvatarRect.centerY() + storyCell3.getY();
+                        float centerX2 = (storyCell2.params.originalAvatarRect.centerX() + storyCell2.getX()) - centerX;
+                        float centerY2 = (storyCell2.params.originalAvatarRect.centerY() + storyCell2.getY()) - centerY;
+                        if (((float) Math.sqrt((centerX2 * centerX2) + (centerY2 * centerY2))) < (lerp6 / 2.0f) + lerp7) {
+                            float degrees = (float) Math.toDegrees(Math.acos(r12 / r14) * 2.0d);
+                            f4 = f2;
+                            f5 = lerp5;
+                            float degrees2 = (float) Math.toDegrees(Math.atan2(centerY2, centerX2));
+                            float f13 = degrees / 2.0f;
+                            StoriesUtilities.AvatarStoryParams avatarStoryParams = storyCell3.params;
+                            avatarStoryParams.rightTopAngleToExclude = degrees2 - f13;
+                            avatarStoryParams.rightBottomAngleToExclude = degrees2 + f13;
+                            float degrees3 = (float) Math.toDegrees(Math.atan2(-centerY2, -centerX2));
+                            float f14 = -Math.abs(degrees3 - f13);
+                            float abs = Math.abs(degrees3 + f13);
+                            StoriesUtilities.AvatarStoryParams avatarStoryParams2 = storyCell2.params;
+                            avatarStoryParams2.leftTopAngleToExclude = f14;
+                            avatarStoryParams2.leftBottomAngleToExclude = abs;
+                            f6 = 0.0f;
                         } else {
                             f4 = f2;
                             f5 = lerp5;
+                            StoriesUtilities.AvatarStoryParams avatarStoryParams3 = storyCell3.params;
                             f6 = 0.0f;
-                            StoriesUtilities.AvatarStoryParams avatarStoryParams5 = storyCell2.params;
-                            avatarStoryParams5.rightTopAngleToExclude = 0.0f;
-                            avatarStoryParams5.rightBottomAngleToExclude = 0.0f;
-                            avatarStoryParams5.leftTopAngleToExclude = 0.0f;
-                            avatarStoryParams5.leftBottomAngleToExclude = 0.0f;
-                            avatarStoryParams5.useArcProgress = false;
+                            avatarStoryParams3.rightTopAngleToExclude = 0.0f;
+                            avatarStoryParams3.rightBottomAngleToExclude = 0.0f;
+                            StoriesUtilities.AvatarStoryParams avatarStoryParams4 = storyCell2.params;
+                            avatarStoryParams4.leftTopAngleToExclude = 0.0f;
+                            avatarStoryParams4.leftBottomAngleToExclude = 0.0f;
                         }
-                        dp = AndroidUtilities.dp(16.0f) * Utilities.clamp((this.overscrollProgress - 0.5f) / 0.5f, 1.0f, f6);
-                        float f15 = (float) (((1.0f - r1) * 0.5f) + 0.5d);
-                        if (childAdapterPosition2 > i14) {
-                            f7 = 0.0f;
-                            lerp = 0.0f;
-                        } else if (childAdapterPosition2 == i14 + 1) {
-                            lerp = AndroidUtilities.lerp(AndroidUtilities.dp(16.0f), 0.0f, this.collapsedProgress) + ((AndroidUtilities.dp(16.0f) * f12) - AndroidUtilities.dpf2(0.5f));
-                            f7 = 0.0f;
-                        } else {
-                            float dp4 = (AndroidUtilities.dp(16.0f) + (AndroidUtilities.dp(16.0f) * f12)) - AndroidUtilities.dpf2(0.5f);
-                            f7 = 0.0f;
-                            lerp = dp4 + AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), 0.0f, this.collapsedProgress);
+                        storyCell3.params.useArcProgress = false;
+                        storyCell2.params.useArcProgress = false;
+                    } else {
+                        f4 = f2;
+                        f5 = lerp5;
+                        f6 = 0.0f;
+                    }
+                } else {
+                    f4 = f2;
+                    f5 = lerp5;
+                    f6 = 0.0f;
+                    StoriesUtilities.AvatarStoryParams avatarStoryParams5 = storyCell2.params;
+                    avatarStoryParams5.rightTopAngleToExclude = 0.0f;
+                    avatarStoryParams5.rightBottomAngleToExclude = 0.0f;
+                    avatarStoryParams5.leftTopAngleToExclude = 0.0f;
+                    avatarStoryParams5.leftBottomAngleToExclude = 0.0f;
+                    avatarStoryParams5.useArcProgress = false;
+                }
+                float dp3 = AndroidUtilities.dp(16.0f) * Utilities.clamp((this.overscrollProgress - 0.5f) / 0.5f, 1.0f, f6);
+                float f15 = (float) (((1.0f - r1) * 0.5f) + 0.5d);
+                if (childAdapterPosition2 <= i) {
+                    f7 = 0.0f;
+                    lerp = 0.0f;
+                } else if (childAdapterPosition2 == i + 1) {
+                    lerp = AndroidUtilities.lerp(AndroidUtilities.dp(16.0f), 0.0f, this.collapsedProgress) + ((AndroidUtilities.dp(16.0f) * f12) - AndroidUtilities.dpf2(0.5f));
+                    f7 = 0.0f;
+                } else {
+                    float dp4 = (AndroidUtilities.dp(16.0f) + (AndroidUtilities.dp(16.0f) * f12)) - AndroidUtilities.dpf2(0.5f);
+                    f7 = 0.0f;
+                    lerp = dp4 + AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), 0.0f, this.collapsedProgress);
+                }
+                float f16 = lerp + this.menuItemsOffset;
+                if (!this.collapsed) {
+                    if (this.overscrollProgress > f7) {
+                        int i13 = storyCell2.position;
+                        int i14 = this.overscrollSelectedPosition;
+                        if (i13 < i14) {
+                            f10 = -dp3;
+                        } else if (i13 > i14) {
+                            f10 = dp3;
                         }
-                        float f16 = lerp + this.menuItemsOffset;
-                        if (this.collapsed) {
-                            if (this.overscrollProgress > f7) {
-                                int i16 = storyCell2.position;
-                                int i17 = this.overscrollSelectedPosition;
-                                if (i16 < i17) {
-                                    f10 = -dp;
-                                } else if (i16 > i17) {
-                                    f10 = dp;
-                                }
-                                lerp2 = AndroidUtilities.lerp(f16 - storyCell2.getLeft(), f10, 1.0f - this.expandOvershootAnimatorProgress);
-                                f8 = 0.0f;
-                            }
-                            f10 = 0.0f;
-                            lerp2 = AndroidUtilities.lerp(f16 - storyCell2.getLeft(), f10, 1.0f - this.expandOvershootAnimatorProgress);
-                            f8 = 0.0f;
-                        } else {
-                            f8 = 0.0f;
-                            lerp2 = AndroidUtilities.lerp(0.0f, f16 - storyCell2.getLeft(), this.storiesCollapseInterpolator.getInterpolation(this.collapsedOvershootProgress));
-                        }
-                        float clamp = MathUtils.clamp((this.collapsedProgress1 - 0.2f) / 0.1f, f8, 1.0f);
-                        i3 = childAdapterPosition2 - i14;
-                        if (i3 != 0) {
-                            lerp3 = AndroidUtilities.lerp(f8, f5 - measuredHeight, CubicBezierInterpolator.EASE_OUT_QUINT.getInterpolation(this.collapsedProgress));
-                        } else if (i3 == 1) {
-                            lerp3 = AndroidUtilities.lerp(f8, (f5 - measuredHeight) * 0.65f, CubicBezierInterpolator.EASE_OUT_QUINT.getInterpolation(this.collapsedProgress));
-                        } else {
-                            f9 = 0.0f;
-                            float f17 = (storyCell2.position == this.overscrollSelectedPosition || this.overscrollProgress <= f8) ? 0.0f : (-dp) / 2.0f;
-                            if (i3 == 0) {
-                                lerp4 = AndroidUtilities.lerp(f17, f5 - measuredHeight, this.yStoriesProgress);
+                        lerp2 = AndroidUtilities.lerp(f16 - storyCell2.getLeft(), f10, 1.0f - this.expandOvershootAnimatorProgress);
+                        f8 = 0.0f;
+                    }
+                    f10 = 0.0f;
+                    lerp2 = AndroidUtilities.lerp(f16 - storyCell2.getLeft(), f10, 1.0f - this.expandOvershootAnimatorProgress);
+                    f8 = 0.0f;
+                } else {
+                    f8 = 0.0f;
+                    lerp2 = AndroidUtilities.lerp(0.0f, f16 - storyCell2.getLeft(), this.storiesCollapseInterpolator.getInterpolation(this.collapsedOvershootProgress));
+                }
+                float clamp = MathUtils.clamp((this.collapsedProgress1 - 0.2f) / 0.1f, f8, 1.0f);
+                int i15 = childAdapterPosition2 - i;
+                if (i15 == 0) {
+                    lerp3 = AndroidUtilities.lerp(f8, f5 - measuredHeight, CubicBezierInterpolator.EASE_OUT_QUINT.getInterpolation(this.collapsedProgress));
+                } else if (i15 == 1) {
+                    lerp3 = AndroidUtilities.lerp(f8, (f5 - measuredHeight) * 0.65f, CubicBezierInterpolator.EASE_OUT_QUINT.getInterpolation(this.collapsedProgress));
+                } else {
+                    f9 = 0.0f;
+                    float f17 = (storyCell2.position == this.overscrollSelectedPosition || this.overscrollProgress <= f8) ? 0.0f : (-dp3) / 2.0f;
+                    if (i15 != 0) {
+                        lerp4 = AndroidUtilities.lerp(f17, f5 - measuredHeight, this.yStoriesProgress);
+                    } else {
+                        lerp4 = i15 == 1 ? AndroidUtilities.lerp(f17, (f5 - measuredHeight) * 0.65f, this.yStoriesProgress) : 0.0f;
+                    }
+                    float lerp8 = AndroidUtilities.lerp(lerp4, f9, clamp);
+                    if (this.collapsedProgress <= 0.0f) {
+                        boolean z5 = childAdapterPosition2 >= i && childAdapterPosition2 <= i + 2;
+                        if (z2) {
+                            if (i15 >= 0 && i15 < this.animateToDialogIds.size()) {
+                                storyCell2.setCrossfadeTo(((Long) this.animateToDialogIds.get(i15)).longValue());
                             } else {
-                                lerp4 = i3 == 1 ? AndroidUtilities.lerp(f17, (f5 - measuredHeight) * 0.65f, this.yStoriesProgress) : 0.0f;
+                                storyCell2.setCrossfadeTo(-1L);
                             }
-                            float lerp8 = AndroidUtilities.lerp(lerp4, f9, clamp);
-                            if (this.collapsedProgress > 0.0f) {
-                                boolean z5 = childAdapterPosition2 >= i14 && childAdapterPosition2 <= i14 + 2;
-                                if (z2) {
-                                    if (i3 >= 0 && i3 < this.animateToDialogIds.size()) {
-                                        storyCell2.setCrossfadeTo(((Long) this.animateToDialogIds.get(i3)).longValue());
-                                    } else {
-                                        storyCell2.setCrossfadeTo(-1L);
-                                    }
-                                } else {
-                                    storyCell2.setCrossfadeTo(-1L);
-                                }
-                                storyCell2.drawInParent = z5;
-                                storyCell2.isFirst = childAdapterPosition2 == i14;
-                                storyCell2.isLast = childAdapterPosition2 >= (i14 + this.animateToDialogIds.size()) - 1;
-                                storyCell2.setTranslationX(lerp2);
-                                storyCell2.setTranslationY(lerp8);
-                                if (z5) {
-                                    this.viewsDrawInParent.add(storyCell2);
-                                }
-                            } else if (this.recyclerListView.getItemAnimator() == null || !this.recyclerListView.getItemAnimator().isRunning()) {
-                                if (this.overscrollProgress > 0.0f) {
-                                    int i18 = storyCell2.position;
-                                    int i19 = this.overscrollSelectedPosition;
-                                    if (i18 < i19) {
-                                        storyCell2.setAlpha(f15);
-                                    } else if (i18 > i19) {
-                                        storyCell2.setAlpha(f15);
-                                    } else {
-                                        storyCell2.setAlpha(1.0f);
-                                    }
-                                } else {
-                                    storyCell2.setAlpha(1.0f);
-                                }
-                                storyCell2.setTranslationX(lerp2);
-                                storyCell2.setTranslationY(lerp8);
-                                if (storyCell2.drawInParent) {
-                                    float x = this.recyclerListView.getX() + storyCell2.getX() + (storyCell2.getMeasuredWidth() / 2.0f) + (AndroidUtilities.dp(70.0f) / 2.0f);
-                                    if (f4 == 0.0f || x > f4) {
-                                        f2 = x;
-                                        i13++;
-                                        lerp5 = f5;
-                                        i2 = i14;
-                                        z4 = false;
-                                    }
-                                }
-                                f2 = f4;
-                                i13++;
-                                lerp5 = f5;
-                                i2 = i14;
-                                z4 = false;
+                        } else {
+                            storyCell2.setCrossfadeTo(-1L);
+                        }
+                        storyCell2.drawInParent = z5;
+                        storyCell2.isFirst = childAdapterPosition2 == i;
+                        storyCell2.isLast = childAdapterPosition2 >= (this.animateToDialogIds.size() + i) - 1;
+                        storyCell2.setTranslationX(lerp2);
+                        storyCell2.setTranslationY(lerp8);
+                        if (z5) {
+                            this.viewsDrawInParent.add(storyCell2);
+                        }
+                    } else if (this.recyclerListView.getItemAnimator() == null || !this.recyclerListView.getItemAnimator().isRunning()) {
+                        if (this.overscrollProgress > 0.0f) {
+                            int i16 = storyCell2.position;
+                            int i17 = this.overscrollSelectedPosition;
+                            if (i16 < i17) {
+                                storyCell2.setAlpha(f15);
+                            } else if (i16 > i17) {
+                                storyCell2.setAlpha(f15);
+                            } else {
+                                storyCell2.setAlpha(1.0f);
                             }
-                            if (storyCell2.drawInParent) {
-                            }
-                            f2 = f4;
-                            i13++;
+                        } else {
+                            storyCell2.setAlpha(1.0f);
+                        }
+                        storyCell2.setTranslationX(lerp2);
+                        storyCell2.setTranslationY(lerp8);
+                    }
+                    if (storyCell2.drawInParent) {
+                        float x = this.recyclerListView.getX() + storyCell2.getX() + (storyCell2.getMeasuredWidth() / 2.0f) + (AndroidUtilities.dp(70.0f) / 2.0f);
+                        if (f4 == 0.0f || x > f4) {
+                            f2 = x;
+                            i11++;
                             lerp5 = f5;
-                            i2 = i14;
                             z4 = false;
                         }
-                        f9 = lerp3;
-                        if (storyCell2.position == this.overscrollSelectedPosition) {
-                        }
-                        if (i3 == 0) {
-                        }
-                        float lerp82 = AndroidUtilities.lerp(lerp4, f9, clamp);
-                        if (this.collapsedProgress > 0.0f) {
-                        }
-                        if (storyCell2.drawInParent) {
-                        }
-                        f2 = f4;
-                        i13++;
-                        lerp5 = f5;
-                        i2 = i14;
-                        z4 = false;
                     }
-                }
-                d = 0.25d;
-                if (childAdapterPosition2 < i14) {
-                }
-                storyCell2.setProgressToCollapsed(f12, this.collapsedProgress2, this.overscrollProgress, this.overscrollSelectedPosition != storyCell2.position);
-                if (childAdapterPosition2 <= i14) {
-                }
-                f4 = f2;
-                f5 = lerp5;
-                f6 = 0.0f;
-                StoriesUtilities.AvatarStoryParams avatarStoryParams52 = storyCell2.params;
-                avatarStoryParams52.rightTopAngleToExclude = 0.0f;
-                avatarStoryParams52.rightBottomAngleToExclude = 0.0f;
-                avatarStoryParams52.leftTopAngleToExclude = 0.0f;
-                avatarStoryParams52.leftBottomAngleToExclude = 0.0f;
-                avatarStoryParams52.useArcProgress = false;
-                dp = AndroidUtilities.dp(16.0f) * Utilities.clamp((this.overscrollProgress - 0.5f) / 0.5f, 1.0f, f6);
-                float f152 = (float) (((1.0f - r1) * 0.5f) + 0.5d);
-                if (childAdapterPosition2 > i14) {
-                }
-                float f162 = lerp + this.menuItemsOffset;
-                if (this.collapsed) {
-                }
-                float clamp2 = MathUtils.clamp((this.collapsedProgress1 - 0.2f) / 0.1f, f8, 1.0f);
-                i3 = childAdapterPosition2 - i14;
-                if (i3 != 0) {
+                    f2 = f4;
+                    i11++;
+                    lerp5 = f5;
+                    z4 = false;
                 }
                 f9 = lerp3;
                 if (storyCell2.position == this.overscrollSelectedPosition) {
                 }
-                if (i3 == 0) {
+                if (i15 != 0) {
                 }
-                float lerp822 = AndroidUtilities.lerp(lerp4, f9, clamp2);
-                if (this.collapsedProgress > 0.0f) {
+                float lerp82 = AndroidUtilities.lerp(lerp4, f9, clamp);
+                if (this.collapsedProgress <= 0.0f) {
                 }
                 if (storyCell2.drawInParent) {
                 }
                 f2 = f4;
-                i13++;
+                i11++;
                 lerp5 = f5;
-                i2 = i14;
                 z4 = false;
             }
             f = lerp5;
         } else {
             f = lerp5;
-            f2 = 0.0f;
-            for (int i20 = 0; i20 < this.listViewMini.getChildCount(); i20++) {
-                float x2 = this.listViewMini.getX() + ((StoryCell) this.listViewMini.getChildAt(i20)).getX() + r2.getMeasuredWidth();
-                if (f2 == 0.0f || x2 > f2) {
-                    f2 = x2;
+            float f18 = 0.0f;
+            for (int i18 = 0; i18 < this.listViewMini.getChildCount(); i18++) {
+                float x2 = this.listViewMini.getX() + ((StoryCell) this.listViewMini.getChildAt(i18)).getX() + r2.getMeasuredWidth();
+                if (f18 == 0.0f || x2 > f18) {
+                    f18 = x2;
                 }
             }
+            f2 = f18;
         }
         if (this.premiumHint != null) {
             float lerp9 = AndroidUtilities.lerp(29, 74, CubicBezierInterpolator.EASE_OUT.getInterpolation(this.collapsedProgress));
             if (this.recyclerListView.getChildCount() > 0) {
+                i2 = 0;
                 lerp9 += this.recyclerListView.getChildAt(0).getLeft();
+            } else {
+                i2 = 0;
             }
             f3 = 0.0f;
             this.premiumHint.setJoint(0.0f, lerp9);
         } else {
+            i2 = 0;
             f3 = 0.0f;
         }
         float min = Math.min(this.collapsedProgress, this.collapsedProgress2);
         if (min != f3) {
             float totalVisibility = this.subtitleOverlayContainer.getTotalVisibility() * (-AndroidUtilities.dp(10.0f));
-            this.titleView.setTranslationY(((AndroidUtilities.dp(14.0f) + f) - ((this.titleView.getMeasuredHeight() - this.titleView.getTextHeight()) / 2.0f)) + AndroidUtilities.dp(4.0f));
-            float dp5 = f2 + (-r3) + AndroidUtilities.dp(6.0f) + getAvatarRight(AndroidUtilities.dp(72.0f), this.collapsedProgress) + AndroidUtilities.dp(12.0f);
-            this.titleView.setTranslationX(dp5);
-            this.titleView.getDrawable().setRightPadding(dp5 + (this.actionBar.menu.getItemsMeasuredWidth(false) * min));
-            this.telegramLogoView.setTranslationX(this.titleView.getTranslationX() - AndroidUtilities.dpf2(3.33f));
+            this.titleView.setPivotX(0.0f);
+            this.titleView.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, this.subtitleOverlayContainer.getTotalVisibility()));
+            this.titleView.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, this.subtitleOverlayContainer.getTotalVisibility()));
+            this.titleView.setTranslationY((((AndroidUtilities.dp(14.0f) + f) - ((this.titleView.getMeasuredHeight() - this.titleView.getTextHeight()) / 2.0f)) + AndroidUtilities.dp(4.0f)) - (AndroidUtilities.dp(6.0f) * this.subtitleOverlayContainer.getTotalVisibility()));
+            float avatarRight = f2 + (-r5) + getAvatarRight(AndroidUtilities.dp(72.0f), this.collapsedProgress) + AndroidUtilities.dp(12.0f);
+            this.titleView.setTranslationX(avatarRight);
+            this.titleView.getDrawable().setRightPadding((avatarRight - AndroidUtilities.dp(12.0f)) + (this.actionBar.menu.getVisibleItemsMeasuredWidthWithAlpha() * min));
+            this.telegramLogoView.setTranslationX(this.titleView.getTranslationX() + AndroidUtilities.dp(1.0f));
             this.telegramLogoView.setTranslationY(f + AndroidUtilities.dp(22.333f) + totalVisibility);
-            this.emojiStatusView.setTranslationX((this.titleView.getTranslationX() - AndroidUtilities.dpf2(6.33f)) + this.telegramLogoView.getMeasuredWidth());
+            this.emojiStatusView.setTranslationX((this.titleView.getTranslationX() - AndroidUtilities.dpf2(4.33f)) + this.telegramLogoView.getMeasuredWidth());
             this.emojiStatusView.setTranslationY(f + AndroidUtilities.dp(11.333f) + totalVisibility);
-            this.subtitleOverlayContainer.setTranslationX(this.titleView.getTranslationX() - AndroidUtilities.dp(3.5f));
-            this.subtitleOverlayContainer.setTranslationY(f + AndroidUtilities.dp(30.333f));
+            this.subtitleOverlayContainer.setTranslationX(this.titleView.getTranslationX());
+            this.subtitleOverlayContainer.setTranslationY(f + AndroidUtilities.dp(31.333f));
         }
         super.dispatchDraw(canvas);
-        int i21 = this.currentState;
-        if (i21 >= 0 && i21 != 2) {
+        int i19 = this.currentState;
+        if (i19 >= 0 && i19 != 2) {
             Collections.sort(this.viewsDrawInParent, this.comparator);
-            for (int i22 = 0; i22 < this.viewsDrawInParent.size(); i22++) {
-                StoryCell storyCell4 = (StoryCell) this.viewsDrawInParent.get(i22);
+            while (i2 < this.viewsDrawInParent.size()) {
+                StoryCell storyCell4 = (StoryCell) this.viewsDrawInParent.get(i2);
                 canvas.save();
                 canvas.translate(this.recyclerListView.getX() + storyCell4.getX(), this.recyclerListView.getY() + storyCell4.getY());
                 storyCell4.draw(canvas);
                 canvas.restore();
+                i2++;
             }
         }
         canvas.restore();
@@ -1275,7 +1223,11 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
     public void updateColors() {
         StoriesUtilities.updateColors();
         final int textColor = getTextColor();
-        this.titleView.setTextColor(textColor);
+        this.titleView.setTextColor(getTextLogoColor());
+        ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.subtitleOverlayContainer;
+        if (actionBarAnimatedSubtitleOverlayContainer != null) {
+            actionBarAnimatedSubtitleOverlayContainer.updateColors();
+        }
         this.telegramLogoView.setColorFilter(getTextLogoColor(), PorterDuff.Mode.MULTIPLY);
         AndroidUtilities.forEachViews((RecyclerView) this.recyclerListView, new Consumer() { // from class: org.telegram.ui.Stories.DialogStoriesCell$$ExternalSyntheticLambda12
             @Override // com.google.android.exoplayer2.util.Consumer
@@ -1414,8 +1366,40 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void setTitleOverlayText(String str, int i) {
-        this.subtitleOverlayContainer.setText(str != null ? LocaleController.getString(str, i) : null, true);
+        this.subtitleOverlayContainer.setText(i == R.string.ConnectingToProxyWithDots ? AndroidUtilities.replaceArrows(LocaleController.getString(R.string.TitleSetupProxy), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(2.0f)) : null, true);
+        boolean z = false;
+        if (str != null) {
+            this.hasOverlayText = true;
+            if (this.overlayTextId != i) {
+                this.overlayTextId = i;
+                String string = LocaleController.getString(str, i);
+                boolean isEmpty = TextUtils.isEmpty(string);
+                String str2 = string;
+                if (!isEmpty) {
+                    int indexOf = TextUtils.indexOf(string, "...");
+                    str2 = string;
+                    if (indexOf >= 0) {
+                        SpannableString valueOf = SpannableString.valueOf(string);
+                        this.ellipsizeSpanAnimator.wrap(valueOf, indexOf);
+                        z = true;
+                        str2 = valueOf;
+                    }
+                }
+                this.titleView.setText(str2, !LocaleController.isRTL);
+            }
+        } else {
+            this.hasOverlayText = false;
+            this.overlayTextId = 0;
+            this.titleView.setText(this.currentTitle, !LocaleController.isRTL);
+        }
+        this.animatorHasTitleText.setValue(this.hasOverlayText, true);
+        if (z) {
+            this.ellipsizeSpanAnimator.addView(this.titleView);
+        } else {
+            this.ellipsizeSpanAnimator.removeView(this.titleView);
+        }
     }
 
     public void setClipTop(int i) {

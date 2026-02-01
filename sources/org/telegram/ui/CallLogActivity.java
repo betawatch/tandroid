@@ -1365,9 +1365,9 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     public ActionBar createActionBar(Context context) {
         ActionBar createActionBar = super.createActionBar(context);
         createActionBar.setUseContainerForTitles();
-        createActionBar.createTitleOverlayContainer();
-        createActionBar.getTitleOverlayContainer().setTranslationX(AndroidUtilities.dp(4.0f));
-        createActionBar.getTitleOverlayContainer().setTranslationY(-AndroidUtilities.dp(2.0f));
+        createActionBar.createAdditionalSubTitleOverlayContainer();
+        createActionBar.getAdditionalSubTitleOverlayContainer().setTranslationX(AndroidUtilities.dp(4.0f));
+        createActionBar.getAdditionalSubTitleOverlayContainer().setTranslationY(-AndroidUtilities.dp(2.0f));
         createActionBar.getTitlesContainer().setTranslationX(AndroidUtilities.dp(4.0f));
         createActionBar.setAddToContainer(false);
         return createActionBar;

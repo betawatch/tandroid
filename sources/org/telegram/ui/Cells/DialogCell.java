@@ -707,6 +707,14 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         }
     }
 
+    @Override // android.view.View, android.view.ViewParent
+    public void requestLayout() {
+        if (getParent() != null && getParent().isLayoutRequested()) {
+            getParent().requestLayout();
+        }
+        super.requestLayout();
+    }
+
     public void setCustomMessage(String str) {
         if (TextUtils.equals(this.customMessage, str)) {
             return;

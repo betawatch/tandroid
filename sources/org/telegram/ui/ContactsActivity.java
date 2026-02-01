@@ -1038,9 +1038,9 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
         createActionBar.setUseContainerForTitles();
         createActionBar.getTitlesContainer().setTranslationX(AndroidUtilities.dp(4.0f));
         createActionBar.setAddToContainer(false);
-        createActionBar.createTitleOverlayContainer();
-        createActionBar.getTitleOverlayContainer().setTranslationX(AndroidUtilities.dp(4.0f));
-        createActionBar.getTitleOverlayContainer().setTranslationY(-AndroidUtilities.dp(2.0f));
+        createActionBar.createAdditionalSubTitleOverlayContainer();
+        createActionBar.getAdditionalSubTitleOverlayContainer().setTranslationX(AndroidUtilities.dp(4.0f));
+        createActionBar.getAdditionalSubTitleOverlayContainer().setTranslationY(-AndroidUtilities.dp(2.0f));
         return createActionBar;
     }
 

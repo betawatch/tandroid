@@ -73,6 +73,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     private int adaptive_lowerColorKey;
     private int adaptive_topColorKey;
     private boolean addToContainer;
+    private ActionBarAnimatedSubtitleOverlayContainer additionalSubTitleOverlayContainer;
     private SimpleTextView additionalSubtitleTextView;
     private boolean allowOverlayTitle;
     private boolean attachState;
@@ -133,7 +134,6 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     private Runnable titleActionRunnable;
     private boolean titleAnimationRunning;
     private int titleColorToSet;
-    private ActionBarAnimatedSubtitleOverlayContainer titleOverlayContainer;
     private boolean titleOverlayShown;
     private int titleRightMargin;
     private final SimpleTextView[] titleTextView;
@@ -1400,7 +1400,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
                 if (simpleTextView12 != null && simpleTextView12.getVisibility() != 8) {
                     this.subtitleTextView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
                 }
-                ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.titleOverlayContainer;
+                ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.additionalSubTitleOverlayContainer;
                 if (actionBarAnimatedSubtitleOverlayContainer != null) {
                     actionBarAnimatedSubtitleOverlayContainer.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                 }
@@ -1419,7 +1419,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             View childAt = getChildAt(i4);
             if (childAt.getVisibility() != 8) {
                 SimpleTextView[] simpleTextViewArr = this.titleTextView;
-                if (childAt != simpleTextViewArr[0] && childAt != simpleTextViewArr[1] && childAt != this.titleOverlayContainer && childAt != this.subtitleTextView && childAt != this.menu && childAt != this.backButtonImageView && childAt != this.additionalSubtitleTextView && childAt != this.avatarSearchImageView) {
+                if (childAt != simpleTextViewArr[0] && childAt != simpleTextViewArr[1] && childAt != this.additionalSubTitleOverlayContainer && childAt != this.subtitleTextView && childAt != this.menu && childAt != this.backButtonImageView && childAt != this.additionalSubtitleTextView && childAt != this.avatarSearchImageView) {
                     measureChildWithMargins(childAt, i, 0, View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30), 0);
                 }
             }
@@ -1484,11 +1484,11 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             }
             i12++;
         }
-        if (this.titleOverlayContainer != null) {
-            int currentActionBarHeight2 = ((getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.titleOverlayContainer.getMeasuredHeight()) / 2)) - AndroidUtilities.dp(2.0f);
-            ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.titleOverlayContainer;
+        if (this.additionalSubTitleOverlayContainer != null) {
+            int currentActionBarHeight2 = ((getCurrentActionBarHeight() / 2) + (((getCurrentActionBarHeight() / 2) - this.additionalSubTitleOverlayContainer.getMeasuredHeight()) / 2)) - AndroidUtilities.dp(2.0f);
+            ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.additionalSubTitleOverlayContainer;
             int i14 = currentActionBarHeight2 + i11;
-            actionBarAnimatedSubtitleOverlayContainer.layout(dp, i14, actionBarAnimatedSubtitleOverlayContainer.getMeasuredWidth() + dp, this.titleOverlayContainer.getMeasuredHeight() + i14);
+            actionBarAnimatedSubtitleOverlayContainer.layout(dp, i14, actionBarAnimatedSubtitleOverlayContainer.getMeasuredWidth() + dp, this.additionalSubTitleOverlayContainer.getMeasuredHeight() + i14);
         }
         SimpleTextView simpleTextView4 = this.subtitleTextView;
         if (simpleTextView4 != null && simpleTextView4.getVisibility() != 8) {
@@ -1517,7 +1517,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             View childAt = getChildAt(i18);
             if (childAt.getVisibility() != 8) {
                 SimpleTextView[] simpleTextViewArr = this.titleTextView;
-                if (childAt != simpleTextViewArr[0] && childAt != simpleTextViewArr[1] && childAt != this.titleOverlayContainer && childAt != this.subtitleTextView && childAt != this.menu && childAt != this.backButtonImageView && childAt != this.additionalSubtitleTextView && childAt != this.avatarSearchImageView) {
+                if (childAt != simpleTextViewArr[0] && childAt != simpleTextViewArr[1] && childAt != this.additionalSubTitleOverlayContainer && childAt != this.subtitleTextView && childAt != this.menu && childAt != this.backButtonImageView && childAt != this.additionalSubtitleTextView && childAt != this.avatarSearchImageView) {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                     int measuredWidth = childAt.getMeasuredWidth();
                     int measuredHeight = childAt.getMeasuredHeight();
@@ -1610,14 +1610,8 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         }
         if (charSequence2 == null || !charSequence2.equals(str)) {
             this.lastOverlayTitle = str;
-            if (this.titleOverlayContainer != null) {
-                this.titleOverlayContainer.setText(str != null ? LocaleController.getString(str, i) : null, true);
-                if (runnable == null) {
-                    runnable = this.lastRunnable;
-                }
-                this.titleActionRunnable = runnable;
-                this.titleOverlayShown = str != null;
-                return;
+            if (this.additionalSubTitleOverlayContainer != null) {
+                this.additionalSubTitleOverlayContainer.setText(i == R.string.ConnectingToProxyWithDots ? AndroidUtilities.replaceArrows(LocaleController.getString(R.string.TitleSetupProxy), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(2.0f)) : null, true);
             }
             CharSequence string = str != null ? LocaleController.getString(str, i) : this.lastTitle;
             Drawable drawable = str == null ? this.lastRightDrawable : null;
@@ -2091,33 +2085,33 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
     @Override // org.telegram.ui.ActionBar.Theme.Colorable
     public void updateColors() {
         adaptive_updateColor();
-        ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.titleOverlayContainer;
+        ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = this.additionalSubTitleOverlayContainer;
         if (actionBarAnimatedSubtitleOverlayContainer != null) {
             actionBarAnimatedSubtitleOverlayContainer.updateColors();
         }
     }
 
-    public FrameLayout createTitleOverlayContainer() {
-        if (this.titleOverlayContainer == null) {
+    public FrameLayout createAdditionalSubTitleOverlayContainer() {
+        if (this.additionalSubTitleOverlayContainer == null) {
             ActionBarAnimatedSubtitleOverlayContainer actionBarAnimatedSubtitleOverlayContainer = new ActionBarAnimatedSubtitleOverlayContainer(getContext(), this.resourcesProvider, this.ellipsizeSpanAnimator) { // from class: org.telegram.ui.ActionBar.ActionBar.9
                 @Override // org.telegram.ui.ActionBar.ActionBarAnimatedSubtitleOverlayContainer, me.vkryl.android.animator.ReplaceAnimator.Callback
                 public void onItemChanged(ReplaceAnimator replaceAnimator) {
                     super.onItemChanged(replaceAnimator);
                     float totalVisibility = getTotalVisibility();
                     if (ActionBar.this.titlesContainer != null) {
-                        ActionBar.this.titlesContainer.setTranslationY(totalVisibility * AndroidUtilities.dp(-9.0f));
+                        ActionBar.this.titlesContainer.setTranslationY(totalVisibility * AndroidUtilities.dp(-11.0f));
                     }
                 }
             };
-            this.titleOverlayContainer = actionBarAnimatedSubtitleOverlayContainer;
+            this.additionalSubTitleOverlayContainer = actionBarAnimatedSubtitleOverlayContainer;
             actionBarAnimatedSubtitleOverlayContainer.setClipChildren(false);
-            addView(this.titleOverlayContainer);
+            addView(this.additionalSubTitleOverlayContainer);
         }
-        return this.titleOverlayContainer;
+        return this.additionalSubTitleOverlayContainer;
     }
 
-    public FrameLayout getTitleOverlayContainer() {
-        return this.titleOverlayContainer;
+    public FrameLayout getAdditionalSubTitleOverlayContainer() {
+        return this.additionalSubTitleOverlayContainer;
     }
 
     public void setAdaptiveBackground(RecyclerView recyclerView) {

@@ -1426,7 +1426,7 @@ public class ViewPagerFixed extends FrameLayout {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$setIsEditing$4(TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void lambda$setIsEditing$5(TLObject tLObject, TLRPC.TL_error tL_error) {
         }
 
         static /* synthetic */ float access$3116(TabsView tabsView, float f) {
@@ -1832,7 +1832,7 @@ public class ViewPagerFixed extends FrameLayout {
             this.adapter = listAdapter;
             listAdapter.setHasStableIds(z);
             this.listView.setAdapter(this.adapter);
-            this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda3
+            this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda4
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public /* synthetic */ boolean hasDoubleTap(View view, int i3) {
                     return RecyclerListView.OnItemClickListenerExtended.-CC.$default$hasDoubleTap(this, view, i3);
@@ -1848,7 +1848,7 @@ public class ViewPagerFixed extends FrameLayout {
                     ViewPagerFixed.TabsView.this.lambda$new$0(view, i3, f, f2);
                 }
             });
-            this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda4
+            this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda5
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
                 public final boolean onItemClick(View view, int i3) {
                     boolean lambda$new$1;
@@ -1948,7 +1948,7 @@ public class ViewPagerFixed extends FrameLayout {
             scrollToChild(this.currentPosition);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.tabsAnimator = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda1
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                     ViewPagerFixed.TabsView.this.lambda$scrollToTab$2(valueAnimator2);
@@ -2094,7 +2094,7 @@ public class ViewPagerFixed extends FrameLayout {
                 itemTouchHelper.attachToRecyclerView(z ? this.listView : null);
             }
             this.listView.setItemAnimator(z ? this.itemAnimator : null);
-            AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda2
+            AndroidUtilities.forEachViews((RecyclerView) this.listView, new Consumer() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda3
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
                     ViewPagerFixed.TabsView.this.lambda$setReordering$3(z, (View) obj);
@@ -2327,11 +2327,25 @@ public class ViewPagerFixed extends FrameLayout {
             super.requestLayout();
         }
 
-        private void scrollToChild(int i) {
+        private void scrollToChild(final int i) {
             if (this.tabs.isEmpty() || this.scrollingToChild == i || i < 0 || i >= this.tabs.size()) {
                 return;
             }
             this.scrollingToChild = i;
+            if (this.listView.getVisibility() == 8 || this.listView.getMeasuredWidth() == 0) {
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        ViewPagerFixed.TabsView.this.lambda$scrollToChild$4(i);
+                    }
+                }, 100L);
+            } else {
+                this.listView.smoothScrollToPosition(i);
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$scrollToChild$4(int i) {
             this.listView.smoothScrollToPosition(i);
         }
 
@@ -2438,7 +2452,7 @@ public class ViewPagerFixed extends FrameLayout {
             ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_messages_updateDialogFiltersOrder, new RequestDelegate() { // from class: org.telegram.ui.Components.ViewPagerFixed$TabsView$$ExternalSyntheticLambda0
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    ViewPagerFixed.TabsView.lambda$setIsEditing$4(tLObject, tL_error);
+                    ViewPagerFixed.TabsView.lambda$setIsEditing$5(tLObject, tL_error);
                 }
             });
             this.orderChanged = false;

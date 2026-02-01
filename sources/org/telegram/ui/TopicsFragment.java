@@ -460,9 +460,11 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
+        DialogsActivity dialogsActivity = this.parentDialogsActivity;
         int i = 0;
-        this.additionNavigationBarHeight = this.parentDialogsActivity != null ? AndroidUtilities.dp(72.0f) : 0;
-        this.additionFloatingButtonOffset = this.parentDialogsActivity != null ? AndroidUtilities.dp(64.0f) : 0;
+        this.additionNavigationBarHeight = (dialogsActivity == null || !dialogsActivity.hasMainTabs) ? 0 : AndroidUtilities.dp(72.0f);
+        DialogsActivity dialogsActivity2 = this.parentDialogsActivity;
+        this.additionFloatingButtonOffset = (dialogsActivity2 == null || !dialogsActivity2.hasMainTabs) ? 0 : AndroidUtilities.dp(64.0f);
         SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.TopicsFragment.1
             private Paint actionBarPaint;
 
@@ -606,10 +608,10 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             protected void dispatchDraw(Canvas canvas) {
                 if (Build.VERSION.SDK_INT >= 31 && TopicsFragment.this.scrollableViewNoiseSuppressor != null) {
                     TopicsFragment.this.blur3_InvalidateBlur();
-                    DialogsActivity dialogsActivity = TopicsFragment.this.parentDialogsActivity;
-                    int measuredWidth = dialogsActivity != null ? dialogsActivity.fragmentView.getMeasuredWidth() : getMeasuredWidth();
-                    DialogsActivity dialogsActivity2 = TopicsFragment.this.parentDialogsActivity;
-                    int measuredHeight = dialogsActivity2 != null ? dialogsActivity2.fragmentView.getMeasuredHeight() : getMeasuredHeight();
+                    DialogsActivity dialogsActivity3 = TopicsFragment.this.parentDialogsActivity;
+                    int measuredWidth = dialogsActivity3 != null ? dialogsActivity3.fragmentView.getMeasuredWidth() : getMeasuredWidth();
+                    DialogsActivity dialogsActivity4 = TopicsFragment.this.parentDialogsActivity;
+                    int measuredHeight = dialogsActivity4 != null ? dialogsActivity4.fragmentView.getMeasuredHeight() : getMeasuredHeight();
                     if (TopicsFragment.this.iBlur3SourceGlassFrosted != null && !TopicsFragment.this.iBlur3SourceGlassFrosted.inRecording() && (TopicsFragment.this.iBlur3SourceGlassFrosted.needUpdateDisplayList(measuredWidth, measuredHeight) || TopicsFragment.this.iBlur3Invalidated)) {
                         TopicsFragment.this.scrollableViewNoiseSuppressor.draw(TopicsFragment.this.iBlur3SourceGlassFrosted.beginRecording(measuredWidth, measuredHeight), -3);
                         TopicsFragment.this.iBlur3SourceGlassFrosted.endRecording();
@@ -757,8 +759,8 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         };
         this.iBlur3FactoryLiquidGlass.setSourceRootView(new ViewPositionWatcher(this.contentView), this.contentView);
         TopicsRecyclerView topicsRecyclerView = this.recyclerListView;
-        DialogsActivity dialogsActivity = this.parentDialogsActivity;
-        ViewGroup viewGroup = dialogsActivity != null ? (ViewGroup) dialogsActivity.getFragmentView() : this.contentView;
+        DialogsActivity dialogsActivity3 = this.parentDialogsActivity;
+        ViewGroup viewGroup = dialogsActivity3 != null ? (ViewGroup) dialogsActivity3.getFragmentView() : this.contentView;
         final TopicsRecyclerView topicsRecyclerView2 = this.recyclerListView;
         Objects.requireNonNull(topicsRecyclerView2);
         this.iBlur3Capture = new ViewGroupPartRenderer(topicsRecyclerView, viewGroup, new ViewGroupPartRenderer.DrawChildMethod() { // from class: org.telegram.ui.TopicsFragment$$ExternalSyntheticLambda6
@@ -1076,9 +1078,9 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                 }
                 BaseFragment baseFragment = (BaseFragment) it.next();
                 if (baseFragment instanceof DialogsActivity) {
-                    DialogsActivity dialogsActivity2 = (DialogsActivity) baseFragment;
-                    if (dialogsActivity2.isMainDialogList()) {
-                        MessagesStorage.TopicKey openedDialogId = dialogsActivity2.getOpenedDialogId();
+                    DialogsActivity dialogsActivity4 = (DialogsActivity) baseFragment;
+                    if (dialogsActivity4.isMainDialogList()) {
+                        MessagesStorage.TopicKey openedDialogId = dialogsActivity4.getOpenedDialogId();
                         if (openedDialogId.dialogId == (-this.chatId)) {
                             this.selectedTopicForTablet = openedDialogId.topicId;
                             break;
@@ -4602,6 +4604,10 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         if (chatAvatarContainer != null) {
             chatAvatarContainer.setAlpha(f);
             this.other.setAlpha(f);
+            ActionBarMenuItem actionBarMenuItem = this.searchItem;
+            if (actionBarMenuItem != null) {
+                actionBarMenuItem.setAlpha(f);
+            }
             this.actionBar.getBackButton().setAlpha(f);
         }
     }
