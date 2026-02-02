@@ -1466,6 +1466,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         ViewGroup viewGroup2;
         if (!z) {
             if (this.fragmentsStack.size() < 2) {
+                checkBlackScreen("onSlideAnimationEnd exit");
                 return;
             }
             List list = this.fragmentsStack;
@@ -1703,11 +1704,11 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     public void onBackStarted(float f, float f2) {
         if (this.animationInProgress) {
-            AnimatorSet animatorSet = this.backAnimator;
-            if (animatorSet == null) {
+            if (this.backAnimator == null) {
                 return;
             }
-            animatorSet.end();
+            checkBlackScreen("onBackStarted: backAnimator.end()");
+            this.backAnimator.end();
             this.backAnimator = null;
             if (this.animationInProgress) {
                 return;
@@ -1779,6 +1780,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         if (baseFragment == null) {
             return;
         }
+        checkBlackScreen("animateBack");
         float x = this.containerView.getX();
         AnimatorSet animatorSet = new AnimatorSet();
         boolean shouldOverrideSlideTransition = baseFragment.shouldOverrideSlideTransition(false, z);
@@ -1816,14 +1818,14 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationCancel(Animator animator) {
+                ActionBarLayout.this.checkBlackScreen("backanim.onCancel");
                 this.cancelled = true;
                 ActionBarLayout.this.predictiveBackInProgress = false;
                 ActionBarLayout.this.containerView.setAlpha(1.0f);
                 ActionBarLayout.this.onSlideAnimationEnd(true);
                 ActionBarLayout.this.backAnimator = null;
-                ActionBarLayout actionBarLayout = ActionBarLayout.this;
-                if (actionBarLayout.animationInProgress) {
-                    actionBarLayout.animationInProgress = false;
+                if (ActionBarLayout.this.animationInProgress) {
+                    throw new RuntimeException("animationInProgress is still true: " + TextUtils.join(", ", ActionBarLayout.this.lastActions));
                 }
             }
 
@@ -1832,13 +1834,13 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 if (this.cancelled) {
                     return;
                 }
+                ActionBarLayout.this.checkBlackScreen("backanim.onEnd");
                 ActionBarLayout.this.predictiveBackInProgress = false;
                 ActionBarLayout.this.containerView.setAlpha(1.0f);
                 ActionBarLayout.this.onSlideAnimationEnd(z);
                 ActionBarLayout.this.backAnimator = null;
-                ActionBarLayout actionBarLayout = ActionBarLayout.this;
-                if (actionBarLayout.animationInProgress) {
-                    actionBarLayout.animationInProgress = false;
+                if (ActionBarLayout.this.animationInProgress) {
+                    throw new RuntimeException("animationInProgress is still true: " + TextUtils.join(", ", ActionBarLayout.this.lastActions));
                 }
             }
         });
@@ -3694,6 +3696,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 }
                 this.lastActions = arrayList;
             }
+            AndroidUtilities.printStackTrace("fragment debug " + TextUtils.join(", ", this.lastActions));
         }
         AndroidUtilities.cancelRunOnUIThread(this.debugBlackScreenRunnable);
         AndroidUtilities.runOnUIThread(this.debugBlackScreenRunnable, 500L);

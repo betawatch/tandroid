@@ -13350,7 +13350,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 return;
             }
             if (i == NotificationCenter.needDeleteDialog) {
-                if (this.fragmentView == null || this.isPaused) {
+                if (this.fragmentView == null) {
                     return;
                 }
                 final long longValue3 = ((Long) objArr[0]).longValue();

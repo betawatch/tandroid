@@ -2380,26 +2380,27 @@ public class FilterCreateActivity extends BaseFragment {
 
         public void options() {
             BaseFragment baseFragment = this.fragment;
-            if (baseFragment == null) {
-                return;
-            }
-            ItemOptions makeOptions = ItemOptions.makeOptions(baseFragment, this);
-            makeOptions.add(R.drawable.msg_qrcode, LocaleController.getString(R.string.GetQRCode), new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$LinkCell$$ExternalSyntheticLambda2
-                @Override // java.lang.Runnable
-                public final void run() {
-                    FilterCreateActivity.LinkCell.this.qrcode();
+            if (baseFragment instanceof FilterCreateActivity) {
+                RecyclerListView recyclerListView = ((FilterCreateActivity) baseFragment).listView;
+                ItemOptions makeOptions = ItemOptions.makeOptions(this.fragment, this);
+                makeOptions.setScrimViewBackground(recyclerListView.getClipBackground(this));
+                makeOptions.add(R.drawable.msg_qrcode, LocaleController.getString(R.string.GetQRCode), new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$LinkCell$$ExternalSyntheticLambda2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        FilterCreateActivity.LinkCell.this.qrcode();
+                    }
+                });
+                makeOptions.add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.DeleteLink), true, new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$LinkCell$$ExternalSyntheticLambda3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        FilterCreateActivity.LinkCell.this.deleteLink();
+                    }
+                });
+                if (LocaleController.isRTL) {
+                    makeOptions.setGravity(3);
                 }
-            });
-            makeOptions.add(R.drawable.msg_delete, (CharSequence) LocaleController.getString(R.string.DeleteLink), true, new Runnable() { // from class: org.telegram.ui.FilterCreateActivity$LinkCell$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    FilterCreateActivity.LinkCell.this.deleteLink();
-                }
-            });
-            if (LocaleController.isRTL) {
-                makeOptions.setGravity(3);
+                makeOptions.show();
             }
-            makeOptions.show();
         }
 
         private String getSlug() {

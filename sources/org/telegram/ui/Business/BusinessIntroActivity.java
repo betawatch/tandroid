@@ -77,6 +77,11 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
     private boolean clearVisible = isEmpty();
     private int shiftDp = -4;
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
     @Override // org.telegram.ui.Components.UniversalFragment
     protected boolean onLongClick(UItem uItem, View view, int i, float f, float f2) {
         return false;
@@ -724,5 +729,11 @@ public class BusinessIntroActivity extends UniversalFragment implements Notifica
         if (i == NotificationCenter.userInfoDidLoad) {
             setValue();
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
     }
 }

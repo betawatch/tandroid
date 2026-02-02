@@ -111,7 +111,7 @@ public class ProfileActionsView extends View {
         paint.setColor(-16777216);
         paint.setAlpha(40);
         this.xpadding = AndroidUtilities.dpf2(14.0f);
-        float dpf2 = AndroidUtilities.dpf2(12.0f);
+        float dpf2 = AndroidUtilities.dpf2(6.0f);
         this.ypadding = dpf2;
         float dpf22 = AndroidUtilities.dpf2(8.0f);
         this.top = dpf22;

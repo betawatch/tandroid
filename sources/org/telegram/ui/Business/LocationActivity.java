@@ -78,6 +78,11 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
     private final int BUTTON_CLEAR = 2;
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
@@ -711,5 +716,11 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
     public /* synthetic */ void lambda$showLocationAlert$8(AlertDialog alertDialog, org.telegram.ui.LocationActivity locationActivity) {
         alertDialog.dismiss();
         presentFragment(locationActivity);
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
     }
 }

@@ -93,6 +93,11 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
         this.actionBar.setBackButtonDrawable(new BackDrawable(false));
         this.actionBar.setAllowOverlayTitle(true);
@@ -1047,5 +1052,11 @@ public class QuickRepliesActivity extends BaseFragment implements NotificationCe
             this.arrowPath.lineTo(((LocaleController.isRTL ? -1 : 1) * AndroidUtilities.dpf2(5.33f)) + dpf2, measuredHeight);
             this.arrowPath.lineTo(dpf2, measuredHeight + AndroidUtilities.dpf2(5.66f));
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+        this.listView.setClipToPadding(false);
     }
 }
