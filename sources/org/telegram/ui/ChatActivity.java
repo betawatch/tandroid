@@ -5161,16 +5161,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                     if (chat != null) {
                                         ChatActivityMemberRequestsDelegate chatActivityMemberRequestsDelegate = new ChatActivityMemberRequestsDelegate(this, chat);
                                         this.pendingRequestsDelegate = chatActivityMemberRequestsDelegate;
-                                        chatActivityMemberRequestsDelegate.setDelegate(new ChatActivityMemberRequestsDelegate.ChangeVisibilityDelegate() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda47
+                                        this.topPanelLayout.addView(chatActivityMemberRequestsDelegate.getView(), LayoutHelper.createLinear(-1, i2));
+                                        this.topPanelLayout.setPriority(this.pendingRequestsDelegate.getView(), 3);
+                                        this.topPanelLayout.setDebugName(this.pendingRequestsDelegate.getView(), "pendingRequestsDelegate");
+                                        this.pendingRequestsDelegate.setDelegate(new ChatActivityMemberRequestsDelegate.ChangeVisibilityDelegate() { // from class: org.telegram.ui.ChatActivity$$ExternalSyntheticLambda47
                                             @Override // org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate.ChangeVisibilityDelegate
                                             public final void setVisible(boolean z5, boolean z6) {
                                                 ChatActivity.this.lambda$createView$32(z5, z6);
                                             }
                                         });
                                         this.pendingRequestsDelegate.setChatInfo(this.chatInfo, false);
-                                        this.topPanelLayout.addView(this.pendingRequestsDelegate.getView(), LayoutHelper.createLinear(-1, i2));
-                                        this.topPanelLayout.setPriority(this.pendingRequestsDelegate.getView(), 3);
-                                        this.topPanelLayout.setDebugName(this.pendingRequestsDelegate.getView(), "pendingRequestsDelegate");
                                     }
                                     this.pinnedMessageView = r142;
                                     this.undoView = r142;

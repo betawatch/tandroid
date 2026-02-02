@@ -294,9 +294,9 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         this.itemAnimator.setDurations(350L);
         this.listView.setClipToPadding(false);
         this.listView.setVerticalScrollBarEnabled(false);
-        this.listView.setSections();
+        this.listView.setSections(true);
         RecyclerListView recyclerListView4 = this.listView;
-        FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, 1, false, AndroidUtilities.dp(53.0f), this.listView) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.4
+        FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, 1, false, AndroidUtilities.dp(65.0f), this.listView) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.4
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i) {
                 LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.4.1
@@ -378,10 +378,10 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
                 if (i == 0) {
                     int dp = AndroidUtilities.dp(13.0f);
                     int backgroundPaddingTop = ChatAttachAlertPollLayout.this.parentAlert.getBackgroundPaddingTop();
-                    if (((ChatAttachAlertPollLayout.this.parentAlert.scrollOffsetY[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.dp(53.0f)) {
+                    if (((ChatAttachAlertPollLayout.this.parentAlert.scrollOffsetY[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) ChatAttachAlertPollLayout.this.listView.findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.dp(65.0f)) {
                         return;
                     }
-                    ChatAttachAlertPollLayout.this.listView.smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.dp(53.0f));
+                    ChatAttachAlertPollLayout.this.listView.smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.dp(65.0f));
                 }
             }
         });
@@ -763,12 +763,12 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         RecyclerListView.Holder holder = (RecyclerListView.Holder) this.listView.findContainingViewHolder(childAt);
-        int y = ((int) childAt.getY()) - AndroidUtilities.dp(8.0f);
+        int y = ((int) childAt.getY()) - AndroidUtilities.dp(20.0f);
         int i = (y <= 0 || holder == null || holder.getAdapterPosition() != 1) ? 0 : y;
         if (y < 0 || holder == null || holder.getAdapterPosition() != 1) {
             y = i;
         }
-        return y + AndroidUtilities.dp(12.0f);
+        return y + AndroidUtilities.dp(25.0f);
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
