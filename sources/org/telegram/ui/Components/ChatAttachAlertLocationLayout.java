@@ -670,6 +670,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 });
                 this.adapter.setMyLocationDenied(this.locationDenied, this.askedForLocation);
                 this.listView.setVerticalScrollBarEnabled(false);
+                this.listView.setSections();
                 RecyclerListView recyclerListView4 = this.listView;
                 FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, 1, false, 0, recyclerListView4) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4
                     @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
@@ -732,7 +733,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                         ChatAttachAlertLocationLayout.this.updatePlacesMarkers(arrayList);
                     }
                 });
-                this.adapter.setOverScrollHeight(this.overScrollHeight);
+                this.adapter.setOverScrollHeight(this.overScrollHeight + AndroidUtilities.dp(16.0f));
                 addView(this.mapViewClip, LayoutHelper.createFrame(-1, -1, 51));
                 IMapsProvider.IMapView onCreateMapView = ApplicationLoader.getMapsProvider().onCreateMapView(context);
                 this.mapView = onCreateMapView;
@@ -765,7 +766,9 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.mapViewClip.addView(this.markerImageView, LayoutHelper.createFrame(28, 48, 49));
                 RecyclerListView recyclerListView5 = new RecyclerListView(context, resourcesProvider);
                 this.searchListView = recyclerListView5;
-                recyclerListView5.setVisibility(8);
+                recyclerListView5.setSections(true);
+                this.searchListView.setClipToPadding(false);
+                this.searchListView.setVisibility(8);
                 this.searchListView.setLayoutManager(new LinearLayoutManager(context, 1, false));
                 ChatAttachAlert chatAttachAlert4 = this.parentAlert;
                 LocationActivitySearchAdapter locationActivitySearchAdapter2 = new LocationActivitySearchAdapter(context, resourcesProvider, chatAttachAlert4.isStoryLocationPicker, chatAttachAlert4.isBizLocationPicker) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.6
@@ -1076,6 +1079,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         });
         this.adapter.setMyLocationDenied(this.locationDenied, this.askedForLocation);
         this.listView.setVerticalScrollBarEnabled(false);
+        this.listView.setSections();
         RecyclerView recyclerListView42 = this.listView;
         FillLastLinearLayoutManager fillLastLinearLayoutManager2 = new FillLastLinearLayoutManager(context, 1, false, 0, recyclerListView42) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
@@ -1138,7 +1142,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 ChatAttachAlertLocationLayout.this.updatePlacesMarkers(arrayList);
             }
         });
-        this.adapter.setOverScrollHeight(this.overScrollHeight);
+        this.adapter.setOverScrollHeight(this.overScrollHeight + AndroidUtilities.dp(16.0f));
         addView(this.mapViewClip, LayoutHelper.createFrame(-1, -1, 51));
         IMapsProvider.IMapView onCreateMapView2 = ApplicationLoader.getMapsProvider().onCreateMapView(context);
         this.mapView = onCreateMapView2;
@@ -1171,7 +1175,9 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.mapViewClip.addView(this.markerImageView, LayoutHelper.createFrame(28, 48, 49));
         RecyclerListView recyclerListView52 = new RecyclerListView(context, resourcesProvider);
         this.searchListView = recyclerListView52;
-        recyclerListView52.setVisibility(8);
+        recyclerListView52.setSections(true);
+        this.searchListView.setClipToPadding(false);
+        this.searchListView.setVisibility(8);
         this.searchListView.setLayoutManager(new LinearLayoutManager(context, 1, false));
         ChatAttachAlert chatAttachAlert42 = this.parentAlert;
         LocationActivitySearchAdapter locationActivitySearchAdapter22 = new LocationActivitySearchAdapter(context, resourcesProvider, chatAttachAlert42.isStoryLocationPicker, chatAttachAlert42.isBizLocationPicker) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.6
@@ -1679,6 +1685,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             this.parentAlert.setAllowNestedScroll(true);
         }
         this.listView.setPaddingWithoutRequestLayout(0, i3, 0, this.listPaddingBottom);
+        this.searchListView.setPaddingWithoutRequestLayout(0, 0, 0, this.listPaddingBottom);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -2258,7 +2265,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) this.searchListView.getLayoutParams();
         layoutParams4.topMargin = currentActionBarHeight;
         this.searchListView.setLayoutParams(layoutParams4);
-        this.adapter.setOverScrollHeight((this.locationDenied && isTypeSend()) ? this.overScrollHeight - this.listView.getPaddingTop() : this.overScrollHeight);
+        this.adapter.setOverScrollHeight(((this.locationDenied && isTypeSend()) ? this.overScrollHeight - this.listView.getPaddingTop() : this.overScrollHeight) + AndroidUtilities.dp(16.0f));
         FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) this.mapView.getView().getLayoutParams();
         if (layoutParams5 != null) {
             layoutParams5.height = this.mapHeight + AndroidUtilities.dp(10.0f);

@@ -46,6 +46,7 @@ import org.telegram.ui.Components.CircularProgressDrawable;
 import org.telegram.ui.Components.CrossfadeDrawable;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.LimitReachedBottomSheet;
+import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
 import org.telegram.ui.Components.UniversalFragment;
@@ -226,11 +227,14 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
     protected void fillItems(ArrayList arrayList, UniversalAdapter universalAdapter) {
         ArrayList<TLRPC.PrivacyRule> privacyRules;
         this.addAccountRow = -1;
+        this.numberRow = -1;
         updateAccounts();
         TLRPC.User currentUser = getUserConfig().getCurrentUser();
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.EditAccountInfoHeader)));
-        this.numberRow = arrayList.size();
-        arrayList.add(InfoCell.Factory.of(6, R.drawable.menu_phone, PhoneFormat.getInstance().format("+" + currentUser.phone), LocaleController.getString(R.string.TapToChangePhone), 0));
+        if (currentUser != null) {
+            this.numberRow = arrayList.size();
+            arrayList.add(InfoCell.Factory.of(6, R.drawable.menu_phone, PhoneFormat.getInstance().format("+" + currentUser.phone), LocaleController.getString(R.string.TapToChangePhone), 0));
+        }
         this.usernameRow = arrayList.size();
         if (UserObject.getPublicUsername(currentUser) != null) {
             arrayList.add(InfoCell.Factory.of(7, R.drawable.menu_username_change, "@" + UserObject.getPublicUsername(currentUser), LocaleController.getString(R.string.Username), 0));
@@ -283,7 +287,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
         arrayList.add(UItem.asShadow(-2, null));
         this.channelRow = arrayList.size();
         if (this.channel == null) {
-            arrayList.add(InfoCell.Factory.of(3, R.drawable.msg_channel_create, "Add Personal Channel", null, 0).accent());
+            arrayList.add(InfoCell.Factory.of(3, R.drawable.msg_channel_create, LocaleController.getString(R.string.EditProfileChannelTitleAdd), null, 0).accent());
         } else {
             arrayList.add(UItem.asButton(3, LocaleController.getString(R.string.EditProfileChannelTitle), this.channel.title));
         }
@@ -297,7 +301,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
         boolean z = UserConfig.getActivatedAccountsCount() < 4;
         if (z) {
             this.addAccountRow = arrayList.size();
-            arrayList.add(InfoCell.Factory.of(9, R.drawable.outline_add_account, "Add Account", null, 0).accent());
+            arrayList.add(InfoCell.Factory.of(9, R.drawable.outline_add_account, LocaleController.getString(R.string.AddAccount), null, 0).accent());
         }
         if (!this.accountNumbers.isEmpty()) {
             if (!z) {
@@ -887,7 +891,7 @@ public class UserInfoActivity extends UniversalFragment implements NotificationC
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public InfoCell createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public InfoCell createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new InfoCell(context, resourcesProvider);
             }
 

@@ -457,7 +457,7 @@ public class MessagesSearchAdapter extends RecyclerListView.SelectionAdapter imp
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public StoriesView createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public StoriesView createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new StoriesView(context, resourcesProvider);
             }
 

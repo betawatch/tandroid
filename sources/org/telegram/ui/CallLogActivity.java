@@ -96,6 +96,7 @@ import org.telegram.ui.Components.ProgressButton;
 import org.telegram.ui.Components.QRCodeBottomSheet;
 import org.telegram.ui.Components.RLottieImageView;
 import org.telegram.ui.Components.RecyclerAnimationScrollHelper;
+import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.ShareAlert;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
@@ -640,7 +641,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public CallCell createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public CallCell createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new CallCell(context, i);
             }
 
@@ -713,7 +714,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public GroupCallCell createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public GroupCallCell createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new GroupCallCell(context);
             }
 

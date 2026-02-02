@@ -1465,7 +1465,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public EmptyView createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public EmptyView createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new EmptyView(context, resourcesProvider);
             }
 
@@ -1615,7 +1615,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public ModelItem createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public ModelItem createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new ModelItem(context, i, resourcesProvider);
             }
 
@@ -1722,7 +1722,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public PatternItem createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public PatternItem createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new PatternItem(context, i, resourcesProvider);
             }
 
@@ -1785,7 +1785,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public BackdropItem createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public BackdropItem createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new BackdropItem(context, resourcesProvider);
             }
 
@@ -2009,17 +2009,17 @@ public class ResaleGiftsFragment extends BaseFragment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$3(final State state, View view) {
-            ItemOptions.makeOptions(this.container, this.resourcesProvider, this.sortButton).add(R.drawable.menu_sort_value, LocaleController.getString(ResaleGiftsList.Sorting.BY_PRICE.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda24
+            ItemOptions.makeOptions(this.container, this.resourcesProvider, this.sortButton).add(R.drawable.menu_sort_value, LocaleController.getString(ResaleGiftsList.Sorting.BY_PRICE.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda25
                 @Override // java.lang.Runnable
                 public final void run() {
                     ResaleGiftsFragment.SelectGiftSheet.lambda$new$0(ResaleGiftsFragment.SelectGiftSheet.State.this);
                 }
-            }).add(R.drawable.menu_sort_date, LocaleController.getString(ResaleGiftsList.Sorting.BY_DATE.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda25
+            }).add(R.drawable.menu_sort_date, LocaleController.getString(ResaleGiftsList.Sorting.BY_DATE.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda26
                 @Override // java.lang.Runnable
                 public final void run() {
                     ResaleGiftsFragment.SelectGiftSheet.lambda$new$1(ResaleGiftsFragment.SelectGiftSheet.State.this);
                 }
-            }).add(R.drawable.menu_sort_number, LocaleController.getString(ResaleGiftsList.Sorting.BY_NUMBER.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda26
+            }).add(R.drawable.menu_sort_number, LocaleController.getString(ResaleGiftsList.Sorting.BY_NUMBER.buttonStringResId), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
                 public final void run() {
                     ResaleGiftsFragment.SelectGiftSheet.lambda$new$2(ResaleGiftsFragment.SelectGiftSheet.State.this);
@@ -2216,7 +2216,7 @@ public class ResaleGiftsFragment extends BaseFragment {
                 return;
             }
             final ItemOptions needsFocus = ItemOptions.makeOptions(this.container, this.resourcesProvider, this.backdropButton, false, true).setDrawScrim(false).setOnTopOfScrim().translate(0.0f, AndroidUtilities.dp(-8.0f)).needsFocus();
-            needsFocus.setOnDismiss(new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda13
+            needsFocus.setOnDismiss(new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
                     ResaleGiftsFragment.SelectGiftSheet.lambda$new$10(ItemOptions.this);
@@ -2224,7 +2224,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             });
             final String[] strArr = {""};
             final ArrayList arrayList = new ArrayList(state.resaleList.backdropAttributes);
-            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda14
+            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda15
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
                     int lambda$new$11;
@@ -2232,12 +2232,12 @@ public class ResaleGiftsFragment extends BaseFragment {
                     return lambda$new$11;
                 }
             });
-            final UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, this.currentAccount, 0, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda15
+            final UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, this.currentAccount, 0, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda16
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     ResaleGiftsFragment.SelectGiftSheet.lambda$new$12(strArr, state, arrayList, (ArrayList) obj, (UniversalAdapter) obj2);
                 }
-            }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda16
+            }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda17
                 @Override // org.telegram.messenger.Utilities.Callback5
                 public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                     ResaleGiftsFragment.SelectGiftSheet.lambda$new$13(ResaleGiftsFragment.SelectGiftSheet.State.this, needsFocus, (UItem) obj, (View) obj2, (Integer) obj3, (Float) obj4, (Float) obj5);
@@ -2287,7 +2287,7 @@ public class ResaleGiftsFragment extends BaseFragment {
                 needsFocus.addGap();
             }
             if (!state.resaleList.notSelectedBackdropAttributes.isEmpty()) {
-                needsFocus.add(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda17
+                needsFocus.add(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda18
                     @Override // java.lang.Runnable
                     public final void run() {
                         ResaleGiftsFragment.SelectGiftSheet.lambda$new$14(ResaleGiftsFragment.SelectGiftSheet.State.this);
@@ -2384,7 +2384,7 @@ public class ResaleGiftsFragment extends BaseFragment {
                 return;
             }
             final ItemOptions needsFocus = ItemOptions.makeOptions(this.container, this.resourcesProvider, this.patternButton, false, true).setDrawScrim(false).setOnTopOfScrim().translate(0.0f, AndroidUtilities.dp(-8.0f)).needsFocus();
-            needsFocus.setOnDismiss(new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda19
+            needsFocus.setOnDismiss(new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda20
                 @Override // java.lang.Runnable
                 public final void run() {
                     ResaleGiftsFragment.SelectGiftSheet.lambda$new$16(ItemOptions.this);
@@ -2392,7 +2392,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             });
             final String[] strArr = {""};
             final ArrayList arrayList = new ArrayList(state.resaleList.patternAttributes);
-            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda20
+            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda21
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
                     int lambda$new$17;
@@ -2400,12 +2400,12 @@ public class ResaleGiftsFragment extends BaseFragment {
                     return lambda$new$17;
                 }
             });
-            final UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, this.currentAccount, 0, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda21
+            final UniversalRecyclerView universalRecyclerView = new UniversalRecyclerView(context, this.currentAccount, 0, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda22
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     ResaleGiftsFragment.SelectGiftSheet.lambda$new$18(strArr, state, arrayList, (ArrayList) obj, (UniversalAdapter) obj2);
                 }
-            }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda22
+            }, new Utilities.Callback5() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda23
                 @Override // org.telegram.messenger.Utilities.Callback5
                 public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                     ResaleGiftsFragment.SelectGiftSheet.lambda$new$19(ResaleGiftsFragment.SelectGiftSheet.State.this, needsFocus, (UItem) obj, (View) obj2, (Integer) obj3, (Float) obj4, (Float) obj5);
@@ -2455,7 +2455,7 @@ public class ResaleGiftsFragment extends BaseFragment {
                 needsFocus.addGap();
             }
             if (!state.resaleList.notSelectedPatternAttributes.isEmpty()) {
-                needsFocus.add(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda23
+                needsFocus.add(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda24
                     @Override // java.lang.Runnable
                     public final void run() {
                         ResaleGiftsFragment.SelectGiftSheet.lambda$new$20(ResaleGiftsFragment.SelectGiftSheet.State.this);
@@ -2572,6 +2572,12 @@ public class ResaleGiftsFragment extends BaseFragment {
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$24() {
             this.adapter.update(true);
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda13
+                @Override // java.lang.Runnable
+                public final void run() {
+                    ResaleGiftsFragment.SelectGiftSheet.this.onScroll();
+                }
+            }, 150L);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -2603,7 +2609,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             alertDialog.showDelayed(400L);
             final long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
             final AmountUtils$Currency amountUtils$Currency = tL_starGiftUnique.resale_ton_only ? AmountUtils$Currency.TON : AmountUtils$Currency.STARS;
-            StarsController.getInstance(this.currentAccount, amountUtils$Currency).getResellingGiftForm(tL_starGiftUnique, clientUserId, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda18
+            StarsController.getInstance(this.currentAccount, amountUtils$Currency).getResellingGiftForm(tL_starGiftUnique, clientUserId, new Utilities.Callback() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda19
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     ResaleGiftsFragment.SelectGiftSheet.this.lambda$buyGift$27(alertDialog, amountUtils$Currency, tL_starGiftUnique, clientUserId, (TLRPC.TL_payments_paymentFormStarGift) obj);
@@ -2618,7 +2624,7 @@ public class ResaleGiftsFragment extends BaseFragment {
                 return;
             }
             StarGiftSheet.PaymentFormState paymentFormState = new StarGiftSheet.PaymentFormState(amountUtils$Currency, tL_payments_paymentFormStarGift);
-            new StarGiftSheet.ResaleBuyTransferAlert(getContext(), this.resourcesProvider, tL_starGiftUnique, paymentFormState, this.currentAccount, j, tL_starGiftUnique.title + " #" + LocaleController.formatNumber(tL_starGiftUnique.num, ','), true, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda27
+            new StarGiftSheet.ResaleBuyTransferAlert(getContext(), this.resourcesProvider, tL_starGiftUnique, paymentFormState, this.currentAccount, j, tL_starGiftUnique.title + " #" + LocaleController.formatNumber(tL_starGiftUnique.num, ','), true, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda28
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     ResaleGiftsFragment.SelectGiftSheet.this.lambda$buyGift$26(tL_starGiftUnique, j, (StarGiftSheet.PaymentFormState) obj, (Browser.Progress) obj2);
@@ -2629,7 +2635,7 @@ public class ResaleGiftsFragment extends BaseFragment {
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$buyGift$26(final TL_stars.TL_starGiftUnique tL_starGiftUnique, long j, StarGiftSheet.PaymentFormState paymentFormState, final Browser.Progress progress) {
             progress.init();
-            StarsController.getInstance(this.currentAccount, paymentFormState.currency).buyResellingGift(paymentFormState.form, tL_starGiftUnique, j, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda28
+            StarsController.getInstance(this.currentAccount, paymentFormState.currency).buyResellingGift(paymentFormState.form, tL_starGiftUnique, j, new Utilities.Callback2() { // from class: org.telegram.ui.Gifts.ResaleGiftsFragment$SelectGiftSheet$$ExternalSyntheticLambda29
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     ResaleGiftsFragment.SelectGiftSheet.this.lambda$buyGift$25(progress, tL_starGiftUnique, (Boolean) obj, (String) obj2);
@@ -2734,7 +2740,7 @@ public class ResaleGiftsFragment extends BaseFragment {
                 int i2 = i % 3;
                 int i3 = 6 - i2;
                 for (int i4 = 0; i4 < i3; i4++) {
-                    arrayList.add(UItem.asFlicker((i4 - i2) + 1, 34).setSpanCount(1));
+                    arrayList.add(UItem.asFlicker((i4 - i2) + 1, 35).setSpanCount(1));
                 }
             } else if (z) {
                 arrayList.add(UItem.asCenterShadow(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
@@ -2751,12 +2757,12 @@ public class ResaleGiftsFragment extends BaseFragment {
                     arrayList.add(GiftSheet.GiftCell.Factory.asStarGift(0, (TL_stars.TL_starGiftUnique) it2.next(), false, true, false, true, true));
                 }
                 if (this.state.resaleList.loading || !this.state.resaleList.endReached) {
-                    arrayList.add(UItem.asFlicker(10, 34).setSpanCount(1));
-                    arrayList.add(UItem.asFlicker(11, 34).setSpanCount(1));
-                    arrayList.add(UItem.asFlicker(12, 34).setSpanCount(1));
-                    arrayList.add(UItem.asFlicker(13, 34).setSpanCount(1));
-                    arrayList.add(UItem.asFlicker(14, 34).setSpanCount(1));
-                    arrayList.add(UItem.asFlicker(15, 34).setSpanCount(1));
+                    arrayList.add(UItem.asFlicker(10, 35).setSpanCount(1));
+                    arrayList.add(UItem.asFlicker(11, 35).setSpanCount(1));
+                    arrayList.add(UItem.asFlicker(12, 35).setSpanCount(1));
+                    arrayList.add(UItem.asFlicker(13, 35).setSpanCount(1));
+                    arrayList.add(UItem.asFlicker(14, 35).setSpanCount(1));
+                    arrayList.add(UItem.asFlicker(15, 35).setSpanCount(1));
                 }
             }
         }

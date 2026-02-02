@@ -649,7 +649,7 @@ public class StoryLinkSheet extends BottomSheetWithRecyclerListView implements N
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public WebpagePreviewView createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public WebpagePreviewView createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new WebpagePreviewView(context);
             }
 

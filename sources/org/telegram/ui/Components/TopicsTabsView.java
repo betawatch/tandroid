@@ -1707,7 +1707,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public VerticalTabView createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public VerticalTabView createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new VerticalTabView(context, i, resourcesProvider);
             }
 
@@ -2197,7 +2197,7 @@ public abstract class TopicsTabsView extends FrameLayout implements Notification
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public HorizontalTabView createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public HorizontalTabView createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new HorizontalTabView(context, i, resourcesProvider);
             }
 

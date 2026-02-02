@@ -135,7 +135,7 @@ public class FlickerLoadingView extends View implements Theme.Colorable {
             paint = this.globalGradientView.paint;
         }
         Paint paint2 = paint;
-        if (getViewType() == 34 || getViewType() == 35) {
+        if (getViewType() == 34 || getViewType() == 35 || getViewType() == 36) {
             this.parentXOffset = -getX();
         }
         updateColors();
@@ -755,7 +755,7 @@ public class FlickerLoadingView extends View implements Theme.Colorable {
                                     i3 = i39;
                                 }
                             }
-                        } else if (getViewType() == 34 || getViewType() == 35) {
+                        } else if (getViewType() == 34 || getViewType() == 35 || getViewType() == 36) {
                             this.rectF.set(this.paddingLeft, this.paddingTop, getMeasuredWidth() - this.paddingLeft, getMeasuredHeight() - this.paddingTop);
                             this.rectF.inset(AndroidUtilities.dp(3.33f), AndroidUtilities.dp(4.0f));
                             canvas.drawRoundRect(this.rectF, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(11.0f), paint2);
@@ -786,7 +786,7 @@ public class FlickerLoadingView extends View implements Theme.Colorable {
             i = getMeasuredWidth();
         }
         int i2 = this.viewType;
-        if (i2 == 34 || i2 == 35) {
+        if (i2 == 34 || i2 == 35 || i2 == 36) {
             i = Math.max(i, AndroidUtilities.displaySize.x);
         }
         int i3 = this.parentHeight;
@@ -831,7 +831,7 @@ public class FlickerLoadingView extends View implements Theme.Colorable {
         this.color0 = themedColor;
         this.color1 = themedColor2;
         int i2 = this.viewType;
-        if (i2 == 34 || i2 == 35) {
+        if (i2 == 34 || i2 == 35 || i2 == 36) {
             this.gradientWidth = AndroidUtilities.displaySize.x;
         } else if (this.isSingleCell || i2 == 13 || i2 == 14 || i2 == 17) {
             this.gradientWidth = AndroidUtilities.dp(200.0f);
@@ -923,6 +923,8 @@ public class FlickerLoadingView extends View implements Theme.Colorable {
                 return AndroidUtilities.dp(140.0f);
             case 35:
                 return AndroidUtilities.dp(112.0f);
+            case 36:
+                return AndroidUtilities.dp(108.0f);
         }
     }
 

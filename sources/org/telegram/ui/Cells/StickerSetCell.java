@@ -22,6 +22,7 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
@@ -31,6 +32,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
@@ -39,6 +41,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.StickerSetCell;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.CheckBox2;
@@ -47,22 +50,27 @@ import org.telegram.ui.Components.ForegroundColorSpanThemable;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.PremiumButtonView;
 import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.ScaleStateListAnimator;
+import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
 
 /* loaded from: classes4.dex */
 public class StickerSetCell extends FrameLayout {
-    private TextView addButtonView;
+    public TextView addButtonView;
     private CheckBox2 checkBox;
-    private ImageView deleteView;
+    public ImageView deleteView;
     private boolean emojis;
     private boolean groupSearch;
     private BackupImageView imageView;
     private boolean needDivider;
     private final int option;
     private ImageView optionsButton;
-    private PremiumButtonView premiumButtonView;
+    public PremiumButtonView premiumButtonView;
     private RadialProgressView progressView;
     private Rect rect;
-    private TextView removeButtonView;
+    public TextView removeButtonView;
     private ImageView reorderButton;
     private FrameLayout sideButtons;
     private AnimatorSet stateAnimator;
@@ -144,7 +152,7 @@ public class StickerSetCell extends FrameLayout {
         this.addButtonView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText, resourcesProvider));
         TextView textView2 = this.addButtonView;
         int i3 = Theme.key_featuredStickers_addButton;
-        textView2.setBackground(Theme.AdaptiveRipple.createRect(Theme.getColor(i3, resourcesProvider), Theme.getColor(Theme.key_featuredStickers_addButtonPressed, resourcesProvider), 4.0f));
+        textView2.setBackground(Theme.AdaptiveRipple.createRect(Theme.getColor(i3, resourcesProvider), Theme.getColor(Theme.key_featuredStickers_addButtonPressed, resourcesProvider), 14.0f));
         this.addButtonView.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
         this.addButtonView.setGravity(17);
         this.addButtonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda5
@@ -154,13 +162,14 @@ public class StickerSetCell extends FrameLayout {
             }
         });
         this.sideButtons.addView(this.addButtonView, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, (LocaleController.isRTL ? 3 : 5) | 16));
+        ScaleStateListAnimator.apply(this.addButtonView);
         TextView textView3 = new TextView(context);
         this.removeButtonView = textView3;
         textView3.setTextSize(1, 14.0f);
         this.removeButtonView.setTypeface(AndroidUtilities.bold());
         this.removeButtonView.setText(LocaleController.getString(R.string.StickersRemove));
         this.removeButtonView.setTextColor(Theme.getColor(Theme.key_featuredStickers_removeButtonText, resourcesProvider));
-        this.removeButtonView.setBackground(Theme.AdaptiveRipple.createRect(0, Theme.getColor(i3, resourcesProvider) & 452984831, 4.0f));
+        this.removeButtonView.setBackground(Theme.AdaptiveRipple.createRect(0, Theme.getColor(i3, resourcesProvider) & 452984831, 14.0f));
         this.removeButtonView.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         this.removeButtonView.setGravity(17);
         this.removeButtonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda6
@@ -170,6 +179,7 @@ public class StickerSetCell extends FrameLayout {
             }
         });
         this.sideButtons.addView(this.removeButtonView, LayoutHelper.createFrameRelatively(-2.0f, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 0.0f, -2.0f, 0.0f, 0.0f));
+        ScaleStateListAnimator.apply(this.removeButtonView);
         PremiumButtonView premiumButtonView = new PremiumButtonView(context, AndroidUtilities.dp(4.0f), false, resourcesProvider);
         this.premiumButtonView = premiumButtonView;
         premiumButtonView.setIcon(R.raw.unlock_icon);
@@ -191,6 +201,7 @@ public class StickerSetCell extends FrameLayout {
         } catch (Exception unused) {
         }
         this.sideButtons.addView(this.premiumButtonView, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, (LocaleController.isRTL ? 3 : 5) | 16));
+        ScaleStateListAnimator.apply(this.premiumButtonView);
         this.sideButtons.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
         addView(this.sideButtons, LayoutHelper.createFrame(-2, -1.0f, LocaleController.isRTL ? 3 : 5, 0.0f, 0.0f, 0.0f, 0.0f));
         this.sideButtons.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.StickerSetCell$$ExternalSyntheticLambda8
@@ -746,5 +757,92 @@ public class StickerSetCell extends FrameLayout {
         }
         accessibilityNodeInfo.setCheckable(true);
         accessibilityNodeInfo.setChecked(true);
+    }
+
+    public static final class Factory extends UItem.UItemFactory {
+        static {
+            UItem.UItemFactory.setup(new Factory());
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public StickerSetCell createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            final StickerSetCell stickerSetCell = new StickerSetCell(context, 1);
+            if (recyclerListView instanceof UniversalRecyclerView) {
+                final UniversalRecyclerView universalRecyclerView = (UniversalRecyclerView) recyclerListView;
+                stickerSetCell.setOnReorderButtonTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Cells.StickerSetCell$Factory$$ExternalSyntheticLambda0
+                    @Override // android.view.View.OnTouchListener
+                    public final boolean onTouch(View view, MotionEvent motionEvent) {
+                        boolean lambda$createView$0;
+                        lambda$createView$0 = StickerSetCell.Factory.lambda$createView$0(UniversalRecyclerView.this, stickerSetCell, view, motionEvent);
+                        return lambda$createView$0;
+                    }
+                });
+            }
+            return stickerSetCell;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ boolean lambda$createView$0(UniversalRecyclerView universalRecyclerView, StickerSetCell stickerSetCell, View view, MotionEvent motionEvent) {
+            ItemTouchHelper itemTouchHelper;
+            if (motionEvent.getAction() != 0 || (itemTouchHelper = universalRecyclerView.itemTouchHelper) == null) {
+                return false;
+            }
+            itemTouchHelper.startDrag(universalRecyclerView.getChildViewHolder(stickerSetCell));
+            return false;
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
+            TLRPC.StickerSet stickerSet;
+            StickerSetCell stickerSetCell = (StickerSetCell) view;
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) uItem.object;
+            stickerSetCell.setStickersSet(tL_messages_stickerSet, z);
+            stickerSetCell.setChecked(uItem.checked, false);
+            boolean isReorderAllowed = universalRecyclerView.isReorderAllowed();
+            int i = 1;
+            stickerSetCell.setReorderable(isReorderAllowed, true);
+            stickerSetCell.setOnOptionsClick(uItem.clickCallback);
+            stickerSetCell.addButtonView.setOnClickListener(uItem.clickCallback2);
+            stickerSetCell.removeButtonView.setOnClickListener(uItem.clickCallback2);
+            stickerSetCell.premiumButtonView.setOnClickListener(uItem.clickCallback2);
+            if (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || !stickerSet.emojis) {
+                return;
+            }
+            boolean isStickerPackInstalled = MediaDataController.getInstance(universalAdapter.currentAccount).isStickerPackInstalled(tL_messages_stickerSet.set.id);
+            boolean isPremium = UserConfig.getInstance(universalAdapter.currentAccount).isPremium();
+            boolean z2 = !isPremium;
+            if (!isPremium) {
+                int i2 = 0;
+                while (true) {
+                    if (i2 >= tL_messages_stickerSet.documents.size()) {
+                        z2 = false;
+                        break;
+                    } else if (!MessageObject.isFreeEmoji(tL_messages_stickerSet.documents.get(i2))) {
+                        break;
+                    } else {
+                        i2++;
+                    }
+                }
+            }
+            if (!z2) {
+                i = isStickerPackInstalled ? 4 : 3;
+            } else if (isStickerPackInstalled && !tL_messages_stickerSet.set.official) {
+                i = 2;
+            }
+            stickerSetCell.updateButtonState(i, false);
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public void attachedView(RecyclerListView recyclerListView, View view, UItem uItem) {
+            StickerSetCell stickerSetCell = (StickerSetCell) view;
+            stickerSetCell.setChecked(uItem.checked, true);
+            stickerSetCell.setReorderable(recyclerListView instanceof UniversalRecyclerView ? ((UniversalRecyclerView) recyclerListView).isReorderAllowed() : false, true);
+        }
+
+        public static UItem of(TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+            UItem ofFactory = UItem.ofFactory(Factory.class);
+            ofFactory.object = tL_messages_stickerSet;
+            return ofFactory;
+        }
     }
 }

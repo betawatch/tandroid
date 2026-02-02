@@ -3255,10 +3255,6 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
         protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
             super.onLayout(z, i, i2, i3, i4);
-            if (ChatActivityEnterView.this.scheduledButton != null) {
-                int measuredWidth = getMeasuredWidth() - (AndroidUtilities.dp(44.0f) * 2);
-                ChatActivityEnterView.this.scheduledButton.layout(measuredWidth, ChatActivityEnterView.this.scheduledButton.getTop(), ChatActivityEnterView.this.scheduledButton.getMeasuredWidth() + measuredWidth, ChatActivityEnterView.this.scheduledButton.getBottom());
-            }
             if (ChatActivityEnterView.this.animationParamsX.isEmpty()) {
                 return;
             }
@@ -3893,8 +3889,9 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             @Override // android.view.View
             public void setTranslationX(float f) {
                 this.innerTranslationX = f;
+                float dp = AndroidUtilities.dp(-44.0f) + this.innerTranslationX;
                 ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
-                super.setTranslationX(f + chatActivityEnterView.attachLayoutPaddingTranslationX + chatActivityEnterView.attachLayoutTranslationX + (AndroidUtilities.dp((ChatActivityEnterView.this.giftButton == null || ChatActivityEnterView.this.giftButton.getVisibility() != 0) ? 0.0f : -44.0f) * (ChatActivityEnterView.this.giftButton == null ? 0.0f : ChatActivityEnterView.this.giftButton.getAlpha())) + (AndroidUtilities.dp((ChatActivityEnterView.this.botButton == null || ChatActivityEnterView.this.botButton.getVisibility() != 0) ? 0.0f : -44.0f) * (ChatActivityEnterView.this.botButton != null ? ChatActivityEnterView.this.botButton.getAlpha() : 0.0f)));
+                super.setTranslationX(dp + chatActivityEnterView.attachLayoutPaddingTranslationX + chatActivityEnterView.attachLayoutTranslationX + (AndroidUtilities.dp((ChatActivityEnterView.this.giftButton == null || ChatActivityEnterView.this.giftButton.getVisibility() != 0) ? 0.0f : -44.0f) * (ChatActivityEnterView.this.giftButton == null ? 0.0f : ChatActivityEnterView.this.giftButton.getAlpha())) + (AndroidUtilities.dp((ChatActivityEnterView.this.botButton == null || ChatActivityEnterView.this.botButton.getVisibility() != 0) ? 0.0f : -44.0f) * (ChatActivityEnterView.this.botButton != null ? ChatActivityEnterView.this.botButton.getAlpha() : 0.0f)));
             }
         };
         this.scheduledButton = imageView;
@@ -10516,13 +10513,13 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
                 ImageView imageView12 = this.scheduledButton;
                 if (imageView12 != null) {
-                    imageView12.setTranslationX(0.0f);
-                    ImageView imageView13 = this.scheduledButton;
                     float[] fArr11 = new float[1];
                     fArr11[r92] = 1.0f;
-                    ObjectAnimator ofFloat34 = ObjectAnimator.ofFloat(imageView13, (Property<ImageView, Float>) property22, fArr11);
-                    Animator[] animatorArr8 = new Animator[1];
+                    ObjectAnimator ofFloat34 = ObjectAnimator.ofFloat(imageView12, (Property<ImageView, Float>) property22, fArr11);
+                    ValueAnimator animateScheduledTranslationX2 = animateScheduledTranslationX(0.0f);
+                    Animator[] animatorArr8 = new Animator[2];
                     animatorArr8[r92] = ofFloat34;
+                    animatorArr8[1] = animateScheduledTranslationX2;
                     animatorSet17.playTogether(animatorArr8);
                 }
                 animatorSet17.setDuration(150L);

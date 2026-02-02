@@ -20,7 +20,7 @@ import org.telegram.ui.Components.RecyclerListView;
 public class UniversalRecyclerView extends RecyclerListView {
     public final UniversalAdapter adapter;
     private boolean doNotDetachViews;
-    private ItemTouchHelper itemTouchHelper;
+    public ItemTouchHelper itemTouchHelper;
     public LinearLayoutManager layoutManager;
     private boolean reorderingAllowed;
     private boolean reorderingOnOtherAxis;
@@ -82,7 +82,7 @@ public class UniversalRecyclerView extends RecyclerListView {
         this.adapter = universalAdapter;
         setAdapter(universalAdapter);
         if (callback5 != null) {
-            setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda3
+            setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda4
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public /* synthetic */ boolean hasDoubleTap(View view, int i5) {
                     return RecyclerListView.OnItemClickListenerExtended.-CC.$default$hasDoubleTap(this, view, i5);
@@ -100,7 +100,7 @@ public class UniversalRecyclerView extends RecyclerListView {
             });
         }
         if (callback5Return != null) {
-            setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda4
+            setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda5
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListenerExtended
                 public final boolean onItemClick(View view, int i5, float f, float f2) {
                     boolean lambda$new$1;
@@ -249,7 +249,7 @@ public class UniversalRecyclerView extends RecyclerListView {
         UniversalAdapter universalAdapter = this.adapter;
         this.reorderingAllowed = z;
         universalAdapter.updateReorder(z);
-        AndroidUtilities.forEachViews((RecyclerView) this, new Consumer() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda5
+        AndroidUtilities.forEachViews((RecyclerView) this, new Consumer() { // from class: org.telegram.ui.Components.UniversalRecyclerView$$ExternalSyntheticLambda3
             @Override // com.google.android.exoplayer2.util.Consumer
             public final void accept(Object obj) {
                 UniversalRecyclerView.this.lambda$allowReorder$2((View) obj);

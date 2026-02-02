@@ -1013,7 +1013,7 @@ public abstract class DialogStoriesCell extends FrameLayout implements Notificat
             this.titleView.getDrawable().setRightPadding((avatarRight - AndroidUtilities.dp(12.0f)) + (this.actionBar.menu.getVisibleItemsMeasuredWidthWithAlpha() * min));
             this.telegramLogoView.setTranslationX(this.titleView.getTranslationX() + AndroidUtilities.dp(1.0f));
             this.telegramLogoView.setTranslationY(f + AndroidUtilities.dp(22.333f) + totalVisibility);
-            this.emojiStatusView.setTranslationX((this.titleView.getTranslationX() - AndroidUtilities.dpf2(4.33f)) + this.telegramLogoView.getMeasuredWidth());
+            this.emojiStatusView.setTranslationX((this.titleView.getTranslationX() - AndroidUtilities.dpf2(3.33f)) + this.telegramLogoView.getMeasuredWidth());
             this.emojiStatusView.setTranslationY(f + AndroidUtilities.dp(11.333f) + totalVisibility);
             this.subtitleOverlayContainer.setTranslationX(this.titleView.getTranslationX());
             this.subtitleOverlayContainer.setTranslationY(f + AndroidUtilities.dp(31.333f));

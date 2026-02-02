@@ -36,6 +36,7 @@ import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RLottieImageView;
+import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.TextHelper;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
@@ -345,7 +346,7 @@ public class PasskeysActivity extends BaseFragment {
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public PasskeyCell createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public PasskeyCell createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new PasskeyCell(context, i, resourcesProvider);
             }
 

@@ -23,6 +23,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
@@ -161,6 +162,7 @@ import org.telegram.ui.Stars.StarsController;
 import org.telegram.ui.Stars.StarsIntroActivity;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 import org.telegram.ui.StatisticActivity;
+import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.Stories.recorder.StoryEntry;
@@ -1003,12 +1005,17 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.topView.craftTopView.setup(this.currentAccount, uniqueGift.gift_id, uniqueGift.getDocument(), uniqueGift.title);
             this.topView.craftTopView.selectGift(getUniqueGift());
         }
-        this.topView.craftTopView.setOnCraft(new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda66
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                StarGiftSheet.this.lambda$openCrafting$5((ArrayList) obj, (Utilities.Callback2) obj2);
+        this.topView.craftTopView.setOnCraft(new Utilities.Callback3() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda66
+            @Override // org.telegram.messenger.Utilities.Callback3
+            public final void run(Object obj, Object obj2, Object obj3) {
+                StarGiftSheet.this.lambda$openCrafting$5((ArrayList) obj, (Utilities.Callback2) obj2, (Runnable) obj3);
             }
         });
+        if (this.giftsToCraft == null) {
+            ResaleGiftsFragment.SelectGiftSheet.State state = new ResaleGiftsFragment.SelectGiftSheet.State(this.currentAccount, uniqueGift.gift_id);
+            this.giftsToCraft = state;
+            state.attach();
+        }
         this.topView.craftTopView.setOnAddGift(new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda67
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
@@ -1025,7 +1032,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openCrafting$5(ArrayList arrayList, final Utilities.Callback2 callback2) {
+    public /* synthetic */ void lambda$openCrafting$5(ArrayList arrayList, final Utilities.Callback2 callback2, final Runnable runnable) {
         ResaleGiftsFragment.SelectGiftSheet.State state = this.giftsToCraft;
         if (state != null) {
             state.detach();
@@ -1039,20 +1046,30 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             tL_inputSavedStarGiftSlug.slug = starGift.slug;
             craftstargift.stargift.add(tL_inputSavedStarGiftSlug);
         }
-        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(craftstargift, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda104
+        ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(craftstargift, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda122
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                StarGiftSheet.this.lambda$openCrafting$4(callback2, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                StarGiftSheet.this.lambda$openCrafting$4(callback2, runnable, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openCrafting$4(Utilities.Callback2 callback2, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$openCrafting$4(Utilities.Callback2 callback2, Runnable runnable, TLRPC.Updates updates, TLRPC.TL_error tL_error) {
         final MessageObject messageObject;
         if (updates == null) {
             if (tL_error != null) {
-                getBulletinFactory().showForError(tL_error);
+                if ("STARGIFT_CRAFT_UNAVAILABLE".equalsIgnoreCase(tL_error.text)) {
+                    new AlertDialog.Builder(getContext(), new DarkThemeResourceProvider()).setTitle(LocaleController.getString(R.string.GiftCraftUnavailableTitle)).setMessage(AndroidUtilities.replaceTags(LocaleController.getString(R.string.GiftCraftUnavailableText))).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
+                } else {
+                    String str = tL_error.text;
+                    if (str != null && str.startsWith("STARGIFT_CRAFT_TOO_EARLY_")) {
+                        new AlertDialog.Builder(getContext(), new DarkThemeResourceProvider()).setTitle(LocaleController.getString(R.string.GiftCraftUnavailableTitle)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCraftUnavailableTextTime, LocaleController.formatDateTime(Long.parseLong(tL_error.text.substring(25)), true)))).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
+                    } else {
+                        getBulletinFactory().showForError(tL_error);
+                    }
+                }
+                runnable.run();
                 return;
             }
             return;
@@ -1072,7 +1089,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
         MessagesController.getInstance(this.currentAccount).processUpdates(updates, false);
         if (messageObject != null) {
-            callback2.run(((TLRPC.TL_messageActionStarGiftUnique) messageObject.messageOwner.action).gift, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda135
+            callback2.run(((TLRPC.TL_messageActionStarGiftUnique) messageObject.messageOwner.action).gift, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda151
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftSheet.this.lambda$openCrafting$3(messageObject);
@@ -1089,6 +1106,10 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     public /* synthetic */ void lambda$openCrafting$3(MessageObject messageObject) {
         set(messageObject);
         switchPage(0, true);
+        FireworksOverlay fireworksOverlay = this.fireworksOverlay;
+        if (fireworksOverlay != null) {
+            fireworksOverlay.start(true);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1105,7 +1126,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 hashSet.add(Long.valueOf(selectGiftView.getGift().id));
             }
         }
-        new ResaleGiftsFragment.SelectGiftSheet(getContext(), tL_starGiftUnique.title, this.giftsToCraft).without(hashSet).setActionText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCraftSelect", 4 - hashSet.size(), new Object[0]))).setOnSelect(new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda120
+        new ResaleGiftsFragment.SelectGiftSheet(getContext(), tL_starGiftUnique.title, this.giftsToCraft).without(hashSet).setActionText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCraftSelect", 4 - hashSet.size(), new Object[0]))).setOnSelect(new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda119
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 Utilities.Callback.this.run((TL_stars.StarGift) obj);
@@ -1204,7 +1225,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         TL_stars.SavedStarGift savedStarGift3 = this.savedStarGift;
         boolean z = savedStarGift3.pinned_to_top;
         if (((StarsController.GiftsList) this.giftsList).togglePinned(savedStarGift3, !z, false)) {
-            new ProfileGiftsContainer.UnpinSheet(getContext(), this.dialogId, this.savedStarGift, this.resourcesProvider, new Utilities.Callback0Return() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda105
+            new ProfileGiftsContainer.UnpinSheet(getContext(), this.dialogId, this.savedStarGift, this.resourcesProvider, new Utilities.Callback0Return() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda104
                 @Override // org.telegram.messenger.Utilities.Callback0Return
                 public final Object run() {
                     return StarGiftSheet.this.getBulletinFactory();
@@ -1280,7 +1301,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         bundle.putBoolean("onlySelect", true);
         bundle.putInt("dialogsType", 4);
         final DialogsActivity dialogsActivity = new DialogsActivity(bundle);
-        dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda121
+        dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda120
             @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
             public /* synthetic */ boolean canSelectStories() {
                 return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
@@ -1309,7 +1330,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         final long j = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
         long giftThemeUser = ChatThemeController.getInstance(this.currentAccount).getGiftThemeUser(tL_starGiftUnique.slug);
         if (giftThemeUser != 0 && giftThemeUser != j) {
-            AlertsCreator.showGiftThemeApplyConfirm(getContext(), this.resourcesProvider, this.currentAccount, tL_starGiftUnique, giftThemeUser, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda149
+            AlertsCreator.showGiftThemeApplyConfirm(getContext(), this.resourcesProvider, this.currentAccount, tL_starGiftUnique, giftThemeUser, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda148
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftSheet.this.lambda$openSetAsTheme$16(j, tL_starGiftUnique, dialogsActivity);
@@ -1515,7 +1536,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.button.setLoading(false);
             toggleWear(true);
         } else {
-            messagesController.getBoostsController().userCanBoostChannel(j, tL_premium_boostsStatus, new Consumer() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda112
+            messagesController.getBoostsController().userCanBoostChannel(j, tL_premium_boostsStatus, new Consumer() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda111
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
                     StarGiftSheet.this.lambda$toggleWear$22(tL_premium_boostsStatus, j, messagesController, (ChannelBoostsController.CanApplyBoost) obj);
@@ -1672,7 +1693,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         TL_stars.updateStarGiftPrice updatestargiftprice = new TL_stars.updateStarGiftPrice();
         updatestargiftprice.stargift = getInputStarGift();
         updatestargiftprice.resell_amount = tl;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(updatestargiftprice, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda106
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(updatestargiftprice, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda105
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 StarGiftSheet.this.lambda$onUpdatePriceClick$28(tL_starGiftUnique, amountUtils$Amount, runnable, tLObject, tL_error);
@@ -1684,14 +1705,14 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     public /* synthetic */ void lambda$onUpdatePriceClick$28(final TL_stars.TL_starGiftUnique tL_starGiftUnique, final AmountUtils$Amount amountUtils$Amount, final Runnable runnable, TLObject tLObject, final TLRPC.TL_error tL_error) {
         if (tLObject instanceof TLRPC.Updates) {
             MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda145
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda144
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftSheet.this.lambda$onUpdatePriceClick$26(tL_starGiftUnique, amountUtils$Amount, runnable);
                 }
             });
         } else if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda146
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda145
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftSheet.this.lambda$onUpdatePriceClick$27(tL_error, runnable);
@@ -1848,7 +1869,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     public /* synthetic */ void lambda$onResellPressed$39(final TL_stars.TL_starGiftUnique tL_starGiftUnique, final AmountUtils$Amount amountUtils$Amount, final Runnable runnable, TLObject tLObject, final TLRPC.TL_error tL_error) {
         if (tLObject instanceof TLRPC.Updates) {
             MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda141
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda140
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftSheet.this.lambda$onResellPressed$36(tL_starGiftUnique, amountUtils$Amount, runnable);
@@ -1856,14 +1877,14 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             });
         } else if (tL_error != null && tL_error.text.startsWith("STARGIFT_RESELL_TOO_EARLY_")) {
             final long parseLong = Long.parseLong(tL_error.text.substring(26));
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda142
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda141
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftSheet.this.lambda$onResellPressed$37(parseLong, runnable);
                 }
             });
         } else if (tL_error != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda143
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda142
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftSheet.this.lambda$onResellPressed$38(tL_error, runnable);
@@ -2428,6 +2449,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         private final GiftSheet.Ribbon ribbon;
         private ValueAnimator rotationAnimator;
         private ArrayList sampleAttributes;
+        private final FrameLayout subtitleContainer;
         private final LinkSpanDrawable.LinksTextView[] subtitleView;
         private final LinearLayout.LayoutParams[] subtitleViewLayoutParams;
         private ValueAnimator switchAnimator;
@@ -2490,7 +2512,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.checkToRotateRunnable = new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$TopView$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StarGiftSheet.TopView.this.lambda$new$2();
+                    StarGiftSheet.TopView.this.lambda$new$3();
                 }
             };
             this.backgroundPaint = new Paint[3];
@@ -2532,6 +2554,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             int i3 = 0;
             while (true) {
                 BackupImageView[] backupImageViewArr = this.imageView;
+                float f = 0.0f;
                 if (i3 >= backupImageViewArr.length) {
                     break;
                 }
@@ -2541,7 +2564,11 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     this.imageView[i3].getImageReceiver().setCrossfadeDuration(1);
                 }
                 this.imageLayout.addView(this.imageView[i3], LayoutHelper.createFrame(-1, -1, 119));
-                this.imageView[i3].setAlpha(i3 == this.currentImageIndex ? 1.0f : 0.0f);
+                BackupImageView backupImageView = this.imageView[i3];
+                if (i3 == this.currentImageIndex) {
+                    f = 1.0f;
+                }
+                backupImageView.setAlpha(f);
                 i3++;
             }
             LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
@@ -2564,6 +2591,18 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             textView.setGravity(17);
             textView.setLinkTextColor(-1);
             textView.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), 0);
+            TextView textView2 = new TextView(context);
+            this.resellPriceView = textView2;
+            textView2.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+            textView2.setTextSize(1, 13.0f);
+            textView2.setTextColor(-1);
+            textView2.setTypeface(AndroidUtilities.bold());
+            textView2.setAlpha(0.0f);
+            textView2.setScaleX(0.4f);
+            textView2.setScaleY(0.4f);
+            textView2.setVisibility(8);
+            textView2.setGravity(17);
+            ScaleStateListAnimator.apply(textView2);
             LinearLayout linearLayout = new LinearLayout(context);
             this.buttonsLayout = linearLayout;
             linearLayout.setOrientation(0);
@@ -2592,10 +2631,10 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 linearLayout2.addView(buttonArr2[i4], LayoutHelper.createLinear(0, 56, 1.0f, 119, 0, 0, i4 != buttonArr2.length - 1 ? 11 : 0, 0));
                 i4++;
             }
+            this.subtitleContainer = new FrameLayout(context);
             int i5 = 0;
             while (true) {
                 LinearLayout[] linearLayoutArr = this.layout;
-                float f = 9.0f;
                 if (i5 >= linearLayoutArr.length) {
                     break;
                 }
@@ -2605,9 +2644,9 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     FrameLayout frameLayout = new FrameLayout(context);
                     this.userLayout = frameLayout;
                     this.layout[i5].addView(frameLayout, LayoutHelper.createLinear(-1, NotificationCenter.fileNewChunkAvailable, 119));
-                    BackupImageView backupImageView = new BackupImageView(context);
-                    this.avatarView = backupImageView;
-                    backupImageView.setRoundRadius(AndroidUtilities.dp(41.0f));
+                    BackupImageView backupImageView2 = new BackupImageView(context);
+                    this.avatarView = backupImageView2;
+                    backupImageView2.setRoundRadius(AndroidUtilities.dp(41.0f));
                     this.userLayout.addView(this.avatarView, LayoutHelper.createFrame(82, 82.0f, 49, 0.0f, 2.0f, 0.0f, 0.0f));
                     this.titleView[i5] = new LinkSpanDrawable.LinksTextView(context);
                     this.titleView[i5].setTextColor(-1);
@@ -2650,36 +2689,46 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                         this.layout[i5].addView(this.releasedView, LayoutHelper.createLinear(-2, -2, 17, 0, 4, 0, 4));
                         this.layout[i5].addView(this.collectionReleasedView, LayoutHelper.createLinear(-2, 19.33f, 17, 0, 6, 0, 2));
                     }
-                    this.subtitleView[i5] = new LinkSpanDrawable.LinksTextView(context);
-                    this.subtitleView[i5].setTextColor(i5 == 3 ? Theme.multAlpha(-1, 0.75f) : Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
-                    this.subtitleView[i5].setTextSize(1, 14.0f);
-                    this.subtitleView[i5].setGravity(17);
-                    this.subtitleView[i5].setLinkTextColor(Theme.getColor(Theme.key_chat_messageLinkIn, resourcesProvider));
-                    this.subtitleView[i5].setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                    this.subtitleView[i5].setDisablePaddingsOffsetY(true);
-                    LinearLayout linearLayout3 = this.layout[i5];
-                    LinkSpanDrawable.LinksTextView linksTextView3 = this.subtitleView[i5];
-                    LinearLayout.LayoutParams[] layoutParamsArr2 = this.subtitleViewLayoutParams;
-                    LinearLayout.LayoutParams createLinear = LayoutHelper.createLinear(-1, -2, 17, 24, 0, 24, i5 == 3 ? 6 : 0);
-                    layoutParamsArr2[i5] = createLinear;
-                    linearLayout3.addView(linksTextView3, createLinear);
-                    LinearLayout.LayoutParams layoutParams = this.subtitleViewLayoutParams[i5];
-                    if (i5 == 3) {
-                        f = 6.0f;
-                    } else if (i5 == 1) {
-                        f = 7.33f;
-                    } else if (this.backdrop[0] != null) {
-                        f = 5.66f;
+                    if (i5 == 0) {
+                        this.subtitleView[i5] = new LinkSpanDrawable.LinksTextView(context);
+                        this.subtitleView[i5].setTextColor(i5 == 3 ? Theme.multAlpha(-1, 0.75f) : Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
+                        this.subtitleView[i5].setTextSize(1, 14.0f);
+                        this.subtitleView[i5].setGravity(17);
+                        this.subtitleView[i5].setLinkTextColor(Theme.getColor(Theme.key_chat_messageLinkIn, resourcesProvider));
+                        this.subtitleView[i5].setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                        this.subtitleView[i5].setDisablePaddingsOffsetY(true);
+                        this.subtitleContainer.addView(this.subtitleView[i5], LayoutHelper.createFrame(-2, -2, 17));
+                        this.subtitleContainer.addView(this.resellPriceView, LayoutHelper.createFrame(-2.0f, 20.33f, 17));
+                        LinearLayout linearLayout3 = this.layout[i5];
+                        FrameLayout frameLayout2 = this.subtitleContainer;
+                        LinearLayout.LayoutParams[] layoutParamsArr2 = this.subtitleViewLayoutParams;
+                        LinearLayout.LayoutParams createLinear = LayoutHelper.createLinear(-1, -2, 17, 24, 0, 24, i5 == 3 ? 6 : 0);
+                        layoutParamsArr2[i5] = createLinear;
+                        linearLayout3.addView(frameLayout2, createLinear);
+                    } else {
+                        this.subtitleView[i5] = new LinkSpanDrawable.LinksTextView(context);
+                        this.subtitleView[i5].setTextColor(i5 == 3 ? Theme.multAlpha(-1, 0.75f) : Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
+                        this.subtitleView[i5].setTextSize(1, 14.0f);
+                        this.subtitleView[i5].setGravity(17);
+                        this.subtitleView[i5].setLinkTextColor(Theme.getColor(Theme.key_chat_messageLinkIn, resourcesProvider));
+                        this.subtitleView[i5].setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                        this.subtitleView[i5].setDisablePaddingsOffsetY(true);
+                        LinearLayout linearLayout4 = this.layout[i5];
+                        LinkSpanDrawable.LinksTextView linksTextView3 = this.subtitleView[i5];
+                        LinearLayout.LayoutParams[] layoutParamsArr3 = this.subtitleViewLayoutParams;
+                        LinearLayout.LayoutParams createLinear2 = LayoutHelper.createLinear(-1, -2, 17, 24, 0, 24, i5 == 3 ? 6 : 0);
+                        layoutParamsArr3[i5] = createLinear2;
+                        linearLayout4.addView(linksTextView3, createLinear2);
                     }
-                    layoutParams.topMargin = AndroidUtilities.dp(f);
+                    this.subtitleViewLayoutParams[i5].topMargin = AndroidUtilities.dp(i5 == 3 ? 6.0f : i5 == 1 ? 7.33f : this.backdrop[0] == null ? 9.0f : 5.66f);
                 }
                 if (i5 == 0) {
                     this.layout[i5].addView(this.buttonsLayout, LayoutHelper.createLinear(-1, -2, 7, 0, 15, 0, 0));
                 }
                 View view2 = this.layout[i5];
-                FrameLayout.LayoutParams[] layoutParamsArr3 = this.layoutLayoutParams;
+                FrameLayout.LayoutParams[] layoutParamsArr4 = this.layoutLayoutParams;
                 ViewGroup.LayoutParams createFrame2 = LayoutHelper.createFrame(-1, -2.0f, 119, 16.0f, i5 == 2 ? 32.0f : 170.0f, 16.0f, 0.0f);
-                layoutParamsArr3[i5] = createFrame2;
+                layoutParamsArr4[i5] = createFrame2;
                 addView(view2, createFrame2);
                 i5++;
             }
@@ -2700,17 +2749,6 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 }
             });
             imageView.setVisibility(8);
-            TextView textView2 = new TextView(context);
-            this.resellPriceView = textView2;
-            textView2.setPadding(AndroidUtilities.dp(9.0f), 0, AndroidUtilities.dp(9.0f), 0);
-            textView2.setTextSize(1, 14.0f);
-            textView2.setTextColor(-1);
-            textView2.setTypeface(AndroidUtilities.bold());
-            textView2.setAlpha(0.0f);
-            textView2.setVisibility(8);
-            textView2.setGravity(17);
-            ScaleStateListAnimator.apply(textView2);
-            addView(textView2, LayoutHelper.createFrame(-2, 24.0f, 51, 12.0f, 14.0f, 0.0f, 0.0f));
             ImageView imageView2 = new ImageView(context);
             this.craftView = imageView2;
             imageView2.setImageResource(R.drawable.filled_forge);
@@ -2760,18 +2798,32 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 this.collectionReleasedView.setText(charSequence3);
                 this.collectionReleasedView.setVisibility(0);
                 this.releasedView.setVisibility(8);
-                this.subtitleView[i].setVisibility(8);
-                return;
+                if (i == 0) {
+                    this.subtitleContainer.setVisibility(8);
+                    return;
+                } else {
+                    this.subtitleView[i].setVisibility(8);
+                    return;
+                }
             }
             if (i == 0 && !TextUtils.isEmpty(charSequence4)) {
                 this.releasedView.setText(charSequence4);
                 this.releasedView.setVisibility(0);
                 this.collectionReleasedView.setVisibility(8);
-                this.subtitleView[i].setVisibility(8);
-                return;
+                if (i == 0) {
+                    this.subtitleContainer.setVisibility(8);
+                    return;
+                } else {
+                    this.subtitleView[i].setVisibility(8);
+                    return;
+                }
             }
             this.subtitleView[i].setText(charSequence2);
-            this.subtitleView[i].setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
+            if (i == 0) {
+                this.subtitleContainer.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
+            } else {
+                this.subtitleView[i].setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
+            }
             this.releasedView.setVisibility(8);
             this.collectionReleasedView.setVisibility(8);
         }
@@ -2800,7 +2852,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 this.resellPriceView.setAlpha(AndroidUtilities.lerp(false, this.hasResellPrice, pageTransition.at(0)));
                 this.resellPriceView.setScaleX(AndroidUtilities.lerp(0.4f, this.hasResellPrice ? 1.0f : 0.4f, pageTransition.at(0)));
                 this.resellPriceView.setScaleY(AndroidUtilities.lerp(0.4f, this.hasResellPrice ? 1.0f : 0.4f, pageTransition.at(0)));
-                this.resellPriceView.setVisibility((this.hasResellPrice && pageTransition.to == 0) ? 0 : 8);
+                this.resellPriceView.setVisibility((this.hasResellPrice && pageTransition.to == 0) ? 0 : 4);
             }
             int color = Theme.getColor(Theme.key_dialogTextBlack, this.resourcesProvider);
             int i3 = 0;
@@ -2834,7 +2886,11 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 this.subtitleViewLayoutParams[i3].topMargin = AndroidUtilities.dp(i3 == 1 ? 7.33f : this.backdrop[0] == null ? 9.0f : 5.66f);
                 if (z) {
                     this.layout[i3].setLayoutParams(this.layoutLayoutParams[i3]);
-                    this.subtitleView[i3].setLayoutParams(this.subtitleViewLayoutParams[i3]);
+                    if (i3 == 0) {
+                        this.subtitleContainer.setLayoutParams(this.subtitleViewLayoutParams[i3]);
+                    } else {
+                        this.subtitleView[i3].setLayoutParams(this.subtitleViewLayoutParams[i3]);
+                    }
                 }
                 i3++;
             }
@@ -2900,11 +2956,16 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 if (starGift.resell_amount != null) {
                     this.hasResellPrice = true;
                     AmountUtils$Amount resellAmount = starGift.getResellAmount(starGift.resale_ton_only ? AmountUtils$Currency.TON : AmountUtils$Currency.STARS);
-                    this.resellPriceView.setText(StarsIntroActivity.replaceStars(resellAmount.currency == AmountUtils$Currency.TON, "⭐️ " + ((Object) StarsIntroActivity.formatStarsAmount(resellAmount.toTl(), 1.0f, ','))));
+                    this.resellPriceView.setText(LocaleController.formatSpannable(R.string.GiftOnSale, StarsIntroActivity.replaceStars(resellAmount.currency == AmountUtils$Currency.TON, "⭐️ " + ((Object) StarsIntroActivity.formatStarsAmount(resellAmount.toTl(), 1.0f, ','))), Float.valueOf(0.9f)));
                     TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.backdrop[0];
                     this.resellPriceView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(12.0f), ColorUtils.blendARGB(stargiftattributebackdrop.edge_color | (-16777216), stargiftattributebackdrop.pattern_color | (-16777216), 0.25f)));
                     if (StarGiftSheet.isMine(UserConfig.selectedAccount, DialogObject.getPeerDialogId(starGift.owner_id))) {
-                        this.resellPriceView.setOnClickListener(this.onUpdatePriceClick);
+                        this.resellPriceView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$TopView$$ExternalSyntheticLambda4
+                            @Override // android.view.View.OnClickListener
+                            public final void onClick(View view) {
+                                StarGiftSheet.TopView.this.lambda$setGift$2(view);
+                            }
+                        });
                         ScaleStateListAnimator.apply(this.resellPriceView);
                     } else {
                         this.resellPriceView.setOnClickListener(null);
@@ -2953,6 +3014,14 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             onSwitchPage(this.currentPage);
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$setGift$2(View view) {
+            View.OnClickListener onClickListener;
+            if (this.resellPriceView.getVisibility() == 0 && (onClickListener = this.onUpdatePriceClick) != null) {
+                onClickListener.onClick(view);
+            }
+        }
+
         public BackupImageView getUpgradeImageView() {
             return this.toggleBackdrop > 0.5f ? this.imageView[2] : this.imageView[1];
         }
@@ -2973,24 +3042,27 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             boolean isZero = amountUtils$Amount.isZero();
             this.hasResellPrice = !isZero;
             if (!isZero) {
-                this.resellPriceView.setText(StarsIntroActivity.replaceStars(amountUtils$Amount.currency == AmountUtils$Currency.TON, "⭐️ " + ((Object) StarsIntroActivity.formatStarsAmount(amountUtils$Amount.toTl(), 1.0f, ','))));
+                this.resellPriceView.setText(LocaleController.formatSpannable(R.string.GiftOnSale, StarsIntroActivity.replaceStars(amountUtils$Amount.currency == AmountUtils$Currency.TON, "⭐️ " + ((Object) StarsIntroActivity.formatStarsAmount(amountUtils$Amount.toTl(), 1.0f, ',')), 0.9f)));
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.backdrop[0];
                 this.resellPriceView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(12.0f), ColorUtils.blendARGB(stargiftattributebackdrop.edge_color | (-16777216), stargiftattributebackdrop.pattern_color | (-16777216), 0.25f)));
                 this.resellPriceView.setVisibility(0);
-                this.resellPriceView.setScaleX(0.4f);
-                this.resellPriceView.setScaleY(0.4f);
                 this.resellPriceViewInProgress = true;
-                this.resellPriceView.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(420L).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.1
+                ViewPropertyAnimator duration = this.resellPriceView.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(420L);
+                CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+                duration.setInterpolator(cubicBezierInterpolator).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.1
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         TopView.this.resellPriceViewInProgress = false;
                     }
                 }).start();
+                this.subtitleView[0].animate().alpha(0.0f).setDuration(420L).setInterpolator(cubicBezierInterpolator).start();
             } else {
-                this.resellPriceView.animate().scaleX(0.4f).scaleY(0.4f).alpha(0.0f).setDuration(420L).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.3
+                ViewPropertyAnimator duration2 = this.resellPriceView.animate().scaleX(0.4f).scaleY(0.4f).alpha(0.0f).setDuration(420L);
+                CubicBezierInterpolator cubicBezierInterpolator2 = CubicBezierInterpolator.EASE_OUT_QUINT;
+                duration2.setInterpolator(cubicBezierInterpolator2).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.3
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
-                        TopView.this.resellPriceView.setVisibility(8);
+                        TopView.this.resellPriceView.setVisibility(4);
                     }
                 }).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.2
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -2998,6 +3070,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                         TopView.this.resellPriceViewInProgress = false;
                     }
                 }).start();
+                this.subtitleView[0].animate().alpha(1.0f).setDuration(420L).setInterpolator(cubicBezierInterpolator2).start();
             }
             if (this.hasResellPrice) {
                 this.buttons[2].set(R.drawable.filled_gift_sell_off, LocaleController.getString(R.string.Gift2ActionUnlist), true);
@@ -3079,7 +3152,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$2() {
+        public /* synthetic */ void lambda$new$3() {
             if (this.imageView[2 - this.toggled].getImageReceiver().hasImageLoaded()) {
                 rotateAttributes();
             } else {
@@ -3121,7 +3194,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$TopView$$ExternalSyntheticLambda3
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        StarGiftSheet.TopView.this.lambda$setPreviewAttributes$3(valueAnimator2);
+                        StarGiftSheet.TopView.this.lambda$setPreviewAttributes$4(valueAnimator2);
                     }
                 });
                 this.rotationAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.4
@@ -3139,7 +3212,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setPreviewAttributes$3(ValueAnimator valueAnimator) {
+        public /* synthetic */ void lambda$setPreviewAttributes$4(ValueAnimator valueAnimator) {
             this.toggleBackdrop = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             onSwitchPage(this.currentPage);
         }
@@ -3171,10 +3244,10 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 float f = this.toggled;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f - f, f);
                 this.rotationAnimator = ofFloat;
-                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$TopView$$ExternalSyntheticLambda5
+                ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$TopView$$ExternalSyntheticLambda6
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                        StarGiftSheet.TopView.this.lambda$rotateAttributes$4(valueAnimator2);
+                        StarGiftSheet.TopView.this.lambda$rotateAttributes$5(valueAnimator2);
                     }
                 });
                 this.rotationAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.5
@@ -3198,7 +3271,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$rotateAttributes$4(ValueAnimator valueAnimator) {
+        public /* synthetic */ void lambda$rotateAttributes$5(ValueAnimator valueAnimator) {
             this.toggleBackdrop = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             onSwitchPage(this.currentPage);
         }
@@ -3266,10 +3339,10 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.switchAnimator = ofFloat;
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$TopView$$ExternalSyntheticLambda4
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$TopView$$ExternalSyntheticLambda5
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    StarGiftSheet.TopView.this.lambda$animateSwitch$5(valueAnimator2);
+                    StarGiftSheet.TopView.this.lambda$animateSwitch$6(valueAnimator2);
                 }
             });
             this.switchAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stars.StarGiftSheet.TopView.6
@@ -3289,7 +3362,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$animateSwitch$5(ValueAnimator valueAnimator) {
+        public /* synthetic */ void lambda$animateSwitch$6(ValueAnimator valueAnimator) {
             float pow = (((float) Math.pow((r5 * 2.0f) - 2.0f, 2.0d)) * 0.075f * ((Float) valueAnimator.getAnimatedValue()).floatValue()) + 1.0f;
             this.switchScale = pow;
             this.imageLayout.setScaleX(pow);
@@ -3850,7 +3923,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
         zArr[0] = true;
         final TL_stars.StarGift gift = getGift();
-        GiftAuctionController.getInstance(this.currentAccount).requestAuctionUpgrades(gift.gift_id, new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda137
+        GiftAuctionController.getInstance(this.currentAccount).requestAuctionUpgrades(gift.gift_id, new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda136
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 StarGiftSheet.this.lambda$addAttributeRow$44(gift, starGiftAttribute, textViewButtonsArr, zArr, (ArrayList) obj);
@@ -5076,7 +5149,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             }
             this.button.setText(spannableStringBuilder, true);
             this.button.setSubText(null, true);
-            this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda118
+            this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda117
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     StarGiftSheet.this.lambda$set$60(findGiftToUpgrade, view);
@@ -5087,7 +5160,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         this.button.setFilled(true);
         this.button.setText(LocaleController.getString(R.string.OK), true);
         this.button.setSubText(null, true);
-        this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda119
+        this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda118
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StarGiftSheet.this.lambda$set$61(view);
@@ -5161,7 +5234,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showDeleteDescriptionAlert$72(final CharSequence charSequence, final TL_stars.TL_starGiftUnique tL_starGiftUnique, final TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails tL_inputInvoiceStarGiftDropOriginalDetails, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda136
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda135
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$showDeleteDescriptionAlert$71(tLObject, charSequence, tL_starGiftUnique, tL_inputInvoiceStarGiftDropOriginalDetails, tL_error);
@@ -5824,6 +5897,11 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     }
 
     public boolean showCraft() {
+        TLRPC.Peer peer;
+        TL_stars.TL_starGiftUnique uniqueGift = getUniqueGift();
+        if (uniqueGift == null || (peer = uniqueGift.owner_id) == null || !isMineWithActions(this.currentAccount, DialogObject.getPeerDialogId(peer))) {
+            return false;
+        }
         MessageObject messageObject = this.messageObject;
         if (messageObject != null) {
             TLRPC.Message message = messageObject.messageOwner;
@@ -5838,7 +5916,12 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     }
 
     public boolean canCraft() {
+        TLRPC.Peer peer;
         int i;
+        TL_stars.TL_starGiftUnique uniqueGift = getUniqueGift();
+        if (uniqueGift == null || (peer = uniqueGift.owner_id) == null || !isMineWithActions(this.currentAccount, DialogObject.getPeerDialogId(peer))) {
+            return false;
+        }
         MessageObject messageObject = this.messageObject;
         if (messageObject != null) {
             TLRPC.Message message = messageObject.messageOwner;
@@ -6524,7 +6607,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         final int id = messageObject.getId();
         TLRPC.TL_messages_getMessages tL_messages_getMessages = new TLRPC.TL_messages_getMessages();
         tL_messages_getMessages.id.add(Integer.valueOf(id));
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda107
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda106
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 StarGiftSheet.this.lambda$repollMessage$96(id, tLObject, tL_error);
@@ -6551,7 +6634,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
         messageObject = null;
         if (messageObject != null) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda151
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda150
                 @Override // java.lang.Runnable
                 public final void run() {
                     StarGiftSheet.this.lambda$repollMessage$95(tLObject, messageObject);
@@ -6631,7 +6714,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     public void openAsLearnMore(long j, final String str) {
         this.isLearnMore = true;
-        StarsController.getInstance(this.currentAccount).getStarGiftPreview(j, new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda144
+        StarsController.getInstance(this.currentAccount).getStarGiftPreview(j, new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda143
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 StarGiftSheet.this.lambda$openAsLearnMore$99(str, (TL_stars.starGiftUpgradePreview) obj);
@@ -6876,7 +6959,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         alertDialog2.showDelayed(500L);
         TL_stars.convertStarGift convertstargift = new TL_stars.convertStarGift();
         convertstargift.stargift = inputSavedStarGift;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(convertstargift, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda111
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(convertstargift, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda110
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                 StarGiftSheet.this.lambda$convert$103(alertDialog2, j, j2, j3, tLObject, tL_error);
@@ -6886,7 +6969,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$convert$103(final AlertDialog alertDialog, final long j, final long j2, final long j3, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda140
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda139
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$convert$102(alertDialog, tLObject, j, j2, j3, tL_error);
@@ -7012,7 +7095,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$toggleShow$107(final TLRPC.Document document, final boolean z, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda122
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda121
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$toggleShow$106(tLObject, document, z, tL_error);
@@ -7464,7 +7547,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     ArrayList arrayList = this.prices;
                     if (arrayList != null && starGiftUpgradePrice != null && !arrayList.isEmpty()) {
                         this.underButtonContainer.setVisibility(0);
-                        this.underButtonLinkTextView.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("**" + LocaleController.getString(R.string.Gift2UpgradeCostsInfo) + "**", new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda108
+                        this.underButtonLinkTextView.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("**" + LocaleController.getString(R.string.Gift2UpgradeCostsInfo) + "**", new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda107
                             @Override // java.lang.Runnable
                             public final void run() {
                                 StarGiftSheet.this.openUpgradePrices();
@@ -7482,7 +7565,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 } else {
                     this.button.setText(LocaleController.getString(R.string.Confirm), true);
                 }
-                this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda109
+                this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda108
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         StarGiftSheet.this.lambda$openUpgradeAfter$118(view);
@@ -7504,7 +7587,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     this.upgradeFeatureCells[1].set(R.drawable.menu_feature_tradable, LocaleController.getString(R.string.Gift2UpgradeFeature3Title), LocaleController.getString(R.string.GiftsFeature2Text));
                     this.upgradeFeatureCells[2].set(R.drawable.menu_wear, LocaleController.getString(R.string.GiftsFeature3Title), LocaleController.getString(R.string.GiftsFeature3Text));
                 }
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda110
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda109
                     @Override // java.lang.Runnable
                     public final void run() {
                         StarGiftSheet.this.lambda$openUpgradeAfter$119(j2);
@@ -8186,7 +8269,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             textView2.setTextSize(1, 16.0f);
             textView2.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ExportTONFragmentText, getGiftName())));
             linearLayout.addView(textView2, LayoutHelper.createLinear(-1, -2, 48, 24, 0, 24, 4));
-            new AlertDialog.Builder(getContext(), this.resourcesProvider).setView(linearLayout).setPositiveButton(LocaleController.getString(R.string.Gift2ExportTONFragmentOpen), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda114
+            new AlertDialog.Builder(getContext(), this.resourcesProvider).setView(linearLayout).setPositiveButton(LocaleController.getString(R.string.Gift2ExportTONFragmentOpen), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda113
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i5) {
                     StarGiftSheet.this.lambda$openTransfer$139(userSelectorBottomSheetArr, alertDialog, i5);
@@ -8194,7 +8277,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             }).setNegativeButton(LocaleController.getString(R.string.Cancel), null).show();
             return;
         }
-        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda115
+        final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda114
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$openTransfer$143(l, userSelectorBottomSheetArr);
@@ -8205,7 +8288,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             if (chatFull == null) {
                 TLRPC.TL_channels_getFullChannel tL_channels_getFullChannel = new TLRPC.TL_channels_getFullChannel();
                 tL_channels_getFullChannel.channel = MessagesController.getInstance(this.currentAccount).getInputChannel(-l.longValue());
-                ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getFullChannel, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda116
+                ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_getFullChannel, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda115
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         StarGiftSheet.this.lambda$openTransfer$145(runnable, tLObject, tL_error);
@@ -8225,7 +8308,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             } else if (userFull == null && user != null) {
                 TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
                 tL_users_getFullUser.id = MessagesController.getInstance(this.currentAccount).getInputUser(user);
-                ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_users_getFullUser, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda117
+                ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_users_getFullUser, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda116
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         StarGiftSheet.this.lambda$openTransfer$147(userSelectorBottomSheetArr, l, runnable, tLObject, tL_error);
@@ -8241,7 +8324,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     public /* synthetic */ void lambda$openTransfer$139(final UserSelectorBottomSheet[] userSelectorBottomSheetArr, AlertDialog alertDialog, int i) {
         final Browser.Progress makeButtonLoading = alertDialog.makeButtonLoading(i);
         final TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-        twoStepVerificationActivity.setDelegate(2, new TwoStepVerificationActivity.TwoStepVerificationActivityDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda138
+        twoStepVerificationActivity.setDelegate(2, new TwoStepVerificationActivity.TwoStepVerificationActivityDelegate() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda137
             @Override // org.telegram.ui.TwoStepVerificationActivity.TwoStepVerificationActivityDelegate
             public final void didEnterPassword(TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP) {
                 StarGiftSheet.this.lambda$openTransfer$137(twoStepVerificationActivity, inputCheckPasswordSRP);
@@ -8249,7 +8332,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         });
         twoStepVerificationActivity.setDelegateString(getGiftName());
         makeButtonLoading.init();
-        twoStepVerificationActivity.preload(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda139
+        twoStepVerificationActivity.preload(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda138
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$openTransfer$138(userSelectorBottomSheetArr, makeButtonLoading, twoStepVerificationActivity);
@@ -8266,7 +8349,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$openTransfer$143(final Long l, final UserSelectorBottomSheet[] userSelectorBottomSheetArr) {
-        openTransferAlert(l.longValue(), new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda148
+        openTransferAlert(l.longValue(), new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda147
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 StarGiftSheet.this.lambda$openTransfer$142(l, userSelectorBottomSheetArr, (Browser.Progress) obj);
@@ -8790,7 +8873,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         if (tLObject instanceof TLRPC.Updates) {
             MessagesController.getInstance(this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda147
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda146
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$doTransfer$156(callback, tL_error, tLObject, j, j2);
@@ -9021,7 +9104,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         if (tL_payments_paymentFormStarGift == null) {
             return;
         }
-        new ResaleBuyTransferAlert(getContext(), this.resourcesProvider, tL_starGiftUnique, new PaymentFormState(amountUtils$Currency, tL_payments_paymentFormStarGift), this.currentAccount, j, getGiftName(), false, new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda113
+        new ResaleBuyTransferAlert(getContext(), this.resourcesProvider, tL_starGiftUnique, new PaymentFormState(amountUtils$Currency, tL_payments_paymentFormStarGift), this.currentAccount, j, getGiftName(), false, new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda112
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 StarGiftSheet.this.lambda$onBuyPressed$169(tL_starGiftUnique, j, (StarGiftSheet.PaymentFormState) obj, (Browser.Progress) obj2);
@@ -9055,6 +9138,16 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
     /* renamed from: onBackPressed, reason: merged with bridge method [inline-methods] */
     public void lambda$openCrafting$8() {
+        TopView topView;
+        if (this.currentPage.is(4) && (topView = this.topView) != null && topView.craftTopView != null) {
+            if (this.topView.craftTopView.crafting) {
+                return;
+            }
+            if (this.topView.craftTopView.crafted) {
+                super.lambda$openCrafting$8();
+                return;
+            }
+        }
         if (!this.onlyWearInfo && this.currentPage.to > 0 && !this.button.isLoading() && !this.isLearnMore) {
             MessageObject messageObject = this.messageObject;
             if (messageObject != null) {
@@ -10089,7 +10182,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$openValueStats$182(final AlertDialog alertDialog, final TLRPC.Document document, final String str, final String str2, final String str3, final long j, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda150
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$$ExternalSyntheticLambda149
             @Override // java.lang.Runnable
             public final void run() {
                 StarGiftSheet.this.lambda$openValueStats$181(alertDialog, tLObject, document, str, str2, str3, j, tL_error);
@@ -10648,8 +10741,10 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         private final TextView craftingTitleView;
         private final Cube3D cube;
         private int currentAccount;
+        private HintView2 currentHint;
         private TLRPC.Document document;
         private final Face[] faces;
+        public boolean failed;
         private GiftSheet.GiftCell[] failedGifts;
         private final LinearLayout failedGiftsLayout;
         private final FrameLayout failedLayout;
@@ -10661,16 +10756,17 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         private final ImageView helpButton;
         private Utilities.Callback onAddGift;
         private Runnable onClose;
-        private Utilities.Callback2 onCraft;
+        private Utilities.Callback3 onCraft;
         private Runnable openCraftedGift;
         private final AttributeView[] patternAttributes;
         private CharSequence plus;
         private final FrameLayout precraftingLayout;
         private ArrayList previewAttributes;
+        private final RaysView rays;
         private final Theme.ResourcesProvider resourcesProvider;
         private final SpoilersTextView textView;
         private final TextView titleView;
-        private final TextView variantsButton;
+        private final AnimatedEmojiSpan.TextViewEmojis variantsButton;
 
         public CraftTopView(Context context, final Theme.ResourcesProvider resourcesProvider) {
             super(context);
@@ -10779,6 +10875,12 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 AttributeView attributeView = new AttributeView(context);
                 attributeViewArr[i] = attributeView;
                 linearLayout3.addView(attributeView, LayoutHelper.createLinear(48, 54, 0.0f, 0.0f, 0.0f, 0.0f));
+                this.backdropAttributes[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda2
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        StarGiftSheet.CraftTopView.this.lambda$new$2(view);
+                    }
+                });
             }
             for (int i2 = 0; i2 < 4; i2++) {
                 LinearLayout linearLayout4 = this.attributesLayoutLine1;
@@ -10786,6 +10888,12 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 AttributeView attributeView2 = new AttributeView(context);
                 attributeViewArr2[i2] = attributeView2;
                 linearLayout4.addView(attributeView2, LayoutHelper.createLinear(48, 54, 0.0f, 0.0f, 0.0f, 0.0f));
+                this.patternAttributes[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda3
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        StarGiftSheet.CraftTopView.this.lambda$new$3(view);
+                    }
+                });
             }
             this.gifts = new SelectGiftView[4];
             this.faces = new Face[6];
@@ -10794,27 +10902,31 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 this.faces[i3] = new Face(context, i3 == 5);
                 i3++;
             }
-            Face[] faceArr = this.faces;
-            this.frontFace = faceArr[5];
-            Cube3D cube3D = new Cube3D(context, faceArr);
+            this.frontFace = this.faces[5];
+            RaysView raysView = new RaysView(context);
+            this.rays = raysView;
+            raysView.setVisibility(8);
+            raysView.setAlpha(0.0f);
+            addView(raysView, LayoutHelper.createFrame(NotificationCenter.currentUserPremiumStatusChanged, 300.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+            Cube3D cube3D = new Cube3D(context, this.faces);
             this.cube = cube3D;
             addView(cube3D, LayoutHelper.createFrame(-1, 300.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
-            TextView textView2 = new TextView(context);
-            this.variantsButton = textView2;
-            textView2.setTextSize(1, 12.0f);
-            textView2.setTypeface(AndroidUtilities.bold());
-            textView2.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
-            textView2.setPadding(AndroidUtilities.dp(9.0f), 0, AndroidUtilities.dp(9.0f), 0);
-            textView2.setGravity(17);
-            textView2.setTextColor(-1);
-            textView2.setAlpha(this.previewAttributes == null ? 0.25f : 1.0f);
-            textView2.setBackground(new RoundRectStrokeDrawable(AndroidUtilities.dp(14.0f), Theme.multAlpha(-1, 0.08f)));
-            ScaleStateListAnimator.apply(textView2, 0.02f, 1.2f);
-            this.precraftingLayout.addView(textView2, LayoutHelper.createFrame(-2, 27.0f, 49, 32.0f, 412.0f, 32.0f, 84.0f));
-            textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda2
+            AnimatedEmojiSpan.TextViewEmojis textViewEmojis = new AnimatedEmojiSpan.TextViewEmojis(context);
+            this.variantsButton = textViewEmojis;
+            textViewEmojis.setTextSize(1, 12.0f);
+            textViewEmojis.setTypeface(AndroidUtilities.bold());
+            textViewEmojis.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
+            textViewEmojis.setPadding(AndroidUtilities.dp(9.0f), 0, AndroidUtilities.dp(9.0f), 0);
+            textViewEmojis.setGravity(17);
+            textViewEmojis.setTextColor(-1);
+            textViewEmojis.setAlpha(this.previewAttributes == null ? 0.25f : 1.0f);
+            textViewEmojis.setBackground(new RoundRectStrokeDrawable(AndroidUtilities.dp(14.0f), Theme.multAlpha(-1, 0.08f)));
+            ScaleStateListAnimator.apply(textViewEmojis, 0.02f, 1.2f);
+            this.precraftingLayout.addView(textViewEmojis, LayoutHelper.createFrame(-2, 27.0f, 49, 32.0f, 412.0f, 32.0f, 84.0f));
+            textViewEmojis.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    StarGiftSheet.CraftTopView.this.lambda$new$2(resourcesProvider, view);
+                    StarGiftSheet.CraftTopView.this.lambda$new$4(resourcesProvider, view);
                 }
             });
             LinearLayout linearLayout5 = new LinearLayout(context);
@@ -10826,10 +10938,10 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             buttonBackground.setColor(Theme.multAlpha(-1, 0.08f), Theme.multAlpha(-1, 0.08f));
             ScaleStateListAnimator.apply(linearLayout5, 0.02f, 1.2f);
             addView(linearLayout5, LayoutHelper.createFrame(-1, -2.0f, 87, 20.0f, 0.0f, 20.0f, 18.0f));
-            linearLayout5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda3
+            linearLayout5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    StarGiftSheet.CraftTopView.this.lambda$new$3(view);
+                    StarGiftSheet.CraftTopView.this.lambda$new$5(view);
                 }
             });
             AnimatedTextView animatedTextView = new AnimatedTextView(context);
@@ -10848,55 +10960,55 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             animatedTextView2.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCraftSuccessChance, "0%")));
             animatedTextView2.setTextSize(AndroidUtilities.dp(12.0f));
             linearLayout5.addView(animatedTextView2, LayoutHelper.createLinear(-1, 14, 55, 16.0f, 2.66f, 16.0f, 7.66f));
-            TextView textView3 = new TextView(context);
-            this.craftingTitleView = textView3;
-            textView3.setTextSize(1, 20.0f);
-            textView3.setTextColor(-1);
-            textView3.setTypeface(AndroidUtilities.bold());
-            textView3.setGravity(17);
+            TextView textView2 = new TextView(context);
+            this.craftingTitleView = textView2;
+            textView2.setTextSize(1, 20.0f);
+            textView2.setTextColor(-1);
+            textView2.setTypeface(AndroidUtilities.bold());
+            textView2.setGravity(17);
             SpannableString spannableString = new SpannableString("🛠");
             ColoredImageSpan coloredImageSpan = new ColoredImageSpan(R.drawable.large_forge);
             coloredImageSpan.setScale(0.45f, 0.45f);
             spannableString.setSpan(coloredImageSpan, 0, spannableString.length(), 33);
-            textView3.setText(TextUtils.concat(spannableString, "  " + LocaleController.getString(R.string.GiftCraftProgressTitle)));
-            this.craftingLayout.addView(textView3, LayoutHelper.createFrame(-1, -2.0f, 49, 0.0f, 350.0f, 0.0f, 0.0f));
+            textView2.setText(TextUtils.concat(spannableString, "  " + LocaleController.getString(R.string.GiftCraftProgressTitle)));
+            this.craftingLayout.addView(textView2, LayoutHelper.createFrame(-1, -2.0f, 49, 0.0f, 350.0f, 0.0f, 0.0f));
+            TextView textView3 = new TextView(context);
+            this.craftingSubtitleView = textView3;
+            textView3.setTextSize(1, 13.0f);
+            textView3.setTextColor(Theme.multAlpha(-1, 0.5f));
+            textView3.setTypeface(AndroidUtilities.bold());
+            textView3.setGravity(17);
+            this.craftingLayout.addView(textView3, LayoutHelper.createFrame(-1, -2.0f, 49, 0.0f, 383.0f, 0.0f, 0.0f));
             TextView textView4 = new TextView(context);
-            this.craftingSubtitleView = textView4;
+            this.craftingChanceView = textView4;
             textView4.setTextSize(1, 13.0f);
-            textView4.setTextColor(Theme.multAlpha(-1, 0.5f));
+            textView4.setTextColor(-1);
             textView4.setTypeface(AndroidUtilities.bold());
             textView4.setGravity(17);
-            this.craftingLayout.addView(textView4, LayoutHelper.createFrame(-1, -2.0f, 49, 0.0f, 383.0f, 0.0f, 0.0f));
+            textView4.setPadding(AndroidUtilities.dp(9.0f), 0, AndroidUtilities.dp(9.0f), 0);
+            textView4.setBackground(new RoundRectStrokeDrawable(AndroidUtilities.dp(14.0f), Theme.multAlpha(-1, 0.08f)));
+            this.craftingLayout.addView(textView4, LayoutHelper.createFrame(-2, 27.0f, 81, 0.0f, 0.0f, 0.0f, 74.0f));
             TextView textView5 = new TextView(context);
-            this.craftingChanceView = textView5;
+            this.craftingFooterView = textView5;
             textView5.setTextSize(1, 13.0f);
-            textView5.setTextColor(-1);
-            textView5.setTypeface(AndroidUtilities.bold());
+            textView5.setTextColor(Theme.multAlpha(-1, 0.5f));
             textView5.setGravity(17);
-            textView5.setPadding(AndroidUtilities.dp(9.0f), 0, AndroidUtilities.dp(9.0f), 0);
-            textView5.setBackground(new RoundRectStrokeDrawable(AndroidUtilities.dp(14.0f), Theme.multAlpha(-1, 0.08f)));
-            this.craftingLayout.addView(textView5, LayoutHelper.createFrame(-2, 27.0f, 49, 0.0f, 433.0f, 0.0f, 0.0f));
+            textView5.setText(LocaleController.getString(R.string.GiftCraftProgressText));
+            this.craftingLayout.addView(textView5, LayoutHelper.createFrame(-1, -2.0f, 81, 42.0f, 0.0f, 42.0f, 24.0f));
             TextView textView6 = new TextView(context);
-            this.craftingFooterView = textView6;
-            textView6.setTextSize(1, 13.0f);
-            textView6.setTextColor(Theme.multAlpha(-1, 0.5f));
+            this.failedTitle = textView6;
+            textView6.setText(LocaleController.getString(R.string.GiftCraftFailedTitle));
+            textView6.setTextColor(-505270);
+            textView6.setTextSize(1, 20.0f);
+            textView6.setTypeface(AndroidUtilities.bold());
             textView6.setGravity(17);
-            textView6.setText(LocaleController.getString(R.string.GiftCraftProgressText));
-            this.craftingLayout.addView(textView6, LayoutHelper.createFrame(-1, -2.0f, 81, 42.0f, 0.0f, 42.0f, 24.0f));
+            this.failedLayout.addView(textView6, LayoutHelper.createFrame(-1, -2.0f, 55, 32.0f, 352.0f, 32.0f, 0.0f));
             TextView textView7 = new TextView(context);
-            this.failedTitle = textView7;
-            textView7.setText(LocaleController.getString(R.string.GiftCraftFailedTitle));
-            textView7.setTextColor(-505270);
-            textView7.setTextSize(1, 20.0f);
-            textView7.setTypeface(AndroidUtilities.bold());
+            this.failedSubtitle = textView7;
+            textView7.setTextColor(-17253);
+            textView7.setTextSize(1, 13.0f);
             textView7.setGravity(17);
-            this.failedLayout.addView(textView7, LayoutHelper.createFrame(-1, -2.0f, 55, 32.0f, 352.0f, 32.0f, 0.0f));
-            TextView textView8 = new TextView(context);
-            this.failedSubtitle = textView8;
-            textView8.setTextColor(-17253);
-            textView8.setTextSize(1, 13.0f);
-            textView8.setGravity(17);
-            this.failedLayout.addView(textView8, LayoutHelper.createFrame(-1, -2.0f, 55, 32.0f, 383.0f, 32.0f, 0.0f));
+            this.failedLayout.addView(textView7, LayoutHelper.createFrame(-1, -2.0f, 55, 32.0f, 383.0f, 32.0f, 0.0f));
             LinearLayout linearLayout6 = new LinearLayout(context);
             this.failedGiftsLayout = linearLayout6;
             linearLayout6.setOrientation(0);
@@ -10922,16 +11034,16 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$2(Theme.ResourcesProvider resourcesProvider, View view) {
+        public /* synthetic */ void lambda$new$4(Theme.ResourcesProvider resourcesProvider, View view) {
             if (this.variantsButton.getAlpha() >= 1.0f && this.previewAttributes != null) {
                 new StarGiftPreviewSheet(getContext(), resourcesProvider, this.currentAccount, this.collectionTitle, this.previewAttributes, true).show();
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$3(View view) {
+        public /* synthetic */ void lambda$new$5(View view) {
             if (getAlpha() >= 1.0f && !this.crafting) {
-                if (this.crafted) {
+                if (this.failed) {
                     setup();
                     return;
                 }
@@ -10956,6 +11068,38 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             }
         }
 
+        /* renamed from: showHint, reason: merged with bridge method [inline-methods] and merged with bridge method [inline-methods] */
+        public void lambda$new$3(AttributeView attributeView) {
+            if (attributeView.backdrop != null) {
+                showHint(attributeView, AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCraftBackdropChance", Math.round(attributeView.progress * 100.0f), attributeView.backdrop.name)));
+            } else if (attributeView.pattern != null) {
+                showHint(attributeView, AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCraftSymbolChance", Math.round(attributeView.progress * 100.0f), attributeView.pattern.name)));
+            }
+        }
+
+        public void showHint(View view, CharSequence charSequence) {
+            HintView2 hintView2 = this.currentHint;
+            if (hintView2 != null) {
+                hintView2.hide();
+                this.currentHint = null;
+            }
+            View view2 = view.getParent() instanceof View ? (View) view.getParent() : null;
+            float x = (view2 != null ? view2.getX() : 0.0f) + view.getX();
+            float y = (view2 != null ? view2.getY() : 0.0f) + view.getY();
+            HintView2 hintView22 = new HintView2(getContext(), 3);
+            this.currentHint = hintView22;
+            hintView22.setMultilineText(true);
+            this.currentHint.setText(charSequence);
+            HintView2 hintView23 = this.currentHint;
+            hintView23.setMaxWidthPx(HintView2.cutInFancyHalf(hintView23.getText(), this.currentHint.getTextPaint()));
+            this.currentHint.setTextAlign(Layout.Alignment.ALIGN_CENTER);
+            this.currentHint.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
+            addView(this.currentHint, LayoutHelper.createFrame(-1, 100.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
+            this.currentHint.setTranslationY(y - AndroidUtilities.dp(100.0f));
+            this.currentHint.setJointPx(0.0f, x);
+            this.currentHint.show();
+        }
+
         public void setup() {
             setup(this.currentAccount, this.giftId, this.document, this.collectionTitle);
         }
@@ -10965,8 +11109,8 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.giftId = j;
             this.document = document;
             this.collectionTitle = str;
-            this.crafted = false;
             this.crafting = false;
+            this.failed = false;
             int i2 = 0;
             while (true) {
                 SelectGiftView[] selectGiftViewArr = this.gifts;
@@ -10984,7 +11128,6 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             updateCounts(false);
             this.crafting = false;
             this.precraftingLayout.animate().cancel();
-            float f = 1.0f;
             this.precraftingLayout.setAlpha(1.0f);
             this.button.animate().cancel();
             this.button.setAlpha(1.0f);
@@ -10994,28 +11137,49 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.failedLayout.setAlpha(0.0f);
             this.buttonsLayout.animate().cancel();
             this.buttonsLayout.setAlpha(1.0f);
-            TextView textView = this.variantsButton;
-            if (this.attributesTwoLines) {
-                f = 0.0f;
-            } else if (this.previewAttributes == null) {
-                f = 0.25f;
-            }
-            textView.setAlpha(f);
-            GiftAuctionController.getInstance(i).requestAuctionUpgrades(j, new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda4
+            this.variantsButton.setAlpha(this.attributesTwoLines ? 0.0f : this.previewAttributes != null ? 1.0f : 0.25f);
+            this.rays.setVisibility(8);
+            this.rays.setAlpha(0.0f);
+            this.buttonTitle.setText(LocaleController.getString(R.string.GiftCraftButton));
+            this.buttonTitle.setTranslationY(0.0f);
+            this.buttonSubtitle.setAlpha(1.0f);
+            GiftAuctionController.getInstance(i).requestAuctionUpgrades(j, new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda6
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
-                    StarGiftSheet.CraftTopView.this.lambda$setup$4(j, j, (ArrayList) obj);
+                    StarGiftSheet.CraftTopView.this.lambda$setup$6(j, j, (ArrayList) obj);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setup$4(long j, long j2, ArrayList arrayList) {
+        public /* synthetic */ void lambda$setup$6(long j, long j2, ArrayList arrayList) {
             if (j != j2) {
                 return;
             }
             this.previewAttributes = arrayList;
             this.variantsButton.animate().alpha(this.attributesTwoLines ? 0.0f : this.previewAttributes != null ? 1.0f : 0.25f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(420L).start();
+            ArrayList arrayList2 = new ArrayList();
+            for (int i = 0; i < arrayList.size(); i++) {
+                if ((arrayList.get(i) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
+                    arrayList2.add((TL_stars.starGiftAttributeModel) arrayList.get(i));
+                    if (arrayList2.size() >= 3) {
+                        break;
+                    }
+                }
+            }
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            Iterator it = arrayList2.iterator();
+            while (it.hasNext()) {
+                TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) it.next();
+                spannableStringBuilder.append((CharSequence) "x");
+                spannableStringBuilder.setSpan(new AnimatedEmojiSpan(stargiftattributemodel.document, this.variantsButton.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                spannableStringBuilder.append((CharSequence) " ");
+            }
+            if (spannableStringBuilder.length() > 0) {
+                spannableStringBuilder.append((CharSequence) " ");
+            }
+            spannableStringBuilder.append(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
+            this.variantsButton.setText(spannableStringBuilder);
         }
 
         private void setupGiftButtons() {
@@ -11043,10 +11207,10 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 }
                 ScaleStateListAnimator.apply(selectGiftViewArr5[i]);
                 this.gifts[i].setClickable(true);
-                this.gifts[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda5
+                this.gifts[i].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda7
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        StarGiftSheet.CraftTopView.this.lambda$setupGiftButtons$6(view);
+                        StarGiftSheet.CraftTopView.this.lambda$setupGiftButtons$8(view);
                     }
                 });
                 i++;
@@ -11054,23 +11218,23 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setupGiftButtons$6(View view) {
+        public /* synthetic */ void lambda$setupGiftButtons$8(View view) {
             final SelectGiftView selectGiftView = (SelectGiftView) view;
             if (selectGiftView.getGift() != null) {
                 selectGiftView.setGift(null, true);
                 updateCounts();
             } else {
-                this.onAddGift.run(new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda7
+                this.onAddGift.run(new Utilities.Callback() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda10
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
-                        StarGiftSheet.CraftTopView.this.lambda$setupGiftButtons$5(selectGiftView, (TL_stars.StarGift) obj);
+                        StarGiftSheet.CraftTopView.this.lambda$setupGiftButtons$7(selectGiftView, (TL_stars.StarGift) obj);
                     }
                 });
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$setupGiftButtons$5(SelectGiftView selectGiftView, TL_stars.StarGift starGift) {
+        public /* synthetic */ void lambda$setupGiftButtons$7(SelectGiftView selectGiftView, TL_stars.StarGift starGift) {
             selectGiftView.setGift(starGift, true);
             updateCounts();
         }
@@ -11079,8 +11243,8 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.onAddGift = callback;
         }
 
-        public void setOnCraft(Utilities.Callback2<ArrayList<TL_stars.StarGift>, Utilities.Callback2<TL_stars.StarGift, Runnable>> callback2) {
-            this.onCraft = callback2;
+        public void setOnCraft(Utilities.Callback3<ArrayList<TL_stars.StarGift>, Utilities.Callback2<TL_stars.StarGift, Runnable>, Runnable> callback3) {
+            this.onCraft = callback3;
         }
 
         public void setOnClose(Runnable runnable) {
@@ -11090,7 +11254,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         public void playAnimation() {
             this.crafting = true;
             int i = 0;
-            this.crafted = false;
+            this.failed = false;
             this.openCraftedGift = null;
             this.craftingSubtitleView.setText("");
             this.craftingChanceView.setText(LocaleController.formatString(R.string.GiftCraftProgressSuccessChance, AffiliateProgramFragment.percents(getGiftsSuccessChance())));
@@ -11137,10 +11301,15 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     }
                     i++;
                 } else {
-                    this.onCraft.run(arrayList, new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda6
+                    this.onCraft.run(arrayList, new Utilities.Callback2() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda8
                         @Override // org.telegram.messenger.Utilities.Callback2
                         public final void run(Object obj, Object obj2) {
-                            StarGiftSheet.CraftTopView.this.lambda$playAnimation$9(arrayList, (TL_stars.StarGift) obj, (Runnable) obj2);
+                            StarGiftSheet.CraftTopView.this.lambda$playAnimation$11(arrayList, (TL_stars.StarGift) obj, (Runnable) obj2);
+                        }
+                    }, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda9
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            StarGiftSheet.CraftTopView.this.lambda$playAnimation$12();
                         }
                     });
                     return;
@@ -11149,65 +11318,73 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$playAnimation$9(final ArrayList arrayList, final TL_stars.StarGift starGift, final Runnable runnable) {
+        public /* synthetic */ void lambda$playAnimation$11(final ArrayList arrayList, final TL_stars.StarGift starGift, final Runnable runnable) {
+            SelectGiftView[] selectGiftViewArr;
             this.crafted = true;
+            int i = 0;
+            this.failed = starGift == null;
             this.craftedGift = starGift;
             this.openCraftedGift = runnable;
-            int i = 0;
-            int[] iArr = {5, 0, 2, 3, 4};
+            int[] iArr = {5, 2, 1, 0, 4};
             Cube3D.AnimSequence animSequence = new Cube3D.AnimSequence(this.cube);
-            SelectGiftView selectGiftView = this.gifts[0];
-            if (selectGiftView != null && selectGiftView.getGift() != null) {
-                animSequence.put(this.gifts[0], iArr[0], 32).fling(5.0f, -4.0f);
+            ArrayList arrayList2 = new ArrayList();
+            int i2 = 0;
+            while (true) {
+                selectGiftViewArr = this.gifts;
+                if (i2 >= selectGiftViewArr.length) {
+                    break;
+                }
+                SelectGiftView selectGiftView = selectGiftViewArr[0];
+                if (selectGiftView != null && selectGiftView.getGift() != null) {
+                    arrayList2.add(Integer.valueOf(i2));
+                }
+                i2++;
+            }
+            SelectGiftView selectGiftView2 = selectGiftViewArr[0];
+            if (selectGiftView2 != null && selectGiftView2.getGift() != null) {
+                animSequence.put(this.gifts[0], iArr[0], 32).fling(15.0f, -12.0f);
                 i = 1;
             }
-            SelectGiftView selectGiftView2 = this.gifts[1];
-            if (selectGiftView2 != null && selectGiftView2.getGift() != null) {
-                if (i == 1) {
-                    animSequence.delay(45);
-                }
-                animSequence.put(this.gifts[1], iArr[i], 32).fling(5.0f, 7.0f);
-                i++;
-            }
-            SelectGiftView selectGiftView3 = this.gifts[2];
+            SelectGiftView selectGiftView3 = this.gifts[1];
             if (selectGiftView3 != null && selectGiftView3.getGift() != null) {
-                if (i == 1) {
-                    animSequence.delay(45);
-                } else if (i == 2) {
-                    animSequence.delay(45);
+                if (i > 0) {
+                    animSequence.delay(42);
                 }
-                animSequence.put(this.gifts[2], iArr[i], 32, 270.0f).fling(-10.0f, -10.0f);
+                animSequence.put(this.gifts[1], iArr[i], 32, -90.0f).fling(15.0f, 21.0f);
                 i++;
             }
-            SelectGiftView selectGiftView4 = this.gifts[3];
+            SelectGiftView selectGiftView4 = this.gifts[2];
             if (selectGiftView4 != null && selectGiftView4.getGift() != null) {
-                if (i == 1) {
-                    animSequence.delay(45);
-                } else if (i == 2 || i == 3) {
-                    animSequence.delay(45);
+                if (i > 0) {
+                    animSequence.delay(42);
                 }
-                animSequence.put(this.gifts[3], iArr[i], 32).fling(-12.0f, 12.0f);
+                animSequence.put(this.gifts[2], iArr[i], 32, 90.0f).fling(-30.0f, -30.0f);
+                i++;
             }
-            animSequence.delay(10).run(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda8
-                @Override // java.lang.Runnable
-                public final void run() {
-                    StarGiftSheet.CraftTopView.this.lambda$playAnimation$7(starGift);
+            SelectGiftView selectGiftView5 = this.gifts[3];
+            if (selectGiftView5 != null && selectGiftView5.getGift() != null) {
+                if (i > 0) {
+                    animSequence.delay(42);
                 }
-            }).steerTo(4, 100, 180.0f).start(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda9
+                animSequence.put(this.gifts[3], iArr[i], 32).fling(-21.0f, 21.0f);
+                i++;
+            }
+            final int i3 = iArr[i];
+            animSequence.delay(40).run(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StarGiftSheet.CraftTopView.this.lambda$playAnimation$8(starGift, arrayList, runnable);
+                    StarGiftSheet.CraftTopView.this.lambda$playAnimation$9(i3, starGift);
+                }
+            }).steerTo(i3, 80, 90).start(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda12
+                @Override // java.lang.Runnable
+                public final void run() {
+                    StarGiftSheet.CraftTopView.this.lambda$playAnimation$10(starGift, arrayList, runnable);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$playAnimation$7(TL_stars.StarGift starGift) {
-            setupFinishFace(4, starGift);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$playAnimation$8(TL_stars.StarGift starGift, ArrayList arrayList, Runnable runnable) {
+        public /* synthetic */ void lambda$playAnimation$10(TL_stars.StarGift starGift, ArrayList arrayList, Runnable runnable) {
             this.crafting = false;
             if (starGift == null) {
                 this.precraftingLayout.animate().alpha(0.0f).start();
@@ -11255,12 +11432,39 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             AndroidUtilities.runOnUIThread(runnable);
         }
 
-        private void setupFinishFace(int i, TL_stars.StarGift starGift) {
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$playAnimation$12() {
+            this.crafting = false;
+            this.openCraftedGift = null;
+            this.failed = false;
+            setup();
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        /* renamed from: setupFinishFace, reason: merged with bridge method [inline-methods] */
+        public void lambda$playAnimation$9(int i, TL_stars.StarGift starGift) {
             if (starGift != null) {
                 SelectGiftView selectGiftView = new SelectGiftView(getContext());
                 selectGiftView.setGift(starGift, false);
-                this.cube.faces[i].setVisibility(8);
+                selectGiftView.setRotation(180.0f);
                 this.cube.putView(i, selectGiftView);
+                selectGiftView.setScaleX(0.5f);
+                selectGiftView.setScaleY(0.5f);
+                selectGiftView.setAlpha(0.0f);
+                ViewPropertyAnimator duration = selectGiftView.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(520L);
+                CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+                ViewPropertyAnimator interpolator = duration.setInterpolator(cubicBezierInterpolator);
+                interpolator.setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$$ExternalSyntheticLambda13
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        StarGiftSheet.CraftTopView.this.lambda$setupFinishFace$13(valueAnimator);
+                    }
+                });
+                interpolator.start();
+                this.cube.faces[i].setVisibility(8);
+                this.rays.setVisibility(0);
+                this.rays.setAlpha(0.0f);
+                this.rays.animate().alpha(0.5f).setDuration(820L).setInterpolator(cubicBezierInterpolator).start();
                 return;
             }
             FrameLayout frameLayout = new FrameLayout(getContext());
@@ -11273,6 +11477,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             imageView.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
             frameLayout.setBackground(new RoundRectStrokeDrawable(AndroidUtilities.dp(12.0f), Theme.multAlpha(-1, 0.075f)));
             this.cube.faces[i].setVisibility(8);
+            frameLayout.setRotation(180.0f);
             this.cube.putView(i, frameLayout);
             ButtonBackground buttonBackground = this.buttonBackground;
             int[] iArr = this.COLORS;
@@ -11280,6 +11485,14 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             SwitchGradientDrawable switchGradientDrawable = this.bg;
             int[] iArr2 = this.BACKGROUND_COLORS;
             switchGradientDrawable.setColors(iArr2[2], iArr2[3]);
+            RaysView raysView = this.rays;
+            int[] iArr3 = this.COLORS;
+            raysView.setColor(iArr3[2], iArr3[3]);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$setupFinishFace$13(ValueAnimator valueAnimator) {
+            this.cube.invalidate();
         }
 
         public void selectGift(TL_stars.StarGift starGift) {
@@ -11331,6 +11544,9 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             SwitchGradientDrawable switchGradientDrawable = this.bg;
             int[] iArr2 = this.BACKGROUND_COLORS;
             switchGradientDrawable.setColors(iArr2[i2], iArr2[i3]);
+            RaysView raysView = this.rays;
+            int[] iArr3 = this.COLORS;
+            raysView.setColor(iArr3[i2], iArr3[i3]);
             if (this.document != null) {
                 if (getFirstGift() != null) {
                     SpannableString spannableString = new SpannableString("x");
@@ -11376,154 +11592,131 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
 
         private void updateAttributeFreq() {
-            int i;
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop;
-            int i2;
             TL_stars.starGiftAttributePattern stargiftattributepattern;
             int[][] iArr = MessagesController.getInstance(this.currentAccount).stargiftsCraftAttributesPermilles;
             HashMap hashMap = new HashMap();
             HashMap hashMap2 = new HashMap();
-            int i3 = 0;
-            int i4 = 0;
+            ArrayList arrayList = new ArrayList();
+            int i = 0;
+            int i2 = 0;
             while (true) {
                 SelectGiftView[] selectGiftViewArr = this.gifts;
-                if (i3 >= selectGiftViewArr.length) {
+                if (i >= selectGiftViewArr.length) {
                     break;
                 }
-                SelectGiftView selectGiftView = selectGiftViewArr[i3];
+                SelectGiftView selectGiftView = selectGiftViewArr[i];
                 if (selectGiftView != null && selectGiftView.getGift() != null) {
-                    i4++;
-                    TL_stars.StarGift gift = this.gifts[i3].getGift();
+                    i2++;
+                    TL_stars.StarGift gift = this.gifts[i].getGift();
                     TL_stars.starGiftAttributePattern stargiftattributepattern2 = (TL_stars.starGiftAttributePattern) StarsController.findAttribute(gift.attributes, TL_stars.starGiftAttributePattern.class);
                     TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = (TL_stars.starGiftAttributeBackdrop) StarsController.findAttribute(gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
                     hashMap.put(Integer.valueOf(stargiftattributebackdrop2.backdrop_id), Integer.valueOf(((Integer) Map.-EL.getOrDefault(hashMap, Integer.valueOf(stargiftattributebackdrop2.backdrop_id), 0)).intValue() + 1));
                     hashMap2.put(Long.valueOf(stargiftattributepattern2.document.id), Integer.valueOf(((Integer) Map.-EL.getOrDefault(hashMap2, Long.valueOf(stargiftattributepattern2.document.id), 0)).intValue() + 1));
                 }
-                i3++;
+                i++;
             }
             if (hashMap.isEmpty()) {
                 AttributeView attributeView = this.backdropAttributes[0];
                 attributeView.setBackdrop(null);
                 attributeView.setProgress(0.0f, true);
-                attributeView.setVisibility(0);
-                LinearLayout linearLayout = this.attributesLayoutLine1;
-                if (attributeView.getParent() != linearLayout) {
-                    removeFromParent(attributeView);
-                    linearLayout.addView(attributeView, LayoutHelper.createLinear(48, 54, 0.0f, 0.0f, 0.0f, 0.0f));
+                arrayList.add(attributeView);
+                for (int i3 = 1; i3 < 4; i3++) {
+                    this.backdropAttributes[i3].setVisibility(8);
                 }
-                for (int i5 = 1; i5 < 4; i5++) {
-                    this.backdropAttributes[i5].setVisibility(8);
-                }
-                i = 1;
             } else {
-                ArrayList<Map.Entry> arrayList = new ArrayList(hashMap.entrySet());
-                Collections.sort(arrayList, Map$Entry$-CC.comparingByValue());
-                i = 0;
-                int i6 = 0;
-                for (Map.Entry entry : arrayList) {
+                ArrayList<Map.Entry> arrayList2 = new ArrayList(hashMap.entrySet());
+                Collections.sort(arrayList2, Map$Entry$-CC.comparingByValue());
+                int i4 = 0;
+                for (Map.Entry entry : arrayList2) {
                     int intValue = ((Integer) entry.getKey()).intValue();
                     int intValue2 = ((Integer) entry.getValue()).intValue();
-                    int i7 = 0;
+                    int i5 = 0;
                     while (true) {
                         SelectGiftView[] selectGiftViewArr2 = this.gifts;
-                        if (i7 >= selectGiftViewArr2.length) {
+                        if (i5 >= selectGiftViewArr2.length) {
                             stargiftattributebackdrop = null;
                             break;
                         }
-                        SelectGiftView selectGiftView2 = selectGiftViewArr2[i7];
+                        SelectGiftView selectGiftView2 = selectGiftViewArr2[i5];
                         if (selectGiftView2 != null && selectGiftView2.getGift() != null) {
-                            stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) StarsController.findAttribute(this.gifts[i7].getGift().attributes, TL_stars.starGiftAttributeBackdrop.class);
+                            stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) StarsController.findAttribute(this.gifts[i5].getGift().attributes, TL_stars.starGiftAttributeBackdrop.class);
                             if (stargiftattributebackdrop.backdrop_id == intValue) {
                                 break;
                             }
                         }
-                        i7++;
+                        i5++;
                     }
                     if (stargiftattributebackdrop != null) {
-                        int i8 = i6 + 1;
-                        AttributeView attributeView2 = this.backdropAttributes[i6];
-                        LinearLayout linearLayout2 = i >= 4 ? this.attributesLayoutLine2 : this.attributesLayoutLine1;
-                        if (attributeView2.getParent() != linearLayout2) {
-                            removeFromParent(attributeView2);
-                            linearLayout2.addView(attributeView2, LayoutHelper.createLinear(48, 54, 0.0f, 0.0f, 0.0f, 0.0f));
-                        }
-                        i++;
-                        attributeView2.setVisibility(0);
+                        int i6 = i4 + 1;
+                        AttributeView attributeView2 = this.backdropAttributes[i4];
                         attributeView2.setBackdrop(stargiftattributebackdrop);
-                        int[] iArr2 = iArr[Utilities.clamp(i4 - 1, iArr.length - 1, 0)];
+                        int[] iArr2 = iArr[Utilities.clamp(i2 - 1, iArr.length - 1, 0)];
                         attributeView2.setProgress(iArr2[Utilities.clamp(intValue2 - 1, iArr2.length - 1, 0)] / 1000.0f, true);
-                        i6 = i8;
+                        arrayList.add(attributeView2);
+                        i4 = i6;
                     }
                 }
-                while (i6 < 4) {
-                    this.backdropAttributes[i6].setVisibility(8);
-                    i6++;
+                while (i4 < 4) {
+                    this.backdropAttributes[i4].setVisibility(8);
+                    i4++;
                 }
             }
             if (hashMap2.isEmpty()) {
                 AttributeView attributeView3 = this.patternAttributes[0];
                 attributeView3.setIcon(null);
                 attributeView3.setProgress(0.0f, true);
-                attributeView3.setVisibility(0);
-                LinearLayout linearLayout3 = i >= 4 ? this.attributesLayoutLine2 : this.attributesLayoutLine1;
-                if (attributeView3.getParent() != linearLayout3) {
-                    removeFromParent(attributeView3);
-                    linearLayout3.addView(attributeView3, LayoutHelper.createLinear(48, 54, 0.0f, 0.0f, 0.0f, 0.0f));
-                }
-                i++;
-                for (int i9 = 1; i9 < 4; i9++) {
-                    this.patternAttributes[i9].setVisibility(8);
+                arrayList.add(attributeView3);
+                int i7 = 1;
+                for (int i8 = 4; i7 < i8; i8 = 4) {
+                    this.patternAttributes[i7].setVisibility(8);
+                    i7++;
                 }
             } else {
-                ArrayList<Map.Entry> arrayList2 = new ArrayList(hashMap2.entrySet());
-                Collections.sort(arrayList2, Map$Entry$-CC.comparingByValue());
-                int i10 = 0;
-                for (Map.Entry entry2 : arrayList2) {
+                ArrayList<Map.Entry> arrayList3 = new ArrayList(hashMap2.entrySet());
+                Collections.sort(arrayList3, Map$Entry$-CC.comparingByValue());
+                int i9 = 0;
+                for (Map.Entry entry2 : arrayList3) {
                     long longValue = ((Long) entry2.getKey()).longValue();
                     int intValue3 = ((Integer) entry2.getValue()).intValue();
-                    int i11 = 0;
+                    int i10 = 0;
                     while (true) {
                         SelectGiftView[] selectGiftViewArr3 = this.gifts;
-                        if (i11 >= selectGiftViewArr3.length) {
-                            i2 = i4;
+                        if (i10 >= selectGiftViewArr3.length) {
                             stargiftattributepattern = null;
                             break;
                         }
-                        SelectGiftView selectGiftView3 = selectGiftViewArr3[i11];
-                        if (selectGiftView3 != null && selectGiftView3.getGift() != null && (stargiftattributepattern = (TL_stars.starGiftAttributePattern) StarsController.findAttribute(this.gifts[i11].getGift().attributes, TL_stars.starGiftAttributePattern.class)) != null) {
-                            i2 = i4;
-                            if (stargiftattributepattern.document.id == longValue) {
-                                break;
-                            }
+                        SelectGiftView selectGiftView3 = selectGiftViewArr3[i10];
+                        if (selectGiftView3 != null && selectGiftView3.getGift() != null && (stargiftattributepattern = (TL_stars.starGiftAttributePattern) StarsController.findAttribute(this.gifts[i10].getGift().attributes, TL_stars.starGiftAttributePattern.class)) != null && stargiftattributepattern.document.id == longValue) {
+                            break;
                         } else {
-                            i2 = i4;
+                            i10++;
                         }
-                        i11++;
-                        i4 = i2;
                     }
                     if (stargiftattributepattern != null) {
-                        int i12 = i10 + 1;
-                        AttributeView attributeView4 = this.patternAttributes[i10];
-                        LinearLayout linearLayout4 = i >= 4 ? this.attributesLayoutLine2 : this.attributesLayoutLine1;
-                        if (attributeView4.getParent() != linearLayout4) {
-                            removeFromParent(attributeView4);
-                            linearLayout4.addView(attributeView4, LayoutHelper.createLinear(48, 54, 0.0f, 0.0f, 0.0f, 0.0f));
-                        }
-                        i++;
-                        attributeView4.setVisibility(0);
-                        attributeView4.setIcon(stargiftattributepattern.document);
+                        AttributeView attributeView4 = this.patternAttributes[i9];
+                        attributeView4.setIcon(stargiftattributepattern);
                         int[] iArr3 = iArr[Utilities.clamp(i2 - 1, iArr.length - 1, 0)];
                         attributeView4.setProgress(iArr3[Utilities.clamp(intValue3 - 1, iArr3.length - 1, 0)] / 1000.0f, true);
-                        i10 = i12;
+                        arrayList.add(attributeView4);
+                        i9++;
                     }
-                    i4 = i2;
                 }
-                while (i10 < 4) {
-                    this.patternAttributes[i10].setVisibility(8);
-                    i10++;
+                while (i9 < 4) {
+                    this.patternAttributes[i9].setVisibility(8);
+                    i9++;
                 }
             }
-            this.attributesTwoLines = i > 4;
+            this.attributesTwoLines = arrayList.size() > 5;
+            for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                AttributeView attributeView5 = (AttributeView) arrayList.get(i11);
+                LinearLayout linearLayout = (!this.attributesTwoLines || ((float) i11) < ((float) arrayList.size()) / 2.0f) ? this.attributesLayoutLine1 : this.attributesLayoutLine2;
+                if (attributeView5.getParent() != linearLayout) {
+                    removeFromParent(attributeView5);
+                    linearLayout.addView(attributeView5, LayoutHelper.createLinear(48, 54, 0.0f, 0.0f, 0.0f, 0.0f));
+                }
+                attributeView5.setVisibility(0);
+            }
             this.attributesLayoutLine2.animate().alpha(this.attributesTwoLines ? 1.0f : 0.0f);
             this.variantsButton.animate().alpha(this.attributesTwoLines ? 0.0f : this.previewAttributes != null ? 1.0f : 0.25f);
         }
@@ -11789,6 +11982,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
         private static class ProgressView extends View {
             private final AnimatedFloat animatedProgress;
+            private final AnimatedFloat animatedProgressAlpha;
             private final Paint paint;
             private float progress;
             private float radius;
@@ -11797,12 +11991,20 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 super(context);
                 Paint paint = new Paint(1);
                 this.paint = paint;
-                this.animatedProgress = new AnimatedFloat(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$ProgressView$$ExternalSyntheticLambda0
+                Runnable runnable = new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$ProgressView$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
                         StarGiftSheet.CraftTopView.ProgressView.this.invalidate();
                     }
-                }, 0L, 420L, CubicBezierInterpolator.EASE_OUT_QUINT);
+                };
+                CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
+                this.animatedProgress = new AnimatedFloat(runnable, 0L, 420L, cubicBezierInterpolator);
+                this.animatedProgressAlpha = new AnimatedFloat(new Runnable() { // from class: org.telegram.ui.Stars.StarGiftSheet$CraftTopView$ProgressView$$ExternalSyntheticLambda0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        StarGiftSheet.CraftTopView.ProgressView.this.invalidate();
+                    }
+                }, 0L, 420L, cubicBezierInterpolator);
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeCap(Paint.Cap.ROUND);
                 paint.setStrokeJoin(Paint.Join.ROUND);
@@ -11827,15 +12029,121 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             @Override // android.view.View
             protected void dispatchDraw(Canvas canvas) {
                 float f = this.animatedProgress.set(this.progress);
+                float f2 = this.animatedProgressAlpha.set(this.progress > 0.0f);
                 float width = getWidth() / 2.0f;
                 float height = getHeight() / 2.0f;
-                float f2 = this.radius;
+                float f3 = this.radius;
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(width - f2, height - f2, width + f2, height + f2);
+                rectF.set(width - f3, height - f3, width + f3, height + f3);
                 this.paint.setColor(Theme.multAlpha(-1, 0.25f));
                 canvas.drawArc(rectF, 135.0f, 270.0f, false, this.paint);
-                this.paint.setColor(Theme.multAlpha(-1, 1.0f));
-                canvas.drawArc(rectF, 135.0f, f * 270.0f, false, this.paint);
+                if (f2 > 0.0f) {
+                    this.paint.setColor(Theme.multAlpha(-1, f2));
+                    canvas.drawArc(rectF, 135.0f, f * 270.0f, false, this.paint);
+                }
+            }
+        }
+
+        private static class RaysView extends View {
+            private final Paint fillPaint;
+            private RadialGradient[] gradient;
+            private Matrix gradientMatrix;
+            private int leftColor;
+            private RadialGradient maskGradient;
+            private final Paint maskPaint;
+            private final Path path;
+            private int rightColor;
+            private final Paint strokePaint;
+            private AnimatedFloat swapGradient;
+
+            public RaysView(Context context) {
+                super(context);
+                this.fillPaint = new Paint(1);
+                this.strokePaint = new Paint(1);
+                Paint paint = new Paint(1);
+                this.maskPaint = paint;
+                this.gradient = new RadialGradient[2];
+                this.gradientMatrix = new Matrix();
+                this.swapGradient = new AnimatedFloat(1.0f, this, 0L, 420L, CubicBezierInterpolator.EASE_OUT_QUINT);
+                this.maskGradient = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{0, -1, -1, 0}, new float[]{0.15f, 0.35f, 0.65f, 0.88f}, Shader.TileMode.CLAMP);
+                this.path = new Path();
+                paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+            }
+
+            public void setColor(int i, int i2) {
+                if (this.leftColor == i && this.rightColor == i2) {
+                    return;
+                }
+                RadialGradient[] radialGradientArr = this.gradient;
+                radialGradientArr[0] = radialGradientArr[1];
+                this.leftColor = i;
+                this.rightColor = i2;
+                radialGradientArr[1] = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{i, i2}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                this.swapGradient.force(0.0f);
+                invalidate();
+            }
+
+            @Override // android.view.View
+            protected void onDraw(Canvas canvas) {
+                float f = this.swapGradient.set(1.0f);
+                float currentTimeMillis = ((System.currentTimeMillis() % 15000) / 15000.0f) * 360.0f;
+                if (getAlpha() > 0.0f) {
+                    invalidate();
+                }
+                this.strokePaint.setStyle(Paint.Style.STROKE);
+                this.strokePaint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+                this.path.rewind();
+                float width = getWidth() / 2.0f;
+                float height = getHeight() / 2.0f;
+                float min = Math.min(getWidth(), getHeight()) / 2.0f;
+                int i = 0;
+                int i2 = 0;
+                while (i2 < 6) {
+                    float f2 = (i2 * 60.0f) + 12.5f + currentTimeMillis;
+                    this.path.moveTo(width, height);
+                    double d = ((f2 - 12.5f) / 180.0f) * 3.141592653589793d;
+                    this.path.lineTo((((float) Math.cos(d)) * min) + width, (((float) Math.sin(d)) * min) + height);
+                    double d2 = ((f2 + 12.5f) / 180.0f) * 3.141592653589793d;
+                    this.path.lineTo((((float) Math.cos(d2)) * min) + width, (((float) Math.sin(d2)) * min) + height);
+                    this.path.lineTo(width, height);
+                    i2++;
+                    f = f;
+                }
+                float f3 = f;
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.cameraInitied, 31);
+                while (true) {
+                    RadialGradient[] radialGradientArr = this.gradient;
+                    if (i < radialGradientArr.length) {
+                        if (radialGradientArr[i] != null) {
+                            float pow = (float) Math.pow(1.0f - Math.abs(i - f3), 0.5d);
+                            if (pow > 0.0f) {
+                                this.gradientMatrix.reset();
+                                float f4 = min / 100.0f;
+                                this.gradientMatrix.postScale(f4, f4);
+                                this.gradientMatrix.postTranslate(width, height);
+                                this.gradient[i].setLocalMatrix(this.gradientMatrix);
+                                this.fillPaint.setShader(this.gradient[i]);
+                                float f5 = pow * 255.0f;
+                                this.fillPaint.setAlpha((int) (0.3f * f5));
+                                this.strokePaint.setShader(this.gradient[i]);
+                                this.strokePaint.setAlpha((int) f5);
+                                canvas.drawPath(this.path, this.fillPaint);
+                                canvas.drawPath(this.path, this.strokePaint);
+                            }
+                        }
+                        i++;
+                    } else {
+                        this.gradientMatrix.reset();
+                        float f6 = min / 100.0f;
+                        this.gradientMatrix.postScale(f6, f6);
+                        this.gradientMatrix.postTranslate(width, height);
+                        this.maskGradient.setLocalMatrix(this.gradientMatrix);
+                        this.maskPaint.setShader(this.maskGradient);
+                        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.maskPaint);
+                        canvas.restore();
+                        return;
+                    }
+                }
             }
         }
 
@@ -12042,7 +12350,11 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
                 void tick() {
                     int i;
-                    if (this.cancelled || (i = this.currentIndex) == 0 || this.waitingForPull) {
+                    if (this.cancelled || (i = this.currentIndex) == 0) {
+                        return;
+                    }
+                    if (this.waitingForPull) {
+                        this.cube.applyPhysics();
                         return;
                     }
                     int ordinal = ((Cmd) this.commands.get(i - 1)).type.ordinal();
@@ -12588,7 +12900,10 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         }
 
         private static class AttributeView extends FrameLayout {
+            public TL_stars.starGiftAttributeBackdrop backdrop;
             private final BackupImageView imageView;
+            public TL_stars.starGiftAttributePattern pattern;
+            public float progress;
             private final ProgressView progressView;
             private final AnimatedTextView textView;
 
@@ -12611,9 +12926,12 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 animatedTextView.setTextColor(-1);
                 addView(animatedTextView, LayoutHelper.createFrame(-1, 14.0f, 48, 0.0f, 39.0f, 0.0f, 0.0f));
                 setProgress(0.0f, false);
+                ScaleStateListAnimator.apply(this);
             }
 
             public void setBackdrop(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
+                this.backdrop = stargiftattributebackdrop;
+                this.pattern = null;
                 this.imageView.setScaleX(1.0f);
                 this.imageView.setScaleY(1.0f);
                 if (stargiftattributebackdrop != null) {
@@ -12631,8 +12949,10 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 this.imageView.setImageDrawable(Theme.createCircleDrawable(AndroidUtilities.dp(26.0f), Theme.multAlpha(-1, 0.25f)));
             }
 
-            public void setIcon(TLRPC.Document document) {
-                if (document == null) {
+            public void setIcon(TL_stars.starGiftAttributePattern stargiftattributepattern) {
+                this.backdrop = null;
+                this.pattern = stargiftattributepattern;
+                if (stargiftattributepattern == null) {
                     this.imageView.setAlpha(0.25f);
                     this.imageView.setScaleX(0.75f);
                     this.imageView.setScaleY(0.75f);
@@ -12645,12 +12965,13 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                 this.imageView.setScaleX(0.95f);
                 this.imageView.setScaleY(0.95f);
                 this.imageView.setTranslationY(AndroidUtilities.dp(2.0f));
-                AnimatedEmojiDrawable make = AnimatedEmojiDrawable.make(UserConfig.selectedAccount, 9, document);
+                AnimatedEmojiDrawable make = AnimatedEmojiDrawable.make(UserConfig.selectedAccount, 9, stargiftattributepattern.document);
                 make.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 this.imageView.setAnimatedEmojiDrawable(make);
             }
 
             public void setProgress(float f, boolean z) {
+                this.progress = f;
                 this.progressView.setProgress(f, z);
                 this.textView.setText(Math.round(f * 100.0f) + "%", z);
             }

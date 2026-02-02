@@ -284,37 +284,6 @@ public class LongSparseArray implements Cloneable {
         return ContainerHelpersKt.binarySearch(this.keys, this.size, j);
     }
 
-    public int indexOfValue(Object obj) {
-        Object obj2;
-        if (this.garbage) {
-            int i = this.size;
-            long[] jArr = this.keys;
-            Object[] objArr = this.values;
-            int i2 = 0;
-            for (int i3 = 0; i3 < i; i3++) {
-                Object obj3 = objArr[i3];
-                obj2 = LongSparseArrayKt.DELETED;
-                if (obj3 != obj2) {
-                    if (i3 != i2) {
-                        jArr[i2] = jArr[i3];
-                        objArr[i2] = obj3;
-                        objArr[i3] = null;
-                    }
-                    i2++;
-                }
-            }
-            this.garbage = false;
-            this.size = i2;
-        }
-        int i4 = this.size;
-        for (int i5 = 0; i5 < i4; i5++) {
-            if (this.values[i5] == obj) {
-                return i5;
-            }
-        }
-        return -1;
-    }
-
     public boolean containsKey(long j) {
         return indexOfKey(j) >= 0;
     }

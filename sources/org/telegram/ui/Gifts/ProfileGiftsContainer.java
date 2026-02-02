@@ -2169,7 +2169,7 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         }
 
         @Override // org.telegram.ui.Components.UItem.UItemFactory
-        public LinkSpanDrawable.LinksTextView createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+        public LinkSpanDrawable.LinksTextView createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
             return new LinkSpanDrawable.LinksTextView(context) { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.TextFactory.1
                 @Override // org.telegram.ui.Components.LinkSpanDrawable.LinksTextView, android.widget.TextView, android.view.View
                 protected void onMeasure(int i3, int i4) {

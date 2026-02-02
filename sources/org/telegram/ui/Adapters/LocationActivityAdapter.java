@@ -362,7 +362,8 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
             case 0:
                 FrameLayout frameLayout = new FrameLayout(this.mContext);
                 this.emptyCell = frameLayout;
-                frameLayout.setLayoutParams(new RecyclerView.LayoutParams(-1, this.overScrollHeight));
+                frameLayout.setTag(-33024);
+                this.emptyCell.setLayoutParams(new RecyclerView.LayoutParams(-1, this.overScrollHeight));
                 view2 = frameLayout;
                 break;
             case 1:
@@ -410,9 +411,7 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
                 break;
             case 10:
                 View shadowSectionCell = new ShadowSectionCell(this.mContext);
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(getThemedColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-                combinedDrawable.setFullsize(true);
-                shadowSectionCell.setBackgroundDrawable(combinedDrawable);
+                new CombinedDrawable(new ColorDrawable(getThemedColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow)).setFullsize(true);
                 view2 = shadowSectionCell;
                 break;
             case 11:

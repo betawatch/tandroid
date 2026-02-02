@@ -111,6 +111,7 @@ import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.Paint.PersistColorPalette;
 import org.telegram.ui.Components.Premium.boosts.UserSelectorBottomSheet;
 import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.ShareAlert;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
@@ -650,7 +651,9 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             this.avatarView.setForUserOrChat(user, this.avatarDrawable);
             this.titleView.setText(UserObject.getUserName(user));
             StringBuilder sb = new StringBuilder();
-            sb.append(PhoneFormat.getInstance().format("+" + user.phone));
+            if (user != null) {
+                sb.append(PhoneFormat.getInstance().format("+" + user.phone));
+            }
             String publicUsername = UserObject.getPublicUsername(user);
             if (publicUsername != null) {
                 sb.append(" • @");
@@ -1190,7 +1193,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public AccountCell createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public AccountCell createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new AccountCell(context, resourcesProvider);
             }
 
@@ -1361,7 +1364,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public SettingCell createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public SettingCell createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new SettingCell(context, resourcesProvider);
             }
 
@@ -1442,7 +1445,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public SuggestionCell createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public SuggestionCell createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new SuggestionCell(context, resourcesProvider);
             }
 

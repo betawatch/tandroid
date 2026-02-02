@@ -2174,7 +2174,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public LiveCommentView createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public LiveCommentView createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 LiveCommentView liveCommentView = new LiveCommentView(context, i, false);
                 liveCommentView.setLayoutParams(new RecyclerView.LayoutParams(-2, -2));
                 return liveCommentView;
@@ -2331,7 +2331,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public LiveTopSenderView createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public LiveTopSenderView createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new LiveTopSenderView(context);
             }
 

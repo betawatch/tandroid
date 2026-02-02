@@ -21,6 +21,7 @@ import android.graphics.RecordingCanvas;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.graphics.drawable.ShapeDrawable;
@@ -206,6 +207,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
     private ArrayList emojipacksProcessed;
     private boolean expandStickersByDragg;
     private ArrayList expandedEmojiSets;
+    private final GradientDrawable fadeDrawable;
     private int favTabNum;
     private ArrayList favouriteStickers;
     private ArrayList featuredEmojiSets;
@@ -250,6 +252,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
     public boolean isNewHeightControl;
     private ArrayList keepFeaturedDuplicate;
     private float lastBottomScrollDy;
+    private int lastFadeColor;
     private int lastNotifyWidth;
     private ArrayList lastRecentArray;
     private int lastRecentCount;
@@ -1796,6 +1799,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         this.blurredRectList = arrayList;
         arrayList.add(rectF);
         this.navbarFillPaint = new Paint(1);
+        this.fadeDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, null);
         this.bottomTabVisibility = new BoolAnimator(0, new FactorAnimator.Target() { // from class: org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda2
             @Override // me.vkryl.android.animator.FactorAnimator.Target
             public /* synthetic */ void onFactorChangeFinished(int i2, float f, FactorAnimator factorAnimator) {
@@ -4884,11 +4888,15 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                 canvas.drawColor(ColorUtils.setAlphaComponent(-1, 25));
             }
             boolean drawChild = super.drawChild(canvas, view, j);
-            float navigationBarThirdButtonsFactor = AndroidUtilities.getNavigationBarThirdButtonsFactor(this.bottomInset) * 0.75f;
+            float navigationBarThirdButtonsFactor = AndroidUtilities.getNavigationBarThirdButtonsFactor(this.bottomInset);
             if (navigationBarThirdButtonsFactor > 0.0f) {
-                this.navbarFillPaint.setColor(getThemedColor(Theme.key_chat_emojiPanelBackground));
-                this.navbarFillPaint.setAlpha((int) (navigationBarThirdButtonsFactor * 255.0f));
-                canvas.drawRect(0.0f, getMeasuredHeight() - this.bottomInset, getMeasuredWidth(), getMeasuredHeight(), this.navbarFillPaint);
+                int multAlpha = Theme.multAlpha(getThemedColor(Theme.key_chat_emojiPanelBackground), navigationBarThirdButtonsFactor);
+                if (this.lastFadeColor != multAlpha) {
+                    this.fadeDrawable.setColors(new int[]{multAlpha, Theme.multAlpha(multAlpha, 0.66f), ColorUtils.setAlphaComponent(multAlpha, 0)});
+                    this.lastFadeColor = multAlpha;
+                }
+                this.fadeDrawable.setBounds(0, getMeasuredHeight() - this.bottomInset, getMeasuredWidth(), getMeasuredHeight());
+                this.fadeDrawable.draw(canvas);
             }
             canvas.restore();
             return drawChild;

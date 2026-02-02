@@ -2977,7 +2977,12 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 this.giftPremiumTextCollapsedHeight = 0;
             }
             if (this.giftPremiumTextCollapsed) {
-                this.giftPremiumText.setText(charSequence7.subSequence(0, this.giftPremiumText.layout.getLineEnd(2) - 1), this.giftTextPaint, dp2);
+                int lineEnd = this.giftPremiumText.layout.getLineEnd(2) - 1;
+                TextLayout textLayout2 = this.giftPremiumText;
+                if (lineEnd >= 0) {
+                    charSequence7 = charSequence7.subSequence(0, lineEnd);
+                }
+                textLayout2.setText(charSequence7, this.giftTextPaint, dp2);
             }
         }
         if (charSequence5 != null) {

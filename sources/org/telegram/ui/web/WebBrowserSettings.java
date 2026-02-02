@@ -45,6 +45,7 @@ import org.telegram.ui.Components.CombinedDrawable;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.Text;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.UniversalAdapter;
@@ -772,7 +773,7 @@ public class WebBrowserSettings extends UniversalFragment implements Notificatio
             }
 
             @Override // org.telegram.ui.Components.UItem.UItemFactory
-            public WebsiteView createView(Context context, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            public WebsiteView createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
                 return new WebsiteView(context);
             }
 

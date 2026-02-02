@@ -38,6 +38,9 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.Premium.PremiumButtonView;
 import org.telegram.ui.Components.ProgressButton;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.UItem;
+import org.telegram.ui.Components.UniversalAdapter;
+import org.telegram.ui.Components.UniversalRecyclerView;
 
 /* loaded from: classes4.dex */
 public class FeaturedStickerSetCell2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
@@ -468,6 +471,31 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
             TLRPC.TL_stickerSetNoCovered tL_stickerSetNoCovered = new TLRPC.TL_stickerSetNoCovered();
             tL_stickerSetNoCovered.set = ((TLRPC.TL_messages_stickerSet) objArr[1]).set;
             setStickersSet(tL_stickerSetNoCovered, this.needDivider, this.unread, this.forceInstalled, true);
+        }
+    }
+
+    public static final class Factory extends UItem.UItemFactory {
+        static {
+            UItem.UItemFactory.setup(new Factory());
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public FeaturedStickerSetCell2 createView(Context context, RecyclerListView recyclerListView, int i, int i2, Theme.ResourcesProvider resourcesProvider) {
+            return new FeaturedStickerSetCell2(context, resourcesProvider);
+        }
+
+        @Override // org.telegram.ui.Components.UItem.UItemFactory
+        public void bindView(View view, UItem uItem, boolean z, UniversalAdapter universalAdapter, UniversalRecyclerView universalRecyclerView) {
+            FeaturedStickerSetCell2 featuredStickerSetCell2 = (FeaturedStickerSetCell2) view;
+            featuredStickerSetCell2.setStickersSet((TLRPC.StickerSetCovered) uItem.object, z, false, uItem.locked, false);
+            featuredStickerSetCell2.setDrawProgress(uItem.locked, false);
+            featuredStickerSetCell2.setAddOnClickListener(uItem.clickCallback);
+        }
+
+        public static UItem of(TLRPC.StickerSetCovered stickerSetCovered) {
+            UItem ofFactory = UItem.ofFactory(Factory.class);
+            ofFactory.object = stickerSetCovered;
+            return ofFactory;
         }
     }
 }
