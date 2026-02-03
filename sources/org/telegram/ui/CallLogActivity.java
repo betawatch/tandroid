@@ -1907,7 +1907,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkUi_floatingButton() {
-        this.floatingButton.setTranslationY(((-this.navigationBarHeight) - this.additionFloatingButtonOffset) - this.additionalFloatingTranslation);
+        this.floatingButton.setTranslationY((((-this.navigationBarHeight) - AndroidUtilities.dp(this.hasMainTabs ? 56.0f : 0.0f)) - this.additionFloatingButtonOffset) - this.additionalFloatingTranslation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

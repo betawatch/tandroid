@@ -16638,7 +16638,6 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     textInfoPrivacyCell.getTextView().setMovementMethod(null);
                     textInfoPrivacyCell.setText(AndroidUtilities.getBuildVersionInfo());
                     textInfoPrivacyCell.getTextView().setPadding(0, AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f));
-                    textInfoPrivacyCell.setBackgroundColor(ProfileActivity.this.getThemedColor(Theme.key_windowBackgroundGray));
                     view = textInfoPrivacyCell;
                     break;
                 case 11:
@@ -16702,9 +16701,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     view = new 9(this.mContext, ProfileActivity.this.resourcesProvider);
                     break;
                 case 17:
-                    View textInfoPrivacyCell2 = new TextInfoPrivacyCell(this.mContext, ProfileActivity.this.resourcesProvider);
-                    textInfoPrivacyCell2.setBackgroundColor(ProfileActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
-                    view = textInfoPrivacyCell2;
+                    view = new TextInfoPrivacyCell(this.mContext, ProfileActivity.this.resourcesProvider);
                     break;
                 case 18:
                 case 24:
@@ -20563,7 +20560,6 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{AboutLinkCell.class}, Theme.profile_aboutTextPaint, null, null, i7));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LINKCOLOR, new Class[]{AboutLinkCell.class}, Theme.profile_aboutTextPaint, null, null, i11));
         arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{AboutLinkCell.class}, Theme.linkSelectionPaint, null, null, Theme.key_windowBackgroundWhiteLinkSelection));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
         arrayList.add(new ThemeDescription(this.searchListView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i10));
         arrayList.add(new ThemeDescription(this.searchListView, 0, new Class[]{GraySectionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_graySectionText));
         arrayList.add(new ThemeDescription(this.searchListView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{GraySectionCell.class}, null, null, null, Theme.key_graySection));
