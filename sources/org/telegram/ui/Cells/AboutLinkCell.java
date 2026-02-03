@@ -149,7 +149,7 @@ public abstract class AboutLinkCell extends FrameLayout {
         int i = Theme.key_windowBackgroundWhite;
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i, resourcesProvider), PorterDuff.Mode.SRC_ATOP));
         this.bottomShadow.setBackground(mutate);
-        addView(this.bottomShadow, LayoutHelper.createFrame(-1, 12.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(this.bottomShadow, LayoutHelper.createFrame(-1, 12.0f, 87, 16.0f, 0.0f, 16.0f, 0.0f));
         addView(this.container, LayoutHelper.createFrame(-1, -1, 55));
         TextView textView2 = new TextView(context) { // from class: org.telegram.ui.Cells.AboutLinkCell.1
             private boolean pressed = false;

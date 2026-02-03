@@ -1160,7 +1160,7 @@ public class ResaleGiftsFragment extends BaseFragment {
         }
 
         public ResaleGiftsList forCraft() {
-            this.for_craft = this.for_craft;
+            this.for_craft = true;
             return this;
         }
 

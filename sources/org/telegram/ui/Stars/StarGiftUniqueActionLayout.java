@@ -22,12 +22,15 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatActionCell;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
+import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ButtonBounce;
 import org.telegram.ui.Components.Text;
 import org.telegram.ui.Gifts.GiftSheet;
+import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stars.StarsReactionsSheet;
 
 /* loaded from: classes5.dex */
@@ -36,6 +39,7 @@ public class StarGiftUniqueActionLayout {
     private boolean attached;
     private TL_stars.starGiftAttributeBackdrop backdrop;
     private final ButtonBounce bounce;
+    private boolean burned;
     private final ButtonBounce buttonBounce;
     private float buttonHeight;
     private Text buttonText;
@@ -150,8 +154,15 @@ public class StarGiftUniqueActionLayout {
                     }
                     StarsIntroActivity.setGiftImage(this.imageReceiver, this.model.document, 110);
                 }
-                this.ribbon.setBackdrop(this.backdrop, true, false);
-                this.ribbon.setText(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
+                boolean z2 = tL_starGiftUnique.burned;
+                this.burned = z2;
+                if (z2) {
+                    this.ribbon.setColor(Theme.getColor(Theme.key_text_RedBold, this.resourcesProvider));
+                    this.ribbon.setText(11, LocaleController.getString(R.string.Gift2UniqueRibbonBurned), true);
+                } else {
+                    this.ribbon.setBackdrop(this.backdrop, true, false);
+                    this.ribbon.setText(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
+                }
                 if (this.repost) {
                     this.width = AndroidUtilities.dp(200.0f);
                 } else {
@@ -174,7 +185,13 @@ public class StarGiftUniqueActionLayout {
                 } else if (tL_messageActionStarGiftUnique.peer != null || UserObject.isService(messageObject.getDialogId())) {
                     this.title = new Text(LocaleController.getString(R.string.Gift2UniqueTitle2), 14.0f, AndroidUtilities.bold());
                 } else if (messageObject.getDialogId() == UserConfig.getInstance(this.currentAccount).getClientUserId()) {
-                    this.title = new Text(LocaleController.getString(R.string.Gift2ActionSelfTitle), 14.0f, AndroidUtilities.bold());
+                    if (tL_starGiftUnique.crafted) {
+                        this.title = new Text(LocaleController.getString(R.string.Gift2ActionCraftedTitle), 14.0f, AndroidUtilities.bold());
+                    } else if (tL_messageActionStarGiftUnique.resale_amount != null) {
+                        this.title = new Text(LocaleController.getString(R.string.Gift2ActionPurchasedTitle), 14.0f, AndroidUtilities.bold());
+                    } else {
+                        this.title = new Text(LocaleController.getString(R.string.Gift2ActionUpgradedTitle), 14.0f, AndroidUtilities.bold());
+                    }
                 } else {
                     this.title = new Text(LocaleController.formatString(R.string.Gift2UniqueTitle, shortName), 14.0f, AndroidUtilities.bold());
                 }
@@ -390,7 +407,14 @@ public class StarGiftUniqueActionLayout {
             }
         } else {
             if (motionEvent.getAction() == 1 && (this.buttonBounce.isPressed() || this.bounce.isPressed())) {
-                new StarGiftSheet(this.view.getContext(), this.currentAccount, this.currentMessageObject.getDialogId(), this.resourcesProvider).set(this.currentMessageObject).show();
+                if (this.burned) {
+                    BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+                    if (safeLastFragment != null) {
+                        BulletinFactory.of(safeLastFragment).createSimpleBulletin(R.raw.fire_on, LocaleController.getString(R.string.UniqueGiftNotFoundBurned)).show();
+                    }
+                } else {
+                    new StarGiftSheet(this.view.getContext(), this.currentAccount, this.currentMessageObject.getDialogId(), this.resourcesProvider).set(this.currentMessageObject).show();
+                }
                 this.buttonBounce.setPressed(false);
                 this.bounce.setPressed(false);
                 return true;

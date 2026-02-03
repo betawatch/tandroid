@@ -1880,18 +1880,26 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 return;
             }
             new StarGiftSheet(getContext(), this.currentAccount, this.currentMessageObject.getDialogId(), this.themeDelegate).set(this.currentMessageObject).show();
-        } else {
-            if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
-                new StarGiftSheet(getContext(), this.currentAccount, this.currentMessageObject.getDialogId(), this.themeDelegate).set(this.currentMessageObject).show();
+            return;
+        }
+        if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
+            if (((TLRPC.TL_messageActionStarGiftUnique) messageAction).gift.burned) {
+                BaseFragment safeLastFragment = LaunchActivity.getSafeLastFragment();
+                if (safeLastFragment == null) {
+                    return;
+                }
+                BulletinFactory.of(safeLastFragment).createSimpleBulletin(org.telegram.messenger.R.raw.fire_on, LocaleController.getString(org.telegram.messenger.R.string.UniqueGiftNotFoundBurned)).show();
                 return;
             }
-            if (messageAction instanceof TLRPC.TL_messageActionSetChatTheme) {
-                TLRPC.ChatTheme chatTheme = ((TLRPC.TL_messageActionSetChatTheme) messageAction).theme;
-                if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
-                    TL_stars.StarGift starGift = ((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift;
-                    if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                        new StarGiftSheet(getContext(), this.currentAccount, this.currentMessageObject.getDialogId(), this.themeDelegate).set(starGift.slug, (TL_stars.TL_starGiftUnique) starGift, null).show();
-                    }
+            new StarGiftSheet(getContext(), this.currentAccount, this.currentMessageObject.getDialogId(), this.themeDelegate).set(this.currentMessageObject).show();
+            return;
+        }
+        if (messageAction instanceof TLRPC.TL_messageActionSetChatTheme) {
+            TLRPC.ChatTheme chatTheme = ((TLRPC.TL_messageActionSetChatTheme) messageAction).theme;
+            if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
+                TL_stars.StarGift starGift = ((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift;
+                if (starGift instanceof TL_stars.TL_starGiftUnique) {
+                    new StarGiftSheet(getContext(), this.currentAccount, this.currentMessageObject.getDialogId(), this.themeDelegate).set(starGift.slug, (TL_stars.TL_starGiftUnique) starGift, null).show();
                 }
             }
         }
