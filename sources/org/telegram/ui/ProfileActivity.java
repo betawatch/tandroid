@@ -20481,7 +20481,6 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_chat_lockIcon));
         int i3 = Theme.key_avatar_subtitleInProfileBlue;
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, i3));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundActionBarBlue));
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, i2));
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_profile_title));
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_profile_status));

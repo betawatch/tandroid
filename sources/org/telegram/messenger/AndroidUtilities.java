@@ -813,6 +813,55 @@ public class AndroidUtilities {
         return spannableStringBuilder;
     }
 
+    public static SpannableStringBuilder replaceSingleLinkBold(String str, int i) {
+        return replaceSingleLinkBold(str, i, null);
+    }
+
+    public static SpannableStringBuilder replaceSingleLinkBold(String str, final int i, final Runnable runnable) {
+        int i2;
+        int i3;
+        int indexOf = str.indexOf("**");
+        int indexOf2 = str.indexOf("**", indexOf + 1);
+        String replace = str.replace("**", "");
+        if (indexOf < 0 || indexOf2 < 0 || (i3 = indexOf2 - indexOf) <= 2) {
+            indexOf = -1;
+            i2 = 0;
+        } else {
+            i2 = i3 - 2;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(replace);
+        if (indexOf >= 0) {
+            if (runnable != null) {
+                spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.messenger.AndroidUtilities.8
+                    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+                    public void updateDrawState(TextPaint textPaint) {
+                        super.updateDrawState(textPaint);
+                        textPaint.setUnderlineText(false);
+                        textPaint.setTypeface(AndroidUtilities.bold());
+                        textPaint.setColor(i);
+                    }
+
+                    @Override // android.text.style.ClickableSpan
+                    public void onClick(View view) {
+                        Runnable runnable2 = runnable;
+                        if (runnable2 != null) {
+                            runnable2.run();
+                        }
+                    }
+                }, indexOf, i2 + indexOf, 0);
+            } else {
+                spannableStringBuilder.setSpan(new CharacterStyle() { // from class: org.telegram.messenger.AndroidUtilities.9
+                    @Override // android.text.style.CharacterStyle
+                    public void updateDrawState(TextPaint textPaint) {
+                        textPaint.setUnderlineText(false);
+                        textPaint.setColor(i);
+                    }
+                }, indexOf, i2 + indexOf, 0);
+            }
+        }
+        return spannableStringBuilder;
+    }
+
     public static CharSequence replaceArrows(CharSequence charSequence, boolean z) {
         return replaceArrows(charSequence, z, dp(2.6666667f), 0.0f, 1.0f);
     }
@@ -1189,7 +1238,7 @@ public class AndroidUtilities {
         if (view == null) {
             runnable.run();
         } else {
-            view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: org.telegram.messenger.AndroidUtilities.8
+            view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: org.telegram.messenger.AndroidUtilities.10
                 @Override // android.view.View.OnLayoutChangeListener
                 public void onLayoutChange(View view2, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
                     view.removeOnLayoutChangeListener(this);
@@ -3509,7 +3558,7 @@ public class AndroidUtilities {
             String group = matcher.group(1);
             final String group2 = matcher.group(2);
             spannableStringBuilder.append((CharSequence) group);
-            spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.messenger.AndroidUtilities.9
+            spannableStringBuilder.setSpan(new ClickableSpan() { // from class: org.telegram.messenger.AndroidUtilities.11
                 @Override // android.text.style.ClickableSpan
                 public void onClick(View view) {
                     Runnable runnable2 = runnable;
@@ -3582,7 +3631,7 @@ public class AndroidUtilities {
                 AndroidUtilities.lambda$shakeView$13(view, valueAnimator);
             }
         });
-        ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.messenger.AndroidUtilities.10
+        ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.messenger.AndroidUtilities.12
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 view.setTranslationX(0.0f);
@@ -5591,7 +5640,7 @@ public class AndroidUtilities {
                 AndroidUtilities.lambda$setNavigationBarColor$23(AndroidUtilities.IntColorCallback.this, window, valueAnimator2);
             }
         });
-        ofArgb.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.messenger.AndroidUtilities.11
+        ofArgb.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.messenger.AndroidUtilities.13
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 if (AndroidUtilities.navigationBarColorAnimators != null) {
@@ -6652,7 +6701,7 @@ public class AndroidUtilities {
 
     public static CharSequence withLearnMore(CharSequence charSequence, final Runnable runnable) {
         SpannableString spannableString = new SpannableString(LocaleController.getString(R.string.LearnMoreArrow));
-        spannableString.setSpan(new ClickableSpan() { // from class: org.telegram.messenger.AndroidUtilities.12
+        spannableString.setSpan(new ClickableSpan() { // from class: org.telegram.messenger.AndroidUtilities.14
             @Override // android.text.style.ClickableSpan
             public void onClick(View view) {
                 Runnable runnable2 = runnable;
@@ -6746,7 +6795,7 @@ public class AndroidUtilities {
         }
         animator.setDuration((long) ((Math.log(0.0025d) / ((-sqrt2) * sqrt)) * 1000.0d));
         final double d7 = 1.0d;
-        animator.setInterpolator(new Interpolator() { // from class: org.telegram.messenger.AndroidUtilities.13
+        animator.setInterpolator(new Interpolator() { // from class: org.telegram.messenger.AndroidUtilities.15
             @Override // android.animation.TimeInterpolator
             public float getInterpolation(float f) {
                 double d8;
@@ -6769,7 +6818,7 @@ public class AndroidUtilities {
         final double sqrt = f2 / (Math.sqrt(f * f3) * 2.0d);
         final double sqrt2 = Math.sqrt(f / f3);
         animator.setDuration(j);
-        animator.setInterpolator(new Interpolator() { // from class: org.telegram.messenger.AndroidUtilities.14
+        animator.setInterpolator(new Interpolator() { // from class: org.telegram.messenger.AndroidUtilities.16
             @Override // android.animation.TimeInterpolator
             public float getInterpolation(float f4) {
                 double exp;

@@ -228,10 +228,6 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     StoryPrivacyBottomSheet.Page.this.lambda$new$0();
                 }
             }) { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet.Page.1
-                {
-                    StoryPrivacyBottomSheet storyPrivacyBottomSheet = StoryPrivacyBottomSheet.this;
-                }
-
                 @Override // org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet.SearchUsersCell
                 public void setContainerHeight(float f) {
                     super.setContainerHeight(f);
@@ -4156,7 +4152,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
         }
     }
 
-    public class SearchUsersCell extends ScrollView {
+    public static class SearchUsersCell extends ScrollView {
         public ArrayList allSpans;
         private final LinearGradient bottomGradient;
         private final AnimatedFloat bottomGradientAlpha;
@@ -4295,11 +4291,6 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             canvas.drawRect(0.0f, (getHeight() + r0) - AndroidUtilities.dp(8.0f), getWidth(), r0 + getHeight(), this.bottomGradientPaint);
             canvas.restore();
             canvas.restore();
-        }
-
-        @Override // android.view.ViewGroup, android.view.View
-        public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-            return super.dispatchTouchEvent(motionEvent);
         }
 
         public void setText(CharSequence charSequence) {
