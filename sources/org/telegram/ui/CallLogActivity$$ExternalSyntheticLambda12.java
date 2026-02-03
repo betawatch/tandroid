@@ -6,7 +6,7 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.TLRPC;
 
 /* loaded from: classes4.dex */
-public final /* synthetic */ class CallLogActivity$$ExternalSyntheticLambda11 implements Function {
+public final /* synthetic */ class CallLogActivity$$ExternalSyntheticLambda12 implements Function {
     public /* synthetic */ Function andThen(Function function) {
         return Function$-CC.$default$andThen(this, function);
     }

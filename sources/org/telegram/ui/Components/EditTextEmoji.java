@@ -64,6 +64,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
     private int emojiViewCacheType;
     private boolean emojiViewVisible;
     private ItemOptions formatOptions;
+    public boolean glassDesignForEmojiView;
     public boolean includeNavigationBar;
     private int innerTextChange;
     private boolean isAnimatePopupClosing;
@@ -842,7 +843,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
         Context context = getContext();
         boolean allowSearch = allowSearch();
         int i = this.currentStyle;
-        EmojiView emojiView2 = new EmojiView(baseFragment, z, false, false, context, allowSearch, null, null, (i == 2 || i == 3 || i == 5) ? false : true, this.resourcesProvider, false) { // from class: org.telegram.ui.Components.EditTextEmoji.6
+        EmojiView emojiView2 = new EmojiView(baseFragment, z, false, false, context, allowSearch, null, null, (i == 2 || i == 3 || i == 5) ? false : true, this.resourcesProvider, false, this.glassDesignForEmojiView) { // from class: org.telegram.ui.Components.EditTextEmoji.6
             private boolean changedExpanded;
             private boolean lastExpanded;
             private int lastHeight;

@@ -685,6 +685,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         public void setTranslationY(float f) {
             super.setTranslationY(f);
             DialogsActivity.this.blur3_InvalidateBlur();
+            AndroidUtilities.printStackTrace("translationY: " + f);
         }
 
         @Override // android.view.View
@@ -1036,7 +1037,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 }
                 if (DialogsActivity.this.rightFragmentTransitionInProgress) {
                     float f6 = DialogsActivity.this.rightFragmentTransitionIsOpen ? 0.0f : DialogsActivity.this.scrollYOffset;
-                    f2 = -AndroidUtilities.lerp(-f6, f6, DialogsActivity.this.rightSlidingDialogContainer.openedProgress);
+                    f2 = -AndroidUtilities.lerp((-f6) + AndroidUtilities.dp((DialogsActivity.this.rightFragmentTransitionIsOpen || !DialogsActivity.this.canShowFilterTabsView) ? 0.0f : 50.0f), f6, DialogsActivity.this.rightSlidingDialogContainer.openedProgress);
                 } else {
                     f2 = 0.0f;
                 }
@@ -1115,7 +1116,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
                         int dp = AndroidUtilities.dp(2.0f) + size2;
                         if (DialogsActivity.this.rightSlidingDialogContainer.hasFragment()) {
-                            if (DialogsActivity.this.animatorFilterTabsVisible.getValue()) {
+                            if (DialogsActivity.this.canShowFilterTabsView) {
                                 dp += AndroidUtilities.dp(50.0f);
                             }
                             if (DialogsActivity.this.hasStories) {
@@ -4647,6 +4648,9 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     DialogsActivity.this.checkUi_topPanelVisible();
                     DialogsActivity.this.checkUi_filterTabsVisible();
                     DialogsActivity.this.checkUi_searchFieldVisibility();
+                    if (DialogsActivity.this.viewPages[0] != null && DialogsActivity.this.viewPages[0].listView != null) {
+                        DialogsActivity.this.viewPages[0].listView.requestLayout();
+                    }
                     View view3 = DialogsActivity.this.fragmentView;
                     if (view3 != null) {
                         view3.invalidate();
@@ -4891,6 +4895,9 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 DialogsActivity.this.checkUi_topPanelVisible();
                 DialogsActivity.this.checkUi_filterTabsVisible();
                 DialogsActivity.this.checkUi_searchFieldVisibility();
+                if (DialogsActivity.this.viewPages[0] != null && DialogsActivity.this.viewPages[0].listView != null) {
+                    DialogsActivity.this.viewPages[0].listView.requestLayout();
+                }
                 View view3 = DialogsActivity.this.fragmentView;
                 if (view3 != null) {
                     view3.invalidate();
@@ -6138,6 +6145,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         if (topicsFragment != null) {
             topicsFragment.checkUi_listViewPadding();
         }
+        updateContextViewPosition();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -8054,7 +8062,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         DialogsActivityTopBubblesFadeView dialogsActivityTopBubblesFadeView = this.topBubblesFadeView;
         if (dialogsActivityTopBubblesFadeView != null) {
             dialogsActivityTopBubblesFadeView.setTranslationY(f9);
-            float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(50.0f), f6);
+            float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(50.0f), Math.min(f6, f3));
             this.topBubblesFadeView.setPosition(lerp, Math.min(AndroidUtilities.dp(40.0f), (f5 + f4) - lerp));
             this.topBubblesFadeView.setAlpha(Math.max(f3, f6));
         }
@@ -11121,6 +11129,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         if (this.fragmentView == null || f == this.scrollYOffset) {
             return;
         }
+        AndroidUtilities.printStackTrace("setScrollY: " + f);
         this.scrollYOffset = f;
         Bulletin bulletin = this.topBulletin;
         if (bulletin != null) {
@@ -17405,9 +17414,21 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     }
 
     public float getTopPanelAnimatedHeight() {
+        return getTopPanelAnimatedHeight(AndroidUtilities.dp(14.0f));
+    }
+
+    public float getTopPanelAnimatedHeight(int i) {
         DialogsActivityTopPanelLayout dialogsActivityTopPanelLayout = this.topPanelLayout;
         if (dialogsActivityTopPanelLayout != null) {
-            return dialogsActivityTopPanelLayout.getAnimatedHeightWithPadding(AndroidUtilities.dp(14.0f));
+            return dialogsActivityTopPanelLayout.getAnimatedHeightWithPadding(i);
+        }
+        return 0.0f;
+    }
+
+    public float getTopPanelVisibility() {
+        DialogsActivityTopPanelLayout dialogsActivityTopPanelLayout = this.topPanelLayout;
+        if (dialogsActivityTopPanelLayout != null) {
+            return dialogsActivityTopPanelLayout.getMetadata().getTotalVisibility();
         }
         return 0.0f;
     }

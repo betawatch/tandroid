@@ -177,6 +177,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
     private long currentChatId;
     private int currentPage;
     private ArrayList currentTabs;
+    public boolean customOutline;
     private EmojiViewDelegate delegate;
     private Paint dotPaint;
     private DragListener dragListener;
@@ -6329,9 +6330,11 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         this.isLayout = true;
         if (AndroidUtilities.isInMultiwindow || this.forseMultiwindowLayout) {
             if (this.currentBackgroundType != 1) {
-                setOutlineProvider((ViewOutlineProvider) this.outlineProvider);
-                setClipToOutline(true);
-                setElevation(AndroidUtilities.dp(2.0f));
+                if (!this.customOutline) {
+                    setOutlineProvider((ViewOutlineProvider) this.outlineProvider);
+                    setClipToOutline(true);
+                    setElevation(AndroidUtilities.dp(2.0f));
+                }
                 setBackgroundResource(R.drawable.smiles_popup);
                 Drawable background = getBackground();
                 int i3 = Theme.key_chat_emojiPanelBackground;
@@ -6342,9 +6345,11 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                 this.currentBackgroundType = 1;
             }
         } else if (this.currentBackgroundType != 0) {
-            setOutlineProvider(null);
-            setClipToOutline(false);
-            setElevation(0.0f);
+            if (!this.customOutline) {
+                setOutlineProvider(null);
+                setClipToOutline(false);
+                setElevation(0.0f);
+            }
             if (this.shouldDrawBackground) {
                 int i4 = Theme.key_chat_emojiPanelBackground;
                 setBackgroundColor(getThemedColor(i4));

@@ -1882,26 +1882,23 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         actionBarMenuItem.performClick();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x002c  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0025  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void checkUi_listViewPadding() {
-        float animatedHeightWithPadding;
         DialogsActivity dialogsActivity = this.parentDialogsActivity;
         float f = 0.0f;
         if (dialogsActivity != null) {
-            animatedHeightWithPadding = dialogsActivity.getTopPanelAnimatedHeight();
-        } else {
+            f = 0.0f + dialogsActivity.getTopPanelAnimatedHeight();
             DialogsActivityTopPanelLayout dialogsActivityTopPanelLayout = this.topPanelLayout;
             if (dialogsActivityTopPanelLayout != null) {
-                animatedHeightWithPadding = dialogsActivityTopPanelLayout.getAnimatedHeightWithPadding(AndroidUtilities.dp(14.0f));
+                dialogsActivityTopPanelLayout.setTranslationY(f - (AndroidUtilities.dp(7.0f) * this.parentDialogsActivity.getTopPanelVisibility()));
+                f += this.topPanelLayout.getAnimatedHeightWithPadding(AndroidUtilities.lerp(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(7.0f), this.parentDialogsActivity.getTopPanelVisibility()));
             }
-            this.recyclerListView.setPadding(0, (int) f, 0, this.navigationBarHeight + this.additionNavigationBarHeight + (!this.bottomPannelVisible ? AndroidUtilities.dp(51.0f) : 0));
+        } else {
+            DialogsActivityTopPanelLayout dialogsActivityTopPanelLayout2 = this.topPanelLayout;
+            if (dialogsActivityTopPanelLayout2 != null) {
+                f = 0.0f + dialogsActivityTopPanelLayout2.getAnimatedHeightWithPadding(AndroidUtilities.dp(14.0f));
+            }
         }
-        f = 0.0f + animatedHeightWithPadding;
-        this.recyclerListView.setPadding(0, (int) f, 0, this.navigationBarHeight + this.additionNavigationBarHeight + (!this.bottomPannelVisible ? AndroidUtilities.dp(51.0f) : 0));
+        this.recyclerListView.setPadding(0, (int) f, 0, this.navigationBarHeight + this.additionNavigationBarHeight + (this.bottomPannelVisible ? AndroidUtilities.dp(51.0f) : 0));
     }
 
     public void setTransitionPadding(int i) {
@@ -4700,7 +4697,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         }
         EmptyViewContainer emptyViewContainer = this.emptyViewContainer;
         if (emptyViewContainer != null) {
-            emptyViewContainer.textView.setTranslationY(-this.navigationBarHeight);
+            emptyViewContainer.textView.setTranslationY((-this.navigationBarHeight) - this.additionFloatingButtonOffset);
         }
         updateFloatingButtonOffset();
         checkUi_listViewPadding();
