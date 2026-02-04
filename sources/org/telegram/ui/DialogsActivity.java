@@ -15500,7 +15500,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             this.slideBackTransitionAnimator = ofFloat;
             return ofFloat;
         }
-        int max = getLayoutContainer() != null ? (int) (Math.max((int) ((200.0f / getLayoutContainer().getMeasuredWidth()) * f), 80) * 1.2f) : 150;
+        int clamp = (getLayoutContainer() == null || getLayoutContainer().getMeasuredWidth() <= 0) ? 150 : (int) Utilities.clamp((200.0f / getLayoutContainer().getMeasuredWidth()) * f, 200.0f, 80.0f);
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.slideFragmentProgress, 1.0f);
         this.slideBackTransitionAnimator = ofFloat2;
         ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.DialogsActivity$$ExternalSyntheticLambda32
@@ -15510,7 +15510,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             }
         });
         this.slideBackTransitionAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT);
-        this.slideBackTransitionAnimator.setDuration(max);
+        this.slideBackTransitionAnimator.setDuration(clamp);
         this.slideBackTransitionAnimator.start();
         return this.slideBackTransitionAnimator;
     }

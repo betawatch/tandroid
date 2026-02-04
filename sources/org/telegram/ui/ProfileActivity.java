@@ -13496,8 +13496,6 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     }
 
     private void updateActionsPosition() {
-        float headerExtraHeight;
-        float f;
         FrameLayout frameLayout;
         if (this.actionsView == null || this.onlineTextView[1] == null) {
             return;
@@ -13516,30 +13514,16 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             }
         } else {
             profileActionsView.clipHeight = -1.0f;
-            float f2 = currentActionBarHeight;
-            float f3 = this.extraHeight + f2;
-            float min = Math.min(getActionsExtraHeight(), f3 - f2);
-            this.actionsView.updatePosition(f3 - min, min);
+            float f = currentActionBarHeight;
+            float f2 = this.extraHeight + f;
+            float min = Math.min(getActionsExtraHeight(), f2 - f);
+            this.actionsView.updatePosition(f2 - min, min);
         }
         ImageView imageView = this.callToActionItem;
         if (imageView == null || imageView.getTag() == null) {
             return;
         }
-        ProfileActionsView profileActionsView2 = this.actionsView;
-        boolean z2 = this.openAnimationInProgress;
-        profileActionsView2.isAnimatingCallAction = z2;
-        if (z2) {
-            if (this.playProfileAnimation == 2) {
-                headerExtraHeight = this.listView.getMeasuredWidth() + getActionsExtraHeight();
-                f = Utilities.clamp01(this.extraHeight / (headerExtraHeight - currentActionBarHeight));
-            } else {
-                float clamp01 = Utilities.clamp01(this.extraHeight / getHeaderExtraHeight());
-                headerExtraHeight = currentActionBarHeight + getHeaderExtraHeight();
-                f = clamp01;
-            }
-            this.actionsView.applyCallTransition(this.callToActionItem, this.isFragmentOpened, headerExtraHeight, f);
-            return;
-        }
+        this.actionsView.isAnimatingCallAction = false;
         if (this.callToActionItem.getVisibility() == 0) {
             this.callToActionItem.setVisibility(8);
         }

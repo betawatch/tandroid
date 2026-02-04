@@ -11042,9 +11042,10 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$4(Theme.ResourcesProvider resourcesProvider, View view) {
-            if (this.variantsButton.getAlpha() >= 1.0f && this.previewAttributes != null) {
-                new StarGiftPreviewSheet(getContext(), resourcesProvider, this.currentAccount, this.collectionTitle, this.previewAttributes, true).show();
+            if (this.variantsButton.getAlpha() < 1.0f || this.crafting || this.failed || this.previewAttributes == null) {
+                return;
             }
+            new StarGiftPreviewSheet(getContext(), resourcesProvider, this.currentAccount, this.collectionTitle, this.previewAttributes, true).show();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -11089,6 +11090,9 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             if (hintView2 != null) {
                 hintView2.hide();
                 this.currentHint = null;
+            }
+            if (this.crafting || this.failed) {
+                return;
             }
             View view2 = view.getParent() instanceof View ? (View) view.getParent() : null;
             float x = (view2 != null ? view2.getX() : 0.0f) + view.getX();
@@ -11263,6 +11267,11 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             int i = 0;
             this.failed = false;
             this.openCraftedGift = null;
+            HintView2 hintView2 = this.currentHint;
+            if (hintView2 != null) {
+                hintView2.hide();
+                this.currentHint = null;
+            }
             this.craftingSubtitleView.setText("");
             this.craftingChanceView.setText(LocaleController.formatString(R.string.GiftCraftProgressSuccessChance, AffiliateProgramFragment.percents(getGiftsSuccessChance())));
             int i2 = 0;
@@ -11328,6 +11337,11 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$playAnimation$11(final ArrayList arrayList, final TL_stars.StarGift starGift, final Runnable runnable) {
             int i;
+            HintView2 hintView2 = this.currentHint;
+            if (hintView2 != null) {
+                hintView2.hide();
+                this.currentHint = null;
+            }
             this.crafted = true;
             this.failed = starGift == null;
             this.craftedGift = starGift;
