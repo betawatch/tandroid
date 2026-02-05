@@ -3410,7 +3410,7 @@ public abstract class AlertsCreator {
         builder.setTopViewAspectRatio(-1.0f);
         builder.setTopView(frameLayout);
         builder.setTitle(LocaleController.getString(isChannelAndNotMegaGroup ? R.string.LeaveChannelTitle : R.string.LeaveGroupTitle));
-        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LeaveGroupNewOwnerText, UserObject.getUserName(user), UserObject.getUserName(currentUser))));
+        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(isChannelAndNotMegaGroup ? R.string.LeaveChannelNewOwnerText : R.string.LeaveGroupNewOwnerText, UserObject.getUserName(user), chat.title)));
         builder.setNegativeButton(LocaleController.getString(R.string.AppointNewOwner), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.AlertsCreator$$ExternalSyntheticLambda208
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i) {

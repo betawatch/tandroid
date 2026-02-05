@@ -2861,13 +2861,13 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
 
     @Override // org.telegram.ui.ActionBar.BaseFragment.AttachedSheet
     public boolean onAttachedBackPressed() {
-        lambda$openCrafting$8();
+        lambda$openCrafting$9();
         return true;
     }
 
     @Override // android.app.Dialog
     /* renamed from: onBackPressed */
-    public void lambda$openCrafting$8() {
+    public void lambda$openCrafting$9() {
         if (this.attachedFragment == null) {
             super.onBackPressed();
         } else {

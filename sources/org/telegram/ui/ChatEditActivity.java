@@ -591,14 +591,14 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:144:0x0776  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x07f7  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0842  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x087c  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x08a6  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x08b3  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x08c0  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x08e6  */
+    /* JADX WARN: Removed duplicated region for block: B:144:0x0778  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x07f9  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0844  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x087e  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x08a8  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x08b5  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x08c2  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x08e8  */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1109,7 +1109,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
             i = -1;
             i2 = -2;
         } else {
-            TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context);
+            TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
             this.settingsSectionCell = textInfoPrivacyCell;
             if (this.forumsCell != null) {
                 textInfoPrivacyCell.setText(LocaleController.getString(R.string.ForumToggleDescription));
@@ -1455,7 +1455,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                 sectionsLinearLayout.addView(shadowSectionCell2, LayoutHelper.createLinear(-1, -2));
             }
         } else if (this.currentUser != null) {
-            this.botInfoCell = new TextInfoPrivacyCell(context);
+            this.botInfoCell = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
             String string = LocaleController.getString(R.string.BotManageInfo);
             SpannableString valueOf = SpannableString.valueOf(string);
             int indexOf = string.indexOf("@BotFather");
@@ -1489,7 +1489,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                     ChatEditActivity.this.lambda$createView$46(view2);
                 }
             });
-            TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(context);
+            TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
             this.verifyInfoCell = textInfoPrivacyCell2;
             textInfoPrivacyCell2.setFixedSize(12);
             sectionsLinearLayout.addView(this.verifyInfoCell, LayoutHelper.createLinear(-1, -2));
@@ -1568,7 +1568,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                     textCell35.setTextAndValueAndIcon((CharSequence) string2, charSequence2, R.drawable.menu_premium_main, false);
                 }
                 this.starsBalanceCell.setVisibility(botStarsController.botHasStars(this.userId) ? 0 : 8);
-                TextInfoPrivacyCell textInfoPrivacyCell4 = new TextInfoPrivacyCell(context, getResourceProvider());
+                TextInfoPrivacyCell textInfoPrivacyCell4 = new TextInfoPrivacyCell(context, 12, getResourceProvider());
                 textInfoPrivacyCell4.setTag(R.id.fit_width_tag, 1);
                 sectionsLinearLayout.addView(textInfoPrivacyCell4, LayoutHelper.createLinear(-1, 8));
                 this.balanceContainer.setVisibility((this.starsBalanceCell.getVisibility() == 0 || this.tonBalanceCell.getVisibility() == 0) ? 0 : 8);

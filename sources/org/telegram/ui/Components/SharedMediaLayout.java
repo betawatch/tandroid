@@ -5063,6 +5063,7 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             scrollSlidingTextTabStripInner.setInitialTabId(i);
             this.initialTab = -1;
         }
+        scrollSlidingTextTabStripInner.animationDuration = 320L;
         scrollSlidingTextTabStripInner.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundWhite));
         scrollSlidingTextTabStripInner.setColors(Theme.key_profile_tabSelectedLine, Theme.key_profile_tabSelectedText, Theme.key_profile_tabText, Theme.key_profile_tabSelector);
         scrollSlidingTextTabStripInner.setDelegate(new 38());

@@ -323,7 +323,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         StarGiftSheet.TopView topView = new StarGiftSheet.TopView(context, resourcesProvider, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                StarGiftPreviewSheet.this.lambda$openCrafting$8();
+                StarGiftPreviewSheet.this.lambda$openCrafting$9();
             }
         }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener

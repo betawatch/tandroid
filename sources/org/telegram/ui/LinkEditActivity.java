@@ -114,7 +114,7 @@ public class LinkEditActivity extends BaseFragment {
         this.chatId = j;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0547  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0542  */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -271,10 +271,9 @@ public class LinkEditActivity extends BaseFragment {
                 }
             });
             sectionsLinearLayout.addView(this.approveCell, LayoutHelper.createLinear(-1, 56));
-            TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context);
+            TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
             this.approveHintCell = textInfoPrivacyCell;
-            textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(context, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
-            this.approveHintCell.setText(LocaleController.getString(R.string.ApproveNewMembersDescription));
+            textInfoPrivacyCell.setText(LocaleController.getString(R.string.ApproveNewMembersDescription));
             sectionsLinearLayout.addView(this.approveHintCell);
             TLRPC.ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(this.chatId);
             if ((this.inviteToEdit == null && ChatObject.isChannelAndNotMegaGroup(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(this.chatId))) && chatFull != null && chatFull.paid_media_allowed) || ((tL_chatInviteExported = this.inviteToEdit) != null && tL_chatInviteExported.subscription_pricing != null)) {
@@ -300,6 +299,7 @@ public class LinkEditActivity extends BaseFragment {
                 this.subPriceView = textView3;
                 textView3.setTextSize(1, 16.0f);
                 this.subPriceView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText3));
+                i = -1;
                 EditTextCell editTextCell = new EditTextCell(context, LocaleController.getString(getConnectionsManager().isTestBackend() ? R.string.RequireMonthlyFeePriceHintTest5Minutes : R.string.RequireMonthlyFeePriceHint), false, false, -1, this.resourceProvider) { // from class: org.telegram.ui.LinkEditActivity.5
                     private boolean ignoreTextChanged;
 
@@ -338,10 +338,9 @@ public class LinkEditActivity extends BaseFragment {
                 leftDrawable.setScaleY(0.83f);
                 leftDrawable.setTranslationY(AndroidUtilities.dp(-1.0f));
                 leftDrawable.setTranslationX(AndroidUtilities.dp(1.0f));
-                i = -1;
                 sectionsLinearLayout.addView(this.subEditPriceCell, LayoutHelper.createLinear(-1, 48));
                 this.subEditPriceCell.setVisibility(8);
-                TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(context);
+                TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
                 this.subInfoCell = textInfoPrivacyCell2;
                 if (this.inviteToEdit != null) {
                     textInfoPrivacyCell2.setText(LocaleController.getString(R.string.RequireMonthlyFeeInfoFrozen));
@@ -387,7 +386,7 @@ public class LinkEditActivity extends BaseFragment {
                 });
                 resetDates();
                 sectionsLinearLayout.addView(this.timeEditText, LayoutHelper.createLinear(i, 50));
-                TextInfoPrivacyCell textInfoPrivacyCell3 = new TextInfoPrivacyCell(context);
+                TextInfoPrivacyCell textInfoPrivacyCell3 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
                 this.divider = textInfoPrivacyCell3;
                 textInfoPrivacyCell3.setText(LocaleController.getString(R.string.TimeLimitHelp));
                 sectionsLinearLayout.addView(this.divider);
@@ -457,7 +456,7 @@ public class LinkEditActivity extends BaseFragment {
                     }
                 });
                 sectionsLinearLayout.addView(this.usesEditText, LayoutHelper.createLinear(i, 50));
-                TextInfoPrivacyCell textInfoPrivacyCell4 = new TextInfoPrivacyCell(context);
+                TextInfoPrivacyCell textInfoPrivacyCell4 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
                 this.dividerUses = textInfoPrivacyCell4;
                 textInfoPrivacyCell4.setText(LocaleController.getString(R.string.UsesLimitHelp));
                 sectionsLinearLayout.addView(this.dividerUses);
@@ -500,12 +499,9 @@ public class LinkEditActivity extends BaseFragment {
                 editText4.setTextColor(Theme.getColor(i9));
                 this.nameEditText.setTextSize(1, 16.0f);
                 sectionsLinearLayout.addView(this.nameEditText, LayoutHelper.createLinear(i, 50));
-                TextInfoPrivacyCell textInfoPrivacyCell5 = new TextInfoPrivacyCell(context);
+                TextInfoPrivacyCell textInfoPrivacyCell5 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
                 this.dividerName = textInfoPrivacyCell5;
-                int i10 = R.drawable.greydivider_bottom;
-                int i11 = Theme.key_windowBackgroundGrayShadow;
-                textInfoPrivacyCell5.setBackground(Theme.getThemedDrawableByKey(context, i10, i11));
-                this.dividerName.setText(LocaleController.getString(R.string.LinkNameHelp));
+                textInfoPrivacyCell5.setText(LocaleController.getString(R.string.LinkNameHelp));
                 sectionsLinearLayout.addView(this.dividerName);
                 if (this.type == 1) {
                     TextSettingsCell textSettingsCell = new TextSettingsCell(context);
@@ -524,8 +520,8 @@ public class LinkEditActivity extends BaseFragment {
                 sizeNotifierFrameLayout.addView(this.scrollView, LayoutHelper.createFrame(i, -1.0f));
                 FrameLayout frameLayout = new FrameLayout(context);
                 this.buttonLayout = frameLayout;
-                int i12 = Theme.key_windowBackgroundGray;
-                frameLayout.setBackgroundColor(getThemedColor(i12));
+                int i10 = Theme.key_windowBackgroundGray;
+                frameLayout.setBackgroundColor(getThemedColor(i10));
                 new KeyboardNotifier(sizeNotifierFrameLayout, new Utilities.Callback() { // from class: org.telegram.ui.LinkEditActivity$$ExternalSyntheticLambda9
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
@@ -535,15 +531,15 @@ public class LinkEditActivity extends BaseFragment {
                 this.buttonLayout.addView(this.buttonTextView, LayoutHelper.createFrame(-1, 48.0f, 87, 16.0f, 15.0f, 16.0f, 16.0f));
                 sizeNotifierFrameLayout.addView(this.buttonLayout, LayoutHelper.createFrame(i, i2, 80));
                 HeaderCell headerCell3 = this.timeHeaderCell;
-                int i13 = Theme.key_windowBackgroundWhite;
-                headerCell3.setBackgroundColor(Theme.getColor(i13));
-                this.timeChooseView.setBackgroundColor(Theme.getColor(i13));
-                this.timeEditText.setBackgroundColor(Theme.getColor(i13));
-                this.usesHeaderCell.setBackgroundColor(Theme.getColor(i13));
-                this.usesChooseView.setBackgroundColor(Theme.getColor(i13));
-                this.usesEditText.setBackgroundColor(Theme.getColor(i13));
-                this.nameEditText.setBackgroundColor(Theme.getColor(i13));
-                sizeNotifierFrameLayout.setBackgroundColor(Theme.getColor(i12));
+                int i11 = Theme.key_windowBackgroundWhite;
+                headerCell3.setBackgroundColor(Theme.getColor(i11));
+                this.timeChooseView.setBackgroundColor(Theme.getColor(i11));
+                this.timeEditText.setBackgroundColor(Theme.getColor(i11));
+                this.usesHeaderCell.setBackgroundColor(Theme.getColor(i11));
+                this.usesChooseView.setBackgroundColor(Theme.getColor(i11));
+                this.usesEditText.setBackgroundColor(Theme.getColor(i11));
+                this.nameEditText.setBackgroundColor(Theme.getColor(i11));
+                sizeNotifierFrameLayout.setBackgroundColor(Theme.getColor(i10));
                 this.buttonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LinkEditActivity$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -551,8 +547,6 @@ public class LinkEditActivity extends BaseFragment {
                     }
                 });
                 this.buttonTextView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-                this.dividerUses.setBackground(Theme.getThemedDrawableByKey(context, i10, i11));
-                this.divider.setBackground(Theme.getThemedDrawableByKey(context, R.drawable.greydivider, i11));
                 this.buttonTextView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(24.0f), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
                 this.usesEditText.setTextColor(Theme.getColor(i9));
                 this.usesEditText.setHintTextColor(Theme.getColor(i8));
@@ -566,8 +560,8 @@ public class LinkEditActivity extends BaseFragment {
                 return sizeNotifierFrameLayout;
             }
         }
-        i = -1;
         i2 = -2;
+        i = -1;
         HeaderCell headerCell4 = new HeaderCell(context);
         this.timeHeaderCell = headerCell4;
         headerCell4.setText(LocaleController.getString(R.string.LimitByPeriod));
@@ -600,7 +594,7 @@ public class LinkEditActivity extends BaseFragment {
         });
         resetDates();
         sectionsLinearLayout.addView(this.timeEditText, LayoutHelper.createLinear(i, 50));
-        TextInfoPrivacyCell textInfoPrivacyCell32 = new TextInfoPrivacyCell(context);
+        TextInfoPrivacyCell textInfoPrivacyCell32 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
         this.divider = textInfoPrivacyCell32;
         textInfoPrivacyCell32.setText(LocaleController.getString(R.string.TimeLimitHelp));
         sectionsLinearLayout.addView(this.divider);
@@ -670,7 +664,7 @@ public class LinkEditActivity extends BaseFragment {
             }
         });
         sectionsLinearLayout.addView(this.usesEditText, LayoutHelper.createLinear(i, 50));
-        TextInfoPrivacyCell textInfoPrivacyCell42 = new TextInfoPrivacyCell(context);
+        TextInfoPrivacyCell textInfoPrivacyCell42 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
         this.dividerUses = textInfoPrivacyCell42;
         textInfoPrivacyCell42.setText(LocaleController.getString(R.string.UsesLimitHelp));
         sectionsLinearLayout.addView(this.dividerUses);
@@ -713,20 +707,17 @@ public class LinkEditActivity extends BaseFragment {
         editText42.setTextColor(Theme.getColor(i92));
         this.nameEditText.setTextSize(1, 16.0f);
         sectionsLinearLayout.addView(this.nameEditText, LayoutHelper.createLinear(i, 50));
-        TextInfoPrivacyCell textInfoPrivacyCell52 = new TextInfoPrivacyCell(context);
+        TextInfoPrivacyCell textInfoPrivacyCell52 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
         this.dividerName = textInfoPrivacyCell52;
-        int i102 = R.drawable.greydivider_bottom;
-        int i112 = Theme.key_windowBackgroundGrayShadow;
-        textInfoPrivacyCell52.setBackground(Theme.getThemedDrawableByKey(context, i102, i112));
-        this.dividerName.setText(LocaleController.getString(R.string.LinkNameHelp));
+        textInfoPrivacyCell52.setText(LocaleController.getString(R.string.LinkNameHelp));
         sectionsLinearLayout.addView(this.dividerName);
         if (this.type == 1) {
         }
         sizeNotifierFrameLayout.addView(this.scrollView, LayoutHelper.createFrame(i, -1.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.buttonLayout = frameLayout2;
-        int i122 = Theme.key_windowBackgroundGray;
-        frameLayout2.setBackgroundColor(getThemedColor(i122));
+        int i102 = Theme.key_windowBackgroundGray;
+        frameLayout2.setBackgroundColor(getThemedColor(i102));
         new KeyboardNotifier(sizeNotifierFrameLayout, new Utilities.Callback() { // from class: org.telegram.ui.LinkEditActivity$$ExternalSyntheticLambda9
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
@@ -736,15 +727,15 @@ public class LinkEditActivity extends BaseFragment {
         this.buttonLayout.addView(this.buttonTextView, LayoutHelper.createFrame(-1, 48.0f, 87, 16.0f, 15.0f, 16.0f, 16.0f));
         sizeNotifierFrameLayout.addView(this.buttonLayout, LayoutHelper.createFrame(i, i2, 80));
         HeaderCell headerCell32 = this.timeHeaderCell;
-        int i132 = Theme.key_windowBackgroundWhite;
-        headerCell32.setBackgroundColor(Theme.getColor(i132));
-        this.timeChooseView.setBackgroundColor(Theme.getColor(i132));
-        this.timeEditText.setBackgroundColor(Theme.getColor(i132));
-        this.usesHeaderCell.setBackgroundColor(Theme.getColor(i132));
-        this.usesChooseView.setBackgroundColor(Theme.getColor(i132));
-        this.usesEditText.setBackgroundColor(Theme.getColor(i132));
-        this.nameEditText.setBackgroundColor(Theme.getColor(i132));
-        sizeNotifierFrameLayout.setBackgroundColor(Theme.getColor(i122));
+        int i112 = Theme.key_windowBackgroundWhite;
+        headerCell32.setBackgroundColor(Theme.getColor(i112));
+        this.timeChooseView.setBackgroundColor(Theme.getColor(i112));
+        this.timeEditText.setBackgroundColor(Theme.getColor(i112));
+        this.usesHeaderCell.setBackgroundColor(Theme.getColor(i112));
+        this.usesChooseView.setBackgroundColor(Theme.getColor(i112));
+        this.usesEditText.setBackgroundColor(Theme.getColor(i112));
+        this.nameEditText.setBackgroundColor(Theme.getColor(i112));
+        sizeNotifierFrameLayout.setBackgroundColor(Theme.getColor(i102));
         this.buttonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LinkEditActivity$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -752,8 +743,6 @@ public class LinkEditActivity extends BaseFragment {
             }
         });
         this.buttonTextView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-        this.dividerUses.setBackground(Theme.getThemedDrawableByKey(context, i102, i112));
-        this.divider.setBackground(Theme.getThemedDrawableByKey(context, R.drawable.greydivider, i112));
         this.buttonTextView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(24.0f), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
         this.usesEditText.setTextColor(Theme.getColor(i92));
         this.usesEditText.setHintTextColor(Theme.getColor(i82));
@@ -1335,7 +1324,6 @@ public class LinkEditActivity extends BaseFragment {
         this.usesChooseView.setVisibility(z ? 0 : 8);
         this.usesEditText.setVisibility(z ? 0 : 8);
         this.dividerUses.setVisibility(z ? 0 : 8);
-        this.divider.setBackground(Theme.getThemedDrawableByKey(getParentActivity(), z ? R.drawable.greydivider : R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -1381,7 +1369,6 @@ public class LinkEditActivity extends BaseFragment {
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_windowBackgroundGrayShadow));
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_featuredStickers_addButton));
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_featuredStickers_addButtonPressed));
         arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_windowBackgroundWhiteBlackText));
@@ -1395,30 +1382,24 @@ public class LinkEditActivity extends BaseFragment {
     public /* synthetic */ void lambda$getThemeDescriptions$16() {
         TextInfoPrivacyCell textInfoPrivacyCell = this.dividerUses;
         if (textInfoPrivacyCell != null) {
-            Context context = textInfoPrivacyCell.getContext();
-            TextInfoPrivacyCell textInfoPrivacyCell2 = this.dividerUses;
-            int i = R.drawable.greydivider_bottom;
-            int i2 = Theme.key_windowBackgroundGrayShadow;
-            textInfoPrivacyCell2.setBackgroundDrawable(Theme.getThemedDrawableByKey(context, i, i2));
-            this.divider.setBackgroundDrawable(Theme.getThemedDrawableByKey(context, R.drawable.greydivider, i2));
+            textInfoPrivacyCell.getContext();
             this.buttonTextView.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(6.0f), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
             EditText editText = this.usesEditText;
-            int i3 = Theme.key_windowBackgroundWhiteBlackText;
-            editText.setTextColor(Theme.getColor(i3));
+            int i = Theme.key_windowBackgroundWhiteBlackText;
+            editText.setTextColor(Theme.getColor(i));
             EditText editText2 = this.usesEditText;
-            int i4 = Theme.key_windowBackgroundWhiteGrayText;
-            editText2.setHintTextColor(Theme.getColor(i4));
-            this.timeEditText.setTextColor(Theme.getColor(i3));
-            this.timeEditText.setHintTextColor(Theme.getColor(i4));
+            int i2 = Theme.key_windowBackgroundWhiteGrayText;
+            editText2.setHintTextColor(Theme.getColor(i2));
+            this.timeEditText.setTextColor(Theme.getColor(i));
+            this.timeEditText.setHintTextColor(Theme.getColor(i2));
             this.buttonTextView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
             TextSettingsCell textSettingsCell = this.revokeLink;
             if (textSettingsCell != null) {
                 textSettingsCell.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
             }
             this.createTextView.setTextColor(Theme.getColor(Theme.key_actionBarDefaultTitle));
-            this.dividerName.setBackground(Theme.getThemedDrawableByKey(context, i, i2));
-            this.nameEditText.setTextColor(Theme.getColor(i3));
-            this.nameEditText.setHintTextColor(Theme.getColor(i4));
+            this.nameEditText.setTextColor(Theme.getColor(i));
+            this.nameEditText.setHintTextColor(Theme.getColor(i2));
         }
     }
 }

@@ -721,7 +721,7 @@ public class SelectChatUserSheet extends BottomSheetWithRecyclerListView {
             if (inputCheckPasswordSRP == null) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this.context);
                 builder.setTitle(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(this.chat) ? R.string.EditAdminChannelTransfer : R.string.EditAdminGroupTransfer));
-                builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.EditAdminTransferReadyAlertText, this.chat.title, UserObject.getFirstName(user))));
+                builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.EditAdminTransferReadyAlertText2, this.chat.title, UserObject.getFirstName(user))));
                 builder.setPositiveButton(LocaleController.getString(R.string.EditAdminTransferChangeOwner), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.SelectChatUserSheet$$ExternalSyntheticLambda0
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i2) {

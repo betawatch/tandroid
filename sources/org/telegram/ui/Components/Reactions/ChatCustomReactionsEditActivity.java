@@ -146,8 +146,8 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
         checkMaxCustomReactions(false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:50:0x039a A[EDGE_INSN: B:50:0x039a->B:51:0x039a BREAK  A[LOOP:1: B:39:0x0347->B:53:0x0347], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0347 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x03a2 A[EDGE_INSN: B:50:0x03a2->B:51:0x03a2 BREAK  A[LOOP:1: B:39:0x034f->B:53:0x034f], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x034f A[SYNTHETIC] */
     @Override // org.telegram.ui.ActionBar.BaseFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -247,7 +247,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
             }
         });
         this.contentLayout.addView(this.enableReactionsCell, LayoutHelper.createLinear(-1, -2));
-        TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context);
+        TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
         int i = Theme.key_windowBackgroundWhiteGrayText4;
         textInfoPrivacyCell.setTextColor(Theme.getColor(i));
         textInfoPrivacyCell.setTopPadding(12);
@@ -295,7 +295,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
         layoutTransition.setDuration(200L);
         layoutTransition.enableTransitionType(4);
         this.switchLayout.setLayoutTransition(layoutTransition);
-        TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(context);
+        TextInfoPrivacyCell textInfoPrivacyCell2 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
         textInfoPrivacyCell2.setTextColor(Theme.getColor(i));
         textInfoPrivacyCell2.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ReactionCreateOwnPack), Theme.key_chat_messageLinkIn, 0, new Runnable() { // from class: org.telegram.ui.Components.Reactions.ChatCustomReactionsEditActivity$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
@@ -325,7 +325,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
             }
         });
         this.switchLayout.addView(this.slideView, LayoutHelper.createLinear(-1, -2));
-        TextInfoPrivacyCell textInfoPrivacyCell3 = new TextInfoPrivacyCell(context);
+        TextInfoPrivacyCell textInfoPrivacyCell3 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
         textInfoPrivacyCell3.setTopPadding(12);
         textInfoPrivacyCell3.setBottomPadding(16);
         textInfoPrivacyCell3.setText(LocaleController.getString(R.string.MaximumReactionsInfo));
@@ -341,7 +341,7 @@ public class ChatCustomReactionsEditActivity extends BaseFragment implements Not
                     ChatCustomReactionsEditActivity.this.lambda$createView$5(view);
                 }
             });
-            TextInfoPrivacyCell textInfoPrivacyCell4 = new TextInfoPrivacyCell(context);
+            TextInfoPrivacyCell textInfoPrivacyCell4 = new TextInfoPrivacyCell(context, 12, this.resourceProvider);
             textInfoPrivacyCell4.setTextColor(Theme.getColor(i));
             textInfoPrivacyCell4.setTopPadding(12);
             textInfoPrivacyCell4.setBottomPadding(70);

@@ -284,7 +284,7 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             StarGiftSheet.TopView topView = new StarGiftSheet.TopView(context, resourcesProvider, new Runnable() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AuctionJoinSheet.this.lambda$openCrafting$8();
+                    AuctionJoinSheet.this.lambda$openCrafting$9();
                 }
             }, new View.OnClickListener() { // from class: org.telegram.ui.Gifts.AuctionJoinSheet$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener

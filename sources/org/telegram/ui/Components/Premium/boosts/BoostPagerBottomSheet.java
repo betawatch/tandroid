@@ -246,7 +246,7 @@ public class BoostPagerBottomSheet extends BottomSheet {
         selectorBottomSheet.setOnCloseClick(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostPagerBottomSheet$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BoostPagerBottomSheet.this.lambda$openCrafting$8();
+                BoostPagerBottomSheet.this.lambda$openCrafting$9();
             }
         });
         loadData(z2);
@@ -326,7 +326,7 @@ public class BoostPagerBottomSheet extends BottomSheet {
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
     /* renamed from: onBackPressed */
-    public void lambda$openCrafting$8() {
+    public void lambda$openCrafting$9() {
         if (this.viewPager.getCurrentPosition() > 0) {
             if (this.rightSheet.hasChanges()) {
                 return;
@@ -335,7 +335,7 @@ public class BoostPagerBottomSheet extends BottomSheet {
             this.viewPager.scrollToPosition(0);
             return;
         }
-        super.lambda$openCrafting$8();
+        super.lambda$openCrafting$9();
     }
 
     private boolean isLightStatusBar() {

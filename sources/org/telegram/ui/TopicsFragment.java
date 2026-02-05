@@ -4710,7 +4710,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             return;
         }
         int dp = AndroidUtilities.dp(48.0f);
-        int dp2 = AndroidUtilities.dp(44.0f) + ((int) this.topPanelLayout.getAnimatedHeightWithPadding(AndroidUtilities.dp(14.0f)));
+        int dp2 = AndroidUtilities.dp(48.0f) + ((int) this.topPanelLayout.getAnimatedHeightWithPadding(AndroidUtilities.dp(14.0f)));
         DialogsActivity dialogsActivity = this.parentDialogsActivity;
         View view = dialogsActivity != null ? dialogsActivity.fragmentView : this.fragmentView;
         ActionBar actionBar = dialogsActivity != null ? dialogsActivity.getActionBar() : this.actionBar;

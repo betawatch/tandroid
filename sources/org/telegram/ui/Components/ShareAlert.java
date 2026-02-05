@@ -1164,7 +1164,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         this.topicsBackActionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.ShareAlert.8
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i9) {
-                ShareAlert.this.lambda$openCrafting$8();
+                ShareAlert.this.lambda$openCrafting$9();
             }
         });
         this.topicsBackActionBar.setVisibility(8);
@@ -3085,7 +3085,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
     /* renamed from: onBackPressed */
-    public void lambda$openCrafting$8() {
+    public void lambda$openCrafting$9() {
         if (this.selectedTopicDialog != null) {
             collapseTopics();
             return;
@@ -3094,7 +3094,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         if (editTextEmoji != null && editTextEmoji.isPopupShowing()) {
             this.commentTextView.hidePopup(true);
         } else {
-            super.lambda$openCrafting$8();
+            super.lambda$openCrafting$9();
         }
     }
 

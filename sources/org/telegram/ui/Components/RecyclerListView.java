@@ -76,6 +76,7 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
     private static final float[] radii;
     private static final Paint sectionBackgroundPaint;
     private static final Path sectionBackgroundPath;
+    private static final Paint sectionBackgroundStrokePaint;
     private View.AccessibilityDelegate accessibilityDelegate;
     private boolean accessibilityEnabled;
     private int activeTouches;
@@ -284,6 +285,7 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
         }
         initializeScrollbars = method;
         sectionBackgroundPaint = new Paint(1);
+        sectionBackgroundStrokePaint = new Paint(1);
         sectionBackgroundPath = new Path();
         radii = new float[8];
     }
@@ -1977,7 +1979,14 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
     }
 
     public void setListSelectorColor(Integer num) {
-        Theme.setSelectorDrawableColor(this.selectorDrawable, num == null ? getThemedColor(Theme.key_listSelector) : num.intValue(), true);
+        int intValue;
+        Drawable drawable = this.selectorDrawable;
+        if (num == null) {
+            intValue = getThemedColor(hasSections() ? Theme.key_settings_listSelector : Theme.key_listSelector);
+        } else {
+            intValue = num.intValue();
+        }
+        Theme.setSelectorDrawableColor(drawable, intValue, true);
     }
 
     public Integer getSelectorColor(int i) {
@@ -3266,6 +3275,7 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
     }
 
     public void setSections(Utilities.CallbackReturn callbackReturn, Utilities.CallbackReturn callbackReturn2, int i, float f, Utilities.Callback5 callback5, boolean z) {
+        setSelectorDrawableColor(getThemedColor(Theme.key_settings_listSelector));
         this.isViewTypeSection = callbackReturn2;
         this.sectionRadius = f;
         this.sectionRadiusTop = new float[]{f, f, f, f, 0.0f, 0.0f, 0.0f, 0.0f};
@@ -3487,11 +3497,21 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
     }
 
     public static void drawBackgroundRect(Canvas canvas, RectF rectF, float f, float f2, float f3, Theme.ResourcesProvider resourcesProvider) {
-        Paint paint = sectionBackgroundPaint;
-        paint.setShadowLayer(AndroidUtilities.dpf2(2.0f), 0.0f, AndroidUtilities.dpf2(0.33f), Theme.multAlpha(285212672, f3));
-        paint.setColor(Theme.multAlpha(Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider), f3));
+        if (SharedConfig.shadowsInSections) {
+            Paint paint = sectionBackgroundStrokePaint;
+            paint.setShadowLayer(AndroidUtilities.dpf2(0.33f), 0.0f, 0.0f, Theme.multAlpha(201326592, f3));
+            paint.setColor(0);
+            sectionBackgroundPaint.setShadowLayer(AndroidUtilities.dpf2(2.0f), 0.0f, AndroidUtilities.dpf2(0.33f), Theme.multAlpha(167772160, f3));
+        } else {
+            sectionBackgroundPaint.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
+        }
+        Paint paint2 = sectionBackgroundPaint;
+        paint2.setColor(Theme.multAlpha(Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider), f3));
         if (f == f2) {
-            canvas.drawRoundRect(rectF, f, f, paint);
+            if (SharedConfig.shadowsInSections) {
+                canvas.drawRoundRect(rectF, f, f, sectionBackgroundStrokePaint);
+            }
+            canvas.drawRoundRect(rectF, f, f, paint2);
             return;
         }
         Path path = sectionBackgroundPath;
@@ -3506,7 +3526,10 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
         fArr[5] = f2;
         fArr[4] = f2;
         path.addRoundRect(rectF, fArr, Path.Direction.CW);
-        canvas.drawPath(path, paint);
+        if (SharedConfig.shadowsInSections) {
+            canvas.drawPath(path, sectionBackgroundStrokePaint);
+        }
+        canvas.drawPath(path, paint2);
     }
 
     public void drawBackgroundRect(Canvas canvas, RectF rectF, float f, float f2, float f3) {

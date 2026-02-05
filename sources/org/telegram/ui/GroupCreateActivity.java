@@ -684,7 +684,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                     GroupCreateActivity.this.maxSize = AndroidUtilities.dp(56.0f);
                 }
                 measureChildWithMargins(((BaseFragment) GroupCreateActivity.this).actionBar, i4, 0, i5, 0);
-                ((ViewGroup.MarginLayoutParams) GroupCreateActivity.this.emptyView.getLayoutParams()).topMargin = ((BaseFragment) GroupCreateActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(44.0f);
+                ((ViewGroup.MarginLayoutParams) GroupCreateActivity.this.emptyView.getLayoutParams()).topMargin = ((BaseFragment) GroupCreateActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
                 ((ViewGroup.MarginLayoutParams) GroupCreateActivity.this.headerShadowView.getLayoutParams()).topMargin = ((BaseFragment) GroupCreateActivity.this).actionBar.getMeasuredHeight();
                 ((ViewGroup.MarginLayoutParams) GroupCreateActivity.this.searchField.getLayoutParams()).topMargin = ((BaseFragment) GroupCreateActivity.this).actionBar.getMeasuredHeight();
                 ((ViewGroup.MarginLayoutParams) GroupCreateActivity.this.scrollView.getLayoutParams()).topMargin = ((BaseFragment) GroupCreateActivity.this).actionBar.getMeasuredHeight();
@@ -692,7 +692,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
                 GroupCreateActivity groupCreateActivity = GroupCreateActivity.this;
                 layoutParams.height = groupCreateActivity.maxSize;
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) groupCreateActivity.actionBarBackgroundView.getLayoutParams();
-                int measuredHeight = ((BaseFragment) GroupCreateActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(49.0f);
+                int measuredHeight = ((BaseFragment) GroupCreateActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(53.0f);
                 GroupCreateActivity groupCreateActivity2 = GroupCreateActivity.this;
                 marginLayoutParams.height = measuredHeight + groupCreateActivity2.maxSize;
                 groupCreateActivity2.checkUi_listViewPadding();
@@ -940,7 +940,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             @Override // android.view.View
             protected void dispatchDraw(Canvas canvas) {
                 super.dispatchDraw(canvas);
-                int dp = AndroidUtilities.dp(44.0f) + ((int) GroupCreateActivity.this.animatorSelectorContainerHeight.getFactor());
+                int dp = AndroidUtilities.dp(48.0f) + ((int) GroupCreateActivity.this.animatorSelectorContainerHeight.getFactor());
                 this.paint.setColor(GroupCreateActivity.this.getThemedColor(Theme.key_actionBarDefault));
                 this.rectTmp.set(0.0f, 0.0f, getMeasuredWidth(), ((BaseFragment) GroupCreateActivity.this).actionBar.getMeasuredHeight() + dp);
                 GroupCreateActivity.this.drawBlurRect(canvas, this.rectTmp, this.paint);
@@ -2461,7 +2461,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkUi_listViewPadding() {
-        this.listView.setPadding(0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP + 44) + this.actionBar.getMeasuredHeight() + ((int) this.animatorSelectorContainerHeight.getFactor()), 0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP) + this.navigationBarHeight + (this.isCall ? AndroidUtilities.dp(76.0f) : 0));
+        this.listView.setPadding(0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP + 48) + this.actionBar.getMeasuredHeight() + ((int) this.animatorSelectorContainerHeight.getFactor()), 0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP) + this.navigationBarHeight + (this.isCall ? AndroidUtilities.dp(76.0f) : 0));
         this.emptyView.setPadding(0, 0, 0, this.navigationBarHeight);
     }
 
@@ -2472,7 +2472,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkUi_headerShadowY() {
-        this.headerShadowView.setTranslationY(AndroidUtilities.dp(44.0f) + this.animatorSelectorContainerHeight.getFactor());
+        this.headerShadowView.setTranslationY(AndroidUtilities.dp(48.0f) + this.animatorSelectorContainerHeight.getFactor());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2500,7 +2500,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             this.listView.setClipBounds(null);
             return;
         }
-        this.tmpClipRect.set(0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP + 44) + this.actionBar.getMeasuredHeight() + ((int) this.animatorSelectorContainerHeight.getFactor()), this.listView.getMeasuredWidth(), (this.listView.getMeasuredHeight() - AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP)) - ((int) ((this.navigationBarHeight + AndroidUtilities.dp(76.0f)) * this.animatorCallButtonsVisible.getFloatValue())));
+        this.tmpClipRect.set(0, AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP + 48) + this.actionBar.getMeasuredHeight() + ((int) this.animatorSelectorContainerHeight.getFactor()), this.listView.getMeasuredWidth(), (this.listView.getMeasuredHeight() - AndroidUtilities.dp(this.ADDITIONAL_LIST_HEIGHT_DP)) - ((int) ((this.navigationBarHeight + AndroidUtilities.dp(76.0f)) * this.animatorCallButtonsVisible.getFloatValue())));
         this.listView.setClipBounds(this.tmpClipRect);
     }
 
@@ -2510,7 +2510,7 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
             return;
         }
         int dp = AndroidUtilities.dp(48.0f);
-        this.iBlur3PositionActionBar.set(0.0f, 0.0f, this.fragmentView.getMeasuredWidth(), this.actionBar.getMeasuredHeight() + AndroidUtilities.dp(44.0f) + this.maxSize);
+        this.iBlur3PositionActionBar.set(0.0f, 0.0f, this.fragmentView.getMeasuredWidth(), this.actionBar.getMeasuredHeight() + AndroidUtilities.dp(48.0f) + this.maxSize);
         float f = -dp;
         this.iBlur3PositionActionBar.inset(0.0f, f);
         if (this.buttonsContainer != null) {

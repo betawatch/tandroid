@@ -276,7 +276,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             Adapter adapter = new Adapter(context, ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider, this.searchField, new Runnable() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StoryPrivacyBottomSheet.this.lambda$openCrafting$8();
+                    StoryPrivacyBottomSheet.this.lambda$openCrafting$9();
                 }
             });
             this.adapter = adapter;
@@ -420,7 +420,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             if (this.pageType == 0) {
                 StoryPrivacyBottomSheet.this.lambda$new$0();
             } else {
-                StoryPrivacyBottomSheet.this.lambda$openCrafting$8();
+                StoryPrivacyBottomSheet.this.lambda$openCrafting$9();
             }
         }
 
@@ -3169,13 +3169,13 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
     /* renamed from: onBackPressed */
-    public void lambda$openCrafting$8() {
+    public void lambda$openCrafting$9() {
         if (this.viewPager.getCurrentPosition() > 0) {
             closeKeyboard();
             this.viewPager.scrollToPosition(r0.getCurrentPosition() - 1);
             return;
         }
-        super.lambda$openCrafting$8();
+        super.lambda$openCrafting$9();
     }
 
     @Override // org.telegram.ui.ActionBar.BottomSheet

@@ -231,6 +231,7 @@ public class RecyclerAnimationScrollHelper {
                 }
                 height = (this.val$scrollDown ? -i9 : i10 - RecyclerAnimationScrollHelper.this.recyclerView.getHeight()) + i14;
             }
+            final int paddingBottom = RecyclerAnimationScrollHelper.this.recyclerView.getPaddingBottom();
             if (RecyclerAnimationScrollHelper.this.animator != null) {
                 RecyclerAnimationScrollHelper.this.animator.removeAllListeners();
                 RecyclerAnimationScrollHelper.this.animator.cancel();
@@ -243,7 +244,7 @@ public class RecyclerAnimationScrollHelper {
             valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.RecyclerAnimationScrollHelper$1$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    RecyclerAnimationScrollHelper.1.this.lambda$onLayoutChange$0(arrayList2, z2, i16, arrayList, valueAnimator2);
+                    RecyclerAnimationScrollHelper.1.this.lambda$onLayoutChange$0(arrayList2, z2, i16, paddingBottom, arrayList, valueAnimator2);
                 }
             });
             RecyclerAnimationScrollHelper.this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.RecyclerAnimationScrollHelper.1.1
@@ -327,11 +328,11 @@ public class RecyclerAnimationScrollHelper {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onLayoutChange$0(ArrayList arrayList, boolean z, int i, ArrayList arrayList2, ValueAnimator valueAnimator) {
+        public /* synthetic */ void lambda$onLayoutChange$0(ArrayList arrayList, boolean z, int i, int i2, ArrayList arrayList2, ValueAnimator valueAnimator) {
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             int size = arrayList.size();
-            for (int i2 = 0; i2 < size; i2++) {
-                View view = (View) arrayList.get(i2);
+            for (int i3 = 0; i3 < size; i3++) {
+                View view = (View) arrayList.get(i3);
                 float y = view.getY();
                 if (view.getY() + view.getMeasuredHeight() >= 0.0f && y <= RecyclerAnimationScrollHelper.this.recyclerView.getMeasuredHeight()) {
                     if (z) {
@@ -341,11 +342,12 @@ public class RecyclerAnimationScrollHelper {
                     }
                 }
             }
+            int paddingBottom = i2 - RecyclerAnimationScrollHelper.this.recyclerView.getPaddingBottom();
             int size2 = arrayList2.size();
-            for (int i3 = 0; i3 < size2; i3++) {
-                View view2 = (View) arrayList2.get(i3);
+            for (int i4 = 0; i4 < size2; i4++) {
+                View view2 = (View) arrayList2.get(i4);
                 if (z) {
-                    view2.setTranslationY(i * (1.0f - floatValue));
+                    view2.setTranslationY((i * (1.0f - floatValue)) + paddingBottom);
                 } else {
                     view2.setTranslationY((-i) * (1.0f - floatValue));
                 }

@@ -1745,7 +1745,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             if (this.newAccount) {
                 this.newAccount = false;
                 this.pendingSwitchingAccount = true;
-                ((LaunchActivity) getParentActivity()).switchToAccount(this.currentAccount, false, new GenericProvider() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda41
+                ((LaunchActivity) getParentActivity()).switchToAccount(this.currentAccount, true, new GenericProvider() { // from class: org.telegram.ui.LoginActivity$$ExternalSyntheticLambda41
                     @Override // org.telegram.messenger.GenericProvider
                     public final Object provide(Object obj) {
                         MainTabsActivity lambda$needFinishActivity$17;
@@ -3725,7 +3725,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onNextPressed$18(int i, AlertDialog alertDialog, int i2) {
             if (UserConfig.selectedAccount != i) {
-                ((LaunchActivity) LoginActivity.this.getParentActivity()).switchToAccount(i, false);
+                ((LaunchActivity) LoginActivity.this.getParentActivity()).switchToAccount(i, true);
             }
             LoginActivity.this.finishFragment();
         }
@@ -4077,7 +4077,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                     UserConfig userConfig = UserConfig.getInstance(i);
                     if (userConfig.isClientActivated() && userConfig.getClientUserId() == l.longValue() && ConnectionsManager.getInstance(i).isTestBackend() == LoginActivity.this.testBackend) {
                         if (UserConfig.selectedAccount != i) {
-                            ((LaunchActivity) LoginActivity.this.getParentActivity()).switchToAccount(i, false);
+                            ((LaunchActivity) LoginActivity.this.getParentActivity()).switchToAccount(i, true);
                         }
                         LoginActivity.this.finishFragment();
                         LoginActivity.this.needHideProgress(false);

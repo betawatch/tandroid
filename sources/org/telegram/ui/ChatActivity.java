@@ -30158,7 +30158,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     
         if (r2.getId() >= r71.createUnreadMessageAfterId) goto L774;
      */
-    /* JADX WARN: Multi-variable search skipped. Vars limit reached: 5131 (expected less than 5000) */
+    /* JADX WARN: Multi-variable search skipped. Vars limit reached: 5133 (expected less than 5000) */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:1001:0x17a6  */
     /* JADX WARN: Removed duplicated region for block: B:1005:0x17bc  */
@@ -30167,7 +30167,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Removed duplicated region for block: B:1014:0x17d5  */
     /* JADX WARN: Removed duplicated region for block: B:1017:0x17dc  */
     /* JADX WARN: Removed duplicated region for block: B:1022:0x17f1 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:1048:0x49f9 A[ADDED_TO_REGION, ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:1048:0x4a04 A[ADDED_TO_REGION, ORIG_RETURN, RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:1052:0x167c  */
     /* JADX WARN: Removed duplicated region for block: B:1064:0x11fb  */
     /* JADX WARN: Removed duplicated region for block: B:1081:0x1228  */
@@ -30284,9 +30284,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     /* JADX WARN: Type inference failed for: r1v941 */
     /* JADX WARN: Type inference failed for: r1v942, types: [boolean] */
     /* JADX WARN: Type inference failed for: r1v944 */
-    /* JADX WARN: Type inference failed for: r2v573 */
-    /* JADX WARN: Type inference failed for: r2v574, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r2v586 */
+    /* JADX WARN: Type inference failed for: r2v574 */
+    /* JADX WARN: Type inference failed for: r2v575, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r2v587 */
     /* JADX WARN: Type inference failed for: r71v0, types: [org.telegram.ui.ActionBar.BaseFragment, org.telegram.ui.ChatActivity] */
     /* JADX WARN: Type inference failed for: r8v117, types: [java.util.ArrayList] */
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -36100,7 +36100,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     }
                     if (i == NotificationCenter.messagesFeeUpdated) {
                         long longValue31 = ((Long) objArr[0]).longValue();
-                        if (this.dialog_id == longValue31 || getSendMonoForumPeerId() == longValue31) {
+                        if (this.dialog_id != longValue31) {
+                            return;
+                        }
+                        if (getSendMonoForumPeerId() == 0 || getSendMonoForumPeerId() == longValue31) {
                             updateTopPanel(true);
                             updateBottomOverlay(true);
                             return;

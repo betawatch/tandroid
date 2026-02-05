@@ -1347,7 +1347,7 @@ public final class FloatingToolbar {
             themedColor = getThemedColor(Theme.key_windowBackgroundWhiteBlackText);
         }
         if (z || z2) {
-            linearLayout.setBackground(Theme.createRadSelectorDrawable(themedColor2, z ? 6 : 0, z2 ? 6 : 0, z2 ? 6 : 0, z ? 6 : 0));
+            linearLayout.setBackground(Theme.createRadSelectorDrawable(themedColor2, z ? 12 : 0, z2 ? 12 : 0, z2 ? 12 : 0, z ? 12 : 0));
         } else {
             linearLayout.setBackground(Theme.getSelectorDrawable(themedColor2, false));
         }
@@ -1397,12 +1397,12 @@ public final class FloatingToolbar {
         marginLayoutParams.leftMargin = dp;
         marginLayoutParams.bottomMargin = dp;
         relativeLayout.setLayoutParams(marginLayoutParams);
-        relativeLayout.setElevation(AndroidUtilities.dp(2.0f));
+        relativeLayout.setElevation(AndroidUtilities.dp(1.0f));
         relativeLayout.setFocusable(true);
         relativeLayout.setFocusableInTouchMode(true);
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setShape(0);
-        float dp2 = AndroidUtilities.dp(6.0f);
+        float dp2 = AndroidUtilities.dp(12.0f);
         gradientDrawable.setCornerRadii(new float[]{dp2, dp2, dp2, dp2, dp2, dp2, dp2, dp2});
         int i = this.currentStyle;
         if (i == 0) {
@@ -1412,7 +1412,7 @@ public final class FloatingToolbar {
         } else if (i == 1) {
             gradientDrawable.setColor(getThemedColor(Theme.key_windowBackgroundWhite));
         }
-        relativeLayout.setBackgroundDrawable(gradientDrawable);
+        relativeLayout.setBackground(gradientDrawable);
         relativeLayout.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
         relativeLayout.setClipToOutline(true);
         return relativeLayout;

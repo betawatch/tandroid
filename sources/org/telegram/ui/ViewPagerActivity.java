@@ -65,7 +65,7 @@ public abstract class ViewPagerActivity extends BaseFragment {
         this.viewPager = new ViewPagerFixed(context) { // from class: org.telegram.ui.ViewPagerActivity.1
             @Override // org.telegram.ui.Components.ViewPagerFixed
             protected long getManualScrollDuration() {
-                return 380L;
+                return 320L;
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed

@@ -4,10 +4,12 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -169,7 +171,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         this(context, baseFragment, z, null);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x0325, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0313, code lost:
     
         if (r2.isComments == false) goto L80;
      */
@@ -275,8 +277,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         if (this.parentFragment != null) {
             ImageView imageView = new ImageView(context);
             this.timeItem = imageView;
-            imageView.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f));
-            this.timeItem.setScaleType(ImageView.ScaleType.CENTER);
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
             this.timeItem.setAlpha(0.0f);
             this.timeItem.setScaleY(0.0f);
             this.timeItem.setScaleX(0.0f);
@@ -285,6 +286,7 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
             TimerDrawable timerDrawable = new TimerDrawable(context, resourcesProvider);
             this.timerDrawable = timerDrawable;
             imageView2.setImageDrawable(timerDrawable);
+            this.timerDrawable.setBackgroundColor(0);
             addView(this.timeItem);
             this.secretChatTimer = z;
             this.timeItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda4
@@ -519,6 +521,21 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         canvas.scale(scale, scale, getWidth() / 2.0f, getHeight() / 2.0f);
         super.dispatchDraw(canvas);
         canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup
+    protected boolean drawChild(Canvas canvas, View view, long j) {
+        ImageView imageView;
+        if (view == this.avatarImageView && (imageView = this.timeItem) != null && imageView.getVisibility() == 0) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(view.getX(), view.getY(), view.getX() + view.getWidth(), view.getY() + view.getHeight());
+            canvas.saveLayer(rectF, null);
+            boolean drawChild = super.drawChild(canvas, view, j);
+            canvas.drawCircle(this.timeItem.getX() + (this.timeItem.getWidth() / 2.0f), this.timeItem.getY() + (this.timeItem.getHeight() / 2.0f), AndroidUtilities.dpf2(11.5f) * this.timeItem.getScaleX(), Theme.PAINT_CLEAR);
+            canvas.restore();
+            return drawChild;
+        }
+        return super.drawChild(canvas, view, j);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -964,13 +981,23 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
             this.timeItem.setVisibility(0);
             this.timeItem.setTag(1);
             if (z) {
-                this.timeItem.animate().setDuration(180L).alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setListener(null).start();
+                this.timeItem.animate().setDuration(180L).alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setListener(null).setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda6
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        ChatAvatarContainer.this.lambda$showTimeItem$6(valueAnimator);
+                    }
+                }).start();
                 return;
             }
             this.timeItem.setAlpha(1.0f);
             this.timeItem.setScaleY(1.0f);
             this.timeItem.setScaleX(1.0f);
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$showTimeItem$6(ValueAnimator valueAnimator) {
+        invalidate();
     }
 
     public void hideTimeItem(boolean z) {
@@ -987,6 +1014,11 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
                     ChatAvatarContainer.this.timeItem.setVisibility(8);
                     super.onAnimationEnd(animator);
                 }
+            }).setUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAvatarContainer$$ExternalSyntheticLambda7
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    ChatAvatarContainer.this.lambda$hideTimeItem$7(valueAnimator);
+                }
             }).start();
             return;
         }
@@ -994,6 +1026,11 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
         this.timeItem.setAlpha(0.0f);
         this.timeItem.setScaleY(0.0f);
         this.timeItem.setScaleX(0.0f);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$hideTimeItem$7(ValueAnimator valueAnimator) {
+        invalidate();
     }
 
     public void setTime(int i, boolean z) {

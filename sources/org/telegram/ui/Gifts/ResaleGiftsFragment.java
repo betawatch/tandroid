@@ -1966,7 +1966,7 @@ public class ResaleGiftsFragment extends BaseFragment {
 
                 @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public final void onItemClick(View view, int i, float f, float f2) {
-                    ResaleGiftsFragment.SelectGiftSheet.this.lambda$new$22(view, i, f, f2);
+                    ResaleGiftsFragment.SelectGiftSheet.this.lambda$new$22(state, view, i, f, f2);
                 }
             });
             this.recyclerListView.setPadding(this.backgroundPaddingLeft + AndroidUtilities.dp(8.0f), 0, this.backgroundPaddingLeft + AndroidUtilities.dp(8.0f), 0);
@@ -2547,7 +2547,8 @@ public class ResaleGiftsFragment extends BaseFragment {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$22(View view, int i, float f, float f2) {
+        public /* synthetic */ void lambda$new$22(State state, View view, int i, float f, float f2) {
+            TL_stars.SavedStarGift savedStarGift;
             UItem item = this.adapter.getItem(i - 1);
             if (item == null) {
                 return;
@@ -2555,12 +2556,31 @@ public class ResaleGiftsFragment extends BaseFragment {
             Object obj = item.object;
             if (obj instanceof TL_stars.StarGift) {
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
-                if (item.red && (starGift instanceof TL_stars.TL_starGiftUnique)) {
+                boolean z = item.red;
+                if (z && (starGift instanceof TL_stars.TL_starGiftUnique)) {
                     buyGift((TL_stars.TL_starGiftUnique) obj);
-                } else {
-                    this.onSelect.run(starGift);
-                    lambda$new$0();
+                    return;
                 }
+                if (!z) {
+                    Iterator it = state.list.gifts.iterator();
+                    while (true) {
+                        if (!it.hasNext()) {
+                            savedStarGift = null;
+                            break;
+                        } else {
+                            savedStarGift = (TL_stars.SavedStarGift) it.next();
+                            if (savedStarGift.gift == starGift) {
+                                break;
+                            }
+                        }
+                    }
+                    if (savedStarGift != null && savedStarGift.can_craft_at > 0 && savedStarGift.can_craft_at > ConnectionsManager.getInstance(this.currentAccount).getCurrentTime()) {
+                        new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(R.string.GiftCraftUnavailableTitle)).setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCraftUnavailableTextTime, LocaleController.formatDateTime(savedStarGift.can_craft_at, true)))).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
+                        return;
+                    }
+                }
+                this.onSelect.run(starGift);
+                lambda$new$0();
             }
         }
 

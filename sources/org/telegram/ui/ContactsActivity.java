@@ -310,7 +310,7 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
         fragmentSearchField.setSectionBackground();
         this.searchField.setPivotY(0.0f);
         ActionBarMenu createActionMode = this.actionBar.createActionMode(false, null);
-        createActionMode.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        createActionMode.setBackgroundColor(0);
         if (this.hasMainTabs) {
             ImageView imageView = new ImageView(context);
             this.actionModeCloseView = imageView;
@@ -505,7 +505,7 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i3, int i4) {
                 measureChildWithMargins(((BaseFragment) ContactsActivity.this).actionBar, i3, 0, i4, 0);
-                ((ViewGroup.MarginLayoutParams) ContactsActivity.this.emptyView.getLayoutParams()).topMargin = ((BaseFragment) ContactsActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(44.0f);
+                ((ViewGroup.MarginLayoutParams) ContactsActivity.this.emptyView.getLayoutParams()).topMargin = ((BaseFragment) ContactsActivity.this).actionBar.getMeasuredHeight() + AndroidUtilities.dp(48.0f);
                 ((ViewGroup.MarginLayoutParams) ContactsActivity.this.headerShadowView.getLayoutParams()).topMargin = ((BaseFragment) ContactsActivity.this).actionBar.getMeasuredHeight();
                 ContactsActivity.this.checkUi_listViewPadding();
                 super.onMeasure(i3, i4);
@@ -1753,7 +1753,7 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
             return;
         }
         int dp = AndroidUtilities.dp(48.0f);
-        int dp2 = AndroidUtilities.dp(44.0f);
+        int dp2 = AndroidUtilities.dp(48.0f);
         int measuredHeight = (this.fragmentView.getMeasuredHeight() - this.navigationBarHeight) - AndroidUtilities.dp(8.0f);
         int dp3 = measuredHeight - AndroidUtilities.dp(56.0f);
         this.iBlur3PositionActionBar.set(0.0f, -dp, this.fragmentView.getMeasuredWidth(), this.actionBar.getMeasuredHeight() + dp + dp2);

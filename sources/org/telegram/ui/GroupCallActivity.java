@@ -4725,7 +4725,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
 
             @Override // org.telegram.ui.Components.voip.GroupCallRenderersContainer
             protected void onBackPressed() {
-                GroupCallActivity.this.lambda$openCrafting$8();
+                GroupCallActivity.this.lambda$openCrafting$9();
             }
         };
         this.renderersContainer = groupCallRenderersContainer;
@@ -5403,7 +5403,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
             int i2;
             int color;
             if (i == -1) {
-                GroupCallActivity.this.lambda$openCrafting$8();
+                GroupCallActivity.this.lambda$openCrafting$9();
                 return;
             }
             if (i == 1) {
@@ -10812,7 +10812,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
     /* renamed from: onBackPressed */
-    public void lambda$openCrafting$8() {
+    public void lambda$openCrafting$9() {
         PrivateVideoPreviewDialog privateVideoPreviewDialog = this.previewDialog;
         if (privateVideoPreviewDialog != null) {
             privateVideoPreviewDialog.dismiss(false, false);
@@ -10823,7 +10823,7 @@ public class GroupCallActivity extends BottomSheet implements NotificationCenter
         } else if (this.renderersContainer.inFullscreenMode) {
             fullscreenFor(null);
         } else {
-            super.lambda$openCrafting$8();
+            super.lambda$openCrafting$9();
         }
     }
 

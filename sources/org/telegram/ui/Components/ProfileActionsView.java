@@ -27,13 +27,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ProfileActivity;
 
 /* loaded from: classes5.dex */
-public class ProfileActionsView extends View {
+public abstract class ProfileActionsView extends View {
     private final List actions;
     private int activeCount;
     private final Set allAvailableActions;
@@ -111,7 +112,7 @@ public class ProfileActionsView extends View {
         paint.setColor(-16777216);
         paint.setAlpha(40);
         this.xpadding = AndroidUtilities.dpf2(14.0f);
-        float dpf2 = AndroidUtilities.dpf2(6.0f);
+        float dpf2 = AndroidUtilities.dpf2(12.0f);
         this.ypadding = dpf2;
         float dpf22 = AndroidUtilities.dpf2(8.0f);
         this.top = dpf22;
@@ -266,7 +267,7 @@ public class ProfileActionsView extends View {
                     int alpha = this.paint.getAlpha();
                     float alpha2 = (int) (action4.getAlpha() * clamp012 * alpha);
                     this.paint.setAlpha((int) ((this.radialGradient != null ? 0.1f : 1.0f) * alpha2));
-                    if (isButtonColorLight() && this.parentExpanded < 0.5f) {
+                    if (SharedConfig.shadowsInSections && isButtonColorLight() && this.parentExpanded < 0.5f) {
                         this.paint.setShadowLayer(AndroidUtilities.dpf2(1.5f), 0.0f, 0.0f, Theme.multAlpha(TLObject.FLAG_29, (alpha2 / 255.0f) * (this.radialGradient == null ? 1.0f : 0.1f)));
                     } else {
                         this.paint.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
