@@ -129,7 +129,6 @@ import org.telegram.messenger.pip.activity.IPipActivity;
 import org.telegram.messenger.pip.activity.IPipActivityHandler;
 import org.telegram.messenger.pip.activity.IPipActivityListener;
 import org.telegram.messenger.utils.FrameMetricsOverlayView;
-import org.telegram.messenger.utils.RefreshRateController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.messenger.voip.VoIPPendingCall;
@@ -304,7 +303,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private final PipActivityController pipActivityController;
     private final IPipActivityHandler pipActivityHandler;
     private Dialog proxyErrorDialog;
-    private RefreshRateController refreshRateController;
     private SparseIntArray requestedPermissions;
     private int requsetPermissionsPointer;
     public ActionBarLayout rightActionBarLayout;
@@ -838,9 +836,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
             onBackInvokedDispatcher = getOnBackInvokedDispatcher();
             onBackInvokedDispatcher.registerOnBackInvokedCallback(0, AppCompatDelegateImpl$Api33Impl$$ExternalSyntheticApiModelOutline0.m(this.onBackInvokedCallback));
-        }
-        if (i2 >= 24) {
-            this.refreshRateController = new RefreshRateController(this);
         }
         checkFrameMetrics();
     }
@@ -18064,11 +18059,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             VoIPFragment.onPause();
         }
         SpoilerEffect2.pause(true);
-        RefreshRateController refreshRateController = this.refreshRateController;
-        if (refreshRateController == null || Build.VERSION.SDK_INT < 24) {
-            return;
-        }
-        refreshRateController.stop();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -18323,8 +18313,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             }
         }
         checkAppUpdate(false, null);
-        int i2 = Build.VERSION.SDK_INT;
-        if (i2 >= 23) {
+        if (Build.VERSION.SDK_INT >= 23) {
             canDrawOverlays = Settings.canDrawOverlays(this);
             ApplicationLoader.canDrawOverlays = canDrawOverlays;
         }
@@ -18345,11 +18334,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         if (MessagesController.getInstance(this.currentAccount).hasSetupEmailSuggestion()) {
             MessagesController.getInstance(this.currentAccount).checkPromoInfo(true);
         }
-        RefreshRateController refreshRateController = this.refreshRateController;
-        if (refreshRateController == null || i2 < 24) {
-            return;
-        }
-        refreshRateController.start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

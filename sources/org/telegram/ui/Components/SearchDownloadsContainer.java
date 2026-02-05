@@ -89,24 +89,24 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         this.parentFragment = baseFragment;
         this.parentActivity = baseFragment.getParentActivity();
         this.currentAccount = i;
-        BlurredRecyclerView blurredRecyclerView = new BlurredRecyclerView(getContext()) { // from class: org.telegram.ui.Components.SearchDownloadsContainer.1
+        RecyclerListView recyclerListView = new RecyclerListView(getContext()) { // from class: org.telegram.ui.Components.SearchDownloadsContainer.1
             @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
             protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
                 super.onLayout(z, i2, i3, i4, i5);
                 SearchDownloadsContainer.this.checkItemsFloodWait();
             }
         };
-        this.recyclerListView = blurredRecyclerView;
-        new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(blurredRecyclerView);
-        addView(blurredRecyclerView);
-        blurredRecyclerView.setLayoutManager(new LinearLayoutManager(baseFragment.getParentActivity()) { // from class: org.telegram.ui.Components.SearchDownloadsContainer.2
+        this.recyclerListView = recyclerListView;
+        new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(recyclerListView);
+        addView(recyclerListView);
+        recyclerListView.setLayoutManager(new LinearLayoutManager(baseFragment.getParentActivity()) { // from class: org.telegram.ui.Components.SearchDownloadsContainer.2
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public boolean supportsPredictiveItemAnimations() {
                 return true;
             }
         });
-        blurredRecyclerView.setAdapter(this.adapter);
-        blurredRecyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer.3
+        recyclerListView.setAdapter(this.adapter);
+        recyclerListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer.3
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i2) {
                 if (i2 == 1) {
@@ -118,14 +118,14 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
         defaultItemAnimator.setDelayAnimations(false);
         defaultItemAnimator.setSupportsChangeAnimations(false);
-        blurredRecyclerView.setItemAnimator(defaultItemAnimator);
-        blurredRecyclerView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda2
+        recyclerListView.setItemAnimator(defaultItemAnimator);
+        recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
                 SearchDownloadsContainer.this.lambda$new$0(i, view, i2);
             }
         });
-        blurredRecyclerView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda3
+        recyclerListView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.Components.SearchDownloadsContainer$$ExternalSyntheticLambda3
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i2) {
                 boolean lambda$new$1;
@@ -133,7 +133,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
                 return lambda$new$1;
             }
         });
-        this.itemsEnterAnimator = new RecyclerItemsEnterAnimator(blurredRecyclerView, true);
+        this.itemsEnterAnimator = new RecyclerItemsEnterAnimator(recyclerListView, true);
         FlickerLoadingView flickerLoadingView = new FlickerLoadingView(getContext());
         this.loadingView = flickerLoadingView;
         addView(flickerLoadingView);
@@ -143,7 +143,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         StickerEmptyView stickerEmptyView = new StickerEmptyView(getContext(), flickerLoadingView, 1);
         this.emptyView = stickerEmptyView;
         addView(stickerEmptyView);
-        blurredRecyclerView.setEmptyView(this.emptyView);
+        recyclerListView.setEmptyView(this.emptyView);
         FileLoader.getInstance(i).getCurrentLoadingFiles(this.currentLoadingFiles);
     }
 

@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
 /* loaded from: classes5.dex */
-public class BlurredRecyclerView extends RecyclerListView {
+public abstract class BlurredRecyclerView extends RecyclerListView {
     public int additionalClipBottom;
     public boolean alwaysDrawChild;
     public int blurTopPadding;

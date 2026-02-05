@@ -168,7 +168,7 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
                     return new RecyclerListView.Holder(view);
                 case 10:
                     TextCell textCell = new TextCell(BoostsActivity.this.getContext());
-                    textCell.setTextAndIcon((CharSequence) LocaleController.formatString("BoostingGetBoostsViaGifts", R.string.BoostingGetBoostsViaGifts, new Object[0]), R.drawable.msg_gift_premium, false);
+                    textCell.setTextAndIcon((CharSequence) LocaleController.formatString(R.string.BoostingGetBoostsViaGifts, new Object[0]), R.drawable.msg_gift_premium, false);
                     textCell.offsetFromImage = 64;
                     int i2 = Theme.key_windowBackgroundWhiteBlueText4;
                     textCell.setColors(i2, i2);
@@ -233,13 +233,15 @@ public class BoostsActivity extends GradientHeaderActivity implements Notificati
                     view.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
                     return new RecyclerListView.Holder(view);
                 case 15:
-                    view = new View(BoostsActivity.this.getContext()) { // from class: org.telegram.ui.BoostsActivity.1.1
+                    View view2 = new View(BoostsActivity.this.getContext()) { // from class: org.telegram.ui.BoostsActivity.1.1
                         @Override // android.view.View
                         protected void onMeasure(int i3, int i4) {
                             LinearLayoutManager linearLayoutManager = BoostsActivity.this.layoutManager;
                             super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(Math.max(0, linearLayoutManager instanceof FillLastLinearLayoutManager ? ((FillLastLinearLayoutManager) linearLayoutManager).getLastItemHeight() : 0), TLObject.FLAG_30));
                         }
                     };
+                    view2.setTag(-33024);
+                    view = view2;
                     view.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
                     return new RecyclerListView.Holder(view);
             }
