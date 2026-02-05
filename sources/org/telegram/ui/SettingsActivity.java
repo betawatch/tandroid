@@ -351,7 +351,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             public void onSearchCollapse() {
                 SettingsActivity.this.animatorSearchPageVisible.setValue(false, true);
                 SettingsActivity.this.updateActionBarVisible();
-                SettingsActivity.this.listView.adapter.update(true);
+                SettingsActivity.this.listView.adapter.update(false);
             }
 
             @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
@@ -359,7 +359,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 SettingsActivity.this.animatorSearchPageVisible.setValue(true, true);
                 SettingsActivity.this.search.search(SettingsActivity.this.query = "");
                 SettingsActivity.this.updateActionBarVisible();
-                SettingsActivity.this.listView.adapter.update(true);
+                SettingsActivity.this.listView.adapter.update(false);
             }
 
             @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
@@ -1219,6 +1219,18 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 return uItem.intValue == uItem2.intValue;
             }
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean onBackPressed(boolean z) {
+        if (!this.actionBar.isSearchFieldVisible()) {
+            return super.onBackPressed(z);
+        }
+        if (!z) {
+            return false;
+        }
+        this.actionBar.closeSearchField();
+        return false;
     }
 
     public static class SettingCell extends LinearLayout {

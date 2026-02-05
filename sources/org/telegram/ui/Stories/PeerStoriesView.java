@@ -9349,16 +9349,20 @@ public abstract class PeerStoriesView extends SizeNotifierFrameLayout implements
         if (reactionsContainerLayout == null) {
             return false;
         }
-        float x = getX();
-        float y = getY() + ((View) getParent()).getY();
+        float f = 0.0f;
+        float f2 = 0.0f;
+        for (View view = this; view != null && (view.getParent() instanceof View); view = (View) view.getParent()) {
+            f2 += view.getX();
+            f += view.getY();
+        }
         if (this.likesReactionLayout.getReactionsWindow() != null && this.likesReactionLayout.getReactionsWindow().windowView != null) {
-            motionEvent.offsetLocation(-x, (-y) - this.likesReactionLayout.getReactionsWindow().windowView.getTranslationY());
+            motionEvent.offsetLocation(-f2, (-f) - this.likesReactionLayout.getReactionsWindow().windowView.getTranslationY());
             this.likesReactionLayout.getReactionsWindow().windowView.dispatchTouchEvent(motionEvent);
             return true;
         }
         Rect rect = AndroidUtilities.rectTmp2;
         reactionsContainerLayout.getHitRect(rect);
-        rect.offset((int) x, (int) y);
+        rect.offset((int) f2, (int) f);
         if (motionEvent.getAction() == 0 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
             showLikesReaction(false);
             return true;

@@ -2080,7 +2080,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             }
             int dp2 = dp - AndroidUtilities.dp(Math.max(alpha, totalVisibility) * 5.0f);
             int calculateListViewPaddingBottom = DialogsActivity.this.calculateListViewPaddingBottom();
-            if (dp2 != getPaddingTop() || calculateListViewPaddingBottom != getPaddingBottom()) {
+            if (dp2 != this.topPadding || calculateListViewPaddingBottom != getPaddingBottom()) {
                 setTopGlowOffset(dp2);
                 setPadding(0, dp2, 0, calculateListViewPaddingBottom);
                 if (DialogsActivity.this.hasStories) {
