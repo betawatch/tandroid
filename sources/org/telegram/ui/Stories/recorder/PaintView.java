@@ -3046,6 +3046,7 @@ public abstract class PaintView extends SizeNotifierFrameLayoutPhoto implements 
         return this.offsetTranslationY;
     }
 
+    @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, org.telegram.ui.ActionBar.Theme.Colorable
     public void updateColors() {
         this.toolsPaint.setColor(-15132391);
     }

@@ -326,6 +326,12 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 canvas.drawRect(rect, paint);
                 paint.setAlpha(alpha);
             }
+
+            @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, org.telegram.ui.ActionBar.Theme.Colorable
+            public void updateColors() {
+                super.updateColors();
+                SettingsActivity.this.updateColors();
+            }
         };
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
@@ -665,12 +671,18 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
     }
 
     public void updateColors() {
+        ActionBar actionBar = this.actionBar;
+        int i = Theme.key_windowBackgroundWhiteBlackText;
+        actionBar.setTitleColor(getThemedColor(i));
+        this.actionBar.setItemsColor(getThemedColor(i), false);
         this.contentView.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
-        this.titleView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
+        this.titleView.setTextColor(getThemedColor(i));
         this.subtitleView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
         this.searchItem.updateColor();
         int themedColor = getThemedColor(Theme.key_windowBackgroundWhite);
         this.navigationBar.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{Theme.multAlpha(themedColor, 0.0f), themedColor}));
+        this.actionBarBackground.invalidate();
+        this.listView.invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1062,7 +1074,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         return WindowInsetsCompat.CONSUMED;
     }
 
-    public static class AccountCell extends LinearLayout {
+    public static class AccountCell extends LinearLayout implements Theme.Colorable {
         private ImageView arrowView;
         private AvatarDrawable avatarDrawable;
         private BackupImageView avatarView;
@@ -1127,6 +1139,13 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             addView(this.textView, LayoutHelper.createLinear(0, -1, 1.0f, 119, 0, 0, 18, 0));
             addView(this.counterView, LayoutHelper.createLinear(-2, 20, 0.0f, 16, 0, 0, 0, 0));
             addView(this.arrowView, LayoutHelper.createLinear(24, 24, 0.0f, 21, 0, 0, 12, 0));
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.Colorable
+        public void updateColors() {
+            this.textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
+            this.counterView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(10.0f), Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider)));
+            this.arrowView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon, this.resourcesProvider), PorterDuff.Mode.SRC_IN));
         }
 
         /* JADX WARN: Removed duplicated region for block: B:11:0x00a4  */
@@ -1233,7 +1252,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         return false;
     }
 
-    public static class SettingCell extends LinearLayout {
+    public static class SettingCell extends LinearLayout implements Theme.Colorable {
         private final Background iconBackground;
         private final ImageView iconView;
         private final Theme.ResourcesProvider resourcesProvider;
@@ -1279,6 +1298,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             updateColors();
         }
 
+        @Override // org.telegram.ui.ActionBar.Theme.Colorable
         public void updateColors() {
             this.titleView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, this.resourcesProvider));
             this.subtitleView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, this.resourcesProvider));
@@ -1407,14 +1427,16 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         }
     }
 
-    public static class SuggestionCell extends LinearLayout {
+    public static class SuggestionCell extends LinearLayout implements Theme.Colorable {
         private ButtonWithCounterView no;
+        private final Theme.ResourcesProvider resourcesProvider;
         private LinkSpanDrawable.LinksTextView textView;
         private LinkSpanDrawable.LinksTextView titleView;
         private ButtonWithCounterView yes;
 
         public SuggestionCell(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);
+            this.resourcesProvider = resourcesProvider;
             setOrientation(1);
             int i = Theme.key_windowBackgroundWhiteBlackText;
             LinkSpanDrawable.LinksTextView makeLinkTextView = TextHelper.makeLinkTextView(context, 15.0f, i, true, resourcesProvider);
@@ -1432,6 +1454,14 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             linearLayout.addView(this.no, LayoutHelper.createLinear(0, 42, 1.0f, 112, 0, 0, 12, 0));
             linearLayout.addView(this.yes, LayoutHelper.createLinear(0, 42, 1.0f, 112, 0, 0, 0, 0));
             addView(linearLayout, LayoutHelper.createLinear(-1, -2, 55, 24, 18, 24, 16));
+        }
+
+        @Override // org.telegram.ui.ActionBar.Theme.Colorable
+        public void updateColors() {
+            LinkSpanDrawable.LinksTextView linksTextView = this.titleView;
+            int i = Theme.key_windowBackgroundWhiteBlackText;
+            linksTextView.setTextColor(Theme.getColor(i, this.resourcesProvider));
+            this.textView.setTextColor(Theme.getColor(i, this.resourcesProvider));
         }
 
         public void set(CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener, CharSequence charSequence4, View.OnClickListener onClickListener2) {

@@ -76,6 +76,7 @@ import org.telegram.ui.Components.ReactionsContainerLayout;
 import org.telegram.ui.Components.quickforward.BlurVisibilityDrawable;
 import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ViewPagerActivity;
 
 /* loaded from: classes5.dex */
 public class Bulletin {
@@ -422,10 +423,13 @@ public class Bulletin {
             Bulletin.this.layout.removeOnLayoutChangeListener(this);
             if (Bulletin.this.showing) {
                 Bulletin.this.layout.onShow();
+                final BaseFragment baseFragment = Bulletin.this.containerFragment;
+                if (baseFragment instanceof ViewPagerActivity) {
+                    baseFragment = ((ViewPagerActivity) baseFragment).getCurrentVisibleFragment();
+                }
                 Bulletin bulletin = Bulletin.this;
-                bulletin.currentDelegate = Bulletin.findDelegate(bulletin.containerFragment, Bulletin.this.containerLayout);
-                if (Bulletin.this.currentDelegate == null && Bulletin.this.containerFragment != null) {
-                    final BaseFragment baseFragment = Bulletin.this.containerFragment;
+                bulletin.currentDelegate = Bulletin.findDelegate(baseFragment, bulletin.containerLayout);
+                if (Bulletin.this.currentDelegate == null && baseFragment != null) {
                     Bulletin.this.currentDelegate = new Delegate() { // from class: org.telegram.ui.Components.Bulletin.2.1
                         @Override // org.telegram.ui.Components.Bulletin.Delegate
                         public /* synthetic */ boolean allowLayoutChanges() {

@@ -137,16 +137,16 @@ public class SellGiftEnterPriceSheet extends BottomSheet {
         LinearLayout linearLayout4 = new LinearLayout(context);
         linearLayout4.setOrientation(1);
         linearLayout.addView(linearLayout4, LayoutHelper.createLinear(-1, -2, 80));
-        ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
-        this.buttonView = buttonWithCounterView;
-        buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.SellGiftEnterPriceSheet$$ExternalSyntheticLambda3
+        ButtonWithCounterView round = new ButtonWithCounterView(context, resourcesProvider).setRound();
+        this.buttonView = round;
+        round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.SellGiftEnterPriceSheet$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 SellGiftEnterPriceSheet.this.lambda$new$2(callback, view);
             }
         });
-        buttonWithCounterView.setText(LocaleController.getString(R.string.ResellGiftButton), false);
-        linearLayout4.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 18.0f, 0.0f, 18.0f, 8.0f));
+        round.setText(LocaleController.getString(R.string.ResellGiftButton), false);
+        linearLayout4.addView(round, LayoutHelper.createLinear(-1, 48, 18.0f, 0.0f, 18.0f, 8.0f));
         if (amountUtils$Amount != null) {
             setAmount(AmountUtils$Amount.fromNano(amountUtils$Amount.asNano(), amountUtils$Amount.currency), !amountUtils$Amount.isZero(), true, false);
         } else {
@@ -197,6 +197,7 @@ public class SellGiftEnterPriceSheet extends BottomSheet {
         if (!this.buttonView.isEnabled() || this.buttonView.isLoading()) {
             return;
         }
+        AndroidUtilities.hideKeyboard(this.starsCountEditField);
         this.buttonView.setLoading(true);
         callback.run(this.inputAmount);
     }
