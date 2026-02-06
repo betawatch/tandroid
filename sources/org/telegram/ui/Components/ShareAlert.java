@@ -118,6 +118,7 @@ import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
 import org.telegram.ui.Components.blur3.RenderNodeWithHash;
 import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
 import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
+import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
@@ -456,9 +457,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.iBlur3SourceGlass = blurredBackgroundSourceRenderNode;
             blurredBackgroundSourceRenderNode.setupRenderer(new RenderNodeWithHash.Renderer() { // from class: org.telegram.ui.Components.ShareAlert.1
                 @Override // org.telegram.ui.Components.blur3.RenderNodeWithHash.Renderer
-                public void renderNodeCalculateHash(RenderNodeWithHash.HashBuilder hashBuilder) {
-                    hashBuilder.add(ShareAlert.this.getThemedColor(Theme.key_windowBackgroundWhite));
-                    hashBuilder.add(SharedConfig.chatBlurEnabled());
+                public void renderNodeCalculateHash(IBlur3Hash iBlur3Hash) {
+                    iBlur3Hash.add(ShareAlert.this.getThemedColor(Theme.key_windowBackgroundWhite));
+                    iBlur3Hash.add(SharedConfig.chatBlurEnabled());
                 }
 
                 @Override // org.telegram.ui.Components.blur3.RenderNodeWithHash.Renderer
@@ -473,9 +474,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.iBlur3SourceGlassFrosted = blurredBackgroundSourceRenderNode2;
             blurredBackgroundSourceRenderNode2.setupRenderer(new RenderNodeWithHash.Renderer() { // from class: org.telegram.ui.Components.ShareAlert.2
                 @Override // org.telegram.ui.Components.blur3.RenderNodeWithHash.Renderer
-                public void renderNodeCalculateHash(RenderNodeWithHash.HashBuilder hashBuilder) {
-                    hashBuilder.add(ShareAlert.this.getThemedColor(Theme.key_windowBackgroundWhite));
-                    hashBuilder.add(SharedConfig.chatBlurEnabled());
+                public void renderNodeCalculateHash(IBlur3Hash iBlur3Hash) {
+                    iBlur3Hash.add(ShareAlert.this.getThemedColor(Theme.key_windowBackgroundWhite));
+                    iBlur3Hash.add(SharedConfig.chatBlurEnabled());
                 }
 
                 @Override // org.telegram.ui.Components.blur3.RenderNodeWithHash.Renderer

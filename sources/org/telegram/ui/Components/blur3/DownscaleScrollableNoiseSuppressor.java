@@ -20,6 +20,7 @@ import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
 /* loaded from: classes5.dex */
 public class DownscaleScrollableNoiseSuppressor {
     public final boolean allowNoiseSuppress;
+    private final Blur3HashImpl builder;
     public final boolean isLiquidGlassEnabled;
     private final int k;
     long lastHash;
@@ -53,6 +54,7 @@ public class DownscaleScrollableNoiseSuppressor {
         int i = 0;
         this.allowNoiseSuppress = false;
         this.tmpRectF = new RectF();
+        this.builder = new Blur3HashImpl();
         this.rectRenderNodes = new ArrayList();
         boolean isEnabled = LiteMode.isEnabled(262144);
         this.isLiquidGlassEnabled = isEnabled;
@@ -415,12 +417,14 @@ public class DownscaleScrollableNoiseSuppressor {
         while (i3 < this.rectRenderNodesCount) {
             SourcePart sourcePart = (SourcePart) this.rectRenderNodes.get(i3);
             this.tmpRectF.set(sourcePart.position);
-            long captureCalculateHash = iBlur3Capture.captureCalculateHash(this.tmpRectF);
-            if (captureCalculateHash != -1 && sourcePart.lastHash == captureCalculateHash) {
+            this.builder.start();
+            iBlur3Capture.captureCalculateHash(this.builder, this.tmpRectF);
+            long j = this.builder.get();
+            if (!this.builder.isUnsupported() && sourcePart.lastHash == j) {
                 hasDisplayList = sourcePart.renderNode.hasDisplayList();
                 i3 = hasDisplayList ? i3 + 1 : 0;
             }
-            sourcePart.lastHash = captureCalculateHash;
+            sourcePart.lastHash = j;
             RecordingCanvas beginRecordingRect = beginRecordingRect(i3);
             beginRecordingRect.save();
             beginRecordingRect.translate(-r4.left, -r4.top);

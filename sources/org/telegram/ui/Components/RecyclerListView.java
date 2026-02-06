@@ -65,7 +65,11 @@ import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.Components.EdgeEffectTrackerFactory;
 import org.telegram.ui.Components.GestureDetectorFixDoubleTap;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
 import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
+import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundProvider;
 import org.telegram.ui.FiltersSetupActivity;
 
 /* loaded from: classes5.dex */
@@ -526,6 +530,8 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
     public class FastScroll extends View {
         private int activeColor;
         private Path arrowPath;
+        BlurredBackgroundDrawable blurredCircleDrawable;
+        BlurredBackgroundDrawable blurredTagDrawable;
         private float bubbleProgress;
         private String currentLetter;
         Drawable fastScrollBackgroundDrawable;
@@ -818,22 +824,22 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
             this.arrowPath.close();
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:70:0x01f1, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:70:0x021f, code lost:
         
-            if (r14[6] == r9) goto L30;
+            if (r13[6] == r11) goto L34;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:92:0x0201, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:92:0x0230, code lost:
         
-            if (r14[4] == r9) goto L47;
+            if (r13[4] == r11) goto L51;
          */
-        /* JADX WARN: Removed duplicated region for block: B:72:0x0205  */
-        /* JADX WARN: Removed duplicated region for block: B:75:0x0229  */
-        /* JADX WARN: Removed duplicated region for block: B:78:0x0234  */
-        /* JADX WARN: Removed duplicated region for block: B:82:0x025d  */
-        /* JADX WARN: Removed duplicated region for block: B:84:0x0261  */
-        /* JADX WARN: Removed duplicated region for block: B:85:0x0237  */
-        /* JADX WARN: Removed duplicated region for block: B:86:0x022f  */
-        /* JADX WARN: Removed duplicated region for block: B:87:0x0212  */
+        /* JADX WARN: Removed duplicated region for block: B:72:0x0234  */
+        /* JADX WARN: Removed duplicated region for block: B:75:0x0259  */
+        /* JADX WARN: Removed duplicated region for block: B:78:0x0264  */
+        /* JADX WARN: Removed duplicated region for block: B:82:0x028d  */
+        /* JADX WARN: Removed duplicated region for block: B:84:0x0291  */
+        /* JADX WARN: Removed duplicated region for block: B:85:0x0267  */
+        /* JADX WARN: Removed duplicated region for block: B:86:0x025f  */
+        /* JADX WARN: Removed duplicated region for block: B:87:0x0241  */
         @Override // android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -852,9 +858,15 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
             } else {
                 this.paint.setColor(ColorUtils.blendARGB(Theme.getColor(Theme.key_windowBackgroundWhite, RecyclerListView.this.resourcesProvider), -1, 0.1f));
                 float dp3 = AndroidUtilities.dp(27.0f) + paddingTop;
-                this.fastScrollShadowDrawable.setBounds(getMeasuredWidth() - this.fastScrollShadowDrawable.getIntrinsicWidth(), (int) (dp3 - (this.fastScrollShadowDrawable.getIntrinsicHeight() / 2)), getMeasuredWidth(), (int) (dp3 + (this.fastScrollShadowDrawable.getIntrinsicHeight() / 2)));
-                this.fastScrollShadowDrawable.draw(canvas);
-                canvas.drawCircle(this.scrollX + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(27.0f) + paddingTop, AndroidUtilities.dp(24.0f), this.paint);
+                BlurredBackgroundDrawable blurredBackgroundDrawable = this.blurredCircleDrawable;
+                if (blurredBackgroundDrawable != null) {
+                    blurredBackgroundDrawable.setBounds(this.scrollX + AndroidUtilities.dp(-20.0f), AndroidUtilities.dp(-1.0f) + paddingTop, this.scrollX + AndroidUtilities.dp(36.0f), paddingTop + AndroidUtilities.dp(55.0f));
+                    this.blurredCircleDrawable.draw(canvas);
+                } else {
+                    this.fastScrollShadowDrawable.setBounds(getMeasuredWidth() - this.fastScrollShadowDrawable.getIntrinsicWidth(), (int) (dp3 - (this.fastScrollShadowDrawable.getIntrinsicHeight() / 2)), getMeasuredWidth(), (int) (dp3 + (this.fastScrollShadowDrawable.getIntrinsicHeight() / 2)));
+                    this.fastScrollShadowDrawable.draw(canvas);
+                    canvas.drawCircle(this.scrollX + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(27.0f) + paddingTop, AndroidUtilities.dp(24.0f), this.paint);
+                }
                 this.paint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, RecyclerListView.this.resourcesProvider));
                 canvas.save();
                 canvas.translate(this.scrollX + AndroidUtilities.dp(4.0f), AndroidUtilities.dp(34.0f) + paddingTop + (AndroidUtilities.dp(2.0f) * this.bubbleProgress));
@@ -952,11 +964,20 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
                 int alpha = this.paint2.getAlpha();
                 int alpha2 = this.letterPaint.getAlpha();
                 this.paint2.setAlpha((int) (alpha * this.floatingDateProgress));
-                Drawable drawable = this.fastScrollBackgroundDrawable;
-                RectF rectF = this.rect;
-                drawable.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-                this.fastScrollBackgroundDrawable.setAlpha((int) (this.floatingDateProgress * 255.0f));
-                this.fastScrollBackgroundDrawable.draw(canvas);
+                if (this.blurredTagDrawable != null) {
+                    RectF rectF = this.rect;
+                    android.graphics.Rect rect = AndroidUtilities.rectTmp2;
+                    rectF.round(rect);
+                    rect.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
+                    this.blurredTagDrawable.setBounds(rect);
+                    this.blurredTagDrawable.draw(canvas);
+                } else {
+                    Drawable drawable = this.fastScrollBackgroundDrawable;
+                    RectF rectF2 = this.rect;
+                    drawable.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
+                    this.fastScrollBackgroundDrawable.setAlpha((int) (this.floatingDateProgress * 255.0f));
+                    this.fastScrollBackgroundDrawable.draw(canvas);
+                }
                 float f4 = this.replaceLayoutProgress;
                 if (f4 != 1.0f) {
                     float f5 = f4 + 0.10666667f;
@@ -1118,6 +1139,28 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
 
         public float getProgress() {
             return this.progress;
+        }
+
+        public void applyBlurDrawables(BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory, BlurredBackgroundProvider blurredBackgroundProvider) {
+            BlurredBackgroundDrawable create = blurredBackgroundDrawableViewFactory.create(RecyclerListView.this.fastScroll, blurredBackgroundProvider);
+            this.blurredCircleDrawable = create;
+            create.setPadding(AndroidUtilities.dp(4.0f));
+            this.blurredCircleDrawable.setRadius(AndroidUtilities.dp(24.0f));
+            BlurredBackgroundDrawable create2 = blurredBackgroundDrawableViewFactory.create(RecyclerListView.this.fastScroll, blurredBackgroundProvider);
+            this.blurredTagDrawable = create2;
+            create2.setPadding(AndroidUtilities.dp(6.0f));
+            this.blurredTagDrawable.setRadius(AndroidUtilities.dp(14.0f));
+        }
+
+        public boolean fillDrawablesRect(RectF rectF) {
+            if (this.blurredCircleDrawable == null && this.blurredTagDrawable == null) {
+                return false;
+            }
+            rectF.set(this.blurredTagDrawable.getBounds());
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            rectF2.set(this.blurredCircleDrawable.getBounds());
+            rectF.union(rectF2);
+            return true;
         }
     }
 
@@ -2191,7 +2234,7 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
         }
         if (i > 0) {
             this.pendingHighlightPosition = null;
-            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda4
+            Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     RecyclerListView.this.lambda$highlightRowInternal$0();
@@ -3122,7 +3165,7 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
     }
 
     public void addEdgeEffectListener(final Runnable runnable) {
-        addEdgeEffectListener(new EdgeEffectTrackerFactory.OnEdgeEffectListener() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda3
+        addEdgeEffectListener(new EdgeEffectTrackerFactory.OnEdgeEffectListener() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.Components.EdgeEffectTrackerFactory.OnEdgeEffectListener
             public final void onEdgeEffectVisibilityChange(int i, boolean z) {
                 runnable.run();
@@ -3164,29 +3207,41 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
                 this.ignoreClipChild = false;
             }
         }
+        int itemDecorationCount = getItemDecorationCount();
+        for (int i2 = 0; i2 < itemDecorationCount; i2++) {
+            Object itemDecorationAt = getItemDecorationAt(i2);
+            if (itemDecorationAt instanceof IBlur3Capture) {
+                ((IBlur3Capture) itemDecorationAt).capture(canvas, rectF);
+            }
+        }
     }
 
     @Override // org.telegram.ui.Components.blur3.capture.IBlur3Capture
-    public long captureCalculateHash(RectF rectF) {
-        long uniqueDrawingId;
+    public void captureCalculateHash(IBlur3Hash iBlur3Hash, RectF rectF) {
         if (Build.VERSION.SDK_INT < 29) {
-            return -1L;
+            iBlur3Hash.unsupported();
+            return;
         }
         if (hasActiveEdgeEffects() && getOverScrollMode() != 2) {
-            return -1L;
+            iBlur3Hash.unsupported();
+            return;
         }
         int childCount = getChildCount();
-        long j = 0;
         for (int i = 0; i < childCount; i++) {
             View childAt = getChildAt(i);
             float x = childAt.getX();
             float y = childAt.getY();
             if (rectF.intersects(x, y, childAt.getWidth() + x, childAt.getHeight() + y)) {
-                uniqueDrawingId = childAt.getUniqueDrawingId();
-                j = MediaDataController.calcHash(j, uniqueDrawingId);
+                iBlur3Hash.add(childAt);
             }
         }
-        return j;
+        int itemDecorationCount = getItemDecorationCount();
+        for (int i2 = 0; i2 < itemDecorationCount; i2++) {
+            Object itemDecorationAt = getItemDecorationAt(i2);
+            if (itemDecorationAt instanceof IBlur3Capture) {
+                ((IBlur3Capture) itemDecorationAt).captureCalculateHash(iBlur3Hash, rectF);
+            }
+        }
     }
 
     public View findViewByPosition(int i) {
@@ -3216,14 +3271,14 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
     }
 
     public void setSections(int i, float f, boolean z) {
-        setSections(new Utilities.CallbackReturn() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda1
+        setSections(new Utilities.CallbackReturn() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.CallbackReturn
             public final Object run(Object obj) {
                 Boolean lambda$setSections$2;
                 lambda$setSections$2 = RecyclerListView.lambda$setSections$2((View) obj);
                 return lambda$setSections$2;
             }
-        }, i, f, new RecyclerListView$$ExternalSyntheticLambda2(this), z);
+        }, i, f, new RecyclerListView$$ExternalSyntheticLambda1(this), z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3233,14 +3288,14 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
 
     private static Pair cachedIsViewTypeShadow(final RecyclerListView recyclerListView, final Utilities.CallbackReturn callbackReturn) {
         final SparseIntArray sparseIntArray = new SparseIntArray();
-        return new Pair(new Utilities.CallbackReturn() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda6
+        return new Pair(new Utilities.CallbackReturn() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.CallbackReturn
             public final Object run(Object obj) {
                 Boolean lambda$cachedIsViewTypeShadow$3;
                 lambda$cachedIsViewTypeShadow$3 = RecyclerListView.lambda$cachedIsViewTypeShadow$3(RecyclerListView.this, callbackReturn, sparseIntArray, (View) obj);
                 return lambda$cachedIsViewTypeShadow$3;
             }
-        }, new Utilities.CallbackReturn() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda7
+        }, new Utilities.CallbackReturn() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.Utilities.CallbackReturn
             public final Object run(Object obj) {
                 Boolean lambda$cachedIsViewTypeShadow$4;
@@ -3435,7 +3490,7 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
                     }
                 }
             }
-            SectionsDrawer.draw(this.sections, this.sectionRadius, new Utilities.Callback5() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda5
+            SectionsDrawer.draw(this.sections, this.sectionRadius, new Utilities.Callback5() { // from class: org.telegram.ui.Components.RecyclerListView$$ExternalSyntheticLambda4
                 @Override // org.telegram.messenger.Utilities.Callback5
                 public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
                     RecyclerListView.this.lambda$drawSectionsBackgrounds$5(canvas, (Float) obj, (Float) obj2, (Float) obj3, (Float) obj4, (Float) obj5);

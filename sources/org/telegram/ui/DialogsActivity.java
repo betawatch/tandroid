@@ -218,6 +218,7 @@ import org.telegram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
 import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
 import org.telegram.ui.Components.blur3.RenderNodeWithHash;
 import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
+import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
@@ -2810,16 +2811,16 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             this.iBlur3SourceGlassFrosted = blurredBackgroundSourceRenderNode;
             blurredBackgroundSourceRenderNode.setupRenderer(new RenderNodeWithHash.Renderer() { // from class: org.telegram.ui.DialogsActivity.3
                 @Override // org.telegram.ui.Components.blur3.RenderNodeWithHash.Renderer
-                public void renderNodeCalculateHash(RenderNodeWithHash.HashBuilder hashBuilder) {
-                    hashBuilder.add(DialogsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
-                    hashBuilder.add(SharedConfig.chatBlurEnabled());
+                public void renderNodeCalculateHash(IBlur3Hash iBlur3Hash) {
+                    iBlur3Hash.add(DialogsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
+                    iBlur3Hash.add(SharedConfig.chatBlurEnabled());
                     if (SharedConfig.chatBlurEnabled()) {
                         RightSlidingDialogContainer rightSlidingDialogContainer = DialogsActivity.this.rightSlidingDialogContainer;
                         TopicsFragment topicsFragment = (rightSlidingDialogContainer == null || !(rightSlidingDialogContainer.getFragment() instanceof TopicsFragment)) ? null : (TopicsFragment) DialogsActivity.this.rightSlidingDialogContainer.getFragment();
                         if (topicsFragment == null || topicsFragment.getFragmentView() == null || DialogsActivity.this.searching) {
                             return;
                         }
-                        hashBuilder.unsupported();
+                        iBlur3Hash.unsupported();
                     }
                 }
 
@@ -2846,16 +2847,16 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             this.iBlur3SourceGlass = blurredBackgroundSourceRenderNode2;
             blurredBackgroundSourceRenderNode2.setupRenderer(new RenderNodeWithHash.Renderer() { // from class: org.telegram.ui.DialogsActivity.4
                 @Override // org.telegram.ui.Components.blur3.RenderNodeWithHash.Renderer
-                public void renderNodeCalculateHash(RenderNodeWithHash.HashBuilder hashBuilder) {
-                    hashBuilder.add(DialogsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
-                    hashBuilder.add(SharedConfig.chatBlurEnabled());
+                public void renderNodeCalculateHash(IBlur3Hash iBlur3Hash) {
+                    iBlur3Hash.add(DialogsActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
+                    iBlur3Hash.add(SharedConfig.chatBlurEnabled());
                     if (SharedConfig.chatBlurEnabled()) {
                         RightSlidingDialogContainer rightSlidingDialogContainer = DialogsActivity.this.rightSlidingDialogContainer;
                         TopicsFragment topicsFragment = (rightSlidingDialogContainer == null || !(rightSlidingDialogContainer.getFragment() instanceof TopicsFragment)) ? null : (TopicsFragment) DialogsActivity.this.rightSlidingDialogContainer.getFragment();
                         if (topicsFragment == null || topicsFragment.getFragmentView() == null || DialogsActivity.this.searching) {
                             return;
                         }
-                        hashBuilder.unsupported();
+                        iBlur3Hash.unsupported();
                     }
                 }
 
@@ -3760,8 +3761,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             }
 
             @Override // org.telegram.ui.Components.blur3.capture.IBlur3Capture
-            public /* synthetic */ long captureCalculateHash(RectF rectF) {
-                return IBlur3Capture.-CC.$default$captureCalculateHash(this, rectF);
+            public /* synthetic */ void captureCalculateHash(IBlur3Hash iBlur3Hash, RectF rectF) {
+                iBlur3Hash.unsupported();
             }
         };
         int i9 = (this.folderId != 0 || (((i2 = this.initialDialogsType) != 0 || this.onlySelect) && i2 != 3)) ? 1 : 2;

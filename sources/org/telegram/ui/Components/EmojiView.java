@@ -132,6 +132,7 @@ import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
 import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
 import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
 import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
+import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
@@ -2842,8 +2843,8 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             }
 
             @Override // org.telegram.ui.Components.blur3.capture.IBlur3Capture
-            public /* synthetic */ long captureCalculateHash(RectF rectF2) {
-                return IBlur3Capture.-CC.$default$captureCalculateHash(this, rectF2);
+            public /* synthetic */ void captureCalculateHash(IBlur3Hash iBlur3Hash, RectF rectF2) {
+                iBlur3Hash.unsupported();
             }
         };
         setBlurredBackgroundDrawableFactory(this.blurredBackgroundDrawableFactory);

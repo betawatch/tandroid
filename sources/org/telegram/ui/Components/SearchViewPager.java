@@ -61,6 +61,7 @@ import org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet;
 import org.telegram.ui.Components.SearchViewPager;
 import org.telegram.ui.Components.ViewPagerFixed;
 import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
+import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 import org.telegram.ui.Components.blur3.utils.Blur3Utils;
 import org.telegram.ui.Components.spoilers.SpoilersTextView;
 import org.telegram.ui.DialogsActivity;
@@ -142,8 +143,8 @@ public abstract class SearchViewPager extends ViewPagerFixed implements Filtered
     }
 
     @Override // org.telegram.ui.Components.blur3.capture.IBlur3Capture
-    public /* synthetic */ long captureCalculateHash(RectF rectF) {
-        return IBlur3Capture.-CC.$default$captureCalculateHash(this, rectF);
+    public /* synthetic */ void captureCalculateHash(IBlur3Hash iBlur3Hash, RectF rectF) {
+        iBlur3Hash.unsupported();
     }
 
     protected abstract boolean includeDownloads();

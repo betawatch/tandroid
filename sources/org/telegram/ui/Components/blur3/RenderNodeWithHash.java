@@ -3,11 +3,11 @@ package org.telegram.ui.Components.blur3;
 import android.graphics.Canvas;
 import android.graphics.RecordingCanvas;
 import android.graphics.RenderNode;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 
 /* loaded from: classes5.dex */
 public class RenderNodeWithHash {
-    private final HashBuilder hashBuilder = new HashBuilder();
+    private final Blur3HashImpl hashBuilder = new Blur3HashImpl();
     private long lastHash = 0;
     private int lastHeight;
     private int lastWidth;
@@ -15,7 +15,7 @@ public class RenderNodeWithHash {
     private final Renderer renderer;
 
     public interface Renderer {
-        void renderNodeCalculateHash(HashBuilder hashBuilder);
+        void renderNodeCalculateHash(IBlur3Hash iBlur3Hash);
 
         void renderNodeUpdateDisplayList(Canvas canvas);
     }
@@ -32,7 +32,7 @@ public class RenderNodeWithHash {
         RecordingCanvas beginRecording;
         width = this.renderNode.getWidth();
         height = this.renderNode.getHeight();
-        this.hashBuilder.reset();
+        this.hashBuilder.start();
         this.renderer.renderNodeCalculateHash(this.hashBuilder);
         long j = this.hashBuilder.get();
         hasDisplayList = this.renderNode.hasDisplayList();
@@ -44,35 +44,6 @@ public class RenderNodeWithHash {
             beginRecording = this.renderNode.beginRecording();
             this.renderer.renderNodeUpdateDisplayList(beginRecording);
             this.renderNode.endRecording();
-        }
-    }
-
-    public static class HashBuilder {
-        private long hash;
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public void reset() {
-            this.hash = 0L;
-        }
-
-        public long get() {
-            return this.hash;
-        }
-
-        public void add(long j) {
-            this.hash = MediaDataController.calcHash(this.hash, j);
-        }
-
-        public void addF(float f) {
-            this.hash = MediaDataController.calcHash(this.hash, Float.floatToIntBits(f));
-        }
-
-        public void add(boolean z) {
-            this.hash = MediaDataController.calcHash(this.hash, z ? 1L : 0L);
-        }
-
-        public void unsupported() {
-            this.hash = -1L;
         }
     }
 }

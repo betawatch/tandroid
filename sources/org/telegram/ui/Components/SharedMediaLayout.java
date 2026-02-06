@@ -139,6 +139,7 @@ import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
 import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
 import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
+import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
@@ -3090,8 +3091,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             }
 
             @Override // org.telegram.ui.Components.blur3.capture.IBlur3Capture
-            public /* synthetic */ long captureCalculateHash(RectF rectF) {
-                return IBlur3Capture.-CC.$default$captureCalculateHash(this, rectF);
+            public /* synthetic */ void captureCalculateHash(IBlur3Hash iBlur3Hash, RectF rectF) {
+                iBlur3Hash.unsupported();
             }
         };
     }
