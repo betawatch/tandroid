@@ -383,7 +383,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         open(UserConfig.selectedAccount, context, storyItem, arrayList, i, storiesList, peerStories, placeProvider, z);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:87:0x0253, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x0257, code lost:
     
         r0 = r23.windowView.findOnBackInvokedDispatcher();
      */
@@ -392,7 +392,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
     */
     public void open(int i, Context context, TL_stories.StoryItem storyItem, ArrayList arrayList, int i2, StoriesController.StoriesList storiesList, TL_stories.PeerStories peerStories, PlaceProvider placeProvider, boolean z) {
         OnBackInvokedDispatcher findOnBackInvokedDispatcher;
-        if (context == null) {
+        if (!AndroidUtilities.isContextSafe(context)) {
             this.doOnAnimationReadyRunnables.clear();
             return;
         }
@@ -785,7 +785,9 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         if (!this.ATTACH_TO_FRAGMENT) {
             globalInstances.add(this);
         }
-        AndroidUtilities.hideKeyboard(lastFragment.getFragmentView());
+        if (lastFragment != null) {
+            AndroidUtilities.hideKeyboard(lastFragment.getFragmentView());
+        }
     }
 
     class 2 extends SizeNotifierFrameLayout {

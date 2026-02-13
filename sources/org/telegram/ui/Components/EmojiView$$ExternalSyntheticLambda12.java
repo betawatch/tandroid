@@ -1,15 +1,14 @@
-package org.telegram.ui.Business;
+package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
 
-/* loaded from: classes4.dex */
-public final /* synthetic */ class ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1 implements ViewGroupPartRenderer.DrawChildMethod {
+/* loaded from: classes5.dex */
+public final /* synthetic */ class EmojiView$$ExternalSyntheticLambda12 implements ViewGroupPartRenderer.DrawChildMethod {
     public final /* synthetic */ RecyclerListView f$0;
 
-    public /* synthetic */ ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1(RecyclerListView recyclerListView) {
+    public /* synthetic */ EmojiView$$ExternalSyntheticLambda12(RecyclerListView recyclerListView) {
         this.f$0 = recyclerListView;
     }
 

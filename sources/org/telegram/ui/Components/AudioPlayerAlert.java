@@ -96,7 +96,7 @@ import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.CastSync;
 import org.telegram.ui.Cells.AudioPlayerCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda320;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda319;
 import org.telegram.ui.ChooseQualityLayout$QualityIcon;
 import org.telegram.ui.Components.AudioPlayerAlert;
 import org.telegram.ui.Components.Bulletin;
@@ -2217,14 +2217,14 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
 
     @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
     /* renamed from: onBackPressed */
-    public void lambda$openCrafting$9() {
+    public void lambda$openCrafting$8() {
         ActionBar actionBar = this.actionBar;
         if (actionBar != null && actionBar.isSearchFieldVisible()) {
             this.actionBar.closeSearchField();
         } else if (this.blurredView.getTag() != null) {
             showAlbumCover(false, true);
         } else {
-            super.lambda$openCrafting$9();
+            super.lambda$openCrafting$8();
         }
     }
 
@@ -3253,7 +3253,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             TLRPC.Document document = messageObject.getDocument();
             long j = document != null ? document.id : 0L;
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda320(makeOptions));
+            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda319(makeOptions));
             makeSwipeback.addGap();
             makeSwipeback.addIf(!savedMusicIds.ids.contains(Long.valueOf(j)), R.drawable.left_status_profile, LocaleController.getString(R.string.AudioSaveToMyProfile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable

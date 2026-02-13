@@ -143,7 +143,7 @@ public final class l implements j$.time.temporal.o, j$.time.temporal.p {
             case 11:
                 return (z ? 1 : 0) + NotificationCenter.newLocationAvailable;
             default:
-                return (z ? 1 : 0) + 335;
+                return (z ? 1 : 0) + NotificationCenter.contactsPermissionBadgeCheck;
         }
     }
 

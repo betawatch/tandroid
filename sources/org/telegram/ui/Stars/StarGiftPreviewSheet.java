@@ -50,11 +50,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.BottomSheet;
 import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.BottomSheetWithRecyclerListView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
+import org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda12;
 import org.telegram.ui.Components.ExtendedGridLayoutManager;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RecyclerListView;
@@ -180,7 +180,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         RecyclerListView recyclerListView = this.recyclerListView;
         BottomSheet.ContainerView containerView = this.container;
         Objects.requireNonNull(recyclerListView);
-        this.viewGroupPartRenderer = new ViewGroupPartRenderer(recyclerListView, containerView, new ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1(recyclerListView));
+        this.viewGroupPartRenderer = new ViewGroupPartRenderer(recyclerListView, containerView, new EmojiView$$ExternalSyntheticLambda12(recyclerListView));
         ArrayList findAllInstances = TlUtils.findAllInstances(arrayList, TL_stars.starGiftAttributeBackdrop.class);
         this.backdrops = findAllInstances;
         BagRandomizer bagRandomizer = new BagRandomizer(findAllInstances);
@@ -323,7 +323,7 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
         StarGiftSheet.TopView topView = new StarGiftSheet.TopView(context, resourcesProvider, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                StarGiftPreviewSheet.this.lambda$openCrafting$9();
+                StarGiftPreviewSheet.this.lambda$openCrafting$8();
             }
         }, new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
@@ -1054,42 +1054,29 @@ public class StarGiftPreviewSheet extends BottomSheetWithRecyclerListView {
             this.onTabSelectListener = callback;
             int i = Theme.key_glass_defaultIcon;
             setLensColor(Theme.multAlpha(Theme.getColor(i, resourcesProvider), 0.09411765f), Theme.multAlpha(Theme.getColor(i, resourcesProvider), 0.1254902f));
-            GlassTabView[] glassTabViewArr = {GlassTabView.createGiftTab(context, resourcesProvider, GlassTabView.TabAnimation.MODELS, R.string.GiftPreviewModels, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$TabsSelectorView$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    StarGiftPreviewSheet.TabsSelectorView.this.lambda$new$0();
+            this.tabs = new GlassTabView[]{GlassTabView.createMainTab(context, resourcesProvider, GlassTabView.TabAnimation.MODELS, R.string.GiftPreviewModels), GlassTabView.createMainTab(context, resourcesProvider, GlassTabView.TabAnimation.COLORS, R.string.GiftPreviewBackdrops), GlassTabView.createMainTab(context, resourcesProvider, GlassTabView.TabAnimation.SYMBOLS, R.string.GiftPreviewSymbols)};
+            final int i2 = 0;
+            while (true) {
+                GlassTabView[] glassTabViewArr = this.tabs;
+                if (i2 < glassTabViewArr.length) {
+                    this.linearLayout.addView(glassTabViewArr[i2], LayoutHelper.createLinear(0, -1, 1.0f));
+                    this.tabs[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$TabsSelectorView$$ExternalSyntheticLambda0
+                        @Override // android.view.View.OnClickListener
+                        public final void onClick(View view) {
+                            StarGiftPreviewSheet.TabsSelectorView.this.lambda$new$0(i2, view);
+                        }
+                    });
+                    i2++;
+                } else {
+                    glassTabViewArr[0].setSelected(true, false);
+                    return;
                 }
-            }), GlassTabView.createGiftTab(context, resourcesProvider, GlassTabView.TabAnimation.COLORS, R.string.GiftPreviewBackdrops, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$TabsSelectorView$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    StarGiftPreviewSheet.TabsSelectorView.this.lambda$new$1();
-                }
-            }), GlassTabView.createGiftTab(context, resourcesProvider, GlassTabView.TabAnimation.SYMBOLS, R.string.GiftPreviewSymbols, new Runnable() { // from class: org.telegram.ui.Stars.StarGiftPreviewSheet$TabsSelectorView$$ExternalSyntheticLambda2
-                @Override // java.lang.Runnable
-                public final void run() {
-                    StarGiftPreviewSheet.TabsSelectorView.this.lambda$new$2();
-                }
-            })};
-            this.tabs = glassTabViewArr;
-            this.linearLayout.addView(glassTabViewArr[0], LayoutHelper.createLinear(0, -1, 1.0f));
-            this.linearLayout.addView(this.tabs[1], LayoutHelper.createLinear(0, -1, 1.0f));
-            this.linearLayout.addView(this.tabs[2], LayoutHelper.createLinear(0, -1, 1.0f));
-            this.tabs[0].setSelected(true, false);
+            }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$0() {
-            selectTab(0);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$1() {
-            selectTab(1);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$new$2() {
-            selectTab(2);
+        public /* synthetic */ void lambda$new$0(int i, View view) {
+            selectTab(i);
         }
 
         /* JADX INFO: Access modifiers changed from: private */

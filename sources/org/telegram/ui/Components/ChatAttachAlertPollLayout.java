@@ -26,7 +26,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
-import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -52,7 +51,6 @@ import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
-import org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1;
 import org.telegram.ui.Cells.HeaderCell;
 import org.telegram.ui.Cells.PollEditTextCell;
 import org.telegram.ui.Cells.ShadowSectionCell;
@@ -68,7 +66,6 @@ import org.telegram.ui.Components.EmojiView;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
 import org.telegram.ui.Components.SuggestEmojiView;
-import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
 import org.telegram.ui.Stories.recorder.KeyboardNotifier;
 
 /* loaded from: classes5.dex */
@@ -139,11 +136,6 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
 
     public interface PollCreateActivityDelegate {
         void sendPoll(TLRPC.MessageMedia messageMedia, HashMap hashMap, boolean z, int i, long j);
-    }
-
-    @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
-    public boolean hasDoneItem() {
-        return true;
     }
 
     @Override // org.telegram.ui.Components.ChatAttachAlert.AttachAlertLayout
@@ -271,12 +263,9 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             }
         };
         this.listView = recyclerListView;
-        ViewGroup containerView = chatAttachAlert.getContainerView();
-        RecyclerListView recyclerListView2 = this.listView;
-        Objects.requireNonNull(recyclerListView2);
-        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView, containerView, new ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1(recyclerListView2));
+        this.iBlur3Capture = recyclerListView;
+        this.iBlur3CaptureView = recyclerListView;
         this.occupyNavigationBar = true;
-        RecyclerListView recyclerListView3 = this.listView;
         DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator() { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.3
             @Override // androidx.recyclerview.widget.DefaultItemAnimator
             protected void onMoveAnimationUpdate(RecyclerView.ViewHolder viewHolder) {
@@ -287,7 +276,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             }
         };
         this.itemAnimator = defaultItemAnimator;
-        recyclerListView3.setItemAnimator(defaultItemAnimator);
+        recyclerListView.setItemAnimator(defaultItemAnimator);
         this.itemAnimator.setSupportsChangeAnimations(false);
         this.itemAnimator.setDelayAnimations(false);
         this.itemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
@@ -295,7 +284,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
         this.listView.setClipToPadding(false);
         this.listView.setVerticalScrollBarEnabled(false);
         this.listView.setSections(true);
-        RecyclerListView recyclerListView4 = this.listView;
+        RecyclerListView recyclerListView2 = this.listView;
         FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, 1, false, AndroidUtilities.dp(65.0f), this.listView) { // from class: org.telegram.ui.Components.ChatAttachAlertPollLayout.4
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i) {
@@ -328,7 +317,7 @@ public class ChatAttachAlertPollLayout extends ChatAttachAlert.AttachAlertLayout
             }
         };
         this.layoutManager = fillLastLinearLayoutManager;
-        recyclerListView4.setLayoutManager(fillLastLinearLayoutManager);
+        recyclerListView2.setLayoutManager(fillLastLinearLayoutManager);
         this.layoutManager.setSkipFirstItem();
         new ItemTouchHelper(new TouchHelperCallback()).attachToRecyclerView(this.listView);
         addView(this.listView, LayoutHelper.createFrame(-1, -1, 51));

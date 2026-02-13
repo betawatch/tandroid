@@ -4845,7 +4845,7 @@ public class StarsController {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$sendPinnedOrder$4(TLObject tLObject, TLRPC.TL_error tL_error) {
+        public static /* synthetic */ void lambda$sendPinnedOrder$6(TLObject tLObject, TLRPC.TL_error tL_error) {
         }
 
         public GiftsList(int i, long j) {
@@ -5127,6 +5127,74 @@ public class StarsController {
             this.loading = false;
         }
 
+        public void processCrafting(ArrayList arrayList, TL_stars.StarGift starGift) {
+            if (arrayList != null && !arrayList.isEmpty()) {
+                Iterator it = arrayList.iterator();
+                boolean z = false;
+                while (it.hasNext()) {
+                    TL_stars.StarGift starGift2 = (TL_stars.StarGift) it.next();
+                    int i = 0;
+                    while (true) {
+                        if (i < this.gifts.size()) {
+                            TL_stars.StarGift starGift3 = ((TL_stars.SavedStarGift) this.gifts.get(i)).gift;
+                            if (starGift3 != null && starGift3.id == starGift2.id) {
+                                this.gifts.remove(i);
+                                this.totalCount = Math.max(0, this.totalCount - 1);
+                                z = true;
+                                break;
+                            }
+                            i++;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+                if (z) {
+                    NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.dialogId), this);
+                }
+            }
+            if (starGift != null) {
+                TL_stars.getSavedStarGift getsavedstargift = new TL_stars.getSavedStarGift();
+                TL_stars.TL_inputSavedStarGiftSlug tL_inputSavedStarGiftSlug = new TL_stars.TL_inputSavedStarGiftSlug();
+                tL_inputSavedStarGiftSlug.slug = starGift.slug;
+                getsavedstargift.stargift.add(tL_inputSavedStarGiftSlug);
+                ConnectionsManager.getInstance(this.currentAccount).sendRequest(getsavedstargift, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda4
+                    @Override // org.telegram.tgnet.RequestDelegate
+                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                        StarsController.GiftsList.this.lambda$processCrafting$3(tLObject, tL_error);
+                    }
+                });
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$processCrafting$3(final TLObject tLObject, TLRPC.TL_error tL_error) {
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda6
+                @Override // java.lang.Runnable
+                public final void run() {
+                    StarsController.GiftsList.this.lambda$processCrafting$2(tLObject);
+                }
+            });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$processCrafting$2(TLObject tLObject) {
+            if (tLObject instanceof TL_stars.TL_payments_savedStarGifts) {
+                TL_stars.TL_payments_savedStarGifts tL_payments_savedStarGifts = (TL_stars.TL_payments_savedStarGifts) tLObject;
+                MessagesController.getInstance(this.currentAccount).putUsers(tL_payments_savedStarGifts.users, false);
+                MessagesController.getInstance(this.currentAccount).putChats(tL_payments_savedStarGifts.chats, false);
+                if (tL_payments_savedStarGifts.gifts.size() > 0) {
+                    TL_stars.SavedStarGift savedStarGift = tL_payments_savedStarGifts.gifts.get(0);
+                    int i = 0;
+                    while (i < this.gifts.size() && ((TL_stars.SavedStarGift) this.gifts.get(i)).pinned_to_top) {
+                        i++;
+                    }
+                    this.gifts.add(i, savedStarGift);
+                    NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.dialogId), this);
+                }
+            }
+        }
+
         public ArrayList getPinned() {
             ArrayList arrayList = new ArrayList();
             for (int i = 0; i < this.gifts.size(); i++) {
@@ -5171,12 +5239,12 @@ public class StarsController {
         public void setPinned(ArrayList arrayList) {
             this.gifts.removeAll(arrayList);
             if (this.sort_by_date && !this.isCollection) {
-                Collections.sort(this.gifts, new Comparator() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda4
+                Collections.sort(this.gifts, new Comparator() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda5
                     @Override // java.util.Comparator
                     public final int compare(Object obj, Object obj2) {
-                        int lambda$setPinned$2;
-                        lambda$setPinned$2 = StarsController.GiftsList.lambda$setPinned$2((TL_stars.SavedStarGift) obj, (TL_stars.SavedStarGift) obj2);
-                        return lambda$setPinned$2;
+                        int lambda$setPinned$4;
+                        lambda$setPinned$4 = StarsController.GiftsList.lambda$setPinned$4((TL_stars.SavedStarGift) obj, (TL_stars.SavedStarGift) obj2);
+                        return lambda$setPinned$4;
                     }
                 });
             }
@@ -5186,7 +5254,7 @@ public class StarsController {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$setPinned$2(TL_stars.SavedStarGift savedStarGift, TL_stars.SavedStarGift savedStarGift2) {
+        public static /* synthetic */ int lambda$setPinned$4(TL_stars.SavedStarGift savedStarGift, TL_stars.SavedStarGift savedStarGift2) {
             return savedStarGift2.date - savedStarGift.date;
         }
 
@@ -5225,9 +5293,9 @@ public class StarsController {
                 Collections.sort(this.gifts, new Comparator() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda3
                     @Override // java.util.Comparator
                     public final int compare(Object obj, Object obj2) {
-                        int lambda$togglePinned$3;
-                        lambda$togglePinned$3 = StarsController.GiftsList.lambda$togglePinned$3((TL_stars.SavedStarGift) obj, (TL_stars.SavedStarGift) obj2);
-                        return lambda$togglePinned$3;
+                        int lambda$togglePinned$5;
+                        lambda$togglePinned$5 = StarsController.GiftsList.lambda$togglePinned$5((TL_stars.SavedStarGift) obj, (TL_stars.SavedStarGift) obj2);
+                        return lambda$togglePinned$5;
                     }
                 });
             }
@@ -5238,7 +5306,7 @@ public class StarsController {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ int lambda$togglePinned$3(TL_stars.SavedStarGift savedStarGift, TL_stars.SavedStarGift savedStarGift2) {
+        public static /* synthetic */ int lambda$togglePinned$5(TL_stars.SavedStarGift savedStarGift, TL_stars.SavedStarGift savedStarGift2) {
             return savedStarGift2.date - savedStarGift.date;
         }
 
@@ -5294,7 +5362,7 @@ public class StarsController {
             ConnectionsManager.getInstance(this.currentAccount).sendRequest(togglestargiftspinnedtotop, new RequestDelegate() { // from class: org.telegram.ui.Stars.StarsController$GiftsList$$ExternalSyntheticLambda2
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    StarsController.GiftsList.lambda$sendPinnedOrder$4(tLObject, tL_error);
+                    StarsController.GiftsList.lambda$sendPinnedOrder$6(tLObject, tL_error);
                 }
             }, 64);
         }

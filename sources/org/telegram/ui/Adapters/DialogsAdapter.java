@@ -1428,17 +1428,17 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             super(context);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:80:0x0173, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:79:0x0169, code lost:
         
-            if (r6 != false) goto L89;
+            if (r6 != false) goto L87;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:81:0x01ad, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:80:0x0199, code lost:
         
             r13 = r13 - r7;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:94:0x01ab, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:92:0x0197, code lost:
         
-            if (r6 != false) goto L89;
+            if (r6 != false) goto L87;
          */
         @Override // android.widget.FrameLayout, android.view.View
         /*
@@ -1499,7 +1499,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                         i3 = ((i7 - i10) + i11) - paddingBottom;
                         if (i6 != 0) {
                             i3 -= AndroidUtilities.statusBarHeight;
-                            if (DialogsAdapter.this.parentFragment.hasStories && !z2 && !DialogsAdapter.this.isTransitionSupport) {
+                            if (!z2 && !DialogsAdapter.this.isTransitionSupport) {
                                 i3 -= ActionBar.getCurrentActionBarHeight();
                                 if (getParent() instanceof DialogsActivity.DialogsRecyclerView) {
                                     i4 = ((DialogsActivity.DialogsRecyclerView) getParent()).additionalPadding;
@@ -1513,7 +1513,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                             i3 = (i11 - i12) - paddingBottom;
                             if (i6 != 0) {
                                 i3 -= AndroidUtilities.statusBarHeight;
-                                if (DialogsAdapter.this.parentFragment.hasStories && !z2 && !DialogsAdapter.this.isTransitionSupport) {
+                                if (!z2 && !DialogsAdapter.this.isTransitionSupport) {
                                     i3 -= ActionBar.getCurrentActionBarHeight();
                                     if (getParent() instanceof DialogsActivity.DialogsRecyclerView) {
                                         i4 = ((DialogsActivity.DialogsRecyclerView) getParent()).additionalPadding;

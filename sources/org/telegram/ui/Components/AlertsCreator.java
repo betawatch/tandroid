@@ -121,7 +121,7 @@ import org.telegram.ui.Cells.CheckBoxCell;
 import org.telegram.ui.Cells.RadioColorCell;
 import org.telegram.ui.Cells.TextColorCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda238;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda237;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.Bulletin;
@@ -8312,7 +8312,7 @@ public abstract class AlertsCreator {
                         lambda$createDeleteMessagesAlert$189 = AlertsCreator.lambda$createDeleteMessagesAlert$189(clientUserId, (TLObject) obj);
                         return lambda$createDeleteMessagesAlert$189;
                     }
-                }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda238()));
+                }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda237()));
                 if (!arrayList2.isEmpty()) {
                     if (channelParticipantArr == null) {
                         AlertDialog[] alertDialogArr = {new AlertDialog(parentActivity, 3)};

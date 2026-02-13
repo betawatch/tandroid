@@ -23,7 +23,6 @@ import android.text.TextUtils;
 import android.util.Property;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
 import android.view.animation.OvershootInterpolator;
 import android.widget.EditText;
@@ -36,7 +35,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
-import j$.util.Objects;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -71,7 +69,6 @@ import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.Adapters.BaseLocationAdapter;
 import org.telegram.ui.Adapters.LocationActivityAdapter;
 import org.telegram.ui.Adapters.LocationActivitySearchAdapter;
-import org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1;
 import org.telegram.ui.Cells.HeaderCell;
 import org.telegram.ui.Cells.LocationCell;
 import org.telegram.ui.Cells.LocationDirectionCell;
@@ -85,7 +82,6 @@ import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.ChatAttachAlert;
 import org.telegram.ui.Components.ChatAttachAlertLocationLayout;
 import org.telegram.ui.Components.RecyclerListView;
-import org.telegram.ui.Components.blur3.ViewGroupPartRenderer;
 
 /* loaded from: classes5.dex */
 public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLayout implements NotificationCenter.NotificationCenterDelegate {
@@ -543,7 +539,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.searchAreaButton.setGravity(17);
                 this.searchAreaButton.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
                 this.mapViewClip.addView(this.searchAreaButton, LayoutHelper.createFrame(-2, 40.0f, 49, 80.0f, 12.0f, 80.0f, 0.0f));
-                this.searchAreaButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda10
+                this.searchAreaButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda9
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
                         ChatAttachAlertLocationLayout.this.lambda$new$0(view2);
@@ -566,13 +562,13 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.mapTypeButton.setBackground(createSimpleSelectorCircleDrawable);
                 this.mapTypeButton.setIcon(R.drawable.msg_map_type);
                 this.mapViewClip.addView(this.mapTypeButton, LayoutHelper.createFrame(40, 40.0f, 53, 0.0f, 12.0f, 12.0f, 0.0f));
-                this.mapTypeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda11
+                this.mapTypeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda10
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
                         ChatAttachAlertLocationLayout.this.lambda$new$1(view2);
                     }
                 });
-                this.mapTypeButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda12
+                this.mapTypeButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda11
                     @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
                     public final void onItemClick(int i6) {
                         ChatAttachAlertLocationLayout.this.lambda$new$2(i6);
@@ -593,7 +589,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.locationButton.setTag(Integer.valueOf(i5));
                 this.locationButton.setContentDescription(LocaleController.getString(R.string.AccDescrMyLocation));
                 this.mapViewClip.addView(this.locationButton, LayoutHelper.createFrame(40, 40.0f, 85, 0.0f, 0.0f, 12.0f, 12.0f));
-                this.locationButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda13
+                this.locationButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda12
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
                         ChatAttachAlertLocationLayout.this.lambda$new$3(view2);
@@ -606,7 +602,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.emptyView.setPadding(0, AndroidUtilities.dp(160.0f), 0, 0);
                 this.emptyView.setVisibility(8);
                 addView(this.emptyView, LayoutHelper.createFrame(-1, -1.0f));
-                this.emptyView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda14
+                this.emptyView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda13
                     @Override // android.view.View.OnTouchListener
                     public final boolean onTouch(View view2, MotionEvent motionEvent) {
                         boolean lambda$new$4;
@@ -643,26 +639,24 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                     }
                 };
                 this.listView = recyclerListView;
-                ViewGroup containerView = chatAttachAlert.getContainerView();
-                RecyclerListView recyclerListView2 = this.listView;
-                Objects.requireNonNull(recyclerListView2);
-                this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView, containerView, new ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1(recyclerListView2));
+                this.iBlur3Capture = recyclerListView;
+                this.iBlur3CaptureView = recyclerListView;
                 this.occupyNavigationBar = true;
-                this.listView.setClipToPadding(false);
-                RecyclerListView recyclerListView3 = this.listView;
+                recyclerListView.setClipToPadding(false);
+                RecyclerListView recyclerListView2 = this.listView;
                 int i7 = this.locationType;
                 long j = this.dialogId;
                 ChatAttachAlert chatAttachAlert3 = this.parentAlert;
                 LocationActivityAdapter locationActivityAdapter2 = new LocationActivityAdapter(context, i7, j, true, resourcesProvider, chatAttachAlert3.isStoryLocationPicker, false, chatAttachAlert3.isBizLocationPicker);
                 this.adapter = locationActivityAdapter2;
-                recyclerListView3.setAdapter(locationActivityAdapter2);
+                recyclerListView2.setAdapter(locationActivityAdapter2);
                 DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
                 defaultItemAnimator.setDurations(350L);
                 defaultItemAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
                 defaultItemAnimator.setDelayAnimations(false);
                 defaultItemAnimator.setSupportsChangeAnimations(false);
                 this.listView.setItemAnimator(defaultItemAnimator);
-                this.adapter.setUpdateRunnable(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda15
+                this.adapter.setUpdateRunnable(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda14
                     @Override // java.lang.Runnable
                     public final void run() {
                         ChatAttachAlertLocationLayout.this.updateClipView();
@@ -671,8 +665,8 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.adapter.setMyLocationDenied(this.locationDenied, this.askedForLocation);
                 this.listView.setVerticalScrollBarEnabled(false);
                 this.listView.setSections();
-                RecyclerListView recyclerListView4 = this.listView;
-                FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, 1, false, 0, recyclerListView4) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4
+                RecyclerListView recyclerListView3 = this.listView;
+                FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, 1, false, 0, recyclerListView3) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4
                     @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
                     public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i8) {
                         LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4.1
@@ -691,7 +685,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                     }
                 };
                 this.layoutManager = fillLastLinearLayoutManager;
-                recyclerListView4.setLayoutManager(fillLastLinearLayoutManager);
+                recyclerListView3.setLayoutManager(fillLastLinearLayoutManager);
                 addView(this.listView, LayoutHelper.createFrame(-1, -1, 51));
                 this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.5
                     @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
@@ -721,13 +715,13 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                         chatAttachAlertLocationLayout.parentAlert.updateLayout(chatAttachAlertLocationLayout, true, i9);
                     }
                 });
-                this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda16
+                this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda15
                     @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                     public final void onItemClick(View view2, int i8) {
                         ChatAttachAlertLocationLayout.this.lambda$new$9(chatActivity, resourcesProvider, view2, i8);
                     }
                 });
-                this.adapter.setDelegate(this.dialogId, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda17
+                this.adapter.setDelegate(this.dialogId, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda16
                     @Override // org.telegram.ui.Adapters.BaseLocationAdapter.BaseLocationAdapterDelegate
                     public final void didLoadSearchResult(ArrayList arrayList) {
                         ChatAttachAlertLocationLayout.this.updatePlacesMarkers(arrayList);
@@ -737,7 +731,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 addView(this.mapViewClip, LayoutHelper.createFrame(-1, -1, 51));
                 IMapsProvider.IMapView onCreateMapView = ApplicationLoader.getMapsProvider().onCreateMapView(context);
                 this.mapView = onCreateMapView;
-                onCreateMapView.setOnDispatchTouchEventInterceptor(new IMapsProvider.ITouchInterceptor() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda5
+                onCreateMapView.setOnDispatchTouchEventInterceptor(new IMapsProvider.ITouchInterceptor() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda17
                     @Override // org.telegram.messenger.IMapsProvider.ITouchInterceptor
                     public final boolean onInterceptTouchEvent(MotionEvent motionEvent, IMapsProvider.ICallableMethod iCallableMethod) {
                         boolean lambda$new$10;
@@ -745,7 +739,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                         return lambda$new$10;
                     }
                 });
-                this.mapView.setOnInterceptTouchEventInterceptor(new IMapsProvider.ITouchInterceptor() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda6
+                this.mapView.setOnInterceptTouchEventInterceptor(new IMapsProvider.ITouchInterceptor() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda5
                     @Override // org.telegram.messenger.IMapsProvider.ITouchInterceptor
                     public final boolean onInterceptTouchEvent(MotionEvent motionEvent, IMapsProvider.ICallableMethod iCallableMethod) {
                         boolean lambda$new$11;
@@ -754,7 +748,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                     }
                 });
                 final IMapsProvider.IMapView iMapView = this.mapView;
-                new Thread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda7
+                new Thread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
                         ChatAttachAlertLocationLayout.this.lambda$new$16(iMapView);
@@ -764,9 +758,9 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 this.markerImageView = imageView3;
                 imageView3.setImageResource(R.drawable.map_pin2);
                 this.mapViewClip.addView(this.markerImageView, LayoutHelper.createFrame(28, 48, 49));
-                RecyclerListView recyclerListView5 = new RecyclerListView(context, resourcesProvider);
-                this.searchListView = recyclerListView5;
-                recyclerListView5.setSections(true);
+                RecyclerListView recyclerListView4 = new RecyclerListView(context, resourcesProvider);
+                this.searchListView = recyclerListView4;
+                recyclerListView4.setSections(true);
                 this.searchListView.setClipToPadding(false);
                 this.searchListView.setVisibility(8);
                 this.searchListView.setLayoutManager(new LinearLayoutManager(context, 1, false));
@@ -785,7 +779,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 };
                 this.searchAdapter = locationActivitySearchAdapter2;
                 locationActivitySearchAdapter2.setMyLocationDenied(this.locationDenied);
-                this.searchAdapter.setDelegate(0L, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda8
+                this.searchAdapter.setDelegate(0L, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda7
                     @Override // org.telegram.ui.Adapters.BaseLocationAdapter.BaseLocationAdapterDelegate
                     public final void didLoadSearchResult(ArrayList arrayList) {
                         ChatAttachAlertLocationLayout.this.lambda$new$17(arrayList);
@@ -801,7 +795,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                         }
                     }
                 });
-                this.searchListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda9
+                this.searchListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda8
                     @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
                     public final void onItemClick(View view2, int i8) {
                         ChatAttachAlertLocationLayout.this.lambda$new$19(chatActivity, resourcesProvider, view2, i8);
@@ -952,7 +946,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.searchAreaButton.setGravity(17);
         this.searchAreaButton.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
         this.mapViewClip.addView(this.searchAreaButton, LayoutHelper.createFrame(-2, 40.0f, 49, 80.0f, 12.0f, 80.0f, 0.0f));
-        this.searchAreaButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda10
+        this.searchAreaButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view22) {
                 ChatAttachAlertLocationLayout.this.lambda$new$0(view22);
@@ -975,13 +969,13 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.mapTypeButton.setBackground(createSimpleSelectorCircleDrawable3);
         this.mapTypeButton.setIcon(R.drawable.msg_map_type);
         this.mapViewClip.addView(this.mapTypeButton, LayoutHelper.createFrame(40, 40.0f, 53, 0.0f, 12.0f, 12.0f, 0.0f));
-        this.mapTypeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda11
+        this.mapTypeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view22) {
                 ChatAttachAlertLocationLayout.this.lambda$new$1(view22);
             }
         });
-        this.mapTypeButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda12
+        this.mapTypeButton.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda11
             @Override // org.telegram.ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i62) {
                 ChatAttachAlertLocationLayout.this.lambda$new$2(i62);
@@ -1002,7 +996,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.locationButton.setTag(Integer.valueOf(i52));
         this.locationButton.setContentDescription(LocaleController.getString(R.string.AccDescrMyLocation));
         this.mapViewClip.addView(this.locationButton, LayoutHelper.createFrame(40, 40.0f, 85, 0.0f, 0.0f, 12.0f, 12.0f));
-        this.locationButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda13
+        this.locationButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view22) {
                 ChatAttachAlertLocationLayout.this.lambda$new$3(view22);
@@ -1015,7 +1009,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.emptyView.setPadding(0, AndroidUtilities.dp(160.0f), 0, 0);
         this.emptyView.setVisibility(8);
         addView(this.emptyView, LayoutHelper.createFrame(-1, -1.0f));
-        this.emptyView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda14
+        this.emptyView.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda13
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view22, MotionEvent motionEvent) {
                 boolean lambda$new$4;
@@ -1044,34 +1038,32 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.emptySubtitleTextView.setTextSize(1, 15.0f);
         this.emptySubtitleTextView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
         this.emptyView.addView(this.emptySubtitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 6, 0, 0));
-        RecyclerListView recyclerListView6 = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.3
+        RecyclerListView recyclerListView5 = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.3
             @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
             protected void onLayout(boolean z2, int i72, int i82, int i9, int i10) {
                 super.onLayout(z2, i72, i82, i9, i10);
                 ChatAttachAlertLocationLayout.this.updateClipView();
             }
         };
-        this.listView = recyclerListView6;
-        ViewGroup containerView2 = chatAttachAlert.getContainerView();
-        RecyclerListView recyclerListView22 = this.listView;
-        Objects.requireNonNull(recyclerListView22);
-        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView6, containerView2, new ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1(recyclerListView22));
+        this.listView = recyclerListView5;
+        this.iBlur3Capture = recyclerListView5;
+        this.iBlur3CaptureView = recyclerListView5;
         this.occupyNavigationBar = true;
-        this.listView.setClipToPadding(false);
-        RecyclerListView recyclerListView32 = this.listView;
+        recyclerListView5.setClipToPadding(false);
+        RecyclerListView recyclerListView22 = this.listView;
         int i72 = this.locationType;
         long j2 = this.dialogId;
         ChatAttachAlert chatAttachAlert32 = this.parentAlert;
         LocationActivityAdapter locationActivityAdapter22 = new LocationActivityAdapter(context, i72, j2, true, resourcesProvider, chatAttachAlert32.isStoryLocationPicker, false, chatAttachAlert32.isBizLocationPicker);
         this.adapter = locationActivityAdapter22;
-        recyclerListView32.setAdapter(locationActivityAdapter22);
+        recyclerListView22.setAdapter(locationActivityAdapter22);
         DefaultItemAnimator defaultItemAnimator2 = new DefaultItemAnimator();
         defaultItemAnimator2.setDurations(350L);
         defaultItemAnimator2.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         defaultItemAnimator2.setDelayAnimations(false);
         defaultItemAnimator2.setSupportsChangeAnimations(false);
         this.listView.setItemAnimator(defaultItemAnimator2);
-        this.adapter.setUpdateRunnable(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda15
+        this.adapter.setUpdateRunnable(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
                 ChatAttachAlertLocationLayout.this.updateClipView();
@@ -1080,8 +1072,8 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.adapter.setMyLocationDenied(this.locationDenied, this.askedForLocation);
         this.listView.setVerticalScrollBarEnabled(false);
         this.listView.setSections();
-        RecyclerView recyclerListView42 = this.listView;
-        FillLastLinearLayoutManager fillLastLinearLayoutManager2 = new FillLastLinearLayoutManager(context, 1, false, 0, recyclerListView42) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4
+        RecyclerView recyclerListView32 = this.listView;
+        FillLastLinearLayoutManager fillLastLinearLayoutManager2 = new FillLastLinearLayoutManager(context, 1, false, 0, recyclerListView32) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i82) {
                 LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.4.1
@@ -1100,7 +1092,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             }
         };
         this.layoutManager = fillLastLinearLayoutManager2;
-        recyclerListView42.setLayoutManager(fillLastLinearLayoutManager2);
+        recyclerListView32.setLayoutManager(fillLastLinearLayoutManager2);
         addView(this.listView, LayoutHelper.createFrame(-1, -1, 51));
         this.listView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.5
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
@@ -1130,13 +1122,13 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 chatAttachAlertLocationLayout.parentAlert.updateLayout(chatAttachAlertLocationLayout, true, i9);
             }
         });
-        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda16
+        this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda15
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view22, int i82) {
                 ChatAttachAlertLocationLayout.this.lambda$new$9(chatActivity, resourcesProvider, view22, i82);
             }
         });
-        this.adapter.setDelegate(this.dialogId, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda17
+        this.adapter.setDelegate(this.dialogId, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda16
             @Override // org.telegram.ui.Adapters.BaseLocationAdapter.BaseLocationAdapterDelegate
             public final void didLoadSearchResult(ArrayList arrayList) {
                 ChatAttachAlertLocationLayout.this.updatePlacesMarkers(arrayList);
@@ -1146,7 +1138,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         addView(this.mapViewClip, LayoutHelper.createFrame(-1, -1, 51));
         IMapsProvider.IMapView onCreateMapView2 = ApplicationLoader.getMapsProvider().onCreateMapView(context);
         this.mapView = onCreateMapView2;
-        onCreateMapView2.setOnDispatchTouchEventInterceptor(new IMapsProvider.ITouchInterceptor() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda5
+        onCreateMapView2.setOnDispatchTouchEventInterceptor(new IMapsProvider.ITouchInterceptor() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda17
             @Override // org.telegram.messenger.IMapsProvider.ITouchInterceptor
             public final boolean onInterceptTouchEvent(MotionEvent motionEvent, IMapsProvider.ICallableMethod iCallableMethod) {
                 boolean lambda$new$10;
@@ -1154,7 +1146,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 return lambda$new$10;
             }
         });
-        this.mapView.setOnInterceptTouchEventInterceptor(new IMapsProvider.ITouchInterceptor() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda6
+        this.mapView.setOnInterceptTouchEventInterceptor(new IMapsProvider.ITouchInterceptor() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.IMapsProvider.ITouchInterceptor
             public final boolean onInterceptTouchEvent(MotionEvent motionEvent, IMapsProvider.ICallableMethod iCallableMethod) {
                 boolean lambda$new$11;
@@ -1163,7 +1155,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             }
         });
         final IMapsProvider.IMapView iMapView2 = this.mapView;
-        new Thread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda7
+        new Thread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 ChatAttachAlertLocationLayout.this.lambda$new$16(iMapView2);
@@ -1173,9 +1165,9 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.markerImageView = imageView32;
         imageView32.setImageResource(R.drawable.map_pin2);
         this.mapViewClip.addView(this.markerImageView, LayoutHelper.createFrame(28, 48, 49));
-        RecyclerListView recyclerListView52 = new RecyclerListView(context, resourcesProvider);
-        this.searchListView = recyclerListView52;
-        recyclerListView52.setSections(true);
+        RecyclerListView recyclerListView42 = new RecyclerListView(context, resourcesProvider);
+        this.searchListView = recyclerListView42;
+        recyclerListView42.setSections(true);
         this.searchListView.setClipToPadding(false);
         this.searchListView.setVisibility(8);
         this.searchListView.setLayoutManager(new LinearLayoutManager(context, 1, false));
@@ -1194,7 +1186,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         };
         this.searchAdapter = locationActivitySearchAdapter22;
         locationActivitySearchAdapter22.setMyLocationDenied(this.locationDenied);
-        this.searchAdapter.setDelegate(0L, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda8
+        this.searchAdapter.setDelegate(0L, new BaseLocationAdapter.BaseLocationAdapterDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda7
             @Override // org.telegram.ui.Adapters.BaseLocationAdapter.BaseLocationAdapterDelegate
             public final void didLoadSearchResult(ArrayList arrayList) {
                 ChatAttachAlertLocationLayout.this.lambda$new$17(arrayList);
@@ -1210,7 +1202,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 }
             }
         });
-        this.searchListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda9
+        this.searchListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda8
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view22, int i82) {
                 ChatAttachAlertLocationLayout.this.lambda$new$19(chatActivity, resourcesProvider, view22, i82);

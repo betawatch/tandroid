@@ -424,7 +424,7 @@ public class Bulletin {
             if (Bulletin.this.showing) {
                 Bulletin.this.layout.onShow();
                 final BaseFragment baseFragment = Bulletin.this.containerFragment;
-                if (baseFragment instanceof ViewPagerActivity) {
+                if (this.val$top && (baseFragment instanceof ViewPagerActivity)) {
                     baseFragment = ((ViewPagerActivity) baseFragment).getCurrentVisibleFragment();
                 }
                 Bulletin bulletin = Bulletin.this;

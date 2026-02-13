@@ -1,10 +1,10 @@
 package org.telegram.ui.Components;
 
 /* loaded from: classes5.dex */
-public final /* synthetic */ class EmojiView$$ExternalSyntheticLambda24 implements Runnable {
+public final /* synthetic */ class EmojiView$$ExternalSyntheticLambda25 implements Runnable {
     public final /* synthetic */ EmojiView f$0;
 
-    public /* synthetic */ EmojiView$$ExternalSyntheticLambda24(EmojiView emojiView) {
+    public /* synthetic */ EmojiView$$ExternalSyntheticLambda25(EmojiView emojiView) {
         this.f$0 = emojiView;
     }
 

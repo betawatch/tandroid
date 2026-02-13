@@ -478,7 +478,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     private int graceSuggestionSectionRow;
     private boolean hasCustomPhoto;
     private boolean hasFallbackPhoto;
-    private boolean hasMainTabs;
+    public boolean hasMainTabs;
     private boolean hasMusic;
     private boolean hasVoiceChatItem;
     private AnimatorSet headerAnimatorSet;
@@ -764,14 +764,14 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         return ImageUpdater.ImageUpdaterDelegate.-CC.$default$supportsBulletin(this);
     }
 
-    static /* synthetic */ int access$11012(ProfileActivity profileActivity, int i) {
+    static /* synthetic */ int access$10912(ProfileActivity profileActivity, int i) {
         int i2 = profileActivity.listContentHeight + i;
         profileActivity.listContentHeight = i2;
         return i2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$39200(ProfileActivity profileActivity, View view) {
+    public static /* synthetic */ void access$39100(ProfileActivity profileActivity, View view) {
         profileActivity.onTextDetailCellImageClicked(view);
     }
 
@@ -3238,10 +3238,15 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 return super.onInterceptTouchEvent(motionEvent);
             }
 
+            /* JADX WARN: Removed duplicated region for block: B:19:0x00be  */
             @Override // org.telegram.ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View
+            /*
+                Code decompiled incorrectly, please refer to instructions dump.
+            */
             public boolean onTouchEvent(MotionEvent motionEvent) {
                 VelocityTracker velocityTracker;
                 View findViewByPosition2;
+                float measuredWidth;
                 int action = motionEvent.getAction();
                 if (action == 0) {
                     VelocityTracker velocityTracker2 = this.velocityTracker;
@@ -3269,9 +3274,19 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 boolean onTouchEvent = super.onTouchEvent(motionEvent);
                 if (action == 2) {
-                    if (ProfileActivity.this.extraHeight >= ((!ProfileActivity.this.isInLandscapeMode || ProfileActivity.this.hasMainTabs) ? ProfileActivity.this.listView.getMeasuredWidth() + ProfileActivity.this.getActionsExtraHeight() : ProfileActivity.this.getHeaderExtraHeight() + (ActionBar.getCurrentActionBarHeight() + (((BaseFragment) ProfileActivity.this).actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0))) - 1.0f) {
-                        ProfileActivity.this.openAvatar(true);
-                        onTouchEvent = false;
+                    int currentActionBarHeight = ActionBar.getCurrentActionBarHeight() + (((BaseFragment) ProfileActivity.this).actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
+                    if (ProfileActivity.this.isInLandscapeMode) {
+                        ProfileActivity profileActivity = ProfileActivity.this;
+                        if (!profileActivity.hasMainTabs) {
+                            measuredWidth = profileActivity.getHeaderExtraHeight() + currentActionBarHeight;
+                            if (ProfileActivity.this.extraHeight >= measuredWidth - 1.0f) {
+                                ProfileActivity.this.openAvatar(true);
+                                onTouchEvent = false;
+                            }
+                        }
+                    }
+                    measuredWidth = ProfileActivity.this.listView.getMeasuredWidth() + ProfileActivity.this.getActionsExtraHeight();
+                    if (ProfileActivity.this.extraHeight >= measuredWidth - 1.0f) {
                     }
                 }
                 if ((action == 1 || action == 3) && (findViewByPosition2 = ProfileActivity.this.layoutManager.findViewByPosition(0)) != null) {
@@ -4875,7 +4890,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             return true;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:137:0x05ea  */
+        /* JADX WARN: Removed duplicated region for block: B:137:0x05e6  */
         @Override // android.widget.FrameLayout, android.view.View
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -4923,10 +4938,10 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         RecyclerView.ViewHolder createViewHolder = ProfileActivity.this.listAdapter.createViewHolder(null, itemViewType);
                         ProfileActivity.this.listAdapter.onBindViewHolder(createViewHolder, i4);
                         createViewHolder.itemView.measure(makeMeasureSpec, makeMeasureSpec2);
-                        ProfileActivity.access$11012(ProfileActivity.this, createViewHolder.itemView.getMeasuredHeight());
+                        ProfileActivity.access$10912(ProfileActivity.this, createViewHolder.itemView.getMeasuredHeight());
                     } else {
                         ProfileActivity profileActivity = ProfileActivity.this;
-                        ProfileActivity.access$11012(profileActivity, profileActivity.listView.getMeasuredHeight());
+                        ProfileActivity.access$10912(profileActivity, profileActivity.listView.getMeasuredHeight());
                     }
                 }
                 if (ProfileActivity.this.emptyView != null) {
@@ -4940,7 +4955,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             if (ProfileActivity.this.fragmentOpened || (!ProfileActivity.this.expandPhoto && (!ProfileActivity.this.openAnimationInProgress || ProfileActivity.this.playProfileAnimation != 2))) {
                 if (ProfileActivity.this.fragmentOpened && !ProfileActivity.this.openAnimationInProgress && !ProfileActivity.this.firstLayout) {
                     this.ignoreLayout = true;
-                    if (ProfileActivity.this.hasMainTabs || (!ProfileActivity.this.isInLandscapeMode && !AndroidUtilities.isTablet())) {
+                    ProfileActivity profileActivity3 = ProfileActivity.this;
+                    if (profileActivity3.hasMainTabs || (!profileActivity3.isInLandscapeMode && !AndroidUtilities.isTablet())) {
                         measuredWidth = ProfileActivity.this.listView.getMeasuredWidth() + ProfileActivity.this.getActionsExtraHeight();
                         max = Math.max(0, getMeasuredHeight() - ((ProfileActivity.this.listContentHeight + ProfileActivity.this.getHeaderExtraHeight()) + currentActionBarHeight));
                     } else {
@@ -4975,12 +4991,12 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         ProfileActivity.this.layoutManager.scrollToPositionWithOffset(ProfileActivity.this.sharedMediaRow, -measuredWidth);
                     } else {
                         if (ProfileActivity.this.invalidateScroll || paddingTop != measuredWidth) {
-                            ProfileActivity profileActivity3 = ProfileActivity.this;
-                            if (profileActivity3.savedScrollPosition >= 0) {
-                                LinearLayoutManager linearLayoutManager = profileActivity3.layoutManager;
-                                ProfileActivity profileActivity4 = ProfileActivity.this;
-                                linearLayoutManager.scrollToPositionWithOffset(profileActivity4.savedScrollPosition, profileActivity4.savedScrollOffset - measuredWidth);
-                            } else if ((!z || !profileActivity3.allowPullingDown) && view != null) {
+                            ProfileActivity profileActivity4 = ProfileActivity.this;
+                            if (profileActivity4.savedScrollPosition >= 0) {
+                                LinearLayoutManager linearLayoutManager = profileActivity4.layoutManager;
+                                ProfileActivity profileActivity5 = ProfileActivity.this;
+                                linearLayoutManager.scrollToPositionWithOffset(profileActivity5.savedScrollPosition, profileActivity5.savedScrollOffset - measuredWidth);
+                            } else if ((!z || !profileActivity4.allowPullingDown) && view != null) {
                                 if (i3 == 0 && !ProfileActivity.this.allowPullingDown && top > ProfileActivity.this.getHeaderExtraHeight()) {
                                     top = ProfileActivity.this.getHeaderExtraHeight();
                                 }
@@ -5098,8 +5114,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
                 ProfileActivity.this.initialAnimationExtraHeight = measuredWidth2 - currentActionBarHeight;
                 if (ProfileActivity.this.playProfileAnimation == 0) {
-                    ProfileActivity profileActivity5 = ProfileActivity.this;
-                    profileActivity5.extraHeight = profileActivity5.initialAnimationExtraHeight;
+                    ProfileActivity profileActivity6 = ProfileActivity.this;
+                    profileActivity6.extraHeight = profileActivity6.initialAnimationExtraHeight;
                 }
                 ProfileActivity.this.layoutManager.scrollToPositionWithOffset(0, -currentActionBarHeight);
                 ProfileActivity.this.listView.setPadding(0, measuredWidth2, 0, max2);
@@ -5748,7 +5764,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             case 15:
                 final TLRPC.User currentUser = getUserConfig().getCurrentUser();
                 if (currentUser != null) {
-                    ItemOptions makeOptions = ItemOptions.makeOptions(this.contentView, this.resourcesProvider, this.actionsView);
+                    ItemOptions makeOptions = ItemOptions.makeOptions(this, this.actionsView);
                     makeOptions.setGravity(3);
                     makeOptions.add(R.drawable.msg_qrcode, LocaleController.getString(R.string.QrCode), new Runnable() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda88
                         @Override // java.lang.Runnable
@@ -17533,7 +17549,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda4
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
-                                ProfileActivity.access$39200(ProfileActivity.this, view);
+                                ProfileActivity.access$39100(ProfileActivity.this, view);
                             }
                         });
                     }
@@ -17546,7 +17562,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     textDetailCell.setImageClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ProfileActivity$ListAdapter$$ExternalSyntheticLambda5
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            ProfileActivity.access$39200(ProfileActivity.this, view);
+                            ProfileActivity.access$39100(ProfileActivity.this, view);
                         }
                     });
                 } else {
@@ -21370,7 +21386,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean editNotes(View view, final int i) {
-        ItemOptions makeOptions = ItemOptions.makeOptions(this.contentView, this.resourcesProvider, view);
+        ItemOptions makeOptions = ItemOptions.makeOptions(this, view);
         makeOptions.setScrimViewBackground(this.listView.getClipBackground(view));
         makeOptions.addIf(this.userInfo != null, R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new Runnable() { // from class: org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda93
             @Override // java.lang.Runnable
@@ -21479,7 +21495,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         } else {
             str = i == this.birthdayRow ? UserInfoActivity.birthdayString(this.userInfo.birthday) : null;
         }
-        ItemOptions makeOptions = ItemOptions.makeOptions(this.contentView, this.resourcesProvider, view);
+        ItemOptions makeOptions = ItemOptions.makeOptions(this, view);
         makeOptions.setScrimViewBackground(this.listView.getClipBackground(view));
         makeOptions.setGravity(3);
         if (i == this.bizLocationRow && (tL_businessLocation = userFull.business_location) != null) {

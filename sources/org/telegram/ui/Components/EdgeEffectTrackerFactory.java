@@ -1,12 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Build;
 import android.widget.EdgeEffect;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Iterator;
+import org.telegram.ui.Components.EdgeEffectTrackerFactory;
 
 /* loaded from: classes5.dex */
 public final class EdgeEffectTrackerFactory extends RecyclerView.EdgeEffectFactory {
@@ -32,7 +32,7 @@ public final class EdgeEffectTrackerFactory extends RecyclerView.EdgeEffectFacto
 
     @Override // androidx.recyclerview.widget.RecyclerView.EdgeEffectFactory
     protected EdgeEffect createEdgeEffect(RecyclerView recyclerView, int i) {
-        TrackingEdgeEffect trackingEdgeEffect = new TrackingEdgeEffect(recyclerView.getContext(), i, new OnEdgeEffectListener() { // from class: org.telegram.ui.Components.EdgeEffectTrackerFactory$$ExternalSyntheticLambda0
+        TrackingEdgeEffect trackingEdgeEffect = new TrackingEdgeEffect(recyclerView, i, new OnEdgeEffectListener() { // from class: org.telegram.ui.Components.EdgeEffectTrackerFactory$$ExternalSyntheticLambda0
             @Override // org.telegram.ui.Components.EdgeEffectTrackerFactory.OnEdgeEffectListener
             public final void onEdgeEffectVisibilityChange(int i2, boolean z) {
                 EdgeEffectTrackerFactory.this.onEdgeEffectVisibilityChange(i2, z);
@@ -50,13 +50,23 @@ public final class EdgeEffectTrackerFactory extends RecyclerView.EdgeEffectFacto
         }
     }
 
-    private static final class TrackingEdgeEffect extends EdgeEffect {
+    /* JADX INFO: Access modifiers changed from: private */
+    static final class TrackingEdgeEffect extends EdgeEffect {
         private final int direction;
         private boolean lastVisibility;
         private final OnEdgeEffectListener listener;
+        private final Runnable mCheckEdgeVisibility;
+        private final RecyclerView view;
 
-        TrackingEdgeEffect(Context context, int i, OnEdgeEffectListener onEdgeEffectListener) {
-            super(context);
+        TrackingEdgeEffect(RecyclerView recyclerView, int i, OnEdgeEffectListener onEdgeEffectListener) {
+            super(recyclerView.getContext());
+            this.mCheckEdgeVisibility = new Runnable() { // from class: org.telegram.ui.Components.EdgeEffectTrackerFactory$TrackingEdgeEffect$$ExternalSyntheticLambda1
+                @Override // java.lang.Runnable
+                public final void run() {
+                    EdgeEffectTrackerFactory.TrackingEdgeEffect.this.checkEdgeVisibility();
+                }
+            };
+            this.view = recyclerView;
             this.direction = i;
             this.listener = onEdgeEffectListener;
         }
@@ -74,7 +84,8 @@ public final class EdgeEffectTrackerFactory extends RecyclerView.EdgeEffectFacto
             return false;
         }
 
-        private void checkEdgeVisibility() {
+        /* JADX INFO: Access modifiers changed from: private */
+        public void checkEdgeVisibility() {
             boolean isVisible = isVisible();
             if (this.lastVisibility != isVisible) {
                 this.lastVisibility = isVisible;
@@ -131,7 +142,7 @@ public final class EdgeEffectTrackerFactory extends RecyclerView.EdgeEffectFacto
         @Override // android.widget.EdgeEffect
         public boolean draw(Canvas canvas) {
             boolean draw = super.draw(canvas);
-            checkEdgeVisibility();
+            this.view.postOnAnimation(this.mCheckEdgeVisibility);
             return draw;
         }
     }

@@ -67,7 +67,6 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.Adapters.ContactsAdapter;
 import org.telegram.ui.Adapters.SearchAdapter;
-import org.telegram.ui.Business.ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1;
 import org.telegram.ui.Cells.GraySectionCell;
 import org.telegram.ui.Cells.LetterSectionCell;
 import org.telegram.ui.Cells.ProfileSearchCell;
@@ -79,6 +78,7 @@ import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.ContactsEmptyView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.EmojiView$$ExternalSyntheticLambda12;
 import org.telegram.ui.Components.FlickerLoadingView;
 import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.FragmentSearchField;
@@ -122,7 +122,7 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
     private StickerEmptyView emptyView;
     private FragmentFloatingButton floatingButton;
     private boolean floatingButtonVisibleByScroll;
-    private boolean hasMainTabs;
+    public boolean hasMainTabs;
     private HeaderShadowView headerShadowView;
     private IBlur3Capture iBlur3Capture;
     private boolean iBlur3Invalidated;
@@ -525,7 +525,7 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
         this.fragmentView = sizeNotifierFrameLayout;
         RecyclerListView recyclerListView2 = this.listView;
         Objects.requireNonNull(recyclerListView2);
-        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView2, sizeNotifierFrameLayout, new ChatAttachAlertQuickRepliesLayout$$ExternalSyntheticLambda1(recyclerListView2));
+        this.iBlur3Capture = new ViewGroupPartRenderer(recyclerListView2, sizeNotifierFrameLayout, new EmojiView$$ExternalSyntheticLambda12(recyclerListView2));
         this.listView.addEdgeEffectListener(new Runnable() { // from class: org.telegram.ui.ContactsActivity$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
@@ -1405,6 +1405,8 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$askForPermissons$13(int i) {
+        MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askAboutContacts2", false).commit();
+        NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.contactsPermissionBadgeCheck, new Object[0]);
         this.askAboutContacts = i != 0;
         if (i == 0) {
             return;
@@ -1423,7 +1425,7 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
                     }
                     SharedPreferences.Editor edit = MessagesController.getGlobalNotificationsSettings().edit();
                     this.askAboutContacts = false;
-                    edit.putBoolean("askAboutContacts", false).commit();
+                    edit.putBoolean("askAboutContacts", false).putBoolean("askAboutContacts2", false).apply();
                     if (SystemClock.elapsedRealtime() - this.permissionRequestTime < 200) {
                         try {
                             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");

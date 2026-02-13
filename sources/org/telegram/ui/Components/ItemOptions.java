@@ -50,6 +50,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.SharedPhotoVideoCell2;
 import org.telegram.ui.Cells.TextCell;
@@ -58,8 +59,12 @@ import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.BlurringShader;
 import org.telegram.ui.Components.ItemOptions;
 import org.telegram.ui.Components.MessagePreviewView;
+import org.telegram.ui.ContactsActivity;
+import org.telegram.ui.DialogsActivity;
 import org.telegram.ui.Gifts.GiftSheet;
+import org.telegram.ui.MainTabsActivity;
 import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.SettingsActivity;
 import org.telegram.ui.Stories.StoriesController;
 import org.telegram.ui.Stories.recorder.HintView2;
 
@@ -167,6 +172,17 @@ public class ItemOptions {
         return this.context;
     }
 
+    private static BaseFragment downFragment(BaseFragment baseFragment) {
+        INavigationLayout parentLayout;
+        if ((((baseFragment instanceof ProfileActivity) && ((ProfileActivity) baseFragment).hasMainTabs) || (((baseFragment instanceof DialogsActivity) && ((DialogsActivity) baseFragment).hasMainTabs) || (((baseFragment instanceof ContactsActivity) && ((ContactsActivity) baseFragment).hasMainTabs) || ((baseFragment instanceof SettingsActivity) && ((SettingsActivity) baseFragment).hasMainTabs)))) && (parentLayout = baseFragment.getParentLayout()) != null) {
+            BaseFragment safeLastFragment = parentLayout.getSafeLastFragment();
+            if (safeLastFragment instanceof MainTabsActivity) {
+                return safeLastFragment;
+            }
+        }
+        return baseFragment;
+    }
+
     private ItemOptions(BaseFragment baseFragment, View view, boolean z, boolean z2, boolean z3) {
         this.gravity = 5;
         this.point = new float[2];
@@ -177,9 +193,10 @@ public class ItemOptions {
         if (baseFragment.getContext() == null) {
             return;
         }
-        this.fragment = baseFragment;
-        this.resourcesProvider = baseFragment.getResourceProvider();
-        this.context = baseFragment.getContext();
+        BaseFragment downFragment = downFragment(baseFragment);
+        this.fragment = downFragment;
+        this.resourcesProvider = downFragment.getResourceProvider();
+        this.context = downFragment.getContext();
         this.scrimView = view;
         this.dimAlpha = ((double) AndroidUtilities.computePerceivedBrightness(Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider))) > 0.705d ? 102 : 51;
         this.swipeback = z;

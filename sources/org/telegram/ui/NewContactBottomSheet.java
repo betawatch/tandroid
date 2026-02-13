@@ -155,10 +155,10 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         setTitle(LocaleController.getString(R.string.NewContactTitle), true);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0623  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0641  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x063e A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0650  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x062b  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0649  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0646 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0658  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -570,7 +570,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         this.checkTextView = textView2;
         textView2.setTextColor(Theme.getColor(i4, this.resourcesProvider));
         this.checkTextView.setTextSize(1, 14.0f);
-        this.checkTextView.setText("Sync Contact to Phone");
+        this.checkTextView.setText(LocaleController.getString(R.string.AddContactSync));
         LinearLayout linearLayout3 = new LinearLayout(context);
         this.checkLayout = linearLayout3;
         linearLayout3.setOrientation(0);
@@ -600,7 +600,7 @@ public class NewContactBottomSheet extends BottomSheet implements AdapterView.On
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("QR");
         spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.header_qr_24), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) "  ");
-        spannableStringBuilder.append((CharSequence) "Add via QR Code");
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.AddContactQr));
         this.qrButton.setText(spannableStringBuilder, false);
         this.qrButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.NewContactBottomSheet$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener

@@ -6976,6 +6976,28 @@ public class AndroidUtilities {
         }
     }
 
+    public static void printLayoutRequestedChain(View view) {
+        if (view == null) {
+            FileLog.d("LayoutCheck view == null");
+            return;
+        }
+        int i = 0;
+        while (true) {
+            if (view == null) {
+                break;
+            }
+            Object parent = view.getParent();
+            FileLog.d("LayoutCheck level=" + i + ", view=" + view.getClass().getSimpleName() + "@" + Integer.toHexString(System.identityHashCode(view)) + ", isLayoutRequested=" + view.isLayoutRequested());
+            if (parent instanceof View) {
+                view = (View) parent;
+                i++;
+            } else if (parent != null) {
+                FileLog.d("LayoutCheck level=" + (i + 1) + ", parent=" + parent.getClass().getSimpleName() + " (not a View)");
+            }
+        }
+        FileLog.d("LayoutCheck");
+    }
+
     public static void logFlagSecure() {
         FileLog.d("[FLAG_SECURE]");
         printStackTrace("FLAG_SECURE");
@@ -7087,5 +7109,19 @@ public class AndroidUtilities {
             canvas.drawRoundRect(rectF.left, rectF.top - f6, rectF.right, rectF.bottom - f6, max2, max2, paint2);
         }
         canvas.restore();
+    }
+
+    public static boolean isContextSafe(Context context) {
+        if (context == null) {
+            return false;
+        }
+        if (context instanceof Activity) {
+            Activity activity = (Activity) context;
+            return (activity.isFinishing() || activity.isDestroyed()) ? false : true;
+        }
+        if (context instanceof ContextWrapper) {
+            return isContextSafe(((ContextWrapper) context).getBaseContext());
+        }
+        return true;
     }
 }

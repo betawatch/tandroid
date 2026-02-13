@@ -242,10 +242,10 @@ public class CameraScanActivity extends BaseFragment {
 
         @Override // org.telegram.ui.ActionBar.BottomSheet, android.app.Dialog
         /* renamed from: onBackPressed */
-        public void lambda$openCrafting$9() {
+        public void lambda$openCrafting$8() {
             INavigationLayout iNavigationLayout = this.val$actionBarLayout[0];
             if (iNavigationLayout == null || iNavigationLayout.getFragmentStack().size() <= 1) {
-                super.lambda$openCrafting$9();
+                super.lambda$openCrafting$8();
             } else {
                 this.val$actionBarLayout[0].onBackPressed();
             }
