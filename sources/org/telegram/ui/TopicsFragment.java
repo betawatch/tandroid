@@ -468,6 +468,7 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
         this.additionFloatingButtonOffset = (dialogsActivity2 == null || !dialogsActivity2.hasMainTabs) ? 0 : AndroidUtilities.dp(64.0f);
         SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.TopicsFragment.1
             private Paint actionBarPaint;
+            private boolean ignoreLayout;
 
             {
                 setWillNotDraw(false);
@@ -503,6 +504,12 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
             protected void onMeasure(int i2, int i3) {
                 int size = View.MeasureSpec.getSize(i2);
                 int size2 = View.MeasureSpec.getSize(i3);
+                if (TopicsFragment.this.bottomOverlayContainer != null) {
+                    this.ignoreLayout = true;
+                    TopicsFragment.this.bottomOverlayContainer.getLayoutParams().height = AndroidUtilities.dp(51.0f) + TopicsFragment.this.navigationBarHeight;
+                    TopicsFragment.this.bottomOverlayContainer.setPadding(0, 0, 0, TopicsFragment.this.navigationBarHeight);
+                    this.ignoreLayout = false;
+                }
                 int i4 = 0;
                 for (int i5 = 0; i5 < getChildCount(); i5++) {
                     View childAt = getChildAt(i5);
@@ -522,6 +529,14 @@ public class TopicsFragment extends BaseFragment implements NotificationCenter.N
                     }
                 }
                 setMeasuredDimension(size, size2);
+            }
+
+            @Override // android.view.View, android.view.ViewParent
+            public void requestLayout() {
+                if (this.ignoreLayout) {
+                    return;
+                }
+                super.requestLayout();
             }
 
             /* JADX WARN: Removed duplicated region for block: B:15:0x0068  */

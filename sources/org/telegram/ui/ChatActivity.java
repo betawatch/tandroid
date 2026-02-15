@@ -711,6 +711,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private boolean hasBotWebView;
     private boolean hasBotsCommands;
     private boolean hasQuickReplies;
+    private boolean hasSendingMessagesInBotForum;
     private boolean hasUnfavedSelected;
     private HashtagHistoryView hashtagHistoryView;
     private FlickerLoadingView hashtagLoadingView;
@@ -1279,7 +1280,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         chatActivity.resetProgressDialogLoading();
     }
 
-    static /* synthetic */ int access$57210(ChatActivity chatActivity) {
+    static /* synthetic */ int access$57310(ChatActivity chatActivity) {
         int i = chatActivity.newMentionsCount;
         chatActivity.newMentionsCount = i - 1;
         return i;
@@ -2436,6 +2437,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
         public void prepareMessageSending() {
             ChatActivity.this.waitingForSendingMessageLoad = true;
+            if (ChatActivity.this.chatAdapter != null) {
+                ChatActivity.this.chatAdapter.checkRemoveBotForumRowsStartThreadRow();
+            }
         }
 
         @Override // org.telegram.ui.Components.ChatActivityEnterView.ChatActivityEnterViewDelegate
@@ -17609,6 +17613,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (num.intValue() == getTopicId()) {
             return;
         }
+        if (num.intValue() == 0) {
+            this.hasSendingMessagesInBotForum = false;
+        }
         TLRPC.TL_forumTopic topic = this.topicsTabs.getTopic(num.intValue());
         TLRPC.Message message = topic == null ? null : topic.topicStartMessage;
         if (message == null && topic != null && (findTopic = getMessagesController().getTopicsController().findTopic(-getDialogId(), topic.id)) != null) {
@@ -17651,6 +17658,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 this.replyOriginalChat = null;
                 this.isTopic = false;
                 this.isComments = false;
+            }
+            ChatActivityAdapter chatActivityAdapter = this.chatAdapter;
+            if (chatActivityAdapter != null) {
+                chatActivityAdapter.updateRowsSafe();
             }
             firstLoadMessages();
             updateTitle(true);
@@ -22756,6 +22767,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
         if ((i != 0) == (this.chatMode == 1)) {
             this.waitingForSendingMessageLoad = true;
+            ChatActivityAdapter chatActivityAdapter = this.chatAdapter;
+            if (chatActivityAdapter != null) {
+                chatActivityAdapter.checkRemoveBotForumRowsStartThreadRow();
+            }
         }
         int sendMessage = getSendMessagesHelper().sendMessage(arrayList, this.dialog_id, z, z2, z3, i, 0, getThreadMessage(), -1, j, getSendMonoForumPeerId(), getSendMessageSuggestionParams());
         AlertsCreator.showSendMediaAlert(sendMessage, this, this.themeDelegate);
@@ -54102,6 +54117,26 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             setHasStableIds(true);
         }
 
+        public void checkRemoveBotForumRowsStartThreadRow() {
+            boolean z = false;
+            if (UserObject.isBotForum(ChatActivity.this.currentUser) && ChatActivity.this.getTopicId() == 0) {
+                ChatActivity.this.hasSendingMessagesInBotForum = true;
+                int i = this.botInfoRow;
+                if (i >= 0) {
+                    super.notifyItemRemoved(i);
+                    z = true;
+                }
+                int i2 = this.botForumStartThreadRow;
+                if (i2 >= 0) {
+                    super.notifyItemRemoved(i2);
+                    z = true;
+                }
+            }
+            if (z) {
+                updateRowsInternal();
+            }
+        }
+
         public void updateRowsSafe() {
             int i = this.rowCount;
             int i2 = this.botInfoRow;
@@ -54122,13 +54157,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* JADX WARN: Code restructure failed: missing block: B:56:0x019b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:58:0x01ab, code lost:
         
-            if (r9.filteredEndReached == false) goto L100;
+            if (r9.filteredEndReached == false) goto L104;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:73:0x01ca, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:75:0x01da, code lost:
         
-            if (r0.currentUser == null) goto L99;
+            if (r0.currentUser == null) goto L103;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -54158,7 +54193,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             this.userPhotoTimeRow = -5;
             this.userNameTimeRow = -5;
             this.botForumStartThreadRow = -5;
-            if (UserObject.isBotForumWithEditableTopics(ChatActivity.this.currentUser) && ChatActivity.this.getTopicId() == 0) {
+            if (UserObject.isBotForumWithEditableTopics(ChatActivity.this.currentUser) && ChatActivity.this.getTopicId() == 0 && !ChatActivity.this.hasSendingMessagesInBotForum) {
                 int i3 = this.rowCount;
                 this.rowCount = i3 + 1;
                 this.botForumStartThreadRow = i3;
@@ -54205,7 +54240,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     int i11 = this.rowCount;
                     this.rowCount = i11 + 1;
                     this.userInfoRow = i11;
-                } else if ((UserObject.isReplyUser(ChatActivity.this.currentUser) || ((user2 = ChatActivity.this.currentUser) != null && user2.bot && !MessagesController.isSupportUser(user2) && ChatActivity.this.chatMode == 0)) && ChatActivity.this.endReached[0] && ChatActivity.this.getTopicId() == 0) {
+                } else if ((UserObject.isReplyUser(ChatActivity.this.currentUser) || ((user2 = ChatActivity.this.currentUser) != null && user2.bot && !MessagesController.isSupportUser(user2) && ChatActivity.this.chatMode == 0)) && ChatActivity.this.endReached[0] && ChatActivity.this.getTopicId() == 0 && !ChatActivity.this.hasSendingMessagesInBotForum) {
                     int i12 = this.rowCount;
                     this.rowCount = i12 + 1;
                     this.botInfoRow = i12;
@@ -54239,7 +54274,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     int i15 = this.rowCount;
                     this.rowCount = i15 + 1;
                     this.userInfoRow = i15;
-                } else if ((UserObject.isReplyUser(ChatActivity.this.currentUser) || ((user = ChatActivity.this.currentUser) != null && user.bot && !MessagesController.isSupportUser(user) && ChatActivity.this.chatMode == 0)) && ChatActivity.this.getTopicId() == 0) {
+                } else if ((UserObject.isReplyUser(ChatActivity.this.currentUser) || ((user = ChatActivity.this.currentUser) != null && user.bot && !MessagesController.isSupportUser(user) && ChatActivity.this.chatMode == 0)) && ChatActivity.this.getTopicId() == 0 && !ChatActivity.this.hasSendingMessagesInBotForum) {
                     int i16 = this.rowCount;
                     this.rowCount = i16 + 1;
                     this.botInfoRow = i16;
@@ -56219,7 +56254,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 return;
             }
             if (!((BaseFragment) ChatActivity.this).inPreviewMode && ChatActivity.this.chatMode == 0 && !messageObject2.isVoice() && !messageObject2.isRoundVideo()) {
-                ChatActivity.access$57210(ChatActivity.this);
+                ChatActivity.access$57310(ChatActivity.this);
                 if (ChatActivity.this.newMentionsCount <= 0) {
                     ChatActivity.this.newMentionsCount = 0;
                     ChatActivity.this.hasAllMentionsLocal = true;

@@ -38,6 +38,7 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.CacheByChatsController;
@@ -1047,167 +1048,178 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
                     file2.delete();
                     int i2 = iArr[0] + 1;
                     iArr[0] = i2;
-                    callback.run(Float.valueOf(i2 / countDirJava));
+                    if (callback != null) {
+                        callback.run(Float.valueOf(i2 / countDirJava));
+                    }
                 }
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00fa  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0259 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00e5  */
     /* renamed from: cleanupFoldersInternal, reason: merged with bridge method [inline-methods] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void lambda$cleanupFolders$11(final Utilities.Callback2 callback2, final Runnable runnable) {
+        Utilities.Callback callback;
         int i;
-        int[] iArr;
         int i2;
-        int i3;
         File checkDirectory;
+        Utilities.Callback callback3;
+        int i3;
         char c;
         int i4;
-        int i5 = 1;
-        final int[] iArr2 = {0};
+        final int[] iArr = {0};
         boolean[] zArr = this.selected;
-        int i6 = 5;
-        final int i7 = (zArr[9] ? 1 : 0) + (zArr[0] ? 2 : 0) + (zArr[1] ? 2 : 0) + (zArr[2] ? 2 : 0) + (zArr[3] ? 2 : 0) + (zArr[4] ? 1 : 0) + (zArr[5] ? 2 : 0) + (zArr[6] ? 1 : 0) + (zArr[7] ? 1 : 0) + (zArr[8] ? 1 : 0);
+        int i5 = 2;
+        int i6 = 3;
+        int i7 = 4;
+        int i8 = 5;
+        final int i9 = (zArr[9] ? 1 : 0) + (zArr[0] ? 2 : 0) + (zArr[1] ? 2 : 0) + (zArr[2] ? 2 : 0) + (zArr[3] ? 2 : 0) + (zArr[4] ? 1 : 0) + (zArr[5] ? 2 : 0) + (zArr[6] ? 1 : 0) + (zArr[7] ? 1 : 0) + (zArr[8] ? 1 : 0);
         final long currentTimeMillis = System.currentTimeMillis();
-        Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.CacheControlActivity$$ExternalSyntheticLambda23
+        Utilities.Callback callback4 = new Utilities.Callback() { // from class: org.telegram.ui.CacheControlActivity$$ExternalSyntheticLambda23
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                CacheControlActivity.lambda$cleanupFoldersInternal$13(Utilities.Callback2.this, iArr2, i7, (Float) obj);
+                CacheControlActivity.lambda$cleanupFoldersInternal$13(Utilities.Callback2.this, iArr, i9, (Float) obj);
             }
         };
         Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.CacheControlActivity$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
-                CacheControlActivity.lambda$cleanupFoldersInternal$14(Utilities.Callback2.this, iArr2, i7, currentTimeMillis);
+                CacheControlActivity.lambda$cleanupFoldersInternal$14(Utilities.Callback2.this, iArr, i9, currentTimeMillis);
             }
         };
         long j = 0;
         boolean z = false;
-        int i8 = 0;
+        int i10 = 0;
         boolean z2 = true;
-        while (i8 < 10) {
-            if (this.selected[i8]) {
-                if (i8 == 0) {
+        while (i10 < 10) {
+            if (this.selected[i10]) {
+                if (i10 == 0) {
+                    callback = callback4;
                     j += this.photoSize;
-                    iArr = iArr2;
-                    i5 = 0;
-                } else if (i8 == i5) {
-                    j += this.videoSize;
-                    iArr = iArr2;
-                    i5 = 2;
+                    i = 7;
+                    i2 = 0;
                 } else {
-                    if (i8 == 2) {
-                        j += this.documentsSize;
-                        iArr = iArr2;
-                        i5 = 3;
-                        i2 = -1;
-                        i = 9;
+                    callback = callback4;
+                    if (i10 == 1) {
+                        j += this.videoSize;
+                        i = 7;
+                        i2 = 0;
                     } else {
-                        if (i8 == 3) {
+                        if (i10 == i5) {
+                            j += this.documentsSize;
+                            i = 7;
+                            i2 = 1;
+                        } else if (i10 == i6) {
                             j += this.musicSize;
-                            iArr = iArr2;
-                            i5 = 3;
-                            i2 = -1;
-                            i = 9;
-                            i3 = 2;
-                        } else if (i8 == 4) {
+                            i = 7;
+                            i2 = 2;
+                        } else if (i10 == i7) {
                             j += this.audioSize;
-                            iArr = iArr2;
-                        } else if (i8 == i6) {
+                            i = 7;
+                            i2 = 0;
+                            i5 = 1;
+                        } else if (i10 == i8) {
                             j += this.storiesSize;
-                            iArr = iArr2;
+                            i = 7;
+                            i2 = 0;
                             i5 = 6;
-                        } else if (i8 == 6) {
+                        } else if (i10 == 6) {
                             j += this.stickersCacheSize;
-                            iArr = iArr2;
+                            i = 7;
+                            i2 = 0;
                             i5 = 100;
-                        } else if (i8 == 7) {
-                            j += this.cacheSize;
-                            iArr = iArr2;
-                            i5 = 4;
-                            i2 = -1;
-                            i = 9;
-                            i3 = 5;
-                        } else if (i8 == 8) {
-                            j += this.cacheTempSize;
-                            iArr = iArr2;
-                            i5 = 4;
-                            i2 = -1;
-                            i = 9;
-                            i3 = 4;
                         } else {
-                            i = 9;
-                            iArr = iArr2;
-                            if (i8 == 9) {
+                            i = 7;
+                            if (i10 == 7) {
+                                j += this.cacheSize;
+                                i2 = 5;
+                            } else if (i10 == 8) {
+                                j += this.cacheTempSize;
+                                i2 = 4;
+                            } else if (i10 == 9) {
                                 j += this.logsSize;
-                                i5 = 0;
-                                i2 = -1;
+                                i2 = 1;
                             } else {
+                                i2 = 0;
                                 i5 = -1;
-                                i2 = -1;
-                                i3 = 0;
+                            }
+                            i5 = 4;
+                        }
+                        i5 = 3;
+                    }
+                    if (i5 != -1) {
+                        callback3 = callback;
+                    } else {
+                        if (i10 == i) {
+                            try {
+                                cleanDirJava(ApplicationLoader.getFilesDirFixed("rasterized/wallpaper").getAbsolutePath(), 0, null, null);
+                            } catch (Exception e) {
+                                FileLog.e(e);
                             }
                         }
-                        if (i5 != i2) {
-                            if (i8 == i) {
-                                checkDirectory = AndroidUtilities.getLogsDir();
-                            } else if (i5 == 100) {
-                                checkDirectory = new File(FileLoader.checkDirectory(4), "acache");
-                            } else {
-                                checkDirectory = FileLoader.checkDirectory(i5);
-                            }
-                            if (checkDirectory != null) {
-                                cleanDirJava(checkDirectory.getAbsolutePath(), i3, null, callback);
+                        if (i10 == 9) {
+                            checkDirectory = AndroidUtilities.getLogsDir();
+                        } else if (i5 == 100) {
+                            checkDirectory = new File(FileLoader.checkDirectory(i7), "acache");
+                        } else {
+                            checkDirectory = FileLoader.checkDirectory(i5);
+                        }
+                        if (checkDirectory != null) {
+                            callback3 = callback;
+                            cleanDirJava(checkDirectory.getAbsolutePath(), i2, null, callback3);
+                        } else {
+                            callback3 = callback;
+                        }
+                        iArr[0] = iArr[0] + 1;
+                        runnable2.run();
+                        if (i5 == 100) {
+                            File checkDirectory2 = FileLoader.checkDirectory(i7);
+                            if (checkDirectory2 != null) {
+                                cleanDirJava(checkDirectory2.getAbsolutePath(), 3, null, callback3);
                             }
                             iArr[0] = iArr[0] + 1;
                             runnable2.run();
-                            if (i5 == 100) {
-                                File checkDirectory2 = FileLoader.checkDirectory(4);
-                                if (checkDirectory2 != null) {
-                                    cleanDirJava(checkDirectory2.getAbsolutePath(), 3, null, callback);
-                                }
-                                iArr[0] = iArr[0] + 1;
-                                runnable2.run();
+                        }
+                        if (i5 == 0 || i5 == 2) {
+                            i3 = i2;
+                            File checkDirectory3 = FileLoader.checkDirectory(i5 == 0 ? 100 : 101);
+                            if (checkDirectory3 != null) {
+                                cleanDirJava(checkDirectory3.getAbsolutePath(), i3, null, callback3);
                             }
-                            if (i5 == 0 || i5 == 2) {
-                                File checkDirectory3 = FileLoader.checkDirectory(i5 == 0 ? 100 : 101);
-                                if (checkDirectory3 != null) {
-                                    cleanDirJava(checkDirectory3.getAbsolutePath(), i3, null, callback);
-                                }
-                                c = 0;
-                                iArr[0] = iArr[0] + 1;
-                                runnable2.run();
-                            } else {
-                                c = 0;
+                            c = 0;
+                            iArr[0] = iArr[0] + 1;
+                            runnable2.run();
+                            i4 = 3;
+                        } else {
+                            i3 = i2;
+                            i4 = 3;
+                            c = 0;
+                        }
+                        if (i5 == i4) {
+                            File checkDirectory4 = FileLoader.checkDirectory(5);
+                            if (checkDirectory4 != null) {
+                                cleanDirJava(checkDirectory4.getAbsolutePath(), i3, null, callback3);
                             }
-                            if (i5 == 3) {
-                                File checkDirectory4 = FileLoader.checkDirectory(5);
-                                if (checkDirectory4 != null) {
-                                    cleanDirJava(checkDirectory4.getAbsolutePath(), i3, null, callback);
-                                }
-                                i4 = 1;
-                                iArr[c] = iArr[c] + 1;
-                                runnable2.run();
-                            } else {
-                                i4 = 1;
-                            }
-                            if (i8 == 9) {
-                                this.logsSize = getDirectorySize(AndroidUtilities.getLogsDir(), i4);
-                            } else if (i5 == 4) {
-                                this.cacheSize = getDirectorySize(FileLoader.checkDirectory(4), 5);
-                                this.cacheTempSize = getDirectorySize(FileLoader.checkDirectory(4), 4);
-                                z = true;
-                            } else if (i5 == i4) {
-                                this.audioSize = getDirectorySize(FileLoader.checkDirectory(i4), i3);
-                            } else if (i5 == 6) {
-                                this.storiesSize = getDirectorySize(FileLoader.checkDirectory(6), i3);
-                            } else if (i5 != 3) {
-                                i6 = 5;
+                            iArr[c] = iArr[c] + 1;
+                            runnable2.run();
+                        }
+                        if (i10 == 9) {
+                            this.logsSize = getDirectorySize(AndroidUtilities.getLogsDir(), 1);
+                        } else if (i5 == 4) {
+                            this.cacheSize = getDirectorySize(FileLoader.checkDirectory(4), 5);
+                            this.cacheTempSize = getDirectorySize(FileLoader.checkDirectory(4), 4);
+                            z = true;
+                        } else if (i5 == 1) {
+                            this.audioSize = getDirectorySize(FileLoader.checkDirectory(1), i3);
+                        } else if (i5 == 6) {
+                            this.storiesSize = getDirectorySize(FileLoader.checkDirectory(6), i3);
+                        } else {
+                            if (i5 != 3) {
                                 if (i5 == 0) {
                                     long directorySize = getDirectorySize(FileLoader.checkDirectory(0), i3);
                                     this.photoSize = directorySize;
@@ -1223,36 +1235,37 @@ public class CacheControlActivity extends BaseFragment implements NotificationCe
                                     this.stickersCacheSize += directorySize3;
                                 }
                                 z = true;
-                            } else if (i3 == i4) {
+                            } else if (i3 == 1) {
                                 long directorySize4 = getDirectorySize(FileLoader.checkDirectory(3), i3);
                                 this.documentsSize = directorySize4;
-                                i6 = 5;
                                 this.documentsSize = directorySize4 + getDirectorySize(FileLoader.checkDirectory(5), i3);
                             } else {
-                                i6 = 5;
                                 long directorySize5 = getDirectorySize(FileLoader.checkDirectory(3), i3);
                                 this.musicSize = directorySize5;
                                 this.musicSize = directorySize5 + getDirectorySize(FileLoader.checkDirectory(5), i3);
                             }
-                            i6 = 5;
+                            i10++;
+                            callback4 = callback3;
+                            i5 = 2;
+                            i6 = 3;
+                            i7 = 4;
+                            i8 = 5;
                         }
                     }
-                    i3 = 1;
-                    if (i5 != i2) {
-                    }
                 }
-                i2 = -1;
-                i = 9;
-                i3 = 0;
-                if (i5 != i2) {
+                i5 = 0;
+                if (i5 != -1) {
                 }
             } else {
-                iArr = iArr2;
+                callback3 = callback4;
                 z2 = false;
             }
-            i8++;
-            iArr2 = iArr;
-            i5 = 1;
+            i10++;
+            callback4 = callback3;
+            i5 = 2;
+            i6 = 3;
+            i7 = 4;
+            i8 = 5;
         }
         long j2 = this.cacheSize + this.cacheTempSize + this.logsSize + this.videoSize + this.audioSize + this.photoSize + this.documentsSize + this.musicSize + this.stickersCacheSize + this.storiesSize;
         lastTotalSizeCalculated = Long.valueOf(j2);
