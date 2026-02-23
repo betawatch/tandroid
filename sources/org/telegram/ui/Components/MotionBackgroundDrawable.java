@@ -152,7 +152,7 @@ public class MotionBackgroundDrawable extends Drawable {
         this.patternBounds = new android.graphics.Rect();
         this.patternAlpha = 1.0f;
         this.backgroundAlpha = 1.0f;
-        this.alpha = NotificationCenter.closeOtherAppActivities;
+        this.alpha = NotificationCenter.invalidateMotionBackground;
         this.indeterminateSpeedScale = 1.0f;
         this.bitmapWidth = 60;
         this.bitmapHeight = 80;
@@ -194,7 +194,7 @@ public class MotionBackgroundDrawable extends Drawable {
         this.patternBounds = new android.graphics.Rect();
         this.patternAlpha = 1.0f;
         this.backgroundAlpha = 1.0f;
-        this.alpha = NotificationCenter.closeOtherAppActivities;
+        this.alpha = NotificationCenter.invalidateMotionBackground;
         this.indeterminateSpeedScale = 1.0f;
         this.bitmapWidth = 60;
         this.bitmapHeight = 80;

@@ -2364,29 +2364,29 @@ public class MessageObject {
     
         if ((r3.new_participant instanceof org.telegram.tgnet.TLRPC.TL_channelParticipant) != false) goto L66;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:687:0x0c20, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:697:0x0c4a, code lost:
     
-        if (r10.id == r12.id) goto L480;
+        if (r10.id == r12.id) goto L490;
      */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x1c1d  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x1c6f  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x1c74  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x1d0a A[ADDED_TO_REGION, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x1d0b  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x1d20  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x1d32  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x1d40  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x1d4b  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x1d82  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x1d43  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x1d25  */
-    /* JADX WARN: Removed duplicated region for block: B:661:0x0c46  */
-    /* JADX WARN: Removed duplicated region for block: B:664:0x0c87  */
-    /* JADX WARN: Removed duplicated region for block: B:670:0x0d23  */
-    /* JADX WARN: Removed duplicated region for block: B:672:0x0d2e  */
-    /* JADX WARN: Removed duplicated region for block: B:674:0x0c53  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x1d01  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x1c71  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x1d43  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x1d95  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x1d9a  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x1e30 A[ADDED_TO_REGION, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x1e31  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x1e46  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x1e58  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x1e66  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x1e71  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x1ea8  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x1e69  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x1e4b  */
+    /* JADX WARN: Removed duplicated region for block: B:671:0x0c70  */
+    /* JADX WARN: Removed duplicated region for block: B:674:0x0cb1  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x1e27  */
+    /* JADX WARN: Removed duplicated region for block: B:680:0x0d4d  */
+    /* JADX WARN: Removed duplicated region for block: B:682:0x0d58  */
+    /* JADX WARN: Removed duplicated region for block: B:684:0x0c7d  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x1d97  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2653,6 +2653,15 @@ public class MessageObject {
                             sb3.append(!tL_chatBannedRights2.pin_messages ? '+' : '-');
                             sb3.append(' ');
                             sb3.append(LocaleController.getString(R.string.EventLogRestrictedPinMessages));
+                        }
+                        if (tL_chatBannedRights.edit_rank != tL_chatBannedRights2.edit_rank) {
+                            if (!z7) {
+                                sb3.append('\n');
+                            }
+                            sb3.append('\n');
+                            sb3.append(!tL_chatBannedRights2.edit_rank ? '+' : '-');
+                            sb3.append(' ');
+                            sb3.append(LocaleController.getString(R.string.EventLogRestrictedEditRank));
                         }
                         this.messageText = sb3.toString();
                     } else {
@@ -3467,21 +3476,21 @@ public class MessageObject {
                                                                     this.messageText = replaceWithLink(LocaleController.getString(R.string.ActionForwardsEnabledGroup), "un1", user);
                                                                 }
                                                             } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionExportedInviteDelete) {
-                                                                CharSequence replaceWithLink8 = replaceWithLink(LocaleController.formatString("ActionDeletedInviteLinkClickable", R.string.ActionDeletedInviteLinkClickable, new Object[0]), "un1", user);
+                                                                CharSequence replaceWithLink8 = replaceWithLink(LocaleController.formatString(R.string.ActionDeletedInviteLinkClickable, new Object[0]), "un1", user);
                                                                 this.messageText = replaceWithLink8;
                                                                 this.messageText = replaceWithLink(replaceWithLink8, "un2", ((TLRPC.TL_channelAdminLogEventActionExportedInviteDelete) channelAdminLogEventAction).invite);
                                                             } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionExportedInviteRevoke) {
                                                                 TLRPC.TL_channelAdminLogEventActionExportedInviteRevoke tL_channelAdminLogEventActionExportedInviteRevoke = (TLRPC.TL_channelAdminLogEventActionExportedInviteRevoke) channelAdminLogEventAction;
-                                                                CharSequence replaceWithLink9 = replaceWithLink(LocaleController.formatString("ActionRevokedInviteLinkClickable", R.string.ActionRevokedInviteLinkClickable, tL_channelAdminLogEventActionExportedInviteRevoke.invite.link), "un1", user);
+                                                                CharSequence replaceWithLink9 = replaceWithLink(LocaleController.formatString(R.string.ActionRevokedInviteLinkClickable, tL_channelAdminLogEventActionExportedInviteRevoke.invite.link), "un1", user);
                                                                 this.messageText = replaceWithLink9;
                                                                 this.messageText = replaceWithLink(replaceWithLink9, "un2", tL_channelAdminLogEventActionExportedInviteRevoke.invite);
                                                             } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionExportedInviteEdit) {
                                                                 TLRPC.TL_channelAdminLogEventActionExportedInviteEdit tL_channelAdminLogEventActionExportedInviteEdit = (TLRPC.TL_channelAdminLogEventActionExportedInviteEdit) channelAdminLogEventAction;
                                                                 String str11 = tL_channelAdminLogEventActionExportedInviteEdit.prev_invite.link;
                                                                 if (str11 != null && str11.equals(tL_channelAdminLogEventActionExportedInviteEdit.new_invite.link)) {
-                                                                    this.messageText = replaceWithLink(LocaleController.formatString("ActionEditedInviteLinkToSameClickable", R.string.ActionEditedInviteLinkToSameClickable, new Object[0]), "un1", user);
+                                                                    this.messageText = replaceWithLink(LocaleController.formatString(R.string.ActionEditedInviteLinkToSameClickable, new Object[0]), "un1", user);
                                                                 } else {
-                                                                    this.messageText = replaceWithLink(LocaleController.formatString("ActionEditedInviteLinkClickable", R.string.ActionEditedInviteLinkClickable, new Object[0]), "un1", user);
+                                                                    this.messageText = replaceWithLink(LocaleController.formatString(R.string.ActionEditedInviteLinkClickable, new Object[0]), "un1", user);
                                                                 }
                                                                 CharSequence replaceWithLink10 = replaceWithLink(this.messageText, "un2", tL_channelAdminLogEventActionExportedInviteEdit.prev_invite);
                                                                 this.messageText = replaceWithLink10;
@@ -3527,7 +3536,7 @@ public class MessageObject {
                                                                         int i24 = R.string.ActionTTLChanged;
                                                                         Object[] objArr2 = new Object[1];
                                                                         objArr2[c] = formatPluralString;
-                                                                        this.messageText = replaceWithLink(LocaleController.formatString("ActionTTLChanged", i24, objArr2), "un1", user);
+                                                                        this.messageText = replaceWithLink(LocaleController.formatString(i24, objArr2), "un1", user);
                                                                     }
                                                                 }
                                                             } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionParticipantJoinByRequest) {
@@ -3547,12 +3556,50 @@ public class MessageObject {
                                                             } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionSendMessage) {
                                                                 message = ((TLRPC.TL_channelAdminLogEventActionSendMessage) channelAdminLogEventAction).message;
                                                                 this.messageText = replaceWithLink(LocaleController.getString(R.string.EventLogSendMessages), "un1", user);
+                                                            } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionParticipantEditRank) {
+                                                                TLRPC.TL_channelAdminLogEventActionParticipantEditRank tL_channelAdminLogEventActionParticipantEditRank = (TLRPC.TL_channelAdminLogEventActionParticipantEditRank) channelAdminLogEventAction;
+                                                                if (tL_channelAdminLogEventActionParticipantEditRank.user_id == tL_channelAdminLogEvent2.user_id) {
+                                                                    if (!TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.prev_rank) && !TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.new_rank)) {
+                                                                        String formatString = LocaleController.formatString(R.string.EventLogRankSelfEdit, tL_channelAdminLogEventActionParticipantEditRank.prev_rank, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
+                                                                        this.messageText = formatString;
+                                                                        this.messageText = replaceWithLink(formatString, "un1", user);
+                                                                    } else if (TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.prev_rank) && !TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.new_rank)) {
+                                                                        String formatString2 = LocaleController.formatString(R.string.EventLogRankSelfAdd, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
+                                                                        this.messageText = formatString2;
+                                                                        this.messageText = replaceWithLink(formatString2, "un1", user);
+                                                                    } else {
+                                                                        String formatString3 = LocaleController.formatString(R.string.EventLogRankSelfRemove, tL_channelAdminLogEventActionParticipantEditRank.prev_rank);
+                                                                        this.messageText = formatString3;
+                                                                        this.messageText = replaceWithLink(formatString3, "un1", user);
+                                                                    }
+                                                                } else {
+                                                                    TLRPC.User user6 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_channelAdminLogEventActionParticipantEditRank.user_id));
+                                                                    if (!TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.prev_rank) && !TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.new_rank)) {
+                                                                        String formatString4 = LocaleController.formatString(R.string.EventLogRankEdit, tL_channelAdminLogEventActionParticipantEditRank.prev_rank, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
+                                                                        this.messageText = formatString4;
+                                                                        CharSequence replaceWithLink15 = replaceWithLink(formatString4, "un1", user);
+                                                                        this.messageText = replaceWithLink15;
+                                                                        this.messageText = replaceWithLink(replaceWithLink15, "un2", user6);
+                                                                    } else if (TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.prev_rank) && !TextUtils.isEmpty(tL_channelAdminLogEventActionParticipantEditRank.new_rank)) {
+                                                                        String formatString5 = LocaleController.formatString(R.string.EventLogRankAdd, tL_channelAdminLogEventActionParticipantEditRank.new_rank);
+                                                                        this.messageText = formatString5;
+                                                                        CharSequence replaceWithLink16 = replaceWithLink(formatString5, "un1", user);
+                                                                        this.messageText = replaceWithLink16;
+                                                                        this.messageText = replaceWithLink(replaceWithLink16, "un2", user6);
+                                                                    } else {
+                                                                        String formatString6 = LocaleController.formatString(R.string.EventLogRankRemove, tL_channelAdminLogEventActionParticipantEditRank.prev_rank);
+                                                                        this.messageText = formatString6;
+                                                                        CharSequence replaceWithLink17 = replaceWithLink(formatString6, "un1", user);
+                                                                        this.messageText = replaceWithLink17;
+                                                                        this.messageText = replaceWithLink(replaceWithLink17, "un2", user6);
+                                                                    }
+                                                                }
                                                             } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangeAvailableReactions) {
                                                                 TLRPC.TL_channelAdminLogEventActionChangeAvailableReactions tL_channelAdminLogEventActionChangeAvailableReactions = (TLRPC.TL_channelAdminLogEventActionChangeAvailableReactions) channelAdminLogEventAction;
                                                                 boolean z11 = (tL_channelAdminLogEventActionChangeAvailableReactions.prev_value instanceof TLRPC.TL_chatReactionsSome) && (tL_channelAdminLogEventActionChangeAvailableReactions.new_value instanceof TLRPC.TL_chatReactionsSome);
                                                                 CharSequence stringFrom = getStringFrom(tL_channelAdminLogEventActionChangeAvailableReactions.new_value);
                                                                 if (z11) {
-                                                                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(replaceWithLink(LocaleController.formatString("ActionReactionsChangedList", R.string.ActionReactionsChangedList, "**new**"), "un1", user));
+                                                                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(replaceWithLink(LocaleController.formatString(R.string.ActionReactionsChangedList, "**new**"), "un1", user));
                                                                     int indexOf = spannableStringBuilder.toString().indexOf("**new**");
                                                                     if (indexOf > 0) {
                                                                         spannableStringBuilder.replace(indexOf, indexOf + 7, stringFrom);
@@ -3560,7 +3607,7 @@ public class MessageObject {
                                                                     this.messageText = spannableStringBuilder;
                                                                 } else {
                                                                     CharSequence stringFrom2 = getStringFrom(tL_channelAdminLogEventActionChangeAvailableReactions.prev_value);
-                                                                    SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(replaceWithLink(LocaleController.formatString("ActionReactionsChanged", R.string.ActionReactionsChanged, "**old**", "**new**"), "un1", user));
+                                                                    SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(replaceWithLink(LocaleController.formatString(R.string.ActionReactionsChanged, "**old**", "**new**"), "un1", user));
                                                                     int indexOf2 = spannableStringBuilder2.toString().indexOf("**old**");
                                                                     if (indexOf2 > 0) {
                                                                         spannableStringBuilder2.replace(indexOf2, indexOf2 + 7, stringFrom2);
@@ -3629,9 +3676,9 @@ public class MessageObject {
                                                                     this.messageText = replaceWithLink(LocaleController.formatString("EventLogSwitchToGroup", R.string.EventLogSwitchToGroup, new Object[0]), "un1", user);
                                                                 }
                                                             } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionCreateTopic) {
-                                                                CharSequence replaceWithLink15 = replaceWithLink(LocaleController.formatString("EventLogCreateTopic", R.string.EventLogCreateTopic, new Object[0]), "un1", user);
-                                                                this.messageText = replaceWithLink15;
-                                                                this.messageText = replaceWithLink(replaceWithLink15, "un2", ((TLRPC.TL_channelAdminLogEventActionCreateTopic) channelAdminLogEventAction).topic);
+                                                                CharSequence replaceWithLink18 = replaceWithLink(LocaleController.formatString("EventLogCreateTopic", R.string.EventLogCreateTopic, new Object[0]), "un1", user);
+                                                                this.messageText = replaceWithLink18;
+                                                                this.messageText = replaceWithLink(replaceWithLink18, "un2", ((TLRPC.TL_channelAdminLogEventActionCreateTopic) channelAdminLogEventAction).topic);
                                                             } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionEditTopic) {
                                                                 TLRPC.TL_channelAdminLogEventActionEditTopic tL_channelAdminLogEventActionEditTopic = (TLRPC.TL_channelAdminLogEventActionEditTopic) channelAdminLogEventAction;
                                                                 TLRPC.ForumTopic forumTopic = tL_channelAdminLogEventActionEditTopic.prev_topic;
@@ -3661,26 +3708,26 @@ public class MessageObject {
                                                                         }
                                                                     }
                                                                 }
-                                                                CharSequence replaceWithLink16 = replaceWithLink(LocaleController.getString(R.string.EventLogEditTopic), "un1", user);
-                                                                this.messageText = replaceWithLink16;
-                                                                CharSequence replaceWithLink17 = replaceWithLink(replaceWithLink16, "un2", tL_channelAdminLogEventActionEditTopic.prev_topic);
-                                                                this.messageText = replaceWithLink17;
-                                                                this.messageText = replaceWithLink(replaceWithLink17, "un3", tL_channelAdminLogEventActionEditTopic.new_topic);
+                                                                CharSequence replaceWithLink19 = replaceWithLink(LocaleController.getString(R.string.EventLogEditTopic), "un1", user);
+                                                                this.messageText = replaceWithLink19;
+                                                                CharSequence replaceWithLink20 = replaceWithLink(replaceWithLink19, "un2", tL_channelAdminLogEventActionEditTopic.prev_topic);
+                                                                this.messageText = replaceWithLink20;
+                                                                this.messageText = replaceWithLink(replaceWithLink20, "un3", tL_channelAdminLogEventActionEditTopic.new_topic);
                                                             } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionDeleteTopic) {
-                                                                CharSequence replaceWithLink18 = replaceWithLink(LocaleController.getString(R.string.EventLogDeleteTopic), "un1", user);
-                                                                this.messageText = replaceWithLink18;
-                                                                this.messageText = replaceWithLink(replaceWithLink18, "un2", ((TLRPC.TL_channelAdminLogEventActionDeleteTopic) channelAdminLogEventAction).topic);
+                                                                CharSequence replaceWithLink21 = replaceWithLink(LocaleController.getString(R.string.EventLogDeleteTopic), "un1", user);
+                                                                this.messageText = replaceWithLink21;
+                                                                this.messageText = replaceWithLink(replaceWithLink21, "un2", ((TLRPC.TL_channelAdminLogEventActionDeleteTopic) channelAdminLogEventAction).topic);
                                                             } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionPinTopic) {
                                                                 TLRPC.TL_channelAdminLogEventActionPinTopic tL_channelAdminLogEventActionPinTopic = (TLRPC.TL_channelAdminLogEventActionPinTopic) channelAdminLogEventAction;
                                                                 TLRPC.ForumTopic forumTopic4 = tL_channelAdminLogEventActionPinTopic.new_topic;
                                                                 if ((forumTopic4 instanceof TLRPC.TL_forumTopic) && ((TLRPC.TL_forumTopic) forumTopic4).pinned) {
-                                                                    CharSequence replaceWithLink19 = replaceWithLink(LocaleController.formatString("EventLogPinTopic", R.string.EventLogPinTopic, new Object[0]), "un1", user);
-                                                                    this.messageText = replaceWithLink19;
-                                                                    this.messageText = replaceWithLink(replaceWithLink19, "un2", tL_channelAdminLogEventActionPinTopic.new_topic);
+                                                                    CharSequence replaceWithLink22 = replaceWithLink(LocaleController.formatString("EventLogPinTopic", R.string.EventLogPinTopic, new Object[0]), "un1", user);
+                                                                    this.messageText = replaceWithLink22;
+                                                                    this.messageText = replaceWithLink(replaceWithLink22, "un2", tL_channelAdminLogEventActionPinTopic.new_topic);
                                                                 } else {
-                                                                    CharSequence replaceWithLink20 = replaceWithLink(LocaleController.formatString("EventLogUnpinTopic", R.string.EventLogUnpinTopic, new Object[0]), "un1", user);
-                                                                    this.messageText = replaceWithLink20;
-                                                                    this.messageText = replaceWithLink(replaceWithLink20, "un2", tL_channelAdminLogEventActionPinTopic.new_topic);
+                                                                    CharSequence replaceWithLink23 = replaceWithLink(LocaleController.formatString("EventLogUnpinTopic", R.string.EventLogUnpinTopic, new Object[0]), "un1", user);
+                                                                    this.messageText = replaceWithLink23;
+                                                                    this.messageText = replaceWithLink(replaceWithLink23, "un2", tL_channelAdminLogEventActionPinTopic.new_topic);
                                                                 }
                                                             } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionToggleAntiSpam) {
                                                                 if (((TLRPC.TL_channelAdminLogEventActionToggleAntiSpam) channelAdminLogEventAction).new_value) {
@@ -11454,7 +11501,7 @@ public class MessageObject {
         TLRPC.Message message = this.messageOwner;
         if (message.send_state != 2 || message.id >= 0) {
             if (this.scheduled && message.id > 0) {
-                if (message.date < ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - (this.messageOwner.video_processing_pending ? NotificationCenter.onUserRingtonesUpdated : 60)) {
+                if (message.date < ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() - (this.messageOwner.video_processing_pending ? NotificationCenter.onRequestPermissionResultReceived : 60)) {
                 }
             }
             return false;
@@ -13597,12 +13644,12 @@ public class MessageObject {
             TLRPC.Document document = messageMedia.document;
             if (document != null) {
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 50);
-                this.mediaThumb = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.storiesDraftsUpdated, false, null, true), document);
+                this.mediaThumb = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.storiesListUpdated, false, null, true), document);
                 this.mediaSmallThumb = ImageLocation.getForDocument(closestPhotoSizeWithSize, document);
                 return;
             } else {
                 TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, 50);
-                this.mediaThumb = ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, NotificationCenter.storiesDraftsUpdated, false, closestPhotoSizeWithSize2, true), this.photoThumbsObject);
+                this.mediaThumb = ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, NotificationCenter.storiesListUpdated, false, closestPhotoSizeWithSize2, true), this.photoThumbsObject);
                 this.mediaSmallThumb = ImageLocation.getForObject(closestPhotoSizeWithSize2, this.photoThumbsObject);
                 return;
             }
@@ -13610,7 +13657,7 @@ public class MessageObject {
         if (isVideo()) {
             TLRPC.Document document2 = getDocument();
             TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, 50);
-            this.mediaThumb = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, NotificationCenter.storiesDraftsUpdated), document2);
+            this.mediaThumb = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, NotificationCenter.storiesListUpdated), document2);
             this.mediaSmallThumb = ImageLocation.getForDocument(closestPhotoSizeWithSize3, document2);
             return;
         }
@@ -13618,7 +13665,7 @@ public class MessageObject {
             return;
         }
         TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, 50);
-        this.mediaThumb = ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, NotificationCenter.storiesDraftsUpdated, false, closestPhotoSizeWithSize4, false), this.photoThumbsObject);
+        this.mediaThumb = ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(this.photoThumbs, NotificationCenter.storiesListUpdated, false, closestPhotoSizeWithSize4, false), this.photoThumbsObject);
         this.mediaSmallThumb = ImageLocation.getForObject(closestPhotoSizeWithSize4, this.photoThumbsObject);
     }
 

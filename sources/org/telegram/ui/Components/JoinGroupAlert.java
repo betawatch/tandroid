@@ -29,6 +29,7 @@ import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ChatActivity;
 import org.telegram.ui.Components.Bulletin;
+import org.telegram.ui.Components.JoinGroupAlert;
 
 /* loaded from: classes5.dex */
 public class JoinGroupAlert extends BottomSheet {
@@ -253,7 +254,8 @@ public class JoinGroupAlert extends BottomSheet {
             z4 = true;
         }
         TextView textView6 = new TextView(getContext());
-        textView6.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(8.0f), getThemedColor(Theme.key_featuredStickers_addButton), getThemedColor(Theme.key_featuredStickers_addButtonPressed)));
+        textView6.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.dp(24.0f), getThemedColor(Theme.key_featuredStickers_addButton), getThemedColor(Theme.key_featuredStickers_addButtonPressed)));
+        ScaleStateListAnimator.apply(textView6, 0.02f, 1.2f);
         textView6.setEllipsize(TextUtils.TruncateAt.END);
         textView6.setGravity(17);
         textView6.setSingleLine(true);
@@ -417,11 +419,11 @@ public class JoinGroupAlert extends BottomSheet {
             chat2.kicked = false;
             MessagesController.getInstance(this.currentAccount).putUsers(updates.users, false);
             MessagesController.getInstance(this.currentAccount).putChats(updates.chats, false);
-            openChat(chat2.id);
+            openChat(chat2.id, !ChatObject.isChannelAndNotMegaGroup(chat2));
             return;
         }
         if ("USER_ALREADY_PARTICIPANT".equals(tL_error.text) && i == 0 && (chatInvite = this.chatInvite) != null && (chat = chatInvite.chat) != null) {
-            openChat(chat.id);
+            openChat(chat.id, false);
         } else {
             AlertsCreator.processError(this.currentAccount, tL_error, this.fragment, tL_messages_importChatInvite, new Object[0]);
         }
@@ -464,13 +466,59 @@ public class JoinGroupAlert extends BottomSheet {
         return i == 0 ? Theme.dialogs_scamDrawable : Theme.dialogs_fakeDrawable;
     }
 
-    private void openChat(long j) {
+    private void openChat(long j, boolean z) {
         Bundle bundle = new Bundle();
         bundle.putLong("chat_id", j);
         if (MessagesController.getInstance(this.currentAccount).checkCanOpenChat(bundle, this.fragment)) {
-            ChatActivity chatActivity = new ChatActivity(bundle);
+            1 r6 = new 1(bundle, z, j);
             BaseFragment baseFragment = this.fragment;
-            baseFragment.presentFragment(chatActivity, baseFragment instanceof ChatActivity);
+            baseFragment.presentFragment(r6, baseFragment instanceof ChatActivity);
+        }
+    }
+
+    class 1 extends ChatActivity {
+        private boolean shownToast;
+        final /* synthetic */ long val$chatId;
+        final /* synthetic */ boolean val$showJoined;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        1(Bundle bundle, boolean z, long j) {
+            super(bundle);
+            this.val$showJoined = z;
+            this.val$chatId = j;
+            this.shownToast = false;
+        }
+
+        @Override // org.telegram.ui.ChatActivity, org.telegram.ui.ActionBar.BaseFragment
+        public void onBecomeFullyVisible() {
+            super.onBecomeFullyVisible();
+            if (this.shownToast || !this.val$showJoined) {
+                return;
+            }
+            this.shownToast = true;
+            final TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(this.val$chatId));
+            if (ChatObject.canManageMyTag(chat)) {
+                BulletinFactory of = BulletinFactory.of(this);
+                int i = R.raw.contact_check;
+                String string = LocaleController.getString(R.string.JoinedGroup);
+                String string2 = LocaleController.getString(R.string.JoinedGroupAddTag);
+                final long j = this.val$chatId;
+                of.createSimpleBulletin(i, string, string2, new Runnable() { // from class: org.telegram.ui.Components.JoinGroupAlert$1$$ExternalSyntheticLambda0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        JoinGroupAlert.1.this.lambda$onBecomeFullyVisible$0(j, chat);
+                    }
+                }).hideAfterBottomSheet(false).show(true);
+                return;
+            }
+            BulletinFactory.of(this).createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.JoinedGroup)).hideAfterBottomSheet(false).show(true);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public /* synthetic */ void lambda$onBecomeFullyVisible$0(long j, TLRPC.Chat chat) {
+            if (AndroidUtilities.isContextSafe(getContext())) {
+                TagEditCell.showSheet(getContext(), this.currentAccount, -j, getUserConfig().getCurrentUser(), null, chat.admin_rights != null, chat.creator, ((BottomSheet) JoinGroupAlert.this).resourcesProvider);
+            }
         }
     }
 }

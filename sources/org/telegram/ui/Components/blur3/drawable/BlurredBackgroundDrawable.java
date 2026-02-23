@@ -78,7 +78,7 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
     public BlurredBackgroundDrawable() {
         Props props = new Props();
         this.boundProps = props;
-        this.alpha = NotificationCenter.closeOtherAppActivities;
+        this.alpha = NotificationCenter.invalidateMotionBackground;
         this.shadowAlpha = 1.0f;
         this.backgroundColorPaint = new Paint(1);
         this.paintStrokeFill = new Paint(1);

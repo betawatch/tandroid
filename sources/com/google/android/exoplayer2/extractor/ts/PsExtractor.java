@@ -145,7 +145,7 @@ public final class PsExtractor implements Extractor {
             extractorInput.skipFully(1);
             return 0;
         }
-        int i = readInt & NotificationCenter.closeOtherAppActivities;
+        int i = readInt & NotificationCenter.invalidateMotionBackground;
         PesReader pesReader = (PesReader) this.psPayloadReaders.get(i);
         if (!this.foundAllTracks) {
             if (pesReader == null) {

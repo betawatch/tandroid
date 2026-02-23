@@ -3602,7 +3602,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                                 height2 = AndroidUtilities.lerp(this.giftPremiumTextCollapsedHeight, height2, f7);
                                 RectF rectF3 = AndroidUtilities.rectTmp;
                                 rectF3.set(0.0f, -AndroidUtilities.dp(20.0f), getWidth(), height2);
-                                canvas.saveLayerAlpha(rectF3, NotificationCenter.closeOtherAppActivities, 31);
+                                canvas.saveLayerAlpha(rectF3, NotificationCenter.invalidateMotionBackground, 31);
                             } else {
                                 canvas.save();
                             }
@@ -4379,7 +4379,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             if (drawable != null) {
                 int i2 = (int) dp;
                 drawable.setBounds((int) dp3, i2, (int) f2, botButton.height + i2);
-                botButton.selectorDrawable.setAlpha(NotificationCenter.closeOtherAppActivities);
+                botButton.selectorDrawable.setAlpha(NotificationCenter.invalidateMotionBackground);
                 botButton.selectorDrawable.draw(canvas);
             }
             canvas.restore();
@@ -4390,7 +4390,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             if (drawable2 != null) {
                 int i3 = (int) width2;
                 drawable2.setBounds(i3, (int) (((botButton.height - AndroidUtilities.dp(24.0f)) / 2.0f) + dp), i3 + AndroidUtilities.dp(24.0f), ((int) (((botButton.height - AndroidUtilities.dp(24.0f)) / 2.0f) + dp)) + AndroidUtilities.dp(24.0f));
-                botButton.iconDrawable.setAlpha(botButton.isLocked ? 128 : NotificationCenter.closeOtherAppActivities);
+                botButton.iconDrawable.setAlpha(botButton.isLocked ? 128 : NotificationCenter.invalidateMotionBackground);
                 botButton.iconDrawable.draw(canvas);
                 width2 += dp6;
             }

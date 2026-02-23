@@ -1275,7 +1275,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                             if (messageObject.isVideo()) {
                                 TLRPC.Document document = messageObject.getDocument();
                                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 50);
-                                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.storiesDraftsUpdated);
+                                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, NotificationCenter.storiesListUpdated);
                                 if (closestPhotoSizeWithSize == closestPhotoSizeWithSize2) {
                                     closestPhotoSizeWithSize2 = null;
                                 }
@@ -1290,7 +1290,7 @@ public class CalendarActivity extends BaseFragment implements NotificationCenter
                                 TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
                                 if ((messageMedia instanceof TLRPC.TL_messageMediaPhoto) && messageMedia.photo != null && !messageObject.photoThumbs.isEmpty()) {
                                     TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 50);
-                                    TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.storiesDraftsUpdated, z2, closestPhotoSizeWithSize3, z2);
+                                    TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, NotificationCenter.storiesListUpdated, z2, closestPhotoSizeWithSize3, z2);
                                     if (messageObject.mediaExists || DownloadController.getInstance(((BaseFragment) CalendarActivity.this).currentAccount).canDownloadMedia(messageObject)) {
                                         if (closestPhotoSizeWithSize4 == closestPhotoSizeWithSize3) {
                                             closestPhotoSizeWithSize3 = null;

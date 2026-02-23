@@ -146,7 +146,7 @@ public class StarParticlesView extends View {
         super.onDraw(canvas);
         if (this.isLiteModeParticlesAllowed) {
             if (this.clipGradientPaint != null) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.closeOtherAppActivities, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
             }
             this.drawable.onDraw(canvas);
             if (this.clipGradientPaint != null) {
@@ -395,7 +395,7 @@ public class StarParticlesView extends View {
                     this.svg[i8] = true;
                 } else if (i10 == 28) {
                     if (i8 == 0) {
-                        this.stars[i8] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.closeOtherAppActivities));
+                        this.stars[i8] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, i9, i9, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), NotificationCenter.invalidateMotionBackground));
                         this.flip[i8] = true;
                     }
                     Bitmap createBitmap = Bitmap.createBitmap(i9, i9, Bitmap.Config.ARGB_8888);
@@ -435,7 +435,7 @@ public class StarParticlesView extends View {
                                 mainGradientPaint.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(this.size1 / 5.0f)));
                             }
                             if (this.forceMaxAlpha) {
-                                mainGradientPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
+                                mainGradientPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
                             } else if (this.useBlur) {
                                 mainGradientPaint.setAlpha(60);
                             } else {
@@ -443,7 +443,7 @@ public class StarParticlesView extends View {
                             }
                             canvas.drawPath(path, mainGradientPaint);
                             mainGradientPaint.setPathEffect(null);
-                            mainGradientPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
+                            mainGradientPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
                         } else {
                             paint.setColor(getPathColor(i8));
                             if (this.roundEffect) {

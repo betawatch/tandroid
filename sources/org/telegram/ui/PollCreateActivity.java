@@ -1227,10 +1227,10 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
         PollEditTextCell pollEditTextCell = (PollEditTextCell) view;
         if (i == this.questionRow) {
             CharSequence charSequence = this.questionString;
-            i3 = NotificationCenter.closeOtherAppActivities;
+            i3 = NotificationCenter.invalidateMotionBackground;
             if (charSequence != null) {
                 length2 = charSequence.length();
-                i2 = NotificationCenter.closeOtherAppActivities;
+                i2 = NotificationCenter.invalidateMotionBackground;
                 length = i3 - length2;
                 f = i2;
                 if (length <= f - (0.7f * f)) {
@@ -1244,7 +1244,7 @@ public class PollCreateActivity extends BaseFragment implements NotificationCent
                 pollEditTextCell.setText2("");
                 return;
             }
-            i4 = NotificationCenter.closeOtherAppActivities;
+            i4 = NotificationCenter.invalidateMotionBackground;
             i2 = i4;
             length2 = 0;
             length = i3 - length2;

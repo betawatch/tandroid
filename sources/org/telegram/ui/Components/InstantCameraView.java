@@ -951,7 +951,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         Property property = View.ALPHA;
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(linearLayout, (Property<LinearLayout, Float>) property, z ? 1.0f : 0.0f);
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.muteImageView, (Property<ImageView, Float>) property, 0.0f);
-        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.paint, (Property<Paint, Integer>) AnimationProperties.PAINT_ALPHA, z ? NotificationCenter.closeOtherAppActivities : 0);
+        ObjectAnimator ofInt = ObjectAnimator.ofInt(this.paint, (Property<Paint, Integer>) AnimationProperties.PAINT_ALPHA, z ? NotificationCenter.invalidateMotionBackground : 0);
         ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this.cameraContainer, (Property<InstantViewCameraContainer, Float>) property, z ? 1.0f : 0.0f);
         InstantViewCameraContainer instantViewCameraContainer = this.cameraContainer;
         Property property2 = View.SCALE_X;
@@ -1344,7 +1344,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             if (Build.MANUFACTURER.equalsIgnoreCase("Xiaomi")) {
                 return CameraController.chooseOptimalSize(arrayList, 640, 480, this.aspectRatio, false);
             }
-            return CameraController.chooseOptimalSize(arrayList, 480, NotificationCenter.didSetNewWallpapper, this.aspectRatio, false);
+            return CameraController.chooseOptimalSize(arrayList, 480, NotificationCenter.suggestedLangpack, this.aspectRatio, false);
         }
         Collections.sort(arrayList2, new Comparator() { // from class: org.telegram.ui.Components.InstantCameraView$$ExternalSyntheticLambda1
             @Override // java.util.Comparator

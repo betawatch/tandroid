@@ -7125,7 +7125,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
                     View view2 = this.rippleAbove;
                     if (view2 != null && view2.getBackground() != null) {
-                        this.rippleAbove.getBackground().setAlpha(NotificationCenter.closeOtherAppActivities);
+                        this.rippleAbove.getBackground().setAlpha(NotificationCenter.invalidateMotionBackground);
                     }
                     this.frameLayout.removeView(this.themeSwitchImageView);
                     this.themeSwitchImageView = new ImageView(this);

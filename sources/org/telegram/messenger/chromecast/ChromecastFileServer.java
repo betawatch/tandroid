@@ -315,7 +315,7 @@ public class ChromecastFileServer extends NanoHTTPD {
     }
 
     private static String formatIp4(int i) {
-        return String.valueOf(i & NotificationCenter.closeOtherAppActivities) + '.' + ((i >> 8) & NotificationCenter.closeOtherAppActivities) + '.' + ((i >> 16) & NotificationCenter.closeOtherAppActivities) + '.' + ((i >> 24) & NotificationCenter.closeOtherAppActivities);
+        return String.valueOf(i & NotificationCenter.invalidateMotionBackground) + '.' + ((i >> 8) & NotificationCenter.invalidateMotionBackground) + '.' + ((i >> 16) & NotificationCenter.invalidateMotionBackground) + '.' + ((i >> 24) & NotificationCenter.invalidateMotionBackground);
     }
 
     private static int getMyLocalIp() {

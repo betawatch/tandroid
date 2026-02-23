@@ -851,11 +851,11 @@ public class CodeHighlighting {
         }
 
         public int readUint8() {
-            return this.is.read() & NotificationCenter.closeOtherAppActivities;
+            return this.is.read() & NotificationCenter.invalidateMotionBackground;
         }
 
         public int readUint16() {
-            return (this.is.read() & NotificationCenter.closeOtherAppActivities) | ((this.is.read() & NotificationCenter.closeOtherAppActivities) << 8);
+            return (this.is.read() & NotificationCenter.invalidateMotionBackground) | ((this.is.read() & NotificationCenter.invalidateMotionBackground) << 8);
         }
 
         public String readString() {

@@ -1,11 +1,15 @@
 package org.telegram.messenger;
 
-import java.util.function.IntFunction;
-
 /* loaded from: classes3.dex */
-public final /* synthetic */ class MessagesController$$ExternalSyntheticLambda66 implements IntFunction {
-    @Override // java.util.function.IntFunction
-    public final Object apply(int i) {
-        return String.valueOf(i);
+public final /* synthetic */ class MessagesController$$ExternalSyntheticLambda66 implements Runnable {
+    public final /* synthetic */ MessagesController f$0;
+
+    public /* synthetic */ MessagesController$$ExternalSyntheticLambda66(MessagesController messagesController) {
+        this.f$0 = messagesController;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.f$0.removePromoDialog();
     }
 }

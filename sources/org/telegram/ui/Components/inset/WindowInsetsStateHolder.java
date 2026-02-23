@@ -16,6 +16,8 @@ import org.telegram.ui.Components.inset.WindowInsetsInAppController;
 
 /* loaded from: classes5.dex */
 public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInsetsInAppController, WindowAnimatedInsetsProvider.Listener {
+    private int activeAnimations;
+    private int animatedImeInset;
     private WindowAnimatedInsetsProvider animatedInsetsProvider;
     private View animatedInsetsProviderTarget;
     private int inAppKeyboardHeight;
@@ -39,11 +41,6 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
             WindowInsetsStateHolder.this.lambda$new$0();
         }
     };
-
-    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
-    public /* synthetic */ void onAnimatedInsetsStarted() {
-        WindowAnimatedInsetsProvider.Listener.-CC.$default$onAnimatedInsetsStarted(this);
-    }
 
     @Override // org.telegram.ui.Components.inset.WindowInsetsInAppController
     public /* synthetic */ void requestInAppKeyboardHeightIncludeNavbar(int i) {
@@ -164,15 +161,24 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
 
     @Override // org.telegram.ui.Components.inset.WindowInsetsProvider
     public float getAnimatedMaxBottomInset() {
+        if (this.animatedInsetsProvider != null && this.activeAnimations > 0) {
+            return Math.max(this.animatedImeInset, this.insetsMaxRect.getBottom());
+        }
         return this.insetsMaxRect.getBottom();
     }
 
     public int getCurrentMaxBottomInset() {
+        if (this.animatedInsetsProvider != null && this.activeAnimations > 0) {
+            return Math.max(this.animatedImeInset, Math.max(getInsets(WindowInsetsCompat.Type.ime() | WindowInsetsCompat.Type.systemBars()).bottom, this.inAppKeyboardHeight));
+        }
         return Math.max(getInsets(WindowInsetsCompat.Type.ime() | WindowInsetsCompat.Type.systemBars()).bottom, this.inAppKeyboardHeight);
     }
 
     @Override // org.telegram.ui.Components.inset.WindowInsetsProvider
     public float getAnimatedImeBottomInset() {
+        if (this.animatedInsetsProvider != null && this.activeAnimations > 0) {
+            return Math.max(this.animatedImeInset, this.insetsImeRect.getBottom());
+        }
         return this.insetsImeRect.getBottom();
     }
 
@@ -225,7 +231,13 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
 
     @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
     public void onAnimatedInsetsChanged(View view, WindowInsetsCompat windowInsetsCompat) {
-        setInsets(windowInsetsCompat, false);
+        this.animatedImeInset = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime()).bottom;
+        this.onUpdateListener.run();
+    }
+
+    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
+    public void onAnimatedInsetsStarted() {
+        this.activeAnimations++;
     }
 
     @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
@@ -243,6 +255,7 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onAnimatedInsetsFinished$1() {
+        this.activeAnimations--;
         setInsets(ViewCompat.getRootWindowInsets(this.animatedInsetsProviderTarget), false);
     }
 }

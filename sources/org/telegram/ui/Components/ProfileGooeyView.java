@@ -388,7 +388,7 @@ public class ProfileGooeyView extends FrameLayout {
                 float f12 = -f8;
                 beginRecording.translate(f11, f12);
                 int ilerp = (int) ((1.0f - AndroidUtilities.ilerp(ProfileGooeyView.this.pullProgress, 0.5f, 1.0f)) * 255.0f);
-                int clamp = MathUtils.clamp(ilerp, 0, NotificationCenter.closeOtherAppActivities);
+                int clamp = MathUtils.clamp(ilerp, 0, NotificationCenter.invalidateMotionBackground);
                 drawer.draw(beginRecording);
                 this.node.endRecording();
                 float f13 = (this.factorMult / 4.0f) + 1.0f;
@@ -500,7 +500,7 @@ public class ProfileGooeyView extends FrameLayout {
                 canvas.drawRenderNode(this.effectNotchNode);
                 canvas.drawRenderNode(this.effectNode);
                 canvas.restore();
-                int clamp2 = MathUtils.clamp((i * 3) / 4, 0, NotificationCenter.closeOtherAppActivities);
+                int clamp2 = MathUtils.clamp((i * 3) / 4, 0, NotificationCenter.invalidateMotionBackground);
                 if (clamp2 < 255) {
                     canvas.saveLayer(this.wholeOptimized, null);
                     if (ProfileGooeyView.this.blurIntensity != 0.0f) {

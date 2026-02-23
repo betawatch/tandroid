@@ -327,12 +327,12 @@ final class DvbParser {
             if (i3 == 0) {
                 i4 = 0;
                 readBits = 0;
-                readBits2 = NotificationCenter.closeOtherAppActivities;
+                readBits2 = NotificationCenter.invalidateMotionBackground;
             }
             double d = i3;
             double d2 = i4 - 128;
             double d3 = readBits - 128;
-            iArr[readBits4] = getColor((byte) (255 - (readBits2 & NotificationCenter.closeOtherAppActivities)), Util.constrainValue((int) (d + (1.402d * d2)), 0, NotificationCenter.closeOtherAppActivities), Util.constrainValue((int) ((d - (0.34414d * d3)) - (d2 * 0.71414d)), 0, NotificationCenter.closeOtherAppActivities), Util.constrainValue((int) (d + (d3 * 1.772d)), 0, NotificationCenter.closeOtherAppActivities));
+            iArr[readBits4] = getColor((byte) (255 - (readBits2 & NotificationCenter.invalidateMotionBackground)), Util.constrainValue((int) (d + (1.402d * d2)), 0, NotificationCenter.invalidateMotionBackground), Util.constrainValue((int) ((d - (0.34414d * d3)) - (d2 * 0.71414d)), 0, NotificationCenter.invalidateMotionBackground), Util.constrainValue((int) (d + (d3 * 1.772d)), 0, NotificationCenter.invalidateMotionBackground));
             i7 = i2;
             readBits3 = readBits3;
             i5 = 8;
@@ -377,7 +377,7 @@ final class DvbParser {
         iArr[0] = 0;
         for (int i = 1; i < 16; i++) {
             if (i < 8) {
-                iArr[i] = getColor(NotificationCenter.closeOtherAppActivities, (i & 1) != 0 ? NotificationCenter.closeOtherAppActivities : 0, (i & 2) != 0 ? NotificationCenter.closeOtherAppActivities : 0, (i & 4) != 0 ? NotificationCenter.closeOtherAppActivities : 0);
+                iArr[i] = getColor(NotificationCenter.invalidateMotionBackground, (i & 1) != 0 ? NotificationCenter.invalidateMotionBackground : 0, (i & 2) != 0 ? NotificationCenter.invalidateMotionBackground : 0, (i & 4) != 0 ? NotificationCenter.invalidateMotionBackground : 0);
             } else {
                 int i2 = i & 1;
                 int i3 = NotificationCenter.messageTranslated;
@@ -386,7 +386,7 @@ final class DvbParser {
                 if ((i & 4) == 0) {
                     i3 = 0;
                 }
-                iArr[i] = getColor(NotificationCenter.closeOtherAppActivities, i4, i5, i3);
+                iArr[i] = getColor(NotificationCenter.invalidateMotionBackground, i4, i5, i3);
             }
         }
         return iArr;
@@ -397,10 +397,10 @@ final class DvbParser {
         int[] iArr = new int[256];
         iArr[0] = 0;
         for (int i2 = 0; i2 < 256; i2++) {
-            int i3 = NotificationCenter.closeOtherAppActivities;
+            int i3 = NotificationCenter.invalidateMotionBackground;
             if (i2 < 8) {
-                int i4 = (i2 & 1) != 0 ? NotificationCenter.closeOtherAppActivities : 0;
-                int i5 = (i2 & 2) != 0 ? NotificationCenter.closeOtherAppActivities : 0;
+                int i4 = (i2 & 1) != 0 ? NotificationCenter.invalidateMotionBackground : 0;
+                int i5 = (i2 & 2) != 0 ? NotificationCenter.invalidateMotionBackground : 0;
                 if ((i2 & 4) == 0) {
                     i3 = 0;
                 }
@@ -415,7 +415,7 @@ final class DvbParser {
                     if ((i2 & 64) == 0) {
                         i7 = 0;
                     }
-                    iArr[i2] = getColor(NotificationCenter.closeOtherAppActivities, i8, i9, i + i7);
+                    iArr[i2] = getColor(NotificationCenter.invalidateMotionBackground, i8, i9, i + i7);
                 } else if (i6 == 8) {
                     int i10 = ((i2 & 1) != 0 ? 85 : 0) + ((i2 & 16) != 0 ? NotificationCenter.applyGroupCallVisibleParticipants : 0);
                     int i11 = ((i2 & 2) != 0 ? 85 : 0) + ((i2 & 32) != 0 ? NotificationCenter.applyGroupCallVisibleParticipants : 0);
@@ -425,9 +425,9 @@ final class DvbParser {
                     }
                     iArr[i2] = getColor(NotificationCenter.messageTranslated, i10, i11, i + i7);
                 } else if (i6 == 128) {
-                    iArr[i2] = getColor(NotificationCenter.closeOtherAppActivities, ((i2 & 1) != 0 ? 43 : 0) + NotificationCenter.messageTranslated + ((i2 & 16) != 0 ? 85 : 0), ((i2 & 2) != 0 ? 43 : 0) + NotificationCenter.messageTranslated + ((i2 & 32) != 0 ? 85 : 0), ((i2 & 4) == 0 ? 0 : 43) + NotificationCenter.messageTranslated + ((i2 & 64) == 0 ? 0 : 85));
+                    iArr[i2] = getColor(NotificationCenter.invalidateMotionBackground, ((i2 & 1) != 0 ? 43 : 0) + NotificationCenter.messageTranslated + ((i2 & 16) != 0 ? 85 : 0), ((i2 & 2) != 0 ? 43 : 0) + NotificationCenter.messageTranslated + ((i2 & 32) != 0 ? 85 : 0), ((i2 & 4) == 0 ? 0 : 43) + NotificationCenter.messageTranslated + ((i2 & 64) == 0 ? 0 : 85));
                 } else if (i6 == 136) {
-                    iArr[i2] = getColor(NotificationCenter.closeOtherAppActivities, ((i2 & 1) != 0 ? 43 : 0) + ((i2 & 16) != 0 ? 85 : 0), ((i2 & 2) != 0 ? 43 : 0) + ((i2 & 32) != 0 ? 85 : 0), ((i2 & 4) == 0 ? 0 : 43) + ((i2 & 64) == 0 ? 0 : 85));
+                    iArr[i2] = getColor(NotificationCenter.invalidateMotionBackground, ((i2 & 1) != 0 ? 43 : 0) + ((i2 & 16) != 0 ? 85 : 0), ((i2 & 2) != 0 ? 43 : 0) + ((i2 & 32) != 0 ? 85 : 0), ((i2 & 4) == 0 ? 0 : 43) + ((i2 & 64) == 0 ? 0 : 85));
                 }
             }
         }

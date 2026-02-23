@@ -122,10 +122,10 @@ public final class zzvm {
             for (int i3 = 0; i3 < 16; i3++) {
                 int i4 = this.zzb[i3];
                 int i5 = i3 * 4;
-                bArr3[i5] = (byte) (i4 & NotificationCenter.closeOtherAppActivities);
-                bArr3[i5 + 1] = (byte) ((i4 >> 8) & NotificationCenter.closeOtherAppActivities);
-                bArr3[i5 + 2] = (byte) ((i4 >> 16) & NotificationCenter.closeOtherAppActivities);
-                bArr3[i5 + 3] = (byte) ((i4 >> 24) & NotificationCenter.closeOtherAppActivities);
+                bArr3[i5] = (byte) (i4 & NotificationCenter.invalidateMotionBackground);
+                bArr3[i5 + 1] = (byte) ((i4 >> 8) & NotificationCenter.invalidateMotionBackground);
+                bArr3[i5 + 2] = (byte) ((i4 >> 16) & NotificationCenter.invalidateMotionBackground);
+                bArr3[i5 + 3] = (byte) ((i4 >> 24) & NotificationCenter.invalidateMotionBackground);
             }
             for (int i6 = 0; i6 < Math.min(64, length); i6++) {
                 int i7 = i + i6;

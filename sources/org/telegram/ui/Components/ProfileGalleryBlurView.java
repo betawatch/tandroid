@@ -504,7 +504,7 @@ public class ProfileGalleryBlurView extends View {
                     this.paints[0].setAlpha((int) (f4 * 255.0f));
                     float f8 = this.frameHeight;
                     canvas.drawRect(0.0f, f8 * f3, this.frameWidth, f8, this.paints[0]);
-                    this.paints[0].setAlpha(NotificationCenter.closeOtherAppActivities);
+                    this.paints[0].setAlpha(NotificationCenter.invalidateMotionBackground);
                     canvas.restore();
                 }
                 if (this.offset != 0 && this.paints[1].getShader() != null) {
@@ -518,7 +518,7 @@ public class ProfileGalleryBlurView extends View {
                     this.paints[1].setAlpha((int) (f4 * 255.0f));
                     float f10 = this.frameHeight;
                     canvas.drawRect(0.0f, f10 * f3, this.frameWidth, f10, this.paints[1]);
-                    this.paints[1].setAlpha(NotificationCenter.closeOtherAppActivities);
+                    this.paints[1].setAlpha(NotificationCenter.invalidateMotionBackground);
                     canvas.restore();
                 }
             } catch (Throwable th) {

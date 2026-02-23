@@ -639,7 +639,7 @@ final class zztv<T> implements zzug<T> {
                 iArr[i68] = i69;
                 i68++;
             }
-            int i78 = charAt25 & NotificationCenter.closeOtherAppActivities;
+            int i78 = charAt25 & NotificationCenter.invalidateMotionBackground;
             int i79 = length;
             int i80 = charAt25 & 2048;
             int i81 = i5;
@@ -933,7 +933,7 @@ final class zztv<T> implements zzug<T> {
     }
 
     private static int zzt(int i) {
-        return (i >>> 20) & NotificationCenter.closeOtherAppActivities;
+        return (i >>> 20) & NotificationCenter.invalidateMotionBackground;
     }
 
     private final int zzu(int i) {

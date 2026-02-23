@@ -75,7 +75,6 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BirthdayController;
 import org.telegram.messenger.BotForumHelper$$ExternalSyntheticLambda2;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ChannelBoostsController;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ChatThemeController;
@@ -2418,7 +2417,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             float min = Math.min(AndroidUtilities.dp(176.0f), f3) / 2.0f;
             float f6 = f5 - max;
             float f7 = f5 + max;
-            canvas.saveLayerAlpha(f6, 0.0f, f7, f3, NotificationCenter.closeOtherAppActivities, 31);
+            canvas.saveLayerAlpha(f6, 0.0f, f7, f3, NotificationCenter.invalidateMotionBackground, 31);
             background.backgroundMatrix.reset();
             background.backgroundMatrix.postTranslate(f5, min);
             background.backgroundGradient.setLocalMatrix(background.backgroundMatrix);
@@ -4677,7 +4676,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
         @Override // android.view.ViewGroup, android.view.View
         protected void dispatchDraw(Canvas canvas) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.closeOtherAppActivities, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
             super.dispatchDraw(canvas);
             canvas.save();
             this.rect.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(8.0f));
@@ -5940,14 +5939,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
 
     public boolean showCraft() {
         TL_stars.TL_starGiftUnique uniqueGift = getUniqueGift();
-        if (uniqueGift == null || uniqueGift.crafted) {
-            return false;
-        }
-        TLRPC.Peer peer = uniqueGift.owner_id;
-        if (peer == null) {
-            peer = uniqueGift.host_id;
-        }
-        if (peer == null || !isMineWithActions(this.currentAccount, DialogObject.getPeerDialogId(peer))) {
+        if (uniqueGift == null || uniqueGift.crafted || !isMineWithActions(this.currentAccount, DialogObject.getPeerDialogId(uniqueGift.owner_id))) {
             return false;
         }
         MessageObject messageObject = this.messageObject;
@@ -5960,23 +5952,13 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             return (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) && ((TLRPC.TL_messageActionStarGiftUnique) messageAction).can_craft_at > 0;
         }
         TL_stars.SavedStarGift savedStarGift = this.savedStarGift;
-        if (savedStarGift == null || !(savedStarGift.gift instanceof TL_stars.TL_starGiftUnique)) {
-            return false;
-        }
-        return (BuildVars.DEBUG_PRIVATE_VERSION && uniqueGift.host_id != null) || savedStarGift.can_craft_at > 0;
+        return savedStarGift != null && (savedStarGift.gift instanceof TL_stars.TL_starGiftUnique) && savedStarGift.can_craft_at > 0;
     }
 
     public boolean canCraft() {
         int i;
         TL_stars.TL_starGiftUnique uniqueGift = getUniqueGift();
-        if (uniqueGift == null || uniqueGift.crafted) {
-            return false;
-        }
-        TLRPC.Peer peer = uniqueGift.owner_id;
-        if (peer == null) {
-            peer = uniqueGift.host_id;
-        }
-        if (peer == null || !isMineWithActions(this.currentAccount, DialogObject.getPeerDialogId(peer))) {
+        if (uniqueGift == null || uniqueGift.crafted || !isMineWithActions(this.currentAccount, DialogObject.getPeerDialogId(uniqueGift.owner_id))) {
             return false;
         }
         MessageObject messageObject = this.messageObject;
@@ -5997,11 +5979,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             }
             i = savedStarGift.can_craft_at;
         }
-        int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
-        if (!BuildVars.DEBUG_PRIVATE_VERSION || uniqueGift.host_id == null) {
-            return i > 0 && currentTime >= i;
-        }
-        return true;
+        return i > 0 && ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() >= i;
     }
 
     public StarGiftSheet set(MessageObject messageObject) {
@@ -11004,7 +10982,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
             this.rays = raysView;
             raysView.setVisibility(8);
             raysView.setAlpha(0.0f);
-            addView(raysView, LayoutHelper.createFrame(NotificationCenter.onUserRingtonesUpdated, 300.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(raysView, LayoutHelper.createFrame(NotificationCenter.onRequestPermissionResultReceived, 300.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
             Cube3D cube3D = new Cube3D(context, this.faces);
             this.cube = cube3D;
             addView(cube3D, LayoutHelper.createFrame(-1, 300.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
@@ -12307,7 +12285,7 @@ public class StarGiftSheet extends BottomSheetWithRecyclerListView implements No
                     f = f;
                 }
                 float f3 = f;
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.closeOtherAppActivities, 31);
+                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
                 while (true) {
                     RadialGradient[] radialGradientArr = this.gradient;
                     if (i < radialGradientArr.length) {

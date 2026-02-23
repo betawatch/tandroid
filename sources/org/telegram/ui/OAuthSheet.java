@@ -52,6 +52,7 @@ import org.telegram.ui.Components.Text;
 import org.telegram.ui.Components.TextHelper;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.bots.BotWebViewSheet;
+import org.telegram.ui.web.BotWebViewContainer;
 
 /* loaded from: classes4.dex */
 public abstract class OAuthSheet {
@@ -60,11 +61,12 @@ public abstract class OAuthSheet {
     }
 
     public static void handle(boolean z, int i, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, TLRPC.UrlAuthResult urlAuthResult) {
-        handle(z, i, tL_messages_requestUrlAuth, urlAuthResult, null, null, false);
+        handle(z, i, tL_messages_requestUrlAuth, urlAuthResult, null, null, false, null);
     }
 
-    public static void handle(final boolean z, final int i, final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, TLRPC.UrlAuthResult urlAuthResult, final String str, final TLRPC.UrlAuthResult urlAuthResult2, final boolean z2) {
+    public static void handle(final boolean z, final int i, final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, TLRPC.UrlAuthResult urlAuthResult, final String str, final TLRPC.UrlAuthResult urlAuthResult2, final boolean z2, final BotWebViewContainer botWebViewContainer) {
         final Context context;
+        ArrayList arrayList;
         boolean z3;
         TextCheckCell textCheckCell;
         int i2;
@@ -73,31 +75,46 @@ public abstract class OAuthSheet {
         final Context context2;
         if (urlAuthResult instanceof TLRPC.TL_urlAuthResultAccepted) {
             TLRPC.TL_urlAuthResultAccepted tL_urlAuthResultAccepted = (TLRPC.TL_urlAuthResultAccepted) urlAuthResult;
-            if (TextUtils.isEmpty(tL_urlAuthResultAccepted.url)) {
+            if (botWebViewContainer == null || (!TextUtils.isEmpty(tL_messages_requestUrlAuth.in_app_origin) && TextUtils.equals(botWebViewContainer.getOriginHost(), tL_messages_requestUrlAuth.in_app_origin))) {
+                if (!TextUtils.isEmpty(tL_urlAuthResultAccepted.url)) {
+                    if (botWebViewContainer != null) {
+                        botWebViewContainer.notifyEvent("oauth_result_confirmed", BotWebViewContainer.obj("result_url", tL_urlAuthResultAccepted.url));
+                        return;
+                    }
+                    BaseFragment safeLastFragment3 = LaunchActivity.getSafeLastFragment();
+                    if (safeLastFragment3 == null) {
+                        return;
+                    }
+                    Browser.openUrlInSystemBrowser(safeLastFragment3.getContext(), tL_urlAuthResultAccepted.url);
+                    return;
+                }
                 boolean z4 = urlAuthResult2 instanceof TLRPC.TL_urlAuthResultRequest;
                 String str2 = z4 ? ((TLRPC.TL_urlAuthResultRequest) urlAuthResult2).domain : null;
                 if (!TextUtils.isEmpty(str2)) {
                     getBulletinFactory().createSimpleBulletin(R.raw.contact_check, LocaleController.getString(R.string.BotAuthLoggedInSuccessTitle), AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(z4 && ((TLRPC.TL_urlAuthResultRequest) urlAuthResult2).request_phone_number && !z2 ? R.string.BotAuthLoggedInSuccessWithoutPhoneNumber : R.string.BotAuthLoggedInSuccess, str2), Theme.getColor(Theme.key_undo_cancelColor))).show();
                 }
-                if (!z || (safeLastFragment2 = LaunchActivity.getSafeLastFragment()) == null || (context2 = safeLastFragment2.getContext()) == null) {
+                if (botWebViewContainer != null) {
+                    botWebViewContainer.notifyEvent("oauth_result_confirmed", BotWebViewContainer.obj("result_url", null));
+                    return;
+                } else {
+                    if (!z || (safeLastFragment2 = LaunchActivity.getSafeLastFragment()) == null || (context2 = safeLastFragment2.getContext()) == null) {
+                        return;
+                    }
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            OAuthSheet.lambda$handle$0(context2);
+                        }
+                    }, 800L);
                     return;
                 }
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        OAuthSheet.lambda$handle$0(context2);
-                    }
-                }, 800L);
-                return;
             }
-            BaseFragment safeLastFragment3 = LaunchActivity.getSafeLastFragment();
-            if (safeLastFragment3 == null) {
-                return;
-            }
-            Browser.openUrlInSystemBrowser(safeLastFragment3.getContext(), tL_urlAuthResultAccepted.url);
             return;
         }
         if (urlAuthResult instanceof TLRPC.TL_urlAuthResultDefault) {
+            if (botWebViewContainer != null) {
+                return;
+            }
             if (!TextUtils.isEmpty(tL_messages_requestUrlAuth.url)) {
                 BaseFragment safeLastFragment4 = LaunchActivity.getSafeLastFragment();
                 if (safeLastFragment4 == null) {
@@ -121,14 +138,14 @@ public abstract class OAuthSheet {
             BottomSheet.Builder builder = new BottomSheet.Builder(context, false, safeLastFragment5.getResourceProvider());
             FrameLayout frameLayout = new FrameLayout(context);
             builder.setCustomView(frameLayout);
-            final ArrayList arrayList = new ArrayList();
-            arrayList.clear();
+            ArrayList arrayList2 = new ArrayList();
+            arrayList2.clear();
             for (int i3 = 0; i3 < 4; i3++) {
                 if (UserConfig.getInstance(i3).isClientActivated()) {
-                    arrayList.add(Integer.valueOf(i3));
+                    arrayList2.add(Integer.valueOf(i3));
                 }
             }
-            Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda1
+            Collections.sort(arrayList2, new Comparator() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda1
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
                     int lambda$handle$1;
@@ -160,7 +177,7 @@ public abstract class OAuthSheet {
             frameLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), 0);
             frameLayout.addView(frameLayout2, LayoutHelper.createLinear(-2, -2, 0.0f, 51, 6, 4, 6, 0));
             ScaleStateListAnimator.apply(frameLayout2);
-            if (arrayList.size() <= 1 || tL_messages_requestUrlAuth.peer != null) {
+            if (arrayList2.size() <= 1 || tL_messages_requestUrlAuth.peer != null) {
                 frameLayout2.setVisibility(8);
             }
             LinearLayout linearLayout = new LinearLayout(context);
@@ -181,14 +198,18 @@ public abstract class OAuthSheet {
             makeTextView2.setGravity(17);
             makeTextView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(z5 ? R.string.BotAuthBotSubtitle : R.string.BotAuthSiteSubtitle)));
             linearLayout.addView(makeTextView2, LayoutHelper.createLinear(-1, -2, 49, 32, 0, 32, 24));
-            if (!TextUtils.isEmpty(tL_urlAuthResultRequest.platform) || !TextUtils.isEmpty(tL_urlAuthResultRequest.browser) || !TextUtils.isEmpty(tL_urlAuthResultRequest.region) || !TextUtils.isEmpty(tL_urlAuthResultRequest.ip)) {
+            if (TextUtils.isEmpty(tL_urlAuthResultRequest.platform) && TextUtils.isEmpty(tL_urlAuthResultRequest.browser) && TextUtils.isEmpty(tL_urlAuthResultRequest.region) && TextUtils.isEmpty(tL_urlAuthResultRequest.ip)) {
+                arrayList = arrayList2;
+            } else {
                 LinearLayout linearLayout2 = new LinearLayout(context);
                 linearLayout2.setClipToPadding(false);
                 linearLayout2.setClipChildren(false);
                 linearLayout2.setOrientation(1);
                 linearLayout2.setBackground(Theme.createRoundRectDrawableShadowed(AndroidUtilities.dp(16.0f), safeLastFragment5.getThemedColor(Theme.key_windowBackgroundWhite)));
                 linearLayout.addView(linearLayout2, LayoutHelper.createLinear(-1, -2, 55, 9, -3, 9, -3));
-                if (!TextUtils.isEmpty(tL_urlAuthResultRequest.platform) || !TextUtils.isEmpty(tL_urlAuthResultRequest.browser)) {
+                if (TextUtils.isEmpty(tL_urlAuthResultRequest.platform) && TextUtils.isEmpty(tL_urlAuthResultRequest.browser)) {
+                    arrayList = arrayList2;
+                } else {
                     LinearLayout linearLayout3 = new LinearLayout(context);
                     linearLayout3.setOrientation(0);
                     ImageView imageView2 = new ImageView(context);
@@ -198,6 +219,7 @@ public abstract class OAuthSheet {
                     LinearLayout linearLayout4 = new LinearLayout(context);
                     linearLayout4.setOrientation(1);
                     linearLayout3.addView(linearLayout4, LayoutHelper.createLinear(-1, -2, 55, 0.0f, 10.66f, 20.0f, 11.0f));
+                    arrayList = arrayList2;
                     TextView makeTextView3 = TextHelper.makeTextView(context, 16.0f, i4, false);
                     makeTextView3.setText(TextUtils.isEmpty(tL_urlAuthResultRequest.platform) ? "—" : tL_urlAuthResultRequest.platform);
                     linearLayout4.addView(makeTextView3, LayoutHelper.createLinear(-1, -2, 55, 0.0f, 0.0f, 0.0f, 4.33f));
@@ -266,6 +288,7 @@ public abstract class OAuthSheet {
             linearLayout.addView(linearLayout7, LayoutHelper.createLinear(-1, -2, 7, 12, 12, 12, 8));
             final BottomSheet create = builder.create();
             create.setBackgroundColor(safeLastFragment5.getThemedColor(Theme.key_windowBackgroundGray));
+            final ArrayList arrayList3 = arrayList;
             final Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda3
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
@@ -273,7 +296,7 @@ public abstract class OAuthSheet {
                 }
             };
             if (tL_urlAuthResultRequest.user_id_hint != 0 && UserConfig.getInstance(i).getClientUserId() != tL_urlAuthResultRequest.user_id_hint) {
-                Iterator it = arrayList.iterator();
+                Iterator it = arrayList3.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         break;
@@ -288,13 +311,13 @@ public abstract class OAuthSheet {
             frameLayout2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OAuthSheet.lambda$handle$6(BottomSheet.this, frameLayout3, arrayList, iArr, callback, view);
+                    OAuthSheet.lambda$handle$6(BottomSheet.this, frameLayout3, arrayList3, iArr, callback, view);
                 }
             });
             round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    OAuthSheet.lambda$handle$8(TLRPC.TL_messages_requestUrlAuth.this, create, round, i, view);
+                    OAuthSheet.lambda$handle$8(TLRPC.TL_messages_requestUrlAuth.this, create, round, botWebViewContainer, i, view);
                 }
             });
             final boolean[] zArr = new boolean[1];
@@ -319,7 +342,7 @@ public abstract class OAuthSheet {
             final Runnable runnable = new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    OAuthSheet.lambda$handle$10(ButtonWithCounterView.this, round, tL_messages_requestUrlAuth, strArr, textCheckCell3, zArr, iArr, create, z, str, tL_urlAuthResultRequest);
+                    OAuthSheet.lambda$handle$10(ButtonWithCounterView.this, round, tL_messages_requestUrlAuth, strArr, textCheckCell3, zArr, iArr, create, z, str, tL_urlAuthResultRequest, botWebViewContainer);
                 }
             };
             final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda7
@@ -386,7 +409,7 @@ public abstract class OAuthSheet {
         alertDialog.dismiss();
         if (urlAuthResult2 != null) {
             bottomSheet.lambda$new$0();
-            handle(z, num.intValue(), tL_messages_requestUrlAuth, urlAuthResult2, str, urlAuthResult, z2);
+            handle(z, num.intValue(), tL_messages_requestUrlAuth, urlAuthResult2, str, urlAuthResult, z2, null);
         } else {
             BulletinFactory.of(bottomSheet.topBulletinContainer, bottomSheet.getResourcesProvider()).showForError(tL_error);
         }
@@ -400,7 +423,7 @@ public abstract class OAuthSheet {
             if (it.hasNext()) {
                 final int intValue = ((Integer) it.next()).intValue();
                 if (UserConfig.getInstance(intValue).getCurrentUser() != null) {
-                    makeOptions.addAccount(intValue, iArr[0] == intValue, new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda12
+                    makeOptions.addAccount(intValue, iArr[0] == intValue, new Runnable() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda13
                         @Override // java.lang.Runnable
                         public final void run() {
                             OAuthSheet.lambda$handle$5(Utilities.Callback.this, intValue);
@@ -420,27 +443,30 @@ public abstract class OAuthSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$8(TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final BottomSheet bottomSheet, ButtonWithCounterView buttonWithCounterView, int i, View view) {
+    public static /* synthetic */ void lambda$handle$8(TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final BottomSheet bottomSheet, ButtonWithCounterView buttonWithCounterView, BotWebViewContainer botWebViewContainer, int i, View view) {
         if (tL_messages_requestUrlAuth == null || TextUtils.isEmpty(tL_messages_requestUrlAuth.url)) {
             bottomSheet.lambda$new$0();
-        } else {
-            if (buttonWithCounterView.isLoading()) {
-                return;
-            }
-            buttonWithCounterView.setLoading(true);
-            TLRPC.TL_messages_declineUrlAuth tL_messages_declineUrlAuth = new TLRPC.TL_messages_declineUrlAuth();
-            tL_messages_declineUrlAuth.url = tL_messages_requestUrlAuth.url;
-            ConnectionsManager.getInstance(i).sendRequestTyped(tL_messages_declineUrlAuth, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda13
-                @Override // org.telegram.messenger.Utilities.Callback2
-                public final void run(Object obj, Object obj2) {
-                    BottomSheet.this.lambda$new$0();
-                }
-            });
+            return;
         }
+        if (buttonWithCounterView.isLoading()) {
+            return;
+        }
+        buttonWithCounterView.setLoading(true);
+        if (botWebViewContainer != null) {
+            botWebViewContainer.notifyEvent("oauth_result_failed", BotWebViewContainer.obj());
+        }
+        TLRPC.TL_messages_declineUrlAuth tL_messages_declineUrlAuth = new TLRPC.TL_messages_declineUrlAuth();
+        tL_messages_declineUrlAuth.url = tL_messages_requestUrlAuth.url;
+        ConnectionsManager.getInstance(i).sendRequestTyped(tL_messages_declineUrlAuth, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda10
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                BottomSheet.this.lambda$new$0();
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$10(ButtonWithCounterView buttonWithCounterView, ButtonWithCounterView buttonWithCounterView2, final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String[] strArr, TextCheckCell textCheckCell, boolean[] zArr, final int[] iArr, final BottomSheet bottomSheet, final boolean z, final String str, final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest) {
+    public static /* synthetic */ void lambda$handle$10(ButtonWithCounterView buttonWithCounterView, ButtonWithCounterView buttonWithCounterView2, final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String[] strArr, TextCheckCell textCheckCell, boolean[] zArr, final int[] iArr, final BottomSheet bottomSheet, final boolean z, final String str, final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, final BotWebViewContainer botWebViewContainer) {
         if (buttonWithCounterView.isLoading() || buttonWithCounterView2.isLoading()) {
             return;
         }
@@ -462,21 +488,21 @@ public abstract class OAuthSheet {
         }
         tL_messages_acceptUrlAuth.write_allowed = textCheckCell != null && textCheckCell.isChecked();
         tL_messages_acceptUrlAuth.share_phone_number = zArr[0];
-        ConnectionsManager.getInstance(iArr[0]).sendRequestTyped(tL_messages_acceptUrlAuth, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda11
+        ConnectionsManager.getInstance(iArr[0]).sendRequestTyped(tL_messages_acceptUrlAuth, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda9
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
-                OAuthSheet.lambda$handle$9(BottomSheet.this, z, iArr, tL_messages_requestUrlAuth, str, tL_urlAuthResultRequest, tL_messages_acceptUrlAuth, (TLRPC.UrlAuthResult) obj, (TLRPC.TL_error) obj2);
+                OAuthSheet.lambda$handle$9(BottomSheet.this, z, iArr, tL_messages_requestUrlAuth, str, tL_urlAuthResultRequest, tL_messages_acceptUrlAuth, botWebViewContainer, (TLRPC.UrlAuthResult) obj, (TLRPC.TL_error) obj2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$handle$9(BottomSheet bottomSheet, boolean z, int[] iArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, TLRPC.TL_messages_acceptUrlAuth tL_messages_acceptUrlAuth, TLRPC.UrlAuthResult urlAuthResult, TLRPC.TL_error tL_error) {
+    public static /* synthetic */ void lambda$handle$9(BottomSheet bottomSheet, boolean z, int[] iArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, TLRPC.TL_messages_acceptUrlAuth tL_messages_acceptUrlAuth, BotWebViewContainer botWebViewContainer, TLRPC.UrlAuthResult urlAuthResult, TLRPC.TL_error tL_error) {
         bottomSheet.lambda$new$0();
         if (tL_error != null) {
             getBulletinFactory().showForError(tL_error);
         } else {
-            handle(z, iArr[0], tL_messages_requestUrlAuth, urlAuthResult, str, tL_urlAuthResultRequest, tL_messages_acceptUrlAuth.share_phone_number);
+            handle(z, iArr[0], tL_messages_requestUrlAuth, urlAuthResult, str, tL_urlAuthResultRequest, tL_messages_acceptUrlAuth.share_phone_number, botWebViewContainer);
         }
     }
 
@@ -518,12 +544,12 @@ public abstract class OAuthSheet {
             AlertDialog.Builder title = new AlertDialog.Builder(context, baseFragment.getResourceProvider()).setTitle(LocaleController.getString(R.string.BotAuthPhoneNumber));
             int i = R.string.BotAuthPhoneNumberText;
             String userName = z ? UserObject.getUserName(tL_urlAuthResultRequest.bot) : tL_urlAuthResultRequest.domain;
-            title.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(i, userName, PhoneFormat.getInstance().format("+" + currentUser.phone).replaceAll(" ", " ")))).setNegativeButton(LocaleController.getString(R.string.BotAuthPhoneNumberDeny), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda9
+            title.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString(i, userName, PhoneFormat.getInstance().format("+" + currentUser.phone).replaceAll(" ", " ")))).setNegativeButton(LocaleController.getString(R.string.BotAuthPhoneNumberDeny), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda11
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
                     OAuthSheet.lambda$handle$14(zArr, runnable, alertDialog, i2);
                 }
-            }).setPositiveButton(LocaleController.getString(R.string.BotAuthPhoneNumberAccept), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda10
+            }).setPositiveButton(LocaleController.getString(R.string.BotAuthPhoneNumberAccept), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda12
                 @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                 public final void onClick(AlertDialog alertDialog, int i2) {
                     OAuthSheet.lambda$handle$15(zArr, runnable, alertDialog, i2);
@@ -638,11 +664,10 @@ public abstract class OAuthSheet {
         textView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, resourcesProvider));
         textView2.setText(AndroidUtilities.replaceSingleLink("Login request from **" + str + "**", Theme.getColor(Theme.key_featuredStickers_addButton)));
         linearLayout.addView(textView2, LayoutHelper.createLinear(-1, -2, 1, 0, 23, 0, 11));
-        final ButtonWithCounterView round = new ButtonWithCounterView(context, resourcesProvider).setRound();
-        round.setColor(Theme.getColor(Theme.key_text_RedRegular, resourcesProvider));
-        round.setText(LocaleController.getString(R.string.Cancel), false);
-        linearLayout.addView(round, LayoutHelper.createLinear(-1, 48, 7, 12, 12, 12, 12));
-        round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda19
+        final ButtonWithCounterView neutral = new ButtonWithCounterView(context, resourcesProvider).setRound().setNeutral();
+        neutral.setText(LocaleController.getString(R.string.Cancel), false);
+        linearLayout.addView(neutral, LayoutHelper.createLinear(-1, 48, 7, 12, 12, 12, 12));
+        neutral.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.OAuthSheet$$ExternalSyntheticLambda19
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 OAuthSheet.lambda$showMatchCodeSheet$19(ButtonWithCounterView.this, bottomSheetArr, runnable, view);

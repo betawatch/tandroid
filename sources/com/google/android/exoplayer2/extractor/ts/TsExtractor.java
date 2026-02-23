@@ -503,7 +503,7 @@ public final class TsExtractor implements Extractor {
                                 arrayList = arrayList2;
                                 i3 = 89;
                             } else if (readUnsignedByte == 111) {
-                                i3 = NotificationCenter.didReplacedPhotoInMemCache;
+                                i3 = NotificationCenter.cameraInitied;
                             }
                         }
                         i3 = NotificationCenter.httpFileDidFailedLoad;

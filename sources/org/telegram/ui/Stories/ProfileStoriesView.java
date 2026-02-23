@@ -733,7 +733,7 @@ public abstract class ProfileStoriesView extends View implements NotificationCen
                     RectF rectF4 = AndroidUtilities.rectTmp;
                     rectF4.set(this.rect3);
                     rectF4.inset(-AndroidUtilities.dp(12.0f), -AndroidUtilities.dp(12.0f));
-                    canvas.saveLayerAlpha(rectF4, NotificationCenter.closeOtherAppActivities, 31);
+                    canvas.saveLayerAlpha(rectF4, NotificationCenter.invalidateMotionBackground, 31);
                     float f16 = ((this.newStoryBounceT - 1.0f) / 2.5f) + 1.0f;
                     if (f16 != 1.0f) {
                         canvas.save();

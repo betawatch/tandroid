@@ -1477,6 +1477,9 @@ public class LinkManager {
     }
 
     private boolean handleOAuth(Uri uri, String str) {
+        if (!this.isExternalIntent) {
+            return true;
+        }
         if (isEmpty(str)) {
             return false;
         }

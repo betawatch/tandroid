@@ -25,7 +25,7 @@ public class ComposeDrawable extends Drawable {
             ComposeDrawable.this.invalidate();
         }
     }, 420, CubicBezierInterpolator.EASE_OUT_QUINT);
-    private int alpha = NotificationCenter.closeOtherAppActivities;
+    private int alpha = NotificationCenter.invalidateMotionBackground;
 
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {

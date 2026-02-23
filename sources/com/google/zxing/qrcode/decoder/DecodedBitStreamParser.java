@@ -154,8 +154,8 @@ abstract class DecodedBitStreamParser {
             int readBits = bitSource.readBits(13);
             int i3 = (readBits % 96) | ((readBits / 96) << 8);
             int i4 = i3 + (i3 < 2560 ? 41377 : 42657);
-            bArr[i2] = (byte) ((i4 >> 8) & NotificationCenter.closeOtherAppActivities);
-            bArr[i2 + 1] = (byte) (i4 & NotificationCenter.closeOtherAppActivities);
+            bArr[i2] = (byte) ((i4 >> 8) & NotificationCenter.invalidateMotionBackground);
+            bArr[i2 + 1] = (byte) (i4 & NotificationCenter.invalidateMotionBackground);
             i2 += 2;
             i--;
         }

@@ -1088,7 +1088,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         }
         if (paint2 != null) {
             RectF rectF2 = this.bounds;
-            canvas.saveLayerAlpha(rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, NotificationCenter.closeOtherAppActivities, 31);
+            canvas.saveLayerAlpha(rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, NotificationCenter.invalidateMotionBackground, 31);
         }
         Path path = this.replyClipPath;
         if (path == null) {
@@ -1257,7 +1257,7 @@ public abstract class CaptionContainerView extends FrameLayout {
         }
         invalidateDrawOver2();
         if (f6 > 0.0f) {
-            canvas.saveLayerAlpha(this.bounds, NotificationCenter.closeOtherAppActivities, 31);
+            canvas.saveLayerAlpha(this.bounds, NotificationCenter.invalidateMotionBackground, 31);
         }
         drawReply(canvas);
         super.dispatchDraw(canvas);
@@ -1302,7 +1302,7 @@ public abstract class CaptionContainerView extends FrameLayout {
             canvas.drawRoundRect(this.bounds, f, f, this.collapsePaint);
             canvas.restore();
             canvas.restore();
-            canvas.saveLayerAlpha(this.bounds, NotificationCenter.closeOtherAppActivities, 31);
+            canvas.saveLayerAlpha(this.bounds, NotificationCenter.invalidateMotionBackground, 31);
             drawOver(canvas, this.bounds);
             this.collapseGradientMatrix.reset();
             this.collapseGradientMatrix.postTranslate(dp, dp4);
@@ -1353,7 +1353,7 @@ public abstract class CaptionContainerView extends FrameLayout {
                 return;
             }
             canvas.translate(-this.editText.getEditText().hintLayoutX, 0.0f);
-            canvas.saveLayerAlpha(0.0f, 0.0f, this.hintTextBitmap.getWidth(), this.hintTextBitmap.getHeight(), NotificationCenter.closeOtherAppActivities, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, this.hintTextBitmap.getWidth(), this.hintTextBitmap.getHeight(), NotificationCenter.invalidateMotionBackground, 31);
             this.rectF.set(0.0f, 1.0f, this.hintTextBitmap.getWidth(), this.hintTextBitmap.getHeight() - 1);
             drawBlur(this.captionBlur, canvas, this.rectF, 0.0f, true, (-this.editText.getX()) - r8.getPaddingLeft(), ((-this.editText.getY()) - r8.getPaddingTop()) - r8.getExtendedPaddingTop(), true, 1.0f);
             canvas.save();
@@ -1370,7 +1370,7 @@ public abstract class CaptionContainerView extends FrameLayout {
             return;
         }
         EditTextCaption editText = this.editText.getEditText();
-        canvas.saveLayerAlpha(0.0f, 0.0f, editText.getWidth(), editText.getHeight(), NotificationCenter.closeOtherAppActivities, 31);
+        canvas.saveLayerAlpha(0.0f, 0.0f, editText.getWidth(), editText.getHeight(), NotificationCenter.invalidateMotionBackground, 31);
         runnable.run();
         canvas.drawRect(0.0f, 0.0f, editText.getWidth(), editText.getHeight(), paint);
         canvas.restore();
@@ -1403,7 +1403,7 @@ public abstract class CaptionContainerView extends FrameLayout {
     protected boolean drawChild(Canvas canvas, View view, long j) {
         if (view == this.editText) {
             float max = isAtTop() ? 0.0f : Math.max(0, (this.editText.getHeight() - AndroidUtilities.dp(82.0f)) - this.editText.getScrollY()) * (1.0f - this.keyboardT);
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.closeOtherAppActivities, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.invalidateMotionBackground, 31);
             canvas.save();
             canvas.clipRect(this.bounds);
             canvas.translate(0.0f, max);

@@ -780,7 +780,7 @@ abstract class AtomParsers {
         if (readInt2 == 0 && readInt3 == 65536 && readInt4 == -65536 && readInt5 == 0) {
             i2 = 90;
         } else if (readInt2 == 0 && readInt3 == -65536 && readInt4 == 65536 && readInt5 == 0) {
-            i2 = NotificationCenter.didSetNewWallpapper;
+            i2 = NotificationCenter.suggestedLangpack;
         } else if (readInt2 == -65536 && readInt3 == 0 && readInt4 == 0 && readInt5 == -65536) {
             i2 = NotificationCenter.newEmojiSuggestionsAvailable;
         }
@@ -1702,7 +1702,7 @@ abstract class AtomParsers {
             ParsableByteArray parsableByteArray = leafAtom.data;
             this.data = parsableByteArray;
             parsableByteArray.setPosition(12);
-            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.closeOtherAppActivities;
+            this.fieldSize = parsableByteArray.readUnsignedIntToInt() & NotificationCenter.invalidateMotionBackground;
             this.sampleCount = parsableByteArray.readUnsignedIntToInt();
         }
 

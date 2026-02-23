@@ -200,7 +200,7 @@ public class NumberTextView extends View {
                         canvas.translate(0.0f, this.progress * dp);
                     }
                 } else {
-                    this.textPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
+                    this.textPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
                 }
             } else if (f3 < 0.0f) {
                 if (staticLayout != null) {
@@ -215,11 +215,11 @@ public class NumberTextView extends View {
                         this.textPaint.setAlpha((int) ((this.progress + 1.0f) * 255.0f));
                         canvas.translate(0.0f, this.progress * dp);
                     } else {
-                        this.textPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
+                        this.textPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
                     }
                 }
             } else if (staticLayout2 != null) {
-                this.textPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
+                this.textPaint.setAlpha(NotificationCenter.invalidateMotionBackground);
             }
             if (staticLayout2 != null) {
                 staticLayout2.draw(canvas);

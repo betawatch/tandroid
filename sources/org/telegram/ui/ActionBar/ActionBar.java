@@ -171,7 +171,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         this.interceptTouches = true;
         this.overlayTitleToSet = new Object[3];
         this.castShadows = true;
-        this.shadowAlpha = NotificationCenter.closeOtherAppActivities;
+        this.shadowAlpha = NotificationCenter.invalidateMotionBackground;
         this.titleColorToSet = 0;
         this.blurScrimPaint = new Paint();
         this.rectTmp = new Rect();

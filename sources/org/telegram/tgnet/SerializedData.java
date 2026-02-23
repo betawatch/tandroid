@@ -249,7 +249,7 @@ public class SerializedData extends AbstractSerializedData {
             } else if (this.justCalc) {
                 this.len += 4;
             } else {
-                this.out.write(NotificationCenter.invalidateMotionBackground);
+                this.out.write(NotificationCenter.emojiLoaded);
                 this.out.write(bArr.length);
                 this.out.write(bArr.length >> 8);
                 this.out.write(bArr.length >> 16);
@@ -298,7 +298,7 @@ public class SerializedData extends AbstractSerializedData {
             } else if (this.justCalc) {
                 this.len += 4;
             } else {
-                this.out.write(NotificationCenter.invalidateMotionBackground);
+                this.out.write(NotificationCenter.emojiLoaded);
                 this.out.write(i2);
                 this.out.write(i2 >> 8);
                 this.out.write(i2 >> 16);

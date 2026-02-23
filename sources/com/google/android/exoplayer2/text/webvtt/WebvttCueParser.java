@@ -47,23 +47,23 @@ public abstract class WebvttCueParser {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.closeOtherAppActivities, NotificationCenter.closeOtherAppActivities, NotificationCenter.closeOtherAppActivities)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.closeOtherAppActivities, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.closeOtherAppActivities, NotificationCenter.closeOtherAppActivities)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.closeOtherAppActivities, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.closeOtherAppActivities, NotificationCenter.closeOtherAppActivities, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.closeOtherAppActivities, 0, NotificationCenter.closeOtherAppActivities)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.closeOtherAppActivities)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, NotificationCenter.invalidateMotionBackground, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(NotificationCenter.invalidateMotionBackground, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(NotificationCenter.invalidateMotionBackground, 0, NotificationCenter.invalidateMotionBackground)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.invalidateMotionBackground)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_TEXT_COLORS = DesugarCollections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.closeOtherAppActivities, NotificationCenter.closeOtherAppActivities, NotificationCenter.closeOtherAppActivities)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.closeOtherAppActivities, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.closeOtherAppActivities, NotificationCenter.closeOtherAppActivities)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.closeOtherAppActivities, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.closeOtherAppActivities, NotificationCenter.closeOtherAppActivities, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.closeOtherAppActivities, 0, NotificationCenter.closeOtherAppActivities)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.closeOtherAppActivities)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, NotificationCenter.invalidateMotionBackground, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(NotificationCenter.invalidateMotionBackground, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(NotificationCenter.invalidateMotionBackground, NotificationCenter.invalidateMotionBackground, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(NotificationCenter.invalidateMotionBackground, 0, NotificationCenter.invalidateMotionBackground)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, NotificationCenter.invalidateMotionBackground)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
         DEFAULT_BACKGROUND_COLORS = DesugarCollections.unmodifiableMap(hashMap2);
     }

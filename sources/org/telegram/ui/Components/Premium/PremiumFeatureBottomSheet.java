@@ -111,7 +111,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
     public PremiumFeatureBottomSheet(final BaseFragment baseFragment, Context context, int i, boolean z, int i2, final boolean z2, PremiumPreviewFragment.SubscriptionTier subscriptionTier, Theme.ResourcesProvider resourcesProvider) {
         super(context, false, resourcesProvider);
         this.premiumFeatures = new ArrayList();
-        this.gradientAlpha = NotificationCenter.closeOtherAppActivities;
+        this.gradientAlpha = NotificationCenter.invalidateMotionBackground;
         this.baseFragment = baseFragment;
         this.selectedTier = subscriptionTier;
         fixNavigationBar(getThemedColor(Theme.key_dialogBackground));

@@ -18,8 +18,8 @@ final class OggPageHeader {
     public int revision;
     public long streamSerialNumber;
     public int type;
-    public final int[] laces = new int[NotificationCenter.closeOtherAppActivities];
-    private final ParsableByteArray scratch = new ParsableByteArray(NotificationCenter.closeOtherAppActivities);
+    public final int[] laces = new int[NotificationCenter.invalidateMotionBackground];
+    private final ParsableByteArray scratch = new ParsableByteArray(NotificationCenter.invalidateMotionBackground);
 
     OggPageHeader() {
     }

@@ -481,7 +481,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                     if (pack5 != 8) {
                         return -1;
                     }
-                    return NotificationCenter.didSetNewWallpapper;
+                    return NotificationCenter.suggestedLangpack;
                 }
                 i5 += 12;
                 i6 -= 12;

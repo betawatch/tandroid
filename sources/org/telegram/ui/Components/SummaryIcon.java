@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 
 /* loaded from: classes5.dex */
 public class SummaryIcon extends Drawable {
-    private int alpha = NotificationCenter.closeOtherAppActivities;
+    private int alpha = NotificationCenter.invalidateMotionBackground;
     private final Drawable arrow;
     private boolean on;
     private final AnimatedFloat progress;

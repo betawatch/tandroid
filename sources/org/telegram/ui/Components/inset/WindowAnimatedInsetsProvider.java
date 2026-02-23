@@ -10,7 +10,6 @@ import java.util.Iterator;
 import java.util.List;
 import me.vkryl.core.BitwiseUtils;
 import me.vkryl.core.reference.ReferenceList;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.chat.ViewPositionWatcher;
 
 /* loaded from: classes5.dex */
@@ -49,7 +48,6 @@ public class WindowAnimatedInsetsProvider extends WindowInsetsAnimationCompat.Ca
 
     @Override // androidx.core.view.WindowInsetsAnimationCompat.Callback
     public WindowInsetsCompat onProgress(WindowInsetsCompat windowInsetsCompat, List list) {
-        AndroidUtilities.printStackTrace("setInsets: " + windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime()).bottom);
         Iterator it = list.iterator();
         int i = 0;
         while (it.hasNext()) {

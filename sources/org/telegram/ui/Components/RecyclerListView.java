@@ -2356,6 +2356,9 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
                             if (RecyclerListView.this.emptyView != null) {
                                 RecyclerListView.this.emptyView.setVisibility(8);
                             }
+                            if (RecyclerListView.this.hasSections()) {
+                                RecyclerListView.this.invalidate();
+                            }
                         }
                     }).start();
                 }
@@ -2372,6 +2375,11 @@ public class RecyclerListView extends RecyclerView implements IBlur3Capture {
             }
             this.hiddenByEmptyView = true;
         }
+    }
+
+    @Override // android.view.View
+    public ViewPropertyAnimator animate() {
+        return super.animate();
     }
 
     public boolean emptyViewIsVisible() {

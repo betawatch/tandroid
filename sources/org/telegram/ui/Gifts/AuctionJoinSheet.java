@@ -364,7 +364,7 @@ public class AuctionJoinSheet extends BottomSheetWithRecyclerListView implements
             topView.setPreviewingAttributes(this.auction.previewAttributes);
             topView.hideCloseButton();
             z = false;
-            this.headerContainer.addView(topView, 0, LayoutHelper.createFrame(-1, NotificationCenter.appUpdateLoading, 48));
+            this.headerContainer.addView(topView, 0, LayoutHelper.createFrame(-1, NotificationCenter.appUpdateAvailable, 48));
             TextView textView2 = new TextView(context);
             this.headerStatus = textView2;
             textView2.setGravity(17);

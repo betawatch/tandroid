@@ -148,7 +148,7 @@ public class ButtonWithCounterView extends FrameLayout implements Loadable {
         this.countScale = 1.0f;
         this.enabledT = 1.0f;
         this.enabled = true;
-        this.globalAlpha = NotificationCenter.closeOtherAppActivities;
+        this.globalAlpha = NotificationCenter.invalidateMotionBackground;
         this.subTextAlpha = NotificationCenter.channelRecommendationsLoaded;
         this.filled = z;
         this.resourcesProvider = resourcesProvider;

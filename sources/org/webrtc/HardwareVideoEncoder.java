@@ -165,7 +165,7 @@ class HardwareVideoEncoder implements VideoEncoder {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x009b  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00b2 A[Catch: IllegalStateException -> 0x008a, IllegalArgumentException -> 0x008d, TryCatch #3 {IllegalArgumentException -> 0x008d, IllegalStateException -> 0x008a, blocks: (B:9:0x0029, B:11:0x0063, B:15:0x0072, B:23:0x009d, B:24:0x00b2, B:25:0x0081, B:28:0x0090, B:31:0x00c0, B:33:0x00ca, B:34:0x00cf, B:36:0x00d5, B:37:0x00dd, B:39:0x00fb, B:40:0x0117), top: B:8:0x0029 }] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00b2 A[Catch: IllegalStateException -> 0x008a, IllegalArgumentException -> 0x008d, TryCatch #3 {IllegalArgumentException -> 0x008d, IllegalStateException -> 0x008a, blocks: (B:9:0x0029, B:11:0x0063, B:15:0x0072, B:23:0x009d, B:24:0x00b2, B:25:0x0081, B:28:0x0090, B:31:0x00c0, B:33:0x00ca, B:34:0x00d0, B:36:0x00d6, B:37:0x00de, B:39:0x00fc, B:40:0x0118), top: B:8:0x0029 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

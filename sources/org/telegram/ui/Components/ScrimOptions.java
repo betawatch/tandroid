@@ -623,7 +623,7 @@ public class ScrimOptions extends Dialog {
                                     chatMessageCell.getLocationOnScreen(iArr);
                                     final int[] iArr2 = {iArr[0] + ((int) f4), iArr[1] + ((int) f5)};
                                     this.scrimDrawable = new Drawable() { // from class: org.telegram.ui.Components.ScrimOptions.4
-                                        private int alpha = NotificationCenter.closeOtherAppActivities;
+                                        private int alpha = NotificationCenter.invalidateMotionBackground;
 
                                         @Override // android.graphics.drawable.Drawable
                                         public int getOpacity() {
@@ -724,7 +724,7 @@ public class ScrimOptions extends Dialog {
                             chatMessageCell.getLocationOnScreen(iArr3);
                             final int[] iArr22 = {iArr3[0] + ((int) f4), iArr3[1] + ((int) f5)};
                             this.scrimDrawable = new Drawable() { // from class: org.telegram.ui.Components.ScrimOptions.4
-                                private int alpha = NotificationCenter.closeOtherAppActivities;
+                                private int alpha = NotificationCenter.invalidateMotionBackground;
 
                                 @Override // android.graphics.drawable.Drawable
                                 public int getOpacity() {
