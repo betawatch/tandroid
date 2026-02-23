@@ -384,7 +384,7 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
             tL_message.message = LocaleController.getString(R.string.PrivacyForwardsMessageLine);
             tL_message.date = currentTimeMillis - 3540;
             tL_message.dialog_id = 1L;
-            tL_message.flags = NotificationCenter.needCheckSystemBarColors;
+            tL_message.flags = NotificationCenter.themeAccentListUpdated;
             tL_message.from_id = new TLRPC.TL_peerUser();
             tL_message.id = 1;
             TLRPC.TL_messageFwdHeader tL_messageFwdHeader = new TLRPC.TL_messageFwdHeader();
@@ -452,6 +452,11 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressAboutRevenueSharingAds() {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAboutRevenueSharingAds(this);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didPressAdmin(ChatMessageCell chatMessageCell2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAdmin(this, chatMessageCell2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -710,8 +715,18 @@ public class PrivacyControlActivity extends BaseFragment implements Notification
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean isAdmin(long j) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isAdmin(this, j);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean isLandscape() {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isLandscape(this);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean isOwner(long j) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isOwner(this, j);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

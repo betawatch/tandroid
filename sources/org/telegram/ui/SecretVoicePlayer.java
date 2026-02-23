@@ -446,7 +446,7 @@ public class SecretVoicePlayer extends Dialog {
                         setImageCoords(SecretVoicePlayer.this.rect.left, SecretVoicePlayer.this.rect.top, SecretVoicePlayer.this.rect.width(), SecretVoicePlayer.this.rect.height());
                         getPhotoImage().setRoundRadius((int) SecretVoicePlayer.this.rect.width());
                         if (SecretVoicePlayer.this.openProgress > 0.0f && SecretVoicePlayer.this.renderedFirstFrame) {
-                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.cameraInitied, 31);
+                            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.closeOtherAppActivities, 31);
                         }
                         this.radialProgressAlpha = 1.0f - SecretVoicePlayer.this.openProgress;
                     }
@@ -537,7 +537,7 @@ public class SecretVoicePlayer extends Dialog {
                         this.radialMatrix.postScale(width2, width2);
                         this.radialMatrix.postTranslate(SecretVoicePlayer.this.rect.centerX(), SecretVoicePlayer.this.rect.centerY());
                         this.radialGradient.setLocalMatrix(this.radialMatrix);
-                        canvas.saveLayerAlpha(SecretVoicePlayer.this.rect, NotificationCenter.cameraInitied, 31);
+                        canvas.saveLayerAlpha(SecretVoicePlayer.this.rect, NotificationCenter.closeOtherAppActivities, 31);
                         super.drawBlurredPhoto(canvas);
                         canvas.save();
                         canvas.drawRect(SecretVoicePlayer.this.rect, this.radialPaint);
@@ -630,6 +630,11 @@ public class SecretVoicePlayer extends Dialog {
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressAboutRevenueSharingAds() {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAboutRevenueSharingAds(this);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didPressAdmin(ChatMessageCell chatMessageCell6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAdmin(this, chatMessageCell6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -888,8 +893,18 @@ public class SecretVoicePlayer extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean isAdmin(long j) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isAdmin(this, j);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean isLandscape() {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isLandscape(this);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean isOwner(long j) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isOwner(this, j);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

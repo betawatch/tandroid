@@ -55,7 +55,7 @@ import org.telegram.ui.web.BotWebViewContainer;
 import org.telegram.ui.web.MHTML;
 import org.telegram.ui.web.WebInstantView;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class WebInstantView {
     public static final HashMap instants = new HashMap();
     private static HashMap loadingPhotos;

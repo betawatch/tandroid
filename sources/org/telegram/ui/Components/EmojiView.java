@@ -343,6 +343,10 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
     public interface EmojiViewDelegate {
 
         public abstract /* synthetic */ class -CC {
+            public static boolean $default$canAddCaptionToGif(EmojiViewDelegate emojiViewDelegate, TLRPC.Document document) {
+                return false;
+            }
+
             public static boolean $default$canSchedule(EmojiViewDelegate emojiViewDelegate) {
                 return false;
             }
@@ -387,6 +391,9 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             public static void $default$onGifSelected(EmojiViewDelegate emojiViewDelegate, View view, Object obj, String str, Object obj2, boolean z, int i, int i2) {
             }
 
+            public static void $default$onGifSelectedForAddCaption(EmojiViewDelegate emojiViewDelegate, View view, Object obj, String str, Object obj2, boolean z, int i, int i2) {
+            }
+
             public static void $default$onSearchOpenClose(EmojiViewDelegate emojiViewDelegate, int i) {
             }
 
@@ -414,6 +421,8 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             public static void $default$showTrendingStickersAlert(EmojiViewDelegate emojiViewDelegate, TrendingStickersLayout trendingStickersLayout) {
             }
         }
+
+        boolean canAddCaptionToGif(TLRPC.Document document);
 
         boolean canSchedule();
 
@@ -445,8 +454,9 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
 
         void onEmojiSettingsClick(ArrayList arrayList);
 
-        /* renamed from: onGifSelected */
-        void lambda$onGifSelected$1(View view, Object obj, String str, Object obj2, boolean z, int i, int i2);
+        void onGifSelected(View view, Object obj, String str, Object obj2, boolean z, int i, int i2);
+
+        void onGifSelectedForAddCaption(View view, Object obj, String str, Object obj2, boolean z, int i, int i2);
 
         void onSearchOpenClose(int i);
 
@@ -744,9 +754,21 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public void sendGif(Object obj, Object obj2, boolean z, int i, int i2) {
             if (EmojiView.this.gifGridView.getAdapter() == EmojiView.this.gifAdapter) {
-                EmojiView.this.delegate.lambda$onGifSelected$1(null, obj, null, obj2, z, i, i2);
+                EmojiView.this.delegate.onGifSelected(null, obj, null, obj2, z, i, i2);
             } else if (EmojiView.this.gifGridView.getAdapter() == EmojiView.this.gifSearchAdapter) {
-                EmojiView.this.delegate.lambda$onGifSelected$1(null, obj, null, obj2, z, i, i2);
+                EmojiView.this.delegate.onGifSelected(null, obj, null, obj2, z, i, i2);
+            }
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public boolean canAddCaption(TLRPC.Document document) {
+            return EmojiView.this.delegate.canAddCaptionToGif(document);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public void addCaptionToGif(Object obj, Object obj2, boolean z, int i, int i2) {
+            if (EmojiView.this.gifGridView.getAdapter() == EmojiView.this.gifAdapter || EmojiView.this.gifGridView.getAdapter() == EmojiView.this.gifSearchAdapter) {
+                EmojiView.this.delegate.onGifSelectedForAddCaption(null, obj, null, obj2, z, i, i2);
             }
         }
 
@@ -887,7 +909,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                             paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(18.0f), 0.0f, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                             this.fadePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                         }
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.cameraInitied, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.closeOtherAppActivities, 31);
                         super.dispatchDraw(canvas);
                         this.fadePaint.setAlpha((int) (SearchField.this.inputBoxGradientAlpha * 255.0f));
                         canvas.drawRect(0.0f, 0.0f, AndroidUtilities.dp(18.0f), getMeasuredHeight(), this.fadePaint);
@@ -2945,7 +2967,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             if (adapter2 != gifAdapter2 || i < 0 || i >= gifAdapter2.results.size()) {
                 return;
             }
-            this.delegate.lambda$onGifSelected$1(view, this.gifSearchAdapter.results.get(i), this.gifSearchAdapter.lastSearchImageString, this.gifSearchAdapter.bot, true, 0, 0);
+            this.delegate.onGifSelected(view, this.gifSearchAdapter.results.get(i), this.gifSearchAdapter.lastSearchImageString, this.gifSearchAdapter.bot, true, 0, 0);
             updateRecentGifs();
             return;
         }
@@ -2953,7 +2975,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
             return;
         }
         if (i < gifAdapter.recentItemsCount) {
-            this.delegate.lambda$onGifSelected$1(view, this.recentGifs.get(i), null, "gif", true, 0, 0);
+            this.delegate.onGifSelected(view, this.recentGifs.get(i), null, "gif", true, 0, 0);
             return;
         }
         if (this.gifAdapter.recentItemsCount > 0) {
@@ -2962,7 +2984,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         if (i < 0 || i >= this.gifAdapter.results.size()) {
             return;
         }
-        this.delegate.lambda$onGifSelected$1(view, this.gifAdapter.results.get(i), null, this.gifAdapter.bot, true, 0, 0);
+        this.delegate.onGifSelected(view, this.gifAdapter.results.get(i), null, this.gifAdapter.bot, true, 0, 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -3796,7 +3818,7 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                         backgroundThreadDrawHolderArr[i2] = imageReceiver.setDrawInBackgroundThread(backgroundThreadDrawHolderArr2[i3], i3);
                         imageViewEmoji.backgroundThreadDrawHolder[this.threadIndex].time = j;
                         imageViewEmoji.backgroundThreadDrawHolder[this.threadIndex].overrideAlpha = 1.0f;
-                        animatedEmojiDrawable.setAlpha(NotificationCenter.cameraInitied);
+                        animatedEmojiDrawable.setAlpha(NotificationCenter.closeOtherAppActivities);
                         int height = (int) (imageViewEmoji.getHeight() * 0.03f);
                         android.graphics.Rect rect = AndroidUtilities.rectTmp2;
                         rect.set((imageViewEmoji.getLeft() + imageViewEmoji.getPaddingLeft()) - this.startOffset, height, (imageViewEmoji.getRight() - imageViewEmoji.getPaddingRight()) - this.startOffset, ((imageViewEmoji.getMeasuredHeight() + height) - imageViewEmoji.getPaddingTop()) - imageViewEmoji.getPaddingBottom());

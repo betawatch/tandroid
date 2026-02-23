@@ -889,6 +889,11 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
 
     class 7 implements EmojiView.EmojiViewDelegate {
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ boolean canAddCaptionToGif(TLRPC.Document document) {
+            return EmojiView.EmojiViewDelegate.-CC.$default$canAddCaptionToGif(this, document);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
         public /* synthetic */ boolean canSchedule() {
             return EmojiView.EmojiViewDelegate.-CC.$default$canSchedule(this);
         }
@@ -934,9 +939,13 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
         }
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
-        /* renamed from: onGifSelected */
-        public /* synthetic */ void lambda$onGifSelected$1(View view, Object obj, String str, Object obj2, boolean z, int i, int i2) {
+        public /* synthetic */ void onGifSelected(View view, Object obj, String str, Object obj2, boolean z, int i, int i2) {
             EmojiView.EmojiViewDelegate.-CC.$default$onGifSelected(this, view, obj, str, obj2, z, i, i2);
+        }
+
+        @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate
+        public /* synthetic */ void onGifSelectedForAddCaption(View view, Object obj, String str, Object obj2, boolean z, int i, int i2) {
+            EmojiView.EmojiViewDelegate.-CC.$default$onGifSelectedForAddCaption(this, view, obj, str, obj2, z, i, i2);
         }
 
         @Override // org.telegram.ui.Components.EmojiView.EmojiViewDelegate

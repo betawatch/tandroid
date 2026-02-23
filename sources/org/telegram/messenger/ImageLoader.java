@@ -1341,11 +1341,11 @@ public class ImageLoader {
             	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:58)
             	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:44)
             */
-        /* JADX WARN: Not initialized variable reg: 36, insn: 0x08c5: MOVE (r3 I:??[OBJECT, ARRAY]) = (r36 I:??[OBJECT, ARRAY]), block:B:771:0x08c5 */
+        /* JADX WARN: Not initialized variable reg: 36, insn: 0x08c7: MOVE (r3 I:??[OBJECT, ARRAY]) = (r36 I:??[OBJECT, ARRAY]), block:B:771:0x08c7 */
         @Override // java.lang.Runnable
         public void run() {
             /*
-                Method dump skipped, instructions count: 3709
+                Method dump skipped, instructions count: 3713
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.ImageLoader.CacheOutTask.run():void");
@@ -1363,21 +1363,21 @@ public class ImageLoader {
             boolean z = true;
             if (wallPaperSettings2.second_background_color == 0) {
                 i = AndroidUtilities.getPatternColor(wallPaperSettings2.background_color);
-                canvas.drawColor(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.cameraInitied));
+                canvas.drawColor(ColorUtils.setAlphaComponent(wallPaper.settings.background_color, NotificationCenter.closeOtherAppActivities));
             } else if (wallPaperSettings2.third_background_color == 0) {
-                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.cameraInitied);
-                int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.cameraInitied);
+                int alphaComponent = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.closeOtherAppActivities);
+                int alphaComponent2 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.closeOtherAppActivities);
                 int averageColor = AndroidUtilities.getAverageColor(alphaComponent, alphaComponent2);
                 GradientDrawable gradientDrawable = new GradientDrawable(BackgroundGradientDrawable.getGradientOrientation(wallPaper.settings.rotation), new int[]{alphaComponent, alphaComponent2});
                 gradientDrawable.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                 gradientDrawable.draw(canvas);
                 i = averageColor;
             } else {
-                int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.cameraInitied);
-                int alphaComponent4 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.cameraInitied);
-                int alphaComponent5 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.cameraInitied);
+                int alphaComponent3 = ColorUtils.setAlphaComponent(wallPaperSettings2.background_color, NotificationCenter.closeOtherAppActivities);
+                int alphaComponent4 = ColorUtils.setAlphaComponent(wallPaper.settings.second_background_color, NotificationCenter.closeOtherAppActivities);
+                int alphaComponent5 = ColorUtils.setAlphaComponent(wallPaper.settings.third_background_color, NotificationCenter.closeOtherAppActivities);
                 int i2 = wallPaper.settings.fourth_background_color;
-                int alphaComponent6 = i2 == 0 ? 0 : ColorUtils.setAlphaComponent(i2, NotificationCenter.cameraInitied);
+                int alphaComponent6 = i2 == 0 ? 0 : ColorUtils.setAlphaComponent(i2, NotificationCenter.closeOtherAppActivities);
                 int patternColor = MotionBackgroundDrawable.getPatternColor(alphaComponent3, alphaComponent4, alphaComponent5, alphaComponent6);
                 MotionBackgroundDrawable motionBackgroundDrawable = new MotionBackgroundDrawable();
                 motionBackgroundDrawable.setColors(alphaComponent3, alphaComponent4, alphaComponent5, alphaComponent6);
@@ -2389,10 +2389,10 @@ public class ImageLoader {
     
         if (r2.mkdirs() != false) goto L69;
      */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x019d A[Catch: Exception -> 0x00ad, TryCatch #0 {Exception -> 0x00ad, blocks: (B:8:0x0053, B:10:0x005f, B:12:0x006d, B:15:0x0075, B:17:0x007c, B:19:0x00aa, B:23:0x00b0, B:25:0x00bc, B:28:0x00c5, B:30:0x00c8, B:34:0x00e9, B:35:0x00cd, B:38:0x00ec, B:181:0x012d, B:47:0x0190, B:49:0x019d, B:51:0x01a8, B:53:0x01b0, B:55:0x01b8, B:58:0x01c4, B:60:0x01cf, B:64:0x01d2, B:151:0x034c, B:153:0x030b, B:155:0x02ca, B:157:0x0289, B:159:0x0248, B:68:0x0351, B:89:0x03bc, B:91:0x0388, B:92:0x03c9, B:161:0x0214, B:184:0x012a, B:41:0x013c, B:43:0x0144, B:46:0x0189, B:162:0x0151, B:164:0x0157, B:167:0x0164, B:169:0x016a, B:170:0x015e, B:191:0x03c0, B:193:0x03c4, B:142:0x030e, B:144:0x0320, B:146:0x0327, B:148:0x0336, B:133:0x02cd, B:135:0x02df, B:137:0x02e6, B:139:0x02f5, B:124:0x028c, B:126:0x029e, B:128:0x02a5, B:130:0x02b4, B:97:0x01e3, B:99:0x01f3, B:101:0x01f9, B:103:0x0200, B:80:0x038b, B:82:0x0399, B:84:0x039f, B:86:0x03a8, B:115:0x024b, B:117:0x025d, B:119:0x0264, B:121:0x0273, B:71:0x0357, B:73:0x0365, B:75:0x036b, B:77:0x0374, B:106:0x0217, B:108:0x0227, B:110:0x022d, B:112:0x0234), top: B:7:0x0053, inners: #1, #2, #3, #4, #8, #9, #10, #11 }] */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0374 A[Catch: Exception -> 0x0387, TRY_LEAVE, TryCatch #10 {Exception -> 0x0387, blocks: (B:71:0x0357, B:73:0x0365, B:75:0x036b, B:77:0x0374), top: B:70:0x0357, outer: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x03a8 A[Catch: Exception -> 0x03bb, TRY_LEAVE, TryCatch #8 {Exception -> 0x03bb, blocks: (B:80:0x038b, B:82:0x0399, B:84:0x039f, B:86:0x03a8), top: B:79:0x038b, outer: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x01e3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x019d A[Catch: Exception -> 0x00ad, TryCatch #0 {Exception -> 0x00ad, blocks: (B:8:0x0053, B:10:0x005f, B:12:0x006d, B:15:0x0075, B:17:0x007c, B:19:0x00aa, B:23:0x00b0, B:25:0x00bc, B:28:0x00c5, B:30:0x00c8, B:34:0x00e9, B:35:0x00cd, B:38:0x00ec, B:181:0x012d, B:47:0x0190, B:49:0x019d, B:51:0x01a8, B:53:0x01b0, B:55:0x01b8, B:58:0x01c4, B:60:0x01cf, B:64:0x01d2, B:151:0x034d, B:153:0x030c, B:155:0x02cb, B:157:0x028a, B:159:0x0249, B:68:0x0352, B:89:0x03bd, B:91:0x0389, B:92:0x03ca, B:161:0x0215, B:184:0x012a, B:41:0x013c, B:43:0x0144, B:46:0x0189, B:162:0x0151, B:164:0x0157, B:167:0x0164, B:169:0x016a, B:170:0x015e, B:191:0x03c1, B:193:0x03c5, B:142:0x030f, B:144:0x0321, B:146:0x0328, B:148:0x0337, B:133:0x02ce, B:135:0x02e0, B:137:0x02e7, B:139:0x02f6, B:124:0x028d, B:126:0x029f, B:128:0x02a6, B:130:0x02b5, B:115:0x024c, B:117:0x025e, B:119:0x0265, B:121:0x0274, B:97:0x01e4, B:99:0x01f4, B:101:0x01fa, B:103:0x0201, B:80:0x038c, B:82:0x039a, B:84:0x03a0, B:86:0x03a9, B:71:0x0358, B:73:0x0366, B:75:0x036c, B:77:0x0375, B:106:0x0218, B:108:0x0228, B:110:0x022e, B:112:0x0235), top: B:7:0x0053, inners: #1, #2, #3, #4, #5, #9, #10, #11 }] */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0375 A[Catch: Exception -> 0x0388, TRY_LEAVE, TryCatch #10 {Exception -> 0x0388, blocks: (B:71:0x0358, B:73:0x0366, B:75:0x036c, B:77:0x0375), top: B:70:0x0358, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x03a9 A[Catch: Exception -> 0x03bc, TRY_LEAVE, TryCatch #9 {Exception -> 0x03bc, blocks: (B:80:0x038c, B:82:0x039a, B:84:0x03a0, B:86:0x03a9), top: B:79:0x038c, outer: #0 }] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x01e4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3064,25 +3064,25 @@ public class ImageLoader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:149:0x030e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x0311, code lost:
     
         if (r5 == false) goto L151;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:159:0x03fd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:159:0x0400, code lost:
     
         if (r1.equals(r6) != false) goto L202;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:270:0x01ba, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:270:0x01bb, code lost:
     
         if (r8.exists() == false) goto L70;
      */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x0435  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0446  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x01b1  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x01bf  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x01c3  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0227  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x0214  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x0438  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0449  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x01b2  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x01c0  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x01c4  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x0215  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3670,17 +3670,17 @@ public class ImageLoader {
      */
     /* JADX WARN: Removed duplicated region for block: B:100:0x01e5  */
     /* JADX WARN: Removed duplicated region for block: B:104:0x01ff  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x03ce  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x0445 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x0460 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x047b A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x049c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:217:0x04ba A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x04d4  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x051b  */
-    /* JADX WARN: Removed duplicated region for block: B:246:0x057d  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x0514  */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x043e  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x03d0  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x0447 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x0462 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:208:0x047d A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x049e A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:217:0x04bc A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x04d6  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x051d  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x057f  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x0516  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x0440  */
     /* JADX WARN: Removed duplicated region for block: B:274:0x01e8  */
     /* JADX WARN: Removed duplicated region for block: B:275:0x01e1  */
     /* JADX WARN: Removed duplicated region for block: B:278:0x01b0  */
@@ -5168,11 +5168,11 @@ public class ImageLoader {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00ad  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00e0  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00f6  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00b0  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00f9  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00b5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -5708,7 +5708,7 @@ public class ImageLoader {
                 for (int i3 = 0; i3 < size; i3++) {
                     TLRPC.PhotoSize photoSize = message.media.document.thumbs.get(i3);
                     if (photoSize instanceof TLRPC.TL_photoStrippedSize) {
-                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(message.media.document.thumbs, NotificationCenter.chatlistFolderUpdate);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(message.media.document.thumbs, NotificationCenter.storiesDraftsUpdated);
                         if (closestPhotoSizeWithSize == null) {
                             int i4 = 0;
                             while (true) {

@@ -779,7 +779,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
             return true;
         }
         float y = this.listView.getY() + Math.max(0.0f, this.keyboardOffset - this.listView.getTop());
-        canvas.saveLayerAlpha(this.listView.getX(), this.listView.getY(), this.listView.getX() + this.listView.getWidth(), this.listView.getY() + this.listView.getHeight(), NotificationCenter.cameraInitied, 31);
+        canvas.saveLayerAlpha(this.listView.getX(), this.listView.getY(), this.listView.getX() + this.listView.getWidth(), this.listView.getY() + this.listView.getHeight(), NotificationCenter.closeOtherAppActivities, 31);
         canvas.save();
         canvas.translate(0.0f, (1.0f - this.listView.getAlpha()) * Math.min((this.listView.getY() + this.listView.getHeight()) - y, getListViewTop()));
         canvas.clipRect(0.0f, y, getWidth(), getHeight());
@@ -2282,7 +2282,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
                         this.width = getLayout() != null ? (int) getLayout().getLineWidth(0) : 0;
                     }
                     if (this.width > AndroidUtilities.dp(100.0f)) {
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.cameraInitied, 31);
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.closeOtherAppActivities, 31);
                         super.onDraw(canvas);
                         canvas.save();
                         RectF rectF = AndroidUtilities.rectTmp;
@@ -2373,7 +2373,7 @@ public abstract class LiveCommentsView extends FrameLayout implements Notificati
         @Override // android.graphics.drawable.Drawable
         public void draw(Canvas canvas) {
             Rect bounds = getBounds();
-            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.cameraInitied, 31);
+            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.closeOtherAppActivities, 31);
             this.crown.setBounds(bounds);
             this.crown.draw(canvas);
             this.text.draw(canvas, bounds.centerX() - (this.text.getCurrentWidth() / 2.0f), bounds.centerY() + AndroidUtilities.dp(0.15f), -1, this.crown.getAlpha() / 255.0f);

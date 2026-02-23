@@ -323,8 +323,8 @@ public class Camera2Session {
         return (this.isError || !this.isSuccess || this.isClosed) ? false : true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0039 A[Catch: Exception -> 0x0045, TryCatch #0 {Exception -> 0x0045, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002b, B:18:0x0039, B:20:0x0047), top: B:2:0x0001 }] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0047 A[Catch: Exception -> 0x0045, TRY_LEAVE, TryCatch #0 {Exception -> 0x0045, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002b, B:18:0x0039, B:20:0x0047), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x003a A[Catch: Exception -> 0x0046, TryCatch #0 {Exception -> 0x0046, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002c, B:18:0x003a, B:20:0x0048), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0048 A[Catch: Exception -> 0x0046, TRY_LEAVE, TryCatch #0 {Exception -> 0x0046, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002c, B:18:0x003a, B:20:0x0048), top: B:2:0x0001 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -342,7 +342,7 @@ public class Camera2Session {
                 } else if (rotation == 2) {
                     i = NotificationCenter.newEmojiSuggestionsAvailable;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.proxySettingsChanged;
+                    i = NotificationCenter.didSetNewWallpapper;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 if (!this.isFront) {
@@ -360,8 +360,8 @@ public class Camera2Session {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0039 A[Catch: Exception -> 0x0045, TryCatch #0 {Exception -> 0x0045, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002b, B:18:0x0039, B:20:0x0047), top: B:2:0x0001 }] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0047 A[Catch: Exception -> 0x0045, TRY_LEAVE, TryCatch #0 {Exception -> 0x0045, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002b, B:18:0x0039, B:20:0x0047), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x003a A[Catch: Exception -> 0x0046, TryCatch #0 {Exception -> 0x0046, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002c, B:18:0x003a, B:20:0x0048), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0048 A[Catch: Exception -> 0x0046, TRY_LEAVE, TryCatch #0 {Exception -> 0x0046, blocks: (B:3:0x0001, B:7:0x0006, B:16:0x002c, B:18:0x003a, B:20:0x0048), top: B:2:0x0001 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -379,7 +379,7 @@ public class Camera2Session {
                 } else if (rotation == 2) {
                     i = NotificationCenter.newEmojiSuggestionsAvailable;
                 } else if (rotation == 3) {
-                    i = NotificationCenter.proxySettingsChanged;
+                    i = NotificationCenter.didSetNewWallpapper;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
                 if (!this.isFront) {

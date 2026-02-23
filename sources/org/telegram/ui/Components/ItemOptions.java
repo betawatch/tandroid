@@ -818,6 +818,10 @@ public class ItemOptions {
         return this;
     }
 
+    public ItemOptions addGapIf(boolean z) {
+        return !z ? this : addGap();
+    }
+
     public ItemOptions addGap() {
         ActionBarPopupWindow.GapView gapView = new ActionBarPopupWindow.GapView(this.context, this.resourcesProvider);
         gapView.setTag(R.id.fit_width_tag, 1);
@@ -1843,6 +1847,7 @@ public class ItemOptions {
                         if (ItemOptions.this.scrimView instanceof ScrimView) {
                             ((ScrimView) ItemOptions.this.scrimView).drawScrim(canvas, this.dimProgress);
                         } else {
+                            canvas.translate(-ItemOptions.this.scrimView.getScrollX(), -ItemOptions.this.scrimView.getScrollY());
                             ItemOptions.this.scrimView.draw(canvas);
                         }
                         canvas.restore();
@@ -1884,7 +1889,7 @@ public class ItemOptions {
                     this.clipPath.addRoundRect(rectF2, ItemOptions.this.scrimViewRoundRadius * this.dimProgress, ItemOptions.this.scrimViewRoundRadius * this.dimProgress, Path.Direction.CW);
                     canvas.clipPath(this.clipPath);
                 }
-                this.cachedBitmapPaint.setAlpha(NotificationCenter.cameraInitied);
+                this.cachedBitmapPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
                 canvas.drawBitmap(this.cachedBitmap, -ItemOptions.this.viewAdditionalOffsets.left, -ItemOptions.this.viewAdditionalOffsets.top, this.cachedBitmapPaint);
                 canvas.restore();
             }

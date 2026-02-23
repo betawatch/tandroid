@@ -110,7 +110,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
     public boolean fromBottomSheet;
     float fromDismissOffset;
     float fromHeight;
-    private int fromRadius;
+    private int[] fromRadius;
     float fromWidth;
     float fromX;
     float fromXCell;
@@ -796,6 +796,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         final RectF outFromRectAvatar;
         final RectF outFromRectContainer;
         final Path path;
+        final float[] radii;
         final RectF rect1;
         final RectF rect2;
         final RectF rect3;
@@ -807,6 +808,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         2(Context context, BaseFragment baseFragment) {
             super(context);
             this.val$fragment = baseFragment;
+            this.radii = new float[8];
             this.path = new Path();
             this.rect1 = new RectF();
             this.rect2 = new RectF();
@@ -824,9 +826,13 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
             return super.drawChild(canvas, view, j);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:187:0x05bc A[LOOP:1: B:179:0x0588->B:187:0x05bc, LOOP_END] */
-        /* JADX WARN: Removed duplicated region for block: B:188:0x05c4 A[EDGE_INSN: B:188:0x05c4->B:189:0x05c4 BREAK  A[LOOP:1: B:179:0x0588->B:187:0x05bc], SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:47:0x087c  */
+        /* JADX WARN: Removed duplicated region for block: B:108:0x05ab  */
+        /* JADX WARN: Removed duplicated region for block: B:111:0x05c5  */
+        /* JADX WARN: Removed duplicated region for block: B:115:0x05ea  */
+        /* JADX WARN: Removed duplicated region for block: B:189:0x063c A[LOOP:1: B:181:0x0608->B:189:0x063c, LOOP_END] */
+        /* JADX WARN: Removed duplicated region for block: B:190:0x0644 A[EDGE_INSN: B:190:0x0644->B:191:0x0644 BREAK  A[LOOP:1: B:181:0x0608->B:189:0x063c], SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:199:0x08ae  */
+        /* JADX WARN: Removed duplicated region for block: B:47:0x0912  */
         /* JADX WARN: Removed duplicated region for block: B:50:? A[RETURN, SYNTHETIC] */
         @Override // org.telegram.ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View
         /*
@@ -836,25 +842,35 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
             PeerStoriesView.PeerHeaderView peerHeaderView;
             float f;
             float f2;
-            float lerp;
+            StoryViewer storyViewer;
             float f3;
-            float y;
+            TransitionViewHolder transitionViewHolder;
             float f4;
+            TransitionViewHolder transitionViewHolder2;
+            StoryViewer storyViewer2;
+            float y;
+            float f5;
             StoriesUtilities.AvatarStoryParams avatarStoryParams;
+            float f6;
             Paint paint;
             StoriesUtilities.AvatarStoryParams avatarStoryParams2;
+            StoryViewer storyViewer3;
+            StoryViewer storyViewer4;
+            TransitionViewHolder transitionViewHolder3;
             HolderDrawAbove holderDrawAbove;
             HolderClip holderClip;
             PeerStoriesView currentPeerView;
+            HolderClip holderClip2;
+            HolderDrawAbove holderDrawAbove2;
             StoriesUtilities.AvatarStoryParams avatarStoryParams3;
-            StoryViewer storyViewer;
-            TransitionViewHolder transitionViewHolder;
+            StoryViewer storyViewer5;
+            TransitionViewHolder transitionViewHolder4;
             float y2;
             canvas.drawColor(ColorUtils.setAlphaComponent(-16777216, (int) (StoryViewer.this.getBlackoutAlpha() * 255.0f)));
-            StoryViewer storyViewer2 = StoryViewer.this;
-            if (storyViewer2.ATTACH_TO_FRAGMENT) {
-                boolean z = storyViewer2.progressToOpen * (1.0f - storyViewer2.progressToDismiss) == 1.0f;
-                if (storyViewer2.fullyVisible != z) {
+            StoryViewer storyViewer6 = StoryViewer.this;
+            if (storyViewer6.ATTACH_TO_FRAGMENT) {
+                boolean z = storyViewer6.progressToOpen * (1.0f - storyViewer6.progressToDismiss) == 1.0f;
+                if (storyViewer6.fullyVisible != z) {
                     StoryViewer.this.fullyVisible = z;
                     if (this.val$fragment.getLayoutContainer() != null) {
                         this.val$fragment.getLayoutContainer().invalidate();
@@ -871,19 +887,19 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 }
                 if (StoryViewer.this.invalidateOutRect) {
                     StoryViewer.this.invalidateOutRect = false;
-                    float f5 = 0.0f;
-                    float f6 = 0.0f;
+                    float f7 = 0.0f;
+                    float f8 = 0.0f;
                     for (View view = peerHeaderView2.backupImageView; view != this; view = (View) view.getParent()) {
                         if (view.getParent() == this) {
-                            f5 += view.getLeft();
+                            f7 += view.getLeft();
                             y2 = view.getTop();
                         } else if (view.getParent() != StoryViewer.this.storiesViewPager) {
-                            f5 += view.getX();
+                            f7 += view.getX();
                             y2 = view.getY();
                         }
-                        f6 += y2;
+                        f8 += y2;
                     }
-                    this.outFromRectAvatar.set(f5, f6, peerHeaderView2.backupImageView.getMeasuredWidth() + f5, peerHeaderView2.backupImageView.getMeasuredHeight() + f6);
+                    this.outFromRectAvatar.set(f7, f8, peerHeaderView2.backupImageView.getMeasuredWidth() + f7, peerHeaderView2.backupImageView.getMeasuredHeight() + f8);
                     this.outFromRectContainer.set(0.0f, currentPeerView2.getTop() + currentPeerView2.storyContainer.getTop(), StoryViewer.this.containerView.getMeasuredWidth(), StoryViewer.this.containerView.getMeasuredHeight());
                     StoryViewer.this.containerView.getMatrix().mapRect(this.outFromRectAvatar);
                     StoryViewer.this.containerView.getMatrix().mapRect(this.outFromRectContainer);
@@ -893,54 +909,54 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 peerHeaderView = null;
             }
             StoryViewer.this.volumeControl.setAlpha(1.0f - StoryViewer.this.progressToDismiss);
-            StoryViewer storyViewer3 = StoryViewer.this;
-            float clamp = storyViewer3.swipeToDismissHorizontalOffset == 0.0f ? 1.0f - Utilities.clamp(Math.abs(storyViewer3.swipeToDismissOffset / getMeasuredHeight()), 1.0f, 0.0f) : 1.0f;
-            StoryViewer storyViewer4 = StoryViewer.this;
-            storyViewer4.storiesViewPager.setHorizontalProgressToDismiss((storyViewer4.swipeToDismissHorizontalOffset / storyViewer4.containerView.getMeasuredWidth()) * StoryViewer.this.progressToOpen);
-            StoryViewer storyViewer5 = StoryViewer.this;
-            if (storyViewer5.fromX != 0.0f || storyViewer5.fromY != 0.0f) {
-                float f7 = storyViewer5.progressToOpen;
-                if (f7 != 1.0f) {
-                    if (storyViewer5.isClosed && StoryViewer.this.animateAvatar) {
-                        float f8 = StoryViewer.this.progressToOpen;
-                        float clamp2 = 1.0f - Utilities.clamp(((1.0f - f8) - 0.8f) / 0.100000024f, 1.0f, 0.0f);
-                        float clamp3 = Utilities.clamp(f8 - ((1.0f - clamp2) * 0.05f), 1.0f, 0.0f);
+            StoryViewer storyViewer7 = StoryViewer.this;
+            float clamp = storyViewer7.swipeToDismissHorizontalOffset == 0.0f ? 1.0f - Utilities.clamp(Math.abs(storyViewer7.swipeToDismissOffset / getMeasuredHeight()), 1.0f, 0.0f) : 1.0f;
+            StoryViewer storyViewer8 = StoryViewer.this;
+            storyViewer8.storiesViewPager.setHorizontalProgressToDismiss((storyViewer8.swipeToDismissHorizontalOffset / storyViewer8.containerView.getMeasuredWidth()) * StoryViewer.this.progressToOpen);
+            StoryViewer storyViewer9 = StoryViewer.this;
+            if (storyViewer9.fromX != 0.0f || storyViewer9.fromY != 0.0f) {
+                float f9 = storyViewer9.progressToOpen;
+                if (f9 != 1.0f) {
+                    if (storyViewer9.isClosed && StoryViewer.this.animateAvatar) {
+                        float f10 = StoryViewer.this.progressToOpen;
+                        float clamp2 = 1.0f - Utilities.clamp(((1.0f - f10) - 0.8f) / 0.100000024f, 1.0f, 0.0f);
+                        float clamp3 = Utilities.clamp(f10 - ((1.0f - clamp2) * 0.05f), 1.0f, 0.0f);
                         StoryViewer.this.containerView.setAlpha(clamp2);
-                        f = f8;
-                        f7 = clamp3;
+                        f = f10;
+                        f9 = clamp3;
                     } else {
                         StoryViewer.this.containerView.setAlpha(1.0f);
-                        f = f7;
+                        f = f9;
                     }
-                    if (!StoryViewer.this.isClosed || (transitionViewHolder = (storyViewer = StoryViewer.this).transitionViewHolder) == null || transitionViewHolder.storyImage == null) {
+                    if (!StoryViewer.this.isClosed || (transitionViewHolder4 = (storyViewer5 = StoryViewer.this).transitionViewHolder) == null || transitionViewHolder4.storyImage == null) {
                         boolean unused = StoryViewer.this.isClosed;
                     } else {
-                        HwFrameLayout hwFrameLayout = storyViewer.containerView;
+                        HwFrameLayout hwFrameLayout = storyViewer5.containerView;
                         hwFrameLayout.setAlpha(hwFrameLayout.getAlpha() * ((float) Math.pow(f, 0.20000000298023224d)));
                     }
-                    StoryViewer storyViewer6 = StoryViewer.this;
-                    HwFrameLayout hwFrameLayout2 = storyViewer6.containerView;
-                    float left = (storyViewer6.fromX - hwFrameLayout2.getLeft()) - (StoryViewer.this.containerView.getMeasuredWidth() / 2.0f);
-                    StoryViewer storyViewer7 = StoryViewer.this;
-                    float f9 = storyViewer7.progressToOpen;
-                    hwFrameLayout2.setTranslationX((left * (1.0f - f9)) + (storyViewer7.swipeToDismissHorizontalOffset * f9));
-                    StoryViewer storyViewer8 = StoryViewer.this;
-                    HwFrameLayout hwFrameLayout3 = storyViewer8.containerView;
-                    float top = (storyViewer8.fromY - hwFrameLayout3.getTop()) - (StoryViewer.this.containerView.getMeasuredHeight() / 2.0f);
-                    StoryViewer storyViewer9 = StoryViewer.this;
-                    float f10 = storyViewer9.progressToOpen;
-                    hwFrameLayout3.setTranslationY((top * (1.0f - f10)) + (storyViewer9.swipeToDismissOffset * f10));
-                    float lerp2 = AndroidUtilities.lerp(StoryViewer.this.fromWidth / r3.containerView.getMeasuredWidth(), (clamp * 0.15f) + 0.85f, f7);
-                    StoryViewer.this.containerView.setScaleX(lerp2);
-                    StoryViewer.this.containerView.setScaleY(lerp2);
+                    StoryViewer storyViewer10 = StoryViewer.this;
+                    HwFrameLayout hwFrameLayout2 = storyViewer10.containerView;
+                    float left = (storyViewer10.fromX - hwFrameLayout2.getLeft()) - (StoryViewer.this.containerView.getMeasuredWidth() / 2.0f);
+                    StoryViewer storyViewer11 = StoryViewer.this;
+                    float f11 = storyViewer11.progressToOpen;
+                    hwFrameLayout2.setTranslationX((left * (1.0f - f11)) + (storyViewer11.swipeToDismissHorizontalOffset * f11));
+                    StoryViewer storyViewer12 = StoryViewer.this;
+                    HwFrameLayout hwFrameLayout3 = storyViewer12.containerView;
+                    float top = (storyViewer12.fromY - hwFrameLayout3.getTop()) - (StoryViewer.this.containerView.getMeasuredHeight() / 2.0f);
+                    StoryViewer storyViewer13 = StoryViewer.this;
+                    float f12 = storyViewer13.progressToOpen;
+                    hwFrameLayout3.setTranslationY((top * (1.0f - f12)) + (storyViewer13.swipeToDismissOffset * f12));
+                    float lerp = AndroidUtilities.lerp(StoryViewer.this.fromWidth / r3.containerView.getMeasuredWidth(), (clamp * 0.15f) + 0.85f, f9);
+                    StoryViewer.this.containerView.setScaleX(lerp);
+                    StoryViewer.this.containerView.setScaleY(lerp);
                     this.path.rewind();
                     RectF rectF = this.rect1;
-                    StoryViewer storyViewer10 = StoryViewer.this;
-                    float f11 = storyViewer10.fromX;
-                    float f12 = storyViewer10.fromWidth / 2.0f;
-                    float f13 = storyViewer10.fromY;
-                    float f14 = storyViewer10.fromHeight / 2.0f;
-                    rectF.set(f11 - f12, f13 - f14, f11 + f12, f13 + f14);
+                    StoryViewer storyViewer14 = StoryViewer.this;
+                    float f13 = storyViewer14.fromX;
+                    float f14 = storyViewer14.fromWidth / 2.0f;
+                    float f15 = storyViewer14.fromY;
+                    float f16 = storyViewer14.fromHeight / 2.0f;
+                    rectF.set(f13 - f14, f15 - f16, f13 + f14, f15 + f16);
                     if (StoryViewer.this.isClosed && StoryViewer.this.animateAvatar) {
                         this.rect2.set(this.outFromRectContainer);
                     } else if (currentPeerView2 != null) {
@@ -951,203 +967,318 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     if (StoryViewer.this.isClosed && StoryViewer.this.animateAvatar) {
                         this.rect1.inset(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
                     }
-                    float lerp3 = AndroidUtilities.lerp(this.rect1.centerX(), this.rect2.centerX(), StoryViewer.this.progressToOpen);
-                    float lerp4 = AndroidUtilities.lerp(this.rect1.centerY(), this.rect2.centerY(), StoryViewer.this.progressToOpen);
-                    float lerp5 = AndroidUtilities.lerp(this.rect1.height(), this.rect2.height(), f7);
-                    float lerp6 = AndroidUtilities.lerp(this.rect1.width(), this.rect2.width(), f7);
+                    float lerp2 = AndroidUtilities.lerp(this.rect1.centerX(), this.rect2.centerX(), StoryViewer.this.progressToOpen);
+                    float lerp3 = AndroidUtilities.lerp(this.rect1.centerY(), this.rect2.centerY(), StoryViewer.this.progressToOpen);
+                    float lerp4 = AndroidUtilities.lerp(this.rect1.height(), this.rect2.height(), f9);
+                    float lerp5 = AndroidUtilities.lerp(this.rect1.width(), this.rect2.width(), f9);
                     if (StoryViewer.this.isClosed && StoryViewer.this.animateAvatar) {
                         this.rect1.inset(-AndroidUtilities.dp(12.0f), -AndroidUtilities.dp(12.0f));
                     }
                     RectF rectF2 = AndroidUtilities.rectTmp;
-                    float f15 = lerp6 / 2.0f;
-                    float f16 = lerp5 / 2.0f;
-                    rectF2.set(lerp3 - f15, lerp4 - f16, lerp3 + f15, lerp4 + f16);
+                    float f17 = lerp5 / 2.0f;
+                    float f18 = lerp4 / 2.0f;
+                    rectF2.set(lerp2 - f17, lerp3 - f18, lerp2 + f17, lerp3 + f18);
                     if (!StoryViewer.this.animateAvatar) {
-                        f2 = 0.0f;
-                        lerp = AndroidUtilities.lerp(StoryViewer.this.fromRadius, 0.0f, f);
-                    } else {
-                        f2 = 0.0f;
-                        lerp = AndroidUtilities.lerp(StoryViewer.this.fromWidth / 2.0f, 0.0f, f7);
-                    }
-                    this.path.addRoundRect(rectF2, lerp, lerp, Path.Direction.CCW);
-                    canvas.save();
-                    StoryViewer storyViewer11 = StoryViewer.this;
-                    float f17 = storyViewer11.clipTop;
-                    if (f17 != f2 && storyViewer11.clipBottom != f2) {
-                        float lerp7 = AndroidUtilities.lerp(f2, f17, (float) Math.pow(1.0f - storyViewer11.progressToOpen, 0.4000000059604645d));
-                        float measuredWidth = getMeasuredWidth();
-                        float measuredHeight = getMeasuredHeight();
-                        StoryViewer storyViewer12 = StoryViewer.this;
-                        canvas.clipRect(f2, lerp7, measuredWidth, AndroidUtilities.lerp(measuredHeight, storyViewer12.clipBottom, 1.0f - storyViewer12.progressToOpen));
-                    }
-                    StoryViewer storyViewer13 = StoryViewer.this;
-                    TransitionViewHolder transitionViewHolder2 = storyViewer13.transitionViewHolder;
-                    if (transitionViewHolder2 != null && (avatarStoryParams3 = transitionViewHolder2.params) != null && avatarStoryParams3.drawnLive && storyViewer13.animateAvatar) {
-                        f3 = f;
-                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (f * 255.0f), 31);
-                    } else {
-                        f3 = f;
-                        canvas.save();
-                    }
-                    canvas.clipPath(this.path);
-                    super.dispatchDraw(canvas);
-                    StoryViewer storyViewer14 = StoryViewer.this;
-                    TransitionViewHolder transitionViewHolder3 = storyViewer14.transitionViewHolder;
-                    if (transitionViewHolder3 != null && transitionViewHolder3.storyImage != null && (currentPeerView = storyViewer14.storiesViewPager.getCurrentPeerView()) != null && currentPeerView.storyContainer != null) {
-                        boolean visible = StoryViewer.this.transitionViewHolder.storyImage.getVisible();
-                        this.rect2.set(StoryViewer.this.swipeToDismissHorizontalOffset + r4.containerView.getLeft() + currentPeerView.getX() + currentPeerView.storyContainer.getX(), StoryViewer.this.swipeToDismissOffset + r4.containerView.getTop() + currentPeerView.getY() + currentPeerView.storyContainer.getY(), ((StoryViewer.this.swipeToDismissHorizontalOffset + r4.containerView.getRight()) - (StoryViewer.this.containerView.getWidth() - currentPeerView.getRight())) - (currentPeerView.getWidth() - currentPeerView.storyContainer.getRight()), ((StoryViewer.this.swipeToDismissOffset + r4.containerView.getBottom()) - (StoryViewer.this.containerView.getHeight() - currentPeerView.getBottom())) - (currentPeerView.getHeight() - currentPeerView.storyContainer.getBottom()));
-                        AndroidUtilities.lerp(this.rect1, this.rect2, f3, this.rect3);
-                        float imageX = StoryViewer.this.transitionViewHolder.storyImage.getImageX();
-                        float imageY = StoryViewer.this.transitionViewHolder.storyImage.getImageY();
-                        float imageWidth = StoryViewer.this.transitionViewHolder.storyImage.getImageWidth();
-                        float imageHeight = StoryViewer.this.transitionViewHolder.storyImage.getImageHeight();
-                        StoryViewer.this.transitionViewHolder.storyImage.setImageCoords(this.rect3);
-                        float f18 = 1.0f - f3;
-                        StoryViewer.this.transitionViewHolder.storyImage.setAlpha(f18);
-                        StoryViewer.this.transitionViewHolder.storyImage.setVisible(true, false);
-                        int saveCount = canvas.getSaveCount();
-                        StoryViewer storyViewer15 = StoryViewer.this;
-                        HolderClip holderClip2 = storyViewer15.transitionViewHolder.drawClip;
-                        if (holderClip2 != null) {
-                            holderClip2.clip(canvas, this.rect3, f18, storyViewer15.opening);
-                        }
-                        StoryViewer.this.transitionViewHolder.storyImage.draw(canvas);
-                        StoryViewer storyViewer16 = StoryViewer.this;
-                        HolderDrawAbove holderDrawAbove2 = storyViewer16.transitionViewHolder.drawAbove;
-                        if (holderDrawAbove2 != null) {
-                            holderDrawAbove2.draw(canvas, this.rect3, f18, storyViewer16.opening);
-                        }
-                        StoryViewer.this.transitionViewHolder.storyImage.setVisible(visible, false);
-                        StoryViewer.this.transitionViewHolder.storyImage.setImageCoords(imageX, imageY, imageWidth, imageHeight);
-                        canvas.restoreToCount(saveCount);
-                    }
-                    canvas.restore();
-                    if (peerHeaderView != null) {
-                        StoryViewer storyViewer17 = StoryViewer.this;
-                        float f19 = storyViewer17.swipeToDismissHorizontalOffset;
-                        float f20 = storyViewer17.swipeToDismissOffset;
-                        if (storyViewer17.isClosed && StoryViewer.this.animateAvatar) {
-                            this.rect2.set(this.outFromRectAvatar);
+                        if (StoryViewer.this.fromRadius != null) {
+                            float[] fArr = this.radii;
+                            float lerp6 = AndroidUtilities.lerp(StoryViewer.this.fromRadius[0], 0, f);
+                            fArr[1] = lerp6;
+                            fArr[0] = lerp6;
+                            float[] fArr2 = this.radii;
+                            float lerp7 = AndroidUtilities.lerp(StoryViewer.this.fromRadius[1], 0, f);
+                            fArr2[3] = lerp7;
+                            fArr2[2] = lerp7;
+                            float[] fArr3 = this.radii;
+                            float lerp8 = AndroidUtilities.lerp(StoryViewer.this.fromRadius[2], 0, f);
+                            fArr3[5] = lerp8;
+                            fArr3[4] = lerp8;
+                            float[] fArr4 = this.radii;
+                            float lerp9 = AndroidUtilities.lerp(StoryViewer.this.fromRadius[3], 0, f);
+                            fArr4[7] = lerp9;
+                            fArr4[6] = lerp9;
                         } else {
-                            for (View view2 = peerHeaderView.backupImageView; view2 != this && view2 != null; view2 = (View) view2.getParent()) {
-                                if (view2.getParent() == this) {
-                                    f19 += view2.getLeft();
-                                    y = view2.getTop();
-                                } else {
-                                    if (view2.getParent() != StoryViewer.this.storiesViewPager) {
-                                        f19 += view2.getX();
-                                        y = view2.getY();
-                                    }
-                                    if (view2.getParent() instanceof View) {
-                                        break;
-                                    }
-                                }
-                                f20 += y;
-                                if (view2.getParent() instanceof View) {
-                                }
+                            float[] fArr5 = this.radii;
+                            f2 = 0.0f;
+                            fArr5[7] = 0.0f;
+                            fArr5[6] = 0.0f;
+                            fArr5[5] = 0.0f;
+                            fArr5[4] = 0.0f;
+                            fArr5[3] = 0.0f;
+                            fArr5[2] = 0.0f;
+                            fArr5[1] = 0.0f;
+                            fArr5[0] = 0.0f;
+                            this.path.addRoundRect(rectF2, this.radii, Path.Direction.CCW);
+                            canvas.save();
+                            storyViewer = StoryViewer.this;
+                            f3 = storyViewer.clipTop;
+                            if (f3 != f2 && storyViewer.clipBottom != f2) {
+                                float lerp10 = AndroidUtilities.lerp(f2, f3, (float) Math.pow(1.0f - storyViewer.progressToOpen, 0.4000000059604645d));
+                                float measuredWidth = getMeasuredWidth();
+                                float measuredHeight = getMeasuredHeight();
+                                StoryViewer storyViewer15 = StoryViewer.this;
+                                canvas.clipRect(f2, lerp10, measuredWidth, AndroidUtilities.lerp(measuredHeight, storyViewer15.clipBottom, 1.0f - storyViewer15.progressToOpen));
                             }
-                            this.rect2.set(f19, f20, peerHeaderView.backupImageView.getMeasuredWidth() + f19, peerHeaderView.backupImageView.getMeasuredHeight() + f20);
-                        }
-                        AndroidUtilities.lerp(this.rect1, this.rect2, StoryViewer.this.progressToOpen, this.rect3);
-                        int saveCount2 = canvas.getSaveCount();
-                        StoryViewer storyViewer18 = StoryViewer.this;
-                        TransitionViewHolder transitionViewHolder4 = storyViewer18.transitionViewHolder;
-                        if (transitionViewHolder4 != null && (holderClip = transitionViewHolder4.drawClip) != null) {
-                            holderClip.clip(canvas, this.rect3, 1.0f - f3, storyViewer18.opening);
-                        }
-                        if (StoryViewer.this.animateAvatar) {
-                            StoryViewer storyViewer19 = StoryViewer.this;
-                            TransitionViewHolder transitionViewHolder5 = storyViewer19.transitionViewHolder;
-                            boolean z2 = (transitionViewHolder5 == null || transitionViewHolder5.crossfadeToAvatarImage == null) ? false : true;
-                            if (!z2 || storyViewer19.progressToOpen != 0.0f) {
-                                if (transitionViewHolder5 != null && (avatarStoryParams2 = transitionViewHolder5.params) != null && avatarStoryParams2.drawnLive) {
-                                    canvas.saveLayerAlpha(this.rect3.left - AndroidUtilities.dp(4.0f), this.rect3.top - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + this.rect3.right, this.rect3.bottom + AndroidUtilities.dp(4.0f), NotificationCenter.cameraInitied, 31);
+                            StoryViewer storyViewer16 = StoryViewer.this;
+                            transitionViewHolder = storyViewer16.transitionViewHolder;
+                            if (transitionViewHolder == null && (avatarStoryParams3 = transitionViewHolder.params) != null && avatarStoryParams3.drawnLive && storyViewer16.animateAvatar) {
+                                f4 = f;
+                                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (f * 255.0f), 31);
+                            } else {
+                                f4 = f;
+                                canvas.save();
+                            }
+                            canvas.clipPath(this.path);
+                            super.dispatchDraw(canvas);
+                            StoryViewer storyViewer17 = StoryViewer.this;
+                            transitionViewHolder2 = storyViewer17.transitionViewHolder;
+                            if (transitionViewHolder2 != null && transitionViewHolder2.storyImage != null && (currentPeerView = storyViewer17.storiesViewPager.getCurrentPeerView()) != null && currentPeerView.storyContainer != null) {
+                                boolean visible = StoryViewer.this.transitionViewHolder.storyImage.getVisible();
+                                this.rect2.set(StoryViewer.this.swipeToDismissHorizontalOffset + r4.containerView.getLeft() + currentPeerView.getX() + currentPeerView.storyContainer.getX(), StoryViewer.this.swipeToDismissOffset + r4.containerView.getTop() + currentPeerView.getY() + currentPeerView.storyContainer.getY(), ((StoryViewer.this.swipeToDismissHorizontalOffset + r4.containerView.getRight()) - (StoryViewer.this.containerView.getWidth() - currentPeerView.getRight())) - (currentPeerView.getWidth() - currentPeerView.storyContainer.getRight()), ((StoryViewer.this.swipeToDismissOffset + r4.containerView.getBottom()) - (StoryViewer.this.containerView.getHeight() - currentPeerView.getBottom())) - (currentPeerView.getHeight() - currentPeerView.storyContainer.getBottom()));
+                                AndroidUtilities.lerp(this.rect1, this.rect2, f4, this.rect3);
+                                float imageX = StoryViewer.this.transitionViewHolder.storyImage.getImageX();
+                                float imageY = StoryViewer.this.transitionViewHolder.storyImage.getImageY();
+                                float imageWidth = StoryViewer.this.transitionViewHolder.storyImage.getImageWidth();
+                                float imageHeight = StoryViewer.this.transitionViewHolder.storyImage.getImageHeight();
+                                StoryViewer.this.transitionViewHolder.storyImage.setImageCoords(this.rect3);
+                                float f19 = 1.0f - f4;
+                                StoryViewer.this.transitionViewHolder.storyImage.setAlpha(f19);
+                                StoryViewer.this.transitionViewHolder.storyImage.setVisible(true, false);
+                                int saveCount = canvas.getSaveCount();
+                                StoryViewer storyViewer18 = StoryViewer.this;
+                                holderClip2 = storyViewer18.transitionViewHolder.drawClip;
+                                if (holderClip2 != null) {
+                                    holderClip2.clip(canvas, this.rect3, f19, storyViewer18.opening);
                                 }
-                                peerHeaderView.backupImageView.getImageReceiver().setImageCoords(this.rect3);
-                                TransitionViewHolder transitionViewHolder6 = StoryViewer.this.transitionViewHolder;
-                                peerHeaderView.backupImageView.getImageReceiver().setRoundRadius((int) AndroidUtilities.lerp(this.rect3.width() / 2.0f, (transitionViewHolder6 != null ? transitionViewHolder6.getAvatarImageRoundRadius() : null) != null ? r1.intValue() : this.rect3.width() / 2.0f, 1.0f - StoryViewer.this.progressToOpen));
-                                peerHeaderView.backupImageView.getImageReceiver().setVisible(true, false);
-                                float f21 = z2 ? StoryViewer.this.progressToOpen : 1.0f;
-                                TransitionViewHolder transitionViewHolder7 = StoryViewer.this.transitionViewHolder;
-                                if (transitionViewHolder7 == null || transitionViewHolder7.alpha >= 1.0f || (paint = transitionViewHolder7.bgPaint) == null) {
-                                    f4 = f21;
+                                StoryViewer.this.transitionViewHolder.storyImage.draw(canvas);
+                                StoryViewer storyViewer19 = StoryViewer.this;
+                                holderDrawAbove2 = storyViewer19.transitionViewHolder.drawAbove;
+                                if (holderDrawAbove2 != null) {
+                                    holderDrawAbove2.draw(canvas, this.rect3, f19, storyViewer19.opening);
+                                }
+                                StoryViewer.this.transitionViewHolder.storyImage.setVisible(visible, false);
+                                StoryViewer.this.transitionViewHolder.storyImage.setImageCoords(imageX, imageY, imageWidth, imageHeight);
+                                canvas.restoreToCount(saveCount);
+                            }
+                            canvas.restore();
+                            if (peerHeaderView != null) {
+                                StoryViewer storyViewer20 = StoryViewer.this;
+                                float f20 = storyViewer20.swipeToDismissHorizontalOffset;
+                                float f21 = storyViewer20.swipeToDismissOffset;
+                                if (storyViewer20.isClosed && StoryViewer.this.animateAvatar) {
+                                    this.rect2.set(this.outFromRectAvatar);
                                 } else {
-                                    paint.setAlpha((int) ((1.0f - f3) * 255.0f));
-                                    canvas.drawCircle(this.rect3.centerX(), this.rect3.centerY(), this.rect3.width() / 2.0f, StoryViewer.this.transitionViewHolder.bgPaint);
-                                    f4 = AndroidUtilities.lerp(StoryViewer.this.transitionViewHolder.alpha, f21, f3);
+                                    for (View view2 = peerHeaderView.backupImageView; view2 != this && view2 != null; view2 = (View) view2.getParent()) {
+                                        if (view2.getParent() == this) {
+                                            f20 += view2.getLeft();
+                                            y = view2.getTop();
+                                        } else {
+                                            if (view2.getParent() != StoryViewer.this.storiesViewPager) {
+                                                f20 += view2.getX();
+                                                y = view2.getY();
+                                            }
+                                            if (view2.getParent() instanceof View) {
+                                                break;
+                                            }
+                                        }
+                                        f21 += y;
+                                        if (view2.getParent() instanceof View) {
+                                        }
+                                    }
+                                    this.rect2.set(f20, f21, peerHeaderView.backupImageView.getMeasuredWidth() + f20, peerHeaderView.backupImageView.getMeasuredHeight() + f21);
                                 }
-                                peerHeaderView.backupImageView.getImageReceiver().setAlpha(f4);
-                                peerHeaderView.drawUploadingProgress(canvas, this.rect3, !StoryViewer.runOpenAnimationAfterLayout, StoryViewer.this.progressToOpen);
-                                peerHeaderView.backupImageView.getImageReceiver().draw(canvas);
-                                peerHeaderView.backupImageView.getImageReceiver().setAlpha(f21);
-                                peerHeaderView.backupImageView.getImageReceiver().setVisible(false, false);
-                                TransitionViewHolder transitionViewHolder8 = StoryViewer.this.transitionViewHolder;
-                                if (transitionViewHolder8 != null && (avatarStoryParams = transitionViewHolder8.params) != null && avatarStoryParams.drawnLive) {
-                                    RectF rectF3 = AndroidUtilities.rectTmp;
-                                    rectF3.set(this.rect3);
-                                    StoriesUtilities.drawLive(canvas, rectF3, 1.0f - StoryViewer.this.progressToOpen, true, 0.0f);
+                                AndroidUtilities.lerp(this.rect1, this.rect2, StoryViewer.this.progressToOpen, this.rect3);
+                                int saveCount2 = canvas.getSaveCount();
+                                StoryViewer storyViewer21 = StoryViewer.this;
+                                TransitionViewHolder transitionViewHolder5 = storyViewer21.transitionViewHolder;
+                                if (transitionViewHolder5 != null && (holderClip = transitionViewHolder5.drawClip) != null) {
+                                    holderClip.clip(canvas, this.rect3, 1.0f - f4, storyViewer21.opening);
+                                }
+                                if (StoryViewer.this.animateAvatar) {
+                                    StoryViewer storyViewer22 = StoryViewer.this;
+                                    TransitionViewHolder transitionViewHolder6 = storyViewer22.transitionViewHolder;
+                                    boolean z2 = (transitionViewHolder6 == null || transitionViewHolder6.crossfadeToAvatarImage == null) ? false : true;
+                                    if (!z2 || storyViewer22.progressToOpen != 0.0f) {
+                                        if (transitionViewHolder6 != null && (avatarStoryParams2 = transitionViewHolder6.params) != null && avatarStoryParams2.drawnLive) {
+                                            canvas.saveLayerAlpha(this.rect3.left - AndroidUtilities.dp(4.0f), this.rect3.top - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + this.rect3.right, this.rect3.bottom + AndroidUtilities.dp(4.0f), NotificationCenter.closeOtherAppActivities, 31);
+                                        }
+                                        peerHeaderView.backupImageView.getImageReceiver().setImageCoords(this.rect3);
+                                        TransitionViewHolder transitionViewHolder7 = StoryViewer.this.transitionViewHolder;
+                                        peerHeaderView.backupImageView.getImageReceiver().setRoundRadius((int) AndroidUtilities.lerp(this.rect3.width() / 2.0f, (transitionViewHolder7 != null ? transitionViewHolder7.getAvatarImageRoundRadius() : null) != null ? r1.intValue() : this.rect3.width() / 2.0f, 1.0f - StoryViewer.this.progressToOpen));
+                                        peerHeaderView.backupImageView.getImageReceiver().setVisible(true, false);
+                                        float f22 = z2 ? StoryViewer.this.progressToOpen : 1.0f;
+                                        TransitionViewHolder transitionViewHolder8 = StoryViewer.this.transitionViewHolder;
+                                        if (transitionViewHolder8 == null || transitionViewHolder8.alpha >= 1.0f || (paint = transitionViewHolder8.bgPaint) == null) {
+                                            f5 = f22;
+                                        } else {
+                                            paint.setAlpha((int) ((1.0f - f4) * 255.0f));
+                                            canvas.drawCircle(this.rect3.centerX(), this.rect3.centerY(), this.rect3.width() / 2.0f, StoryViewer.this.transitionViewHolder.bgPaint);
+                                            f5 = AndroidUtilities.lerp(StoryViewer.this.transitionViewHolder.alpha, f22, f4);
+                                        }
+                                        peerHeaderView.backupImageView.getImageReceiver().setAlpha(f5);
+                                        peerHeaderView.drawUploadingProgress(canvas, this.rect3, !StoryViewer.runOpenAnimationAfterLayout, StoryViewer.this.progressToOpen);
+                                        peerHeaderView.backupImageView.getImageReceiver().draw(canvas);
+                                        peerHeaderView.backupImageView.getImageReceiver().setAlpha(f22);
+                                        peerHeaderView.backupImageView.getImageReceiver().setVisible(false, false);
+                                        TransitionViewHolder transitionViewHolder9 = StoryViewer.this.transitionViewHolder;
+                                        if (transitionViewHolder9 != null && (avatarStoryParams = transitionViewHolder9.params) != null && avatarStoryParams.drawnLive) {
+                                            RectF rectF3 = AndroidUtilities.rectTmp;
+                                            rectF3.set(this.rect3);
+                                            f6 = 1.0f;
+                                            StoriesUtilities.drawLive(canvas, rectF3, 1.0f - StoryViewer.this.progressToOpen, true, 0.0f);
+                                            canvas.restore();
+                                            storyViewer3 = StoryViewer.this;
+                                            if (storyViewer3.progressToOpen != f6 && z2) {
+                                                storyViewer3.avatarRectTmp.set(storyViewer3.transitionViewHolder.crossfadeToAvatarImage.getImageX(), StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getImageY(), StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getImageX2(), StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getImageY2());
+                                                int i = StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getRoundRadius()[0];
+                                                boolean visible2 = StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getVisible();
+                                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setImageCoords(this.rect3);
+                                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setRoundRadius((int) (this.rect3.width() / 2.0f));
+                                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setVisible(true, false);
+                                                canvas.saveLayerAlpha(this.rect3, (int) ((1.0f - StoryViewer.this.progressToOpen) * 255.0f), 31);
+                                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.draw(canvas);
+                                                canvas.restore();
+                                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setVisible(visible2, false);
+                                                StoryViewer storyViewer23 = StoryViewer.this;
+                                                storyViewer23.transitionViewHolder.crossfadeToAvatarImage.setImageCoords(storyViewer23.avatarRectTmp);
+                                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setRoundRadius(i);
+                                            }
+                                            storyViewer4 = StoryViewer.this;
+                                            transitionViewHolder3 = storyViewer4.transitionViewHolder;
+                                            if (transitionViewHolder3 != null && (holderDrawAbove = transitionViewHolder3.drawAbove) != null) {
+                                                holderDrawAbove.draw(canvas, this.rect3, 1.0f - f4, storyViewer4.opening);
+                                            }
+                                        }
+                                    }
+                                    f6 = 1.0f;
+                                    storyViewer3 = StoryViewer.this;
+                                    if (storyViewer3.progressToOpen != f6) {
+                                        storyViewer3.avatarRectTmp.set(storyViewer3.transitionViewHolder.crossfadeToAvatarImage.getImageX(), StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getImageY(), StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getImageX2(), StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getImageY2());
+                                        int i2 = StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getRoundRadius()[0];
+                                        boolean visible22 = StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getVisible();
+                                        StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setImageCoords(this.rect3);
+                                        StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setRoundRadius((int) (this.rect3.width() / 2.0f));
+                                        StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setVisible(true, false);
+                                        canvas.saveLayerAlpha(this.rect3, (int) ((1.0f - StoryViewer.this.progressToOpen) * 255.0f), 31);
+                                        StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.draw(canvas);
+                                        canvas.restore();
+                                        StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setVisible(visible22, false);
+                                        StoryViewer storyViewer232 = StoryViewer.this;
+                                        storyViewer232.transitionViewHolder.crossfadeToAvatarImage.setImageCoords(storyViewer232.avatarRectTmp);
+                                        StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setRoundRadius(i2);
+                                    }
+                                    storyViewer4 = StoryViewer.this;
+                                    transitionViewHolder3 = storyViewer4.transitionViewHolder;
+                                    if (transitionViewHolder3 != null) {
+                                        holderDrawAbove.draw(canvas, this.rect3, 1.0f - f4, storyViewer4.opening);
+                                    }
+                                }
+                                canvas.restoreToCount(saveCount2);
+                            }
+                            storyViewer2 = StoryViewer.this;
+                            if (storyViewer2.animateFromCell != null) {
+                                float clamp4 = Utilities.clamp(storyViewer2.progressToOpen / 0.4f, 1.0f, 0.0f);
+                                if (clamp4 != 1.0f) {
+                                    RectF rectF4 = AndroidUtilities.rectTmp;
+                                    StoryViewer storyViewer24 = StoryViewer.this;
+                                    float f23 = storyViewer24.fromX;
+                                    float f24 = storyViewer24.fromY;
+                                    rectF4.set(f23, f24, storyViewer24.fromWidth + f23, storyViewer24.fromHeight + f24);
+                                    rectF4.inset(-AndroidUtilities.dp(16.0f), -AndroidUtilities.dp(16.0f));
+                                    if (clamp4 != 0.0f) {
+                                        canvas.saveLayerAlpha(rectF4, (int) ((1.0f - clamp4) * 255.0f), 31);
+                                    } else {
+                                        canvas.save();
+                                    }
+                                    StoryViewer storyViewer25 = StoryViewer.this;
+                                    canvas.translate(storyViewer25.fromXCell, storyViewer25.fromYCell);
+                                    StoryViewer.this.animateFromCell.drawAvatarOverlays(canvas);
                                     canvas.restore();
                                 }
                             }
-                            StoryViewer storyViewer20 = StoryViewer.this;
-                            if (storyViewer20.progressToOpen != 1.0f && z2) {
-                                storyViewer20.avatarRectTmp.set(storyViewer20.transitionViewHolder.crossfadeToAvatarImage.getImageX(), StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getImageY(), StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getImageX2(), StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getImageY2());
-                                int i = StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getRoundRadius()[0];
-                                boolean visible2 = StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.getVisible();
-                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setImageCoords(this.rect3);
-                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setRoundRadius((int) (this.rect3.width() / 2.0f));
-                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setVisible(true, false);
-                                canvas.saveLayerAlpha(this.rect3, (int) ((1.0f - StoryViewer.this.progressToOpen) * 255.0f), 31);
-                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.draw(canvas);
-                                canvas.restore();
-                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setVisible(visible2, false);
-                                StoryViewer storyViewer21 = StoryViewer.this;
-                                storyViewer21.transitionViewHolder.crossfadeToAvatarImage.setImageCoords(storyViewer21.avatarRectTmp);
-                                StoryViewer.this.transitionViewHolder.crossfadeToAvatarImage.setRoundRadius(i);
-                            }
-                            StoryViewer storyViewer22 = StoryViewer.this;
-                            TransitionViewHolder transitionViewHolder9 = storyViewer22.transitionViewHolder;
-                            if (transitionViewHolder9 != null && (holderDrawAbove = transitionViewHolder9.drawAbove) != null) {
-                                holderDrawAbove.draw(canvas, this.rect3, 1.0f - f3, storyViewer22.opening);
-                            }
-                        }
-                        canvas.restoreToCount(saveCount2);
-                    }
-                    StoryViewer storyViewer23 = StoryViewer.this;
-                    if (storyViewer23.animateFromCell != null) {
-                        float clamp4 = Utilities.clamp(storyViewer23.progressToOpen / 0.4f, 1.0f, 0.0f);
-                        if (clamp4 != 1.0f) {
-                            RectF rectF4 = AndroidUtilities.rectTmp;
-                            StoryViewer storyViewer24 = StoryViewer.this;
-                            float f22 = storyViewer24.fromX;
-                            float f23 = storyViewer24.fromY;
-                            rectF4.set(f22, f23, storyViewer24.fromWidth + f22, storyViewer24.fromHeight + f23);
-                            rectF4.inset(-AndroidUtilities.dp(16.0f), -AndroidUtilities.dp(16.0f));
-                            if (clamp4 != 0.0f) {
-                                canvas.saveLayerAlpha(rectF4, (int) ((1.0f - clamp4) * 255.0f), 31);
-                            } else {
-                                canvas.save();
-                            }
-                            StoryViewer storyViewer25 = StoryViewer.this;
-                            canvas.translate(storyViewer25.fromXCell, storyViewer25.fromYCell);
-                            StoryViewer.this.animateFromCell.drawAvatarOverlays(canvas);
                             canvas.restore();
+                            if (StoryViewer.runOpenAnimationAfterLayout) {
+                                StoryViewer.this.startOpenAnimation();
+                                boolean unused2 = StoryViewer.runOpenAnimationAfterLayout = false;
+                                return;
+                            }
+                            return;
                         }
+                    } else {
+                        float[] fArr6 = this.radii;
+                        float lerp11 = AndroidUtilities.lerp(StoryViewer.this.fromWidth / 2.0f, 0.0f, f9);
+                        fArr6[7] = lerp11;
+                        fArr6[6] = lerp11;
+                        fArr6[5] = lerp11;
+                        fArr6[4] = lerp11;
+                        fArr6[3] = lerp11;
+                        fArr6[2] = lerp11;
+                        fArr6[1] = lerp11;
+                        fArr6[0] = lerp11;
+                    }
+                    f2 = 0.0f;
+                    this.path.addRoundRect(rectF2, this.radii, Path.Direction.CCW);
+                    canvas.save();
+                    storyViewer = StoryViewer.this;
+                    f3 = storyViewer.clipTop;
+                    if (f3 != f2) {
+                        float lerp102 = AndroidUtilities.lerp(f2, f3, (float) Math.pow(1.0f - storyViewer.progressToOpen, 0.4000000059604645d));
+                        float measuredWidth2 = getMeasuredWidth();
+                        float measuredHeight2 = getMeasuredHeight();
+                        StoryViewer storyViewer152 = StoryViewer.this;
+                        canvas.clipRect(f2, lerp102, measuredWidth2, AndroidUtilities.lerp(measuredHeight2, storyViewer152.clipBottom, 1.0f - storyViewer152.progressToOpen));
+                    }
+                    StoryViewer storyViewer162 = StoryViewer.this;
+                    transitionViewHolder = storyViewer162.transitionViewHolder;
+                    if (transitionViewHolder == null) {
+                    }
+                    f4 = f;
+                    canvas.save();
+                    canvas.clipPath(this.path);
+                    super.dispatchDraw(canvas);
+                    StoryViewer storyViewer172 = StoryViewer.this;
+                    transitionViewHolder2 = storyViewer172.transitionViewHolder;
+                    if (transitionViewHolder2 != null) {
+                        boolean visible3 = StoryViewer.this.transitionViewHolder.storyImage.getVisible();
+                        this.rect2.set(StoryViewer.this.swipeToDismissHorizontalOffset + r4.containerView.getLeft() + currentPeerView.getX() + currentPeerView.storyContainer.getX(), StoryViewer.this.swipeToDismissOffset + r4.containerView.getTop() + currentPeerView.getY() + currentPeerView.storyContainer.getY(), ((StoryViewer.this.swipeToDismissHorizontalOffset + r4.containerView.getRight()) - (StoryViewer.this.containerView.getWidth() - currentPeerView.getRight())) - (currentPeerView.getWidth() - currentPeerView.storyContainer.getRight()), ((StoryViewer.this.swipeToDismissOffset + r4.containerView.getBottom()) - (StoryViewer.this.containerView.getHeight() - currentPeerView.getBottom())) - (currentPeerView.getHeight() - currentPeerView.storyContainer.getBottom()));
+                        AndroidUtilities.lerp(this.rect1, this.rect2, f4, this.rect3);
+                        float imageX2 = StoryViewer.this.transitionViewHolder.storyImage.getImageX();
+                        float imageY2 = StoryViewer.this.transitionViewHolder.storyImage.getImageY();
+                        float imageWidth2 = StoryViewer.this.transitionViewHolder.storyImage.getImageWidth();
+                        float imageHeight2 = StoryViewer.this.transitionViewHolder.storyImage.getImageHeight();
+                        StoryViewer.this.transitionViewHolder.storyImage.setImageCoords(this.rect3);
+                        float f192 = 1.0f - f4;
+                        StoryViewer.this.transitionViewHolder.storyImage.setAlpha(f192);
+                        StoryViewer.this.transitionViewHolder.storyImage.setVisible(true, false);
+                        int saveCount3 = canvas.getSaveCount();
+                        StoryViewer storyViewer182 = StoryViewer.this;
+                        holderClip2 = storyViewer182.transitionViewHolder.drawClip;
+                        if (holderClip2 != null) {
+                        }
+                        StoryViewer.this.transitionViewHolder.storyImage.draw(canvas);
+                        StoryViewer storyViewer192 = StoryViewer.this;
+                        holderDrawAbove2 = storyViewer192.transitionViewHolder.drawAbove;
+                        if (holderDrawAbove2 != null) {
+                        }
+                        StoryViewer.this.transitionViewHolder.storyImage.setVisible(visible3, false);
+                        StoryViewer.this.transitionViewHolder.storyImage.setImageCoords(imageX2, imageY2, imageWidth2, imageHeight2);
+                        canvas.restoreToCount(saveCount3);
+                    }
+                    canvas.restore();
+                    if (peerHeaderView != null) {
+                    }
+                    storyViewer2 = StoryViewer.this;
+                    if (storyViewer2.animateFromCell != null) {
                     }
                     canvas.restore();
                     if (StoryViewer.runOpenAnimationAfterLayout) {
-                        return;
                     }
-                    StoryViewer.this.startOpenAnimation();
-                    boolean unused2 = StoryViewer.runOpenAnimationAfterLayout = false;
-                    return;
                 }
             }
-            storyViewer5.containerView.setAlpha(storyViewer5.progressToOpen);
+            storyViewer9.containerView.setAlpha(storyViewer9.progressToOpen);
             StoryViewer storyViewer26 = StoryViewer.this;
-            float f24 = (storyViewer26.progressToOpen * 0.1f) + 0.75f + (clamp * 0.15f);
-            storyViewer26.containerView.setScaleX(f24);
-            StoryViewer.this.containerView.setScaleY(f24);
+            float f25 = (storyViewer26.progressToOpen * 0.1f) + 0.75f + (clamp * 0.15f);
+            storyViewer26.containerView.setScaleX(f25);
+            StoryViewer.this.containerView.setScaleY(f25);
             StoryViewer storyViewer27 = StoryViewer.this;
             storyViewer27.containerView.setTranslationY(storyViewer27.swipeToDismissOffset);
             StoryViewer storyViewer28 = StoryViewer.this;
@@ -2577,7 +2708,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                             this.fromY = iArr[1] + this.transitionViewHolder.storyImage.getCenterY();
                             this.fromWidth = this.transitionViewHolder.storyImage.getImageWidth();
                             this.fromHeight = this.transitionViewHolder.storyImage.getImageHeight();
-                            this.fromRadius = this.transitionViewHolder.storyImage.getRoundRadius()[0];
+                            this.fromRadius = this.transitionViewHolder.storyImage.getRoundRadius();
                         }
                     }
                     this.transitionViewHolder.clipParent.getLocationOnScreen(iArr);

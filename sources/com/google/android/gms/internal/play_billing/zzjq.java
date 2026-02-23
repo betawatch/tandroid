@@ -178,7 +178,7 @@ abstract class zzjq {
         long j2 = (-4) & j;
         int i = zzjpVar.zza.getInt(obj, j2);
         int i2 = ((~((int) j)) & 3) << 3;
-        zzjpVar.zza.putInt(obj, j2, ((255 & b) << i2) | (i & (~(NotificationCenter.cameraInitied << i2))));
+        zzjpVar.zza.putInt(obj, j2, ((255 & b) << i2) | (i & (~(NotificationCenter.closeOtherAppActivities << i2))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -186,7 +186,7 @@ abstract class zzjq {
         zzjp zzjpVar = zzf;
         long j2 = (-4) & j;
         int i = (((int) j) & 3) << 3;
-        zzjpVar.zza.putInt(obj, j2, ((255 & b) << i) | (zzjpVar.zza.getInt(obj, j2) & (~(NotificationCenter.cameraInitied << i))));
+        zzjpVar.zza.putInt(obj, j2, ((255 & b) << i) | (zzjpVar.zza.getInt(obj, j2) & (~(NotificationCenter.closeOtherAppActivities << i))));
     }
 
     static double zza(Object obj, long j) {
@@ -258,11 +258,11 @@ abstract class zzjq {
     }
 
     static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & NotificationCenter.cameraInitied)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) (((~j) & 3) << 3))) & NotificationCenter.closeOtherAppActivities)) != 0;
     }
 
     static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & NotificationCenter.cameraInitied)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j) >>> ((int) ((j & 3) << 3))) & NotificationCenter.closeOtherAppActivities)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

@@ -1597,7 +1597,7 @@ public class AlertDialog extends Dialog implements Drawable.Callback, Notificati
         this.shadowAnimation[i] = new AnimatorSet();
         BitmapDrawable bitmapDrawable = this.shadow[i];
         if (bitmapDrawable != null) {
-            this.shadowAnimation[i].playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z ? NotificationCenter.cameraInitied : 0));
+            this.shadowAnimation[i].playTogether(ObjectAnimator.ofInt(bitmapDrawable, "alpha", z ? NotificationCenter.closeOtherAppActivities : 0));
         }
         this.shadowAnimation[i].setDuration(150L);
         this.shadowAnimation[i].addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.AlertDialog.9

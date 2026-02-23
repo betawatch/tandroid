@@ -178,6 +178,16 @@ public class ContactsActivity extends BaseFragment implements FactorAnimator.Tar
         return true;
     }
 
+    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
+    public /* synthetic */ void onAnimatedInsetsFinished() {
+        WindowAnimatedInsetsProvider.Listener.-CC.$default$onAnimatedInsetsFinished(this);
+    }
+
+    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
+    public /* synthetic */ void onAnimatedInsetsStarted() {
+        WindowAnimatedInsetsProvider.Listener.-CC.$default$onAnimatedInsetsStarted(this);
+    }
+
     @Override // me.vkryl.android.animator.FactorAnimator.Target
     public void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
     }

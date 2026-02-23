@@ -216,6 +216,7 @@ public abstract class BotKeyboardView extends LinearLayout implements InAppKeybo
             spoilersTextView.allowClickSpoilers = false;
             spoilersTextView.setTextSize(1, 14.0f);
             spoilersTextView.setTypeface(AndroidUtilities.bold());
+            NotificationCenter.listenEmojiLoading(spoilersTextView);
             addView(spoilersTextView, LayoutHelper.createFrame(-2, -2, 17));
             NotificationCenter.listenEmojiLoading(spoilersTextView);
             setTag(keyboardButton);
@@ -250,39 +251,39 @@ public abstract class BotKeyboardView extends LinearLayout implements InAppKeybo
         public void updateColors() {
             int i;
             int i2;
-            int themedColor;
+            int multAlpha;
             int compositeColors;
             int dp = AndroidUtilities.dp(21.0f);
             int dp2 = AndroidUtilities.dp(11.0f);
-            int themedColor2 = BotKeyboardView.this.getThemedColor(Theme.key_chat_botKeyboardButtonBackground);
-            int themedColor3 = BotKeyboardView.this.getThemedColor(Theme.key_chat_botKeyboardButtonBackgroundPressed);
-            int themedColor4 = BotKeyboardView.this.getThemedColor(Theme.key_chat_botKeyboardButtonText);
+            int themedColor = BotKeyboardView.this.getThemedColor(Theme.key_chat_botKeyboardButtonBackground);
+            int themedColor2 = BotKeyboardView.this.getThemedColor(Theme.key_chat_botKeyboardButtonBackgroundPressed);
+            int themedColor3 = BotKeyboardView.this.getThemedColor(Theme.key_chat_botKeyboardButtonText);
             TLRPC.TL_keyboardButtonStyle tL_keyboardButtonStyle = this.button.style;
             if (tL_keyboardButtonStyle != null) {
                 if (tL_keyboardButtonStyle.bg_primary) {
-                    themedColor = BotKeyboardView.this.getThemedColor(Theme.key_botKeyboard_button_primary);
-                    compositeColors = ColorUtils.compositeColors(BotKeyboardView.this.getThemedColor(Theme.key_listSelector), themedColor);
+                    multAlpha = Theme.multAlpha(BotKeyboardView.this.getThemedColor(Theme.key_botKeyboard_button_primary), 0.8f);
+                    compositeColors = ColorUtils.compositeColors(BotKeyboardView.this.getThemedColor(Theme.key_listSelector), multAlpha);
                 } else if (tL_keyboardButtonStyle.bg_danger) {
-                    themedColor = BotKeyboardView.this.getThemedColor(Theme.key_botKeyboard_button_danger);
-                    compositeColors = ColorUtils.compositeColors(BotKeyboardView.this.getThemedColor(Theme.key_listSelector), themedColor);
+                    multAlpha = Theme.multAlpha(BotKeyboardView.this.getThemedColor(Theme.key_botKeyboard_button_danger), 0.8f);
+                    compositeColors = ColorUtils.compositeColors(BotKeyboardView.this.getThemedColor(Theme.key_listSelector), multAlpha);
                 } else if (tL_keyboardButtonStyle.bg_success) {
-                    themedColor = BotKeyboardView.this.getThemedColor(Theme.key_botKeyboard_button_success);
-                    compositeColors = ColorUtils.compositeColors(BotKeyboardView.this.getThemedColor(Theme.key_listSelector), themedColor);
+                    multAlpha = Theme.multAlpha(BotKeyboardView.this.getThemedColor(Theme.key_botKeyboard_button_success), 0.8f);
+                    compositeColors = ColorUtils.compositeColors(BotKeyboardView.this.getThemedColor(Theme.key_listSelector), multAlpha);
                 }
-                i = themedColor;
+                i = multAlpha;
                 i2 = compositeColors;
-                themedColor4 = -1;
-                this.icon.setColorFilter(themedColor4);
-                this.textView.setTextColor(themedColor4);
+                themedColor3 = -1;
+                this.icon.setColorFilter(themedColor3);
+                this.textView.setTextColor(themedColor3);
                 boolean z = this.isLeft;
                 int i3 = (z || !this.isTop) ? dp2 : dp;
                 boolean z2 = this.isRight;
                 setBackground(Theme.createSimpleSelectorRoundRectDrawable(i3, (z2 || !this.isTop) ? dp2 : dp, (z2 || !this.isBottom) ? dp2 : dp, (z || !this.isBottom) ? dp2 : dp, i, i2, i2));
             }
-            i = themedColor2;
-            i2 = themedColor3;
-            this.icon.setColorFilter(themedColor4);
-            this.textView.setTextColor(themedColor4);
+            i = themedColor;
+            i2 = themedColor2;
+            this.icon.setColorFilter(themedColor3);
+            this.textView.setTextColor(themedColor3);
             boolean z3 = this.isLeft;
             if (z3) {
             }

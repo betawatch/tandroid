@@ -18,7 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Stories.recorder.StoryEntry;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class HttpGetFileTask extends AsyncTask {
     private Utilities.Callback doneCallback;
     private Exception exception;

@@ -52,6 +52,7 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.graphics.drawable.IconCompat;
 import com.google.android.gms.cast.framework.media.internal.zzo$$ExternalSyntheticApiModelOutline2;
 import com.google.android.search.verification.client.SearchActionVerificationClientService$$ExternalSyntheticApiModelOutline2;
+import com.google.common.collect.Lists;
 import j$.util.Comparator$-CC;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -163,15 +164,15 @@ public class NotificationsController extends BaseController {
     public static long globalSecretChatId = DialogObject.makeEncryptedDialogId(1);
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$updateServerNotificationsSettings$47(TLObject tLObject, TLRPC.TL_error tL_error) {
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$updateServerNotificationsSettings$48(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$updateServerNotificationsSettings$49(TLObject tLObject, TLRPC.TL_error tL_error) {
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$updateServerNotificationsSettings$50(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 
     public void processReadStories() {
@@ -239,7 +240,7 @@ public class NotificationsController extends BaseController {
         this.lastBadgeCount = -1;
         this.mediaSpoilerEffect = new SpoilerEffect();
         this.spoilerChars = new char[]{10252, 10338, 10385, 10280, 10277, 10286, 10321};
-        this.checkStoryPushesRunnable = new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda66
+        this.checkStoryPushesRunnable = new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda68
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.checkStoryPushes();
@@ -275,7 +276,7 @@ public class NotificationsController extends BaseController {
         } catch (Exception e3) {
             FileLog.e(e3);
         }
-        this.notificationDelayRunnable = new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda67
+        this.notificationDelayRunnable = new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda69
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$new$0();
@@ -412,7 +413,7 @@ public class NotificationsController extends BaseController {
         this.popupMessages.clear();
         this.popupReplyMessages.clear();
         this.channelGroupsCreated = false;
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda37
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda32
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$cleanup$1();
@@ -461,7 +462,7 @@ public class NotificationsController extends BaseController {
                 notificationChannels = systemNotificationManager.getNotificationChannels();
                 int size = notificationChannels.size();
                 for (int i = 0; i < size; i++) {
-                    id = NotificationsController$$ExternalSyntheticApiModelOutline13.m(notificationChannels.get(i)).getId();
+                    id = NotificationsController$$ExternalSyntheticApiModelOutline15.m(notificationChannels.get(i)).getId();
                     if (id.startsWith(str)) {
                         try {
                             systemNotificationManager.deleteNotificationChannel(id);
@@ -484,7 +485,7 @@ public class NotificationsController extends BaseController {
     }
 
     public void setOpenedDialogId(final long j, final long j2) {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda38
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$setOpenedDialogId$2(j, j2);
@@ -499,7 +500,7 @@ public class NotificationsController extends BaseController {
     }
 
     public void setOpenedInBubble(final long j, final boolean z) {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda59
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda58
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$setOpenedInBubble$3(z, j);
@@ -517,7 +518,7 @@ public class NotificationsController extends BaseController {
     }
 
     public void setLastOnlineFromOtherDevice(final int i) {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda55
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda49
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$setLastOnlineFromOtherDevice$4(i);
@@ -546,7 +547,7 @@ public class NotificationsController extends BaseController {
             long dialogId = messageObject.getDialogId();
             if (!messageObject.isReactionPush) {
                 TLRPC.Message message = messageObject.messageOwner;
-                if ((!message.mentioned || !(message.action instanceof TLRPC.TL_messageActionPinMessage)) && !DialogObject.isEncryptedDialog(dialogId) && ((messageObject.messageOwner.peer_id.channel_id == 0 || messageObject.isSupergroup()) && dialogId != UserObject.VERIFY)) {
+                if ((!message.mentioned || !(message.action instanceof TLRPC.TL_messageActionPinMessage)) && !DialogObject.isEncryptedDialog(dialogId) && ((messageObject.messageOwner.peer_id.channel_id == 0 || messageObject.isSupergroup()) && dialogId != UserObject.VERIFY && dialogId != UserObject.OAUTH)) {
                     return true;
                 }
             }
@@ -555,7 +556,7 @@ public class NotificationsController extends BaseController {
     }
 
     protected void forceShowPopupForReply() {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda75
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda76
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$forceShowPopupForReply$6();
@@ -577,7 +578,7 @@ public class NotificationsController extends BaseController {
         if (arrayList.isEmpty() || AndroidUtilities.needShowPasscode() || SharedConfig.isWaitingForPasscodeEnter) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda42
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda37
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$forceShowPopupForReply$5(arrayList);
@@ -598,7 +599,7 @@ public class NotificationsController extends BaseController {
 
     public void removeDeletedMessagesFromNotifications(final LongSparseArray longSparseArray, final boolean z) {
         final ArrayList arrayList = new ArrayList(0);
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda71
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda72
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$removeDeletedMessagesFromNotifications$9(longSparseArray, z, arrayList);
@@ -677,7 +678,7 @@ public class NotificationsController extends BaseController {
             longSparseArray2 = longSparseArray;
         }
         if (!arrayList.isEmpty()) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda44
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda39
                 @Override // java.lang.Runnable
                 public final void run() {
                     NotificationsController.this.lambda$removeDeletedMessagesFromNotifications$7(arrayList);
@@ -692,7 +693,7 @@ public class NotificationsController extends BaseController {
                 scheduleNotificationDelay(this.lastOnlineFromOtherDevice > getConnectionsManager().getCurrentTime());
             }
             final int size2 = this.pushDialogs.size();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda45
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda40
                 @Override // java.lang.Runnable
                 public final void run() {
                     NotificationsController.this.lambda$removeDeletedMessagesFromNotifications$8(size2);
@@ -722,7 +723,7 @@ public class NotificationsController extends BaseController {
 
     public void removeDeletedHisoryFromNotifications(final LongSparseIntArray longSparseIntArray) {
         final ArrayList arrayList = new ArrayList(0);
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda29
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$removeDeletedHisoryFromNotifications$12(longSparseIntArray, arrayList);
@@ -802,7 +803,7 @@ public class NotificationsController extends BaseController {
             num2 = num5;
         }
         if (arrayList.isEmpty()) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda31
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda29
                 @Override // java.lang.Runnable
                 public final void run() {
                     NotificationsController.this.lambda$removeDeletedHisoryFromNotifications$10(arrayList);
@@ -817,7 +818,7 @@ public class NotificationsController extends BaseController {
                 scheduleNotificationDelay(this.lastOnlineFromOtherDevice > getConnectionsManager().getCurrentTime());
             }
             final int size = this.pushDialogs.size();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda32
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda30
                 @Override // java.lang.Runnable
                 public final void run() {
                     NotificationsController.this.lambda$removeDeletedHisoryFromNotifications$11(size);
@@ -849,7 +850,7 @@ public class NotificationsController extends BaseController {
         if (j != getUserConfig().getClientUserId()) {
             return;
         }
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda49
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda45
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$processSeenStoryReactions$13(i);
@@ -886,7 +887,7 @@ public class NotificationsController extends BaseController {
     }
 
     public void processDeleteStory(final long j, final int i) {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda48
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda44
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$processDeleteStory$14(j, i);
@@ -946,7 +947,7 @@ public class NotificationsController extends BaseController {
     }
 
     public void processReadStories(final long j, final int i) {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda62
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda61
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$processReadStories$15(j, i);
@@ -990,7 +991,7 @@ public class NotificationsController extends BaseController {
     }
 
     public void processIgnoreStories() {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda57
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda56
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$processIgnoreStories$16();
@@ -1011,7 +1012,7 @@ public class NotificationsController extends BaseController {
     }
 
     public void processIgnoreStoryReactions() {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda30
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$processIgnoreStoryReactions$17();
@@ -1046,7 +1047,7 @@ public class NotificationsController extends BaseController {
     }
 
     public void processIgnoreStories(final long j) {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda46
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda41
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$processIgnoreStories$18(j);
@@ -1068,7 +1069,7 @@ public class NotificationsController extends BaseController {
 
     public void processReadMessages(final LongSparseIntArray longSparseIntArray, final long j, final int i, final int i2, final boolean z) {
         final ArrayList arrayList = new ArrayList(0);
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda70
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda71
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$processReadMessages$20(longSparseIntArray, arrayList, j, i2, i, z);
@@ -1150,7 +1151,7 @@ public class NotificationsController extends BaseController {
         if (arrayList.isEmpty()) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda65
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda64
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$processReadMessages$19(arrayList);
@@ -1235,7 +1236,7 @@ public class NotificationsController extends BaseController {
             }
         }
         new ArrayList(0);
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda76
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda77
             @Override // java.lang.Runnable
             public final void run() {
                 NotificationsController.this.lambda$processEditedMessages$21(longSparseArray);
@@ -1336,10 +1337,10 @@ public class NotificationsController extends BaseController {
         }
         if (!arrayList.isEmpty()) {
             final ArrayList arrayList2 = new ArrayList(0);
-            notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda69
+            notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda70
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationsController.this.lambda$processNewMessages$25(arrayList, arrayList2, z2, z, countDownLatch);
+                    NotificationsController.this.lambda$processNewMessages$26(arrayList, arrayList2, z2, z, countDownLatch);
                 }
             });
         } else if (countDownLatch != null) {
@@ -1353,52 +1354,52 @@ public class NotificationsController extends BaseController {
         if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageActionUserJoined) == false) goto L17;
      */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x01ac  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0215  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01da  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0254  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$processNewMessages$25(ArrayList arrayList, final ArrayList arrayList2, boolean z, boolean z2, CountDownLatch countDownLatch) {
+    public /* synthetic */ void lambda$processNewMessages$26(ArrayList arrayList, final ArrayList arrayList2, boolean z, boolean z2, CountDownLatch countDownLatch) {
         boolean z3;
         int i;
         int i2;
         Integer num;
         boolean z4;
-        long j;
         boolean z5;
+        long j;
         long j2;
         long j3;
-        LongSparseArray longSparseArray;
         int i3;
-        boolean z6;
         MessageObject messageObject;
+        int i4;
+        boolean z6;
         long j4;
         long j5;
+        String str;
         long j6;
-        LongSparseArray longSparseArray2;
-        SparseArray sparseArray;
         long j7;
         long j8;
         boolean z7;
         long j9;
-        SparseArray sparseArray2;
-        long j10;
         MessageObject messageObject2;
+        boolean z8;
+        long j10;
+        MessageObject messageObject3;
         ArrayList arrayList3 = arrayList;
-        LongSparseArray longSparseArray3 = new LongSparseArray();
+        LongSparseArray longSparseArray = new LongSparseArray();
         SharedPreferences notificationsSettings = getAccountInstance().getNotificationsSettings();
-        boolean z8 = notificationsSettings.getBoolean("PinnedMessages", true);
-        int i4 = 0;
+        boolean z9 = notificationsSettings.getBoolean("PinnedMessages", true);
         int i5 = 0;
-        boolean z9 = false;
+        int i6 = 0;
         boolean z10 = false;
         boolean z11 = false;
         boolean z12 = false;
-        while (i5 < arrayList.size()) {
-            MessageObject messageObject3 = (MessageObject) arrayList3.get(i5);
-            if (messageObject3.messageOwner != null) {
-                if (!messageObject3.isImportedForward()) {
-                    TLRPC.Message message = messageObject3.messageOwner;
+        boolean z13 = false;
+        while (i6 < arrayList.size()) {
+            MessageObject messageObject4 = (MessageObject) arrayList3.get(i6);
+            if (messageObject4.messageOwner != null) {
+                if (!messageObject4.isImportedForward()) {
+                    TLRPC.Message message = messageObject4.messageOwner;
                     TLRPC.MessageAction messageAction = message.action;
                     if (!(messageAction instanceof TLRPC.TL_messageActionSetMessagesTTL)) {
                         if (message.silent) {
@@ -1410,44 +1411,43 @@ public class NotificationsController extends BaseController {
                 if (BuildVars.LOGS_ENABLED) {
                     FileLog.d("skipped message because 1");
                 }
-                longSparseArray = longSparseArray3;
-                z4 = z8;
                 i3 = i5;
-                z6 = z9;
-                z9 = z6;
-                longSparseArray2 = longSparseArray;
-                i5 = i3 + 1;
+                z4 = z9;
+                i4 = i6;
+                z6 = z10;
+                z10 = z6;
+                i5 = i3;
+                i6 = i4 + 1;
                 arrayList3 = arrayList;
-                longSparseArray3 = longSparseArray2;
-                z8 = z4;
+                z9 = z4;
             }
-            if (!MessageObject.isTopicActionMessage(messageObject3)) {
-                if (messageObject3.isStoryPush) {
-                    long currentTimeMillis = messageObject3.messageOwner == null ? System.currentTimeMillis() : r0.date * 1000;
-                    long dialogId = messageObject3.getDialogId();
-                    int id = messageObject3.getId();
+            if (!MessageObject.isTopicActionMessage(messageObject4)) {
+                if (messageObject4.isStoryPush) {
+                    long currentTimeMillis = messageObject4.messageOwner == null ? System.currentTimeMillis() : r0.date * 1000;
+                    long dialogId = messageObject4.getDialogId();
+                    int id = messageObject4.getId();
                     StoryNotification storyNotification = (StoryNotification) this.storyPushMessagesDict.get(dialogId);
                     if (storyNotification != null) {
                         storyNotification.dateByIds.put(Integer.valueOf(id), new Pair<>(Long.valueOf(currentTimeMillis), Long.valueOf(currentTimeMillis + 86400000)));
-                        boolean z13 = storyNotification.hidden;
-                        boolean z14 = messageObject3.isStoryPushHidden;
-                        if (z13 != z14) {
-                            storyNotification.hidden = z14;
-                            z12 = true;
+                        boolean z14 = storyNotification.hidden;
+                        boolean z15 = messageObject4.isStoryPushHidden;
+                        if (z14 != z15) {
+                            storyNotification.hidden = z15;
+                            z13 = true;
                         }
                         storyNotification.date = storyNotification.getLeastDate();
                         getMessagesStorage().putStoryPushMessage(storyNotification);
-                        z10 = true;
+                        z11 = true;
                     } else {
-                        StoryNotification storyNotification2 = new StoryNotification(dialogId, messageObject3.localName, id, currentTimeMillis);
-                        storyNotification2.hidden = messageObject3.isStoryPushHidden;
+                        StoryNotification storyNotification2 = new StoryNotification(dialogId, messageObject4.localName, id, currentTimeMillis);
+                        storyNotification2.hidden = messageObject4.isStoryPushHidden;
                         this.storyPushMessages.add(storyNotification2);
                         this.storyPushMessagesDict.put(dialogId, storyNotification2);
                         getMessagesStorage().putStoryPushMessage(storyNotification2);
-                        z9 = true;
-                        z12 = true;
+                        z10 = true;
+                        z13 = true;
                     }
-                    Collections.sort(this.storyPushMessages, Comparator$-CC.comparingLong(new ToLongFunction() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda25
+                    Collections.sort(this.storyPushMessages, Comparator$-CC.comparingLong(new ToLongFunction() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda51
                         @Override // java.util.function.ToLongFunction
                         public final long applyAsLong(Object obj) {
                             long j11;
@@ -1455,21 +1455,45 @@ public class NotificationsController extends BaseController {
                             return j11;
                         }
                     }));
-                    longSparseArray2 = longSparseArray3;
-                    z4 = z8;
-                    i3 = i5;
+                    z4 = z9;
+                    i4 = i6;
                 } else {
-                    int id2 = messageObject3.getId();
-                    if (messageObject3.isFcmMessage()) {
-                        j = messageObject3.messageOwner.random_id;
-                        z4 = z8;
+                    if (messageObject4.isOauthPush) {
+                        TLRPC.Message message2 = messageObject4.messageOwner;
+                        if (message2 != null) {
+                            final int i7 = message2.id;
+                            long j11 = message2.date + 60;
+                            z4 = z9;
+                            long currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
+                            if (currentTime > j11) {
+                                i3 = i5;
+                                i4 = i6;
+                                z6 = z10;
+                                z10 = z6;
+                                i5 = i3;
+                            } else {
+                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda52
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        NotificationsController.this.lambda$processNewMessages$23(i7);
+                                    }
+                                }, (j11 - currentTime) * 1000);
+                            }
+                        }
+                        i3 = i5;
+                        z4 = z9;
+                        i4 = i6;
+                        z6 = z10;
+                        z10 = z6;
+                        i5 = i3;
                     } else {
-                        z4 = z8;
-                        j = 0;
+                        z4 = z9;
                     }
-                    long dialogId2 = messageObject3.getDialogId();
-                    if (messageObject3.isFcmMessage()) {
-                        z5 = messageObject3.localChannel;
+                    int id2 = messageObject4.getId();
+                    long j12 = messageObject4.isFcmMessage() ? messageObject4.messageOwner.random_id : 0L;
+                    long dialogId2 = messageObject4.getDialogId();
+                    if (messageObject4.isFcmMessage()) {
+                        z5 = messageObject4.localChannel;
                     } else {
                         if (DialogObject.isChatDialog(dialogId2)) {
                             TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(-dialogId2));
@@ -1479,72 +1503,83 @@ public class NotificationsController extends BaseController {
                         }
                         z5 = false;
                     }
-                    if (messageObject3.isStoryReactionPush) {
-                        long j11 = j;
-                        j3 = messageObject3.getDialogId();
-                        j2 = j11;
+                    if (messageObject4.isStoryReactionPush) {
+                        j2 = messageObject4.getDialogId();
+                        j = dialogId2;
                     } else {
-                        j2 = j;
-                        long j12 = messageObject3.messageOwner.peer_id.channel_id;
-                        j3 = j12 != 0 ? -j12 : 0L;
+                        j = dialogId2;
+                        long j13 = messageObject4.messageOwner.peer_id.channel_id;
+                        j2 = j13 != 0 ? -j13 : 0L;
                     }
-                    SparseArray sparseArray3 = (SparseArray) this.pushMessagesDict.get(j3);
-                    MessageObject messageObject4 = sparseArray3 != null ? (MessageObject) sparseArray3.get(id2) : null;
-                    MessageObject messageObject5 = messageObject4;
-                    if (messageObject4 == null) {
-                        i3 = i5;
-                        z6 = z9;
-                        long j13 = messageObject3.messageOwner.random_id;
-                        if (j13 != 0) {
-                            messageObject = (MessageObject) this.fcmRandomMessagesDict.get(j13);
+                    SparseArray sparseArray = (SparseArray) this.pushMessagesDict.get(j2);
+                    MessageObject messageObject5 = sparseArray != null ? (MessageObject) sparseArray.get(id2) : null;
+                    MessageObject messageObject6 = messageObject5;
+                    if (messageObject5 == null) {
+                        j3 = j12;
+                        long j14 = messageObject4.messageOwner.random_id;
+                        if (j14 != 0) {
+                            messageObject = (MessageObject) this.fcmRandomMessagesDict.get(j14);
                             if (messageObject != null) {
-                                longSparseArray = longSparseArray3;
-                                this.fcmRandomMessagesDict.remove(messageObject3.messageOwner.random_id);
+                                i3 = i5;
+                                this.fcmRandomMessagesDict.remove(messageObject4.messageOwner.random_id);
                             } else {
-                                longSparseArray = longSparseArray3;
+                                i3 = i5;
                             }
                             if (messageObject == null) {
                                 if (messageObject.isFcmMessage()) {
-                                    if (sparseArray3 == null) {
-                                        sparseArray3 = new SparseArray();
-                                        this.pushMessagesDict.put(j3, sparseArray3);
+                                    if (sparseArray == null) {
+                                        sparseArray = new SparseArray();
+                                        this.pushMessagesDict.put(j2, sparseArray);
                                     }
-                                    sparseArray3.put(id2, messageObject3);
+                                    sparseArray.put(id2, messageObject4);
                                     int indexOf = this.pushMessages.indexOf(messageObject);
                                     if (indexOf >= 0) {
-                                        this.pushMessages.set(indexOf, messageObject3);
-                                        j10 = j3;
-                                        messageObject2 = messageObject3;
-                                        i4 = addToPopupMessages(arrayList2, messageObject3, dialogId2, z5, notificationsSettings);
+                                        this.pushMessages.set(indexOf, messageObject4);
+                                        long j15 = j;
+                                        i4 = i6;
+                                        z8 = z10;
+                                        j10 = j2;
+                                        messageObject3 = messageObject4;
+                                        i5 = addToPopupMessages(arrayList2, messageObject4, j15, z5, notificationsSettings);
                                     } else {
-                                        j10 = j3;
-                                        messageObject2 = messageObject3;
+                                        messageObject3 = messageObject4;
+                                        i4 = i6;
+                                        z8 = z10;
+                                        j10 = j2;
+                                        i5 = i3;
                                     }
                                     if (z) {
-                                        boolean z15 = messageObject2.localEdit;
-                                        if (z15) {
-                                            getMessagesStorage().putPushMessage(messageObject2);
+                                        boolean z16 = messageObject3.localEdit;
+                                        if (z16) {
+                                            getMessagesStorage().putPushMessage(messageObject3);
                                         }
-                                        z10 = z15;
+                                        z11 = z16;
                                     }
                                 } else {
-                                    j10 = j3;
+                                    i4 = i6;
+                                    z8 = z10;
+                                    j10 = j2;
+                                    i5 = i3;
                                 }
                                 if (BuildVars.LOGS_ENABLED) {
                                     FileLog.d("skipped message because old message with same dialog and message ids exist: did=" + j10 + ", mid=" + id2);
                                 }
+                                z10 = z8;
                             } else {
-                                long j14 = j3;
-                                if (z10) {
+                                long j16 = j;
+                                i4 = i6;
+                                z6 = z10;
+                                long j17 = j2;
+                                if (z11) {
                                     if (BuildVars.LOGS_ENABLED) {
                                         FileLog.d("skipped message because edited");
                                     }
                                 } else {
-                                    if (z) {
-                                        getMessagesStorage().putPushMessage(messageObject3);
+                                    if (z && !messageObject4.isOauthPush) {
+                                        getMessagesStorage().putPushMessage(messageObject4);
                                     }
-                                    long topicId = MessageObject.getTopicId(this.currentAccount, messageObject3.messageOwner, getMessagesController().isForum(messageObject3));
-                                    if (dialogId2 == this.openedDialogId && ApplicationLoader.isScreenOn && !messageObject3.isStoryReactionPush) {
+                                    long topicId = MessageObject.getTopicId(this.currentAccount, messageObject4.messageOwner, getMessagesController().isForum(messageObject4));
+                                    if (j16 == this.openedDialogId && ApplicationLoader.isScreenOn && !messageObject4.isStoryReactionPush && !messageObject4.isOauthPush) {
                                         if (!z) {
                                             playInChatSound();
                                         }
@@ -1552,165 +1587,152 @@ public class NotificationsController extends BaseController {
                                             FileLog.d("skipped message because chat is already opened (openedDialogId = " + this.openedDialogId + ")");
                                         }
                                     } else {
-                                        TLRPC.Message message2 = messageObject3.messageOwner;
-                                        if (!message2.mentioned) {
-                                            j4 = dialogId2;
-                                        } else if (!z4 && (message2.action instanceof TLRPC.TL_messageActionPinMessage)) {
+                                        TLRPC.Message message3 = messageObject4.messageOwner;
+                                        if (!message3.mentioned) {
+                                            j4 = j16;
+                                        } else if (!z4 && (message3.action instanceof TLRPC.TL_messageActionPinMessage)) {
                                             if (BuildVars.LOGS_ENABLED) {
                                                 FileLog.d("skipped message because message is mention of pinned");
                                             }
                                         } else {
-                                            j4 = messageObject3.getFromChatId();
+                                            j4 = messageObject4.getFromChatId();
                                         }
-                                        if (isPersonalMessage(messageObject3)) {
+                                        if (isPersonalMessage(messageObject4)) {
                                             this.personalCount++;
                                         }
                                         DialogObject.isChatDialog(j4);
-                                        LongSparseArray longSparseArray4 = longSparseArray;
-                                        int indexOfKey = longSparseArray4.indexOfKey(j4);
-                                        int i6 = i4;
+                                        int indexOfKey = longSparseArray.indexOfKey(j4);
                                         if (indexOfKey >= 0 && topicId == 0) {
-                                            z7 = ((Boolean) longSparseArray4.valueAt(indexOfKey)).booleanValue();
-                                            j7 = j14;
-                                            j5 = dialogId2;
-                                            j6 = j2;
-                                            longSparseArray2 = longSparseArray4;
-                                            sparseArray = sparseArray3;
-                                            j8 = j4;
+                                            j6 = j16;
+                                            j5 = j17;
+                                            j7 = j3;
+                                            str = ")";
+                                            long j18 = j4;
+                                            z7 = ((Boolean) longSparseArray.valueAt(indexOfKey)).booleanValue();
+                                            j8 = j18;
                                         } else {
-                                            j5 = dialogId2;
-                                            j6 = j2;
-                                            longSparseArray2 = longSparseArray4;
-                                            long j15 = j4;
-                                            sparseArray = sparseArray3;
-                                            boolean z16 = z5;
-                                            j7 = j14;
-                                            int notifyOverride = getNotifyOverride(notificationsSettings, j4, topicId);
+                                            long j19 = j4;
+                                            j5 = j17;
+                                            str = ")";
+                                            j6 = j16;
+                                            j7 = j3;
+                                            int notifyOverride = getNotifyOverride(notificationsSettings, j19, topicId);
                                             if (notifyOverride == -1) {
-                                                z7 = isGlobalNotificationsEnabled(j15, Boolean.valueOf(z16), messageObject3.isReactionPush, messageObject3.isStoryReactionPush);
+                                                z7 = isGlobalNotificationsEnabled(j19, Boolean.valueOf(z5), messageObject4.isReactionPush, messageObject4.isStoryReactionPush);
                                                 if (BuildVars.LOGS_ENABLED) {
                                                     StringBuilder sb = new StringBuilder();
                                                     sb.append("NotificationsController: process new messages, isGlobalNotificationsEnabled(");
-                                                    j8 = j15;
+                                                    j8 = j19;
                                                     sb.append(j8);
                                                     sb.append(", ");
-                                                    z5 = z16;
                                                     sb.append(z5);
                                                     sb.append(", ");
-                                                    sb.append(messageObject3.isReactionPush);
+                                                    sb.append(messageObject4.isReactionPush);
                                                     sb.append(", ");
-                                                    sb.append(messageObject3.isStoryReactionPush);
+                                                    sb.append(messageObject4.isStoryReactionPush);
                                                     sb.append(") = ");
                                                     sb.append(z7);
                                                     FileLog.d(sb.toString());
                                                 } else {
-                                                    z5 = z16;
-                                                    j8 = j15;
+                                                    j8 = j19;
                                                 }
                                             } else {
-                                                z5 = z16;
-                                                j8 = j15;
+                                                j8 = j19;
                                                 z7 = notifyOverride != 2;
                                             }
-                                            longSparseArray2.put(j8, Boolean.valueOf(z7));
+                                            longSparseArray.put(j8, Boolean.valueOf(z7));
                                         }
                                         if (BuildVars.LOGS_ENABLED) {
-                                            FileLog.d("NotificationsController: process new messages, value is " + z7 + " (" + j8 + ", " + z5 + ", " + messageObject3.isReactionPush + ", " + messageObject3.isStoryReactionPush + ")");
+                                            FileLog.d("NotificationsController: process new messages, value is " + z7 + " (" + j8 + ", " + z5 + ", " + messageObject4.isReactionPush + ", " + messageObject4.isStoryReactionPush + str);
                                         }
                                         if (z7) {
                                             if (z) {
                                                 j9 = j8;
-                                                i4 = i6;
+                                                messageObject2 = messageObject4;
+                                                i5 = i3;
                                             } else {
                                                 j9 = j8;
-                                                i4 = addToPopupMessages(arrayList2, messageObject3, j8, z5, notificationsSettings);
+                                                messageObject2 = messageObject4;
+                                                i5 = addToPopupMessages(arrayList2, messageObject4, j8, z5, notificationsSettings);
                                             }
-                                            if (!z11) {
-                                                z11 = messageObject3.messageOwner.from_scheduled;
+                                            if (!z12) {
+                                                z12 = messageObject2.messageOwner.from_scheduled;
                                             }
-                                            this.delayedPushMessages.add(messageObject3);
-                                            appendMessage(messageObject3);
+                                            this.delayedPushMessages.add(messageObject2);
+                                            appendMessage(messageObject2);
                                             if (id2 != 0) {
                                                 if (sparseArray == null) {
-                                                    sparseArray2 = new SparseArray();
-                                                    this.pushMessagesDict.put(j7, sparseArray2);
-                                                } else {
-                                                    sparseArray2 = sparseArray;
+                                                    sparseArray = new SparseArray();
+                                                    this.pushMessagesDict.put(j5, sparseArray);
                                                 }
-                                                sparseArray2.put(id2, messageObject3);
+                                                sparseArray.put(id2, messageObject2);
                                             } else {
-                                                long j16 = j6;
-                                                if (j16 != 0) {
-                                                    this.fcmRandomMessagesDict.put(j16, messageObject3);
+                                                long j20 = j7;
+                                                if (j20 != 0) {
+                                                    this.fcmRandomMessagesDict.put(j20, messageObject2);
                                                 }
                                             }
-                                            if (j5 != j9) {
-                                                long j17 = j5;
-                                                Integer num2 = (Integer) this.pushDialogsOverrideMention.get(j17);
-                                                this.pushDialogsOverrideMention.put(j17, Integer.valueOf(num2 == null ? 1 : num2.intValue() + 1));
+                                            long j21 = j6;
+                                            if (j21 != j9) {
+                                                Integer num2 = (Integer) this.pushDialogsOverrideMention.get(j21);
+                                                this.pushDialogsOverrideMention.put(j21, Integer.valueOf(num2 == null ? 1 : num2.intValue() + 1));
                                             }
                                         } else {
                                             j9 = j8;
-                                            i4 = i6;
+                                            messageObject2 = messageObject4;
+                                            i5 = i3;
                                         }
-                                        if (messageObject3.isReactionPush) {
+                                        if (messageObject2.isReactionPush) {
                                             SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
                                             sparseBooleanArray.put(id2, true);
                                             getMessagesController().checkUnreadReactions(j9, topicId, sparseBooleanArray);
                                         }
-                                        z9 = true;
+                                        z10 = true;
                                     }
                                 }
+                                z10 = z6;
+                                i5 = i3;
                             }
-                            z9 = z6;
-                            longSparseArray2 = longSparseArray;
-                        } else {
-                            longSparseArray = longSparseArray3;
                         }
                     } else {
-                        longSparseArray = longSparseArray3;
-                        i3 = i5;
-                        z6 = z9;
+                        j3 = j12;
                     }
-                    messageObject = messageObject5;
+                    i3 = i5;
+                    messageObject = messageObject6;
                     if (messageObject == null) {
                     }
-                    z9 = z6;
-                    longSparseArray2 = longSparseArray;
                 }
-                i5 = i3 + 1;
+                i6 = i4 + 1;
                 arrayList3 = arrayList;
-                longSparseArray3 = longSparseArray2;
-                z8 = z4;
+                z9 = z4;
             }
             if (BuildVars.LOGS_ENABLED) {
             }
-            longSparseArray = longSparseArray3;
-            z4 = z8;
             i3 = i5;
-            z6 = z9;
-            z9 = z6;
-            longSparseArray2 = longSparseArray;
-            i5 = i3 + 1;
+            z4 = z9;
+            i4 = i6;
+            z6 = z10;
+            z10 = z6;
+            i5 = i3;
+            i6 = i4 + 1;
             arrayList3 = arrayList;
-            longSparseArray3 = longSparseArray2;
-            z8 = z4;
+            z9 = z4;
         }
-        final int i7 = i4;
-        boolean z17 = z9;
+        final int i8 = i5;
+        boolean z17 = z10;
         if (z17) {
             this.notifyCheck = z2;
         }
         if (!arrayList2.isEmpty() && !AndroidUtilities.needShowPasscode() && !SharedConfig.isWaitingForPasscodeEnter) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda26
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda53
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationsController.this.lambda$processNewMessages$23(arrayList2, i7);
+                    NotificationsController.this.lambda$processNewMessages$24(arrayList2, i8);
                 }
             });
         }
-        if (z || z11) {
-            if (z10) {
+        if (z || z12) {
+            if (z11) {
                 if (BuildVars.LOGS_ENABLED) {
                     FileLog.d("NotificationsController processNewMessages: edited branch, showOrUpdateNotification " + this.notifyCheck);
                 }
@@ -1720,14 +1742,14 @@ public class NotificationsController extends BaseController {
                 if (BuildVars.LOGS_ENABLED) {
                     FileLog.d("NotificationsController processNewMessages: added branch");
                 }
-                MessageObject messageObject6 = (MessageObject) arrayList.get(0);
-                long dialogId3 = messageObject6.getDialogId();
-                long topicId2 = MessageObject.getTopicId(this.currentAccount, messageObject6.messageOwner, getMessagesController().isForum(dialogId3));
-                Boolean valueOf = messageObject6.isFcmMessage() ? Boolean.valueOf(messageObject6.localChannel) : null;
-                int i8 = this.total_unread_count;
+                MessageObject messageObject7 = (MessageObject) arrayList.get(0);
+                long dialogId3 = messageObject7.getDialogId();
+                long topicId2 = MessageObject.getTopicId(this.currentAccount, messageObject7.messageOwner, getMessagesController().isForum(dialogId3));
+                Boolean valueOf = messageObject7.isFcmMessage() ? Boolean.valueOf(messageObject7.localChannel) : null;
+                int i9 = this.total_unread_count;
                 int notifyOverride2 = getNotifyOverride(notificationsSettings, dialogId3, topicId2);
                 if (notifyOverride2 == -1) {
-                    z3 = isGlobalNotificationsEnabled(dialogId3, valueOf, messageObject6.isReactionPush, messageObject6.isStoryReactionPush);
+                    z3 = isGlobalNotificationsEnabled(dialogId3, valueOf, messageObject7.isReactionPush, messageObject7.isStoryReactionPush);
                 } else {
                     z3 = notifyOverride2 != 2;
                 }
@@ -1743,14 +1765,14 @@ public class NotificationsController extends BaseController {
                     i2 = num.intValue();
                     z3 = true;
                 }
-                if (z3 && !messageObject6.isStoryPush) {
+                if (z3 && !messageObject7.isStoryPush) {
                     if (getMessagesController().isForum(dialogId3)) {
-                        int i9 = this.total_unread_count - ((num3 == null || num3.intValue() <= 0) ? 0 : 1);
-                        this.total_unread_count = i9;
+                        int i10 = this.total_unread_count - ((num3 == null || num3.intValue() <= 0) ? 0 : 1);
+                        this.total_unread_count = i10;
                         if (i2 <= 0) {
                             i = 0;
                         }
-                        this.total_unread_count = i9 + i;
+                        this.total_unread_count = i10 + i;
                     } else {
                         if (num3 != null) {
                             this.total_unread_count -= num3.intValue();
@@ -1759,17 +1781,17 @@ public class NotificationsController extends BaseController {
                     }
                     this.pushDialogs.put(dialogId3, Integer.valueOf(i2));
                 }
-                if (i8 != this.total_unread_count || z12) {
+                if (i9 != this.total_unread_count || z13) {
                     this.delayedPushMessages.clear();
                     if (BuildVars.LOGS_ENABLED) {
                         FileLog.d("NotificationsController processNewMessages: added branch: " + this.notifyCheck);
                     }
                     showOrUpdateNotification(this.notifyCheck);
                     final int size = this.pushDialogs.size();
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda27
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda54
                         @Override // java.lang.Runnable
                         public final void run() {
-                            NotificationsController.this.lambda$processNewMessages$24(size);
+                            NotificationsController.this.lambda$processNewMessages$25(size);
                         }
                     });
                 }
@@ -1779,7 +1801,7 @@ public class NotificationsController extends BaseController {
                 }
             }
         }
-        if (z12) {
+        if (z13) {
             updateStoryPushesRunnable();
         }
         if (countDownLatch != null) {
@@ -1788,7 +1810,14 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processNewMessages$23(ArrayList arrayList, int i) {
+    public /* synthetic */ void lambda$processNewMessages$23(int i) {
+        LongSparseArray longSparseArray = new LongSparseArray();
+        longSparseArray.put(0L, Lists.newArrayList(Integer.valueOf(i)));
+        removeDeletedMessagesFromNotifications(longSparseArray, false);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$processNewMessages$24(ArrayList arrayList, int i) {
         this.popupMessages.addAll(0, arrayList);
         if (ApplicationLoader.mainInterfacePaused || !ApplicationLoader.isScreenOn) {
             if (i == 3 || ((i == 1 && ApplicationLoader.isScreenOn) || (i == 2 && !ApplicationLoader.isScreenOn))) {
@@ -1803,7 +1832,7 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processNewMessages$24(int i) {
+    public /* synthetic */ void lambda$processNewMessages$25(int i) {
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.notificationsCountUpdated, Integer.valueOf(this.currentAccount));
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsUnreadCounterChanged, Integer.valueOf(i));
     }
@@ -1823,10 +1852,10 @@ public class NotificationsController extends BaseController {
 
     public void processDialogsUpdateRead(final LongSparseIntArray longSparseIntArray) {
         final ArrayList arrayList = new ArrayList();
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda50
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda46
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$processDialogsUpdateRead$28(longSparseIntArray, arrayList);
+                NotificationsController.this.lambda$processDialogsUpdateRead$29(longSparseIntArray, arrayList);
             }
         });
     }
@@ -1844,7 +1873,7 @@ public class NotificationsController extends BaseController {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ void lambda$processDialogsUpdateRead$28(LongSparseIntArray longSparseIntArray, final ArrayList arrayList) {
+    public /* synthetic */ void lambda$processDialogsUpdateRead$29(LongSparseIntArray longSparseIntArray, final ArrayList arrayList) {
         int i;
         boolean z;
         boolean z2;
@@ -1969,10 +1998,10 @@ public class NotificationsController extends BaseController {
             i3++;
         }
         if (!arrayList.isEmpty()) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda51
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda24
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationsController.this.lambda$processDialogsUpdateRead$26(arrayList);
+                    NotificationsController.this.lambda$processDialogsUpdateRead$27(arrayList);
                 }
             });
         }
@@ -1984,10 +2013,10 @@ public class NotificationsController extends BaseController {
                 scheduleNotificationDelay(this.lastOnlineFromOtherDevice > getConnectionsManager().getCurrentTime());
             }
             final int size = this.pushDialogs.size();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda52
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda25
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationsController.this.lambda$processDialogsUpdateRead$27(size);
+                    NotificationsController.this.lambda$processDialogsUpdateRead$28(size);
                 }
             });
         }
@@ -1998,7 +2027,7 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDialogsUpdateRead$26(ArrayList arrayList) {
+    public /* synthetic */ void lambda$processDialogsUpdateRead$27(ArrayList arrayList) {
         int size = arrayList.size();
         for (int i = 0; i < size; i++) {
             this.popupMessages.remove(arrayList.get(i));
@@ -2007,7 +2036,7 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processDialogsUpdateRead$27(int i) {
+    public /* synthetic */ void lambda$processDialogsUpdateRead$28(int i) {
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.notificationsCountUpdated, Integer.valueOf(this.currentAccount));
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogsUnreadCounterChanged, Integer.valueOf(i));
     }
@@ -2016,16 +2045,16 @@ public class NotificationsController extends BaseController {
         getMessagesController().putUsers(arrayList3, true);
         getMessagesController().putChats(arrayList4, true);
         getMessagesController().putEncryptedChats(arrayList5, true);
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda47
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda43
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$processLoadedUnreadMessages$31(arrayList, longSparseArray, arrayList2, collection);
+                NotificationsController.this.lambda$processLoadedUnreadMessages$32(arrayList, longSparseArray, arrayList2, collection);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processLoadedUnreadMessages$31(ArrayList arrayList, LongSparseArray longSparseArray, ArrayList arrayList2, Collection collection) {
+    public /* synthetic */ void lambda$processLoadedUnreadMessages$32(ArrayList arrayList, LongSparseArray longSparseArray, ArrayList arrayList2, Collection collection) {
         long j;
         long j2;
         boolean z;
@@ -2252,7 +2281,7 @@ public class NotificationsController extends BaseController {
                     this.storyPushMessagesDict.put(j14, storyNotification);
                 }
             }
-            Collections.sort(this.storyPushMessages, Comparator$-CC.comparingLong(new ToLongFunction() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda33
+            Collections.sort(this.storyPushMessages, Comparator$-CC.comparingLong(new ToLongFunction() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda66
                 @Override // java.util.function.ToLongFunction
                 public final long applyAsLong(Object obj) {
                     long j15;
@@ -2262,10 +2291,10 @@ public class NotificationsController extends BaseController {
             }));
         }
         final int size = this.pushDialogs.size();
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda34
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda67
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$processLoadedUnreadMessages$30(size);
+                NotificationsController.this.lambda$processLoadedUnreadMessages$31(size);
             }
         });
         showOrUpdateNotification(SystemClock.elapsedRealtime() / 1000 < 60);
@@ -2275,7 +2304,7 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$processLoadedUnreadMessages$30(int i) {
+    public /* synthetic */ void lambda$processLoadedUnreadMessages$31(int i) {
         if (this.total_unread_count == 0) {
             this.popupMessages.clear();
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.pushMessagesUpdated, new Object[0]);
@@ -2331,15 +2360,15 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateBadge$32() {
+    public /* synthetic */ void lambda$updateBadge$33() {
         setBadge(getTotalAllUnreadCount());
     }
 
     public void updateBadge() {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda58
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda57
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$updateBadge$32();
+                NotificationsController.this.lambda$updateBadge$33();
             }
         });
     }
@@ -2361,695 +2390,695 @@ public class NotificationsController extends BaseController {
     
         r2 = r27.messageOwner;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:133:0x0265, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:133:0x0266, code lost:
     
         if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageService) == false) goto L738;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:134:0x0267, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:134:0x0268, code lost:
     
         r28[0] = null;
         r2 = r2.action;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:135:0x026f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:135:0x0270, code lost:
     
         if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageActionSetSameChatWallPaper) == false) goto L167;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:137:0x0277, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:137:0x0278, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.WallpaperSameNotification);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:139:0x027a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:139:0x027b, code lost:
     
         if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageActionSetChatWallPaper) == false) goto L171;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:141:0x0282, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:141:0x0283, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.WallpaperNotification);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x0285, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:143:0x0286, code lost:
     
         if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGeoProximityReached) == false) goto L175;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x028d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:145:0x028e, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:147:0x0290, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:147:0x0291, code lost:
     
         if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageActionUserJoined) != false) goto L179;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:149:0x0294, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x0295, code lost:
     
         if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageActionContactSignUp) == false) goto L180;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:151:0x029c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:151:0x029d, code lost:
     
         if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageActionUserUpdatedPhoto) == false) goto L184;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:153:0x02aa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:153:0x02ab, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationContactNewPhoto, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:155:0x02ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:155:0x02ae, code lost:
     
         if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageActionLoginUnknownLocation) == false) goto L188;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:156:0x02af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:156:0x02b0, code lost:
     
         r0 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.formatDateAtTime, org.telegram.messenger.LocaleController.getInstance().getFormatterYear().format(r27.messageOwner.date * 1000), org.telegram.messenger.LocaleController.getInstance().getFormatterDay().format(r27.messageOwner.date * 1000));
         r2 = org.telegram.messenger.R.string.NotificationUnrecognizedDevice;
         r4 = getUserConfig().getCurrentUser().first_name;
         r1 = r27.messageOwner.action;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:157:0x030f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:157:0x0310, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(r2, r4, r0, r1.title, r1.address);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:159:0x034d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:159:0x034e, code lost:
     
         if (org.telegram.messenger.utils.tlutils.TlUtils.isInstance(r2, org.telegram.tgnet.TLRPC.TL_messageActionGameScore.class, org.telegram.tgnet.TLRPC.TL_messageActionPaymentSent.class, org.telegram.tgnet.TLRPC.TL_messageActionPaymentSentMe.class, org.telegram.tgnet.TLRPC.TL_messageActionStarGift.class, org.telegram.tgnet.TLRPC.TL_messageActionGiftPremium.class, org.telegram.tgnet.TLRPC.TL_messageActionStarGiftUnique.class, org.telegram.tgnet.TLRPC.TL_messageActionPaidMessagesPrice.class, org.telegram.tgnet.TLRPC.TL_messageActionPaidMessagesRefunded.class, org.telegram.tgnet.TLRPC.TL_messageActionGiftTon.class) == false) goto L192;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:161:0x0355, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:161:0x0356, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:162:0x0356, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:162:0x0357, code lost:
     
         r2 = r27.messageOwner;
         r5 = r2.action;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:163:0x035c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:163:0x035d, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionPhoneCall) == false) goto L200;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:165:0x0360, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:165:0x0361, code lost:
     
         if (r5.video == false) goto L198;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:167:0x0368, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:167:0x0369, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.CallMessageVideoIncomingMissed);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:169:0x036f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:169:0x0370, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.CallMessageIncomingMissed);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:171:0x0372, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:171:0x0373, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionConferenceCall) == false) goto L208;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:173:0x0376, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:173:0x0377, code lost:
     
         if (r5.video == false) goto L206;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:175:0x037e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:175:0x037f, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.CallMessageVideoIncomingConferenceMissed);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:177:0x0385, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:177:0x0386, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.CallMessageIncomingConferenceMissed);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:179:0x038c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:179:0x038d, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatAddUser) == false) goto L253;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:180:0x038e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:180:0x038f, code lost:
     
         r7 = r5.user_id;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:181:0x0394, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:181:0x0395, code lost:
     
         if (r7 != 0) goto L215;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:183:0x039d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:183:0x039e, code lost:
     
         if (r5.users.size() != 1) goto L215;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:184:0x039f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:184:0x03a0, code lost:
     
         r7 = r27.messageOwner.action.users.get(0).longValue();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:186:0x03b4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:186:0x03b5, code lost:
     
         if (r7 == 0) goto L241;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:188:0x03be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:188:0x03bf, code lost:
     
         if (r27.messageOwner.peer_id.channel_id == 0) goto L223;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:190:0x03c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:190:0x03c3, code lost:
     
         if (r4.megagroup != false) goto L223;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:192:0x03d7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:192:0x03d8, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelAddedByNotification, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:194:0x03dd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:194:0x03de, code lost:
     
         if (r7 != r21) goto L227;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:196:0x03ef, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:196:0x03f0, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationInvitedToGroup, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:197:0x03f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:197:0x03f1, code lost:
     
         r1 = getMessagesController().getUser(java.lang.Long.valueOf(r7));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:198:0x03fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:198:0x03fd, code lost:
     
         if (r1 != null) goto L231;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:199:0x03fe, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:199:0x03ff, code lost:
     
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:201:0x0404, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:201:0x0405, code lost:
     
         if (r14 != r1.id) goto L239;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:203:0x0408, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:203:0x0409, code lost:
     
         if (r4.megagroup == false) goto L237;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:205:0x041d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:205:0x041e, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddSelfMega, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:207:0x0431, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:207:0x0432, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddSelf, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:209:0x044c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:209:0x044d, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddMember, r0, r3.getTitle(r4), org.telegram.messenger.UserObject.getUserName(r1));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:210:0x044d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:210:0x044e, code lost:
     
         r2 = new java.lang.StringBuilder();
         r5 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:212:0x045d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:212:0x045e, code lost:
     
         if (r5 >= r27.messageOwner.action.users.size()) goto L918;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:213:0x045f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:213:0x0460, code lost:
     
         r7 = getMessagesController().getUser(r27.messageOwner.action.users.get(r5));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:214:0x0473, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:214:0x0474, code lost:
     
         if (r7 == null) goto L920;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:215:0x0475, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:215:0x0476, code lost:
     
         r7 = org.telegram.messenger.UserObject.getUserName(r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:216:0x047d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:216:0x047e, code lost:
     
         if (r2.length() == 0) goto L249;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:217:0x047f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:217:0x0480, code lost:
     
         r2.append(", ");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:218:0x0482, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:218:0x0483, code lost:
     
         r2.append(r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:220:0x0485, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:220:0x0486, code lost:
     
         r5 = r5 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:224:0x04a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:224:0x04a3, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddMember, r0, r3.getTitle(r4), r2.toString());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:226:0x04a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:226:0x04a6, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGroupCall) == false) goto L261;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:228:0x04a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:228:0x04aa, code lost:
     
         if (r5.duration == 0) goto L259;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:230:0x04be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:230:0x04bf, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupEndedCall, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:232:0x04d2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:232:0x04d3, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupCreatedCall, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:234:0x04d5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:234:0x04d6, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGroupCallScheduled) == false) goto L265;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:236:0x04dd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:236:0x04de, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:238:0x04e0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:238:0x04e1, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionInviteToGroupCall) == false) goto L296;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:239:0x04e2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:239:0x04e3, code lost:
     
         r7 = r5.user_id;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:240:0x04e8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:240:0x04e9, code lost:
     
         if (r7 != 0) goto L272;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:242:0x04f1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:242:0x04f2, code lost:
     
         if (r5.users.size() != 1) goto L272;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:243:0x04f3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:243:0x04f4, code lost:
     
         r7 = r27.messageOwner.action.users.get(0).longValue();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:245:0x0508, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:245:0x0509, code lost:
     
         if (r7 == 0) goto L284;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:247:0x050c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:247:0x050d, code lost:
     
         if (r7 != r21) goto L278;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:249:0x0521, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:249:0x0522, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupInvitedYouToCall, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:250:0x0522, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:250:0x0523, code lost:
     
         r1 = getMessagesController().getUser(java.lang.Long.valueOf(r7));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:251:0x052e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:251:0x052f, code lost:
     
         if (r1 != null) goto L282;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:252:0x0530, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:252:0x0531, code lost:
     
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:254:0x054c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:254:0x054d, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupInvitedToCall, r0, r3.getTitle(r4), org.telegram.messenger.UserObject.getUserName(r1));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:255:0x054d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:255:0x054e, code lost:
     
         r2 = new java.lang.StringBuilder();
         r5 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:257:0x055d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:257:0x055e, code lost:
     
         if (r5 >= r27.messageOwner.action.users.size()) goto L921;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:258:0x055f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:258:0x0560, code lost:
     
         r7 = getMessagesController().getUser(r27.messageOwner.action.users.get(r5));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:259:0x0573, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:259:0x0574, code lost:
     
         if (r7 == null) goto L923;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:260:0x0575, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:260:0x0576, code lost:
     
         r7 = org.telegram.messenger.UserObject.getUserName(r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:261:0x057d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:261:0x057e, code lost:
     
         if (r2.length() == 0) goto L292;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:262:0x057f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:262:0x0580, code lost:
     
         r2.append(", ");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:263:0x0582, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:263:0x0583, code lost:
     
         r2.append(r7);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:265:0x0585, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:265:0x0586, code lost:
     
         r5 = r5 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:269:0x05a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:269:0x05a3, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupInvitedToCall, r0, r3.getTitle(r4), r2.toString());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:271:0x05a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:271:0x05a6, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGiftCode) == false) goto L300;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:273:0x05ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:273:0x05ae, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.BoostingReceivedGiftNoName);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:275:0x05b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:275:0x05b1, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatJoinedByLink) == false) goto L304;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:277:0x05c6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:277:0x05c7, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationInvitedToGroupByLink, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:279:0x05cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:279:0x05cd, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatEditTitle) == false) goto L308;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:281:0x05dd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:281:0x05de, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationEditedGroupName, r0, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:283:0x05e0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:283:0x05e1, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatEditPhoto) != false) goto L720;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:285:0x05e4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:285:0x05e5, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatDeletePhoto) == false) goto L313;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:287:0x05ea, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:287:0x05eb, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatDeleteUser) == false) goto L329;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:288:0x05ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:288:0x05ed, code lost:
     
         r5 = r5.user_id;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:289:0x05f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:289:0x05f1, code lost:
     
         if (r5 != r21) goto L319;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:291:0x0605, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:291:0x0606, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupKickYou, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:293:0x060b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:293:0x060c, code lost:
     
         if (r5 != r14) goto L323;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:295:0x061d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:295:0x061e, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupLeftMember, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:296:0x061e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:296:0x061f, code lost:
     
         r1 = getMessagesController().getUser(java.lang.Long.valueOf(r27.messageOwner.action.user_id));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:297:0x0630, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:297:0x0631, code lost:
     
         if (r1 != null) goto L327;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:298:0x0632, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:298:0x0633, code lost:
     
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:300:0x064e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:300:0x064f, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupKickMember, r0, r3.getTitle(r4), org.telegram.messenger.UserObject.getUserName(r1));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:302:0x0651, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:302:0x0652, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatCreate) == false) goto L333;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:304:0x0659, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:304:0x065a, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:306:0x065c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:306:0x065d, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelCreate) == false) goto L337;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:308:0x0664, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:308:0x0665, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:310:0x0667, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:310:0x0668, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatMigrateTo) == false) goto L341;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:312:0x0679, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:312:0x067a, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ActionMigrateFromGroupNotify, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:314:0x067e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:314:0x067f, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelMigrateFrom) == false) goto L345;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:316:0x068c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:316:0x068d, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ActionMigrateFromGroupNotify, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:318:0x068f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:318:0x0690, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionScreenshotTaken) == false) goto L349;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:320:0x0697, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:320:0x0698, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:322:0x069a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:322:0x069b, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGiveawayLaunch) == false) goto L353;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:324:0x06a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:324:0x06a3, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:326:0x06a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:326:0x06a6, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGiveawayResults) == false) goto L357;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:328:0x06ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:328:0x06ae, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:330:0x06b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:330:0x06b1, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionSuggestBirthday) == false) goto L361;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:332:0x06b8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:332:0x06b9, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:334:0x06bb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:334:0x06bc, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionPinMessage) == false) goto L678;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:336:0x06c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:336:0x06c2, code lost:
     
         if (r4 == null) goto L370;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:338:0x06c7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:338:0x06c8, code lost:
     
         if (org.telegram.messenger.ChatObject.isChannel(r4) == false) goto L371;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:340:0x06cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:340:0x06cc, code lost:
     
         if (r4.megagroup == false) goto L370;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:341:0x06d2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:341:0x06d3, code lost:
     
         r1 = r27.replyMessageObject;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:342:0x06d4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:342:0x06d5, code lost:
     
         if (r1 != null) goto L375;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:344:0x06e9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:344:0x06ea, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoText, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:346:0x06f1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:346:0x06f2, code lost:
     
         if (r1.isMusic() == false) goto L379;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:348:0x0703, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:348:0x0704, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedMusic, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:350:0x0708, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:350:0x0709, code lost:
     
         if (r1.isVideo() == false) goto L387;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:352:0x0712, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:352:0x0713, code lost:
     
         if (android.text.TextUtils.isEmpty(r1.messageOwner.message) != false) goto L385;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:354:0x073d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:354:0x073e, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r0, "📹 " + r1.messageOwner.message, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:356:0x0751, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:356:0x0752, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVideo, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:358:0x0756, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:358:0x0757, code lost:
     
         if (r1.isGif() == false) goto L395;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:360:0x0760, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:360:0x0761, code lost:
     
         if (android.text.TextUtils.isEmpty(r1.messageOwner.message) != false) goto L393;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:362:0x078b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:362:0x078c, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r0, "🎬 " + r1.messageOwner.message, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:364:0x079f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:364:0x07a0, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGif, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:366:0x07a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:366:0x07a8, code lost:
     
         if (r1.isVoice() == false) goto L399;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:368:0x07b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:368:0x07ba, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVoice, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:370:0x07be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:370:0x07bf, code lost:
     
         if (r1.isRoundVideo() == false) goto L403;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:372:0x07d0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:372:0x07d1, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedRound, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:374:0x07d5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:374:0x07d6, code lost:
     
         if (r1.isSticker() != false) goto L407;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:376:0x07db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:376:0x07dc, code lost:
     
         if (r1.isAnimatedSticker() == false) goto L408;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:377:0x07e1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:377:0x07e2, code lost:
     
         r6 = r1.messageOwner;
         r8 = r6.media;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:378:0x07e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:378:0x07e8, code lost:
     
         if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L416;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:380:0x07ef, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:380:0x07f0, code lost:
     
         if (android.text.TextUtils.isEmpty(r6.message) != false) goto L414;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:382:0x081a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:382:0x081b, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r0, "📎 " + r1.messageOwner.message, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:384:0x082e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:384:0x082f, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedFile, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:386:0x0831, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:386:0x0832, code lost:
     
         if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L420;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:388:0x0835, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:388:0x0836, code lost:
     
         if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L421;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:390:0x083e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:390:0x083f, code lost:
     
         if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L425;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:392:0x0853, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:392:0x0854, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeoLive, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:394:0x0856, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:394:0x0857, code lost:
     
         if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L429;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:395:0x0858, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:395:0x0859, code lost:
     
         r8 = (org.telegram.tgnet.TLRPC.TL_messageMediaContact) r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x0878, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:396:0x0879, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedContact2, r0, r3.getTitle(r4), org.telegram.messenger.ContactsController.formatName(r8.first_name, r8.last_name));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:398:0x087b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:398:0x087c, code lost:
     
         if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L437;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:399:0x087d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:399:0x087e, code lost:
     
         r8 = (org.telegram.tgnet.TLRPC.TL_messageMediaPoll) r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:400:0x0883, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:400:0x0884, code lost:
     
         if (r8.poll.quiz == false) goto L435;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:402:0x08a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:402:0x08a2, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedQuiz2, r0, r3.getTitle(r4), r8.poll.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:404:0x08be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:404:0x08bf, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPoll2, r0, r3.getTitle(r4), r8.poll.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:406:0x08c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:406:0x08c2, code lost:
     
         if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L441;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:408:0x08e1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:408:0x08e2, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTodo2, r0, r3.getTitle(r4), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r8).todo.title.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:410:0x08e4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:410:0x08e5, code lost:
     
         if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L449;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:412:0x08ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:412:0x08ed, code lost:
     
         if (android.text.TextUtils.isEmpty(r6.message) != false) goto L447;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:414:0x0917, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:414:0x0918, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r0, "🖼 " + r1.messageOwner.message, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:416:0x092b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:416:0x092c, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPhoto, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:418:0x0931, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:418:0x0932, code lost:
     
         if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGame) == false) goto L453;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:420:0x0943, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:420:0x0944, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGame, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:421:0x0944, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:421:0x0945, code lost:
     
         r6 = r1.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:422:0x0946, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:422:0x0947, code lost:
     
         if (r6 == null) goto L463;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:424:0x094c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:424:0x094d, code lost:
     
         if (r6.length() <= 0) goto L463;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:425:0x094e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:425:0x094f, code lost:
     
         r1 = r1.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:426:0x0954, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:426:0x0955, code lost:
     
         if (r1.length() <= 20) goto L460;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:427:0x0956, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:427:0x0957, code lost:
     
         r6 = new java.lang.StringBuilder();
         r8 = 0;
@@ -3057,7 +3086,7 @@ public class NotificationsController extends BaseController {
         r6.append("...");
         r1 = r6.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:428:0x096c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:428:0x096d, code lost:
     
         r2 = org.telegram.messenger.R.string.NotificationActionPinnedText;
         r4 = r3.getTitle(r4);
@@ -3066,28 +3095,28 @@ public class NotificationsController extends BaseController {
         r5[1] = r1;
         r5[2] = r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:429:0x0981, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:429:0x0982, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(r2, r5);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:430:0x096b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:430:0x096c, code lost:
     
         r8 = 0;
         r1 = r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:432:0x0995, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:432:0x0996, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoText, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:435:0x09a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:435:0x09a7, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeo, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:437:0x09a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:437:0x09a8, code lost:
     
         r1 = r1.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:438:0x09ab, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:438:0x09ac, code lost:
     
         if (r1 == null) goto L471;
      */
@@ -3095,87 +3124,87 @@ public class NotificationsController extends BaseController {
     
         if (r7.getBoolean("EnablePreviewGroup", true) != false) goto L48;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:440:0x09c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:440:0x09c2, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedStickerEmoji, r0, r3.getTitle(r4), r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:442:0x09d3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:442:0x09d4, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedSticker, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:444:0x09d4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:444:0x09d5, code lost:
     
         if (r4 == null) goto L576;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:445:0x09d6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:445:0x09d7, code lost:
     
         r0 = r27.replyMessageObject;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:446:0x09d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:446:0x09d9, code lost:
     
         if (r0 != null) goto L478;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:448:0x09e8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:448:0x09e9, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoTextChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:450:0x09ed, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:450:0x09ee, code lost:
     
         if (r0.isMusic() == false) goto L482;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:452:0x09fd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:452:0x09fe, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedMusicChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:454:0x0a02, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:454:0x0a03, code lost:
     
         if (r0.isVideo() == false) goto L490;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:456:0x0a0c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:456:0x0a0d, code lost:
     
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L488;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:458:0x0a34, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:458:0x0a35, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, r3.getTitle(r4), "📹 " + r0.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:460:0x0a45, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:460:0x0a46, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVideoChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:462:0x0a4a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:462:0x0a4b, code lost:
     
         if (r0.isGif() == false) goto L498;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:464:0x0a54, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:464:0x0a55, code lost:
     
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L496;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:466:0x0a7c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:466:0x0a7d, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, r3.getTitle(r4), "🎬 " + r0.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:468:0x0a8d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:468:0x0a8e, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGifChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:470:0x0a94, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:470:0x0a95, code lost:
     
         if (r0.isVoice() == false) goto L502;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:472:0x0aa4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:472:0x0aa5, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVoiceChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:474:0x0aa9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:474:0x0aaa, code lost:
     
         if (r0.isRoundVideo() == false) goto L506;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:476:0x0ab9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:476:0x0aba, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedRoundChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:478:0x0abe, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:478:0x0abf, code lost:
     
         if (r0.isSticker() != false) goto L510;
      */
@@ -3183,132 +3212,132 @@ public class NotificationsController extends BaseController {
     
         if (r7.getBoolean("EnablePreviewChannel", r0) == false) goto L52;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:480:0x0ac4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:480:0x0ac5, code lost:
     
         if (r0.isAnimatedSticker() == false) goto L511;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:481:0x0aca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:481:0x0acb, code lost:
     
         r1 = r0.messageOwner;
         r6 = r1.media;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:482:0x0ad0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:482:0x0ad1, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L519;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:484:0x0ad8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:484:0x0ad9, code lost:
     
         if (android.text.TextUtils.isEmpty(r1.message) != false) goto L517;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:486:0x0b00, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:486:0x0b01, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, r3.getTitle(r4), "📎 " + r0.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:488:0x0b11, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:488:0x0b12, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedFileChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:490:0x0b14, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:490:0x0b15, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L523;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:492:0x0b18, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:492:0x0b19, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L524;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:494:0x0b20, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:494:0x0b21, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L528;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:496:0x0b32, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:496:0x0b33, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeoLiveChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:498:0x0b35, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:498:0x0b36, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L532;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:499:0x0b37, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:499:0x0b38, code lost:
     
         r6 = (org.telegram.tgnet.TLRPC.TL_messageMediaContact) r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:500:0x0b54, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:500:0x0b55, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedContactChannel2, r3.getTitle(r4), org.telegram.messenger.ContactsController.formatName(r6.first_name, r6.last_name));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:502:0x0b57, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:502:0x0b58, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L540;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:503:0x0b59, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:503:0x0b5a, code lost:
     
         r6 = (org.telegram.tgnet.TLRPC.TL_messageMediaPoll) r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:504:0x0b5f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:504:0x0b60, code lost:
     
         if (r6.poll.quiz == false) goto L538;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:506:0x0b7a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:506:0x0b7b, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedQuizChannel2, r3.getTitle(r4), r6.poll.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:508:0x0b94, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:508:0x0b95, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPollChannel2, r3.getTitle(r4), r6.poll.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:510:0x0b97, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:510:0x0b98, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L544;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:512:0x0bb4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:512:0x0bb5, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTodoChannel2, r3.getTitle(r4), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r6).todo.title.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:514:0x0bb7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:514:0x0bb8, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L552;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:516:0x0bbf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:516:0x0bc0, code lost:
     
         if (android.text.TextUtils.isEmpty(r1.message) != false) goto L550;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:518:0x0be7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:518:0x0be8, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, r3.getTitle(r4), "🖼 " + r0.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:520:0x0bf8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:520:0x0bf9, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPhotoChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:522:0x0bfd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:522:0x0bfe, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGame) == false) goto L556;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:524:0x0c0d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:524:0x0c0e, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGameChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:525:0x0c0e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:525:0x0c0f, code lost:
     
         r1 = r0.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:526:0x0c10, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:526:0x0c11, code lost:
     
         if (r1 == null) goto L566;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:528:0x0c16, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:528:0x0c17, code lost:
     
         if (r1.length() <= 0) goto L566;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:529:0x0c18, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:529:0x0c19, code lost:
     
         r0 = r0.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:530:0x0c1e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:530:0x0c1f, code lost:
     
         if (r0.length() <= 20) goto L563;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:531:0x0c20, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:531:0x0c21, code lost:
     
         r1 = new java.lang.StringBuilder();
         r6 = 0;
@@ -3316,7 +3345,7 @@ public class NotificationsController extends BaseController {
         r1.append("...");
         r0 = r1.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:532:0x0c36, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:532:0x0c37, code lost:
     
         r1 = org.telegram.messenger.R.string.NotificationActionPinnedTextChannel;
         r2 = r3.getTitle(r4);
@@ -3324,237 +3353,237 @@ public class NotificationsController extends BaseController {
         r4[r6] = r2;
         r4[1] = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:533:0x0c48, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:533:0x0c49, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(r1, r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:534:0x0c35, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:534:0x0c36, code lost:
     
         r6 = 0;
         r0 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:536:0x0c59, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:536:0x0c5a, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoTextChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:539:0x0c68, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:539:0x0c69, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeoChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:541:0x0c69, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:541:0x0c6a, code lost:
     
         r0 = r0.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:542:0x0c6d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:542:0x0c6e, code lost:
     
         if (r0 == null) goto L574;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:544:0x0c80, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:544:0x0c81, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedStickerEmojiChannel, r3.getTitle(r4), r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:546:0x0c8f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:546:0x0c90, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedStickerChannel, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:547:0x0c90, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:547:0x0c91, code lost:
     
         r1 = r27.replyMessageObject;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:548:0x0c94, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:548:0x0c95, code lost:
     
         if (r1 != null) goto L580;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:550:0x0ca0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:550:0x0ca1, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoTextUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:552:0x0ca5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:552:0x0ca6, code lost:
     
         if (r1.isMusic() == false) goto L584;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:554:0x0cb1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:554:0x0cb2, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedMusicUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:556:0x0cb6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:556:0x0cb7, code lost:
     
         if (r1.isVideo() == false) goto L592;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:558:0x0cc0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:558:0x0cc1, code lost:
     
         if (android.text.TextUtils.isEmpty(r1.messageOwner.message) != false) goto L590;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:560:0x0ce4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:560:0x0ce5, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextUser, r0, "📹 " + r1.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:562:0x0cf1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:562:0x0cf2, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVideoUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:564:0x0cf6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:564:0x0cf7, code lost:
     
         if (r1.isGif() == false) goto L600;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:566:0x0d00, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:566:0x0d01, code lost:
     
         if (android.text.TextUtils.isEmpty(r1.messageOwner.message) != false) goto L598;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:568:0x0d24, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:568:0x0d25, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextUser, r0, "🎬 " + r1.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:570:0x0d31, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:570:0x0d32, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGifUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:572:0x0d38, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:572:0x0d39, code lost:
     
         if (r1.isVoice() == false) goto L604;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:574:0x0d44, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:574:0x0d45, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVoiceUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:576:0x0d49, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:576:0x0d4a, code lost:
     
         if (r1.isRoundVideo() == false) goto L608;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:578:0x0d55, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:578:0x0d56, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedRoundUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:580:0x0d5a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:580:0x0d5b, code lost:
     
         if (r1.isSticker() != false) goto L612;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:582:0x0d60, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:582:0x0d61, code lost:
     
         if (r1.isAnimatedSticker() == false) goto L613;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:583:0x0d66, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:583:0x0d67, code lost:
     
         r4 = r1.messageOwner;
         r6 = r4.media;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:584:0x0d6c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:584:0x0d6d, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L621;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:586:0x0d74, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:586:0x0d75, code lost:
     
         if (android.text.TextUtils.isEmpty(r4.message) != false) goto L619;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:588:0x0d98, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:588:0x0d99, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextUser, r0, "📎 " + r1.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:590:0x0da5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:590:0x0da6, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedFileUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:592:0x0da8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:592:0x0da9, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L625;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:594:0x0dac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:594:0x0dad, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L626;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:596:0x0db4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:596:0x0db5, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L630;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:598:0x0dc2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:598:0x0dc3, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeoLiveUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:600:0x0dc6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:600:0x0dc7, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L634;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:601:0x0dc8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:601:0x0dc9, code lost:
     
         r6 = (org.telegram.tgnet.TLRPC.TL_messageMediaContact) r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:602:0x0de0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:602:0x0de1, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedContactUser, r0, org.telegram.messenger.ContactsController.formatName(r6.first_name, r6.last_name));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:604:0x0de3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:604:0x0de4, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L642;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:605:0x0de5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:605:0x0de6, code lost:
     
         r1 = ((org.telegram.tgnet.TLRPC.TL_messageMediaPoll) r6).poll;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:606:0x0deb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:606:0x0dec, code lost:
     
         if (r1.quiz == false) goto L640;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:608:0x0e00, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:608:0x0e01, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedQuizUser, r0, r1.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:610:0x0e14, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:610:0x0e15, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPollUser, r0, r1.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:612:0x0e17, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:612:0x0e18, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L646;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:614:0x0e30, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:614:0x0e31, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTodoUser, r0, ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r6).todo.title.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:616:0x0e33, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:616:0x0e34, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L654;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:618:0x0e3b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:618:0x0e3c, code lost:
     
         if (android.text.TextUtils.isEmpty(r4.message) != false) goto L652;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:620:0x0e5f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:620:0x0e60, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextUser, r0, "🖼 " + r1.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:622:0x0e6c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:622:0x0e6d, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPhotoUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:624:0x0e71, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:624:0x0e72, code lost:
     
         if ((r6 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGame) == false) goto L658;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:626:0x0e7d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:626:0x0e7e, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGameUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:627:0x0e7e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:627:0x0e7f, code lost:
     
         r4 = r1.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:628:0x0e80, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:628:0x0e81, code lost:
     
         if (r4 == null) goto L668;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:630:0x0e86, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:630:0x0e87, code lost:
     
         if (r4.length() <= 0) goto L668;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:631:0x0e88, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:631:0x0e89, code lost:
     
         r1 = r1.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:632:0x0e8e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:632:0x0e8f, code lost:
     
         if (r1.length() <= 20) goto L665;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:633:0x0e90, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:633:0x0e91, code lost:
     
         r4 = new java.lang.StringBuilder();
         r6 = 0;
@@ -3562,59 +3591,59 @@ public class NotificationsController extends BaseController {
         r4.append("...");
         r1 = r4.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:634:0x0ea6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:634:0x0ea7, code lost:
     
         r2 = org.telegram.messenger.R.string.NotificationActionPinnedTextUser;
         r4 = new java.lang.Object[2];
         r4[r6] = r0;
         r4[1] = r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:635:0x0eb4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:635:0x0eb5, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(r2, r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:636:0x0ea5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:636:0x0ea6, code lost:
     
         r6 = 0;
         r1 = r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:638:0x0ec1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:638:0x0ec2, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoTextUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:641:0x0ecc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:641:0x0ecd, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeoUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:643:0x0ecd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:643:0x0ece, code lost:
     
         r1 = r1.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:644:0x0ed1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:644:0x0ed2, code lost:
     
         if (r1 == null) goto L676;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:646:0x0ee0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:646:0x0ee1, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedStickerEmojiUser, r0, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:648:0x0eeb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:648:0x0eec, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedStickerUser, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:650:0x0eee, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:650:0x0eef, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionSetChatTheme) == false) goto L691;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:651:0x0ef0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:651:0x0ef1, code lost:
     
         r1 = org.telegram.messenger.utils.tlutils.TlUtils.getThemeEmoticonOrGiftTitle(((org.telegram.tgnet.TLRPC.TL_messageActionSetChatTheme) r5).theme);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:652:0x0efc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:652:0x0efd, code lost:
     
         if (android.text.TextUtils.isEmpty(r1) == false) goto L686;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:654:0x0f00, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:654:0x0f01, code lost:
     
         if (r8 != r21) goto L685;
      */
@@ -3626,7 +3655,7 @@ public class NotificationsController extends BaseController {
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChatThemeDisabled, r0, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:660:0x0f20, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:660:0x0f21, code lost:
     
         if (r8 != r21) goto L689;
      */
@@ -3634,524 +3663,524 @@ public class NotificationsController extends BaseController {
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChatThemeChangedYou, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:664:0x0f3a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:664:0x0f3b, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChatThemeChangedTo, r0, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:666:0x0f3d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:666:0x0f3e, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatJoinedByRequest) == false) goto L695;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:668:0x0f45, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:668:0x0f46, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:670:0x0f48, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:670:0x0f49, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionPrizeStars) == false) goto L706;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:671:0x0f4a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:671:0x0f4b, code lost:
     
         r5 = (org.telegram.tgnet.TLRPC.TL_messageActionPrizeStars) r5;
         r0 = org.telegram.messenger.DialogObject.getPeerDialogId(r5.boost_peer);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:672:0x0f56, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:672:0x0f57, code lost:
     
         if (r0 < 0) goto L700;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:673:0x0f58, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:673:0x0f59, code lost:
     
         r6 = org.telegram.messenger.UserObject.getForcedFirstName(getMessagesController().getUser(java.lang.Long.valueOf(r0)));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:675:0x0f8e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:675:0x0f8f, code lost:
     
         return org.telegram.messenger.LocaleController.formatPluralStringComma("BoostingReceivedStars", (int) r5.stars, r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:676:0x0f69, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:676:0x0f6a, code lost:
     
         r0 = getMessagesController().getChat(java.lang.Long.valueOf(-r0));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:677:0x0f76, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:677:0x0f77, code lost:
     
         if (r0 != null) goto L703;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:678:0x0f78, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:678:0x0f79, code lost:
     
         r6 = "";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:679:0x0f7b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:679:0x0f7c, code lost:
     
         r6 = r3.getTitle(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:681:0x0f91, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:681:0x0f92, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionPaymentRefunded) == false) goto L710;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:683:0x0f99, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:683:0x0f9a, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:685:0x0f9c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:685:0x0f9d, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionTodoCompletions) == false) goto L714;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:687:0x0fa4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:687:0x0fa5, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:689:0x0fa7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:689:0x0fa8, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionTodoAppendTasks) == false) goto L718;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:691:0x0faf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:691:0x0fb0, code lost:
     
         return r27.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:692:0x0fb0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:692:0x0fb1, code lost:
     
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:694:0x0fba, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:694:0x0fbb, code lost:
     
         if (r2.peer_id.channel_id == 0) goto L730;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:696:0x0fbe, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:696:0x0fbf, code lost:
     
         if (r4.megagroup != false) goto L730;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:698:0x0fc4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:698:0x0fc5, code lost:
     
         if (r27.isVideoAvatar() == false) goto L728;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:700:0x0fd6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:700:0x0fd7, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelVideoEditNotification, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:702:0x0fe7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:702:0x0fe8, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelPhotoEditNotification, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:704:0x0fed, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:704:0x0fee, code lost:
     
         if (r27.isVideoAvatar() == false) goto L734;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:706:0x1001, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:706:0x1002, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationEditedGroupVideo, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:708:0x1014, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:708:0x1015, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationEditedGroupPhoto, r0, r3.getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:711:0x101f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:711:0x1020, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationContactJoined, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:713:0x1026, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:713:0x1027, code lost:
     
         if (r27.isMediaEmpty() == false) goto L746;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:715:0x1030, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:715:0x1031, code lost:
     
         if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L744;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:717:0x1036, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:717:0x1037, code lost:
     
         return replaceSpoilers(r27);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:719:0x103d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:719:0x103e, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.Message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:721:0x1042, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:721:0x1043, code lost:
     
         if (r27.type != 29) goto L783;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:723:0x104a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:723:0x104b, code lost:
     
         if ((org.telegram.messenger.MessageObject.getMedia(r27) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPaidMedia) == false) goto L783;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:724:0x104c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:724:0x104d, code lost:
     
         r0 = (org.telegram.tgnet.TLRPC.TL_messageMediaPaidMedia) org.telegram.messenger.MessageObject.getMedia(r27);
         r1 = r0.extended_media.size();
         r2 = false;
         r4 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:725:0x105a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:725:0x105b, code lost:
     
         if (r4 >= r1) goto L925;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:726:0x105c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:726:0x105d, code lost:
     
         r5 = r0.extended_media.get(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:727:0x1066, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:727:0x1067, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageExtendedMedia) == false) goto L760;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:728:0x1068, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:728:0x1069, code lost:
     
         r2 = ((org.telegram.tgnet.TLRPC.TL_messageExtendedMedia) r5).media;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:729:0x106e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:729:0x106f, code lost:
     
         if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L759;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:731:0x1076, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:731:0x1077, code lost:
     
         if (org.telegram.messenger.MessageObject.isVideoDocument(r2.document) == false) goto L759;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:733:0x1088, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:733:0x1089, code lost:
     
         r2 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:734:0x108d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:734:0x108e, code lost:
     
         if (r2 == false) goto L769;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:735:0x1091, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:735:0x1092, code lost:
     
         r4 = r4 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:738:0x1094, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:738:0x1095, code lost:
     
         r0 = org.telegram.messenger.R.string.AttachPaidMedia;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:739:0x1096, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:739:0x1097, code lost:
     
         if (r1 != 1) goto L776;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:740:0x1098, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:740:0x1099, code lost:
     
         if (r2 == false) goto L774;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:741:0x109a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:741:0x109b, code lost:
     
         r1 = org.telegram.messenger.R.string.AttachVideo;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:742:0x109f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:742:0x10a0, code lost:
     
         r1 = org.telegram.messenger.LocaleController.getString(r1);
         r2 = 1;
         r4 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:743:0x10b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:743:0x10b7, code lost:
     
         r2 = new java.lang.Object[r2];
         r2[r4] = r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:744:0x10be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:744:0x10bf, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(r0, r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:745:0x109d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:745:0x109e, code lost:
     
         r1 = org.telegram.messenger.R.string.AttachPhoto;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:746:0x10a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:746:0x10a7, code lost:
     
         if (r2 == false) goto L779;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:747:0x10a8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:747:0x10a9, code lost:
     
         r2 = "Media";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:748:0x10aa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:748:0x10ab, code lost:
     
         r4 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:749:0x10af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:749:0x10b0, code lost:
     
         r1 = org.telegram.messenger.LocaleController.formatPluralString(r2, r1, new java.lang.Object[0]);
         r2 = 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:750:0x10ac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:750:0x10ad, code lost:
     
         r2 = "Photos";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:752:0x108a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:752:0x108b, code lost:
     
         r2 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:754:0x107e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:754:0x107f, code lost:
     
         if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) == false) goto L766;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:756:0x1086, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:756:0x1087, code lost:
     
         if ((((org.telegram.tgnet.TLRPC.TL_messageExtendedMediaPreview) r5).flags & 4) == 0) goto L765;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:760:0x10c3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:760:0x10c4, code lost:
     
         if (r27.isVoiceOnce() == false) goto L787;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:762:0x10cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:762:0x10cc, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachOnceAudio);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:764:0x10d0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:764:0x10d1, code lost:
     
         if (r27.isRoundOnce() == false) goto L791;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:766:0x10d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:766:0x10d9, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachOnceRound);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:767:0x10d9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:767:0x10da, code lost:
     
         r0 = r27.messageOwner;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:768:0x10df, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:768:0x10e0, code lost:
     
         if ((r0.media instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L803;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:770:0x10e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:770:0x10e8, code lost:
     
         if (android.text.TextUtils.isEmpty(r0.message) != false) goto L797;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:772:0x10fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:772:0x10fd, code lost:
     
         return "🖼 " + replaceSpoilers(r27);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:774:0x1103, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:774:0x1104, code lost:
     
         if (r27.messageOwner.media.ttl_seconds == 0) goto L801;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:776:0x110b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:776:0x110c, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachDestructingPhoto);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:778:0x1112, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:778:0x1113, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachPhoto);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:780:0x1117, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:780:0x1118, code lost:
     
         if (r27.isVideo() == false) goto L815;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:782:0x1121, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:782:0x1122, code lost:
     
         if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L809;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:784:0x1136, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:784:0x1137, code lost:
     
         return "📹 " + replaceSpoilers(r27);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:786:0x113d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:786:0x113e, code lost:
     
         if (r27.messageOwner.media.ttl_seconds == 0) goto L813;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:788:0x1145, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:788:0x1146, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachDestructingVideo);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:790:0x114c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:790:0x114d, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachVideo);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:792:0x1151, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:792:0x1152, code lost:
     
         if (r27.isGame() == false) goto L819;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:794:0x1159, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:794:0x115a, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachGame);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:796:0x115e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:796:0x115f, code lost:
     
         if (r27.isVoice() == false) goto L823;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:798:0x1166, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:798:0x1167, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachAudio);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:800:0x116b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:800:0x116c, code lost:
     
         if (r27.isRoundVideo() == false) goto L827;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:802:0x1173, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:802:0x1174, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachRound);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:804:0x1178, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:804:0x1179, code lost:
     
         if (r27.isMusic() == false) goto L831;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:806:0x1180, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:806:0x1181, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachMusic);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:807:0x1181, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:807:0x1182, code lost:
     
         r0 = r27.messageOwner.media;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:808:0x1187, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:808:0x1188, code lost:
     
         if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L835;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:810:0x118f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:810:0x1190, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachContact);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:812:0x1192, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:812:0x1193, code lost:
     
         if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L843;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:814:0x119a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:814:0x119b, code lost:
     
         if (((org.telegram.tgnet.TLRPC.TL_messageMediaPoll) r0).poll.quiz == false) goto L841;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:816:0x11a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:816:0x11a3, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.QuizPoll);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:818:0x11a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:818:0x11aa, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.Poll);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:820:0x11ac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:820:0x11ad, code lost:
     
         if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L847;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:822:0x11b4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:822:0x11b5, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.Todo);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:824:0x11b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:824:0x11b8, code lost:
     
         if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGiveaway) == false) goto L851;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:826:0x11bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:826:0x11c0, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.BoostingGiveaway);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:828:0x11c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:828:0x11c3, code lost:
     
         if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGiveawayResults) == false) goto L855;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:830:0x11ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:830:0x11cb, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.BoostingGiveawayResults);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:832:0x11cd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:832:0x11ce, code lost:
     
         if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L910;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:834:0x11d1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:834:0x11d2, code lost:
     
         if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L860;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:836:0x11d7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:836:0x11d8, code lost:
     
         if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L864;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:838:0x11df, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:838:0x11e0, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachLiveLocation);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:840:0x11e2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:840:0x11e3, code lost:
     
         if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L891;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:842:0x11e8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:842:0x11e9, code lost:
     
         if (r27.isSticker() != false) goto L885;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:844:0x11ee, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:844:0x11ef, code lost:
     
         if (r27.isAnimatedSticker() == false) goto L871;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:846:0x11f5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:846:0x11f6, code lost:
     
         if (r27.isGif() == false) goto L879;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:848:0x11ff, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:848:0x1200, code lost:
     
         if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L877;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:850:0x1214, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:850:0x1215, code lost:
     
         return "🎬 " + replaceSpoilers(r27);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:852:0x121b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:852:0x121c, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachGif);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:854:0x1224, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:854:0x1225, code lost:
     
         if (android.text.TextUtils.isEmpty(r27.messageOwner.message) != false) goto L883;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:856:0x1239, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:856:0x123a, code lost:
     
         return "📎 " + replaceSpoilers(r27);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:858:0x1240, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:858:0x1241, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachDocument);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:859:0x1241, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:859:0x1242, code lost:
     
         r0 = r27.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:860:0x1245, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:860:0x1246, code lost:
     
         if (r0 == null) goto L889;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:862:0x1261, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:862:0x1262, code lost:
     
         return r0 + " " + org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachSticker);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:864:0x1268, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:864:0x1269, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachSticker);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:866:0x126b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:866:0x126c, code lost:
     
         if ((r0 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaStory) == false) goto L904;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:868:0x1271, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:868:0x1272, code lost:
     
         if (((org.telegram.tgnet.TLRPC.TL_messageMediaStory) r0).via_mention == false) goto L902;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:869:0x1273, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:869:0x1274, code lost:
     
         r0 = org.telegram.messenger.R.string.StoryNotificationMention;
         r2 = r28[0];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:870:0x1278, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:870:0x1279, code lost:
     
         if (r2 != null) goto L899;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:871:0x127a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:871:0x127b, code lost:
     
         r6 = "";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:874:0x1288, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:874:0x1289, code lost:
     
         return org.telegram.messenger.LocaleController.formatString(r0, r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:875:0x127e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:875:0x127f, code lost:
     
         r6 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:877:0x128f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:877:0x1290, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.Story);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:879:0x1296, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:879:0x1297, code lost:
     
         if (android.text.TextUtils.isEmpty(r27.messageText) != false) goto L908;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:881:0x129c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:881:0x129d, code lost:
     
         return replaceSpoilers(r27);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:883:0x12a3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:883:0x12a4, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.Message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:885:0x12aa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:885:0x12ab, code lost:
     
         return org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.AttachLocation);
      */
@@ -4347,616 +4376,616 @@ public class NotificationsController extends BaseController {
         return sb.toString();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:305:0x06ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:311:0x06d3, code lost:
     
-        if (r6.getBoolean(r21, true) == false) goto L321;
+        if (r6.getBoolean(r24, true) == false) goto L330;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:306:0x06bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:312:0x06e1, code lost:
     
-        r2 = r25.messageOwner;
+        r2 = r29.messageOwner;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:307:0x06c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:313:0x06e5, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageService) == false) goto L653;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageService) == false) goto L662;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:308:0x06c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:314:0x06e7, code lost:
     
         r5 = r2.action;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:309:0x06c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:315:0x06ed, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatAddUser) == false) goto L365;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatAddUser) == false) goto L374;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:310:0x06ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:316:0x06ef, code lost:
     
         r6 = r5.user_id;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:311:0x06d0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:317:0x06f5, code lost:
     
-        if (r6 != 0) goto L333;
+        if (r6 != 0) goto L342;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:313:0x06d9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:319:0x06fe, code lost:
     
-        if (r5.users.size() != 1) goto L333;
+        if (r5.users.size() != 1) goto L342;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:314:0x06db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:320:0x0700, code lost:
     
-        r6 = r25.messageOwner.action.users.get(0).longValue();
+        r6 = r29.messageOwner.action.users.get(0).longValue();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:316:0x06f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:322:0x0715, code lost:
     
-        if (r6 == 0) goto L354;
+        if (r6 == 0) goto L363;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:318:0x06fa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:324:0x071f, code lost:
     
-        if (r25.messageOwner.peer_id.channel_id == 0) goto L340;
+        if (r29.messageOwner.peer_id.channel_id == 0) goto L349;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:320:0x06fe, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:326:0x0723, code lost:
     
-        if (r3.megagroup != false) goto L340;
+        if (r4.megagroup != false) goto L349;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:321:0x0700, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:327:0x0725, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelAddedByNotification, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelAddedByNotification, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:323:0x071a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:329:0x073f, code lost:
     
-        if (r6 != r19) goto L343;
+        if (r6 != r19) goto L352;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:324:0x071c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:330:0x0741, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationInvitedToGroup, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationInvitedToGroup, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:325:0x072e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:331:0x0753, code lost:
     
         r1 = getMessagesController().getUser(java.lang.Long.valueOf(r6));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:326:0x073a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:332:0x075f, code lost:
     
-        if (r1 != null) goto L347;
+        if (r1 != null) goto L356;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:327:0x073c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:333:0x0761, code lost:
     
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:329:0x0742, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:335:0x0767, code lost:
     
-        if (r13 != r1.id) goto L353;
+        if (r13 != r1.id) goto L362;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:331:0x0746, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:337:0x076b, code lost:
     
-        if (r3.megagroup == false) goto L352;
+        if (r4.megagroup == false) goto L361;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:332:0x0748, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:338:0x076d, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddSelfMega, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddSelfMega, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:333:0x075d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:339:0x0782, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddSelf, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddSelf, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:334:0x0772, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:340:0x0797, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddMember, r11, getTitle(r3), org.telegram.messenger.UserObject.getUserName(r1));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddMember, r3, getTitle(r4), org.telegram.messenger.UserObject.getUserName(r1));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:335:0x078e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:341:0x07b3, code lost:
     
         r2 = new java.lang.StringBuilder();
-        r4 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:337:0x079e, code lost:
-    
-        if (r4 >= r25.messageOwner.action.users.size()) goto L858;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:338:0x07a0, code lost:
-    
-        r5 = getMessagesController().getUser(r25.messageOwner.action.users.get(r4));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:339:0x07b4, code lost:
-    
-        if (r5 == null) goto L860;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:340:0x07b6, code lost:
-    
-        r5 = org.telegram.messenger.UserObject.getUserName(r5);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:341:0x07be, code lost:
-    
-        if (r2.length() == 0) goto L362;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:342:0x07c0, code lost:
-    
-        r2.append(", ");
+        r5 = 0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:343:0x07c3, code lost:
     
-        r2.append(r5);
+        if (r5 >= r29.messageOwner.action.users.size()) goto L867;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:345:0x07c6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:344:0x07c5, code lost:
     
-        r4 = r4 + 1;
+        r6 = getMessagesController().getUser(r29.messageOwner.action.users.get(r5));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:348:0x07c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:345:0x07d9, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddMember, r11, getTitle(r3), r2.toString());
+        if (r6 == null) goto L869;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:350:0x07e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:346:0x07db, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGroupCall) == false) goto L373;
+        r6 = org.telegram.messenger.UserObject.getUserName(r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:352:0x07eb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:347:0x07e3, code lost:
     
-        if (r5.duration == 0) goto L371;
+        if (r2.length() == 0) goto L371;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:354:0x0800, code lost:
-    
-        return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupEndedCall, r11, getTitle(r3));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:356:0x0814, code lost:
-    
-        return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupCreatedCall, r11, getTitle(r3));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:358:0x0817, code lost:
-    
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGroupCallScheduled) == false) goto L376;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:359:0x0819, code lost:
-    
-        r1 = r25.messageText.toString();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:361:0x0823, code lost:
-    
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionInviteToGroupCall) == false) goto L404;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:362:0x0825, code lost:
-    
-        r6 = r5.user_id;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:363:0x082b, code lost:
-    
-        if (r6 != 0) goto L383;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:365:0x0834, code lost:
-    
-        if (r5.users.size() != 1) goto L383;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:366:0x0836, code lost:
-    
-        r6 = r25.messageOwner.action.users.get(0).longValue();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:368:0x084b, code lost:
-    
-        if (r6 == 0) goto L393;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:370:0x084f, code lost:
-    
-        if (r6 != r19) goto L388;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:371:0x0851, code lost:
-    
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupInvitedYouToCall, r11, getTitle(r3));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:372:0x0866, code lost:
-    
-        r1 = getMessagesController().getUser(java.lang.Long.valueOf(r6));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:373:0x0872, code lost:
-    
-        if (r1 != null) goto L392;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:374:0x0874, code lost:
-    
-        return null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:375:0x0876, code lost:
-    
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupInvitedToCall, r11, getTitle(r3), org.telegram.messenger.UserObject.getUserName(r1));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:376:0x0892, code lost:
-    
-        r2 = new java.lang.StringBuilder();
-        r4 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:378:0x08a2, code lost:
-    
-        if (r4 >= r25.messageOwner.action.users.size()) goto L861;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:379:0x08a4, code lost:
-    
-        r5 = getMessagesController().getUser(r25.messageOwner.action.users.get(r4));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:380:0x08b8, code lost:
-    
-        if (r5 == null) goto L863;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:381:0x08ba, code lost:
-    
-        r5 = org.telegram.messenger.UserObject.getUserName(r5);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:382:0x08c2, code lost:
-    
-        if (r2.length() == 0) goto L401;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:383:0x08c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:348:0x07e5, code lost:
     
         r2.append(", ");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:384:0x08c7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:349:0x07e8, code lost:
     
-        r2.append(r5);
+        r2.append(r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:386:0x08ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:351:0x07eb, code lost:
     
-        r4 = r4 + 1;
+        r5 = r5 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:389:0x08cd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:354:0x07ee, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupInvitedToCall, r11, getTitle(r3), r2.toString());
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupAddMember, r3, getTitle(r4), r2.toString());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:391:0x08eb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:356:0x080c, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGiftCode) == false) goto L413;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGroupCall) == false) goto L382;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:392:0x08ed, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:358:0x0810, code lost:
     
-        r5 = (org.telegram.tgnet.TLRPC.TL_messageActionGiftCode) r5;
-        r1 = org.telegram.messenger.MessagesController.getInstance(r24.currentAccount).getChat(java.lang.Long.valueOf(-org.telegram.messenger.DialogObject.getPeerDialogId(r5.boost_peer)));
+        if (r5.duration == 0) goto L380;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:393:0x0904, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:360:0x0825, code lost:
     
-        if (r1 != null) goto L409;
+        return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupEndedCall, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:394:0x0906, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:362:0x0839, code lost:
     
-        r15 = null;
+        return org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupCreatedCall, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:395:0x090c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:364:0x083c, code lost:
     
-        if (r15 != null) goto L412;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGroupCallScheduled) == false) goto L385;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x090e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:365:0x083e, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.BoostingReceivedGiftNoName);
+        r1 = r29.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:397:0x0916, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:367:0x0848, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGiftCode, r15, org.telegram.messenger.LocaleController.formatPluralString("Months", r5.months, new java.lang.Object[0]));
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionInviteToGroupCall) == false) goto L413;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:398:0x0908, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:368:0x084a, code lost:
     
-        r15 = getTitle(r1);
+        r6 = r5.user_id;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:400:0x0937, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:369:0x0850, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatJoinedByLink) == false) goto L416;
+        if (r6 != 0) goto L392;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:401:0x0939, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:371:0x0859, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationInvitedToGroupByLink, r11, getTitle(r3));
+        if (r5.users.size() != 1) goto L392;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:403:0x094e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:372:0x085b, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatEditTitle) == false) goto L419;
+        r6 = r29.messageOwner.action.users.get(0).longValue();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:404:0x0950, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:374:0x0870, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationEditedGroupName, r11, r5.title);
+        if (r6 == 0) goto L402;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:406:0x0963, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:376:0x0874, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionTodoCompletions) == false) goto L422;
+        if (r6 != r19) goto L397;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:407:0x0965, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:377:0x0876, code lost:
     
-        r1 = r25.messageText.toString();
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupInvitedYouToCall, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:409:0x096f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:378:0x088b, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionTodoAppendTasks) == false) goto L425;
+        r1 = getMessagesController().getUser(java.lang.Long.valueOf(r6));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:410:0x0971, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:379:0x0897, code lost:
     
-        r1 = r25.messageText.toString();
+        if (r1 != null) goto L401;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:412:0x097b, code lost:
-    
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatEditPhoto) != false) goto L641;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:414:0x097f, code lost:
-    
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatDeletePhoto) == false) goto L430;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:416:0x0985, code lost:
-    
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatDeleteUser) == false) goto L443;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:417:0x0987, code lost:
-    
-        r4 = r5.user_id;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:418:0x098b, code lost:
-    
-        if (r4 != r19) goto L435;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:419:0x098d, code lost:
-    
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupKickYou, r11, getTitle(r3));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:421:0x09a7, code lost:
-    
-        if (r4 != r13) goto L438;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:422:0x09a9, code lost:
-    
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupLeftMember, r11, getTitle(r3));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:423:0x09bb, code lost:
-    
-        r1 = getMessagesController().getUser(java.lang.Long.valueOf(r25.messageOwner.action.user_id));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:424:0x09cd, code lost:
-    
-        if (r1 != null) goto L442;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:425:0x09cf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:380:0x0899, code lost:
     
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:426:0x09d1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:381:0x089b, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupKickMember, r11, getTitle(r3), org.telegram.messenger.UserObject.getUserName(r1));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupInvitedToCall, r3, getTitle(r4), org.telegram.messenger.UserObject.getUserName(r1));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:427:0x09ed, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:382:0x08b7, code lost:
+    
+        r2 = new java.lang.StringBuilder();
+        r5 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:384:0x08c7, code lost:
+    
+        if (r5 >= r29.messageOwner.action.users.size()) goto L870;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:385:0x08c9, code lost:
+    
+        r6 = getMessagesController().getUser(r29.messageOwner.action.users.get(r5));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:386:0x08dd, code lost:
+    
+        if (r6 == null) goto L872;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:387:0x08df, code lost:
+    
+        r6 = org.telegram.messenger.UserObject.getUserName(r6);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:388:0x08e7, code lost:
+    
+        if (r2.length() == 0) goto L410;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:389:0x08e9, code lost:
+    
+        r2.append(", ");
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:390:0x08ec, code lost:
+    
+        r2.append(r6);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:392:0x08ef, code lost:
+    
+        r5 = r5 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:395:0x08f2, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupInvitedToCall, r3, getTitle(r4), r2.toString());
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:397:0x0910, code lost:
+    
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGiftCode) == false) goto L422;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:398:0x0912, code lost:
+    
+        r5 = (org.telegram.tgnet.TLRPC.TL_messageActionGiftCode) r5;
+        r1 = org.telegram.messenger.MessagesController.getInstance(r28.currentAccount).getChat(java.lang.Long.valueOf(-org.telegram.messenger.DialogObject.getPeerDialogId(r5.boost_peer)));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:399:0x0929, code lost:
+    
+        if (r1 != null) goto L418;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:400:0x092b, code lost:
+    
+        r15 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:401:0x0931, code lost:
+    
+        if (r15 != null) goto L421;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:402:0x0933, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.BoostingReceivedGiftNoName);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:403:0x093b, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGiftCode, r15, org.telegram.messenger.LocaleController.formatPluralString("Months", r5.months, new java.lang.Object[0]));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:404:0x092d, code lost:
+    
+        r15 = getTitle(r1);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:406:0x095c, code lost:
+    
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatJoinedByLink) == false) goto L425;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:407:0x095e, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationInvitedToGroupByLink, r3, getTitle(r4));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:409:0x0973, code lost:
+    
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatEditTitle) == false) goto L428;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:410:0x0975, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationEditedGroupName, r3, r5.title);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:412:0x0988, code lost:
+    
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionTodoCompletions) == false) goto L431;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:413:0x098a, code lost:
+    
+        r1 = r29.messageText.toString();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:415:0x0994, code lost:
+    
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionTodoAppendTasks) == false) goto L434;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:416:0x0996, code lost:
+    
+        r1 = r29.messageText.toString();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:418:0x09a0, code lost:
+    
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatEditPhoto) != false) goto L650;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:420:0x09a4, code lost:
+    
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatDeletePhoto) == false) goto L439;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:422:0x09aa, code lost:
+    
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatDeleteUser) == false) goto L452;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:423:0x09ac, code lost:
+    
+        r5 = r5.user_id;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:424:0x09b0, code lost:
+    
+        if (r5 != r19) goto L444;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:425:0x09b2, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupKickYou, r3, getTitle(r4));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:427:0x09cc, code lost:
+    
+        if (r5 != r13) goto L447;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:428:0x09ce, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupLeftMember, r3, getTitle(r4));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:429:0x09e0, code lost:
+    
+        r1 = getMessagesController().getUser(java.lang.Long.valueOf(r29.messageOwner.action.user_id));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:430:0x09f2, code lost:
+    
+        if (r1 != null) goto L451;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:431:0x09f4, code lost:
+    
+        return null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:432:0x09f6, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationGroupKickMember, r3, getTitle(r4), org.telegram.messenger.UserObject.getUserName(r1));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:433:0x0a12, code lost:
     
         r6 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:428:0x09f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:434:0x0a15, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatCreate) == false) goto L446;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatCreate) == false) goto L455;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:429:0x09f2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:435:0x0a17, code lost:
     
-        r1 = r25.messageText.toString();
+        r1 = r29.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:431:0x09fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:437:0x0a21, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelCreate) == false) goto L449;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelCreate) == false) goto L458;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:432:0x09fe, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:438:0x0a23, code lost:
     
-        r1 = r25.messageText.toString();
+        r1 = r29.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:434:0x0a08, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:440:0x0a2d, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatMigrateTo) == false) goto L452;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatMigrateTo) == false) goto L461;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:435:0x0a0a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:441:0x0a2f, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ActionMigrateFromGroupNotify, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ActionMigrateFromGroupNotify, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:437:0x0a20, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:443:0x0a45, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelMigrateFrom) == false) goto L455;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChannelMigrateFrom) == false) goto L464;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:438:0x0a22, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:444:0x0a47, code lost:
     
         r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ActionMigrateFromGroupNotify, r5.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:440:0x0a32, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:446:0x0a57, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionScreenshotTaken) == false) goto L458;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionScreenshotTaken) == false) goto L467;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:441:0x0a34, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:447:0x0a59, code lost:
     
-        r1 = r25.messageText.toString();
+        r1 = r29.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:443:0x0a3e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:449:0x0a63, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionPinMessage) == false) goto L623;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionPinMessage) == false) goto L632;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:445:0x0a48, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:451:0x0a6d, code lost:
     
-        if (org.telegram.messenger.ChatObject.isChannel(r3) == false) goto L464;
+        if (org.telegram.messenger.ChatObject.isChannel(r4) == false) goto L473;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:447:0x0a4c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:453:0x0a71, code lost:
     
-        if (r3.megagroup == false) goto L465;
+        if (r4.megagroup == false) goto L474;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:448:0x0a52, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:454:0x0a77, code lost:
     
-        r2 = r25.replyMessageObject;
+        r2 = r29.replyMessageObject;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:449:0x0a54, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:455:0x0a79, code lost:
     
-        if (r2 != null) goto L468;
+        if (r2 != null) goto L477;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:450:0x0a56, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:456:0x0a7b, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoTextChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoTextChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:452:0x0a6e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:458:0x0a93, code lost:
     
-        if (r2.isMusic() == false) goto L471;
+        if (r2.isMusic() == false) goto L480;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:453:0x0a70, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:459:0x0a95, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedMusicChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedMusicChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:455:0x0a84, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:461:0x0aa9, code lost:
     
-        if (r2.isVideo() == false) goto L477;
+        if (r2.isVideo() == false) goto L486;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:457:0x0a8e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:463:0x0ab3, code lost:
     
-        if (android.text.TextUtils.isEmpty(r2.messageOwner.message) != false) goto L476;
+        if (android.text.TextUtils.isEmpty(r2.messageOwner.message) != false) goto L485;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:458:0x0a90, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:464:0x0ab5, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, getTitle(r3), "📹 " + r2.messageOwner.message);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, getTitle(r4), "📹 " + r2.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:459:0x0ab8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:465:0x0add, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVideoChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVideoChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:461:0x0ace, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:467:0x0af3, code lost:
     
-        if (r2.isGif() == false) goto L483;
+        if (r2.isGif() == false) goto L492;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:463:0x0ad8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:469:0x0afd, code lost:
     
-        if (android.text.TextUtils.isEmpty(r2.messageOwner.message) != false) goto L482;
+        if (android.text.TextUtils.isEmpty(r2.messageOwner.message) != false) goto L491;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:464:0x0ada, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:470:0x0aff, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, getTitle(r3), "🎬 " + r2.messageOwner.message);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, getTitle(r4), "🎬 " + r2.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:465:0x0b02, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:471:0x0b27, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGifChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGifChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:467:0x0b1a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:473:0x0b3f, code lost:
     
-        if (r2.isVoice() == false) goto L486;
+        if (r2.isVoice() == false) goto L495;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:468:0x0b1c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:474:0x0b41, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVoiceChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVoiceChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:470:0x0b30, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:476:0x0b55, code lost:
     
-        if (r2.isRoundVideo() == false) goto L489;
+        if (r2.isRoundVideo() == false) goto L498;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:471:0x0b32, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:477:0x0b57, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedRoundChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedRoundChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:473:0x0b46, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:479:0x0b6b, code lost:
     
-        if (r2.isSticker() != false) goto L493;
+        if (r2.isSticker() != false) goto L502;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:475:0x0b4c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:481:0x0b71, code lost:
     
-        if (r2.isAnimatedSticker() == false) goto L494;
+        if (r2.isAnimatedSticker() == false) goto L503;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:476:0x0b52, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:482:0x0b77, code lost:
     
-        r7 = r2.messageOwner;
-        r8 = r7.media;
+        r3 = r2.messageOwner;
+        r7 = r3.media;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:477:0x0b58, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:483:0x0b7d, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L500;
+        if ((r7 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L509;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:479:0x0b60, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:485:0x0b85, code lost:
     
-        if (android.text.TextUtils.isEmpty(r7.message) != false) goto L499;
+        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L508;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:480:0x0b62, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:486:0x0b87, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, getTitle(r3), "📎 " + r2.messageOwner.message);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, getTitle(r4), "📎 " + r2.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:481:0x0b8a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:487:0x0baf, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedFileChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedFileChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:483:0x0b9e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:489:0x0bc3, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L504;
+        if ((r7 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L513;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:485:0x0ba2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:491:0x0bc7, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L505;
+        if ((r7 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L514;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:487:0x0baa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:493:0x0bcf, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L508;
+        if ((r7 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L517;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:488:0x0bac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:494:0x0bd1, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeoLiveChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeoLiveChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:490:0x0bc0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:496:0x0be5, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L511;
+        if ((r7 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L520;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:491:0x0bc2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:497:0x0be7, code lost:
     
-        r1 = (org.telegram.tgnet.TLRPC.TL_messageMediaContact) r25.messageOwner.media;
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedContactChannel2, getTitle(r3), org.telegram.messenger.ContactsController.formatName(r1.first_name, r1.last_name));
+        r1 = (org.telegram.tgnet.TLRPC.TL_messageMediaContact) r29.messageOwner.media;
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedContactChannel2, getTitle(r4), org.telegram.messenger.ContactsController.formatName(r1.first_name, r1.last_name));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:493:0x0be7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:499:0x0c0c, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L517;
+        if ((r7 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L526;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:494:0x0be9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:500:0x0c0e, code lost:
     
-        r8 = (org.telegram.tgnet.TLRPC.TL_messageMediaPoll) r8;
+        r7 = (org.telegram.tgnet.TLRPC.TL_messageMediaPoll) r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:495:0x0bef, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:501:0x0c14, code lost:
     
-        if (r8.poll.quiz == false) goto L516;
+        if (r7.poll.quiz == false) goto L525;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:496:0x0bf1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:502:0x0c16, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedQuizChannel2, getTitle(r3), r8.poll.question.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedQuizChannel2, getTitle(r4), r7.poll.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:497:0x0c0c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:503:0x0c31, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPollChannel2, getTitle(r3), r8.poll.question.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPollChannel2, getTitle(r4), r7.poll.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:499:0x0c29, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:505:0x0c4e, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L520;
+        if ((r7 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L529;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:500:0x0c2b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:506:0x0c50, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTodoChannel2, getTitle(r3), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r8).todo.title.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTodoChannel2, getTitle(r4), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r7).todo.title.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:502:0x0c4a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:508:0x0c6f, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L526;
+        if ((r7 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L535;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:504:0x0c52, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:510:0x0c77, code lost:
     
-        if (android.text.TextUtils.isEmpty(r7.message) != false) goto L525;
+        if (android.text.TextUtils.isEmpty(r3.message) != false) goto L534;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:505:0x0c54, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:511:0x0c79, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, getTitle(r3), "🖼 " + r2.messageOwner.message);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTextChannel, getTitle(r4), "🖼 " + r2.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:506:0x0c7c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:512:0x0ca1, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPhotoChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPhotoChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:508:0x0c92, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:514:0x0cb7, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGame) == false) goto L529;
+        if ((r7 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGame) == false) goto L538;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:509:0x0c94, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:515:0x0cb9, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGameChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGameChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:510:0x0ca4, code lost:
-    
-        r1 = r2.messageText;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:511:0x0ca6, code lost:
-    
-        if (r1 == null) goto L538;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:513:0x0cac, code lost:
-    
-        if (r1.length() <= 0) goto L538;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:514:0x0cae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:516:0x0cc9, code lost:
     
         r1 = r2.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:515:0x0cb4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:517:0x0ccb, code lost:
     
-        if (r1.length() <= 20) goto L536;
+        if (r1 == null) goto L547;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:516:0x0cb6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:519:0x0cd1, code lost:
+    
+        if (r1.length() <= 0) goto L547;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:520:0x0cd3, code lost:
+    
+        r1 = r2.messageText;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:521:0x0cd9, code lost:
+    
+        if (r1.length() <= 20) goto L545;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:522:0x0cdb, code lost:
     
         r2 = new java.lang.StringBuilder();
         r7 = 0;
@@ -4964,923 +4993,924 @@ public class NotificationsController extends BaseController {
         r2.append("...");
         r1 = r2.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:517:0x0ccc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:523:0x0cf1, code lost:
     
         r2 = org.telegram.messenger.R.string.NotificationActionPinnedTextChannel;
+        r3 = getTitle(r4);
         r4 = new java.lang.Object[2];
-        r4[r7] = getTitle(r3);
+        r4[r7] = r3;
         r4[1] = r1;
         r1 = org.telegram.messenger.LocaleController.formatString(r2, r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:518:0x0ccb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:524:0x0cf0, code lost:
     
         r7 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:519:0x0ce0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:525:0x0d05, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoTextChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoTextChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:521:0x0cf2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:527:0x0d17, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeoChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeoChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:523:0x0d02, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:529:0x0d27, code lost:
     
         r1 = r2.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:524:0x0d06, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:530:0x0d2b, code lost:
     
-        if (r1 == null) goto L543;
+        if (r1 == null) goto L552;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:525:0x0d08, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:531:0x0d2d, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedStickerEmojiChannel, getTitle(r3), r1);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedStickerEmojiChannel, getTitle(r4), r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:526:0x0d1b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:532:0x0d40, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedStickerChannel, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedStickerChannel, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:528:0x0d2b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:534:0x0d50, code lost:
     
-        r2 = r25.replyMessageObject;
+        r2 = r29.replyMessageObject;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:529:0x0d2d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:535:0x0d52, code lost:
     
-        if (r2 != null) goto L547;
+        if (r2 != null) goto L556;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:530:0x0d2f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:536:0x0d54, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoText, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoText, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:532:0x0d47, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:538:0x0d6c, code lost:
     
-        if (r2.isMusic() == false) goto L550;
+        if (r2.isMusic() == false) goto L559;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:533:0x0d49, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:539:0x0d6e, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedMusic, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedMusic, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:535:0x0d5f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:541:0x0d84, code lost:
     
-        if (r2.isVideo() == false) goto L556;
+        if (r2.isVideo() == false) goto L565;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:537:0x0d69, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:543:0x0d8e, code lost:
     
-        if (android.text.TextUtils.isEmpty(r2.messageOwner.message) != false) goto L555;
+        if (android.text.TextUtils.isEmpty(r2.messageOwner.message) != false) goto L564;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:538:0x0d6b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:544:0x0d90, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r11, "📹 " + r2.messageOwner.message, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r3, "📹 " + r2.messageOwner.message, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:539:0x0d96, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:545:0x0dbb, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVideo, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVideo, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:541:0x0daf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:547:0x0dd4, code lost:
     
-        if (r2.isGif() == false) goto L562;
+        if (r2.isGif() == false) goto L571;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:543:0x0db9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:549:0x0dde, code lost:
     
-        if (android.text.TextUtils.isEmpty(r2.messageOwner.message) != false) goto L561;
+        if (android.text.TextUtils.isEmpty(r2.messageOwner.message) != false) goto L570;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:544:0x0dbb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:550:0x0de0, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r11, "🎬 " + r2.messageOwner.message, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r3, "🎬 " + r2.messageOwner.message, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:545:0x0de6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:551:0x0e0b, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGif, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGif, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:547:0x0e02, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:553:0x0e27, code lost:
     
-        if (r2.isVoice() == false) goto L565;
+        if (r2.isVoice() == false) goto L574;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:548:0x0e04, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:554:0x0e29, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVoice, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedVoice, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:550:0x0e1a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:556:0x0e3f, code lost:
     
-        if (r2.isRoundVideo() == false) goto L568;
+        if (r2.isRoundVideo() == false) goto L577;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:551:0x0e1c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:557:0x0e41, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedRound, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedRound, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:553:0x0e32, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:559:0x0e57, code lost:
     
-        if (r2.isSticker() != false) goto L572;
+        if (r2.isSticker() != false) goto L581;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:555:0x0e38, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:561:0x0e5d, code lost:
     
-        if (r2.isAnimatedSticker() == false) goto L573;
+        if (r2.isAnimatedSticker() == false) goto L582;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:556:0x0e3e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:562:0x0e63, code lost:
     
         r7 = r2.messageOwner;
         r8 = r7.media;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:557:0x0e44, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:563:0x0e69, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L579;
+        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L588;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:559:0x0e4c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:565:0x0e71, code lost:
     
-        if (android.text.TextUtils.isEmpty(r7.message) != false) goto L578;
+        if (android.text.TextUtils.isEmpty(r7.message) != false) goto L587;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:560:0x0e4e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:566:0x0e73, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r11, "📎 " + r2.messageOwner.message, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r3, "📎 " + r2.messageOwner.message, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:561:0x0e79, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:567:0x0e9e, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedFile, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedFile, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:563:0x0e90, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:569:0x0eb5, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L583;
+        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L592;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:565:0x0e94, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:571:0x0eb9, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L584;
+        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L593;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:567:0x0e9d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:573:0x0ec2, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L587;
+        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L596;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:568:0x0e9f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:574:0x0ec4, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeoLive, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeoLive, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:570:0x0eb6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:576:0x0edb, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L590;
+        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L599;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:571:0x0eb8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:577:0x0edd, code lost:
     
-        r1 = (org.telegram.tgnet.TLRPC.TL_messageMediaContact) r25.messageOwner.media;
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedContact2, r11, getTitle(r3), org.telegram.messenger.ContactsController.formatName(r1.first_name, r1.last_name));
+        r1 = (org.telegram.tgnet.TLRPC.TL_messageMediaContact) r29.messageOwner.media;
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedContact2, r3, getTitle(r4), org.telegram.messenger.ContactsController.formatName(r1.first_name, r1.last_name));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:573:0x0ee0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:579:0x0f05, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L596;
+        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L605;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:574:0x0ee2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:580:0x0f07, code lost:
     
         r8 = (org.telegram.tgnet.TLRPC.TL_messageMediaPoll) r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:575:0x0ee8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:581:0x0f0d, code lost:
     
-        if (r8.poll.quiz == false) goto L595;
+        if (r8.poll.quiz == false) goto L604;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:576:0x0eea, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:582:0x0f0f, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedQuiz2, r11, getTitle(r3), r8.poll.question.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedQuiz2, r3, getTitle(r4), r8.poll.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:577:0x0f08, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:583:0x0f2d, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPoll2, r11, getTitle(r3), r8.poll.question.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPoll2, r3, getTitle(r4), r8.poll.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:579:0x0f28, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:585:0x0f4d, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L599;
+        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L608;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:580:0x0f2a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:586:0x0f4f, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTodo2, r11, getTitle(r3), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r8).todo.title.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedTodo2, r3, getTitle(r4), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r8).todo.title.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:582:0x0f4c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:588:0x0f71, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L605;
+        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L614;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:584:0x0f54, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:590:0x0f79, code lost:
     
-        if (android.text.TextUtils.isEmpty(r7.message) != false) goto L604;
+        if (android.text.TextUtils.isEmpty(r7.message) != false) goto L613;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:585:0x0f56, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:591:0x0f7b, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r11, "🖼 " + r2.messageOwner.message, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedText, r3, "🖼 " + r2.messageOwner.message, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:586:0x0f81, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:592:0x0fa6, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPhoto, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedPhoto, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:588:0x0f9b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:594:0x0fc0, code lost:
     
-        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGame) == false) goto L608;
+        if ((r8 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGame) == false) goto L617;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:589:0x0f9d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:595:0x0fc2, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGame, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGame, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:590:0x0faf, code lost:
-    
-        r1 = r2.messageText;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:591:0x0fb1, code lost:
-    
-        if (r1 == null) goto L617;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:593:0x0fb7, code lost:
-    
-        if (r1.length() <= 0) goto L617;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:594:0x0fb9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:596:0x0fd4, code lost:
     
         r1 = r2.messageText;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:595:0x0fbf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:597:0x0fd6, code lost:
     
-        if (r1.length() <= 20) goto L615;
+        if (r1 == null) goto L626;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:596:0x0fc1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:599:0x0fdc, code lost:
+    
+        if (r1.length() <= 0) goto L626;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:600:0x0fde, code lost:
+    
+        r1 = r2.messageText;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:601:0x0fe4, code lost:
+    
+        if (r1.length() <= 20) goto L624;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:602:0x0fe6, code lost:
     
         r2 = new java.lang.StringBuilder();
-        r4 = 0;
+        r7 = 0;
         r2.append((java.lang.Object) r1.subSequence(0, 20));
         r2.append("...");
         r1 = r2.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:597:0x0fd7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:603:0x0ffc, code lost:
     
         r2 = org.telegram.messenger.R.string.NotificationActionPinnedText;
-        r3 = getTitle(r3);
+        r4 = getTitle(r4);
         r5 = new java.lang.Object[3];
-        r5[r4] = r11;
+        r5[r7] = r3;
         r5[1] = r1;
-        r5[2] = r3;
+        r5[2] = r4;
         r1 = org.telegram.messenger.LocaleController.formatString(r2, r5);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:598:0x0fd6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:604:0x0ffb, code lost:
     
-        r4 = 0;
+        r7 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:599:0x0fee, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:605:0x1013, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoText, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedNoText, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:601:0x1003, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:607:0x1028, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeo, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedGeo, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:603:0x1015, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:609:0x103a, code lost:
     
         r1 = r2.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:604:0x1019, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:610:0x103e, code lost:
     
-        if (r1 == null) goto L622;
+        if (r1 == null) goto L631;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:605:0x101b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:611:0x1040, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedStickerEmoji, r11, getTitle(r3), r1);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedStickerEmoji, r3, getTitle(r4), r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:606:0x1031, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:612:0x1056, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedSticker, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationActionPinnedSticker, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:608:0x1046, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:614:0x106b, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGameScore) == false) goto L626;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionGameScore) == false) goto L635;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:609:0x1048, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:615:0x106d, code lost:
     
-        r1 = r25.messageText.toString();
+        r1 = r29.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:611:0x1052, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:617:0x1077, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionSetChatTheme) == false) goto L638;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionSetChatTheme) == false) goto L647;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:612:0x1054, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:618:0x1079, code lost:
     
         r1 = org.telegram.messenger.utils.tlutils.TlUtils.getThemeEmoticonOrGiftTitle(((org.telegram.tgnet.TLRPC.TL_messageActionSetChatTheme) r5).theme);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:613:0x1060, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:619:0x1085, code lost:
     
-        if (android.text.TextUtils.isEmpty(r1) == false) goto L634;
+        if (android.text.TextUtils.isEmpty(r1) == false) goto L643;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:615:0x1064, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:621:0x1089, code lost:
     
-        if (r7 != r19) goto L633;
+        if (r7 != r19) goto L642;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:616:0x1066, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:622:0x108b, code lost:
     
         r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChatThemeDisabledYou, new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:617:0x1071, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:623:0x1096, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString("ChatThemeDisabled", org.telegram.messenger.R.string.ChatThemeDisabled, r11, r1);
+        r1 = org.telegram.messenger.LocaleController.formatString("ChatThemeDisabled", org.telegram.messenger.R.string.ChatThemeDisabled, r3, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:619:0x1088, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:625:0x10ad, code lost:
     
-        if (r7 != r19) goto L637;
+        if (r7 != r19) goto L646;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:620:0x108a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:626:0x10af, code lost:
     
         r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChatThemeChangedYou, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:621:0x1096, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:627:0x10bb, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChatThemeChangedTo, r11, r1);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChatThemeChangedTo, r3, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:623:0x10a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:629:0x10cc, code lost:
     
-        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatJoinedByRequest) == false) goto L852;
+        if ((r5 instanceof org.telegram.tgnet.TLRPC.TL_messageActionChatJoinedByRequest) == false) goto L861;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:624:0x10a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:630:0x10ce, code lost:
     
-        r1 = r25.messageText.toString();
+        r1 = r29.messageText.toString();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:626:0x10b9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:632:0x10de, code lost:
     
-        if (r2.peer_id.channel_id == 0) goto L649;
+        if (r2.peer_id.channel_id == 0) goto L658;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:628:0x10bd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:634:0x10e2, code lost:
     
-        if (r3.megagroup != false) goto L649;
+        if (r4.megagroup != false) goto L658;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:630:0x10c3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:636:0x10e8, code lost:
     
-        if (r25.isVideoAvatar() == false) goto L648;
+        if (r29.isVideoAvatar() == false) goto L657;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:631:0x10c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:637:0x10ea, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelVideoEditNotification, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelVideoEditNotification, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:632:0x10d7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:638:0x10fc, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelPhotoEditNotification, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelPhotoEditNotification, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:634:0x10ee, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:640:0x1113, code lost:
     
-        if (r25.isVideoAvatar() == false) goto L652;
+        if (r29.isVideoAvatar() == false) goto L661;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:635:0x10f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:641:0x1115, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationEditedGroupVideo, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationEditedGroupVideo, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:636:0x1104, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:642:0x1129, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationEditedGroupPhoto, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationEditedGroupPhoto, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:638:0x111c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:644:0x1141, code lost:
     
-        if (org.telegram.messenger.ChatObject.isChannel(r3) == false) goto L745;
+        if (org.telegram.messenger.ChatObject.isChannel(r4) == false) goto L754;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:640:0x1120, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:646:0x1145, code lost:
     
-        if (r3.megagroup != false) goto L745;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:642:0x1126, code lost:
-    
-        if (r25.isMediaEmpty() == false) goto L664;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:643:0x1128, code lost:
-    
-        if (r26 != false) goto L663;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:645:0x1132, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r25.messageOwner.message) != false) goto L663;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:646:0x1134, code lost:
-    
-        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r11, r25.messageOwner.message);
-        r27[0] = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:647:?, code lost:
-    
-        return r15;
+        if (r4.megagroup != false) goto L754;
      */
     /* JADX WARN: Code restructure failed: missing block: B:648:0x114b, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageNoText, r11);
+        if (r29.isMediaEmpty() == false) goto L673;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:650:0x115d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:649:0x114d, code lost:
     
-        if (r25.type != 29) goto L669;
+        if (r30 != false) goto L672;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:652:0x1165, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:651:0x1157, code lost:
     
-        if ((org.telegram.messenger.MessageObject.getMedia(r25) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPaidMedia) == false) goto L669;
+        if (android.text.TextUtils.isEmpty(r29.messageOwner.message) != false) goto L672;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:653:0x1167, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:652:0x1159, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatPluralString("NotificationChannelMessagePaidMedia", (int) ((org.telegram.tgnet.TLRPC.TL_messageMediaPaidMedia) org.telegram.messenger.MessageObject.getMedia(r25)).stars_amount, getTitle(r3));
+        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r3, r29.messageOwner.message);
+        r31[0] = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:654:0x1182, code lost:
-    
-        r2 = r25.messageOwner;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:655:0x1188, code lost:
-    
-        if ((r2.media instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L676;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:656:0x118a, code lost:
-    
-        if (r26 != false) goto L675;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:658:0x1192, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r2.message) != false) goto L675;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:659:0x1194, code lost:
-    
-        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r11, "🖼 " + r25.messageOwner.message);
-        r27[0] = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:660:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:653:?, code lost:
     
         return r15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:661:0x11ba, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:654:0x1170, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessagePhoto, r11);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageNoText, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:663:0x11cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:656:0x1182, code lost:
     
-        if (r25.isVideo() == false) goto L683;
+        if (r29.type != 29) goto L678;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:664:0x11ce, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:658:0x118a, code lost:
     
-        if (r26 != false) goto L682;
+        if ((org.telegram.messenger.MessageObject.getMedia(r29) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPaidMedia) == false) goto L678;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:666:0x11d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:659:0x118c, code lost:
     
-        if (android.text.TextUtils.isEmpty(r25.messageOwner.message) != false) goto L682;
+        r1 = org.telegram.messenger.LocaleController.formatPluralString("NotificationChannelMessagePaidMedia", (int) ((org.telegram.tgnet.TLRPC.TL_messageMediaPaidMedia) org.telegram.messenger.MessageObject.getMedia(r29)).stars_amount, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:667:0x11da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:660:0x11a7, code lost:
     
-        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r11, "📹 " + r25.messageOwner.message);
-        r27[0] = true;
+        r2 = r29.messageOwner;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:668:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:661:0x11ad, code lost:
+    
+        if ((r2.media instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L685;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:662:0x11af, code lost:
+    
+        if (r30 != false) goto L684;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:664:0x11b7, code lost:
+    
+        if (android.text.TextUtils.isEmpty(r2.message) != false) goto L684;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:665:0x11b9, code lost:
+    
+        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r3, "🖼 " + r29.messageOwner.message);
+        r31[0] = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:666:?, code lost:
     
         return r15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:669:0x1200, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:667:0x11df, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageVideo, r11);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessagePhoto, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:671:0x1214, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:669:0x11f1, code lost:
     
-        if (r25.isVoice() == false) goto L686;
+        if (r29.isVideo() == false) goto L692;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:672:0x1216, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:670:0x11f3, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageAudio, r11);
+        if (r30 != false) goto L691;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:674:0x1226, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:672:0x11fd, code lost:
     
-        if (r25.isRoundVideo() == false) goto L689;
+        if (android.text.TextUtils.isEmpty(r29.messageOwner.message) != false) goto L691;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:675:0x1228, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:673:0x11ff, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageRound, r11);
+        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r3, "📹 " + r29.messageOwner.message);
+        r31[0] = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:677:0x1238, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:674:?, code lost:
     
-        if (r25.isMusic() == false) goto L692;
+        return r15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:678:0x123a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:675:0x1225, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageMusic, r11);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageVideo, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:679:0x1246, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:677:0x1239, code lost:
     
-        r2 = r25.messageOwner.media;
+        if (r29.isVoice() == false) goto L695;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:680:0x124c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:678:0x123b, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L695;
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageAudio, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:681:0x124e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:680:0x124b, code lost:
+    
+        if (r29.isRoundVideo() == false) goto L698;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:681:0x124d, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageRound, r3);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:683:0x125d, code lost:
+    
+        if (r29.isMusic() == false) goto L701;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:684:0x125f, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageMusic, r3);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:685:0x126b, code lost:
+    
+        r2 = r29.messageOwner.media;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:686:0x1271, code lost:
+    
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L704;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:687:0x1273, code lost:
     
         r2 = (org.telegram.tgnet.TLRPC.TL_messageMediaContact) r2;
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageContact2, r11, org.telegram.messenger.ContactsController.formatName(r2.first_name, r2.last_name));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageContact2, r3, org.telegram.messenger.ContactsController.formatName(r2.first_name, r2.last_name));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:683:0x126b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:689:0x1290, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L701;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L710;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:684:0x126d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:690:0x1292, code lost:
     
         r1 = ((org.telegram.tgnet.TLRPC.TL_messageMediaPoll) r2).poll;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:685:0x1273, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:691:0x1298, code lost:
     
-        if (r1.quiz == false) goto L700;
+        if (r1.quiz == false) goto L709;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:686:0x1275, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:692:0x129a, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageQuiz2, r11, r1.question.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageQuiz2, r3, r1.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:687:0x128a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:693:0x12af, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessagePoll2, r11, r1.question.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessagePoll2, r3, r1.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:689:0x12a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:695:0x12c6, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L704;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L713;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:690:0x12a3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:696:0x12c8, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageTodo2, r11, ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r2).todo.title.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageTodo2, r3, ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r2).todo.title.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:692:0x12be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:698:0x12e3, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGiveaway) == false) goto L707;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGiveaway) == false) goto L716;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:693:0x12c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:699:0x12e5, code lost:
     
         r2 = (org.telegram.tgnet.TLRPC.TL_messageMediaGiveaway) r2;
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageChannelGiveaway, getTitle(r3), java.lang.Integer.valueOf(r2.quantity), java.lang.Integer.valueOf(r2.months));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageChannelGiveaway, getTitle(r4), java.lang.Integer.valueOf(r2.quantity), java.lang.Integer.valueOf(r2.months));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:695:0x12e8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:701:0x130d, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L711;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L720;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:697:0x12ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:703:0x1311, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L712;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L721;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:699:0x12f4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:705:0x1319, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L715;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L724;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:700:0x12f6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:706:0x131b, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageLiveLocation, r11);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageLiveLocation, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:702:0x1306, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:708:0x132b, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L738;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L747;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:704:0x130c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:710:0x1331, code lost:
     
-        if (r25.isSticker() != false) goto L721;
+        if (r29.isSticker() != false) goto L730;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:706:0x1312, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:712:0x1337, code lost:
     
-        if (r25.isAnimatedSticker() == false) goto L722;
+        if (r29.isAnimatedSticker() == false) goto L731;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:708:0x131c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:714:0x1341, code lost:
     
-        if (r25.isGif() == false) goto L729;
+        if (r29.isGif() == false) goto L738;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:709:0x131e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:715:0x1343, code lost:
     
-        if (r26 != false) goto L728;
+        if (r30 != false) goto L737;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:711:0x1328, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:717:0x134d, code lost:
     
-        if (android.text.TextUtils.isEmpty(r25.messageOwner.message) != false) goto L728;
+        if (android.text.TextUtils.isEmpty(r29.messageOwner.message) != false) goto L737;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:712:0x132a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:718:0x134f, code lost:
     
-        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r11, "🎬 " + r25.messageOwner.message);
-        r27[0] = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:713:?, code lost:
-    
-        return r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:714:0x1350, code lost:
-    
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageGIF, r11);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:715:0x135e, code lost:
-    
-        if (r26 != false) goto L733;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:717:0x1368, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r25.messageOwner.message) != false) goto L733;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:718:0x136a, code lost:
-    
-        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r11, "📎 " + r25.messageOwner.message);
-        r27[0] = true;
+        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r3, "🎬 " + r29.messageOwner.message);
+        r31[0] = true;
      */
     /* JADX WARN: Code restructure failed: missing block: B:719:?, code lost:
     
         return r15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:720:0x1390, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:720:0x1375, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageDocument, r11);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageGIF, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:722:0x139e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:721:0x1383, code lost:
     
-        r1 = r25.getStickerEmoji();
+        if (r30 != false) goto L742;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:723:0x13a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:723:0x138d, code lost:
     
-        if (r1 == null) goto L737;
+        if (android.text.TextUtils.isEmpty(r29.messageOwner.message) != false) goto L742;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:724:0x13a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:724:0x138f, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageStickerEmoji, r11, r1);
+        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r3, "📎 " + r29.messageOwner.message);
+        r31[0] = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:725:0x13b3, code lost:
-    
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageSticker, r11);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:727:0x13c0, code lost:
-    
-        if (r26 != false) goto L743;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:729:0x13c8, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r25.messageText) != false) goto L743;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:730:0x13ca, code lost:
-    
-        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r11, r25.messageText);
-        r27[0] = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:731:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:725:?, code lost:
     
         return r15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:732:0x13de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:726:0x13b5, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageNoText, r11);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageDocument, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:734:0x13eb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:728:0x13c3, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageMap, r11);
+        r1 = r29.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:736:0x13fb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:729:0x13c7, code lost:
     
-        if (r25.isMediaEmpty() == false) goto L752;
+        if (r1 == null) goto L746;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:737:0x13fd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:730:0x13c9, code lost:
     
-        if (r26 != false) goto L751;
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageStickerEmoji, r3, r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:739:0x1407, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:731:0x13d8, code lost:
     
-        if (android.text.TextUtils.isEmpty(r25.messageOwner.message) != false) goto L751;
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageSticker, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:740:0x1409, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:733:0x13e5, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r11, getTitle(r3), r25.messageOwner.message);
+        if (r30 != false) goto L752;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:741:0x1425, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:735:0x13ed, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupNoText, r11, getTitle(r3));
+        if (android.text.TextUtils.isEmpty(r29.messageText) != false) goto L752;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:743:0x143e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:736:0x13ef, code lost:
     
-        if (r25.type != 29) goto L757;
+        r15 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageText, r3, r29.messageText);
+        r31[0] = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:745:0x1446, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:737:?, code lost:
     
-        if ((org.telegram.messenger.MessageObject.getMedia(r25) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPaidMedia) == false) goto L757;
+        return r15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:746:0x1448, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:738:0x1403, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatPluralString("NotificationChatMessagePaidMedia", (int) ((org.telegram.tgnet.TLRPC.TL_messageMediaPaidMedia) org.telegram.messenger.MessageObject.getMedia(r25)).stars_amount, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageNoText, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:747:0x1466, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:740:0x1410, code lost:
     
-        r2 = r25.messageOwner;
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.ChannelMessageMap, r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:748:0x146c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:742:0x1420, code lost:
     
-        if ((r2.media instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L764;
+        if (r29.isMediaEmpty() == false) goto L761;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:749:0x146e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:743:0x1422, code lost:
     
-        if (r26 != false) goto L763;
+        if (r30 != false) goto L760;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:751:0x1476, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:745:0x142c, code lost:
     
-        if (android.text.TextUtils.isEmpty(r2.message) != false) goto L763;
+        if (android.text.TextUtils.isEmpty(r29.messageOwner.message) != false) goto L760;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:752:0x1478, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:746:0x142e, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r11, getTitle(r3), "🖼 " + r25.messageOwner.message);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r3, getTitle(r4), r29.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:753:0x14a3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:747:0x144a, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupPhoto, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupNoText, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:755:0x14bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:749:0x1463, code lost:
     
-        if (r25.isVideo() == false) goto L771;
+        if (r29.type != 29) goto L766;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:756:0x14be, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:751:0x146b, code lost:
     
-        if (r26 != false) goto L770;
+        if ((org.telegram.messenger.MessageObject.getMedia(r29) instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPaidMedia) == false) goto L766;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:758:0x14c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:752:0x146d, code lost:
     
-        if (android.text.TextUtils.isEmpty(r25.messageOwner.message) != false) goto L770;
+        r1 = org.telegram.messenger.LocaleController.formatPluralString("NotificationChatMessagePaidMedia", (int) ((org.telegram.tgnet.TLRPC.TL_messageMediaPaidMedia) org.telegram.messenger.MessageObject.getMedia(r29)).stars_amount, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:759:0x14ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:753:0x148b, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r11, getTitle(r3), "📹 " + r25.messageOwner.message);
+        r2 = r29.messageOwner;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:760:0x14f5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:754:0x1491, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupVideo, r11, getTitle(r3));
+        if ((r2.media instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPhoto) == false) goto L773;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:762:0x1511, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:755:0x1493, code lost:
     
-        if (r25.isVoice() == false) goto L774;
+        if (r30 != false) goto L772;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:763:0x1513, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:757:0x149b, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupAudio, r11, getTitle(r3));
+        if (android.text.TextUtils.isEmpty(r2.message) != false) goto L772;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:765:0x1529, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:758:0x149d, code lost:
     
-        if (r25.isRoundVideo() == false) goto L777;
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r3, getTitle(r4), "🖼 " + r29.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:766:0x152b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:759:0x14c8, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupRound, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupPhoto, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:768:0x1541, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:761:0x14e1, code lost:
     
-        if (r25.isMusic() == false) goto L780;
+        if (r29.isVideo() == false) goto L780;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:769:0x1543, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:762:0x14e3, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupMusic, r11, getTitle(r3));
+        if (r30 != false) goto L779;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:770:0x1555, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:764:0x14ed, code lost:
     
-        r2 = r25.messageOwner.media;
+        if (android.text.TextUtils.isEmpty(r29.messageOwner.message) != false) goto L779;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:771:0x155b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:765:0x14ef, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L783;
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r3, getTitle(r4), "📹 " + r29.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:772:0x155d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:766:0x151a, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupVideo, r3, getTitle(r4));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:768:0x1536, code lost:
+    
+        if (r29.isVoice() == false) goto L783;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:769:0x1538, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupAudio, r3, getTitle(r4));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:771:0x154e, code lost:
+    
+        if (r29.isRoundVideo() == false) goto L786;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:772:0x1550, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupRound, r3, getTitle(r4));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:774:0x1566, code lost:
+    
+        if (r29.isMusic() == false) goto L789;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:775:0x1568, code lost:
+    
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupMusic, r3, getTitle(r4));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:776:0x157a, code lost:
+    
+        r2 = r29.messageOwner.media;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:777:0x1580, code lost:
+    
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaContact) == false) goto L792;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:778:0x1582, code lost:
     
         r2 = (org.telegram.tgnet.TLRPC.TL_messageMediaContact) r2;
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupContact2, r11, getTitle(r3), org.telegram.messenger.ContactsController.formatName(r2.first_name, r2.last_name));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupContact2, r3, getTitle(r4), org.telegram.messenger.ContactsController.formatName(r2.first_name, r2.last_name));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:774:0x1581, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:780:0x15a6, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L789;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaPoll) == false) goto L798;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:775:0x1583, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:781:0x15a8, code lost:
     
         r2 = (org.telegram.tgnet.TLRPC.TL_messageMediaPoll) r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:776:0x1589, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:782:0x15ae, code lost:
     
-        if (r2.poll.quiz == false) goto L788;
+        if (r2.poll.quiz == false) goto L797;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:777:0x158b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:783:0x15b0, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupQuiz2, r11, getTitle(r3), r2.poll.question.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupQuiz2, r3, getTitle(r4), r2.poll.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:778:0x15a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:784:0x15ce, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupPoll2, r11, getTitle(r3), r2.poll.question.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupPoll2, r3, getTitle(r4), r2.poll.question.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:780:0x15c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:786:0x15ee, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L792;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaToDo) == false) goto L801;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:781:0x15cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:787:0x15f0, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupTodo2, r11, getTitle(r3), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r2).todo.title.text);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupTodo2, r3, getTitle(r4), ((org.telegram.tgnet.TLRPC.TL_messageMediaToDo) r2).todo.title.text);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:783:0x15ed, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:789:0x1612, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGame) == false) goto L795;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGame) == false) goto L804;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:784:0x15ef, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:790:0x1614, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupGame, r11, getTitle(r3), r25.messageOwner.media.game.title);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupGame, r3, getTitle(r4), r29.messageOwner.media.game.title);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:786:0x1611, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:792:0x1636, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGiveaway) == false) goto L798;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGiveaway) == false) goto L807;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:787:0x1613, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:793:0x1638, code lost:
     
         r2 = (org.telegram.tgnet.TLRPC.TL_messageMediaGiveaway) r2;
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageChannelGiveaway, getTitle(r3), java.lang.Integer.valueOf(r2.quantity), java.lang.Integer.valueOf(r2.months));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageChannelGiveaway, getTitle(r4), java.lang.Integer.valueOf(r2.quantity), java.lang.Integer.valueOf(r2.months));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:789:0x163c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:795:0x1661, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGiveawayResults) == false) goto L801;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGiveawayResults) == false) goto L810;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:790:0x163e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:796:0x1663, code lost:
     
         r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.BoostingGiveawayResults, new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:792:0x164a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:798:0x166f, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L805;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeo) != false) goto L814;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:794:0x164e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:800:0x1673, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L806;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaVenue) == false) goto L815;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:796:0x1657, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:802:0x167c, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L809;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaGeoLive) == false) goto L818;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:797:0x1659, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:803:0x167e, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupLiveLocation, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupLiveLocation, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:799:0x1670, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:805:0x1695, code lost:
     
-        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L832;
+        if ((r2 instanceof org.telegram.tgnet.TLRPC.TL_messageMediaDocument) == false) goto L841;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:801:0x1676, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:807:0x169b, code lost:
     
-        if (r25.isSticker() != false) goto L815;
+        if (r29.isSticker() != false) goto L824;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:803:0x167c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:809:0x16a1, code lost:
     
-        if (r25.isAnimatedSticker() == false) goto L816;
+        if (r29.isAnimatedSticker() == false) goto L825;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:805:0x1686, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:811:0x16ab, code lost:
     
-        if (r25.isGif() == false) goto L823;
+        if (r29.isGif() == false) goto L832;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:806:0x1688, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:812:0x16ad, code lost:
     
-        if (r26 != false) goto L822;
+        if (r30 != false) goto L831;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:808:0x1692, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:814:0x16b7, code lost:
     
-        if (android.text.TextUtils.isEmpty(r25.messageOwner.message) != false) goto L822;
+        if (android.text.TextUtils.isEmpty(r29.messageOwner.message) != false) goto L831;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:809:0x1694, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:815:0x16b9, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r11, getTitle(r3), "🎬 " + r25.messageOwner.message);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r3, getTitle(r4), "🎬 " + r29.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:810:0x16bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:816:0x16e4, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupGif, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupGif, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:811:0x16d4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:817:0x16f9, code lost:
     
-        if (r26 != false) goto L827;
+        if (r30 != false) goto L836;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:813:0x16de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:819:0x1703, code lost:
     
-        if (android.text.TextUtils.isEmpty(r25.messageOwner.message) != false) goto L827;
+        if (android.text.TextUtils.isEmpty(r29.messageOwner.message) != false) goto L836;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:814:0x16e0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:820:0x1705, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r11, getTitle(r3), "📎 " + r25.messageOwner.message);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r3, getTitle(r4), "📎 " + r29.messageOwner.message);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:815:0x170b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:821:0x1730, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupDocument, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupDocument, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:817:0x1720, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:823:0x1745, code lost:
     
-        r1 = r25.getStickerEmoji();
+        r1 = r29.getStickerEmoji();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:818:0x1724, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:824:0x1749, code lost:
     
-        if (r1 == null) goto L831;
+        if (r1 == null) goto L840;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:819:0x1726, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:825:0x174b, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupStickerEmoji, r11, getTitle(r3), r1);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupStickerEmoji, r3, getTitle(r4), r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:820:0x173c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:826:0x1761, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupSticker, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupSticker, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:821:0x174f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:827:0x1774, code lost:
     
-        if (r26 != false) goto L836;
+        if (r30 != false) goto L845;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:823:0x1757, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:829:0x177c, code lost:
     
-        if (android.text.TextUtils.isEmpty(r25.messageText) != false) goto L836;
+        if (android.text.TextUtils.isEmpty(r29.messageText) != false) goto L845;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:824:0x1759, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:830:0x177e, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r11, getTitle(r3), r25.messageText);
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupText, r3, getTitle(r4), r29.messageText);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:825:0x1773, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:831:0x1798, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupNoText, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString(org.telegram.messenger.R.string.NotificationMessageGroupNoText, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:827:0x1788, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:833:0x17ad, code lost:
     
-        r1 = org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupMap", org.telegram.messenger.R.string.NotificationMessageGroupMap, r11, getTitle(r3));
+        r1 = org.telegram.messenger.LocaleController.formatString("NotificationMessageGroupMap", org.telegram.messenger.R.string.NotificationMessageGroupMap, r3, getTitle(r4));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:830:0x06ba, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:836:0x06df, code lost:
     
-        if (r6.getBoolean(r22, r12) != false) goto L324;
+        if (r6.getBoolean(r25, r11) != false) goto L333;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -5888,16 +5918,15 @@ public class NotificationsController extends BaseController {
     private String getStringForMessage(MessageObject messageObject, boolean z, boolean[] zArr, boolean[] zArr2) {
         String str;
         String str2;
-        String title;
+        String string;
         TLRPC.Chat chat;
-        String str3;
-        boolean z2;
         String formatString;
-        String str4;
+        String str3;
         char c;
-        boolean z3;
+        boolean z2;
         String formatString2;
-        String str5;
+        String str4;
+        String string2;
         if (AndroidUtilities.needShowPasscode() || SharedConfig.isWaitingForPasscodeEnter) {
             return LocaleController.getString(R.string.YouHaveNewMessage);
         }
@@ -5920,16 +5949,16 @@ public class NotificationsController extends BaseController {
             j2 = j3 < 0 ? -j3 : 0L;
         }
         SharedPreferences notificationsSettings = getAccountInstance().getNotificationsSettings();
-        boolean z4 = notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CONTENT_PREVIEW + j, true);
+        boolean z3 = notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CONTENT_PREVIEW + j, true);
         if (messageObject.isFcmMessage()) {
             if (j2 == 0 && j3 != 0) {
-                if (!z4 || !notificationsSettings.getBoolean("EnablePreviewAll", true)) {
+                if (!z3 || !notificationsSettings.getBoolean("EnablePreviewAll", true)) {
                     if (zArr2 != null) {
                         zArr2[0] = false;
                     }
                     return LocaleController.formatString(R.string.NotificationMessageNoText, messageObject.localName);
                 }
-            } else if (j2 != 0 && (!z4 || ((!messageObject.localChannel && !notificationsSettings.getBoolean("EnablePreviewGroup", true)) || (messageObject.localChannel && !notificationsSettings.getBoolean("EnablePreviewChannel", true))))) {
+            } else if (j2 != 0 && (!z3 || ((!messageObject.localChannel && !notificationsSettings.getBoolean("EnablePreviewGroup", true)) || (messageObject.localChannel && !notificationsSettings.getBoolean("EnablePreviewChannel", true))))) {
                 if (zArr2 != null) {
                     zArr2[0] = false;
                 }
@@ -5954,33 +5983,43 @@ public class NotificationsController extends BaseController {
                 j = j3;
             }
         }
-        if (j3 > 0) {
-            if (!messageObject.messageOwner.from_scheduled) {
+        if (messageObject.getDialogId() == UserObject.OAUTH || messageObject.isOauthPush) {
+            str = "EnablePreviewChannel";
+            str2 = "EnablePreviewGroup";
+            string = LocaleController.getString(R.string.BotAuthNotificationTitle);
+        } else if (j3 > 0) {
+            if (messageObject.messageOwner.from_scheduled) {
+                if (j == clientUserId) {
+                    string2 = LocaleController.getString(R.string.MessageScheduledReminderNotification);
+                } else {
+                    string2 = LocaleController.getString(R.string.NotificationMessageScheduledName);
+                }
+                str2 = "EnablePreviewGroup";
+                String str5 = string2;
+                str = "EnablePreviewChannel";
+                string = str5;
+            } else {
                 TLRPC.User user = getMessagesController().getUser(Long.valueOf(j3));
                 if (user != null) {
-                    title = UserObject.getUserName(user);
+                    str = "EnablePreviewChannel";
+                    str2 = "EnablePreviewGroup";
+                    string = UserObject.getUserName(user);
                 } else {
                     str = "EnablePreviewChannel";
                     str2 = "EnablePreviewGroup";
-                    title = null;
+                    string = null;
                 }
-            } else if (j == clientUserId) {
-                title = LocaleController.getString(R.string.MessageScheduledReminderNotification);
-            } else {
-                title = LocaleController.getString(R.string.NotificationMessageScheduledName);
             }
-            str = "EnablePreviewChannel";
-            str2 = "EnablePreviewGroup";
         } else {
             str = "EnablePreviewChannel";
             str2 = "EnablePreviewGroup";
             TLRPC.Chat chat2 = getMessagesController().getChat(Long.valueOf(-j3));
             if (chat2 != null) {
-                title = getTitle(chat2);
+                string = getTitle(chat2);
             }
-            title = null;
+            string = null;
         }
-        if (title == null) {
+        if (string == null) {
             return null;
         }
         if (j2 != 0) {
@@ -5992,33 +6031,29 @@ public class NotificationsController extends BaseController {
             chat = null;
         }
         if (!DialogObject.isEncryptedDialog(j)) {
+            String str6 = str2;
+            String str7 = str;
             if (j2 != 0 || j3 == 0) {
                 if (j2 != 0) {
-                    if (!ChatObject.isChannel(chat) || chat.megagroup) {
-                        str3 = str2;
-                        z2 = false;
-                    } else {
-                        str3 = str2;
-                        z2 = true;
-                    }
-                    if (z4) {
-                        boolean z5 = !z2 ? true : true;
-                        if (z2) {
+                    boolean z4 = ChatObject.isChannel(chat) && !chat.megagroup;
+                    if (z3) {
+                        boolean z5 = !z4 ? true : true;
+                        if (z4) {
                         }
                     }
                     if (zArr2 != null) {
                         zArr2[0] = false;
                     }
                     if (ChatObject.isChannel(chat) && !chat.megagroup) {
-                        formatString = LocaleController.formatString(R.string.ChannelMessageNoText, title);
+                        formatString = LocaleController.formatString(R.string.ChannelMessageNoText, string);
                     } else if (messageObject.type == 29 && (MessageObject.getMedia(messageObject) instanceof TLRPC.TL_messageMediaPaidMedia)) {
-                        formatString = LocaleController.formatPluralString("NotificationMessagePaidMedia", (int) ((TLRPC.TL_messageMediaPaidMedia) MessageObject.getMedia(messageObject)).stars_amount, title);
+                        formatString = LocaleController.formatPluralString("NotificationMessagePaidMedia", (int) ((TLRPC.TL_messageMediaPaidMedia) MessageObject.getMedia(messageObject)).stars_amount, string);
                     } else {
-                        formatString = LocaleController.formatString(R.string.NotificationMessageGroupNoText, title, getTitle(chat));
+                        formatString = LocaleController.formatString(R.string.NotificationMessageGroupNoText, string, getTitle(chat));
                     }
                 }
-                str4 = null;
-            } else if (z4 && notificationsSettings.getBoolean("EnablePreviewAll", true)) {
+                str3 = null;
+            } else if (z3 && notificationsSettings.getBoolean("EnablePreviewAll", true)) {
                 TLRPC.Message message2 = messageObject.messageOwner;
                 if (message2 instanceof TLRPC.TL_messageService) {
                     TLRPC.MessageAction messageAction = message2.action;
@@ -6035,15 +6070,15 @@ public class NotificationsController extends BaseController {
                     } else if (messageAction instanceof TLRPC.TL_messageActionTodoAppendTasks) {
                         formatString = messageObject.messageText.toString();
                     } else if ((messageAction instanceof TLRPC.TL_messageActionUserJoined) || (messageAction instanceof TLRPC.TL_messageActionContactSignUp)) {
-                        formatString = LocaleController.formatString(R.string.NotificationContactJoined, title);
+                        formatString = LocaleController.formatString(R.string.NotificationContactJoined, string);
                     } else if (messageAction instanceof TLRPC.TL_messageActionUserUpdatedPhoto) {
-                        formatString = LocaleController.formatString(R.string.NotificationContactNewPhoto, title);
+                        formatString = LocaleController.formatString(R.string.NotificationContactNewPhoto, string);
                     } else if (messageAction instanceof TLRPC.TL_messageActionLoginUnknownLocation) {
                         String formatString3 = LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(messageObject.messageOwner.date * 1000), LocaleController.getInstance().getFormatterDay().format(messageObject.messageOwner.date * 1000));
                         int i = R.string.NotificationUnrecognizedDevice;
-                        String str6 = getUserConfig().getCurrentUser().first_name;
+                        String str8 = getUserConfig().getCurrentUser().first_name;
                         TLRPC.MessageAction messageAction2 = messageObject.messageOwner.action;
-                        formatString = LocaleController.formatString(i, str6, formatString3, messageAction2.title, messageAction2.address);
+                        formatString = LocaleController.formatString(i, str8, formatString3, messageAction2.title, messageAction2.address);
                     } else if ((messageAction instanceof TLRPC.TL_messageActionGameScore) || (messageAction instanceof TLRPC.TL_messageActionPaymentSent) || (messageAction instanceof TLRPC.TL_messageActionPaymentSentMe)) {
                         formatString = messageObject.messageText.toString();
                     } else if ((messageAction instanceof TLRPC.TL_messageActionStarGift) || (messageAction instanceof TLRPC.TL_messageActionGiftPremium) || (messageAction instanceof TLRPC.TL_messageActionGiftTon)) {
@@ -6071,134 +6106,134 @@ public class NotificationsController extends BaseController {
                             String themeEmoticonOrGiftTitle = TlUtils.getThemeEmoticonOrGiftTitle(((TLRPC.TL_messageActionSetChatTheme) messageAction).theme);
                             if (!TextUtils.isEmpty(themeEmoticonOrGiftTitle)) {
                                 c = 0;
-                                z3 = true;
+                                z2 = true;
                                 if (j == clientUserId) {
                                     formatString2 = LocaleController.formatString(R.string.ChatThemeChangedYou, themeEmoticonOrGiftTitle);
                                 } else {
-                                    formatString2 = LocaleController.formatString(R.string.ChatThemeChangedTo, title, themeEmoticonOrGiftTitle);
+                                    formatString2 = LocaleController.formatString(R.string.ChatThemeChangedTo, string, themeEmoticonOrGiftTitle);
                                 }
                             } else {
                                 if (j == clientUserId) {
                                     c = 0;
-                                    str5 = LocaleController.formatString(R.string.ChatThemeDisabledYou, new Object[0]);
-                                    z3 = true;
-                                    zArr[c] = z3;
-                                    return str5;
+                                    str4 = LocaleController.formatString(R.string.ChatThemeDisabledYou, new Object[0]);
+                                    z2 = true;
+                                    zArr[c] = z2;
+                                    return str4;
                                 }
                                 c = 0;
-                                z3 = true;
-                                formatString2 = LocaleController.formatString(R.string.ChatThemeDisabled, title, themeEmoticonOrGiftTitle);
+                                z2 = true;
+                                formatString2 = LocaleController.formatString(R.string.ChatThemeDisabled, string, themeEmoticonOrGiftTitle);
                             }
-                            str5 = formatString2;
-                            zArr[c] = z3;
-                            return str5;
+                            str4 = formatString2;
+                            zArr[c] = z2;
+                            return str4;
                         }
-                        str4 = null;
+                        str3 = null;
                     }
                 } else if (!messageObject.isMediaEmpty()) {
                     TLRPC.Message message3 = messageObject.messageOwner;
                     if (message3.media instanceof TLRPC.TL_messageMediaPhoto) {
                         if (!z && !TextUtils.isEmpty(message3.message)) {
-                            String formatString4 = LocaleController.formatString(R.string.NotificationMessageText, title, "🖼 " + messageObject.messageOwner.message);
+                            String formatString4 = LocaleController.formatString(R.string.NotificationMessageText, string, "🖼 " + messageObject.messageOwner.message);
                             zArr[0] = true;
                             return formatString4;
                         }
                         if (messageObject.messageOwner.media.ttl_seconds != 0) {
-                            formatString = LocaleController.formatString(R.string.NotificationMessageSDPhoto, title);
+                            formatString = LocaleController.formatString(R.string.NotificationMessageSDPhoto, string);
                         } else {
-                            formatString = LocaleController.formatString(R.string.NotificationMessagePhoto, title);
+                            formatString = LocaleController.formatString(R.string.NotificationMessagePhoto, string);
                         }
                     } else if (messageObject.isVideo()) {
                         if (!z && !TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                            String formatString5 = LocaleController.formatString(R.string.NotificationMessageText, title, "📹 " + messageObject.messageOwner.message);
+                            String formatString5 = LocaleController.formatString(R.string.NotificationMessageText, string, "📹 " + messageObject.messageOwner.message);
                             zArr[0] = true;
                             return formatString5;
                         }
                         if (messageObject.messageOwner.media.ttl_seconds != 0) {
-                            formatString = LocaleController.formatString(R.string.NotificationMessageSDVideo, title);
+                            formatString = LocaleController.formatString(R.string.NotificationMessageSDVideo, string);
                         } else {
-                            formatString = LocaleController.formatString(R.string.NotificationMessageVideo, title);
+                            formatString = LocaleController.formatString(R.string.NotificationMessageVideo, string);
                         }
                     } else if (messageObject.isGame()) {
-                        formatString = LocaleController.formatString(R.string.NotificationMessageGame, title, messageObject.messageOwner.media.game.title);
+                        formatString = LocaleController.formatString(R.string.NotificationMessageGame, string, messageObject.messageOwner.media.game.title);
                     } else if (messageObject.isVoice()) {
-                        formatString = LocaleController.formatString(R.string.NotificationMessageAudio, title);
+                        formatString = LocaleController.formatString(R.string.NotificationMessageAudio, string);
                     } else if (messageObject.isRoundVideo()) {
-                        formatString = LocaleController.formatString(R.string.NotificationMessageRound, title);
+                        formatString = LocaleController.formatString(R.string.NotificationMessageRound, string);
                     } else if (messageObject.isMusic()) {
-                        formatString = LocaleController.formatString(R.string.NotificationMessageMusic, title);
+                        formatString = LocaleController.formatString(R.string.NotificationMessageMusic, string);
                     } else {
                         TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
                         if (messageMedia instanceof TLRPC.TL_messageMediaContact) {
                             TLRPC.TL_messageMediaContact tL_messageMediaContact = (TLRPC.TL_messageMediaContact) messageMedia;
-                            formatString = LocaleController.formatString(R.string.NotificationMessageContact2, title, ContactsController.formatName(tL_messageMediaContact.first_name, tL_messageMediaContact.last_name));
+                            formatString = LocaleController.formatString(R.string.NotificationMessageContact2, string, ContactsController.formatName(tL_messageMediaContact.first_name, tL_messageMediaContact.last_name));
                         } else if (messageMedia instanceof TLRPC.TL_messageMediaGiveaway) {
                             TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) messageMedia;
-                            formatString = LocaleController.formatString(R.string.NotificationMessageChannelGiveaway, title, Integer.valueOf(tL_messageMediaGiveaway.quantity), Integer.valueOf(tL_messageMediaGiveaway.months));
+                            formatString = LocaleController.formatString(R.string.NotificationMessageChannelGiveaway, string, Integer.valueOf(tL_messageMediaGiveaway.quantity), Integer.valueOf(tL_messageMediaGiveaway.months));
                         } else if (messageMedia instanceof TLRPC.TL_messageMediaGiveawayResults) {
                             formatString = LocaleController.formatString(R.string.BoostingGiveawayResults, new Object[0]);
                         } else if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
                             TLRPC.Poll poll = ((TLRPC.TL_messageMediaPoll) messageMedia).poll;
                             if (poll.quiz) {
-                                formatString = LocaleController.formatString(R.string.NotificationMessageQuiz2, title, poll.question.text);
+                                formatString = LocaleController.formatString(R.string.NotificationMessageQuiz2, string, poll.question.text);
                             } else {
-                                formatString = LocaleController.formatString(R.string.NotificationMessagePoll2, title, poll.question.text);
+                                formatString = LocaleController.formatString(R.string.NotificationMessagePoll2, string, poll.question.text);
                             }
                         } else if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
-                            formatString = LocaleController.formatString(R.string.NotificationMessageTodo2, title, ((TLRPC.TL_messageMediaToDo) messageMedia).todo.title.text);
+                            formatString = LocaleController.formatString(R.string.NotificationMessageTodo2, string, ((TLRPC.TL_messageMediaToDo) messageMedia).todo.title.text);
                         } else if ((messageMedia instanceof TLRPC.TL_messageMediaGeo) || (messageMedia instanceof TLRPC.TL_messageMediaVenue)) {
-                            formatString = LocaleController.formatString(R.string.NotificationMessageMap, title);
+                            formatString = LocaleController.formatString(R.string.NotificationMessageMap, string);
                         } else if (messageMedia instanceof TLRPC.TL_messageMediaGeoLive) {
-                            formatString = LocaleController.formatString(R.string.NotificationMessageLiveLocation, title);
+                            formatString = LocaleController.formatString(R.string.NotificationMessageLiveLocation, string);
                         } else if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
                             if (messageObject.isSticker() || messageObject.isAnimatedSticker()) {
                                 String stickerEmoji = messageObject.getStickerEmoji();
                                 if (stickerEmoji != null) {
-                                    formatString = LocaleController.formatString(R.string.NotificationMessageStickerEmoji, title, stickerEmoji);
+                                    formatString = LocaleController.formatString(R.string.NotificationMessageStickerEmoji, string, stickerEmoji);
                                 } else {
-                                    formatString = LocaleController.formatString(R.string.NotificationMessageSticker, title);
+                                    formatString = LocaleController.formatString(R.string.NotificationMessageSticker, string);
                                 }
                             } else if (messageObject.isGif()) {
                                 if (!z && !TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                                    String formatString6 = LocaleController.formatString(R.string.NotificationMessageText, title, "🎬 " + messageObject.messageOwner.message);
+                                    String formatString6 = LocaleController.formatString(R.string.NotificationMessageText, string, "🎬 " + messageObject.messageOwner.message);
                                     zArr[0] = true;
                                     return formatString6;
                                 }
-                                formatString = LocaleController.formatString(R.string.NotificationMessageGif, title);
+                                formatString = LocaleController.formatString(R.string.NotificationMessageGif, string);
                             } else {
                                 if (!z && !TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                                    String formatString7 = LocaleController.formatString(R.string.NotificationMessageText, title, "📎 " + messageObject.messageOwner.message);
+                                    String formatString7 = LocaleController.formatString(R.string.NotificationMessageText, string, "📎 " + messageObject.messageOwner.message);
                                     zArr[0] = true;
                                     return formatString7;
                                 }
-                                formatString = LocaleController.formatString(R.string.NotificationMessageDocument, title);
+                                formatString = LocaleController.formatString(R.string.NotificationMessageDocument, string);
                             }
                         } else {
                             if (!z && !TextUtils.isEmpty(messageObject.messageText)) {
-                                String formatString8 = LocaleController.formatString(R.string.NotificationMessageText, title, messageObject.messageText);
+                                String formatString8 = LocaleController.formatString(R.string.NotificationMessageText, string, messageObject.messageText);
                                 zArr[0] = true;
                                 return formatString8;
                             }
-                            formatString = LocaleController.formatString(R.string.NotificationMessageNoText, title);
+                            formatString = LocaleController.formatString(R.string.NotificationMessageNoText, string);
                         }
                     }
                 } else if (!z) {
                     if (!TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                        String formatString9 = LocaleController.formatString(R.string.NotificationMessageText, title, messageObject.messageOwner.message);
+                        String formatString9 = LocaleController.formatString(R.string.NotificationMessageText, string, messageObject.messageOwner.message);
                         zArr[0] = true;
                         return formatString9;
                     }
-                    formatString = LocaleController.formatString(R.string.NotificationMessageNoText, title);
+                    formatString = LocaleController.formatString(R.string.NotificationMessageNoText, string);
                 } else {
-                    formatString = LocaleController.formatString(R.string.NotificationMessageNoText, title);
+                    formatString = LocaleController.formatString(R.string.NotificationMessageNoText, string);
                 }
             } else {
                 if (zArr2 != null) {
                     zArr2[0] = false;
                 }
-                formatString = LocaleController.formatString(R.string.NotificationMessageNoText, title);
+                formatString = LocaleController.formatString(R.string.NotificationMessageNoText, string);
             }
-            return str4;
+            return str3;
         }
         formatString = LocaleController.getString(R.string.YouHaveNewMessage);
         return formatString;
@@ -6235,30 +6270,30 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showNotifications$33() {
+    public /* synthetic */ void lambda$showNotifications$34() {
         showOrUpdateNotification(false);
     }
 
     public void showNotifications() {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda74
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda75
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$showNotifications$33();
+                NotificationsController.this.lambda$showNotifications$34();
             }
         });
     }
 
     public void hideNotifications() {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda39
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$hideNotifications$34();
+                NotificationsController.this.lambda$hideNotifications$35();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$hideNotifications$34() {
+    public /* synthetic */ void lambda$hideNotifications$35() {
         notificationManager.cancel(this.notificationId);
         this.lastWearNotifiedMessageId.clear();
         for (int i = 0; i < this.wearNotificationsIds.size(); i++) {
@@ -6280,10 +6315,10 @@ public class NotificationsController extends BaseController {
                 }
             }
             this.wearNotificationsIds.clear();
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda41
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda36
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationsController.lambda$dismissNotification$35();
+                    NotificationsController.lambda$dismissNotification$36();
                 }
             });
         } catch (Exception e) {
@@ -6292,7 +6327,7 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$dismissNotification$35() {
+    public static /* synthetic */ void lambda$dismissNotification$36() {
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.pushMessagesUpdated, new Object[0]);
     }
 
@@ -6311,10 +6346,10 @@ public class NotificationsController extends BaseController {
             if (getNotifyOverride(getAccountInstance().getNotificationsSettings(), this.openedDialogId, this.openedTopicId) == 2) {
                 return;
             }
-            notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda36
+            notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda31
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NotificationsController.this.lambda$playInChatSound$37();
+                    NotificationsController.this.lambda$playInChatSound$38();
                 }
             });
         } catch (Exception e2) {
@@ -6323,7 +6358,7 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$playInChatSound$37() {
+    public /* synthetic */ void lambda$playInChatSound$38() {
         if (Math.abs(SystemClock.elapsedRealtime() - this.lastSoundPlay) <= 500) {
             return;
         }
@@ -6331,10 +6366,10 @@ public class NotificationsController extends BaseController {
             if (this.soundPool == null) {
                 SoundPool soundPool = new SoundPool(3, 1, 0);
                 this.soundPool = soundPool;
-                soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda43
+                soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda65
                     @Override // android.media.SoundPool.OnLoadCompleteListener
                     public final void onLoadComplete(SoundPool soundPool2, int i, int i2) {
-                        NotificationsController.lambda$playInChatSound$36(soundPool2, i, i2);
+                        NotificationsController.lambda$playInChatSound$37(soundPool2, i, i2);
                     }
                 });
             }
@@ -6356,7 +6391,7 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$playInChatSound$36(SoundPool soundPool, int i, int i2) {
+    public static /* synthetic */ void lambda$playInChatSound$37(SoundPool soundPool, int i, int i2) {
         if (i2 == 0) {
             try {
                 soundPool.play(i, 1.0f, 1.0f, 1, 0, 1.0f);
@@ -6382,16 +6417,16 @@ public class NotificationsController extends BaseController {
     }
 
     protected void repeatNotificationMaybe() {
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda40
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$repeatNotificationMaybe$38();
+                NotificationsController.this.lambda$repeatNotificationMaybe$39();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$repeatNotificationMaybe$38() {
+    public /* synthetic */ void lambda$repeatNotificationMaybe$39() {
         int i = Calendar.getInstance().get(11);
         if (i >= 11 && i <= 22) {
             notificationManager.cancel(this.notificationId);
@@ -6419,7 +6454,7 @@ public class NotificationsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: deleteNotificationChannelInternal, reason: merged with bridge method [inline-methods] */
-    public void lambda$deleteNotificationChannel$39(long j, long j2, int i) {
+    public void lambda$deleteNotificationChannel$40(long j, long j2, int i) {
         if (Build.VERSION.SDK_INT < 26) {
             return;
         }
@@ -6469,10 +6504,10 @@ public class NotificationsController extends BaseController {
         if (Build.VERSION.SDK_INT < 26) {
             return;
         }
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda64
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda63
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$deleteNotificationChannel$39(j, j2, i);
+                NotificationsController.this.lambda$deleteNotificationChannel$40(j, j2, i);
             }
         });
     }
@@ -6482,7 +6517,7 @@ public class NotificationsController extends BaseController {
     }
 
     /* renamed from: deleteNotificationChannelGlobalInternal, reason: merged with bridge method [inline-methods] */
-    public void lambda$deleteNotificationChannelGlobal$40(int i, int i2) {
+    public void lambda$deleteNotificationChannelGlobal$41(int i, int i2) {
         String str;
         String str2;
         String str3;
@@ -6567,10 +6602,10 @@ public class NotificationsController extends BaseController {
         if (Build.VERSION.SDK_INT < 26) {
             return;
         }
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda60
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda59
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$deleteNotificationChannelGlobal$40(i, i2);
+                NotificationsController.this.lambda$deleteNotificationChannelGlobal$41(i, i2);
             }
         });
     }
@@ -6579,16 +6614,16 @@ public class NotificationsController extends BaseController {
         if (Build.VERSION.SDK_INT < 26) {
             return;
         }
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda61
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda60
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$deleteAllNotificationChannels$41();
+                NotificationsController.this.lambda$deleteAllNotificationChannels$42();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$deleteAllNotificationChannels$41() {
+    public /* synthetic */ void lambda$deleteAllNotificationChannels$42() {
         try {
             SharedPreferences notificationsSettings = getAccountInstance().getNotificationsSettings();
             Map<String, ?> all = notificationsSettings.getAll();
@@ -6713,7 +6748,7 @@ public class NotificationsController extends BaseController {
                 int size = notificationChannels.size();
                 SharedPreferences.Editor editor = null;
                 for (int i = 0; i < size; i++) {
-                    NotificationChannel m = NotificationsController$$ExternalSyntheticApiModelOutline13.m(notificationChannels.get(i));
+                    NotificationChannel m = NotificationsController$$ExternalSyntheticApiModelOutline15.m(notificationChannels.get(i));
                     id = m.getId();
                     if (id.startsWith(str)) {
                         importance = m.getImportance();
@@ -6777,7 +6812,7 @@ public class NotificationsController extends BaseController {
         String str10 = str5;
         String str11 = str4;
         for (int i2 = 0; i2 < size2; i2++) {
-            id2 = NotificationsController$$ExternalSyntheticApiModelOutline16.m(notificationChannelGroups.get(i2)).getId();
+            id2 = NotificationsController$$ExternalSyntheticApiModelOutline18.m(notificationChannelGroups.get(i2)).getId();
             if (str2 != null && str2.equals(id2)) {
                 str2 = null;
             } else if (str3 != null && str3.equals(id2)) {
@@ -6831,20 +6866,20 @@ public class NotificationsController extends BaseController {
         this.channelGroupsCreated = true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x05d1 A[LOOP:1: B:99:0x05ce->B:101:0x05d1, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x05e6  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x05f2 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0603 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x061b  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x05d7 A[LOOP:1: B:99:0x05d4->B:101:0x05d7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x05ec  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x05f8 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0609 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0621  */
     /* JADX WARN: Removed duplicated region for block: B:146:0x044b  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x04c2  */
-    /* JADX WARN: Removed duplicated region for block: B:207:0x0511  */
-    /* JADX WARN: Removed duplicated region for block: B:209:0x04bc  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x0561  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x04c8  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x0517  */
+    /* JADX WARN: Removed duplicated region for block: B:209:0x04c2  */
+    /* JADX WARN: Removed duplicated region for block: B:266:0x0567  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x01c9  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0581 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0632  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x05c0 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0587 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0638  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x05c6 A[ADDED_TO_REGION] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -7478,75 +7513,76 @@ public class NotificationsController extends BaseController {
         return str18;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(52:133|134|135|(3:553|554|(1:556)(4:(1:(2:566|(1:568)(1:569))(1:560))(1:570)|561|(1:563)(1:565)|564))(4:138|(4:140|(7:142|(2:144|(1:146))(1:164)|149|(1:151)|152|(1:163)(2:(1:156)(2:159|(1:161)(1:162))|157)|158)(1:165)|147|148)|166|167)|(47:175|(46:177|(1:550)(3:180|(1:182)(1:549)|(2:184|(1:186)(2:541|(1:543)(2:544|(1:546)(1:547))))(1:548))|(2:189|(38:191|192|(4:194|(1:196)(1:537)|197|(1:199)(1:536))(1:538)|200|(5:527|528|(1:530)(1:535)|531|(1:533)(1:534))(1:(1:(3:206|(1:208)(1:504)|209)(3:505|(1:507)(1:509)|508))(2:510|(5:(1:513)(1:525)|514|(1:516)(2:(1:522)(1:524)|523)|517|(1:519)(1:520))(31:526|(1:212)(1:503)|213|(1:502)(1:217)|218|(1:221)|(1:225)|(1:501)(1:229)|(6:231|(1:233)|234|(1:236)|237|(1:239)(1:240))|(3:244|245|(1:249))|(1:255)(1:500)|256|257|(1:259)(2:438|(2:(1:441)(2:443|(1:445))|442)(20:446|(4:448|(2:451|449)|452|453)(18:456|(5:458|(1:(1:461)(2:462|(1:464)))|465|(1:494)(2:469|(16:(2:474|(1:482))(2:483|(2:485|(1:493)))|262|(1:269)|270|271|272|(1:274)|275|(3:277|278|279)(1:434)|280|(1:282)(1:(12:418|(1:420)(3:421|422|(4:424|(1:426)(1:431)|427|(1:429)))|284|(2:414|415)(1:(4:289|290|(1:292)|394)(2:395|(4:410|411|(1:413)|394)(3:399|(2:401|(1:403))(2:404|(2:406|(2:408|409)))|394)))|(1:393)(7:(3:388|(1:390)(1:392)|391)|(2:302|(8:304|(1:(5:310|(1:312)(1:369)|313|(1:315)(2:356|(1:358)(7:(2:367|368)(2:362|(1:364)(1:365))|366|318|(1:355)(4:326|(4:328|(3:330|(4:332|(1:334)(1:338)|335|336)(2:339|340)|337)|341|342)|343|344)|(1:352)|353|354))|316)(6:370|371|(0)(0)|313|(0)(0)|316))|372|371|(0)(0)|313|(0)(0)|316)(2:373|(1:375)(3:376|(2:378|(2:382|383))|386)))|387|(0)(0)|313|(0)(0)|316)|317|318|(1:320)|355|(4:346|348|350|352)|353|354))|283|284|(1:286)|414|415))|455)(2:495|(1:499))|261|262|(3:265|267|269)|270|271|272|(0)|275|(0)(0)|280|(0)(0)|283|284|(0)|414|415)|454|455|261|262|(0)|270|271|272|(0)|275|(0)(0)|280|(0)(0)|283|284|(0)|414|415))|260|261|262|(0)|270|271|272|(0)|275|(0)(0)|280|(0)(0)|283|284|(0)|414|415)))|210|(0)(0)|213|(1:215)|502|218|(1:221)|(2:223|225)|(0)|501|(0)|(4:242|244|245|(2:247|249))|(0)(0)|256|257|(0)(0)|260|261|262|(0)|270|271|272|(0)|275|(0)(0)|280|(0)(0)|283|284|(0)|414|415))(1:540)|539|192|(0)(0)|200|(1:202)|527|528|(0)(0)|531|(0)(0)|210|(0)(0)|213|(0)|502|218|(0)|(0)|(0)|501|(0)|(0)|(0)(0)|256|257|(0)(0)|260|261|262|(0)|270|271|272|(0)|275|(0)(0)|280|(0)(0)|283|284|(0)|414|415)(1:551)|187|(0)(0)|539|192|(0)(0)|200|(0)|527|528|(0)(0)|531|(0)(0)|210|(0)(0)|213|(0)|502|218|(0)|(0)|(0)|501|(0)|(0)|(0)(0)|256|257|(0)(0)|260|261|262|(0)|270|271|272|(0)|275|(0)(0)|280|(0)(0)|283|284|(0)|414|415)|552|(0)(0)|187|(0)(0)|539|192|(0)(0)|200|(0)|527|528|(0)(0)|531|(0)(0)|210|(0)(0)|213|(0)|502|218|(0)|(0)|(0)|501|(0)|(0)|(0)(0)|256|257|(0)(0)|260|261|262|(0)|270|271|272|(0)|275|(0)(0)|280|(0)(0)|283|284|(0)|414|415) */
-    /* JADX WARN: Code restructure failed: missing block: B:416:0x0c80, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(54:133|134|135|(3:556|557|(1:559)(4:(1:(2:569|(1:571)(1:572))(1:563))(1:573)|564|(1:566)(1:568)|567))(4:138|(4:140|(7:142|(2:144|(1:146))(1:164)|149|(1:151)|152|(1:163)(2:(1:156)(2:159|(1:161)(1:162))|157)|158)(1:165)|147|148)|166|167)|(49:175|(48:177|(1:553)(3:180|(1:182)(1:552)|(2:184|(1:186)(2:544|(1:546)(2:547|(1:549)(1:550))))(1:551))|(2:189|(40:191|192|(4:194|(1:196)(1:540)|197|(1:199)(1:539))(1:541)|200|(5:530|531|(1:533)(1:538)|534|(1:536)(1:537))(1:(1:(3:206|(1:208)(1:507)|209)(3:508|(1:510)(1:512)|511))(2:513|(5:(1:516)(1:528)|517|(1:519)(2:(1:525)(1:527)|526)|520|(1:522)(1:523))(33:529|(1:212)(1:506)|213|(1:505)(1:217)|218|(1:221)|(1:225)|(1:504)(1:229)|(6:231|(1:233)|234|(1:236)|237|(1:239)(1:240))|(3:244|245|(1:249))|(1:255)(1:503)|256|(1:258)|259|260|(1:262)(2:441|(2:(1:444)(2:446|(1:448))|445)(20:449|(4:451|(2:454|452)|455|456)(18:459|(5:461|(1:(1:464)(2:465|(1:467)))|468|(1:497)(2:472|(16:(2:477|(1:485))(2:486|(2:488|(1:496)))|265|(1:272)|273|274|275|(1:277)|278|(3:280|281|282)(1:437)|283|(1:285)(1:(12:421|(1:423)(3:424|425|(4:427|(1:429)(1:434)|430|(1:432)))|287|(2:417|418)(1:(4:292|293|(1:295)|397)(2:398|(4:413|414|(1:416)|397)(3:402|(2:404|(1:406))(2:407|(2:409|(2:411|412)))|397)))|(1:396)(7:(3:391|(1:393)(1:395)|394)|(2:305|(8:307|(1:(5:313|(1:315)(1:372)|316|(1:318)(2:359|(1:361)(7:(2:370|371)(2:365|(1:367)(1:368))|369|321|(1:358)(4:329|(4:331|(3:333|(4:335|(1:337)(1:341)|338|339)(2:342|343)|340)|344|345)|346|347)|(1:355)|356|357))|319)(6:373|374|(0)(0)|316|(0)(0)|319))|375|374|(0)(0)|316|(0)(0)|319)(2:376|(1:378)(3:379|(2:381|(2:385|386))|389)))|390|(0)(0)|316|(0)(0)|319)|320|321|(1:323)|358|(4:349|351|353|355)|356|357))|286|287|(1:289)|417|418))|458)(2:498|(1:502))|264|265|(3:268|270|272)|273|274|275|(0)|278|(0)(0)|283|(0)(0)|286|287|(0)|417|418)|457|458|264|265|(0)|273|274|275|(0)|278|(0)(0)|283|(0)(0)|286|287|(0)|417|418))|263|264|265|(0)|273|274|275|(0)|278|(0)(0)|283|(0)(0)|286|287|(0)|417|418)))|210|(0)(0)|213|(1:215)|505|218|(1:221)|(2:223|225)|(0)|504|(0)|(4:242|244|245|(2:247|249))|(0)(0)|256|(0)|259|260|(0)(0)|263|264|265|(0)|273|274|275|(0)|278|(0)(0)|283|(0)(0)|286|287|(0)|417|418))(1:543)|542|192|(0)(0)|200|(1:202)|530|531|(0)(0)|534|(0)(0)|210|(0)(0)|213|(0)|505|218|(0)|(0)|(0)|504|(0)|(0)|(0)(0)|256|(0)|259|260|(0)(0)|263|264|265|(0)|273|274|275|(0)|278|(0)(0)|283|(0)(0)|286|287|(0)|417|418)(1:554)|187|(0)(0)|542|192|(0)(0)|200|(0)|530|531|(0)(0)|534|(0)(0)|210|(0)(0)|213|(0)|505|218|(0)|(0)|(0)|504|(0)|(0)|(0)(0)|256|(0)|259|260|(0)(0)|263|264|265|(0)|273|274|275|(0)|278|(0)(0)|283|(0)(0)|286|287|(0)|417|418)|555|(0)(0)|187|(0)(0)|542|192|(0)(0)|200|(0)|530|531|(0)(0)|534|(0)(0)|210|(0)(0)|213|(0)|505|218|(0)|(0)|(0)|504|(0)|(0)|(0)(0)|256|(0)|259|260|(0)(0)|263|264|265|(0)|273|274|275|(0)|278|(0)(0)|283|(0)(0)|286|287|(0)|417|418) */
+    /* JADX WARN: Code restructure failed: missing block: B:419:0x0c91, code lost:
     
-        if (android.os.Build.VERSION.SDK_INT >= 26) goto L517;
+        if (android.os.Build.VERSION.SDK_INT >= 26) goto L520;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:435:0x0bbf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:438:0x0bd0, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:437:0x0bdb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:440:0x0bec, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:584:0x03dc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:587:0x03dc, code lost:
     
         if (r3 == 0) goto L152;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:585:0x03de, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:588:0x03de, code lost:
     
         r4 = org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.NotificationHiddenChatName);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:587:0x03e5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:590:0x03e5, code lost:
     
         r4 = org.telegram.messenger.LocaleController.getString(org.telegram.messenger.R.string.NotificationHiddenName);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:117:0x03f8 A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0416 A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x04f4 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x0667  */
-    /* JADX WARN: Removed duplicated region for block: B:189:0x0731 A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x0776 A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x0813 A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x0943  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x094f A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x095f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x0965 A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x0972 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x097e A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x099e  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x09b5  */
-    /* JADX WARN: Removed duplicated region for block: B:259:0x09f0 A[Catch: Exception -> 0x0060, TRY_ENTER, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x0b79 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x0bb8 A[Catch: all -> 0x0bbf, TryCatch #4 {all -> 0x0bbf, blocks: (B:272:0x0b9d, B:274:0x0bb8, B:275:0x0bc2, B:279:0x0bc9, B:280:0x0bd1), top: B:271:0x0b9d }] */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x0bc6  */
-    /* JADX WARN: Removed duplicated region for block: B:282:0x0be0 A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:286:0x0c3d  */
-    /* JADX WARN: Removed duplicated region for block: B:312:0x0d8d A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:315:0x0d9d A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:356:0x0da7  */
-    /* JADX WARN: Removed duplicated region for block: B:369:0x0d98  */
-    /* JADX WARN: Removed duplicated region for block: B:417:0x0be6  */
-    /* JADX WARN: Removed duplicated region for block: B:434:0x0bd0  */
-    /* JADX WARN: Removed duplicated region for block: B:438:0x0a0e A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:500:0x09ba  */
-    /* JADX WARN: Removed duplicated region for block: B:503:0x0947  */
-    /* JADX WARN: Removed duplicated region for block: B:530:0x090a A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:533:0x0937  */
-    /* JADX WARN: Removed duplicated region for block: B:534:0x093c  */
-    /* JADX WARN: Removed duplicated region for block: B:535:0x0917 A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:538:0x07fd  */
-    /* JADX WARN: Removed duplicated region for block: B:540:0x0752  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0138 A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:551:0x0725  */
-    /* JADX WARN: Removed duplicated region for block: B:556:0x05f0 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:557:0x05f1  */
-    /* JADX WARN: Removed duplicated region for block: B:579:0x04d1  */
-    /* JADX WARN: Removed duplicated region for block: B:582:0x040b A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:608:0x0145 A[Catch: Exception -> 0x0060, TryCatch #0 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0454, B:130:0x045f, B:134:0x04de, B:138:0x0503, B:140:0x0527, B:142:0x053f, B:144:0x0543, B:148:0x05ba, B:151:0x0555, B:152:0x055b, B:156:0x0568, B:158:0x05b0, B:159:0x057f, B:161:0x0586, B:162:0x059a, B:167:0x05c9, B:170:0x0654, B:180:0x066f, B:182:0x0689, B:184:0x06c0, B:186:0x06ca, B:189:0x0731, B:192:0x0756, B:194:0x0776, B:196:0x07b6, B:197:0x07d3, B:199:0x07e5, B:200:0x080a, B:202:0x0813, B:206:0x0821, B:208:0x0831, B:209:0x0846, B:213:0x0949, B:215:0x094f, B:223:0x0965, B:225:0x096b, B:231:0x097e, B:234:0x0988, B:237:0x0991, B:253:0x09b0, B:256:0x09bd, B:259:0x09f0, B:262:0x0b22, B:265:0x0b7b, B:267:0x0b7f, B:269:0x0b85, B:282:0x0be0, B:290:0x0c45, B:296:0x0c8d, B:300:0x0cce, B:302:0x0cd6, B:304:0x0cda, B:306:0x0ce2, B:310:0x0ced, B:312:0x0d8d, B:315:0x0d9d, B:318:0x0de2, B:320:0x0de8, B:322:0x0dec, B:324:0x0df7, B:326:0x0dfd, B:328:0x0e07, B:330:0x0e18, B:332:0x0e26, B:334:0x0e45, B:335:0x0e4f, B:337:0x0e82, B:342:0x0e94, B:346:0x0eb7, B:348:0x0ebd, B:350:0x0ec5, B:352:0x0ecb, B:353:0x0eed, B:358:0x0daa, B:364:0x0dbe, B:368:0x0dcc, B:370:0x0d17, B:372:0x0d1e, B:373:0x0d21, B:375:0x0d2d, B:378:0x0d38, B:380:0x0d40, B:385:0x0d79, B:386:0x0d82, B:388:0x0c99, B:390:0x0ca1, B:391:0x0cc9, B:393:0x0dd4, B:401:0x0c5a, B:406:0x0c68, B:411:0x0c71, B:415:0x0c7b, B:418:0x0be8, B:420:0x0bf5, B:437:0x0bdb, B:438:0x0a0e, B:441:0x0a14, B:442:0x0a2b, B:445:0x0a24, B:446:0x0a40, B:448:0x0a55, B:449:0x0a60, B:451:0x0a68, B:453:0x0a77, B:456:0x0a82, B:458:0x0a8a, B:461:0x0a99, B:464:0x0aa3, B:465:0x0aa6, B:467:0x0aac, B:469:0x0ab5, B:471:0x0abe, B:474:0x0ac6, B:476:0x0acc, B:478:0x0ad0, B:480:0x0ad8, B:485:0x0ae4, B:487:0x0aea, B:489:0x0aee, B:491:0x0af6, B:495:0x0b01, B:497:0x0b12, B:499:0x0b18, B:504:0x083e, B:505:0x0864, B:507:0x0874, B:508:0x0889, B:509:0x0881, B:514:0x08b2, B:516:0x08ba, B:517:0x08d4, B:523:0x08ce, B:528:0x08fe, B:530:0x090a, B:531:0x091f, B:535:0x0917, B:537:0x07c2, B:541:0x06e2, B:543:0x06f5, B:544:0x0701, B:546:0x0705, B:554:0x05de, B:560:0x05f7, B:561:0x0639, B:564:0x0642, B:566:0x060b, B:568:0x0610, B:569:0x0624, B:571:0x046e, B:574:0x047b, B:576:0x0498, B:577:0x0434, B:580:0x0400, B:582:0x040b, B:585:0x03de, B:587:0x03e5, B:588:0x03ec, B:591:0x03a2, B:592:0x03a7, B:597:0x032b, B:599:0x0331, B:604:0x02e0, B:606:0x0293, B:608:0x0145, B:610:0x014b, B:611:0x014e, B:614:0x0157, B:615:0x0160, B:616:0x0173, B:618:0x017a, B:619:0x0194, B:621:0x019b, B:623:0x01a3, B:624:0x01da, B:625:0x012b, B:627:0x022c, B:245:0x09a1, B:383:0x0d4a), top: B:11:0x0035, inners: #1, #3 }] */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x03f8 A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x0416 A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x04f5 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0668  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x0732 A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x0777 A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x0815 A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:212:0x0949  */
+    /* JADX WARN: Removed duplicated region for block: B:215:0x0955 A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x0965 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x096b A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x0978 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x0984 A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x09a4  */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x09bb  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x09f4 A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x0a01 A[Catch: Exception -> 0x0060, TRY_ENTER, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:267:0x0b8a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:277:0x0bc9 A[Catch: all -> 0x0bd0, TryCatch #0 {all -> 0x0bd0, blocks: (B:275:0x0bae, B:277:0x0bc9, B:278:0x0bd3, B:282:0x0bda, B:283:0x0be2), top: B:274:0x0bae }] */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x0bd7  */
+    /* JADX WARN: Removed duplicated region for block: B:285:0x0bf1 A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x0c4e  */
+    /* JADX WARN: Removed duplicated region for block: B:315:0x0d9e A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:318:0x0dae A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:359:0x0db8  */
+    /* JADX WARN: Removed duplicated region for block: B:372:0x0da9  */
+    /* JADX WARN: Removed duplicated region for block: B:420:0x0bf7  */
+    /* JADX WARN: Removed duplicated region for block: B:437:0x0be1  */
+    /* JADX WARN: Removed duplicated region for block: B:441:0x0a1f A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:503:0x09c0  */
+    /* JADX WARN: Removed duplicated region for block: B:506:0x094d  */
+    /* JADX WARN: Removed duplicated region for block: B:533:0x090f A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:536:0x093d  */
+    /* JADX WARN: Removed duplicated region for block: B:537:0x0942  */
+    /* JADX WARN: Removed duplicated region for block: B:538:0x091c A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:541:0x07ff  */
+    /* JADX WARN: Removed duplicated region for block: B:543:0x0753  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0138 A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:554:0x0726  */
+    /* JADX WARN: Removed duplicated region for block: B:559:0x05f1 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:560:0x05f2  */
+    /* JADX WARN: Removed duplicated region for block: B:582:0x04d2  */
+    /* JADX WARN: Removed duplicated region for block: B:585:0x040b A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:611:0x0145 A[Catch: Exception -> 0x0060, TryCatch #1 {Exception -> 0x0060, blocks: (B:12:0x0035, B:13:0x0041, B:15:0x0049, B:19:0x005e, B:23:0x0067, B:25:0x0071, B:27:0x0081, B:29:0x0086, B:35:0x008b, B:38:0x0091, B:39:0x00a6, B:41:0x00ae, B:43:0x00e5, B:45:0x0108, B:47:0x0110, B:49:0x0119, B:52:0x0120, B:54:0x0138, B:56:0x020a, B:57:0x023c, B:59:0x024e, B:61:0x0254, B:63:0x0258, B:65:0x0276, B:66:0x027f, B:69:0x0296, B:73:0x02a2, B:75:0x02ae, B:76:0x02b4, B:78:0x02bf, B:80:0x02c5, B:82:0x02d3, B:83:0x02f2, B:85:0x0306, B:87:0x0316, B:89:0x031c, B:91:0x0356, B:93:0x0373, B:97:0x0395, B:99:0x039b, B:101:0x03ac, B:103:0x03b2, B:107:0x03ba, B:110:0x03ca, B:115:0x03f4, B:117:0x03f8, B:123:0x0416, B:125:0x041f, B:127:0x0427, B:128:0x0455, B:130:0x0460, B:134:0x04df, B:138:0x0504, B:140:0x0528, B:142:0x0540, B:144:0x0544, B:148:0x05bb, B:151:0x0556, B:152:0x055c, B:156:0x0569, B:158:0x05b1, B:159:0x0580, B:161:0x0587, B:162:0x059b, B:167:0x05ca, B:170:0x0655, B:180:0x0670, B:182:0x068a, B:184:0x06c1, B:186:0x06cb, B:189:0x0732, B:192:0x0757, B:194:0x0777, B:196:0x07b8, B:197:0x07d5, B:199:0x07e7, B:200:0x080c, B:202:0x0815, B:206:0x0823, B:208:0x0833, B:209:0x0848, B:213:0x094f, B:215:0x0955, B:223:0x096b, B:225:0x0971, B:231:0x0984, B:234:0x098e, B:237:0x0997, B:253:0x09b6, B:256:0x09c3, B:258:0x09f4, B:259:0x09fb, B:262:0x0a01, B:265:0x0b33, B:268:0x0b8c, B:270:0x0b90, B:272:0x0b96, B:285:0x0bf1, B:293:0x0c56, B:299:0x0c9e, B:303:0x0cdf, B:305:0x0ce7, B:307:0x0ceb, B:309:0x0cf3, B:313:0x0cfe, B:315:0x0d9e, B:318:0x0dae, B:321:0x0df3, B:323:0x0df9, B:325:0x0dfd, B:327:0x0e08, B:329:0x0e0e, B:331:0x0e18, B:333:0x0e29, B:335:0x0e37, B:337:0x0e56, B:338:0x0e60, B:340:0x0e93, B:345:0x0ea5, B:349:0x0ec8, B:351:0x0ece, B:353:0x0ed6, B:355:0x0edc, B:356:0x0efe, B:361:0x0dbb, B:367:0x0dcf, B:371:0x0ddd, B:373:0x0d28, B:375:0x0d2f, B:376:0x0d32, B:378:0x0d3e, B:381:0x0d49, B:383:0x0d51, B:388:0x0d8a, B:389:0x0d93, B:391:0x0caa, B:393:0x0cb2, B:394:0x0cda, B:396:0x0de5, B:404:0x0c6b, B:409:0x0c79, B:414:0x0c82, B:418:0x0c8c, B:421:0x0bf9, B:423:0x0c06, B:440:0x0bec, B:441:0x0a1f, B:444:0x0a25, B:445:0x0a3c, B:448:0x0a35, B:449:0x0a51, B:451:0x0a66, B:452:0x0a71, B:454:0x0a79, B:456:0x0a88, B:459:0x0a93, B:461:0x0a9b, B:464:0x0aaa, B:467:0x0ab4, B:468:0x0ab7, B:470:0x0abd, B:472:0x0ac6, B:474:0x0acf, B:477:0x0ad7, B:479:0x0add, B:481:0x0ae1, B:483:0x0ae9, B:488:0x0af5, B:490:0x0afb, B:492:0x0aff, B:494:0x0b07, B:498:0x0b12, B:500:0x0b23, B:502:0x0b29, B:507:0x0840, B:508:0x0867, B:510:0x0877, B:511:0x088c, B:512:0x0884, B:517:0x08b6, B:519:0x08be, B:520:0x08d8, B:526:0x08d2, B:531:0x0903, B:533:0x090f, B:534:0x0924, B:538:0x091c, B:540:0x07c4, B:544:0x06e3, B:546:0x06f6, B:547:0x0702, B:549:0x0706, B:557:0x05df, B:563:0x05f8, B:564:0x063a, B:567:0x0643, B:569:0x060c, B:571:0x0611, B:572:0x0625, B:574:0x046f, B:577:0x047c, B:579:0x0499, B:580:0x0434, B:583:0x0400, B:585:0x040b, B:588:0x03de, B:590:0x03e5, B:591:0x03ec, B:594:0x03a2, B:595:0x03a7, B:600:0x032b, B:602:0x0331, B:607:0x02e0, B:609:0x0293, B:611:0x0145, B:613:0x014b, B:614:0x014e, B:617:0x0157, B:618:0x0160, B:619:0x0173, B:621:0x017a, B:622:0x0194, B:624:0x019b, B:626:0x01a3, B:627:0x01da, B:628:0x012b, B:630:0x022c, B:386:0x0d5b, B:245:0x09a7), top: B:11:0x0035, inners: #3, #4 }] */
     /* JADX WARN: Type inference failed for: r12v60, types: [org.telegram.messenger.MessageObject] */
     /* JADX WARN: Type inference failed for: r14v43 */
     /* JADX WARN: Type inference failed for: r14v44 */
@@ -8215,6 +8251,9 @@ public class NotificationsController extends BaseController {
                                                         sb3.append(ConnectionsManager.DEFAULT_DATACENTER_ID);
                                                         intent.setAction(sb3.toString());
                                                         intent.setFlags(67108864);
+                                                        if (messageObject2.isOauthPush) {
+                                                            intent.putExtra("oauth_url", messageObject2.localName);
+                                                        }
                                                         if (messageObject2.isStoryReactionPush) {
                                                             intent.putExtra("storyId", Math.abs(messageObject2.getId()));
                                                             z19 = z15;
@@ -8720,6 +8759,8 @@ public class NotificationsController extends BaseController {
                                                 sb32.append(ConnectionsManager.DEFAULT_DATACENTER_ID);
                                                 intent5.setAction(sb32.toString());
                                                 intent5.setFlags(67108864);
+                                                if (messageObject2.isOauthPush) {
+                                                }
                                                 if (messageObject2.isStoryReactionPush) {
                                                 }
                                                 i13 = i12;
@@ -8802,6 +8843,8 @@ public class NotificationsController extends BaseController {
                                         sb322.append(ConnectionsManager.DEFAULT_DATACENTER_ID);
                                         intent52.setAction(sb322.toString());
                                         intent52.setFlags(67108864);
+                                        if (messageObject2.isOauthPush) {
+                                        }
                                         if (messageObject2.isStoryReactionPush) {
                                         }
                                         i13 = i12;
@@ -8892,6 +8935,8 @@ public class NotificationsController extends BaseController {
                                     sb3222.append(ConnectionsManager.DEFAULT_DATACENTER_ID);
                                     intent522.setAction(sb3222.toString());
                                     intent522.setFlags(67108864);
+                                    if (messageObject2.isOauthPush) {
+                                    }
                                     if (messageObject2.isStoryReactionPush) {
                                     }
                                     i13 = i12;
@@ -8979,6 +9024,8 @@ public class NotificationsController extends BaseController {
                                 sb32222.append(ConnectionsManager.DEFAULT_DATACENTER_ID);
                                 intent5222.setAction(sb32222.toString());
                                 intent5222.setFlags(67108864);
+                                if (messageObject2.isOauthPush) {
+                                }
                                 if (messageObject2.isStoryReactionPush) {
                                 }
                                 i13 = i12;
@@ -9236,120 +9283,110 @@ public class NotificationsController extends BaseController {
             } else if (i3 == 4 || i3 == 5) {
                 edit.putString("ReactionSound", uri3);
             }
-            getNotificationsController().lambda$deleteNotificationChannelGlobal$40(i3, -1);
+            getNotificationsController().lambda$deleteNotificationChannelGlobal$41(i3, -1);
         } else {
             edit.putString("sound_" + getSharedPrefKey(j, j2), string);
             edit.putString("sound_path_" + getSharedPrefKey(j, j2), uri3);
-            lambda$deleteNotificationChannel$39(j, j2, -1);
+            lambda$deleteNotificationChannel$40(j, j2, -1);
         }
         edit.commit();
         builder.setChannelId(validateChannelId(j, j2, str, jArr, i, uri2, i2, z, z2, z3, i3));
         notificationManager.notify(this.notificationId, builder.build());
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(99:50|(2:52|(4:54|55|56|57)(4:58|(2:61|59)|62|63))(1:798)|64|(1:66)(1:(1:796)(1:797))|67|68|(4:71|(2:73|74)(1:76)|75|69)|77|78|(4:80|(2:(1:83)(1:667)|84)(1:668)|(1:666)(2:90|(80:94|95|(1:101)|(4:103|(1:105)(1:662)|106|107)(1:663)|(3:109|(3:111|(1:113)(3:649|650|(3:652|(1:654)(1:656)|655))|114)(1:660)|657)(1:661)|(3:116|(1:122)|123)(1:648)|124|(3:643|(1:645)(1:647)|646)(2:127|128)|129|(1:131)|132|(1:134)(1:633)|135|(2:631|632)(1:139)|140|141|(3:144|(1:146)|(3:148|149|(60:153|154|155|(1:159)|160|(1:623)(1:164)|165|(1:622)(1:168)|169|170|(1:621)|177|(1:620)(1:184)|185|(14:187|(1:189)(2:379|(4:381|55|56|57)(2:382|(1:(1:385)(11:386|191|192|193|(2:196|194)|197|198|(1:378)(1:201)|202|(1:204)(1:377)|205))(2:387|(11:389|192|193|(1:194)|197|198|(0)|378|202|(0)(0)|205)(11:390|(1:395)(1:394)|193|(1:194)|197|198|(0)|378|202|(0)(0)|205))))|190|191|192|193|(1:194)|197|198|(0)|378|202|(0)(0)|205)(4:396|(6:398|(1:400)(3:405|(2:610|(1:612)(2:613|(1:617)))(1:409)|(3:411|(1:413)|414)(20:415|(1:417)|418|(3:605|(1:607)(1:609)|608)(1:424)|(3:597|(1:(1:600)(2:601|(1:603)))|604)(1:428)|429|(14:(10:432|(1:(2:435|(1:437))(1:591))(2:592|(1:594))|(3:531|(1:589)(4:537|(2:587|588)(4:540|(1:544)|(1:586)(2:550|(1:554))|585)|(2:559|(2:561|(1:571))(2:572|(1:582)))|583)|584)(1:442)|443|(6:445|(1:529)(7:458|(1:528)(2:462|(6:516|517|518|519|520|521)(1:464))|465|(1:467)(1:515)|468|469|(7:503|504|505|506|507|508|(5:475|(1:477)|478|479|(2:484|(3:486|(2:491|492)(1:488)|(1:490))))(1:500))(4:471|(2:502|(0)(0))|473|(0)(0)))|501|478|479|(3:482|484|(0)))(1:530)|495|(3:499|403|404)|402|403|404)(1:595)|590|(1:440)|531|(1:533)|589|584|443|(0)(0)|495|(4:497|499|403|404)|402|403|404)(1:596)|438|(0)|531|(0)|589|584|443|(0)(0)|495|(0)|402|403|404))|401|402|403|404)|618|619)|206|(2:208|(40:210|211|(1:213)|214|(1:216)|217|(2:219|(1:221)(1:345))(2:346|(1:348)(1:349))|(1:223)(1:344)|224|(4:226|(2:229|227)|230|231)(1:343)|232|(1:234)|235|236|237|238|239|240|(1:242)|(1:246)|247|(1:249)|(1:335)(4:255|(5:258|(2:259|(1:333)(2:261|(2:264|265)(1:263)))|266|(1:269)(1:268)|256)|334|270)|(1:272)|273|(2:(1:276)|(1:283))|284|(1:332)(1:290)|291|(1:293)|(1:295)|296|(3:301|(4:303|(3:305|(4:307|(1:309)|310|311)(2:313|314)|312)|315|316)|317)|318|(1:331)(2:321|(1:325))|326|(1:328)|329|330|57)(1:350))(1:376)|(2:361|(4:363|(2:366|364)|367|368)(2:369|(1:371)(2:372|(1:374)(1:375))))(3:354|(1:356)(2:358|(1:360))|357)|211|(0)|214|(0)|217|(0)(0)|(0)(0)|224|(0)(0)|232|(0)|235|236|237|238|239|240|(0)|(2:244|246)|247|(0)|(1:251)|335|(0)|273|(0)|284|(1:286)|332|291|(0)|(0)|296|(4:298|301|(0)|317)|318|(0)|331|326|(0)|329|330|57)))|630|160|(1:162)|623|165|(0)|622|169|170|(1:172)|621|177|(1:180)|620|185|(0)(0)|206|(0)(0)|(1:352)|361|(0)(0)|211|(0)|214|(0)|217|(0)(0)|(0)(0)|224|(0)(0)|232|(0)|235|236|237|238|239|240|(0)|(0)|247|(0)|(0)|335|(0)|273|(0)|284|(0)|332|291|(0)|(0)|296|(0)|318|(0)|331|326|(0)|329|330|57))|664)(5:669|(3:(1:779)(1:678)|679|(99:681|(2:683|(1:685)(3:729|(1:731)|732))(3:733|(1:743)(2:737|(97:741|687|(1:689)(2:721|(1:723)(2:724|(1:726)(94:727|728|691|(1:720)(2:696|(90:706|707|(1:709)(1:710)|(3:97|99|101)|(0)(0)|(0)(0)|(0)(0)|124|(0)|635|637|639|641|643|(0)(0)|646|129|(0)|132|(0)(0)|135|(1:137)|631|632|140|141|(3:144|(0)|(0))|630|160|(0)|623|165|(0)|622|169|170|(0)|621|177|(0)|620|185|(0)(0)|206|(0)(0)|(0)|361|(0)(0)|211|(0)|214|(0)|217|(0)(0)|(0)(0)|224|(0)(0)|232|(0)|235|236|237|238|239|240|(0)|(0)|247|(0)|(0)|335|(0)|273|(0)|284|(0)|332|291|(0)|(0)|296|(0)|318|(0)|331|326|(0)|329|330|57))|711|707|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|635|637|639|641|643|(0)(0)|646|129|(0)|132|(0)(0)|135|(0)|631|632|140|141|(0)|630|160|(0)|623|165|(0)|622|169|170|(0)|621|177|(0)|620|185|(0)(0)|206|(0)(0)|(0)|361|(0)(0)|211|(0)|214|(0)|217|(0)(0)|(0)(0)|224|(0)(0)|232|(0)|235|236|237|238|239|240|(0)|(0)|247|(0)|(0)|335|(0)|273|(0)|284|(0)|332|291|(0)|(0)|296|(0)|318|(0)|331|326|(0)|329|330|57)))|690|691|(0)|720|711|707|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|635|637|639|641|643|(0)(0)|646|129|(0)|132|(0)(0)|135|(0)|631|632|140|141|(0)|630|160|(0)|623|165|(0)|622|169|170|(0)|621|177|(0)|620|185|(0)(0)|206|(0)(0)|(0)|361|(0)(0)|211|(0)|214|(0)|217|(0)(0)|(0)(0)|224|(0)(0)|232|(0)|235|236|237|238|239|240|(0)|(0)|247|(0)|(0)|335|(0)|273|(0)|284|(0)|332|291|(0)|(0)|296|(0)|318|(0)|331|326|(0)|329|330|57))|742)|686|687|(0)(0)|690|691|(0)|720|711|707|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|635|637|639|641|643|(0)(0)|646|129|(0)|132|(0)(0)|135|(0)|631|632|140|141|(0)|630|160|(0)|623|165|(0)|622|169|170|(0)|621|177|(0)|620|185|(0)(0)|206|(0)(0)|(0)|361|(0)(0)|211|(0)|214|(0)|217|(0)(0)|(0)(0)|224|(0)(0)|232|(0)|235|236|237|238|239|240|(0)|(0)|247|(0)|(0)|335|(0)|273|(0)|284|(0)|332|291|(0)|(0)|296|(0)|318|(0)|331|326|(0)|329|330|57)(96:744|(2:746|(1:748)(3:750|(1:752)|732))(9:753|(1:778)(1:757)|758|(1:777)(2:762|(1:764))|776|766|(2:768|(2:770|(1:772)(95:773|728|691|(0)|720|711|707|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|635|637|639|641|643|(0)(0)|646|129|(0)|132|(0)(0)|135|(0)|631|632|140|141|(0)|630|160|(0)|623|165|(0)|622|169|170|(0)|621|177|(0)|620|185|(0)(0)|206|(0)(0)|(0)|361|(0)(0)|211|(0)|214|(0)|217|(0)(0)|(0)(0)|224|(0)(0)|232|(0)|235|236|237|238|239|240|(0)|(0)|247|(0)|(0)|335|(0)|273|(0)|284|(0)|332|291|(0)|(0)|296|(0)|318|(0)|331|326|(0)|329|330|57)))(1:775)|774|(0)(0))|749|691|(0)|720|711|707|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|635|637|639|641|643|(0)(0)|646|129|(0)|132|(0)(0)|135|(0)|631|632|140|141|(0)|630|160|(0)|623|165|(0)|622|169|170|(0)|621|177|(0)|620|185|(0)(0)|206|(0)(0)|(0)|361|(0)(0)|211|(0)|214|(0)|217|(0)(0)|(0)(0)|224|(0)(0)|232|(0)|235|236|237|238|239|240|(0)|(0)|247|(0)|(0)|335|(0)|273|(0)|284|(0)|332|291|(0)|(0)|296|(0)|318|(0)|331|326|(0)|329|330|57))(3:780|(3:782|(2:784|(1:786))(2:788|(2:790|(1:792)))|787)(1:794)|793)|55|56|57)|665|95|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|635|637|639|641|643|(0)(0)|646|129|(0)|132|(0)(0)|135|(0)|631|632|140|141|(0)|630|160|(0)|623|165|(0)|622|169|170|(0)|621|177|(0)|620|185|(0)(0)|206|(0)(0)|(0)|361|(0)(0)|211|(0)|214|(0)|217|(0)(0)|(0)(0)|224|(0)(0)|232|(0)|235|236|237|238|239|240|(0)|(0)|247|(0)|(0)|335|(0)|273|(0)|284|(0)|332|291|(0)|(0)|296|(0)|318|(0)|331|326|(0)|329|330|57) */
-    /* JADX WARN: Code restructure failed: missing block: B:337:0x1344, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(97:50|(2:52|(4:54|55|56|57)(4:58|(2:61|59)|62|63))(1:805)|64|(1:66)(1:(1:803)(1:804))|67|68|(4:71|(2:73|74)(1:76)|75|69)|77|78|(4:80|(2:(1:83)(1:671)|84)(1:672)|(1:670)(2:90|(78:94|95|(1:101)|(4:103|(1:105)(1:666)|106|107)(1:667)|(3:109|(3:111|(1:113)(3:653|654|(3:656|(1:658)(1:660)|659))|114)(1:664)|661)(1:665)|(3:116|(1:122)|123)(1:652)|124|(3:647|(1:649)(1:651)|650)(2:127|128)|129|(1:131)|132|(1:134)(1:637)|135|(2:635|636)(1:139)|140|141|(3:144|(1:146)|(3:148|149|(64:153|154|155|(59:159|160|161|162|163|(1:623)(1:167)|168|(1:622)(1:171)|172|173|(1:621)|180|(1:620)(1:187)|188|(14:190|(1:192)(2:374|(3:376|377|57)(2:378|(1:(1:381)(11:382|194|195|196|(2:199|197)|200|201|(1:373)(1:204)|205|(1:207)(1:372)|208))(2:383|(11:385|195|196|(1:197)|200|201|(0)|373|205|(0)(0)|208)(11:386|(1:391)(1:390)|196|(1:197)|200|201|(0)|373|205|(0)(0)|208))))|193|194|195|196|(1:197)|200|201|(0)|373|205|(0)(0)|208)(4:392|(5:394|(1:396)(3:400|(1:402)(2:605|(2:610|(1:612)(2:613|(1:617)))(1:609))|(3:404|(1:406)|407)(18:408|(1:410)|411|(3:600|(1:602)(1:604)|603)(1:417)|418|(3:592|(1:(1:595)(2:596|(1:598)))|599)(1:422)|423|(11:(7:426|(1:(2:429|(1:431))(1:586))(2:587|(1:589))|(3:526|(1:584)(4:532|(2:582|583)(4:535|(1:539)|(1:581)(2:545|(1:549))|580)|(2:554|(2:556|(1:566))(2:567|(1:577)))|578)|579)(1:436)|437|(6:439|(1:524)(7:452|(1:523)(2:456|(6:511|512|513|514|515|516)(1:458))|459|(1:461)(1:510)|462|463|(7:498|499|500|501|502|503|(5:469|(1:471)|472|473|(2:478|(3:480|(2:485|486)(1:482)|(1:484))))(1:495))(4:465|(2:497|(0)(0))|467|(0)(0)))|496|472|473|(3:476|478|(0)))(1:525)|489|(3:493|494|399))(1:590)|585|(1:434)|526|(1:528)|584|579|437|(0)(0)|489|(4:491|493|494|399))(1:591)|432|(0)|526|(0)|584|579|437|(0)(0)|489|(0)))|397|398|399)|618|619)|209|(1:211)(2:345|(1:347)(40:348|(3:350|(1:352)(2:354|(1:356))|353)(2:357|(4:359|(2:362|360)|363|364)(2:365|(1:367)(2:368|(1:370)(1:371))))|213|(1:215)|216|(1:218)|219|(2:221|(1:223)(1:340))(2:341|(1:343)(1:344))|(1:225)(1:339)|226|(4:228|(2:231|229)|232|233)(1:338)|234|(1:236)|237|238|239|(1:241)|242|(1:244)|245|(1:247)|248|(1:333)(4:252|(5:255|(2:256|(1:331)(2:258|(2:261|262)(1:260)))|263|(1:266)(1:265)|253)|332|267)|(1:269)|270|(2:(1:275)|(1:281))|282|(1:330)(1:288)|289|(1:291)|(1:293)|294|(3:299|(4:301|(3:303|(4:305|(1:307)|308|309)(2:311|312)|310)|313|314)|315)|316|(1:329)(2:319|(1:323))|324|(1:326)|327|328|57))|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(1:250)|333|(0)|270|(3:272|(0)|(3:277|279|281))|282|(1:284)|330|289|(0)|(0)|294|(4:296|299|(0)|315)|316|(0)|329|324|(0)|327|328|57)|627|163|(1:165)|623|168|(0)|622|172|173|(1:175)|621|180|(1:183)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328|57)))|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328|57))|668)(5:673|(4:(1:786)(1:682)|683|(96:685|(2:687|(1:689)(3:736|(1:738)|739))(3:740|(1:750)(2:744|(94:748|691|(1:693)(2:725|(1:727)(2:728|(1:730)(2:731|(1:733)(91:734|735|695|(1:724)(2:700|(87:710|711|(1:713)(1:714)|(3:97|99|101)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(1:137)|635|636|140|141|(3:144|(0)|(0))|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328))|715|711|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328))))|694|695|(0)|724|715|711|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328))|749)|690|691|(0)(0)|694|695|(0)|724|715|711|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328)(93:751|(2:753|(1:755)(3:757|(1:759)|739))(9:760|(1:785)(1:764)|765|(1:784)(2:769|(1:771))|783|773|(2:775|(2:777|(1:779)(92:780|735|695|(0)|724|715|711|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328)))(1:782)|781|(0)(0))|756|695|(0)|724|715|711|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328)|57)(3:787|(3:789|(2:791|(1:793))(2:795|(2:797|(1:799)))|794)(1:801)|800)|55|56|57)|669|95|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328|57) */
+    /* JADX WARN: Code restructure failed: missing block: B:335:0x13b5, code lost:
     
-        r0 = e;
+        r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:339:0x1365, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:337:0x13d1, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:341:0x1362, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:772:0x0547, code lost:
     
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:342:0x1363, code lost:
-    
-        r13 = r39;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:765:0x0533, code lost:
-    
-        if (r2.local_id != 0) goto L178;
+        if (r2.local_id != 0) goto L181;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x06a8  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x06cb  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x072c  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x075f A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x081f  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x082a  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x0841  */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x0873 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x0883  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x088d A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x08dd  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x08ed A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x0902  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x091a A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0948  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0a99 A[LOOP:5: B:194:0x0a91->B:196:0x0a99, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x0ab5 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x0ad8  */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x1078  */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x1161  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x1181  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x11dd  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x1242  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x1285  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x12e2  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x133d A[Catch: Exception -> 0x1344, TryCatch #9 {Exception -> 0x1344, blocks: (B:240:0x1331, B:242:0x133d, B:244:0x1348, B:246:0x134c, B:247:0x1352), top: B:239:0x1331 }] */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x1348 A[Catch: Exception -> 0x1344, TryCatch #9 {Exception -> 0x1344, blocks: (B:240:0x1331, B:242:0x133d, B:244:0x1348, B:246:0x134c, B:247:0x1352), top: B:239:0x1331 }] */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x136a  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x1375  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x13cc  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x140d  */
-    /* JADX WARN: Removed duplicated region for block: B:286:0x142b  */
-    /* JADX WARN: Removed duplicated region for block: B:293:0x1443  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x1449  */
-    /* JADX WARN: Removed duplicated region for block: B:298:0x1455  */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x1462  */
-    /* JADX WARN: Removed duplicated region for block: B:320:0x14e9 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x151a  */
-    /* JADX WARN: Removed duplicated region for block: B:343:0x12ac  */
-    /* JADX WARN: Removed duplicated region for block: B:344:0x1266  */
-    /* JADX WARN: Removed duplicated region for block: B:346:0x121a  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x10a4  */
-    /* JADX WARN: Removed duplicated region for block: B:363:0x10e3  */
-    /* JADX WARN: Removed duplicated region for block: B:369:0x1119  */
-    /* JADX WARN: Removed duplicated region for block: B:376:0x109e  */
-    /* JADX WARN: Removed duplicated region for block: B:377:0x0aea  */
-    /* JADX WARN: Removed duplicated region for block: B:396:0x0af5  */
-    /* JADX WARN: Removed duplicated region for block: B:440:0x0cc5  */
-    /* JADX WARN: Removed duplicated region for block: B:445:0x0dce  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x06c0  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x06e3  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0744  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x0777 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0837  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0842  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x0859  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x088b A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x089b  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x08a5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0904  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0914 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x0929  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x0941 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x096f  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x0ac6 A[LOOP:5: B:197:0x0abe->B:199:0x0ac6, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0ae2 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x0b05  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x10e0  */
+    /* JADX WARN: Removed duplicated region for block: B:215:0x11cc  */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x11ec  */
+    /* JADX WARN: Removed duplicated region for block: B:221:0x1248  */
+    /* JADX WARN: Removed duplicated region for block: B:225:0x12ad  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x12f0  */
+    /* JADX WARN: Removed duplicated region for block: B:236:0x1355  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x13ae A[Catch: Exception -> 0x13b5, TryCatch #6 {Exception -> 0x13b5, blocks: (B:239:0x1390, B:241:0x13ae, B:242:0x13b7, B:244:0x13bb, B:245:0x13c1), top: B:238:0x1390 }] */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x13bb A[Catch: Exception -> 0x13b5, TryCatch #6 {Exception -> 0x13b5, blocks: (B:239:0x1390, B:241:0x13ae, B:242:0x13b7, B:244:0x13bb, B:245:0x13c1), top: B:238:0x1390 }] */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x13d6  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x13e3  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x1436  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x1477  */
+    /* JADX WARN: Removed duplicated region for block: B:275:0x147d  */
+    /* JADX WARN: Removed duplicated region for block: B:284:0x1498  */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x14b0  */
+    /* JADX WARN: Removed duplicated region for block: B:293:0x14b6  */
+    /* JADX WARN: Removed duplicated region for block: B:296:0x14c2  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x14cf  */
+    /* JADX WARN: Removed duplicated region for block: B:318:0x1556 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:326:0x1587  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x131d  */
+    /* JADX WARN: Removed duplicated region for block: B:339:0x12d1  */
+    /* JADX WARN: Removed duplicated region for block: B:341:0x1285  */
+    /* JADX WARN: Removed duplicated region for block: B:345:0x10f7  */
+    /* JADX WARN: Removed duplicated region for block: B:372:0x0b1c  */
+    /* JADX WARN: Removed duplicated region for block: B:392:0x0b2c  */
+    /* JADX WARN: Removed duplicated region for block: B:434:0x0d25  */
+    /* JADX WARN: Removed duplicated region for block: B:439:0x0e35  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x01bb  */
-    /* JADX WARN: Removed duplicated region for block: B:467:0x0eca  */
-    /* JADX WARN: Removed duplicated region for block: B:471:0x0f01  */
-    /* JADX WARN: Removed duplicated region for block: B:475:0x0f59  */
-    /* JADX WARN: Removed duplicated region for block: B:486:0x0fac  */
+    /* JADX WARN: Removed duplicated region for block: B:461:0x0f29  */
+    /* JADX WARN: Removed duplicated region for block: B:465:0x0f60  */
+    /* JADX WARN: Removed duplicated region for block: B:469:0x0fb8  */
+    /* JADX WARN: Removed duplicated region for block: B:480:0x100b  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x01f5  */
-    /* JADX WARN: Removed duplicated region for block: B:497:0x1008  */
-    /* JADX WARN: Removed duplicated region for block: B:500:0x0f89  */
-    /* JADX WARN: Removed duplicated region for block: B:503:0x0ed7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:515:0x0ece  */
-    /* JADX WARN: Removed duplicated region for block: B:530:0x0ff1  */
-    /* JADX WARN: Removed duplicated region for block: B:533:0x0ce5  */
-    /* JADX WARN: Removed duplicated region for block: B:633:0x0832  */
-    /* JADX WARN: Removed duplicated region for block: B:645:0x07d4  */
-    /* JADX WARN: Removed duplicated region for block: B:647:0x07e6  */
-    /* JADX WARN: Removed duplicated region for block: B:648:0x0753  */
-    /* JADX WARN: Removed duplicated region for block: B:661:0x0723  */
-    /* JADX WARN: Removed duplicated region for block: B:663:0x06c5  */
-    /* JADX WARN: Removed duplicated region for block: B:689:0x0485  */
-    /* JADX WARN: Removed duplicated region for block: B:693:0x058d A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:709:0x05f0  */
-    /* JADX WARN: Removed duplicated region for block: B:710:0x05f5  */
-    /* JADX WARN: Removed duplicated region for block: B:721:0x049b  */
-    /* JADX WARN: Removed duplicated region for block: B:772:0x0578  */
-    /* JADX WARN: Removed duplicated region for block: B:773:0x0580  */
-    /* JADX WARN: Removed duplicated region for block: B:803:0x15c5  */
-    /* JADX WARN: Removed duplicated region for block: B:812:0x1643  */
-    /* JADX WARN: Removed duplicated region for block: B:824:0x16aa  */
-    /* JADX WARN: Removed duplicated region for block: B:847:0x1610  */
-    /* JADX WARN: Removed duplicated region for block: B:853:0x0212 A[EDGE_INSN: B:853:0x0212->B:801:0x0212 BREAK  A[LOOP:2: B:47:0x01f3->B:57:0x159d], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:854:0x01bd  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0691  */
+    /* JADX WARN: Removed duplicated region for block: B:491:0x1065  */
+    /* JADX WARN: Removed duplicated region for block: B:495:0x0fe8  */
+    /* JADX WARN: Removed duplicated region for block: B:498:0x0f36 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:510:0x0f2d  */
+    /* JADX WARN: Removed duplicated region for block: B:525:0x1050  */
+    /* JADX WARN: Removed duplicated region for block: B:528:0x0d46  */
+    /* JADX WARN: Removed duplicated region for block: B:637:0x084a  */
+    /* JADX WARN: Removed duplicated region for block: B:649:0x07ec  */
+    /* JADX WARN: Removed duplicated region for block: B:651:0x07fe  */
+    /* JADX WARN: Removed duplicated region for block: B:652:0x076b  */
+    /* JADX WARN: Removed duplicated region for block: B:665:0x073b  */
+    /* JADX WARN: Removed duplicated region for block: B:667:0x06dd  */
+    /* JADX WARN: Removed duplicated region for block: B:693:0x048e  */
+    /* JADX WARN: Removed duplicated region for block: B:697:0x05a1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:713:0x0604  */
+    /* JADX WARN: Removed duplicated region for block: B:714:0x0609  */
+    /* JADX WARN: Removed duplicated region for block: B:725:0x04a4  */
+    /* JADX WARN: Removed duplicated region for block: B:779:0x058c  */
+    /* JADX WARN: Removed duplicated region for block: B:780:0x0594  */
+    /* JADX WARN: Removed duplicated region for block: B:810:0x1639  */
+    /* JADX WARN: Removed duplicated region for block: B:819:0x16b7  */
+    /* JADX WARN: Removed duplicated region for block: B:831:0x171e  */
+    /* JADX WARN: Removed duplicated region for block: B:854:0x1684  */
+    /* JADX WARN: Removed duplicated region for block: B:860:0x0212 A[EDGE_INSN: B:860:0x0212->B:808:0x0212 BREAK  A[LOOP:2: B:47:0x01f3->B:57:0x160f], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:861:0x01bd  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x06a9  */
     /* JADX WARN: Type inference failed for: r9v41 */
     /* JADX WARN: Type inference failed for: r9v42, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r9v44 */
@@ -9403,11 +9440,12 @@ public class NotificationsController extends BaseController {
         NotificationsController notificationsController2;
         int i8;
         ArrayList arrayList5;
-        int i9;
         Notification notification2;
         String str10;
         String str11;
         String str12;
+        String str13;
+        String str14;
         boolean z8;
         boolean z9;
         long j8;
@@ -9417,7 +9455,7 @@ public class NotificationsController extends BaseController {
         TLRPC.FileLocation fileLocation;
         TLRPC.FileLocation fileLocation2;
         boolean z12;
-        String str13;
+        String str15;
         TLRPC.Chat chat2;
         TLRPC.FileLocation fileLocation3;
         TLRPC.User user3;
@@ -9430,21 +9468,21 @@ public class NotificationsController extends BaseController {
         TLRPC.FileLocation fileLocation5;
         TLRPC.UserProfilePhoto userProfilePhoto;
         ArrayList<StoryNotification> arrayList6;
-        String str14;
+        String str16;
         String string2;
         SharedPreferences sharedPreferences2;
-        String str15;
+        String str17;
         TLRPC.User user6;
         MessageObject messageObject2;
         File file;
         Bitmap bitmap;
         DialogKey dialogKey;
-        String str16;
+        String str18;
         Bitmap bitmap2;
         DialogKey dialogKey2;
         TLRPC.Chat chat5;
-        String str17;
-        int i10;
+        String str19;
+        int i9;
         ?? r9;
         String formatString;
         NotificationCompat.Action build;
@@ -9454,36 +9492,38 @@ public class NotificationsController extends BaseController {
         long j9;
         Person person;
         NotificationCompat.Action action;
-        String str18;
+        String str20;
+        String str21;
         MessageObject messageObject3;
         NotificationCompat.MessagingStyle messagingStyle;
         NotificationCompat.MessagingStyle messagingStyle2;
-        int i11;
-        LongSparseArray longSparseArray7;
+        int i10;
         long j10;
         long j11;
         DialogKey dialogKey4;
         long j12;
-        NotificationCompat.MessagingStyle messagingStyle3;
-        String str19;
-        String str20;
+        StringBuilder sb;
+        String str22;
+        LongSparseArray longSparseArray7;
+        String str23;
         ArrayList<TLRPC.TL_keyboardButtonRow> arrayList7;
         Bitmap bitmap3;
-        int i12;
-        String str21;
-        boolean[] zArr;
-        String str22;
-        String str23;
+        int i11;
         String str24;
+        boolean[] zArr;
         String str25;
-        long j13;
         String str26;
         String str27;
         String str28;
+        long j13;
+        StringBuilder sb2;
         String str29;
-        long j14;
+        LongSparseArray longSparseArray8;
         String[] strArr;
-        Person person2;
+        String str30;
+        String str31;
+        long j14;
+        boolean z13;
         File file2;
         TLRPC.ChatPhoto chatPhoto2;
         TLRPC.FileLocation fileLocation6;
@@ -9491,50 +9531,49 @@ public class NotificationsController extends BaseController {
         TLRPC.FileLocation fileLocation7;
         TLRPC.UserProfilePhoto userProfilePhoto3;
         TLRPC.FileLocation fileLocation8;
-        String str30;
-        NotificationCompat.MessagingStyle messagingStyle4;
-        String str31;
-        TLRPC.ReplyMarkup replyMarkup;
         String str32;
+        String str33;
+        TLRPC.ReplyMarkup replyMarkup;
         List messages;
         Uri uri2;
         final File file3;
         Context context;
-        StringBuilder sb;
+        StringBuilder sb3;
         final Uri uriForFile;
         Bitmap createScaledBitmap;
         Canvas canvas;
-        String str33;
         MessageObject messageObject4;
         String str34;
         String str35;
-        MessageObject messageObject5;
         DialogKey dialogKey5;
         Bitmap bitmap4;
         ArrayList<TLRPC.TL_keyboardButtonRow> arrayList8;
-        String str36;
+        LongSparseArray longSparseArray9;
+        LongSparseArray longSparseArray10;
         long j15;
+        int i12;
         NotificationCompat.Action action2;
+        String str36;
+        MessageObject messageObject5;
         NotificationCompat.Action action3;
-        String str37;
-        MessageObject messageObject6;
-        long j16;
-        long j17;
-        ArrayList<StoryNotification> arrayList9;
-        long j18;
-        long j19;
-        TLRPC.TL_keyboardButtonCopy tL_keyboardButtonCopy;
-        TLRPC.User user7;
-        String str38;
-        int size3;
         int i13;
-        int i14;
-        ArrayList<TLRPC.TL_keyboardButtonRow> arrayList10;
-        String str39;
+        long j16;
+        ArrayList<StoryNotification> arrayList9;
+        long j17;
+        NotificationCompat.Builder category;
         TLRPC.Message message;
-        TLRPC.ReplyMarkup replyMarkup2;
-        Intent intent;
+        TLRPC.TL_keyboardButtonCopy tL_keyboardButtonCopy;
+        long j18;
+        TLRPC.User user7;
+        int i14;
+        int size3;
         int i15;
+        int i16;
+        ArrayList<TLRPC.TL_keyboardButtonRow> arrayList10;
+        String str37;
+        TLRPC.ReplyMarkup replyMarkup2;
+        LongSparseArray longSparseArray11;
+        int i17;
         TLRPC.User user8;
         TLRPC.UserProfilePhoto userProfilePhoto4;
         TLRPC.FileLocation fileLocation9;
@@ -9569,37 +9608,37 @@ public class NotificationsController extends BaseController {
         if (!notificationsController3.storyPushMessages.isEmpty()) {
             arrayList11.add(new DialogKey(0L, 0L, true));
         }
-        LongSparseArray longSparseArray8 = new LongSparseArray();
-        for (int i16 = 0; i16 < notificationsController3.pushMessages.size(); i16++) {
-            MessageObject messageObject7 = notificationsController3.pushMessages.get(i16);
-            long dialogId = messageObject7.getDialogId();
-            long topicId = MessageObject.getTopicId(notificationsController3.currentAccount, messageObject7.messageOwner, getMessagesController().isForum(messageObject7));
-            int i17 = notificationsSettings.getInt("dismissDate" + dialogId, 0);
-            if (!messageObject7.isStoryPush && messageObject7.messageOwner.date <= i17) {
-                FileLog.d("showExtraNotifications: dialog " + dialogId + " is skipped, message date (" + messageObject7.messageOwner.date + " <= " + i17 + ")");
+        LongSparseArray longSparseArray12 = new LongSparseArray();
+        for (int i18 = 0; i18 < notificationsController3.pushMessages.size(); i18++) {
+            MessageObject messageObject6 = notificationsController3.pushMessages.get(i18);
+            long dialogId = messageObject6.getDialogId();
+            long topicId = MessageObject.getTopicId(notificationsController3.currentAccount, messageObject6.messageOwner, getMessagesController().isForum(messageObject6));
+            int i19 = notificationsSettings.getInt("dismissDate" + dialogId, 0);
+            if (!messageObject6.isStoryPush && messageObject6.messageOwner.date <= i19) {
+                FileLog.d("showExtraNotifications: dialog " + dialogId + " is skipped, message date (" + messageObject6.messageOwner.date + " <= " + i19 + ")");
             } else {
-                ArrayList arrayList12 = (ArrayList) longSparseArray8.get(dialogId);
+                ArrayList arrayList12 = (ArrayList) longSparseArray12.get(dialogId);
                 if (arrayList12 == null) {
                     arrayList12 = new ArrayList();
-                    longSparseArray8.put(dialogId, arrayList12);
+                    longSparseArray12.put(dialogId, arrayList12);
                     FileLog.d("showExtraNotifications: sortedDialogs += " + dialogId);
                     arrayList11.add(new DialogKey(dialogId, topicId, false));
                 }
-                arrayList12.add(messageObject7);
+                arrayList12.add(messageObject6);
             }
         }
-        int i18 = 0;
-        LongSparseArray longSparseArray9 = new LongSparseArray();
-        for (int i19 = 0; i19 < notificationsController3.wearNotificationsIds.size(); i19++) {
-            longSparseArray9.put(notificationsController3.wearNotificationsIds.keyAt(i19), (Integer) notificationsController3.wearNotificationsIds.valueAt(i19));
+        int i20 = 0;
+        LongSparseArray longSparseArray13 = new LongSparseArray();
+        for (int i21 = 0; i21 < notificationsController3.wearNotificationsIds.size(); i21++) {
+            longSparseArray13.put(notificationsController3.wearNotificationsIds.keyAt(i21), (Integer) notificationsController3.wearNotificationsIds.valueAt(i21));
         }
         notificationsController3.wearNotificationsIds.clear();
         ArrayList arrayList13 = new ArrayList();
-        int i20 = Build.VERSION.SDK_INT;
-        if (i20 > 27) {
+        int i22 = Build.VERSION.SDK_INT;
+        if (i22 > 27) {
             if (arrayList11.size() <= (notificationsController3.storyPushMessages.isEmpty() ? 1 : 2)) {
                 z4 = false;
-                if (z4 && i20 >= 26) {
+                if (z4 && i22 >= 26) {
                     checkOtherNotificationsChannel();
                 }
                 clientUserId = getUserConfig().getClientUserId();
@@ -9608,54 +9647,56 @@ public class NotificationsController extends BaseController {
                 longSparseArray = new LongSparseArray();
                 size = arrayList11.size();
                 while (true) {
-                    if (i18 < size) {
+                    if (i20 < size) {
                         break;
                     }
-                    int i21 = size;
+                    int i23 = size;
                     if (arrayList13.size() >= 7) {
                         FileLog.d("showExtraNotifications: break from holders, count over 7");
                         break;
                     }
-                    DialogKey dialogKey6 = (DialogKey) arrayList11.get(i18);
+                    DialogKey dialogKey6 = (DialogKey) arrayList11.get(i20);
                     ArrayList arrayList14 = arrayList13;
-                    int i22 = i18;
+                    int i24 = i20;
                     if (dialogKey6.story) {
                         ArrayList<StoryNotification> arrayList15 = new ArrayList<>();
                         if (notificationsController3.storyPushMessages.isEmpty()) {
-                            StringBuilder sb2 = new StringBuilder();
-                            sb2.append("showExtraNotifications: [");
+                            StringBuilder sb4 = new StringBuilder();
+                            sb4.append("showExtraNotifications: [");
                             arrayList2 = arrayList11;
-                            sb2.append(dialogKey6.dialogId);
-                            sb2.append("] continue; story but storyPushMessages is empty");
-                            FileLog.d(sb2.toString());
+                            sb4.append(dialogKey6.dialogId);
+                            sb4.append("] continue; story but storyPushMessages is empty");
+                            FileLog.d(sb4.toString());
                             z9 = z4;
                             j8 = clientUserId;
                             longSparseArray6 = longSparseArray;
-                            longSparseArray5 = longSparseArray9;
-                            longSparseArray4 = longSparseArray8;
+                            longSparseArray5 = longSparseArray13;
+                            longSparseArray4 = longSparseArray12;
                             sharedPreferences = notificationsSettings;
                             notificationsController2 = notificationsController3;
-                            i8 = i21;
+                            i8 = i23;
                             arrayList5 = arrayList14;
-                            i9 = i22;
                             notification2 = build2;
                             str10 = str3;
-                            str11 = str5;
-                            str12 = str6;
+                            str11 = str4;
+                            str12 = str5;
+                            str13 = str6;
+                            str14 = str7;
                             z8 = z5;
-                            str38 = str4;
-                            i18 = i9 + 1;
+                            i14 = i24;
+                            i20 = i14 + 1;
                             arrayList13 = arrayList5;
                             size = i8;
+                            str5 = str12;
                             z5 = z8;
-                            str4 = str38;
                             arrayList11 = arrayList2;
                             z4 = z9;
-                            longSparseArray8 = longSparseArray4;
+                            longSparseArray12 = longSparseArray4;
                             clientUserId = j8;
-                            str5 = str11;
-                            str6 = str12;
-                            longSparseArray9 = longSparseArray5;
+                            str6 = str13;
+                            str7 = str14;
+                            str4 = str11;
+                            longSparseArray13 = longSparseArray5;
                             longSparseArray = longSparseArray6;
                             build2 = notification2;
                             notificationsController3 = notificationsController2;
@@ -9665,72 +9706,72 @@ public class NotificationsController extends BaseController {
                         } else {
                             arrayList2 = arrayList11;
                             notification = build2;
-                            boolean z13 = z4;
+                            boolean z14 = z4;
                             z6 = z5;
-                            long j20 = notificationsController3.storyPushMessages.get(0).dialogId;
+                            long j19 = notificationsController3.storyPushMessages.get(0).dialogId;
                             Iterator<Integer> it = notificationsController3.storyPushMessages.get(0).dateByIds.keySet().iterator();
-                            int i23 = 0;
+                            int i25 = 0;
                             while (it.hasNext()) {
-                                i23 = Math.max(i23, it.next().intValue());
+                                i25 = Math.max(i25, it.next().intValue());
                                 arrayList15 = arrayList15;
                             }
                             str8 = "showExtraNotifications: [";
-                            longSparseArray4 = longSparseArray8;
-                            id = i23;
+                            longSparseArray4 = longSparseArray12;
+                            id = i25;
                             j3 = 0;
                             messageObject = null;
-                            z7 = z13;
-                            j4 = j20;
+                            z7 = z14;
+                            j4 = j19;
                             arrayList3 = arrayList15;
                         }
                     } else {
                         z6 = z5;
                         arrayList2 = arrayList11;
                         notification = build2;
-                        boolean z14 = z4;
-                        long j21 = dialogKey6.dialogId;
-                        long j22 = dialogKey6.topicId;
-                        ArrayList<StoryNotification> arrayList16 = (ArrayList) longSparseArray8.get(j21);
+                        boolean z15 = z4;
+                        long j20 = dialogKey6.dialogId;
+                        long j21 = dialogKey6.topicId;
+                        ArrayList<StoryNotification> arrayList16 = (ArrayList) longSparseArray12.get(j20);
                         arrayList3 = arrayList16;
                         id = ((MessageObject) arrayList16.get(0)).getId();
                         messageObject = (MessageObject) arrayList16.get(0);
                         str8 = "showExtraNotifications: [";
-                        z7 = z14;
-                        longSparseArray4 = longSparseArray8;
-                        j3 = j22;
-                        j4 = j21;
+                        z7 = z15;
+                        longSparseArray4 = longSparseArray12;
+                        j3 = j21;
+                        j4 = j20;
                     }
-                    int i24 = (Integer) longSparseArray9.get(dialogKey6.dialogId);
+                    int i26 = (Integer) longSparseArray13.get(dialogKey6.dialogId);
                     if (dialogKey6.story) {
-                        i24 = 2147483646;
+                        i26 = 2147483646;
                         j5 = j3;
-                    } else if (i24 == null) {
+                    } else if (i26 == null) {
                         j5 = j3;
-                        long j23 = dialogKey6.dialogId;
-                        i24 = Integer.valueOf(((int) j23) + ((int) (j23 >> 32)));
+                        long j22 = dialogKey6.dialogId;
+                        i26 = Integer.valueOf(((int) j22) + ((int) (j22 >> 32)));
                     } else {
                         j5 = j3;
-                        longSparseArray9.remove(dialogKey6.dialogId);
+                        longSparseArray13.remove(dialogKey6.dialogId);
                     }
-                    Integer num3 = i24;
-                    int i25 = 0;
-                    for (int i26 = 0; i26 < arrayList3.size(); i26++) {
-                        if (i25 < ((MessageObject) arrayList3.get(i26)).messageOwner.date) {
-                            i25 = ((MessageObject) arrayList3.get(i26)).messageOwner.date;
+                    Integer num3 = i26;
+                    int i27 = 0;
+                    for (int i28 = 0; i28 < arrayList3.size(); i28++) {
+                        if (i27 < ((MessageObject) arrayList3.get(i28)).messageOwner.date) {
+                            i27 = ((MessageObject) arrayList3.get(i28)).messageOwner.date;
                         }
                     }
                     if (dialogKey6.story) {
                         TLRPC.User user9 = getMessagesController().getUser(Long.valueOf(j4));
-                        longSparseArray5 = longSparseArray9;
+                        longSparseArray5 = longSparseArray13;
                         if (notificationsController3.storyPushMessages.size() == 1) {
                             if (user9 != null) {
                                 formatPluralString = UserObject.getFirstName(user9);
                             } else {
                                 formatPluralString = notificationsController3.storyPushMessages.get(0).localName;
                             }
-                            i7 = i25;
+                            i7 = i27;
                         } else {
-                            i7 = i25;
+                            i7 = i27;
                             formatPluralString = LocaleController.formatPluralString("Stories", notificationsController3.storyPushMessages.size(), new Object[0]);
                         }
                         if (user9 == null || (userProfilePhoto5 = user9.photo) == null || (fileLocation4 = userProfilePhoto5.photo_small) == null) {
@@ -9755,7 +9796,7 @@ public class NotificationsController extends BaseController {
                                 }
                                 if (z6) {
                                     sharedPreferences2 = notificationsSettings;
-                                    str15 = string;
+                                    str17 = string;
                                 } else {
                                     if (DialogObject.isChatDialog(j4)) {
                                         string3 = LocaleController.getString(R.string.NotificationHiddenChatName);
@@ -9763,7 +9804,7 @@ public class NotificationsController extends BaseController {
                                         string3 = LocaleController.getString(R.string.NotificationHiddenName);
                                     }
                                     sharedPreferences2 = notificationsSettings;
-                                    str15 = string3;
+                                    str17 = string3;
                                     fileLocation4 = null;
                                     z10 = false;
                                 }
@@ -9802,47 +9843,47 @@ public class NotificationsController extends BaseController {
                                     bitmap = null;
                                 }
                                 if (chat4 == null) {
-                                    Person.Builder name = new Person.Builder().setName(str15);
+                                    Person.Builder name = new Person.Builder().setName(str17);
                                     if (file != null && file.exists() && Build.VERSION.SDK_INT >= 28) {
-                                        loadRoundAvatar(file, name);
+                                        loadRoundAvatar(j4, file, name);
                                     }
                                     dialogKey = dialogKey6;
-                                    str16 = str15;
+                                    str18 = str17;
                                     longSparseArray.put(-chat4.id, name.build());
                                 } else {
                                     dialogKey = dialogKey6;
-                                    str16 = str15;
+                                    str18 = str17;
                                 }
                                 File file4 = file;
                                 if ((z12 || z11) && z10 && !SharedConfig.isWaitingForPasscodeEnter && j6 != j4 && !UserObject.isReplyUser(j4) && MessagesController.getInstance(notificationsController3.currentAccount).getSendPaidMessagesStars(j4) <= 0) {
                                     bitmap2 = bitmap;
-                                    Intent intent2 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                    intent2.putExtra("dialog_id", j4);
-                                    int i27 = id;
-                                    intent2.putExtra("max_id", i27);
-                                    intent2.putExtra("topic_id", j7);
-                                    intent2.putExtra("currentAccount", notificationsController3.currentAccount);
+                                    Intent intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                    intent.putExtra("dialog_id", j4);
+                                    int i29 = id;
+                                    intent.putExtra("max_id", i29);
+                                    intent.putExtra("topic_id", j7);
+                                    intent.putExtra("currentAccount", notificationsController3.currentAccount);
                                     dialogKey2 = dialogKey;
                                     chat5 = chat4;
-                                    PendingIntent broadcast = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent2, 167772160);
+                                    PendingIntent broadcast = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160);
                                     RemoteInput build3 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                     if (!DialogObject.isChatDialog(j4)) {
-                                        str17 = "max_id";
-                                        formatString = LocaleController.formatString(R.string.ReplyToGroup, str16);
-                                        i10 = i27;
+                                        str19 = "max_id";
+                                        formatString = LocaleController.formatString(R.string.ReplyToGroup, str18);
+                                        i9 = i29;
                                         r9 = 1;
                                     } else {
-                                        str17 = "max_id";
-                                        i10 = i27;
+                                        str19 = "max_id";
+                                        i9 = i29;
                                         r9 = 1;
-                                        formatString = LocaleController.formatString(R.string.ReplyToUser, str16);
+                                        formatString = LocaleController.formatString(R.string.ReplyToUser, str18);
                                     }
                                     build = new NotificationCompat.Action.Builder(R.drawable.ic_reply_icon, formatString, broadcast).setAllowGeneratedReplies(r9).setSemanticAction(r9).addRemoteInput(build3).setShowsUserInterface(false).build();
                                 } else {
-                                    str17 = "max_id";
+                                    str19 = "max_id";
                                     chat5 = chat4;
                                     bitmap2 = bitmap;
-                                    i10 = id;
+                                    i9 = id;
                                     dialogKey2 = dialogKey;
                                     build = null;
                                 }
@@ -9856,8 +9897,8 @@ public class NotificationsController extends BaseController {
                                 } else {
                                     max = Math.max(num2.intValue(), arrayList4.size());
                                 }
-                                String format = (max > 1 || Build.VERSION.SDK_INT >= 28) ? str16 : String.format("%1$s (%2$d)", str16, Integer.valueOf(max));
-                                long j24 = j4;
+                                String format = (max > 1 || Build.VERSION.SDK_INT >= 28) ? str18 : String.format("%1$s (%2$d)", str18, Integer.valueOf(max));
+                                long j23 = j4;
                                 j9 = j6;
                                 person = (Person) longSparseArray.get(j9);
                                 if (Build.VERSION.SDK_INT >= 28 && person == null) {
@@ -9871,118 +9912,114 @@ public class NotificationsController extends BaseController {
                                         } catch (Throwable th) {
                                             th = th;
                                             action = build;
-                                            str18 = "dialog_id";
+                                            str20 = "dialog_id";
                                         }
                                         if (userProfilePhoto4 != null && (fileLocation9 = userProfilePhoto4.photo_small) != null) {
                                             action = build;
-                                            str18 = "dialog_id";
+                                            str20 = "dialog_id";
                                             try {
-                                                if (fileLocation9.volume_id != 0 && fileLocation9.local_id != 0) {
-                                                    Person.Builder name2 = new Person.Builder().setName(LocaleController.getString(R.string.FromYou));
-                                                    loadRoundAvatar(getFileLoader().getPathToAttach(user8.photo.photo_small, true), name2);
-                                                    person = name2.build();
-                                                    longSparseArray.put(j9, person);
-                                                }
                                             } catch (Throwable th2) {
                                                 th = th2;
+                                                str21 = "currentAccount";
                                                 FileLog.e(th);
                                                 messageObject3 = messageObject2;
                                                 if (messageObject2 == null) {
                                                 }
-                                                String str40 = "";
+                                                String str38 = "";
                                                 if (person == null) {
                                                 }
                                                 messagingStyle = new NotificationCompat.MessagingStyle("");
                                                 messagingStyle2 = messagingStyle;
-                                                i11 = Build.VERSION.SDK_INT;
-                                                if (i11 >= 28) {
+                                                i10 = Build.VERSION.SDK_INT;
+                                                if (i10 >= 28) {
                                                 }
                                                 messagingStyle2.setConversationTitle(format);
-                                                messagingStyle2.setGroupConversation(i11 >= 28 || (!z12 && DialogObject.isChatDialog(j24)) || UserObject.isReplyUser(j24));
-                                                StringBuilder sb3 = new StringBuilder();
+                                                messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j23)) || UserObject.isReplyUser(j23));
+                                                StringBuilder sb5 = new StringBuilder();
+                                                String str39 = str21;
                                                 String[] strArr2 = new String[1];
                                                 boolean[] zArr2 = new boolean[1];
                                                 if (!dialogKey3.story) {
                                                 }
-                                                Intent intent3 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                                intent3.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                                intent3.setFlags(67108864);
-                                                intent3.addCategory("android.intent.category.LAUNCHER");
-                                                if (messageObject3 == null) {
+                                                Intent intent2 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                intent2.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                intent2.setFlags(67108864);
+                                                intent2.addCategory("android.intent.category.LAUNCHER");
+                                                if (!messageObject3.isOauthPush) {
                                                 }
-                                                if (messageObject4 == null) {
-                                                }
+                                                bitmap4 = bitmap3;
+                                                messageObject4 = messageObject3;
+                                                longSparseArray9 = longSparseArray7;
                                                 str34 = str6;
                                                 str35 = str7;
-                                                messageObject5 = messageObject4;
                                                 dialogKey5 = dialogKey4;
-                                                if (!dialogKey5.story) {
-                                                }
-                                                StringBuilder sb4 = new StringBuilder();
-                                                sb4.append("show extra notifications chatId ");
-                                                sb4.append(j11);
-                                                sb4.append(" topicId ");
+                                                arrayList8 = arrayList7;
+                                                StringBuilder sb6 = new StringBuilder();
+                                                sb6.append("show extra notifications chatId ");
+                                                sb6.append(j11);
+                                                sb6.append(" topicId ");
                                                 j15 = j12;
-                                                sb4.append(j15);
-                                                FileLog.d(sb4.toString());
+                                                sb6.append(j15);
+                                                FileLog.d(sb6.toString());
                                                 if (j15 != 0) {
                                                 }
-                                                String str41 = "currentAccount";
-                                                intent3.putExtra(str41, notificationsController3.currentAccount);
-                                                str7 = str35;
-                                                PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent3, 1140850688);
+                                                String str40 = str39;
+                                                intent2.putExtra(str40, notificationsController3.currentAccount);
+                                                PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2, 1140850688);
                                                 NotificationCompat.WearableExtender wearableExtender = new NotificationCompat.WearableExtender();
                                                 NotificationCompat.Action action4 = action;
                                                 if (action != null) {
                                                 }
+                                                String str41 = str22;
+                                                Intent intent3 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                intent3.addFlags(32);
+                                                intent3.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                intent3.putExtra(str20, j11);
+                                                int i30 = i9;
+                                                intent3.putExtra(str19, i30);
+                                                intent3.putExtra(str40, notificationsController3.currentAccount);
                                                 String str42 = str34;
-                                                Intent intent4 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                intent4.addFlags(32);
-                                                intent4.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                intent4.putExtra(str18, j11);
-                                                int i28 = i10;
-                                                intent4.putExtra(str17, i28);
-                                                intent4.putExtra(str41, notificationsController3.currentAccount);
-                                                int i29 = i12;
-                                                NotificationCompat.Action build4 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                String str43 = str35;
+                                                NotificationCompat.Action build4 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent3, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                 if (DialogObject.isEncryptedDialog(j11)) {
                                                 }
-                                                if (str37 != null) {
+                                                if (str36 != null) {
                                                 }
-                                                StringBuilder sb5 = new StringBuilder();
-                                                sb5.append("tgaccount");
-                                                NotificationCompat.Action action5 = action2;
-                                                long j25 = j10;
-                                                sb5.append(j25);
-                                                wearableExtender.setBridgeTag(sb5.toString());
+                                                StringBuilder sb7 = new StringBuilder();
+                                                sb7.append("tgaccount");
+                                                int i31 = i12;
+                                                long j24 = j10;
+                                                sb7.append(j24);
+                                                wearableExtender.setBridgeTag(sb7.toString());
                                                 if (dialogKey5.story) {
                                                 }
-                                                NotificationCompat.Builder autoCancel = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str21).setSmallIcon(R.drawable.notification).setContentText(sb3.toString()).setAutoCancel(true);
+                                                NotificationCompat.Builder autoCancel = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
                                                 if (dialogKey5.story) {
                                                 }
-                                                NotificationCompat.Builder category = autoCancel.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j18).setShowWhen(true).setStyle(messagingStyle3).setContentIntent(activity).extend(wearableExtender).setSortKey(String.valueOf(Long.MAX_VALUE - j18)).setCategory("msg");
-                                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                intent.putExtra("messageDate", i7);
-                                                j19 = j16;
-                                                intent.putExtra("dialogId", j19);
-                                                intent.putExtra(str41, notificationsController3.currentAccount);
+                                                category = autoCancel.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity).extend(wearableExtender).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                                Intent intent4 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                intent4.putExtra("messageDate", i7);
+                                                intent4.putExtra("dialogId", j11);
+                                                intent4.putExtra(str40, notificationsController3.currentAccount);
                                                 if (dialogKey5.story) {
                                                 }
-                                                if (messageObject6 != null) {
+                                                if (messageObject5.isStoryReactionPush) {
                                                 }
-                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
+                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4, 167772160));
                                                 if (z7) {
                                                 }
-                                                if (messageObject6 != null) {
+                                                message = messageObject5.messageOwner;
+                                                if (message != null) {
                                                 }
                                                 tL_keyboardButtonCopy = null;
                                                 if (tL_keyboardButtonCopy != null) {
                                                 }
-                                                if (dialogKey5.dialogId != UserObject.VERIFY) {
+                                                j18 = dialogKey5.dialogId;
+                                                if (j18 != UserObject.VERIFY) {
                                                 }
                                                 if (arrayList2.size() != 1) {
                                                 }
-                                                if (DialogObject.isEncryptedDialog(j19)) {
+                                                if (DialogObject.isEncryptedDialog(j11)) {
                                                 }
                                                 if (bitmap4 != null) {
                                                 }
@@ -9992,38 +10029,40 @@ public class NotificationsController extends BaseController {
                                                 }
                                                 user7 = user6;
                                                 Notification notification3 = notification;
-                                                boolean z15 = z7;
+                                                boolean z16 = z7;
                                                 if (Build.VERSION.SDK_INT >= 26) {
                                                 }
-                                                FileLog.d("showExtraNotifications: holders.add " + j19);
-                                                i8 = i21;
-                                                str10 = str19;
+                                                FileLog.d("showExtraNotifications: holders.add " + j11);
+                                                i8 = i23;
+                                                str10 = str23;
                                                 z8 = z6;
-                                                j8 = j17;
-                                                z9 = z15;
-                                                longSparseArray6 = longSparseArray7;
-                                                i9 = i22;
-                                                str12 = str42;
+                                                j8 = j16;
+                                                z9 = z16;
+                                                longSparseArray6 = longSparseArray9;
+                                                str12 = str5;
+                                                i14 = i24;
+                                                str11 = str41;
                                                 notification2 = notification3;
+                                                str14 = str43;
                                                 sharedPreferences = sharedPreferences2;
-                                                str11 = str5;
-                                                str38 = str36;
+                                                str13 = str42;
                                                 arrayList5 = arrayList14;
-                                                arrayList5.add(new 1NotificationHolder(num.intValue(), j19, dialogKey5.story, j15, str21, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                                arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                 notificationsController2 = this;
-                                                notificationsController2.wearNotificationsIds.put(j19, num);
-                                                i18 = i9 + 1;
+                                                notificationsController2.wearNotificationsIds.put(j11, num);
+                                                i20 = i14 + 1;
                                                 arrayList13 = arrayList5;
                                                 size = i8;
+                                                str5 = str12;
                                                 z5 = z8;
-                                                str4 = str38;
                                                 arrayList11 = arrayList2;
                                                 z4 = z9;
-                                                longSparseArray8 = longSparseArray4;
+                                                longSparseArray12 = longSparseArray4;
                                                 clientUserId = j8;
-                                                str5 = str11;
-                                                str6 = str12;
-                                                longSparseArray9 = longSparseArray5;
+                                                str6 = str13;
+                                                str7 = str14;
+                                                str4 = str11;
+                                                longSparseArray13 = longSparseArray5;
                                                 longSparseArray = longSparseArray6;
                                                 build2 = notification2;
                                                 notificationsController3 = notificationsController2;
@@ -10031,716 +10070,893 @@ public class NotificationsController extends BaseController {
                                                 notificationsSettings = sharedPreferences;
                                                 i4 = -1;
                                             }
-                                            messageObject3 = messageObject2;
-                                            boolean z16 = (messageObject2 == null && (messageObject3.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest)) ? false : true;
-                                            String str402 = "";
-                                            if (person == null && z16) {
-                                                messagingStyle = new NotificationCompat.MessagingStyle(person);
-                                            } else {
-                                                messagingStyle = new NotificationCompat.MessagingStyle("");
-                                            }
-                                            messagingStyle2 = messagingStyle;
-                                            i11 = Build.VERSION.SDK_INT;
-                                            if (i11 >= 28 || ((DialogObject.isChatDialog(j24) && !z12) || UserObject.isReplyUser(j24))) {
-                                                messagingStyle2.setConversationTitle(format);
-                                            }
-                                            messagingStyle2.setGroupConversation(i11 >= 28 || (!z12 && DialogObject.isChatDialog(j24)) || UserObject.isReplyUser(j24));
-                                            StringBuilder sb32 = new StringBuilder();
-                                            String[] strArr22 = new String[1];
-                                            boolean[] zArr22 = new boolean[1];
-                                            if (!dialogKey3.story) {
-                                                ArrayList<String> arrayList17 = new ArrayList<>();
-                                                ArrayList<Object> arrayList18 = new ArrayList<>();
-                                                Pair<Integer, Boolean> parseStoryPushes = notificationsController3.parseStoryPushes(arrayList17, arrayList18);
-                                                int intValue = ((Integer) parseStoryPushes.first).intValue();
-                                                boolean booleanValue = ((Boolean) parseStoryPushes.second).booleanValue();
-                                                if (booleanValue) {
-                                                    sb32.append(LocaleController.formatPluralString("StoryNotificationHidden", intValue, new Object[0]));
-                                                } else if (arrayList17.isEmpty()) {
-                                                    FileLog.d(str8 + j24 + "] continue; story but names is empty");
-                                                    longSparseArray6 = longSparseArray;
-                                                    notificationsController2 = notificationsController3;
-                                                    i8 = i21;
-                                                    arrayList5 = arrayList14;
-                                                    i9 = i22;
-                                                    notification2 = notification;
-                                                    str10 = str3;
-                                                    str12 = str6;
+                                            if (fileLocation9.volume_id != 0 && fileLocation9.local_id != 0) {
+                                                Person.Builder name2 = new Person.Builder().setName(LocaleController.getString(R.string.FromYou));
+                                                str21 = "currentAccount";
+                                                try {
+                                                    loadRoundAvatar(getUserConfig().getClientUserId(), getFileLoader().getPathToAttach(user8.photo.photo_small, true), name2);
+                                                    person = name2.build();
+                                                    longSparseArray.put(j9, person);
+                                                } catch (Throwable th3) {
+                                                    th = th3;
+                                                    FileLog.e(th);
+                                                    messageObject3 = messageObject2;
+                                                    if (messageObject2 == null) {
+                                                    }
+                                                    String str382 = "";
+                                                    if (person == null) {
+                                                    }
+                                                    messagingStyle = new NotificationCompat.MessagingStyle("");
+                                                    messagingStyle2 = messagingStyle;
+                                                    i10 = Build.VERSION.SDK_INT;
+                                                    if (i10 >= 28) {
+                                                    }
+                                                    messagingStyle2.setConversationTitle(format);
+                                                    messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j23)) || UserObject.isReplyUser(j23));
+                                                    StringBuilder sb52 = new StringBuilder();
+                                                    String str392 = str21;
+                                                    String[] strArr22 = new String[1];
+                                                    boolean[] zArr22 = new boolean[1];
+                                                    if (!dialogKey3.story) {
+                                                    }
+                                                    Intent intent22 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                    intent22.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                    intent22.setFlags(67108864);
+                                                    intent22.addCategory("android.intent.category.LAUNCHER");
+                                                    if (!messageObject3.isOauthPush) {
+                                                    }
+                                                    bitmap4 = bitmap3;
+                                                    messageObject4 = messageObject3;
+                                                    longSparseArray9 = longSparseArray7;
+                                                    str34 = str6;
+                                                    str35 = str7;
+                                                    dialogKey5 = dialogKey4;
+                                                    arrayList8 = arrayList7;
+                                                    StringBuilder sb62 = new StringBuilder();
+                                                    sb62.append("show extra notifications chatId ");
+                                                    sb62.append(j11);
+                                                    sb62.append(" topicId ");
+                                                    j15 = j12;
+                                                    sb62.append(j15);
+                                                    FileLog.d(sb62.toString());
+                                                    if (j15 != 0) {
+                                                    }
+                                                    String str402 = str392;
+                                                    intent22.putExtra(str402, notificationsController3.currentAccount);
+                                                    PendingIntent activity2 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent22, 1140850688);
+                                                    NotificationCompat.WearableExtender wearableExtender2 = new NotificationCompat.WearableExtender();
+                                                    NotificationCompat.Action action42 = action;
+                                                    if (action != null) {
+                                                    }
+                                                    String str412 = str22;
+                                                    Intent intent32 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                    intent32.addFlags(32);
+                                                    intent32.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                    intent32.putExtra(str20, j11);
+                                                    int i302 = i9;
+                                                    intent32.putExtra(str19, i302);
+                                                    intent32.putExtra(str402, notificationsController3.currentAccount);
+                                                    String str422 = str34;
+                                                    String str432 = str35;
+                                                    NotificationCompat.Action build42 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent32, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                    if (DialogObject.isEncryptedDialog(j11)) {
+                                                    }
+                                                    if (str36 != null) {
+                                                    }
+                                                    StringBuilder sb72 = new StringBuilder();
+                                                    sb72.append("tgaccount");
+                                                    int i312 = i12;
+                                                    long j242 = j10;
+                                                    sb72.append(j242);
+                                                    wearableExtender2.setBridgeTag(sb72.toString());
+                                                    if (dialogKey5.story) {
+                                                    }
+                                                    NotificationCompat.Builder autoCancel2 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
+                                                    if (dialogKey5.story) {
+                                                    }
+                                                    category = autoCancel2.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity2).extend(wearableExtender2).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                                    Intent intent42 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                    intent42.putExtra("messageDate", i7);
+                                                    intent42.putExtra("dialogId", j11);
+                                                    intent42.putExtra(str402, notificationsController3.currentAccount);
+                                                    if (dialogKey5.story) {
+                                                    }
+                                                    if (messageObject5.isStoryReactionPush) {
+                                                    }
+                                                    category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42, 167772160));
+                                                    if (z7) {
+                                                    }
+                                                    message = messageObject5.messageOwner;
+                                                    if (message != null) {
+                                                    }
+                                                    tL_keyboardButtonCopy = null;
+                                                    if (tL_keyboardButtonCopy != null) {
+                                                    }
+                                                    j18 = dialogKey5.dialogId;
+                                                    if (j18 != UserObject.VERIFY) {
+                                                    }
+                                                    if (arrayList2.size() != 1) {
+                                                    }
+                                                    if (DialogObject.isEncryptedDialog(j11)) {
+                                                    }
+                                                    if (bitmap4 != null) {
+                                                    }
+                                                    if (!AndroidUtilities.needShowPasscode(false)) {
+                                                    }
+                                                    if (chat5 == null) {
+                                                    }
+                                                    user7 = user6;
+                                                    Notification notification32 = notification;
+                                                    boolean z162 = z7;
+                                                    if (Build.VERSION.SDK_INT >= 26) {
+                                                    }
+                                                    FileLog.d("showExtraNotifications: holders.add " + j11);
+                                                    i8 = i23;
+                                                    str10 = str23;
                                                     z8 = z6;
-                                                    z9 = z7;
+                                                    j8 = j16;
+                                                    z9 = z162;
+                                                    longSparseArray6 = longSparseArray9;
+                                                    str12 = str5;
+                                                    i14 = i24;
+                                                    str11 = str412;
+                                                    notification2 = notification32;
+                                                    str14 = str432;
                                                     sharedPreferences = sharedPreferences2;
-                                                    j8 = j9;
-                                                    str11 = str5;
-                                                    str38 = str4;
-                                                    i18 = i9 + 1;
+                                                    str13 = str422;
+                                                    arrayList5 = arrayList14;
+                                                    arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                                    notificationsController2 = this;
+                                                    notificationsController2.wearNotificationsIds.put(j11, num);
+                                                    i20 = i14 + 1;
                                                     arrayList13 = arrayList5;
                                                     size = i8;
+                                                    str5 = str12;
                                                     z5 = z8;
-                                                    str4 = str38;
                                                     arrayList11 = arrayList2;
                                                     z4 = z9;
-                                                    longSparseArray8 = longSparseArray4;
+                                                    longSparseArray12 = longSparseArray4;
                                                     clientUserId = j8;
-                                                    str5 = str11;
-                                                    str6 = str12;
-                                                    longSparseArray9 = longSparseArray5;
+                                                    str6 = str13;
+                                                    str7 = str14;
+                                                    str4 = str11;
+                                                    longSparseArray13 = longSparseArray5;
                                                     longSparseArray = longSparseArray6;
                                                     build2 = notification2;
                                                     notificationsController3 = notificationsController2;
                                                     str3 = str10;
                                                     notificationsSettings = sharedPreferences;
                                                     i4 = -1;
-                                                } else if (arrayList17.size() != 1) {
-                                                    dialogKey4 = dialogKey3;
-                                                    if (arrayList17.size() != 2) {
-                                                        longSparseArray7 = longSparseArray;
-                                                        if (arrayList17.size() == 3 && notificationsController3.storyPushMessages.size() == 3) {
-                                                            j10 = j9;
-                                                            sb32.append(LocaleController.formatString(R.string.StoryNotification3, notificationsController3.cutLastName(arrayList17.get(0)), notificationsController3.cutLastName(arrayList17.get(1)), notificationsController3.cutLastName(arrayList17.get(2))));
-                                                        } else {
-                                                            j10 = j9;
-                                                            sb32.append(LocaleController.formatPluralString("StoryNotification4", notificationsController3.storyPushMessages.size() - 2, notificationsController3.cutLastName(arrayList17.get(0)), notificationsController3.cutLastName(arrayList17.get(1))));
-                                                        }
-                                                        long j26 = Long.MAX_VALUE;
-                                                        while (i15 < notificationsController3.storyPushMessages.size()) {
-                                                        }
-                                                        messagingStyle2.setGroupConversation(false);
-                                                        if (arrayList17.size() == 1) {
-                                                        }
-                                                        messagingStyle2.addMessage(sb32, j26, new Person.Builder().setName(r0).build());
-                                                        if (booleanValue) {
-                                                        }
-                                                        arrayList7 = null;
-                                                        i12 = 0;
-                                                        str21 = r0;
-                                                    } else {
-                                                        longSparseArray7 = longSparseArray;
-                                                        sb32.append(LocaleController.formatString(R.string.StoryNotification2, arrayList17.get(0), arrayList17.get(1)));
-                                                        j10 = j9;
-                                                        long j262 = Long.MAX_VALUE;
-                                                        while (i15 < notificationsController3.storyPushMessages.size()) {
-                                                        }
-                                                        messagingStyle2.setGroupConversation(false);
-                                                        if (arrayList17.size() == 1) {
-                                                        }
-                                                        messagingStyle2.addMessage(sb32, j262, new Person.Builder().setName(r0).build());
-                                                        if (booleanValue) {
-                                                        }
-                                                        arrayList7 = null;
-                                                        i12 = 0;
-                                                        str21 = r0;
-                                                    }
-                                                } else if (intValue == 1) {
-                                                    sb32.append(LocaleController.getString("StoryNotificationSingle"));
+                                                }
+                                                messageObject3 = messageObject2;
+                                                boolean z17 = (messageObject2 == null && (messageObject3.messageOwner.action instanceof TLRPC.TL_messageActionChatJoinedByRequest)) ? false : true;
+                                                String str3822 = "";
+                                                if (person == null && z17) {
+                                                    messagingStyle = new NotificationCompat.MessagingStyle(person);
                                                 } else {
+                                                    messagingStyle = new NotificationCompat.MessagingStyle("");
+                                                }
+                                                messagingStyle2 = messagingStyle;
+                                                i10 = Build.VERSION.SDK_INT;
+                                                if (i10 >= 28 || ((DialogObject.isChatDialog(j23) && !z12) || UserObject.isReplyUser(j23))) {
+                                                    messagingStyle2.setConversationTitle(format);
+                                                }
+                                                messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j23)) || UserObject.isReplyUser(j23));
+                                                StringBuilder sb522 = new StringBuilder();
+                                                String str3922 = str21;
+                                                String[] strArr222 = new String[1];
+                                                boolean[] zArr222 = new boolean[1];
+                                                if (!dialogKey3.story) {
+                                                    ArrayList<String> arrayList17 = new ArrayList<>();
+                                                    ArrayList<Object> arrayList18 = new ArrayList<>();
+                                                    Pair<Integer, Boolean> parseStoryPushes = notificationsController3.parseStoryPushes(arrayList17, arrayList18);
+                                                    int intValue = ((Integer) parseStoryPushes.first).intValue();
+                                                    boolean booleanValue = ((Boolean) parseStoryPushes.second).booleanValue();
+                                                    if (booleanValue) {
+                                                        sb522.append(LocaleController.formatPluralString("StoryNotificationHidden", intValue, new Object[0]));
+                                                    } else if (arrayList17.isEmpty()) {
+                                                        FileLog.d(str8 + j23 + "] continue; story but names is empty");
+                                                        longSparseArray6 = longSparseArray;
+                                                        notificationsController2 = notificationsController3;
+                                                        i8 = i23;
+                                                        arrayList5 = arrayList14;
+                                                        notification2 = notification;
+                                                        str10 = str3;
+                                                        str11 = str4;
+                                                        str12 = str5;
+                                                        str14 = str7;
+                                                        z8 = z6;
+                                                        z9 = z7;
+                                                        sharedPreferences = sharedPreferences2;
+                                                        j8 = j9;
+                                                        i14 = i24;
+                                                        str13 = str6;
+                                                        i20 = i14 + 1;
+                                                        arrayList13 = arrayList5;
+                                                        size = i8;
+                                                        str5 = str12;
+                                                        z5 = z8;
+                                                        arrayList11 = arrayList2;
+                                                        z4 = z9;
+                                                        longSparseArray12 = longSparseArray4;
+                                                        clientUserId = j8;
+                                                        str6 = str13;
+                                                        str7 = str14;
+                                                        str4 = str11;
+                                                        longSparseArray13 = longSparseArray5;
+                                                        longSparseArray = longSparseArray6;
+                                                        build2 = notification2;
+                                                        notificationsController3 = notificationsController2;
+                                                        str3 = str10;
+                                                        notificationsSettings = sharedPreferences;
+                                                        i4 = -1;
+                                                    } else if (arrayList17.size() != 1) {
+                                                        dialogKey4 = dialogKey3;
+                                                        if (arrayList17.size() != 2) {
+                                                            longSparseArray11 = longSparseArray;
+                                                            if (arrayList17.size() == 3 && notificationsController3.storyPushMessages.size() == 3) {
+                                                                j10 = j9;
+                                                                sb522.append(LocaleController.formatString(R.string.StoryNotification3, notificationsController3.cutLastName(arrayList17.get(0)), notificationsController3.cutLastName(arrayList17.get(1)), notificationsController3.cutLastName(arrayList17.get(2))));
+                                                            } else {
+                                                                j10 = j9;
+                                                                sb522.append(LocaleController.formatPluralString("StoryNotification4", notificationsController3.storyPushMessages.size() - 2, notificationsController3.cutLastName(arrayList17.get(0)), notificationsController3.cutLastName(arrayList17.get(1))));
+                                                            }
+                                                            long j25 = Long.MAX_VALUE;
+                                                            while (i17 < notificationsController3.storyPushMessages.size()) {
+                                                            }
+                                                            messagingStyle2.setGroupConversation(false);
+                                                            if (arrayList17.size() == 1) {
+                                                            }
+                                                            messagingStyle2.addMessage(sb522, j25, new Person.Builder().setName(r0).build());
+                                                            if (booleanValue) {
+                                                            }
+                                                            str23 = str3;
+                                                        } else {
+                                                            longSparseArray11 = longSparseArray;
+                                                            sb522.append(LocaleController.formatString(R.string.StoryNotification2, arrayList17.get(0), arrayList17.get(1)));
+                                                            j10 = j9;
+                                                            long j252 = Long.MAX_VALUE;
+                                                            while (i17 < notificationsController3.storyPushMessages.size()) {
+                                                            }
+                                                            messagingStyle2.setGroupConversation(false);
+                                                            if (arrayList17.size() == 1) {
+                                                            }
+                                                            messagingStyle2.addMessage(sb522, j252, new Person.Builder().setName(r0).build());
+                                                            if (booleanValue) {
+                                                            }
+                                                            str23 = str3;
+                                                        }
+                                                    } else if (intValue == 1) {
+                                                        sb522.append(LocaleController.getString("StoryNotificationSingle"));
+                                                    } else {
+                                                        dialogKey4 = dialogKey3;
+                                                        sb522.append(LocaleController.formatPluralString("StoryNotification1", intValue, arrayList17.get(0)));
+                                                        longSparseArray11 = longSparseArray;
+                                                        j10 = j9;
+                                                        long j2522 = Long.MAX_VALUE;
+                                                        for (i17 = 0; i17 < notificationsController3.storyPushMessages.size(); i17++) {
+                                                            j2522 = Math.min(notificationsController3.storyPushMessages.get(i17).date, j2522);
+                                                        }
+                                                        messagingStyle2.setGroupConversation(false);
+                                                        String formatPluralString2 = (arrayList17.size() == 1 || booleanValue) ? LocaleController.formatPluralString(str9, intValue, new Object[0]) : arrayList17.get(0);
+                                                        messagingStyle2.addMessage(sb522, j2522, new Person.Builder().setName(formatPluralString2).build());
+                                                        if (booleanValue) {
+                                                            j12 = j7;
+                                                            sb = sb522;
+                                                            bitmap3 = loadMultipleAvatars(arrayList18);
+                                                            str22 = str4;
+                                                            j11 = j23;
+                                                            longSparseArray7 = longSparseArray11;
+                                                            arrayList7 = null;
+                                                            i11 = 0;
+                                                            str24 = formatPluralString2;
+                                                        } else {
+                                                            str24 = formatPluralString2;
+                                                            j12 = j7;
+                                                            sb = sb522;
+                                                            str22 = str4;
+                                                            j11 = j23;
+                                                            longSparseArray7 = longSparseArray11;
+                                                            bitmap3 = null;
+                                                            arrayList7 = null;
+                                                            i11 = 0;
+                                                        }
+                                                        str23 = str3;
+                                                    }
                                                     dialogKey4 = dialogKey3;
-                                                    sb32.append(LocaleController.formatPluralString("StoryNotification1", intValue, arrayList17.get(0)));
-                                                    longSparseArray7 = longSparseArray;
+                                                    longSparseArray11 = longSparseArray;
                                                     j10 = j9;
-                                                    long j2622 = Long.MAX_VALUE;
-                                                    for (i15 = 0; i15 < notificationsController3.storyPushMessages.size(); i15++) {
-                                                        j2622 = Math.min(notificationsController3.storyPushMessages.get(i15).date, j2622);
+                                                    long j25222 = Long.MAX_VALUE;
+                                                    while (i17 < notificationsController3.storyPushMessages.size()) {
                                                     }
                                                     messagingStyle2.setGroupConversation(false);
-                                                    String formatPluralString2 = (arrayList17.size() == 1 || booleanValue) ? LocaleController.formatPluralString(str9, intValue, new Object[0]) : arrayList17.get(0);
-                                                    messagingStyle2.addMessage(sb32, j2622, new Person.Builder().setName(formatPluralString2).build());
-                                                    if (booleanValue) {
-                                                        bitmap3 = loadMultipleAvatars(arrayList18);
-                                                        j12 = j7;
-                                                        messagingStyle3 = messagingStyle2;
-                                                        str19 = str3;
-                                                        str20 = str4;
-                                                        j11 = j24;
-                                                    } else {
-                                                        j12 = j7;
-                                                        messagingStyle3 = messagingStyle2;
-                                                        str19 = str3;
-                                                        str20 = str4;
-                                                        j11 = j24;
-                                                        bitmap3 = null;
+                                                    if (arrayList17.size() == 1) {
                                                     }
-                                                    arrayList7 = null;
-                                                    i12 = 0;
-                                                    str21 = formatPluralString2;
-                                                }
-                                                dialogKey4 = dialogKey3;
-                                                longSparseArray7 = longSparseArray;
-                                                j10 = j9;
-                                                long j26222 = Long.MAX_VALUE;
-                                                while (i15 < notificationsController3.storyPushMessages.size()) {
-                                                }
-                                                messagingStyle2.setGroupConversation(false);
-                                                if (arrayList17.size() == 1) {
-                                                }
-                                                messagingStyle2.addMessage(sb32, j26222, new Person.Builder().setName(formatPluralString2).build());
-                                                if (booleanValue) {
-                                                }
-                                                arrayList7 = null;
-                                                i12 = 0;
-                                                str21 = formatPluralString2;
-                                            } else {
-                                                longSparseArray7 = longSparseArray;
-                                                j10 = j9;
-                                                String str43 = str8;
-                                                j11 = j24;
-                                                dialogKey4 = dialogKey3;
-                                                int size4 = arrayList4.size() - 1;
-                                                int i30 = 0;
-                                                ArrayList<TLRPC.TL_keyboardButtonRow> arrayList19 = null;
-                                                while (size4 >= 0) {
-                                                    int i31 = i30;
-                                                    MessageObject messageObject8 = (MessageObject) arrayList4.get(size4);
-                                                    int i32 = size4;
-                                                    NotificationCompat.MessagingStyle messagingStyle5 = messagingStyle2;
-                                                    boolean z17 = z12;
-                                                    long topicId2 = MessageObject.getTopicId(notificationsController3.currentAccount, messageObject8.messageOwner, getMessagesController().isForum(messageObject8));
-                                                    if (j7 != topicId2) {
-                                                        FileLog.d(str43 + j11 + "] continue; topic id is not equal: topicId=" + j7 + " messageTopicId=" + topicId2 + "; selfId=" + getUserConfig().getClientUserId());
-                                                        zArr = zArr22;
-                                                        j14 = j7;
-                                                        str27 = str16;
-                                                        str26 = str3;
-                                                        str31 = str402;
-                                                    } else {
-                                                        String shortStringForMessage = notificationsController3.getShortStringForMessage(messageObject8, strArr22, zArr22);
-                                                        if (j11 != UserObject.VERIFY || messageObject8.getForwardedFromId() == null) {
-                                                            zArr = zArr22;
-                                                            str22 = str402;
-                                                            if (j11 == j10) {
-                                                                strArr22[0] = str16;
-                                                            } else if (DialogObject.isChatDialog(j11) && messageObject8.messageOwner.from_scheduled) {
-                                                                strArr22[0] = LocaleController.getString(R.string.NotificationMessageScheduledName);
-                                                            }
-                                                        } else {
-                                                            zArr = zArr22;
-                                                            str22 = str402;
-                                                            strArr22[0] = getMessagesController().getPeerName(messageObject8.getForwardedFromId().longValue());
-                                                        }
-                                                        if (shortStringForMessage == null) {
-                                                            if (BuildVars.LOGS_ENABLED) {
-                                                                FileLog.w("message text is null for " + messageObject8.getId() + " did = " + messageObject8.getDialogId());
-                                                            }
+                                                    messagingStyle2.addMessage(sb522, j25222, new Person.Builder().setName(formatPluralString2).build());
+                                                    if (booleanValue) {
+                                                    }
+                                                    str23 = str3;
+                                                } else {
+                                                    LongSparseArray longSparseArray14 = longSparseArray;
+                                                    j10 = j9;
+                                                    String str44 = str8;
+                                                    j11 = j23;
+                                                    dialogKey4 = dialogKey3;
+                                                    int size4 = arrayList4.size() - 1;
+                                                    int i32 = 0;
+                                                    ArrayList<TLRPC.TL_keyboardButtonRow> arrayList19 = null;
+                                                    while (size4 >= 0) {
+                                                        int i33 = i32;
+                                                        MessageObject messageObject7 = (MessageObject) arrayList4.get(size4);
+                                                        int i34 = size4;
+                                                        NotificationCompat.MessagingStyle messagingStyle3 = messagingStyle2;
+                                                        long topicId2 = MessageObject.getTopicId(notificationsController3.currentAccount, messageObject7.messageOwner, getMessagesController().isForum(messageObject7));
+                                                        if (j7 != topicId2) {
+                                                            FileLog.d(str44 + j11 + "] continue; topic id is not equal: topicId=" + j7 + " messageTopicId=" + topicId2 + "; selfId=" + getUserConfig().getClientUserId());
+                                                            zArr = zArr222;
                                                             j14 = j7;
-                                                            str27 = str16;
-                                                            str26 = str3;
-                                                            str31 = str22;
+                                                            sb2 = sb522;
+                                                            z13 = z12;
+                                                            strArr = strArr222;
+                                                            str29 = str18;
+                                                            str32 = str4;
+                                                            longSparseArray8 = longSparseArray14;
+                                                            messagingStyle2 = messagingStyle3;
+                                                            str31 = str3;
+                                                            str27 = str44;
+                                                            str33 = str3822;
                                                         } else {
-                                                            if (sb32.length() > 0) {
-                                                                sb32.append("\n\n");
-                                                            }
-                                                            if (j11 != j10 && messageObject8.messageOwner.from_scheduled && DialogObject.isUserDialog(j11)) {
-                                                                str23 = str3;
-                                                                String format2 = String.format(str23, LocaleController.getString(R.string.NotificationMessageScheduledName), shortStringForMessage);
-                                                                sb32.append(format2);
-                                                                str25 = format2;
-                                                                str24 = str43;
+                                                            String shortStringForMessage = notificationsController3.getShortStringForMessage(messageObject7, strArr222, zArr222);
+                                                            if (j11 == UserObject.OAUTH) {
+                                                                strArr222[0] = LocaleController.getString(R.string.BotAuthNotificationTitle);
+                                                                zArr = zArr222;
+                                                                str25 = str3822;
+                                                            } else if (j11 != UserObject.VERIFY || messageObject7.getForwardedFromId() == null) {
+                                                                zArr = zArr222;
+                                                                str25 = str3822;
+                                                                if (j11 == j10) {
+                                                                    strArr222[0] = str18;
+                                                                } else if (DialogObject.isChatDialog(j11) && messageObject7.messageOwner.from_scheduled) {
+                                                                    strArr222[0] = LocaleController.getString(R.string.NotificationMessageScheduledName);
+                                                                }
                                                             } else {
-                                                                str23 = str3;
-                                                                String str44 = strArr22[0];
-                                                                if (str44 != null) {
-                                                                    str24 = str43;
-                                                                    sb32.append(String.format(str23, str44, shortStringForMessage));
+                                                                zArr = zArr222;
+                                                                str25 = str3822;
+                                                                strArr222[0] = getMessagesController().getPeerName(messageObject7.getForwardedFromId().longValue());
+                                                            }
+                                                            if (shortStringForMessage == null) {
+                                                                if (BuildVars.LOGS_ENABLED) {
+                                                                    FileLog.w("message text is null for " + messageObject7.getId() + " did = " + messageObject7.getDialogId());
+                                                                }
+                                                                j14 = j7;
+                                                                sb2 = sb522;
+                                                                z13 = z12;
+                                                                strArr = strArr222;
+                                                                str29 = str18;
+                                                                str32 = str4;
+                                                                longSparseArray8 = longSparseArray14;
+                                                                messagingStyle2 = messagingStyle3;
+                                                                str31 = str3;
+                                                                str27 = str44;
+                                                                str33 = str25;
+                                                            } else {
+                                                                if (sb522.length() > 0) {
+                                                                    sb522.append("\n\n");
+                                                                }
+                                                                if (j11 != j10 && messageObject7.messageOwner.from_scheduled && DialogObject.isUserDialog(j11)) {
+                                                                    str26 = str3;
+                                                                    String format2 = String.format(str26, LocaleController.getString(R.string.NotificationMessageScheduledName), shortStringForMessage);
+                                                                    sb522.append(format2);
+                                                                    str28 = format2;
+                                                                    str27 = str44;
                                                                 } else {
-                                                                    str24 = str43;
-                                                                    sb32.append(shortStringForMessage);
-                                                                }
-                                                                str25 = shortStringForMessage;
-                                                            }
-                                                            if (j11 == UserObject.VERIFY && messageObject8.getForwardedFromId() != null) {
-                                                                j13 = messageObject8.getForwardedFromId().longValue();
-                                                            } else {
-                                                                if (!DialogObject.isUserDialog(j11)) {
-                                                                    if (z17) {
-                                                                        j13 = -j11;
-                                                                    } else if (DialogObject.isChatDialog(j11)) {
-                                                                        j13 = messageObject8.getSenderId();
-                                                                    }
-                                                                }
-                                                                j13 = j11;
-                                                            }
-                                                            str26 = str23;
-                                                            LongSparseArray longSparseArray10 = longSparseArray7;
-                                                            Person person3 = (Person) longSparseArray10.get(j13 + (j7 << 16));
-                                                            String str45 = strArr22[0];
-                                                            if (str45 == null) {
-                                                                if (z6) {
-                                                                    if (!DialogObject.isChatDialog(j11)) {
-                                                                        str27 = str16;
-                                                                        if (Build.VERSION.SDK_INT > 27) {
-                                                                            str45 = LocaleController.getString(R.string.NotificationHiddenName);
-                                                                        }
-                                                                    } else if (z17) {
-                                                                        str27 = str16;
-                                                                        if (Build.VERSION.SDK_INT > 27) {
-                                                                            str45 = LocaleController.getString(R.string.NotificationHiddenChatName);
-                                                                        }
+                                                                    str26 = str3;
+                                                                    String str45 = strArr222[0];
+                                                                    if (str45 != null) {
+                                                                        str27 = str44;
+                                                                        sb522.append(String.format(str26, str45, shortStringForMessage));
                                                                     } else {
-                                                                        str27 = str16;
-                                                                        str45 = LocaleController.getString(R.string.NotificationHiddenChatUserName);
+                                                                        str27 = str44;
+                                                                        sb522.append(shortStringForMessage);
                                                                     }
-                                                                    if (person3 == null && TextUtils.equals(person3.getName(), str28)) {
-                                                                        person2 = person3;
-                                                                        str29 = str25;
-                                                                        j14 = j7;
-                                                                        strArr = strArr22;
-                                                                    } else {
-                                                                        Person.Builder name3 = new Person.Builder().setName(str28);
-                                                                        if (zArr[0] || DialogObject.isEncryptedDialog(j11) || Build.VERSION.SDK_INT < 28) {
-                                                                            str29 = str25;
+                                                                    str28 = shortStringForMessage;
+                                                                }
+                                                                if (j11 == UserObject.VERIFY && messageObject7.getForwardedFromId() != null) {
+                                                                    j13 = messageObject7.getForwardedFromId().longValue();
+                                                                } else {
+                                                                    if (!DialogObject.isUserDialog(j11)) {
+                                                                        if (z12) {
+                                                                            j13 = -j11;
+                                                                        } else if (DialogObject.isChatDialog(j11)) {
+                                                                            j13 = messageObject7.getSenderId();
+                                                                        }
+                                                                    }
+                                                                    j13 = j11;
+                                                                }
+                                                                sb2 = sb522;
+                                                                str29 = str18;
+                                                                longSparseArray8 = longSparseArray14;
+                                                                Person person2 = (Person) longSparseArray8.get(j13 + (j7 << 16));
+                                                                String str46 = strArr222[0];
+                                                                if (str46 == null) {
+                                                                    if (z6) {
+                                                                        if (!DialogObject.isChatDialog(j11)) {
+                                                                            strArr = strArr222;
+                                                                            if (Build.VERSION.SDK_INT > 27) {
+                                                                                str46 = LocaleController.getString(R.string.NotificationHiddenName);
+                                                                            }
+                                                                        } else if (z12) {
+                                                                            strArr = strArr222;
+                                                                            if (Build.VERSION.SDK_INT > 27) {
+                                                                                str46 = LocaleController.getString(R.string.NotificationHiddenChatName);
+                                                                            }
+                                                                        } else {
+                                                                            strArr = strArr222;
+                                                                            str46 = LocaleController.getString(R.string.NotificationHiddenChatUserName);
+                                                                        }
+                                                                        if (person2 == null && TextUtils.equals(person2.getName(), str30)) {
+                                                                            str31 = str26;
                                                                             j14 = j7;
-                                                                            strArr = strArr22;
+                                                                            z13 = z12;
                                                                         } else {
-                                                                            if (DialogObject.isUserDialog(j11) || z17) {
-                                                                                str29 = str25;
+                                                                            Person.Builder name3 = new Person.Builder().setName(str30);
+                                                                            if (zArr[0] || DialogObject.isEncryptedDialog(j11) || Build.VERSION.SDK_INT < 28) {
+                                                                                str31 = str26;
                                                                                 j14 = j7;
-                                                                                strArr = strArr22;
-                                                                                file2 = file4;
+                                                                                z13 = z12;
                                                                             } else {
-                                                                                j14 = j7;
-                                                                                long senderId = messageObject8.getSenderId();
-                                                                                TLRPC.User user10 = getMessagesController().getUser(Long.valueOf(senderId));
-                                                                                if (user10 == null && (user10 = getMessagesStorage().getUserSync(senderId)) != null) {
-                                                                                    getMessagesController().putUser(user10, true);
-                                                                                }
-                                                                                if (user10 == null || (userProfilePhoto3 = user10.photo) == null || (fileLocation8 = userProfilePhoto3.photo_small) == null) {
-                                                                                    str29 = str25;
-                                                                                    strArr = strArr22;
+                                                                                if (DialogObject.isUserDialog(j11) || z12) {
+                                                                                    str31 = str26;
+                                                                                    j14 = j7;
+                                                                                    z13 = z12;
+                                                                                    file2 = file4;
                                                                                 } else {
-                                                                                    str29 = str25;
-                                                                                    strArr = strArr22;
-                                                                                    if (fileLocation8.volume_id != 0 && fileLocation8.local_id != 0) {
-                                                                                        file2 = getFileLoader().getPathToAttach(user10.photo.photo_small, true);
+                                                                                    long senderId = messageObject7.getSenderId();
+                                                                                    str31 = str26;
+                                                                                    z13 = z12;
+                                                                                    TLRPC.User user10 = getMessagesController().getUser(Long.valueOf(senderId));
+                                                                                    if (user10 == null && (user10 = getMessagesStorage().getUserSync(senderId)) != null) {
+                                                                                        getMessagesController().putUser(user10, true);
                                                                                     }
+                                                                                    if (user10 == null || (userProfilePhoto3 = user10.photo) == null || (fileLocation8 = userProfilePhoto3.photo_small) == null) {
+                                                                                        j14 = j7;
+                                                                                    } else {
+                                                                                        j14 = j7;
+                                                                                        if (fileLocation8.volume_id != 0 && fileLocation8.local_id != 0) {
+                                                                                            file2 = getFileLoader().getPathToAttach(user10.photo.photo_small, true);
+                                                                                        }
+                                                                                    }
+                                                                                    file2 = null;
                                                                                 }
-                                                                                file2 = null;
-                                                                            }
-                                                                            if (file2 == null && j11 == UserObject.VERIFY && messageObject8.getForwardedFromId() != null) {
-                                                                                if (j13 >= 0) {
-                                                                                    TLRPC.User user11 = getMessagesController().getUser(Long.valueOf(j13));
-                                                                                    if (user11 != null && (userProfilePhoto2 = user11.photo) != null && (fileLocation7 = userProfilePhoto2.photo_small) != null && fileLocation7.volume_id != 0 && fileLocation7.local_id != 0) {
-                                                                                        file2 = getFileLoader().getPathToAttach(user11.photo.photo_small, true);
-                                                                                    }
-                                                                                } else {
-                                                                                    TLRPC.Chat chat6 = getMessagesController().getChat(Long.valueOf(-j13));
-                                                                                    if (chat6 != null && (chatPhoto2 = chat6.photo) != null && (fileLocation6 = chatPhoto2.photo_small) != null && fileLocation6.volume_id != 0 && fileLocation6.local_id != 0) {
-                                                                                        file2 = getFileLoader().getPathToAttach(chat6.photo.photo_small, true);
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                            loadRoundAvatar(file2, name3);
-                                                                        }
-                                                                        Person build5 = name3.build();
-                                                                        longSparseArray10.put(j13, build5);
-                                                                        person2 = build5;
-                                                                    }
-                                                                    if (!DialogObject.isEncryptedDialog(j11)) {
-                                                                        if (!zArr[0] || Build.VERSION.SDK_INT < 28 || ((ActivityManager) ApplicationLoader.applicationContext.getSystemService("activity")).isLowRamDevice() || z6 || messageObject8.isSecretMedia() || !(messageObject8.type == 1 || messageObject8.isSticker())) {
-                                                                            longSparseArray7 = longSparseArray10;
-                                                                            str32 = str29;
-                                                                            str30 = str4;
-                                                                            messagingStyle4 = messagingStyle5;
-                                                                            str31 = str22;
-                                                                        } else {
-                                                                            File pathToMessage = getFileLoader().getPathToMessage(messageObject8.messageOwner);
-                                                                            if (pathToMessage.exists() && messageObject8.hasMediaSpoilers()) {
-                                                                                file3 = new File(pathToMessage.getParentFile(), pathToMessage.getName() + ".blur.jpg");
-                                                                                if (file3.exists()) {
-                                                                                    longSparseArray7 = longSparseArray10;
-                                                                                } else {
-                                                                                    try {
-                                                                                        Bitmap decodeFile2 = BitmapFactory.decodeFile(pathToMessage.getAbsolutePath());
-                                                                                        Bitmap stackBlurBitmapMax = Utilities.stackBlurBitmapMax(decodeFile2);
-                                                                                        decodeFile2.recycle();
-                                                                                        createScaledBitmap = Bitmap.createScaledBitmap(stackBlurBitmapMax, decodeFile2.getWidth(), decodeFile2.getHeight(), true);
-                                                                                        Utilities.stackBlurBitmap(createScaledBitmap, 5);
-                                                                                        stackBlurBitmapMax.recycle();
-                                                                                        canvas = new Canvas(createScaledBitmap);
-                                                                                        longSparseArray7 = longSparseArray10;
-                                                                                    } catch (Exception e) {
-                                                                                        e = e;
-                                                                                        longSparseArray7 = longSparseArray10;
-                                                                                    }
-                                                                                    try {
-                                                                                        notificationsController3.mediaSpoilerEffect.setColor(ColorUtils.setAlphaComponent(-1, (int) (Color.alpha(i4) * 0.325f)));
-                                                                                        notificationsController3.mediaSpoilerEffect.setBounds(0, 0, createScaledBitmap.getWidth(), createScaledBitmap.getHeight());
-                                                                                        notificationsController3.mediaSpoilerEffect.draw(canvas);
-                                                                                        FileOutputStream fileOutputStream = new FileOutputStream(file3);
-                                                                                        createScaledBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
-                                                                                        fileOutputStream.close();
-                                                                                        createScaledBitmap.recycle();
-                                                                                        pathToMessage = file3;
-                                                                                    } catch (Exception e2) {
-                                                                                        e = e2;
-                                                                                        FileLog.e(e);
-                                                                                        str32 = str29;
-                                                                                        NotificationCompat.MessagingStyle.Message message2 = new NotificationCompat.MessagingStyle.Message(str32, messageObject8.messageOwner.date * 1000, person2);
-                                                                                        String str46 = !messageObject8.isSticker() ? "image/webp" : "image/jpeg";
-                                                                                        if (!pathToMessage.exists()) {
+                                                                                if (file2 == null && j11 == UserObject.VERIFY && messageObject7.getForwardedFromId() != null) {
+                                                                                    if (j13 >= 0) {
+                                                                                        TLRPC.User user11 = getMessagesController().getUser(Long.valueOf(j13));
+                                                                                        if (user11 != null && (userProfilePhoto2 = user11.photo) != null && (fileLocation7 = userProfilePhoto2.photo_small) != null && fileLocation7.volume_id != 0 && fileLocation7.local_id != 0) {
+                                                                                            file2 = getFileLoader().getPathToAttach(user11.photo.photo_small, true);
+                                                                                        }
+                                                                                    } else {
+                                                                                        TLRPC.Chat chat6 = getMessagesController().getChat(Long.valueOf(-j13));
+                                                                                        if (chat6 != null && (chatPhoto2 = chat6.photo) != null && (fileLocation6 = chatPhoto2.photo_small) != null && fileLocation6.volume_id != 0 && fileLocation6.local_id != 0) {
+                                                                                            file2 = getFileLoader().getPathToAttach(chat6.photo.photo_small, true);
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                            } else {
-                                                                                longSparseArray7 = longSparseArray10;
-                                                                                file3 = null;
+                                                                                loadRoundAvatar(j11, file2, name3);
                                                                             }
-                                                                            str32 = str29;
-                                                                            NotificationCompat.MessagingStyle.Message message22 = new NotificationCompat.MessagingStyle.Message(str32, messageObject8.messageOwner.date * 1000, person2);
-                                                                            String str462 = !messageObject8.isSticker() ? "image/webp" : "image/jpeg";
-                                                                            if (!pathToMessage.exists()) {
-                                                                                try {
-                                                                                    context = ApplicationLoader.applicationContext;
-                                                                                    sb = new StringBuilder();
-                                                                                    sb.append(ApplicationLoader.getApplicationId());
-                                                                                    str30 = str4;
-                                                                                } catch (Exception e3) {
-                                                                                    e = e3;
-                                                                                    str30 = str4;
+                                                                            person2 = name3.build();
+                                                                            longSparseArray8.put(j13, person2);
+                                                                        }
+                                                                        if (!DialogObject.isEncryptedDialog(j11)) {
+                                                                            if (!zArr[0] || Build.VERSION.SDK_INT < 28 || ((ActivityManager) ApplicationLoader.applicationContext.getSystemService("activity")).isLowRamDevice() || z6 || messageObject7.isSecretMedia() || !(messageObject7.type == 1 || messageObject7.isSticker())) {
+                                                                                str32 = str4;
+                                                                                messagingStyle2 = messagingStyle3;
+                                                                                str33 = str25;
+                                                                            } else {
+                                                                                File pathToMessage = getFileLoader().getPathToMessage(messageObject7.messageOwner);
+                                                                                if (pathToMessage.exists() && messageObject7.hasMediaSpoilers()) {
+                                                                                    file3 = new File(pathToMessage.getParentFile(), pathToMessage.getName() + ".blur.jpg");
+                                                                                    if (!file3.exists()) {
+                                                                                        try {
+                                                                                            Bitmap decodeFile2 = BitmapFactory.decodeFile(pathToMessage.getAbsolutePath());
+                                                                                            Bitmap stackBlurBitmapMax = Utilities.stackBlurBitmapMax(decodeFile2);
+                                                                                            decodeFile2.recycle();
+                                                                                            createScaledBitmap = Bitmap.createScaledBitmap(stackBlurBitmapMax, decodeFile2.getWidth(), decodeFile2.getHeight(), true);
+                                                                                            Utilities.stackBlurBitmap(createScaledBitmap, 5);
+                                                                                            stackBlurBitmapMax.recycle();
+                                                                                            canvas = new Canvas(createScaledBitmap);
+                                                                                        } catch (Exception e) {
+                                                                                            e = e;
+                                                                                        }
+                                                                                        try {
+                                                                                            notificationsController3.mediaSpoilerEffect.setColor(ColorUtils.setAlphaComponent(-1, (int) (Color.alpha(i4) * 0.325f)));
+                                                                                            notificationsController3.mediaSpoilerEffect.setBounds(0, 0, createScaledBitmap.getWidth(), createScaledBitmap.getHeight());
+                                                                                            notificationsController3.mediaSpoilerEffect.draw(canvas);
+                                                                                            FileOutputStream fileOutputStream = new FileOutputStream(file3);
+                                                                                            createScaledBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
+                                                                                            fileOutputStream.close();
+                                                                                            createScaledBitmap.recycle();
+                                                                                            pathToMessage = file3;
+                                                                                        } catch (Exception e2) {
+                                                                                            e = e2;
+                                                                                            FileLog.e(e);
+                                                                                            NotificationCompat.MessagingStyle.Message message2 = new NotificationCompat.MessagingStyle.Message(str28, messageObject7.messageOwner.date * 1000, person2);
+                                                                                            String str47 = !messageObject7.isSticker() ? "image/webp" : "image/jpeg";
+                                                                                            if (!pathToMessage.exists()) {
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                } else {
+                                                                                    file3 = null;
                                                                                 }
-                                                                                try {
-                                                                                    sb.append(str30);
-                                                                                    uriForFile = FileProvider.getUriForFile(context, sb.toString(), pathToMessage);
-                                                                                    str31 = str22;
-                                                                                } catch (Exception e4) {
-                                                                                    e = e4;
-                                                                                    FileLog.e(e);
-                                                                                    str31 = str22;
+                                                                                NotificationCompat.MessagingStyle.Message message22 = new NotificationCompat.MessagingStyle.Message(str28, messageObject7.messageOwner.date * 1000, person2);
+                                                                                String str472 = !messageObject7.isSticker() ? "image/webp" : "image/jpeg";
+                                                                                if (!pathToMessage.exists()) {
+                                                                                    try {
+                                                                                        context = ApplicationLoader.applicationContext;
+                                                                                        sb3 = new StringBuilder();
+                                                                                        sb3.append(ApplicationLoader.getApplicationId());
+                                                                                        str32 = str4;
+                                                                                    } catch (Exception e3) {
+                                                                                        e = e3;
+                                                                                        str32 = str4;
+                                                                                    }
+                                                                                    try {
+                                                                                        sb3.append(str32);
+                                                                                        uriForFile = FileProvider.getUriForFile(context, sb3.toString(), pathToMessage);
+                                                                                        str33 = str25;
+                                                                                    } catch (Exception e4) {
+                                                                                        e = e4;
+                                                                                        FileLog.e(e);
+                                                                                        str33 = str25;
+                                                                                        uriForFile = null;
+                                                                                        if (uriForFile == null) {
+                                                                                        }
+                                                                                    }
+                                                                                    if (uriForFile == null) {
+                                                                                        message22.setData(str472, uriForFile);
+                                                                                        messagingStyle2 = messagingStyle3;
+                                                                                        messagingStyle2.addMessage(message22);
+                                                                                        ApplicationLoader.applicationContext.grantUriPermission("com.android.systemui", uriForFile, 1);
+                                                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda50
+                                                                                            @Override // java.lang.Runnable
+                                                                                            public final void run() {
+                                                                                                NotificationsController.lambda$showExtraNotifications$43(uriForFile, file3);
+                                                                                            }
+                                                                                        }, 20000L);
+                                                                                        if (!TextUtils.isEmpty(messageObject7.caption)) {
+                                                                                            messagingStyle2.addMessage(messageObject7.caption, messageObject7.messageOwner.date * 1000, person2);
+                                                                                        }
+                                                                                        if (zArr[0] && !z6 && messageObject7.isVoice()) {
+                                                                                            messages = messagingStyle2.getMessages();
+                                                                                            if (!messages.isEmpty()) {
+                                                                                                File pathToMessage2 = getFileLoader().getPathToMessage(messageObject7.messageOwner);
+                                                                                                if (Build.VERSION.SDK_INT >= 24) {
+                                                                                                    try {
+                                                                                                        uri2 = FileProvider.getUriForFile(ApplicationLoader.applicationContext, ApplicationLoader.getApplicationId() + str32, pathToMessage2);
+                                                                                                    } catch (Exception unused2) {
+                                                                                                        uri2 = null;
+                                                                                                    }
+                                                                                                } else {
+                                                                                                    uri2 = Uri.fromFile(pathToMessage2);
+                                                                                                }
+                                                                                                if (uri2 != null) {
+                                                                                                    ((NotificationCompat.MessagingStyle.Message) messages.get(messages.size() - 1)).setData("audio/ogg", uri2);
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    } else {
+                                                                                        messagingStyle2 = messagingStyle3;
+                                                                                    }
+                                                                                } else {
+                                                                                    str32 = str4;
+                                                                                    if (getFileLoader().isLoadingFile(pathToMessage.getName())) {
+                                                                                        Uri.Builder appendPath = new Uri.Builder().scheme("content").authority(NotificationImageProvider.getAuthority()).appendPath("msg_media_raw");
+                                                                                        StringBuilder sb8 = new StringBuilder();
+                                                                                        sb8.append(notificationsController3.currentAccount);
+                                                                                        str33 = str25;
+                                                                                        sb8.append(str33);
+                                                                                        uriForFile = appendPath.appendPath(sb8.toString()).appendPath(pathToMessage.getName()).appendQueryParameter("final_path", pathToMessage.getAbsolutePath()).build();
+                                                                                        if (uriForFile == null) {
+                                                                                        }
+                                                                                    }
+                                                                                    str33 = str25;
                                                                                     uriForFile = null;
                                                                                     if (uriForFile == null) {
                                                                                     }
                                                                                 }
-                                                                                if (uriForFile == null) {
-                                                                                    message22.setData(str462, uriForFile);
-                                                                                    messagingStyle4 = messagingStyle5;
-                                                                                    messagingStyle4.addMessage(message22);
-                                                                                    ApplicationLoader.applicationContext.grantUriPermission("com.android.systemui", uriForFile, 1);
-                                                                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda56
-                                                                                        @Override // java.lang.Runnable
-                                                                                        public final void run() {
-                                                                                            NotificationsController.lambda$showExtraNotifications$42(uriForFile, file3);
-                                                                                        }
-                                                                                    }, 20000L);
-                                                                                    if (!TextUtils.isEmpty(messageObject8.caption)) {
-                                                                                        messagingStyle4.addMessage(messageObject8.caption, messageObject8.messageOwner.date * 1000, person2);
-                                                                                    }
-                                                                                    if (zArr[0] && !z6 && messageObject8.isVoice()) {
-                                                                                        messages = messagingStyle4.getMessages();
-                                                                                        if (!messages.isEmpty()) {
-                                                                                            File pathToMessage2 = getFileLoader().getPathToMessage(messageObject8.messageOwner);
-                                                                                            if (Build.VERSION.SDK_INT >= 24) {
-                                                                                                try {
-                                                                                                    uri2 = FileProvider.getUriForFile(ApplicationLoader.applicationContext, ApplicationLoader.getApplicationId() + str30, pathToMessage2);
-                                                                                                } catch (Exception unused2) {
-                                                                                                    uri2 = null;
-                                                                                                }
-                                                                                            } else {
-                                                                                                uri2 = Uri.fromFile(pathToMessage2);
-                                                                                            }
-                                                                                            if (uri2 != null) {
-                                                                                                ((NotificationCompat.MessagingStyle.Message) messages.get(messages.size() - 1)).setData("audio/ogg", uri2);
-                                                                                            }
-                                                                                        }
-                                                                                    }
-                                                                                } else {
-                                                                                    messagingStyle4 = messagingStyle5;
-                                                                                }
-                                                                            } else {
-                                                                                str30 = str4;
-                                                                                if (getFileLoader().isLoadingFile(pathToMessage.getName())) {
-                                                                                    Uri.Builder appendPath = new Uri.Builder().scheme("content").authority(NotificationImageProvider.getAuthority()).appendPath("msg_media_raw");
-                                                                                    StringBuilder sb6 = new StringBuilder();
-                                                                                    sb6.append(notificationsController3.currentAccount);
-                                                                                    str31 = str22;
-                                                                                    sb6.append(str31);
-                                                                                    uriForFile = appendPath.appendPath(sb6.toString()).appendPath(pathToMessage.getName()).appendQueryParameter("final_path", pathToMessage.getAbsolutePath()).build();
-                                                                                    if (uriForFile == null) {
-                                                                                    }
-                                                                                }
-                                                                                str31 = str22;
-                                                                                uriForFile = null;
-                                                                                if (uriForFile == null) {
+                                                                            }
+                                                                            messagingStyle2.addMessage(str28, messageObject7.messageOwner.date * 1000, person2);
+                                                                            if (zArr[0]) {
+                                                                                messages = messagingStyle2.getMessages();
+                                                                                if (!messages.isEmpty()) {
                                                                                 }
                                                                             }
+                                                                        } else {
+                                                                            str32 = str4;
+                                                                            messagingStyle2 = messagingStyle3;
+                                                                            str33 = str25;
+                                                                            messagingStyle2.addMessage(str28, messageObject7.messageOwner.date * 1000, person2);
                                                                         }
-                                                                        messagingStyle4.addMessage(str32, messageObject8.messageOwner.date * 1000, person2);
-                                                                        if (zArr[0]) {
-                                                                            messages = messagingStyle4.getMessages();
-                                                                            if (!messages.isEmpty()) {
-                                                                            }
+                                                                        if (j11 == 777000 && (replyMarkup = messageObject7.messageOwner.reply_markup) != null) {
+                                                                            arrayList19 = replyMarkup.rows;
+                                                                            i32 = messageObject7.getId();
+                                                                            size4 = i34 - 1;
+                                                                            str3822 = str33;
+                                                                            str4 = str32;
+                                                                            str44 = str27;
+                                                                            str3 = str31;
+                                                                            zArr222 = zArr;
+                                                                            strArr222 = strArr;
+                                                                            sb522 = sb2;
+                                                                            z12 = z13;
+                                                                            j7 = j14;
+                                                                            i4 = -1;
+                                                                            longSparseArray14 = longSparseArray8;
+                                                                            str18 = str29;
                                                                         }
                                                                     } else {
-                                                                        longSparseArray7 = longSparseArray10;
-                                                                        String str47 = str29;
-                                                                        str30 = str4;
-                                                                        messagingStyle4 = messagingStyle5;
-                                                                        str31 = str22;
-                                                                        messagingStyle4.addMessage(str47, messageObject8.messageOwner.date * 1000, person2);
+                                                                        strArr = strArr222;
                                                                     }
-                                                                    if (j11 == 777000 && (replyMarkup = messageObject8.messageOwner.reply_markup) != null) {
+                                                                    str30 = str25;
+                                                                    if (person2 == null) {
+                                                                    }
+                                                                    Person.Builder name32 = new Person.Builder().setName(str30);
+                                                                    if (zArr[0]) {
+                                                                    }
+                                                                    str31 = str26;
+                                                                    j14 = j7;
+                                                                    z13 = z12;
+                                                                    person2 = name32.build();
+                                                                    longSparseArray8.put(j13, person2);
+                                                                    if (!DialogObject.isEncryptedDialog(j11)) {
+                                                                    }
+                                                                    if (j11 == 777000) {
                                                                         arrayList19 = replyMarkup.rows;
-                                                                        i30 = messageObject8.getId();
-                                                                        i4 = -1;
-                                                                        size4 = i32 - 1;
-                                                                        messagingStyle2 = messagingStyle4;
-                                                                        strArr22 = strArr;
-                                                                        str4 = str30;
-                                                                        str402 = str31;
-                                                                        str43 = str24;
-                                                                        z12 = z17;
-                                                                        zArr22 = zArr;
-                                                                        str3 = str26;
-                                                                        str16 = str27;
+                                                                        i32 = messageObject7.getId();
+                                                                        size4 = i34 - 1;
+                                                                        str3822 = str33;
+                                                                        str4 = str32;
+                                                                        str44 = str27;
+                                                                        str3 = str31;
+                                                                        zArr222 = zArr;
+                                                                        strArr222 = strArr;
+                                                                        sb522 = sb2;
+                                                                        z12 = z13;
                                                                         j7 = j14;
+                                                                        i4 = -1;
+                                                                        longSparseArray14 = longSparseArray8;
+                                                                        str18 = str29;
                                                                     }
-                                                                    i30 = i31;
-                                                                    i4 = -1;
-                                                                    size4 = i32 - 1;
-                                                                    messagingStyle2 = messagingStyle4;
-                                                                    strArr22 = strArr;
-                                                                    str4 = str30;
-                                                                    str402 = str31;
-                                                                    str43 = str24;
-                                                                    z12 = z17;
-                                                                    zArr22 = zArr;
-                                                                    str3 = str26;
-                                                                    str16 = str27;
-                                                                    j7 = j14;
                                                                 } else {
-                                                                    str27 = str16;
+                                                                    strArr = strArr222;
                                                                 }
-                                                                str28 = str22;
-                                                                if (person3 == null) {
+                                                                str30 = str46;
+                                                                if (person2 == null) {
                                                                 }
-                                                                Person.Builder name32 = new Person.Builder().setName(str28);
+                                                                Person.Builder name322 = new Person.Builder().setName(str30);
                                                                 if (zArr[0]) {
                                                                 }
-                                                                str29 = str25;
+                                                                str31 = str26;
                                                                 j14 = j7;
-                                                                strArr = strArr22;
-                                                                Person build52 = name32.build();
-                                                                longSparseArray10.put(j13, build52);
-                                                                person2 = build52;
+                                                                z13 = z12;
+                                                                person2 = name322.build();
+                                                                longSparseArray8.put(j13, person2);
                                                                 if (!DialogObject.isEncryptedDialog(j11)) {
                                                                 }
                                                                 if (j11 == 777000) {
-                                                                    arrayList19 = replyMarkup.rows;
-                                                                    i30 = messageObject8.getId();
-                                                                    i4 = -1;
-                                                                    size4 = i32 - 1;
-                                                                    messagingStyle2 = messagingStyle4;
-                                                                    strArr22 = strArr;
-                                                                    str4 = str30;
-                                                                    str402 = str31;
-                                                                    str43 = str24;
-                                                                    z12 = z17;
-                                                                    zArr22 = zArr;
-                                                                    str3 = str26;
-                                                                    str16 = str27;
-                                                                    j7 = j14;
                                                                 }
-                                                                i30 = i31;
-                                                                i4 = -1;
-                                                                size4 = i32 - 1;
-                                                                messagingStyle2 = messagingStyle4;
-                                                                strArr22 = strArr;
-                                                                str4 = str30;
-                                                                str402 = str31;
-                                                                str43 = str24;
-                                                                z12 = z17;
-                                                                zArr22 = zArr;
-                                                                str3 = str26;
-                                                                str16 = str27;
-                                                                j7 = j14;
+                                                            }
+                                                        }
+                                                        i32 = i33;
+                                                        size4 = i34 - 1;
+                                                        str3822 = str33;
+                                                        str4 = str32;
+                                                        str44 = str27;
+                                                        str3 = str31;
+                                                        zArr222 = zArr;
+                                                        strArr222 = strArr;
+                                                        sb522 = sb2;
+                                                        z12 = z13;
+                                                        j7 = j14;
+                                                        i4 = -1;
+                                                        longSparseArray14 = longSparseArray8;
+                                                        str18 = str29;
+                                                    }
+                                                    j12 = j7;
+                                                    sb = sb522;
+                                                    String str48 = str18;
+                                                    str22 = str4;
+                                                    longSparseArray7 = longSparseArray14;
+                                                    str23 = str3;
+                                                    arrayList7 = arrayList19;
+                                                    bitmap3 = bitmap2;
+                                                    i11 = i32;
+                                                    str24 = str48;
+                                                }
+                                                Intent intent222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                intent222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                intent222.setFlags(67108864);
+                                                intent222.addCategory("android.intent.category.LAUNCHER");
+                                                if (!messageObject3.isOauthPush) {
+                                                    intent222.putExtra("oauth_url", messageObject3.localName);
+                                                } else if (messageObject3.isStoryReactionPush) {
+                                                    intent222.putExtra(str5, Math.abs(messageObject3.getId()));
+                                                } else {
+                                                    String str49 = str5;
+                                                    if (messageObject3.isLiveStoryPush) {
+                                                        if (j11 < 0) {
+                                                            longSparseArray10 = longSparseArray7;
+                                                            String str50 = str6;
+                                                            intent222.putExtra(str50, -j11);
+                                                            str34 = str50;
+                                                            str35 = str7;
+                                                        } else {
+                                                            longSparseArray10 = longSparseArray7;
+                                                            str34 = str6;
+                                                            str35 = str7;
+                                                            if (j11 > 0) {
+                                                                intent222.putExtra(str35, j11);
+                                                            }
+                                                        }
+                                                        intent222.putExtra(str49, Math.abs(messageObject3.getId()));
+                                                        bitmap4 = bitmap3;
+                                                        arrayList8 = arrayList7;
+                                                        messageObject4 = messageObject3;
+                                                        str5 = str49;
+                                                        longSparseArray9 = longSparseArray10;
+                                                        dialogKey5 = dialogKey4;
+                                                    } else {
+                                                        messageObject4 = messageObject3;
+                                                        LongSparseArray longSparseArray15 = longSparseArray7;
+                                                        str34 = str6;
+                                                        str35 = str7;
+                                                        dialogKey5 = dialogKey4;
+                                                        if (dialogKey5.story) {
+                                                            long[] jArr2 = new long[notificationsController3.storyPushMessages.size()];
+                                                            str5 = str49;
+                                                            longSparseArray9 = longSparseArray15;
+                                                            int i35 = 0;
+                                                            while (i35 < notificationsController3.storyPushMessages.size()) {
+                                                                jArr2[i35] = notificationsController3.storyPushMessages.get(i35).dialogId;
+                                                                i35++;
+                                                                bitmap3 = bitmap3;
+                                                                arrayList7 = arrayList7;
+                                                            }
+                                                            bitmap4 = bitmap3;
+                                                            arrayList8 = arrayList7;
+                                                            intent222.putExtra("storyDialogIds", jArr2);
+                                                        } else {
+                                                            bitmap4 = bitmap3;
+                                                            arrayList8 = arrayList7;
+                                                            str5 = str49;
+                                                            longSparseArray9 = longSparseArray15;
+                                                            if (DialogObject.isEncryptedDialog(j11)) {
+                                                                intent222.putExtra("encId", DialogObject.getEncryptedChatId(j11));
+                                                            } else if (DialogObject.isUserDialog(j11)) {
+                                                                intent222.putExtra(str35, j11);
                                                             } else {
-                                                                str27 = str16;
+                                                                intent222.putExtra(str34, -j11);
                                                             }
-                                                            str28 = str45;
-                                                            if (person3 == null) {
-                                                            }
-                                                            Person.Builder name322 = new Person.Builder().setName(str28);
-                                                            if (zArr[0]) {
-                                                            }
-                                                            str29 = str25;
-                                                            j14 = j7;
-                                                            strArr = strArr22;
-                                                            Person build522 = name322.build();
-                                                            longSparseArray10.put(j13, build522);
-                                                            person2 = build522;
-                                                            if (!DialogObject.isEncryptedDialog(j11)) {
-                                                            }
-                                                            if (j11 == 777000) {
-                                                            }
-                                                            i30 = i31;
-                                                            i4 = -1;
-                                                            size4 = i32 - 1;
-                                                            messagingStyle2 = messagingStyle4;
-                                                            strArr22 = strArr;
-                                                            str4 = str30;
-                                                            str402 = str31;
-                                                            str43 = str24;
-                                                            z12 = z17;
-                                                            zArr22 = zArr;
-                                                            str3 = str26;
-                                                            str16 = str27;
-                                                            j7 = j14;
                                                         }
                                                     }
-                                                    strArr = strArr22;
-                                                    str24 = str43;
-                                                    str30 = str4;
-                                                    messagingStyle4 = messagingStyle5;
-                                                    i30 = i31;
-                                                    i4 = -1;
-                                                    size4 = i32 - 1;
-                                                    messagingStyle2 = messagingStyle4;
-                                                    strArr22 = strArr;
-                                                    str4 = str30;
-                                                    str402 = str31;
-                                                    str43 = str24;
-                                                    z12 = z17;
-                                                    zArr22 = zArr;
-                                                    str3 = str26;
-                                                    str16 = str27;
-                                                    j7 = j14;
-                                                }
-                                                j12 = j7;
-                                                messagingStyle3 = messagingStyle2;
-                                                str19 = str3;
-                                                str20 = str4;
-                                                arrayList7 = arrayList19;
-                                                bitmap3 = bitmap2;
-                                                i12 = i30;
-                                                str21 = str16;
-                                            }
-                                            Intent intent32 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                            intent32.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                            intent32.setFlags(67108864);
-                                            intent32.addCategory("android.intent.category.LAUNCHER");
-                                            if (messageObject3 == null) {
-                                                messageObject4 = messageObject3;
-                                                if (messageObject4.isStoryReactionPush) {
-                                                    intent32.putExtra(str5, Math.abs(messageObject4.getId()));
-                                                    bitmap4 = bitmap3;
-                                                    messageObject5 = messageObject4;
-                                                    str36 = str20;
-                                                    str34 = str6;
-                                                    str35 = str7;
-                                                    dialogKey5 = dialogKey4;
-                                                    arrayList8 = arrayList7;
-                                                    StringBuilder sb42 = new StringBuilder();
-                                                    sb42.append("show extra notifications chatId ");
-                                                    sb42.append(j11);
-                                                    sb42.append(" topicId ");
+                                                    StringBuilder sb622 = new StringBuilder();
+                                                    sb622.append("show extra notifications chatId ");
+                                                    sb622.append(j11);
+                                                    sb622.append(" topicId ");
                                                     j15 = j12;
-                                                    sb42.append(j15);
-                                                    FileLog.d(sb42.toString());
+                                                    sb622.append(j15);
+                                                    FileLog.d(sb622.toString());
                                                     if (j15 != 0) {
-                                                        intent32.putExtra("topicId", j15);
+                                                        intent222.putExtra("topicId", j15);
                                                     }
-                                                    String str412 = "currentAccount";
-                                                    intent32.putExtra(str412, notificationsController3.currentAccount);
-                                                    str7 = str35;
-                                                    PendingIntent activity2 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent32, 1140850688);
-                                                    NotificationCompat.WearableExtender wearableExtender2 = new NotificationCompat.WearableExtender();
-                                                    NotificationCompat.Action action42 = action;
+                                                    String str4022 = str3922;
+                                                    intent222.putExtra(str4022, notificationsController3.currentAccount);
+                                                    PendingIntent activity22 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent222, 1140850688);
+                                                    NotificationCompat.WearableExtender wearableExtender22 = new NotificationCompat.WearableExtender();
+                                                    NotificationCompat.Action action422 = action;
                                                     if (action != null) {
-                                                        wearableExtender2.addAction(action42);
+                                                        wearableExtender22.addAction(action422);
                                                     }
-                                                    String str422 = str34;
-                                                    Intent intent42 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                    intent42.addFlags(32);
-                                                    intent42.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                    intent42.putExtra(str18, j11);
-                                                    int i282 = i10;
-                                                    intent42.putExtra(str17, i282);
-                                                    intent42.putExtra(str412, notificationsController3.currentAccount);
-                                                    int i292 = i12;
-                                                    NotificationCompat.Action build42 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                    String str4122 = str22;
+                                                    Intent intent322 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                    intent322.addFlags(32);
+                                                    intent322.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                    intent322.putExtra(str20, j11);
+                                                    int i3022 = i9;
+                                                    intent322.putExtra(str19, i3022);
+                                                    intent322.putExtra(str4022, notificationsController3.currentAccount);
+                                                    String str4222 = str34;
+                                                    String str4322 = str35;
+                                                    NotificationCompat.Action build422 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent322, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                     if (DialogObject.isEncryptedDialog(j11)) {
-                                                        action2 = build42;
-                                                        action3 = action42;
-                                                        str37 = j11 != globalSecretChatId ? "tgenc" + DialogObject.getEncryptedChatId(j11) + "_" + i282 : null;
+                                                        i12 = i11;
+                                                        action2 = action422;
+                                                        str36 = j11 != globalSecretChatId ? "tgenc" + DialogObject.getEncryptedChatId(j11) + "_" + i3022 : null;
                                                     } else if (DialogObject.isUserDialog(j11)) {
-                                                        str37 = "tguser" + j11 + "_" + i282;
-                                                        action2 = build42;
-                                                        action3 = action42;
+                                                        str36 = "tguser" + j11 + "_" + i3022;
+                                                        i12 = i11;
+                                                        action2 = action422;
                                                     } else {
-                                                        StringBuilder sb7 = new StringBuilder();
-                                                        sb7.append("tgchat");
-                                                        action2 = build42;
-                                                        action3 = action42;
-                                                        sb7.append(-j11);
-                                                        sb7.append("_");
-                                                        sb7.append(i282);
-                                                        str37 = sb7.toString();
+                                                        StringBuilder sb9 = new StringBuilder();
+                                                        sb9.append("tgchat");
+                                                        i12 = i11;
+                                                        action2 = action422;
+                                                        sb9.append(-j11);
+                                                        sb9.append("_");
+                                                        sb9.append(i3022);
+                                                        str36 = sb9.toString();
                                                     }
-                                                    if (str37 != null) {
-                                                        wearableExtender2.setDismissalId(str37);
+                                                    if (str36 != null) {
+                                                        wearableExtender22.setDismissalId(str36);
                                                         NotificationCompat.WearableExtender wearableExtender3 = new NotificationCompat.WearableExtender();
-                                                        wearableExtender3.setDismissalId("summary_" + str37);
-                                                        messageObject6 = messageObject5;
+                                                        wearableExtender3.setDismissalId("summary_" + str36);
+                                                        messageObject5 = messageObject4;
                                                         builder.extend(wearableExtender3);
                                                     } else {
-                                                        messageObject6 = messageObject5;
+                                                        messageObject5 = messageObject4;
                                                     }
-                                                    StringBuilder sb52 = new StringBuilder();
-                                                    sb52.append("tgaccount");
-                                                    NotificationCompat.Action action52 = action2;
-                                                    long j252 = j10;
-                                                    sb52.append(j252);
-                                                    wearableExtender2.setBridgeTag(sb52.toString());
+                                                    StringBuilder sb722 = new StringBuilder();
+                                                    sb722.append("tgaccount");
+                                                    int i3122 = i12;
+                                                    long j2422 = j10;
+                                                    sb722.append(j2422);
+                                                    wearableExtender22.setBridgeTag(sb722.toString());
                                                     if (dialogKey5.story) {
-                                                        j17 = j252;
-                                                        j18 = Long.MAX_VALUE;
-                                                        int i33 = 0;
-                                                        while (i33 < notificationsController3.storyPushMessages.size()) {
-                                                            j18 = Math.min(notificationsController3.storyPushMessages.get(i33).date, j18);
-                                                            i33++;
-                                                            j11 = j11;
+                                                        j16 = j2422;
+                                                        j17 = Long.MAX_VALUE;
+                                                        int i36 = 0;
+                                                        while (i36 < notificationsController3.storyPushMessages.size()) {
+                                                            j17 = Math.min(notificationsController3.storyPushMessages.get(i36).date, j17);
+                                                            i36++;
+                                                            build422 = build422;
+                                                            i3122 = i3122;
                                                         }
-                                                        j16 = j11;
+                                                        action3 = build422;
+                                                        i13 = i3122;
                                                         arrayList9 = arrayList4;
                                                     } else {
-                                                        j16 = j11;
-                                                        j17 = j252;
+                                                        action3 = build422;
+                                                        i13 = i3122;
+                                                        j16 = j2422;
                                                         arrayList9 = arrayList4;
-                                                        j18 = ((MessageObject) arrayList9.get(0)).messageOwner.date * 1000;
+                                                        j17 = ((MessageObject) arrayList9.get(0)).messageOwner.date * 1000;
                                                     }
-                                                    NotificationCompat.Builder autoCancel2 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str21).setSmallIcon(R.drawable.notification).setContentText(sb32.toString()).setAutoCancel(true);
+                                                    NotificationCompat.Builder autoCancel22 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
                                                     if (dialogKey5.story) {
                                                         arrayList9 = notificationsController3.storyPushMessages;
                                                     }
-                                                    NotificationCompat.Builder category2 = autoCancel2.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j18).setShowWhen(true).setStyle(messagingStyle3).setContentIntent(activity2).extend(wearableExtender2).setSortKey(String.valueOf(Long.MAX_VALUE - j18)).setCategory("msg");
-                                                    intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                    intent.putExtra("messageDate", i7);
-                                                    j19 = j16;
-                                                    intent.putExtra("dialogId", j19);
-                                                    intent.putExtra(str412, notificationsController3.currentAccount);
+                                                    category = autoCancel22.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity22).extend(wearableExtender22).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                                    Intent intent422 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                    intent422.putExtra("messageDate", i7);
+                                                    intent422.putExtra("dialogId", j11);
+                                                    intent422.putExtra(str4022, notificationsController3.currentAccount);
                                                     if (dialogKey5.story) {
-                                                        intent.putExtra("story", true);
+                                                        intent422.putExtra("story", true);
                                                     }
-                                                    if (messageObject6 != null && messageObject6.isStoryReactionPush) {
-                                                        intent.putExtra("storyReaction", true);
+                                                    if (messageObject5.isStoryReactionPush) {
+                                                        intent422.putExtra("storyReaction", true);
                                                     }
-                                                    category2.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
+                                                    category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422, 167772160));
                                                     if (z7) {
-                                                        category2.setGroup(notificationsController3.notificationGroup);
-                                                        category2.setGroupAlertBehavior(1);
+                                                        category.setGroup(notificationsController3.notificationGroup);
+                                                        category.setGroupAlertBehavior(1);
                                                     }
-                                                    if (messageObject6 != null || (message = messageObject6.messageOwner) == null || (replyMarkup2 = message.reply_markup) == null) {
+                                                    message = messageObject5.messageOwner;
+                                                    if (message != null || (replyMarkup2 = message.reply_markup) == null) {
                                                         tL_keyboardButtonCopy = null;
                                                     } else {
                                                         TLRPC.TL_keyboardButtonCopy tL_keyboardButtonCopy2 = null;
-                                                        for (int i34 = 0; i34 < replyMarkup2.rows.size(); i34++) {
-                                                            int i35 = 0;
+                                                        for (int i37 = 0; i37 < replyMarkup2.rows.size(); i37++) {
+                                                            int i38 = 0;
                                                             while (true) {
-                                                                if (i35 >= replyMarkup2.rows.get(i34).buttons.size()) {
+                                                                if (i38 >= replyMarkup2.rows.get(i37).buttons.size()) {
                                                                     break;
                                                                 }
-                                                                if (replyMarkup2.rows.get(i34).buttons.get(i35) instanceof TLRPC.TL_keyboardButtonCopy) {
-                                                                    tL_keyboardButtonCopy2 = (TLRPC.TL_keyboardButtonCopy) replyMarkup2.rows.get(i34).buttons.get(i35);
+                                                                if (replyMarkup2.rows.get(i37).buttons.get(i38) instanceof TLRPC.TL_keyboardButtonCopy) {
+                                                                    tL_keyboardButtonCopy2 = (TLRPC.TL_keyboardButtonCopy) replyMarkup2.rows.get(i37).buttons.get(i38);
                                                                     break;
                                                                 }
-                                                                i35++;
+                                                                i38++;
                                                             }
                                                             if (tL_keyboardButtonCopy2 != null) {
                                                                 break;
@@ -10753,286 +10969,394 @@ public class NotificationsController extends BaseController {
                                                         intent5.addFlags(32);
                                                         intent5.setAction("org.telegram.messenger.ACTION_COPY_CODE");
                                                         intent5.putExtra("text", tL_keyboardButtonCopy.copy_text);
-                                                        category2.addAction(new NotificationCompat.Action.Builder(R.drawable.msg_copy, tL_keyboardButtonCopy.text, PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent5, 167772160)).setShowsUserInterface(false).build());
+                                                        category.addAction(new NotificationCompat.Action.Builder(R.drawable.msg_copy, tL_keyboardButtonCopy.text, PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent5, 167772160)).setShowsUserInterface(false).build());
                                                     }
-                                                    if (dialogKey5.dialogId != UserObject.VERIFY) {
-                                                        if (action3 != null) {
-                                                            category2.addAction(action3);
+                                                    j18 = dialogKey5.dialogId;
+                                                    if (j18 != UserObject.VERIFY && j18 != UserObject.OAUTH) {
+                                                        if (action2 != null) {
+                                                            category.addAction(action2);
                                                         }
-                                                        if (!z6 && !dialogKey5.story && (messageObject6 == null || !messageObject6.isStoryReactionPush)) {
-                                                            category2.addAction(action52);
+                                                        if (!z6 && !dialogKey5.story && !messageObject5.isStoryReactionPush) {
+                                                            category.addAction(action3);
                                                         }
                                                     }
                                                     if (arrayList2.size() != 1 && !TextUtils.isEmpty(str) && !dialogKey5.story) {
-                                                        category2.setSubText(str);
+                                                        category.setSubText(str);
                                                     }
-                                                    if (DialogObject.isEncryptedDialog(j19)) {
-                                                        category2.setLocalOnly(true);
+                                                    if (DialogObject.isEncryptedDialog(j11)) {
+                                                        category.setLocalOnly(true);
                                                     }
                                                     if (bitmap4 != null) {
-                                                        category2.setLargeIcon(bitmap4);
+                                                        category.setLargeIcon(bitmap4);
                                                     }
                                                     if (!AndroidUtilities.needShowPasscode(false) && !SharedConfig.isWaitingForPasscodeEnter && arrayList8 != null) {
                                                         size3 = arrayList8.size();
-                                                        i13 = 0;
-                                                        while (i13 < size3) {
+                                                        i15 = 0;
+                                                        while (i15 < size3) {
                                                             ArrayList<TLRPC.TL_keyboardButtonRow> arrayList20 = arrayList8;
-                                                            TLRPC.TL_keyboardButtonRow tL_keyboardButtonRow = arrayList20.get(i13);
+                                                            TLRPC.TL_keyboardButtonRow tL_keyboardButtonRow = arrayList20.get(i15);
                                                             int size5 = tL_keyboardButtonRow.buttons.size();
-                                                            int i36 = 0;
-                                                            while (i36 < size5) {
-                                                                TLRPC.KeyboardButton keyboardButton = tL_keyboardButtonRow.buttons.get(i36);
+                                                            int i39 = 0;
+                                                            while (i39 < size5) {
+                                                                TLRPC.KeyboardButton keyboardButton = tL_keyboardButtonRow.buttons.get(i39);
                                                                 if (keyboardButton instanceof TLRPC.TL_keyboardButtonCallback) {
-                                                                    i14 = size3;
+                                                                    i16 = size3;
                                                                     arrayList10 = arrayList20;
                                                                     Intent intent6 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationCallbackReceiver.class);
-                                                                    intent6.putExtra(str412, notificationsController3.currentAccount);
-                                                                    intent6.putExtra("did", j19);
+                                                                    intent6.putExtra(str4022, notificationsController3.currentAccount);
+                                                                    intent6.putExtra("did", j11);
                                                                     byte[] bArr = keyboardButton.data;
                                                                     if (bArr != null) {
                                                                         intent6.putExtra("data", bArr);
                                                                     }
-                                                                    intent6.putExtra("mid", i292);
-                                                                    String str48 = keyboardButton.text;
+                                                                    intent6.putExtra("mid", i13);
+                                                                    String str51 = keyboardButton.text;
                                                                     Context context2 = ApplicationLoader.applicationContext;
-                                                                    int i37 = notificationsController3.lastButtonId;
-                                                                    str39 = str412;
-                                                                    notificationsController3.lastButtonId = i37 + 1;
-                                                                    category2.addAction(0, str48, PendingIntent.getBroadcast(context2, i37, intent6, 167772160));
+                                                                    int i40 = notificationsController3.lastButtonId;
+                                                                    str37 = str4022;
+                                                                    notificationsController3.lastButtonId = i40 + 1;
+                                                                    category.addAction(0, str51, PendingIntent.getBroadcast(context2, i40, intent6, 167772160));
                                                                 } else {
-                                                                    i14 = size3;
+                                                                    i16 = size3;
                                                                     arrayList10 = arrayList20;
-                                                                    str39 = str412;
+                                                                    str37 = str4022;
                                                                 }
-                                                                i36++;
-                                                                size3 = i14;
+                                                                i39++;
+                                                                size3 = i16;
                                                                 arrayList20 = arrayList10;
-                                                                str412 = str39;
+                                                                str4022 = str37;
                                                             }
                                                             arrayList8 = arrayList20;
-                                                            i13++;
-                                                            str412 = str412;
+                                                            i15++;
+                                                            str4022 = str4022;
                                                         }
                                                     }
                                                     if (chat5 == null || user6 == null) {
                                                         user7 = user6;
                                                     } else {
                                                         user7 = user6;
-                                                        String str49 = user7.phone;
-                                                        if (str49 != null && str49.length() > 0) {
-                                                            category2.addPerson("tel:+" + user7.phone);
+                                                        String str52 = user7.phone;
+                                                        if (str52 != null && str52.length() > 0) {
+                                                            category.addPerson("tel:+" + user7.phone);
                                                         }
                                                     }
-                                                    Notification notification32 = notification;
-                                                    boolean z152 = z7;
+                                                    Notification notification322 = notification;
+                                                    boolean z1622 = z7;
                                                     if (Build.VERSION.SDK_INT >= 26) {
-                                                        notificationsController3.setNotificationChannel(notification32, category2, z152);
+                                                        notificationsController3.setNotificationChannel(notification322, category, z1622);
                                                     }
-                                                    FileLog.d("showExtraNotifications: holders.add " + j19);
-                                                    i8 = i21;
-                                                    str10 = str19;
+                                                    FileLog.d("showExtraNotifications: holders.add " + j11);
+                                                    i8 = i23;
+                                                    str10 = str23;
                                                     z8 = z6;
-                                                    j8 = j17;
-                                                    z9 = z152;
-                                                    longSparseArray6 = longSparseArray7;
-                                                    i9 = i22;
-                                                    str12 = str422;
-                                                    notification2 = notification32;
+                                                    j8 = j16;
+                                                    z9 = z1622;
+                                                    longSparseArray6 = longSparseArray9;
+                                                    str12 = str5;
+                                                    i14 = i24;
+                                                    str11 = str4122;
+                                                    notification2 = notification322;
+                                                    str14 = str4322;
                                                     sharedPreferences = sharedPreferences2;
-                                                    str11 = str5;
-                                                    str38 = str36;
+                                                    str13 = str4222;
                                                     arrayList5 = arrayList14;
-                                                    arrayList5.add(new 1NotificationHolder(num.intValue(), j19, dialogKey5.story, j15, str21, user7, chat5, category2, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                                    arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                     notificationsController2 = this;
-                                                    notificationsController2.wearNotificationsIds.put(j19, num);
-                                                    i18 = i9 + 1;
+                                                    notificationsController2.wearNotificationsIds.put(j11, num);
+                                                    i20 = i14 + 1;
                                                     arrayList13 = arrayList5;
                                                     size = i8;
+                                                    str5 = str12;
                                                     z5 = z8;
-                                                    str4 = str38;
                                                     arrayList11 = arrayList2;
                                                     z4 = z9;
-                                                    longSparseArray8 = longSparseArray4;
+                                                    longSparseArray12 = longSparseArray4;
                                                     clientUserId = j8;
-                                                    str5 = str11;
-                                                    str6 = str12;
-                                                    longSparseArray9 = longSparseArray5;
+                                                    str6 = str13;
+                                                    str7 = str14;
+                                                    str4 = str11;
+                                                    longSparseArray13 = longSparseArray5;
                                                     longSparseArray = longSparseArray6;
                                                     build2 = notification2;
                                                     notificationsController3 = notificationsController2;
                                                     str3 = str10;
                                                     notificationsSettings = sharedPreferences;
                                                     i4 = -1;
-                                                } else {
-                                                    str33 = str5;
                                                 }
-                                            } else {
-                                                str33 = str5;
-                                                messageObject4 = messageObject3;
-                                            }
-                                            if (messageObject4 == null && messageObject4.isLiveStoryPush) {
-                                                if (j11 < 0) {
-                                                    str34 = str6;
-                                                    intent32.putExtra(str34, -j11);
-                                                    str35 = str7;
-                                                } else {
-                                                    str34 = str6;
-                                                    str35 = str7;
-                                                    if (j11 > 0) {
-                                                        intent32.putExtra(str35, j11);
-                                                    }
-                                                }
-                                                intent32.putExtra(str33, Math.abs(messageObject4.getId()));
                                                 bitmap4 = bitmap3;
-                                                arrayList8 = arrayList7;
-                                                messageObject5 = messageObject4;
-                                                str36 = str20;
-                                                str5 = str33;
-                                                dialogKey5 = dialogKey4;
-                                            } else {
+                                                messageObject4 = messageObject3;
+                                                longSparseArray9 = longSparseArray7;
                                                 str34 = str6;
                                                 str35 = str7;
-                                                messageObject5 = messageObject4;
                                                 dialogKey5 = dialogKey4;
-                                                if (!dialogKey5.story) {
-                                                    long[] jArr2 = new long[notificationsController3.storyPushMessages.size()];
-                                                    str36 = str20;
-                                                    str5 = str33;
-                                                    int i38 = 0;
-                                                    while (i38 < notificationsController3.storyPushMessages.size()) {
-                                                        jArr2[i38] = notificationsController3.storyPushMessages.get(i38).dialogId;
-                                                        i38++;
-                                                        bitmap3 = bitmap3;
-                                                        arrayList7 = arrayList7;
+                                                arrayList8 = arrayList7;
+                                                StringBuilder sb6222 = new StringBuilder();
+                                                sb6222.append("show extra notifications chatId ");
+                                                sb6222.append(j11);
+                                                sb6222.append(" topicId ");
+                                                j15 = j12;
+                                                sb6222.append(j15);
+                                                FileLog.d(sb6222.toString());
+                                                if (j15 != 0) {
+                                                }
+                                                String str40222 = str3922;
+                                                intent222.putExtra(str40222, notificationsController3.currentAccount);
+                                                PendingIntent activity222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent222, 1140850688);
+                                                NotificationCompat.WearableExtender wearableExtender222 = new NotificationCompat.WearableExtender();
+                                                NotificationCompat.Action action4222 = action;
+                                                if (action != null) {
+                                                }
+                                                String str41222 = str22;
+                                                Intent intent3222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                intent3222.addFlags(32);
+                                                intent3222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                intent3222.putExtra(str20, j11);
+                                                int i30222 = i9;
+                                                intent3222.putExtra(str19, i30222);
+                                                intent3222.putExtra(str40222, notificationsController3.currentAccount);
+                                                String str42222 = str34;
+                                                String str43222 = str35;
+                                                NotificationCompat.Action build4222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent3222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                if (DialogObject.isEncryptedDialog(j11)) {
+                                                }
+                                                if (str36 != null) {
+                                                }
+                                                StringBuilder sb7222 = new StringBuilder();
+                                                sb7222.append("tgaccount");
+                                                int i31222 = i12;
+                                                long j24222 = j10;
+                                                sb7222.append(j24222);
+                                                wearableExtender222.setBridgeTag(sb7222.toString());
+                                                if (dialogKey5.story) {
+                                                }
+                                                NotificationCompat.Builder autoCancel222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
+                                                if (dialogKey5.story) {
+                                                }
+                                                category = autoCancel222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity222).extend(wearableExtender222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                                Intent intent4222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                intent4222.putExtra("messageDate", i7);
+                                                intent4222.putExtra("dialogId", j11);
+                                                intent4222.putExtra(str40222, notificationsController3.currentAccount);
+                                                if (dialogKey5.story) {
+                                                }
+                                                if (messageObject5.isStoryReactionPush) {
+                                                }
+                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222, 167772160));
+                                                if (z7) {
+                                                }
+                                                message = messageObject5.messageOwner;
+                                                if (message != null) {
+                                                }
+                                                tL_keyboardButtonCopy = null;
+                                                if (tL_keyboardButtonCopy != null) {
+                                                }
+                                                j18 = dialogKey5.dialogId;
+                                                if (j18 != UserObject.VERIFY) {
+                                                    if (action2 != null) {
                                                     }
-                                                    bitmap4 = bitmap3;
-                                                    arrayList8 = arrayList7;
-                                                    intent32.putExtra("storyDialogIds", jArr2);
-                                                } else {
-                                                    bitmap4 = bitmap3;
-                                                    arrayList8 = arrayList7;
-                                                    str36 = str20;
-                                                    str5 = str33;
-                                                    if (DialogObject.isEncryptedDialog(j11)) {
-                                                        intent32.putExtra("encId", DialogObject.getEncryptedChatId(j11));
-                                                    } else if (DialogObject.isUserDialog(j11)) {
-                                                        intent32.putExtra(str35, j11);
-                                                    } else {
-                                                        intent32.putExtra(str34, -j11);
+                                                    if (!z6) {
+                                                        category.addAction(action3);
                                                     }
                                                 }
+                                                if (arrayList2.size() != 1) {
+                                                }
+                                                if (DialogObject.isEncryptedDialog(j11)) {
+                                                }
+                                                if (bitmap4 != null) {
+                                                }
+                                                if (!AndroidUtilities.needShowPasscode(false)) {
+                                                    size3 = arrayList8.size();
+                                                    i15 = 0;
+                                                    while (i15 < size3) {
+                                                    }
+                                                }
+                                                if (chat5 == null) {
+                                                }
+                                                user7 = user6;
+                                                Notification notification3222 = notification;
+                                                boolean z16222 = z7;
+                                                if (Build.VERSION.SDK_INT >= 26) {
+                                                }
+                                                FileLog.d("showExtraNotifications: holders.add " + j11);
+                                                i8 = i23;
+                                                str10 = str23;
+                                                z8 = z6;
+                                                j8 = j16;
+                                                z9 = z16222;
+                                                longSparseArray6 = longSparseArray9;
+                                                str12 = str5;
+                                                i14 = i24;
+                                                str11 = str41222;
+                                                notification2 = notification3222;
+                                                str14 = str43222;
+                                                sharedPreferences = sharedPreferences2;
+                                                str13 = str42222;
+                                                arrayList5 = arrayList14;
+                                                arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                                notificationsController2 = this;
+                                                notificationsController2.wearNotificationsIds.put(j11, num);
+                                                i20 = i14 + 1;
+                                                arrayList13 = arrayList5;
+                                                size = i8;
+                                                str5 = str12;
+                                                z5 = z8;
+                                                arrayList11 = arrayList2;
+                                                z4 = z9;
+                                                longSparseArray12 = longSparseArray4;
+                                                clientUserId = j8;
+                                                str6 = str13;
+                                                str7 = str14;
+                                                str4 = str11;
+                                                longSparseArray13 = longSparseArray5;
+                                                longSparseArray = longSparseArray6;
+                                                build2 = notification2;
+                                                notificationsController3 = notificationsController2;
+                                                str3 = str10;
+                                                notificationsSettings = sharedPreferences;
+                                                i4 = -1;
                                             }
-                                            StringBuilder sb422 = new StringBuilder();
-                                            sb422.append("show extra notifications chatId ");
-                                            sb422.append(j11);
-                                            sb422.append(" topicId ");
+                                            str21 = "currentAccount";
+                                            messageObject3 = messageObject2;
+                                            if (messageObject2 == null) {
+                                            }
+                                            String str38222 = "";
+                                            if (person == null) {
+                                            }
+                                            messagingStyle = new NotificationCompat.MessagingStyle("");
+                                            messagingStyle2 = messagingStyle;
+                                            i10 = Build.VERSION.SDK_INT;
+                                            if (i10 >= 28) {
+                                            }
+                                            messagingStyle2.setConversationTitle(format);
+                                            messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j23)) || UserObject.isReplyUser(j23));
+                                            StringBuilder sb5222 = new StringBuilder();
+                                            String str39222 = str21;
+                                            String[] strArr2222 = new String[1];
+                                            boolean[] zArr2222 = new boolean[1];
+                                            if (!dialogKey3.story) {
+                                            }
+                                            Intent intent2222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                            intent2222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                            intent2222.setFlags(67108864);
+                                            intent2222.addCategory("android.intent.category.LAUNCHER");
+                                            if (!messageObject3.isOauthPush) {
+                                            }
+                                            bitmap4 = bitmap3;
+                                            messageObject4 = messageObject3;
+                                            longSparseArray9 = longSparseArray7;
+                                            str34 = str6;
+                                            str35 = str7;
+                                            dialogKey5 = dialogKey4;
+                                            arrayList8 = arrayList7;
+                                            StringBuilder sb62222 = new StringBuilder();
+                                            sb62222.append("show extra notifications chatId ");
+                                            sb62222.append(j11);
+                                            sb62222.append(" topicId ");
                                             j15 = j12;
-                                            sb422.append(j15);
-                                            FileLog.d(sb422.toString());
+                                            sb62222.append(j15);
+                                            FileLog.d(sb62222.toString());
                                             if (j15 != 0) {
                                             }
-                                            String str4122 = "currentAccount";
-                                            intent32.putExtra(str4122, notificationsController3.currentAccount);
-                                            str7 = str35;
-                                            PendingIntent activity22 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent32, 1140850688);
-                                            NotificationCompat.WearableExtender wearableExtender22 = new NotificationCompat.WearableExtender();
-                                            NotificationCompat.Action action422 = action;
+                                            String str402222 = str39222;
+                                            intent2222.putExtra(str402222, notificationsController3.currentAccount);
+                                            PendingIntent activity2222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2222, 1140850688);
+                                            NotificationCompat.WearableExtender wearableExtender2222 = new NotificationCompat.WearableExtender();
+                                            NotificationCompat.Action action42222 = action;
                                             if (action != null) {
                                             }
-                                            String str4222 = str34;
-                                            Intent intent422 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                            intent422.addFlags(32);
-                                            intent422.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                            intent422.putExtra(str18, j11);
-                                            int i2822 = i10;
-                                            intent422.putExtra(str17, i2822);
-                                            intent422.putExtra(str4122, notificationsController3.currentAccount);
-                                            int i2922 = i12;
-                                            NotificationCompat.Action build422 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                            String str412222 = str22;
+                                            Intent intent32222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                            intent32222.addFlags(32);
+                                            intent32222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                            intent32222.putExtra(str20, j11);
+                                            int i302222 = i9;
+                                            intent32222.putExtra(str19, i302222);
+                                            intent32222.putExtra(str402222, notificationsController3.currentAccount);
+                                            String str422222 = str34;
+                                            String str432222 = str35;
+                                            NotificationCompat.Action build42222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent32222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                             if (DialogObject.isEncryptedDialog(j11)) {
                                             }
-                                            if (str37 != null) {
+                                            if (str36 != null) {
                                             }
-                                            StringBuilder sb522 = new StringBuilder();
-                                            sb522.append("tgaccount");
-                                            NotificationCompat.Action action522 = action2;
-                                            long j2522 = j10;
-                                            sb522.append(j2522);
-                                            wearableExtender22.setBridgeTag(sb522.toString());
+                                            StringBuilder sb72222 = new StringBuilder();
+                                            sb72222.append("tgaccount");
+                                            int i312222 = i12;
+                                            long j242222 = j10;
+                                            sb72222.append(j242222);
+                                            wearableExtender2222.setBridgeTag(sb72222.toString());
                                             if (dialogKey5.story) {
                                             }
-                                            NotificationCompat.Builder autoCancel22 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str21).setSmallIcon(R.drawable.notification).setContentText(sb32.toString()).setAutoCancel(true);
+                                            NotificationCompat.Builder autoCancel2222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
                                             if (dialogKey5.story) {
                                             }
-                                            NotificationCompat.Builder category22 = autoCancel22.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j18).setShowWhen(true).setStyle(messagingStyle3).setContentIntent(activity22).extend(wearableExtender22).setSortKey(String.valueOf(Long.MAX_VALUE - j18)).setCategory("msg");
-                                            intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                            intent.putExtra("messageDate", i7);
-                                            j19 = j16;
-                                            intent.putExtra("dialogId", j19);
-                                            intent.putExtra(str4122, notificationsController3.currentAccount);
+                                            category = autoCancel2222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity2222).extend(wearableExtender2222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                            Intent intent42222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                            intent42222.putExtra("messageDate", i7);
+                                            intent42222.putExtra("dialogId", j11);
+                                            intent42222.putExtra(str402222, notificationsController3.currentAccount);
                                             if (dialogKey5.story) {
                                             }
-                                            if (messageObject6 != null) {
-                                                intent.putExtra("storyReaction", true);
+                                            if (messageObject5.isStoryReactionPush) {
                                             }
-                                            category22.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
+                                            category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222, 167772160));
                                             if (z7) {
                                             }
-                                            if (messageObject6 != null) {
+                                            message = messageObject5.messageOwner;
+                                            if (message != null) {
                                             }
                                             tL_keyboardButtonCopy = null;
                                             if (tL_keyboardButtonCopy != null) {
                                             }
-                                            if (dialogKey5.dialogId != UserObject.VERIFY) {
+                                            j18 = dialogKey5.dialogId;
+                                            if (j18 != UserObject.VERIFY) {
                                             }
                                             if (arrayList2.size() != 1) {
                                             }
-                                            if (DialogObject.isEncryptedDialog(j19)) {
+                                            if (DialogObject.isEncryptedDialog(j11)) {
                                             }
                                             if (bitmap4 != null) {
                                             }
                                             if (!AndroidUtilities.needShowPasscode(false)) {
-                                                size3 = arrayList8.size();
-                                                i13 = 0;
-                                                while (i13 < size3) {
-                                                }
                                             }
                                             if (chat5 == null) {
                                             }
                                             user7 = user6;
-                                            Notification notification322 = notification;
-                                            boolean z1522 = z7;
+                                            Notification notification32222 = notification;
+                                            boolean z162222 = z7;
                                             if (Build.VERSION.SDK_INT >= 26) {
                                             }
-                                            FileLog.d("showExtraNotifications: holders.add " + j19);
-                                            i8 = i21;
-                                            str10 = str19;
+                                            FileLog.d("showExtraNotifications: holders.add " + j11);
+                                            i8 = i23;
+                                            str10 = str23;
                                             z8 = z6;
-                                            j8 = j17;
-                                            z9 = z1522;
-                                            longSparseArray6 = longSparseArray7;
-                                            i9 = i22;
-                                            str12 = str4222;
-                                            notification2 = notification322;
+                                            j8 = j16;
+                                            z9 = z162222;
+                                            longSparseArray6 = longSparseArray9;
+                                            str12 = str5;
+                                            i14 = i24;
+                                            str11 = str412222;
+                                            notification2 = notification32222;
+                                            str14 = str432222;
                                             sharedPreferences = sharedPreferences2;
-                                            str11 = str5;
-                                            str38 = str36;
+                                            str13 = str422222;
                                             arrayList5 = arrayList14;
-                                            arrayList5.add(new 1NotificationHolder(num.intValue(), j19, dialogKey5.story, j15, str21, user7, chat5, category22, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                            arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                             notificationsController2 = this;
-                                            notificationsController2.wearNotificationsIds.put(j19, num);
-                                            i18 = i9 + 1;
+                                            notificationsController2.wearNotificationsIds.put(j11, num);
+                                            i20 = i14 + 1;
                                             arrayList13 = arrayList5;
                                             size = i8;
+                                            str5 = str12;
                                             z5 = z8;
-                                            str4 = str38;
                                             arrayList11 = arrayList2;
                                             z4 = z9;
-                                            longSparseArray8 = longSparseArray4;
+                                            longSparseArray12 = longSparseArray4;
                                             clientUserId = j8;
-                                            str5 = str11;
-                                            str6 = str12;
-                                            longSparseArray9 = longSparseArray5;
+                                            str6 = str13;
+                                            str7 = str14;
+                                            str4 = str11;
+                                            longSparseArray13 = longSparseArray5;
                                             longSparseArray = longSparseArray6;
                                             build2 = notification2;
                                             notificationsController3 = notificationsController2;
@@ -11043,104 +11367,106 @@ public class NotificationsController extends BaseController {
                                     }
                                 }
                                 action = build;
-                                str18 = "dialog_id";
+                                str20 = "dialog_id";
+                                str21 = "currentAccount";
                                 messageObject3 = messageObject2;
                                 if (messageObject2 == null) {
                                 }
-                                String str4022 = "";
+                                String str382222 = "";
                                 if (person == null) {
                                 }
                                 messagingStyle = new NotificationCompat.MessagingStyle("");
                                 messagingStyle2 = messagingStyle;
-                                i11 = Build.VERSION.SDK_INT;
-                                if (i11 >= 28) {
+                                i10 = Build.VERSION.SDK_INT;
+                                if (i10 >= 28) {
                                 }
                                 messagingStyle2.setConversationTitle(format);
-                                messagingStyle2.setGroupConversation(i11 >= 28 || (!z12 && DialogObject.isChatDialog(j24)) || UserObject.isReplyUser(j24));
-                                StringBuilder sb322 = new StringBuilder();
-                                String[] strArr222 = new String[1];
-                                boolean[] zArr222 = new boolean[1];
+                                messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j23)) || UserObject.isReplyUser(j23));
+                                StringBuilder sb52222 = new StringBuilder();
+                                String str392222 = str21;
+                                String[] strArr22222 = new String[1];
+                                boolean[] zArr22222 = new boolean[1];
                                 if (!dialogKey3.story) {
                                 }
-                                Intent intent322 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                intent322.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                intent322.setFlags(67108864);
-                                intent322.addCategory("android.intent.category.LAUNCHER");
-                                if (messageObject3 == null) {
+                                Intent intent22222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                intent22222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                intent22222.setFlags(67108864);
+                                intent22222.addCategory("android.intent.category.LAUNCHER");
+                                if (!messageObject3.isOauthPush) {
                                 }
-                                if (messageObject4 == null) {
-                                }
+                                bitmap4 = bitmap3;
+                                messageObject4 = messageObject3;
+                                longSparseArray9 = longSparseArray7;
                                 str34 = str6;
                                 str35 = str7;
-                                messageObject5 = messageObject4;
                                 dialogKey5 = dialogKey4;
-                                if (!dialogKey5.story) {
-                                }
-                                StringBuilder sb4222 = new StringBuilder();
-                                sb4222.append("show extra notifications chatId ");
-                                sb4222.append(j11);
-                                sb4222.append(" topicId ");
+                                arrayList8 = arrayList7;
+                                StringBuilder sb622222 = new StringBuilder();
+                                sb622222.append("show extra notifications chatId ");
+                                sb622222.append(j11);
+                                sb622222.append(" topicId ");
                                 j15 = j12;
-                                sb4222.append(j15);
-                                FileLog.d(sb4222.toString());
+                                sb622222.append(j15);
+                                FileLog.d(sb622222.toString());
                                 if (j15 != 0) {
                                 }
-                                String str41222 = "currentAccount";
-                                intent322.putExtra(str41222, notificationsController3.currentAccount);
-                                str7 = str35;
-                                PendingIntent activity222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent322, 1140850688);
-                                NotificationCompat.WearableExtender wearableExtender222 = new NotificationCompat.WearableExtender();
-                                NotificationCompat.Action action4222 = action;
+                                String str4022222 = str392222;
+                                intent22222.putExtra(str4022222, notificationsController3.currentAccount);
+                                PendingIntent activity22222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent22222, 1140850688);
+                                NotificationCompat.WearableExtender wearableExtender22222 = new NotificationCompat.WearableExtender();
+                                NotificationCompat.Action action422222 = action;
                                 if (action != null) {
                                 }
-                                String str42222 = str34;
-                                Intent intent4222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                intent4222.addFlags(32);
-                                intent4222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                intent4222.putExtra(str18, j11);
-                                int i28222 = i10;
-                                intent4222.putExtra(str17, i28222);
-                                intent4222.putExtra(str41222, notificationsController3.currentAccount);
-                                int i29222 = i12;
-                                NotificationCompat.Action build4222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                String str4122222 = str22;
+                                Intent intent322222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                intent322222.addFlags(32);
+                                intent322222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                intent322222.putExtra(str20, j11);
+                                int i3022222 = i9;
+                                intent322222.putExtra(str19, i3022222);
+                                intent322222.putExtra(str4022222, notificationsController3.currentAccount);
+                                String str4222222 = str34;
+                                String str4322222 = str35;
+                                NotificationCompat.Action build422222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent322222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                 if (DialogObject.isEncryptedDialog(j11)) {
                                 }
-                                if (str37 != null) {
+                                if (str36 != null) {
                                 }
-                                StringBuilder sb5222 = new StringBuilder();
-                                sb5222.append("tgaccount");
-                                NotificationCompat.Action action5222 = action2;
-                                long j25222 = j10;
-                                sb5222.append(j25222);
-                                wearableExtender222.setBridgeTag(sb5222.toString());
+                                StringBuilder sb722222 = new StringBuilder();
+                                sb722222.append("tgaccount");
+                                int i3122222 = i12;
+                                long j2422222 = j10;
+                                sb722222.append(j2422222);
+                                wearableExtender22222.setBridgeTag(sb722222.toString());
                                 if (dialogKey5.story) {
                                 }
-                                NotificationCompat.Builder autoCancel222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str21).setSmallIcon(R.drawable.notification).setContentText(sb322.toString()).setAutoCancel(true);
+                                NotificationCompat.Builder autoCancel22222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
                                 if (dialogKey5.story) {
                                 }
-                                NotificationCompat.Builder category222 = autoCancel222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j18).setShowWhen(true).setStyle(messagingStyle3).setContentIntent(activity222).extend(wearableExtender222).setSortKey(String.valueOf(Long.MAX_VALUE - j18)).setCategory("msg");
-                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                intent.putExtra("messageDate", i7);
-                                j19 = j16;
-                                intent.putExtra("dialogId", j19);
-                                intent.putExtra(str41222, notificationsController3.currentAccount);
+                                category = autoCancel22222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity22222).extend(wearableExtender22222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                Intent intent422222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                intent422222.putExtra("messageDate", i7);
+                                intent422222.putExtra("dialogId", j11);
+                                intent422222.putExtra(str4022222, notificationsController3.currentAccount);
                                 if (dialogKey5.story) {
                                 }
-                                if (messageObject6 != null) {
+                                if (messageObject5.isStoryReactionPush) {
                                 }
-                                category222.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
+                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422222, 167772160));
                                 if (z7) {
                                 }
-                                if (messageObject6 != null) {
+                                message = messageObject5.messageOwner;
+                                if (message != null) {
                                 }
                                 tL_keyboardButtonCopy = null;
                                 if (tL_keyboardButtonCopy != null) {
                                 }
-                                if (dialogKey5.dialogId != UserObject.VERIFY) {
+                                j18 = dialogKey5.dialogId;
+                                if (j18 != UserObject.VERIFY) {
                                 }
                                 if (arrayList2.size() != 1) {
                                 }
-                                if (DialogObject.isEncryptedDialog(j19)) {
+                                if (DialogObject.isEncryptedDialog(j11)) {
                                 }
                                 if (bitmap4 != null) {
                                 }
@@ -11149,39 +11475,41 @@ public class NotificationsController extends BaseController {
                                 if (chat5 == null) {
                                 }
                                 user7 = user6;
-                                Notification notification3222 = notification;
-                                boolean z15222 = z7;
+                                Notification notification322222 = notification;
+                                boolean z1622222 = z7;
                                 if (Build.VERSION.SDK_INT >= 26) {
                                 }
-                                FileLog.d("showExtraNotifications: holders.add " + j19);
-                                i8 = i21;
-                                str10 = str19;
+                                FileLog.d("showExtraNotifications: holders.add " + j11);
+                                i8 = i23;
+                                str10 = str23;
                                 z8 = z6;
-                                j8 = j17;
-                                z9 = z15222;
-                                longSparseArray6 = longSparseArray7;
-                                i9 = i22;
-                                str12 = str42222;
-                                notification2 = notification3222;
+                                j8 = j16;
+                                z9 = z1622222;
+                                longSparseArray6 = longSparseArray9;
+                                str12 = str5;
+                                i14 = i24;
+                                str11 = str4122222;
+                                notification2 = notification322222;
+                                str14 = str4322222;
                                 sharedPreferences = sharedPreferences2;
-                                str11 = str5;
-                                str38 = str36;
+                                str13 = str4222222;
                                 arrayList5 = arrayList14;
-                                arrayList5.add(new 1NotificationHolder(num.intValue(), j19, dialogKey5.story, j15, str21, user7, chat5, category222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                 notificationsController2 = this;
-                                notificationsController2.wearNotificationsIds.put(j19, num);
-                                i18 = i9 + 1;
+                                notificationsController2.wearNotificationsIds.put(j11, num);
+                                i20 = i14 + 1;
                                 arrayList13 = arrayList5;
                                 size = i8;
+                                str5 = str12;
                                 z5 = z8;
-                                str4 = str38;
                                 arrayList11 = arrayList2;
                                 z4 = z9;
-                                longSparseArray8 = longSparseArray4;
+                                longSparseArray12 = longSparseArray4;
                                 clientUserId = j8;
-                                str5 = str11;
-                                str6 = str12;
-                                longSparseArray9 = longSparseArray5;
+                                str6 = str13;
+                                str7 = str14;
+                                str4 = str11;
+                                longSparseArray13 = longSparseArray5;
                                 longSparseArray = longSparseArray6;
                                 build2 = notification2;
                                 notificationsController3 = notificationsController2;
@@ -11197,8 +11525,8 @@ public class NotificationsController extends BaseController {
                         num = num3;
                         j7 = j5;
                     } else {
-                        i7 = i25;
-                        longSparseArray5 = longSparseArray9;
+                        i7 = i27;
+                        longSparseArray5 = longSparseArray13;
                         str9 = "Stories";
                         if (!DialogObject.isEncryptedDialog(j4)) {
                             z10 = (messageObject == null || messageObject.isReactionPush || messageObject.isStoryReactionPush || j4 == 777000) ? false : true;
@@ -11206,7 +11534,7 @@ public class NotificationsController extends BaseController {
                                 user3 = getMessagesController().getUser(Long.valueOf(j4));
                                 if (user3 == null) {
                                     if (messageObject.isFcmMessage()) {
-                                        str13 = messageObject.localName;
+                                        str15 = messageObject.localName;
                                         arrayList6 = arrayList3;
                                     } else {
                                         if (BuildVars.LOGS_ENABLED) {
@@ -11215,13 +11543,14 @@ public class NotificationsController extends BaseController {
                                         longSparseArray6 = longSparseArray;
                                         sharedPreferences = notificationsSettings;
                                         notificationsController2 = notificationsController3;
-                                        i8 = i21;
+                                        i8 = i23;
                                         arrayList5 = arrayList14;
-                                        i9 = i22;
                                         notification2 = notification;
                                         str10 = str3;
-                                        str11 = str5;
-                                        str12 = str6;
+                                        str11 = str4;
+                                        str12 = str5;
+                                        str13 = str6;
+                                        str14 = str7;
                                         z8 = z6;
                                         z9 = z7;
                                         j8 = clientUserId;
@@ -11231,13 +11560,15 @@ public class NotificationsController extends BaseController {
                                     TLRPC.UserProfilePhoto userProfilePhoto6 = user3.photo;
                                     if (userProfilePhoto6 == null || (fileLocation3 = userProfilePhoto6.photo_small) == null) {
                                         arrayList6 = arrayList3;
-                                        str14 = userName;
+                                        str16 = userName;
                                     } else {
                                         arrayList6 = arrayList3;
-                                        str14 = userName;
+                                        str16 = userName;
                                         if (fileLocation3.volume_id != 0 && fileLocation3.local_id != 0) {
-                                            str13 = str14;
-                                            if (j4 != UserObject.VERIFY) {
+                                            str15 = str16;
+                                            if (j4 != UserObject.OAUTH) {
+                                                string2 = LocaleController.getString(R.string.BotAuthNotificationTitle);
+                                            } else if (j4 == UserObject.VERIFY) {
                                                 string2 = LocaleController.getString(R.string.VerifyCodesNotifications);
                                             } else if (UserObject.isReplyUser(j4)) {
                                                 string2 = LocaleController.getString(R.string.RepliesTitle);
@@ -11257,12 +11588,12 @@ public class NotificationsController extends BaseController {
                                                 if (j4 == UserObject.VERIFY || messageObject == null || messageObject.getForwardedFromId() == null) {
                                                     chat3 = chat;
                                                     user5 = user4;
-                                                    string = str13;
+                                                    string = str15;
                                                 } else {
                                                     chat3 = chat;
                                                     Long forwardedFromId = messageObject.getForwardedFromId();
                                                     user5 = user4;
-                                                    string = str13;
+                                                    string = str15;
                                                     long longValue = forwardedFromId.longValue();
                                                     if (!DialogObject.isUserDialog(longValue) ? !((chatPhoto = getMessagesController().getChat(Long.valueOf(-longValue)).photo) == null || (fileLocation5 = chatPhoto.photo_small) == null || fileLocation5.volume_id == 0 || fileLocation5.local_id == 0) : !((userProfilePhoto = getMessagesController().getUser(forwardedFromId).photo) == null || (fileLocation5 = userProfilePhoto.photo_small) == null || fileLocation5.volume_id == 0 || fileLocation5.local_id == 0)) {
                                                         fileLocation4 = fileLocation5;
@@ -11288,15 +11619,15 @@ public class NotificationsController extends BaseController {
                                                         if (z12) {
                                                         }
                                                         bitmap2 = bitmap;
-                                                        Intent intent22 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                                        intent22.putExtra("dialog_id", j4);
-                                                        int i272 = id;
-                                                        intent22.putExtra("max_id", i272);
-                                                        intent22.putExtra("topic_id", j7);
-                                                        intent22.putExtra("currentAccount", notificationsController3.currentAccount);
+                                                        Intent intent7 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                                        intent7.putExtra("dialog_id", j4);
+                                                        int i292 = id;
+                                                        intent7.putExtra("max_id", i292);
+                                                        intent7.putExtra("topic_id", j7);
+                                                        intent7.putExtra("currentAccount", notificationsController3.currentAccount);
                                                         dialogKey2 = dialogKey;
                                                         chat5 = chat4;
-                                                        PendingIntent broadcast2 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent22, 167772160);
+                                                        PendingIntent broadcast2 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent7, 167772160);
                                                         RemoteInput build32 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                                         if (!DialogObject.isChatDialog(j4)) {
                                                         }
@@ -11309,7 +11640,7 @@ public class NotificationsController extends BaseController {
                                                         }
                                                         if (max > 1) {
                                                         }
-                                                        long j242 = j4;
+                                                        long j232 = j4;
                                                         j9 = j6;
                                                         person = (Person) longSparseArray.get(j9);
                                                         if (Build.VERSION.SDK_INT >= 28) {
@@ -11320,104 +11651,106 @@ public class NotificationsController extends BaseController {
                                                             }
                                                         }
                                                         action = build;
-                                                        str18 = "dialog_id";
+                                                        str20 = "dialog_id";
+                                                        str21 = "currentAccount";
                                                         messageObject3 = messageObject2;
                                                         if (messageObject2 == null) {
                                                         }
-                                                        String str40222 = "";
+                                                        String str3822222 = "";
                                                         if (person == null) {
                                                         }
                                                         messagingStyle = new NotificationCompat.MessagingStyle("");
                                                         messagingStyle2 = messagingStyle;
-                                                        i11 = Build.VERSION.SDK_INT;
-                                                        if (i11 >= 28) {
+                                                        i10 = Build.VERSION.SDK_INT;
+                                                        if (i10 >= 28) {
                                                         }
                                                         messagingStyle2.setConversationTitle(format);
-                                                        messagingStyle2.setGroupConversation(i11 >= 28 || (!z12 && DialogObject.isChatDialog(j242)) || UserObject.isReplyUser(j242));
-                                                        StringBuilder sb3222 = new StringBuilder();
-                                                        String[] strArr2222 = new String[1];
-                                                        boolean[] zArr2222 = new boolean[1];
+                                                        messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j232)) || UserObject.isReplyUser(j232));
+                                                        StringBuilder sb522222 = new StringBuilder();
+                                                        String str3922222 = str21;
+                                                        String[] strArr222222 = new String[1];
+                                                        boolean[] zArr222222 = new boolean[1];
                                                         if (!dialogKey3.story) {
                                                         }
-                                                        Intent intent3222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                                        intent3222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                                        intent3222.setFlags(67108864);
-                                                        intent3222.addCategory("android.intent.category.LAUNCHER");
-                                                        if (messageObject3 == null) {
+                                                        Intent intent222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                        intent222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                        intent222222.setFlags(67108864);
+                                                        intent222222.addCategory("android.intent.category.LAUNCHER");
+                                                        if (!messageObject3.isOauthPush) {
                                                         }
-                                                        if (messageObject4 == null) {
-                                                        }
+                                                        bitmap4 = bitmap3;
+                                                        messageObject4 = messageObject3;
+                                                        longSparseArray9 = longSparseArray7;
                                                         str34 = str6;
                                                         str35 = str7;
-                                                        messageObject5 = messageObject4;
                                                         dialogKey5 = dialogKey4;
-                                                        if (!dialogKey5.story) {
-                                                        }
-                                                        StringBuilder sb42222 = new StringBuilder();
-                                                        sb42222.append("show extra notifications chatId ");
-                                                        sb42222.append(j11);
-                                                        sb42222.append(" topicId ");
+                                                        arrayList8 = arrayList7;
+                                                        StringBuilder sb6222222 = new StringBuilder();
+                                                        sb6222222.append("show extra notifications chatId ");
+                                                        sb6222222.append(j11);
+                                                        sb6222222.append(" topicId ");
                                                         j15 = j12;
-                                                        sb42222.append(j15);
-                                                        FileLog.d(sb42222.toString());
+                                                        sb6222222.append(j15);
+                                                        FileLog.d(sb6222222.toString());
                                                         if (j15 != 0) {
                                                         }
-                                                        String str412222 = "currentAccount";
-                                                        intent3222.putExtra(str412222, notificationsController3.currentAccount);
-                                                        str7 = str35;
-                                                        PendingIntent activity2222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent3222, 1140850688);
-                                                        NotificationCompat.WearableExtender wearableExtender2222 = new NotificationCompat.WearableExtender();
-                                                        NotificationCompat.Action action42222 = action;
+                                                        String str40222222 = str3922222;
+                                                        intent222222.putExtra(str40222222, notificationsController3.currentAccount);
+                                                        PendingIntent activity222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent222222, 1140850688);
+                                                        NotificationCompat.WearableExtender wearableExtender222222 = new NotificationCompat.WearableExtender();
+                                                        NotificationCompat.Action action4222222 = action;
                                                         if (action != null) {
                                                         }
-                                                        String str422222 = str34;
-                                                        Intent intent42222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                        intent42222.addFlags(32);
-                                                        intent42222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                        intent42222.putExtra(str18, j11);
-                                                        int i282222 = i10;
-                                                        intent42222.putExtra(str17, i282222);
-                                                        intent42222.putExtra(str412222, notificationsController3.currentAccount);
-                                                        int i292222 = i12;
-                                                        NotificationCompat.Action build42222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                        String str41222222 = str22;
+                                                        Intent intent3222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                        intent3222222.addFlags(32);
+                                                        intent3222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                        intent3222222.putExtra(str20, j11);
+                                                        int i30222222 = i9;
+                                                        intent3222222.putExtra(str19, i30222222);
+                                                        intent3222222.putExtra(str40222222, notificationsController3.currentAccount);
+                                                        String str42222222 = str34;
+                                                        String str43222222 = str35;
+                                                        NotificationCompat.Action build4222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent3222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                         if (DialogObject.isEncryptedDialog(j11)) {
                                                         }
-                                                        if (str37 != null) {
+                                                        if (str36 != null) {
                                                         }
-                                                        StringBuilder sb52222 = new StringBuilder();
-                                                        sb52222.append("tgaccount");
-                                                        NotificationCompat.Action action52222 = action2;
-                                                        long j252222 = j10;
-                                                        sb52222.append(j252222);
-                                                        wearableExtender2222.setBridgeTag(sb52222.toString());
+                                                        StringBuilder sb7222222 = new StringBuilder();
+                                                        sb7222222.append("tgaccount");
+                                                        int i31222222 = i12;
+                                                        long j24222222 = j10;
+                                                        sb7222222.append(j24222222);
+                                                        wearableExtender222222.setBridgeTag(sb7222222.toString());
                                                         if (dialogKey5.story) {
                                                         }
-                                                        NotificationCompat.Builder autoCancel2222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str21).setSmallIcon(R.drawable.notification).setContentText(sb3222.toString()).setAutoCancel(true);
+                                                        NotificationCompat.Builder autoCancel222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
                                                         if (dialogKey5.story) {
                                                         }
-                                                        NotificationCompat.Builder category2222 = autoCancel2222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j18).setShowWhen(true).setStyle(messagingStyle3).setContentIntent(activity2222).extend(wearableExtender2222).setSortKey(String.valueOf(Long.MAX_VALUE - j18)).setCategory("msg");
-                                                        intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                        intent.putExtra("messageDate", i7);
-                                                        j19 = j16;
-                                                        intent.putExtra("dialogId", j19);
-                                                        intent.putExtra(str412222, notificationsController3.currentAccount);
+                                                        category = autoCancel222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity222222).extend(wearableExtender222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                                        Intent intent4222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                        intent4222222.putExtra("messageDate", i7);
+                                                        intent4222222.putExtra("dialogId", j11);
+                                                        intent4222222.putExtra(str40222222, notificationsController3.currentAccount);
                                                         if (dialogKey5.story) {
                                                         }
-                                                        if (messageObject6 != null) {
+                                                        if (messageObject5.isStoryReactionPush) {
                                                         }
-                                                        category2222.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
+                                                        category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222222, 167772160));
                                                         if (z7) {
                                                         }
-                                                        if (messageObject6 != null) {
+                                                        message = messageObject5.messageOwner;
+                                                        if (message != null) {
                                                         }
                                                         tL_keyboardButtonCopy = null;
                                                         if (tL_keyboardButtonCopy != null) {
                                                         }
-                                                        if (dialogKey5.dialogId != UserObject.VERIFY) {
+                                                        j18 = dialogKey5.dialogId;
+                                                        if (j18 != UserObject.VERIFY) {
                                                         }
                                                         if (arrayList2.size() != 1) {
                                                         }
-                                                        if (DialogObject.isEncryptedDialog(j19)) {
+                                                        if (DialogObject.isEncryptedDialog(j11)) {
                                                         }
                                                         if (bitmap4 != null) {
                                                         }
@@ -11426,45 +11759,28 @@ public class NotificationsController extends BaseController {
                                                         if (chat5 == null) {
                                                         }
                                                         user7 = user6;
-                                                        Notification notification32222 = notification;
-                                                        boolean z152222 = z7;
+                                                        Notification notification3222222 = notification;
+                                                        boolean z16222222 = z7;
                                                         if (Build.VERSION.SDK_INT >= 26) {
                                                         }
-                                                        FileLog.d("showExtraNotifications: holders.add " + j19);
-                                                        i8 = i21;
-                                                        str10 = str19;
+                                                        FileLog.d("showExtraNotifications: holders.add " + j11);
+                                                        i8 = i23;
+                                                        str10 = str23;
                                                         z8 = z6;
-                                                        j8 = j17;
-                                                        z9 = z152222;
-                                                        longSparseArray6 = longSparseArray7;
-                                                        i9 = i22;
-                                                        str12 = str422222;
-                                                        notification2 = notification32222;
+                                                        j8 = j16;
+                                                        z9 = z16222222;
+                                                        longSparseArray6 = longSparseArray9;
+                                                        str12 = str5;
+                                                        i14 = i24;
+                                                        str11 = str41222222;
+                                                        notification2 = notification3222222;
+                                                        str14 = str43222222;
                                                         sharedPreferences = sharedPreferences2;
-                                                        str11 = str5;
-                                                        str38 = str36;
+                                                        str13 = str42222222;
                                                         arrayList5 = arrayList14;
-                                                        arrayList5.add(new 1NotificationHolder(num.intValue(), j19, dialogKey5.story, j15, str21, user7, chat5, category2222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                                        arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                         notificationsController2 = this;
-                                                        notificationsController2.wearNotificationsIds.put(j19, num);
-                                                        i18 = i9 + 1;
-                                                        arrayList13 = arrayList5;
-                                                        size = i8;
-                                                        z5 = z8;
-                                                        str4 = str38;
-                                                        arrayList11 = arrayList2;
-                                                        z4 = z9;
-                                                        longSparseArray8 = longSparseArray4;
-                                                        clientUserId = j8;
-                                                        str5 = str11;
-                                                        str6 = str12;
-                                                        longSparseArray9 = longSparseArray5;
-                                                        longSparseArray = longSparseArray6;
-                                                        build2 = notification2;
-                                                        notificationsController3 = notificationsController2;
-                                                        str3 = str10;
-                                                        notificationsSettings = sharedPreferences;
-                                                        i4 = -1;
+                                                        notificationsController2.wearNotificationsIds.put(j11, num);
                                                     }
                                                 }
                                                 fileLocation4 = fileLocation3;
@@ -11483,15 +11799,15 @@ public class NotificationsController extends BaseController {
                                                 if (z12) {
                                                 }
                                                 bitmap2 = bitmap;
-                                                Intent intent222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                                intent222.putExtra("dialog_id", j4);
-                                                int i2722 = id;
-                                                intent222.putExtra("max_id", i2722);
-                                                intent222.putExtra("topic_id", j7);
-                                                intent222.putExtra("currentAccount", notificationsController3.currentAccount);
+                                                Intent intent72 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                                intent72.putExtra("dialog_id", j4);
+                                                int i2922 = id;
+                                                intent72.putExtra("max_id", i2922);
+                                                intent72.putExtra("topic_id", j7);
+                                                intent72.putExtra("currentAccount", notificationsController3.currentAccount);
                                                 dialogKey2 = dialogKey;
                                                 chat5 = chat4;
-                                                PendingIntent broadcast22 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent222, 167772160);
+                                                PendingIntent broadcast22 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent72, 167772160);
                                                 RemoteInput build322 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                                 if (!DialogObject.isChatDialog(j4)) {
                                                 }
@@ -11504,110 +11820,112 @@ public class NotificationsController extends BaseController {
                                                 }
                                                 if (max > 1) {
                                                 }
-                                                long j2422 = j4;
+                                                long j2322 = j4;
                                                 j9 = j6;
                                                 person = (Person) longSparseArray.get(j9);
                                                 if (Build.VERSION.SDK_INT >= 28) {
                                                 }
                                                 action = build;
-                                                str18 = "dialog_id";
+                                                str20 = "dialog_id";
+                                                str21 = "currentAccount";
                                                 messageObject3 = messageObject2;
                                                 if (messageObject2 == null) {
                                                 }
-                                                String str402222 = "";
+                                                String str38222222 = "";
                                                 if (person == null) {
                                                 }
                                                 messagingStyle = new NotificationCompat.MessagingStyle("");
                                                 messagingStyle2 = messagingStyle;
-                                                i11 = Build.VERSION.SDK_INT;
-                                                if (i11 >= 28) {
+                                                i10 = Build.VERSION.SDK_INT;
+                                                if (i10 >= 28) {
                                                 }
                                                 messagingStyle2.setConversationTitle(format);
-                                                messagingStyle2.setGroupConversation(i11 >= 28 || (!z12 && DialogObject.isChatDialog(j2422)) || UserObject.isReplyUser(j2422));
-                                                StringBuilder sb32222 = new StringBuilder();
-                                                String[] strArr22222 = new String[1];
-                                                boolean[] zArr22222 = new boolean[1];
+                                                messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j2322)) || UserObject.isReplyUser(j2322));
+                                                StringBuilder sb5222222 = new StringBuilder();
+                                                String str39222222 = str21;
+                                                String[] strArr2222222 = new String[1];
+                                                boolean[] zArr2222222 = new boolean[1];
                                                 if (!dialogKey3.story) {
                                                 }
-                                                Intent intent32222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                                intent32222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                                intent32222.setFlags(67108864);
-                                                intent32222.addCategory("android.intent.category.LAUNCHER");
-                                                if (messageObject3 == null) {
+                                                Intent intent2222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                intent2222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                intent2222222.setFlags(67108864);
+                                                intent2222222.addCategory("android.intent.category.LAUNCHER");
+                                                if (!messageObject3.isOauthPush) {
                                                 }
-                                                if (messageObject4 == null) {
-                                                }
+                                                bitmap4 = bitmap3;
+                                                messageObject4 = messageObject3;
+                                                longSparseArray9 = longSparseArray7;
                                                 str34 = str6;
                                                 str35 = str7;
-                                                messageObject5 = messageObject4;
                                                 dialogKey5 = dialogKey4;
-                                                if (!dialogKey5.story) {
-                                                }
-                                                StringBuilder sb422222 = new StringBuilder();
-                                                sb422222.append("show extra notifications chatId ");
-                                                sb422222.append(j11);
-                                                sb422222.append(" topicId ");
+                                                arrayList8 = arrayList7;
+                                                StringBuilder sb62222222 = new StringBuilder();
+                                                sb62222222.append("show extra notifications chatId ");
+                                                sb62222222.append(j11);
+                                                sb62222222.append(" topicId ");
                                                 j15 = j12;
-                                                sb422222.append(j15);
-                                                FileLog.d(sb422222.toString());
+                                                sb62222222.append(j15);
+                                                FileLog.d(sb62222222.toString());
                                                 if (j15 != 0) {
                                                 }
-                                                String str4122222 = "currentAccount";
-                                                intent32222.putExtra(str4122222, notificationsController3.currentAccount);
-                                                str7 = str35;
-                                                PendingIntent activity22222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent32222, 1140850688);
-                                                NotificationCompat.WearableExtender wearableExtender22222 = new NotificationCompat.WearableExtender();
-                                                NotificationCompat.Action action422222 = action;
+                                                String str402222222 = str39222222;
+                                                intent2222222.putExtra(str402222222, notificationsController3.currentAccount);
+                                                PendingIntent activity2222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2222222, 1140850688);
+                                                NotificationCompat.WearableExtender wearableExtender2222222 = new NotificationCompat.WearableExtender();
+                                                NotificationCompat.Action action42222222 = action;
                                                 if (action != null) {
                                                 }
-                                                String str4222222 = str34;
-                                                Intent intent422222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                intent422222.addFlags(32);
-                                                intent422222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                intent422222.putExtra(str18, j11);
-                                                int i2822222 = i10;
-                                                intent422222.putExtra(str17, i2822222);
-                                                intent422222.putExtra(str4122222, notificationsController3.currentAccount);
-                                                int i2922222 = i12;
-                                                NotificationCompat.Action build422222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                String str412222222 = str22;
+                                                Intent intent32222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                intent32222222.addFlags(32);
+                                                intent32222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                intent32222222.putExtra(str20, j11);
+                                                int i302222222 = i9;
+                                                intent32222222.putExtra(str19, i302222222);
+                                                intent32222222.putExtra(str402222222, notificationsController3.currentAccount);
+                                                String str422222222 = str34;
+                                                String str432222222 = str35;
+                                                NotificationCompat.Action build42222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent32222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                 if (DialogObject.isEncryptedDialog(j11)) {
                                                 }
-                                                if (str37 != null) {
+                                                if (str36 != null) {
                                                 }
-                                                StringBuilder sb522222 = new StringBuilder();
-                                                sb522222.append("tgaccount");
-                                                NotificationCompat.Action action522222 = action2;
-                                                long j2522222 = j10;
-                                                sb522222.append(j2522222);
-                                                wearableExtender22222.setBridgeTag(sb522222.toString());
+                                                StringBuilder sb72222222 = new StringBuilder();
+                                                sb72222222.append("tgaccount");
+                                                int i312222222 = i12;
+                                                long j242222222 = j10;
+                                                sb72222222.append(j242222222);
+                                                wearableExtender2222222.setBridgeTag(sb72222222.toString());
                                                 if (dialogKey5.story) {
                                                 }
-                                                NotificationCompat.Builder autoCancel22222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str21).setSmallIcon(R.drawable.notification).setContentText(sb32222.toString()).setAutoCancel(true);
+                                                NotificationCompat.Builder autoCancel2222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
                                                 if (dialogKey5.story) {
                                                 }
-                                                NotificationCompat.Builder category22222 = autoCancel22222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j18).setShowWhen(true).setStyle(messagingStyle3).setContentIntent(activity22222).extend(wearableExtender22222).setSortKey(String.valueOf(Long.MAX_VALUE - j18)).setCategory("msg");
-                                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                intent.putExtra("messageDate", i7);
-                                                j19 = j16;
-                                                intent.putExtra("dialogId", j19);
-                                                intent.putExtra(str4122222, notificationsController3.currentAccount);
+                                                category = autoCancel2222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity2222222).extend(wearableExtender2222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                                Intent intent42222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                intent42222222.putExtra("messageDate", i7);
+                                                intent42222222.putExtra("dialogId", j11);
+                                                intent42222222.putExtra(str402222222, notificationsController3.currentAccount);
                                                 if (dialogKey5.story) {
                                                 }
-                                                if (messageObject6 != null) {
+                                                if (messageObject5.isStoryReactionPush) {
                                                 }
-                                                category22222.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
+                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222222, 167772160));
                                                 if (z7) {
                                                 }
-                                                if (messageObject6 != null) {
+                                                message = messageObject5.messageOwner;
+                                                if (message != null) {
                                                 }
                                                 tL_keyboardButtonCopy = null;
                                                 if (tL_keyboardButtonCopy != null) {
                                                 }
-                                                if (dialogKey5.dialogId != UserObject.VERIFY) {
+                                                j18 = dialogKey5.dialogId;
+                                                if (j18 != UserObject.VERIFY) {
                                                 }
                                                 if (arrayList2.size() != 1) {
                                                 }
-                                                if (DialogObject.isEncryptedDialog(j19)) {
+                                                if (DialogObject.isEncryptedDialog(j11)) {
                                                 }
                                                 if (bitmap4 != null) {
                                                 }
@@ -11616,47 +11934,30 @@ public class NotificationsController extends BaseController {
                                                 if (chat5 == null) {
                                                 }
                                                 user7 = user6;
-                                                Notification notification322222 = notification;
-                                                boolean z1522222 = z7;
+                                                Notification notification32222222 = notification;
+                                                boolean z162222222 = z7;
                                                 if (Build.VERSION.SDK_INT >= 26) {
                                                 }
-                                                FileLog.d("showExtraNotifications: holders.add " + j19);
-                                                i8 = i21;
-                                                str10 = str19;
+                                                FileLog.d("showExtraNotifications: holders.add " + j11);
+                                                i8 = i23;
+                                                str10 = str23;
                                                 z8 = z6;
-                                                j8 = j17;
-                                                z9 = z1522222;
-                                                longSparseArray6 = longSparseArray7;
-                                                i9 = i22;
-                                                str12 = str4222222;
-                                                notification2 = notification322222;
+                                                j8 = j16;
+                                                z9 = z162222222;
+                                                longSparseArray6 = longSparseArray9;
+                                                str12 = str5;
+                                                i14 = i24;
+                                                str11 = str412222222;
+                                                notification2 = notification32222222;
+                                                str14 = str432222222;
                                                 sharedPreferences = sharedPreferences2;
-                                                str11 = str5;
-                                                str38 = str36;
+                                                str13 = str422222222;
                                                 arrayList5 = arrayList14;
-                                                arrayList5.add(new 1NotificationHolder(num.intValue(), j19, dialogKey5.story, j15, str21, user7, chat5, category22222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                                arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                 notificationsController2 = this;
-                                                notificationsController2.wearNotificationsIds.put(j19, num);
-                                                i18 = i9 + 1;
-                                                arrayList13 = arrayList5;
-                                                size = i8;
-                                                z5 = z8;
-                                                str4 = str38;
-                                                arrayList11 = arrayList2;
-                                                z4 = z9;
-                                                longSparseArray8 = longSparseArray4;
-                                                clientUserId = j8;
-                                                str5 = str11;
-                                                str6 = str12;
-                                                longSparseArray9 = longSparseArray5;
-                                                longSparseArray = longSparseArray6;
-                                                build2 = notification2;
-                                                notificationsController3 = notificationsController2;
-                                                str3 = str10;
-                                                notificationsSettings = sharedPreferences;
-                                                i4 = -1;
+                                                notificationsController2.wearNotificationsIds.put(j11, num);
                                             }
-                                            str13 = string2;
+                                            str15 = string2;
                                             j6 = clientUserId;
                                             arrayList4 = arrayList6;
                                             num = num3;
@@ -11669,7 +11970,7 @@ public class NotificationsController extends BaseController {
                                             }
                                             chat3 = chat;
                                             user5 = user4;
-                                            string = str13;
+                                            string = str15;
                                             fileLocation4 = fileLocation3;
                                             chat4 = chat3;
                                             if (j4 != UserObject.VERIFY) {
@@ -11686,15 +11987,15 @@ public class NotificationsController extends BaseController {
                                             if (z12) {
                                             }
                                             bitmap2 = bitmap;
-                                            Intent intent2222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                            intent2222.putExtra("dialog_id", j4);
-                                            int i27222 = id;
-                                            intent2222.putExtra("max_id", i27222);
-                                            intent2222.putExtra("topic_id", j7);
-                                            intent2222.putExtra("currentAccount", notificationsController3.currentAccount);
+                                            Intent intent722 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                            intent722.putExtra("dialog_id", j4);
+                                            int i29222 = id;
+                                            intent722.putExtra("max_id", i29222);
+                                            intent722.putExtra("topic_id", j7);
+                                            intent722.putExtra("currentAccount", notificationsController3.currentAccount);
                                             dialogKey2 = dialogKey;
                                             chat5 = chat4;
-                                            PendingIntent broadcast222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent2222, 167772160);
+                                            PendingIntent broadcast222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent722, 167772160);
                                             RemoteInput build3222 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                             if (!DialogObject.isChatDialog(j4)) {
                                             }
@@ -11707,110 +12008,112 @@ public class NotificationsController extends BaseController {
                                             }
                                             if (max > 1) {
                                             }
-                                            long j24222 = j4;
+                                            long j23222 = j4;
                                             j9 = j6;
                                             person = (Person) longSparseArray.get(j9);
                                             if (Build.VERSION.SDK_INT >= 28) {
                                             }
                                             action = build;
-                                            str18 = "dialog_id";
+                                            str20 = "dialog_id";
+                                            str21 = "currentAccount";
                                             messageObject3 = messageObject2;
                                             if (messageObject2 == null) {
                                             }
-                                            String str4022222 = "";
+                                            String str382222222 = "";
                                             if (person == null) {
                                             }
                                             messagingStyle = new NotificationCompat.MessagingStyle("");
                                             messagingStyle2 = messagingStyle;
-                                            i11 = Build.VERSION.SDK_INT;
-                                            if (i11 >= 28) {
+                                            i10 = Build.VERSION.SDK_INT;
+                                            if (i10 >= 28) {
                                             }
                                             messagingStyle2.setConversationTitle(format);
-                                            messagingStyle2.setGroupConversation(i11 >= 28 || (!z12 && DialogObject.isChatDialog(j24222)) || UserObject.isReplyUser(j24222));
-                                            StringBuilder sb322222 = new StringBuilder();
-                                            String[] strArr222222 = new String[1];
-                                            boolean[] zArr222222 = new boolean[1];
+                                            messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j23222)) || UserObject.isReplyUser(j23222));
+                                            StringBuilder sb52222222 = new StringBuilder();
+                                            String str392222222 = str21;
+                                            String[] strArr22222222 = new String[1];
+                                            boolean[] zArr22222222 = new boolean[1];
                                             if (!dialogKey3.story) {
                                             }
-                                            Intent intent322222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                            intent322222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                            intent322222.setFlags(67108864);
-                                            intent322222.addCategory("android.intent.category.LAUNCHER");
-                                            if (messageObject3 == null) {
+                                            Intent intent22222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                            intent22222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                            intent22222222.setFlags(67108864);
+                                            intent22222222.addCategory("android.intent.category.LAUNCHER");
+                                            if (!messageObject3.isOauthPush) {
                                             }
-                                            if (messageObject4 == null) {
-                                            }
+                                            bitmap4 = bitmap3;
+                                            messageObject4 = messageObject3;
+                                            longSparseArray9 = longSparseArray7;
                                             str34 = str6;
                                             str35 = str7;
-                                            messageObject5 = messageObject4;
                                             dialogKey5 = dialogKey4;
-                                            if (!dialogKey5.story) {
-                                            }
-                                            StringBuilder sb4222222 = new StringBuilder();
-                                            sb4222222.append("show extra notifications chatId ");
-                                            sb4222222.append(j11);
-                                            sb4222222.append(" topicId ");
+                                            arrayList8 = arrayList7;
+                                            StringBuilder sb622222222 = new StringBuilder();
+                                            sb622222222.append("show extra notifications chatId ");
+                                            sb622222222.append(j11);
+                                            sb622222222.append(" topicId ");
                                             j15 = j12;
-                                            sb4222222.append(j15);
-                                            FileLog.d(sb4222222.toString());
+                                            sb622222222.append(j15);
+                                            FileLog.d(sb622222222.toString());
                                             if (j15 != 0) {
                                             }
-                                            String str41222222 = "currentAccount";
-                                            intent322222.putExtra(str41222222, notificationsController3.currentAccount);
-                                            str7 = str35;
-                                            PendingIntent activity222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent322222, 1140850688);
-                                            NotificationCompat.WearableExtender wearableExtender222222 = new NotificationCompat.WearableExtender();
-                                            NotificationCompat.Action action4222222 = action;
+                                            String str4022222222 = str392222222;
+                                            intent22222222.putExtra(str4022222222, notificationsController3.currentAccount);
+                                            PendingIntent activity22222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent22222222, 1140850688);
+                                            NotificationCompat.WearableExtender wearableExtender22222222 = new NotificationCompat.WearableExtender();
+                                            NotificationCompat.Action action422222222 = action;
                                             if (action != null) {
                                             }
-                                            String str42222222 = str34;
-                                            Intent intent4222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                            intent4222222.addFlags(32);
-                                            intent4222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                            intent4222222.putExtra(str18, j11);
-                                            int i28222222 = i10;
-                                            intent4222222.putExtra(str17, i28222222);
-                                            intent4222222.putExtra(str41222222, notificationsController3.currentAccount);
-                                            int i29222222 = i12;
-                                            NotificationCompat.Action build4222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                            String str4122222222 = str22;
+                                            Intent intent322222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                            intent322222222.addFlags(32);
+                                            intent322222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                            intent322222222.putExtra(str20, j11);
+                                            int i3022222222 = i9;
+                                            intent322222222.putExtra(str19, i3022222222);
+                                            intent322222222.putExtra(str4022222222, notificationsController3.currentAccount);
+                                            String str4222222222 = str34;
+                                            String str4322222222 = str35;
+                                            NotificationCompat.Action build422222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent322222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                             if (DialogObject.isEncryptedDialog(j11)) {
                                             }
-                                            if (str37 != null) {
+                                            if (str36 != null) {
                                             }
-                                            StringBuilder sb5222222 = new StringBuilder();
-                                            sb5222222.append("tgaccount");
-                                            NotificationCompat.Action action5222222 = action2;
-                                            long j25222222 = j10;
-                                            sb5222222.append(j25222222);
-                                            wearableExtender222222.setBridgeTag(sb5222222.toString());
+                                            StringBuilder sb722222222 = new StringBuilder();
+                                            sb722222222.append("tgaccount");
+                                            int i3122222222 = i12;
+                                            long j2422222222 = j10;
+                                            sb722222222.append(j2422222222);
+                                            wearableExtender22222222.setBridgeTag(sb722222222.toString());
                                             if (dialogKey5.story) {
                                             }
-                                            NotificationCompat.Builder autoCancel222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str21).setSmallIcon(R.drawable.notification).setContentText(sb322222.toString()).setAutoCancel(true);
+                                            NotificationCompat.Builder autoCancel22222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
                                             if (dialogKey5.story) {
                                             }
-                                            NotificationCompat.Builder category222222 = autoCancel222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j18).setShowWhen(true).setStyle(messagingStyle3).setContentIntent(activity222222).extend(wearableExtender222222).setSortKey(String.valueOf(Long.MAX_VALUE - j18)).setCategory("msg");
-                                            intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                            intent.putExtra("messageDate", i7);
-                                            j19 = j16;
-                                            intent.putExtra("dialogId", j19);
-                                            intent.putExtra(str41222222, notificationsController3.currentAccount);
+                                            category = autoCancel22222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity22222222).extend(wearableExtender22222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                            Intent intent422222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                            intent422222222.putExtra("messageDate", i7);
+                                            intent422222222.putExtra("dialogId", j11);
+                                            intent422222222.putExtra(str4022222222, notificationsController3.currentAccount);
                                             if (dialogKey5.story) {
                                             }
-                                            if (messageObject6 != null) {
+                                            if (messageObject5.isStoryReactionPush) {
                                             }
-                                            category222222.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
+                                            category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422222222, 167772160));
                                             if (z7) {
                                             }
-                                            if (messageObject6 != null) {
+                                            message = messageObject5.messageOwner;
+                                            if (message != null) {
                                             }
                                             tL_keyboardButtonCopy = null;
                                             if (tL_keyboardButtonCopy != null) {
                                             }
-                                            if (dialogKey5.dialogId != UserObject.VERIFY) {
+                                            j18 = dialogKey5.dialogId;
+                                            if (j18 != UserObject.VERIFY) {
                                             }
                                             if (arrayList2.size() != 1) {
                                             }
-                                            if (DialogObject.isEncryptedDialog(j19)) {
+                                            if (DialogObject.isEncryptedDialog(j11)) {
                                             }
                                             if (bitmap4 != null) {
                                             }
@@ -11819,53 +12122,36 @@ public class NotificationsController extends BaseController {
                                             if (chat5 == null) {
                                             }
                                             user7 = user6;
-                                            Notification notification3222222 = notification;
-                                            boolean z15222222 = z7;
+                                            Notification notification322222222 = notification;
+                                            boolean z1622222222 = z7;
                                             if (Build.VERSION.SDK_INT >= 26) {
                                             }
-                                            FileLog.d("showExtraNotifications: holders.add " + j19);
-                                            i8 = i21;
-                                            str10 = str19;
+                                            FileLog.d("showExtraNotifications: holders.add " + j11);
+                                            i8 = i23;
+                                            str10 = str23;
                                             z8 = z6;
-                                            j8 = j17;
-                                            z9 = z15222222;
-                                            longSparseArray6 = longSparseArray7;
-                                            i9 = i22;
-                                            str12 = str42222222;
-                                            notification2 = notification3222222;
+                                            j8 = j16;
+                                            z9 = z1622222222;
+                                            longSparseArray6 = longSparseArray9;
+                                            str12 = str5;
+                                            i14 = i24;
+                                            str11 = str4122222222;
+                                            notification2 = notification322222222;
+                                            str14 = str4322222222;
                                             sharedPreferences = sharedPreferences2;
-                                            str11 = str5;
-                                            str38 = str36;
+                                            str13 = str4222222222;
                                             arrayList5 = arrayList14;
-                                            arrayList5.add(new 1NotificationHolder(num.intValue(), j19, dialogKey5.story, j15, str21, user7, chat5, category222222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                            arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                             notificationsController2 = this;
-                                            notificationsController2.wearNotificationsIds.put(j19, num);
-                                            i18 = i9 + 1;
-                                            arrayList13 = arrayList5;
-                                            size = i8;
-                                            z5 = z8;
-                                            str4 = str38;
-                                            arrayList11 = arrayList2;
-                                            z4 = z9;
-                                            longSparseArray8 = longSparseArray4;
-                                            clientUserId = j8;
-                                            str5 = str11;
-                                            str6 = str12;
-                                            longSparseArray9 = longSparseArray5;
-                                            longSparseArray = longSparseArray6;
-                                            build2 = notification2;
-                                            notificationsController3 = notificationsController2;
-                                            str3 = str10;
-                                            notificationsSettings = sharedPreferences;
-                                            i4 = -1;
+                                            notificationsController2.wearNotificationsIds.put(j11, num);
                                         }
                                     }
-                                    str13 = str14;
+                                    str15 = str16;
                                 }
                                 fileLocation3 = null;
-                                if (j4 != UserObject.VERIFY) {
+                                if (j4 != UserObject.OAUTH) {
                                 }
-                                str13 = string2;
+                                str15 = string2;
                                 j6 = clientUserId;
                                 arrayList4 = arrayList6;
                                 num = num3;
@@ -11878,7 +12164,7 @@ public class NotificationsController extends BaseController {
                                 }
                                 chat3 = chat;
                                 user5 = user4;
-                                string = str13;
+                                string = str15;
                                 fileLocation4 = fileLocation3;
                                 chat4 = chat3;
                                 if (j4 != UserObject.VERIFY) {
@@ -11895,15 +12181,15 @@ public class NotificationsController extends BaseController {
                                 if (z12) {
                                 }
                                 bitmap2 = bitmap;
-                                Intent intent22222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                intent22222.putExtra("dialog_id", j4);
-                                int i272222 = id;
-                                intent22222.putExtra("max_id", i272222);
-                                intent22222.putExtra("topic_id", j7);
-                                intent22222.putExtra("currentAccount", notificationsController3.currentAccount);
+                                Intent intent7222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                intent7222.putExtra("dialog_id", j4);
+                                int i292222 = id;
+                                intent7222.putExtra("max_id", i292222);
+                                intent7222.putExtra("topic_id", j7);
+                                intent7222.putExtra("currentAccount", notificationsController3.currentAccount);
                                 dialogKey2 = dialogKey;
                                 chat5 = chat4;
-                                PendingIntent broadcast2222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent22222, 167772160);
+                                PendingIntent broadcast2222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent7222, 167772160);
                                 RemoteInput build32222 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                 if (!DialogObject.isChatDialog(j4)) {
                                 }
@@ -11916,110 +12202,112 @@ public class NotificationsController extends BaseController {
                                 }
                                 if (max > 1) {
                                 }
-                                long j242222 = j4;
+                                long j232222 = j4;
                                 j9 = j6;
                                 person = (Person) longSparseArray.get(j9);
                                 if (Build.VERSION.SDK_INT >= 28) {
                                 }
                                 action = build;
-                                str18 = "dialog_id";
+                                str20 = "dialog_id";
+                                str21 = "currentAccount";
                                 messageObject3 = messageObject2;
                                 if (messageObject2 == null) {
                                 }
-                                String str40222222 = "";
+                                String str3822222222 = "";
                                 if (person == null) {
                                 }
                                 messagingStyle = new NotificationCompat.MessagingStyle("");
                                 messagingStyle2 = messagingStyle;
-                                i11 = Build.VERSION.SDK_INT;
-                                if (i11 >= 28) {
+                                i10 = Build.VERSION.SDK_INT;
+                                if (i10 >= 28) {
                                 }
                                 messagingStyle2.setConversationTitle(format);
-                                messagingStyle2.setGroupConversation(i11 >= 28 || (!z12 && DialogObject.isChatDialog(j242222)) || UserObject.isReplyUser(j242222));
-                                StringBuilder sb3222222 = new StringBuilder();
-                                String[] strArr2222222 = new String[1];
-                                boolean[] zArr2222222 = new boolean[1];
+                                messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j232222)) || UserObject.isReplyUser(j232222));
+                                StringBuilder sb522222222 = new StringBuilder();
+                                String str3922222222 = str21;
+                                String[] strArr222222222 = new String[1];
+                                boolean[] zArr222222222 = new boolean[1];
                                 if (!dialogKey3.story) {
                                 }
-                                Intent intent3222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                intent3222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                intent3222222.setFlags(67108864);
-                                intent3222222.addCategory("android.intent.category.LAUNCHER");
-                                if (messageObject3 == null) {
+                                Intent intent222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                intent222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                intent222222222.setFlags(67108864);
+                                intent222222222.addCategory("android.intent.category.LAUNCHER");
+                                if (!messageObject3.isOauthPush) {
                                 }
-                                if (messageObject4 == null) {
-                                }
+                                bitmap4 = bitmap3;
+                                messageObject4 = messageObject3;
+                                longSparseArray9 = longSparseArray7;
                                 str34 = str6;
                                 str35 = str7;
-                                messageObject5 = messageObject4;
                                 dialogKey5 = dialogKey4;
-                                if (!dialogKey5.story) {
-                                }
-                                StringBuilder sb42222222 = new StringBuilder();
-                                sb42222222.append("show extra notifications chatId ");
-                                sb42222222.append(j11);
-                                sb42222222.append(" topicId ");
+                                arrayList8 = arrayList7;
+                                StringBuilder sb6222222222 = new StringBuilder();
+                                sb6222222222.append("show extra notifications chatId ");
+                                sb6222222222.append(j11);
+                                sb6222222222.append(" topicId ");
                                 j15 = j12;
-                                sb42222222.append(j15);
-                                FileLog.d(sb42222222.toString());
+                                sb6222222222.append(j15);
+                                FileLog.d(sb6222222222.toString());
                                 if (j15 != 0) {
                                 }
-                                String str412222222 = "currentAccount";
-                                intent3222222.putExtra(str412222222, notificationsController3.currentAccount);
-                                str7 = str35;
-                                PendingIntent activity2222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent3222222, 1140850688);
-                                NotificationCompat.WearableExtender wearableExtender2222222 = new NotificationCompat.WearableExtender();
-                                NotificationCompat.Action action42222222 = action;
+                                String str40222222222 = str3922222222;
+                                intent222222222.putExtra(str40222222222, notificationsController3.currentAccount);
+                                PendingIntent activity222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent222222222, 1140850688);
+                                NotificationCompat.WearableExtender wearableExtender222222222 = new NotificationCompat.WearableExtender();
+                                NotificationCompat.Action action4222222222 = action;
                                 if (action != null) {
                                 }
-                                String str422222222 = str34;
-                                Intent intent42222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                intent42222222.addFlags(32);
-                                intent42222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                intent42222222.putExtra(str18, j11);
-                                int i282222222 = i10;
-                                intent42222222.putExtra(str17, i282222222);
-                                intent42222222.putExtra(str412222222, notificationsController3.currentAccount);
-                                int i292222222 = i12;
-                                NotificationCompat.Action build42222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                String str41222222222 = str22;
+                                Intent intent3222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                intent3222222222.addFlags(32);
+                                intent3222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                intent3222222222.putExtra(str20, j11);
+                                int i30222222222 = i9;
+                                intent3222222222.putExtra(str19, i30222222222);
+                                intent3222222222.putExtra(str40222222222, notificationsController3.currentAccount);
+                                String str42222222222 = str34;
+                                String str43222222222 = str35;
+                                NotificationCompat.Action build4222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent3222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                 if (DialogObject.isEncryptedDialog(j11)) {
                                 }
-                                if (str37 != null) {
+                                if (str36 != null) {
                                 }
-                                StringBuilder sb52222222 = new StringBuilder();
-                                sb52222222.append("tgaccount");
-                                NotificationCompat.Action action52222222 = action2;
-                                long j252222222 = j10;
-                                sb52222222.append(j252222222);
-                                wearableExtender2222222.setBridgeTag(sb52222222.toString());
+                                StringBuilder sb7222222222 = new StringBuilder();
+                                sb7222222222.append("tgaccount");
+                                int i31222222222 = i12;
+                                long j24222222222 = j10;
+                                sb7222222222.append(j24222222222);
+                                wearableExtender222222222.setBridgeTag(sb7222222222.toString());
                                 if (dialogKey5.story) {
                                 }
-                                NotificationCompat.Builder autoCancel2222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str21).setSmallIcon(R.drawable.notification).setContentText(sb3222222.toString()).setAutoCancel(true);
+                                NotificationCompat.Builder autoCancel222222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
                                 if (dialogKey5.story) {
                                 }
-                                NotificationCompat.Builder category2222222 = autoCancel2222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j18).setShowWhen(true).setStyle(messagingStyle3).setContentIntent(activity2222222).extend(wearableExtender2222222).setSortKey(String.valueOf(Long.MAX_VALUE - j18)).setCategory("msg");
-                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                intent.putExtra("messageDate", i7);
-                                j19 = j16;
-                                intent.putExtra("dialogId", j19);
-                                intent.putExtra(str412222222, notificationsController3.currentAccount);
+                                category = autoCancel222222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity222222222).extend(wearableExtender222222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                Intent intent4222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                intent4222222222.putExtra("messageDate", i7);
+                                intent4222222222.putExtra("dialogId", j11);
+                                intent4222222222.putExtra(str40222222222, notificationsController3.currentAccount);
                                 if (dialogKey5.story) {
                                 }
-                                if (messageObject6 != null) {
+                                if (messageObject5.isStoryReactionPush) {
                                 }
-                                category2222222.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
+                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222222222, 167772160));
                                 if (z7) {
                                 }
-                                if (messageObject6 != null) {
+                                message = messageObject5.messageOwner;
+                                if (message != null) {
                                 }
                                 tL_keyboardButtonCopy = null;
                                 if (tL_keyboardButtonCopy != null) {
                                 }
-                                if (dialogKey5.dialogId != UserObject.VERIFY) {
+                                j18 = dialogKey5.dialogId;
+                                if (j18 != UserObject.VERIFY) {
                                 }
                                 if (arrayList2.size() != 1) {
                                 }
-                                if (DialogObject.isEncryptedDialog(j19)) {
+                                if (DialogObject.isEncryptedDialog(j11)) {
                                 }
                                 if (bitmap4 != null) {
                                 }
@@ -12028,52 +12316,35 @@ public class NotificationsController extends BaseController {
                                 if (chat5 == null) {
                                 }
                                 user7 = user6;
-                                Notification notification32222222 = notification;
-                                boolean z152222222 = z7;
+                                Notification notification3222222222 = notification;
+                                boolean z16222222222 = z7;
                                 if (Build.VERSION.SDK_INT >= 26) {
                                 }
-                                FileLog.d("showExtraNotifications: holders.add " + j19);
-                                i8 = i21;
-                                str10 = str19;
+                                FileLog.d("showExtraNotifications: holders.add " + j11);
+                                i8 = i23;
+                                str10 = str23;
                                 z8 = z6;
-                                j8 = j17;
-                                z9 = z152222222;
-                                longSparseArray6 = longSparseArray7;
-                                i9 = i22;
-                                str12 = str422222222;
-                                notification2 = notification32222222;
+                                j8 = j16;
+                                z9 = z16222222222;
+                                longSparseArray6 = longSparseArray9;
+                                str12 = str5;
+                                i14 = i24;
+                                str11 = str41222222222;
+                                notification2 = notification3222222222;
+                                str14 = str43222222222;
                                 sharedPreferences = sharedPreferences2;
-                                str11 = str5;
-                                str38 = str36;
+                                str13 = str42222222222;
                                 arrayList5 = arrayList14;
-                                arrayList5.add(new 1NotificationHolder(num.intValue(), j19, dialogKey5.story, j15, str21, user7, chat5, category2222222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                 notificationsController2 = this;
-                                notificationsController2.wearNotificationsIds.put(j19, num);
-                                i18 = i9 + 1;
-                                arrayList13 = arrayList5;
-                                size = i8;
-                                z5 = z8;
-                                str4 = str38;
-                                arrayList11 = arrayList2;
-                                z4 = z9;
-                                longSparseArray8 = longSparseArray4;
-                                clientUserId = j8;
-                                str5 = str11;
-                                str6 = str12;
-                                longSparseArray9 = longSparseArray5;
-                                longSparseArray = longSparseArray6;
-                                build2 = notification2;
-                                notificationsController3 = notificationsController2;
-                                str3 = str10;
-                                notificationsSettings = sharedPreferences;
-                                i4 = -1;
+                                notificationsController2.wearNotificationsIds.put(j11, num);
                             } else {
                                 ArrayList<StoryNotification> arrayList21 = arrayList3;
                                 chat = getMessagesController().getChat(Long.valueOf(-j4));
                                 if (chat == null) {
                                     if (messageObject.isFcmMessage()) {
                                         boolean isSupergroup = messageObject.isSupergroup();
-                                        String str50 = messageObject.localName;
+                                        String str53 = messageObject.localName;
                                         z11 = isSupergroup;
                                         j6 = clientUserId;
                                         arrayList4 = arrayList21;
@@ -12082,7 +12353,7 @@ public class NotificationsController extends BaseController {
                                         z10 = false;
                                         fileLocation3 = null;
                                         z12 = messageObject.localChannel;
-                                        str13 = str50;
+                                        str15 = str53;
                                     } else {
                                         if (BuildVars.LOGS_ENABLED) {
                                             FileLog.w("not found chat to show dialog notification " + j4);
@@ -12090,13 +12361,14 @@ public class NotificationsController extends BaseController {
                                         longSparseArray6 = longSparseArray;
                                         sharedPreferences = notificationsSettings;
                                         notificationsController2 = notificationsController3;
-                                        i8 = i21;
+                                        i8 = i23;
                                         arrayList5 = arrayList14;
-                                        i9 = i22;
                                         notification2 = notification;
                                         str10 = str3;
-                                        str11 = str5;
-                                        str12 = str6;
+                                        str11 = str4;
+                                        str12 = str5;
+                                        str13 = str6;
+                                        str14 = str7;
                                         z8 = z6;
                                         z9 = z7;
                                         j8 = clientUserId;
@@ -12124,7 +12396,7 @@ public class NotificationsController extends BaseController {
                                         j7 = j5;
                                         TLRPC.TL_forumTopic findTopic = getMessagesController().getTopicsController().findTopic(chat.id, j7);
                                         if (findTopic != null) {
-                                            str13 = findTopic.title + " in " + title;
+                                            str15 = findTopic.title + " in " + title;
                                             if (!z10) {
                                                 z10 = ChatObject.canSendPlain(chat);
                                                 fileLocation3 = fileLocation2;
@@ -12139,7 +12411,7 @@ public class NotificationsController extends BaseController {
                                                 }
                                                 chat3 = chat;
                                                 user5 = user4;
-                                                string = str13;
+                                                string = str15;
                                                 fileLocation4 = fileLocation3;
                                                 chat4 = chat3;
                                                 if (j4 != UserObject.VERIFY) {
@@ -12156,15 +12428,15 @@ public class NotificationsController extends BaseController {
                                                 if (z12) {
                                                 }
                                                 bitmap2 = bitmap;
-                                                Intent intent222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                                intent222222.putExtra("dialog_id", j4);
-                                                int i2722222 = id;
-                                                intent222222.putExtra("max_id", i2722222);
-                                                intent222222.putExtra("topic_id", j7);
-                                                intent222222.putExtra("currentAccount", notificationsController3.currentAccount);
+                                                Intent intent72222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                                intent72222.putExtra("dialog_id", j4);
+                                                int i2922222 = id;
+                                                intent72222.putExtra("max_id", i2922222);
+                                                intent72222.putExtra("topic_id", j7);
+                                                intent72222.putExtra("currentAccount", notificationsController3.currentAccount);
                                                 dialogKey2 = dialogKey;
                                                 chat5 = chat4;
-                                                PendingIntent broadcast22222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent222222, 167772160);
+                                                PendingIntent broadcast22222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent72222, 167772160);
                                                 RemoteInput build322222 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                                 if (!DialogObject.isChatDialog(j4)) {
                                                 }
@@ -12177,110 +12449,112 @@ public class NotificationsController extends BaseController {
                                                 }
                                                 if (max > 1) {
                                                 }
-                                                long j2422222 = j4;
+                                                long j2322222 = j4;
                                                 j9 = j6;
                                                 person = (Person) longSparseArray.get(j9);
                                                 if (Build.VERSION.SDK_INT >= 28) {
                                                 }
                                                 action = build;
-                                                str18 = "dialog_id";
+                                                str20 = "dialog_id";
+                                                str21 = "currentAccount";
                                                 messageObject3 = messageObject2;
                                                 if (messageObject2 == null) {
                                                 }
-                                                String str402222222 = "";
+                                                String str38222222222 = "";
                                                 if (person == null) {
                                                 }
                                                 messagingStyle = new NotificationCompat.MessagingStyle("");
                                                 messagingStyle2 = messagingStyle;
-                                                i11 = Build.VERSION.SDK_INT;
-                                                if (i11 >= 28) {
+                                                i10 = Build.VERSION.SDK_INT;
+                                                if (i10 >= 28) {
                                                 }
                                                 messagingStyle2.setConversationTitle(format);
-                                                messagingStyle2.setGroupConversation(i11 >= 28 || (!z12 && DialogObject.isChatDialog(j2422222)) || UserObject.isReplyUser(j2422222));
-                                                StringBuilder sb32222222 = new StringBuilder();
-                                                String[] strArr22222222 = new String[1];
-                                                boolean[] zArr22222222 = new boolean[1];
+                                                messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j2322222)) || UserObject.isReplyUser(j2322222));
+                                                StringBuilder sb5222222222 = new StringBuilder();
+                                                String str39222222222 = str21;
+                                                String[] strArr2222222222 = new String[1];
+                                                boolean[] zArr2222222222 = new boolean[1];
                                                 if (!dialogKey3.story) {
                                                 }
-                                                Intent intent32222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                                intent32222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                                intent32222222.setFlags(67108864);
-                                                intent32222222.addCategory("android.intent.category.LAUNCHER");
-                                                if (messageObject3 == null) {
+                                                Intent intent2222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                intent2222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                intent2222222222.setFlags(67108864);
+                                                intent2222222222.addCategory("android.intent.category.LAUNCHER");
+                                                if (!messageObject3.isOauthPush) {
                                                 }
-                                                if (messageObject4 == null) {
-                                                }
+                                                bitmap4 = bitmap3;
+                                                messageObject4 = messageObject3;
+                                                longSparseArray9 = longSparseArray7;
                                                 str34 = str6;
                                                 str35 = str7;
-                                                messageObject5 = messageObject4;
                                                 dialogKey5 = dialogKey4;
-                                                if (!dialogKey5.story) {
-                                                }
-                                                StringBuilder sb422222222 = new StringBuilder();
-                                                sb422222222.append("show extra notifications chatId ");
-                                                sb422222222.append(j11);
-                                                sb422222222.append(" topicId ");
+                                                arrayList8 = arrayList7;
+                                                StringBuilder sb62222222222 = new StringBuilder();
+                                                sb62222222222.append("show extra notifications chatId ");
+                                                sb62222222222.append(j11);
+                                                sb62222222222.append(" topicId ");
                                                 j15 = j12;
-                                                sb422222222.append(j15);
-                                                FileLog.d(sb422222222.toString());
+                                                sb62222222222.append(j15);
+                                                FileLog.d(sb62222222222.toString());
                                                 if (j15 != 0) {
                                                 }
-                                                String str4122222222 = "currentAccount";
-                                                intent32222222.putExtra(str4122222222, notificationsController3.currentAccount);
-                                                str7 = str35;
-                                                PendingIntent activity22222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent32222222, 1140850688);
-                                                NotificationCompat.WearableExtender wearableExtender22222222 = new NotificationCompat.WearableExtender();
-                                                NotificationCompat.Action action422222222 = action;
+                                                String str402222222222 = str39222222222;
+                                                intent2222222222.putExtra(str402222222222, notificationsController3.currentAccount);
+                                                PendingIntent activity2222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2222222222, 1140850688);
+                                                NotificationCompat.WearableExtender wearableExtender2222222222 = new NotificationCompat.WearableExtender();
+                                                NotificationCompat.Action action42222222222 = action;
                                                 if (action != null) {
                                                 }
-                                                String str4222222222 = str34;
-                                                Intent intent422222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                intent422222222.addFlags(32);
-                                                intent422222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                intent422222222.putExtra(str18, j11);
-                                                int i2822222222 = i10;
-                                                intent422222222.putExtra(str17, i2822222222);
-                                                intent422222222.putExtra(str4122222222, notificationsController3.currentAccount);
-                                                int i2922222222 = i12;
-                                                NotificationCompat.Action build422222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                String str412222222222 = str22;
+                                                Intent intent32222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                intent32222222222.addFlags(32);
+                                                intent32222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                intent32222222222.putExtra(str20, j11);
+                                                int i302222222222 = i9;
+                                                intent32222222222.putExtra(str19, i302222222222);
+                                                intent32222222222.putExtra(str402222222222, notificationsController3.currentAccount);
+                                                String str422222222222 = str34;
+                                                String str432222222222 = str35;
+                                                NotificationCompat.Action build42222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent32222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                 if (DialogObject.isEncryptedDialog(j11)) {
                                                 }
-                                                if (str37 != null) {
+                                                if (str36 != null) {
                                                 }
-                                                StringBuilder sb522222222 = new StringBuilder();
-                                                sb522222222.append("tgaccount");
-                                                NotificationCompat.Action action522222222 = action2;
-                                                long j2522222222 = j10;
-                                                sb522222222.append(j2522222222);
-                                                wearableExtender22222222.setBridgeTag(sb522222222.toString());
+                                                StringBuilder sb72222222222 = new StringBuilder();
+                                                sb72222222222.append("tgaccount");
+                                                int i312222222222 = i12;
+                                                long j242222222222 = j10;
+                                                sb72222222222.append(j242222222222);
+                                                wearableExtender2222222222.setBridgeTag(sb72222222222.toString());
                                                 if (dialogKey5.story) {
                                                 }
-                                                NotificationCompat.Builder autoCancel22222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str21).setSmallIcon(R.drawable.notification).setContentText(sb32222222.toString()).setAutoCancel(true);
+                                                NotificationCompat.Builder autoCancel2222222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
                                                 if (dialogKey5.story) {
                                                 }
-                                                NotificationCompat.Builder category22222222 = autoCancel22222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j18).setShowWhen(true).setStyle(messagingStyle3).setContentIntent(activity22222222).extend(wearableExtender22222222).setSortKey(String.valueOf(Long.MAX_VALUE - j18)).setCategory("msg");
-                                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                intent.putExtra("messageDate", i7);
-                                                j19 = j16;
-                                                intent.putExtra("dialogId", j19);
-                                                intent.putExtra(str4122222222, notificationsController3.currentAccount);
+                                                category = autoCancel2222222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity2222222222).extend(wearableExtender2222222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                                Intent intent42222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                intent42222222222.putExtra("messageDate", i7);
+                                                intent42222222222.putExtra("dialogId", j11);
+                                                intent42222222222.putExtra(str402222222222, notificationsController3.currentAccount);
                                                 if (dialogKey5.story) {
                                                 }
-                                                if (messageObject6 != null) {
+                                                if (messageObject5.isStoryReactionPush) {
                                                 }
-                                                category22222222.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
+                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222222222, 167772160));
                                                 if (z7) {
                                                 }
-                                                if (messageObject6 != null) {
+                                                message = messageObject5.messageOwner;
+                                                if (message != null) {
                                                 }
                                                 tL_keyboardButtonCopy = null;
                                                 if (tL_keyboardButtonCopy != null) {
                                                 }
-                                                if (dialogKey5.dialogId != UserObject.VERIFY) {
+                                                j18 = dialogKey5.dialogId;
+                                                if (j18 != UserObject.VERIFY) {
                                                 }
                                                 if (arrayList2.size() != 1) {
                                                 }
-                                                if (DialogObject.isEncryptedDialog(j19)) {
+                                                if (DialogObject.isEncryptedDialog(j11)) {
                                                 }
                                                 if (bitmap4 != null) {
                                                 }
@@ -12289,45 +12563,28 @@ public class NotificationsController extends BaseController {
                                                 if (chat5 == null) {
                                                 }
                                                 user7 = user6;
-                                                Notification notification322222222 = notification;
-                                                boolean z1522222222 = z7;
+                                                Notification notification32222222222 = notification;
+                                                boolean z162222222222 = z7;
                                                 if (Build.VERSION.SDK_INT >= 26) {
                                                 }
-                                                FileLog.d("showExtraNotifications: holders.add " + j19);
-                                                i8 = i21;
-                                                str10 = str19;
+                                                FileLog.d("showExtraNotifications: holders.add " + j11);
+                                                i8 = i23;
+                                                str10 = str23;
                                                 z8 = z6;
-                                                j8 = j17;
-                                                z9 = z1522222222;
-                                                longSparseArray6 = longSparseArray7;
-                                                i9 = i22;
-                                                str12 = str4222222222;
-                                                notification2 = notification322222222;
+                                                j8 = j16;
+                                                z9 = z162222222222;
+                                                longSparseArray6 = longSparseArray9;
+                                                str12 = str5;
+                                                i14 = i24;
+                                                str11 = str412222222222;
+                                                notification2 = notification32222222222;
+                                                str14 = str432222222222;
                                                 sharedPreferences = sharedPreferences2;
-                                                str11 = str5;
-                                                str38 = str36;
+                                                str13 = str422222222222;
                                                 arrayList5 = arrayList14;
-                                                arrayList5.add(new 1NotificationHolder(num.intValue(), j19, dialogKey5.story, j15, str21, user7, chat5, category22222222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                                arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                 notificationsController2 = this;
-                                                notificationsController2.wearNotificationsIds.put(j19, num);
-                                                i18 = i9 + 1;
-                                                arrayList13 = arrayList5;
-                                                size = i8;
-                                                z5 = z8;
-                                                str4 = str38;
-                                                arrayList11 = arrayList2;
-                                                z4 = z9;
-                                                longSparseArray8 = longSparseArray4;
-                                                clientUserId = j8;
-                                                str5 = str11;
-                                                str6 = str12;
-                                                longSparseArray9 = longSparseArray5;
-                                                longSparseArray = longSparseArray6;
-                                                build2 = notification2;
-                                                notificationsController3 = notificationsController2;
-                                                str3 = str10;
-                                                notificationsSettings = sharedPreferences;
-                                                i4 = -1;
+                                                notificationsController2.wearNotificationsIds.put(j11, num);
                                             }
                                         }
                                     } else {
@@ -12336,7 +12593,7 @@ public class NotificationsController extends BaseController {
                                         j6 = clientUserId;
                                         j7 = j5;
                                     }
-                                    str13 = title;
+                                    str15 = title;
                                     if (!z10) {
                                     }
                                 }
@@ -12345,7 +12602,7 @@ public class NotificationsController extends BaseController {
                                 }
                                 chat3 = chat;
                                 user5 = user4;
-                                string = str13;
+                                string = str15;
                                 fileLocation4 = fileLocation3;
                                 chat4 = chat3;
                                 if (j4 != UserObject.VERIFY) {
@@ -12362,15 +12619,15 @@ public class NotificationsController extends BaseController {
                                 if (z12) {
                                 }
                                 bitmap2 = bitmap;
-                                Intent intent2222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                intent2222222.putExtra("dialog_id", j4);
-                                int i27222222 = id;
-                                intent2222222.putExtra("max_id", i27222222);
-                                intent2222222.putExtra("topic_id", j7);
-                                intent2222222.putExtra("currentAccount", notificationsController3.currentAccount);
+                                Intent intent722222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                intent722222.putExtra("dialog_id", j4);
+                                int i29222222 = id;
+                                intent722222.putExtra("max_id", i29222222);
+                                intent722222.putExtra("topic_id", j7);
+                                intent722222.putExtra("currentAccount", notificationsController3.currentAccount);
                                 dialogKey2 = dialogKey;
                                 chat5 = chat4;
-                                PendingIntent broadcast222222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent2222222, 167772160);
+                                PendingIntent broadcast222222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent722222, 167772160);
                                 RemoteInput build3222222 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                 if (!DialogObject.isChatDialog(j4)) {
                                 }
@@ -12383,110 +12640,112 @@ public class NotificationsController extends BaseController {
                                 }
                                 if (max > 1) {
                                 }
-                                long j24222222 = j4;
+                                long j23222222 = j4;
                                 j9 = j6;
                                 person = (Person) longSparseArray.get(j9);
                                 if (Build.VERSION.SDK_INT >= 28) {
                                 }
                                 action = build;
-                                str18 = "dialog_id";
+                                str20 = "dialog_id";
+                                str21 = "currentAccount";
                                 messageObject3 = messageObject2;
                                 if (messageObject2 == null) {
                                 }
-                                String str4022222222 = "";
+                                String str382222222222 = "";
                                 if (person == null) {
                                 }
                                 messagingStyle = new NotificationCompat.MessagingStyle("");
                                 messagingStyle2 = messagingStyle;
-                                i11 = Build.VERSION.SDK_INT;
-                                if (i11 >= 28) {
+                                i10 = Build.VERSION.SDK_INT;
+                                if (i10 >= 28) {
                                 }
                                 messagingStyle2.setConversationTitle(format);
-                                messagingStyle2.setGroupConversation(i11 >= 28 || (!z12 && DialogObject.isChatDialog(j24222222)) || UserObject.isReplyUser(j24222222));
-                                StringBuilder sb322222222 = new StringBuilder();
-                                String[] strArr222222222 = new String[1];
-                                boolean[] zArr222222222 = new boolean[1];
+                                messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j23222222)) || UserObject.isReplyUser(j23222222));
+                                StringBuilder sb52222222222 = new StringBuilder();
+                                String str392222222222 = str21;
+                                String[] strArr22222222222 = new String[1];
+                                boolean[] zArr22222222222 = new boolean[1];
                                 if (!dialogKey3.story) {
                                 }
-                                Intent intent322222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                intent322222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                intent322222222.setFlags(67108864);
-                                intent322222222.addCategory("android.intent.category.LAUNCHER");
-                                if (messageObject3 == null) {
+                                Intent intent22222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                intent22222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                intent22222222222.setFlags(67108864);
+                                intent22222222222.addCategory("android.intent.category.LAUNCHER");
+                                if (!messageObject3.isOauthPush) {
                                 }
-                                if (messageObject4 == null) {
-                                }
+                                bitmap4 = bitmap3;
+                                messageObject4 = messageObject3;
+                                longSparseArray9 = longSparseArray7;
                                 str34 = str6;
                                 str35 = str7;
-                                messageObject5 = messageObject4;
                                 dialogKey5 = dialogKey4;
-                                if (!dialogKey5.story) {
-                                }
-                                StringBuilder sb4222222222 = new StringBuilder();
-                                sb4222222222.append("show extra notifications chatId ");
-                                sb4222222222.append(j11);
-                                sb4222222222.append(" topicId ");
+                                arrayList8 = arrayList7;
+                                StringBuilder sb622222222222 = new StringBuilder();
+                                sb622222222222.append("show extra notifications chatId ");
+                                sb622222222222.append(j11);
+                                sb622222222222.append(" topicId ");
                                 j15 = j12;
-                                sb4222222222.append(j15);
-                                FileLog.d(sb4222222222.toString());
+                                sb622222222222.append(j15);
+                                FileLog.d(sb622222222222.toString());
                                 if (j15 != 0) {
                                 }
-                                String str41222222222 = "currentAccount";
-                                intent322222222.putExtra(str41222222222, notificationsController3.currentAccount);
-                                str7 = str35;
-                                PendingIntent activity222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent322222222, 1140850688);
-                                NotificationCompat.WearableExtender wearableExtender222222222 = new NotificationCompat.WearableExtender();
-                                NotificationCompat.Action action4222222222 = action;
+                                String str4022222222222 = str392222222222;
+                                intent22222222222.putExtra(str4022222222222, notificationsController3.currentAccount);
+                                PendingIntent activity22222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent22222222222, 1140850688);
+                                NotificationCompat.WearableExtender wearableExtender22222222222 = new NotificationCompat.WearableExtender();
+                                NotificationCompat.Action action422222222222 = action;
                                 if (action != null) {
                                 }
-                                String str42222222222 = str34;
-                                Intent intent4222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                intent4222222222.addFlags(32);
-                                intent4222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                intent4222222222.putExtra(str18, j11);
-                                int i28222222222 = i10;
-                                intent4222222222.putExtra(str17, i28222222222);
-                                intent4222222222.putExtra(str41222222222, notificationsController3.currentAccount);
-                                int i29222222222 = i12;
-                                NotificationCompat.Action build4222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                String str4122222222222 = str22;
+                                Intent intent322222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                intent322222222222.addFlags(32);
+                                intent322222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                intent322222222222.putExtra(str20, j11);
+                                int i3022222222222 = i9;
+                                intent322222222222.putExtra(str19, i3022222222222);
+                                intent322222222222.putExtra(str4022222222222, notificationsController3.currentAccount);
+                                String str4222222222222 = str34;
+                                String str4322222222222 = str35;
+                                NotificationCompat.Action build422222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent322222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                 if (DialogObject.isEncryptedDialog(j11)) {
                                 }
-                                if (str37 != null) {
+                                if (str36 != null) {
                                 }
-                                StringBuilder sb5222222222 = new StringBuilder();
-                                sb5222222222.append("tgaccount");
-                                NotificationCompat.Action action5222222222 = action2;
-                                long j25222222222 = j10;
-                                sb5222222222.append(j25222222222);
-                                wearableExtender222222222.setBridgeTag(sb5222222222.toString());
+                                StringBuilder sb722222222222 = new StringBuilder();
+                                sb722222222222.append("tgaccount");
+                                int i3122222222222 = i12;
+                                long j2422222222222 = j10;
+                                sb722222222222.append(j2422222222222);
+                                wearableExtender22222222222.setBridgeTag(sb722222222222.toString());
                                 if (dialogKey5.story) {
                                 }
-                                NotificationCompat.Builder autoCancel222222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str21).setSmallIcon(R.drawable.notification).setContentText(sb322222222.toString()).setAutoCancel(true);
+                                NotificationCompat.Builder autoCancel22222222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
                                 if (dialogKey5.story) {
                                 }
-                                NotificationCompat.Builder category222222222 = autoCancel222222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j18).setShowWhen(true).setStyle(messagingStyle3).setContentIntent(activity222222222).extend(wearableExtender222222222).setSortKey(String.valueOf(Long.MAX_VALUE - j18)).setCategory("msg");
-                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                intent.putExtra("messageDate", i7);
-                                j19 = j16;
-                                intent.putExtra("dialogId", j19);
-                                intent.putExtra(str41222222222, notificationsController3.currentAccount);
+                                category = autoCancel22222222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity22222222222).extend(wearableExtender22222222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                                Intent intent422222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                intent422222222222.putExtra("messageDate", i7);
+                                intent422222222222.putExtra("dialogId", j11);
+                                intent422222222222.putExtra(str4022222222222, notificationsController3.currentAccount);
                                 if (dialogKey5.story) {
                                 }
-                                if (messageObject6 != null) {
+                                if (messageObject5.isStoryReactionPush) {
                                 }
-                                category222222222.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
+                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422222222222, 167772160));
                                 if (z7) {
                                 }
-                                if (messageObject6 != null) {
+                                message = messageObject5.messageOwner;
+                                if (message != null) {
                                 }
                                 tL_keyboardButtonCopy = null;
                                 if (tL_keyboardButtonCopy != null) {
                                 }
-                                if (dialogKey5.dialogId != UserObject.VERIFY) {
+                                j18 = dialogKey5.dialogId;
+                                if (j18 != UserObject.VERIFY) {
                                 }
                                 if (arrayList2.size() != 1) {
                                 }
-                                if (DialogObject.isEncryptedDialog(j19)) {
+                                if (DialogObject.isEncryptedDialog(j11)) {
                                 }
                                 if (bitmap4 != null) {
                                 }
@@ -12495,46 +12754,48 @@ public class NotificationsController extends BaseController {
                                 if (chat5 == null) {
                                 }
                                 user7 = user6;
-                                Notification notification3222222222 = notification;
-                                boolean z15222222222 = z7;
+                                Notification notification322222222222 = notification;
+                                boolean z1622222222222 = z7;
                                 if (Build.VERSION.SDK_INT >= 26) {
                                 }
-                                FileLog.d("showExtraNotifications: holders.add " + j19);
-                                i8 = i21;
-                                str10 = str19;
+                                FileLog.d("showExtraNotifications: holders.add " + j11);
+                                i8 = i23;
+                                str10 = str23;
                                 z8 = z6;
-                                j8 = j17;
-                                z9 = z15222222222;
-                                longSparseArray6 = longSparseArray7;
-                                i9 = i22;
-                                str12 = str42222222222;
-                                notification2 = notification3222222222;
+                                j8 = j16;
+                                z9 = z1622222222222;
+                                longSparseArray6 = longSparseArray9;
+                                str12 = str5;
+                                i14 = i24;
+                                str11 = str4122222222222;
+                                notification2 = notification322222222222;
+                                str14 = str4322222222222;
                                 sharedPreferences = sharedPreferences2;
-                                str11 = str5;
-                                str38 = str36;
+                                str13 = str4222222222222;
                                 arrayList5 = arrayList14;
-                                arrayList5.add(new 1NotificationHolder(num.intValue(), j19, dialogKey5.story, j15, str21, user7, chat5, category222222222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                                arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                 notificationsController2 = this;
-                                notificationsController2.wearNotificationsIds.put(j19, num);
-                                i18 = i9 + 1;
-                                arrayList13 = arrayList5;
-                                size = i8;
-                                z5 = z8;
-                                str4 = str38;
-                                arrayList11 = arrayList2;
-                                z4 = z9;
-                                longSparseArray8 = longSparseArray4;
-                                clientUserId = j8;
-                                str5 = str11;
-                                str6 = str12;
-                                longSparseArray9 = longSparseArray5;
-                                longSparseArray = longSparseArray6;
-                                build2 = notification2;
-                                notificationsController3 = notificationsController2;
-                                str3 = str10;
-                                notificationsSettings = sharedPreferences;
-                                i4 = -1;
+                                notificationsController2.wearNotificationsIds.put(j11, num);
                             }
+                            i20 = i14 + 1;
+                            arrayList13 = arrayList5;
+                            size = i8;
+                            str5 = str12;
+                            z5 = z8;
+                            arrayList11 = arrayList2;
+                            z4 = z9;
+                            longSparseArray12 = longSparseArray4;
+                            clientUserId = j8;
+                            str6 = str13;
+                            str7 = str14;
+                            str4 = str11;
+                            longSparseArray13 = longSparseArray5;
+                            longSparseArray = longSparseArray6;
+                            build2 = notification2;
+                            notificationsController3 = notificationsController2;
+                            str3 = str10;
+                            notificationsSettings = sharedPreferences;
+                            i4 = -1;
                         } else {
                             arrayList4 = arrayList3;
                             j6 = clientUserId;
@@ -12558,13 +12819,14 @@ public class NotificationsController extends BaseController {
                                 longSparseArray6 = longSparseArray;
                                 sharedPreferences = notificationsSettings;
                                 notificationsController2 = notificationsController3;
-                                i8 = i21;
+                                i8 = i23;
                                 arrayList5 = arrayList14;
-                                i9 = i22;
                                 notification2 = notification;
                                 str10 = str3;
-                                str11 = str5;
-                                str12 = str6;
+                                str11 = str4;
+                                str12 = str5;
+                                str13 = str6;
+                                str14 = str7;
                                 z8 = z6;
                                 z9 = z7;
                                 j8 = j6;
@@ -12574,19 +12836,20 @@ public class NotificationsController extends BaseController {
                             user2 = user;
                             string = LocaleController.getString(R.string.SecretChatName);
                         }
-                        str38 = str4;
-                        i18 = i9 + 1;
+                        i14 = i24;
+                        i20 = i14 + 1;
                         arrayList13 = arrayList5;
                         size = i8;
+                        str5 = str12;
                         z5 = z8;
-                        str4 = str38;
                         arrayList11 = arrayList2;
                         z4 = z9;
-                        longSparseArray8 = longSparseArray4;
+                        longSparseArray12 = longSparseArray4;
                         clientUserId = j8;
-                        str5 = str11;
-                        str6 = str12;
-                        longSparseArray9 = longSparseArray5;
+                        str6 = str13;
+                        str7 = str14;
+                        str4 = str11;
+                        longSparseArray13 = longSparseArray5;
                         longSparseArray = longSparseArray6;
                         build2 = notification2;
                         notificationsController3 = notificationsController2;
@@ -12611,15 +12874,15 @@ public class NotificationsController extends BaseController {
                     if (z12) {
                     }
                     bitmap2 = bitmap;
-                    Intent intent22222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                    intent22222222.putExtra("dialog_id", j4);
-                    int i272222222 = id;
-                    intent22222222.putExtra("max_id", i272222222);
-                    intent22222222.putExtra("topic_id", j7);
-                    intent22222222.putExtra("currentAccount", notificationsController3.currentAccount);
+                    Intent intent7222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                    intent7222222.putExtra("dialog_id", j4);
+                    int i292222222 = id;
+                    intent7222222.putExtra("max_id", i292222222);
+                    intent7222222.putExtra("topic_id", j7);
+                    intent7222222.putExtra("currentAccount", notificationsController3.currentAccount);
                     dialogKey2 = dialogKey;
                     chat5 = chat4;
-                    PendingIntent broadcast2222222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent22222222, 167772160);
+                    PendingIntent broadcast2222222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent7222222, 167772160);
                     RemoteInput build32222222 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                     if (!DialogObject.isChatDialog(j4)) {
                     }
@@ -12632,110 +12895,112 @@ public class NotificationsController extends BaseController {
                     }
                     if (max > 1) {
                     }
-                    long j242222222 = j4;
+                    long j232222222 = j4;
                     j9 = j6;
                     person = (Person) longSparseArray.get(j9);
                     if (Build.VERSION.SDK_INT >= 28) {
                     }
                     action = build;
-                    str18 = "dialog_id";
+                    str20 = "dialog_id";
+                    str21 = "currentAccount";
                     messageObject3 = messageObject2;
                     if (messageObject2 == null) {
                     }
-                    String str40222222222 = "";
+                    String str3822222222222 = "";
                     if (person == null) {
                     }
                     messagingStyle = new NotificationCompat.MessagingStyle("");
                     messagingStyle2 = messagingStyle;
-                    i11 = Build.VERSION.SDK_INT;
-                    if (i11 >= 28) {
+                    i10 = Build.VERSION.SDK_INT;
+                    if (i10 >= 28) {
                     }
                     messagingStyle2.setConversationTitle(format);
-                    messagingStyle2.setGroupConversation(i11 >= 28 || (!z12 && DialogObject.isChatDialog(j242222222)) || UserObject.isReplyUser(j242222222));
-                    StringBuilder sb3222222222 = new StringBuilder();
-                    String[] strArr2222222222 = new String[1];
-                    boolean[] zArr2222222222 = new boolean[1];
+                    messagingStyle2.setGroupConversation(i10 >= 28 || (!z12 && DialogObject.isChatDialog(j232222222)) || UserObject.isReplyUser(j232222222));
+                    StringBuilder sb522222222222 = new StringBuilder();
+                    String str3922222222222 = str21;
+                    String[] strArr222222222222 = new String[1];
+                    boolean[] zArr222222222222 = new boolean[1];
                     if (!dialogKey3.story) {
                     }
-                    Intent intent3222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                    intent3222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    intent3222222222.setFlags(67108864);
-                    intent3222222222.addCategory("android.intent.category.LAUNCHER");
-                    if (messageObject3 == null) {
+                    Intent intent222222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                    intent222222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    intent222222222222.setFlags(67108864);
+                    intent222222222222.addCategory("android.intent.category.LAUNCHER");
+                    if (!messageObject3.isOauthPush) {
                     }
-                    if (messageObject4 == null) {
-                    }
+                    bitmap4 = bitmap3;
+                    messageObject4 = messageObject3;
+                    longSparseArray9 = longSparseArray7;
                     str34 = str6;
                     str35 = str7;
-                    messageObject5 = messageObject4;
                     dialogKey5 = dialogKey4;
-                    if (!dialogKey5.story) {
-                    }
-                    StringBuilder sb42222222222 = new StringBuilder();
-                    sb42222222222.append("show extra notifications chatId ");
-                    sb42222222222.append(j11);
-                    sb42222222222.append(" topicId ");
+                    arrayList8 = arrayList7;
+                    StringBuilder sb6222222222222 = new StringBuilder();
+                    sb6222222222222.append("show extra notifications chatId ");
+                    sb6222222222222.append(j11);
+                    sb6222222222222.append(" topicId ");
                     j15 = j12;
-                    sb42222222222.append(j15);
-                    FileLog.d(sb42222222222.toString());
+                    sb6222222222222.append(j15);
+                    FileLog.d(sb6222222222222.toString());
                     if (j15 != 0) {
                     }
-                    String str412222222222 = "currentAccount";
-                    intent3222222222.putExtra(str412222222222, notificationsController3.currentAccount);
-                    str7 = str35;
-                    PendingIntent activity2222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent3222222222, 1140850688);
-                    NotificationCompat.WearableExtender wearableExtender2222222222 = new NotificationCompat.WearableExtender();
-                    NotificationCompat.Action action42222222222 = action;
+                    String str40222222222222 = str3922222222222;
+                    intent222222222222.putExtra(str40222222222222, notificationsController3.currentAccount);
+                    PendingIntent activity222222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent222222222222, 1140850688);
+                    NotificationCompat.WearableExtender wearableExtender222222222222 = new NotificationCompat.WearableExtender();
+                    NotificationCompat.Action action4222222222222 = action;
                     if (action != null) {
                     }
-                    String str422222222222 = str34;
-                    Intent intent42222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                    intent42222222222.addFlags(32);
-                    intent42222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                    intent42222222222.putExtra(str18, j11);
-                    int i282222222222 = i10;
-                    intent42222222222.putExtra(str17, i282222222222);
-                    intent42222222222.putExtra(str412222222222, notificationsController3.currentAccount);
-                    int i292222222222 = i12;
-                    NotificationCompat.Action build42222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                    String str41222222222222 = str22;
+                    Intent intent3222222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                    intent3222222222222.addFlags(32);
+                    intent3222222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                    intent3222222222222.putExtra(str20, j11);
+                    int i30222222222222 = i9;
+                    intent3222222222222.putExtra(str19, i30222222222222);
+                    intent3222222222222.putExtra(str40222222222222, notificationsController3.currentAccount);
+                    String str42222222222222 = str34;
+                    String str43222222222222 = str35;
+                    NotificationCompat.Action build4222222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent3222222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                     if (DialogObject.isEncryptedDialog(j11)) {
                     }
-                    if (str37 != null) {
+                    if (str36 != null) {
                     }
-                    StringBuilder sb52222222222 = new StringBuilder();
-                    sb52222222222.append("tgaccount");
-                    NotificationCompat.Action action52222222222 = action2;
-                    long j252222222222 = j10;
-                    sb52222222222.append(j252222222222);
-                    wearableExtender2222222222.setBridgeTag(sb52222222222.toString());
+                    StringBuilder sb7222222222222 = new StringBuilder();
+                    sb7222222222222.append("tgaccount");
+                    int i31222222222222 = i12;
+                    long j24222222222222 = j10;
+                    sb7222222222222.append(j24222222222222);
+                    wearableExtender222222222222.setBridgeTag(sb7222222222222.toString());
                     if (dialogKey5.story) {
                     }
-                    NotificationCompat.Builder autoCancel2222222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str21).setSmallIcon(R.drawable.notification).setContentText(sb3222222222.toString()).setAutoCancel(true);
+                    NotificationCompat.Builder autoCancel222222222222 = new NotificationCompat.Builder(ApplicationLoader.applicationContext).setContentTitle(str24).setSmallIcon(R.drawable.notification).setContentText(sb.toString()).setAutoCancel(true);
                     if (dialogKey5.story) {
                     }
-                    NotificationCompat.Builder category2222222222 = autoCancel2222222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j18).setShowWhen(true).setStyle(messagingStyle3).setContentIntent(activity2222222222).extend(wearableExtender2222222222).setSortKey(String.valueOf(Long.MAX_VALUE - j18)).setCategory("msg");
-                    intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                    intent.putExtra("messageDate", i7);
-                    j19 = j16;
-                    intent.putExtra("dialogId", j19);
-                    intent.putExtra(str412222222222, notificationsController3.currentAccount);
+                    category = autoCancel222222222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity222222222222).extend(wearableExtender222222222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
+                    Intent intent4222222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                    intent4222222222222.putExtra("messageDate", i7);
+                    intent4222222222222.putExtra("dialogId", j11);
+                    intent4222222222222.putExtra(str40222222222222, notificationsController3.currentAccount);
                     if (dialogKey5.story) {
                     }
-                    if (messageObject6 != null) {
+                    if (messageObject5.isStoryReactionPush) {
                     }
-                    category2222222222.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
+                    category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222222222222, 167772160));
                     if (z7) {
                     }
-                    if (messageObject6 != null) {
+                    message = messageObject5.messageOwner;
+                    if (message != null) {
                     }
                     tL_keyboardButtonCopy = null;
                     if (tL_keyboardButtonCopy != null) {
                     }
-                    if (dialogKey5.dialogId != UserObject.VERIFY) {
+                    j18 = dialogKey5.dialogId;
+                    if (j18 != UserObject.VERIFY) {
                     }
                     if (arrayList2.size() != 1) {
                     }
-                    if (DialogObject.isEncryptedDialog(j19)) {
+                    if (DialogObject.isEncryptedDialog(j11)) {
                     }
                     if (bitmap4 != null) {
                     }
@@ -12744,39 +13009,41 @@ public class NotificationsController extends BaseController {
                     if (chat5 == null) {
                     }
                     user7 = user6;
-                    Notification notification32222222222 = notification;
-                    boolean z152222222222 = z7;
+                    Notification notification3222222222222 = notification;
+                    boolean z16222222222222 = z7;
                     if (Build.VERSION.SDK_INT >= 26) {
                     }
-                    FileLog.d("showExtraNotifications: holders.add " + j19);
-                    i8 = i21;
-                    str10 = str19;
+                    FileLog.d("showExtraNotifications: holders.add " + j11);
+                    i8 = i23;
+                    str10 = str23;
                     z8 = z6;
-                    j8 = j17;
-                    z9 = z152222222222;
-                    longSparseArray6 = longSparseArray7;
-                    i9 = i22;
-                    str12 = str422222222222;
-                    notification2 = notification32222222222;
+                    j8 = j16;
+                    z9 = z16222222222222;
+                    longSparseArray6 = longSparseArray9;
+                    str12 = str5;
+                    i14 = i24;
+                    str11 = str41222222222222;
+                    notification2 = notification3222222222222;
+                    str14 = str43222222222222;
                     sharedPreferences = sharedPreferences2;
-                    str11 = str5;
-                    str38 = str36;
+                    str13 = str42222222222222;
                     arrayList5 = arrayList14;
-                    arrayList5.add(new 1NotificationHolder(num.intValue(), j19, dialogKey5.story, j15, str21, user7, chat5, category2222222222, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
+                    arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                     notificationsController2 = this;
-                    notificationsController2.wearNotificationsIds.put(j19, num);
-                    i18 = i9 + 1;
+                    notificationsController2.wearNotificationsIds.put(j11, num);
+                    i20 = i14 + 1;
                     arrayList13 = arrayList5;
                     size = i8;
+                    str5 = str12;
                     z5 = z8;
-                    str4 = str38;
                     arrayList11 = arrayList2;
                     z4 = z9;
-                    longSparseArray8 = longSparseArray4;
+                    longSparseArray12 = longSparseArray4;
                     clientUserId = j8;
-                    str5 = str11;
-                    str6 = str12;
-                    longSparseArray9 = longSparseArray5;
+                    str6 = str13;
+                    str7 = str14;
+                    str4 = str11;
+                    longSparseArray13 = longSparseArray5;
                     longSparseArray = longSparseArray6;
                     build2 = notification2;
                     notificationsController3 = notificationsController2;
@@ -12784,8 +13051,8 @@ public class NotificationsController extends BaseController {
                     notificationsSettings = sharedPreferences;
                     i4 = -1;
                 }
-                LongSparseArray longSparseArray11 = longSparseArray;
-                longSparseArray2 = longSparseArray9;
+                LongSparseArray longSparseArray16 = longSparseArray;
+                longSparseArray2 = longSparseArray13;
                 Notification notification4 = build2;
                 NotificationsController notificationsController4 = notificationsController3;
                 ArrayList arrayList22 = arrayList13;
@@ -12815,16 +13082,16 @@ public class NotificationsController extends BaseController {
                 }
                 i5 = 0;
                 while (i5 < longSparseArray2.size()) {
-                    LongSparseArray longSparseArray12 = longSparseArray2;
-                    if (!notificationsController.openedInBubbleDialogs.contains(Long.valueOf(longSparseArray12.keyAt(i5)))) {
-                        Integer num4 = (Integer) longSparseArray12.valueAt(i5);
+                    LongSparseArray longSparseArray17 = longSparseArray2;
+                    if (!notificationsController.openedInBubbleDialogs.contains(Long.valueOf(longSparseArray17.keyAt(i5)))) {
+                        Integer num4 = (Integer) longSparseArray17.valueAt(i5);
                         if (BuildVars.LOGS_ENABLED) {
                             FileLog.d("cancel notification id " + num4);
                         }
                         notificationManager.cancel(num4.intValue());
                     }
                     i5++;
-                    longSparseArray2 = longSparseArray12;
+                    longSparseArray2 = longSparseArray17;
                 }
                 ArrayList arrayList23 = new ArrayList(arrayList.size());
                 FileLog.d("showExtraNotifications: holders.size()=" + arrayList.size());
@@ -12835,12 +13102,12 @@ public class NotificationsController extends BaseController {
                     1NotificationHolder r5 = (1NotificationHolder) arrayList24.get(i6);
                     arrayList23.clear();
                     if (Build.VERSION.SDK_INT < 29 || DialogObject.isEncryptedDialog(r5.dialogId)) {
-                        longSparseArray3 = longSparseArray11;
+                        longSparseArray3 = longSparseArray16;
                     } else {
                         NotificationCompat.Builder builder3 = r5.notification;
-                        long j27 = r5.dialogId;
-                        longSparseArray3 = longSparseArray11;
-                        String createNotificationShortcut = createNotificationShortcut(builder3, j27, r5.name, r5.user, r5.chat, (Person) longSparseArray3.get(j27), !r5.story);
+                        long j26 = r5.dialogId;
+                        longSparseArray3 = longSparseArray16;
+                        String createNotificationShortcut = createNotificationShortcut(builder3, j26, r5.name, r5.user, r5.chat, (Person) longSparseArray3.get(j26), !r5.story);
                         if (createNotificationShortcut != null) {
                             arrayList23.add(createNotificationShortcut);
                         }
@@ -12852,7 +13119,7 @@ public class NotificationsController extends BaseController {
                     }
                     i6++;
                     arrayList = arrayList24;
-                    longSparseArray11 = longSparseArray3;
+                    longSparseArray16 = longSparseArray3;
                 }
             }
         }
@@ -12869,20 +13136,21 @@ public class NotificationsController extends BaseController {
         longSparseArray = new LongSparseArray();
         size = arrayList11.size();
         while (true) {
-            if (i18 < size) {
+            if (i20 < size) {
             }
-            i18 = i9 + 1;
+            i20 = i14 + 1;
             arrayList13 = arrayList5;
             size = i8;
+            str5 = str12;
             z5 = z8;
-            str4 = str38;
             arrayList11 = arrayList2;
             z4 = z9;
-            longSparseArray8 = longSparseArray4;
+            longSparseArray12 = longSparseArray4;
             clientUserId = j8;
-            str5 = str11;
-            str6 = str12;
-            longSparseArray9 = longSparseArray5;
+            str6 = str13;
+            str7 = str14;
+            str4 = str11;
+            longSparseArray13 = longSparseArray5;
             longSparseArray = longSparseArray6;
             build2 = notification2;
             notificationsController3 = notificationsController2;
@@ -12890,8 +13158,8 @@ public class NotificationsController extends BaseController {
             notificationsSettings = sharedPreferences;
             i4 = -1;
         }
-        LongSparseArray longSparseArray112 = longSparseArray;
-        longSparseArray2 = longSparseArray9;
+        LongSparseArray longSparseArray162 = longSparseArray;
+        longSparseArray2 = longSparseArray13;
         Notification notification42 = build2;
         NotificationsController notificationsController42 = notificationsController3;
         ArrayList arrayList222 = arrayList13;
@@ -12963,7 +13231,7 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$showExtraNotifications$42(Uri uri, File file) {
+    public static /* synthetic */ void lambda$showExtraNotifications$43(Uri uri, File file) {
         try {
             ApplicationLoader.applicationContext.revokeUriPermission(uri, 1);
         } catch (Exception e) {
@@ -13043,16 +13311,20 @@ public class NotificationsController extends BaseController {
         return new Pair<>(Integer.valueOf(i2), Boolean.valueOf(z));
     }
 
-    public static Person.Builder loadRoundAvatar(File file, Person.Builder builder) {
+    public static Person.Builder loadRoundAvatar(long j, File file, Person.Builder builder) {
         ImageDecoder.Source createSource;
         Bitmap decodeBitmap;
+        if (j == UserObject.OAUTH) {
+            builder.setIcon(IconCompat.createWithResource(ApplicationLoader.applicationContext, R.drawable.logo_middle));
+            return builder;
+        }
         if (file != null && Build.VERSION.SDK_INT >= 28) {
             try {
                 createSource = ImageDecoder.createSource(file);
-                decodeBitmap = ImageDecoder.decodeBitmap(createSource, new ImageDecoder.OnHeaderDecodedListener() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda68
+                decodeBitmap = ImageDecoder.decodeBitmap(createSource, new ImageDecoder.OnHeaderDecodedListener() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda42
                     @Override // android.graphics.ImageDecoder.OnHeaderDecodedListener
                     public final void onHeaderDecoded(ImageDecoder imageDecoder, ImageDecoder.ImageInfo imageInfo, ImageDecoder.Source source) {
-                        NotificationsController.lambda$loadRoundAvatar$44(imageDecoder, imageInfo, source);
+                        NotificationsController.lambda$loadRoundAvatar$45(imageDecoder, imageInfo, source);
                     }
                 });
                 builder.setIcon(IconCompat.createWithBitmap(decodeBitmap));
@@ -13063,19 +13335,19 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$loadRoundAvatar$44(ImageDecoder imageDecoder, ImageDecoder.ImageInfo imageInfo, ImageDecoder.Source source) {
-        imageDecoder.setPostProcessor(new PostProcessor() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda35
+    public static /* synthetic */ void lambda$loadRoundAvatar$45(ImageDecoder imageDecoder, ImageDecoder.ImageInfo imageInfo, ImageDecoder.Source source) {
+        imageDecoder.setPostProcessor(new PostProcessor() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda38
             @Override // android.graphics.PostProcessor
             public final int onPostProcess(Canvas canvas) {
-                int lambda$loadRoundAvatar$43;
-                lambda$loadRoundAvatar$43 = NotificationsController.lambda$loadRoundAvatar$43(canvas);
-                return lambda$loadRoundAvatar$43;
+                int lambda$loadRoundAvatar$44;
+                lambda$loadRoundAvatar$44 = NotificationsController.lambda$loadRoundAvatar$44(canvas);
+                return lambda$loadRoundAvatar$44;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$loadRoundAvatar$43(Canvas canvas) {
+    public static /* synthetic */ int lambda$loadRoundAvatar$44(Canvas canvas) {
         Path path = new Path();
         path.setFillType(Path.FillType.INVERSE_EVEN_ODD);
         int width = canvas.getWidth();
@@ -13273,16 +13545,16 @@ public class NotificationsController extends BaseController {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda63
+        notificationsQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda62
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$playOutChatSound$46();
+                NotificationsController.this.lambda$playOutChatSound$47();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$playOutChatSound$46() {
+    public /* synthetic */ void lambda$playOutChatSound$47() {
         try {
             if (Math.abs(SystemClock.elapsedRealtime() - this.lastSoundOutPlay) <= 100) {
                 return;
@@ -13291,10 +13563,10 @@ public class NotificationsController extends BaseController {
             if (this.soundPool == null) {
                 SoundPool soundPool = new SoundPool(3, 1, 0);
                 this.soundPool = soundPool;
-                soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda24
+                soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda55
                     @Override // android.media.SoundPool.OnLoadCompleteListener
                     public final void onLoadComplete(SoundPool soundPool2, int i, int i2) {
-                        NotificationsController.lambda$playOutChatSound$45(soundPool2, i, i2);
+                        NotificationsController.lambda$playOutChatSound$46(soundPool2, i, i2);
                     }
                 });
             }
@@ -13316,7 +13588,7 @@ public class NotificationsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$playOutChatSound$45(SoundPool soundPool, int i, int i2) {
+    public static /* synthetic */ void lambda$playOutChatSound$46(SoundPool soundPool, int i, int i2) {
         if (i2 == 0) {
             try {
                 soundPool.play(i, 1.0f, 1.0f, 1, 0, 1.0f);
@@ -13449,10 +13721,10 @@ public class NotificationsController extends BaseController {
             updatenotifysettings.peer = tL_inputNotifyPeer;
             tL_inputNotifyPeer.peer = getMessagesController().getInputPeer(j);
         }
-        getConnectionsManager().sendRequest(updatenotifysettings, new RequestDelegate() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda73
+        getConnectionsManager().sendRequest(updatenotifysettings, new RequestDelegate() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda74
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                NotificationsController.lambda$updateServerNotificationsSettings$47(tLObject, tL_error);
+                NotificationsController.lambda$updateServerNotificationsSettings$48(tLObject, tL_error);
             }
         });
     }
@@ -13480,10 +13752,10 @@ public class NotificationsController extends BaseController {
             }
             setreactionsnotifysettings.settings.show_previews = notificationsSettings.getBoolean("EnableReactionsPreview", true);
             setreactionsnotifysettings.settings.sound = getInputSound(notificationsSettings, "ReactionSound", "ReactionSoundDocId", "ReactionSoundPath");
-            getConnectionsManager().sendRequest(setreactionsnotifysettings, new RequestDelegate() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda54
+            getConnectionsManager().sendRequest(setreactionsnotifysettings, new RequestDelegate() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda48
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    NotificationsController.lambda$updateServerNotificationsSettings$48(tLObject, tL_error);
+                    NotificationsController.lambda$updateServerNotificationsSettings$49(tLObject, tL_error);
                 }
             });
             return;
@@ -13525,10 +13797,10 @@ public class NotificationsController extends BaseController {
             tL_inputPeerNotifySettings7.flags |= 8;
             tL_inputPeerNotifySettings7.sound = getInputSound(notificationsSettings, "ChannelSound", "ChannelSoundDocId", "ChannelSoundPath");
         }
-        getConnectionsManager().sendRequest(updatenotifysettings, new RequestDelegate() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda53
+        getConnectionsManager().sendRequest(updatenotifysettings, new RequestDelegate() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda47
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                NotificationsController.lambda$updateServerNotificationsSettings$49(tLObject, tL_error);
+                NotificationsController.lambda$updateServerNotificationsSettings$50(tLObject, tL_error);
             }
         });
     }
@@ -13648,16 +13920,16 @@ public class NotificationsController extends BaseController {
     }
 
     public void loadTopicsNotificationsExceptions(final long j, final Consumer<HashSet<Integer>> consumer) {
-        getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda72
+        getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda73
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.this.lambda$loadTopicsNotificationsExceptions$51(j, consumer);
+                NotificationsController.this.lambda$loadTopicsNotificationsExceptions$52(j, consumer);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadTopicsNotificationsExceptions$51(long j, final Consumer consumer) {
+    public /* synthetic */ void lambda$loadTopicsNotificationsExceptions$52(long j, final Consumer consumer) {
         final HashSet hashSet = new HashSet();
         Iterator<Map.Entry<String, ?>> it = MessagesController.getNotificationsSettings(this.currentAccount).getAll().entrySet().iterator();
         while (it.hasNext()) {
@@ -13670,16 +13942,16 @@ public class NotificationsController extends BaseController {
                 }
             }
         }
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda28
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.NotificationsController$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
-                NotificationsController.lambda$loadTopicsNotificationsExceptions$50(Consumer.this, hashSet);
+                NotificationsController.lambda$loadTopicsNotificationsExceptions$51(Consumer.this, hashSet);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$loadTopicsNotificationsExceptions$50(Consumer consumer, HashSet hashSet) {
+    public static /* synthetic */ void lambda$loadTopicsNotificationsExceptions$51(Consumer consumer, HashSet hashSet) {
         if (consumer != null) {
             consumer.p(hashSet);
         }

@@ -132,9 +132,13 @@ public class LoadingDrawable extends Drawable {
     }
 
     public void setRadiiDp(float f) {
+        setRadii(AndroidUtilities.dp(f));
+    }
+
+    public void setRadii(float f) {
         if (this.usePath != null) {
-            this.paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(f)));
-            this.strokePaint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(f)));
+            this.paint.setPathEffect(new CornerPathEffect(f));
+            this.strokePaint.setPathEffect(new CornerPathEffect(f));
         } else {
             setRadiiDp(f, f, f, f);
         }
@@ -292,7 +296,7 @@ public class LoadingDrawable extends Drawable {
                 }
                 this.rectF.set(bounds);
                 this.rectF.inset(-this.strokePaint.getStrokeWidth(), -this.strokePaint.getStrokeWidth());
-                canvas.saveLayerAlpha(this.rectF, NotificationCenter.cameraInitied, 31);
+                canvas.saveLayerAlpha(this.rectF, NotificationCenter.closeOtherAppActivities, 31);
                 z = true;
                 if (this.appearByGradient) {
                     int max2 = Math.max(AndroidUtilities.dp(200.0f), bounds.width() / 3);
@@ -315,7 +319,7 @@ public class LoadingDrawable extends Drawable {
                         }
                         this.rectF.set(bounds);
                         this.rectF.inset(-this.strokePaint.getStrokeWidth(), -this.strokePaint.getStrokeWidth());
-                        canvas.saveLayerAlpha(this.rectF, NotificationCenter.cameraInitied, 31);
+                        canvas.saveLayerAlpha(this.rectF, NotificationCenter.closeOtherAppActivities, 31);
                         z2 = true;
                         this.matrix.setTranslate(f4, 0.0f);
                         this.gradient.setLocalMatrix(this.matrix);

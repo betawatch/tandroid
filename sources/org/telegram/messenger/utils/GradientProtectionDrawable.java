@@ -37,7 +37,7 @@ public class GradientProtectionDrawable extends Drawable {
     public GradientProtectionDrawable(int i, int i2, Interpolator interpolator, int i3) {
         this.mPaint = new Paint(1);
         this.mInsets = new Rect();
-        this.mAlpha = NotificationCenter.cameraInitied;
+        this.mAlpha = NotificationCenter.closeOtherAppActivities;
         this.mDrawable = new GradientDrawable();
         this.mInterpolator = interpolator;
         this.mColors = new int[i3];

@@ -1901,6 +1901,11 @@ public abstract class MessagePreviewView extends FrameLayout {
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void didPressAdmin(ChatMessageCell chatMessageCell2) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAdmin(this, chatMessageCell2);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean didPressAnimatedEmoji(ChatMessageCell chatMessageCell2, AnimatedEmojiSpan animatedEmojiSpan) {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAnimatedEmoji(this, chatMessageCell2, animatedEmojiSpan);
                     }
@@ -2141,8 +2146,18 @@ public abstract class MessagePreviewView extends FrameLayout {
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ boolean isAdmin(long j) {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isAdmin(this, j);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean isLandscape() {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isLandscape(this);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ boolean isOwner(long j) {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isOwner(this, j);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -2339,6 +2354,11 @@ public abstract class MessagePreviewView extends FrameLayout {
                         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                         public /* synthetic */ void didPressAboutRevenueSharingAds() {
                             ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAboutRevenueSharingAds(this);
+                        }
+
+                        @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                        public /* synthetic */ void didPressAdmin(ChatMessageCell chatMessageCell2) {
+                            ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAdmin(this, chatMessageCell2);
                         }
 
                         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -2597,8 +2617,18 @@ public abstract class MessagePreviewView extends FrameLayout {
                         }
 
                         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                        public /* synthetic */ boolean isAdmin(long j) {
+                            return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isAdmin(this, j);
+                        }
+
+                        @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                         public /* synthetic */ boolean isLandscape() {
                             return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isLandscape(this);
+                        }
+
+                        @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                        public /* synthetic */ boolean isOwner(long j) {
+                            return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isOwner(this, j);
                         }
 
                         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

@@ -926,7 +926,7 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
         this.descriptionTextView.setEnabled(this.currentUser != null || ChatObject.canChangeChatInfo(this.currentChat));
         EditTextBoldCursor editTextBoldCursor3 = this.descriptionTextView;
         editTextBoldCursor3.setFocusable(editTextBoldCursor3.isEnabled());
-        this.descriptionTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(NotificationCenter.cameraInitied)});
+        this.descriptionTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(NotificationCenter.closeOtherAppActivities)});
         this.descriptionTextView.setHint(LocaleController.getString("DescriptionOptionalPlaceholder", R.string.DescriptionOptionalPlaceholder));
         this.descriptionTextView.setCursorColor(Theme.getColor(i6));
         this.descriptionTextView.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -2736,12 +2736,12 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                 return true;
             }
             if (z) {
-                showDialog(new AlertDialog.Builder(getParentActivity()).setTitle(LocaleController.getString("UserRestrictionsApplyChanges", R.string.UserRestrictionsApplyChanges)).setMessage(LocaleController.getString(R.string.BotSettingsChangedAlert)).setPositiveButton(LocaleController.getString("ApplyTheme", R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChatEditActivity$$ExternalSyntheticLambda37
+                showDialog(new AlertDialog.Builder(getParentActivity()).setTitle(LocaleController.getString(R.string.UserRestrictionsApplyChanges)).setMessage(LocaleController.getString(R.string.BotSettingsChangedAlert)).setPositiveButton(LocaleController.getString(R.string.ApplyTheme), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChatEditActivity$$ExternalSyntheticLambda37
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         ChatEditActivity.this.lambda$checkDiscard$54(alertDialog, i);
                     }
-                }).setNegativeButton(LocaleController.getString("PassportDiscard", R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChatEditActivity$$ExternalSyntheticLambda38
+                }).setNegativeButton(LocaleController.getString(R.string.PassportDiscard), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.ChatEditActivity$$ExternalSyntheticLambda38
                     @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
                     public final void onClick(AlertDialog alertDialog, int i) {
                         ChatEditActivity.this.lambda$checkDiscard$55(alertDialog, i);
@@ -3310,9 +3310,14 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                         TextCell textCell28 = this.logCell;
                         textCell27.setTextAndValueAndIcon(string8, format3, i11, textCell28 != null && textCell28.getVisibility() == 0);
                     } else {
+                        int i12 = this.forum ? 15 : 14;
                         TLRPC.TL_chatBannedRights tL_chatBannedRights = chat3.default_banned_rights;
                         if (tL_chatBannedRights != null) {
-                            i = (!tL_chatBannedRights.send_plain ? 1 : 0) + ChatUsersActivity.getSendMediaSelectedCount(tL_chatBannedRights);
+                            int i13 = !tL_chatBannedRights.send_plain ? 1 : 0;
+                            if (!tL_chatBannedRights.edit_rank) {
+                                i13++;
+                            }
+                            i = i13 + ChatUsersActivity.getSendMediaSelectedCount(tL_chatBannedRights);
                             TLRPC.TL_chatBannedRights tL_chatBannedRights2 = this.currentChat.default_banned_rights;
                             if (!tL_chatBannedRights2.pin_messages) {
                                 i++;
@@ -3327,17 +3332,17 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                                 i++;
                             }
                         } else {
-                            i = this.forum ? 14 : 13;
+                            i = i12;
                         }
-                        this.blockCell.setTextAndValueAndIcon(LocaleController.getString(R.string.ChannelPermissions), String.format("%d/%d", Integer.valueOf(i), Integer.valueOf(this.forum ? 14 : 13)), z2, R.drawable.msg_permissions, true);
+                        this.blockCell.setTextAndValueAndIcon(LocaleController.getString(R.string.ChannelPermissions), String.format("%d/%d", Integer.valueOf(i), Integer.valueOf(i12)), z2, R.drawable.msg_permissions, true);
                     }
                     TextCell textCell29 = this.memberRequestsCell;
                     if (textCell29 != null) {
                         String string9 = LocaleController.getString("MemberRequests", R.string.MemberRequests);
                         String format4 = String.format("%d", Integer.valueOf(this.info.requests_pending));
-                        int i12 = R.drawable.msg_requests;
+                        int i14 = R.drawable.msg_requests;
                         TextCell textCell30 = this.logCell;
-                        textCell29.setTextAndValueAndIcon(string9, format4, i12, textCell30 != null && textCell30.getVisibility() == 0);
+                        textCell29.setTextAndValueAndIcon(string9, format4, i14, textCell30 != null && textCell30.getVisibility() == 0);
                     }
                 }
                 this.adminCell.setTextAndValueAndIcon((CharSequence) LocaleController.getString("ChannelAdministrators", R.string.ChannelAdministrators), (CharSequence) String.format("%d", Integer.valueOf(ChatObject.isChannel(this.currentChat) ? this.info.admins_count : getAdminCount())), R.drawable.msg_admins, true);
@@ -3346,20 +3351,20 @@ public class ChatEditActivity extends BaseFragment implements ImageUpdater.Image
                     textCell23.setTextAndIcon((CharSequence) LocaleController.getString("ChannelSubscribers", R.string.ChannelSubscribers), R.drawable.msg_groups, true);
                     TextCell textCell31 = this.blockCell;
                     String string10 = LocaleController.getString("ChannelBlacklist", R.string.ChannelBlacklist);
-                    int i13 = R.drawable.msg_chats_remove;
+                    int i15 = R.drawable.msg_chats_remove;
                     TextCell textCell32 = this.logCell;
-                    textCell31.setTextAndIcon(string10, i13, textCell32 != null && textCell32.getVisibility() == 0);
+                    textCell31.setTextAndIcon(string10, i15, textCell32 != null && textCell32.getVisibility() == 0);
                 } else {
                     String string11 = LocaleController.getString("ChannelMembers", R.string.ChannelMembers);
-                    int i14 = R.drawable.msg_groups;
+                    int i16 = R.drawable.msg_groups;
                     TextCell textCell33 = this.logCell;
-                    textCell23.setTextAndIcon(string11, i14, textCell33 != null && textCell33.getVisibility() == 0);
+                    textCell23.setTextAndIcon(string11, i16, textCell33 != null && textCell33.getVisibility() == 0);
                     if (this.currentChat.gigagroup) {
                         TextCell textCell34 = this.blockCell;
                         String string12 = LocaleController.getString("ChannelBlacklist", R.string.ChannelBlacklist);
-                        int i15 = R.drawable.msg_chats_remove;
+                        int i17 = R.drawable.msg_chats_remove;
                         TextCell textCell35 = this.logCell;
-                        textCell34.setTextAndIcon(string12, i15, textCell35 != null && textCell35.getVisibility() == 0);
+                        textCell34.setTextAndIcon(string12, i17, textCell35 != null && textCell35.getVisibility() == 0);
                     } else {
                         this.blockCell.setTextAndIcon((CharSequence) LocaleController.getString(R.string.ChannelPermissions), R.drawable.msg_permissions, true);
                     }

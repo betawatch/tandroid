@@ -833,7 +833,7 @@ public class VideoAds {
             Paint paint = new Paint(1);
             this.paint = paint;
             this.paused = false;
-            this.alpha = NotificationCenter.cameraInitied;
+            this.alpha = NotificationCenter.closeOtherAppActivities;
             this.parentView = view;
             this.startTime = System.currentTimeMillis() - j;
             this.min_display_duration = i * 1000;
@@ -1033,7 +1033,7 @@ public class VideoAds {
 
         public void hideImage() {
             this.imageView.setVisibility(8);
-            ((ViewGroup.MarginLayoutParams) this.linearLayout.getLayoutParams()).setMarginStart(AndroidUtilities.dp(10.0f));
+            this.linearLayout.setLayoutParams(LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388627, 10.0f, 8.0f, 54.0f, 8.0f));
         }
     }
 

@@ -30,7 +30,7 @@ public class DialogsActivityTopBubblesFadeView extends View {
         if (this.lastColor != i) {
             this.lastColor = i;
             int alpha = Color.alpha(i);
-            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.starGiftSoldOut) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.didUpdateTonGiftStickers) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.fileNewChunkAvailable) / NotificationCenter.cameraInitied), ColorUtils.setAlphaComponent(i, 0)}, (float[]) null, Shader.TileMode.CLAMP);
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.starGiftSoldOut) / NotificationCenter.closeOtherAppActivities), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.didUpdateTonGiftStickers) / NotificationCenter.closeOtherAppActivities), ColorUtils.setAlphaComponent(i, (alpha * NotificationCenter.fileNewChunkAvailable) / NotificationCenter.closeOtherAppActivities), ColorUtils.setAlphaComponent(i, 0)}, (float[]) null, Shader.TileMode.CLAMP);
             this.shader = linearGradient;
             this.paint.setShader(linearGradient);
             this.shader.setLocalMatrix(this.matrix);

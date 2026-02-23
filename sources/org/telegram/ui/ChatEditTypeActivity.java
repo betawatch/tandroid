@@ -1319,7 +1319,7 @@ public class ChatEditTypeActivity extends BaseFragment implements NotificationCe
                 return false;
             }
             MessagesController messagesController = getMessagesController();
-            long j = this.chatId;
+            long j = -this.chatId;
             TLRPC.Chat chat2 = this.currentChat;
             boolean z = this.isSaveRestricted;
             chat2.noforwards = z;
@@ -1334,7 +1334,7 @@ public class ChatEditTypeActivity extends BaseFragment implements NotificationCe
             this.chatId = j;
             this.currentChat = getMessagesController().getChat(Long.valueOf(j));
             MessagesController messagesController = getMessagesController();
-            long j2 = this.chatId;
+            long j2 = -this.chatId;
             TLRPC.Chat chat = this.currentChat;
             boolean z = this.isSaveRestricted;
             chat.noforwards = z;

@@ -7018,11 +7018,11 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x00bb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x00bc, code lost:
     
         if (r2 == null) goto L67;
      */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00c4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00c5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -7101,7 +7101,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         return null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0046, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0047, code lost:
     
         if (r1 == null) goto L27;
      */
@@ -7529,15 +7529,15 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't wrap try/catch for region: R(18:0|1|2|3|4|5|6|7|8|9|10|(23:12|(3:187|188|(1:190))|(2:15|(2:17|(1:19)))|180|181|(2:183|184)|167|30|31|(12:33|(2:35|(1:37))|(2:39|(2:41|(2:43|(1:45))))|46|(2:58|59)|48|49|50|(2:53|51)|54|55|56)|63|(1:65)(1:159)|66|(5:68|(1:70)(1:158)|71|(4:74|(3:153|154|155)(10:76|77|(7:79|80|81|82|(1:84)(1:149)|(1:86)|87)(1:152)|(4:137|138|139|140)(1:89)|90|91|(2:93|(2:131|132)(3:99|100|101))(1:133)|102|103|104)|105|72)|156)|46|(0)|48|49|50|(1:51)|54|55|56)|191|192|(1:194)(1:348)|195|(47:198|199|200|201|202|203|204|205|206|207|208|209|(1:211)(1:334)|212|213|214|215|216|217|218|219|220|221|222|223|(7:227|228|229|(3:309|310|311)(15:231|232|(6:234|235|236|237|238|239)(1:308)|(5:289|290|291|292|293)(1:241)|242|243|244|245|246|(6:248|249|250|(1:278)(4:254|255|256|(1:258))|273|274)(1:282)|259|(2:261|(1:268)(1:267))|269|270|271)|272|224|225)|315|316|181|(0)|167|30|31|(0)|63|(0)(0)|66|(0)|46|(0)|48|49|50|(1:51)|54|55|56)(19:197|(0)|167|30|31|(0)|63|(0)(0)|66|(0)|46|(0)|48|49|50|(1:51)|54|55|56)|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x00b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x00b1, code lost:
     
         if (r15 == 0) goto L342;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:349:0x0350, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:349:0x0351, code lost:
     
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:350:0x0351, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:350:0x0352, code lost:
     
         r38 = "_size";
         r33 = "height";
@@ -7552,26 +7552,26 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         r5 = r21;
         r4 = r26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:351:0x0369, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:351:0x036a, code lost:
     
         r15 = null;
         r34 = null;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0538 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0070  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x03e1  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x038f A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x0347 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x0327  */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x00ff A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x03a4  */
-    /* JADX WARN: Removed duplicated region for block: B:348:0x00e9  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x054d A[LOOP:0: B:51:0x0547->B:53:0x054d, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0524 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x03de  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x03f7 A[Catch: all -> 0x03af, TryCatch #11 {all -> 0x03af, blocks: (B:31:0x039c, B:35:0x03a8, B:39:0x03b5, B:41:0x03bb, B:43:0x03c1, B:63:0x03cb, B:66:0x03e3, B:68:0x03f7, B:71:0x0418, B:72:0x0439, B:74:0x043f, B:77:0x044a, B:79:0x048a), top: B:30:0x039c }] */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0539 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x03e2  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0390 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x0348 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x0328  */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x0100 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x03a5  */
+    /* JADX WARN: Removed duplicated region for block: B:348:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x054e A[LOOP:0: B:51:0x0548->B:53:0x054e, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0525 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x03df  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x03f8 A[Catch: all -> 0x03b0, TryCatch #12 {all -> 0x03b0, blocks: (B:31:0x039d, B:35:0x03a9, B:39:0x03b6, B:41:0x03bc, B:43:0x03c2, B:63:0x03cc, B:66:0x03e4, B:68:0x03f8, B:71:0x0419, B:72:0x043a, B:74:0x0440, B:77:0x044b, B:79:0x048b), top: B:30:0x039d }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8881,9 +8881,9 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:24:0x00ff  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x0138  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x01b6  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x01c4  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01fe A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x01b7  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01c5  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x01ff A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:84:0x0102  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -9187,7 +9187,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x003b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x003d A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -1335,12 +1335,12 @@ public class FragmentedMp4Extractor implements Extractor {
                 byte[] data = this.scratch.getData();
                 data[0] = 0;
                 data[1] = 1;
-                data[2] = (byte) ((i2 >> 8) & NotificationCenter.cameraInitied);
-                data[3] = (byte) (i2 & NotificationCenter.cameraInitied);
-                data[4] = (byte) ((i >> 24) & NotificationCenter.cameraInitied);
-                data[5] = (byte) ((i >> 16) & NotificationCenter.cameraInitied);
-                data[6] = (byte) ((i >> 8) & NotificationCenter.cameraInitied);
-                data[7] = (byte) (i & NotificationCenter.cameraInitied);
+                data[2] = (byte) ((i2 >> 8) & NotificationCenter.closeOtherAppActivities);
+                data[3] = (byte) (i2 & NotificationCenter.closeOtherAppActivities);
+                data[4] = (byte) ((i >> 24) & NotificationCenter.closeOtherAppActivities);
+                data[5] = (byte) ((i >> 16) & NotificationCenter.closeOtherAppActivities);
+                data[6] = (byte) ((i >> 8) & NotificationCenter.closeOtherAppActivities);
+                data[7] = (byte) (i & NotificationCenter.closeOtherAppActivities);
                 this.output.sampleData(this.scratch, 8, 1);
                 return i3 + 9;
             }
@@ -1353,8 +1353,8 @@ public class FragmentedMp4Extractor implements Extractor {
                 byte[] data2 = this.scratch.getData();
                 parsableByteArray3.readBytes(data2, 0, i4);
                 int i5 = (((data2[2] & 255) << 8) | (data2[3] & 255)) + i2;
-                data2[2] = (byte) ((i5 >> 8) & NotificationCenter.cameraInitied);
-                data2[3] = (byte) (i5 & NotificationCenter.cameraInitied);
+                data2[2] = (byte) ((i5 >> 8) & NotificationCenter.closeOtherAppActivities);
+                data2[3] = (byte) (i5 & NotificationCenter.closeOtherAppActivities);
                 parsableByteArray3 = this.scratch;
             }
             this.output.sampleData(parsableByteArray3, i4, 1);

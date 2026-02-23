@@ -442,8 +442,8 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         return allocateI420Buffer;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0112 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00f4  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0113 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

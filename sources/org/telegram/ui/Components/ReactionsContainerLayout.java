@@ -825,7 +825,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                         f7 = width2;
                         f6 = f12;
                         i = 5;
-                        this.delegate.drawRoundRect(canvas, this.rect, this.radius, getX(), getY(), NotificationCenter.cameraInitied, false);
+                        this.delegate.drawRoundRect(canvas, this.rect, this.radius, getX(), getY(), NotificationCenter.closeOtherAppActivities, false);
                     } else {
                         RectF rectF = this.rect;
                         float f14 = this.radius;
@@ -979,7 +979,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                     }
                 }
                 canvas.restoreToCount(save3);
-                drawBubbles(canvas, f, max, f2, NotificationCenter.cameraInitied);
+                drawBubbles(canvas, f, max, f2, NotificationCenter.closeOtherAppActivities);
                 invalidate();
             }
         }
@@ -1061,13 +1061,13 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         if (!showCustomEmojiReaction) {
         }
         canvas.restoreToCount(save32);
-        drawBubbles(canvas, f, max, f2, NotificationCenter.cameraInitied);
+        drawBubbles(canvas, f, max, f2, NotificationCenter.closeOtherAppActivities);
         invalidate();
     }
 
     public void drawBubbles(Canvas canvas) {
         float max = (Math.max(0.25f, Math.min(this.transitionProgress, 1.0f)) - 0.25f) / 0.75f;
-        drawBubbles(canvas, this.bigCircleRadius * max, max, this.smallCircleRadius * max, this.type == 5 ? NotificationCenter.cameraInitied : (int) (Utilities.clamp(this.customEmojiReactionsEnterProgress / 0.2f, 1.0f, 0.0f) * (1.0f - this.customEmojiReactionsEnterProgress) * 255.0f));
+        drawBubbles(canvas, this.bigCircleRadius * max, max, this.smallCircleRadius * max, this.type == 5 ? NotificationCenter.closeOtherAppActivities : (int) (Utilities.clamp(this.customEmojiReactionsEnterProgress / 0.2f, 1.0f, 0.0f) * (1.0f - this.customEmojiReactionsEnterProgress) * 255.0f));
     }
 
     private void drawBubbles(Canvas canvas, float f, float f2, float f3, int i) {
@@ -1113,8 +1113,8 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
             canvas.drawCircle(width2, lerp, f3, this.bgPaint);
         }
         canvas.restore();
-        this.shadow.setAlpha(NotificationCenter.cameraInitied);
-        this.bgPaint.setAlpha(NotificationCenter.cameraInitied);
+        this.shadow.setAlpha(NotificationCenter.closeOtherAppActivities);
+        this.bgPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
     }
 
     public void setMiniBubblesOffset(float f) {

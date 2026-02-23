@@ -26,6 +26,7 @@ import android.widget.TextView;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.CodeHighlighting;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
@@ -34,11 +35,13 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.utils.CopyUtilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.AlertDialogDecor;
 import org.telegram.ui.ActionBar.FloatingActionMode;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextSelectionHelper$$ExternalSyntheticApiModelOutline6;
+import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.QuoteSpan;
 import org.telegram.ui.Components.TextStyleSpan;
 
@@ -65,6 +68,10 @@ public class EditTextCaption extends EditTextBoldCursor {
 
     public interface EditTextCaptionDelegate {
         void onSpansChanged();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$makeSelectedDate$1() {
     }
 
     protected void onContextMenuClose() {
@@ -194,6 +201,50 @@ public class EditTextCaption extends EditTextBoldCursor {
         invalidateSpoilers();
     }
 
+    public void makeSelectedDate() {
+        final int selectionEnd;
+        final int i = this.selectionStart;
+        if (i >= 0 && (selectionEnd = this.selectionEnd) >= 0) {
+            this.selectionEnd = -1;
+            this.selectionStart = -1;
+        } else {
+            i = getSelectionStart();
+            selectionEnd = getSelectionEnd();
+        }
+        AlertsCreator.createFormattedDatePickerDialog(getContext(), "Create Date", -1L, new AlertsCreator.FormattedDatePickerDelegate() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda6
+            @Override // org.telegram.ui.Components.AlertsCreator.FormattedDatePickerDelegate
+            public final void didSelectDate(int i2, int i3) {
+                EditTextCaption.this.lambda$makeSelectedDate$0(i, selectionEnd, i2, i3);
+            }
+        }, new Runnable() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda7
+            @Override // java.lang.Runnable
+            public final void run() {
+                EditTextCaption.lambda$makeSelectedDate$1();
+            }
+        }, this.resourcesProvider);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$makeSelectedDate$0(int i, int i2, int i3, int i4) {
+        Editable text = getText();
+        TextStyleSpan.TextStyleRun textStyleRun = new TextStyleSpan.TextStyleRun();
+        textStyleRun.flags |= 128;
+        textStyleRun.start = i;
+        textStyleRun.end = i2;
+        TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = new TLRPC.TL_messageEntityFormattedDate();
+        tL_messageEntityFormattedDate.date = i3;
+        tL_messageEntityFormattedDate.flags = i4;
+        tL_messageEntityFormattedDate.applyFlags();
+        try {
+            text.setSpan(new FormattedDateSpan(text.subSequence(i, i2).toString(), textStyleRun, tL_messageEntityFormattedDate), i, i2, 33);
+        } catch (Exception unused) {
+        }
+        EditTextCaptionDelegate editTextCaptionDelegate = this.delegate;
+        if (editTextCaptionDelegate != null) {
+            editTextCaptionDelegate.onSpansChanged();
+        }
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r2v1, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
     /* JADX WARN: Type inference failed for: r3v1, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
@@ -245,13 +296,13 @@ public class EditTextCaption extends EditTextBoldCursor {
         final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                EditTextCaption.this.lambda$makeSelectedUrl$0(editTextBoldCursor, textView);
+                EditTextCaption.this.lambda$makeSelectedUrl$2(editTextBoldCursor, textView);
             }
         };
         textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                EditTextCaption.this.lambda$makeSelectedUrl$1(editTextBoldCursor, runnable, view);
+                EditTextCaption.this.lambda$makeSelectedUrl$3(editTextBoldCursor, runnable, view);
             }
         });
         editTextBoldCursor.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.EditTextCaption.3
@@ -294,7 +345,7 @@ public class EditTextCaption extends EditTextBoldCursor {
         r2.setPositiveButton(LocaleController.getString(R.string.OK), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda2
             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
             public final void onClick(AlertDialog alertDialog, int i2) {
-                EditTextCaption.this.lambda$makeSelectedUrl$2(i, selectionEnd, editTextBoldCursor, alertDialog, i2);
+                EditTextCaption.this.lambda$makeSelectedUrl$4(i, selectionEnd, editTextBoldCursor, alertDialog, i2);
             }
         });
         r2.setNegativeButton(LocaleController.getString(R.string.Cancel), null);
@@ -304,13 +355,13 @@ public class EditTextCaption extends EditTextBoldCursor {
             create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda3
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    EditTextCaption.this.lambda$makeSelectedUrl$3(dialogInterface);
+                    EditTextCaption.this.lambda$makeSelectedUrl$5(dialogInterface);
                 }
             });
             this.creationLinkDialog.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda4
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
-                    EditTextCaption.lambda$makeSelectedUrl$4(EditTextBoldCursor.this, dialogInterface);
+                    EditTextCaption.lambda$makeSelectedUrl$6(EditTextBoldCursor.this, dialogInterface);
                 }
             });
             this.creationLinkDialog.showDelayed(250L);
@@ -318,7 +369,7 @@ public class EditTextCaption extends EditTextBoldCursor {
             r2.show().setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda5
                 @Override // android.content.DialogInterface.OnShowListener
                 public final void onShow(DialogInterface dialogInterface) {
-                    EditTextCaption.lambda$makeSelectedUrl$5(EditTextBoldCursor.this, dialogInterface);
+                    EditTextCaption.lambda$makeSelectedUrl$7(EditTextBoldCursor.this, dialogInterface);
                 }
             });
         }
@@ -337,14 +388,14 @@ public class EditTextCaption extends EditTextBoldCursor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$makeSelectedUrl$0(EditTextBoldCursor editTextBoldCursor, TextView textView) {
+    public /* synthetic */ void lambda$makeSelectedUrl$2(EditTextBoldCursor editTextBoldCursor, TextView textView) {
         ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");
         boolean z = (TextUtils.isEmpty(editTextBoldCursor.getText()) || TextUtils.equals(editTextBoldCursor.getText().toString(), "http://")) && clipboardManager != null && clipboardManager.hasPrimaryClip();
         textView.animate().alpha(z ? 1.0f : 0.0f).scaleX(z ? 1.0f : 0.7f).scaleY(z ? 1.0f : 0.7f).setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT).setDuration(300L).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$makeSelectedUrl$1(EditTextBoldCursor editTextBoldCursor, Runnable runnable, View view) {
+    public /* synthetic */ void lambda$makeSelectedUrl$3(EditTextBoldCursor editTextBoldCursor, Runnable runnable, View view) {
         CharSequence charSequence;
         try {
             charSequence = ((ClipboardManager) getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(getContext());
@@ -360,7 +411,7 @@ public class EditTextCaption extends EditTextBoldCursor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$makeSelectedUrl$2(int i, int i2, EditTextBoldCursor editTextBoldCursor, AlertDialog alertDialog, int i3) {
+    public /* synthetic */ void lambda$makeSelectedUrl$4(int i, int i2, EditTextBoldCursor editTextBoldCursor, AlertDialog alertDialog, int i3) {
         Editable text = getText();
         CharacterStyle[] characterStyleArr = (CharacterStyle[]) text.getSpans(i, i2, CharacterStyle.class);
         if (characterStyleArr != null && characterStyleArr.length > 0) {
@@ -389,19 +440,19 @@ public class EditTextCaption extends EditTextBoldCursor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$makeSelectedUrl$3(DialogInterface dialogInterface) {
+    public /* synthetic */ void lambda$makeSelectedUrl$5(DialogInterface dialogInterface) {
         this.creationLinkDialog = null;
         requestFocus();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$makeSelectedUrl$4(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
+    public static /* synthetic */ void lambda$makeSelectedUrl$6(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
         editTextBoldCursor.requestFocus();
         AndroidUtilities.showKeyboard(editTextBoldCursor);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$makeSelectedUrl$5(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
+    public static /* synthetic */ void lambda$makeSelectedUrl$7(EditTextBoldCursor editTextBoldCursor, DialogInterface dialogInterface) {
         editTextBoldCursor.requestFocus();
         AndroidUtilities.showKeyboard(editTextBoldCursor);
     }
@@ -573,10 +624,14 @@ public class EditTextCaption extends EditTextBoldCursor {
             makeSelectedSpoiler();
             return true;
         }
-        if (i != R.id.menu_quote) {
+        if (i == R.id.menu_quote) {
+            makeSelectedQuote();
+            return true;
+        }
+        if (i != R.id.menu_date) {
             return false;
         }
-        makeSelectedQuote();
+        makeSelectedDate();
         return true;
     }
 
@@ -704,6 +759,9 @@ public class EditTextCaption extends EditTextBoldCursor {
             wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(R.id.menu_underline, LocaleController.getString(R.string.Underline)));
             wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(R.id.menu_link, LocaleController.getString(R.string.CreateLink)));
             wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(R.id.menu_regular, LocaleController.getString(R.string.Regular)));
+            if (BuildVars.SUPPORT_SEND_DATES) {
+                wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(R.id.menu_date, LocaleController.getString(R.string.FormattedDate)));
+            }
         }
     }
 

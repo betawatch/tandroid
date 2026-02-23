@@ -481,7 +481,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                     if (pack5 != 8) {
                         return -1;
                     }
-                    return NotificationCenter.proxySettingsChanged;
+                    return NotificationCenter.didSetNewWallpapper;
                 }
                 i5 += 12;
                 i6 -= 12;

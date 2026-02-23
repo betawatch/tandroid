@@ -42,6 +42,10 @@ public final class WindowInsetsAnimationCompat {
         }
     }
 
+    public int getTypeMask() {
+        return this.mImpl.getTypeMask();
+    }
+
     public float getInterpolatedFraction() {
         return this.mImpl.getInterpolatedFraction();
     }
@@ -137,6 +141,10 @@ public final class WindowInsetsAnimationCompat {
             this.mTypeMask = i;
             this.mInterpolator = interpolator;
             this.mDurationMillis = j;
+        }
+
+        public int getTypeMask() {
+            return this.mTypeMask;
         }
 
         public float getInterpolatedFraction() {
@@ -390,6 +398,13 @@ public final class WindowInsetsAnimationCompat {
 
         Impl30(int i, Interpolator interpolator, long j) {
             this(WindowInsetsAnimationCompat$Impl30$$ExternalSyntheticApiModelOutline0.m(i, interpolator, j));
+        }
+
+        @Override // androidx.core.view.WindowInsetsAnimationCompat.Impl
+        public int getTypeMask() {
+            int typeMask;
+            typeMask = this.mWrapped.getTypeMask();
+            return typeMask;
         }
 
         @Override // androidx.core.view.WindowInsetsAnimationCompat.Impl

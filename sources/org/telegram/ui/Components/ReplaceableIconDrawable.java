@@ -160,7 +160,7 @@ public class ReplaceableIconDrawable extends Drawable implements Animator.Animat
         } else {
             Drawable drawable = this.currentDrawable;
             if (drawable != null) {
-                drawable.setAlpha(NotificationCenter.cameraInitied);
+                drawable.setAlpha(NotificationCenter.closeOtherAppActivities);
                 this.currentDrawable.draw(canvas);
             }
         }
@@ -176,7 +176,7 @@ public class ReplaceableIconDrawable extends Drawable implements Animator.Animat
         }
         Drawable drawable2 = this.outDrawable;
         if (drawable2 != null) {
-            drawable2.setAlpha(NotificationCenter.cameraInitied);
+            drawable2.setAlpha(NotificationCenter.closeOtherAppActivities);
             this.outDrawable.draw(canvas);
         }
     }

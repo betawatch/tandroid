@@ -126,10 +126,10 @@ public class WallpaperBitmapProvider {
         int i4 = 0;
         for (int i5 = 0; i5 < i3; i5++) {
             int i6 = iArr[i5];
-            j4 += (i6 >>> 24) & NotificationCenter.cameraInitied;
-            j3 += (i6 >> 16) & NotificationCenter.cameraInitied;
-            j2 += (i6 >> 8) & NotificationCenter.cameraInitied;
-            j += i6 & NotificationCenter.cameraInitied;
+            j4 += (i6 >>> 24) & NotificationCenter.closeOtherAppActivities;
+            j3 += (i6 >> 16) & NotificationCenter.closeOtherAppActivities;
+            j2 += (i6 >> 8) & NotificationCenter.closeOtherAppActivities;
+            j += i6 & NotificationCenter.closeOtherAppActivities;
             i4++;
         }
         if (i4 == 0) {

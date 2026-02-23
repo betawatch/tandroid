@@ -205,7 +205,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     private boolean botButtonProgressWasVisible;
     private boolean botButtonWasVisible;
     private float botMainButtonOffsetY;
-    private TextView botMainButtonTextView;
+    private AnimatedTextView botMainButtonTextView;
     private RadialProgressView botProgressView;
     private BlurredBackgroundWithFadeDrawable bottomFadeDrawable;
     private View bottomFadeView;
@@ -481,7 +481,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         }
 
         @Override // org.telegram.ui.web.BotWebViewContainer.Delegate
-        public void onSetupSecondaryButton(boolean z, boolean z2, String str, int i, int i2, boolean z3, boolean z4, String str2) {
+        public void onSetupSecondaryButton(boolean z, boolean z2, String str, long j, int i, int i2, boolean z3, boolean z4, String str2) {
         }
 
         @Override // org.telegram.ui.web.BotWebViewContainer.Delegate
@@ -553,7 +553,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(200L);
             duration.setInterpolator(CubicBezierInterpolator.DEFAULT);
             final ChatAttachAlertBotWebViewLayout chatAttachAlertBotWebViewLayout = this.val$webViewLayout;
-            duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$1$$ExternalSyntheticLambda3
+            duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$1$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     ChatAttachAlert.1.this.lambda$onWebAppSetActionBarColor$1(color, i2, chatAttachAlertBotWebViewLayout, botWebViewMenuContainer$ActionBarColorsAnimating, valueAnimator);
@@ -670,7 +670,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             bundle.putBoolean("allowBots", list.contains("bots"));
             DialogsActivity dialogsActivity = new DialogsActivity(bundle);
             final OverlayActionBarLayoutDialog overlayActionBarLayoutDialog = new OverlayActionBarLayoutDialog(ChatAttachAlert.this.getContext(), ((BottomSheet) ChatAttachAlert.this).resourcesProvider);
-            dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$1$$ExternalSyntheticLambda2
+            dialogsActivity.setDelegate(new DialogsActivity.DialogsActivityDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlert$1$$ExternalSyntheticLambda1
                 @Override // org.telegram.ui.DialogsActivity.DialogsActivityDelegate
                 public /* synthetic */ boolean canSelectStories() {
                     return DialogsActivity.DialogsActivityDelegate.-CC.$default$canSelectStories(this);
@@ -716,14 +716,23 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         }
 
         @Override // org.telegram.ui.web.BotWebViewContainer.Delegate
-        public void onSetupMainButton(final boolean z, boolean z2, String str, int i, int i2, final boolean z3, boolean z4) {
+        public void onSetupMainButton(final boolean z, boolean z2, String str, long j, int i, int i2, final boolean z3, boolean z4) {
             AttachAlertLayout attachAlertLayout = ChatAttachAlert.this.currentAttachLayout;
             ChatAttachAlertBotWebViewLayout chatAttachAlertBotWebViewLayout = this.val$webViewLayout;
             if (attachAlertLayout == chatAttachAlertBotWebViewLayout) {
                 if (chatAttachAlertBotWebViewLayout.isBotButtonAvailable() || this.val$startCommand != null) {
                     ChatAttachAlert.this.botMainButtonTextView.setClickable(z2);
-                    ChatAttachAlert.this.botMainButtonTextView.setText(str);
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                    if (j == 0) {
+                        ChatAttachAlert.this.botMainButtonTextView.setText(str);
+                    } else {
+                        spannableStringBuilder.append((CharSequence) "* ");
+                        spannableStringBuilder.append((CharSequence) str);
+                        spannableStringBuilder.setSpan(new AnimatedEmojiSpan(j, 1.4f, ChatAttachAlert.this.botMainButtonTextView.getPaint().getFontMetricsInt()), 0, 1, 33);
+                        ChatAttachAlert.this.botMainButtonTextView.setText(spannableStringBuilder);
+                    }
                     ChatAttachAlert.this.botMainButtonTextView.setTextColor(i2);
+                    ChatAttachAlert.this.botMainButtonTextView.setEmojiColor(i2);
                     ChatAttachAlert.this.botMainButtonTextView.setBackground(BotWebViewContainer.getMainButtonRippleDrawable(i));
                     if (ChatAttachAlert.this.botButtonWasVisible != z) {
                         ChatAttachAlert.this.botButtonWasVisible = z;
@@ -733,7 +742,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                         }
                         ValueAnimator duration = ValueAnimator.ofFloat(z ? 0.0f : 1.0f, z ? 1.0f : 0.0f).setDuration(250L);
                         this.botButtonAnimator = duration;
-                        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$1$$ExternalSyntheticLambda1
+                        duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$1$$ExternalSyntheticLambda3
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                                 ChatAttachAlert.1.this.lambda$onSetupMainButton$6(valueAnimator2);
@@ -1804,7 +1813,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 canvas.save();
                 canvas.clipRect(0.0f, 0.0f, getWidth(), getHeight() * getAlpha());
                 canvas.clipPath(this.path);
-                canvas.saveLayerAlpha(rectF4, NotificationCenter.cameraInitied, 31);
+                canvas.saveLayerAlpha(rectF4, NotificationCenter.closeOtherAppActivities, 31);
                 super.dispatchDraw(canvas);
                 rectF4.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop() + AndroidUtilities.dp(6.0f));
                 this.clip.draw(canvas, rectF4, 1, 1.0f);
@@ -2003,16 +2012,15 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 return lambda$new$15;
             }
         });
-        TextView textView3 = new TextView(context);
-        this.botMainButtonTextView = textView3;
-        textView3.setVisibility(8);
+        AnimatedTextView animatedTextView = new AnimatedTextView(context, true, false, true);
+        this.botMainButtonTextView = animatedTextView;
+        animatedTextView.setVisibility(8);
         this.botMainButtonTextView.setAlpha(0.0f);
-        this.botMainButtonTextView.setSingleLine();
         this.botMainButtonTextView.setGravity(17);
         this.botMainButtonTextView.setTypeface(AndroidUtilities.bold());
         int dp = AndroidUtilities.dp(16.0f);
         this.botMainButtonTextView.setPadding(dp, 0, dp, 0);
-        this.botMainButtonTextView.setTextSize(1, 14.0f);
+        this.botMainButtonTextView.setTextSize(AndroidUtilities.dp(14.0f));
         this.botMainButtonTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -2065,7 +2073,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 this.path.addRoundRect(rectF4, dp2, dp2, Path.Direction.CW);
                 canvas.save();
                 canvas.clipPath(this.path);
-                canvas.saveLayerAlpha(rectF4, NotificationCenter.cameraInitied, 31);
+                canvas.saveLayerAlpha(rectF4, NotificationCenter.closeOtherAppActivities, 31);
                 super.dispatchDraw(canvas);
                 rectF4.set(getPaddingLeft(), f, getWidth() - getPaddingRight(), dp3 + AndroidUtilities.dp(6.0f));
                 this.clip.draw(canvas, rectF4, 1, 1.0f);
@@ -5785,7 +5793,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         while (it.hasNext()) {
             ListAnimator.Entry entry = (ListAnimator.Entry) it.next();
             long longValue = ((Long) entry.item).longValue();
-            if (longValue == 3 || longValue == 5 || longValue == 6 || longValue == 9 || longValue == 11 || longValue == 12) {
+            if (longValue == 3 || longValue == 4 || longValue == 5 || longValue == 6 || longValue == 9 || longValue == 11 || longValue == 12) {
                 f += entry.getVisibility();
             }
         }
@@ -6360,7 +6368,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     }
 
     private void setNavBarAlpha(float f) {
-        int alphaComponent = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.cameraInitied, Math.max(0, (int) (f * 255.0f))));
+        int alphaComponent = ColorUtils.setAlphaComponent(getThemedColor(Theme.key_windowBackgroundGray), Math.min(NotificationCenter.closeOtherAppActivities, Math.max(0, (int) (f * 255.0f))));
         this.navBarColor = alphaComponent;
         AndroidUtilities.setNavigationBarColor((Dialog) this, alphaComponent, false);
         AndroidUtilities.setLightNavigationBar(this, ((double) AndroidUtilities.computePerceivedBrightness(this.navBarColor)) > 0.721d);

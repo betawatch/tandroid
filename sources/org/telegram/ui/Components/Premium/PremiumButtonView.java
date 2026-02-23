@@ -262,7 +262,7 @@ public class PremiumButtonView extends FrameLayout implements Loadable {
                 float f3 = this.radius;
                 canvas.drawRoundRect(rectF, f3, f3, PremiumGradient.getInstance().getMainGradientPaint());
             } else {
-                this.paintOverlayPaint.setAlpha(NotificationCenter.cameraInitied);
+                this.paintOverlayPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
                 float f4 = this.radius;
                 canvas.drawRoundRect(rectF, f4, f4, this.paintOverlayPaint);
             }

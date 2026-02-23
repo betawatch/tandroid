@@ -903,9 +903,9 @@ public class NumberPicker extends LinearLayout {
         }
         this.mPreviousScrollerY = 0;
         if (z) {
-            this.mFlingScroller.startScroll(0, 0, 0, -this.mSelectorElementHeight, NotificationCenter.currentUserPremiumStatusChanged);
+            this.mFlingScroller.startScroll(0, 0, 0, -this.mSelectorElementHeight, NotificationCenter.onUserRingtonesUpdated);
         } else {
-            this.mFlingScroller.startScroll(0, 0, 0, this.mSelectorElementHeight, NotificationCenter.currentUserPremiumStatusChanged);
+            this.mFlingScroller.startScroll(0, 0, 0, this.mSelectorElementHeight, NotificationCenter.onUserRingtonesUpdated);
         }
         invalidate();
     }

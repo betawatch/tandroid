@@ -14,7 +14,7 @@ public abstract class Blur3Utils {
     private static final RectF captureTmpChildPos = new RectF();
 
     public static void captureRelativeParent(IBlur3Capture iBlur3Capture, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup) {
-        captureRelativeParent(iBlur3Capture, canvas, rectF, view, viewGroup, NotificationCenter.cameraInitied);
+        captureRelativeParent(iBlur3Capture, canvas, rectF, view, viewGroup, NotificationCenter.closeOtherAppActivities);
     }
 
     public static void captureRelativeParent(IBlur3Capture iBlur3Capture, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup, int i) {

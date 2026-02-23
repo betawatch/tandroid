@@ -1218,8 +1218,8 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
 
     View findOneVisibleChild(int i, int i2, boolean z, boolean z2) {
         ensureLayoutState();
-        int i3 = NotificationCenter.chatlistFolderUpdate;
-        int i4 = z ? 24579 : NotificationCenter.chatlistFolderUpdate;
+        int i3 = NotificationCenter.storiesDraftsUpdated;
+        int i4 = z ? 24579 : NotificationCenter.storiesDraftsUpdated;
         if (!z2) {
             i3 = 0;
         }

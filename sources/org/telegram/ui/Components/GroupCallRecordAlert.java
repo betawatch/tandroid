@@ -197,7 +197,7 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
             protected void onDraw(Canvas canvas) {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                this.gradientPaint[GroupCallRecordAlert.this.currentPage].setAlpha(NotificationCenter.cameraInitied);
+                this.gradientPaint[GroupCallRecordAlert.this.currentPage].setAlpha(NotificationCenter.closeOtherAppActivities);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.gradientPaint[GroupCallRecordAlert.this.currentPage]);
                 if (GroupCallRecordAlert.this.pageOffset > 0.0f) {
                     int i2 = GroupCallRecordAlert.this.currentPage + 1;
@@ -271,7 +271,7 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(View view) {
         onStartRecord(this.currentPage);
-        dismiss();
+        lambda$new$0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -390,7 +390,7 @@ public abstract class GroupCallRecordAlert extends BottomSheet {
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$instantiateItem$0(int i, View view) {
             GroupCallRecordAlert.this.onStartRecord(i);
-            GroupCallRecordAlert.this.dismiss();
+            GroupCallRecordAlert.this.lambda$new$0();
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter

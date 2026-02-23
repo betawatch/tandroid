@@ -104,7 +104,7 @@ public final class zzi implements SessionManagerListener {
         zzlVar2 = zzkVar.zzh;
         zzno zza = zzmVar.zza(zzlVar2);
         zzgVar = this.zza.zzb;
-        zzgVar.zze(zza, 222);
+        zzgVar.zze(zza, NotificationCenter.starSubscriptionsLoaded);
         r4.zzh.zzc(this.zza.zzg);
         this.zza.zzu();
     }

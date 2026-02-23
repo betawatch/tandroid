@@ -145,11 +145,18 @@ public class ContentPreviewViewer {
     public interface ContentPreviewViewerDelegate {
 
         public abstract /* synthetic */ class -CC {
+            public static void $default$addCaptionToGif(ContentPreviewViewerDelegate contentPreviewViewerDelegate, Object obj, Object obj2, boolean z, int i, int i2) {
+            }
+
             public static void $default$addToFavoriteSelected(ContentPreviewViewerDelegate contentPreviewViewerDelegate, String str) {
             }
 
             public static boolean $default$can(ContentPreviewViewerDelegate contentPreviewViewerDelegate) {
                 return true;
+            }
+
+            public static boolean $default$canAddCaption(ContentPreviewViewerDelegate contentPreviewViewerDelegate, TLRPC.Document document) {
+                return false;
             }
 
             public static boolean $default$canDeleteSticker(ContentPreviewViewerDelegate contentPreviewViewerDelegate, TLRPC.Document document) {
@@ -265,9 +272,13 @@ public class ContentPreviewViewer {
             }
         }
 
+        void addCaptionToGif(Object obj, Object obj2, boolean z, int i, int i2);
+
         void addToFavoriteSelected(String str);
 
         boolean can();
+
+        boolean canAddCaption(TLRPC.Document document);
 
         boolean canDeleteSticker(TLRPC.Document document);
 
@@ -360,7 +371,7 @@ public class ContentPreviewViewer {
         1() {
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:42:0x0e1b  */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x0e50  */
         @Override // java.lang.Runnable
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -541,6 +552,11 @@ public class ContentPreviewViewer {
                                 arrayList4.add(LocaleController.getString(R.string.Schedule));
                                 arrayList6.add(Integer.valueOf(R.drawable.msg_autodelete));
                                 arrayList5.add(3);
+                            }
+                            if (ContentPreviewViewer.this.currentDocument != null && ContentPreviewViewer.this.delegate.canAddCaption(ContentPreviewViewer.this.currentDocument)) {
+                                arrayList4.add(LocaleController.getString(R.string.AddACaption));
+                                arrayList6.add(Integer.valueOf(R.drawable.outline_caption_24));
+                                arrayList5.add(11);
                             }
                             if (ContentPreviewViewer.this.currentDocument != null) {
                                 z = MediaDataController.getInstance(ContentPreviewViewer.this.currentAccount).hasRecentGif(ContentPreviewViewer.this.currentDocument);
@@ -1054,6 +1070,8 @@ public class ContentPreviewViewer {
                         ContentPreviewViewer.1.lambda$run$7(ContentPreviewViewer.ContentPreviewViewerDelegate.this, document, botInlineResult, obj, z, i, i2);
                     }
                 }, ContentPreviewViewer.this.resourcesProvider);
+            } else if (((Integer) arrayList.get(intValue)).intValue() == 11) {
+                ContentPreviewViewer.this.delegate.addCaptionToGif(ContentPreviewViewer.this.currentDocument != null ? ContentPreviewViewer.this.currentDocument : ContentPreviewViewer.this.inlineResult, ContentPreviewViewer.this.parentObject, true, 0, 0);
             }
             ContentPreviewViewer.this.dismissPopupWindow();
         }
@@ -1218,7 +1236,7 @@ public class ContentPreviewViewer {
             if (launchActivity.getActionBarLayout() != null && launchActivity.getActionBarLayout().getLastFragment() != null) {
                 launchActivity.getActionBarLayout().getLastFragment().dismissCurrentDialog();
             }
-            launchActivity.lambda$runLinkRequest$97(new PremiumPreviewFragment(PremiumPreviewFragment.featureTypeToServerString(5)));
+            launchActivity.lambda$runLinkRequest$99(new PremiumPreviewFragment(PremiumPreviewFragment.featureTypeToServerString(5)));
         }
         this.menuVisible = false;
         this.containerView.invalidate();

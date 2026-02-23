@@ -467,6 +467,11 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didPressAdmin(ChatMessageCell chatMessageCell3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAdmin(this, chatMessageCell3);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean didPressAnimatedEmoji(ChatMessageCell chatMessageCell3, AnimatedEmojiSpan animatedEmojiSpan) {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAnimatedEmoji(this, chatMessageCell3, animatedEmojiSpan);
                 }
@@ -717,8 +722,18 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean isAdmin(long j) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isAdmin(this, j);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean isLandscape() {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isLandscape(this);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean isOwner(long j) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isOwner(this, j);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -872,6 +887,11 @@ public class TodoItemMenu extends Dialog {
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ void didPressAboutRevenueSharingAds() {
                     ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAboutRevenueSharingAds(this);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void didPressAdmin(ChatMessageCell chatMessageCell6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAdmin(this, chatMessageCell6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1130,8 +1150,18 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean isAdmin(long j) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isAdmin(this, j);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean isLandscape() {
                     return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isLandscape(this);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ boolean isOwner(long j) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isOwner(this, j);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate

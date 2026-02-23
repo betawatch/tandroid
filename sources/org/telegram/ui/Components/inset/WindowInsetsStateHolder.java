@@ -2,6 +2,7 @@ package org.telegram.ui.Components.inset;
 
 import android.view.View;
 import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import me.vkryl.android.animator.FactorAnimator;
 import me.vkryl.android.animator.VariableFloat;
@@ -15,7 +16,6 @@ import org.telegram.ui.Components.inset.WindowInsetsInAppController;
 
 /* loaded from: classes5.dex */
 public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInsetsInAppController, WindowAnimatedInsetsProvider.Listener {
-    private int animatedImeInset;
     private WindowAnimatedInsetsProvider animatedInsetsProvider;
     private View animatedInsetsProviderTarget;
     private int inAppKeyboardHeight;
@@ -39,6 +39,11 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
             WindowInsetsStateHolder.this.lambda$new$0();
         }
     };
+
+    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
+    public /* synthetic */ void onAnimatedInsetsStarted() {
+        WindowAnimatedInsetsProvider.Listener.-CC.$default$onAnimatedInsetsStarted(this);
+    }
 
     @Override // org.telegram.ui.Components.inset.WindowInsetsInAppController
     public /* synthetic */ void requestInAppKeyboardHeightIncludeNavbar(int i) {
@@ -89,7 +94,10 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
     }
 
     public void setInsets(WindowInsetsCompat windowInsetsCompat) {
-        boolean z = this.lastInsets != null;
+        setInsets(windowInsetsCompat, this.lastInsets != null);
+    }
+
+    private void setInsets(WindowInsetsCompat windowInsetsCompat, boolean z) {
         this.lastInsets = windowInsetsCompat;
         Insets insets = windowInsetsCompat != null ? windowInsetsCompat.getInsets(WindowInsetsCompat.Type.systemBars()) : Insets.NONE;
         Insets insets2 = windowInsetsCompat != null ? windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime()) : Insets.NONE;
@@ -156,24 +164,15 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
 
     @Override // org.telegram.ui.Components.inset.WindowInsetsProvider
     public float getAnimatedMaxBottomInset() {
-        if (this.animatedInsetsProvider != null) {
-            return Math.max(this.animatedImeInset, this.insetsMaxRect.getBottom());
-        }
         return this.insetsMaxRect.getBottom();
     }
 
     public int getCurrentMaxBottomInset() {
-        if (this.animatedInsetsProvider != null) {
-            return Math.max(this.animatedImeInset, Math.max(getInsets(WindowInsetsCompat.Type.ime() | WindowInsetsCompat.Type.systemBars()).bottom, this.inAppKeyboardHeight));
-        }
         return Math.max(getInsets(WindowInsetsCompat.Type.ime() | WindowInsetsCompat.Type.systemBars()).bottom, this.inAppKeyboardHeight);
     }
 
     @Override // org.telegram.ui.Components.inset.WindowInsetsProvider
     public float getAnimatedImeBottomInset() {
-        if (this.animatedInsetsProvider != null) {
-            return Math.max(this.animatedImeInset, this.insetsImeRect.getBottom());
-        }
         return this.insetsImeRect.getBottom();
     }
 
@@ -226,7 +225,24 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
 
     @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
     public void onAnimatedInsetsChanged(View view, WindowInsetsCompat windowInsetsCompat) {
-        this.animatedImeInset = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.ime()).bottom;
-        this.onUpdateListener.run();
+        setInsets(windowInsetsCompat, false);
+    }
+
+    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
+    public void onAnimatedInsetsFinished() {
+        View view = this.animatedInsetsProviderTarget;
+        if (view != null) {
+            view.postOnAnimation(new Runnable() { // from class: org.telegram.ui.Components.inset.WindowInsetsStateHolder$$ExternalSyntheticLambda2
+                @Override // java.lang.Runnable
+                public final void run() {
+                    WindowInsetsStateHolder.this.lambda$onAnimatedInsetsFinished$1();
+                }
+            });
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$onAnimatedInsetsFinished$1() {
+        setInsets(ViewCompat.getRootWindowInsets(this.animatedInsetsProviderTarget), false);
     }
 }

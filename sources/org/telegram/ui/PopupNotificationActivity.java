@@ -1044,13 +1044,13 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 frameLayout2.setBackgroundDrawable(Theme.getSelectorDrawable(false));
                 frameLayout.addView(frameLayout2, LayoutHelper.createFrame(-1, -1.0f));
                 BackupImageView backupImageView = new BackupImageView(this);
-                backupImageView.setTag(Integer.valueOf(NotificationCenter.topicsDidLoaded));
+                backupImageView.setTag(Integer.valueOf(NotificationCenter.activityPermissionsGranted));
                 frameLayout2.addView(backupImageView, LayoutHelper.createFrame(-1, -1.0f));
                 TextView textView = new TextView(this);
                 textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
                 textView.setTextSize(1, 16.0f);
                 textView.setGravity(17);
-                textView.setTag(Integer.valueOf(NotificationCenter.chatSwitchedForum));
+                textView.setTag(Integer.valueOf(NotificationCenter.topicsDidLoaded));
                 frameLayout2.addView(textView, LayoutHelper.createFrame(-1, -2, 17));
                 frameLayout.setTag(2);
                 frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda6
@@ -1061,8 +1061,8 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 });
             }
             ViewGroup viewGroup4 = frameLayout;
-            TextView textView2 = (TextView) viewGroup4.findViewWithTag(Integer.valueOf(NotificationCenter.chatSwitchedForum));
-            BackupImageView backupImageView2 = (BackupImageView) viewGroup4.findViewWithTag(Integer.valueOf(NotificationCenter.topicsDidLoaded));
+            TextView textView2 = (TextView) viewGroup4.findViewWithTag(Integer.valueOf(NotificationCenter.topicsDidLoaded));
+            BackupImageView backupImageView2 = (BackupImageView) viewGroup4.findViewWithTag(Integer.valueOf(NotificationCenter.activityPermissionsGranted));
             backupImageView2.setAspectFit(true);
             int i5 = messageObject.type;
             if (i5 == 1) {
@@ -1110,7 +1110,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             if (this.audioViews.size() > 0) {
                 ViewGroup viewGroup5 = (ViewGroup) this.audioViews.get(0);
                 this.audioViews.remove(0);
-                popupAudioView = (PopupAudioView) viewGroup5.findViewWithTag(Integer.valueOf(NotificationCenter.currentUserPremiumStatusChanged));
+                popupAudioView = (PopupAudioView) viewGroup5.findViewWithTag(Integer.valueOf(NotificationCenter.onUserRingtonesUpdated));
                 viewGroup3 = viewGroup5;
             } else {
                 FrameLayout frameLayout3 = new FrameLayout(this);
@@ -1121,7 +1121,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 FrameLayout frameLayout5 = new FrameLayout(this);
                 frameLayout4.addView(frameLayout5, LayoutHelper.createFrame(-1, -2.0f, 17, 20.0f, 0.0f, 20.0f, 0.0f));
                 PopupAudioView popupAudioView2 = new PopupAudioView(this);
-                popupAudioView2.setTag(Integer.valueOf(NotificationCenter.currentUserPremiumStatusChanged));
+                popupAudioView2.setTag(Integer.valueOf(NotificationCenter.onUserRingtonesUpdated));
                 frameLayout5.addView(popupAudioView2);
                 frameLayout3.setTag(3);
                 frameLayout3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.PopupNotificationActivity$$ExternalSyntheticLambda7
@@ -1162,7 +1162,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 });
                 TextView textView3 = new TextView(this);
                 textView3.setTextSize(1, 16.0f);
-                textView3.setTag(Integer.valueOf(NotificationCenter.premiumPromoUpdated));
+                textView3.setTag(Integer.valueOf(NotificationCenter.currentUserPremiumStatusChanged));
                 int i6 = Theme.key_windowBackgroundWhiteBlackText;
                 textView3.setTextColor(Theme.getColor(i6));
                 textView3.setLinkTextColor(Theme.getColor(i6));
@@ -1171,7 +1171,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 frameLayout6.setTag(1);
                 viewGroup2 = frameLayout6;
             }
-            TextView textView4 = (TextView) viewGroup2.findViewWithTag(Integer.valueOf(NotificationCenter.premiumPromoUpdated));
+            TextView textView4 = (TextView) viewGroup2.findViewWithTag(Integer.valueOf(NotificationCenter.currentUserPremiumStatusChanged));
             textView4.setTextSize(2, SharedConfig.fontSize);
             textView4.setText(messageObject.messageText);
             viewGroup = viewGroup2;
@@ -1745,7 +1745,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 int childCount = viewGroup.getChildCount();
                 while (i3 < childCount) {
                     View childAt = this.messageContainer.getChildAt(i3);
-                    if (((Integer) childAt.getTag()).intValue() == 3 && (messageObject2 = (popupAudioView2 = (PopupAudioView) childAt.findViewWithTag(Integer.valueOf(NotificationCenter.currentUserPremiumStatusChanged))).getMessageObject()) != null && messageObject2.currentAccount == i2 && messageObject2.getId() == num.intValue()) {
+                    if (((Integer) childAt.getTag()).intValue() == 3 && (messageObject2 = (popupAudioView2 = (PopupAudioView) childAt.findViewWithTag(Integer.valueOf(NotificationCenter.onUserRingtonesUpdated))).getMessageObject()) != null && messageObject2.currentAccount == i2 && messageObject2.getId() == num.intValue()) {
                         popupAudioView2.updateButtonState();
                         return;
                     }
@@ -1762,7 +1762,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 int childCount2 = viewGroup2.getChildCount();
                 while (i3 < childCount2) {
                     View childAt2 = this.messageContainer.getChildAt(i3);
-                    if (((Integer) childAt2.getTag()).intValue() == 3 && (messageObject = (popupAudioView = (PopupAudioView) childAt2.findViewWithTag(Integer.valueOf(NotificationCenter.currentUserPremiumStatusChanged))).getMessageObject()) != null && messageObject.currentAccount == i2 && messageObject.getId() == num2.intValue()) {
+                    if (((Integer) childAt2.getTag()).intValue() == 3 && (messageObject = (popupAudioView = (PopupAudioView) childAt2.findViewWithTag(Integer.valueOf(NotificationCenter.onUserRingtonesUpdated))).getMessageObject()) != null && messageObject.currentAccount == i2 && messageObject.getId() == num2.intValue()) {
                         popupAudioView.updateProgress();
                         return;
                     }
@@ -1778,7 +1778,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 int childCount3 = viewGroup3.getChildCount();
                 while (i3 < childCount3) {
                     View childAt3 = this.messageContainer.getChildAt(i3);
-                    if (((Integer) childAt3.getTag()).intValue() == 1 && (textView = (TextView) childAt3.findViewWithTag(Integer.valueOf(NotificationCenter.premiumPromoUpdated))) != null) {
+                    if (((Integer) childAt3.getTag()).intValue() == 1 && (textView = (TextView) childAt3.findViewWithTag(Integer.valueOf(NotificationCenter.currentUserPremiumStatusChanged))) != null) {
                         textView.invalidate();
                     }
                     i3++;

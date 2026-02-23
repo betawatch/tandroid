@@ -182,6 +182,16 @@ public class GroupCreateActivity extends BaseFragment implements NotificationCen
         return true;
     }
 
+    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
+    public /* synthetic */ void onAnimatedInsetsFinished() {
+        WindowAnimatedInsetsProvider.Listener.-CC.$default$onAnimatedInsetsFinished(this);
+    }
+
+    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
+    public /* synthetic */ void onAnimatedInsetsStarted() {
+        WindowAnimatedInsetsProvider.Listener.-CC.$default$onAnimatedInsetsStarted(this);
+    }
+
     protected void onCallUsersSelected(HashSet hashSet, boolean z) {
     }
 

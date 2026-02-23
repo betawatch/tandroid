@@ -1438,7 +1438,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             }
         };
         this.bottomFadeView = view;
-        this.containerView.addView(view, LayoutHelper.createFrame(-1, NotificationCenter.currentUserPremiumStatusChanged, 80));
+        this.containerView.addView(view, LayoutHelper.createFrame(-1, NotificationCenter.onUserRingtonesUpdated, 80));
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 51);
         layoutParams.topMargin = AndroidUtilities.dp((!this.darkTheme || this.linkToCopy[1] == null) ? 58.0f : 111.0f);
         this.shadow[0] = new View(context);

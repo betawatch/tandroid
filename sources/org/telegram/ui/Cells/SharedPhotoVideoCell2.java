@@ -104,6 +104,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
     public boolean isStory;
     public boolean isStoryPinned;
     public boolean isStoryUploading;
+    public boolean isTop;
     private SpoilerEffect mediaSpoilerEffect;
     private SpoilerEffect2 mediaSpoilerEffect2;
     private Path path;
@@ -359,7 +360,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             i6 = (((int) (AndroidUtilities.displaySize.x / AndroidUtilities.density)) * 3) / 5;
         }
         String filterString = this.sharedResources.getFilterString(i6);
-        int photoSize = (i3 <= 2 || z) ? AndroidUtilities.getPhotoSize() : NotificationCenter.chatlistFolderUpdate;
+        int photoSize = (i3 <= 2 || z) ? AndroidUtilities.getPhotoSize() : NotificationCenter.storiesDraftsUpdated;
         this.videoText = null;
         this.videoInfoLayot = null;
         this.showVideoLayout = false;
@@ -573,18 +574,18 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             float f2 = this.crossfadeToColumnsCount;
             if (f2 == 9.0f || this.currentParentColumnsCount == 9) {
                 if (f2 == 9.0f) {
-                    dpf2 = AndroidUtilities.dpf2(0.5f) * this.crossfadeProgress;
-                    dpf22 = AndroidUtilities.dpf2(1.0f);
+                    dpf2 = AndroidUtilities.dpf2(1.0f) * this.crossfadeProgress;
+                    dpf22 = AndroidUtilities.dpf2(2.0f);
                     f = this.crossfadeProgress;
                 } else {
-                    dpf2 = AndroidUtilities.dpf2(1.0f) * this.crossfadeProgress;
-                    dpf22 = AndroidUtilities.dpf2(0.5f);
+                    dpf2 = AndroidUtilities.dpf2(2.0f) * this.crossfadeProgress;
+                    dpf22 = AndroidUtilities.dpf2(1.0f);
                     f = this.crossfadeProgress;
                 }
                 return dpf2 + (dpf22 * (1.0f - f));
             }
         }
-        return this.currentParentColumnsCount == 9 ? AndroidUtilities.dpf2(0.5f) : AndroidUtilities.dpf2(1.0f);
+        return this.currentParentColumnsCount == 9 ? AndroidUtilities.dpf2(1.0f) : AndroidUtilities.dpf2(2.0f);
     }
 
     @Override // android.view.View
@@ -593,291 +594,337 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
         drawImpl(canvas, false, 1.0f, 1.0f, 1.0f);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:126:0x0591, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:130:0x05e4, code lost:
     
-        if (r1.getProgress() != 0.0f) goto L174;
+        if (r1.getProgress() != 0.0f) goto L179;
      */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x0511  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x05c2  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x05d1  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x05d8  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x05c8  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x0508  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x024b  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0296  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void drawImpl(Canvas canvas, boolean z, float f, float f2, float f3) {
         float f4;
         float f5;
-        ImageReceiver imageReceiver;
-        int i;
-        ImageReceiver imageReceiver2;
         float f6;
-        int i2;
-        float dp;
         float f7;
-        int i3;
+        float f8;
+        float f9;
+        int dp;
+        float f10;
+        float f11;
+        int i;
+        CheckBoxBase checkBoxBase;
+        float dp2;
+        float f12;
+        int i2;
         FlickerLoadingView flickerLoadingView;
         float padding = getPadding() * f;
-        boolean z2 = this.isStory;
-        float f8 = (z2 && this.isFirst) ? 0.0f : padding;
-        float f9 = (z2 && this.isLast) ? 0.0f : padding;
-        float f10 = this.animatedReordering.set(this.reordering);
-        float measuredWidth = ((getMeasuredWidth() - f8) - f9) * this.imageScale;
-        float f11 = padding * 2.0f;
-        float measuredHeight = (getMeasuredHeight() - f11) * this.imageScale;
-        ImageReceiver imageReceiver3 = z ? this.imageReceiverFullSize : this.imageReceiver;
-        imageReceiver3.setAlpha(f2);
+        float f13 = this.isFirst ? padding : 0.0f;
+        float f14 = this.animatedReordering.set(this.reordering);
+        float measuredWidth = ((getMeasuredWidth() - f13) - padding) * this.imageScale;
+        float measuredHeight = ((getMeasuredHeight() - 0.0f) - padding) * this.imageScale;
+        ImageReceiver imageReceiver = z ? this.imageReceiverFullSize : this.imageReceiver;
+        imageReceiver.setAlpha(f2);
         if (this.crossfadeProgress > 0.5f && this.crossfadeToColumnsCount != 9.0f && this.currentParentColumnsCount != 9) {
-            float f12 = f * 2.0f;
-            measuredWidth -= f12;
-            measuredHeight -= f12;
+            float f15 = f * 2.0f;
+            measuredWidth -= f15;
+            measuredHeight -= f15;
         }
-        float f13 = measuredWidth;
-        float f14 = measuredHeight;
-        if ((this.currentMessageObject != null || this.style == 1) && imageReceiver3.hasBitmapImage() && imageReceiver3.getCurrentAlpha() == 1.0f && this.imageAlpha == 1.0f) {
-            f4 = f14;
-            f5 = f13;
-            imageReceiver = imageReceiver3;
-            i = 9;
+        float f16 = measuredWidth;
+        float f17 = measuredHeight;
+        if ((this.currentMessageObject != null || this.style == 1) && imageReceiver.hasBitmapImage() && imageReceiver.getCurrentAlpha() == 1.0f && this.imageAlpha == 1.0f) {
+            f4 = f17;
+            f5 = 1.0f;
         } else {
             if (getParent() == null || (flickerLoadingView = this.globalGradientView) == null) {
-                f4 = f14;
-                f5 = f13;
-                imageReceiver = imageReceiver3;
-                i = 9;
+                f4 = f17;
+                f5 = 1.0f;
             } else {
                 flickerLoadingView.setParentSize(((View) getParent()).getMeasuredWidth(), getMeasuredHeight(), -getX());
                 this.globalGradientView.updateColors();
                 this.globalGradientView.updateGradient();
-                float f15 = (this.crossfadeProgress <= 0.5f || this.crossfadeToColumnsCount == 9.0f || this.currentParentColumnsCount == 9) ? 0.0f : 1.0f;
-                float f16 = f8 + f15;
-                float f17 = padding + f15;
-                f4 = f14;
-                f5 = f13;
-                i = 9;
-                imageReceiver = imageReceiver3;
-                canvas.drawRect(f16, f17, f16 + f13, f17 + f14, this.globalGradientView.getPaint());
+                float f18 = (this.crossfadeProgress <= 0.5f || this.crossfadeToColumnsCount == 9.0f || this.currentParentColumnsCount == 9) ? 0.0f : 1.0f;
+                float f19 = f13 + f18;
+                float f20 = padding + f18;
+                f5 = 1.0f;
+                f4 = f17;
+                canvas.drawRect(f19, f20, f19 + f16, f20 + f17, this.globalGradientView.getPaint());
             }
             invalidate();
         }
-        float f18 = this.imageAlpha;
-        if (f18 != 1.0f) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, f8 + f9 + f5, f11 + f4, (int) (f18 * 255.0f), 31);
+        float f21 = this.imageAlpha;
+        if (f21 != f5) {
+            float f22 = f4;
+            f7 = f22;
+            f6 = f16;
+            canvas.saveLayerAlpha(0.0f, 0.0f, f13 + padding + f16, padding + 0.0f + f22, (int) (f21 * 255.0f), 31);
         } else {
+            f6 = f16;
+            f7 = f4;
             canvas.save();
-        }
-        CheckBoxBase checkBoxBase = this.checkBoxBase;
-        if (((checkBoxBase != null && checkBoxBase.isChecked()) || PhotoViewer.isShowingImage(this.currentMessageObject)) && !this.check2) {
-            canvas.drawRect(f8, padding, (f8 + f5) - f9, f4, this.sharedResources.backgroundPaint);
-        }
-        if (this.isStory && this.currentParentColumnsCount == 1) {
-            float height = getHeight() * 0.72f;
-            Drawable drawable = this.gradientDrawable;
-            if (drawable == null) {
-                if (!this.gradientDrawableLoading && imageReceiver.getBitmap() != null) {
-                    this.gradientDrawableLoading = true;
-                    DominantColors.getColors(false, imageReceiver.getBitmap(), Theme.isCurrentThemeDark(), new Utilities.Callback() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda2
-                        @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj) {
-                            SharedPhotoVideoCell2.this.lambda$drawImpl$2((int[]) obj);
-                        }
-                    });
-                }
-            } else {
-                drawable.setBounds(0, 0, getWidth(), getHeight());
-                this.gradientDrawable.draw(canvas);
-            }
-            imageReceiver2 = imageReceiver;
-            imageReceiver2.setImageCoords((f5 - height) / 2.0f, 0.0f, height, getHeight());
-        } else {
-            imageReceiver2 = imageReceiver;
-            if (this.checkBoxProgress > 0.0f) {
-                float dp2 = AndroidUtilities.dp(this.check2 ? 7.0f : 10.0f) * this.checkBoxProgress;
-                float f19 = f8 + dp2;
-                float f20 = padding + dp2;
-                float f21 = dp2 * 2.0f;
-                float f22 = f5 - f21;
-                float f23 = f4 - f21;
-                imageReceiver2.setImageCoords(f19, f20, f22, f23);
-                this.blurImageReceiver.setImageCoords(f19, f20, f22, f23);
-            } else {
-                float f24 = (this.crossfadeProgress <= 0.5f || this.crossfadeToColumnsCount == 9.0f || this.currentParentColumnsCount == i) ? 0.0f : 1.0f;
-                float f25 = f8 + f24;
-                float f26 = f24 + padding;
-                imageReceiver2.setImageCoords(f25, f26, f5, f4);
-                this.blurImageReceiver.setImageCoords(f25, f26, f5, f4);
-            }
-        }
-        if (this.check2) {
-            imageReceiver2.setRoundRadius(AndroidUtilities.lerp(0, AndroidUtilities.dp(8.0f), this.checkBoxProgress));
-            canvas.save();
-            if (this.reorder || this.reordering) {
-                canvas.translate(imageReceiver2.getCenterX(), imageReceiver2.getCenterY());
-                if (this.shaker == null) {
-                    this.shaker = new Shaker(this);
-                }
-                this.shaker.concat(canvas, Math.max(this.checkBoxProgress, f10));
-                float f27 = 1.0f - (f10 * 0.075f);
-                canvas.scale(f27, f27);
-                canvas.translate(-imageReceiver2.getCenterX(), -imageReceiver2.getCenterY());
-            }
-        }
-        if (PhotoViewer.isShowingImage(this.currentMessageObject)) {
-            f6 = f5;
-            i2 = -1;
-        } else {
-            imageReceiver2.draw(canvas);
-            MessageObject messageObject = this.currentMessageObject;
-            if (messageObject == null || !messageObject.hasMediaSpoilers() || this.currentMessageObject.isMediaSpoilersRevealedInSharedMedia) {
-                f6 = f5;
-                i2 = -1;
-            } else {
-                canvas.save();
-                canvas.clipRect(f8, padding, (f8 + f5) - f9, padding + f4);
-                if (this.spoilerRevealProgress != 0.0f) {
-                    this.path.rewind();
-                    this.path.addCircle(this.spoilerRevealX, this.spoilerRevealY, this.spoilerMaxRadius * this.spoilerRevealProgress, Path.Direction.CW);
-                    canvas.clipPath(this.path, Region.Op.DIFFERENCE);
-                }
-                this.blurImageReceiver.draw(canvas);
-                if (this.mediaSpoilerEffect2 != null) {
-                    canvas.clipRect(imageReceiver2.getImageX(), imageReceiver2.getImageY(), imageReceiver2.getImageX2(), imageReceiver2.getImageY2());
-                    this.mediaSpoilerEffect2.draw(canvas, this, (int) imageReceiver2.getImageWidth(), (int) imageReceiver2.getImageHeight());
-                } else {
-                    if (this.mediaSpoilerEffect == null) {
-                        this.mediaSpoilerEffect = new SpoilerEffect();
-                    }
-                    this.mediaSpoilerEffect.setColor(ColorUtils.setAlphaComponent(-1, (int) (Color.alpha(-1) * 0.325f)));
-                    this.mediaSpoilerEffect.setBounds((int) imageReceiver2.getImageX(), (int) imageReceiver2.getImageY(), (int) imageReceiver2.getImageX2(), (int) imageReceiver2.getImageY2());
-                    this.mediaSpoilerEffect.draw(canvas);
-                }
-                canvas.restore();
-                if (this.currentMessageObject.isSensitive()) {
-                    if (this.sensitiveText == null) {
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x " + LocaleController.getString(R.string.MessageSensitiveContent));
-                        spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.filled_sensitive), 0, 1, 33);
-                        this.sensitiveText = new Text(spannableStringBuilder, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-                    }
-                    Text text = this.sensitiveText;
-                    int i4 = 13;
-                    if (f5 < (AndroidUtilities.dp(13) * 2) + text.getCurrentWidth()) {
-                        if (this.sensitiveTextShort == null) {
-                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x " + LocaleController.getString(R.string.MessageSensitiveContentShort));
-                            spannableStringBuilder2.setSpan(new ColoredImageSpan(R.drawable.filled_sensitive), 0, 1, 33);
-                            this.sensitiveTextShort = new Text(spannableStringBuilder2, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-                        }
-                        text = this.sensitiveTextShort;
-                    }
-                    if (f5 < (AndroidUtilities.dp(26) * 2) + text.getCurrentWidth()) {
-                        if (this.sensitiveTextShort2 == null) {
-                            this.sensitiveTextShort2 = new Text(new SpannableStringBuilder(LocaleController.getString(R.string.MessageSensitiveContentShort)), 13.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-                        }
-                        text = this.sensitiveTextShort2;
-                        i4 = 10;
-                        i3 = 28;
-                    } else {
-                        i3 = 32;
-                    }
-                    float imageX = imageReceiver2.getImageX() + (imageReceiver2.getImageWidth() / 2.0f);
-                    float imageY = imageReceiver2.getImageY() + (imageReceiver2.getImageHeight() / 2.0f);
-                    float currentWidth = text.getCurrentWidth() + AndroidUtilities.dp(i4 + i4);
-                    float dp3 = AndroidUtilities.dp(i3) / 2.0f;
-                    float lerp = AndroidUtilities.lerp(0.8f, 1.0f, 1.0f - this.spoilerRevealProgress);
-                    RectF rectF = AndroidUtilities.rectTmp;
-                    float f28 = currentWidth / 2.0f;
-                    float f29 = f28 * lerp;
-                    float f30 = dp3 * lerp;
-                    f6 = f5;
-                    rectF.set(imageX - f29, imageY - f30, f29 + imageX, imageY + f30);
-                    this.rectPath.reset();
-                    this.rectPath.addRoundRect(rectF, dp3, dp3, Path.Direction.CW);
-                    canvas.save();
-                    canvas.clipPath(this.rectPath);
-                    float alpha = this.blurImageReceiver.getAlpha();
-                    this.blurImageReceiver.setAlpha((1.0f - this.spoilerRevealProgress) * alpha);
-                    this.blurImageReceiver.draw(canvas);
-                    this.blurImageReceiver.setAlpha(alpha);
-                    canvas.restore();
-                    Paint themePaint = Theme.getThemePaint("paintChatTimeBackground");
-                    int alpha2 = themePaint.getAlpha();
-                    themePaint.setAlpha((int) (alpha2 * (1.0f - this.spoilerRevealProgress) * 0.35f));
-                    canvas.drawRoundRect(rectF, dp3, dp3, themePaint);
-                    themePaint.setAlpha(alpha2);
-                    canvas.save();
-                    canvas.scale(lerp, lerp, imageX, imageY);
-                    i2 = -1;
-                    text.draw(canvas, (imageX - f28) + AndroidUtilities.dp(i4), imageY, -1, 1.0f - this.spoilerRevealProgress);
-                    canvas.restore();
-                } else {
-                    f6 = f5;
-                    i2 = -1;
-                }
-                invalidate();
-            }
-            if (!this.isSearchingHashtag) {
-                float f31 = this.highlightProgress;
-                if (f31 > 0.0f) {
-                    this.sharedResources.highlightPaint.setColor(ColorUtils.setAlphaComponent(-16777216, (int) (f31 * 0.5f * 255.0f)));
-                    canvas.drawRect(imageReceiver2.getDrawRegion(), this.sharedResources.highlightPaint);
-                }
-            }
-        }
-        if (this.isStoryUploading) {
-            this.scrimPaint.setColor(805306368);
-            canvas.drawRect(imageReceiver2.getDrawRegion(), this.scrimPaint);
-            this.progressPaint.setStyle(Paint.Style.STROKE);
-            this.progressPaint.setColor(i2);
-            this.progressPaint.setStrokeWidth(AndroidUtilities.dp(3.0f));
-            this.progressPaint.setStrokeJoin(Paint.Join.ROUND);
-            this.progressPaint.setStrokeCap(Paint.Cap.ROUND);
-            float dp4 = AndroidUtilities.dp(18.0f);
-            RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.set(imageReceiver2.getCenterX() - dp4, imageReceiver2.getCenterY() - dp4, imageReceiver2.getCenterX() + dp4, imageReceiver2.getCenterY() + dp4);
-            float currentTimeMillis = ((System.currentTimeMillis() % 1500) / 1500.0f) * 360.0f;
-            AnimatedFloat animatedFloat = this.animatedProgress;
-            MessageObject messageObject2 = this.currentMessageObject;
-            canvas.drawArc(rectF2, currentTimeMillis, animatedFloat.set(AndroidUtilities.lerp(0.15f, 0.95f, messageObject2 != null ? messageObject2.getProgress() : 0.0f)) * 360.0f, false, this.progressPaint);
-            invalidate();
-        }
-        this.bounds.set(imageReceiver2.getImageX(), imageReceiver2.getImageY(), imageReceiver2.getImageX2(), imageReceiver2.getImageY2());
-        drawDuration(canvas, this.bounds, f3);
-        drawViews(canvas, this.bounds, f3);
-        if (!this.isSearchingHashtag) {
-            drawPrivacy(canvas, this.bounds, f3);
-        } else {
-            drawAuthor(canvas, this.bounds, f3);
-        }
-        if (this.check2) {
-            canvas.restore();
         }
         CheckBoxBase checkBoxBase2 = this.checkBoxBase;
-        if (checkBoxBase2 != null) {
-            if (this.style != 1) {
-            }
-            canvas.save();
-            if (this.check2 && (this.reorder || this.reordering)) {
-                canvas.translate(imageReceiver2.getCenterX(), imageReceiver2.getCenterY());
-                if (this.shaker == null) {
-                    this.shaker = new Shaker(this);
+        if (((checkBoxBase2 != null && checkBoxBase2.isChecked()) || PhotoViewer.isShowingImage(this.currentMessageObject)) && !this.check2) {
+            canvas.drawRect(f13, 0.0f, (f13 + f6) - padding, (f7 + 0.0f) - padding, this.sharedResources.backgroundPaint);
+        }
+        if (!this.isStory) {
+            f8 = 0.0f;
+        } else {
+            if (this.currentParentColumnsCount == 1) {
+                float height = getHeight() * 0.72f;
+                Drawable drawable = this.gradientDrawable;
+                if (drawable == null) {
+                    if (!this.gradientDrawableLoading && imageReceiver.getBitmap() != null) {
+                        this.gradientDrawableLoading = true;
+                        DominantColors.getColors(false, imageReceiver.getBitmap(), Theme.isCurrentThemeDark(), new Utilities.Callback() { // from class: org.telegram.ui.Cells.SharedPhotoVideoCell2$$ExternalSyntheticLambda2
+                            @Override // org.telegram.messenger.Utilities.Callback
+                            public final void run(Object obj) {
+                                SharedPhotoVideoCell2.this.lambda$drawImpl$2((int[]) obj);
+                            }
+                        });
+                    }
+                } else {
+                    drawable.setBounds(0, 0, getWidth(), getHeight());
+                    this.gradientDrawable.draw(canvas);
                 }
-                this.shaker.concat(canvas, Math.max(this.checkBoxProgress, f10) * 0.5f);
-                float f32 = 1.0f - (f10 * 0.075f);
-                canvas.scale(f32, f32);
-                canvas.translate(-imageReceiver2.getCenterX(), -imageReceiver2.getCenterY());
+                imageReceiver.setImageCoords((f6 - height) / 2.0f, 0.0f, height, getHeight());
+                int lerp = AndroidUtilities.lerp((this.isFirst || !this.isTop) ? AndroidUtilities.dp(1.0f) : AndroidUtilities.dp(18.0f), AndroidUtilities.dp(8.0f), this.checkBoxProgress);
+                if (this.isLast || !this.isTop) {
+                    f9 = 1.0f;
+                    dp = AndroidUtilities.dp(1.0f);
+                } else {
+                    dp = AndroidUtilities.dp(18.0f);
+                    f9 = 1.0f;
+                }
+                imageReceiver.setRoundRadius(lerp, AndroidUtilities.lerp(dp, AndroidUtilities.dp(8.0f), this.checkBoxProgress), AndroidUtilities.lerp(AndroidUtilities.dp(f9), AndroidUtilities.dp(8.0f), this.checkBoxProgress), AndroidUtilities.lerp(AndroidUtilities.dp(f9), AndroidUtilities.dp(8.0f), this.checkBoxProgress));
+                if (this.check2) {
+                    canvas.save();
+                    if (this.reorder || this.reordering) {
+                        canvas.translate(imageReceiver.getCenterX(), imageReceiver.getCenterY());
+                        if (this.shaker == null) {
+                            this.shaker = new Shaker(this);
+                        }
+                        this.shaker.concat(canvas, Math.max(this.checkBoxProgress, f14));
+                        float f23 = 1.0f - (f14 * 0.075f);
+                        canvas.scale(f23, f23);
+                        canvas.translate(-imageReceiver.getCenterX(), -imageReceiver.getCenterY());
+                    }
+                }
+                if (PhotoViewer.isShowingImage(this.currentMessageObject)) {
+                    imageReceiver.draw(canvas);
+                    MessageObject messageObject = this.currentMessageObject;
+                    if (messageObject == null || !messageObject.hasMediaSpoilers() || this.currentMessageObject.isMediaSpoilersRevealedInSharedMedia) {
+                        f10 = f6;
+                        f11 = f14;
+                        i = -1;
+                    } else {
+                        canvas.save();
+                        canvas.clipRect(f13, 0.0f, (f13 + f6) - padding, (f7 + 0.0f) - padding);
+                        if (this.spoilerRevealProgress != 0.0f) {
+                            this.path.rewind();
+                            this.path.addCircle(this.spoilerRevealX, this.spoilerRevealY, this.spoilerMaxRadius * this.spoilerRevealProgress, Path.Direction.CW);
+                            canvas.clipPath(this.path, Region.Op.DIFFERENCE);
+                        }
+                        this.blurImageReceiver.draw(canvas);
+                        if (this.mediaSpoilerEffect2 != null) {
+                            canvas.clipRect(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2());
+                            this.mediaSpoilerEffect2.draw(canvas, this, (int) imageReceiver.getImageWidth(), (int) imageReceiver.getImageHeight());
+                        } else {
+                            if (this.mediaSpoilerEffect == null) {
+                                this.mediaSpoilerEffect = new SpoilerEffect();
+                            }
+                            this.mediaSpoilerEffect.setColor(ColorUtils.setAlphaComponent(-1, (int) (Color.alpha(-1) * 0.325f)));
+                            this.mediaSpoilerEffect.setBounds((int) imageReceiver.getImageX(), (int) imageReceiver.getImageY(), (int) imageReceiver.getImageX2(), (int) imageReceiver.getImageY2());
+                            this.mediaSpoilerEffect.draw(canvas);
+                        }
+                        canvas.restore();
+                        if (this.currentMessageObject.isSensitive()) {
+                            if (this.sensitiveText == null) {
+                                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x " + LocaleController.getString(R.string.MessageSensitiveContent));
+                                spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.filled_sensitive), 0, 1, 33);
+                                this.sensitiveText = new Text(spannableStringBuilder, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                            }
+                            Text text = this.sensitiveText;
+                            int i3 = 13;
+                            if (f6 < (AndroidUtilities.dp(13) * 2) + text.getCurrentWidth()) {
+                                if (this.sensitiveTextShort == null) {
+                                    SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x " + LocaleController.getString(R.string.MessageSensitiveContentShort));
+                                    spannableStringBuilder2.setSpan(new ColoredImageSpan(R.drawable.filled_sensitive), 0, 1, 33);
+                                    this.sensitiveTextShort = new Text(spannableStringBuilder2, 14.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                                }
+                                text = this.sensitiveTextShort;
+                            }
+                            if (f6 < (AndroidUtilities.dp(26) * 2) + text.getCurrentWidth()) {
+                                if (this.sensitiveTextShort2 == null) {
+                                    this.sensitiveTextShort2 = new Text(new SpannableStringBuilder(LocaleController.getString(R.string.MessageSensitiveContentShort)), 13.0f, AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                                }
+                                text = this.sensitiveTextShort2;
+                                i3 = 10;
+                                i2 = 28;
+                            } else {
+                                i2 = 32;
+                            }
+                            float imageX = imageReceiver.getImageX() + (imageReceiver.getImageWidth() / 2.0f);
+                            float imageY = imageReceiver.getImageY() + (imageReceiver.getImageHeight() / 2.0f);
+                            float currentWidth = text.getCurrentWidth() + AndroidUtilities.dp(i3 + i3);
+                            float dp3 = AndroidUtilities.dp(i2) / 2.0f;
+                            float lerp2 = AndroidUtilities.lerp(0.8f, 1.0f, 1.0f - this.spoilerRevealProgress);
+                            RectF rectF = AndroidUtilities.rectTmp;
+                            float f24 = currentWidth / 2.0f;
+                            float f25 = f24 * lerp2;
+                            float f26 = dp3 * lerp2;
+                            f10 = f6;
+                            f11 = f14;
+                            rectF.set(imageX - f25, imageY - f26, f25 + imageX, imageY + f26);
+                            this.rectPath.reset();
+                            this.rectPath.addRoundRect(rectF, dp3, dp3, Path.Direction.CW);
+                            canvas.save();
+                            canvas.clipPath(this.rectPath);
+                            float alpha = this.blurImageReceiver.getAlpha();
+                            this.blurImageReceiver.setAlpha((1.0f - this.spoilerRevealProgress) * alpha);
+                            this.blurImageReceiver.draw(canvas);
+                            this.blurImageReceiver.setAlpha(alpha);
+                            canvas.restore();
+                            Paint themePaint = Theme.getThemePaint("paintChatTimeBackground");
+                            int alpha2 = themePaint.getAlpha();
+                            themePaint.setAlpha((int) (alpha2 * (1.0f - this.spoilerRevealProgress) * 0.35f));
+                            canvas.drawRoundRect(rectF, dp3, dp3, themePaint);
+                            themePaint.setAlpha(alpha2);
+                            canvas.save();
+                            canvas.scale(lerp2, lerp2, imageX, imageY);
+                            i = -1;
+                            text.draw(canvas, (imageX - f24) + AndroidUtilities.dp(i3), imageY, -1, 1.0f - this.spoilerRevealProgress);
+                            canvas.restore();
+                        } else {
+                            f10 = f6;
+                            f11 = f14;
+                            i = -1;
+                        }
+                        invalidate();
+                    }
+                    if (!this.isSearchingHashtag) {
+                        float f27 = this.highlightProgress;
+                        if (f27 > 0.0f) {
+                            this.sharedResources.highlightPaint.setColor(ColorUtils.setAlphaComponent(-16777216, (int) (f27 * 0.5f * 255.0f)));
+                            canvas.drawRect(imageReceiver.getDrawRegion(), this.sharedResources.highlightPaint);
+                        }
+                    }
+                } else {
+                    f10 = f6;
+                    f11 = f14;
+                    i = -1;
+                }
+                if (this.isStoryUploading) {
+                    this.scrimPaint.setColor(805306368);
+                    canvas.drawRect(imageReceiver.getDrawRegion(), this.scrimPaint);
+                    this.progressPaint.setStyle(Paint.Style.STROKE);
+                    this.progressPaint.setColor(i);
+                    this.progressPaint.setStrokeWidth(AndroidUtilities.dp(3.0f));
+                    this.progressPaint.setStrokeJoin(Paint.Join.ROUND);
+                    this.progressPaint.setStrokeCap(Paint.Cap.ROUND);
+                    float dp4 = AndroidUtilities.dp(18.0f);
+                    RectF rectF2 = AndroidUtilities.rectTmp;
+                    rectF2.set(imageReceiver.getCenterX() - dp4, imageReceiver.getCenterY() - dp4, imageReceiver.getCenterX() + dp4, imageReceiver.getCenterY() + dp4);
+                    float currentTimeMillis = ((System.currentTimeMillis() % 1500) / 1500.0f) * 360.0f;
+                    AnimatedFloat animatedFloat = this.animatedProgress;
+                    MessageObject messageObject2 = this.currentMessageObject;
+                    canvas.drawArc(rectF2, currentTimeMillis, animatedFloat.set(AndroidUtilities.lerp(0.15f, 0.95f, messageObject2 != null ? messageObject2.getProgress() : 0.0f)) * 360.0f, false, this.progressPaint);
+                    invalidate();
+                }
+                this.bounds.set(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2());
+                drawDuration(canvas, this.bounds, f3);
+                drawViews(canvas, this.bounds, f3);
+                if (this.isSearchingHashtag) {
+                    drawPrivacy(canvas, this.bounds, f3);
+                } else {
+                    drawAuthor(canvas, this.bounds, f3);
+                }
+                if (this.check2) {
+                    canvas.restore();
+                }
+                checkBoxBase = this.checkBoxBase;
+                if (checkBoxBase != null) {
+                    if (this.style == 1) {
+                    }
+                    canvas.save();
+                    if (this.check2 && (this.reorder || this.reordering)) {
+                        canvas.translate(imageReceiver.getCenterX(), imageReceiver.getCenterY());
+                        if (this.shaker == null) {
+                            this.shaker = new Shaker(this);
+                        }
+                        float f28 = f11;
+                        this.shaker.concat(canvas, Math.max(this.checkBoxProgress, f28) * 0.5f);
+                        float f29 = 1.0f - (f28 * 0.075f);
+                        canvas.scale(f29, f29);
+                        canvas.translate(-imageReceiver.getCenterX(), -imageReceiver.getCenterY());
+                    }
+                    if (this.style == 1) {
+                        dp2 = ((f10 + AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp(25.0f)) - AndroidUtilities.dp(4.0f);
+                        f12 = AndroidUtilities.dp(4.0f);
+                    } else if (this.check2) {
+                        dp2 = (f10 + AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp((this.checkBoxProgress * 5.0f) + 22.0f);
+                        f12 = AndroidUtilities.dp(-2.0f) + (AndroidUtilities.dp(5.0f) * this.checkBoxProgress);
+                    } else {
+                        dp2 = (f10 + AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp(25.0f);
+                        f12 = 0.0f;
+                    }
+                    canvas.translate(dp2, f12);
+                    this.checkBoxBase.draw(canvas);
+                    if (this.canvasButton != null) {
+                        RectF rectF3 = AndroidUtilities.rectTmp;
+                        rectF3.set(dp2, f12, this.checkBoxBase.bounds.width() + dp2, this.checkBoxBase.bounds.height() + f12);
+                        this.canvasButton.setRect(rectF3);
+                    }
+                    canvas.restore();
+                }
+                canvas.restore();
             }
-            if (this.style == 1) {
-                dp = ((f6 + AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp(25.0f)) - AndroidUtilities.dp(4.0f);
-                f7 = AndroidUtilities.dp(4.0f);
-            } else if (this.check2) {
-                dp = (f6 + AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp((this.checkBoxProgress * 5.0f) + 22.0f);
-                f7 = AndroidUtilities.dp(-2.0f) + (AndroidUtilities.dp(5.0f) * this.checkBoxProgress);
-            } else {
-                dp = (f6 + AndroidUtilities.dp(2.0f)) - AndroidUtilities.dp(25.0f);
-                f7 = 0.0f;
-            }
-            canvas.translate(dp, f7);
-            this.checkBoxBase.draw(canvas);
-            if (this.canvasButton != null) {
-                RectF rectF3 = AndroidUtilities.rectTmp;
-                rectF3.set(dp, f7, this.checkBoxBase.bounds.width() + dp, this.checkBoxBase.bounds.height() + f7);
-                this.canvasButton.setRect(rectF3);
-            }
-            canvas.restore();
+            f8 = 0.0f;
+        }
+        if (this.checkBoxProgress > f8) {
+            float dp5 = AndroidUtilities.dp(this.check2 ? 7.0f : 10.0f) * this.checkBoxProgress;
+            float f30 = f13 + dp5;
+            float f31 = padding + dp5;
+            float f32 = dp5 * 2.0f;
+            float f33 = f6 - f32;
+            float f34 = f7 - f32;
+            imageReceiver.setImageCoords(f30, f31, f33, f34);
+            this.blurImageReceiver.setImageCoords(f30, f31, f33, f34);
+        } else {
+            float f35 = (this.crossfadeProgress <= 0.5f || this.crossfadeToColumnsCount == 9.0f || this.currentParentColumnsCount == 9) ? 0.0f : 1.0f;
+            float f36 = f13 + f35;
+            float f37 = f35 + padding;
+            imageReceiver.setImageCoords(f36, f37, f6, f7);
+            this.blurImageReceiver.setImageCoords(f36, f37, f6, f7);
+        }
+        int lerp3 = AndroidUtilities.lerp((this.isFirst || !this.isTop) ? AndroidUtilities.dp(1.0f) : AndroidUtilities.dp(18.0f), AndroidUtilities.dp(8.0f), this.checkBoxProgress);
+        if (this.isLast) {
+        }
+        f9 = 1.0f;
+        dp = AndroidUtilities.dp(1.0f);
+        imageReceiver.setRoundRadius(lerp3, AndroidUtilities.lerp(dp, AndroidUtilities.dp(8.0f), this.checkBoxProgress), AndroidUtilities.lerp(AndroidUtilities.dp(f9), AndroidUtilities.dp(8.0f), this.checkBoxProgress), AndroidUtilities.lerp(AndroidUtilities.dp(f9), AndroidUtilities.dp(8.0f), this.checkBoxProgress));
+        if (this.check2) {
+        }
+        if (PhotoViewer.isShowingImage(this.currentMessageObject)) {
+        }
+        if (this.isStoryUploading) {
+        }
+        this.bounds.set(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2());
+        drawDuration(canvas, this.bounds, f3);
+        drawViews(canvas, this.bounds, f3);
+        if (this.isSearchingHashtag) {
+        }
+        if (this.check2) {
+        }
+        checkBoxBase = this.checkBoxBase;
+        if (checkBoxBase != null) {
         }
         canvas.restore();
     }

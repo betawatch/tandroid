@@ -1872,7 +1872,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                                     SpannableString spannableString = new SpannableString(str3);
                                     TLRPC.DraftMessage draftMessage6 = dialogCell3.draftMessage;
                                     if (draftMessage6 != null) {
-                                        MediaDataController.addTextStyleRuns(draftMessage6, spannableString, NotificationCenter.goingToPreviewTheme);
+                                        MediaDataController.addTextStyleRuns(draftMessage6, spannableString, NotificationCenter.needSetDayNightTheme);
                                         TLRPC.DraftMessage draftMessage7 = dialogCell3.draftMessage;
                                         if (draftMessage7 != null && (arrayList = draftMessage7.entities) != null) {
                                             TextPaint textPaint2 = dialogCell3.currentMessagePaint;
@@ -2136,7 +2136,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                                                                                                         SpannableString spannableString2 = new SpannableString(captionMessage.caption);
                                                                                                         if (captionMessage.messageOwner != null) {
                                                                                                             captionMessage.spoilLoginCode();
-                                                                                                            MediaDataController.addTextStyleRuns(captionMessage.messageOwner.entities, captionMessage.caption, spannableString2, NotificationCenter.goingToPreviewTheme);
+                                                                                                            MediaDataController.addTextStyleRuns(captionMessage.messageOwner.entities, captionMessage.caption, spannableString2, NotificationCenter.needSetDayNightTheme);
                                                                                                             ArrayList<TLRPC.MessageEntity> arrayList3 = captionMessage.messageOwner.entities;
                                                                                                             TextPaint textPaint4 = dialogCell3.currentMessagePaint;
                                                                                                             MediaDataController.addAnimatedEmojiSpans(arrayList3, spannableString2, textPaint4 == null ? null : textPaint4.getFontMetricsInt());
@@ -2259,7 +2259,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                                                                                                                 if (messageObject14 != null) {
                                                                                                                     messageObject14.spoilLoginCode();
                                                                                                                 }
-                                                                                                                MediaDataController.addTextStyleRuns(dialogCell3.message, spannableString5, NotificationCenter.goingToPreviewTheme);
+                                                                                                                MediaDataController.addTextStyleRuns(dialogCell3.message, spannableString5, NotificationCenter.needSetDayNightTheme);
                                                                                                                 MessageObject messageObject15 = dialogCell3.message;
                                                                                                                 charSequence16 = spannableString5;
                                                                                                                 if (messageObject15 != null) {
@@ -3962,7 +3962,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                 Theme.dialogs_clockDrawable.draw(canvas);
                 if (f != 1.0f) {
                     canvas.restore();
-                    Theme.dialogs_clockDrawable.setAlpha(NotificationCenter.cameraInitied);
+                    Theme.dialogs_clockDrawable.setAlpha(NotificationCenter.closeOtherAppActivities);
                 }
                 invalidate();
                 return;
@@ -3992,14 +3992,14 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                     Theme.dialogs_checkReadDrawable.draw(canvas);
                     if (z4) {
                         canvas.restore();
-                        Theme.dialogs_halfCheckDrawable.setAlpha(NotificationCenter.cameraInitied);
+                        Theme.dialogs_halfCheckDrawable.setAlpha(NotificationCenter.closeOtherAppActivities);
                     }
                     if (z4 || f == 0.0f) {
                         return;
                     }
                     canvas.restore();
-                    Theme.dialogs_halfCheckDrawable.setAlpha(NotificationCenter.cameraInitied);
-                    Theme.dialogs_checkReadDrawable.setAlpha(NotificationCenter.cameraInitied);
+                    Theme.dialogs_halfCheckDrawable.setAlpha(NotificationCenter.closeOtherAppActivities);
+                    Theme.dialogs_checkReadDrawable.setAlpha(NotificationCenter.closeOtherAppActivities);
                     return;
                 }
                 BaseCell.setDrawableBounds(Theme.dialogs_checkDrawable, this.checkDrawLeft1, this.checkDrawTop);
@@ -4011,7 +4011,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                 Theme.dialogs_checkDrawable.draw(canvas);
                 if (f != 1.0f) {
                     canvas.restore();
-                    Theme.dialogs_checkDrawable.setAlpha(NotificationCenter.cameraInitied);
+                    Theme.dialogs_checkDrawable.setAlpha(NotificationCenter.closeOtherAppActivities);
                 }
             }
         }
@@ -5240,7 +5240,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                         paint2.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(24.0f), 0.0f, new int[]{0, -1}, fArr2, Shader.TileMode.CLAMP));
                         this.fadePaintBack.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                     }
-                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.cameraInitied, 31);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), NotificationCenter.closeOtherAppActivities, 31);
                     int i23 = this.nameLeft;
                     canvas.clipRect(i23, 0, this.nameWidth + i23, getMeasuredHeight());
                 }
@@ -6000,11 +6000,11 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                             if (this.drawUnmute) {
                                 Theme.dialogs_unmuteDrawable.setAlpha((int) (this.dialogMutedProgress * 255.0f));
                                 Theme.dialogs_unmuteDrawable.draw(canvas2);
-                                Theme.dialogs_unmuteDrawable.setAlpha(NotificationCenter.cameraInitied);
+                                Theme.dialogs_unmuteDrawable.setAlpha(NotificationCenter.closeOtherAppActivities);
                             } else {
                                 Theme.dialogs_muteDrawable.setAlpha((int) (this.dialogMutedProgress * 255.0f));
                                 Theme.dialogs_muteDrawable.draw(canvas2);
-                                Theme.dialogs_muteDrawable.setAlpha(NotificationCenter.cameraInitied);
+                                Theme.dialogs_muteDrawable.setAlpha(NotificationCenter.closeOtherAppActivities);
                             }
                             canvas.restore();
                         } else if (this.drawUnmute) {
@@ -7076,7 +7076,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             return;
         }
         float f3 = (this.unreadCount != 0 || this.markUnread) ? this.countChangeProgress : 1.0f - this.countChangeProgress;
-        int i4 = NotificationCenter.cameraInitied;
+        int i4 = NotificationCenter.closeOtherAppActivities;
         if (z2) {
             if (this.counterPaintOutline == null) {
                 Paint paint2 = new Paint();
@@ -7086,7 +7086,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                 this.counterPaintOutline.setStrokeJoin(Paint.Join.ROUND);
                 this.counterPaintOutline.setStrokeCap(Paint.Cap.ROUND);
             }
-            this.counterPaintOutline.setColor(ColorUtils.blendARGB(Theme.getColor(Theme.key_windowBackgroundWhite), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_chats_pinnedOverlay), NotificationCenter.cameraInitied), Color.alpha(r13) / 255.0f));
+            this.counterPaintOutline.setColor(ColorUtils.blendARGB(Theme.getColor(Theme.key_windowBackgroundWhite), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_chats_pinnedOverlay), NotificationCenter.closeOtherAppActivities), Color.alpha(r13) / 255.0f));
         }
         if (this.isTopic && this.forumTopic.read_inbox_max_id == 0) {
             if (this.topicCounterPaint == null) {
@@ -7898,7 +7898,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             }
             SpannableString spannableString = new SpannableString(charSequence6);
             captionMessage.spoilLoginCode();
-            MediaDataController.addTextStyleRuns(captionMessage.messageOwner.entities, charSequence6, spannableString, NotificationCenter.goingToPreviewTheme);
+            MediaDataController.addTextStyleRuns(captionMessage.messageOwner.entities, charSequence6, spannableString, NotificationCenter.needSetDayNightTheme);
             TLRPC.Message message3 = captionMessage.messageOwner;
             if (message3 != null) {
                 ArrayList<TLRPC.MessageEntity> arrayList = message3.entities;
@@ -8013,7 +8013,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             if (messageObject5 != null) {
                 messageObject5.spoilLoginCode();
             }
-            MediaDataController.addTextStyleRuns(this.message, (Spannable) spannableString4, NotificationCenter.goingToPreviewTheme);
+            MediaDataController.addTextStyleRuns(this.message, (Spannable) spannableString4, NotificationCenter.needSetDayNightTheme);
             MessageObject messageObject6 = this.message;
             if (messageObject6 != null && (message = messageObject6.messageOwner) != null) {
                 ArrayList<TLRPC.MessageEntity> arrayList4 = message.entities;

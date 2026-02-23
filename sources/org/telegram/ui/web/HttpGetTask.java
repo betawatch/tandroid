@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.Utilities;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class HttpGetTask extends AsyncTask {
     private final Utilities.Callback callback;
     private Exception exception;

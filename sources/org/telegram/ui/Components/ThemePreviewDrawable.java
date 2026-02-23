@@ -146,7 +146,7 @@ public class ThemePreviewDrawable extends BitmapDrawable {
                     if (themeDocument.accent.patternIntensity >= 0.0f) {
                         paint2.setColorFilter(new PorterDuffColorFilter(patternColor, PorterDuff.Mode.SRC_IN));
                     }
-                    paint2.setAlpha(NotificationCenter.cameraInitied);
+                    paint2.setAlpha(NotificationCenter.closeOtherAppActivities);
                     float max = Math.max(560 / decodeFile.getWidth(), 678 / decodeFile.getHeight());
                     int width = (int) (decodeFile.getWidth() * max);
                     canvas.save();
@@ -177,14 +177,14 @@ public class ThemePreviewDrawable extends BitmapDrawable {
             drawable6.setBounds(width2, intrinsicHeight2, drawable6.getIntrinsicWidth() + width2, drawable6.getIntrinsicHeight() + intrinsicHeight2);
             drawable6.draw(canvas);
         }
-        messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+        messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
         messageDrawableArr[1].setTop(0, 560, 522, false, false);
         messageDrawableArr[1].draw(canvas);
         messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
         messageDrawableArr[1].setTop(430, 560, 522, false, false);
         messageDrawableArr[1].draw(canvas);
-        messageDrawableArr[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-        messageDrawableArr[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+        messageDrawableArr[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+        messageDrawableArr[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
         messageDrawableArr[0].draw(canvas);
         paint.setColor(previewColor3);
         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint);

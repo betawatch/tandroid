@@ -75,7 +75,7 @@ final class IcyDataSource implements DataSource {
         if (this.upstream.read(this.metadataLengthByteHolder, 0, 1) == -1) {
             return false;
         }
-        int i = (this.metadataLengthByteHolder[0] & NotificationCenter.cameraInitied) << 4;
+        int i = (this.metadataLengthByteHolder[0] & NotificationCenter.closeOtherAppActivities) << 4;
         if (i == 0) {
             return true;
         }

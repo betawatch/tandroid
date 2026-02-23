@@ -41,7 +41,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.BotWebViewContainer;
 import org.telegram.ui.web.WebMetadataCache;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class WebMetadataCache {
     private static WebMetadataCache instance;
     private HashMap cache;

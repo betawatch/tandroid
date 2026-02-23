@@ -137,7 +137,7 @@ public class MatroskaExtractor implements Extractor {
             case NotificationCenter.starUserGiftCollectionsLoaded /* 231 */:
             case NotificationCenter.messagesFeeUpdated /* 238 */:
             case NotificationCenter.activeAuctionsUpdated /* 241 */:
-            case NotificationCenter.didReceiveCall /* 251 */:
+            case NotificationCenter.didReceiveSmsCode /* 251 */:
             case 16871:
             case 16980:
             case 17029:
@@ -241,7 +241,7 @@ public class MatroskaExtractor implements Extractor {
         hashMap.put("htc_video_rotA-000", 0);
         hashMap.put("htc_video_rotA-090", 90);
         hashMap.put("htc_video_rotA-180", Integer.valueOf(NotificationCenter.newEmojiSuggestionsAvailable));
-        hashMap.put("htc_video_rotA-270", Integer.valueOf(NotificationCenter.proxySettingsChanged));
+        hashMap.put("htc_video_rotA-270", Integer.valueOf(NotificationCenter.didSetNewWallpapper));
         TRACK_NAME_TO_ROTATION_DEGREES = DesugarCollections.unmodifiableMap(hashMap);
     }
 
@@ -537,7 +537,7 @@ public class MatroskaExtractor implements Extractor {
                 this.cueClusterPositions.add(j);
                 this.seenClusterPositionForCurrentCuePoint = true;
                 return;
-            case NotificationCenter.didReceiveCall /* 251 */:
+            case NotificationCenter.didReceiveSmsCode /* 251 */:
                 this.blockHasReferenceBlock = true;
                 return;
             case 16871:
@@ -1189,10 +1189,10 @@ public class MatroskaExtractor implements Extractor {
                 this.supplementalData.reset(0);
                 int limit = (this.sampleStrippedBytes.limit() + i) - this.sampleBytesRead;
                 this.scratch.reset(4);
-                this.scratch.getData()[0] = (byte) ((limit >> 24) & NotificationCenter.cameraInitied);
-                this.scratch.getData()[1] = (byte) ((limit >> 16) & NotificationCenter.cameraInitied);
-                this.scratch.getData()[2] = (byte) ((limit >> 8) & NotificationCenter.cameraInitied);
-                this.scratch.getData()[3] = (byte) (limit & NotificationCenter.cameraInitied);
+                this.scratch.getData()[0] = (byte) ((limit >> 24) & NotificationCenter.closeOtherAppActivities);
+                this.scratch.getData()[1] = (byte) ((limit >> 16) & NotificationCenter.closeOtherAppActivities);
+                this.scratch.getData()[2] = (byte) ((limit >> 8) & NotificationCenter.closeOtherAppActivities);
+                this.scratch.getData()[3] = (byte) (limit & NotificationCenter.closeOtherAppActivities);
                 trackOutput.sampleData(this.scratch, 4, 2);
                 this.sampleBytesWritten += 4;
             }
@@ -1868,7 +1868,7 @@ public class MatroskaExtractor implements Extractor {
                             } else if (Float.compare(this.projectionPosePitch, -180.0f) == 0 || Float.compare(this.projectionPosePitch, 180.0f) == 0) {
                                 i6 = NotificationCenter.newEmojiSuggestionsAvailable;
                             } else if (Float.compare(this.projectionPosePitch, -90.0f) == 0) {
-                                i6 = NotificationCenter.proxySettingsChanged;
+                                i6 = NotificationCenter.didSetNewWallpapper;
                             }
                         }
                         builder.setWidth(this.width).setHeight(this.height).setPixelWidthHeightRatio(f).setRotationDegrees(i6).setProjectionData(this.projectionData).setStereoMode(this.stereoMode).setColorInfo(colorInfo);
@@ -2727,22 +2727,22 @@ public class MatroskaExtractor implements Extractor {
                 int i3 = 1;
                 int i4 = 0;
                 while (true) {
-                    i = bArr[i3] & NotificationCenter.cameraInitied;
+                    i = bArr[i3] & NotificationCenter.closeOtherAppActivities;
                     if (i != 255) {
                         break;
                     }
-                    i4 += NotificationCenter.cameraInitied;
+                    i4 += NotificationCenter.closeOtherAppActivities;
                     i3++;
                 }
                 int i5 = i3 + 1;
                 int i6 = i4 + i;
                 int i7 = 0;
                 while (true) {
-                    i2 = bArr[i5] & NotificationCenter.cameraInitied;
+                    i2 = bArr[i5] & NotificationCenter.closeOtherAppActivities;
                     if (i2 != 255) {
                         break;
                     }
-                    i7 += NotificationCenter.cameraInitied;
+                    i7 += NotificationCenter.closeOtherAppActivities;
                     i5++;
                 }
                 int i8 = i5 + 1;

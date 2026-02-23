@@ -39,7 +39,7 @@ import org.telegram.ui.web.AddressBarList;
 import org.telegram.ui.web.BookmarksFragment;
 import org.telegram.ui.web.WebMetadataCache;
 
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class BookmarksFragment extends UniversalFragment {
     private final Runnable closeToTabs;
     private ActionBarMenuItem gotoItem;

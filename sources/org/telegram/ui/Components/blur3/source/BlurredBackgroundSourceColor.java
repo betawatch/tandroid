@@ -4,10 +4,16 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawableSource;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
 
 /* loaded from: classes5.dex */
 public class BlurredBackgroundSourceColor implements BlurredBackgroundSource {
     private final Paint paint = new Paint(1);
+
+    @Override // org.telegram.ui.Components.blur3.source.BlurredBackgroundSource
+    public /* synthetic */ void dispatchOnDrawablesRelativePositionChange() {
+        BlurredBackgroundSource.-CC.$default$dispatchOnDrawablesRelativePositionChange(this);
+    }
 
     @Override // org.telegram.ui.Components.blur3.source.BlurredBackgroundSource
     public BlurredBackgroundDrawable createDrawable() {

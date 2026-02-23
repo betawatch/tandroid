@@ -94,7 +94,7 @@ public class SendingFileDrawable extends StatusDrawable {
             } else if (i == 2) {
                 paint.setAlpha((int) ((1.0f - this.progress) * 255.0f));
             } else {
-                paint.setAlpha(NotificationCenter.cameraInitied);
+                paint.setAlpha(NotificationCenter.closeOtherAppActivities);
             }
             float dp = (AndroidUtilities.dp(5.0f) * i) + (AndroidUtilities.dp(5.0f) * this.progress);
             float f = 8.0f;

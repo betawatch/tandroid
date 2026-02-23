@@ -18,6 +18,7 @@ import android.util.Property;
 import android.view.ActionMode;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.FrameLayout;
@@ -49,6 +50,7 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
     public ImageView moveImageView;
     private boolean needDivider;
     private final Theme.ResourcesProvider resourcesProvider;
+    private Integer right;
     private boolean showNextButton;
     public EditTextBoldCursor textView;
     private SimpleTextView textView2;
@@ -295,31 +297,54 @@ public class PollEditTextCell extends FrameLayout implements SuggestEmojiView.An
         addView(simpleTextView2, LayoutHelper.createFrame(48, 24.0f, (z ? 3 : 5) | 48, z ? 20.0f : 0.0f, 17.0f, z ? 0.0f : 20.0f, 0.0f));
     }
 
+    public void setTextRight(int i) {
+        this.right = Integer.valueOf(i);
+    }
+
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         int i3;
         int size = View.MeasureSpec.getSize(i);
-        ImageView imageView = this.deleteImageView;
-        if (imageView != null) {
-            imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+        for (int i4 = 0; i4 < getChildCount(); i4++) {
+            View childAt = getChildAt(i4);
+            if (childAt != this.textView) {
+                ImageView imageView = this.deleteImageView;
+                if (childAt == imageView) {
+                    imageView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+                } else {
+                    ChatActivityEnterViewAnimatedIconView chatActivityEnterViewAnimatedIconView = this.emojiButton;
+                    if (childAt == chatActivityEnterViewAnimatedIconView) {
+                        chatActivityEnterViewAnimatedIconView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+                    } else {
+                        ImageView imageView2 = this.moveImageView;
+                        if (childAt == imageView2) {
+                            imageView2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+                        } else {
+                            SimpleTextView simpleTextView = this.textView2;
+                            if (childAt == simpleTextView) {
+                                simpleTextView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
+                            } else {
+                                CheckBox2 checkBox2 = this.checkBox;
+                                if (childAt == checkBox2) {
+                                    checkBox2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+                                } else {
+                                    ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
+                                    if (layoutParams != null) {
+                                        childAt.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLObject.FLAG_30));
+                                    } else {
+                                        childAt.measure(i, i2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-        ChatActivityEnterViewAnimatedIconView chatActivityEnterViewAnimatedIconView = this.emojiButton;
-        if (chatActivityEnterViewAnimatedIconView != null) {
-            chatActivityEnterViewAnimatedIconView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
-        }
-        ImageView imageView2 = this.moveImageView;
-        if (imageView2 != null) {
-            imageView2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
-        }
-        SimpleTextView simpleTextView = this.textView2;
-        if (simpleTextView != null) {
-            simpleTextView.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
-        }
-        CheckBox2 checkBox2 = this.checkBox;
-        if (checkBox2 != null) {
-            checkBox2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
-        }
-        if (this.textView2 == null) {
+        Integer num = this.right;
+        if (num != null) {
+            i3 = num.intValue();
+        } else if (this.textView2 == null) {
             i3 = 42;
         } else if (this.deleteImageView == null) {
             i3 = 70;

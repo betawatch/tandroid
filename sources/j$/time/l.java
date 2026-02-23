@@ -129,7 +129,7 @@ public final class l implements j$.time.temporal.o, j$.time.temporal.p {
             case 4:
                 return (z ? 1 : 0) + NotificationCenter.musicListLoaded;
             case 5:
-                return (z ? 1 : 0) + NotificationCenter.billingConfirmPurchaseError;
+                return (z ? 1 : 0) + NotificationCenter.billingProductDetailsUpdated;
             case 6:
                 return 1;
             case 7:
@@ -141,9 +141,9 @@ public final class l implements j$.time.temporal.o, j$.time.temporal.p {
             case 10:
                 return (z ? 1 : 0) + NotificationCenter.timezonesUpdated;
             case 11:
-                return (z ? 1 : 0) + NotificationCenter.newLocationAvailable;
+                return (z ? 1 : 0) + NotificationCenter.liveLocationsChanged;
             default:
-                return (z ? 1 : 0) + NotificationCenter.contactsPermissionBadgeCheck;
+                return (z ? 1 : 0) + NotificationCenter.callTabsVisibleToggled;
         }
     }
 

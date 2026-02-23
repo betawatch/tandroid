@@ -1098,7 +1098,7 @@ public class LinkManager {
     public /* synthetic */ void lambda$handleSettings$1(TLObject tLObject) {
         lambda$handleInvoiceSlug$13();
         if (tLObject != null) {
-            this.activity.lambda$handleIntent$17((TL_account.Password) tLObject);
+            this.activity.lambda$handleIntent$19((TL_account.Password) tLObject);
         }
     }
 

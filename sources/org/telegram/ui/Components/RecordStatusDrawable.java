@@ -16,7 +16,7 @@ public class RecordStatusDrawable extends StatusDrawable {
     private long lastUpdateTime = 0;
     private boolean started = false;
     private RectF rect = new RectF();
-    int alpha = NotificationCenter.cameraInitied;
+    int alpha = NotificationCenter.closeOtherAppActivities;
 
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {

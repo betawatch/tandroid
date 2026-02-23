@@ -54,7 +54,7 @@ import org.telegram.ui.Components.LinkPath;
 import org.telegram.ui.Components.LinkSpanDrawable;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.TypefaceSpan;
-import org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda62;
+import org.telegram.ui.ProfileActivity$$ExternalSyntheticLambda63;
 
 /* loaded from: classes5.dex */
 public class HintView2 extends View {
@@ -181,7 +181,7 @@ public class HintView2 extends View {
         CubicBezierInterpolator cubicBezierInterpolator = CubicBezierInterpolator.EASE_OUT_QUINT;
         this.show = new AnimatedFloat(this, 350L, cubicBezierInterpolator);
         this.iconMargin = AndroidUtilities.dp(2.0f);
-        this.hideRunnable = new ProfileActivity$$ExternalSyntheticLambda62(this);
+        this.hideRunnable = new ProfileActivity$$ExternalSyntheticLambda63(this);
         this.bounceT = 1.0f;
         this.bounce = new ButtonBounce(this, 2.0f, 5.0f);
         this.boundsWithArrow = new Rect();
@@ -754,7 +754,7 @@ public class HintView2 extends View {
 
     protected void drawBgPath(Canvas canvas) {
         if (this.blurBackgroundPaint != null) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.cameraInitied, 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), NotificationCenter.closeOtherAppActivities, 31);
             canvas.drawPath(this.path, this.blurBackgroundPaint);
             canvas.drawPath(this.path, this.blurCutPaint);
             canvas.restore();

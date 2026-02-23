@@ -53,7 +53,7 @@ public class MotionBackgroundPaint {
         BlendMode blendMode;
         if (i3 >= 0) {
             i5 = ColorUtils.setAlphaComponent(i, ((Color.alpha(i) * i2) * i3) / 25500);
-            i4 = NotificationCenter.cameraInitied;
+            i4 = NotificationCenter.closeOtherAppActivities;
         } else {
             i4 = (i2 * (-i3)) / 100;
             i5 = -16777216;

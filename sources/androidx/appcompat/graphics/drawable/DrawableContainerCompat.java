@@ -26,7 +26,7 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
     private Rect mHotspotBounds;
     private Drawable mLastDrawable;
     private boolean mMutated;
-    private int mAlpha = NotificationCenter.cameraInitied;
+    private int mAlpha = NotificationCenter.closeOtherAppActivities;
     private int mCurIndex = -1;
 
     abstract DrawableContainerState cloneConstantState();
@@ -506,7 +506,7 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
                     drawable2.setAlpha(this.mAlpha);
                     this.mEnterAnimationEnd = 0L;
                 } else {
-                    drawable2.setAlpha(((255 - (((int) ((j - uptimeMillis) * 255)) / this.mDrawableContainerState.mEnterFadeDuration)) * this.mAlpha) / NotificationCenter.cameraInitied);
+                    drawable2.setAlpha(((255 - (((int) ((j - uptimeMillis) * 255)) / this.mDrawableContainerState.mEnterFadeDuration)) * this.mAlpha) / NotificationCenter.closeOtherAppActivities);
                     z2 = true;
                     drawable = this.mLastDrawable;
                     if (drawable == null) {
@@ -517,7 +517,7 @@ public abstract class DrawableContainerCompat extends Drawable implements Drawab
                                 this.mLastDrawable = null;
                                 this.mExitAnimationEnd = 0L;
                             } else {
-                                drawable.setAlpha(((((int) ((j2 - uptimeMillis) * 255)) / this.mDrawableContainerState.mExitFadeDuration) * this.mAlpha) / NotificationCenter.cameraInitied);
+                                drawable.setAlpha(((((int) ((j2 - uptimeMillis) * 255)) / this.mDrawableContainerState.mExitFadeDuration) * this.mAlpha) / NotificationCenter.closeOtherAppActivities);
                                 if (z && z3) {
                                     scheduleSelf(this.mAnimationRunnable, uptimeMillis + 16);
                                     return;

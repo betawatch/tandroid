@@ -2,18 +2,18 @@ package com.google.android.gms.cast.framework;
 
 /* loaded from: classes.dex */
 public abstract class R$string {
-    public static final int cast_casting_to_device = 2131699816;
-    public static final int cast_disconnect = 2131699820;
-    public static final int cast_forward = 2131699830;
-    public static final int cast_forward_10 = 2131699831;
-    public static final int cast_forward_30 = 2131699832;
-    public static final int cast_pause = 2131699842;
-    public static final int cast_play = 2131699843;
-    public static final int cast_rewind = 2131699844;
-    public static final int cast_rewind_10 = 2131699845;
-    public static final int cast_rewind_30 = 2131699846;
-    public static final int cast_skip_next = 2131699848;
-    public static final int cast_skip_prev = 2131699849;
-    public static final int cast_stop_live_stream = 2131699851;
-    public static final int media_notification_channel_name = 2131699930;
+    public static final int cast_casting_to_device = 2131699901;
+    public static final int cast_disconnect = 2131699905;
+    public static final int cast_forward = 2131699915;
+    public static final int cast_forward_10 = 2131699916;
+    public static final int cast_forward_30 = 2131699917;
+    public static final int cast_pause = 2131699927;
+    public static final int cast_play = 2131699928;
+    public static final int cast_rewind = 2131699929;
+    public static final int cast_rewind_10 = 2131699930;
+    public static final int cast_rewind_30 = 2131699931;
+    public static final int cast_skip_next = 2131699933;
+    public static final int cast_skip_prev = 2131699934;
+    public static final int cast_stop_live_stream = 2131699936;
+    public static final int media_notification_channel_name = 2131700015;
 }

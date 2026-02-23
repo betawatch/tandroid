@@ -512,7 +512,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
         if (action == 2 && this.mIsBeingDragged) {
             return true;
         }
-        int i = action & NotificationCenter.cameraInitied;
+        int i = action & NotificationCenter.closeOtherAppActivities;
         if (i == 0) {
             int y = (int) motionEvent.getY();
             if (!inChild((int) motionEvent.getX(), y)) {

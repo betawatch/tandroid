@@ -43,6 +43,7 @@ import android.os.PowerManager;
 import android.os.Process;
 import android.os.SystemClock;
 import android.os.Vibrator;
+import android.provider.CalendarContract;
 import android.provider.CallLog;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
@@ -871,7 +872,10 @@ public class AndroidUtilities {
     }
 
     public static CharSequence replaceArrows(CharSequence charSequence, boolean z, float f, float f2, float f3) {
-        int i = R.drawable.msg_mini_forumarrow;
+        return replaceArrows(charSequence, z, f, f2, f3, R.drawable.msg_mini_forumarrow);
+    }
+
+    public static CharSequence replaceArrows(CharSequence charSequence, boolean z, float f, float f2, float f3, int i) {
         ColoredImageSpan coloredImageSpan = new ColoredImageSpan(i, 0);
         float f4 = f3 * 0.88f;
         coloredImageSpan.setScale(f4, f4);
@@ -1692,7 +1696,7 @@ public class AndroidUtilities {
             }
             i = -16777216;
         }
-        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.cameraInitied, (i >> 8) & NotificationCenter.cameraInitied, i & NotificationCenter.cameraInitied);
+        double[] rgbToHsv = rgbToHsv((i >> 16) & NotificationCenter.closeOtherAppActivities, (i >> 8) & NotificationCenter.closeOtherAppActivities, i & NotificationCenter.closeOtherAppActivities);
         double d = rgbToHsv[1];
         rgbToHsv[1] = Math.min(1.0d, 0.05d + d + ((1.0d - d) * 0.1d));
         int[] hsvToRgb = hsvToRgb(rgbToHsv[0], rgbToHsv[1], Math.max(0.0d, rgbToHsv[2] * 0.65d));
@@ -1739,7 +1743,7 @@ public class AndroidUtilities {
 
     public static int hsvToColor(double d, double d2, double d3) {
         int[] hsvToRgb = hsvToRgb(d, d2, d3);
-        return Color.argb(NotificationCenter.cameraInitied, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
+        return Color.argb(NotificationCenter.closeOtherAppActivities, hsvToRgb[0], hsvToRgb[1], hsvToRgb[2]);
     }
 
     public static int[] hsvToRgb(double d, double d2, double d3) {
@@ -3781,8 +3785,8 @@ public class AndroidUtilities {
         return FileLoader.getDirectory(0);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00b7 A[Catch: Exception -> 0x0040, TryCatch #0 {Exception -> 0x0040, blocks: (B:3:0x0001, B:5:0x0009, B:8:0x0013, B:10:0x0025, B:14:0x0043, B:16:0x0049, B:18:0x0066, B:20:0x006c, B:32:0x00b9, B:34:0x00b1, B:35:0x00b4, B:36:0x00b7, B:37:0x008b, B:40:0x0095, B:43:0x009e, B:46:0x00c8, B:48:0x00d4, B:50:0x00db, B:52:0x00e7), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00ac  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00b8 A[Catch: Exception -> 0x0040, TryCatch #0 {Exception -> 0x0040, blocks: (B:3:0x0001, B:5:0x0009, B:8:0x0013, B:10:0x0025, B:14:0x0043, B:16:0x0049, B:18:0x0066, B:20:0x006c, B:32:0x00ba, B:34:0x00b2, B:35:0x00b5, B:36:0x00b8, B:37:0x008b, B:40:0x0096, B:43:0x009f, B:46:0x00c9, B:48:0x00d5, B:50:0x00dc, B:52:0x00e8), top: B:2:0x0001 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -5184,7 +5188,7 @@ public class AndroidUtilities {
             i2 = (int) ((f5 * 255.0f) + 0.5f);
             i3 = (int) ((f7 * 255.0f) + 0.5f);
         }
-        return ((i & NotificationCenter.cameraInitied) << 16) | (-16777216) | ((i2 & NotificationCenter.cameraInitied) << 8) | (i3 & NotificationCenter.cameraInitied);
+        return ((i & NotificationCenter.closeOtherAppActivities) << 16) | (-16777216) | ((i2 & NotificationCenter.closeOtherAppActivities) << 8) | (i3 & NotificationCenter.closeOtherAppActivities);
     }
 
     public static float computePerceivedBrightness(int i) {
@@ -5523,7 +5527,7 @@ public class AndroidUtilities {
     }
 
     public static int getAverageColor(int i, int i2) {
-        return Color.argb(NotificationCenter.cameraInitied, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
+        return Color.argb(NotificationCenter.closeOtherAppActivities, (Color.red(i) / 2) + (Color.red(i2) / 2), (Color.green(i) / 2) + (Color.green(i2) / 2), (Color.blue(i) / 2) + (Color.blue(i2) / 2));
     }
 
     public static void setLightStatusBar(Window window, boolean z) {
@@ -6543,7 +6547,7 @@ public class AndroidUtilities {
         try {
             int i = 1;
             int attributeInt = exifInterface.getAttributeInt("Orientation", 1);
-            int i2 = NotificationCenter.proxySettingsChanged;
+            int i2 = NotificationCenter.didSetNewWallpapper;
             switch (attributeInt) {
                 case 2:
                     i2 = 0;
@@ -6634,7 +6638,7 @@ public class AndroidUtilities {
         if (i == 0) {
             return 0;
         }
-        return Color.argb(NotificationCenter.cameraInitied, i4 / i, i3 / i, i2 / i);
+        return Color.argb(NotificationCenter.closeOtherAppActivities, i4 / i, i3 / i, i2 / i);
     }
 
     public static String translitSafe(String str) {
@@ -7123,5 +7127,47 @@ public class AndroidUtilities {
             return isContextSafe(((ContextWrapper) context).getBaseContext());
         }
         return true;
+    }
+
+    public static int applyColorMatrix(int i, ColorMatrix colorMatrix) {
+        float[] array = colorMatrix.getArray();
+        int alpha = Color.alpha(i);
+        int red = Color.red(i);
+        float f = red;
+        float green = Color.green(i);
+        float blue = Color.blue(i);
+        float f2 = alpha;
+        float f3 = (array[0] * f) + (array[1] * green) + (array[2] * blue) + (array[3] * f2) + array[4];
+        float f4 = (array[5] * f) + (array[6] * green) + (array[7] * blue) + (array[8] * f2) + array[9];
+        float f5 = (array[10] * f) + (array[11] * green) + (array[12] * blue) + (array[13] * f2) + array[14];
+        return Color.argb(MathUtils.clamp(Math.round((array[15] * f) + (array[16] * green) + (array[17] * blue) + (array[18] * f2) + array[19]), 0, NotificationCenter.closeOtherAppActivities), MathUtils.clamp(Math.round(f3), 0, NotificationCenter.closeOtherAppActivities), MathUtils.clamp(Math.round(f4), 0, NotificationCenter.closeOtherAppActivities), MathUtils.clamp(Math.round(f5), 0, NotificationCenter.closeOtherAppActivities));
+    }
+
+    public static void createCalendarEvent(Activity activity, long j, String str, String str2, boolean z) {
+        long millis;
+        if (z) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(j);
+            calendar.set(11, 0);
+            calendar.set(12, 0);
+            calendar.set(13, 0);
+            calendar.set(14, 0);
+            j = calendar.getTimeInMillis();
+            millis = TimeUnit.DAYS.toMillis(1L);
+        } else {
+            millis = TimeUnit.MINUTES.toMillis(10L);
+        }
+        Intent putExtra = new Intent("android.intent.action.INSERT").setData(CalendarContract.Events.CONTENT_URI).putExtra("beginTime", j).putExtra("endTime", millis + j).putExtra("allDay", z);
+        if (!TextUtils.isEmpty(str)) {
+            putExtra.putExtra("title", str);
+        }
+        if (!TextUtils.isEmpty(str2)) {
+            putExtra.putExtra("description", str2);
+        }
+        try {
+            activity.startActivity(putExtra);
+        } catch (Throwable th) {
+            FileLog.e(th);
+        }
     }
 }

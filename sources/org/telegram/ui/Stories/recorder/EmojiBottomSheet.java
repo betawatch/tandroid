@@ -193,6 +193,11 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             super(context);
             this.previewDelegate = new ContentPreviewViewer.ContentPreviewViewerDelegate() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet.GifPage.4
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                public /* synthetic */ void addCaptionToGif(Object obj, Object obj2, boolean z, int i, int i2) {
+                    ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$addCaptionToGif(this, obj, obj2, z, i, i2);
+                }
+
+                @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                 public /* synthetic */ void addToFavoriteSelected(String str) {
                     ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$addToFavoriteSelected(this, str);
                 }
@@ -200,6 +205,11 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                 public /* synthetic */ boolean can() {
                     return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$can(this);
+                }
+
+                @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                public /* synthetic */ boolean canAddCaption(TLRPC.Document document) {
+                    return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canAddCaption(this, document);
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -3366,7 +3376,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 canvas.scale(scale, scale, this.bounds.centerX(), this.bounds.centerY());
                 canvas.drawRoundRect(this.bounds, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), StoryWidgetsCell.this.bgPaint);
                 if (this.lockDrawable != null) {
-                    canvas.saveLayerAlpha(this.bounds, NotificationCenter.cameraInitied, 31);
+                    canvas.saveLayerAlpha(this.bounds, NotificationCenter.closeOtherAppActivities, 31);
                 }
                 if (this.drawable == null) {
                     Drawable emojiBigDrawable = Emoji.getEmojiBigDrawable(this.emojiDrawable);

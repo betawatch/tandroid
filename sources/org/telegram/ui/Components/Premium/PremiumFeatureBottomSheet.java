@@ -50,6 +50,7 @@ import org.telegram.ui.Components.Premium.PremiumGradient;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Stars.StarGiftSheet;
+import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.ThemePreviewActivity;
 import org.telegram.ui.bots.AffiliateProgramFragment;
 
@@ -110,7 +111,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
     public PremiumFeatureBottomSheet(final BaseFragment baseFragment, Context context, int i, boolean z, int i2, final boolean z2, PremiumPreviewFragment.SubscriptionTier subscriptionTier, Theme.ResourcesProvider resourcesProvider) {
         super(context, false, resourcesProvider);
         this.premiumFeatures = new ArrayList();
-        this.gradientAlpha = NotificationCenter.cameraInitied;
+        this.gradientAlpha = NotificationCenter.closeOtherAppActivities;
         this.baseFragment = baseFragment;
         this.selectedTier = subscriptionTier;
         fixNavigationBar(getThemedColor(Theme.key_dialogBackground));
@@ -815,7 +816,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
             if (!PremiumFeatureBottomSheet.this.onlySelectedType) {
                 this.description.setLines(2);
             }
-            addView(this.description, LayoutHelper.createFrame(-1, -2.0f, 0, 21.0f, 10.0f, 21.0f, 16.0f));
+            addView(this.description, LayoutHelper.createLinear(-1, -2, 1, 21, 10, 21, 16));
             setClipChildren(false);
         }
 
@@ -884,12 +885,17 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                                                 if (PremiumFeatureBottomSheet.this.startType != 13) {
                                                     if (PremiumFeatureBottomSheet.this.startType != 38) {
                                                         if (PremiumFeatureBottomSheet.this.startType != 22) {
-                                                            if (PremiumFeatureBottomSheet.this.startType == 23) {
+                                                            if (PremiumFeatureBottomSheet.this.startType != 23) {
+                                                                if (PremiumFeatureBottomSheet.this.startType == 41) {
+                                                                    this.title.setText(LocaleController.getString(R.string.PremiumPreviewSharingDisable));
+                                                                    this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.PremiumPreviewSharingDisableDescription)));
+                                                                } else {
+                                                                    this.title.setText(premiumFeatureData.title);
+                                                                    this.description.setText(AndroidUtilities.replaceTags(premiumFeatureData.description));
+                                                                }
+                                                            } else {
                                                                 this.title.setText(LocaleController.getString(R.string.PremiumPreviewProfileColor));
                                                                 this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.PremiumPreviewProfileColorDescription)));
-                                                            } else {
-                                                                this.title.setText(premiumFeatureData.title);
-                                                                this.description.setText(AndroidUtilities.replaceTags(premiumFeatureData.description));
                                                             }
                                                         } else {
                                                             this.title.setText(LocaleController.getString(R.string.PremiumPreviewWallpaper));
@@ -942,6 +948,8 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                 this.description.setText("");
                 this.topViewOnFullHeight = true;
             }
+            LinkSpanDrawable.LinksTextView linksTextView = this.description;
+            linksTextView.setMaxWidth(HintView2.cutInFancyHalf(linksTextView.getText(), this.description.getPaint()));
             requestLayout();
             boolean z = premiumFeatureData.type == 40;
             if (z && this.featuresLayout == null) {

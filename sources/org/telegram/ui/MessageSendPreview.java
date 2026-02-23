@@ -290,7 +290,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
 
             @Override // org.telegram.ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
             protected void dispatchDraw(Canvas canvas) {
-                canvas.saveLayerAlpha(0.0f, getScrollY() + 1, getWidth(), (getScrollY() + getHeight()) - 1, NotificationCenter.cameraInitied, 31);
+                canvas.saveLayerAlpha(0.0f, getScrollY() + 1, getWidth(), (getScrollY() + getHeight()) - 1, NotificationCenter.closeOtherAppActivities, 31);
                 canvas.save();
                 drawChatBackgroundElements(canvas);
                 super.dispatchDraw(canvas);
@@ -771,6 +771,11 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void didPressAdmin(ChatMessageCell chatMessageCell) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAdmin(this, chatMessageCell);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean didPressAnimatedEmoji(ChatMessageCell chatMessageCell, AnimatedEmojiSpan animatedEmojiSpan) {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressAnimatedEmoji(this, chatMessageCell, animatedEmojiSpan);
                     }
@@ -1026,8 +1031,18 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ boolean isAdmin(long j) {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isAdmin(this, j);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ boolean isLandscape() {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isLandscape(this);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ boolean isOwner(long j) {
+                        return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isOwner(this, j);
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1305,7 +1320,7 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                 float lerp6 = AndroidUtilities.lerp(0.0f, MessageSendPreview.this.chatListView.canScrollVertically(1) ? 1.0f : 0.0f, MessageSendPreview.this.openProgress);
                 final float f8 = f3;
                 float f9 = f2;
-                canvas.saveLayerAlpha(0.0f, lerp3 + 1.0f, getWidth(), lerp5 - 1.0f, NotificationCenter.cameraInitied, 31);
+                canvas.saveLayerAlpha(0.0f, lerp3 + 1.0f, getWidth(), lerp5 - 1.0f, NotificationCenter.closeOtherAppActivities, 31);
                 if (MessageSendPreview.this.editText != null) {
                     canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - f7) * 255.0f), 31);
                     canvas.translate(f, f9);

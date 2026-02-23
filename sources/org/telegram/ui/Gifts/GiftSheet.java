@@ -79,7 +79,7 @@ import org.telegram.ui.AccountFrozenAlert;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda237;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda241;
 import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimatedFloat;
@@ -1181,7 +1181,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     lambda$fillItems$24 = GiftSheet.this.lambda$fillItems$24((TL_stars.StarGift) obj);
                     return lambda$fillItems$24;
                 }
-            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda237()));
+            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda241()));
         }
         if (this.dialogId < 0) {
             arrayList2 = (ArrayList) Collection.-EL.stream(arrayList2).filter(new Predicate() { // from class: org.telegram.ui.Gifts.GiftSheet$$ExternalSyntheticLambda20
@@ -1203,7 +1203,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     lambda$fillItems$25 = GiftSheet.lambda$fillItems$25((TL_stars.StarGift) obj);
                     return lambda$fillItems$25;
                 }
-            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda237()));
+            }).collect(Collectors.toCollection(new ChatActivity$$ExternalSyntheticLambda241()));
         }
         if (this.dialogId != UserConfig.getInstance(this.currentAccount).getClientUserId() && (giftsList3 = this.myGifts) != null) {
             Iterator it2 = giftsList3.gifts.iterator();
@@ -2206,11 +2206,7 @@ public class GiftSheet extends BottomSheetWithRecyclerListView implements Notifi
                     this.ribbon.setColor(Theme.getColor(Theme.key_gift_ribbon, this.resourcesProvider));
                     this.ribbon.setStrokeColor(0);
                     this.ribbon.setBackdrop((TL_stars.starGiftAttributeBackdrop) StarsController.findAttribute(this.userGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class));
-                    if (this.pinned) {
-                        this.ribbon.setText("#" + LocaleController.formatNumber(this.userGift.gift.num, ','), true);
-                        return;
-                    }
-                    this.ribbon.setText(LocaleController.formatString(R.string.Gift2Limited1OfRibbon, AndroidUtilities.formatWholeNumber(this.userGift.gift.availability_issued, 0)), true);
+                    this.ribbon.setText("#" + LocaleController.formatNumber(this.userGift.gift.num, ','), true);
                     return;
                 }
                 if (starGift.limited) {

@@ -456,7 +456,7 @@ public class LinkPreview extends View {
             canvas.drawPath(this.path, this.previewPaint);
             canvas.save();
             canvas.clipPath(this.path);
-            this.previewPaint.setAlpha(NotificationCenter.cameraInitied);
+            this.previewPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
             float f15 = this.density;
             canvas.drawRect(f15 * 10.0f, f10, f15 * 13.0f, f13, this.previewPaint);
             canvas.restore();

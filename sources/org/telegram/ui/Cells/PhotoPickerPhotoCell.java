@@ -167,7 +167,7 @@ public class PhotoPickerPhotoCell extends FrameLayout {
         if (str2 != null && str2.length() > 0) {
             this.imageView.setImage(searchImage.thumbUrl, null, drawable);
         } else if (MessageObject.isDocumentHasThumb(searchImage.document)) {
-            this.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, NotificationCenter.chatlistFolderUpdate), searchImage.document), (String) null, drawable, searchImage);
+            this.imageView.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(searchImage.document.thumbs, NotificationCenter.storiesDraftsUpdated), searchImage.document), (String) null, drawable, searchImage);
         } else {
             this.imageView.setImageDrawable(drawable);
         }

@@ -395,7 +395,7 @@ final class zzva implements zzvi {
                 iArr[i64] = i65;
                 i64++;
             }
-            int i74 = charAt25 & NotificationCenter.cameraInitied;
+            int i74 = charAt25 & NotificationCenter.closeOtherAppActivities;
             int i75 = charAt25 & 2048;
             int i76 = length;
             if (i74 >= 51) {
@@ -614,7 +614,7 @@ final class zzva implements zzvi {
     }
 
     private static int zzn(int i) {
-        return (i >>> 20) & NotificationCenter.cameraInitied;
+        return (i >>> 20) & NotificationCenter.closeOtherAppActivities;
     }
 
     private final int zzo(int i) {

@@ -1627,7 +1627,7 @@ public class ViewPagerFixed extends FrameLayout {
                     int dp = measuredWidth + this.currentTab.titleWidth + AndroidUtilities.dp(6.0f);
                     int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(20.0f)) / 2;
                     if (this.currentTab.id == Integer.MAX_VALUE || ((!TabsView.this.isEditing && TabsView.this.editingStartAnimationProgress == 0.0f) || str2 != null)) {
-                        TabsView.this.counterPaint.setAlpha(NotificationCenter.cameraInitied);
+                        TabsView.this.counterPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
                     } else {
                         TabsView.this.counterPaint.setAlpha((int) (TabsView.this.editingStartAnimationProgress * 255.0f));
                     }
@@ -1661,6 +1661,15 @@ public class ViewPagerFixed extends FrameLayout {
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 accessibilityNodeInfo.setSelected((this.currentTab == null || TabsView.this.selectedTabId == -1 || this.currentTab.id != TabsView.this.selectedTabId) ? false : true);
             }
+        }
+
+        public void setColors(int i, int i2, int i3, int i4, int i5) {
+            this.tabLineColorKey = i;
+            this.activeTextColorKey = i2;
+            this.unactiveTextColorKey = i3;
+            this.selectorColorKey = i4;
+            this.backgroundColorKey = i5;
+            this.selectorDrawable.setColor(Theme.getColor(i, this.resourcesProvider));
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1724,7 +1733,7 @@ public class ViewPagerFixed extends FrameLayout {
             this.selectorType = i;
             textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
             textPaint2.setTypeface(AndroidUtilities.bold());
-            textPaint.setTextSize(AndroidUtilities.dp((i == 9 || i == -2) ? 14.0f : 15.0f));
+            textPaint.setTextSize(AndroidUtilities.dp((i == 9 || i == 10 || i == -2) ? 14.0f : 15.0f));
             textPaint.setTypeface(AndroidUtilities.bold());
             textPaint3.setStyle(Paint.Style.STROKE);
             textPaint3.setStrokeCap(Paint.Cap.ROUND);
@@ -1784,7 +1793,7 @@ public class ViewPagerFixed extends FrameLayout {
                 this.listView.setSelectorType(9);
                 this.listView.setSelectorRadius(6);
             } else {
-                this.listView.setSelectorType(i);
+                this.listView.setSelectorType(i == 10 ? 9 : i);
                 if (i == 3) {
                     this.listView.setSelectorRadius(0);
                 } else {
@@ -1863,7 +1872,7 @@ public class ViewPagerFixed extends FrameLayout {
                     TabsView.this.invalidate();
                 }
             });
-            if (i == 9) {
+            if (i == 9 || i == 10) {
                 addView(this.listView, LayoutHelper.createFrame(-2, -1, 1));
             } else {
                 addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
@@ -2144,10 +2153,10 @@ public class ViewPagerFixed extends FrameLayout {
         }
 
         /* JADX WARN: Removed duplicated region for block: B:20:0x00fe  */
-        /* JADX WARN: Removed duplicated region for block: B:37:0x0090  */
-        /* JADX WARN: Removed duplicated region for block: B:40:0x00b5  */
-        /* JADX WARN: Removed duplicated region for block: B:42:0x00c7  */
-        /* JADX WARN: Removed duplicated region for block: B:43:0x0095  */
+        /* JADX WARN: Removed duplicated region for block: B:39:0x0090  */
+        /* JADX WARN: Removed duplicated region for block: B:42:0x00b5  */
+        /* JADX WARN: Removed duplicated region for block: B:44:0x00c7  */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x0095  */
         @Override // android.view.ViewGroup
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -2195,7 +2204,8 @@ public class ViewPagerFixed extends FrameLayout {
                                 i3 = (int) (i6 + ((i7 - i6) * this.animatingIndicatorProgress));
                                 int x = (int) (left + this.listView.getX());
                                 if (i3 != 0) {
-                                    if (this.selectorType == 9) {
+                                    int i8 = this.selectorType;
+                                    if (i8 == 9 || i8 == 10) {
                                         this.selectorPaint.setColor(Theme.multAlpha(this.textPaint.getColor(), 0.15f));
                                         float f3 = measuredHeight / 2.0f;
                                         float dp = AndroidUtilities.dp(26.0f);
@@ -2289,16 +2299,17 @@ public class ViewPagerFixed extends FrameLayout {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
+            int i3;
             if (!this.tabs.isEmpty()) {
                 int size = (View.MeasureSpec.getSize(i) - AndroidUtilities.dp(7.0f)) - AndroidUtilities.dp(7.0f);
-                int i3 = this.additionalTabWidth;
-                if (this.tabs.size() == 1 || this.selectorType == 9) {
+                int i4 = this.additionalTabWidth;
+                if (this.tabs.size() == 1 || (i3 = this.selectorType) == 9 || i3 == 10) {
                     this.additionalTabWidth = 0;
                 } else {
-                    int i4 = this.allTabsWidth;
-                    this.additionalTabWidth = i4 < size ? (size - i4) / this.tabs.size() : 0;
+                    int i5 = this.allTabsWidth;
+                    this.additionalTabWidth = i5 < size ? (size - i5) / this.tabs.size() : 0;
                 }
-                if (i3 != this.additionalTabWidth) {
+                if (i4 != this.additionalTabWidth) {
                     this.ignoreLayout = true;
                     this.adapter.notifyDataSetChanged();
                     this.ignoreLayout = false;

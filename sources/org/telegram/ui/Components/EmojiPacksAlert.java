@@ -133,6 +133,11 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
 
     class 1 implements ContentPreviewViewer.ContentPreviewViewerDelegate {
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ void addCaptionToGif(Object obj, Object obj2, boolean z, int i, int i2) {
+            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$addCaptionToGif(this, obj, obj2, z, i, i2);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public /* synthetic */ void addToFavoriteSelected(String str) {
             ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$addToFavoriteSelected(this, str);
         }
@@ -140,6 +145,11 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public boolean can() {
             return true;
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ boolean canAddCaption(TLRPC.Document document) {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canAddCaption(this, document);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -1056,7 +1066,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                         int i3 = this.threadIndex;
                         backgroundThreadDrawHolderArr[i2] = imageReceiver.setDrawInBackgroundThread(backgroundThreadDrawHolderArr2[i3], i3);
                         emojiImageView.backgroundThreadDrawHolder[this.threadIndex].time = j;
-                        animatedEmojiDrawable.setAlpha(NotificationCenter.cameraInitied);
+                        animatedEmojiDrawable.setAlpha(NotificationCenter.closeOtherAppActivities);
                         android.graphics.Rect rect = AndroidUtilities.rectTmp2;
                         rect.set(emojiImageView.getLeft() + emojiImageView.getPaddingLeft(), emojiImageView.getPaddingTop(), emojiImageView.getRight() - emojiImageView.getPaddingRight(), emojiImageView.getMeasuredHeight() - emojiImageView.getPaddingBottom());
                         emojiImageView.backgroundThreadDrawHolder[this.threadIndex].setBounds(rect);
@@ -1192,7 +1202,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) getContext()).lambda$runLinkRequest$97(new PremiumPreviewFragment(null));
+            ((LaunchActivity) getContext()).lambda$runLinkRequest$99(new PremiumPreviewFragment(null));
         }
     }
 

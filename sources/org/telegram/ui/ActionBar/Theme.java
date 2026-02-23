@@ -91,7 +91,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda90;
+import org.telegram.messenger.MessagesController$$ExternalSyntheticLambda103;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
@@ -757,6 +757,8 @@ public abstract class Theme {
     public static final int key_chat_stickerReplyNameText;
     public static final int key_chat_stickerViaBotNameText;
     public static final int key_chat_stickersHintPanel;
+    public static final int key_chat_tagAdmin;
+    public static final int key_chat_tagCreator;
     public static final int key_chat_textSelectBackground;
     public static final int key_chat_topPanelBackground;
     public static final int key_chat_topPanelClose;
@@ -1303,10 +1305,10 @@ public abstract class Theme {
         return i | (-16777216);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:85:0x2a69 A[Catch: Exception -> 0x273e, TryCatch #1 {Exception -> 0x273e, blocks: (B:56:0x271b, B:58:0x2731, B:59:0x2775, B:61:0x2783, B:62:0x27ae, B:64:0x27b2, B:66:0x27ba, B:67:0x27cc, B:68:0x27d8, B:70:0x27de, B:72:0x27e8, B:74:0x27ec, B:76:0x281a, B:77:0x281e, B:83:0x2a63, B:85:0x2a69, B:86:0x2a72, B:88:0x2a76, B:90:0x2a7e, B:92:0x2a82, B:93:0x2a86, B:95:0x2a88, B:97:0x2a92, B:79:0x2957, B:102:0x2977, B:103:0x2982, B:105:0x298e, B:109:0x299a, B:110:0x2a48, B:107:0x29a3, B:112:0x29a6, B:172:0x294e, B:173:0x2956, B:180:0x2aab, B:181:0x2ab1, B:184:0x2abc, B:186:0x2b11, B:187:0x2b1f, B:189:0x2b29, B:190:0x2b37, B:225:0x2b30, B:226:0x2b18, B:228:0x2791, B:230:0x2799, B:232:0x27a2, B:234:0x27ac, B:235:0x2741, B:237:0x2749, B:239:0x2751, B:241:0x275b, B:243:0x2763, B:115:0x282f, B:165:0x293d, B:166:0x2942), top: B:55:0x271b, inners: #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x2a82 A[Catch: Exception -> 0x273e, TryCatch #1 {Exception -> 0x273e, blocks: (B:56:0x271b, B:58:0x2731, B:59:0x2775, B:61:0x2783, B:62:0x27ae, B:64:0x27b2, B:66:0x27ba, B:67:0x27cc, B:68:0x27d8, B:70:0x27de, B:72:0x27e8, B:74:0x27ec, B:76:0x281a, B:77:0x281e, B:83:0x2a63, B:85:0x2a69, B:86:0x2a72, B:88:0x2a76, B:90:0x2a7e, B:92:0x2a82, B:93:0x2a86, B:95:0x2a88, B:97:0x2a92, B:79:0x2957, B:102:0x2977, B:103:0x2982, B:105:0x298e, B:109:0x299a, B:110:0x2a48, B:107:0x29a3, B:112:0x29a6, B:172:0x294e, B:173:0x2956, B:180:0x2aab, B:181:0x2ab1, B:184:0x2abc, B:186:0x2b11, B:187:0x2b1f, B:189:0x2b29, B:190:0x2b37, B:225:0x2b30, B:226:0x2b18, B:228:0x2791, B:230:0x2799, B:232:0x27a2, B:234:0x27ac, B:235:0x2741, B:237:0x2749, B:239:0x2751, B:241:0x275b, B:243:0x2763, B:115:0x282f, B:165:0x293d, B:166:0x2942), top: B:55:0x271b, inners: #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x2a85  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x2a92 A[Catch: Exception -> 0x273e, TryCatch #1 {Exception -> 0x273e, blocks: (B:56:0x271b, B:58:0x2731, B:59:0x2775, B:61:0x2783, B:62:0x27ae, B:64:0x27b2, B:66:0x27ba, B:67:0x27cc, B:68:0x27d8, B:70:0x27de, B:72:0x27e8, B:74:0x27ec, B:76:0x281a, B:77:0x281e, B:83:0x2a63, B:85:0x2a69, B:86:0x2a72, B:88:0x2a76, B:90:0x2a7e, B:92:0x2a82, B:93:0x2a86, B:95:0x2a88, B:97:0x2a92, B:79:0x2957, B:102:0x2977, B:103:0x2982, B:105:0x298e, B:109:0x299a, B:110:0x2a48, B:107:0x29a3, B:112:0x29a6, B:172:0x294e, B:173:0x2956, B:180:0x2aab, B:181:0x2ab1, B:184:0x2abc, B:186:0x2b11, B:187:0x2b1f, B:189:0x2b29, B:190:0x2b37, B:225:0x2b30, B:226:0x2b18, B:228:0x2791, B:230:0x2799, B:232:0x27a2, B:234:0x27ac, B:235:0x2741, B:237:0x2749, B:239:0x2751, B:241:0x275b, B:243:0x2763, B:115:0x282f, B:165:0x293d, B:166:0x2942), top: B:55:0x271b, inners: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x2a89 A[Catch: Exception -> 0x275e, TryCatch #1 {Exception -> 0x275e, blocks: (B:56:0x273b, B:58:0x2751, B:59:0x2795, B:61:0x27a3, B:62:0x27ce, B:64:0x27d2, B:66:0x27da, B:67:0x27ec, B:68:0x27f8, B:70:0x27fe, B:72:0x2808, B:74:0x280c, B:76:0x283a, B:77:0x283e, B:83:0x2a83, B:85:0x2a89, B:86:0x2a92, B:88:0x2a96, B:90:0x2a9e, B:92:0x2aa2, B:93:0x2aa6, B:95:0x2aa8, B:97:0x2ab2, B:79:0x2977, B:102:0x2997, B:103:0x29a2, B:105:0x29ae, B:109:0x29ba, B:110:0x2a68, B:107:0x29c3, B:112:0x29c6, B:172:0x296e, B:173:0x2976, B:180:0x2acb, B:181:0x2ad1, B:184:0x2adc, B:186:0x2b31, B:187:0x2b3f, B:189:0x2b49, B:190:0x2b57, B:225:0x2b50, B:226:0x2b38, B:228:0x27b1, B:230:0x27b9, B:232:0x27c2, B:234:0x27cc, B:235:0x2761, B:237:0x2769, B:239:0x2771, B:241:0x277b, B:243:0x2783, B:115:0x284f, B:165:0x295d, B:166:0x2962), top: B:55:0x273b, inners: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x2aa2 A[Catch: Exception -> 0x275e, TryCatch #1 {Exception -> 0x275e, blocks: (B:56:0x273b, B:58:0x2751, B:59:0x2795, B:61:0x27a3, B:62:0x27ce, B:64:0x27d2, B:66:0x27da, B:67:0x27ec, B:68:0x27f8, B:70:0x27fe, B:72:0x2808, B:74:0x280c, B:76:0x283a, B:77:0x283e, B:83:0x2a83, B:85:0x2a89, B:86:0x2a92, B:88:0x2a96, B:90:0x2a9e, B:92:0x2aa2, B:93:0x2aa6, B:95:0x2aa8, B:97:0x2ab2, B:79:0x2977, B:102:0x2997, B:103:0x29a2, B:105:0x29ae, B:109:0x29ba, B:110:0x2a68, B:107:0x29c3, B:112:0x29c6, B:172:0x296e, B:173:0x2976, B:180:0x2acb, B:181:0x2ad1, B:184:0x2adc, B:186:0x2b31, B:187:0x2b3f, B:189:0x2b49, B:190:0x2b57, B:225:0x2b50, B:226:0x2b38, B:228:0x27b1, B:230:0x27b9, B:232:0x27c2, B:234:0x27cc, B:235:0x2761, B:237:0x2769, B:239:0x2771, B:241:0x277b, B:243:0x2783, B:115:0x284f, B:165:0x295d, B:166:0x2962), top: B:55:0x273b, inners: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x2aa5  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x2ab2 A[Catch: Exception -> 0x275e, TryCatch #1 {Exception -> 0x275e, blocks: (B:56:0x273b, B:58:0x2751, B:59:0x2795, B:61:0x27a3, B:62:0x27ce, B:64:0x27d2, B:66:0x27da, B:67:0x27ec, B:68:0x27f8, B:70:0x27fe, B:72:0x2808, B:74:0x280c, B:76:0x283a, B:77:0x283e, B:83:0x2a83, B:85:0x2a89, B:86:0x2a92, B:88:0x2a96, B:90:0x2a9e, B:92:0x2aa2, B:93:0x2aa6, B:95:0x2aa8, B:97:0x2ab2, B:79:0x2977, B:102:0x2997, B:103:0x29a2, B:105:0x29ae, B:109:0x29ba, B:110:0x2a68, B:107:0x29c3, B:112:0x29c6, B:172:0x296e, B:173:0x2976, B:180:0x2acb, B:181:0x2ad1, B:184:0x2adc, B:186:0x2b31, B:187:0x2b3f, B:189:0x2b49, B:190:0x2b57, B:225:0x2b50, B:226:0x2b38, B:228:0x27b1, B:230:0x27b9, B:232:0x27c2, B:234:0x27cc, B:235:0x2761, B:237:0x2769, B:239:0x2771, B:241:0x277b, B:243:0x2783, B:115:0x284f, B:165:0x295d, B:166:0x2962), top: B:55:0x273b, inners: #2 }] */
     static {
         ThemeInfo themeInfo;
         ThemeInfo themeInfo2;
@@ -3074,512 +3076,518 @@ public abstract class Theme {
         key_profile_status = i564;
         int i565 = colorsCount;
         colorsCount = i565 + 1;
-        key_profile_tabText = i565;
+        key_chat_tagAdmin = i565;
         int i566 = colorsCount;
         colorsCount = i566 + 1;
-        key_profile_tabSelectedText = i566;
+        key_chat_tagCreator = i566;
         int i567 = colorsCount;
         colorsCount = i567 + 1;
-        key_profile_tabSelectedLine = i567;
+        key_profile_tabText = i567;
         int i568 = colorsCount;
         colorsCount = i568 + 1;
-        key_profile_tabSelector = i568;
+        key_profile_tabSelectedText = i568;
         int i569 = colorsCount;
         colorsCount = i569 + 1;
-        key_sharedMedia_startStopLoadIcon = i569;
+        key_profile_tabSelectedLine = i569;
         int i570 = colorsCount;
         colorsCount = i570 + 1;
-        key_sharedMedia_linkPlaceholder = i570;
+        key_profile_tabSelector = i570;
         int i571 = colorsCount;
         colorsCount = i571 + 1;
-        key_sharedMedia_linkPlaceholderText = i571;
+        key_sharedMedia_startStopLoadIcon = i571;
         int i572 = colorsCount;
         colorsCount = i572 + 1;
-        key_sharedMedia_photoPlaceholder = i572;
+        key_sharedMedia_linkPlaceholder = i572;
         int i573 = colorsCount;
         colorsCount = i573 + 1;
-        key_featuredStickers_addedIcon = i573;
+        key_sharedMedia_linkPlaceholderText = i573;
         int i574 = colorsCount;
         colorsCount = i574 + 1;
-        key_featuredStickers_buttonProgress = i574;
+        key_sharedMedia_photoPlaceholder = i574;
         int i575 = colorsCount;
         colorsCount = i575 + 1;
-        key_featuredStickers_addButton = i575;
+        key_featuredStickers_addedIcon = i575;
         int i576 = colorsCount;
         colorsCount = i576 + 1;
-        key_featuredStickers_addButton2 = i576;
+        key_featuredStickers_buttonProgress = i576;
         int i577 = colorsCount;
         colorsCount = i577 + 1;
-        key_featuredStickers_addButtonPressed = i577;
+        key_featuredStickers_addButton = i577;
         int i578 = colorsCount;
         colorsCount = i578 + 1;
-        key_featuredStickers_removeButtonText = i578;
+        key_featuredStickers_addButton2 = i578;
         int i579 = colorsCount;
         colorsCount = i579 + 1;
-        key_featuredStickers_buttonText = i579;
+        key_featuredStickers_addButtonPressed = i579;
         int i580 = colorsCount;
         colorsCount = i580 + 1;
-        key_featuredStickers_unread = i580;
+        key_featuredStickers_removeButtonText = i580;
         int i581 = colorsCount;
         colorsCount = i581 + 1;
-        key_stickers_menu = i581;
+        key_featuredStickers_buttonText = i581;
         int i582 = colorsCount;
         colorsCount = i582 + 1;
-        key_stickers_menuSelector = i582;
+        key_featuredStickers_unread = i582;
         int i583 = colorsCount;
         colorsCount = i583 + 1;
-        key_changephoneinfo_image2 = i583;
+        key_stickers_menu = i583;
         int i584 = colorsCount;
         colorsCount = i584 + 1;
-        key_groupcreate_hintText = i584;
+        key_stickers_menuSelector = i584;
         int i585 = colorsCount;
         colorsCount = i585 + 1;
-        key_groupcreate_cursor = i585;
+        key_changephoneinfo_image2 = i585;
         int i586 = colorsCount;
         colorsCount = i586 + 1;
-        key_groupcreate_sectionShadow = i586;
+        key_groupcreate_hintText = i586;
         int i587 = colorsCount;
         colorsCount = i587 + 1;
-        key_groupcreate_sectionText = i587;
+        key_groupcreate_cursor = i587;
         int i588 = colorsCount;
         colorsCount = i588 + 1;
-        key_groupcreate_spanText = i588;
+        key_groupcreate_sectionShadow = i588;
         int i589 = colorsCount;
         colorsCount = i589 + 1;
-        key_groupcreate_spanBackground = i589;
+        key_groupcreate_sectionText = i589;
         int i590 = colorsCount;
         colorsCount = i590 + 1;
-        key_groupcreate_spanDelete = i590;
+        key_groupcreate_spanText = i590;
         int i591 = colorsCount;
         colorsCount = i591 + 1;
-        key_contacts_inviteBackground = i591;
+        key_groupcreate_spanBackground = i591;
         int i592 = colorsCount;
         colorsCount = i592 + 1;
-        key_contacts_inviteText = i592;
+        key_groupcreate_spanDelete = i592;
         int i593 = colorsCount;
         colorsCount = i593 + 1;
-        key_login_progressInner = i593;
+        key_contacts_inviteBackground = i593;
         int i594 = colorsCount;
         colorsCount = i594 + 1;
-        key_login_progressOuter = i594;
+        key_contacts_inviteText = i594;
         int i595 = colorsCount;
         colorsCount = i595 + 1;
-        key_picker_enabledButton = i595;
+        key_login_progressInner = i595;
         int i596 = colorsCount;
         colorsCount = i596 + 1;
-        key_picker_disabledButton = i596;
+        key_login_progressOuter = i596;
         int i597 = colorsCount;
         colorsCount = i597 + 1;
-        key_picker_badge = i597;
+        key_picker_enabledButton = i597;
         int i598 = colorsCount;
         colorsCount = i598 + 1;
-        key_picker_badgeText = i598;
+        key_picker_disabledButton = i598;
         int i599 = colorsCount;
         colorsCount = i599 + 1;
-        key_location_sendLocationBackground = i599;
+        key_picker_badge = i599;
         int i600 = colorsCount;
         colorsCount = i600 + 1;
-        key_location_sendLocationIcon = i600;
+        key_picker_badgeText = i600;
         int i601 = colorsCount;
         colorsCount = i601 + 1;
-        key_location_sendLocationText = i601;
+        key_location_sendLocationBackground = i601;
         int i602 = colorsCount;
         colorsCount = i602 + 1;
-        key_location_sendLiveLocationBackground = i602;
+        key_location_sendLocationIcon = i602;
         int i603 = colorsCount;
         colorsCount = i603 + 1;
-        key_location_sendLiveLocationIcon = i603;
+        key_location_sendLocationText = i603;
         int i604 = colorsCount;
         colorsCount = i604 + 1;
-        key_location_sendLiveLocationText = i604;
+        key_location_sendLiveLocationBackground = i604;
         int i605 = colorsCount;
         colorsCount = i605 + 1;
-        key_location_liveLocationProgress = i605;
+        key_location_sendLiveLocationIcon = i605;
         int i606 = colorsCount;
         colorsCount = i606 + 1;
-        key_location_placeLocationBackground = i606;
+        key_location_sendLiveLocationText = i606;
         int i607 = colorsCount;
         colorsCount = i607 + 1;
-        key_location_actionIcon = i607;
+        key_location_liveLocationProgress = i607;
         int i608 = colorsCount;
         colorsCount = i608 + 1;
-        key_location_actionActiveIcon = i608;
+        key_location_placeLocationBackground = i608;
         int i609 = colorsCount;
         colorsCount = i609 + 1;
-        key_location_actionBackground = i609;
+        key_location_actionIcon = i609;
         int i610 = colorsCount;
         colorsCount = i610 + 1;
-        key_location_actionPressedBackground = i610;
+        key_location_actionActiveIcon = i610;
         int i611 = colorsCount;
         colorsCount = i611 + 1;
-        key_dialog_liveLocationProgress = i611;
+        key_location_actionBackground = i611;
         int i612 = colorsCount;
         colorsCount = i612 + 1;
-        key_files_folderIcon = i612;
+        key_location_actionPressedBackground = i612;
         int i613 = colorsCount;
         colorsCount = i613 + 1;
-        key_files_folderIconBackground = i613;
+        key_dialog_liveLocationProgress = i613;
         int i614 = colorsCount;
         colorsCount = i614 + 1;
-        key_files_iconText = i614;
+        key_files_folderIcon = i614;
         int i615 = colorsCount;
         colorsCount = i615 + 1;
-        key_sessions_devicesImage = i615;
+        key_files_folderIconBackground = i615;
         int i616 = colorsCount;
         colorsCount = i616 + 1;
-        key_calls_callReceivedGreenIcon = i616;
+        key_files_iconText = i616;
         int i617 = colorsCount;
         colorsCount = i617 + 1;
-        key_calls_callReceivedRedIcon = i617;
+        key_sessions_devicesImage = i617;
         int i618 = colorsCount;
         colorsCount = i618 + 1;
-        key_undo_background = i618;
+        key_calls_callReceivedGreenIcon = i618;
         int i619 = colorsCount;
         colorsCount = i619 + 1;
-        key_undo_cancelColor = i619;
+        key_calls_callReceivedRedIcon = i619;
         int i620 = colorsCount;
         colorsCount = i620 + 1;
-        key_undo_infoColor = i620;
+        key_undo_background = i620;
         int i621 = colorsCount;
         colorsCount = i621 + 1;
-        key_sheet_scrollUp = i621;
+        key_undo_cancelColor = i621;
         int i622 = colorsCount;
         colorsCount = i622 + 1;
-        key_sheet_other = i622;
+        key_undo_infoColor = i622;
         int i623 = colorsCount;
         colorsCount = i623 + 1;
-        key_bot_loadingIcon = i623;
+        key_sheet_scrollUp = i623;
         int i624 = colorsCount;
         colorsCount = i624 + 1;
-        key_gift_ribbon = i624;
+        key_sheet_other = i624;
         int i625 = colorsCount;
         colorsCount = i625 + 1;
-        key_gift_ribbon_soldout = i625;
+        key_bot_loadingIcon = i625;
         int i626 = colorsCount;
         colorsCount = i626 + 1;
-        key_player_actionBarSelector = i626;
+        key_gift_ribbon = i626;
         int i627 = colorsCount;
         colorsCount = i627 + 1;
-        key_player_actionBarTitle = i627;
+        key_gift_ribbon_soldout = i627;
         int i628 = colorsCount;
         colorsCount = i628 + 1;
-        key_player_actionBarSubtitle = i628;
+        key_player_actionBarSelector = i628;
         int i629 = colorsCount;
         colorsCount = i629 + 1;
-        key_player_actionBarItems = i629;
+        key_player_actionBarTitle = i629;
         int i630 = colorsCount;
         colorsCount = i630 + 1;
-        key_player_background = i630;
+        key_player_actionBarSubtitle = i630;
         int i631 = colorsCount;
         colorsCount = i631 + 1;
-        key_player_time = i631;
+        key_player_actionBarItems = i631;
         int i632 = colorsCount;
         colorsCount = i632 + 1;
-        key_player_progressBackground = i632;
+        key_player_background = i632;
         int i633 = colorsCount;
         colorsCount = i633 + 1;
-        key_player_progressCachedBackground = i633;
+        key_player_time = i633;
         int i634 = colorsCount;
         colorsCount = i634 + 1;
-        key_player_progress = i634;
+        key_player_progressBackground = i634;
         int i635 = colorsCount;
         colorsCount = i635 + 1;
-        key_player_button = i635;
+        key_player_progressCachedBackground = i635;
         int i636 = colorsCount;
         colorsCount = i636 + 1;
-        key_player_buttonActive = i636;
+        key_player_progress = i636;
         int i637 = colorsCount;
         colorsCount = i637 + 1;
-        key_statisticChartSignature = i637;
+        key_player_button = i637;
         int i638 = colorsCount;
         colorsCount = i638 + 1;
-        key_statisticChartSignatureAlpha = i638;
+        key_player_buttonActive = i638;
         int i639 = colorsCount;
         colorsCount = i639 + 1;
-        key_statisticChartHintLine = i639;
+        key_statisticChartSignature = i639;
         int i640 = colorsCount;
         colorsCount = i640 + 1;
-        key_statisticChartActiveLine = i640;
+        key_statisticChartSignatureAlpha = i640;
         int i641 = colorsCount;
         colorsCount = i641 + 1;
-        key_statisticChartInactivePickerChart = i641;
+        key_statisticChartHintLine = i641;
         int i642 = colorsCount;
         colorsCount = i642 + 1;
-        key_statisticChartActivePickerChart = i642;
+        key_statisticChartActiveLine = i642;
         int i643 = colorsCount;
         colorsCount = i643 + 1;
-        key_statisticChartRipple = i643;
+        key_statisticChartInactivePickerChart = i643;
         int i644 = colorsCount;
         colorsCount = i644 + 1;
-        key_statisticChartBackZoomColor = i644;
+        key_statisticChartActivePickerChart = i644;
         int i645 = colorsCount;
         colorsCount = i645 + 1;
-        key_statisticChartChevronColor = i645;
+        key_statisticChartRipple = i645;
         int i646 = colorsCount;
         colorsCount = i646 + 1;
-        key_statisticChartLine_blue = i646;
+        key_statisticChartBackZoomColor = i646;
         int i647 = colorsCount;
         colorsCount = i647 + 1;
-        key_statisticChartLine_green = i647;
+        key_statisticChartChevronColor = i647;
         int i648 = colorsCount;
         colorsCount = i648 + 1;
-        key_statisticChartLine_red = i648;
+        key_statisticChartLine_blue = i648;
         int i649 = colorsCount;
         colorsCount = i649 + 1;
-        key_statisticChartLine_golden = i649;
+        key_statisticChartLine_green = i649;
         int i650 = colorsCount;
         colorsCount = i650 + 1;
-        key_statisticChartLine_lightblue = i650;
+        key_statisticChartLine_red = i650;
         int i651 = colorsCount;
         colorsCount = i651 + 1;
-        key_statisticChartLine_lightgreen = i651;
+        key_statisticChartLine_golden = i651;
         int i652 = colorsCount;
         colorsCount = i652 + 1;
-        key_statisticChartLine_orange = i652;
+        key_statisticChartLine_lightblue = i652;
         int i653 = colorsCount;
         colorsCount = i653 + 1;
-        key_statisticChartLine_indigo = i653;
+        key_statisticChartLine_lightgreen = i653;
         int i654 = colorsCount;
         colorsCount = i654 + 1;
-        key_statisticChartLine_purple = i654;
+        key_statisticChartLine_orange = i654;
         int i655 = colorsCount;
         colorsCount = i655 + 1;
-        key_statisticChartLine_cyan = i655;
+        key_statisticChartLine_indigo = i655;
         int i656 = colorsCount;
         colorsCount = i656 + 1;
-        key_statisticChartLineEmpty = i656;
+        key_statisticChartLine_purple = i656;
         int i657 = colorsCount;
         colorsCount = i657 + 1;
-        key_color_lightblue = i657;
+        key_statisticChartLine_cyan = i657;
         int i658 = colorsCount;
         colorsCount = i658 + 1;
-        key_color_blue = i658;
+        key_statisticChartLineEmpty = i658;
         int i659 = colorsCount;
         colorsCount = i659 + 1;
-        key_color_green = i659;
+        key_color_lightblue = i659;
         int i660 = colorsCount;
         colorsCount = i660 + 1;
-        key_color_lightgreen = i660;
+        key_color_blue = i660;
         int i661 = colorsCount;
         colorsCount = i661 + 1;
-        key_color_red = i661;
+        key_color_green = i661;
         int i662 = colorsCount;
         colorsCount = i662 + 1;
-        key_color_orange = i662;
+        key_color_lightgreen = i662;
         int i663 = colorsCount;
         colorsCount = i663 + 1;
-        key_color_yellow = i663;
+        key_color_red = i663;
         int i664 = colorsCount;
         colorsCount = i664 + 1;
-        key_color_purple = i664;
+        key_color_orange = i664;
         int i665 = colorsCount;
         colorsCount = i665 + 1;
-        key_color_cyan = i665;
-        keys_colors = new int[]{i657, i658, i659, i660, i661, i662, i663, i664, i665};
+        key_color_yellow = i665;
         int i666 = colorsCount;
         colorsCount = i666 + 1;
-        key_chat_inReactionButtonBackground = i666;
+        key_color_purple = i666;
         int i667 = colorsCount;
         colorsCount = i667 + 1;
-        key_chat_outReactionButtonText = i667;
+        key_color_cyan = i667;
+        keys_colors = new int[]{i659, i660, i661, i662, i663, i664, i665, i666, i667};
         int i668 = colorsCount;
         colorsCount = i668 + 1;
-        key_chat_inReactionButtonText = i668;
+        key_chat_inReactionButtonBackground = i668;
         int i669 = colorsCount;
         colorsCount = i669 + 1;
-        key_chat_inReactionButtonTextSelected = i669;
+        key_chat_outReactionButtonText = i669;
         int i670 = colorsCount;
         colorsCount = i670 + 1;
-        key_chat_outReactionButtonTextSelected = i670;
+        key_chat_inReactionButtonText = i670;
         int i671 = colorsCount;
         colorsCount = i671 + 1;
-        key_chat_reactionServiceButtonBackgroundSelected = i671;
+        key_chat_inReactionButtonTextSelected = i671;
         int i672 = colorsCount;
         colorsCount = i672 + 1;
-        key_chat_reactionServiceButtonTextSelected = i672;
+        key_chat_outReactionButtonTextSelected = i672;
         int i673 = colorsCount;
         colorsCount = i673 + 1;
-        key_reactionStarSelector = i673;
+        key_chat_reactionServiceButtonBackgroundSelected = i673;
         int i674 = colorsCount;
         colorsCount = i674 + 1;
-        key_premiumGradient0 = i674;
+        key_chat_reactionServiceButtonTextSelected = i674;
         int i675 = colorsCount;
         colorsCount = i675 + 1;
-        key_premiumGradient1 = i675;
+        key_reactionStarSelector = i675;
         int i676 = colorsCount;
         colorsCount = i676 + 1;
-        key_premiumGradient2 = i676;
+        key_premiumGradient0 = i676;
         int i677 = colorsCount;
         colorsCount = i677 + 1;
-        key_premiumGradient3 = i677;
+        key_premiumGradient1 = i677;
         int i678 = colorsCount;
         colorsCount = i678 + 1;
-        key_premiumGradient4 = i678;
+        key_premiumGradient2 = i678;
         int i679 = colorsCount;
         colorsCount = i679 + 1;
-        key_premiumGradientBackground1 = i679;
+        key_premiumGradient3 = i679;
         int i680 = colorsCount;
         colorsCount = i680 + 1;
-        key_premiumGradientBackground2 = i680;
+        key_premiumGradient4 = i680;
         int i681 = colorsCount;
         colorsCount = i681 + 1;
-        key_premiumGradientBackground3 = i681;
+        key_premiumGradientBackground1 = i681;
         int i682 = colorsCount;
         colorsCount = i682 + 1;
-        key_premiumGradientBackground4 = i682;
+        key_premiumGradientBackground2 = i682;
         int i683 = colorsCount;
         colorsCount = i683 + 1;
-        key_premiumGradientBackgroundOverlay = i683;
+        key_premiumGradientBackground3 = i683;
         int i684 = colorsCount;
         colorsCount = i684 + 1;
-        key_premiumStartSmallStarsColor = i684;
+        key_premiumGradientBackground4 = i684;
         int i685 = colorsCount;
         colorsCount = i685 + 1;
-        key_premiumStarGradient1 = i685;
+        key_premiumGradientBackgroundOverlay = i685;
         int i686 = colorsCount;
         colorsCount = i686 + 1;
-        key_premiumStarGradient2 = i686;
+        key_premiumStartSmallStarsColor = i686;
         int i687 = colorsCount;
         colorsCount = i687 + 1;
-        key_premiumCoinGradient1 = i687;
+        key_premiumStarGradient1 = i687;
         int i688 = colorsCount;
         colorsCount = i688 + 1;
-        key_premiumCoinGradient2 = i688;
+        key_premiumStarGradient2 = i688;
         int i689 = colorsCount;
         colorsCount = i689 + 1;
-        key_premiumStartSmallStarsColor2 = i689;
+        key_premiumCoinGradient1 = i689;
         int i690 = colorsCount;
         colorsCount = i690 + 1;
-        key_premiumGradientBottomSheet1 = i690;
+        key_premiumCoinGradient2 = i690;
         int i691 = colorsCount;
         colorsCount = i691 + 1;
-        key_premiumGradientBottomSheet2 = i691;
+        key_premiumStartSmallStarsColor2 = i691;
         int i692 = colorsCount;
         colorsCount = i692 + 1;
-        key_premiumGradientBottomSheet3 = i692;
+        key_premiumGradientBottomSheet1 = i692;
         int i693 = colorsCount;
         colorsCount = i693 + 1;
-        key_topics_unreadCounter = i693;
+        key_premiumGradientBottomSheet2 = i693;
         int i694 = colorsCount;
         colorsCount = i694 + 1;
-        key_topics_unreadCounterMuted = i694;
+        key_premiumGradientBottomSheet3 = i694;
         int i695 = colorsCount;
         colorsCount = i695 + 1;
-        key_starsGradient1 = i695;
+        key_topics_unreadCounter = i695;
         int i696 = colorsCount;
         colorsCount = i696 + 1;
-        key_starsGradient2 = i696;
+        key_topics_unreadCounterMuted = i696;
         int i697 = colorsCount;
         colorsCount = i697 + 1;
-        key_stories_circle1 = i697;
+        key_starsGradient1 = i697;
         int i698 = colorsCount;
         colorsCount = i698 + 1;
-        key_stories_circle2 = i698;
+        key_starsGradient2 = i698;
         int i699 = colorsCount;
         colorsCount = i699 + 1;
-        key_stories_circle_dialog1 = i699;
+        key_stories_circle1 = i699;
         int i700 = colorsCount;
         colorsCount = i700 + 1;
-        key_stories_circle_dialog2 = i700;
+        key_stories_circle2 = i700;
         int i701 = colorsCount;
         colorsCount = i701 + 1;
-        key_stories_circle_closeFriends1 = i701;
+        key_stories_circle_dialog1 = i701;
         int i702 = colorsCount;
         colorsCount = i702 + 1;
-        key_stories_circle_closeFriends2 = i702;
+        key_stories_circle_dialog2 = i702;
         int i703 = colorsCount;
         colorsCount = i703 + 1;
-        key_stories_circle_live1 = i703;
+        key_stories_circle_closeFriends1 = i703;
         int i704 = colorsCount;
         colorsCount = i704 + 1;
-        key_stories_circle_live2 = i704;
+        key_stories_circle_closeFriends2 = i704;
         int i705 = colorsCount;
         colorsCount = i705 + 1;
-        key_chat_inCodeBackground = i705;
+        key_stories_circle_live1 = i705;
         int i706 = colorsCount;
         colorsCount = i706 + 1;
-        key_chat_outCodeBackground = i706;
+        key_stories_circle_live2 = i706;
         int i707 = colorsCount;
         colorsCount = i707 + 1;
-        key_code_keyword = i707;
+        key_chat_inCodeBackground = i707;
         int i708 = colorsCount;
         colorsCount = i708 + 1;
-        key_code_operator = i708;
+        key_chat_outCodeBackground = i708;
         int i709 = colorsCount;
         colorsCount = i709 + 1;
-        key_code_constant = i709;
+        key_code_keyword = i709;
         int i710 = colorsCount;
         colorsCount = i710 + 1;
-        key_code_string = i710;
+        key_code_operator = i710;
         int i711 = colorsCount;
         colorsCount = i711 + 1;
-        key_code_number = i711;
+        key_code_constant = i711;
         int i712 = colorsCount;
         colorsCount = i712 + 1;
-        key_code_comment = i712;
+        key_code_string = i712;
         int i713 = colorsCount;
         colorsCount = i713 + 1;
-        key_code_function = i713;
+        key_code_number = i713;
         int i714 = colorsCount;
         colorsCount = i714 + 1;
-        key_iv_background = i714;
+        key_code_comment = i714;
         int i715 = colorsCount;
         colorsCount = i715 + 1;
-        key_iv_backgroundGray = i715;
+        key_code_function = i715;
         int i716 = colorsCount;
         colorsCount = i716 + 1;
-        key_iv_ab_progress = i716;
+        key_iv_background = i716;
         int i717 = colorsCount;
         colorsCount = i717 + 1;
-        key_iv_navigationBackground = i717;
+        key_iv_backgroundGray = i717;
         int i718 = colorsCount;
         colorsCount = i718 + 1;
-        key_share_linkText = i718;
+        key_iv_ab_progress = i718;
         int i719 = colorsCount;
         colorsCount = i719 + 1;
-        key_share_linkBackground = i719;
+        key_iv_navigationBackground = i719;
         int i720 = colorsCount;
         colorsCount = i720 + 1;
-        key_share_icon = i720;
+        key_share_linkText = i720;
         int i721 = colorsCount;
         colorsCount = i721 + 1;
-        key_glass_defaultIcon = i721;
+        key_share_linkBackground = i721;
         int i722 = colorsCount;
         colorsCount = i722 + 1;
-        key_glass_defaultText = i722;
+        key_share_icon = i722;
         int i723 = colorsCount;
         colorsCount = i723 + 1;
-        key_glass_targetMainTabs = i723;
+        key_glass_defaultIcon = i723;
         int i724 = colorsCount;
         colorsCount = i724 + 1;
-        key_glass_targetMainTopPanel = i724;
+        key_glass_defaultText = i724;
         int i725 = colorsCount;
         colorsCount = i725 + 1;
-        key_glass_tabSelected = i725;
+        key_glass_targetMainTabs = i725;
         int i726 = colorsCount;
         colorsCount = i726 + 1;
-        key_glass_tabSelectedText = i726;
+        key_glass_targetMainTopPanel = i726;
         int i727 = colorsCount;
         colorsCount = i727 + 1;
-        key_glass_tabUnselected = i727;
+        key_glass_tabSelected = i727;
         int i728 = colorsCount;
         colorsCount = i728 + 1;
-        key_botKeyboard_button_primary = i728;
+        key_glass_tabSelectedText = i728;
         int i729 = colorsCount;
         colorsCount = i729 + 1;
-        key_botKeyboard_button_danger = i729;
+        key_glass_tabUnselected = i729;
         int i730 = colorsCount;
         colorsCount = i730 + 1;
-        key_botKeyboard_button_success = i730;
+        key_botKeyboard_button_primary = i730;
         int i731 = colorsCount;
         colorsCount = i731 + 1;
-        key_telegram_color_dialogsLogo = i731;
+        key_botKeyboard_button_danger = i731;
         int i732 = colorsCount;
         colorsCount = i732 + 1;
-        key_telegram_color = i732;
+        key_botKeyboard_button_success = i732;
         int i733 = colorsCount;
         colorsCount = i733 + 1;
-        key_telegram_color_text = i733;
+        key_telegram_color_dialogsLogo = i733;
+        int i734 = colorsCount;
+        colorsCount = i734 + 1;
+        key_telegram_color = i734;
+        int i735 = colorsCount;
+        colorsCount = i735 + 1;
+        key_telegram_color_text = i735;
         defaultChatDrawables = new HashMap();
         defaultChatDrawableColorKeys = new HashMap();
         defaultChatPaints = new HashMap();
@@ -3592,28 +3600,28 @@ public abstract class Theme {
         hsvTemp4Local = new ThreadLocal();
         hsvTemp5Local = new ThreadLocal();
         defaultColors = ThemeColors.createDefaultColors();
-        fallbackKeys.put(i714, key_windowBackgroundWhite);
+        fallbackKeys.put(i716, key_windowBackgroundWhite);
         SparseIntArray sparseIntArray = fallbackKeys;
-        int i734 = key_windowBackgroundGray;
-        sparseIntArray.put(i715, i734);
-        fallbackKeys.put(i717, i734);
+        int i736 = key_windowBackgroundGray;
+        sparseIntArray.put(i717, i736);
+        fallbackKeys.put(i719, i736);
         fallbackKeys.put(key_bot_loadingIcon, key_groupcreate_spanBackground);
         fallbackKeys.put(key_gift_ribbon_soldout, key_text_RedBold);
         SparseIntArray sparseIntArray2 = fallbackKeys;
-        int i735 = key_featuredStickers_addButton;
-        sparseIntArray2.put(i716, i735);
-        fallbackKeys.put(key_featuredStickers_addButton2, i735);
-        fallbackKeys.put(key_dialogGiftsBackground, i734);
+        int i737 = key_featuredStickers_addButton;
+        sparseIntArray2.put(i718, i737);
+        fallbackKeys.put(key_featuredStickers_addButton2, i737);
+        fallbackKeys.put(key_dialogGiftsBackground, i736);
         SparseIntArray sparseIntArray3 = fallbackKeys;
-        int i736 = key_dialogGiftsTabText;
-        int i737 = key_windowBackgroundWhiteGrayText2;
-        sparseIntArray3.put(i736, i737);
+        int i738 = key_dialogGiftsTabText;
+        int i739 = key_windowBackgroundWhiteGrayText2;
+        sparseIntArray3.put(i738, i739);
         fallbackKeys.put(key_chat_inQuote, key_featuredStickers_addButtonPressed);
         SparseIntArray sparseIntArray4 = fallbackKeys;
-        int i738 = key_chat_outQuote;
-        int i739 = key_chat_outReplyLine;
-        sparseIntArray4.put(i738, i739);
-        fallbackKeys.put(key_chat_outReplyLine2, i739);
+        int i740 = key_chat_outQuote;
+        int i741 = key_chat_outReplyLine;
+        sparseIntArray4.put(i740, i741);
+        fallbackKeys.put(key_chat_outReplyLine2, i741);
         fallbackKeys.put(key_chat_inAdminText, key_chat_inTimeText);
         fallbackKeys.put(key_chat_inAdminSelectedText, key_chat_inTimeSelectedText);
         fallbackKeys.put(key_player_progressCachedBackground, key_player_progressBackground);
@@ -3621,220 +3629,225 @@ public abstract class Theme {
         fallbackKeys.put(key_chat_outAudioCacheSeekbar, key_chat_outAudioSeekbar);
         fallbackKeys.put(key_chat_emojiSearchBackground, key_chat_emojiPanelStickerPackSelector);
         fallbackKeys.put(key_location_sendLiveLocationIcon, key_location_sendLocationIcon);
-        fallbackKeys.put(key_changephoneinfo_image2, i735);
-        fallbackKeys.put(key_graySectionText, i737);
+        fallbackKeys.put(key_changephoneinfo_image2, i737);
+        fallbackKeys.put(key_graySectionText, i739);
         fallbackKeys.put(key_chat_inMediaIcon, key_chat_inBubble);
         fallbackKeys.put(key_chat_outMediaIcon, key_chat_outBubble);
         fallbackKeys.put(key_chat_inMediaIconSelected, key_chat_inBubbleSelected);
         fallbackKeys.put(key_chat_outMediaIconSelected, key_chat_outBubbleSelected);
-        fallbackKeys.put(key_dialog_inlineProgressBackground, i734);
+        fallbackKeys.put(key_dialog_inlineProgressBackground, i736);
         fallbackKeys.put(key_dialog_inlineProgress, key_chats_menuItemIcon);
         fallbackKeys.put(key_groupcreate_spanDelete, key_chats_actionIcon);
-        fallbackKeys.put(key_sharedMedia_photoPlaceholder, i734);
+        fallbackKeys.put(key_sharedMedia_photoPlaceholder, i736);
         fallbackKeys.put(key_chat_attachPollBackground, key_chat_attachAudioBackground);
         fallbackKeys.put(key_chats_onlineCircle, key_windowBackgroundWhiteBlueText);
         SparseIntArray sparseIntArray5 = fallbackKeys;
-        int i740 = key_windowBackgroundWhiteBlueButton;
-        int i741 = key_windowBackgroundWhiteValueText;
-        sparseIntArray5.put(i740, i741);
-        fallbackKeys.put(key_windowBackgroundWhiteBlueIcon, i741);
+        int i742 = key_windowBackgroundWhiteBlueButton;
+        int i743 = key_windowBackgroundWhiteValueText;
+        sparseIntArray5.put(i742, i743);
+        fallbackKeys.put(key_windowBackgroundWhiteBlueIcon, i743);
         fallbackKeys.put(key_undo_background, key_chat_gifSaveHintBackground);
         SparseIntArray sparseIntArray6 = fallbackKeys;
-        int i742 = key_undo_cancelColor;
-        int i743 = key_chat_gifSaveHintText;
-        sparseIntArray6.put(i742, i743);
-        fallbackKeys.put(key_undo_infoColor, i743);
+        int i744 = key_undo_cancelColor;
+        int i745 = key_chat_gifSaveHintText;
+        sparseIntArray6.put(i744, i745);
+        fallbackKeys.put(key_undo_infoColor, i745);
         SparseIntArray sparseIntArray7 = fallbackKeys;
-        int i744 = key_windowBackgroundUnchecked;
-        int i745 = key_windowBackgroundWhite;
-        sparseIntArray7.put(i744, i745);
-        fallbackKeys.put(key_windowBackgroundChecked, i745);
+        int i746 = key_windowBackgroundUnchecked;
+        int i747 = key_windowBackgroundWhite;
+        sparseIntArray7.put(i746, i747);
+        fallbackKeys.put(key_windowBackgroundChecked, i747);
         fallbackKeys.put(key_switchTrackBlue, key_switchTrack);
         fallbackKeys.put(key_switchTrackBlueChecked, key_switchTrackChecked);
-        fallbackKeys.put(key_switchTrackBlueThumb, i745);
-        fallbackKeys.put(key_switchTrackBlueThumbChecked, i745);
-        fallbackKeys.put(key_windowBackgroundCheckText, i745);
+        fallbackKeys.put(key_switchTrackBlueThumb, i747);
+        fallbackKeys.put(key_switchTrackBlueThumbChecked, i747);
+        fallbackKeys.put(key_windowBackgroundCheckText, i747);
         fallbackKeys.put(key_contextProgressInner4, key_contextProgressInner1);
         fallbackKeys.put(key_contextProgressOuter4, key_contextProgressOuter1);
         SparseIntArray sparseIntArray8 = fallbackKeys;
-        int i746 = key_switchTrackBlueSelector;
-        int i747 = key_listSelector;
-        sparseIntArray8.put(i746, i747);
-        fallbackKeys.put(key_switchTrackBlueSelectorChecked, i747);
-        fallbackKeys.put(key_settings_listSelector, i747);
+        int i748 = key_switchTrackBlueSelector;
+        int i749 = key_listSelector;
+        sparseIntArray8.put(i748, i749);
+        fallbackKeys.put(key_switchTrackBlueSelectorChecked, i749);
+        fallbackKeys.put(key_settings_listSelector, i749);
         SparseIntArray sparseIntArray9 = fallbackKeys;
-        int i748 = key_chat_emojiBottomPanelIcon;
-        int i749 = key_chat_emojiPanelIcon;
-        sparseIntArray9.put(i748, i749);
-        fallbackKeys.put(key_chat_emojiSearchIcon, i749);
+        int i750 = key_chat_tagAdmin;
+        int i751 = key_profile_creatorIcon;
+        sparseIntArray9.put(i750, i751);
+        fallbackKeys.put(key_chat_tagCreator, i751);
+        SparseIntArray sparseIntArray10 = fallbackKeys;
+        int i752 = key_chat_emojiBottomPanelIcon;
+        int i753 = key_chat_emojiPanelIcon;
+        sparseIntArray10.put(i752, i753);
+        fallbackKeys.put(key_chat_emojiSearchIcon, i753);
         fallbackKeys.put(key_chat_emojiPanelStickerSetNameHighlight, key_windowBackgroundWhiteBlueText4);
         fallbackKeys.put(key_chat_emojiPanelStickerPackSelectorLine, key_chat_emojiPanelIconSelected);
-        SparseIntArray sparseIntArray10 = fallbackKeys;
-        int i750 = key_sheet_scrollUp;
-        int i751 = key_chat_emojiPanelStickerPackSelector;
-        sparseIntArray10.put(i750, i751);
-        fallbackKeys.put(key_sheet_other, key_player_actionBarItems);
-        fallbackKeys.put(key_dialogSearchBackground, i751);
-        fallbackKeys.put(key_dialogSearchHint, i749);
-        fallbackKeys.put(key_dialogSearchIcon, i749);
         SparseIntArray sparseIntArray11 = fallbackKeys;
-        int i752 = key_dialogSearchText;
-        int i753 = key_windowBackgroundWhiteBlackText;
-        sparseIntArray11.put(i752, i753);
-        fallbackKeys.put(key_buttonNeutral, key_chat_replyPanelLine);
-        fallbackKeys.put(key_buttonNeutralText, i753);
+        int i754 = key_sheet_scrollUp;
+        int i755 = key_chat_emojiPanelStickerPackSelector;
+        sparseIntArray11.put(i754, i755);
+        fallbackKeys.put(key_sheet_other, key_player_actionBarItems);
+        fallbackKeys.put(key_dialogSearchBackground, i755);
+        fallbackKeys.put(key_dialogSearchHint, i753);
+        fallbackKeys.put(key_dialogSearchIcon, i753);
         SparseIntArray sparseIntArray12 = fallbackKeys;
-        int i754 = key_dialogFloatingButton;
-        int i755 = key_dialogRoundCheckBox;
-        sparseIntArray12.put(i754, i755);
-        fallbackKeys.put(key_dialogFloatingButtonPressed, i755);
+        int i756 = key_dialogSearchText;
+        int i757 = key_windowBackgroundWhiteBlackText;
+        sparseIntArray12.put(i756, i757);
+        fallbackKeys.put(key_buttonNeutral, key_chat_replyPanelLine);
+        fallbackKeys.put(key_buttonNeutralText, i757);
+        SparseIntArray sparseIntArray13 = fallbackKeys;
+        int i758 = key_dialogFloatingButton;
+        int i759 = key_dialogRoundCheckBox;
+        sparseIntArray13.put(i758, i759);
+        fallbackKeys.put(key_dialogFloatingButtonPressed, i759);
         fallbackKeys.put(key_dialogFloatingIcon, key_dialogRoundCheckBoxCheck);
         fallbackKeys.put(key_dialogShadowLine, key_chat_emojiPanelShadowLine);
         fallbackKeys.put(key_actionBarDefaultArchived, key_actionBarDefault);
-        SparseIntArray sparseIntArray13 = fallbackKeys;
-        int i756 = key_actionBarDefaultArchivedSelector;
-        int i757 = key_actionBarDefaultSelector;
-        sparseIntArray13.put(i756, i757);
+        SparseIntArray sparseIntArray14 = fallbackKeys;
+        int i760 = key_actionBarDefaultArchivedSelector;
+        int i761 = key_actionBarDefaultSelector;
+        sparseIntArray14.put(i760, i761);
         fallbackKeys.put(key_actionBarDefaultArchivedIcon, key_actionBarDefaultIcon);
-        fallbackKeys.put(key_actionBarDefaultArchivedTitle, i753);
+        fallbackKeys.put(key_actionBarDefaultArchivedTitle, i757);
         fallbackKeys.put(key_actionBarDefaultArchivedSearch, key_actionBarDefaultSearch);
         fallbackKeys.put(key_actionBarDefaultArchivedSearchPlaceholder, key_actionBarDefaultSearchPlaceholder);
-        SparseIntArray sparseIntArray14 = fallbackKeys;
-        int i758 = key_chats_message_threeLines;
-        int i759 = key_chats_message;
-        sparseIntArray14.put(i758, i759);
         SparseIntArray sparseIntArray15 = fallbackKeys;
-        int i760 = key_chats_nameMessage_threeLines;
-        int i761 = key_chats_nameMessage;
-        sparseIntArray15.put(i760, i761);
-        fallbackKeys.put(key_chats_nameArchived, key_chats_name);
-        fallbackKeys.put(key_chats_nameMessageArchived, i761);
-        fallbackKeys.put(key_chats_nameMessageArchived_threeLines, i761);
-        fallbackKeys.put(key_chats_messageArchived, i759);
+        int i762 = key_chats_message_threeLines;
+        int i763 = key_chats_message;
+        sparseIntArray15.put(i762, i763);
         SparseIntArray sparseIntArray16 = fallbackKeys;
-        int i762 = key_avatar_backgroundArchived;
-        int i763 = key_chats_unreadCounterMuted;
-        sparseIntArray16.put(i762, i763);
+        int i764 = key_chats_nameMessage_threeLines;
+        int i765 = key_chats_nameMessage;
+        sparseIntArray16.put(i764, i765);
+        fallbackKeys.put(key_chats_nameArchived, key_chats_name);
+        fallbackKeys.put(key_chats_nameMessageArchived, i765);
+        fallbackKeys.put(key_chats_nameMessageArchived_threeLines, i765);
+        fallbackKeys.put(key_chats_messageArchived, i763);
         SparseIntArray sparseIntArray17 = fallbackKeys;
-        int i764 = key_chats_archiveBackground;
-        int i765 = key_chats_actionBackground;
-        sparseIntArray17.put(i764, i765);
-        fallbackKeys.put(key_chats_archivePinBackground, i763);
+        int i766 = key_avatar_backgroundArchived;
+        int i767 = key_chats_unreadCounterMuted;
+        sparseIntArray17.put(i766, i767);
         SparseIntArray sparseIntArray18 = fallbackKeys;
-        int i766 = key_chats_archiveIcon;
-        int i767 = key_chats_actionIcon;
-        sparseIntArray18.put(i766, i767);
-        fallbackKeys.put(key_chats_archiveText, i767);
-        fallbackKeys.put(key_actionBarDefaultSubmenuItemIcon, key_dialogIcon);
-        fallbackKeys.put(key_checkboxDisabled, i763);
+        int i768 = key_chats_archiveBackground;
+        int i769 = key_chats_actionBackground;
+        sparseIntArray18.put(i768, i769);
+        fallbackKeys.put(key_chats_archivePinBackground, i767);
         SparseIntArray sparseIntArray19 = fallbackKeys;
-        int i768 = key_chat_status;
-        int i769 = key_actionBarDefaultSubtitle;
-        sparseIntArray19.put(i768, i769);
+        int i770 = key_chats_archiveIcon;
+        int i771 = key_chats_actionIcon;
+        sparseIntArray19.put(i770, i771);
+        fallbackKeys.put(key_chats_archiveText, i771);
+        fallbackKeys.put(key_actionBarDefaultSubmenuItemIcon, key_dialogIcon);
+        fallbackKeys.put(key_checkboxDisabled, i767);
         SparseIntArray sparseIntArray20 = fallbackKeys;
-        int i770 = key_chat_inGreenCall;
-        int i771 = key_calls_callReceivedGreenIcon;
-        sparseIntArray20.put(i770, i771);
-        fallbackKeys.put(key_chat_outGreenCall, i771);
+        int i772 = key_chat_status;
+        int i773 = key_actionBarDefaultSubtitle;
+        sparseIntArray20.put(i772, i773);
         SparseIntArray sparseIntArray21 = fallbackKeys;
-        int i772 = key_actionBarTabActiveText;
-        int i773 = key_actionBarDefaultTitle;
-        sparseIntArray21.put(i772, i773);
-        fallbackKeys.put(key_actionBarTabUnactiveText, i769);
-        fallbackKeys.put(key_actionBarTabLine, i773);
-        fallbackKeys.put(key_actionBarTabSelector, i757);
+        int i774 = key_chat_inGreenCall;
+        int i775 = key_calls_callReceivedGreenIcon;
+        sparseIntArray21.put(i774, i775);
+        fallbackKeys.put(key_chat_outGreenCall, i775);
+        SparseIntArray sparseIntArray22 = fallbackKeys;
+        int i776 = key_actionBarTabActiveText;
+        int i777 = key_actionBarDefaultTitle;
+        sparseIntArray22.put(i776, i777);
+        fallbackKeys.put(key_actionBarTabUnactiveText, i773);
+        fallbackKeys.put(key_actionBarTabLine, i777);
+        fallbackKeys.put(key_actionBarTabSelector, i761);
         fallbackKeys.put(key_profile_status, key_avatar_subtitleInProfileBlue);
         fallbackKeys.put(key_chats_menuTopBackgroundCats, key_avatar_backgroundActionBarBlue);
         fallbackKeys.put(key_chat_outLinkSelectBackground, key_chat_linkSelectBackground);
         fallbackKeys.put(key_actionBarDefaultSubmenuSeparator, key_windowBackgroundGray);
-        SparseIntArray sparseIntArray22 = fallbackKeys;
-        int i774 = key_chat_attachPermissionImage;
-        int i775 = key_dialogTextBlack;
-        sparseIntArray22.put(i774, i775);
+        SparseIntArray sparseIntArray23 = fallbackKeys;
+        int i778 = key_chat_attachPermissionImage;
+        int i779 = key_dialogTextBlack;
+        sparseIntArray23.put(i778, i779);
         fallbackKeys.put(key_chat_attachPermissionMark, key_chat_sentError);
-        fallbackKeys.put(key_chat_attachPermissionText, i775);
+        fallbackKeys.put(key_chat_attachPermissionText, i779);
         fallbackKeys.put(key_chat_attachEmptyImage, key_emptyListPlaceholder);
         fallbackKeys.put(key_actionBarBrowser, key_actionBarDefault);
         fallbackKeys.put(key_chats_sentReadCheck, key_chats_sentCheck);
         fallbackKeys.put(key_chat_outSentCheckRead, key_chat_outSentCheck);
         fallbackKeys.put(key_chat_outSentCheckReadSelected, key_chat_outSentCheckSelected);
-        fallbackKeys.put(key_chats_archivePullDownBackground, i763);
-        fallbackKeys.put(key_chats_archivePullDownBackgroundActive, i765);
+        fallbackKeys.put(key_chats_archivePullDownBackground, i767);
+        fallbackKeys.put(key_chats_archivePullDownBackgroundActive, i769);
         fallbackKeys.put(key_avatar_backgroundArchivedHidden, key_avatar_backgroundSaved);
         fallbackKeys.put(key_featuredStickers_removeButtonText, key_featuredStickers_addButtonPressed);
-        SparseIntArray sparseIntArray23 = fallbackKeys;
-        int i776 = key_dialogEmptyImage;
-        int i777 = key_player_time;
-        sparseIntArray23.put(i776, i777);
-        fallbackKeys.put(key_dialogEmptyText, i777);
-        fallbackKeys.put(key_location_actionIcon, i775);
         SparseIntArray sparseIntArray24 = fallbackKeys;
-        int i778 = key_location_actionActiveIcon;
-        int i779 = key_windowBackgroundWhiteBlueText7;
-        sparseIntArray24.put(i778, i779);
+        int i780 = key_dialogEmptyImage;
+        int i781 = key_player_time;
+        sparseIntArray24.put(i780, i781);
+        fallbackKeys.put(key_dialogEmptyText, i781);
+        fallbackKeys.put(key_location_actionIcon, i779);
+        SparseIntArray sparseIntArray25 = fallbackKeys;
+        int i782 = key_location_actionActiveIcon;
+        int i783 = key_windowBackgroundWhiteBlueText7;
+        sparseIntArray25.put(i782, i783);
         fallbackKeys.put(key_location_actionBackground, key_dialogBackground);
         fallbackKeys.put(key_location_actionPressedBackground, key_dialogBackgroundGray);
-        fallbackKeys.put(key_location_sendLocationText, i779);
+        fallbackKeys.put(key_location_sendLocationText, i783);
         fallbackKeys.put(key_location_sendLiveLocationText, key_windowBackgroundWhiteGreenText);
-        SparseIntArray sparseIntArray25 = fallbackKeys;
-        int i780 = key_chat_outTextSelectionHighlight;
-        int i781 = key_chat_textSelectBackground;
-        sparseIntArray25.put(i780, i781);
-        fallbackKeys.put(key_chat_inTextSelectionHighlight, i781);
         SparseIntArray sparseIntArray26 = fallbackKeys;
-        int i782 = key_chat_TextSelectionCursor;
-        sparseIntArray26.put(i782, key_chat_messagePanelCursor);
-        fallbackKeys.put(key_chat_outTextSelectionCursor, i782);
+        int i784 = key_chat_outTextSelectionHighlight;
+        int i785 = key_chat_textSelectBackground;
+        sparseIntArray26.put(i784, i785);
+        fallbackKeys.put(key_chat_inTextSelectionHighlight, i785);
         SparseIntArray sparseIntArray27 = fallbackKeys;
-        int i783 = key_chat_inPollCorrectAnswer;
-        int i784 = key_chat_attachLocationBackground;
-        sparseIntArray27.put(i783, i784);
-        fallbackKeys.put(key_chat_outPollCorrectAnswer, i784);
+        int i786 = key_chat_TextSelectionCursor;
+        sparseIntArray27.put(i786, key_chat_messagePanelCursor);
+        fallbackKeys.put(key_chat_outTextSelectionCursor, i786);
         SparseIntArray sparseIntArray28 = fallbackKeys;
-        int i785 = key_chat_inPollWrongAnswer;
-        int i786 = key_chat_attachAudioBackground;
-        sparseIntArray28.put(i785, i786);
-        fallbackKeys.put(key_chat_outPollWrongAnswer, i786);
+        int i787 = key_chat_inPollCorrectAnswer;
+        int i788 = key_chat_attachLocationBackground;
+        sparseIntArray28.put(i787, i788);
+        fallbackKeys.put(key_chat_outPollCorrectAnswer, i788);
+        SparseIntArray sparseIntArray29 = fallbackKeys;
+        int i789 = key_chat_inPollWrongAnswer;
+        int i790 = key_chat_attachAudioBackground;
+        sparseIntArray29.put(i789, i790);
+        fallbackKeys.put(key_chat_outPollWrongAnswer, i790);
         fallbackKeys.put(key_chat_editMediaButton, key_dialogFloatingButton);
         fallbackKeys.put(key_chat_attachCheckBoxBackground, key_dialogRoundCheckBox);
         fallbackKeys.put(key_profile_tabText, key_windowBackgroundWhiteGrayText);
-        SparseIntArray sparseIntArray29 = fallbackKeys;
-        int i787 = key_profile_tabSelectedText;
-        int i788 = key_windowBackgroundWhiteBlueHeader;
-        sparseIntArray29.put(i787, i788);
-        fallbackKeys.put(key_profile_tabSelectedLine, i788);
+        SparseIntArray sparseIntArray30 = fallbackKeys;
+        int i791 = key_profile_tabSelectedText;
+        int i792 = key_windowBackgroundWhiteBlueHeader;
+        sparseIntArray30.put(i791, i792);
+        fallbackKeys.put(key_profile_tabSelectedLine, i792);
         fallbackKeys.put(key_profile_tabSelector, key_listSelector);
         fallbackKeys.put(key_chat_attachContactText, key_chat_attachContactBackground);
-        SparseIntArray sparseIntArray30 = fallbackKeys;
-        int i789 = key_chat_inPsaNameText;
-        int i790 = key_avatar_nameInMessageGreen;
-        sparseIntArray30.put(i789, i790);
-        fallbackKeys.put(key_chat_outPsaNameText, i790);
+        SparseIntArray sparseIntArray31 = fallbackKeys;
+        int i793 = key_chat_inPsaNameText;
+        int i794 = key_avatar_nameInMessageGreen;
+        sparseIntArray31.put(i793, i794);
+        fallbackKeys.put(key_chat_outPsaNameText, i794);
         fallbackKeys.put(key_chat_outAdminText, key_chat_outTimeText);
         fallbackKeys.put(key_chat_outAdminSelectedText, key_chat_outTimeSelectedText);
-        SparseIntArray sparseIntArray31 = fallbackKeys;
-        int i791 = key_returnToCallMutedBackground;
-        int i792 = key_windowBackgroundWhite;
-        sparseIntArray31.put(i791, i792);
         SparseIntArray sparseIntArray32 = fallbackKeys;
-        int i793 = key_dialogSwipeRemove;
-        int i794 = key_avatar_backgroundRed;
-        sparseIntArray32.put(i793, i794);
+        int i795 = key_returnToCallMutedBackground;
+        int i796 = key_windowBackgroundWhite;
+        sparseIntArray32.put(i795, i796);
+        SparseIntArray sparseIntArray33 = fallbackKeys;
+        int i797 = key_dialogSwipeRemove;
+        int i798 = key_avatar_backgroundRed;
+        sparseIntArray33.put(i797, i798);
         fallbackKeys.put(key_chat_inReactionButtonBackground, key_chat_inLoader);
         fallbackKeys.put(key_chat_outReactionButtonBackground, key_chat_outLoader);
         fallbackKeys.put(key_chat_reactionServiceButtonBackgroundSelected, key_chat_outBubble);
         fallbackKeys.put(key_chat_reactionServiceButtonTextSelected, key_chat_messageTextOut);
-        SparseIntArray sparseIntArray33 = fallbackKeys;
-        int i795 = key_chat_inReactionButtonText;
-        sparseIntArray33.put(i795, key_chat_inPreviewInstantText);
+        SparseIntArray sparseIntArray34 = fallbackKeys;
+        int i799 = key_chat_inReactionButtonText;
+        sparseIntArray34.put(i799, key_chat_inPreviewInstantText);
         fallbackKeys.put(key_chat_outReactionButtonText, key_chat_outPreviewInstantText);
-        fallbackKeys.put(key_chat_inReactionButtonTextSelected, i792);
-        fallbackKeys.put(key_chat_outReactionButtonTextSelected, i792);
+        fallbackKeys.put(key_chat_inReactionButtonTextSelected, i796);
+        fallbackKeys.put(key_chat_outReactionButtonTextSelected, i796);
         fallbackKeys.put(key_dialogReactionMentionBackground, key_voipgroup_mutedByAdminGradient2);
         fallbackKeys.put(key_topics_unreadCounter, key_chats_unreadCounter);
         fallbackKeys.put(key_topics_unreadCounterMuted, key_chats_message);
         fallbackKeys.put(key_avatar_background2Saved, key_avatar_backgroundSaved);
-        fallbackKeys.put(key_avatar_background2Red, i794);
+        fallbackKeys.put(key_avatar_background2Red, i798);
         fallbackKeys.put(key_avatar_background2Orange, key_avatar_backgroundOrange);
         fallbackKeys.put(key_avatar_background2Violet, key_avatar_backgroundViolet);
         fallbackKeys.put(key_avatar_background2Green, key_avatar_backgroundGreen);
@@ -3847,78 +3860,78 @@ public abstract class Theme {
         fallbackKeys.put(key_statisticChartLine_red, key_color_red);
         fallbackKeys.put(key_statisticChartLine_lightblue, key_color_lightblue);
         fallbackKeys.put(key_statisticChartLine_golden, key_color_yellow);
-        SparseIntArray sparseIntArray34 = fallbackKeys;
-        int i796 = key_statisticChartLine_purple;
-        int i797 = key_color_purple;
-        sparseIntArray34.put(i796, i797);
-        fallbackKeys.put(key_statisticChartLine_indigo, i797);
-        fallbackKeys.put(key_statisticChartLine_cyan, key_color_cyan);
         SparseIntArray sparseIntArray35 = fallbackKeys;
-        int i798 = key_actionBarActionModeReaction;
-        int i799 = key_windowBackgroundGray;
-        sparseIntArray35.put(i798, i799);
-        fallbackKeys.put(key_actionBarActionModeReactionText, i795);
+        int i800 = key_statisticChartLine_purple;
+        int i801 = key_color_purple;
+        sparseIntArray35.put(i800, i801);
+        fallbackKeys.put(key_statisticChartLine_indigo, i801);
+        fallbackKeys.put(key_statisticChartLine_cyan, key_color_cyan);
+        SparseIntArray sparseIntArray36 = fallbackKeys;
+        int i802 = key_actionBarActionModeReaction;
+        int i803 = key_windowBackgroundGray;
+        sparseIntArray36.put(i802, i803);
+        fallbackKeys.put(key_actionBarActionModeReactionText, i799);
         fallbackKeys.put(key_table_background, key_graySection);
         fallbackKeys.put(key_table_border, key_divider);
-        SparseIntArray sparseIntArray36 = fallbackKeys;
-        int i800 = key_share_icon;
-        int i801 = key_windowBackgroundWhiteBlackText;
-        sparseIntArray36.put(i800, i801);
-        fallbackKeys.put(key_share_linkBackground, i799);
-        fallbackKeys.put(key_share_linkText, i801);
+        SparseIntArray sparseIntArray37 = fallbackKeys;
+        int i804 = key_share_icon;
+        int i805 = key_windowBackgroundWhiteBlackText;
+        sparseIntArray37.put(i804, i805);
+        fallbackKeys.put(key_share_linkBackground, i803);
+        fallbackKeys.put(key_share_linkText, i805);
         fallbackKeys.put(key_glass_defaultIcon, key_chat_messagePanelIcons);
         fallbackKeys.put(key_glass_defaultText, key_chat_messagePanelText);
-        SparseIntArray sparseIntArray37 = fallbackKeys;
-        int i802 = key_glass_targetMainTabs;
-        int i803 = key_dialogBackground;
-        sparseIntArray37.put(i802, i803);
-        fallbackKeys.put(key_glass_targetMainTopPanel, i803);
         SparseIntArray sparseIntArray38 = fallbackKeys;
-        int i804 = key_glass_tabSelected;
-        int i805 = key_chat_messagePanelSend;
-        sparseIntArray38.put(i804, i805);
-        fallbackKeys.put(key_glass_tabSelectedText, i805);
-        fallbackKeys.put(key_glass_tabUnselected, i801);
-        fallbackKeys.put(key_actionBarDefaultTitle, i801);
-        fallbackKeys.put(key_telegram_color_dialogsLogo, i801);
-        fallbackKeys.put(key_profile_title, i801);
-        fallbackKeys.put(key_telegram_color, i805);
+        int i806 = key_glass_targetMainTabs;
+        int i807 = key_dialogBackground;
+        sparseIntArray38.put(i806, i807);
+        fallbackKeys.put(key_glass_targetMainTopPanel, i807);
+        SparseIntArray sparseIntArray39 = fallbackKeys;
+        int i808 = key_glass_tabSelected;
+        int i809 = key_chat_messagePanelSend;
+        sparseIntArray39.put(i808, i809);
+        fallbackKeys.put(key_glass_tabSelectedText, i809);
+        fallbackKeys.put(key_glass_tabUnselected, i805);
+        fallbackKeys.put(key_actionBarDefaultTitle, i805);
+        fallbackKeys.put(key_telegram_color_dialogsLogo, i805);
+        fallbackKeys.put(key_profile_title, i805);
+        fallbackKeys.put(key_telegram_color, i809);
         fallbackKeys.put(key_telegram_color_text, key_windowBackgroundWhiteBlueText4);
-        int i806 = 0;
+        int i810 = 0;
         while (true) {
             int[] iArr = keys_avatar_background;
-            if (i806 >= iArr.length) {
+            if (i810 >= iArr.length) {
                 break;
             }
-            themeAccentExclusionKeys.add(Integer.valueOf(iArr[i806]));
-            i806++;
+            themeAccentExclusionKeys.add(Integer.valueOf(iArr[i810]));
+            i810++;
         }
-        int i807 = 0;
+        int i811 = 0;
         while (true) {
             int[] iArr2 = keys_avatar_background2;
-            if (i807 >= iArr2.length) {
+            if (i811 >= iArr2.length) {
                 break;
             }
-            themeAccentExclusionKeys.add(Integer.valueOf(iArr2[i807]));
-            i807++;
+            themeAccentExclusionKeys.add(Integer.valueOf(iArr2[i811]));
+            i811++;
         }
-        int i808 = 0;
+        int i812 = 0;
         while (true) {
             int[] iArr3 = keys_avatar_nameInMessage;
-            if (i808 >= iArr3.length) {
+            if (i812 >= iArr3.length) {
                 break;
             }
-            themeAccentExclusionKeys.add(Integer.valueOf(iArr3[i808]));
-            i808++;
+            themeAccentExclusionKeys.add(Integer.valueOf(iArr3[i812]));
+            i812++;
         }
-        int i809 = 0;
+        int i813 = 0;
         while (true) {
             int[] iArr4 = keys_colors;
-            if (i809 >= iArr4.length) {
+            if (i813 >= iArr4.length) {
                 break;
             }
-            themeAccentExclusionKeys.add(Integer.valueOf(iArr4[i809]));
-            i809++;
+            themeAccentExclusionKeys.add(Integer.valueOf(iArr4[i813]));
+            i813++;
         }
         themeAccentExclusionKeys.add(Integer.valueOf(key_chat_attachGalleryBackground));
         themeAccentExclusionKeys.add(Integer.valueOf(key_statisticChartLine_blue));
@@ -4053,7 +4066,7 @@ public abstract class Theme {
         themeInfo7.previewInColor = -1;
         themeInfo7.previewOutColor = -9657877;
         themeInfo7.sortIndex = 5;
-        themeInfo7.setAccentColorOptions(new int[]{-12537374, -12472227, -3240928, -11033621, -2194124, -3382903, -13332245, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-13525046, -14113959, -7579073, -13597229, -3581840, -8883763, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-11616542, -9716647, -6400452, -12008744, -2592697, -4297041, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-3808528, -2433367, -2700891, -1838093, -1120848, -1712148, -2037779, -4202261, -4005713, -1058332, -925763, -1975316, -1189672, -1318451, -2302235}, new int[]{-1510157, -4398164, -1647697, -3610898, -1130838, -1980692, -4270093, -4202261, -3415654, -1259815, -1521765, -4341268, -1127744, -1318219, -3945761}, new int[]{-4924688, -3283031, -1523567, -2494477, -1126510, -595210, -2037517, -3478548, -4661623, -927514, -796762, -2696971, -1188403, -1319735, -1577487}, new int[]{-3149585, -5714021, -1978209, -4925720, -1134713, -1718833, -3613709, -5317397, -3218014, -999207, -2116466, -4343054, -931397, -1583186, -3815718}, new int[]{9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"MIo6r0qGSFAFAAAAtL8TsDzNX60", "dhf9pceaQVACAAAAbzdVo4SCiZA", "fqv01SQemVIBAAAApND8LDRUhRU", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "pgJfpFNRSFABAAAACDT8s5sEjfc", "ptuUd96JSFACAAAATobI23sPpz0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "9iklpvIPQVABAAAAORQXKur_Eyc", "F5oWoCs7QFACAAAAgf2bD_mg8Bw"}, new int[]{NotificationCenter.wallpaperSettedToUser, NotificationCenter.wallpaperSettedToUser, NotificationCenter.botStarsTransactionsLoaded, NotificationCenter.wallpaperSettedToUser, 0, NotificationCenter.newEmojiSuggestionsAvailable, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{50, 50, 58, 47, 46, 50, 49, 46, 51, 50, 49, 34, 54, 50, 40});
+        themeInfo7.setAccentColorOptions(new int[]{-12537374, -12472227, -3240928, -11033621, -2194124, -3382903, -13332245, -12342073, -11359164, -3317869, -2981834, -8165684, -3256745, -2904512, -8681301}, new int[]{-13525046, -14113959, -7579073, -13597229, -3581840, -8883763, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-11616542, -9716647, -6400452, -12008744, -2592697, -4297041, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{-3808528, -2433367, -2700891, -1838093, -1120848, -1712148, -2037779, -4202261, -4005713, -1058332, -925763, -1975316, -1189672, -1318451, -2302235}, new int[]{-1510157, -4398164, -1647697, -3610898, -1130838, -1980692, -4270093, -4202261, -3415654, -1259815, -1521765, -4341268, -1127744, -1318219, -3945761}, new int[]{-4924688, -3283031, -1523567, -2494477, -1126510, -595210, -2037517, -3478548, -4661623, -927514, -796762, -2696971, -1188403, -1319735, -1577487}, new int[]{-3149585, -5714021, -1978209, -4925720, -1134713, -1718833, -3613709, -5317397, -3218014, -999207, -2116466, -4343054, -931397, -1583186, -3815718}, new int[]{9, 10, 11, 12, 13, 14, 0, 1, 2, 3, 4, 5, 6, 7, 8}, new String[]{"MIo6r0qGSFAFAAAAtL8TsDzNX60", "dhf9pceaQVACAAAAbzdVo4SCiZA", "fqv01SQemVIBAAAApND8LDRUhRU", "p-pXcflrmFIBAAAAvXYQk-mCwZU", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "F5oWoCs7QFACAAAAgf2bD_mg8Bw", "fqv01SQemVIBAAAApND8LDRUhRU", "RepJ5uE_SVABAAAAr4d0YhgB850", "PllZ-bf_SFAEAAAA8crRfwZiDNg", "pgJfpFNRSFABAAAACDT8s5sEjfc", "ptuUd96JSFACAAAATobI23sPpz0", "dhf9pceaQVACAAAAbzdVo4SCiZA", "JqSUrO0-mFIBAAAAWwTvLzoWGQI", "9iklpvIPQVABAAAAORQXKur_Eyc", "F5oWoCs7QFACAAAAgf2bD_mg8Bw"}, new int[]{NotificationCenter.onDatabaseReset, NotificationCenter.onDatabaseReset, NotificationCenter.botStarsTransactionsLoaded, NotificationCenter.onDatabaseReset, 0, NotificationCenter.newEmojiSuggestionsAvailable, 0, 0, 0, 0, 0, 0, 0, 0, 0}, new int[]{50, 50, 58, 47, 46, 50, 49, 46, 51, 50, 49, 34, 54, 50, 40});
         sortAccents(themeInfo7);
         themes.add(themeInfo7);
         themesDict.put("Arctic Blue", themeInfo7);
@@ -4081,30 +4094,30 @@ public abstract class Theme {
         themesDict.put("Night", themeInfo9);
         String str4 = null;
         String string = sharedPreferences.getString("themes2", null);
-        int i810 = 1;
+        int i814 = 1;
         if (sharedPreferences.getInt("remote_version", 0) == 1) {
-            int i811 = 0;
-            while (i811 < 4) {
+            int i815 = 0;
+            while (i815 < 4) {
                 long[] jArr = remoteThemesHash;
                 StringBuilder sb = new StringBuilder();
                 sb.append("2remoteThemesHash");
-                sb.append(i811 != 0 ? Integer.valueOf(i811) : "");
-                jArr[i811] = sharedPreferences.getLong(sb.toString(), 0L);
+                sb.append(i815 != 0 ? Integer.valueOf(i815) : "");
+                jArr[i815] = sharedPreferences.getLong(sb.toString(), 0L);
                 int[] iArr5 = lastLoadingThemesTime;
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append("lastLoadingThemesTime");
-                sb2.append(i811 != 0 ? Integer.valueOf(i811) : "");
-                iArr5[i811] = sharedPreferences.getInt(sb2.toString(), 0);
-                i811++;
+                sb2.append(i815 != 0 ? Integer.valueOf(i815) : "");
+                iArr5[i815] = sharedPreferences.getInt(sb2.toString(), 0);
+                i815++;
             }
-            i810 = 1;
+            i814 = 1;
         }
-        sharedPreferences.edit().putInt("remote_version", i810).apply();
+        sharedPreferences.edit().putInt("remote_version", i814).apply();
         if (!TextUtils.isEmpty(string)) {
             try {
                 JSONArray jSONArray = new JSONArray(string);
-                for (int i812 = 0; i812 < jSONArray.length(); i812++) {
-                    ThemeInfo createWithJson = ThemeInfo.createWithJson(jSONArray.getJSONObject(i812));
+                for (int i816 = 0; i816 < jSONArray.length(); i816++) {
+                    ThemeInfo createWithJson = ThemeInfo.createWithJson(jSONArray.getJSONObject(i816));
                     if (createWithJson != null) {
                         otherThemes.add(createWithJson);
                         themes.add(createWithJson);
@@ -4182,8 +4195,8 @@ public abstract class Theme {
                             boolean z2 = true;
                             int readInt32 = serializedData.readInt32(true);
                             int readInt322 = serializedData.readInt32(true);
-                            int i813 = 0;
-                            while (i813 < readInt322) {
+                            int i817 = 0;
+                            while (i817 < readInt322) {
                                 try {
                                     ThemeAccent themeAccent = new ThemeAccent();
                                     themeAccent.id = serializedData.readInt32(z2);
@@ -4251,7 +4264,7 @@ public abstract class Theme {
                                     }
                                     arrayList2.add(themeAccent);
                                     themeInfo4.lastAccentId = Math.max(themeInfo4.lastAccentId, themeAccent.id);
-                                    i813++;
+                                    i817++;
                                     str3 = str2;
                                     themeInfo11 = themeInfo4;
                                     editor4 = editor2;
@@ -4271,8 +4284,8 @@ public abstract class Theme {
                         str = str3;
                         themeInfo3 = themeInfo11;
                         String str6 = "accent_for_" + themeInfo3.assetName;
-                        int i814 = globalMainSettings.getInt(str6, 0);
-                        if (i814 != 0) {
+                        int i818 = globalMainSettings.getInt(str6, 0);
+                        if (i818 != 0) {
                             if (editor3 == null) {
                                 editor3 = globalMainSettings.edit();
                                 editor4 = sharedPreferences.edit();
@@ -4281,19 +4294,19 @@ public abstract class Theme {
                             }
                             editor3.remove(str6);
                             int size = themeInfo3.themeAccents.size();
-                            int i815 = 0;
+                            int i819 = 0;
                             while (true) {
-                                if (i815 < size) {
-                                    ThemeAccent themeAccent2 = (ThemeAccent) themeInfo3.themeAccents.get(i815);
-                                    if (themeAccent2.accentColor == i814) {
+                                if (i819 < size) {
+                                    ThemeAccent themeAccent2 = (ThemeAccent) themeInfo3.themeAccents.get(i819);
+                                    if (themeAccent2.accentColor == i818) {
                                         themeInfo3.currentAccentId = themeAccent2.id;
                                         break;
                                     }
-                                    i815++;
+                                    i819++;
                                 } else {
                                     ThemeAccent themeAccent3 = new ThemeAccent();
                                     themeAccent3.id = 100;
-                                    themeAccent3.accentColor = i814;
+                                    themeAccent3.accentColor = i818;
                                     themeAccent3.parentTheme = themeInfo3;
                                     themeInfo3.themeAccentsMap.put(100, themeAccent3);
                                     arrayList2.add(0, themeAccent3);
@@ -4422,10 +4435,10 @@ public abstract class Theme {
                 themeInfo = currentNightTheme;
             }
             applyTheme(themeInfo, false, false, needSwitchToTheme == 2);
-            AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda90());
+            AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda103());
             ambientSensorListener = new SensorEventListener() { // from class: org.telegram.ui.ActionBar.Theme.11
                 @Override // android.hardware.SensorEventListener
-                public void onAccuracyChanged(Sensor sensor, int i816) {
+                public void onAccuracyChanged(Sensor sensor, int i820) {
                 }
 
                 @Override // android.hardware.SensorEventListener
@@ -4594,7 +4607,7 @@ public abstract class Theme {
             this.isSelected = z2;
             this.path = new Path();
             this.selectedPaint = new Paint(1);
-            this.alpha = NotificationCenter.cameraInitied;
+            this.alpha = NotificationCenter.closeOtherAppActivities;
         }
 
         public boolean hasGradient() {
@@ -5100,7 +5113,7 @@ public abstract class Theme {
                 messageDrawable.draw(canvas);
                 setAlpha((int) (this.crossfadeProgress * 255.0f));
                 draw(canvas, null);
-                setAlpha(NotificationCenter.cameraInitied);
+                setAlpha(NotificationCenter.closeOtherAppActivities);
                 return;
             }
             draw(canvas, null);
@@ -6255,14 +6268,14 @@ public abstract class Theme {
                 float[] fArr3 = this.tempHSV;
                 float f4 = fArr3[2];
                 fArr3[2] = Math.max(0.0f, Math.min(1.0f, f4 - (f4 <= 0.7f ? 0.25f : 0.125f)));
-                return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.cameraInitied, this.tempHSV));
+                return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.closeOtherAppActivities, this.tempHSV));
             }
             fArr2[0] = f;
             fArr2[1] = Math.max(0.0f, Math.min(1.0f, f2 + 0.6f));
             float[] fArr32 = this.tempHSV;
             float f42 = fArr32[2];
             fArr32[2] = Math.max(0.0f, Math.min(1.0f, f42 - (f42 <= 0.7f ? 0.25f : 0.125f)));
-            return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.cameraInitied, this.tempHSV));
+            return Theme.blendOver(i, Color.HSVToColor(NotificationCenter.closeOtherAppActivities, this.tempHSV));
         }
 
         private int linkSelectionBackground(int i, int i2, boolean z) {
@@ -6343,7 +6356,7 @@ public abstract class Theme {
             if (i == 0) {
                 return 0;
             }
-            return Color.argb(NotificationCenter.cameraInitied, i4 / i, i3 / i, i2 / i);
+            return Color.argb(NotificationCenter.closeOtherAppActivities, i4 / i, i3 / i, i2 / i);
         }
 
         public File getPathToWallpaper() {
@@ -6413,10 +6426,10 @@ public abstract class Theme {
                 if (i6 == 0) {
                     i6 = 45;
                 }
-                String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (i2 >> 8)) & 255), Byte.valueOf((byte) (i2 & NotificationCenter.cameraInitied))).toLowerCase();
-                String lowerCase2 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (i3 >> 8)) & 255), Byte.valueOf((byte) (i3 & NotificationCenter.cameraInitied))).toLowerCase() : null;
-                String lowerCase3 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (i4 >> 8)) & 255), Byte.valueOf((byte) (i4 & NotificationCenter.cameraInitied))).toLowerCase() : null;
-                String lowerCase4 = i5 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i5 >> 16)) & 255), Integer.valueOf(((byte) (i5 >> 8)) & 255), Byte.valueOf((byte) (i5 & NotificationCenter.cameraInitied))).toLowerCase() : null;
+                String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (i2 >> 8)) & 255), Byte.valueOf((byte) (i2 & NotificationCenter.closeOtherAppActivities))).toLowerCase();
+                String lowerCase2 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (i3 >> 8)) & 255), Byte.valueOf((byte) (i3 & NotificationCenter.closeOtherAppActivities))).toLowerCase() : null;
+                String lowerCase3 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (i4 >> 8)) & 255), Byte.valueOf((byte) (i4 & NotificationCenter.closeOtherAppActivities))).toLowerCase() : null;
+                String lowerCase4 = i5 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i5 >> 16)) & 255), Integer.valueOf(((byte) (i5 >> 8)) & 255), Byte.valueOf((byte) (i5 & NotificationCenter.closeOtherAppActivities))).toLowerCase() : null;
                 if (lowerCase2 == null || lowerCase3 == null) {
                     if (lowerCase2 != null) {
                         lowerCase = (lowerCase + "-" + lowerCase2) + "&rotation=" + i6;
@@ -6527,7 +6540,7 @@ public abstract class Theme {
     }
 
     public static int multAlpha(int i, float f) {
-        return f == 1.0f ? i : ColorUtils.setAlphaComponent(i, MathUtils.clamp((int) (Color.alpha(i) * f), 0, NotificationCenter.cameraInitied));
+        return f == 1.0f ? i : ColorUtils.setAlphaComponent(i, MathUtils.clamp((int) (Color.alpha(i) * f), 0, NotificationCenter.closeOtherAppActivities));
     }
 
     public static class OverrideWallpaperInfo {
@@ -7154,10 +7167,10 @@ public abstract class Theme {
                     themeAccent.patternSlug = strArr[i];
                 }
                 if ((Theme.isHome(themeAccent) && this.name.equals("Dark Blue")) || this.name.equals("Night")) {
-                    themeAccent.myMessagesAccentColor = -10128392;
-                    themeAccent.myMessagesGradientAccentColor1 = -9026357;
-                    themeAccent.myMessagesGradientAccentColor2 = -7845452;
-                    themeAccent.myMessagesGradientAccentColor3 = -5811800;
+                    themeAccent.myMessagesAccentColor = -14316059;
+                    themeAccent.myMessagesGradientAccentColor1 = -12422433;
+                    themeAccent.myMessagesGradientAccentColor2 = -8304937;
+                    themeAccent.myMessagesGradientAccentColor3 = -6340950;
                     if (this.name.equals("Night")) {
                         themeAccent.patternIntensity = -0.57f;
                         themeAccent.backgroundOverrideColor = -9666650L;
@@ -8819,7 +8832,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda90(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda103(), 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -8958,7 +8971,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda90(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda103(), 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -9069,7 +9082,7 @@ public abstract class Theme {
                 if (isCurrentThemeNight()) {
                     switchNightThemeDelay = 2000;
                     lastDelayUpdateTime = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda90(), 2100L);
+                    AndroidUtilities.runOnUIThread(new MessagesController$$ExternalSyntheticLambda103(), 2100L);
                 }
             }
             currentTheme = themeInfo;
@@ -9197,7 +9210,7 @@ public abstract class Theme {
         tempHsv[1] = (tempHsv2[1] * fArr[1]) / tempHsv[1];
         float f = ((((tempHsv2[2] / tempHsv[2]) + min) - 1.0f) * fArr[2]) / min;
         tempHsv[2] = f;
-        return f < 0.3f ? i2 : Color.HSVToColor(NotificationCenter.cameraInitied, tempHsv);
+        return f < 0.3f ? i2 : Color.HSVToColor(NotificationCenter.closeOtherAppActivities, tempHsv);
     }
 
     public static int changeColorAccent(int i) {
@@ -9235,7 +9248,7 @@ public abstract class Theme {
         int red = (int) (Color.red(i) * f);
         int green = (int) (Color.green(i) * f);
         int blue = (int) (Color.blue(i) * f);
-        return Color.argb(Color.alpha(i), red < 0 ? 0 : Math.min(red, NotificationCenter.cameraInitied), green < 0 ? 0 : Math.min(green, NotificationCenter.cameraInitied), blue >= 0 ? Math.min(blue, NotificationCenter.cameraInitied) : 0);
+        return Color.argb(Color.alpha(i), red < 0 ? 0 : Math.min(red, NotificationCenter.closeOtherAppActivities), green < 0 ? 0 : Math.min(green, NotificationCenter.closeOtherAppActivities), blue >= 0 ? Math.min(blue, NotificationCenter.closeOtherAppActivities) : 0);
     }
 
     public static boolean deleteThemeAccent(ThemeInfo themeInfo, ThemeAccent themeAccent, boolean z) {
@@ -9681,13 +9694,13 @@ public abstract class Theme {
         if (i == 0) {
             str = "https://attheme.org?slug=" + overrideWallpaperInfo.slug;
         } else {
-            String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.color >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.color & NotificationCenter.cameraInitied))).toLowerCase();
+            String lowerCase = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.color >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.color & NotificationCenter.closeOtherAppActivities))).toLowerCase();
             int i2 = overrideWallpaperInfo.gradientColor1;
-            String lowerCase2 = i2 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor1 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor1 & NotificationCenter.cameraInitied))).toLowerCase() : null;
+            String lowerCase2 = i2 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i2 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor1 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor1 & NotificationCenter.closeOtherAppActivities))).toLowerCase() : null;
             int i3 = overrideWallpaperInfo.gradientColor2;
-            String lowerCase3 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor2 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor2 & NotificationCenter.cameraInitied))).toLowerCase() : null;
+            String lowerCase3 = i3 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i3 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor2 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor2 & NotificationCenter.closeOtherAppActivities))).toLowerCase() : null;
             int i4 = overrideWallpaperInfo.gradientColor3;
-            String lowerCase4 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor3 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor3 & NotificationCenter.cameraInitied))).toLowerCase() : null;
+            String lowerCase4 = i4 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i4 >> 16)) & 255), Integer.valueOf(((byte) (overrideWallpaperInfo.gradientColor3 >> 8)) & 255), Byte.valueOf((byte) (overrideWallpaperInfo.gradientColor3 & NotificationCenter.closeOtherAppActivities))).toLowerCase() : null;
             if (lowerCase2 == null || lowerCase3 == null) {
                 if (lowerCase2 != null) {
                     lowerCase = (lowerCase + "-" + lowerCase2) + "&rotation=" + overrideWallpaperInfo.rotation;
@@ -10602,14 +10615,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                            messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                             messageDrawableArr[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr[1].draw(canvas);
                                                             messageDrawableArr[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr[1].draw(canvas);
-                                                            messageDrawableArr[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                            messageDrawableArr[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                            messageDrawableArr[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                            messageDrawableArr[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                             messageDrawableArr[0].draw(canvas);
                                                             paint3.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3);
@@ -10670,14 +10683,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr2[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                            messageDrawableArr2[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                             messageDrawableArr2[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr2[1].draw(canvas);
                                                             messageDrawableArr2[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr2[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr2[1].draw(canvas);
-                                                            messageDrawableArr2[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                            messageDrawableArr2[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                            messageDrawableArr2[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                            messageDrawableArr2[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                             messageDrawableArr2[0].draw(canvas);
                                                             paint32.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32);
@@ -10737,14 +10750,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr22[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                            messageDrawableArr22[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                             messageDrawableArr22[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr22[1].draw(canvas);
                                                             messageDrawableArr22[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr22[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr22[1].draw(canvas);
-                                                            messageDrawableArr22[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                            messageDrawableArr22[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                            messageDrawableArr22[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                            messageDrawableArr22[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                             messageDrawableArr22[0].draw(canvas);
                                                             paint322.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322);
@@ -10853,14 +10866,14 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
-                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                                        messageDrawableArr222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                                        messageDrawableArr222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                                         messageDrawableArr222[0].draw(canvas);
                                                                         paint3222.setColor(previewColor3);
                                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222);
@@ -10907,14 +10920,14 @@ public abstract class Theme {
                                                                 drawable.setBounds(width, intrinsicHeight2, drawable.getIntrinsicWidth() + width, drawable.getIntrinsicHeight() + intrinsicHeight2);
                                                                 drawable.draw(canvas);
                                                             }
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
-                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                            messageDrawableArr222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                            messageDrawableArr222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                             messageDrawableArr222[0].draw(canvas);
                                                             paint32222.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222);
@@ -10965,14 +10978,14 @@ public abstract class Theme {
                                                             }
                                                             if (drawable != null) {
                                                             }
-                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                             messageDrawableArr222[1].draw(canvas);
-                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                            messageDrawableArr222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                            messageDrawableArr222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                             messageDrawableArr222[0].draw(canvas);
                                                             paint322222.setColor(previewColor3);
                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222);
@@ -11000,14 +11013,14 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
-                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                        messageDrawableArr222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                        messageDrawableArr222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                         messageDrawableArr222[0].draw(canvas);
                                                         paint3222222.setColor(previewColor3);
                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222);
@@ -11061,14 +11074,14 @@ public abstract class Theme {
                                                                                     }
                                                                                     if (drawable != null) {
                                                                                     }
-                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                                     messageDrawableArr222[1].draw(canvas);
                                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                                     messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                                     messageDrawableArr222[1].draw(canvas);
-                                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                                                    messageDrawableArr222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                                                    messageDrawableArr222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                                                     messageDrawableArr222[0].draw(canvas);
                                                                                     paint32222222.setColor(previewColor3);
                                                                                     canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222);
@@ -11095,14 +11108,14 @@ public abstract class Theme {
                                                                             }
                                                                             if (drawable != null) {
                                                                             }
-                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                                            messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                                             messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                             messageDrawableArr222[1].draw(canvas);
                                                                             messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                             messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                             messageDrawableArr222[1].draw(canvas);
-                                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                                            messageDrawableArr222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                                            messageDrawableArr222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                                            messageDrawableArr222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                                             messageDrawableArr222[0].draw(canvas);
                                                                             paint322222222.setColor(previewColor3);
                                                                             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222);
@@ -11136,14 +11149,14 @@ public abstract class Theme {
                                                                     }
                                                                     if (drawable != null) {
                                                                     }
-                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                                    messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                                     messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                     messageDrawableArr222[1].draw(canvas);
                                                                     messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                     messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                     messageDrawableArr222[1].draw(canvas);
-                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                                    messageDrawableArr222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                                    messageDrawableArr222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                                    messageDrawableArr222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                                     messageDrawableArr222[0].draw(canvas);
                                                                     paint3222222222.setColor(previewColor3);
                                                                     canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222);
@@ -11205,14 +11218,14 @@ public abstract class Theme {
                                                                         }
                                                                         if (drawable != null) {
                                                                         }
-                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
                                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                         messageDrawableArr222[1].draw(canvas);
-                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                                        messageDrawableArr222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                                        messageDrawableArr222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                                         messageDrawableArr222[0].draw(canvas);
                                                                         paint32222222222.setColor(previewColor3);
                                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222);
@@ -11238,14 +11251,14 @@ public abstract class Theme {
                                                                 }
                                                                 if (drawable != null) {
                                                                 }
-                                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                                 messageDrawableArr222[1].draw(canvas);
                                                                 messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                                 messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                                 messageDrawableArr222[1].draw(canvas);
-                                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                                messageDrawableArr222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                                messageDrawableArr222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                                 messageDrawableArr222[0].draw(canvas);
                                                                 paint322222222222.setColor(previewColor3);
                                                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222);
@@ -11274,14 +11287,14 @@ public abstract class Theme {
                                                         }
                                                         if (drawable != null) {
                                                         }
-                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                        messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                         messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
                                                         messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                         messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                         messageDrawableArr222[1].draw(canvas);
-                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                        messageDrawableArr222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                        messageDrawableArr222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                        messageDrawableArr222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                         messageDrawableArr222[0].draw(canvas);
                                                         paint3222222222222.setColor(previewColor3);
                                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222222);
@@ -11309,14 +11322,14 @@ public abstract class Theme {
                                                 }
                                                 if (drawable != null) {
                                                 }
-                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                                messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                                 messageDrawableArr222[1].setTop(0, 560, 522, false, false);
                                                 messageDrawableArr222[1].draw(canvas);
                                                 messageDrawableArr222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                                 messageDrawableArr222[1].setTop(430, 560, 522, false, false);
                                                 messageDrawableArr222[1].draw(canvas);
-                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                                messageDrawableArr222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                                messageDrawableArr222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                                messageDrawableArr222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                                 messageDrawableArr222[0].draw(canvas);
                                                 paint32222222222222.setColor(previewColor3);
                                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222222);
@@ -11365,14 +11378,14 @@ public abstract class Theme {
                                         }
                                         if (drawable != null) {
                                         }
-                                        messageDrawableArr2222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                        messageDrawableArr2222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                         messageDrawableArr2222[1].setTop(0, 560, 522, false, false);
                                         messageDrawableArr2222[1].draw(canvas);
                                         messageDrawableArr2222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                         messageDrawableArr2222[1].setTop(430, 560, 522, false, false);
                                         messageDrawableArr2222[1].draw(canvas);
-                                        messageDrawableArr2222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                        messageDrawableArr2222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                        messageDrawableArr2222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                        messageDrawableArr2222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                         messageDrawableArr2222[0].draw(canvas);
                                         paint322222222222222.setColor(previewColor3);
                                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222222);
@@ -11428,14 +11441,14 @@ public abstract class Theme {
                                 }
                                 if (drawable != null) {
                                 }
-                                messageDrawableArr22222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                                messageDrawableArr22222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                                 messageDrawableArr22222[1].setTop(0, 560, 522, false, false);
                                 messageDrawableArr22222[1].draw(canvas);
                                 messageDrawableArr22222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                                 messageDrawableArr22222[1].setTop(430, 560, 522, false, false);
                                 messageDrawableArr22222[1].draw(canvas);
-                                messageDrawableArr22222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                                messageDrawableArr22222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                                messageDrawableArr22222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                                messageDrawableArr22222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                                 messageDrawableArr22222[0].draw(canvas);
                                 paint3222222222222222.setColor(previewColor3);
                                 canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint3222222222222222);
@@ -11505,14 +11518,14 @@ public abstract class Theme {
                         }
                         if (drawable != null) {
                         }
-                        messageDrawableArr222222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+                        messageDrawableArr222222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
                         messageDrawableArr222222[1].setTop(0, 560, 522, false, false);
                         messageDrawableArr222222[1].draw(canvas);
                         messageDrawableArr222222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
                         messageDrawableArr222222[1].setTop(430, 560, 522, false, false);
                         messageDrawableArr222222[1].draw(canvas);
-                        messageDrawableArr222222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-                        messageDrawableArr222222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+                        messageDrawableArr222222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+                        messageDrawableArr222222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
                         messageDrawableArr222222[0].draw(canvas);
                         paint32222222222222222.setColor(previewColor3);
                         canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint32222222222222222);
@@ -11597,14 +11610,14 @@ public abstract class Theme {
             }
             if (drawable != null) {
             }
-            messageDrawableArr2222222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.requestPermissions);
+            messageDrawableArr2222222[1].setBounds(NotificationCenter.audioDidSent, NotificationCenter.availableEffectsUpdate, createBitmap.getWidth() - 20, NotificationCenter.userEmojiStatusUpdated);
             messageDrawableArr2222222[1].setTop(0, 560, 522, false, false);
             messageDrawableArr2222222[1].draw(canvas);
             messageDrawableArr2222222[1].setBounds(NotificationCenter.audioDidSent, 430, createBitmap.getWidth() - 20, 522);
             messageDrawableArr2222222[1].setTop(430, 560, 522, false, false);
             messageDrawableArr2222222[1].draw(canvas);
-            messageDrawableArr2222222[0].setBounds(20, NotificationCenter.customTypefacesLoaded, 399, 415);
-            messageDrawableArr2222222[0].setTop(NotificationCenter.customTypefacesLoaded, 560, 522, false, false);
+            messageDrawableArr2222222[0].setBounds(20, NotificationCenter.uploadStoryEnd, 399, 415);
+            messageDrawableArr2222222[0].setTop(NotificationCenter.uploadStoryEnd, 560, 522, false, false);
             messageDrawableArr2222222[0].draw(canvas);
             paint322222222222222222.setColor(previewColor3);
             canvas.drawRect(0.0f, createBitmap.getHeight() - 120, createBitmap.getWidth(), createBitmap.getHeight(), paint322222222222222222);
@@ -12975,7 +12988,7 @@ public abstract class Theme {
             chat_actionBackgroundPaint.setFilterBitmap(true);
             chat_actionBackgroundPaint.setShader(serviceBitmapShader);
             chat_actionBackgroundPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-            chat_actionBackgroundPaint.setAlpha(NotificationCenter.cameraInitied);
+            chat_actionBackgroundPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
             chat_actionBackgroundSelectedPaint.setFilterBitmap(true);
             chat_actionBackgroundSelectedPaint.setShader(serviceBitmapShader);
             ColorMatrix colorMatrix2 = new ColorMatrix(colorMatrix);
@@ -12983,7 +12996,7 @@ public abstract class Theme {
             isCurrentThemeDark();
             AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix2, 0.92f);
             chat_actionBackgroundSelectedPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
-            chat_actionBackgroundSelectedPaint.setAlpha(NotificationCenter.cameraInitied);
+            chat_actionBackgroundSelectedPaint.setAlpha(NotificationCenter.closeOtherAppActivities);
             chat_actionBackgroundGradientDarkenPaint.setAlpha(0);
             return;
         }

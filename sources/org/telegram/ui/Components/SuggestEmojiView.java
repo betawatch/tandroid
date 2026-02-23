@@ -114,6 +114,11 @@ public class SuggestEmojiView extends FrameLayout implements NotificationCenter.
 
     class 1 implements ContentPreviewViewer.ContentPreviewViewerDelegate {
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ void addCaptionToGif(Object obj, Object obj2, boolean z, int i, int i2) {
+            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$addCaptionToGif(this, obj, obj2, z, i, i2);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public /* synthetic */ void addToFavoriteSelected(String str) {
             ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$addToFavoriteSelected(this, str);
         }
@@ -121,6 +126,11 @@ public class SuggestEmojiView extends FrameLayout implements NotificationCenter.
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public boolean can() {
             return true;
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ boolean canAddCaption(TLRPC.Document document) {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canAddCaption(this, document);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate

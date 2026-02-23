@@ -58,7 +58,7 @@ public abstract class zzag {
     public static com.google.android.gms.cast.framework.media.internal.zzi zze(Context context, AsyncTask asyncTask, com.google.android.gms.cast.framework.media.internal.zzk zzkVar, int i, int i2, boolean z, long j, int i3, int i4, int i5) {
         try {
             zzak zzf = zzf(context.getApplicationContext());
-            return zzf.zze() >= 233700000 ? zzf.zzk(ObjectWrapper.wrap(context.getApplicationContext()), ObjectWrapper.wrap(asyncTask), zzkVar, i, i2, false, 2097152L, 5, NotificationCenter.tlSchemeParseException, 10000) : zzf.zzj(ObjectWrapper.wrap(asyncTask), zzkVar, i, i2, false, 2097152L, 5, NotificationCenter.tlSchemeParseException, 10000);
+            return zzf.zze() >= 233700000 ? zzf.zzk(ObjectWrapper.wrap(context.getApplicationContext()), ObjectWrapper.wrap(asyncTask), zzkVar, i, i2, false, 2097152L, 5, NotificationCenter.botForumDraftDelete, 10000) : zzf.zzj(ObjectWrapper.wrap(asyncTask), zzkVar, i, i2, false, 2097152L, 5, NotificationCenter.botForumDraftDelete, 10000);
         } catch (RemoteException e) {
             e = e;
             zza.d(e, "Unable to call %s on %s.", "newFetchBitmapTaskImpl", zzak.class.getSimpleName());

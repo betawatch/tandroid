@@ -465,7 +465,7 @@ public abstract class Encoder {
                         if (i != -1) {
                             throw new WriterException("Invalid byte sequence");
                         }
-                        bitArray.appendBits(((i >> 8) * NotificationCenter.didUpdateTonGiftStickers) + (i & NotificationCenter.cameraInitied), 13);
+                        bitArray.appendBits(((i >> 8) * NotificationCenter.didUpdateTonGiftStickers) + (i & NotificationCenter.closeOtherAppActivities), 13);
                     } else {
                         i4 = 49472;
                     }

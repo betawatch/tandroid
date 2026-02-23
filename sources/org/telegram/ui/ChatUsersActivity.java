@@ -122,6 +122,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     private int dontRestrictBoostersInfoRow;
     private int dontRestrictBoostersRow;
     private int dontRestrictBoostersSliderRow;
+    private int editTagRow;
     private int embedLinksRow;
     private StickerEmptyView emptyView;
     private boolean enablePrice;
@@ -243,7 +244,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             return 60;
         }
         if (i == 5) {
-            return NotificationCenter.currentUserPremiumStatusChanged;
+            return NotificationCenter.onUserRingtonesUpdated;
         }
         if (i == 6) {
             return 900;
@@ -297,6 +298,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             tL_chatBannedRights2.send_inline = tL_chatBannedRights.send_inline;
             tL_chatBannedRights2.send_gifs = tL_chatBannedRights.send_gifs;
             tL_chatBannedRights2.pin_messages = tL_chatBannedRights.pin_messages;
+            tL_chatBannedRights2.edit_rank = tL_chatBannedRights.edit_rank;
             tL_chatBannedRights2.send_polls = tL_chatBannedRights.send_polls;
             tL_chatBannedRights2.invite_users = tL_chatBannedRights.invite_users;
             tL_chatBannedRights2.manage_topics = tL_chatBannedRights.manage_topics;
@@ -341,16 +343,16 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x0192, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x0198, code lost:
     
         if (org.telegram.messenger.ChatObject.canBlockUsers(r1) != false) goto L55;
      */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0265  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x01b5  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x01e2  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0212  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0232  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0252  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x026b  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x01bb  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01e8  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0218  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0238  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0258  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -398,6 +400,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         this.addUsersRow = -1;
         this.manageTopicsRow = -1;
         this.pinMessagesRow = -1;
+        this.editTagRow = -1;
         this.changeInfoRow = -1;
         this.removedUsersRow = -1;
         this.contactsHeaderRow = -1;
@@ -454,11 +457,12 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             int i5 = this.rowCount;
             this.addUsersRow = i5;
             this.pinMessagesRow = i5 + 1;
-            int i6 = i5 + 3;
+            this.editTagRow = i5 + 2;
+            int i6 = i5 + 4;
             this.rowCount = i6;
-            this.changeInfoRow = i5 + 2;
+            this.changeInfoRow = i5 + 3;
             if (this.isForum) {
-                this.rowCount = i5 + 4;
+                this.rowCount = i5 + 5;
                 this.manageTopicsRow = i6;
             }
             if (ChatObject.isChannel(this.currentChat)) {
@@ -1371,6 +1375,10 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                                 this.defaultBannedRights.pin_messages = !r0.pin_messages;
                                 return;
                             }
+                            if (i == this.editTagRow) {
+                                this.defaultBannedRights.edit_rank = !r0.edit_rank;
+                                return;
+                            }
                             if (i == this.sendMessagesRow) {
                                 this.defaultBannedRights.send_plain = !r0.send_plain;
                                 int i4 = this.sendMediaEmbededLinksRow;
@@ -1429,6 +1437,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 boolean z14 = !((channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) || (channelParticipant instanceof TLRPC.TL_channelParticipantCreator)) || channelParticipant.can_edit;
                 if ((item instanceof TLRPC.TL_channelParticipantCreator) && (tL_chatAdminRights2 = ((TLRPC.TL_channelParticipantCreator) item).admin_rights) == null) {
                     tL_chatAdminRights2 = new TLRPC.TL_chatAdminRights();
+                    tL_chatAdminRights2.manage_ranks = true;
                     tL_chatAdminRights2.add_admins = true;
                     tL_chatAdminRights2.pin_messages = true;
                     tL_chatAdminRights2.manage_topics = true;
@@ -1459,6 +1468,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 z2 = this.currentChat.creator;
                 if (item instanceof TLRPC.TL_chatParticipantCreator) {
                     TLRPC.TL_chatAdminRights tL_chatAdminRights3 = new TLRPC.TL_chatAdminRights();
+                    tL_chatAdminRights3.manage_ranks = true;
                     tL_chatAdminRights3.add_admins = true;
                     tL_chatAdminRights3.pin_messages = true;
                     tL_chatAdminRights3.manage_topics = true;
@@ -1601,6 +1611,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 tL_chatBannedRights8.send_inline = true;
                 tL_chatBannedRights8.send_gifs = true;
                 tL_chatBannedRights8.pin_messages = true;
+                tL_chatBannedRights8.edit_rank = true;
                 tL_chatBannedRights8.send_polls = true;
                 tL_chatBannedRights8.invite_users = true;
                 tL_chatBannedRights8.manage_topics = true;
@@ -2028,6 +2039,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 TLRPC.TL_chatAdminRights tL_chatAdminRights = new TLRPC.TL_chatAdminRights();
                 tL_channelParticipantAdmin.admin_rights = tL_chatAdminRights;
                 tL_chatAdminRights.add_admins = true;
+                tL_chatAdminRights.manage_ranks = true;
                 tL_chatAdminRights.pin_messages = true;
                 tL_chatAdminRights.manage_topics = true;
                 tL_chatAdminRights.invite_users = true;
@@ -2424,7 +2436,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         if (this.type == 3 && ChatObject.canBlockUsers(this.currentChat)) {
             final TLRPC.TL_chatBannedRights tL_chatBannedRights3 = tL_chatBannedRights;
             final String str4 = str;
-            makeOptions.add(R.drawable.msg_permissions, LocaleController.getString("ChannelEditPermissions", R.string.ChannelEditPermissions), new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda14
+            makeOptions.add(R.drawable.msg_permissions, LocaleController.getString(R.string.ChannelEditPermissions), new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatUsersActivity.this.lambda$createMenuForParticipant$14(j5, tL_chatBannedRights3, str4, tLObject);
@@ -2878,10 +2890,17 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             if (sb.length() != 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("UserRestrictionsNoPinMessages", R.string.UserRestrictionsNoPinMessages));
+            sb.append(LocaleController.getString(R.string.UserRestrictionsNoPinMessages));
         }
-        boolean z14 = tL_chatBannedRights.change_info;
-        if (z14 && this.defaultBannedRights.change_info != z14) {
+        boolean z14 = tL_chatBannedRights.edit_rank;
+        if (z14 && this.defaultBannedRights.edit_rank != z14) {
+            if (sb.length() != 0) {
+                sb.append(", ");
+            }
+            sb.append(LocaleController.getString(R.string.UserRestrictionsEditTags));
+        }
+        boolean z15 = tL_chatBannedRights.change_info;
+        if (z15 && this.defaultBannedRights.change_info != z15) {
             if (sb.length() != 0) {
                 sb.append(", ");
             }
@@ -4404,20 +4423,20 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             ChatUsersActivity.this.notRestrictBoosters = i + 1;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:449:0x0b12, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:452:0x0b28, code lost:
         
-            if (r20.this$0.currentChat.megagroup == false) goto L399;
+            if (r20.this$0.currentChat.megagroup == false) goto L402;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:450:0x0b41, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:453:0x0b57, code lost:
         
             r7 = true;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:526:0x0b3f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:529:0x0b55, code lost:
         
-            if (r20.this$0.currentChat.megagroup == false) goto L399;
+            if (r20.this$0.currentChat.megagroup == false) goto L402;
          */
-        /* JADX WARN: Removed duplicated region for block: B:486:0x0c55  */
-        /* JADX WARN: Removed duplicated region for block: B:489:0x0c58  */
+        /* JADX WARN: Removed duplicated region for block: B:489:0x0c63  */
+        /* JADX WARN: Removed duplicated region for block: B:492:0x0c66  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -4534,18 +4553,18 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                                 }
                             } else {
                                 if (z2) {
-                                    charSequence2 = LocaleController.getString("ChannelCreator", R.string.ChannelCreator);
+                                    charSequence2 = LocaleController.getString(R.string.ChannelCreator);
                                 } else {
                                     if (!z3 || (user = ChatUsersActivity.this.getMessagesController().getUser(Long.valueOf(j3))) == null) {
                                         i5 = 1;
                                         z6 = false;
                                         charSequence2 = null;
                                     } else if (user.id == j) {
-                                        charSequence2 = LocaleController.getString("ChannelAdministrator", R.string.ChannelAdministrator);
+                                        charSequence2 = LocaleController.getString(R.string.ChannelAdministrator);
                                     } else {
                                         i5 = 1;
                                         z6 = false;
-                                        charSequence2 = LocaleController.formatString("EditAdminPromotedBy", R.string.EditAdminPromotedBy, UserObject.getUserName(user));
+                                        charSequence2 = LocaleController.formatString(R.string.EditAdminPromotedBy, UserObject.getUserName(user));
                                     }
                                     if (i == i2 - i5) {
                                         charSequence3 = null;
@@ -4568,7 +4587,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                                 charSequence4 = null;
                             } else {
                                 i6 = 1;
-                                charSequence4 = LocaleController.formatString("UserRemovedBy", R.string.UserRemovedBy, UserObject.getUserName(user2));
+                                charSequence4 = LocaleController.formatString(R.string.UserRemovedBy, UserObject.getUserName(user2));
                             }
                             if (i != i2 - i6) {
                                 charSequence5 = null;
@@ -4733,6 +4752,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         viewHolder.itemView.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                         break;
                     }
+                    break;
                 case 5:
                     HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                     if (i == ChatUsersActivity.this.restricted1SectionRow) {
@@ -4742,11 +4762,11 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                                 headerCell.setText(LocaleController.formatPluralString("RemovedUser", size, new Object[0]));
                                 break;
                             } else {
-                                headerCell.setText(LocaleController.getString("ChannelBlockedUsers", R.string.ChannelBlockedUsers));
+                                headerCell.setText(LocaleController.getString(R.string.ChannelBlockedUsers));
                                 break;
                             }
                         } else {
-                            headerCell.setText(LocaleController.getString("ChannelRestrictedUsers", R.string.ChannelRestrictedUsers));
+                            headerCell.setText(LocaleController.getString(R.string.ChannelRestrictedUsers));
                             break;
                         }
                     } else if (i != ChatUsersActivity.this.permissionsSectionRow) {
@@ -4788,7 +4808,9 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     } else if (i == ChatUsersActivity.this.addUsersRow) {
                         textCheckCell2.setTextAndCheck(LocaleController.getString("UserRestrictionsInviteUsers", R.string.UserRestrictionsInviteUsers), !ChatUsersActivity.this.defaultBannedRights.invite_users, true, z10);
                     } else if (i == ChatUsersActivity.this.pinMessagesRow) {
-                        textCheckCell2.setTextAndCheck(LocaleController.getString("UserRestrictionsPinMessages", R.string.UserRestrictionsPinMessages), (ChatUsersActivity.this.defaultBannedRights.pin_messages || ChatObject.isPublic(ChatUsersActivity.this.currentChat)) ? false : true, true, z10);
+                        textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.UserRestrictionsPinMessages), (ChatUsersActivity.this.defaultBannedRights.pin_messages || ChatObject.isPublic(ChatUsersActivity.this.currentChat)) ? false : true, true, z10);
+                    } else if (i == ChatUsersActivity.this.editTagRow) {
+                        textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.UserRestrictionsEditTags), !ChatUsersActivity.this.defaultBannedRights.edit_rank, true, z10);
                     } else if (i == ChatUsersActivity.this.sendMessagesRow) {
                         textCheckCell2.setTextAndCheck(LocaleController.getString("UserRestrictionsSendText", R.string.UserRestrictionsSendText), !ChatUsersActivity.this.defaultBannedRights.send_plain, true, z10);
                     } else if (i == ChatUsersActivity.this.dontRestrictBoostersRow) {
@@ -4832,6 +4854,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                         textCheckCell2.setIcon(R.drawable.permission_locked);
                         break;
                     }
+                    break;
                 case 8:
                     GraySectionCell graySectionCell = (GraySectionCell) viewHolder.itemView;
                     if (i == ChatUsersActivity.this.membersHeaderRow) {
@@ -4997,7 +5020,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             if (i == ChatUsersActivity.this.removedUsersRow) {
                 return 6;
             }
-            if (i == ChatUsersActivity.this.changeInfoRow || i == ChatUsersActivity.this.addUsersRow || i == ChatUsersActivity.this.pinMessagesRow || i == ChatUsersActivity.this.sendMessagesRow || i == ChatUsersActivity.this.sendStickersRow || i == ChatUsersActivity.this.embedLinksRow || i == ChatUsersActivity.this.manageTopicsRow || i == ChatUsersActivity.this.dontRestrictBoostersRow) {
+            if (i == ChatUsersActivity.this.changeInfoRow || i == ChatUsersActivity.this.addUsersRow || i == ChatUsersActivity.this.pinMessagesRow || i == ChatUsersActivity.this.editTagRow || i == ChatUsersActivity.this.sendMessagesRow || i == ChatUsersActivity.this.sendStickersRow || i == ChatUsersActivity.this.embedLinksRow || i == ChatUsersActivity.this.manageTopicsRow || i == ChatUsersActivity.this.dontRestrictBoostersRow) {
                 return 7;
             }
             if (i == ChatUsersActivity.this.membersHeaderRow || i == ChatUsersActivity.this.contactsHeaderRow || i == ChatUsersActivity.this.botHeaderRow || i == ChatUsersActivity.this.loadingHeaderRow) {
@@ -5196,11 +5219,12 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             put(17, ChatUsersActivity.this.sendPollsRow, sparseIntArray);
             put(18, ChatUsersActivity.this.embedLinksRow, sparseIntArray);
             put(19, ChatUsersActivity.this.addUsersRow, sparseIntArray);
-            int i = 20;
             put(20, ChatUsersActivity.this.pinMessagesRow, sparseIntArray);
+            int i = 21;
+            put(21, ChatUsersActivity.this.editTagRow, sparseIntArray);
             if (ChatUsersActivity.this.isForum) {
-                i = 21;
-                put(21, ChatUsersActivity.this.manageTopicsRow, sparseIntArray);
+                put(22, ChatUsersActivity.this.manageTopicsRow, sparseIntArray);
+                i = 22;
             }
             put(i + 1, ChatUsersActivity.this.changeInfoRow, sparseIntArray);
             put(i + 2, ChatUsersActivity.this.removedUsersRow, sparseIntArray);

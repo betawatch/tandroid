@@ -109,6 +109,16 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         return true;
     }
 
+    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
+    public /* synthetic */ void onAnimatedInsetsFinished() {
+        WindowAnimatedInsetsProvider.Listener.-CC.$default$onAnimatedInsetsFinished(this);
+    }
+
+    @Override // org.telegram.ui.Components.inset.WindowAnimatedInsetsProvider.Listener
+    public /* synthetic */ void onAnimatedInsetsStarted() {
+        WindowAnimatedInsetsProvider.Listener.-CC.$default$onAnimatedInsetsStarted(this);
+    }
+
     @Override // me.vkryl.android.animator.FactorAnimator.Target
     public /* synthetic */ void onFactorChangeFinished(int i, float f, FactorAnimator factorAnimator) {
         FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i, f, factorAnimator);

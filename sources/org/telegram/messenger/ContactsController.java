@@ -747,20 +747,20 @@ public class ContactsController extends BaseController {
         return i > 3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:200:0x0302, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:200:0x0303, code lost:
     
         if (r6.contains(r5.last_name) != false) goto L156;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x056a A[Catch: all -> 0x056e, TRY_LEAVE, TryCatch #7 {all -> 0x056e, blocks: (B:100:0x0565, B:102:0x056a), top: B:99:0x0565 }] */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0581  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x056b A[Catch: all -> 0x056f, TRY_LEAVE, TryCatch #7 {all -> 0x056f, blocks: (B:100:0x0566, B:102:0x056b), top: B:99:0x0566 }] */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0582  */
     /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0573 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x0306 A[Catch: all -> 0x02eb, TryCatch #4 {all -> 0x02eb, blocks: (B:170:0x0339, B:176:0x02d4, B:178:0x02da, B:180:0x02e2, B:184:0x0306, B:185:0x030b, B:187:0x0311, B:189:0x0319, B:190:0x0330, B:192:0x0334, B:193:0x0337, B:194:0x0309, B:195:0x02ee, B:197:0x02f4, B:199:0x02fc, B:209:0x0343), top: B:175:0x02d4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0311 A[Catch: all -> 0x02eb, TryCatch #4 {all -> 0x02eb, blocks: (B:170:0x0339, B:176:0x02d4, B:178:0x02da, B:180:0x02e2, B:184:0x0306, B:185:0x030b, B:187:0x0311, B:189:0x0319, B:190:0x0330, B:192:0x0334, B:193:0x0337, B:194:0x0309, B:195:0x02ee, B:197:0x02f4, B:199:0x02fc, B:209:0x0343), top: B:175:0x02d4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x0334 A[Catch: all -> 0x02eb, TryCatch #4 {all -> 0x02eb, blocks: (B:170:0x0339, B:176:0x02d4, B:178:0x02da, B:180:0x02e2, B:184:0x0306, B:185:0x030b, B:187:0x0311, B:189:0x0319, B:190:0x0330, B:192:0x0334, B:193:0x0337, B:194:0x0309, B:195:0x02ee, B:197:0x02f4, B:199:0x02fc, B:209:0x0343), top: B:175:0x02d4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0337 A[Catch: all -> 0x02eb, TryCatch #4 {all -> 0x02eb, blocks: (B:170:0x0339, B:176:0x02d4, B:178:0x02da, B:180:0x02e2, B:184:0x0306, B:185:0x030b, B:187:0x0311, B:189:0x0319, B:190:0x0330, B:192:0x0334, B:193:0x0337, B:194:0x0309, B:195:0x02ee, B:197:0x02f4, B:199:0x02fc, B:209:0x0343), top: B:175:0x02d4 }] */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x0309 A[Catch: all -> 0x02eb, TryCatch #4 {all -> 0x02eb, blocks: (B:170:0x0339, B:176:0x02d4, B:178:0x02da, B:180:0x02e2, B:184:0x0306, B:185:0x030b, B:187:0x0311, B:189:0x0319, B:190:0x0330, B:192:0x0334, B:193:0x0337, B:194:0x0309, B:195:0x02ee, B:197:0x02f4, B:199:0x02fc, B:209:0x0343), top: B:175:0x02d4 }] */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0574 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:184:0x0307 A[Catch: all -> 0x02ec, TryCatch #5 {all -> 0x02ec, blocks: (B:170:0x033a, B:176:0x02d5, B:178:0x02db, B:180:0x02e3, B:184:0x0307, B:185:0x030c, B:187:0x0312, B:189:0x031a, B:190:0x0331, B:192:0x0335, B:193:0x0338, B:194:0x030a, B:195:0x02ef, B:197:0x02f5, B:199:0x02fd, B:209:0x0344), top: B:175:0x02d5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x0312 A[Catch: all -> 0x02ec, TryCatch #5 {all -> 0x02ec, blocks: (B:170:0x033a, B:176:0x02d5, B:178:0x02db, B:180:0x02e3, B:184:0x0307, B:185:0x030c, B:187:0x0312, B:189:0x031a, B:190:0x0331, B:192:0x0335, B:193:0x0338, B:194:0x030a, B:195:0x02ef, B:197:0x02f5, B:199:0x02fd, B:209:0x0344), top: B:175:0x02d5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x0335 A[Catch: all -> 0x02ec, TryCatch #5 {all -> 0x02ec, blocks: (B:170:0x033a, B:176:0x02d5, B:178:0x02db, B:180:0x02e3, B:184:0x0307, B:185:0x030c, B:187:0x0312, B:189:0x031a, B:190:0x0331, B:192:0x0335, B:193:0x0338, B:194:0x030a, B:195:0x02ef, B:197:0x02f5, B:199:0x02fd, B:209:0x0344), top: B:175:0x02d5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0338 A[Catch: all -> 0x02ec, TryCatch #5 {all -> 0x02ec, blocks: (B:170:0x033a, B:176:0x02d5, B:178:0x02db, B:180:0x02e3, B:184:0x0307, B:185:0x030c, B:187:0x0312, B:189:0x031a, B:190:0x0331, B:192:0x0335, B:193:0x0338, B:194:0x030a, B:195:0x02ef, B:197:0x02f5, B:199:0x02fd, B:209:0x0344), top: B:175:0x02d5 }] */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x030a A[Catch: all -> 0x02ec, TryCatch #5 {all -> 0x02ec, blocks: (B:170:0x033a, B:176:0x02d5, B:178:0x02db, B:180:0x02e3, B:184:0x0307, B:185:0x030c, B:187:0x0312, B:189:0x031a, B:190:0x0331, B:192:0x0335, B:193:0x0338, B:194:0x030a, B:195:0x02ef, B:197:0x02f5, B:199:0x02fd, B:209:0x0344), top: B:175:0x02d5 }] */
     /* JADX WARN: Type inference failed for: r0v37, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r0v51 */
     /* JADX WARN: Type inference failed for: r0v57 */
@@ -958,8 +958,18 @@ public class ContactsController extends BaseController {
                                     try {
                                         FileLog.e(th);
                                         if (hashMap2 != null) {
+                                            hashMap2.clear();
                                         }
                                         if (cursor2 != null) {
+                                            try {
+                                                cursor2.close();
+                                            } catch (Exception e2) {
+                                                e = e2;
+                                                hashMap = hashMap2;
+                                                FileLog.e(e);
+                                                if (hashMap == null) {
+                                                }
+                                            }
                                         }
                                         hashMap = hashMap2;
                                         if (hashMap == null) {
@@ -1107,18 +1117,8 @@ public class ContactsController extends BaseController {
                                             hashMap2 = hashMap;
                                             FileLog.e(th);
                                             if (hashMap2 != null) {
-                                                hashMap2.clear();
                                             }
                                             if (cursor2 != null) {
-                                                try {
-                                                    cursor2.close();
-                                                } catch (Exception e2) {
-                                                    e = e2;
-                                                    hashMap = hashMap2;
-                                                    FileLog.e(e);
-                                                    if (hashMap == null) {
-                                                    }
-                                                }
                                             }
                                             hashMap = hashMap2;
                                             if (hashMap == null) {

@@ -156,11 +156,11 @@ public class FilePathDatabase {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:56:0x01ae  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01b6  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x01a3  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x01aa  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x01c3  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x01af  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01b7  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x01a4  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01ab  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x01c4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -224,73 +224,76 @@ public class FilePathDatabase {
                     sb.append(" AND type = ");
                     sb.append(i2);
                     str = str5;
+                } catch (SQLiteException e) {
+                    e = e;
+                    str = str5;
+                }
+                try {
+                    sQLiteCursor2 = sQLiteDatabase.queryFinalized(sb.toString(), new Object[0]);
+                } catch (SQLiteException e2) {
+                    e = e2;
+                    sQLiteCursor = null;
+                    str3 = null;
                     try {
-                        sQLiteCursor2 = sQLiteDatabase.queryFinalized(sb.toString(), new Object[0]);
-                    } catch (SQLiteException e) {
-                        e = e;
-                        sQLiteCursor = null;
-                        str3 = null;
-                        try {
-                            FileLog.e(e);
-                            if (sQLiteCursor == null) {
-                                str4 = str3;
-                                if (str4 != null) {
-                                }
-                                return str4;
-                            }
-                            sQLiteCursor2 = sQLiteCursor;
+                        FileLog.e(e);
+                        if (sQLiteCursor == null) {
                             str4 = str3;
-                            sQLiteCursor2.dispose();
                             if (str4 != null) {
                             }
                             return str4;
-                        } catch (Throwable th) {
-                            th = th;
-                            if (sQLiteCursor != null) {
-                                sQLiteCursor.dispose();
-                            }
-                            throw th;
                         }
+                        sQLiteCursor2 = sQLiteCursor;
+                        str4 = str3;
+                        sQLiteCursor2.dispose();
+                        if (str4 != null) {
+                        }
+                        return str4;
+                    } catch (Throwable th) {
+                        th = th;
+                        if (sQLiteCursor != null) {
+                        }
+                        throw th;
                     }
-                } catch (SQLiteException e2) {
-                    e = e2;
-                    str = str5;
                 }
-            } catch (SQLiteException e3) {
-                e = e3;
-                str = str5;
-                str2 = "~null~";
-            }
-        } catch (Throwable th2) {
-            th = th2;
-            sQLiteCursor = null;
-        }
-        try {
-            try {
-                if (sQLiteCursor2.next()) {
-                    str4 = sQLiteCursor2.stringValue(0);
+                try {
                     try {
-                        if (BuildVars.DEBUG_VERSION) {
-                            FileLog.d("get file path id=" + j + " dc=" + i + " type=" + i2 + " path=" + str4 + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
+                        if (sQLiteCursor2.next()) {
+                            str4 = sQLiteCursor2.stringValue(0);
+                            try {
+                                if (BuildVars.DEBUG_VERSION) {
+                                    FileLog.d("get file path id=" + j + " dc=" + i + " type=" + i2 + " path=" + str4 + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
+                                }
+                            } catch (SQLiteException e3) {
+                                e = e3;
+                                str3 = str4;
+                                sQLiteCursor = sQLiteCursor2;
+                                FileLog.e(e);
+                                if (sQLiteCursor == null) {
+                                }
+                            }
+                        } else {
+                            str4 = null;
                         }
-                    } catch (SQLiteException e4) {
-                        e = e4;
-                        str3 = str4;
+                    } catch (Throwable th2) {
+                        th = th2;
                         sQLiteCursor = sQLiteCursor2;
-                        FileLog.e(e);
-                        if (sQLiteCursor == null) {
+                        if (sQLiteCursor != null) {
+                            sQLiteCursor.dispose();
                         }
+                        throw th;
                     }
-                } else {
-                    str4 = null;
+                } catch (SQLiteException e4) {
+                    e = e4;
+                    sQLiteCursor = sQLiteCursor2;
+                    str3 = null;
+                    FileLog.e(e);
+                    if (sQLiteCursor == null) {
+                    }
                 }
             } catch (SQLiteException e5) {
                 e = e5;
-                sQLiteCursor = sQLiteCursor2;
-                str3 = null;
-                FileLog.e(e);
-                if (sQLiteCursor == null) {
-                }
+                str = str5;
+                str2 = "~null~";
             }
             sQLiteCursor2.dispose();
             if (str4 != null) {
@@ -301,10 +304,7 @@ public class FilePathDatabase {
             return str4;
         } catch (Throwable th3) {
             th = th3;
-            sQLiteCursor = sQLiteCursor2;
-            if (sQLiteCursor != null) {
-            }
-            throw th;
+            sQLiteCursor = null;
         }
     }
 
@@ -367,8 +367,8 @@ public class FilePathDatabase {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0108  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0109  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

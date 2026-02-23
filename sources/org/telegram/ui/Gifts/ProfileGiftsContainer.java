@@ -1204,16 +1204,9 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         return z ? this.viewPager.getCurrentPosition() >= this.collections.getCollections().size() : this.viewPager.getCurrentPosition() <= 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x02dd  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x02ea  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x02e0  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public ProfileGiftsContainer(final BaseFragment baseFragment, final Context context, final int i, long j, final Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        int i2;
-        String str;
+        String string;
         this.checkboxRequestId = -1;
         this.sendCollectionsOrder = new Runnable() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
@@ -1223,13 +1216,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         };
         this.animatorBottomButtonVisibility = new BoolAnimator(0, new FactorAnimator.Target() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda4
             @Override // me.vkryl.android.animator.FactorAnimator.Target
-            public /* synthetic */ void onFactorChangeFinished(int i3, float f, FactorAnimator factorAnimator) {
-                FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i3, f, factorAnimator);
+            public /* synthetic */ void onFactorChangeFinished(int i2, float f, FactorAnimator factorAnimator) {
+                FactorAnimator.Target.-CC.$default$onFactorChangeFinished(this, i2, f, factorAnimator);
             }
 
             @Override // me.vkryl.android.animator.FactorAnimator.Target
-            public final void onFactorChanged(int i3, float f, float f2, FactorAnimator factorAnimator) {
-                ProfileGiftsContainer.this.lambda$new$14(i3, f, f2, factorAnimator);
+            public final void onFactorChanged(int i2, float f, float f2, FactorAnimator factorAnimator) {
+                ProfileGiftsContainer.this.lambda$new$14(i2, f, f2, factorAnimator);
             }
         }, CubicBezierInterpolator.EASE_OUT_QUINT, 380L, true);
         this.visibleHeight = AndroidUtilities.displaySize.y;
@@ -1272,8 +1265,8 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed
-            protected void onTabScrollEnd(int i3) {
-                super.onTabScrollEnd(i3);
+            protected void onTabScrollEnd(int i2) {
+                super.onTabScrollEnd(i2);
                 ProfileGiftsContainer.this.updateButton();
                 BaseFragment baseFragment2 = baseFragment;
                 if (baseFragment2 instanceof ProfileActivity) {
@@ -1305,13 +1298,13 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         viewPagerFixed.setAllowDisallowInterceptTouch(true);
         viewPagerFixed.setAdapter(new ViewPagerFixed.Adapter() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer.2
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-            public boolean canReorder(int i3) {
-                return i3 != 0;
+            public boolean canReorder(int i2) {
+                return i2 != 0;
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-            public int getItemViewType(int i3) {
-                return i3 == 0 ? 0 : 1;
+            public int getItemViewType(int i2) {
+                return i2 == 0 ? 0 : 1;
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
@@ -1320,31 +1313,31 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-            public View createView(int i3) {
-                if (i3 == -1) {
+            public View createView(int i2) {
+                if (i2 == -1) {
                     return null;
                 }
                 return new Page(ProfileGiftsContainer.this, i, resourcesProvider);
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-            public int getItemId(int i3) {
-                if (i3 == 0) {
+            public int getItemId(int i2) {
+                if (i2 == 0) {
                     return -2;
                 }
-                return ((TL_stars.TL_starGiftCollection) ProfileGiftsContainer.this.collections.getCollections().get(i3 - 1)).collection_id;
+                return ((TL_stars.TL_starGiftCollection) ProfileGiftsContainer.this.collections.getCollections().get(i2 - 1)).collection_id;
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-            public void bindView(View view, int i3, int i4) {
+            public void bindView(View view, int i2, int i3) {
                 StarsController.GiftsList listByIndex;
                 boolean z;
                 Page page = (Page) view;
-                if (i4 == 0) {
+                if (i3 == 0) {
                     listByIndex = ProfileGiftsContainer.this.list;
                     z = false;
                 } else {
-                    listByIndex = ProfileGiftsContainer.this.collections.getListByIndex(i3 - 1);
+                    listByIndex = ProfileGiftsContainer.this.collections.getListByIndex(i2 - 1);
                     z = true;
                 }
                 page.bind(z, listByIndex);
@@ -1353,11 +1346,11 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
 
             @Override // org.telegram.ui.Components.ViewPagerFixed.Adapter
-            public CharSequence getItemTitle(int i3) {
-                if (i3 == 0) {
+            public CharSequence getItemTitle(int i2) {
+                if (i2 == 0) {
                     return LocaleController.getString(R.string.Gift2CollectionAll);
                 }
-                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) ProfileGiftsContainer.this.collections.getCollections().get(i3 - 1);
+                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) ProfileGiftsContainer.this.collections.getCollections().get(i2 - 1);
                 if (tL_starGiftCollection == null) {
                     return null;
                 }
@@ -1394,8 +1387,11 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             }
         });
         addView(viewPagerFixed, LayoutHelper.createFrame(-1, -1, 119));
-        ViewPagerFixed.TabsView createTabsView = viewPagerFixed.createTabsView(true, 9);
+        ViewPagerFixed.TabsView createTabsView = viewPagerFixed.createTabsView(true, 10);
         this.tabsView = createTabsView;
+        createTabsView.setColors(Theme.key_profile_tabSelectedLine, Theme.key_windowBackgroundWhiteBlackText, Theme.key_profile_tabText, Theme.key_profile_tabSelector, Theme.key_actionBarDefault);
+        createTabsView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+        createTabsView.setClipToPadding(false);
         createTabsView.tabMarginDp = 12;
         createTabsView.setPreTabClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda5
             @Override // org.telegram.messenger.Utilities.Callback2Return
@@ -1415,11 +1411,11 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         });
         addView(createTabsView, LayoutHelper.createFrame(-1, 42, 48));
         BlurredBackgroundSourceColor blurredBackgroundSourceColor = new BlurredBackgroundSourceColor();
-        int i3 = Theme.key_windowBackgroundWhite;
-        blurredBackgroundSourceColor.setColor(Theme.getColor(i3, resourcesProvider));
+        int i2 = Theme.key_windowBackgroundWhite;
+        blurredBackgroundSourceColor.setColor(Theme.getColor(i2, resourcesProvider));
         BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory = new BlurredBackgroundDrawableViewFactory(blurredBackgroundSourceColor);
         ProfileActivity.Button2 button2 = new ProfileActivity.Button2(context);
-        BlurredBackgroundDrawable create = blurredBackgroundDrawableViewFactory.create(button2, new BlurredBackgroundColorProviderThemed(resourcesProvider, i3));
+        BlurredBackgroundDrawable create = blurredBackgroundDrawableViewFactory.create(button2, new BlurredBackgroundColorProviderThemed(resourcesProvider, i2));
         create.setPadding(AndroidUtilities.dp(8.0f));
         create.setRadius(AndroidUtilities.dp(22.0f));
         button2.setBackground(create);
@@ -1469,63 +1465,32 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
         sb.append("G ");
         if (z) {
             long j2 = this.dialogId;
-            if (j2 >= 0) {
-                str = LocaleController.formatString(R.string.ProfileGiftsSendUser, DialogObject.getShortName(j2));
-                sb.append(str);
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(sb.toString());
-                spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.filled_gift_simple), 0, 1, 33);
-                this.sendGiftsToFriendsText = spannableStringBuilder;
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("+ " + LocaleController.getString(R.string.ProfileGiftsAdd));
-                spannableStringBuilder2.setSpan(new ColoredImageSpan(R.drawable.filled_add_album), 0, 1, 33);
-                this.addGiftsText = spannableStringBuilder2;
-                ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
-                this.button = buttonWithCounterView;
-                buttonWithCounterView.setUseWrapContent(true);
-                buttonWithCounterView.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-                buttonWithCounterView.setRoundRadius(AndroidUtilities.dp(19.0f));
-                buttonWithCounterView.setText(spannableStringBuilder, false);
-                buttonWithCounterView.setStateListAnimator(null);
-                button2.addView(buttonWithCounterView, LayoutHelper.createFrame(-2, -1, 17));
-                button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda8
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        ProfileGiftsContainer.this.lambda$new$11(z, i, view);
-                    }
-                });
-                buttonWithCounterView.setVisibility(!canSwitchNotify() ? 8 : 0);
-                linearLayout.setVisibility(canSwitchNotify() ? 0 : 8);
-                this.buttonContainerHeightDp = 60;
-                addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 87));
-                updateColors();
-                updateTabsShown(false);
-            }
-            i2 = R.string.ProfileGiftsSendChannel;
+            string = j2 < 0 ? LocaleController.getString(R.string.ProfileGiftsSendChannel) : LocaleController.formatString(R.string.ProfileGiftsSendUser, DialogObject.getShortName(j2));
         } else {
-            i2 = R.string.ProfileGiftsSend;
+            string = LocaleController.getString(R.string.ProfileGiftsSend);
         }
-        str = LocaleController.getString(i2);
-        sb.append(str);
-        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(sb.toString());
-        spannableStringBuilder3.setSpan(new ColoredImageSpan(R.drawable.filled_gift_simple), 0, 1, 33);
-        this.sendGiftsToFriendsText = spannableStringBuilder3;
-        SpannableStringBuilder spannableStringBuilder22 = new SpannableStringBuilder("+ " + LocaleController.getString(R.string.ProfileGiftsAdd));
-        spannableStringBuilder22.setSpan(new ColoredImageSpan(R.drawable.filled_add_album), 0, 1, 33);
-        this.addGiftsText = spannableStringBuilder22;
-        ButtonWithCounterView buttonWithCounterView2 = new ButtonWithCounterView(context, resourcesProvider);
-        this.button = buttonWithCounterView2;
-        buttonWithCounterView2.setUseWrapContent(true);
-        buttonWithCounterView2.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        buttonWithCounterView2.setRoundRadius(AndroidUtilities.dp(19.0f));
-        buttonWithCounterView2.setText(spannableStringBuilder3, false);
-        buttonWithCounterView2.setStateListAnimator(null);
-        button2.addView(buttonWithCounterView2, LayoutHelper.createFrame(-2, -1, 17));
+        sb.append(string);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(sb.toString());
+        spannableStringBuilder.setSpan(new ColoredImageSpan(R.drawable.filled_gift_simple), 0, 1, 33);
+        this.sendGiftsToFriendsText = spannableStringBuilder;
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("+ " + LocaleController.getString(R.string.ProfileGiftsAdd));
+        spannableStringBuilder2.setSpan(new ColoredImageSpan(R.drawable.filled_add_album), 0, 1, 33);
+        this.addGiftsText = spannableStringBuilder2;
+        ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(context, resourcesProvider);
+        this.button = buttonWithCounterView;
+        buttonWithCounterView.setUseWrapContent(true);
+        buttonWithCounterView.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        buttonWithCounterView.setRoundRadius(AndroidUtilities.dp(19.0f));
+        buttonWithCounterView.setText(spannableStringBuilder, false);
+        buttonWithCounterView.setStateListAnimator(null);
+        button2.addView(buttonWithCounterView, LayoutHelper.createFrame(-2, -1, 17));
         button2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Gifts.ProfileGiftsContainer$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ProfileGiftsContainer.this.lambda$new$11(z, i, view);
             }
         });
-        buttonWithCounterView2.setVisibility(!canSwitchNotify() ? 8 : 0);
+        buttonWithCounterView.setVisibility(canSwitchNotify() ? 8 : 0);
         linearLayout.setVisibility(canSwitchNotify() ? 0 : 8);
         this.buttonContainerHeightDp = 60;
         addView(frameLayout2, LayoutHelper.createFrame(-1, NotificationCenter.channelRecommendationsLoaded, 87));
@@ -1789,8 +1754,11 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
             return;
         }
         float min = Math.min(this.externalPaddingTop, getTabsHeight() - AndroidUtilities.dp(42.0f));
-        float clamp01 = Utilities.clamp01(AndroidUtilities.ilerp(min, -AndroidUtilities.dp(42.0f), 0.0f));
+        float clamp01 = Utilities.clamp01(AndroidUtilities.ilerp(min - this.externalPaddingTop, -AndroidUtilities.dp(42.0f), 0.0f));
+        float lerp = AndroidUtilities.lerp(0.9f, 1.0f, clamp01);
         this.tabsView.setTranslationY(min);
+        this.tabsView.setScaleX(lerp);
+        this.tabsView.setScaleY(lerp);
         this.tabsView.setAlpha(clamp01 * hasTabs());
     }
 
@@ -2204,9 +2172,6 @@ public abstract class ProfileGiftsContainer extends FrameLayout implements Notif
     }
 
     public void updateColors() {
-        int color = Theme.getColor(Theme.key_windowBackgroundGray, this.resourcesProvider);
-        this.backgroundColor = color;
-        setBackgroundColor(color);
         this.button.updateColors();
         this.button.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(19.0f), processColor(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider))));
         View[] viewPages = this.viewPager.getViewPages();

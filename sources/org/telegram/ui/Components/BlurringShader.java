@@ -780,7 +780,6 @@ public class BlurringShader {
         private float oldPaintAlpha;
         private boolean oldPaintSet;
         public Paint paint;
-        public RenderNode renderNode;
         private Paint[] tempPaints;
         private final int type;
         private final View view;
@@ -1209,7 +1208,7 @@ public class BlurringShader {
                     android.graphics.Rect bounds = getBounds();
                     if (paint != null || (StoryBlurDrawer.this.manager != null && StoryBlurDrawer.this.manager.hasRenderNode())) {
                         if (drawable != null) {
-                            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.cameraInitied, 31);
+                            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, NotificationCenter.closeOtherAppActivities, 31);
                             drawable.setBounds(bounds);
                             drawable.draw(canvas);
                             if (StoryBlurDrawer.this.manager != null && StoryBlurDrawer.this.manager.hasRenderNode()) {

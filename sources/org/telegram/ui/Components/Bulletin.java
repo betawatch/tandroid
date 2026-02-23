@@ -322,6 +322,14 @@ public class Bulletin {
         return this;
     }
 
+    public Bulletin wrapContent() {
+        if (this.layout.getLayoutParams() instanceof FrameLayout.LayoutParams) {
+            ((FrameLayout.LayoutParams) this.layout.getLayoutParams()).width = -2;
+            ((FrameLayout.LayoutParams) this.layout.getLayoutParams()).gravity |= 1;
+        }
+        return this;
+    }
+
     public Bulletin show(final boolean z) {
         if (!this.showing && this.containerLayout != null) {
             this.showing = true;
@@ -1501,12 +1509,12 @@ public class Bulletin {
                 if (!this.blurVisibilityDrawable.hasBitmap()) {
                     this.blurVisibilityDrawable.render(getMeasuredWidth(), getMeasuredHeight(), AndroidUtilities.dp(10.0f), 6.0f);
                 }
-                this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.cameraInitied));
+                this.blurVisibilityDrawable.setAlpha(MathUtils.clamp((int) ((1.0f - (this.inOutOffset / getMeasuredHeight())) * 255.0f), 0, NotificationCenter.closeOtherAppActivities));
                 this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                 this.blurVisibilityDrawable.draw(canvas);
                 return;
             }
-            dispatchDrawImpl(canvas, false, NotificationCenter.cameraInitied);
+            dispatchDrawImpl(canvas, false, NotificationCenter.closeOtherAppActivities);
         }
 
         protected void dispatchDrawImplBlur(Canvas canvas, int i) {

@@ -110,7 +110,7 @@ public final class PgsDecoder extends SimpleSubtitleDecoder {
                 double d = readUnsignedByte2;
                 double d2 = readUnsignedByte3 - 128;
                 double d3 = readUnsignedByte4 - 128;
-                this.colors[readUnsignedByte] = (Util.constrainValue((int) ((d - (0.34414d * d3)) - (d2 * 0.71414d)), 0, NotificationCenter.cameraInitied) << 8) | (parsableByteArray.readUnsignedByte() << 24) | (Util.constrainValue((int) ((1.402d * d2) + d), 0, NotificationCenter.cameraInitied) << 16) | Util.constrainValue((int) (d + (d3 * 1.772d)), 0, NotificationCenter.cameraInitied);
+                this.colors[readUnsignedByte] = (Util.constrainValue((int) ((d - (0.34414d * d3)) - (d2 * 0.71414d)), 0, NotificationCenter.closeOtherAppActivities) << 8) | (parsableByteArray.readUnsignedByte() << 24) | (Util.constrainValue((int) ((1.402d * d2) + d), 0, NotificationCenter.closeOtherAppActivities) << 16) | Util.constrainValue((int) (d + (d3 * 1.772d)), 0, NotificationCenter.closeOtherAppActivities);
             }
             this.colorsSet = true;
         }

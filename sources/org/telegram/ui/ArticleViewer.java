@@ -15025,11 +15025,11 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 }
 
                 @Override // org.telegram.ui.web.BotWebViewContainer.Delegate
-                public void onSetupMainButton(boolean z, boolean z2, String str, int i2, int i3, boolean z3, boolean z4) {
+                public void onSetupMainButton(boolean z, boolean z2, String str, long j, int i2, int i3, boolean z3, boolean z4) {
                 }
 
                 @Override // org.telegram.ui.web.BotWebViewContainer.Delegate
-                public void onSetupSecondaryButton(boolean z, boolean z2, String str, int i2, int i3, boolean z3, boolean z4, String str2) {
+                public void onSetupSecondaryButton(boolean z, boolean z2, String str, long j, int i2, int i3, boolean z3, boolean z4, String str2) {
                 }
 
                 @Override // org.telegram.ui.web.BotWebViewContainer.Delegate

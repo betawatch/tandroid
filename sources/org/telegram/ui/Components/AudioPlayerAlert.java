@@ -96,7 +96,7 @@ import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.CastSync;
 import org.telegram.ui.Cells.AudioPlayerCell;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda319;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda312;
 import org.telegram.ui.ChooseQualityLayout$QualityIcon;
 import org.telegram.ui.Components.AudioPlayerAlert;
 import org.telegram.ui.Components.Bulletin;
@@ -339,8 +339,8 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                         dp2 = (int) ((paddingTop / 5) * 3.5f);
                     }
                     dp = (paddingTop - dp2) + AndroidUtilities.dp(8.0f);
-                    if (dp > paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + NotificationCenter.translationModelDownloaded)) {
-                        dp = paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + NotificationCenter.translationModelDownloaded);
+                    if (dp > paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + NotificationCenter.translationModelDownloading)) {
+                        dp = paddingTop - AndroidUtilities.dp(((AudioPlayerAlert.this.isMyList() || AudioPlayerAlert.this.noforwards) ? 0 : 52) + NotificationCenter.translationModelDownloading);
                     }
                     if (dp < 0) {
                         dp = 0;
@@ -2417,7 +2417,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
         }
         long dialogId = playingMessageObject.getDialogId();
         long j = playingMessageObject.getDocument() != null ? playingMessageObject.getDocument().id : 0L;
-        boolean z3 = (dialogId < 0 && MessagesController.getInstance(this.currentAccount).isChatNoForwards(-dialogId)) || MessagesController.getInstance(this.currentAccount).isChatNoForwards(playingMessageObject.getChatId()) || playingMessageObject.messageOwner.noforwards;
+        boolean z3 = (dialogId < 0 && MessagesController.getInstance(this.currentAccount).isPeerNoForwards(dialogId)) || MessagesController.getInstance(this.currentAccount).isPeerNoForwards(playingMessageObject.getDialogId()) || playingMessageObject.messageOwner.noforwards;
         if (z3 != this.noforwards) {
             this.noforwards = z3;
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.playerLayout.getLayoutParams();
@@ -3253,7 +3253,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             TLRPC.Document document = messageObject.getDocument();
             long j = document != null ? document.id : 0L;
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda319(makeOptions));
+            makeSwipeback.add(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda312(makeOptions));
             makeSwipeback.addGap();
             makeSwipeback.addIf(!savedMusicIds.ids.contains(Long.valueOf(j)), R.drawable.left_status_profile, LocaleController.getString(R.string.AudioSaveToMyProfile), new Runnable() { // from class: org.telegram.ui.Components.AudioPlayerAlert$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
@@ -3604,7 +3604,7 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
                 return DialogsActivity.DialogsActivityDelegate.-CC.$default$didSelectStories(this, dialogsActivity2);
             }
         });
-        this.parentActivity.lambda$runLinkRequest$97(dialogsActivity);
+        this.parentActivity.lambda$runLinkRequest$99(dialogsActivity);
         lambda$new$0();
     }
 

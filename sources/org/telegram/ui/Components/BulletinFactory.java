@@ -32,6 +32,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SavedMessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
@@ -1149,7 +1150,7 @@ public final class BulletinFactory {
     public static Bulletin createInviteSentBulletin(Context context, FrameLayout frameLayout, int i, long j, int i2, int i3, int i4) {
         SpannableStringBuilder replaceTags;
         final Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(context, null, i3, i4);
-        int i5 = NotificationCenter.currentUserPremiumStatusChanged;
+        int i5 = NotificationCenter.onUserRingtonesUpdated;
         if (i > 1) {
             replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("InvLinkToChats", R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i, new Object[0])));
             lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[0]);
@@ -1167,7 +1168,7 @@ public final class BulletinFactory {
         }
         lottieLayout.textView.setText(replaceTags);
         if (i5 > 0) {
-            lottieLayout.postDelayed(new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda9
+            lottieLayout.postDelayed(new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda10
                 @Override // java.lang.Runnable
                 public final void run() {
                     Bulletin.LottieLayout.this.performHapticFeedback(3, 2);
@@ -1218,7 +1219,11 @@ public final class BulletinFactory {
         return createForwardedBulletin(context, baseFragment, frameLayout, i, j, i2, i3, i4, i5, null, null);
     }
 
-    public static Bulletin createForwardedBulletin(Context context, final BaseFragment baseFragment, FrameLayout frameLayout, int i, final long j, int i2, int i3, int i4, int i5, Runnable runnable, final Runnable runnable2) {
+    public static Bulletin createForwardedBulletin(Context context, BaseFragment baseFragment, FrameLayout frameLayout, int i, long j, int i2, int i3, int i4, int i5, Runnable runnable, Runnable runnable2) {
+        return createForwardedBulletin(context, baseFragment, frameLayout, i, j, i2, i3, i4, i5, false, runnable, runnable2);
+    }
+
+    public static Bulletin createForwardedBulletin(Context context, final BaseFragment baseFragment, FrameLayout frameLayout, int i, final long j, int i2, int i3, int i4, int i5, boolean z, Runnable runnable, final Runnable runnable2) {
         final Bulletin.LottieLayout lottieLayout;
         Context context2;
         int i6;
@@ -1227,7 +1232,7 @@ public final class BulletinFactory {
         SpannableStringBuilder replaceTags;
         Bulletin make;
         int i8;
-        if (UserConfig.getInstance(UserConfig.selectedAccount).isPremium() && baseFragment != null && i <= 1 && j == UserConfig.getInstance(UserConfig.selectedAccount).clientUserId) {
+        if (UserConfig.getInstance(UserConfig.selectedAccount).isPremium() && baseFragment != null && i <= 1 && j == UserConfig.getInstance(UserConfig.selectedAccount).clientUserId && !z) {
             lottieLayout = new Bulletin.LottieLayoutWithReactions(baseFragment, i2);
         } else {
             if (baseFragment != null) {
@@ -1243,7 +1248,7 @@ public final class BulletinFactory {
             }
             lottieLayout = new Bulletin.LottieLayout(context2, resourcesProvider, i6, i7);
         }
-        boolean z = (runnable2 == null && runnable == null) ? false : true;
+        boolean z2 = (runnable2 == null && runnable == null) ? false : true;
         final boolean[] zArr = {false};
         final Runnable runnable3 = runnable2 != null ? new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
@@ -1260,13 +1265,18 @@ public final class BulletinFactory {
             lottieLayout.setAnimation(R.raw.forward, 30, 30, new String[0]);
         } else if (j == UserConfig.getInstance(UserConfig.selectedAccount).clientUserId) {
             if (i2 <= 1) {
-                replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessageToSavedMessages), -1, 2, new BulletinFactory$$ExternalSyntheticLambda0());
+                replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessageToSavedMessages), -1, 2, z ? new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        SavedMessagesController.openSavedMessagesReminders();
+                    }
+                } : new BulletinFactory$$ExternalSyntheticLambda0());
             } else {
                 replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessagesToSavedMessages), -1, 2, new BulletinFactory$$ExternalSyntheticLambda0());
             }
             lottieLayout.setAnimation(R.raw.saved_messages, 30, 30, new String[0]);
         } else {
-            Runnable runnable4 = new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda7
+            Runnable runnable4 = new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
                     BulletinFactory.lambda$createForwardedBulletin$7(runnable3, baseFragment, j);
@@ -1293,7 +1303,7 @@ public final class BulletinFactory {
             } else {
                 TLRPC.User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(j));
                 if (i2 <= 1) {
-                    int i9 = z ? R.string.FwdMessageToUserShort : R.string.FwdMessageToUser;
+                    int i9 = z2 ? R.string.FwdMessageToUserShort : R.string.FwdMessageToUser;
                     if (baseFragment != null) {
                         i8 = 0;
                         replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.formatString(i9, UserObject.getFirstName(user)), -1, 2, runnable4);
@@ -1302,7 +1312,7 @@ public final class BulletinFactory {
                         i8 = 0;
                     }
                 } else {
-                    int i10 = z ? R.string.FwdMessagesToUserShort : R.string.FwdMessagesToUser;
+                    int i10 = z2 ? R.string.FwdMessagesToUserShort : R.string.FwdMessagesToUser;
                     if (baseFragment != null) {
                         i8 = 0;
                         replaceTags = AndroidUtilities.replaceSingleTag(LocaleController.formatString(i10, UserObject.getFirstName(user)), -1, 2, runnable4);
@@ -1315,15 +1325,15 @@ public final class BulletinFactory {
             }
         }
         lottieLayout.textView.setText(replaceTags);
-        if (z) {
+        if (z2) {
             lottieLayout.setButton(new Bulletin.UndoButton(lottieLayout.getContext(), true, true, baseFragment != null ? baseFragment.getResourceProvider() : null).setUndoAction(runnable).setDelayedAction(runnable3));
         }
-        lottieLayout.postDelayed(new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda8
+        lottieLayout.postDelayed(new Runnable() { // from class: org.telegram.ui.Components.BulletinFactory$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 Bulletin.LottieLayout.this.performHapticFeedback(3, 2);
             }
-        }, NotificationCenter.currentUserPremiumStatusChanged);
+        }, NotificationCenter.onUserRingtonesUpdated);
         if (frameLayout != null) {
             make = Bulletin.make(frameLayout, lottieLayout, i5);
         } else if (baseFragment != null) {
@@ -1384,6 +1394,31 @@ public final class BulletinFactory {
         }
         lottieLayout.textView.setText(AndroidUtilities.replaceTags(string));
         return Bulletin.make(baseFragment, lottieLayout, 1500);
+    }
+
+    public static Bulletin createDissableSharingBulletin(BaseFragment baseFragment, String str, boolean z) {
+        int i;
+        String string;
+        int i2;
+        Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(baseFragment.getParentActivity(), baseFragment.getResourceProvider());
+        if (str != null) {
+            if (z) {
+                i2 = R.string.DisableSharingToastDisabledPending;
+            } else {
+                i2 = R.string.DisableSharingToastEnabledPending;
+            }
+            string = LocaleController.formatString(i2, str);
+        } else {
+            if (z) {
+                i = R.string.DisableSharingToastDisabled;
+            } else {
+                i = R.string.DisableSharingToastEnabled;
+            }
+            string = LocaleController.getString(i);
+        }
+        lottieLayout.textView.setText(AndroidUtilities.replaceTags(string));
+        lottieLayout.setAnimation((z || str != null) ? R.raw.e_hand_2 : R.raw.contact_check, new String[0]);
+        return Bulletin.make(baseFragment, lottieLayout, 5000);
     }
 
     public Bulletin createBanBulletin(boolean z) {

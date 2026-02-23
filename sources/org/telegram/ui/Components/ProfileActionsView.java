@@ -441,7 +441,7 @@ public abstract class ProfileActionsView extends View {
         LoadingDrawable loadingDrawable4 = action.loadingDrawable;
         if (loadingDrawable4 != null) {
             loadingDrawable4.setBounds(action.rect);
-            action.loadingDrawable.setRadiiDp(8.0f);
+            action.loadingDrawable.setRadii(getRoundRadius());
             action.loadingDrawable.setAlpha((int) (f * 255.0f));
             action.loadingDrawable.draw(canvas);
         }
@@ -801,7 +801,7 @@ public abstract class ProfileActionsView extends View {
             case 7:
                 find = new Action(ActionButton.JOIN);
                 find.supportsLoading = true;
-                find.callDelay = NotificationCenter.currentUserPremiumStatusChanged;
+                find.callDelay = NotificationCenter.onUserRingtonesUpdated;
                 break;
             case 8:
                 find = new Action(ActionButton.REPORT);
@@ -812,7 +812,7 @@ public abstract class ProfileActionsView extends View {
                 find = new Action(ActionButton.LEAVE);
                 find.supportsLoading = true;
                 find.supportsAnimate = R.raw.profile_leave;
-                find.stopDelay = NotificationCenter.currentUserPremiumStatusChanged;
+                find.stopDelay = NotificationCenter.onUserRingtonesUpdated;
                 break;
             case 10:
                 find = new Action(ActionButton.VOICE_CHAT);
@@ -832,7 +832,7 @@ public abstract class ProfileActionsView extends View {
             case 13:
                 find = new Action(ActionButton.STOP);
                 find.supportsLoading = true;
-                find.stopDelay = NotificationCenter.currentUserPremiumStatusChanged;
+                find.stopDelay = NotificationCenter.onUserRingtonesUpdated;
                 break;
         }
         if (find != null) {

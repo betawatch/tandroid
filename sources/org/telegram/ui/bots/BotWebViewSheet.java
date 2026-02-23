@@ -91,7 +91,7 @@ import org.telegram.ui.ActionBar.INavigationLayout;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.ArticleViewer;
 import org.telegram.ui.ChatActivity;
-import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda319;
+import org.telegram.ui.ChatActivity$$ExternalSyntheticLambda312;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.CubicBezierInterpolator;
@@ -1281,8 +1281,8 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         }
 
         @Override // org.telegram.ui.web.BotWebViewContainer.Delegate
-        public void onSetupMainButton(boolean z, boolean z2, String str, int i, int i2, boolean z3, boolean z4) {
-            BotWebViewSheet.this.botButtons.setMainState(BotButtons.ButtonState.of(z, z2, z3, z4, str, i, i2), true);
+        public void onSetupMainButton(boolean z, boolean z2, String str, long j, int i, int i2, boolean z3, boolean z4) {
+            BotWebViewSheet.this.botButtons.setMainState(BotButtons.ButtonState.of(z, z2, z3, z4, str, j, i, i2), true);
             if (BotWebViewSheet.this.fullscreen) {
                 BotWebViewSheet.this.updateFullscreenLayout();
                 BotWebViewSheet.this.updateWindowFlags();
@@ -1290,8 +1290,8 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         }
 
         @Override // org.telegram.ui.web.BotWebViewContainer.Delegate
-        public void onSetupSecondaryButton(boolean z, boolean z2, String str, int i, int i2, boolean z3, boolean z4, String str2) {
-            BotWebViewSheet.this.botButtons.setSecondaryState(BotButtons.ButtonState.of(z, z2, z3, z4, str, i, i2, str2), true);
+        public void onSetupSecondaryButton(boolean z, boolean z2, String str, long j, int i, int i2, boolean z3, boolean z4, String str2) {
+            BotWebViewSheet.this.botButtons.setSecondaryState(BotButtons.ButtonState.of(z, z2, z3, z4, str, j, i, i2, str2), true);
             if (BotWebViewSheet.this.fullscreen) {
                 BotWebViewSheet.this.updateFullscreenLayout();
                 BotWebViewSheet.this.updateWindowFlags();
@@ -1792,7 +1792,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.verified_profile).mutate();
             this.verifiedDrawable = mutate;
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider), PorterDuff.Mode.SRC_IN));
-            this.verifiedDrawable.setAlpha(NotificationCenter.cameraInitied);
+            this.verifiedDrawable.setAlpha(NotificationCenter.closeOtherAppActivities);
             this.actionBar.getTitleTextView().setDrawablePadding(AndroidUtilities.dp(2.0f));
             this.actionBar.getTitleTextView().setRightDrawable(new Drawable() { // from class: org.telegram.ui.bots.BotWebViewSheet.9
                 @Override // android.graphics.drawable.Drawable
@@ -2212,7 +2212,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
         this.fileItems.clear();
         if (botDownloads.hasFiles()) {
             final ItemOptions makeSwipeback = makeOptions.makeSwipeback();
-            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda319(makeOptions));
+            makeSwipeback.add(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new ChatActivity$$ExternalSyntheticLambda312(makeOptions));
             makeSwipeback.addGap();
             Iterator it2 = botDownloads.getFiles().iterator();
             while (it2.hasNext()) {
@@ -2287,7 +2287,7 @@ public class BotWebViewSheet extends Dialog implements NotificationCenter.Notifi
     public /* synthetic */ void lambda$openOptions$35() {
         Activity activity = this.parentActivity;
         if (activity instanceof LaunchActivity) {
-            ((LaunchActivity) activity).lambda$runLinkRequest$97(ChatActivity.of(this.botId));
+            ((LaunchActivity) activity).lambda$runLinkRequest$99(ChatActivity.of(this.botId));
         }
         dismiss(true);
     }

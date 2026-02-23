@@ -1,5 +1,6 @@
 package org.telegram.ui.Components.blur3;
 
+import android.graphics.ColorMatrix;
 import android.view.View;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
@@ -8,6 +9,11 @@ import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 public class Blur3HashImpl implements IBlur3Hash {
     private long hash;
     private boolean unsupported;
+
+    @Override // org.telegram.ui.Components.blur3.capture.IBlur3Hash
+    public /* synthetic */ void add(ColorMatrix colorMatrix) {
+        IBlur3Hash.-CC.$default$add(this, colorMatrix);
+    }
 
     @Override // org.telegram.ui.Components.blur3.capture.IBlur3Hash
     public /* synthetic */ void add(View view) {

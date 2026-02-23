@@ -97,6 +97,11 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
     private ActionBarMenuSubItem zoomInItem;
     private ActionBarMenuSubItem zoomOutItem;
 
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
     public MediaActivity(Bundle bundle, SharedMediaLayout.SharedMediaPreloader sharedMediaPreloader) {
         super(bundle);
         this.titles = new FrameLayout[2];
@@ -165,19 +170,19 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x067c  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x068f  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x06ae  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x06d6  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x051b  */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x04d4  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x04c3  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x04bb  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x04ca  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x04d9  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x04fd  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x064a  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0669  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x068c  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x069f  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x06be  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x06e6  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x052b  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x04e4  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x04d3  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x04cb  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x04da  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x04e9  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x050d  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x065a  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0679  */
     /* JADX WARN: Type inference failed for: r5v13 */
     /* JADX WARN: Type inference failed for: r5v14, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r5v15 */
@@ -247,6 +252,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
         };
         sizeNotifierFrameLayout2.needBlur = true;
         this.fragmentView = sizeNotifierFrameLayout2;
+        sizeNotifierFrameLayout2.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
         final ActionBarMenu createMenu = this.actionBar.createMenu();
         int i4 = this.type;
         if (i4 == 1 || i4 == 2) {
@@ -695,7 +701,8 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
             }
         };
         this.sharedMediaLayout = sharedMediaLayout;
-        if (sharedMediaLayout.getSearchOptionsItem() != null) {
+        sharedMediaLayout.scrollSlidingTextTabStrip.setOpen(true);
+        if (this.sharedMediaLayout.getSearchOptionsItem() != null) {
             this.sharedMediaLayout.getSearchOptionsItem().setColorFilter(new PorterDuffColorFilter(getThemedColor(i9), PorterDuff.Mode.MULTIPLY));
         }
         this.sharedMediaLayout.setPinnedToTop(true);
@@ -1423,7 +1430,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
         if (this.sharedMediaLayout.getSearchOptionsItem() != null) {
             this.sharedMediaLayout.getSearchOptionsItem().setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), PorterDuff.Mode.MULTIPLY));
         }
-        this.actionBar.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        this.actionBar.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         ActionBar actionBar = this.actionBar;
         int i = Theme.key_windowBackgroundWhiteBlackText;
         actionBar.setItemsColor(Theme.getColor(i), false);
@@ -1506,5 +1513,13 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
     public int getNavigationBarColor() {
         int themedColor = getThemedColor(Theme.key_windowBackgroundWhite);
         return (getLastStoryViewer() == null || !getLastStoryViewer().attachedToParent()) ? themedColor : getLastStoryViewer().getNavigationBarColor(themedColor);
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        SharedMediaLayout sharedMediaLayout = this.sharedMediaLayout;
+        if (sharedMediaLayout != null) {
+            sharedMediaLayout.setPagesPaddingBottom(i4);
+        }
     }
 }

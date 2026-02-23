@@ -1822,7 +1822,7 @@ public class PhotoPickerActivity extends BaseFragment implements NotificationCen
                         }
                     } else if (!z && (photo = botInlineResult.photo) != null) {
                         TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
-                        TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(botInlineResult.photo.sizes, NotificationCenter.chatlistFolderUpdate);
+                        TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(botInlineResult.photo.sizes, NotificationCenter.storiesDraftsUpdated);
                         if (closestPhotoSizeWithSize2 != null) {
                             searchImage.width = closestPhotoSizeWithSize2.w;
                             searchImage.height = closestPhotoSizeWithSize2.h;

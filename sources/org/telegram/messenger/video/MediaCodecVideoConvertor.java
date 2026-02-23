@@ -58,7 +58,7 @@ public class MediaCodecVideoConvertor {
     /* JADX WARN: Finally extract failed */
     private boolean convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor.ConvertVideoParams r93, boolean r94, int r95) {
         /*
-            Method dump skipped, instructions count: 7519
+            Method dump skipped, instructions count: 7524
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.video.MediaCodecVideoConvertor.convertVideoInternal(org.telegram.messenger.video.MediaCodecVideoConvertor$ConvertVideoParams, boolean, int):boolean");
