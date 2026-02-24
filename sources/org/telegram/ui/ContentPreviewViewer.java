@@ -377,7 +377,7 @@ public class ContentPreviewViewer {
         1() {
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:45:0x0e56  */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x0e5e  */
         @Override // java.lang.Runnable
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -391,7 +391,6 @@ public class ContentPreviewViewer {
             int i4;
             int i5;
             int i6;
-            TLRPC.TL_messages_stickerSet stickerSet;
             int i7;
             int i8;
             int i9;
@@ -445,8 +444,9 @@ public class ContentPreviewViewer {
                             arrayList3.add(Integer.valueOf(R.drawable.msg_delete));
                             arrayList2.add(4);
                         }
-                        if (ContentPreviewViewer.this.currentStickerSet != null && ContentPreviewViewer.this.currentDocument != null && (stickerSet = MediaDataController.getInstance(ContentPreviewViewer.this.currentAccount).getStickerSet(ContentPreviewViewer.this.currentStickerSet, true)) != null) {
-                            if (ContentPreviewViewer.this.delegate != null && ContentPreviewViewer.this.delegate.canEditSticker()) {
+                        if (ContentPreviewViewer.this.currentStickerSet != null && ContentPreviewViewer.this.currentDocument != null) {
+                            TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(ContentPreviewViewer.this.currentAccount).getStickerSet(ContentPreviewViewer.this.currentStickerSet, true);
+                            if (stickerSet != null && ContentPreviewViewer.this.delegate != null && ContentPreviewViewer.this.delegate.canEditSticker()) {
                                 TLRPC.StickerSet stickerSet2 = stickerSet.set;
                                 if (!stickerSet2.emojis && !stickerSet2.masks) {
                                     arrayList.add(LocaleController.getString(R.string.EditSticker));
@@ -454,7 +454,7 @@ public class ContentPreviewViewer {
                                     arrayList2.add(7);
                                 }
                             }
-                            if (ContentPreviewViewer.this.delegate != null && ContentPreviewViewer.this.delegate.canDeleteSticker(ContentPreviewViewer.this.currentDocument)) {
+                            if (stickerSet != null && stickerSet.set.creator && ContentPreviewViewer.this.delegate != null && ContentPreviewViewer.this.delegate.canDeleteSticker(ContentPreviewViewer.this.currentDocument)) {
                                 arrayList.add(LocaleController.getString(R.string.DeleteSticker));
                                 arrayList3.add(Integer.valueOf(R.drawable.msg_delete));
                                 arrayList2.add(8);
