@@ -734,11 +734,14 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 this.hideMembersInfoRow = i41 + 1;
             }
             TLRPC.Chat chat6 = this.currentChat;
-            if (chat6 != null && (chat6.creator || (ChatObject.hasAdminRights(chat6) && ChatObject.canChangeChatInfo(this.currentChat)))) {
-                int i42 = this.rowCount;
-                this.tagsRow = i42;
-                this.rowCount = i42 + 2;
-                this.tagsInfoRow = i42 + 1;
+            if (chat6 != null && !ChatObject.isChannelAndNotMegaGroup(chat6)) {
+                TLRPC.Chat chat7 = this.currentChat;
+                if (chat7.creator || (ChatObject.hasAdminRights(chat7) && ChatObject.canChangeChatInfo(this.currentChat))) {
+                    int i42 = this.rowCount;
+                    this.tagsRow = i42;
+                    this.rowCount = i42 + 2;
+                    this.tagsInfoRow = i42 + 1;
+                }
             }
             if (this.selectType == 0 && ChatObject.canAddUsers(this.currentChat)) {
                 int i43 = this.rowCount;
@@ -2943,14 +2946,14 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             if (sb.length() != 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString(R.string.UserRestrictionsEditTags));
+            sb.append(LocaleController.getString(R.string.UserRestrictionsNoEditTags));
         }
         boolean z15 = tL_chatBannedRights.change_info;
         if (z15 && this.defaultBannedRights.change_info != z15) {
             if (sb.length() != 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("UserRestrictionsNoChangeInfo", R.string.UserRestrictionsNoChangeInfo));
+            sb.append(LocaleController.getString(R.string.UserRestrictionsNoChangeInfo));
         }
         if (sb.length() != 0) {
             sb.replace(0, 1, sb.substring(0, 1).toUpperCase());

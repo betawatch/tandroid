@@ -974,10 +974,10 @@ public class InviteLinkBottomSheet extends BottomSheet {
         }
 
         /* JADX WARN: Removed duplicated region for block: B:100:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:112:0x028c  */
+        /* JADX WARN: Removed duplicated region for block: B:112:0x0291  */
         /* JADX WARN: Removed duplicated region for block: B:79:0x025b  */
-        /* JADX WARN: Removed duplicated region for block: B:88:0x02bb  */
-        /* JADX WARN: Removed duplicated region for block: B:93:0x02fd  */
+        /* JADX WARN: Removed duplicated region for block: B:88:0x02d7  */
+        /* JADX WARN: Removed duplicated region for block: B:93:0x031d  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -991,8 +991,9 @@ public class InviteLinkBottomSheet extends BottomSheet {
             TLRPC.User user;
             String str;
             String str2;
-            boolean z;
+            final boolean z;
             boolean z2;
+            boolean z3;
             InviteLinkBottomSheet inviteLinkBottomSheet;
             TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing;
             int itemViewType = viewHolder.getItemViewType();
@@ -1173,19 +1174,22 @@ public class InviteLinkBottomSheet extends BottomSheet {
                                     str4 = LocaleController.getString("ChannelCreator", R.string.ChannelCreator);
                                 }
                                 str2 = str4;
-                                z = true;
+                                z = false;
                                 z2 = true;
+                                z3 = true;
                             } else if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
                                 if (TextUtils.isEmpty(str4)) {
                                     str4 = LocaleController.getString("ChannelAdmin", R.string.ChannelAdmin);
                                 }
+                                z = channelParticipant.can_edit;
                                 str2 = str4;
-                                z = true;
-                                z2 = false;
+                                z2 = true;
+                                z3 = false;
                             } else {
                                 str2 = str4;
                                 z = false;
                                 z2 = false;
+                                z3 = false;
                             }
                         } else {
                             String str5 = chatParticipant.rank;
@@ -1194,48 +1198,53 @@ public class InviteLinkBottomSheet extends BottomSheet {
                                     str5 = LocaleController.getString("ChannelCreator", R.string.ChannelCreator);
                                 }
                                 str2 = str5;
-                                z = true;
+                                z = false;
                                 z2 = true;
+                                z3 = true;
                             } else if (chatParticipant instanceof TLRPC.TL_chatParticipantAdmin) {
                                 if (TextUtils.isEmpty(str5)) {
                                     str5 = LocaleController.getString("ChannelAdmin", R.string.ChannelAdmin);
                                 }
                                 str2 = str5;
-                                z = true;
-                                z2 = false;
+                                z = chatParticipant.inviter_id == UserConfig.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).getClientUserId();
+                                z2 = true;
+                                z3 = false;
                             } else {
                                 str3 = str5;
                             }
                         }
                         final TLRPC.User user3 = user;
                         final String str6 = str2;
-                        final boolean z3 = z;
                         final boolean z4 = z2;
-                        revenueUserCell.setAdminRole(str2, z, z2, !UserObject.isUserSelf(user) && ChatObject.canManageMyTag(MessagesController.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).getChat(Long.valueOf(InviteLinkBottomSheet.this.chatId))), new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$$ExternalSyntheticLambda0
+                        final boolean z5 = z3;
+                        TLRPC.TL_chatInviteImporter tL_chatInviteImporter3 = tL_chatInviteImporter;
+                        revenueUserCell.setAdminRole(str2, z2, z3, !UserObject.isUserSelf(user) && ChatObject.canManageMyTag(MessagesController.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).getChat(Long.valueOf(InviteLinkBottomSheet.this.chatId))), new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$$ExternalSyntheticLambda0
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
-                                InviteLinkBottomSheet.Adapter.this.lambda$onBindViewHolder$0(user3, str6, z3, z4, view);
+                                InviteLinkBottomSheet.Adapter.this.lambda$onBindViewHolder$0(user3, str6, z4, z5, z, view);
                             }
                         });
                         revenueUserCell.setData(user, null, str, 0, false);
                         inviteLinkBottomSheet = InviteLinkBottomSheet.this;
-                        if (i != inviteLinkBottomSheet.creatorRow || (tL_starsSubscriptionPricing = inviteLinkBottomSheet.invite.subscription_pricing) == null || tL_chatInviteImporter == null) {
+                        if (i != inviteLinkBottomSheet.creatorRow || (tL_starsSubscriptionPricing = inviteLinkBottomSheet.invite.subscription_pricing) == null || tL_chatInviteImporter3 == null) {
                             return;
                         }
-                        revenueUserCell.setRevenue(tL_starsSubscriptionPricing, tL_chatInviteImporter.date);
+                        revenueUserCell.setRevenue(tL_starsSubscriptionPricing, tL_chatInviteImporter3.date);
                         return;
                     }
                     str2 = str3;
                     z = false;
                     z2 = false;
+                    z3 = false;
                     final TLRPC.User user32 = user;
                     final String str62 = str2;
-                    final boolean z32 = z;
                     final boolean z42 = z2;
-                    revenueUserCell.setAdminRole(str2, z, z2, !UserObject.isUserSelf(user) && ChatObject.canManageMyTag(MessagesController.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).getChat(Long.valueOf(InviteLinkBottomSheet.this.chatId))), new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$$ExternalSyntheticLambda0
+                    final boolean z52 = z3;
+                    TLRPC.TL_chatInviteImporter tL_chatInviteImporter32 = tL_chatInviteImporter;
+                    revenueUserCell.setAdminRole(str2, z2, z3, !UserObject.isUserSelf(user) && ChatObject.canManageMyTag(MessagesController.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).getChat(Long.valueOf(InviteLinkBottomSheet.this.chatId))), new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            InviteLinkBottomSheet.Adapter.this.lambda$onBindViewHolder$0(user32, str62, z32, z42, view);
+                            InviteLinkBottomSheet.Adapter.this.lambda$onBindViewHolder$0(user32, str62, z42, z52, z, view);
                         }
                     });
                     revenueUserCell.setData(user, null, str, 0, false);
@@ -1254,12 +1263,13 @@ public class InviteLinkBottomSheet extends BottomSheet {
                 }
                 final TLRPC.User user322 = user;
                 final String str622 = str2;
-                final boolean z322 = z;
                 final boolean z422 = z2;
-                revenueUserCell.setAdminRole(str2, z, z2, !UserObject.isUserSelf(user) && ChatObject.canManageMyTag(MessagesController.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).getChat(Long.valueOf(InviteLinkBottomSheet.this.chatId))), new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$$ExternalSyntheticLambda0
+                final boolean z522 = z3;
+                TLRPC.TL_chatInviteImporter tL_chatInviteImporter322 = tL_chatInviteImporter;
+                revenueUserCell.setAdminRole(str2, z2, z3, !UserObject.isUserSelf(user) && ChatObject.canManageMyTag(MessagesController.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).getChat(Long.valueOf(InviteLinkBottomSheet.this.chatId))), new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        InviteLinkBottomSheet.Adapter.this.lambda$onBindViewHolder$0(user322, str622, z322, z422, view);
+                        InviteLinkBottomSheet.Adapter.this.lambda$onBindViewHolder$0(user322, str622, z422, z522, z, view);
                     }
                 });
                 revenueUserCell.setData(user, null, str, 0, false);
@@ -1270,14 +1280,16 @@ public class InviteLinkBottomSheet extends BottomSheet {
             str2 = str3;
             z = false;
             z2 = false;
+            z3 = false;
             final TLRPC.User user3222 = user;
             final String str6222 = str2;
-            final boolean z3222 = z;
             final boolean z4222 = z2;
-            revenueUserCell.setAdminRole(str2, z, z2, !UserObject.isUserSelf(user) && ChatObject.canManageMyTag(MessagesController.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).getChat(Long.valueOf(InviteLinkBottomSheet.this.chatId))), new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$$ExternalSyntheticLambda0
+            final boolean z5222 = z3;
+            TLRPC.TL_chatInviteImporter tL_chatInviteImporter3222 = tL_chatInviteImporter;
+            revenueUserCell.setAdminRole(str2, z2, z3, !UserObject.isUserSelf(user) && ChatObject.canManageMyTag(MessagesController.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).getChat(Long.valueOf(InviteLinkBottomSheet.this.chatId))), new View.OnClickListener() { // from class: org.telegram.ui.Components.InviteLinkBottomSheet$Adapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    InviteLinkBottomSheet.Adapter.this.lambda$onBindViewHolder$0(user3222, str6222, z3222, z4222, view);
+                    InviteLinkBottomSheet.Adapter.this.lambda$onBindViewHolder$0(user3222, str6222, z4222, z5222, z, view);
                 }
             });
             revenueUserCell.setData(user, null, str, 0, false);
@@ -1287,8 +1299,8 @@ public class InviteLinkBottomSheet extends BottomSheet {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBindViewHolder$0(TLRPC.User user, String str, boolean z, boolean z2, View view) {
-            TagEditCell.showInfoSheet(InviteLinkBottomSheet.this.getContext(), ((BottomSheet) InviteLinkBottomSheet.this).currentAccount, -InviteLinkBottomSheet.this.chatId, user, str, z, z2, ((BottomSheet) InviteLinkBottomSheet.this).resourcesProvider);
+        public /* synthetic */ void lambda$onBindViewHolder$0(TLRPC.User user, String str, boolean z, boolean z2, boolean z3, View view) {
+            TagEditCell.showInfoSheet(InviteLinkBottomSheet.this.getContext(), ((BottomSheet) InviteLinkBottomSheet.this).currentAccount, -InviteLinkBottomSheet.this.chatId, user, str, z, z2, z3, ((BottomSheet) InviteLinkBottomSheet.this).resourcesProvider);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter

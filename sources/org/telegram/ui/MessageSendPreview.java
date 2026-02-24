@@ -996,6 +996,11 @@ public class MessageSendPreview extends Dialog implements NotificationCenter.Not
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void forceUpdateNoAnimation(ChatMessageCell chatMessageCell, boolean z) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdateNoAnimation(this, chatMessageCell, z);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ String getAdminRank(long j) {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getAdminRank(this, j);
                     }

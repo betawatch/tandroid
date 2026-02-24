@@ -12026,8 +12026,9 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             TLRPC.ChatParticipant chatParticipant;
             String str;
             String str2;
-            boolean z;
+            final boolean z;
             boolean z2;
+            boolean z3;
             View view = viewHolder.itemView;
             if (view instanceof UserCell) {
                 UserCell userCell = (UserCell) view;
@@ -12045,20 +12046,23 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                                 str = LocaleController.getString("ChannelCreator", R.string.ChannelCreator);
                             }
                             str2 = str;
-                            z = true;
+                            z = false;
                             z2 = true;
+                            z3 = true;
                         } else {
                             if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
                                 if (TextUtils.isEmpty(str)) {
                                     str = LocaleController.getString("ChannelAdmin", R.string.ChannelAdmin);
                                 }
+                                z = channelParticipant.can_edit;
                                 str2 = str;
-                                z = true;
-                                z2 = false;
+                                z2 = true;
+                                z3 = false;
                             }
                             str2 = str;
                             z = false;
                             z2 = false;
+                            z3 = false;
                         }
                     } else {
                         str = chatParticipant.rank;
@@ -12067,30 +12071,33 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                                 str = LocaleController.getString("ChannelCreator", R.string.ChannelCreator);
                             }
                             str2 = str;
-                            z = true;
+                            z = false;
                             z2 = true;
+                            z3 = true;
                         } else {
                             if (chatParticipant instanceof TLRPC.TL_chatParticipantAdmin) {
                                 if (TextUtils.isEmpty(str)) {
                                     str = LocaleController.getString("ChannelAdmin", R.string.ChannelAdmin);
                                 }
                                 str2 = str;
-                                z = true;
-                                z2 = false;
+                                z = chatParticipant.inviter_id == SharedMediaLayout.this.profileActivity.getUserConfig().getClientUserId();
+                                z2 = true;
+                                z3 = false;
                             }
                             str2 = str;
                             z = false;
                             z2 = false;
+                            z3 = false;
                         }
                     }
                     final TLRPC.User user = SharedMediaLayout.this.profileActivity.getMessagesController().getUser(Long.valueOf(chatParticipant.user_id));
                     final String str3 = str2;
-                    final boolean z3 = z;
                     final boolean z4 = z2;
-                    userCell.setAdminRole(str2, z, z2, UserObject.isUserSelf(user) && ChatObject.canManageMyTag(SharedMediaLayout.this.profileActivity.getMessagesController().getChat(Long.valueOf(-SharedMediaLayout.this.dialog_id))), new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$ChatUsersAdapter$$ExternalSyntheticLambda0
+                    final boolean z5 = z3;
+                    userCell.setAdminRole(str2, z2, z3, UserObject.isUserSelf(user) && ChatObject.canManageMyTag(SharedMediaLayout.this.profileActivity.getMessagesController().getChat(Long.valueOf(-SharedMediaLayout.this.dialog_id))), new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$ChatUsersAdapter$$ExternalSyntheticLambda0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            SharedMediaLayout.ChatUsersAdapter.this.lambda$onBindViewHolder$0(user, str3, z3, z4, view2);
+                            SharedMediaLayout.ChatUsersAdapter.this.lambda$onBindViewHolder$0(user, str3, z4, z5, z, view2);
                         }
                     });
                     userCell.setData(user, null, null, 0, i != this.chatInfo.participants.participants.size() + (-1));
@@ -12099,8 +12106,8 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$onBindViewHolder$0(TLRPC.User user, String str, boolean z, boolean z2, View view) {
-            TagEditCell.showInfoSheet(SharedMediaLayout.this.getContext(), SharedMediaLayout.this.profileActivity.getCurrentAccount(), SharedMediaLayout.this.dialog_id, user, str, z, z2, SharedMediaLayout.this.resourcesProvider);
+        public /* synthetic */ void lambda$onBindViewHolder$0(TLRPC.User user, String str, boolean z, boolean z2, boolean z3, View view) {
+            TagEditCell.showInfoSheet(SharedMediaLayout.this.getContext(), SharedMediaLayout.this.profileActivity.getCurrentAccount(), SharedMediaLayout.this.dialog_id, user, str, z, z2, z3, SharedMediaLayout.this.resourcesProvider);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter

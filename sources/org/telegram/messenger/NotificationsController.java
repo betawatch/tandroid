@@ -13315,7 +13315,7 @@ public class NotificationsController extends BaseController {
         ImageDecoder.Source createSource;
         Bitmap decodeBitmap;
         if (j == UserObject.OAUTH) {
-            builder.setIcon(IconCompat.createWithResource(ApplicationLoader.applicationContext, R.drawable.logo_middle));
+            builder.setIcon(IconCompat.createWithResource(ApplicationLoader.applicationContext, R.drawable.ic_launcher_dr));
             return builder;
         }
         if (file != null && Build.VERSION.SDK_INT >= 28) {

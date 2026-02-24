@@ -13264,6 +13264,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
 
                 @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
+                public /* synthetic */ boolean isEditingSticker() {
+                    return PhotoViewer.PhotoViewerProvider.-CC.$default$isEditingSticker(this);
+                }
+
+                @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
                 public boolean isPhotoChecked(int i3) {
                     return false;
                 }

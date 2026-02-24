@@ -168,6 +168,11 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public /* synthetic */ boolean canSendSticker() {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSendSticker(this);
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public /* synthetic */ void deleteSticker(TLRPC.Document document) {
             ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$deleteSticker(this, document);
         }
@@ -262,8 +267,8 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-        public /* synthetic */ void sendSticker() {
-            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this);
+        public /* synthetic */ void sendSticker(String str) {
+            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, str);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate

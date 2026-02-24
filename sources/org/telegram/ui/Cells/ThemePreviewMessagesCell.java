@@ -734,6 +734,11 @@ public class ThemePreviewMessagesCell extends LinearLayout {
                     }
 
                     @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                    public /* synthetic */ void forceUpdateNoAnimation(ChatMessageCell chatMessageCell, boolean z2) {
+                        ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdateNoAnimation(this, chatMessageCell, z2);
+                    }
+
+                    @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                     public /* synthetic */ String getAdminRank(long j3) {
                         return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getAdminRank(this, j3);
                     }

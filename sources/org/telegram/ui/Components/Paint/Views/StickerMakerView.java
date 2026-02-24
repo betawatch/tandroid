@@ -54,6 +54,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -978,7 +979,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
             this.segmentBorderImageWidth = segmentedObject.borderImageWidth;
             this.segmentBorderImageHeight = segmentedObject.borderImageHeight;
             arrayList.add(segmentedObject);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda18
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda19
                 @Override // java.lang.Runnable
                 public final void run() {
                     StickerMakerView.this.lambda$segmentImage$3(arrayList, callback, segmentedObject);
@@ -1009,7 +1010,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
         this.selectedObject = null;
         this.segmentingLoaded = true;
         this.segmentingLoading = false;
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda19
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda20
             @Override // java.lang.Runnable
             public final void run() {
                 StickerMakerView.this.lambda$segmentImage$4(arrayList);
@@ -1124,7 +1125,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
         this.segmentingLoading = false;
         FileLog.e(exc);
         if (isWaitingMlKitError(exc) && isAttachedToWindow()) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda20
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda21
                 @Override // java.lang.Runnable
                 public final void run() {
                     StickerMakerView.this.lambda$segment$8(bitmap, i, callback);
@@ -1556,17 +1557,17 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
         }
     }
 
-    public void uploadStickerFile(final String str, final VideoEditedInfo videoEditedInfo, final String str2, final CharSequence charSequence, final boolean z, final TLRPC.StickerSet stickerSet, final TLRPC.Document document, final String str3, final Utilities.Callback callback, final Utilities.Callback2 callback2) {
+    public void uploadStickerFile(final String str, final VideoEditedInfo videoEditedInfo, final String str2, final CharSequence charSequence, final boolean z, final long j, final TLRPC.StickerSet stickerSet, final TLRPC.Document document, final String str3, final Utilities.Callback callback, final Utilities.Callback2 callback2) {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                StickerMakerView.this.lambda$uploadStickerFile$12(callback, str2, str, charSequence, z, stickerSet, document, videoEditedInfo, str3, callback2);
+                StickerMakerView.this.lambda$uploadStickerFile$12(callback, str2, str, charSequence, z, j, stickerSet, document, videoEditedInfo, str3, callback2);
             }
         }, 300L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$uploadStickerFile$12(Utilities.Callback callback, String str, String str2, CharSequence charSequence, boolean z, TLRPC.StickerSet stickerSet, TLRPC.Document document, VideoEditedInfo videoEditedInfo, String str3, Utilities.Callback2 callback2) {
+    public /* synthetic */ void lambda$uploadStickerFile$12(Utilities.Callback callback, String str, String str2, CharSequence charSequence, boolean z, long j, TLRPC.StickerSet stickerSet, TLRPC.Document document, VideoEditedInfo videoEditedInfo, String str3, Utilities.Callback2 callback2) {
         StickerUploader stickerUploader;
         boolean z2 = callback == null || (stickerUploader = this.stickerUploader) == null || !stickerUploader.uploaded;
         if (z2) {
@@ -1582,6 +1583,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
         stickerUploader3.path = str2;
         stickerUploader3.stickerPackName = charSequence;
         stickerUploader3.addToFavorite = z;
+        stickerUploader3.sendToDialogId = j;
         stickerUploader3.stickerSet = stickerSet;
         stickerUploader3.replacedSticker = document;
         stickerUploader3.videoEditedInfo = videoEditedInfo;
@@ -1768,14 +1770,34 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
             }
             return;
         }
+        if (stickerUploader.sendToDialogId != 0) {
+            SendMessagesHelper.getInstance(i).sendSticker(stickerUploader.mediaDocument.document, null, stickerUploader.sendToDialogId, null, null, null, null, null, true, 0, 0, false, null, null, 0, 0L, 0L, null);
+            DownloadButton.PreparingVideoToast preparingVideoToast = this.loadingToast;
+            if (preparingVideoToast != null) {
+                preparingVideoToast.setProgress(1.0f);
+            }
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda17
+                @Override // java.lang.Runnable
+                public final void run() {
+                    StickerMakerView.this.lambda$afterUploadingMedia$24(i);
+                }
+            }, 450L);
+            Utilities.Callback callback2 = stickerUploader.whenDone;
+            if (callback2 != null) {
+                callback2.run(Boolean.TRUE);
+                stickerUploader.whenDone = null;
+                return;
+            }
+            return;
+        }
         if (stickerUploader.stickerSet != null) {
             TLRPC.TL_stickers_addStickerToSet tL_stickers_addStickerToSet = new TLRPC.TL_stickers_addStickerToSet();
             tL_stickers_addStickerToSet.stickerset = MediaDataController.getInputStickerSet(stickerUploader.stickerSet);
             tL_stickers_addStickerToSet.sticker = stickerUploader.tlInputStickerSetItem;
-            ConnectionsManager.getInstance(i).sendRequest(tL_stickers_addStickerToSet, new RequestDelegate() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda17
+            ConnectionsManager.getInstance(i).sendRequest(tL_stickers_addStickerToSet, new RequestDelegate() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda18
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                    StickerMakerView.this.lambda$afterUploadingMedia$26(i, stickerUploader, tLObject, tL_error);
+                    StickerMakerView.this.lambda$afterUploadingMedia$27(i, stickerUploader, tLObject, tL_error);
                 }
             });
         }
@@ -1788,7 +1810,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$afterUploadingMedia$19(final int i, final StickerUploader stickerUploader, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda21
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
                 StickerMakerView.this.lambda$afterUploadingMedia$18(tLObject, i, stickerUploader, tL_error);
@@ -1809,7 +1831,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
             if (preparingVideoToast != null) {
                 preparingVideoToast.setProgress(1.0f);
             }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda25
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda26
                 @Override // java.lang.Runnable
                 public final void run() {
                     StickerMakerView.this.lambda$afterUploadingMedia$17(tLObject, stickerUploader);
@@ -1836,7 +1858,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$afterUploadingMedia$22(final int i, final StickerUploader stickerUploader, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda22
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda23
             @Override // java.lang.Runnable
             public final void run() {
                 StickerMakerView.this.lambda$afterUploadingMedia$21(tLObject, i, stickerUploader, tL_error);
@@ -1854,7 +1876,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
             if (preparingVideoToast != null) {
                 preparingVideoToast.setProgress(1.0f);
             }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda24
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda25
                 @Override // java.lang.Runnable
                 public final void run() {
                     StickerMakerView.this.lambda$afterUploadingMedia$20(tLObject, stickerUploader);
@@ -1890,17 +1912,23 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$afterUploadingMedia$26(final int i, final StickerUploader stickerUploader, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda23
+    public /* synthetic */ void lambda$afterUploadingMedia$24(int i) {
+        NotificationCenter.getInstance(i).lambda$postNotificationNameOnUIThread$1(NotificationCenter.customStickerCreated, Boolean.FALSE);
+        hideLoadingDialog();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$afterUploadingMedia$27(final int i, final StickerUploader stickerUploader, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
-                StickerMakerView.this.lambda$afterUploadingMedia$25(tLObject, i, stickerUploader, tL_error);
+                StickerMakerView.this.lambda$afterUploadingMedia$26(tLObject, i, stickerUploader, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$afterUploadingMedia$25(final TLObject tLObject, int i, final StickerUploader stickerUploader, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$afterUploadingMedia$26(final TLObject tLObject, int i, final StickerUploader stickerUploader, TLRPC.TL_error tL_error) {
         boolean z;
         if (tLObject instanceof TLRPC.TL_messages_stickerSet) {
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
@@ -1912,10 +1940,10 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
             if (preparingVideoToast != null) {
                 preparingVideoToast.setProgress(1.0f);
             }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda26
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda27
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StickerMakerView.this.lambda$afterUploadingMedia$24(tLObject, stickerUploader);
+                    StickerMakerView.this.lambda$afterUploadingMedia$25(tLObject, stickerUploader);
                 }
             }, 450L);
             z = true;
@@ -1932,7 +1960,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$afterUploadingMedia$24(TLObject tLObject, StickerUploader stickerUploader) {
+    public /* synthetic */ void lambda$afterUploadingMedia$25(TLObject tLObject, StickerUploader stickerUploader) {
         NotificationCenter notificationCenter = NotificationCenter.getInstance(UserConfig.selectedAccount);
         int i = NotificationCenter.customStickerCreated;
         TLRPC.Document document = stickerUploader.mediaDocument.document;
@@ -1953,6 +1981,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
         public String path;
         public TLRPC.Document replacedSticker;
         public int reqId;
+        public long sendToDialogId;
         public CharSequence stickerPackName;
         public TLRPC.StickerSet stickerSet;
         public String thumbPath;

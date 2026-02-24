@@ -738,6 +738,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private boolean historyPreloaded;
     private boolean ignoreAttachOnPause;
     private boolean ignoreDraft;
+    private boolean ignoreItemAnimation;
     private ChatActionCell infoTopView;
     private Animator infoTopViewAnimator;
     private int initialMessagesSize;
@@ -5336,6 +5337,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         }
 
                                         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                                        public /* synthetic */ boolean canSendSticker() {
+                                            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSendSticker(this);
+                                        }
+
+                                        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                                         public /* synthetic */ Boolean canSetAsStatus(TLRPC.Document document) {
                                             return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSetAsStatus(this, document);
                                         }
@@ -5446,8 +5452,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                         }
 
                                         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-                                        public /* synthetic */ void sendSticker() {
-                                            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this);
+                                        public /* synthetic */ void sendSticker(String str2) {
+                                            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, str2);
                                         }
 
                                         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -7150,6 +7156,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 }
 
                                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                                public /* synthetic */ boolean canSendSticker() {
+                                    return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSendSticker(this);
+                                }
+
+                                @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                                 public /* synthetic */ Boolean canSetAsStatus(TLRPC.Document document) {
                                     return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSetAsStatus(this, document);
                                 }
@@ -7260,8 +7271,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                                 }
 
                                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-                                public /* synthetic */ void sendSticker() {
-                                    ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this);
+                                public /* synthetic */ void sendSticker(String str2) {
+                                    ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, str2);
                                 }
 
                                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -8694,6 +8705,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     }
 
                     @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                    public /* synthetic */ boolean canSendSticker() {
+                        return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSendSticker(this);
+                    }
+
+                    @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                     public /* synthetic */ Boolean canSetAsStatus(TLRPC.Document document) {
                         return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSetAsStatus(this, document);
                     }
@@ -8804,8 +8820,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     }
 
                     @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-                    public /* synthetic */ void sendSticker() {
-                        ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this);
+                    public /* synthetic */ void sendSticker(String str2) {
+                        ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, str2);
                     }
 
                     @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -10079,6 +10095,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+                public /* synthetic */ boolean canSendSticker() {
+                    return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSendSticker(this);
+                }
+
+                @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                 public /* synthetic */ Boolean canSetAsStatus(TLRPC.Document document) {
                     return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSetAsStatus(this, document);
                 }
@@ -10189,8 +10210,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-                public /* synthetic */ void sendSticker() {
-                    ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this);
+                public /* synthetic */ void sendSticker(String str2) {
+                    ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, str2);
                 }
 
                 @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -11435,6 +11456,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
 
             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            public /* synthetic */ boolean canSendSticker() {
+                return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSendSticker(this);
+            }
+
+            @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ Boolean canSetAsStatus(TLRPC.Document document) {
                 return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSetAsStatus(this, document);
             }
@@ -11545,8 +11571,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
 
             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-            public /* synthetic */ void sendSticker() {
-                ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this);
+            public /* synthetic */ void sendSticker(String str2) {
+                ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, str2);
             }
 
             @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -40587,11 +40613,8 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             menu.add(i3, R.id.menu_link, i4, LocaleController.getString(R.string.CreateLink));
             i4++;
         }
-        if (BuildVars.SUPPORT_SEND_DATES) {
-            menu.add(i3, R.id.menu_date, i4, LocaleController.getString(R.string.FormattedDate));
-            i4++;
-        }
-        menu.add(i3, R.id.menu_regular, i4, LocaleController.getString(R.string.Regular));
+        menu.add(i3, R.id.menu_date, i4, LocaleController.getString(R.string.FormattedDate));
+        menu.add(i3, R.id.menu_regular, i4 + 1, LocaleController.getString(R.string.Regular));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -56643,7 +56666,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("notify item changed " + i);
             }
-            if (!((BaseFragment) ChatActivity.this).fragmentBeginToShow) {
+            if (!((BaseFragment) ChatActivity.this).fragmentBeginToShow || ChatActivity.this.ignoreItemAnimation) {
                 ChatActivity.this.chatListView.setItemAnimator(null);
             } else if (ChatActivity.this.chatListView.getItemAnimator() != ChatActivity.this.chatListItemAnimator) {
                 ChatActivity.this.chatListView.setItemAnimator(ChatActivity.this.chatListItemAnimator);
@@ -57441,7 +57464,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             forceUpdate(chatMessageCell, z, false);
         }
 
+        @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+        public void forceUpdateNoAnimation(ChatMessageCell chatMessageCell, boolean z) {
+            forceUpdate(chatMessageCell, z, true, false);
+        }
+
         public void forceUpdate(ChatMessageCell chatMessageCell, boolean z, boolean z2) {
+            forceUpdate(chatMessageCell, z, false, z2);
+        }
+
+        public void forceUpdate(ChatMessageCell chatMessageCell, boolean z, boolean z2, boolean z3) {
             MessageObject primaryMessageObject;
             int i;
             int i2;
@@ -57469,13 +57501,15 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             i = -1;
             i2 = 0;
             if (z && i >= 0 && chatMessageCell.getCurrentMessagesGroup() == null) {
-                if (z2) {
+                if (z3) {
                     ChatActivity.this.chatLayoutManager.scrollToPositionWithOffset(ChatActivity.this.chatListView.getChildAdapterPosition(chatMessageCell), chatMessageCell.getTop() - ((int) ChatActivity.this.chatListViewPaddingTop), false);
                 } else {
                     ChatActivity.this.chatLayoutManager.scrollToPositionWithOffset(i, i2);
                 }
             }
+            ChatActivity.this.ignoreItemAnimation = z2;
             ChatActivity.this.lambda$updateMessageAnimated$295(primaryMessageObject, false);
+            ChatActivity.this.ignoreItemAnimation = false;
         }
 
         @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -60223,46 +60257,41 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
 
         private void didPressAdmin(final ChatMessageCell chatMessageCell, TLObject tLObject) {
             TLRPC.Chat chat;
+            boolean z;
             String str;
+            boolean z2;
+            boolean z3;
             TLRPC.User currentUser = chatMessageCell.getCurrentUser();
-            TLRPC.User currentUser2 = ChatActivity.this.getUserConfig().getCurrentUser();
+            ChatActivity.this.getUserConfig().getCurrentUser();
             if (!AndroidUtilities.isContextSafe(ChatActivity.this.getContext()) || (chat = ChatActivity.this.currentChat) == null || currentUser == null || ChatObject.isChannelAndNotMegaGroup(chat)) {
                 return;
             }
-            boolean z = false;
-            boolean z2 = true;
+            boolean z4 = true;
+            boolean z5 = false;
             if ((tLObject instanceof TLRPC.ChannelParticipant) || (tLObject instanceof TLRPC.TL_chatChannelParticipant)) {
                 TLRPC.ChannelParticipant channelParticipant = tLObject instanceof TLRPC.TL_chatChannelParticipant ? ((TLRPC.TL_chatChannelParticipant) tLObject).channelParticipant : (TLRPC.ChannelParticipant) tLObject;
                 if (channelParticipant instanceof TLRPC.TL_channelParticipantCreator) {
-                    long j = currentUser2.id;
-                    z = true;
+                    z = false;
+                    z5 = true;
+                } else if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
+                    z = channelParticipant.inviter_id == ChatActivity.this.getUserConfig().getClientUserId();
                 } else {
-                    if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
-                        if ((currentUser2.id != currentUser.id || !ChatObject.canManageMyTag(ChatActivity.this.currentChat)) && ChatObject.canManageTags(ChatActivity.this.currentChat)) {
-                            boolean z3 = channelParticipant.can_edit;
-                        }
-                        z = true;
-                    } else if (currentUser2.id != currentUser.id || !ChatObject.canManageMyTag(ChatActivity.this.currentChat)) {
-                        ChatObject.canManageTags(ChatActivity.this.currentChat);
-                    }
-                    z2 = false;
+                    z = false;
+                    z4 = false;
                 }
                 str = channelParticipant.rank;
+                z2 = z;
             } else if (tLObject instanceof TLRPC.ChatParticipant) {
                 if (tLObject instanceof TLRPC.TL_chatParticipantCreator) {
-                    long j2 = currentUser2.id;
-                    z = true;
+                    z3 = false;
+                    z5 = true;
+                } else if (tLObject instanceof TLRPC.TL_chatParticipantAdmin) {
+                    z3 = ((TLRPC.TL_chatParticipantAdmin) tLObject).inviter_id == ChatActivity.this.getUserConfig().getClientUserId();
                 } else {
-                    if (tLObject instanceof TLRPC.TL_chatParticipantAdmin) {
-                        if (currentUser2.id != currentUser.id || !ChatObject.canManageMyTag(ChatActivity.this.currentChat)) {
-                            ChatObject.canManageTags(ChatActivity.this.currentChat);
-                        }
-                        z = true;
-                    } else if (currentUser2.id != currentUser.id || !ChatObject.canManageMyTag(ChatActivity.this.currentChat)) {
-                        ChatObject.canManageTags(ChatActivity.this.currentChat);
-                    }
-                    z2 = false;
+                    z3 = false;
+                    z4 = false;
                 }
+                z2 = z3;
                 str = ((TLRPC.ChatParticipant) tLObject).rank;
             } else {
                 if (ChatObject.isChannel(ChatActivity.this.currentChat)) {
@@ -60280,13 +60309,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
                 return;
             }
-            String str2 = str;
-            boolean z4 = z;
-            boolean z5 = z2;
+            boolean z6 = z4;
+            boolean z7 = z5;
             Context context = ChatActivity.this.getContext();
             int i = ((BaseFragment) ChatActivity.this).currentAccount;
             ChatActivity chatActivity = ChatActivity.this;
-            TagEditCell.showInfoSheet(context, i, -chatActivity.currentChat.id, currentUser, str2, z4, z5, ((BaseFragment) chatActivity).resourceProvider);
+            TagEditCell.showInfoSheet(context, i, -chatActivity.currentChat.id, currentUser, str, z6, z7, z2, ((BaseFragment) chatActivity).resourceProvider);
         }
 
         /* JADX INFO: Access modifiers changed from: private */

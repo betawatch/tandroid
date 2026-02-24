@@ -706,7 +706,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             consumer.accept(Boolean.TRUE);
             return;
         }
-        this.onPermissionsRequestResultCallback = new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda37
+        this.onPermissionsRequestResultCallback = new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewContainer.this.lambda$runWithPermissions$0(consumer, strArr);
@@ -1268,7 +1268,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         if (myWebView == null) {
             return;
         }
-        NotificationCenter.getInstance(i).doOnIdle(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda36
+        NotificationCenter.getInstance(i).doOnIdle(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewContainer.lambda$notifyEvent$4(BotWebViewContainer.MyWebView.this, str, jSONObject);
@@ -1344,7 +1344,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             case "oauth_request":
                 d("oauth_request " + str2);
                 if (this.webView != null) {
-                    String originHost = getOriginHost();
+                    final String originHost = getOriginHost();
                     if (!TextUtils.isEmpty(originHost)) {
                         try {
                             final String optString = new JSONObject(str2).optString("url");
@@ -1358,7 +1358,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
                                 ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_requestUrlAuth, new RequestDelegate() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda5
                                     @Override // org.telegram.tgnet.RequestDelegate
                                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                        BotWebViewContainer.this.lambda$onWebEventReceived$6(tL_messages_requestUrlAuth, optString, tLObject, tL_error);
+                                        BotWebViewContainer.this.lambda$onWebEventReceived$6(tL_messages_requestUrlAuth, optString, originHost, tLObject, tL_error);
                                     }
                                 }, 2);
                                 break;
@@ -1399,22 +1399,30 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onWebEventReceived$6(final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda33
+    public /* synthetic */ void lambda$onWebEventReceived$6(final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final String str, final String str2, final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda38
             @Override // java.lang.Runnable
             public final void run() {
-                BotWebViewContainer.this.lambda$onWebEventReceived$5(tLObject, tL_messages_requestUrlAuth, str, tL_error);
+                BotWebViewContainer.this.lambda$onWebEventReceived$5(tLObject, tL_messages_requestUrlAuth, str, tL_error, str2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onWebEventReceived$5(TLObject tLObject, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$onWebEventReceived$5(TLObject tLObject, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str, TLRPC.TL_error tL_error, String str2) {
         if (tLObject == null) {
             if (tL_error != null) {
-                BulletinFactory.of(this, this.resourcesProvider).showForError(tL_error);
+                if ("URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                    BulletinFactory.of(this, this.resourcesProvider).createSimpleBulletin(R.raw.error, LocaleController.getString(R.string.BotAuthLoggedInFailTitle), AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str2), Theme.getColor(Theme.key_undo_cancelColor, this.resourcesProvider))).show();
+                    return;
+                } else {
+                    BulletinFactory.of(this, this.resourcesProvider).showForError(tL_error);
+                    return;
+                }
             }
-        } else if (tLObject instanceof TLRPC.TL_urlAuthResultRequest) {
+            return;
+        }
+        if (tLObject instanceof TLRPC.TL_urlAuthResultRequest) {
             OAuthSheet.handle(false, this.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject, null, null, false, this);
         } else if (tLObject instanceof TLRPC.TL_urlAuthResultAccepted) {
             OAuthSheet.handle(false, this.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject, null, null, false, this);
@@ -3563,7 +3571,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onEventReceived$21(final String str, final int i, final MyWebView myWebView, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda35
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
                 BotWebViewContainer.this.lambda$onEventReceived$20(str, tLObject, tL_error, i, myWebView);
@@ -3925,7 +3933,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
             if (delegate != null) {
                 delegate.onOpenBackFromTabs();
             }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda34
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda33
                 @Override // java.lang.Runnable
                 public final void run() {
                     BotWebViewContainer.lambda$onEventReceived$47(BotWebViewContainer.BotWebViewProxy.this, arrayList);
@@ -4195,7 +4203,7 @@ public abstract class BotWebViewContainer extends FrameLayout implements Notific
         if (alertDialog == null || ignoreDialog(i)) {
             return false;
         }
-        alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda38
+        alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.web.BotWebViewContainer$$ExternalSyntheticLambda37
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 BotWebViewContainer.this.lambda$showDialog$52(runnable, dialogInterface);

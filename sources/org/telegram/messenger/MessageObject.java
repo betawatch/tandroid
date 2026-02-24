@@ -5237,6 +5237,9 @@ public class MessageObject {
                     if (button.getIconRes() != 0) {
                         lineWidth += AndroidUtilities.dp(36.0f);
                     }
+                    if (button.getIconEmoji() != 0) {
+                        lineWidth += AndroidUtilities.dp(36.0f);
+                    }
                     i2 = Math.max(i2, ((int) Math.ceil(lineWidth)) + AndroidUtilities.dp(4.0f));
                 }
             }
@@ -8770,10 +8773,10 @@ public class MessageObject {
         return addEntitiesToText(charSequence, arrayList, z, z2, z3, z4, 0);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0251 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x049f  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x019b  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x024e  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0255 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x04a3  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x019f  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0252  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8858,7 +8861,7 @@ public class MessageObject {
                                         textStyleRun.flags = 64;
                                         textStyleRun.urlEntity = messageEntity;
                                     }
-                                } else if ((!z4 || (messageEntity instanceof TLRPC.TL_messageEntityTextUrl)) && (((!(messageEntity instanceof TLRPC.TL_messageEntityUrl) && !(messageEntity instanceof TLRPC.TL_messageEntityTextUrl)) || !Browser.isPassportUrl(messageEntity.url)) && (!(messageEntity instanceof TLRPC.TL_messageEntityMention) || z2))) {
+                                } else if ((!z4 || (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) || (messageEntity instanceof TLRPC.TL_messageEntityFormattedDate)) && (((!(messageEntity instanceof TLRPC.TL_messageEntityUrl) && !(messageEntity instanceof TLRPC.TL_messageEntityTextUrl)) || !Browser.isPassportUrl(messageEntity.url)) && (!(messageEntity instanceof TLRPC.TL_messageEntityMention) || z2))) {
                                     textStyleRun.flags = 128;
                                     textStyleRun.urlEntity = messageEntity;
                                     if (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) {

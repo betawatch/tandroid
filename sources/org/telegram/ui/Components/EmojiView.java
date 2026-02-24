@@ -528,13 +528,13 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-        public /* synthetic */ boolean canEditSticker() {
-            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canEditSticker(this);
+        public boolean canEditSticker() {
+            return true;
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-        public /* synthetic */ void editSticker(TLRPC.Document document) {
-            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$editSticker(this, document);
+        public /* synthetic */ boolean canSendSticker() {
+            return ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$canSendSticker(this);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -588,8 +588,8 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
-        public /* synthetic */ void sendSticker() {
-            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this);
+        public /* synthetic */ void sendSticker(String str) {
+            ContentPreviewViewer.ContentPreviewViewerDelegate.-CC.$default$sendSticker(this, str);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -731,6 +731,25 @@ public class EmojiView extends FrameLayout implements NotificationCenter.Notific
                 }
             }
             return false;
+        }
+
+        @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+        public void editSticker(TLRPC.Document document) {
+            TLRPC.InputStickerSet inputStickerSet;
+            int i = 0;
+            while (true) {
+                if (i >= document.attributes.size()) {
+                    inputStickerSet = null;
+                    break;
+                }
+                TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i);
+                if ((documentAttribute instanceof TLRPC.TL_documentAttributeSticker) && (inputStickerSet = documentAttribute.stickerset) != null) {
+                    break;
+                } else {
+                    i++;
+                }
+            }
+            StickersAlert.editSticker(EmojiView.this.fragment, MediaDataController.getInstance(EmojiView.this.currentAccount).getStickerSet(inputStickerSet, true), document);
         }
 
         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate

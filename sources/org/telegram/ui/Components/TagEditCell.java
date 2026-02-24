@@ -472,6 +472,11 @@ public class TagEditCell extends LinearLayout {
             }
 
             @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+            public /* synthetic */ void forceUpdateNoAnimation(ChatMessageCell chatMessageCell2, boolean z) {
+                ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdateNoAnimation(this, chatMessageCell2, z);
+            }
+
+            @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
             public /* synthetic */ PinchToZoomHelper getPinchToZoomHelper() {
                 return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$getPinchToZoomHelper(this);
             }
@@ -779,7 +784,7 @@ public class TagEditCell extends LinearLayout {
         if (TextUtils.isEmpty(tL_messages_editChatParticipantRank.rank) || safeLastFragment == null) {
             return;
         }
-        BulletinFactory.of(safeLastFragment).createSimpleBulletin(R.raw.contact_check, z ? "Tag added" : "Tag edited", tL_messages_editChatParticipantRank.rank).wrapContent().show();
+        BulletinFactory.of(safeLastFragment).createSimpleBulletin(R.raw.contact_check, LocaleController.getString(z ? R.string.TagAdded : R.string.TagEdited), tL_messages_editChatParticipantRank.rank).wrapContent().show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -789,13 +794,13 @@ public class TagEditCell extends LinearLayout {
         AndroidUtilities.showKeyboard(editTextBoldCursor);
     }
 
-    public static void showInfoSheet(final Context context, final int i, final long j, final TLRPC.User user, final String str, final boolean z, final boolean z2, final Theme.ResourcesProvider resourcesProvider) {
+    public static void showInfoSheet(final Context context, final int i, final long j, final TLRPC.User user, final String str, final boolean z, final boolean z2, boolean z3, final Theme.ResourcesProvider resourcesProvider) {
         int i2;
         final String str2;
         int i3;
         final boolean[] zArr;
         BottomSheet bottomSheet;
-        boolean z3;
+        boolean z4;
         int i4;
         TLRPC.Chat chat = MessagesController.getInstance(i).getChat(Long.valueOf(-j));
         if (chat == null) {
@@ -892,7 +897,7 @@ public class TagEditCell extends LinearLayout {
                     return (AndroidUtilities.displaySize.x - AndroidUtilities.dp(128.0f)) / 2;
                 }
             };
-            final boolean z4 = i8 == 1;
+            final boolean z5 = i8 == 1;
             chatMessageCell.setDelegate(new ChatMessageCell.ChatMessageCellDelegate() { // from class: org.telegram.ui.Components.TagEditCell.8
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public /* synthetic */ boolean canDrawOutboundsContent() {
@@ -972,13 +977,13 @@ public class TagEditCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell2, TLRPC.Chat chat2, int i9, float f, float f2, boolean z5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell2, chat2, i9, f, f2, z5);
+                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell2, TLRPC.Chat chat2, int i9, float f, float f2, boolean z6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell2, chat2, i9, f, f2, z6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressChannelRecommendation(ChatMessageCell chatMessageCell2, TLObject tLObject, boolean z5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelRecommendation(this, chatMessageCell2, tLObject, z5);
+                public /* synthetic */ void didPressChannelRecommendation(ChatMessageCell chatMessageCell2, TLObject tLObject, boolean z6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelRecommendation(this, chatMessageCell2, tLObject, z6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1042,8 +1047,8 @@ public class TagEditCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressImage(ChatMessageCell chatMessageCell2, float f, float f2, boolean z5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressImage(this, chatMessageCell2, f, f2, z5);
+                public /* synthetic */ void didPressImage(ChatMessageCell chatMessageCell2, float f, float f2, boolean z6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressImage(this, chatMessageCell2, f, f2, z6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1062,13 +1067,13 @@ public class TagEditCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressReaction(ChatMessageCell chatMessageCell2, TLRPC.ReactionCount reactionCount, boolean z5, float f, float f2) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReaction(this, chatMessageCell2, reactionCount, z5, f, f2);
+                public /* synthetic */ void didPressReaction(ChatMessageCell chatMessageCell2, TLRPC.ReactionCount reactionCount, boolean z6, float f, float f2) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReaction(this, chatMessageCell2, reactionCount, z6, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell2, int i9, float f, float f2, boolean z5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell2, i9, f, f2, z5);
+                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell2, int i9, float f, float f2, boolean z6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell2, i9, f, f2, z6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1092,8 +1097,8 @@ public class TagEditCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressSummarize(ChatMessageCell chatMessageCell2, boolean z5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSummarize(this, chatMessageCell2, z5);
+                public /* synthetic */ void didPressSummarize(ChatMessageCell chatMessageCell2, boolean z6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressSummarize(this, chatMessageCell2, z6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1102,18 +1107,18 @@ public class TagEditCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didPressToDoButton(ChatMessageCell chatMessageCell2, TLRPC.TodoItem todoItem, boolean z5) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressToDoButton(this, chatMessageCell2, todoItem, z5);
+                public /* synthetic */ boolean didPressToDoButton(ChatMessageCell chatMessageCell2, TLRPC.TodoItem todoItem, boolean z6) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressToDoButton(this, chatMessageCell2, todoItem, z6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressUrl(ChatMessageCell chatMessageCell2, CharacterStyle characterStyle, boolean z5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUrl(this, chatMessageCell2, characterStyle, z5);
+                public /* synthetic */ void didPressUrl(ChatMessageCell chatMessageCell2, CharacterStyle characterStyle, boolean z6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUrl(this, chatMessageCell2, characterStyle, z6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressUserAvatar(ChatMessageCell chatMessageCell2, TLRPC.User user2, float f, float f2, boolean z5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUserAvatar(this, chatMessageCell2, user2, f, f2, z5);
+                public /* synthetic */ void didPressUserAvatar(ChatMessageCell chatMessageCell2, TLRPC.User user2, float f, float f2, boolean z6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressUserAvatar(this, chatMessageCell2, user2, f, f2, z6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1137,7 +1142,7 @@ public class TagEditCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressWebPage(ChatMessageCell chatMessageCell2, TLRPC.WebPage webPage, String str4, boolean z5) {
+                public /* synthetic */ void didPressWebPage(ChatMessageCell chatMessageCell2, TLRPC.WebPage webPage, String str4, boolean z6) {
                     Browser.openUrl(chatMessageCell2.getContext(), str4);
                 }
 
@@ -1167,8 +1172,13 @@ public class TagEditCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void forceUpdate(ChatMessageCell chatMessageCell2, boolean z5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdate(this, chatMessageCell2, z5);
+                public /* synthetic */ void forceUpdate(ChatMessageCell chatMessageCell2, boolean z6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdate(this, chatMessageCell2, z6);
+                }
+
+                @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
+                public /* synthetic */ void forceUpdateNoAnimation(ChatMessageCell chatMessageCell2, boolean z6) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$forceUpdateNoAnimation(this, chatMessageCell2, z6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1227,8 +1237,8 @@ public class TagEditCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean needPlayMessage(ChatMessageCell chatMessageCell2, MessageObject messageObject, boolean z5) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needPlayMessage(this, chatMessageCell2, messageObject, z5);
+                public /* synthetic */ boolean needPlayMessage(ChatMessageCell chatMessageCell2, MessageObject messageObject, boolean z6) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needPlayMessage(this, chatMessageCell2, messageObject, z6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1257,8 +1267,8 @@ public class TagEditCell extends LinearLayout {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean shouldDrawThreadProgress(ChatMessageCell chatMessageCell2, boolean z5) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldDrawThreadProgress(this, chatMessageCell2, z5);
+                public /* synthetic */ boolean shouldDrawThreadProgress(ChatMessageCell chatMessageCell2, boolean z6) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$shouldDrawThreadProgress(this, chatMessageCell2, z6);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1273,17 +1283,17 @@ public class TagEditCell extends LinearLayout {
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public boolean isAdmin(long j2) {
-                    return z4;
+                    return z5;
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public boolean isOwner(long j2) {
-                    return z4 && z2;
+                    return z5 && z2;
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
                 public String getAdminRank(long j2) {
-                    return z4 ? z2 ? "Owner Tag" : "Admin Tag" : "Member Tag";
+                    return LocaleController.getString(z5 ? z2 ? R.string.TagInfoOwnerTitle : R.string.TagInfoAdminTitle : R.string.TagInfoMemberTitle);
                 }
             });
             SizeNotifierFrameLayout sizeNotifierFrameLayout = new SizeNotifierFrameLayout(context) { // from class: org.telegram.ui.Components.TagEditCell.9
@@ -1363,8 +1373,8 @@ public class TagEditCell extends LinearLayout {
             linearLayout2 = linearLayout3;
         }
         ButtonWithCounterView round = new ButtonWithCounterView(context, resourcesProvider).setRound();
-        boolean z5 = (ChatObject.canManageTags(chat) && (!z2 || UserObject.isUserSelf(user))) || (ChatObject.canManageMyTag(chat) && UserObject.isUserSelf(user));
-        if (!z5 && !ChatObject.canManageTags(chat) && !chat.creator) {
+        boolean z6 = (ChatObject.canManageTags(chat) && (!z || ((!z2 && z3) || UserObject.isUserSelf(user)))) || (ChatObject.canManageMyTag(chat) && UserObject.isUserSelf(user));
+        if (!z6 && !ChatObject.canManageTags(chat) && !chat.creator) {
             TextView makeTextView3 = TextHelper.makeTextView(context, 12.0f, Theme.key_windowBackgroundWhiteGrayText, false);
             makeTextView3.setGravity(1);
             makeTextView3.setText(LocaleController.getString(R.string.CantEditTagAdmins));
@@ -1373,7 +1383,7 @@ public class TagEditCell extends LinearLayout {
         linearLayout.addView(round, LayoutHelper.createLinear(-1, 48, 7, 16, 16, 16, 16));
         final boolean[] zArr2 = new boolean[1];
         final BottomSheet create = builder.create();
-        if (!z5) {
+        if (!z6) {
             round.setText(StarGiftSheet.replaceUnderstood(LocaleController.getString(R.string.Understood)));
             round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TagEditCell$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
@@ -1383,12 +1393,12 @@ public class TagEditCell extends LinearLayout {
             });
             zArr = zArr2;
             bottomSheet = create;
-            z3 = true;
+            z4 = true;
         } else {
             round.setText(LocaleController.getString(UserObject.isUserSelf(user) ? TextUtils.isEmpty(str) ? R.string.TagInfoButtonAddMyTag : R.string.TagInfoButtonEditMyTag : TextUtils.isEmpty(str) ? R.string.TagInfoButtonAddTag : R.string.TagInfoButtonEditTag));
             zArr = zArr2;
             bottomSheet = create;
-            z3 = true;
+            z4 = true;
             round.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.TagEditCell$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -1396,7 +1406,7 @@ public class TagEditCell extends LinearLayout {
                 }
             });
         }
-        bottomSheet.smoothKeyboardAnimationEnabled = z3;
+        bottomSheet.smoothKeyboardAnimationEnabled = z4;
         bottomSheet.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite, resourcesProvider));
         final boolean[] zArr3 = zArr;
         bottomSheet.setOnDismissListener(new Runnable() { // from class: org.telegram.ui.Components.TagEditCell$$ExternalSyntheticLambda7
@@ -1405,7 +1415,7 @@ public class TagEditCell extends LinearLayout {
                 TagEditCell.lambda$showInfoSheet$8(zArr3);
             }
         });
-        if (MessagesController.getGlobalMainSettings().getInt("showchattagsinfo", 3) <= 0 && z5) {
+        if (MessagesController.getGlobalMainSettings().getInt("showchattagsinfo", 3) <= 0 && z6) {
             showSheet(context, i, j, user, str, z, z2, resourcesProvider);
         } else {
             bottomSheet.show();
