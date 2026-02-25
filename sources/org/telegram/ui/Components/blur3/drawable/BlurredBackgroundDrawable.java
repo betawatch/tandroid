@@ -532,7 +532,7 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
             drawSourceRenderNode(canvas, (BlurredBackgroundSourceRenderNode) blurredBackgroundSource);
         } else if (blurredBackgroundSource instanceof BlurredBackgroundSourceWrapped) {
             drawSource(canvas, ((BlurredBackgroundSourceWrapped) blurredBackgroundSource).getSource());
-        } else {
+        } else if (blurredBackgroundSource != null) {
             drawSourceAny(canvas, blurredBackgroundSource);
         }
     }

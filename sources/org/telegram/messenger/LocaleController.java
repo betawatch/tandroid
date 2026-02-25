@@ -4642,16 +4642,18 @@ public class LocaleController {
         } else if (tL_messageEntityFormattedDate.short_time) {
             str = getInstance().getFormatterDay().format(j2);
         }
-        if (!TextUtils.isEmpty(format2)) {
-            format2 = formatString(R.string.RelativeDateFormatterWeek, format2);
+        boolean isEmpty = TextUtils.isEmpty(format2);
+        boolean isEmpty2 = TextUtils.isEmpty(format);
+        boolean isEmpty3 = TextUtils.isEmpty(str);
+        if (isEmpty2 && isEmpty3) {
+            return format2;
         }
-        if (!TextUtils.isEmpty(format)) {
-            format = formatString(R.string.RelativeDateFormatterDate, format);
+        if (!isEmpty2 && !isEmpty3) {
+            format = formatString(R.string.formatDateAtTime, format, str);
+        } else if (isEmpty2) {
+            format = str;
         }
-        if (!TextUtils.isEmpty(str)) {
-            str = formatString(R.string.RelativeDateFormatterTime, str);
-        }
-        return formatString(R.string.RelativeDateFormatter, format2, format, str).trim();
+        return !isEmpty ? formatString(R.string.RelativeDateFormatterWeek2, format2, format) : format;
     }
 
     private static String formatEntityFormattedDateRelative(long j, long j2, Locale locale) {
