@@ -95,6 +95,7 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         int height;
+        int i;
         boolean z;
         Rect bounds = getBounds();
         if (bounds.isEmpty()) {
@@ -116,7 +117,7 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
             canvas.drawRect(bounds, this.colorStaticPaint);
             return;
         }
-        if (unwrappedSource instanceof BlurredBackgroundSourceBitmap) {
+        if ((unwrappedSource instanceof BlurredBackgroundSourceBitmap) && (i = Build.VERSION.SDK_INT) >= 28) {
             BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap = (BlurredBackgroundSourceBitmap) unwrappedSource;
             Bitmap bitmap = blurredBackgroundSourceBitmap.getBitmap();
             if (bitmap == null) {
@@ -135,7 +136,7 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
                 this.bitmapShader = bitmapShader;
-                if (Build.VERSION.SDK_INT >= 33) {
+                if (i >= 33) {
                     bitmapShader.setFilterMode(2);
                 }
             } else {

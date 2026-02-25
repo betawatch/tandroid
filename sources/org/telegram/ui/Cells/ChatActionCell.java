@@ -2776,7 +2776,12 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             } else if (i3 == 35) {
                 TLRPC.TL_messageActionNoForwardsRequest tL_messageActionNoForwardsRequest = (TLRPC.TL_messageActionNoForwardsRequest) message3.action;
                 SpannableStringBuilder spannableStringBuilder7 = new SpannableStringBuilder();
-                spannableStringBuilder7.append(charSequence);
+                String shortName = DialogObject.getShortName(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId())));
+                if (tL_messageActionNoForwardsRequest.new_value) {
+                    spannableStringBuilder7.append(messageObject.isOut() ? LocaleController.getString(org.telegram.messenger.R.string.SharingOfferDisableHeaderYou) : AndroidUtilities.replaceTags(LocaleController.formatString(org.telegram.messenger.R.string.SharingOfferDisableHeaderOther, shortName)));
+                } else {
+                    spannableStringBuilder7.append(messageObject.isOut() ? LocaleController.getString(org.telegram.messenger.R.string.SharingOfferEnableHeaderYou) : AndroidUtilities.replaceTags(LocaleController.formatString(org.telegram.messenger.R.string.SharingOfferEnableHeaderOther, shortName)));
+                }
                 if (tL_messageActionNoForwardsRequest.new_value) {
                     spannableStringBuilder7.append((CharSequence) "\n\n");
                     String string4 = LocaleController.getString(org.telegram.messenger.R.string.SharingOfferDisable1);

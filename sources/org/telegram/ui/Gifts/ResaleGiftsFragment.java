@@ -1817,6 +1817,7 @@ public class ResaleGiftsFragment extends BaseFragment {
         private Filter patternButton;
         private Filter sortButton;
         private final State state;
+        private boolean willBeFirst;
         private HashSet without;
 
         public static class State implements NotificationCenter.NotificationCenterDelegate {
@@ -2557,7 +2558,7 @@ public class ResaleGiftsFragment extends BaseFragment {
             if (obj instanceof TL_stars.StarGift) {
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
                 boolean z = item.red;
-                if (!TextUtils.isEmpty(starGift.gift_address) && this.without.isEmpty()) {
+                if (!TextUtils.isEmpty(starGift.gift_address) && this.willBeFirst) {
                     new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString(R.string.GiftCraftCantChooseFirstTitle)).setMessage(LocaleController.getString(R.string.GiftCraftCantChooseFirst)).setPositiveButton(LocaleController.getString(R.string.OK), null).show();
                     return;
                 }
@@ -2701,6 +2702,11 @@ public class ResaleGiftsFragment extends BaseFragment {
         public SelectGiftSheet without(HashSet hashSet) {
             this.without.addAll(hashSet);
             updateList(false);
+            return this;
+        }
+
+        public SelectGiftSheet setWillBeFirst(boolean z) {
+            this.willBeFirst = z;
             return this;
         }
 

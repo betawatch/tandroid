@@ -6735,9 +6735,9 @@ public class MessageObject {
                                                         } else if (messageAction6 instanceof TLRPC.TL_messageActionNoForwardsRequest) {
                                                             String shortName3 = DialogObject.getShortName(getUser(abstractMap, longSparseArray, DialogObject.getPeerDialogId(message4.peer_id)));
                                                             if (((TLRPC.TL_messageActionNoForwardsRequest) messageAction6).new_value) {
-                                                                this.messageText = isOut() ? LocaleController.getString(R.string.SharingOfferDisableHeaderYou) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SharingOfferDisableHeaderOther, shortName3));
+                                                                this.messageText = isOut() ? LocaleController.getString(R.string.SharingOfferDisableHeaderShortYou) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SharingOfferDisableHeaderShortOther, shortName3));
                                                             } else {
-                                                                this.messageText = isOut() ? LocaleController.getString(R.string.SharingOfferEnableHeaderYou) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SharingOfferEnableHeaderOther, shortName3));
+                                                                this.messageText = isOut() ? LocaleController.getString(R.string.SharingOfferEnableHeaderShortYou) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SharingOfferEnableHeaderShortOther, shortName3));
                                                             }
                                                         }
                                                     }

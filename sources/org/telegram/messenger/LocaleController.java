@@ -22,7 +22,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Currency;
@@ -70,6 +69,7 @@ public class LocaleController {
     private volatile FastDateFormat formatterConstDay;
     private volatile FastDateFormat formatterDay;
     private volatile FastDateFormat formatterDayMonth;
+    private volatile FastDateFormat formatterDayWithSeconds;
     private volatile FastDateFormat formatterGiveawayCard;
     private volatile FastDateFormat formatterGiveawayMonthDay;
     private volatile FastDateFormat formatterGiveawayMonthDayYear;
@@ -246,6 +246,41 @@ public class LocaleController {
             }
         }
         return this.formatterDay;
+    }
+
+    public FastDateFormat getFormatterDayWithSeconds() {
+        String str;
+        int i;
+        if (this.formatterDayWithSeconds == null) {
+            synchronized (this) {
+                try {
+                    if (this.formatterDayWithSeconds == null) {
+                        Locale locale = this.currentLocale;
+                        if (locale == null) {
+                            locale = Locale.getDefault();
+                        }
+                        String language = locale.getLanguage();
+                        if (language == null) {
+                            language = "en";
+                        }
+                        String lowerCase = language.toLowerCase();
+                        if (!lowerCase.toLowerCase().equals("ar") && !lowerCase.toLowerCase().equals("ko")) {
+                            locale = Locale.US;
+                        }
+                        if (is24HourFormat) {
+                            str = "formatterDayWithSeconds24H";
+                            i = R.string.formatterDayWithSeconds24H;
+                        } else {
+                            str = "formatterDayWithSeconds12H";
+                            i = R.string.formatterDayWithSeconds12H;
+                        }
+                        this.formatterDayWithSeconds = createFormatter(locale, getStringInternal(str, i), is24HourFormat ? "HH:mm:ss" : "h:mm:ss a");
+                    }
+                } finally {
+                }
+            }
+        }
+        return this.formatterDayWithSeconds;
     }
 
     public FastDateFormat getFormatterConstDay() {
@@ -3028,6 +3063,7 @@ public class LocaleController {
         this.formatterScheduleDay = null;
         this.formatterScheduleYear = null;
         this.formatterDay = null;
+        this.formatterDayWithSeconds = null;
         this.formatterConstDay = null;
         this.formatterStats = null;
         this.formatterBannedUntil = null;
@@ -4570,59 +4606,56 @@ public class LocaleController {
     }
 
     public static String formatEntityFormattedDate(TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate) {
-        return formatEntityFormattedDate(tL_messageEntityFormattedDate, false);
+        return formatEntityFormattedDate(tL_messageEntityFormattedDate, System.currentTimeMillis(), Locale.getDefault(), false);
     }
 
     public static String formatEntityFormattedDate(TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate, boolean z) {
-        return formatEntityFormattedDate(tL_messageEntityFormattedDate, System.currentTimeMillis(), Locale.getDefault(), TimeZone.getDefault(), z);
+        return formatEntityFormattedDate(tL_messageEntityFormattedDate, System.currentTimeMillis(), Locale.getDefault(), z);
     }
 
-    public static String formatEntityFormattedDate(TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate, long j, Locale locale, TimeZone timeZone, boolean z) {
-        int i;
-        int i2;
+    private static String formatEntityFormattedDate(TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate, long j, Locale locale, boolean z) {
+        String format;
         long j2 = tL_messageEntityFormattedDate.date * 1000;
         if (tL_messageEntityFormattedDate.relative && !z) {
-            return formatRelative(j2, j, locale);
+            return formatEntityFormattedDateRelative(j2, j, locale);
         }
-        if (tL_messageEntityFormattedDate.short_date) {
-            i = 3;
+        boolean z2 = (tL_messageEntityFormattedDate.flags == 0) | z;
+        String str = "";
+        String format2 = tL_messageEntityFormattedDate.day_of_week ? getInstance().getFormatterWeekLong().format(j2) : "";
+        if (z2) {
+            format = getInstance().getFormatterGiveawayCard().format(j2);
+        } else if (tL_messageEntityFormattedDate.long_date) {
+            format = getInstance().getChatFullDate().format(j2);
         } else {
-            i = tL_messageEntityFormattedDate.long_date ? !tL_messageEntityFormattedDate.day_of_week ? 1 : 0 : -1;
+            format = tL_messageEntityFormattedDate.short_date ? getInstance().getFormatterYear().format(j2) : "";
         }
-        if (tL_messageEntityFormattedDate.short_time) {
-            i2 = 3;
-        } else {
-            i2 = tL_messageEntityFormattedDate.long_time ? 2 : -1;
-        }
-        if (i == -1 && i2 == -1) {
-            i = !tL_messageEntityFormattedDate.day_of_week ? 1 : 0;
-        }
-        Date date = new Date(j2);
-        if (i != -1 && i2 != -1) {
-            java.text.DateFormat dateTimeInstance = java.text.DateFormat.getDateTimeInstance(i, i2, locale);
-            dateTimeInstance.setTimeZone(timeZone);
-            return dateTimeInstance.format(date);
-        }
-        if (i != -1) {
-            if (tL_messageEntityFormattedDate.day_of_week && tL_messageEntityFormattedDate.short_date) {
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, ", locale);
-                simpleDateFormat.setTimeZone(timeZone);
-                java.text.DateFormat dateInstance = java.text.DateFormat.getDateInstance(3, locale);
-                dateInstance.setTimeZone(timeZone);
-                return simpleDateFormat.format(date) + dateInstance.format(date);
+        if (z2) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(j2);
+            if (calendar.get(13) != 0) {
+                str = getInstance().getFormatterDayWithSeconds().format(j2);
+            } else {
+                str = getInstance().getFormatterDay().format(j2);
             }
-            java.text.DateFormat dateInstance2 = java.text.DateFormat.getDateInstance(i, locale);
-            dateInstance2.setTimeZone(timeZone);
-            return dateInstance2.format(date);
+        } else if (tL_messageEntityFormattedDate.long_time) {
+            str = getInstance().getFormatterDayWithSeconds().format(j2);
+        } else if (tL_messageEntityFormattedDate.short_time) {
+            str = getInstance().getFormatterDay().format(j2);
         }
-        java.text.DateFormat timeInstance = java.text.DateFormat.getTimeInstance(i2, locale);
-        timeInstance.setTimeZone(timeZone);
-        return timeInstance.format(date);
+        if (!TextUtils.isEmpty(format2)) {
+            format2 = formatString(R.string.RelativeDateFormatterWeek, format2);
+        }
+        if (!TextUtils.isEmpty(format)) {
+            format = formatString(R.string.RelativeDateFormatterDate, format);
+        }
+        if (!TextUtils.isEmpty(str)) {
+            str = formatString(R.string.RelativeDateFormatterTime, str);
+        }
+        return formatString(R.string.RelativeDateFormatter, format2, format, str).trim();
     }
 
-    private static String formatRelative(long j, long j2, Locale locale) {
+    private static String formatEntityFormattedDateRelative(long j, long j2, Locale locale) {
         long j3 = j - j2;
-        Math.abs(j3);
         if (Build.VERSION.SDK_INT >= 24) {
             return RelativeIcu.format(j3, locale);
         }

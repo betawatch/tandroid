@@ -1683,34 +1683,37 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleIntent$14(final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final String str, final TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$handleIntent$14(final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, final String str, final TLObject tLObject, final TLRPC.TL_error tL_error) {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.LaunchActivity$$ExternalSyntheticLambda95
             @Override // java.lang.Runnable
             public final void run() {
-                LaunchActivity.this.lambda$handleIntent$13(tLObject, tL_messages_requestUrlAuth, str);
+                LaunchActivity.this.lambda$handleIntent$13(tLObject, tL_messages_requestUrlAuth, str, tL_error);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$handleIntent$13(TLObject tLObject, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str) {
+    public /* synthetic */ void lambda$handleIntent$13(TLObject tLObject, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String str, TLRPC.TL_error tL_error) {
         BaseFragment safeLastFragment = getSafeLastFragment();
-        if (tLObject != null) {
-            if (tLObject instanceof TLRPC.TL_urlAuthResultRequest) {
-                OAuthSheet.handle(false, this.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject);
-                return;
-            } else if (tLObject instanceof TLRPC.TL_urlAuthResultAccepted) {
-                OAuthSheet.handle(false, this.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject);
-                return;
-            } else {
-                if (tLObject instanceof TLRPC.TL_urlAuthResultDefault) {
-                    AlertsCreator.showOpenUrlAlert(safeLastFragment, str, false, true);
+        if (tLObject == null) {
+            if (tL_error != null) {
+                if ("URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                    OAuthSheet.getBulletinFactory().createSimpleBulletin(R.raw.error, getString(R.string.BotAuthLoggedInFailTitle), getString(R.string.BotAuthLoggedInFailNoDomain)).show();
+                    return;
+                } else {
+                    OAuthSheet.getBulletinFactory().showForError(tL_error);
                     return;
                 }
-                return;
             }
+            return;
         }
-        AlertsCreator.showOpenUrlAlert(safeLastFragment, str, false, true);
+        if (tLObject instanceof TLRPC.TL_urlAuthResultRequest) {
+            OAuthSheet.handle(false, this.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject);
+        } else if (tLObject instanceof TLRPC.TL_urlAuthResultAccepted) {
+            OAuthSheet.handle(false, this.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject);
+        } else if (tLObject instanceof TLRPC.TL_urlAuthResultDefault) {
+            AlertsCreator.showOpenUrlAlert(safeLastFragment, str, false, true);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */

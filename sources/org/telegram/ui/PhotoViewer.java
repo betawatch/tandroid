@@ -7272,16 +7272,16 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         
             if (new java.io.File(r0).exists() != false) goto L148;
          */
-        /* JADX WARN: Removed duplicated region for block: B:183:0x04c8  */
-        /* JADX WARN: Removed duplicated region for block: B:185:0x04de  */
-        /* JADX WARN: Removed duplicated region for block: B:193:0x0502  */
-        /* JADX WARN: Removed duplicated region for block: B:223:0x05f3  */
-        /* JADX WARN: Removed duplicated region for block: B:225:0x04e4  */
-        /* JADX WARN: Removed duplicated region for block: B:248:0x06b1  */
-        /* JADX WARN: Removed duplicated region for block: B:255:0x07a2  */
-        /* JADX WARN: Removed duplicated region for block: B:301:0x0917  */
+        /* JADX WARN: Removed duplicated region for block: B:183:0x04cd  */
+        /* JADX WARN: Removed duplicated region for block: B:185:0x04e3  */
+        /* JADX WARN: Removed duplicated region for block: B:193:0x0507  */
+        /* JADX WARN: Removed duplicated region for block: B:223:0x05f8  */
+        /* JADX WARN: Removed duplicated region for block: B:225:0x04e9  */
+        /* JADX WARN: Removed duplicated region for block: B:248:0x06b6  */
+        /* JADX WARN: Removed duplicated region for block: B:255:0x07a7  */
+        /* JADX WARN: Removed duplicated region for block: B:301:0x091c  */
         /* JADX WARN: Removed duplicated region for block: B:303:? A[RETURN, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:304:0x06bf  */
+        /* JADX WARN: Removed duplicated region for block: B:304:0x06c4  */
         /* JADX WARN: Type inference failed for: r10v4 */
         /* JADX WARN: Type inference failed for: r10v5, types: [boolean, int] */
         /* JADX WARN: Type inference failed for: r10v7 */
@@ -7529,6 +7529,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     }
                 }, chatActivity);
                 PhotoViewer.this.enableStickerMode(null, false, null);
+                PhotoViewer.this.prepareSegmentImage();
                 ContentPreviewViewer.getInstance().setStickerSetForCustomSticker(null);
                 return;
             }
