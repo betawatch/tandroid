@@ -12,7 +12,7 @@ public class Blur3HashImpl implements IBlur3Hash {
 
     @Override // org.telegram.ui.Components.blur3.capture.IBlur3Hash
     public /* synthetic */ void add(ColorMatrix colorMatrix) {
-        IBlur3Hash.-CC.$default$add(this, colorMatrix);
+        add(colorMatrix.getArray());
     }
 
     @Override // org.telegram.ui.Components.blur3.capture.IBlur3Hash
@@ -23,6 +23,11 @@ public class Blur3HashImpl implements IBlur3Hash {
     @Override // org.telegram.ui.Components.blur3.capture.IBlur3Hash
     public /* synthetic */ void add(boolean z) {
         add(r3 ? 1L : 0L);
+    }
+
+    @Override // org.telegram.ui.Components.blur3.capture.IBlur3Hash
+    public /* synthetic */ void add(float[] fArr) {
+        IBlur3Hash.-CC.$default$add(this, fArr);
     }
 
     @Override // org.telegram.ui.Components.blur3.capture.IBlur3Hash

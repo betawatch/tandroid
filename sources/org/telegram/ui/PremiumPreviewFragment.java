@@ -205,6 +205,11 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return true;
     }
@@ -686,6 +691,8 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 return "todo";
             case 40:
                 return "gifts";
+            case 41:
+                return "pm_noforwards";
             default:
                 return null;
         }
@@ -778,7 +785,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i2), PorterDuff.Mode.MULTIPLY));
         this.shadowDrawable.getPadding(rect);
         this.statusBarHeight = AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight;
-        FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.PremiumPreviewFragment.1
+        this.contentView = new FrameLayout(context) { // from class: org.telegram.ui.PremiumPreviewFragment.1
             private final Paint backgroundPaint = new Paint(1);
             boolean iconInterceptedTouch;
             int lastSize;
@@ -959,13 +966,11 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 return super.drawChild(canvas, view, j);
             }
         };
-        this.contentView = frameLayout;
-        frameLayout.setFitsSystemWindows(true);
         RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
         recyclerListView.setSections(true);
         this.listView.setClipToPadding(false);
-        this.listView.setPadding(0, AndroidUtilities.statusBarHeight + ActionBar.getCurrentActionBarHeight(), 0, 0);
+        this.listView.setPadding(0, AndroidUtilities.statusBarHeight + ActionBar.getCurrentActionBarHeight(), 0, AndroidUtilities.navigationBarHeight);
         RecyclerListView recyclerListView2 = this.listView;
         FillLastLinearLayoutManager fillLastLinearLayoutManager = new FillLastLinearLayoutManager(context, (AndroidUtilities.dp(68.0f) + this.statusBarHeight) - AndroidUtilities.dp(16.0f), this.listView);
         this.layoutManager = fillLastLinearLayoutManager;
@@ -998,12 +1003,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 PremiumPreviewFragment.this.checkButtonDivider();
             }
         });
-        this.backgroundView = new BackgroundView(context) { // from class: org.telegram.ui.PremiumPreviewFragment.3
-            @Override // android.view.ViewGroup
-            public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-                return true;
-            }
-        };
+        this.backgroundView = new BackgroundView(context);
         StarParticlesView starParticlesView = new StarParticlesView(context);
         this.particlesView = starParticlesView;
         starParticlesView.setClipWithGradient();
@@ -1062,7 +1062,8 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         this.actionBar.setBackground(null);
         this.actionBar.setCastShadows(false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PremiumPreviewFragment.4
+        this.actionBar.setAddToContainer(false);
+        this.actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PremiumPreviewFragment.3
             @Override // org.telegram.ui.ActionBar.ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
@@ -1071,6 +1072,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             }
         });
         this.actionBar.setForceSkipTouches(true);
+        this.contentView.addView(this.actionBar, LayoutHelper.createFrame(-1, -2, 48));
         updateColors();
         updateRows();
         this.backgroundView.imageView.startEnterAnimation(-180, 200L);
@@ -2110,6 +2112,11 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         private boolean tierListViewVisible;
         TextView titleView;
 
+        @Override // android.view.ViewGroup
+        public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+            return true;
+        }
+
         public BackgroundView(final Context context) {
             super(context);
             setOrientation(1);
@@ -2706,7 +2713,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     }
 
     private void closeSetting() {
-        this.settingsView.animate().translationY(AndroidUtilities.dp(1000.0f)).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.PremiumPreviewFragment.5
+        this.settingsView.animate().translationY(AndroidUtilities.dp(1000.0f)).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.PremiumPreviewFragment.4
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 PremiumPreviewFragment.this.contentView.removeView(PremiumPreviewFragment.this.settingsView);
@@ -3011,7 +3018,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 swapAnimatedEmojiDrawable = swapAnimatedEmojiDrawable3;
                 i2 = dp;
                 premiumFeatureCell2 = premiumFeatureCell;
-                SelectAnimatedEmojiDialog selectAnimatedEmojiDialog = new SelectAnimatedEmojiDialog(this, getContext(), true, Integer.valueOf(i), !z ? 12 : 0, true, getResourceProvider(), !z ? 24 : 16) { // from class: org.telegram.ui.PremiumPreviewFragment.6
+                SelectAnimatedEmojiDialog selectAnimatedEmojiDialog = new SelectAnimatedEmojiDialog(this, getContext(), true, Integer.valueOf(i), !z ? 12 : 0, true, getResourceProvider(), !z ? 24 : 16) { // from class: org.telegram.ui.PremiumPreviewFragment.5
                     @Override // org.telegram.ui.SelectAnimatedEmojiDialog
                     protected float getScrimDrawableTranslationY() {
                         return 0.0f;
@@ -3034,7 +3041,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                 selectAnimatedEmojiDialog.setSaveState(3);
                 selectAnimatedEmojiDialog.setScrimDrawable(swapAnimatedEmojiDrawable, premiumFeatureCell2);
                 int i3 = -2;
-                SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialogWindow = new SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow(selectAnimatedEmojiDialog, i3, i3) { // from class: org.telegram.ui.PremiumPreviewFragment.7
+                SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialogWindow = new SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow(selectAnimatedEmojiDialog, i3, i3) { // from class: org.telegram.ui.PremiumPreviewFragment.6
                     @Override // org.telegram.ui.SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow, android.widget.PopupWindow
                     public void dismiss() {
                         super.dismiss();
@@ -3056,7 +3063,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         i2 = 0;
         if (!z) {
         }
-        View selectAnimatedEmojiDialog2 = new SelectAnimatedEmojiDialog(this, getContext(), true, Integer.valueOf(i), !z ? 12 : 0, true, getResourceProvider(), !z ? 24 : 16) { // from class: org.telegram.ui.PremiumPreviewFragment.6
+        View selectAnimatedEmojiDialog2 = new SelectAnimatedEmojiDialog(this, getContext(), true, Integer.valueOf(i), !z ? 12 : 0, true, getResourceProvider(), !z ? 24 : 16) { // from class: org.telegram.ui.PremiumPreviewFragment.5
             @Override // org.telegram.ui.SelectAnimatedEmojiDialog
             protected float getScrimDrawableTranslationY() {
                 return 0.0f;
@@ -3079,7 +3086,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         selectAnimatedEmojiDialog2.setSaveState(3);
         selectAnimatedEmojiDialog2.setScrimDrawable(swapAnimatedEmojiDrawable, premiumFeatureCell2);
         int i32 = -2;
-        SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialogWindow2 = new SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow(selectAnimatedEmojiDialog2, i32, i32) { // from class: org.telegram.ui.PremiumPreviewFragment.7
+        SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow selectAnimatedEmojiDialogWindow2 = new SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow(selectAnimatedEmojiDialog2, i32, i32) { // from class: org.telegram.ui.PremiumPreviewFragment.6
             @Override // org.telegram.ui.SelectAnimatedEmojiDialog.SelectAnimatedEmojiDialogWindow, android.widget.PopupWindow
             public void dismiss() {
                 super.dismiss();
