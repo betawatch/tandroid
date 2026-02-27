@@ -2364,29 +2364,29 @@ public class MessageObject {
     
         if ((r3.new_participant instanceof org.telegram.tgnet.TLRPC.TL_channelParticipant) != false) goto L66;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:697:0x0c4a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:721:0x0c74, code lost:
     
-        if (r10.id == r12.id) goto L490;
+        if (r10.id == r12.id) goto L500;
      */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x1d43  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x1d95  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x1d9a  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x1e30 A[ADDED_TO_REGION, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x1e31  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x1e46  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x1e58  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x1e66  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x1e71  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x1ea8  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x1e69  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x1e4b  */
-    /* JADX WARN: Removed duplicated region for block: B:671:0x0c70  */
-    /* JADX WARN: Removed duplicated region for block: B:674:0x0cb1  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x1e27  */
-    /* JADX WARN: Removed duplicated region for block: B:680:0x0d4d  */
-    /* JADX WARN: Removed duplicated region for block: B:682:0x0d58  */
-    /* JADX WARN: Removed duplicated region for block: B:684:0x0c7d  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x1d97  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x1db7  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x1e09  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x1e0e  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x1ea4 A[ADDED_TO_REGION, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x1ea5  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x1eba  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x1ecc  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x1eda  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x1ee5  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x1f1c  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x1edd  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x1ebf  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x1e9b  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x1e0b  */
+    /* JADX WARN: Removed duplicated region for block: B:695:0x0c9a  */
+    /* JADX WARN: Removed duplicated region for block: B:698:0x0cdb  */
+    /* JADX WARN: Removed duplicated region for block: B:704:0x0d77  */
+    /* JADX WARN: Removed duplicated region for block: B:706:0x0d82  */
+    /* JADX WARN: Removed duplicated region for block: B:708:0x0ca7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2834,6 +2834,15 @@ public class MessageObject {
                                     sb4.append(LocaleController.getString(R.string.EventLogRestrictedInviteUsers));
                                 }
                                 if (tL_chatBannedRights3.pin_messages != tL_chatBannedRights4.pin_messages) {
+                                    if (!z6) {
+                                        sb4.append('\n');
+                                    }
+                                    sb4.append('\n');
+                                    sb4.append(!tL_chatBannedRights4.pin_messages ? '+' : '-');
+                                    sb4.append(' ');
+                                    sb4.append(LocaleController.getString(R.string.EventLogRestrictedPinMessages));
+                                }
+                                if (tL_chatBannedRights3.edit_rank != tL_chatBannedRights4.edit_rank) {
                                     if (z6) {
                                         c3 = '\n';
                                     } else {
@@ -2841,9 +2850,9 @@ public class MessageObject {
                                         sb4.append('\n');
                                     }
                                     sb4.append(c3);
-                                    sb4.append(!tL_chatBannedRights4.pin_messages ? '+' : '-');
+                                    sb4.append(!tL_chatBannedRights4.edit_rank ? '+' : '-');
                                     sb4.append(' ');
-                                    sb4.append(LocaleController.getString(R.string.EventLogRestrictedPinMessages));
+                                    sb4.append(LocaleController.getString(R.string.EventLogRestrictedEditRank));
                                 }
                                 this.messageText = sb4.toString();
                             } else {
@@ -4120,11 +4129,25 @@ public class MessageObject {
                         sb6.append(' ');
                         sb6.append(LocaleController.getString(R.string.EventLogPromotedAddUsers));
                     }
-                    if (chat2.megagroup && tL_chatAdminRights.pin_messages != tL_chatAdminRights2.pin_messages) {
-                        sb6.append('\n');
-                        sb6.append(tL_chatAdminRights2.pin_messages ? '+' : '-');
-                        sb6.append(' ');
-                        sb6.append(LocaleController.getString(R.string.EventLogPromotedPinMessages));
+                    if (chat2.megagroup) {
+                        if (tL_chatAdminRights.pin_messages != tL_chatAdminRights2.pin_messages) {
+                            sb6.append('\n');
+                            sb6.append(tL_chatAdminRights2.pin_messages ? '+' : '-');
+                            sb6.append(' ');
+                            sb6.append(LocaleController.getString(R.string.EventLogPromotedPinMessages));
+                        }
+                        if (tL_chatAdminRights.manage_ranks != tL_chatAdminRights2.manage_ranks) {
+                            sb6.append('\n');
+                            sb6.append(tL_chatAdminRights2.manage_ranks ? '+' : '-');
+                            sb6.append(' ');
+                            sb6.append(LocaleController.getString(R.string.EventLogPromotedEditRanks));
+                        }
+                        if (tL_chatAdminRights.manage_topics != tL_chatAdminRights2.manage_topics) {
+                            sb6.append('\n');
+                            sb6.append(tL_chatAdminRights2.manage_topics ? '+' : '-');
+                            sb6.append(' ');
+                            sb6.append(LocaleController.getString(R.string.EventLogPromotedManageTopics));
+                        }
                     }
                     if (tL_chatAdminRights.manage_direct_messages != tL_chatAdminRights2.manage_direct_messages) {
                         sb6.append('\n');

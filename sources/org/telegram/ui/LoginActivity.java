@@ -2277,7 +2277,6 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.wasCountryHintIndex = -1;
             this.requestedPasskey = false;
             this.requestingPasskey = false;
-            final boolean z = true;
             setOrientation(1);
             setGravity(17);
             TextView textView = new TextView(context);
@@ -2332,8 +2331,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             this.countryOutlineView.setContentDescription(LocaleController.getString(i4));
             this.countryOutlineView.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnFocusChangeListener
-                public final void onFocusChange(View view, boolean z2) {
-                    LoginActivity.PhoneView.this.lambda$new$3(view, z2);
+                public final void onFocusChange(View view, boolean z) {
+                    LoginActivity.PhoneView.this.lambda$new$3(view, z);
                 }
             });
             addView(this.countryOutlineView, LayoutHelper.createLinear(-1, 58, 16.0f, 24.0f, 16.0f, 14.0f));
@@ -2360,10 +2359,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             linearLayout2.addView(this.plusTextView, LayoutHelper.createLinear(-2, -2));
             AnimatedPhoneNumberEditText animatedPhoneNumberEditText = new AnimatedPhoneNumberEditText(context) { // from class: org.telegram.ui.LoginActivity.PhoneView.1
                 @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-                protected void onFocusChanged(boolean z2, int i6, Rect rect) {
-                    super.onFocusChanged(z2, i6, rect);
-                    PhoneView.this.phoneOutlineView.animateSelection((z2 || PhoneView.this.phoneField.isFocused()) ? 1.0f : 0.0f);
-                    if (z2) {
+                protected void onFocusChanged(boolean z, int i6, Rect rect) {
+                    super.onFocusChanged(z, i6, rect);
+                    PhoneView.this.phoneOutlineView.animateSelection((z || PhoneView.this.phoneField.isFocused()) ? 1.0f : 0.0f);
+                    if (z) {
                         LoginActivity.this.keyboardView.setEditText(this);
                     }
                 }
@@ -2393,7 +2392,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 @Override // android.text.TextWatcher
                 public void afterTextChanged(Editable editable) {
                     String str;
-                    boolean z2;
+                    boolean z;
                     CountrySelectActivity.Country country;
                     CountrySelectActivity.Country country2;
                     if (PhoneView.this.ignoreOnTextChange) {
@@ -2412,7 +2411,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                             while (true) {
                                 if (i6 < 1) {
                                     str = null;
-                                    z2 = false;
+                                    z = false;
                                     break;
                                 }
                                 String substring = stripExceptNumbers.substring(0, i6);
@@ -2441,14 +2440,14 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                                 if (country2 != null) {
                                     String str2 = stripExceptNumbers.substring(i6) + PhoneView.this.phoneField.getText().toString();
                                     PhoneView.this.codeField.setText(substring);
-                                    z2 = true;
+                                    z = true;
                                     str = str2;
                                     stripExceptNumbers = substring;
                                     break;
                                 }
                                 i6--;
                             }
-                            if (!z2) {
+                            if (!z) {
                                 str = stripExceptNumbers.substring(1) + PhoneView.this.phoneField.getText().toString();
                                 AnimatedPhoneNumberEditText animatedPhoneNumberEditText2 = PhoneView.this.codeField;
                                 stripExceptNumbers = stripExceptNumbers.substring(0, 1);
@@ -2456,7 +2455,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                             }
                         } else {
                             str = null;
-                            z2 = false;
+                            z = false;
                         }
                         Iterator it2 = PhoneView.this.countriesArray.iterator();
                         CountrySelectActivity.Country country4 = null;
@@ -2514,7 +2513,7 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                             PhoneView.this.phoneField.setHintText((String) null);
                             PhoneView.this.countryState = 2;
                         }
-                        if (!z2) {
+                        if (!z) {
                             PhoneView.this.codeField.setSelection(PhoneView.this.codeField.getText().length());
                         }
                         if (str != null) {
@@ -2559,10 +2558,10 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
 
                 @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-                protected void onFocusChanged(boolean z2, int i6, Rect rect) {
-                    super.onFocusChanged(z2, i6, rect);
-                    PhoneView.this.phoneOutlineView.animateSelection((z2 || PhoneView.this.codeField.isFocused()) ? 1.0f : 0.0f);
-                    if (z2) {
+                protected void onFocusChanged(boolean z, int i6, Rect rect) {
+                    super.onFocusChanged(z, i6, rect);
+                    PhoneView.this.phoneOutlineView.animateSelection((z || PhoneView.this.codeField.isFocused()) ? 1.0f : 0.0f);
+                    if (z) {
                         LoginActivity.this.keyboardView.setEditText(this);
                         LoginActivity.this.keyboardView.setDispatchBackWhenEmpty(true);
                         if (PhoneView.this.countryState == 2) {
@@ -2704,8 +2703,8 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             } else {
                 i = 72;
             }
-            boolean z2 = BuildVars.DEBUG_VERSION;
-            if (LoginActivity.this.activityMode == 0) {
+            final boolean z = BuildVars.DEBUG_VERSION || LoginActivity.this.getConnectionsManager().isTestBackend();
+            if (z && LoginActivity.this.activityMode == 0) {
                 CheckBoxCell checkBoxCell3 = new CheckBoxCell(context, 2);
                 this.testBackendCheckBox = checkBoxCell3;
                 checkBoxCell3.setText(LocaleController.getString(R.string.DebugTestBackend), "", LoginActivity.this.testBackend = LoginActivity.this.getConnectionsManager().isTestBackend(), false);
@@ -3387,23 +3386,29 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
                 }
                 i = 1;
             }
-            if (this.countryState == i) {
+            int i4 = this.countryState;
+            if (i4 == i) {
                 LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ChooseCountry", R.string.ChooseCountry));
+                LoginActivity.this.needHideProgress(false);
+                return;
+            }
+            if (i4 == 2 && !BuildVars.DEBUG_VERSION) {
+                LoginActivity.this.needShowAlert(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.WrongCountry));
                 LoginActivity.this.needHideProgress(false);
                 return;
             }
             final String stripExceptNumbers = PhoneFormat.stripExceptNumbers("" + ((Object) this.codeField.getText()) + ((Object) this.phoneField.getText()));
             if (LoginActivity.this.activityMode == 0 && (LoginActivity.this.getParentActivity() instanceof LaunchActivity)) {
-                for (final int i4 = 0; i4 < 4; i4++) {
-                    UserConfig userConfig = UserConfig.getInstance(i4);
-                    if (userConfig.isClientActivated() && PhoneNumberUtils.compare(stripExceptNumbers, userConfig.getCurrentUser().phone) && ConnectionsManager.getInstance(i4).isTestBackend() == LoginActivity.this.testBackend) {
+                for (final int i5 = 0; i5 < 4; i5++) {
+                    UserConfig userConfig = UserConfig.getInstance(i5);
+                    if (userConfig.isClientActivated() && PhoneNumberUtils.compare(stripExceptNumbers, userConfig.getCurrentUser().phone) && ConnectionsManager.getInstance(i5).isTestBackend() == LoginActivity.this.testBackend) {
                         AlertDialog.Builder builder2 = new AlertDialog.Builder(LoginActivity.this.getParentActivity());
                         builder2.setTitle(LocaleController.getString(R.string.AppName));
                         builder2.setMessage(LocaleController.getString("AccountAlreadyLoggedIn", R.string.AccountAlreadyLoggedIn));
                         builder2.setPositiveButton(LocaleController.getString("AccountSwitch", R.string.AccountSwitch), new AlertDialog.OnButtonClickListener() { // from class: org.telegram.ui.LoginActivity$PhoneView$$ExternalSyntheticLambda3
                             @Override // org.telegram.ui.ActionBar.AlertDialog.OnButtonClickListener
-                            public final void onClick(AlertDialog alertDialog, int i5) {
-                                LoginActivity.PhoneView.this.lambda$onNextPressed$18(i4, alertDialog, i5);
+                            public final void onClick(AlertDialog alertDialog, int i6) {
+                                LoginActivity.PhoneView.this.lambda$onNextPressed$18(i5, alertDialog, i6);
                             }
                         });
                         builder2.setNegativeButton(LocaleController.getString("OK", R.string.OK), null);
@@ -3424,15 +3429,15 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             ArrayList<TLRPC.TL_auth_authorization> savedLogInTokens = AuthTokensHelper.getSavedLogInTokens();
             if (savedLogInTokens != null) {
-                for (int i5 = 0; i5 < savedLogInTokens.size(); i5++) {
-                    if (savedLogInTokens.get(i5).future_auth_token != null) {
+                for (int i6 = 0; i6 < savedLogInTokens.size(); i6++) {
+                    if (savedLogInTokens.get(i6).future_auth_token != null) {
                         if (tL_codeSettings.logout_tokens == null) {
                             tL_codeSettings.logout_tokens = new ArrayList<>();
                         }
                         if (BuildVars.DEBUG_VERSION) {
-                            FileLog.d("login token to check " + new String(savedLogInTokens.get(i5).future_auth_token, StandardCharsets.UTF_8));
+                            FileLog.d("login token to check " + new String(savedLogInTokens.get(i6).future_auth_token, StandardCharsets.UTF_8));
                         }
-                        tL_codeSettings.logout_tokens.add(savedLogInTokens.get(i5).future_auth_token);
+                        tL_codeSettings.logout_tokens.add(savedLogInTokens.get(i6).future_auth_token);
                         if (tL_codeSettings.logout_tokens.size() >= 20) {
                             break;
                         }
@@ -3441,11 +3446,11 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
             }
             ArrayList<TLRPC.TL_auth_loggedOut> savedLogOutTokens = AuthTokensHelper.getSavedLogOutTokens();
             if (savedLogOutTokens != null) {
-                for (int i6 = 0; i6 < savedLogOutTokens.size(); i6++) {
+                for (int i7 = 0; i7 < savedLogOutTokens.size(); i7++) {
                     if (tL_codeSettings.logout_tokens == null) {
                         tL_codeSettings.logout_tokens = new ArrayList<>();
                     }
-                    tL_codeSettings.logout_tokens.add(savedLogOutTokens.get(i6).future_auth_token);
+                    tL_codeSettings.logout_tokens.add(savedLogOutTokens.get(i7).future_auth_token);
                     if (tL_codeSettings.logout_tokens.size() >= 20) {
                         break;
                     }

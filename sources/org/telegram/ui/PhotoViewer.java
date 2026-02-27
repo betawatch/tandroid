@@ -616,6 +616,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     private volatile int originalBitrate;
     private volatile int originalHeight;
     private long originalSize;
+    public TLRPC.Document originalSticker;
     private volatile int originalWidth;
     private BlurButton outlineBtn;
     private boolean padImageForHorizontalInsets;
@@ -7528,7 +7529,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         return true;
                     }
                 }, chatActivity);
-                PhotoViewer.this.enableStickerMode(null, false, null);
+                PhotoViewer.this.enableStickerMode(null, null, false, null);
                 PhotoViewer.this.prepareSegmentImage();
                 ContentPreviewViewer.getInstance().setStickerSetForCustomSticker(null);
                 return;
@@ -10020,7 +10021,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                 PhotoViewer.this.stickerEmptySent = true;
                                 generateThumb();
                                 PhotoViewer photoViewer2 = PhotoViewer.this;
-                                photoViewer2.stickerMakerView.uploadStickerFile(file, videoEditedInfo2, str6, null, false, photoViewer2.parentChatActivity.getDialogId(), null, null, photoEntry.thumbPath, null, null);
+                                photoViewer2.stickerMakerView.uploadStickerFile(file, videoEditedInfo2, str6, null, false, photoViewer2.parentChatActivity.getDialogId(), null, null, PhotoViewer.this.getOriginalSticker(), photoEntry.thumbPath, null, null);
                                 return;
                             }
                             PhotoViewer.this.stickerEmptySent = true;
@@ -10068,7 +10069,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         public void addToFavoriteSelected(String str6) {
                             PhotoViewer.this.stickerEmptySent = true;
                             generateThumb();
-                            PhotoViewer.this.stickerMakerView.uploadStickerFile(file, videoEditedInfo2, str6, null, true, 0L, null, null, photoEntry.thumbPath, null, null);
+                            PhotoViewer photoViewer2 = PhotoViewer.this;
+                            photoViewer2.stickerMakerView.uploadStickerFile(file, videoEditedInfo2, str6, null, true, 0L, null, null, photoViewer2.getOriginalSticker(), photoEntry.thumbPath, null, null);
                         }
 
                         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -10076,14 +10078,15 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                             PhotoViewer.this.stickerEmptySent = true;
                             generateThumb();
                             PhotoViewer photoViewer2 = PhotoViewer.this;
-                            photoViewer2.stickerMakerView.uploadStickerFile(file, videoEditedInfo2, str6, null, false, 0L, stickerSet, photoViewer2.replacedSticker, photoEntry.thumbPath, null, null);
+                            photoViewer2.stickerMakerView.uploadStickerFile(file, videoEditedInfo2, str6, null, false, 0L, stickerSet, photoViewer2.replacedSticker, photoViewer2.getOriginalSticker(), photoEntry.thumbPath, null, null);
                         }
 
                         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
                         public void newStickerPackSelected(CharSequence charSequence, String str6, Utilities.Callback callback) {
                             PhotoViewer.this.stickerEmptySent = true;
                             generateThumb();
-                            PhotoViewer.this.stickerMakerView.uploadStickerFile(file, videoEditedInfo2, str6, charSequence, false, 0L, null, null, photoEntry.thumbPath, callback, null);
+                            PhotoViewer photoViewer2 = PhotoViewer.this;
+                            photoViewer2.stickerMakerView.uploadStickerFile(file, videoEditedInfo2, str6, charSequence, false, 0L, null, null, photoViewer2.getOriginalSticker(), photoEntry.thumbPath, callback, null);
                         }
 
                         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -10091,7 +10094,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                             PhotoViewer.this.stickerEmptySent = true;
                             generateThumb();
                             PhotoViewer photoViewer2 = PhotoViewer.this;
-                            photoViewer2.stickerMakerView.uploadStickerFile(file, videoEditedInfo2, str6, null, false, 0L, null, null, photoEntry.thumbPath, null, photoViewer2.customStickerHandler);
+                            photoViewer2.stickerMakerView.uploadStickerFile(file, videoEditedInfo2, str6, null, false, 0L, null, null, photoViewer2.getOriginalSticker(), photoEntry.thumbPath, null, PhotoViewer.this.customStickerHandler);
                         }
 
                         @Override // org.telegram.ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -17183,17 +17186,17 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:187:0x050a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:181:0x0500, code lost:
     
-        if (r19.parentChatActivity.getChatMode() != 5) goto L195;
+        if (r19.parentChatActivity.getChatMode() != 5) goto L188;
      */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x09d4  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x0c0c  */
-    /* JADX WARN: Removed duplicated region for block: B:292:0x0c22 A[Catch: Exception -> 0x0c2e, TryCatch #0 {Exception -> 0x0c2e, blocks: (B:290:0x0c15, B:292:0x0c22, B:293:0x0c30, B:295:0x0c34), top: B:289:0x0c15 }] */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x0c34 A[Catch: Exception -> 0x0c2e, TRY_LEAVE, TryCatch #0 {Exception -> 0x0c2e, blocks: (B:290:0x0c15, B:292:0x0c22, B:293:0x0c30, B:295:0x0c34), top: B:289:0x0c15 }] */
-    /* JADX WARN: Removed duplicated region for block: B:299:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:304:0x0c11  */
-    /* JADX WARN: Removed duplicated region for block: B:323:0x0ba0  */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x09c0  */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x0bf8  */
+    /* JADX WARN: Removed duplicated region for block: B:285:0x0c0e A[Catch: Exception -> 0x0c1a, TryCatch #0 {Exception -> 0x0c1a, blocks: (B:283:0x0c01, B:285:0x0c0e, B:286:0x0c1c, B:288:0x0c20), top: B:282:0x0c01 }] */
+    /* JADX WARN: Removed duplicated region for block: B:288:0x0c20 A[Catch: Exception -> 0x0c1a, TRY_LEAVE, TryCatch #0 {Exception -> 0x0c1a, blocks: (B:283:0x0c01, B:285:0x0c0e, B:286:0x0c1c, B:288:0x0c20), top: B:282:0x0c01 }] */
+    /* JADX WARN: Removed duplicated region for block: B:292:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x0bfd  */
+    /* JADX WARN: Removed duplicated region for block: B:316:0x0b8c  */
     /* JADX WARN: Type inference failed for: r11v18 */
     /* JADX WARN: Type inference failed for: r11v2 */
     /* JADX WARN: Type inference failed for: r11v3, types: [android.animation.AnimatorSet, java.lang.String] */
@@ -17492,7 +17495,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 }
                 if (this.slideshowMessageId == 0) {
                     this.imagesArr.add(messageObject);
-                    this.menuItem.setSubItemShown(25, this.parentChatActivity != null && messageObject.isPhoto());
+                    this.menuItem.setSubItemShown(25, messageObject.isPhoto());
                     if (messageObject.eventId != 0) {
                         i3 = 0;
                         this.needSearchImageInArr = false;
@@ -17589,7 +17592,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     this.imagesByIds[messageObject5.getDialogId() == this.currentDialogId ? (char) 0 : (char) 1].put(messageObject5.getId(), messageObject5);
                 }
                 MessageObject messageObject6 = (MessageObject) this.imagesArr.get(i5);
-                this.menuItem.setSubItemShown(25, this.parentChatActivity != null && messageObject6.isPhoto());
+                this.menuItem.setSubItemShown(25, messageObject6.isPhoto());
                 if (!messageObject6.scheduled && !messageObject6.isQuickReply() && !messageObject6.isSponsored() && ((chatActivity = this.parentChatActivity) == null || !chatActivity.isThreadChat())) {
                     this.opennedFromMedia = this.parentChatActivity == null;
                     if (this.parentFragment instanceof ProfileActivity) {
@@ -18972,8 +18975,24 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         return replaceAnimatedEmoji;
     }
 
-    public void enableStickerMode(TLRPC.Document document, boolean z, Utilities.Callback2 callback2) {
-        this.replacedSticker = document;
+    public TLRPC.Document getOriginalSticker() {
+        int i;
+        if (this.translationX == 0.0f && this.translationY == 0.0f && (i = this.currentIndex) >= 0 && i < this.imagesArrLocals.size()) {
+            Object obj = this.imagesArrLocals.get(this.currentIndex);
+            if (!(obj instanceof MediaController.MediaEditState)) {
+                return null;
+            }
+            MediaController.MediaEditState mediaEditState = (MediaController.MediaEditState) obj;
+            if (!mediaEditState.isPainted && !mediaEditState.isCropped && !mediaEditState.isFiltered) {
+                return this.originalSticker;
+            }
+        }
+        return null;
+    }
+
+    public void enableStickerMode(TLRPC.Document document, TLRPC.Document document2, boolean z, Utilities.Callback2 callback2) {
+        this.originalSticker = document;
+        this.replacedSticker = document2;
         this.stickerEmpty = z;
         this.stickerEmptySent = false;
         this.customStickerHandler = callback2;
@@ -18990,14 +19009,14 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 arrayList.clear();
             }
         }
-        if (this.replacedSticker != null) {
+        if (this.originalSticker != null) {
             ArrayList arrayList2 = this.selectedEmojis;
             if (arrayList2 == null) {
                 this.selectedEmojis = new ArrayList();
             } else {
                 arrayList2.clear();
             }
-            ArrayList<String> findStickerEmoticons = MessageObject.findStickerEmoticons(document, Integer.valueOf(this.currentAccount));
+            ArrayList<String> findStickerEmoticons = MessageObject.findStickerEmoticons(this.originalSticker, Integer.valueOf(this.currentAccount));
             if (findStickerEmoticons != null) {
                 this.selectedEmojis.addAll(findStickerEmoticons);
             }

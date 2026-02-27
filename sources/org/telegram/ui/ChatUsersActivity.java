@@ -733,47 +733,37 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 this.rowCount = i41 + 2;
                 this.hideMembersInfoRow = i41 + 1;
             }
-            TLRPC.Chat chat6 = this.currentChat;
-            if (chat6 != null && !ChatObject.isChannelAndNotMegaGroup(chat6)) {
-                TLRPC.Chat chat7 = this.currentChat;
-                if (chat7.creator || (ChatObject.hasAdminRights(chat7) && ChatObject.canChangeChatInfo(this.currentChat))) {
-                    int i42 = this.rowCount;
-                    this.tagsRow = i42;
-                    this.rowCount = i42 + 2;
-                    this.tagsInfoRow = i42 + 1;
-                }
-            }
             if (this.selectType == 0 && ChatObject.canAddUsers(this.currentChat)) {
-                int i43 = this.rowCount;
-                this.rowCount = i43 + 1;
-                this.addNewRow = i43;
+                int i42 = this.rowCount;
+                this.rowCount = i42 + 1;
+                this.addNewRow = i42;
             }
             if (this.selectType == 0 && ChatObject.canUserDoAdminAction(this.currentChat, 3)) {
-                int i44 = this.rowCount;
-                this.rowCount = i44 + 1;
-                this.addNew2Row = i44;
+                int i43 = this.rowCount;
+                this.rowCount = i43 + 1;
+                this.addNew2Row = i43;
             }
             if (this.loadingUsers && !(z = this.firstLoaded)) {
                 if (z) {
                     return;
                 }
                 if (this.selectType == 0) {
-                    int i45 = this.rowCount;
-                    this.rowCount = i45 + 1;
-                    this.loadingHeaderRow = i45;
+                    int i44 = this.rowCount;
+                    this.rowCount = i44 + 1;
+                    this.loadingHeaderRow = i44;
                 }
-                int i46 = this.rowCount;
-                this.rowCount = i46 + 1;
-                this.loadingUserCellRow = i46;
+                int i45 = this.rowCount;
+                this.rowCount = i45 + 1;
+                this.loadingUserCellRow = i45;
                 return;
             }
             if (!this.contacts.isEmpty()) {
-                int i47 = this.rowCount;
-                int i48 = i47 + 1;
-                this.rowCount = i48;
-                this.contactsHeaderRow = i47;
-                this.contactsStartRow = i48;
-                int size4 = i48 + this.contacts.size();
+                int i46 = this.rowCount;
+                int i47 = i46 + 1;
+                this.rowCount = i47;
+                this.contactsHeaderRow = i46;
+                this.contactsStartRow = i47;
+                int size4 = i47 + this.contacts.size();
                 this.rowCount = size4;
                 this.contactsEndRow = size4;
                 r1 = 1;
@@ -781,31 +771,31 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             if (this.bots.isEmpty()) {
                 i2 = r1;
             } else {
-                int i49 = this.rowCount;
-                int i50 = i49 + 1;
-                this.rowCount = i50;
-                this.botHeaderRow = i49;
-                this.botStartRow = i50;
-                int size5 = i50 + this.bots.size();
+                int i48 = this.rowCount;
+                int i49 = i48 + 1;
+                this.rowCount = i49;
+                this.botHeaderRow = i48;
+                this.botStartRow = i49;
+                int size5 = i49 + this.bots.size();
                 this.rowCount = size5;
                 this.botEndRow = size5;
             }
             if (!this.participants.isEmpty()) {
                 if (i2 != 0) {
-                    int i51 = this.rowCount;
-                    this.rowCount = i51 + 1;
-                    this.membersHeaderRow = i51;
+                    int i50 = this.rowCount;
+                    this.rowCount = i50 + 1;
+                    this.membersHeaderRow = i50;
                 }
-                int i52 = this.rowCount;
-                this.participantsStartRow = i52;
-                int size6 = i52 + this.participants.size();
+                int i51 = this.rowCount;
+                this.participantsStartRow = i51;
+                int size6 = i51 + this.participants.size();
                 this.rowCount = size6;
                 this.participantsEndRow = size6;
             }
-            int i53 = this.rowCount;
-            if (i53 != 0) {
-                this.rowCount = i53 + 1;
-                this.participantsInfoRow = i53;
+            int i52 = this.rowCount;
+            if (i52 != 0) {
+                this.rowCount = i52 + 1;
+                this.participantsInfoRow = i52;
             }
         }
     }

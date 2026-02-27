@@ -53,6 +53,7 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter2 = this.currentFilter;
             tL_channelAdminLogEventsFilter2.join = tL_channelAdminLogEventsFilter.join;
             tL_channelAdminLogEventsFilter2.leave = tL_channelAdminLogEventsFilter.leave;
+            tL_channelAdminLogEventsFilter2.edit_rank = tL_channelAdminLogEventsFilter.edit_rank;
             tL_channelAdminLogEventsFilter2.invite = tL_channelAdminLogEventsFilter.invite;
             tL_channelAdminLogEventsFilter2.ban = tL_channelAdminLogEventsFilter.ban;
             tL_channelAdminLogEventsFilter2.unban = tL_channelAdminLogEventsFilter.unban;
@@ -71,6 +72,7 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter3 = this.currentFilter;
             tL_channelAdminLogEventsFilter3.join = true;
             tL_channelAdminLogEventsFilter3.leave = true;
+            tL_channelAdminLogEventsFilter3.edit_rank = true;
             tL_channelAdminLogEventsFilter3.invite = true;
             tL_channelAdminLogEventsFilter3.ban = true;
             tL_channelAdminLogEventsFilter3.unban = true;
@@ -145,7 +147,7 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(View view) {
         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = this.currentFilter;
-        if (tL_channelAdminLogEventsFilter.join && tL_channelAdminLogEventsFilter.leave && tL_channelAdminLogEventsFilter.invite && tL_channelAdminLogEventsFilter.ban && tL_channelAdminLogEventsFilter.unban && tL_channelAdminLogEventsFilter.kick && tL_channelAdminLogEventsFilter.unkick && tL_channelAdminLogEventsFilter.promote && tL_channelAdminLogEventsFilter.demote && tL_channelAdminLogEventsFilter.info && tL_channelAdminLogEventsFilter.settings && tL_channelAdminLogEventsFilter.pinned && tL_channelAdminLogEventsFilter.edit && tL_channelAdminLogEventsFilter.delete && tL_channelAdminLogEventsFilter.group_call && tL_channelAdminLogEventsFilter.invites) {
+        if (tL_channelAdminLogEventsFilter.join && tL_channelAdminLogEventsFilter.leave && tL_channelAdminLogEventsFilter.edit_rank && tL_channelAdminLogEventsFilter.invite && tL_channelAdminLogEventsFilter.ban && tL_channelAdminLogEventsFilter.unban && tL_channelAdminLogEventsFilter.kick && tL_channelAdminLogEventsFilter.unkick && tL_channelAdminLogEventsFilter.promote && tL_channelAdminLogEventsFilter.demote && tL_channelAdminLogEventsFilter.info && tL_channelAdminLogEventsFilter.settings && tL_channelAdminLogEventsFilter.pinned && tL_channelAdminLogEventsFilter.edit && tL_channelAdminLogEventsFilter.delete && tL_channelAdminLogEventsFilter.group_call && tL_channelAdminLogEventsFilter.invites) {
             this.currentFilter = null;
         }
         LongSparseArray longSparseArray = this.selectedAdmins;
@@ -177,9 +179,9 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         if (i == 0) {
             StringBuilder sb = new StringBuilder();
             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = this.currentFilter;
-            sb.append(((tL_channelAdminLogEventsFilter.promote || tL_channelAdminLogEventsFilter.demote) ? 1 : 0) + ((this.isMegagroup && (tL_channelAdminLogEventsFilter.kick || tL_channelAdminLogEventsFilter.ban || tL_channelAdminLogEventsFilter.unkick || tL_channelAdminLogEventsFilter.unban)) ? 1 : 0) + ((tL_channelAdminLogEventsFilter.invite || tL_channelAdminLogEventsFilter.join) ? 1 : 0) + (tL_channelAdminLogEventsFilter.leave ? 1 : 0));
+            sb.append(((tL_channelAdminLogEventsFilter.promote || tL_channelAdminLogEventsFilter.demote) ? 1 : 0) + ((this.isMegagroup && (tL_channelAdminLogEventsFilter.kick || tL_channelAdminLogEventsFilter.ban || tL_channelAdminLogEventsFilter.unkick || tL_channelAdminLogEventsFilter.unban)) ? 1 : 0) + ((tL_channelAdminLogEventsFilter.invite || tL_channelAdminLogEventsFilter.join) ? 1 : 0) + (tL_channelAdminLogEventsFilter.leave ? 1 : 0) + (tL_channelAdminLogEventsFilter.edit_rank ? 1 : 0));
             sb.append("/");
-            sb.append(this.isMegagroup ? 4 : 3);
+            sb.append(this.isMegagroup ? 5 : 3);
             return sb.toString();
         }
         if (i == 1) {
@@ -225,7 +227,7 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.EventLogFilterByActions)));
         UItem asRoundGroupCheckbox = UItem.asRoundGroupCheckbox(2, LocaleController.getString(this.isMegagroup ? R.string.EventLogFilterSectionMembers : R.string.EventLogFilterSectionSubscribers), getGroupCount(0));
         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = this.currentFilter;
-        arrayList.add(asRoundGroupCheckbox.setChecked(tL_channelAdminLogEventsFilter.promote || tL_channelAdminLogEventsFilter.demote || (this.isMegagroup && (tL_channelAdminLogEventsFilter.kick || tL_channelAdminLogEventsFilter.ban || tL_channelAdminLogEventsFilter.unkick || tL_channelAdminLogEventsFilter.unban)) || tL_channelAdminLogEventsFilter.invite || tL_channelAdminLogEventsFilter.join || tL_channelAdminLogEventsFilter.leave).setCollapsed(!this.sectionMembersExpanded).setClickCallback(getGroupClick(0)));
+        arrayList.add(asRoundGroupCheckbox.setChecked(tL_channelAdminLogEventsFilter.promote || tL_channelAdminLogEventsFilter.demote || (this.isMegagroup && (tL_channelAdminLogEventsFilter.kick || tL_channelAdminLogEventsFilter.ban || tL_channelAdminLogEventsFilter.unkick || tL_channelAdminLogEventsFilter.unban)) || tL_channelAdminLogEventsFilter.invite || tL_channelAdminLogEventsFilter.join || tL_channelAdminLogEventsFilter.leave || tL_channelAdminLogEventsFilter.edit_rank).setCollapsed(!this.sectionMembersExpanded).setClickCallback(getGroupClick(0)));
         if (this.sectionMembersExpanded) {
             UItem pad = UItem.asRoundCheckbox(3, LocaleController.getString(R.string.EventLogFilterSectionAdmin)).pad();
             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter2 = this.currentFilter;
@@ -239,28 +241,31 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter4 = this.currentFilter;
             arrayList.add(pad3.setChecked(tL_channelAdminLogEventsFilter4.invite || tL_channelAdminLogEventsFilter4.join));
             arrayList.add(UItem.asRoundCheckbox(6, LocaleController.getString(this.isMegagroup ? R.string.EventLogFilterLeavingMembers2 : R.string.EventLogFilterLeavingSubscribers2)).pad().setChecked(this.currentFilter.leave));
+            if (this.isMegagroup) {
+                arrayList.add(UItem.asRoundCheckbox(7, LocaleController.getString(R.string.EventLogFilterMembersRank)).pad().setChecked(this.currentFilter.edit_rank));
+            }
         }
-        UItem asRoundGroupCheckbox2 = UItem.asRoundGroupCheckbox(7, LocaleController.getString(this.isMegagroup ? R.string.EventLogFilterSectionGroupSettings : R.string.EventLogFilterSectionChannelSettings), getGroupCount(1));
+        UItem asRoundGroupCheckbox2 = UItem.asRoundGroupCheckbox(8, LocaleController.getString(this.isMegagroup ? R.string.EventLogFilterSectionGroupSettings : R.string.EventLogFilterSectionChannelSettings), getGroupCount(1));
         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter5 = this.currentFilter;
         arrayList.add(asRoundGroupCheckbox2.setChecked(tL_channelAdminLogEventsFilter5.info || tL_channelAdminLogEventsFilter5.settings || tL_channelAdminLogEventsFilter5.invites || tL_channelAdminLogEventsFilter5.group_call).setCollapsed(!this.sectionSettingsExpanded).setClickCallback(getGroupClick(1)));
         if (this.sectionSettingsExpanded) {
-            UItem pad4 = UItem.asRoundCheckbox(8, LocaleController.getString(this.isMegagroup ? R.string.EventLogFilterGroupInfo : R.string.EventLogFilterChannelInfo)).pad();
+            UItem pad4 = UItem.asRoundCheckbox(9, LocaleController.getString(this.isMegagroup ? R.string.EventLogFilterGroupInfo : R.string.EventLogFilterChannelInfo)).pad();
             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter6 = this.currentFilter;
             arrayList.add(pad4.setChecked(tL_channelAdminLogEventsFilter6.info || tL_channelAdminLogEventsFilter6.settings));
-            arrayList.add(UItem.asRoundCheckbox(9, LocaleController.getString(R.string.EventLogFilterInvites)).pad().setChecked(this.currentFilter.invites));
-            arrayList.add(UItem.asRoundCheckbox(10, LocaleController.getString(R.string.EventLogFilterCalls)).pad().setChecked(this.currentFilter.group_call));
+            arrayList.add(UItem.asRoundCheckbox(10, LocaleController.getString(R.string.EventLogFilterInvites)).pad().setChecked(this.currentFilter.invites));
+            arrayList.add(UItem.asRoundCheckbox(11, LocaleController.getString(R.string.EventLogFilterCalls)).pad().setChecked(this.currentFilter.group_call));
         }
-        UItem asRoundGroupCheckbox3 = UItem.asRoundGroupCheckbox(11, LocaleController.getString(R.string.EventLogFilterSectionMessages), getGroupCount(2));
+        UItem asRoundGroupCheckbox3 = UItem.asRoundGroupCheckbox(12, LocaleController.getString(R.string.EventLogFilterSectionMessages), getGroupCount(2));
         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter7 = this.currentFilter;
         arrayList.add(asRoundGroupCheckbox3.setChecked(tL_channelAdminLogEventsFilter7.delete || tL_channelAdminLogEventsFilter7.edit || tL_channelAdminLogEventsFilter7.pinned).setCollapsed(!this.sectionMessagesExpanded).setClickCallback(getGroupClick(2)));
         if (this.sectionMessagesExpanded) {
-            arrayList.add(UItem.asRoundCheckbox(12, LocaleController.getString(R.string.EventLogFilterDeletedMessages)).pad().setChecked(this.currentFilter.delete));
-            arrayList.add(UItem.asRoundCheckbox(13, LocaleController.getString(R.string.EventLogFilterEditedMessages)).pad().setChecked(this.currentFilter.edit));
-            arrayList.add(UItem.asRoundCheckbox(14, LocaleController.getString(R.string.EventLogFilterPinnedMessages)).pad().setChecked(this.currentFilter.pinned));
+            arrayList.add(UItem.asRoundCheckbox(13, LocaleController.getString(R.string.EventLogFilterDeletedMessages)).pad().setChecked(this.currentFilter.delete));
+            arrayList.add(UItem.asRoundCheckbox(14, LocaleController.getString(R.string.EventLogFilterEditedMessages)).pad().setChecked(this.currentFilter.edit));
+            arrayList.add(UItem.asRoundCheckbox(15, LocaleController.getString(R.string.EventLogFilterPinnedMessages)).pad().setChecked(this.currentFilter.pinned));
         }
         arrayList.add(UItem.asShadow(null));
         arrayList.add(UItem.asHeader(LocaleController.getString(R.string.EventLogFilterByAdmins)));
-        UItem asRoundCheckbox = UItem.asRoundCheckbox(15, LocaleController.getString(R.string.EventLogFilterByAdminsAll));
+        UItem asRoundCheckbox = UItem.asRoundCheckbox(16, LocaleController.getString(R.string.EventLogFilterByAdminsAll));
         LongSparseArray longSparseArray = this.selectedAdmins;
         int size = longSparseArray == null ? 0 : longSparseArray.size();
         ArrayList arrayList2 = this.currentAdmins;
@@ -289,11 +294,12 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
     /* JADX WARN: Removed duplicated region for block: B:56:0x00c9  */
     /* JADX WARN: Removed duplicated region for block: B:57:0x00d3  */
     /* JADX WARN: Removed duplicated region for block: B:58:0x00df  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00f6  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x00ff  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0119  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00f7  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x012e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -320,6 +326,7 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
                         } else {
                             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = this.currentFilter;
                             boolean isChecked = checkBoxCell.isChecked();
+                            tL_channelAdminLogEventsFilter.edit_rank = isChecked;
                             tL_channelAdminLogEventsFilter.leave = isChecked;
                             tL_channelAdminLogEventsFilter.join = isChecked;
                             tL_channelAdminLogEventsFilter.invite = isChecked;
@@ -360,6 +367,9 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
                         this.currentFilter.leave = checkBoxCell.isChecked();
                         break;
                     case 7:
+                        this.currentFilter.edit_rank = checkBoxCell.isChecked();
+                        break;
+                    case 8:
                         if (z) {
                             this.sectionSettingsExpanded = !this.sectionSettingsExpanded;
                             break;
@@ -372,19 +382,19 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
                             tL_channelAdminLogEventsFilter6.info = isChecked6;
                             break;
                         }
-                    case 8:
+                    case 9:
                         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter7 = this.currentFilter;
                         boolean isChecked7 = checkBoxCell.isChecked();
                         tL_channelAdminLogEventsFilter7.settings = isChecked7;
                         tL_channelAdminLogEventsFilter7.info = isChecked7;
                         break;
-                    case 9:
+                    case 10:
                         this.currentFilter.invites = checkBoxCell.isChecked();
                         break;
-                    case 10:
+                    case 11:
                         this.currentFilter.group_call = checkBoxCell.isChecked();
                         break;
-                    case 11:
+                    case 12:
                         if (z) {
                             this.sectionMessagesExpanded = !this.sectionMessagesExpanded;
                             break;
@@ -396,16 +406,16 @@ public class AdminLogFilterAlert2 extends BottomSheetWithRecyclerListView {
                             tL_channelAdminLogEventsFilter8.delete = isChecked8;
                             break;
                         }
-                    case 12:
+                    case 13:
                         this.currentFilter.delete = checkBoxCell.isChecked();
                         break;
-                    case 13:
+                    case 14:
                         this.currentFilter.edit = checkBoxCell.isChecked();
                         break;
-                    case 14:
+                    case 15:
                         this.currentFilter.pinned = checkBoxCell.isChecked();
                         break;
-                    case 15:
+                    case 16:
                         if (this.selectedAdmins == null) {
                             this.selectedAdmins = new LongSparseArray();
                         }

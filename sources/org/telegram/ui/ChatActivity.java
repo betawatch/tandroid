@@ -60270,6 +60270,7 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             boolean z;
             String str;
             boolean z2;
+            String str2;
             boolean z3;
             TLRPC.User currentUser = chatMessageCell.getCurrentUser();
             ChatActivity.this.getUserConfig().getCurrentUser();
@@ -60278,53 +60279,75 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
             boolean z4 = true;
             boolean z5 = false;
-            if ((tLObject instanceof TLRPC.ChannelParticipant) || (tLObject instanceof TLRPC.TL_chatChannelParticipant)) {
-                TLRPC.ChannelParticipant channelParticipant = tLObject instanceof TLRPC.TL_chatChannelParticipant ? ((TLRPC.TL_chatChannelParticipant) tLObject).channelParticipant : (TLRPC.ChannelParticipant) tLObject;
+            if (tLObject instanceof TLRPC.ChannelParticipant) {
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
                 if (channelParticipant instanceof TLRPC.TL_channelParticipantCreator) {
                     z = false;
                     z5 = true;
                 } else if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
-                    z = channelParticipant.inviter_id == ChatActivity.this.getUserConfig().getClientUserId();
+                    z = channelParticipant.promoted_by == ChatActivity.this.getUserConfig().getClientUserId();
                 } else {
                     z = false;
                     z4 = false;
                 }
                 str = channelParticipant.rank;
-                z2 = z;
-            } else if (tLObject instanceof TLRPC.ChatParticipant) {
-                if (tLObject instanceof TLRPC.TL_chatParticipantCreator) {
-                    z3 = false;
-                    z5 = true;
-                } else if (tLObject instanceof TLRPC.TL_chatParticipantAdmin) {
-                    z3 = ((TLRPC.TL_chatParticipantAdmin) tLObject).inviter_id == ChatActivity.this.getUserConfig().getClientUserId();
-                } else {
-                    z3 = false;
-                    z4 = false;
-                }
-                z2 = z3;
-                str = ((TLRPC.ChatParticipant) tLObject).rank;
             } else {
-                if (ChatObject.isChannel(ChatActivity.this.currentChat)) {
-                    TLRPC.TL_channels_getParticipant tL_channels_getParticipant = new TLRPC.TL_channels_getParticipant();
-                    ChatActivity.this.getMessagesController();
-                    tL_channels_getParticipant.channel = MessagesController.getInputChannel(ChatActivity.this.currentChat);
-                    tL_channels_getParticipant.participant = ChatActivity.this.getMessagesController().getInputPeer(currentUser.id);
-                    ChatActivity.this.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda0
-                        @Override // org.telegram.messenger.Utilities.Callback2
-                        public final void run(Object obj, Object obj2) {
-                            ChatActivity.ChatMessageCellDelegate.this.lambda$didPressAdmin$47(chatMessageCell, (TLRPC.TL_channels_channelParticipant) obj, (TLRPC.TL_error) obj2);
-                        }
-                    });
+                if (tLObject instanceof TLRPC.TL_chatChannelParticipant) {
+                    TLRPC.ChannelParticipant channelParticipant2 = ((TLRPC.TL_chatChannelParticipant) tLObject).channelParticipant;
+                    if (channelParticipant2 instanceof TLRPC.TL_channelParticipantCreator) {
+                        z2 = false;
+                        z5 = true;
+                    } else if (channelParticipant2 instanceof TLRPC.TL_channelParticipantAdmin) {
+                        z2 = channelParticipant2.promoted_by == ChatActivity.this.getUserConfig().getClientUserId();
+                    } else {
+                        z2 = false;
+                        z4 = false;
+                    }
+                    str2 = channelParticipant2.rank;
+                    z3 = z2;
+                    boolean z6 = z4;
+                    boolean z7 = z5;
+                    Context context = ChatActivity.this.getContext();
+                    int i = ((BaseFragment) ChatActivity.this).currentAccount;
+                    ChatActivity chatActivity = ChatActivity.this;
+                    TagEditCell.showInfoSheet(context, i, -chatActivity.currentChat.id, currentUser, str2, z6, z7, z3, ((BaseFragment) chatActivity).resourceProvider);
+                }
+                if (tLObject instanceof TLRPC.ChatParticipant) {
+                    if (tLObject instanceof TLRPC.TL_chatParticipantCreator) {
+                        z = false;
+                        z5 = true;
+                    } else if (tLObject instanceof TLRPC.TL_chatParticipantAdmin) {
+                        z = ((TLRPC.TL_chatParticipantAdmin) tLObject).inviter_id == ChatActivity.this.getUserConfig().getClientUserId();
+                    } else {
+                        z = false;
+                        z4 = false;
+                    }
+                    str = ((TLRPC.ChatParticipant) tLObject).rank;
+                } else {
+                    if (ChatObject.isChannel(ChatActivity.this.currentChat)) {
+                        TLRPC.TL_channels_getParticipant tL_channels_getParticipant = new TLRPC.TL_channels_getParticipant();
+                        ChatActivity.this.getMessagesController();
+                        tL_channels_getParticipant.channel = MessagesController.getInputChannel(ChatActivity.this.currentChat);
+                        tL_channels_getParticipant.participant = ChatActivity.this.getMessagesController().getInputPeer(currentUser.id);
+                        ChatActivity.this.getConnectionsManager().sendRequestTyped(tL_channels_getParticipant, new BotForumHelper$$ExternalSyntheticLambda2(), new Utilities.Callback2() { // from class: org.telegram.ui.ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda0
+                            @Override // org.telegram.messenger.Utilities.Callback2
+                            public final void run(Object obj, Object obj2) {
+                                ChatActivity.ChatMessageCellDelegate.this.lambda$didPressAdmin$47(chatMessageCell, (TLRPC.TL_channels_channelParticipant) obj, (TLRPC.TL_error) obj2);
+                            }
+                        });
+                        return;
+                    }
                     return;
                 }
-                return;
             }
-            boolean z6 = z4;
-            boolean z7 = z5;
-            Context context = ChatActivity.this.getContext();
-            int i = ((BaseFragment) ChatActivity.this).currentAccount;
-            ChatActivity chatActivity = ChatActivity.this;
-            TagEditCell.showInfoSheet(context, i, -chatActivity.currentChat.id, currentUser, str, z6, z7, z2, ((BaseFragment) chatActivity).resourceProvider);
+            z3 = z;
+            str2 = str;
+            boolean z62 = z4;
+            boolean z72 = z5;
+            Context context2 = ChatActivity.this.getContext();
+            int i2 = ((BaseFragment) ChatActivity.this).currentAccount;
+            ChatActivity chatActivity2 = ChatActivity.this;
+            TagEditCell.showInfoSheet(context2, i2, -chatActivity2.currentChat.id, currentUser, str2, z62, z72, z3, ((BaseFragment) chatActivity2).resourceProvider);
         }
 
         /* JADX INFO: Access modifiers changed from: private */

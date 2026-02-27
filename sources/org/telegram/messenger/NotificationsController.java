@@ -9294,16 +9294,16 @@ public class NotificationsController extends BaseController {
         notificationManager.notify(this.notificationId, builder.build());
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(97:50|(2:52|(4:54|55|56|57)(4:58|(2:61|59)|62|63))(1:805)|64|(1:66)(1:(1:803)(1:804))|67|68|(4:71|(2:73|74)(1:76)|75|69)|77|78|(4:80|(2:(1:83)(1:671)|84)(1:672)|(1:670)(2:90|(78:94|95|(1:101)|(4:103|(1:105)(1:666)|106|107)(1:667)|(3:109|(3:111|(1:113)(3:653|654|(3:656|(1:658)(1:660)|659))|114)(1:664)|661)(1:665)|(3:116|(1:122)|123)(1:652)|124|(3:647|(1:649)(1:651)|650)(2:127|128)|129|(1:131)|132|(1:134)(1:637)|135|(2:635|636)(1:139)|140|141|(3:144|(1:146)|(3:148|149|(64:153|154|155|(59:159|160|161|162|163|(1:623)(1:167)|168|(1:622)(1:171)|172|173|(1:621)|180|(1:620)(1:187)|188|(14:190|(1:192)(2:374|(3:376|377|57)(2:378|(1:(1:381)(11:382|194|195|196|(2:199|197)|200|201|(1:373)(1:204)|205|(1:207)(1:372)|208))(2:383|(11:385|195|196|(1:197)|200|201|(0)|373|205|(0)(0)|208)(11:386|(1:391)(1:390)|196|(1:197)|200|201|(0)|373|205|(0)(0)|208))))|193|194|195|196|(1:197)|200|201|(0)|373|205|(0)(0)|208)(4:392|(5:394|(1:396)(3:400|(1:402)(2:605|(2:610|(1:612)(2:613|(1:617)))(1:609))|(3:404|(1:406)|407)(18:408|(1:410)|411|(3:600|(1:602)(1:604)|603)(1:417)|418|(3:592|(1:(1:595)(2:596|(1:598)))|599)(1:422)|423|(11:(7:426|(1:(2:429|(1:431))(1:586))(2:587|(1:589))|(3:526|(1:584)(4:532|(2:582|583)(4:535|(1:539)|(1:581)(2:545|(1:549))|580)|(2:554|(2:556|(1:566))(2:567|(1:577)))|578)|579)(1:436)|437|(6:439|(1:524)(7:452|(1:523)(2:456|(6:511|512|513|514|515|516)(1:458))|459|(1:461)(1:510)|462|463|(7:498|499|500|501|502|503|(5:469|(1:471)|472|473|(2:478|(3:480|(2:485|486)(1:482)|(1:484))))(1:495))(4:465|(2:497|(0)(0))|467|(0)(0)))|496|472|473|(3:476|478|(0)))(1:525)|489|(3:493|494|399))(1:590)|585|(1:434)|526|(1:528)|584|579|437|(0)(0)|489|(4:491|493|494|399))(1:591)|432|(0)|526|(0)|584|579|437|(0)(0)|489|(0)))|397|398|399)|618|619)|209|(1:211)(2:345|(1:347)(40:348|(3:350|(1:352)(2:354|(1:356))|353)(2:357|(4:359|(2:362|360)|363|364)(2:365|(1:367)(2:368|(1:370)(1:371))))|213|(1:215)|216|(1:218)|219|(2:221|(1:223)(1:340))(2:341|(1:343)(1:344))|(1:225)(1:339)|226|(4:228|(2:231|229)|232|233)(1:338)|234|(1:236)|237|238|239|(1:241)|242|(1:244)|245|(1:247)|248|(1:333)(4:252|(5:255|(2:256|(1:331)(2:258|(2:261|262)(1:260)))|263|(1:266)(1:265)|253)|332|267)|(1:269)|270|(2:(1:275)|(1:281))|282|(1:330)(1:288)|289|(1:291)|(1:293)|294|(3:299|(4:301|(3:303|(4:305|(1:307)|308|309)(2:311|312)|310)|313|314)|315)|316|(1:329)(2:319|(1:323))|324|(1:326)|327|328|57))|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(1:250)|333|(0)|270|(3:272|(0)|(3:277|279|281))|282|(1:284)|330|289|(0)|(0)|294|(4:296|299|(0)|315)|316|(0)|329|324|(0)|327|328|57)|627|163|(1:165)|623|168|(0)|622|172|173|(1:175)|621|180|(1:183)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328|57)))|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328|57))|668)(5:673|(4:(1:786)(1:682)|683|(96:685|(2:687|(1:689)(3:736|(1:738)|739))(3:740|(1:750)(2:744|(94:748|691|(1:693)(2:725|(1:727)(2:728|(1:730)(2:731|(1:733)(91:734|735|695|(1:724)(2:700|(87:710|711|(1:713)(1:714)|(3:97|99|101)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(1:137)|635|636|140|141|(3:144|(0)|(0))|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328))|715|711|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328))))|694|695|(0)|724|715|711|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328))|749)|690|691|(0)(0)|694|695|(0)|724|715|711|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328)(93:751|(2:753|(1:755)(3:757|(1:759)|739))(9:760|(1:785)(1:764)|765|(1:784)(2:769|(1:771))|783|773|(2:775|(2:777|(1:779)(92:780|735|695|(0)|724|715|711|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328)))(1:782)|781|(0)(0))|756|695|(0)|724|715|711|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328)|57)(3:787|(3:789|(2:791|(1:793))(2:795|(2:797|(1:799)))|794)(1:801)|800)|55|56|57)|669|95|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|639|641|643|645|647|(0)(0)|650|129|(0)|132|(0)(0)|135|(0)|635|636|140|141|(0)|634|627|163|(0)|623|168|(0)|622|172|173|(0)|621|180|(0)|620|188|(0)(0)|209|(0)(0)|212|213|(0)|216|(0)|219|(0)(0)|(0)(0)|226|(0)(0)|234|(0)|237|238|239|(0)|242|(0)|245|(0)|248|(0)|333|(0)|270|(0)|282|(0)|330|289|(0)|(0)|294|(0)|316|(0)|329|324|(0)|327|328|57) */
-    /* JADX WARN: Code restructure failed: missing block: B:335:0x13b5, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(99:50|(2:52|(4:54|55|56|57)(4:58|(2:61|59)|62|63))(1:813)|64|(1:66)(1:(1:811)(1:812))|67|68|(4:71|(2:73|74)(1:76)|75|69)|77|78|(4:80|(2:(1:83)(1:679)|84)(1:680)|(1:678)(2:90|(80:94|95|(1:101)|(4:103|(1:105)(1:674)|106|107)(1:675)|(3:109|(3:111|(1:113)(3:661|662|(3:664|(1:666)(1:668)|667))|114)(1:672)|669)(1:673)|(3:116|(1:122)|123)(1:660)|124|(3:655|(1:657)(1:659)|658)(2:127|128)|129|(1:131)|132|(1:134)(1:645)|135|(2:643|644)(1:139)|140|141|(3:144|(1:146)|(3:148|149|(66:153|154|155|(57:159|160|161|162|163|(1:631)(1:167)|168|(1:630)(1:171)|172|173|(1:629)|180|(1:628)(1:187)|188|(14:190|(1:192)(2:382|(3:384|385|57)(2:386|(1:(1:389)(11:390|194|195|196|(2:199|197)|200|201|(1:381)(1:204)|205|(1:207)(1:380)|208))(2:391|(11:393|195|196|(1:197)|200|201|(0)|381|205|(0)(0)|208)(11:394|(1:399)(1:398)|196|(1:197)|200|201|(0)|381|205|(0)(0)|208))))|193|194|195|196|(1:197)|200|201|(0)|381|205|(0)(0)|208)(4:400|(5:402|(1:404)(3:408|(1:410)(2:613|(2:618|(1:620)(2:621|(1:625)))(1:617))|(3:412|(1:414)|415)(18:416|(1:418)|419|(3:608|(1:610)(1:612)|611)(1:425)|426|(3:600|(1:(1:603)(2:604|(1:606)))|607)(1:430)|431|(11:(7:434|(1:(2:437|(1:439))(1:594))(2:595|(1:597))|(3:534|(1:592)(4:540|(2:590|591)(4:543|(1:547)|(1:589)(2:553|(1:557))|588)|(2:562|(2:564|(1:574))(2:575|(1:585)))|586)|587)(1:444)|445|(6:447|(1:532)(7:460|(1:531)(2:464|(6:519|520|521|522|523|524)(1:466))|467|(1:469)(1:518)|470|471|(7:506|507|508|509|510|511|(5:477|(1:479)|480|481|(2:486|(3:488|(2:493|494)(1:490)|(1:492))))(1:503))(4:473|(2:505|(0)(0))|475|(0)(0)))|504|480|481|(3:484|486|(0)))(1:533)|497|(3:501|502|407))(1:598)|593|(1:442)|534|(1:536)|592|587|445|(0)(0)|497|(4:499|501|502|407))(1:599)|440|(0)|534|(0)|592|587|445|(0)(0)|497|(0)))|405|406|407)|626|627)|209|(1:(38:354|(2:365|(4:367|(2:370|368)|371|372)(2:373|(1:375)(2:376|(1:378)(1:379))))(3:358|(1:360)(2:362|(1:364))|361)|215|(1:217)|218|(1:220)|221|(2:223|(1:225)(1:345))(2:346|(1:348)(1:349))|(1:227)(1:344)|228|(4:230|(2:233|231)|234|235)(1:343)|236|(1:238)|239|240|241|(1:243)|(1:247)|248|(1:250)|(1:338)(4:256|(5:259|(2:260|(1:336)(2:262|(2:265|266)(1:264)))|267|(1:270)(1:269)|257)|337|271)|(1:273)|274|(2:(1:279)|(1:286))|287|(1:335)(1:293)|294|(1:296)|(1:298)|299|(3:304|(4:306|(3:308|(4:310|(1:312)|313|314)(2:316|317)|315)|318|319)|320)|321|(1:334)(2:324|(1:328))|329|(1:331)|332|333|57)(1:353))(1:213)|214|215|(0)|218|(0)|221|(0)(0)|(0)(0)|228|(0)(0)|236|(0)|239|240|241|(0)|(2:245|247)|248|(0)|(1:252)|338|(0)|274|(3:276|(0)|(2:281|286))|287|(1:289)|335|294|(0)|(0)|299|(4:301|304|(0)|320)|321|(0)|334|329|(0)|332|333|57)|635|163|(1:165)|631|168|(0)|630|172|173|(1:175)|629|180|(1:183)|628|188|(0)(0)|209|(1:211)|(1:351)|354|(1:356)|365|(0)(0)|215|(0)|218|(0)|221|(0)(0)|(0)(0)|228|(0)(0)|236|(0)|239|240|241|(0)|(0)|248|(0)|(0)|338|(0)|274|(0)|287|(0)|335|294|(0)|(0)|299|(0)|321|(0)|334|329|(0)|332|333|57)))|642|635|163|(0)|631|168|(0)|630|172|173|(0)|629|180|(0)|628|188|(0)(0)|209|(0)|(0)|354|(0)|365|(0)(0)|215|(0)|218|(0)|221|(0)(0)|(0)(0)|228|(0)(0)|236|(0)|239|240|241|(0)|(0)|248|(0)|(0)|338|(0)|274|(0)|287|(0)|335|294|(0)|(0)|299|(0)|321|(0)|334|329|(0)|332|333|57))|676)(5:681|(4:(1:794)(1:690)|691|(98:693|(2:695|(1:697)(3:744|(1:746)|747))(3:748|(1:758)(2:752|(96:756|699|(1:701)(2:733|(1:735)(2:736|(1:738)(2:739|(1:741)(93:742|743|703|(1:732)(2:708|(89:718|719|(1:721)(1:722)|(3:97|99|101)|(0)(0)|(0)(0)|(0)(0)|124|(0)|647|649|651|653|655|(0)(0)|658|129|(0)|132|(0)(0)|135|(1:137)|643|644|140|141|(3:144|(0)|(0))|642|635|163|(0)|631|168|(0)|630|172|173|(0)|629|180|(0)|628|188|(0)(0)|209|(0)|(0)|354|(0)|365|(0)(0)|215|(0)|218|(0)|221|(0)(0)|(0)(0)|228|(0)(0)|236|(0)|239|240|241|(0)|(0)|248|(0)|(0)|338|(0)|274|(0)|287|(0)|335|294|(0)|(0)|299|(0)|321|(0)|334|329|(0)|332|333))|723|719|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|647|649|651|653|655|(0)(0)|658|129|(0)|132|(0)(0)|135|(0)|643|644|140|141|(0)|642|635|163|(0)|631|168|(0)|630|172|173|(0)|629|180|(0)|628|188|(0)(0)|209|(0)|(0)|354|(0)|365|(0)(0)|215|(0)|218|(0)|221|(0)(0)|(0)(0)|228|(0)(0)|236|(0)|239|240|241|(0)|(0)|248|(0)|(0)|338|(0)|274|(0)|287|(0)|335|294|(0)|(0)|299|(0)|321|(0)|334|329|(0)|332|333))))|702|703|(0)|732|723|719|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|647|649|651|653|655|(0)(0)|658|129|(0)|132|(0)(0)|135|(0)|643|644|140|141|(0)|642|635|163|(0)|631|168|(0)|630|172|173|(0)|629|180|(0)|628|188|(0)(0)|209|(0)|(0)|354|(0)|365|(0)(0)|215|(0)|218|(0)|221|(0)(0)|(0)(0)|228|(0)(0)|236|(0)|239|240|241|(0)|(0)|248|(0)|(0)|338|(0)|274|(0)|287|(0)|335|294|(0)|(0)|299|(0)|321|(0)|334|329|(0)|332|333))|757)|698|699|(0)(0)|702|703|(0)|732|723|719|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|647|649|651|653|655|(0)(0)|658|129|(0)|132|(0)(0)|135|(0)|643|644|140|141|(0)|642|635|163|(0)|631|168|(0)|630|172|173|(0)|629|180|(0)|628|188|(0)(0)|209|(0)|(0)|354|(0)|365|(0)(0)|215|(0)|218|(0)|221|(0)(0)|(0)(0)|228|(0)(0)|236|(0)|239|240|241|(0)|(0)|248|(0)|(0)|338|(0)|274|(0)|287|(0)|335|294|(0)|(0)|299|(0)|321|(0)|334|329|(0)|332|333)(95:759|(2:761|(1:763)(3:765|(1:767)|747))(9:768|(1:793)(1:772)|773|(1:792)(2:777|(1:779))|791|781|(2:783|(2:785|(1:787)(94:788|743|703|(0)|732|723|719|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|647|649|651|653|655|(0)(0)|658|129|(0)|132|(0)(0)|135|(0)|643|644|140|141|(0)|642|635|163|(0)|631|168|(0)|630|172|173|(0)|629|180|(0)|628|188|(0)(0)|209|(0)|(0)|354|(0)|365|(0)(0)|215|(0)|218|(0)|221|(0)(0)|(0)(0)|228|(0)(0)|236|(0)|239|240|241|(0)|(0)|248|(0)|(0)|338|(0)|274|(0)|287|(0)|335|294|(0)|(0)|299|(0)|321|(0)|334|329|(0)|332|333)))(1:790)|789|(0)(0))|764|703|(0)|732|723|719|(0)(0)|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|647|649|651|653|655|(0)(0)|658|129|(0)|132|(0)(0)|135|(0)|643|644|140|141|(0)|642|635|163|(0)|631|168|(0)|630|172|173|(0)|629|180|(0)|628|188|(0)(0)|209|(0)|(0)|354|(0)|365|(0)(0)|215|(0)|218|(0)|221|(0)(0)|(0)(0)|228|(0)(0)|236|(0)|239|240|241|(0)|(0)|248|(0)|(0)|338|(0)|274|(0)|287|(0)|335|294|(0)|(0)|299|(0)|321|(0)|334|329|(0)|332|333)|57)(3:795|(3:797|(2:799|(1:801))(2:803|(2:805|(1:807)))|802)(1:809)|808)|55|56|57)|677|95|(0)|(0)(0)|(0)(0)|(0)(0)|124|(0)|647|649|651|653|655|(0)(0)|658|129|(0)|132|(0)(0)|135|(0)|643|644|140|141|(0)|642|635|163|(0)|631|168|(0)|630|172|173|(0)|629|180|(0)|628|188|(0)(0)|209|(0)|(0)|354|(0)|365|(0)(0)|215|(0)|218|(0)|221|(0)(0)|(0)(0)|228|(0)(0)|236|(0)|239|240|241|(0)|(0)|248|(0)|(0)|338|(0)|274|(0)|287|(0)|335|294|(0)|(0)|299|(0)|321|(0)|334|329|(0)|332|333|57) */
+    /* JADX WARN: Code restructure failed: missing block: B:340:0x13bb, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:337:0x13d1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:342:0x13d9, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:772:0x0547, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:780:0x0547, code lost:
     
         if (r2.local_id != 0) goto L181;
      */
@@ -9326,66 +9326,69 @@ public class NotificationsController extends BaseController {
     /* JADX WARN: Removed duplicated region for block: B:199:0x0ac6 A[LOOP:5: B:197:0x0abe->B:199:0x0ac6, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:203:0x0ae2 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:207:0x0b05  */
-    /* JADX WARN: Removed duplicated region for block: B:211:0x10e0  */
-    /* JADX WARN: Removed duplicated region for block: B:215:0x11cc  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x11ec  */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x1248  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x12ad  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x12f0  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x1355  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x13ae A[Catch: Exception -> 0x13b5, TryCatch #6 {Exception -> 0x13b5, blocks: (B:239:0x1390, B:241:0x13ae, B:242:0x13b7, B:244:0x13bb, B:245:0x13c1), top: B:238:0x1390 }] */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x13bb A[Catch: Exception -> 0x13b5, TryCatch #6 {Exception -> 0x13b5, blocks: (B:239:0x1390, B:241:0x13ae, B:242:0x13b7, B:244:0x13bb, B:245:0x13c1), top: B:238:0x1390 }] */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x13d6  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x13e3  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x1436  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x1477  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x147d  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x1498  */
-    /* JADX WARN: Removed duplicated region for block: B:291:0x14b0  */
-    /* JADX WARN: Removed duplicated region for block: B:293:0x14b6  */
-    /* JADX WARN: Removed duplicated region for block: B:296:0x14c2  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x14cf  */
-    /* JADX WARN: Removed duplicated region for block: B:318:0x1556 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:326:0x1587  */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x131d  */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x12d1  */
-    /* JADX WARN: Removed duplicated region for block: B:341:0x1285  */
-    /* JADX WARN: Removed duplicated region for block: B:345:0x10f7  */
-    /* JADX WARN: Removed duplicated region for block: B:372:0x0b1c  */
-    /* JADX WARN: Removed duplicated region for block: B:392:0x0b2c  */
-    /* JADX WARN: Removed duplicated region for block: B:434:0x0d25  */
-    /* JADX WARN: Removed duplicated region for block: B:439:0x0e35  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x10de  */
+    /* JADX WARN: Removed duplicated region for block: B:217:0x11d2  */
+    /* JADX WARN: Removed duplicated region for block: B:220:0x11f2  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x124e  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x12b3  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x12f6  */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x135b  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x13b4 A[Catch: Exception -> 0x13bb, TryCatch #3 {Exception -> 0x13bb, blocks: (B:241:0x1396, B:243:0x13b4, B:245:0x13bf, B:247:0x13c3, B:248:0x13c9), top: B:240:0x1396 }] */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x13bf A[Catch: Exception -> 0x13bb, TryCatch #3 {Exception -> 0x13bb, blocks: (B:241:0x1396, B:243:0x13b4, B:245:0x13bf, B:247:0x13c3, B:248:0x13c9), top: B:240:0x1396 }] */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x13de  */
+    /* JADX WARN: Removed duplicated region for block: B:252:0x13e9  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x1440  */
+    /* JADX WARN: Removed duplicated region for block: B:276:0x1481  */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x1487  */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x14a4  */
+    /* JADX WARN: Removed duplicated region for block: B:296:0x14bc  */
+    /* JADX WARN: Removed duplicated region for block: B:298:0x14c2  */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x14ce  */
+    /* JADX WARN: Removed duplicated region for block: B:306:0x14db  */
+    /* JADX WARN: Removed duplicated region for block: B:323:0x1562 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:331:0x1593  */
+    /* JADX WARN: Removed duplicated region for block: B:343:0x1323  */
+    /* JADX WARN: Removed duplicated region for block: B:344:0x12d7  */
+    /* JADX WARN: Removed duplicated region for block: B:346:0x128b  */
+    /* JADX WARN: Removed duplicated region for block: B:351:0x10fb  */
+    /* JADX WARN: Removed duplicated region for block: B:356:0x1111  */
+    /* JADX WARN: Removed duplicated region for block: B:367:0x1154  */
+    /* JADX WARN: Removed duplicated region for block: B:373:0x118a  */
+    /* JADX WARN: Removed duplicated region for block: B:380:0x0b1c  */
+    /* JADX WARN: Removed duplicated region for block: B:400:0x0b2c  */
+    /* JADX WARN: Removed duplicated region for block: B:442:0x0d25  */
+    /* JADX WARN: Removed duplicated region for block: B:447:0x0e35  */
     /* JADX WARN: Removed duplicated region for block: B:45:0x01bb  */
-    /* JADX WARN: Removed duplicated region for block: B:461:0x0f29  */
-    /* JADX WARN: Removed duplicated region for block: B:465:0x0f60  */
-    /* JADX WARN: Removed duplicated region for block: B:469:0x0fb8  */
-    /* JADX WARN: Removed duplicated region for block: B:480:0x100b  */
+    /* JADX WARN: Removed duplicated region for block: B:469:0x0f29  */
+    /* JADX WARN: Removed duplicated region for block: B:473:0x0f60  */
+    /* JADX WARN: Removed duplicated region for block: B:477:0x0fb8  */
+    /* JADX WARN: Removed duplicated region for block: B:488:0x100b  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x01f5  */
-    /* JADX WARN: Removed duplicated region for block: B:491:0x1065  */
-    /* JADX WARN: Removed duplicated region for block: B:495:0x0fe8  */
-    /* JADX WARN: Removed duplicated region for block: B:498:0x0f36 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:510:0x0f2d  */
-    /* JADX WARN: Removed duplicated region for block: B:525:0x1050  */
-    /* JADX WARN: Removed duplicated region for block: B:528:0x0d46  */
-    /* JADX WARN: Removed duplicated region for block: B:637:0x084a  */
-    /* JADX WARN: Removed duplicated region for block: B:649:0x07ec  */
-    /* JADX WARN: Removed duplicated region for block: B:651:0x07fe  */
-    /* JADX WARN: Removed duplicated region for block: B:652:0x076b  */
-    /* JADX WARN: Removed duplicated region for block: B:665:0x073b  */
-    /* JADX WARN: Removed duplicated region for block: B:667:0x06dd  */
-    /* JADX WARN: Removed duplicated region for block: B:693:0x048e  */
-    /* JADX WARN: Removed duplicated region for block: B:697:0x05a1 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:713:0x0604  */
-    /* JADX WARN: Removed duplicated region for block: B:714:0x0609  */
-    /* JADX WARN: Removed duplicated region for block: B:725:0x04a4  */
-    /* JADX WARN: Removed duplicated region for block: B:779:0x058c  */
-    /* JADX WARN: Removed duplicated region for block: B:780:0x0594  */
-    /* JADX WARN: Removed duplicated region for block: B:810:0x1639  */
-    /* JADX WARN: Removed duplicated region for block: B:819:0x16b7  */
-    /* JADX WARN: Removed duplicated region for block: B:831:0x171e  */
-    /* JADX WARN: Removed duplicated region for block: B:854:0x1684  */
-    /* JADX WARN: Removed duplicated region for block: B:860:0x0212 A[EDGE_INSN: B:860:0x0212->B:808:0x0212 BREAK  A[LOOP:2: B:47:0x01f3->B:57:0x160f], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:861:0x01bd  */
+    /* JADX WARN: Removed duplicated region for block: B:499:0x1065  */
+    /* JADX WARN: Removed duplicated region for block: B:503:0x0fe8  */
+    /* JADX WARN: Removed duplicated region for block: B:506:0x0f36 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:518:0x0f2d  */
+    /* JADX WARN: Removed duplicated region for block: B:533:0x1050  */
+    /* JADX WARN: Removed duplicated region for block: B:536:0x0d46  */
+    /* JADX WARN: Removed duplicated region for block: B:645:0x084a  */
+    /* JADX WARN: Removed duplicated region for block: B:657:0x07ec  */
+    /* JADX WARN: Removed duplicated region for block: B:659:0x07fe  */
+    /* JADX WARN: Removed duplicated region for block: B:660:0x076b  */
+    /* JADX WARN: Removed duplicated region for block: B:673:0x073b  */
+    /* JADX WARN: Removed duplicated region for block: B:675:0x06dd  */
+    /* JADX WARN: Removed duplicated region for block: B:701:0x048e  */
+    /* JADX WARN: Removed duplicated region for block: B:705:0x05a1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:721:0x0604  */
+    /* JADX WARN: Removed duplicated region for block: B:722:0x0609  */
+    /* JADX WARN: Removed duplicated region for block: B:733:0x04a4  */
+    /* JADX WARN: Removed duplicated region for block: B:787:0x058c  */
+    /* JADX WARN: Removed duplicated region for block: B:788:0x0594  */
+    /* JADX WARN: Removed duplicated region for block: B:818:0x1645  */
+    /* JADX WARN: Removed duplicated region for block: B:827:0x16c3  */
+    /* JADX WARN: Removed duplicated region for block: B:839:0x172a  */
+    /* JADX WARN: Removed duplicated region for block: B:862:0x1690  */
+    /* JADX WARN: Removed duplicated region for block: B:868:0x0212 A[EDGE_INSN: B:868:0x0212->B:816:0x0212 BREAK  A[LOOP:2: B:47:0x01f3->B:57:0x161b], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:869:0x01bd  */
     /* JADX WARN: Removed duplicated region for block: B:97:0x06a9  */
     /* JADX WARN: Type inference failed for: r9v41 */
     /* JADX WARN: Type inference failed for: r9v42, types: [boolean, int] */
@@ -9542,9 +9545,9 @@ public class NotificationsController extends BaseController {
         final Uri uriForFile;
         Bitmap createScaledBitmap;
         Canvas canvas;
-        MessageObject messageObject4;
         String str34;
         String str35;
+        MessageObject messageObject4;
         DialogKey dialogKey5;
         Bitmap bitmap4;
         ArrayList<TLRPC.TL_keyboardButtonRow> arrayList8;
@@ -9561,7 +9564,6 @@ public class NotificationsController extends BaseController {
         ArrayList<StoryNotification> arrayList9;
         long j17;
         NotificationCompat.Builder category;
-        TLRPC.Message message;
         TLRPC.TL_keyboardButtonCopy tL_keyboardButtonCopy;
         long j18;
         TLRPC.User user7;
@@ -9571,7 +9573,9 @@ public class NotificationsController extends BaseController {
         int i16;
         ArrayList<TLRPC.TL_keyboardButtonRow> arrayList10;
         String str37;
+        TLRPC.Message message;
         TLRPC.ReplyMarkup replyMarkup2;
+        Intent intent;
         LongSparseArray longSparseArray11;
         int i17;
         TLRPC.User user8;
@@ -9857,15 +9861,15 @@ public class NotificationsController extends BaseController {
                                 File file4 = file;
                                 if ((z12 || z11) && z10 && !SharedConfig.isWaitingForPasscodeEnter && j6 != j4 && !UserObject.isReplyUser(j4) && MessagesController.getInstance(notificationsController3.currentAccount).getSendPaidMessagesStars(j4) <= 0) {
                                     bitmap2 = bitmap;
-                                    Intent intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                    intent.putExtra("dialog_id", j4);
+                                    Intent intent2 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                    intent2.putExtra("dialog_id", j4);
                                     int i29 = id;
-                                    intent.putExtra("max_id", i29);
-                                    intent.putExtra("topic_id", j7);
-                                    intent.putExtra("currentAccount", notificationsController3.currentAccount);
+                                    intent2.putExtra("max_id", i29);
+                                    intent2.putExtra("topic_id", j7);
+                                    intent2.putExtra("currentAccount", notificationsController3.currentAccount);
                                     dialogKey2 = dialogKey;
                                     chat5 = chat4;
-                                    PendingIntent broadcast = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160);
+                                    PendingIntent broadcast = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent2, 167772160);
                                     RemoteInput build3 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                     if (!DialogObject.isChatDialog(j4)) {
                                         str19 = "max_id";
@@ -9941,19 +9945,24 @@ public class NotificationsController extends BaseController {
                                                 boolean[] zArr2 = new boolean[1];
                                                 if (!dialogKey3.story) {
                                                 }
-                                                Intent intent2 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                                intent2.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                                intent2.setFlags(67108864);
-                                                intent2.addCategory("android.intent.category.LAUNCHER");
-                                                if (!messageObject3.isOauthPush) {
+                                                Intent intent3 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                intent3.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                intent3.setFlags(67108864);
+                                                intent3.addCategory("android.intent.category.LAUNCHER");
+                                                if (messageObject3 == null) {
                                                 }
-                                                bitmap4 = bitmap3;
-                                                messageObject4 = messageObject3;
-                                                longSparseArray9 = longSparseArray7;
+                                                if (messageObject3 == null) {
+                                                }
+                                                String str40 = str5;
+                                                if (messageObject3 == null) {
+                                                }
+                                                LongSparseArray longSparseArray14 = longSparseArray7;
                                                 str34 = str6;
                                                 str35 = str7;
+                                                messageObject4 = messageObject3;
                                                 dialogKey5 = dialogKey4;
-                                                arrayList8 = arrayList7;
+                                                if (!dialogKey5.story) {
+                                                }
                                                 StringBuilder sb6 = new StringBuilder();
                                                 sb6.append("show extra notifications chatId ");
                                                 sb6.append(j11);
@@ -9963,24 +9972,24 @@ public class NotificationsController extends BaseController {
                                                 FileLog.d(sb6.toString());
                                                 if (j15 != 0) {
                                                 }
-                                                String str40 = str39;
-                                                intent2.putExtra(str40, notificationsController3.currentAccount);
-                                                PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2, 1140850688);
+                                                String str41 = str39;
+                                                intent3.putExtra(str41, notificationsController3.currentAccount);
+                                                PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent3, 1140850688);
                                                 NotificationCompat.WearableExtender wearableExtender = new NotificationCompat.WearableExtender();
                                                 NotificationCompat.Action action4 = action;
                                                 if (action != null) {
                                                 }
-                                                String str41 = str22;
-                                                Intent intent3 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                intent3.addFlags(32);
-                                                intent3.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                intent3.putExtra(str20, j11);
+                                                String str42 = str22;
+                                                Intent intent4 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                intent4.addFlags(32);
+                                                intent4.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                intent4.putExtra(str20, j11);
                                                 int i30 = i9;
-                                                intent3.putExtra(str19, i30);
-                                                intent3.putExtra(str40, notificationsController3.currentAccount);
-                                                String str42 = str34;
-                                                String str43 = str35;
-                                                NotificationCompat.Action build4 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent3, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                intent4.putExtra(str19, i30);
+                                                intent4.putExtra(str41, notificationsController3.currentAccount);
+                                                String str43 = str34;
+                                                String str44 = str35;
+                                                NotificationCompat.Action build4 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                 if (DialogObject.isEncryptedDialog(j11)) {
                                                 }
                                                 if (str36 != null) {
@@ -9997,19 +10006,18 @@ public class NotificationsController extends BaseController {
                                                 if (dialogKey5.story) {
                                                 }
                                                 category = autoCancel.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity).extend(wearableExtender).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                                Intent intent4 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                intent4.putExtra("messageDate", i7);
-                                                intent4.putExtra("dialogId", j11);
-                                                intent4.putExtra(str40, notificationsController3.currentAccount);
+                                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                intent.putExtra("messageDate", i7);
+                                                intent.putExtra("dialogId", j11);
+                                                intent.putExtra(str41, notificationsController3.currentAccount);
                                                 if (dialogKey5.story) {
                                                 }
-                                                if (messageObject5.isStoryReactionPush) {
+                                                if (messageObject5 != null) {
                                                 }
-                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4, 167772160));
+                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                                 if (z7) {
                                                 }
-                                                message = messageObject5.messageOwner;
-                                                if (message != null) {
+                                                if (messageObject5 != null) {
                                                 }
                                                 tL_keyboardButtonCopy = null;
                                                 if (tL_keyboardButtonCopy != null) {
@@ -10041,11 +10049,11 @@ public class NotificationsController extends BaseController {
                                                 longSparseArray6 = longSparseArray9;
                                                 str12 = str5;
                                                 i14 = i24;
-                                                str11 = str41;
+                                                str11 = str42;
                                                 notification2 = notification3;
-                                                str14 = str43;
+                                                str14 = str44;
                                                 sharedPreferences = sharedPreferences2;
-                                                str13 = str42;
+                                                str13 = str43;
                                                 arrayList5 = arrayList14;
                                                 arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                 notificationsController2 = this;
@@ -10099,19 +10107,24 @@ public class NotificationsController extends BaseController {
                                                     boolean[] zArr22 = new boolean[1];
                                                     if (!dialogKey3.story) {
                                                     }
-                                                    Intent intent22 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                                    intent22.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                                    intent22.setFlags(67108864);
-                                                    intent22.addCategory("android.intent.category.LAUNCHER");
-                                                    if (!messageObject3.isOauthPush) {
+                                                    Intent intent32 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                    intent32.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                    intent32.setFlags(67108864);
+                                                    intent32.addCategory("android.intent.category.LAUNCHER");
+                                                    if (messageObject3 == null) {
                                                     }
-                                                    bitmap4 = bitmap3;
-                                                    messageObject4 = messageObject3;
-                                                    longSparseArray9 = longSparseArray7;
+                                                    if (messageObject3 == null) {
+                                                    }
+                                                    String str402 = str5;
+                                                    if (messageObject3 == null) {
+                                                    }
+                                                    LongSparseArray longSparseArray142 = longSparseArray7;
                                                     str34 = str6;
                                                     str35 = str7;
+                                                    messageObject4 = messageObject3;
                                                     dialogKey5 = dialogKey4;
-                                                    arrayList8 = arrayList7;
+                                                    if (!dialogKey5.story) {
+                                                    }
                                                     StringBuilder sb62 = new StringBuilder();
                                                     sb62.append("show extra notifications chatId ");
                                                     sb62.append(j11);
@@ -10121,24 +10134,24 @@ public class NotificationsController extends BaseController {
                                                     FileLog.d(sb62.toString());
                                                     if (j15 != 0) {
                                                     }
-                                                    String str402 = str392;
-                                                    intent22.putExtra(str402, notificationsController3.currentAccount);
-                                                    PendingIntent activity2 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent22, 1140850688);
+                                                    String str412 = str392;
+                                                    intent32.putExtra(str412, notificationsController3.currentAccount);
+                                                    PendingIntent activity2 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent32, 1140850688);
                                                     NotificationCompat.WearableExtender wearableExtender2 = new NotificationCompat.WearableExtender();
                                                     NotificationCompat.Action action42 = action;
                                                     if (action != null) {
                                                     }
-                                                    String str412 = str22;
-                                                    Intent intent32 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                    intent32.addFlags(32);
-                                                    intent32.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                    intent32.putExtra(str20, j11);
+                                                    String str422 = str22;
+                                                    Intent intent42 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                    intent42.addFlags(32);
+                                                    intent42.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                    intent42.putExtra(str20, j11);
                                                     int i302 = i9;
-                                                    intent32.putExtra(str19, i302);
-                                                    intent32.putExtra(str402, notificationsController3.currentAccount);
-                                                    String str422 = str34;
-                                                    String str432 = str35;
-                                                    NotificationCompat.Action build42 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent32, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                    intent42.putExtra(str19, i302);
+                                                    intent42.putExtra(str412, notificationsController3.currentAccount);
+                                                    String str432 = str34;
+                                                    String str442 = str35;
+                                                    NotificationCompat.Action build42 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                     if (DialogObject.isEncryptedDialog(j11)) {
                                                     }
                                                     if (str36 != null) {
@@ -10155,19 +10168,18 @@ public class NotificationsController extends BaseController {
                                                     if (dialogKey5.story) {
                                                     }
                                                     category = autoCancel2.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity2).extend(wearableExtender2).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                                    Intent intent42 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                    intent42.putExtra("messageDate", i7);
-                                                    intent42.putExtra("dialogId", j11);
-                                                    intent42.putExtra(str402, notificationsController3.currentAccount);
+                                                    intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                    intent.putExtra("messageDate", i7);
+                                                    intent.putExtra("dialogId", j11);
+                                                    intent.putExtra(str412, notificationsController3.currentAccount);
                                                     if (dialogKey5.story) {
                                                     }
-                                                    if (messageObject5.isStoryReactionPush) {
+                                                    if (messageObject5 != null) {
                                                     }
-                                                    category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42, 167772160));
+                                                    category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                                     if (z7) {
                                                     }
-                                                    message = messageObject5.messageOwner;
-                                                    if (message != null) {
+                                                    if (messageObject5 != null) {
                                                     }
                                                     tL_keyboardButtonCopy = null;
                                                     if (tL_keyboardButtonCopy != null) {
@@ -10199,11 +10211,11 @@ public class NotificationsController extends BaseController {
                                                     longSparseArray6 = longSparseArray9;
                                                     str12 = str5;
                                                     i14 = i24;
-                                                    str11 = str412;
+                                                    str11 = str422;
                                                     notification2 = notification32;
-                                                    str14 = str432;
+                                                    str14 = str442;
                                                     sharedPreferences = sharedPreferences2;
-                                                    str13 = str422;
+                                                    str13 = str432;
                                                     arrayList5 = arrayList14;
                                                     arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                     notificationsController2 = this;
@@ -10377,9 +10389,9 @@ public class NotificationsController extends BaseController {
                                                     }
                                                     str23 = str3;
                                                 } else {
-                                                    LongSparseArray longSparseArray14 = longSparseArray;
+                                                    LongSparseArray longSparseArray15 = longSparseArray;
                                                     j10 = j9;
-                                                    String str44 = str8;
+                                                    String str45 = str8;
                                                     j11 = j23;
                                                     dialogKey4 = dialogKey3;
                                                     int size4 = arrayList4.size() - 1;
@@ -10392,7 +10404,7 @@ public class NotificationsController extends BaseController {
                                                         NotificationCompat.MessagingStyle messagingStyle3 = messagingStyle2;
                                                         long topicId2 = MessageObject.getTopicId(notificationsController3.currentAccount, messageObject7.messageOwner, getMessagesController().isForum(messageObject7));
                                                         if (j7 != topicId2) {
-                                                            FileLog.d(str44 + j11 + "] continue; topic id is not equal: topicId=" + j7 + " messageTopicId=" + topicId2 + "; selfId=" + getUserConfig().getClientUserId());
+                                                            FileLog.d(str45 + j11 + "] continue; topic id is not equal: topicId=" + j7 + " messageTopicId=" + topicId2 + "; selfId=" + getUserConfig().getClientUserId());
                                                             zArr = zArr222;
                                                             j14 = j7;
                                                             sb2 = sb522;
@@ -10400,10 +10412,10 @@ public class NotificationsController extends BaseController {
                                                             strArr = strArr222;
                                                             str29 = str18;
                                                             str32 = str4;
-                                                            longSparseArray8 = longSparseArray14;
+                                                            longSparseArray8 = longSparseArray15;
                                                             messagingStyle2 = messagingStyle3;
                                                             str31 = str3;
-                                                            str27 = str44;
+                                                            str27 = str45;
                                                             str33 = str3822;
                                                         } else {
                                                             String shortStringForMessage = notificationsController3.getShortStringForMessage(messageObject7, strArr222, zArr222);
@@ -10434,10 +10446,10 @@ public class NotificationsController extends BaseController {
                                                                 strArr = strArr222;
                                                                 str29 = str18;
                                                                 str32 = str4;
-                                                                longSparseArray8 = longSparseArray14;
+                                                                longSparseArray8 = longSparseArray15;
                                                                 messagingStyle2 = messagingStyle3;
                                                                 str31 = str3;
-                                                                str27 = str44;
+                                                                str27 = str45;
                                                                 str33 = str25;
                                                             } else {
                                                                 if (sb522.length() > 0) {
@@ -10448,15 +10460,15 @@ public class NotificationsController extends BaseController {
                                                                     String format2 = String.format(str26, LocaleController.getString(R.string.NotificationMessageScheduledName), shortStringForMessage);
                                                                     sb522.append(format2);
                                                                     str28 = format2;
-                                                                    str27 = str44;
+                                                                    str27 = str45;
                                                                 } else {
                                                                     str26 = str3;
-                                                                    String str45 = strArr222[0];
-                                                                    if (str45 != null) {
-                                                                        str27 = str44;
-                                                                        sb522.append(String.format(str26, str45, shortStringForMessage));
+                                                                    String str46 = strArr222[0];
+                                                                    if (str46 != null) {
+                                                                        str27 = str45;
+                                                                        sb522.append(String.format(str26, str46, shortStringForMessage));
                                                                     } else {
-                                                                        str27 = str44;
+                                                                        str27 = str45;
                                                                         sb522.append(shortStringForMessage);
                                                                     }
                                                                     str28 = shortStringForMessage;
@@ -10475,24 +10487,24 @@ public class NotificationsController extends BaseController {
                                                                 }
                                                                 sb2 = sb522;
                                                                 str29 = str18;
-                                                                longSparseArray8 = longSparseArray14;
+                                                                longSparseArray8 = longSparseArray15;
                                                                 Person person2 = (Person) longSparseArray8.get(j13 + (j7 << 16));
-                                                                String str46 = strArr222[0];
-                                                                if (str46 == null) {
+                                                                String str47 = strArr222[0];
+                                                                if (str47 == null) {
                                                                     if (z6) {
                                                                         if (!DialogObject.isChatDialog(j11)) {
                                                                             strArr = strArr222;
                                                                             if (Build.VERSION.SDK_INT > 27) {
-                                                                                str46 = LocaleController.getString(R.string.NotificationHiddenName);
+                                                                                str47 = LocaleController.getString(R.string.NotificationHiddenName);
                                                                             }
                                                                         } else if (z12) {
                                                                             strArr = strArr222;
                                                                             if (Build.VERSION.SDK_INT > 27) {
-                                                                                str46 = LocaleController.getString(R.string.NotificationHiddenChatName);
+                                                                                str47 = LocaleController.getString(R.string.NotificationHiddenChatName);
                                                                             }
                                                                         } else {
                                                                             strArr = strArr222;
-                                                                            str46 = LocaleController.getString(R.string.NotificationHiddenChatUserName);
+                                                                            str47 = LocaleController.getString(R.string.NotificationHiddenChatUserName);
                                                                         }
                                                                         if (person2 == null && TextUtils.equals(person2.getName(), str30)) {
                                                                             str31 = str26;
@@ -10580,7 +10592,7 @@ public class NotificationsController extends BaseController {
                                                                                             e = e2;
                                                                                             FileLog.e(e);
                                                                                             NotificationCompat.MessagingStyle.Message message2 = new NotificationCompat.MessagingStyle.Message(str28, messageObject7.messageOwner.date * 1000, person2);
-                                                                                            String str47 = !messageObject7.isSticker() ? "image/webp" : "image/jpeg";
+                                                                                            String str48 = !messageObject7.isSticker() ? "image/webp" : "image/jpeg";
                                                                                             if (!pathToMessage.exists()) {
                                                                                             }
                                                                                         }
@@ -10589,7 +10601,7 @@ public class NotificationsController extends BaseController {
                                                                                     file3 = null;
                                                                                 }
                                                                                 NotificationCompat.MessagingStyle.Message message22 = new NotificationCompat.MessagingStyle.Message(str28, messageObject7.messageOwner.date * 1000, person2);
-                                                                                String str472 = !messageObject7.isSticker() ? "image/webp" : "image/jpeg";
+                                                                                String str482 = !messageObject7.isSticker() ? "image/webp" : "image/jpeg";
                                                                                 if (!pathToMessage.exists()) {
                                                                                     try {
                                                                                         context = ApplicationLoader.applicationContext;
@@ -10613,7 +10625,7 @@ public class NotificationsController extends BaseController {
                                                                                         }
                                                                                     }
                                                                                     if (uriForFile == null) {
-                                                                                        message22.setData(str472, uriForFile);
+                                                                                        message22.setData(str482, uriForFile);
                                                                                         messagingStyle2 = messagingStyle3;
                                                                                         messagingStyle2.addMessage(message22);
                                                                                         ApplicationLoader.applicationContext.grantUriPermission("com.android.systemui", uriForFile, 1);
@@ -10683,7 +10695,7 @@ public class NotificationsController extends BaseController {
                                                                             size4 = i34 - 1;
                                                                             str3822 = str33;
                                                                             str4 = str32;
-                                                                            str44 = str27;
+                                                                            str45 = str27;
                                                                             str3 = str31;
                                                                             zArr222 = zArr;
                                                                             strArr222 = strArr;
@@ -10691,7 +10703,7 @@ public class NotificationsController extends BaseController {
                                                                             z12 = z13;
                                                                             j7 = j14;
                                                                             i4 = -1;
-                                                                            longSparseArray14 = longSparseArray8;
+                                                                            longSparseArray15 = longSparseArray8;
                                                                             str18 = str29;
                                                                         }
                                                                     } else {
@@ -10716,7 +10728,7 @@ public class NotificationsController extends BaseController {
                                                                         size4 = i34 - 1;
                                                                         str3822 = str33;
                                                                         str4 = str32;
-                                                                        str44 = str27;
+                                                                        str45 = str27;
                                                                         str3 = str31;
                                                                         zArr222 = zArr;
                                                                         strArr222 = strArr;
@@ -10724,13 +10736,13 @@ public class NotificationsController extends BaseController {
                                                                         z12 = z13;
                                                                         j7 = j14;
                                                                         i4 = -1;
-                                                                        longSparseArray14 = longSparseArray8;
+                                                                        longSparseArray15 = longSparseArray8;
                                                                         str18 = str29;
                                                                     }
                                                                 } else {
                                                                     strArr = strArr222;
                                                                 }
-                                                                str30 = str46;
+                                                                str30 = str47;
                                                                 if (person2 == null) {
                                                                 }
                                                                 Person.Builder name322 = new Person.Builder().setName(str30);
@@ -10751,7 +10763,7 @@ public class NotificationsController extends BaseController {
                                                         size4 = i34 - 1;
                                                         str3822 = str33;
                                                         str4 = str32;
-                                                        str44 = str27;
+                                                        str45 = str27;
                                                         str3 = str31;
                                                         zArr222 = zArr;
                                                         strArr222 = strArr;
@@ -10759,35 +10771,35 @@ public class NotificationsController extends BaseController {
                                                         z12 = z13;
                                                         j7 = j14;
                                                         i4 = -1;
-                                                        longSparseArray14 = longSparseArray8;
+                                                        longSparseArray15 = longSparseArray8;
                                                         str18 = str29;
                                                     }
                                                     j12 = j7;
                                                     sb = sb522;
-                                                    String str48 = str18;
+                                                    String str49 = str18;
                                                     str22 = str4;
-                                                    longSparseArray7 = longSparseArray14;
+                                                    longSparseArray7 = longSparseArray15;
                                                     str23 = str3;
                                                     arrayList7 = arrayList19;
                                                     bitmap3 = bitmap2;
                                                     i11 = i32;
-                                                    str24 = str48;
+                                                    str24 = str49;
                                                 }
-                                                Intent intent222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                                intent222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                                intent222.setFlags(67108864);
-                                                intent222.addCategory("android.intent.category.LAUNCHER");
-                                                if (!messageObject3.isOauthPush) {
-                                                    intent222.putExtra("oauth_url", messageObject3.localName);
-                                                } else if (messageObject3.isStoryReactionPush) {
-                                                    intent222.putExtra(str5, Math.abs(messageObject3.getId()));
+                                                Intent intent322 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                intent322.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                intent322.setFlags(67108864);
+                                                intent322.addCategory("android.intent.category.LAUNCHER");
+                                                if (messageObject3 == null && messageObject3.isOauthPush) {
+                                                    intent322.putExtra("oauth_url", messageObject3.localName);
+                                                } else if (messageObject3 == null && messageObject3.isStoryReactionPush) {
+                                                    intent322.putExtra(str5, Math.abs(messageObject3.getId()));
                                                 } else {
-                                                    String str49 = str5;
-                                                    if (messageObject3.isLiveStoryPush) {
+                                                    String str4022 = str5;
+                                                    if (messageObject3 == null && messageObject3.isLiveStoryPush) {
                                                         if (j11 < 0) {
                                                             longSparseArray10 = longSparseArray7;
                                                             String str50 = str6;
-                                                            intent222.putExtra(str50, -j11);
+                                                            intent322.putExtra(str50, -j11);
                                                             str34 = str50;
                                                             str35 = str7;
                                                         } else {
@@ -10795,26 +10807,26 @@ public class NotificationsController extends BaseController {
                                                             str34 = str6;
                                                             str35 = str7;
                                                             if (j11 > 0) {
-                                                                intent222.putExtra(str35, j11);
+                                                                intent322.putExtra(str35, j11);
                                                             }
                                                         }
-                                                        intent222.putExtra(str49, Math.abs(messageObject3.getId()));
+                                                        intent322.putExtra(str4022, Math.abs(messageObject3.getId()));
                                                         bitmap4 = bitmap3;
                                                         arrayList8 = arrayList7;
                                                         messageObject4 = messageObject3;
-                                                        str5 = str49;
+                                                        str5 = str4022;
                                                         longSparseArray9 = longSparseArray10;
                                                         dialogKey5 = dialogKey4;
                                                     } else {
-                                                        messageObject4 = messageObject3;
-                                                        LongSparseArray longSparseArray15 = longSparseArray7;
+                                                        LongSparseArray longSparseArray1422 = longSparseArray7;
                                                         str34 = str6;
                                                         str35 = str7;
+                                                        messageObject4 = messageObject3;
                                                         dialogKey5 = dialogKey4;
-                                                        if (dialogKey5.story) {
+                                                        if (!dialogKey5.story) {
                                                             long[] jArr2 = new long[notificationsController3.storyPushMessages.size()];
-                                                            str5 = str49;
-                                                            longSparseArray9 = longSparseArray15;
+                                                            str5 = str4022;
+                                                            longSparseArray9 = longSparseArray1422;
                                                             int i35 = 0;
                                                             while (i35 < notificationsController3.storyPushMessages.size()) {
                                                                 jArr2[i35] = notificationsController3.storyPushMessages.get(i35).dialogId;
@@ -10824,18 +10836,18 @@ public class NotificationsController extends BaseController {
                                                             }
                                                             bitmap4 = bitmap3;
                                                             arrayList8 = arrayList7;
-                                                            intent222.putExtra("storyDialogIds", jArr2);
+                                                            intent322.putExtra("storyDialogIds", jArr2);
                                                         } else {
                                                             bitmap4 = bitmap3;
                                                             arrayList8 = arrayList7;
-                                                            str5 = str49;
-                                                            longSparseArray9 = longSparseArray15;
+                                                            str5 = str4022;
+                                                            longSparseArray9 = longSparseArray1422;
                                                             if (DialogObject.isEncryptedDialog(j11)) {
-                                                                intent222.putExtra("encId", DialogObject.getEncryptedChatId(j11));
+                                                                intent322.putExtra("encId", DialogObject.getEncryptedChatId(j11));
                                                             } else if (DialogObject.isUserDialog(j11)) {
-                                                                intent222.putExtra(str35, j11);
+                                                                intent322.putExtra(str35, j11);
                                                             } else {
-                                                                intent222.putExtra(str34, -j11);
+                                                                intent322.putExtra(str34, -j11);
                                                             }
                                                         }
                                                     }
@@ -10847,27 +10859,27 @@ public class NotificationsController extends BaseController {
                                                     sb622.append(j15);
                                                     FileLog.d(sb622.toString());
                                                     if (j15 != 0) {
-                                                        intent222.putExtra("topicId", j15);
+                                                        intent322.putExtra("topicId", j15);
                                                     }
-                                                    String str4022 = str3922;
-                                                    intent222.putExtra(str4022, notificationsController3.currentAccount);
-                                                    PendingIntent activity22 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent222, 1140850688);
+                                                    String str4122 = str3922;
+                                                    intent322.putExtra(str4122, notificationsController3.currentAccount);
+                                                    PendingIntent activity22 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent322, 1140850688);
                                                     NotificationCompat.WearableExtender wearableExtender22 = new NotificationCompat.WearableExtender();
                                                     NotificationCompat.Action action422 = action;
                                                     if (action != null) {
                                                         wearableExtender22.addAction(action422);
                                                     }
-                                                    String str4122 = str22;
-                                                    Intent intent322 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                    intent322.addFlags(32);
-                                                    intent322.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                    intent322.putExtra(str20, j11);
+                                                    String str4222 = str22;
+                                                    Intent intent422 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                    intent422.addFlags(32);
+                                                    intent422.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                    intent422.putExtra(str20, j11);
                                                     int i3022 = i9;
-                                                    intent322.putExtra(str19, i3022);
-                                                    intent322.putExtra(str4022, notificationsController3.currentAccount);
-                                                    String str4222 = str34;
-                                                    String str4322 = str35;
-                                                    NotificationCompat.Action build422 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent322, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                    intent422.putExtra(str19, i3022);
+                                                    intent422.putExtra(str4122, notificationsController3.currentAccount);
+                                                    String str4322 = str34;
+                                                    String str4422 = str35;
+                                                    NotificationCompat.Action build422 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                     if (DialogObject.isEncryptedDialog(j11)) {
                                                         i12 = i11;
                                                         action2 = action422;
@@ -10926,23 +10938,22 @@ public class NotificationsController extends BaseController {
                                                         arrayList9 = notificationsController3.storyPushMessages;
                                                     }
                                                     category = autoCancel22.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity22).extend(wearableExtender22).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                                    Intent intent422 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                    intent422.putExtra("messageDate", i7);
-                                                    intent422.putExtra("dialogId", j11);
-                                                    intent422.putExtra(str4022, notificationsController3.currentAccount);
+                                                    intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                    intent.putExtra("messageDate", i7);
+                                                    intent.putExtra("dialogId", j11);
+                                                    intent.putExtra(str4122, notificationsController3.currentAccount);
                                                     if (dialogKey5.story) {
-                                                        intent422.putExtra("story", true);
+                                                        intent.putExtra("story", true);
                                                     }
-                                                    if (messageObject5.isStoryReactionPush) {
-                                                        intent422.putExtra("storyReaction", true);
+                                                    if (messageObject5 != null && messageObject5.isStoryReactionPush) {
+                                                        intent.putExtra("storyReaction", true);
                                                     }
-                                                    category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422, 167772160));
+                                                    category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                                     if (z7) {
                                                         category.setGroup(notificationsController3.notificationGroup);
                                                         category.setGroupAlertBehavior(1);
                                                     }
-                                                    message = messageObject5.messageOwner;
-                                                    if (message != null || (replyMarkup2 = message.reply_markup) == null) {
+                                                    if (messageObject5 != null || (message = messageObject5.messageOwner) == null || (replyMarkup2 = message.reply_markup) == null) {
                                                         tL_keyboardButtonCopy = null;
                                                     } else {
                                                         TLRPC.TL_keyboardButtonCopy tL_keyboardButtonCopy2 = null;
@@ -10976,7 +10987,7 @@ public class NotificationsController extends BaseController {
                                                         if (action2 != null) {
                                                             category.addAction(action2);
                                                         }
-                                                        if (!z6 && !dialogKey5.story && !messageObject5.isStoryReactionPush) {
+                                                        if (!z6 && !dialogKey5.story && (messageObject5 == null || !messageObject5.isStoryReactionPush)) {
                                                             category.addAction(action3);
                                                         }
                                                     }
@@ -11003,7 +11014,7 @@ public class NotificationsController extends BaseController {
                                                                     i16 = size3;
                                                                     arrayList10 = arrayList20;
                                                                     Intent intent6 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationCallbackReceiver.class);
-                                                                    intent6.putExtra(str4022, notificationsController3.currentAccount);
+                                                                    intent6.putExtra(str4122, notificationsController3.currentAccount);
                                                                     intent6.putExtra("did", j11);
                                                                     byte[] bArr = keyboardButton.data;
                                                                     if (bArr != null) {
@@ -11013,22 +11024,22 @@ public class NotificationsController extends BaseController {
                                                                     String str51 = keyboardButton.text;
                                                                     Context context2 = ApplicationLoader.applicationContext;
                                                                     int i40 = notificationsController3.lastButtonId;
-                                                                    str37 = str4022;
+                                                                    str37 = str4122;
                                                                     notificationsController3.lastButtonId = i40 + 1;
                                                                     category.addAction(0, str51, PendingIntent.getBroadcast(context2, i40, intent6, 167772160));
                                                                 } else {
                                                                     i16 = size3;
                                                                     arrayList10 = arrayList20;
-                                                                    str37 = str4022;
+                                                                    str37 = str4122;
                                                                 }
                                                                 i39++;
                                                                 size3 = i16;
                                                                 arrayList20 = arrayList10;
-                                                                str4022 = str37;
+                                                                str4122 = str37;
                                                             }
                                                             arrayList8 = arrayList20;
                                                             i15++;
-                                                            str4022 = str4022;
+                                                            str4122 = str4122;
                                                         }
                                                     }
                                                     if (chat5 == null || user6 == null) {
@@ -11054,11 +11065,11 @@ public class NotificationsController extends BaseController {
                                                     longSparseArray6 = longSparseArray9;
                                                     str12 = str5;
                                                     i14 = i24;
-                                                    str11 = str4122;
+                                                    str11 = str4222;
                                                     notification2 = notification322;
-                                                    str14 = str4322;
+                                                    str14 = str4422;
                                                     sharedPreferences = sharedPreferences2;
-                                                    str13 = str4222;
+                                                    str13 = str4322;
                                                     arrayList5 = arrayList14;
                                                     arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                     notificationsController2 = this;
@@ -11099,24 +11110,24 @@ public class NotificationsController extends BaseController {
                                                 FileLog.d(sb6222.toString());
                                                 if (j15 != 0) {
                                                 }
-                                                String str40222 = str3922;
-                                                intent222.putExtra(str40222, notificationsController3.currentAccount);
-                                                PendingIntent activity222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent222, 1140850688);
+                                                String str41222 = str3922;
+                                                intent322.putExtra(str41222, notificationsController3.currentAccount);
+                                                PendingIntent activity222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent322, 1140850688);
                                                 NotificationCompat.WearableExtender wearableExtender222 = new NotificationCompat.WearableExtender();
                                                 NotificationCompat.Action action4222 = action;
                                                 if (action != null) {
                                                 }
-                                                String str41222 = str22;
-                                                Intent intent3222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                intent3222.addFlags(32);
-                                                intent3222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                intent3222.putExtra(str20, j11);
+                                                String str42222 = str22;
+                                                Intent intent4222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                intent4222.addFlags(32);
+                                                intent4222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                intent4222.putExtra(str20, j11);
                                                 int i30222 = i9;
-                                                intent3222.putExtra(str19, i30222);
-                                                intent3222.putExtra(str40222, notificationsController3.currentAccount);
-                                                String str42222 = str34;
-                                                String str43222 = str35;
-                                                NotificationCompat.Action build4222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent3222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                intent4222.putExtra(str19, i30222);
+                                                intent4222.putExtra(str41222, notificationsController3.currentAccount);
+                                                String str43222 = str34;
+                                                String str44222 = str35;
+                                                NotificationCompat.Action build4222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                 if (DialogObject.isEncryptedDialog(j11)) {
                                                 }
                                                 if (str36 != null) {
@@ -11133,19 +11144,19 @@ public class NotificationsController extends BaseController {
                                                 if (dialogKey5.story) {
                                                 }
                                                 category = autoCancel222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity222).extend(wearableExtender222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                                Intent intent4222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                intent4222.putExtra("messageDate", i7);
-                                                intent4222.putExtra("dialogId", j11);
-                                                intent4222.putExtra(str40222, notificationsController3.currentAccount);
+                                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                intent.putExtra("messageDate", i7);
+                                                intent.putExtra("dialogId", j11);
+                                                intent.putExtra(str41222, notificationsController3.currentAccount);
                                                 if (dialogKey5.story) {
                                                 }
-                                                if (messageObject5.isStoryReactionPush) {
+                                                if (messageObject5 != null) {
+                                                    intent.putExtra("storyReaction", true);
                                                 }
-                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222, 167772160));
+                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                                 if (z7) {
                                                 }
-                                                message = messageObject5.messageOwner;
-                                                if (message != null) {
+                                                if (messageObject5 != null) {
                                                 }
                                                 tL_keyboardButtonCopy = null;
                                                 if (tL_keyboardButtonCopy != null) {
@@ -11186,11 +11197,11 @@ public class NotificationsController extends BaseController {
                                                 longSparseArray6 = longSparseArray9;
                                                 str12 = str5;
                                                 i14 = i24;
-                                                str11 = str41222;
+                                                str11 = str42222;
                                                 notification2 = notification3222;
-                                                str14 = str43222;
+                                                str14 = str44222;
                                                 sharedPreferences = sharedPreferences2;
-                                                str13 = str42222;
+                                                str13 = str43222;
                                                 arrayList5 = arrayList14;
                                                 arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                 notificationsController2 = this;
@@ -11235,19 +11246,24 @@ public class NotificationsController extends BaseController {
                                             boolean[] zArr2222 = new boolean[1];
                                             if (!dialogKey3.story) {
                                             }
-                                            Intent intent2222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                            intent2222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                            intent2222.setFlags(67108864);
-                                            intent2222.addCategory("android.intent.category.LAUNCHER");
-                                            if (!messageObject3.isOauthPush) {
+                                            Intent intent3222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                            intent3222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                            intent3222.setFlags(67108864);
+                                            intent3222.addCategory("android.intent.category.LAUNCHER");
+                                            if (messageObject3 == null) {
                                             }
-                                            bitmap4 = bitmap3;
-                                            messageObject4 = messageObject3;
-                                            longSparseArray9 = longSparseArray7;
+                                            if (messageObject3 == null) {
+                                            }
+                                            String str40222 = str5;
+                                            if (messageObject3 == null) {
+                                            }
+                                            LongSparseArray longSparseArray14222 = longSparseArray7;
                                             str34 = str6;
                                             str35 = str7;
+                                            messageObject4 = messageObject3;
                                             dialogKey5 = dialogKey4;
-                                            arrayList8 = arrayList7;
+                                            if (!dialogKey5.story) {
+                                            }
                                             StringBuilder sb62222 = new StringBuilder();
                                             sb62222.append("show extra notifications chatId ");
                                             sb62222.append(j11);
@@ -11257,24 +11273,24 @@ public class NotificationsController extends BaseController {
                                             FileLog.d(sb62222.toString());
                                             if (j15 != 0) {
                                             }
-                                            String str402222 = str39222;
-                                            intent2222.putExtra(str402222, notificationsController3.currentAccount);
-                                            PendingIntent activity2222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2222, 1140850688);
+                                            String str412222 = str39222;
+                                            intent3222.putExtra(str412222, notificationsController3.currentAccount);
+                                            PendingIntent activity2222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent3222, 1140850688);
                                             NotificationCompat.WearableExtender wearableExtender2222 = new NotificationCompat.WearableExtender();
                                             NotificationCompat.Action action42222 = action;
                                             if (action != null) {
                                             }
-                                            String str412222 = str22;
-                                            Intent intent32222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                            intent32222.addFlags(32);
-                                            intent32222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                            intent32222.putExtra(str20, j11);
+                                            String str422222 = str22;
+                                            Intent intent42222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                            intent42222.addFlags(32);
+                                            intent42222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                            intent42222.putExtra(str20, j11);
                                             int i302222 = i9;
-                                            intent32222.putExtra(str19, i302222);
-                                            intent32222.putExtra(str402222, notificationsController3.currentAccount);
-                                            String str422222 = str34;
-                                            String str432222 = str35;
-                                            NotificationCompat.Action build42222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent32222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                            intent42222.putExtra(str19, i302222);
+                                            intent42222.putExtra(str412222, notificationsController3.currentAccount);
+                                            String str432222 = str34;
+                                            String str442222 = str35;
+                                            NotificationCompat.Action build42222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                             if (DialogObject.isEncryptedDialog(j11)) {
                                             }
                                             if (str36 != null) {
@@ -11291,19 +11307,18 @@ public class NotificationsController extends BaseController {
                                             if (dialogKey5.story) {
                                             }
                                             category = autoCancel2222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity2222).extend(wearableExtender2222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                            Intent intent42222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                            intent42222.putExtra("messageDate", i7);
-                                            intent42222.putExtra("dialogId", j11);
-                                            intent42222.putExtra(str402222, notificationsController3.currentAccount);
+                                            intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                            intent.putExtra("messageDate", i7);
+                                            intent.putExtra("dialogId", j11);
+                                            intent.putExtra(str412222, notificationsController3.currentAccount);
                                             if (dialogKey5.story) {
                                             }
-                                            if (messageObject5.isStoryReactionPush) {
+                                            if (messageObject5 != null) {
                                             }
-                                            category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222, 167772160));
+                                            category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                             if (z7) {
                                             }
-                                            message = messageObject5.messageOwner;
-                                            if (message != null) {
+                                            if (messageObject5 != null) {
                                             }
                                             tL_keyboardButtonCopy = null;
                                             if (tL_keyboardButtonCopy != null) {
@@ -11335,11 +11350,11 @@ public class NotificationsController extends BaseController {
                                             longSparseArray6 = longSparseArray9;
                                             str12 = str5;
                                             i14 = i24;
-                                            str11 = str412222;
+                                            str11 = str422222;
                                             notification2 = notification32222;
-                                            str14 = str432222;
+                                            str14 = str442222;
                                             sharedPreferences = sharedPreferences2;
-                                            str13 = str422222;
+                                            str13 = str432222;
                                             arrayList5 = arrayList14;
                                             arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                             notificationsController2 = this;
@@ -11388,19 +11403,24 @@ public class NotificationsController extends BaseController {
                                 boolean[] zArr22222 = new boolean[1];
                                 if (!dialogKey3.story) {
                                 }
-                                Intent intent22222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                intent22222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                intent22222.setFlags(67108864);
-                                intent22222.addCategory("android.intent.category.LAUNCHER");
-                                if (!messageObject3.isOauthPush) {
+                                Intent intent32222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                intent32222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                intent32222.setFlags(67108864);
+                                intent32222.addCategory("android.intent.category.LAUNCHER");
+                                if (messageObject3 == null) {
                                 }
-                                bitmap4 = bitmap3;
-                                messageObject4 = messageObject3;
-                                longSparseArray9 = longSparseArray7;
+                                if (messageObject3 == null) {
+                                }
+                                String str402222 = str5;
+                                if (messageObject3 == null) {
+                                }
+                                LongSparseArray longSparseArray142222 = longSparseArray7;
                                 str34 = str6;
                                 str35 = str7;
+                                messageObject4 = messageObject3;
                                 dialogKey5 = dialogKey4;
-                                arrayList8 = arrayList7;
+                                if (!dialogKey5.story) {
+                                }
                                 StringBuilder sb622222 = new StringBuilder();
                                 sb622222.append("show extra notifications chatId ");
                                 sb622222.append(j11);
@@ -11410,24 +11430,24 @@ public class NotificationsController extends BaseController {
                                 FileLog.d(sb622222.toString());
                                 if (j15 != 0) {
                                 }
-                                String str4022222 = str392222;
-                                intent22222.putExtra(str4022222, notificationsController3.currentAccount);
-                                PendingIntent activity22222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent22222, 1140850688);
+                                String str4122222 = str392222;
+                                intent32222.putExtra(str4122222, notificationsController3.currentAccount);
+                                PendingIntent activity22222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent32222, 1140850688);
                                 NotificationCompat.WearableExtender wearableExtender22222 = new NotificationCompat.WearableExtender();
                                 NotificationCompat.Action action422222 = action;
                                 if (action != null) {
                                 }
-                                String str4122222 = str22;
-                                Intent intent322222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                intent322222.addFlags(32);
-                                intent322222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                intent322222.putExtra(str20, j11);
+                                String str4222222 = str22;
+                                Intent intent422222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                intent422222.addFlags(32);
+                                intent422222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                intent422222.putExtra(str20, j11);
                                 int i3022222 = i9;
-                                intent322222.putExtra(str19, i3022222);
-                                intent322222.putExtra(str4022222, notificationsController3.currentAccount);
-                                String str4222222 = str34;
-                                String str4322222 = str35;
-                                NotificationCompat.Action build422222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent322222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                intent422222.putExtra(str19, i3022222);
+                                intent422222.putExtra(str4122222, notificationsController3.currentAccount);
+                                String str4322222 = str34;
+                                String str4422222 = str35;
+                                NotificationCompat.Action build422222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                 if (DialogObject.isEncryptedDialog(j11)) {
                                 }
                                 if (str36 != null) {
@@ -11444,19 +11464,18 @@ public class NotificationsController extends BaseController {
                                 if (dialogKey5.story) {
                                 }
                                 category = autoCancel22222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity22222).extend(wearableExtender22222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                Intent intent422222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                intent422222.putExtra("messageDate", i7);
-                                intent422222.putExtra("dialogId", j11);
-                                intent422222.putExtra(str4022222, notificationsController3.currentAccount);
+                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                intent.putExtra("messageDate", i7);
+                                intent.putExtra("dialogId", j11);
+                                intent.putExtra(str4122222, notificationsController3.currentAccount);
                                 if (dialogKey5.story) {
                                 }
-                                if (messageObject5.isStoryReactionPush) {
+                                if (messageObject5 != null) {
                                 }
-                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422222, 167772160));
+                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                 if (z7) {
                                 }
-                                message = messageObject5.messageOwner;
-                                if (message != null) {
+                                if (messageObject5 != null) {
                                 }
                                 tL_keyboardButtonCopy = null;
                                 if (tL_keyboardButtonCopy != null) {
@@ -11488,11 +11507,11 @@ public class NotificationsController extends BaseController {
                                 longSparseArray6 = longSparseArray9;
                                 str12 = str5;
                                 i14 = i24;
-                                str11 = str4122222;
+                                str11 = str4222222;
                                 notification2 = notification322222;
-                                str14 = str4322222;
+                                str14 = str4422222;
                                 sharedPreferences = sharedPreferences2;
-                                str13 = str4222222;
+                                str13 = str4322222;
                                 arrayList5 = arrayList14;
                                 arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                 notificationsController2 = this;
@@ -11619,15 +11638,15 @@ public class NotificationsController extends BaseController {
                                                         if (z12) {
                                                         }
                                                         bitmap2 = bitmap;
-                                                        Intent intent7 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                                        intent7.putExtra("dialog_id", j4);
+                                                        Intent intent22 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                                        intent22.putExtra("dialog_id", j4);
                                                         int i292 = id;
-                                                        intent7.putExtra("max_id", i292);
-                                                        intent7.putExtra("topic_id", j7);
-                                                        intent7.putExtra("currentAccount", notificationsController3.currentAccount);
+                                                        intent22.putExtra("max_id", i292);
+                                                        intent22.putExtra("topic_id", j7);
+                                                        intent22.putExtra("currentAccount", notificationsController3.currentAccount);
                                                         dialogKey2 = dialogKey;
                                                         chat5 = chat4;
-                                                        PendingIntent broadcast2 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent7, 167772160);
+                                                        PendingIntent broadcast2 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent22, 167772160);
                                                         RemoteInput build32 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                                         if (!DialogObject.isChatDialog(j4)) {
                                                         }
@@ -11672,19 +11691,24 @@ public class NotificationsController extends BaseController {
                                                         boolean[] zArr222222 = new boolean[1];
                                                         if (!dialogKey3.story) {
                                                         }
-                                                        Intent intent222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                                        intent222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                                        intent222222.setFlags(67108864);
-                                                        intent222222.addCategory("android.intent.category.LAUNCHER");
-                                                        if (!messageObject3.isOauthPush) {
+                                                        Intent intent322222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                        intent322222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                        intent322222.setFlags(67108864);
+                                                        intent322222.addCategory("android.intent.category.LAUNCHER");
+                                                        if (messageObject3 == null) {
                                                         }
-                                                        bitmap4 = bitmap3;
-                                                        messageObject4 = messageObject3;
-                                                        longSparseArray9 = longSparseArray7;
+                                                        if (messageObject3 == null) {
+                                                        }
+                                                        String str4022222 = str5;
+                                                        if (messageObject3 == null) {
+                                                        }
+                                                        LongSparseArray longSparseArray1422222 = longSparseArray7;
                                                         str34 = str6;
                                                         str35 = str7;
+                                                        messageObject4 = messageObject3;
                                                         dialogKey5 = dialogKey4;
-                                                        arrayList8 = arrayList7;
+                                                        if (!dialogKey5.story) {
+                                                        }
                                                         StringBuilder sb6222222 = new StringBuilder();
                                                         sb6222222.append("show extra notifications chatId ");
                                                         sb6222222.append(j11);
@@ -11694,24 +11718,24 @@ public class NotificationsController extends BaseController {
                                                         FileLog.d(sb6222222.toString());
                                                         if (j15 != 0) {
                                                         }
-                                                        String str40222222 = str3922222;
-                                                        intent222222.putExtra(str40222222, notificationsController3.currentAccount);
-                                                        PendingIntent activity222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent222222, 1140850688);
+                                                        String str41222222 = str3922222;
+                                                        intent322222.putExtra(str41222222, notificationsController3.currentAccount);
+                                                        PendingIntent activity222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent322222, 1140850688);
                                                         NotificationCompat.WearableExtender wearableExtender222222 = new NotificationCompat.WearableExtender();
                                                         NotificationCompat.Action action4222222 = action;
                                                         if (action != null) {
                                                         }
-                                                        String str41222222 = str22;
-                                                        Intent intent3222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                        intent3222222.addFlags(32);
-                                                        intent3222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                        intent3222222.putExtra(str20, j11);
+                                                        String str42222222 = str22;
+                                                        Intent intent4222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                        intent4222222.addFlags(32);
+                                                        intent4222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                        intent4222222.putExtra(str20, j11);
                                                         int i30222222 = i9;
-                                                        intent3222222.putExtra(str19, i30222222);
-                                                        intent3222222.putExtra(str40222222, notificationsController3.currentAccount);
-                                                        String str42222222 = str34;
-                                                        String str43222222 = str35;
-                                                        NotificationCompat.Action build4222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent3222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                        intent4222222.putExtra(str19, i30222222);
+                                                        intent4222222.putExtra(str41222222, notificationsController3.currentAccount);
+                                                        String str43222222 = str34;
+                                                        String str44222222 = str35;
+                                                        NotificationCompat.Action build4222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                         if (DialogObject.isEncryptedDialog(j11)) {
                                                         }
                                                         if (str36 != null) {
@@ -11728,19 +11752,18 @@ public class NotificationsController extends BaseController {
                                                         if (dialogKey5.story) {
                                                         }
                                                         category = autoCancel222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity222222).extend(wearableExtender222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                                        Intent intent4222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                        intent4222222.putExtra("messageDate", i7);
-                                                        intent4222222.putExtra("dialogId", j11);
-                                                        intent4222222.putExtra(str40222222, notificationsController3.currentAccount);
+                                                        intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                        intent.putExtra("messageDate", i7);
+                                                        intent.putExtra("dialogId", j11);
+                                                        intent.putExtra(str41222222, notificationsController3.currentAccount);
                                                         if (dialogKey5.story) {
                                                         }
-                                                        if (messageObject5.isStoryReactionPush) {
+                                                        if (messageObject5 != null) {
                                                         }
-                                                        category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222222, 167772160));
+                                                        category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                                         if (z7) {
                                                         }
-                                                        message = messageObject5.messageOwner;
-                                                        if (message != null) {
+                                                        if (messageObject5 != null) {
                                                         }
                                                         tL_keyboardButtonCopy = null;
                                                         if (tL_keyboardButtonCopy != null) {
@@ -11772,11 +11795,11 @@ public class NotificationsController extends BaseController {
                                                         longSparseArray6 = longSparseArray9;
                                                         str12 = str5;
                                                         i14 = i24;
-                                                        str11 = str41222222;
+                                                        str11 = str42222222;
                                                         notification2 = notification3222222;
-                                                        str14 = str43222222;
+                                                        str14 = str44222222;
                                                         sharedPreferences = sharedPreferences2;
-                                                        str13 = str42222222;
+                                                        str13 = str43222222;
                                                         arrayList5 = arrayList14;
                                                         arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                         notificationsController2 = this;
@@ -11799,15 +11822,15 @@ public class NotificationsController extends BaseController {
                                                 if (z12) {
                                                 }
                                                 bitmap2 = bitmap;
-                                                Intent intent72 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                                intent72.putExtra("dialog_id", j4);
+                                                Intent intent222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                                intent222.putExtra("dialog_id", j4);
                                                 int i2922 = id;
-                                                intent72.putExtra("max_id", i2922);
-                                                intent72.putExtra("topic_id", j7);
-                                                intent72.putExtra("currentAccount", notificationsController3.currentAccount);
+                                                intent222.putExtra("max_id", i2922);
+                                                intent222.putExtra("topic_id", j7);
+                                                intent222.putExtra("currentAccount", notificationsController3.currentAccount);
                                                 dialogKey2 = dialogKey;
                                                 chat5 = chat4;
-                                                PendingIntent broadcast22 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent72, 167772160);
+                                                PendingIntent broadcast22 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent222, 167772160);
                                                 RemoteInput build322 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                                 if (!DialogObject.isChatDialog(j4)) {
                                                 }
@@ -11847,19 +11870,24 @@ public class NotificationsController extends BaseController {
                                                 boolean[] zArr2222222 = new boolean[1];
                                                 if (!dialogKey3.story) {
                                                 }
-                                                Intent intent2222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                                intent2222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                                intent2222222.setFlags(67108864);
-                                                intent2222222.addCategory("android.intent.category.LAUNCHER");
-                                                if (!messageObject3.isOauthPush) {
+                                                Intent intent3222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                intent3222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                intent3222222.setFlags(67108864);
+                                                intent3222222.addCategory("android.intent.category.LAUNCHER");
+                                                if (messageObject3 == null) {
                                                 }
-                                                bitmap4 = bitmap3;
-                                                messageObject4 = messageObject3;
-                                                longSparseArray9 = longSparseArray7;
+                                                if (messageObject3 == null) {
+                                                }
+                                                String str40222222 = str5;
+                                                if (messageObject3 == null) {
+                                                }
+                                                LongSparseArray longSparseArray14222222 = longSparseArray7;
                                                 str34 = str6;
                                                 str35 = str7;
+                                                messageObject4 = messageObject3;
                                                 dialogKey5 = dialogKey4;
-                                                arrayList8 = arrayList7;
+                                                if (!dialogKey5.story) {
+                                                }
                                                 StringBuilder sb62222222 = new StringBuilder();
                                                 sb62222222.append("show extra notifications chatId ");
                                                 sb62222222.append(j11);
@@ -11869,24 +11897,24 @@ public class NotificationsController extends BaseController {
                                                 FileLog.d(sb62222222.toString());
                                                 if (j15 != 0) {
                                                 }
-                                                String str402222222 = str39222222;
-                                                intent2222222.putExtra(str402222222, notificationsController3.currentAccount);
-                                                PendingIntent activity2222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2222222, 1140850688);
+                                                String str412222222 = str39222222;
+                                                intent3222222.putExtra(str412222222, notificationsController3.currentAccount);
+                                                PendingIntent activity2222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent3222222, 1140850688);
                                                 NotificationCompat.WearableExtender wearableExtender2222222 = new NotificationCompat.WearableExtender();
                                                 NotificationCompat.Action action42222222 = action;
                                                 if (action != null) {
                                                 }
-                                                String str412222222 = str22;
-                                                Intent intent32222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                intent32222222.addFlags(32);
-                                                intent32222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                intent32222222.putExtra(str20, j11);
+                                                String str422222222 = str22;
+                                                Intent intent42222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                intent42222222.addFlags(32);
+                                                intent42222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                intent42222222.putExtra(str20, j11);
                                                 int i302222222 = i9;
-                                                intent32222222.putExtra(str19, i302222222);
-                                                intent32222222.putExtra(str402222222, notificationsController3.currentAccount);
-                                                String str422222222 = str34;
-                                                String str432222222 = str35;
-                                                NotificationCompat.Action build42222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent32222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                intent42222222.putExtra(str19, i302222222);
+                                                intent42222222.putExtra(str412222222, notificationsController3.currentAccount);
+                                                String str432222222 = str34;
+                                                String str442222222 = str35;
+                                                NotificationCompat.Action build42222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                 if (DialogObject.isEncryptedDialog(j11)) {
                                                 }
                                                 if (str36 != null) {
@@ -11903,19 +11931,18 @@ public class NotificationsController extends BaseController {
                                                 if (dialogKey5.story) {
                                                 }
                                                 category = autoCancel2222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity2222222).extend(wearableExtender2222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                                Intent intent42222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                intent42222222.putExtra("messageDate", i7);
-                                                intent42222222.putExtra("dialogId", j11);
-                                                intent42222222.putExtra(str402222222, notificationsController3.currentAccount);
+                                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                intent.putExtra("messageDate", i7);
+                                                intent.putExtra("dialogId", j11);
+                                                intent.putExtra(str412222222, notificationsController3.currentAccount);
                                                 if (dialogKey5.story) {
                                                 }
-                                                if (messageObject5.isStoryReactionPush) {
+                                                if (messageObject5 != null) {
                                                 }
-                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222222, 167772160));
+                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                                 if (z7) {
                                                 }
-                                                message = messageObject5.messageOwner;
-                                                if (message != null) {
+                                                if (messageObject5 != null) {
                                                 }
                                                 tL_keyboardButtonCopy = null;
                                                 if (tL_keyboardButtonCopy != null) {
@@ -11947,11 +11974,11 @@ public class NotificationsController extends BaseController {
                                                 longSparseArray6 = longSparseArray9;
                                                 str12 = str5;
                                                 i14 = i24;
-                                                str11 = str412222222;
+                                                str11 = str422222222;
                                                 notification2 = notification32222222;
-                                                str14 = str432222222;
+                                                str14 = str442222222;
                                                 sharedPreferences = sharedPreferences2;
-                                                str13 = str422222222;
+                                                str13 = str432222222;
                                                 arrayList5 = arrayList14;
                                                 arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                 notificationsController2 = this;
@@ -11987,15 +12014,15 @@ public class NotificationsController extends BaseController {
                                             if (z12) {
                                             }
                                             bitmap2 = bitmap;
-                                            Intent intent722 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                            intent722.putExtra("dialog_id", j4);
+                                            Intent intent2222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                            intent2222.putExtra("dialog_id", j4);
                                             int i29222 = id;
-                                            intent722.putExtra("max_id", i29222);
-                                            intent722.putExtra("topic_id", j7);
-                                            intent722.putExtra("currentAccount", notificationsController3.currentAccount);
+                                            intent2222.putExtra("max_id", i29222);
+                                            intent2222.putExtra("topic_id", j7);
+                                            intent2222.putExtra("currentAccount", notificationsController3.currentAccount);
                                             dialogKey2 = dialogKey;
                                             chat5 = chat4;
-                                            PendingIntent broadcast222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent722, 167772160);
+                                            PendingIntent broadcast222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent2222, 167772160);
                                             RemoteInput build3222 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                             if (!DialogObject.isChatDialog(j4)) {
                                             }
@@ -12035,19 +12062,24 @@ public class NotificationsController extends BaseController {
                                             boolean[] zArr22222222 = new boolean[1];
                                             if (!dialogKey3.story) {
                                             }
-                                            Intent intent22222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                            intent22222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                            intent22222222.setFlags(67108864);
-                                            intent22222222.addCategory("android.intent.category.LAUNCHER");
-                                            if (!messageObject3.isOauthPush) {
+                                            Intent intent32222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                            intent32222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                            intent32222222.setFlags(67108864);
+                                            intent32222222.addCategory("android.intent.category.LAUNCHER");
+                                            if (messageObject3 == null) {
                                             }
-                                            bitmap4 = bitmap3;
-                                            messageObject4 = messageObject3;
-                                            longSparseArray9 = longSparseArray7;
+                                            if (messageObject3 == null) {
+                                            }
+                                            String str402222222 = str5;
+                                            if (messageObject3 == null) {
+                                            }
+                                            LongSparseArray longSparseArray142222222 = longSparseArray7;
                                             str34 = str6;
                                             str35 = str7;
+                                            messageObject4 = messageObject3;
                                             dialogKey5 = dialogKey4;
-                                            arrayList8 = arrayList7;
+                                            if (!dialogKey5.story) {
+                                            }
                                             StringBuilder sb622222222 = new StringBuilder();
                                             sb622222222.append("show extra notifications chatId ");
                                             sb622222222.append(j11);
@@ -12057,24 +12089,24 @@ public class NotificationsController extends BaseController {
                                             FileLog.d(sb622222222.toString());
                                             if (j15 != 0) {
                                             }
-                                            String str4022222222 = str392222222;
-                                            intent22222222.putExtra(str4022222222, notificationsController3.currentAccount);
-                                            PendingIntent activity22222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent22222222, 1140850688);
+                                            String str4122222222 = str392222222;
+                                            intent32222222.putExtra(str4122222222, notificationsController3.currentAccount);
+                                            PendingIntent activity22222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent32222222, 1140850688);
                                             NotificationCompat.WearableExtender wearableExtender22222222 = new NotificationCompat.WearableExtender();
                                             NotificationCompat.Action action422222222 = action;
                                             if (action != null) {
                                             }
-                                            String str4122222222 = str22;
-                                            Intent intent322222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                            intent322222222.addFlags(32);
-                                            intent322222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                            intent322222222.putExtra(str20, j11);
+                                            String str4222222222 = str22;
+                                            Intent intent422222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                            intent422222222.addFlags(32);
+                                            intent422222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                            intent422222222.putExtra(str20, j11);
                                             int i3022222222 = i9;
-                                            intent322222222.putExtra(str19, i3022222222);
-                                            intent322222222.putExtra(str4022222222, notificationsController3.currentAccount);
-                                            String str4222222222 = str34;
-                                            String str4322222222 = str35;
-                                            NotificationCompat.Action build422222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent322222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                            intent422222222.putExtra(str19, i3022222222);
+                                            intent422222222.putExtra(str4122222222, notificationsController3.currentAccount);
+                                            String str4322222222 = str34;
+                                            String str4422222222 = str35;
+                                            NotificationCompat.Action build422222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                             if (DialogObject.isEncryptedDialog(j11)) {
                                             }
                                             if (str36 != null) {
@@ -12091,19 +12123,18 @@ public class NotificationsController extends BaseController {
                                             if (dialogKey5.story) {
                                             }
                                             category = autoCancel22222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity22222222).extend(wearableExtender22222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                            Intent intent422222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                            intent422222222.putExtra("messageDate", i7);
-                                            intent422222222.putExtra("dialogId", j11);
-                                            intent422222222.putExtra(str4022222222, notificationsController3.currentAccount);
+                                            intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                            intent.putExtra("messageDate", i7);
+                                            intent.putExtra("dialogId", j11);
+                                            intent.putExtra(str4122222222, notificationsController3.currentAccount);
                                             if (dialogKey5.story) {
                                             }
-                                            if (messageObject5.isStoryReactionPush) {
+                                            if (messageObject5 != null) {
                                             }
-                                            category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422222222, 167772160));
+                                            category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                             if (z7) {
                                             }
-                                            message = messageObject5.messageOwner;
-                                            if (message != null) {
+                                            if (messageObject5 != null) {
                                             }
                                             tL_keyboardButtonCopy = null;
                                             if (tL_keyboardButtonCopy != null) {
@@ -12135,11 +12166,11 @@ public class NotificationsController extends BaseController {
                                             longSparseArray6 = longSparseArray9;
                                             str12 = str5;
                                             i14 = i24;
-                                            str11 = str4122222222;
+                                            str11 = str4222222222;
                                             notification2 = notification322222222;
-                                            str14 = str4322222222;
+                                            str14 = str4422222222;
                                             sharedPreferences = sharedPreferences2;
-                                            str13 = str4222222222;
+                                            str13 = str4322222222;
                                             arrayList5 = arrayList14;
                                             arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                             notificationsController2 = this;
@@ -12181,15 +12212,15 @@ public class NotificationsController extends BaseController {
                                 if (z12) {
                                 }
                                 bitmap2 = bitmap;
-                                Intent intent7222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                intent7222.putExtra("dialog_id", j4);
+                                Intent intent22222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                intent22222.putExtra("dialog_id", j4);
                                 int i292222 = id;
-                                intent7222.putExtra("max_id", i292222);
-                                intent7222.putExtra("topic_id", j7);
-                                intent7222.putExtra("currentAccount", notificationsController3.currentAccount);
+                                intent22222.putExtra("max_id", i292222);
+                                intent22222.putExtra("topic_id", j7);
+                                intent22222.putExtra("currentAccount", notificationsController3.currentAccount);
                                 dialogKey2 = dialogKey;
                                 chat5 = chat4;
-                                PendingIntent broadcast2222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent7222, 167772160);
+                                PendingIntent broadcast2222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent22222, 167772160);
                                 RemoteInput build32222 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                 if (!DialogObject.isChatDialog(j4)) {
                                 }
@@ -12229,19 +12260,24 @@ public class NotificationsController extends BaseController {
                                 boolean[] zArr222222222 = new boolean[1];
                                 if (!dialogKey3.story) {
                                 }
-                                Intent intent222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                intent222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                intent222222222.setFlags(67108864);
-                                intent222222222.addCategory("android.intent.category.LAUNCHER");
-                                if (!messageObject3.isOauthPush) {
+                                Intent intent322222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                intent322222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                intent322222222.setFlags(67108864);
+                                intent322222222.addCategory("android.intent.category.LAUNCHER");
+                                if (messageObject3 == null) {
                                 }
-                                bitmap4 = bitmap3;
-                                messageObject4 = messageObject3;
-                                longSparseArray9 = longSparseArray7;
+                                if (messageObject3 == null) {
+                                }
+                                String str4022222222 = str5;
+                                if (messageObject3 == null) {
+                                }
+                                LongSparseArray longSparseArray1422222222 = longSparseArray7;
                                 str34 = str6;
                                 str35 = str7;
+                                messageObject4 = messageObject3;
                                 dialogKey5 = dialogKey4;
-                                arrayList8 = arrayList7;
+                                if (!dialogKey5.story) {
+                                }
                                 StringBuilder sb6222222222 = new StringBuilder();
                                 sb6222222222.append("show extra notifications chatId ");
                                 sb6222222222.append(j11);
@@ -12251,24 +12287,24 @@ public class NotificationsController extends BaseController {
                                 FileLog.d(sb6222222222.toString());
                                 if (j15 != 0) {
                                 }
-                                String str40222222222 = str3922222222;
-                                intent222222222.putExtra(str40222222222, notificationsController3.currentAccount);
-                                PendingIntent activity222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent222222222, 1140850688);
+                                String str41222222222 = str3922222222;
+                                intent322222222.putExtra(str41222222222, notificationsController3.currentAccount);
+                                PendingIntent activity222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent322222222, 1140850688);
                                 NotificationCompat.WearableExtender wearableExtender222222222 = new NotificationCompat.WearableExtender();
                                 NotificationCompat.Action action4222222222 = action;
                                 if (action != null) {
                                 }
-                                String str41222222222 = str22;
-                                Intent intent3222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                intent3222222222.addFlags(32);
-                                intent3222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                intent3222222222.putExtra(str20, j11);
+                                String str42222222222 = str22;
+                                Intent intent4222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                intent4222222222.addFlags(32);
+                                intent4222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                intent4222222222.putExtra(str20, j11);
                                 int i30222222222 = i9;
-                                intent3222222222.putExtra(str19, i30222222222);
-                                intent3222222222.putExtra(str40222222222, notificationsController3.currentAccount);
-                                String str42222222222 = str34;
-                                String str43222222222 = str35;
-                                NotificationCompat.Action build4222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent3222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                intent4222222222.putExtra(str19, i30222222222);
+                                intent4222222222.putExtra(str41222222222, notificationsController3.currentAccount);
+                                String str43222222222 = str34;
+                                String str44222222222 = str35;
+                                NotificationCompat.Action build4222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                 if (DialogObject.isEncryptedDialog(j11)) {
                                 }
                                 if (str36 != null) {
@@ -12285,19 +12321,18 @@ public class NotificationsController extends BaseController {
                                 if (dialogKey5.story) {
                                 }
                                 category = autoCancel222222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity222222222).extend(wearableExtender222222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                Intent intent4222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                intent4222222222.putExtra("messageDate", i7);
-                                intent4222222222.putExtra("dialogId", j11);
-                                intent4222222222.putExtra(str40222222222, notificationsController3.currentAccount);
+                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                intent.putExtra("messageDate", i7);
+                                intent.putExtra("dialogId", j11);
+                                intent.putExtra(str41222222222, notificationsController3.currentAccount);
                                 if (dialogKey5.story) {
                                 }
-                                if (messageObject5.isStoryReactionPush) {
+                                if (messageObject5 != null) {
                                 }
-                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222222222, 167772160));
+                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                 if (z7) {
                                 }
-                                message = messageObject5.messageOwner;
-                                if (message != null) {
+                                if (messageObject5 != null) {
                                 }
                                 tL_keyboardButtonCopy = null;
                                 if (tL_keyboardButtonCopy != null) {
@@ -12329,11 +12364,11 @@ public class NotificationsController extends BaseController {
                                 longSparseArray6 = longSparseArray9;
                                 str12 = str5;
                                 i14 = i24;
-                                str11 = str41222222222;
+                                str11 = str42222222222;
                                 notification2 = notification3222222222;
-                                str14 = str43222222222;
+                                str14 = str44222222222;
                                 sharedPreferences = sharedPreferences2;
-                                str13 = str42222222222;
+                                str13 = str43222222222;
                                 arrayList5 = arrayList14;
                                 arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                 notificationsController2 = this;
@@ -12428,15 +12463,15 @@ public class NotificationsController extends BaseController {
                                                 if (z12) {
                                                 }
                                                 bitmap2 = bitmap;
-                                                Intent intent72222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                                intent72222.putExtra("dialog_id", j4);
+                                                Intent intent222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                                intent222222.putExtra("dialog_id", j4);
                                                 int i2922222 = id;
-                                                intent72222.putExtra("max_id", i2922222);
-                                                intent72222.putExtra("topic_id", j7);
-                                                intent72222.putExtra("currentAccount", notificationsController3.currentAccount);
+                                                intent222222.putExtra("max_id", i2922222);
+                                                intent222222.putExtra("topic_id", j7);
+                                                intent222222.putExtra("currentAccount", notificationsController3.currentAccount);
                                                 dialogKey2 = dialogKey;
                                                 chat5 = chat4;
-                                                PendingIntent broadcast22222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent72222, 167772160);
+                                                PendingIntent broadcast22222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent222222, 167772160);
                                                 RemoteInput build322222 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                                 if (!DialogObject.isChatDialog(j4)) {
                                                 }
@@ -12476,19 +12511,24 @@ public class NotificationsController extends BaseController {
                                                 boolean[] zArr2222222222 = new boolean[1];
                                                 if (!dialogKey3.story) {
                                                 }
-                                                Intent intent2222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                                intent2222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                                intent2222222222.setFlags(67108864);
-                                                intent2222222222.addCategory("android.intent.category.LAUNCHER");
-                                                if (!messageObject3.isOauthPush) {
+                                                Intent intent3222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                                intent3222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                                intent3222222222.setFlags(67108864);
+                                                intent3222222222.addCategory("android.intent.category.LAUNCHER");
+                                                if (messageObject3 == null) {
                                                 }
-                                                bitmap4 = bitmap3;
-                                                messageObject4 = messageObject3;
-                                                longSparseArray9 = longSparseArray7;
+                                                if (messageObject3 == null) {
+                                                }
+                                                String str40222222222 = str5;
+                                                if (messageObject3 == null) {
+                                                }
+                                                LongSparseArray longSparseArray14222222222 = longSparseArray7;
                                                 str34 = str6;
                                                 str35 = str7;
+                                                messageObject4 = messageObject3;
                                                 dialogKey5 = dialogKey4;
-                                                arrayList8 = arrayList7;
+                                                if (!dialogKey5.story) {
+                                                }
                                                 StringBuilder sb62222222222 = new StringBuilder();
                                                 sb62222222222.append("show extra notifications chatId ");
                                                 sb62222222222.append(j11);
@@ -12498,24 +12538,24 @@ public class NotificationsController extends BaseController {
                                                 FileLog.d(sb62222222222.toString());
                                                 if (j15 != 0) {
                                                 }
-                                                String str402222222222 = str39222222222;
-                                                intent2222222222.putExtra(str402222222222, notificationsController3.currentAccount);
-                                                PendingIntent activity2222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2222222222, 1140850688);
+                                                String str412222222222 = str39222222222;
+                                                intent3222222222.putExtra(str412222222222, notificationsController3.currentAccount);
+                                                PendingIntent activity2222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent3222222222, 1140850688);
                                                 NotificationCompat.WearableExtender wearableExtender2222222222 = new NotificationCompat.WearableExtender();
                                                 NotificationCompat.Action action42222222222 = action;
                                                 if (action != null) {
                                                 }
-                                                String str412222222222 = str22;
-                                                Intent intent32222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                                intent32222222222.addFlags(32);
-                                                intent32222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                                intent32222222222.putExtra(str20, j11);
+                                                String str422222222222 = str22;
+                                                Intent intent42222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                                intent42222222222.addFlags(32);
+                                                intent42222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                                intent42222222222.putExtra(str20, j11);
                                                 int i302222222222 = i9;
-                                                intent32222222222.putExtra(str19, i302222222222);
-                                                intent32222222222.putExtra(str402222222222, notificationsController3.currentAccount);
-                                                String str422222222222 = str34;
-                                                String str432222222222 = str35;
-                                                NotificationCompat.Action build42222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent32222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                                intent42222222222.putExtra(str19, i302222222222);
+                                                intent42222222222.putExtra(str412222222222, notificationsController3.currentAccount);
+                                                String str432222222222 = str34;
+                                                String str442222222222 = str35;
+                                                NotificationCompat.Action build42222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                                 if (DialogObject.isEncryptedDialog(j11)) {
                                                 }
                                                 if (str36 != null) {
@@ -12532,19 +12572,18 @@ public class NotificationsController extends BaseController {
                                                 if (dialogKey5.story) {
                                                 }
                                                 category = autoCancel2222222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity2222222222).extend(wearableExtender2222222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                                Intent intent42222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                                intent42222222222.putExtra("messageDate", i7);
-                                                intent42222222222.putExtra("dialogId", j11);
-                                                intent42222222222.putExtra(str402222222222, notificationsController3.currentAccount);
+                                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                                intent.putExtra("messageDate", i7);
+                                                intent.putExtra("dialogId", j11);
+                                                intent.putExtra(str412222222222, notificationsController3.currentAccount);
                                                 if (dialogKey5.story) {
                                                 }
-                                                if (messageObject5.isStoryReactionPush) {
+                                                if (messageObject5 != null) {
                                                 }
-                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent42222222222, 167772160));
+                                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                                 if (z7) {
                                                 }
-                                                message = messageObject5.messageOwner;
-                                                if (message != null) {
+                                                if (messageObject5 != null) {
                                                 }
                                                 tL_keyboardButtonCopy = null;
                                                 if (tL_keyboardButtonCopy != null) {
@@ -12576,11 +12615,11 @@ public class NotificationsController extends BaseController {
                                                 longSparseArray6 = longSparseArray9;
                                                 str12 = str5;
                                                 i14 = i24;
-                                                str11 = str412222222222;
+                                                str11 = str422222222222;
                                                 notification2 = notification32222222222;
-                                                str14 = str432222222222;
+                                                str14 = str442222222222;
                                                 sharedPreferences = sharedPreferences2;
-                                                str13 = str422222222222;
+                                                str13 = str432222222222;
                                                 arrayList5 = arrayList14;
                                                 arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                                 notificationsController2 = this;
@@ -12619,15 +12658,15 @@ public class NotificationsController extends BaseController {
                                 if (z12) {
                                 }
                                 bitmap2 = bitmap;
-                                Intent intent722222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                                intent722222.putExtra("dialog_id", j4);
+                                Intent intent2222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                                intent2222222.putExtra("dialog_id", j4);
                                 int i29222222 = id;
-                                intent722222.putExtra("max_id", i29222222);
-                                intent722222.putExtra("topic_id", j7);
-                                intent722222.putExtra("currentAccount", notificationsController3.currentAccount);
+                                intent2222222.putExtra("max_id", i29222222);
+                                intent2222222.putExtra("topic_id", j7);
+                                intent2222222.putExtra("currentAccount", notificationsController3.currentAccount);
                                 dialogKey2 = dialogKey;
                                 chat5 = chat4;
-                                PendingIntent broadcast222222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent722222, 167772160);
+                                PendingIntent broadcast222222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent2222222, 167772160);
                                 RemoteInput build3222222 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                                 if (!DialogObject.isChatDialog(j4)) {
                                 }
@@ -12667,19 +12706,24 @@ public class NotificationsController extends BaseController {
                                 boolean[] zArr22222222222 = new boolean[1];
                                 if (!dialogKey3.story) {
                                 }
-                                Intent intent22222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                                intent22222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                                intent22222222222.setFlags(67108864);
-                                intent22222222222.addCategory("android.intent.category.LAUNCHER");
-                                if (!messageObject3.isOauthPush) {
+                                Intent intent32222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                                intent32222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                                intent32222222222.setFlags(67108864);
+                                intent32222222222.addCategory("android.intent.category.LAUNCHER");
+                                if (messageObject3 == null) {
                                 }
-                                bitmap4 = bitmap3;
-                                messageObject4 = messageObject3;
-                                longSparseArray9 = longSparseArray7;
+                                if (messageObject3 == null) {
+                                }
+                                String str402222222222 = str5;
+                                if (messageObject3 == null) {
+                                }
+                                LongSparseArray longSparseArray142222222222 = longSparseArray7;
                                 str34 = str6;
                                 str35 = str7;
+                                messageObject4 = messageObject3;
                                 dialogKey5 = dialogKey4;
-                                arrayList8 = arrayList7;
+                                if (!dialogKey5.story) {
+                                }
                                 StringBuilder sb622222222222 = new StringBuilder();
                                 sb622222222222.append("show extra notifications chatId ");
                                 sb622222222222.append(j11);
@@ -12689,24 +12733,24 @@ public class NotificationsController extends BaseController {
                                 FileLog.d(sb622222222222.toString());
                                 if (j15 != 0) {
                                 }
-                                String str4022222222222 = str392222222222;
-                                intent22222222222.putExtra(str4022222222222, notificationsController3.currentAccount);
-                                PendingIntent activity22222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent22222222222, 1140850688);
+                                String str4122222222222 = str392222222222;
+                                intent32222222222.putExtra(str4122222222222, notificationsController3.currentAccount);
+                                PendingIntent activity22222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent32222222222, 1140850688);
                                 NotificationCompat.WearableExtender wearableExtender22222222222 = new NotificationCompat.WearableExtender();
                                 NotificationCompat.Action action422222222222 = action;
                                 if (action != null) {
                                 }
-                                String str4122222222222 = str22;
-                                Intent intent322222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                                intent322222222222.addFlags(32);
-                                intent322222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                                intent322222222222.putExtra(str20, j11);
+                                String str4222222222222 = str22;
+                                Intent intent422222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                                intent422222222222.addFlags(32);
+                                intent422222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                                intent422222222222.putExtra(str20, j11);
                                 int i3022222222222 = i9;
-                                intent322222222222.putExtra(str19, i3022222222222);
-                                intent322222222222.putExtra(str4022222222222, notificationsController3.currentAccount);
-                                String str4222222222222 = str34;
-                                String str4322222222222 = str35;
-                                NotificationCompat.Action build422222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent322222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                                intent422222222222.putExtra(str19, i3022222222222);
+                                intent422222222222.putExtra(str4122222222222, notificationsController3.currentAccount);
+                                String str4322222222222 = str34;
+                                String str4422222222222 = str35;
+                                NotificationCompat.Action build422222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                                 if (DialogObject.isEncryptedDialog(j11)) {
                                 }
                                 if (str36 != null) {
@@ -12723,19 +12767,18 @@ public class NotificationsController extends BaseController {
                                 if (dialogKey5.story) {
                                 }
                                 category = autoCancel22222222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity22222222222).extend(wearableExtender22222222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                                Intent intent422222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                                intent422222222222.putExtra("messageDate", i7);
-                                intent422222222222.putExtra("dialogId", j11);
-                                intent422222222222.putExtra(str4022222222222, notificationsController3.currentAccount);
+                                intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                                intent.putExtra("messageDate", i7);
+                                intent.putExtra("dialogId", j11);
+                                intent.putExtra(str4122222222222, notificationsController3.currentAccount);
                                 if (dialogKey5.story) {
                                 }
-                                if (messageObject5.isStoryReactionPush) {
+                                if (messageObject5 != null) {
                                 }
-                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent422222222222, 167772160));
+                                category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                                 if (z7) {
                                 }
-                                message = messageObject5.messageOwner;
-                                if (message != null) {
+                                if (messageObject5 != null) {
                                 }
                                 tL_keyboardButtonCopy = null;
                                 if (tL_keyboardButtonCopy != null) {
@@ -12767,11 +12810,11 @@ public class NotificationsController extends BaseController {
                                 longSparseArray6 = longSparseArray9;
                                 str12 = str5;
                                 i14 = i24;
-                                str11 = str4122222222222;
+                                str11 = str4222222222222;
                                 notification2 = notification322222222222;
-                                str14 = str4322222222222;
+                                str14 = str4422222222222;
                                 sharedPreferences = sharedPreferences2;
-                                str13 = str4222222222222;
+                                str13 = str4322222222222;
                                 arrayList5 = arrayList14;
                                 arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                                 notificationsController2 = this;
@@ -12874,15 +12917,15 @@ public class NotificationsController extends BaseController {
                     if (z12) {
                     }
                     bitmap2 = bitmap;
-                    Intent intent7222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
-                    intent7222222.putExtra("dialog_id", j4);
+                    Intent intent22222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) WearReplyReceiver.class);
+                    intent22222222.putExtra("dialog_id", j4);
                     int i292222222 = id;
-                    intent7222222.putExtra("max_id", i292222222);
-                    intent7222222.putExtra("topic_id", j7);
-                    intent7222222.putExtra("currentAccount", notificationsController3.currentAccount);
+                    intent22222222.putExtra("max_id", i292222222);
+                    intent22222222.putExtra("topic_id", j7);
+                    intent22222222.putExtra("currentAccount", notificationsController3.currentAccount);
                     dialogKey2 = dialogKey;
                     chat5 = chat4;
-                    PendingIntent broadcast2222222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent7222222, 167772160);
+                    PendingIntent broadcast2222222 = PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent22222222, 167772160);
                     RemoteInput build32222222 = new RemoteInput.Builder(EXTRA_VOICE_REPLY).setLabel(LocaleController.getString(R.string.Reply)).build();
                     if (!DialogObject.isChatDialog(j4)) {
                     }
@@ -12922,19 +12965,24 @@ public class NotificationsController extends BaseController {
                     boolean[] zArr222222222222 = new boolean[1];
                     if (!dialogKey3.story) {
                     }
-                    Intent intent222222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
-                    intent222222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    intent222222222222.setFlags(67108864);
-                    intent222222222222.addCategory("android.intent.category.LAUNCHER");
-                    if (!messageObject3.isOauthPush) {
+                    Intent intent322222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
+                    intent322222222222.setAction("com.tmessages.openchat" + Math.random() + ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    intent322222222222.setFlags(67108864);
+                    intent322222222222.addCategory("android.intent.category.LAUNCHER");
+                    if (messageObject3 == null) {
                     }
-                    bitmap4 = bitmap3;
-                    messageObject4 = messageObject3;
-                    longSparseArray9 = longSparseArray7;
+                    if (messageObject3 == null) {
+                    }
+                    String str4022222222222 = str5;
+                    if (messageObject3 == null) {
+                    }
+                    LongSparseArray longSparseArray1422222222222 = longSparseArray7;
                     str34 = str6;
                     str35 = str7;
+                    messageObject4 = messageObject3;
                     dialogKey5 = dialogKey4;
-                    arrayList8 = arrayList7;
+                    if (!dialogKey5.story) {
+                    }
                     StringBuilder sb6222222222222 = new StringBuilder();
                     sb6222222222222.append("show extra notifications chatId ");
                     sb6222222222222.append(j11);
@@ -12944,24 +12992,24 @@ public class NotificationsController extends BaseController {
                     FileLog.d(sb6222222222222.toString());
                     if (j15 != 0) {
                     }
-                    String str40222222222222 = str3922222222222;
-                    intent222222222222.putExtra(str40222222222222, notificationsController3.currentAccount);
-                    PendingIntent activity222222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent222222222222, 1140850688);
+                    String str41222222222222 = str3922222222222;
+                    intent322222222222.putExtra(str41222222222222, notificationsController3.currentAccount);
+                    PendingIntent activity222222222222 = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent322222222222, 1140850688);
                     NotificationCompat.WearableExtender wearableExtender222222222222 = new NotificationCompat.WearableExtender();
                     NotificationCompat.Action action4222222222222 = action;
                     if (action != null) {
                     }
-                    String str41222222222222 = str22;
-                    Intent intent3222222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
-                    intent3222222222222.addFlags(32);
-                    intent3222222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
-                    intent3222222222222.putExtra(str20, j11);
+                    String str42222222222222 = str22;
+                    Intent intent4222222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) AutoMessageHeardReceiver.class);
+                    intent4222222222222.addFlags(32);
+                    intent4222222222222.setAction("org.telegram.messenger.ACTION_MESSAGE_HEARD");
+                    intent4222222222222.putExtra(str20, j11);
                     int i30222222222222 = i9;
-                    intent3222222222222.putExtra(str19, i30222222222222);
-                    intent3222222222222.putExtra(str40222222222222, notificationsController3.currentAccount);
-                    String str42222222222222 = str34;
-                    String str43222222222222 = str35;
-                    NotificationCompat.Action build4222222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent3222222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
+                    intent4222222222222.putExtra(str19, i30222222222222);
+                    intent4222222222222.putExtra(str41222222222222, notificationsController3.currentAccount);
+                    String str43222222222222 = str34;
+                    String str44222222222222 = str35;
+                    NotificationCompat.Action build4222222222222 = new NotificationCompat.Action.Builder(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAsRead), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222222222222, 167772160)).setSemanticAction(2).setShowsUserInterface(false).build();
                     if (DialogObject.isEncryptedDialog(j11)) {
                     }
                     if (str36 != null) {
@@ -12978,19 +13026,18 @@ public class NotificationsController extends BaseController {
                     if (dialogKey5.story) {
                     }
                     category = autoCancel222222222222.setNumber(arrayList9.size()).setColor(-15618822).setGroupSummary(false).setWhen(j17).setShowWhen(true).setStyle(messagingStyle2).setContentIntent(activity222222222222).extend(wearableExtender222222222222).setSortKey(String.valueOf(Long.MAX_VALUE - j17)).setCategory("msg");
-                    Intent intent4222222222222 = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
-                    intent4222222222222.putExtra("messageDate", i7);
-                    intent4222222222222.putExtra("dialogId", j11);
-                    intent4222222222222.putExtra(str40222222222222, notificationsController3.currentAccount);
+                    intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) NotificationDismissReceiver.class);
+                    intent.putExtra("messageDate", i7);
+                    intent.putExtra("dialogId", j11);
+                    intent.putExtra(str41222222222222, notificationsController3.currentAccount);
                     if (dialogKey5.story) {
                     }
-                    if (messageObject5.isStoryReactionPush) {
+                    if (messageObject5 != null) {
                     }
-                    category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent4222222222222, 167772160));
+                    category.setDeleteIntent(PendingIntent.getBroadcast(ApplicationLoader.applicationContext, num.intValue(), intent, 167772160));
                     if (z7) {
                     }
-                    message = messageObject5.messageOwner;
-                    if (message != null) {
+                    if (messageObject5 != null) {
                     }
                     tL_keyboardButtonCopy = null;
                     if (tL_keyboardButtonCopy != null) {
@@ -13022,11 +13069,11 @@ public class NotificationsController extends BaseController {
                     longSparseArray6 = longSparseArray9;
                     str12 = str5;
                     i14 = i24;
-                    str11 = str41222222222222;
+                    str11 = str42222222222222;
                     notification2 = notification3222222222222;
-                    str14 = str43222222222222;
+                    str14 = str44222222222222;
                     sharedPreferences = sharedPreferences2;
-                    str13 = str42222222222222;
+                    str13 = str43222222222222;
                     arrayList5 = arrayList14;
                     arrayList5.add(new 1NotificationHolder(num.intValue(), j11, dialogKey5.story, j15, str24, user7, chat5, category, j2, str2, jArr, i, uri, i2, z, z2, z3, i3));
                     notificationsController2 = this;

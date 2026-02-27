@@ -717,13 +717,11 @@ public abstract class BlurredBackgroundDrawable extends Drawable {
         this.ninePatchHashBuilder.addF(this.shadowLayerDx);
         this.ninePatchHashBuilder.addF(this.shadowLayerDy);
         long j = this.ninePatchHashBuilder.get();
-        NinePatchDrawable ninePatchDrawable = this.ninePatchDrawable;
-        if (ninePatchDrawable == null || this.ninePatchDrawableHash != j) {
+        if (this.ninePatchDrawable == null || this.ninePatchDrawableHash != j) {
             this.ninePatchDrawableHash = j;
-            if (ninePatchDrawable == null) {
-                this.ninePatchDrawable = NinePatchBuilder.createNinePatch(i, this.boundProps.radii, this.shadowLayerRadius, this.shadowColor, this.shadowLayerDx, this.shadowLayerDy);
-            }
-            this.ninePatchDrawable.getPadding(this.ninePatchDrawablePadding);
+            NinePatchDrawable createNinePatch = NinePatchBuilder.createNinePatch(i, this.boundProps.radii, this.shadowLayerRadius, this.shadowColor, this.shadowLayerDx, this.shadowLayerDy);
+            this.ninePatchDrawable = createNinePatch;
+            createNinePatch.getPadding(this.ninePatchDrawablePadding);
         }
         return this.ninePatchDrawable;
     }

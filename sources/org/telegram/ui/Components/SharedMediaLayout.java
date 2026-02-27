@@ -12021,7 +12021,32 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
             return new RecyclerListView.Holder(userCell);
         }
 
+        /* JADX WARN: Code restructure failed: missing block: B:35:0x0085, code lost:
+        
+            if (r1.promoted_by == r19.this$0.profileActivity.getUserConfig().getClientUserId()) goto L38;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:36:0x00c9, code lost:
+        
+            r10 = r4;
+            r6 = false;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:37:0x00c6, code lost:
+        
+            r11 = true;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:39:0x00c4, code lost:
+        
+            r10 = r4;
+            r6 = true;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:52:0x00c2, code lost:
+        
+            if (r0.inviter_id == r19.this$0.profileActivity.getUserConfig().getClientUserId()) goto L38;
+         */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
             TLRPC.ChatParticipant chatParticipant;
             String str;
@@ -12054,10 +12079,6 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                                 if (TextUtils.isEmpty(str)) {
                                     str = LocaleController.getString("ChannelAdmin", R.string.ChannelAdmin);
                                 }
-                                z = channelParticipant.can_edit;
-                                str2 = str;
-                                z2 = true;
-                                z3 = false;
                             }
                             str2 = str;
                             z = false;
@@ -12079,10 +12100,6 @@ public abstract class SharedMediaLayout extends FrameLayout implements Notificat
                                 if (TextUtils.isEmpty(str)) {
                                     str = LocaleController.getString("ChannelAdmin", R.string.ChannelAdmin);
                                 }
-                                str2 = str;
-                                z = chatParticipant.inviter_id == SharedMediaLayout.this.profileActivity.getUserConfig().getClientUserId();
-                                z2 = true;
-                                z3 = false;
                             }
                             str2 = str;
                             z = false;

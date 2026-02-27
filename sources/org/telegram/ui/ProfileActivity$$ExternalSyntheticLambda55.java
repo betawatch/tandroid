@@ -3,10 +3,10 @@ package org.telegram.ui;
 import org.telegram.ui.Stories.recorder.HintView2;
 
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ProfileActivity$$ExternalSyntheticLambda63 implements Runnable {
+public final /* synthetic */ class ProfileActivity$$ExternalSyntheticLambda55 implements Runnable {
     public final /* synthetic */ HintView2 f$0;
 
-    public /* synthetic */ ProfileActivity$$ExternalSyntheticLambda63(HintView2 hintView2) {
+    public /* synthetic */ ProfileActivity$$ExternalSyntheticLambda55(HintView2 hintView2) {
         this.f$0 = hintView2;
     }
 

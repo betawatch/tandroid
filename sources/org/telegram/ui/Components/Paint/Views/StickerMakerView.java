@@ -1557,17 +1557,17 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
         }
     }
 
-    public void uploadStickerFile(final String str, final VideoEditedInfo videoEditedInfo, final String str2, final CharSequence charSequence, final boolean z, final long j, final TLRPC.StickerSet stickerSet, final TLRPC.Document document, final String str3, final Utilities.Callback callback, final Utilities.Callback2 callback2) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda5
+    public void uploadStickerFile(final String str, final VideoEditedInfo videoEditedInfo, final String str2, final CharSequence charSequence, final boolean z, final long j, final TLRPC.StickerSet stickerSet, final TLRPC.Document document, final TLRPC.Document document2, final String str3, final Utilities.Callback callback, final Utilities.Callback2 callback2) {
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                StickerMakerView.this.lambda$uploadStickerFile$12(callback, str2, str, charSequence, z, j, stickerSet, document, videoEditedInfo, str3, callback2);
+                StickerMakerView.this.lambda$uploadStickerFile$12(callback, str2, str, charSequence, z, j, stickerSet, document, document2, videoEditedInfo, str3, callback2);
             }
         }, 300L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$uploadStickerFile$12(Utilities.Callback callback, String str, String str2, CharSequence charSequence, boolean z, long j, TLRPC.StickerSet stickerSet, TLRPC.Document document, VideoEditedInfo videoEditedInfo, String str3, Utilities.Callback2 callback2) {
+    public /* synthetic */ void lambda$uploadStickerFile$12(Utilities.Callback callback, String str, String str2, CharSequence charSequence, boolean z, long j, TLRPC.StickerSet stickerSet, TLRPC.Document document, TLRPC.Document document2, VideoEditedInfo videoEditedInfo, String str3, Utilities.Callback2 callback2) {
         StickerUploader stickerUploader;
         boolean z2 = callback == null || (stickerUploader = this.stickerUploader) == null || !stickerUploader.uploaded;
         if (z2) {
@@ -1586,6 +1586,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
         stickerUploader3.sendToDialogId = j;
         stickerUploader3.stickerSet = stickerSet;
         stickerUploader3.replacedSticker = document;
+        stickerUploader3.uploadedSticker = document2;
         stickerUploader3.videoEditedInfo = videoEditedInfo;
         stickerUploader3.thumbPath = str3;
         stickerUploader3.whenDone = callback;
@@ -1593,13 +1594,22 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
         stickerUploader3.setupFiles();
         if (!z2) {
             afterUploadingMedia();
-        } else if (videoEditedInfo != null) {
+        } else if (document2 != null) {
+            StickerUploader stickerUploader4 = this.stickerUploader;
+            stickerUploader4.tlInputStickerSetItem = MediaDataController.getInputStickerSetItem(document2, stickerUploader4.emoji);
+            this.stickerUploader.mediaDocument = new TLRPC.TL_messageMediaDocument();
+            TLRPC.TL_messageMediaDocument tL_messageMediaDocument = this.stickerUploader.mediaDocument;
+            tL_messageMediaDocument.flags |= 1;
+            tL_messageMediaDocument.document = document2;
+            afterUploadingMedia();
+        }
+        if (videoEditedInfo != null) {
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
             tL_message.id = 1;
-            StickerUploader stickerUploader4 = this.stickerUploader;
+            StickerUploader stickerUploader5 = this.stickerUploader;
             String absolutePath = StoryEntry.makeCacheFile(UserConfig.selectedAccount, "webm").getAbsolutePath();
             tL_message.attachPath = absolutePath;
-            stickerUploader4.finalPath = absolutePath;
+            stickerUploader5.finalPath = absolutePath;
             this.stickerUploader.messageObject = new MessageObject(UserConfig.selectedAccount, (TLRPC.Message) tL_message, (MessageObject) null, false, false);
             this.stickerUploader.messageObject.videoEditedInfo = videoEditedInfo;
             MediaController.getInstance().scheduleVideoConvert(this.stickerUploader.messageObject, false, false, false);
@@ -1613,7 +1623,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
 
     private void showLoadingDialog() {
         if (this.loadingToast == null) {
-            this.loadingToast = new DownloadButton.PreparingVideoToast(getContext());
+            this.loadingToast = new DownloadButton.PreparingVideoToast(getContext(), LocaleController.getString(R.string.PreparingSticker));
         }
         this.loadingToast.setOnCancelListener(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
@@ -1682,7 +1692,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$uploadMedia$15(final StickerUploader stickerUploader, final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda6
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Paint.Views.StickerMakerView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 StickerMakerView.this.lambda$uploadMedia$14(tLObject, stickerUploader, tL_error);
@@ -1987,6 +1997,7 @@ public class StickerMakerView extends FrameLayout implements NotificationCenter.
         public String thumbPath;
         public TLRPC.TL_inputStickerSetItem tlInputStickerSetItem;
         public boolean uploaded;
+        public TLRPC.Document uploadedSticker;
         public VideoEditedInfo videoEditedInfo;
         public Utilities.Callback whenDone;
         public ArrayList finalFiles = new ArrayList();

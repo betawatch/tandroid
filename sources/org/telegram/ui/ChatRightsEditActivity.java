@@ -2397,6 +2397,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
             String string;
+            String formatString;
             String string2;
             String string3;
             switch (viewHolder.getItemViewType()) {
@@ -2412,7 +2413,12 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                             } else {
                                 string = LocaleController.getString(R.string.ChannelAdmin);
                             }
-                            textInfoPrivacyCell.setText(LocaleController.formatString(R.string.EditAdminRankInfo, string));
+                            if (ChatRightsEditActivity.this.currentType == 0) {
+                                formatString = LocaleController.formatString(R.string.EditAdminRankInfo, string);
+                            } else {
+                                formatString = LocaleController.formatString(R.string.EditMemberRankInfo, UserObject.getUserName(ChatRightsEditActivity.this.currentUser));
+                            }
+                            textInfoPrivacyCell.setText(formatString);
                             break;
                         }
                     } else {

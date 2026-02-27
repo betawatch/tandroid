@@ -974,10 +974,10 @@ public class InviteLinkBottomSheet extends BottomSheet {
         }
 
         /* JADX WARN: Removed duplicated region for block: B:100:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:112:0x0291  */
+        /* JADX WARN: Removed duplicated region for block: B:116:0x02a7  */
         /* JADX WARN: Removed duplicated region for block: B:79:0x025b  */
-        /* JADX WARN: Removed duplicated region for block: B:88:0x02d7  */
-        /* JADX WARN: Removed duplicated region for block: B:93:0x031d  */
+        /* JADX WARN: Removed duplicated region for block: B:88:0x02ed  */
+        /* JADX WARN: Removed duplicated region for block: B:93:0x0333  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -1181,7 +1181,7 @@ public class InviteLinkBottomSheet extends BottomSheet {
                                 if (TextUtils.isEmpty(str4)) {
                                     str4 = LocaleController.getString("ChannelAdmin", R.string.ChannelAdmin);
                                 }
-                                z = channelParticipant.can_edit;
+                                z = channelParticipant.promoted_by == UserConfig.getInstance(((BottomSheet) InviteLinkBottomSheet.this).currentAccount).getClientUserId();
                                 str2 = str4;
                                 z2 = true;
                                 z3 = false;
