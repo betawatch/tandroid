@@ -3193,7 +3193,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         NestedFrameLayout nestedFrameLayout = (NestedFrameLayout) this.fragmentView;
         this.contentView = nestedFrameLayout;
         nestedFrameLayout.needBlur = r8;
-        ClippedListView clippedListView = new ClippedListView(context2) { // from class: org.telegram.ui.ProfileActivity.12
+        ClippedListView clippedListView = new ClippedListView(context2, this.resourcesProvider) { // from class: org.telegram.ui.ProfileActivity.12
             private VelocityTracker velocityTracker;
 
             @Override // org.telegram.ui.Components.RecyclerListView, android.view.View
@@ -21370,8 +21370,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
     }
 
     private class ClippedListView extends RecyclerListView implements StoriesListPlaceProvider.ClippedView {
-        public ClippedListView(Context context) {
-            super(context);
+        public ClippedListView(Context context, Theme.ResourcesProvider resourcesProvider) {
+            super(context, resourcesProvider);
         }
 
         @Override // org.telegram.ui.Stories.StoriesListPlaceProvider.ClippedView

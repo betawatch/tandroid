@@ -2,7 +2,6 @@ package org.telegram.ui.Components.inset;
 
 import android.view.View;
 import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import me.vkryl.android.animator.FactorAnimator;
 import me.vkryl.android.animator.VariableFloat;
@@ -255,7 +254,10 @@ public class WindowInsetsStateHolder implements WindowInsetsProvider, WindowInse
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onAnimatedInsetsFinished$1() {
-        this.activeAnimations--;
-        setInsets(ViewCompat.getRootWindowInsets(this.animatedInsetsProviderTarget), false);
+        int i = this.activeAnimations - 1;
+        this.activeAnimations = i;
+        if (i == 0) {
+            setInsets(WindowAnimatedInsetsProvider.calculateWindowInsets(this.animatedInsetsProviderTarget), false);
+        }
     }
 }

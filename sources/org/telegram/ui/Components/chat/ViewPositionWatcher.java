@@ -137,22 +137,22 @@ public final class ViewPositionWatcher implements ViewTreeObserver.OnPreDrawList
         return computeRectInParent;
     }
 
-    public static boolean computeRectInParent(View view, ViewGroup viewGroup, RectF rectF) {
+    public static boolean computeRectInParent(View view, View view2, RectF rectF) {
         float f = 0.0f;
         float f2 = 0.0f;
-        View view2 = view;
-        while (view2 != null && view2 != viewGroup) {
-            float x = f + view2.getX();
-            float y = f2 + view2.getY();
-            Object parent = view2.getParent();
+        View view3 = view;
+        while (view3 != null && view3 != view2) {
+            float x = f + view3.getX();
+            float y = f2 + view3.getY();
+            Object parent = view3.getParent();
             if (!(parent instanceof View)) {
                 return false;
             }
-            view2 = (View) parent;
-            f = x - view2.getScrollX();
-            f2 = y - view2.getScrollY();
+            view3 = (View) parent;
+            f = x - view3.getScrollX();
+            f2 = y - view3.getScrollY();
         }
-        if (view2 != viewGroup) {
+        if (view3 != view2) {
             return false;
         }
         rectF.set(f, f2, view.getWidth() + f, view.getHeight() + f2);

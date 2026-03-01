@@ -3332,7 +3332,7 @@ public class ChatMessageCell extends BaseCell implements SeekBar.SeekBarDelegate
                             if (chatMessageCellDelegate2 != null) {
                                 chatMessageCellDelegate2.didPressImage(this, this.lastTouchX, this.lastTouchY, true);
                             }
-                        } else if (!messageObject.preview) {
+                        } else if (messageObject != null && !messageObject.preview) {
                             TLRPC.WebPage webPage = MessageObject.getMedia(messageObject.messageOwner).webpage;
                             if (webPage != null && !TextUtils.isEmpty(webPage.embed_url)) {
                                 ChatMessageCellDelegate chatMessageCellDelegate3 = this.delegate;

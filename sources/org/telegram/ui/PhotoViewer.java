@@ -17190,13 +17190,13 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     
         if (r19.parentChatActivity.getChatMode() != 5) goto L188;
      */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x09c0  */
-    /* JADX WARN: Removed duplicated region for block: B:280:0x0bf8  */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x0c0e A[Catch: Exception -> 0x0c1a, TryCatch #0 {Exception -> 0x0c1a, blocks: (B:283:0x0c01, B:285:0x0c0e, B:286:0x0c1c, B:288:0x0c20), top: B:282:0x0c01 }] */
-    /* JADX WARN: Removed duplicated region for block: B:288:0x0c20 A[Catch: Exception -> 0x0c1a, TRY_LEAVE, TryCatch #0 {Exception -> 0x0c1a, blocks: (B:283:0x0c01, B:285:0x0c0e, B:286:0x0c1c, B:288:0x0c20), top: B:282:0x0c01 }] */
+    /* JADX WARN: Removed duplicated region for block: B:201:0x09c7  */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x0bff  */
+    /* JADX WARN: Removed duplicated region for block: B:285:0x0c15 A[Catch: Exception -> 0x0c21, TryCatch #0 {Exception -> 0x0c21, blocks: (B:283:0x0c08, B:285:0x0c15, B:286:0x0c23, B:288:0x0c27), top: B:282:0x0c08 }] */
+    /* JADX WARN: Removed duplicated region for block: B:288:0x0c27 A[Catch: Exception -> 0x0c21, TRY_LEAVE, TryCatch #0 {Exception -> 0x0c21, blocks: (B:283:0x0c08, B:285:0x0c15, B:286:0x0c23, B:288:0x0c27), top: B:282:0x0c08 }] */
     /* JADX WARN: Removed duplicated region for block: B:292:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:297:0x0bfd  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x0b8c  */
+    /* JADX WARN: Removed duplicated region for block: B:297:0x0c04  */
+    /* JADX WARN: Removed duplicated region for block: B:316:0x0b93  */
     /* JADX WARN: Type inference failed for: r11v18 */
     /* JADX WARN: Type inference failed for: r11v2 */
     /* JADX WARN: Type inference failed for: r11v3, types: [android.animation.AnimatorSet, java.lang.String] */
@@ -17637,6 +17637,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     int i13 = this.sendPhotoType;
                     captionPhotoViewer2.setAddPhotoVisible(i13 != -1 && (i13 == 2 || i13 == 5) && this.placeProvider.canCaptureMorePhotos(), false);
                     this.menuItem.setVisibility(8);
+                    this.menuItem.setSubItemShown(25, false);
                     this.imagesArrLocals.addAll(list);
                     Object obj = this.imagesArrLocals.get(i5);
                     int i14 = this.sendPhotoType;
@@ -19343,27 +19344,27 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x054d  */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0562  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x056e A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x06a1  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x06c7  */
-    /* JADX WARN: Removed duplicated region for block: B:155:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0693 A[LOOP:0: B:164:0x0691->B:165:0x0693, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x053d  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x04b9  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x0195  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0121  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x012c  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x047f  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x04a9  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x04bc  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0542 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x054b  */
-    /* JADX WARN: Type inference failed for: r3v22 */
-    /* JADX WARN: Type inference failed for: r3v23, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r3v24 */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0586  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0588  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x059d  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x05a9 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x06dc  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0702  */
+    /* JADX WARN: Removed duplicated region for block: B:159:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x06ce A[LOOP:0: B:168:0x06cc->B:169:0x06ce, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:171:0x0578  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x04f4  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x01ae  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x04ba  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x04e4  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x04f7  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x057d A[ADDED_TO_REGION] */
+    /* JADX WARN: Type inference failed for: r3v35 */
+    /* JADX WARN: Type inference failed for: r3v36, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r3v37 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -19371,8 +19372,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         int i2;
         boolean z4;
         boolean z5;
-        Uri uri;
         boolean z6;
+        Uri uri;
         boolean z7;
         Uri uri2;
         boolean z8;
@@ -19424,8 +19425,8 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 return;
             }
             MessageObject messageObject5 = (MessageObject) this.imagesArr.get(this.currentIndex);
-            z4 = z && (messageObject4 = this.currentMessageObject) != null && messageObject4.getId() == messageObject5.getId();
-            if (z4) {
+            z5 = z && (messageObject4 = this.currentMessageObject) != null && messageObject4.getId() == messageObject5.getId();
+            if (z5) {
                 messageObject5.putInDownloadsStore = this.currentMessageObject.putInDownloadsStore;
             }
             if (this.ads == null || messageObject5 == null || ((messageObject3 = this.currentMessageObject) != null && messageObject3.getDialogId() != messageObject5.getDialogId())) {
@@ -19476,11 +19477,15 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         this.speedItem.setVisibility(0);
                         this.videoItem.setVisibility(0);
                         this.menuItem.showSubItem(17);
+                        this.menuItem.setSubItemShown(25, false);
                         this.speedGap.setVisibility(this.menuItem.getVisibleSubItemsCount() > 1 ? 0 : 8);
                     } else {
                         this.speedItem.setVisibility(8);
                         this.videoItem.setVisibility(8);
                         this.speedGap.setVisibility(8);
+                        ActionBarMenuItem actionBarMenuItem = this.menuItem;
+                        MessageObject messageObject6 = this.currentMessageObject;
+                        actionBarMenuItem.setSubItemShown(25, messageObject6 != null && messageObject6.isPhoto());
                         this.menuItem.checkHideMenuItem();
                     }
                     updateQualityItems();
@@ -19501,6 +19506,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.speedItem.setVisibility(0);
             this.videoItem.setVisibility(0);
             this.menuItem.showSubItem(17);
+            this.menuItem.setSubItemShown(25, false);
             this.speedGap.setVisibility(this.menuItem.getVisibleSubItemsCount() > 1 ? 0 : 8);
             updateQualityItems();
             z11 = isVideo;
@@ -19510,8 +19516,11 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                 if (i < 0 || i >= this.secureDocuments.size()) {
                     closePhoto(false, false);
                     return;
+                } else {
+                    this.currentSecureDocument = (SecureDocument) this.secureDocuments.get(i);
+                    this.menuItem.setSubItemShown(25, false);
+                    z4 = false;
                 }
-                this.currentSecureDocument = (SecureDocument) this.secureDocuments.get(i);
             } else if (!this.imagesArrLocations.isEmpty()) {
                 if (i < 0 || i >= this.imagesArrLocations.size()) {
                     closePhoto(false, false);
@@ -19524,14 +19533,16 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     int i8 = tL_fileLocationToBeDeprecated.local_id;
                     TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated2 = imageLocation2.location;
                     if (i8 == tL_fileLocationToBeDeprecated2.local_id && tL_fileLocationToBeDeprecated.volume_id == tL_fileLocationToBeDeprecated2.volume_id) {
-                        z4 = true;
+                        z5 = true;
                         this.currentFileLocation = (ImageLocation) this.imagesArrLocations.get(i);
                         this.currentFileLocationVideo = (ImageLocation) this.imagesArrLocationsVideo.get(i);
+                        this.menuItem.setSubItemShown(25, false);
                     }
                 }
-                z4 = false;
+                z5 = false;
                 this.currentFileLocation = (ImageLocation) this.imagesArrLocations.get(i);
                 this.currentFileLocationVideo = (ImageLocation) this.imagesArrLocationsVideo.get(i);
+                this.menuItem.setSubItemShown(25, false);
             } else {
                 if (!this.imagesArrLocals.isEmpty()) {
                     if (i < 0 || i >= this.imagesArrLocals.size()) {
@@ -19555,12 +19566,12 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                     equals = botInlineResult.type.equals(MediaStreamTrack.VIDEO_TRACK_KIND);
                                 }
                             }
-                            z4 = false;
+                            z5 = false;
                             z7 = false;
                             uri2 = null;
                         }
                         z7 = equals;
-                        z4 = false;
+                        z5 = false;
                         uri2 = null;
                     } else {
                         if (obj instanceof MediaController.PhotoEntry) {
@@ -19611,7 +19622,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                 z8 = z13;
                             }
                             z7 = z8;
-                            z4 = this.savedState != null;
+                            z5 = this.savedState != null;
                         } else {
                             if (obj instanceof MediaController.SearchImage) {
                                 MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
@@ -19625,7 +19636,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                 editState3.mediaEntities = searchImage.mediaEntities;
                                 editState3.cropState = searchImage.cropState;
                             }
-                            z4 = false;
+                            z5 = false;
                             z7 = false;
                             uri2 = null;
                         }
@@ -19667,305 +19678,250 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         this.previousHasTransform = false;
                         this.cropTransform.setViewTransform(false, this.previousCropPx, this.previousCropPy, this.previousCropRotation, this.previousCropOrientation, this.previousCropScale, 1.0f, 1.0f, this.previousCropPw, this.previousCropPh, 0.0f, 0.0f, this.previousCropMirrored);
                     }
+                    z4 = false;
+                    this.menuItem.setSubItemShown(25, false);
                     z11 = z7;
                     uri = uri2;
-                    z5 = false;
                     z6 = true;
-                    setMenuItemIcon(z5, z6);
-                    placeProviderObject = this.currentPlaceObject;
-                    if (placeProviderObject != null) {
-                        if (this.animationInProgress == 0) {
-                            placeProviderObject.imageReceiver.setVisible(z6, z6);
-                        } else {
-                            this.showAfterAnimation = placeProviderObject;
-                        }
-                    }
-                    placeForPhoto = this.placeProvider.getPlaceForPhoto(this.currentMessageObject, getFileLocation(this.currentFileLocation), this.currentIndex, false, false);
-                    this.currentPlaceObject = placeForPhoto;
-                    if (placeForPhoto == null) {
-                        z9 = false;
-                    } else if (this.animationInProgress == 0) {
-                        z9 = false;
-                        placeForPhoto.imageReceiver.setVisible(false, true);
-                    } else {
-                        z9 = false;
-                        this.hideAfterAnimation = placeForPhoto;
-                    }
-                    if (z4) {
-                        z10 = false;
-                        j = 0;
-                    } else {
-                        this.draggingDown = z9;
-                        this.translationX = 0.0f;
-                        this.translationY = 0.0f;
-                        this.animateToX = 0.0f;
-                        this.animateToY = 0.0f;
-                        float scale1 = scale1();
-                        this.animateToScale = scale1;
-                        this.scale = scale1;
-                        this.animateToRotate = 0.0f;
-                        j = 0;
-                        this.animationStartTime = 0L;
-                        this.zoomAnimation = z9;
-                        this.imageMoveAnimation = null;
-                        this.changeModeAnimation = null;
-                        AspectRatioFrameLayout aspectRatioFrameLayout = this.aspectRatioFrameLayout;
-                        if (aspectRatioFrameLayout != null) {
-                            aspectRatioFrameLayout.setVisibility(4);
-                        }
-                        this.pinchStartDistance = 0.0f;
-                        this.pinchStartAngle = 0.0f;
-                        this.pinchStartScale = 1.0f;
-                        this.pinchStartRotate = 0.0f;
-                        this.pinchCenterX = 0.0f;
-                        this.pinchCenterY = 0.0f;
-                        this.pinchStartX = 0.0f;
-                        this.pinchStartY = 0.0f;
-                        this.moveStartX = 0.0f;
-                        this.moveStartY = 0.0f;
-                        this.zooming = false;
-                        this.moving = false;
-                        this.paintViewTouched = 0;
-                        this.maskPaintViewTouched = 0;
-                        this.doubleTap = false;
-                        this.invalidCoords = false;
-                        this.canDragDown = true;
-                        this.changingPage = false;
-                        this.switchImageAfterAnimation = 0;
-                        if (this.sharedMediaType != 1) {
-                            this.canZoom = (this.isEmbedVideo || (this.imagesArrLocals.isEmpty() && (this.currentFileNames[0] == null || this.photoProgressViews[0].backgroundState == 0))) ? false : true;
-                        }
-                        updateMinMax(this.scale);
-                        z10 = false;
-                        releasePlayer(false);
-                    }
-                    if (z11 && uri != null) {
-                        this.isStreaming = z10;
-                        preparePlayer(null, uri, this.sendPhotoType != 1, false, this.editState.savedFilterState);
-                    }
-                    if (this.imagesArrLocals.isEmpty()) {
-                        this.editState.reset();
-                    }
-                    this.centerImageIsVideo = z11;
-                    i3 = i2;
-                    if (i3 != -1 || z3) {
-                        setImages();
-                        for (i4 = 0; i4 < 3; i4++) {
-                            checkProgress(i4, false, false);
-                        }
-                    } else {
-                        checkProgress(0, true, false);
+                } else {
+                    PageBlocksAdapter pageBlocksAdapter = this.pageBlocksAdapter;
+                    if (pageBlocksAdapter != null) {
                         int i10 = this.currentIndex;
-                        if (i3 > i10) {
-                            ImageReceiver imageReceiver = this.rightImage;
-                            this.rightImage = this.centerImage;
-                            this.centerImage = this.leftImage;
-                            this.leftImage = imageReceiver;
-                            BlurringShader.ThumbBlurer thumbBlurer = this.rightBlur;
-                            this.rightBlur = this.centerBlur;
-                            this.centerBlur = this.leftBlur;
-                            this.leftBlur = thumbBlurer;
-                            AnimatedFloat[] animatedFloatArr = this.centerImageInsideBlur;
-                            if (animatedFloatArr != null) {
-                                AnimatedFloat animatedFloat = animatedFloatArr[0];
-                                animatedFloatArr[0] = animatedFloatArr[1];
-                                c2 = 2;
-                                animatedFloatArr[1] = animatedFloatArr[2];
-                                animatedFloatArr[2] = animatedFloat;
-                            } else {
-                                c2 = 2;
-                            }
-                            this.rightImageIsVideo = z12;
-                            this.rightCropTransform = clone;
-                            this.rightCropState = clone2;
-                            PhotoProgressView[] photoProgressViewArr = this.photoProgressViews;
-                            PhotoProgressView photoProgressView = photoProgressViewArr[0];
-                            photoProgressViewArr[0] = photoProgressViewArr[c2];
-                            photoProgressViewArr[c2] = photoProgressView;
-                            ImageView[] imageViewArr = this.fullscreenButton;
-                            ImageView imageView = imageViewArr[0];
-                            ImageView imageView2 = imageViewArr[c2];
-                            imageViewArr[0] = imageView2;
-                            imageViewArr[c2] = imageView;
-                            imageView2.setTranslationY(imageView.getTranslationY());
-                            this.leftCropState = null;
-                            setIndexToPaintingOverlay(this.currentIndex - 1, this.leftPaintingOverlay);
-                            setIndexToPaintingOverlay(this.currentIndex, this.paintingOverlay);
-                            setIndexToPaintingOverlay(this.currentIndex + 1, this.rightPaintingOverlay);
-                            setIndexToImage(this.leftImage, this.currentIndex - 1, this.leftCropTransform);
-                            resetIndexForDeferredImageLoading();
-                            updateAccessibilityOverlayVisibility();
-                            checkProgress(1, true, false);
-                            checkProgress(2, true, false);
-                        } else if (i3 < i10) {
-                            ImageReceiver imageReceiver2 = this.leftImage;
-                            this.leftImage = this.centerImage;
-                            this.centerImage = this.rightImage;
-                            this.rightImage = imageReceiver2;
-                            BlurringShader.ThumbBlurer thumbBlurer2 = this.leftBlur;
-                            this.leftBlur = this.centerBlur;
-                            this.centerBlur = this.rightBlur;
-                            this.rightBlur = thumbBlurer2;
-                            AnimatedFloat[] animatedFloatArr2 = this.centerImageInsideBlur;
-                            if (animatedFloatArr2 != null) {
-                                AnimatedFloat animatedFloat2 = animatedFloatArr2[2];
-                                r3 = 1;
-                                animatedFloatArr2[2] = animatedFloatArr2[1];
-                                c = 0;
-                                animatedFloatArr2[1] = animatedFloatArr2[0];
-                                animatedFloatArr2[0] = animatedFloat2;
-                            } else {
-                                c = 0;
-                                r3 = 1;
-                            }
-                            this.leftImageIsVideo = z12;
-                            this.leftCropTransform = clone;
-                            this.leftCropState = clone2;
-                            PhotoProgressView[] photoProgressViewArr2 = this.photoProgressViews;
-                            PhotoProgressView photoProgressView2 = photoProgressViewArr2[c];
-                            photoProgressViewArr2[c] = photoProgressViewArr2[r3];
-                            photoProgressViewArr2[r3] = photoProgressView2;
-                            ImageView[] imageViewArr2 = this.fullscreenButton;
-                            ImageView imageView3 = imageViewArr2[c];
-                            ImageView imageView4 = imageViewArr2[r3];
-                            imageViewArr2[c] = imageView4;
-                            imageViewArr2[r3] = imageView3;
-                            imageView4.setTranslationY(imageView3.getTranslationY());
-                            this.rightCropState = null;
-                            setIndexToPaintingOverlay(this.currentIndex - r3, this.leftPaintingOverlay);
-                            setIndexToPaintingOverlay(this.currentIndex, this.paintingOverlay);
-                            setIndexToPaintingOverlay(this.currentIndex + r3, this.rightPaintingOverlay);
-                            setIndexToImage(this.rightImage, this.currentIndex + r3, this.rightCropTransform);
-                            resetIndexForDeferredImageLoading();
-                            updateAccessibilityOverlayVisibility();
-                            checkProgress(r3, r3, false);
-                            checkProgress(2, r3, false);
+                        if (i10 < 0 || i10 >= pageBlocksAdapter.getItemsCount()) {
+                            closePhoto(false, false);
+                            return;
                         }
-                        Bitmap bitmap = this.videoFrameBitmap;
-                        if (bitmap != null) {
-                            bitmap.recycle();
-                            this.videoFrameBitmap = null;
-                        }
+                        TLRPC.PageBlock pageBlock = this.pageBlocksAdapter.get(this.currentIndex);
+                        TLRPC.PageBlock pageBlock2 = this.currentPageBlock;
+                        z5 = pageBlock2 != null && pageBlock2 == pageBlock;
+                        this.currentPageBlock = pageBlock;
+                        boolean z15 = this.pageBlocksAdapter.isVideo(this.currentIndex) || this.pageBlocksAdapter.isHardwarePlayer(this.currentIndex);
+                        z4 = false;
+                        this.menuItem.setSubItemShown(25, false);
+                        z11 = z15;
+                        z6 = true;
+                        uri = null;
+                    } else {
+                        z4 = false;
+                        this.menuItem.setSubItemShown(25, false);
                     }
-                    detectFaces();
-                    if (this.captionEdit != null) {
-                        PhotoViewerProvider photoViewerProvider = this.placeProvider;
-                        long dialogId = photoViewerProvider != null ? photoViewerProvider.getDialogId() : j;
-                        if (dialogId == j && (messageObject2 = this.currentMessageObject) != null) {
-                            dialogId = messageObject2.getDialogId();
-                        }
-                        this.captionEdit.setDialogId(dialogId);
-                        CaptionPhotoViewer captionPhotoViewer = this.topCaptionEdit;
-                        if (captionPhotoViewer != null) {
-                            captionPhotoViewer.setDialogId(dialogId);
-                        }
+                }
+                setMenuItemIcon(z4, z6);
+                placeProviderObject = this.currentPlaceObject;
+                if (placeProviderObject != null) {
+                    if (this.animationInProgress == 0) {
+                        placeProviderObject.imageReceiver.setVisible(z6, z6);
+                    } else {
+                        this.showAfterAnimation = placeProviderObject;
                     }
-                    if (this.pickerViewSendButton != null) {
-                        PhotoViewerProvider photoViewerProvider2 = this.placeProvider;
-                        long dialogId2 = photoViewerProvider2 != null ? photoViewerProvider2.getDialogId() : j;
-                        if (dialogId2 == j && (messageObject = this.currentMessageObject) != null) {
-                            dialogId2 = messageObject.getDialogId();
-                        }
-                        ChatActivityEnterView.SendButton sendButton = this.pickerViewSendButton;
-                        PhotoViewerProvider photoViewerProvider3 = this.placeProvider;
-                        long sendPaidMessagesStars = (photoViewerProvider3 == null || !photoViewerProvider3.isEditingMessage() || this.placeProvider.isEditingMessageResend()) ? MessagesController.getInstance(this.currentAccount).getSendPaidMessagesStars(dialogId2) : j;
-                        PhotoViewerProvider photoViewerProvider4 = this.placeProvider;
-                        if (photoViewerProvider4 == null) {
-                            i5 = 1;
-                            selectedCount = 1;
+                }
+                placeForPhoto = this.placeProvider.getPlaceForPhoto(this.currentMessageObject, getFileLocation(this.currentFileLocation), this.currentIndex, false, false);
+                this.currentPlaceObject = placeForPhoto;
+                if (placeForPhoto == null) {
+                    z9 = false;
+                } else if (this.animationInProgress == 0) {
+                    z9 = false;
+                    placeForPhoto.imageReceiver.setVisible(false, true);
+                } else {
+                    z9 = false;
+                    this.hideAfterAnimation = placeForPhoto;
+                }
+                if (z5) {
+                    z10 = false;
+                    j = 0;
+                } else {
+                    this.draggingDown = z9;
+                    this.translationX = 0.0f;
+                    this.translationY = 0.0f;
+                    this.animateToX = 0.0f;
+                    this.animateToY = 0.0f;
+                    float scale1 = scale1();
+                    this.animateToScale = scale1;
+                    this.scale = scale1;
+                    this.animateToRotate = 0.0f;
+                    j = 0;
+                    this.animationStartTime = 0L;
+                    this.zoomAnimation = z9;
+                    this.imageMoveAnimation = null;
+                    this.changeModeAnimation = null;
+                    AspectRatioFrameLayout aspectRatioFrameLayout = this.aspectRatioFrameLayout;
+                    if (aspectRatioFrameLayout != null) {
+                        aspectRatioFrameLayout.setVisibility(4);
+                    }
+                    this.pinchStartDistance = 0.0f;
+                    this.pinchStartAngle = 0.0f;
+                    this.pinchStartScale = 1.0f;
+                    this.pinchStartRotate = 0.0f;
+                    this.pinchCenterX = 0.0f;
+                    this.pinchCenterY = 0.0f;
+                    this.pinchStartX = 0.0f;
+                    this.pinchStartY = 0.0f;
+                    this.moveStartX = 0.0f;
+                    this.moveStartY = 0.0f;
+                    this.zooming = false;
+                    this.moving = false;
+                    this.paintViewTouched = 0;
+                    this.maskPaintViewTouched = 0;
+                    this.doubleTap = false;
+                    this.invalidCoords = false;
+                    this.canDragDown = true;
+                    this.changingPage = false;
+                    this.switchImageAfterAnimation = 0;
+                    if (this.sharedMediaType != 1) {
+                        this.canZoom = (this.isEmbedVideo || (this.imagesArrLocals.isEmpty() && (this.currentFileNames[0] == null || this.photoProgressViews[0].backgroundState == 0))) ? false : true;
+                    }
+                    updateMinMax(this.scale);
+                    z10 = false;
+                    releasePlayer(false);
+                }
+                if (z11 && uri != null) {
+                    this.isStreaming = z10;
+                    preparePlayer(null, uri, this.sendPhotoType != 1, false, this.editState.savedFilterState);
+                }
+                if (this.imagesArrLocals.isEmpty()) {
+                    this.editState.reset();
+                }
+                this.centerImageIsVideo = z11;
+                i3 = i2;
+                if (i3 != -1 || z3) {
+                    setImages();
+                    for (i4 = 0; i4 < 3; i4++) {
+                        checkProgress(i4, false, false);
+                    }
+                } else {
+                    checkProgress(0, true, false);
+                    int i11 = this.currentIndex;
+                    if (i3 > i11) {
+                        ImageReceiver imageReceiver = this.rightImage;
+                        this.rightImage = this.centerImage;
+                        this.centerImage = this.leftImage;
+                        this.leftImage = imageReceiver;
+                        BlurringShader.ThumbBlurer thumbBlurer = this.rightBlur;
+                        this.rightBlur = this.centerBlur;
+                        this.centerBlur = this.leftBlur;
+                        this.leftBlur = thumbBlurer;
+                        AnimatedFloat[] animatedFloatArr = this.centerImageInsideBlur;
+                        if (animatedFloatArr != null) {
+                            AnimatedFloat animatedFloat = animatedFloatArr[0];
+                            animatedFloatArr[0] = animatedFloatArr[1];
+                            c2 = 2;
+                            animatedFloatArr[1] = animatedFloatArr[2];
+                            animatedFloatArr[2] = animatedFloat;
                         } else {
-                            selectedCount = photoViewerProvider4.getSelectedCount();
-                            i5 = 1;
+                            c2 = 2;
                         }
-                        sendButton.setStarsPrice(sendPaidMessagesStars, Math.max(i5, selectedCount));
-                        return;
+                        this.rightImageIsVideo = z12;
+                        this.rightCropTransform = clone;
+                        this.rightCropState = clone2;
+                        PhotoProgressView[] photoProgressViewArr = this.photoProgressViews;
+                        PhotoProgressView photoProgressView = photoProgressViewArr[0];
+                        photoProgressViewArr[0] = photoProgressViewArr[c2];
+                        photoProgressViewArr[c2] = photoProgressView;
+                        ImageView[] imageViewArr = this.fullscreenButton;
+                        ImageView imageView = imageViewArr[0];
+                        ImageView imageView2 = imageViewArr[c2];
+                        imageViewArr[0] = imageView2;
+                        imageViewArr[c2] = imageView;
+                        imageView2.setTranslationY(imageView.getTranslationY());
+                        this.leftCropState = null;
+                        setIndexToPaintingOverlay(this.currentIndex - 1, this.leftPaintingOverlay);
+                        setIndexToPaintingOverlay(this.currentIndex, this.paintingOverlay);
+                        setIndexToPaintingOverlay(this.currentIndex + 1, this.rightPaintingOverlay);
+                        setIndexToImage(this.leftImage, this.currentIndex - 1, this.leftCropTransform);
+                        resetIndexForDeferredImageLoading();
+                        updateAccessibilityOverlayVisibility();
+                        checkProgress(1, true, false);
+                        checkProgress(2, true, false);
+                    } else if (i3 < i11) {
+                        ImageReceiver imageReceiver2 = this.leftImage;
+                        this.leftImage = this.centerImage;
+                        this.centerImage = this.rightImage;
+                        this.rightImage = imageReceiver2;
+                        BlurringShader.ThumbBlurer thumbBlurer2 = this.leftBlur;
+                        this.leftBlur = this.centerBlur;
+                        this.centerBlur = this.rightBlur;
+                        this.rightBlur = thumbBlurer2;
+                        AnimatedFloat[] animatedFloatArr2 = this.centerImageInsideBlur;
+                        if (animatedFloatArr2 != null) {
+                            AnimatedFloat animatedFloat2 = animatedFloatArr2[2];
+                            r3 = 1;
+                            animatedFloatArr2[2] = animatedFloatArr2[1];
+                            c = 0;
+                            animatedFloatArr2[1] = animatedFloatArr2[0];
+                            animatedFloatArr2[0] = animatedFloat2;
+                        } else {
+                            c = 0;
+                            r3 = 1;
+                        }
+                        this.leftImageIsVideo = z12;
+                        this.leftCropTransform = clone;
+                        this.leftCropState = clone2;
+                        PhotoProgressView[] photoProgressViewArr2 = this.photoProgressViews;
+                        PhotoProgressView photoProgressView2 = photoProgressViewArr2[c];
+                        photoProgressViewArr2[c] = photoProgressViewArr2[r3];
+                        photoProgressViewArr2[r3] = photoProgressView2;
+                        ImageView[] imageViewArr2 = this.fullscreenButton;
+                        ImageView imageView3 = imageViewArr2[c];
+                        ImageView imageView4 = imageViewArr2[r3];
+                        imageViewArr2[c] = imageView4;
+                        imageViewArr2[r3] = imageView3;
+                        imageView4.setTranslationY(imageView3.getTranslationY());
+                        this.rightCropState = null;
+                        setIndexToPaintingOverlay(this.currentIndex - r3, this.leftPaintingOverlay);
+                        setIndexToPaintingOverlay(this.currentIndex, this.paintingOverlay);
+                        setIndexToPaintingOverlay(this.currentIndex + r3, this.rightPaintingOverlay);
+                        setIndexToImage(this.rightImage, this.currentIndex + r3, this.rightCropTransform);
+                        resetIndexForDeferredImageLoading();
+                        updateAccessibilityOverlayVisibility();
+                        checkProgress(r3, r3, false);
+                        checkProgress(2, r3, false);
                     }
+                    Bitmap bitmap = this.videoFrameBitmap;
+                    if (bitmap != null) {
+                        bitmap.recycle();
+                        this.videoFrameBitmap = null;
+                    }
+                }
+                detectFaces();
+                if (this.captionEdit != null) {
+                    PhotoViewerProvider photoViewerProvider = this.placeProvider;
+                    long dialogId = photoViewerProvider != null ? photoViewerProvider.getDialogId() : j;
+                    if (dialogId == j && (messageObject2 = this.currentMessageObject) != null) {
+                        dialogId = messageObject2.getDialogId();
+                    }
+                    this.captionEdit.setDialogId(dialogId);
+                    CaptionPhotoViewer captionPhotoViewer = this.topCaptionEdit;
+                    if (captionPhotoViewer != null) {
+                        captionPhotoViewer.setDialogId(dialogId);
+                    }
+                }
+                if (this.pickerViewSendButton != null) {
+                    PhotoViewerProvider photoViewerProvider2 = this.placeProvider;
+                    long dialogId2 = photoViewerProvider2 != null ? photoViewerProvider2.getDialogId() : j;
+                    if (dialogId2 == j && (messageObject = this.currentMessageObject) != null) {
+                        dialogId2 = messageObject.getDialogId();
+                    }
+                    ChatActivityEnterView.SendButton sendButton = this.pickerViewSendButton;
+                    PhotoViewerProvider photoViewerProvider3 = this.placeProvider;
+                    long sendPaidMessagesStars = (photoViewerProvider3 == null || !photoViewerProvider3.isEditingMessage() || this.placeProvider.isEditingMessageResend()) ? MessagesController.getInstance(this.currentAccount).getSendPaidMessagesStars(dialogId2) : j;
+                    PhotoViewerProvider photoViewerProvider4 = this.placeProvider;
+                    if (photoViewerProvider4 == null) {
+                        i5 = 1;
+                        selectedCount = 1;
+                    } else {
+                        selectedCount = photoViewerProvider4.getSelectedCount();
+                        i5 = 1;
+                    }
+                    sendButton.setStarsPrice(sendPaidMessagesStars, Math.max(i5, selectedCount));
                     return;
                 }
-                PageBlocksAdapter pageBlocksAdapter = this.pageBlocksAdapter;
-                if (pageBlocksAdapter != null) {
-                    int i11 = this.currentIndex;
-                    if (i11 < 0 || i11 >= pageBlocksAdapter.getItemsCount()) {
-                        closePhoto(false, false);
-                        return;
-                    }
-                    TLRPC.PageBlock pageBlock = this.pageBlocksAdapter.get(this.currentIndex);
-                    TLRPC.PageBlock pageBlock2 = this.currentPageBlock;
-                    z4 = pageBlock2 != null && pageBlock2 == pageBlock;
-                    this.currentPageBlock = pageBlock;
-                    if (this.pageBlocksAdapter.isVideo(this.currentIndex) || this.pageBlocksAdapter.isHardwarePlayer(this.currentIndex)) {
-                        z5 = false;
-                        uri = null;
-                        z6 = true;
-                        z11 = true;
-                        setMenuItemIcon(z5, z6);
-                        placeProviderObject = this.currentPlaceObject;
-                        if (placeProviderObject != null) {
-                        }
-                        placeForPhoto = this.placeProvider.getPlaceForPhoto(this.currentMessageObject, getFileLocation(this.currentFileLocation), this.currentIndex, false, false);
-                        this.currentPlaceObject = placeForPhoto;
-                        if (placeForPhoto == null) {
-                        }
-                        if (z4) {
-                        }
-                        if (z11) {
-                            this.isStreaming = z10;
-                            preparePlayer(null, uri, this.sendPhotoType != 1, false, this.editState.savedFilterState);
-                        }
-                        if (this.imagesArrLocals.isEmpty()) {
-                        }
-                        this.centerImageIsVideo = z11;
-                        i3 = i2;
-                        if (i3 != -1) {
-                        }
-                        setImages();
-                        while (i4 < 3) {
-                        }
-                        detectFaces();
-                        if (this.captionEdit != null) {
-                        }
-                        if (this.pickerViewSendButton != null) {
-                        }
-                    } else {
-                        z5 = false;
-                        uri = null;
-                        z6 = true;
-                        z11 = false;
-                        setMenuItemIcon(z5, z6);
-                        placeProviderObject = this.currentPlaceObject;
-                        if (placeProviderObject != null) {
-                        }
-                        placeForPhoto = this.placeProvider.getPlaceForPhoto(this.currentMessageObject, getFileLocation(this.currentFileLocation), this.currentIndex, false, false);
-                        this.currentPlaceObject = placeForPhoto;
-                        if (placeForPhoto == null) {
-                        }
-                        if (z4) {
-                        }
-                        if (z11) {
-                        }
-                        if (this.imagesArrLocals.isEmpty()) {
-                        }
-                        this.centerImageIsVideo = z11;
-                        i3 = i2;
-                        if (i3 != -1) {
-                        }
-                        setImages();
-                        while (i4 < 3) {
-                        }
-                        detectFaces();
-                        if (this.captionEdit != null) {
-                        }
-                        if (this.pickerViewSendButton != null) {
-                        }
-                    }
-                }
+                return;
             }
-            z5 = false;
-            z4 = false;
-            uri = null;
             z6 = true;
+            z5 = false;
+            uri = null;
             z11 = false;
-            setMenuItemIcon(z5, z6);
+            setMenuItemIcon(z4, z6);
             placeProviderObject = this.currentPlaceObject;
             if (placeProviderObject != null) {
             }
@@ -19973,9 +19929,11 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             this.currentPlaceObject = placeForPhoto;
             if (placeForPhoto == null) {
             }
-            if (z4) {
+            if (z5) {
             }
             if (z11) {
+                this.isStreaming = z10;
+                preparePlayer(null, uri, this.sendPhotoType != 1, false, this.editState.savedFilterState);
             }
             if (this.imagesArrLocals.isEmpty()) {
             }
@@ -19992,10 +19950,10 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             if (this.pickerViewSendButton != null) {
             }
         }
-        z5 = false;
-        uri = null;
         z6 = true;
-        setMenuItemIcon(z5, z6);
+        uri = null;
+        z4 = false;
+        setMenuItemIcon(z4, z6);
         placeProviderObject = this.currentPlaceObject;
         if (placeProviderObject != null) {
         }
@@ -20003,7 +19961,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         this.currentPlaceObject = placeForPhoto;
         if (placeForPhoto == null) {
         }
-        if (z4) {
+        if (z5) {
         }
         if (z11) {
         }
