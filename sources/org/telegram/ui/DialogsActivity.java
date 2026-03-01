@@ -3330,21 +3330,21 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0b68  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0bb4  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0be4  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x0c22  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0c2f  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0c47  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0c6f  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0c8c  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0cdc  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x0d1d  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x0da3  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0dff  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x0e37  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0dbe  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0bec  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0b6b  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0bb7  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0be7  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x0c25  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x0c32  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0c4a  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x0c72  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x0c8f  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0cdf  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x0d20  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0da6  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0e02  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x0e3a  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x0dc1  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0bef  */
     /* JADX WARN: Type inference failed for: r0v113, types: [org.telegram.ui.ActionBar.ActionBar] */
     /* JADX WARN: Type inference failed for: r0v182, types: [org.telegram.ui.Components.RecyclerListView, org.telegram.ui.DialogsActivity$DialogsRecyclerView] */
     /* JADX WARN: Type inference failed for: r0v20, types: [android.widget.EditText, org.telegram.ui.Components.EditTextBoldCursor] */
@@ -3715,7 +3715,9 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         });
         int i5 = this.initialDialogsType;
         if (((i5 == 0 && !this.onlySelect) || i5 == 3) && this.folderId == 0 && TextUtils.isEmpty(this.searchString)) {
-            this.filterTabsView = new 10(context, this.resourceProvider);
+            10 r03 = new 10(context, this.resourceProvider);
+            this.filterTabsView = r03;
+            r03.setVisibility(8);
             this.canShowFilterTabsView = false;
             this.animatorFilterTabsVisible.setValue(false, false);
             this.filterTabsView.setDelegate(new 11(context));
