@@ -11,7 +11,7 @@ public abstract class R$string {
     public static final int fingerprint_error_no_fingerprints = 2131700003;
     public static final int fingerprint_error_user_canceled = 2131700004;
     public static final int fingerprint_not_recognized = 2131700005;
-    public static final int generic_error_no_device_credential = 2131700033;
-    public static final int generic_error_no_keyguard = 2131700034;
-    public static final int generic_error_user_canceled = 2131700035;
+    public static final int generic_error_no_device_credential = 2131700034;
+    public static final int generic_error_no_keyguard = 2131700035;
+    public static final int generic_error_user_canceled = 2131700036;
 }

@@ -15,5 +15,5 @@ public abstract class R$string {
     public static final int cast_skip_next = 2131699961;
     public static final int cast_skip_prev = 2131699962;
     public static final int cast_stop_live_stream = 2131699964;
-    public static final int media_notification_channel_name = 2131700045;
+    public static final int media_notification_channel_name = 2131700046;
 }

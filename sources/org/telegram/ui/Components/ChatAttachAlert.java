@@ -192,6 +192,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
     private final BoolAnimator animatorCaptionNotEmpty;
     private final BoolAnimator animatorCaptionVisible;
     private final ReplaceAnimator animatorCurrentVisibleLayout;
+    private final BoolAnimator animatorToggleCaptionSupported;
     private SpringAnimation appearSpringAnimation;
     private final Paint attachButtonPaint;
     private int attachItemSize;
@@ -903,9 +904,12 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
             if (i == 1) {
                 checkUi_bottomFade();
                 return;
+            } else if (i == 3) {
+                checkUi_moveCaptionButtonVisibility();
+                return;
             } else {
-                if (i == 3) {
-                    FragmentFloatingButton.setAnimatedVisibility(this.moveCaptionButton, f);
+                if (i == 4) {
+                    checkUi_moveCaptionButtonVisibility();
                     return;
                 }
                 return;
@@ -923,6 +927,10 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 updateSelectedPosition(attachAlertLayout2 != chatAttachAlertPollLayout2 ? 0 : 1);
             }
         }
+    }
+
+    public void checkUi_moveCaptionButtonVisibility() {
+        FragmentFloatingButton.setAnimatedVisibility(this.moveCaptionButton, this.animatorCaptionNotEmpty.getFloatValue() * this.animatorToggleCaptionSupported.getFloatValue());
     }
 
     public interface ChatAttachViewDelegate {
@@ -1311,6 +1319,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
         this.animatorCaptionVisible = new BoolAnimator(1, this, cubicBezierInterpolator, 380L);
         this.animatorActionBarVisible = new BoolAnimator(2, this, cubicBezierInterpolator, 380L);
         this.animatorCaptionNotEmpty = new BoolAnimator(3, this, cubicBezierInterpolator, 380L);
+        this.animatorToggleCaptionSupported = new BoolAnimator(4, this, cubicBezierInterpolator, 380L);
         this.animatorCurrentVisibleLayout = new ReplaceAnimator(new ReplaceAnimator.Callback() { // from class: org.telegram.ui.Components.ChatAttachAlert$$ExternalSyntheticLambda13
             @Override // me.vkryl.android.animator.ReplaceAnimator.Callback
             public /* synthetic */ boolean hasChanges(ReplaceAnimator replaceAnimator) {
@@ -5504,6 +5513,7 @@ public class ChatAttachAlert extends BottomSheet implements NotificationCenter.N
                 new PremiumFeatureBottomSheet(this.baseFragment, 39, false).show();
                 return;
             }
+            this.animatorToggleCaptionSupported.setValue(j == 1, z);
             this.animatorCurrentVisibleLayout.replace(Long.valueOf(j), z);
             this.botButtonWasVisible = false;
             this.botButtonProgressWasVisible = false;

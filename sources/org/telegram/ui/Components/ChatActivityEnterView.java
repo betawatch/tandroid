@@ -13301,10 +13301,6 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 }
 
                 @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
-                public void onOpen() {
-                }
-
-                @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
                 public /* synthetic */ void onPreClose() {
                     PhotoViewer.PhotoViewerProvider.-CC.$default$onPreClose(this);
                 }
@@ -13362,6 +13358,11 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
                 public String getDeleteMessageString() {
                     return "";
+                }
+
+                @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
+                public void onOpen() {
+                    PhotoViewer.getInstance().openKeyboard();
                 }
 
                 @Override // org.telegram.ui.PhotoViewer.PhotoViewerProvider
