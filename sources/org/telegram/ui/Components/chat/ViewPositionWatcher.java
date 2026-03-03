@@ -12,6 +12,7 @@ import java.util.WeakHashMap;
 
 /* loaded from: classes5.dex */
 public final class ViewPositionWatcher implements ViewTreeObserver.OnPreDrawListener, View.OnAttachStateChangeListener {
+    private static final int[] tmpCords = new int[2];
     private static RectF tmpRectF2 = new RectF();
     private final View anchorView;
     private boolean listening;
@@ -27,6 +28,7 @@ public final class ViewPositionWatcher implements ViewTreeObserver.OnPreDrawList
         boolean hasLast;
         final RectF last = new RectF();
         final OnChangedListener listener;
+        boolean multiwindow;
         final ViewGroup parent;
 
         Tracked(ViewGroup viewGroup, OnChangedListener onChangedListener) {
@@ -42,7 +44,12 @@ public final class ViewPositionWatcher implements ViewTreeObserver.OnPreDrawList
     }
 
     public void subscribe(View view, ViewGroup viewGroup, OnChangedListener onChangedListener) {
+        subscribe(view, viewGroup, onChangedListener, false);
+    }
+
+    public void subscribe(View view, ViewGroup viewGroup, OnChangedListener onChangedListener, boolean z) {
         Tracked tracked = new Tracked(viewGroup, onChangedListener);
+        tracked.multiwindow = z;
         List list = (List) this.tracked.get(view);
         if (list == null) {
             list = new ArrayList(1);
@@ -52,6 +59,9 @@ public final class ViewPositionWatcher implements ViewTreeObserver.OnPreDrawList
         computeRectInParent(view, viewGroup, this.tmpRect);
         tracked.last.set(this.tmpRect);
         ensureListening();
+        if (z) {
+            view.getViewTreeObserver().addOnPreDrawListener(this);
+        }
     }
 
     private void attachIfPossible() {
@@ -108,7 +118,15 @@ public final class ViewPositionWatcher implements ViewTreeObserver.OnPreDrawList
             List<Tracked> list = (List) entry.getValue();
             if (view != null && list != null) {
                 for (Tracked tracked : list) {
-                    if (computeRectInParent(view, tracked.parent, this.tmpRect) && (!tracked.hasLast || !this.tmpRect.equals(tracked.last))) {
+                    if (tracked.multiwindow) {
+                        int[] iArr = tmpCords;
+                        view.getLocationOnScreen(iArr);
+                        this.tmpRect.set(iArr[0], iArr[1], r8 + view.getWidth(), iArr[1] + view.getHeight());
+                        tracked.parent.getLocationOnScreen(iArr);
+                        this.tmpRect.offset(-iArr[0], -iArr[1]);
+                    } else if (!computeRectInParent(view, tracked.parent, this.tmpRect)) {
+                    }
+                    if (!tracked.hasLast || !this.tmpRect.equals(tracked.last)) {
                         tracked.last.set(this.tmpRect);
                         tracked.hasLast = true;
                         try {

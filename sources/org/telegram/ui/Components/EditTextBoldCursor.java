@@ -54,6 +54,7 @@ import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.TextSelectionHelper$$ExternalSyntheticApiModelOutline6;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.QuoteSpan;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
 
 /* loaded from: classes5.dex */
 public class EditTextBoldCursor extends EditTextEffects {
@@ -70,6 +71,7 @@ public class EditTextBoldCursor extends EditTextEffects {
     private float activeLineWidth;
     private boolean allowDrawCursor;
     private View attachedToWindow;
+    BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory;
     private boolean currentDrawHintAsHeader;
     ShapeDrawable cursorDrawable;
     private boolean cursorDrawn;
@@ -1366,6 +1368,10 @@ public class EditTextBoldCursor extends EditTextEffects {
         AndroidUtilities.cancelRunOnUIThread(this.invalidateRunnable);
     }
 
+    public void setBlurredBackgroundDrawableViewFactory(BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory) {
+        this.blurredBackgroundDrawableViewFactory = blurredBackgroundDrawableViewFactory;
+    }
+
     @Override // android.view.View
     public ActionMode startActionMode(ActionMode.Callback callback) {
         if (Build.VERSION.SDK_INT >= 23 && (this.windowView != null || this.attachedToWindow != null)) {
@@ -1379,7 +1385,7 @@ public class EditTextBoldCursor extends EditTextEffects {
             if (view == null) {
                 view = this.attachedToWindow;
             }
-            FloatingToolbar floatingToolbar = new FloatingToolbar(context, view, getActionModeStyle(), getResourcesProvider());
+            FloatingToolbar floatingToolbar = new FloatingToolbar(context, view, getActionModeStyle(), getResourcesProvider(), this.blurredBackgroundDrawableViewFactory);
             this.floatingToolbar = floatingToolbar;
             floatingToolbar.setOnPremiumLockClick(this.onPremiumMenuLockClickListener);
             this.floatingToolbar.setQuoteShowVisible(new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.EditTextBoldCursor$$ExternalSyntheticLambda10

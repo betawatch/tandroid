@@ -393,6 +393,7 @@ import org.telegram.ui.Components.blur3.DownscaleScrollableNoiseSuppressor;
 import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
 import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProviderThemed;
 import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSource;
@@ -4902,12 +4903,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             this.glassBackgroundDrawableFactoryFrosted.setSourceRootView(viewPositionWatcher, this.contentView);
                             this.navbarContentDrawableFactory.setSourceRootView(viewPositionWatcher, this.contentView);
                             this.contentView.setOccupyStatusBar((!this.inBubbleMode || this.isInsideContainer || this.inPreviewMode) ? false : true);
-                            BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.chatInputViewsContainer, r142));
+                            BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.chatInputViewsContainer, (BlurredBackgroundColorProvider) r142));
                             if (SharedConfig.chatBlurEnabled()) {
                                 LiteMode.isEnabled(262144);
                             }
                             blurredBackgroundWithFadeDrawable.setFadeHeight(AndroidUtilities.dp(72.0f), true);
-                            BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable2 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.topPanelLayoutFade, r142));
+                            BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable2 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.topPanelLayoutFade, (BlurredBackgroundColorProvider) r142));
                             if (SharedConfig.chatBlurEnabled()) {
                                 LiteMode.isEnabled(262144);
                             }
@@ -8304,11 +8305,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 this.glassBackgroundDrawableFactoryFrosted.setSourceRootView(viewPositionWatcher2, this.contentView);
                 this.navbarContentDrawableFactory.setSourceRootView(viewPositionWatcher2, this.contentView);
                 this.contentView.setOccupyStatusBar((!this.inBubbleMode || this.isInsideContainer || this.inPreviewMode) ? false : true);
-                BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable3 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.chatInputViewsContainer, r142));
+                BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable3 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.chatInputViewsContainer, (BlurredBackgroundColorProvider) r142));
                 if (SharedConfig.chatBlurEnabled()) {
                 }
                 blurredBackgroundWithFadeDrawable3.setFadeHeight(AndroidUtilities.dp(72.0f), true);
-                BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable22 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.topPanelLayoutFade, r142));
+                BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable22 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.topPanelLayoutFade, (BlurredBackgroundColorProvider) r142));
                 if (SharedConfig.chatBlurEnabled()) {
                 }
                 blurredBackgroundWithFadeDrawable22.setFadeHeight(-AndroidUtilities.dp(72.0f), true);
@@ -9694,11 +9695,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             this.glassBackgroundDrawableFactoryFrosted.setSourceRootView(viewPositionWatcher22, this.contentView);
             this.navbarContentDrawableFactory.setSourceRootView(viewPositionWatcher22, this.contentView);
             this.contentView.setOccupyStatusBar((!this.inBubbleMode || this.isInsideContainer || this.inPreviewMode) ? false : true);
-            BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable32 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.chatInputViewsContainer, r142));
+            BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable32 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.chatInputViewsContainer, (BlurredBackgroundColorProvider) r142));
             if (SharedConfig.chatBlurEnabled()) {
             }
             blurredBackgroundWithFadeDrawable32.setFadeHeight(AndroidUtilities.dp(72.0f), true);
-            BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable222 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.topPanelLayoutFade, r142));
+            BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable222 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.topPanelLayoutFade, (BlurredBackgroundColorProvider) r142));
             if (SharedConfig.chatBlurEnabled()) {
             }
             blurredBackgroundWithFadeDrawable222.setFadeHeight(-AndroidUtilities.dp(72.0f), true);
@@ -11055,11 +11056,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         this.glassBackgroundDrawableFactoryFrosted.setSourceRootView(viewPositionWatcher222, this.contentView);
         this.navbarContentDrawableFactory.setSourceRootView(viewPositionWatcher222, this.contentView);
         this.contentView.setOccupyStatusBar((!this.inBubbleMode || this.isInsideContainer || this.inPreviewMode) ? false : true);
-        BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable322 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.chatInputViewsContainer, r142));
+        BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable322 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.chatInputViewsContainer, (BlurredBackgroundColorProvider) r142));
         if (SharedConfig.chatBlurEnabled()) {
         }
         blurredBackgroundWithFadeDrawable322.setFadeHeight(AndroidUtilities.dp(72.0f), true);
-        BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable2222 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.topPanelLayoutFade, r142));
+        BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable2222 = new BlurredBackgroundWithFadeDrawable(this.navbarContentDrawableFactory.create(this.topPanelLayoutFade, (BlurredBackgroundColorProvider) r142));
         if (SharedConfig.chatBlurEnabled()) {
         }
         blurredBackgroundWithFadeDrawable2222.setFadeHeight(-AndroidUtilities.dp(72.0f), true);

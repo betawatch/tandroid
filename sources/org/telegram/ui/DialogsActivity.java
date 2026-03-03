@@ -220,6 +220,7 @@ import org.telegram.ui.Components.blur3.RenderNodeWithHash;
 import org.telegram.ui.Components.blur3.capture.IBlur3Capture;
 import org.telegram.ui.Components.blur3.capture.IBlur3Hash;
 import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
+import org.telegram.ui.Components.blur3.drawable.color.BlurredBackgroundColorProvider;
 import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
@@ -4229,7 +4230,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             chatInputViewsContainer2.setInputIslandBubbleDrawable(this.iBlur3FactoryLiquidGlass.create(chatInputViewsContainer2, BlurredBackgroundProviderImpl.inputFieldDialogActivity(this.resourceProvider)));
             ChatInputViewsContainer chatInputViewsContainer3 = this.chatInputViewsContainer;
             chatInputViewsContainer3.setUnderKeyboardBackgroundDrawable(this.iBlur3FactoryFrostedLiquidGlass.create(chatInputViewsContainer3, BlurredBackgroundProviderImpl.inputFieldDialogActivity(this.resourceProvider)));
-            BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable = new BlurredBackgroundWithFadeDrawable(this.iBlur3FactoryFade.create(this.chatInputViewsContainer, null));
+            BlurredBackgroundWithFadeDrawable blurredBackgroundWithFadeDrawable = new BlurredBackgroundWithFadeDrawable(this.iBlur3FactoryFade.create(this.chatInputViewsContainer, (BlurredBackgroundColorProvider) null));
             if (!SharedConfig.chatBlurEnabled() || LiteMode.isEnabled(262144)) {
                 blurredBackgroundWithFadeDrawable.setFadeHeight(AndroidUtilities.dp(72.0f), true);
             }

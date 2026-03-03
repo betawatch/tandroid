@@ -6154,6 +6154,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         };
         this.captionEdit = captionPhotoViewer2;
         captionPhotoViewer2.setBlurredBackgroundDrawableForMentions(this.iBlur3FactoryFrostedLiquidGlass);
+        this.captionEdit.editText.getEditText().setBlurredBackgroundDrawableViewFactory(this.iBlur3FactoryFrostedLiquidGlass);
         this.captionEdit.setOnTimerChange(new Utilities.Callback() { // from class: org.telegram.ui.PhotoViewer$$ExternalSyntheticLambda26
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {

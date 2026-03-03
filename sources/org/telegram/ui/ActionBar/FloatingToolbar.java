@@ -8,7 +8,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Matrix;
-import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
@@ -30,7 +29,6 @@ import android.view.MotionEvent;
 import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
@@ -69,10 +67,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.FloatingToolbar;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
 
 /* loaded from: classes4.dex */
 public final class FloatingToolbar {
-    private static final MenuItem.OnMenuItemClickListener NO_OP_MENUITEM_CLICK_LISTENER = new MenuItem.OnMenuItemClickListener() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$$ExternalSyntheticLambda0
+    private static final MenuItem.OnMenuItemClickListener NO_OP_MENUITEM_CLICK_LISTENER = new MenuItem.OnMenuItemClickListener() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$$ExternalSyntheticLambda1
         @Override // android.view.MenuItem.OnMenuItemClickListener
         public final boolean onMenuItemClick(MenuItem menuItem) {
             boolean lambda$static$0;
@@ -81,42 +81,22 @@ public final class FloatingToolbar {
         }
     };
     public static final List premiumOptions = Arrays.asList(Integer.valueOf(R.id.menu_bold), Integer.valueOf(R.id.menu_italic), Integer.valueOf(R.id.menu_strike), Integer.valueOf(R.id.menu_link), Integer.valueOf(R.id.menu_mono), Integer.valueOf(R.id.menu_underline), Integer.valueOf(R.id.menu_spoiler), Integer.valueOf(R.id.menu_quote));
+    BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory;
     private int currentStyle;
+    private final Rect mContentRect;
     private Menu mMenu;
+    private MenuItem.OnMenuItemClickListener mMenuItemClickListener;
+    private final Comparator mMenuItemComparator;
+    private final View.OnLayoutChangeListener mOrientationChangeHandler;
     private final FloatingToolbarPopup mPopup;
+    private final Rect mPreviousContentRect;
+    private List mShowingMenuItems;
     private int mSuggestedWidth;
+    private boolean mWidthChanged;
     private final View mWindowView;
     private Runnable premiumLockClickListener;
     private Utilities.Callback0Return quoteShowCallback;
     private final Theme.ResourcesProvider resourcesProvider;
-    private final Rect mContentRect = new Rect();
-    private final Rect mPreviousContentRect = new Rect();
-    private List mShowingMenuItems = new ArrayList();
-    private MenuItem.OnMenuItemClickListener mMenuItemClickListener = NO_OP_MENUITEM_CLICK_LISTENER;
-    private boolean mWidthChanged = true;
-    private final View.OnLayoutChangeListener mOrientationChangeHandler = new View.OnLayoutChangeListener() { // from class: org.telegram.ui.ActionBar.FloatingToolbar.1
-        private final Rect mNewRect = new Rect();
-        private final Rect mOldRect = new Rect();
-
-        @Override // android.view.View.OnLayoutChangeListener
-        public void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-            this.mNewRect.set(i, i2, i3, i4);
-            this.mOldRect.set(i5, i6, i7, i8);
-            if (!FloatingToolbar.this.mPopup.isShowing() || this.mNewRect.equals(this.mOldRect)) {
-                return;
-            }
-            FloatingToolbar.this.mWidthChanged = true;
-            FloatingToolbar.this.updateLayout();
-        }
-    };
-    private final Comparator mMenuItemComparator = new Comparator() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$$ExternalSyntheticLambda1
-        @Override // java.util.Comparator
-        public final int compare(Object obj, Object obj2) {
-            int lambda$new$1;
-            lambda$new$1 = FloatingToolbar.lambda$new$1((MenuItem) obj, (MenuItem) obj2);
-            return lambda$new$1;
-        }
-    };
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ boolean lambda$static$0(MenuItem menuItem) {
@@ -137,8 +117,41 @@ public final class FloatingToolbar {
     }
 
     public FloatingToolbar(Context context, View view, int i, Theme.ResourcesProvider resourcesProvider) {
+        this(context, view, i, resourcesProvider, null);
+    }
+
+    public FloatingToolbar(Context context, View view, int i, Theme.ResourcesProvider resourcesProvider, BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory) {
+        this.mContentRect = new Rect();
+        this.mPreviousContentRect = new Rect();
+        this.mShowingMenuItems = new ArrayList();
+        this.mMenuItemClickListener = NO_OP_MENUITEM_CLICK_LISTENER;
+        this.mWidthChanged = true;
+        this.mOrientationChangeHandler = new View.OnLayoutChangeListener() { // from class: org.telegram.ui.ActionBar.FloatingToolbar.1
+            private final Rect mNewRect = new Rect();
+            private final Rect mOldRect = new Rect();
+
+            @Override // android.view.View.OnLayoutChangeListener
+            public void onLayoutChange(View view2, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
+                this.mNewRect.set(i2, i3, i4, i5);
+                this.mOldRect.set(i6, i7, i8, i9);
+                if (!FloatingToolbar.this.mPopup.isShowing() || this.mNewRect.equals(this.mOldRect)) {
+                    return;
+                }
+                FloatingToolbar.this.mWidthChanged = true;
+                FloatingToolbar.this.updateLayout();
+            }
+        };
+        this.mMenuItemComparator = new Comparator() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$$ExternalSyntheticLambda0
+            @Override // java.util.Comparator
+            public final int compare(Object obj, Object obj2) {
+                int lambda$new$1;
+                lambda$new$1 = FloatingToolbar.lambda$new$1((MenuItem) obj, (MenuItem) obj2);
+                return lambda$new$1;
+            }
+        };
         this.mWindowView = view;
         this.currentStyle = i;
+        this.blurredBackgroundDrawableViewFactory = blurredBackgroundDrawableViewFactory;
         this.resourcesProvider = resourcesProvider;
         this.mPopup = new FloatingToolbarPopup(context, view);
     }
@@ -1262,13 +1275,6 @@ public final class FloatingToolbar {
                 paint2.setXfermode(new PorterDuffXfermode(mode));
                 this.mPopup = floatingToolbarPopup;
                 setVerticalScrollBarEnabled(false);
-                setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.ActionBar.FloatingToolbar.FloatingToolbarPopup.OverflowPanel.1
-                    @Override // android.view.ViewOutlineProvider
-                    public void getOutline(View view, Outline outline) {
-                        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight() + AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
-                    }
-                });
-                setClipToOutline(true);
             }
 
             @Override // android.widget.ListView, android.widget.AbsListView, android.view.View
@@ -1468,19 +1474,24 @@ public final class FloatingToolbar {
         relativeLayout.setElevation(AndroidUtilities.dp(1.0f));
         relativeLayout.setFocusable(true);
         relativeLayout.setFocusableInTouchMode(true);
-        GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setShape(0);
-        float dp2 = AndroidUtilities.dp(12.0f);
-        gradientDrawable.setCornerRadii(new float[]{dp2, dp2, dp2, dp2, dp2, dp2, dp2, dp2});
-        int i = this.currentStyle;
-        if (i == 0) {
-            gradientDrawable.setColor(getThemedColor(Theme.key_dialogBackground));
-        } else if (i == 2) {
-            gradientDrawable.setColor(-115203550);
-        } else if (i == 1) {
-            gradientDrawable.setColor(getThemedColor(Theme.key_windowBackgroundWhite));
+        BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory = this.blurredBackgroundDrawableViewFactory;
+        if (blurredBackgroundDrawableViewFactory != null) {
+            relativeLayout.setBackground(blurredBackgroundDrawableViewFactory.create((View) relativeLayout, true).setColorProvider(BlurredBackgroundProviderImpl.photoViewerMenu(this.resourcesProvider)).setRadius(AndroidUtilities.dp(12.0f)));
+        } else {
+            GradientDrawable gradientDrawable = new GradientDrawable();
+            gradientDrawable.setShape(0);
+            float dp2 = AndroidUtilities.dp(12.0f);
+            gradientDrawable.setCornerRadii(new float[]{dp2, dp2, dp2, dp2, dp2, dp2, dp2, dp2});
+            int i = this.currentStyle;
+            if (i == 0) {
+                gradientDrawable.setColor(getThemedColor(Theme.key_dialogBackground));
+            } else if (i == 2) {
+                gradientDrawable.setColor(-115203550);
+            } else if (i == 1) {
+                gradientDrawable.setColor(getThemedColor(Theme.key_windowBackgroundWhite));
+            }
+            relativeLayout.setBackground(gradientDrawable);
         }
-        relativeLayout.setBackground(gradientDrawable);
         relativeLayout.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
         relativeLayout.setClipToOutline(true);
         return relativeLayout;
