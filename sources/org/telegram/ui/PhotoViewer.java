@@ -6154,7 +6154,6 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         };
         this.captionEdit = captionPhotoViewer2;
         captionPhotoViewer2.setBlurredBackgroundDrawableForMentions(this.iBlur3FactoryFrostedLiquidGlass);
-        this.captionEdit.editText.getEditText().setBlurredBackgroundDrawableViewFactory(this.iBlur3FactoryFrostedLiquidGlass);
         this.captionEdit.setOnTimerChange(new Utilities.Callback() { // from class: org.telegram.ui.PhotoViewer$$ExternalSyntheticLambda26
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
@@ -6500,6 +6499,17 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                     return;
                 }
                 setMeasuredDimension(size + getPaddingLeft() + getPaddingRight(), size2);
+            }
+
+            @Override // android.view.View
+            public void draw(Canvas canvas) {
+                int childCount = getChildCount();
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    if (getChildAt(i11).getVisibility() == 0) {
+                        super.draw(canvas);
+                        return;
+                    }
+                }
             }
         };
         this.itemsLayout = linearLayout3;

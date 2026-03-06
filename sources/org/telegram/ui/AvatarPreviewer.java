@@ -7,8 +7,10 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -19,10 +21,13 @@ import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import androidx.core.content.ContextCompat;
+import androidx.core.graphics.Insets;
 import androidx.core.math.MathUtils;
 import androidx.core.util.Consumer;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import j$.util.Objects;
-import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
@@ -34,6 +39,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.utils.ViewOutlineProviderImpl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
@@ -46,7 +52,12 @@ import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Stories.RoundRectOutlineProvider;
+import org.telegram.ui.Components.ScrimOptions;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.telegram.ui.Components.blur3.utils.Blur3Utils;
+import org.telegram.ui.Components.chat.ViewPositionWatcher;
 
 /* loaded from: classes4.dex */
 public class AvatarPreviewer {
@@ -85,7 +96,7 @@ public class AvatarPreviewer {
             close();
             this.view = viewGroup;
             this.windowManager = (WindowManager) ContextCompat.getSystemService(context, WindowManager.class);
-            this.layout = new Layout(context, resourcesProvider, callback) { // from class: org.telegram.ui.AvatarPreviewer.1
+            Layout layout = new Layout(context, resourcesProvider, callback) { // from class: org.telegram.ui.AvatarPreviewer.1
                 @Override // org.telegram.ui.AvatarPreviewer.Layout
                 protected void onHideFinish() {
                     if (AvatarPreviewer.this.visible) {
@@ -101,6 +112,15 @@ public class AvatarPreviewer {
                     }
                 }
             };
+            this.layout = layout;
+            ViewCompat.setOnApplyWindowInsetsListener(layout, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.AvatarPreviewer$$ExternalSyntheticLambda0
+                @Override // androidx.core.view.OnApplyWindowInsetsListener
+                public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+                    WindowInsetsCompat lambda$show$0;
+                    lambda$show$0 = AvatarPreviewer.this.lambda$show$0(view, windowInsetsCompat);
+                    return lambda$show$0;
+                }
+            });
         }
         this.layout.setData(data);
         if (this.visible) {
@@ -110,11 +130,22 @@ public class AvatarPreviewer {
             this.windowManager.removeView(this.layout);
         }
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(-1, -1, MediaDataController.MAX_STYLE_RUNS_COUNT, 0, -3);
-        layoutParams.flags = 196864;
+        layoutParams.softInputMode = 16;
+        layoutParams.flags |= -1945959040;
         AndroidUtilities.setPreferredMaxRefreshRate(this.windowManager, this.layout, layoutParams);
         this.windowManager.addView(this.layout, layoutParams);
         viewGroup.requestDisallowInterceptTouchEvent(true);
         this.visible = true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ WindowInsetsCompat lambda$show$0(View view, WindowInsetsCompat windowInsetsCompat) {
+        Insets insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
+        Layout layout = this.layout;
+        if (layout == view && layout.container != null) {
+            this.layout.container.setPadding(insets.left, insets.top, insets.right, insets.bottom);
+        }
+        return WindowInsetsCompat.CONSUMED;
     }
 
     public void close() {
@@ -374,9 +405,13 @@ public class AvatarPreviewer {
     /* JADX INFO: Access modifiers changed from: private */
     static abstract class Layout extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
         private final AvatarView avatarView;
+        private Bitmap blurBitmap;
+        private final Matrix blurMatrix;
         private View blurView;
         private final Callback callback;
         private final FrameLayout container;
+        private final BlurredBackgroundDrawableViewFactory iBlur3Factory;
+        private final BlurredBackgroundSourceBitmap iBlur3SourceBitmap;
         private InfoLoadTask infoLoadTask;
         private final ActionBarPopupWindow.ActionBarPopupWindowLayout menu;
         private MenuItem[] menuItems;
@@ -393,12 +428,17 @@ public class AvatarPreviewer {
         public Layout(Context context, Theme.ResourcesProvider resourcesProvider, Callback callback) {
             super(context);
             this.openInterpolator = new OvershootInterpolator(1.02f);
+            BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap = new BlurredBackgroundSourceBitmap();
+            this.iBlur3SourceBitmap = blurredBackgroundSourceBitmap;
+            BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory = new BlurredBackgroundDrawableViewFactory(blurredBackgroundSourceBitmap);
+            this.iBlur3Factory = blurredBackgroundDrawableViewFactory;
+            this.blurMatrix = new Matrix();
             this.callback = callback;
             this.resourcesProvider = resourcesProvider;
-            setWillNotDraw(false);
+            blurredBackgroundDrawableViewFactory.setSourceRootView(new ViewPositionWatcher(this), this);
             View view = new View(context);
             this.blurView = view;
-            view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda4
+            view.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     AvatarPreviewer.Layout.this.lambda$new$0(view2);
@@ -415,29 +455,36 @@ public class AvatarPreviewer {
                 protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
                     int paddingLeft = ((i3 - i) - getPaddingLeft()) - getPaddingRight();
                     int paddingTop = ((i4 - i2) - getPaddingTop()) - getPaddingBottom();
-                    int min = Math.min(paddingLeft, paddingTop) - AndroidUtilities.dp(16.0f);
+                    int min = Math.min(paddingLeft, paddingTop) - AndroidUtilities.dp(24.0f);
                     int min2 = Math.min(AndroidUtilities.dp(60.0f), min);
-                    Layout.this.menu.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec((paddingTop - min2) - AndroidUtilities.dp(40.0f), TLObject.FLAG_31));
-                    int clamp = MathUtils.clamp((paddingTop - Layout.this.menu.getMeasuredHeight()) - AndroidUtilities.dp(40.0f), min2, min);
+                    Layout.this.menu.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec((paddingTop - min2) - AndroidUtilities.dp(48.0f), TLObject.FLAG_31));
+                    int clamp = MathUtils.clamp((paddingTop - Layout.this.menu.getMeasuredHeight()) - AndroidUtilities.dp(48.0f), min2, min);
                     Layout.this.avatarView.measure(View.MeasureSpec.makeMeasureSpec(clamp, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(clamp, TLObject.FLAG_30));
-                    int measuredHeight = (((paddingTop - clamp) - Layout.this.menu.getMeasuredHeight()) - AndroidUtilities.dp(40.0f)) / 2;
+                    int measuredHeight = (((paddingTop - clamp) - Layout.this.menu.getMeasuredHeight()) - AndroidUtilities.dp(48.0f)) / 2;
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) Layout.this.avatarView.getLayoutParams();
                     FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) Layout.this.menu.getLayoutParams();
                     layoutParams.topMargin = AndroidUtilities.dp(8.0f) + measuredHeight;
-                    layoutParams2.topMargin = measuredHeight + AndroidUtilities.dp(8.0f) + clamp;
+                    layoutParams2.topMargin = measuredHeight + AndroidUtilities.dp(8.0f) + clamp + AndroidUtilities.dp(4.0f);
+                    layoutParams2.leftMargin = AndroidUtilities.dp(4.0f);
+                    layoutParams2.rightMargin = AndroidUtilities.dp(4.0f);
                     super.onLayout(z, i, i2, i3, i4);
                 }
             };
             this.container = frameLayout;
-            frameLayout.setFitsSystemWindows(true);
             addView(frameLayout, LayoutHelper.createFrame(-1, -1.0f));
             AvatarView avatarView = new AvatarView(context, resourcesProvider);
             this.avatarView = avatarView;
+            avatarView.setOutlineProvider(ViewOutlineProviderImpl.boundsWithPaddingRoundRect(0, AndroidUtilities.dp(12.0f)));
             avatarView.setElevation(AndroidUtilities.dp(4.0f));
             avatarView.setClipToOutline(true);
             frameLayout.addView(avatarView, LayoutHelper.createFrame(0, 0, 1));
+            if (Build.VERSION.SDK_INT >= 28) {
+                avatarView.setOutlineSpotShadowColor(TLObject.FLAG_31);
+                avatarView.setOutlineAmbientShadowColor(TLObject.FLAG_31);
+            }
             ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(context, R.drawable.popup_fixed_alert, resourcesProvider, 0);
             this.menu = actionBarPopupWindowLayout;
+            actionBarPopupWindowLayout.setBackground(blurredBackgroundDrawableViewFactory.create(actionBarPopupWindowLayout).setColorProvider(BlurredBackgroundProviderImpl.scrimMenuBackground(resourcesProvider)).setPadding(AndroidUtilities.dp(8.0f)).setHasPadding(true).setRadius(AndroidUtilities.dp(12.0f)));
             frameLayout.addView(actionBarPopupWindowLayout, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388611));
         }
 
@@ -499,16 +546,16 @@ public class AvatarPreviewer {
 
         @Override // android.view.View
         protected void onSizeChanged(int i, int i2, int i3, int i4) {
-            if (i == 0 || i2 == 0 || !this.showing) {
-                return;
+            if (i != 0 && i2 != 0 && this.showing) {
+                this.blurView.setBackground(null);
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        AvatarPreviewer.Layout.this.prepareBlurBitmap();
+                    }
+                });
             }
-            this.blurView.setBackground(null);
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda5
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AvatarPreviewer.Layout.this.prepareBlurBitmap();
-                }
-            });
+            checkBitmapMatrix();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -517,18 +564,29 @@ public class AvatarPreviewer {
                 return;
             }
             this.preparingBlur = true;
-            AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda6
-                @Override // org.telegram.messenger.Utilities.Callback
-                public final void run(Object obj) {
-                    AvatarPreviewer.Layout.this.lambda$prepareBlurBitmap$1((Bitmap) obj);
+            ScrimOptions.makeGlobalBlurBitmaps(new Utilities.Callback2() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda8
+                @Override // org.telegram.messenger.Utilities.Callback2
+                public final void run(Object obj, Object obj2) {
+                    AvatarPreviewer.Layout.this.lambda$prepareBlurBitmap$1((Bitmap) obj, (Bitmap) obj2);
                 }
-            }, 6.0f, 7, this, Collections.singletonList(this));
+            });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ void lambda$prepareBlurBitmap$1(Bitmap bitmap) {
+        public /* synthetic */ void lambda$prepareBlurBitmap$1(Bitmap bitmap, Bitmap bitmap2) {
+            this.blurBitmap = bitmap;
             this.blurView.setBackground(new BitmapDrawable(bitmap));
             this.preparingBlur = false;
+            this.iBlur3SourceBitmap.setBitmap(bitmap2);
+            checkBitmapMatrix();
+        }
+
+        private void checkBitmapMatrix() {
+            Blur3Utils.checkBitmapSourceMatrixScale(this.iBlur3SourceBitmap, this);
+            ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = this.menu;
+            if (actionBarPopupWindowLayout != null) {
+                actionBarPopupWindowLayout.invalidate();
+            }
         }
 
         public void setData(final Data data) {
@@ -539,7 +597,7 @@ public class AvatarPreviewer {
             if (data.infoLoadTask != null) {
                 InfoLoadTask infoLoadTask = data.infoLoadTask;
                 this.infoLoadTask = infoLoadTask;
-                infoLoadTask.load(new Consumer() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda2
+                infoLoadTask.load(new Consumer() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda4
                     @Override // androidx.core.util.Consumer
                     public final void accept(Object obj) {
                         AvatarPreviewer.Layout.this.lambda$setData$2(data, obj);
@@ -555,7 +613,7 @@ public class AvatarPreviewer {
                     final MenuItem menuItem = menuItemArr[i];
                     ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(i == 0, i == this.menuItems.length - 1, this.menu, menuItem.iconResId, LocaleController.getString(menuItem.labelKey, menuItem.labelResId), false, this.resourcesProvider);
                     addItem.setTag(Integer.valueOf(i));
-                    addItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda3
+                    addItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda5
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             AvatarPreviewer.Layout.this.lambda$setData$3(menuItem, view);
@@ -595,14 +653,14 @@ public class AvatarPreviewer {
             this.showing = z;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.setInterpolator(z ? this.openInterpolator : CubicBezierInterpolator.EASE_OUT_QUINT);
-            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda0
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     AvatarPreviewer.Layout.this.lambda$setShowing$4(z, valueAnimator);
                 }
             });
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda1
+            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.AvatarPreviewer$Layout$$ExternalSyntheticLambda3
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     AvatarPreviewer.Layout.this.lambda$setShowing$5(z, valueAnimator);
@@ -684,12 +742,10 @@ public class AvatarPreviewer {
         public AvatarView(Context context, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.radialProgressSize = AndroidUtilities.dp(64.0f);
-            setWillNotDraw(false);
-            setOutlineProvider(new RoundRectOutlineProvider(6));
             BackupImageView backupImageView = new BackupImageView(context);
             this.backupImageView = backupImageView;
             backupImageView.setAspectFit(true);
-            this.backupImageView.setRoundRadius(AndroidUtilities.dp(6.0f));
+            this.backupImageView.setRoundRadius(AndroidUtilities.dp(12.0f));
             addView(this.backupImageView, LayoutHelper.createFrame(-1, -1.0f));
             RadialProgress2 radialProgress2 = new RadialProgress2(this, resourcesProvider);
             this.radialProgress = radialProgress2;

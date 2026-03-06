@@ -4,11 +4,14 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Shader;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -22,15 +25,18 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import me.vkryl.core.reference.ReferenceList;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DocumentObject;
@@ -76,8 +82,14 @@ import org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.ReactionsContainerLayout;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.ScrimOptions;
 import org.telegram.ui.Components.StickersDialogs;
 import org.telegram.ui.Components.SuggestEmojiView;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.telegram.ui.Components.blur3.utils.Blur3Utils;
+import org.telegram.ui.Components.chat.ViewPositionWatcher;
 import org.telegram.ui.ContentPreviewViewer;
 import org.telegram.ui.Stories.DarkThemeResourceProvider;
 
@@ -85,8 +97,10 @@ import org.telegram.ui.Stories.DarkThemeResourceProvider;
 public class ContentPreviewViewer {
     private static volatile ContentPreviewViewer Instance;
     private static TextPaint textPaint;
+    private ColorDrawable backgroundDrawable;
     private float blurProgress;
     private Bitmap blurrBitmap;
+    public ImageReceiver centerImage;
     private boolean clearsInputField;
     private boolean closeOnDismiss;
     private FrameLayoutDrawer containerView;
@@ -100,17 +114,22 @@ public class ContentPreviewViewer {
     private TLRPC.InputStickerSet currentStickerSet;
     private ContentPreviewViewerDelegate delegate;
     private boolean drawEffect;
+    private ImageReceiver effectImage;
     private float finalMoveY;
     private SendMessagesHelper.ImportingSticker importingSticker;
     private TLRPC.BotInlineResult inlineResult;
     private boolean isPhotoEditor;
     private boolean isRecentSticker;
     private boolean isStickerEditor;
-    private WindowInsets lastInsets;
+    private boolean isVisible;
+    private int keyboardHeight;
+    private WindowInsetsCompat lastInsets;
     private float lastTouchY;
     private long lastUpdateTime;
     private boolean menuVisible;
+    private float moveY = 0.0f;
     private Runnable openPreviewRunnable;
+    private final Paint paint;
     public PaintingOverlay paintingOverlay;
     private Path paintingOverlayClipPath;
     private Activity parentActivity;
@@ -121,8 +140,11 @@ public class ContentPreviewViewer {
     private ReactionsContainerLayout reactionsLayout;
     private FrameLayout reactionsLayoutContainer;
     private Theme.ResourcesProvider resourcesProvider;
+    private final BlurredBackgroundDrawableViewFactory scrimBlur3Factory;
+    private final BlurredBackgroundSourceBitmap scrimBlur3SourceBitmap;
     private ArrayList selectedEmojis;
     private float showProgress;
+    private final Runnable showSheetRunnable;
     private Drawable slideUpDrawable;
     private float startMoveY;
     private int startX;
@@ -133,14 +155,6 @@ public class ContentPreviewViewer {
     VibrationEffect vibrationEffect;
     private WindowManager.LayoutParams windowLayoutParams;
     private FrameLayout windowView;
-    private float moveY = 0.0f;
-    private ColorDrawable backgroundDrawable = new ColorDrawable(1895825408);
-    public ImageReceiver centerImage = new ImageReceiver();
-    private ImageReceiver effectImage = new ImageReceiver();
-    private boolean isVisible = false;
-    private int keyboardHeight = AndroidUtilities.dp(200.0f);
-    private Paint paint = new Paint(1);
-    private final Runnable showSheetRunnable = new 1();
 
     public interface ContentPreviewViewerDelegate {
 
@@ -353,6 +367,19 @@ public class ContentPreviewViewer {
         void stickerSetSelected(TLRPC.StickerSet stickerSet, String str);
     }
 
+    public ContentPreviewViewer() {
+        BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap = new BlurredBackgroundSourceBitmap();
+        this.scrimBlur3SourceBitmap = blurredBackgroundSourceBitmap;
+        this.scrimBlur3Factory = new BlurredBackgroundDrawableViewFactory(blurredBackgroundSourceBitmap);
+        this.backgroundDrawable = new ColorDrawable(1895825408);
+        this.centerImage = new ImageReceiver();
+        this.effectImage = new ImageReceiver();
+        this.isVisible = false;
+        this.keyboardHeight = AndroidUtilities.dp(200.0f);
+        this.paint = new Paint(1);
+        this.showSheetRunnable = new 1();
+    }
+
     private class FrameLayoutDrawer extends FrameLayout {
         public FrameLayoutDrawer(Context context) {
             super(context);
@@ -377,7 +404,7 @@ public class ContentPreviewViewer {
         1() {
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:45:0x0e5e  */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x0e93  */
         @Override // java.lang.Runnable
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -399,6 +426,7 @@ public class ContentPreviewViewer {
             }
             ContentPreviewViewer.this.closeOnDismiss = true;
             final ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(ContentPreviewViewer.this.containerView.getContext(), R.drawable.popup_fixed_alert4, ContentPreviewViewer.this.resourcesProvider, ContentPreviewViewer.this.currentContentType == 3 ? 1 : 0);
+            actionBarPopupWindowLayout2.setBackground(ContentPreviewViewer.this.scrimBlur3Factory.create((View) actionBarPopupWindowLayout2, true).setColorProvider(BlurredBackgroundProviderImpl.scrimMenuBackground(ContentPreviewViewer.this.resourcesProvider)).setRadius(AndroidUtilities.dp(12.0f)).setPadding(AndroidUtilities.dp(8.0f)).setHasPadding(true));
             if (ContentPreviewViewer.this.currentContentType != 3) {
                 int i10 = -2;
                 if (ContentPreviewViewer.this.currentContentType == 0) {
@@ -1737,7 +1765,7 @@ public class ContentPreviewViewer {
         }
         this.parentActivity = activity;
         this.slideUpDrawable = activity.getResources().getDrawable(R.drawable.preview_arrow);
-        FrameLayout frameLayout = new FrameLayout(activity) { // from class: org.telegram.ui.ContentPreviewViewer.3
+        this.windowView = new FrameLayout(activity) { // from class: org.telegram.ui.ContentPreviewViewer.3
             @Override // android.view.ViewGroup, android.view.View
             public boolean dispatchKeyEvent(KeyEvent keyEvent) {
                 if (keyEvent.getKeyCode() == 4 && keyEvent.getAction() == 1) {
@@ -1750,16 +1778,24 @@ public class ContentPreviewViewer {
                 }
                 return super.dispatchKeyEvent(keyEvent);
             }
+
+            @Override // android.view.View
+            protected void onSizeChanged(int i2, int i3, int i4, int i5) {
+                super.onSizeChanged(i2, i3, i4, i5);
+                Blur3Utils.checkBitmapSourceMatrixScale(ContentPreviewViewer.this.scrimBlur3SourceBitmap, ContentPreviewViewer.this.windowView);
+                ContentPreviewViewer.this.scrimBlur3Factory.invalidateAllLinkedViews();
+            }
         };
-        this.windowView = frameLayout;
-        frameLayout.setFocusable(true);
+        this.scrimBlur3Factory.setSourceRootView(new ViewPositionWatcher(this.windowView), this.windowView);
+        this.scrimBlur3Factory.setLinkedViewsRef(new ReferenceList());
+        this.windowView.setFocusable(true);
         this.windowView.setFocusableInTouchMode(true);
         this.windowView.setSystemUiVisibility(1792);
-        this.windowView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda7
-            @Override // android.view.View.OnApplyWindowInsetsListener
-            public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                WindowInsets lambda$setParentActivity$6;
-                lambda$setParentActivity$6 = ContentPreviewViewer.this.lambda$setParentActivity$6(view, windowInsets);
+        ViewCompat.setOnApplyWindowInsetsListener(this.windowView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda7
+            @Override // androidx.core.view.OnApplyWindowInsetsListener
+            public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+                WindowInsetsCompat lambda$setParentActivity$6;
+                lambda$setParentActivity$6 = ContentPreviewViewer.this.lambda$setParentActivity$6(view, windowInsetsCompat);
                 return lambda$setParentActivity$6;
             }
         });
@@ -1812,9 +1848,9 @@ public class ContentPreviewViewer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ WindowInsets lambda$setParentActivity$6(View view, WindowInsets windowInsets) {
-        this.lastInsets = windowInsets;
-        return windowInsets;
+    public /* synthetic */ WindowInsetsCompat lambda$setParentActivity$6(View view, WindowInsetsCompat windowInsetsCompat) {
+        this.lastInsets = windowInsetsCompat;
+        return windowInsetsCompat;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2100,6 +2136,10 @@ public class ContentPreviewViewer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x006c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void onDraw(Canvas canvas) {
         int i;
         int i2;
@@ -2127,11 +2167,10 @@ public class ContentPreviewViewer {
                     f = this.blurProgress;
                     if (f != 0.0f && this.blurrBitmap != null) {
                         this.paint.setAlpha((int) (f * 255.0f));
-                        canvas.save();
-                        canvas.scale(12.0f, 12.0f);
-                        canvas.drawColor(Theme.multAlpha(Theme.getColor(Theme.key_windowBackgroundGray, this.resourcesProvider), this.blurProgress));
-                        canvas.drawBitmap(this.blurrBitmap, 0.0f, 0.0f, this.paint);
-                        canvas.restore();
+                        if (this.paint.getAlpha() != 255) {
+                            canvas.drawColor(Theme.multAlpha(Theme.getColor(Theme.key_windowBackgroundGray, this.resourcesProvider), this.blurProgress));
+                        }
+                        canvas.drawPaint(this.paint);
                     }
                 }
             }
@@ -2149,20 +2188,18 @@ public class ContentPreviewViewer {
             f = this.blurProgress;
             if (f != 0.0f) {
                 this.paint.setAlpha((int) (f * 255.0f));
-                canvas.save();
-                canvas.scale(12.0f, 12.0f);
-                canvas.drawColor(Theme.multAlpha(Theme.getColor(Theme.key_windowBackgroundGray, this.resourcesProvider), this.blurProgress));
-                canvas.drawBitmap(this.blurrBitmap, 0.0f, 0.0f, this.paint);
-                canvas.restore();
+                if (this.paint.getAlpha() != 255) {
+                }
+                canvas.drawPaint(this.paint);
             }
         }
         this.backgroundDrawable.setAlpha((int) (this.showProgress * 180.0f));
         this.backgroundDrawable.setBounds(0, 0, this.containerView.getWidth(), this.containerView.getHeight());
         this.backgroundDrawable.draw(canvas);
         canvas.save();
-        WindowInsets windowInsets = this.lastInsets;
-        if (windowInsets != null) {
-            i2 = windowInsets.getStableInsetBottom() + this.lastInsets.getStableInsetTop();
+        WindowInsetsCompat windowInsetsCompat = this.lastInsets;
+        if (windowInsetsCompat != null) {
+            i2 = windowInsetsCompat.getStableInsetBottom() + this.lastInsets.getStableInsetTop();
             i = this.lastInsets.getStableInsetTop();
         } else {
             i = AndroidUtilities.statusBarHeight;
@@ -2316,18 +2353,31 @@ public class ContentPreviewViewer {
         }
         this.preparingBitmap = true;
         this.centerImage.setVisible(false, false);
-        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda12
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ContentPreviewViewer.this.lambda$prepareBlurBitmap$10((Bitmap) obj);
+        ScrimOptions.makeGlobalBlurBitmaps(new Utilities.Callback2() { // from class: org.telegram.ui.ContentPreviewViewer$$ExternalSyntheticLambda12
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                ContentPreviewViewer.this.lambda$prepareBlurBitmap$10((Bitmap) obj, (Bitmap) obj2);
             }
-        }, 12.0f);
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepareBlurBitmap$10(Bitmap bitmap) {
+    public /* synthetic */ void lambda$prepareBlurBitmap$10(Bitmap bitmap, Bitmap bitmap2) {
         this.centerImage.setVisible(true, false);
         this.blurrBitmap = bitmap;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+        Matrix matrix = new Matrix();
+        matrix.setScale(15.0f, 15.0f);
+        bitmapShader.setLocalMatrix(matrix);
+        if (Build.VERSION.SDK_INT >= 33) {
+            bitmapShader.setFilterMode(2);
+        }
+        this.paint.setFilterBitmap(true);
+        this.paint.setShader(bitmapShader);
+        this.scrimBlur3SourceBitmap.setBitmap(bitmap2);
+        Blur3Utils.checkBitmapSourceMatrixScale(this.scrimBlur3SourceBitmap, this.windowView);
+        this.scrimBlur3Factory.invalidateAllLinkedViews();
         this.preparingBitmap = false;
         FrameLayoutDrawer frameLayoutDrawer = this.containerView;
         if (frameLayoutDrawer != null) {

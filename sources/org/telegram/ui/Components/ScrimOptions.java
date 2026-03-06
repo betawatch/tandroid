@@ -10,9 +10,7 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
 import android.graphics.CornerPathEffect;
-import android.graphics.Insets;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -32,9 +30,11 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import androidx.core.graphics.Insets;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -45,6 +45,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Cells.ChatMessageCell;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.telegram.ui.Components.blur3.utils.Blur3Utils;
+import org.telegram.ui.Components.chat.ViewPositionWatcher;
 
 /* loaded from: classes5.dex */
 public class ScrimOptions extends Dialog {
@@ -56,7 +61,8 @@ public class ScrimOptions extends Dialog {
     public final Context context;
     public final int currentAccount;
     private boolean dismissing;
-    private final android.graphics.Rect insets;
+    private final BlurredBackgroundDrawableViewFactory iBlur3Factory;
+    private final BlurredBackgroundSourceBitmap iBlur3SourceBitmap;
     private boolean isGroup;
     private ValueAnimator openAnimator;
     private float openProgress;
@@ -77,7 +83,6 @@ public class ScrimOptions extends Dialog {
     public ScrimOptions(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context, R.style.TransparentDialog);
         this.currentAccount = UserConfig.selectedAccount;
-        this.insets = new android.graphics.Rect();
         this.scrimDrawableSw = 1.0f;
         this.scrimDrawableSh = 1.0f;
         this.dismissing = false;
@@ -120,6 +125,12 @@ public class ScrimOptions extends Dialog {
                 super.onLayout(z, i, i2, i3, i4);
                 ScrimOptions.this.layout();
             }
+
+            @Override // android.view.View
+            protected void onSizeChanged(int i, int i2, int i3, int i4) {
+                super.onSizeChanged(i, i2, i3, i4);
+                ScrimOptions.this.checkBitmapMatrix();
+            }
         };
         this.windowView = frameLayout;
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda4
@@ -132,35 +143,18 @@ public class ScrimOptions extends Dialog {
         this.containerView = sizeNotifierFrameLayout;
         sizeNotifierFrameLayout.setClipToPadding(false);
         frameLayout.addView(sizeNotifierFrameLayout, LayoutHelper.createFrame(-1, -1, 119));
-        frameLayout.setFitsSystemWindows(true);
-        frameLayout.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.ScrimOptions.2
-            @Override // android.view.View.OnApplyWindowInsetsListener
-            public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                WindowInsets windowInsets2;
-                Insets insets;
-                int i;
-                int i2;
-                int i3;
-                int i4;
-                int i5 = Build.VERSION.SDK_INT;
-                if (i5 < 30) {
-                    ScrimOptions.this.insets.set(windowInsets.getSystemWindowInsetLeft(), windowInsets.getSystemWindowInsetTop(), windowInsets.getSystemWindowInsetRight(), windowInsets.getSystemWindowInsetBottom());
-                } else {
-                    insets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
-                    android.graphics.Rect rect = ScrimOptions.this.insets;
-                    i = insets.left;
-                    i2 = insets.top;
-                    i3 = insets.right;
-                    i4 = insets.bottom;
-                    rect.set(i, i2, i3, i4);
-                }
-                ScrimOptions.this.containerView.setPadding(ScrimOptions.this.insets.left, ScrimOptions.this.insets.top, ScrimOptions.this.insets.right, ScrimOptions.this.insets.bottom);
+        BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap = new BlurredBackgroundSourceBitmap();
+        this.iBlur3SourceBitmap = blurredBackgroundSourceBitmap;
+        BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory = new BlurredBackgroundDrawableViewFactory(blurredBackgroundSourceBitmap);
+        this.iBlur3Factory = blurredBackgroundDrawableViewFactory;
+        blurredBackgroundDrawableViewFactory.setSourceRootView(new ViewPositionWatcher(frameLayout), frameLayout);
+        ViewCompat.setOnApplyWindowInsetsListener(frameLayout, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.Components.ScrimOptions.2
+            @Override // androidx.core.view.OnApplyWindowInsetsListener
+            public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+                Insets insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
+                ScrimOptions.this.containerView.setPadding(insets.left, insets.top, insets.right, insets.bottom);
                 ScrimOptions.this.windowView.requestLayout();
-                if (i5 >= 30) {
-                    windowInsets2 = WindowInsets.CONSUMED;
-                    return windowInsets2;
-                }
-                return windowInsets.consumeSystemWindowInsets();
+                return WindowInsetsCompat.CONSUMED;
             }
         });
     }
@@ -171,7 +165,7 @@ public class ScrimOptions extends Dialog {
     }
 
     public void setItemOptions(ItemOptions itemOptions) {
-        this.options = itemOptions;
+        this.options = itemOptions.setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f)).setBlurBackground(this.iBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider), false);
         this.optionsView = itemOptions.getLayout();
         FrameLayout frameLayout = new FrameLayout(this.context);
         this.optionsContainer = frameLayout;
@@ -215,7 +209,7 @@ public class ScrimOptions extends Dialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$dismiss$2() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda6
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 ScrimOptions.this.lambda$dismiss$1();
@@ -244,7 +238,7 @@ public class ScrimOptions extends Dialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$dismissFast$4() {
-        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda5
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 ScrimOptions.this.lambda$dismissFast$3();
@@ -313,10 +307,8 @@ public class ScrimOptions extends Dialog {
         attributes.dimAmount = 0.0f;
         int i = attributes.flags & (-3);
         attributes.softInputMode = 16;
-        attributes.flags = 131072 | i;
-        int i2 = Build.VERSION.SDK_INT;
         attributes.flags = i | (-1945959040);
-        if (i2 >= 28) {
+        if (Build.VERSION.SDK_INT >= 28) {
             attributes.layoutInDisplayCutoutMode = 1;
         }
         window.setAttributes(attributes);
@@ -328,32 +320,64 @@ public class ScrimOptions extends Dialog {
         if (view != null) {
             view.setVisibility(4);
         }
-        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda1
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ScrimOptions.this.lambda$prepareBlur$6(view, (Bitmap) obj);
+        makeGlobalBlurBitmaps(new Utilities.Callback2() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda1
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                ScrimOptions.this.lambda$prepareBlur$6(view, (Bitmap) obj, (Bitmap) obj2);
             }
-        }, 14.0f);
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepareBlur$6(View view, Bitmap bitmap) {
+    public /* synthetic */ void lambda$prepareBlur$6(View view, Bitmap bitmap, Bitmap bitmap2) {
         if (view != null) {
             view.setVisibility(0);
         }
         this.blurBitmap = bitmap;
         Paint paint = new Paint(1);
         this.blurBitmapPaint = paint;
-        Bitmap bitmap2 = this.blurBitmap;
+        Bitmap bitmap3 = this.blurBitmap;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        BitmapShader bitmapShader = new BitmapShader(bitmap2, tileMode, tileMode);
+        BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode, tileMode);
         this.blurBitmapShader = bitmapShader;
         paint.setShader(bitmapShader);
-        ColorMatrix colorMatrix = new ColorMatrix();
-        AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? 0.08f : 0.25f);
-        AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? -0.02f : -0.07f);
-        this.blurBitmapPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
         this.blurMatrix = new Matrix();
+        this.iBlur3SourceBitmap.setBitmap(bitmap2);
+        checkBitmapMatrix();
+    }
+
+    public static void makeGlobalBlurBitmaps(final Utilities.Callback2 callback2) {
+        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda5
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                ScrimOptions.lambda$makeGlobalBlurBitmaps$7(Utilities.Callback2.this, (Bitmap) obj);
+            }
+        }, 15.0f);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$makeGlobalBlurBitmaps$7(Utilities.Callback2 callback2, Bitmap bitmap) {
+        ColorMatrix colorMatrix = new ColorMatrix();
+        AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? 0.04f : 0.25f);
+        AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? -0.04f : -0.07f);
+        Bitmap applyColorMatrix = AndroidUtilities.applyColorMatrix(bitmap, colorMatrix);
+        applyColorMatrix.setHasAlpha(false);
+        ColorMatrix colorMatrix2 = new ColorMatrix();
+        colorMatrix2.setSaturation(Theme.isCurrentThemeDark() ? 2.0f : 3.0f);
+        AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix2, Theme.isCurrentThemeDark() ? -0.2f : -0.07f);
+        Bitmap applyColorMatrix2 = AndroidUtilities.applyColorMatrix(bitmap, colorMatrix2);
+        applyColorMatrix2.setHasAlpha(false);
+        bitmap.recycle();
+        callback2.run(applyColorMatrix, applyColorMatrix2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkBitmapMatrix() {
+        Blur3Utils.checkBitmapSourceMatrixScale(this.iBlur3SourceBitmap, this.windowView);
+        View view = this.optionsView;
+        if (view != null) {
+            view.invalidate();
+        }
     }
 
     public void layout() {
@@ -651,6 +675,7 @@ public class ScrimOptions extends Dialog {
                                                 Theme.MessageDrawable messageDrawable = chatMessageCell.currentBackgroundDrawable;
                                                 if (messageDrawable != null && messageDrawable.getPaint() != null) {
                                                     canvas2.save();
+                                                    chatMessageCell.setBackgroundTopY(true);
                                                     canvas2.translate(0.0f, -chatMessageCell.currentBackgroundDrawable.getTopY());
                                                     canvas2.drawPaint(chatMessageCell.currentBackgroundDrawable.getPaint());
                                                     canvas2.restore();
@@ -752,6 +777,7 @@ public class ScrimOptions extends Dialog {
                                         Theme.MessageDrawable messageDrawable = chatMessageCell.currentBackgroundDrawable;
                                         if (messageDrawable != null && messageDrawable.getPaint() != null) {
                                             canvas2.save();
+                                            chatMessageCell.setBackgroundTopY(true);
                                             canvas2.translate(0.0f, -chatMessageCell.currentBackgroundDrawable.getTopY());
                                             canvas2.drawPaint(chatMessageCell.currentBackgroundDrawable.getPaint());
                                             canvas2.restore();

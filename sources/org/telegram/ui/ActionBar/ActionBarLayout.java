@@ -13,7 +13,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Matrix;
-import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
@@ -32,7 +31,6 @@ import android.view.RoundedCorner;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -60,6 +58,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.utils.ViewOutlineProviderImpl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.ui.ActionBar.BaseFragment;
@@ -682,7 +681,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.measureSpec = new int[2];
         this.hasSheetsAnimator = new AnimatedFloat(this, 280L, CubicBezierInterpolator.EASE_OUT_QUINT);
         this.lastActions = new ArrayList();
-        this.debugBlackScreenRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda7
+        this.debugBlackScreenRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 ActionBarLayout.this.lambda$new$9();
@@ -695,7 +694,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             headerShadowDrawable = getResources().getDrawable(R.drawable.header_shadow).mutate();
             scrimPaint = new Paint();
         }
-        ViewCompat.setOnApplyWindowInsetsListener(this, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda8
+        ViewCompat.setOnApplyWindowInsetsListener(this, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda10
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
                 WindowInsetsCompat onApplyWindowInsets;
@@ -714,12 +713,12 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         this.fragmentsStack = list;
         BottomSheetTabs bottomSheetTabs = this.bottomSheetTabs;
         if (bottomSheetTabs != null) {
-            bottomSheetTabs.stopListening(new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda15
+            bottomSheetTabs.stopListening(new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda17
                 @Override // java.lang.Runnable
                 public final void run() {
                     ActionBarLayout.this.invalidate();
                 }
-            }, new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda16
+            }, new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda18
                 @Override // java.lang.Runnable
                 public final void run() {
                     ActionBarLayout.this.relayout();
@@ -732,12 +731,12 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             BottomSheetTabs bottomSheetTabs2 = new BottomSheetTabs(this.parentActivity, this);
             this.bottomSheetTabs = bottomSheetTabs2;
             this.bottomSheetTabsClip = new BottomSheetTabs.ClipTools(bottomSheetTabs2);
-            this.bottomSheetTabs.listen(new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda15
+            this.bottomSheetTabs.listen(new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda17
                 @Override // java.lang.Runnable
                 public final void run() {
                     ActionBarLayout.this.invalidate();
                 }
-            }, new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda16
+            }, new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda18
                 @Override // java.lang.Runnable
                 public final void run() {
                     ActionBarLayout.this.relayout();
@@ -1538,7 +1537,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         BaseFragment baseFragment = (BaseFragment) list.get(list.size() - 2);
         View view = baseFragment.fragmentView;
         if (view == null && (view = baseFragment.createView(this.parentActivity)) != null && baseFragment.isSupportEdgeToEdge() && baseFragment.drawEdgeNavigationBar()) {
-            ViewCompat.setOnApplyWindowInsetsListener(view, new ActionBarLayout$$ExternalSyntheticLambda3(baseFragment));
+            ViewCompat.setOnApplyWindowInsetsListener(view, new ActionBarLayout$$ExternalSyntheticLambda5(baseFragment));
             this.containerViewBack.invalidate();
         }
         ViewGroup viewGroup = (ViewGroup) view.getParent();
@@ -2130,7 +2129,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         if (baseFragment2 == null || checkTransitionAnimation() || !(((iNavigationLayoutDelegate = this.delegate) == null || !z4 || iNavigationLayoutDelegate.needPresentFragment(this, navigationParams)) && baseFragment2.onFragmentCreate())) {
             return false;
         }
-        final boolean isSupportEdgeToEdge = baseFragment2.isSupportEdgeToEdge();
+        boolean isSupportEdgeToEdge = baseFragment2.isSupportEdgeToEdge();
         boolean drawEdgeNavigationBar = baseFragment2.drawEdgeNavigationBar();
         BaseFragment lastFragment = getLastFragment();
         Dialog visibleDialog = lastFragment != null ? lastFragment.getVisibleDialog() : null;
@@ -2185,7 +2184,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         if (view == null) {
             view = baseFragment2.createView(this.parentActivity);
             if (view != null && baseFragment2.isSupportEdgeToEdge() && baseFragment2.drawEdgeNavigationBar()) {
-                ViewCompat.setOnApplyWindowInsetsListener(view, new ActionBarLayout$$ExternalSyntheticLambda3(baseFragment2));
+                ViewCompat.setOnApplyWindowInsetsListener(view, new ActionBarLayout$$ExternalSyntheticLambda5(baseFragment2));
                 this.containerViewBack.invalidate();
             }
         } else {
@@ -2268,14 +2267,13 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         setInnerTranslationX(0.0f);
         this.containerView.setTranslationY(0.0f);
         if (z5) {
-            view.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.4
-                @Override // android.view.ViewOutlineProvider
-                public void getOutline(View view2, Outline outline) {
-                    outline.setRoundRect(0, isSupportEdgeToEdge ? 0 : AndroidUtilities.statusBarHeight, view2.getMeasuredWidth(), view2.getMeasuredHeight(), AndroidUtilities.dp(6.0f));
-                }
-            });
+            view.setOutlineProvider(ViewOutlineProviderImpl.boundsWithPaddingRoundRect(0, AndroidUtilities.dp(actionBarPopupWindowLayout == null ? 24.0f : 12.0f)));
             view.setClipToOutline(true);
             view.setElevation(AndroidUtilities.dp(4.0f));
+            if (Build.VERSION.SDK_INT >= 28) {
+                view.setOutlineSpotShadowColor(-1342177280);
+                view.setOutlineAmbientShadowColor(-1342177280);
+            }
             if (this.previewBackgroundDrawable == null) {
                 this.previewBackgroundDrawable = new ColorDrawable(771751936);
             }
@@ -2303,7 +2301,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 this.transitionAnimationStartTime = System.currentTimeMillis();
                 this.transitionAnimationInProgress = true;
                 this.layoutToIgnore = this.containerView;
-                this.onOpenAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda9
+                this.onOpenAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda11
                     @Override // java.lang.Runnable
                     public final void run() {
                         ActionBarLayout.lambda$presentFragment$0(BaseFragment.this, baseFragment2);
@@ -2326,7 +2324,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 animatorSet.playTogether(arrayList);
                 this.currentAnimation.setInterpolator(this.accelerateDecelerateInterpolator);
                 this.currentAnimation.setDuration(200L);
-                this.currentAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.5
+                this.currentAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.4
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
                         ActionBarLayout.this.onAnimationEndCheck(false);
@@ -2339,7 +2337,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 this.transitionAnimationInProgress = true;
                 this.layoutToIgnore = this.containerView;
                 final BaseFragment baseFragment3 = baseFragment;
-                this.onOpenAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda10
+                this.onOpenAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda12
                     @Override // java.lang.Runnable
                     public final void run() {
                         ActionBarLayout.this.lambda$presentFragment$1(z5, actionBarPopupWindowLayout, z2, baseFragment3, baseFragment2);
@@ -2359,7 +2357,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 this.delayedAnimationResumed = z;
                 this.oldFragment = baseFragment;
                 this.newFragment = baseFragment2;
-                AnimatorSet onCustomTransitionAnimation = !z5 ? baseFragment2.onCustomTransitionAnimation(true, new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda11
+                AnimatorSet onCustomTransitionAnimation = !z5 ? baseFragment2.onCustomTransitionAnimation(true, new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda13
                     @Override // java.lang.Runnable
                     public final void run() {
                         ActionBarLayout.this.lambda$presentFragment$2();
@@ -2386,7 +2384,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                             baseFragment.saveKeyboardPositionBeforeTransition();
                         }
                         final BaseFragment baseFragment4 = baseFragment;
-                        this.waitingForKeyboardCloseRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.6
+                        this.waitingForKeyboardCloseRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.5
                             @Override // java.lang.Runnable
                             public void run() {
                                 if (ActionBarLayout.this.waitingForKeyboardCloseRunnable != this) {
@@ -2415,7 +2413,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                             }
                         };
                         if (baseFragment2.needDelayOpenAnimation()) {
-                            this.delayedOpenAnimationRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.7
+                            this.delayedOpenAnimationRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.6
                                 @Override // java.lang.Runnable
                                 public void run() {
                                     if (ActionBarLayout.this.delayedOpenAnimationRunnable != this) {
@@ -2433,7 +2431,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                         }
                         AndroidUtilities.runOnUIThread(this.waitingForKeyboardCloseRunnable, 250L);
                     } else if (baseFragment2.needDelayOpenAnimation()) {
-                        Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.8
+                        Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.7
                             @Override // java.lang.Runnable
                             public void run() {
                                 if (ActionBarLayout.this.delayedOpenAnimationRunnable != this) {
@@ -2581,7 +2579,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         if (view == null) {
             view = baseFragment.createView(this.parentActivity);
             if (view != null && baseFragment.isSupportEdgeToEdge() && baseFragment.drawEdgeNavigationBar()) {
-                ViewCompat.setOnApplyWindowInsetsListener(view, new ActionBarLayout$$ExternalSyntheticLambda3(baseFragment));
+                ViewCompat.setOnApplyWindowInsetsListener(view, new ActionBarLayout$$ExternalSyntheticLambda5(baseFragment));
                 this.containerView.invalidate();
             }
         } else {
@@ -2617,7 +2615,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         if (view == null) {
             view = baseFragment.createView(this.parentActivity);
             if (view != null && baseFragment.isSupportEdgeToEdge() && baseFragment.drawEdgeNavigationBar()) {
-                ViewCompat.setOnApplyWindowInsetsListener(view, new ActionBarLayout$$ExternalSyntheticLambda3(baseFragment));
+                ViewCompat.setOnApplyWindowInsetsListener(view, new ActionBarLayout$$ExternalSyntheticLambda5(baseFragment));
                 this.containerView.invalidate();
             }
         } else {
@@ -2716,7 +2714,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         animatorSet.playTogether(ObjectAnimator.ofFloat(baseFragment2.fragmentView, (Property<View, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(baseFragment2.fragmentView, (Property<View, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f));
         animatorSet.setDuration(200L);
         animatorSet.setInterpolator(new CubicBezierInterpolator(0.42d, 0.0d, 0.58d, 1.0d));
-        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.9
+        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.8
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 ActionBarLayout.this.previewOpenAnimationInProgress = false;
@@ -2789,7 +2787,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 baseFragment.setParentLayout(this);
                 View view = baseFragment.fragmentView;
                 if (view == null && (view = baseFragment.createView(this.parentActivity)) != null && baseFragment.isSupportEdgeToEdge() && baseFragment.drawEdgeNavigationBar()) {
-                    ViewCompat.setOnApplyWindowInsetsListener(view, new ActionBarLayout$$ExternalSyntheticLambda3(baseFragment));
+                    ViewCompat.setOnApplyWindowInsetsListener(view, new ActionBarLayout$$ExternalSyntheticLambda5(baseFragment));
                     this.containerView.invalidate();
                 }
                 if (!this.inPreviewMode) {
@@ -2842,14 +2840,14 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     this.transitionAnimationInProgress = true;
                     this.layoutToIgnore = this.containerView;
                     baseFragment2.setRemovingFromStack(true);
-                    this.onCloseAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda4
+                    this.onCloseAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda6
                         @Override // java.lang.Runnable
                         public final void run() {
                             ActionBarLayout.this.lambda$closeLastFragment$3(baseFragment2, baseFragment);
                         }
                     };
                     if (!this.inPreviewMode && !this.transitionAnimationPreviewMode) {
-                        animatorSet = baseFragment2.onCustomTransitionAnimation(false, new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda5
+                        animatorSet = baseFragment2.onCustomTransitionAnimation(false, new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda7
                             @Override // java.lang.Runnable
                             public final void run() {
                                 ActionBarLayout.this.lambda$closeLastFragment$4();
@@ -2858,7 +2856,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                     }
                     if (animatorSet == null) {
                         if (!this.inPreviewMode && (this.containerView.isKeyboardVisible || this.containerViewBack.isKeyboardVisible)) {
-                            Runnable runnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.10
+                            Runnable runnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.9
                                 @Override // java.lang.Runnable
                                 public void run() {
                                     if (ActionBarLayout.this.waitingForKeyboardCloseRunnable != this) {
@@ -2890,7 +2888,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 this.transitionAnimationStartTime = System.currentTimeMillis();
                 this.transitionAnimationInProgress = true;
                 this.layoutToIgnore = this.containerView;
-                this.onCloseAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda6
+                this.onCloseAnimationEndRunnable = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda8
                     @Override // java.lang.Runnable
                     public final void run() {
                         ActionBarLayout.this.lambda$closeLastFragment$5(baseFragment2);
@@ -2908,7 +2906,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 animatorSet2.playTogether(arrayList);
                 this.currentAnimation.setInterpolator(this.accelerateDecelerateInterpolator);
                 this.currentAnimation.setDuration(200L);
-                this.currentAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.11
+                this.currentAnimation.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.10
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationStart(Animator animator) {
                         ActionBarLayout.this.transitionAnimationStartTime = System.currentTimeMillis();
@@ -2996,7 +2994,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             if (view2 == null) {
                 view2 = baseFragment2.createView(this.parentActivity);
                 if (view2 != null && baseFragment2.isSupportEdgeToEdge() && baseFragment2.drawEdgeNavigationBar()) {
-                    ViewCompat.setOnApplyWindowInsetsListener(view2, new ActionBarLayout$$ExternalSyntheticLambda3(baseFragment2));
+                    ViewCompat.setOnApplyWindowInsetsListener(view2, new ActionBarLayout$$ExternalSyntheticLambda5(baseFragment2));
                     this.containerView.invalidate();
                 }
             } else {
@@ -3100,7 +3098,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         }
         View view = this.backgroundView;
         if (view != null) {
-            view.animate().alpha(0.0f).setDuration(180L).withEndAction(new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda14
+            view.animate().alpha(0.0f).setDuration(180L).withEndAction(new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda16
                 @Override // java.lang.Runnable
                 public final void run() {
                     ActionBarLayout.this.lambda$removeAllFragments$6();
@@ -3224,7 +3222,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             this.themeAnimatorSet = null;
         }
         final int size = themeAnimationSettings.onlyTopFragment ? 1 : this.fragmentsStack.size();
-        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda12
+        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
                 ActionBarLayout.this.lambda$animateThemedValues$7(size, themeAnimationSettings, runnable);
@@ -3241,7 +3239,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
                 runnable2.run();
                 return;
             } else {
-                Theme.applyThemeInBackground(themeAnimationSettings.theme, themeAnimationSettings.nightTheme, new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda13
+                Theme.applyThemeInBackground(themeAnimationSettings.theme, themeAnimationSettings.nightTheme, new Runnable() { // from class: org.telegram.ui.ActionBar.ActionBarLayout$$ExternalSyntheticLambda15
                     @Override // java.lang.Runnable
                     public final void run() {
                         AndroidUtilities.runOnUIThread(runnable2);
@@ -3341,7 +3339,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             this.notificationsLocker.lock();
             AnimatorSet animatorSet = new AnimatorSet();
             this.themeAnimatorSet = animatorSet;
-            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.12
+            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.ActionBar.ActionBarLayout.11
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     ActionBarLayout.this.notificationsLocker.unlock();

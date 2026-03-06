@@ -575,7 +575,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void access$21700(DialogsActivity dialogsActivity) {
+    public static /* synthetic */ void access$21800(DialogsActivity dialogsActivity) {
         dialogsActivity.updateSelectedCount();
     }
 
@@ -2060,17 +2060,17 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 currentActionBarHeight += AndroidUtilities.dp(48.0f);
             }
             this.additionalPadding = 0;
-            float alpha = (DialogsActivity.this.filterTabsView == null || DialogsActivity.this.filterTabsView.getVisibility() != 0) ? 0.0f : DialogsActivity.this.filterTabsView.getAlpha();
+            float filterTabsVisibilityFactor = DialogsActivity.this.getFilterTabsVisibilityFactor(false);
             float totalVisibility = DialogsActivity.this.topPanelLayout != null ? DialogsActivity.this.topPanelLayout.getMetadata().getTotalVisibility() : 0.0f;
-            int dp = currentActionBarHeight + ((int) (AndroidUtilities.dp(50.0f) * alpha));
-            this.additionalPadding += (int) (AndroidUtilities.dp(50.0f) * alpha);
+            int dp = currentActionBarHeight + ((int) (AndroidUtilities.dp(50.0f) * filterTabsVisibilityFactor));
+            this.additionalPadding += (int) (AndroidUtilities.dp(50.0f) * filterTabsVisibilityFactor);
             if (DialogsActivity.this.topPanelLayout != null) {
-                int animatedHeightWithPadding = (int) DialogsActivity.this.topPanelLayout.getAnimatedHeightWithPadding(AndroidUtilities.lerp(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(7.0f), alpha));
+                int animatedHeightWithPadding = (int) DialogsActivity.this.topPanelLayout.getAnimatedHeightWithPadding(AndroidUtilities.lerp(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(7.0f), filterTabsVisibilityFactor));
                 dp += animatedHeightWithPadding;
                 this.additionalPadding += animatedHeightWithPadding;
             }
-            int dp2 = dp - AndroidUtilities.dp(Math.max(alpha, totalVisibility) * 5.0f);
-            this.additionalPadding -= AndroidUtilities.dp(Math.max(alpha, totalVisibility) * 5.0f);
+            int dp2 = dp - AndroidUtilities.dp(Math.max(filterTabsVisibilityFactor, totalVisibility) * 5.0f);
+            this.additionalPadding -= AndroidUtilities.dp(Math.max(filterTabsVisibilityFactor, totalVisibility) * 5.0f);
             int calculateListViewPaddingBottom = DialogsActivity.this.calculateListViewPaddingBottom();
             if (dp2 != this.topPadding || calculateListViewPaddingBottom != getPaddingBottom()) {
                 setTopGlowOffset(dp2);
@@ -6385,7 +6385,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.DialogsActivity$23$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DialogsActivity.access$21700(DialogsActivity.this);
+                    DialogsActivity.access$21800(DialogsActivity.this);
                 }
             }, 100L);
         }
@@ -10660,7 +10660,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             viewGroup = null;
         }
         final ChatActivity[] chatActivityArr2 = new ChatActivity[1];
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getParentActivity(), R.drawable.popup_fixed_alert2, getResourceProvider(), z7 ? 3 : 2);
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getParentActivity(), R.drawable.popup_fixed_alert4, getResourceProvider(), z7 ? 3 : 2);
         actionBarPopupWindowLayoutArr2[0] = actionBarPopupWindowLayout;
         if (z7) {
             final int[] iArr = {actionBarPopupWindowLayout.addViewToSwipeBack(viewGroup)};
@@ -17287,17 +17287,22 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public float getFilterTabsVisibilityFactor(boolean z) {
+        return (z ? 1.0f - this.animatorSearchVisible.getFloatValue() : 1.0f) * (1.0f - getRightSlidingProgress()) * this.animatorFilterTabsVisible.getFloatValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public void checkUi_filterTabsVisible() {
         ViewPage viewPage;
-        float floatValue = (1.0f - this.animatorSearchVisible.getFloatValue()) * (1.0f - getRightSlidingProgress()) * this.animatorFilterTabsVisible.getFloatValue();
+        float filterTabsVisibilityFactor = getFilterTabsVisibilityFactor(true);
         FilterTabsView filterTabsView = this.filterTabsView;
         if (filterTabsView != null) {
-            boolean z = filterTabsView.getAlpha() != floatValue;
-            float lerp = AndroidUtilities.lerp(0.98f, 1.0f, floatValue);
-            this.filterTabsView.setAlpha(floatValue);
+            boolean z = filterTabsView.getAlpha() != filterTabsVisibilityFactor;
+            float lerp = AndroidUtilities.lerp(0.98f, 1.0f, filterTabsVisibilityFactor);
+            this.filterTabsView.setAlpha(filterTabsVisibilityFactor);
             this.filterTabsView.setScaleX(lerp);
             this.filterTabsView.setScaleY(lerp);
-            this.filterTabsView.setVisibility(floatValue > 0.0f ? 0 : 8);
+            this.filterTabsView.setVisibility(filterTabsVisibilityFactor > 0.0f ? 0 : 8);
             if (z && (viewPage = this.viewPages[0]) != null) {
                 viewPage.listView.requestLayout();
             }

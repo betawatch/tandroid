@@ -2994,6 +2994,7 @@ public abstract class MessagePreviewView extends FrameLayout {
     }
 
     public static class TabsView extends View {
+        private Drawable bgDrawable;
         private final Paint bgPaint;
         private int color;
         private float marginBetween;
@@ -3023,8 +3024,8 @@ public abstract class MessagePreviewView extends FrameLayout {
             this.tabs = new ArrayList();
             Paint paint = new Paint(1);
             this.bgPaint = paint;
-            this.tabInnerPadding = AndroidUtilities.dp(12.0f);
-            this.marginBetween = AndroidUtilities.dp(13.0f);
+            this.tabInnerPadding = AndroidUtilities.dp(14.0f);
+            this.marginBetween = AndroidUtilities.dp(0.0f);
             this.selectRect = new RectF();
             this.resourcesProvider = resourcesProvider;
             if (Theme.isCurrentThemeDark()) {
@@ -3061,9 +3062,9 @@ public abstract class MessagePreviewView extends FrameLayout {
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
             super.onMeasure(i, i2);
-            this.tabInnerPadding = AndroidUtilities.dp(12.0f);
-            this.marginBetween = AndroidUtilities.dp(13.0f);
+            this.tabInnerPadding = AndroidUtilities.dp(14.0f);
             float f = 0.0f;
+            this.marginBetween = AndroidUtilities.dp(0.0f);
             for (int i3 = 0; i3 < this.tabs.size(); i3++) {
                 if (i3 > 0) {
                     f += this.marginBetween;
@@ -3073,14 +3074,23 @@ public abstract class MessagePreviewView extends FrameLayout {
             int measuredWidth = getMeasuredWidth();
             int measuredHeight = getMeasuredHeight();
             float dp = (measuredHeight - AndroidUtilities.dp(26.0f)) / 2.0f;
-            float dp2 = (measuredHeight + AndroidUtilities.dp(26.0f)) / 2.0f;
-            float f2 = (measuredWidth - f) / 2.0f;
+            float dp2 = (AndroidUtilities.dp(26.0f) + measuredHeight) / 2.0f;
+            float f2 = measuredWidth;
+            float f3 = (f2 - f) / 2.0f;
+            float f4 = f3;
             for (int i4 = 0; i4 < this.tabs.size(); i4++) {
                 float width = this.tabInnerPadding + ((Tab) this.tabs.get(i4)).text.getWidth() + this.tabInnerPadding;
-                ((Tab) this.tabs.get(i4)).bounds.set(f2, dp, f2 + width, dp2);
+                ((Tab) this.tabs.get(i4)).bounds.set(f4, dp, f4 + width, dp2);
                 ((Tab) this.tabs.get(i4)).clickBounds.set(((Tab) this.tabs.get(i4)).bounds);
                 ((Tab) this.tabs.get(i4)).clickBounds.inset((-this.marginBetween) / 2.0f, -dp);
-                f2 += width + this.marginBetween;
+                f4 += width + this.marginBetween;
+            }
+            Drawable drawable = this.bgDrawable;
+            if (drawable != null) {
+                android.graphics.Rect rect = AndroidUtilities.rectTmp2;
+                drawable.getPadding(rect);
+                int i5 = measuredHeight / 2;
+                this.bgDrawable.setBounds((((int) f3) - AndroidUtilities.dp(3.0f)) - rect.left, (i5 - AndroidUtilities.dp(16.0f)) - rect.top, ((int) ((f2 + f) / 2.0f)) + AndroidUtilities.dp(3.0f) + rect.right, i5 + AndroidUtilities.dp(16.0f) + rect.bottom);
             }
         }
 
@@ -3102,6 +3112,10 @@ public abstract class MessagePreviewView extends FrameLayout {
             } else if (z2) {
                 this.selectRect.set(((Tab) this.tabs.get(ceil)).bounds);
             }
+            Drawable drawable = this.bgDrawable;
+            if (drawable != null) {
+                drawable.draw(canvas);
+            }
             if (z || z2) {
                 canvas.drawRoundRect(this.selectRect, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), this.bgPaint);
             }
@@ -3109,6 +3123,11 @@ public abstract class MessagePreviewView extends FrameLayout {
                 Tab tab = (Tab) this.tabs.get(i);
                 tab.text.draw(canvas, tab.bounds.left + this.tabInnerPadding, getMeasuredHeight() / 2.0f, ColorUtils.blendARGB(this.color, this.selectedColor, 1.0f - Math.abs(f - i)), 1.0f);
             }
+        }
+
+        @Override // android.view.View
+        public void setBackground(Drawable drawable) {
+            this.bgDrawable = drawable;
         }
 
         public void setOnTabClick(Utilities.Callback<Integer> callback) {

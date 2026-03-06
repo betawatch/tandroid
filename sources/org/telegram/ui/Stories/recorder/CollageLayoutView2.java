@@ -1019,7 +1019,7 @@ public abstract class CollageLayoutView2 extends FrameLayout implements ItemOpti
             public final void run() {
                 CollageLayoutView2.lambda$onLongPress$4();
             }
-        }).setGravity(1).allowCenter(true).setBlur(true).setRoundRadius(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f)).setOnDismiss(new Runnable() { // from class: org.telegram.ui.Stories.recorder.CollageLayoutView2$$ExternalSyntheticLambda9
+        }).setGravity(1).allowCenter(true).setBlur(true, false).setRoundRadius(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f)).setOnDismiss(new Runnable() { // from class: org.telegram.ui.Stories.recorder.CollageLayoutView2$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 CollageLayoutView2.this.lambda$onLongPress$5();

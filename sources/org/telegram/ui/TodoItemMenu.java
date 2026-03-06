@@ -10,11 +10,9 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Insets;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
@@ -27,12 +25,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.core.graphics.Insets;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -74,7 +74,13 @@ import org.telegram.ui.Components.MessagePrivateSeenView;
 import org.telegram.ui.Components.Reactions.ReactionsLayoutInBubble;
 import org.telegram.ui.Components.ReactionsContainerLayout;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.Components.ScrimOptions;
 import org.telegram.ui.Components.ViewPagerFixed;
+import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
+import org.telegram.ui.Components.blur3.drawable.color.impl.BlurredBackgroundProviderImpl;
+import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
+import org.telegram.ui.Components.blur3.utils.Blur3Utils;
+import org.telegram.ui.Components.chat.ViewPositionWatcher;
 import org.telegram.ui.PollCreateActivity;
 import org.telegram.ui.TodoItemMenu;
 
@@ -100,7 +106,9 @@ public class TodoItemMenu extends Dialog {
     private boolean hasTranslation;
     private float heightdiff;
     private TextView hintTextView;
-    private final Rect insets;
+    private final BlurredBackgroundDrawableViewFactory iBlur3Factory;
+    private final BlurredBackgroundSourceBitmap iBlur3SourceBitmap;
+    private Insets insets;
     private boolean isOut;
     private FrameLayout menuContainer;
     private MessageObject messageObject;
@@ -128,7 +136,7 @@ public class TodoItemMenu extends Dialog {
 
     public TodoItemMenu(Context context, Theme.ResourcesProvider resourcesProvider) {
         super(context, R.style.TransparentDialog);
-        this.insets = new Rect();
+        this.insets = Insets.NONE;
         this.clipTop = 0.0f;
         this.clipBottom = 0.0f;
         this.taskOptionsViewMaxWidth = -1.0f;
@@ -173,6 +181,12 @@ public class TodoItemMenu extends Dialog {
                 super.onLayout(z, i, i2, i3, i4);
                 TodoItemMenu.this.setupTranslation();
             }
+
+            @Override // android.view.View
+            protected void onSizeChanged(int i, int i2, int i3, int i4) {
+                super.onSizeChanged(i, i2, i3, i4);
+                TodoItemMenu.this.checkBitmapMatrix();
+            }
         };
         this.windowView = frameLayout;
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda16
@@ -181,6 +195,11 @@ public class TodoItemMenu extends Dialog {
                 TodoItemMenu.this.lambda$new$0(view);
             }
         });
+        BlurredBackgroundSourceBitmap blurredBackgroundSourceBitmap = new BlurredBackgroundSourceBitmap();
+        this.iBlur3SourceBitmap = blurredBackgroundSourceBitmap;
+        BlurredBackgroundDrawableViewFactory blurredBackgroundDrawableViewFactory = new BlurredBackgroundDrawableViewFactory(blurredBackgroundSourceBitmap);
+        this.iBlur3Factory = blurredBackgroundDrawableViewFactory;
+        blurredBackgroundDrawableViewFactory.setSourceRootView(new ViewPositionWatcher(this.windowView), this.windowView);
         FrameLayout frameLayout2 = new FrameLayout(context) { // from class: org.telegram.ui.TodoItemMenu.2
             @Override // android.view.ViewGroup
             protected boolean drawChild(Canvas canvas, View view, long j) {
@@ -247,6 +266,8 @@ public class TodoItemMenu extends Dialog {
                 ViewPagerFixed.this.scrollToPosition(((Integer) obj).intValue());
             }
         });
+        MessagePreviewView.TabsView tabsView3 = this.tabsView;
+        tabsView3.setBackground(blurredBackgroundDrawableViewFactory.create(tabsView3).setColorProvider(BlurredBackgroundProviderImpl.scrimMenuBackground(resourcesProvider)).setHasPadding(true).setPadding(AndroidUtilities.dp(8.0f)).setRadius(AndroidUtilities.dp(16.0f)));
         TextView textView = new TextView(context);
         this.hintTextView = textView;
         textView.setTextSize(1, 13.0f);
@@ -254,35 +275,13 @@ public class TodoItemMenu extends Dialog {
         this.hintTextView.setText(LocaleController.getString(R.string.TodoMenuHint));
         this.hintTextView.setGravity(17);
         this.containerView.addView(this.hintTextView, LayoutHelper.createFrame(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
-        this.windowView.setFitsSystemWindows(true);
-        this.windowView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() { // from class: org.telegram.ui.TodoItemMenu.6
-            @Override // android.view.View.OnApplyWindowInsetsListener
-            public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-                WindowInsets windowInsets2;
-                Insets insets;
-                int i;
-                int i2;
-                int i3;
-                int i4;
-                int i5 = Build.VERSION.SDK_INT;
-                if (i5 < 30) {
-                    TodoItemMenu.this.insets.set(windowInsets.getSystemWindowInsetLeft(), windowInsets.getSystemWindowInsetTop(), windowInsets.getSystemWindowInsetRight(), windowInsets.getSystemWindowInsetBottom());
-                } else {
-                    insets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
-                    Rect rect = TodoItemMenu.this.insets;
-                    i = insets.left;
-                    i2 = insets.top;
-                    i3 = insets.right;
-                    i4 = insets.bottom;
-                    rect.set(i, i2, i3, i4);
-                }
+        ViewCompat.setOnApplyWindowInsetsListener(this.windowView, new OnApplyWindowInsetsListener() { // from class: org.telegram.ui.TodoItemMenu.6
+            @Override // androidx.core.view.OnApplyWindowInsetsListener
+            public WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
+                TodoItemMenu.this.insets = windowInsetsCompat.getInsets(WindowInsetsCompat.Type.displayCutout() | WindowInsetsCompat.Type.systemBars());
                 TodoItemMenu.this.containerView.setPadding(TodoItemMenu.this.insets.left, TodoItemMenu.this.insets.top, TodoItemMenu.this.insets.right, TodoItemMenu.this.insets.bottom);
                 TodoItemMenu.this.windowView.requestLayout();
-                if (i5 >= 30) {
-                    windowInsets2 = WindowInsets.CONSUMED;
-                    return windowInsets2;
-                }
-                return windowInsets.consumeSystemWindowInsets();
+                return WindowInsetsCompat.CONSUMED;
             }
         });
     }
@@ -339,16 +338,19 @@ public class TodoItemMenu extends Dialog {
         attributes.dimAmount = 0.0f;
         int i = attributes.flags;
         attributes.softInputMode = 48;
-        int i2 = i & (-131075);
-        attributes.flags = i2;
-        int i3 = Build.VERSION.SDK_INT;
-        attributes.flags = i2 | (-2013198976);
-        if (i3 >= 28) {
+        attributes.flags = (i & (-131075)) | (-1946090112);
+        if (Build.VERSION.SDK_INT >= 28) {
             attributes.layoutInDisplayCutoutMode = 1;
         }
         window.setAttributes(attributes);
         this.windowView.setSystemUiVisibility(1284);
         AndroidUtilities.setLightNavigationBar(this.windowView, !Theme.isCurrentThemeDark());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void checkBitmapMatrix() {
+        Blur3Utils.checkBitmapSourceMatrixScale(this.iBlur3SourceBitmap, this.windowView);
+        this.iBlur3Factory.invalidateAllLinkedViews();
     }
 
     public void setCell(final ChatActivity chatActivity, ChatMessageCell chatMessageCell, final int i) {
@@ -358,7 +360,6 @@ public class TodoItemMenu extends Dialog {
         this.taskId = i;
         MessageObject messageObject = chatMessageCell != null ? chatMessageCell.getMessageObject() : null;
         this.messageObject = messageObject;
-        int i3 = 0;
         this.isOut = messageObject != null && messageObject.isOutOwner();
         if (this.cell != null) {
             this.clipTop = chatActivity.getChatListViewPadding() - AndroidUtilities.dp(4.0f);
@@ -399,7 +400,7 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell, android.view.View
-                protected void onMeasure(int i4, int i5) {
+                protected void onMeasure(int i3, int i4) {
                     setMeasuredDimension(width, height);
                 }
 
@@ -442,8 +443,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didLongPressChannelAvatar(ChatMessageCell chatMessageCell3, TLRPC.Chat chat, int i4, float f, float f2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressChannelAvatar(this, chatMessageCell3, chat, i4, f, f2);
+                public /* synthetic */ boolean didLongPressChannelAvatar(ChatMessageCell chatMessageCell3, TLRPC.Chat chat, int i3, float f, float f2) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressChannelAvatar(this, chatMessageCell3, chat, i3, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -492,8 +493,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell3, TLRPC.Chat chat, int i4, float f, float f2, boolean z) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell3, chat, i4, f, f2, z);
+                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell3, TLRPC.Chat chat, int i3, float f, float f2, boolean z) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell3, chat, i3, f, f2, z);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -537,13 +538,13 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressFactCheckWhat(ChatMessageCell chatMessageCell3, int i4, int i5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressFactCheckWhat(this, chatMessageCell3, i4, i5);
+                public /* synthetic */ void didPressFactCheckWhat(ChatMessageCell chatMessageCell3, int i3, int i4) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressFactCheckWhat(this, chatMessageCell3, i3, i4);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressGiveawayChatButton(ChatMessageCell chatMessageCell3, int i4) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressGiveawayChatButton(this, chatMessageCell3, i4);
+                public /* synthetic */ void didPressGiveawayChatButton(ChatMessageCell chatMessageCell3, int i3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressGiveawayChatButton(this, chatMessageCell3, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -557,8 +558,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressHint(ChatMessageCell chatMessageCell3, int i4) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressHint(this, chatMessageCell3, i4);
+                public /* synthetic */ void didPressHint(ChatMessageCell chatMessageCell3, int i3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressHint(this, chatMessageCell3, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -567,8 +568,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressInstantButton(ChatMessageCell chatMessageCell3, int i4) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressInstantButton(this, chatMessageCell3, i4);
+                public /* synthetic */ void didPressInstantButton(ChatMessageCell chatMessageCell3, int i3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressInstantButton(this, chatMessageCell3, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -587,8 +588,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell3, int i4, float f, float f2, boolean z) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell3, i4, f, f2, z);
+                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell3, int i3, float f, float f2, boolean z) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell3, i3, f, f2, z);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -647,8 +648,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell3, ArrayList arrayList, int i4, int i5, int i6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressVoteButtons(this, chatMessageCell3, arrayList, i4, i5, i6);
+                public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell3, ArrayList arrayList, int i3, int i4, int i5) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressVoteButtons(this, chatMessageCell3, arrayList, i3, i4, i5);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -742,8 +743,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean isProgressLoading(ChatMessageCell chatMessageCell3, int i4) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isProgressLoading(this, chatMessageCell3, i4);
+                public /* synthetic */ boolean isProgressLoading(ChatMessageCell chatMessageCell3, int i3) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isProgressLoading(this, chatMessageCell3, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -757,8 +758,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void needOpenWebView(MessageObject messageObject2, String str, String str2, String str3, String str4, int i4, int i5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needOpenWebView(this, messageObject2, str, str2, str3, str4, i4, i5);
+                public /* synthetic */ void needOpenWebView(MessageObject messageObject2, String str, String str2, String str3, String str4, int i3, int i4) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needOpenWebView(this, messageObject2, str, str2, str3, str4, i3, i4);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -772,13 +773,13 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void needShowPremiumBulletin(int i4) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needShowPremiumBulletin(this, i4);
+                public /* synthetic */ void needShowPremiumBulletin(int i3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needShowPremiumBulletin(this, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean onAccessibilityAction(int i4, Bundle bundle) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$onAccessibilityAction(this, i4, bundle);
+                public /* synthetic */ boolean onAccessibilityAction(int i3, Bundle bundle) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$onAccessibilityAction(this, i3, bundle);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -826,7 +827,7 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell, android.view.View
-                protected void onMeasure(int i4, int i5) {
+                protected void onMeasure(int i3, int i4) {
                     setMeasuredDimension(width, height);
                 }
 
@@ -870,8 +871,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean didLongPressChannelAvatar(ChatMessageCell chatMessageCell6, TLRPC.Chat chat, int i4, float f, float f2) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressChannelAvatar(this, chatMessageCell6, chat, i4, f, f2);
+                public /* synthetic */ boolean didLongPressChannelAvatar(ChatMessageCell chatMessageCell6, TLRPC.Chat chat, int i3, float f, float f2) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didLongPressChannelAvatar(this, chatMessageCell6, chat, i3, f, f2);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -920,8 +921,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell6, TLRPC.Chat chat, int i4, float f, float f2, boolean z) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell6, chat, i4, f, f2, z);
+                public /* synthetic */ void didPressChannelAvatar(ChatMessageCell chatMessageCell6, TLRPC.Chat chat, int i3, float f, float f2, boolean z) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressChannelAvatar(this, chatMessageCell6, chat, i3, f, f2, z);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -965,13 +966,13 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressFactCheckWhat(ChatMessageCell chatMessageCell6, int i4, int i5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressFactCheckWhat(this, chatMessageCell6, i4, i5);
+                public /* synthetic */ void didPressFactCheckWhat(ChatMessageCell chatMessageCell6, int i3, int i4) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressFactCheckWhat(this, chatMessageCell6, i3, i4);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressGiveawayChatButton(ChatMessageCell chatMessageCell6, int i4) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressGiveawayChatButton(this, chatMessageCell6, i4);
+                public /* synthetic */ void didPressGiveawayChatButton(ChatMessageCell chatMessageCell6, int i3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressGiveawayChatButton(this, chatMessageCell6, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -985,8 +986,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressHint(ChatMessageCell chatMessageCell6, int i4) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressHint(this, chatMessageCell6, i4);
+                public /* synthetic */ void didPressHint(ChatMessageCell chatMessageCell6, int i3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressHint(this, chatMessageCell6, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -995,8 +996,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressInstantButton(ChatMessageCell chatMessageCell6, int i4) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressInstantButton(this, chatMessageCell6, i4);
+                public /* synthetic */ void didPressInstantButton(ChatMessageCell chatMessageCell6, int i3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressInstantButton(this, chatMessageCell6, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1015,8 +1016,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell6, int i4, float f, float f2, boolean z) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell6, i4, f, f2, z);
+                public /* synthetic */ void didPressReplyMessage(ChatMessageCell chatMessageCell6, int i3, float f, float f2, boolean z) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressReplyMessage(this, chatMessageCell6, i3, f, f2, z);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1080,8 +1081,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell6, ArrayList arrayList, int i4, int i5, int i6) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressVoteButtons(this, chatMessageCell6, arrayList, i4, i5, i6);
+                public /* synthetic */ void didPressVoteButtons(ChatMessageCell chatMessageCell6, ArrayList arrayList, int i3, int i4, int i5) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$didPressVoteButtons(this, chatMessageCell6, arrayList, i3, i4, i5);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1175,8 +1176,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean isProgressLoading(ChatMessageCell chatMessageCell6, int i4) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isProgressLoading(this, chatMessageCell6, i4);
+                public /* synthetic */ boolean isProgressLoading(ChatMessageCell chatMessageCell6, int i3) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$isProgressLoading(this, chatMessageCell6, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1190,8 +1191,8 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void needOpenWebView(MessageObject messageObject3, String str, String str2, String str3, String str4, int i4, int i5) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needOpenWebView(this, messageObject3, str, str2, str3, str4, i4, i5);
+                public /* synthetic */ void needOpenWebView(MessageObject messageObject3, String str, String str2, String str3, String str4, int i3, int i4) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needOpenWebView(this, messageObject3, str, str2, str3, str4, i3, i4);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1205,13 +1206,13 @@ public class TodoItemMenu extends Dialog {
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ void needShowPremiumBulletin(int i4) {
-                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needShowPremiumBulletin(this, i4);
+                public /* synthetic */ void needShowPremiumBulletin(int i3) {
+                    ChatMessageCell.ChatMessageCellDelegate.-CC.$default$needShowPremiumBulletin(this, i3);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
-                public /* synthetic */ boolean onAccessibilityAction(int i4, Bundle bundle) {
-                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$onAccessibilityAction(this, i4, bundle);
+                public /* synthetic */ boolean onAccessibilityAction(int i3, Bundle bundle) {
+                    return ChatMessageCell.ChatMessageCellDelegate.-CC.$default$onAccessibilityAction(this, i3, bundle);
                 }
 
                 @Override // org.telegram.ui.Cells.ChatMessageCell.ChatMessageCellDelegate
@@ -1255,29 +1256,30 @@ public class TodoItemMenu extends Dialog {
         TLRPC.TodoCompletion todoCompletion = null;
         ItemOptions makeOptions = ItemOptions.makeOptions(this.containerView, this.resourcesProvider, (View) null);
         final TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) MessageObject.getMedia(this.messageObject);
-        final int i4 = 0;
+        final int i3 = 0;
         while (true) {
-            if (i4 >= tL_messageMediaToDo.todo.list.size()) {
-                i4 = -1;
+            if (i3 >= tL_messageMediaToDo.todo.list.size()) {
+                i3 = -1;
                 todoItem = null;
                 break;
             } else {
-                if (tL_messageMediaToDo.todo.list.get(i4).id == i) {
-                    todoItem = tL_messageMediaToDo.todo.list.get(i4);
+                if (tL_messageMediaToDo.todo.list.get(i3).id == i) {
+                    todoItem = tL_messageMediaToDo.todo.list.get(i3);
                     break;
                 }
-                i4++;
+                i3++;
             }
         }
+        int i4 = 0;
         while (true) {
-            if (i3 >= tL_messageMediaToDo.completions.size()) {
+            if (i4 >= tL_messageMediaToDo.completions.size()) {
                 break;
             }
-            if (tL_messageMediaToDo.completions.get(i3).id == i) {
-                todoCompletion = tL_messageMediaToDo.completions.get(i3);
+            if (tL_messageMediaToDo.completions.get(i4).id == i) {
+                todoCompletion = tL_messageMediaToDo.completions.get(i4);
                 break;
             }
-            i3++;
+            i4++;
         }
         if (this.messageObject.canCompleteTodo()) {
             if (todoCompletion != null) {
@@ -1341,7 +1343,7 @@ public class TodoItemMenu extends Dialog {
             makeOptions.add(R.drawable.msg_edit, LocaleController.getString(R.string.TodoEditItem), new Runnable() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TodoItemMenu.this.lambda$setCell$7(chatActivity, i4);
+                    TodoItemMenu.this.lambda$setCell$7(chatActivity, i3);
                 }
             });
             if (tL_messageMediaToDo.todo.list.size() > 1) {
@@ -1353,6 +1355,8 @@ public class TodoItemMenu extends Dialog {
                 });
             }
         }
+        makeOptions.setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
+        makeOptions.setBlurBackground(this.iBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider), false);
         makeOptions.setupSelectors();
         ViewGroup layout = makeOptions.getLayout();
         this.taskOptionsView = layout;
@@ -1457,8 +1461,8 @@ public class TodoItemMenu extends Dialog {
 
     /* JADX WARN: Removed duplicated region for block: B:144:0x025a  */
     /* JADX WARN: Removed duplicated region for block: B:153:0x0383 A[LOOP:0: B:152:0x0381->B:153:0x0383, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x03d5  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x03eb  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x03f3  */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x0409  */
     /* JADX WARN: Removed duplicated region for block: B:181:0x0333  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1588,6 +1592,8 @@ public class TodoItemMenu extends Dialog {
                         }
                     });
                 }
+                makeOptions.setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
+                makeOptions.setBlurBackground(this.iBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider), false);
                 makeOptions.setupSelectors();
                 ViewGroup layout = makeOptions.getLayout();
                 this.messageOptionsView = layout;
@@ -1698,6 +1704,8 @@ public class TodoItemMenu extends Dialog {
         size = arrayList.size();
         while (i2 < size) {
         }
+        makeOptions2.setGapBackgroundColor(Theme.multAlpha(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, this.resourcesProvider), 0.06f));
+        makeOptions2.setBlurBackground(this.iBlur3Factory, BlurredBackgroundProviderImpl.scrimMenuBackground(this.resourcesProvider), false);
         makeOptions2.setupSelectors();
         ViewGroup layout2 = makeOptions2.getLayout();
         this.messageOptionsView = layout2;
@@ -1758,9 +1766,9 @@ public class TodoItemMenu extends Dialog {
             int[] iArr = new int[2];
             chatMessageCell.getLocationOnScreen(iArr);
             int i = iArr[0];
-            Rect rect = this.insets;
-            this.tx = i - rect.left;
-            float f = iArr[1] - rect.top;
+            Insets insets = this.insets;
+            this.tx = i - insets.left;
+            float f = iArr[1] - insets.top;
             this.ty = f;
             if (!this.hasDestTranslation) {
                 this.hasDestTranslation = true;
@@ -1769,11 +1777,11 @@ public class TodoItemMenu extends Dialog {
                 if (this.messageOptionsView != null) {
                     float height = f + this.cell.getHeight() + this.messageOptionsView.getHeight();
                     int height2 = this.windowView.getHeight();
-                    Rect rect2 = this.insets;
-                    if (height > ((height2 - rect2.top) - rect2.bottom) - AndroidUtilities.dp(66.0f)) {
+                    Insets insets2 = this.insets;
+                    if (height > ((height2 - insets2.top) - insets2.bottom) - AndroidUtilities.dp(66.0f)) {
                         int height3 = this.windowView.getHeight();
-                        Rect rect3 = this.insets;
-                        this.dty1 = ((((height3 - rect3.top) - rect3.bottom) - AndroidUtilities.dp(66.0f)) - this.cell.getHeight()) - this.messageOptionsView.getHeight();
+                        Insets insets3 = this.insets;
+                        this.dty1 = ((((height3 - insets3.top) - insets3.bottom) - AndroidUtilities.dp(66.0f)) - this.cell.getHeight()) - this.messageOptionsView.getHeight();
                     }
                 }
                 int todoIndex = this.myTaskCell.getTodoIndex(this.taskId);
@@ -1785,20 +1793,20 @@ public class TodoItemMenu extends Dialog {
                 float f3 = (int) pollButtonBottom;
                 float f4 = f2 + f3;
                 int height4 = this.windowView.getHeight();
-                Rect rect4 = this.insets;
-                if (f4 > (((height4 - rect4.top) - rect4.bottom) - AndroidUtilities.dp(78.0f)) - this.hintTextView.getHeight()) {
+                Insets insets4 = this.insets;
+                if (f4 > (((height4 - insets4.top) - insets4.bottom) - AndroidUtilities.dp(78.0f)) - this.hintTextView.getHeight()) {
                     int height5 = this.windowView.getHeight();
-                    Rect rect5 = this.insets;
-                    this.dty2 = ((((height5 - rect5.top) - rect5.bottom) - AndroidUtilities.dp(78.0f)) - this.hintTextView.getHeight()) - r0;
+                    Insets insets5 = this.insets;
+                    this.dty2 = ((((height5 - insets5.top) - insets5.bottom) - AndroidUtilities.dp(78.0f)) - this.hintTextView.getHeight()) - r0;
                 }
                 if (this.taskOptionsView != null) {
                     float height6 = this.dty2 + f3 + r2.getHeight();
                     int height7 = this.windowView.getHeight();
-                    Rect rect6 = this.insets;
-                    if (height6 > (((height7 - rect6.top) - rect6.bottom) - AndroidUtilities.dp(78.0f)) - this.hintTextView.getHeight()) {
+                    Insets insets6 = this.insets;
+                    if (height6 > (((height7 - insets6.top) - insets6.bottom) - AndroidUtilities.dp(78.0f)) - this.hintTextView.getHeight()) {
                         int height8 = this.windowView.getHeight();
-                        Rect rect7 = this.insets;
-                        this.dty2 = (((((height8 - rect7.top) - rect7.bottom) - AndroidUtilities.dp(78.0f)) - this.hintTextView.getHeight()) - r0) - this.taskOptionsView.getHeight();
+                        Insets insets7 = this.insets;
+                        this.dty2 = (((((height8 - insets7.top) - insets7.bottom) - AndroidUtilities.dp(78.0f)) - this.hintTextView.getHeight()) - r0) - this.taskOptionsView.getHeight();
                     }
                 }
             }
@@ -1825,11 +1833,11 @@ public class TodoItemMenu extends Dialog {
                 if (view != null) {
                     float height = f + this.cell.getHeight() + actionBarPopupWindowLayout.getVisibleHeight();
                     int height2 = this.windowView.getHeight();
-                    Rect rect = this.insets;
-                    if (height > ((height2 - rect.top) - rect.bottom) - AndroidUtilities.dp(66.0f)) {
+                    Insets insets = this.insets;
+                    if (height > ((height2 - insets.top) - insets.bottom) - AndroidUtilities.dp(66.0f)) {
                         int height3 = this.windowView.getHeight();
-                        Rect rect2 = this.insets;
-                        this.dty1 = ((((height3 - rect2.top) - rect2.bottom) - AndroidUtilities.dp(66.0f)) - this.cell.getHeight()) - actionBarPopupWindowLayout.getVisibleHeight();
+                        Insets insets2 = this.insets;
+                        this.dty1 = ((((height3 - insets2.top) - insets2.bottom) - AndroidUtilities.dp(66.0f)) - this.cell.getHeight()) - actionBarPopupWindowLayout.getVisibleHeight();
                     }
                 }
             }
@@ -1893,25 +1901,25 @@ public class TodoItemMenu extends Dialog {
         if (view != null) {
             view.setVisibility(4);
         }
-        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda6
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                TodoItemMenu.this.lambda$prepareBlur$13(view, (Bitmap) obj);
+        ScrimOptions.makeGlobalBlurBitmaps(new Utilities.Callback2() { // from class: org.telegram.ui.TodoItemMenu$$ExternalSyntheticLambda6
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                TodoItemMenu.this.lambda$prepareBlur$13(view, (Bitmap) obj, (Bitmap) obj2);
             }
-        }, 14.0f);
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$prepareBlur$13(View view, Bitmap bitmap) {
+    public /* synthetic */ void lambda$prepareBlur$13(View view, Bitmap bitmap, Bitmap bitmap2) {
         if (view != null) {
             view.setVisibility(0);
         }
         this.blurBitmap = bitmap;
         Paint paint = new Paint(1);
         this.blurBitmapPaint = paint;
-        Bitmap bitmap2 = this.blurBitmap;
+        Bitmap bitmap3 = this.blurBitmap;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        BitmapShader bitmapShader = new BitmapShader(bitmap2, tileMode, tileMode);
+        BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode, tileMode);
         this.blurBitmapShader = bitmapShader;
         paint.setShader(bitmapShader);
         ColorMatrix colorMatrix = new ColorMatrix();
@@ -1919,6 +1927,8 @@ public class TodoItemMenu extends Dialog {
         AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, Theme.isCurrentThemeDark() ? -0.02f : -0.04f);
         this.blurBitmapPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
         this.blurMatrix = new Matrix();
+        this.iBlur3SourceBitmap.setBitmap(bitmap2);
+        checkBitmapMatrix();
     }
 
     @Override // android.app.Dialog

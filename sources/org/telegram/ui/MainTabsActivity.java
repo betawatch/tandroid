@@ -76,6 +76,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     public GlassTabView[] tabs;
     private MainTabsLayout tabsView;
     private BlurredBackgroundDrawable tabsViewBackground;
+    private FrameLayout tabsViewWrapper;
     private IUpdateLayout updateLayout;
     private UpdateLayoutWrapper updateLayoutWrapper;
     private final BoolAnimator animatorTabsVisible = new BoolAnimator(0, this, CubicBezierInterpolator.EASE_OUT_QUINT, 380, true);
@@ -98,6 +99,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
     private static int indexToPosition(int i) {
         return i > 2 ? i - 1 : i;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ void lambda$createView$2(View view) {
     }
 
     @Override // org.telegram.ui.ViewPagerActivity
@@ -329,7 +334,17 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         blurredBackgroundWithFadeDrawable.setFadeHeight(AndroidUtilities.dp(60.0f), true);
         this.fadeView.setBackground(blurredBackgroundWithFadeDrawable);
         this.contentView.addView(this.fadeView, LayoutHelper.createFrame(-1, 0, 80));
-        this.contentView.addView(this.tabsView, LayoutHelper.createFrame(344, 72, 81));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.tabsViewWrapper = frameLayout;
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda2
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainTabsActivity.lambda$createView$2(view);
+            }
+        });
+        this.tabsViewWrapper.addView(this.tabsView, LayoutHelper.createFrame(344, 72, 81));
+        this.tabsViewWrapper.setClipToPadding(false);
+        this.contentView.addView(this.tabsViewWrapper, LayoutHelper.createFrame(-1, -2, 80));
         UpdateLayoutWrapper updateLayoutWrapper = new UpdateLayoutWrapper(context);
         this.updateLayoutWrapper = updateLayoutWrapper;
         this.contentView.addView(updateLayoutWrapper, LayoutHelper.createFrame(-1, -2, 80));
@@ -385,20 +400,20 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                 arrayList.add(Integer.valueOf(i));
             }
         }
-        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda4
+        Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda5
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int lambda$openAccountSelector$2;
-                lambda$openAccountSelector$2 = MainTabsActivity.lambda$openAccountSelector$2((Integer) obj, (Integer) obj2);
-                return lambda$openAccountSelector$2;
+                int lambda$openAccountSelector$3;
+                lambda$openAccountSelector$3 = MainTabsActivity.lambda$openAccountSelector$3((Integer) obj, (Integer) obj2);
+                return lambda$openAccountSelector$3;
             }
         });
         final ItemOptions makeOptions = ItemOptions.makeOptions(this, view);
         if (UserConfig.getActivatedAccountsCount() < 4) {
-            makeOptions.add(R.drawable.msg_addbot, LocaleController.getString(R.string.AddAccount), new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda5
+            makeOptions.add(R.drawable.msg_addbot, LocaleController.getString(R.string.AddAccount), new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MainTabsActivity.this.lambda$openAccountSelector$3();
+                    MainTabsActivity.this.lambda$openAccountSelector$4();
                 }
             });
         }
@@ -410,10 +425,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             while (it.hasNext()) {
                 final int intValue = ((Integer) it.next()).intValue();
                 LinearLayout accountView = accountView(intValue, this.currentAccount == intValue);
-                accountView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda6
+                accountView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda7
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        MainTabsActivity.this.lambda$openAccountSelector$4(intValue, makeOptions, view2);
+                        MainTabsActivity.this.lambda$openAccountSelector$5(intValue, makeOptions, view2);
                     }
                 });
                 makeOptions.addView(accountView, LayoutHelper.createLinear(NotificationCenter.starUserGiftsLoaded, 48));
@@ -429,7 +444,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ int lambda$openAccountSelector$2(Integer num, Integer num2) {
+    public static /* synthetic */ int lambda$openAccountSelector$3(Integer num, Integer num2) {
         long j = UserConfig.getInstance(num.intValue()).loginTime;
         long j2 = UserConfig.getInstance(num2.intValue()).loginTime;
         if (j > j2) {
@@ -439,7 +454,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openAccountSelector$3() {
+    public /* synthetic */ void lambda$openAccountSelector$4() {
         int i = 0;
         Integer num = null;
         for (int i2 = 3; i2 >= 0; i2--) {
@@ -464,7 +479,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openAccountSelector$4(int i, ItemOptions itemOptions, View view) {
+    public /* synthetic */ void lambda$openAccountSelector$5(int i, ItemOptions itemOptions, View view) {
         if (this.currentAccount == i) {
             return;
         }
@@ -673,6 +688,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             marginLayoutParams2.bottomMargin = i;
             this.viewPager.setLayoutParams(marginLayoutParams2);
         }
+        this.tabsViewWrapper.setPadding(0, 0, 0, this.navigationBarHeight);
         if (isUpdateLayoutVisible) {
             windowInsetsCompat = windowInsetsCompat.inset(0, 0, 0, this.navigationBarHeight);
         }
@@ -819,10 +835,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
     /* JADX INFO: Access modifiers changed from: private */
     public void checkUi_tabsPosition() {
-        int dp = AndroidUtilities.dp(40.0f) + (-(this.navigationBarHeight + (this.updateLayoutWrapper.isUpdateLayoutVisible() ? AndroidUtilities.dp(44.0f) : 0)));
+        int dp = AndroidUtilities.dp(40.0f) + (-(this.updateLayoutWrapper.isUpdateLayoutVisible() ? AndroidUtilities.dp(44.0f) : 0));
         float floatValue = this.animatorTabsVisible.getFloatValue();
         float lerp = AndroidUtilities.lerp(0.85f, 1.0f, floatValue);
-        this.tabsView.setTranslationY(AndroidUtilities.lerp(dp, r0, floatValue));
+        this.tabsViewWrapper.setTranslationY(AndroidUtilities.lerp(dp, r0, floatValue));
         this.tabsView.setScaleX(lerp);
         this.tabsView.setScaleY(lerp);
         this.tabsView.setClickable(floatValue > 1.0f);
@@ -842,7 +858,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     @Override // org.telegram.ui.ViewPagerActivity, org.telegram.ui.ActionBar.BaseFragment
     public ArrayList getThemeDescriptions() {
         ArrayList themeDescriptions = super.getThemeDescriptions();
-        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda3
+        ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda4
             @Override // org.telegram.ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 MainTabsActivity.this.blur3_updateColors();
@@ -917,10 +933,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             return;
         }
         if (this.accountSwitchHint == null && MessagesController.getGlobalMainSettings().getInt("accountswitchhint", 0) < 2) {
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda2
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MainTabsActivity.this.lambda$showAccountChangeHint$6();
+                    MainTabsActivity.this.lambda$showAccountChangeHint$7();
                 }
             }, 1500L);
             MessagesController.getGlobalMainSettings().edit().putInt("accountswitchhint", MessagesController.getGlobalMainSettings().getInt("channelgifthint", 0) + 1).apply();
@@ -929,7 +945,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAccountChangeHint$6() {
+    public /* synthetic */ void lambda$showAccountChangeHint$7() {
         GlassTabView[] glassTabViewArr;
         if (getContext() == null || (glassTabViewArr = this.tabs) == null) {
             return;
@@ -944,10 +960,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         this.accountSwitchHint.setText(LocaleController.getString(R.string.SwitchAccountHint));
         this.accountSwitchHint.setJoint(1.0f, (-width) + 7.33f);
         this.contentView.addView(this.accountSwitchHint, LayoutHelper.createFrame(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 72.0f));
-        this.accountSwitchHint.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda7
+        this.accountSwitchHint.setOnHiddenListener(new Runnable() { // from class: org.telegram.ui.MainTabsActivity$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                MainTabsActivity.this.lambda$showAccountChangeHint$5();
+                MainTabsActivity.this.lambda$showAccountChangeHint$6();
             }
         });
         this.accountSwitchHint.setDuration(8000L);
@@ -955,7 +971,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showAccountChangeHint$5() {
+    public /* synthetic */ void lambda$showAccountChangeHint$6() {
         AndroidUtilities.removeFromParent(this.accountSwitchHint);
     }
 
