@@ -16,8 +16,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Path;
 import android.graphics.Point;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
@@ -6853,15 +6851,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         super.onMultiWindowModeChanged(z);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:238:0x062d  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x0637 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x0638  */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x0618  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x0624 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x0625  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x061f  */
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void didReceivedNotification(int i, final int i2, Object... objArr) {
         int i3;
+        String[] strArr;
         char c;
         BaseFragment baseFragment;
         GroupCallActivity groupCallActivity;
@@ -6871,7 +6871,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             switchToAvailableAccountOrLogout();
             return;
         }
-        String[] strArr = null;
         if (i == NotificationCenter.openBoostForUsersDialog) {
             Long l = (Long) objArr[0];
             l.longValue();
@@ -7109,7 +7108,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     int[] iArr = (int[]) objArr[2];
                     final boolean booleanValue4 = ((Boolean) objArr[4]).booleanValue();
                     final RLottieImageView rLottieImageView = (RLottieImageView) objArr[5];
-                    boolean booleanValue5 = objArr.length > 8 ? ((Boolean) objArr[8]).booleanValue() : false;
+                    if (objArr.length > 8) {
+                        ((Boolean) objArr[8]).booleanValue();
+                    }
                     int measuredWidth = this.drawerLayoutContainer.getMeasuredWidth();
                     int measuredHeight = this.drawerLayoutContainer.getMeasuredHeight();
                     if (!booleanValue4 && rLottieImageView != null) {
@@ -7141,12 +7142,6 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         this.frameLayout.addView(this.themeSwitchImageView, 0, LayoutHelper.createFrame(-1, -1.0f));
                         this.themeSwitchSunView.setVisibility(8);
                     } else {
-                        if (rLottieImageView != null) {
-                            rLottieImageView.setImageDrawable(null);
-                        }
-                        if (animatedDrawable != null && booleanValue5) {
-                            animatedDrawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                        }
                         this.frameLayout.addView(this.themeSwitchImageView, 1, LayoutHelper.createFrame(-1, -1.0f));
                         this.themeSwitchSunView.setTranslationX(iArr[0] - AndroidUtilities.dp(24.0f));
                         this.themeSwitchSunView.setTranslationY(iArr[1] - AndroidUtilities.dp(24.0f));
@@ -7228,22 +7223,22 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
                 }
                 Theme.ThemeInfo themeInfo = (Theme.ThemeInfo) objArr[0];
-                boolean booleanValue6 = ((Boolean) objArr[1]).booleanValue();
+                boolean booleanValue5 = ((Boolean) objArr[1]).booleanValue();
                 int intValue = ((Integer) objArr[3]).intValue();
-                Runnable runnable = objArr.length > 7 ? (Runnable) objArr[7] : null;
+                Runnable runnable = objArr.length <= 7 ? (Runnable) objArr[7] : null;
                 actionBarLayout = this.actionBarLayout;
                 if (actionBarLayout != null) {
                     return;
                 }
-                actionBarLayout.animateThemedValues(themeInfo, intValue, booleanValue6, z, runnable);
+                actionBarLayout.animateThemedValues(themeInfo, intValue, booleanValue5, z, runnable);
                 if (AndroidUtilities.isTablet()) {
                     ActionBarLayout actionBarLayout3 = this.layersActionBarLayout;
                     if (actionBarLayout3 != null) {
-                        actionBarLayout3.animateThemedValues(themeInfo, intValue, booleanValue6, z);
+                        actionBarLayout3.animateThemedValues(themeInfo, intValue, booleanValue5, z);
                     }
                     ActionBarLayout actionBarLayout4 = this.rightActionBarLayout;
                     if (actionBarLayout4 != null) {
-                        actionBarLayout4.animateThemedValues(themeInfo, intValue, booleanValue6, z);
+                        actionBarLayout4.animateThemedValues(themeInfo, intValue, booleanValue5, z);
                         return;
                     }
                     return;
@@ -7253,9 +7248,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
             DialogsActivity.switchingTheme = false;
             z = false;
             Theme.ThemeInfo themeInfo2 = (Theme.ThemeInfo) objArr[0];
-            boolean booleanValue62 = ((Boolean) objArr[1]).booleanValue();
+            boolean booleanValue52 = ((Boolean) objArr[1]).booleanValue();
             int intValue2 = ((Integer) objArr[3]).intValue();
-            Runnable runnable2 = objArr.length > 7 ? (Runnable) objArr[7] : null;
+            if (objArr.length <= 7) {
+            }
             actionBarLayout = this.actionBarLayout;
             if (actionBarLayout != null) {
             }
@@ -7465,6 +7461,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                 int intValue5 = ((Integer) objArr[0]).intValue();
                 if (intValue5 != 0 || Build.VERSION.SDK_INT < 31) {
                     i3 = 1;
+                    strArr = null;
                 } else {
                     i3 = 1;
                     strArr = new String[]{"android.permission.BLUETOOTH_CONNECT"};

@@ -179,7 +179,7 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         this.useFillLastLayoutManager = false;
         this.particlesViewHeight = AndroidUtilities.dp(238.0f);
         this.transactionsLayout = new StarsIntroActivity.StarsTransactionsLayout(context, this.currentAccount, true, 0L, getClassGuid(), getResourceProvider());
-        View view = new View(context) { // from class: org.telegram.ui.TON.TONIntroActivity.1
+        this.emptyLayout = new View(context) { // from class: org.telegram.ui.TON.TONIntroActivity.1
             @Override // android.view.View
             protected void onMeasure(int i, int i2) {
                 int i3;
@@ -199,8 +199,6 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
                 super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((int) (i3 - (((GradientHeaderActivity) TONIntroActivity.this).yOffset * 2.5f)), TLObject.FLAG_30));
             }
         };
-        this.emptyLayout = view;
-        view.setBackgroundColor(Theme.getColor(this.allowTopUp ? Theme.key_dialogBackgroundGray : Theme.key_dialogBackground));
         super.createView(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.aboveTitleView = frameLayout;
@@ -228,8 +226,8 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         this.listView.setItemAnimator(defaultItemAnimator);
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda1
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view2, int i) {
-                TONIntroActivity.this.lambda$createView$1(view2, i);
+            public final void onItemClick(View view, int i) {
+                TONIntroActivity.this.lambda$createView$1(view, i);
             }
         });
         FireworksOverlay fireworksOverlay = new FireworksOverlay(getContext());
@@ -279,8 +277,8 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
             this.buyButton.setText(LocaleController.getString(R.string.TopUpViaFragment), false);
             this.buyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    TONIntroActivity.this.lambda$createView$2(view2);
+                public final void onClick(View view) {
+                    TONIntroActivity.this.lambda$createView$2(view);
                 }
             });
             this.oneButtonsLayout.addView(this.buyButton, LayoutHelper.createFrame(-1, 48, 119));
@@ -303,8 +301,8 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         this.topUpButton.setText(spannableStringBuilder, false);
         this.topUpButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                TONIntroActivity.this.lambda$createView$3(view2);
+            public final void onClick(View view) {
+                TONIntroActivity.this.lambda$createView$3(view);
             }
         });
         if (this.allowTopUp) {
@@ -317,8 +315,8 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
         this.withdrawButton.setText(spannableStringBuilder2, false);
         this.withdrawButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.TON.TONIntroActivity$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                TONIntroActivity.this.lambda$createView$4(view2);
+            public final void onClick(View view) {
+                TONIntroActivity.this.lambda$createView$4(view);
             }
         });
         this.twoButtonsLayout.addView(this.withdrawButton, LayoutHelper.createLinear(-1, 48, 17.0f, 1, 0, 0, 0, 0));
@@ -717,10 +715,10 @@ public class TONIntroActivity extends GradientHeaderActivity implements Notifica
             if (!this.allowTopUp) {
                 arrayList.add(UItem.asShadow(null));
             }
-            arrayList.add(UItem.asFullscreenCustom(this.transactionsLayout, ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.dp(12.0f)));
+            arrayList.add(UItem.asFullscreenCustom(this.transactionsLayout, ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.dp(24.0f) + AndroidUtilities.navigationBarHeight));
             return;
         }
-        arrayList.add(UItem.asCustom(this.emptyLayout));
+        arrayList.add(UItem.asCustomShadow(this.emptyLayout));
     }
 
     public void onItemClick(UItem uItem, int i) {

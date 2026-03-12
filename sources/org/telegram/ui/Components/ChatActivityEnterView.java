@@ -4261,7 +4261,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.expandStickersButton.setAlpha(0.0f);
         this.expandStickersButton.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
         this.sendButtonContainer.addView(this.expandStickersButton, LayoutHelper.createFrame(44, 44, 85));
-        this.expandStickersButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda24
+        this.expandStickersButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda25
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChatActivityEnterView.this.lambda$createExpandStickersButton$15(view);
@@ -4325,7 +4325,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         this.recordDeleteImageView.setContentDescription(LocaleController.getString("Delete", R.string.Delete));
         this.recordDeleteImageView.setBackgroundDrawable(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
         this.recordedAudioPanel.addView(this.recordDeleteImageView, LayoutHelper.createFrame(44, 44.0f));
-        this.recordDeleteImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda26
+        this.recordDeleteImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda27
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChatActivityEnterView.this.lambda$createRecordAudioPanel$16(view);
@@ -6771,7 +6771,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 SlowModeBtn slowModeBtn = this.slowModeButton;
                 chatActivityEnterViewDelegate.onUpdateSlowModeButton(slowModeBtn, false, slowModeBtn.getText());
             }
-            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda23
+            Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda24
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatActivityEnterView.this.updateSlowModeText();
@@ -10664,7 +10664,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         frameLayout.setClipChildren(false);
         this.recordPanel.setVisibility(8);
         this.messageEditTextContainer.addView(this.recordPanel, LayoutHelper.createFrame(-1, 44.0f));
-        this.recordPanel.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda25
+        this.recordPanel.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda26
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 boolean lambda$createRecordPanel$57;
@@ -10773,7 +10773,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.doneButtonAnimation = null;
             }
             createDoneButton(true);
-            this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda22
+            this.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda23
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     ChatActivityEnterView.this.lambda$setEditingBusinessLink$58(view);
@@ -12354,22 +12354,30 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
         setButtons(messageObject, true);
     }
 
+    public void setButtons(MessageObject messageObject, boolean z) {
+        setButtons(messageObject, true, z);
+    }
+
     /* JADX WARN: Code restructure failed: missing block: B:35:0x009a, code lost:
     
-        if (r6.getInt("answered_" + getTopicKeyString(), 0) != r5.getId()) goto L37;
+        if (r7.getInt("answered_" + getTopicKeyString(), 0) != r5.getId()) goto L37;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x00bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x00c1, code lost:
     
-        if (r6.getInt("closed_botkeyboard_" + getTopicKeyString(), 0) == r5.getId()) goto L43;
+        r5 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x00bf, code lost:
+    
+        if (r7.getInt("closed_botkeyboard_" + getTopicKeyString(), 0) == r5.getId()) goto L41;
      */
     /* JADX WARN: Removed duplicated region for block: B:26:0x005c  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00e0  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x005f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void setButtons(MessageObject messageObject, boolean z) {
+    public void setButtons(MessageObject messageObject, boolean z, boolean z2) {
         TLRPC.TL_replyKeyboardMarkup tL_replyKeyboardMarkup;
         EditTextCaption editTextCaption;
         MessageObject messageObject2 = this.replyingMessageObject;
@@ -12382,7 +12390,6 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
             if (messageObject3 == null && messageObject == null) {
                 return;
             }
-            boolean z2 = false;
             if (this.botKeyboardView == null) {
                 BotKeyboardView botKeyboardView = new BotKeyboardView(this.parentActivity, this.resourcesProvider) { // from class: org.telegram.ui.Components.ChatActivityEnterView.73
                     @Override // android.view.View
@@ -12397,7 +12404,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 this.botKeyboardView = botKeyboardView;
                 botKeyboardView.setVisibility(8);
                 this.botKeyboardViewVisible = false;
-                this.botKeyboardView.setDelegate(new BotKeyboardView.BotKeyboardViewDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda29
+                this.botKeyboardView.setDelegate(new BotKeyboardView.BotKeyboardViewDelegate() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda22
                     @Override // org.telegram.ui.bots.BotKeyboardView.BotKeyboardViewDelegate
                     public final void didPressedButton(TLRPC.KeyboardButton keyboardButton) {
                         ChatActivityEnterView.this.lambda$setButtons$71(keyboardButton);
@@ -12422,13 +12429,14 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                             if (!this.botReplyMarkup.is_persistent) {
                             }
                         }
-                        z2 = true;
+                        boolean z3 = true;
+                        boolean z4 = z ? z3 : false;
                         this.botKeyboardView.setButtons(this.botReplyMarkup);
-                        if (z2 && (((editTextCaption = this.messageEditText) == null || editTextCaption.length() == 0) && !isPopupShowing())) {
+                        if (z4 && (((editTextCaption = this.messageEditText) == null || editTextCaption.length() == 0) && !isPopupShowing())) {
                             showPopup(1, 1);
                         }
                     } else if (isPopupShowing() && this.currentPopupContentType == 1) {
-                        if (z) {
+                        if (z2) {
                             this.clearBotButtonsOnKeyboardOpen = true;
                             openKeyboardInternal();
                         } else {
@@ -13886,7 +13894,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                 updateBotButton(true);
                 onWindowSizeChanged();
                 if (this.smoothKeyboard && !this.keyboardVisible && i5 != i3 && z) {
-                    final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda27
+                    final Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda28
                         @Override // java.lang.Runnable
                         public final void run() {
                             ChatActivityEnterView.this.lambda$showPopup$80();
@@ -13936,7 +13944,7 @@ public class ChatActivityEnterView extends FrameLayout implements NotificationCe
                         this.emojiViewVisible = true;
                         this.animatingContentType = 0;
                         emojiView2.setShowing(false);
-                        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda28
+                        final Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ChatActivityEnterView$$ExternalSyntheticLambda29
                             @Override // java.lang.Runnable
                             public final void run() {
                                 ChatActivityEnterView.this.lambda$showPopup$81(i);

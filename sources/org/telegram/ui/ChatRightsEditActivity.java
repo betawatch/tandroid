@@ -351,9 +351,6 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
             if (!tL_chatBannedRights4.pin_messages) {
                 this.adminRights.pin_messages = z3;
             }
-            if (!tL_chatBannedRights4.edit_rank) {
-                this.adminRights.manage_ranks = z3;
-            }
         } else if (i == 1) {
             this.defaultBannedRights = tL_chatBannedRights;
             if (tL_chatBannedRights == null) {
@@ -2250,7 +2247,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                     return ChatRightsEditActivity.this.myAdminRights.pin_messages && (ChatRightsEditActivity.this.defaultBannedRights == null || ChatRightsEditActivity.this.defaultBannedRights.pin_messages);
                 }
                 if (adapterPosition == ChatRightsEditActivity.this.editTagsRow) {
-                    return ChatRightsEditActivity.this.myAdminRights.manage_ranks && (ChatRightsEditActivity.this.defaultBannedRights == null || ChatRightsEditActivity.this.defaultBannedRights.edit_rank);
+                    return ChatRightsEditActivity.this.myAdminRights.manage_ranks;
                 }
                 if (adapterPosition == ChatRightsEditActivity.this.manageTopicsRow) {
                     return ChatRightsEditActivity.this.myAdminRights.manage_topics;
@@ -2608,7 +2605,7 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                         }
                     } else if (i == ChatRightsEditActivity.this.editTagsRow) {
                         if (ChatRightsEditActivity.this.currentType == 0 || ChatRightsEditActivity.this.currentType == 2) {
-                            textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.EditAdminEditTags), (z && ChatRightsEditActivity.this.adminRights.manage_ranks) || !ChatRightsEditActivity.this.defaultBannedRights.edit_rank, true);
+                            textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.EditAdminEditTags), z && ChatRightsEditActivity.this.adminRights.manage_ranks, true);
                             if (ChatRightsEditActivity.this.currentType == 2) {
                                 textCheckCell2.setIcon((ChatRightsEditActivity.this.myAdminRights.manage_ranks || z2) ? 0 : R.drawable.permission_locked);
                             }
@@ -2924,23 +2921,19 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
 
     /* JADX WARN: Code restructure failed: missing block: B:38:0x006f, code lost:
     
-        if (r5.creator == false) goto L92;
+        if (r5.creator == false) goto L88;
      */
     /* JADX WARN: Code restructure failed: missing block: B:49:0x0085, code lost:
     
-        if (r8.defaultBannedRights.change_info != false) goto L94;
+        if (r8.defaultBannedRights.change_info != false) goto L90;
      */
     /* JADX WARN: Code restructure failed: missing block: B:73:0x00ef, code lost:
     
-        if (r8.defaultBannedRights.pin_messages != false) goto L94;
+        if (r8.defaultBannedRights.pin_messages != false) goto L90;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x0104, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x012d, code lost:
     
-        if (r8.defaultBannedRights.edit_rank != false) goto L94;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x0135, code lost:
-    
-        if (r5.creator == false) goto L92;
+        if (r5.creator == false) goto L88;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3019,11 +3012,8 @@ public class ChatRightsEditActivity extends BaseFragment implements Notification
                         z2 = z4;
                         z3 = false;
                     } else if (childAdapterPosition == this.editTagsRow) {
-                        z4 = this.adminRights.manage_ranks;
-                        if (this.myAdminRights.manage_ranks) {
-                        }
-                        z2 = z4;
-                        z3 = false;
+                        z2 = this.adminRights.manage_ranks;
+                        z3 = this.myAdminRights.manage_ranks;
                     } else if (childAdapterPosition == this.startVoiceChatRow) {
                         z2 = this.adminRights.manage_call;
                         z3 = this.myAdminRights.manage_call;

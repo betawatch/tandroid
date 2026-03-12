@@ -133,7 +133,7 @@ public class ScrimOptions extends Dialog {
             }
         };
         this.windowView = frameLayout;
-        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda4
+        frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ScrimOptions.this.lambda$new$0(view);
@@ -193,7 +193,7 @@ public class ScrimOptions extends Dialog {
             return;
         }
         this.dismissing = true;
-        animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda2
+        animateOpenTo(false, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 ScrimOptions.this.lambda$dismiss$2();
@@ -222,7 +222,7 @@ public class ScrimOptions extends Dialog {
             return;
         }
         this.dismissing = true;
-        animateOpenTo(false, 2.0f, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda0
+        animateOpenTo(false, 2.0f, new Runnable() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 ScrimOptions.this.lambda$dismissFast$4();
@@ -257,7 +257,7 @@ public class ScrimOptions extends Dialog {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.openProgress, z ? 1.0f : 0.0f);
         this.openAnimator = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda3
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 ScrimOptions.this.lambda$animateOpenTo$5(valueAnimator2);
@@ -320,7 +320,7 @@ public class ScrimOptions extends Dialog {
         if (view != null) {
             view.setVisibility(4);
         }
-        makeGlobalBlurBitmaps(new Utilities.Callback2() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda1
+        makeGlobalBlurBitmaps(new Utilities.Callback2() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
                 ScrimOptions.this.lambda$prepareBlur$6(view, (Bitmap) obj, (Bitmap) obj2);
@@ -347,7 +347,7 @@ public class ScrimOptions extends Dialog {
     }
 
     public static void makeGlobalBlurBitmaps(final Utilities.Callback2 callback2) {
-        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda5
+        AndroidUtilities.makeGlobalBlurBitmap(new Utilities.Callback() { // from class: org.telegram.ui.Components.ScrimOptions$$ExternalSyntheticLambda0
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ScrimOptions.lambda$makeGlobalBlurBitmaps$7(Utilities.Callback2.this, (Bitmap) obj);

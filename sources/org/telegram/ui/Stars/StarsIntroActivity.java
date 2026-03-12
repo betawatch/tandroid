@@ -251,18 +251,13 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.BaseFragment
-    public int getNavigationBarColor() {
-        return Theme.getColor(Theme.key_dialogBackgroundGray);
-    }
-
     @Override // org.telegram.ui.GradientHeaderActivity, org.telegram.ui.ActionBar.BaseFragment
     public View createView(final Context context) {
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
         this.useFillLastLayoutManager = false;
         this.particlesViewHeight = AndroidUtilities.dp(238.0f);
         this.transactionsLayout = new StarsTransactionsLayout(context, this.currentAccount, false, 0L, getClassGuid(), getResourceProvider());
-        View view = new View(context) { // from class: org.telegram.ui.Stars.StarsIntroActivity.1
+        this.emptyLayout = new View(context) { // from class: org.telegram.ui.Stars.StarsIntroActivity.1
             @Override // android.view.View
             protected void onMeasure(int i, int i2) {
                 int i3;
@@ -282,8 +277,6 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 super.onMeasure(i, View.MeasureSpec.makeMeasureSpec((int) (i3 - (((GradientHeaderActivity) StarsIntroActivity.this).yOffset * 2.5f)), TLObject.FLAG_30));
             }
         };
-        this.emptyLayout = view;
-        view.setBackgroundColor(Theme.getColor(Theme.key_dialogBackgroundGray));
         super.createView(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.aboveTitleView = frameLayout;
@@ -311,8 +304,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         this.listView.setItemAnimator(defaultItemAnimator);
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda34
             @Override // org.telegram.ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view2, int i) {
-                StarsIntroActivity.this.lambda$createView$1(view2, i);
+            public final void onItemClick(View view, int i) {
+                StarsIntroActivity.this.lambda$createView$1(view, i);
             }
         });
         FireworksOverlay fireworksOverlay = new FireworksOverlay(getContext());
@@ -364,8 +357,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         this.buyButton.setText("", false);
         this.buyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda35
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                StarsIntroActivity.this.lambda$createView$2(context, view2);
+            public final void onClick(View view) {
+                StarsIntroActivity.this.lambda$createView$2(context, view);
             }
         });
         this.oneButtonsLayout.addView(this.buyButton, LayoutHelper.createFrame(-1, 48, 119));
@@ -389,8 +382,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         this.topupButton.setText(spannableStringBuilder, false);
         this.topupButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda36
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                StarsIntroActivity.this.lambda$createView$3(context, view2);
+            public final void onClick(View view) {
+                StarsIntroActivity.this.lambda$createView$3(context, view);
             }
         });
         this.twoButtonsLayout.addView(this.topupButton, LayoutHelper.createLinear(-1, 48, 17.0f, 1, 0, 0, 8, 0));
@@ -403,8 +396,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         this.withdrawButton.setText(spannableStringBuilder2, false);
         this.withdrawButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda37
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                StarsIntroActivity.this.lambda$createView$4(view2);
+            public final void onClick(View view) {
+                StarsIntroActivity.this.lambda$createView$4(view);
             }
         });
         this.twoButtonsLayout.addView(this.withdrawButton, LayoutHelper.createLinear(-1, 48, 17.0f, 1, 0, 0, 0, 0));
@@ -419,8 +412,8 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         this.giftButton.setText(spannableStringBuilder3, false);
         this.giftButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stars.StarsIntroActivity$$ExternalSyntheticLambda38
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                StarsIntroActivity.this.lambda$createView$5(view2);
+            public final void onClick(View view) {
+                StarsIntroActivity.this.lambda$createView$5(view);
             }
         });
         this.balanceLayout.addView(this.giftButton, LayoutHelper.createFrame(-1, 48.0f, 17, 20.0f, 8.0f, 20.0f, 0.0f));
@@ -561,7 +554,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
             try {
                 if (view == ((GradientHeaderActivity) StarsIntroActivity.this).listView && StarsIntroActivity.this.transactionsLayout.isAttachedToWindow()) {
                     RecyclerListView currentListView = StarsIntroActivity.this.transactionsLayout.getCurrentListView();
-                    if (((GradientHeaderActivity) StarsIntroActivity.this).listView.getHeight() - ((View) StarsIntroActivity.this.transactionsLayout.getParent()).getBottom() >= 0) {
+                    if ((((GradientHeaderActivity) StarsIntroActivity.this).listView.getHeight() - ((GradientHeaderActivity) StarsIntroActivity.this).listView.getPaddingBottom()) - ((View) StarsIntroActivity.this.transactionsLayout.getParent()).getBottom() >= 0) {
                         iArr[1] = i4;
                         currentListView.scrollBy(0, i4);
                     }
@@ -603,7 +596,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 int bottom = ((View) StarsIntroActivity.this.transactionsLayout.getParent()).getBottom();
                 boolean z = false;
                 if (i2 < 0) {
-                    if (((GradientHeaderActivity) StarsIntroActivity.this).listView.getHeight() - bottom >= 0) {
+                    if ((((GradientHeaderActivity) StarsIntroActivity.this).listView.getHeight() - ((GradientHeaderActivity) StarsIntroActivity.this).listView.getPaddingBottom()) - bottom >= 0) {
                         RecyclerListView currentListView = StarsIntroActivity.this.transactionsLayout.getCurrentListView();
                         int findFirstVisibleItemPosition = ((LinearLayoutManager) currentListView.getLayoutManager()).findFirstVisibleItemPosition();
                         if (findFirstVisibleItemPosition != -1) {
@@ -642,7 +635,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
                 }
                 if (i2 > 0) {
                     RecyclerListView currentListView3 = StarsIntroActivity.this.transactionsLayout.getCurrentListView();
-                    if (((GradientHeaderActivity) StarsIntroActivity.this).listView.getHeight() - bottom < 0 || currentListView3 == null || currentListView3.canScrollVertically(1)) {
+                    if ((((GradientHeaderActivity) StarsIntroActivity.this).listView.getHeight() - ((GradientHeaderActivity) StarsIntroActivity.this).listView.getPaddingBottom()) - bottom < 0 || currentListView3 == null || currentListView3.canScrollVertically(1)) {
                         return;
                     }
                     iArr[1] = i2;
@@ -667,7 +660,7 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         if (starsTransactionsLayout == null || !(starsTransactionsLayout.getParent() instanceof View)) {
             return false;
         }
-        return this.listView.getHeight() - ((View) this.transactionsLayout.getParent()).getBottom() >= 0;
+        return (this.listView.getHeight() - this.listView.getPaddingBottom()) - ((View) this.transactionsLayout.getParent()).getBottom() >= 0;
     }
 
     @Override // org.telegram.ui.GradientHeaderActivity
@@ -830,9 +823,9 @@ public class StarsIntroActivity extends GradientHeaderActivity implements Notifi
         boolean hasTransactions = starsController.hasTransactions();
         this.hadTransactions = hasTransactions;
         if (hasTransactions) {
-            arrayList.add(UItem.asFullscreenCustom(this.transactionsLayout, ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.dp(12.0f)));
+            arrayList.add(UItem.asFullscreenCustom(this.transactionsLayout, ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.dp(24.0f) + AndroidUtilities.navigationBarHeight));
         } else {
-            arrayList.add(UItem.asCustom(this.emptyLayout));
+            arrayList.add(UItem.asCustomShadow(this.emptyLayout));
         }
     }
 

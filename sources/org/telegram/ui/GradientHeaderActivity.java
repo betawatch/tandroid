@@ -4,13 +4,11 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
@@ -85,6 +83,11 @@ public abstract class GradientHeaderActivity extends BaseFragment {
     @Override // org.telegram.ui.ActionBar.BaseFragment
     public boolean isActionBarCrossfadeEnabled() {
         return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
+    public boolean isSupportEdgeToEdge() {
+        return true;
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
@@ -175,6 +178,11 @@ public abstract class GradientHeaderActivity extends BaseFragment {
     }
 
     @Override // org.telegram.ui.ActionBar.BaseFragment
+    public void onInsets(int i, int i2, int i3, int i4) {
+        this.listView.setPadding(0, 0, 0, i4);
+    }
+
+    @Override // org.telegram.ui.ActionBar.BaseFragment
     public View createView(Context context) {
         this.hasOwnBackground = true;
         Rect rect = new Rect();
@@ -183,9 +191,8 @@ public abstract class GradientHeaderActivity extends BaseFragment {
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
         this.shadowDrawable.getPadding(rect);
         this.statusBarHeight = AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight;
-        ContentView createContentView = createContentView();
-        this.contentView = createContentView;
-        createContentView.setFitsSystemWindows(true);
+        this.contentView = createContentView();
+        this.actionBar.setAddToContainer(false);
         this.listView = new RecyclerListView(context);
         if (this.useFillLastLayoutManager) {
             this.layoutManager = new FillLastLinearLayoutManager(context, (AndroidUtilities.dp(68.0f) + this.statusBarHeight) - AndroidUtilities.dp(16.0f), this.listView);
@@ -250,7 +257,8 @@ public abstract class GradientHeaderActivity extends BaseFragment {
         this.particlesView = createParticlesView;
         frameLayout.addView(createParticlesView, LayoutHelper.createFrame(-1, -2.0f));
         this.contentView.addView(this.backgroundView, LayoutHelper.createFrame(-1, -2.0f));
-        this.contentView.addView(this.listView);
+        this.contentView.addView(this.listView, LayoutHelper.createFrame(-1, -1.0f));
+        this.contentView.addView(this.actionBar);
         this.fragmentView = this.contentView;
         this.actionBar.setBackground(null);
         this.actionBar.setCastShadows(false);
@@ -278,7 +286,6 @@ public abstract class GradientHeaderActivity extends BaseFragment {
     }
 
     public class ContentView extends NestedSizeNotifierLayout {
-        private LinearGradient backgroundGradient;
         private final Paint backgroundGradientPaint;
         private final Paint backgroundPaint;
         boolean bottomInterceptedTouch;
@@ -431,19 +438,16 @@ public abstract class GradientHeaderActivity extends BaseFragment {
                 invalidate();
             }
             GradientHeaderActivity.this.gradientTools.gradientMatrix(0, 0, getMeasuredWidth(), getMeasuredHeight(), (-getMeasuredWidth()) * 0.1f * GradientHeaderActivity.this.progress, 0.0f);
-            if (!GradientHeaderActivity.this.whiteBackground) {
+            GradientHeaderActivity gradientHeaderActivity5 = GradientHeaderActivity.this;
+            if (!gradientHeaderActivity5.whiteBackground) {
                 canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), GradientHeaderActivity.this.gradientTools.paint);
             } else {
-                if (this.backgroundGradient == null) {
-                    LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(350.0f), new int[]{GradientHeaderActivity.this.getThemedColor(Theme.key_windowBackgroundWhite), GradientHeaderActivity.this.getThemedColor(Theme.key_windowBackgroundGray)}, new float[]{0.3f, 1.0f}, Shader.TileMode.CLAMP);
-                    this.backgroundGradient = linearGradient;
-                    this.backgroundGradientPaint.setShader(linearGradient);
-                }
+                this.backgroundGradientPaint.setColor(gradientHeaderActivity5.getThemedColor(Theme.key_windowBackgroundGray));
                 canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.backgroundGradientPaint);
             }
             int themedColor = GradientHeaderActivity.this.getThemedColor(Theme.key_dialogTextBlack);
-            GradientHeaderActivity gradientHeaderActivity5 = GradientHeaderActivity.this;
-            int blendARGB = ColorUtils.blendARGB(themedColor, gradientHeaderActivity5.getThemedColor(gradientHeaderActivity5.whiteBackground ? Theme.key_windowBackgroundWhiteBlackText : Theme.key_premiumGradientBackgroundOverlay), f3);
+            GradientHeaderActivity gradientHeaderActivity6 = GradientHeaderActivity.this;
+            int blendARGB = ColorUtils.blendARGB(themedColor, gradientHeaderActivity6.getThemedColor(gradientHeaderActivity6.whiteBackground ? Theme.key_windowBackgroundWhiteBlackText : Theme.key_premiumGradientBackgroundOverlay), f3);
             ((BaseFragment) GradientHeaderActivity.this).actionBar.getBackButton().setColorFilter(blendARGB);
             backgroundView.titleView.setTextColor(blendARGB);
             GradientHeaderActivity.this.headerBgPaint.setAlpha((int) ((1.0f - f3) * 255.0f));

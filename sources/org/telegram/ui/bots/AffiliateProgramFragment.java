@@ -77,7 +77,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
     public void didReceivedNotification(int i, int i2, Object... objArr) {
     }
 
-    @Override // org.telegram.ui.ActionBar.BaseFragment
+    @Override // org.telegram.ui.GradientHeaderActivity, org.telegram.ui.ActionBar.BaseFragment
     public boolean isSupportEdgeToEdge() {
         return true;
     }
@@ -905,7 +905,7 @@ public class AffiliateProgramFragment extends GradientHeaderActivity implements 
         return ((float) ((int) f)) == f ? String.format(Locale.US, "%d%%", Integer.valueOf(i / 10)) : String.format(Locale.US, "%.1f%%", Float.valueOf(f));
     }
 
-    @Override // org.telegram.ui.ActionBar.BaseFragment
+    @Override // org.telegram.ui.GradientHeaderActivity, org.telegram.ui.ActionBar.BaseFragment
     public void onInsets(int i, int i2, int i3, int i4) {
         this.listView.setPadding(0, 0, 0, AndroidUtilities.dp(84.0f) + i4);
         this.listView.setClipToPadding(false);
